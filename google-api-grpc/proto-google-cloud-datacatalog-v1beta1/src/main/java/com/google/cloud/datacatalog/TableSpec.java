@@ -3,73 +3,628 @@
 
 package com.google.cloud.datacatalog;
 
-public final class TableSpec {
-  private TableSpec() {}
-
-  public static void registerAllExtensions(com.google.protobuf.ExtensionRegistryLite registry) {}
-
-  public static void registerAllExtensions(com.google.protobuf.ExtensionRegistry registry) {
-    registerAllExtensions((com.google.protobuf.ExtensionRegistryLite) registry);
+/**
+ *
+ *
+ * <pre>
+ * Normal BigQuery table spec.
+ * </pre>
+ *
+ * Protobuf type {@code google.cloud.datacatalog.v1beta1.TableSpec}
+ */
+public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
+    implements
+    // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.v1beta1.TableSpec)
+    TableSpecOrBuilder {
+  private static final long serialVersionUID = 0L;
+  // Use TableSpec.newBuilder() to construct.
+  private TableSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    super(builder);
   }
 
-  static final com.google.protobuf.Descriptors.Descriptor
-      internal_static_google_cloud_datacatalog_v1beta1_BigQueryTableSpec_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_cloud_datacatalog_v1beta1_BigQueryTableSpec_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-      internal_static_google_cloud_datacatalog_v1beta1_ViewSpec_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_cloud_datacatalog_v1beta1_ViewSpec_fieldAccessorTable;
-
-  public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
-    return descriptor;
+  private TableSpec() {
+    groupedEntry_ = "";
   }
 
-  private static com.google.protobuf.Descriptors.FileDescriptor descriptor;
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    return this.unknownFields;
+  }
+
+  private TableSpec(
+      com.google.protobuf.CodedInputStream input,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
+    int mutable_bitField0_ = 0;
+    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+        com.google.protobuf.UnknownFieldSet.newBuilder();
+    try {
+      boolean done = false;
+      while (!done) {
+        int tag = input.readTag();
+        switch (tag) {
+          case 0:
+            done = true;
+            break;
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              groupedEntry_ = s;
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+        }
+      }
+    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+      throw e.setUnfinishedMessage(this);
+    } catch (java.io.IOException e) {
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+    } finally {
+      this.unknownFields = unknownFields.build();
+      makeExtensionsImmutable();
+    }
+  }
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.datacatalog.TableSpecOuterClass
+        .internal_static_google_cloud_datacatalog_v1beta1_TableSpec_descriptor;
+  }
+
+  @java.lang.Override
+  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internalGetFieldAccessorTable() {
+    return com.google.cloud.datacatalog.TableSpecOuterClass
+        .internal_static_google_cloud_datacatalog_v1beta1_TableSpec_fieldAccessorTable
+        .ensureFieldAccessorsInitialized(
+            com.google.cloud.datacatalog.TableSpec.class,
+            com.google.cloud.datacatalog.TableSpec.Builder.class);
+  }
+
+  public static final int GROUPED_ENTRY_FIELD_NUMBER = 1;
+  private volatile java.lang.Object groupedEntry_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. If the table is a dated shard, i.e. with name pattern
+   * [prefix]YYYYMMDD, grouped_entry is the Data Catalog resource name of the
+   * date sharded grouped entry, e.g.
+   * projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}
+   * /entries/{entry_id}.
+   * Otherwise, grouped_entry will be empty.
+   * </pre>
+   *
+   * <code>string grouped_entry = 1;</code>
+   */
+  public java.lang.String getGroupedEntry() {
+    java.lang.Object ref = groupedEntry_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      groupedEntry_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. If the table is a dated shard, i.e. with name pattern
+   * [prefix]YYYYMMDD, grouped_entry is the Data Catalog resource name of the
+   * date sharded grouped entry, e.g.
+   * projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}
+   * /entries/{entry_id}.
+   * Otherwise, grouped_entry will be empty.
+   * </pre>
+   *
+   * <code>string grouped_entry = 1;</code>
+   */
+  public com.google.protobuf.ByteString getGroupedEntryBytes() {
+    java.lang.Object ref = groupedEntry_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      groupedEntry_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  private byte memoizedIsInitialized = -1;
+
+  @java.lang.Override
+  public final boolean isInitialized() {
+    byte isInitialized = memoizedIsInitialized;
+    if (isInitialized == 1) return true;
+    if (isInitialized == 0) return false;
+
+    memoizedIsInitialized = 1;
+    return true;
+  }
+
+  @java.lang.Override
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (!getGroupedEntryBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, groupedEntry_);
+    }
+    unknownFields.writeTo(output);
+  }
+
+  @java.lang.Override
+  public int getSerializedSize() {
+    int size = memoizedSize;
+    if (size != -1) return size;
+
+    size = 0;
+    if (!getGroupedEntryBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, groupedEntry_);
+    }
+    size += unknownFields.getSerializedSize();
+    memoizedSize = size;
+    return size;
+  }
+
+  @java.lang.Override
+  public boolean equals(final java.lang.Object obj) {
+    if (obj == this) {
+      return true;
+    }
+    if (!(obj instanceof com.google.cloud.datacatalog.TableSpec)) {
+      return super.equals(obj);
+    }
+    com.google.cloud.datacatalog.TableSpec other = (com.google.cloud.datacatalog.TableSpec) obj;
+
+    if (!getGroupedEntry().equals(other.getGroupedEntry())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
+  }
+
+  @java.lang.Override
+  public int hashCode() {
+    if (memoizedHashCode != 0) {
+      return memoizedHashCode;
+    }
+    int hash = 41;
+    hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + GROUPED_ENTRY_FIELD_NUMBER;
+    hash = (53 * hash) + getGroupedEntry().hashCode();
+    hash = (29 * hash) + unknownFields.hashCode();
+    memoizedHashCode = hash;
+    return hash;
+  }
+
+  public static com.google.cloud.datacatalog.TableSpec parseFrom(java.nio.ByteBuffer data)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    return PARSER.parseFrom(data);
+  }
+
+  public static com.google.cloud.datacatalog.TableSpec parseFrom(
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    return PARSER.parseFrom(data, extensionRegistry);
+  }
+
+  public static com.google.cloud.datacatalog.TableSpec parseFrom(
+      com.google.protobuf.ByteString data)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    return PARSER.parseFrom(data);
+  }
+
+  public static com.google.cloud.datacatalog.TableSpec parseFrom(
+      com.google.protobuf.ByteString data,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    return PARSER.parseFrom(data, extensionRegistry);
+  }
+
+  public static com.google.cloud.datacatalog.TableSpec parseFrom(byte[] data)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    return PARSER.parseFrom(data);
+  }
+
+  public static com.google.cloud.datacatalog.TableSpec parseFrom(
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    return PARSER.parseFrom(data, extensionRegistry);
+  }
+
+  public static com.google.cloud.datacatalog.TableSpec parseFrom(java.io.InputStream input)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+  }
+
+  public static com.google.cloud.datacatalog.TableSpec parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
+  public static com.google.cloud.datacatalog.TableSpec parseDelimitedFrom(java.io.InputStream input)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+  }
+
+  public static com.google.cloud.datacatalog.TableSpec parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
+  public static com.google.cloud.datacatalog.TableSpec parseFrom(
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+  }
+
+  public static com.google.cloud.datacatalog.TableSpec parseFrom(
+      com.google.protobuf.CodedInputStream input,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
+  @java.lang.Override
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
+  public static Builder newBuilder() {
+    return DEFAULT_INSTANCE.toBuilder();
+  }
+
+  public static Builder newBuilder(com.google.cloud.datacatalog.TableSpec prototype) {
+    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  }
+
+  @java.lang.Override
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    Builder builder = new Builder(parent);
+    return builder;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Normal BigQuery table spec.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.datacatalog.v1beta1.TableSpec}
+   */
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
+      // @@protoc_insertion_point(builder_implements:google.cloud.datacatalog.v1beta1.TableSpec)
+      com.google.cloud.datacatalog.TableSpecOrBuilder {
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.datacatalog.TableSpecOuterClass
+          .internal_static_google_cloud_datacatalog_v1beta1_TableSpec_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.datacatalog.TableSpecOuterClass
+          .internal_static_google_cloud_datacatalog_v1beta1_TableSpec_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.datacatalog.TableSpec.class,
+              com.google.cloud.datacatalog.TableSpec.Builder.class);
+    }
+
+    // Construct using com.google.cloud.datacatalog.TableSpec.newBuilder()
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
+
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+    }
+
+    @java.lang.Override
+    public Builder clear() {
+      super.clear();
+      groupedEntry_ = "";
+
+      return this;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.datacatalog.TableSpecOuterClass
+          .internal_static_google_cloud_datacatalog_v1beta1_TableSpec_descriptor;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.datacatalog.TableSpec getDefaultInstanceForType() {
+      return com.google.cloud.datacatalog.TableSpec.getDefaultInstance();
+    }
+
+    @java.lang.Override
+    public com.google.cloud.datacatalog.TableSpec build() {
+      com.google.cloud.datacatalog.TableSpec result = buildPartial();
+      if (!result.isInitialized()) {
+        throw newUninitializedMessageException(result);
+      }
+      return result;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.datacatalog.TableSpec buildPartial() {
+      com.google.cloud.datacatalog.TableSpec result =
+          new com.google.cloud.datacatalog.TableSpec(this);
+      result.groupedEntry_ = groupedEntry_;
+      onBuilt();
+      return result;
+    }
+
+    @java.lang.Override
+    public Builder clone() {
+      return super.clone();
+    }
+
+    @java.lang.Override
+    public Builder setField(
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+      return super.setField(field, value);
+    }
+
+    @java.lang.Override
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+      return super.clearField(field);
+    }
+
+    @java.lang.Override
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+      return super.clearOneof(oneof);
+    }
+
+    @java.lang.Override
+    public Builder setRepeatedField(
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
+      return super.setRepeatedField(field, index, value);
+    }
+
+    @java.lang.Override
+    public Builder addRepeatedField(
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+      return super.addRepeatedField(field, value);
+    }
+
+    @java.lang.Override
+    public Builder mergeFrom(com.google.protobuf.Message other) {
+      if (other instanceof com.google.cloud.datacatalog.TableSpec) {
+        return mergeFrom((com.google.cloud.datacatalog.TableSpec) other);
+      } else {
+        super.mergeFrom(other);
+        return this;
+      }
+    }
+
+    public Builder mergeFrom(com.google.cloud.datacatalog.TableSpec other) {
+      if (other == com.google.cloud.datacatalog.TableSpec.getDefaultInstance()) return this;
+      if (!other.getGroupedEntry().isEmpty()) {
+        groupedEntry_ = other.groupedEntry_;
+        onChanged();
+      }
+      this.mergeUnknownFields(other.unknownFields);
+      onChanged();
+      return this;
+    }
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      return true;
+    }
+
+    @java.lang.Override
+    public Builder mergeFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      com.google.cloud.datacatalog.TableSpec parsedMessage = null;
+      try {
+        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        parsedMessage = (com.google.cloud.datacatalog.TableSpec) e.getUnfinishedMessage();
+        throw e.unwrapIOException();
+      } finally {
+        if (parsedMessage != null) {
+          mergeFrom(parsedMessage);
+        }
+      }
+      return this;
+    }
+
+    private java.lang.Object groupedEntry_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If the table is a dated shard, i.e. with name pattern
+     * [prefix]YYYYMMDD, grouped_entry is the Data Catalog resource name of the
+     * date sharded grouped entry, e.g.
+     * projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}
+     * /entries/{entry_id}.
+     * Otherwise, grouped_entry will be empty.
+     * </pre>
+     *
+     * <code>string grouped_entry = 1;</code>
+     */
+    public java.lang.String getGroupedEntry() {
+      java.lang.Object ref = groupedEntry_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        groupedEntry_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If the table is a dated shard, i.e. with name pattern
+     * [prefix]YYYYMMDD, grouped_entry is the Data Catalog resource name of the
+     * date sharded grouped entry, e.g.
+     * projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}
+     * /entries/{entry_id}.
+     * Otherwise, grouped_entry will be empty.
+     * </pre>
+     *
+     * <code>string grouped_entry = 1;</code>
+     */
+    public com.google.protobuf.ByteString getGroupedEntryBytes() {
+      java.lang.Object ref = groupedEntry_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        groupedEntry_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If the table is a dated shard, i.e. with name pattern
+     * [prefix]YYYYMMDD, grouped_entry is the Data Catalog resource name of the
+     * date sharded grouped entry, e.g.
+     * projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}
+     * /entries/{entry_id}.
+     * Otherwise, grouped_entry will be empty.
+     * </pre>
+     *
+     * <code>string grouped_entry = 1;</code>
+     */
+    public Builder setGroupedEntry(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      groupedEntry_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If the table is a dated shard, i.e. with name pattern
+     * [prefix]YYYYMMDD, grouped_entry is the Data Catalog resource name of the
+     * date sharded grouped entry, e.g.
+     * projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}
+     * /entries/{entry_id}.
+     * Otherwise, grouped_entry will be empty.
+     * </pre>
+     *
+     * <code>string grouped_entry = 1;</code>
+     */
+    public Builder clearGroupedEntry() {
+
+      groupedEntry_ = getDefaultInstance().getGroupedEntry();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If the table is a dated shard, i.e. with name pattern
+     * [prefix]YYYYMMDD, grouped_entry is the Data Catalog resource name of the
+     * date sharded grouped entry, e.g.
+     * projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}
+     * /entries/{entry_id}.
+     * Otherwise, grouped_entry will be empty.
+     * </pre>
+     *
+     * <code>string grouped_entry = 1;</code>
+     */
+    public Builder setGroupedEntryBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      groupedEntry_ = value;
+      onChanged();
+      return this;
+    }
+
+    @java.lang.Override
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
+      return super.setUnknownFields(unknownFields);
+    }
+
+    @java.lang.Override
+    public final Builder mergeUnknownFields(
+        final com.google.protobuf.UnknownFieldSet unknownFields) {
+      return super.mergeUnknownFields(unknownFields);
+    }
+
+    // @@protoc_insertion_point(builder_scope:google.cloud.datacatalog.v1beta1.TableSpec)
+  }
+
+  // @@protoc_insertion_point(class_scope:google.cloud.datacatalog.v1beta1.TableSpec)
+  private static final com.google.cloud.datacatalog.TableSpec DEFAULT_INSTANCE;
 
   static {
-    java.lang.String[] descriptorData = {
-      "\n1google/cloud/datacatalog/v1beta1/table"
-          + "_spec.proto\022 google.cloud.datacatalog.v1"
-          + "beta1\"\240\001\n\021BigQueryTableSpec\022L\n\021table_sou"
-          + "rce_type\030\001 \001(\01621.google.cloud.datacatalo"
-          + "g.v1beta1.TableSourceType\022=\n\tview_spec\030\002"
-          + " \001(\0132*.google.cloud.datacatalog.v1beta1."
-          + "ViewSpec\"\036\n\010ViewSpec\022\022\n\nview_query\030\001 \001(\t"
-          + "*[\n\017TableSourceType\022!\n\035TABLE_SOURCE_TYPE"
-          + "_UNSPECIFIED\020\000\022\021\n\rBIGQUERY_VIEW\020\002\022\022\n\016BIG"
-          + "QUERY_TABLE\020\005Bp\n\034com.google.cloud.dataca"
-          + "talogP\001ZKgoogle.golang.org/genproto/goog"
-          + "leapis/cloud/datacatalog/v1beta1;datacat"
-          + "alog\370\001\001b\006proto3"
-    };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-        descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {}, assigner);
-    internal_static_google_cloud_datacatalog_v1beta1_BigQueryTableSpec_descriptor =
-        getDescriptor().getMessageTypes().get(0);
-    internal_static_google_cloud_datacatalog_v1beta1_BigQueryTableSpec_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-            internal_static_google_cloud_datacatalog_v1beta1_BigQueryTableSpec_descriptor,
-            new java.lang.String[] {
-              "TableSourceType", "ViewSpec",
-            });
-    internal_static_google_cloud_datacatalog_v1beta1_ViewSpec_descriptor =
-        getDescriptor().getMessageTypes().get(1);
-    internal_static_google_cloud_datacatalog_v1beta1_ViewSpec_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-            internal_static_google_cloud_datacatalog_v1beta1_ViewSpec_descriptor,
-            new java.lang.String[] {
-              "ViewQuery",
-            });
+    DEFAULT_INSTANCE = new com.google.cloud.datacatalog.TableSpec();
   }
 
-  // @@protoc_insertion_point(outer_class_scope)
+  public static com.google.cloud.datacatalog.TableSpec getDefaultInstance() {
+    return DEFAULT_INSTANCE;
+  }
+
+  private static final com.google.protobuf.Parser<TableSpec> PARSER =
+      new com.google.protobuf.AbstractParser<TableSpec>() {
+        @java.lang.Override
+        public TableSpec parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new TableSpec(input, extensionRegistry);
+        }
+      };
+
+  public static com.google.protobuf.Parser<TableSpec> parser() {
+    return PARSER;
+  }
+
+  @java.lang.Override
+  public com.google.protobuf.Parser<TableSpec> getParserForType() {
+    return PARSER;
+  }
+
+  @java.lang.Override
+  public com.google.cloud.datacatalog.TableSpec getDefaultInstanceForType() {
+    return DEFAULT_INSTANCE;
+  }
 }

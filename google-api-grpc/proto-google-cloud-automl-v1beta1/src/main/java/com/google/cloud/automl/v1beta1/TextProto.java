@@ -46,9 +46,9 @@ public final class TextProto {
   static {
     java.lang.String[] descriptorData = {
       "\n&google/cloud/automl/v1beta1/text.proto"
-          + "\022\033google.cloud.automl.v1beta1\032\034google/ap"
-          + "i/annotations.proto\0320google/cloud/automl"
-          + "/v1beta1/classification.proto\"q\n!TextCla"
+          + "\022\033google.cloud.automl.v1beta1\0320google/cl"
+          + "oud/automl/v1beta1/classification.proto\032"
+          + "\034google/api/annotations.proto\"q\n!TextCla"
           + "ssificationDatasetMetadata\022L\n\023classifica"
           + "tion_type\030\001 \001(\0162/.google.cloud.automl.v1"
           + "beta1.ClassificationType\"!\n\037TextClassifi"
@@ -73,8 +73,8 @@ public final class TextProto {
     com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
         descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.api.AnnotationsProto.getDescriptor(),
           com.google.cloud.automl.v1beta1.ClassificationProto.getDescriptor(),
+          com.google.api.AnnotationsProto.getDescriptor(),
         },
         assigner);
     internal_static_google_cloud_automl_v1beta1_TextClassificationDatasetMetadata_descriptor =
@@ -117,8 +117,8 @@ public final class TextProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_automl_v1beta1_TextSentimentModelMetadata_descriptor,
             new java.lang.String[] {});
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.cloud.automl.v1beta1.ClassificationProto.getDescriptor();
+    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

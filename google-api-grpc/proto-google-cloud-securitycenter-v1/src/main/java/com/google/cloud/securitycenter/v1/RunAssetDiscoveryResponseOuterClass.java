@@ -35,12 +35,13 @@ public final class RunAssetDiscoveryResponseOuterClass {
           + "tDiscoveryResponse.State\022+\n\010duration\030\002 \001"
           + "(\0132\031.google.protobuf.Duration\"M\n\005State\022\025"
           + "\n\021STATE_UNSPECIFIED\020\000\022\r\n\tCOMPLETED\020\001\022\016\n\n"
-          + "SUPERSEDED\020\002\022\016\n\nTERMINATED\020\003B\271\001\n\"com.goo"
+          + "SUPERSEDED\020\002\022\016\n\nTERMINATED\020\003B\332\001\n\"com.goo"
           + "gle.cloud.securitycenter.v1P\001ZLgoogle.go"
           + "lang.org/genproto/googleapis/cloud/secur"
-          + "itycenter/v1;securitycenter\312\002\036Google\\Clo"
-          + "ud\\SecurityCenter\\V1\352\002!Google::Cloud::Se"
-          + "curityCenter::V1b\006proto3"
+          + "itycenter/v1;securitycenter\252\002\036Google.Clo"
+          + "ud.SecurityCenter.V1\312\002\036Google\\Cloud\\Secu"
+          + "rityCenter\\V1\352\002!Google::Cloud::SecurityC"
+          + "enter::V1b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {

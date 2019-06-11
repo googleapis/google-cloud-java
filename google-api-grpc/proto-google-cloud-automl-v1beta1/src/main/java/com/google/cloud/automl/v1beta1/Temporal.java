@@ -26,9 +26,9 @@ public final class Temporal {
   static {
     java.lang.String[] descriptorData = {
       "\n*google/cloud/automl/v1beta1/temporal.p"
-          + "roto\022\033google.cloud.automl.v1beta1\032\034googl"
-          + "e/api/annotations.proto\032\036google/protobuf"
-          + "/duration.proto\"w\n\013TimeSegment\0224\n\021start_"
+          + "roto\022\033google.cloud.automl.v1beta1\032\036googl"
+          + "e/protobuf/duration.proto\032\034google/api/an"
+          + "notations.proto\"w\n\013TimeSegment\0224\n\021start_"
           + "time_offset\030\001 \001(\0132\031.google.protobuf.Dura"
           + "tion\0222\n\017end_time_offset\030\002 \001(\0132\031.google.p"
           + "rotobuf.DurationB\204\001\n\037com.google.cloud.au"
@@ -47,8 +47,8 @@ public final class Temporal {
     com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
         descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.api.AnnotationsProto.getDescriptor(),
           com.google.protobuf.DurationProto.getDescriptor(),
+          com.google.api.AnnotationsProto.getDescriptor(),
         },
         assigner);
     internal_static_google_cloud_automl_v1beta1_TimeSegment_descriptor =
@@ -59,8 +59,8 @@ public final class Temporal {
             new java.lang.String[] {
               "StartTimeOffset", "EndTimeOffset",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.protobuf.DurationProto.getDescriptor();
+    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

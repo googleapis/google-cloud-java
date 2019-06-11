@@ -7,8 +7,7 @@ package com.google.cloud.redis.v1beta1;
  *
  *
  * <pre>
- * Request for
- * [UpdateInstance][google.cloud.redis.v1beta1.CloudRedis.UpdateInstance].
+ * Request for [UpdateInstance][google.cloud.redis.v1beta1.CloudRedis.UpdateInstance].
  * </pre>
  *
  * Protobuf type {@code google.cloud.redis.v1beta1.UpdateInstanceRequest}
@@ -397,8 +396,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Request for
-   * [UpdateInstance][google.cloud.redis.v1beta1.CloudRedis.UpdateInstance].
+   * Request for [UpdateInstance][google.cloud.redis.v1beta1.CloudRedis.UpdateInstance].
    * </pre>
    *
    * Protobuf type {@code google.cloud.redis.v1beta1.UpdateInstanceRequest}

@@ -220,6 +220,29 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
               modelMetadataCase_ = 20;
               break;
             }
+          case 170:
+            {
+              com.google.cloud.automl.v1beta1.VideoObjectTrackingModelMetadata.Builder subBuilder =
+                  null;
+              if (modelMetadataCase_ == 21) {
+                subBuilder =
+                    ((com.google.cloud.automl.v1beta1.VideoObjectTrackingModelMetadata)
+                            modelMetadata_)
+                        .toBuilder();
+              }
+              modelMetadata_ =
+                  input.readMessage(
+                      com.google.cloud.automl.v1beta1.VideoObjectTrackingModelMetadata.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.cloud.automl.v1beta1.VideoObjectTrackingModelMetadata)
+                        modelMetadata_);
+                modelMetadata_ = subBuilder.buildPartial();
+              }
+              modelMetadataCase_ = 21;
+              break;
+            }
           case 178:
             {
               com.google.cloud.automl.v1beta1.TextSentimentModelMetadata.Builder subBuilder = null;
@@ -473,6 +496,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     TEXT_CLASSIFICATION_MODEL_METADATA(14),
     IMAGE_OBJECT_DETECTION_MODEL_METADATA(20),
     VIDEO_CLASSIFICATION_MODEL_METADATA(23),
+    VIDEO_OBJECT_TRACKING_MODEL_METADATA(21),
     TEXT_EXTRACTION_MODEL_METADATA(19),
     TABLES_MODEL_METADATA(24),
     TEXT_SENTIMENT_MODEL_METADATA(22),
@@ -500,6 +524,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
           return IMAGE_OBJECT_DETECTION_MODEL_METADATA;
         case 23:
           return VIDEO_CLASSIFICATION_MODEL_METADATA;
+        case 21:
+          return VIDEO_OBJECT_TRACKING_MODEL_METADATA;
         case 19:
           return TEXT_EXTRACTION_MODEL_METADATA;
         case 24:
@@ -776,6 +802,58 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       return (com.google.cloud.automl.v1beta1.VideoClassificationModelMetadata) modelMetadata_;
     }
     return com.google.cloud.automl.v1beta1.VideoClassificationModelMetadata.getDefaultInstance();
+  }
+
+  public static final int VIDEO_OBJECT_TRACKING_MODEL_METADATA_FIELD_NUMBER = 21;
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for video object tracking models.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1beta1.VideoObjectTrackingModelMetadata video_object_tracking_model_metadata = 21;
+   * </code>
+   */
+  public boolean hasVideoObjectTrackingModelMetadata() {
+    return modelMetadataCase_ == 21;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for video object tracking models.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1beta1.VideoObjectTrackingModelMetadata video_object_tracking_model_metadata = 21;
+   * </code>
+   */
+  public com.google.cloud.automl.v1beta1.VideoObjectTrackingModelMetadata
+      getVideoObjectTrackingModelMetadata() {
+    if (modelMetadataCase_ == 21) {
+      return (com.google.cloud.automl.v1beta1.VideoObjectTrackingModelMetadata) modelMetadata_;
+    }
+    return com.google.cloud.automl.v1beta1.VideoObjectTrackingModelMetadata.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for video object tracking models.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1beta1.VideoObjectTrackingModelMetadata video_object_tracking_model_metadata = 21;
+   * </code>
+   */
+  public com.google.cloud.automl.v1beta1.VideoObjectTrackingModelMetadataOrBuilder
+      getVideoObjectTrackingModelMetadataOrBuilder() {
+    if (modelMetadataCase_ == 21) {
+      return (com.google.cloud.automl.v1beta1.VideoObjectTrackingModelMetadata) modelMetadata_;
+    }
+    return com.google.cloud.automl.v1beta1.VideoObjectTrackingModelMetadata.getDefaultInstance();
   }
 
   public static final int TEXT_EXTRACTION_MODEL_METADATA_FIELD_NUMBER = 19;
@@ -1077,7 +1155,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only.
-   * Timestamp when this model was created.
+   * Timestamp when the model training finished  and can be used for prediction.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 7;</code>
@@ -1090,7 +1168,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only.
-   * Timestamp when this model was created.
+   * Timestamp when the model training finished  and can be used for prediction.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 7;</code>
@@ -1103,7 +1181,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only.
-   * Timestamp when this model was created.
+   * Timestamp when the model training finished  and can be used for prediction.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 7;</code>
@@ -1242,6 +1320,10 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       output.writeMessage(
           20, (com.google.cloud.automl.v1beta1.ImageObjectDetectionModelMetadata) modelMetadata_);
     }
+    if (modelMetadataCase_ == 21) {
+      output.writeMessage(
+          21, (com.google.cloud.automl.v1beta1.VideoObjectTrackingModelMetadata) modelMetadata_);
+    }
     if (modelMetadataCase_ == 22) {
       output.writeMessage(
           22, (com.google.cloud.automl.v1beta1.TextSentimentModelMetadata) modelMetadata_);
@@ -1309,6 +1391,12 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
               20,
               (com.google.cloud.automl.v1beta1.ImageObjectDetectionModelMetadata) modelMetadata_);
     }
+    if (modelMetadataCase_ == 21) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              21,
+              (com.google.cloud.automl.v1beta1.VideoObjectTrackingModelMetadata) modelMetadata_);
+    }
     if (modelMetadataCase_ == 22) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
@@ -1374,6 +1462,10 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
         if (!getVideoClassificationModelMetadata()
             .equals(other.getVideoClassificationModelMetadata())) return false;
         break;
+      case 21:
+        if (!getVideoObjectTrackingModelMetadata()
+            .equals(other.getVideoObjectTrackingModelMetadata())) return false;
+        break;
       case 19:
         if (!getTextExtractionModelMetadata().equals(other.getTextExtractionModelMetadata()))
           return false;
@@ -1435,6 +1527,10 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       case 23:
         hash = (37 * hash) + VIDEO_CLASSIFICATION_MODEL_METADATA_FIELD_NUMBER;
         hash = (53 * hash) + getVideoClassificationModelMetadata().hashCode();
+        break;
+      case 21:
+        hash = (37 * hash) + VIDEO_OBJECT_TRACKING_MODEL_METADATA_FIELD_NUMBER;
+        hash = (53 * hash) + getVideoObjectTrackingModelMetadata().hashCode();
         break;
       case 19:
         hash = (37 * hash) + TEXT_EXTRACTION_MODEL_METADATA_FIELD_NUMBER;
@@ -1679,6 +1775,13 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
           result.modelMetadata_ = videoClassificationModelMetadataBuilder_.build();
         }
       }
+      if (modelMetadataCase_ == 21) {
+        if (videoObjectTrackingModelMetadataBuilder_ == null) {
+          result.modelMetadata_ = modelMetadata_;
+        } else {
+          result.modelMetadata_ = videoObjectTrackingModelMetadataBuilder_.build();
+        }
+      }
       if (modelMetadataCase_ == 19) {
         if (textExtractionModelMetadataBuilder_ == null) {
           result.modelMetadata_ = modelMetadata_;
@@ -1809,6 +1912,11 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
         case VIDEO_CLASSIFICATION_MODEL_METADATA:
           {
             mergeVideoClassificationModelMetadata(other.getVideoClassificationModelMetadata());
+            break;
+          }
+        case VIDEO_OBJECT_TRACKING_MODEL_METADATA:
+          {
+            mergeVideoObjectTrackingModelMetadata(other.getVideoObjectTrackingModelMetadata());
             break;
           }
         case TEXT_EXTRACTION_MODEL_METADATA:
@@ -3018,6 +3126,238 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.automl.v1beta1.VideoObjectTrackingModelMetadata,
+            com.google.cloud.automl.v1beta1.VideoObjectTrackingModelMetadata.Builder,
+            com.google.cloud.automl.v1beta1.VideoObjectTrackingModelMetadataOrBuilder>
+        videoObjectTrackingModelMetadataBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for video object tracking models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.VideoObjectTrackingModelMetadata video_object_tracking_model_metadata = 21;
+     * </code>
+     */
+    public boolean hasVideoObjectTrackingModelMetadata() {
+      return modelMetadataCase_ == 21;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for video object tracking models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.VideoObjectTrackingModelMetadata video_object_tracking_model_metadata = 21;
+     * </code>
+     */
+    public com.google.cloud.automl.v1beta1.VideoObjectTrackingModelMetadata
+        getVideoObjectTrackingModelMetadata() {
+      if (videoObjectTrackingModelMetadataBuilder_ == null) {
+        if (modelMetadataCase_ == 21) {
+          return (com.google.cloud.automl.v1beta1.VideoObjectTrackingModelMetadata) modelMetadata_;
+        }
+        return com.google.cloud.automl.v1beta1.VideoObjectTrackingModelMetadata
+            .getDefaultInstance();
+      } else {
+        if (modelMetadataCase_ == 21) {
+          return videoObjectTrackingModelMetadataBuilder_.getMessage();
+        }
+        return com.google.cloud.automl.v1beta1.VideoObjectTrackingModelMetadata
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for video object tracking models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.VideoObjectTrackingModelMetadata video_object_tracking_model_metadata = 21;
+     * </code>
+     */
+    public Builder setVideoObjectTrackingModelMetadata(
+        com.google.cloud.automl.v1beta1.VideoObjectTrackingModelMetadata value) {
+      if (videoObjectTrackingModelMetadataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        modelMetadata_ = value;
+        onChanged();
+      } else {
+        videoObjectTrackingModelMetadataBuilder_.setMessage(value);
+      }
+      modelMetadataCase_ = 21;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for video object tracking models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.VideoObjectTrackingModelMetadata video_object_tracking_model_metadata = 21;
+     * </code>
+     */
+    public Builder setVideoObjectTrackingModelMetadata(
+        com.google.cloud.automl.v1beta1.VideoObjectTrackingModelMetadata.Builder builderForValue) {
+      if (videoObjectTrackingModelMetadataBuilder_ == null) {
+        modelMetadata_ = builderForValue.build();
+        onChanged();
+      } else {
+        videoObjectTrackingModelMetadataBuilder_.setMessage(builderForValue.build());
+      }
+      modelMetadataCase_ = 21;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for video object tracking models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.VideoObjectTrackingModelMetadata video_object_tracking_model_metadata = 21;
+     * </code>
+     */
+    public Builder mergeVideoObjectTrackingModelMetadata(
+        com.google.cloud.automl.v1beta1.VideoObjectTrackingModelMetadata value) {
+      if (videoObjectTrackingModelMetadataBuilder_ == null) {
+        if (modelMetadataCase_ == 21
+            && modelMetadata_
+                != com.google.cloud.automl.v1beta1.VideoObjectTrackingModelMetadata
+                    .getDefaultInstance()) {
+          modelMetadata_ =
+              com.google.cloud.automl.v1beta1.VideoObjectTrackingModelMetadata.newBuilder(
+                      (com.google.cloud.automl.v1beta1.VideoObjectTrackingModelMetadata)
+                          modelMetadata_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          modelMetadata_ = value;
+        }
+        onChanged();
+      } else {
+        if (modelMetadataCase_ == 21) {
+          videoObjectTrackingModelMetadataBuilder_.mergeFrom(value);
+        }
+        videoObjectTrackingModelMetadataBuilder_.setMessage(value);
+      }
+      modelMetadataCase_ = 21;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for video object tracking models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.VideoObjectTrackingModelMetadata video_object_tracking_model_metadata = 21;
+     * </code>
+     */
+    public Builder clearVideoObjectTrackingModelMetadata() {
+      if (videoObjectTrackingModelMetadataBuilder_ == null) {
+        if (modelMetadataCase_ == 21) {
+          modelMetadataCase_ = 0;
+          modelMetadata_ = null;
+          onChanged();
+        }
+      } else {
+        if (modelMetadataCase_ == 21) {
+          modelMetadataCase_ = 0;
+          modelMetadata_ = null;
+        }
+        videoObjectTrackingModelMetadataBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for video object tracking models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.VideoObjectTrackingModelMetadata video_object_tracking_model_metadata = 21;
+     * </code>
+     */
+    public com.google.cloud.automl.v1beta1.VideoObjectTrackingModelMetadata.Builder
+        getVideoObjectTrackingModelMetadataBuilder() {
+      return getVideoObjectTrackingModelMetadataFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for video object tracking models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.VideoObjectTrackingModelMetadata video_object_tracking_model_metadata = 21;
+     * </code>
+     */
+    public com.google.cloud.automl.v1beta1.VideoObjectTrackingModelMetadataOrBuilder
+        getVideoObjectTrackingModelMetadataOrBuilder() {
+      if ((modelMetadataCase_ == 21) && (videoObjectTrackingModelMetadataBuilder_ != null)) {
+        return videoObjectTrackingModelMetadataBuilder_.getMessageOrBuilder();
+      } else {
+        if (modelMetadataCase_ == 21) {
+          return (com.google.cloud.automl.v1beta1.VideoObjectTrackingModelMetadata) modelMetadata_;
+        }
+        return com.google.cloud.automl.v1beta1.VideoObjectTrackingModelMetadata
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for video object tracking models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.VideoObjectTrackingModelMetadata video_object_tracking_model_metadata = 21;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.automl.v1beta1.VideoObjectTrackingModelMetadata,
+            com.google.cloud.automl.v1beta1.VideoObjectTrackingModelMetadata.Builder,
+            com.google.cloud.automl.v1beta1.VideoObjectTrackingModelMetadataOrBuilder>
+        getVideoObjectTrackingModelMetadataFieldBuilder() {
+      if (videoObjectTrackingModelMetadataBuilder_ == null) {
+        if (!(modelMetadataCase_ == 21)) {
+          modelMetadata_ =
+              com.google.cloud.automl.v1beta1.VideoObjectTrackingModelMetadata.getDefaultInstance();
+        }
+        videoObjectTrackingModelMetadataBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.automl.v1beta1.VideoObjectTrackingModelMetadata,
+                com.google.cloud.automl.v1beta1.VideoObjectTrackingModelMetadata.Builder,
+                com.google.cloud.automl.v1beta1.VideoObjectTrackingModelMetadataOrBuilder>(
+                (com.google.cloud.automl.v1beta1.VideoObjectTrackingModelMetadata) modelMetadata_,
+                getParentForChildren(),
+                isClean());
+        modelMetadata_ = null;
+      }
+      modelMetadataCase_ = 21;
+      onChanged();
+      ;
+      return videoObjectTrackingModelMetadataBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.automl.v1beta1.TextExtractionModelMetadata,
             com.google.cloud.automl.v1beta1.TextExtractionModelMetadata.Builder,
             com.google.cloud.automl.v1beta1.TextExtractionModelMetadataOrBuilder>
@@ -4008,7 +4348,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only.
-     * Timestamp when this model was created.
+     * Timestamp when the model training finished  and can be used for prediction.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 7;</code>
@@ -4021,7 +4361,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only.
-     * Timestamp when this model was created.
+     * Timestamp when the model training finished  and can be used for prediction.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 7;</code>
@@ -4040,7 +4380,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only.
-     * Timestamp when this model was created.
+     * Timestamp when the model training finished  and can be used for prediction.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 7;</code>
@@ -4063,7 +4403,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only.
-     * Timestamp when this model was created.
+     * Timestamp when the model training finished  and can be used for prediction.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 7;</code>
@@ -4083,7 +4423,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only.
-     * Timestamp when this model was created.
+     * Timestamp when the model training finished  and can be used for prediction.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 7;</code>
@@ -4108,7 +4448,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only.
-     * Timestamp when this model was created.
+     * Timestamp when the model training finished  and can be used for prediction.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 7;</code>
@@ -4129,7 +4469,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only.
-     * Timestamp when this model was created.
+     * Timestamp when the model training finished  and can be used for prediction.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 7;</code>
@@ -4144,7 +4484,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only.
-     * Timestamp when this model was created.
+     * Timestamp when the model training finished  and can be used for prediction.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 7;</code>
@@ -4163,7 +4503,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only.
-     * Timestamp when this model was created.
+     * Timestamp when the model training finished  and can be used for prediction.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 7;</code>

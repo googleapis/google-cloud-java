@@ -7,7 +7,7 @@ package com.google.cloud.automl.v1beta1;
  *
  *
  * <pre>
- * Model metadata that is specific to text classification.
+ * Model metadata that is specific to text sentiment.
  * </pre>
  *
  * Protobuf type {@code google.cloud.automl.v1beta1.TextSentimentModelMetadata}
@@ -236,7 +236,7 @@ public final class TextSentimentModelMetadata extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Model metadata that is specific to text classification.
+   * Model metadata that is specific to text sentiment.
    * </pre>
    *
    * Protobuf type {@code google.cloud.automl.v1beta1.TextSentimentModelMetadata}

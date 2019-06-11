@@ -31,7 +31,7 @@ pushd $(dirname "$0")/../../
 python3 -m pip install gcp-docuploader
 
 # compile all packages
-mvn clean install -B -DskipTests=true
+mvn clean install -B -DskipTests=true -T 1C
 
 build_and_publish_site() {
   DIRECTORY=$1
@@ -41,8 +41,8 @@ build_and_publish_site() {
   pushd ${DIRECTORY}
 
   # build the docs
-  mvn site
-  mvn site:stage -DtopSiteURL=https://googleapis.dev/java/${NAME}/${VERSION}
+  mvn site -B
+  mvn site:stage -B -DtopSiteURL=https://googleapis.dev/java/${NAME}/${VERSION}
 
   pushd target/staging/site/${NAME}/apidocs
 

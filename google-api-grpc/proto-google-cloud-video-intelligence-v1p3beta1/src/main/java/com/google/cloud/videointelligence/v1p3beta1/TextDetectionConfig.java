@@ -24,6 +24,7 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
 
   private TextDetectionConfig() {
     languageHints_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    model_ = "";
   }
 
   @java.lang.Override
@@ -58,6 +59,13 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
                 mutable_bitField0_ |= 0x00000001;
               }
               languageHints_.add(s);
+              break;
+            }
+          case 18:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              model_ = s;
               break;
             }
           default:
@@ -97,6 +105,7 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
             com.google.cloud.videointelligence.v1p3beta1.TextDetectionConfig.Builder.class);
   }
 
+  private int bitField0_;
   public static final int LANGUAGE_HINTS_FIELD_NUMBER = 1;
   private com.google.protobuf.LazyStringList languageHints_;
   /**
@@ -160,6 +169,53 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
     return languageHints_.getByteString(index);
   }
 
+  public static final int MODEL_FIELD_NUMBER = 2;
+  private volatile java.lang.Object model_;
+  /**
+   *
+   *
+   * <pre>
+   * Model to use for text detection.
+   * Supported values: "builtin/stable" (the default if unset) and
+   * "builtin/latest".
+   * </pre>
+   *
+   * <code>string model = 2;</code>
+   */
+  public java.lang.String getModel() {
+    java.lang.Object ref = model_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      model_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Model to use for text detection.
+   * Supported values: "builtin/stable" (the default if unset) and
+   * "builtin/latest".
+   * </pre>
+   *
+   * <code>string model = 2;</code>
+   */
+  public com.google.protobuf.ByteString getModelBytes() {
+    java.lang.Object ref = model_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      model_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -176,6 +232,9 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     for (int i = 0; i < languageHints_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, languageHints_.getRaw(i));
+    }
+    if (!getModelBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, model_);
     }
     unknownFields.writeTo(output);
   }
@@ -194,6 +253,9 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
       size += dataSize;
       size += 1 * getLanguageHintsList().size();
     }
+    if (!getModelBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, model_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -211,6 +273,7 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
         (com.google.cloud.videointelligence.v1p3beta1.TextDetectionConfig) obj;
 
     if (!getLanguageHintsList().equals(other.getLanguageHintsList())) return false;
+    if (!getModel().equals(other.getModel())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -226,6 +289,8 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
       hash = (37 * hash) + LANGUAGE_HINTS_FIELD_NUMBER;
       hash = (53 * hash) + getLanguageHintsList().hashCode();
     }
+    hash = (37 * hash) + MODEL_FIELD_NUMBER;
+    hash = (53 * hash) + getModel().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -374,6 +439,8 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
       super.clear();
       languageHints_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
+      model_ = "";
+
       return this;
     }
 
@@ -403,11 +470,14 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
       com.google.cloud.videointelligence.v1p3beta1.TextDetectionConfig result =
           new com.google.cloud.videointelligence.v1p3beta1.TextDetectionConfig(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (((bitField0_ & 0x00000001) != 0)) {
         languageHints_ = languageHints_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.languageHints_ = languageHints_;
+      result.model_ = model_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -468,6 +538,10 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
           ensureLanguageHintsIsMutable();
           languageHints_.addAll(other.languageHints_);
         }
+        onChanged();
+      }
+      if (!other.getModel().isEmpty()) {
+        model_ = other.model_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -669,6 +743,110 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
       checkByteStringIsUtf8(value);
       ensureLanguageHintsIsMutable();
       languageHints_.add(value);
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object model_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Model to use for text detection.
+     * Supported values: "builtin/stable" (the default if unset) and
+     * "builtin/latest".
+     * </pre>
+     *
+     * <code>string model = 2;</code>
+     */
+    public java.lang.String getModel() {
+      java.lang.Object ref = model_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        model_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Model to use for text detection.
+     * Supported values: "builtin/stable" (the default if unset) and
+     * "builtin/latest".
+     * </pre>
+     *
+     * <code>string model = 2;</code>
+     */
+    public com.google.protobuf.ByteString getModelBytes() {
+      java.lang.Object ref = model_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        model_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Model to use for text detection.
+     * Supported values: "builtin/stable" (the default if unset) and
+     * "builtin/latest".
+     * </pre>
+     *
+     * <code>string model = 2;</code>
+     */
+    public Builder setModel(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      model_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Model to use for text detection.
+     * Supported values: "builtin/stable" (the default if unset) and
+     * "builtin/latest".
+     * </pre>
+     *
+     * <code>string model = 2;</code>
+     */
+    public Builder clearModel() {
+
+      model_ = getDefaultInstance().getModel();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Model to use for text detection.
+     * Supported values: "builtin/stable" (the default if unset) and
+     * "builtin/latest".
+     * </pre>
+     *
+     * <code>string model = 2;</code>
+     */
+    public Builder setModelBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      model_ = value;
       onChanged();
       return this;
     }

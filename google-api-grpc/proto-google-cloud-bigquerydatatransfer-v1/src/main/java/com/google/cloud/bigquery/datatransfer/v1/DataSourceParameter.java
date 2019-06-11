@@ -291,7 +291,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Record parameter.
+     * Deprecated. This field has no effect.
      * </pre>
      *
      * <code>RECORD = 5;</code>
@@ -365,7 +365,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Record parameter.
+     * Deprecated. This field has no effect.
      * </pre>
      *
      * <code>RECORD = 5;</code>
@@ -646,7 +646,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Can parameter have multiple values.
+   * Deprecated. This field has no effect.
    * </pre>
    *
    * <code>bool repeated = 6;</code>
@@ -833,7 +833,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * When parameter is a record, describes child fields.
+   * Deprecated. This field has no effect.
    * </pre>
    *
    * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter fields = 11;</code>
@@ -846,7 +846,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * When parameter is a record, describes child fields.
+   * Deprecated. This field has no effect.
    * </pre>
    *
    * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter fields = 11;</code>
@@ -860,7 +860,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * When parameter is a record, describes child fields.
+   * Deprecated. This field has no effect.
    * </pre>
    *
    * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter fields = 11;</code>
@@ -872,7 +872,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * When parameter is a record, describes child fields.
+   * Deprecated. This field has no effect.
    * </pre>
    *
    * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter fields = 11;</code>
@@ -884,7 +884,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * When parameter is a record, describes child fields.
+   * Deprecated. This field has no effect.
    * </pre>
    *
    * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter fields = 11;</code>
@@ -1003,8 +1003,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * If set to true, schema should be taken from the parent with the same
-   * parameter_id. Only applicable when parameter type is RECORD.
+   * Deprecated. This field has no effect.
    * </pre>
    *
    * <code>bool recurse = 15;</code>
@@ -2058,7 +2057,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Can parameter have multiple values.
+     * Deprecated. This field has no effect.
      * </pre>
      *
      * <code>bool repeated = 6;</code>
@@ -2070,7 +2069,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Can parameter have multiple values.
+     * Deprecated. This field has no effect.
      * </pre>
      *
      * <code>bool repeated = 6;</code>
@@ -2085,7 +2084,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Can parameter have multiple values.
+     * Deprecated. This field has no effect.
      * </pre>
      *
      * <code>bool repeated = 6;</code>
@@ -2706,7 +2705,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * When parameter is a record, describes child fields.
+     * Deprecated. This field has no effect.
      * </pre>
      *
      * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter fields = 11;</code>
@@ -2723,7 +2722,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * When parameter is a record, describes child fields.
+     * Deprecated. This field has no effect.
      * </pre>
      *
      * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter fields = 11;</code>
@@ -2739,7 +2738,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * When parameter is a record, describes child fields.
+     * Deprecated. This field has no effect.
      * </pre>
      *
      * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter fields = 11;</code>
@@ -2755,7 +2754,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * When parameter is a record, describes child fields.
+     * Deprecated. This field has no effect.
      * </pre>
      *
      * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter fields = 11;</code>
@@ -2778,7 +2777,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * When parameter is a record, describes child fields.
+     * Deprecated. This field has no effect.
      * </pre>
      *
      * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter fields = 11;</code>
@@ -2799,7 +2798,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * When parameter is a record, describes child fields.
+     * Deprecated. This field has no effect.
      * </pre>
      *
      * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter fields = 11;</code>
@@ -2821,7 +2820,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * When parameter is a record, describes child fields.
+     * Deprecated. This field has no effect.
      * </pre>
      *
      * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter fields = 11;</code>
@@ -2844,7 +2843,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * When parameter is a record, describes child fields.
+     * Deprecated. This field has no effect.
      * </pre>
      *
      * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter fields = 11;</code>
@@ -2864,7 +2863,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * When parameter is a record, describes child fields.
+     * Deprecated. This field has no effect.
      * </pre>
      *
      * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter fields = 11;</code>
@@ -2885,7 +2884,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * When parameter is a record, describes child fields.
+     * Deprecated. This field has no effect.
      * </pre>
      *
      * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter fields = 11;</code>
@@ -2906,7 +2905,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * When parameter is a record, describes child fields.
+     * Deprecated. This field has no effect.
      * </pre>
      *
      * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter fields = 11;</code>
@@ -2925,7 +2924,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * When parameter is a record, describes child fields.
+     * Deprecated. This field has no effect.
      * </pre>
      *
      * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter fields = 11;</code>
@@ -2944,7 +2943,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * When parameter is a record, describes child fields.
+     * Deprecated. This field has no effect.
      * </pre>
      *
      * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter fields = 11;</code>
@@ -2957,7 +2956,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * When parameter is a record, describes child fields.
+     * Deprecated. This field has no effect.
      * </pre>
      *
      * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter fields = 11;</code>
@@ -2974,7 +2973,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * When parameter is a record, describes child fields.
+     * Deprecated. This field has no effect.
      * </pre>
      *
      * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter fields = 11;</code>
@@ -2992,7 +2991,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * When parameter is a record, describes child fields.
+     * Deprecated. This field has no effect.
      * </pre>
      *
      * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter fields = 11;</code>
@@ -3007,7 +3006,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * When parameter is a record, describes child fields.
+     * Deprecated. This field has no effect.
      * </pre>
      *
      * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter fields = 11;</code>
@@ -3023,7 +3022,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * When parameter is a record, describes child fields.
+     * Deprecated. This field has no effect.
      * </pre>
      *
      * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter fields = 11;</code>
@@ -3292,8 +3291,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * If set to true, schema should be taken from the parent with the same
-     * parameter_id. Only applicable when parameter type is RECORD.
+     * Deprecated. This field has no effect.
      * </pre>
      *
      * <code>bool recurse = 15;</code>
@@ -3305,8 +3303,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * If set to true, schema should be taken from the parent with the same
-     * parameter_id. Only applicable when parameter type is RECORD.
+     * Deprecated. This field has no effect.
      * </pre>
      *
      * <code>bool recurse = 15;</code>
@@ -3321,8 +3318,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * If set to true, schema should be taken from the parent with the same
-     * parameter_id. Only applicable when parameter type is RECORD.
+     * Deprecated. This field has no effect.
      * </pre>
      *
      * <code>bool recurse = 15;</code>

@@ -331,7 +331,8 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
    * * tf_saved_model - A tensorflow model in SavedModel format.
    * * docker - Used for Docker containers. Use the params field to customize
    *            the container. The container is verified to work correctly on
-   *            ubuntu 16.04 operating system.
+   *            ubuntu 16.04 operating system. See more at
+   *            [containers quickstart](https://cloud.google.com/vision/automl/docs/containers-gcs-quickstart)
    * * core_ml - Used for iOS mobile devices.
    * </pre>
    *
@@ -369,7 +370,8 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
    * * tf_saved_model - A tensorflow model in SavedModel format.
    * * docker - Used for Docker containers. Use the params field to customize
    *            the container. The container is verified to work correctly on
-   *            ubuntu 16.04 operating system.
+   *            ubuntu 16.04 operating system. See more at
+   *            [containers quickstart](https://cloud.google.com/vision/automl/docs/containers-gcs-quickstart)
    * * core_ml - Used for iOS mobile devices.
    * </pre>
    *
@@ -1469,7 +1471,8 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
      * * tf_saved_model - A tensorflow model in SavedModel format.
      * * docker - Used for Docker containers. Use the params field to customize
      *            the container. The container is verified to work correctly on
-     *            ubuntu 16.04 operating system.
+     *            ubuntu 16.04 operating system. See more at
+     *            [containers quickstart](https://cloud.google.com/vision/automl/docs/containers-gcs-quickstart)
      * * core_ml - Used for iOS mobile devices.
      * </pre>
      *
@@ -1507,7 +1510,8 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
      * * tf_saved_model - A tensorflow model in SavedModel format.
      * * docker - Used for Docker containers. Use the params field to customize
      *            the container. The container is verified to work correctly on
-     *            ubuntu 16.04 operating system.
+     *            ubuntu 16.04 operating system. See more at
+     *            [containers quickstart](https://cloud.google.com/vision/automl/docs/containers-gcs-quickstart)
      * * core_ml - Used for iOS mobile devices.
      * </pre>
      *
@@ -1545,7 +1549,8 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
      * * tf_saved_model - A tensorflow model in SavedModel format.
      * * docker - Used for Docker containers. Use the params field to customize
      *            the container. The container is verified to work correctly on
-     *            ubuntu 16.04 operating system.
+     *            ubuntu 16.04 operating system. See more at
+     *            [containers quickstart](https://cloud.google.com/vision/automl/docs/containers-gcs-quickstart)
      * * core_ml - Used for iOS mobile devices.
      * </pre>
      *
@@ -1581,7 +1586,8 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
      * * tf_saved_model - A tensorflow model in SavedModel format.
      * * docker - Used for Docker containers. Use the params field to customize
      *            the container. The container is verified to work correctly on
-     *            ubuntu 16.04 operating system.
+     *            ubuntu 16.04 operating system. See more at
+     *            [containers quickstart](https://cloud.google.com/vision/automl/docs/containers-gcs-quickstart)
      * * core_ml - Used for iOS mobile devices.
      * </pre>
      *
@@ -1614,7 +1620,8 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
      * * tf_saved_model - A tensorflow model in SavedModel format.
      * * docker - Used for Docker containers. Use the params field to customize
      *            the container. The container is verified to work correctly on
-     *            ubuntu 16.04 operating system.
+     *            ubuntu 16.04 operating system. See more at
+     *            [containers quickstart](https://cloud.google.com/vision/automl/docs/containers-gcs-quickstart)
      * * core_ml - Used for iOS mobile devices.
      * </pre>
      *

@@ -34,9 +34,12 @@ import com.google.cloud.bigquery.datatransfer.v1.CreateTransferConfigRequest;
 import com.google.cloud.bigquery.datatransfer.v1.DataSource;
 import com.google.cloud.bigquery.datatransfer.v1.DeleteTransferConfigRequest;
 import com.google.cloud.bigquery.datatransfer.v1.DeleteTransferRunRequest;
+import com.google.cloud.bigquery.datatransfer.v1.EnableDataTransferServiceRequest;
 import com.google.cloud.bigquery.datatransfer.v1.GetDataSourceRequest;
 import com.google.cloud.bigquery.datatransfer.v1.GetTransferConfigRequest;
 import com.google.cloud.bigquery.datatransfer.v1.GetTransferRunRequest;
+import com.google.cloud.bigquery.datatransfer.v1.IsDataTransferServiceEnabledRequest;
+import com.google.cloud.bigquery.datatransfer.v1.IsDataTransferServiceEnabledResponse;
 import com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesRequest;
 import com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesResponse;
 import com.google.cloud.bigquery.datatransfer.v1.ListTransferConfigsRequest;
@@ -47,6 +50,8 @@ import com.google.cloud.bigquery.datatransfer.v1.ListTransferRunsRequest;
 import com.google.cloud.bigquery.datatransfer.v1.ListTransferRunsResponse;
 import com.google.cloud.bigquery.datatransfer.v1.ScheduleTransferRunsRequest;
 import com.google.cloud.bigquery.datatransfer.v1.ScheduleTransferRunsResponse;
+import com.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsRequest;
+import com.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsResponse;
 import com.google.cloud.bigquery.datatransfer.v1.TransferConfig;
 import com.google.cloud.bigquery.datatransfer.v1.TransferRun;
 import com.google.cloud.bigquery.datatransfer.v1.UpdateTransferConfigRequest;
@@ -205,6 +210,43 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(CheckValidCredsResponse.getDefaultInstance()))
               .build();
+  private static final MethodDescriptor<
+          StartManualTransferRunsRequest, StartManualTransferRunsResponse>
+      startManualTransferRunsMethodDescriptor =
+          MethodDescriptor
+              .<StartManualTransferRunsRequest, StartManualTransferRunsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.bigquery.datatransfer.v1.DataTransferService/StartManualTransferRuns")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(StartManualTransferRunsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(StartManualTransferRunsResponse.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<EnableDataTransferServiceRequest, Empty>
+      enableDataTransferServiceMethodDescriptor =
+          MethodDescriptor.<EnableDataTransferServiceRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.bigquery.datatransfer.v1.DataTransferService/EnableDataTransferService")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(EnableDataTransferServiceRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<
+          IsDataTransferServiceEnabledRequest, IsDataTransferServiceEnabledResponse>
+      isDataTransferServiceEnabledMethodDescriptor =
+          MethodDescriptor
+              .<IsDataTransferServiceEnabledRequest, IsDataTransferServiceEnabledResponse>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.bigquery.datatransfer.v1.DataTransferService/IsDataTransferServiceEnabled")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(IsDataTransferServiceEnabledRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(IsDataTransferServiceEnabledResponse.getDefaultInstance()))
+              .build();
 
   private final BackgroundResource backgroundResources;
 
@@ -237,6 +279,13 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
       listTransferLogsPagedCallable;
   private final UnaryCallable<CheckValidCredsRequest, CheckValidCredsResponse>
       checkValidCredsCallable;
+  private final UnaryCallable<StartManualTransferRunsRequest, StartManualTransferRunsResponse>
+      startManualTransferRunsCallable;
+  private final UnaryCallable<EnableDataTransferServiceRequest, Empty>
+      enableDataTransferServiceCallable;
+  private final UnaryCallable<
+          IsDataTransferServiceEnabledRequest, IsDataTransferServiceEnabledResponse>
+      isDataTransferServiceEnabledCallable;
 
   private final GrpcStubCallableFactory callableFactory;
 
@@ -458,6 +507,52 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
                       }
                     })
                 .build();
+    GrpcCallSettings<StartManualTransferRunsRequest, StartManualTransferRunsResponse>
+        startManualTransferRunsTransportSettings =
+            GrpcCallSettings
+                .<StartManualTransferRunsRequest, StartManualTransferRunsResponse>newBuilder()
+                .setMethodDescriptor(startManualTransferRunsMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<StartManualTransferRunsRequest>() {
+                      @Override
+                      public Map<String, String> extract(StartManualTransferRunsRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("parent", String.valueOf(request.getParent()));
+                        return params.build();
+                      }
+                    })
+                .build();
+    GrpcCallSettings<EnableDataTransferServiceRequest, Empty>
+        enableDataTransferServiceTransportSettings =
+            GrpcCallSettings.<EnableDataTransferServiceRequest, Empty>newBuilder()
+                .setMethodDescriptor(enableDataTransferServiceMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<EnableDataTransferServiceRequest>() {
+                      @Override
+                      public Map<String, String> extract(EnableDataTransferServiceRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("name", String.valueOf(request.getName()));
+                        return params.build();
+                      }
+                    })
+                .build();
+    GrpcCallSettings<IsDataTransferServiceEnabledRequest, IsDataTransferServiceEnabledResponse>
+        isDataTransferServiceEnabledTransportSettings =
+            GrpcCallSettings
+                .<IsDataTransferServiceEnabledRequest, IsDataTransferServiceEnabledResponse>
+                    newBuilder()
+                .setMethodDescriptor(isDataTransferServiceEnabledMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<IsDataTransferServiceEnabledRequest>() {
+                      @Override
+                      public Map<String, String> extract(
+                          IsDataTransferServiceEnabledRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("name", String.valueOf(request.getName()));
+                        return params.build();
+                      }
+                    })
+                .build();
 
     this.getDataSourceCallable =
         callableFactory.createUnaryCallable(
@@ -526,6 +621,21 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
     this.checkValidCredsCallable =
         callableFactory.createUnaryCallable(
             checkValidCredsTransportSettings, settings.checkValidCredsSettings(), clientContext);
+    this.startManualTransferRunsCallable =
+        callableFactory.createUnaryCallable(
+            startManualTransferRunsTransportSettings,
+            settings.startManualTransferRunsSettings(),
+            clientContext);
+    this.enableDataTransferServiceCallable =
+        callableFactory.createUnaryCallable(
+            enableDataTransferServiceTransportSettings,
+            settings.enableDataTransferServiceSettings(),
+            clientContext);
+    this.isDataTransferServiceEnabledCallable =
+        callableFactory.createUnaryCallable(
+            isDataTransferServiceEnabledTransportSettings,
+            settings.isDataTransferServiceEnabledSettings(),
+            clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
@@ -604,6 +714,21 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
 
   public UnaryCallable<CheckValidCredsRequest, CheckValidCredsResponse> checkValidCredsCallable() {
     return checkValidCredsCallable;
+  }
+
+  public UnaryCallable<StartManualTransferRunsRequest, StartManualTransferRunsResponse>
+      startManualTransferRunsCallable() {
+    return startManualTransferRunsCallable;
+  }
+
+  public UnaryCallable<EnableDataTransferServiceRequest, Empty>
+      enableDataTransferServiceCallable() {
+    return enableDataTransferServiceCallable;
+  }
+
+  public UnaryCallable<IsDataTransferServiceEnabledRequest, IsDataTransferServiceEnabledResponse>
+      isDataTransferServiceEnabledCallable() {
+    return isDataTransferServiceEnabledCallable;
   }
 
   @Override

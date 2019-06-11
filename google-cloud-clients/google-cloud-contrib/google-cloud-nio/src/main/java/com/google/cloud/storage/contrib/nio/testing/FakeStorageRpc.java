@@ -163,6 +163,7 @@ class FakeStorageRpc implements StorageRpc {
       if (processedAsFolder(so, delimiter, prefix, folders)) {
         continue;
       }
+      so.setSize(size(so));
       values.add(so);
     }
     values.addAll(folders.values());
@@ -205,9 +206,7 @@ class FakeStorageRpc implements StorageRpc {
     String key = fullname(object);
     if (metadata.containsKey(key)) {
       StorageObject ret = metadata.get(key);
-      if (contents.containsKey(key)) {
-        ret.setSize(BigInteger.valueOf(contents.get(key).length));
-      }
+      ret.setSize(size(ret));
       ret.setId(key);
 
       return ret;
@@ -474,6 +473,16 @@ class FakeStorageRpc implements StorageRpc {
     return (so.getBucket() + "/" + so.getName());
   }
 
+  private BigInteger size(StorageObject so) {
+    String key = fullname(so);
+
+    if (contents.containsKey(key)) {
+      return BigInteger.valueOf(contents.get(key).length);
+    }
+
+    return null;
+  }
+
   private void potentiallyThrow(Map<Option, ?> options) throws UnsupportedOperationException {
     if (throwIfOption && !options.isEmpty()) {
       throw new UnsupportedOperationException();
@@ -525,6 +534,7 @@ class FakeStorageRpc implements StorageRpc {
     fakeFolder.setBucket(so.getBucket());
     fakeFolder.setGeneration(so.getGeneration());
     fakeFolder.set("isDirectory", true);
+    fakeFolder.setSize(BigInteger.ZERO);
     folders.put(folderName, fakeFolder);
     return true;
   }

@@ -22,6 +22,7 @@ import com.google.api.core.ApiFutures;
 import com.google.cloud.firestore.UserDataConverter.EncodingOptions;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
+import com.google.common.util.concurrent.MoreExecutors;
 import com.google.firestore.v1.CommitRequest;
 import com.google.firestore.v1.CommitResponse;
 import com.google.firestore.v1.Write;
@@ -657,7 +658,8 @@ public abstract class UpdateBuilder<T extends UpdateBuilder> {
 
             return result;
           }
-        });
+        },
+        MoreExecutors.directExecutor());
   }
 
   /** Checks whether any updates have been queued. */

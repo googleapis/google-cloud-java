@@ -7,41 +7,13 @@ package com.google.cloud.automl.v1beta1;
  *
  *
  * <pre>
- * Output configuration for ExportData.
- * As destination the
- * [gcs_destination][google.cloud.automl.v1beta1.OutputConfig.gcs_destination]
- * must be set unless specified otherwise for a domain.
- * Only ground truth annotations are exported (not approved annotations are
- * not exported).
- * The outputs correspond to how the data was imported, and may be used as
- * input to import data. The output formats are represented as EBNF with literal
- * commas and same non-terminal symbols definitions are these in import data's
- * [InputConfig][google.cloud.automl.v1beta1.InputConfig]:
- *  *  For Image Object Detection:
- *         CSV file(s) `image_object_detection_1.csv`,
- *         `image_object_detection_2.csv`,...,`image_object_detection_N.csv`
- *         with each line in format:
- *         ML_USE,GCS_FILE_PATH,LABEL,BOUNDING_BOX
- *         where GCS_FILE_PATHs point at the original, source locations of the
- *         imported images.
- *  *  For Video Classification:
- *         CSV file `video_classification.csv`, with each line in format:
+ * *  For Translation:
+ *         CSV file `translation.csv`, with each line in format:
  *         ML_USE,GCS_FILE_PATH
- *         (may have muliple lines per a single ML_USE).
- *         Each GCS_FILE_PATH leads to another .csv file which
- *         describes examples that have given ML_USE, using the following
- *         row format:
- *         GCS_FILE_PATH,LABEL,TIME_SEGMENT_START,TIME_SEGMENT_END
- *         Here GCS_FILE_PATHs point at the original, source locations of the
- *         imported videos.
- *  *  For Text Extraction:
- *         CSV file `text_extraction.csv`, with each line in format:
- *         ML_USE,GCS_FILE_PATH
- *         GCS_FILE_PATH leads to a .JSONL (i.e. JSON Lines) file which
- *         contains, per line, a proto that wraps a TextSnippet proto (in json
- *         representation) followed by AnnotationPayload protos (called
- *         annotations). If initially documents had been imported, corresponding
- *         OCR-ed representation is returned.
+ *         GCS_FILE_PATH leads to a .TSV file which describes examples that have
+ *         given ML_USE, using the following row format per line:
+ *         TEXT_SNIPPET (in source language) &#92;t TEXT_SNIPPET (in target
+ *         language)
  *   *  For Tables:
  *         Output depends on whether the dataset was imported from GCS or
  *         BigQuery.
@@ -221,9 +193,9 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
    * The Google Cloud Storage location where the output is to be written to.
    * For Image Object Detection, Text Extraction, Video Classification and
    * Tables, in the given directory a new directory will be created with name:
-   * export_data-&lt;dataset-display-name&gt;-&lt;timestamp-of-export-call&gt;
-   * where timestamp is in YYYY-MM-DDThh:mm:ss.sssZ ISO-8601 format. All
-   * export output will be written into that directory.
+   * export_data-&lt;dataset-display-name&gt;-&lt;timestamp-of-export-call&gt; where
+   * timestamp is in YYYY-MM-DDThh:mm:ss.sssZ ISO-8601 format. All export
+   * output will be written into that directory.
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.GcsDestination gcs_destination = 1;</code>
@@ -238,9 +210,9 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
    * The Google Cloud Storage location where the output is to be written to.
    * For Image Object Detection, Text Extraction, Video Classification and
    * Tables, in the given directory a new directory will be created with name:
-   * export_data-&lt;dataset-display-name&gt;-&lt;timestamp-of-export-call&gt;
-   * where timestamp is in YYYY-MM-DDThh:mm:ss.sssZ ISO-8601 format. All
-   * export output will be written into that directory.
+   * export_data-&lt;dataset-display-name&gt;-&lt;timestamp-of-export-call&gt; where
+   * timestamp is in YYYY-MM-DDThh:mm:ss.sssZ ISO-8601 format. All export
+   * output will be written into that directory.
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.GcsDestination gcs_destination = 1;</code>
@@ -258,9 +230,9 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
    * The Google Cloud Storage location where the output is to be written to.
    * For Image Object Detection, Text Extraction, Video Classification and
    * Tables, in the given directory a new directory will be created with name:
-   * export_data-&lt;dataset-display-name&gt;-&lt;timestamp-of-export-call&gt;
-   * where timestamp is in YYYY-MM-DDThh:mm:ss.sssZ ISO-8601 format. All
-   * export output will be written into that directory.
+   * export_data-&lt;dataset-display-name&gt;-&lt;timestamp-of-export-call&gt; where
+   * timestamp is in YYYY-MM-DDThh:mm:ss.sssZ ISO-8601 format. All export
+   * output will be written into that directory.
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.GcsDestination gcs_destination = 1;</code>
@@ -510,41 +482,13 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output configuration for ExportData.
-   * As destination the
-   * [gcs_destination][google.cloud.automl.v1beta1.OutputConfig.gcs_destination]
-   * must be set unless specified otherwise for a domain.
-   * Only ground truth annotations are exported (not approved annotations are
-   * not exported).
-   * The outputs correspond to how the data was imported, and may be used as
-   * input to import data. The output formats are represented as EBNF with literal
-   * commas and same non-terminal symbols definitions are these in import data's
-   * [InputConfig][google.cloud.automl.v1beta1.InputConfig]:
-   *  *  For Image Object Detection:
-   *         CSV file(s) `image_object_detection_1.csv`,
-   *         `image_object_detection_2.csv`,...,`image_object_detection_N.csv`
-   *         with each line in format:
-   *         ML_USE,GCS_FILE_PATH,LABEL,BOUNDING_BOX
-   *         where GCS_FILE_PATHs point at the original, source locations of the
-   *         imported images.
-   *  *  For Video Classification:
-   *         CSV file `video_classification.csv`, with each line in format:
+   * *  For Translation:
+   *         CSV file `translation.csv`, with each line in format:
    *         ML_USE,GCS_FILE_PATH
-   *         (may have muliple lines per a single ML_USE).
-   *         Each GCS_FILE_PATH leads to another .csv file which
-   *         describes examples that have given ML_USE, using the following
-   *         row format:
-   *         GCS_FILE_PATH,LABEL,TIME_SEGMENT_START,TIME_SEGMENT_END
-   *         Here GCS_FILE_PATHs point at the original, source locations of the
-   *         imported videos.
-   *  *  For Text Extraction:
-   *         CSV file `text_extraction.csv`, with each line in format:
-   *         ML_USE,GCS_FILE_PATH
-   *         GCS_FILE_PATH leads to a .JSONL (i.e. JSON Lines) file which
-   *         contains, per line, a proto that wraps a TextSnippet proto (in json
-   *         representation) followed by AnnotationPayload protos (called
-   *         annotations). If initially documents had been imported, corresponding
-   *         OCR-ed representation is returned.
+   *         GCS_FILE_PATH leads to a .TSV file which describes examples that have
+   *         given ML_USE, using the following row format per line:
+   *         TEXT_SNIPPET (in source language) &#92;t TEXT_SNIPPET (in target
+   *         language)
    *   *  For Tables:
    *         Output depends on whether the dataset was imported from GCS or
    *         BigQuery.
@@ -769,9 +713,9 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
      * The Google Cloud Storage location where the output is to be written to.
      * For Image Object Detection, Text Extraction, Video Classification and
      * Tables, in the given directory a new directory will be created with name:
-     * export_data-&lt;dataset-display-name&gt;-&lt;timestamp-of-export-call&gt;
-     * where timestamp is in YYYY-MM-DDThh:mm:ss.sssZ ISO-8601 format. All
-     * export output will be written into that directory.
+     * export_data-&lt;dataset-display-name&gt;-&lt;timestamp-of-export-call&gt; where
+     * timestamp is in YYYY-MM-DDThh:mm:ss.sssZ ISO-8601 format. All export
+     * output will be written into that directory.
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.GcsDestination gcs_destination = 1;</code>
@@ -786,9 +730,9 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
      * The Google Cloud Storage location where the output is to be written to.
      * For Image Object Detection, Text Extraction, Video Classification and
      * Tables, in the given directory a new directory will be created with name:
-     * export_data-&lt;dataset-display-name&gt;-&lt;timestamp-of-export-call&gt;
-     * where timestamp is in YYYY-MM-DDThh:mm:ss.sssZ ISO-8601 format. All
-     * export output will be written into that directory.
+     * export_data-&lt;dataset-display-name&gt;-&lt;timestamp-of-export-call&gt; where
+     * timestamp is in YYYY-MM-DDThh:mm:ss.sssZ ISO-8601 format. All export
+     * output will be written into that directory.
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.GcsDestination gcs_destination = 1;</code>
@@ -813,9 +757,9 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
      * The Google Cloud Storage location where the output is to be written to.
      * For Image Object Detection, Text Extraction, Video Classification and
      * Tables, in the given directory a new directory will be created with name:
-     * export_data-&lt;dataset-display-name&gt;-&lt;timestamp-of-export-call&gt;
-     * where timestamp is in YYYY-MM-DDThh:mm:ss.sssZ ISO-8601 format. All
-     * export output will be written into that directory.
+     * export_data-&lt;dataset-display-name&gt;-&lt;timestamp-of-export-call&gt; where
+     * timestamp is in YYYY-MM-DDThh:mm:ss.sssZ ISO-8601 format. All export
+     * output will be written into that directory.
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.GcsDestination gcs_destination = 1;</code>
@@ -840,9 +784,9 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
      * The Google Cloud Storage location where the output is to be written to.
      * For Image Object Detection, Text Extraction, Video Classification and
      * Tables, in the given directory a new directory will be created with name:
-     * export_data-&lt;dataset-display-name&gt;-&lt;timestamp-of-export-call&gt;
-     * where timestamp is in YYYY-MM-DDThh:mm:ss.sssZ ISO-8601 format. All
-     * export output will be written into that directory.
+     * export_data-&lt;dataset-display-name&gt;-&lt;timestamp-of-export-call&gt; where
+     * timestamp is in YYYY-MM-DDThh:mm:ss.sssZ ISO-8601 format. All export
+     * output will be written into that directory.
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.GcsDestination gcs_destination = 1;</code>
@@ -865,9 +809,9 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
      * The Google Cloud Storage location where the output is to be written to.
      * For Image Object Detection, Text Extraction, Video Classification and
      * Tables, in the given directory a new directory will be created with name:
-     * export_data-&lt;dataset-display-name&gt;-&lt;timestamp-of-export-call&gt;
-     * where timestamp is in YYYY-MM-DDThh:mm:ss.sssZ ISO-8601 format. All
-     * export output will be written into that directory.
+     * export_data-&lt;dataset-display-name&gt;-&lt;timestamp-of-export-call&gt; where
+     * timestamp is in YYYY-MM-DDThh:mm:ss.sssZ ISO-8601 format. All export
+     * output will be written into that directory.
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.GcsDestination gcs_destination = 1;</code>
@@ -902,9 +846,9 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
      * The Google Cloud Storage location where the output is to be written to.
      * For Image Object Detection, Text Extraction, Video Classification and
      * Tables, in the given directory a new directory will be created with name:
-     * export_data-&lt;dataset-display-name&gt;-&lt;timestamp-of-export-call&gt;
-     * where timestamp is in YYYY-MM-DDThh:mm:ss.sssZ ISO-8601 format. All
-     * export output will be written into that directory.
+     * export_data-&lt;dataset-display-name&gt;-&lt;timestamp-of-export-call&gt; where
+     * timestamp is in YYYY-MM-DDThh:mm:ss.sssZ ISO-8601 format. All export
+     * output will be written into that directory.
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.GcsDestination gcs_destination = 1;</code>
@@ -932,9 +876,9 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
      * The Google Cloud Storage location where the output is to be written to.
      * For Image Object Detection, Text Extraction, Video Classification and
      * Tables, in the given directory a new directory will be created with name:
-     * export_data-&lt;dataset-display-name&gt;-&lt;timestamp-of-export-call&gt;
-     * where timestamp is in YYYY-MM-DDThh:mm:ss.sssZ ISO-8601 format. All
-     * export output will be written into that directory.
+     * export_data-&lt;dataset-display-name&gt;-&lt;timestamp-of-export-call&gt; where
+     * timestamp is in YYYY-MM-DDThh:mm:ss.sssZ ISO-8601 format. All export
+     * output will be written into that directory.
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.GcsDestination gcs_destination = 1;</code>
@@ -949,9 +893,9 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
      * The Google Cloud Storage location where the output is to be written to.
      * For Image Object Detection, Text Extraction, Video Classification and
      * Tables, in the given directory a new directory will be created with name:
-     * export_data-&lt;dataset-display-name&gt;-&lt;timestamp-of-export-call&gt;
-     * where timestamp is in YYYY-MM-DDThh:mm:ss.sssZ ISO-8601 format. All
-     * export output will be written into that directory.
+     * export_data-&lt;dataset-display-name&gt;-&lt;timestamp-of-export-call&gt; where
+     * timestamp is in YYYY-MM-DDThh:mm:ss.sssZ ISO-8601 format. All export
+     * output will be written into that directory.
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.GcsDestination gcs_destination = 1;</code>
@@ -973,9 +917,9 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
      * The Google Cloud Storage location where the output is to be written to.
      * For Image Object Detection, Text Extraction, Video Classification and
      * Tables, in the given directory a new directory will be created with name:
-     * export_data-&lt;dataset-display-name&gt;-&lt;timestamp-of-export-call&gt;
-     * where timestamp is in YYYY-MM-DDThh:mm:ss.sssZ ISO-8601 format. All
-     * export output will be written into that directory.
+     * export_data-&lt;dataset-display-name&gt;-&lt;timestamp-of-export-call&gt; where
+     * timestamp is in YYYY-MM-DDThh:mm:ss.sssZ ISO-8601 format. All export
+     * output will be written into that directory.
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.GcsDestination gcs_destination = 1;</code>

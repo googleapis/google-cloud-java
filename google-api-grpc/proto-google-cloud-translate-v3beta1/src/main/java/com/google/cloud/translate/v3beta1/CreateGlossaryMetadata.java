@@ -149,7 +149,7 @@ public final class CreateGlossaryMetadata extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The glossary has been successfully created.
+     * The glossary was successfully created.
      * </pre>
      *
      * <code>SUCCEEDED = 2;</code>
@@ -180,7 +180,7 @@ public final class CreateGlossaryMetadata extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The glossary creation request has been successfully canceled.
+     * The glossary creation request was successfully canceled.
      * </pre>
      *
      * <code>CANCELLED = 5;</code>
@@ -213,7 +213,7 @@ public final class CreateGlossaryMetadata extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The glossary has been successfully created.
+     * The glossary was successfully created.
      * </pre>
      *
      * <code>SUCCEEDED = 2;</code>
@@ -244,7 +244,7 @@ public final class CreateGlossaryMetadata extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The glossary creation request has been successfully canceled.
+     * The glossary creation request was successfully canceled.
      * </pre>
      *
      * <code>CANCELLED = 5;</code>

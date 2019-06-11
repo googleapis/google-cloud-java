@@ -76,13 +76,12 @@ public interface PredictRequestOrBuilder
    *    `score_threshold` - (float) A value from 0.0 to 1.0. When the model
    *     makes predictions for an image, it will only produce results that have
    *     at least this confidence score. The default is 0.5.
-   *  *  For Image Object Detection:
-   *    `score_threshold` - (float) When Model detects objects on the image,
-   *        it will only produce bounding boxes which have at least this
-   *        confidence score. Value in 0 to 1 range, default is 0.5.
-   *    `max_bounding_box_count` - (int64) No more than this number of bounding
-   *        boxes will be returned in the response. Default is 100, the
-   *        requested value may be limited by server.
+   * *  For Tables:
+   *    `feature_importance` - (boolean) Whether
+   * [feature_importance][[google.cloud.automl.v1beta1.TablesModelColumnInfo.feature_importance]
+   *        should be populated in the returned
+   * [TablesAnnotation(-s)][[google.cloud.automl.v1beta1.TablesAnnotation].
+   *        The default is false.
    * </pre>
    *
    * <code>map&lt;string, string&gt; params = 3;</code>
@@ -98,13 +97,12 @@ public interface PredictRequestOrBuilder
    *    `score_threshold` - (float) A value from 0.0 to 1.0. When the model
    *     makes predictions for an image, it will only produce results that have
    *     at least this confidence score. The default is 0.5.
-   *  *  For Image Object Detection:
-   *    `score_threshold` - (float) When Model detects objects on the image,
-   *        it will only produce bounding boxes which have at least this
-   *        confidence score. Value in 0 to 1 range, default is 0.5.
-   *    `max_bounding_box_count` - (int64) No more than this number of bounding
-   *        boxes will be returned in the response. Default is 100, the
-   *        requested value may be limited by server.
+   * *  For Tables:
+   *    `feature_importance` - (boolean) Whether
+   * [feature_importance][[google.cloud.automl.v1beta1.TablesModelColumnInfo.feature_importance]
+   *        should be populated in the returned
+   * [TablesAnnotation(-s)][[google.cloud.automl.v1beta1.TablesAnnotation].
+   *        The default is false.
    * </pre>
    *
    * <code>map&lt;string, string&gt; params = 3;</code>
@@ -123,13 +121,12 @@ public interface PredictRequestOrBuilder
    *    `score_threshold` - (float) A value from 0.0 to 1.0. When the model
    *     makes predictions for an image, it will only produce results that have
    *     at least this confidence score. The default is 0.5.
-   *  *  For Image Object Detection:
-   *    `score_threshold` - (float) When Model detects objects on the image,
-   *        it will only produce bounding boxes which have at least this
-   *        confidence score. Value in 0 to 1 range, default is 0.5.
-   *    `max_bounding_box_count` - (int64) No more than this number of bounding
-   *        boxes will be returned in the response. Default is 100, the
-   *        requested value may be limited by server.
+   * *  For Tables:
+   *    `feature_importance` - (boolean) Whether
+   * [feature_importance][[google.cloud.automl.v1beta1.TablesModelColumnInfo.feature_importance]
+   *        should be populated in the returned
+   * [TablesAnnotation(-s)][[google.cloud.automl.v1beta1.TablesAnnotation].
+   *        The default is false.
    * </pre>
    *
    * <code>map&lt;string, string&gt; params = 3;</code>
@@ -145,13 +142,12 @@ public interface PredictRequestOrBuilder
    *    `score_threshold` - (float) A value from 0.0 to 1.0. When the model
    *     makes predictions for an image, it will only produce results that have
    *     at least this confidence score. The default is 0.5.
-   *  *  For Image Object Detection:
-   *    `score_threshold` - (float) When Model detects objects on the image,
-   *        it will only produce bounding boxes which have at least this
-   *        confidence score. Value in 0 to 1 range, default is 0.5.
-   *    `max_bounding_box_count` - (int64) No more than this number of bounding
-   *        boxes will be returned in the response. Default is 100, the
-   *        requested value may be limited by server.
+   * *  For Tables:
+   *    `feature_importance` - (boolean) Whether
+   * [feature_importance][[google.cloud.automl.v1beta1.TablesModelColumnInfo.feature_importance]
+   *        should be populated in the returned
+   * [TablesAnnotation(-s)][[google.cloud.automl.v1beta1.TablesAnnotation].
+   *        The default is false.
    * </pre>
    *
    * <code>map&lt;string, string&gt; params = 3;</code>
@@ -167,13 +163,12 @@ public interface PredictRequestOrBuilder
    *    `score_threshold` - (float) A value from 0.0 to 1.0. When the model
    *     makes predictions for an image, it will only produce results that have
    *     at least this confidence score. The default is 0.5.
-   *  *  For Image Object Detection:
-   *    `score_threshold` - (float) When Model detects objects on the image,
-   *        it will only produce bounding boxes which have at least this
-   *        confidence score. Value in 0 to 1 range, default is 0.5.
-   *    `max_bounding_box_count` - (int64) No more than this number of bounding
-   *        boxes will be returned in the response. Default is 100, the
-   *        requested value may be limited by server.
+   * *  For Tables:
+   *    `feature_importance` - (boolean) Whether
+   * [feature_importance][[google.cloud.automl.v1beta1.TablesModelColumnInfo.feature_importance]
+   *        should be populated in the returned
+   * [TablesAnnotation(-s)][[google.cloud.automl.v1beta1.TablesAnnotation].
+   *        The default is false.
    * </pre>
    *
    * <code>map&lt;string, string&gt; params = 3;</code>

@@ -13,7 +13,7 @@ public interface CreateTransferConfigRequestOrBuilder
    *
    * <pre>
    * The BigQuery project id where the transfer configuration should be created.
-   * Must be in the format /projects/{project_id}/locations/{location_id}
+   * Must be in the format projects/{project_id}/locations/{location_id}
    * If specified location and location of the destination bigquery dataset
    * do not match - the request will fail.
    * </pre>
@@ -26,7 +26,7 @@ public interface CreateTransferConfigRequestOrBuilder
    *
    * <pre>
    * The BigQuery project id where the transfer configuration should be created.
-   * Must be in the format /projects/{project_id}/locations/{location_id}
+   * Must be in the format projects/{project_id}/locations/{location_id}
    * If specified location and location of the destination bigquery dataset
    * do not match - the request will fail.
    * </pre>
@@ -114,4 +114,35 @@ public interface CreateTransferConfigRequestOrBuilder
    * <code>string authorization_code = 3;</code>
    */
   com.google.protobuf.ByteString getAuthorizationCodeBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional version info. If users want to find a very recent access token,
+   * that is, immediately after approving access, users have to set the
+   * version_info claim in the token request. To obtain the version_info, users
+   * must use the "none+gsession" response type. which be return a
+   * version_info back in the authorization response which be be put in a JWT
+   * claim in the token request.
+   * </pre>
+   *
+   * <code>string version_info = 5;</code>
+   */
+  java.lang.String getVersionInfo();
+  /**
+   *
+   *
+   * <pre>
+   * Optional version info. If users want to find a very recent access token,
+   * that is, immediately after approving access, users have to set the
+   * version_info claim in the token request. To obtain the version_info, users
+   * must use the "none+gsession" response type. which be return a
+   * version_info back in the authorization response which be be put in a JWT
+   * claim in the token request.
+   * </pre>
+   *
+   * <code>string version_info = 5;</code>
+   */
+  com.google.protobuf.ByteString getVersionInfoBytes();
 }

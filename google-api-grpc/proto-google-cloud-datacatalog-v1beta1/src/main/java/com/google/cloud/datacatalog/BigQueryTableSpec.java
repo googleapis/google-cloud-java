@@ -60,17 +60,33 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
           case 18:
             {
               com.google.cloud.datacatalog.ViewSpec.Builder subBuilder = null;
-              if (viewSpec_ != null) {
-                subBuilder = viewSpec_.toBuilder();
+              if (typeSpecCase_ == 2) {
+                subBuilder = ((com.google.cloud.datacatalog.ViewSpec) typeSpec_).toBuilder();
               }
-              viewSpec_ =
+              typeSpec_ =
                   input.readMessage(
                       com.google.cloud.datacatalog.ViewSpec.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(viewSpec_);
-                viewSpec_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom((com.google.cloud.datacatalog.ViewSpec) typeSpec_);
+                typeSpec_ = subBuilder.buildPartial();
               }
-
+              typeSpecCase_ = 2;
+              break;
+            }
+          case 26:
+            {
+              com.google.cloud.datacatalog.TableSpec.Builder subBuilder = null;
+              if (typeSpecCase_ == 3) {
+                subBuilder = ((com.google.cloud.datacatalog.TableSpec) typeSpec_).toBuilder();
+              }
+              typeSpec_ =
+                  input.readMessage(
+                      com.google.cloud.datacatalog.TableSpec.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.cloud.datacatalog.TableSpec) typeSpec_);
+                typeSpec_ = subBuilder.buildPartial();
+              }
+              typeSpecCase_ = 3;
               break;
             }
           default:
@@ -93,18 +109,58 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-    return com.google.cloud.datacatalog.TableSpec
+    return com.google.cloud.datacatalog.TableSpecOuterClass
         .internal_static_google_cloud_datacatalog_v1beta1_BigQueryTableSpec_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.datacatalog.TableSpec
+    return com.google.cloud.datacatalog.TableSpecOuterClass
         .internal_static_google_cloud_datacatalog_v1beta1_BigQueryTableSpec_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.cloud.datacatalog.BigQueryTableSpec.class,
             com.google.cloud.datacatalog.BigQueryTableSpec.Builder.class);
+  }
+
+  private int typeSpecCase_ = 0;
+  private java.lang.Object typeSpec_;
+
+  public enum TypeSpecCase implements com.google.protobuf.Internal.EnumLite {
+    VIEW_SPEC(2),
+    TABLE_SPEC(3),
+    TYPESPEC_NOT_SET(0);
+    private final int value;
+
+    private TypeSpecCase(int value) {
+      this.value = value;
+    }
+    /** @deprecated Use {@link #forNumber(int)} instead. */
+    @java.lang.Deprecated
+    public static TypeSpecCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static TypeSpecCase forNumber(int value) {
+      switch (value) {
+        case 2:
+          return VIEW_SPEC;
+        case 3:
+          return TABLE_SPEC;
+        case 0:
+          return TYPESPEC_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public TypeSpecCase getTypeSpecCase() {
+    return TypeSpecCase.forNumber(typeSpecCase_);
   }
 
   public static final int TABLE_SOURCE_TYPE_FIELD_NUMBER = 1;
@@ -113,7 +169,7 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The table source type.
+   * Output only. The table source type.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.TableSourceType table_source_type = 1;</code>
@@ -125,7 +181,7 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The table source type.
+   * Output only. The table source type.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.TableSourceType table_source_type = 1;</code>
@@ -138,7 +194,6 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int VIEW_SPEC_FIELD_NUMBER = 2;
-  private com.google.cloud.datacatalog.ViewSpec viewSpec_;
   /**
    *
    *
@@ -150,7 +205,7 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
    * <code>.google.cloud.datacatalog.v1beta1.ViewSpec view_spec = 2;</code>
    */
   public boolean hasViewSpec() {
-    return viewSpec_ != null;
+    return typeSpecCase_ == 2;
   }
   /**
    *
@@ -163,9 +218,10 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
    * <code>.google.cloud.datacatalog.v1beta1.ViewSpec view_spec = 2;</code>
    */
   public com.google.cloud.datacatalog.ViewSpec getViewSpec() {
-    return viewSpec_ == null
-        ? com.google.cloud.datacatalog.ViewSpec.getDefaultInstance()
-        : viewSpec_;
+    if (typeSpecCase_ == 2) {
+      return (com.google.cloud.datacatalog.ViewSpec) typeSpec_;
+    }
+    return com.google.cloud.datacatalog.ViewSpec.getDefaultInstance();
   }
   /**
    *
@@ -178,7 +234,57 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
    * <code>.google.cloud.datacatalog.v1beta1.ViewSpec view_spec = 2;</code>
    */
   public com.google.cloud.datacatalog.ViewSpecOrBuilder getViewSpecOrBuilder() {
-    return getViewSpec();
+    if (typeSpecCase_ == 2) {
+      return (com.google.cloud.datacatalog.ViewSpec) typeSpec_;
+    }
+    return com.google.cloud.datacatalog.ViewSpec.getDefaultInstance();
+  }
+
+  public static final int TABLE_SPEC_FIELD_NUMBER = 3;
+  /**
+   *
+   *
+   * <pre>
+   * Spec of a BigQuery table. This field should only be populated if
+   * table_source_type is BIGQUERY_TABLE.
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1beta1.TableSpec table_spec = 3;</code>
+   */
+  public boolean hasTableSpec() {
+    return typeSpecCase_ == 3;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Spec of a BigQuery table. This field should only be populated if
+   * table_source_type is BIGQUERY_TABLE.
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1beta1.TableSpec table_spec = 3;</code>
+   */
+  public com.google.cloud.datacatalog.TableSpec getTableSpec() {
+    if (typeSpecCase_ == 3) {
+      return (com.google.cloud.datacatalog.TableSpec) typeSpec_;
+    }
+    return com.google.cloud.datacatalog.TableSpec.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Spec of a BigQuery table. This field should only be populated if
+   * table_source_type is BIGQUERY_TABLE.
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1beta1.TableSpec table_spec = 3;</code>
+   */
+  public com.google.cloud.datacatalog.TableSpecOrBuilder getTableSpecOrBuilder() {
+    if (typeSpecCase_ == 3) {
+      return (com.google.cloud.datacatalog.TableSpec) typeSpec_;
+    }
+    return com.google.cloud.datacatalog.TableSpec.getDefaultInstance();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -199,8 +305,11 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
         != com.google.cloud.datacatalog.TableSourceType.TABLE_SOURCE_TYPE_UNSPECIFIED.getNumber()) {
       output.writeEnum(1, tableSourceType_);
     }
-    if (viewSpec_ != null) {
-      output.writeMessage(2, getViewSpec());
+    if (typeSpecCase_ == 2) {
+      output.writeMessage(2, (com.google.cloud.datacatalog.ViewSpec) typeSpec_);
+    }
+    if (typeSpecCase_ == 3) {
+      output.writeMessage(3, (com.google.cloud.datacatalog.TableSpec) typeSpec_);
     }
     unknownFields.writeTo(output);
   }
@@ -215,8 +324,15 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
         != com.google.cloud.datacatalog.TableSourceType.TABLE_SOURCE_TYPE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, tableSourceType_);
     }
-    if (viewSpec_ != null) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getViewSpec());
+    if (typeSpecCase_ == 2) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              2, (com.google.cloud.datacatalog.ViewSpec) typeSpec_);
+    }
+    if (typeSpecCase_ == 3) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              3, (com.google.cloud.datacatalog.TableSpec) typeSpec_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -235,9 +351,16 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
         (com.google.cloud.datacatalog.BigQueryTableSpec) obj;
 
     if (tableSourceType_ != other.tableSourceType_) return false;
-    if (hasViewSpec() != other.hasViewSpec()) return false;
-    if (hasViewSpec()) {
-      if (!getViewSpec().equals(other.getViewSpec())) return false;
+    if (!getTypeSpecCase().equals(other.getTypeSpecCase())) return false;
+    switch (typeSpecCase_) {
+      case 2:
+        if (!getViewSpec().equals(other.getViewSpec())) return false;
+        break;
+      case 3:
+        if (!getTableSpec().equals(other.getTableSpec())) return false;
+        break;
+      case 0:
+      default:
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -252,9 +375,17 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + TABLE_SOURCE_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + tableSourceType_;
-    if (hasViewSpec()) {
-      hash = (37 * hash) + VIEW_SPEC_FIELD_NUMBER;
-      hash = (53 * hash) + getViewSpec().hashCode();
+    switch (typeSpecCase_) {
+      case 2:
+        hash = (37 * hash) + VIEW_SPEC_FIELD_NUMBER;
+        hash = (53 * hash) + getViewSpec().hashCode();
+        break;
+      case 3:
+        hash = (37 * hash) + TABLE_SPEC_FIELD_NUMBER;
+        hash = (53 * hash) + getTableSpec().hashCode();
+        break;
+      case 0:
+      default:
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -370,14 +501,14 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
       // @@protoc_insertion_point(builder_implements:google.cloud.datacatalog.v1beta1.BigQueryTableSpec)
       com.google.cloud.datacatalog.BigQueryTableSpecOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.cloud.datacatalog.TableSpec
+      return com.google.cloud.datacatalog.TableSpecOuterClass
           .internal_static_google_cloud_datacatalog_v1beta1_BigQueryTableSpec_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.datacatalog.TableSpec
+      return com.google.cloud.datacatalog.TableSpecOuterClass
           .internal_static_google_cloud_datacatalog_v1beta1_BigQueryTableSpec_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.cloud.datacatalog.BigQueryTableSpec.class,
@@ -403,18 +534,14 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
       super.clear();
       tableSourceType_ = 0;
 
-      if (viewSpecBuilder_ == null) {
-        viewSpec_ = null;
-      } else {
-        viewSpec_ = null;
-        viewSpecBuilder_ = null;
-      }
+      typeSpecCase_ = 0;
+      typeSpec_ = null;
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-      return com.google.cloud.datacatalog.TableSpec
+      return com.google.cloud.datacatalog.TableSpecOuterClass
           .internal_static_google_cloud_datacatalog_v1beta1_BigQueryTableSpec_descriptor;
     }
 
@@ -437,11 +564,21 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
       com.google.cloud.datacatalog.BigQueryTableSpec result =
           new com.google.cloud.datacatalog.BigQueryTableSpec(this);
       result.tableSourceType_ = tableSourceType_;
-      if (viewSpecBuilder_ == null) {
-        result.viewSpec_ = viewSpec_;
-      } else {
-        result.viewSpec_ = viewSpecBuilder_.build();
+      if (typeSpecCase_ == 2) {
+        if (viewSpecBuilder_ == null) {
+          result.typeSpec_ = typeSpec_;
+        } else {
+          result.typeSpec_ = viewSpecBuilder_.build();
+        }
       }
+      if (typeSpecCase_ == 3) {
+        if (tableSpecBuilder_ == null) {
+          result.typeSpec_ = typeSpec_;
+        } else {
+          result.typeSpec_ = tableSpecBuilder_.build();
+        }
+      }
+      result.typeSpecCase_ = typeSpecCase_;
       onBuilt();
       return result;
     }
@@ -494,8 +631,21 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
       if (other.tableSourceType_ != 0) {
         setTableSourceTypeValue(other.getTableSourceTypeValue());
       }
-      if (other.hasViewSpec()) {
-        mergeViewSpec(other.getViewSpec());
+      switch (other.getTypeSpecCase()) {
+        case VIEW_SPEC:
+          {
+            mergeViewSpec(other.getViewSpec());
+            break;
+          }
+        case TABLE_SPEC:
+          {
+            mergeTableSpec(other.getTableSpec());
+            break;
+          }
+        case TYPESPEC_NOT_SET:
+          {
+            break;
+          }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -526,12 +676,26 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
       return this;
     }
 
+    private int typeSpecCase_ = 0;
+    private java.lang.Object typeSpec_;
+
+    public TypeSpecCase getTypeSpecCase() {
+      return TypeSpecCase.forNumber(typeSpecCase_);
+    }
+
+    public Builder clearTypeSpec() {
+      typeSpecCase_ = 0;
+      typeSpec_ = null;
+      onChanged();
+      return this;
+    }
+
     private int tableSourceType_ = 0;
     /**
      *
      *
      * <pre>
-     * The table source type.
+     * Output only. The table source type.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.TableSourceType table_source_type = 1;</code>
@@ -543,7 +707,7 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The table source type.
+     * Output only. The table source type.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.TableSourceType table_source_type = 1;</code>
@@ -557,7 +721,7 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The table source type.
+     * Output only. The table source type.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.TableSourceType table_source_type = 1;</code>
@@ -572,7 +736,7 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The table source type.
+     * Output only. The table source type.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.TableSourceType table_source_type = 1;</code>
@@ -590,7 +754,7 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The table source type.
+     * Output only. The table source type.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.TableSourceType table_source_type = 1;</code>
@@ -602,7 +766,6 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
       return this;
     }
 
-    private com.google.cloud.datacatalog.ViewSpec viewSpec_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.datacatalog.ViewSpec,
             com.google.cloud.datacatalog.ViewSpec.Builder,
@@ -619,7 +782,7 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
      * <code>.google.cloud.datacatalog.v1beta1.ViewSpec view_spec = 2;</code>
      */
     public boolean hasViewSpec() {
-      return viewSpecBuilder_ != null || viewSpec_ != null;
+      return typeSpecCase_ == 2;
     }
     /**
      *
@@ -633,11 +796,15 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
      */
     public com.google.cloud.datacatalog.ViewSpec getViewSpec() {
       if (viewSpecBuilder_ == null) {
-        return viewSpec_ == null
-            ? com.google.cloud.datacatalog.ViewSpec.getDefaultInstance()
-            : viewSpec_;
+        if (typeSpecCase_ == 2) {
+          return (com.google.cloud.datacatalog.ViewSpec) typeSpec_;
+        }
+        return com.google.cloud.datacatalog.ViewSpec.getDefaultInstance();
       } else {
-        return viewSpecBuilder_.getMessage();
+        if (typeSpecCase_ == 2) {
+          return viewSpecBuilder_.getMessage();
+        }
+        return com.google.cloud.datacatalog.ViewSpec.getDefaultInstance();
       }
     }
     /**
@@ -655,12 +822,12 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
         if (value == null) {
           throw new NullPointerException();
         }
-        viewSpec_ = value;
+        typeSpec_ = value;
         onChanged();
       } else {
         viewSpecBuilder_.setMessage(value);
       }
-
+      typeSpecCase_ = 2;
       return this;
     }
     /**
@@ -675,12 +842,12 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
      */
     public Builder setViewSpec(com.google.cloud.datacatalog.ViewSpec.Builder builderForValue) {
       if (viewSpecBuilder_ == null) {
-        viewSpec_ = builderForValue.build();
+        typeSpec_ = builderForValue.build();
         onChanged();
       } else {
         viewSpecBuilder_.setMessage(builderForValue.build());
       }
-
+      typeSpecCase_ = 2;
       return this;
     }
     /**
@@ -695,19 +862,24 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeViewSpec(com.google.cloud.datacatalog.ViewSpec value) {
       if (viewSpecBuilder_ == null) {
-        if (viewSpec_ != null) {
-          viewSpec_ =
-              com.google.cloud.datacatalog.ViewSpec.newBuilder(viewSpec_)
+        if (typeSpecCase_ == 2
+            && typeSpec_ != com.google.cloud.datacatalog.ViewSpec.getDefaultInstance()) {
+          typeSpec_ =
+              com.google.cloud.datacatalog.ViewSpec.newBuilder(
+                      (com.google.cloud.datacatalog.ViewSpec) typeSpec_)
                   .mergeFrom(value)
                   .buildPartial();
         } else {
-          viewSpec_ = value;
+          typeSpec_ = value;
         }
         onChanged();
       } else {
-        viewSpecBuilder_.mergeFrom(value);
+        if (typeSpecCase_ == 2) {
+          viewSpecBuilder_.mergeFrom(value);
+        }
+        viewSpecBuilder_.setMessage(value);
       }
-
+      typeSpecCase_ = 2;
       return this;
     }
     /**
@@ -722,13 +894,18 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearViewSpec() {
       if (viewSpecBuilder_ == null) {
-        viewSpec_ = null;
-        onChanged();
+        if (typeSpecCase_ == 2) {
+          typeSpecCase_ = 0;
+          typeSpec_ = null;
+          onChanged();
+        }
       } else {
-        viewSpec_ = null;
-        viewSpecBuilder_ = null;
+        if (typeSpecCase_ == 2) {
+          typeSpecCase_ = 0;
+          typeSpec_ = null;
+        }
+        viewSpecBuilder_.clear();
       }
-
       return this;
     }
     /**
@@ -742,8 +919,6 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
      * <code>.google.cloud.datacatalog.v1beta1.ViewSpec view_spec = 2;</code>
      */
     public com.google.cloud.datacatalog.ViewSpec.Builder getViewSpecBuilder() {
-
-      onChanged();
       return getViewSpecFieldBuilder().getBuilder();
     }
     /**
@@ -757,12 +932,13 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
      * <code>.google.cloud.datacatalog.v1beta1.ViewSpec view_spec = 2;</code>
      */
     public com.google.cloud.datacatalog.ViewSpecOrBuilder getViewSpecOrBuilder() {
-      if (viewSpecBuilder_ != null) {
+      if ((typeSpecCase_ == 2) && (viewSpecBuilder_ != null)) {
         return viewSpecBuilder_.getMessageOrBuilder();
       } else {
-        return viewSpec_ == null
-            ? com.google.cloud.datacatalog.ViewSpec.getDefaultInstance()
-            : viewSpec_;
+        if (typeSpecCase_ == 2) {
+          return (com.google.cloud.datacatalog.ViewSpec) typeSpec_;
+        }
+        return com.google.cloud.datacatalog.ViewSpec.getDefaultInstance();
       }
     }
     /**
@@ -781,15 +957,233 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
             com.google.cloud.datacatalog.ViewSpecOrBuilder>
         getViewSpecFieldBuilder() {
       if (viewSpecBuilder_ == null) {
+        if (!(typeSpecCase_ == 2)) {
+          typeSpec_ = com.google.cloud.datacatalog.ViewSpec.getDefaultInstance();
+        }
         viewSpecBuilder_ =
             new com.google.protobuf.SingleFieldBuilderV3<
                 com.google.cloud.datacatalog.ViewSpec,
                 com.google.cloud.datacatalog.ViewSpec.Builder,
                 com.google.cloud.datacatalog.ViewSpecOrBuilder>(
-                getViewSpec(), getParentForChildren(), isClean());
-        viewSpec_ = null;
+                (com.google.cloud.datacatalog.ViewSpec) typeSpec_,
+                getParentForChildren(),
+                isClean());
+        typeSpec_ = null;
       }
+      typeSpecCase_ = 2;
+      onChanged();
+      ;
       return viewSpecBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datacatalog.TableSpec,
+            com.google.cloud.datacatalog.TableSpec.Builder,
+            com.google.cloud.datacatalog.TableSpecOrBuilder>
+        tableSpecBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Spec of a BigQuery table. This field should only be populated if
+     * table_source_type is BIGQUERY_TABLE.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1beta1.TableSpec table_spec = 3;</code>
+     */
+    public boolean hasTableSpec() {
+      return typeSpecCase_ == 3;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Spec of a BigQuery table. This field should only be populated if
+     * table_source_type is BIGQUERY_TABLE.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1beta1.TableSpec table_spec = 3;</code>
+     */
+    public com.google.cloud.datacatalog.TableSpec getTableSpec() {
+      if (tableSpecBuilder_ == null) {
+        if (typeSpecCase_ == 3) {
+          return (com.google.cloud.datacatalog.TableSpec) typeSpec_;
+        }
+        return com.google.cloud.datacatalog.TableSpec.getDefaultInstance();
+      } else {
+        if (typeSpecCase_ == 3) {
+          return tableSpecBuilder_.getMessage();
+        }
+        return com.google.cloud.datacatalog.TableSpec.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Spec of a BigQuery table. This field should only be populated if
+     * table_source_type is BIGQUERY_TABLE.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1beta1.TableSpec table_spec = 3;</code>
+     */
+    public Builder setTableSpec(com.google.cloud.datacatalog.TableSpec value) {
+      if (tableSpecBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        typeSpec_ = value;
+        onChanged();
+      } else {
+        tableSpecBuilder_.setMessage(value);
+      }
+      typeSpecCase_ = 3;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Spec of a BigQuery table. This field should only be populated if
+     * table_source_type is BIGQUERY_TABLE.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1beta1.TableSpec table_spec = 3;</code>
+     */
+    public Builder setTableSpec(com.google.cloud.datacatalog.TableSpec.Builder builderForValue) {
+      if (tableSpecBuilder_ == null) {
+        typeSpec_ = builderForValue.build();
+        onChanged();
+      } else {
+        tableSpecBuilder_.setMessage(builderForValue.build());
+      }
+      typeSpecCase_ = 3;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Spec of a BigQuery table. This field should only be populated if
+     * table_source_type is BIGQUERY_TABLE.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1beta1.TableSpec table_spec = 3;</code>
+     */
+    public Builder mergeTableSpec(com.google.cloud.datacatalog.TableSpec value) {
+      if (tableSpecBuilder_ == null) {
+        if (typeSpecCase_ == 3
+            && typeSpec_ != com.google.cloud.datacatalog.TableSpec.getDefaultInstance()) {
+          typeSpec_ =
+              com.google.cloud.datacatalog.TableSpec.newBuilder(
+                      (com.google.cloud.datacatalog.TableSpec) typeSpec_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          typeSpec_ = value;
+        }
+        onChanged();
+      } else {
+        if (typeSpecCase_ == 3) {
+          tableSpecBuilder_.mergeFrom(value);
+        }
+        tableSpecBuilder_.setMessage(value);
+      }
+      typeSpecCase_ = 3;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Spec of a BigQuery table. This field should only be populated if
+     * table_source_type is BIGQUERY_TABLE.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1beta1.TableSpec table_spec = 3;</code>
+     */
+    public Builder clearTableSpec() {
+      if (tableSpecBuilder_ == null) {
+        if (typeSpecCase_ == 3) {
+          typeSpecCase_ = 0;
+          typeSpec_ = null;
+          onChanged();
+        }
+      } else {
+        if (typeSpecCase_ == 3) {
+          typeSpecCase_ = 0;
+          typeSpec_ = null;
+        }
+        tableSpecBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Spec of a BigQuery table. This field should only be populated if
+     * table_source_type is BIGQUERY_TABLE.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1beta1.TableSpec table_spec = 3;</code>
+     */
+    public com.google.cloud.datacatalog.TableSpec.Builder getTableSpecBuilder() {
+      return getTableSpecFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Spec of a BigQuery table. This field should only be populated if
+     * table_source_type is BIGQUERY_TABLE.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1beta1.TableSpec table_spec = 3;</code>
+     */
+    public com.google.cloud.datacatalog.TableSpecOrBuilder getTableSpecOrBuilder() {
+      if ((typeSpecCase_ == 3) && (tableSpecBuilder_ != null)) {
+        return tableSpecBuilder_.getMessageOrBuilder();
+      } else {
+        if (typeSpecCase_ == 3) {
+          return (com.google.cloud.datacatalog.TableSpec) typeSpec_;
+        }
+        return com.google.cloud.datacatalog.TableSpec.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Spec of a BigQuery table. This field should only be populated if
+     * table_source_type is BIGQUERY_TABLE.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1beta1.TableSpec table_spec = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datacatalog.TableSpec,
+            com.google.cloud.datacatalog.TableSpec.Builder,
+            com.google.cloud.datacatalog.TableSpecOrBuilder>
+        getTableSpecFieldBuilder() {
+      if (tableSpecBuilder_ == null) {
+        if (!(typeSpecCase_ == 3)) {
+          typeSpec_ = com.google.cloud.datacatalog.TableSpec.getDefaultInstance();
+        }
+        tableSpecBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.datacatalog.TableSpec,
+                com.google.cloud.datacatalog.TableSpec.Builder,
+                com.google.cloud.datacatalog.TableSpecOrBuilder>(
+                (com.google.cloud.datacatalog.TableSpec) typeSpec_,
+                getParentForChildren(),
+                isClean());
+        typeSpec_ = null;
+      }
+      typeSpecCase_ = 3;
+      onChanged();
+      ;
+      return tableSpecBuilder_;
     }
 
     @java.lang.Override

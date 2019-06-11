@@ -28,8 +28,10 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
     shotLabelAnnotations_ = java.util.Collections.emptyList();
     frameLabelAnnotations_ = java.util.Collections.emptyList();
     shotAnnotations_ = java.util.Collections.emptyList();
+    speechTranscriptions_ = java.util.Collections.emptyList();
     textAnnotations_ = java.util.Collections.emptyList();
     objectAnnotations_ = java.util.Collections.emptyList();
+    logoRecognitionAnnotations_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -152,13 +154,27 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
 
               break;
             }
-          case 98:
+          case 90:
             {
               if (!((mutable_bitField0_ & 0x00000040) != 0)) {
+                speechTranscriptions_ =
+                    new java.util.ArrayList<
+                        com.google.cloud.videointelligence.v1p3beta1.SpeechTranscription>();
+                mutable_bitField0_ |= 0x00000040;
+              }
+              speechTranscriptions_.add(
+                  input.readMessage(
+                      com.google.cloud.videointelligence.v1p3beta1.SpeechTranscription.parser(),
+                      extensionRegistry));
+              break;
+            }
+          case 98:
+            {
+              if (!((mutable_bitField0_ & 0x00000080) != 0)) {
                 textAnnotations_ =
                     new java.util.ArrayList<
                         com.google.cloud.videointelligence.v1p3beta1.TextAnnotation>();
-                mutable_bitField0_ |= 0x00000040;
+                mutable_bitField0_ |= 0x00000080;
               }
               textAnnotations_.add(
                   input.readMessage(
@@ -168,15 +184,30 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
             }
           case 114:
             {
-              if (!((mutable_bitField0_ & 0x00000080) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000100) != 0)) {
                 objectAnnotations_ =
                     new java.util.ArrayList<
                         com.google.cloud.videointelligence.v1p3beta1.ObjectTrackingAnnotation>();
-                mutable_bitField0_ |= 0x00000080;
+                mutable_bitField0_ |= 0x00000100;
               }
               objectAnnotations_.add(
                   input.readMessage(
                       com.google.cloud.videointelligence.v1p3beta1.ObjectTrackingAnnotation
+                          .parser(),
+                      extensionRegistry));
+              break;
+            }
+          case 154:
+            {
+              if (!((mutable_bitField0_ & 0x00000200) != 0)) {
+                logoRecognitionAnnotations_ =
+                    new java.util.ArrayList<
+                        com.google.cloud.videointelligence.v1p3beta1.LogoRecognitionAnnotation>();
+                mutable_bitField0_ |= 0x00000200;
+              }
+              logoRecognitionAnnotations_.add(
+                  input.readMessage(
+                      com.google.cloud.videointelligence.v1p3beta1.LogoRecognitionAnnotation
                           .parser(),
                       extensionRegistry));
               break;
@@ -208,10 +239,17 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
         shotAnnotations_ = java.util.Collections.unmodifiableList(shotAnnotations_);
       }
       if (((mutable_bitField0_ & 0x00000040) != 0)) {
-        textAnnotations_ = java.util.Collections.unmodifiableList(textAnnotations_);
+        speechTranscriptions_ = java.util.Collections.unmodifiableList(speechTranscriptions_);
       }
       if (((mutable_bitField0_ & 0x00000080) != 0)) {
+        textAnnotations_ = java.util.Collections.unmodifiableList(textAnnotations_);
+      }
+      if (((mutable_bitField0_ & 0x00000100) != 0)) {
         objectAnnotations_ = java.util.Collections.unmodifiableList(objectAnnotations_);
+      }
+      if (((mutable_bitField0_ & 0x00000200) != 0)) {
+        logoRecognitionAnnotations_ =
+            java.util.Collections.unmodifiableList(logoRecognitionAnnotations_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -655,6 +693,85 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
     return getExplicitAnnotation();
   }
 
+  public static final int SPEECH_TRANSCRIPTIONS_FIELD_NUMBER = 11;
+  private java.util.List<com.google.cloud.videointelligence.v1p3beta1.SpeechTranscription>
+      speechTranscriptions_;
+  /**
+   *
+   *
+   * <pre>
+   * Speech transcription.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.videointelligence.v1p3beta1.SpeechTranscription speech_transcriptions = 11;
+   * </code>
+   */
+  public java.util.List<com.google.cloud.videointelligence.v1p3beta1.SpeechTranscription>
+      getSpeechTranscriptionsList() {
+    return speechTranscriptions_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Speech transcription.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.videointelligence.v1p3beta1.SpeechTranscription speech_transcriptions = 11;
+   * </code>
+   */
+  public java.util.List<
+          ? extends com.google.cloud.videointelligence.v1p3beta1.SpeechTranscriptionOrBuilder>
+      getSpeechTranscriptionsOrBuilderList() {
+    return speechTranscriptions_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Speech transcription.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.videointelligence.v1p3beta1.SpeechTranscription speech_transcriptions = 11;
+   * </code>
+   */
+  public int getSpeechTranscriptionsCount() {
+    return speechTranscriptions_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Speech transcription.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.videointelligence.v1p3beta1.SpeechTranscription speech_transcriptions = 11;
+   * </code>
+   */
+  public com.google.cloud.videointelligence.v1p3beta1.SpeechTranscription getSpeechTranscriptions(
+      int index) {
+    return speechTranscriptions_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Speech transcription.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.videointelligence.v1p3beta1.SpeechTranscription speech_transcriptions = 11;
+   * </code>
+   */
+  public com.google.cloud.videointelligence.v1p3beta1.SpeechTranscriptionOrBuilder
+      getSpeechTranscriptionsOrBuilder(int index) {
+    return speechTranscriptions_.get(index);
+  }
+
   public static final int TEXT_ANNOTATIONS_FIELD_NUMBER = 12;
   private java.util.List<com.google.cloud.videointelligence.v1p3beta1.TextAnnotation>
       textAnnotations_;
@@ -817,6 +934,85 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
     return objectAnnotations_.get(index);
   }
 
+  public static final int LOGO_RECOGNITION_ANNOTATIONS_FIELD_NUMBER = 19;
+  private java.util.List<com.google.cloud.videointelligence.v1p3beta1.LogoRecognitionAnnotation>
+      logoRecognitionAnnotations_;
+  /**
+   *
+   *
+   * <pre>
+   * Annotations for list of logos detected, tracked and recognized in video.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.videointelligence.v1p3beta1.LogoRecognitionAnnotation logo_recognition_annotations = 19;
+   * </code>
+   */
+  public java.util.List<com.google.cloud.videointelligence.v1p3beta1.LogoRecognitionAnnotation>
+      getLogoRecognitionAnnotationsList() {
+    return logoRecognitionAnnotations_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Annotations for list of logos detected, tracked and recognized in video.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.videointelligence.v1p3beta1.LogoRecognitionAnnotation logo_recognition_annotations = 19;
+   * </code>
+   */
+  public java.util.List<
+          ? extends com.google.cloud.videointelligence.v1p3beta1.LogoRecognitionAnnotationOrBuilder>
+      getLogoRecognitionAnnotationsOrBuilderList() {
+    return logoRecognitionAnnotations_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Annotations for list of logos detected, tracked and recognized in video.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.videointelligence.v1p3beta1.LogoRecognitionAnnotation logo_recognition_annotations = 19;
+   * </code>
+   */
+  public int getLogoRecognitionAnnotationsCount() {
+    return logoRecognitionAnnotations_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Annotations for list of logos detected, tracked and recognized in video.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.videointelligence.v1p3beta1.LogoRecognitionAnnotation logo_recognition_annotations = 19;
+   * </code>
+   */
+  public com.google.cloud.videointelligence.v1p3beta1.LogoRecognitionAnnotation
+      getLogoRecognitionAnnotations(int index) {
+    return logoRecognitionAnnotations_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Annotations for list of logos detected, tracked and recognized in video.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.videointelligence.v1p3beta1.LogoRecognitionAnnotation logo_recognition_annotations = 19;
+   * </code>
+   */
+  public com.google.cloud.videointelligence.v1p3beta1.LogoRecognitionAnnotationOrBuilder
+      getLogoRecognitionAnnotationsOrBuilder(int index) {
+    return logoRecognitionAnnotations_.get(index);
+  }
+
   public static final int ERROR_FIELD_NUMBER = 9;
   private com.google.rpc.Status error_;
   /**
@@ -894,11 +1090,17 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
     if (error_ != null) {
       output.writeMessage(9, getError());
     }
+    for (int i = 0; i < speechTranscriptions_.size(); i++) {
+      output.writeMessage(11, speechTranscriptions_.get(i));
+    }
     for (int i = 0; i < textAnnotations_.size(); i++) {
       output.writeMessage(12, textAnnotations_.get(i));
     }
     for (int i = 0; i < objectAnnotations_.size(); i++) {
       output.writeMessage(14, objectAnnotations_.get(i));
+    }
+    for (int i = 0; i < logoRecognitionAnnotations_.size(); i++) {
+      output.writeMessage(19, logoRecognitionAnnotations_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -935,12 +1137,22 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
     if (error_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getError());
     }
+    for (int i = 0; i < speechTranscriptions_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              11, speechTranscriptions_.get(i));
+    }
     for (int i = 0; i < textAnnotations_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, textAnnotations_.get(i));
     }
     for (int i = 0; i < objectAnnotations_.size(); i++) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(14, objectAnnotations_.get(i));
+    }
+    for (int i = 0; i < logoRecognitionAnnotations_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              19, logoRecognitionAnnotations_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -968,8 +1180,11 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
     if (hasExplicitAnnotation()) {
       if (!getExplicitAnnotation().equals(other.getExplicitAnnotation())) return false;
     }
+    if (!getSpeechTranscriptionsList().equals(other.getSpeechTranscriptionsList())) return false;
     if (!getTextAnnotationsList().equals(other.getTextAnnotationsList())) return false;
     if (!getObjectAnnotationsList().equals(other.getObjectAnnotationsList())) return false;
+    if (!getLogoRecognitionAnnotationsList().equals(other.getLogoRecognitionAnnotationsList()))
+      return false;
     if (hasError() != other.hasError()) return false;
     if (hasError()) {
       if (!getError().equals(other.getError())) return false;
@@ -1007,6 +1222,10 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
       hash = (37 * hash) + EXPLICIT_ANNOTATION_FIELD_NUMBER;
       hash = (53 * hash) + getExplicitAnnotation().hashCode();
     }
+    if (getSpeechTranscriptionsCount() > 0) {
+      hash = (37 * hash) + SPEECH_TRANSCRIPTIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getSpeechTranscriptionsList().hashCode();
+    }
     if (getTextAnnotationsCount() > 0) {
       hash = (37 * hash) + TEXT_ANNOTATIONS_FIELD_NUMBER;
       hash = (53 * hash) + getTextAnnotationsList().hashCode();
@@ -1014,6 +1233,10 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
     if (getObjectAnnotationsCount() > 0) {
       hash = (37 * hash) + OBJECT_ANNOTATIONS_FIELD_NUMBER;
       hash = (53 * hash) + getObjectAnnotationsList().hashCode();
+    }
+    if (getLogoRecognitionAnnotationsCount() > 0) {
+      hash = (37 * hash) + LOGO_RECOGNITION_ANNOTATIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getLogoRecognitionAnnotationsList().hashCode();
     }
     if (hasError()) {
       hash = (37 * hash) + ERROR_FIELD_NUMBER;
@@ -1166,8 +1389,10 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
         getShotLabelAnnotationsFieldBuilder();
         getFrameLabelAnnotationsFieldBuilder();
         getShotAnnotationsFieldBuilder();
+        getSpeechTranscriptionsFieldBuilder();
         getTextAnnotationsFieldBuilder();
         getObjectAnnotationsFieldBuilder();
+        getLogoRecognitionAnnotationsFieldBuilder();
       }
     }
 
@@ -1206,17 +1431,29 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
         explicitAnnotation_ = null;
         explicitAnnotationBuilder_ = null;
       }
+      if (speechTranscriptionsBuilder_ == null) {
+        speechTranscriptions_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000040);
+      } else {
+        speechTranscriptionsBuilder_.clear();
+      }
       if (textAnnotationsBuilder_ == null) {
         textAnnotations_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000080);
       } else {
         textAnnotationsBuilder_.clear();
       }
       if (objectAnnotationsBuilder_ == null) {
         objectAnnotations_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000100);
       } else {
         objectAnnotationsBuilder_.clear();
+      }
+      if (logoRecognitionAnnotationsBuilder_ == null) {
+        logoRecognitionAnnotations_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000200);
+      } else {
+        logoRecognitionAnnotationsBuilder_.clear();
       }
       if (errorBuilder_ == null) {
         error_ = null;
@@ -1298,23 +1535,42 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
       } else {
         result.explicitAnnotation_ = explicitAnnotationBuilder_.build();
       }
-      if (textAnnotationsBuilder_ == null) {
+      if (speechTranscriptionsBuilder_ == null) {
         if (((bitField0_ & 0x00000040) != 0)) {
-          textAnnotations_ = java.util.Collections.unmodifiableList(textAnnotations_);
+          speechTranscriptions_ = java.util.Collections.unmodifiableList(speechTranscriptions_);
           bitField0_ = (bitField0_ & ~0x00000040);
+        }
+        result.speechTranscriptions_ = speechTranscriptions_;
+      } else {
+        result.speechTranscriptions_ = speechTranscriptionsBuilder_.build();
+      }
+      if (textAnnotationsBuilder_ == null) {
+        if (((bitField0_ & 0x00000080) != 0)) {
+          textAnnotations_ = java.util.Collections.unmodifiableList(textAnnotations_);
+          bitField0_ = (bitField0_ & ~0x00000080);
         }
         result.textAnnotations_ = textAnnotations_;
       } else {
         result.textAnnotations_ = textAnnotationsBuilder_.build();
       }
       if (objectAnnotationsBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)) {
+        if (((bitField0_ & 0x00000100) != 0)) {
           objectAnnotations_ = java.util.Collections.unmodifiableList(objectAnnotations_);
-          bitField0_ = (bitField0_ & ~0x00000080);
+          bitField0_ = (bitField0_ & ~0x00000100);
         }
         result.objectAnnotations_ = objectAnnotations_;
       } else {
         result.objectAnnotations_ = objectAnnotationsBuilder_.build();
+      }
+      if (logoRecognitionAnnotationsBuilder_ == null) {
+        if (((bitField0_ & 0x00000200) != 0)) {
+          logoRecognitionAnnotations_ =
+              java.util.Collections.unmodifiableList(logoRecognitionAnnotations_);
+          bitField0_ = (bitField0_ & ~0x00000200);
+        }
+        result.logoRecognitionAnnotations_ = logoRecognitionAnnotations_;
+      } else {
+        result.logoRecognitionAnnotations_ = logoRecognitionAnnotationsBuilder_.build();
       }
       if (errorBuilder_ == null) {
         result.error_ = error_;
@@ -1490,11 +1746,38 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
       if (other.hasExplicitAnnotation()) {
         mergeExplicitAnnotation(other.getExplicitAnnotation());
       }
+      if (speechTranscriptionsBuilder_ == null) {
+        if (!other.speechTranscriptions_.isEmpty()) {
+          if (speechTranscriptions_.isEmpty()) {
+            speechTranscriptions_ = other.speechTranscriptions_;
+            bitField0_ = (bitField0_ & ~0x00000040);
+          } else {
+            ensureSpeechTranscriptionsIsMutable();
+            speechTranscriptions_.addAll(other.speechTranscriptions_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.speechTranscriptions_.isEmpty()) {
+          if (speechTranscriptionsBuilder_.isEmpty()) {
+            speechTranscriptionsBuilder_.dispose();
+            speechTranscriptionsBuilder_ = null;
+            speechTranscriptions_ = other.speechTranscriptions_;
+            bitField0_ = (bitField0_ & ~0x00000040);
+            speechTranscriptionsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getSpeechTranscriptionsFieldBuilder()
+                    : null;
+          } else {
+            speechTranscriptionsBuilder_.addAllMessages(other.speechTranscriptions_);
+          }
+        }
+      }
       if (textAnnotationsBuilder_ == null) {
         if (!other.textAnnotations_.isEmpty()) {
           if (textAnnotations_.isEmpty()) {
             textAnnotations_ = other.textAnnotations_;
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000080);
           } else {
             ensureTextAnnotationsIsMutable();
             textAnnotations_.addAll(other.textAnnotations_);
@@ -1507,7 +1790,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
             textAnnotationsBuilder_.dispose();
             textAnnotationsBuilder_ = null;
             textAnnotations_ = other.textAnnotations_;
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000080);
             textAnnotationsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getTextAnnotationsFieldBuilder()
@@ -1521,7 +1804,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
         if (!other.objectAnnotations_.isEmpty()) {
           if (objectAnnotations_.isEmpty()) {
             objectAnnotations_ = other.objectAnnotations_;
-            bitField0_ = (bitField0_ & ~0x00000080);
+            bitField0_ = (bitField0_ & ~0x00000100);
           } else {
             ensureObjectAnnotationsIsMutable();
             objectAnnotations_.addAll(other.objectAnnotations_);
@@ -1534,13 +1817,40 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
             objectAnnotationsBuilder_.dispose();
             objectAnnotationsBuilder_ = null;
             objectAnnotations_ = other.objectAnnotations_;
-            bitField0_ = (bitField0_ & ~0x00000080);
+            bitField0_ = (bitField0_ & ~0x00000100);
             objectAnnotationsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getObjectAnnotationsFieldBuilder()
                     : null;
           } else {
             objectAnnotationsBuilder_.addAllMessages(other.objectAnnotations_);
+          }
+        }
+      }
+      if (logoRecognitionAnnotationsBuilder_ == null) {
+        if (!other.logoRecognitionAnnotations_.isEmpty()) {
+          if (logoRecognitionAnnotations_.isEmpty()) {
+            logoRecognitionAnnotations_ = other.logoRecognitionAnnotations_;
+            bitField0_ = (bitField0_ & ~0x00000200);
+          } else {
+            ensureLogoRecognitionAnnotationsIsMutable();
+            logoRecognitionAnnotations_.addAll(other.logoRecognitionAnnotations_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.logoRecognitionAnnotations_.isEmpty()) {
+          if (logoRecognitionAnnotationsBuilder_.isEmpty()) {
+            logoRecognitionAnnotationsBuilder_.dispose();
+            logoRecognitionAnnotationsBuilder_ = null;
+            logoRecognitionAnnotations_ = other.logoRecognitionAnnotations_;
+            bitField0_ = (bitField0_ & ~0x00000200);
+            logoRecognitionAnnotationsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getLogoRecognitionAnnotationsFieldBuilder()
+                    : null;
+          } else {
+            logoRecognitionAnnotationsBuilder_.addAllMessages(other.logoRecognitionAnnotations_);
           }
         }
       }
@@ -3552,15 +3862,426 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
       return explicitAnnotationBuilder_;
     }
 
+    private java.util.List<com.google.cloud.videointelligence.v1p3beta1.SpeechTranscription>
+        speechTranscriptions_ = java.util.Collections.emptyList();
+
+    private void ensureSpeechTranscriptionsIsMutable() {
+      if (!((bitField0_ & 0x00000040) != 0)) {
+        speechTranscriptions_ =
+            new java.util.ArrayList<
+                com.google.cloud.videointelligence.v1p3beta1.SpeechTranscription>(
+                speechTranscriptions_);
+        bitField0_ |= 0x00000040;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.videointelligence.v1p3beta1.SpeechTranscription,
+            com.google.cloud.videointelligence.v1p3beta1.SpeechTranscription.Builder,
+            com.google.cloud.videointelligence.v1p3beta1.SpeechTranscriptionOrBuilder>
+        speechTranscriptionsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Speech transcription.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.SpeechTranscription speech_transcriptions = 11;
+     * </code>
+     */
+    public java.util.List<com.google.cloud.videointelligence.v1p3beta1.SpeechTranscription>
+        getSpeechTranscriptionsList() {
+      if (speechTranscriptionsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(speechTranscriptions_);
+      } else {
+        return speechTranscriptionsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Speech transcription.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.SpeechTranscription speech_transcriptions = 11;
+     * </code>
+     */
+    public int getSpeechTranscriptionsCount() {
+      if (speechTranscriptionsBuilder_ == null) {
+        return speechTranscriptions_.size();
+      } else {
+        return speechTranscriptionsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Speech transcription.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.SpeechTranscription speech_transcriptions = 11;
+     * </code>
+     */
+    public com.google.cloud.videointelligence.v1p3beta1.SpeechTranscription getSpeechTranscriptions(
+        int index) {
+      if (speechTranscriptionsBuilder_ == null) {
+        return speechTranscriptions_.get(index);
+      } else {
+        return speechTranscriptionsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Speech transcription.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.SpeechTranscription speech_transcriptions = 11;
+     * </code>
+     */
+    public Builder setSpeechTranscriptions(
+        int index, com.google.cloud.videointelligence.v1p3beta1.SpeechTranscription value) {
+      if (speechTranscriptionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSpeechTranscriptionsIsMutable();
+        speechTranscriptions_.set(index, value);
+        onChanged();
+      } else {
+        speechTranscriptionsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Speech transcription.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.SpeechTranscription speech_transcriptions = 11;
+     * </code>
+     */
+    public Builder setSpeechTranscriptions(
+        int index,
+        com.google.cloud.videointelligence.v1p3beta1.SpeechTranscription.Builder builderForValue) {
+      if (speechTranscriptionsBuilder_ == null) {
+        ensureSpeechTranscriptionsIsMutable();
+        speechTranscriptions_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        speechTranscriptionsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Speech transcription.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.SpeechTranscription speech_transcriptions = 11;
+     * </code>
+     */
+    public Builder addSpeechTranscriptions(
+        com.google.cloud.videointelligence.v1p3beta1.SpeechTranscription value) {
+      if (speechTranscriptionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSpeechTranscriptionsIsMutable();
+        speechTranscriptions_.add(value);
+        onChanged();
+      } else {
+        speechTranscriptionsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Speech transcription.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.SpeechTranscription speech_transcriptions = 11;
+     * </code>
+     */
+    public Builder addSpeechTranscriptions(
+        int index, com.google.cloud.videointelligence.v1p3beta1.SpeechTranscription value) {
+      if (speechTranscriptionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSpeechTranscriptionsIsMutable();
+        speechTranscriptions_.add(index, value);
+        onChanged();
+      } else {
+        speechTranscriptionsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Speech transcription.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.SpeechTranscription speech_transcriptions = 11;
+     * </code>
+     */
+    public Builder addSpeechTranscriptions(
+        com.google.cloud.videointelligence.v1p3beta1.SpeechTranscription.Builder builderForValue) {
+      if (speechTranscriptionsBuilder_ == null) {
+        ensureSpeechTranscriptionsIsMutable();
+        speechTranscriptions_.add(builderForValue.build());
+        onChanged();
+      } else {
+        speechTranscriptionsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Speech transcription.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.SpeechTranscription speech_transcriptions = 11;
+     * </code>
+     */
+    public Builder addSpeechTranscriptions(
+        int index,
+        com.google.cloud.videointelligence.v1p3beta1.SpeechTranscription.Builder builderForValue) {
+      if (speechTranscriptionsBuilder_ == null) {
+        ensureSpeechTranscriptionsIsMutable();
+        speechTranscriptions_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        speechTranscriptionsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Speech transcription.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.SpeechTranscription speech_transcriptions = 11;
+     * </code>
+     */
+    public Builder addAllSpeechTranscriptions(
+        java.lang.Iterable<
+                ? extends com.google.cloud.videointelligence.v1p3beta1.SpeechTranscription>
+            values) {
+      if (speechTranscriptionsBuilder_ == null) {
+        ensureSpeechTranscriptionsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, speechTranscriptions_);
+        onChanged();
+      } else {
+        speechTranscriptionsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Speech transcription.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.SpeechTranscription speech_transcriptions = 11;
+     * </code>
+     */
+    public Builder clearSpeechTranscriptions() {
+      if (speechTranscriptionsBuilder_ == null) {
+        speechTranscriptions_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000040);
+        onChanged();
+      } else {
+        speechTranscriptionsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Speech transcription.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.SpeechTranscription speech_transcriptions = 11;
+     * </code>
+     */
+    public Builder removeSpeechTranscriptions(int index) {
+      if (speechTranscriptionsBuilder_ == null) {
+        ensureSpeechTranscriptionsIsMutable();
+        speechTranscriptions_.remove(index);
+        onChanged();
+      } else {
+        speechTranscriptionsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Speech transcription.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.SpeechTranscription speech_transcriptions = 11;
+     * </code>
+     */
+    public com.google.cloud.videointelligence.v1p3beta1.SpeechTranscription.Builder
+        getSpeechTranscriptionsBuilder(int index) {
+      return getSpeechTranscriptionsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Speech transcription.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.SpeechTranscription speech_transcriptions = 11;
+     * </code>
+     */
+    public com.google.cloud.videointelligence.v1p3beta1.SpeechTranscriptionOrBuilder
+        getSpeechTranscriptionsOrBuilder(int index) {
+      if (speechTranscriptionsBuilder_ == null) {
+        return speechTranscriptions_.get(index);
+      } else {
+        return speechTranscriptionsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Speech transcription.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.SpeechTranscription speech_transcriptions = 11;
+     * </code>
+     */
+    public java.util.List<
+            ? extends com.google.cloud.videointelligence.v1p3beta1.SpeechTranscriptionOrBuilder>
+        getSpeechTranscriptionsOrBuilderList() {
+      if (speechTranscriptionsBuilder_ != null) {
+        return speechTranscriptionsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(speechTranscriptions_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Speech transcription.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.SpeechTranscription speech_transcriptions = 11;
+     * </code>
+     */
+    public com.google.cloud.videointelligence.v1p3beta1.SpeechTranscription.Builder
+        addSpeechTranscriptionsBuilder() {
+      return getSpeechTranscriptionsFieldBuilder()
+          .addBuilder(
+              com.google.cloud.videointelligence.v1p3beta1.SpeechTranscription
+                  .getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Speech transcription.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.SpeechTranscription speech_transcriptions = 11;
+     * </code>
+     */
+    public com.google.cloud.videointelligence.v1p3beta1.SpeechTranscription.Builder
+        addSpeechTranscriptionsBuilder(int index) {
+      return getSpeechTranscriptionsFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.cloud.videointelligence.v1p3beta1.SpeechTranscription
+                  .getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Speech transcription.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.SpeechTranscription speech_transcriptions = 11;
+     * </code>
+     */
+    public java.util.List<com.google.cloud.videointelligence.v1p3beta1.SpeechTranscription.Builder>
+        getSpeechTranscriptionsBuilderList() {
+      return getSpeechTranscriptionsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.videointelligence.v1p3beta1.SpeechTranscription,
+            com.google.cloud.videointelligence.v1p3beta1.SpeechTranscription.Builder,
+            com.google.cloud.videointelligence.v1p3beta1.SpeechTranscriptionOrBuilder>
+        getSpeechTranscriptionsFieldBuilder() {
+      if (speechTranscriptionsBuilder_ == null) {
+        speechTranscriptionsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.videointelligence.v1p3beta1.SpeechTranscription,
+                com.google.cloud.videointelligence.v1p3beta1.SpeechTranscription.Builder,
+                com.google.cloud.videointelligence.v1p3beta1.SpeechTranscriptionOrBuilder>(
+                speechTranscriptions_,
+                ((bitField0_ & 0x00000040) != 0),
+                getParentForChildren(),
+                isClean());
+        speechTranscriptions_ = null;
+      }
+      return speechTranscriptionsBuilder_;
+    }
+
     private java.util.List<com.google.cloud.videointelligence.v1p3beta1.TextAnnotation>
         textAnnotations_ = java.util.Collections.emptyList();
 
     private void ensureTextAnnotationsIsMutable() {
-      if (!((bitField0_ & 0x00000040) != 0)) {
+      if (!((bitField0_ & 0x00000080) != 0)) {
         textAnnotations_ =
             new java.util.ArrayList<com.google.cloud.videointelligence.v1p3beta1.TextAnnotation>(
                 textAnnotations_);
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
       }
     }
 
@@ -3828,7 +4549,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
     public Builder clearTextAnnotations() {
       if (textAnnotationsBuilder_ == null) {
         textAnnotations_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000080);
         onChanged();
       } else {
         textAnnotationsBuilder_.clear();
@@ -3987,7 +4708,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
                 com.google.cloud.videointelligence.v1p3beta1.TextAnnotation.Builder,
                 com.google.cloud.videointelligence.v1p3beta1.TextAnnotationOrBuilder>(
                 textAnnotations_,
-                ((bitField0_ & 0x00000040) != 0),
+                ((bitField0_ & 0x00000080) != 0),
                 getParentForChildren(),
                 isClean());
         textAnnotations_ = null;
@@ -3999,12 +4720,12 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
         objectAnnotations_ = java.util.Collections.emptyList();
 
     private void ensureObjectAnnotationsIsMutable() {
-      if (!((bitField0_ & 0x00000080) != 0)) {
+      if (!((bitField0_ & 0x00000100) != 0)) {
         objectAnnotations_ =
             new java.util.ArrayList<
                 com.google.cloud.videointelligence.v1p3beta1.ObjectTrackingAnnotation>(
                 objectAnnotations_);
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
       }
     }
 
@@ -4254,7 +4975,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
     public Builder clearObjectAnnotations() {
       if (objectAnnotationsBuilder_ == null) {
         objectAnnotations_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000100);
         onChanged();
       } else {
         objectAnnotationsBuilder_.clear();
@@ -4403,12 +5124,428 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
                 com.google.cloud.videointelligence.v1p3beta1.ObjectTrackingAnnotation.Builder,
                 com.google.cloud.videointelligence.v1p3beta1.ObjectTrackingAnnotationOrBuilder>(
                 objectAnnotations_,
-                ((bitField0_ & 0x00000080) != 0),
+                ((bitField0_ & 0x00000100) != 0),
                 getParentForChildren(),
                 isClean());
         objectAnnotations_ = null;
       }
       return objectAnnotationsBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.videointelligence.v1p3beta1.LogoRecognitionAnnotation>
+        logoRecognitionAnnotations_ = java.util.Collections.emptyList();
+
+    private void ensureLogoRecognitionAnnotationsIsMutable() {
+      if (!((bitField0_ & 0x00000200) != 0)) {
+        logoRecognitionAnnotations_ =
+            new java.util.ArrayList<
+                com.google.cloud.videointelligence.v1p3beta1.LogoRecognitionAnnotation>(
+                logoRecognitionAnnotations_);
+        bitField0_ |= 0x00000200;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.videointelligence.v1p3beta1.LogoRecognitionAnnotation,
+            com.google.cloud.videointelligence.v1p3beta1.LogoRecognitionAnnotation.Builder,
+            com.google.cloud.videointelligence.v1p3beta1.LogoRecognitionAnnotationOrBuilder>
+        logoRecognitionAnnotationsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Annotations for list of logos detected, tracked and recognized in video.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.LogoRecognitionAnnotation logo_recognition_annotations = 19;
+     * </code>
+     */
+    public java.util.List<com.google.cloud.videointelligence.v1p3beta1.LogoRecognitionAnnotation>
+        getLogoRecognitionAnnotationsList() {
+      if (logoRecognitionAnnotationsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(logoRecognitionAnnotations_);
+      } else {
+        return logoRecognitionAnnotationsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Annotations for list of logos detected, tracked and recognized in video.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.LogoRecognitionAnnotation logo_recognition_annotations = 19;
+     * </code>
+     */
+    public int getLogoRecognitionAnnotationsCount() {
+      if (logoRecognitionAnnotationsBuilder_ == null) {
+        return logoRecognitionAnnotations_.size();
+      } else {
+        return logoRecognitionAnnotationsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Annotations for list of logos detected, tracked and recognized in video.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.LogoRecognitionAnnotation logo_recognition_annotations = 19;
+     * </code>
+     */
+    public com.google.cloud.videointelligence.v1p3beta1.LogoRecognitionAnnotation
+        getLogoRecognitionAnnotations(int index) {
+      if (logoRecognitionAnnotationsBuilder_ == null) {
+        return logoRecognitionAnnotations_.get(index);
+      } else {
+        return logoRecognitionAnnotationsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Annotations for list of logos detected, tracked and recognized in video.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.LogoRecognitionAnnotation logo_recognition_annotations = 19;
+     * </code>
+     */
+    public Builder setLogoRecognitionAnnotations(
+        int index, com.google.cloud.videointelligence.v1p3beta1.LogoRecognitionAnnotation value) {
+      if (logoRecognitionAnnotationsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureLogoRecognitionAnnotationsIsMutable();
+        logoRecognitionAnnotations_.set(index, value);
+        onChanged();
+      } else {
+        logoRecognitionAnnotationsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Annotations for list of logos detected, tracked and recognized in video.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.LogoRecognitionAnnotation logo_recognition_annotations = 19;
+     * </code>
+     */
+    public Builder setLogoRecognitionAnnotations(
+        int index,
+        com.google.cloud.videointelligence.v1p3beta1.LogoRecognitionAnnotation.Builder
+            builderForValue) {
+      if (logoRecognitionAnnotationsBuilder_ == null) {
+        ensureLogoRecognitionAnnotationsIsMutable();
+        logoRecognitionAnnotations_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        logoRecognitionAnnotationsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Annotations for list of logos detected, tracked and recognized in video.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.LogoRecognitionAnnotation logo_recognition_annotations = 19;
+     * </code>
+     */
+    public Builder addLogoRecognitionAnnotations(
+        com.google.cloud.videointelligence.v1p3beta1.LogoRecognitionAnnotation value) {
+      if (logoRecognitionAnnotationsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureLogoRecognitionAnnotationsIsMutable();
+        logoRecognitionAnnotations_.add(value);
+        onChanged();
+      } else {
+        logoRecognitionAnnotationsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Annotations for list of logos detected, tracked and recognized in video.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.LogoRecognitionAnnotation logo_recognition_annotations = 19;
+     * </code>
+     */
+    public Builder addLogoRecognitionAnnotations(
+        int index, com.google.cloud.videointelligence.v1p3beta1.LogoRecognitionAnnotation value) {
+      if (logoRecognitionAnnotationsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureLogoRecognitionAnnotationsIsMutable();
+        logoRecognitionAnnotations_.add(index, value);
+        onChanged();
+      } else {
+        logoRecognitionAnnotationsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Annotations for list of logos detected, tracked and recognized in video.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.LogoRecognitionAnnotation logo_recognition_annotations = 19;
+     * </code>
+     */
+    public Builder addLogoRecognitionAnnotations(
+        com.google.cloud.videointelligence.v1p3beta1.LogoRecognitionAnnotation.Builder
+            builderForValue) {
+      if (logoRecognitionAnnotationsBuilder_ == null) {
+        ensureLogoRecognitionAnnotationsIsMutable();
+        logoRecognitionAnnotations_.add(builderForValue.build());
+        onChanged();
+      } else {
+        logoRecognitionAnnotationsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Annotations for list of logos detected, tracked and recognized in video.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.LogoRecognitionAnnotation logo_recognition_annotations = 19;
+     * </code>
+     */
+    public Builder addLogoRecognitionAnnotations(
+        int index,
+        com.google.cloud.videointelligence.v1p3beta1.LogoRecognitionAnnotation.Builder
+            builderForValue) {
+      if (logoRecognitionAnnotationsBuilder_ == null) {
+        ensureLogoRecognitionAnnotationsIsMutable();
+        logoRecognitionAnnotations_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        logoRecognitionAnnotationsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Annotations for list of logos detected, tracked and recognized in video.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.LogoRecognitionAnnotation logo_recognition_annotations = 19;
+     * </code>
+     */
+    public Builder addAllLogoRecognitionAnnotations(
+        java.lang.Iterable<
+                ? extends com.google.cloud.videointelligence.v1p3beta1.LogoRecognitionAnnotation>
+            values) {
+      if (logoRecognitionAnnotationsBuilder_ == null) {
+        ensureLogoRecognitionAnnotationsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, logoRecognitionAnnotations_);
+        onChanged();
+      } else {
+        logoRecognitionAnnotationsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Annotations for list of logos detected, tracked and recognized in video.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.LogoRecognitionAnnotation logo_recognition_annotations = 19;
+     * </code>
+     */
+    public Builder clearLogoRecognitionAnnotations() {
+      if (logoRecognitionAnnotationsBuilder_ == null) {
+        logoRecognitionAnnotations_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000200);
+        onChanged();
+      } else {
+        logoRecognitionAnnotationsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Annotations for list of logos detected, tracked and recognized in video.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.LogoRecognitionAnnotation logo_recognition_annotations = 19;
+     * </code>
+     */
+    public Builder removeLogoRecognitionAnnotations(int index) {
+      if (logoRecognitionAnnotationsBuilder_ == null) {
+        ensureLogoRecognitionAnnotationsIsMutable();
+        logoRecognitionAnnotations_.remove(index);
+        onChanged();
+      } else {
+        logoRecognitionAnnotationsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Annotations for list of logos detected, tracked and recognized in video.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.LogoRecognitionAnnotation logo_recognition_annotations = 19;
+     * </code>
+     */
+    public com.google.cloud.videointelligence.v1p3beta1.LogoRecognitionAnnotation.Builder
+        getLogoRecognitionAnnotationsBuilder(int index) {
+      return getLogoRecognitionAnnotationsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Annotations for list of logos detected, tracked and recognized in video.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.LogoRecognitionAnnotation logo_recognition_annotations = 19;
+     * </code>
+     */
+    public com.google.cloud.videointelligence.v1p3beta1.LogoRecognitionAnnotationOrBuilder
+        getLogoRecognitionAnnotationsOrBuilder(int index) {
+      if (logoRecognitionAnnotationsBuilder_ == null) {
+        return logoRecognitionAnnotations_.get(index);
+      } else {
+        return logoRecognitionAnnotationsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Annotations for list of logos detected, tracked and recognized in video.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.LogoRecognitionAnnotation logo_recognition_annotations = 19;
+     * </code>
+     */
+    public java.util.List<
+            ? extends
+                com.google.cloud.videointelligence.v1p3beta1.LogoRecognitionAnnotationOrBuilder>
+        getLogoRecognitionAnnotationsOrBuilderList() {
+      if (logoRecognitionAnnotationsBuilder_ != null) {
+        return logoRecognitionAnnotationsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(logoRecognitionAnnotations_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Annotations for list of logos detected, tracked and recognized in video.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.LogoRecognitionAnnotation logo_recognition_annotations = 19;
+     * </code>
+     */
+    public com.google.cloud.videointelligence.v1p3beta1.LogoRecognitionAnnotation.Builder
+        addLogoRecognitionAnnotationsBuilder() {
+      return getLogoRecognitionAnnotationsFieldBuilder()
+          .addBuilder(
+              com.google.cloud.videointelligence.v1p3beta1.LogoRecognitionAnnotation
+                  .getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Annotations for list of logos detected, tracked and recognized in video.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.LogoRecognitionAnnotation logo_recognition_annotations = 19;
+     * </code>
+     */
+    public com.google.cloud.videointelligence.v1p3beta1.LogoRecognitionAnnotation.Builder
+        addLogoRecognitionAnnotationsBuilder(int index) {
+      return getLogoRecognitionAnnotationsFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.cloud.videointelligence.v1p3beta1.LogoRecognitionAnnotation
+                  .getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Annotations for list of logos detected, tracked and recognized in video.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.LogoRecognitionAnnotation logo_recognition_annotations = 19;
+     * </code>
+     */
+    public java.util.List<
+            com.google.cloud.videointelligence.v1p3beta1.LogoRecognitionAnnotation.Builder>
+        getLogoRecognitionAnnotationsBuilderList() {
+      return getLogoRecognitionAnnotationsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.videointelligence.v1p3beta1.LogoRecognitionAnnotation,
+            com.google.cloud.videointelligence.v1p3beta1.LogoRecognitionAnnotation.Builder,
+            com.google.cloud.videointelligence.v1p3beta1.LogoRecognitionAnnotationOrBuilder>
+        getLogoRecognitionAnnotationsFieldBuilder() {
+      if (logoRecognitionAnnotationsBuilder_ == null) {
+        logoRecognitionAnnotationsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.videointelligence.v1p3beta1.LogoRecognitionAnnotation,
+                com.google.cloud.videointelligence.v1p3beta1.LogoRecognitionAnnotation.Builder,
+                com.google.cloud.videointelligence.v1p3beta1.LogoRecognitionAnnotationOrBuilder>(
+                logoRecognitionAnnotations_,
+                ((bitField0_ & 0x00000200) != 0),
+                getParentForChildren(),
+                isClean());
+        logoRecognitionAnnotations_ = null;
+      }
+      return logoRecognitionAnnotationsBuilder_;
     }
 
     private com.google.rpc.Status error_;

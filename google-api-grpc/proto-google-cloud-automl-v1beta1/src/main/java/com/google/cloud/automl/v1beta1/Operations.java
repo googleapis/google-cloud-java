@@ -78,13 +78,13 @@ public final class Operations {
   static {
     java.lang.String[] descriptorData = {
       "\n,google/cloud/automl/v1beta1/operations"
-          + ".proto\022\033google.cloud.automl.v1beta1\032\034goo"
-          + "gle/api/annotations.proto\032$google/cloud/"
-          + "automl/v1beta1/io.proto\032\'google/cloud/au"
-          + "toml/v1beta1/model.proto\0322google/cloud/a"
-          + "utoml/v1beta1/model_evaluation.proto\032\033go"
-          + "ogle/protobuf/empty.proto\032\037google/protob"
-          + "uf/timestamp.proto\032\027google/rpc/status.pr"
+          + ".proto\022\033google.cloud.automl.v1beta1\032$goo"
+          + "gle/cloud/automl/v1beta1/io.proto\032\'googl"
+          + "e/cloud/automl/v1beta1/model.proto\0322goog"
+          + "le/cloud/automl/v1beta1/model_evaluation"
+          + ".proto\032\033google/protobuf/empty.proto\032\037goo"
+          + "gle/protobuf/timestamp.proto\032\027google/rpc"
+          + "/status.proto\032\034google/api/annotations.pr"
           + "oto\"\213\010\n\021OperationMetadata\022N\n\016delete_deta"
           + "ils\030\010 \001(\01324.google.cloud.automl.v1beta1."
           + "DeleteOperationMetadataH\000\022Y\n\024deploy_mode"
@@ -156,13 +156,13 @@ public final class Operations {
     com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
         descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.api.AnnotationsProto.getDescriptor(),
           com.google.cloud.automl.v1beta1.Io.getDescriptor(),
           com.google.cloud.automl.v1beta1.ModelOuterClass.getDescriptor(),
           com.google.cloud.automl.v1beta1.ModelEvaluationOuterClass.getDescriptor(),
           com.google.protobuf.EmptyProto.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
           com.google.rpc.StatusProto.getDescriptor(),
+          com.google.api.AnnotationsProto.getDescriptor(),
         },
         assigner);
     internal_static_google_cloud_automl_v1beta1_OperationMetadata_descriptor =
@@ -288,13 +288,13 @@ public final class Operations {
             new java.lang.String[] {
               "BigqueryOutputDataset",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.cloud.automl.v1beta1.Io.getDescriptor();
     com.google.cloud.automl.v1beta1.ModelOuterClass.getDescriptor();
     com.google.cloud.automl.v1beta1.ModelEvaluationOuterClass.getDescriptor();
     com.google.protobuf.EmptyProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.rpc.StatusProto.getDescriptor();
+    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

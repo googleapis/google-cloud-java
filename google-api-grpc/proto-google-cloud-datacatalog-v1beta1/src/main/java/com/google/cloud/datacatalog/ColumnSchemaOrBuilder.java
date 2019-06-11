@@ -54,7 +54,7 @@ public interface ColumnSchemaOrBuilder
    *
    *
    * <pre>
-   * Description of the column.
+   * Optional. Description of the column. Default value is an empty string.
    * </pre>
    *
    * <code>string description = 2;</code>
@@ -64,7 +64,7 @@ public interface ColumnSchemaOrBuilder
    *
    *
    * <pre>
-   * Description of the column.
+   * Optional. Description of the column. Default value is an empty string.
    * </pre>
    *
    * <code>string description = 2;</code>
@@ -75,9 +75,9 @@ public interface ColumnSchemaOrBuilder
    *
    *
    * <pre>
-   * A column's mode indicates whether the values in this column are
+   * Optional. A column's mode indicates whether the values in this column are
    * required, nullable, etc. Only 'NULLABLE', 'REQUIRED' and 'REPEATED' are
-   * supported, default mode is 'NULLABLE'.
+   * supported. Default mode is 'NULLABLE'.
    * </pre>
    *
    * <code>string mode = 3;</code>
@@ -87,9 +87,9 @@ public interface ColumnSchemaOrBuilder
    *
    *
    * <pre>
-   * A column's mode indicates whether the values in this column are
+   * Optional. A column's mode indicates whether the values in this column are
    * required, nullable, etc. Only 'NULLABLE', 'REQUIRED' and 'REPEATED' are
-   * supported, default mode is 'NULLABLE'.
+   * supported. Default mode is 'NULLABLE'.
    * </pre>
    *
    * <code>string mode = 3;</code>
@@ -100,7 +100,8 @@ public interface ColumnSchemaOrBuilder
    *
    *
    * <pre>
-   * Schema of sub-columns.
+   * Optional. Schema of sub-columns. A column can have zero or more
+   * sub-columns.
    * </pre>
    *
    * <code>repeated .google.cloud.datacatalog.v1beta1.ColumnSchema subcolumns = 7;</code>
@@ -110,7 +111,8 @@ public interface ColumnSchemaOrBuilder
    *
    *
    * <pre>
-   * Schema of sub-columns.
+   * Optional. Schema of sub-columns. A column can have zero or more
+   * sub-columns.
    * </pre>
    *
    * <code>repeated .google.cloud.datacatalog.v1beta1.ColumnSchema subcolumns = 7;</code>
@@ -120,7 +122,8 @@ public interface ColumnSchemaOrBuilder
    *
    *
    * <pre>
-   * Schema of sub-columns.
+   * Optional. Schema of sub-columns. A column can have zero or more
+   * sub-columns.
    * </pre>
    *
    * <code>repeated .google.cloud.datacatalog.v1beta1.ColumnSchema subcolumns = 7;</code>
@@ -130,7 +133,8 @@ public interface ColumnSchemaOrBuilder
    *
    *
    * <pre>
-   * Schema of sub-columns.
+   * Optional. Schema of sub-columns. A column can have zero or more
+   * sub-columns.
    * </pre>
    *
    * <code>repeated .google.cloud.datacatalog.v1beta1.ColumnSchema subcolumns = 7;</code>
@@ -141,7 +145,8 @@ public interface ColumnSchemaOrBuilder
    *
    *
    * <pre>
-   * Schema of sub-columns.
+   * Optional. Schema of sub-columns. A column can have zero or more
+   * sub-columns.
    * </pre>
    *
    * <code>repeated .google.cloud.datacatalog.v1beta1.ColumnSchema subcolumns = 7;</code>

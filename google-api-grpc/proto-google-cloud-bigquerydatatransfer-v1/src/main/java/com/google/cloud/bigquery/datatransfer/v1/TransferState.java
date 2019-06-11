@@ -48,7 +48,7 @@ public enum TransferState implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Data transfer completed successsfully.
+   * Data transfer completed successfully.
    * </pre>
    *
    * <code>SUCCEEDED = 4;</code>
@@ -112,7 +112,7 @@ public enum TransferState implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Data transfer completed successsfully.
+   * Data transfer completed successfully.
    * </pre>
    *
    * <code>SUCCEEDED = 4;</code>

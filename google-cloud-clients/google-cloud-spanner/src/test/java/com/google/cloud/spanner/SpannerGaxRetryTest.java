@@ -201,7 +201,7 @@ public class SpannerGaxRetryTest {
             .setInitialRpcTimeout(Duration.ofMillis(500L))
             .setMaxRpcTimeout(Duration.ofMillis(500L))
             .setMaxAttempts(3)
-            .setTotalTimeout(Duration.ofMillis(1000L))
+            .setTotalTimeout(Duration.ofMillis(1500L))
             .build();
     RetrySettings commitRetrySettings =
         RetrySettings.newBuilder()

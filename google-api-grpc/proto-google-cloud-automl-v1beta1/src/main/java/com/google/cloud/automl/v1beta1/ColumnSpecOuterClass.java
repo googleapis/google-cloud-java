@@ -30,10 +30,10 @@ public final class ColumnSpecOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n-google/cloud/automl/v1beta1/column_spe"
-          + "c.proto\022\033google.cloud.automl.v1beta1\032\034go"
-          + "ogle/api/annotations.proto\032,google/cloud"
-          + "/automl/v1beta1/data_stats.proto\032,google"
-          + "/cloud/automl/v1beta1/data_types.proto\"\204"
+          + "c.proto\022\033google.cloud.automl.v1beta1\032,go"
+          + "ogle/cloud/automl/v1beta1/data_stats.pro"
+          + "to\032,google/cloud/automl/v1beta1/data_typ"
+          + "es.proto\032\034google/api/annotations.proto\"\204"
           + "\003\n\nColumnSpec\022\014\n\004name\030\001 \001(\t\0228\n\tdata_type"
           + "\030\002 \001(\0132%.google.cloud.automl.v1beta1.Dat"
           + "aType\022\024\n\014display_name\030\003 \001(\t\022:\n\ndata_stat"
@@ -60,9 +60,9 @@ public final class ColumnSpecOuterClass {
     com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
         descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.api.AnnotationsProto.getDescriptor(),
           com.google.cloud.automl.v1beta1.DataStatsOuterClass.getDescriptor(),
           com.google.cloud.automl.v1beta1.DataTypes.getDescriptor(),
+          com.google.api.AnnotationsProto.getDescriptor(),
         },
         assigner);
     internal_static_google_cloud_automl_v1beta1_ColumnSpec_descriptor =
@@ -81,9 +81,9 @@ public final class ColumnSpecOuterClass {
             new java.lang.String[] {
               "ColumnSpecId", "CorrelationStats",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.cloud.automl.v1beta1.DataStatsOuterClass.getDescriptor();
     com.google.cloud.automl.v1beta1.DataTypes.getDescriptor();
+    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

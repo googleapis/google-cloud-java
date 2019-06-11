@@ -85,7 +85,7 @@ public class GrpcFirestoreRpc implements FirestoreRpc {
           || NoCredentials.getInstance().equals(options.getCredentials())) {
         ManagedChannel managedChannel =
             ManagedChannelBuilder.forTarget(options.getHost())
-                .usePlaintext(true)
+                .usePlaintext()
                 .executor(executor)
                 .build();
         TransportChannel transportChannel = GrpcTransportChannel.create(managedChannel);
