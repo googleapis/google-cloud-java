@@ -23,6 +23,7 @@ import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.ApiExceptions;
 import com.google.cloud.firestore.v1.FirestoreClient.ListDocumentsPagedResponse;
 import com.google.common.base.Preconditions;
+import com.google.common.util.concurrent.MoreExecutors;
 import com.google.firestore.v1.Document;
 import com.google.firestore.v1.DocumentMask;
 import com.google.firestore.v1.ListDocumentsRequest;
@@ -187,7 +188,8 @@ public class CollectionReference extends Query {
           public DocumentReference apply(WriteResult writeResult) {
             return documentReference;
           }
-        });
+        },
+        MoreExecutors.directExecutor());
   }
 
   /**

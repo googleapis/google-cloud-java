@@ -23098,7 +23098,7 @@ public final class TestDefinition {
     /** <code>.tests.DocChange.Kind kind = 1;</code> */
     public com.google.cloud.firestore.conformance.TestDefinition.DocChange.Kind getKind() {
       com.google.cloud.firestore.conformance.TestDefinition.DocChange.Kind result =
-          com.google.cloud.firestore.conformance.TestDefinition.DocChange.Kind.valueOf(kind_);
+          com.google.cloud.firestore.conformance.TestDefinition.DocChange.Kind.forNumber(kind_);
       return result == null
           ? com.google.cloud.firestore.conformance.TestDefinition.DocChange.Kind.UNRECOGNIZED
           : result;
@@ -23510,7 +23510,7 @@ public final class TestDefinition {
       /** <code>.tests.DocChange.Kind kind = 1;</code> */
       public com.google.cloud.firestore.conformance.TestDefinition.DocChange.Kind getKind() {
         com.google.cloud.firestore.conformance.TestDefinition.DocChange.Kind result =
-            com.google.cloud.firestore.conformance.TestDefinition.DocChange.Kind.valueOf(kind_);
+            com.google.cloud.firestore.conformance.TestDefinition.DocChange.Kind.forNumber(kind_);
         return result == null
             ? com.google.cloud.firestore.conformance.TestDefinition.DocChange.Kind.UNRECOGNIZED
             : result;
