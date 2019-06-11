@@ -174,14 +174,15 @@ public final class PredictionServiceGrpc {
      *                          up to 30MB.
      * * Image Object Detection - Image in .JPEG, .GIF or .PNG format, image_bytes
      *                            up to 30MB.
-     * * Text Classification - TextSnippet, content up to 10,000 characters,
+     * * Text Classification - TextSnippet, content up to 60,000 characters,
      *                         UTF-8 encoded.
      * * Text Extraction - TextSnippet, content up to 30,000 characters,
-     *                     UTF-8 NFC encoded. * Translation - TextSnippet, content up to 25,000 characters, UTF-8
+     *                     UTF-8 NFC encoded.
+     * * Translation - TextSnippet, content up to 25,000 characters, UTF-8
      *                 encoded.
      * * Tables - Row, with column values matching the columns of the model,
-     *            up to 5MB.
-     * * Text Sentiment - TextSnippet, content up 500 characters, UTF-8 encoded.
+     *            up to 5MB. Not available for FORECASTING
+     * [prediction_type][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type].
      * </pre>
      */
     public void predict(
@@ -203,6 +204,7 @@ public final class PredictionServiceGrpc {
      * the [response][google.longrunning.Operation.response] field.
      * Available for following ML problems:
      * * Video Classification
+     * * Video Object Tracking
      * * Text Extraction
      * * Tables
      * </pre>
@@ -268,14 +270,15 @@ public final class PredictionServiceGrpc {
      *                          up to 30MB.
      * * Image Object Detection - Image in .JPEG, .GIF or .PNG format, image_bytes
      *                            up to 30MB.
-     * * Text Classification - TextSnippet, content up to 10,000 characters,
+     * * Text Classification - TextSnippet, content up to 60,000 characters,
      *                         UTF-8 encoded.
      * * Text Extraction - TextSnippet, content up to 30,000 characters,
-     *                     UTF-8 NFC encoded. * Translation - TextSnippet, content up to 25,000 characters, UTF-8
+     *                     UTF-8 NFC encoded.
+     * * Translation - TextSnippet, content up to 25,000 characters, UTF-8
      *                 encoded.
      * * Tables - Row, with column values matching the columns of the model,
-     *            up to 5MB.
-     * * Text Sentiment - TextSnippet, content up 500 characters, UTF-8 encoded.
+     *            up to 5MB. Not available for FORECASTING
+     * [prediction_type][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type].
      * </pre>
      */
     public void predict(
@@ -300,6 +303,7 @@ public final class PredictionServiceGrpc {
      * the [response][google.longrunning.Operation.response] field.
      * Available for following ML problems:
      * * Video Classification
+     * * Video Object Tracking
      * * Text Extraction
      * * Tables
      * </pre>
@@ -351,14 +355,15 @@ public final class PredictionServiceGrpc {
      *                          up to 30MB.
      * * Image Object Detection - Image in .JPEG, .GIF or .PNG format, image_bytes
      *                            up to 30MB.
-     * * Text Classification - TextSnippet, content up to 10,000 characters,
+     * * Text Classification - TextSnippet, content up to 60,000 characters,
      *                         UTF-8 encoded.
      * * Text Extraction - TextSnippet, content up to 30,000 characters,
-     *                     UTF-8 NFC encoded. * Translation - TextSnippet, content up to 25,000 characters, UTF-8
+     *                     UTF-8 NFC encoded.
+     * * Translation - TextSnippet, content up to 25,000 characters, UTF-8
      *                 encoded.
      * * Tables - Row, with column values matching the columns of the model,
-     *            up to 5MB.
-     * * Text Sentiment - TextSnippet, content up 500 characters, UTF-8 encoded.
+     *            up to 5MB. Not available for FORECASTING
+     * [prediction_type][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type].
      * </pre>
      */
     public com.google.cloud.automl.v1beta1.PredictResponse predict(
@@ -378,6 +383,7 @@ public final class PredictionServiceGrpc {
      * the [response][google.longrunning.Operation.response] field.
      * Available for following ML problems:
      * * Video Classification
+     * * Video Object Tracking
      * * Text Extraction
      * * Tables
      * </pre>
@@ -425,14 +431,15 @@ public final class PredictionServiceGrpc {
      *                          up to 30MB.
      * * Image Object Detection - Image in .JPEG, .GIF or .PNG format, image_bytes
      *                            up to 30MB.
-     * * Text Classification - TextSnippet, content up to 10,000 characters,
+     * * Text Classification - TextSnippet, content up to 60,000 characters,
      *                         UTF-8 encoded.
      * * Text Extraction - TextSnippet, content up to 30,000 characters,
-     *                     UTF-8 NFC encoded. * Translation - TextSnippet, content up to 25,000 characters, UTF-8
+     *                     UTF-8 NFC encoded.
+     * * Translation - TextSnippet, content up to 25,000 characters, UTF-8
      *                 encoded.
      * * Tables - Row, with column values matching the columns of the model,
-     *            up to 5MB.
-     * * Text Sentiment - TextSnippet, content up 500 characters, UTF-8 encoded.
+     *            up to 5MB. Not available for FORECASTING
+     * [prediction_type][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type].
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -454,6 +461,7 @@ public final class PredictionServiceGrpc {
      * the [response][google.longrunning.Operation.response] field.
      * Available for following ML problems:
      * * Video Classification
+     * * Video Object Tracking
      * * Text Extraction
      * * Tables
      * </pre>

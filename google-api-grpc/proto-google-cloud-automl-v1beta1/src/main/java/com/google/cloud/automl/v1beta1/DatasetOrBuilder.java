@@ -206,6 +206,45 @@ public interface DatasetOrBuilder
    *
    *
    * <pre>
+   * Metadata for a dataset used for video object tracking.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1beta1.VideoObjectTrackingDatasetMetadata video_object_tracking_dataset_metadata = 29;
+   * </code>
+   */
+  boolean hasVideoObjectTrackingDatasetMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for a dataset used for video object tracking.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1beta1.VideoObjectTrackingDatasetMetadata video_object_tracking_dataset_metadata = 29;
+   * </code>
+   */
+  com.google.cloud.automl.v1beta1.VideoObjectTrackingDatasetMetadata
+      getVideoObjectTrackingDatasetMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for a dataset used for video object tracking.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1beta1.VideoObjectTrackingDatasetMetadata video_object_tracking_dataset_metadata = 29;
+   * </code>
+   */
+  com.google.cloud.automl.v1beta1.VideoObjectTrackingDatasetMetadataOrBuilder
+      getVideoObjectTrackingDatasetMetadataOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Metadata for a dataset used for text extraction.
    * </pre>
    *

@@ -21,8 +21,7 @@ package com.google.cloud.automl.v1beta1;
  *       and timestamp will be in YYYY_MM_DDThh_mm_ss_sssZ "based on ISO-8601"
  *       format. In the dataset an `evaluated_examples` table will be
  *       created. It will have all the same columns as the
- *       [primary
- * table][google.cloud.automl.v1beta1.TablesDatasetMetadata.primary_table_spec_id]
+ * [primary_table][google.cloud.automl.v1beta1.TablesDatasetMetadata.primary_table_spec_id]
  *       of the
  *       [dataset][google.cloud.automl.v1beta1.Model.dataset_id] from which
  *       the model was created, as they were at the moment of model's
@@ -405,8 +404,7 @@ public final class ExportEvaluatedExamplesOutputConfig
    *       and timestamp will be in YYYY_MM_DDThh_mm_ss_sssZ "based on ISO-8601"
    *       format. In the dataset an `evaluated_examples` table will be
    *       created. It will have all the same columns as the
-   *       [primary
-   * table][google.cloud.automl.v1beta1.TablesDatasetMetadata.primary_table_spec_id]
+   * [primary_table][google.cloud.automl.v1beta1.TablesDatasetMetadata.primary_table_spec_id]
    *       of the
    *       [dataset][google.cloud.automl.v1beta1.Model.dataset_id] from which
    *       the model was created, as they were at the moment of model's

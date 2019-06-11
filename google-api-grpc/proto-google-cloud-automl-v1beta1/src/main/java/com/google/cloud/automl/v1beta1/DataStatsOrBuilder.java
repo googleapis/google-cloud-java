@@ -216,5 +216,16 @@ public interface DataStatsOrBuilder
    */
   long getNullValueCount();
 
+  /**
+   *
+   *
+   * <pre>
+   * The number of values that are valid.
+   * </pre>
+   *
+   * <code>int64 valid_value_count = 9;</code>
+   */
+  long getValidValueCount();
+
   public com.google.cloud.automl.v1beta1.DataStats.StatsCase getStatsCase();
 }

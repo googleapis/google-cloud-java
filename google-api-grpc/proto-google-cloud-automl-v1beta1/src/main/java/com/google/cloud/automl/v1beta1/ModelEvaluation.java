@@ -206,6 +206,29 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
               metricsCase_ = 13;
               break;
             }
+          case 114:
+            {
+              com.google.cloud.automl.v1beta1.VideoObjectTrackingEvaluationMetrics.Builder
+                  subBuilder = null;
+              if (metricsCase_ == 14) {
+                subBuilder =
+                    ((com.google.cloud.automl.v1beta1.VideoObjectTrackingEvaluationMetrics)
+                            metrics_)
+                        .toBuilder();
+              }
+              metrics_ =
+                  input.readMessage(
+                      com.google.cloud.automl.v1beta1.VideoObjectTrackingEvaluationMetrics.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.cloud.automl.v1beta1.VideoObjectTrackingEvaluationMetrics)
+                        metrics_);
+                metrics_ = subBuilder.buildPartial();
+              }
+              metricsCase_ = 14;
+              break;
+            }
           case 122:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -279,6 +302,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
     REGRESSION_EVALUATION_METRICS(24),
     TRANSLATION_EVALUATION_METRICS(9),
     IMAGE_OBJECT_DETECTION_EVALUATION_METRICS(12),
+    VIDEO_OBJECT_TRACKING_EVALUATION_METRICS(14),
     TEXT_SENTIMENT_EVALUATION_METRICS(11),
     TEXT_EXTRACTION_EVALUATION_METRICS(13),
     METRICS_NOT_SET(0);
@@ -303,6 +327,8 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
           return TRANSLATION_EVALUATION_METRICS;
         case 12:
           return IMAGE_OBJECT_DETECTION_EVALUATION_METRICS;
+        case 14:
+          return VIDEO_OBJECT_TRACKING_EVALUATION_METRICS;
         case 11:
           return TEXT_SENTIMENT_EVALUATION_METRICS;
         case 13:
@@ -331,7 +357,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
    * Model evaluation metrics for image, text, video and tables
    * classification.
    * Tables problem is considered a classification when the target column
-   * has either CATEGORY or ARRAY(CATEGORY) DataType.
+   * is CATEGORY DataType.
    * </pre>
    *
    * <code>
@@ -348,7 +374,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
    * Model evaluation metrics for image, text, video and tables
    * classification.
    * Tables problem is considered a classification when the target column
-   * has either CATEGORY or ARRAY(CATEGORY) DataType.
+   * is CATEGORY DataType.
    * </pre>
    *
    * <code>
@@ -371,7 +397,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
    * Model evaluation metrics for image, text, video and tables
    * classification.
    * Tables problem is considered a classification when the target column
-   * has either CATEGORY or ARRAY(CATEGORY) DataType.
+   * is CATEGORY DataType.
    * </pre>
    *
    * <code>
@@ -555,6 +581,60 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
         .getDefaultInstance();
   }
 
+  public static final int VIDEO_OBJECT_TRACKING_EVALUATION_METRICS_FIELD_NUMBER = 14;
+  /**
+   *
+   *
+   * <pre>
+   * Model evaluation metrics for video object tracking.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1beta1.VideoObjectTrackingEvaluationMetrics video_object_tracking_evaluation_metrics = 14;
+   * </code>
+   */
+  public boolean hasVideoObjectTrackingEvaluationMetrics() {
+    return metricsCase_ == 14;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Model evaluation metrics for video object tracking.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1beta1.VideoObjectTrackingEvaluationMetrics video_object_tracking_evaluation_metrics = 14;
+   * </code>
+   */
+  public com.google.cloud.automl.v1beta1.VideoObjectTrackingEvaluationMetrics
+      getVideoObjectTrackingEvaluationMetrics() {
+    if (metricsCase_ == 14) {
+      return (com.google.cloud.automl.v1beta1.VideoObjectTrackingEvaluationMetrics) metrics_;
+    }
+    return com.google.cloud.automl.v1beta1.VideoObjectTrackingEvaluationMetrics
+        .getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Model evaluation metrics for video object tracking.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1beta1.VideoObjectTrackingEvaluationMetrics video_object_tracking_evaluation_metrics = 14;
+   * </code>
+   */
+  public com.google.cloud.automl.v1beta1.VideoObjectTrackingEvaluationMetricsOrBuilder
+      getVideoObjectTrackingEvaluationMetricsOrBuilder() {
+    if (metricsCase_ == 14) {
+      return (com.google.cloud.automl.v1beta1.VideoObjectTrackingEvaluationMetrics) metrics_;
+    }
+    return com.google.cloud.automl.v1beta1.VideoObjectTrackingEvaluationMetrics
+        .getDefaultInstance();
+  }
+
   public static final int TEXT_SENTIMENT_EVALUATION_METRICS_FIELD_NUMBER = 11;
   /**
    *
@@ -721,12 +801,12 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
    * Output only.
    * The ID of the annotation spec that the model evaluation applies to. The
    * The ID is empty for the overall model evaluation.
-   * For Tables classification these are the distinct values of the target
-   * column at the moment of the evaluation; for this problem annotation specs
-   * in the dataset do not exist.
-   * NOTE: Currently there is no way to obtain the display_name of the
-   * annotation spec from its ID. To see the display_names, review the model
-   * evaluations in the UI.
+   * For Tables annotation specs in the dataset do not exist and this ID is
+   * always not set, but for CLASSIFICATION
+   * [prediction_type-s][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type]
+   * the
+   * [display_name][google.cloud.automl.v1beta1.ModelEvaluation.display_name]
+   * field is used.
    * </pre>
    *
    * <code>string annotation_spec_id = 2;</code>
@@ -749,12 +829,12 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
    * Output only.
    * The ID of the annotation spec that the model evaluation applies to. The
    * The ID is empty for the overall model evaluation.
-   * For Tables classification these are the distinct values of the target
-   * column at the moment of the evaluation; for this problem annotation specs
-   * in the dataset do not exist.
-   * NOTE: Currently there is no way to obtain the display_name of the
-   * annotation spec from its ID. To see the display_names, review the model
-   * evaluations in the UI.
+   * For Tables annotation specs in the dataset do not exist and this ID is
+   * always not set, but for CLASSIFICATION
+   * [prediction_type-s][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type]
+   * the
+   * [display_name][google.cloud.automl.v1beta1.ModelEvaluation.display_name]
+   * field is used.
    * </pre>
    *
    * <code>string annotation_spec_id = 2;</code>
@@ -777,11 +857,16 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Output only. The value of [AnnotationSpec.display_name][google.cloud.automl.v1beta1.AnnotationSpec.display_name] when the model
-   * was trained. Because this field returns a value at model training time,
-   * for different models trained using the same dataset, the returned value
-   * could be different as model owner could update the display_name between
-   * any two model training.
+   * Output only. The value of
+   * [display_name][google.cloud.automl.v1beta1.AnnotationSpec.dispay_name] at
+   * the moment when the model was trained. Because this field returns a value
+   * at model training time, for different models trained from the same dataset,
+   * the values may differ, since display names could had been changed between
+   * the two model's trainings.
+   * For Tables CLASSIFICATION
+   * [prediction_type-s][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type]
+   * distinct values of the target column at the moment of the model evaluation
+   * are populated here.
    * The display_name is empty for the overall model evaluation.
    * </pre>
    *
@@ -802,11 +887,16 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Output only. The value of [AnnotationSpec.display_name][google.cloud.automl.v1beta1.AnnotationSpec.display_name] when the model
-   * was trained. Because this field returns a value at model training time,
-   * for different models trained using the same dataset, the returned value
-   * could be different as model owner could update the display_name between
-   * any two model training.
+   * Output only. The value of
+   * [display_name][google.cloud.automl.v1beta1.AnnotationSpec.dispay_name] at
+   * the moment when the model was trained. Because this field returns a value
+   * at model training time, for different models trained from the same dataset,
+   * the values may differ, since display names could had been changed between
+   * the two model's trainings.
+   * For Tables CLASSIFICATION
+   * [prediction_type-s][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type]
+   * distinct values of the target column at the moment of the model evaluation
+   * are populated here.
    * The display_name is empty for the overall model evaluation.
    * </pre>
    *
@@ -939,6 +1029,10 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
       output.writeMessage(
           13, (com.google.cloud.automl.v1beta1.TextExtractionEvaluationMetrics) metrics_);
     }
+    if (metricsCase_ == 14) {
+      output.writeMessage(
+          14, (com.google.cloud.automl.v1beta1.VideoObjectTrackingEvaluationMetrics) metrics_);
+    }
     if (!getDisplayNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 15, displayName_);
     }
@@ -997,6 +1091,11 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               13, (com.google.cloud.automl.v1beta1.TextExtractionEvaluationMetrics) metrics_);
     }
+    if (metricsCase_ == 14) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              14, (com.google.cloud.automl.v1beta1.VideoObjectTrackingEvaluationMetrics) metrics_);
+    }
     if (!getDisplayNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, displayName_);
     }
@@ -1049,6 +1148,10 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
         if (!getImageObjectDetectionEvaluationMetrics()
             .equals(other.getImageObjectDetectionEvaluationMetrics())) return false;
         break;
+      case 14:
+        if (!getVideoObjectTrackingEvaluationMetrics()
+            .equals(other.getVideoObjectTrackingEvaluationMetrics())) return false;
+        break;
       case 11:
         if (!getTextSentimentEvaluationMetrics().equals(other.getTextSentimentEvaluationMetrics()))
           return false;
@@ -1099,6 +1202,10 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
       case 12:
         hash = (37 * hash) + IMAGE_OBJECT_DETECTION_EVALUATION_METRICS_FIELD_NUMBER;
         hash = (53 * hash) + getImageObjectDetectionEvaluationMetrics().hashCode();
+        break;
+      case 14:
+        hash = (37 * hash) + VIDEO_OBJECT_TRACKING_EVALUATION_METRICS_FIELD_NUMBER;
+        hash = (53 * hash) + getVideoObjectTrackingEvaluationMetrics().hashCode();
         break;
       case 11:
         hash = (37 * hash) + TEXT_SENTIMENT_EVALUATION_METRICS_FIELD_NUMBER;
@@ -1327,6 +1434,13 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
           result.metrics_ = imageObjectDetectionEvaluationMetricsBuilder_.build();
         }
       }
+      if (metricsCase_ == 14) {
+        if (videoObjectTrackingEvaluationMetricsBuilder_ == null) {
+          result.metrics_ = metrics_;
+        } else {
+          result.metrics_ = videoObjectTrackingEvaluationMetricsBuilder_.build();
+        }
+      }
       if (metricsCase_ == 11) {
         if (textSentimentEvaluationMetricsBuilder_ == null) {
           result.metrics_ = metrics_;
@@ -1441,6 +1555,12 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
                 other.getImageObjectDetectionEvaluationMetrics());
             break;
           }
+        case VIDEO_OBJECT_TRACKING_EVALUATION_METRICS:
+          {
+            mergeVideoObjectTrackingEvaluationMetrics(
+                other.getVideoObjectTrackingEvaluationMetrics());
+            break;
+          }
         case TEXT_SENTIMENT_EVALUATION_METRICS:
           {
             mergeTextSentimentEvaluationMetrics(other.getTextSentimentEvaluationMetrics());
@@ -1513,7 +1633,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      * Model evaluation metrics for image, text, video and tables
      * classification.
      * Tables problem is considered a classification when the target column
-     * has either CATEGORY or ARRAY(CATEGORY) DataType.
+     * is CATEGORY DataType.
      * </pre>
      *
      * <code>
@@ -1530,7 +1650,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      * Model evaluation metrics for image, text, video and tables
      * classification.
      * Tables problem is considered a classification when the target column
-     * has either CATEGORY or ARRAY(CATEGORY) DataType.
+     * is CATEGORY DataType.
      * </pre>
      *
      * <code>
@@ -1562,7 +1682,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      * Model evaluation metrics for image, text, video and tables
      * classification.
      * Tables problem is considered a classification when the target column
-     * has either CATEGORY or ARRAY(CATEGORY) DataType.
+     * is CATEGORY DataType.
      * </pre>
      *
      * <code>
@@ -1590,7 +1710,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      * Model evaluation metrics for image, text, video and tables
      * classification.
      * Tables problem is considered a classification when the target column
-     * has either CATEGORY or ARRAY(CATEGORY) DataType.
+     * is CATEGORY DataType.
      * </pre>
      *
      * <code>
@@ -1616,7 +1736,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      * Model evaluation metrics for image, text, video and tables
      * classification.
      * Tables problem is considered a classification when the target column
-     * has either CATEGORY or ARRAY(CATEGORY) DataType.
+     * is CATEGORY DataType.
      * </pre>
      *
      * <code>
@@ -1658,7 +1778,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      * Model evaluation metrics for image, text, video and tables
      * classification.
      * Tables problem is considered a classification when the target column
-     * has either CATEGORY or ARRAY(CATEGORY) DataType.
+     * is CATEGORY DataType.
      * </pre>
      *
      * <code>
@@ -1688,7 +1808,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      * Model evaluation metrics for image, text, video and tables
      * classification.
      * Tables problem is considered a classification when the target column
-     * has either CATEGORY or ARRAY(CATEGORY) DataType.
+     * is CATEGORY DataType.
      * </pre>
      *
      * <code>
@@ -1707,7 +1827,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      * Model evaluation metrics for image, text, video and tables
      * classification.
      * Tables problem is considered a classification when the target column
-     * has either CATEGORY or ARRAY(CATEGORY) DataType.
+     * is CATEGORY DataType.
      * </pre>
      *
      * <code>
@@ -1736,7 +1856,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      * Model evaluation metrics for image, text, video and tables
      * classification.
      * Tables problem is considered a classification when the target column
-     * has either CATEGORY or ARRAY(CATEGORY) DataType.
+     * is CATEGORY DataType.
      * </pre>
      *
      * <code>
@@ -2496,6 +2616,240 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.automl.v1beta1.VideoObjectTrackingEvaluationMetrics,
+            com.google.cloud.automl.v1beta1.VideoObjectTrackingEvaluationMetrics.Builder,
+            com.google.cloud.automl.v1beta1.VideoObjectTrackingEvaluationMetricsOrBuilder>
+        videoObjectTrackingEvaluationMetricsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Model evaluation metrics for video object tracking.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.VideoObjectTrackingEvaluationMetrics video_object_tracking_evaluation_metrics = 14;
+     * </code>
+     */
+    public boolean hasVideoObjectTrackingEvaluationMetrics() {
+      return metricsCase_ == 14;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Model evaluation metrics for video object tracking.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.VideoObjectTrackingEvaluationMetrics video_object_tracking_evaluation_metrics = 14;
+     * </code>
+     */
+    public com.google.cloud.automl.v1beta1.VideoObjectTrackingEvaluationMetrics
+        getVideoObjectTrackingEvaluationMetrics() {
+      if (videoObjectTrackingEvaluationMetricsBuilder_ == null) {
+        if (metricsCase_ == 14) {
+          return (com.google.cloud.automl.v1beta1.VideoObjectTrackingEvaluationMetrics) metrics_;
+        }
+        return com.google.cloud.automl.v1beta1.VideoObjectTrackingEvaluationMetrics
+            .getDefaultInstance();
+      } else {
+        if (metricsCase_ == 14) {
+          return videoObjectTrackingEvaluationMetricsBuilder_.getMessage();
+        }
+        return com.google.cloud.automl.v1beta1.VideoObjectTrackingEvaluationMetrics
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Model evaluation metrics for video object tracking.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.VideoObjectTrackingEvaluationMetrics video_object_tracking_evaluation_metrics = 14;
+     * </code>
+     */
+    public Builder setVideoObjectTrackingEvaluationMetrics(
+        com.google.cloud.automl.v1beta1.VideoObjectTrackingEvaluationMetrics value) {
+      if (videoObjectTrackingEvaluationMetricsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        metrics_ = value;
+        onChanged();
+      } else {
+        videoObjectTrackingEvaluationMetricsBuilder_.setMessage(value);
+      }
+      metricsCase_ = 14;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Model evaluation metrics for video object tracking.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.VideoObjectTrackingEvaluationMetrics video_object_tracking_evaluation_metrics = 14;
+     * </code>
+     */
+    public Builder setVideoObjectTrackingEvaluationMetrics(
+        com.google.cloud.automl.v1beta1.VideoObjectTrackingEvaluationMetrics.Builder
+            builderForValue) {
+      if (videoObjectTrackingEvaluationMetricsBuilder_ == null) {
+        metrics_ = builderForValue.build();
+        onChanged();
+      } else {
+        videoObjectTrackingEvaluationMetricsBuilder_.setMessage(builderForValue.build());
+      }
+      metricsCase_ = 14;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Model evaluation metrics for video object tracking.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.VideoObjectTrackingEvaluationMetrics video_object_tracking_evaluation_metrics = 14;
+     * </code>
+     */
+    public Builder mergeVideoObjectTrackingEvaluationMetrics(
+        com.google.cloud.automl.v1beta1.VideoObjectTrackingEvaluationMetrics value) {
+      if (videoObjectTrackingEvaluationMetricsBuilder_ == null) {
+        if (metricsCase_ == 14
+            && metrics_
+                != com.google.cloud.automl.v1beta1.VideoObjectTrackingEvaluationMetrics
+                    .getDefaultInstance()) {
+          metrics_ =
+              com.google.cloud.automl.v1beta1.VideoObjectTrackingEvaluationMetrics.newBuilder(
+                      (com.google.cloud.automl.v1beta1.VideoObjectTrackingEvaluationMetrics)
+                          metrics_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          metrics_ = value;
+        }
+        onChanged();
+      } else {
+        if (metricsCase_ == 14) {
+          videoObjectTrackingEvaluationMetricsBuilder_.mergeFrom(value);
+        }
+        videoObjectTrackingEvaluationMetricsBuilder_.setMessage(value);
+      }
+      metricsCase_ = 14;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Model evaluation metrics for video object tracking.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.VideoObjectTrackingEvaluationMetrics video_object_tracking_evaluation_metrics = 14;
+     * </code>
+     */
+    public Builder clearVideoObjectTrackingEvaluationMetrics() {
+      if (videoObjectTrackingEvaluationMetricsBuilder_ == null) {
+        if (metricsCase_ == 14) {
+          metricsCase_ = 0;
+          metrics_ = null;
+          onChanged();
+        }
+      } else {
+        if (metricsCase_ == 14) {
+          metricsCase_ = 0;
+          metrics_ = null;
+        }
+        videoObjectTrackingEvaluationMetricsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Model evaluation metrics for video object tracking.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.VideoObjectTrackingEvaluationMetrics video_object_tracking_evaluation_metrics = 14;
+     * </code>
+     */
+    public com.google.cloud.automl.v1beta1.VideoObjectTrackingEvaluationMetrics.Builder
+        getVideoObjectTrackingEvaluationMetricsBuilder() {
+      return getVideoObjectTrackingEvaluationMetricsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Model evaluation metrics for video object tracking.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.VideoObjectTrackingEvaluationMetrics video_object_tracking_evaluation_metrics = 14;
+     * </code>
+     */
+    public com.google.cloud.automl.v1beta1.VideoObjectTrackingEvaluationMetricsOrBuilder
+        getVideoObjectTrackingEvaluationMetricsOrBuilder() {
+      if ((metricsCase_ == 14) && (videoObjectTrackingEvaluationMetricsBuilder_ != null)) {
+        return videoObjectTrackingEvaluationMetricsBuilder_.getMessageOrBuilder();
+      } else {
+        if (metricsCase_ == 14) {
+          return (com.google.cloud.automl.v1beta1.VideoObjectTrackingEvaluationMetrics) metrics_;
+        }
+        return com.google.cloud.automl.v1beta1.VideoObjectTrackingEvaluationMetrics
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Model evaluation metrics for video object tracking.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.VideoObjectTrackingEvaluationMetrics video_object_tracking_evaluation_metrics = 14;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.automl.v1beta1.VideoObjectTrackingEvaluationMetrics,
+            com.google.cloud.automl.v1beta1.VideoObjectTrackingEvaluationMetrics.Builder,
+            com.google.cloud.automl.v1beta1.VideoObjectTrackingEvaluationMetricsOrBuilder>
+        getVideoObjectTrackingEvaluationMetricsFieldBuilder() {
+      if (videoObjectTrackingEvaluationMetricsBuilder_ == null) {
+        if (!(metricsCase_ == 14)) {
+          metrics_ =
+              com.google.cloud.automl.v1beta1.VideoObjectTrackingEvaluationMetrics
+                  .getDefaultInstance();
+        }
+        videoObjectTrackingEvaluationMetricsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.automl.v1beta1.VideoObjectTrackingEvaluationMetrics,
+                com.google.cloud.automl.v1beta1.VideoObjectTrackingEvaluationMetrics.Builder,
+                com.google.cloud.automl.v1beta1.VideoObjectTrackingEvaluationMetricsOrBuilder>(
+                (com.google.cloud.automl.v1beta1.VideoObjectTrackingEvaluationMetrics) metrics_,
+                getParentForChildren(),
+                isClean());
+        metrics_ = null;
+      }
+      metricsCase_ = 14;
+      onChanged();
+      ;
+      return videoObjectTrackingEvaluationMetricsBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.automl.v1beta1.TextSentimentProto.TextSentimentEvaluationMetrics,
             com.google.cloud.automl.v1beta1.TextSentimentProto.TextSentimentEvaluationMetrics
                 .Builder,
@@ -3086,12 +3440,12 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      * Output only.
      * The ID of the annotation spec that the model evaluation applies to. The
      * The ID is empty for the overall model evaluation.
-     * For Tables classification these are the distinct values of the target
-     * column at the moment of the evaluation; for this problem annotation specs
-     * in the dataset do not exist.
-     * NOTE: Currently there is no way to obtain the display_name of the
-     * annotation spec from its ID. To see the display_names, review the model
-     * evaluations in the UI.
+     * For Tables annotation specs in the dataset do not exist and this ID is
+     * always not set, but for CLASSIFICATION
+     * [prediction_type-s][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type]
+     * the
+     * [display_name][google.cloud.automl.v1beta1.ModelEvaluation.display_name]
+     * field is used.
      * </pre>
      *
      * <code>string annotation_spec_id = 2;</code>
@@ -3114,12 +3468,12 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      * Output only.
      * The ID of the annotation spec that the model evaluation applies to. The
      * The ID is empty for the overall model evaluation.
-     * For Tables classification these are the distinct values of the target
-     * column at the moment of the evaluation; for this problem annotation specs
-     * in the dataset do not exist.
-     * NOTE: Currently there is no way to obtain the display_name of the
-     * annotation spec from its ID. To see the display_names, review the model
-     * evaluations in the UI.
+     * For Tables annotation specs in the dataset do not exist and this ID is
+     * always not set, but for CLASSIFICATION
+     * [prediction_type-s][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type]
+     * the
+     * [display_name][google.cloud.automl.v1beta1.ModelEvaluation.display_name]
+     * field is used.
      * </pre>
      *
      * <code>string annotation_spec_id = 2;</code>
@@ -3142,12 +3496,12 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      * Output only.
      * The ID of the annotation spec that the model evaluation applies to. The
      * The ID is empty for the overall model evaluation.
-     * For Tables classification these are the distinct values of the target
-     * column at the moment of the evaluation; for this problem annotation specs
-     * in the dataset do not exist.
-     * NOTE: Currently there is no way to obtain the display_name of the
-     * annotation spec from its ID. To see the display_names, review the model
-     * evaluations in the UI.
+     * For Tables annotation specs in the dataset do not exist and this ID is
+     * always not set, but for CLASSIFICATION
+     * [prediction_type-s][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type]
+     * the
+     * [display_name][google.cloud.automl.v1beta1.ModelEvaluation.display_name]
+     * field is used.
      * </pre>
      *
      * <code>string annotation_spec_id = 2;</code>
@@ -3168,12 +3522,12 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      * Output only.
      * The ID of the annotation spec that the model evaluation applies to. The
      * The ID is empty for the overall model evaluation.
-     * For Tables classification these are the distinct values of the target
-     * column at the moment of the evaluation; for this problem annotation specs
-     * in the dataset do not exist.
-     * NOTE: Currently there is no way to obtain the display_name of the
-     * annotation spec from its ID. To see the display_names, review the model
-     * evaluations in the UI.
+     * For Tables annotation specs in the dataset do not exist and this ID is
+     * always not set, but for CLASSIFICATION
+     * [prediction_type-s][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type]
+     * the
+     * [display_name][google.cloud.automl.v1beta1.ModelEvaluation.display_name]
+     * field is used.
      * </pre>
      *
      * <code>string annotation_spec_id = 2;</code>
@@ -3191,12 +3545,12 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      * Output only.
      * The ID of the annotation spec that the model evaluation applies to. The
      * The ID is empty for the overall model evaluation.
-     * For Tables classification these are the distinct values of the target
-     * column at the moment of the evaluation; for this problem annotation specs
-     * in the dataset do not exist.
-     * NOTE: Currently there is no way to obtain the display_name of the
-     * annotation spec from its ID. To see the display_names, review the model
-     * evaluations in the UI.
+     * For Tables annotation specs in the dataset do not exist and this ID is
+     * always not set, but for CLASSIFICATION
+     * [prediction_type-s][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type]
+     * the
+     * [display_name][google.cloud.automl.v1beta1.ModelEvaluation.display_name]
+     * field is used.
      * </pre>
      *
      * <code>string annotation_spec_id = 2;</code>
@@ -3217,11 +3571,16 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. The value of [AnnotationSpec.display_name][google.cloud.automl.v1beta1.AnnotationSpec.display_name] when the model
-     * was trained. Because this field returns a value at model training time,
-     * for different models trained using the same dataset, the returned value
-     * could be different as model owner could update the display_name between
-     * any two model training.
+     * Output only. The value of
+     * [display_name][google.cloud.automl.v1beta1.AnnotationSpec.dispay_name] at
+     * the moment when the model was trained. Because this field returns a value
+     * at model training time, for different models trained from the same dataset,
+     * the values may differ, since display names could had been changed between
+     * the two model's trainings.
+     * For Tables CLASSIFICATION
+     * [prediction_type-s][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type]
+     * distinct values of the target column at the moment of the model evaluation
+     * are populated here.
      * The display_name is empty for the overall model evaluation.
      * </pre>
      *
@@ -3242,11 +3601,16 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. The value of [AnnotationSpec.display_name][google.cloud.automl.v1beta1.AnnotationSpec.display_name] when the model
-     * was trained. Because this field returns a value at model training time,
-     * for different models trained using the same dataset, the returned value
-     * could be different as model owner could update the display_name between
-     * any two model training.
+     * Output only. The value of
+     * [display_name][google.cloud.automl.v1beta1.AnnotationSpec.dispay_name] at
+     * the moment when the model was trained. Because this field returns a value
+     * at model training time, for different models trained from the same dataset,
+     * the values may differ, since display names could had been changed between
+     * the two model's trainings.
+     * For Tables CLASSIFICATION
+     * [prediction_type-s][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type]
+     * distinct values of the target column at the moment of the model evaluation
+     * are populated here.
      * The display_name is empty for the overall model evaluation.
      * </pre>
      *
@@ -3267,11 +3631,16 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. The value of [AnnotationSpec.display_name][google.cloud.automl.v1beta1.AnnotationSpec.display_name] when the model
-     * was trained. Because this field returns a value at model training time,
-     * for different models trained using the same dataset, the returned value
-     * could be different as model owner could update the display_name between
-     * any two model training.
+     * Output only. The value of
+     * [display_name][google.cloud.automl.v1beta1.AnnotationSpec.dispay_name] at
+     * the moment when the model was trained. Because this field returns a value
+     * at model training time, for different models trained from the same dataset,
+     * the values may differ, since display names could had been changed between
+     * the two model's trainings.
+     * For Tables CLASSIFICATION
+     * [prediction_type-s][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type]
+     * distinct values of the target column at the moment of the model evaluation
+     * are populated here.
      * The display_name is empty for the overall model evaluation.
      * </pre>
      *
@@ -3290,11 +3659,16 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. The value of [AnnotationSpec.display_name][google.cloud.automl.v1beta1.AnnotationSpec.display_name] when the model
-     * was trained. Because this field returns a value at model training time,
-     * for different models trained using the same dataset, the returned value
-     * could be different as model owner could update the display_name between
-     * any two model training.
+     * Output only. The value of
+     * [display_name][google.cloud.automl.v1beta1.AnnotationSpec.dispay_name] at
+     * the moment when the model was trained. Because this field returns a value
+     * at model training time, for different models trained from the same dataset,
+     * the values may differ, since display names could had been changed between
+     * the two model's trainings.
+     * For Tables CLASSIFICATION
+     * [prediction_type-s][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type]
+     * distinct values of the target column at the moment of the model evaluation
+     * are populated here.
      * The display_name is empty for the overall model evaluation.
      * </pre>
      *
@@ -3310,11 +3684,16 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. The value of [AnnotationSpec.display_name][google.cloud.automl.v1beta1.AnnotationSpec.display_name] when the model
-     * was trained. Because this field returns a value at model training time,
-     * for different models trained using the same dataset, the returned value
-     * could be different as model owner could update the display_name between
-     * any two model training.
+     * Output only. The value of
+     * [display_name][google.cloud.automl.v1beta1.AnnotationSpec.dispay_name] at
+     * the moment when the model was trained. Because this field returns a value
+     * at model training time, for different models trained from the same dataset,
+     * the values may differ, since display names could had been changed between
+     * the two model's trainings.
+     * For Tables CLASSIFICATION
+     * [prediction_type-s][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type]
+     * distinct values of the target column at the moment of the model evaluation
+     * are populated here.
      * The display_name is empty for the overall model evaluation.
      * </pre>
      *

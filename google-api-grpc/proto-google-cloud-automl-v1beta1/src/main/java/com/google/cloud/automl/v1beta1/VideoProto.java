@@ -17,9 +17,17 @@ public final class VideoProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_automl_v1beta1_VideoClassificationDatasetMetadata_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_automl_v1beta1_VideoObjectTrackingDatasetMetadata_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_automl_v1beta1_VideoObjectTrackingDatasetMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_automl_v1beta1_VideoClassificationModelMetadata_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_automl_v1beta1_VideoClassificationModelMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_automl_v1beta1_VideoObjectTrackingModelMetadata_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_automl_v1beta1_VideoObjectTrackingModelMetadata_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -30,15 +38,17 @@ public final class VideoProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\'google/cloud/automl/v1beta1/video.prot"
-          + "o\022\033google.cloud.automl.v1beta1\032\034google/a"
-          + "pi/annotations.proto\0320google/cloud/autom"
-          + "l/v1beta1/classification.proto\"$\n\"VideoC"
-          + "lassificationDatasetMetadata\"\"\n VideoCla"
-          + "ssificationModelMetadataB\220\001\n\037com.google."
-          + "cloud.automl.v1beta1B\nVideoProtoP\001ZAgoog"
-          + "le.golang.org/genproto/googleapis/cloud/"
-          + "automl/v1beta1;automl\312\002\033Google\\Cloud\\Aut"
-          + "oMl\\V1beta1b\006proto3"
+          + "o\022\033google.cloud.automl.v1beta1\0320google/c"
+          + "loud/automl/v1beta1/classification.proto"
+          + "\032\034google/api/annotations.proto\"$\n\"VideoC"
+          + "lassificationDatasetMetadata\"$\n\"VideoObj"
+          + "ectTrackingDatasetMetadata\"\"\n VideoClass"
+          + "ificationModelMetadata\"\"\n VideoObjectTra"
+          + "ckingModelMetadataB\220\001\n\037com.google.cloud."
+          + "automl.v1beta1B\nVideoProtoP\001ZAgoogle.gol"
+          + "ang.org/genproto/googleapis/cloud/automl"
+          + "/v1beta1;automl\312\002\033Google\\Cloud\\AutoMl\\V1"
+          + "beta1b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -51,8 +61,8 @@ public final class VideoProto {
     com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
         descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.api.AnnotationsProto.getDescriptor(),
           com.google.cloud.automl.v1beta1.ClassificationProto.getDescriptor(),
+          com.google.api.AnnotationsProto.getDescriptor(),
         },
         assigner);
     internal_static_google_cloud_automl_v1beta1_VideoClassificationDatasetMetadata_descriptor =
@@ -61,14 +71,26 @@ public final class VideoProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_automl_v1beta1_VideoClassificationDatasetMetadata_descriptor,
             new java.lang.String[] {});
-    internal_static_google_cloud_automl_v1beta1_VideoClassificationModelMetadata_descriptor =
+    internal_static_google_cloud_automl_v1beta1_VideoObjectTrackingDatasetMetadata_descriptor =
         getDescriptor().getMessageTypes().get(1);
+    internal_static_google_cloud_automl_v1beta1_VideoObjectTrackingDatasetMetadata_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_automl_v1beta1_VideoObjectTrackingDatasetMetadata_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_cloud_automl_v1beta1_VideoClassificationModelMetadata_descriptor =
+        getDescriptor().getMessageTypes().get(2);
     internal_static_google_cloud_automl_v1beta1_VideoClassificationModelMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_automl_v1beta1_VideoClassificationModelMetadata_descriptor,
             new java.lang.String[] {});
-    com.google.api.AnnotationsProto.getDescriptor();
+    internal_static_google_cloud_automl_v1beta1_VideoObjectTrackingModelMetadata_descriptor =
+        getDescriptor().getMessageTypes().get(3);
+    internal_static_google_cloud_automl_v1beta1_VideoObjectTrackingModelMetadata_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_automl_v1beta1_VideoObjectTrackingModelMetadata_descriptor,
+            new java.lang.String[] {});
     com.google.cloud.automl.v1beta1.ClassificationProto.getDescriptor();
+    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

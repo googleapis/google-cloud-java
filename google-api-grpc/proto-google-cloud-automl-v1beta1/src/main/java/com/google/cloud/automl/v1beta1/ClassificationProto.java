@@ -25,7 +25,7 @@ public final class ClassificationProto {
      *
      *
      * <pre>
-     * Should not be used, an un-set enum has this value by default.
+     * An un-set value of this enum.
      * </pre>
      *
      * <code>CLASSIFICATION_TYPE_UNSPECIFIED = 0;</code>
@@ -58,7 +58,7 @@ public final class ClassificationProto {
      *
      *
      * <pre>
-     * Should not be used, an un-set enum has this value by default.
+     * An un-set value of this enum.
      * </pre>
      *
      * <code>CLASSIFICATION_TYPE_UNSPECIFIED = 0;</code>
@@ -2285,9 +2285,10 @@ public final class ClassificationProto {
      * Output only. Metrics for each confidence_threshold in
      * 0.00,0.05,0.10,...,0.95,0.96,0.97,0.98,0.99 and
      * position_threshold = INT32_MAX_VALUE.
-     * Precision-recall curve is derived from them.
-     * The above metrics may also be supplied for additional values of
-     * position_threshold.
+     * ROC and precision-recall curves, and other aggregated metrics are derived
+     * from them. The confidence metrics entries may also be supplied for
+     * additional values of position_threshold, but from these no aggregated
+     * metrics are computed.
      * </pre>
      *
      * <code>
@@ -2305,9 +2306,10 @@ public final class ClassificationProto {
      * Output only. Metrics for each confidence_threshold in
      * 0.00,0.05,0.10,...,0.95,0.96,0.97,0.98,0.99 and
      * position_threshold = INT32_MAX_VALUE.
-     * Precision-recall curve is derived from them.
-     * The above metrics may also be supplied for additional values of
-     * position_threshold.
+     * ROC and precision-recall curves, and other aggregated metrics are derived
+     * from them. The confidence metrics entries may also be supplied for
+     * additional values of position_threshold, but from these no aggregated
+     * metrics are computed.
      * </pre>
      *
      * <code>
@@ -2324,9 +2326,10 @@ public final class ClassificationProto {
      * Output only. Metrics for each confidence_threshold in
      * 0.00,0.05,0.10,...,0.95,0.96,0.97,0.98,0.99 and
      * position_threshold = INT32_MAX_VALUE.
-     * Precision-recall curve is derived from them.
-     * The above metrics may also be supplied for additional values of
-     * position_threshold.
+     * ROC and precision-recall curves, and other aggregated metrics are derived
+     * from them. The confidence metrics entries may also be supplied for
+     * additional values of position_threshold, but from these no aggregated
+     * metrics are computed.
      * </pre>
      *
      * <code>
@@ -2341,9 +2344,10 @@ public final class ClassificationProto {
      * Output only. Metrics for each confidence_threshold in
      * 0.00,0.05,0.10,...,0.95,0.96,0.97,0.98,0.99 and
      * position_threshold = INT32_MAX_VALUE.
-     * Precision-recall curve is derived from them.
-     * The above metrics may also be supplied for additional values of
-     * position_threshold.
+     * ROC and precision-recall curves, and other aggregated metrics are derived
+     * from them. The confidence metrics entries may also be supplied for
+     * additional values of position_threshold, but from these no aggregated
+     * metrics are computed.
      * </pre>
      *
      * <code>
@@ -2362,9 +2366,10 @@ public final class ClassificationProto {
      * Output only. Metrics for each confidence_threshold in
      * 0.00,0.05,0.10,...,0.95,0.96,0.97,0.98,0.99 and
      * position_threshold = INT32_MAX_VALUE.
-     * Precision-recall curve is derived from them.
-     * The above metrics may also be supplied for additional values of
-     * position_threshold.
+     * ROC and precision-recall curves, and other aggregated metrics are derived
+     * from them. The confidence metrics entries may also be supplied for
+     * additional values of position_threshold, but from these no aggregated
+     * metrics are computed.
      * </pre>
      *
      * <code>
@@ -4490,6 +4495,9 @@ public final class ClassificationProto {
        *
        * <pre>
        * Output only. IDs of the annotation specs used in the confusion matrix.
+       * For Tables CLASSIFICATION
+       * [prediction_type][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type]
+       * only list of [annotation_spec_display_name-s][] is populated.
        * </pre>
        *
        * <code>repeated string annotation_spec_id = 1;</code>
@@ -4500,6 +4508,9 @@ public final class ClassificationProto {
        *
        * <pre>
        * Output only. IDs of the annotation specs used in the confusion matrix.
+       * For Tables CLASSIFICATION
+       * [prediction_type][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type]
+       * only list of [annotation_spec_display_name-s][] is populated.
        * </pre>
        *
        * <code>repeated string annotation_spec_id = 1;</code>
@@ -4510,6 +4521,9 @@ public final class ClassificationProto {
        *
        * <pre>
        * Output only. IDs of the annotation specs used in the confusion matrix.
+       * For Tables CLASSIFICATION
+       * [prediction_type][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type]
+       * only list of [annotation_spec_display_name-s][] is populated.
        * </pre>
        *
        * <code>repeated string annotation_spec_id = 1;</code>
@@ -4520,6 +4534,9 @@ public final class ClassificationProto {
        *
        * <pre>
        * Output only. IDs of the annotation specs used in the confusion matrix.
+       * For Tables CLASSIFICATION
+       * [prediction_type][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type]
+       * only list of [annotation_spec_display_name-s][] is populated.
        * </pre>
        *
        * <code>repeated string annotation_spec_id = 1;</code>
@@ -4747,7 +4764,8 @@ public final class ClassificationProto {
          * <pre>
          * Output only. Value of the specific cell in the confusion matrix.
          * The number of values each row has (i.e. the length of the row) is equal
-         * to the length of the annotation_spec_id field.
+         * to the length of the `annotation_spec_id` field or, if that one is not
+         * populated, length of the [display_name][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.display_name] field.
          * </pre>
          *
          * <code>repeated int32 example_count = 1;</code>
@@ -4759,7 +4777,8 @@ public final class ClassificationProto {
          * <pre>
          * Output only. Value of the specific cell in the confusion matrix.
          * The number of values each row has (i.e. the length of the row) is equal
-         * to the length of the annotation_spec_id field.
+         * to the length of the `annotation_spec_id` field or, if that one is not
+         * populated, length of the [display_name][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.display_name] field.
          * </pre>
          *
          * <code>repeated int32 example_count = 1;</code>
@@ -4771,7 +4790,8 @@ public final class ClassificationProto {
          * <pre>
          * Output only. Value of the specific cell in the confusion matrix.
          * The number of values each row has (i.e. the length of the row) is equal
-         * to the length of the annotation_spec_id field.
+         * to the length of the `annotation_spec_id` field or, if that one is not
+         * populated, length of the [display_name][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.display_name] field.
          * </pre>
          *
          * <code>repeated int32 example_count = 1;</code>
@@ -4898,7 +4918,8 @@ public final class ClassificationProto {
          * <pre>
          * Output only. Value of the specific cell in the confusion matrix.
          * The number of values each row has (i.e. the length of the row) is equal
-         * to the length of the annotation_spec_id field.
+         * to the length of the `annotation_spec_id` field or, if that one is not
+         * populated, length of the [display_name][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.display_name] field.
          * </pre>
          *
          * <code>repeated int32 example_count = 1;</code>
@@ -4912,7 +4933,8 @@ public final class ClassificationProto {
          * <pre>
          * Output only. Value of the specific cell in the confusion matrix.
          * The number of values each row has (i.e. the length of the row) is equal
-         * to the length of the annotation_spec_id field.
+         * to the length of the `annotation_spec_id` field or, if that one is not
+         * populated, length of the [display_name][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.display_name] field.
          * </pre>
          *
          * <code>repeated int32 example_count = 1;</code>
@@ -4926,7 +4948,8 @@ public final class ClassificationProto {
          * <pre>
          * Output only. Value of the specific cell in the confusion matrix.
          * The number of values each row has (i.e. the length of the row) is equal
-         * to the length of the annotation_spec_id field.
+         * to the length of the `annotation_spec_id` field or, if that one is not
+         * populated, length of the [display_name][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.display_name] field.
          * </pre>
          *
          * <code>repeated int32 example_count = 1;</code>
@@ -5369,7 +5392,8 @@ public final class ClassificationProto {
            * <pre>
            * Output only. Value of the specific cell in the confusion matrix.
            * The number of values each row has (i.e. the length of the row) is equal
-           * to the length of the annotation_spec_id field.
+           * to the length of the `annotation_spec_id` field or, if that one is not
+           * populated, length of the [display_name][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.display_name] field.
            * </pre>
            *
            * <code>repeated int32 example_count = 1;</code>
@@ -5385,7 +5409,8 @@ public final class ClassificationProto {
            * <pre>
            * Output only. Value of the specific cell in the confusion matrix.
            * The number of values each row has (i.e. the length of the row) is equal
-           * to the length of the annotation_spec_id field.
+           * to the length of the `annotation_spec_id` field or, if that one is not
+           * populated, length of the [display_name][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.display_name] field.
            * </pre>
            *
            * <code>repeated int32 example_count = 1;</code>
@@ -5399,7 +5424,8 @@ public final class ClassificationProto {
            * <pre>
            * Output only. Value of the specific cell in the confusion matrix.
            * The number of values each row has (i.e. the length of the row) is equal
-           * to the length of the annotation_spec_id field.
+           * to the length of the `annotation_spec_id` field or, if that one is not
+           * populated, length of the [display_name][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.display_name] field.
            * </pre>
            *
            * <code>repeated int32 example_count = 1;</code>
@@ -5413,7 +5439,8 @@ public final class ClassificationProto {
            * <pre>
            * Output only. Value of the specific cell in the confusion matrix.
            * The number of values each row has (i.e. the length of the row) is equal
-           * to the length of the annotation_spec_id field.
+           * to the length of the `annotation_spec_id` field or, if that one is not
+           * populated, length of the [display_name][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.display_name] field.
            * </pre>
            *
            * <code>repeated int32 example_count = 1;</code>
@@ -5430,7 +5457,8 @@ public final class ClassificationProto {
            * <pre>
            * Output only. Value of the specific cell in the confusion matrix.
            * The number of values each row has (i.e. the length of the row) is equal
-           * to the length of the annotation_spec_id field.
+           * to the length of the `annotation_spec_id` field or, if that one is not
+           * populated, length of the [display_name][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.display_name] field.
            * </pre>
            *
            * <code>repeated int32 example_count = 1;</code>
@@ -5447,7 +5475,8 @@ public final class ClassificationProto {
            * <pre>
            * Output only. Value of the specific cell in the confusion matrix.
            * The number of values each row has (i.e. the length of the row) is equal
-           * to the length of the annotation_spec_id field.
+           * to the length of the `annotation_spec_id` field or, if that one is not
+           * populated, length of the [display_name][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.display_name] field.
            * </pre>
            *
            * <code>repeated int32 example_count = 1;</code>
@@ -5465,7 +5494,8 @@ public final class ClassificationProto {
            * <pre>
            * Output only. Value of the specific cell in the confusion matrix.
            * The number of values each row has (i.e. the length of the row) is equal
-           * to the length of the annotation_spec_id field.
+           * to the length of the `annotation_spec_id` field or, if that one is not
+           * populated, length of the [display_name][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.display_name] field.
            * </pre>
            *
            * <code>repeated int32 example_count = 1;</code>
@@ -5544,6 +5574,9 @@ public final class ClassificationProto {
        *
        * <pre>
        * Output only. IDs of the annotation specs used in the confusion matrix.
+       * For Tables CLASSIFICATION
+       * [prediction_type][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type]
+       * only list of [annotation_spec_display_name-s][] is populated.
        * </pre>
        *
        * <code>repeated string annotation_spec_id = 1;</code>
@@ -5556,6 +5589,9 @@ public final class ClassificationProto {
        *
        * <pre>
        * Output only. IDs of the annotation specs used in the confusion matrix.
+       * For Tables CLASSIFICATION
+       * [prediction_type][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type]
+       * only list of [annotation_spec_display_name-s][] is populated.
        * </pre>
        *
        * <code>repeated string annotation_spec_id = 1;</code>
@@ -5568,6 +5604,9 @@ public final class ClassificationProto {
        *
        * <pre>
        * Output only. IDs of the annotation specs used in the confusion matrix.
+       * For Tables CLASSIFICATION
+       * [prediction_type][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type]
+       * only list of [annotation_spec_display_name-s][] is populated.
        * </pre>
        *
        * <code>repeated string annotation_spec_id = 1;</code>
@@ -5580,6 +5619,9 @@ public final class ClassificationProto {
        *
        * <pre>
        * Output only. IDs of the annotation specs used in the confusion matrix.
+       * For Tables CLASSIFICATION
+       * [prediction_type][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type]
+       * only list of [annotation_spec_display_name-s][] is populated.
        * </pre>
        *
        * <code>repeated string annotation_spec_id = 1;</code>
@@ -6168,6 +6210,9 @@ public final class ClassificationProto {
          *
          * <pre>
          * Output only. IDs of the annotation specs used in the confusion matrix.
+         * For Tables CLASSIFICATION
+         * [prediction_type][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type]
+         * only list of [annotation_spec_display_name-s][] is populated.
          * </pre>
          *
          * <code>repeated string annotation_spec_id = 1;</code>
@@ -6180,6 +6225,9 @@ public final class ClassificationProto {
          *
          * <pre>
          * Output only. IDs of the annotation specs used in the confusion matrix.
+         * For Tables CLASSIFICATION
+         * [prediction_type][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type]
+         * only list of [annotation_spec_display_name-s][] is populated.
          * </pre>
          *
          * <code>repeated string annotation_spec_id = 1;</code>
@@ -6192,6 +6240,9 @@ public final class ClassificationProto {
          *
          * <pre>
          * Output only. IDs of the annotation specs used in the confusion matrix.
+         * For Tables CLASSIFICATION
+         * [prediction_type][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type]
+         * only list of [annotation_spec_display_name-s][] is populated.
          * </pre>
          *
          * <code>repeated string annotation_spec_id = 1;</code>
@@ -6204,6 +6255,9 @@ public final class ClassificationProto {
          *
          * <pre>
          * Output only. IDs of the annotation specs used in the confusion matrix.
+         * For Tables CLASSIFICATION
+         * [prediction_type][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type]
+         * only list of [annotation_spec_display_name-s][] is populated.
          * </pre>
          *
          * <code>repeated string annotation_spec_id = 1;</code>
@@ -6216,6 +6270,9 @@ public final class ClassificationProto {
          *
          * <pre>
          * Output only. IDs of the annotation specs used in the confusion matrix.
+         * For Tables CLASSIFICATION
+         * [prediction_type][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type]
+         * only list of [annotation_spec_display_name-s][] is populated.
          * </pre>
          *
          * <code>repeated string annotation_spec_id = 1;</code>
@@ -6234,6 +6291,9 @@ public final class ClassificationProto {
          *
          * <pre>
          * Output only. IDs of the annotation specs used in the confusion matrix.
+         * For Tables CLASSIFICATION
+         * [prediction_type][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type]
+         * only list of [annotation_spec_display_name-s][] is populated.
          * </pre>
          *
          * <code>repeated string annotation_spec_id = 1;</code>
@@ -6252,6 +6312,9 @@ public final class ClassificationProto {
          *
          * <pre>
          * Output only. IDs of the annotation specs used in the confusion matrix.
+         * For Tables CLASSIFICATION
+         * [prediction_type][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type]
+         * only list of [annotation_spec_display_name-s][] is populated.
          * </pre>
          *
          * <code>repeated string annotation_spec_id = 1;</code>
@@ -6267,6 +6330,9 @@ public final class ClassificationProto {
          *
          * <pre>
          * Output only. IDs of the annotation specs used in the confusion matrix.
+         * For Tables CLASSIFICATION
+         * [prediction_type][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type]
+         * only list of [annotation_spec_display_name-s][] is populated.
          * </pre>
          *
          * <code>repeated string annotation_spec_id = 1;</code>
@@ -6282,6 +6348,9 @@ public final class ClassificationProto {
          *
          * <pre>
          * Output only. IDs of the annotation specs used in the confusion matrix.
+         * For Tables CLASSIFICATION
+         * [prediction_type][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type]
+         * only list of [annotation_spec_display_name-s][] is populated.
          * </pre>
          *
          * <code>repeated string annotation_spec_id = 1;</code>
@@ -6953,9 +7022,10 @@ public final class ClassificationProto {
      * Output only. Metrics for each confidence_threshold in
      * 0.00,0.05,0.10,...,0.95,0.96,0.97,0.98,0.99 and
      * position_threshold = INT32_MAX_VALUE.
-     * Precision-recall curve is derived from them.
-     * The above metrics may also be supplied for additional values of
-     * position_threshold.
+     * ROC and precision-recall curves, and other aggregated metrics are derived
+     * from them. The confidence metrics entries may also be supplied for
+     * additional values of position_threshold, but from these no aggregated
+     * metrics are computed.
      * </pre>
      *
      * <code>
@@ -6975,9 +7045,10 @@ public final class ClassificationProto {
      * Output only. Metrics for each confidence_threshold in
      * 0.00,0.05,0.10,...,0.95,0.96,0.97,0.98,0.99 and
      * position_threshold = INT32_MAX_VALUE.
-     * Precision-recall curve is derived from them.
-     * The above metrics may also be supplied for additional values of
-     * position_threshold.
+     * ROC and precision-recall curves, and other aggregated metrics are derived
+     * from them. The confidence metrics entries may also be supplied for
+     * additional values of position_threshold, but from these no aggregated
+     * metrics are computed.
      * </pre>
      *
      * <code>
@@ -6998,9 +7069,10 @@ public final class ClassificationProto {
      * Output only. Metrics for each confidence_threshold in
      * 0.00,0.05,0.10,...,0.95,0.96,0.97,0.98,0.99 and
      * position_threshold = INT32_MAX_VALUE.
-     * Precision-recall curve is derived from them.
-     * The above metrics may also be supplied for additional values of
-     * position_threshold.
+     * ROC and precision-recall curves, and other aggregated metrics are derived
+     * from them. The confidence metrics entries may also be supplied for
+     * additional values of position_threshold, but from these no aggregated
+     * metrics are computed.
      * </pre>
      *
      * <code>
@@ -7017,9 +7089,10 @@ public final class ClassificationProto {
      * Output only. Metrics for each confidence_threshold in
      * 0.00,0.05,0.10,...,0.95,0.96,0.97,0.98,0.99 and
      * position_threshold = INT32_MAX_VALUE.
-     * Precision-recall curve is derived from them.
-     * The above metrics may also be supplied for additional values of
-     * position_threshold.
+     * ROC and precision-recall curves, and other aggregated metrics are derived
+     * from them. The confidence metrics entries may also be supplied for
+     * additional values of position_threshold, but from these no aggregated
+     * metrics are computed.
      * </pre>
      *
      * <code>
@@ -7038,9 +7111,10 @@ public final class ClassificationProto {
      * Output only. Metrics for each confidence_threshold in
      * 0.00,0.05,0.10,...,0.95,0.96,0.97,0.98,0.99 and
      * position_threshold = INT32_MAX_VALUE.
-     * Precision-recall curve is derived from them.
-     * The above metrics may also be supplied for additional values of
-     * position_threshold.
+     * ROC and precision-recall curves, and other aggregated metrics are derived
+     * from them. The confidence metrics entries may also be supplied for
+     * additional values of position_threshold, but from these no aggregated
+     * metrics are computed.
      * </pre>
      *
      * <code>
@@ -7928,9 +8002,10 @@ public final class ClassificationProto {
        * Output only. Metrics for each confidence_threshold in
        * 0.00,0.05,0.10,...,0.95,0.96,0.97,0.98,0.99 and
        * position_threshold = INT32_MAX_VALUE.
-       * Precision-recall curve is derived from them.
-       * The above metrics may also be supplied for additional values of
-       * position_threshold.
+       * ROC and precision-recall curves, and other aggregated metrics are derived
+       * from them. The confidence metrics entries may also be supplied for
+       * additional values of position_threshold, but from these no aggregated
+       * metrics are computed.
        * </pre>
        *
        * <code>
@@ -7954,9 +8029,10 @@ public final class ClassificationProto {
        * Output only. Metrics for each confidence_threshold in
        * 0.00,0.05,0.10,...,0.95,0.96,0.97,0.98,0.99 and
        * position_threshold = INT32_MAX_VALUE.
-       * Precision-recall curve is derived from them.
-       * The above metrics may also be supplied for additional values of
-       * position_threshold.
+       * ROC and precision-recall curves, and other aggregated metrics are derived
+       * from them. The confidence metrics entries may also be supplied for
+       * additional values of position_threshold, but from these no aggregated
+       * metrics are computed.
        * </pre>
        *
        * <code>
@@ -7977,9 +8053,10 @@ public final class ClassificationProto {
        * Output only. Metrics for each confidence_threshold in
        * 0.00,0.05,0.10,...,0.95,0.96,0.97,0.98,0.99 and
        * position_threshold = INT32_MAX_VALUE.
-       * Precision-recall curve is derived from them.
-       * The above metrics may also be supplied for additional values of
-       * position_threshold.
+       * ROC and precision-recall curves, and other aggregated metrics are derived
+       * from them. The confidence metrics entries may also be supplied for
+       * additional values of position_threshold, but from these no aggregated
+       * metrics are computed.
        * </pre>
        *
        * <code>
@@ -8002,9 +8079,10 @@ public final class ClassificationProto {
        * Output only. Metrics for each confidence_threshold in
        * 0.00,0.05,0.10,...,0.95,0.96,0.97,0.98,0.99 and
        * position_threshold = INT32_MAX_VALUE.
-       * Precision-recall curve is derived from them.
-       * The above metrics may also be supplied for additional values of
-       * position_threshold.
+       * ROC and precision-recall curves, and other aggregated metrics are derived
+       * from them. The confidence metrics entries may also be supplied for
+       * additional values of position_threshold, but from these no aggregated
+       * metrics are computed.
        * </pre>
        *
        * <code>
@@ -8035,9 +8113,10 @@ public final class ClassificationProto {
        * Output only. Metrics for each confidence_threshold in
        * 0.00,0.05,0.10,...,0.95,0.96,0.97,0.98,0.99 and
        * position_threshold = INT32_MAX_VALUE.
-       * Precision-recall curve is derived from them.
-       * The above metrics may also be supplied for additional values of
-       * position_threshold.
+       * ROC and precision-recall curves, and other aggregated metrics are derived
+       * from them. The confidence metrics entries may also be supplied for
+       * additional values of position_threshold, but from these no aggregated
+       * metrics are computed.
        * </pre>
        *
        * <code>
@@ -8065,9 +8144,10 @@ public final class ClassificationProto {
        * Output only. Metrics for each confidence_threshold in
        * 0.00,0.05,0.10,...,0.95,0.96,0.97,0.98,0.99 and
        * position_threshold = INT32_MAX_VALUE.
-       * Precision-recall curve is derived from them.
-       * The above metrics may also be supplied for additional values of
-       * position_threshold.
+       * ROC and precision-recall curves, and other aggregated metrics are derived
+       * from them. The confidence metrics entries may also be supplied for
+       * additional values of position_threshold, but from these no aggregated
+       * metrics are computed.
        * </pre>
        *
        * <code>
@@ -8097,9 +8177,10 @@ public final class ClassificationProto {
        * Output only. Metrics for each confidence_threshold in
        * 0.00,0.05,0.10,...,0.95,0.96,0.97,0.98,0.99 and
        * position_threshold = INT32_MAX_VALUE.
-       * Precision-recall curve is derived from them.
-       * The above metrics may also be supplied for additional values of
-       * position_threshold.
+       * ROC and precision-recall curves, and other aggregated metrics are derived
+       * from them. The confidence metrics entries may also be supplied for
+       * additional values of position_threshold, but from these no aggregated
+       * metrics are computed.
        * </pre>
        *
        * <code>
@@ -8130,9 +8211,10 @@ public final class ClassificationProto {
        * Output only. Metrics for each confidence_threshold in
        * 0.00,0.05,0.10,...,0.95,0.96,0.97,0.98,0.99 and
        * position_threshold = INT32_MAX_VALUE.
-       * Precision-recall curve is derived from them.
-       * The above metrics may also be supplied for additional values of
-       * position_threshold.
+       * ROC and precision-recall curves, and other aggregated metrics are derived
+       * from them. The confidence metrics entries may also be supplied for
+       * additional values of position_threshold, but from these no aggregated
+       * metrics are computed.
        * </pre>
        *
        * <code>
@@ -8159,9 +8241,10 @@ public final class ClassificationProto {
        * Output only. Metrics for each confidence_threshold in
        * 0.00,0.05,0.10,...,0.95,0.96,0.97,0.98,0.99 and
        * position_threshold = INT32_MAX_VALUE.
-       * Precision-recall curve is derived from them.
-       * The above metrics may also be supplied for additional values of
-       * position_threshold.
+       * ROC and precision-recall curves, and other aggregated metrics are derived
+       * from them. The confidence metrics entries may also be supplied for
+       * additional values of position_threshold, but from these no aggregated
+       * metrics are computed.
        * </pre>
        *
        * <code>
@@ -8189,9 +8272,10 @@ public final class ClassificationProto {
        * Output only. Metrics for each confidence_threshold in
        * 0.00,0.05,0.10,...,0.95,0.96,0.97,0.98,0.99 and
        * position_threshold = INT32_MAX_VALUE.
-       * Precision-recall curve is derived from them.
-       * The above metrics may also be supplied for additional values of
-       * position_threshold.
+       * ROC and precision-recall curves, and other aggregated metrics are derived
+       * from them. The confidence metrics entries may also be supplied for
+       * additional values of position_threshold, but from these no aggregated
+       * metrics are computed.
        * </pre>
        *
        * <code>
@@ -8220,9 +8304,10 @@ public final class ClassificationProto {
        * Output only. Metrics for each confidence_threshold in
        * 0.00,0.05,0.10,...,0.95,0.96,0.97,0.98,0.99 and
        * position_threshold = INT32_MAX_VALUE.
-       * Precision-recall curve is derived from them.
-       * The above metrics may also be supplied for additional values of
-       * position_threshold.
+       * ROC and precision-recall curves, and other aggregated metrics are derived
+       * from them. The confidence metrics entries may also be supplied for
+       * additional values of position_threshold, but from these no aggregated
+       * metrics are computed.
        * </pre>
        *
        * <code>
@@ -8246,9 +8331,10 @@ public final class ClassificationProto {
        * Output only. Metrics for each confidence_threshold in
        * 0.00,0.05,0.10,...,0.95,0.96,0.97,0.98,0.99 and
        * position_threshold = INT32_MAX_VALUE.
-       * Precision-recall curve is derived from them.
-       * The above metrics may also be supplied for additional values of
-       * position_threshold.
+       * ROC and precision-recall curves, and other aggregated metrics are derived
+       * from them. The confidence metrics entries may also be supplied for
+       * additional values of position_threshold, but from these no aggregated
+       * metrics are computed.
        * </pre>
        *
        * <code>
@@ -8272,9 +8358,10 @@ public final class ClassificationProto {
        * Output only. Metrics for each confidence_threshold in
        * 0.00,0.05,0.10,...,0.95,0.96,0.97,0.98,0.99 and
        * position_threshold = INT32_MAX_VALUE.
-       * Precision-recall curve is derived from them.
-       * The above metrics may also be supplied for additional values of
-       * position_threshold.
+       * ROC and precision-recall curves, and other aggregated metrics are derived
+       * from them. The confidence metrics entries may also be supplied for
+       * additional values of position_threshold, but from these no aggregated
+       * metrics are computed.
        * </pre>
        *
        * <code>
@@ -8293,9 +8380,10 @@ public final class ClassificationProto {
        * Output only. Metrics for each confidence_threshold in
        * 0.00,0.05,0.10,...,0.95,0.96,0.97,0.98,0.99 and
        * position_threshold = INT32_MAX_VALUE.
-       * Precision-recall curve is derived from them.
-       * The above metrics may also be supplied for additional values of
-       * position_threshold.
+       * ROC and precision-recall curves, and other aggregated metrics are derived
+       * from them. The confidence metrics entries may also be supplied for
+       * additional values of position_threshold, but from these no aggregated
+       * metrics are computed.
        * </pre>
        *
        * <code>
@@ -8318,9 +8406,10 @@ public final class ClassificationProto {
        * Output only. Metrics for each confidence_threshold in
        * 0.00,0.05,0.10,...,0.95,0.96,0.97,0.98,0.99 and
        * position_threshold = INT32_MAX_VALUE.
-       * Precision-recall curve is derived from them.
-       * The above metrics may also be supplied for additional values of
-       * position_threshold.
+       * ROC and precision-recall curves, and other aggregated metrics are derived
+       * from them. The confidence metrics entries may also be supplied for
+       * additional values of position_threshold, but from these no aggregated
+       * metrics are computed.
        * </pre>
        *
        * <code>
@@ -8345,9 +8434,10 @@ public final class ClassificationProto {
        * Output only. Metrics for each confidence_threshold in
        * 0.00,0.05,0.10,...,0.95,0.96,0.97,0.98,0.99 and
        * position_threshold = INT32_MAX_VALUE.
-       * Precision-recall curve is derived from them.
-       * The above metrics may also be supplied for additional values of
-       * position_threshold.
+       * ROC and precision-recall curves, and other aggregated metrics are derived
+       * from them. The confidence metrics entries may also be supplied for
+       * additional values of position_threshold, but from these no aggregated
+       * metrics are computed.
        * </pre>
        *
        * <code>
@@ -8369,9 +8459,10 @@ public final class ClassificationProto {
        * Output only. Metrics for each confidence_threshold in
        * 0.00,0.05,0.10,...,0.95,0.96,0.97,0.98,0.99 and
        * position_threshold = INT32_MAX_VALUE.
-       * Precision-recall curve is derived from them.
-       * The above metrics may also be supplied for additional values of
-       * position_threshold.
+       * ROC and precision-recall curves, and other aggregated metrics are derived
+       * from them. The confidence metrics entries may also be supplied for
+       * additional values of position_threshold, but from these no aggregated
+       * metrics are computed.
        * </pre>
        *
        * <code>
@@ -8394,9 +8485,10 @@ public final class ClassificationProto {
        * Output only. Metrics for each confidence_threshold in
        * 0.00,0.05,0.10,...,0.95,0.96,0.97,0.98,0.99 and
        * position_threshold = INT32_MAX_VALUE.
-       * Precision-recall curve is derived from them.
-       * The above metrics may also be supplied for additional values of
-       * position_threshold.
+       * ROC and precision-recall curves, and other aggregated metrics are derived
+       * from them. The confidence metrics entries may also be supplied for
+       * additional values of position_threshold, but from these no aggregated
+       * metrics are computed.
        * </pre>
        *
        * <code>
@@ -8927,8 +9019,8 @@ public final class ClassificationProto {
     java.lang.String[] descriptorData = {
       "\n0google/cloud/automl/v1beta1/classifica"
           + "tion.proto\022\033google.cloud.automl.v1beta1\032"
-          + "\034google/api/annotations.proto\032*google/cl"
-          + "oud/automl/v1beta1/temporal.proto\")\n\030Cla"
+          + "*google/cloud/automl/v1beta1/temporal.pr"
+          + "oto\032\034google/api/annotations.proto\")\n\030Cla"
           + "ssificationAnnotation\022\r\n\005score\030\001 \001(\002\"\307\001\n"
           + "\035VideoClassificationAnnotation\022\014\n\004type\030\001"
           + " \001(\t\022X\n\031classification_annotation\030\002 \001(\0132"
@@ -8977,8 +9069,8 @@ public final class ClassificationProto {
     com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
         descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.api.AnnotationsProto.getDescriptor(),
           com.google.cloud.automl.v1beta1.Temporal.getDescriptor(),
+          com.google.api.AnnotationsProto.getDescriptor(),
         },
         assigner);
     internal_static_google_cloud_automl_v1beta1_ClassificationAnnotation_descriptor =
@@ -9054,8 +9146,8 @@ public final class ClassificationProto {
             new java.lang.String[] {
               "ExampleCount",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.cloud.automl.v1beta1.Temporal.getDescriptor();
+    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)
