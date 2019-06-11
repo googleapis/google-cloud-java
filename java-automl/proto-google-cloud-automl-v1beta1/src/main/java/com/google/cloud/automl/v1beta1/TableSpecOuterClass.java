@@ -26,9 +26,9 @@ public final class TableSpecOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n,google/cloud/automl/v1beta1/table_spec"
-          + ".proto\022\033google.cloud.automl.v1beta1\032\034goo"
-          + "gle/api/annotations.proto\032$google/cloud/"
-          + "automl/v1beta1/io.proto\"\256\001\n\tTableSpec\022\014\n"
+          + ".proto\022\033google.cloud.automl.v1beta1\032$goo"
+          + "gle/cloud/automl/v1beta1/io.proto\032\034googl"
+          + "e/api/annotations.proto\"\256\001\n\tTableSpec\022\014\n"
           + "\004name\030\001 \001(\t\022\033\n\023time_column_spec_id\030\002 \001(\t"
           + "\022\021\n\trow_count\030\003 \001(\003\022\024\n\014column_count\030\007 \001("
           + "\003\022?\n\rinput_configs\030\005 \003(\0132(.google.cloud."
@@ -49,8 +49,8 @@ public final class TableSpecOuterClass {
     com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
         descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.api.AnnotationsProto.getDescriptor(),
           com.google.cloud.automl.v1beta1.Io.getDescriptor(),
+          com.google.api.AnnotationsProto.getDescriptor(),
         },
         assigner);
     internal_static_google_cloud_automl_v1beta1_TableSpec_descriptor =
@@ -61,8 +61,8 @@ public final class TableSpecOuterClass {
             new java.lang.String[] {
               "Name", "TimeColumnSpecId", "RowCount", "ColumnCount", "InputConfigs", "Etag",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.cloud.automl.v1beta1.Io.getDescriptor();
+    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

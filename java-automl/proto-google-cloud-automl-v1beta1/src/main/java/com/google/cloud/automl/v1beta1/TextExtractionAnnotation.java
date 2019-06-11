@@ -56,17 +56,18 @@ public final class TextExtractionAnnotation extends com.google.protobuf.Generate
           case 26:
             {
               com.google.cloud.automl.v1beta1.TextSegment.Builder subBuilder = null;
-              if (textSegment_ != null) {
-                subBuilder = textSegment_.toBuilder();
+              if (annotationCase_ == 3) {
+                subBuilder =
+                    ((com.google.cloud.automl.v1beta1.TextSegment) annotation_).toBuilder();
               }
-              textSegment_ =
+              annotation_ =
                   input.readMessage(
                       com.google.cloud.automl.v1beta1.TextSegment.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(textSegment_);
-                textSegment_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom((com.google.cloud.automl.v1beta1.TextSegment) annotation_);
+                annotation_ = subBuilder.buildPartial();
               }
-
+              annotationCase_ = 3;
               break;
             }
           default:
@@ -103,6 +104,90 @@ public final class TextExtractionAnnotation extends com.google.protobuf.Generate
             com.google.cloud.automl.v1beta1.TextExtractionAnnotation.Builder.class);
   }
 
+  private int annotationCase_ = 0;
+  private java.lang.Object annotation_;
+
+  public enum AnnotationCase implements com.google.protobuf.Internal.EnumLite {
+    TEXT_SEGMENT(3),
+    ANNOTATION_NOT_SET(0);
+    private final int value;
+
+    private AnnotationCase(int value) {
+      this.value = value;
+    }
+    /** @deprecated Use {@link #forNumber(int)} instead. */
+    @java.lang.Deprecated
+    public static AnnotationCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static AnnotationCase forNumber(int value) {
+      switch (value) {
+        case 3:
+          return TEXT_SEGMENT;
+        case 0:
+          return ANNOTATION_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public AnnotationCase getAnnotationCase() {
+    return AnnotationCase.forNumber(annotationCase_);
+  }
+
+  public static final int TEXT_SEGMENT_FIELD_NUMBER = 3;
+  /**
+   *
+   *
+   * <pre>
+   * An entity annotation will set this, which is the part of the original
+   * text to which the annotation pertains.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.TextSegment text_segment = 3;</code>
+   */
+  public boolean hasTextSegment() {
+    return annotationCase_ == 3;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * An entity annotation will set this, which is the part of the original
+   * text to which the annotation pertains.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.TextSegment text_segment = 3;</code>
+   */
+  public com.google.cloud.automl.v1beta1.TextSegment getTextSegment() {
+    if (annotationCase_ == 3) {
+      return (com.google.cloud.automl.v1beta1.TextSegment) annotation_;
+    }
+    return com.google.cloud.automl.v1beta1.TextSegment.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * An entity annotation will set this, which is the part of the original
+   * text to which the annotation pertains.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.TextSegment text_segment = 3;</code>
+   */
+  public com.google.cloud.automl.v1beta1.TextSegmentOrBuilder getTextSegmentOrBuilder() {
+    if (annotationCase_ == 3) {
+      return (com.google.cloud.automl.v1beta1.TextSegment) annotation_;
+    }
+    return com.google.cloud.automl.v1beta1.TextSegment.getDefaultInstance();
+  }
+
   public static final int SCORE_FIELD_NUMBER = 1;
   private float score_;
   /**
@@ -117,47 +202,6 @@ public final class TextExtractionAnnotation extends com.google.protobuf.Generate
    */
   public float getScore() {
     return score_;
-  }
-
-  public static final int TEXT_SEGMENT_FIELD_NUMBER = 3;
-  private com.google.cloud.automl.v1beta1.TextSegment textSegment_;
-  /**
-   *
-   *
-   * <pre>
-   * Required. The part of the original text to which this annotation pertains.
-   * </pre>
-   *
-   * <code>.google.cloud.automl.v1beta1.TextSegment text_segment = 3;</code>
-   */
-  public boolean hasTextSegment() {
-    return textSegment_ != null;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Required. The part of the original text to which this annotation pertains.
-   * </pre>
-   *
-   * <code>.google.cloud.automl.v1beta1.TextSegment text_segment = 3;</code>
-   */
-  public com.google.cloud.automl.v1beta1.TextSegment getTextSegment() {
-    return textSegment_ == null
-        ? com.google.cloud.automl.v1beta1.TextSegment.getDefaultInstance()
-        : textSegment_;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Required. The part of the original text to which this annotation pertains.
-   * </pre>
-   *
-   * <code>.google.cloud.automl.v1beta1.TextSegment text_segment = 3;</code>
-   */
-  public com.google.cloud.automl.v1beta1.TextSegmentOrBuilder getTextSegmentOrBuilder() {
-    return getTextSegment();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -177,8 +221,8 @@ public final class TextExtractionAnnotation extends com.google.protobuf.Generate
     if (score_ != 0F) {
       output.writeFloat(1, score_);
     }
-    if (textSegment_ != null) {
-      output.writeMessage(3, getTextSegment());
+    if (annotationCase_ == 3) {
+      output.writeMessage(3, (com.google.cloud.automl.v1beta1.TextSegment) annotation_);
     }
     unknownFields.writeTo(output);
   }
@@ -192,8 +236,10 @@ public final class TextExtractionAnnotation extends com.google.protobuf.Generate
     if (score_ != 0F) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(1, score_);
     }
-    if (textSegment_ != null) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getTextSegment());
+    if (annotationCase_ == 3) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              3, (com.google.cloud.automl.v1beta1.TextSegment) annotation_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -213,9 +259,13 @@ public final class TextExtractionAnnotation extends com.google.protobuf.Generate
 
     if (java.lang.Float.floatToIntBits(getScore())
         != java.lang.Float.floatToIntBits(other.getScore())) return false;
-    if (hasTextSegment() != other.hasTextSegment()) return false;
-    if (hasTextSegment()) {
-      if (!getTextSegment().equals(other.getTextSegment())) return false;
+    if (!getAnnotationCase().equals(other.getAnnotationCase())) return false;
+    switch (annotationCase_) {
+      case 3:
+        if (!getTextSegment().equals(other.getTextSegment())) return false;
+        break;
+      case 0:
+      default:
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -230,9 +280,13 @@ public final class TextExtractionAnnotation extends com.google.protobuf.Generate
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + SCORE_FIELD_NUMBER;
     hash = (53 * hash) + java.lang.Float.floatToIntBits(getScore());
-    if (hasTextSegment()) {
-      hash = (37 * hash) + TEXT_SEGMENT_FIELD_NUMBER;
-      hash = (53 * hash) + getTextSegment().hashCode();
+    switch (annotationCase_) {
+      case 3:
+        hash = (37 * hash) + TEXT_SEGMENT_FIELD_NUMBER;
+        hash = (53 * hash) + getTextSegment().hashCode();
+        break;
+      case 0:
+      default:
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -382,12 +436,8 @@ public final class TextExtractionAnnotation extends com.google.protobuf.Generate
       super.clear();
       score_ = 0F;
 
-      if (textSegmentBuilder_ == null) {
-        textSegment_ = null;
-      } else {
-        textSegment_ = null;
-        textSegmentBuilder_ = null;
-      }
+      annotationCase_ = 0;
+      annotation_ = null;
       return this;
     }
 
@@ -415,12 +465,15 @@ public final class TextExtractionAnnotation extends com.google.protobuf.Generate
     public com.google.cloud.automl.v1beta1.TextExtractionAnnotation buildPartial() {
       com.google.cloud.automl.v1beta1.TextExtractionAnnotation result =
           new com.google.cloud.automl.v1beta1.TextExtractionAnnotation(this);
-      result.score_ = score_;
-      if (textSegmentBuilder_ == null) {
-        result.textSegment_ = textSegment_;
-      } else {
-        result.textSegment_ = textSegmentBuilder_.build();
+      if (annotationCase_ == 3) {
+        if (textSegmentBuilder_ == null) {
+          result.annotation_ = annotation_;
+        } else {
+          result.annotation_ = textSegmentBuilder_.build();
+        }
       }
+      result.score_ = score_;
+      result.annotationCase_ = annotationCase_;
       onBuilt();
       return result;
     }
@@ -474,8 +527,16 @@ public final class TextExtractionAnnotation extends com.google.protobuf.Generate
       if (other.getScore() != 0F) {
         setScore(other.getScore());
       }
-      if (other.hasTextSegment()) {
-        mergeTextSegment(other.getTextSegment());
+      switch (other.getAnnotationCase()) {
+        case TEXT_SEGMENT:
+          {
+            mergeTextSegment(other.getTextSegment());
+            break;
+          }
+        case ANNOTATION_NOT_SET:
+          {
+            break;
+          }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -505,6 +566,231 @@ public final class TextExtractionAnnotation extends com.google.protobuf.Generate
         }
       }
       return this;
+    }
+
+    private int annotationCase_ = 0;
+    private java.lang.Object annotation_;
+
+    public AnnotationCase getAnnotationCase() {
+      return AnnotationCase.forNumber(annotationCase_);
+    }
+
+    public Builder clearAnnotation() {
+      annotationCase_ = 0;
+      annotation_ = null;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.automl.v1beta1.TextSegment,
+            com.google.cloud.automl.v1beta1.TextSegment.Builder,
+            com.google.cloud.automl.v1beta1.TextSegmentOrBuilder>
+        textSegmentBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * An entity annotation will set this, which is the part of the original
+     * text to which the annotation pertains.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.TextSegment text_segment = 3;</code>
+     */
+    public boolean hasTextSegment() {
+      return annotationCase_ == 3;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An entity annotation will set this, which is the part of the original
+     * text to which the annotation pertains.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.TextSegment text_segment = 3;</code>
+     */
+    public com.google.cloud.automl.v1beta1.TextSegment getTextSegment() {
+      if (textSegmentBuilder_ == null) {
+        if (annotationCase_ == 3) {
+          return (com.google.cloud.automl.v1beta1.TextSegment) annotation_;
+        }
+        return com.google.cloud.automl.v1beta1.TextSegment.getDefaultInstance();
+      } else {
+        if (annotationCase_ == 3) {
+          return textSegmentBuilder_.getMessage();
+        }
+        return com.google.cloud.automl.v1beta1.TextSegment.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An entity annotation will set this, which is the part of the original
+     * text to which the annotation pertains.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.TextSegment text_segment = 3;</code>
+     */
+    public Builder setTextSegment(com.google.cloud.automl.v1beta1.TextSegment value) {
+      if (textSegmentBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        annotation_ = value;
+        onChanged();
+      } else {
+        textSegmentBuilder_.setMessage(value);
+      }
+      annotationCase_ = 3;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An entity annotation will set this, which is the part of the original
+     * text to which the annotation pertains.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.TextSegment text_segment = 3;</code>
+     */
+    public Builder setTextSegment(
+        com.google.cloud.automl.v1beta1.TextSegment.Builder builderForValue) {
+      if (textSegmentBuilder_ == null) {
+        annotation_ = builderForValue.build();
+        onChanged();
+      } else {
+        textSegmentBuilder_.setMessage(builderForValue.build());
+      }
+      annotationCase_ = 3;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An entity annotation will set this, which is the part of the original
+     * text to which the annotation pertains.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.TextSegment text_segment = 3;</code>
+     */
+    public Builder mergeTextSegment(com.google.cloud.automl.v1beta1.TextSegment value) {
+      if (textSegmentBuilder_ == null) {
+        if (annotationCase_ == 3
+            && annotation_ != com.google.cloud.automl.v1beta1.TextSegment.getDefaultInstance()) {
+          annotation_ =
+              com.google.cloud.automl.v1beta1.TextSegment.newBuilder(
+                      (com.google.cloud.automl.v1beta1.TextSegment) annotation_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          annotation_ = value;
+        }
+        onChanged();
+      } else {
+        if (annotationCase_ == 3) {
+          textSegmentBuilder_.mergeFrom(value);
+        }
+        textSegmentBuilder_.setMessage(value);
+      }
+      annotationCase_ = 3;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An entity annotation will set this, which is the part of the original
+     * text to which the annotation pertains.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.TextSegment text_segment = 3;</code>
+     */
+    public Builder clearTextSegment() {
+      if (textSegmentBuilder_ == null) {
+        if (annotationCase_ == 3) {
+          annotationCase_ = 0;
+          annotation_ = null;
+          onChanged();
+        }
+      } else {
+        if (annotationCase_ == 3) {
+          annotationCase_ = 0;
+          annotation_ = null;
+        }
+        textSegmentBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An entity annotation will set this, which is the part of the original
+     * text to which the annotation pertains.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.TextSegment text_segment = 3;</code>
+     */
+    public com.google.cloud.automl.v1beta1.TextSegment.Builder getTextSegmentBuilder() {
+      return getTextSegmentFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An entity annotation will set this, which is the part of the original
+     * text to which the annotation pertains.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.TextSegment text_segment = 3;</code>
+     */
+    public com.google.cloud.automl.v1beta1.TextSegmentOrBuilder getTextSegmentOrBuilder() {
+      if ((annotationCase_ == 3) && (textSegmentBuilder_ != null)) {
+        return textSegmentBuilder_.getMessageOrBuilder();
+      } else {
+        if (annotationCase_ == 3) {
+          return (com.google.cloud.automl.v1beta1.TextSegment) annotation_;
+        }
+        return com.google.cloud.automl.v1beta1.TextSegment.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An entity annotation will set this, which is the part of the original
+     * text to which the annotation pertains.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.TextSegment text_segment = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.automl.v1beta1.TextSegment,
+            com.google.cloud.automl.v1beta1.TextSegment.Builder,
+            com.google.cloud.automl.v1beta1.TextSegmentOrBuilder>
+        getTextSegmentFieldBuilder() {
+      if (textSegmentBuilder_ == null) {
+        if (!(annotationCase_ == 3)) {
+          annotation_ = com.google.cloud.automl.v1beta1.TextSegment.getDefaultInstance();
+        }
+        textSegmentBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.automl.v1beta1.TextSegment,
+                com.google.cloud.automl.v1beta1.TextSegment.Builder,
+                com.google.cloud.automl.v1beta1.TextSegmentOrBuilder>(
+                (com.google.cloud.automl.v1beta1.TextSegment) annotation_,
+                getParentForChildren(),
+                isClean());
+        annotation_ = null;
+      }
+      annotationCase_ = 3;
+      onChanged();
+      ;
+      return textSegmentBuilder_;
     }
 
     private float score_;
@@ -552,188 +838,6 @@ public final class TextExtractionAnnotation extends com.google.protobuf.Generate
       score_ = 0F;
       onChanged();
       return this;
-    }
-
-    private com.google.cloud.automl.v1beta1.TextSegment textSegment_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.automl.v1beta1.TextSegment,
-            com.google.cloud.automl.v1beta1.TextSegment.Builder,
-            com.google.cloud.automl.v1beta1.TextSegmentOrBuilder>
-        textSegmentBuilder_;
-    /**
-     *
-     *
-     * <pre>
-     * Required. The part of the original text to which this annotation pertains.
-     * </pre>
-     *
-     * <code>.google.cloud.automl.v1beta1.TextSegment text_segment = 3;</code>
-     */
-    public boolean hasTextSegment() {
-      return textSegmentBuilder_ != null || textSegment_ != null;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Required. The part of the original text to which this annotation pertains.
-     * </pre>
-     *
-     * <code>.google.cloud.automl.v1beta1.TextSegment text_segment = 3;</code>
-     */
-    public com.google.cloud.automl.v1beta1.TextSegment getTextSegment() {
-      if (textSegmentBuilder_ == null) {
-        return textSegment_ == null
-            ? com.google.cloud.automl.v1beta1.TextSegment.getDefaultInstance()
-            : textSegment_;
-      } else {
-        return textSegmentBuilder_.getMessage();
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Required. The part of the original text to which this annotation pertains.
-     * </pre>
-     *
-     * <code>.google.cloud.automl.v1beta1.TextSegment text_segment = 3;</code>
-     */
-    public Builder setTextSegment(com.google.cloud.automl.v1beta1.TextSegment value) {
-      if (textSegmentBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        textSegment_ = value;
-        onChanged();
-      } else {
-        textSegmentBuilder_.setMessage(value);
-      }
-
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Required. The part of the original text to which this annotation pertains.
-     * </pre>
-     *
-     * <code>.google.cloud.automl.v1beta1.TextSegment text_segment = 3;</code>
-     */
-    public Builder setTextSegment(
-        com.google.cloud.automl.v1beta1.TextSegment.Builder builderForValue) {
-      if (textSegmentBuilder_ == null) {
-        textSegment_ = builderForValue.build();
-        onChanged();
-      } else {
-        textSegmentBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Required. The part of the original text to which this annotation pertains.
-     * </pre>
-     *
-     * <code>.google.cloud.automl.v1beta1.TextSegment text_segment = 3;</code>
-     */
-    public Builder mergeTextSegment(com.google.cloud.automl.v1beta1.TextSegment value) {
-      if (textSegmentBuilder_ == null) {
-        if (textSegment_ != null) {
-          textSegment_ =
-              com.google.cloud.automl.v1beta1.TextSegment.newBuilder(textSegment_)
-                  .mergeFrom(value)
-                  .buildPartial();
-        } else {
-          textSegment_ = value;
-        }
-        onChanged();
-      } else {
-        textSegmentBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Required. The part of the original text to which this annotation pertains.
-     * </pre>
-     *
-     * <code>.google.cloud.automl.v1beta1.TextSegment text_segment = 3;</code>
-     */
-    public Builder clearTextSegment() {
-      if (textSegmentBuilder_ == null) {
-        textSegment_ = null;
-        onChanged();
-      } else {
-        textSegment_ = null;
-        textSegmentBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Required. The part of the original text to which this annotation pertains.
-     * </pre>
-     *
-     * <code>.google.cloud.automl.v1beta1.TextSegment text_segment = 3;</code>
-     */
-    public com.google.cloud.automl.v1beta1.TextSegment.Builder getTextSegmentBuilder() {
-
-      onChanged();
-      return getTextSegmentFieldBuilder().getBuilder();
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Required. The part of the original text to which this annotation pertains.
-     * </pre>
-     *
-     * <code>.google.cloud.automl.v1beta1.TextSegment text_segment = 3;</code>
-     */
-    public com.google.cloud.automl.v1beta1.TextSegmentOrBuilder getTextSegmentOrBuilder() {
-      if (textSegmentBuilder_ != null) {
-        return textSegmentBuilder_.getMessageOrBuilder();
-      } else {
-        return textSegment_ == null
-            ? com.google.cloud.automl.v1beta1.TextSegment.getDefaultInstance()
-            : textSegment_;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Required. The part of the original text to which this annotation pertains.
-     * </pre>
-     *
-     * <code>.google.cloud.automl.v1beta1.TextSegment text_segment = 3;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.automl.v1beta1.TextSegment,
-            com.google.cloud.automl.v1beta1.TextSegment.Builder,
-            com.google.cloud.automl.v1beta1.TextSegmentOrBuilder>
-        getTextSegmentFieldBuilder() {
-      if (textSegmentBuilder_ == null) {
-        textSegmentBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.cloud.automl.v1beta1.TextSegment,
-                com.google.cloud.automl.v1beta1.TextSegment.Builder,
-                com.google.cloud.automl.v1beta1.TextSegmentOrBuilder>(
-                getTextSegment(), getParentForChildren(), isClean());
-        textSegment_ = null;
-      }
-      return textSegmentBuilder_;
     }
 
     @java.lang.Override

@@ -8,7 +8,6 @@ package com.google.cloud.automl.v1beta1;
  *
  * <pre>
  * A contiguous part of a text (string), assuming it has an UTF-8 NFC encoding.
- * .
  * </pre>
  *
  * Protobuf type {@code google.cloud.automl.v1beta1.TextSegment}
@@ -360,7 +359,6 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A contiguous part of a text (string), assuming it has an UTF-8 NFC encoding.
-   * .
    * </pre>
    *
    * Protobuf type {@code google.cloud.automl.v1beta1.TextSegment}

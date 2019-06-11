@@ -67,4 +67,58 @@ public interface ImageObjectDetectionModelMetadataOrBuilder
    * <code>double node_qps = 4;</code>
    */
   double getNodeQps();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The reason that this create model operation stopped,
+   * e.g. `BUDGET_REACHED`, `MODEL_CONVERGED`.
+   * </pre>
+   *
+   * <code>string stop_reason = 5;</code>
+   */
+  java.lang.String getStopReason();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The reason that this create model operation stopped,
+   * e.g. `BUDGET_REACHED`, `MODEL_CONVERGED`.
+   * </pre>
+   *
+   * <code>string stop_reason = 5;</code>
+   */
+  com.google.protobuf.ByteString getStopReasonBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The train budget of creating this model, expressed in milli node
+   * hours i.e. 1,000 value in this field means 1 node hour. The actual
+   * `train_cost` will be equal or less than this value. If further model
+   * training ceases to provide any improvements, it will stop without using
+   * full budget and the stop_reason will be `MODEL_CONVERGED`.
+   * Note, node_hour  = actual_hour * number_of_nodes_invovled. The train budget
+   * must be between 20,000 and 2,000,000 milli node hours, inclusive. The
+   * default value is 216, 000 which represents one day in wall time.
+   * </pre>
+   *
+   * <code>int64 train_budget_milli_node_hours = 6;</code>
+   */
+  long getTrainBudgetMilliNodeHours();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The actual train cost of creating this model, expressed in
+   * milli node hours, i.e. 1,000 value in this field means 1 node hour.
+   * Guaranteed to not exceed the train budget.
+   * </pre>
+   *
+   * <code>int64 train_cost_milli_node_hours = 7;</code>
+   */
+  long getTrainCostMilliNodeHours();
 }

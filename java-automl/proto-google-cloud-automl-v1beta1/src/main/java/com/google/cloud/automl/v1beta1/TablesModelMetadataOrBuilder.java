@@ -193,7 +193,7 @@ public interface TablesModelMetadataOrBuilder
    * Objective function the model is optimizing towards. The training process
    * creates a model that maximizes/minimizes the value of the objective
    * function over the validation set.
-   * The supported optimization objectives depend on the prediction_type.
+   * The supported optimization objectives depend on the prediction type.
    * If the field is not set, a default objective function is used.
    * CLASSIFICATION_BINARY:
    *   "MAXIMIZE_AU_ROC" (default) - Maximize the area under the receiver
@@ -201,8 +201,6 @@ public interface TablesModelMetadataOrBuilder
    *   "MINIMIZE_LOG_LOSS" - Minimize log loss.
    *   "MAXIMIZE_AU_PRC" - Maximize the area under the precision-recall curve.
    * CLASSIFICATION_MULTI_CLASS :
-   *   "MINIMIZE_LOG_LOSS" (default) - Minimize log loss.
-   * CLASSIFICATION_MULTI_LABEL:
    *   "MINIMIZE_LOG_LOSS" (default) - Minimize log loss.
    * REGRESSION:
    *   "MINIMIZE_RMSE" (default) - Minimize root-mean-squared error (RMSE).
@@ -223,7 +221,7 @@ public interface TablesModelMetadataOrBuilder
    * Objective function the model is optimizing towards. The training process
    * creates a model that maximizes/minimizes the value of the objective
    * function over the validation set.
-   * The supported optimization objectives depend on the prediction_type.
+   * The supported optimization objectives depend on the prediction type.
    * If the field is not set, a default objective function is used.
    * CLASSIFICATION_BINARY:
    *   "MAXIMIZE_AU_ROC" (default) - Maximize the area under the receiver
@@ -231,8 +229,6 @@ public interface TablesModelMetadataOrBuilder
    *   "MINIMIZE_LOG_LOSS" - Minimize log loss.
    *   "MAXIMIZE_AU_PRC" - Maximize the area under the precision-recall curve.
    * CLASSIFICATION_MULTI_CLASS :
-   *   "MINIMIZE_LOG_LOSS" (default) - Minimize log loss.
-   * CLASSIFICATION_MULTI_LABEL:
    *   "MINIMIZE_LOG_LOSS" (default) - Minimize log loss.
    * REGRESSION:
    *   "MINIMIZE_RMSE" (default) - Minimize root-mean-squared error (RMSE).
@@ -252,7 +248,7 @@ public interface TablesModelMetadataOrBuilder
    *
    * <pre>
    * Output only. Auxiliary information for each of the
-   * input_feature_column_specs, with respect to this particular model.
+   * input_feature_column_specs with respect to this particular model.
    * </pre>
    *
    * <code>repeated .google.cloud.automl.v1beta1.TablesModelColumnInfo tables_model_column_info = 5;
@@ -265,7 +261,7 @@ public interface TablesModelMetadataOrBuilder
    *
    * <pre>
    * Output only. Auxiliary information for each of the
-   * input_feature_column_specs, with respect to this particular model.
+   * input_feature_column_specs with respect to this particular model.
    * </pre>
    *
    * <code>repeated .google.cloud.automl.v1beta1.TablesModelColumnInfo tables_model_column_info = 5;
@@ -277,7 +273,7 @@ public interface TablesModelMetadataOrBuilder
    *
    * <pre>
    * Output only. Auxiliary information for each of the
-   * input_feature_column_specs, with respect to this particular model.
+   * input_feature_column_specs with respect to this particular model.
    * </pre>
    *
    * <code>repeated .google.cloud.automl.v1beta1.TablesModelColumnInfo tables_model_column_info = 5;
@@ -289,7 +285,7 @@ public interface TablesModelMetadataOrBuilder
    *
    * <pre>
    * Output only. Auxiliary information for each of the
-   * input_feature_column_specs, with respect to this particular model.
+   * input_feature_column_specs with respect to this particular model.
    * </pre>
    *
    * <code>repeated .google.cloud.automl.v1beta1.TablesModelColumnInfo tables_model_column_info = 5;
@@ -302,7 +298,7 @@ public interface TablesModelMetadataOrBuilder
    *
    * <pre>
    * Output only. Auxiliary information for each of the
-   * input_feature_column_specs, with respect to this particular model.
+   * input_feature_column_specs with respect to this particular model.
    * </pre>
    *
    * <code>repeated .google.cloud.automl.v1beta1.TablesModelColumnInfo tables_model_column_info = 5;
@@ -315,8 +311,8 @@ public interface TablesModelMetadataOrBuilder
    *
    *
    * <pre>
-   * The train budget of creating this model, expressed in milli node hours
-   * i.e. 1,000 value in this field means 1 node hour.
+   * Required. The train budget of creating this model, expressed in milli node
+   * hours i.e. 1,000 value in this field means 1 node hour.
    * The training cost of the model will not exceed this budget. The final cost
    * will be attempted to be close to the budget, though may end up being (even)
    * noticeably smaller - at the backend's discretion. This especially may
@@ -324,6 +320,8 @@ public interface TablesModelMetadataOrBuilder
    * If the budget is set to a value known to be insufficient to train a
    * model for the given dataset, the training won't be attempted and
    * will error.
+   * The train budget must be between 1,000 and 72,000 milli node hours,
+   * inclusive.
    * </pre>
    *
    * <code>int64 train_budget_milli_node_hours = 6;</code>
@@ -342,4 +340,17 @@ public interface TablesModelMetadataOrBuilder
    * <code>int64 train_cost_milli_node_hours = 7;</code>
    */
   long getTrainCostMilliNodeHours();
+
+  /**
+   *
+   *
+   * <pre>
+   * Use the entire training budget. This disables the early stopping feature.
+   * By default, the early stopping feature is enabled, which means that AutoML
+   * Tables might stop training before the entire training budget has been used.
+   * </pre>
+   *
+   * <code>bool disable_early_stopping = 12;</code>
+   */
+  boolean getDisableEarlyStopping();
 }
