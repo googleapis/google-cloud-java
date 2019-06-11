@@ -126,7 +126,7 @@ public interface UpdateTransferConfigRequestOrBuilder
    * Optional version info. If users want to find a very recent access token,
    * that is, immediately after approving access, users have to set the
    * version_info claim in the token request. To obtain the version_info, users
-   * must use the “none+gsession” response type. which be return a
+   * must use the "none+gsession" response type. which be return a
    * version_info back in the authorization response which be be put in a JWT
    * claim in the token request.
    * </pre>
@@ -141,7 +141,7 @@ public interface UpdateTransferConfigRequestOrBuilder
    * Optional version info. If users want to find a very recent access token,
    * that is, immediately after approving access, users have to set the
    * version_info claim in the token request. To obtain the version_info, users
-   * must use the “none+gsession” response type. which be return a
+   * must use the "none+gsession" response type. which be return a
    * version_info back in the authorization response which be be put in a JWT
    * claim in the token request.
    * </pre>
