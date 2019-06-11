@@ -41,8 +41,8 @@ build_and_publish_site() {
   pushd ${DIRECTORY}
 
   # build the docs
-  mvn site
-  mvn site:stage -DtopSiteURL=https://googleapis.dev/java/${NAME}/${VERSION}
+  mvn site -B
+  mvn site:stage -B -DtopSiteURL=https://googleapis.dev/java/${NAME}/${VERSION}
 
   pushd target/staging/site/${NAME}/apidocs
 

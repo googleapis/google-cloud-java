@@ -1132,38 +1132,6 @@
         <version>3.7.1</version>
         <configuration>
           <skipDeploy>true</skipDeploy>
-          <reportPlugins>
-            <plugin>
-              <groupId>org.apache.maven.plugins</groupId>
-              <artifactId>maven-project-info-reports-plugin</artifactId>
-              <version>3.0.0</version>
-              <reportSets>
-                <reportSet>
-                  <reports>
-                    <report>index</report>
-                    <report>dependency-info</report>
-                    <report>project-team</report>
-                    <report>cim</report>
-                    <report>issue-tracking</report>
-                    <report>license</report>
-                    <report>scm</report>
-                    <report>dependency-management</report>
-                    <report>distribution-management</report>
-                    <report>summary</report>
-                    <report>modules</report>
-                  </reports>
-                </reportSet>
-              </reportSets>
-              <configuration>
-                <aggregate>true</aggregate>
-                <quiet>true</quiet>
-                <dependencyDetailsEnabled>true</dependencyDetailsEnabled>
-                <dependencyLocationsEnabled>true</dependencyLocationsEnabled>
-                <artifactId>google-cloud-bom</artifactId>
-                <packaging>jar</packaging>
-              </configuration>
-            </plugin>
-          </reportPlugins>
         </configuration>
       </plugin>
       <plugin>
@@ -1199,10 +1167,10 @@
             <reports>
               <report>index</report>
               <report>dependency-info</report>
-              <report>project-team</report>
-              <report>cim</report>
-              <report>issue-tracking</report>
-              <report>license</report>
+              <report>team</report>
+              <report>ci-management</report>
+              <report>issue-management</report>
+              <report>licenses</report>
               <report>scm</report>
               <report>dependency-management</report>
               <report>distribution-management</report>
@@ -1212,10 +1180,8 @@
           </reportSet>
         </reportSets>
         <configuration>
-          <aggregate>true</aggregate>
-          <quiet>true</quiet>
+          <skip>true</skip>
           <dependencyDetailsEnabled>true</dependencyDetailsEnabled>
-          <dependencyLocationsEnabled>true</dependencyLocationsEnabled>
           <artifactId>google-cloud-bom</artifactId>
           <packaging>jar</packaging>
         </configuration>
