@@ -26,6 +26,7 @@ import com.google.cloud.storage.StorageOptions;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
+import java.util.UUID;
 
 import org.junit.After;
 import org.junit.Before;
@@ -42,7 +43,7 @@ public class DetectIT {
   private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
   private static final String ASSET_BUCKET = "cloud-samples-data";
   private static final String OUTPUT_BUCKET = PROJECT_ID;
-  private static final String OUTPUT_PREFIX = "OCR_PDF_TEST_OUTPUT";
+  private static final String OUTPUT_PREFIX = "OCR_PDF_TEST_OUTPUT_" + UUID.randomUUID().toString();
 
   @Before
   public void setUp() throws IOException {
@@ -363,13 +364,13 @@ public class DetectIT {
 
     // Assert
     String got = bout.toString();
+
     assertThat(got).contains("OIL, GAS AND MINERAL LEASE");
 
     Storage storage = StorageOptions.getDefaultInstance().getService();
 
     Page<Blob> blobs = storage.list(OUTPUT_BUCKET, BlobListOption.currentDirectory(),
         BlobListOption.prefix(OUTPUT_PREFIX + "/"));
-
     for (Blob blob : blobs.iterateAll()) {
       blob.delete();
     }
