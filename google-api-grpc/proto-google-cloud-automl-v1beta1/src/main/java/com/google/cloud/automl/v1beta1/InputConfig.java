@@ -11,47 +11,103 @@ package com.google.cloud.automl.v1beta1;
  * The format of input depends on dataset_metadata the Dataset into which
  * the import is happening has. As input source the
  * [gcs_source][google.cloud.automl.v1beta1.InputConfig.gcs_source]
- * is expected, unless specified otherwise. If a file with identical content
- * (even if it had different GCS_FILE_PATH) is mentioned multiple times , then
+ * is expected, unless specified otherwise. Additionally any input .CSV file
+ * by itself must be 100MB or smaller, unless specified otherwise.
+ * If an "example" file (i.e. image, video etc.) with identical content
+ * (even if it had different GCS_FILE_PATH) is mentioned multiple times, then
  * its label, bounding boxes etc. are appended. The same file should be always
  * provided with the same ML_USE and GCS_FILE_PATH, if it is not then
  * these values are nondeterministically selected from the given ones.
  * The formats are represented in EBNF with commas being literal and with
  * non-terminal symbols defined near the end of this comment. The formats are:
+ *  *  For Image Classification:
+ *         CSV file(s) with each line in format:
+ *           ML_USE,GCS_FILE_PATH,LABEL,LABEL,...
+ *           GCS_FILE_PATH leads to image of up to 30MB in size. Supported
+ *           extensions: .JPEG, .GIF, .PNG, .WEBP, .BMP, .TIFF, .ICO
+ *           For MULTICLASS classification type, at most one LABEL is allowed
+ *           per image. If an image has not yet been labeled, then it should be
+ *           mentioned just once with no LABEL.
+ *         Some sample rows:
+ *           TRAIN,gs://folder/image1.jpg,daisy
+ *           TEST,gs://folder/image2.jpg,dandelion,tulip,rose
+ *           UNASSIGNED,gs://folder/image3.jpg,daisy
+ *           UNASSIGNED,gs://folder/image4.jpg
  *  *  For Image Object Detection:
  *         CSV file(s) with each line in format:
- *           ML_USE,GCS_FILE_PATH,LABEL,BOUNDING_BOX
+ *           ML_USE,GCS_FILE_PATH,(LABEL,BOUNDING_BOX | ,,,,,,,)
  *           GCS_FILE_PATH leads to image of up to 30MB in size. Supported
  *           extensions: .JPEG, .GIF, .PNG.
- *           Each image is assumed to be exhaustively labeled. The
- *           minimum allowed BOUNDING_BOX edge length is 0.01, and no more than
- *           500 BOUNDING_BOX-es per image are allowed.
- *         Three sample rows:
+ *           Each image is assumed to be exhaustively labeled. The minimum
+ *           allowed BOUNDING_BOX edge length is 0.01, and no more than 500
+ *           BOUNDING_BOX-es per image are allowed (one BOUNDING_BOX is defined
+ *           per line). If an image has not yet been labeled, then it should be
+ *           mentioned just once with no LABEL and the ",,,,,,," in place of the
+ *           BOUNDING_BOX.
+ *         Four sample rows:
  *           TRAIN,gs://folder/image1.png,car,0.1,0.1,,,0.3,0.3,,
  *           TRAIN,gs://folder/image1.png,bike,.7,.6,,,.8,.9,,
- *           TEST,gs://folder/im2.png,car,0.1,0.1,0.2,0.1,0.2,0.3,0.1,0.3
+ *           UNASSIGNED,gs://folder/im2.png,car,0.1,0.1,0.2,0.1,0.2,0.3,0.1,0.3
+ *           TEST,gs://folder/im3.png,,,,,,,,,
  *  *  For Video Classification:
  *         CSV file(s) with each line in format:
  *           ML_USE,GCS_FILE_PATH
  *           where ML_USE VALIDATE value should not be used. The GCS_FILE_PATH
  *           should lead to another .csv file which describes examples that have
  *           given ML_USE, using the following row format:
- *           GCS_FILE_PATH,LABEL,TIME_SEGMENT_START,TIME_SEGMENT_END
+ *           GCS_FILE_PATH,(LABEL,TIME_SEGMENT_START,TIME_SEGMENT_END | ,,)
  *           Here GCS_FILE_PATH leads to a video of up to 50GB in size and up
  *           to 3h duration. Supported extensions: .MOV, .MPEG4, .MP4, .AVI.
  *           TIME_SEGMENT_START and TIME_SEGMENT_END must be within the
  *           length of the video, and end has to be after the start. Any segment
  *           of a video which has one or more labels on it, is considered a
  *           hard negative for all other labels. Any segment with no labels on
- *           it is considered to be unknown.
+ *           it is considered to be unknown. If a whole video is unknown, then
+ *           it shuold be mentioned just once with ",," in place of LABEL,
+ *           TIME_SEGMENT_START,TIME_SEGMENT_END.
  *         Sample top level CSV file:
  *           TRAIN,gs://folder/train_videos.csv
  *           TEST,gs://folder/test_videos.csv
  *           UNASSIGNED,gs://folder/other_videos.csv
- *         Three sample rows of a CSV file for a particular ML_USE:
+ *         Sample rows of a CSV file for a particular ML_USE:
  *           gs://folder/video1.avi,car,120,180.000021
  *           gs://folder/video1.avi,bike,150,180.000021
  *           gs://folder/vid2.avi,car,0,60.5
+ *           gs://folder/vid3.avi,,,
+ *  *  For Video Object Tracking:
+ *         CSV file(s) with each line in format:
+ *           ML_USE,GCS_FILE_PATH
+ *           where ML_USE VALIDATE value should not be used. The GCS_FILE_PATH
+ *           should lead to another .csv file which describes examples that have
+ *           given ML_USE, using one of the following row format:
+ *           GCS_FILE_PATH,LABEL,[INSTANCE_ID],TIMESTAMP,BOUNDING_BOX
+ *           or
+ *           GCS_FILE_PATH,,,,,,,,,,
+ *           Here GCS_FILE_PATH leads to a video of up to 50GB in size and up
+ *           to 3h duration. Supported extensions: .MOV, .MPEG4, .MP4, .AVI.
+ *           Providing INSTANCE_IDs can help to obtain a better model. When
+ *           a specific labeled entity leaves the video frame, and shows up
+ *           afterwards it is not required, albeit preferable, that the same
+ *           INSTANCE_ID is given to it.
+ *           TIMESTAMP must be within the length of the video, the
+ *           BOUNDING_BOX is assumed to be drawn on the closest video's frame
+ *           to the TIMESTAMP. Any mentioned by the TIMESTAMP frame is expected
+ *           to be exhaustively labeled and no more than 500 BOUNDING_BOX-es per
+ *           frame are allowed. If a whole video is unknown, then it should be
+ *           mentioned just once with ",,,,,,,,,," in place of LABEL,
+ *           [INSTANCE_ID],TIMESTAMP,BOUNDING_BOX.
+ *         Sample top level CSV file:
+ *           TRAIN,gs://folder/train_videos.csv
+ *           TEST,gs://folder/test_videos.csv
+ *           UNASSIGNED,gs://folder/other_videos.csv
+ *         Seven sample rows of a CSV file for a particular ML_USE:
+ *           gs://folder/video1.avi,car,1,12.10,0.8,0.8,0.9,0.8,0.9,0.9,0.8,0.9
+ *           gs://folder/video1.avi,car,1,12.90,0.4,0.8,0.5,0.8,0.5,0.9,0.4,0.9
+ *           gs://folder/video1.avi,car,2,12.10,.4,.2,.5,.2,.5,.3,.4,.3
+ *           gs://folder/video1.avi,car,2,12.90,.8,.2,,,.9,.3,,
+ *           gs://folder/video1.avi,bike,,12.50,.45,.45,,,.55,.55,,
+ *           gs://folder/video2.avi,car,1,0,.1,.9,,,.9,.1,,
+ *           gs://folder/video2.avi,,,,,,,,,,,
  *  *  For Text Extraction:
  *         CSV file(s) with each line in format:
  *           ML_USE,GCS_FILE_PATH
@@ -61,12 +117,11 @@ package com.google.cloud.automl.v1beta1;
  *             TextSnippet proto (in json representation) followed by one or
  *             more AnnotationPayload protos (called annotations), which have
  *             display_name and text_extraction detail populated.
- *             Given text is expected to be annotated exhaustively, e.g. if you
- *             look for animals and text contains "dolphin" that is not labeled,
- *             then "dolphin" will be assumed to not be an animal.
- *             Any given text snippet content must have 30,000 characters or
- *             less, and also be UTF-8 NFC encoded (ASCII already is).
- *           The document .JSONL file contains, per line, a proto that wraps a
+ *             The given text is expected to be annotated exhaustively, e.g. if
+ *             you look for animals and text contains "dolphin" that is not
+ *             labeled, then "dolphin" will be assumed to not be an animal. Any
+ *             given text snippet content must have 30,000 characters or less,
+ *             and also be UTF-8 NFC encoded (ASCII already is).           The document .JSONL file contains, per line, a proto that wraps a
  *             Document proto with input_config set. Only PDF documents are
  *             supported now, and each document may be up to 2MB large.
  *             Currently annotations on documents cannot be specified at import.
@@ -75,44 +130,44 @@ package com.google.cloud.automl.v1beta1;
  *           TRAIN,gs://folder/file1.jsonl
  *           VALIDATE,gs://folder/file2.jsonl
  *           TEST,gs://folder/file3.jsonl
- *         Sample in-line JSON Lines file (presented here with artificial line
- *         breaks, but the only actual line break is denoted by &#92;n).:
+ *         Sample in-line JSON Lines file for entity extraction (presented here
+ *         with artificial line breaks, but the only actual line break is
+ *         denoted by &#92;n).:
  *           {
  *             "text_snippet": {
  *               "content": "dog car cat"
- *             },
- *             "annotations": [
- *                {
- *                  "display_name": "animal",
- *                  "text_extraction": {
- *                    "text_segment": {"start_offset": 0, "end_offset": 2}
- *                  }
- *                },
- *                {
- *                  "display_name": "vehicle",
- *                  "text_extraction": {
- *                    "text_segment": {"start_offset": 4, "end_offset": 6}
- *                  }
- *                },
- *                {
- *                  "display_name": "animal",
- *                  "text_extraction": {
- *                    "text_segment": {"start_offset": 8, "end_offset": 10}
- *                  }
- *                }
- *             ]
+ *             }             "annotations": [
+ *               {
+ *                 "display_name": "animal",
+ *                 "text_extraction": {
+ *                   "text_segment": {"start_offset": 0, "end_offset": 3}
+ *                 }
+ *               },
+ *               {
+ *                 "display_name": "vehicle",
+ *                 "text_extraction": {
+ *                   "text_segment": {"start_offset": 4, "end_offset": 7}
+ *                 }
+ *               },
+ *               {
+ *                 "display_name": "animal",
+ *                 "text_extraction": {
+ *                   "text_segment": {"start_offset": 8, "end_offset": 11}
+ *                 }
+ *               },
+ *             ],
  *           }&#92;n
  *           {
  *              "text_snippet": {
  *                "content": "This dog is good."
  *              },
  *              "annotations": [
- *                 {
- *                   "display_name": "animal",
- *                   "text_extraction": {
- *                     "text_segment": {"start_offset": 5, "end_offset": 7}
- *                   }
- *                 }
+ *                {
+ *                  "display_name": "animal",
+ *                  "text_extraction": {
+ *                    "text_segment": {"start_offset": 5, "end_offset": 8}
+ *                  }
+ *                }
  *              ]
  *           }
  *         Sample document JSON Lines file (presented here with artificial line
@@ -133,6 +188,42 @@ package com.google.cloud.automl.v1beta1;
  *               }
  *             }
  *           }
+ *  *  For Text Classification:
+ *         CSV file(s) with each line in format:
+ *           ML_USE,(TEXT_SNIPPET | GCS_FILE_PATH),LABEL,LABEL,...
+ *           TEXT_SNIPPET and GCS_FILE_PATH are distinguished by a pattern. If
+ *           the column content is a valid gcs file path, i.e. prefixed by
+ *           "gs://", it will be treated as a GCS_FILE_PATH, else if the content
+ *           is enclosed within double quotes (""), it will
+ *           be treated as a TEXT_SNIPPET. In the GCS_FILE_PATH case, the path
+ *           must lead to a .txt file with UTF-8 encoding, e.g.
+ *           "gs://folder/content.txt", and the content in it will be extracted
+ *           as a text snippet. In TEXT_SNIPPET case, the column content
+ *           excluding quotes will be treated as to be imported text snippet. In
+ *           both cases, the text snippet/file size must be within 128kB.
+ *           Maximum 100 unique labels are allowed per CSV row.
+ *         Four sample rows:
+ *         TRAIN,"They have bad food and very rude",RudeService,BadFood
+ *         TRAIN,gs://folder/content.txt,SlowService
+ *         TEST,"Typically always bad service there.",RudeService
+ *         VALIDATE,"Stomach ache to go.",BadFood
+ *  *  For Text Sentiment:
+ *         CSV file(s) with each line in format:
+ *           ML_USE,(TEXT_SNIPPET | GCS_FILE_PATH),SENTIMENT
+ *           TEXT_SNIPPET and GCS_FILE_PATH are distinguished by a pattern. If
+ *           the column content is a valid gcs file path, i.e. prefixed by
+ *           "gs://", it will be treated as a GCS_FILE_PATH, otherwise it will
+ *           be treated as a TEXT_SNIPPET. In the GCS_FILE_PATH case, the path
+ *           must lead to a .txt file with UTF-8 encoding, e.g.
+ *           "gs://folder/content.txt", and the content in it will be extracted
+ *           as a text snippet. In TEXT_SNIPPET case, the column content itself
+ *           will be treated as to be imported text snippet. In both cases, the
+ *           text snippet must be up to 500 characters long.
+ *         Four sample rows:
+ *         TRAIN,"&#64;freewrytin God is way too good for Claritin",2
+ *         TRAIN,"I need Claritin so bad",3
+ *         TEST,"Thank god for Claritin.",4
+ *         VALIDATE,gs://folder/content.txt,2
  *   *  For Tables:
  *         Either
  *         [gcs_source][google.cloud.automl.v1beta1.InputConfig.gcs_source] or
@@ -140,26 +231,23 @@ package com.google.cloud.automl.v1beta1;
  *         can be used. All inputs will be concatenated into a single
  * [primary_table][google.cloud.automl.v1beta1.TablesDatasetMetadata.primary_table_name]
  *         For gcs_source:
- *           CSV file(s), where first file must have a header containing unique
- *           column names, other files may have such header line too, and all
- *           other lines contain values for the header columns. Each line must
- *           have 1,000,000 or fewer characters.
+ *           CSV file(s), where the first row of the first file is the header,
+ *           containing unique column names. If the first row of a subsequent
+ *           file is the same as the header, then it is also treated as a
+ *           header. All other rows contain values for the corresponding
+ *           columns.
+ *           Each .CSV file by itself must be 10GB or smaller, and their total
+ *           size must be 100GB or smaller.
  *           First three sample rows of a CSV file:
  *           "Id","First Name","Last Name","Dob","Addresses"
  * "1","John","Doe","1968-01-22","[{"status":"current","address":"123_First_Avenue","city":"Seattle","state":"WA","zip":"11111","numberOfYears":"1"},{"status":"previous","address":"456_Main_Street","city":"Portland","state":"OR","zip":"22222","numberOfYears":"5"}]"
  * "2","Jane","Doe","1980-10-16","[{"status":"current","address":"789_Any_Avenue","city":"Albany","state":"NY","zip":"33333","numberOfYears":"2"},{"status":"previous","address":"321_Main_Street","city":"Hoboken","state":"NJ","zip":"44444","numberOfYears":"3"}]}
  *         For bigquery_source:
- *           An URI of a BigQuery table.
+ *           An URI of a BigQuery table. The user data size of the BigQuery
+ *           table must be 100GB or smaller.
  *         An imported table must have between 2 and 1,000 columns, inclusive,
- *         and between 1,000 and 10,000,000 rows, inclusive.
- *  *  For Text Sentiment:
- *         CSV file(s) with each line in format:
- *           ML_USE,TEXT_SNIPPET,SENTIMENT
- *           TEXT_SNIPPET must have up to 500 characters.
- *         Three sample rows:
- *         TRAIN,"&#64;freewrytin God is way too good for Claritin",2
- *         TRAIN,"I need Claritin so bad",3
- *         TEST,"Thank god for Claritin.",4
+ *         and between 1000 and 100,000,000 rows, inclusive. There are at most 5
+ *         import data running in parallel.
  *  Definitions:
  *  ML_USE = "TRAIN" | "VALIDATE" | "TEST" | "UNASSIGNED"
  *           Describes how the given example (file) should be used for model
@@ -195,7 +283,8 @@ package com.google.cloud.automl.v1beta1;
  *                example (e.g. video). Fractions are allowed, up to a
  *                microsecond precision. "inf" is allowed, and it means the end
  *                of the example.
- *  TEXT_SNIPPET = A content of a text snippet, UTF-8 encoded.
+ *  TEXT_SNIPPET = A content of a text snippet, UTF-8 encoded, enclosed within
+ *                 double quotes ("").
  *  SENTIMENT = An integer between 0 and
  *              Dataset.text_sentiment_dataset_metadata.sentiment_max
  *              (inclusive). Describes the ordinal of the sentiment - higher
@@ -395,6 +484,8 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The Google Cloud Storage location for the input content.
+   * In ImportData, the gcs_source points to a csv with structure described in
+   * the comment.
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.GcsSource gcs_source = 1;</code>
@@ -407,6 +498,8 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The Google Cloud Storage location for the input content.
+   * In ImportData, the gcs_source points to a csv with structure described in
+   * the comment.
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.GcsSource gcs_source = 1;</code>
@@ -422,6 +515,8 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The Google Cloud Storage location for the input content.
+   * In ImportData, the gcs_source points to a csv with structure described in
+   * the comment.
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.GcsSource gcs_source = 1;</code>
@@ -812,47 +907,103 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    * The format of input depends on dataset_metadata the Dataset into which
    * the import is happening has. As input source the
    * [gcs_source][google.cloud.automl.v1beta1.InputConfig.gcs_source]
-   * is expected, unless specified otherwise. If a file with identical content
-   * (even if it had different GCS_FILE_PATH) is mentioned multiple times , then
+   * is expected, unless specified otherwise. Additionally any input .CSV file
+   * by itself must be 100MB or smaller, unless specified otherwise.
+   * If an "example" file (i.e. image, video etc.) with identical content
+   * (even if it had different GCS_FILE_PATH) is mentioned multiple times, then
    * its label, bounding boxes etc. are appended. The same file should be always
    * provided with the same ML_USE and GCS_FILE_PATH, if it is not then
    * these values are nondeterministically selected from the given ones.
    * The formats are represented in EBNF with commas being literal and with
    * non-terminal symbols defined near the end of this comment. The formats are:
+   *  *  For Image Classification:
+   *         CSV file(s) with each line in format:
+   *           ML_USE,GCS_FILE_PATH,LABEL,LABEL,...
+   *           GCS_FILE_PATH leads to image of up to 30MB in size. Supported
+   *           extensions: .JPEG, .GIF, .PNG, .WEBP, .BMP, .TIFF, .ICO
+   *           For MULTICLASS classification type, at most one LABEL is allowed
+   *           per image. If an image has not yet been labeled, then it should be
+   *           mentioned just once with no LABEL.
+   *         Some sample rows:
+   *           TRAIN,gs://folder/image1.jpg,daisy
+   *           TEST,gs://folder/image2.jpg,dandelion,tulip,rose
+   *           UNASSIGNED,gs://folder/image3.jpg,daisy
+   *           UNASSIGNED,gs://folder/image4.jpg
    *  *  For Image Object Detection:
    *         CSV file(s) with each line in format:
-   *           ML_USE,GCS_FILE_PATH,LABEL,BOUNDING_BOX
+   *           ML_USE,GCS_FILE_PATH,(LABEL,BOUNDING_BOX | ,,,,,,,)
    *           GCS_FILE_PATH leads to image of up to 30MB in size. Supported
    *           extensions: .JPEG, .GIF, .PNG.
-   *           Each image is assumed to be exhaustively labeled. The
-   *           minimum allowed BOUNDING_BOX edge length is 0.01, and no more than
-   *           500 BOUNDING_BOX-es per image are allowed.
-   *         Three sample rows:
+   *           Each image is assumed to be exhaustively labeled. The minimum
+   *           allowed BOUNDING_BOX edge length is 0.01, and no more than 500
+   *           BOUNDING_BOX-es per image are allowed (one BOUNDING_BOX is defined
+   *           per line). If an image has not yet been labeled, then it should be
+   *           mentioned just once with no LABEL and the ",,,,,,," in place of the
+   *           BOUNDING_BOX.
+   *         Four sample rows:
    *           TRAIN,gs://folder/image1.png,car,0.1,0.1,,,0.3,0.3,,
    *           TRAIN,gs://folder/image1.png,bike,.7,.6,,,.8,.9,,
-   *           TEST,gs://folder/im2.png,car,0.1,0.1,0.2,0.1,0.2,0.3,0.1,0.3
+   *           UNASSIGNED,gs://folder/im2.png,car,0.1,0.1,0.2,0.1,0.2,0.3,0.1,0.3
+   *           TEST,gs://folder/im3.png,,,,,,,,,
    *  *  For Video Classification:
    *         CSV file(s) with each line in format:
    *           ML_USE,GCS_FILE_PATH
    *           where ML_USE VALIDATE value should not be used. The GCS_FILE_PATH
    *           should lead to another .csv file which describes examples that have
    *           given ML_USE, using the following row format:
-   *           GCS_FILE_PATH,LABEL,TIME_SEGMENT_START,TIME_SEGMENT_END
+   *           GCS_FILE_PATH,(LABEL,TIME_SEGMENT_START,TIME_SEGMENT_END | ,,)
    *           Here GCS_FILE_PATH leads to a video of up to 50GB in size and up
    *           to 3h duration. Supported extensions: .MOV, .MPEG4, .MP4, .AVI.
    *           TIME_SEGMENT_START and TIME_SEGMENT_END must be within the
    *           length of the video, and end has to be after the start. Any segment
    *           of a video which has one or more labels on it, is considered a
    *           hard negative for all other labels. Any segment with no labels on
-   *           it is considered to be unknown.
+   *           it is considered to be unknown. If a whole video is unknown, then
+   *           it shuold be mentioned just once with ",," in place of LABEL,
+   *           TIME_SEGMENT_START,TIME_SEGMENT_END.
    *         Sample top level CSV file:
    *           TRAIN,gs://folder/train_videos.csv
    *           TEST,gs://folder/test_videos.csv
    *           UNASSIGNED,gs://folder/other_videos.csv
-   *         Three sample rows of a CSV file for a particular ML_USE:
+   *         Sample rows of a CSV file for a particular ML_USE:
    *           gs://folder/video1.avi,car,120,180.000021
    *           gs://folder/video1.avi,bike,150,180.000021
    *           gs://folder/vid2.avi,car,0,60.5
+   *           gs://folder/vid3.avi,,,
+   *  *  For Video Object Tracking:
+   *         CSV file(s) with each line in format:
+   *           ML_USE,GCS_FILE_PATH
+   *           where ML_USE VALIDATE value should not be used. The GCS_FILE_PATH
+   *           should lead to another .csv file which describes examples that have
+   *           given ML_USE, using one of the following row format:
+   *           GCS_FILE_PATH,LABEL,[INSTANCE_ID],TIMESTAMP,BOUNDING_BOX
+   *           or
+   *           GCS_FILE_PATH,,,,,,,,,,
+   *           Here GCS_FILE_PATH leads to a video of up to 50GB in size and up
+   *           to 3h duration. Supported extensions: .MOV, .MPEG4, .MP4, .AVI.
+   *           Providing INSTANCE_IDs can help to obtain a better model. When
+   *           a specific labeled entity leaves the video frame, and shows up
+   *           afterwards it is not required, albeit preferable, that the same
+   *           INSTANCE_ID is given to it.
+   *           TIMESTAMP must be within the length of the video, the
+   *           BOUNDING_BOX is assumed to be drawn on the closest video's frame
+   *           to the TIMESTAMP. Any mentioned by the TIMESTAMP frame is expected
+   *           to be exhaustively labeled and no more than 500 BOUNDING_BOX-es per
+   *           frame are allowed. If a whole video is unknown, then it should be
+   *           mentioned just once with ",,,,,,,,,," in place of LABEL,
+   *           [INSTANCE_ID],TIMESTAMP,BOUNDING_BOX.
+   *         Sample top level CSV file:
+   *           TRAIN,gs://folder/train_videos.csv
+   *           TEST,gs://folder/test_videos.csv
+   *           UNASSIGNED,gs://folder/other_videos.csv
+   *         Seven sample rows of a CSV file for a particular ML_USE:
+   *           gs://folder/video1.avi,car,1,12.10,0.8,0.8,0.9,0.8,0.9,0.9,0.8,0.9
+   *           gs://folder/video1.avi,car,1,12.90,0.4,0.8,0.5,0.8,0.5,0.9,0.4,0.9
+   *           gs://folder/video1.avi,car,2,12.10,.4,.2,.5,.2,.5,.3,.4,.3
+   *           gs://folder/video1.avi,car,2,12.90,.8,.2,,,.9,.3,,
+   *           gs://folder/video1.avi,bike,,12.50,.45,.45,,,.55,.55,,
+   *           gs://folder/video2.avi,car,1,0,.1,.9,,,.9,.1,,
+   *           gs://folder/video2.avi,,,,,,,,,,,
    *  *  For Text Extraction:
    *         CSV file(s) with each line in format:
    *           ML_USE,GCS_FILE_PATH
@@ -862,12 +1013,11 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *             TextSnippet proto (in json representation) followed by one or
    *             more AnnotationPayload protos (called annotations), which have
    *             display_name and text_extraction detail populated.
-   *             Given text is expected to be annotated exhaustively, e.g. if you
-   *             look for animals and text contains "dolphin" that is not labeled,
-   *             then "dolphin" will be assumed to not be an animal.
-   *             Any given text snippet content must have 30,000 characters or
-   *             less, and also be UTF-8 NFC encoded (ASCII already is).
-   *           The document .JSONL file contains, per line, a proto that wraps a
+   *             The given text is expected to be annotated exhaustively, e.g. if
+   *             you look for animals and text contains "dolphin" that is not
+   *             labeled, then "dolphin" will be assumed to not be an animal. Any
+   *             given text snippet content must have 30,000 characters or less,
+   *             and also be UTF-8 NFC encoded (ASCII already is).           The document .JSONL file contains, per line, a proto that wraps a
    *             Document proto with input_config set. Only PDF documents are
    *             supported now, and each document may be up to 2MB large.
    *             Currently annotations on documents cannot be specified at import.
@@ -876,44 +1026,44 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *           TRAIN,gs://folder/file1.jsonl
    *           VALIDATE,gs://folder/file2.jsonl
    *           TEST,gs://folder/file3.jsonl
-   *         Sample in-line JSON Lines file (presented here with artificial line
-   *         breaks, but the only actual line break is denoted by &#92;n).:
+   *         Sample in-line JSON Lines file for entity extraction (presented here
+   *         with artificial line breaks, but the only actual line break is
+   *         denoted by &#92;n).:
    *           {
    *             "text_snippet": {
    *               "content": "dog car cat"
-   *             },
-   *             "annotations": [
-   *                {
-   *                  "display_name": "animal",
-   *                  "text_extraction": {
-   *                    "text_segment": {"start_offset": 0, "end_offset": 2}
-   *                  }
-   *                },
-   *                {
-   *                  "display_name": "vehicle",
-   *                  "text_extraction": {
-   *                    "text_segment": {"start_offset": 4, "end_offset": 6}
-   *                  }
-   *                },
-   *                {
-   *                  "display_name": "animal",
-   *                  "text_extraction": {
-   *                    "text_segment": {"start_offset": 8, "end_offset": 10}
-   *                  }
-   *                }
-   *             ]
+   *             }             "annotations": [
+   *               {
+   *                 "display_name": "animal",
+   *                 "text_extraction": {
+   *                   "text_segment": {"start_offset": 0, "end_offset": 3}
+   *                 }
+   *               },
+   *               {
+   *                 "display_name": "vehicle",
+   *                 "text_extraction": {
+   *                   "text_segment": {"start_offset": 4, "end_offset": 7}
+   *                 }
+   *               },
+   *               {
+   *                 "display_name": "animal",
+   *                 "text_extraction": {
+   *                   "text_segment": {"start_offset": 8, "end_offset": 11}
+   *                 }
+   *               },
+   *             ],
    *           }&#92;n
    *           {
    *              "text_snippet": {
    *                "content": "This dog is good."
    *              },
    *              "annotations": [
-   *                 {
-   *                   "display_name": "animal",
-   *                   "text_extraction": {
-   *                     "text_segment": {"start_offset": 5, "end_offset": 7}
-   *                   }
-   *                 }
+   *                {
+   *                  "display_name": "animal",
+   *                  "text_extraction": {
+   *                    "text_segment": {"start_offset": 5, "end_offset": 8}
+   *                  }
+   *                }
    *              ]
    *           }
    *         Sample document JSON Lines file (presented here with artificial line
@@ -934,6 +1084,42 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *               }
    *             }
    *           }
+   *  *  For Text Classification:
+   *         CSV file(s) with each line in format:
+   *           ML_USE,(TEXT_SNIPPET | GCS_FILE_PATH),LABEL,LABEL,...
+   *           TEXT_SNIPPET and GCS_FILE_PATH are distinguished by a pattern. If
+   *           the column content is a valid gcs file path, i.e. prefixed by
+   *           "gs://", it will be treated as a GCS_FILE_PATH, else if the content
+   *           is enclosed within double quotes (""), it will
+   *           be treated as a TEXT_SNIPPET. In the GCS_FILE_PATH case, the path
+   *           must lead to a .txt file with UTF-8 encoding, e.g.
+   *           "gs://folder/content.txt", and the content in it will be extracted
+   *           as a text snippet. In TEXT_SNIPPET case, the column content
+   *           excluding quotes will be treated as to be imported text snippet. In
+   *           both cases, the text snippet/file size must be within 128kB.
+   *           Maximum 100 unique labels are allowed per CSV row.
+   *         Four sample rows:
+   *         TRAIN,"They have bad food and very rude",RudeService,BadFood
+   *         TRAIN,gs://folder/content.txt,SlowService
+   *         TEST,"Typically always bad service there.",RudeService
+   *         VALIDATE,"Stomach ache to go.",BadFood
+   *  *  For Text Sentiment:
+   *         CSV file(s) with each line in format:
+   *           ML_USE,(TEXT_SNIPPET | GCS_FILE_PATH),SENTIMENT
+   *           TEXT_SNIPPET and GCS_FILE_PATH are distinguished by a pattern. If
+   *           the column content is a valid gcs file path, i.e. prefixed by
+   *           "gs://", it will be treated as a GCS_FILE_PATH, otherwise it will
+   *           be treated as a TEXT_SNIPPET. In the GCS_FILE_PATH case, the path
+   *           must lead to a .txt file with UTF-8 encoding, e.g.
+   *           "gs://folder/content.txt", and the content in it will be extracted
+   *           as a text snippet. In TEXT_SNIPPET case, the column content itself
+   *           will be treated as to be imported text snippet. In both cases, the
+   *           text snippet must be up to 500 characters long.
+   *         Four sample rows:
+   *         TRAIN,"&#64;freewrytin God is way too good for Claritin",2
+   *         TRAIN,"I need Claritin so bad",3
+   *         TEST,"Thank god for Claritin.",4
+   *         VALIDATE,gs://folder/content.txt,2
    *   *  For Tables:
    *         Either
    *         [gcs_source][google.cloud.automl.v1beta1.InputConfig.gcs_source] or
@@ -941,26 +1127,23 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *         can be used. All inputs will be concatenated into a single
    * [primary_table][google.cloud.automl.v1beta1.TablesDatasetMetadata.primary_table_name]
    *         For gcs_source:
-   *           CSV file(s), where first file must have a header containing unique
-   *           column names, other files may have such header line too, and all
-   *           other lines contain values for the header columns. Each line must
-   *           have 1,000,000 or fewer characters.
+   *           CSV file(s), where the first row of the first file is the header,
+   *           containing unique column names. If the first row of a subsequent
+   *           file is the same as the header, then it is also treated as a
+   *           header. All other rows contain values for the corresponding
+   *           columns.
+   *           Each .CSV file by itself must be 10GB or smaller, and their total
+   *           size must be 100GB or smaller.
    *           First three sample rows of a CSV file:
    *           "Id","First Name","Last Name","Dob","Addresses"
    * "1","John","Doe","1968-01-22","[{"status":"current","address":"123_First_Avenue","city":"Seattle","state":"WA","zip":"11111","numberOfYears":"1"},{"status":"previous","address":"456_Main_Street","city":"Portland","state":"OR","zip":"22222","numberOfYears":"5"}]"
    * "2","Jane","Doe","1980-10-16","[{"status":"current","address":"789_Any_Avenue","city":"Albany","state":"NY","zip":"33333","numberOfYears":"2"},{"status":"previous","address":"321_Main_Street","city":"Hoboken","state":"NJ","zip":"44444","numberOfYears":"3"}]}
    *         For bigquery_source:
-   *           An URI of a BigQuery table.
+   *           An URI of a BigQuery table. The user data size of the BigQuery
+   *           table must be 100GB or smaller.
    *         An imported table must have between 2 and 1,000 columns, inclusive,
-   *         and between 1,000 and 10,000,000 rows, inclusive.
-   *  *  For Text Sentiment:
-   *         CSV file(s) with each line in format:
-   *           ML_USE,TEXT_SNIPPET,SENTIMENT
-   *           TEXT_SNIPPET must have up to 500 characters.
-   *         Three sample rows:
-   *         TRAIN,"&#64;freewrytin God is way too good for Claritin",2
-   *         TRAIN,"I need Claritin so bad",3
-   *         TEST,"Thank god for Claritin.",4
+   *         and between 1000 and 100,000,000 rows, inclusive. There are at most 5
+   *         import data running in parallel.
    *  Definitions:
    *  ML_USE = "TRAIN" | "VALIDATE" | "TEST" | "UNASSIGNED"
    *           Describes how the given example (file) should be used for model
@@ -996,7 +1179,8 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *                example (e.g. video). Fractions are allowed, up to a
    *                microsecond precision. "inf" is allowed, and it means the end
    *                of the example.
-   *  TEXT_SNIPPET = A content of a text snippet, UTF-8 encoded.
+   *  TEXT_SNIPPET = A content of a text snippet, UTF-8 encoded, enclosed within
+   *                 double quotes ("").
    *  SENTIMENT = An integer between 0 and
    *              Dataset.text_sentiment_dataset_metadata.sentiment_max
    *              (inclusive). Describes the ordinal of the sentiment - higher
@@ -1250,6 +1434,8 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The Google Cloud Storage location for the input content.
+     * In ImportData, the gcs_source points to a csv with structure described in
+     * the comment.
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.GcsSource gcs_source = 1;</code>
@@ -1262,6 +1448,8 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The Google Cloud Storage location for the input content.
+     * In ImportData, the gcs_source points to a csv with structure described in
+     * the comment.
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.GcsSource gcs_source = 1;</code>
@@ -1284,6 +1472,8 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The Google Cloud Storage location for the input content.
+     * In ImportData, the gcs_source points to a csv with structure described in
+     * the comment.
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.GcsSource gcs_source = 1;</code>
@@ -1306,6 +1496,8 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The Google Cloud Storage location for the input content.
+     * In ImportData, the gcs_source points to a csv with structure described in
+     * the comment.
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.GcsSource gcs_source = 1;</code>
@@ -1325,6 +1517,8 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The Google Cloud Storage location for the input content.
+     * In ImportData, the gcs_source points to a csv with structure described in
+     * the comment.
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.GcsSource gcs_source = 1;</code>
@@ -1356,6 +1550,8 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The Google Cloud Storage location for the input content.
+     * In ImportData, the gcs_source points to a csv with structure described in
+     * the comment.
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.GcsSource gcs_source = 1;</code>
@@ -1381,6 +1577,8 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The Google Cloud Storage location for the input content.
+     * In ImportData, the gcs_source points to a csv with structure described in
+     * the comment.
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.GcsSource gcs_source = 1;</code>
@@ -1393,6 +1591,8 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The Google Cloud Storage location for the input content.
+     * In ImportData, the gcs_source points to a csv with structure described in
+     * the comment.
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.GcsSource gcs_source = 1;</code>
@@ -1412,6 +1612,8 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The Google Cloud Storage location for the input content.
+     * In ImportData, the gcs_source points to a csv with structure described in
+     * the comment.
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.GcsSource gcs_source = 1;</code>

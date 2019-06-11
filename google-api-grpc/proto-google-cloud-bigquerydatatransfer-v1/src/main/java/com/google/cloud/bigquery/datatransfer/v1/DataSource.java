@@ -36,6 +36,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     helpUrl_ = "";
     authorizationType_ = 0;
     dataRefreshType_ = 0;
+    partnerLegalName_ = "";
+    redirectUrl_ = "";
   }
 
   @java.lang.Override
@@ -194,6 +196,20 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
                 minimumScheduleInterval_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 178:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              partnerLegalName_ = s;
+              break;
+            }
+          case 186:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              redirectUrl_ = s;
               break;
             }
           default:
@@ -727,7 +743,6 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Data source client id which should be used to receive refresh token.
-   * When not supplied, no offline credentials are populated for data transfer.
    * </pre>
    *
    * <code>string client_id = 5;</code>
@@ -748,7 +763,6 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Data source client id which should be used to receive refresh token.
-   * When not supplied, no offline credentials are populated for data transfer.
    * </pre>
    *
    * <code>string client_id = 5;</code>
@@ -771,10 +785,9 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Api auth scopes for which refresh token needs to be obtained. Only valid
-   * when `client_id` is specified. Ignored otherwise. These are scopes needed
-   * by a data source to prepare data and ingest them into BigQuery,
-   * e.g., https://www.googleapis.com/auth/bigquery
+   * Api auth scopes for which refresh token needs to be obtained. These are
+   * scopes needed by a data source to prepare data and ingest them into
+   * BigQuery, e.g., https://www.googleapis.com/auth/bigquery
    * </pre>
    *
    * <code>repeated string scopes = 6;</code>
@@ -786,10 +799,9 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Api auth scopes for which refresh token needs to be obtained. Only valid
-   * when `client_id` is specified. Ignored otherwise. These are scopes needed
-   * by a data source to prepare data and ingest them into BigQuery,
-   * e.g., https://www.googleapis.com/auth/bigquery
+   * Api auth scopes for which refresh token needs to be obtained. These are
+   * scopes needed by a data source to prepare data and ingest them into
+   * BigQuery, e.g., https://www.googleapis.com/auth/bigquery
    * </pre>
    *
    * <code>repeated string scopes = 6;</code>
@@ -801,10 +813,9 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Api auth scopes for which refresh token needs to be obtained. Only valid
-   * when `client_id` is specified. Ignored otherwise. These are scopes needed
-   * by a data source to prepare data and ingest them into BigQuery,
-   * e.g., https://www.googleapis.com/auth/bigquery
+   * Api auth scopes for which refresh token needs to be obtained. These are
+   * scopes needed by a data source to prepare data and ingest them into
+   * BigQuery, e.g., https://www.googleapis.com/auth/bigquery
    * </pre>
    *
    * <code>repeated string scopes = 6;</code>
@@ -816,10 +827,9 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Api auth scopes for which refresh token needs to be obtained. Only valid
-   * when `client_id` is specified. Ignored otherwise. These are scopes needed
-   * by a data source to prepare data and ingest them into BigQuery,
-   * e.g., https://www.googleapis.com/auth/bigquery
+   * Api auth scopes for which refresh token needs to be obtained. These are
+   * scopes needed by a data source to prepare data and ingest them into
+   * BigQuery, e.g., https://www.googleapis.com/auth/bigquery
    * </pre>
    *
    * <code>repeated string scopes = 6;</code>
@@ -837,8 +847,11 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    * Deprecated. This field has no effect.
    * </pre>
    *
-   * <code>.google.cloud.bigquery.datatransfer.v1.TransferType transfer_type = 7;</code>
+   * <code>
+   * .google.cloud.bigquery.datatransfer.v1.TransferType transfer_type = 7 [deprecated = true];
+   * </code>
    */
+  @java.lang.Deprecated
   public int getTransferTypeValue() {
     return transferType_;
   }
@@ -849,8 +862,11 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    * Deprecated. This field has no effect.
    * </pre>
    *
-   * <code>.google.cloud.bigquery.datatransfer.v1.TransferType transfer_type = 7;</code>
+   * <code>
+   * .google.cloud.bigquery.datatransfer.v1.TransferType transfer_type = 7 [deprecated = true];
+   * </code>
    */
+  @java.lang.Deprecated
   public com.google.cloud.bigquery.datatransfer.v1.TransferType getTransferType() {
     @SuppressWarnings("deprecation")
     com.google.cloud.bigquery.datatransfer.v1.TransferType result =
@@ -866,12 +882,12 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Indicates whether the data source supports multiple transfers
-   * to different BigQuery targets.
+   * Deprecated. This field has no effect.
    * </pre>
    *
-   * <code>bool supports_multiple_transfers = 8;</code>
+   * <code>bool supports_multiple_transfers = 8 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   public boolean getSupportsMultipleTransfers() {
     return supportsMultipleTransfers_;
   }
@@ -883,7 +899,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The number of seconds to wait for an update from the data source
-   * before BigQuery marks the transfer as failed.
+   * before the Data Transfer Service marks the transfer as FAILED.
    * </pre>
    *
    * <code>int32 update_deadline_seconds = 9;</code>
@@ -1227,6 +1243,92 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     return getMinimumScheduleInterval();
   }
 
+  public static final int PARTNER_LEGAL_NAME_FIELD_NUMBER = 22;
+  private volatile java.lang.Object partnerLegalName_;
+  /**
+   *
+   *
+   * <pre>
+   * Partner's legal name of this data source
+   * </pre>
+   *
+   * <code>string partner_legal_name = 22;</code>
+   */
+  public java.lang.String getPartnerLegalName() {
+    java.lang.Object ref = partnerLegalName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      partnerLegalName_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Partner's legal name of this data source
+   * </pre>
+   *
+   * <code>string partner_legal_name = 22;</code>
+   */
+  public com.google.protobuf.ByteString getPartnerLegalNameBytes() {
+    java.lang.Object ref = partnerLegalName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      partnerLegalName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int REDIRECT_URL_FIELD_NUMBER = 23;
+  private volatile java.lang.Object redirectUrl_;
+  /**
+   *
+   *
+   * <pre>
+   * Redirect URL to complete transfer config setup for 3rd party data sources.
+   * </pre>
+   *
+   * <code>string redirect_url = 23;</code>
+   */
+  public java.lang.String getRedirectUrl() {
+    java.lang.Object ref = redirectUrl_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      redirectUrl_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Redirect URL to complete transfer config setup for 3rd party data sources.
+   * </pre>
+   *
+   * <code>string redirect_url = 23;</code>
+   */
+  public com.google.protobuf.ByteString getRedirectUrlBytes() {
+    java.lang.Object ref = redirectUrl_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      redirectUrl_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1302,6 +1404,12 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     }
     if (minimumScheduleInterval_ != null) {
       output.writeMessage(18, getMinimumScheduleInterval());
+    }
+    if (!getPartnerLegalNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 22, partnerLegalName_);
+    }
+    if (!getRedirectUrlBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 23, redirectUrl_);
     }
     unknownFields.writeTo(output);
   }
@@ -1382,6 +1490,12 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               18, getMinimumScheduleInterval());
     }
+    if (!getPartnerLegalNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(22, partnerLegalName_);
+    }
+    if (!getRedirectUrlBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(23, redirectUrl_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1419,6 +1533,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     if (hasMinimumScheduleInterval()) {
       if (!getMinimumScheduleInterval().equals(other.getMinimumScheduleInterval())) return false;
     }
+    if (!getPartnerLegalName().equals(other.getPartnerLegalName())) return false;
+    if (!getRedirectUrl().equals(other.getRedirectUrl())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1472,6 +1588,10 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + MINIMUM_SCHEDULE_INTERVAL_FIELD_NUMBER;
       hash = (53 * hash) + getMinimumScheduleInterval().hashCode();
     }
+    hash = (37 * hash) + PARTNER_LEGAL_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getPartnerLegalName().hashCode();
+    hash = (37 * hash) + REDIRECT_URL_FIELD_NUMBER;
+    hash = (53 * hash) + getRedirectUrl().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1664,6 +1784,10 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
         minimumScheduleInterval_ = null;
         minimumScheduleIntervalBuilder_ = null;
       }
+      partnerLegalName_ = "";
+
+      redirectUrl_ = "";
+
       return this;
     }
 
@@ -1727,6 +1851,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.minimumScheduleInterval_ = minimumScheduleIntervalBuilder_.build();
       }
+      result.partnerLegalName_ = partnerLegalName_;
+      result.redirectUrl_ = redirectUrl_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -1869,6 +1995,14 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasMinimumScheduleInterval()) {
         mergeMinimumScheduleInterval(other.getMinimumScheduleInterval());
+      }
+      if (!other.getPartnerLegalName().isEmpty()) {
+        partnerLegalName_ = other.partnerLegalName_;
+        onChanged();
+      }
+      if (!other.getRedirectUrl().isEmpty()) {
+        redirectUrl_ = other.redirectUrl_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2284,7 +2418,6 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Data source client id which should be used to receive refresh token.
-     * When not supplied, no offline credentials are populated for data transfer.
      * </pre>
      *
      * <code>string client_id = 5;</code>
@@ -2305,7 +2438,6 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Data source client id which should be used to receive refresh token.
-     * When not supplied, no offline credentials are populated for data transfer.
      * </pre>
      *
      * <code>string client_id = 5;</code>
@@ -2326,7 +2458,6 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Data source client id which should be used to receive refresh token.
-     * When not supplied, no offline credentials are populated for data transfer.
      * </pre>
      *
      * <code>string client_id = 5;</code>
@@ -2345,7 +2476,6 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Data source client id which should be used to receive refresh token.
-     * When not supplied, no offline credentials are populated for data transfer.
      * </pre>
      *
      * <code>string client_id = 5;</code>
@@ -2361,7 +2491,6 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Data source client id which should be used to receive refresh token.
-     * When not supplied, no offline credentials are populated for data transfer.
      * </pre>
      *
      * <code>string client_id = 5;</code>
@@ -2390,10 +2519,9 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Api auth scopes for which refresh token needs to be obtained. Only valid
-     * when `client_id` is specified. Ignored otherwise. These are scopes needed
-     * by a data source to prepare data and ingest them into BigQuery,
-     * e.g., https://www.googleapis.com/auth/bigquery
+     * Api auth scopes for which refresh token needs to be obtained. These are
+     * scopes needed by a data source to prepare data and ingest them into
+     * BigQuery, e.g., https://www.googleapis.com/auth/bigquery
      * </pre>
      *
      * <code>repeated string scopes = 6;</code>
@@ -2405,10 +2533,9 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Api auth scopes for which refresh token needs to be obtained. Only valid
-     * when `client_id` is specified. Ignored otherwise. These are scopes needed
-     * by a data source to prepare data and ingest them into BigQuery,
-     * e.g., https://www.googleapis.com/auth/bigquery
+     * Api auth scopes for which refresh token needs to be obtained. These are
+     * scopes needed by a data source to prepare data and ingest them into
+     * BigQuery, e.g., https://www.googleapis.com/auth/bigquery
      * </pre>
      *
      * <code>repeated string scopes = 6;</code>
@@ -2420,10 +2547,9 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Api auth scopes for which refresh token needs to be obtained. Only valid
-     * when `client_id` is specified. Ignored otherwise. These are scopes needed
-     * by a data source to prepare data and ingest them into BigQuery,
-     * e.g., https://www.googleapis.com/auth/bigquery
+     * Api auth scopes for which refresh token needs to be obtained. These are
+     * scopes needed by a data source to prepare data and ingest them into
+     * BigQuery, e.g., https://www.googleapis.com/auth/bigquery
      * </pre>
      *
      * <code>repeated string scopes = 6;</code>
@@ -2435,10 +2561,9 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Api auth scopes for which refresh token needs to be obtained. Only valid
-     * when `client_id` is specified. Ignored otherwise. These are scopes needed
-     * by a data source to prepare data and ingest them into BigQuery,
-     * e.g., https://www.googleapis.com/auth/bigquery
+     * Api auth scopes for which refresh token needs to be obtained. These are
+     * scopes needed by a data source to prepare data and ingest them into
+     * BigQuery, e.g., https://www.googleapis.com/auth/bigquery
      * </pre>
      *
      * <code>repeated string scopes = 6;</code>
@@ -2450,10 +2575,9 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Api auth scopes for which refresh token needs to be obtained. Only valid
-     * when `client_id` is specified. Ignored otherwise. These are scopes needed
-     * by a data source to prepare data and ingest them into BigQuery,
-     * e.g., https://www.googleapis.com/auth/bigquery
+     * Api auth scopes for which refresh token needs to be obtained. These are
+     * scopes needed by a data source to prepare data and ingest them into
+     * BigQuery, e.g., https://www.googleapis.com/auth/bigquery
      * </pre>
      *
      * <code>repeated string scopes = 6;</code>
@@ -2471,10 +2595,9 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Api auth scopes for which refresh token needs to be obtained. Only valid
-     * when `client_id` is specified. Ignored otherwise. These are scopes needed
-     * by a data source to prepare data and ingest them into BigQuery,
-     * e.g., https://www.googleapis.com/auth/bigquery
+     * Api auth scopes for which refresh token needs to be obtained. These are
+     * scopes needed by a data source to prepare data and ingest them into
+     * BigQuery, e.g., https://www.googleapis.com/auth/bigquery
      * </pre>
      *
      * <code>repeated string scopes = 6;</code>
@@ -2492,10 +2615,9 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Api auth scopes for which refresh token needs to be obtained. Only valid
-     * when `client_id` is specified. Ignored otherwise. These are scopes needed
-     * by a data source to prepare data and ingest them into BigQuery,
-     * e.g., https://www.googleapis.com/auth/bigquery
+     * Api auth scopes for which refresh token needs to be obtained. These are
+     * scopes needed by a data source to prepare data and ingest them into
+     * BigQuery, e.g., https://www.googleapis.com/auth/bigquery
      * </pre>
      *
      * <code>repeated string scopes = 6;</code>
@@ -2510,10 +2632,9 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Api auth scopes for which refresh token needs to be obtained. Only valid
-     * when `client_id` is specified. Ignored otherwise. These are scopes needed
-     * by a data source to prepare data and ingest them into BigQuery,
-     * e.g., https://www.googleapis.com/auth/bigquery
+     * Api auth scopes for which refresh token needs to be obtained. These are
+     * scopes needed by a data source to prepare data and ingest them into
+     * BigQuery, e.g., https://www.googleapis.com/auth/bigquery
      * </pre>
      *
      * <code>repeated string scopes = 6;</code>
@@ -2528,10 +2649,9 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Api auth scopes for which refresh token needs to be obtained. Only valid
-     * when `client_id` is specified. Ignored otherwise. These are scopes needed
-     * by a data source to prepare data and ingest them into BigQuery,
-     * e.g., https://www.googleapis.com/auth/bigquery
+     * Api auth scopes for which refresh token needs to be obtained. These are
+     * scopes needed by a data source to prepare data and ingest them into
+     * BigQuery, e.g., https://www.googleapis.com/auth/bigquery
      * </pre>
      *
      * <code>repeated string scopes = 6;</code>
@@ -2555,8 +2675,11 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * Deprecated. This field has no effect.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.datatransfer.v1.TransferType transfer_type = 7;</code>
+     * <code>
+     * .google.cloud.bigquery.datatransfer.v1.TransferType transfer_type = 7 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public int getTransferTypeValue() {
       return transferType_;
     }
@@ -2567,8 +2690,11 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * Deprecated. This field has no effect.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.datatransfer.v1.TransferType transfer_type = 7;</code>
+     * <code>
+     * .google.cloud.bigquery.datatransfer.v1.TransferType transfer_type = 7 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder setTransferTypeValue(int value) {
       transferType_ = value;
       onChanged();
@@ -2581,8 +2707,11 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * Deprecated. This field has no effect.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.datatransfer.v1.TransferType transfer_type = 7;</code>
+     * <code>
+     * .google.cloud.bigquery.datatransfer.v1.TransferType transfer_type = 7 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.bigquery.datatransfer.v1.TransferType getTransferType() {
       @SuppressWarnings("deprecation")
       com.google.cloud.bigquery.datatransfer.v1.TransferType result =
@@ -2598,8 +2727,11 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * Deprecated. This field has no effect.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.datatransfer.v1.TransferType transfer_type = 7;</code>
+     * <code>
+     * .google.cloud.bigquery.datatransfer.v1.TransferType transfer_type = 7 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder setTransferType(com.google.cloud.bigquery.datatransfer.v1.TransferType value) {
       if (value == null) {
         throw new NullPointerException();
@@ -2616,8 +2748,11 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * Deprecated. This field has no effect.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.datatransfer.v1.TransferType transfer_type = 7;</code>
+     * <code>
+     * .google.cloud.bigquery.datatransfer.v1.TransferType transfer_type = 7 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder clearTransferType() {
 
       transferType_ = 0;
@@ -2630,12 +2765,12 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Indicates whether the data source supports multiple transfers
-     * to different BigQuery targets.
+     * Deprecated. This field has no effect.
      * </pre>
      *
-     * <code>bool supports_multiple_transfers = 8;</code>
+     * <code>bool supports_multiple_transfers = 8 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public boolean getSupportsMultipleTransfers() {
       return supportsMultipleTransfers_;
     }
@@ -2643,12 +2778,12 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Indicates whether the data source supports multiple transfers
-     * to different BigQuery targets.
+     * Deprecated. This field has no effect.
      * </pre>
      *
-     * <code>bool supports_multiple_transfers = 8;</code>
+     * <code>bool supports_multiple_transfers = 8 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder setSupportsMultipleTransfers(boolean value) {
 
       supportsMultipleTransfers_ = value;
@@ -2659,12 +2794,12 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Indicates whether the data source supports multiple transfers
-     * to different BigQuery targets.
+     * Deprecated. This field has no effect.
      * </pre>
      *
-     * <code>bool supports_multiple_transfers = 8;</code>
+     * <code>bool supports_multiple_transfers = 8 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder clearSupportsMultipleTransfers() {
 
       supportsMultipleTransfers_ = false;
@@ -2678,7 +2813,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The number of seconds to wait for an update from the data source
-     * before BigQuery marks the transfer as failed.
+     * before the Data Transfer Service marks the transfer as FAILED.
      * </pre>
      *
      * <code>int32 update_deadline_seconds = 9;</code>
@@ -2691,7 +2826,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The number of seconds to wait for an update from the data source
-     * before BigQuery marks the transfer as failed.
+     * before the Data Transfer Service marks the transfer as FAILED.
      * </pre>
      *
      * <code>int32 update_deadline_seconds = 9;</code>
@@ -2707,7 +2842,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The number of seconds to wait for an update from the data source
-     * before BigQuery marks the transfer as failed.
+     * before the Data Transfer Service marks the transfer as FAILED.
      * </pre>
      *
      * <code>int32 update_deadline_seconds = 9;</code>
@@ -3833,6 +3968,194 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
         minimumScheduleInterval_ = null;
       }
       return minimumScheduleIntervalBuilder_;
+    }
+
+    private java.lang.Object partnerLegalName_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Partner's legal name of this data source
+     * </pre>
+     *
+     * <code>string partner_legal_name = 22;</code>
+     */
+    public java.lang.String getPartnerLegalName() {
+      java.lang.Object ref = partnerLegalName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        partnerLegalName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Partner's legal name of this data source
+     * </pre>
+     *
+     * <code>string partner_legal_name = 22;</code>
+     */
+    public com.google.protobuf.ByteString getPartnerLegalNameBytes() {
+      java.lang.Object ref = partnerLegalName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        partnerLegalName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Partner's legal name of this data source
+     * </pre>
+     *
+     * <code>string partner_legal_name = 22;</code>
+     */
+    public Builder setPartnerLegalName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      partnerLegalName_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Partner's legal name of this data source
+     * </pre>
+     *
+     * <code>string partner_legal_name = 22;</code>
+     */
+    public Builder clearPartnerLegalName() {
+
+      partnerLegalName_ = getDefaultInstance().getPartnerLegalName();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Partner's legal name of this data source
+     * </pre>
+     *
+     * <code>string partner_legal_name = 22;</code>
+     */
+    public Builder setPartnerLegalNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      partnerLegalName_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object redirectUrl_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Redirect URL to complete transfer config setup for 3rd party data sources.
+     * </pre>
+     *
+     * <code>string redirect_url = 23;</code>
+     */
+    public java.lang.String getRedirectUrl() {
+      java.lang.Object ref = redirectUrl_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        redirectUrl_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Redirect URL to complete transfer config setup for 3rd party data sources.
+     * </pre>
+     *
+     * <code>string redirect_url = 23;</code>
+     */
+    public com.google.protobuf.ByteString getRedirectUrlBytes() {
+      java.lang.Object ref = redirectUrl_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        redirectUrl_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Redirect URL to complete transfer config setup for 3rd party data sources.
+     * </pre>
+     *
+     * <code>string redirect_url = 23;</code>
+     */
+    public Builder setRedirectUrl(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      redirectUrl_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Redirect URL to complete transfer config setup for 3rd party data sources.
+     * </pre>
+     *
+     * <code>string redirect_url = 23;</code>
+     */
+    public Builder clearRedirectUrl() {
+
+      redirectUrl_ = getDefaultInstance().getRedirectUrl();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Redirect URL to complete transfer config setup for 3rd party data sources.
+     * </pre>
+     *
+     * <code>string redirect_url = 23;</code>
+     */
+    public Builder setRedirectUrlBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      redirectUrl_ = value;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

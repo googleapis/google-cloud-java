@@ -13,6 +13,8 @@ public interface InputConfigOrBuilder
    *
    * <pre>
    * The Google Cloud Storage location for the input content.
+   * In ImportData, the gcs_source points to a csv with structure described in
+   * the comment.
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.GcsSource gcs_source = 1;</code>
@@ -23,6 +25,8 @@ public interface InputConfigOrBuilder
    *
    * <pre>
    * The Google Cloud Storage location for the input content.
+   * In ImportData, the gcs_source points to a csv with structure described in
+   * the comment.
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.GcsSource gcs_source = 1;</code>
@@ -33,6 +37,8 @@ public interface InputConfigOrBuilder
    *
    * <pre>
    * The Google Cloud Storage location for the input content.
+   * In ImportData, the gcs_source points to a csv with structure described in
+   * the comment.
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.GcsSource gcs_source = 1;</code>

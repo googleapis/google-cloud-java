@@ -180,6 +180,22 @@ public class MockDataTransferServiceImpl extends DataTransferServiceImplBase {
   }
 
   @Override
+  public void startManualTransferRuns(
+      StartManualTransferRunsRequest request,
+      StreamObserver<StartManualTransferRunsResponse> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof StartManualTransferRunsResponse) {
+      requests.add(request);
+      responseObserver.onNext((StartManualTransferRunsResponse) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
   public void getTransferRun(
       GetTransferRunRequest request, StreamObserver<TransferRun> responseObserver) {
     Object response = responses.remove();
@@ -246,6 +262,37 @@ public class MockDataTransferServiceImpl extends DataTransferServiceImplBase {
     if (response instanceof CheckValidCredsResponse) {
       requests.add(request);
       responseObserver.onNext((CheckValidCredsResponse) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void enableDataTransferService(
+      EnableDataTransferServiceRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext((Empty) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void isDataTransferServiceEnabled(
+      IsDataTransferServiceEnabledRequest request,
+      StreamObserver<IsDataTransferServiceEnabledResponse> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof IsDataTransferServiceEnabledResponse) {
+      requests.add(request);
+      responseObserver.onNext((IsDataTransferServiceEnabledResponse) response);
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
       responseObserver.onError((Exception) response);

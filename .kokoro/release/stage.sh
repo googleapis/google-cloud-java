@@ -15,6 +15,10 @@
 
 set -eo pipefail
 
+# Start the releasetool reporter
+python3 -m pip install gcp-releasetool
+python3 -m releasetool publish-reporter-script > /tmp/publisher-script; source /tmp/publisher-script
+
 source $(dirname "$0")/common.sh
 MAVEN_SETTINGS_FILE=$(realpath $(dirname "$0")/../../)/settings.xml
 pushd $(dirname "$0")/../../
@@ -22,10 +26,17 @@ pushd $(dirname "$0")/../../
 setup_environment_secrets
 create_settings_xml_file "settings.xml"
 
+AUTORELEASE="false"
+if [[ -n "${AUTORELEASE_PR}" ]]
+then
+  AUTORELEASE="true"
+fi
+
 mvn clean deploy -B \
   -DskipTests=true \
   --settings ${MAVEN_SETTINGS_FILE} \
   -Dgpg.executable=gpg \
   -Dgpg.passphrase=${GPG_PASSPHRASE} \
   -Dgpg.homedir=${GPG_HOMEDIR} \
-  -P release
+  -P release \
+  -Ddeploy.autorelease=${AUTORELEASE}

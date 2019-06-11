@@ -13,7 +13,8 @@ public interface GcsDestinationOrBuilder
    *
    * <pre>
    * Required. There must be no files under 'output_uri_prefix'.
-   * 'output_uri_prefix' must end with "/". Otherwise error 400 is returned.
+   * 'output_uri_prefix' must end with "/", otherwise an INVALID_ARGUMENT (400)
+   * error is returned..
    * </pre>
    *
    * <code>string output_uri_prefix = 1;</code>
@@ -24,7 +25,8 @@ public interface GcsDestinationOrBuilder
    *
    * <pre>
    * Required. There must be no files under 'output_uri_prefix'.
-   * 'output_uri_prefix' must end with "/". Otherwise error 400 is returned.
+   * 'output_uri_prefix' must end with "/", otherwise an INVALID_ARGUMENT (400)
+   * error is returned..
    * </pre>
    *
    * <code>string output_uri_prefix = 1;</code>

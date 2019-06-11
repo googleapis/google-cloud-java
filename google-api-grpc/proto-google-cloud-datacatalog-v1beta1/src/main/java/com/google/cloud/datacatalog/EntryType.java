@@ -7,9 +7,9 @@ package com.google.cloud.datacatalog;
  *
  *
  * <pre>
- * Entry resources in Cloud Data Catalog can be of different types e.g. BigQuery
+ * Entry resources in Data Catalog can be of different types e.g. BigQuery
  * Table entry is of type 'TABLE'. This enum describes all the possible types
- * Cloud Data Catalog contains.
+ * Data Catalog contains.
  * </pre>
  *
  * Protobuf enum {@code google.cloud.datacatalog.v1beta1.EntryType}

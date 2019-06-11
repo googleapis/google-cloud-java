@@ -12,8 +12,8 @@ public interface SchemaOrBuilder
    *
    *
    * <pre>
-   * Schema of columns. A maximum of 10,000 columns and sub-columns can be
-   * specified.
+   * Required. Schema of columns. A maximum of 10,000 columns and sub-columns
+   * can be specified.
    * </pre>
    *
    * <code>repeated .google.cloud.datacatalog.v1beta1.ColumnSchema columns = 2;</code>
@@ -23,8 +23,8 @@ public interface SchemaOrBuilder
    *
    *
    * <pre>
-   * Schema of columns. A maximum of 10,000 columns and sub-columns can be
-   * specified.
+   * Required. Schema of columns. A maximum of 10,000 columns and sub-columns
+   * can be specified.
    * </pre>
    *
    * <code>repeated .google.cloud.datacatalog.v1beta1.ColumnSchema columns = 2;</code>
@@ -34,8 +34,8 @@ public interface SchemaOrBuilder
    *
    *
    * <pre>
-   * Schema of columns. A maximum of 10,000 columns and sub-columns can be
-   * specified.
+   * Required. Schema of columns. A maximum of 10,000 columns and sub-columns
+   * can be specified.
    * </pre>
    *
    * <code>repeated .google.cloud.datacatalog.v1beta1.ColumnSchema columns = 2;</code>
@@ -45,8 +45,8 @@ public interface SchemaOrBuilder
    *
    *
    * <pre>
-   * Schema of columns. A maximum of 10,000 columns and sub-columns can be
-   * specified.
+   * Required. Schema of columns. A maximum of 10,000 columns and sub-columns
+   * can be specified.
    * </pre>
    *
    * <code>repeated .google.cloud.datacatalog.v1beta1.ColumnSchema columns = 2;</code>
@@ -57,8 +57,8 @@ public interface SchemaOrBuilder
    *
    *
    * <pre>
-   * Schema of columns. A maximum of 10,000 columns and sub-columns can be
-   * specified.
+   * Required. Schema of columns. A maximum of 10,000 columns and sub-columns
+   * can be specified.
    * </pre>
    *
    * <code>repeated .google.cloud.datacatalog.v1beta1.ColumnSchema columns = 2;</code>

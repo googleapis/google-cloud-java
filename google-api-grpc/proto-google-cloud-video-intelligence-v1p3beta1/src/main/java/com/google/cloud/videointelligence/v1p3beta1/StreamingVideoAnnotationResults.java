@@ -315,7 +315,7 @@ public final class StreamingVideoAnnotationResults extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Explicit content detection results.
+   * Explicit content annotation results.
    * </pre>
    *
    * <code>
@@ -329,7 +329,7 @@ public final class StreamingVideoAnnotationResults extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Explicit content detection results.
+   * Explicit content annotation results.
    * </pre>
    *
    * <code>
@@ -347,7 +347,7 @@ public final class StreamingVideoAnnotationResults extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Explicit content detection results.
+   * Explicit content annotation results.
    * </pre>
    *
    * <code>
@@ -1764,7 +1764,7 @@ public final class StreamingVideoAnnotationResults extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Explicit content detection results.
+     * Explicit content annotation results.
      * </pre>
      *
      * <code>
@@ -1778,7 +1778,7 @@ public final class StreamingVideoAnnotationResults extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Explicit content detection results.
+     * Explicit content annotation results.
      * </pre>
      *
      * <code>
@@ -1800,7 +1800,7 @@ public final class StreamingVideoAnnotationResults extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Explicit content detection results.
+     * Explicit content annotation results.
      * </pre>
      *
      * <code>
@@ -1825,7 +1825,7 @@ public final class StreamingVideoAnnotationResults extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Explicit content detection results.
+     * Explicit content annotation results.
      * </pre>
      *
      * <code>
@@ -1848,7 +1848,7 @@ public final class StreamingVideoAnnotationResults extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Explicit content detection results.
+     * Explicit content annotation results.
      * </pre>
      *
      * <code>
@@ -1878,7 +1878,7 @@ public final class StreamingVideoAnnotationResults extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Explicit content detection results.
+     * Explicit content annotation results.
      * </pre>
      *
      * <code>
@@ -1900,7 +1900,7 @@ public final class StreamingVideoAnnotationResults extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Explicit content detection results.
+     * Explicit content annotation results.
      * </pre>
      *
      * <code>
@@ -1917,7 +1917,7 @@ public final class StreamingVideoAnnotationResults extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Explicit content detection results.
+     * Explicit content annotation results.
      * </pre>
      *
      * <code>
@@ -1939,7 +1939,7 @@ public final class StreamingVideoAnnotationResults extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Explicit content detection results.
+     * Explicit content annotation results.
      * </pre>
      *
      * <code>

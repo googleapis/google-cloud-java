@@ -1471,7 +1471,8 @@ public final class AutoMlGrpc {
      *
      *
      * <pre>
-     * Imports data into a dataset. For Tables this method can only be called on an empty Dataset.
+     * Imports data into a dataset.
+     * For Tables this method can only be called on an empty Dataset.
      * For Tables:
      * *   A
      * [schema_inference_version][google.cloud.automl.v1beta1.InputConfig.params]
@@ -1663,8 +1664,8 @@ public final class AutoMlGrpc {
      * Deploys a model. If a model is already deployed, deploying it with the
      * same parameters has no effect. Deploying with different parametrs
      * (as e.g. changing
-     * [node_number][google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata.node_number]
-     * ) will update the deployment without pausing the model's availability.
+     * [node_number][google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata.node_number])
+     *  will reset the deployment state without pausing the model's availability.
      * Only applicable for Text Classification, Image Object Detection and Tables;
      * all other domains manage deployment automatically.
      * Returns an empty response in the
@@ -2041,7 +2042,8 @@ public final class AutoMlGrpc {
      *
      *
      * <pre>
-     * Imports data into a dataset. For Tables this method can only be called on an empty Dataset.
+     * Imports data into a dataset.
+     * For Tables this method can only be called on an empty Dataset.
      * For Tables:
      * *   A
      * [schema_inference_version][google.cloud.automl.v1beta1.InputConfig.params]
@@ -2272,8 +2274,8 @@ public final class AutoMlGrpc {
      * Deploys a model. If a model is already deployed, deploying it with the
      * same parameters has no effect. Deploying with different parametrs
      * (as e.g. changing
-     * [node_number][google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata.node_number]
-     * ) will update the deployment without pausing the model's availability.
+     * [node_number][google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata.node_number])
+     *  will reset the deployment state without pausing the model's availability.
      * Only applicable for Text Classification, Image Object Detection and Tables;
      * all other domains manage deployment automatically.
      * Returns an empty response in the
@@ -2495,7 +2497,8 @@ public final class AutoMlGrpc {
      *
      *
      * <pre>
-     * Imports data into a dataset. For Tables this method can only be called on an empty Dataset.
+     * Imports data into a dataset.
+     * For Tables this method can only be called on an empty Dataset.
      * For Tables:
      * *   A
      * [schema_inference_version][google.cloud.automl.v1beta1.InputConfig.params]
@@ -2682,8 +2685,8 @@ public final class AutoMlGrpc {
      * Deploys a model. If a model is already deployed, deploying it with the
      * same parameters has no effect. Deploying with different parametrs
      * (as e.g. changing
-     * [node_number][google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata.node_number]
-     * ) will update the deployment without pausing the model's availability.
+     * [node_number][google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata.node_number])
+     *  will reset the deployment state without pausing the model's availability.
      * Only applicable for Text Classification, Image Object Detection and Tables;
      * all other domains manage deployment automatically.
      * Returns an empty response in the
@@ -2888,7 +2891,8 @@ public final class AutoMlGrpc {
      *
      *
      * <pre>
-     * Imports data into a dataset. For Tables this method can only be called on an empty Dataset.
+     * Imports data into a dataset.
+     * For Tables this method can only be called on an empty Dataset.
      * For Tables:
      * *   A
      * [schema_inference_version][google.cloud.automl.v1beta1.InputConfig.params]
@@ -3084,8 +3088,8 @@ public final class AutoMlGrpc {
      * Deploys a model. If a model is already deployed, deploying it with the
      * same parameters has no effect. Deploying with different parametrs
      * (as e.g. changing
-     * [node_number][google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata.node_number]
-     * ) will update the deployment without pausing the model's availability.
+     * [node_number][google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata.node_number])
+     *  will reset the deployment state without pausing the model's availability.
      * Only applicable for Text Classification, Image Object Detection and Tables;
      * all other domains manage deployment automatically.
      * Returns an empty response in the

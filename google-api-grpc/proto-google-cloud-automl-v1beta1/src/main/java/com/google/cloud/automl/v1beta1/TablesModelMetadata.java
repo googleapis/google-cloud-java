@@ -111,6 +111,11 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
               trainCostMilliNodeHours_ = input.readInt64();
               break;
             }
+          case 96:
+            {
+              disableEarlyStopping_ = input.readBool();
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -362,7 +367,7 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
    * Objective function the model is optimizing towards. The training process
    * creates a model that maximizes/minimizes the value of the objective
    * function over the validation set.
-   * The supported optimization objectives depend on the prediction_type.
+   * The supported optimization objectives depend on the prediction type.
    * If the field is not set, a default objective function is used.
    * CLASSIFICATION_BINARY:
    *   "MAXIMIZE_AU_ROC" (default) - Maximize the area under the receiver
@@ -370,8 +375,6 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
    *   "MINIMIZE_LOG_LOSS" - Minimize log loss.
    *   "MAXIMIZE_AU_PRC" - Maximize the area under the precision-recall curve.
    * CLASSIFICATION_MULTI_CLASS :
-   *   "MINIMIZE_LOG_LOSS" (default) - Minimize log loss.
-   * CLASSIFICATION_MULTI_LABEL:
    *   "MINIMIZE_LOG_LOSS" (default) - Minimize log loss.
    * REGRESSION:
    *   "MINIMIZE_RMSE" (default) - Minimize root-mean-squared error (RMSE).
@@ -402,7 +405,7 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
    * Objective function the model is optimizing towards. The training process
    * creates a model that maximizes/minimizes the value of the objective
    * function over the validation set.
-   * The supported optimization objectives depend on the prediction_type.
+   * The supported optimization objectives depend on the prediction type.
    * If the field is not set, a default objective function is used.
    * CLASSIFICATION_BINARY:
    *   "MAXIMIZE_AU_ROC" (default) - Maximize the area under the receiver
@@ -410,8 +413,6 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
    *   "MINIMIZE_LOG_LOSS" - Minimize log loss.
    *   "MAXIMIZE_AU_PRC" - Maximize the area under the precision-recall curve.
    * CLASSIFICATION_MULTI_CLASS :
-   *   "MINIMIZE_LOG_LOSS" (default) - Minimize log loss.
-   * CLASSIFICATION_MULTI_LABEL:
    *   "MINIMIZE_LOG_LOSS" (default) - Minimize log loss.
    * REGRESSION:
    *   "MINIMIZE_RMSE" (default) - Minimize root-mean-squared error (RMSE).
@@ -444,7 +445,7 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Output only. Auxiliary information for each of the
-   * input_feature_column_specs, with respect to this particular model.
+   * input_feature_column_specs with respect to this particular model.
    * </pre>
    *
    * <code>repeated .google.cloud.automl.v1beta1.TablesModelColumnInfo tables_model_column_info = 5;
@@ -459,7 +460,7 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Output only. Auxiliary information for each of the
-   * input_feature_column_specs, with respect to this particular model.
+   * input_feature_column_specs with respect to this particular model.
    * </pre>
    *
    * <code>repeated .google.cloud.automl.v1beta1.TablesModelColumnInfo tables_model_column_info = 5;
@@ -474,7 +475,7 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Output only. Auxiliary information for each of the
-   * input_feature_column_specs, with respect to this particular model.
+   * input_feature_column_specs with respect to this particular model.
    * </pre>
    *
    * <code>repeated .google.cloud.automl.v1beta1.TablesModelColumnInfo tables_model_column_info = 5;
@@ -488,7 +489,7 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Output only. Auxiliary information for each of the
-   * input_feature_column_specs, with respect to this particular model.
+   * input_feature_column_specs with respect to this particular model.
    * </pre>
    *
    * <code>repeated .google.cloud.automl.v1beta1.TablesModelColumnInfo tables_model_column_info = 5;
@@ -502,7 +503,7 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Output only. Auxiliary information for each of the
-   * input_feature_column_specs, with respect to this particular model.
+   * input_feature_column_specs with respect to this particular model.
    * </pre>
    *
    * <code>repeated .google.cloud.automl.v1beta1.TablesModelColumnInfo tables_model_column_info = 5;
@@ -519,8 +520,8 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The train budget of creating this model, expressed in milli node hours
-   * i.e. 1,000 value in this field means 1 node hour.
+   * Required. The train budget of creating this model, expressed in milli node
+   * hours i.e. 1,000 value in this field means 1 node hour.
    * The training cost of the model will not exceed this budget. The final cost
    * will be attempted to be close to the budget, though may end up being (even)
    * noticeably smaller - at the backend's discretion. This especially may
@@ -528,6 +529,8 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
    * If the budget is set to a value known to be insufficient to train a
    * model for the given dataset, the training won't be attempted and
    * will error.
+   * The train budget must be between 1,000 and 72,000 milli node hours,
+   * inclusive.
    * </pre>
    *
    * <code>int64 train_budget_milli_node_hours = 6;</code>
@@ -551,6 +554,23 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
    */
   public long getTrainCostMilliNodeHours() {
     return trainCostMilliNodeHours_;
+  }
+
+  public static final int DISABLE_EARLY_STOPPING_FIELD_NUMBER = 12;
+  private boolean disableEarlyStopping_;
+  /**
+   *
+   *
+   * <pre>
+   * Use the entire training budget. This disables the early stopping feature.
+   * By default, the early stopping feature is enabled, which means that AutoML
+   * Tables might stop training before the entire training budget has been used.
+   * </pre>
+   *
+   * <code>bool disable_early_stopping = 12;</code>
+   */
+  public boolean getDisableEarlyStopping() {
+    return disableEarlyStopping_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -585,6 +605,9 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
     if (trainCostMilliNodeHours_ != 0L) {
       output.writeInt64(7, trainCostMilliNodeHours_);
     }
+    if (disableEarlyStopping_ != false) {
+      output.writeBool(12, disableEarlyStopping_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -616,6 +639,9 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
     if (trainCostMilliNodeHours_ != 0L) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(7, trainCostMilliNodeHours_);
     }
+    if (disableEarlyStopping_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(12, disableEarlyStopping_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -642,6 +668,7 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
     if (!getTablesModelColumnInfoList().equals(other.getTablesModelColumnInfoList())) return false;
     if (getTrainBudgetMilliNodeHours() != other.getTrainBudgetMilliNodeHours()) return false;
     if (getTrainCostMilliNodeHours() != other.getTrainCostMilliNodeHours()) return false;
+    if (getDisableEarlyStopping() != other.getDisableEarlyStopping()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -671,6 +698,8 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getTrainBudgetMilliNodeHours());
     hash = (37 * hash) + TRAIN_COST_MILLI_NODE_HOURS_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getTrainCostMilliNodeHours());
+    hash = (37 * hash) + DISABLE_EARLY_STOPPING_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDisableEarlyStopping());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -843,6 +872,8 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
 
       trainCostMilliNodeHours_ = 0L;
 
+      disableEarlyStopping_ = false;
+
       return this;
     }
 
@@ -899,6 +930,7 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
       }
       result.trainBudgetMilliNodeHours_ = trainBudgetMilliNodeHours_;
       result.trainCostMilliNodeHours_ = trainCostMilliNodeHours_;
+      result.disableEarlyStopping_ = disableEarlyStopping_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -1016,6 +1048,9 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
       }
       if (other.getTrainCostMilliNodeHours() != 0L) {
         setTrainCostMilliNodeHours(other.getTrainCostMilliNodeHours());
+      }
+      if (other.getDisableEarlyStopping() != false) {
+        setDisableEarlyStopping(other.getDisableEarlyStopping());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1924,7 +1959,7 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
      * Objective function the model is optimizing towards. The training process
      * creates a model that maximizes/minimizes the value of the objective
      * function over the validation set.
-     * The supported optimization objectives depend on the prediction_type.
+     * The supported optimization objectives depend on the prediction type.
      * If the field is not set, a default objective function is used.
      * CLASSIFICATION_BINARY:
      *   "MAXIMIZE_AU_ROC" (default) - Maximize the area under the receiver
@@ -1932,8 +1967,6 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
      *   "MINIMIZE_LOG_LOSS" - Minimize log loss.
      *   "MAXIMIZE_AU_PRC" - Maximize the area under the precision-recall curve.
      * CLASSIFICATION_MULTI_CLASS :
-     *   "MINIMIZE_LOG_LOSS" (default) - Minimize log loss.
-     * CLASSIFICATION_MULTI_LABEL:
      *   "MINIMIZE_LOG_LOSS" (default) - Minimize log loss.
      * REGRESSION:
      *   "MINIMIZE_RMSE" (default) - Minimize root-mean-squared error (RMSE).
@@ -1964,7 +1997,7 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
      * Objective function the model is optimizing towards. The training process
      * creates a model that maximizes/minimizes the value of the objective
      * function over the validation set.
-     * The supported optimization objectives depend on the prediction_type.
+     * The supported optimization objectives depend on the prediction type.
      * If the field is not set, a default objective function is used.
      * CLASSIFICATION_BINARY:
      *   "MAXIMIZE_AU_ROC" (default) - Maximize the area under the receiver
@@ -1972,8 +2005,6 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
      *   "MINIMIZE_LOG_LOSS" - Minimize log loss.
      *   "MAXIMIZE_AU_PRC" - Maximize the area under the precision-recall curve.
      * CLASSIFICATION_MULTI_CLASS :
-     *   "MINIMIZE_LOG_LOSS" (default) - Minimize log loss.
-     * CLASSIFICATION_MULTI_LABEL:
      *   "MINIMIZE_LOG_LOSS" (default) - Minimize log loss.
      * REGRESSION:
      *   "MINIMIZE_RMSE" (default) - Minimize root-mean-squared error (RMSE).
@@ -2004,7 +2035,7 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
      * Objective function the model is optimizing towards. The training process
      * creates a model that maximizes/minimizes the value of the objective
      * function over the validation set.
-     * The supported optimization objectives depend on the prediction_type.
+     * The supported optimization objectives depend on the prediction type.
      * If the field is not set, a default objective function is used.
      * CLASSIFICATION_BINARY:
      *   "MAXIMIZE_AU_ROC" (default) - Maximize the area under the receiver
@@ -2012,8 +2043,6 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
      *   "MINIMIZE_LOG_LOSS" - Minimize log loss.
      *   "MAXIMIZE_AU_PRC" - Maximize the area under the precision-recall curve.
      * CLASSIFICATION_MULTI_CLASS :
-     *   "MINIMIZE_LOG_LOSS" (default) - Minimize log loss.
-     * CLASSIFICATION_MULTI_LABEL:
      *   "MINIMIZE_LOG_LOSS" (default) - Minimize log loss.
      * REGRESSION:
      *   "MINIMIZE_RMSE" (default) - Minimize root-mean-squared error (RMSE).
@@ -2042,7 +2071,7 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
      * Objective function the model is optimizing towards. The training process
      * creates a model that maximizes/minimizes the value of the objective
      * function over the validation set.
-     * The supported optimization objectives depend on the prediction_type.
+     * The supported optimization objectives depend on the prediction type.
      * If the field is not set, a default objective function is used.
      * CLASSIFICATION_BINARY:
      *   "MAXIMIZE_AU_ROC" (default) - Maximize the area under the receiver
@@ -2050,8 +2079,6 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
      *   "MINIMIZE_LOG_LOSS" - Minimize log loss.
      *   "MAXIMIZE_AU_PRC" - Maximize the area under the precision-recall curve.
      * CLASSIFICATION_MULTI_CLASS :
-     *   "MINIMIZE_LOG_LOSS" (default) - Minimize log loss.
-     * CLASSIFICATION_MULTI_LABEL:
      *   "MINIMIZE_LOG_LOSS" (default) - Minimize log loss.
      * REGRESSION:
      *   "MINIMIZE_RMSE" (default) - Minimize root-mean-squared error (RMSE).
@@ -2077,7 +2104,7 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
      * Objective function the model is optimizing towards. The training process
      * creates a model that maximizes/minimizes the value of the objective
      * function over the validation set.
-     * The supported optimization objectives depend on the prediction_type.
+     * The supported optimization objectives depend on the prediction type.
      * If the field is not set, a default objective function is used.
      * CLASSIFICATION_BINARY:
      *   "MAXIMIZE_AU_ROC" (default) - Maximize the area under the receiver
@@ -2085,8 +2112,6 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
      *   "MINIMIZE_LOG_LOSS" - Minimize log loss.
      *   "MAXIMIZE_AU_PRC" - Maximize the area under the precision-recall curve.
      * CLASSIFICATION_MULTI_CLASS :
-     *   "MINIMIZE_LOG_LOSS" (default) - Minimize log loss.
-     * CLASSIFICATION_MULTI_LABEL:
      *   "MINIMIZE_LOG_LOSS" (default) - Minimize log loss.
      * REGRESSION:
      *   "MINIMIZE_RMSE" (default) - Minimize root-mean-squared error (RMSE).
@@ -2133,7 +2158,7 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Output only. Auxiliary information for each of the
-     * input_feature_column_specs, with respect to this particular model.
+     * input_feature_column_specs with respect to this particular model.
      * </pre>
      *
      * <code>
@@ -2153,7 +2178,7 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Output only. Auxiliary information for each of the
-     * input_feature_column_specs, with respect to this particular model.
+     * input_feature_column_specs with respect to this particular model.
      * </pre>
      *
      * <code>
@@ -2172,7 +2197,7 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Output only. Auxiliary information for each of the
-     * input_feature_column_specs, with respect to this particular model.
+     * input_feature_column_specs with respect to this particular model.
      * </pre>
      *
      * <code>
@@ -2192,7 +2217,7 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Output only. Auxiliary information for each of the
-     * input_feature_column_specs, with respect to this particular model.
+     * input_feature_column_specs with respect to this particular model.
      * </pre>
      *
      * <code>
@@ -2218,7 +2243,7 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Output only. Auxiliary information for each of the
-     * input_feature_column_specs, with respect to this particular model.
+     * input_feature_column_specs with respect to this particular model.
      * </pre>
      *
      * <code>
@@ -2241,7 +2266,7 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Output only. Auxiliary information for each of the
-     * input_feature_column_specs, with respect to this particular model.
+     * input_feature_column_specs with respect to this particular model.
      * </pre>
      *
      * <code>
@@ -2267,7 +2292,7 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Output only. Auxiliary information for each of the
-     * input_feature_column_specs, with respect to this particular model.
+     * input_feature_column_specs with respect to this particular model.
      * </pre>
      *
      * <code>
@@ -2293,7 +2318,7 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Output only. Auxiliary information for each of the
-     * input_feature_column_specs, with respect to this particular model.
+     * input_feature_column_specs with respect to this particular model.
      * </pre>
      *
      * <code>
@@ -2316,7 +2341,7 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Output only. Auxiliary information for each of the
-     * input_feature_column_specs, with respect to this particular model.
+     * input_feature_column_specs with respect to this particular model.
      * </pre>
      *
      * <code>
@@ -2339,7 +2364,7 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Output only. Auxiliary information for each of the
-     * input_feature_column_specs, with respect to this particular model.
+     * input_feature_column_specs with respect to this particular model.
      * </pre>
      *
      * <code>
@@ -2363,7 +2388,7 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Output only. Auxiliary information for each of the
-     * input_feature_column_specs, with respect to this particular model.
+     * input_feature_column_specs with respect to this particular model.
      * </pre>
      *
      * <code>
@@ -2385,7 +2410,7 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Output only. Auxiliary information for each of the
-     * input_feature_column_specs, with respect to this particular model.
+     * input_feature_column_specs with respect to this particular model.
      * </pre>
      *
      * <code>
@@ -2407,7 +2432,7 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Output only. Auxiliary information for each of the
-     * input_feature_column_specs, with respect to this particular model.
+     * input_feature_column_specs with respect to this particular model.
      * </pre>
      *
      * <code>
@@ -2423,7 +2448,7 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Output only. Auxiliary information for each of the
-     * input_feature_column_specs, with respect to this particular model.
+     * input_feature_column_specs with respect to this particular model.
      * </pre>
      *
      * <code>
@@ -2443,7 +2468,7 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Output only. Auxiliary information for each of the
-     * input_feature_column_specs, with respect to this particular model.
+     * input_feature_column_specs with respect to this particular model.
      * </pre>
      *
      * <code>
@@ -2463,7 +2488,7 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Output only. Auxiliary information for each of the
-     * input_feature_column_specs, with respect to this particular model.
+     * input_feature_column_specs with respect to this particular model.
      * </pre>
      *
      * <code>
@@ -2480,7 +2505,7 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Output only. Auxiliary information for each of the
-     * input_feature_column_specs, with respect to this particular model.
+     * input_feature_column_specs with respect to this particular model.
      * </pre>
      *
      * <code>
@@ -2498,7 +2523,7 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Output only. Auxiliary information for each of the
-     * input_feature_column_specs, with respect to this particular model.
+     * input_feature_column_specs with respect to this particular model.
      * </pre>
      *
      * <code>
@@ -2535,8 +2560,8 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The train budget of creating this model, expressed in milli node hours
-     * i.e. 1,000 value in this field means 1 node hour.
+     * Required. The train budget of creating this model, expressed in milli node
+     * hours i.e. 1,000 value in this field means 1 node hour.
      * The training cost of the model will not exceed this budget. The final cost
      * will be attempted to be close to the budget, though may end up being (even)
      * noticeably smaller - at the backend's discretion. This especially may
@@ -2544,6 +2569,8 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
      * If the budget is set to a value known to be insufficient to train a
      * model for the given dataset, the training won't be attempted and
      * will error.
+     * The train budget must be between 1,000 and 72,000 milli node hours,
+     * inclusive.
      * </pre>
      *
      * <code>int64 train_budget_milli_node_hours = 6;</code>
@@ -2555,8 +2582,8 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The train budget of creating this model, expressed in milli node hours
-     * i.e. 1,000 value in this field means 1 node hour.
+     * Required. The train budget of creating this model, expressed in milli node
+     * hours i.e. 1,000 value in this field means 1 node hour.
      * The training cost of the model will not exceed this budget. The final cost
      * will be attempted to be close to the budget, though may end up being (even)
      * noticeably smaller - at the backend's discretion. This especially may
@@ -2564,6 +2591,8 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
      * If the budget is set to a value known to be insufficient to train a
      * model for the given dataset, the training won't be attempted and
      * will error.
+     * The train budget must be between 1,000 and 72,000 milli node hours,
+     * inclusive.
      * </pre>
      *
      * <code>int64 train_budget_milli_node_hours = 6;</code>
@@ -2578,8 +2607,8 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The train budget of creating this model, expressed in milli node hours
-     * i.e. 1,000 value in this field means 1 node hour.
+     * Required. The train budget of creating this model, expressed in milli node
+     * hours i.e. 1,000 value in this field means 1 node hour.
      * The training cost of the model will not exceed this budget. The final cost
      * will be attempted to be close to the budget, though may end up being (even)
      * noticeably smaller - at the backend's discretion. This especially may
@@ -2587,6 +2616,8 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
      * If the budget is set to a value known to be insufficient to train a
      * model for the given dataset, the training won't be attempted and
      * will error.
+     * The train budget must be between 1,000 and 72,000 milli node hours,
+     * inclusive.
      * </pre>
      *
      * <code>int64 train_budget_milli_node_hours = 6;</code>
@@ -2644,6 +2675,56 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
     public Builder clearTrainCostMilliNodeHours() {
 
       trainCostMilliNodeHours_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private boolean disableEarlyStopping_;
+    /**
+     *
+     *
+     * <pre>
+     * Use the entire training budget. This disables the early stopping feature.
+     * By default, the early stopping feature is enabled, which means that AutoML
+     * Tables might stop training before the entire training budget has been used.
+     * </pre>
+     *
+     * <code>bool disable_early_stopping = 12;</code>
+     */
+    public boolean getDisableEarlyStopping() {
+      return disableEarlyStopping_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Use the entire training budget. This disables the early stopping feature.
+     * By default, the early stopping feature is enabled, which means that AutoML
+     * Tables might stop training before the entire training budget has been used.
+     * </pre>
+     *
+     * <code>bool disable_early_stopping = 12;</code>
+     */
+    public Builder setDisableEarlyStopping(boolean value) {
+
+      disableEarlyStopping_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Use the entire training budget. This disables the early stopping feature.
+     * By default, the early stopping feature is enabled, which means that AutoML
+     * Tables might stop training before the entire training budget has been used.
+     * </pre>
+     *
+     * <code>bool disable_early_stopping = 12;</code>
+     */
+    public Builder clearDisableEarlyStopping() {
+
+      disableEarlyStopping_ = false;
       onChanged();
       return this;
     }

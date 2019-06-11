@@ -142,7 +142,8 @@ public interface DataTypeOrBuilder
    *
    *
    * <pre>
-   * If true, this DataType can also be `null`.
+   * If true, this DataType can also be `NULL`. In .CSV files `NULL` value is
+   * expressed as an empty string.
    * </pre>
    *
    * <code>bool nullable = 4;</code>

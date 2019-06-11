@@ -41,6 +41,8 @@ public final class AttachedDiskInitializeParams implements ApiMessage {
   private final Map<String, String> labels;
   private final String sourceImage;
   private final CustomerEncryptionKey sourceImageEncryptionKey;
+  private final String sourceSnapshot;
+  private final CustomerEncryptionKey sourceSnapshotEncryptionKey;
 
   private AttachedDiskInitializeParams() {
     this.description = null;
@@ -50,6 +52,8 @@ public final class AttachedDiskInitializeParams implements ApiMessage {
     this.labels = null;
     this.sourceImage = null;
     this.sourceImageEncryptionKey = null;
+    this.sourceSnapshot = null;
+    this.sourceSnapshotEncryptionKey = null;
   }
 
   private AttachedDiskInitializeParams(
@@ -59,7 +63,9 @@ public final class AttachedDiskInitializeParams implements ApiMessage {
       String diskType,
       Map<String, String> labels,
       String sourceImage,
-      CustomerEncryptionKey sourceImageEncryptionKey) {
+      CustomerEncryptionKey sourceImageEncryptionKey,
+      String sourceSnapshot,
+      CustomerEncryptionKey sourceSnapshotEncryptionKey) {
     this.description = description;
     this.diskName = diskName;
     this.diskSizeGb = diskSizeGb;
@@ -67,6 +73,8 @@ public final class AttachedDiskInitializeParams implements ApiMessage {
     this.labels = labels;
     this.sourceImage = sourceImage;
     this.sourceImageEncryptionKey = sourceImageEncryptionKey;
+    this.sourceSnapshot = sourceSnapshot;
+    this.sourceSnapshotEncryptionKey = sourceSnapshotEncryptionKey;
   }
 
   @Override
@@ -91,6 +99,12 @@ public final class AttachedDiskInitializeParams implements ApiMessage {
     }
     if ("sourceImageEncryptionKey".equals(fieldName)) {
       return sourceImageEncryptionKey;
+    }
+    if ("sourceSnapshot".equals(fieldName)) {
+      return sourceSnapshot;
+    }
+    if ("sourceSnapshotEncryptionKey".equals(fieldName)) {
+      return sourceSnapshotEncryptionKey;
     }
     return null;
   }
@@ -191,6 +205,24 @@ public final class AttachedDiskInitializeParams implements ApiMessage {
     return sourceImageEncryptionKey;
   }
 
+  /**
+   * The source snapshot to create this disk. When creating a new instance, one of
+   * initializeParams.sourceSnapshot or disks.source is required except for local SSD.
+   *
+   * <p>To create a disk with a snapshot that you created, specify the snapshot name in the
+   * following format: global/snapshots/my-backup
+   *
+   * <p>If the source snapshot is deleted later, this field will not be set.
+   */
+  public String getSourceSnapshot() {
+    return sourceSnapshot;
+  }
+
+  /** The customer-supplied encryption key of the source snapshot. */
+  public CustomerEncryptionKey getSourceSnapshotEncryptionKey() {
+    return sourceSnapshotEncryptionKey;
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
@@ -221,6 +253,8 @@ public final class AttachedDiskInitializeParams implements ApiMessage {
     private Map<String, String> labels;
     private String sourceImage;
     private CustomerEncryptionKey sourceImageEncryptionKey;
+    private String sourceSnapshot;
+    private CustomerEncryptionKey sourceSnapshotEncryptionKey;
 
     Builder() {}
 
@@ -247,6 +281,12 @@ public final class AttachedDiskInitializeParams implements ApiMessage {
       if (other.getSourceImageEncryptionKey() != null) {
         this.sourceImageEncryptionKey = other.sourceImageEncryptionKey;
       }
+      if (other.getSourceSnapshot() != null) {
+        this.sourceSnapshot = other.sourceSnapshot;
+      }
+      if (other.getSourceSnapshotEncryptionKey() != null) {
+        this.sourceSnapshotEncryptionKey = other.sourceSnapshotEncryptionKey;
+      }
       return this;
     }
 
@@ -258,6 +298,8 @@ public final class AttachedDiskInitializeParams implements ApiMessage {
       this.labels = source.labels;
       this.sourceImage = source.sourceImage;
       this.sourceImageEncryptionKey = source.sourceImageEncryptionKey;
+      this.sourceSnapshot = source.sourceSnapshot;
+      this.sourceSnapshotEncryptionKey = source.sourceSnapshotEncryptionKey;
     }
 
     /** An optional description. Provide this property when creating the disk. */
@@ -423,6 +465,45 @@ public final class AttachedDiskInitializeParams implements ApiMessage {
       return this;
     }
 
+    /**
+     * The source snapshot to create this disk. When creating a new instance, one of
+     * initializeParams.sourceSnapshot or disks.source is required except for local SSD.
+     *
+     * <p>To create a disk with a snapshot that you created, specify the snapshot name in the
+     * following format: global/snapshots/my-backup
+     *
+     * <p>If the source snapshot is deleted later, this field will not be set.
+     */
+    public String getSourceSnapshot() {
+      return sourceSnapshot;
+    }
+
+    /**
+     * The source snapshot to create this disk. When creating a new instance, one of
+     * initializeParams.sourceSnapshot or disks.source is required except for local SSD.
+     *
+     * <p>To create a disk with a snapshot that you created, specify the snapshot name in the
+     * following format: global/snapshots/my-backup
+     *
+     * <p>If the source snapshot is deleted later, this field will not be set.
+     */
+    public Builder setSourceSnapshot(String sourceSnapshot) {
+      this.sourceSnapshot = sourceSnapshot;
+      return this;
+    }
+
+    /** The customer-supplied encryption key of the source snapshot. */
+    public CustomerEncryptionKey getSourceSnapshotEncryptionKey() {
+      return sourceSnapshotEncryptionKey;
+    }
+
+    /** The customer-supplied encryption key of the source snapshot. */
+    public Builder setSourceSnapshotEncryptionKey(
+        CustomerEncryptionKey sourceSnapshotEncryptionKey) {
+      this.sourceSnapshotEncryptionKey = sourceSnapshotEncryptionKey;
+      return this;
+    }
+
     public AttachedDiskInitializeParams build() {
 
       return new AttachedDiskInitializeParams(
@@ -432,7 +513,9 @@ public final class AttachedDiskInitializeParams implements ApiMessage {
           diskType,
           labels,
           sourceImage,
-          sourceImageEncryptionKey);
+          sourceImageEncryptionKey,
+          sourceSnapshot,
+          sourceSnapshotEncryptionKey);
     }
 
     public Builder clone() {
@@ -444,6 +527,8 @@ public final class AttachedDiskInitializeParams implements ApiMessage {
       newBuilder.putAllLabels(this.labels);
       newBuilder.setSourceImage(this.sourceImage);
       newBuilder.setSourceImageEncryptionKey(this.sourceImageEncryptionKey);
+      newBuilder.setSourceSnapshot(this.sourceSnapshot);
+      newBuilder.setSourceSnapshotEncryptionKey(this.sourceSnapshotEncryptionKey);
       return newBuilder;
     }
   }
@@ -471,6 +556,12 @@ public final class AttachedDiskInitializeParams implements ApiMessage {
         + ", "
         + "sourceImageEncryptionKey="
         + sourceImageEncryptionKey
+        + ", "
+        + "sourceSnapshot="
+        + sourceSnapshot
+        + ", "
+        + "sourceSnapshotEncryptionKey="
+        + sourceSnapshotEncryptionKey
         + "}";
   }
 
@@ -487,7 +578,10 @@ public final class AttachedDiskInitializeParams implements ApiMessage {
           && Objects.equals(this.diskType, that.getDiskType())
           && Objects.equals(this.labels, that.getLabelsMap())
           && Objects.equals(this.sourceImage, that.getSourceImage())
-          && Objects.equals(this.sourceImageEncryptionKey, that.getSourceImageEncryptionKey());
+          && Objects.equals(this.sourceImageEncryptionKey, that.getSourceImageEncryptionKey())
+          && Objects.equals(this.sourceSnapshot, that.getSourceSnapshot())
+          && Objects.equals(
+              this.sourceSnapshotEncryptionKey, that.getSourceSnapshotEncryptionKey());
     }
     return false;
   }
@@ -495,6 +589,14 @@ public final class AttachedDiskInitializeParams implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-        description, diskName, diskSizeGb, diskType, labels, sourceImage, sourceImageEncryptionKey);
+        description,
+        diskName,
+        diskSizeGb,
+        diskType,
+        labels,
+        sourceImage,
+        sourceImageEncryptionKey,
+        sourceSnapshot,
+        sourceSnapshotEncryptionKey);
   }
 }

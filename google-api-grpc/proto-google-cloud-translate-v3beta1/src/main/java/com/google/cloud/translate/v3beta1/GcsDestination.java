@@ -7,7 +7,7 @@ package com.google.cloud.translate.v3beta1;
  *
  *
  * <pre>
- * The GCS location for the output content
+ * The Google Cloud Storage location for the output content
  * </pre>
  *
  * Protobuf type {@code google.cloud.translation.v3beta1.GcsDestination}
@@ -98,7 +98,8 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. There must be no files under 'output_uri_prefix'.
-   * 'output_uri_prefix' must end with "/". Otherwise error 400 is returned.
+   * 'output_uri_prefix' must end with "/", otherwise an INVALID_ARGUMENT (400)
+   * error is returned..
    * </pre>
    *
    * <code>string output_uri_prefix = 1;</code>
@@ -119,7 +120,8 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. There must be no files under 'output_uri_prefix'.
-   * 'output_uri_prefix' must end with "/". Otherwise error 400 is returned.
+   * 'output_uri_prefix' must end with "/", otherwise an INVALID_ARGUMENT (400)
+   * error is returned..
    * </pre>
    *
    * <code>string output_uri_prefix = 1;</code>
@@ -299,7 +301,7 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The GCS location for the output content
+   * The Google Cloud Storage location for the output content
    * </pre>
    *
    * Protobuf type {@code google.cloud.translation.v3beta1.GcsDestination}
@@ -460,7 +462,8 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. There must be no files under 'output_uri_prefix'.
-     * 'output_uri_prefix' must end with "/". Otherwise error 400 is returned.
+     * 'output_uri_prefix' must end with "/", otherwise an INVALID_ARGUMENT (400)
+     * error is returned..
      * </pre>
      *
      * <code>string output_uri_prefix = 1;</code>
@@ -481,7 +484,8 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. There must be no files under 'output_uri_prefix'.
-     * 'output_uri_prefix' must end with "/". Otherwise error 400 is returned.
+     * 'output_uri_prefix' must end with "/", otherwise an INVALID_ARGUMENT (400)
+     * error is returned..
      * </pre>
      *
      * <code>string output_uri_prefix = 1;</code>
@@ -502,7 +506,8 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. There must be no files under 'output_uri_prefix'.
-     * 'output_uri_prefix' must end with "/". Otherwise error 400 is returned.
+     * 'output_uri_prefix' must end with "/", otherwise an INVALID_ARGUMENT (400)
+     * error is returned..
      * </pre>
      *
      * <code>string output_uri_prefix = 1;</code>
@@ -521,7 +526,8 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. There must be no files under 'output_uri_prefix'.
-     * 'output_uri_prefix' must end with "/". Otherwise error 400 is returned.
+     * 'output_uri_prefix' must end with "/", otherwise an INVALID_ARGUMENT (400)
+     * error is returned..
      * </pre>
      *
      * <code>string output_uri_prefix = 1;</code>
@@ -537,7 +543,8 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. There must be no files under 'output_uri_prefix'.
-     * 'output_uri_prefix' must end with "/". Otherwise error 400 is returned.
+     * 'output_uri_prefix' must end with "/", otherwise an INVALID_ARGUMENT (400)
+     * error is returned..
      * </pre>
      *
      * <code>string output_uri_prefix = 1;</code>

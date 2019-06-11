@@ -202,12 +202,17 @@ public final class TablesModelColumnInfo extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Output only.
-   * When given as part of a Model:
+   * When given as part of a Model (always populated):
    * Measurement of how much model predictions correctness on the TEST data
    * depend on values in this column. A value between 0 and 1, higher means
    * higher influence. These values are normalized - for all input feature
    * columns of a given model they add to 1.
-   * When given back by Predict or Batch Predict:
+   * When given back by Predict (populated iff
+   * [feature_importance
+   * param][google.cloud.automl.v1beta1.PredictRequest.params] is set) or Batch
+   * Predict (populated iff
+   * [feature_importance][google.cloud.automl.v1beta1.PredictRequest.params]
+   * param is set):
    * Measurement of how impactful for the prediction returned for the given row
    * the value in this column was. A value between 0 and 1, higher means larger
    * impact. These values are normalized - for all input feature columns of a
@@ -776,12 +781,17 @@ public final class TablesModelColumnInfo extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Output only.
-     * When given as part of a Model:
+     * When given as part of a Model (always populated):
      * Measurement of how much model predictions correctness on the TEST data
      * depend on values in this column. A value between 0 and 1, higher means
      * higher influence. These values are normalized - for all input feature
      * columns of a given model they add to 1.
-     * When given back by Predict or Batch Predict:
+     * When given back by Predict (populated iff
+     * [feature_importance
+     * param][google.cloud.automl.v1beta1.PredictRequest.params] is set) or Batch
+     * Predict (populated iff
+     * [feature_importance][google.cloud.automl.v1beta1.PredictRequest.params]
+     * param is set):
      * Measurement of how impactful for the prediction returned for the given row
      * the value in this column was. A value between 0 and 1, higher means larger
      * impact. These values are normalized - for all input feature columns of a
@@ -798,12 +808,17 @@ public final class TablesModelColumnInfo extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Output only.
-     * When given as part of a Model:
+     * When given as part of a Model (always populated):
      * Measurement of how much model predictions correctness on the TEST data
      * depend on values in this column. A value between 0 and 1, higher means
      * higher influence. These values are normalized - for all input feature
      * columns of a given model they add to 1.
-     * When given back by Predict or Batch Predict:
+     * When given back by Predict (populated iff
+     * [feature_importance
+     * param][google.cloud.automl.v1beta1.PredictRequest.params] is set) or Batch
+     * Predict (populated iff
+     * [feature_importance][google.cloud.automl.v1beta1.PredictRequest.params]
+     * param is set):
      * Measurement of how impactful for the prediction returned for the given row
      * the value in this column was. A value between 0 and 1, higher means larger
      * impact. These values are normalized - for all input feature columns of a
@@ -823,12 +838,17 @@ public final class TablesModelColumnInfo extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Output only.
-     * When given as part of a Model:
+     * When given as part of a Model (always populated):
      * Measurement of how much model predictions correctness on the TEST data
      * depend on values in this column. A value between 0 and 1, higher means
      * higher influence. These values are normalized - for all input feature
      * columns of a given model they add to 1.
-     * When given back by Predict or Batch Predict:
+     * When given back by Predict (populated iff
+     * [feature_importance
+     * param][google.cloud.automl.v1beta1.PredictRequest.params] is set) or Batch
+     * Predict (populated iff
+     * [feature_importance][google.cloud.automl.v1beta1.PredictRequest.params]
+     * param is set):
      * Measurement of how impactful for the prediction returned for the given row
      * the value in this column was. A value between 0 and 1, higher means larger
      * impact. These values are normalized - for all input feature columns of a

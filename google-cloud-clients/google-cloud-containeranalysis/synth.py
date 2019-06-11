@@ -21,7 +21,7 @@ import synthtool.languages.java as java
 gapic = gcp.GAPICGenerator()
 
 service = 'containeranalysis'
-versions = ['v1beta1']
+versions = ['v1beta1', 'v1']
 config_pattern = '/google/devtools/containeranalysis/artman_containeranalysis_{version}.yaml'
 
 for version in versions:

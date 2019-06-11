@@ -118,4 +118,35 @@ public interface UpdateTransferConfigRequestOrBuilder
    * <code>.google.protobuf.FieldMask update_mask = 4;</code>
    */
   com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional version info. If users want to find a very recent access token,
+   * that is, immediately after approving access, users have to set the
+   * version_info claim in the token request. To obtain the version_info, users
+   * must use the "none+gsession" response type. which be return a
+   * version_info back in the authorization response which be be put in a JWT
+   * claim in the token request.
+   * </pre>
+   *
+   * <code>string version_info = 5;</code>
+   */
+  java.lang.String getVersionInfo();
+  /**
+   *
+   *
+   * <pre>
+   * Optional version info. If users want to find a very recent access token,
+   * that is, immediately after approving access, users have to set the
+   * version_info claim in the token request. To obtain the version_info, users
+   * must use the "none+gsession" response type. which be return a
+   * version_info back in the authorization response which be be put in a JWT
+   * claim in the token request.
+   * </pre>
+   *
+   * <code>string version_info = 5;</code>
+   */
+  com.google.protobuf.ByteString getVersionInfoBytes();
 }

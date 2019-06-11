@@ -1,4 +1,4 @@
-# Google Cloud Java Client for Bigtable
+# Google Cloud Bigtable Client for Java
 
 Java idiomatic client for [Cloud Bigtable][cloud-bigtable]. Please note that this client is under
 heavy development and is not ready for production use. Please continue to use the 
@@ -21,16 +21,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-bigtable</artifactId>
-  <version>0.94.0-alpha</version>
+  <version>0.95.0-alpha</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-bigtable:0.94.0-alpha'
+compile 'com.google.cloud:google-cloud-bigtable:0.95.0-alpha'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-bigtable" % "0.94.0-alpha"
+libraryDependencies += "com.google.cloud" % "google-cloud-bigtable" % "0.95.0-alpha"
 ```
 [//]: # ({x-version-update-end})
 

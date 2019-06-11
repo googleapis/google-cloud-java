@@ -42,11 +42,11 @@ public final class DataItems {
   static {
     java.lang.String[] descriptorData = {
       "\n,google/cloud/automl/v1beta1/data_items"
-          + ".proto\022\033google.cloud.automl.v1beta1\032\034goo"
-          + "gle/api/annotations.proto\032$google/cloud/"
-          + "automl/v1beta1/io.proto\032\031google/protobuf"
-          + "/any.proto\032\036google/protobuf/duration.pro"
-          + "to\032\034google/protobuf/struct.proto\"\177\n\005Imag"
+          + ".proto\022\033google.cloud.automl.v1beta1\032$goo"
+          + "gle/cloud/automl/v1beta1/io.proto\032\031googl"
+          + "e/protobuf/any.proto\032\036google/protobuf/du"
+          + "ration.proto\032\034google/protobuf/struct.pro"
+          + "to\032\034google/api/annotations.proto\"\177\n\005Imag"
           + "e\022\025\n\013image_bytes\030\001 \001(\014H\000\022@\n\014input_config"
           + "\030\006 \001(\0132(.google.cloud.automl.v1beta1.Inp"
           + "utConfigH\000\022\025\n\rthumbnail_uri\030\004 \001(\tB\006\n\004dat"
@@ -78,11 +78,11 @@ public final class DataItems {
     com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
         descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.api.AnnotationsProto.getDescriptor(),
           com.google.cloud.automl.v1beta1.Io.getDescriptor(),
           com.google.protobuf.AnyProto.getDescriptor(),
           com.google.protobuf.DurationProto.getDescriptor(),
           com.google.protobuf.StructProto.getDescriptor(),
+          com.google.api.AnnotationsProto.getDescriptor(),
         },
         assigner);
     internal_static_google_cloud_automl_v1beta1_Image_descriptor =
@@ -125,11 +125,11 @@ public final class DataItems {
             new java.lang.String[] {
               "Image", "TextSnippet", "Document", "Row", "Payload",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.cloud.automl.v1beta1.Io.getDescriptor();
     com.google.protobuf.AnyProto.getDescriptor();
     com.google.protobuf.DurationProto.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();
+    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

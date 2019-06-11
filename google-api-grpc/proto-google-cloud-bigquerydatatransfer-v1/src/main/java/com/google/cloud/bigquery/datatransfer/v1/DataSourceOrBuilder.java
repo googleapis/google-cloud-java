@@ -97,7 +97,6 @@ public interface DataSourceOrBuilder
    *
    * <pre>
    * Data source client id which should be used to receive refresh token.
-   * When not supplied, no offline credentials are populated for data transfer.
    * </pre>
    *
    * <code>string client_id = 5;</code>
@@ -108,7 +107,6 @@ public interface DataSourceOrBuilder
    *
    * <pre>
    * Data source client id which should be used to receive refresh token.
-   * When not supplied, no offline credentials are populated for data transfer.
    * </pre>
    *
    * <code>string client_id = 5;</code>
@@ -119,10 +117,9 @@ public interface DataSourceOrBuilder
    *
    *
    * <pre>
-   * Api auth scopes for which refresh token needs to be obtained. Only valid
-   * when `client_id` is specified. Ignored otherwise. These are scopes needed
-   * by a data source to prepare data and ingest them into BigQuery,
-   * e.g., https://www.googleapis.com/auth/bigquery
+   * Api auth scopes for which refresh token needs to be obtained. These are
+   * scopes needed by a data source to prepare data and ingest them into
+   * BigQuery, e.g., https://www.googleapis.com/auth/bigquery
    * </pre>
    *
    * <code>repeated string scopes = 6;</code>
@@ -132,10 +129,9 @@ public interface DataSourceOrBuilder
    *
    *
    * <pre>
-   * Api auth scopes for which refresh token needs to be obtained. Only valid
-   * when `client_id` is specified. Ignored otherwise. These are scopes needed
-   * by a data source to prepare data and ingest them into BigQuery,
-   * e.g., https://www.googleapis.com/auth/bigquery
+   * Api auth scopes for which refresh token needs to be obtained. These are
+   * scopes needed by a data source to prepare data and ingest them into
+   * BigQuery, e.g., https://www.googleapis.com/auth/bigquery
    * </pre>
    *
    * <code>repeated string scopes = 6;</code>
@@ -145,10 +141,9 @@ public interface DataSourceOrBuilder
    *
    *
    * <pre>
-   * Api auth scopes for which refresh token needs to be obtained. Only valid
-   * when `client_id` is specified. Ignored otherwise. These are scopes needed
-   * by a data source to prepare data and ingest them into BigQuery,
-   * e.g., https://www.googleapis.com/auth/bigquery
+   * Api auth scopes for which refresh token needs to be obtained. These are
+   * scopes needed by a data source to prepare data and ingest them into
+   * BigQuery, e.g., https://www.googleapis.com/auth/bigquery
    * </pre>
    *
    * <code>repeated string scopes = 6;</code>
@@ -158,10 +153,9 @@ public interface DataSourceOrBuilder
    *
    *
    * <pre>
-   * Api auth scopes for which refresh token needs to be obtained. Only valid
-   * when `client_id` is specified. Ignored otherwise. These are scopes needed
-   * by a data source to prepare data and ingest them into BigQuery,
-   * e.g., https://www.googleapis.com/auth/bigquery
+   * Api auth scopes for which refresh token needs to be obtained. These are
+   * scopes needed by a data source to prepare data and ingest them into
+   * BigQuery, e.g., https://www.googleapis.com/auth/bigquery
    * </pre>
    *
    * <code>repeated string scopes = 6;</code>
@@ -175,8 +169,11 @@ public interface DataSourceOrBuilder
    * Deprecated. This field has no effect.
    * </pre>
    *
-   * <code>.google.cloud.bigquery.datatransfer.v1.TransferType transfer_type = 7;</code>
+   * <code>
+   * .google.cloud.bigquery.datatransfer.v1.TransferType transfer_type = 7 [deprecated = true];
+   * </code>
    */
+  @java.lang.Deprecated
   int getTransferTypeValue();
   /**
    *
@@ -185,20 +182,23 @@ public interface DataSourceOrBuilder
    * Deprecated. This field has no effect.
    * </pre>
    *
-   * <code>.google.cloud.bigquery.datatransfer.v1.TransferType transfer_type = 7;</code>
+   * <code>
+   * .google.cloud.bigquery.datatransfer.v1.TransferType transfer_type = 7 [deprecated = true];
+   * </code>
    */
+  @java.lang.Deprecated
   com.google.cloud.bigquery.datatransfer.v1.TransferType getTransferType();
 
   /**
    *
    *
    * <pre>
-   * Indicates whether the data source supports multiple transfers
-   * to different BigQuery targets.
+   * Deprecated. This field has no effect.
    * </pre>
    *
-   * <code>bool supports_multiple_transfers = 8;</code>
+   * <code>bool supports_multiple_transfers = 8 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   boolean getSupportsMultipleTransfers();
 
   /**
@@ -206,7 +206,7 @@ public interface DataSourceOrBuilder
    *
    * <pre>
    * The number of seconds to wait for an update from the data source
-   * before BigQuery marks the transfer as failed.
+   * before the Data Transfer Service marks the transfer as FAILED.
    * </pre>
    *
    * <code>int32 update_deadline_seconds = 9;</code>
@@ -442,4 +442,46 @@ public interface DataSourceOrBuilder
    * <code>.google.protobuf.Duration minimum_schedule_interval = 18;</code>
    */
   com.google.protobuf.DurationOrBuilder getMinimumScheduleIntervalOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Partner's legal name of this data source
+   * </pre>
+   *
+   * <code>string partner_legal_name = 22;</code>
+   */
+  java.lang.String getPartnerLegalName();
+  /**
+   *
+   *
+   * <pre>
+   * Partner's legal name of this data source
+   * </pre>
+   *
+   * <code>string partner_legal_name = 22;</code>
+   */
+  com.google.protobuf.ByteString getPartnerLegalNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Redirect URL to complete transfer config setup for 3rd party data sources.
+   * </pre>
+   *
+   * <code>string redirect_url = 23;</code>
+   */
+  java.lang.String getRedirectUrl();
+  /**
+   *
+   *
+   * <pre>
+   * Redirect URL to complete transfer config setup for 3rd party data sources.
+   * </pre>
+   *
+   * <code>string redirect_url = 23;</code>
+   */
+  com.google.protobuf.ByteString getRedirectUrlBytes();
 }

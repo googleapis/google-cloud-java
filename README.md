@@ -17,6 +17,7 @@ This library supports the following Google Cloud Platform services with clients 
 -  [Cloud KMS](google-cloud-clients/google-cloud-kms) (GA)
 -  [Cloud Natural Language](google-cloud-clients/google-cloud-language) (GA)
 -  [Cloud Pub/Sub](google-cloud-clients/google-cloud-pubsub) (GA)
+-  [Cloud Scheduler](google-cloud-clients/google-cloud-scheduler) (GA)
 -  [Cloud Spanner](google-cloud-clients/google-cloud-spanner) (GA)
 -  [Cloud Speech](google-cloud-clients/google-cloud-speech) (GA)
 -  [Cloud Storage](google-cloud-clients/google-cloud-storage) (GA)
@@ -35,7 +36,7 @@ This library supports the following Google Cloud Platform services with clients 
 -  [Cloud Data Loss Prevention](google-cloud-clients/google-cloud-dlp) (Beta)
 -  [Cloud IoT Core](google-cloud-clients/google-cloud-iot) (Beta)
 -  [Cloud Phishing Protection](google-cloud-clients/google-cloud-phishingprotection) (Beta)
--  [Cloud Scheduler](google-cloud-clients/google-cloud-scheduler) (Beta)
+-  [Cloud Security Scanner](google-cloud-clients/google-cloud-websecurityscanner) (Beta)
 -  [Cloud Talent Solution](google-cloud-clients/google-cloud-talent) (Beta)
 -  [Cloud Text-to-Speech](google-cloud-clients/google-cloud-texttospeech) (Beta)
 -  [Cloud Video Intelligence](google-cloud-clients/google-cloud-video-intelligence) (Beta)
@@ -57,7 +58,6 @@ This library supports the following Google Cloud Platform services with clients 
 -  [Cloud OS Login](google-cloud-clients/google-cloud-os-login) (Alpha)
 -  [Cloud Memorystore for Redis](google-cloud-clients/google-cloud-redis) (Alpha)
 -  [Cloud Resource Manager](google-cloud-clients/google-cloud-resourcemanager) (Alpha)
--  [Cloud Security Scanner](google-cloud-clients/google-cloud-websecurityscanner) (Alpha)
 -  [Cloud Web Risk](google-cloud-clients/google-cloud-webrisk) (Alpha)
 -  [Dialogflow](google-cloud-clients/google-cloud-dialogflow) (Alpha)
 
@@ -76,7 +76,7 @@ If you are using Maven, add this to your pom.xml file
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-bom</artifactId>
-        <version>0.94.0-alpha</version>
+        <version>0.95.0-alpha</version>
         <type>pom</type>
         <scope>import</scope>
        </dependency>
@@ -95,11 +95,11 @@ If you are using Maven, add this to your pom.xml file
 [//]: # ({x-version-update-start:google-cloud-storage:released})
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-storage:1.76.0'
+compile 'com.google.cloud:google-cloud-storage:1.77.0'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-storage" % "1.76.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-storage" % "1.77.0"
 ```
 [//]: # ({x-version-update-end})
 
@@ -120,7 +120,7 @@ If you are running into problems with version conflicts, the easiest way to solv
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-bom</artifactId>
-        <version>0.94.0-alpha</version>
+        <version>0.95.0-alpha</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>

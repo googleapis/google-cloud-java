@@ -31,7 +31,7 @@ pushd $(dirname "$0")/../../
 python3 -m pip install gcp-docuploader
 
 # compile all packages
-mvn clean install -B -DskipTests=true
+mvn clean install -B -DskipTests=true -T 1C
 
 build_and_publish_site() {
   DIRECTORY=$1

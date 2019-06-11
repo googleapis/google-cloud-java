@@ -214,6 +214,29 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
               datasetMetadataCase_ = 28;
               break;
             }
+          case 234:
+            {
+              com.google.cloud.automl.v1beta1.VideoObjectTrackingDatasetMetadata.Builder
+                  subBuilder = null;
+              if (datasetMetadataCase_ == 29) {
+                subBuilder =
+                    ((com.google.cloud.automl.v1beta1.VideoObjectTrackingDatasetMetadata)
+                            datasetMetadata_)
+                        .toBuilder();
+              }
+              datasetMetadata_ =
+                  input.readMessage(
+                      com.google.cloud.automl.v1beta1.VideoObjectTrackingDatasetMetadata.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.cloud.automl.v1beta1.VideoObjectTrackingDatasetMetadata)
+                        datasetMetadata_);
+                datasetMetadata_ = subBuilder.buildPartial();
+              }
+              datasetMetadataCase_ = 29;
+              break;
+            }
           case 242:
             {
               com.google.cloud.automl.v1beta1.TextSentimentDatasetMetadata.Builder subBuilder =
@@ -323,6 +346,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
     TEXT_CLASSIFICATION_DATASET_METADATA(25),
     IMAGE_OBJECT_DETECTION_DATASET_METADATA(26),
     VIDEO_CLASSIFICATION_DATASET_METADATA(31),
+    VIDEO_OBJECT_TRACKING_DATASET_METADATA(29),
     TEXT_EXTRACTION_DATASET_METADATA(28),
     TEXT_SENTIMENT_DATASET_METADATA(30),
     TABLES_DATASET_METADATA(33),
@@ -350,6 +374,8 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
           return IMAGE_OBJECT_DETECTION_DATASET_METADATA;
         case 31:
           return VIDEO_CLASSIFICATION_DATASET_METADATA;
+        case 29:
+          return VIDEO_OBJECT_TRACKING_DATASET_METADATA;
         case 28:
           return TEXT_EXTRACTION_DATASET_METADATA;
         case 30:
@@ -630,6 +656,58 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       return (com.google.cloud.automl.v1beta1.VideoClassificationDatasetMetadata) datasetMetadata_;
     }
     return com.google.cloud.automl.v1beta1.VideoClassificationDatasetMetadata.getDefaultInstance();
+  }
+
+  public static final int VIDEO_OBJECT_TRACKING_DATASET_METADATA_FIELD_NUMBER = 29;
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for a dataset used for video object tracking.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1beta1.VideoObjectTrackingDatasetMetadata video_object_tracking_dataset_metadata = 29;
+   * </code>
+   */
+  public boolean hasVideoObjectTrackingDatasetMetadata() {
+    return datasetMetadataCase_ == 29;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for a dataset used for video object tracking.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1beta1.VideoObjectTrackingDatasetMetadata video_object_tracking_dataset_metadata = 29;
+   * </code>
+   */
+  public com.google.cloud.automl.v1beta1.VideoObjectTrackingDatasetMetadata
+      getVideoObjectTrackingDatasetMetadata() {
+    if (datasetMetadataCase_ == 29) {
+      return (com.google.cloud.automl.v1beta1.VideoObjectTrackingDatasetMetadata) datasetMetadata_;
+    }
+    return com.google.cloud.automl.v1beta1.VideoObjectTrackingDatasetMetadata.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for a dataset used for video object tracking.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1beta1.VideoObjectTrackingDatasetMetadata video_object_tracking_dataset_metadata = 29;
+   * </code>
+   */
+  public com.google.cloud.automl.v1beta1.VideoObjectTrackingDatasetMetadataOrBuilder
+      getVideoObjectTrackingDatasetMetadataOrBuilder() {
+    if (datasetMetadataCase_ == 29) {
+      return (com.google.cloud.automl.v1beta1.VideoObjectTrackingDatasetMetadata) datasetMetadata_;
+    }
+    return com.google.cloud.automl.v1beta1.VideoObjectTrackingDatasetMetadata.getDefaultInstance();
   }
 
   public static final int TEXT_EXTRACTION_DATASET_METADATA_FIELD_NUMBER = 28;
@@ -1073,6 +1151,11 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       output.writeMessage(
           28, (com.google.cloud.automl.v1beta1.TextExtractionDatasetMetadata) datasetMetadata_);
     }
+    if (datasetMetadataCase_ == 29) {
+      output.writeMessage(
+          29,
+          (com.google.cloud.automl.v1beta1.VideoObjectTrackingDatasetMetadata) datasetMetadata_);
+    }
     if (datasetMetadataCase_ == 30) {
       output.writeMessage(
           30, (com.google.cloud.automl.v1beta1.TextSentimentDatasetMetadata) datasetMetadata_);
@@ -1143,6 +1226,13 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               28, (com.google.cloud.automl.v1beta1.TextExtractionDatasetMetadata) datasetMetadata_);
     }
+    if (datasetMetadataCase_ == 29) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              29,
+              (com.google.cloud.automl.v1beta1.VideoObjectTrackingDatasetMetadata)
+                  datasetMetadata_);
+    }
     if (datasetMetadataCase_ == 30) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
@@ -1206,6 +1296,10 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
         if (!getVideoClassificationDatasetMetadata()
             .equals(other.getVideoClassificationDatasetMetadata())) return false;
         break;
+      case 29:
+        if (!getVideoObjectTrackingDatasetMetadata()
+            .equals(other.getVideoObjectTrackingDatasetMetadata())) return false;
+        break;
       case 28:
         if (!getTextExtractionDatasetMetadata().equals(other.getTextExtractionDatasetMetadata()))
           return false;
@@ -1265,6 +1359,10 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       case 31:
         hash = (37 * hash) + VIDEO_CLASSIFICATION_DATASET_METADATA_FIELD_NUMBER;
         hash = (53 * hash) + getVideoClassificationDatasetMetadata().hashCode();
+        break;
+      case 29:
+        hash = (37 * hash) + VIDEO_OBJECT_TRACKING_DATASET_METADATA_FIELD_NUMBER;
+        hash = (53 * hash) + getVideoObjectTrackingDatasetMetadata().hashCode();
         break;
       case 28:
         hash = (37 * hash) + TEXT_EXTRACTION_DATASET_METADATA_FIELD_NUMBER;
@@ -1507,6 +1605,13 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
           result.datasetMetadata_ = videoClassificationDatasetMetadataBuilder_.build();
         }
       }
+      if (datasetMetadataCase_ == 29) {
+        if (videoObjectTrackingDatasetMetadataBuilder_ == null) {
+          result.datasetMetadata_ = datasetMetadata_;
+        } else {
+          result.datasetMetadata_ = videoObjectTrackingDatasetMetadataBuilder_.build();
+        }
+      }
       if (datasetMetadataCase_ == 28) {
         if (textExtractionDatasetMetadataBuilder_ == null) {
           result.datasetMetadata_ = datasetMetadata_;
@@ -1635,6 +1740,11 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
         case VIDEO_CLASSIFICATION_DATASET_METADATA:
           {
             mergeVideoClassificationDatasetMetadata(other.getVideoClassificationDatasetMetadata());
+            break;
+          }
+        case VIDEO_OBJECT_TRACKING_DATASET_METADATA:
+          {
+            mergeVideoObjectTrackingDatasetMetadata(other.getVideoObjectTrackingDatasetMetadata());
             break;
           }
         case TEXT_EXTRACTION_DATASET_METADATA:
@@ -2873,6 +2983,243 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       ;
       return videoClassificationDatasetMetadataBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.automl.v1beta1.VideoObjectTrackingDatasetMetadata,
+            com.google.cloud.automl.v1beta1.VideoObjectTrackingDatasetMetadata.Builder,
+            com.google.cloud.automl.v1beta1.VideoObjectTrackingDatasetMetadataOrBuilder>
+        videoObjectTrackingDatasetMetadataBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for a dataset used for video object tracking.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.VideoObjectTrackingDatasetMetadata video_object_tracking_dataset_metadata = 29;
+     * </code>
+     */
+    public boolean hasVideoObjectTrackingDatasetMetadata() {
+      return datasetMetadataCase_ == 29;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for a dataset used for video object tracking.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.VideoObjectTrackingDatasetMetadata video_object_tracking_dataset_metadata = 29;
+     * </code>
+     */
+    public com.google.cloud.automl.v1beta1.VideoObjectTrackingDatasetMetadata
+        getVideoObjectTrackingDatasetMetadata() {
+      if (videoObjectTrackingDatasetMetadataBuilder_ == null) {
+        if (datasetMetadataCase_ == 29) {
+          return (com.google.cloud.automl.v1beta1.VideoObjectTrackingDatasetMetadata)
+              datasetMetadata_;
+        }
+        return com.google.cloud.automl.v1beta1.VideoObjectTrackingDatasetMetadata
+            .getDefaultInstance();
+      } else {
+        if (datasetMetadataCase_ == 29) {
+          return videoObjectTrackingDatasetMetadataBuilder_.getMessage();
+        }
+        return com.google.cloud.automl.v1beta1.VideoObjectTrackingDatasetMetadata
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for a dataset used for video object tracking.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.VideoObjectTrackingDatasetMetadata video_object_tracking_dataset_metadata = 29;
+     * </code>
+     */
+    public Builder setVideoObjectTrackingDatasetMetadata(
+        com.google.cloud.automl.v1beta1.VideoObjectTrackingDatasetMetadata value) {
+      if (videoObjectTrackingDatasetMetadataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        datasetMetadata_ = value;
+        onChanged();
+      } else {
+        videoObjectTrackingDatasetMetadataBuilder_.setMessage(value);
+      }
+      datasetMetadataCase_ = 29;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for a dataset used for video object tracking.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.VideoObjectTrackingDatasetMetadata video_object_tracking_dataset_metadata = 29;
+     * </code>
+     */
+    public Builder setVideoObjectTrackingDatasetMetadata(
+        com.google.cloud.automl.v1beta1.VideoObjectTrackingDatasetMetadata.Builder
+            builderForValue) {
+      if (videoObjectTrackingDatasetMetadataBuilder_ == null) {
+        datasetMetadata_ = builderForValue.build();
+        onChanged();
+      } else {
+        videoObjectTrackingDatasetMetadataBuilder_.setMessage(builderForValue.build());
+      }
+      datasetMetadataCase_ = 29;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for a dataset used for video object tracking.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.VideoObjectTrackingDatasetMetadata video_object_tracking_dataset_metadata = 29;
+     * </code>
+     */
+    public Builder mergeVideoObjectTrackingDatasetMetadata(
+        com.google.cloud.automl.v1beta1.VideoObjectTrackingDatasetMetadata value) {
+      if (videoObjectTrackingDatasetMetadataBuilder_ == null) {
+        if (datasetMetadataCase_ == 29
+            && datasetMetadata_
+                != com.google.cloud.automl.v1beta1.VideoObjectTrackingDatasetMetadata
+                    .getDefaultInstance()) {
+          datasetMetadata_ =
+              com.google.cloud.automl.v1beta1.VideoObjectTrackingDatasetMetadata.newBuilder(
+                      (com.google.cloud.automl.v1beta1.VideoObjectTrackingDatasetMetadata)
+                          datasetMetadata_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          datasetMetadata_ = value;
+        }
+        onChanged();
+      } else {
+        if (datasetMetadataCase_ == 29) {
+          videoObjectTrackingDatasetMetadataBuilder_.mergeFrom(value);
+        }
+        videoObjectTrackingDatasetMetadataBuilder_.setMessage(value);
+      }
+      datasetMetadataCase_ = 29;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for a dataset used for video object tracking.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.VideoObjectTrackingDatasetMetadata video_object_tracking_dataset_metadata = 29;
+     * </code>
+     */
+    public Builder clearVideoObjectTrackingDatasetMetadata() {
+      if (videoObjectTrackingDatasetMetadataBuilder_ == null) {
+        if (datasetMetadataCase_ == 29) {
+          datasetMetadataCase_ = 0;
+          datasetMetadata_ = null;
+          onChanged();
+        }
+      } else {
+        if (datasetMetadataCase_ == 29) {
+          datasetMetadataCase_ = 0;
+          datasetMetadata_ = null;
+        }
+        videoObjectTrackingDatasetMetadataBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for a dataset used for video object tracking.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.VideoObjectTrackingDatasetMetadata video_object_tracking_dataset_metadata = 29;
+     * </code>
+     */
+    public com.google.cloud.automl.v1beta1.VideoObjectTrackingDatasetMetadata.Builder
+        getVideoObjectTrackingDatasetMetadataBuilder() {
+      return getVideoObjectTrackingDatasetMetadataFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for a dataset used for video object tracking.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.VideoObjectTrackingDatasetMetadata video_object_tracking_dataset_metadata = 29;
+     * </code>
+     */
+    public com.google.cloud.automl.v1beta1.VideoObjectTrackingDatasetMetadataOrBuilder
+        getVideoObjectTrackingDatasetMetadataOrBuilder() {
+      if ((datasetMetadataCase_ == 29) && (videoObjectTrackingDatasetMetadataBuilder_ != null)) {
+        return videoObjectTrackingDatasetMetadataBuilder_.getMessageOrBuilder();
+      } else {
+        if (datasetMetadataCase_ == 29) {
+          return (com.google.cloud.automl.v1beta1.VideoObjectTrackingDatasetMetadata)
+              datasetMetadata_;
+        }
+        return com.google.cloud.automl.v1beta1.VideoObjectTrackingDatasetMetadata
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for a dataset used for video object tracking.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.VideoObjectTrackingDatasetMetadata video_object_tracking_dataset_metadata = 29;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.automl.v1beta1.VideoObjectTrackingDatasetMetadata,
+            com.google.cloud.automl.v1beta1.VideoObjectTrackingDatasetMetadata.Builder,
+            com.google.cloud.automl.v1beta1.VideoObjectTrackingDatasetMetadataOrBuilder>
+        getVideoObjectTrackingDatasetMetadataFieldBuilder() {
+      if (videoObjectTrackingDatasetMetadataBuilder_ == null) {
+        if (!(datasetMetadataCase_ == 29)) {
+          datasetMetadata_ =
+              com.google.cloud.automl.v1beta1.VideoObjectTrackingDatasetMetadata
+                  .getDefaultInstance();
+        }
+        videoObjectTrackingDatasetMetadataBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.automl.v1beta1.VideoObjectTrackingDatasetMetadata,
+                com.google.cloud.automl.v1beta1.VideoObjectTrackingDatasetMetadata.Builder,
+                com.google.cloud.automl.v1beta1.VideoObjectTrackingDatasetMetadataOrBuilder>(
+                (com.google.cloud.automl.v1beta1.VideoObjectTrackingDatasetMetadata)
+                    datasetMetadata_,
+                getParentForChildren(),
+                isClean());
+        datasetMetadata_ = null;
+      }
+      datasetMetadataCase_ = 29;
+      onChanged();
+      ;
+      return videoObjectTrackingDatasetMetadataBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<

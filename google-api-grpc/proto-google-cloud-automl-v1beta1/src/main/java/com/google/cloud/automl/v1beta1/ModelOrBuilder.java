@@ -203,6 +203,45 @@ public interface ModelOrBuilder
    *
    *
    * <pre>
+   * Metadata for video object tracking models.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1beta1.VideoObjectTrackingModelMetadata video_object_tracking_model_metadata = 21;
+   * </code>
+   */
+  boolean hasVideoObjectTrackingModelMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for video object tracking models.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1beta1.VideoObjectTrackingModelMetadata video_object_tracking_model_metadata = 21;
+   * </code>
+   */
+  com.google.cloud.automl.v1beta1.VideoObjectTrackingModelMetadata
+      getVideoObjectTrackingModelMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for video object tracking models.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1beta1.VideoObjectTrackingModelMetadata video_object_tracking_model_metadata = 21;
+   * </code>
+   */
+  com.google.cloud.automl.v1beta1.VideoObjectTrackingModelMetadataOrBuilder
+      getVideoObjectTrackingModelMetadataOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Metadata for text extraction models.
    * </pre>
    *
@@ -388,7 +427,7 @@ public interface ModelOrBuilder
    *
    * <pre>
    * Output only.
-   * Timestamp when this model was created.
+   * Timestamp when the model training finished  and can be used for prediction.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 7;</code>
@@ -399,7 +438,7 @@ public interface ModelOrBuilder
    *
    * <pre>
    * Output only.
-   * Timestamp when this model was created.
+   * Timestamp when the model training finished  and can be used for prediction.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 7;</code>
@@ -410,7 +449,7 @@ public interface ModelOrBuilder
    *
    * <pre>
    * Output only.
-   * Timestamp when this model was created.
+   * Timestamp when the model training finished  and can be used for prediction.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 7;</code>

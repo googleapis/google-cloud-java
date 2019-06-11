@@ -20,8 +20,8 @@ import com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroRows;
 import com.google.common.base.Preconditions;
 import java.io.IOException;
 import org.apache.avro.Schema;
+import org.apache.avro.generic.GenericData;
 import org.apache.avro.generic.GenericDatumReader;
-import org.apache.avro.generic.GenericRecord;
 import org.apache.avro.io.BinaryDecoder;
 import org.apache.avro.io.DatumReader;
 import org.apache.avro.io.DecoderFactory;
@@ -33,16 +33,23 @@ import org.apache.avro.io.DecoderFactory;
 public class SimpleRowReader {
 
   public interface AvroRowConsumer {
-    void accept(GenericRecord record);
+
+    /**
+     * Handler for every new Avro row that is read.
+     *
+     * @param record is Avro generic record structure. Consumers should not rely on the reference
+     *     and should copy it if needed. The record reference is reused.
+     */
+    void accept(GenericData.Record record);
   }
 
-  private final DatumReader<GenericRecord> datumReader;
+  private final DatumReader<GenericData.Record> datumReader;
 
   // Decoder object will be reused to avoid re-allocation and too much garbage collection.
   private BinaryDecoder decoder = null;
 
-  // GenericRecord object will be reused.
-  private GenericRecord row = null;
+  // Record object will be reused.
+  private GenericData.Record row = null;
 
   public SimpleRowReader(Schema schema) {
     Preconditions.checkNotNull(schema);

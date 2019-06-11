@@ -19,55 +19,15 @@ need python 3.6+ to run this tool.
 3. Verify that all unit and integration tests for the last commit have passed.
 
 4. Run `releasetool start`. Select "minor" or "patch" for the release type. This will bump the
-   artifact versions, ask you to edit release notes, and create the release pull request.
+   artifact versions, ask you to edit release notes, and create the release pull request. When
+   prompted, select yes for autorelease.
 
   **Note:** be sure to make these notes nice as they will be used for the release notes as well.
 
-## Pushing a release to Maven using Kokoro
+5. When tests pass on the release PR and you have a review from a code owner, merge the release PR.
+   This will trigger automation to stage and release google-cloud-java.
 
-To manually publish the artifacts to Maven (rather than using Kokoro), you will need to follow the
-"Additional setup for manual publishing" steps below and follow the instructions in the
-"Manually publishing" section.
-
-1. Trigger the `google-cloud-java/release/stage` Kokoro job and wait for it to complete. This will
-   stage the built artifacts and prepare them for publishing.
-
-2. Look through the logs for the `google-cloud-java/release/stage` and find the staging repository
-   ids used. They will look like `comgoogleapi-XYZ` and `comgooglecloud-XYZ`.
-
-3. Promote or drop the staged repository.
-
-  a. To publish the staged repository, trigger the `google-cloud-java/release/promote` Kokoro job for
-     each staging repository. To specify the staging repository, add an environment variable
-     configuration with `STAGING_REPOSITORY_ID=<staging repository id>` from the UI. **Note: thi 
-     will need to be run for each staging repository. It may take a few hours for the released
-     versions to be available for users to download.**
-
-  b. To drop (abort) the staged repository, trigger the `google-cloud-java/release/drop` Kokoro job
-     with the same staging repository id configuration as if you were publishing.
-
-## Publish Javadoc
-
-1. Run `git clean -x -f -d` to put the repo in a clean state.
-
-2. Locally build the repo by running `mvn install -DskipTests`.
-
-3. Run `python utilities/stage_sites.py`. This script checks out `gh-pages` branch of the
-   repository, builds the documentation site and javadocs, copies them to the branch and commits it.
-   This script does not push the docs and it must be done manually on the later step. The script
-   assumes that there is no directory called `tmp_gh-pages` in the repository root. If it is
-   present, remove it before running the script.
-
-4. Run `cd tmp_gh-pages && git push && cd ..`.
-
-5. (Optional) Run `rm -rf tmp_gh-pages` to remove the generated docs directory from your local
-   machine.
-
-## Tag the release
-
-1. Run `releasetool tag` to publish a release on Github. It will list the last few merged PRs.
-   Select the newly merged release PR. Releasetool will create the GitHub release with notes
-   extracted from the pull request and tag the new release.
+6. After the artifacts have been pushed, automation will publish the javadocs to googleapis.dev
 
 ## Prepare the next snapshot version
 
