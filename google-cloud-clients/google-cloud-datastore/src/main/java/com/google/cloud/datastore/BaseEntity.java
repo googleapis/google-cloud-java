@@ -632,7 +632,7 @@ public abstract class BaseEntity<K extends IncompleteKey> implements Serializabl
   }
 
   /** Returns the properties. */
-  public ImmutableSortedMap<String, Value<?>> getProperties() {
+  public Map<String, Value<?>> getProperties() {
     return properties;
   }
 
