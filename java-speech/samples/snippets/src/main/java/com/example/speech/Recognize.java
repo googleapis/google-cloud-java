@@ -287,7 +287,7 @@ public class Recognize {
     // Instantiates a client with GOOGLE_APPLICATION_CREDENTIALS
     try (SpeechClient speech = SpeechClient.create()) {
 
-      // Configure remote file request for Linear16
+      // Configure remote file request for FLAC
       RecognitionConfig config =
           RecognitionConfig.newBuilder()
               .setEncoding(AudioEncoding.FLAC)
@@ -336,7 +336,7 @@ public class Recognize {
     // Instantiates a client with GOOGLE_APPLICATION_CREDENTIALS
     try (SpeechClient speech = SpeechClient.create()) {
 
-      // Configure remote file request for Linear16
+      // Configure remote file request for FLAC
       RecognitionConfig config =
           RecognitionConfig.newBuilder()
               .setEncoding(AudioEncoding.FLAC)
