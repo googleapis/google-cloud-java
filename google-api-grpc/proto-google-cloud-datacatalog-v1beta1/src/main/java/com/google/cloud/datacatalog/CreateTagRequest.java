@@ -117,6 +117,8 @@ public final class CreateTagRequest extends com.google.protobuf.GeneratedMessage
    * The name of the resource to attach this tag to. Tags can be attached to
    * Entries. (example:
    * "projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}").
+   * Note that this Tag and its child resources may not actually be stored in
+   * the location in this name.
    * </pre>
    *
    * <code>string parent = 1;</code>
@@ -140,6 +142,8 @@ public final class CreateTagRequest extends com.google.protobuf.GeneratedMessage
    * The name of the resource to attach this tag to. Tags can be attached to
    * Entries. (example:
    * "projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}").
+   * Note that this Tag and its child resources may not actually be stored in
+   * the location in this name.
    * </pre>
    *
    * <code>string parent = 1;</code>
@@ -549,6 +553,8 @@ public final class CreateTagRequest extends com.google.protobuf.GeneratedMessage
      * The name of the resource to attach this tag to. Tags can be attached to
      * Entries. (example:
      * "projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}").
+     * Note that this Tag and its child resources may not actually be stored in
+     * the location in this name.
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -572,6 +578,8 @@ public final class CreateTagRequest extends com.google.protobuf.GeneratedMessage
      * The name of the resource to attach this tag to. Tags can be attached to
      * Entries. (example:
      * "projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}").
+     * Note that this Tag and its child resources may not actually be stored in
+     * the location in this name.
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -595,6 +603,8 @@ public final class CreateTagRequest extends com.google.protobuf.GeneratedMessage
      * The name of the resource to attach this tag to. Tags can be attached to
      * Entries. (example:
      * "projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}").
+     * Note that this Tag and its child resources may not actually be stored in
+     * the location in this name.
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -616,6 +626,8 @@ public final class CreateTagRequest extends com.google.protobuf.GeneratedMessage
      * The name of the resource to attach this tag to. Tags can be attached to
      * Entries. (example:
      * "projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}").
+     * Note that this Tag and its child resources may not actually be stored in
+     * the location in this name.
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -634,6 +646,8 @@ public final class CreateTagRequest extends com.google.protobuf.GeneratedMessage
      * The name of the resource to attach this tag to. Tags can be attached to
      * Entries. (example:
      * "projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}").
+     * Note that this Tag and its child resources may not actually be stored in
+     * the location in this name.
      * </pre>
      *
      * <code>string parent = 1;</code>
