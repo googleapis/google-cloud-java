@@ -212,20 +212,14 @@ public class ITBigQuerySnippets {
     String tableName = "test_write_and_list_table_data";
     String fieldName = "string_field";
     assertNotNull(bigquerySnippets.createTable(DATASET, tableName, fieldName));
-    // Add rows from string
-    long outputRows =
-        bigquerySnippets.writeToTable(DATASET, tableName, "StringValue1\nStringValue2\n", "us");
-    assertEquals(2L, outputRows);
     // Add rows from file
     Path csvPath =
         Paths.get(Resources.getResource("bigquery/test_write_and_list_table_data.csv").toURI());
-    outputRows = bigquerySnippets.writeFileToTable(DATASET, tableName, csvPath, "us");
+    long outputRows = bigquerySnippets.writeFileToTable(DATASET, tableName, csvPath, "us");
     assertEquals(2L, outputRows);
     // List all rows
     TableResult tableData = bigquerySnippets.listTableData(DATASET, tableName);
     String tableDataString = tableData.toString();
-    assertTrue(tableDataString.contains("StringValue1"));
-    assertTrue(tableDataString.contains("StringValue2"));
     assertTrue(tableDataString.contains("StringValue3"));
     assertTrue(tableDataString.contains("StringValue4"));
     assertTrue(bigquerySnippets.deleteTable(DATASET, tableName));
