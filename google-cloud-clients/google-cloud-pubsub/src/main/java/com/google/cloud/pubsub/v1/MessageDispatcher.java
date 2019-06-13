@@ -433,9 +433,9 @@ class MessageDispatcher {
 
   @InternalApi
   ApiFuture<?> processOutstandingAckOperations() {
-    final List<PendingModifyAckDeadline> modifyAckDeadlinesToSend = new ArrayList<>();
+    List<PendingModifyAckDeadline> modifyAckDeadlinesToSend = new ArrayList<>();
 
-    final List<String> acksToSend = new ArrayList<>();
+    List<String> acksToSend = new ArrayList<>();
     pendingAcks.drainTo(acksToSend);
     logger.log(Level.FINER, "Sending {0} acks", acksToSend.size());
 
