@@ -99,10 +99,16 @@ public class HttpStorageRpc implements StorageRpc {
 
   private static final long MEGABYTE = 1024L * 1024L;
 
-  public HttpStorageRpc(StorageOptions options) {
-    HttpTransportOptions transportOptions = (HttpTransportOptions) options.getTransportOptions();
+  public HttpStorageRpc(final StorageOptions options) {
+    final HttpTransportOptions transportOptions = (HttpTransportOptions) options.getTransportOptions();
     HttpTransport transport = transportOptions.getHttpTransportFactory().create();
-    HttpRequestInitializer initializer = transportOptions.getHttpRequestInitializer(options);
+    HttpRequestInitializer initializer = new HttpRequestInitializer() {
+      final HttpRequestInitializer initializer = transportOptions.getHttpRequestInitializer(options);
+      @Override public void initialize(HttpRequest httpRequest) throws IOException {
+        initializer.initialize(httpRequest);
+        httpRequest.setResponseReturnRawInputStream(true);
+      }
+    };
     this.options = options;
 
     // Open Census initialization
@@ -668,23 +674,7 @@ public class HttpStorageRpc implements StorageRpc {
       setEncryptionHeaders(requestHeaders, ENCRYPTION_KEY_PREFIX, options);
       ByteArrayOutputStream output = new ByteArrayOutputStream(bytes);
       HttpResponse httpResponse = req.executeMedia();
-      // todo(mziccard) remove when
-      // https://github.com/googleapis/google-cloud-java/issues/982 is fixed
-      String contentEncoding = httpResponse.getContentEncoding();
-      if (contentEncoding != null && contentEncoding.contains("gzip")) {
-        try {
-          Field responseField = httpResponse.getClass().getDeclaredField("response");
-          responseField.setAccessible(true);
-          LowLevelHttpResponse lowLevelHttpResponse =
-              (LowLevelHttpResponse) responseField.get(httpResponse);
-          IOUtils.copy(lowLevelHttpResponse.getContent(), output);
-        } catch (IllegalAccessException | NoSuchFieldException ex) {
-          throw new StorageException(
-              BaseServiceException.UNKNOWN_CODE, "Error parsing gzip response", ex);
-        }
-      } else {
-        httpResponse.download(output);
-      }
+      httpResponse.download(output);
       String etag = req.getLastResponseHeaders().getETag();
       return Tuple.of(etag, output.toByteArray());
     } catch (IOException ex) {
