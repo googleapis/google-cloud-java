@@ -55,13 +55,6 @@ import org.threeten.bp.Duration;
  *   <li>The default service address (bigtable.googleapis.com) and default port (443) are used.
  *   <li>Credentials are acquired automatically through Application Default Credentials.
  *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
- *   <li>This settings are mixed for streaming and non-streaming operation. In case of streaming
- *       operations, RPC timeout applies to each row and for the non-streaming operations, RPC
- *       timeout considered as deadline for every call.
- *   <li>Each operation setting accepts RPC and total time out. Here, RPC timeouts are for each
- *       attempt to get the result whereas total timeout applies to the operation timeout.
- *   <li>RetryDelayMultiplier controls the change in retry delay. After initial attempt, subsequent
- *       attempts are calculated by multiplying the retry delay of the previous call.
  * </ul>
  *
  * <p>The only required setting is the instance name.
@@ -197,21 +190,21 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
    *
    * <p>This is idempotent and streaming operation.
    *
-   * <p>The idle timeout is configured via {@code ServerStreamingCallSettings#getIdleTimeout}. This
-   * timer will terminate any stream that has not has seen any demand or activity in the configured
-   * interval. To turn off idle checks, set the idleTimeout to {@link Duration#ZERO}.
+   * <p>Default settings:
    *
-   * <p>Retries will be attempted if RPC failed with {@link Code#DEADLINE_EXCEEDED} and {@link
-   * Code#UNAVAILABLE} failure code.
-   *
-   * <p>RetryDelay starts with 100ms or 0.1 seconds, which multiplies with 1.3 times on every
-   * reattempt till a max retry timeout value of 60 seconds.
-   *
-   * <p>RPC timeout is 20 seconds.
-   *
-   * <p>Total timeout for this operation is 60 mins or 1 hour.
-   *
-   * @see RetrySettings for more explanation.
+   * <ul>
+   *   <li>{@link ServerStreamingCallSettings.Builder#setIdleTimeout Default idle timeout} is set to
+   *       5 mins.
+   *   <li>Retry {@link ServerStreamingCallSettings.Builder#setRetryableCodes error codes} are:
+   *       {@link Code#DEADLINE_EXCEEDED} and {@link Code#UNAVAILABLE}.
+   *   <li>RetryDelay between failed attempt {@link RetrySettings.Builder#setInitialRetryDelay
+   *       starts} at 100ms and {@link RetrySettings.Builder#setRetryDelayMultiplier increases
+   *       exponentially} by a factor of 1.3 until a {@link RetrySettings.Builder#setMaxRetryDelay
+   *       maximum of} 60 seconds.
+   *   <li>The default read timeout for {@link RetrySettings.Builder#setMaxRpcTimeout each row} in a
+   *       response stream is 20 seconds and the timeout to read the {@link
+   *       RetrySettings.Builder#setTotalTimeout entire stream} is 1 hour.
+   * </ul>
    */
   public ServerStreamingCallSettings<Query, Row> readRowsSettings() {
     return readRowsSettings;
@@ -222,17 +215,19 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
    *
    * <p>This is idempotent and non-streaming operation.
    *
-   * <p>Retries will be attempted if RPC failed with {@link Code#DEADLINE_EXCEEDED} and {@link
-   * Code#UNAVAILABLE} failure code.
+   * <p>Default settings:
    *
-   * <p>RetryDelay starts with 100ms or 0.1 seconds, which multiplies with 1.3 times on every
-   * reattempt till a max retry timeout value of 60 seconds.
-   *
-   * <p>RPC timeout is 20 seconds.
-   *
-   * <p>Total timeout for this operation is 600 seconds or 10 mins.
-   *
-   * @see RetrySettings for more explanation.
+   * <ul>
+   *   <li>Retry {@link UnaryCallSettings.Builder#setRetryableCodes error codes} are: {@link
+   *       Code#DEADLINE_EXCEEDED} and {@link Code#UNAVAILABLE}.
+   *   <li>RetryDelay between failed attempt {@link RetrySettings.Builder#setInitialRetryDelay
+   *       starts} at 100ms and {@link RetrySettings.Builder#setRetryDelayMultiplier increases
+   *       exponentially} by a factor of 1.3 until a {@link RetrySettings.Builder#setMaxRetryDelay
+   *       maximum of} 60 seconds.
+   *   <li>The default timeout for {@link RetrySettings.Builder#setMaxRpcTimeout each attempt} is 20
+   *       seconds and the timeout for {@link RetrySettings.Builder#setTotalTimeout entire
+   *       operation} across all of the attempts is 10 mins.
+   * </ul>
    */
   public UnaryCallSettings<String, List<KeyOffset>> sampleRowKeysSettings() {
     return sampleRowKeysSettings;
@@ -243,17 +238,19 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
    *
    * <p>This is an idempotent and non-streaming operation.
    *
-   * <p>
+   * <p>Default settings:
    *
-   * <p>Retries will be attempted if RPC failed with {@link Code#DEADLINE_EXCEEDED} and {@link
-   * Code#UNAVAILABLE} failure code.
-   *
-   * <p>RetryDelay starts with 100ms or 0.1 seconds, which multiplies with 1.3 times on every
-   * reattempt till a max retry timeout value of 60 seconds.
-   *
-   * <p>RPC timeout is 20 seconds.
-   *
-   * <p>Total timeout for this operation is 600 seconds or 10 mins.
+   * <ul>
+   *   <li>Retry {@link UnaryCallSettings.Builder#setRetryableCodes error codes} are: {@link
+   *       Code#DEADLINE_EXCEEDED} and {@link Code#UNAVAILABLE}.
+   *   <li>RetryDelay between failed attempt {@link RetrySettings.Builder#setInitialRetryDelay
+   *       starts} at 100ms and {@link RetrySettings.Builder#setRetryDelayMultiplier increases
+   *       exponentially} by a factor of 1.3 until a {@link RetrySettings.Builder#setMaxRetryDelay
+   *       maximum of} 60 seconds.
+   *   <li>The default timeout for {@link RetrySettings.Builder#setMaxRpcTimeout each attempt} is 20
+   *       seconds and the timeout for {@link RetrySettings.Builder#setTotalTimeout entire
+   *       operation} across all of the attempts is 10 mins.
+   * </ul>
    *
    * @see RetrySettings for more explanation.
    */
@@ -266,15 +263,19 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
    *
    * <p>This is an idempotent and non-streaming operation.
    *
-   * <p>Retries will be attempted if RPC failed * with {@link Code#DEADLINE_EXCEEDED} and {@link
-   * Code#UNAVAILABLE} failure code.
+   * <p>Default settings:
    *
-   * <p>RetryDelay starts with 100ms or 0.1 seconds, which multiplies with 1.3 times on every
-   * reattempt till a max retry timeout value of 60 seconds.
-   *
-   * <p>RPC timeout is 20 seconds.
-   *
-   * <p>Total timeout for this operation is 600 seconds or 10 mins.
+   * <ul>
+   *   <li>Retry {@link UnaryCallSettings.Builder#setRetryableCodes error codes} are: {@link
+   *       Code#DEADLINE_EXCEEDED} and {@link Code#UNAVAILABLE}.
+   *   <li>RetryDelay between failed attempt {@link RetrySettings.Builder#setInitialRetryDelay
+   *       starts} at 100ms and {@link RetrySettings.Builder#setRetryDelayMultiplier increases
+   *       exponentially} by a factor of 1.3 until a {@link RetrySettings.Builder#setMaxRetryDelay
+   *       maximum of} 60 seconds.
+   *   <li>The default timeout for {@link RetrySettings.Builder#setMaxRpcTimeout each attempt} is 20
+   *       seconds and the timeout for {@link RetrySettings.Builder#setTotalTimeout entire
+   *       operation} across all of the attempts is 10 mins.
+   * </ul>
    *
    * @see RetrySettings for more explanation.
    */
@@ -289,28 +290,38 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
    * (bulkMutateRowsCallable) and automatic batched calls (bulkMutateRowsBatchingCallable). The
    * {@link RowMutation} request signature is ignored for the manual batched calls.
    *
-   * <p>Retries will be attempted if RPC are failed with {@link Code#DEADLINE_EXCEEDED}, {@link
-   * Code#UNAVAILABLE} or {@link Code#ABORTED} failure code.
-   *
-   * <p>RetryDelay starts with 100ms or 0.1 seconds, which multiplies with 1.3 times on every
-   * reattempt till a max retry timeout value of 60 seconds.
-   *
-   * <p>RPC timeout is 20 seconds.
-   *
-   * <p>Total timeout for this operation is 600 seconds or 10 mins.
-   *
-   * <p>On breach of certain triggers, this batch initiates the processing of accumulated requests.
-   * These triggers could be configured via {@link BatchingSettings}. Currently it triggers when:
+   * <p>Default settings:
    *
    * <ul>
-   *   <li>100 or more requests are sent.
-   *   <li>Requests size reaches to 20MB.
-   *   <li>An interval of 1 second passes after batching initialization or last processed batch.
+   *   <li>Retry {@link UnaryCallSettings.Builder#setRetryableCodes error codes} are: {@link
+   *       Code#DEADLINE_EXCEEDED}, {@link Code#UNAVAILABLE} and {@link Code#ABORTED}.
+   *   <li>RetryDelay between failed attempt {@link RetrySettings.Builder#setInitialRetryDelay
+   *       starts} at 100ms and {@link RetrySettings.Builder#setRetryDelayMultiplier increases
+   *       exponentially} by a factor of 1.3 until a {@link RetrySettings.Builder#setMaxRetryDelay
+   *       maximum of} 60 seconds.
+   *   <li>The default timeout for {@link RetrySettings.Builder#setMaxRpcTimeout each attempt} is 20
+   *       seconds and the timeout for {@link RetrySettings.Builder#setTotalTimeout entire
+   *       operation} across all of the attempts is 10 mins.
    * </ul>
    *
-   * <p>When size of the request in processing state reaches default value of 100MB or the request
-   * count reaches default count of 1000 then the batching will be blocked till some of the request
-   * resolves.
+   * <p>On breach of certain triggers, the operation initiates processing of accumulated request for
+   * which the default settings are:
+   *
+   * <ul>
+   *   <li>When the {@link BatchingSettings.Builder#setElementCountThreshold request count} reaches
+   *       100.
+   *   <li>When accumulated {@link BatchingSettings.Builder#setRequestByteThreshold request size}
+   *       reaches to 20MB.
+   *   <li>When an {@link BatchingSettings.Builder#setDelayThreshold interval of} 1 second passes
+   *       after batching initialization or last processed batch.
+   * </ul>
+   *
+   * <p>When the pending {@link FlowControlSettings.Builder#setMaxOutstandingElementCount request
+   * count} reaches a default of 1000 or their {@link
+   * FlowControlSettings.Builder#setMaxOutstandingRequestBytes accumulated size} reaches default
+   * value of 100MB, then this operation will by default be {@link
+   * FlowControlSettings.Builder#setLimitExceededBehavior blocked} until some of the pending batch
+   * are resolved.
    *
    * @see RetrySettings for more explanation.
    * @see BatchingSettings for batch related configuration explanation.
@@ -324,9 +335,8 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
    *
    * <p>This is a non-idempotent and non-streaming operation.
    *
-   * <p>By default non-idempotent operations would not reattempt in case of RPC failure.
-   *
-   * <p>Total timeout for this operation is 600 seconds or 10 mins.
+   * <p>By default this operation does not reattempt in case of RPC failure. The default timeout for
+   * the {@link RetrySettings.Builder#setTotalTimeout entire operation} is 10 mins.
    *
    * @see RetrySettings for more explanation.
    */
@@ -339,9 +349,8 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
    *
    * <p>This is a non-idempotent and non-streaming operation.
    *
-   * <p>By default non-idempotent operations would not reattempt in case of RPC failure.
-   *
-   * <p>Total timeout for this operation is 600 seconds or 10 mins.
+   * <p>By default this operation does not reattempt in case of RPC failure. The default timeout for
+   * the {@link RetrySettings.Builder#setTotalTimeout entire operation} is 10 mins.
    *
    * @see RetrySettings for more explanation.
    */
