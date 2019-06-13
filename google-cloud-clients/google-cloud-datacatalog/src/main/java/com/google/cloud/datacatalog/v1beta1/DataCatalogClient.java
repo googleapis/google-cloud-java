@@ -467,7 +467,12 @@ public class DataCatalogClient implements BackgroundResource {
    * return the complete resource, only the resource identifier and high level fields. Clients can
    * subsequentally call Get methods.
    *
-   * <p>See [Data Catalog Search Syntax](/data-catalog/docs/how-to/search-reference)
+   * <p>Note that searches do not have full recall. There may be results that match your query but
+   * are not returned, even in subsequent pages of results. These missing results may vary across
+   * repeated calls to search. Do not rely on this method if you need to guarantee full recall.
+   *
+   * <p>See [Data Catalog Search Syntax](/data-catalog/docs/how-to/search-reference) for more
+   * information.
    *
    * <p>Sample code:
    *
@@ -492,8 +497,7 @@ public class DataCatalogClient implements BackgroundResource {
    * @param orderBy Specifies the ordering of results, currently supported case-sensitive choices
    *     are: &lt;ul&gt; &lt;li&gt; relevance &lt;/li&gt; &lt;li&gt; last_access_timestamp
    *     [asc|desc], defaults to descending if not specified, &lt;/li&gt; &lt;li&gt;
-   *     last_modified_timestamp [asc|desc], defaults to descending if not specified, &lt;/li&gt;
-   *     &lt;li&gt; title [asc|desc], defaults to ascending if not specified. &lt;/li&gt;
+   *     last_modified_timestamp [asc|desc], defaults to descending if not specified. &lt;/li&gt;
    *     &lt;/ul&gt;
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -516,7 +520,12 @@ public class DataCatalogClient implements BackgroundResource {
    * return the complete resource, only the resource identifier and high level fields. Clients can
    * subsequentally call Get methods.
    *
-   * <p>See [Data Catalog Search Syntax](/data-catalog/docs/how-to/search-reference)
+   * <p>Note that searches do not have full recall. There may be results that match your query but
+   * are not returned, even in subsequent pages of results. These missing results may vary across
+   * repeated calls to search. Do not rely on this method if you need to guarantee full recall.
+   *
+   * <p>See [Data Catalog Search Syntax](/data-catalog/docs/how-to/search-reference) for more
+   * information.
    *
    * <p>Sample code:
    *
@@ -549,7 +558,12 @@ public class DataCatalogClient implements BackgroundResource {
    * return the complete resource, only the resource identifier and high level fields. Clients can
    * subsequentally call Get methods.
    *
-   * <p>See [Data Catalog Search Syntax](/data-catalog/docs/how-to/search-reference)
+   * <p>Note that searches do not have full recall. There may be results that match your query but
+   * are not returned, even in subsequent pages of results. These missing results may vary across
+   * repeated calls to search. Do not rely on this method if you need to guarantee full recall.
+   *
+   * <p>See [Data Catalog Search Syntax](/data-catalog/docs/how-to/search-reference) for more
+   * information.
    *
    * <p>Sample code:
    *
@@ -582,7 +596,12 @@ public class DataCatalogClient implements BackgroundResource {
    * return the complete resource, only the resource identifier and high level fields. Clients can
    * subsequentally call Get methods.
    *
-   * <p>See [Data Catalog Search Syntax](/data-catalog/docs/how-to/search-reference)
+   * <p>Note that searches do not have full recall. There may be results that match your query but
+   * are not returned, even in subsequent pages of results. These missing results may vary across
+   * repeated calls to search. Do not rely on this method if you need to guarantee full recall.
+   *
+   * <p>See [Data Catalog Search Syntax](/data-catalog/docs/how-to/search-reference) for more
+   * information.
    *
    * <p>Sample code:
    *
@@ -813,7 +832,8 @@ public class DataCatalogClient implements BackgroundResource {
    * </code></pre>
    *
    * @param parent Required. The name of the project and the location this template is in. Example:
-   *     "projects/{project_id}/locations/{location}".
+   *     "projects/{project_id}/locations/{location}". Note that this TagTemplate and its child
+   *     resources may not actually be stored in the location in this name.
    * @param tagTemplateId Required. The id of the tag template to create.
    * @param tagTemplate Required. The tag template to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1126,7 +1146,8 @@ public class DataCatalogClient implements BackgroundResource {
    * </code></pre>
    *
    * @param parent Required. The name of the project this template is in. Example:
-   *     "projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}".
+   *     "projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}". Note that this
+   *     TagTemplateField may not actually be stored in the location in this name.
    * @param tagTemplateFieldId Required. The id of the tag template field to create. Field ids can
    *     contain letters (both uppercase and lowercase), numbers (0-9), underscores (_) and dashes
    *     (-). Field ids must be at least 1 character long and at most 128 characters long. Field ids
@@ -1464,6 +1485,8 @@ public class DataCatalogClient implements BackgroundResource {
    * @param parent Required. The name of the resource to attach this tag to. Tags can be attached to
    *     Entries. (example:
    *     "projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}").
+   *     Note that this Tag and its child resources may not actually be stored in the location in
+   *     this name.
    * @param tag Required. The tag to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */

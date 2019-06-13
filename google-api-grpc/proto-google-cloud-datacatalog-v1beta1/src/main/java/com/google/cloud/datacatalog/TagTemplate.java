@@ -139,6 +139,8 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
    * [UpdateTagTemplateRequest][google.cloud.datacatalog.v1beta1.UpdateTagTemplateRequest].
    * The resource name of the tag template in URL format. For example,
    * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}.
+   * Note that this TagTemplate and its child resources may not actually be
+   * stored in the location in this name.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -162,6 +164,8 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
    * [UpdateTagTemplateRequest][google.cloud.datacatalog.v1beta1.UpdateTagTemplateRequest].
    * The resource name of the tag template in URL format. For example,
    * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}.
+   * Note that this TagTemplate and its child resources may not actually be
+   * stored in the location in this name.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -742,6 +746,8 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
      * [UpdateTagTemplateRequest][google.cloud.datacatalog.v1beta1.UpdateTagTemplateRequest].
      * The resource name of the tag template in URL format. For example,
      * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}.
+     * Note that this TagTemplate and its child resources may not actually be
+     * stored in the location in this name.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -765,6 +771,8 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
      * [UpdateTagTemplateRequest][google.cloud.datacatalog.v1beta1.UpdateTagTemplateRequest].
      * The resource name of the tag template in URL format. For example,
      * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}.
+     * Note that this TagTemplate and its child resources may not actually be
+     * stored in the location in this name.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -788,6 +796,8 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
      * [UpdateTagTemplateRequest][google.cloud.datacatalog.v1beta1.UpdateTagTemplateRequest].
      * The resource name of the tag template in URL format. For example,
      * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}.
+     * Note that this TagTemplate and its child resources may not actually be
+     * stored in the location in this name.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -809,6 +819,8 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
      * [UpdateTagTemplateRequest][google.cloud.datacatalog.v1beta1.UpdateTagTemplateRequest].
      * The resource name of the tag template in URL format. For example,
      * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}.
+     * Note that this TagTemplate and its child resources may not actually be
+     * stored in the location in this name.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -827,6 +839,8 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
      * [UpdateTagTemplateRequest][google.cloud.datacatalog.v1beta1.UpdateTagTemplateRequest].
      * The resource name of the tag template in URL format. For example,
      * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}.
+     * Note that this TagTemplate and its child resources may not actually be
+     * stored in the location in this name.
      * </pre>
      *
      * <code>string name = 1;</code>
