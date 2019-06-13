@@ -14,6 +14,8 @@ public interface CreateTagTemplateFieldRequestOrBuilder
    * <pre>
    * Required. The name of the project this template is in. Example:
    * "projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}".
+   * Note that this TagTemplateField may not actually be stored in the location
+   * in this name.
    * </pre>
    *
    * <code>string parent = 1;</code>
@@ -25,6 +27,8 @@ public interface CreateTagTemplateFieldRequestOrBuilder
    * <pre>
    * Required. The name of the project this template is in. Example:
    * "projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}".
+   * Note that this TagTemplateField may not actually be stored in the location
+   * in this name.
    * </pre>
    *
    * <code>string parent = 1;</code>
