@@ -320,7 +320,8 @@ public class BigQuerySnippets {
     TableId tableId = TableId.of(datasetName, tableName);
     WriteChannelConfiguration writeChannelConfiguration =
         WriteChannelConfiguration.newBuilder(tableId).setFormatOptions(FormatOptions.csv()).build();
-    // Generally, location can be inferred based on the location of the referenced dataset.  However,
+    // Generally, location can be inferred based on the location of the referenced dataset.
+    // However,
     // it can also be set explicitly to force job execution to be routed to a specific processing
     // location.  See https://cloud.google.com/bigquery/docs/locations for more info.
     JobId jobId = JobId.newBuilder().setLocation(location).build();
