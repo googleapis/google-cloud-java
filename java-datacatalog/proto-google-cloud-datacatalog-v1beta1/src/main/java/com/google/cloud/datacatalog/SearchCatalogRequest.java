@@ -1568,8 +1568,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
    *   &lt;li&gt; last_access_timestamp [asc|desc], defaults to descending if not
    *   specified, &lt;/li&gt;
    *   &lt;li&gt; last_modified_timestamp [asc|desc], defaults to descending if not
-   *   specified, &lt;/li&gt;
-   *   &lt;li&gt; title [asc|desc], defaults to ascending if not specified. &lt;/li&gt;
+   *   specified. &lt;/li&gt;
    * &lt;/ul&gt;
    * </pre>
    *
@@ -1597,8 +1596,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
    *   &lt;li&gt; last_access_timestamp [asc|desc], defaults to descending if not
    *   specified, &lt;/li&gt;
    *   &lt;li&gt; last_modified_timestamp [asc|desc], defaults to descending if not
-   *   specified, &lt;/li&gt;
-   *   &lt;li&gt; title [asc|desc], defaults to ascending if not specified. &lt;/li&gt;
+   *   specified. &lt;/li&gt;
    * &lt;/ul&gt;
    * </pre>
    *
@@ -2504,8 +2502,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *   &lt;li&gt; last_access_timestamp [asc|desc], defaults to descending if not
      *   specified, &lt;/li&gt;
      *   &lt;li&gt; last_modified_timestamp [asc|desc], defaults to descending if not
-     *   specified, &lt;/li&gt;
-     *   &lt;li&gt; title [asc|desc], defaults to ascending if not specified. &lt;/li&gt;
+     *   specified. &lt;/li&gt;
      * &lt;/ul&gt;
      * </pre>
      *
@@ -2533,8 +2530,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *   &lt;li&gt; last_access_timestamp [asc|desc], defaults to descending if not
      *   specified, &lt;/li&gt;
      *   &lt;li&gt; last_modified_timestamp [asc|desc], defaults to descending if not
-     *   specified, &lt;/li&gt;
-     *   &lt;li&gt; title [asc|desc], defaults to ascending if not specified. &lt;/li&gt;
+     *   specified. &lt;/li&gt;
      * &lt;/ul&gt;
      * </pre>
      *
@@ -2562,8 +2558,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *   &lt;li&gt; last_access_timestamp [asc|desc], defaults to descending if not
      *   specified, &lt;/li&gt;
      *   &lt;li&gt; last_modified_timestamp [asc|desc], defaults to descending if not
-     *   specified, &lt;/li&gt;
-     *   &lt;li&gt; title [asc|desc], defaults to ascending if not specified. &lt;/li&gt;
+     *   specified. &lt;/li&gt;
      * &lt;/ul&gt;
      * </pre>
      *
@@ -2589,8 +2584,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *   &lt;li&gt; last_access_timestamp [asc|desc], defaults to descending if not
      *   specified, &lt;/li&gt;
      *   &lt;li&gt; last_modified_timestamp [asc|desc], defaults to descending if not
-     *   specified, &lt;/li&gt;
-     *   &lt;li&gt; title [asc|desc], defaults to ascending if not specified. &lt;/li&gt;
+     *   specified. &lt;/li&gt;
      * &lt;/ul&gt;
      * </pre>
      *
@@ -2613,8 +2607,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *   &lt;li&gt; last_access_timestamp [asc|desc], defaults to descending if not
      *   specified, &lt;/li&gt;
      *   &lt;li&gt; last_modified_timestamp [asc|desc], defaults to descending if not
-     *   specified, &lt;/li&gt;
-     *   &lt;li&gt; title [asc|desc], defaults to ascending if not specified. &lt;/li&gt;
+     *   specified. &lt;/li&gt;
      * &lt;/ul&gt;
      * </pre>
      *

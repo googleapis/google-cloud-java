@@ -13,7 +13,9 @@ public interface CreateTagTemplateRequestOrBuilder
    *
    * <pre>
    * Required. The name of the project and the location this template is in.
-   * Example: "projects/{project_id}/locations/{location}".
+   * Example: "projects/{project_id}/locations/{location}". Note that this
+   * TagTemplate and its child resources may not actually be stored in the
+   * location in this name.
    * </pre>
    *
    * <code>string parent = 1;</code>
@@ -24,7 +26,9 @@ public interface CreateTagTemplateRequestOrBuilder
    *
    * <pre>
    * Required. The name of the project and the location this template is in.
-   * Example: "projects/{project_id}/locations/{location}".
+   * Example: "projects/{project_id}/locations/{location}". Note that this
+   * TagTemplate and its child resources may not actually be stored in the
+   * location in this name.
    * </pre>
    *
    * <code>string parent = 1;</code>

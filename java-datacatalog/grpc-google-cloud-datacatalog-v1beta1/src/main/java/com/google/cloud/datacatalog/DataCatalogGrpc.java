@@ -1096,8 +1096,12 @@ public final class DataCatalogGrpc {
      * (https://cloud.google.com/apis/design/custom_methods) and does not return
      * the complete resource, only the resource identifier and high level
      * fields. Clients can subsequentally call Get methods.
+     * Note that searches do not have full recall. There may be results that match
+     * your query but are not returned, even in subsequent pages of results. These
+     * missing results may vary across repeated calls to search. Do not rely on
+     * this method if you need to guarantee full recall.
      * See [Data Catalog Search
-     * Syntax](/data-catalog/docs/how-to/search-reference)
+     * Syntax](/data-catalog/docs/how-to/search-reference) for more information.
      * </pre>
      */
     public void searchCatalog(
@@ -1537,8 +1541,12 @@ public final class DataCatalogGrpc {
      * (https://cloud.google.com/apis/design/custom_methods) and does not return
      * the complete resource, only the resource identifier and high level
      * fields. Clients can subsequentally call Get methods.
+     * Note that searches do not have full recall. There may be results that match
+     * your query but are not returned, even in subsequent pages of results. These
+     * missing results may vary across repeated calls to search. Do not rely on
+     * this method if you need to guarantee full recall.
      * See [Data Catalog Search
-     * Syntax](/data-catalog/docs/how-to/search-reference)
+     * Syntax](/data-catalog/docs/how-to/search-reference) for more information.
      * </pre>
      */
     public void searchCatalog(
@@ -1910,8 +1918,12 @@ public final class DataCatalogGrpc {
      * (https://cloud.google.com/apis/design/custom_methods) and does not return
      * the complete resource, only the resource identifier and high level
      * fields. Clients can subsequentally call Get methods.
+     * Note that searches do not have full recall. There may be results that match
+     * your query but are not returned, even in subsequent pages of results. These
+     * missing results may vary across repeated calls to search. Do not rely on
+     * this method if you need to guarantee full recall.
      * See [Data Catalog Search
-     * Syntax](/data-catalog/docs/how-to/search-reference)
+     * Syntax](/data-catalog/docs/how-to/search-reference) for more information.
      * </pre>
      */
     public com.google.cloud.datacatalog.SearchCatalogResponse searchCatalog(
@@ -2213,8 +2225,12 @@ public final class DataCatalogGrpc {
      * (https://cloud.google.com/apis/design/custom_methods) and does not return
      * the complete resource, only the resource identifier and high level
      * fields. Clients can subsequentally call Get methods.
+     * Note that searches do not have full recall. There may be results that match
+     * your query but are not returned, even in subsequent pages of results. These
+     * missing results may vary across repeated calls to search. Do not rely on
+     * this method if you need to guarantee full recall.
      * See [Data Catalog Search
-     * Syntax](/data-catalog/docs/how-to/search-reference)
+     * Syntax](/data-catalog/docs/how-to/search-reference) for more information.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
