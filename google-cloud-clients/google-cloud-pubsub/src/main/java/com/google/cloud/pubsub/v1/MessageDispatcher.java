@@ -17,6 +17,7 @@
 package com.google.cloud.pubsub.v1;
 
 import com.google.api.core.ApiClock;
+import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutureCallback;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.InternalApi;
@@ -36,6 +37,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executor;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ScheduledExecutorService;
@@ -180,7 +182,7 @@ class MessageDispatcher {
   }
 
   interface AckProcessor {
-    void sendAckOperations(
+    ApiFuture<?> sendAckOperations(
         List<String> acksToSend, List<PendingModifyAckDeadline> ackDeadlineExtensions);
   }
 
@@ -277,10 +279,12 @@ class MessageDispatcher {
       }
       backgroundJob = null;
       setExtendedDeadlineFuture = null;
+      processOutstandingAckOperations().get();
+    } catch (InterruptedException | ExecutionException e) {
+      throw new RuntimeException(e);
     } finally {
       jobLock.unlock();
     }
-    processOutstandingAckOperations();
   }
 
   @InternalApi
@@ -428,10 +432,10 @@ class MessageDispatcher {
   }
 
   @InternalApi
-  void processOutstandingAckOperations() {
-    List<PendingModifyAckDeadline> modifyAckDeadlinesToSend = new ArrayList<>();
+  ApiFuture<?> processOutstandingAckOperations() {
+    final List<PendingModifyAckDeadline> modifyAckDeadlinesToSend = new ArrayList<>();
 
-    List<String> acksToSend = new ArrayList<>();
+    final List<String> acksToSend = new ArrayList<>();
     pendingAcks.drainTo(acksToSend);
     logger.log(Level.FINER, "Sending {0} acks", acksToSend.size());
 
@@ -450,7 +454,7 @@ class MessageDispatcher {
       modifyAckDeadlinesToSend.add(receiptsToSend);
     }
 
-    ackProcessor.sendAckOperations(acksToSend, modifyAckDeadlinesToSend);
+    return ackProcessor.sendAckOperations(acksToSend, modifyAckDeadlinesToSend);
   }
 
   private Instant now() {

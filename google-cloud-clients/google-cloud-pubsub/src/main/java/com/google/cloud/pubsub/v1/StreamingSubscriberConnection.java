@@ -44,6 +44,7 @@ import com.google.pubsub.v1.ModifyAckDeadlineRequest;
 import com.google.pubsub.v1.StreamingPullRequest;
 import com.google.pubsub.v1.StreamingPullResponse;
 import io.grpc.Status;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
@@ -267,8 +268,9 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
   }
 
   @Override
-  public void sendAckOperations(
+  public ApiFuture<?> sendAckOperations(
       List<String> acksToSend, List<PendingModifyAckDeadline> ackDeadlineExtensions) {
+    List<ApiFuture<Empty>> apiFutures = new ArrayList<>();
     ApiFutureCallback<Empty> loggingCallback =
         new ApiFutureCallback<Empty>() {
           @Override
@@ -294,6 +296,7 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
                         .setAckDeadlineSeconds(modack.deadlineExtensionSeconds)
                         .build());
         ApiFutures.addCallback(future, loggingCallback, directExecutor());
+        apiFutures.add(future);
       }
     }
 
@@ -306,6 +309,8 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
                       .addAllAckIds(idChunk)
                       .build());
       ApiFutures.addCallback(future, loggingCallback, directExecutor());
+      apiFutures.add(future);
     }
+    return ApiFutures.allAsList(apiFutures);
   }
 }

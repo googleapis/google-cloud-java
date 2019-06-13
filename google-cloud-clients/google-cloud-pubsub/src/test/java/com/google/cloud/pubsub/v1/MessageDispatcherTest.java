@@ -18,6 +18,7 @@ package com.google.cloud.pubsub.v1;
 
 import static com.google.common.truth.Truth.assertThat;
 
+import com.google.api.core.ApiFuture;
 import com.google.api.gax.batching.FlowControlSettings;
 import com.google.api.gax.batching.FlowController;
 import com.google.api.gax.core.Distribution;
@@ -83,7 +84,7 @@ public class MessageDispatcherTest {
         };
     MessageDispatcher.AckProcessor processor =
         new MessageDispatcher.AckProcessor() {
-          public void sendAckOperations(
+          public ApiFuture<?> sendAckOperations(
               List<String> acksToSend,
               List<MessageDispatcher.PendingModifyAckDeadline> ackDeadlineExtensions) {
             sentAcks.addAll(acksToSend);
@@ -92,6 +93,7 @@ public class MessageDispatcherTest {
                 sentModAcks.add(ModAckItem.of(ackId, modack.deadlineExtensionSeconds));
               }
             }
+            return null;
           }
         };
 
@@ -187,10 +189,6 @@ public class MessageDispatcherTest {
     clock.advance(1, TimeUnit.DAYS);
     dispatcher.extendDeadlines();
     assertThat(sentModAcks).isEmpty();
-
-    // We should be able to reserve another item in the flow controller and not block.
-    flowController.reserve(1, 0);
-    dispatcher.stop();
   }
 
   @Test
