@@ -146,7 +146,7 @@ public class BigQuerySnippets {
     // [START bigquery_list_datasets]
     // List datasets in the default project
     Page<Dataset> datasets = bigquery.listDatasets(DatasetListOption.pageSize(100));
-    for (Dataset dataset : datasets.iterateAll()) {
+    for (Dataset dataset : datasets.getValues()) {
       // do something with the dataset
     }
     // [END bigquery_list_datasets]
@@ -160,7 +160,7 @@ public class BigQuerySnippets {
     // [START bigquery_list_datasets]
     // List datasets in a specified project
     Page<Dataset> datasets = bigquery.listDatasets(projectId, DatasetListOption.pageSize(100));
-    for (Dataset dataset : datasets.iterateAll()) {
+    for (Dataset dataset : datasets.getValues()) {
       // do something with the dataset
     }
     // [END bigquery_list_datasets]
@@ -240,7 +240,7 @@ public class BigQuerySnippets {
   public Page<Table> listTables(String datasetName) {
     // [START ]
     Page<Table> tables = bigquery.listTables(datasetName, TableListOption.pageSize(100));
-    for (Table table : tables.iterateAll()) {
+    for (Table table : tables.getValues()) {
       // do something with the table
     }
     // [END ]
@@ -255,7 +255,7 @@ public class BigQuerySnippets {
     // [START bigquery_list_tables]
     DatasetId datasetId = DatasetId.of(projectId, datasetName);
     Page<Table> tables = bigquery.listTables(datasetId, TableListOption.pageSize(100));
-    for (Table table : tables.iterateAll()) {
+    for (Table table : tables.getValues()) {
       // do something with the table
     }
     // [END bigquery_list_tables]
@@ -433,7 +433,7 @@ public class BigQuerySnippets {
     // simply omit the option.
     TableResult tableData =
         bigquery.listTableData(datasetName, tableName, TableDataListOption.pageSize(100));
-    for (FieldValueList row : tableData.iterateAll()) {
+    for (FieldValueList row : tableData.getValues()) {
       // do something with the row
     }
     // [END ]
@@ -451,7 +451,7 @@ public class BigQuerySnippets {
     // simply omit the option.
     TableResult tableData =
         bigquery.listTableData(tableIdObject, TableDataListOption.pageSize(100));
-    for (FieldValueList row : tableData.iterateAll()) {
+    for (FieldValueList row : tableData.getValues()) {
       // do something with the row
     }
     // [END bigquery_browse_table]
@@ -516,7 +516,7 @@ public class BigQuerySnippets {
   public Page<Job> listJobs() {
     // [START bigquery_list_jobs]
     Page<Job> jobs = bigquery.listJobs(JobListOption.pageSize(100));
-    for (Job job : jobs.iterateAll()) {
+    for (Job job : jobs.getValues()) {
       // do something with the job
     }
     // [END bigquery_list_jobs]
