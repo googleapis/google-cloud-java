@@ -214,7 +214,7 @@ public class ITBigQuerySnippets {
     assertNotNull(bigquerySnippets.createTable(DATASET, tableName, fieldName));
     // Add rows from string
     long outputRows =
-        bigquerySnippets.writeToTable(DATASET, tableName, "StringValue1\nStringValue2\n");
+        bigquerySnippets.writeToTable(DATASET, tableName, "StringValue1\nStringValue2\n", "us");
     assertEquals(2L, outputRows);
     // Add rows from file
     Path csvPath =
@@ -233,13 +233,12 @@ public class ITBigQuerySnippets {
 
   @Test
   public void testWriteRemoteJsonToTable() throws InterruptedException {
-    String datasetName = "test_dataset";
     String tableName = "us_states";
-    Table table = bigquery.getTable(datasetName, tableName);
+    Table table = bigquery.getTable(DATASET, tableName);
     assertNull(table);
 
-    Long result = bigquerySnippets.writeRemoteFileToTable(datasetName, tableName);
-    table = bigquery.getTable(datasetName, tableName);
+    Long result = bigquerySnippets.writeRemoteFileToTable(DATASET, tableName);
+    table = bigquery.getTable(DATASET, tableName);
     assertNotNull(table);
     ArrayList<String> tableFieldNames = new ArrayList<>();
     for (Field field : table.getDefinition().getSchema().getFields()) {

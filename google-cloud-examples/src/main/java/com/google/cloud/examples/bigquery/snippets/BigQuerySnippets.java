@@ -315,41 +315,16 @@ public class BigQuerySnippets {
   // [VARIABLE "my_dataset_name"]
   // [VARIABLE "my_table_name"]
   // [VARIABLE "StringValue1\nStringValue2\n"]
-  public long writeToTable(String datasetName, String tableName, String csvData)
-      throws IOException, InterruptedException, TimeoutException {
-    // [START ]
-    TableId tableId = TableId.of(datasetName, tableName);
-    WriteChannelConfiguration writeChannelConfiguration =
-        WriteChannelConfiguration.newBuilder(tableId).setFormatOptions(FormatOptions.csv()).build();
-    TableDataWriteChannel writer = bigquery.writer(writeChannelConfiguration);
-    // Write data to writer
-    try {
-      writer.write(ByteBuffer.wrap(csvData.getBytes(Charsets.UTF_8)));
-    } finally {
-      writer.close();
-    }
-    // Get load job
-    Job job = writer.getJob();
-    job = job.waitFor();
-    LoadStatistics stats = job.getStatistics();
-    return stats.getOutputRows();
-    // [END ]
-  }
-
-  /** Example of creating a channel with which to write to a table. */
-  // [TARGET writer(JobId, WriteChannelConfiguration)]
-  // [VARIABLE "my_dataset_name"]
-  // [VARIABLE "my_table_name"]
-  // [VARIABLE "StringValue1\nStringValue2\n"]
   // [VARIABLE "us"]
-  public long writeToTableLocation(
-      String datasetName, String tableName, String csvData, String location)
+  public long writeToTable(String datasetName, String tableName, String csvData, String location)
       throws IOException, InterruptedException, TimeoutException {
-    // [START ]
+    // [START bigquery_load_from_file]
     TableId tableId = TableId.of(datasetName, tableName);
     WriteChannelConfiguration writeChannelConfiguration =
         WriteChannelConfiguration.newBuilder(tableId).setFormatOptions(FormatOptions.csv()).build();
-    // The location must be specified; other fields can be auto-detected.
+    // Generally, location can be inferred based on the location of the referenced dataset.  However,
+    // it can also be set explicitly to force job execution to be routed to a specific processing
+    // location.  See https://cloud.google.com/bigquery/docs/locations for more info.
     JobId jobId = JobId.newBuilder().setLocation(location).build();
     TableDataWriteChannel writer = bigquery.writer(jobId, writeChannelConfiguration);
     // Write data to writer
@@ -363,7 +338,7 @@ public class BigQuerySnippets {
     job = job.waitFor();
     LoadStatistics stats = job.getStatistics();
     return stats.getOutputRows();
-    // [END ]
+    // [END bigquery_load_from_file]
   }
 
   /** Example of writing a local file to a table. */
@@ -378,7 +353,9 @@ public class BigQuerySnippets {
     TableId tableId = TableId.of(datasetName, tableName);
     WriteChannelConfiguration writeChannelConfiguration =
         WriteChannelConfiguration.newBuilder(tableId).setFormatOptions(FormatOptions.csv()).build();
-    // The location must be specified; other fields can be auto-detected.
+    // Generally, location can be inferred based on the location of the referenced dataset.  However,
+    // it can also be set explicitly to force job execution to be routed to a specific processing
+    // location.  See https://cloud.google.com/bigquery/docs/locations for more info.
     JobId jobId = JobId.newBuilder().setLocation(location).build();
     TableDataWriteChannel writer = bigquery.writer(jobId, writeChannelConfiguration);
     // Write data to writer
