@@ -9,8 +9,8 @@ heavy development and is not ready for production use. Please continue to use th
 [![Codacy Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/google-cloud-java)
 
 - [Product Documentation][bigtable-product-docs]
-- [Client Library Documentation][bigtable-client-lib-docs]
-
+- [Client Library Documentation - Data API](https://googleapis.dev/java/google-cloud-clients/latest/com/google/cloud/bigtable/data/v2/package-summary.html)
+- [Client Library Documentation - Admin API](https://googleapis.dev/java/google-cloud-clients/latest/com/google/cloud/bigtable/admin/v2/package-summary.html)
 > Note: This client is under heavy development and should not be used in production.
 
 ## Quickstart
@@ -40,28 +40,62 @@ See the
 [Authentication](https://github.com/googleapis/google-cloud-java#authentication)
 section in the base directory's README.
 
-## About Cloud Bigtable
-
-[Cloud Bigtable][cloud-bigtable] is Google's NoSQL Big Data database service. It's 
-the same database that powers many core Google services, including Search, Analytics, Maps, and
-Gmail.
-
-Be sure to activate the Cloud Bigtable API and the Cloud Bigtable Admin API on the Developer's 
-Console to use Cloud Bigtable from your project.
-
-See the [Bigtable client lib docs][bigtable-client-lib-docs] to learn how to
-interact with Cloud Bigtable using this Client Library.
-
 ## Getting Started
 #### Prerequisites
 For this tutorial, you will need a
-[Google Developers Console](https://console.developers.google.com/) project with the Cloud Bigtable 
+[Google Cloud Platform Console](https://console.developers.google.com/) project with the Cloud Bigtable 
 API enabled. You will need to 
 [enable billing](https://support.google.com/cloud/answer/6158867?hl=en) to use Google Cloud Bigtable.
 [Follow these instructions](https://cloud.google.com/resource-manager/docs/creating-managing-projects) to get your
 project set up. You will also need to set up the local development environment by [installing the
 Google Cloud SDK](https://cloud.google.com/sdk/) and running the following commands in command line:
 `gcloud auth login`.
+
+## About Cloud Bigtable
+
+[Cloud Bigtable][cloud-bigtable] is Google's NoSQL Big Data database service. It's 
+the same database that powers many core Google services, including Search, Analytics, Maps, and
+Gmail.
+
+Be sure to activate the Cloud Bigtable API and the Cloud Bigtable Admin API under APIs & Services in the GCP Console to use Cloud Bigtable from your project.
+
+See the Bigtable client library documentation ([Admin API](https://googleapis.dev/java/google-cloud-clients/latest/com/google/cloud/bigtable/admin/v2/package-summary.html) and [Data API](https://googleapis.dev/java/google-cloud-clients/latest/com/google/cloud/bigtable/data/v2/package-summary.html)) to learn how to
+interact with Cloud Bigtable using this Client Library.
+
+## Concepts
+
+Cloud Bigtable is composed of instances, clusters, nodes and tables.
+ 
+### Instances
+Instances are containers for clusters.
+ 
+### Clusters
+Clusters represent the actual Cloud Bigtable service. Each cluster belongs to a single Cloud Bigtable instance, and an instance can have up to 4 clusters. When your application
+sends requests to a Cloud Bigtable instance, those requests are actually handled by one of the clusters in the instance.
+
+### Nodes
+Each cluster in a production instance has 3 or more nodes, which are compute resources that Cloud Bigtable uses to manage your data.
+
+### Tables
+Tables contain the actual data and are replicated across all of the clusters in an instance.
+
+
+## Clients
+The Cloud Bigtable API consists of:
+
+### Data API
+Allows callers to persist and query data in a table. It's exposed by [BigtableDataClient](https://googleapis.dev/java/google-cloud-clients/latest/com/google/cloud/bigtable/data/v2/BigtableDataClient.html).
+
+### Admin API
+Allows callers to create and manage instances, clusters, tables, and access permissions. This API is exposed by: [BigtableInstanceAdminClient](https://googleapis.dev/java/google-cloud-clients/latest/com/google/cloud/bigtable/admin/v2/BigtableInstanceAdminClient.html) for Instance and Cluster level resources. 
+ 
+See [BigtableTableAdminClient](https://googleapis.dev/java/google-cloud-clients/latest/com/google/cloud/bigtable/admin/v2/BigtableTableAdminClient.html) for table management.
+
+See [BigtableDataClient](https://googleapis.dev/java/google-cloud-clients/latest/com/google/cloud/bigtable/data/v2/BigtableDataClient.html) for the data client.
+
+See [BigtableInstanceAdminClient](https://googleapis.dev/java/google-cloud-clients/latest/com/google/cloud/bigtable/admin/v2/BigtableInstanceAdminClient.html) for the instance admin client.
+
+See [BigtableTableAdminClient](https://googleapis.dev/java/google-cloud-clients/latest/com/google/cloud/bigtable/admin/v2/BigtableTableAdminClient.html) for the table admin client.
 
 #### Calling Cloud Bigtable
 
