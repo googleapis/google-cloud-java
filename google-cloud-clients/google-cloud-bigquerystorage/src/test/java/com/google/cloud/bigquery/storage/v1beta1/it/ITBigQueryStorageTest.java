@@ -17,6 +17,7 @@
 package com.google.cloud.bigquery.storage.v1beta1.it;
 
 import static com.google.common.truth.Truth.assertWithMessage;
+import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
@@ -55,12 +56,16 @@ import com.google.common.base.Preconditions;
 import com.google.protobuf.TextFormat;
 import com.google.protobuf.Timestamp;
 import java.io.IOException;
+import java.math.BigDecimal;
+import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 import java.util.logging.Logger;
+import org.apache.avro.Conversions;
+import org.apache.avro.LogicalTypes;
 import org.apache.avro.Schema;
 import org.apache.avro.generic.GenericData;
 import org.apache.avro.generic.GenericRecordBuilder;
@@ -69,6 +74,12 @@ import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.threeten.bp.Duration;
+import org.threeten.bp.Instant;
+import org.threeten.bp.LocalDate;
+import org.threeten.bp.LocalTime;
+import org.threeten.bp.ZoneOffset;
+import org.threeten.bp.ZonedDateTime;
+import org.threeten.bp.format.DateTimeFormatter;
 
 /** Integration tests for BigQuery Storage API. */
 public class ITBigQueryStorageTest {
@@ -500,6 +511,343 @@ public class ITBigQueryStorageTest {
     assertEquals(
         "Actual rows read: " + partitionFilteredRows.toString(), 1, partitionFilteredRows.size());
     assertEquals(2L, partitionFilteredRows.get(0).get("num_field"));
+  }
+
+  @Test
+  public void testBasicSqlTypes() throws InterruptedException, IOException {
+    String table_name = "test_basic_sql_types";
+    String createTableStatement =
+        String.format(
+            " CREATE TABLE %s.%s "
+                + " (int_field INT64 NOT NULL,"
+                + "  num_field NUMERIC NOT NULL,"
+                + "  float_field FLOAT64 NOT NULL,"
+                + "  bool_field BOOL NOT NULL,"
+                + "  str_field STRING NOT NULL,"
+                + "  bytes_field BYTES NOT NULL) "
+                + " OPTIONS( "
+                + "   description=\"a table with basic column types\" "
+                + " ) "
+                + "AS "
+                + "   SELECT "
+                + "     17,"
+                + "     CAST(1234.56 AS NUMERIC),"
+                + "     6.547678,"
+                + "     TRUE,"
+                + "     \"String field value\","
+                + "     b\"абвгд\"",
+            DATASET, table_name);
+
+    RunQueryJobAndExpectSuccess(QueryJobConfiguration.newBuilder(createTableStatement).build());
+
+    TableReference tableReference =
+        TableReference.newBuilder()
+            .setTableId(table_name)
+            .setDatasetId(DATASET)
+            .setProjectId(ServiceOptions.getDefaultProjectId())
+            .build();
+
+    List<GenericData.Record> rows =
+        ReadAllRows(/* tableReference = */ tableReference, /* filter = */ null);
+    assertEquals("Actual rows read: " + rows.toString(), 1, rows.size());
+
+    GenericData.Record record = rows.get(0);
+    Schema avroSchema = record.getSchema();
+
+    String actualSchemaMessage =
+        String.format(
+            "Unexpected schema. Actual schema:%n%s", avroSchema.toString(/* pretty = */ true));
+    String rowAssertMessage = String.format("Row not matching expectations: %s", record.toString());
+
+    assertEquals(actualSchemaMessage, Schema.Type.RECORD, avroSchema.getType());
+    assertEquals(actualSchemaMessage, "__root__", avroSchema.getName());
+    assertEquals(actualSchemaMessage, 6, avroSchema.getFields().size());
+
+    assertEquals(
+        actualSchemaMessage, Schema.Type.LONG, avroSchema.getField("int_field").schema().getType());
+    assertEquals(rowAssertMessage, 17L, (long) record.get("int_field"));
+
+    assertEquals(
+        actualSchemaMessage,
+        Schema.Type.BYTES,
+        avroSchema.getField("num_field").schema().getType());
+    assertEquals(
+        actualSchemaMessage,
+        LogicalTypes.decimal(/* precision = */ 38, /* scale = */ 9),
+        avroSchema.getField("num_field").schema().getLogicalType());
+    BigDecimal actual_num_field =
+        new Conversions.DecimalConversion()
+            .fromBytes(
+                (ByteBuffer) record.get("num_field"),
+                avroSchema,
+                avroSchema.getField("num_field").schema().getLogicalType());
+    assertEquals(
+        rowAssertMessage,
+        BigDecimal.valueOf(/* unscaledVal = */ 1_234_560_000_000L, /* scale = */ 9),
+        actual_num_field);
+
+    assertEquals(
+        actualSchemaMessage,
+        Schema.Type.DOUBLE,
+        avroSchema.getField("float_field").schema().getType());
+    assertEquals(
+        rowAssertMessage,
+        /* expected = */ 6.547678d,
+        /* actual = */ (double) record.get("float_field"),
+        /* delta = */ 0.0001);
+
+    assertEquals(
+        actualSchemaMessage,
+        Schema.Type.BOOLEAN,
+        avroSchema.getField("bool_field").schema().getType());
+    assertEquals(rowAssertMessage, true, record.get("bool_field"));
+
+    assertEquals(
+        actualSchemaMessage,
+        Schema.Type.STRING,
+        avroSchema.getField("str_field").schema().getType());
+    assertEquals(rowAssertMessage, new Utf8("String field value"), record.get("str_field"));
+
+    assertEquals(
+        actualSchemaMessage,
+        Schema.Type.BYTES,
+        avroSchema.getField("bytes_field").schema().getType());
+    assertArrayEquals(
+        rowAssertMessage,
+        Utf8.getBytesFor("абвгд"),
+        ((ByteBuffer) (record.get("bytes_field"))).array());
+  }
+
+  @Test
+  public void testDateAndTimeSqlTypes() throws InterruptedException, IOException {
+    String table_name = "test_date_and_time_sql_types";
+    String createTableStatement =
+        String.format(
+            " CREATE TABLE %s.%s "
+                + " (date_field DATE NOT NULL,"
+                + "  datetime_field DATETIME NOT NULL,"
+                + "  time_field TIME NOT NULL,"
+                + "  timestamp_field TIMESTAMP NOT NULL)"
+                + " OPTIONS( "
+                + "   description=\"a table with date and time column types\" "
+                + " ) "
+                + "AS "
+                + "   SELECT "
+                + "     CAST(\"2019-05-31\" AS DATE),"
+                + "     CAST(\"2019-04-30 21:47:59.999999\" AS DATETIME),"
+                + "     CAST(\"21:47:59.999999\" AS TIME),"
+                + "     CAST(\"2019-04-30 19:24:19.123456 UTC\" AS TIMESTAMP)",
+            DATASET, table_name);
+
+    RunQueryJobAndExpectSuccess(QueryJobConfiguration.newBuilder(createTableStatement).build());
+
+    TableReference tableReference =
+        TableReference.newBuilder()
+            .setTableId(table_name)
+            .setDatasetId(DATASET)
+            .setProjectId(ServiceOptions.getDefaultProjectId())
+            .build();
+
+    List<GenericData.Record> rows =
+        ReadAllRows(/* tableReference = */ tableReference, /* filter = */ null);
+    assertEquals("Actual rows read: " + rows.toString(), 1, rows.size());
+
+    GenericData.Record record = rows.get(0);
+    Schema avroSchema = record.getSchema();
+
+    String actualSchemaMessage =
+        String.format(
+            "Unexpected schema. Actual schema:%n%s", avroSchema.toString(/* pretty = */ true));
+    String rowAssertMessage = String.format("Row not matching expectations: %s", record.toString());
+
+    assertEquals(actualSchemaMessage, Schema.Type.RECORD, avroSchema.getType());
+    assertEquals(actualSchemaMessage, "__root__", avroSchema.getName());
+    assertEquals(actualSchemaMessage, 4, avroSchema.getFields().size());
+
+    assertEquals(
+        actualSchemaMessage, Schema.Type.INT, avroSchema.getField("date_field").schema().getType());
+    assertEquals(
+        actualSchemaMessage,
+        LogicalTypes.date(),
+        avroSchema.getField("date_field").schema().getLogicalType());
+    assertEquals(
+        rowAssertMessage,
+        LocalDate.of(/* year = */ 2019, /* month = */ 5, /* dayOfMonth = */ 31),
+        LocalDate.ofEpochDay((int) record.get("date_field")));
+
+    assertEquals(
+        actualSchemaMessage,
+        Schema.Type.STRING,
+        avroSchema.getField("datetime_field").schema().getType());
+    assertEquals(
+        actualSchemaMessage,
+        "datetime",
+        avroSchema.getField("datetime_field").schema().getObjectProp("logicalType"));
+    assertEquals(
+        rowAssertMessage,
+        new Utf8("2019-04-30T21:47:59.999999"),
+        (Utf8) record.get("datetime_field"));
+
+    assertEquals(
+        actualSchemaMessage,
+        Schema.Type.LONG,
+        avroSchema.getField("time_field").schema().getType());
+    assertEquals(
+        actualSchemaMessage,
+        LogicalTypes.timeMicros(),
+        avroSchema.getField("time_field").schema().getLogicalType());
+    assertEquals(
+        rowAssertMessage,
+        LocalTime.of(
+            /* hour = */ 21,
+            /* minute = */ 47,
+            /* second = */ 59,
+            /* nanoOfSecond = */ 999_999_000),
+        LocalTime.ofNanoOfDay(1_000L * (long) record.get("time_field")));
+
+    assertEquals(
+        actualSchemaMessage,
+        Schema.Type.LONG,
+        avroSchema.getField("timestamp_field").schema().getType());
+    assertEquals(
+        actualSchemaMessage,
+        LogicalTypes.timestampMicros(),
+        avroSchema.getField("timestamp_field").schema().getLogicalType());
+    ZonedDateTime expected_timestamp =
+        ZonedDateTime.parse(
+                "2019-04-30T19:24:19Z", DateTimeFormatter.ISO_INSTANT.withZone(ZoneOffset.UTC))
+            .withNano(123_456_000);
+    long actual_timestamp_micros = (long) record.get("timestamp_field");
+    ZonedDateTime actual_timestamp =
+        ZonedDateTime.ofInstant(
+            Instant.ofEpochSecond(
+                /* epochSecond = */ actual_timestamp_micros / 1_000_000,
+                (actual_timestamp_micros % 1_000_000) * 1_000),
+            ZoneOffset.UTC);
+    assertEquals(rowAssertMessage, expected_timestamp, actual_timestamp);
+  }
+
+  @Test
+  public void testGeographySqlType() throws InterruptedException, IOException {
+    String table_name = "test_geography_sql_type";
+    String createTableStatement =
+        String.format(
+            " CREATE TABLE %s.%s "
+                + " (geo_field GEOGRAPHY NOT NULL)"
+                + " OPTIONS( "
+                + "   description=\"a table with a geography column type\" "
+                + " ) "
+                + "AS "
+                + "   SELECT ST_GEOGPOINT(1.1, 2.2)",
+            DATASET, table_name);
+
+    RunQueryJobAndExpectSuccess(QueryJobConfiguration.newBuilder(createTableStatement).build());
+
+    TableReference tableReference =
+        TableReference.newBuilder()
+            .setTableId(table_name)
+            .setDatasetId(DATASET)
+            .setProjectId(ServiceOptions.getDefaultProjectId())
+            .build();
+
+    List<GenericData.Record> rows =
+        ReadAllRows(/* tableReference = */ tableReference, /* filter = */ null);
+    assertEquals("Actual rows read: " + rows.toString(), 1, rows.size());
+
+    GenericData.Record record = rows.get(0);
+    Schema avroSchema = record.getSchema();
+
+    String actualSchemaMessage =
+        String.format(
+            "Unexpected schema. Actual schema:%n%s", avroSchema.toString(/* pretty = */ true));
+    String rowAssertMessage = String.format("Row not matching expectations: %s", record.toString());
+
+    assertEquals(actualSchemaMessage, Schema.Type.RECORD, avroSchema.getType());
+    assertEquals(actualSchemaMessage, "__root__", avroSchema.getName());
+    assertEquals(actualSchemaMessage, 1, avroSchema.getFields().size());
+
+    assertEquals(
+        actualSchemaMessage,
+        Schema.Type.STRING,
+        avroSchema.getField("geo_field").schema().getType());
+    assertEquals(
+        actualSchemaMessage,
+        "GEOGRAPHY",
+        avroSchema.getField("geo_field").schema().getObjectProp("sqlType"));
+    assertEquals(rowAssertMessage, new Utf8("POINT(1.1 2.2)"), (Utf8) record.get("geo_field"));
+  }
+
+  @Test
+  public void testStructAndArraySqlTypes() throws InterruptedException, IOException {
+    String table_name = "test_struct_and_array_sql_types";
+    String createTableStatement =
+        String.format(
+            " CREATE TABLE %s.%s "
+                + " (array_field ARRAY<INT64>,"
+                + "  struct_field STRUCT<int_field INT64 NOT NULL, str_field STRING NOT NULL> NOT NULL)"
+                + " OPTIONS( "
+                + "   description=\"a table with array and time column types\" "
+                + " ) "
+                + "AS "
+                + "   SELECT "
+                + "     [1, 2, 3],"
+                + "     (10, 'abc')",
+            DATASET, table_name);
+
+    RunQueryJobAndExpectSuccess(QueryJobConfiguration.newBuilder(createTableStatement).build());
+
+    TableReference tableReference =
+        TableReference.newBuilder()
+            .setTableId(table_name)
+            .setDatasetId(DATASET)
+            .setProjectId(ServiceOptions.getDefaultProjectId())
+            .build();
+
+    List<GenericData.Record> rows =
+        ReadAllRows(/* tableReference = */ tableReference, /* filter = */ null);
+    assertEquals("Actual rows read: " + rows.toString(), 1, rows.size());
+
+    GenericData.Record record = rows.get(0);
+    Schema avroSchema = record.getSchema();
+
+    String actualSchemaMessage =
+        String.format(
+            "Unexpected schema. Actual schema:%n%s", avroSchema.toString(/* pretty = */ true));
+    String rowAssertMessage = String.format("Row not matching expectations: %s", record.toString());
+
+    assertEquals(actualSchemaMessage, Schema.Type.RECORD, avroSchema.getType());
+    assertEquals(actualSchemaMessage, "__root__", avroSchema.getName());
+    assertEquals(actualSchemaMessage, 2, avroSchema.getFields().size());
+
+    assertEquals(
+        actualSchemaMessage,
+        Schema.Type.ARRAY,
+        avroSchema.getField("array_field").schema().getType());
+    assertEquals(
+        actualSchemaMessage,
+        Schema.Type.LONG,
+        avroSchema.getField("array_field").schema().getElementType().getType());
+    assertArrayEquals(
+        rowAssertMessage,
+        new Long[] {1L, 2L, 3L},
+        ((GenericData.Array<Long>) record.get("array_field")).toArray(new Long[0]));
+
+    // Validate the STRUCT field and its members.
+    Schema structSchema = avroSchema.getField("struct_field").schema();
+    assertEquals(actualSchemaMessage, Schema.Type.RECORD, structSchema.getType());
+    GenericData.Record structRecord = (GenericData.Record) record.get("struct_field");
+
+    assertEquals(
+        actualSchemaMessage,
+        Schema.Type.LONG,
+        structSchema.getField("int_field").schema().getType());
+    assertEquals(rowAssertMessage, 10L, (long) structRecord.get("int_field"));
+
+    assertEquals(
+        actualSchemaMessage,
+        Schema.Type.STRING,
+        structSchema.getField("str_field").schema().getType());
+    assertEquals(rowAssertMessage, new Utf8("abc"), structRecord.get("str_field"));
   }
 
   /**
