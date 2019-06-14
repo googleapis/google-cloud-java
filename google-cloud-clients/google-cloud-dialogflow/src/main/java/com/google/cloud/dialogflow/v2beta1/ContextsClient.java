@@ -50,7 +50,7 @@ import javax.annotation.Generated;
  * 20 minutes if no intents are matched for a `DetectIntent` request.
  *
  * <p>For more information about contexts, see the [Dialogflow
- * documentation](https://cloud.google.com/dialogflow-enterprise/docs/contexts-overview).
+ * documentation](https://cloud.google.com/dialogflow/docs/contexts-overview).
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:

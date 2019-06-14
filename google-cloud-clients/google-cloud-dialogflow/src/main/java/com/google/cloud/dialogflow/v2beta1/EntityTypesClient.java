@@ -65,7 +65,7 @@ import javax.annotation.Generated;
  * [SessionEntityType][google.cloud.dialogflow.v2beta1.SessionEntityType] type.
  *
  * <p>For more information about entity types, see the [Dialogflow
- * documentation](https://cloud.google.com/dialogflow-enterprise/docs/entities-overview).
+ * documentation](https://cloud.google.com/dialogflow/docs/entities-overview).
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -266,8 +266,8 @@ public class EntityTypesClient implements BackgroundResource {
    *     ID&gt;/agent`.
    * @param languageCode Optional. The language to list entity synonyms for. If not specified, the
    *     agent's default language is used. [Many
-   *     languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language) are
-   *     supported. Note: languages must be enabled in the agent before they can be used.
+   *     languages](https://cloud.google.com/dialogflow/docs/reference/language) are supported.
+   *     Note: languages must be enabled in the agent before they can be used.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListEntityTypesPagedResponse listEntityTypes(
@@ -300,8 +300,8 @@ public class EntityTypesClient implements BackgroundResource {
    *     ID&gt;/agent`.
    * @param languageCode Optional. The language to list entity synonyms for. If not specified, the
    *     agent's default language is used. [Many
-   *     languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language) are
-   *     supported. Note: languages must be enabled in the agent before they can be used.
+   *     languages](https://cloud.google.com/dialogflow/docs/reference/language) are supported.
+   *     Note: languages must be enabled in the agent before they can be used.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListEntityTypesPagedResponse listEntityTypes(String parent, String languageCode) {
@@ -457,8 +457,8 @@ public class EntityTypesClient implements BackgroundResource {
    *     ID&gt;/agent/entityTypes/&lt;EntityType ID&gt;`.
    * @param languageCode Optional. The language to retrieve entity synonyms for. If not specified,
    *     the agent's default language is used. [Many
-   *     languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language) are
-   *     supported. Note: languages must be enabled in the agent before they can be used.
+   *     languages](https://cloud.google.com/dialogflow/docs/reference/language) are supported.
+   *     Note: languages must be enabled in the agent before they can be used.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final EntityType getEntityType(EntityTypeName name, String languageCode) {
@@ -489,8 +489,8 @@ public class EntityTypesClient implements BackgroundResource {
    *     ID&gt;/agent/entityTypes/&lt;EntityType ID&gt;`.
    * @param languageCode Optional. The language to retrieve entity synonyms for. If not specified,
    *     the agent's default language is used. [Many
-   *     languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language) are
-   *     supported. Note: languages must be enabled in the agent before they can be used.
+   *     languages](https://cloud.google.com/dialogflow/docs/reference/language) are supported.
+   *     Note: languages must be enabled in the agent before they can be used.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final EntityType getEntityType(String name, String languageCode) {
@@ -620,8 +620,8 @@ public class EntityTypesClient implements BackgroundResource {
    * @param entityType Required. The entity type to create.
    * @param languageCode Optional. The language of entity synonyms defined in `entity_type`. If not
    *     specified, the agent's default language is used. [Many
-   *     languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language) are
-   *     supported. Note: languages must be enabled in the agent before they can be used.
+   *     languages](https://cloud.google.com/dialogflow/docs/reference/language) are supported.
+   *     Note: languages must be enabled in the agent before they can be used.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final EntityType createEntityType(
@@ -656,8 +656,8 @@ public class EntityTypesClient implements BackgroundResource {
    * @param entityType Required. The entity type to create.
    * @param languageCode Optional. The language of entity synonyms defined in `entity_type`. If not
    *     specified, the agent's default language is used. [Many
-   *     languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language) are
-   *     supported. Note: languages must be enabled in the agent before they can be used.
+   *     languages](https://cloud.google.com/dialogflow/docs/reference/language) are supported.
+   *     Note: languages must be enabled in the agent before they can be used.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final EntityType createEntityType(
@@ -761,8 +761,8 @@ public class EntityTypesClient implements BackgroundResource {
    * @param entityType Required. The entity type to update.
    * @param languageCode Optional. The language of entity synonyms defined in `entity_type`. If not
    *     specified, the agent's default language is used. [Many
-   *     languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language) are
-   *     supported. Note: languages must be enabled in the agent before they can be used.
+   *     languages](https://cloud.google.com/dialogflow/docs/reference/language) are supported.
+   *     Note: languages must be enabled in the agent before they can be used.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final EntityType updateEntityType(EntityType entityType, String languageCode) {
@@ -1237,8 +1237,8 @@ public class EntityTypesClient implements BackgroundResource {
    * @param entities Required. The entities to create.
    * @param languageCode Optional. The language of entity synonyms defined in `entities`. If not
    *     specified, the agent's default language is used. [Many
-   *     languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language) are
-   *     supported. Note: languages must be enabled in the agent before they can be used.
+   *     languages](https://cloud.google.com/dialogflow/docs/reference/language) are supported.
+   *     Note: languages must be enabled in the agent before they can be used.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi(
@@ -1277,8 +1277,8 @@ public class EntityTypesClient implements BackgroundResource {
    * @param entities Required. The entities to create.
    * @param languageCode Optional. The language of entity synonyms defined in `entities`. If not
    *     specified, the agent's default language is used. [Many
-   *     languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language) are
-   *     supported. Note: languages must be enabled in the agent before they can be used.
+   *     languages](https://cloud.google.com/dialogflow/docs/reference/language) are supported.
+   *     Note: languages must be enabled in the agent before they can be used.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi(
@@ -1469,8 +1469,8 @@ public class EntityTypesClient implements BackgroundResource {
    * @param entities Required. The entities to update or create.
    * @param languageCode Optional. The language of entity synonyms defined in `entities`. If not
    *     specified, the agent's default language is used. [Many
-   *     languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language) are
-   *     supported. Note: languages must be enabled in the agent before they can be used.
+   *     languages](https://cloud.google.com/dialogflow/docs/reference/language) are supported.
+   *     Note: languages must be enabled in the agent before they can be used.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi(
@@ -1510,8 +1510,8 @@ public class EntityTypesClient implements BackgroundResource {
    * @param entities Required. The entities to update or create.
    * @param languageCode Optional. The language of entity synonyms defined in `entities`. If not
    *     specified, the agent's default language is used. [Many
-   *     languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language) are
-   *     supported. Note: languages must be enabled in the agent before they can be used.
+   *     languages](https://cloud.google.com/dialogflow/docs/reference/language) are supported.
+   *     Note: languages must be enabled in the agent before they can be used.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi(
@@ -1708,8 +1708,8 @@ public class EntityTypesClient implements BackgroundResource {
    *     are not fully-qualified names, i.e. they don't start with `projects/&lt;Project ID&gt;`.
    * @param languageCode Optional. The language of entity synonyms defined in `entities`. If not
    *     specified, the agent's default language is used. [Many
-   *     languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language) are
-   *     supported. Note: languages must be enabled in the agent before they can be used.
+   *     languages](https://cloud.google.com/dialogflow/docs/reference/language) are supported.
+   *     Note: languages must be enabled in the agent before they can be used.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi(
@@ -1749,8 +1749,8 @@ public class EntityTypesClient implements BackgroundResource {
    *     are not fully-qualified names, i.e. they don't start with `projects/&lt;Project ID&gt;`.
    * @param languageCode Optional. The language of entity synonyms defined in `entities`. If not
    *     specified, the agent's default language is used. [Many
-   *     languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language) are
-   *     supported. Note: languages must be enabled in the agent before they can be used.
+   *     languages](https://cloud.google.com/dialogflow/docs/reference/language) are supported.
+   *     Note: languages must be enabled in the agent before they can be used.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi(

@@ -19,6 +19,7 @@ import com.google.api.core.BetaApi;
 import com.google.cloud.dialogflow.v2.AgentsGrpc.AgentsImplBase;
 import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
+import com.google.protobuf.Empty;
 import io.grpc.stub.StreamObserver;
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -63,6 +64,34 @@ public class MockAgentsImpl extends AgentsImplBase {
     if (response instanceof Agent) {
       requests.add(request);
       responseObserver.onNext((Agent) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void setAgent(SetAgentRequest request, StreamObserver<Agent> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof Agent) {
+      requests.add(request);
+      responseObserver.onNext((Agent) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void deleteAgent(DeleteAgentRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext((Empty) response);
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
       responseObserver.onError((Exception) response);

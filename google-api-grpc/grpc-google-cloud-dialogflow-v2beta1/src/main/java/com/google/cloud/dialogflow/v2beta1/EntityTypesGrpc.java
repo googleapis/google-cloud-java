@@ -32,7 +32,7 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  *     represented by the [SessionEntityType][google.cloud.dialogflow.v2beta1.SessionEntityType] type.
  * For more information about entity types, see the
  * [Dialogflow
- * documentation](https://cloud.google.com/dialogflow-enterprise/docs/entities-overview).
+ * documentation](https://cloud.google.com/dialogflow/docs/entities-overview).
  * </pre>
  */
 @javax.annotation.Generated(
@@ -668,7 +668,7 @@ public final class EntityTypesGrpc {
    *     represented by the [SessionEntityType][google.cloud.dialogflow.v2beta1.SessionEntityType] type.
    * For more information about entity types, see the
    * [Dialogflow
-   * documentation](https://cloud.google.com/dialogflow-enterprise/docs/entities-overview).
+   * documentation](https://cloud.google.com/dialogflow/docs/entities-overview).
    * </pre>
    */
   public abstract static class EntityTypesImplBase implements io.grpc.BindableService {
@@ -910,7 +910,7 @@ public final class EntityTypesGrpc {
    *     represented by the [SessionEntityType][google.cloud.dialogflow.v2beta1.SessionEntityType] type.
    * For more information about entity types, see the
    * [Dialogflow
-   * documentation](https://cloud.google.com/dialogflow-enterprise/docs/entities-overview).
+   * documentation](https://cloud.google.com/dialogflow/docs/entities-overview).
    * </pre>
    */
   public static final class EntityTypesStub extends io.grpc.stub.AbstractStub<EntityTypesStub> {
@@ -1124,7 +1124,7 @@ public final class EntityTypesGrpc {
    *     represented by the [SessionEntityType][google.cloud.dialogflow.v2beta1.SessionEntityType] type.
    * For more information about entity types, see the
    * [Dialogflow
-   * documentation](https://cloud.google.com/dialogflow-enterprise/docs/entities-overview).
+   * documentation](https://cloud.google.com/dialogflow/docs/entities-overview).
    * </pre>
    */
   public static final class EntityTypesBlockingStub
@@ -1306,7 +1306,7 @@ public final class EntityTypesGrpc {
    *     represented by the [SessionEntityType][google.cloud.dialogflow.v2beta1.SessionEntityType] type.
    * For more information about entity types, see the
    * [Dialogflow
-   * documentation](https://cloud.google.com/dialogflow-enterprise/docs/entities-overview).
+   * documentation](https://cloud.google.com/dialogflow/docs/entities-overview).
    * </pre>
    */
   public static final class EntityTypesFutureStub

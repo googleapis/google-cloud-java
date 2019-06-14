@@ -165,7 +165,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
    * <pre>
    * Required. The name of the session the query is sent to.
    * Format of the session name:
-   * `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`. It’s up to the API
+   * `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`. It's up to the API
    * caller to choose an appropriate `Session ID`. It can be a random number or
    * some type of user identifier (preferably hashed). The length of the session
    * ID must not exceed 36 characters.
@@ -190,7 +190,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
    * <pre>
    * Required. The name of the session the query is sent to.
    * Format of the session name:
-   * `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`. It’s up to the API
+   * `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`. It's up to the API
    * caller to choose an appropriate `Session ID`. It can be a random number or
    * some type of user identifier (preferably hashed). The length of the session
    * ID must not exceed 36 characters.
@@ -837,7 +837,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      * <pre>
      * Required. The name of the session the query is sent to.
      * Format of the session name:
-     * `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`. It’s up to the API
+     * `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`. It's up to the API
      * caller to choose an appropriate `Session ID`. It can be a random number or
      * some type of user identifier (preferably hashed). The length of the session
      * ID must not exceed 36 characters.
@@ -862,7 +862,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      * <pre>
      * Required. The name of the session the query is sent to.
      * Format of the session name:
-     * `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`. It’s up to the API
+     * `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`. It's up to the API
      * caller to choose an appropriate `Session ID`. It can be a random number or
      * some type of user identifier (preferably hashed). The length of the session
      * ID must not exceed 36 characters.
@@ -887,7 +887,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      * <pre>
      * Required. The name of the session the query is sent to.
      * Format of the session name:
-     * `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`. It’s up to the API
+     * `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`. It's up to the API
      * caller to choose an appropriate `Session ID`. It can be a random number or
      * some type of user identifier (preferably hashed). The length of the session
      * ID must not exceed 36 characters.
@@ -910,7 +910,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      * <pre>
      * Required. The name of the session the query is sent to.
      * Format of the session name:
-     * `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`. It’s up to the API
+     * `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`. It's up to the API
      * caller to choose an appropriate `Session ID`. It can be a random number or
      * some type of user identifier (preferably hashed). The length of the session
      * ID must not exceed 36 characters.
@@ -930,7 +930,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      * <pre>
      * Required. The name of the session the query is sent to.
      * Format of the session name:
-     * `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`. It’s up to the API
+     * `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`. It's up to the API
      * caller to choose an appropriate `Session ID`. It can be a random number or
      * some type of user identifier (preferably hashed). The length of the session
      * ID must not exceed 36 characters.
