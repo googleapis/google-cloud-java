@@ -27,29 +27,32 @@ import com.google.protobuf.ByteString;
 import java.nio.charset.Charset;
 
 public class CreateHttpTaskWithToken {
-
-  public static void main(String[] args) throws Exception {
-    String projectId = System.getenv("PROJECT_ID");
-    String queueName = System.getenv("QUEUE_ID");
-    String location = System.getenv("LOCATION_ID");
-    String url = System.getenv("URL");
+  /**
+   * Create a task with a HTTP target and authorization token using the Cloud Tasks client.
+   *
+   * @param projectId the Id of the project.
+   * @param queueId the name of your Queue.
+   * @param locationId the GCP region of your queue.
+   * @param serviceAccountEmail your Cloud IAM service account
+   * @throws Exception on Cloud Tasks Client errors.
+   */
+  public static void createTask(
+      String projectId, String locationId, String queueId, String serviceAccountEmail)
+      throws Exception {
 
     // Instantiates a client.
     try (CloudTasksClient client = CloudTasksClient.create()) {
-      // Variables provided by the system variables.
-      // projectId = "my-project-id";
-      // queueName = "my-queue";
-      // location = "us-central1";
-      // url = "https://example.com/taskhandler";
-      String payload = "hello";
+      String url =
+          "https://example.com/taskhandler"; // The full url path that the request will be sent to
+      String payload = "Hello, World!"; // The task HTTP request body
 
       // Construct the fully qualified queue name.
-      String queuePath = QueueName.of(projectId, location, queueName).toString();
+      String queuePath = QueueName.of(projectId, locationId, queueId).toString();
 
       // Add your service account email to construct the OIDC token.
       // in order to add an authentication header to the request.
       OidcToken.Builder oidcTokenBuilder =
-          OidcToken.newBuilder().setServiceAccountEmail("<SERVICE_ACCOUNT_EMAIL>");
+          OidcToken.newBuilder().setServiceAccountEmail(serviceAccountEmail);
 
       // Construct the task body.
       Task.Builder taskBuilder =
