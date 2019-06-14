@@ -142,7 +142,6 @@ public class SubscriberTest {
       Thread.sleep(100);
       subscriber.stopAsync().awaitTerminated();
 
-      subscriber.stopAsync().awaitTerminated(10, TimeUnit.SECONDS);
       assertTrue(scheduledExecutorService.awaitTermination(10, TimeUnit.SECONDS));
     } finally {
       scheduledExecutorService.shutdownNow();
