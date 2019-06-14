@@ -18,7 +18,7 @@
     <site.installationModule>google-cloud-compat-checker</site.installationModule>
     <grpc.version>1.21.0</grpc.version>
     <!-- We are currently using the *-android version to support JDK7. -->
-    <guava.version>27.1-android</guava.version>
+    <guava.version>27.1-jre</guava.version>
   </properties>
   <dependencies>
     <dependency>
