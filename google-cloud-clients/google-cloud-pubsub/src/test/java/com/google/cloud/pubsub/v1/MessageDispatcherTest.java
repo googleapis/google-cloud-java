@@ -189,6 +189,10 @@ public class MessageDispatcherTest {
     clock.advance(1, TimeUnit.DAYS);
     dispatcher.extendDeadlines();
     assertThat(sentModAcks).isEmpty();
+
+    // We should be able to reserve another item in the flow controller and not block.
+    flowController.reserve(1, 0);
+    dispatcher.stop();
   }
 
   @Test
