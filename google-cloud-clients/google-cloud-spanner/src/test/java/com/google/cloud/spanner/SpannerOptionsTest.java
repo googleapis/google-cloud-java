@@ -17,10 +17,13 @@
 package com.google.cloud.spanner;
 
 import static com.google.common.truth.Truth.assertThat;
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertThat;
 
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ServerStreamingCallSettings;
 import com.google.api.gax.rpc.UnaryCallSettings;
+import com.google.cloud.NoCredentials;
 import com.google.cloud.TransportOptions;
 import com.google.cloud.spanner.admin.database.v1.stub.DatabaseAdminStubSettings;
 import com.google.cloud.spanner.admin.instance.v1.stub.InstanceAdminStubSettings;
@@ -352,5 +355,26 @@ public class SpannerOptionsTest {
   public void testNullSessionLabels() {
     thrown.expect(NullPointerException.class);
     SpannerOptions.newBuilder().setSessionLabels(null);
+  }
+
+  @Test
+  public void testDoNotCacheClosedSpannerInstance() {
+    SpannerOptions options = SpannerOptions.newBuilder()
+        .setProjectId("[PROJECT]")
+        .setCredentials(NoCredentials.getInstance())
+        .build();
+    // Getting a service twice should give the same instance.
+    Spanner service1 = options.getService();
+    Spanner service2 = options.getService();
+    assertThat(service1 == service2, is(true));
+    // Closing a service instance should cause the SpannerOptions to create a new service.
+    service1.close();
+    Spanner service3 = options.getService();
+    assertThat(service3 == service1, is(false));
+    assertThat(service3.isClosed(), is(false));
+    // Getting another service from the SpannerOptions should return the new cached instance.
+    Spanner service4 = options.getService();
+    assertThat(service3 == service4, is(true));
+    service3.close();
   }
 }
