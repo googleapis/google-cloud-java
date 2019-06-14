@@ -19,6 +19,7 @@ package com.google.cloud.pubsub.v1;
 import static com.google.common.truth.Truth.assertThat;
 
 import com.google.api.core.ApiFuture;
+import com.google.api.core.ApiFutures;
 import com.google.api.gax.batching.FlowControlSettings;
 import com.google.api.gax.batching.FlowController;
 import com.google.api.gax.core.Distribution;
@@ -93,7 +94,7 @@ public class MessageDispatcherTest {
                 sentModAcks.add(ModAckItem.of(ackId, modack.deadlineExtensionSeconds));
               }
             }
-            return null;
+            return ApiFutures.immediateFuture(null);
           }
         };
 
