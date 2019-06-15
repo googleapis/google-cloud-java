@@ -7,8 +7,7 @@ package com.google.cloud.kms.v1;
  *
  *
  * <pre>
- * A [KeyRing][google.cloud.kms.v1.KeyRing] is a toplevel logical grouping of
- * [CryptoKeys][google.cloud.kms.v1.CryptoKey].
+ * A [KeyRing][google.cloud.kms.v1.KeyRing] is a toplevel logical grouping of [CryptoKeys][google.cloud.kms.v1.CryptoKey].
  * </pre>
  *
  * Protobuf type {@code google.cloud.kms.v1.KeyRing}
@@ -112,8 +111,7 @@ public final class KeyRing extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The resource name for the
-   * [KeyRing][google.cloud.kms.v1.KeyRing] in the format
+   * Output only. The resource name for the [KeyRing][google.cloud.kms.v1.KeyRing] in the format
    * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;`.
    * </pre>
    *
@@ -134,8 +132,7 @@ public final class KeyRing extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The resource name for the
-   * [KeyRing][google.cloud.kms.v1.KeyRing] in the format
+   * Output only. The resource name for the [KeyRing][google.cloud.kms.v1.KeyRing] in the format
    * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;`.
    * </pre>
    *
@@ -159,8 +156,7 @@ public final class KeyRing extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The time at which this [KeyRing][google.cloud.kms.v1.KeyRing]
-   * was created.
+   * Output only. The time at which this [KeyRing][google.cloud.kms.v1.KeyRing] was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 2;</code>
@@ -172,8 +168,7 @@ public final class KeyRing extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The time at which this [KeyRing][google.cloud.kms.v1.KeyRing]
-   * was created.
+   * Output only. The time at which this [KeyRing][google.cloud.kms.v1.KeyRing] was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 2;</code>
@@ -185,8 +180,7 @@ public final class KeyRing extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The time at which this [KeyRing][google.cloud.kms.v1.KeyRing]
-   * was created.
+   * Output only. The time at which this [KeyRing][google.cloud.kms.v1.KeyRing] was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 2;</code>
@@ -370,8 +364,7 @@ public final class KeyRing extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A [KeyRing][google.cloud.kms.v1.KeyRing] is a toplevel logical grouping of
-   * [CryptoKeys][google.cloud.kms.v1.CryptoKey].
+   * A [KeyRing][google.cloud.kms.v1.KeyRing] is a toplevel logical grouping of [CryptoKeys][google.cloud.kms.v1.CryptoKey].
    * </pre>
    *
    * Protobuf type {@code google.cloud.kms.v1.KeyRing}
@@ -541,8 +534,7 @@ public final class KeyRing extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource name for the
-     * [KeyRing][google.cloud.kms.v1.KeyRing] in the format
+     * Output only. The resource name for the [KeyRing][google.cloud.kms.v1.KeyRing] in the format
      * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;`.
      * </pre>
      *
@@ -563,8 +555,7 @@ public final class KeyRing extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource name for the
-     * [KeyRing][google.cloud.kms.v1.KeyRing] in the format
+     * Output only. The resource name for the [KeyRing][google.cloud.kms.v1.KeyRing] in the format
      * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;`.
      * </pre>
      *
@@ -585,8 +576,7 @@ public final class KeyRing extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource name for the
-     * [KeyRing][google.cloud.kms.v1.KeyRing] in the format
+     * Output only. The resource name for the [KeyRing][google.cloud.kms.v1.KeyRing] in the format
      * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;`.
      * </pre>
      *
@@ -605,8 +595,7 @@ public final class KeyRing extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource name for the
-     * [KeyRing][google.cloud.kms.v1.KeyRing] in the format
+     * Output only. The resource name for the [KeyRing][google.cloud.kms.v1.KeyRing] in the format
      * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;`.
      * </pre>
      *
@@ -622,8 +611,7 @@ public final class KeyRing extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource name for the
-     * [KeyRing][google.cloud.kms.v1.KeyRing] in the format
+     * Output only. The resource name for the [KeyRing][google.cloud.kms.v1.KeyRing] in the format
      * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;`.
      * </pre>
      *
@@ -650,8 +638,7 @@ public final class KeyRing extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time at which this [KeyRing][google.cloud.kms.v1.KeyRing]
-     * was created.
+     * Output only. The time at which this [KeyRing][google.cloud.kms.v1.KeyRing] was created.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 2;</code>
@@ -663,8 +650,7 @@ public final class KeyRing extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time at which this [KeyRing][google.cloud.kms.v1.KeyRing]
-     * was created.
+     * Output only. The time at which this [KeyRing][google.cloud.kms.v1.KeyRing] was created.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 2;</code>
@@ -682,8 +668,7 @@ public final class KeyRing extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time at which this [KeyRing][google.cloud.kms.v1.KeyRing]
-     * was created.
+     * Output only. The time at which this [KeyRing][google.cloud.kms.v1.KeyRing] was created.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 2;</code>
@@ -705,8 +690,7 @@ public final class KeyRing extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time at which this [KeyRing][google.cloud.kms.v1.KeyRing]
-     * was created.
+     * Output only. The time at which this [KeyRing][google.cloud.kms.v1.KeyRing] was created.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 2;</code>
@@ -725,8 +709,7 @@ public final class KeyRing extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time at which this [KeyRing][google.cloud.kms.v1.KeyRing]
-     * was created.
+     * Output only. The time at which this [KeyRing][google.cloud.kms.v1.KeyRing] was created.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 2;</code>
@@ -750,8 +733,7 @@ public final class KeyRing extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time at which this [KeyRing][google.cloud.kms.v1.KeyRing]
-     * was created.
+     * Output only. The time at which this [KeyRing][google.cloud.kms.v1.KeyRing] was created.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 2;</code>
@@ -771,8 +753,7 @@ public final class KeyRing extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time at which this [KeyRing][google.cloud.kms.v1.KeyRing]
-     * was created.
+     * Output only. The time at which this [KeyRing][google.cloud.kms.v1.KeyRing] was created.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 2;</code>
@@ -786,8 +767,7 @@ public final class KeyRing extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time at which this [KeyRing][google.cloud.kms.v1.KeyRing]
-     * was created.
+     * Output only. The time at which this [KeyRing][google.cloud.kms.v1.KeyRing] was created.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 2;</code>
@@ -805,8 +785,7 @@ public final class KeyRing extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time at which this [KeyRing][google.cloud.kms.v1.KeyRing]
-     * was created.
+     * Output only. The time at which this [KeyRing][google.cloud.kms.v1.KeyRing] was created.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 2;</code>

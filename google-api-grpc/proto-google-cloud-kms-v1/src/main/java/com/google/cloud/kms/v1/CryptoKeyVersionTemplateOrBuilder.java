@@ -12,10 +12,8 @@ public interface CryptoKeyVersionTemplateOrBuilder
    *
    *
    * <pre>
-   * [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] to use when creating
-   * a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] based on this
-   * template. Immutable. Defaults to
-   * [SOFTWARE][google.cloud.kms.v1.ProtectionLevel.SOFTWARE].
+   * [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] to use when creating a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] based on
+   * this template. Immutable. Defaults to [SOFTWARE][google.cloud.kms.v1.ProtectionLevel.SOFTWARE].
    * </pre>
    *
    * <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 1;</code>
@@ -25,10 +23,8 @@ public interface CryptoKeyVersionTemplateOrBuilder
    *
    *
    * <pre>
-   * [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] to use when creating
-   * a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] based on this
-   * template. Immutable. Defaults to
-   * [SOFTWARE][google.cloud.kms.v1.ProtectionLevel.SOFTWARE].
+   * [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] to use when creating a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] based on
+   * this template. Immutable. Defaults to [SOFTWARE][google.cloud.kms.v1.ProtectionLevel.SOFTWARE].
    * </pre>
    *
    * <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 1;</code>
@@ -39,14 +35,10 @@ public interface CryptoKeyVersionTemplateOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * [Algorithm][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm]
-   * to use when creating a
-   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] based on this
-   * template.
+   * Required. [Algorithm][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm] to use
+   * when creating a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] based on this template.
    * For backwards compatibility, GOOGLE_SYMMETRIC_ENCRYPTION is implied if both
-   * this field is omitted and
-   * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] is
+   * this field is omitted and [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] is
    * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
    * </pre>
    *
@@ -57,14 +49,10 @@ public interface CryptoKeyVersionTemplateOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * [Algorithm][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm]
-   * to use when creating a
-   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] based on this
-   * template.
+   * Required. [Algorithm][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm] to use
+   * when creating a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] based on this template.
    * For backwards compatibility, GOOGLE_SYMMETRIC_ENCRYPTION is implied if both
-   * this field is omitted and
-   * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] is
+   * this field is omitted and [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] is
    * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
    * </pre>
    *

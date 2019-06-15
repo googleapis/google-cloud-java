@@ -304,6 +304,139 @@ public class KeyManagementServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
+   * Lists [ImportJobs][google.cloud.kms.v1.ImportJob].
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+   *   KeyRingName parent = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
+   *   for (ImportJob element : keyManagementServiceClient.listImportJobs(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The resource name of the [KeyRing][google.cloud.kms.v1.KeyRing] to
+   *     list, in the format `projects/&#42;/locations/&#42;/keyRings/&#42;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListImportJobsPagedResponse listImportJobs(KeyRingName parent) {
+    ListImportJobsRequest request =
+        ListImportJobsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listImportJobs(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists [ImportJobs][google.cloud.kms.v1.ImportJob].
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+   *   KeyRingName parent = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
+   *   for (ImportJob element : keyManagementServiceClient.listImportJobs(parent.toString()).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The resource name of the [KeyRing][google.cloud.kms.v1.KeyRing] to
+   *     list, in the format `projects/&#42;/locations/&#42;/keyRings/&#42;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListImportJobsPagedResponse listImportJobs(String parent) {
+    ListImportJobsRequest request = ListImportJobsRequest.newBuilder().setParent(parent).build();
+    return listImportJobs(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists [ImportJobs][google.cloud.kms.v1.ImportJob].
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+   *   KeyRingName parent = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
+   *   ListImportJobsRequest request = ListImportJobsRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .build();
+   *   for (ImportJob element : keyManagementServiceClient.listImportJobs(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListImportJobsPagedResponse listImportJobs(ListImportJobsRequest request) {
+    return listImportJobsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists [ImportJobs][google.cloud.kms.v1.ImportJob].
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+   *   KeyRingName parent = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
+   *   ListImportJobsRequest request = ListImportJobsRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .build();
+   *   ApiFuture&lt;ListImportJobsPagedResponse&gt; future = keyManagementServiceClient.listImportJobsPagedCallable().futureCall(request);
+   *   // Do something
+   *   for (ImportJob element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<ListImportJobsRequest, ListImportJobsPagedResponse>
+      listImportJobsPagedCallable() {
+    return stub.listImportJobsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists [ImportJobs][google.cloud.kms.v1.ImportJob].
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+   *   KeyRingName parent = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
+   *   ListImportJobsRequest request = ListImportJobsRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .build();
+   *   while (true) {
+   *     ListImportJobsResponse response = keyManagementServiceClient.listImportJobsCallable().call(request);
+   *     for (ImportJob element : response.getImportJobsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<ListImportJobsRequest, ListImportJobsResponse>
+      listImportJobsCallable() {
+    return stub.listImportJobsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
    * Lists [CryptoKeys][google.cloud.kms.v1.CryptoKey].
    *
    * <p>Sample code:
@@ -664,6 +797,98 @@ public class KeyManagementServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
+   * Returns metadata for a given [ImportJob][google.cloud.kms.v1.ImportJob].
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+   *   ImportJobName name = ImportJobName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[IMPORT_JOB]");
+   *   ImportJob response = keyManagementServiceClient.getImportJob(name);
+   * }
+   * </code></pre>
+   *
+   * @param name The [name][google.cloud.kms.v1.ImportJob.name] of the
+   *     [ImportJob][google.cloud.kms.v1.ImportJob] to get.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ImportJob getImportJob(ImportJobName name) {
+
+    GetImportJobRequest request =
+        GetImportJobRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getImportJob(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns metadata for a given [ImportJob][google.cloud.kms.v1.ImportJob].
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+   *   ImportJobName name = ImportJobName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[IMPORT_JOB]");
+   *   ImportJob response = keyManagementServiceClient.getImportJob(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name The [name][google.cloud.kms.v1.ImportJob.name] of the
+   *     [ImportJob][google.cloud.kms.v1.ImportJob] to get.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ImportJob getImportJob(String name) {
+
+    GetImportJobRequest request = GetImportJobRequest.newBuilder().setName(name).build();
+    return getImportJob(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns metadata for a given [ImportJob][google.cloud.kms.v1.ImportJob].
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+   *   ImportJobName name = ImportJobName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[IMPORT_JOB]");
+   *   GetImportJobRequest request = GetImportJobRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   ImportJob response = keyManagementServiceClient.getImportJob(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ImportJob getImportJob(GetImportJobRequest request) {
+    return getImportJobCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns metadata for a given [ImportJob][google.cloud.kms.v1.ImportJob].
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+   *   ImportJobName name = ImportJobName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[IMPORT_JOB]");
+   *   GetImportJobRequest request = GetImportJobRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   ApiFuture&lt;ImportJob&gt; future = keyManagementServiceClient.getImportJobCallable().futureCall(request);
+   *   // Do something
+   *   ImportJob response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<GetImportJobRequest, ImportJob> getImportJobCallable() {
+    return stub.getImportJobCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
    * Returns metadata for a given [CryptoKey][google.cloud.kms.v1.CryptoKey], as well as its
    * [primary][google.cloud.kms.v1.CryptoKey.primary]
    * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
@@ -975,6 +1200,162 @@ public class KeyManagementServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<CreateKeyRingRequest, KeyRing> createKeyRingCallable() {
     return stub.createKeyRingCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Create a new [ImportJob][google.cloud.kms.v1.ImportJob] within a
+   * [KeyRing][google.cloud.kms.v1.KeyRing].
+   *
+   * <p>[ImportJob.import_method][google.cloud.kms.v1.ImportJob.import_method] is required.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+   *   KeyRingName parent = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
+   *   String importJobId = "my-import-job";
+   *   ImportJob.ImportMethod importMethod = ImportJob.ImportMethod.RSA_OAEP_3072_SHA1_AES_256;
+   *   ProtectionLevel protectionLevel = ProtectionLevel.HSM;
+   *   ImportJob importJob = ImportJob.newBuilder()
+   *     .setImportMethod(importMethod)
+   *     .setProtectionLevel(protectionLevel)
+   *     .build();
+   *   ImportJob response = keyManagementServiceClient.createImportJob(parent, importJobId, importJob);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The [name][google.cloud.kms.v1.KeyRing.name] of the
+   *     [KeyRing][google.cloud.kms.v1.KeyRing] associated with the
+   *     [ImportJobs][google.cloud.kms.v1.ImportJob].
+   * @param importJobId Required. It must be unique within a KeyRing and match the regular
+   *     expression `[a-zA-Z0-9_-]{1,63}`
+   * @param importJob Required. An [ImportJob][google.cloud.kms.v1.ImportJob] with initial field
+   *     values.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ImportJob createImportJob(
+      KeyRingName parent, String importJobId, ImportJob importJob) {
+
+    CreateImportJobRequest request =
+        CreateImportJobRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setImportJobId(importJobId)
+            .setImportJob(importJob)
+            .build();
+    return createImportJob(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Create a new [ImportJob][google.cloud.kms.v1.ImportJob] within a
+   * [KeyRing][google.cloud.kms.v1.KeyRing].
+   *
+   * <p>[ImportJob.import_method][google.cloud.kms.v1.ImportJob.import_method] is required.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+   *   KeyRingName parent = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
+   *   String importJobId = "my-import-job";
+   *   ImportJob.ImportMethod importMethod = ImportJob.ImportMethod.RSA_OAEP_3072_SHA1_AES_256;
+   *   ProtectionLevel protectionLevel = ProtectionLevel.HSM;
+   *   ImportJob importJob = ImportJob.newBuilder()
+   *     .setImportMethod(importMethod)
+   *     .setProtectionLevel(protectionLevel)
+   *     .build();
+   *   ImportJob response = keyManagementServiceClient.createImportJob(parent.toString(), importJobId, importJob);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The [name][google.cloud.kms.v1.KeyRing.name] of the
+   *     [KeyRing][google.cloud.kms.v1.KeyRing] associated with the
+   *     [ImportJobs][google.cloud.kms.v1.ImportJob].
+   * @param importJobId Required. It must be unique within a KeyRing and match the regular
+   *     expression `[a-zA-Z0-9_-]{1,63}`
+   * @param importJob Required. An [ImportJob][google.cloud.kms.v1.ImportJob] with initial field
+   *     values.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ImportJob createImportJob(String parent, String importJobId, ImportJob importJob) {
+
+    CreateImportJobRequest request =
+        CreateImportJobRequest.newBuilder()
+            .setParent(parent)
+            .setImportJobId(importJobId)
+            .setImportJob(importJob)
+            .build();
+    return createImportJob(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Create a new [ImportJob][google.cloud.kms.v1.ImportJob] within a
+   * [KeyRing][google.cloud.kms.v1.KeyRing].
+   *
+   * <p>[ImportJob.import_method][google.cloud.kms.v1.ImportJob.import_method] is required.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+   *   KeyRingName parent = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
+   *   String importJobId = "my-import-job";
+   *   ImportJob.ImportMethod importMethod = ImportJob.ImportMethod.RSA_OAEP_3072_SHA1_AES_256;
+   *   ProtectionLevel protectionLevel = ProtectionLevel.HSM;
+   *   ImportJob importJob = ImportJob.newBuilder()
+   *     .setImportMethod(importMethod)
+   *     .setProtectionLevel(protectionLevel)
+   *     .build();
+   *   CreateImportJobRequest request = CreateImportJobRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .setImportJobId(importJobId)
+   *     .setImportJob(importJob)
+   *     .build();
+   *   ImportJob response = keyManagementServiceClient.createImportJob(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ImportJob createImportJob(CreateImportJobRequest request) {
+    return createImportJobCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Create a new [ImportJob][google.cloud.kms.v1.ImportJob] within a
+   * [KeyRing][google.cloud.kms.v1.KeyRing].
+   *
+   * <p>[ImportJob.import_method][google.cloud.kms.v1.ImportJob.import_method] is required.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+   *   KeyRingName parent = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
+   *   String importJobId = "my-import-job";
+   *   ImportJob.ImportMethod importMethod = ImportJob.ImportMethod.RSA_OAEP_3072_SHA1_AES_256;
+   *   ProtectionLevel protectionLevel = ProtectionLevel.HSM;
+   *   ImportJob importJob = ImportJob.newBuilder()
+   *     .setImportMethod(importMethod)
+   *     .setProtectionLevel(protectionLevel)
+   *     .build();
+   *   CreateImportJobRequest request = CreateImportJobRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .setImportJobId(importJobId)
+   *     .setImportJob(importJob)
+   *     .build();
+   *   ApiFuture&lt;ImportJob&gt; future = keyManagementServiceClient.createImportJobCallable().futureCall(request);
+   *   // Do something
+   *   ImportJob response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<CreateImportJobRequest, ImportJob> createImportJobCallable() {
+    return stub.createImportJobCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -1301,6 +1682,70 @@ public class KeyManagementServiceClient implements BackgroundResource {
   public final UnaryCallable<CreateCryptoKeyVersionRequest, CryptoKeyVersion>
       createCryptoKeyVersionCallable() {
     return stub.createCryptoKeyVersionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Imports a new [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] into an existing
+   * [CryptoKey][google.cloud.kms.v1.CryptoKey] using the wrapped key material provided in the
+   * request.
+   *
+   * <p>The version ID will be assigned the next sequential id within the
+   * [CryptoKey][google.cloud.kms.v1.CryptoKey].
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+   *   CryptoKeyName parent = CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]");
+   *   CryptoKeyVersion.CryptoKeyVersionAlgorithm algorithm = CryptoKeyVersion.CryptoKeyVersionAlgorithm.CRYPTO_KEY_VERSION_ALGORITHM_UNSPECIFIED;
+   *   String importJob = "";
+   *   ImportCryptoKeyVersionRequest request = ImportCryptoKeyVersionRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .setAlgorithm(algorithm)
+   *     .setImportJob(importJob)
+   *     .build();
+   *   CryptoKeyVersion response = keyManagementServiceClient.importCryptoKeyVersion(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CryptoKeyVersion importCryptoKeyVersion(ImportCryptoKeyVersionRequest request) {
+    return importCryptoKeyVersionCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Imports a new [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] into an existing
+   * [CryptoKey][google.cloud.kms.v1.CryptoKey] using the wrapped key material provided in the
+   * request.
+   *
+   * <p>The version ID will be assigned the next sequential id within the
+   * [CryptoKey][google.cloud.kms.v1.CryptoKey].
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+   *   CryptoKeyName parent = CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]");
+   *   CryptoKeyVersion.CryptoKeyVersionAlgorithm algorithm = CryptoKeyVersion.CryptoKeyVersionAlgorithm.CRYPTO_KEY_VERSION_ALGORITHM_UNSPECIFIED;
+   *   String importJob = "";
+   *   ImportCryptoKeyVersionRequest request = ImportCryptoKeyVersionRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .setAlgorithm(algorithm)
+   *     .setImportJob(importJob)
+   *     .build();
+   *   ApiFuture&lt;CryptoKeyVersion&gt; future = keyManagementServiceClient.importCryptoKeyVersionCallable().futureCall(request);
+   *   // Do something
+   *   CryptoKeyVersion response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<ImportCryptoKeyVersionRequest, CryptoKeyVersion>
+      importCryptoKeyVersionCallable() {
+    return stub.importCryptoKeyVersionCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -2920,6 +3365,87 @@ public class KeyManagementServiceClient implements BackgroundResource {
     protected ListKeyRingsFixedSizeCollection createCollection(
         List<ListKeyRingsPage> pages, int collectionSize) {
       return new ListKeyRingsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListImportJobsPagedResponse
+      extends AbstractPagedListResponse<
+          ListImportJobsRequest,
+          ListImportJobsResponse,
+          ImportJob,
+          ListImportJobsPage,
+          ListImportJobsFixedSizeCollection> {
+
+    public static ApiFuture<ListImportJobsPagedResponse> createAsync(
+        PageContext<ListImportJobsRequest, ListImportJobsResponse, ImportJob> context,
+        ApiFuture<ListImportJobsResponse> futureResponse) {
+      ApiFuture<ListImportJobsPage> futurePage =
+          ListImportJobsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          new ApiFunction<ListImportJobsPage, ListImportJobsPagedResponse>() {
+            @Override
+            public ListImportJobsPagedResponse apply(ListImportJobsPage input) {
+              return new ListImportJobsPagedResponse(input);
+            }
+          },
+          MoreExecutors.directExecutor());
+    }
+
+    private ListImportJobsPagedResponse(ListImportJobsPage page) {
+      super(page, ListImportJobsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListImportJobsPage
+      extends AbstractPage<
+          ListImportJobsRequest, ListImportJobsResponse, ImportJob, ListImportJobsPage> {
+
+    private ListImportJobsPage(
+        PageContext<ListImportJobsRequest, ListImportJobsResponse, ImportJob> context,
+        ListImportJobsResponse response) {
+      super(context, response);
+    }
+
+    private static ListImportJobsPage createEmptyPage() {
+      return new ListImportJobsPage(null, null);
+    }
+
+    @Override
+    protected ListImportJobsPage createPage(
+        PageContext<ListImportJobsRequest, ListImportJobsResponse, ImportJob> context,
+        ListImportJobsResponse response) {
+      return new ListImportJobsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListImportJobsPage> createPageAsync(
+        PageContext<ListImportJobsRequest, ListImportJobsResponse, ImportJob> context,
+        ApiFuture<ListImportJobsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListImportJobsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListImportJobsRequest,
+          ListImportJobsResponse,
+          ImportJob,
+          ListImportJobsPage,
+          ListImportJobsFixedSizeCollection> {
+
+    private ListImportJobsFixedSizeCollection(List<ListImportJobsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListImportJobsFixedSizeCollection createEmptyCollection() {
+      return new ListImportJobsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListImportJobsFixedSizeCollection createCollection(
+        List<ListImportJobsPage> pages, int collectionSize) {
+      return new ListImportJobsFixedSizeCollection(pages, collectionSize);
     }
   }
 

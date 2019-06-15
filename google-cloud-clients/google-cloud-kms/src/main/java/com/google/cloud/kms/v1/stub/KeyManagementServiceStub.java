@@ -17,6 +17,7 @@ package com.google.cloud.kms.v1.stub;
 
 import static com.google.cloud.kms.v1.KeyManagementServiceClient.ListCryptoKeyVersionsPagedResponse;
 import static com.google.cloud.kms.v1.KeyManagementServiceClient.ListCryptoKeysPagedResponse;
+import static com.google.cloud.kms.v1.KeyManagementServiceClient.ListImportJobsPagedResponse;
 import static com.google.cloud.kms.v1.KeyManagementServiceClient.ListKeyRingsPagedResponse;
 
 import com.google.api.core.BetaApi;
@@ -28,6 +29,7 @@ import com.google.cloud.kms.v1.AsymmetricSignRequest;
 import com.google.cloud.kms.v1.AsymmetricSignResponse;
 import com.google.cloud.kms.v1.CreateCryptoKeyRequest;
 import com.google.cloud.kms.v1.CreateCryptoKeyVersionRequest;
+import com.google.cloud.kms.v1.CreateImportJobRequest;
 import com.google.cloud.kms.v1.CreateKeyRingRequest;
 import com.google.cloud.kms.v1.CryptoKey;
 import com.google.cloud.kms.v1.CryptoKeyVersion;
@@ -38,13 +40,18 @@ import com.google.cloud.kms.v1.EncryptRequest;
 import com.google.cloud.kms.v1.EncryptResponse;
 import com.google.cloud.kms.v1.GetCryptoKeyRequest;
 import com.google.cloud.kms.v1.GetCryptoKeyVersionRequest;
+import com.google.cloud.kms.v1.GetImportJobRequest;
 import com.google.cloud.kms.v1.GetKeyRingRequest;
 import com.google.cloud.kms.v1.GetPublicKeyRequest;
+import com.google.cloud.kms.v1.ImportCryptoKeyVersionRequest;
+import com.google.cloud.kms.v1.ImportJob;
 import com.google.cloud.kms.v1.KeyRing;
 import com.google.cloud.kms.v1.ListCryptoKeyVersionsRequest;
 import com.google.cloud.kms.v1.ListCryptoKeyVersionsResponse;
 import com.google.cloud.kms.v1.ListCryptoKeysRequest;
 import com.google.cloud.kms.v1.ListCryptoKeysResponse;
+import com.google.cloud.kms.v1.ListImportJobsRequest;
+import com.google.cloud.kms.v1.ListImportJobsResponse;
 import com.google.cloud.kms.v1.ListKeyRingsRequest;
 import com.google.cloud.kms.v1.ListKeyRingsResponse;
 import com.google.cloud.kms.v1.PublicKey;
@@ -77,6 +84,15 @@ public abstract class KeyManagementServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: listKeyRingsCallable()");
   }
 
+  public UnaryCallable<ListImportJobsRequest, ListImportJobsPagedResponse>
+      listImportJobsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listImportJobsPagedCallable()");
+  }
+
+  public UnaryCallable<ListImportJobsRequest, ListImportJobsResponse> listImportJobsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listImportJobsCallable()");
+  }
+
   public UnaryCallable<ListCryptoKeysRequest, ListCryptoKeysPagedResponse>
       listCryptoKeysPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: listCryptoKeysPagedCallable()");
@@ -101,6 +117,10 @@ public abstract class KeyManagementServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: getKeyRingCallable()");
   }
 
+  public UnaryCallable<GetImportJobRequest, ImportJob> getImportJobCallable() {
+    throw new UnsupportedOperationException("Not implemented: getImportJobCallable()");
+  }
+
   public UnaryCallable<GetCryptoKeyRequest, CryptoKey> getCryptoKeyCallable() {
     throw new UnsupportedOperationException("Not implemented: getCryptoKeyCallable()");
   }
@@ -113,6 +133,10 @@ public abstract class KeyManagementServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: createKeyRingCallable()");
   }
 
+  public UnaryCallable<CreateImportJobRequest, ImportJob> createImportJobCallable() {
+    throw new UnsupportedOperationException("Not implemented: createImportJobCallable()");
+  }
+
   public UnaryCallable<CreateCryptoKeyRequest, CryptoKey> createCryptoKeyCallable() {
     throw new UnsupportedOperationException("Not implemented: createCryptoKeyCallable()");
   }
@@ -120,6 +144,11 @@ public abstract class KeyManagementServiceStub implements BackgroundResource {
   public UnaryCallable<CreateCryptoKeyVersionRequest, CryptoKeyVersion>
       createCryptoKeyVersionCallable() {
     throw new UnsupportedOperationException("Not implemented: createCryptoKeyVersionCallable()");
+  }
+
+  public UnaryCallable<ImportCryptoKeyVersionRequest, CryptoKeyVersion>
+      importCryptoKeyVersionCallable() {
+    throw new UnsupportedOperationException("Not implemented: importCryptoKeyVersionCallable()");
   }
 
   public UnaryCallable<UpdateCryptoKeyRequest, CryptoKey> updateCryptoKeyCallable() {

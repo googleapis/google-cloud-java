@@ -3,17 +3,16 @@
 
 package com.google.cloud.kms.v1;
 
-public interface GetPublicKeyRequestOrBuilder
+public interface GetImportJobRequestOrBuilder
     extends
-    // @@protoc_insertion_point(interface_extends:google.cloud.kms.v1.GetPublicKeyRequest)
+    // @@protoc_insertion_point(interface_extends:google.cloud.kms.v1.GetImportJobRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
    *
    *
    * <pre>
-   * The [name][google.cloud.kms.v1.CryptoKeyVersion.name] of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] public key to
-   * get.
+   * The [name][google.cloud.kms.v1.ImportJob.name] of the [ImportJob][google.cloud.kms.v1.ImportJob] to get.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -23,8 +22,7 @@ public interface GetPublicKeyRequestOrBuilder
    *
    *
    * <pre>
-   * The [name][google.cloud.kms.v1.CryptoKeyVersion.name] of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] public key to
-   * get.
+   * The [name][google.cloud.kms.v1.ImportJob.name] of the [ImportJob][google.cloud.kms.v1.ImportJob] to get.
    * </pre>
    *
    * <code>string name = 1;</code>

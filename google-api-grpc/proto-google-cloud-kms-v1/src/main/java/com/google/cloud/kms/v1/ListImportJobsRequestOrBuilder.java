@@ -3,9 +3,9 @@
 
 package com.google.cloud.kms.v1;
 
-public interface ListCryptoKeysRequestOrBuilder
+public interface ListImportJobsRequestOrBuilder
     extends
-    // @@protoc_insertion_point(interface_extends:google.cloud.kms.v1.ListCryptoKeysRequest)
+    // @@protoc_insertion_point(interface_extends:google.cloud.kms.v1.ListImportJobsRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
@@ -35,10 +35,10 @@ public interface ListCryptoKeysRequestOrBuilder
    *
    *
    * <pre>
-   * Optional limit on the number of [CryptoKeys][google.cloud.kms.v1.CryptoKey] to include in the
-   * response.  Further [CryptoKeys][google.cloud.kms.v1.CryptoKey] can subsequently be obtained by
-   * including the [ListCryptoKeysResponse.next_page_token][google.cloud.kms.v1.ListCryptoKeysResponse.next_page_token] in a subsequent
-   * request.  If unspecified, the server will pick an appropriate default.
+   * Optional limit on the number of [ImportJobs][google.cloud.kms.v1.ImportJob] to include in the
+   * response. Further [ImportJobs][google.cloud.kms.v1.ImportJob] can subsequently be obtained by
+   * including the [ListImportJobsResponse.next_page_token][google.cloud.kms.v1.ListImportJobsResponse.next_page_token] in a subsequent
+   * request. If unspecified, the server will pick an appropriate default.
    * </pre>
    *
    * <code>int32 page_size = 2;</code>
@@ -50,7 +50,7 @@ public interface ListCryptoKeysRequestOrBuilder
    *
    * <pre>
    * Optional pagination token, returned earlier via
-   * [ListCryptoKeysResponse.next_page_token][google.cloud.kms.v1.ListCryptoKeysResponse.next_page_token].
+   * [ListImportJobsResponse.next_page_token][google.cloud.kms.v1.ListImportJobsResponse.next_page_token].
    * </pre>
    *
    * <code>string page_token = 3;</code>
@@ -61,7 +61,7 @@ public interface ListCryptoKeysRequestOrBuilder
    *
    * <pre>
    * Optional pagination token, returned earlier via
-   * [ListCryptoKeysResponse.next_page_token][google.cloud.kms.v1.ListCryptoKeysResponse.next_page_token].
+   * [ListImportJobsResponse.next_page_token][google.cloud.kms.v1.ListImportJobsResponse.next_page_token].
    * </pre>
    *
    * <code>string page_token = 3;</code>
@@ -72,31 +72,10 @@ public interface ListCryptoKeysRequestOrBuilder
    *
    *
    * <pre>
-   * The fields of the primary version to include in the response.
-   * </pre>
-   *
-   * <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionView version_view = 4;</code>
-   */
-  int getVersionViewValue();
-  /**
-   *
-   *
-   * <pre>
-   * The fields of the primary version to include in the response.
-   * </pre>
-   *
-   * <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionView version_view = 4;</code>
-   */
-  com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionView getVersionView();
-
-  /**
-   *
-   *
-   * <pre>
    * Optional. Only include resources that match the filter in the response.
    * </pre>
    *
-   * <code>string filter = 5;</code>
+   * <code>string filter = 4;</code>
    */
   java.lang.String getFilter();
   /**
@@ -106,7 +85,7 @@ public interface ListCryptoKeysRequestOrBuilder
    * Optional. Only include resources that match the filter in the response.
    * </pre>
    *
-   * <code>string filter = 5;</code>
+   * <code>string filter = 4;</code>
    */
   com.google.protobuf.ByteString getFilterBytes();
 
@@ -118,7 +97,7 @@ public interface ListCryptoKeysRequestOrBuilder
    * results will be sorted in the default order.
    * </pre>
    *
-   * <code>string order_by = 6;</code>
+   * <code>string order_by = 5;</code>
    */
   java.lang.String getOrderBy();
   /**
@@ -129,7 +108,7 @@ public interface ListCryptoKeysRequestOrBuilder
    * results will be sorted in the default order.
    * </pre>
    *
-   * <code>string order_by = 6;</code>
+   * <code>string order_by = 5;</code>
    */
   com.google.protobuf.ByteString getOrderByBytes();
 }

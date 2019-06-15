@@ -204,6 +204,63 @@ public final class KeyManagementServiceGrpc {
   }
 
   @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getListImportJobsMethod()} instead.
+  public static final io.grpc.MethodDescriptor<
+          com.google.cloud.kms.v1.ListImportJobsRequest,
+          com.google.cloud.kms.v1.ListImportJobsResponse>
+      METHOD_LIST_IMPORT_JOBS = getListImportJobsMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.kms.v1.ListImportJobsRequest,
+          com.google.cloud.kms.v1.ListImportJobsResponse>
+      getListImportJobsMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.kms.v1.ListImportJobsRequest,
+          com.google.cloud.kms.v1.ListImportJobsResponse>
+      getListImportJobsMethod() {
+    return getListImportJobsMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<
+          com.google.cloud.kms.v1.ListImportJobsRequest,
+          com.google.cloud.kms.v1.ListImportJobsResponse>
+      getListImportJobsMethodHelper() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.kms.v1.ListImportJobsRequest,
+            com.google.cloud.kms.v1.ListImportJobsResponse>
+        getListImportJobsMethod;
+    if ((getListImportJobsMethod = KeyManagementServiceGrpc.getListImportJobsMethod) == null) {
+      synchronized (KeyManagementServiceGrpc.class) {
+        if ((getListImportJobsMethod = KeyManagementServiceGrpc.getListImportJobsMethod) == null) {
+          KeyManagementServiceGrpc.getListImportJobsMethod =
+              getListImportJobsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.kms.v1.ListImportJobsRequest,
+                          com.google.cloud.kms.v1.ListImportJobsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              "google.cloud.kms.v1.KeyManagementService", "ListImportJobs"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.kms.v1.ListImportJobsRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.kms.v1.ListImportJobsResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new KeyManagementServiceMethodDescriptorSupplier("ListImportJobs"))
+                      .build();
+        }
+      }
+    }
+    return getListImportJobsMethod;
+  }
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
   @java.lang.Deprecated // Use {@link #getGetKeyRingMethod()} instead.
   public static final io.grpc.MethodDescriptor<
           com.google.cloud.kms.v1.GetKeyRingRequest, com.google.cloud.kms.v1.KeyRing>
@@ -419,6 +476,58 @@ public final class KeyManagementServiceGrpc {
   }
 
   @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getGetImportJobMethod()} instead.
+  public static final io.grpc.MethodDescriptor<
+          com.google.cloud.kms.v1.GetImportJobRequest, com.google.cloud.kms.v1.ImportJob>
+      METHOD_GET_IMPORT_JOB = getGetImportJobMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.kms.v1.GetImportJobRequest, com.google.cloud.kms.v1.ImportJob>
+      getGetImportJobMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.kms.v1.GetImportJobRequest, com.google.cloud.kms.v1.ImportJob>
+      getGetImportJobMethod() {
+    return getGetImportJobMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<
+          com.google.cloud.kms.v1.GetImportJobRequest, com.google.cloud.kms.v1.ImportJob>
+      getGetImportJobMethodHelper() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.kms.v1.GetImportJobRequest, com.google.cloud.kms.v1.ImportJob>
+        getGetImportJobMethod;
+    if ((getGetImportJobMethod = KeyManagementServiceGrpc.getGetImportJobMethod) == null) {
+      synchronized (KeyManagementServiceGrpc.class) {
+        if ((getGetImportJobMethod = KeyManagementServiceGrpc.getGetImportJobMethod) == null) {
+          KeyManagementServiceGrpc.getGetImportJobMethod =
+              getGetImportJobMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.kms.v1.GetImportJobRequest,
+                          com.google.cloud.kms.v1.ImportJob>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              "google.cloud.kms.v1.KeyManagementService", "GetImportJob"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.kms.v1.GetImportJobRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.kms.v1.ImportJob.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new KeyManagementServiceMethodDescriptorSupplier("GetImportJob"))
+                      .build();
+        }
+      }
+    }
+    return getGetImportJobMethod;
+  }
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
   @java.lang.Deprecated // Use {@link #getCreateKeyRingMethod()} instead.
   public static final io.grpc.MethodDescriptor<
           com.google.cloud.kms.v1.CreateKeyRingRequest, com.google.cloud.kms.v1.KeyRing>
@@ -583,6 +692,121 @@ public final class KeyManagementServiceGrpc {
       }
     }
     return getCreateCryptoKeyVersionMethod;
+  }
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getImportCryptoKeyVersionMethod()} instead.
+  public static final io.grpc.MethodDescriptor<
+          com.google.cloud.kms.v1.ImportCryptoKeyVersionRequest,
+          com.google.cloud.kms.v1.CryptoKeyVersion>
+      METHOD_IMPORT_CRYPTO_KEY_VERSION = getImportCryptoKeyVersionMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.kms.v1.ImportCryptoKeyVersionRequest,
+          com.google.cloud.kms.v1.CryptoKeyVersion>
+      getImportCryptoKeyVersionMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.kms.v1.ImportCryptoKeyVersionRequest,
+          com.google.cloud.kms.v1.CryptoKeyVersion>
+      getImportCryptoKeyVersionMethod() {
+    return getImportCryptoKeyVersionMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<
+          com.google.cloud.kms.v1.ImportCryptoKeyVersionRequest,
+          com.google.cloud.kms.v1.CryptoKeyVersion>
+      getImportCryptoKeyVersionMethodHelper() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.kms.v1.ImportCryptoKeyVersionRequest,
+            com.google.cloud.kms.v1.CryptoKeyVersion>
+        getImportCryptoKeyVersionMethod;
+    if ((getImportCryptoKeyVersionMethod = KeyManagementServiceGrpc.getImportCryptoKeyVersionMethod)
+        == null) {
+      synchronized (KeyManagementServiceGrpc.class) {
+        if ((getImportCryptoKeyVersionMethod =
+                KeyManagementServiceGrpc.getImportCryptoKeyVersionMethod)
+            == null) {
+          KeyManagementServiceGrpc.getImportCryptoKeyVersionMethod =
+              getImportCryptoKeyVersionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.kms.v1.ImportCryptoKeyVersionRequest,
+                          com.google.cloud.kms.v1.CryptoKeyVersion>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              "google.cloud.kms.v1.KeyManagementService", "ImportCryptoKeyVersion"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.kms.v1.ImportCryptoKeyVersionRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.kms.v1.CryptoKeyVersion.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new KeyManagementServiceMethodDescriptorSupplier(
+                              "ImportCryptoKeyVersion"))
+                      .build();
+        }
+      }
+    }
+    return getImportCryptoKeyVersionMethod;
+  }
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getCreateImportJobMethod()} instead.
+  public static final io.grpc.MethodDescriptor<
+          com.google.cloud.kms.v1.CreateImportJobRequest, com.google.cloud.kms.v1.ImportJob>
+      METHOD_CREATE_IMPORT_JOB = getCreateImportJobMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.kms.v1.CreateImportJobRequest, com.google.cloud.kms.v1.ImportJob>
+      getCreateImportJobMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.kms.v1.CreateImportJobRequest, com.google.cloud.kms.v1.ImportJob>
+      getCreateImportJobMethod() {
+    return getCreateImportJobMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<
+          com.google.cloud.kms.v1.CreateImportJobRequest, com.google.cloud.kms.v1.ImportJob>
+      getCreateImportJobMethodHelper() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.kms.v1.CreateImportJobRequest, com.google.cloud.kms.v1.ImportJob>
+        getCreateImportJobMethod;
+    if ((getCreateImportJobMethod = KeyManagementServiceGrpc.getCreateImportJobMethod) == null) {
+      synchronized (KeyManagementServiceGrpc.class) {
+        if ((getCreateImportJobMethod = KeyManagementServiceGrpc.getCreateImportJobMethod)
+            == null) {
+          KeyManagementServiceGrpc.getCreateImportJobMethod =
+              getCreateImportJobMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.kms.v1.CreateImportJobRequest,
+                          com.google.cloud.kms.v1.ImportJob>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              "google.cloud.kms.v1.KeyManagementService", "CreateImportJob"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.kms.v1.CreateImportJobRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.kms.v1.ImportJob.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new KeyManagementServiceMethodDescriptorSupplier("CreateImportJob"))
+                      .build();
+        }
+      }
+    }
+    return getCreateImportJobMethod;
   }
 
   @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
@@ -1193,6 +1417,20 @@ public final class KeyManagementServiceGrpc {
      *
      *
      * <pre>
+     * Lists [ImportJobs][google.cloud.kms.v1.ImportJob].
+     * </pre>
+     */
+    public void listImportJobs(
+        com.google.cloud.kms.v1.ListImportJobsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.ListImportJobsResponse>
+            responseObserver) {
+      asyncUnimplementedUnaryCall(getListImportJobsMethodHelper(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Returns metadata for a given [KeyRing][google.cloud.kms.v1.KeyRing].
      * </pre>
      */
@@ -1206,9 +1444,8 @@ public final class KeyManagementServiceGrpc {
      *
      *
      * <pre>
-     * Returns metadata for a given [CryptoKey][google.cloud.kms.v1.CryptoKey], as
-     * well as its [primary][google.cloud.kms.v1.CryptoKey.primary]
-     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
+     * Returns metadata for a given [CryptoKey][google.cloud.kms.v1.CryptoKey], as well as its
+     * [primary][google.cloud.kms.v1.CryptoKey.primary] [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
      * </pre>
      */
     public void getCryptoKey(
@@ -1221,8 +1458,7 @@ public final class KeyManagementServiceGrpc {
      *
      *
      * <pre>
-     * Returns metadata for a given
-     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
+     * Returns metadata for a given [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
      * </pre>
      */
     public void getCryptoKeyVersion(
@@ -1235,11 +1471,9 @@ public final class KeyManagementServiceGrpc {
      *
      *
      * <pre>
-     * Returns the public key for the given
-     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]. The
+     * Returns the public key for the given [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]. The
      * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] must be
-     * [ASYMMETRIC_SIGN][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ASYMMETRIC_SIGN]
-     * or
+     * [ASYMMETRIC_SIGN][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ASYMMETRIC_SIGN] or
      * [ASYMMETRIC_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ASYMMETRIC_DECRYPT].
      * </pre>
      */
@@ -1253,8 +1487,20 @@ public final class KeyManagementServiceGrpc {
      *
      *
      * <pre>
-     * Create a new [KeyRing][google.cloud.kms.v1.KeyRing] in a given Project and
-     * Location.
+     * Returns metadata for a given [ImportJob][google.cloud.kms.v1.ImportJob].
+     * </pre>
+     */
+    public void getImportJob(
+        com.google.cloud.kms.v1.GetImportJobRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.ImportJob> responseObserver) {
+      asyncUnimplementedUnaryCall(getGetImportJobMethodHelper(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a new [KeyRing][google.cloud.kms.v1.KeyRing] in a given Project and Location.
      * </pre>
      */
     public void createKeyRing(
@@ -1267,8 +1513,7 @@ public final class KeyManagementServiceGrpc {
      *
      *
      * <pre>
-     * Create a new [CryptoKey][google.cloud.kms.v1.CryptoKey] within a
-     * [KeyRing][google.cloud.kms.v1.KeyRing].
+     * Create a new [CryptoKey][google.cloud.kms.v1.CryptoKey] within a [KeyRing][google.cloud.kms.v1.KeyRing].
      * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] and
      * [CryptoKey.version_template.algorithm][google.cloud.kms.v1.CryptoKeyVersionTemplate.algorithm]
      * are required.
@@ -1284,8 +1529,7 @@ public final class KeyManagementServiceGrpc {
      *
      *
      * <pre>
-     * Create a new [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] in a
-     * [CryptoKey][google.cloud.kms.v1.CryptoKey].
+     * Create a new [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] in a [CryptoKey][google.cloud.kms.v1.CryptoKey].
      * The server will assign the next sequential id. If unset,
      * [state][google.cloud.kms.v1.CryptoKeyVersion.state] will be set to
      * [ENABLED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.ENABLED].
@@ -1295,6 +1539,36 @@ public final class KeyManagementServiceGrpc {
         com.google.cloud.kms.v1.CreateCryptoKeyVersionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.CryptoKeyVersion> responseObserver) {
       asyncUnimplementedUnaryCall(getCreateCryptoKeyVersionMethodHelper(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Imports a new [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] into an existing [CryptoKey][google.cloud.kms.v1.CryptoKey] using the
+     * wrapped key material provided in the request.
+     * The version ID will be assigned the next sequential id within the
+     * [CryptoKey][google.cloud.kms.v1.CryptoKey].
+     * </pre>
+     */
+    public void importCryptoKeyVersion(
+        com.google.cloud.kms.v1.ImportCryptoKeyVersionRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.CryptoKeyVersion> responseObserver) {
+      asyncUnimplementedUnaryCall(getImportCryptoKeyVersionMethodHelper(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a new [ImportJob][google.cloud.kms.v1.ImportJob] within a [KeyRing][google.cloud.kms.v1.KeyRing].
+     * [ImportJob.import_method][google.cloud.kms.v1.ImportJob.import_method] is required.
+     * </pre>
+     */
+    public void createImportJob(
+        com.google.cloud.kms.v1.CreateImportJobRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.ImportJob> responseObserver) {
+      asyncUnimplementedUnaryCall(getCreateImportJobMethodHelper(), responseObserver);
     }
 
     /**
@@ -1314,17 +1588,12 @@ public final class KeyManagementServiceGrpc {
      *
      *
      * <pre>
-     * Update a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s
-     * metadata.
+     * Update a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s metadata.
      * [state][google.cloud.kms.v1.CryptoKeyVersion.state] may be changed between
-     * [ENABLED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.ENABLED]
-     * and
-     * [DISABLED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DISABLED]
-     * using this method. See
-     * [DestroyCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.DestroyCryptoKeyVersion]
-     * and
-     * [RestoreCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.RestoreCryptoKeyVersion]
-     * to move between other states.
+     * [ENABLED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.ENABLED] and
+     * [DISABLED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DISABLED] using this
+     * method. See [DestroyCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.DestroyCryptoKeyVersion] and [RestoreCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.RestoreCryptoKeyVersion] to
+     * move between other states.
      * </pre>
      */
     public void updateCryptoKeyVersion(
@@ -1337,9 +1606,8 @@ public final class KeyManagementServiceGrpc {
      *
      *
      * <pre>
-     * Encrypts data, so that it can only be recovered by a call to
-     * [Decrypt][google.cloud.kms.v1.KeyManagementService.Decrypt]. The
-     * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] must be
+     * Encrypts data, so that it can only be recovered by a call to [Decrypt][google.cloud.kms.v1.KeyManagementService.Decrypt].
+     * The [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] must be
      * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
      * </pre>
      */
@@ -1353,10 +1621,8 @@ public final class KeyManagementServiceGrpc {
      *
      *
      * <pre>
-     * Decrypts data that was protected by
-     * [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt]. The
-     * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] must be
-     * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
+     * Decrypts data that was protected by [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt]. The [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose]
+     * must be [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
      * </pre>
      */
     public void decrypt(
@@ -1369,11 +1635,9 @@ public final class KeyManagementServiceGrpc {
      *
      *
      * <pre>
-     * Signs data using a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]
-     * with [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose]
+     * Signs data using a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose]
      * ASYMMETRIC_SIGN, producing a signature that can be verified with the public
-     * key retrieved from
-     * [GetPublicKey][google.cloud.kms.v1.KeyManagementService.GetPublicKey].
+     * key retrieved from [GetPublicKey][google.cloud.kms.v1.KeyManagementService.GetPublicKey].
      * </pre>
      */
     public void asymmetricSign(
@@ -1388,10 +1652,8 @@ public final class KeyManagementServiceGrpc {
      *
      * <pre>
      * Decrypts data that was encrypted with a public key retrieved from
-     * [GetPublicKey][google.cloud.kms.v1.KeyManagementService.GetPublicKey]
-     * corresponding to a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]
-     * with [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose]
-     * ASYMMETRIC_DECRYPT.
+     * [GetPublicKey][google.cloud.kms.v1.KeyManagementService.GetPublicKey] corresponding to a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with
+     * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] ASYMMETRIC_DECRYPT.
      * </pre>
      */
     public void asymmetricDecrypt(
@@ -1405,9 +1667,7 @@ public final class KeyManagementServiceGrpc {
      *
      *
      * <pre>
-     * Update the version of a [CryptoKey][google.cloud.kms.v1.CryptoKey] that
-     * will be used in
-     * [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt].
+     * Update the version of a [CryptoKey][google.cloud.kms.v1.CryptoKey] that will be used in [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt].
      * Returns an error if called on an asymmetric key.
      * </pre>
      */
@@ -1421,22 +1681,16 @@ public final class KeyManagementServiceGrpc {
      *
      *
      * <pre>
-     * Schedule a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] for
-     * destruction.
-     * Upon calling this method,
-     * [CryptoKeyVersion.state][google.cloud.kms.v1.CryptoKeyVersion.state] will
-     * be set to
+     * Schedule a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] for destruction.
+     * Upon calling this method, [CryptoKeyVersion.state][google.cloud.kms.v1.CryptoKeyVersion.state] will be set to
      * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED]
-     * and [destroy_time][google.cloud.kms.v1.CryptoKeyVersion.destroy_time] will
-     * be set to a time 24 hours in the future, at which point the
-     * [state][google.cloud.kms.v1.CryptoKeyVersion.state] will be changed to
-     * [DESTROYED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROYED],
-     * and the key material will be irrevocably destroyed.
-     * Before the
-     * [destroy_time][google.cloud.kms.v1.CryptoKeyVersion.destroy_time] is
-     * reached,
-     * [RestoreCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.RestoreCryptoKeyVersion]
-     * may be called to reverse the process.
+     * and [destroy_time][google.cloud.kms.v1.CryptoKeyVersion.destroy_time] will be set to a time 24
+     * hours in the future, at which point the [state][google.cloud.kms.v1.CryptoKeyVersion.state]
+     * will be changed to
+     * [DESTROYED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROYED], and the key
+     * material will be irrevocably destroyed.
+     * Before the [destroy_time][google.cloud.kms.v1.CryptoKeyVersion.destroy_time] is reached,
+     * [RestoreCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.RestoreCryptoKeyVersion] may be called to reverse the process.
      * </pre>
      */
     public void destroyCryptoKeyVersion(
@@ -1452,11 +1706,9 @@ public final class KeyManagementServiceGrpc {
      * Restore a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] in the
      * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED]
      * state.
-     * Upon restoration of the CryptoKeyVersion,
-     * [state][google.cloud.kms.v1.CryptoKeyVersion.state] will be set to
-     * [DISABLED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DISABLED],
-     * and [destroy_time][google.cloud.kms.v1.CryptoKeyVersion.destroy_time] will
-     * be cleared.
+     * Upon restoration of the CryptoKeyVersion, [state][google.cloud.kms.v1.CryptoKeyVersion.state]
+     * will be set to [DISABLED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DISABLED],
+     * and [destroy_time][google.cloud.kms.v1.CryptoKeyVersion.destroy_time] will be cleared.
      * </pre>
      */
     public void restoreCryptoKeyVersion(
@@ -1489,6 +1741,13 @@ public final class KeyManagementServiceGrpc {
                       com.google.cloud.kms.v1.ListCryptoKeyVersionsResponse>(
                       this, METHODID_LIST_CRYPTO_KEY_VERSIONS)))
           .addMethod(
+              getListImportJobsMethodHelper(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.kms.v1.ListImportJobsRequest,
+                      com.google.cloud.kms.v1.ListImportJobsResponse>(
+                      this, METHODID_LIST_IMPORT_JOBS)))
+          .addMethod(
               getGetKeyRingMethodHelper(),
               asyncUnaryCall(
                   new MethodHandlers<
@@ -1514,6 +1773,12 @@ public final class KeyManagementServiceGrpc {
                       com.google.cloud.kms.v1.GetPublicKeyRequest,
                       com.google.cloud.kms.v1.PublicKey>(this, METHODID_GET_PUBLIC_KEY)))
           .addMethod(
+              getGetImportJobMethodHelper(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.kms.v1.GetImportJobRequest,
+                      com.google.cloud.kms.v1.ImportJob>(this, METHODID_GET_IMPORT_JOB)))
+          .addMethod(
               getCreateKeyRingMethodHelper(),
               asyncUnaryCall(
                   new MethodHandlers<
@@ -1532,6 +1797,19 @@ public final class KeyManagementServiceGrpc {
                       com.google.cloud.kms.v1.CreateCryptoKeyVersionRequest,
                       com.google.cloud.kms.v1.CryptoKeyVersion>(
                       this, METHODID_CREATE_CRYPTO_KEY_VERSION)))
+          .addMethod(
+              getImportCryptoKeyVersionMethodHelper(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.kms.v1.ImportCryptoKeyVersionRequest,
+                      com.google.cloud.kms.v1.CryptoKeyVersion>(
+                      this, METHODID_IMPORT_CRYPTO_KEY_VERSION)))
+          .addMethod(
+              getCreateImportJobMethodHelper(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.kms.v1.CreateImportJobRequest,
+                      com.google.cloud.kms.v1.ImportJob>(this, METHODID_CREATE_IMPORT_JOB)))
           .addMethod(
               getUpdateCryptoKeyMethodHelper(),
               asyncUnaryCall(
@@ -1681,6 +1959,23 @@ public final class KeyManagementServiceGrpc {
      *
      *
      * <pre>
+     * Lists [ImportJobs][google.cloud.kms.v1.ImportJob].
+     * </pre>
+     */
+    public void listImportJobs(
+        com.google.cloud.kms.v1.ListImportJobsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.ListImportJobsResponse>
+            responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getListImportJobsMethodHelper(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Returns metadata for a given [KeyRing][google.cloud.kms.v1.KeyRing].
      * </pre>
      */
@@ -1697,9 +1992,8 @@ public final class KeyManagementServiceGrpc {
      *
      *
      * <pre>
-     * Returns metadata for a given [CryptoKey][google.cloud.kms.v1.CryptoKey], as
-     * well as its [primary][google.cloud.kms.v1.CryptoKey.primary]
-     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
+     * Returns metadata for a given [CryptoKey][google.cloud.kms.v1.CryptoKey], as well as its
+     * [primary][google.cloud.kms.v1.CryptoKey.primary] [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
      * </pre>
      */
     public void getCryptoKey(
@@ -1715,8 +2009,7 @@ public final class KeyManagementServiceGrpc {
      *
      *
      * <pre>
-     * Returns metadata for a given
-     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
+     * Returns metadata for a given [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
      * </pre>
      */
     public void getCryptoKeyVersion(
@@ -1732,11 +2025,9 @@ public final class KeyManagementServiceGrpc {
      *
      *
      * <pre>
-     * Returns the public key for the given
-     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]. The
+     * Returns the public key for the given [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]. The
      * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] must be
-     * [ASYMMETRIC_SIGN][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ASYMMETRIC_SIGN]
-     * or
+     * [ASYMMETRIC_SIGN][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ASYMMETRIC_SIGN] or
      * [ASYMMETRIC_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ASYMMETRIC_DECRYPT].
      * </pre>
      */
@@ -1753,8 +2044,23 @@ public final class KeyManagementServiceGrpc {
      *
      *
      * <pre>
-     * Create a new [KeyRing][google.cloud.kms.v1.KeyRing] in a given Project and
-     * Location.
+     * Returns metadata for a given [ImportJob][google.cloud.kms.v1.ImportJob].
+     * </pre>
+     */
+    public void getImportJob(
+        com.google.cloud.kms.v1.GetImportJobRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.ImportJob> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getGetImportJobMethodHelper(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a new [KeyRing][google.cloud.kms.v1.KeyRing] in a given Project and Location.
      * </pre>
      */
     public void createKeyRing(
@@ -1770,8 +2076,7 @@ public final class KeyManagementServiceGrpc {
      *
      *
      * <pre>
-     * Create a new [CryptoKey][google.cloud.kms.v1.CryptoKey] within a
-     * [KeyRing][google.cloud.kms.v1.KeyRing].
+     * Create a new [CryptoKey][google.cloud.kms.v1.CryptoKey] within a [KeyRing][google.cloud.kms.v1.KeyRing].
      * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] and
      * [CryptoKey.version_template.algorithm][google.cloud.kms.v1.CryptoKeyVersionTemplate.algorithm]
      * are required.
@@ -1790,8 +2095,7 @@ public final class KeyManagementServiceGrpc {
      *
      *
      * <pre>
-     * Create a new [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] in a
-     * [CryptoKey][google.cloud.kms.v1.CryptoKey].
+     * Create a new [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] in a [CryptoKey][google.cloud.kms.v1.CryptoKey].
      * The server will assign the next sequential id. If unset,
      * [state][google.cloud.kms.v1.CryptoKeyVersion.state] will be set to
      * [ENABLED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.ENABLED].
@@ -1802,6 +2106,42 @@ public final class KeyManagementServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.CryptoKeyVersion> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getCreateCryptoKeyVersionMethodHelper(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Imports a new [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] into an existing [CryptoKey][google.cloud.kms.v1.CryptoKey] using the
+     * wrapped key material provided in the request.
+     * The version ID will be assigned the next sequential id within the
+     * [CryptoKey][google.cloud.kms.v1.CryptoKey].
+     * </pre>
+     */
+    public void importCryptoKeyVersion(
+        com.google.cloud.kms.v1.ImportCryptoKeyVersionRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.CryptoKeyVersion> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getImportCryptoKeyVersionMethodHelper(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a new [ImportJob][google.cloud.kms.v1.ImportJob] within a [KeyRing][google.cloud.kms.v1.KeyRing].
+     * [ImportJob.import_method][google.cloud.kms.v1.ImportJob.import_method] is required.
+     * </pre>
+     */
+    public void createImportJob(
+        com.google.cloud.kms.v1.CreateImportJobRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.ImportJob> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getCreateImportJobMethodHelper(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1826,17 +2166,12 @@ public final class KeyManagementServiceGrpc {
      *
      *
      * <pre>
-     * Update a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s
-     * metadata.
+     * Update a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s metadata.
      * [state][google.cloud.kms.v1.CryptoKeyVersion.state] may be changed between
-     * [ENABLED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.ENABLED]
-     * and
-     * [DISABLED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DISABLED]
-     * using this method. See
-     * [DestroyCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.DestroyCryptoKeyVersion]
-     * and
-     * [RestoreCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.RestoreCryptoKeyVersion]
-     * to move between other states.
+     * [ENABLED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.ENABLED] and
+     * [DISABLED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DISABLED] using this
+     * method. See [DestroyCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.DestroyCryptoKeyVersion] and [RestoreCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.RestoreCryptoKeyVersion] to
+     * move between other states.
      * </pre>
      */
     public void updateCryptoKeyVersion(
@@ -1852,9 +2187,8 @@ public final class KeyManagementServiceGrpc {
      *
      *
      * <pre>
-     * Encrypts data, so that it can only be recovered by a call to
-     * [Decrypt][google.cloud.kms.v1.KeyManagementService.Decrypt]. The
-     * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] must be
+     * Encrypts data, so that it can only be recovered by a call to [Decrypt][google.cloud.kms.v1.KeyManagementService.Decrypt].
+     * The [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] must be
      * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
      * </pre>
      */
@@ -1871,10 +2205,8 @@ public final class KeyManagementServiceGrpc {
      *
      *
      * <pre>
-     * Decrypts data that was protected by
-     * [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt]. The
-     * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] must be
-     * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
+     * Decrypts data that was protected by [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt]. The [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose]
+     * must be [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
      * </pre>
      */
     public void decrypt(
@@ -1890,11 +2222,9 @@ public final class KeyManagementServiceGrpc {
      *
      *
      * <pre>
-     * Signs data using a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]
-     * with [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose]
+     * Signs data using a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose]
      * ASYMMETRIC_SIGN, producing a signature that can be verified with the public
-     * key retrieved from
-     * [GetPublicKey][google.cloud.kms.v1.KeyManagementService.GetPublicKey].
+     * key retrieved from [GetPublicKey][google.cloud.kms.v1.KeyManagementService.GetPublicKey].
      * </pre>
      */
     public void asymmetricSign(
@@ -1912,10 +2242,8 @@ public final class KeyManagementServiceGrpc {
      *
      * <pre>
      * Decrypts data that was encrypted with a public key retrieved from
-     * [GetPublicKey][google.cloud.kms.v1.KeyManagementService.GetPublicKey]
-     * corresponding to a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]
-     * with [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose]
-     * ASYMMETRIC_DECRYPT.
+     * [GetPublicKey][google.cloud.kms.v1.KeyManagementService.GetPublicKey] corresponding to a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with
+     * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] ASYMMETRIC_DECRYPT.
      * </pre>
      */
     public void asymmetricDecrypt(
@@ -1932,9 +2260,7 @@ public final class KeyManagementServiceGrpc {
      *
      *
      * <pre>
-     * Update the version of a [CryptoKey][google.cloud.kms.v1.CryptoKey] that
-     * will be used in
-     * [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt].
+     * Update the version of a [CryptoKey][google.cloud.kms.v1.CryptoKey] that will be used in [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt].
      * Returns an error if called on an asymmetric key.
      * </pre>
      */
@@ -1951,22 +2277,16 @@ public final class KeyManagementServiceGrpc {
      *
      *
      * <pre>
-     * Schedule a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] for
-     * destruction.
-     * Upon calling this method,
-     * [CryptoKeyVersion.state][google.cloud.kms.v1.CryptoKeyVersion.state] will
-     * be set to
+     * Schedule a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] for destruction.
+     * Upon calling this method, [CryptoKeyVersion.state][google.cloud.kms.v1.CryptoKeyVersion.state] will be set to
      * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED]
-     * and [destroy_time][google.cloud.kms.v1.CryptoKeyVersion.destroy_time] will
-     * be set to a time 24 hours in the future, at which point the
-     * [state][google.cloud.kms.v1.CryptoKeyVersion.state] will be changed to
-     * [DESTROYED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROYED],
-     * and the key material will be irrevocably destroyed.
-     * Before the
-     * [destroy_time][google.cloud.kms.v1.CryptoKeyVersion.destroy_time] is
-     * reached,
-     * [RestoreCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.RestoreCryptoKeyVersion]
-     * may be called to reverse the process.
+     * and [destroy_time][google.cloud.kms.v1.CryptoKeyVersion.destroy_time] will be set to a time 24
+     * hours in the future, at which point the [state][google.cloud.kms.v1.CryptoKeyVersion.state]
+     * will be changed to
+     * [DESTROYED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROYED], and the key
+     * material will be irrevocably destroyed.
+     * Before the [destroy_time][google.cloud.kms.v1.CryptoKeyVersion.destroy_time] is reached,
+     * [RestoreCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.RestoreCryptoKeyVersion] may be called to reverse the process.
      * </pre>
      */
     public void destroyCryptoKeyVersion(
@@ -1985,11 +2305,9 @@ public final class KeyManagementServiceGrpc {
      * Restore a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] in the
      * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED]
      * state.
-     * Upon restoration of the CryptoKeyVersion,
-     * [state][google.cloud.kms.v1.CryptoKeyVersion.state] will be set to
-     * [DISABLED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DISABLED],
-     * and [destroy_time][google.cloud.kms.v1.CryptoKeyVersion.destroy_time] will
-     * be cleared.
+     * Upon restoration of the CryptoKeyVersion, [state][google.cloud.kms.v1.CryptoKeyVersion.state]
+     * will be set to [DISABLED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DISABLED],
+     * and [destroy_time][google.cloud.kms.v1.CryptoKeyVersion.destroy_time] will be cleared.
      * </pre>
      */
     public void restoreCryptoKeyVersion(
@@ -2076,6 +2394,19 @@ public final class KeyManagementServiceGrpc {
      *
      *
      * <pre>
+     * Lists [ImportJobs][google.cloud.kms.v1.ImportJob].
+     * </pre>
+     */
+    public com.google.cloud.kms.v1.ListImportJobsResponse listImportJobs(
+        com.google.cloud.kms.v1.ListImportJobsRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getListImportJobsMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Returns metadata for a given [KeyRing][google.cloud.kms.v1.KeyRing].
      * </pre>
      */
@@ -2089,9 +2420,8 @@ public final class KeyManagementServiceGrpc {
      *
      *
      * <pre>
-     * Returns metadata for a given [CryptoKey][google.cloud.kms.v1.CryptoKey], as
-     * well as its [primary][google.cloud.kms.v1.CryptoKey.primary]
-     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
+     * Returns metadata for a given [CryptoKey][google.cloud.kms.v1.CryptoKey], as well as its
+     * [primary][google.cloud.kms.v1.CryptoKey.primary] [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
      * </pre>
      */
     public com.google.cloud.kms.v1.CryptoKey getCryptoKey(
@@ -2104,8 +2434,7 @@ public final class KeyManagementServiceGrpc {
      *
      *
      * <pre>
-     * Returns metadata for a given
-     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
+     * Returns metadata for a given [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
      * </pre>
      */
     public com.google.cloud.kms.v1.CryptoKeyVersion getCryptoKeyVersion(
@@ -2118,11 +2447,9 @@ public final class KeyManagementServiceGrpc {
      *
      *
      * <pre>
-     * Returns the public key for the given
-     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]. The
+     * Returns the public key for the given [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]. The
      * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] must be
-     * [ASYMMETRIC_SIGN][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ASYMMETRIC_SIGN]
-     * or
+     * [ASYMMETRIC_SIGN][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ASYMMETRIC_SIGN] or
      * [ASYMMETRIC_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ASYMMETRIC_DECRYPT].
      * </pre>
      */
@@ -2136,8 +2463,20 @@ public final class KeyManagementServiceGrpc {
      *
      *
      * <pre>
-     * Create a new [KeyRing][google.cloud.kms.v1.KeyRing] in a given Project and
-     * Location.
+     * Returns metadata for a given [ImportJob][google.cloud.kms.v1.ImportJob].
+     * </pre>
+     */
+    public com.google.cloud.kms.v1.ImportJob getImportJob(
+        com.google.cloud.kms.v1.GetImportJobRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getGetImportJobMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a new [KeyRing][google.cloud.kms.v1.KeyRing] in a given Project and Location.
      * </pre>
      */
     public com.google.cloud.kms.v1.KeyRing createKeyRing(
@@ -2150,8 +2489,7 @@ public final class KeyManagementServiceGrpc {
      *
      *
      * <pre>
-     * Create a new [CryptoKey][google.cloud.kms.v1.CryptoKey] within a
-     * [KeyRing][google.cloud.kms.v1.KeyRing].
+     * Create a new [CryptoKey][google.cloud.kms.v1.CryptoKey] within a [KeyRing][google.cloud.kms.v1.KeyRing].
      * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] and
      * [CryptoKey.version_template.algorithm][google.cloud.kms.v1.CryptoKeyVersionTemplate.algorithm]
      * are required.
@@ -2167,8 +2505,7 @@ public final class KeyManagementServiceGrpc {
      *
      *
      * <pre>
-     * Create a new [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] in a
-     * [CryptoKey][google.cloud.kms.v1.CryptoKey].
+     * Create a new [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] in a [CryptoKey][google.cloud.kms.v1.CryptoKey].
      * The server will assign the next sequential id. If unset,
      * [state][google.cloud.kms.v1.CryptoKeyVersion.state] will be set to
      * [ENABLED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.ENABLED].
@@ -2178,6 +2515,36 @@ public final class KeyManagementServiceGrpc {
         com.google.cloud.kms.v1.CreateCryptoKeyVersionRequest request) {
       return blockingUnaryCall(
           getChannel(), getCreateCryptoKeyVersionMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Imports a new [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] into an existing [CryptoKey][google.cloud.kms.v1.CryptoKey] using the
+     * wrapped key material provided in the request.
+     * The version ID will be assigned the next sequential id within the
+     * [CryptoKey][google.cloud.kms.v1.CryptoKey].
+     * </pre>
+     */
+    public com.google.cloud.kms.v1.CryptoKeyVersion importCryptoKeyVersion(
+        com.google.cloud.kms.v1.ImportCryptoKeyVersionRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getImportCryptoKeyVersionMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a new [ImportJob][google.cloud.kms.v1.ImportJob] within a [KeyRing][google.cloud.kms.v1.KeyRing].
+     * [ImportJob.import_method][google.cloud.kms.v1.ImportJob.import_method] is required.
+     * </pre>
+     */
+    public com.google.cloud.kms.v1.ImportJob createImportJob(
+        com.google.cloud.kms.v1.CreateImportJobRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getCreateImportJobMethodHelper(), getCallOptions(), request);
     }
 
     /**
@@ -2197,17 +2564,12 @@ public final class KeyManagementServiceGrpc {
      *
      *
      * <pre>
-     * Update a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s
-     * metadata.
+     * Update a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s metadata.
      * [state][google.cloud.kms.v1.CryptoKeyVersion.state] may be changed between
-     * [ENABLED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.ENABLED]
-     * and
-     * [DISABLED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DISABLED]
-     * using this method. See
-     * [DestroyCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.DestroyCryptoKeyVersion]
-     * and
-     * [RestoreCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.RestoreCryptoKeyVersion]
-     * to move between other states.
+     * [ENABLED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.ENABLED] and
+     * [DISABLED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DISABLED] using this
+     * method. See [DestroyCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.DestroyCryptoKeyVersion] and [RestoreCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.RestoreCryptoKeyVersion] to
+     * move between other states.
      * </pre>
      */
     public com.google.cloud.kms.v1.CryptoKeyVersion updateCryptoKeyVersion(
@@ -2220,9 +2582,8 @@ public final class KeyManagementServiceGrpc {
      *
      *
      * <pre>
-     * Encrypts data, so that it can only be recovered by a call to
-     * [Decrypt][google.cloud.kms.v1.KeyManagementService.Decrypt]. The
-     * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] must be
+     * Encrypts data, so that it can only be recovered by a call to [Decrypt][google.cloud.kms.v1.KeyManagementService.Decrypt].
+     * The [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] must be
      * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
      * </pre>
      */
@@ -2235,10 +2596,8 @@ public final class KeyManagementServiceGrpc {
      *
      *
      * <pre>
-     * Decrypts data that was protected by
-     * [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt]. The
-     * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] must be
-     * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
+     * Decrypts data that was protected by [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt]. The [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose]
+     * must be [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
      * </pre>
      */
     public com.google.cloud.kms.v1.DecryptResponse decrypt(
@@ -2250,11 +2609,9 @@ public final class KeyManagementServiceGrpc {
      *
      *
      * <pre>
-     * Signs data using a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]
-     * with [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose]
+     * Signs data using a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose]
      * ASYMMETRIC_SIGN, producing a signature that can be verified with the public
-     * key retrieved from
-     * [GetPublicKey][google.cloud.kms.v1.KeyManagementService.GetPublicKey].
+     * key retrieved from [GetPublicKey][google.cloud.kms.v1.KeyManagementService.GetPublicKey].
      * </pre>
      */
     public com.google.cloud.kms.v1.AsymmetricSignResponse asymmetricSign(
@@ -2268,10 +2625,8 @@ public final class KeyManagementServiceGrpc {
      *
      * <pre>
      * Decrypts data that was encrypted with a public key retrieved from
-     * [GetPublicKey][google.cloud.kms.v1.KeyManagementService.GetPublicKey]
-     * corresponding to a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]
-     * with [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose]
-     * ASYMMETRIC_DECRYPT.
+     * [GetPublicKey][google.cloud.kms.v1.KeyManagementService.GetPublicKey] corresponding to a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with
+     * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] ASYMMETRIC_DECRYPT.
      * </pre>
      */
     public com.google.cloud.kms.v1.AsymmetricDecryptResponse asymmetricDecrypt(
@@ -2284,9 +2639,7 @@ public final class KeyManagementServiceGrpc {
      *
      *
      * <pre>
-     * Update the version of a [CryptoKey][google.cloud.kms.v1.CryptoKey] that
-     * will be used in
-     * [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt].
+     * Update the version of a [CryptoKey][google.cloud.kms.v1.CryptoKey] that will be used in [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt].
      * Returns an error if called on an asymmetric key.
      * </pre>
      */
@@ -2300,22 +2653,16 @@ public final class KeyManagementServiceGrpc {
      *
      *
      * <pre>
-     * Schedule a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] for
-     * destruction.
-     * Upon calling this method,
-     * [CryptoKeyVersion.state][google.cloud.kms.v1.CryptoKeyVersion.state] will
-     * be set to
+     * Schedule a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] for destruction.
+     * Upon calling this method, [CryptoKeyVersion.state][google.cloud.kms.v1.CryptoKeyVersion.state] will be set to
      * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED]
-     * and [destroy_time][google.cloud.kms.v1.CryptoKeyVersion.destroy_time] will
-     * be set to a time 24 hours in the future, at which point the
-     * [state][google.cloud.kms.v1.CryptoKeyVersion.state] will be changed to
-     * [DESTROYED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROYED],
-     * and the key material will be irrevocably destroyed.
-     * Before the
-     * [destroy_time][google.cloud.kms.v1.CryptoKeyVersion.destroy_time] is
-     * reached,
-     * [RestoreCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.RestoreCryptoKeyVersion]
-     * may be called to reverse the process.
+     * and [destroy_time][google.cloud.kms.v1.CryptoKeyVersion.destroy_time] will be set to a time 24
+     * hours in the future, at which point the [state][google.cloud.kms.v1.CryptoKeyVersion.state]
+     * will be changed to
+     * [DESTROYED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROYED], and the key
+     * material will be irrevocably destroyed.
+     * Before the [destroy_time][google.cloud.kms.v1.CryptoKeyVersion.destroy_time] is reached,
+     * [RestoreCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.RestoreCryptoKeyVersion] may be called to reverse the process.
      * </pre>
      */
     public com.google.cloud.kms.v1.CryptoKeyVersion destroyCryptoKeyVersion(
@@ -2331,11 +2678,9 @@ public final class KeyManagementServiceGrpc {
      * Restore a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] in the
      * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED]
      * state.
-     * Upon restoration of the CryptoKeyVersion,
-     * [state][google.cloud.kms.v1.CryptoKeyVersion.state] will be set to
-     * [DISABLED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DISABLED],
-     * and [destroy_time][google.cloud.kms.v1.CryptoKeyVersion.destroy_time] will
-     * be cleared.
+     * Upon restoration of the CryptoKeyVersion, [state][google.cloud.kms.v1.CryptoKeyVersion.state]
+     * will be set to [DISABLED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DISABLED],
+     * and [destroy_time][google.cloud.kms.v1.CryptoKeyVersion.destroy_time] will be cleared.
      * </pre>
      */
     public com.google.cloud.kms.v1.CryptoKeyVersion restoreCryptoKeyVersion(
@@ -2422,6 +2767,20 @@ public final class KeyManagementServiceGrpc {
      *
      *
      * <pre>
+     * Lists [ImportJobs][google.cloud.kms.v1.ImportJob].
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.kms.v1.ListImportJobsResponse>
+        listImportJobs(com.google.cloud.kms.v1.ListImportJobsRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getListImportJobsMethodHelper(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Returns metadata for a given [KeyRing][google.cloud.kms.v1.KeyRing].
      * </pre>
      */
@@ -2435,9 +2794,8 @@ public final class KeyManagementServiceGrpc {
      *
      *
      * <pre>
-     * Returns metadata for a given [CryptoKey][google.cloud.kms.v1.CryptoKey], as
-     * well as its [primary][google.cloud.kms.v1.CryptoKey.primary]
-     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
+     * Returns metadata for a given [CryptoKey][google.cloud.kms.v1.CryptoKey], as well as its
+     * [primary][google.cloud.kms.v1.CryptoKey.primary] [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.kms.v1.CryptoKey>
@@ -2450,8 +2808,7 @@ public final class KeyManagementServiceGrpc {
      *
      *
      * <pre>
-     * Returns metadata for a given
-     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
+     * Returns metadata for a given [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -2465,11 +2822,9 @@ public final class KeyManagementServiceGrpc {
      *
      *
      * <pre>
-     * Returns the public key for the given
-     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]. The
+     * Returns the public key for the given [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]. The
      * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] must be
-     * [ASYMMETRIC_SIGN][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ASYMMETRIC_SIGN]
-     * or
+     * [ASYMMETRIC_SIGN][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ASYMMETRIC_SIGN] or
      * [ASYMMETRIC_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ASYMMETRIC_DECRYPT].
      * </pre>
      */
@@ -2483,8 +2838,20 @@ public final class KeyManagementServiceGrpc {
      *
      *
      * <pre>
-     * Create a new [KeyRing][google.cloud.kms.v1.KeyRing] in a given Project and
-     * Location.
+     * Returns metadata for a given [ImportJob][google.cloud.kms.v1.ImportJob].
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.kms.v1.ImportJob>
+        getImportJob(com.google.cloud.kms.v1.GetImportJobRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getGetImportJobMethodHelper(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a new [KeyRing][google.cloud.kms.v1.KeyRing] in a given Project and Location.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.kms.v1.KeyRing>
@@ -2497,8 +2864,7 @@ public final class KeyManagementServiceGrpc {
      *
      *
      * <pre>
-     * Create a new [CryptoKey][google.cloud.kms.v1.CryptoKey] within a
-     * [KeyRing][google.cloud.kms.v1.KeyRing].
+     * Create a new [CryptoKey][google.cloud.kms.v1.CryptoKey] within a [KeyRing][google.cloud.kms.v1.KeyRing].
      * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] and
      * [CryptoKey.version_template.algorithm][google.cloud.kms.v1.CryptoKeyVersionTemplate.algorithm]
      * are required.
@@ -2514,8 +2880,7 @@ public final class KeyManagementServiceGrpc {
      *
      *
      * <pre>
-     * Create a new [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] in a
-     * [CryptoKey][google.cloud.kms.v1.CryptoKey].
+     * Create a new [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] in a [CryptoKey][google.cloud.kms.v1.CryptoKey].
      * The server will assign the next sequential id. If unset,
      * [state][google.cloud.kms.v1.CryptoKeyVersion.state] will be set to
      * [ENABLED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.ENABLED].
@@ -2526,6 +2891,37 @@ public final class KeyManagementServiceGrpc {
         createCryptoKeyVersion(com.google.cloud.kms.v1.CreateCryptoKeyVersionRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getCreateCryptoKeyVersionMethodHelper(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Imports a new [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] into an existing [CryptoKey][google.cloud.kms.v1.CryptoKey] using the
+     * wrapped key material provided in the request.
+     * The version ID will be assigned the next sequential id within the
+     * [CryptoKey][google.cloud.kms.v1.CryptoKey].
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.kms.v1.CryptoKeyVersion>
+        importCryptoKeyVersion(com.google.cloud.kms.v1.ImportCryptoKeyVersionRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getImportCryptoKeyVersionMethodHelper(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a new [ImportJob][google.cloud.kms.v1.ImportJob] within a [KeyRing][google.cloud.kms.v1.KeyRing].
+     * [ImportJob.import_method][google.cloud.kms.v1.ImportJob.import_method] is required.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.kms.v1.ImportJob>
+        createImportJob(com.google.cloud.kms.v1.CreateImportJobRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getCreateImportJobMethodHelper(), getCallOptions()), request);
     }
 
     /**
@@ -2545,17 +2941,12 @@ public final class KeyManagementServiceGrpc {
      *
      *
      * <pre>
-     * Update a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s
-     * metadata.
+     * Update a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s metadata.
      * [state][google.cloud.kms.v1.CryptoKeyVersion.state] may be changed between
-     * [ENABLED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.ENABLED]
-     * and
-     * [DISABLED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DISABLED]
-     * using this method. See
-     * [DestroyCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.DestroyCryptoKeyVersion]
-     * and
-     * [RestoreCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.RestoreCryptoKeyVersion]
-     * to move between other states.
+     * [ENABLED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.ENABLED] and
+     * [DISABLED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DISABLED] using this
+     * method. See [DestroyCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.DestroyCryptoKeyVersion] and [RestoreCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.RestoreCryptoKeyVersion] to
+     * move between other states.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -2569,9 +2960,8 @@ public final class KeyManagementServiceGrpc {
      *
      *
      * <pre>
-     * Encrypts data, so that it can only be recovered by a call to
-     * [Decrypt][google.cloud.kms.v1.KeyManagementService.Decrypt]. The
-     * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] must be
+     * Encrypts data, so that it can only be recovered by a call to [Decrypt][google.cloud.kms.v1.KeyManagementService.Decrypt].
+     * The [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] must be
      * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
      * </pre>
      */
@@ -2586,10 +2976,8 @@ public final class KeyManagementServiceGrpc {
      *
      *
      * <pre>
-     * Decrypts data that was protected by
-     * [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt]. The
-     * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] must be
-     * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
+     * Decrypts data that was protected by [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt]. The [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose]
+     * must be [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -2603,11 +2991,9 @@ public final class KeyManagementServiceGrpc {
      *
      *
      * <pre>
-     * Signs data using a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]
-     * with [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose]
+     * Signs data using a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose]
      * ASYMMETRIC_SIGN, producing a signature that can be verified with the public
-     * key retrieved from
-     * [GetPublicKey][google.cloud.kms.v1.KeyManagementService.GetPublicKey].
+     * key retrieved from [GetPublicKey][google.cloud.kms.v1.KeyManagementService.GetPublicKey].
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -2622,10 +3008,8 @@ public final class KeyManagementServiceGrpc {
      *
      * <pre>
      * Decrypts data that was encrypted with a public key retrieved from
-     * [GetPublicKey][google.cloud.kms.v1.KeyManagementService.GetPublicKey]
-     * corresponding to a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]
-     * with [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose]
-     * ASYMMETRIC_DECRYPT.
+     * [GetPublicKey][google.cloud.kms.v1.KeyManagementService.GetPublicKey] corresponding to a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with
+     * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] ASYMMETRIC_DECRYPT.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -2639,9 +3023,7 @@ public final class KeyManagementServiceGrpc {
      *
      *
      * <pre>
-     * Update the version of a [CryptoKey][google.cloud.kms.v1.CryptoKey] that
-     * will be used in
-     * [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt].
+     * Update the version of a [CryptoKey][google.cloud.kms.v1.CryptoKey] that will be used in [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt].
      * Returns an error if called on an asymmetric key.
      * </pre>
      */
@@ -2657,22 +3039,16 @@ public final class KeyManagementServiceGrpc {
      *
      *
      * <pre>
-     * Schedule a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] for
-     * destruction.
-     * Upon calling this method,
-     * [CryptoKeyVersion.state][google.cloud.kms.v1.CryptoKeyVersion.state] will
-     * be set to
+     * Schedule a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] for destruction.
+     * Upon calling this method, [CryptoKeyVersion.state][google.cloud.kms.v1.CryptoKeyVersion.state] will be set to
      * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED]
-     * and [destroy_time][google.cloud.kms.v1.CryptoKeyVersion.destroy_time] will
-     * be set to a time 24 hours in the future, at which point the
-     * [state][google.cloud.kms.v1.CryptoKeyVersion.state] will be changed to
-     * [DESTROYED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROYED],
-     * and the key material will be irrevocably destroyed.
-     * Before the
-     * [destroy_time][google.cloud.kms.v1.CryptoKeyVersion.destroy_time] is
-     * reached,
-     * [RestoreCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.RestoreCryptoKeyVersion]
-     * may be called to reverse the process.
+     * and [destroy_time][google.cloud.kms.v1.CryptoKeyVersion.destroy_time] will be set to a time 24
+     * hours in the future, at which point the [state][google.cloud.kms.v1.CryptoKeyVersion.state]
+     * will be changed to
+     * [DESTROYED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROYED], and the key
+     * material will be irrevocably destroyed.
+     * Before the [destroy_time][google.cloud.kms.v1.CryptoKeyVersion.destroy_time] is reached,
+     * [RestoreCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.RestoreCryptoKeyVersion] may be called to reverse the process.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -2690,11 +3066,9 @@ public final class KeyManagementServiceGrpc {
      * Restore a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] in the
      * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED]
      * state.
-     * Upon restoration of the CryptoKeyVersion,
-     * [state][google.cloud.kms.v1.CryptoKeyVersion.state] will be set to
-     * [DISABLED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DISABLED],
-     * and [destroy_time][google.cloud.kms.v1.CryptoKeyVersion.destroy_time] will
-     * be cleared.
+     * Upon restoration of the CryptoKeyVersion, [state][google.cloud.kms.v1.CryptoKeyVersion.state]
+     * will be set to [DISABLED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DISABLED],
+     * and [destroy_time][google.cloud.kms.v1.CryptoKeyVersion.destroy_time] will be cleared.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -2709,22 +3083,26 @@ public final class KeyManagementServiceGrpc {
   private static final int METHODID_LIST_KEY_RINGS = 0;
   private static final int METHODID_LIST_CRYPTO_KEYS = 1;
   private static final int METHODID_LIST_CRYPTO_KEY_VERSIONS = 2;
-  private static final int METHODID_GET_KEY_RING = 3;
-  private static final int METHODID_GET_CRYPTO_KEY = 4;
-  private static final int METHODID_GET_CRYPTO_KEY_VERSION = 5;
-  private static final int METHODID_GET_PUBLIC_KEY = 6;
-  private static final int METHODID_CREATE_KEY_RING = 7;
-  private static final int METHODID_CREATE_CRYPTO_KEY = 8;
-  private static final int METHODID_CREATE_CRYPTO_KEY_VERSION = 9;
-  private static final int METHODID_UPDATE_CRYPTO_KEY = 10;
-  private static final int METHODID_UPDATE_CRYPTO_KEY_VERSION = 11;
-  private static final int METHODID_ENCRYPT = 12;
-  private static final int METHODID_DECRYPT = 13;
-  private static final int METHODID_ASYMMETRIC_SIGN = 14;
-  private static final int METHODID_ASYMMETRIC_DECRYPT = 15;
-  private static final int METHODID_UPDATE_CRYPTO_KEY_PRIMARY_VERSION = 16;
-  private static final int METHODID_DESTROY_CRYPTO_KEY_VERSION = 17;
-  private static final int METHODID_RESTORE_CRYPTO_KEY_VERSION = 18;
+  private static final int METHODID_LIST_IMPORT_JOBS = 3;
+  private static final int METHODID_GET_KEY_RING = 4;
+  private static final int METHODID_GET_CRYPTO_KEY = 5;
+  private static final int METHODID_GET_CRYPTO_KEY_VERSION = 6;
+  private static final int METHODID_GET_PUBLIC_KEY = 7;
+  private static final int METHODID_GET_IMPORT_JOB = 8;
+  private static final int METHODID_CREATE_KEY_RING = 9;
+  private static final int METHODID_CREATE_CRYPTO_KEY = 10;
+  private static final int METHODID_CREATE_CRYPTO_KEY_VERSION = 11;
+  private static final int METHODID_IMPORT_CRYPTO_KEY_VERSION = 12;
+  private static final int METHODID_CREATE_IMPORT_JOB = 13;
+  private static final int METHODID_UPDATE_CRYPTO_KEY = 14;
+  private static final int METHODID_UPDATE_CRYPTO_KEY_VERSION = 15;
+  private static final int METHODID_ENCRYPT = 16;
+  private static final int METHODID_DECRYPT = 17;
+  private static final int METHODID_ASYMMETRIC_SIGN = 18;
+  private static final int METHODID_ASYMMETRIC_DECRYPT = 19;
+  private static final int METHODID_UPDATE_CRYPTO_KEY_PRIMARY_VERSION = 20;
+  private static final int METHODID_DESTROY_CRYPTO_KEY_VERSION = 21;
+  private static final int METHODID_RESTORE_CRYPTO_KEY_VERSION = 22;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2761,6 +3139,12 @@ public final class KeyManagementServiceGrpc {
               (io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.ListCryptoKeyVersionsResponse>)
                   responseObserver);
           break;
+        case METHODID_LIST_IMPORT_JOBS:
+          serviceImpl.listImportJobs(
+              (com.google.cloud.kms.v1.ListImportJobsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.ListImportJobsResponse>)
+                  responseObserver);
+          break;
         case METHODID_GET_KEY_RING:
           serviceImpl.getKeyRing(
               (com.google.cloud.kms.v1.GetKeyRingRequest) request,
@@ -2782,6 +3166,11 @@ public final class KeyManagementServiceGrpc {
               (com.google.cloud.kms.v1.GetPublicKeyRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.PublicKey>) responseObserver);
           break;
+        case METHODID_GET_IMPORT_JOB:
+          serviceImpl.getImportJob(
+              (com.google.cloud.kms.v1.GetImportJobRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.ImportJob>) responseObserver);
+          break;
         case METHODID_CREATE_KEY_RING:
           serviceImpl.createKeyRing(
               (com.google.cloud.kms.v1.CreateKeyRingRequest) request,
@@ -2797,6 +3186,17 @@ public final class KeyManagementServiceGrpc {
               (com.google.cloud.kms.v1.CreateCryptoKeyVersionRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.CryptoKeyVersion>)
                   responseObserver);
+          break;
+        case METHODID_IMPORT_CRYPTO_KEY_VERSION:
+          serviceImpl.importCryptoKeyVersion(
+              (com.google.cloud.kms.v1.ImportCryptoKeyVersionRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.CryptoKeyVersion>)
+                  responseObserver);
+          break;
+        case METHODID_CREATE_IMPORT_JOB:
+          serviceImpl.createImportJob(
+              (com.google.cloud.kms.v1.CreateImportJobRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.ImportJob>) responseObserver);
           break;
         case METHODID_UPDATE_CRYPTO_KEY:
           serviceImpl.updateCryptoKey(
@@ -2917,13 +3317,17 @@ public final class KeyManagementServiceGrpc {
                       .addMethod(getListKeyRingsMethodHelper())
                       .addMethod(getListCryptoKeysMethodHelper())
                       .addMethod(getListCryptoKeyVersionsMethodHelper())
+                      .addMethod(getListImportJobsMethodHelper())
                       .addMethod(getGetKeyRingMethodHelper())
                       .addMethod(getGetCryptoKeyMethodHelper())
                       .addMethod(getGetCryptoKeyVersionMethodHelper())
                       .addMethod(getGetPublicKeyMethodHelper())
+                      .addMethod(getGetImportJobMethodHelper())
                       .addMethod(getCreateKeyRingMethodHelper())
                       .addMethod(getCreateCryptoKeyMethodHelper())
                       .addMethod(getCreateCryptoKeyVersionMethodHelper())
+                      .addMethod(getImportCryptoKeyVersionMethodHelper())
+                      .addMethod(getCreateImportJobMethodHelper())
                       .addMethod(getUpdateCryptoKeyMethodHelper())
                       .addMethod(getUpdateCryptoKeyVersionMethodHelper())
                       .addMethod(getEncryptMethodHelper())

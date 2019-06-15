@@ -103,6 +103,21 @@ public class MockKeyManagementServiceImpl extends KeyManagementServiceImplBase {
   }
 
   @Override
+  public void listImportJobs(
+      ListImportJobsRequest request, StreamObserver<ListImportJobsResponse> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof ListImportJobsResponse) {
+      requests.add(request);
+      responseObserver.onNext((ListImportJobsResponse) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
   public void getKeyRing(GetKeyRingRequest request, StreamObserver<KeyRing> responseObserver) {
     Object response = responses.remove();
     if (response instanceof KeyRing) {
@@ -162,6 +177,21 @@ public class MockKeyManagementServiceImpl extends KeyManagementServiceImplBase {
   }
 
   @Override
+  public void getImportJob(
+      GetImportJobRequest request, StreamObserver<ImportJob> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof ImportJob) {
+      requests.add(request);
+      responseObserver.onNext((ImportJob) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
   public void createKeyRing(
       CreateKeyRingRequest request, StreamObserver<KeyRing> responseObserver) {
     Object response = responses.remove();
@@ -198,6 +228,36 @@ public class MockKeyManagementServiceImpl extends KeyManagementServiceImplBase {
     if (response instanceof CryptoKeyVersion) {
       requests.add(request);
       responseObserver.onNext((CryptoKeyVersion) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void importCryptoKeyVersion(
+      ImportCryptoKeyVersionRequest request, StreamObserver<CryptoKeyVersion> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof CryptoKeyVersion) {
+      requests.add(request);
+      responseObserver.onNext((CryptoKeyVersion) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void createImportJob(
+      CreateImportJobRequest request, StreamObserver<ImportJob> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof ImportJob) {
+      requests.add(request);
+      responseObserver.onNext((ImportJob) response);
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
       responseObserver.onError((Exception) response);

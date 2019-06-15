@@ -7,23 +7,23 @@ package com.google.cloud.kms.v1;
  *
  *
  * <pre>
- * Response message for [KeyManagementService.ListKeyRings][google.cloud.kms.v1.KeyManagementService.ListKeyRings].
+ * Response message for [KeyManagementService.ListImportJobs][google.cloud.kms.v1.KeyManagementService.ListImportJobs].
  * </pre>
  *
- * Protobuf type {@code google.cloud.kms.v1.ListKeyRingsResponse}
+ * Protobuf type {@code google.cloud.kms.v1.ListImportJobsResponse}
  */
-public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMessageV3
+public final class ListImportJobsResponse extends com.google.protobuf.GeneratedMessageV3
     implements
-    // @@protoc_insertion_point(message_implements:google.cloud.kms.v1.ListKeyRingsResponse)
-    ListKeyRingsResponseOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.cloud.kms.v1.ListImportJobsResponse)
+    ListImportJobsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-  // Use ListKeyRingsResponse.newBuilder() to construct.
-  private ListKeyRingsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use ListImportJobsResponse.newBuilder() to construct.
+  private ListImportJobsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private ListKeyRingsResponse() {
-    keyRings_ = java.util.Collections.emptyList();
+  private ListImportJobsResponse() {
+    importJobs_ = java.util.Collections.emptyList();
     nextPageToken_ = "";
   }
 
@@ -32,7 +32,7 @@ public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMes
     return this.unknownFields;
   }
 
-  private ListKeyRingsResponse(
+  private ListImportJobsResponse(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -54,11 +54,11 @@ public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMes
           case 10:
             {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                keyRings_ = new java.util.ArrayList<com.google.cloud.kms.v1.KeyRing>();
+                importJobs_ = new java.util.ArrayList<com.google.cloud.kms.v1.ImportJob>();
                 mutable_bitField0_ |= 0x00000001;
               }
-              keyRings_.add(
-                  input.readMessage(com.google.cloud.kms.v1.KeyRing.parser(), extensionRegistry));
+              importJobs_.add(
+                  input.readMessage(com.google.cloud.kms.v1.ImportJob.parser(), extensionRegistry));
               break;
             }
           case 18:
@@ -88,7 +88,7 @@ public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMes
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        keyRings_ = java.util.Collections.unmodifiableList(keyRings_);
+        importJobs_ = java.util.Collections.unmodifiableList(importJobs_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -97,82 +97,82 @@ public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMes
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.kms.v1.KmsProto
-        .internal_static_google_cloud_kms_v1_ListKeyRingsResponse_descriptor;
+        .internal_static_google_cloud_kms_v1_ListImportJobsResponse_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloud.kms.v1.KmsProto
-        .internal_static_google_cloud_kms_v1_ListKeyRingsResponse_fieldAccessorTable
+        .internal_static_google_cloud_kms_v1_ListImportJobsResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.kms.v1.ListKeyRingsResponse.class,
-            com.google.cloud.kms.v1.ListKeyRingsResponse.Builder.class);
+            com.google.cloud.kms.v1.ListImportJobsResponse.class,
+            com.google.cloud.kms.v1.ListImportJobsResponse.Builder.class);
   }
 
   private int bitField0_;
-  public static final int KEY_RINGS_FIELD_NUMBER = 1;
-  private java.util.List<com.google.cloud.kms.v1.KeyRing> keyRings_;
+  public static final int IMPORT_JOBS_FIELD_NUMBER = 1;
+  private java.util.List<com.google.cloud.kms.v1.ImportJob> importJobs_;
   /**
    *
    *
    * <pre>
-   * The list of [KeyRings][google.cloud.kms.v1.KeyRing].
+   * The list of [ImportJobs][google.cloud.kms.v1.ImportJob].
    * </pre>
    *
-   * <code>repeated .google.cloud.kms.v1.KeyRing key_rings = 1;</code>
+   * <code>repeated .google.cloud.kms.v1.ImportJob import_jobs = 1;</code>
    */
-  public java.util.List<com.google.cloud.kms.v1.KeyRing> getKeyRingsList() {
-    return keyRings_;
+  public java.util.List<com.google.cloud.kms.v1.ImportJob> getImportJobsList() {
+    return importJobs_;
   }
   /**
    *
    *
    * <pre>
-   * The list of [KeyRings][google.cloud.kms.v1.KeyRing].
+   * The list of [ImportJobs][google.cloud.kms.v1.ImportJob].
    * </pre>
    *
-   * <code>repeated .google.cloud.kms.v1.KeyRing key_rings = 1;</code>
+   * <code>repeated .google.cloud.kms.v1.ImportJob import_jobs = 1;</code>
    */
-  public java.util.List<? extends com.google.cloud.kms.v1.KeyRingOrBuilder>
-      getKeyRingsOrBuilderList() {
-    return keyRings_;
+  public java.util.List<? extends com.google.cloud.kms.v1.ImportJobOrBuilder>
+      getImportJobsOrBuilderList() {
+    return importJobs_;
   }
   /**
    *
    *
    * <pre>
-   * The list of [KeyRings][google.cloud.kms.v1.KeyRing].
+   * The list of [ImportJobs][google.cloud.kms.v1.ImportJob].
    * </pre>
    *
-   * <code>repeated .google.cloud.kms.v1.KeyRing key_rings = 1;</code>
+   * <code>repeated .google.cloud.kms.v1.ImportJob import_jobs = 1;</code>
    */
-  public int getKeyRingsCount() {
-    return keyRings_.size();
+  public int getImportJobsCount() {
+    return importJobs_.size();
   }
   /**
    *
    *
    * <pre>
-   * The list of [KeyRings][google.cloud.kms.v1.KeyRing].
+   * The list of [ImportJobs][google.cloud.kms.v1.ImportJob].
    * </pre>
    *
-   * <code>repeated .google.cloud.kms.v1.KeyRing key_rings = 1;</code>
+   * <code>repeated .google.cloud.kms.v1.ImportJob import_jobs = 1;</code>
    */
-  public com.google.cloud.kms.v1.KeyRing getKeyRings(int index) {
-    return keyRings_.get(index);
+  public com.google.cloud.kms.v1.ImportJob getImportJobs(int index) {
+    return importJobs_.get(index);
   }
   /**
    *
    *
    * <pre>
-   * The list of [KeyRings][google.cloud.kms.v1.KeyRing].
+   * The list of [ImportJobs][google.cloud.kms.v1.ImportJob].
    * </pre>
    *
-   * <code>repeated .google.cloud.kms.v1.KeyRing key_rings = 1;</code>
+   * <code>repeated .google.cloud.kms.v1.ImportJob import_jobs = 1;</code>
    */
-  public com.google.cloud.kms.v1.KeyRingOrBuilder getKeyRingsOrBuilder(int index) {
-    return keyRings_.get(index);
+  public com.google.cloud.kms.v1.ImportJobOrBuilder getImportJobsOrBuilder(int index) {
+    return importJobs_.get(index);
   }
 
   public static final int NEXT_PAGE_TOKEN_FIELD_NUMBER = 2;
@@ -182,7 +182,7 @@ public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * A token to retrieve next page of results. Pass this value in
-   * [ListKeyRingsRequest.page_token][google.cloud.kms.v1.ListKeyRingsRequest.page_token] to retrieve the next page of results.
+   * [ListImportJobsRequest.page_token][google.cloud.kms.v1.ListImportJobsRequest.page_token] to retrieve the next page of results.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -203,7 +203,7 @@ public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * A token to retrieve next page of results. Pass this value in
-   * [ListKeyRingsRequest.page_token][google.cloud.kms.v1.ListKeyRingsRequest.page_token] to retrieve the next page of results.
+   * [ListImportJobsRequest.page_token][google.cloud.kms.v1.ListImportJobsRequest.page_token] to retrieve the next page of results.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -226,7 +226,7 @@ public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The total number of [KeyRings][google.cloud.kms.v1.KeyRing] that matched the query.
+   * The total number of [ImportJobs][google.cloud.kms.v1.ImportJob] that matched the query.
    * </pre>
    *
    * <code>int32 total_size = 3;</code>
@@ -249,8 +249,8 @@ public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMes
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    for (int i = 0; i < keyRings_.size(); i++) {
-      output.writeMessage(1, keyRings_.get(i));
+    for (int i = 0; i < importJobs_.size(); i++) {
+      output.writeMessage(1, importJobs_.get(i));
     }
     if (!getNextPageTokenBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, nextPageToken_);
@@ -267,8 +267,8 @@ public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMes
     if (size != -1) return size;
 
     size = 0;
-    for (int i = 0; i < keyRings_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, keyRings_.get(i));
+    for (int i = 0; i < importJobs_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, importJobs_.get(i));
     }
     if (!getNextPageTokenBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, nextPageToken_);
@@ -286,13 +286,13 @@ public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMes
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof com.google.cloud.kms.v1.ListKeyRingsResponse)) {
+    if (!(obj instanceof com.google.cloud.kms.v1.ListImportJobsResponse)) {
       return super.equals(obj);
     }
-    com.google.cloud.kms.v1.ListKeyRingsResponse other =
-        (com.google.cloud.kms.v1.ListKeyRingsResponse) obj;
+    com.google.cloud.kms.v1.ListImportJobsResponse other =
+        (com.google.cloud.kms.v1.ListImportJobsResponse) obj;
 
-    if (!getKeyRingsList().equals(other.getKeyRingsList())) return false;
+    if (!getImportJobsList().equals(other.getImportJobsList())) return false;
     if (!getNextPageToken().equals(other.getNextPageToken())) return false;
     if (getTotalSize() != other.getTotalSize()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -306,9 +306,9 @@ public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMes
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (getKeyRingsCount() > 0) {
-      hash = (37 * hash) + KEY_RINGS_FIELD_NUMBER;
-      hash = (53 * hash) + getKeyRingsList().hashCode();
+    if (getImportJobsCount() > 0) {
+      hash = (37 * hash) + IMPORT_JOBS_FIELD_NUMBER;
+      hash = (53 * hash) + getImportJobsList().hashCode();
     }
     hash = (37 * hash) + NEXT_PAGE_TOKEN_FIELD_NUMBER;
     hash = (53 * hash) + getNextPageToken().hashCode();
@@ -319,71 +319,71 @@ public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMes
     return hash;
   }
 
-  public static com.google.cloud.kms.v1.ListKeyRingsResponse parseFrom(java.nio.ByteBuffer data)
+  public static com.google.cloud.kms.v1.ListImportJobsResponse parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.kms.v1.ListKeyRingsResponse parseFrom(
+  public static com.google.cloud.kms.v1.ListImportJobsResponse parseFrom(
       java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.kms.v1.ListKeyRingsResponse parseFrom(
+  public static com.google.cloud.kms.v1.ListImportJobsResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.kms.v1.ListKeyRingsResponse parseFrom(
+  public static com.google.cloud.kms.v1.ListImportJobsResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.kms.v1.ListKeyRingsResponse parseFrom(byte[] data)
+  public static com.google.cloud.kms.v1.ListImportJobsResponse parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.kms.v1.ListKeyRingsResponse parseFrom(
+  public static com.google.cloud.kms.v1.ListImportJobsResponse parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.kms.v1.ListKeyRingsResponse parseFrom(java.io.InputStream input)
+  public static com.google.cloud.kms.v1.ListImportJobsResponse parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.kms.v1.ListKeyRingsResponse parseFrom(
+  public static com.google.cloud.kms.v1.ListImportJobsResponse parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.kms.v1.ListKeyRingsResponse parseDelimitedFrom(
+  public static com.google.cloud.kms.v1.ListImportJobsResponse parseDelimitedFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.kms.v1.ListKeyRingsResponse parseDelimitedFrom(
+  public static com.google.cloud.kms.v1.ListImportJobsResponse parseDelimitedFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.kms.v1.ListKeyRingsResponse parseFrom(
+  public static com.google.cloud.kms.v1.ListImportJobsResponse parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.kms.v1.ListKeyRingsResponse parseFrom(
+  public static com.google.cloud.kms.v1.ListImportJobsResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -400,7 +400,7 @@ public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMes
     return DEFAULT_INSTANCE.toBuilder();
   }
 
-  public static Builder newBuilder(com.google.cloud.kms.v1.ListKeyRingsResponse prototype) {
+  public static Builder newBuilder(com.google.cloud.kms.v1.ListImportJobsResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -418,31 +418,31 @@ public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Response message for [KeyManagementService.ListKeyRings][google.cloud.kms.v1.KeyManagementService.ListKeyRings].
+   * Response message for [KeyManagementService.ListImportJobs][google.cloud.kms.v1.KeyManagementService.ListImportJobs].
    * </pre>
    *
-   * Protobuf type {@code google.cloud.kms.v1.ListKeyRingsResponse}
+   * Protobuf type {@code google.cloud.kms.v1.ListImportJobsResponse}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.cloud.kms.v1.ListKeyRingsResponse)
-      com.google.cloud.kms.v1.ListKeyRingsResponseOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.cloud.kms.v1.ListImportJobsResponse)
+      com.google.cloud.kms.v1.ListImportJobsResponseOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.kms.v1.KmsProto
-          .internal_static_google_cloud_kms_v1_ListKeyRingsResponse_descriptor;
+          .internal_static_google_cloud_kms_v1_ListImportJobsResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.kms.v1.KmsProto
-          .internal_static_google_cloud_kms_v1_ListKeyRingsResponse_fieldAccessorTable
+          .internal_static_google_cloud_kms_v1_ListImportJobsResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.kms.v1.ListKeyRingsResponse.class,
-              com.google.cloud.kms.v1.ListKeyRingsResponse.Builder.class);
+              com.google.cloud.kms.v1.ListImportJobsResponse.class,
+              com.google.cloud.kms.v1.ListImportJobsResponse.Builder.class);
     }
 
-    // Construct using com.google.cloud.kms.v1.ListKeyRingsResponse.newBuilder()
+    // Construct using com.google.cloud.kms.v1.ListImportJobsResponse.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -454,18 +454,18 @@ public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMes
 
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getKeyRingsFieldBuilder();
+        getImportJobsFieldBuilder();
       }
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (keyRingsBuilder_ == null) {
-        keyRings_ = java.util.Collections.emptyList();
+      if (importJobsBuilder_ == null) {
+        importJobs_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
       } else {
-        keyRingsBuilder_.clear();
+        importJobsBuilder_.clear();
       }
       nextPageToken_ = "";
 
@@ -477,17 +477,17 @@ public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.cloud.kms.v1.KmsProto
-          .internal_static_google_cloud_kms_v1_ListKeyRingsResponse_descriptor;
+          .internal_static_google_cloud_kms_v1_ListImportJobsResponse_descriptor;
     }
 
     @java.lang.Override
-    public com.google.cloud.kms.v1.ListKeyRingsResponse getDefaultInstanceForType() {
-      return com.google.cloud.kms.v1.ListKeyRingsResponse.getDefaultInstance();
+    public com.google.cloud.kms.v1.ListImportJobsResponse getDefaultInstanceForType() {
+      return com.google.cloud.kms.v1.ListImportJobsResponse.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.cloud.kms.v1.ListKeyRingsResponse build() {
-      com.google.cloud.kms.v1.ListKeyRingsResponse result = buildPartial();
+    public com.google.cloud.kms.v1.ListImportJobsResponse build() {
+      com.google.cloud.kms.v1.ListImportJobsResponse result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -495,19 +495,19 @@ public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMes
     }
 
     @java.lang.Override
-    public com.google.cloud.kms.v1.ListKeyRingsResponse buildPartial() {
-      com.google.cloud.kms.v1.ListKeyRingsResponse result =
-          new com.google.cloud.kms.v1.ListKeyRingsResponse(this);
+    public com.google.cloud.kms.v1.ListImportJobsResponse buildPartial() {
+      com.google.cloud.kms.v1.ListImportJobsResponse result =
+          new com.google.cloud.kms.v1.ListImportJobsResponse(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
-      if (keyRingsBuilder_ == null) {
+      if (importJobsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
-          keyRings_ = java.util.Collections.unmodifiableList(keyRings_);
+          importJobs_ = java.util.Collections.unmodifiableList(importJobs_);
           bitField0_ = (bitField0_ & ~0x00000001);
         }
-        result.keyRings_ = keyRings_;
+        result.importJobs_ = importJobs_;
       } else {
-        result.keyRings_ = keyRingsBuilder_.build();
+        result.importJobs_ = importJobsBuilder_.build();
       }
       result.nextPageToken_ = nextPageToken_;
       result.totalSize_ = totalSize_;
@@ -551,40 +551,40 @@ public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMes
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.cloud.kms.v1.ListKeyRingsResponse) {
-        return mergeFrom((com.google.cloud.kms.v1.ListKeyRingsResponse) other);
+      if (other instanceof com.google.cloud.kms.v1.ListImportJobsResponse) {
+        return mergeFrom((com.google.cloud.kms.v1.ListImportJobsResponse) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.cloud.kms.v1.ListKeyRingsResponse other) {
-      if (other == com.google.cloud.kms.v1.ListKeyRingsResponse.getDefaultInstance()) return this;
-      if (keyRingsBuilder_ == null) {
-        if (!other.keyRings_.isEmpty()) {
-          if (keyRings_.isEmpty()) {
-            keyRings_ = other.keyRings_;
+    public Builder mergeFrom(com.google.cloud.kms.v1.ListImportJobsResponse other) {
+      if (other == com.google.cloud.kms.v1.ListImportJobsResponse.getDefaultInstance()) return this;
+      if (importJobsBuilder_ == null) {
+        if (!other.importJobs_.isEmpty()) {
+          if (importJobs_.isEmpty()) {
+            importJobs_ = other.importJobs_;
             bitField0_ = (bitField0_ & ~0x00000001);
           } else {
-            ensureKeyRingsIsMutable();
-            keyRings_.addAll(other.keyRings_);
+            ensureImportJobsIsMutable();
+            importJobs_.addAll(other.importJobs_);
           }
           onChanged();
         }
       } else {
-        if (!other.keyRings_.isEmpty()) {
-          if (keyRingsBuilder_.isEmpty()) {
-            keyRingsBuilder_.dispose();
-            keyRingsBuilder_ = null;
-            keyRings_ = other.keyRings_;
+        if (!other.importJobs_.isEmpty()) {
+          if (importJobsBuilder_.isEmpty()) {
+            importJobsBuilder_.dispose();
+            importJobsBuilder_ = null;
+            importJobs_ = other.importJobs_;
             bitField0_ = (bitField0_ & ~0x00000001);
-            keyRingsBuilder_ =
+            importJobsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
-                    ? getKeyRingsFieldBuilder()
+                    ? getImportJobsFieldBuilder()
                     : null;
           } else {
-            keyRingsBuilder_.addAllMessages(other.keyRings_);
+            importJobsBuilder_.addAllMessages(other.importJobs_);
           }
         }
       }
@@ -610,11 +610,11 @@ public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMes
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.kms.v1.ListKeyRingsResponse parsedMessage = null;
+      com.google.cloud.kms.v1.ListImportJobsResponse parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.kms.v1.ListKeyRingsResponse) e.getUnfinishedMessage();
+        parsedMessage = (com.google.cloud.kms.v1.ListImportJobsResponse) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -626,89 +626,89 @@ public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMes
 
     private int bitField0_;
 
-    private java.util.List<com.google.cloud.kms.v1.KeyRing> keyRings_ =
+    private java.util.List<com.google.cloud.kms.v1.ImportJob> importJobs_ =
         java.util.Collections.emptyList();
 
-    private void ensureKeyRingsIsMutable() {
+    private void ensureImportJobsIsMutable() {
       if (!((bitField0_ & 0x00000001) != 0)) {
-        keyRings_ = new java.util.ArrayList<com.google.cloud.kms.v1.KeyRing>(keyRings_);
+        importJobs_ = new java.util.ArrayList<com.google.cloud.kms.v1.ImportJob>(importJobs_);
         bitField0_ |= 0x00000001;
       }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.cloud.kms.v1.KeyRing,
-            com.google.cloud.kms.v1.KeyRing.Builder,
-            com.google.cloud.kms.v1.KeyRingOrBuilder>
-        keyRingsBuilder_;
+            com.google.cloud.kms.v1.ImportJob,
+            com.google.cloud.kms.v1.ImportJob.Builder,
+            com.google.cloud.kms.v1.ImportJobOrBuilder>
+        importJobsBuilder_;
 
     /**
      *
      *
      * <pre>
-     * The list of [KeyRings][google.cloud.kms.v1.KeyRing].
+     * The list of [ImportJobs][google.cloud.kms.v1.ImportJob].
      * </pre>
      *
-     * <code>repeated .google.cloud.kms.v1.KeyRing key_rings = 1;</code>
+     * <code>repeated .google.cloud.kms.v1.ImportJob import_jobs = 1;</code>
      */
-    public java.util.List<com.google.cloud.kms.v1.KeyRing> getKeyRingsList() {
-      if (keyRingsBuilder_ == null) {
-        return java.util.Collections.unmodifiableList(keyRings_);
+    public java.util.List<com.google.cloud.kms.v1.ImportJob> getImportJobsList() {
+      if (importJobsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(importJobs_);
       } else {
-        return keyRingsBuilder_.getMessageList();
+        return importJobsBuilder_.getMessageList();
       }
     }
     /**
      *
      *
      * <pre>
-     * The list of [KeyRings][google.cloud.kms.v1.KeyRing].
+     * The list of [ImportJobs][google.cloud.kms.v1.ImportJob].
      * </pre>
      *
-     * <code>repeated .google.cloud.kms.v1.KeyRing key_rings = 1;</code>
+     * <code>repeated .google.cloud.kms.v1.ImportJob import_jobs = 1;</code>
      */
-    public int getKeyRingsCount() {
-      if (keyRingsBuilder_ == null) {
-        return keyRings_.size();
+    public int getImportJobsCount() {
+      if (importJobsBuilder_ == null) {
+        return importJobs_.size();
       } else {
-        return keyRingsBuilder_.getCount();
+        return importJobsBuilder_.getCount();
       }
     }
     /**
      *
      *
      * <pre>
-     * The list of [KeyRings][google.cloud.kms.v1.KeyRing].
+     * The list of [ImportJobs][google.cloud.kms.v1.ImportJob].
      * </pre>
      *
-     * <code>repeated .google.cloud.kms.v1.KeyRing key_rings = 1;</code>
+     * <code>repeated .google.cloud.kms.v1.ImportJob import_jobs = 1;</code>
      */
-    public com.google.cloud.kms.v1.KeyRing getKeyRings(int index) {
-      if (keyRingsBuilder_ == null) {
-        return keyRings_.get(index);
+    public com.google.cloud.kms.v1.ImportJob getImportJobs(int index) {
+      if (importJobsBuilder_ == null) {
+        return importJobs_.get(index);
       } else {
-        return keyRingsBuilder_.getMessage(index);
+        return importJobsBuilder_.getMessage(index);
       }
     }
     /**
      *
      *
      * <pre>
-     * The list of [KeyRings][google.cloud.kms.v1.KeyRing].
+     * The list of [ImportJobs][google.cloud.kms.v1.ImportJob].
      * </pre>
      *
-     * <code>repeated .google.cloud.kms.v1.KeyRing key_rings = 1;</code>
+     * <code>repeated .google.cloud.kms.v1.ImportJob import_jobs = 1;</code>
      */
-    public Builder setKeyRings(int index, com.google.cloud.kms.v1.KeyRing value) {
-      if (keyRingsBuilder_ == null) {
+    public Builder setImportJobs(int index, com.google.cloud.kms.v1.ImportJob value) {
+      if (importJobsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureKeyRingsIsMutable();
-        keyRings_.set(index, value);
+        ensureImportJobsIsMutable();
+        importJobs_.set(index, value);
         onChanged();
       } else {
-        keyRingsBuilder_.setMessage(index, value);
+        importJobsBuilder_.setMessage(index, value);
       }
       return this;
     }
@@ -716,18 +716,19 @@ public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The list of [KeyRings][google.cloud.kms.v1.KeyRing].
+     * The list of [ImportJobs][google.cloud.kms.v1.ImportJob].
      * </pre>
      *
-     * <code>repeated .google.cloud.kms.v1.KeyRing key_rings = 1;</code>
+     * <code>repeated .google.cloud.kms.v1.ImportJob import_jobs = 1;</code>
      */
-    public Builder setKeyRings(int index, com.google.cloud.kms.v1.KeyRing.Builder builderForValue) {
-      if (keyRingsBuilder_ == null) {
-        ensureKeyRingsIsMutable();
-        keyRings_.set(index, builderForValue.build());
+    public Builder setImportJobs(
+        int index, com.google.cloud.kms.v1.ImportJob.Builder builderForValue) {
+      if (importJobsBuilder_ == null) {
+        ensureImportJobsIsMutable();
+        importJobs_.set(index, builderForValue.build());
         onChanged();
       } else {
-        keyRingsBuilder_.setMessage(index, builderForValue.build());
+        importJobsBuilder_.setMessage(index, builderForValue.build());
       }
       return this;
     }
@@ -735,21 +736,21 @@ public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The list of [KeyRings][google.cloud.kms.v1.KeyRing].
+     * The list of [ImportJobs][google.cloud.kms.v1.ImportJob].
      * </pre>
      *
-     * <code>repeated .google.cloud.kms.v1.KeyRing key_rings = 1;</code>
+     * <code>repeated .google.cloud.kms.v1.ImportJob import_jobs = 1;</code>
      */
-    public Builder addKeyRings(com.google.cloud.kms.v1.KeyRing value) {
-      if (keyRingsBuilder_ == null) {
+    public Builder addImportJobs(com.google.cloud.kms.v1.ImportJob value) {
+      if (importJobsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureKeyRingsIsMutable();
-        keyRings_.add(value);
+        ensureImportJobsIsMutable();
+        importJobs_.add(value);
         onChanged();
       } else {
-        keyRingsBuilder_.addMessage(value);
+        importJobsBuilder_.addMessage(value);
       }
       return this;
     }
@@ -757,21 +758,21 @@ public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The list of [KeyRings][google.cloud.kms.v1.KeyRing].
+     * The list of [ImportJobs][google.cloud.kms.v1.ImportJob].
      * </pre>
      *
-     * <code>repeated .google.cloud.kms.v1.KeyRing key_rings = 1;</code>
+     * <code>repeated .google.cloud.kms.v1.ImportJob import_jobs = 1;</code>
      */
-    public Builder addKeyRings(int index, com.google.cloud.kms.v1.KeyRing value) {
-      if (keyRingsBuilder_ == null) {
+    public Builder addImportJobs(int index, com.google.cloud.kms.v1.ImportJob value) {
+      if (importJobsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureKeyRingsIsMutable();
-        keyRings_.add(index, value);
+        ensureImportJobsIsMutable();
+        importJobs_.add(index, value);
         onChanged();
       } else {
-        keyRingsBuilder_.addMessage(index, value);
+        importJobsBuilder_.addMessage(index, value);
       }
       return this;
     }
@@ -779,18 +780,18 @@ public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The list of [KeyRings][google.cloud.kms.v1.KeyRing].
+     * The list of [ImportJobs][google.cloud.kms.v1.ImportJob].
      * </pre>
      *
-     * <code>repeated .google.cloud.kms.v1.KeyRing key_rings = 1;</code>
+     * <code>repeated .google.cloud.kms.v1.ImportJob import_jobs = 1;</code>
      */
-    public Builder addKeyRings(com.google.cloud.kms.v1.KeyRing.Builder builderForValue) {
-      if (keyRingsBuilder_ == null) {
-        ensureKeyRingsIsMutable();
-        keyRings_.add(builderForValue.build());
+    public Builder addImportJobs(com.google.cloud.kms.v1.ImportJob.Builder builderForValue) {
+      if (importJobsBuilder_ == null) {
+        ensureImportJobsIsMutable();
+        importJobs_.add(builderForValue.build());
         onChanged();
       } else {
-        keyRingsBuilder_.addMessage(builderForValue.build());
+        importJobsBuilder_.addMessage(builderForValue.build());
       }
       return this;
     }
@@ -798,18 +799,19 @@ public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The list of [KeyRings][google.cloud.kms.v1.KeyRing].
+     * The list of [ImportJobs][google.cloud.kms.v1.ImportJob].
      * </pre>
      *
-     * <code>repeated .google.cloud.kms.v1.KeyRing key_rings = 1;</code>
+     * <code>repeated .google.cloud.kms.v1.ImportJob import_jobs = 1;</code>
      */
-    public Builder addKeyRings(int index, com.google.cloud.kms.v1.KeyRing.Builder builderForValue) {
-      if (keyRingsBuilder_ == null) {
-        ensureKeyRingsIsMutable();
-        keyRings_.add(index, builderForValue.build());
+    public Builder addImportJobs(
+        int index, com.google.cloud.kms.v1.ImportJob.Builder builderForValue) {
+      if (importJobsBuilder_ == null) {
+        ensureImportJobsIsMutable();
+        importJobs_.add(index, builderForValue.build());
         onChanged();
       } else {
-        keyRingsBuilder_.addMessage(index, builderForValue.build());
+        importJobsBuilder_.addMessage(index, builderForValue.build());
       }
       return this;
     }
@@ -817,19 +819,19 @@ public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The list of [KeyRings][google.cloud.kms.v1.KeyRing].
+     * The list of [ImportJobs][google.cloud.kms.v1.ImportJob].
      * </pre>
      *
-     * <code>repeated .google.cloud.kms.v1.KeyRing key_rings = 1;</code>
+     * <code>repeated .google.cloud.kms.v1.ImportJob import_jobs = 1;</code>
      */
-    public Builder addAllKeyRings(
-        java.lang.Iterable<? extends com.google.cloud.kms.v1.KeyRing> values) {
-      if (keyRingsBuilder_ == null) {
-        ensureKeyRingsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, keyRings_);
+    public Builder addAllImportJobs(
+        java.lang.Iterable<? extends com.google.cloud.kms.v1.ImportJob> values) {
+      if (importJobsBuilder_ == null) {
+        ensureImportJobsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, importJobs_);
         onChanged();
       } else {
-        keyRingsBuilder_.addAllMessages(values);
+        importJobsBuilder_.addAllMessages(values);
       }
       return this;
     }
@@ -837,18 +839,18 @@ public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The list of [KeyRings][google.cloud.kms.v1.KeyRing].
+     * The list of [ImportJobs][google.cloud.kms.v1.ImportJob].
      * </pre>
      *
-     * <code>repeated .google.cloud.kms.v1.KeyRing key_rings = 1;</code>
+     * <code>repeated .google.cloud.kms.v1.ImportJob import_jobs = 1;</code>
      */
-    public Builder clearKeyRings() {
-      if (keyRingsBuilder_ == null) {
-        keyRings_ = java.util.Collections.emptyList();
+    public Builder clearImportJobs() {
+      if (importJobsBuilder_ == null) {
+        importJobs_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
-        keyRingsBuilder_.clear();
+        importJobsBuilder_.clear();
       }
       return this;
     }
@@ -856,18 +858,18 @@ public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The list of [KeyRings][google.cloud.kms.v1.KeyRing].
+     * The list of [ImportJobs][google.cloud.kms.v1.ImportJob].
      * </pre>
      *
-     * <code>repeated .google.cloud.kms.v1.KeyRing key_rings = 1;</code>
+     * <code>repeated .google.cloud.kms.v1.ImportJob import_jobs = 1;</code>
      */
-    public Builder removeKeyRings(int index) {
-      if (keyRingsBuilder_ == null) {
-        ensureKeyRingsIsMutable();
-        keyRings_.remove(index);
+    public Builder removeImportJobs(int index) {
+      if (importJobsBuilder_ == null) {
+        ensureImportJobsIsMutable();
+        importJobs_.remove(index);
         onChanged();
       } else {
-        keyRingsBuilder_.remove(index);
+        importJobsBuilder_.remove(index);
       }
       return this;
     }
@@ -875,101 +877,101 @@ public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The list of [KeyRings][google.cloud.kms.v1.KeyRing].
+     * The list of [ImportJobs][google.cloud.kms.v1.ImportJob].
      * </pre>
      *
-     * <code>repeated .google.cloud.kms.v1.KeyRing key_rings = 1;</code>
+     * <code>repeated .google.cloud.kms.v1.ImportJob import_jobs = 1;</code>
      */
-    public com.google.cloud.kms.v1.KeyRing.Builder getKeyRingsBuilder(int index) {
-      return getKeyRingsFieldBuilder().getBuilder(index);
+    public com.google.cloud.kms.v1.ImportJob.Builder getImportJobsBuilder(int index) {
+      return getImportJobsFieldBuilder().getBuilder(index);
     }
     /**
      *
      *
      * <pre>
-     * The list of [KeyRings][google.cloud.kms.v1.KeyRing].
+     * The list of [ImportJobs][google.cloud.kms.v1.ImportJob].
      * </pre>
      *
-     * <code>repeated .google.cloud.kms.v1.KeyRing key_rings = 1;</code>
+     * <code>repeated .google.cloud.kms.v1.ImportJob import_jobs = 1;</code>
      */
-    public com.google.cloud.kms.v1.KeyRingOrBuilder getKeyRingsOrBuilder(int index) {
-      if (keyRingsBuilder_ == null) {
-        return keyRings_.get(index);
+    public com.google.cloud.kms.v1.ImportJobOrBuilder getImportJobsOrBuilder(int index) {
+      if (importJobsBuilder_ == null) {
+        return importJobs_.get(index);
       } else {
-        return keyRingsBuilder_.getMessageOrBuilder(index);
+        return importJobsBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
      *
      *
      * <pre>
-     * The list of [KeyRings][google.cloud.kms.v1.KeyRing].
+     * The list of [ImportJobs][google.cloud.kms.v1.ImportJob].
      * </pre>
      *
-     * <code>repeated .google.cloud.kms.v1.KeyRing key_rings = 1;</code>
+     * <code>repeated .google.cloud.kms.v1.ImportJob import_jobs = 1;</code>
      */
-    public java.util.List<? extends com.google.cloud.kms.v1.KeyRingOrBuilder>
-        getKeyRingsOrBuilderList() {
-      if (keyRingsBuilder_ != null) {
-        return keyRingsBuilder_.getMessageOrBuilderList();
+    public java.util.List<? extends com.google.cloud.kms.v1.ImportJobOrBuilder>
+        getImportJobsOrBuilderList() {
+      if (importJobsBuilder_ != null) {
+        return importJobsBuilder_.getMessageOrBuilderList();
       } else {
-        return java.util.Collections.unmodifiableList(keyRings_);
+        return java.util.Collections.unmodifiableList(importJobs_);
       }
     }
     /**
      *
      *
      * <pre>
-     * The list of [KeyRings][google.cloud.kms.v1.KeyRing].
+     * The list of [ImportJobs][google.cloud.kms.v1.ImportJob].
      * </pre>
      *
-     * <code>repeated .google.cloud.kms.v1.KeyRing key_rings = 1;</code>
+     * <code>repeated .google.cloud.kms.v1.ImportJob import_jobs = 1;</code>
      */
-    public com.google.cloud.kms.v1.KeyRing.Builder addKeyRingsBuilder() {
-      return getKeyRingsFieldBuilder()
-          .addBuilder(com.google.cloud.kms.v1.KeyRing.getDefaultInstance());
+    public com.google.cloud.kms.v1.ImportJob.Builder addImportJobsBuilder() {
+      return getImportJobsFieldBuilder()
+          .addBuilder(com.google.cloud.kms.v1.ImportJob.getDefaultInstance());
     }
     /**
      *
      *
      * <pre>
-     * The list of [KeyRings][google.cloud.kms.v1.KeyRing].
+     * The list of [ImportJobs][google.cloud.kms.v1.ImportJob].
      * </pre>
      *
-     * <code>repeated .google.cloud.kms.v1.KeyRing key_rings = 1;</code>
+     * <code>repeated .google.cloud.kms.v1.ImportJob import_jobs = 1;</code>
      */
-    public com.google.cloud.kms.v1.KeyRing.Builder addKeyRingsBuilder(int index) {
-      return getKeyRingsFieldBuilder()
-          .addBuilder(index, com.google.cloud.kms.v1.KeyRing.getDefaultInstance());
+    public com.google.cloud.kms.v1.ImportJob.Builder addImportJobsBuilder(int index) {
+      return getImportJobsFieldBuilder()
+          .addBuilder(index, com.google.cloud.kms.v1.ImportJob.getDefaultInstance());
     }
     /**
      *
      *
      * <pre>
-     * The list of [KeyRings][google.cloud.kms.v1.KeyRing].
+     * The list of [ImportJobs][google.cloud.kms.v1.ImportJob].
      * </pre>
      *
-     * <code>repeated .google.cloud.kms.v1.KeyRing key_rings = 1;</code>
+     * <code>repeated .google.cloud.kms.v1.ImportJob import_jobs = 1;</code>
      */
-    public java.util.List<com.google.cloud.kms.v1.KeyRing.Builder> getKeyRingsBuilderList() {
-      return getKeyRingsFieldBuilder().getBuilderList();
+    public java.util.List<com.google.cloud.kms.v1.ImportJob.Builder> getImportJobsBuilderList() {
+      return getImportJobsFieldBuilder().getBuilderList();
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.cloud.kms.v1.KeyRing,
-            com.google.cloud.kms.v1.KeyRing.Builder,
-            com.google.cloud.kms.v1.KeyRingOrBuilder>
-        getKeyRingsFieldBuilder() {
-      if (keyRingsBuilder_ == null) {
-        keyRingsBuilder_ =
+            com.google.cloud.kms.v1.ImportJob,
+            com.google.cloud.kms.v1.ImportJob.Builder,
+            com.google.cloud.kms.v1.ImportJobOrBuilder>
+        getImportJobsFieldBuilder() {
+      if (importJobsBuilder_ == null) {
+        importJobsBuilder_ =
             new com.google.protobuf.RepeatedFieldBuilderV3<
-                com.google.cloud.kms.v1.KeyRing,
-                com.google.cloud.kms.v1.KeyRing.Builder,
-                com.google.cloud.kms.v1.KeyRingOrBuilder>(
-                keyRings_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
-        keyRings_ = null;
+                com.google.cloud.kms.v1.ImportJob,
+                com.google.cloud.kms.v1.ImportJob.Builder,
+                com.google.cloud.kms.v1.ImportJobOrBuilder>(
+                importJobs_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+        importJobs_ = null;
       }
-      return keyRingsBuilder_;
+      return importJobsBuilder_;
     }
 
     private java.lang.Object nextPageToken_ = "";
@@ -978,7 +980,7 @@ public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * A token to retrieve next page of results. Pass this value in
-     * [ListKeyRingsRequest.page_token][google.cloud.kms.v1.ListKeyRingsRequest.page_token] to retrieve the next page of results.
+     * [ListImportJobsRequest.page_token][google.cloud.kms.v1.ListImportJobsRequest.page_token] to retrieve the next page of results.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -999,7 +1001,7 @@ public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * A token to retrieve next page of results. Pass this value in
-     * [ListKeyRingsRequest.page_token][google.cloud.kms.v1.ListKeyRingsRequest.page_token] to retrieve the next page of results.
+     * [ListImportJobsRequest.page_token][google.cloud.kms.v1.ListImportJobsRequest.page_token] to retrieve the next page of results.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1020,7 +1022,7 @@ public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * A token to retrieve next page of results. Pass this value in
-     * [ListKeyRingsRequest.page_token][google.cloud.kms.v1.ListKeyRingsRequest.page_token] to retrieve the next page of results.
+     * [ListImportJobsRequest.page_token][google.cloud.kms.v1.ListImportJobsRequest.page_token] to retrieve the next page of results.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1039,7 +1041,7 @@ public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * A token to retrieve next page of results. Pass this value in
-     * [ListKeyRingsRequest.page_token][google.cloud.kms.v1.ListKeyRingsRequest.page_token] to retrieve the next page of results.
+     * [ListImportJobsRequest.page_token][google.cloud.kms.v1.ListImportJobsRequest.page_token] to retrieve the next page of results.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1055,7 +1057,7 @@ public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * A token to retrieve next page of results. Pass this value in
-     * [ListKeyRingsRequest.page_token][google.cloud.kms.v1.ListKeyRingsRequest.page_token] to retrieve the next page of results.
+     * [ListImportJobsRequest.page_token][google.cloud.kms.v1.ListImportJobsRequest.page_token] to retrieve the next page of results.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1076,7 +1078,7 @@ public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The total number of [KeyRings][google.cloud.kms.v1.KeyRing] that matched the query.
+     * The total number of [ImportJobs][google.cloud.kms.v1.ImportJob] that matched the query.
      * </pre>
      *
      * <code>int32 total_size = 3;</code>
@@ -1088,7 +1090,7 @@ public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The total number of [KeyRings][google.cloud.kms.v1.KeyRing] that matched the query.
+     * The total number of [ImportJobs][google.cloud.kms.v1.ImportJob] that matched the query.
      * </pre>
      *
      * <code>int32 total_size = 3;</code>
@@ -1103,7 +1105,7 @@ public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The total number of [KeyRings][google.cloud.kms.v1.KeyRing] that matched the query.
+     * The total number of [ImportJobs][google.cloud.kms.v1.ImportJob] that matched the query.
      * </pre>
      *
      * <code>int32 total_size = 3;</code>
@@ -1126,42 +1128,42 @@ public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMes
       return super.mergeUnknownFields(unknownFields);
     }
 
-    // @@protoc_insertion_point(builder_scope:google.cloud.kms.v1.ListKeyRingsResponse)
+    // @@protoc_insertion_point(builder_scope:google.cloud.kms.v1.ListImportJobsResponse)
   }
 
-  // @@protoc_insertion_point(class_scope:google.cloud.kms.v1.ListKeyRingsResponse)
-  private static final com.google.cloud.kms.v1.ListKeyRingsResponse DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.cloud.kms.v1.ListImportJobsResponse)
+  private static final com.google.cloud.kms.v1.ListImportJobsResponse DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new com.google.cloud.kms.v1.ListKeyRingsResponse();
+    DEFAULT_INSTANCE = new com.google.cloud.kms.v1.ListImportJobsResponse();
   }
 
-  public static com.google.cloud.kms.v1.ListKeyRingsResponse getDefaultInstance() {
+  public static com.google.cloud.kms.v1.ListImportJobsResponse getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ListKeyRingsResponse> PARSER =
-      new com.google.protobuf.AbstractParser<ListKeyRingsResponse>() {
+  private static final com.google.protobuf.Parser<ListImportJobsResponse> PARSER =
+      new com.google.protobuf.AbstractParser<ListImportJobsResponse>() {
         @java.lang.Override
-        public ListKeyRingsResponse parsePartialFrom(
+        public ListImportJobsResponse parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ListKeyRingsResponse(input, extensionRegistry);
+          return new ListImportJobsResponse(input, extensionRegistry);
         }
       };
 
-  public static com.google.protobuf.Parser<ListKeyRingsResponse> parser() {
+  public static com.google.protobuf.Parser<ListImportJobsResponse> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<ListKeyRingsResponse> getParserForType() {
+  public com.google.protobuf.Parser<ListImportJobsResponse> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.cloud.kms.v1.ListKeyRingsResponse getDefaultInstanceForType() {
+  public com.google.cloud.kms.v1.ListImportJobsResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 }

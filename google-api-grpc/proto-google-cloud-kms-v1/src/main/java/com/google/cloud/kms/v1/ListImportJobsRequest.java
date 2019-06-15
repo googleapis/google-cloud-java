@@ -7,25 +7,24 @@ package com.google.cloud.kms.v1;
  *
  *
  * <pre>
- * Request message for [KeyManagementService.ListCryptoKeyVersions][google.cloud.kms.v1.KeyManagementService.ListCryptoKeyVersions].
+ * Request message for [KeyManagementService.ListImportJobs][google.cloud.kms.v1.KeyManagementService.ListImportJobs].
  * </pre>
  *
- * Protobuf type {@code google.cloud.kms.v1.ListCryptoKeyVersionsRequest}
+ * Protobuf type {@code google.cloud.kms.v1.ListImportJobsRequest}
  */
-public final class ListCryptoKeyVersionsRequest extends com.google.protobuf.GeneratedMessageV3
+public final class ListImportJobsRequest extends com.google.protobuf.GeneratedMessageV3
     implements
-    // @@protoc_insertion_point(message_implements:google.cloud.kms.v1.ListCryptoKeyVersionsRequest)
-    ListCryptoKeyVersionsRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.cloud.kms.v1.ListImportJobsRequest)
+    ListImportJobsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-  // Use ListCryptoKeyVersionsRequest.newBuilder() to construct.
-  private ListCryptoKeyVersionsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use ListImportJobsRequest.newBuilder() to construct.
+  private ListImportJobsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private ListCryptoKeyVersionsRequest() {
+  private ListImportJobsRequest() {
     parent_ = "";
     pageToken_ = "";
-    view_ = 0;
     filter_ = "";
     orderBy_ = "";
   }
@@ -35,7 +34,7 @@ public final class ListCryptoKeyVersionsRequest extends com.google.protobuf.Gene
     return this.unknownFields;
   }
 
-  private ListCryptoKeyVersionsRequest(
+  private ListImportJobsRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -73,21 +72,14 @@ public final class ListCryptoKeyVersionsRequest extends com.google.protobuf.Gene
               pageToken_ = s;
               break;
             }
-          case 32:
-            {
-              int rawValue = input.readEnum();
-
-              view_ = rawValue;
-              break;
-            }
-          case 42:
+          case 34:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               filter_ = s;
               break;
             }
-          case 50:
+          case 42:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -115,17 +107,17 @@ public final class ListCryptoKeyVersionsRequest extends com.google.protobuf.Gene
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.kms.v1.KmsProto
-        .internal_static_google_cloud_kms_v1_ListCryptoKeyVersionsRequest_descriptor;
+        .internal_static_google_cloud_kms_v1_ListImportJobsRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloud.kms.v1.KmsProto
-        .internal_static_google_cloud_kms_v1_ListCryptoKeyVersionsRequest_fieldAccessorTable
+        .internal_static_google_cloud_kms_v1_ListImportJobsRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.kms.v1.ListCryptoKeyVersionsRequest.class,
-            com.google.cloud.kms.v1.ListCryptoKeyVersionsRequest.Builder.class);
+            com.google.cloud.kms.v1.ListImportJobsRequest.class,
+            com.google.cloud.kms.v1.ListImportJobsRequest.Builder.class);
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
@@ -134,8 +126,8 @@ public final class ListCryptoKeyVersionsRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Required. The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to list, in the format
-   * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
+   * Required. The resource name of the [KeyRing][google.cloud.kms.v1.KeyRing] to list, in the format
+   * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;`.
    * </pre>
    *
    * <code>string parent = 1;</code>
@@ -155,8 +147,8 @@ public final class ListCryptoKeyVersionsRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Required. The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to list, in the format
-   * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
+   * Required. The resource name of the [KeyRing][google.cloud.kms.v1.KeyRing] to list, in the format
+   * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;`.
    * </pre>
    *
    * <code>string parent = 1;</code>
@@ -179,11 +171,10 @@ public final class ListCryptoKeyVersionsRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Optional limit on the number of [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion] to
-   * include in the response. Further [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion] can
-   * subsequently be obtained by including the
-   * [ListCryptoKeyVersionsResponse.next_page_token][google.cloud.kms.v1.ListCryptoKeyVersionsResponse.next_page_token] in a subsequent request.
-   * If unspecified, the server will pick an appropriate default.
+   * Optional limit on the number of [ImportJobs][google.cloud.kms.v1.ImportJob] to include in the
+   * response. Further [ImportJobs][google.cloud.kms.v1.ImportJob] can subsequently be obtained by
+   * including the [ListImportJobsResponse.next_page_token][google.cloud.kms.v1.ListImportJobsResponse.next_page_token] in a subsequent
+   * request. If unspecified, the server will pick an appropriate default.
    * </pre>
    *
    * <code>int32 page_size = 2;</code>
@@ -199,7 +190,7 @@ public final class ListCryptoKeyVersionsRequest extends com.google.protobuf.Gene
    *
    * <pre>
    * Optional pagination token, returned earlier via
-   * [ListCryptoKeyVersionsResponse.next_page_token][google.cloud.kms.v1.ListCryptoKeyVersionsResponse.next_page_token].
+   * [ListImportJobsResponse.next_page_token][google.cloud.kms.v1.ListImportJobsResponse.next_page_token].
    * </pre>
    *
    * <code>string page_token = 3;</code>
@@ -220,7 +211,7 @@ public final class ListCryptoKeyVersionsRequest extends com.google.protobuf.Gene
    *
    * <pre>
    * Optional pagination token, returned earlier via
-   * [ListCryptoKeyVersionsResponse.next_page_token][google.cloud.kms.v1.ListCryptoKeyVersionsResponse.next_page_token].
+   * [ListImportJobsResponse.next_page_token][google.cloud.kms.v1.ListImportJobsResponse.next_page_token].
    * </pre>
    *
    * <code>string page_token = 3;</code>
@@ -237,39 +228,7 @@ public final class ListCryptoKeyVersionsRequest extends com.google.protobuf.Gene
     }
   }
 
-  public static final int VIEW_FIELD_NUMBER = 4;
-  private int view_;
-  /**
-   *
-   *
-   * <pre>
-   * The fields to include in the response.
-   * </pre>
-   *
-   * <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionView view = 4;</code>
-   */
-  public int getViewValue() {
-    return view_;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * The fields to include in the response.
-   * </pre>
-   *
-   * <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionView view = 4;</code>
-   */
-  public com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionView getView() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionView result =
-        com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionView.valueOf(view_);
-    return result == null
-        ? com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionView.UNRECOGNIZED
-        : result;
-  }
-
-  public static final int FILTER_FIELD_NUMBER = 5;
+  public static final int FILTER_FIELD_NUMBER = 4;
   private volatile java.lang.Object filter_;
   /**
    *
@@ -278,7 +237,7 @@ public final class ListCryptoKeyVersionsRequest extends com.google.protobuf.Gene
    * Optional. Only include resources that match the filter in the response.
    * </pre>
    *
-   * <code>string filter = 5;</code>
+   * <code>string filter = 4;</code>
    */
   public java.lang.String getFilter() {
     java.lang.Object ref = filter_;
@@ -298,7 +257,7 @@ public final class ListCryptoKeyVersionsRequest extends com.google.protobuf.Gene
    * Optional. Only include resources that match the filter in the response.
    * </pre>
    *
-   * <code>string filter = 5;</code>
+   * <code>string filter = 4;</code>
    */
   public com.google.protobuf.ByteString getFilterBytes() {
     java.lang.Object ref = filter_;
@@ -312,7 +271,7 @@ public final class ListCryptoKeyVersionsRequest extends com.google.protobuf.Gene
     }
   }
 
-  public static final int ORDER_BY_FIELD_NUMBER = 6;
+  public static final int ORDER_BY_FIELD_NUMBER = 5;
   private volatile java.lang.Object orderBy_;
   /**
    *
@@ -322,7 +281,7 @@ public final class ListCryptoKeyVersionsRequest extends com.google.protobuf.Gene
    * results will be sorted in the default order.
    * </pre>
    *
-   * <code>string order_by = 6;</code>
+   * <code>string order_by = 5;</code>
    */
   public java.lang.String getOrderBy() {
     java.lang.Object ref = orderBy_;
@@ -343,7 +302,7 @@ public final class ListCryptoKeyVersionsRequest extends com.google.protobuf.Gene
    * results will be sorted in the default order.
    * </pre>
    *
-   * <code>string order_by = 6;</code>
+   * <code>string order_by = 5;</code>
    */
   public com.google.protobuf.ByteString getOrderByBytes() {
     java.lang.Object ref = orderBy_;
@@ -380,17 +339,11 @@ public final class ListCryptoKeyVersionsRequest extends com.google.protobuf.Gene
     if (!getPageTokenBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, pageToken_);
     }
-    if (view_
-        != com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionView
-            .CRYPTO_KEY_VERSION_VIEW_UNSPECIFIED
-            .getNumber()) {
-      output.writeEnum(4, view_);
-    }
     if (!getFilterBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, filter_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, filter_);
     }
     if (!getOrderByBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, orderBy_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, orderBy_);
     }
     unknownFields.writeTo(output);
   }
@@ -410,17 +363,11 @@ public final class ListCryptoKeyVersionsRequest extends com.google.protobuf.Gene
     if (!getPageTokenBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, pageToken_);
     }
-    if (view_
-        != com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionView
-            .CRYPTO_KEY_VERSION_VIEW_UNSPECIFIED
-            .getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, view_);
-    }
     if (!getFilterBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, filter_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, filter_);
     }
     if (!getOrderByBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, orderBy_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, orderBy_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -432,16 +379,15 @@ public final class ListCryptoKeyVersionsRequest extends com.google.protobuf.Gene
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof com.google.cloud.kms.v1.ListCryptoKeyVersionsRequest)) {
+    if (!(obj instanceof com.google.cloud.kms.v1.ListImportJobsRequest)) {
       return super.equals(obj);
     }
-    com.google.cloud.kms.v1.ListCryptoKeyVersionsRequest other =
-        (com.google.cloud.kms.v1.ListCryptoKeyVersionsRequest) obj;
+    com.google.cloud.kms.v1.ListImportJobsRequest other =
+        (com.google.cloud.kms.v1.ListImportJobsRequest) obj;
 
     if (!getParent().equals(other.getParent())) return false;
     if (getPageSize() != other.getPageSize()) return false;
     if (!getPageToken().equals(other.getPageToken())) return false;
-    if (view_ != other.view_) return false;
     if (!getFilter().equals(other.getFilter())) return false;
     if (!getOrderBy().equals(other.getOrderBy())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -461,8 +407,6 @@ public final class ListCryptoKeyVersionsRequest extends com.google.protobuf.Gene
     hash = (53 * hash) + getPageSize();
     hash = (37 * hash) + PAGE_TOKEN_FIELD_NUMBER;
     hash = (53 * hash) + getPageToken().hashCode();
-    hash = (37 * hash) + VIEW_FIELD_NUMBER;
-    hash = (53 * hash) + view_;
     hash = (37 * hash) + FILTER_FIELD_NUMBER;
     hash = (53 * hash) + getFilter().hashCode();
     hash = (37 * hash) + ORDER_BY_FIELD_NUMBER;
@@ -472,71 +416,71 @@ public final class ListCryptoKeyVersionsRequest extends com.google.protobuf.Gene
     return hash;
   }
 
-  public static com.google.cloud.kms.v1.ListCryptoKeyVersionsRequest parseFrom(
-      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+  public static com.google.cloud.kms.v1.ListImportJobsRequest parseFrom(java.nio.ByteBuffer data)
+      throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.kms.v1.ListCryptoKeyVersionsRequest parseFrom(
+  public static com.google.cloud.kms.v1.ListImportJobsRequest parseFrom(
       java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.kms.v1.ListCryptoKeyVersionsRequest parseFrom(
+  public static com.google.cloud.kms.v1.ListImportJobsRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.kms.v1.ListCryptoKeyVersionsRequest parseFrom(
+  public static com.google.cloud.kms.v1.ListImportJobsRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.kms.v1.ListCryptoKeyVersionsRequest parseFrom(byte[] data)
+  public static com.google.cloud.kms.v1.ListImportJobsRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.kms.v1.ListCryptoKeyVersionsRequest parseFrom(
+  public static com.google.cloud.kms.v1.ListImportJobsRequest parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.kms.v1.ListCryptoKeyVersionsRequest parseFrom(
-      java.io.InputStream input) throws java.io.IOException {
+  public static com.google.cloud.kms.v1.ListImportJobsRequest parseFrom(java.io.InputStream input)
+      throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.kms.v1.ListCryptoKeyVersionsRequest parseFrom(
+  public static com.google.cloud.kms.v1.ListImportJobsRequest parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.kms.v1.ListCryptoKeyVersionsRequest parseDelimitedFrom(
+  public static com.google.cloud.kms.v1.ListImportJobsRequest parseDelimitedFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.kms.v1.ListCryptoKeyVersionsRequest parseDelimitedFrom(
+  public static com.google.cloud.kms.v1.ListImportJobsRequest parseDelimitedFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.kms.v1.ListCryptoKeyVersionsRequest parseFrom(
+  public static com.google.cloud.kms.v1.ListImportJobsRequest parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.kms.v1.ListCryptoKeyVersionsRequest parseFrom(
+  public static com.google.cloud.kms.v1.ListImportJobsRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -553,7 +497,7 @@ public final class ListCryptoKeyVersionsRequest extends com.google.protobuf.Gene
     return DEFAULT_INSTANCE.toBuilder();
   }
 
-  public static Builder newBuilder(com.google.cloud.kms.v1.ListCryptoKeyVersionsRequest prototype) {
+  public static Builder newBuilder(com.google.cloud.kms.v1.ListImportJobsRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -571,31 +515,31 @@ public final class ListCryptoKeyVersionsRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Request message for [KeyManagementService.ListCryptoKeyVersions][google.cloud.kms.v1.KeyManagementService.ListCryptoKeyVersions].
+   * Request message for [KeyManagementService.ListImportJobs][google.cloud.kms.v1.KeyManagementService.ListImportJobs].
    * </pre>
    *
-   * Protobuf type {@code google.cloud.kms.v1.ListCryptoKeyVersionsRequest}
+   * Protobuf type {@code google.cloud.kms.v1.ListImportJobsRequest}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.cloud.kms.v1.ListCryptoKeyVersionsRequest)
-      com.google.cloud.kms.v1.ListCryptoKeyVersionsRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.cloud.kms.v1.ListImportJobsRequest)
+      com.google.cloud.kms.v1.ListImportJobsRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.kms.v1.KmsProto
-          .internal_static_google_cloud_kms_v1_ListCryptoKeyVersionsRequest_descriptor;
+          .internal_static_google_cloud_kms_v1_ListImportJobsRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.kms.v1.KmsProto
-          .internal_static_google_cloud_kms_v1_ListCryptoKeyVersionsRequest_fieldAccessorTable
+          .internal_static_google_cloud_kms_v1_ListImportJobsRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.kms.v1.ListCryptoKeyVersionsRequest.class,
-              com.google.cloud.kms.v1.ListCryptoKeyVersionsRequest.Builder.class);
+              com.google.cloud.kms.v1.ListImportJobsRequest.class,
+              com.google.cloud.kms.v1.ListImportJobsRequest.Builder.class);
     }
 
-    // Construct using com.google.cloud.kms.v1.ListCryptoKeyVersionsRequest.newBuilder()
+    // Construct using com.google.cloud.kms.v1.ListImportJobsRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -618,8 +562,6 @@ public final class ListCryptoKeyVersionsRequest extends com.google.protobuf.Gene
 
       pageToken_ = "";
 
-      view_ = 0;
-
       filter_ = "";
 
       orderBy_ = "";
@@ -630,17 +572,17 @@ public final class ListCryptoKeyVersionsRequest extends com.google.protobuf.Gene
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.cloud.kms.v1.KmsProto
-          .internal_static_google_cloud_kms_v1_ListCryptoKeyVersionsRequest_descriptor;
+          .internal_static_google_cloud_kms_v1_ListImportJobsRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.google.cloud.kms.v1.ListCryptoKeyVersionsRequest getDefaultInstanceForType() {
-      return com.google.cloud.kms.v1.ListCryptoKeyVersionsRequest.getDefaultInstance();
+    public com.google.cloud.kms.v1.ListImportJobsRequest getDefaultInstanceForType() {
+      return com.google.cloud.kms.v1.ListImportJobsRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.cloud.kms.v1.ListCryptoKeyVersionsRequest build() {
-      com.google.cloud.kms.v1.ListCryptoKeyVersionsRequest result = buildPartial();
+    public com.google.cloud.kms.v1.ListImportJobsRequest build() {
+      com.google.cloud.kms.v1.ListImportJobsRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -648,13 +590,12 @@ public final class ListCryptoKeyVersionsRequest extends com.google.protobuf.Gene
     }
 
     @java.lang.Override
-    public com.google.cloud.kms.v1.ListCryptoKeyVersionsRequest buildPartial() {
-      com.google.cloud.kms.v1.ListCryptoKeyVersionsRequest result =
-          new com.google.cloud.kms.v1.ListCryptoKeyVersionsRequest(this);
+    public com.google.cloud.kms.v1.ListImportJobsRequest buildPartial() {
+      com.google.cloud.kms.v1.ListImportJobsRequest result =
+          new com.google.cloud.kms.v1.ListImportJobsRequest(this);
       result.parent_ = parent_;
       result.pageSize_ = pageSize_;
       result.pageToken_ = pageToken_;
-      result.view_ = view_;
       result.filter_ = filter_;
       result.orderBy_ = orderBy_;
       onBuilt();
@@ -696,17 +637,16 @@ public final class ListCryptoKeyVersionsRequest extends com.google.protobuf.Gene
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.cloud.kms.v1.ListCryptoKeyVersionsRequest) {
-        return mergeFrom((com.google.cloud.kms.v1.ListCryptoKeyVersionsRequest) other);
+      if (other instanceof com.google.cloud.kms.v1.ListImportJobsRequest) {
+        return mergeFrom((com.google.cloud.kms.v1.ListImportJobsRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.cloud.kms.v1.ListCryptoKeyVersionsRequest other) {
-      if (other == com.google.cloud.kms.v1.ListCryptoKeyVersionsRequest.getDefaultInstance())
-        return this;
+    public Builder mergeFrom(com.google.cloud.kms.v1.ListImportJobsRequest other) {
+      if (other == com.google.cloud.kms.v1.ListImportJobsRequest.getDefaultInstance()) return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
         onChanged();
@@ -717,9 +657,6 @@ public final class ListCryptoKeyVersionsRequest extends com.google.protobuf.Gene
       if (!other.getPageToken().isEmpty()) {
         pageToken_ = other.pageToken_;
         onChanged();
-      }
-      if (other.view_ != 0) {
-        setViewValue(other.getViewValue());
       }
       if (!other.getFilter().isEmpty()) {
         filter_ = other.filter_;
@@ -744,12 +681,11 @@ public final class ListCryptoKeyVersionsRequest extends com.google.protobuf.Gene
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.kms.v1.ListCryptoKeyVersionsRequest parsedMessage = null;
+      com.google.cloud.kms.v1.ListImportJobsRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.kms.v1.ListCryptoKeyVersionsRequest) e.getUnfinishedMessage();
+        parsedMessage = (com.google.cloud.kms.v1.ListImportJobsRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -764,8 +700,8 @@ public final class ListCryptoKeyVersionsRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to list, in the format
-     * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
+     * Required. The resource name of the [KeyRing][google.cloud.kms.v1.KeyRing] to list, in the format
+     * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;`.
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -785,8 +721,8 @@ public final class ListCryptoKeyVersionsRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to list, in the format
-     * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
+     * Required. The resource name of the [KeyRing][google.cloud.kms.v1.KeyRing] to list, in the format
+     * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;`.
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -806,8 +742,8 @@ public final class ListCryptoKeyVersionsRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to list, in the format
-     * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
+     * Required. The resource name of the [KeyRing][google.cloud.kms.v1.KeyRing] to list, in the format
+     * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;`.
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -825,8 +761,8 @@ public final class ListCryptoKeyVersionsRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to list, in the format
-     * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
+     * Required. The resource name of the [KeyRing][google.cloud.kms.v1.KeyRing] to list, in the format
+     * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;`.
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -841,8 +777,8 @@ public final class ListCryptoKeyVersionsRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to list, in the format
-     * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
+     * Required. The resource name of the [KeyRing][google.cloud.kms.v1.KeyRing] to list, in the format
+     * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;`.
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -863,11 +799,10 @@ public final class ListCryptoKeyVersionsRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional limit on the number of [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion] to
-     * include in the response. Further [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion] can
-     * subsequently be obtained by including the
-     * [ListCryptoKeyVersionsResponse.next_page_token][google.cloud.kms.v1.ListCryptoKeyVersionsResponse.next_page_token] in a subsequent request.
-     * If unspecified, the server will pick an appropriate default.
+     * Optional limit on the number of [ImportJobs][google.cloud.kms.v1.ImportJob] to include in the
+     * response. Further [ImportJobs][google.cloud.kms.v1.ImportJob] can subsequently be obtained by
+     * including the [ListImportJobsResponse.next_page_token][google.cloud.kms.v1.ListImportJobsResponse.next_page_token] in a subsequent
+     * request. If unspecified, the server will pick an appropriate default.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>
@@ -879,11 +814,10 @@ public final class ListCryptoKeyVersionsRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional limit on the number of [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion] to
-     * include in the response. Further [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion] can
-     * subsequently be obtained by including the
-     * [ListCryptoKeyVersionsResponse.next_page_token][google.cloud.kms.v1.ListCryptoKeyVersionsResponse.next_page_token] in a subsequent request.
-     * If unspecified, the server will pick an appropriate default.
+     * Optional limit on the number of [ImportJobs][google.cloud.kms.v1.ImportJob] to include in the
+     * response. Further [ImportJobs][google.cloud.kms.v1.ImportJob] can subsequently be obtained by
+     * including the [ListImportJobsResponse.next_page_token][google.cloud.kms.v1.ListImportJobsResponse.next_page_token] in a subsequent
+     * request. If unspecified, the server will pick an appropriate default.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>
@@ -898,11 +832,10 @@ public final class ListCryptoKeyVersionsRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional limit on the number of [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion] to
-     * include in the response. Further [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion] can
-     * subsequently be obtained by including the
-     * [ListCryptoKeyVersionsResponse.next_page_token][google.cloud.kms.v1.ListCryptoKeyVersionsResponse.next_page_token] in a subsequent request.
-     * If unspecified, the server will pick an appropriate default.
+     * Optional limit on the number of [ImportJobs][google.cloud.kms.v1.ImportJob] to include in the
+     * response. Further [ImportJobs][google.cloud.kms.v1.ImportJob] can subsequently be obtained by
+     * including the [ListImportJobsResponse.next_page_token][google.cloud.kms.v1.ListImportJobsResponse.next_page_token] in a subsequent
+     * request. If unspecified, the server will pick an appropriate default.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>
@@ -920,7 +853,7 @@ public final class ListCryptoKeyVersionsRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * Optional pagination token, returned earlier via
-     * [ListCryptoKeyVersionsResponse.next_page_token][google.cloud.kms.v1.ListCryptoKeyVersionsResponse.next_page_token].
+     * [ListImportJobsResponse.next_page_token][google.cloud.kms.v1.ListImportJobsResponse.next_page_token].
      * </pre>
      *
      * <code>string page_token = 3;</code>
@@ -941,7 +874,7 @@ public final class ListCryptoKeyVersionsRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * Optional pagination token, returned earlier via
-     * [ListCryptoKeyVersionsResponse.next_page_token][google.cloud.kms.v1.ListCryptoKeyVersionsResponse.next_page_token].
+     * [ListImportJobsResponse.next_page_token][google.cloud.kms.v1.ListImportJobsResponse.next_page_token].
      * </pre>
      *
      * <code>string page_token = 3;</code>
@@ -962,7 +895,7 @@ public final class ListCryptoKeyVersionsRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * Optional pagination token, returned earlier via
-     * [ListCryptoKeyVersionsResponse.next_page_token][google.cloud.kms.v1.ListCryptoKeyVersionsResponse.next_page_token].
+     * [ListImportJobsResponse.next_page_token][google.cloud.kms.v1.ListImportJobsResponse.next_page_token].
      * </pre>
      *
      * <code>string page_token = 3;</code>
@@ -981,7 +914,7 @@ public final class ListCryptoKeyVersionsRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * Optional pagination token, returned earlier via
-     * [ListCryptoKeyVersionsResponse.next_page_token][google.cloud.kms.v1.ListCryptoKeyVersionsResponse.next_page_token].
+     * [ListImportJobsResponse.next_page_token][google.cloud.kms.v1.ListImportJobsResponse.next_page_token].
      * </pre>
      *
      * <code>string page_token = 3;</code>
@@ -997,7 +930,7 @@ public final class ListCryptoKeyVersionsRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * Optional pagination token, returned earlier via
-     * [ListCryptoKeyVersionsResponse.next_page_token][google.cloud.kms.v1.ListCryptoKeyVersionsResponse.next_page_token].
+     * [ListImportJobsResponse.next_page_token][google.cloud.kms.v1.ListImportJobsResponse.next_page_token].
      * </pre>
      *
      * <code>string page_token = 3;</code>
@@ -1013,84 +946,6 @@ public final class ListCryptoKeyVersionsRequest extends com.google.protobuf.Gene
       return this;
     }
 
-    private int view_ = 0;
-    /**
-     *
-     *
-     * <pre>
-     * The fields to include in the response.
-     * </pre>
-     *
-     * <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionView view = 4;</code>
-     */
-    public int getViewValue() {
-      return view_;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The fields to include in the response.
-     * </pre>
-     *
-     * <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionView view = 4;</code>
-     */
-    public Builder setViewValue(int value) {
-      view_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The fields to include in the response.
-     * </pre>
-     *
-     * <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionView view = 4;</code>
-     */
-    public com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionView getView() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionView result =
-          com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionView.valueOf(view_);
-      return result == null
-          ? com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionView.UNRECOGNIZED
-          : result;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The fields to include in the response.
-     * </pre>
-     *
-     * <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionView view = 4;</code>
-     */
-    public Builder setView(com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionView value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-
-      view_ = value.getNumber();
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The fields to include in the response.
-     * </pre>
-     *
-     * <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionView view = 4;</code>
-     */
-    public Builder clearView() {
-
-      view_ = 0;
-      onChanged();
-      return this;
-    }
-
     private java.lang.Object filter_ = "";
     /**
      *
@@ -1099,7 +954,7 @@ public final class ListCryptoKeyVersionsRequest extends com.google.protobuf.Gene
      * Optional. Only include resources that match the filter in the response.
      * </pre>
      *
-     * <code>string filter = 5;</code>
+     * <code>string filter = 4;</code>
      */
     public java.lang.String getFilter() {
       java.lang.Object ref = filter_;
@@ -1119,7 +974,7 @@ public final class ListCryptoKeyVersionsRequest extends com.google.protobuf.Gene
      * Optional. Only include resources that match the filter in the response.
      * </pre>
      *
-     * <code>string filter = 5;</code>
+     * <code>string filter = 4;</code>
      */
     public com.google.protobuf.ByteString getFilterBytes() {
       java.lang.Object ref = filter_;
@@ -1139,7 +994,7 @@ public final class ListCryptoKeyVersionsRequest extends com.google.protobuf.Gene
      * Optional. Only include resources that match the filter in the response.
      * </pre>
      *
-     * <code>string filter = 5;</code>
+     * <code>string filter = 4;</code>
      */
     public Builder setFilter(java.lang.String value) {
       if (value == null) {
@@ -1157,7 +1012,7 @@ public final class ListCryptoKeyVersionsRequest extends com.google.protobuf.Gene
      * Optional. Only include resources that match the filter in the response.
      * </pre>
      *
-     * <code>string filter = 5;</code>
+     * <code>string filter = 4;</code>
      */
     public Builder clearFilter() {
 
@@ -1172,7 +1027,7 @@ public final class ListCryptoKeyVersionsRequest extends com.google.protobuf.Gene
      * Optional. Only include resources that match the filter in the response.
      * </pre>
      *
-     * <code>string filter = 5;</code>
+     * <code>string filter = 4;</code>
      */
     public Builder setFilterBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1194,7 +1049,7 @@ public final class ListCryptoKeyVersionsRequest extends com.google.protobuf.Gene
      * results will be sorted in the default order.
      * </pre>
      *
-     * <code>string order_by = 6;</code>
+     * <code>string order_by = 5;</code>
      */
     public java.lang.String getOrderBy() {
       java.lang.Object ref = orderBy_;
@@ -1215,7 +1070,7 @@ public final class ListCryptoKeyVersionsRequest extends com.google.protobuf.Gene
      * results will be sorted in the default order.
      * </pre>
      *
-     * <code>string order_by = 6;</code>
+     * <code>string order_by = 5;</code>
      */
     public com.google.protobuf.ByteString getOrderByBytes() {
       java.lang.Object ref = orderBy_;
@@ -1236,7 +1091,7 @@ public final class ListCryptoKeyVersionsRequest extends com.google.protobuf.Gene
      * results will be sorted in the default order.
      * </pre>
      *
-     * <code>string order_by = 6;</code>
+     * <code>string order_by = 5;</code>
      */
     public Builder setOrderBy(java.lang.String value) {
       if (value == null) {
@@ -1255,7 +1110,7 @@ public final class ListCryptoKeyVersionsRequest extends com.google.protobuf.Gene
      * results will be sorted in the default order.
      * </pre>
      *
-     * <code>string order_by = 6;</code>
+     * <code>string order_by = 5;</code>
      */
     public Builder clearOrderBy() {
 
@@ -1271,7 +1126,7 @@ public final class ListCryptoKeyVersionsRequest extends com.google.protobuf.Gene
      * results will be sorted in the default order.
      * </pre>
      *
-     * <code>string order_by = 6;</code>
+     * <code>string order_by = 5;</code>
      */
     public Builder setOrderByBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1295,42 +1150,42 @@ public final class ListCryptoKeyVersionsRequest extends com.google.protobuf.Gene
       return super.mergeUnknownFields(unknownFields);
     }
 
-    // @@protoc_insertion_point(builder_scope:google.cloud.kms.v1.ListCryptoKeyVersionsRequest)
+    // @@protoc_insertion_point(builder_scope:google.cloud.kms.v1.ListImportJobsRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:google.cloud.kms.v1.ListCryptoKeyVersionsRequest)
-  private static final com.google.cloud.kms.v1.ListCryptoKeyVersionsRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.cloud.kms.v1.ListImportJobsRequest)
+  private static final com.google.cloud.kms.v1.ListImportJobsRequest DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new com.google.cloud.kms.v1.ListCryptoKeyVersionsRequest();
+    DEFAULT_INSTANCE = new com.google.cloud.kms.v1.ListImportJobsRequest();
   }
 
-  public static com.google.cloud.kms.v1.ListCryptoKeyVersionsRequest getDefaultInstance() {
+  public static com.google.cloud.kms.v1.ListImportJobsRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ListCryptoKeyVersionsRequest> PARSER =
-      new com.google.protobuf.AbstractParser<ListCryptoKeyVersionsRequest>() {
+  private static final com.google.protobuf.Parser<ListImportJobsRequest> PARSER =
+      new com.google.protobuf.AbstractParser<ListImportJobsRequest>() {
         @java.lang.Override
-        public ListCryptoKeyVersionsRequest parsePartialFrom(
+        public ListImportJobsRequest parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ListCryptoKeyVersionsRequest(input, extensionRegistry);
+          return new ListImportJobsRequest(input, extensionRegistry);
         }
       };
 
-  public static com.google.protobuf.Parser<ListCryptoKeyVersionsRequest> parser() {
+  public static com.google.protobuf.Parser<ListImportJobsRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<ListCryptoKeyVersionsRequest> getParserForType() {
+  public com.google.protobuf.Parser<ListImportJobsRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.cloud.kms.v1.ListCryptoKeyVersionsRequest getDefaultInstanceForType() {
+  public com.google.cloud.kms.v1.ListImportJobsRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 }
