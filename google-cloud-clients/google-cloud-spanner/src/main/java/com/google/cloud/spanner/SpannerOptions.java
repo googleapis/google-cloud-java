@@ -433,7 +433,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   }
 
   protected SpannerRpc getSpannerRpcV1() {
-    return (SpannerRpc) getRpc();
+    return getRpc();
   }
 
   /**
@@ -444,11 +444,13 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
    */
   @Override
   public Spanner getService() {
-    Spanner spanner = super.getService();
-    if (spanner.isClosed()) {
-      spanner = createNewService();
-    }
-    return spanner;
+    // Method is only overridden in order to supply additional documentation.
+    return super.getService();
+  }
+
+  @Override
+  protected boolean shouldRefreshService(Spanner cachedService) {
+    return cachedService == null || cachedService.isClosed();
   }
 
   /**
@@ -458,12 +460,14 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
    * ServiceRpc} instance.
    */
   @Override
-  public ServiceRpc getRpc() {
-    SpannerRpc rpc = (SpannerRpc) super.getRpc();
-    if (rpc.isClosed()) {
-      rpc = (SpannerRpc) createNewRpc();
-    }
-    return rpc;
+  public SpannerRpc getRpc() {
+    // Method is only overridden in order to supply additional documentation.
+    return (SpannerRpc) super.getRpc();
+  }
+
+  @Override
+  protected boolean shouldRefreshRpc(ServiceRpc cachedRpc) {
+    return cachedRpc == null || ((SpannerRpc) cachedRpc).isClosed();
   }
 
   @SuppressWarnings("unchecked")

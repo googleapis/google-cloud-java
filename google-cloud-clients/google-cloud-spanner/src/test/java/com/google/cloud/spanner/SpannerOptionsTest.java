@@ -359,10 +359,11 @@ public class SpannerOptionsTest {
 
   @Test
   public void testDoNotCacheClosedSpannerInstance() {
-    SpannerOptions options = SpannerOptions.newBuilder()
-        .setProjectId("[PROJECT]")
-        .setCredentials(NoCredentials.getInstance())
-        .build();
+    SpannerOptions options =
+        SpannerOptions.newBuilder()
+            .setProjectId("[PROJECT]")
+            .setCredentials(NoCredentials.getInstance())
+            .build();
     // Getting a service twice should give the same instance.
     Spanner service1 = options.getService();
     Spanner service2 = options.getService();

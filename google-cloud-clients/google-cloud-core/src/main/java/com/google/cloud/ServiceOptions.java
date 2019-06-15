@@ -494,20 +494,18 @@ public abstract class ServiceOptions<
    */
   @SuppressWarnings("unchecked")
   public ServiceT getService() {
-    if (service == null) {
+    if (shouldRefreshService(service)) {
       service = serviceFactory.create((OptionsT) this);
     }
     return service;
   }
 
   /**
-   * Creates a new service object and returns it. Subsequent calls to {@link #getService()} will
-   * return this instance.
+   * @param cachedService The currently cached service object
+   * @return true if the currently cached service object should be refreshed.
    */
-  @SuppressWarnings("unchecked")
-  protected ServiceT createNewService() {
-    service = serviceFactory.create((OptionsT) this);
-    return service;
+  protected boolean shouldRefreshService(ServiceT cachedService) {
+    return cachedService == null;
   }
 
   /**
@@ -516,20 +514,18 @@ public abstract class ServiceOptions<
    */
   @SuppressWarnings("unchecked")
   public ServiceRpc getRpc() {
-    if (rpc == null) {
+    if (shouldRefreshRpc(rpc)) {
       rpc = serviceRpcFactory.create((OptionsT) this);
     }
     return rpc;
   }
 
   /**
-   * Creates a new rpc object and returns it. Subsequent calls to {@link #getRpc()} will return this
-   * instance.
+   * @param cachedService The currently cached service object
+   * @return true if the currently cached service object should be refreshed.
    */
-  @SuppressWarnings("unchecked")
-  protected ServiceRpc createNewRpc() {
-    rpc = serviceRpcFactory.create((OptionsT) this);
-    return rpc;
+  protected boolean shouldRefreshRpc(ServiceRpc cachedRpc) {
+    return cachedRpc == null;
   }
 
   /**
