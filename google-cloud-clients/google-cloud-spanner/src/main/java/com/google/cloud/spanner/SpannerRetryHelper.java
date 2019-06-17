@@ -23,6 +23,7 @@ import com.google.api.gax.retrying.TimedAttemptSettings;
 import com.google.cloud.RetryHelper;
 import com.google.cloud.RetryHelper.RetryHelperException;
 import com.google.common.base.Throwables;
+import io.grpc.Context;
 import java.util.concurrent.Callable;
 import java.util.concurrent.CancellationException;
 import org.threeten.bp.Duration;
@@ -46,7 +47,9 @@ class SpannerRetryHelper {
       return RetryHelper.runWithRetries(
           callable, txRetrySettings, new TxRetryAlgorithm<>(), NanoClock.getDefaultClock());
     } catch (RetryHelperException e) {
-      Throwables.throwIfUnchecked(e.getCause());
+      if (e.getCause() != null) {
+        Throwables.throwIfUnchecked(e.getCause());
+      }
       throw e;
     }
   }
@@ -61,6 +64,9 @@ class SpannerRetryHelper {
     @Override
     public boolean shouldRetry(Throwable prevThrowable, T prevResponse)
         throws CancellationException {
+      if (Context.current().isCancelled()) {
+        throw SpannerExceptionFactory.newSpannerExceptionForCancellation(Context.current(), null);
+      }
       return prevThrowable != null
           && (prevThrowable instanceof AbortedException
               || prevThrowable instanceof com.google.api.gax.rpc.AbortedException);

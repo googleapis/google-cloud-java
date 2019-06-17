@@ -19,8 +19,15 @@ package com.google.cloud.spanner;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
+import static org.junit.Assert.fail;
 
+import io.grpc.Context;
+import io.grpc.Context.CancellableContext;
+import io.grpc.Deadline;
 import java.util.concurrent.Callable;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -28,6 +35,77 @@ import org.junit.runners.JUnit4;
 
 @RunWith(JUnit4.class)
 public class SpannerRetryHelperTest {
+
+  @Test
+  public void testCancelledContext() {
+    final CancellableContext withCancellation = Context.current().withCancellation();
+    final Callable<Integer> callable =
+        new Callable<Integer>() {
+          @Override
+          public Integer call() throws Exception {
+            throw SpannerExceptionFactory.newSpannerException(ErrorCode.ABORTED, "test");
+          }
+        };
+    ScheduledExecutorService service = Executors.newScheduledThreadPool(1);
+    service.schedule(
+        new Callable<Void>() {
+          @Override
+          public Void call() throws Exception {
+            withCancellation.cancel(new InterruptedException());
+            return null;
+          }
+        },
+        30L,
+        TimeUnit.MILLISECONDS);
+    try {
+      withCancellation.run(
+          new Runnable() {
+            @Override
+            public void run() {
+              assertThat(SpannerRetryHelper.runTxWithRetriesOnAborted(callable), is(equalTo(2)));
+            }
+          });
+      fail("missing expected exception");
+    } catch (SpannerException e) {
+      if (e.getErrorCode() != ErrorCode.CANCELLED) {
+        fail(
+            String.format(
+                "unexpected error %s, expected %s",
+                e.getErrorCode().name(), ErrorCode.DEADLINE_EXCEEDED.name()));
+      }
+    }
+  }
+
+  @Test
+  public void testTimedoutContext() {
+    ScheduledExecutorService service = Executors.newScheduledThreadPool(1);
+    final CancellableContext withDeadline =
+        Context.current().withDeadline(Deadline.after(30L, TimeUnit.MILLISECONDS), service);
+    final Callable<Integer> callable =
+        new Callable<Integer>() {
+          @Override
+          public Integer call() throws Exception {
+            throw SpannerExceptionFactory.newSpannerException(ErrorCode.ABORTED, "test");
+          }
+        };
+    try {
+      withDeadline.run(
+          new Runnable() {
+            @Override
+            public void run() {
+              assertThat(SpannerRetryHelper.runTxWithRetriesOnAborted(callable), is(equalTo(2)));
+            }
+          });
+      fail("missing expected exception");
+    } catch (SpannerException e) {
+      if (e.getErrorCode() != ErrorCode.DEADLINE_EXCEEDED) {
+        fail(
+            String.format(
+                "unexpected error %s, expected %s",
+                e.getErrorCode().name(), ErrorCode.DEADLINE_EXCEEDED.name()));
+      }
+    }
+  }
 
   @Test
   public void noException() {
