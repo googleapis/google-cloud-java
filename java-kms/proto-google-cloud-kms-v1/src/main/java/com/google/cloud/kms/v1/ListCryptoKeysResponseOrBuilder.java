@@ -64,8 +64,7 @@ public interface ListCryptoKeysResponseOrBuilder
    *
    * <pre>
    * A token to retrieve next page of results. Pass this value in
-   * [ListCryptoKeysRequest.page_token][google.cloud.kms.v1.ListCryptoKeysRequest.page_token]
-   * to retrieve the next page of results.
+   * [ListCryptoKeysRequest.page_token][google.cloud.kms.v1.ListCryptoKeysRequest.page_token] to retrieve the next page of results.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -76,8 +75,7 @@ public interface ListCryptoKeysResponseOrBuilder
    *
    * <pre>
    * A token to retrieve next page of results. Pass this value in
-   * [ListCryptoKeysRequest.page_token][google.cloud.kms.v1.ListCryptoKeysRequest.page_token]
-   * to retrieve the next page of results.
+   * [ListCryptoKeysRequest.page_token][google.cloud.kms.v1.ListCryptoKeysRequest.page_token] to retrieve the next page of results.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -88,8 +86,7 @@ public interface ListCryptoKeysResponseOrBuilder
    *
    *
    * <pre>
-   * The total number of [CryptoKeys][google.cloud.kms.v1.CryptoKey] that
-   * matched the query.
+   * The total number of [CryptoKeys][google.cloud.kms.v1.CryptoKey] that matched the query.
    * </pre>
    *
    * <code>int32 total_size = 3;</code>

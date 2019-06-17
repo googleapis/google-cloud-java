@@ -17,6 +17,7 @@ package com.google.cloud.kms.v1;
 
 import static com.google.cloud.kms.v1.KeyManagementServiceClient.ListCryptoKeyVersionsPagedResponse;
 import static com.google.cloud.kms.v1.KeyManagementServiceClient.ListCryptoKeysPagedResponse;
+import static com.google.cloud.kms.v1.KeyManagementServiceClient.ListImportJobsPagedResponse;
 import static com.google.cloud.kms.v1.KeyManagementServiceClient.ListKeyRingsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
@@ -136,6 +137,56 @@ public class KeyManagementServiceClientTest {
       LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
 
       client.listKeyRings(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void listImportJobsTest() {
+    String nextPageToken = "";
+    int totalSize = 705419236;
+    ImportJob importJobsElement = ImportJob.newBuilder().build();
+    List<ImportJob> importJobs = Arrays.asList(importJobsElement);
+    ListImportJobsResponse expectedResponse =
+        ListImportJobsResponse.newBuilder()
+            .setNextPageToken(nextPageToken)
+            .setTotalSize(totalSize)
+            .addAllImportJobs(importJobs)
+            .build();
+    mockKeyManagementService.addResponse(expectedResponse);
+
+    KeyRingName parent = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
+
+    ListImportJobsPagedResponse pagedListResponse = client.listImportJobs(parent);
+
+    List<ImportJob> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getImportJobsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockKeyManagementService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListImportJobsRequest actualRequest = (ListImportJobsRequest) actualRequests.get(0);
+
+    Assert.assertEquals(parent, KeyRingName.parse(actualRequest.getParent()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void listImportJobsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockKeyManagementService.addException(exception);
+
+    try {
+      KeyRingName parent = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
+
+      client.listImportJobs(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -286,6 +337,46 @@ public class KeyManagementServiceClientTest {
 
   @Test
   @SuppressWarnings("all")
+  public void getImportJobTest() {
+    String name2 = "name2-1052831874";
+    ImportJob expectedResponse = ImportJob.newBuilder().setName(name2).build();
+    mockKeyManagementService.addResponse(expectedResponse);
+
+    ImportJobName name = ImportJobName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[IMPORT_JOB]");
+
+    ImportJob actualResponse = client.getImportJob(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockKeyManagementService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetImportJobRequest actualRequest = (GetImportJobRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, ImportJobName.parse(actualRequest.getName()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void getImportJobExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockKeyManagementService.addException(exception);
+
+    try {
+      ImportJobName name =
+          ImportJobName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[IMPORT_JOB]");
+
+      client.getImportJob(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
   public void getCryptoKeyTest() {
     CryptoKeyName name2 = CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]");
     CryptoKey expectedResponse = CryptoKey.newBuilder().setName(name2.toString()).build();
@@ -330,8 +421,14 @@ public class KeyManagementServiceClientTest {
     CryptoKeyVersionName name2 =
         CryptoKeyVersionName.of(
             "[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
+    String importJob = "importJob2125587491";
+    String importFailureReason = "importFailureReason-494073229";
     CryptoKeyVersion expectedResponse =
-        CryptoKeyVersion.newBuilder().setName(name2.toString()).build();
+        CryptoKeyVersion.newBuilder()
+            .setName(name2.toString())
+            .setImportJob(importJob)
+            .setImportFailureReason(importFailureReason)
+            .build();
     mockKeyManagementService.addResponse(expectedResponse);
 
     CryptoKeyVersionName name =
@@ -417,6 +514,63 @@ public class KeyManagementServiceClientTest {
 
   @Test
   @SuppressWarnings("all")
+  public void createImportJobTest() {
+    String name = "name3373707";
+    ImportJob expectedResponse = ImportJob.newBuilder().setName(name).build();
+    mockKeyManagementService.addResponse(expectedResponse);
+
+    KeyRingName parent = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
+    String importJobId = "my-import-job";
+    ImportJob.ImportMethod importMethod = ImportJob.ImportMethod.RSA_OAEP_3072_SHA1_AES_256;
+    ProtectionLevel protectionLevel = ProtectionLevel.HSM;
+    ImportJob importJob =
+        ImportJob.newBuilder()
+            .setImportMethod(importMethod)
+            .setProtectionLevel(protectionLevel)
+            .build();
+
+    ImportJob actualResponse = client.createImportJob(parent, importJobId, importJob);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockKeyManagementService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateImportJobRequest actualRequest = (CreateImportJobRequest) actualRequests.get(0);
+
+    Assert.assertEquals(parent, KeyRingName.parse(actualRequest.getParent()));
+    Assert.assertEquals(importJobId, actualRequest.getImportJobId());
+    Assert.assertEquals(importJob, actualRequest.getImportJob());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void createImportJobExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockKeyManagementService.addException(exception);
+
+    try {
+      KeyRingName parent = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
+      String importJobId = "my-import-job";
+      ImportJob.ImportMethod importMethod = ImportJob.ImportMethod.RSA_OAEP_3072_SHA1_AES_256;
+      ProtectionLevel protectionLevel = ProtectionLevel.HSM;
+      ImportJob importJob =
+          ImportJob.newBuilder()
+              .setImportMethod(importMethod)
+              .setProtectionLevel(protectionLevel)
+              .build();
+
+      client.createImportJob(parent, importJobId, importJob);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
   public void createCryptoKeyTest() {
     CryptoKeyName name = CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]");
     CryptoKey expectedResponse = CryptoKey.newBuilder().setName(name.toString()).build();
@@ -486,8 +640,14 @@ public class KeyManagementServiceClientTest {
     CryptoKeyVersionName name =
         CryptoKeyVersionName.of(
             "[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
+    String importJob = "importJob2125587491";
+    String importFailureReason = "importFailureReason-494073229";
     CryptoKeyVersion expectedResponse =
-        CryptoKeyVersion.newBuilder().setName(name.toString()).build();
+        CryptoKeyVersion.newBuilder()
+            .setName(name.toString())
+            .setImportJob(importJob)
+            .setImportFailureReason(importFailureReason)
+            .build();
     mockKeyManagementService.addResponse(expectedResponse);
 
     CryptoKeyName parent =
@@ -576,8 +736,14 @@ public class KeyManagementServiceClientTest {
     CryptoKeyVersionName name =
         CryptoKeyVersionName.of(
             "[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
+    String importJob = "importJob2125587491";
+    String importFailureReason = "importFailureReason-494073229";
     CryptoKeyVersion expectedResponse =
-        CryptoKeyVersion.newBuilder().setName(name.toString()).build();
+        CryptoKeyVersion.newBuilder()
+            .setName(name.toString())
+            .setImportJob(importJob)
+            .setImportFailureReason(importFailureReason)
+            .build();
     mockKeyManagementService.addResponse(expectedResponse);
 
     CryptoKeyVersion cryptoKeyVersion = CryptoKeyVersion.newBuilder().build();
@@ -755,8 +921,14 @@ public class KeyManagementServiceClientTest {
     CryptoKeyVersionName name2 =
         CryptoKeyVersionName.of(
             "[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
+    String importJob = "importJob2125587491";
+    String importFailureReason = "importFailureReason-494073229";
     CryptoKeyVersion expectedResponse =
-        CryptoKeyVersion.newBuilder().setName(name2.toString()).build();
+        CryptoKeyVersion.newBuilder()
+            .setName(name2.toString())
+            .setImportJob(importJob)
+            .setImportFailureReason(importFailureReason)
+            .build();
     mockKeyManagementService.addResponse(expectedResponse);
 
     CryptoKeyVersionName name =
@@ -802,8 +974,14 @@ public class KeyManagementServiceClientTest {
     CryptoKeyVersionName name2 =
         CryptoKeyVersionName.of(
             "[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
+    String importJob = "importJob2125587491";
+    String importFailureReason = "importFailureReason-494073229";
     CryptoKeyVersion expectedResponse =
-        CryptoKeyVersion.newBuilder().setName(name2.toString()).build();
+        CryptoKeyVersion.newBuilder()
+            .setName(name2.toString())
+            .setImportJob(importJob)
+            .setImportFailureReason(importFailureReason)
+            .build();
     mockKeyManagementService.addResponse(expectedResponse);
 
     CryptoKeyVersionName name =
