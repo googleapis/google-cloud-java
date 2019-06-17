@@ -12,8 +12,7 @@ public interface AsymmetricDecryptRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the
-   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use for
+   * Required. The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use for
    * decryption.
    * </pre>
    *
@@ -24,8 +23,7 @@ public interface AsymmetricDecryptRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the
-   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use for
+   * Required. The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use for
    * decryption.
    * </pre>
    *
@@ -37,9 +35,8 @@ public interface AsymmetricDecryptRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The data encrypted with the named
-   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s public key using
-   * OAEP.
+   * Required. The data encrypted with the named [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s public
+   * key using OAEP.
    * </pre>
    *
    * <code>bytes ciphertext = 3;</code>

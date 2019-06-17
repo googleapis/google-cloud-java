@@ -7,29 +7,31 @@ package com.google.cloud.kms.v1;
  *
  *
  * <pre>
- * Cloud KMS metadata for the given [google.cloud.location.Location][google.cloud.location.Location].
+ * Request message for [KeyManagementService.GetImportJob][google.cloud.kms.v1.KeyManagementService.GetImportJob].
  * </pre>
  *
- * Protobuf type {@code google.cloud.kms.v1.LocationMetadata}
+ * Protobuf type {@code google.cloud.kms.v1.GetImportJobRequest}
  */
-public final class LocationMetadata extends com.google.protobuf.GeneratedMessageV3
+public final class GetImportJobRequest extends com.google.protobuf.GeneratedMessageV3
     implements
-    // @@protoc_insertion_point(message_implements:google.cloud.kms.v1.LocationMetadata)
-    LocationMetadataOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.cloud.kms.v1.GetImportJobRequest)
+    GetImportJobRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-  // Use LocationMetadata.newBuilder() to construct.
-  private LocationMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use GetImportJobRequest.newBuilder() to construct.
+  private GetImportJobRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private LocationMetadata() {}
+  private GetImportJobRequest() {
+    name_ = "";
+  }
 
   @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
 
-  private LocationMetadata(
+  private GetImportJobRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -48,9 +50,11 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
           case 0:
             done = true;
             break;
-          case 8:
+          case 10:
             {
-              hsmAvailable_ = input.readBool();
+              java.lang.String s = input.readStringRequireUtf8();
+
+              name_ = s;
               break;
             }
           default:
@@ -74,34 +78,60 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.kms.v1.KmsProto
-        .internal_static_google_cloud_kms_v1_LocationMetadata_descriptor;
+        .internal_static_google_cloud_kms_v1_GetImportJobRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloud.kms.v1.KmsProto
-        .internal_static_google_cloud_kms_v1_LocationMetadata_fieldAccessorTable
+        .internal_static_google_cloud_kms_v1_GetImportJobRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.kms.v1.LocationMetadata.class,
-            com.google.cloud.kms.v1.LocationMetadata.Builder.class);
+            com.google.cloud.kms.v1.GetImportJobRequest.class,
+            com.google.cloud.kms.v1.GetImportJobRequest.Builder.class);
   }
 
-  public static final int HSM_AVAILABLE_FIELD_NUMBER = 1;
-  private boolean hsmAvailable_;
+  public static final int NAME_FIELD_NUMBER = 1;
+  private volatile java.lang.Object name_;
   /**
    *
    *
    * <pre>
-   * Indicates whether [CryptoKeys][google.cloud.kms.v1.CryptoKey] with
-   * [protection_level][google.cloud.kms.v1.CryptoKeyVersionTemplate.protection_level]
-   * [HSM][google.cloud.kms.v1.ProtectionLevel.HSM] can be created in this location.
+   * The [name][google.cloud.kms.v1.ImportJob.name] of the [ImportJob][google.cloud.kms.v1.ImportJob] to get.
    * </pre>
    *
-   * <code>bool hsm_available = 1;</code>
+   * <code>string name = 1;</code>
    */
-  public boolean getHsmAvailable() {
-    return hsmAvailable_;
+  public java.lang.String getName() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      name_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The [name][google.cloud.kms.v1.ImportJob.name] of the [ImportJob][google.cloud.kms.v1.ImportJob] to get.
+   * </pre>
+   *
+   * <code>string name = 1;</code>
+   */
+  public com.google.protobuf.ByteString getNameBytes() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      name_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -118,8 +148,8 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (hsmAvailable_ != false) {
-      output.writeBool(1, hsmAvailable_);
+    if (!getNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
     unknownFields.writeTo(output);
   }
@@ -130,8 +160,8 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
     if (size != -1) return size;
 
     size = 0;
-    if (hsmAvailable_ != false) {
-      size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, hsmAvailable_);
+    if (!getNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -143,12 +173,13 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof com.google.cloud.kms.v1.LocationMetadata)) {
+    if (!(obj instanceof com.google.cloud.kms.v1.GetImportJobRequest)) {
       return super.equals(obj);
     }
-    com.google.cloud.kms.v1.LocationMetadata other = (com.google.cloud.kms.v1.LocationMetadata) obj;
+    com.google.cloud.kms.v1.GetImportJobRequest other =
+        (com.google.cloud.kms.v1.GetImportJobRequest) obj;
 
-    if (getHsmAvailable() != other.getHsmAvailable()) return false;
+    if (!getName().equals(other.getName())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -160,78 +191,78 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + HSM_AVAILABLE_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getHsmAvailable());
+    hash = (37 * hash) + NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getName().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.google.cloud.kms.v1.LocationMetadata parseFrom(java.nio.ByteBuffer data)
+  public static com.google.cloud.kms.v1.GetImportJobRequest parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.kms.v1.LocationMetadata parseFrom(
+  public static com.google.cloud.kms.v1.GetImportJobRequest parseFrom(
       java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.kms.v1.LocationMetadata parseFrom(
+  public static com.google.cloud.kms.v1.GetImportJobRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.kms.v1.LocationMetadata parseFrom(
+  public static com.google.cloud.kms.v1.GetImportJobRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.kms.v1.LocationMetadata parseFrom(byte[] data)
+  public static com.google.cloud.kms.v1.GetImportJobRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.kms.v1.LocationMetadata parseFrom(
+  public static com.google.cloud.kms.v1.GetImportJobRequest parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.kms.v1.LocationMetadata parseFrom(java.io.InputStream input)
+  public static com.google.cloud.kms.v1.GetImportJobRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.kms.v1.LocationMetadata parseFrom(
+  public static com.google.cloud.kms.v1.GetImportJobRequest parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.kms.v1.LocationMetadata parseDelimitedFrom(
+  public static com.google.cloud.kms.v1.GetImportJobRequest parseDelimitedFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.kms.v1.LocationMetadata parseDelimitedFrom(
+  public static com.google.cloud.kms.v1.GetImportJobRequest parseDelimitedFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.kms.v1.LocationMetadata parseFrom(
+  public static com.google.cloud.kms.v1.GetImportJobRequest parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.kms.v1.LocationMetadata parseFrom(
+  public static com.google.cloud.kms.v1.GetImportJobRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -248,7 +279,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
     return DEFAULT_INSTANCE.toBuilder();
   }
 
-  public static Builder newBuilder(com.google.cloud.kms.v1.LocationMetadata prototype) {
+  public static Builder newBuilder(com.google.cloud.kms.v1.GetImportJobRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -266,31 +297,31 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Cloud KMS metadata for the given [google.cloud.location.Location][google.cloud.location.Location].
+   * Request message for [KeyManagementService.GetImportJob][google.cloud.kms.v1.KeyManagementService.GetImportJob].
    * </pre>
    *
-   * Protobuf type {@code google.cloud.kms.v1.LocationMetadata}
+   * Protobuf type {@code google.cloud.kms.v1.GetImportJobRequest}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.cloud.kms.v1.LocationMetadata)
-      com.google.cloud.kms.v1.LocationMetadataOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.cloud.kms.v1.GetImportJobRequest)
+      com.google.cloud.kms.v1.GetImportJobRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.kms.v1.KmsProto
-          .internal_static_google_cloud_kms_v1_LocationMetadata_descriptor;
+          .internal_static_google_cloud_kms_v1_GetImportJobRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.kms.v1.KmsProto
-          .internal_static_google_cloud_kms_v1_LocationMetadata_fieldAccessorTable
+          .internal_static_google_cloud_kms_v1_GetImportJobRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.kms.v1.LocationMetadata.class,
-              com.google.cloud.kms.v1.LocationMetadata.Builder.class);
+              com.google.cloud.kms.v1.GetImportJobRequest.class,
+              com.google.cloud.kms.v1.GetImportJobRequest.Builder.class);
     }
 
-    // Construct using com.google.cloud.kms.v1.LocationMetadata.newBuilder()
+    // Construct using com.google.cloud.kms.v1.GetImportJobRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -307,7 +338,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      hsmAvailable_ = false;
+      name_ = "";
 
       return this;
     }
@@ -315,17 +346,17 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.cloud.kms.v1.KmsProto
-          .internal_static_google_cloud_kms_v1_LocationMetadata_descriptor;
+          .internal_static_google_cloud_kms_v1_GetImportJobRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.google.cloud.kms.v1.LocationMetadata getDefaultInstanceForType() {
-      return com.google.cloud.kms.v1.LocationMetadata.getDefaultInstance();
+    public com.google.cloud.kms.v1.GetImportJobRequest getDefaultInstanceForType() {
+      return com.google.cloud.kms.v1.GetImportJobRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.cloud.kms.v1.LocationMetadata build() {
-      com.google.cloud.kms.v1.LocationMetadata result = buildPartial();
+    public com.google.cloud.kms.v1.GetImportJobRequest build() {
+      com.google.cloud.kms.v1.GetImportJobRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -333,10 +364,10 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
     }
 
     @java.lang.Override
-    public com.google.cloud.kms.v1.LocationMetadata buildPartial() {
-      com.google.cloud.kms.v1.LocationMetadata result =
-          new com.google.cloud.kms.v1.LocationMetadata(this);
-      result.hsmAvailable_ = hsmAvailable_;
+    public com.google.cloud.kms.v1.GetImportJobRequest buildPartial() {
+      com.google.cloud.kms.v1.GetImportJobRequest result =
+          new com.google.cloud.kms.v1.GetImportJobRequest(this);
+      result.name_ = name_;
       onBuilt();
       return result;
     }
@@ -376,18 +407,19 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.cloud.kms.v1.LocationMetadata) {
-        return mergeFrom((com.google.cloud.kms.v1.LocationMetadata) other);
+      if (other instanceof com.google.cloud.kms.v1.GetImportJobRequest) {
+        return mergeFrom((com.google.cloud.kms.v1.GetImportJobRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.cloud.kms.v1.LocationMetadata other) {
-      if (other == com.google.cloud.kms.v1.LocationMetadata.getDefaultInstance()) return this;
-      if (other.getHsmAvailable() != false) {
-        setHsmAvailable(other.getHsmAvailable());
+    public Builder mergeFrom(com.google.cloud.kms.v1.GetImportJobRequest other) {
+      if (other == com.google.cloud.kms.v1.GetImportJobRequest.getDefaultInstance()) return this;
+      if (!other.getName().isEmpty()) {
+        name_ = other.name_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -404,11 +436,11 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.kms.v1.LocationMetadata parsedMessage = null;
+      com.google.cloud.kms.v1.GetImportJobRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.kms.v1.LocationMetadata) e.getUnfinishedMessage();
+        parsedMessage = (com.google.cloud.kms.v1.GetImportJobRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -418,35 +450,62 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
-    private boolean hsmAvailable_;
+    private java.lang.Object name_ = "";
     /**
      *
      *
      * <pre>
-     * Indicates whether [CryptoKeys][google.cloud.kms.v1.CryptoKey] with
-     * [protection_level][google.cloud.kms.v1.CryptoKeyVersionTemplate.protection_level]
-     * [HSM][google.cloud.kms.v1.ProtectionLevel.HSM] can be created in this location.
+     * The [name][google.cloud.kms.v1.ImportJob.name] of the [ImportJob][google.cloud.kms.v1.ImportJob] to get.
      * </pre>
      *
-     * <code>bool hsm_available = 1;</code>
+     * <code>string name = 1;</code>
      */
-    public boolean getHsmAvailable() {
-      return hsmAvailable_;
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      *
      *
      * <pre>
-     * Indicates whether [CryptoKeys][google.cloud.kms.v1.CryptoKey] with
-     * [protection_level][google.cloud.kms.v1.CryptoKeyVersionTemplate.protection_level]
-     * [HSM][google.cloud.kms.v1.ProtectionLevel.HSM] can be created in this location.
+     * The [name][google.cloud.kms.v1.ImportJob.name] of the [ImportJob][google.cloud.kms.v1.ImportJob] to get.
      * </pre>
      *
-     * <code>bool hsm_available = 1;</code>
+     * <code>string name = 1;</code>
      */
-    public Builder setHsmAvailable(boolean value) {
+    public com.google.protobuf.ByteString getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The [name][google.cloud.kms.v1.ImportJob.name] of the [ImportJob][google.cloud.kms.v1.ImportJob] to get.
+     * </pre>
+     *
+     * <code>string name = 1;</code>
+     */
+    public Builder setName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
 
-      hsmAvailable_ = value;
+      name_ = value;
       onChanged();
       return this;
     }
@@ -454,16 +513,33 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Indicates whether [CryptoKeys][google.cloud.kms.v1.CryptoKey] with
-     * [protection_level][google.cloud.kms.v1.CryptoKeyVersionTemplate.protection_level]
-     * [HSM][google.cloud.kms.v1.ProtectionLevel.HSM] can be created in this location.
+     * The [name][google.cloud.kms.v1.ImportJob.name] of the [ImportJob][google.cloud.kms.v1.ImportJob] to get.
      * </pre>
      *
-     * <code>bool hsm_available = 1;</code>
+     * <code>string name = 1;</code>
      */
-    public Builder clearHsmAvailable() {
+    public Builder clearName() {
 
-      hsmAvailable_ = false;
+      name_ = getDefaultInstance().getName();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The [name][google.cloud.kms.v1.ImportJob.name] of the [ImportJob][google.cloud.kms.v1.ImportJob] to get.
+     * </pre>
+     *
+     * <code>string name = 1;</code>
+     */
+    public Builder setNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      name_ = value;
       onChanged();
       return this;
     }
@@ -479,42 +555,42 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
       return super.mergeUnknownFields(unknownFields);
     }
 
-    // @@protoc_insertion_point(builder_scope:google.cloud.kms.v1.LocationMetadata)
+    // @@protoc_insertion_point(builder_scope:google.cloud.kms.v1.GetImportJobRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:google.cloud.kms.v1.LocationMetadata)
-  private static final com.google.cloud.kms.v1.LocationMetadata DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.cloud.kms.v1.GetImportJobRequest)
+  private static final com.google.cloud.kms.v1.GetImportJobRequest DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new com.google.cloud.kms.v1.LocationMetadata();
+    DEFAULT_INSTANCE = new com.google.cloud.kms.v1.GetImportJobRequest();
   }
 
-  public static com.google.cloud.kms.v1.LocationMetadata getDefaultInstance() {
+  public static com.google.cloud.kms.v1.GetImportJobRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<LocationMetadata> PARSER =
-      new com.google.protobuf.AbstractParser<LocationMetadata>() {
+  private static final com.google.protobuf.Parser<GetImportJobRequest> PARSER =
+      new com.google.protobuf.AbstractParser<GetImportJobRequest>() {
         @java.lang.Override
-        public LocationMetadata parsePartialFrom(
+        public GetImportJobRequest parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new LocationMetadata(input, extensionRegistry);
+          return new GetImportJobRequest(input, extensionRegistry);
         }
       };
 
-  public static com.google.protobuf.Parser<LocationMetadata> parser() {
+  public static com.google.protobuf.Parser<GetImportJobRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<LocationMetadata> getParserForType() {
+  public com.google.protobuf.Parser<GetImportJobRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.cloud.kms.v1.LocationMetadata getDefaultInstanceForType() {
+  public com.google.cloud.kms.v1.GetImportJobRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 }
