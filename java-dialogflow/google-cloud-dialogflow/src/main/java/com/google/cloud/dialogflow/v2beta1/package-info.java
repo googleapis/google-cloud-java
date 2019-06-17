@@ -33,18 +33,18 @@
  *
  * <p>You can create an agent using both Dialogflow Standard Edition and Dialogflow Enterprise
  * Edition. For details, see [Dialogflow
- * Editions](https://cloud.google.com/dialogflow-enterprise/docs/editions).
+ * Editions](https://cloud.google.com/dialogflow/docs/editions).
  *
  * <p>You can save your agent for backup or versioning by exporting the agent by using the
  * [ExportAgent][google.cloud.dialogflow.v2beta1.Agents.ExportAgent] method. You can import a saved
  * agent by using the [ImportAgent][google.cloud.dialogflow.v2beta1.Agents.ImportAgent] method.
  *
  * <p>Dialogflow provides several [prebuilt
- * agents](https://cloud.google.com/dialogflow-enterprise/docs/agents-prebuilt) for common
- * conversation scenarios such as determining a date and time, converting currency, and so on.
+ * agents](https://cloud.google.com/dialogflow/docs/agents-prebuilt) for common conversation
+ * scenarios such as determining a date and time, converting currency, and so on.
  *
  * <p>For more information about agents, see the [Dialogflow
- * documentation](https://cloud.google.com/dialogflow-enterprise/docs/agents-overview).
+ * documentation](https://cloud.google.com/dialogflow/docs/agents-overview).
  *
  * <p>Sample for AgentsClient:
  *
@@ -73,7 +73,7 @@
  * 20 minutes if no intents are matched for a `DetectIntent` request.
  *
  * <p>For more information about contexts, see the [Dialogflow
- * documentation](https://cloud.google.com/dialogflow-enterprise/docs/contexts-overview).
+ * documentation](https://cloud.google.com/dialogflow/docs/contexts-overview).
  *
  * <p>Sample for ContextsClient:
  *
@@ -127,7 +127,7 @@
  * [SessionEntityType][google.cloud.dialogflow.v2beta1.SessionEntityType] type.
  *
  * <p>For more information about entity types, see the [Dialogflow
- * documentation](https://cloud.google.com/dialogflow-enterprise/docs/entities-overview).
+ * documentation](https://cloud.google.com/dialogflow/docs/entities-overview).
  *
  * <p>Sample for EntityTypesClient:
  *
@@ -168,7 +168,7 @@
  * Dialogflow API agent to better match intents.
  *
  * <p>For more information about intents, see the [Dialogflow
- * documentation](https://cloud.google.com/dialogflow-enterprise/docs/intents-overview).
+ * documentation](https://cloud.google.com/dialogflow/docs/intents-overview).
  *
  * <p>Sample for IntentsClient:
  *
@@ -209,7 +209,7 @@
  * can redefine a session entity type at the session level.
  *
  * <p>For more information about entity types, see the [Dialogflow
- * documentation](https://cloud.google.com/dialogflow-enterprise/docs/entities-overview).
+ * documentation](https://cloud.google.com/dialogflow/docs/entities-overview).
  *
  * <p>Sample for SessionEntityTypesClient:
  *

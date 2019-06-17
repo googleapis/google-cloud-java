@@ -15,8 +15,7 @@ package com.google.cloud.dialogflow.v2beta1;
  *     an audio response, it should also contain `output_audio_config`.
  *     The message must not contain `input_audio`.
  * 2.  If `query_input` was set to a streaming input audio config,
- *     all subsequent messages must contain only `input_audio`.
- *     Otherwise, finish the request stream.
+ *     all subsequent messages must contain `input_audio`. Otherwise, finish the request stream.
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2beta1.StreamingDetectIntentRequest}
@@ -173,7 +172,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
    * `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
    * ID&gt;/sessions/&lt;Session ID&gt;`. If `Environment ID` is not specified, we assume
    * default 'draft' environment. If `User ID` is not specified, we are using
-   * "-". It’s up to the API caller to choose an appropriate `Session ID` and
+   * "-". It's up to the API caller to choose an appropriate `Session ID` and
    * `User Id`. They can be a random numbers or some type of user and session
    * identifiers (preferably hashed). The length of the `Session ID` and
    * `User ID` must not exceed 36 characters.
@@ -202,7 +201,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
    * `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
    * ID&gt;/sessions/&lt;Session ID&gt;`. If `Environment ID` is not specified, we assume
    * default 'draft' environment. If `User ID` is not specified, we are using
-   * "-". It’s up to the API caller to choose an appropriate `Session ID` and
+   * "-". It's up to the API caller to choose an appropriate `Session ID` and
    * `User Id`. They can be a random numbers or some type of user and session
    * identifiers (preferably hashed). The length of the `Session ID` and
    * `User ID` must not exceed 36 characters.
@@ -635,8 +634,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
    *     an audio response, it should also contain `output_audio_config`.
    *     The message must not contain `input_audio`.
    * 2.  If `query_input` was set to a streaming input audio config,
-   *     all subsequent messages must contain only `input_audio`.
-   *     Otherwise, finish the request stream.
+   *     all subsequent messages must contain `input_audio`. Otherwise, finish the request stream.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2beta1.StreamingDetectIntentRequest}
@@ -860,7 +858,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      * `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
      * ID&gt;/sessions/&lt;Session ID&gt;`. If `Environment ID` is not specified, we assume
      * default 'draft' environment. If `User ID` is not specified, we are using
-     * "-". It’s up to the API caller to choose an appropriate `Session ID` and
+     * "-". It's up to the API caller to choose an appropriate `Session ID` and
      * `User Id`. They can be a random numbers or some type of user and session
      * identifiers (preferably hashed). The length of the `Session ID` and
      * `User ID` must not exceed 36 characters.
@@ -889,7 +887,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      * `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
      * ID&gt;/sessions/&lt;Session ID&gt;`. If `Environment ID` is not specified, we assume
      * default 'draft' environment. If `User ID` is not specified, we are using
-     * "-". It’s up to the API caller to choose an appropriate `Session ID` and
+     * "-". It's up to the API caller to choose an appropriate `Session ID` and
      * `User Id`. They can be a random numbers or some type of user and session
      * identifiers (preferably hashed). The length of the `Session ID` and
      * `User ID` must not exceed 36 characters.
@@ -918,7 +916,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      * `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
      * ID&gt;/sessions/&lt;Session ID&gt;`. If `Environment ID` is not specified, we assume
      * default 'draft' environment. If `User ID` is not specified, we are using
-     * "-". It’s up to the API caller to choose an appropriate `Session ID` and
+     * "-". It's up to the API caller to choose an appropriate `Session ID` and
      * `User Id`. They can be a random numbers or some type of user and session
      * identifiers (preferably hashed). The length of the `Session ID` and
      * `User ID` must not exceed 36 characters.
@@ -945,7 +943,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      * `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
      * ID&gt;/sessions/&lt;Session ID&gt;`. If `Environment ID` is not specified, we assume
      * default 'draft' environment. If `User ID` is not specified, we are using
-     * "-". It’s up to the API caller to choose an appropriate `Session ID` and
+     * "-". It's up to the API caller to choose an appropriate `Session ID` and
      * `User Id`. They can be a random numbers or some type of user and session
      * identifiers (preferably hashed). The length of the `Session ID` and
      * `User ID` must not exceed 36 characters.
@@ -969,7 +967,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      * `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
      * ID&gt;/sessions/&lt;Session ID&gt;`. If `Environment ID` is not specified, we assume
      * default 'draft' environment. If `User ID` is not specified, we are using
-     * "-". It’s up to the API caller to choose an appropriate `Session ID` and
+     * "-". It's up to the API caller to choose an appropriate `Session ID` and
      * `User Id`. They can be a random numbers or some type of user and session
      * identifiers (preferably hashed). The length of the `Session ID` and
      * `User ID` must not exceed 36 characters.

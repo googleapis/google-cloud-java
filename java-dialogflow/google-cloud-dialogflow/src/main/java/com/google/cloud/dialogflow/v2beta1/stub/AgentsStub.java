@@ -22,6 +22,7 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.v2beta1.Agent;
+import com.google.cloud.dialogflow.v2beta1.DeleteAgentRequest;
 import com.google.cloud.dialogflow.v2beta1.ExportAgentRequest;
 import com.google.cloud.dialogflow.v2beta1.ExportAgentResponse;
 import com.google.cloud.dialogflow.v2beta1.GetAgentRequest;
@@ -29,6 +30,7 @@ import com.google.cloud.dialogflow.v2beta1.ImportAgentRequest;
 import com.google.cloud.dialogflow.v2beta1.RestoreAgentRequest;
 import com.google.cloud.dialogflow.v2beta1.SearchAgentsRequest;
 import com.google.cloud.dialogflow.v2beta1.SearchAgentsResponse;
+import com.google.cloud.dialogflow.v2beta1.SetAgentRequest;
 import com.google.cloud.dialogflow.v2beta1.TrainAgentRequest;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.OperationsStub;
@@ -98,6 +100,14 @@ public abstract class AgentsStub implements BackgroundResource {
 
   public UnaryCallable<RestoreAgentRequest, Operation> restoreAgentCallable() {
     throw new UnsupportedOperationException("Not implemented: restoreAgentCallable()");
+  }
+
+  public UnaryCallable<SetAgentRequest, Agent> setAgentCallable() {
+    throw new UnsupportedOperationException("Not implemented: setAgentCallable()");
+  }
+
+  public UnaryCallable<DeleteAgentRequest, Empty> deleteAgentCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteAgentCallable()");
   }
 
   @Override

@@ -83,4 +83,120 @@ public interface StreamingRecognitionResultOrBuilder
    * <code>float confidence = 4;</code>
    */
   float getConfidence();
+
+  /**
+   *
+   *
+   * <pre>
+   * An estimate of the likelihood that the speech recognizer will
+   * not change its guess about this interim recognition result:
+   * * If the value is unspecified or 0.0, Dialogflow didn't compute the
+   *   stability. In particular, Dialogflow will only provide stability for
+   *   `MESSAGE_TYPE_TRANSCRIPT` results with `is_final = false`.
+   * * Otherwise, the value is in (0.0, 1.0] where 0.0 means completely
+   *   unstable and 1.0 means completely stable.
+   * </pre>
+   *
+   * <code>float stability = 6;</code>
+   */
+  float getStability();
+
+  /**
+   *
+   *
+   * <pre>
+   * Word-specific information for the words recognized by Speech in
+   * [transcript][google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.transcript]. Populated if and only if `message_type` =
+   * `MESSAGE_TYPE_TRANSCRIPT` and [InputAudioConfig.enable_word_info] is set.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dialogflow.v2beta1.SpeechWordInfo speech_word_info = 7;</code>
+   */
+  java.util.List<com.google.cloud.dialogflow.v2beta1.SpeechWordInfo> getSpeechWordInfoList();
+  /**
+   *
+   *
+   * <pre>
+   * Word-specific information for the words recognized by Speech in
+   * [transcript][google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.transcript]. Populated if and only if `message_type` =
+   * `MESSAGE_TYPE_TRANSCRIPT` and [InputAudioConfig.enable_word_info] is set.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dialogflow.v2beta1.SpeechWordInfo speech_word_info = 7;</code>
+   */
+  com.google.cloud.dialogflow.v2beta1.SpeechWordInfo getSpeechWordInfo(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Word-specific information for the words recognized by Speech in
+   * [transcript][google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.transcript]. Populated if and only if `message_type` =
+   * `MESSAGE_TYPE_TRANSCRIPT` and [InputAudioConfig.enable_word_info] is set.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dialogflow.v2beta1.SpeechWordInfo speech_word_info = 7;</code>
+   */
+  int getSpeechWordInfoCount();
+  /**
+   *
+   *
+   * <pre>
+   * Word-specific information for the words recognized by Speech in
+   * [transcript][google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.transcript]. Populated if and only if `message_type` =
+   * `MESSAGE_TYPE_TRANSCRIPT` and [InputAudioConfig.enable_word_info] is set.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dialogflow.v2beta1.SpeechWordInfo speech_word_info = 7;</code>
+   */
+  java.util.List<? extends com.google.cloud.dialogflow.v2beta1.SpeechWordInfoOrBuilder>
+      getSpeechWordInfoOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Word-specific information for the words recognized by Speech in
+   * [transcript][google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.transcript]. Populated if and only if `message_type` =
+   * `MESSAGE_TYPE_TRANSCRIPT` and [InputAudioConfig.enable_word_info] is set.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dialogflow.v2beta1.SpeechWordInfo speech_word_info = 7;</code>
+   */
+  com.google.cloud.dialogflow.v2beta1.SpeechWordInfoOrBuilder getSpeechWordInfoOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Time offset of the end of this Speech recognition result relative to the
+   * beginning of the audio. Only populated for `message_type` =
+   * `MESSAGE_TYPE_TRANSCRIPT`.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration speech_end_offset = 8;</code>
+   */
+  boolean hasSpeechEndOffset();
+  /**
+   *
+   *
+   * <pre>
+   * Time offset of the end of this Speech recognition result relative to the
+   * beginning of the audio. Only populated for `message_type` =
+   * `MESSAGE_TYPE_TRANSCRIPT`.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration speech_end_offset = 8;</code>
+   */
+  com.google.protobuf.Duration getSpeechEndOffset();
+  /**
+   *
+   *
+   * <pre>
+   * Time offset of the end of this Speech recognition result relative to the
+   * beginning of the audio. Only populated for `message_type` =
+   * `MESSAGE_TYPE_TRANSCRIPT`.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration speech_end_offset = 8;</code>
+   */
+  com.google.protobuf.DurationOrBuilder getSpeechEndOffsetOrBuilder();
 }

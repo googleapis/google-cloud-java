@@ -50,7 +50,7 @@ public interface InputAudioConfigOrBuilder
    * <pre>
    * Required. The language of the supplied audio. Dialogflow does not do
    * translations. See [Language
-   * Support](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+   * Support](https://cloud.google.com/dialogflow/docs/reference/language)
    * for a list of the currently supported language codes. Note that queries in
    * the same session do not necessarily need to specify the same language.
    * </pre>
@@ -64,7 +64,7 @@ public interface InputAudioConfigOrBuilder
    * <pre>
    * Required. The language of the supplied audio. Dialogflow does not do
    * translations. See [Language
-   * Support](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+   * Support](https://cloud.google.com/dialogflow/docs/reference/language)
    * for a list of the currently supported language codes. Note that queries in
    * the same session do not necessarily need to specify the same language.
    * </pre>
@@ -77,10 +77,23 @@ public interface InputAudioConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. The collection of phrase hints which are used to boost accuracy
-   * of speech recognition.
-   * Refer to
-   * [Cloud Speech API
+   * Optional. If `true`, Dialogflow returns [SpeechWordInfo][google.cloud.dialogflow.v2beta1.SpeechWordInfo] in
+   * [StreamingRecognitionResult][google.cloud.dialogflow.v2beta1.StreamingRecognitionResult] with information about the recognized speech
+   * words, e.g. start and end time offsets. If false or unspecified, Speech
+   * doesn't return any word-level information.
+   * </pre>
+   *
+   * <code>bool enable_word_info = 13;</code>
+   */
+  boolean getEnableWordInfo();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of strings containing words and phrases that the speech
+   * recognizer should recognize with higher likelihood.
+   * See [the Cloud Speech
    * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
    * for more details.
    * </pre>
@@ -92,10 +105,9 @@ public interface InputAudioConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. The collection of phrase hints which are used to boost accuracy
-   * of speech recognition.
-   * Refer to
-   * [Cloud Speech API
+   * Optional. A list of strings containing words and phrases that the speech
+   * recognizer should recognize with higher likelihood.
+   * See [the Cloud Speech
    * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
    * for more details.
    * </pre>
@@ -107,10 +119,9 @@ public interface InputAudioConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. The collection of phrase hints which are used to boost accuracy
-   * of speech recognition.
-   * Refer to
-   * [Cloud Speech API
+   * Optional. A list of strings containing words and phrases that the speech
+   * recognizer should recognize with higher likelihood.
+   * See [the Cloud Speech
    * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
    * for more details.
    * </pre>
@@ -122,10 +133,9 @@ public interface InputAudioConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. The collection of phrase hints which are used to boost accuracy
-   * of speech recognition.
-   * Refer to
-   * [Cloud Speech API
+   * Optional. A list of strings containing words and phrases that the speech
+   * recognizer should recognize with higher likelihood.
+   * See [the Cloud Speech
    * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
    * for more details.
    * </pre>

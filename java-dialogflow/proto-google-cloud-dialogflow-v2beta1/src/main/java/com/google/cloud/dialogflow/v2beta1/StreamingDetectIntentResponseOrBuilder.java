@@ -229,6 +229,11 @@ public interface StreamingDetectIntentResponseOrBuilder
    *
    * <pre>
    * The audio data bytes encoded as specified in the request.
+   * Note: The output audio is generated based on the values of default platform
+   * text responses found in the `query_result.fulfillment_messages` field. If
+   * multiple default text responses exist, they will be concatenated when
+   * generating audio. If no default platform text responses exist, the
+   * generated audio content will be empty.
    * </pre>
    *
    * <code>bytes output_audio = 5;</code>
