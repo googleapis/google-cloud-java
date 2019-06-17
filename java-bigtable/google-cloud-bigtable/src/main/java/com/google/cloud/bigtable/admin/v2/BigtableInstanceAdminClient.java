@@ -21,7 +21,6 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.gax.rpc.ApiExceptions;
 import com.google.api.gax.rpc.NotFoundException;
-import com.google.api.resourcenames.ResourceName;
 import com.google.bigtable.admin.v2.DeleteAppProfileRequest;
 import com.google.bigtable.admin.v2.GetAppProfileRequest;
 import com.google.bigtable.admin.v2.ListAppProfilesRequest;
@@ -107,17 +106,6 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
     return create(BigtableInstanceAdminSettings.newBuilder().setProjectId(projectId).build());
   }
 
-  /**
-   * Constructs an instance of BigtableInstanceAdminClient with the given project ID.
-   *
-   * @deprecated Please use {@link #create(String)}.
-   */
-  @Deprecated
-  public static BigtableInstanceAdminClient create(
-      @Nonnull com.google.bigtable.admin.v2.ProjectName projectName) throws IOException {
-    return create(projectName.getProject());
-  }
-
   /** Constructs an instance of BigtableInstanceAdminClient with the given settings. */
   public static BigtableInstanceAdminClient create(@Nonnull BigtableInstanceAdminSettings settings)
       throws IOException {
@@ -130,18 +118,6 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
     return new BigtableInstanceAdminClient(projectId, stub);
   }
 
-  /**
-   * Constructs an instance of BigtableInstanceAdminClient with the given project name and stub.
-   *
-   * @deprecated Please use {@link #create(String, BigtableInstanceAdminStub)}.
-   */
-  @Deprecated
-  public static BigtableInstanceAdminClient create(
-      @Nonnull com.google.bigtable.admin.v2.ProjectName projectName,
-      @Nonnull BigtableInstanceAdminStub stub) {
-    return create(projectName.getProject(), stub);
-  }
-
   private BigtableInstanceAdminClient(
       @Nonnull String projectId, @Nonnull BigtableInstanceAdminStub stub) {
     this.projectId = projectId;
@@ -151,17 +127,6 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
   /** Gets the project ID this client is associated with. */
   public String getProjectId() {
     return projectId;
-  }
-
-  /**
-   * Gets the project name this client is associated with.
-   *
-   * @deprecated Please use {@link #getProjectId()}.
-   */
-  @Deprecated
-  @SuppressWarnings("WeakerAccess")
-  public com.google.bigtable.admin.v2.ProjectName getProjectName() {
-    return com.google.bigtable.admin.v2.ProjectName.of(projectId);
   }
 
   /** Closes the client and frees all resources associated with it (like thread pools). */
@@ -275,7 +240,6 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
    * Instance instance = client.getInstance("my-instance");
    * }</pre>
    */
-  @SuppressWarnings("WeakerAccess")
   public Instance getInstance(String id) {
     return ApiExceptions.callAndTranslateApiException(getInstanceAsync(id));
   }
@@ -770,9 +734,7 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
     String name = NameUtil.formatClusterName(projectId, instanceId, clusterId);
 
     com.google.bigtable.admin.v2.DeleteClusterRequest request =
-        com.google.bigtable.admin.v2.DeleteClusterRequest.newBuilder()
-            .setName(name.toString())
-            .build();
+        com.google.bigtable.admin.v2.DeleteClusterRequest.newBuilder().setName(name).build();
 
     return ApiFutures.transform(
         stub.deleteClusterCallable().futureCall(request),
@@ -844,7 +806,6 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
    *
    * @see AppProfile
    */
-  @SuppressWarnings("WeakerAccess")
   public AppProfile getAppProfile(String instanceId, String appProfileId) {
     return ApiExceptions.callAndTranslateApiException(getAppProfileAsync(instanceId, appProfileId));
   }
@@ -866,8 +827,7 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
   public ApiFuture<AppProfile> getAppProfileAsync(String instanceId, String appProfileId) {
     String name = NameUtil.formatAppProfileName(projectId, instanceId, appProfileId);
 
-    GetAppProfileRequest request =
-        GetAppProfileRequest.newBuilder().setName(name.toString()).build();
+    GetAppProfileRequest request = GetAppProfileRequest.newBuilder().setName(name).build();
 
     return ApiFutures.transform(
         stub.getAppProfileCallable().futureCall(request),
@@ -1235,13 +1195,10 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
    * @see <a href="https://cloud.google.com/bigtable/docs/access-control#permissions">Cloud Bigtable
    *     permissions</a>
    */
-  @SuppressWarnings({"WeakerAccess", "deprecation"})
+  @SuppressWarnings({"WeakerAccess"})
   public List<String> testIamPermission(String instanceId, String... permissions) {
-    // TODO(igorbernstein2): Stop using typesafe names
-    com.google.bigtable.admin.v2.InstanceName instanceName =
-        com.google.bigtable.admin.v2.InstanceName.of(projectId, instanceId);
-
-    return testIamPermission(instanceName, permissions);
+    return ApiExceptions.callAndTranslateApiException(
+        testIamPermissionAsync(instanceId, permissions));
   }
 
   /**
@@ -1271,77 +1228,11 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
    * @see <a href="https://cloud.google.com/bigtable/docs/access-control#permissions">Cloud Bigtable
    *     permissions</a>
    */
-  @SuppressWarnings({"WeakerAccess", "deprecation"})
+  @SuppressWarnings({"WeakerAccess"})
   public ApiFuture<List<String>> testIamPermissionAsync(String instanceId, String... permissions) {
-    // TODO(igorbernstein2): Stop using typesafe names
-    return testIamPermissionAsync(
-        com.google.bigtable.admin.v2.InstanceName.of(projectId, instanceId), permissions);
-  }
-
-  /**
-   * Tests whether the caller has the given permissions for the specified absolute resource name
-   * (note that the current project of the client is ignored).
-   *
-   * <p>Returns a subset of the specified permissions that the caller has.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * List<String> grantedPermissions = client.testIamPermission(
-   *   TableName.of("my-project", "my-instance", "my-table"),
-   *   "bigtable.tables.readRows", "bigtable.tables.mutateRows");
-   *
-   * System.out.println("Has read access: " + grantedPermissions.contains("bigtable.tables.readRows"));
-   * System.out.println("Has write access: " + grantedPermissions.contains("bigtable.tables.mutateRows"));
-   * }</pre>
-   *
-   * @see <a href="https://cloud.google.com/bigtable/docs/access-control#permissions">Cloud Bigtable
-   *     permissions</a>
-   * @deprecated Please use {@link #testIamPermission(String, String...)}.
-   */
-  @Deprecated
-  @SuppressWarnings("WeakerAccess")
-  public List<String> testIamPermission(ResourceName resourceName, String... permissions) {
-    return ApiExceptions.callAndTranslateApiException(
-        testIamPermissionAsync(resourceName, permissions));
-  }
-
-  /**
-   * Asynchronously tests whether the caller has the given permissions for the specified absolute
-   * resource name (note that the current project of the client is ignored). Returns a subset of the
-   * specified permissions that the caller has.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * ApiFuture<List<String>> grantedPermissionsFuture = client.testIamPermissionAsync(
-   *   TableName.of("my-project", "my-instance", "my-table"),
-   *   "bigtable.tables.readRows", "bigtable.tables.mutateRows");
-   *
-   * ApiFutures.addCallback(grantedPermissionsFuture,
-   *   new ApiFutureCallback<List<String>>() {
-   *     public void onSuccess(List<String> grantedPermissions) {
-   *       System.out.println("Has read access: " + grantedPermissions.contains("bigtable.tables.readRows"));
-   *       System.out.println("Has write access: " + grantedPermissions.contains("bigtable.tables.mutateRows"));
-   *     }
-   *
-   *     public void onFailure(Throwable t) {
-   *       t.printStackTrace();
-   *     }
-   *   },
-   *   MoreExecutors.directExecutor());
-   * }</pre>
-   *
-   * @see <a href="https://cloud.google.com/bigtable/docs/access-control#permissions">Cloud Bigtable
-   *     permissions</a>
-   * @deprecated Please use {@link #testIamPermissionAsync(String, String...)}
-   */
-  @SuppressWarnings("WeakerAccess")
-  public ApiFuture<List<String>> testIamPermissionAsync(
-      ResourceName resourceName, String... permissions) {
     TestIamPermissionsRequest request =
         TestIamPermissionsRequest.newBuilder()
-            .setResource(resourceName.toString())
+            .setResource(NameUtil.formatInstanceName(projectId, instanceId))
             .addAllPermissions(Arrays.asList(permissions))
             .build();
 

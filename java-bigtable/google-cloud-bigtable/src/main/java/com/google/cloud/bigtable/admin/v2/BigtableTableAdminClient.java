@@ -108,17 +108,6 @@ public final class BigtableTableAdminClient implements AutoCloseable {
             .build());
   }
 
-  /**
-   * Constructs an instance of BigtableTableAdminClient with the given instance name.
-   *
-   * @deprecated Please {@link #create(String, String)}.
-   */
-  @Deprecated
-  public static BigtableTableAdminClient create(
-      @Nonnull com.google.bigtable.admin.v2.InstanceName instanceName) throws IOException {
-    return create(instanceName.getProject(), instanceName.getInstance());
-  }
-
   /** Constructs an instance of BigtableTableAdminClient with the given settings. */
   public static BigtableTableAdminClient create(@Nonnull BigtableTableAdminSettings settings)
       throws IOException {
@@ -155,16 +144,6 @@ public final class BigtableTableAdminClient implements AutoCloseable {
   /** Gets the ID of the instance whose tables this client manages. */
   public String getInstanceId() {
     return instanceId;
-  }
-
-  /**
-   * Gets the instance name this client is associated with.
-   *
-   * @deprecated Please use {@link #getProjectId()} and {@link #getInstanceId()}.
-   */
-  @Deprecated
-  public com.google.bigtable.admin.v2.InstanceName getInstanceName() {
-    return com.google.bigtable.admin.v2.InstanceName.of(projectId, instanceId);
   }
 
   @Override

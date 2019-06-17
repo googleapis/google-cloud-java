@@ -15,30 +15,16 @@
  */
 package com.google.cloud.bigtable.data.v2;
 
-import com.google.api.core.ApiClock;
 import com.google.api.core.ApiFunction;
 import com.google.api.gax.core.CredentialsProvider;
-import com.google.api.gax.core.ExecutorProvider;
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
-import com.google.api.gax.rpc.BatchingCallSettings;
-import com.google.api.gax.rpc.HeaderProvider;
-import com.google.api.gax.rpc.ServerStreamingCallSettings;
-import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
-import com.google.api.gax.rpc.WatchdogProvider;
-import com.google.cloud.bigtable.data.v2.models.ConditionalRowMutation;
-import com.google.cloud.bigtable.data.v2.models.KeyOffset;
 import com.google.cloud.bigtable.data.v2.models.Query;
-import com.google.cloud.bigtable.data.v2.models.ReadModifyWriteRow;
 import com.google.cloud.bigtable.data.v2.models.Row;
-import com.google.cloud.bigtable.data.v2.models.RowMutation;
 import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStubSettings;
 import io.grpc.ManagedChannelBuilder;
-import java.util.List;
 import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
-import org.threeten.bp.Duration;
 
 /**
  * Settings class to configure an instance of {@link BigtableDataClient}.
@@ -126,95 +112,9 @@ public final class BigtableDataSettings {
     return stubSettings;
   }
 
-  /** @deprecated Please use {@link #getStubSettings()} */
-  @Deprecated
-  public ServerStreamingCallSettings<Query, Row> readRowsSettings() {
-    return stubSettings.readRowsSettings();
-  }
-
   /** Returns the object with the settings used for point reads via ReadRow. */
   public UnaryCallSettings<Query, Row> readRowSettings() {
     return stubSettings.readRowSettings();
-  }
-
-  /** @deprecated Please use {@link #getStubSettings()} */
-  @Deprecated
-  public UnaryCallSettings<String, List<KeyOffset>> sampleRowKeysSettings() {
-    return stubSettings.sampleRowKeysSettings();
-  }
-
-  /** @deprecated Please use {@link #getStubSettings()} */
-  @Deprecated
-  public UnaryCallSettings<RowMutation, Void> mutateRowSettings() {
-    return stubSettings.mutateRowSettings();
-  }
-
-  /** @deprecated Please use {@link #getStubSettings()} */
-  @Deprecated
-  public BatchingCallSettings<RowMutation, Void> bulkMutationsSettings() {
-    return stubSettings.bulkMutateRowsSettings();
-  }
-
-  /** @deprecated Please use {@link #getStubSettings()} */
-  @Deprecated
-  public UnaryCallSettings<ConditionalRowMutation, Boolean> checkAndMutateRowSettings() {
-    return stubSettings.checkAndMutateRowSettings();
-  }
-
-  /** @deprecated Please use {@link #getStubSettings()} */
-  @Deprecated
-  public UnaryCallSettings<ReadModifyWriteRow, Row> readModifyWriteRowSettings() {
-    return stubSettings.readModifyWriteRowSettings();
-  }
-
-  /** @deprecated Please use {@link #getStubSettings()} */
-  @Deprecated
-  public ExecutorProvider getExecutorProvider() {
-    return stubSettings.getExecutorProvider();
-  }
-
-  /** @deprecated Please use {@link #getStubSettings()} */
-  @Deprecated
-  public TransportChannelProvider getTransportChannelProvider() {
-    return stubSettings.getTransportChannelProvider();
-  }
-
-  /** @deprecated Please use {@link #getStubSettings()} */
-  @Deprecated
-  public CredentialsProvider getCredentialsProvider() {
-    return stubSettings.getCredentialsProvider();
-  }
-
-  /** @deprecated Please use {@link #getStubSettings()} */
-  @Deprecated
-  public HeaderProvider getHeaderProvider() {
-    return stubSettings.getHeaderProvider();
-  }
-
-  /** @deprecated Please use {@link #getStubSettings()} */
-  @Deprecated
-  public ApiClock getClock() {
-    return stubSettings.getClock();
-  }
-
-  /** @deprecated Please use {@link #getStubSettings()} */
-  @Deprecated
-  public String getEndpoint() {
-    return stubSettings.getEndpoint();
-  }
-
-  /** @deprecated Please use {@link #getStubSettings()} */
-  @Deprecated
-  @Nullable
-  public WatchdogProvider getStreamWatchdogProvider() {
-    return stubSettings.getStreamWatchdogProvider();
-  }
-
-  /** @deprecated Please use {@link #getStubSettings()} */
-  @Deprecated
-  @Nonnull
-  public Duration getStreamWatchdogCheckInterval() {
-    return stubSettings.getStreamWatchdogCheckInterval();
   }
 
   /** Returns a builder containing all the values of this settings class. */
@@ -287,48 +187,6 @@ public final class BigtableDataSettings {
       return stubSettings.getAppProfileId();
     }
 
-    /** @deprecated Please use {@link #stubSettings()} */
-    @Deprecated
-    public ServerStreamingCallSettings.Builder<Query, Row> readRowsSettings() {
-      return stubSettings.readRowsSettings();
-    }
-
-    /** @deprecated Please use {@link #stubSettings()} */
-    @Deprecated
-    public UnaryCallSettings.Builder<Query, Row> readRowSettings() {
-      return stubSettings.readRowSettings();
-    }
-
-    /** @deprecated Please use {@link #stubSettings()} */
-    @Deprecated
-    public UnaryCallSettings.Builder<String, List<KeyOffset>> sampleRowKeysSettings() {
-      return stubSettings.sampleRowKeysSettings();
-    }
-
-    /** @deprecated Please use {@link #stubSettings()} */
-    @Deprecated
-    public UnaryCallSettings.Builder<RowMutation, Void> mutateRowSettings() {
-      return stubSettings.mutateRowSettings();
-    }
-
-    /** @deprecated Please use {@link #stubSettings()} */
-    @Deprecated
-    public BatchingCallSettings.Builder<RowMutation, Void> bulkMutationsSettings() {
-      return stubSettings.bulkMutateRowsSettings();
-    }
-
-    /** @deprecated Please use {@link #stubSettings()} */
-    @Deprecated
-    public UnaryCallSettings.Builder<ConditionalRowMutation, Boolean> checkAndMutateRowSettings() {
-      return stubSettings.checkAndMutateRowSettings();
-    }
-
-    /** @deprecated Please use {@link #stubSettings()} */
-    @Deprecated
-    public UnaryCallSettings.Builder<ReadModifyWriteRow, Row> readModifyWriteRowSettings() {
-      return stubSettings.readModifyWriteRowSettings();
-    }
-
     /** Sets the CredentialsProvider to use for getting the credentials to make calls with. */
     public Builder setCredentialsProvider(CredentialsProvider credentialsProvider) {
       stubSettings.setCredentialsProvider(credentialsProvider);
@@ -350,99 +208,6 @@ public final class BigtableDataSettings {
 
     public BigtableDataSettings build() {
       return new BigtableDataSettings(this);
-    }
-
-    /** @deprecated Please use {@link #stubSettings()} */
-    @Deprecated
-    public Builder setExecutorProvider(ExecutorProvider executorProvider) {
-      stubSettings.setExecutorProvider(executorProvider);
-      return this;
-    }
-
-    /** @deprecated Please use {@link #stubSettings()} */
-    @Deprecated
-    public Builder setHeaderProvider(HeaderProvider headerProvider) {
-      stubSettings.setHeaderProvider(headerProvider);
-      return this;
-    }
-
-    /** @deprecated Please use {@link #stubSettings()} */
-    @Deprecated
-    public Builder setTransportChannelProvider(TransportChannelProvider transportChannelProvider) {
-      stubSettings.setTransportChannelProvider(transportChannelProvider);
-      return this;
-    }
-
-    /** @deprecated Please use {@link #stubSettings()} */
-    @Deprecated
-    public Builder setStreamWatchdogProvider(@Nullable WatchdogProvider streamWatchdogProvider) {
-      stubSettings.setStreamWatchdogProvider(streamWatchdogProvider);
-      return this;
-    }
-
-    /** @deprecated Please use {@link #stubSettings()} */
-    @Deprecated
-    public Builder setClock(ApiClock clock) {
-      stubSettings.setClock(clock);
-      return this;
-    }
-
-    /** @deprecated Please use {@link #stubSettings()} */
-    @Deprecated
-    public Builder setEndpoint(String endpoint) {
-      stubSettings.setEndpoint(endpoint);
-      return this;
-    }
-
-    /** @deprecated Please use {@link #stubSettings()} */
-    @Deprecated
-    public Builder setStreamWatchdogCheckInterval(@Nonnull Duration checkInterval) {
-      stubSettings.setStreamWatchdogCheckInterval(checkInterval);
-      return this;
-    }
-
-    /** @deprecated Please use {@link #stubSettings()} */
-    @Deprecated
-    public ExecutorProvider getExecutorProvider() {
-      return stubSettings.getExecutorProvider();
-    }
-
-    /** @deprecated Please use {@link #stubSettings()} */
-    @Deprecated
-    public TransportChannelProvider getTransportChannelProvider() {
-      return stubSettings.getTransportChannelProvider();
-    }
-
-    /** @deprecated Please use {@link #stubSettings()} */
-    @Deprecated
-    public HeaderProvider getHeaderProvider() {
-      return stubSettings.getHeaderProvider();
-    }
-
-    /** @deprecated Please use {@link #stubSettings()} */
-    @Deprecated
-    @Nullable
-    public WatchdogProvider getStreamWatchdogProvider() {
-      return stubSettings.getStreamWatchdogProvider();
-    }
-
-    /** @deprecated Please use {@link #stubSettings()} */
-    @Deprecated
-    public ApiClock getClock() {
-      return stubSettings.getClock();
-    }
-
-    /** @deprecated Please use {@link #stubSettings()} */
-    @Deprecated
-    public String getEndpoint() {
-      return stubSettings.getEndpoint();
-    }
-
-    /** @deprecated Please use {@link #stubSettings()} */
-    @Deprecated
-    @Nonnull
-    public Duration getStreamWatchdogCheckInterval() {
-      return stubSettings.getStreamWatchdogCheckInterval();
     }
   }
 }
