@@ -19,7 +19,6 @@ import com.google.api.core.InternalExtensionOnly;
 import com.google.common.base.Objects;
 import com.google.common.base.Preconditions;
 import com.google.protobuf.ByteString;
-import com.google.protobuf.UnsafeByteOperations;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -360,7 +359,7 @@ public abstract class Range<T, R extends Range<T, R>> implements Serializable {
       }
 
       ByteString endPrefix = offset == 0 ? ByteString.EMPTY : prefix.substring(0, offset);
-      ByteString endSuffix = UnsafeByteOperations.unsafeWrap(new byte[] {(byte) (curByte + 1)});
+      ByteString endSuffix = ByteString.copyFrom(new byte[] {(byte) (curByte + 1)});
       ByteString end = endPrefix.concat(endSuffix);
 
       ByteStringRange range = ByteStringRange.unbounded().startClosed(prefix);
