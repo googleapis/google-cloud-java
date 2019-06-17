@@ -436,15 +436,41 @@ public interface StorageRpc extends ServiceRpc {
    */
   List<ObjectAccessControl> listAcls(String bucket, String object, Long generation);
 
+  /**
+   * Creates a new HMAC key for the provided service account email.
+   *
+   * @throws StorageException upon failure
+   */
   HmacKey createHmacKey(String serviceAccountEmail);
 
+  /**
+   * Lists the HMAC keys for the provided service account email.
+   *
+   * @throws StorageException upon failure
+   */
   Tuple<String, Iterable<HmacKeyMetadata>> listHmacKeys(
-      String serviceAccountEmail, String pageToken, Long maxResults);
+      String serviceAccountEmail, String pageToken, Long maxResults, boolean showDeletedKeys);
 
+  /**
+   * Updates an HMAC key for the provided metadata object and returns the updated object. Only
+   * updates the State field.
+   *
+   * @throws StorageException upon failure
+   */
   HmacKeyMetadata updateHmacKey(HmacKeyMetadata hmacKeyMetadata);
 
+  /**
+   * Returns the HMAC key associated with the provided access id.
+   *
+   * @throws StorageException upon failure
+   */
   HmacKeyMetadata getHmacKey(String accessId);
 
+  /**
+   * Deletes the HMAC key associated with the provided access id.
+   *
+   * @throws StorageException upon failure
+   */
   void deleteHmacKey(String accessId);
 
   /**

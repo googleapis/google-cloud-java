@@ -5,6 +5,7 @@ import com.google.api.client.util.DateTime;
 import java.io.Serializable;
 import java.util.Objects;
 
+/** HMAC key for a service account. */
 public class HmacKey implements Serializable {
 
   private static final long serialVersionUID = -1809610424373783062L;
@@ -20,6 +21,7 @@ public class HmacKey implements Serializable {
     return new Builder(secretKey);
   }
 
+  /** Builder for {@code HmacKey} objects. * */
   public static class Builder {
     private String secretKey;
     private HmacKeyMetadata metadata;
@@ -38,22 +40,25 @@ public class HmacKey implements Serializable {
       return this;
     }
 
+    /** Creates an {@code HmacKey} object from this builder. * */
     public HmacKey build() {
       return new HmacKey(this);
     }
   }
 
+  /** Returns the secret key associated with this HMAC key. * */
   public String getSecretKey() {
     return secretKey;
   }
 
+  /** Returns the metadata associated with this HMAC key. * */
   public HmacKeyMetadata getMetadata() {
     return metadata;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(secretKey,  metadata);
+    return Objects.hash(secretKey, metadata);
   }
 
   @Override
@@ -65,8 +70,7 @@ public class HmacKey implements Serializable {
       return false;
     }
     final HmacKeyMetadata other = (HmacKeyMetadata) obj;
-    return Objects.equals(this.secretKey, secretKey)
-            && Objects.equals(this.metadata, metadata);
+    return Objects.equals(this.secretKey, secretKey) && Objects.equals(this.metadata, metadata);
   }
 
   com.google.api.services.storage.model.HmacKey toPb() {
@@ -99,6 +103,10 @@ public class HmacKey implements Serializable {
     }
   }
 
+  /**
+   * The metadata for a service account HMAC key. This class holds all data associated with an HMAC
+   * key other than the secret key.
+   */
   public static class HmacKeyMetadata implements Serializable {
 
     private static final long serialVersionUID = 4571684785352640737L;
@@ -182,38 +190,53 @@ public class HmacKey implements Serializable {
           .build();
     }
 
+    /**
+     * Returns the access id for this HMAC key. This is the id needed to get or delete the key. *
+     */
     public String getAccessId() {
       return accessId;
     }
 
+    /**
+     * Returns HTTP 1.1 Entity tag for this HMAC key.
+     *
+     * @see <a href="http://tools.ietf.org/html/rfc2616#section-3.11">Entity Tags</a>
+     */
     public String getEtag() {
       return etag;
     }
 
+    /** Returns the resource name of this HMAC key. * */
     public String getId() {
       return id;
     }
 
+    /** Returns the project id associated with this HMAC key. * */
     public String getProjectId() {
       return projectId;
     }
 
+    /** Returns the service account associated with this HMAC key. * */
     public ServiceAccount getServiceAccount() {
       return serviceAccount;
     }
 
+    /** Returns the current state of this HMAC key. * */
     public HmacKeyState getState() {
       return state;
     }
 
+    /** Returns the creation time of this HMAC key. * */
     public Long getCreateTime() {
       return createTime;
     }
 
+    /** Returns the last updated time of this HMAC key. * */
     public Long getUpdateTime() {
       return updateTime;
     }
 
+    /** Builder for {@code HmacKeyMetadata} objects. * */
     public static class Builder {
       private String accessId;
       private String etag;
@@ -274,6 +297,7 @@ public class HmacKey implements Serializable {
         return this;
       }
 
+      /** Creates an {@code HmacKeyMetadata} object from this builder. * */
       public HmacKeyMetadata build() {
         return new HmacKeyMetadata(this);
       }

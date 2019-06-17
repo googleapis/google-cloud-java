@@ -2111,8 +2111,7 @@ public class ITStorageTest {
 
   @Test
   public void testHmacKey() {
-    ServiceAccount serviceAccount =
-        ServiceAccount.of("it-service-account@gcloud-devel.iam.gserviceaccount.com");
+    ServiceAccount serviceAccount = ServiceAccount.of(System.getenv("IT_SERVICE_ACCOUNT_EMAIL"));
     try {
 
       HmacKey hmacKey = storage.createHmacKey(serviceAccount);
@@ -2168,13 +2167,13 @@ public class ITStorageTest {
       storage.createHmacKey(serviceAccount);
       storage.createHmacKey(serviceAccount);
 
-      metadatas = storage.listHmacKeys(serviceAccount, null, 2L);
+      metadatas = storage.listHmacKeys(serviceAccount, null, 2L, false);
 
       String nextPageToken = metadatas.getNextPageToken();
 
       assertEquals(2, Iterators.size(metadatas.getValues().iterator()));
 
-      metadatas = storage.listHmacKeys(serviceAccount, nextPageToken, 2L);
+      metadatas = storage.listHmacKeys(serviceAccount, nextPageToken, 2L, false);
 
       assertEquals(2, Iterators.size(metadatas.getValues().iterator()));
     } finally {

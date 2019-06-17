@@ -2709,17 +2709,117 @@ public interface Storage extends Service<StorageOptions> {
    */
   List<Acl> listAcls(BlobId blob);
 
+  /**
+   * Creates a new HMAC Key for the provided service account, including the secret key. Note that
+   * the secret key is only returned upon creation via this method.
+   *
+   * <p>Example of creating a new HMAC Key.
+   *
+   * <pre>{@code
+   * ServiceAccount serviceAccount = ServiceAccount.of("my-service-account@google.com");
+   *
+   * HmacKey hmacKey = storage.createHmacKey(serviceAccount);
+   *
+   * String secretKey = hmacKey.getSecretKey();
+   * HmacKey.HmacKeyMetadata metadata = hmacKey.getMetadata();
+   * }</pre>
+   *
+   * @throws StorageException upon failure
+   */
   HmacKey createHmacKey(ServiceAccount serviceAccount);
 
+  /**
+   * Lists HMAC keys for a given service account. Note this returns {@code HmacKeyMetadata} objects,
+   * which do not contain secret keys.
+   *
+   * <p>Example of listing HMAC keys, specifying max results.
+   *
+   * <pre>{@code
+   * ServiceAccount serviceAccount = ServiceAccount.of("my-service-account@google.com");
+   *
+   * Page<HmacKey.HmacKeyMetadata> metadataPage = storage.listHmacKeys(serviceAccount, null, 10);
+   * for (HmacKey.HmacKeyMetadata hmacKeyMetadata : metadataPage.getValues()) {
+   *     //do something with the metadata
+   * }
+   * }</pre>
+   *
+   * @param serviceAccount the service account whose HMAC keys to list
+   * @param pageToken the page from which to start results
+   * @param maxResults the maximum amount of results that can be returned by this request
+   * @param showDeletedKeys whether to show keys with the DELETED state in the result
+   * @throws StorageException upon failure
+   */
   Page<HmacKeyMetadata> listHmacKeys(
-      ServiceAccount serviceAccount, String pageToken, Long maxResults);
+      ServiceAccount serviceAccount, String pageToken, Long maxResults, boolean showDeletedKeys);
 
+  /**
+   * Lists HMAC keys for a given service account. Note this returns {@code HmacKeyMetadata} objects,
+   * which do not contain secret keys. This is the same as calling {@code
+   * listHmacKeys(serviceAccount, null, null, false)}.
+   *
+   * <p>Example of listing HMAC keys.
+   *
+   * <pre>{@code
+   * ServiceAccount serviceAccount = ServiceAccount.of("my-service-account@google.com");
+   *
+   * Page<HmacKey.HmacKeyMetadata> metadataPage = storage.listHmacKeys(serviceAccount);
+   * for (HmacKey.HmacKeyMetadata hmacKeyMetadata : metadataPage.getValues()) {
+   *     //do something with the metadata
+   * }
+   * }</pre>
+   *
+   * @throws StorageException upon failure
+   */
   Page<HmacKeyMetadata> listHmacKeys(ServiceAccount serviceAccount);
 
+  /**
+   * Gets an HMAC key given its access id. Note that this returns a {@code HmacKeyMetadata} object,
+   * which does not contain the secret key.
+   *
+   * <p>Example of getting an HMAC key.
+   *
+   * <pre>{@code
+   * String hmacKeyAccessId = "my-access-id";
+   * HmacKey.HmackeyMetadata hmacKeyMetadata = storage.getHmacKey(hmacKeyAccessId);
+   * }</pre>
+   *
+   * @throws StorageException upon failure
+   */
   HmacKeyMetadata getHmacKey(String accessId);
 
+  /**
+   * Deletes an HMAC key given its access ID. Note that only an {@code INACTIVE} key can be deleted.
+   * Attempting to delete a key whose {@code HmacKey.HmacKeyState} is anything other than {@code
+   * INACTIVE} will fail.
+   *
+   * <p>Example of updating an HMAC key's state to INACTIVE and then deleting it.
+   *
+   * <pre>{@code
+   * String hmacKeyAccessId = "my-access-id";
+   * HmacKey.HmacKeyMetadata hmacKeyMetadata = storage.getHmacKey(hmacKeyAccessId);
+   *
+   * storage.updateHmacKeyState(hmacKeyMetadata, HmacKey.HmacKeyState.INACTIVE);
+   * storage.deleteHmacKey(hmacKeyMetadata.getAccessId());
+   * }</pre>
+   *
+   * @throws StorageException upon failure
+   */
   void deleteHmacKey(String accessId);
 
+  /**
+   * Updates the state of an HMAC key and returns the updated metadata.
+   *
+   * <p>Example of updating the state of a newly created HMAC key.
+   *
+   * <pre>{@code
+   * ServiceAccount serviceAccount = ServiceAccount.of("my-service-account@google.com");
+   * HmacKey key = storage.createHmacKey(serviceAccount);
+   *
+   * storage.updateHmacKeyState(hmacKey.getMetadata(), HmacKey.HmacKeyState.INACTIVE);
+   * }</pre>
+   *
+   * @throws StorageException upon failure
+   */
   HmacKeyMetadata updateHmacKeyState(
       final HmacKeyMetadata hmacKeyMetadata, final HmacKey.HmacKeyState state);
   /**
