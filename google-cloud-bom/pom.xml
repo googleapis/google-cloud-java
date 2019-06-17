@@ -1110,7 +1110,7 @@
         <artifactId>google-cloud-recaptchaenterprise</artifactId>
         <version>0.7.1-SNAPSHOT</version><!--{x-version-update:google-cloud-recaptchaenterprise:current}-->
       </dependency>
-    </dependencies>
+    <dependency><groupId>com.google.api.grpc</groupId><artifactId>proto-google-cloud-gameservices-v1alpha</artifactId><version>0.0.1-SNAPSHOT</version><!--{x-version-update:proto-google-cloud-gameservices-v1alpha:current}--></dependency><dependency><groupId>com.google.api.grpc</groupId><artifactId>grpc-google-cloud-gameservices-v1alpha</artifactId><version>0.0.1-SNAPSHOT</version><!--{x-version-update:grpc-google-cloud-gameservices-v1alpha:current}--></dependency><dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-gameservices</artifactId><version>0.0.1-SNAPSHOT</version><!--{x-version-update:google-cloud-gameservices:current}--></dependency></dependencies>
   </dependencyManagement>
 
   <build>
