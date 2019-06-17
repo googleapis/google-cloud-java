@@ -26,7 +26,7 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  * if no intents are matched for a `DetectIntent` request.
  * For more information about contexts, see the
  * [Dialogflow
- * documentation](https://cloud.google.com/dialogflow-enterprise/docs/contexts-overview).
+ * documentation](https://cloud.google.com/dialogflow/docs/contexts-overview).
  * </pre>
  */
 @javax.annotation.Generated(
@@ -409,7 +409,7 @@ public final class ContextsGrpc {
    * if no intents are matched for a `DetectIntent` request.
    * For more information about contexts, see the
    * [Dialogflow
-   * documentation](https://cloud.google.com/dialogflow-enterprise/docs/contexts-overview).
+   * documentation](https://cloud.google.com/dialogflow/docs/contexts-overview).
    * </pre>
    */
   public abstract static class ContextsImplBase implements io.grpc.BindableService {
@@ -557,7 +557,7 @@ public final class ContextsGrpc {
    * if no intents are matched for a `DetectIntent` request.
    * For more information about contexts, see the
    * [Dialogflow
-   * documentation](https://cloud.google.com/dialogflow-enterprise/docs/contexts-overview).
+   * documentation](https://cloud.google.com/dialogflow/docs/contexts-overview).
    * </pre>
    */
   public static final class ContextsStub extends io.grpc.stub.AbstractStub<ContextsStub> {
@@ -692,7 +692,7 @@ public final class ContextsGrpc {
    * if no intents are matched for a `DetectIntent` request.
    * For more information about contexts, see the
    * [Dialogflow
-   * documentation](https://cloud.google.com/dialogflow-enterprise/docs/contexts-overview).
+   * documentation](https://cloud.google.com/dialogflow/docs/contexts-overview).
    * </pre>
    */
   public static final class ContextsBlockingStub
@@ -809,7 +809,7 @@ public final class ContextsGrpc {
    * if no intents are matched for a `DetectIntent` request.
    * For more information about contexts, see the
    * [Dialogflow
-   * documentation](https://cloud.google.com/dialogflow-enterprise/docs/contexts-overview).
+   * documentation](https://cloud.google.com/dialogflow/docs/contexts-overview).
    * </pre>
    */
   public static final class ContextsFutureStub

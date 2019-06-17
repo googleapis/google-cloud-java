@@ -53,60 +53,64 @@ public final class KnowledgeBaseProto {
           + "dge_base.proto\022\037google.cloud.dialogflow."
           + "v2beta1\032\034google/api/annotations.proto\032\033g"
           + "oogle/protobuf/empty.proto\032 google/proto"
-          + "buf/field_mask.proto\"3\n\rKnowledgeBase\022\014\n"
-          + "\004name\030\001 \001(\t\022\024\n\014display_name\030\002 \001(\t\"R\n\031Lis"
-          + "tKnowledgeBasesRequest\022\016\n\006parent\030\001 \001(\t\022\021"
-          + "\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"~\n"
-          + "\032ListKnowledgeBasesResponse\022G\n\017knowledge"
-          + "_bases\030\001 \003(\0132..google.cloud.dialogflow.v"
-          + "2beta1.KnowledgeBase\022\027\n\017next_page_token\030"
-          + "\002 \001(\t\"\'\n\027GetKnowledgeBaseRequest\022\014\n\004name"
-          + "\030\001 \001(\t\"t\n\032CreateKnowledgeBaseRequest\022\016\n\006"
-          + "parent\030\001 \001(\t\022F\n\016knowledge_base\030\002 \001(\0132..g"
-          + "oogle.cloud.dialogflow.v2beta1.Knowledge"
-          + "Base\"9\n\032DeleteKnowledgeBaseRequest\022\014\n\004na"
-          + "me\030\001 \001(\t\022\r\n\005force\030\002 \001(\010\"\225\001\n\032UpdateKnowle"
-          + "dgeBaseRequest\022F\n\016knowledge_base\030\001 \001(\0132."
-          + ".google.cloud.dialogflow.v2beta1.Knowled"
-          + "geBase\022/\n\013update_mask\030\002 \001(\0132\032.google.pro"
-          + "tobuf.FieldMask2\212\n\n\016KnowledgeBases\022\367\001\n\022L"
-          + "istKnowledgeBases\022:.google.cloud.dialogf"
-          + "low.v2beta1.ListKnowledgeBasesRequest\032;."
-          + "google.cloud.dialogflow.v2beta1.ListKnow"
-          + "ledgeBasesResponse\"h\202\323\344\223\002b\022+/v2beta1/{pa"
-          + "rent=projects/*}/knowledgeBasesZ3\0221/v2be"
-          + "ta1/{parent=projects/*/agent}/knowledgeB"
-          + "ases\022\346\001\n\020GetKnowledgeBase\0228.google.cloud"
-          + ".dialogflow.v2beta1.GetKnowledgeBaseRequ"
-          + "est\032..google.cloud.dialogflow.v2beta1.Kn"
-          + "owledgeBase\"h\202\323\344\223\002b\022+/v2beta1/{name=proj"
-          + "ects/*/knowledgeBases/*}Z3\0221/v2beta1/{na"
-          + "me=projects/*/agent/knowledgeBases/*}\022\216\002"
-          + "\n\023CreateKnowledgeBase\022;.google.cloud.dia"
-          + "logflow.v2beta1.CreateKnowledgeBaseReque"
-          + "st\032..google.cloud.dialogflow.v2beta1.Kno"
-          + "wledgeBase\"\211\001\202\323\344\223\002\202\001\"+/v2beta1/{parent=p"
-          + "rojects/*}/knowledgeBases:\016knowledge_bas"
-          + "eZC\"1/v2beta1/{parent=projects/*/agent}/"
-          + "knowledgeBases:\016knowledge_base\022\324\001\n\023Delet"
+          + "buf/field_mask.proto\032\027google/api/client."
+          + "proto\"3\n\rKnowledgeBase\022\014\n\004name\030\001 \001(\t\022\024\n\014"
+          + "display_name\030\002 \001(\t\"R\n\031ListKnowledgeBases"
+          + "Request\022\016\n\006parent\030\001 \001(\t\022\021\n\tpage_size\030\002 \001"
+          + "(\005\022\022\n\npage_token\030\003 \001(\t\"~\n\032ListKnowledgeB"
+          + "asesResponse\022G\n\017knowledge_bases\030\001 \003(\0132.."
+          + "google.cloud.dialogflow.v2beta1.Knowledg"
+          + "eBase\022\027\n\017next_page_token\030\002 \001(\t\"\'\n\027GetKno"
+          + "wledgeBaseRequest\022\014\n\004name\030\001 \001(\t\"t\n\032Creat"
+          + "eKnowledgeBaseRequest\022\016\n\006parent\030\001 \001(\t\022F\n"
+          + "\016knowledge_base\030\002 \001(\0132..google.cloud.dia"
+          + "logflow.v2beta1.KnowledgeBase\"9\n\032DeleteK"
+          + "nowledgeBaseRequest\022\014\n\004name\030\001 \001(\t\022\r\n\005for"
+          + "ce\030\002 \001(\010\"\225\001\n\032UpdateKnowledgeBaseRequest\022"
+          + "F\n\016knowledge_base\030\001 \001(\0132..google.cloud.d"
+          + "ialogflow.v2beta1.KnowledgeBase\022/\n\013updat"
+          + "e_mask\030\002 \001(\0132\032.google.protobuf.FieldMask"
+          + "2\204\013\n\016KnowledgeBases\022\367\001\n\022ListKnowledgeBas"
+          + "es\022:.google.cloud.dialogflow.v2beta1.Lis"
+          + "tKnowledgeBasesRequest\032;.google.cloud.di"
+          + "alogflow.v2beta1.ListKnowledgeBasesRespo"
+          + "nse\"h\202\323\344\223\002b\022+/v2beta1/{parent=projects/*"
+          + "}/knowledgeBasesZ3\0221/v2beta1/{parent=pro"
+          + "jects/*/agent}/knowledgeBases\022\346\001\n\020GetKno"
+          + "wledgeBase\0228.google.cloud.dialogflow.v2b"
+          + "eta1.GetKnowledgeBaseRequest\032..google.cl"
+          + "oud.dialogflow.v2beta1.KnowledgeBase\"h\202\323"
+          + "\344\223\002b\022+/v2beta1/{name=projects/*/knowledg"
+          + "eBases/*}Z3\0221/v2beta1/{name=projects/*/a"
+          + "gent/knowledgeBases/*}\022\216\002\n\023CreateKnowled"
+          + "geBase\022;.google.cloud.dialogflow.v2beta1"
+          + ".CreateKnowledgeBaseRequest\032..google.clo"
+          + "ud.dialogflow.v2beta1.KnowledgeBase\"\211\001\202\323"
+          + "\344\223\002\202\001\"+/v2beta1/{parent=projects/*}/know"
+          + "ledgeBases:\016knowledge_baseZC\"1/v2beta1/{"
+          + "parent=projects/*/agent}/knowledgeBases:"
+          + "\016knowledge_base\022\324\001\n\023DeleteKnowledgeBase\022"
+          + ";.google.cloud.dialogflow.v2beta1.Delete"
+          + "KnowledgeBaseRequest\032\026.google.protobuf.E"
+          + "mpty\"h\202\323\344\223\002b*+/v2beta1/{name=projects/*/"
+          + "knowledgeBases/*}Z3*1/v2beta1/{name=proj"
+          + "ects/*/agent/knowledgeBases/*}\022\254\002\n\023Updat"
           + "eKnowledgeBase\022;.google.cloud.dialogflow"
-          + ".v2beta1.DeleteKnowledgeBaseRequest\032\026.go"
-          + "ogle.protobuf.Empty\"h\202\323\344\223\002b*+/v2beta1/{n"
-          + "ame=projects/*/knowledgeBases/*}Z3*1/v2b"
-          + "eta1/{name=projects/*/agent/knowledgeBas"
-          + "es/*}\022\254\002\n\023UpdateKnowledgeBase\022;.google.c"
-          + "loud.dialogflow.v2beta1.UpdateKnowledgeB"
-          + "aseRequest\032..google.cloud.dialogflow.v2b"
-          + "eta1.KnowledgeBase\"\247\001\202\323\344\223\002\240\0012:/v2beta1/{"
-          + "knowledge_base.name=projects/*/knowledge"
-          + "Bases/*}:\016knowledge_baseZR2@/v2beta1/{kn"
-          + "owledge_base.name=projects/*/agent/knowl"
-          + "edgeBases/*}:\016knowledge_baseB\260\001\n#com.goo"
-          + "gle.cloud.dialogflow.v2beta1B\022KnowledgeB"
-          + "aseProtoP\001ZIgoogle.golang.org/genproto/g"
-          + "oogleapis/cloud/dialogflow/v2beta1;dialo"
-          + "gflow\370\001\001\242\002\002DF\252\002\037Google.Cloud.Dialogflow."
-          + "V2beta1b\006proto3"
+          + ".v2beta1.UpdateKnowledgeBaseRequest\032..go"
+          + "ogle.cloud.dialogflow.v2beta1.KnowledgeB"
+          + "ase\"\247\001\202\323\344\223\002\240\0012:/v2beta1/{knowledge_base."
+          + "name=projects/*/knowledgeBases/*}:\016knowl"
+          + "edge_baseZR2@/v2beta1/{knowledge_base.na"
+          + "me=projects/*/agent/knowledgeBases/*}:\016k"
+          + "nowledge_base\032x\312A\031dialogflow.googleapis."
+          + "com\322AYhttps://www.googleapis.com/auth/cl"
+          + "oud-platform,https://www.googleapis.com/"
+          + "auth/dialogflowB\260\001\n#com.google.cloud.dia"
+          + "logflow.v2beta1B\022KnowledgeBaseProtoP\001ZIg"
+          + "oogle.golang.org/genproto/googleapis/clo"
+          + "ud/dialogflow/v2beta1;dialogflow\370\001\001\242\002\002DF"
+          + "\252\002\037Google.Cloud.Dialogflow.V2beta1b\006prot"
+          + "o3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -122,6 +126,7 @@ public final class KnowledgeBaseProto {
           com.google.api.AnnotationsProto.getDescriptor(),
           com.google.protobuf.EmptyProto.getDescriptor(),
           com.google.protobuf.FieldMaskProto.getDescriptor(),
+          com.google.api.ClientProto.getDescriptor(),
         },
         assigner);
     internal_static_google_cloud_dialogflow_v2beta1_KnowledgeBase_descriptor =
@@ -182,12 +187,15 @@ public final class KnowledgeBaseProto {
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.ClientProto.defaultHost);
     registry.add(com.google.api.AnnotationsProto.http);
+    registry.add(com.google.api.ClientProto.oauthScopes);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.AnnotationsProto.getDescriptor();
     com.google.protobuf.EmptyProto.getDescriptor();
     com.google.protobuf.FieldMaskProto.getDescriptor();
+    com.google.api.ClientProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

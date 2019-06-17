@@ -342,6 +342,11 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
    *
    * <pre>
    * The audio data bytes encoded as specified in the request.
+   * Note: The output audio is generated based on the values of default platform
+   * text responses found in the `query_result.fulfillment_messages` field. If
+   * multiple default text responses exist, they will be concatenated when
+   * generating audio. If no default platform text responses exist, the
+   * generated audio content will be empty.
    * </pre>
    *
    * <code>bytes output_audio = 5;</code>
@@ -356,9 +361,7 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Instructs the speech synthesizer how to generate the output audio. This
-   * field is populated from the agent-level speech synthesizer configuration,
-   * if enabled.
+   * The config used by the speech synthesizer to generate the output audio.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 6;</code>
@@ -370,9 +373,7 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Instructs the speech synthesizer how to generate the output audio. This
-   * field is populated from the agent-level speech synthesizer configuration,
-   * if enabled.
+   * The config used by the speech synthesizer to generate the output audio.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 6;</code>
@@ -386,9 +387,7 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Instructs the speech synthesizer how to generate the output audio. This
-   * field is populated from the agent-level speech synthesizer configuration,
-   * if enabled.
+   * The config used by the speech synthesizer to generate the output audio.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 6;</code>
@@ -1498,6 +1497,11 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
      *
      * <pre>
      * The audio data bytes encoded as specified in the request.
+     * Note: The output audio is generated based on the values of default platform
+     * text responses found in the `query_result.fulfillment_messages` field. If
+     * multiple default text responses exist, they will be concatenated when
+     * generating audio. If no default platform text responses exist, the
+     * generated audio content will be empty.
      * </pre>
      *
      * <code>bytes output_audio = 5;</code>
@@ -1510,6 +1514,11 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
      *
      * <pre>
      * The audio data bytes encoded as specified in the request.
+     * Note: The output audio is generated based on the values of default platform
+     * text responses found in the `query_result.fulfillment_messages` field. If
+     * multiple default text responses exist, they will be concatenated when
+     * generating audio. If no default platform text responses exist, the
+     * generated audio content will be empty.
      * </pre>
      *
      * <code>bytes output_audio = 5;</code>
@@ -1528,6 +1537,11 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
      *
      * <pre>
      * The audio data bytes encoded as specified in the request.
+     * Note: The output audio is generated based on the values of default platform
+     * text responses found in the `query_result.fulfillment_messages` field. If
+     * multiple default text responses exist, they will be concatenated when
+     * generating audio. If no default platform text responses exist, the
+     * generated audio content will be empty.
      * </pre>
      *
      * <code>bytes output_audio = 5;</code>
@@ -1549,9 +1563,7 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Instructs the speech synthesizer how to generate the output audio. This
-     * field is populated from the agent-level speech synthesizer configuration,
-     * if enabled.
+     * The config used by the speech synthesizer to generate the output audio.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 6;</code>
@@ -1563,9 +1575,7 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Instructs the speech synthesizer how to generate the output audio. This
-     * field is populated from the agent-level speech synthesizer configuration,
-     * if enabled.
+     * The config used by the speech synthesizer to generate the output audio.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 6;</code>
@@ -1583,9 +1593,7 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Instructs the speech synthesizer how to generate the output audio. This
-     * field is populated from the agent-level speech synthesizer configuration,
-     * if enabled.
+     * The config used by the speech synthesizer to generate the output audio.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 6;</code>
@@ -1607,9 +1615,7 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Instructs the speech synthesizer how to generate the output audio. This
-     * field is populated from the agent-level speech synthesizer configuration,
-     * if enabled.
+     * The config used by the speech synthesizer to generate the output audio.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 6;</code>
@@ -1629,9 +1635,7 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Instructs the speech synthesizer how to generate the output audio. This
-     * field is populated from the agent-level speech synthesizer configuration,
-     * if enabled.
+     * The config used by the speech synthesizer to generate the output audio.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 6;</code>
@@ -1657,9 +1661,7 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Instructs the speech synthesizer how to generate the output audio. This
-     * field is populated from the agent-level speech synthesizer configuration,
-     * if enabled.
+     * The config used by the speech synthesizer to generate the output audio.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 6;</code>
@@ -1679,9 +1681,7 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Instructs the speech synthesizer how to generate the output audio. This
-     * field is populated from the agent-level speech synthesizer configuration,
-     * if enabled.
+     * The config used by the speech synthesizer to generate the output audio.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 6;</code>
@@ -1695,9 +1695,7 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Instructs the speech synthesizer how to generate the output audio. This
-     * field is populated from the agent-level speech synthesizer configuration,
-     * if enabled.
+     * The config used by the speech synthesizer to generate the output audio.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 6;</code>
@@ -1716,9 +1714,7 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Instructs the speech synthesizer how to generate the output audio. This
-     * field is populated from the agent-level speech synthesizer configuration,
-     * if enabled.
+     * The config used by the speech synthesizer to generate the output audio.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 6;</code>

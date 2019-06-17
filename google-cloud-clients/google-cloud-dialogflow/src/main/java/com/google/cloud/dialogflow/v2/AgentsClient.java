@@ -53,18 +53,18 @@ import javax.annotation.Generated;
  *
  * <p>You can create an agent using both Dialogflow Standard Edition and Dialogflow Enterprise
  * Edition. For details, see [Dialogflow
- * Editions](https://cloud.google.com/dialogflow-enterprise/docs/editions).
+ * Editions](https://cloud.google.com/dialogflow/docs/editions).
  *
  * <p>You can save your agent for backup or versioning by exporting the agent by using the
  * [ExportAgent][google.cloud.dialogflow.v2.Agents.ExportAgent] method. You can import a saved agent
  * by using the [ImportAgent][google.cloud.dialogflow.v2.Agents.ImportAgent] method.
  *
  * <p>Dialogflow provides several [prebuilt
- * agents](https://cloud.google.com/dialogflow-enterprise/docs/agents-prebuilt) for common
- * conversation scenarios such as determining a date and time, converting currency, and so on.
+ * agents](https://cloud.google.com/dialogflow/docs/agents-prebuilt) for common conversation
+ * scenarios such as determining a date and time, converting currency, and so on.
  *
  * <p>For more information about agents, see the [Dialogflow
- * documentation](https://cloud.google.com/dialogflow-enterprise/docs/agents-overview).
+ * documentation](https://cloud.google.com/dialogflow/docs/agents-overview).
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -882,6 +882,84 @@ public class AgentsClient implements BackgroundResource {
    */
   public final UnaryCallable<RestoreAgentRequest, Operation> restoreAgentCallable() {
     return stub.restoreAgentCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates/updates the specified agent.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AgentsClient agentsClient = AgentsClient.create()) {
+   *   SetAgentRequest request = SetAgentRequest.newBuilder().build();
+   *   Agent response = agentsClient.setAgent(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Agent setAgent(SetAgentRequest request) {
+    return setAgentCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates/updates the specified agent.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AgentsClient agentsClient = AgentsClient.create()) {
+   *   SetAgentRequest request = SetAgentRequest.newBuilder().build();
+   *   ApiFuture&lt;Agent&gt; future = agentsClient.setAgentCallable().futureCall(request);
+   *   // Do something
+   *   Agent response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<SetAgentRequest, Agent> setAgentCallable() {
+    return stub.setAgentCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes the specified agent.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AgentsClient agentsClient = AgentsClient.create()) {
+   *   DeleteAgentRequest request = DeleteAgentRequest.newBuilder().build();
+   *   agentsClient.deleteAgent(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteAgent(DeleteAgentRequest request) {
+    deleteAgentCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes the specified agent.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AgentsClient agentsClient = AgentsClient.create()) {
+   *   DeleteAgentRequest request = DeleteAgentRequest.newBuilder().build();
+   *   ApiFuture&lt;Void&gt; future = agentsClient.deleteAgentCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<DeleteAgentRequest, Empty> deleteAgentCallable() {
+    return stub.deleteAgentCallable();
   }
 
   @Override
