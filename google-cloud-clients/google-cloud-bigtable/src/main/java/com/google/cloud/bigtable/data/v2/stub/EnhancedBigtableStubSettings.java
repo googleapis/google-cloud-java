@@ -38,7 +38,6 @@ import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
-
 import java.util.Collection;
 import java.util.List;
 import java.util.Set;
@@ -301,7 +300,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
       copyRetrySettings(baseDefaults.mutateRowSettings(), mutateRowSettings);
 
       bulkMutateRowsSettings =
-          BatchingCallSettings.newBuilder(new DummyBatchingDescriptor<RowMutation, Void>())
+          BatchingCallSettings.newBuilder(new PlaceholderBatchingDescriptor())
               .setRetryableCodes(DEFAULT_RETRY_CODES)
               .setRetrySettings(DEFAULT_RETRY_SETTINGS)
               .setBatchingSettings(
@@ -341,6 +340,51 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
       readModifyWriteRowSettings = settings.readModifyWriteRowSettings.toBuilder();
     }
     // <editor-fold desc="Private Helpers">
+
+    /**
+     * This is necessary workaround for {@link
+     * com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStub#bulkMutateRowsCallable()}. The
+     * settings are exposed to the user using the {@link
+     * com.google.cloud.bigtable.data.v2.models.RowMutation} wrapper, but the actual descriptor
+     * works on the underlying {@link com.google.bigtable.v2.MutateRowsRequest}s. This class is used
+     * as a placeholder for the settings and is replaced with the actual implementation of {@link
+     * com.google.cloud.bigtable.data.v2.stub.mutaterows.MutateRowsBatchingDescriptor} when
+     * constructing the callable chain.
+     */
+    private static class PlaceholderBatchingDescriptor
+        implements com.google.api.gax.rpc.BatchingDescriptor<RowMutation, Void> {
+      @Override
+      public PartitionKey getBatchPartitionKey(RowMutation rowMutation) {
+        throw new UnsupportedOperationException("Placeholder descriptor should not be used");
+      }
+
+      @Override
+      public RequestBuilder<RowMutation> getRequestBuilder() {
+        throw new UnsupportedOperationException("Placeholder descriptor should not be used");
+      }
+
+      @Override
+      public void splitResponse(
+          Void aVoid, Collection<? extends BatchedRequestIssuer<Void>> collection) {
+        throw new UnsupportedOperationException("Placeholder descriptor should not be used");
+      }
+
+      @Override
+      public void splitException(
+          Throwable throwable, Collection<? extends BatchedRequestIssuer<Void>> collection) {
+        throw new UnsupportedOperationException("Placeholder descriptor should not be used");
+      }
+
+      @Override
+      public long countElements(RowMutation rowMutation) {
+        throw new UnsupportedOperationException("Placeholder descriptor should not be used");
+      }
+
+      @Override
+      public long countBytes(RowMutation rowMutation) {
+        throw new UnsupportedOperationException("Placeholder descriptor should not be used");
+      }
+    }
 
     /**
      * Copies settings from unary RPC to another. This is necessary when modifying request and
@@ -444,51 +488,5 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
       return new EnhancedBigtableStubSettings(this);
     }
     // </editor-fold>
-  }
-
-  /**
-   * This is necessary workaround for {@link
-   * com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStub#bulkMutateRowsCallable()}. The
-   * settings are exposed to the user using the {@link
-   * com.google.cloud.bigtable.data.v2.models.RowMutation} wrapper, but the actual descriptor works on
-   * the underlying {@link com.google.bigtable.v2.MutateRowsRequest}s. This class is used as a
-   * placeholder for the settings and is replaced with the actual implementation of {@link
-   * com.google.cloud.bigtable.data.v2.stub.mutaterows.MutateRowsBatchingDescriptor} when constructing
-   * the callable chain.
-   *
-   */
-  private static class DummyBatchingDescriptor<RequestT, ResponseT>
-          implements com.google.api.gax.rpc.BatchingDescriptor<RequestT, ResponseT> {
-    @Override
-    public PartitionKey getBatchPartitionKey(RequestT request) {
-      throw new UnsupportedOperationException("Placeholder descriptor should not be used");
-    }
-
-    @Override
-    public RequestBuilder<RequestT> getRequestBuilder() {
-      throw new UnsupportedOperationException("Placeholder descriptor should not be used");
-    }
-
-    @Override
-    public void splitResponse(
-            ResponseT response, Collection<? extends BatchedRequestIssuer<ResponseT>> collection) {
-      throw new UnsupportedOperationException("Placeholder descriptor should not be used");
-    }
-
-    @Override
-    public void splitException(
-            Throwable throwable, Collection<? extends BatchedRequestIssuer<ResponseT>> collection) {
-      throw new UnsupportedOperationException("Placeholder descriptor should not be used");
-    }
-
-    @Override
-    public long countElements(RequestT request) {
-      throw new UnsupportedOperationException("Placeholder descriptor should not be used");
-    }
-
-    @Override
-    public long countBytes(RequestT request) {
-      throw new UnsupportedOperationException("Placeholder descriptor should not be used");
-    }
   }
 }
