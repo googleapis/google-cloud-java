@@ -18,19 +18,22 @@ package com.google.cloud.bigtable.data.v2.stub;
 import com.google.api.gax.batching.BatchingSettings;
 import com.google.api.gax.batching.FlowControlSettings;
 import com.google.api.gax.batching.FlowController.LimitExceededBehavior;
+import com.google.api.gax.batching.PartitionKey;
+import com.google.api.gax.batching.RequestBuilder;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.retrying.RetrySettings;
+import com.google.api.gax.rpc.BatchedRequestIssuer;
 import com.google.api.gax.rpc.BatchingCallSettings;
+import com.google.api.gax.rpc.BatchingDescriptor;
 import com.google.api.gax.rpc.ServerStreamingCallSettings;
 import com.google.api.gax.rpc.StatusCode.Code;
 import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.tracing.OpencensusTracerFactory;
-import com.google.cloud.bigtable.data.v2.internal.DummyBatchingDescriptor;
 import com.google.cloud.bigtable.data.v2.models.ConditionalRowMutation;
 import com.google.cloud.bigtable.data.v2.models.KeyOffset;
 import com.google.cloud.bigtable.data.v2.models.Query;
@@ -41,6 +44,7 @@ import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
+import java.util.Collection;
 import java.util.List;
 import java.util.Set;
 import javax.annotation.Nonnull;
@@ -302,7 +306,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
       copyRetrySettings(baseDefaults.mutateRowSettings(), mutateRowSettings);
 
       bulkMutateRowsSettings =
-          BatchingCallSettings.newBuilder(new DummyBatchingDescriptor<RowMutation, Void>())
+          BatchingCallSettings.newBuilder(new PlaceholderBatchingDescriptor())
               .setRetryableCodes(DEFAULT_RETRY_CODES)
               .setRetrySettings(DEFAULT_RETRY_SETTINGS)
               .setBatchingSettings(
@@ -342,6 +346,51 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
       readModifyWriteRowSettings = settings.readModifyWriteRowSettings.toBuilder();
     }
     // <editor-fold desc="Private Helpers">
+
+    /**
+     * This is necessary workaround for {@link
+     * com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStub#bulkMutateRowsCallable()}. The
+     * settings are exposed to the user using the {@link
+     * com.google.cloud.bigtable.data.v2.models.RowMutation} wrapper, but the actual descriptor
+     * works on the underlying {@link com.google.bigtable.v2.MutateRowsRequest}s. This class is used
+     * as a placeholder for the settings and is replaced with the actual implementation of {@link
+     * com.google.cloud.bigtable.data.v2.stub.mutaterows.MutateRowsBatchingDescriptor} when
+     * constructing the callable chain.
+     */
+    private static class PlaceholderBatchingDescriptor
+        implements BatchingDescriptor<RowMutation, Void> {
+      @Override
+      public PartitionKey getBatchPartitionKey(RowMutation rowMutation) {
+        throw new UnsupportedOperationException("Placeholder descriptor should not be used");
+      }
+
+      @Override
+      public RequestBuilder<RowMutation> getRequestBuilder() {
+        throw new UnsupportedOperationException("Placeholder descriptor should not be used");
+      }
+
+      @Override
+      public void splitResponse(
+          Void aVoid, Collection<? extends BatchedRequestIssuer<Void>> collection) {
+        throw new UnsupportedOperationException("Placeholder descriptor should not be used");
+      }
+
+      @Override
+      public void splitException(
+          Throwable throwable, Collection<? extends BatchedRequestIssuer<Void>> collection) {
+        throw new UnsupportedOperationException("Placeholder descriptor should not be used");
+      }
+
+      @Override
+      public long countElements(RowMutation rowMutation) {
+        throw new UnsupportedOperationException("Placeholder descriptor should not be used");
+      }
+
+      @Override
+      public long countBytes(RowMutation rowMutation) {
+        throw new UnsupportedOperationException("Placeholder descriptor should not be used");
+      }
+    }
 
     /**
      * Copies settings from unary RPC to another. This is necessary when modifying request and
