@@ -25,8 +25,14 @@ import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.retrying.RetrySettings;
-import com.google.api.gax.rpc.*;
+import com.google.api.gax.rpc.BatchedRequestIssuer;
+import com.google.api.gax.rpc.BatchingCallSettings;
+import com.google.api.gax.rpc.BatchingDescriptor;
+import com.google.api.gax.rpc.ServerStreamingCallSettings;
 import com.google.api.gax.rpc.StatusCode.Code;
+import com.google.api.gax.rpc.StubSettings;
+import com.google.api.gax.rpc.TransportChannelProvider;
+import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.tracing.OpencensusTracerFactory;
 import com.google.cloud.bigtable.data.v2.models.ConditionalRowMutation;
 import com.google.cloud.bigtable.data.v2.models.KeyOffset;
@@ -352,7 +358,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
      * constructing the callable chain.
      */
     private static class PlaceholderBatchingDescriptor
-        implements com.google.api.gax.rpc.BatchingDescriptor<RowMutation, Void> {
+        implements BatchingDescriptor<RowMutation, Void> {
       @Override
       public PartitionKey getBatchPartitionKey(RowMutation rowMutation) {
         throw new UnsupportedOperationException("Placeholder descriptor should not be used");
