@@ -113,6 +113,8 @@ public final class ByteContentItem extends com.google.protobuf.GeneratedMessageV
     IMAGE_SVG(4),
     /** <code>TEXT_UTF8 = 5;</code> */
     TEXT_UTF8(5),
+    /** <code>AVRO = 11;</code> */
+    AVRO(11),
     UNRECOGNIZED(-1),
     ;
 
@@ -130,6 +132,8 @@ public final class ByteContentItem extends com.google.protobuf.GeneratedMessageV
     public static final int IMAGE_SVG_VALUE = 4;
     /** <code>TEXT_UTF8 = 5;</code> */
     public static final int TEXT_UTF8_VALUE = 5;
+    /** <code>AVRO = 11;</code> */
+    public static final int AVRO_VALUE = 11;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -161,6 +165,8 @@ public final class ByteContentItem extends com.google.protobuf.GeneratedMessageV
           return IMAGE_SVG;
         case 5:
           return TEXT_UTF8;
+        case 11:
+          return AVRO;
         default:
           return null;
       }
