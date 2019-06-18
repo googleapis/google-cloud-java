@@ -150,21 +150,6 @@ public class DataTransferServiceSettings extends ClientSettings<DataTransferServ
     return ((DataTransferServiceStubSettings) getStubSettings()).startManualTransferRunsSettings();
   }
 
-  /** Returns the object with the settings used for calls to enableDataTransferService. */
-  public UnaryCallSettings<EnableDataTransferServiceRequest, Empty>
-      enableDataTransferServiceSettings() {
-    return ((DataTransferServiceStubSettings) getStubSettings())
-        .enableDataTransferServiceSettings();
-  }
-
-  /** Returns the object with the settings used for calls to isDataTransferServiceEnabled. */
-  public UnaryCallSettings<
-          IsDataTransferServiceEnabledRequest, IsDataTransferServiceEnabledResponse>
-      isDataTransferServiceEnabledSettings() {
-    return ((DataTransferServiceStubSettings) getStubSettings())
-        .isDataTransferServiceEnabledSettings();
-  }
-
   public static final DataTransferServiceSettings create(DataTransferServiceStubSettings stub)
       throws IOException {
     return new DataTransferServiceSettings.Builder(stub.toBuilder()).build();
@@ -348,19 +333,6 @@ public class DataTransferServiceSettings extends ClientSettings<DataTransferServ
             StartManualTransferRunsRequest, StartManualTransferRunsResponse>
         startManualTransferRunsSettings() {
       return getStubSettingsBuilder().startManualTransferRunsSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to enableDataTransferService. */
-    public UnaryCallSettings.Builder<EnableDataTransferServiceRequest, Empty>
-        enableDataTransferServiceSettings() {
-      return getStubSettingsBuilder().enableDataTransferServiceSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to isDataTransferServiceEnabled. */
-    public UnaryCallSettings.Builder<
-            IsDataTransferServiceEnabledRequest, IsDataTransferServiceEnabledResponse>
-        isDataTransferServiceEnabledSettings() {
-      return getStubSettingsBuilder().isDataTransferServiceEnabledSettings();
     }
 
     @Override

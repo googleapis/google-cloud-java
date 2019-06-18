@@ -442,46 +442,4 @@ public interface DataSourceOrBuilder
    * <code>.google.protobuf.Duration minimum_schedule_interval = 18;</code>
    */
   com.google.protobuf.DurationOrBuilder getMinimumScheduleIntervalOrBuilder();
-
-  /**
-   *
-   *
-   * <pre>
-   * Partner's legal name of this data source
-   * </pre>
-   *
-   * <code>string partner_legal_name = 22;</code>
-   */
-  java.lang.String getPartnerLegalName();
-  /**
-   *
-   *
-   * <pre>
-   * Partner's legal name of this data source
-   * </pre>
-   *
-   * <code>string partner_legal_name = 22;</code>
-   */
-  com.google.protobuf.ByteString getPartnerLegalNameBytes();
-
-  /**
-   *
-   *
-   * <pre>
-   * Redirect URL to complete transfer config setup for 3rd party data sources.
-   * </pre>
-   *
-   * <code>string redirect_url = 23;</code>
-   */
-  java.lang.String getRedirectUrl();
-  /**
-   *
-   *
-   * <pre>
-   * Redirect URL to complete transfer config setup for 3rd party data sources.
-   * </pre>
-   *
-   * <code>string redirect_url = 23;</code>
-   */
-  com.google.protobuf.ByteString getRedirectUrlBytes();
 }

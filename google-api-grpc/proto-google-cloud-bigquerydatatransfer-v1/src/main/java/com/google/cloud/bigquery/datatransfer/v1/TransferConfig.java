@@ -35,7 +35,6 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
     schedule_ = "";
     state_ = 0;
     datasetRegion_ = "";
-    partnerToken_ = "";
   }
 
   @java.lang.Override
@@ -168,28 +167,6 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
               java.lang.String s = input.readStringRequireUtf8();
 
               datasetRegion_ = s;
-              break;
-            }
-          case 178:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              partnerToken_ = s;
-              break;
-            }
-          case 186:
-            {
-              com.google.protobuf.Struct.Builder subBuilder = null;
-              if (partnerConnectionInfo_ != null) {
-                subBuilder = partnerConnectionInfo_.toBuilder();
-              }
-              partnerConnectionInfo_ =
-                  input.readMessage(com.google.protobuf.Struct.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(partnerConnectionInfo_);
-                partnerConnectionInfo_ = subBuilder.buildPartial();
-              }
-
               break;
             }
           case 194:
@@ -777,122 +754,6 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int PARTNER_TOKEN_FIELD_NUMBER = 22;
-  private volatile java.lang.Object partnerToken_;
-  /**
-   *
-   *
-   * <pre>
-   * A unique identifier used for identifying a transfer setup stored on
-   * external partner side. The token is opaque to DTS and can only be
-   * interpreted by partner. Partner data source should create a mapping between
-   * the config id and the token to validate that a transfer config/run is
-   * legitimate.
-   * </pre>
-   *
-   * <code>string partner_token = 22;</code>
-   */
-  public java.lang.String getPartnerToken() {
-    java.lang.Object ref = partnerToken_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      partnerToken_ = s;
-      return s;
-    }
-  }
-  /**
-   *
-   *
-   * <pre>
-   * A unique identifier used for identifying a transfer setup stored on
-   * external partner side. The token is opaque to DTS and can only be
-   * interpreted by partner. Partner data source should create a mapping between
-   * the config id and the token to validate that a transfer config/run is
-   * legitimate.
-   * </pre>
-   *
-   * <code>string partner_token = 22;</code>
-   */
-  public com.google.protobuf.ByteString getPartnerTokenBytes() {
-    java.lang.Object ref = partnerToken_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      partnerToken_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int PARTNER_CONNECTION_INFO_FIELD_NUMBER = 23;
-  private com.google.protobuf.Struct partnerConnectionInfo_;
-  /**
-   *
-   *
-   * <pre>
-   * Transfer settings managed by partner data sources. It is stored as
-   * key-value pairs and used for DTS UI display purpose only. Two reasons we
-   * don't want to store them together with 'params' are:
-   *  - The connection info is provided by partner and not editable in DTS UI
-   *    which is different from the immutable parameter. It will be confusing to
-   *    add another boolean to DataSourceParameter to differentiate them.
-   *  - The connection info can be any arbitrary key-value pairs. Adding them to
-   *    params fields requires partner to provide definition for them in data
-   *    source definition. It will be friendlier to avoid that for partners.
-   * </pre>
-   *
-   * <code>.google.protobuf.Struct partner_connection_info = 23;</code>
-   */
-  public boolean hasPartnerConnectionInfo() {
-    return partnerConnectionInfo_ != null;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Transfer settings managed by partner data sources. It is stored as
-   * key-value pairs and used for DTS UI display purpose only. Two reasons we
-   * don't want to store them together with 'params' are:
-   *  - The connection info is provided by partner and not editable in DTS UI
-   *    which is different from the immutable parameter. It will be confusing to
-   *    add another boolean to DataSourceParameter to differentiate them.
-   *  - The connection info can be any arbitrary key-value pairs. Adding them to
-   *    params fields requires partner to provide definition for them in data
-   *    source definition. It will be friendlier to avoid that for partners.
-   * </pre>
-   *
-   * <code>.google.protobuf.Struct partner_connection_info = 23;</code>
-   */
-  public com.google.protobuf.Struct getPartnerConnectionInfo() {
-    return partnerConnectionInfo_ == null
-        ? com.google.protobuf.Struct.getDefaultInstance()
-        : partnerConnectionInfo_;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Transfer settings managed by partner data sources. It is stored as
-   * key-value pairs and used for DTS UI display purpose only. Two reasons we
-   * don't want to store them together with 'params' are:
-   *  - The connection info is provided by partner and not editable in DTS UI
-   *    which is different from the immutable parameter. It will be confusing to
-   *    add another boolean to DataSourceParameter to differentiate them.
-   *  - The connection info can be any arbitrary key-value pairs. Adding them to
-   *    params fields requires partner to provide definition for them in data
-   *    source definition. It will be friendlier to avoid that for partners.
-   * </pre>
-   *
-   * <code>.google.protobuf.Struct partner_connection_info = 23;</code>
-   */
-  public com.google.protobuf.StructOrBuilder getPartnerConnectionInfoOrBuilder() {
-    return getPartnerConnectionInfo();
-  }
-
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -948,12 +809,6 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
     if (!getDatasetRegionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 14, datasetRegion_);
     }
-    if (!getPartnerTokenBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 22, partnerToken_);
-    }
-    if (partnerConnectionInfo_ != null) {
-      output.writeMessage(23, getPartnerConnectionInfo());
-    }
     if (scheduleOptions_ != null) {
       output.writeMessage(24, getScheduleOptions());
     }
@@ -1007,13 +862,6 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
     if (!getDatasetRegionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, datasetRegion_);
     }
-    if (!getPartnerTokenBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(22, partnerToken_);
-    }
-    if (partnerConnectionInfo_ != null) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(23, getPartnerConnectionInfo());
-    }
     if (scheduleOptions_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(24, getScheduleOptions());
     }
@@ -1059,11 +907,6 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
     if (state_ != other.state_) return false;
     if (getUserId() != other.getUserId()) return false;
     if (!getDatasetRegion().equals(other.getDatasetRegion())) return false;
-    if (!getPartnerToken().equals(other.getPartnerToken())) return false;
-    if (hasPartnerConnectionInfo() != other.hasPartnerConnectionInfo()) return false;
-    if (hasPartnerConnectionInfo()) {
-      if (!getPartnerConnectionInfo().equals(other.getPartnerConnectionInfo())) return false;
-    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1111,12 +954,6 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getUserId());
     hash = (37 * hash) + DATASET_REGION_FIELD_NUMBER;
     hash = (53 * hash) + getDatasetRegion().hashCode();
-    hash = (37 * hash) + PARTNER_TOKEN_FIELD_NUMBER;
-    hash = (53 * hash) + getPartnerToken().hashCode();
-    if (hasPartnerConnectionInfo()) {
-      hash = (37 * hash) + PARTNER_CONNECTION_INFO_FIELD_NUMBER;
-      hash = (53 * hash) + getPartnerConnectionInfo().hashCode();
-    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1312,14 +1149,6 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
 
       datasetRegion_ = "";
 
-      partnerToken_ = "";
-
-      if (partnerConnectionInfoBuilder_ == null) {
-        partnerConnectionInfo_ = null;
-      } else {
-        partnerConnectionInfo_ = null;
-        partnerConnectionInfoBuilder_ = null;
-      }
       return this;
     }
 
@@ -1377,12 +1206,6 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
       result.state_ = state_;
       result.userId_ = userId_;
       result.datasetRegion_ = datasetRegion_;
-      result.partnerToken_ = partnerToken_;
-      if (partnerConnectionInfoBuilder_ == null) {
-        result.partnerConnectionInfo_ = partnerConnectionInfo_;
-      } else {
-        result.partnerConnectionInfo_ = partnerConnectionInfoBuilder_.build();
-      }
       onBuilt();
       return result;
     }
@@ -1480,13 +1303,6 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
       if (!other.getDatasetRegion().isEmpty()) {
         datasetRegion_ = other.datasetRegion_;
         onChanged();
-      }
-      if (!other.getPartnerToken().isEmpty()) {
-        partnerToken_ = other.partnerToken_;
-        onChanged();
-      }
-      if (other.hasPartnerConnectionInfo()) {
-        mergePartnerConnectionInfo(other.getPartnerConnectionInfo());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -3113,373 +2929,6 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
       datasetRegion_ = value;
       onChanged();
       return this;
-    }
-
-    private java.lang.Object partnerToken_ = "";
-    /**
-     *
-     *
-     * <pre>
-     * A unique identifier used for identifying a transfer setup stored on
-     * external partner side. The token is opaque to DTS and can only be
-     * interpreted by partner. Partner data source should create a mapping between
-     * the config id and the token to validate that a transfer config/run is
-     * legitimate.
-     * </pre>
-     *
-     * <code>string partner_token = 22;</code>
-     */
-    public java.lang.String getPartnerToken() {
-      java.lang.Object ref = partnerToken_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        partnerToken_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * A unique identifier used for identifying a transfer setup stored on
-     * external partner side. The token is opaque to DTS and can only be
-     * interpreted by partner. Partner data source should create a mapping between
-     * the config id and the token to validate that a transfer config/run is
-     * legitimate.
-     * </pre>
-     *
-     * <code>string partner_token = 22;</code>
-     */
-    public com.google.protobuf.ByteString getPartnerTokenBytes() {
-      java.lang.Object ref = partnerToken_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        partnerToken_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * A unique identifier used for identifying a transfer setup stored on
-     * external partner side. The token is opaque to DTS and can only be
-     * interpreted by partner. Partner data source should create a mapping between
-     * the config id and the token to validate that a transfer config/run is
-     * legitimate.
-     * </pre>
-     *
-     * <code>string partner_token = 22;</code>
-     */
-    public Builder setPartnerToken(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-
-      partnerToken_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * A unique identifier used for identifying a transfer setup stored on
-     * external partner side. The token is opaque to DTS and can only be
-     * interpreted by partner. Partner data source should create a mapping between
-     * the config id and the token to validate that a transfer config/run is
-     * legitimate.
-     * </pre>
-     *
-     * <code>string partner_token = 22;</code>
-     */
-    public Builder clearPartnerToken() {
-
-      partnerToken_ = getDefaultInstance().getPartnerToken();
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * A unique identifier used for identifying a transfer setup stored on
-     * external partner side. The token is opaque to DTS and can only be
-     * interpreted by partner. Partner data source should create a mapping between
-     * the config id and the token to validate that a transfer config/run is
-     * legitimate.
-     * </pre>
-     *
-     * <code>string partner_token = 22;</code>
-     */
-    public Builder setPartnerTokenBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-
-      partnerToken_ = value;
-      onChanged();
-      return this;
-    }
-
-    private com.google.protobuf.Struct partnerConnectionInfo_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Struct,
-            com.google.protobuf.Struct.Builder,
-            com.google.protobuf.StructOrBuilder>
-        partnerConnectionInfoBuilder_;
-    /**
-     *
-     *
-     * <pre>
-     * Transfer settings managed by partner data sources. It is stored as
-     * key-value pairs and used for DTS UI display purpose only. Two reasons we
-     * don't want to store them together with 'params' are:
-     *  - The connection info is provided by partner and not editable in DTS UI
-     *    which is different from the immutable parameter. It will be confusing to
-     *    add another boolean to DataSourceParameter to differentiate them.
-     *  - The connection info can be any arbitrary key-value pairs. Adding them to
-     *    params fields requires partner to provide definition for them in data
-     *    source definition. It will be friendlier to avoid that for partners.
-     * </pre>
-     *
-     * <code>.google.protobuf.Struct partner_connection_info = 23;</code>
-     */
-    public boolean hasPartnerConnectionInfo() {
-      return partnerConnectionInfoBuilder_ != null || partnerConnectionInfo_ != null;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Transfer settings managed by partner data sources. It is stored as
-     * key-value pairs and used for DTS UI display purpose only. Two reasons we
-     * don't want to store them together with 'params' are:
-     *  - The connection info is provided by partner and not editable in DTS UI
-     *    which is different from the immutable parameter. It will be confusing to
-     *    add another boolean to DataSourceParameter to differentiate them.
-     *  - The connection info can be any arbitrary key-value pairs. Adding them to
-     *    params fields requires partner to provide definition for them in data
-     *    source definition. It will be friendlier to avoid that for partners.
-     * </pre>
-     *
-     * <code>.google.protobuf.Struct partner_connection_info = 23;</code>
-     */
-    public com.google.protobuf.Struct getPartnerConnectionInfo() {
-      if (partnerConnectionInfoBuilder_ == null) {
-        return partnerConnectionInfo_ == null
-            ? com.google.protobuf.Struct.getDefaultInstance()
-            : partnerConnectionInfo_;
-      } else {
-        return partnerConnectionInfoBuilder_.getMessage();
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Transfer settings managed by partner data sources. It is stored as
-     * key-value pairs and used for DTS UI display purpose only. Two reasons we
-     * don't want to store them together with 'params' are:
-     *  - The connection info is provided by partner and not editable in DTS UI
-     *    which is different from the immutable parameter. It will be confusing to
-     *    add another boolean to DataSourceParameter to differentiate them.
-     *  - The connection info can be any arbitrary key-value pairs. Adding them to
-     *    params fields requires partner to provide definition for them in data
-     *    source definition. It will be friendlier to avoid that for partners.
-     * </pre>
-     *
-     * <code>.google.protobuf.Struct partner_connection_info = 23;</code>
-     */
-    public Builder setPartnerConnectionInfo(com.google.protobuf.Struct value) {
-      if (partnerConnectionInfoBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        partnerConnectionInfo_ = value;
-        onChanged();
-      } else {
-        partnerConnectionInfoBuilder_.setMessage(value);
-      }
-
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Transfer settings managed by partner data sources. It is stored as
-     * key-value pairs and used for DTS UI display purpose only. Two reasons we
-     * don't want to store them together with 'params' are:
-     *  - The connection info is provided by partner and not editable in DTS UI
-     *    which is different from the immutable parameter. It will be confusing to
-     *    add another boolean to DataSourceParameter to differentiate them.
-     *  - The connection info can be any arbitrary key-value pairs. Adding them to
-     *    params fields requires partner to provide definition for them in data
-     *    source definition. It will be friendlier to avoid that for partners.
-     * </pre>
-     *
-     * <code>.google.protobuf.Struct partner_connection_info = 23;</code>
-     */
-    public Builder setPartnerConnectionInfo(com.google.protobuf.Struct.Builder builderForValue) {
-      if (partnerConnectionInfoBuilder_ == null) {
-        partnerConnectionInfo_ = builderForValue.build();
-        onChanged();
-      } else {
-        partnerConnectionInfoBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Transfer settings managed by partner data sources. It is stored as
-     * key-value pairs and used for DTS UI display purpose only. Two reasons we
-     * don't want to store them together with 'params' are:
-     *  - The connection info is provided by partner and not editable in DTS UI
-     *    which is different from the immutable parameter. It will be confusing to
-     *    add another boolean to DataSourceParameter to differentiate them.
-     *  - The connection info can be any arbitrary key-value pairs. Adding them to
-     *    params fields requires partner to provide definition for them in data
-     *    source definition. It will be friendlier to avoid that for partners.
-     * </pre>
-     *
-     * <code>.google.protobuf.Struct partner_connection_info = 23;</code>
-     */
-    public Builder mergePartnerConnectionInfo(com.google.protobuf.Struct value) {
-      if (partnerConnectionInfoBuilder_ == null) {
-        if (partnerConnectionInfo_ != null) {
-          partnerConnectionInfo_ =
-              com.google.protobuf.Struct.newBuilder(partnerConnectionInfo_)
-                  .mergeFrom(value)
-                  .buildPartial();
-        } else {
-          partnerConnectionInfo_ = value;
-        }
-        onChanged();
-      } else {
-        partnerConnectionInfoBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Transfer settings managed by partner data sources. It is stored as
-     * key-value pairs and used for DTS UI display purpose only. Two reasons we
-     * don't want to store them together with 'params' are:
-     *  - The connection info is provided by partner and not editable in DTS UI
-     *    which is different from the immutable parameter. It will be confusing to
-     *    add another boolean to DataSourceParameter to differentiate them.
-     *  - The connection info can be any arbitrary key-value pairs. Adding them to
-     *    params fields requires partner to provide definition for them in data
-     *    source definition. It will be friendlier to avoid that for partners.
-     * </pre>
-     *
-     * <code>.google.protobuf.Struct partner_connection_info = 23;</code>
-     */
-    public Builder clearPartnerConnectionInfo() {
-      if (partnerConnectionInfoBuilder_ == null) {
-        partnerConnectionInfo_ = null;
-        onChanged();
-      } else {
-        partnerConnectionInfo_ = null;
-        partnerConnectionInfoBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Transfer settings managed by partner data sources. It is stored as
-     * key-value pairs and used for DTS UI display purpose only. Two reasons we
-     * don't want to store them together with 'params' are:
-     *  - The connection info is provided by partner and not editable in DTS UI
-     *    which is different from the immutable parameter. It will be confusing to
-     *    add another boolean to DataSourceParameter to differentiate them.
-     *  - The connection info can be any arbitrary key-value pairs. Adding them to
-     *    params fields requires partner to provide definition for them in data
-     *    source definition. It will be friendlier to avoid that for partners.
-     * </pre>
-     *
-     * <code>.google.protobuf.Struct partner_connection_info = 23;</code>
-     */
-    public com.google.protobuf.Struct.Builder getPartnerConnectionInfoBuilder() {
-
-      onChanged();
-      return getPartnerConnectionInfoFieldBuilder().getBuilder();
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Transfer settings managed by partner data sources. It is stored as
-     * key-value pairs and used for DTS UI display purpose only. Two reasons we
-     * don't want to store them together with 'params' are:
-     *  - The connection info is provided by partner and not editable in DTS UI
-     *    which is different from the immutable parameter. It will be confusing to
-     *    add another boolean to DataSourceParameter to differentiate them.
-     *  - The connection info can be any arbitrary key-value pairs. Adding them to
-     *    params fields requires partner to provide definition for them in data
-     *    source definition. It will be friendlier to avoid that for partners.
-     * </pre>
-     *
-     * <code>.google.protobuf.Struct partner_connection_info = 23;</code>
-     */
-    public com.google.protobuf.StructOrBuilder getPartnerConnectionInfoOrBuilder() {
-      if (partnerConnectionInfoBuilder_ != null) {
-        return partnerConnectionInfoBuilder_.getMessageOrBuilder();
-      } else {
-        return partnerConnectionInfo_ == null
-            ? com.google.protobuf.Struct.getDefaultInstance()
-            : partnerConnectionInfo_;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Transfer settings managed by partner data sources. It is stored as
-     * key-value pairs and used for DTS UI display purpose only. Two reasons we
-     * don't want to store them together with 'params' are:
-     *  - The connection info is provided by partner and not editable in DTS UI
-     *    which is different from the immutable parameter. It will be confusing to
-     *    add another boolean to DataSourceParameter to differentiate them.
-     *  - The connection info can be any arbitrary key-value pairs. Adding them to
-     *    params fields requires partner to provide definition for them in data
-     *    source definition. It will be friendlier to avoid that for partners.
-     * </pre>
-     *
-     * <code>.google.protobuf.Struct partner_connection_info = 23;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Struct,
-            com.google.protobuf.Struct.Builder,
-            com.google.protobuf.StructOrBuilder>
-        getPartnerConnectionInfoFieldBuilder() {
-      if (partnerConnectionInfoBuilder_ == null) {
-        partnerConnectionInfoBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.protobuf.Struct,
-                com.google.protobuf.Struct.Builder,
-                com.google.protobuf.StructOrBuilder>(
-                getPartnerConnectionInfo(), getParentForChildren(), isClean());
-        partnerConnectionInfo_ = null;
-      }
-      return partnerConnectionInfoBuilder_;
     }
 
     @java.lang.Override

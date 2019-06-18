@@ -97,8 +97,6 @@ public class DataTransferServiceClientTest {
     String helpUrl = "helpUrl-789431439";
     int defaultDataRefreshWindowDays = 1804935157;
     boolean manualRunsDisabled = true;
-    String partnerLegalName = "partnerLegalName-1307326424";
-    String redirectUrl = "redirectUrl951230092";
     DataSource expectedResponse =
         DataSource.newBuilder()
             .setName(name2.toString())
@@ -113,8 +111,6 @@ public class DataTransferServiceClientTest {
             .setHelpUrl(helpUrl)
             .setDefaultDataRefreshWindowDays(defaultDataRefreshWindowDays)
             .setManualRunsDisabled(manualRunsDisabled)
-            .setPartnerLegalName(partnerLegalName)
-            .setRedirectUrl(redirectUrl)
             .build();
     mockDataTransferService.addResponse(expectedResponse);
 
@@ -210,7 +206,6 @@ public class DataTransferServiceClientTest {
     boolean disabled = true;
     long userId = 147132913L;
     String datasetRegion = "datasetRegion959248539";
-    String partnerToken = "partnerToken725173186";
     TransferConfig expectedResponse =
         TransferConfig.newBuilder()
             .setName(name.toString())
@@ -222,7 +217,6 @@ public class DataTransferServiceClientTest {
             .setDisabled(disabled)
             .setUserId(userId)
             .setDatasetRegion(datasetRegion)
-            .setPartnerToken(partnerToken)
             .build();
     mockDataTransferService.addResponse(expectedResponse);
 
@@ -273,7 +267,6 @@ public class DataTransferServiceClientTest {
     boolean disabled = true;
     long userId = 147132913L;
     String datasetRegion = "datasetRegion959248539";
-    String partnerToken = "partnerToken725173186";
     TransferConfig expectedResponse =
         TransferConfig.newBuilder()
             .setName(name.toString())
@@ -285,7 +278,6 @@ public class DataTransferServiceClientTest {
             .setDisabled(disabled)
             .setUserId(userId)
             .setDatasetRegion(datasetRegion)
-            .setPartnerToken(partnerToken)
             .build();
     mockDataTransferService.addResponse(expectedResponse);
 
@@ -373,7 +365,6 @@ public class DataTransferServiceClientTest {
     boolean disabled = true;
     long userId = 147132913L;
     String datasetRegion = "datasetRegion959248539";
-    String partnerToken = "partnerToken725173186";
     TransferConfig expectedResponse =
         TransferConfig.newBuilder()
             .setName(name2.toString())
@@ -385,7 +376,6 @@ public class DataTransferServiceClientTest {
             .setDisabled(disabled)
             .setUserId(userId)
             .setDatasetRegion(datasetRegion)
-            .setPartnerToken(partnerToken)
             .build();
     mockDataTransferService.addResponse(expectedResponse);
 
@@ -523,7 +513,6 @@ public class DataTransferServiceClientTest {
     String dataSourceId = "dataSourceId-1015796374";
     long userId = 147132913L;
     String schedule = "schedule-697920873";
-    String partnerToken = "partnerToken725173186";
     TransferRun expectedResponse =
         TransferRun.newBuilder()
             .setName(name2.toString())
@@ -531,7 +520,6 @@ public class DataTransferServiceClientTest {
             .setDataSourceId(dataSourceId)
             .setUserId(userId)
             .setSchedule(schedule)
-            .setPartnerToken(partnerToken)
             .build();
     mockDataTransferService.addResponse(expectedResponse);
 

@@ -35,60 +35,6 @@ public interface StartManualTransferRunsRequestOrBuilder
    *
    *
    * <pre>
-   * User labels to add to the backfilled runs.
-   * </pre>
-   *
-   * <code>map&lt;string, string&gt; labels = 2;</code>
-   */
-  int getLabelsCount();
-  /**
-   *
-   *
-   * <pre>
-   * User labels to add to the backfilled runs.
-   * </pre>
-   *
-   * <code>map&lt;string, string&gt; labels = 2;</code>
-   */
-  boolean containsLabels(java.lang.String key);
-  /** Use {@link #getLabelsMap()} instead. */
-  @java.lang.Deprecated
-  java.util.Map<java.lang.String, java.lang.String> getLabels();
-  /**
-   *
-   *
-   * <pre>
-   * User labels to add to the backfilled runs.
-   * </pre>
-   *
-   * <code>map&lt;string, string&gt; labels = 2;</code>
-   */
-  java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-  /**
-   *
-   *
-   * <pre>
-   * User labels to add to the backfilled runs.
-   * </pre>
-   *
-   * <code>map&lt;string, string&gt; labels = 2;</code>
-   */
-  java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue);
-  /**
-   *
-   *
-   * <pre>
-   * User labels to add to the backfilled runs.
-   * </pre>
-   *
-   * <code>map&lt;string, string&gt; labels = 2;</code>
-   */
-  java.lang.String getLabelsOrThrow(java.lang.String key);
-
-  /**
-   *
-   *
-   * <pre>
    * Time range for the transfer runs that should be started.
    * </pre>
    *
