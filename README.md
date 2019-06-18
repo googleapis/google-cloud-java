@@ -32,6 +32,7 @@ This library supports the following Google Cloud Platform services with clients 
 -  [BigQuery Data Transfer](google-cloud-clients/google-cloud-bigquerydatatransfer) (Beta)
 -  [Cloud Asset](google-cloud-clients/google-cloud-asset) (Beta)
 -  [Cloud AutoML](google-cloud-clients/google-cloud-automl) (Beta)
+-  [Cloud Bigtable](google-cloud-clients/google-cloud-bigtable) (Beta)
 -  [Cloud Container Analysis](google-cloud-clients/google-cloud-containeranalysis) (Beta)
 -  [Cloud Data Loss Prevention](google-cloud-clients/google-cloud-dlp) (Beta)
 -  [Cloud IoT Core](google-cloud-clients/google-cloud-iot) (Beta)
@@ -48,7 +49,6 @@ This library supports the following Google Cloud Platform services with clients 
 This library supports the following Google Cloud Platform services with clients at an [Alpha](#versioning) quality level:
 
 -  [BigQuery Storage](google-cloud-clients/google-cloud-bigquerystorage) (Alpha)
--  [Cloud Bigtable](google-cloud-clients/google-cloud-bigtable) (Alpha)
 -  [Cloud Compute](google-cloud-clients/google-cloud-compute) (Alpha)
 -  [Cloud Data Catalog](google-cloud-clients/google-cloud-datacatalog) (Alpha)
 -  [Cloud Data Labeling](google-cloud-clients/google-cloud-datalabeling) (Alpha)
