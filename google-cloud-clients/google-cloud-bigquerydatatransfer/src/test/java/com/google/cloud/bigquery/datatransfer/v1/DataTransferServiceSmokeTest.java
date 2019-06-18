@@ -46,7 +46,7 @@ public class DataTransferServiceSmokeTest {
 
   public static void executeNoCatch(String projectId) throws Exception {
     try (DataTransferServiceClient client = DataTransferServiceClient.create()) {
-      ParentName parent = ProjectName.of(projectId);
+      ParentName parent = LocationName.of(projectId, "us-central1");
 
       ListDataSourcesPagedResponse pagedResponse = client.listDataSources(parent);
     }

@@ -39,60 +39,6 @@ public interface TransferRunOrBuilder
    *
    *
    * <pre>
-   * User labels.
-   * </pre>
-   *
-   * <code>map&lt;string, string&gt; labels = 22;</code>
-   */
-  int getLabelsCount();
-  /**
-   *
-   *
-   * <pre>
-   * User labels.
-   * </pre>
-   *
-   * <code>map&lt;string, string&gt; labels = 22;</code>
-   */
-  boolean containsLabels(java.lang.String key);
-  /** Use {@link #getLabelsMap()} instead. */
-  @java.lang.Deprecated
-  java.util.Map<java.lang.String, java.lang.String> getLabels();
-  /**
-   *
-   *
-   * <pre>
-   * User labels.
-   * </pre>
-   *
-   * <code>map&lt;string, string&gt; labels = 22;</code>
-   */
-  java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-  /**
-   *
-   *
-   * <pre>
-   * User labels.
-   * </pre>
-   *
-   * <code>map&lt;string, string&gt; labels = 22;</code>
-   */
-  java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue);
-  /**
-   *
-   *
-   * <pre>
-   * User labels.
-   * </pre>
-   *
-   * <code>map&lt;string, string&gt; labels = 22;</code>
-   */
-  java.lang.String getLabelsOrThrow(java.lang.String key);
-
-  /**
-   *
-   *
-   * <pre>
    * Minimum time after which a transfer run can be started.
    * </pre>
    *
@@ -124,8 +70,8 @@ public interface TransferRunOrBuilder
    *
    *
    * <pre>
-   * For batch transfer runs, specifies the date and time that
-   * data should be ingested.
+   * For batch transfer runs, specifies the date and time of the data should be
+   * ingested.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp run_time = 10;</code>
@@ -135,8 +81,8 @@ public interface TransferRunOrBuilder
    *
    *
    * <pre>
-   * For batch transfer runs, specifies the date and time that
-   * data should be ingested.
+   * For batch transfer runs, specifies the date and time of the data should be
+   * ingested.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp run_time = 10;</code>
@@ -146,8 +92,8 @@ public interface TransferRunOrBuilder
    *
    *
    * <pre>
-   * For batch transfer runs, specifies the date and time that
-   * data should be ingested.
+   * For batch transfer runs, specifies the date and time of the data should be
+   * ingested.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp run_time = 10;</code>
@@ -417,35 +363,4 @@ public interface TransferRunOrBuilder
    * <code>string schedule = 12;</code>
    */
   com.google.protobuf.ByteString getScheduleBytes();
-
-  /**
-   *
-   *
-   * <pre>
-   * Output only. This is the same token initialized from TransferConfig.
-   * Partner token is a unique identifier used for identifying a transfer setup
-   * stored on external partner side. The token is opaque to DTS and can only be
-   * interpreted by partner. Partner data source should create a mapping between
-   * the config id and the token to validate that a transfer config/run is
-   * legitimate.
-   * </pre>
-   *
-   * <code>string partner_token = 28;</code>
-   */
-  java.lang.String getPartnerToken();
-  /**
-   *
-   *
-   * <pre>
-   * Output only. This is the same token initialized from TransferConfig.
-   * Partner token is a unique identifier used for identifying a transfer setup
-   * stored on external partner side. The token is opaque to DTS and can only be
-   * interpreted by partner. Partner data source should create a mapping between
-   * the config id and the token to validate that a transfer config/run is
-   * legitimate.
-   * </pre>
-   *
-   * <code>string partner_token = 28;</code>
-   */
-  com.google.protobuf.ByteString getPartnerTokenBytes();
 }
