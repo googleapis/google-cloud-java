@@ -60,6 +60,17 @@ public enum FileType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>IMAGE = 3;</code>
    */
   IMAGE(3),
+  /**
+   *
+   *
+   * <pre>
+   * Included file extensions:
+   *   avro
+   * </pre>
+   *
+   * <code>AVRO = 7;</code>
+   */
+  AVRO(7),
   UNRECOGNIZED(-1),
   ;
 
@@ -110,6 +121,17 @@ public enum FileType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>IMAGE = 3;</code>
    */
   public static final int IMAGE_VALUE = 3;
+  /**
+   *
+   *
+   * <pre>
+   * Included file extensions:
+   *   avro
+   * </pre>
+   *
+   * <code>AVRO = 7;</code>
+   */
+  public static final int AVRO_VALUE = 7;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -135,6 +157,8 @@ public enum FileType implements com.google.protobuf.ProtocolMessageEnum {
         return TEXT_FILE;
       case 3:
         return IMAGE;
+      case 7:
+        return AVRO;
       default:
         return null;
     }
