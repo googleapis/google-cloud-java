@@ -23,6 +23,6 @@ import com.google.cloud.logging.LogEntry;
  * An enhancer for {@linkplain ILoggingEvent} log entries. Used to add custom labels to the {@link
  * LogEntry.Builder}.
  */
-public interface LoggingEventEnhancer {
-  void enhanceLogEntry(LogEntry.Builder builder, ILoggingEvent e);
+public interface LoggingEventEnhancer<E> {
+  void enhanceLogEntry(LogEntry.Builder builder, E event);
 }
