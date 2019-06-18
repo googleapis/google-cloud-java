@@ -190,14 +190,14 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
    *
    * <p>This is idempotent and streaming operation.
    *
-   * <p>Default settings:
+   * <p>Default retry and timeout settings:
    *
    * <ul>
    *   <li>{@link ServerStreamingCallSettings.Builder#setIdleTimeout Default idle timeout} is set to
    *       5 mins.
    *   <li>Retry {@link ServerStreamingCallSettings.Builder#setRetryableCodes error codes} are:
    *       {@link Code#DEADLINE_EXCEEDED} and {@link Code#UNAVAILABLE}.
-   *   <li>RetryDelay between failed attempt {@link RetrySettings.Builder#setInitialRetryDelay
+   *   <li>RetryDelay between failed attempts {@link RetrySettings.Builder#setInitialRetryDelay
    *       starts} at 100ms and {@link RetrySettings.Builder#setRetryDelayMultiplier increases
    *       exponentially} by a factor of 1.3 until a {@link RetrySettings.Builder#setMaxRetryDelay
    *       maximum of} 60 seconds.
@@ -215,17 +215,17 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
    *
    * <p>This is idempotent and non-streaming operation.
    *
-   * <p>Default settings:
+   * <p>Default retry and timeout settings:
    *
    * <ul>
    *   <li>Retry {@link UnaryCallSettings.Builder#setRetryableCodes error codes} are: {@link
    *       Code#DEADLINE_EXCEEDED} and {@link Code#UNAVAILABLE}.
-   *   <li>RetryDelay between failed attempt {@link RetrySettings.Builder#setInitialRetryDelay
+   *   <li>RetryDelay between failed attempts {@link RetrySettings.Builder#setInitialRetryDelay
    *       starts} at 100ms and {@link RetrySettings.Builder#setRetryDelayMultiplier increases
    *       exponentially} by a factor of 1.3 until a {@link RetrySettings.Builder#setMaxRetryDelay
    *       maximum of} 60 seconds.
    *   <li>The default timeout for {@link RetrySettings.Builder#setMaxRpcTimeout each attempt} is 20
-   *       seconds and the timeout for {@link RetrySettings.Builder#setTotalTimeout entire
+   *       seconds and the timeout for the {@link RetrySettings.Builder#setTotalTimeout entire
    *       operation} across all of the attempts is 10 mins.
    * </ul>
    */
@@ -238,17 +238,17 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
    *
    * <p>This is an idempotent and non-streaming operation.
    *
-   * <p>Default settings:
+   * <p>Default retry and timeout settings:
    *
    * <ul>
    *   <li>Retry {@link UnaryCallSettings.Builder#setRetryableCodes error codes} are: {@link
    *       Code#DEADLINE_EXCEEDED} and {@link Code#UNAVAILABLE}.
-   *   <li>RetryDelay between failed attempt {@link RetrySettings.Builder#setInitialRetryDelay
+   *   <li>RetryDelay between failed attempts {@link RetrySettings.Builder#setInitialRetryDelay
    *       starts} at 100ms and {@link RetrySettings.Builder#setRetryDelayMultiplier increases
    *       exponentially} by a factor of 1.3 until a {@link RetrySettings.Builder#setMaxRetryDelay
    *       maximum of} 60 seconds.
    *   <li>The default timeout for {@link RetrySettings.Builder#setMaxRpcTimeout each attempt} is 20
-   *       seconds and the timeout for {@link RetrySettings.Builder#setTotalTimeout entire
+   *       seconds and the timeout for the {@link RetrySettings.Builder#setTotalTimeout entire
    *       operation} across all of the attempts is 10 mins.
    * </ul>
    *
@@ -263,17 +263,17 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
    *
    * <p>This is an idempotent and non-streaming operation.
    *
-   * <p>Default settings:
+   * <p>Default retry and timeout settings:
    *
    * <ul>
    *   <li>Retry {@link UnaryCallSettings.Builder#setRetryableCodes error codes} are: {@link
    *       Code#DEADLINE_EXCEEDED} and {@link Code#UNAVAILABLE}.
-   *   <li>RetryDelay between failed attempt {@link RetrySettings.Builder#setInitialRetryDelay
+   *   <li>RetryDelay between failed attempts {@link RetrySettings.Builder#setInitialRetryDelay
    *       starts} at 100ms and {@link RetrySettings.Builder#setRetryDelayMultiplier increases
    *       exponentially} by a factor of 1.3 until a {@link RetrySettings.Builder#setMaxRetryDelay
    *       maximum of} 60 seconds.
    *   <li>The default timeout for {@link RetrySettings.Builder#setMaxRpcTimeout each attempt} is 20
-   *       seconds and the timeout for {@link RetrySettings.Builder#setTotalTimeout entire
+   *       seconds and the timeout for the {@link RetrySettings.Builder#setTotalTimeout entire
    *       operation} across all of the attempts is 10 mins.
    * </ul>
    *
@@ -290,17 +290,17 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
    * (bulkMutateRowsCallable) and automatic batched calls (bulkMutateRowsBatchingCallable). The
    * {@link RowMutation} request signature is ignored for the manual batched calls.
    *
-   * <p>Default settings:
+   * <p>Default retry and timeout settings:
    *
    * <ul>
    *   <li>Retry {@link UnaryCallSettings.Builder#setRetryableCodes error codes} are: {@link
    *       Code#DEADLINE_EXCEEDED}, {@link Code#UNAVAILABLE} and {@link Code#ABORTED}.
-   *   <li>RetryDelay between failed attempt {@link RetrySettings.Builder#setInitialRetryDelay
+   *   <li>RetryDelay between failed attempts {@link RetrySettings.Builder#setInitialRetryDelay
    *       starts} at 100ms and {@link RetrySettings.Builder#setRetryDelayMultiplier increases
    *       exponentially} by a factor of 1.3 until a {@link RetrySettings.Builder#setMaxRetryDelay
    *       maximum of} 60 seconds.
    *   <li>The default timeout for {@link RetrySettings.Builder#setMaxRpcTimeout each attempt} is 20
-   *       seconds and the timeout for {@link RetrySettings.Builder#setTotalTimeout entire
+   *       seconds and the timeout for the {@link RetrySettings.Builder#setTotalTimeout entire
    *       operation} across all of the attempts is 10 mins.
    * </ul>
    *
