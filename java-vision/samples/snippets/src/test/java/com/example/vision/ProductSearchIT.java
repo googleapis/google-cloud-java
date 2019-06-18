@@ -26,20 +26,21 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-/** Integration (system) tests for {@link ProductSearch}. */
+/**
+ * Integration (system) tests for {@link ProductSearch}.Tests rely on pre-created product set
+ * that has been indexed.
+ **/
 @RunWith(JUnit4.class)
 @SuppressWarnings("checkstyle:abbreviationaswordinname")
 public class ProductSearchIT {
   private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
   private static final String COMPUTE_REGION = "us-west1";
-  private static final String GCS_URI =
-      "gs://java-docs-samples-testing/product-search/indexed_product_sets.csv";
   private static final String PRODUCT_SET_ID = "indexed_product_set_id_for_testing";
   private static final String PRODUCT_CATEGORY = "apparel";
   private static final String PRODUCT_ID_1 = "indexed_product_id_for_testing_1";
   private static final String PRODUCT_ID_2 = "indexed_product_id_for_testing_2";
   private static final String IMAGE_URI_1 =
-      "gs://java-docs-samples-testing/product-search/shoes_1.jpg";
+      "gs://cloud-samples-data/vision/product_search/shoes_1.jpg";
   private static final String FILE_PATH_1 = "./resources/shoes_1.jpg";
   private static final String FILTER = "style=womens";
   private ByteArrayOutputStream bout;
@@ -51,15 +52,11 @@ public class ProductSearchIT {
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
     System.setOut(out);
-    ImportProductSets.importProductSets(PROJECT_ID, COMPUTE_REGION, GCS_URI);
     bout.reset();
   }
 
   @After
   public void tearDown() throws Exception {
-    ProductManagement.deleteProduct(PROJECT_ID,COMPUTE_REGION,PRODUCT_ID_1);
-    ProductManagement.deleteProduct(PROJECT_ID,COMPUTE_REGION,PRODUCT_ID_2);
-    ProductSetManagement.deleteProductSet(PROJECT_ID, COMPUTE_REGION, PRODUCT_SET_ID);
     System.setOut(null);
   }
 

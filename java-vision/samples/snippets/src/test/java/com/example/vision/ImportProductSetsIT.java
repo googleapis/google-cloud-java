@@ -34,7 +34,7 @@ public class ImportProductSetsIT {
   private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
   private static final String COMPUTE_REGION = "us-west1";
   private static final String GCS_URI =
-      "gs://java-docs-samples-testing/product-search/product_sets.csv";
+      "gs://cloud-samples-data/vision/product_search/product_sets.csv";
   private static final String PRODUCT_SET_ID = "fake_product_set_id_for_testing";
   private static final String PRODUCT_ID_1 = "fake_product_id_for_testing_1";
   private static final String PRODUCT_ID_2 = "fake_product_id_for_testing_2";
