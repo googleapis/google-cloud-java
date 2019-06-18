@@ -19,17 +19,9 @@ package com.m.examples.bigtable;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;
 
-import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient;
-import com.google.cloud.bigtable.admin.v2.BigtableTableAdminSettings;
-import com.google.cloud.bigtable.data.v2.BigtableDataClient;
-import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
 import java.io.ByteArrayOutputStream;
-import java.io.IOException;
 import java.io.PrintStream;
 import org.hamcrest.CoreMatchers;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.AssumptionViolatedException;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -39,7 +31,7 @@ import org.junit.Test;
  */
 public class QuickstartTest {
 
-  private static final String INSTANCE_PROPERTY_NAME = "BIGTABLE_TESTING_INSTANCE";
+  private static final String INSTANCE_ENV = "BIGTABLE_TESTING_INSTANCE";
   private static final String TABLE_ID = "quickstart-table";
   private static String projectId;
   private static String instanceId;
@@ -48,30 +40,25 @@ public class QuickstartTest {
   private static String requireEnv(String varName) {
     assertNotNull(
         System.getenv(varName),
-        "System property '%s' is required to perform these tests.".format(varName));
+        "Environment variable '%s' is required to perform these tests.".format(varName));
     return System.getenv(varName);
   }
 
   @BeforeClass
   public static void beforeClass() {
     projectId = requireEnv("GOOGLE_CLOUD_PROJECT");
-    instanceId = requireEnv(INSTANCE_PROPERTY_NAME);
+    instanceId = requireEnv(INSTANCE_ENV);
   }
 
   @Before
-  public void setupStream() {
+  public void setUp() {
     bout = new ByteArrayOutputStream();
     System.setOut(new PrintStream(bout));
   }
 
   @Test
   public void testQuickstart() {
-    try {
-      Quickstart.quickstart(projectId, instanceId, TABLE_ID);
-    } catch (Exception e) {
-      System.out.println("Failed to run quickstart.");
-      System.out.println(e);
-    }
+    Quickstart.quickstart(projectId, instanceId, TABLE_ID);
 
     String output = bout.toString();
     assertThat(output, CoreMatchers.containsString("Reading a single row by row key"));

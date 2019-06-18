@@ -38,21 +38,18 @@ public class Quickstart {
     // once, and can be reused for multiple requests. After completing all of your requests, call
     // the "close" method on the client to safely clean up any remaining background resources.
     try (BigtableDataClient dataClient = BigtableDataClient.create(settings)) {
-      try {
-        System.out.println("\nReading a single row by row key");
-        Row row = dataClient.readRow(tableId, "r1");
-        System.out.println("Row: " + row.getKey().toStringUtf8());
-        for (RowCell cell : row.getCells()) {
-          System.out.printf(
-              "Family: %s    Qualifier: %s    Value: %s%n",
-              cell.getFamily(), cell.getQualifier().toStringUtf8(), cell.getValue().toStringUtf8());
-        }
-      } catch (NotFoundException e) {
-        System.err.println("Failed to read from a non-existent table: " + e.getMessage());
+      System.out.println("\nReading a single row by row key");
+      Row row = dataClient.readRow(tableId, "r1");
+      System.out.println("Row: " + row.getKey().toStringUtf8());
+      for (RowCell cell : row.getCells()) {
+        System.out.printf(
+            "Family: %s    Qualifier: %s    Value: %s%n",
+            cell.getFamily(), cell.getQualifier().toStringUtf8(), cell.getValue().toStringUtf8());
       }
-
+    } catch (NotFoundException e) {
+      System.err.println("Failed to read from a non-existent table: " + e.getMessage());
     } catch (Exception e) {
-      System.out.println("Error during functionName: \n" + e.toString());
+      System.out.println("Error during quickstart: \n" + e.toString());
     }
   }
 }

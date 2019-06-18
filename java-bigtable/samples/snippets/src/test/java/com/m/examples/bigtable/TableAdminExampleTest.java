@@ -46,7 +46,7 @@ import org.junit.Test;
 /** Integration tests for {@link TableAdminExample} */
 public class TableAdminExampleTest {
 
-  private static final String INSTANCE_PROPERTY_NAME = "BIGTABLE_TESTING_INSTANCE";
+  private static final String INSTANCE_ENV = "BIGTABLE_TESTING_INSTANCE";
   private static final String TABLE_PREFIX = "table";
   private static BigtableTableAdminClient adminClient;
   private static String instanceId;
@@ -57,18 +57,14 @@ public class TableAdminExampleTest {
   private static String requireEnv(String varName) {
     assertNotNull(
         System.getenv(varName),
-        "System property '%s' is required to perform these tests.".format(varName));
+        "Environment variable '%s' is required to perform these tests.".format(varName));
     return System.getenv(varName);
   }
 
   @BeforeClass
   public static void beforeClass() throws IOException {
     projectId = requireEnv("GOOGLE_CLOUD_PROJECT");
-    instanceId = requireEnv(INSTANCE_PROPERTY_NAME);
-    if (projectId == null || instanceId == null) {
-      adminClient = null;
-      return;
-    }
+    instanceId = requireEnv(INSTANCE_ENV);
     BigtableTableAdminSettings adminSettings =
         BigtableTableAdminSettings.newBuilder()
             .setInstanceId(instanceId)
