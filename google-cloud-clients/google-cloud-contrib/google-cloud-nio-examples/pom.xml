@@ -17,12 +17,6 @@
   <properties>
     <site.installationModule>google-cloud-nio-examples</site.installationModule>
   </properties>
-  <dependencies>
-    <dependency>
-      <groupId>${project.groupId}</groupId>
-      <artifactId>google-cloud-storage</artifactId>
-    </dependency>
-  </dependencies>
   <build>
     <plugins>
       <plugin>
