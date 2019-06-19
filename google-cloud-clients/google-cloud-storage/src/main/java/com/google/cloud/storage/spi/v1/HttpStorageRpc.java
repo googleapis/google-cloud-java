@@ -664,7 +664,7 @@ public class HttpStorageRpc implements StorageRpc {
       setEncryptionHeaders(requestHeaders, ENCRYPTION_KEY_PREFIX, options);
       ByteArrayOutputStream output = new ByteArrayOutputStream(bytes);
       req.setReturnRawInputStream(true);
-      req.executeMediaAndDownloadTo(output);
+      req.executeMedia().download(output);
       String etag = req.getLastResponseHeaders().getETag();
       return Tuple.of(etag, output.toByteArray());
     } catch (IOException ex) {
