@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,17 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+package com.google.cloud.logging;
 
-package com.google.cloud.logging.logback;
-
-import ch.qos.logback.classic.spi.ILoggingEvent;
-import com.google.cloud.logging.LogEntry;
-
-/**
- * An enhancer for {@linkplain ILoggingEvent} log entries. Used to add custom labels to the {@link
- * LogEntry.Builder}.
- */
-public interface LoggingEventEnhancer
-    extends com.google.cloud.logging.LoggingEventEnhancer<ILoggingEvent> {
-  void enhanceLogEntry(LogEntry.Builder builder, ILoggingEvent event);
+public interface LoggingEventEnhancer<E> {
+  void enhanceLogEntry(LogEntry.Builder builder, E event);
 }
