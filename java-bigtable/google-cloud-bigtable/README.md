@@ -1,8 +1,6 @@
 # Google Cloud Bigtable Client for Java
 
-Java idiomatic client for [Cloud Bigtable][cloud-bigtable]. Please note that this client is under
-heavy development and is not ready for production use. Please continue to use the 
-[HBase API client](https://github.com/GoogleCloudPlatform/cloud-bigtable-client) for production.
+Java idiomatic client for [Cloud Bigtable][cloud-bigtable].
 
 [![Kokoro CI](http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/master.svg)](http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/master.html)
 [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-bigtable.svg)](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-bigtable.svg)
@@ -11,7 +9,7 @@ heavy development and is not ready for production use. Please continue to use th
 - [Product Documentation][bigtable-product-docs]
 - [Client Library Documentation - Data API](https://googleapis.dev/java/google-cloud-clients/latest/com/google/cloud/bigtable/data/v2/package-summary.html)
 - [Client Library Documentation - Admin API](https://googleapis.dev/java/google-cloud-clients/latest/com/google/cloud/bigtable/admin/v2/package-summary.html)
-> Note: This client is under heavy development and should not be used in production.
+> Note: This client is a work-in-progress, and may occasionally make backwards-incompatible changes.
 
 ## Quickstart
 
