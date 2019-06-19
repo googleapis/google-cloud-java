@@ -71,7 +71,7 @@ public class SpannerRetryHelperTest {
         fail(
             String.format(
                 "unexpected error %s, expected %s",
-                e.getErrorCode().name(), ErrorCode.DEADLINE_EXCEEDED.name()));
+                e.getErrorCode().name(), ErrorCode.CANCELLED.name()));
       }
     }
   }
