@@ -189,22 +189,100 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
         .setJwtEnabledScopes(JWT_ENABLED_SCOPES);
   }
 
-  /** Returns the object with the settings used for calls to ReadRows. */
+  /**
+   * Returns the object with the settings used for calls to ReadRows.
+   *
+   * <p>This is idempotent and streaming operation.
+   *
+   * <p>Default retry and timeout settings:
+   *
+   * <ul>
+   *   <li>{@link ServerStreamingCallSettings.Builder#setIdleTimeout Default idle timeout} is set to
+   *       5 mins.
+   *   <li>Retry {@link ServerStreamingCallSettings.Builder#setRetryableCodes error codes} are:
+   *       {@link Code#DEADLINE_EXCEEDED} and {@link Code#UNAVAILABLE}.
+   *   <li>RetryDelay between failed attempts {@link RetrySettings.Builder#setInitialRetryDelay
+   *       starts} at 100ms and {@link RetrySettings.Builder#setRetryDelayMultiplier increases
+   *       exponentially} by a factor of 1.3 until a {@link RetrySettings.Builder#setMaxRetryDelay
+   *       maximum of} 60 seconds.
+   *   <li>The default read timeout for {@link RetrySettings.Builder#setMaxRpcTimeout each row} in a
+   *       response stream is 20 seconds and the timeout to read the {@link
+   *       RetrySettings.Builder#setTotalTimeout entire stream} is 1 hour.
+   * </ul>
+   */
   public ServerStreamingCallSettings<Query, Row> readRowsSettings() {
     return readRowsSettings;
   }
 
-  /** Returns the object with the settings used for calls to SampleRowKeys. */
+  /**
+   * Returns the object with the settings used for calls to SampleRowKeys.
+   *
+   * <p>This is idempotent and non-streaming operation.
+   *
+   * <p>Default retry and timeout settings:
+   *
+   * <ul>
+   *   <li>Retry {@link UnaryCallSettings.Builder#setRetryableCodes error codes} are: {@link
+   *       Code#DEADLINE_EXCEEDED} and {@link Code#UNAVAILABLE}.
+   *   <li>RetryDelay between failed attempts {@link RetrySettings.Builder#setInitialRetryDelay
+   *       starts} at 100ms and {@link RetrySettings.Builder#setRetryDelayMultiplier increases
+   *       exponentially} by a factor of 1.3 until a {@link RetrySettings.Builder#setMaxRetryDelay
+   *       maximum of} 60 seconds.
+   *   <li>The default timeout for {@link RetrySettings.Builder#setMaxRpcTimeout each attempt} is 20
+   *       seconds and the timeout for the {@link RetrySettings.Builder#setTotalTimeout entire
+   *       operation} across all of the attempts is 10 mins.
+   * </ul>
+   */
   public UnaryCallSettings<String, List<KeyOffset>> sampleRowKeysSettings() {
     return sampleRowKeysSettings;
   }
 
-  /** Returns the object with the settings used for point reads via ReadRows. */
+  /**
+   * Returns the object with the settings used for point reads via ReadRows.
+   *
+   * <p>This is an idempotent and non-streaming operation.
+   *
+   * <p>Default retry and timeout settings:
+   *
+   * <ul>
+   *   <li>Retry {@link UnaryCallSettings.Builder#setRetryableCodes error codes} are: {@link
+   *       Code#DEADLINE_EXCEEDED} and {@link Code#UNAVAILABLE}.
+   *   <li>RetryDelay between failed attempts {@link RetrySettings.Builder#setInitialRetryDelay
+   *       starts} at 100ms and {@link RetrySettings.Builder#setRetryDelayMultiplier increases
+   *       exponentially} by a factor of 1.3 until a {@link RetrySettings.Builder#setMaxRetryDelay
+   *       maximum of} 60 seconds.
+   *   <li>The default timeout for {@link RetrySettings.Builder#setMaxRpcTimeout each attempt} is 20
+   *       seconds and the timeout for the {@link RetrySettings.Builder#setTotalTimeout entire
+   *       operation} across all of the attempts is 10 mins.
+   * </ul>
+   *
+   * @see RetrySettings for more explanation.
+   */
   public UnaryCallSettings<Query, Row> readRowSettings() {
     return readRowSettings;
   }
 
-  /** Returns the object with the settings used for calls to MutateRow. */
+  /**
+   * Returns the object with the settings used for calls to MutateRow.
+   *
+   * <p>This is an idempotent and non-streaming operation.
+   *
+   * <p>Default retry and timeout settings:
+   *
+   * <ul>
+   *   <li>Retry {@link UnaryCallSettings.Builder#setRetryableCodes error codes} are: {@link
+   *       Code#DEADLINE_EXCEEDED} and {@link Code#UNAVAILABLE}.
+   *   <li>RetryDelay between failed attempts {@link RetrySettings.Builder#setInitialRetryDelay
+   *       starts} at 100ms and {@link RetrySettings.Builder#setRetryDelayMultiplier increases
+   *       exponentially} by a factor of 1.3 until a {@link RetrySettings.Builder#setMaxRetryDelay
+   *       maximum of} 60 seconds.
+   *   <li>The default timeout for {@link RetrySettings.Builder#setMaxRpcTimeout each attempt} is 20
+   *       seconds and the timeout for the {@link RetrySettings.Builder#setTotalTimeout entire
+   *       operation} across all of the attempts is 10 mins.
+   * </ul>
+   *
+   * @see RetrySettings for more explanation.
+   */
   public UnaryCallSettings<RowMutation, Void> mutateRowSettings() {
     return mutateRowSettings;
   }
@@ -215,17 +293,71 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
    * <p>Please note that these settings will affect both manually batched calls
    * (bulkMutateRowsCallable) and automatic batched calls (bulkMutateRowsBatchingCallable). The
    * {@link RowMutation} request signature is ignored for the manual batched calls.
+   *
+   * <p>Default retry and timeout settings:
+   *
+   * <ul>
+   *   <li>Retry {@link UnaryCallSettings.Builder#setRetryableCodes error codes} are: {@link
+   *       Code#DEADLINE_EXCEEDED}, {@link Code#UNAVAILABLE} and {@link Code#ABORTED}.
+   *   <li>RetryDelay between failed attempts {@link RetrySettings.Builder#setInitialRetryDelay
+   *       starts} at 100ms and {@link RetrySettings.Builder#setRetryDelayMultiplier increases
+   *       exponentially} by a factor of 1.3 until a {@link RetrySettings.Builder#setMaxRetryDelay
+   *       maximum of} 60 seconds.
+   *   <li>The default timeout for {@link RetrySettings.Builder#setMaxRpcTimeout each attempt} is 20
+   *       seconds and the timeout for the {@link RetrySettings.Builder#setTotalTimeout entire
+   *       operation} across all of the attempts is 10 mins.
+   * </ul>
+   *
+   * <p>On breach of certain triggers, the operation initiates processing of accumulated request for
+   * which the default settings are:
+   *
+   * <ul>
+   *   <li>When the {@link BatchingSettings.Builder#setElementCountThreshold request count} reaches
+   *       100.
+   *   <li>When accumulated {@link BatchingSettings.Builder#setRequestByteThreshold request size}
+   *       reaches to 20MB.
+   *   <li>When an {@link BatchingSettings.Builder#setDelayThreshold interval of} 1 second passes
+   *       after batching initialization or last processed batch.
+   * </ul>
+   *
+   * <p>When the pending {@link FlowControlSettings.Builder#setMaxOutstandingElementCount request
+   * count} reaches a default of 1000 or their {@link
+   * FlowControlSettings.Builder#setMaxOutstandingRequestBytes accumulated size} reaches default
+   * value of 100MB, then this operation will by default be {@link
+   * FlowControlSettings.Builder#setLimitExceededBehavior blocked} until some of the pending batch
+   * are resolved.
+   *
+   * @see RetrySettings for more explanation.
+   * @see BatchingSettings for batch related configuration explanation.
    */
   public BatchingCallSettings<RowMutation, Void> bulkMutateRowsSettings() {
     return bulkMutateRowsSettings;
   }
 
-  /** Returns the object with the settings used for calls to CheckAndMutateRow. */
+  /**
+   * Returns the object with the settings used for calls to CheckAndMutateRow.
+   *
+   * <p>This is a non-idempotent and non-streaming operation.
+   *
+   * <p>By default this operation does not reattempt in case of RPC failure. The default timeout for
+   * the {@link RetrySettings.Builder#setTotalTimeout entire operation} is 10 mins.
+   *
+   * @see RetrySettings for more explanation.
+   */
   public UnaryCallSettings<ConditionalRowMutation, Boolean> checkAndMutateRowSettings() {
     return checkAndMutateRowSettings;
   }
 
-  /** Returns the object with the settings used for calls to ReadModifyWriteRow. */
+  /**
+   * Returns the object with the settings used for calls to ReadModifyWriteRow.
+   *
+   * <p>This is a non-idempotent and non-streaming operation.
+   *
+   * <p>By default this operation does not reattempt in case of RPC failure. The default timeout for
+   * the {@link RetrySettings.Builder#setTotalTimeout entire operation} is 10 mins.
+   *
+   * @see RetrySettings for more explanation.
+   */
   public UnaryCallSettings<ReadModifyWriteRow, Row> readModifyWriteRowSettings() {
     return readModifyWriteRowSettings;
   }
