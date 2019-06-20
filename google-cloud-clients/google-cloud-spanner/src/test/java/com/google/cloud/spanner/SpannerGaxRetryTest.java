@@ -48,6 +48,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
+import java.util.concurrent.atomic.AtomicInteger;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -420,6 +421,71 @@ public class SpannerGaxRetryTest {
               }
             });
     assertThat(updateCount, is(equalTo(UPDATE_COUNT)));
+  }
+
+  @Test
+  public void readWriteTransactionStatementAborted() {
+    TransactionRunner runner = client.readWriteTransaction();
+    final AtomicInteger attempts = new AtomicInteger();
+    long updateCount =
+        runner.run(
+            new TransactionCallable<Long>() {
+              @Override
+              public Long run(TransactionContext transaction) throws Exception {
+                if (attempts.getAndIncrement() == 0) {
+                  mockSpanner.abortTransaction(transaction);
+                }
+                return transaction.executeUpdate(UPDATE_STATEMENT);
+              }
+            });
+    assertThat(updateCount, is(equalTo(UPDATE_COUNT)));
+    assertThat(attempts.get(), is(equalTo(2)));
+  }
+
+  @Test
+  public void readWriteTransactionCommitAborted() {
+    TransactionRunner runner = client.readWriteTransaction();
+    final AtomicInteger attempts = new AtomicInteger();
+    long updateCount =
+        runner.run(
+            new TransactionCallable<Long>() {
+              @Override
+              public Long run(TransactionContext transaction) throws Exception {
+                long res = transaction.executeUpdate(UPDATE_STATEMENT);
+                if (attempts.getAndIncrement() == 0) {
+                  mockSpanner.abortTransaction(transaction);
+                }
+                return res;
+              }
+            });
+    assertThat(updateCount, is(equalTo(UPDATE_COUNT)));
+    assertThat(attempts.get(), is(equalTo(2)));
+  }
+
+  @Test(expected = Exception.class)
+  public void readWriteTransactionCheckedException() {
+    TransactionRunner runner = client.readWriteTransaction();
+    runner.run(
+        new TransactionCallable<Long>() {
+          @Override
+          public Long run(TransactionContext transaction) throws Exception {
+            transaction.executeUpdate(UPDATE_STATEMENT);
+            throw new Exception("test");
+          }
+        });
+  }
+
+  @Test(expected = SpannerException.class)
+  public void readWriteTransactionUncheckedException() {
+    TransactionRunner runner = client.readWriteTransaction();
+    runner.run(
+        new TransactionCallable<Long>() {
+          @Override
+          public Long run(TransactionContext transaction) throws Exception {
+            transaction.executeUpdate(UPDATE_STATEMENT);
+            throw SpannerExceptionFactory.newSpannerException(ErrorCode.INVALID_ARGUMENT, "test");
+          }
+        });
   }
 
   @SuppressWarnings("resource")
