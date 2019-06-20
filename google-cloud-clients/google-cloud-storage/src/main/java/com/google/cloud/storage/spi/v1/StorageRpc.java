@@ -287,6 +287,7 @@ public interface StorageRpc extends ServiceRpc {
    * Reads all the bytes from a storage object at the given position in to outputstream using
    * direct download.
    *
+   * @return number of bytes downloaded, returns 0 if position higher than length.
    * @throws StorageException upon failure
    */
   long read(StorageObject from, Map<Option, ?> options, long position, OutputStream outputStream);
