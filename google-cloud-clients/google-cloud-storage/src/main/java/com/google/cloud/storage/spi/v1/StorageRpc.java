@@ -284,8 +284,8 @@ public interface StorageRpc extends ServiceRpc {
   Tuple<String, byte[]> read(StorageObject from, Map<Option, ?> options, long position, int bytes);
 
   /**
-   * Reads all the bytes from a storage object at the given position in to outputstream using
-   * direct download.
+   * Reads all the bytes from a storage object at the given position in to outputstream using direct
+   * download.
    *
    * @return number of bytes downloaded, returns 0 if position higher than length.
    * @throws StorageException upon failure

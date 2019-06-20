@@ -658,7 +658,8 @@ public class HttpStorageRpc implements StorageRpc {
   }
 
   @Override
-  public long read(StorageObject from, Map<Option, ?> options, long position, OutputStream outputStream) {
+  public long read(
+      StorageObject from, Map<Option, ?> options, long position, OutputStream outputStream) {
     Span span = startSpan(HttpStorageRpcSpans.SPAN_NAME_READ);
     Scope scope = tracer.withSpan(span);
     try {

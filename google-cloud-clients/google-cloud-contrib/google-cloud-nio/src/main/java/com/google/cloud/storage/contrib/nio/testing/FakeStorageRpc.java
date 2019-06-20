@@ -299,8 +299,8 @@ class FakeStorageRpc implements StorageRpc {
   }
 
   @Override
-  public long read(StorageObject from, Map<Option, ?> options, long position,
-      OutputStream outputStream) {
+  public long read(
+      StorageObject from, Map<Option, ?> options, long position, OutputStream outputStream) {
     // if non-null, then we check the file's at that generation.
     Long generationMatch = null;
     for (Option op : options.keySet()) {
