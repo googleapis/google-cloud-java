@@ -72,6 +72,7 @@ import io.opencensus.trace.Tracing;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -640,30 +641,58 @@ public class HttpStorageRpc implements StorageRpc {
     return new DefaultRpcBatch(storage);
   }
 
+  private Get createReadRequest(StorageObject from, Map<Option, ?> options) throws IOException {
+    Get req =
+        storage
+            .objects()
+            .get(from.getBucket(), from.getName())
+            .setGeneration(from.getGeneration())
+            .setIfMetagenerationMatch(Option.IF_METAGENERATION_MATCH.getLong(options))
+            .setIfMetagenerationNotMatch(Option.IF_METAGENERATION_NOT_MATCH.getLong(options))
+            .setIfGenerationMatch(Option.IF_GENERATION_MATCH.getLong(options))
+            .setIfGenerationNotMatch(Option.IF_GENERATION_NOT_MATCH.getLong(options))
+            .setUserProject(Option.USER_PROJECT.getString(options));
+    setEncryptionHeaders(req.getRequestHeaders(), ENCRYPTION_KEY_PREFIX, options);
+    req.setReturnRawInputStream(true);
+    return req;
+  }
+
+  @Override
+  public long read(StorageObject from, Map<Option, ?> options, long position, OutputStream outputStream) {
+    Span span = startSpan(HttpStorageRpcSpans.SPAN_NAME_READ);
+    Scope scope = tracer.withSpan(span);
+    try {
+      Get req = createReadRequest(from, options);
+      req.getMediaHttpDownloader().setBytesDownloaded(position);
+      req.getMediaHttpDownloader().setDirectDownloadEnabled(true);
+      req.executeMediaAndDownloadTo(outputStream);
+      return req.getMediaHttpDownloader().getNumBytesDownloaded();
+    } catch (IOException ex) {
+      span.setStatus(Status.UNKNOWN.withDescription(ex.getMessage()));
+      StorageException serviceException = translate(ex);
+      if (serviceException.getCode() == SC_REQUESTED_RANGE_NOT_SATISFIABLE) {
+        return 0;
+      }
+      throw serviceException;
+    } finally {
+      scope.close();
+      span.end();
+    }
+  }
+
   @Override
   public Tuple<String, byte[]> read(
       StorageObject from, Map<Option, ?> options, long position, int bytes) {
     Span span = startSpan(HttpStorageRpcSpans.SPAN_NAME_READ);
     Scope scope = tracer.withSpan(span);
     try {
-      Get req =
-          storage
-              .objects()
-              .get(from.getBucket(), from.getName())
-              .setGeneration(from.getGeneration())
-              .setIfMetagenerationMatch(Option.IF_METAGENERATION_MATCH.getLong(options))
-              .setIfMetagenerationNotMatch(Option.IF_METAGENERATION_NOT_MATCH.getLong(options))
-              .setIfGenerationMatch(Option.IF_GENERATION_MATCH.getLong(options))
-              .setIfGenerationNotMatch(Option.IF_GENERATION_NOT_MATCH.getLong(options))
-              .setUserProject(Option.USER_PROJECT.getString(options));
       checkArgument(position >= 0, "Position should be non-negative, is %d", position);
+      Get req = createReadRequest(from, options);
       StringBuilder range = new StringBuilder();
       range.append("bytes=").append(position).append("-").append(position + bytes - 1);
       HttpHeaders requestHeaders = req.getRequestHeaders();
       requestHeaders.setRange(range.toString());
-      setEncryptionHeaders(requestHeaders, ENCRYPTION_KEY_PREFIX, options);
       ByteArrayOutputStream output = new ByteArrayOutputStream(bytes);
-      req.setReturnRawInputStream(true);
       req.executeMedia().download(output);
       String etag = req.getLastResponseHeaders().getETag();
       return Tuple.of(etag, output.toByteArray());

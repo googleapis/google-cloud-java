@@ -29,6 +29,7 @@ import com.google.cloud.ServiceRpc;
 import com.google.cloud.Tuple;
 import com.google.cloud.storage.StorageException;
 import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
@@ -281,6 +282,14 @@ public interface StorageRpc extends ServiceRpc {
    * @throws StorageException upon failure
    */
   Tuple<String, byte[]> read(StorageObject from, Map<Option, ?> options, long position, int bytes);
+
+  /**
+   * Reads all the bytes from a storage object at the given position in to outputstream using
+   * direct download.
+   *
+   * @throws StorageException upon failure
+   */
+  long read(StorageObject from, Map<Option, ?> options, long position, OutputStream outputStream);
 
   /**
    * Opens a resumable upload channel for a given storage object.
