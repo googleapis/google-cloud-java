@@ -14,16 +14,14 @@
 # limitations under the License.
 
 set -eo pipefail
+# Display commands being run.
+set -x
 
 cd github/google-cloud-java/
 
 # Print out Java version
 java -version
 echo $JOB_TYPE
-
-# Linkage Monitor uses SNAPSHOT version but google-cloud-java's HEAD does not
-# have SNAPSHOT
-mvn versions:set -DnextSnapshot=true
 
 mvn install -DskipTests=true -Dmaven.javadoc.skip=true -Dgcloud.download.skip=true -B -V
 
