@@ -2732,12 +2732,12 @@ public interface Storage extends Service<StorageOptions> {
    * Lists HMAC keys for a given service account. Note this returns {@code HmacKeyMetadata} objects,
    * which do not contain secret keys.
    *
-   * <p>Example of listing HMAC keys, specifying max results.
+   * <p>Example of listing HMAC keys, specifying max results and showDeletedKeys.
    *
    * <pre>{@code
    * ServiceAccount serviceAccount = ServiceAccount.of("my-service-account@google.com");
    *
-   * Page<HmacKey.HmacKeyMetadata> metadataPage = storage.listHmacKeys(serviceAccount, null, 10);
+   * Page<HmacKey.HmacKeyMetadata> metadataPage = storage.listHmacKeys(serviceAccount, null, 10, true);
    * for (HmacKey.HmacKeyMetadata hmacKeyMetadata : metadataPage.getValues()) {
    *     //do something with the metadata
    * }
@@ -2753,8 +2753,8 @@ public interface Storage extends Service<StorageOptions> {
       ServiceAccount serviceAccount, String pageToken, Long maxResults, boolean showDeletedKeys);
 
   /**
-   * Lists HMAC keys for a given service account. Note this returns {@code HmacKeyMetadata} objects,
-   * which do not contain secret keys. This is the same as calling {@code
+   * Lists active HMAC keys for a given service account. Note this returns {@code HmacKeyMetadata}
+   * objects, which do not contain secret keys. This is the same as calling {@code
    * listHmacKeys(serviceAccount, null, null, false)}.
    *
    * <p>Example of listing HMAC keys.
