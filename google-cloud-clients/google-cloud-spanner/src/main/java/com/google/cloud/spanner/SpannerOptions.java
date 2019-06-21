@@ -433,19 +433,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   }
 
   protected SpannerRpc getSpannerRpcV1() {
-    return getRpc();
-  }
-
-  /**
-   * Returns a {@link Spanner} service object. This method will create a {@link Spanner} instance on
-   * the first call and subsequent calls to this method will return the same {@link Spanner}
-   * instance. If the instance is closed, the following call to this method will create a new {@link
-   * Spanner} instance.
-   */
-  @Override
-  public Spanner getService() {
-    // Method is only overridden in order to supply additional documentation.
-    return super.getService();
+    return (SpannerRpc) getRpc();
   }
 
   /**
@@ -456,18 +444,6 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   @Override
   protected boolean shouldRefreshService(Spanner cachedService) {
     return cachedService == null || cachedService.isClosed();
-  }
-
-  /**
-   * Returns a {@link SpannerRpc} object. This method will create a {@link ServiceRpc} instance on
-   * the first call and subsequent calls to this method will return the same {@link ServiceRpc}
-   * instance. If the instance is closed, the following call to this method will create a new {@link
-   * ServiceRpc} instance.
-   */
-  @Override
-  public SpannerRpc getRpc() {
-    // Method is only overridden in order to supply additional documentation.
-    return (SpannerRpc) super.getRpc();
   }
 
   /**
