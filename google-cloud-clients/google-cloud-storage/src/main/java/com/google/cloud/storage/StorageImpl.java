@@ -1311,7 +1311,10 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
                   return serviceOptions
                       .getStorageRpcV1()
                       .listHmacKeys(
-                          serviceAccount.getEmail(), pageToken, maxResults, showDeletedKeys);
+                          serviceAccount == null ? null : serviceAccount.getEmail(),
+                          pageToken,
+                          maxResults,
+                          showDeletedKeys);
                 }
               },
               serviceOptions.getRetrySettings(),

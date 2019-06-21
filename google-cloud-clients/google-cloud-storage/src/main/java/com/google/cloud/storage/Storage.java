@@ -2755,7 +2755,8 @@ public interface Storage extends Service<StorageOptions> {
   /**
    * Lists active HMAC keys for a given service account. Note this returns {@code HmacKeyMetadata}
    * objects, which do not contain secret keys. This is the same as calling {@code
-   * listHmacKeys(serviceAccount, null, null, false)}.
+   * listHmacKeys(serviceAccount, null, null, false)}. If {@code serviceAccount} is null, the keys
+   * for all service accounts will be listed.
    *
    * <p>Example of listing HMAC keys.
    *
