@@ -26,6 +26,7 @@
     <module>google-cloud-managedtest</module>
     <module>google-cloud-gcloud-maven-plugin</module>
     <module>google-cloud-bigtable-emulator</module>
+    <module>google-cloud-conformance-tests</module>
   </modules>
   <dependencyManagement>
     <dependencies>
