@@ -170,7 +170,8 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The URI of the company image for [CompletionType.COMPANY_NAME][].
+     * The URI of the company image for
+     * [COMPANY_NAME][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.COMPANY_NAME].
      * </pre>
      *
      * <code>string image_uri = 3;</code>
@@ -180,7 +181,8 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The URI of the company image for [CompletionType.COMPANY_NAME][].
+     * The URI of the company image for
+     * [COMPANY_NAME][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.COMPANY_NAME].
      * </pre>
      *
      * <code>string image_uri = 3;</code>
@@ -373,7 +375,8 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The URI of the company image for [CompletionType.COMPANY_NAME][].
+     * The URI of the company image for
+     * [COMPANY_NAME][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.COMPANY_NAME].
      * </pre>
      *
      * <code>string image_uri = 3;</code>
@@ -393,7 +396,8 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The URI of the company image for [CompletionType.COMPANY_NAME][].
+     * The URI of the company image for
+     * [COMPANY_NAME][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.COMPANY_NAME].
      * </pre>
      *
      * <code>string image_uri = 3;</code>
@@ -961,7 +965,8 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * The URI of the company image for [CompletionType.COMPANY_NAME][].
+       * The URI of the company image for
+       * [COMPANY_NAME][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.COMPANY_NAME].
        * </pre>
        *
        * <code>string image_uri = 3;</code>
@@ -981,7 +986,8 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * The URI of the company image for [CompletionType.COMPANY_NAME][].
+       * The URI of the company image for
+       * [COMPANY_NAME][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.COMPANY_NAME].
        * </pre>
        *
        * <code>string image_uri = 3;</code>
@@ -1001,7 +1007,8 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * The URI of the company image for [CompletionType.COMPANY_NAME][].
+       * The URI of the company image for
+       * [COMPANY_NAME][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.COMPANY_NAME].
        * </pre>
        *
        * <code>string image_uri = 3;</code>
@@ -1019,7 +1026,8 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * The URI of the company image for [CompletionType.COMPANY_NAME][].
+       * The URI of the company image for
+       * [COMPANY_NAME][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.COMPANY_NAME].
        * </pre>
        *
        * <code>string image_uri = 3;</code>
@@ -1034,7 +1042,8 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * The URI of the company image for [CompletionType.COMPANY_NAME][].
+       * The URI of the company image for
+       * [COMPANY_NAME][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.COMPANY_NAME].
        * </pre>
        *
        * <code>string image_uri = 3;</code>

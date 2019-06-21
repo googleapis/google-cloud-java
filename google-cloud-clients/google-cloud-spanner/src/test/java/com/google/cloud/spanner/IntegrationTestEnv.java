@@ -85,12 +85,17 @@ public class IntegrationTestEnv extends ExternalResource {
       instanceId = InstanceId.of(config.spannerOptions().getProjectId(), "test-instance");
       isOwnedInstance = true;
     }
-    testHelper = RemoteSpannerHelper.create(options, instanceId);
+    testHelper = createTestHelper(options, instanceId);
     instanceAdminClient = testHelper.getClient().getInstanceAdminClient();
     logger.log(Level.FINE, "Test env endpoint is {0}", options.getHost());
     if (isOwnedInstance) {
       initializeInstance(instanceId);
     }
+  }
+
+  RemoteSpannerHelper createTestHelper(SpannerOptions options, InstanceId instanceId)
+      throws Throwable {
+    return RemoteSpannerHelper.create(options, instanceId);
   }
 
   @Override
@@ -138,7 +143,7 @@ public class IntegrationTestEnv extends ExternalResource {
     }
   }
 
-  private void checkInitialized() {
+  void checkInitialized() {
     checkState(testHelper != null, "Setup has not completed successfully");
   }
 }

@@ -60,6 +60,9 @@ import com.google.cloud.bigquery.JobStatistics;
 import com.google.cloud.bigquery.JobStatistics.LoadStatistics;
 import com.google.cloud.bigquery.LegacySQLTypeName;
 import com.google.cloud.bigquery.LoadJobConfiguration;
+import com.google.cloud.bigquery.Model;
+import com.google.cloud.bigquery.ModelId;
+import com.google.cloud.bigquery.ModelInfo;
 import com.google.cloud.bigquery.QueryJobConfiguration;
 import com.google.cloud.bigquery.QueryParameterValue;
 import com.google.cloud.bigquery.Schema;
@@ -118,6 +121,7 @@ public class ITBigQueryTest {
   private static final String DATASET = RemoteBigQueryHelper.generateDatasetName();
   private static final String DESCRIPTION = "Test dataset";
   private static final String OTHER_DATASET = RemoteBigQueryHelper.generateDatasetName();
+  private static final String MODEL_DATASET = RemoteBigQueryHelper.generateDatasetName();
   private static final Map<String, String> LABELS =
       ImmutableMap.of(
           "example-label1", "example-value1",
@@ -279,6 +283,9 @@ public class ITBigQueryTest {
     DatasetInfo info =
         DatasetInfo.newBuilder(DATASET).setDescription(DESCRIPTION).setLabels(LABELS).build();
     bigquery.create(info);
+    DatasetInfo info2 =
+        DatasetInfo.newBuilder(MODEL_DATASET).setDescription("java model lifecycle").build();
+    bigquery.create(info2);
     LoadJobConfiguration configuration =
         LoadJobConfiguration.newBuilder(
                 TABLE_ID, "gs://" + BUCKET + "/" + JSON_LOAD_FILE, FormatOptions.json())
@@ -294,6 +301,7 @@ public class ITBigQueryTest {
   public static void afterClass() throws ExecutionException, InterruptedException {
     if (bigquery != null) {
       RemoteBigQueryHelper.forceDelete(bigquery, DATASET);
+      RemoteBigQueryHelper.forceDelete(bigquery, MODEL_DATASET);
     }
     if (storage != null) {
       boolean wasDeleted = RemoteStorageHelper.forceDelete(storage, BUCKET, 10, TimeUnit.SECONDS);
@@ -668,7 +676,7 @@ public class ITBigQueryTest {
       List<String> partitions = bigquery.listPartitions(TableId.of(DATASET, tableName));
       assertEquals(1, partitions.size());
     } finally {
-      bigquery.delete(DATASET, tableName);
+      bigquery.delete(tableId);
     }
   }
 
@@ -798,7 +806,7 @@ public class ITBigQueryTest {
 
   @Test
   public void testDeleteNonExistingTable() {
-    assertFalse(bigquery.delete(DATASET, "test_delete_non_existing_table"));
+    assertFalse(bigquery.delete("test_delete_non_existing_table"));
   }
 
   @Test
@@ -1043,6 +1051,65 @@ public class ITBigQueryTest {
   }
 
   @Test
+  public void testModelLifecycle() throws InterruptedException {
+
+    String modelName = RemoteBigQueryHelper.generateModelName();
+
+    // Create a model using SQL.
+    String sql =
+        "CREATE MODEL `"
+            + MODEL_DATASET
+            + "."
+            + modelName
+            + "`"
+            + "OPTIONS ( "
+            + "model_type='linear_reg', "
+            + "max_iteration=1, "
+            + "learn_rate=0.4, "
+            + "learn_rate_strategy='constant' "
+            + ") AS ( "
+            + "	SELECT 'a' AS f1, 2.0 AS label "
+            + "UNION ALL "
+            + "SELECT 'b' AS f1, 3.8 AS label "
+            + ")";
+
+    QueryJobConfiguration config = QueryJobConfiguration.newBuilder(sql).build();
+    Job job = bigquery.create(JobInfo.of(JobId.of(), config));
+    job.waitFor();
+    assertNull(job.getStatus().getError());
+
+    // Model is created.  Fetch.
+    ModelId modelId = ModelId.of(MODEL_DATASET, modelName);
+    Model model = bigquery.getModel(modelId);
+    assertNotNull(model);
+    assertEquals(model.getModelType(), "LINEAR_REGRESSION");
+    // Compare the extended model metadata.
+    assertEquals(model.getFeatureColumns().get(0).getName(), "f1");
+    assertEquals(model.getLabelColumns().get(0).getName(), "predicted_label");
+    assertEquals(
+        model.getTrainingRuns().get(0).getTrainingOptions().getLearnRateStrategy(), "CONSTANT");
+
+    // Mutate metadata.
+    ModelInfo info = model.toBuilder().setDescription("TEST").build();
+    Model afterUpdate = bigquery.update(info);
+    assertEquals(afterUpdate.getDescription(), "TEST");
+
+    // Ensure model is present in listModels.
+    Page<Model> models = bigquery.listModels(MODEL_DATASET);
+    Boolean found = false;
+    for (Model m : models.getValues()) {
+      if (m.getModelId().getModel().equals(modelName)) {
+        found = true;
+        break;
+      }
+    }
+    assertTrue(found);
+
+    // Delete the model.
+    assertTrue(bigquery.delete(modelId));
+  }
+
+  @Test
   public void testQuery() throws InterruptedException {
     String query = "SELECT TimestampField, StringField, BooleanField FROM " + TABLE_ID.getTable();
     QueryJobConfiguration config =
@@ -1213,7 +1280,7 @@ public class ITBigQueryTest {
 
     assertNotNull(completedJob);
     assertNull(completedJob.getStatus().getError());
-    assertTrue(bigquery.delete(DATASET, destinationTableName));
+    assertTrue(bigquery.delete(destinationTable));
   }
 
   @Test
@@ -1263,7 +1330,7 @@ public class ITBigQueryTest {
             RetryOption.totalTimeout(Duration.ofMinutes(1)));
     assertNotNull(completedJob);
     assertNull(completedJob.getStatus().getError());
-    assertTrue(bigquery.delete(DATASET, destinationTableName));
+    assertTrue(bigquery.delete(destinationTable));
   }
 
   @Test
@@ -1321,7 +1388,7 @@ public class ITBigQueryTest {
       rowCount++;
     }
     assertEquals(2, rowCount);
-    assertTrue(bigquery.delete(DATASET, tableName));
+    assertTrue(bigquery.delete(destinationTable));
     Job queryJob = bigquery.getJob(remoteJob.getJobId());
     JobStatistics.QueryStatistics statistics = queryJob.getStatistics();
     assertNotNull(statistics.getQueryPlan());
@@ -1368,7 +1435,7 @@ public class ITBigQueryTest {
         new String(storage.readAllBytes(BUCKET, EXTRACT_FILE), StandardCharsets.UTF_8);
     assertEquals(
         Sets.newHashSet(CSV_CONTENT.split("\n")), Sets.newHashSet(extractedCsv.split("\n")));
-    assertTrue(bigquery.delete(DATASET, tableName));
+    assertTrue(bigquery.delete(destinationTable));
   }
 
   @Test
@@ -1465,7 +1532,7 @@ public class ITBigQueryTest {
       rowCount++;
     }
     assertEquals(2, rowCount);
-    assertTrue(bigquery.delete(DATASET, destinationTableName));
+    assertTrue(bigquery.delete(tableId));
   }
 
   @Test

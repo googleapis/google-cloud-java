@@ -339,7 +339,9 @@ public class ClusterControllerClient implements BackgroundResource {
    *     &lt;td&gt;config.lifecycle_config.auto_delete_time&lt;/td&gt;&lt;td&gt;Update MAX TTL
    *     deletion timestamp&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt;
    *     &lt;td&gt;config.lifecycle_config.idle_delete_ttl&lt;/td&gt;&lt;td&gt;Update Idle TTL
-   *     duration&lt;/td&gt; &lt;/tr&gt; &lt;/table&gt;
+   *     duration&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt;
+   *     &lt;td&gt;config.autoscaling_config.policy_uri&lt;/td&gt;&lt;td&gt;Use, stop using, or
+   *     change autoscaling policies&lt;/td&gt; &lt;/tr&gt; &lt;/table&gt;
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi(

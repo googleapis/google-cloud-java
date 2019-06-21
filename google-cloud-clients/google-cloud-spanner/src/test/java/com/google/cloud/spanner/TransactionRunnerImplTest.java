@@ -18,14 +18,11 @@ package com.google.cloud.spanner;
 
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.fail;
-import static org.mockito.Mockito.any;
 import static org.mockito.Mockito.doThrow;
-import static org.mockito.Mockito.eq;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
-import com.google.api.client.util.BackOff;
 import com.google.cloud.spanner.TransactionRunner.TransactionCallable;
 import com.google.cloud.spanner.TransactionRunnerImpl.TransactionContextImpl;
 import com.google.cloud.spanner.spi.v1.SpannerRpc;
@@ -39,7 +36,6 @@ import com.google.spanner.v1.ExecuteBatchDmlRequest;
 import com.google.spanner.v1.ExecuteBatchDmlResponse;
 import com.google.spanner.v1.ResultSet;
 import com.google.spanner.v1.ResultSetStats;
-import io.grpc.Context;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.util.Arrays;
@@ -57,7 +53,6 @@ import org.mockito.MockitoAnnotations;
 public class TransactionRunnerImplTest {
   @Mock private SpannerRpc rpc;
   @Mock private SessionImpl session;
-  @Mock private TransactionRunnerImpl.Sleeper sleeper;
   @Mock private TransactionRunnerImpl.TransactionContextImpl txn;
   private TransactionRunnerImpl transactionRunner;
   private boolean firstRun;
@@ -67,7 +62,7 @@ public class TransactionRunnerImplTest {
     MockitoAnnotations.initMocks(this);
     firstRun = true;
     when(session.newTransaction()).thenReturn(txn);
-    transactionRunner = new TransactionRunnerImpl(session, rpc, sleeper, 1);
+    transactionRunner = new TransactionRunnerImpl(session, rpc, 1);
   }
 
   @Test
@@ -89,10 +84,8 @@ public class TransactionRunnerImplTest {
   @Test
   public void runAbort() {
     when(txn.isAborted()).thenReturn(true);
-    long backoffMillis = 100L;
-    when(txn.getRetryDelayInMillis(any(BackOff.class))).thenReturn(backoffMillis);
     runTransaction(SpannerExceptionFactory.newSpannerException(ErrorCode.ABORTED, ""));
-    verify(sleeper, times(1)).backoffSleep(any(Context.class), eq(backoffMillis));
+    verify(txn, times(2)).ensureTxn();
   }
 
   @Test
@@ -101,8 +94,6 @@ public class TransactionRunnerImplTest {
         SpannerExceptionFactory.newSpannerException(
             SpannerExceptionFactory.newSpannerException(ErrorCode.ABORTED, ""));
     doThrow(error).doNothing().when(txn).commit();
-    long backoffMillis = 100L;
-    when(txn.getRetryDelayInMillis(any(BackOff.class))).thenReturn(backoffMillis);
     final AtomicInteger numCalls = new AtomicInteger(0);
     transactionRunner.run(
         new TransactionCallable<Void>() {
@@ -113,7 +104,6 @@ public class TransactionRunnerImplTest {
           }
         });
     assertThat(numCalls.get()).isEqualTo(2);
-    verify(sleeper, times(1)).backoffSleep(any(Context.class), eq(backoffMillis));
     verify(txn, times(2)).ensureTxn();
   }
 

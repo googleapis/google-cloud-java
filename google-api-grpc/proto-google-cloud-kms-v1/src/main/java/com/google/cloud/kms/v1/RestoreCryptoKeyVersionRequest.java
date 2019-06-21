@@ -7,8 +7,7 @@ package com.google.cloud.kms.v1;
  *
  *
  * <pre>
- * Request message for
- * [KeyManagementService.RestoreCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.RestoreCryptoKeyVersion].
+ * Request message for [KeyManagementService.RestoreCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.RestoreCryptoKeyVersion].
  * </pre>
  *
  * Protobuf type {@code google.cloud.kms.v1.RestoreCryptoKeyVersionRequest}
@@ -99,8 +98,7 @@ public final class RestoreCryptoKeyVersionRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * The resource name of the
-   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to restore.
+   * The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to restore.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -120,8 +118,7 @@ public final class RestoreCryptoKeyVersionRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * The resource name of the
-   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to restore.
+   * The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to restore.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -302,8 +299,7 @@ public final class RestoreCryptoKeyVersionRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Request message for
-   * [KeyManagementService.RestoreCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.RestoreCryptoKeyVersion].
+   * Request message for [KeyManagementService.RestoreCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.RestoreCryptoKeyVersion].
    * </pre>
    *
    * Protobuf type {@code google.cloud.kms.v1.RestoreCryptoKeyVersionRequest}
@@ -463,8 +459,7 @@ public final class RestoreCryptoKeyVersionRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The resource name of the
-     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to restore.
+     * The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to restore.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -484,8 +479,7 @@ public final class RestoreCryptoKeyVersionRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The resource name of the
-     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to restore.
+     * The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to restore.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -505,8 +499,7 @@ public final class RestoreCryptoKeyVersionRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The resource name of the
-     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to restore.
+     * The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to restore.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -524,8 +517,7 @@ public final class RestoreCryptoKeyVersionRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The resource name of the
-     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to restore.
+     * The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to restore.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -540,8 +532,7 @@ public final class RestoreCryptoKeyVersionRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The resource name of the
-     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to restore.
+     * The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to restore.
      * </pre>
      *
      * <code>string name = 1;</code>

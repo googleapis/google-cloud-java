@@ -12,9 +12,7 @@ public interface AsymmetricSignRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the
-   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use for
-   * signing.
+   * Required. The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use for signing.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -24,9 +22,7 @@ public interface AsymmetricSignRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the
-   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use for
-   * signing.
+   * Required. The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use for signing.
    * </pre>
    *
    * <code>string name = 1;</code>

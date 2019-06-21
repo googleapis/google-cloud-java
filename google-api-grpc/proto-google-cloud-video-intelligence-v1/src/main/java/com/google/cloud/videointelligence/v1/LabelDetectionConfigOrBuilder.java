@@ -70,4 +70,36 @@ public interface LabelDetectionConfigOrBuilder
    * <code>string model = 3;</code>
    */
   com.google.protobuf.ByteString getModelBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The confidence threshold we perform filtering on the labels from
+   * frame-level detection. If not set, it is set to 0.4 by default. The valid
+   * range for this threshold is [0.1, 0.9]. Any value set outside of this
+   * range will be clipped.
+   * Note: for best results please follow the default threshold. We will update
+   * the default threshold everytime when we release a new model.
+   * </pre>
+   *
+   * <code>float frame_confidence_threshold = 4;</code>
+   */
+  float getFrameConfidenceThreshold();
+
+  /**
+   *
+   *
+   * <pre>
+   * The confidence threshold we perform filtering on the labels from
+   * video-level and shot-level detections. If not set, it is set to 0.3 by
+   * default. The valid range for this threshold is [0.1, 0.9]. Any value set
+   * outside of this range will be clipped.
+   * Note: for best results please follow the default threshold. We will update
+   * the default threshold everytime when we release a new model.
+   * </pre>
+   *
+   * <code>float video_confidence_threshold = 5;</code>
+   */
+  float getVideoConfidenceThreshold();
 }

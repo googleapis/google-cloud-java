@@ -180,7 +180,7 @@ public final class DeleteGlossaryMetadata extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The glossary deletion request has been successfully canceled.
+     * The glossary deletion request was successfully canceled.
      * </pre>
      *
      * <code>CANCELLED = 5;</code>
@@ -244,7 +244,7 @@ public final class DeleteGlossaryMetadata extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The glossary deletion request has been successfully canceled.
+     * The glossary deletion request was successfully canceled.
      * </pre>
      *
      * <code>CANCELLED = 5;</code>

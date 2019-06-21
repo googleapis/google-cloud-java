@@ -279,7 +279,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    * - If natural language speech audio was provided as input, `query_text`
    *   contains the speech recognition result. If speech recognizer produced
    *   multiple alternatives, a particular one is picked.
-   * - If an event was provided as input, `query_text` is not set.
+   * - If automatic spell correction is enabled, `query_text` will contain the
+   *   corrected user input.
    * </pre>
    *
    * <code>string query_text = 1;</code>
@@ -305,7 +306,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    * - If natural language speech audio was provided as input, `query_text`
    *   contains the speech recognition result. If speech recognizer produced
    *   multiple alternatives, a particular one is picked.
-   * - If an event was provided as input, `query_text` is not set.
+   * - If automatic spell correction is enabled, `query_text` will contain the
+   *   corrected user input.
    * </pre>
    *
    * <code>string query_text = 1;</code>
@@ -330,7 +332,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The language that was triggered during intent detection.
    * See [Language
-   * Support](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+   * Support](https://cloud.google.com/dialogflow/docs/reference/language)
    * for a list of the currently supported language codes.
    * </pre>
    *
@@ -353,7 +355,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The language that was triggered during intent detection.
    * See [Language
-   * Support](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+   * Support](https://cloud.google.com/dialogflow/docs/reference/language)
    * for a list of the currently supported language codes.
    * </pre>
    *
@@ -1705,7 +1707,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * - If natural language speech audio was provided as input, `query_text`
      *   contains the speech recognition result. If speech recognizer produced
      *   multiple alternatives, a particular one is picked.
-     * - If an event was provided as input, `query_text` is not set.
+     * - If automatic spell correction is enabled, `query_text` will contain the
+     *   corrected user input.
      * </pre>
      *
      * <code>string query_text = 1;</code>
@@ -1731,7 +1734,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * - If natural language speech audio was provided as input, `query_text`
      *   contains the speech recognition result. If speech recognizer produced
      *   multiple alternatives, a particular one is picked.
-     * - If an event was provided as input, `query_text` is not set.
+     * - If automatic spell correction is enabled, `query_text` will contain the
+     *   corrected user input.
      * </pre>
      *
      * <code>string query_text = 1;</code>
@@ -1757,7 +1761,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * - If natural language speech audio was provided as input, `query_text`
      *   contains the speech recognition result. If speech recognizer produced
      *   multiple alternatives, a particular one is picked.
-     * - If an event was provided as input, `query_text` is not set.
+     * - If automatic spell correction is enabled, `query_text` will contain the
+     *   corrected user input.
      * </pre>
      *
      * <code>string query_text = 1;</code>
@@ -1781,7 +1786,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * - If natural language speech audio was provided as input, `query_text`
      *   contains the speech recognition result. If speech recognizer produced
      *   multiple alternatives, a particular one is picked.
-     * - If an event was provided as input, `query_text` is not set.
+     * - If automatic spell correction is enabled, `query_text` will contain the
+     *   corrected user input.
      * </pre>
      *
      * <code>string query_text = 1;</code>
@@ -1802,7 +1808,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * - If natural language speech audio was provided as input, `query_text`
      *   contains the speech recognition result. If speech recognizer produced
      *   multiple alternatives, a particular one is picked.
-     * - If an event was provided as input, `query_text` is not set.
+     * - If automatic spell correction is enabled, `query_text` will contain the
+     *   corrected user input.
      * </pre>
      *
      * <code>string query_text = 1;</code>
@@ -1825,7 +1832,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The language that was triggered during intent detection.
      * See [Language
-     * Support](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+     * Support](https://cloud.google.com/dialogflow/docs/reference/language)
      * for a list of the currently supported language codes.
      * </pre>
      *
@@ -1848,7 +1855,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The language that was triggered during intent detection.
      * See [Language
-     * Support](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+     * Support](https://cloud.google.com/dialogflow/docs/reference/language)
      * for a list of the currently supported language codes.
      * </pre>
      *
@@ -1871,7 +1878,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The language that was triggered during intent detection.
      * See [Language
-     * Support](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+     * Support](https://cloud.google.com/dialogflow/docs/reference/language)
      * for a list of the currently supported language codes.
      * </pre>
      *
@@ -1892,7 +1899,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The language that was triggered during intent detection.
      * See [Language
-     * Support](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+     * Support](https://cloud.google.com/dialogflow/docs/reference/language)
      * for a list of the currently supported language codes.
      * </pre>
      *
@@ -1910,7 +1917,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The language that was triggered during intent detection.
      * See [Language
-     * Support](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+     * Support](https://cloud.google.com/dialogflow/docs/reference/language)
      * for a list of the currently supported language codes.
      * </pre>
      *

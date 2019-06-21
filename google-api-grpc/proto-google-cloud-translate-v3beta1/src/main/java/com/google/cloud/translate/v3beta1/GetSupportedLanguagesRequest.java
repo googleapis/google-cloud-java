@@ -113,12 +113,11 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Optional. Used for making regionalized calls.
-   * Format: projects/{project-id}/locations/{location-id}.
-   * For global calls, use projects/{project-id}/locations/global.
-   * If missing, the call is treated as a global call.
-   * Only custom model within the same location-id can be used.
-   * Otherwise 400 is returned.
+   * Required. Location to make a regional or global call.
+   * Format: `projects/{project-id}/locations/{location-id}`.
+   * For global calls, use `projects/{project-id}/locations/global`.
+   * Only models within the same region (have same location-id) can be used,
+   * otherwise an INVALID_ARGUMENT (400) error is returned.
    * </pre>
    *
    * <code>string parent = 3;</code>
@@ -138,12 +137,11 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Optional. Used for making regionalized calls.
-   * Format: projects/{project-id}/locations/{location-id}.
-   * For global calls, use projects/{project-id}/locations/global.
-   * If missing, the call is treated as a global call.
-   * Only custom model within the same location-id can be used.
-   * Otherwise 400 is returned.
+   * Required. Location to make a regional or global call.
+   * Format: `projects/{project-id}/locations/{location-id}`.
+   * For global calls, use `projects/{project-id}/locations/global`.
+   * Only models within the same region (have same location-id) can be used,
+   * otherwise an INVALID_ARGUMENT (400) error is returned.
    * </pre>
    *
    * <code>string parent = 3;</code>
@@ -167,7 +165,8 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
    *
    * <pre>
    * Optional. The language to use to return localized, human readable names
-   * of supported languages. If missing, default language is ENGLISH.
+   * of supported languages. If missing, then display names are not returned
+   * in a response.
    * </pre>
    *
    * <code>string display_language_code = 1;</code>
@@ -188,7 +187,8 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
    *
    * <pre>
    * Optional. The language to use to return localized, human readable names
-   * of supported languages. If missing, default language is ENGLISH.
+   * of supported languages. If missing, then display names are not returned
+   * in a response.
    * </pre>
    *
    * <code>string display_language_code = 1;</code>
@@ -213,13 +213,13 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
    * <pre>
    * Optional. Get supported languages of this model.
    * The format depends on model type:
-   * 1. Custom models:
-   * projects/{project-id}/locations/{location-id}/models/{model-id}.
-   * 2. General (built-in) models:
-   * projects/{project-id}/locations/{location-id}/models/general/nmt
-   * projects/{project-id}/locations/{location-id}/models/general/base
+   * - AutoML Translation models:
+   *   `projects/{project-id}/locations/{location-id}/models/{model-id}`
+   * - General (built-in) models:
+   *   `projects/{project-id}/locations/{location-id}/models/general/nmt`,
+   *   `projects/{project-id}/locations/{location-id}/models/general/base`
    * Returns languages supported by the specified model.
-   * If missing, we get supported languages of Google general NMT model.
+   * If missing, we get supported languages of Google general base (PBMT) model.
    * </pre>
    *
    * <code>string model = 2;</code>
@@ -241,13 +241,13 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
    * <pre>
    * Optional. Get supported languages of this model.
    * The format depends on model type:
-   * 1. Custom models:
-   * projects/{project-id}/locations/{location-id}/models/{model-id}.
-   * 2. General (built-in) models:
-   * projects/{project-id}/locations/{location-id}/models/general/nmt
-   * projects/{project-id}/locations/{location-id}/models/general/base
+   * - AutoML Translation models:
+   *   `projects/{project-id}/locations/{location-id}/models/{model-id}`
+   * - General (built-in) models:
+   *   `projects/{project-id}/locations/{location-id}/models/general/nmt`,
+   *   `projects/{project-id}/locations/{location-id}/models/general/base`
    * Returns languages supported by the specified model.
-   * If missing, we get supported languages of Google general NMT model.
+   * If missing, we get supported languages of Google general base (PBMT) model.
    * </pre>
    *
    * <code>string model = 2;</code>
@@ -624,12 +624,11 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. Used for making regionalized calls.
-     * Format: projects/{project-id}/locations/{location-id}.
-     * For global calls, use projects/{project-id}/locations/global.
-     * If missing, the call is treated as a global call.
-     * Only custom model within the same location-id can be used.
-     * Otherwise 400 is returned.
+     * Required. Location to make a regional or global call.
+     * Format: `projects/{project-id}/locations/{location-id}`.
+     * For global calls, use `projects/{project-id}/locations/global`.
+     * Only models within the same region (have same location-id) can be used,
+     * otherwise an INVALID_ARGUMENT (400) error is returned.
      * </pre>
      *
      * <code>string parent = 3;</code>
@@ -649,12 +648,11 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. Used for making regionalized calls.
-     * Format: projects/{project-id}/locations/{location-id}.
-     * For global calls, use projects/{project-id}/locations/global.
-     * If missing, the call is treated as a global call.
-     * Only custom model within the same location-id can be used.
-     * Otherwise 400 is returned.
+     * Required. Location to make a regional or global call.
+     * Format: `projects/{project-id}/locations/{location-id}`.
+     * For global calls, use `projects/{project-id}/locations/global`.
+     * Only models within the same region (have same location-id) can be used,
+     * otherwise an INVALID_ARGUMENT (400) error is returned.
      * </pre>
      *
      * <code>string parent = 3;</code>
@@ -674,12 +672,11 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. Used for making regionalized calls.
-     * Format: projects/{project-id}/locations/{location-id}.
-     * For global calls, use projects/{project-id}/locations/global.
-     * If missing, the call is treated as a global call.
-     * Only custom model within the same location-id can be used.
-     * Otherwise 400 is returned.
+     * Required. Location to make a regional or global call.
+     * Format: `projects/{project-id}/locations/{location-id}`.
+     * For global calls, use `projects/{project-id}/locations/global`.
+     * Only models within the same region (have same location-id) can be used,
+     * otherwise an INVALID_ARGUMENT (400) error is returned.
      * </pre>
      *
      * <code>string parent = 3;</code>
@@ -697,12 +694,11 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. Used for making regionalized calls.
-     * Format: projects/{project-id}/locations/{location-id}.
-     * For global calls, use projects/{project-id}/locations/global.
-     * If missing, the call is treated as a global call.
-     * Only custom model within the same location-id can be used.
-     * Otherwise 400 is returned.
+     * Required. Location to make a regional or global call.
+     * Format: `projects/{project-id}/locations/{location-id}`.
+     * For global calls, use `projects/{project-id}/locations/global`.
+     * Only models within the same region (have same location-id) can be used,
+     * otherwise an INVALID_ARGUMENT (400) error is returned.
      * </pre>
      *
      * <code>string parent = 3;</code>
@@ -717,12 +713,11 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. Used for making regionalized calls.
-     * Format: projects/{project-id}/locations/{location-id}.
-     * For global calls, use projects/{project-id}/locations/global.
-     * If missing, the call is treated as a global call.
-     * Only custom model within the same location-id can be used.
-     * Otherwise 400 is returned.
+     * Required. Location to make a regional or global call.
+     * Format: `projects/{project-id}/locations/{location-id}`.
+     * For global calls, use `projects/{project-id}/locations/global`.
+     * Only models within the same region (have same location-id) can be used,
+     * otherwise an INVALID_ARGUMENT (400) error is returned.
      * </pre>
      *
      * <code>string parent = 3;</code>
@@ -744,7 +739,8 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * Optional. The language to use to return localized, human readable names
-     * of supported languages. If missing, default language is ENGLISH.
+     * of supported languages. If missing, then display names are not returned
+     * in a response.
      * </pre>
      *
      * <code>string display_language_code = 1;</code>
@@ -765,7 +761,8 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * Optional. The language to use to return localized, human readable names
-     * of supported languages. If missing, default language is ENGLISH.
+     * of supported languages. If missing, then display names are not returned
+     * in a response.
      * </pre>
      *
      * <code>string display_language_code = 1;</code>
@@ -786,7 +783,8 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * Optional. The language to use to return localized, human readable names
-     * of supported languages. If missing, default language is ENGLISH.
+     * of supported languages. If missing, then display names are not returned
+     * in a response.
      * </pre>
      *
      * <code>string display_language_code = 1;</code>
@@ -805,7 +803,8 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * Optional. The language to use to return localized, human readable names
-     * of supported languages. If missing, default language is ENGLISH.
+     * of supported languages. If missing, then display names are not returned
+     * in a response.
      * </pre>
      *
      * <code>string display_language_code = 1;</code>
@@ -821,7 +820,8 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * Optional. The language to use to return localized, human readable names
-     * of supported languages. If missing, default language is ENGLISH.
+     * of supported languages. If missing, then display names are not returned
+     * in a response.
      * </pre>
      *
      * <code>string display_language_code = 1;</code>
@@ -844,13 +844,13 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
      * <pre>
      * Optional. Get supported languages of this model.
      * The format depends on model type:
-     * 1. Custom models:
-     * projects/{project-id}/locations/{location-id}/models/{model-id}.
-     * 2. General (built-in) models:
-     * projects/{project-id}/locations/{location-id}/models/general/nmt
-     * projects/{project-id}/locations/{location-id}/models/general/base
+     * - AutoML Translation models:
+     *   `projects/{project-id}/locations/{location-id}/models/{model-id}`
+     * - General (built-in) models:
+     *   `projects/{project-id}/locations/{location-id}/models/general/nmt`,
+     *   `projects/{project-id}/locations/{location-id}/models/general/base`
      * Returns languages supported by the specified model.
-     * If missing, we get supported languages of Google general NMT model.
+     * If missing, we get supported languages of Google general base (PBMT) model.
      * </pre>
      *
      * <code>string model = 2;</code>
@@ -872,13 +872,13 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
      * <pre>
      * Optional. Get supported languages of this model.
      * The format depends on model type:
-     * 1. Custom models:
-     * projects/{project-id}/locations/{location-id}/models/{model-id}.
-     * 2. General (built-in) models:
-     * projects/{project-id}/locations/{location-id}/models/general/nmt
-     * projects/{project-id}/locations/{location-id}/models/general/base
+     * - AutoML Translation models:
+     *   `projects/{project-id}/locations/{location-id}/models/{model-id}`
+     * - General (built-in) models:
+     *   `projects/{project-id}/locations/{location-id}/models/general/nmt`,
+     *   `projects/{project-id}/locations/{location-id}/models/general/base`
      * Returns languages supported by the specified model.
-     * If missing, we get supported languages of Google general NMT model.
+     * If missing, we get supported languages of Google general base (PBMT) model.
      * </pre>
      *
      * <code>string model = 2;</code>
@@ -900,13 +900,13 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
      * <pre>
      * Optional. Get supported languages of this model.
      * The format depends on model type:
-     * 1. Custom models:
-     * projects/{project-id}/locations/{location-id}/models/{model-id}.
-     * 2. General (built-in) models:
-     * projects/{project-id}/locations/{location-id}/models/general/nmt
-     * projects/{project-id}/locations/{location-id}/models/general/base
+     * - AutoML Translation models:
+     *   `projects/{project-id}/locations/{location-id}/models/{model-id}`
+     * - General (built-in) models:
+     *   `projects/{project-id}/locations/{location-id}/models/general/nmt`,
+     *   `projects/{project-id}/locations/{location-id}/models/general/base`
      * Returns languages supported by the specified model.
-     * If missing, we get supported languages of Google general NMT model.
+     * If missing, we get supported languages of Google general base (PBMT) model.
      * </pre>
      *
      * <code>string model = 2;</code>
@@ -926,13 +926,13 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
      * <pre>
      * Optional. Get supported languages of this model.
      * The format depends on model type:
-     * 1. Custom models:
-     * projects/{project-id}/locations/{location-id}/models/{model-id}.
-     * 2. General (built-in) models:
-     * projects/{project-id}/locations/{location-id}/models/general/nmt
-     * projects/{project-id}/locations/{location-id}/models/general/base
+     * - AutoML Translation models:
+     *   `projects/{project-id}/locations/{location-id}/models/{model-id}`
+     * - General (built-in) models:
+     *   `projects/{project-id}/locations/{location-id}/models/general/nmt`,
+     *   `projects/{project-id}/locations/{location-id}/models/general/base`
      * Returns languages supported by the specified model.
-     * If missing, we get supported languages of Google general NMT model.
+     * If missing, we get supported languages of Google general base (PBMT) model.
      * </pre>
      *
      * <code>string model = 2;</code>
@@ -949,13 +949,13 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
      * <pre>
      * Optional. Get supported languages of this model.
      * The format depends on model type:
-     * 1. Custom models:
-     * projects/{project-id}/locations/{location-id}/models/{model-id}.
-     * 2. General (built-in) models:
-     * projects/{project-id}/locations/{location-id}/models/general/nmt
-     * projects/{project-id}/locations/{location-id}/models/general/base
+     * - AutoML Translation models:
+     *   `projects/{project-id}/locations/{location-id}/models/{model-id}`
+     * - General (built-in) models:
+     *   `projects/{project-id}/locations/{location-id}/models/general/nmt`,
+     *   `projects/{project-id}/locations/{location-id}/models/general/base`
      * Returns languages supported by the specified model.
-     * If missing, we get supported languages of Google general NMT model.
+     * If missing, we get supported languages of Google general base (PBMT) model.
      * </pre>
      *
      * <code>string model = 2;</code>

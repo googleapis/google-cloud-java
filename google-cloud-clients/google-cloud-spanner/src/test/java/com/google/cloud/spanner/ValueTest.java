@@ -18,6 +18,7 @@ package com.google.cloud.spanner;
 
 import static com.google.common.testing.SerializableTester.reserializeAndAssert;
 import static com.google.common.truth.Truth.assertThat;
+import static com.google.common.truth.Truth.assertWithMessage;
 
 import com.google.cloud.ByteArray;
 import com.google.cloud.Date;
@@ -213,7 +214,7 @@ public class ValueTest {
     Value v = Value.bytes(bytes);
     assertThat(v.getType()).isEqualTo(Type.bytes());
     assertThat(v.isNull()).isFalse();
-    assertThat(v.getBytes()).isSameAs(bytes);
+    assertThat(v.getBytes()).isSameInstanceAs(bytes);
     assertThat(v.toString()).isEqualTo(bytes.toString());
   }
 
@@ -221,7 +222,7 @@ public class ValueTest {
   public void bytesUnprintable() {
     ByteArray bytes = ByteArray.copyFrom(new byte[] {'a', 0, 15, -1, 'e'});
     Value v = Value.bytes(bytes);
-    assertThat(v.getBytes()).isSameAs(bytes);
+    assertThat(v.getBytes()).isSameInstanceAs(bytes);
     assertThat(v.toString()).isEqualTo(bytes.toString());
   }
 
@@ -245,7 +246,7 @@ public class ValueTest {
     assertThat(v.getType()).isEqualTo(Type.timestamp());
     assertThat(v.isNull()).isFalse();
     assertThat(v.isCommitTimestamp()).isFalse();
-    assertThat(v.getTimestamp()).isSameAs(t);
+    assertThat(v.getTimestamp()).isSameInstanceAs(t);
     assertThat(v.toString()).isEqualTo(timestamp);
   }
 
@@ -285,7 +286,7 @@ public class ValueTest {
     Value v = Value.date(t);
     assertThat(v.getType()).isEqualTo(Type.date());
     assertThat(v.isNull()).isFalse();
-    assertThat(v.getDate()).isSameAs(t);
+    assertThat(v.getDate()).isSameInstanceAs(t);
     assertThat(v.toString()).isEqualTo(date);
   }
 
@@ -359,8 +360,8 @@ public class ValueTest {
       }
       String name = "boolArray() of length " + i;
       Value v = Value.boolArray(plainIterable(data));
-      assertThat(v.isNull()).named(name).isFalse();
-      assertThat(v.getBoolArray()).named(name).containsExactly((Object[]) data).inOrder();
+      assertWithMessage(name).that(v.isNull()).isFalse();
+      assertWithMessage(name).that(v.getBoolArray()).containsExactly((Object[]) data).inOrder();
     }
   }
 

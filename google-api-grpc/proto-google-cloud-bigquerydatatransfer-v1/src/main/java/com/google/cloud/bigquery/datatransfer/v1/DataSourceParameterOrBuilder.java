@@ -107,7 +107,7 @@ public interface DataSourceParameterOrBuilder
    *
    *
    * <pre>
-   * Can parameter have multiple values.
+   * Deprecated. This field has no effect.
    * </pre>
    *
    * <code>bool repeated = 6;</code>
@@ -242,7 +242,7 @@ public interface DataSourceParameterOrBuilder
    *
    *
    * <pre>
-   * When parameter is a record, describes child fields.
+   * Deprecated. This field has no effect.
    * </pre>
    *
    * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter fields = 11;</code>
@@ -252,7 +252,7 @@ public interface DataSourceParameterOrBuilder
    *
    *
    * <pre>
-   * When parameter is a record, describes child fields.
+   * Deprecated. This field has no effect.
    * </pre>
    *
    * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter fields = 11;</code>
@@ -262,7 +262,7 @@ public interface DataSourceParameterOrBuilder
    *
    *
    * <pre>
-   * When parameter is a record, describes child fields.
+   * Deprecated. This field has no effect.
    * </pre>
    *
    * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter fields = 11;</code>
@@ -272,7 +272,7 @@ public interface DataSourceParameterOrBuilder
    *
    *
    * <pre>
-   * When parameter is a record, describes child fields.
+   * Deprecated. This field has no effect.
    * </pre>
    *
    * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter fields = 11;</code>
@@ -283,7 +283,7 @@ public interface DataSourceParameterOrBuilder
    *
    *
    * <pre>
-   * When parameter is a record, describes child fields.
+   * Deprecated. This field has no effect.
    * </pre>
    *
    * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter fields = 11;</code>
@@ -350,11 +350,22 @@ public interface DataSourceParameterOrBuilder
    *
    *
    * <pre>
-   * If set to true, schema should be taken from the parent with the same
-   * parameter_id. Only applicable when parameter type is RECORD.
+   * Deprecated. This field has no effect.
    * </pre>
    *
    * <code>bool recurse = 15;</code>
    */
   boolean getRecurse();
+
+  /**
+   *
+   *
+   * <pre>
+   * If true, it should not be used in new transfers, and it should not be
+   * visible to users.
+   * </pre>
+   *
+   * <code>bool deprecated = 20;</code>
+   */
+  boolean getDeprecated();
 }

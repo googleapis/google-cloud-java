@@ -27,6 +27,16 @@ public enum SkillProficiencyLevel implements com.google.protobuf.ProtocolMessage
    *
    *
    * <pre>
+   * Lacks any proficiency in this skill.
+   * </pre>
+   *
+   * <code>UNSKILLED = 6;</code>
+   */
+  UNSKILLED(6),
+  /**
+   *
+   *
+   * <pre>
    * Have a common knowledge or an understanding of basic techniques and
    * concepts.
    * </pre>
@@ -90,6 +100,16 @@ public enum SkillProficiencyLevel implements com.google.protobuf.ProtocolMessage
    * <code>SKILL_PROFICIENCY_LEVEL_UNSPECIFIED = 0;</code>
    */
   public static final int SKILL_PROFICIENCY_LEVEL_UNSPECIFIED_VALUE = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Lacks any proficiency in this skill.
+   * </pre>
+   *
+   * <code>UNSKILLED = 6;</code>
+   */
+  public static final int UNSKILLED_VALUE = 6;
   /**
    *
    *
@@ -163,6 +183,8 @@ public enum SkillProficiencyLevel implements com.google.protobuf.ProtocolMessage
     switch (value) {
       case 0:
         return SKILL_PROFICIENCY_LEVEL_UNSPECIFIED;
+      case 6:
+        return UNSKILLED;
       case 1:
         return FUNDAMENTAL_AWARENESS;
       case 2:

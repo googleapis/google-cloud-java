@@ -47,6 +47,8 @@ import com.google.cloud.bigquery.datatransfer.v1.ListTransferRunsRequest;
 import com.google.cloud.bigquery.datatransfer.v1.ListTransferRunsResponse;
 import com.google.cloud.bigquery.datatransfer.v1.ScheduleTransferRunsRequest;
 import com.google.cloud.bigquery.datatransfer.v1.ScheduleTransferRunsResponse;
+import com.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsRequest;
+import com.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsResponse;
 import com.google.cloud.bigquery.datatransfer.v1.TransferConfig;
 import com.google.cloud.bigquery.datatransfer.v1.TransferRun;
 import com.google.cloud.bigquery.datatransfer.v1.UpdateTransferConfigRequest;
@@ -205,6 +207,19 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(CheckValidCredsResponse.getDefaultInstance()))
               .build();
+  private static final MethodDescriptor<
+          StartManualTransferRunsRequest, StartManualTransferRunsResponse>
+      startManualTransferRunsMethodDescriptor =
+          MethodDescriptor
+              .<StartManualTransferRunsRequest, StartManualTransferRunsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.bigquery.datatransfer.v1.DataTransferService/StartManualTransferRuns")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(StartManualTransferRunsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(StartManualTransferRunsResponse.getDefaultInstance()))
+              .build();
 
   private final BackgroundResource backgroundResources;
 
@@ -237,6 +252,8 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
       listTransferLogsPagedCallable;
   private final UnaryCallable<CheckValidCredsRequest, CheckValidCredsResponse>
       checkValidCredsCallable;
+  private final UnaryCallable<StartManualTransferRunsRequest, StartManualTransferRunsResponse>
+      startManualTransferRunsCallable;
 
   private final GrpcStubCallableFactory callableFactory;
 
@@ -458,6 +475,21 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
                       }
                     })
                 .build();
+    GrpcCallSettings<StartManualTransferRunsRequest, StartManualTransferRunsResponse>
+        startManualTransferRunsTransportSettings =
+            GrpcCallSettings
+                .<StartManualTransferRunsRequest, StartManualTransferRunsResponse>newBuilder()
+                .setMethodDescriptor(startManualTransferRunsMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<StartManualTransferRunsRequest>() {
+                      @Override
+                      public Map<String, String> extract(StartManualTransferRunsRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("parent", String.valueOf(request.getParent()));
+                        return params.build();
+                      }
+                    })
+                .build();
 
     this.getDataSourceCallable =
         callableFactory.createUnaryCallable(
@@ -526,6 +558,11 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
     this.checkValidCredsCallable =
         callableFactory.createUnaryCallable(
             checkValidCredsTransportSettings, settings.checkValidCredsSettings(), clientContext);
+    this.startManualTransferRunsCallable =
+        callableFactory.createUnaryCallable(
+            startManualTransferRunsTransportSettings,
+            settings.startManualTransferRunsSettings(),
+            clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
@@ -604,6 +641,11 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
 
   public UnaryCallable<CheckValidCredsRequest, CheckValidCredsResponse> checkValidCredsCallable() {
     return checkValidCredsCallable;
+  }
+
+  public UnaryCallable<StartManualTransferRunsRequest, StartManualTransferRunsResponse>
+      startManualTransferRunsCallable() {
+    return startManualTransferRunsCallable;
   }
 
   @Override

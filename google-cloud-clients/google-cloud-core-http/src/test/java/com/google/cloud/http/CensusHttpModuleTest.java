@@ -35,6 +35,7 @@ import io.opencensus.trace.SpanId;
 import io.opencensus.trace.TraceId;
 import io.opencensus.trace.TraceOptions;
 import io.opencensus.trace.Tracer;
+import io.opencensus.trace.Tracestate;
 import io.opencensus.trace.Tracing;
 import io.opencensus.trace.propagation.TextFormat;
 import java.io.IOException;
@@ -116,7 +117,8 @@ public class CensusHttpModuleTest {
         SpanContext.create(
             TraceId.generateRandomId(random),
             SpanId.generateRandomId(random),
-            TraceOptions.DEFAULT);
+            TraceOptions.DEFAULT,
+            Tracestate.builder().build());
     Span mockSpan =
         createMockBuilder(Span.class)
             .withConstructor(SpanContext.class, EnumSet.class)

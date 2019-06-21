@@ -70,6 +70,8 @@ public class BigQueryImplTest {
   private static final String OTHER_PROJECT = "otherProject";
   private static final String DATASET = "dataset";
   private static final String TABLE = "table";
+  private static final String MODEL = "model";
+  private static final String OTHER_MODEL = "otherModel";
   private static final String JOB = "job";
   private static final String OTHER_TABLE = "otherTable";
   private static final String OTHER_DATASET = "otherDataset";
@@ -130,6 +132,15 @@ public class BigQueryImplTest {
       TableInfo.newBuilder(TABLE_ID, TABLE_DEFINITION_WITH_PARTITIONING)
           .setCreationTime(TABLE_CREATION_TIME)
           .build();
+
+  private static final ModelId MODEL_ID = ModelId.of(DATASET, MODEL);
+  private static final ModelId OTHER_MODEL_ID = ModelId.of(DATASET, OTHER_MODEL);
+  private static final ModelId MODEL_ID_WITH_PROJECT = ModelId.of(PROJECT, DATASET, MODEL);
+
+  private static final ModelInfo MODEL_INFO = ModelInfo.of(MODEL_ID);
+  private static final ModelInfo OTHER_MODEL_INFO = ModelInfo.of(OTHER_MODEL_ID);
+  private static final ModelInfo MODEL_INFO_WITH_PROJECT = ModelInfo.of(MODEL_ID_WITH_PROJECT);
+
   private static final LoadJobConfiguration LOAD_JOB_CONFIGURATION =
       LoadJobConfiguration.of(TABLE_ID, "URI");
   private static final LoadJobConfiguration LOAD_JOB_CONFIGURATION_WITH_PROJECT =
@@ -762,6 +773,16 @@ public class BigQueryImplTest {
   }
 
   @Test
+  public void testGetModel() {
+    EasyMock.expect(bigqueryRpcMock.getModel(PROJECT, DATASET, MODEL, EMPTY_RPC_OPTIONS))
+        .andReturn(MODEL_INFO_WITH_PROJECT.toPb());
+    EasyMock.replay(bigqueryRpcMock);
+    bigquery = options.getService();
+    Model model = bigquery.getModel(DATASET, MODEL);
+    assertEquals(new Model(bigquery, new ModelInfo.BuilderImpl(MODEL_INFO_WITH_PROJECT)), model);
+  }
+
+  @Test
   public void testListPartition() {
     EasyMock.expect(
             bigqueryRpcMock.getTable(
@@ -937,11 +958,28 @@ public class BigQueryImplTest {
   }
 
   @Test
+  public void testListModels() {
+    bigquery = options.getService();
+    ImmutableList<Model> modelList =
+        ImmutableList.of(
+            new Model(bigquery, new ModelInfo.BuilderImpl(MODEL_INFO_WITH_PROJECT)),
+            new Model(bigquery, new ModelInfo.BuilderImpl(OTHER_MODEL_INFO)));
+    Tuple<String, Iterable<com.google.api.services.bigquery.model.Model>> result =
+        Tuple.of(CURSOR, Iterables.transform(modelList, ModelInfo.TO_PB_FUNCTION));
+    EasyMock.expect(bigqueryRpcMock.listModels(PROJECT, DATASET, EMPTY_RPC_OPTIONS))
+        .andReturn(result);
+    EasyMock.replay(bigqueryRpcMock);
+    Page<Model> page = bigquery.listModels(DATASET);
+    assertEquals(CURSOR, page.getNextPageToken());
+    assertArrayEquals(modelList.toArray(), Iterables.toArray(page.getValues(), Model.class));
+  }
+
+  @Test
   public void testDeleteTable() {
     EasyMock.expect(bigqueryRpcMock.deleteTable(PROJECT, DATASET, TABLE)).andReturn(true);
     EasyMock.replay(bigqueryRpcMock);
     bigquery = options.getService();
-    assertTrue(bigquery.delete(DATASET, TABLE));
+    assertTrue(bigquery.delete(TABLE_ID));
   }
 
   @Test
@@ -971,6 +1009,14 @@ public class BigQueryImplTest {
     BigQueryOptions bigQueryOptions = createBigQueryOptionsForProject(PROJECT, rpcFactoryMock);
     bigquery = bigQueryOptions.getService();
     assertTrue(bigquery.delete(tableId));
+  }
+
+  @Test
+  public void testDeleteModel() {
+    EasyMock.expect(bigqueryRpcMock.deleteModel(PROJECT, DATASET, MODEL)).andReturn(true);
+    EasyMock.replay(bigqueryRpcMock);
+    bigquery = options.getService();
+    assertTrue(bigquery.delete(ModelId.of(DATASET, MODEL)));
   }
 
   @Test

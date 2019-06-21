@@ -236,17 +236,6 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Optional.
    * Start date of the employment.
-   * It can be a partial date (only year, or only year and month), but must be
-   * valid. Otherwise an error is thrown.
-   * Examples:
-   * {"year": 2017, "month": 2, "day": 28} is valid.
-   * {"year": 2020, "month": 1, "date": 31} is valid.
-   * {"year": 2018, "month": 12} is valid (partial date).
-   * {"year": 2018} is valid (partial date).
-   * {"year": 2015, "day": 21} is not valid (month is missing but day is
-   * presented).
-   * {"year": 2018, "month": 13} is not valid (invalid month).
-   * {"year": 2017, "month": 1, "day": 32} is not valid (invalid day).
    * </pre>
    *
    * <code>.google.type.Date start_date = 1;</code>
@@ -260,17 +249,6 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Optional.
    * Start date of the employment.
-   * It can be a partial date (only year, or only year and month), but must be
-   * valid. Otherwise an error is thrown.
-   * Examples:
-   * {"year": 2017, "month": 2, "day": 28} is valid.
-   * {"year": 2020, "month": 1, "date": 31} is valid.
-   * {"year": 2018, "month": 12} is valid (partial date).
-   * {"year": 2018} is valid (partial date).
-   * {"year": 2015, "day": 21} is not valid (month is missing but day is
-   * presented).
-   * {"year": 2018, "month": 13} is not valid (invalid month).
-   * {"year": 2017, "month": 1, "day": 32} is not valid (invalid day).
    * </pre>
    *
    * <code>.google.type.Date start_date = 1;</code>
@@ -284,17 +262,6 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Optional.
    * Start date of the employment.
-   * It can be a partial date (only year, or only year and month), but must be
-   * valid. Otherwise an error is thrown.
-   * Examples:
-   * {"year": 2017, "month": 2, "day": 28} is valid.
-   * {"year": 2020, "month": 1, "date": 31} is valid.
-   * {"year": 2018, "month": 12} is valid (partial date).
-   * {"year": 2018} is valid (partial date).
-   * {"year": 2015, "day": 21} is not valid (month is missing but day is
-   * presented).
-   * {"year": 2018, "month": 13} is not valid (invalid month).
-   * {"year": 2017, "month": 1, "day": 32} is not valid (invalid day).
    * </pre>
    *
    * <code>.google.type.Date start_date = 1;</code>
@@ -719,9 +686,11 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The job title snippet shows how the [job_title][google.cloud.talent.v4beta1.EmploymentRecord.job_title] is related
-   * to a search query. It's empty if the [job_title][google.cloud.talent.v4beta1.EmploymentRecord.job_title] isn't related to the
-   * search query.
+   * Output only. The job title snippet shows how the
+   * [job_title][google.cloud.talent.v4beta1.EmploymentRecord.job_title] is
+   * related to a search query. It's empty if the
+   * [job_title][google.cloud.talent.v4beta1.EmploymentRecord.job_title] isn't
+   * related to the search query.
    * </pre>
    *
    * <code>string job_title_snippet = 11;</code>
@@ -741,9 +710,11 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The job title snippet shows how the [job_title][google.cloud.talent.v4beta1.EmploymentRecord.job_title] is related
-   * to a search query. It's empty if the [job_title][google.cloud.talent.v4beta1.EmploymentRecord.job_title] isn't related to the
-   * search query.
+   * Output only. The job title snippet shows how the
+   * [job_title][google.cloud.talent.v4beta1.EmploymentRecord.job_title] is
+   * related to a search query. It's empty if the
+   * [job_title][google.cloud.talent.v4beta1.EmploymentRecord.job_title] isn't
+   * related to the search query.
    * </pre>
    *
    * <code>string job_title_snippet = 11;</code>
@@ -766,9 +737,11 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The job description snippet shows how the [job_description][google.cloud.talent.v4beta1.EmploymentRecord.job_description]
-   * is related to a search query. It's empty if the [job_description][google.cloud.talent.v4beta1.EmploymentRecord.job_description] isn't
-   * related to the search query.
+   * Output only. The job description snippet shows how the
+   * [job_description][google.cloud.talent.v4beta1.EmploymentRecord.job_description]
+   * is related to a search query. It's empty if the
+   * [job_description][google.cloud.talent.v4beta1.EmploymentRecord.job_description]
+   * isn't related to the search query.
    * </pre>
    *
    * <code>string job_description_snippet = 12;</code>
@@ -788,9 +761,11 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The job description snippet shows how the [job_description][google.cloud.talent.v4beta1.EmploymentRecord.job_description]
-   * is related to a search query. It's empty if the [job_description][google.cloud.talent.v4beta1.EmploymentRecord.job_description] isn't
-   * related to the search query.
+   * Output only. The job description snippet shows how the
+   * [job_description][google.cloud.talent.v4beta1.EmploymentRecord.job_description]
+   * is related to a search query. It's empty if the
+   * [job_description][google.cloud.talent.v4beta1.EmploymentRecord.job_description]
+   * isn't related to the search query.
    * </pre>
    *
    * <code>string job_description_snippet = 12;</code>
@@ -813,9 +788,11 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The employer name snippet shows how the [employer_name][google.cloud.talent.v4beta1.EmploymentRecord.employer_name] is
-   * related to a search query. It's empty if the [employer_name][google.cloud.talent.v4beta1.EmploymentRecord.employer_name] isn't
-   * related to the search query.
+   * Output only. The employer name snippet shows how the
+   * [employer_name][google.cloud.talent.v4beta1.EmploymentRecord.employer_name]
+   * is related to a search query. It's empty if the
+   * [employer_name][google.cloud.talent.v4beta1.EmploymentRecord.employer_name]
+   * isn't related to the search query.
    * </pre>
    *
    * <code>string employer_name_snippet = 13;</code>
@@ -835,9 +812,11 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The employer name snippet shows how the [employer_name][google.cloud.talent.v4beta1.EmploymentRecord.employer_name] is
-   * related to a search query. It's empty if the [employer_name][google.cloud.talent.v4beta1.EmploymentRecord.employer_name] isn't
-   * related to the search query.
+   * Output only. The employer name snippet shows how the
+   * [employer_name][google.cloud.talent.v4beta1.EmploymentRecord.employer_name]
+   * is related to a search query. It's empty if the
+   * [employer_name][google.cloud.talent.v4beta1.EmploymentRecord.employer_name]
+   * isn't related to the search query.
    * </pre>
    *
    * <code>string employer_name_snippet = 13;</code>
@@ -1445,17 +1424,6 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional.
      * Start date of the employment.
-     * It can be a partial date (only year, or only year and month), but must be
-     * valid. Otherwise an error is thrown.
-     * Examples:
-     * {"year": 2017, "month": 2, "day": 28} is valid.
-     * {"year": 2020, "month": 1, "date": 31} is valid.
-     * {"year": 2018, "month": 12} is valid (partial date).
-     * {"year": 2018} is valid (partial date).
-     * {"year": 2015, "day": 21} is not valid (month is missing but day is
-     * presented).
-     * {"year": 2018, "month": 13} is not valid (invalid month).
-     * {"year": 2017, "month": 1, "day": 32} is not valid (invalid day).
      * </pre>
      *
      * <code>.google.type.Date start_date = 1;</code>
@@ -1469,17 +1437,6 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional.
      * Start date of the employment.
-     * It can be a partial date (only year, or only year and month), but must be
-     * valid. Otherwise an error is thrown.
-     * Examples:
-     * {"year": 2017, "month": 2, "day": 28} is valid.
-     * {"year": 2020, "month": 1, "date": 31} is valid.
-     * {"year": 2018, "month": 12} is valid (partial date).
-     * {"year": 2018} is valid (partial date).
-     * {"year": 2015, "day": 21} is not valid (month is missing but day is
-     * presented).
-     * {"year": 2018, "month": 13} is not valid (invalid month).
-     * {"year": 2017, "month": 1, "day": 32} is not valid (invalid day).
      * </pre>
      *
      * <code>.google.type.Date start_date = 1;</code>
@@ -1497,17 +1454,6 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional.
      * Start date of the employment.
-     * It can be a partial date (only year, or only year and month), but must be
-     * valid. Otherwise an error is thrown.
-     * Examples:
-     * {"year": 2017, "month": 2, "day": 28} is valid.
-     * {"year": 2020, "month": 1, "date": 31} is valid.
-     * {"year": 2018, "month": 12} is valid (partial date).
-     * {"year": 2018} is valid (partial date).
-     * {"year": 2015, "day": 21} is not valid (month is missing but day is
-     * presented).
-     * {"year": 2018, "month": 13} is not valid (invalid month).
-     * {"year": 2017, "month": 1, "day": 32} is not valid (invalid day).
      * </pre>
      *
      * <code>.google.type.Date start_date = 1;</code>
@@ -1531,17 +1477,6 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional.
      * Start date of the employment.
-     * It can be a partial date (only year, or only year and month), but must be
-     * valid. Otherwise an error is thrown.
-     * Examples:
-     * {"year": 2017, "month": 2, "day": 28} is valid.
-     * {"year": 2020, "month": 1, "date": 31} is valid.
-     * {"year": 2018, "month": 12} is valid (partial date).
-     * {"year": 2018} is valid (partial date).
-     * {"year": 2015, "day": 21} is not valid (month is missing but day is
-     * presented).
-     * {"year": 2018, "month": 13} is not valid (invalid month).
-     * {"year": 2017, "month": 1, "day": 32} is not valid (invalid day).
      * </pre>
      *
      * <code>.google.type.Date start_date = 1;</code>
@@ -1562,17 +1497,6 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional.
      * Start date of the employment.
-     * It can be a partial date (only year, or only year and month), but must be
-     * valid. Otherwise an error is thrown.
-     * Examples:
-     * {"year": 2017, "month": 2, "day": 28} is valid.
-     * {"year": 2020, "month": 1, "date": 31} is valid.
-     * {"year": 2018, "month": 12} is valid (partial date).
-     * {"year": 2018} is valid (partial date).
-     * {"year": 2015, "day": 21} is not valid (month is missing but day is
-     * presented).
-     * {"year": 2018, "month": 13} is not valid (invalid month).
-     * {"year": 2017, "month": 1, "day": 32} is not valid (invalid day).
      * </pre>
      *
      * <code>.google.type.Date start_date = 1;</code>
@@ -1597,17 +1521,6 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional.
      * Start date of the employment.
-     * It can be a partial date (only year, or only year and month), but must be
-     * valid. Otherwise an error is thrown.
-     * Examples:
-     * {"year": 2017, "month": 2, "day": 28} is valid.
-     * {"year": 2020, "month": 1, "date": 31} is valid.
-     * {"year": 2018, "month": 12} is valid (partial date).
-     * {"year": 2018} is valid (partial date).
-     * {"year": 2015, "day": 21} is not valid (month is missing but day is
-     * presented).
-     * {"year": 2018, "month": 13} is not valid (invalid month).
-     * {"year": 2017, "month": 1, "day": 32} is not valid (invalid day).
      * </pre>
      *
      * <code>.google.type.Date start_date = 1;</code>
@@ -1629,17 +1542,6 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional.
      * Start date of the employment.
-     * It can be a partial date (only year, or only year and month), but must be
-     * valid. Otherwise an error is thrown.
-     * Examples:
-     * {"year": 2017, "month": 2, "day": 28} is valid.
-     * {"year": 2020, "month": 1, "date": 31} is valid.
-     * {"year": 2018, "month": 12} is valid (partial date).
-     * {"year": 2018} is valid (partial date).
-     * {"year": 2015, "day": 21} is not valid (month is missing but day is
-     * presented).
-     * {"year": 2018, "month": 13} is not valid (invalid month).
-     * {"year": 2017, "month": 1, "day": 32} is not valid (invalid day).
      * </pre>
      *
      * <code>.google.type.Date start_date = 1;</code>
@@ -1655,17 +1557,6 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional.
      * Start date of the employment.
-     * It can be a partial date (only year, or only year and month), but must be
-     * valid. Otherwise an error is thrown.
-     * Examples:
-     * {"year": 2017, "month": 2, "day": 28} is valid.
-     * {"year": 2020, "month": 1, "date": 31} is valid.
-     * {"year": 2018, "month": 12} is valid (partial date).
-     * {"year": 2018} is valid (partial date).
-     * {"year": 2015, "day": 21} is not valid (month is missing but day is
-     * presented).
-     * {"year": 2018, "month": 13} is not valid (invalid month).
-     * {"year": 2017, "month": 1, "day": 32} is not valid (invalid day).
      * </pre>
      *
      * <code>.google.type.Date start_date = 1;</code>
@@ -1683,17 +1574,6 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional.
      * Start date of the employment.
-     * It can be a partial date (only year, or only year and month), but must be
-     * valid. Otherwise an error is thrown.
-     * Examples:
-     * {"year": 2017, "month": 2, "day": 28} is valid.
-     * {"year": 2020, "month": 1, "date": 31} is valid.
-     * {"year": 2018, "month": 12} is valid (partial date).
-     * {"year": 2018} is valid (partial date).
-     * {"year": 2015, "day": 21} is not valid (month is missing but day is
-     * presented).
-     * {"year": 2018, "month": 13} is not valid (invalid month).
-     * {"year": 2017, "month": 1, "day": 32} is not valid (invalid day).
      * </pre>
      *
      * <code>.google.type.Date start_date = 1;</code>
@@ -3078,9 +2958,11 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The job title snippet shows how the [job_title][google.cloud.talent.v4beta1.EmploymentRecord.job_title] is related
-     * to a search query. It's empty if the [job_title][google.cloud.talent.v4beta1.EmploymentRecord.job_title] isn't related to the
-     * search query.
+     * Output only. The job title snippet shows how the
+     * [job_title][google.cloud.talent.v4beta1.EmploymentRecord.job_title] is
+     * related to a search query. It's empty if the
+     * [job_title][google.cloud.talent.v4beta1.EmploymentRecord.job_title] isn't
+     * related to the search query.
      * </pre>
      *
      * <code>string job_title_snippet = 11;</code>
@@ -3100,9 +2982,11 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The job title snippet shows how the [job_title][google.cloud.talent.v4beta1.EmploymentRecord.job_title] is related
-     * to a search query. It's empty if the [job_title][google.cloud.talent.v4beta1.EmploymentRecord.job_title] isn't related to the
-     * search query.
+     * Output only. The job title snippet shows how the
+     * [job_title][google.cloud.talent.v4beta1.EmploymentRecord.job_title] is
+     * related to a search query. It's empty if the
+     * [job_title][google.cloud.talent.v4beta1.EmploymentRecord.job_title] isn't
+     * related to the search query.
      * </pre>
      *
      * <code>string job_title_snippet = 11;</code>
@@ -3122,9 +3006,11 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The job title snippet shows how the [job_title][google.cloud.talent.v4beta1.EmploymentRecord.job_title] is related
-     * to a search query. It's empty if the [job_title][google.cloud.talent.v4beta1.EmploymentRecord.job_title] isn't related to the
-     * search query.
+     * Output only. The job title snippet shows how the
+     * [job_title][google.cloud.talent.v4beta1.EmploymentRecord.job_title] is
+     * related to a search query. It's empty if the
+     * [job_title][google.cloud.talent.v4beta1.EmploymentRecord.job_title] isn't
+     * related to the search query.
      * </pre>
      *
      * <code>string job_title_snippet = 11;</code>
@@ -3142,9 +3028,11 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The job title snippet shows how the [job_title][google.cloud.talent.v4beta1.EmploymentRecord.job_title] is related
-     * to a search query. It's empty if the [job_title][google.cloud.talent.v4beta1.EmploymentRecord.job_title] isn't related to the
-     * search query.
+     * Output only. The job title snippet shows how the
+     * [job_title][google.cloud.talent.v4beta1.EmploymentRecord.job_title] is
+     * related to a search query. It's empty if the
+     * [job_title][google.cloud.talent.v4beta1.EmploymentRecord.job_title] isn't
+     * related to the search query.
      * </pre>
      *
      * <code>string job_title_snippet = 11;</code>
@@ -3159,9 +3047,11 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The job title snippet shows how the [job_title][google.cloud.talent.v4beta1.EmploymentRecord.job_title] is related
-     * to a search query. It's empty if the [job_title][google.cloud.talent.v4beta1.EmploymentRecord.job_title] isn't related to the
-     * search query.
+     * Output only. The job title snippet shows how the
+     * [job_title][google.cloud.talent.v4beta1.EmploymentRecord.job_title] is
+     * related to a search query. It's empty if the
+     * [job_title][google.cloud.talent.v4beta1.EmploymentRecord.job_title] isn't
+     * related to the search query.
      * </pre>
      *
      * <code>string job_title_snippet = 11;</code>
@@ -3182,9 +3072,11 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The job description snippet shows how the [job_description][google.cloud.talent.v4beta1.EmploymentRecord.job_description]
-     * is related to a search query. It's empty if the [job_description][google.cloud.talent.v4beta1.EmploymentRecord.job_description] isn't
-     * related to the search query.
+     * Output only. The job description snippet shows how the
+     * [job_description][google.cloud.talent.v4beta1.EmploymentRecord.job_description]
+     * is related to a search query. It's empty if the
+     * [job_description][google.cloud.talent.v4beta1.EmploymentRecord.job_description]
+     * isn't related to the search query.
      * </pre>
      *
      * <code>string job_description_snippet = 12;</code>
@@ -3204,9 +3096,11 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The job description snippet shows how the [job_description][google.cloud.talent.v4beta1.EmploymentRecord.job_description]
-     * is related to a search query. It's empty if the [job_description][google.cloud.talent.v4beta1.EmploymentRecord.job_description] isn't
-     * related to the search query.
+     * Output only. The job description snippet shows how the
+     * [job_description][google.cloud.talent.v4beta1.EmploymentRecord.job_description]
+     * is related to a search query. It's empty if the
+     * [job_description][google.cloud.talent.v4beta1.EmploymentRecord.job_description]
+     * isn't related to the search query.
      * </pre>
      *
      * <code>string job_description_snippet = 12;</code>
@@ -3226,9 +3120,11 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The job description snippet shows how the [job_description][google.cloud.talent.v4beta1.EmploymentRecord.job_description]
-     * is related to a search query. It's empty if the [job_description][google.cloud.talent.v4beta1.EmploymentRecord.job_description] isn't
-     * related to the search query.
+     * Output only. The job description snippet shows how the
+     * [job_description][google.cloud.talent.v4beta1.EmploymentRecord.job_description]
+     * is related to a search query. It's empty if the
+     * [job_description][google.cloud.talent.v4beta1.EmploymentRecord.job_description]
+     * isn't related to the search query.
      * </pre>
      *
      * <code>string job_description_snippet = 12;</code>
@@ -3246,9 +3142,11 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The job description snippet shows how the [job_description][google.cloud.talent.v4beta1.EmploymentRecord.job_description]
-     * is related to a search query. It's empty if the [job_description][google.cloud.talent.v4beta1.EmploymentRecord.job_description] isn't
-     * related to the search query.
+     * Output only. The job description snippet shows how the
+     * [job_description][google.cloud.talent.v4beta1.EmploymentRecord.job_description]
+     * is related to a search query. It's empty if the
+     * [job_description][google.cloud.talent.v4beta1.EmploymentRecord.job_description]
+     * isn't related to the search query.
      * </pre>
      *
      * <code>string job_description_snippet = 12;</code>
@@ -3263,9 +3161,11 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The job description snippet shows how the [job_description][google.cloud.talent.v4beta1.EmploymentRecord.job_description]
-     * is related to a search query. It's empty if the [job_description][google.cloud.talent.v4beta1.EmploymentRecord.job_description] isn't
-     * related to the search query.
+     * Output only. The job description snippet shows how the
+     * [job_description][google.cloud.talent.v4beta1.EmploymentRecord.job_description]
+     * is related to a search query. It's empty if the
+     * [job_description][google.cloud.talent.v4beta1.EmploymentRecord.job_description]
+     * isn't related to the search query.
      * </pre>
      *
      * <code>string job_description_snippet = 12;</code>
@@ -3286,9 +3186,11 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The employer name snippet shows how the [employer_name][google.cloud.talent.v4beta1.EmploymentRecord.employer_name] is
-     * related to a search query. It's empty if the [employer_name][google.cloud.talent.v4beta1.EmploymentRecord.employer_name] isn't
-     * related to the search query.
+     * Output only. The employer name snippet shows how the
+     * [employer_name][google.cloud.talent.v4beta1.EmploymentRecord.employer_name]
+     * is related to a search query. It's empty if the
+     * [employer_name][google.cloud.talent.v4beta1.EmploymentRecord.employer_name]
+     * isn't related to the search query.
      * </pre>
      *
      * <code>string employer_name_snippet = 13;</code>
@@ -3308,9 +3210,11 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The employer name snippet shows how the [employer_name][google.cloud.talent.v4beta1.EmploymentRecord.employer_name] is
-     * related to a search query. It's empty if the [employer_name][google.cloud.talent.v4beta1.EmploymentRecord.employer_name] isn't
-     * related to the search query.
+     * Output only. The employer name snippet shows how the
+     * [employer_name][google.cloud.talent.v4beta1.EmploymentRecord.employer_name]
+     * is related to a search query. It's empty if the
+     * [employer_name][google.cloud.talent.v4beta1.EmploymentRecord.employer_name]
+     * isn't related to the search query.
      * </pre>
      *
      * <code>string employer_name_snippet = 13;</code>
@@ -3330,9 +3234,11 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The employer name snippet shows how the [employer_name][google.cloud.talent.v4beta1.EmploymentRecord.employer_name] is
-     * related to a search query. It's empty if the [employer_name][google.cloud.talent.v4beta1.EmploymentRecord.employer_name] isn't
-     * related to the search query.
+     * Output only. The employer name snippet shows how the
+     * [employer_name][google.cloud.talent.v4beta1.EmploymentRecord.employer_name]
+     * is related to a search query. It's empty if the
+     * [employer_name][google.cloud.talent.v4beta1.EmploymentRecord.employer_name]
+     * isn't related to the search query.
      * </pre>
      *
      * <code>string employer_name_snippet = 13;</code>
@@ -3350,9 +3256,11 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The employer name snippet shows how the [employer_name][google.cloud.talent.v4beta1.EmploymentRecord.employer_name] is
-     * related to a search query. It's empty if the [employer_name][google.cloud.talent.v4beta1.EmploymentRecord.employer_name] isn't
-     * related to the search query.
+     * Output only. The employer name snippet shows how the
+     * [employer_name][google.cloud.talent.v4beta1.EmploymentRecord.employer_name]
+     * is related to a search query. It's empty if the
+     * [employer_name][google.cloud.talent.v4beta1.EmploymentRecord.employer_name]
+     * isn't related to the search query.
      * </pre>
      *
      * <code>string employer_name_snippet = 13;</code>
@@ -3367,9 +3275,11 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The employer name snippet shows how the [employer_name][google.cloud.talent.v4beta1.EmploymentRecord.employer_name] is
-     * related to a search query. It's empty if the [employer_name][google.cloud.talent.v4beta1.EmploymentRecord.employer_name] isn't
-     * related to the search query.
+     * Output only. The employer name snippet shows how the
+     * [employer_name][google.cloud.talent.v4beta1.EmploymentRecord.employer_name]
+     * is related to a search query. It's empty if the
+     * [employer_name][google.cloud.talent.v4beta1.EmploymentRecord.employer_name]
+     * isn't related to the search query.
      * </pre>
      *
      * <code>string employer_name_snippet = 13;</code>

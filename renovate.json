@@ -1,0 +1,19 @@
+{
+  "extends": [
+    "config:base"
+  ],
+  "packageRules": [
+    {
+      "packagePatterns": ["^io.grpc:grpc-"],
+      "groupName": "gRPC packages"
+    },
+    {
+      "packagePatterns": ["^com.google.protobuf:protobuf-"],
+      "groupName": "Protobuf packages"
+    },
+    {
+      "packagePatterns": ["^io.opencensus:opencensus-"],
+      "groupName": "OpenCensus packages"
+    }
+  ]
+}

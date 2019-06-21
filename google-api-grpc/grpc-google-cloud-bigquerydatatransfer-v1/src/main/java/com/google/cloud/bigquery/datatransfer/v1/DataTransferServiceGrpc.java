@@ -519,6 +519,71 @@ public final class DataTransferServiceGrpc {
   }
 
   @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getStartManualTransferRunsMethod()} instead.
+  public static final io.grpc.MethodDescriptor<
+          com.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsRequest,
+          com.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsResponse>
+      METHOD_START_MANUAL_TRANSFER_RUNS = getStartManualTransferRunsMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsRequest,
+          com.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsResponse>
+      getStartManualTransferRunsMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsRequest,
+          com.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsResponse>
+      getStartManualTransferRunsMethod() {
+    return getStartManualTransferRunsMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<
+          com.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsRequest,
+          com.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsResponse>
+      getStartManualTransferRunsMethodHelper() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsRequest,
+            com.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsResponse>
+        getStartManualTransferRunsMethod;
+    if ((getStartManualTransferRunsMethod =
+            DataTransferServiceGrpc.getStartManualTransferRunsMethod)
+        == null) {
+      synchronized (DataTransferServiceGrpc.class) {
+        if ((getStartManualTransferRunsMethod =
+                DataTransferServiceGrpc.getStartManualTransferRunsMethod)
+            == null) {
+          DataTransferServiceGrpc.getStartManualTransferRunsMethod =
+              getStartManualTransferRunsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsRequest,
+                          com.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              "google.cloud.bigquery.datatransfer.v1.DataTransferService",
+                              "StartManualTransferRuns"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.bigquery.datatransfer.v1
+                                  .StartManualTransferRunsRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.bigquery.datatransfer.v1
+                                  .StartManualTransferRunsResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DataTransferServiceMethodDescriptorSupplier(
+                              "StartManualTransferRuns"))
+                      .build();
+        }
+      }
+    }
+    return getStartManualTransferRunsMethod;
+  }
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
   @java.lang.Deprecated // Use {@link #getGetTransferRunMethod()} instead.
   public static final io.grpc.MethodDescriptor<
           com.google.cloud.bigquery.datatransfer.v1.GetTransferRunRequest,
@@ -960,6 +1025,7 @@ public final class DataTransferServiceGrpc {
      * For each date - or whatever granularity the data source supports - in the
      * range, one transfer run is created.
      * Note that runs are created per UTC time in the time range.
+     * DEPRECATED: use StartManualTransferRuns instead.
      * </pre>
      */
     public void scheduleTransferRuns(
@@ -968,6 +1034,24 @@ public final class DataTransferServiceGrpc {
                 com.google.cloud.bigquery.datatransfer.v1.ScheduleTransferRunsResponse>
             responseObserver) {
       asyncUnimplementedUnaryCall(getScheduleTransferRunsMethodHelper(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Start manual transfer runs to be executed now with schedule_time equal to
+     * current time. The transfer runs can be created for a time range where the
+     * run_time is between start_time (inclusive) and end_time (exclusive), or for
+     * a specific run_time.
+     * </pre>
+     */
+    public void startManualTransferRuns(
+        com.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsResponse>
+            responseObserver) {
+      asyncUnimplementedUnaryCall(getStartManualTransferRunsMethodHelper(), responseObserver);
     }
 
     /**
@@ -1105,6 +1189,13 @@ public final class DataTransferServiceGrpc {
                       com.google.cloud.bigquery.datatransfer.v1.ScheduleTransferRunsRequest,
                       com.google.cloud.bigquery.datatransfer.v1.ScheduleTransferRunsResponse>(
                       this, METHODID_SCHEDULE_TRANSFER_RUNS)))
+          .addMethod(
+              getStartManualTransferRunsMethodHelper(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsRequest,
+                      com.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsResponse>(
+                      this, METHODID_START_MANUAL_TRANSFER_RUNS)))
           .addMethod(
               getGetTransferRunMethodHelper(),
               asyncUnaryCall(
@@ -1301,6 +1392,7 @@ public final class DataTransferServiceGrpc {
      * For each date - or whatever granularity the data source supports - in the
      * range, one transfer run is created.
      * Note that runs are created per UTC time in the time range.
+     * DEPRECATED: use StartManualTransferRuns instead.
      * </pre>
      */
     public void scheduleTransferRuns(
@@ -1310,6 +1402,27 @@ public final class DataTransferServiceGrpc {
             responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getScheduleTransferRunsMethodHelper(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Start manual transfer runs to be executed now with schedule_time equal to
+     * current time. The transfer runs can be created for a time range where the
+     * run_time is between start_time (inclusive) and end_time (exclusive), or for
+     * a specific run_time.
+     * </pre>
+     */
+    public void startManualTransferRuns(
+        com.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsResponse>
+            responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getStartManualTransferRunsMethodHelper(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1538,6 +1651,7 @@ public final class DataTransferServiceGrpc {
      * For each date - or whatever granularity the data source supports - in the
      * range, one transfer run is created.
      * Note that runs are created per UTC time in the time range.
+     * DEPRECATED: use StartManualTransferRuns instead.
      * </pre>
      */
     public com.google.cloud.bigquery.datatransfer.v1.ScheduleTransferRunsResponse
@@ -1545,6 +1659,23 @@ public final class DataTransferServiceGrpc {
             com.google.cloud.bigquery.datatransfer.v1.ScheduleTransferRunsRequest request) {
       return blockingUnaryCall(
           getChannel(), getScheduleTransferRunsMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Start manual transfer runs to be executed now with schedule_time equal to
+     * current time. The transfer runs can be created for a time range where the
+     * run_time is between start_time (inclusive) and end_time (exclusive), or for
+     * a specific run_time.
+     * </pre>
+     */
+    public com.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsResponse
+        startManualTransferRuns(
+            com.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getStartManualTransferRunsMethodHelper(), getCallOptions(), request);
     }
 
     /**
@@ -1759,6 +1890,7 @@ public final class DataTransferServiceGrpc {
      * For each date - or whatever granularity the data source supports - in the
      * range, one transfer run is created.
      * Note that runs are created per UTC time in the time range.
+     * DEPRECATED: use StartManualTransferRuns instead.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1767,6 +1899,25 @@ public final class DataTransferServiceGrpc {
             com.google.cloud.bigquery.datatransfer.v1.ScheduleTransferRunsRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getScheduleTransferRunsMethodHelper(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Start manual transfer runs to be executed now with schedule_time equal to
+     * current time. The transfer runs can be created for a time range where the
+     * run_time is between start_time (inclusive) and end_time (exclusive), or for
+     * a specific run_time.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsResponse>
+        startManualTransferRuns(
+            com.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getStartManualTransferRunsMethodHelper(), getCallOptions()),
+          request);
     }
 
     /**
@@ -1855,11 +2006,12 @@ public final class DataTransferServiceGrpc {
   private static final int METHODID_GET_TRANSFER_CONFIG = 5;
   private static final int METHODID_LIST_TRANSFER_CONFIGS = 6;
   private static final int METHODID_SCHEDULE_TRANSFER_RUNS = 7;
-  private static final int METHODID_GET_TRANSFER_RUN = 8;
-  private static final int METHODID_DELETE_TRANSFER_RUN = 9;
-  private static final int METHODID_LIST_TRANSFER_RUNS = 10;
-  private static final int METHODID_LIST_TRANSFER_LOGS = 11;
-  private static final int METHODID_CHECK_VALID_CREDS = 12;
+  private static final int METHODID_START_MANUAL_TRANSFER_RUNS = 8;
+  private static final int METHODID_GET_TRANSFER_RUN = 9;
+  private static final int METHODID_DELETE_TRANSFER_RUN = 10;
+  private static final int METHODID_LIST_TRANSFER_RUNS = 11;
+  private static final int METHODID_LIST_TRANSFER_LOGS = 12;
+  private static final int METHODID_CHECK_VALID_CREDS = 13;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1929,6 +2081,13 @@ public final class DataTransferServiceGrpc {
               (com.google.cloud.bigquery.datatransfer.v1.ScheduleTransferRunsRequest) request,
               (io.grpc.stub.StreamObserver<
                       com.google.cloud.bigquery.datatransfer.v1.ScheduleTransferRunsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_START_MANUAL_TRANSFER_RUNS:
+          serviceImpl.startManualTransferRuns(
+              (com.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsResponse>)
                   responseObserver);
           break;
         case METHODID_GET_TRANSFER_RUN:
@@ -2035,6 +2194,7 @@ public final class DataTransferServiceGrpc {
                       .addMethod(getGetTransferConfigMethodHelper())
                       .addMethod(getListTransferConfigsMethodHelper())
                       .addMethod(getScheduleTransferRunsMethodHelper())
+                      .addMethod(getStartManualTransferRunsMethodHelper())
                       .addMethod(getGetTransferRunMethodHelper())
                       .addMethod(getDeleteTransferRunMethodHelper())
                       .addMethod(getListTransferRunsMethodHelper())

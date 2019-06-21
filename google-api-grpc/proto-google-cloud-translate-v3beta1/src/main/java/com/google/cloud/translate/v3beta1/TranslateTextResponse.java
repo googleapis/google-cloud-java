@@ -3,15 +3,7 @@
 
 package com.google.cloud.translate.v3beta1;
 
-/**
- *
- *
- * <pre>
- * The main language translation response message.
- * </pre>
- *
- * Protobuf type {@code google.cloud.translation.v3beta1.TranslateTextResponse}
- */
+/** Protobuf type {@code google.cloud.translation.v3beta1.TranslateTextResponse} */
 public final class TranslateTextResponse extends com.google.protobuf.GeneratedMessageV3
     implements
     // @@protoc_insertion_point(message_implements:google.cloud.translation.v3beta1.TranslateTextResponse)
@@ -122,7 +114,8 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Text translation responses with no glossary applied.
-   * This field has the same length as `contents` in TranslateTextRequest.
+   * This field has the same length as
+   * [`contents`][google.cloud.translation.v3beta1.TranslateTextRequest.contents].
    * </pre>
    *
    * <code>repeated .google.cloud.translation.v3beta1.Translation translations = 1;</code>
@@ -135,7 +128,8 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Text translation responses with no glossary applied.
-   * This field has the same length as `contents` in TranslateTextRequest.
+   * This field has the same length as
+   * [`contents`][google.cloud.translation.v3beta1.TranslateTextRequest.contents].
    * </pre>
    *
    * <code>repeated .google.cloud.translation.v3beta1.Translation translations = 1;</code>
@@ -149,7 +143,8 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Text translation responses with no glossary applied.
-   * This field has the same length as `contents` in TranslateTextRequest.
+   * This field has the same length as
+   * [`contents`][google.cloud.translation.v3beta1.TranslateTextRequest.contents].
    * </pre>
    *
    * <code>repeated .google.cloud.translation.v3beta1.Translation translations = 1;</code>
@@ -162,7 +157,8 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Text translation responses with no glossary applied.
-   * This field has the same length as `contents` in TranslateTextRequest.
+   * This field has the same length as
+   * [`contents`][google.cloud.translation.v3beta1.TranslateTextRequest.contents].
    * </pre>
    *
    * <code>repeated .google.cloud.translation.v3beta1.Translation translations = 1;</code>
@@ -175,7 +171,8 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Text translation responses with no glossary applied.
-   * This field has the same length as `contents` in TranslateTextRequest.
+   * This field has the same length as
+   * [`contents`][google.cloud.translation.v3beta1.TranslateTextRequest.contents].
    * </pre>
    *
    * <code>repeated .google.cloud.translation.v3beta1.Translation translations = 1;</code>
@@ -192,8 +189,10 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Text translation responses if a glossary is provided in the request.
-   * This could be the same as 'translation' above if no terms apply.
-   * This field has the same length as `contents` in TranslateTextRequest.
+   * This can be the same as
+   * [`translations`][google.cloud.translation.v3beta1.TranslateTextResponse.translations] if no terms apply.
+   * This field has the same length as
+   * [`contents`][google.cloud.translation.v3beta1.TranslateTextRequest.contents].
    * </pre>
    *
    * <code>repeated .google.cloud.translation.v3beta1.Translation glossary_translations = 3;</code>
@@ -207,8 +206,10 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Text translation responses if a glossary is provided in the request.
-   * This could be the same as 'translation' above if no terms apply.
-   * This field has the same length as `contents` in TranslateTextRequest.
+   * This can be the same as
+   * [`translations`][google.cloud.translation.v3beta1.TranslateTextResponse.translations] if no terms apply.
+   * This field has the same length as
+   * [`contents`][google.cloud.translation.v3beta1.TranslateTextRequest.contents].
    * </pre>
    *
    * <code>repeated .google.cloud.translation.v3beta1.Translation glossary_translations = 3;</code>
@@ -222,8 +223,10 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Text translation responses if a glossary is provided in the request.
-   * This could be the same as 'translation' above if no terms apply.
-   * This field has the same length as `contents` in TranslateTextRequest.
+   * This can be the same as
+   * [`translations`][google.cloud.translation.v3beta1.TranslateTextResponse.translations] if no terms apply.
+   * This field has the same length as
+   * [`contents`][google.cloud.translation.v3beta1.TranslateTextRequest.contents].
    * </pre>
    *
    * <code>repeated .google.cloud.translation.v3beta1.Translation glossary_translations = 3;</code>
@@ -236,8 +239,10 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Text translation responses if a glossary is provided in the request.
-   * This could be the same as 'translation' above if no terms apply.
-   * This field has the same length as `contents` in TranslateTextRequest.
+   * This can be the same as
+   * [`translations`][google.cloud.translation.v3beta1.TranslateTextResponse.translations] if no terms apply.
+   * This field has the same length as
+   * [`contents`][google.cloud.translation.v3beta1.TranslateTextRequest.contents].
    * </pre>
    *
    * <code>repeated .google.cloud.translation.v3beta1.Translation glossary_translations = 3;</code>
@@ -250,8 +255,10 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Text translation responses if a glossary is provided in the request.
-   * This could be the same as 'translation' above if no terms apply.
-   * This field has the same length as `contents` in TranslateTextRequest.
+   * This can be the same as
+   * [`translations`][google.cloud.translation.v3beta1.TranslateTextResponse.translations] if no terms apply.
+   * This field has the same length as
+   * [`contents`][google.cloud.translation.v3beta1.TranslateTextRequest.contents].
    * </pre>
    *
    * <code>repeated .google.cloud.translation.v3beta1.Translation glossary_translations = 3;</code>
@@ -435,15 +442,7 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-  /**
-   *
-   *
-   * <pre>
-   * The main language translation response message.
-   * </pre>
-   *
-   * Protobuf type {@code google.cloud.translation.v3beta1.TranslateTextResponse}
-   */
+  /** Protobuf type {@code google.cloud.translation.v3beta1.TranslateTextResponse} */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
       // @@protoc_insertion_point(builder_implements:google.cloud.translation.v3beta1.TranslateTextResponse)
@@ -699,7 +698,8 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Text translation responses with no glossary applied.
-     * This field has the same length as `contents` in TranslateTextRequest.
+     * This field has the same length as
+     * [`contents`][google.cloud.translation.v3beta1.TranslateTextRequest.contents].
      * </pre>
      *
      * <code>repeated .google.cloud.translation.v3beta1.Translation translations = 1;</code>
@@ -716,7 +716,8 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Text translation responses with no glossary applied.
-     * This field has the same length as `contents` in TranslateTextRequest.
+     * This field has the same length as
+     * [`contents`][google.cloud.translation.v3beta1.TranslateTextRequest.contents].
      * </pre>
      *
      * <code>repeated .google.cloud.translation.v3beta1.Translation translations = 1;</code>
@@ -733,7 +734,8 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Text translation responses with no glossary applied.
-     * This field has the same length as `contents` in TranslateTextRequest.
+     * This field has the same length as
+     * [`contents`][google.cloud.translation.v3beta1.TranslateTextRequest.contents].
      * </pre>
      *
      * <code>repeated .google.cloud.translation.v3beta1.Translation translations = 1;</code>
@@ -750,7 +752,8 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Text translation responses with no glossary applied.
-     * This field has the same length as `contents` in TranslateTextRequest.
+     * This field has the same length as
+     * [`contents`][google.cloud.translation.v3beta1.TranslateTextRequest.contents].
      * </pre>
      *
      * <code>repeated .google.cloud.translation.v3beta1.Translation translations = 1;</code>
@@ -774,7 +777,8 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Text translation responses with no glossary applied.
-     * This field has the same length as `contents` in TranslateTextRequest.
+     * This field has the same length as
+     * [`contents`][google.cloud.translation.v3beta1.TranslateTextRequest.contents].
      * </pre>
      *
      * <code>repeated .google.cloud.translation.v3beta1.Translation translations = 1;</code>
@@ -795,7 +799,8 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Text translation responses with no glossary applied.
-     * This field has the same length as `contents` in TranslateTextRequest.
+     * This field has the same length as
+     * [`contents`][google.cloud.translation.v3beta1.TranslateTextRequest.contents].
      * </pre>
      *
      * <code>repeated .google.cloud.translation.v3beta1.Translation translations = 1;</code>
@@ -818,7 +823,8 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Text translation responses with no glossary applied.
-     * This field has the same length as `contents` in TranslateTextRequest.
+     * This field has the same length as
+     * [`contents`][google.cloud.translation.v3beta1.TranslateTextRequest.contents].
      * </pre>
      *
      * <code>repeated .google.cloud.translation.v3beta1.Translation translations = 1;</code>
@@ -842,7 +848,8 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Text translation responses with no glossary applied.
-     * This field has the same length as `contents` in TranslateTextRequest.
+     * This field has the same length as
+     * [`contents`][google.cloud.translation.v3beta1.TranslateTextRequest.contents].
      * </pre>
      *
      * <code>repeated .google.cloud.translation.v3beta1.Translation translations = 1;</code>
@@ -863,7 +870,8 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Text translation responses with no glossary applied.
-     * This field has the same length as `contents` in TranslateTextRequest.
+     * This field has the same length as
+     * [`contents`][google.cloud.translation.v3beta1.TranslateTextRequest.contents].
      * </pre>
      *
      * <code>repeated .google.cloud.translation.v3beta1.Translation translations = 1;</code>
@@ -884,7 +892,8 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Text translation responses with no glossary applied.
-     * This field has the same length as `contents` in TranslateTextRequest.
+     * This field has the same length as
+     * [`contents`][google.cloud.translation.v3beta1.TranslateTextRequest.contents].
      * </pre>
      *
      * <code>repeated .google.cloud.translation.v3beta1.Translation translations = 1;</code>
@@ -905,7 +914,8 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Text translation responses with no glossary applied.
-     * This field has the same length as `contents` in TranslateTextRequest.
+     * This field has the same length as
+     * [`contents`][google.cloud.translation.v3beta1.TranslateTextRequest.contents].
      * </pre>
      *
      * <code>repeated .google.cloud.translation.v3beta1.Translation translations = 1;</code>
@@ -925,7 +935,8 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Text translation responses with no glossary applied.
-     * This field has the same length as `contents` in TranslateTextRequest.
+     * This field has the same length as
+     * [`contents`][google.cloud.translation.v3beta1.TranslateTextRequest.contents].
      * </pre>
      *
      * <code>repeated .google.cloud.translation.v3beta1.Translation translations = 1;</code>
@@ -945,7 +956,8 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Text translation responses with no glossary applied.
-     * This field has the same length as `contents` in TranslateTextRequest.
+     * This field has the same length as
+     * [`contents`][google.cloud.translation.v3beta1.TranslateTextRequest.contents].
      * </pre>
      *
      * <code>repeated .google.cloud.translation.v3beta1.Translation translations = 1;</code>
@@ -959,7 +971,8 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Text translation responses with no glossary applied.
-     * This field has the same length as `contents` in TranslateTextRequest.
+     * This field has the same length as
+     * [`contents`][google.cloud.translation.v3beta1.TranslateTextRequest.contents].
      * </pre>
      *
      * <code>repeated .google.cloud.translation.v3beta1.Translation translations = 1;</code>
@@ -977,7 +990,8 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Text translation responses with no glossary applied.
-     * This field has the same length as `contents` in TranslateTextRequest.
+     * This field has the same length as
+     * [`contents`][google.cloud.translation.v3beta1.TranslateTextRequest.contents].
      * </pre>
      *
      * <code>repeated .google.cloud.translation.v3beta1.Translation translations = 1;</code>
@@ -995,7 +1009,8 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Text translation responses with no glossary applied.
-     * This field has the same length as `contents` in TranslateTextRequest.
+     * This field has the same length as
+     * [`contents`][google.cloud.translation.v3beta1.TranslateTextRequest.contents].
      * </pre>
      *
      * <code>repeated .google.cloud.translation.v3beta1.Translation translations = 1;</code>
@@ -1009,7 +1024,8 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Text translation responses with no glossary applied.
-     * This field has the same length as `contents` in TranslateTextRequest.
+     * This field has the same length as
+     * [`contents`][google.cloud.translation.v3beta1.TranslateTextRequest.contents].
      * </pre>
      *
      * <code>repeated .google.cloud.translation.v3beta1.Translation translations = 1;</code>
@@ -1024,7 +1040,8 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Text translation responses with no glossary applied.
-     * This field has the same length as `contents` in TranslateTextRequest.
+     * This field has the same length as
+     * [`contents`][google.cloud.translation.v3beta1.TranslateTextRequest.contents].
      * </pre>
      *
      * <code>repeated .google.cloud.translation.v3beta1.Translation translations = 1;</code>
@@ -1074,8 +1091,10 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Text translation responses if a glossary is provided in the request.
-     * This could be the same as 'translation' above if no terms apply.
-     * This field has the same length as `contents` in TranslateTextRequest.
+     * This can be the same as
+     * [`translations`][google.cloud.translation.v3beta1.TranslateTextResponse.translations] if no terms apply.
+     * This field has the same length as
+     * [`contents`][google.cloud.translation.v3beta1.TranslateTextRequest.contents].
      * </pre>
      *
      * <code>repeated .google.cloud.translation.v3beta1.Translation glossary_translations = 3;
@@ -1094,8 +1113,10 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Text translation responses if a glossary is provided in the request.
-     * This could be the same as 'translation' above if no terms apply.
-     * This field has the same length as `contents` in TranslateTextRequest.
+     * This can be the same as
+     * [`translations`][google.cloud.translation.v3beta1.TranslateTextResponse.translations] if no terms apply.
+     * This field has the same length as
+     * [`contents`][google.cloud.translation.v3beta1.TranslateTextRequest.contents].
      * </pre>
      *
      * <code>repeated .google.cloud.translation.v3beta1.Translation glossary_translations = 3;
@@ -1113,8 +1134,10 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Text translation responses if a glossary is provided in the request.
-     * This could be the same as 'translation' above if no terms apply.
-     * This field has the same length as `contents` in TranslateTextRequest.
+     * This can be the same as
+     * [`translations`][google.cloud.translation.v3beta1.TranslateTextResponse.translations] if no terms apply.
+     * This field has the same length as
+     * [`contents`][google.cloud.translation.v3beta1.TranslateTextRequest.contents].
      * </pre>
      *
      * <code>repeated .google.cloud.translation.v3beta1.Translation glossary_translations = 3;
@@ -1132,8 +1155,10 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Text translation responses if a glossary is provided in the request.
-     * This could be the same as 'translation' above if no terms apply.
-     * This field has the same length as `contents` in TranslateTextRequest.
+     * This can be the same as
+     * [`translations`][google.cloud.translation.v3beta1.TranslateTextResponse.translations] if no terms apply.
+     * This field has the same length as
+     * [`contents`][google.cloud.translation.v3beta1.TranslateTextRequest.contents].
      * </pre>
      *
      * <code>repeated .google.cloud.translation.v3beta1.Translation glossary_translations = 3;
@@ -1158,8 +1183,10 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Text translation responses if a glossary is provided in the request.
-     * This could be the same as 'translation' above if no terms apply.
-     * This field has the same length as `contents` in TranslateTextRequest.
+     * This can be the same as
+     * [`translations`][google.cloud.translation.v3beta1.TranslateTextResponse.translations] if no terms apply.
+     * This field has the same length as
+     * [`contents`][google.cloud.translation.v3beta1.TranslateTextRequest.contents].
      * </pre>
      *
      * <code>repeated .google.cloud.translation.v3beta1.Translation glossary_translations = 3;
@@ -1181,8 +1208,10 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Text translation responses if a glossary is provided in the request.
-     * This could be the same as 'translation' above if no terms apply.
-     * This field has the same length as `contents` in TranslateTextRequest.
+     * This can be the same as
+     * [`translations`][google.cloud.translation.v3beta1.TranslateTextResponse.translations] if no terms apply.
+     * This field has the same length as
+     * [`contents`][google.cloud.translation.v3beta1.TranslateTextRequest.contents].
      * </pre>
      *
      * <code>repeated .google.cloud.translation.v3beta1.Translation glossary_translations = 3;
@@ -1206,8 +1235,10 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Text translation responses if a glossary is provided in the request.
-     * This could be the same as 'translation' above if no terms apply.
-     * This field has the same length as `contents` in TranslateTextRequest.
+     * This can be the same as
+     * [`translations`][google.cloud.translation.v3beta1.TranslateTextResponse.translations] if no terms apply.
+     * This field has the same length as
+     * [`contents`][google.cloud.translation.v3beta1.TranslateTextRequest.contents].
      * </pre>
      *
      * <code>repeated .google.cloud.translation.v3beta1.Translation glossary_translations = 3;
@@ -1232,8 +1263,10 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Text translation responses if a glossary is provided in the request.
-     * This could be the same as 'translation' above if no terms apply.
-     * This field has the same length as `contents` in TranslateTextRequest.
+     * This can be the same as
+     * [`translations`][google.cloud.translation.v3beta1.TranslateTextResponse.translations] if no terms apply.
+     * This field has the same length as
+     * [`contents`][google.cloud.translation.v3beta1.TranslateTextRequest.contents].
      * </pre>
      *
      * <code>repeated .google.cloud.translation.v3beta1.Translation glossary_translations = 3;
@@ -1255,8 +1288,10 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Text translation responses if a glossary is provided in the request.
-     * This could be the same as 'translation' above if no terms apply.
-     * This field has the same length as `contents` in TranslateTextRequest.
+     * This can be the same as
+     * [`translations`][google.cloud.translation.v3beta1.TranslateTextResponse.translations] if no terms apply.
+     * This field has the same length as
+     * [`contents`][google.cloud.translation.v3beta1.TranslateTextRequest.contents].
      * </pre>
      *
      * <code>repeated .google.cloud.translation.v3beta1.Translation glossary_translations = 3;
@@ -1278,8 +1313,10 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Text translation responses if a glossary is provided in the request.
-     * This could be the same as 'translation' above if no terms apply.
-     * This field has the same length as `contents` in TranslateTextRequest.
+     * This can be the same as
+     * [`translations`][google.cloud.translation.v3beta1.TranslateTextResponse.translations] if no terms apply.
+     * This field has the same length as
+     * [`contents`][google.cloud.translation.v3beta1.TranslateTextRequest.contents].
      * </pre>
      *
      * <code>repeated .google.cloud.translation.v3beta1.Translation glossary_translations = 3;
@@ -1301,8 +1338,10 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Text translation responses if a glossary is provided in the request.
-     * This could be the same as 'translation' above if no terms apply.
-     * This field has the same length as `contents` in TranslateTextRequest.
+     * This can be the same as
+     * [`translations`][google.cloud.translation.v3beta1.TranslateTextResponse.translations] if no terms apply.
+     * This field has the same length as
+     * [`contents`][google.cloud.translation.v3beta1.TranslateTextRequest.contents].
      * </pre>
      *
      * <code>repeated .google.cloud.translation.v3beta1.Translation glossary_translations = 3;
@@ -1323,8 +1362,10 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Text translation responses if a glossary is provided in the request.
-     * This could be the same as 'translation' above if no terms apply.
-     * This field has the same length as `contents` in TranslateTextRequest.
+     * This can be the same as
+     * [`translations`][google.cloud.translation.v3beta1.TranslateTextResponse.translations] if no terms apply.
+     * This field has the same length as
+     * [`contents`][google.cloud.translation.v3beta1.TranslateTextRequest.contents].
      * </pre>
      *
      * <code>repeated .google.cloud.translation.v3beta1.Translation glossary_translations = 3;
@@ -1345,8 +1386,10 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Text translation responses if a glossary is provided in the request.
-     * This could be the same as 'translation' above if no terms apply.
-     * This field has the same length as `contents` in TranslateTextRequest.
+     * This can be the same as
+     * [`translations`][google.cloud.translation.v3beta1.TranslateTextResponse.translations] if no terms apply.
+     * This field has the same length as
+     * [`contents`][google.cloud.translation.v3beta1.TranslateTextRequest.contents].
      * </pre>
      *
      * <code>repeated .google.cloud.translation.v3beta1.Translation glossary_translations = 3;
@@ -1361,8 +1404,10 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Text translation responses if a glossary is provided in the request.
-     * This could be the same as 'translation' above if no terms apply.
-     * This field has the same length as `contents` in TranslateTextRequest.
+     * This can be the same as
+     * [`translations`][google.cloud.translation.v3beta1.TranslateTextResponse.translations] if no terms apply.
+     * This field has the same length as
+     * [`contents`][google.cloud.translation.v3beta1.TranslateTextRequest.contents].
      * </pre>
      *
      * <code>repeated .google.cloud.translation.v3beta1.Translation glossary_translations = 3;
@@ -1381,8 +1426,10 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Text translation responses if a glossary is provided in the request.
-     * This could be the same as 'translation' above if no terms apply.
-     * This field has the same length as `contents` in TranslateTextRequest.
+     * This can be the same as
+     * [`translations`][google.cloud.translation.v3beta1.TranslateTextResponse.translations] if no terms apply.
+     * This field has the same length as
+     * [`contents`][google.cloud.translation.v3beta1.TranslateTextRequest.contents].
      * </pre>
      *
      * <code>repeated .google.cloud.translation.v3beta1.Translation glossary_translations = 3;
@@ -1401,8 +1448,10 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Text translation responses if a glossary is provided in the request.
-     * This could be the same as 'translation' above if no terms apply.
-     * This field has the same length as `contents` in TranslateTextRequest.
+     * This can be the same as
+     * [`translations`][google.cloud.translation.v3beta1.TranslateTextResponse.translations] if no terms apply.
+     * This field has the same length as
+     * [`contents`][google.cloud.translation.v3beta1.TranslateTextRequest.contents].
      * </pre>
      *
      * <code>repeated .google.cloud.translation.v3beta1.Translation glossary_translations = 3;
@@ -1417,8 +1466,10 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Text translation responses if a glossary is provided in the request.
-     * This could be the same as 'translation' above if no terms apply.
-     * This field has the same length as `contents` in TranslateTextRequest.
+     * This can be the same as
+     * [`translations`][google.cloud.translation.v3beta1.TranslateTextResponse.translations] if no terms apply.
+     * This field has the same length as
+     * [`contents`][google.cloud.translation.v3beta1.TranslateTextRequest.contents].
      * </pre>
      *
      * <code>repeated .google.cloud.translation.v3beta1.Translation glossary_translations = 3;
@@ -1434,8 +1485,10 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Text translation responses if a glossary is provided in the request.
-     * This could be the same as 'translation' above if no terms apply.
-     * This field has the same length as `contents` in TranslateTextRequest.
+     * This can be the same as
+     * [`translations`][google.cloud.translation.v3beta1.TranslateTextResponse.translations] if no terms apply.
+     * This field has the same length as
+     * [`contents`][google.cloud.translation.v3beta1.TranslateTextRequest.contents].
      * </pre>
      *
      * <code>repeated .google.cloud.translation.v3beta1.Translation glossary_translations = 3;

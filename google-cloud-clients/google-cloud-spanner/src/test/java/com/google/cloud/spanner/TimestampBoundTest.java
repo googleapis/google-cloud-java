@@ -18,6 +18,7 @@ package com.google.cloud.spanner;
 
 import static com.google.common.testing.SerializableTester.reserializeAndAssert;
 import static com.google.common.truth.Truth.assertThat;
+import static com.google.common.truth.Truth.assertWithMessage;
 
 import com.google.cloud.Timestamp;
 import com.google.cloud.spanner.TimestampBound.Mode;
@@ -110,8 +111,8 @@ public class TimestampBoundTest {
     long num = 7;
     for (TimeUnit units : TimeUnit.values()) {
       TimestampBound bound = TimestampBound.ofExactStaleness(num, units);
-      assertThat(bound.getExactStaleness(TimeUnit.NANOSECONDS))
-          .named(units.toString())
+      assertWithMessage(units.toString())
+          .that(bound.getExactStaleness(TimeUnit.NANOSECONDS))
           .isEqualTo(units.toNanos(num));
     }
   }

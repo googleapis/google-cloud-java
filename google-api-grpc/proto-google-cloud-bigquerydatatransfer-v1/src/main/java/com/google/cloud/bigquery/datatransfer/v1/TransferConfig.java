@@ -169,6 +169,23 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
               datasetRegion_ = s;
               break;
             }
+          case 194:
+            {
+              com.google.cloud.bigquery.datatransfer.v1.ScheduleOptions.Builder subBuilder = null;
+              if (scheduleOptions_ != null) {
+                subBuilder = scheduleOptions_.toBuilder();
+              }
+              scheduleOptions_ =
+                  input.readMessage(
+                      com.google.cloud.bigquery.datatransfer.v1.ScheduleOptions.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(scheduleOptions_);
+                scheduleOptions_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -210,11 +227,12 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The resource name of the transfer config.
-   * Transfer config names have the form
-   * `projects/{project_id}/transferConfigs/{config_id}`.
-   * Where `config_id` is usually a uuid, even though it is not
-   * guaranteed or required. The name is ignored when creating a transfer
-   * config.
+   * Transfer config names have the form of
+   * `projects/{project_id}/locations/{region}/transferConfigs/{config_id}`.
+   * The name is automatically generated based on the config_id specified in
+   * CreateTransferConfigRequest along with project_id and region. If config_id
+   * is not provided, usually a uuid, even though it is not guaranteed or
+   * required, will be generated for config_id.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -235,11 +253,12 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The resource name of the transfer config.
-   * Transfer config names have the form
-   * `projects/{project_id}/transferConfigs/{config_id}`.
-   * Where `config_id` is usually a uuid, even though it is not
-   * guaranteed or required. The name is ignored when creating a transfer
-   * config.
+   * Transfer config names have the form of
+   * `projects/{project_id}/locations/{region}/transferConfigs/{config_id}`.
+   * The name is automatically generated based on the config_id specified in
+   * CreateTransferConfigRequest along with project_id and region. If config_id
+   * is not provided, usually a uuid, even though it is not guaranteed or
+   * required, will be generated for config_id.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -489,6 +508,48 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int SCHEDULE_OPTIONS_FIELD_NUMBER = 24;
+  private com.google.cloud.bigquery.datatransfer.v1.ScheduleOptions scheduleOptions_;
+  /**
+   *
+   *
+   * <pre>
+   * Options customizing the data transfer schedule.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.datatransfer.v1.ScheduleOptions schedule_options = 24;</code>
+   */
+  public boolean hasScheduleOptions() {
+    return scheduleOptions_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Options customizing the data transfer schedule.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.datatransfer.v1.ScheduleOptions schedule_options = 24;</code>
+   */
+  public com.google.cloud.bigquery.datatransfer.v1.ScheduleOptions getScheduleOptions() {
+    return scheduleOptions_ == null
+        ? com.google.cloud.bigquery.datatransfer.v1.ScheduleOptions.getDefaultInstance()
+        : scheduleOptions_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Options customizing the data transfer schedule.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.datatransfer.v1.ScheduleOptions schedule_options = 24;</code>
+   */
+  public com.google.cloud.bigquery.datatransfer.v1.ScheduleOptionsOrBuilder
+      getScheduleOptionsOrBuilder() {
+    return getScheduleOptions();
+  }
+
   public static final int DATA_REFRESH_WINDOW_DAYS_FIELD_NUMBER = 12;
   private int dataRefreshWindowDays_;
   /**
@@ -641,11 +702,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Unique ID of the user on whose behalf transfer is done.
-   * Applicable only to data sources that do not support service accounts.
-   * When set to 0, the data source service account credentials are used.
-   * May be negative. Note, that this identifier is not stable.
-   * It may change over time even for the same user.
+   * Deprecated. Unique ID of the user on whose behalf transfer is done.
    * </pre>
    *
    * <code>int64 user_id = 11;</code>
@@ -752,6 +809,9 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
     if (!getDatasetRegionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 14, datasetRegion_);
     }
+    if (scheduleOptions_ != null) {
+      output.writeMessage(24, getScheduleOptions());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -802,6 +862,9 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
     if (!getDatasetRegionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, datasetRegion_);
     }
+    if (scheduleOptions_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(24, getScheduleOptions());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -827,6 +890,10 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
       if (!getParams().equals(other.getParams())) return false;
     }
     if (!getSchedule().equals(other.getSchedule())) return false;
+    if (hasScheduleOptions() != other.hasScheduleOptions()) return false;
+    if (hasScheduleOptions()) {
+      if (!getScheduleOptions().equals(other.getScheduleOptions())) return false;
+    }
     if (getDataRefreshWindowDays() != other.getDataRefreshWindowDays()) return false;
     if (getDisabled() != other.getDisabled()) return false;
     if (hasUpdateTime() != other.hasUpdateTime()) return false;
@@ -865,6 +932,10 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + SCHEDULE_FIELD_NUMBER;
     hash = (53 * hash) + getSchedule().hashCode();
+    if (hasScheduleOptions()) {
+      hash = (37 * hash) + SCHEDULE_OPTIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getScheduleOptions().hashCode();
+    }
     hash = (37 * hash) + DATA_REFRESH_WINDOW_DAYS_FIELD_NUMBER;
     hash = (53 * hash) + getDataRefreshWindowDays();
     hash = (37 * hash) + DISABLED_FIELD_NUMBER;
@@ -1050,6 +1121,12 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
       }
       schedule_ = "";
 
+      if (scheduleOptionsBuilder_ == null) {
+        scheduleOptions_ = null;
+      } else {
+        scheduleOptions_ = null;
+        scheduleOptionsBuilder_ = null;
+      }
       dataRefreshWindowDays_ = 0;
 
       disabled_ = false;
@@ -1109,6 +1186,11 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
         result.params_ = paramsBuilder_.build();
       }
       result.schedule_ = schedule_;
+      if (scheduleOptionsBuilder_ == null) {
+        result.scheduleOptions_ = scheduleOptions_;
+      } else {
+        result.scheduleOptions_ = scheduleOptionsBuilder_.build();
+      }
       result.dataRefreshWindowDays_ = dataRefreshWindowDays_;
       result.disabled_ = disabled_;
       if (updateTimeBuilder_ == null) {
@@ -1197,6 +1279,9 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
         schedule_ = other.schedule_;
         onChanged();
       }
+      if (other.hasScheduleOptions()) {
+        mergeScheduleOptions(other.getScheduleOptions());
+      }
       if (other.getDataRefreshWindowDays() != 0) {
         setDataRefreshWindowDays(other.getDataRefreshWindowDays());
       }
@@ -1255,11 +1340,12 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource name of the transfer config.
-     * Transfer config names have the form
-     * `projects/{project_id}/transferConfigs/{config_id}`.
-     * Where `config_id` is usually a uuid, even though it is not
-     * guaranteed or required. The name is ignored when creating a transfer
-     * config.
+     * Transfer config names have the form of
+     * `projects/{project_id}/locations/{region}/transferConfigs/{config_id}`.
+     * The name is automatically generated based on the config_id specified in
+     * CreateTransferConfigRequest along with project_id and region. If config_id
+     * is not provided, usually a uuid, even though it is not guaranteed or
+     * required, will be generated for config_id.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1280,11 +1366,12 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource name of the transfer config.
-     * Transfer config names have the form
-     * `projects/{project_id}/transferConfigs/{config_id}`.
-     * Where `config_id` is usually a uuid, even though it is not
-     * guaranteed or required. The name is ignored when creating a transfer
-     * config.
+     * Transfer config names have the form of
+     * `projects/{project_id}/locations/{region}/transferConfigs/{config_id}`.
+     * The name is automatically generated based on the config_id specified in
+     * CreateTransferConfigRequest along with project_id and region. If config_id
+     * is not provided, usually a uuid, even though it is not guaranteed or
+     * required, will be generated for config_id.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1305,11 +1392,12 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource name of the transfer config.
-     * Transfer config names have the form
-     * `projects/{project_id}/transferConfigs/{config_id}`.
-     * Where `config_id` is usually a uuid, even though it is not
-     * guaranteed or required. The name is ignored when creating a transfer
-     * config.
+     * Transfer config names have the form of
+     * `projects/{project_id}/locations/{region}/transferConfigs/{config_id}`.
+     * The name is automatically generated based on the config_id specified in
+     * CreateTransferConfigRequest along with project_id and region. If config_id
+     * is not provided, usually a uuid, even though it is not guaranteed or
+     * required, will be generated for config_id.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1328,11 +1416,12 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource name of the transfer config.
-     * Transfer config names have the form
-     * `projects/{project_id}/transferConfigs/{config_id}`.
-     * Where `config_id` is usually a uuid, even though it is not
-     * guaranteed or required. The name is ignored when creating a transfer
-     * config.
+     * Transfer config names have the form of
+     * `projects/{project_id}/locations/{region}/transferConfigs/{config_id}`.
+     * The name is automatically generated based on the config_id specified in
+     * CreateTransferConfigRequest along with project_id and region. If config_id
+     * is not provided, usually a uuid, even though it is not guaranteed or
+     * required, will be generated for config_id.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1348,11 +1437,12 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource name of the transfer config.
-     * Transfer config names have the form
-     * `projects/{project_id}/transferConfigs/{config_id}`.
-     * Where `config_id` is usually a uuid, even though it is not
-     * guaranteed or required. The name is ignored when creating a transfer
-     * config.
+     * Transfer config names have the form of
+     * `projects/{project_id}/locations/{region}/transferConfigs/{config_id}`.
+     * The name is automatically generated based on the config_id specified in
+     * CreateTransferConfigRequest along with project_id and region. If config_id
+     * is not provided, usually a uuid, even though it is not guaranteed or
+     * required, will be generated for config_id.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1973,6 +2063,192 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private com.google.cloud.bigquery.datatransfer.v1.ScheduleOptions scheduleOptions_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.bigquery.datatransfer.v1.ScheduleOptions,
+            com.google.cloud.bigquery.datatransfer.v1.ScheduleOptions.Builder,
+            com.google.cloud.bigquery.datatransfer.v1.ScheduleOptionsOrBuilder>
+        scheduleOptionsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Options customizing the data transfer schedule.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.datatransfer.v1.ScheduleOptions schedule_options = 24;</code>
+     */
+    public boolean hasScheduleOptions() {
+      return scheduleOptionsBuilder_ != null || scheduleOptions_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Options customizing the data transfer schedule.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.datatransfer.v1.ScheduleOptions schedule_options = 24;</code>
+     */
+    public com.google.cloud.bigquery.datatransfer.v1.ScheduleOptions getScheduleOptions() {
+      if (scheduleOptionsBuilder_ == null) {
+        return scheduleOptions_ == null
+            ? com.google.cloud.bigquery.datatransfer.v1.ScheduleOptions.getDefaultInstance()
+            : scheduleOptions_;
+      } else {
+        return scheduleOptionsBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Options customizing the data transfer schedule.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.datatransfer.v1.ScheduleOptions schedule_options = 24;</code>
+     */
+    public Builder setScheduleOptions(
+        com.google.cloud.bigquery.datatransfer.v1.ScheduleOptions value) {
+      if (scheduleOptionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        scheduleOptions_ = value;
+        onChanged();
+      } else {
+        scheduleOptionsBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Options customizing the data transfer schedule.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.datatransfer.v1.ScheduleOptions schedule_options = 24;</code>
+     */
+    public Builder setScheduleOptions(
+        com.google.cloud.bigquery.datatransfer.v1.ScheduleOptions.Builder builderForValue) {
+      if (scheduleOptionsBuilder_ == null) {
+        scheduleOptions_ = builderForValue.build();
+        onChanged();
+      } else {
+        scheduleOptionsBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Options customizing the data transfer schedule.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.datatransfer.v1.ScheduleOptions schedule_options = 24;</code>
+     */
+    public Builder mergeScheduleOptions(
+        com.google.cloud.bigquery.datatransfer.v1.ScheduleOptions value) {
+      if (scheduleOptionsBuilder_ == null) {
+        if (scheduleOptions_ != null) {
+          scheduleOptions_ =
+              com.google.cloud.bigquery.datatransfer.v1.ScheduleOptions.newBuilder(scheduleOptions_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          scheduleOptions_ = value;
+        }
+        onChanged();
+      } else {
+        scheduleOptionsBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Options customizing the data transfer schedule.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.datatransfer.v1.ScheduleOptions schedule_options = 24;</code>
+     */
+    public Builder clearScheduleOptions() {
+      if (scheduleOptionsBuilder_ == null) {
+        scheduleOptions_ = null;
+        onChanged();
+      } else {
+        scheduleOptions_ = null;
+        scheduleOptionsBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Options customizing the data transfer schedule.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.datatransfer.v1.ScheduleOptions schedule_options = 24;</code>
+     */
+    public com.google.cloud.bigquery.datatransfer.v1.ScheduleOptions.Builder
+        getScheduleOptionsBuilder() {
+
+      onChanged();
+      return getScheduleOptionsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Options customizing the data transfer schedule.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.datatransfer.v1.ScheduleOptions schedule_options = 24;</code>
+     */
+    public com.google.cloud.bigquery.datatransfer.v1.ScheduleOptionsOrBuilder
+        getScheduleOptionsOrBuilder() {
+      if (scheduleOptionsBuilder_ != null) {
+        return scheduleOptionsBuilder_.getMessageOrBuilder();
+      } else {
+        return scheduleOptions_ == null
+            ? com.google.cloud.bigquery.datatransfer.v1.ScheduleOptions.getDefaultInstance()
+            : scheduleOptions_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Options customizing the data transfer schedule.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.datatransfer.v1.ScheduleOptions schedule_options = 24;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.bigquery.datatransfer.v1.ScheduleOptions,
+            com.google.cloud.bigquery.datatransfer.v1.ScheduleOptions.Builder,
+            com.google.cloud.bigquery.datatransfer.v1.ScheduleOptionsOrBuilder>
+        getScheduleOptionsFieldBuilder() {
+      if (scheduleOptionsBuilder_ == null) {
+        scheduleOptionsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.bigquery.datatransfer.v1.ScheduleOptions,
+                com.google.cloud.bigquery.datatransfer.v1.ScheduleOptions.Builder,
+                com.google.cloud.bigquery.datatransfer.v1.ScheduleOptionsOrBuilder>(
+                getScheduleOptions(), getParentForChildren(), isClean());
+        scheduleOptions_ = null;
+      }
+      return scheduleOptionsBuilder_;
+    }
+
     private int dataRefreshWindowDays_;
     /**
      *
@@ -2522,11 +2798,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Unique ID of the user on whose behalf transfer is done.
-     * Applicable only to data sources that do not support service accounts.
-     * When set to 0, the data source service account credentials are used.
-     * May be negative. Note, that this identifier is not stable.
-     * It may change over time even for the same user.
+     * Deprecated. Unique ID of the user on whose behalf transfer is done.
      * </pre>
      *
      * <code>int64 user_id = 11;</code>
@@ -2538,11 +2810,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Unique ID of the user on whose behalf transfer is done.
-     * Applicable only to data sources that do not support service accounts.
-     * When set to 0, the data source service account credentials are used.
-     * May be negative. Note, that this identifier is not stable.
-     * It may change over time even for the same user.
+     * Deprecated. Unique ID of the user on whose behalf transfer is done.
      * </pre>
      *
      * <code>int64 user_id = 11;</code>
@@ -2557,11 +2825,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Unique ID of the user on whose behalf transfer is done.
-     * Applicable only to data sources that do not support service accounts.
-     * When set to 0, the data source service account credentials are used.
-     * May be negative. Note, that this identifier is not stable.
-     * It may change over time even for the same user.
+     * Deprecated. Unique ID of the user on whose behalf transfer is done.
      * </pre>
      *
      * <code>int64 user_id = 11;</code>

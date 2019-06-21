@@ -180,8 +180,8 @@ public interface InstanceOrBuilder
    * If not provided, latest supported version will be used. Updating the
    * version will perform an upgrade/downgrade to the new version. Currently,
    * the supported values are:
-   *  *   `REDIS_4_0` for Redis 4.0 compatibility
-   *  *   `REDIS_3_2` for Redis 3.2 compatibility (default)
+   *  *   `REDIS_4_0` for Redis 4.0 compatibility (default)
+   *  *   `REDIS_3_2` for Redis 3.2 compatibility
    * </pre>
    *
    * <code>string redis_version = 7;</code>
@@ -195,8 +195,8 @@ public interface InstanceOrBuilder
    * If not provided, latest supported version will be used. Updating the
    * version will perform an upgrade/downgrade to the new version. Currently,
    * the supported values are:
-   *  *   `REDIS_4_0` for Redis 4.0 compatibility
-   *  *   `REDIS_3_2` for Redis 3.2 compatibility (default)
+   *  *   `REDIS_4_0` for Redis 4.0 compatibility (default)
+   *  *   `REDIS_3_2` for Redis 3.2 compatibility
    * </pre>
    *
    * <code>string redis_version = 7;</code>
@@ -525,4 +525,33 @@ public interface InstanceOrBuilder
    * <code>string authorized_network = 20;</code>
    */
   com.google.protobuf.ByteString getAuthorizedNetworkBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Cloud IAM identity used by import / export operations to
+   * transfer data to/from Cloud Storage. Format is
+   * "serviceAccount:&lt;service_account_email&gt;". The value may change over time
+   * for a given instance so should be checked before each import/export
+   * operation.
+   * </pre>
+   *
+   * <code>string persistence_iam_identity = 21;</code>
+   */
+  java.lang.String getPersistenceIamIdentity();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Cloud IAM identity used by import / export operations to
+   * transfer data to/from Cloud Storage. Format is
+   * "serviceAccount:&lt;service_account_email&gt;". The value may change over time
+   * for a given instance so should be checked before each import/export
+   * operation.
+   * </pre>
+   *
+   * <code>string persistence_iam_identity = 21;</code>
+   */
+  com.google.protobuf.ByteString getPersistenceIamIdentityBytes();
 }

@@ -131,7 +131,8 @@ public interface CompensationFilterOrBuilder
    *
    * <pre>
    * Optional.
-   * Whether to include jobs whose compensation range is unspecified.
+   * If set to true, jobs with unspecified compensation range fields are
+   * included.
    * </pre>
    *
    * <code>bool include_jobs_with_unspecified_compensation_range = 4;</code>

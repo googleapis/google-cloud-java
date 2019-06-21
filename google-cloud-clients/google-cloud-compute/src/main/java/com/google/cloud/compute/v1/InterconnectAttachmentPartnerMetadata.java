@@ -97,7 +97,7 @@ public final class InterconnectAttachmentPartnerMetadata implements ApiMessage {
   }
 
   /**
-   * URL of the Partner?s portal for this Attachment. Partners may customise this to be a deep-link
+   * URL of the Partner?s portal for this Attachment. Partners may customise this to be a deep link
    * to the specific resource on the Partner portal. This value may be validated to match approved
    * Partner values.
    */
@@ -191,18 +191,18 @@ public final class InterconnectAttachmentPartnerMetadata implements ApiMessage {
     }
 
     /**
-     * URL of the Partner?s portal for this Attachment. Partners may customise this to be a
-     * deep-link to the specific resource on the Partner portal. This value may be validated to
-     * match approved Partner values.
+     * URL of the Partner?s portal for this Attachment. Partners may customise this to be a deep
+     * link to the specific resource on the Partner portal. This value may be validated to match
+     * approved Partner values.
      */
     public String getPortalUrl() {
       return portalUrl;
     }
 
     /**
-     * URL of the Partner?s portal for this Attachment. Partners may customise this to be a
-     * deep-link to the specific resource on the Partner portal. This value may be validated to
-     * match approved Partner values.
+     * URL of the Partner?s portal for this Attachment. Partners may customise this to be a deep
+     * link to the specific resource on the Partner portal. This value may be validated to match
+     * approved Partner values.
      */
     public Builder setPortalUrl(String portalUrl) {
       this.portalUrl = portalUrl;

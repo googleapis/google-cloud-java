@@ -84,11 +84,11 @@ public final class CloudTasksProto {
       "\n&google/cloud/tasks/v2/cloudtasks.proto"
           + "\022\025google.cloud.tasks.v2\032\034google/api/anno"
           + "tations.proto\032\031google/api/resource.proto"
-          + "\032\033google/protobuf/empty.proto\032 google/pr"
-          + "otobuf/field_mask.proto\032 google/cloud/ta"
-          + "sks/v2/task.proto\032!google/cloud/tasks/v2"
-          + "/queue.proto\032\036google/iam/v1/iam_policy.p"
-          + "roto\032\032google/iam/v1/policy.proto\032\025google"
+          + "\032!google/cloud/tasks/v2/queue.proto\032 goo"
+          + "gle/cloud/tasks/v2/task.proto\032\036google/ia"
+          + "m/v1/iam_policy.proto\032\032google/iam/v1/pol"
+          + "icy.proto\032\033google/protobuf/empty.proto\032 "
+          + "google/protobuf/field_mask.proto\032\025google"
           + "/rpc/code.proto\"Z\n\021ListQueuesRequest\022\016\n\006"
           + "parent\030\001 \001(\t\022\016\n\006filter\030\002 \001(\t\022\021\n\tpage_siz"
           + "e\030\003 \001(\005\022\022\n\npage_token\030\004 \001(\t\"[\n\022ListQueue"
@@ -195,12 +195,12 @@ public final class CloudTasksProto {
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.api.AnnotationsProto.getDescriptor(),
           com.google.api.ResourceProto.getDescriptor(),
-          com.google.protobuf.EmptyProto.getDescriptor(),
-          com.google.protobuf.FieldMaskProto.getDescriptor(),
-          com.google.cloud.tasks.v2.TaskProto.getDescriptor(),
           com.google.cloud.tasks.v2.QueueProto.getDescriptor(),
+          com.google.cloud.tasks.v2.TaskProto.getDescriptor(),
           com.google.iam.v1.IamPolicyProto.getDescriptor(),
           com.google.iam.v1.PolicyProto.getDescriptor(),
+          com.google.protobuf.EmptyProto.getDescriptor(),
+          com.google.protobuf.FieldMaskProto.getDescriptor(),
           com.google.rpc.CodeProto.getDescriptor(),
         },
         assigner);
@@ -331,12 +331,12 @@ public final class CloudTasksProto {
         descriptor, registry);
     com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
-    com.google.protobuf.EmptyProto.getDescriptor();
-    com.google.protobuf.FieldMaskProto.getDescriptor();
-    com.google.cloud.tasks.v2.TaskProto.getDescriptor();
     com.google.cloud.tasks.v2.QueueProto.getDescriptor();
+    com.google.cloud.tasks.v2.TaskProto.getDescriptor();
     com.google.iam.v1.IamPolicyProto.getDescriptor();
     com.google.iam.v1.PolicyProto.getDescriptor();
+    com.google.protobuf.EmptyProto.getDescriptor();
+    com.google.protobuf.FieldMaskProto.getDescriptor();
     com.google.rpc.CodeProto.getDescriptor();
   }
 

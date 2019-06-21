@@ -13,11 +13,12 @@ public interface TransferConfigOrBuilder
    *
    * <pre>
    * The resource name of the transfer config.
-   * Transfer config names have the form
-   * `projects/{project_id}/transferConfigs/{config_id}`.
-   * Where `config_id` is usually a uuid, even though it is not
-   * guaranteed or required. The name is ignored when creating a transfer
-   * config.
+   * Transfer config names have the form of
+   * `projects/{project_id}/locations/{region}/transferConfigs/{config_id}`.
+   * The name is automatically generated based on the config_id specified in
+   * CreateTransferConfigRequest along with project_id and region. If config_id
+   * is not provided, usually a uuid, even though it is not guaranteed or
+   * required, will be generated for config_id.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -28,11 +29,12 @@ public interface TransferConfigOrBuilder
    *
    * <pre>
    * The resource name of the transfer config.
-   * Transfer config names have the form
-   * `projects/{project_id}/transferConfigs/{config_id}`.
-   * Where `config_id` is usually a uuid, even though it is not
-   * guaranteed or required. The name is ignored when creating a transfer
-   * config.
+   * Transfer config names have the form of
+   * `projects/{project_id}/locations/{region}/transferConfigs/{config_id}`.
+   * The name is automatically generated based on the config_id specified in
+   * CreateTransferConfigRequest along with project_id and region. If config_id
+   * is not provided, usually a uuid, even though it is not guaranteed or
+   * required, will be generated for config_id.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -180,6 +182,37 @@ public interface TransferConfigOrBuilder
    *
    *
    * <pre>
+   * Options customizing the data transfer schedule.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.datatransfer.v1.ScheduleOptions schedule_options = 24;</code>
+   */
+  boolean hasScheduleOptions();
+  /**
+   *
+   *
+   * <pre>
+   * Options customizing the data transfer schedule.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.datatransfer.v1.ScheduleOptions schedule_options = 24;</code>
+   */
+  com.google.cloud.bigquery.datatransfer.v1.ScheduleOptions getScheduleOptions();
+  /**
+   *
+   *
+   * <pre>
+   * Options customizing the data transfer schedule.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.datatransfer.v1.ScheduleOptions schedule_options = 24;</code>
+   */
+  com.google.cloud.bigquery.datatransfer.v1.ScheduleOptionsOrBuilder getScheduleOptionsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * The number of days to look back to automatically refresh the data.
    * For example, if `data_refresh_window_days = 10`, then every day
    * BigQuery reingests data for [today-10, today-1], rather than ingesting data
@@ -291,11 +324,7 @@ public interface TransferConfigOrBuilder
    *
    *
    * <pre>
-   * Output only. Unique ID of the user on whose behalf transfer is done.
-   * Applicable only to data sources that do not support service accounts.
-   * When set to 0, the data source service account credentials are used.
-   * May be negative. Note, that this identifier is not stable.
-   * It may change over time even for the same user.
+   * Deprecated. Unique ID of the user on whose behalf transfer is done.
    * </pre>
    *
    * <code>int64 user_id = 11;</code>

@@ -252,7 +252,7 @@ public final class BatchUpdateEntitiesRequest extends com.google.protobuf.Genera
    * Optional. The language of entity synonyms defined in `entities`. If not
    * specified, the agent's default language is used.
    * [Many
-   * languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+   * languages](https://cloud.google.com/dialogflow/docs/reference/language)
    * are supported. Note: languages must be enabled in the agent before they can
    * be used.
    * </pre>
@@ -277,7 +277,7 @@ public final class BatchUpdateEntitiesRequest extends com.google.protobuf.Genera
    * Optional. The language of entity synonyms defined in `entities`. If not
    * specified, the agent's default language is used.
    * [Many
-   * languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+   * languages](https://cloud.google.com/dialogflow/docs/reference/language)
    * are supported. Note: languages must be enabled in the agent before they can
    * be used.
    * </pre>
@@ -1227,7 +1227,7 @@ public final class BatchUpdateEntitiesRequest extends com.google.protobuf.Genera
      * Optional. The language of entity synonyms defined in `entities`. If not
      * specified, the agent's default language is used.
      * [Many
-     * languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+     * languages](https://cloud.google.com/dialogflow/docs/reference/language)
      * are supported. Note: languages must be enabled in the agent before they can
      * be used.
      * </pre>
@@ -1252,7 +1252,7 @@ public final class BatchUpdateEntitiesRequest extends com.google.protobuf.Genera
      * Optional. The language of entity synonyms defined in `entities`. If not
      * specified, the agent's default language is used.
      * [Many
-     * languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+     * languages](https://cloud.google.com/dialogflow/docs/reference/language)
      * are supported. Note: languages must be enabled in the agent before they can
      * be used.
      * </pre>
@@ -1277,7 +1277,7 @@ public final class BatchUpdateEntitiesRequest extends com.google.protobuf.Genera
      * Optional. The language of entity synonyms defined in `entities`. If not
      * specified, the agent's default language is used.
      * [Many
-     * languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+     * languages](https://cloud.google.com/dialogflow/docs/reference/language)
      * are supported. Note: languages must be enabled in the agent before they can
      * be used.
      * </pre>
@@ -1300,7 +1300,7 @@ public final class BatchUpdateEntitiesRequest extends com.google.protobuf.Genera
      * Optional. The language of entity synonyms defined in `entities`. If not
      * specified, the agent's default language is used.
      * [Many
-     * languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+     * languages](https://cloud.google.com/dialogflow/docs/reference/language)
      * are supported. Note: languages must be enabled in the agent before they can
      * be used.
      * </pre>
@@ -1320,7 +1320,7 @@ public final class BatchUpdateEntitiesRequest extends com.google.protobuf.Genera
      * Optional. The language of entity synonyms defined in `entities`. If not
      * specified, the agent's default language is used.
      * [Many
-     * languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+     * languages](https://cloud.google.com/dialogflow/docs/reference/language)
      * are supported. Note: languages must be enabled in the agent before they can
      * be used.
      * </pre>

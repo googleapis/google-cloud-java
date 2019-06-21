@@ -17,6 +17,7 @@ package com.google.cloud.kms.v1.stub;
 
 import static com.google.cloud.kms.v1.KeyManagementServiceClient.ListCryptoKeyVersionsPagedResponse;
 import static com.google.cloud.kms.v1.KeyManagementServiceClient.ListCryptoKeysPagedResponse;
+import static com.google.cloud.kms.v1.KeyManagementServiceClient.ListImportJobsPagedResponse;
 import static com.google.cloud.kms.v1.KeyManagementServiceClient.ListKeyRingsPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -47,6 +48,7 @@ import com.google.cloud.kms.v1.AsymmetricSignRequest;
 import com.google.cloud.kms.v1.AsymmetricSignResponse;
 import com.google.cloud.kms.v1.CreateCryptoKeyRequest;
 import com.google.cloud.kms.v1.CreateCryptoKeyVersionRequest;
+import com.google.cloud.kms.v1.CreateImportJobRequest;
 import com.google.cloud.kms.v1.CreateKeyRingRequest;
 import com.google.cloud.kms.v1.CryptoKey;
 import com.google.cloud.kms.v1.CryptoKeyVersion;
@@ -57,13 +59,18 @@ import com.google.cloud.kms.v1.EncryptRequest;
 import com.google.cloud.kms.v1.EncryptResponse;
 import com.google.cloud.kms.v1.GetCryptoKeyRequest;
 import com.google.cloud.kms.v1.GetCryptoKeyVersionRequest;
+import com.google.cloud.kms.v1.GetImportJobRequest;
 import com.google.cloud.kms.v1.GetKeyRingRequest;
 import com.google.cloud.kms.v1.GetPublicKeyRequest;
+import com.google.cloud.kms.v1.ImportCryptoKeyVersionRequest;
+import com.google.cloud.kms.v1.ImportJob;
 import com.google.cloud.kms.v1.KeyRing;
 import com.google.cloud.kms.v1.ListCryptoKeyVersionsRequest;
 import com.google.cloud.kms.v1.ListCryptoKeyVersionsResponse;
 import com.google.cloud.kms.v1.ListCryptoKeysRequest;
 import com.google.cloud.kms.v1.ListCryptoKeysResponse;
+import com.google.cloud.kms.v1.ListImportJobsRequest;
+import com.google.cloud.kms.v1.ListImportJobsResponse;
 import com.google.cloud.kms.v1.ListKeyRingsRequest;
 import com.google.cloud.kms.v1.ListKeyRingsResponse;
 import com.google.cloud.kms.v1.PublicKey;
@@ -117,11 +124,17 @@ public class KeyManagementServiceStubSettings
     extends StubSettings<KeyManagementServiceStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
-      ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
+      ImmutableList.<String>builder()
+          .add("https://www.googleapis.com/auth/cloud-platform")
+          .add("https://www.googleapis.com/auth/cloudkms")
+          .build();
 
   private final PagedCallSettings<
           ListKeyRingsRequest, ListKeyRingsResponse, ListKeyRingsPagedResponse>
       listKeyRingsSettings;
+  private final PagedCallSettings<
+          ListImportJobsRequest, ListImportJobsResponse, ListImportJobsPagedResponse>
+      listImportJobsSettings;
   private final PagedCallSettings<
           ListCryptoKeysRequest, ListCryptoKeysResponse, ListCryptoKeysPagedResponse>
       listCryptoKeysSettings;
@@ -131,13 +144,17 @@ public class KeyManagementServiceStubSettings
           ListCryptoKeyVersionsPagedResponse>
       listCryptoKeyVersionsSettings;
   private final UnaryCallSettings<GetKeyRingRequest, KeyRing> getKeyRingSettings;
+  private final UnaryCallSettings<GetImportJobRequest, ImportJob> getImportJobSettings;
   private final UnaryCallSettings<GetCryptoKeyRequest, CryptoKey> getCryptoKeySettings;
   private final UnaryCallSettings<GetCryptoKeyVersionRequest, CryptoKeyVersion>
       getCryptoKeyVersionSettings;
   private final UnaryCallSettings<CreateKeyRingRequest, KeyRing> createKeyRingSettings;
+  private final UnaryCallSettings<CreateImportJobRequest, ImportJob> createImportJobSettings;
   private final UnaryCallSettings<CreateCryptoKeyRequest, CryptoKey> createCryptoKeySettings;
   private final UnaryCallSettings<CreateCryptoKeyVersionRequest, CryptoKeyVersion>
       createCryptoKeyVersionSettings;
+  private final UnaryCallSettings<ImportCryptoKeyVersionRequest, CryptoKeyVersion>
+      importCryptoKeyVersionSettings;
   private final UnaryCallSettings<UpdateCryptoKeyRequest, CryptoKey> updateCryptoKeySettings;
   private final UnaryCallSettings<UpdateCryptoKeyVersionRequest, CryptoKeyVersion>
       updateCryptoKeyVersionSettings;
@@ -165,6 +182,13 @@ public class KeyManagementServiceStubSettings
     return listKeyRingsSettings;
   }
 
+  /** Returns the object with the settings used for calls to listImportJobs. */
+  public PagedCallSettings<
+          ListImportJobsRequest, ListImportJobsResponse, ListImportJobsPagedResponse>
+      listImportJobsSettings() {
+    return listImportJobsSettings;
+  }
+
   /** Returns the object with the settings used for calls to listCryptoKeys. */
   public PagedCallSettings<
           ListCryptoKeysRequest, ListCryptoKeysResponse, ListCryptoKeysPagedResponse>
@@ -186,6 +210,11 @@ public class KeyManagementServiceStubSettings
     return getKeyRingSettings;
   }
 
+  /** Returns the object with the settings used for calls to getImportJob. */
+  public UnaryCallSettings<GetImportJobRequest, ImportJob> getImportJobSettings() {
+    return getImportJobSettings;
+  }
+
   /** Returns the object with the settings used for calls to getCryptoKey. */
   public UnaryCallSettings<GetCryptoKeyRequest, CryptoKey> getCryptoKeySettings() {
     return getCryptoKeySettings;
@@ -202,6 +231,11 @@ public class KeyManagementServiceStubSettings
     return createKeyRingSettings;
   }
 
+  /** Returns the object with the settings used for calls to createImportJob. */
+  public UnaryCallSettings<CreateImportJobRequest, ImportJob> createImportJobSettings() {
+    return createImportJobSettings;
+  }
+
   /** Returns the object with the settings used for calls to createCryptoKey. */
   public UnaryCallSettings<CreateCryptoKeyRequest, CryptoKey> createCryptoKeySettings() {
     return createCryptoKeySettings;
@@ -211,6 +245,12 @@ public class KeyManagementServiceStubSettings
   public UnaryCallSettings<CreateCryptoKeyVersionRequest, CryptoKeyVersion>
       createCryptoKeyVersionSettings() {
     return createCryptoKeyVersionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to importCryptoKeyVersion. */
+  public UnaryCallSettings<ImportCryptoKeyVersionRequest, CryptoKeyVersion>
+      importCryptoKeyVersionSettings() {
+    return importCryptoKeyVersionSettings;
   }
 
   /** Returns the object with the settings used for calls to updateCryptoKey. */
@@ -353,14 +393,18 @@ public class KeyManagementServiceStubSettings
     super(settingsBuilder);
 
     listKeyRingsSettings = settingsBuilder.listKeyRingsSettings().build();
+    listImportJobsSettings = settingsBuilder.listImportJobsSettings().build();
     listCryptoKeysSettings = settingsBuilder.listCryptoKeysSettings().build();
     listCryptoKeyVersionsSettings = settingsBuilder.listCryptoKeyVersionsSettings().build();
     getKeyRingSettings = settingsBuilder.getKeyRingSettings().build();
+    getImportJobSettings = settingsBuilder.getImportJobSettings().build();
     getCryptoKeySettings = settingsBuilder.getCryptoKeySettings().build();
     getCryptoKeyVersionSettings = settingsBuilder.getCryptoKeyVersionSettings().build();
     createKeyRingSettings = settingsBuilder.createKeyRingSettings().build();
+    createImportJobSettings = settingsBuilder.createImportJobSettings().build();
     createCryptoKeySettings = settingsBuilder.createCryptoKeySettings().build();
     createCryptoKeyVersionSettings = settingsBuilder.createCryptoKeyVersionSettings().build();
+    importCryptoKeyVersionSettings = settingsBuilder.importCryptoKeyVersionSettings().build();
     updateCryptoKeySettings = settingsBuilder.updateCryptoKeySettings().build();
     updateCryptoKeyVersionSettings = settingsBuilder.updateCryptoKeyVersionSettings().build();
     encryptSettings = settingsBuilder.encryptSettings().build();
@@ -410,6 +454,43 @@ public class KeyManagementServiceStubSettings
               return payload.getKeyRingsList() != null
                   ? payload.getKeyRingsList()
                   : ImmutableList.<KeyRing>of();
+            }
+          };
+
+  private static final PagedListDescriptor<ListImportJobsRequest, ListImportJobsResponse, ImportJob>
+      LIST_IMPORT_JOBS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListImportJobsRequest, ListImportJobsResponse, ImportJob>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListImportJobsRequest injectToken(ListImportJobsRequest payload, String token) {
+              return ListImportJobsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListImportJobsRequest injectPageSize(
+                ListImportJobsRequest payload, int pageSize) {
+              return ListImportJobsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListImportJobsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListImportJobsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<ImportJob> extractResources(ListImportJobsResponse payload) {
+              return payload.getImportJobsList() != null
+                  ? payload.getImportJobsList()
+                  : ImmutableList.<ImportJob>of();
             }
           };
 
@@ -509,6 +590,23 @@ public class KeyManagementServiceStubSettings
           };
 
   private static final PagedListResponseFactory<
+          ListImportJobsRequest, ListImportJobsResponse, ListImportJobsPagedResponse>
+      LIST_IMPORT_JOBS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListImportJobsRequest, ListImportJobsResponse, ListImportJobsPagedResponse>() {
+            @Override
+            public ApiFuture<ListImportJobsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListImportJobsRequest, ListImportJobsResponse> callable,
+                ListImportJobsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListImportJobsResponse> futureResponse) {
+              PageContext<ListImportJobsRequest, ListImportJobsResponse, ImportJob> pageContext =
+                  PageContext.create(callable, LIST_IMPORT_JOBS_PAGE_STR_DESC, request, context);
+              return ListImportJobsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
           ListCryptoKeysRequest, ListCryptoKeysResponse, ListCryptoKeysPagedResponse>
       LIST_CRYPTO_KEYS_PAGE_STR_FACT =
           new PagedListResponseFactory<
@@ -558,6 +656,9 @@ public class KeyManagementServiceStubSettings
             ListKeyRingsRequest, ListKeyRingsResponse, ListKeyRingsPagedResponse>
         listKeyRingsSettings;
     private final PagedCallSettings.Builder<
+            ListImportJobsRequest, ListImportJobsResponse, ListImportJobsPagedResponse>
+        listImportJobsSettings;
+    private final PagedCallSettings.Builder<
             ListCryptoKeysRequest, ListCryptoKeysResponse, ListCryptoKeysPagedResponse>
         listCryptoKeysSettings;
     private final PagedCallSettings.Builder<
@@ -566,14 +667,19 @@ public class KeyManagementServiceStubSettings
             ListCryptoKeyVersionsPagedResponse>
         listCryptoKeyVersionsSettings;
     private final UnaryCallSettings.Builder<GetKeyRingRequest, KeyRing> getKeyRingSettings;
+    private final UnaryCallSettings.Builder<GetImportJobRequest, ImportJob> getImportJobSettings;
     private final UnaryCallSettings.Builder<GetCryptoKeyRequest, CryptoKey> getCryptoKeySettings;
     private final UnaryCallSettings.Builder<GetCryptoKeyVersionRequest, CryptoKeyVersion>
         getCryptoKeyVersionSettings;
     private final UnaryCallSettings.Builder<CreateKeyRingRequest, KeyRing> createKeyRingSettings;
+    private final UnaryCallSettings.Builder<CreateImportJobRequest, ImportJob>
+        createImportJobSettings;
     private final UnaryCallSettings.Builder<CreateCryptoKeyRequest, CryptoKey>
         createCryptoKeySettings;
     private final UnaryCallSettings.Builder<CreateCryptoKeyVersionRequest, CryptoKeyVersion>
         createCryptoKeyVersionSettings;
+    private final UnaryCallSettings.Builder<ImportCryptoKeyVersionRequest, CryptoKeyVersion>
+        importCryptoKeyVersionSettings;
     private final UnaryCallSettings.Builder<UpdateCryptoKeyRequest, CryptoKey>
         updateCryptoKeySettings;
     private final UnaryCallSettings.Builder<UpdateCryptoKeyVersionRequest, CryptoKeyVersion>
@@ -639,6 +745,8 @@ public class KeyManagementServiceStubSettings
 
       listKeyRingsSettings = PagedCallSettings.newBuilder(LIST_KEY_RINGS_PAGE_STR_FACT);
 
+      listImportJobsSettings = PagedCallSettings.newBuilder(LIST_IMPORT_JOBS_PAGE_STR_FACT);
+
       listCryptoKeysSettings = PagedCallSettings.newBuilder(LIST_CRYPTO_KEYS_PAGE_STR_FACT);
 
       listCryptoKeyVersionsSettings =
@@ -646,15 +754,21 @@ public class KeyManagementServiceStubSettings
 
       getKeyRingSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
+      getImportJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       getCryptoKeySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       getCryptoKeyVersionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       createKeyRingSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
+      createImportJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       createCryptoKeySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       createCryptoKeyVersionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      importCryptoKeyVersionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       updateCryptoKeySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -685,14 +799,18 @@ public class KeyManagementServiceStubSettings
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               listKeyRingsSettings,
+              listImportJobsSettings,
               listCryptoKeysSettings,
               listCryptoKeyVersionsSettings,
               getKeyRingSettings,
+              getImportJobSettings,
               getCryptoKeySettings,
               getCryptoKeyVersionSettings,
               createKeyRingSettings,
+              createImportJobSettings,
               createCryptoKeySettings,
               createCryptoKeyVersionSettings,
+              importCryptoKeyVersionSettings,
               updateCryptoKeySettings,
               updateCryptoKeyVersionSettings,
               encryptSettings,
@@ -727,6 +845,11 @@ public class KeyManagementServiceStubSettings
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
+          .listImportJobsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
           .listCryptoKeysSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
@@ -738,6 +861,11 @@ public class KeyManagementServiceStubSettings
 
       builder
           .getKeyRingSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .getImportJobSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
@@ -757,12 +885,22 @@ public class KeyManagementServiceStubSettings
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
+          .createImportJobSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
           .createCryptoKeySettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
           .createCryptoKeyVersionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .importCryptoKeyVersionSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
@@ -838,14 +976,18 @@ public class KeyManagementServiceStubSettings
       super(settings);
 
       listKeyRingsSettings = settings.listKeyRingsSettings.toBuilder();
+      listImportJobsSettings = settings.listImportJobsSettings.toBuilder();
       listCryptoKeysSettings = settings.listCryptoKeysSettings.toBuilder();
       listCryptoKeyVersionsSettings = settings.listCryptoKeyVersionsSettings.toBuilder();
       getKeyRingSettings = settings.getKeyRingSettings.toBuilder();
+      getImportJobSettings = settings.getImportJobSettings.toBuilder();
       getCryptoKeySettings = settings.getCryptoKeySettings.toBuilder();
       getCryptoKeyVersionSettings = settings.getCryptoKeyVersionSettings.toBuilder();
       createKeyRingSettings = settings.createKeyRingSettings.toBuilder();
+      createImportJobSettings = settings.createImportJobSettings.toBuilder();
       createCryptoKeySettings = settings.createCryptoKeySettings.toBuilder();
       createCryptoKeyVersionSettings = settings.createCryptoKeyVersionSettings.toBuilder();
+      importCryptoKeyVersionSettings = settings.importCryptoKeyVersionSettings.toBuilder();
       updateCryptoKeySettings = settings.updateCryptoKeySettings.toBuilder();
       updateCryptoKeyVersionSettings = settings.updateCryptoKeyVersionSettings.toBuilder();
       encryptSettings = settings.encryptSettings.toBuilder();
@@ -864,14 +1006,18 @@ public class KeyManagementServiceStubSettings
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               listKeyRingsSettings,
+              listImportJobsSettings,
               listCryptoKeysSettings,
               listCryptoKeyVersionsSettings,
               getKeyRingSettings,
+              getImportJobSettings,
               getCryptoKeySettings,
               getCryptoKeyVersionSettings,
               createKeyRingSettings,
+              createImportJobSettings,
               createCryptoKeySettings,
               createCryptoKeyVersionSettings,
+              importCryptoKeyVersionSettings,
               updateCryptoKeySettings,
               updateCryptoKeyVersionSettings,
               encryptSettings,
@@ -910,6 +1056,13 @@ public class KeyManagementServiceStubSettings
       return listKeyRingsSettings;
     }
 
+    /** Returns the builder for the settings used for calls to listImportJobs. */
+    public PagedCallSettings.Builder<
+            ListImportJobsRequest, ListImportJobsResponse, ListImportJobsPagedResponse>
+        listImportJobsSettings() {
+      return listImportJobsSettings;
+    }
+
     /** Returns the builder for the settings used for calls to listCryptoKeys. */
     public PagedCallSettings.Builder<
             ListCryptoKeysRequest, ListCryptoKeysResponse, ListCryptoKeysPagedResponse>
@@ -931,6 +1084,11 @@ public class KeyManagementServiceStubSettings
       return getKeyRingSettings;
     }
 
+    /** Returns the builder for the settings used for calls to getImportJob. */
+    public UnaryCallSettings.Builder<GetImportJobRequest, ImportJob> getImportJobSettings() {
+      return getImportJobSettings;
+    }
+
     /** Returns the builder for the settings used for calls to getCryptoKey. */
     public UnaryCallSettings.Builder<GetCryptoKeyRequest, CryptoKey> getCryptoKeySettings() {
       return getCryptoKeySettings;
@@ -947,6 +1105,11 @@ public class KeyManagementServiceStubSettings
       return createKeyRingSettings;
     }
 
+    /** Returns the builder for the settings used for calls to createImportJob. */
+    public UnaryCallSettings.Builder<CreateImportJobRequest, ImportJob> createImportJobSettings() {
+      return createImportJobSettings;
+    }
+
     /** Returns the builder for the settings used for calls to createCryptoKey. */
     public UnaryCallSettings.Builder<CreateCryptoKeyRequest, CryptoKey> createCryptoKeySettings() {
       return createCryptoKeySettings;
@@ -956,6 +1119,12 @@ public class KeyManagementServiceStubSettings
     public UnaryCallSettings.Builder<CreateCryptoKeyVersionRequest, CryptoKeyVersion>
         createCryptoKeyVersionSettings() {
       return createCryptoKeyVersionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to importCryptoKeyVersion. */
+    public UnaryCallSettings.Builder<ImportCryptoKeyVersionRequest, CryptoKeyVersion>
+        importCryptoKeyVersionSettings() {
+      return importCryptoKeyVersionSettings;
     }
 
     /** Returns the builder for the settings used for calls to updateCryptoKey. */

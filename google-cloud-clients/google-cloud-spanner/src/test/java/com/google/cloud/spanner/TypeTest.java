@@ -47,7 +47,7 @@ public class TypeTest {
     void test() {
       Type t = newType();
       assertThat(t.getCode()).isEqualTo(expectedCode);
-      assertThat(newType()).isSameAs(t); // Interned.
+      assertThat(newType()).isSameInstanceAs(t); // Interned.
       // String form is deliberately the same as the corresponding type enum in the public API.
       assertThat(t.toString()).isEqualTo(expectedProtoCode.toString());
 
@@ -59,7 +59,7 @@ public class TypeTest {
       // Round trip.
       Type fromProto = Type.fromProto(proto);
       assertThat(fromProto).isEqualTo(t);
-      assertThat(fromProto).isSameAs(t);
+      assertThat(fromProto).isSameInstanceAs(t);
 
       reserializeAndAssert(t);
     }
@@ -155,7 +155,7 @@ public class TypeTest {
       assertThat(t.getCode()).isEqualTo(Type.Code.ARRAY);
       assertThat(t.getArrayElementType()).isEqualTo(elementType);
       if (expectInterned) {
-        assertThat(Type.array(newElementType())).isSameAs(t);
+        assertThat(Type.array(newElementType())).isSameInstanceAs(t);
       }
       assertThat(t.toString()).isEqualTo("ARRAY<" + elementType.toString() + ">");
 
@@ -168,7 +168,7 @@ public class TypeTest {
       assertThat(fromProto).isEqualTo(t);
 
       if (expectInterned) {
-        assertThat(fromProto).isSameAs(t);
+        assertThat(fromProto).isSameInstanceAs(t);
       }
       reserializeAndAssert(t);
     }

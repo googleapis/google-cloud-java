@@ -12,9 +12,12 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * Output only. The Data Catalog resource name of the entry in URL format. For
-   * example,
+   * Required when used in
+   * [UpdateEntryRequest][google.cloud.datacatalog.v1beta1.UpdateEntryRequest].
+   * The Data Catalog resource name of the entry in URL format. For example,
    * "projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}".
+   * Note that this Entry and its child resources may not actually be stored in
+   * the location in this name.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -24,9 +27,12 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * Output only. The Data Catalog resource name of the entry in URL format. For
-   * example,
+   * Required when used in
+   * [UpdateEntryRequest][google.cloud.datacatalog.v1beta1.UpdateEntryRequest].
+   * The Data Catalog resource name of the entry in URL format. For example,
    * "projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}".
+   * Note that this Entry and its child resources may not actually be stored in
+   * the location in this name.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -37,7 +43,7 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * The full name of the cloud resource the entry belongs to. See:
+   * Output only. The full name of the cloud resource the entry belongs to. See:
    * https://cloud.google.com/apis/design/resource_names#full_resource_name
    * Data Catalog supports resources from select Google Cloud Platform systems.
    * `linked_resource` is the full name of the Google Cloud Platform resource.
@@ -52,7 +58,7 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * The full name of the cloud resource the entry belongs to. See:
+   * Output only. The full name of the cloud resource the entry belongs to. See:
    * https://cloud.google.com/apis/design/resource_names#full_resource_name
    * Data Catalog supports resources from select Google Cloud Platform systems.
    * `linked_resource` is the full name of the Google Cloud Platform resource.
@@ -68,7 +74,7 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * Type of entry.
+   * Required. Type of entry.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.EntryType type = 2;</code>
@@ -78,7 +84,7 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * Type of entry.
+   * Required. Type of entry.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.EntryType type = 2;</code>
@@ -123,9 +129,53 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * Display information such as title and description.
-   * A short name to identify the entry, for example,
-   * "Analytics Data - Jan 2011".
+   * Specification for a group of BigQuery tables with name pattern
+   * [prefix]YYYYMMDD. Context:
+   * https://cloud.google.com/bigquery/docs/partitioned-tables#partitioning_versus_sharding
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datacatalog.v1beta1.BigQueryDateShardedSpec bigquery_date_sharded_spec = 15;
+   * </code>
+   */
+  boolean hasBigqueryDateShardedSpec();
+  /**
+   *
+   *
+   * <pre>
+   * Specification for a group of BigQuery tables with name pattern
+   * [prefix]YYYYMMDD. Context:
+   * https://cloud.google.com/bigquery/docs/partitioned-tables#partitioning_versus_sharding
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datacatalog.v1beta1.BigQueryDateShardedSpec bigquery_date_sharded_spec = 15;
+   * </code>
+   */
+  com.google.cloud.datacatalog.BigQueryDateShardedSpec getBigqueryDateShardedSpec();
+  /**
+   *
+   *
+   * <pre>
+   * Specification for a group of BigQuery tables with name pattern
+   * [prefix]YYYYMMDD. Context:
+   * https://cloud.google.com/bigquery/docs/partitioned-tables#partitioning_versus_sharding
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datacatalog.v1beta1.BigQueryDateShardedSpec bigquery_date_sharded_spec = 15;
+   * </code>
+   */
+  com.google.cloud.datacatalog.BigQueryDateShardedSpecOrBuilder
+      getBigqueryDateShardedSpecOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Display information such as title and description. A short name
+   * to identify the entry, for example, "Analytics Data - Jan 2011". Default
+   * value is an empty string.
    * </pre>
    *
    * <code>string display_name = 3;</code>
@@ -135,9 +185,9 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * Display information such as title and description.
-   * A short name to identify the entry, for example,
-   * "Analytics Data - Jan 2011".
+   * Optional. Display information such as title and description. A short name
+   * to identify the entry, for example, "Analytics Data - Jan 2011". Default
+   * value is an empty string.
    * </pre>
    *
    * <code>string display_name = 3;</code>
@@ -148,8 +198,8 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * Entry description, which can consist of several sentences or paragraphs
-   * that describe entry contents.
+   * Optional. Entry description, which can consist of several sentences or
+   * paragraphs that describe entry contents. Default value is an empty string.
    * </pre>
    *
    * <code>string description = 4;</code>
@@ -159,8 +209,8 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * Entry description, which can consist of several sentences or paragraphs
-   * that describe entry contents.
+   * Optional. Entry description, which can consist of several sentences or
+   * paragraphs that describe entry contents. Default value is an empty string.
    * </pre>
    *
    * <code>string description = 4;</code>
@@ -171,7 +221,8 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * Schema of the entry.
+   * Optional. Schema of the entry. An entry might not have any schema attached
+   * to it.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.Schema schema = 5;</code>
@@ -181,7 +232,8 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * Schema of the entry.
+   * Optional. Schema of the entry. An entry might not have any schema attached
+   * to it.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.Schema schema = 5;</code>
@@ -191,7 +243,8 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * Schema of the entry.
+   * Optional. Schema of the entry. An entry might not have any schema attached
+   * to it.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.Schema schema = 5;</code>
@@ -202,8 +255,8 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * Timestamps about the underlying Google Cloud Platform resource -- not about
-   * this Data Catalog Entry.
+   * Output only. Timestamps about the underlying Google Cloud Platform resource
+   * -- not about this Data Catalog Entry.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.SystemTimestamps source_system_timestamps = 7;</code>
@@ -213,8 +266,8 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * Timestamps about the underlying Google Cloud Platform resource -- not about
-   * this Data Catalog Entry.
+   * Output only. Timestamps about the underlying Google Cloud Platform resource
+   * -- not about this Data Catalog Entry.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.SystemTimestamps source_system_timestamps = 7;</code>
@@ -224,8 +277,8 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * Timestamps about the underlying Google Cloud Platform resource -- not about
-   * this Data Catalog Entry.
+   * Output only. Timestamps about the underlying Google Cloud Platform resource
+   * -- not about this Data Catalog Entry.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.SystemTimestamps source_system_timestamps = 7;</code>

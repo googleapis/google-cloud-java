@@ -35,22 +35,22 @@ public final class TextExtraction {
     java.lang.String[] descriptorData = {
       "\n1google/cloud/automl/v1beta1/text_extra"
           + "ction.proto\022\033google.cloud.automl.v1beta1"
-          + "\032\034google/api/annotations.proto\032.google/c"
-          + "loud/automl/v1beta1/text_segment.proto\"i"
-          + "\n\030TextExtractionAnnotation\022\r\n\005score\030\001 \001("
-          + "\002\022>\n\014text_segment\030\003 \001(\0132(.google.cloud.a"
-          + "utoml.v1beta1.TextSegment\"\227\002\n\037TextExtrac"
-          + "tionEvaluationMetrics\022\016\n\006au_prc\030\001 \001(\002\022w\n"
-          + "\032confidence_metrics_entries\030\002 \003(\0132S.goog"
-          + "le.cloud.automl.v1beta1.TextExtractionEv"
-          + "aluationMetrics.ConfidenceMetricsEntry\032k"
-          + "\n\026ConfidenceMetricsEntry\022\034\n\024confidence_t"
-          + "hreshold\030\001 \001(\002\022\016\n\006recall\030\003 \001(\002\022\021\n\tprecis"
-          + "ion\030\004 \001(\002\022\020\n\010f1_score\030\005 \001(\002B\204\001\n\037com.goog"
-          + "le.cloud.automl.v1beta1P\001ZAgoogle.golang"
-          + ".org/genproto/googleapis/cloud/automl/v1"
-          + "beta1;automl\312\002\033Google\\Cloud\\AutoMl\\V1bet"
-          + "a1b\006proto3"
+          + "\032.google/cloud/automl/v1beta1/text_segme"
+          + "nt.proto\032\034google/api/annotations.proto\"y"
+          + "\n\030TextExtractionAnnotation\022@\n\014text_segme"
+          + "nt\030\003 \001(\0132(.google.cloud.automl.v1beta1.T"
+          + "extSegmentH\000\022\r\n\005score\030\001 \001(\002B\014\n\nannotatio"
+          + "n\"\227\002\n\037TextExtractionEvaluationMetrics\022\016\n"
+          + "\006au_prc\030\001 \001(\002\022w\n\032confidence_metrics_entr"
+          + "ies\030\002 \003(\0132S.google.cloud.automl.v1beta1."
+          + "TextExtractionEvaluationMetrics.Confiden"
+          + "ceMetricsEntry\032k\n\026ConfidenceMetricsEntry"
+          + "\022\034\n\024confidence_threshold\030\001 \001(\002\022\016\n\006recall"
+          + "\030\003 \001(\002\022\021\n\tprecision\030\004 \001(\002\022\020\n\010f1_score\030\005 "
+          + "\001(\002B\204\001\n\037com.google.cloud.automl.v1beta1P"
+          + "\001ZAgoogle.golang.org/genproto/googleapis"
+          + "/cloud/automl/v1beta1;automl\312\002\033Google\\Cl"
+          + "oud\\AutoMl\\V1beta1b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -63,8 +63,8 @@ public final class TextExtraction {
     com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
         descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.api.AnnotationsProto.getDescriptor(),
           com.google.cloud.automl.v1beta1.TextSegmentProto.getDescriptor(),
+          com.google.api.AnnotationsProto.getDescriptor(),
         },
         assigner);
     internal_static_google_cloud_automl_v1beta1_TextExtractionAnnotation_descriptor =
@@ -73,7 +73,7 @@ public final class TextExtraction {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_automl_v1beta1_TextExtractionAnnotation_descriptor,
             new java.lang.String[] {
-              "Score", "TextSegment",
+              "TextSegment", "Score", "Annotation",
             });
     internal_static_google_cloud_automl_v1beta1_TextExtractionEvaluationMetrics_descriptor =
         getDescriptor().getMessageTypes().get(1);
@@ -93,8 +93,8 @@ public final class TextExtraction {
             new java.lang.String[] {
               "ConfidenceThreshold", "Recall", "Precision", "F1Score",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.cloud.automl.v1beta1.TextSegmentProto.getDescriptor();
+    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

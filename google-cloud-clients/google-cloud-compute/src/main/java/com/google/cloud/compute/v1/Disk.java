@@ -277,8 +277,8 @@ public final class Disk implements ApiMessage {
    * Encrypts the disk using a customer-supplied encryption key.
    *
    * <p>After you encrypt a disk with a customer-supplied key, you must provide the same key if you
-   * use the disk later (e.g. to create a disk snapshot or an image, or to attach the disk to a
-   * virtual machine).
+   * use the disk later (e.g. to create a disk snapshot, to create a disk image, to create a machine
+   * image, or to attach the disk to a virtual machine).
    *
    * <p>Customer-supplied encryption keys do not protect access to metadata of the disk.
    *
@@ -484,7 +484,8 @@ public final class Disk implements ApiMessage {
 
   /**
    * URL of the disk type resource describing which disk type to use to create the disk. Provide
-   * this when creating the disk. For example: project/zones/zone/diskTypes/pd-standard or pd-ssd
+   * this when creating the disk. For example: projects/project/zones/zone/diskTypes/pd-standard or
+   * pd-ssd
    */
   public String getType() {
     return type;
@@ -492,7 +493,7 @@ public final class Disk implements ApiMessage {
 
   /**
    * [Output Only] Links to the users of the disk (attached instances) in form:
-   * project/zones/zone/instances/instance
+   * projects/project/zones/zone/instances/instance
    */
   public List<String> getUsersList() {
     return users;
@@ -715,8 +716,8 @@ public final class Disk implements ApiMessage {
      * Encrypts the disk using a customer-supplied encryption key.
      *
      * <p>After you encrypt a disk with a customer-supplied key, you must provide the same key if
-     * you use the disk later (e.g. to create a disk snapshot or an image, or to attach the disk to
-     * a virtual machine).
+     * you use the disk later (e.g. to create a disk snapshot, to create a disk image, to create a
+     * machine image, or to attach the disk to a virtual machine).
      *
      * <p>Customer-supplied encryption keys do not protect access to metadata of the disk.
      *
@@ -732,8 +733,8 @@ public final class Disk implements ApiMessage {
      * Encrypts the disk using a customer-supplied encryption key.
      *
      * <p>After you encrypt a disk with a customer-supplied key, you must provide the same key if
-     * you use the disk later (e.g. to create a disk snapshot or an image, or to attach the disk to
-     * a virtual machine).
+     * you use the disk later (e.g. to create a disk snapshot, to create a disk image, to create a
+     * machine image, or to attach the disk to a virtual machine).
      *
      * <p>Customer-supplied encryption keys do not protect access to metadata of the disk.
      *
@@ -1212,7 +1213,8 @@ public final class Disk implements ApiMessage {
 
     /**
      * URL of the disk type resource describing which disk type to use to create the disk. Provide
-     * this when creating the disk. For example: project/zones/zone/diskTypes/pd-standard or pd-ssd
+     * this when creating the disk. For example: projects/project/zones/zone/diskTypes/pd-standard
+     * or pd-ssd
      */
     public String getType() {
       return type;
@@ -1220,7 +1222,8 @@ public final class Disk implements ApiMessage {
 
     /**
      * URL of the disk type resource describing which disk type to use to create the disk. Provide
-     * this when creating the disk. For example: project/zones/zone/diskTypes/pd-standard or pd-ssd
+     * this when creating the disk. For example: projects/project/zones/zone/diskTypes/pd-standard
+     * or pd-ssd
      */
     public Builder setType(String type) {
       this.type = type;
@@ -1229,7 +1232,7 @@ public final class Disk implements ApiMessage {
 
     /**
      * [Output Only] Links to the users of the disk (attached instances) in form:
-     * project/zones/zone/instances/instance
+     * projects/project/zones/zone/instances/instance
      */
     public List<String> getUsersList() {
       return users;
@@ -1237,7 +1240,7 @@ public final class Disk implements ApiMessage {
 
     /**
      * [Output Only] Links to the users of the disk (attached instances) in form:
-     * project/zones/zone/instances/instance
+     * projects/project/zones/zone/instances/instance
      */
     public Builder addAllUsers(List<String> users) {
       if (this.users == null) {
@@ -1249,7 +1252,7 @@ public final class Disk implements ApiMessage {
 
     /**
      * [Output Only] Links to the users of the disk (attached instances) in form:
-     * project/zones/zone/instances/instance
+     * projects/project/zones/zone/instances/instance
      */
     public Builder addUsers(String users) {
       if (this.users == null) {

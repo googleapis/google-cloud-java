@@ -147,10 +147,6 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
    * value means greater confidence in the returned value.
    * For
    * [target_column_spec][google.cloud.automl.v1beta1.TablesModelMetadata.target_column_spec]
-   * of ARRAY(CATEGORY) data type, this is a confidence that one of the values
-   * in the ARRAY would be the provided value.
-   * For
-   * [target_column_spec][google.cloud.automl.v1beta1.TablesModelMetadata.target_column_spec]
    * of FLOAT64 data type the score is not populated.
    * </pre>
    *
@@ -168,8 +164,8 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Output only. Only populated when
    * [target_column_spec][google.cloud.automl.v1beta1.TablesModelMetadata.target_column_spec]
-   * has FLOAT64 data type (i.e. for regression predictions). An interval in
-   * which the exactly correct target value has 95% chance to be in.
+   * has FLOAT64 data type. An interval in which the exactly correct target
+   * value has 95% chance to be in.
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.DoubleRange prediction_interval = 4;</code>
@@ -183,8 +179,8 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Output only. Only populated when
    * [target_column_spec][google.cloud.automl.v1beta1.TablesModelMetadata.target_column_spec]
-   * has FLOAT64 data type (i.e. for regression predictions). An interval in
-   * which the exactly correct target value has 95% chance to be in.
+   * has FLOAT64 data type. An interval in which the exactly correct target
+   * value has 95% chance to be in.
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.DoubleRange prediction_interval = 4;</code>
@@ -200,8 +196,8 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Output only. Only populated when
    * [target_column_spec][google.cloud.automl.v1beta1.TablesModelMetadata.target_column_spec]
-   * has FLOAT64 data type (i.e. for regression predictions). An interval in
-   * which the exactly correct target value has 95% chance to be in.
+   * has FLOAT64 data type. An interval in which the exactly correct target
+   * value has 95% chance to be in.
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.DoubleRange prediction_interval = 4;</code>
@@ -221,9 +217,7 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
    * The value depends on the column's DataType:
    * CATEGORY - the predicted (with the above confidence `score`) CATEGORY
    *            value.
-   * FLOAT64 - the predicted (with the above confidence `score`) FLOAT64 value.
-   * ARRAY(CATEGORY) - CATEGORY value meaning that this value would be in the
-   *                   ARRAY in that column (with the above confidence `score`).
+   * FLOAT64 - the predicted (with above `prediction_interval`) FLOAT64 value.
    * </pre>
    *
    * <code>.google.protobuf.Value value = 2;</code>
@@ -240,9 +234,7 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
    * The value depends on the column's DataType:
    * CATEGORY - the predicted (with the above confidence `score`) CATEGORY
    *            value.
-   * FLOAT64 - the predicted (with the above confidence `score`) FLOAT64 value.
-   * ARRAY(CATEGORY) - CATEGORY value meaning that this value would be in the
-   *                   ARRAY in that column (with the above confidence `score`).
+   * FLOAT64 - the predicted (with above `prediction_interval`) FLOAT64 value.
    * </pre>
    *
    * <code>.google.protobuf.Value value = 2;</code>
@@ -259,9 +251,7 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
    * The value depends on the column's DataType:
    * CATEGORY - the predicted (with the above confidence `score`) CATEGORY
    *            value.
-   * FLOAT64 - the predicted (with the above confidence `score`) FLOAT64 value.
-   * ARRAY(CATEGORY) - CATEGORY value meaning that this value would be in the
-   *                   ARRAY in that column (with the above confidence `score`).
+   * FLOAT64 - the predicted (with above `prediction_interval`) FLOAT64 value.
    * </pre>
    *
    * <code>.google.protobuf.Value value = 2;</code>
@@ -278,8 +268,13 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Output only. Auxiliary information for each of the model's
-   * [input_feature_column_specs'][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
+   * [input_feature_column_specs][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
    * with respect to this particular prediction.
+   * If no other fields than
+   * [column_spec_name][google.cloud.automl.v1beta1.TablesModelColumnInfo.column_spec_name]
+   * and
+   * [column_display_name][google.cloud.automl.v1beta1.TablesModelColumnInfo.column_display_name]
+   * would be populated, then this whole field is not.
    * </pre>
    *
    * <code>repeated .google.cloud.automl.v1beta1.TablesModelColumnInfo tables_model_column_info = 3;
@@ -294,8 +289,13 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Output only. Auxiliary information for each of the model's
-   * [input_feature_column_specs'][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
+   * [input_feature_column_specs][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
    * with respect to this particular prediction.
+   * If no other fields than
+   * [column_spec_name][google.cloud.automl.v1beta1.TablesModelColumnInfo.column_spec_name]
+   * and
+   * [column_display_name][google.cloud.automl.v1beta1.TablesModelColumnInfo.column_display_name]
+   * would be populated, then this whole field is not.
    * </pre>
    *
    * <code>repeated .google.cloud.automl.v1beta1.TablesModelColumnInfo tables_model_column_info = 3;
@@ -310,8 +310,13 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Output only. Auxiliary information for each of the model's
-   * [input_feature_column_specs'][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
+   * [input_feature_column_specs][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
    * with respect to this particular prediction.
+   * If no other fields than
+   * [column_spec_name][google.cloud.automl.v1beta1.TablesModelColumnInfo.column_spec_name]
+   * and
+   * [column_display_name][google.cloud.automl.v1beta1.TablesModelColumnInfo.column_display_name]
+   * would be populated, then this whole field is not.
    * </pre>
    *
    * <code>repeated .google.cloud.automl.v1beta1.TablesModelColumnInfo tables_model_column_info = 3;
@@ -325,8 +330,13 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Output only. Auxiliary information for each of the model's
-   * [input_feature_column_specs'][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
+   * [input_feature_column_specs][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
    * with respect to this particular prediction.
+   * If no other fields than
+   * [column_spec_name][google.cloud.automl.v1beta1.TablesModelColumnInfo.column_spec_name]
+   * and
+   * [column_display_name][google.cloud.automl.v1beta1.TablesModelColumnInfo.column_display_name]
+   * would be populated, then this whole field is not.
    * </pre>
    *
    * <code>repeated .google.cloud.automl.v1beta1.TablesModelColumnInfo tables_model_column_info = 3;
@@ -340,8 +350,13 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Output only. Auxiliary information for each of the model's
-   * [input_feature_column_specs'][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
+   * [input_feature_column_specs][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
    * with respect to this particular prediction.
+   * If no other fields than
+   * [column_spec_name][google.cloud.automl.v1beta1.TablesModelColumnInfo.column_spec_name]
+   * and
+   * [column_display_name][google.cloud.automl.v1beta1.TablesModelColumnInfo.column_display_name]
+   * would be populated, then this whole field is not.
    * </pre>
    *
    * <code>repeated .google.cloud.automl.v1beta1.TablesModelColumnInfo tables_model_column_info = 3;
@@ -796,10 +811,6 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
      * value means greater confidence in the returned value.
      * For
      * [target_column_spec][google.cloud.automl.v1beta1.TablesModelMetadata.target_column_spec]
-     * of ARRAY(CATEGORY) data type, this is a confidence that one of the values
-     * in the ARRAY would be the provided value.
-     * For
-     * [target_column_spec][google.cloud.automl.v1beta1.TablesModelMetadata.target_column_spec]
      * of FLOAT64 data type the score is not populated.
      * </pre>
      *
@@ -814,10 +825,6 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Output only. A confidence estimate between 0.0 and 1.0, inclusive. A higher
      * value means greater confidence in the returned value.
-     * For
-     * [target_column_spec][google.cloud.automl.v1beta1.TablesModelMetadata.target_column_spec]
-     * of ARRAY(CATEGORY) data type, this is a confidence that one of the values
-     * in the ARRAY would be the provided value.
      * For
      * [target_column_spec][google.cloud.automl.v1beta1.TablesModelMetadata.target_column_spec]
      * of FLOAT64 data type the score is not populated.
@@ -837,10 +844,6 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Output only. A confidence estimate between 0.0 and 1.0, inclusive. A higher
      * value means greater confidence in the returned value.
-     * For
-     * [target_column_spec][google.cloud.automl.v1beta1.TablesModelMetadata.target_column_spec]
-     * of ARRAY(CATEGORY) data type, this is a confidence that one of the values
-     * in the ARRAY would be the provided value.
      * For
      * [target_column_spec][google.cloud.automl.v1beta1.TablesModelMetadata.target_column_spec]
      * of FLOAT64 data type the score is not populated.
@@ -867,8 +870,8 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Output only. Only populated when
      * [target_column_spec][google.cloud.automl.v1beta1.TablesModelMetadata.target_column_spec]
-     * has FLOAT64 data type (i.e. for regression predictions). An interval in
-     * which the exactly correct target value has 95% chance to be in.
+     * has FLOAT64 data type. An interval in which the exactly correct target
+     * value has 95% chance to be in.
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.DoubleRange prediction_interval = 4;</code>
@@ -882,8 +885,8 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Output only. Only populated when
      * [target_column_spec][google.cloud.automl.v1beta1.TablesModelMetadata.target_column_spec]
-     * has FLOAT64 data type (i.e. for regression predictions). An interval in
-     * which the exactly correct target value has 95% chance to be in.
+     * has FLOAT64 data type. An interval in which the exactly correct target
+     * value has 95% chance to be in.
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.DoubleRange prediction_interval = 4;</code>
@@ -903,8 +906,8 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Output only. Only populated when
      * [target_column_spec][google.cloud.automl.v1beta1.TablesModelMetadata.target_column_spec]
-     * has FLOAT64 data type (i.e. for regression predictions). An interval in
-     * which the exactly correct target value has 95% chance to be in.
+     * has FLOAT64 data type. An interval in which the exactly correct target
+     * value has 95% chance to be in.
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.DoubleRange prediction_interval = 4;</code>
@@ -928,8 +931,8 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Output only. Only populated when
      * [target_column_spec][google.cloud.automl.v1beta1.TablesModelMetadata.target_column_spec]
-     * has FLOAT64 data type (i.e. for regression predictions). An interval in
-     * which the exactly correct target value has 95% chance to be in.
+     * has FLOAT64 data type. An interval in which the exactly correct target
+     * value has 95% chance to be in.
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.DoubleRange prediction_interval = 4;</code>
@@ -951,8 +954,8 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Output only. Only populated when
      * [target_column_spec][google.cloud.automl.v1beta1.TablesModelMetadata.target_column_spec]
-     * has FLOAT64 data type (i.e. for regression predictions). An interval in
-     * which the exactly correct target value has 95% chance to be in.
+     * has FLOAT64 data type. An interval in which the exactly correct target
+     * value has 95% chance to be in.
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.DoubleRange prediction_interval = 4;</code>
@@ -980,8 +983,8 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Output only. Only populated when
      * [target_column_spec][google.cloud.automl.v1beta1.TablesModelMetadata.target_column_spec]
-     * has FLOAT64 data type (i.e. for regression predictions). An interval in
-     * which the exactly correct target value has 95% chance to be in.
+     * has FLOAT64 data type. An interval in which the exactly correct target
+     * value has 95% chance to be in.
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.DoubleRange prediction_interval = 4;</code>
@@ -1003,8 +1006,8 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Output only. Only populated when
      * [target_column_spec][google.cloud.automl.v1beta1.TablesModelMetadata.target_column_spec]
-     * has FLOAT64 data type (i.e. for regression predictions). An interval in
-     * which the exactly correct target value has 95% chance to be in.
+     * has FLOAT64 data type. An interval in which the exactly correct target
+     * value has 95% chance to be in.
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.DoubleRange prediction_interval = 4;</code>
@@ -1020,8 +1023,8 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Output only. Only populated when
      * [target_column_spec][google.cloud.automl.v1beta1.TablesModelMetadata.target_column_spec]
-     * has FLOAT64 data type (i.e. for regression predictions). An interval in
-     * which the exactly correct target value has 95% chance to be in.
+     * has FLOAT64 data type. An interval in which the exactly correct target
+     * value has 95% chance to be in.
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.DoubleRange prediction_interval = 4;</code>
@@ -1041,8 +1044,8 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Output only. Only populated when
      * [target_column_spec][google.cloud.automl.v1beta1.TablesModelMetadata.target_column_spec]
-     * has FLOAT64 data type (i.e. for regression predictions). An interval in
-     * which the exactly correct target value has 95% chance to be in.
+     * has FLOAT64 data type. An interval in which the exactly correct target
+     * value has 95% chance to be in.
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.DoubleRange prediction_interval = 4;</code>
@@ -1079,9 +1082,7 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
      * The value depends on the column's DataType:
      * CATEGORY - the predicted (with the above confidence `score`) CATEGORY
      *            value.
-     * FLOAT64 - the predicted (with the above confidence `score`) FLOAT64 value.
-     * ARRAY(CATEGORY) - CATEGORY value meaning that this value would be in the
-     *                   ARRAY in that column (with the above confidence `score`).
+     * FLOAT64 - the predicted (with above `prediction_interval`) FLOAT64 value.
      * </pre>
      *
      * <code>.google.protobuf.Value value = 2;</code>
@@ -1098,9 +1099,7 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
      * The value depends on the column's DataType:
      * CATEGORY - the predicted (with the above confidence `score`) CATEGORY
      *            value.
-     * FLOAT64 - the predicted (with the above confidence `score`) FLOAT64 value.
-     * ARRAY(CATEGORY) - CATEGORY value meaning that this value would be in the
-     *                   ARRAY in that column (with the above confidence `score`).
+     * FLOAT64 - the predicted (with above `prediction_interval`) FLOAT64 value.
      * </pre>
      *
      * <code>.google.protobuf.Value value = 2;</code>
@@ -1121,9 +1120,7 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
      * The value depends on the column's DataType:
      * CATEGORY - the predicted (with the above confidence `score`) CATEGORY
      *            value.
-     * FLOAT64 - the predicted (with the above confidence `score`) FLOAT64 value.
-     * ARRAY(CATEGORY) - CATEGORY value meaning that this value would be in the
-     *                   ARRAY in that column (with the above confidence `score`).
+     * FLOAT64 - the predicted (with above `prediction_interval`) FLOAT64 value.
      * </pre>
      *
      * <code>.google.protobuf.Value value = 2;</code>
@@ -1150,9 +1147,7 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
      * The value depends on the column's DataType:
      * CATEGORY - the predicted (with the above confidence `score`) CATEGORY
      *            value.
-     * FLOAT64 - the predicted (with the above confidence `score`) FLOAT64 value.
-     * ARRAY(CATEGORY) - CATEGORY value meaning that this value would be in the
-     *                   ARRAY in that column (with the above confidence `score`).
+     * FLOAT64 - the predicted (with above `prediction_interval`) FLOAT64 value.
      * </pre>
      *
      * <code>.google.protobuf.Value value = 2;</code>
@@ -1176,9 +1171,7 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
      * The value depends on the column's DataType:
      * CATEGORY - the predicted (with the above confidence `score`) CATEGORY
      *            value.
-     * FLOAT64 - the predicted (with the above confidence `score`) FLOAT64 value.
-     * ARRAY(CATEGORY) - CATEGORY value meaning that this value would be in the
-     *                   ARRAY in that column (with the above confidence `score`).
+     * FLOAT64 - the predicted (with above `prediction_interval`) FLOAT64 value.
      * </pre>
      *
      * <code>.google.protobuf.Value value = 2;</code>
@@ -1206,9 +1199,7 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
      * The value depends on the column's DataType:
      * CATEGORY - the predicted (with the above confidence `score`) CATEGORY
      *            value.
-     * FLOAT64 - the predicted (with the above confidence `score`) FLOAT64 value.
-     * ARRAY(CATEGORY) - CATEGORY value meaning that this value would be in the
-     *                   ARRAY in that column (with the above confidence `score`).
+     * FLOAT64 - the predicted (with above `prediction_interval`) FLOAT64 value.
      * </pre>
      *
      * <code>.google.protobuf.Value value = 2;</code>
@@ -1233,9 +1224,7 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
      * The value depends on the column's DataType:
      * CATEGORY - the predicted (with the above confidence `score`) CATEGORY
      *            value.
-     * FLOAT64 - the predicted (with the above confidence `score`) FLOAT64 value.
-     * ARRAY(CATEGORY) - CATEGORY value meaning that this value would be in the
-     *                   ARRAY in that column (with the above confidence `score`).
+     * FLOAT64 - the predicted (with above `prediction_interval`) FLOAT64 value.
      * </pre>
      *
      * <code>.google.protobuf.Value value = 2;</code>
@@ -1254,9 +1243,7 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
      * The value depends on the column's DataType:
      * CATEGORY - the predicted (with the above confidence `score`) CATEGORY
      *            value.
-     * FLOAT64 - the predicted (with the above confidence `score`) FLOAT64 value.
-     * ARRAY(CATEGORY) - CATEGORY value meaning that this value would be in the
-     *                   ARRAY in that column (with the above confidence `score`).
+     * FLOAT64 - the predicted (with above `prediction_interval`) FLOAT64 value.
      * </pre>
      *
      * <code>.google.protobuf.Value value = 2;</code>
@@ -1277,9 +1264,7 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
      * The value depends on the column's DataType:
      * CATEGORY - the predicted (with the above confidence `score`) CATEGORY
      *            value.
-     * FLOAT64 - the predicted (with the above confidence `score`) FLOAT64 value.
-     * ARRAY(CATEGORY) - CATEGORY value meaning that this value would be in the
-     *                   ARRAY in that column (with the above confidence `score`).
+     * FLOAT64 - the predicted (with above `prediction_interval`) FLOAT64 value.
      * </pre>
      *
      * <code>.google.protobuf.Value value = 2;</code>
@@ -1323,8 +1308,13 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. Auxiliary information for each of the model's
-     * [input_feature_column_specs'][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
+     * [input_feature_column_specs][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
      * with respect to this particular prediction.
+     * If no other fields than
+     * [column_spec_name][google.cloud.automl.v1beta1.TablesModelColumnInfo.column_spec_name]
+     * and
+     * [column_display_name][google.cloud.automl.v1beta1.TablesModelColumnInfo.column_display_name]
+     * would be populated, then this whole field is not.
      * </pre>
      *
      * <code>
@@ -1344,8 +1334,13 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. Auxiliary information for each of the model's
-     * [input_feature_column_specs'][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
+     * [input_feature_column_specs][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
      * with respect to this particular prediction.
+     * If no other fields than
+     * [column_spec_name][google.cloud.automl.v1beta1.TablesModelColumnInfo.column_spec_name]
+     * and
+     * [column_display_name][google.cloud.automl.v1beta1.TablesModelColumnInfo.column_display_name]
+     * would be populated, then this whole field is not.
      * </pre>
      *
      * <code>
@@ -1364,8 +1359,13 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. Auxiliary information for each of the model's
-     * [input_feature_column_specs'][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
+     * [input_feature_column_specs][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
      * with respect to this particular prediction.
+     * If no other fields than
+     * [column_spec_name][google.cloud.automl.v1beta1.TablesModelColumnInfo.column_spec_name]
+     * and
+     * [column_display_name][google.cloud.automl.v1beta1.TablesModelColumnInfo.column_display_name]
+     * would be populated, then this whole field is not.
      * </pre>
      *
      * <code>
@@ -1385,8 +1385,13 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. Auxiliary information for each of the model's
-     * [input_feature_column_specs'][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
+     * [input_feature_column_specs][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
      * with respect to this particular prediction.
+     * If no other fields than
+     * [column_spec_name][google.cloud.automl.v1beta1.TablesModelColumnInfo.column_spec_name]
+     * and
+     * [column_display_name][google.cloud.automl.v1beta1.TablesModelColumnInfo.column_display_name]
+     * would be populated, then this whole field is not.
      * </pre>
      *
      * <code>
@@ -1412,8 +1417,13 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. Auxiliary information for each of the model's
-     * [input_feature_column_specs'][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
+     * [input_feature_column_specs][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
      * with respect to this particular prediction.
+     * If no other fields than
+     * [column_spec_name][google.cloud.automl.v1beta1.TablesModelColumnInfo.column_spec_name]
+     * and
+     * [column_display_name][google.cloud.automl.v1beta1.TablesModelColumnInfo.column_display_name]
+     * would be populated, then this whole field is not.
      * </pre>
      *
      * <code>
@@ -1436,8 +1446,13 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. Auxiliary information for each of the model's
-     * [input_feature_column_specs'][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
+     * [input_feature_column_specs][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
      * with respect to this particular prediction.
+     * If no other fields than
+     * [column_spec_name][google.cloud.automl.v1beta1.TablesModelColumnInfo.column_spec_name]
+     * and
+     * [column_display_name][google.cloud.automl.v1beta1.TablesModelColumnInfo.column_display_name]
+     * would be populated, then this whole field is not.
      * </pre>
      *
      * <code>
@@ -1463,8 +1478,13 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. Auxiliary information for each of the model's
-     * [input_feature_column_specs'][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
+     * [input_feature_column_specs][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
      * with respect to this particular prediction.
+     * If no other fields than
+     * [column_spec_name][google.cloud.automl.v1beta1.TablesModelColumnInfo.column_spec_name]
+     * and
+     * [column_display_name][google.cloud.automl.v1beta1.TablesModelColumnInfo.column_display_name]
+     * would be populated, then this whole field is not.
      * </pre>
      *
      * <code>
@@ -1490,8 +1510,13 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. Auxiliary information for each of the model's
-     * [input_feature_column_specs'][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
+     * [input_feature_column_specs][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
      * with respect to this particular prediction.
+     * If no other fields than
+     * [column_spec_name][google.cloud.automl.v1beta1.TablesModelColumnInfo.column_spec_name]
+     * and
+     * [column_display_name][google.cloud.automl.v1beta1.TablesModelColumnInfo.column_display_name]
+     * would be populated, then this whole field is not.
      * </pre>
      *
      * <code>
@@ -1514,8 +1539,13 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. Auxiliary information for each of the model's
-     * [input_feature_column_specs'][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
+     * [input_feature_column_specs][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
      * with respect to this particular prediction.
+     * If no other fields than
+     * [column_spec_name][google.cloud.automl.v1beta1.TablesModelColumnInfo.column_spec_name]
+     * and
+     * [column_display_name][google.cloud.automl.v1beta1.TablesModelColumnInfo.column_display_name]
+     * would be populated, then this whole field is not.
      * </pre>
      *
      * <code>
@@ -1538,8 +1568,13 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. Auxiliary information for each of the model's
-     * [input_feature_column_specs'][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
+     * [input_feature_column_specs][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
      * with respect to this particular prediction.
+     * If no other fields than
+     * [column_spec_name][google.cloud.automl.v1beta1.TablesModelColumnInfo.column_spec_name]
+     * and
+     * [column_display_name][google.cloud.automl.v1beta1.TablesModelColumnInfo.column_display_name]
+     * would be populated, then this whole field is not.
      * </pre>
      *
      * <code>
@@ -1563,8 +1598,13 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. Auxiliary information for each of the model's
-     * [input_feature_column_specs'][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
+     * [input_feature_column_specs][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
      * with respect to this particular prediction.
+     * If no other fields than
+     * [column_spec_name][google.cloud.automl.v1beta1.TablesModelColumnInfo.column_spec_name]
+     * and
+     * [column_display_name][google.cloud.automl.v1beta1.TablesModelColumnInfo.column_display_name]
+     * would be populated, then this whole field is not.
      * </pre>
      *
      * <code>
@@ -1586,8 +1626,13 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. Auxiliary information for each of the model's
-     * [input_feature_column_specs'][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
+     * [input_feature_column_specs][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
      * with respect to this particular prediction.
+     * If no other fields than
+     * [column_spec_name][google.cloud.automl.v1beta1.TablesModelColumnInfo.column_spec_name]
+     * and
+     * [column_display_name][google.cloud.automl.v1beta1.TablesModelColumnInfo.column_display_name]
+     * would be populated, then this whole field is not.
      * </pre>
      *
      * <code>
@@ -1609,8 +1654,13 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. Auxiliary information for each of the model's
-     * [input_feature_column_specs'][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
+     * [input_feature_column_specs][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
      * with respect to this particular prediction.
+     * If no other fields than
+     * [column_spec_name][google.cloud.automl.v1beta1.TablesModelColumnInfo.column_spec_name]
+     * and
+     * [column_display_name][google.cloud.automl.v1beta1.TablesModelColumnInfo.column_display_name]
+     * would be populated, then this whole field is not.
      * </pre>
      *
      * <code>
@@ -1626,8 +1676,13 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. Auxiliary information for each of the model's
-     * [input_feature_column_specs'][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
+     * [input_feature_column_specs][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
      * with respect to this particular prediction.
+     * If no other fields than
+     * [column_spec_name][google.cloud.automl.v1beta1.TablesModelColumnInfo.column_spec_name]
+     * and
+     * [column_display_name][google.cloud.automl.v1beta1.TablesModelColumnInfo.column_display_name]
+     * would be populated, then this whole field is not.
      * </pre>
      *
      * <code>
@@ -1647,8 +1702,13 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. Auxiliary information for each of the model's
-     * [input_feature_column_specs'][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
+     * [input_feature_column_specs][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
      * with respect to this particular prediction.
+     * If no other fields than
+     * [column_spec_name][google.cloud.automl.v1beta1.TablesModelColumnInfo.column_spec_name]
+     * and
+     * [column_display_name][google.cloud.automl.v1beta1.TablesModelColumnInfo.column_display_name]
+     * would be populated, then this whole field is not.
      * </pre>
      *
      * <code>
@@ -1668,8 +1728,13 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. Auxiliary information for each of the model's
-     * [input_feature_column_specs'][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
+     * [input_feature_column_specs][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
      * with respect to this particular prediction.
+     * If no other fields than
+     * [column_spec_name][google.cloud.automl.v1beta1.TablesModelColumnInfo.column_spec_name]
+     * and
+     * [column_display_name][google.cloud.automl.v1beta1.TablesModelColumnInfo.column_display_name]
+     * would be populated, then this whole field is not.
      * </pre>
      *
      * <code>
@@ -1686,8 +1751,13 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. Auxiliary information for each of the model's
-     * [input_feature_column_specs'][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
+     * [input_feature_column_specs][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
      * with respect to this particular prediction.
+     * If no other fields than
+     * [column_spec_name][google.cloud.automl.v1beta1.TablesModelColumnInfo.column_spec_name]
+     * and
+     * [column_display_name][google.cloud.automl.v1beta1.TablesModelColumnInfo.column_display_name]
+     * would be populated, then this whole field is not.
      * </pre>
      *
      * <code>
@@ -1705,8 +1775,13 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. Auxiliary information for each of the model's
-     * [input_feature_column_specs'][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
+     * [input_feature_column_specs][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
      * with respect to this particular prediction.
+     * If no other fields than
+     * [column_spec_name][google.cloud.automl.v1beta1.TablesModelColumnInfo.column_spec_name]
+     * and
+     * [column_display_name][google.cloud.automl.v1beta1.TablesModelColumnInfo.column_display_name]
+     * would be populated, then this whole field is not.
      * </pre>
      *
      * <code>

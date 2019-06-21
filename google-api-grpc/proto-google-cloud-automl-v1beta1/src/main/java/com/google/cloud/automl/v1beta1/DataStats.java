@@ -154,6 +154,11 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
               statsCase_ = 8;
               break;
             }
+          case 72:
+            {
+              validValueCount_ = input.readInt64();
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -534,6 +539,21 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
     return nullValueCount_;
   }
 
+  public static final int VALID_VALUE_COUNT_FIELD_NUMBER = 9;
+  private long validValueCount_;
+  /**
+   *
+   *
+   * <pre>
+   * The number of values that are valid.
+   * </pre>
+   *
+   * <code>int64 valid_value_count = 9;</code>
+   */
+  public long getValidValueCount() {
+    return validValueCount_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -571,6 +591,9 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
     }
     if (statsCase_ == 8) {
       output.writeMessage(8, (com.google.cloud.automl.v1beta1.CategoryStats) stats_);
+    }
+    if (validValueCount_ != 0L) {
+      output.writeInt64(9, validValueCount_);
     }
     unknownFields.writeTo(output);
   }
@@ -617,6 +640,9 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               8, (com.google.cloud.automl.v1beta1.CategoryStats) stats_);
     }
+    if (validValueCount_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(9, validValueCount_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -635,6 +661,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
 
     if (getDistinctValueCount() != other.getDistinctValueCount()) return false;
     if (getNullValueCount() != other.getNullValueCount()) return false;
+    if (getValidValueCount() != other.getValidValueCount()) return false;
     if (!getStatsCase().equals(other.getStatsCase())) return false;
     switch (statsCase_) {
       case 3:
@@ -673,6 +700,8 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getDistinctValueCount());
     hash = (37 * hash) + NULL_VALUE_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getNullValueCount());
+    hash = (37 * hash) + VALID_VALUE_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getValidValueCount());
     switch (statsCase_) {
       case 3:
         hash = (37 * hash) + FLOAT64_STATS_FIELD_NUMBER;
@@ -850,6 +879,8 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
 
       nullValueCount_ = 0L;
 
+      validValueCount_ = 0L;
+
       statsCase_ = 0;
       stats_ = null;
       return this;
@@ -923,6 +954,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
       }
       result.distinctValueCount_ = distinctValueCount_;
       result.nullValueCount_ = nullValueCount_;
+      result.validValueCount_ = validValueCount_;
       result.statsCase_ = statsCase_;
       onBuilt();
       return result;
@@ -978,6 +1010,9 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.getNullValueCount() != 0L) {
         setNullValueCount(other.getNullValueCount());
+      }
+      if (other.getValidValueCount() != 0L) {
+        setValidValueCount(other.getValidValueCount());
       }
       switch (other.getStatsCase()) {
         case FLOAT64_STATS:
@@ -2354,6 +2389,50 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
     public Builder clearNullValueCount() {
 
       nullValueCount_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long validValueCount_;
+    /**
+     *
+     *
+     * <pre>
+     * The number of values that are valid.
+     * </pre>
+     *
+     * <code>int64 valid_value_count = 9;</code>
+     */
+    public long getValidValueCount() {
+      return validValueCount_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The number of values that are valid.
+     * </pre>
+     *
+     * <code>int64 valid_value_count = 9;</code>
+     */
+    public Builder setValidValueCount(long value) {
+
+      validValueCount_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The number of values that are valid.
+     * </pre>
+     *
+     * <code>int64 valid_value_count = 9;</code>
+     */
+    public Builder clearValidValueCount() {
+
+      validValueCount_ = 0L;
       onChanged();
       return this;
     }

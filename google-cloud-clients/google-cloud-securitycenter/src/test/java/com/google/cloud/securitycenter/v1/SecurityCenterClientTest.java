@@ -36,7 +36,6 @@ import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
 import com.google.protobuf.ByteString;
-import com.google.protobuf.Empty;
 import com.google.protobuf.Timestamp;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
@@ -430,7 +429,7 @@ public class SecurityCenterClientTest {
   @Test
   @SuppressWarnings("all")
   public void runAssetDiscoveryTest() throws Exception {
-    Empty expectedResponse = Empty.newBuilder().build();
+    RunAssetDiscoveryResponse expectedResponse = RunAssetDiscoveryResponse.newBuilder().build();
     Operation resultOperation =
         Operation.newBuilder()
             .setName("runAssetDiscoveryTest")
@@ -441,7 +440,7 @@ public class SecurityCenterClientTest {
 
     OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
 
-    Empty actualResponse = client.runAssetDiscoveryAsync(parent).get();
+    RunAssetDiscoveryResponse actualResponse = client.runAssetDiscoveryAsync(parent).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();

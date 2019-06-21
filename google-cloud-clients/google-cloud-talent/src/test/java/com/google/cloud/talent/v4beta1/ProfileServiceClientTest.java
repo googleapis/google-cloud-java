@@ -153,7 +153,6 @@ public class ProfileServiceClientTest {
     String source = "source-896505829";
     String uri = "uri116076";
     String groupId = "groupId506361563";
-    String resumeHrxml = "resumeHrxml1834730555";
     boolean processed = true;
     String keywordSnippet = "keywordSnippet1325317319";
     Profile expectedResponse =
@@ -163,7 +162,6 @@ public class ProfileServiceClientTest {
             .setSource(source)
             .setUri(uri)
             .setGroupId(groupId)
-            .setResumeHrxml(resumeHrxml)
             .setProcessed(processed)
             .setKeywordSnippet(keywordSnippet)
             .build();
@@ -212,7 +210,6 @@ public class ProfileServiceClientTest {
     String source = "source-896505829";
     String uri = "uri116076";
     String groupId = "groupId506361563";
-    String resumeHrxml = "resumeHrxml1834730555";
     boolean processed = true;
     String keywordSnippet = "keywordSnippet1325317319";
     Profile expectedResponse =
@@ -222,7 +219,6 @@ public class ProfileServiceClientTest {
             .setSource(source)
             .setUri(uri)
             .setGroupId(groupId)
-            .setResumeHrxml(resumeHrxml)
             .setProcessed(processed)
             .setKeywordSnippet(keywordSnippet)
             .build();
@@ -268,7 +264,6 @@ public class ProfileServiceClientTest {
     String source = "source-896505829";
     String uri = "uri116076";
     String groupId = "groupId506361563";
-    String resumeHrxml = "resumeHrxml1834730555";
     boolean processed = true;
     String keywordSnippet = "keywordSnippet1325317319";
     Profile expectedResponse =
@@ -278,7 +273,6 @@ public class ProfileServiceClientTest {
             .setSource(source)
             .setUri(uri)
             .setGroupId(groupId)
-            .setResumeHrxml(resumeHrxml)
             .setProcessed(processed)
             .setKeywordSnippet(keywordSnippet)
             .build();

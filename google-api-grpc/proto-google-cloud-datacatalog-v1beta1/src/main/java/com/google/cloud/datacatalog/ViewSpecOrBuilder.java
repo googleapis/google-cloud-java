@@ -12,7 +12,7 @@ public interface ViewSpecOrBuilder
    *
    *
    * <pre>
-   * The query that defines the table view.
+   * Output only. The query that defines the table view.
    * </pre>
    *
    * <code>string view_query = 1;</code>
@@ -22,7 +22,7 @@ public interface ViewSpecOrBuilder
    *
    *
    * <pre>
-   * The query that defines the table view.
+   * Output only. The query that defines the table view.
    * </pre>
    *
    * <code>string view_query = 1;</code>

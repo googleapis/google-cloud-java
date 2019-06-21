@@ -55,66 +55,69 @@ public final class ContextProto {
     java.lang.String[] descriptorData = {
       "\n-google/cloud/dialogflow/v2beta1/contex"
           + "t.proto\022\037google.cloud.dialogflow.v2beta1"
-          + "\032\034google/api/annotations.proto\032\031google/a"
-          + "pi/resource.proto\032\033google/protobuf/empty"
-          + ".proto\032 google/protobuf/field_mask.proto"
-          + "\032\034google/protobuf/struct.proto\"\\\n\007Contex"
-          + "t\022\014\n\004name\030\001 \001(\t\022\026\n\016lifespan_count\030\002 \001(\005\022"
-          + "+\n\nparameters\030\003 \001(\0132\027.google.protobuf.St"
-          + "ruct\"L\n\023ListContextsRequest\022\016\n\006parent\030\001 "
-          + "\001(\t\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001"
-          + "(\t\"k\n\024ListContextsResponse\022:\n\010contexts\030\001"
-          + " \003(\0132(.google.cloud.dialogflow.v2beta1.C"
-          + "ontext\022\027\n\017next_page_token\030\002 \001(\t\"!\n\021GetCo"
-          + "ntextRequest\022\014\n\004name\030\001 \001(\t\"a\n\024CreateCont"
-          + "extRequest\022\016\n\006parent\030\001 \001(\t\0229\n\007context\030\002 "
-          + "\001(\0132(.google.cloud.dialogflow.v2beta1.Co"
-          + "ntext\"\202\001\n\024UpdateContextRequest\0229\n\007contex"
-          + "t\030\001 \001(\0132(.google.cloud.dialogflow.v2beta"
-          + "1.Context\022/\n\013update_mask\030\002 \001(\0132\032.google."
-          + "protobuf.FieldMask\"$\n\024DeleteContextReque"
-          + "st\022\014\n\004name\030\001 \001(\t\"*\n\030DeleteAllContextsReq"
-          + "uest\022\016\n\006parent\030\001 \001(\t2\313\014\n\010Contexts\022\216\002\n\014Li"
-          + "stContexts\0224.google.cloud.dialogflow.v2b"
-          + "eta1.ListContextsRequest\0325.google.cloud."
-          + "dialogflow.v2beta1.ListContextsResponse\""
-          + "\220\001\202\323\344\223\002\211\001\0226/v2beta1/{parent=projects/*/a"
-          + "gent/sessions/*}/contextsZO\022M/v2beta1/{p"
-          + "arent=projects/*/agent/environments/*/us"
-          + "ers/*/sessions/*}/contexts\022\375\001\n\nGetContex"
-          + "t\0222.google.cloud.dialogflow.v2beta1.GetC"
-          + "ontextRequest\032(.google.cloud.dialogflow."
-          + "v2beta1.Context\"\220\001\202\323\344\223\002\211\001\0226/v2beta1/{nam"
-          + "e=projects/*/agent/sessions/*/contexts/*"
-          + "}ZO\022M/v2beta1/{name=projects/*/agent/env"
-          + "ironments/*/users/*/sessions/*/contexts/"
-          + "*}\022\225\002\n\rCreateContext\0225.google.cloud.dial"
-          + "ogflow.v2beta1.CreateContextRequest\032(.go"
-          + "ogle.cloud.dialogflow.v2beta1.Context\"\242\001"
-          + "\202\323\344\223\002\233\001\"6/v2beta1/{parent=projects/*/age"
-          + "nt/sessions/*}/contexts:\007contextZX\"M/v2b"
-          + "eta1/{parent=projects/*/agent/environmen"
-          + "ts/*/users/*/sessions/*}/contexts:\007conte"
-          + "xt\022\245\002\n\rUpdateContext\0225.google.cloud.dial"
-          + "ogflow.v2beta1.UpdateContextRequest\032(.go"
-          + "ogle.cloud.dialogflow.v2beta1.Context\"\262\001"
-          + "\202\323\344\223\002\253\0012>/v2beta1/{context.name=projects"
-          + "/*/agent/sessions/*/contexts/*}:\007context"
-          + "Z`2U/v2beta1/{context.name=projects/*/ag"
-          + "ent/environments/*/users/*/sessions/*/co"
-          + "ntexts/*}:\007context\022\361\001\n\rDeleteContext\0225.g"
-          + "oogle.cloud.dialogflow.v2beta1.DeleteCon"
-          + "textRequest\032\026.google.protobuf.Empty\"\220\001\202\323"
-          + "\344\223\002\211\001*6/v2beta1/{name=projects/*/agent/s"
-          + "essions/*/contexts/*}ZO*M/v2beta1/{name="
-          + "projects/*/agent/environments/*/users/*/"
-          + "sessions/*/contexts/*}\022\371\001\n\021DeleteAllCont"
-          + "exts\0229.google.cloud.dialogflow.v2beta1.D"
-          + "eleteAllContextsRequest\032\026.google.protobu"
-          + "f.Empty\"\220\001\202\323\344\223\002\211\001*6/v2beta1/{parent=proj"
-          + "ects/*/agent/sessions/*}/contextsZO*M/v2"
-          + "beta1/{parent=projects/*/agent/environme"
-          + "nts/*/users/*/sessions/*}/contextsB\252\001\n#c"
+          + "\032\034google/api/annotations.proto\032\033google/p"
+          + "rotobuf/empty.proto\032 google/protobuf/fie"
+          + "ld_mask.proto\032\034google/protobuf/struct.pr"
+          + "oto\032\027google/api/client.proto\"\\\n\007Context\022"
+          + "\014\n\004name\030\001 \001(\t\022\026\n\016lifespan_count\030\002 \001(\005\022+\n"
+          + "\nparameters\030\003 \001(\0132\027.google.protobuf.Stru"
+          + "ct\"L\n\023ListContextsRequest\022\016\n\006parent\030\001 \001("
+          + "\t\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t"
+          + "\"k\n\024ListContextsResponse\022:\n\010contexts\030\001 \003"
+          + "(\0132(.google.cloud.dialogflow.v2beta1.Con"
+          + "text\022\027\n\017next_page_token\030\002 \001(\t\"!\n\021GetCont"
+          + "extRequest\022\014\n\004name\030\001 \001(\t\"a\n\024CreateContex"
+          + "tRequest\022\016\n\006parent\030\001 \001(\t\0229\n\007context\030\002 \001("
+          + "\0132(.google.cloud.dialogflow.v2beta1.Cont"
+          + "ext\"\202\001\n\024UpdateContextRequest\0229\n\007context\030"
+          + "\001 \001(\0132(.google.cloud.dialogflow.v2beta1."
+          + "Context\022/\n\013update_mask\030\002 \001(\0132\032.google.pr"
+          + "otobuf.FieldMask\"$\n\024DeleteContextRequest"
+          + "\022\014\n\004name\030\001 \001(\t\"*\n\030DeleteAllContextsReque"
+          + "st\022\016\n\006parent\030\001 \001(\t2\305\r\n\010Contexts\022\216\002\n\014List"
+          + "Contexts\0224.google.cloud.dialogflow.v2bet"
+          + "a1.ListContextsRequest\0325.google.cloud.di"
+          + "alogflow.v2beta1.ListContextsResponse\"\220\001"
+          + "\202\323\344\223\002\211\001\0226/v2beta1/{parent=projects/*/age"
+          + "nt/sessions/*}/contextsZO\022M/v2beta1/{par"
+          + "ent=projects/*/agent/environments/*/user"
+          + "s/*/sessions/*}/contexts\022\375\001\n\nGetContext\022"
+          + "2.google.cloud.dialogflow.v2beta1.GetCon"
+          + "textRequest\032(.google.cloud.dialogflow.v2"
+          + "beta1.Context\"\220\001\202\323\344\223\002\211\001\0226/v2beta1/{name="
+          + "projects/*/agent/sessions/*/contexts/*}Z"
+          + "O\022M/v2beta1/{name=projects/*/agent/envir"
+          + "onments/*/users/*/sessions/*/contexts/*}"
+          + "\022\225\002\n\rCreateContext\0225.google.cloud.dialog"
+          + "flow.v2beta1.CreateContextRequest\032(.goog"
+          + "le.cloud.dialogflow.v2beta1.Context\"\242\001\202\323"
+          + "\344\223\002\233\001\"6/v2beta1/{parent=projects/*/agent"
+          + "/sessions/*}/contexts:\007contextZX\"M/v2bet"
+          + "a1/{parent=projects/*/agent/environments"
+          + "/*/users/*/sessions/*}/contexts:\007context"
+          + "\022\245\002\n\rUpdateContext\0225.google.cloud.dialog"
+          + "flow.v2beta1.UpdateContextRequest\032(.goog"
+          + "le.cloud.dialogflow.v2beta1.Context\"\262\001\202\323"
+          + "\344\223\002\253\0012>/v2beta1/{context.name=projects/*"
+          + "/agent/sessions/*/contexts/*}:\007contextZ`"
+          + "2U/v2beta1/{context.name=projects/*/agen"
+          + "t/environments/*/users/*/sessions/*/cont"
+          + "exts/*}:\007context\022\361\001\n\rDeleteContext\0225.goo"
+          + "gle.cloud.dialogflow.v2beta1.DeleteConte"
+          + "xtRequest\032\026.google.protobuf.Empty\"\220\001\202\323\344\223"
+          + "\002\211\001*6/v2beta1/{name=projects/*/agent/ses"
+          + "sions/*/contexts/*}ZO*M/v2beta1/{name=pr"
+          + "ojects/*/agent/environments/*/users/*/se"
+          + "ssions/*/contexts/*}\022\371\001\n\021DeleteAllContex"
+          + "ts\0229.google.cloud.dialogflow.v2beta1.Del"
+          + "eteAllContextsRequest\032\026.google.protobuf."
+          + "Empty\"\220\001\202\323\344\223\002\211\001*6/v2beta1/{parent=projec"
+          + "ts/*/agent/sessions/*}/contextsZO*M/v2be"
+          + "ta1/{parent=projects/*/agent/environment"
+          + "s/*/users/*/sessions/*}/contexts\032x\312A\031dia"
+          + "logflow.googleapis.com\322AYhttps://www.goo"
+          + "gleapis.com/auth/cloud-platform,https://"
+          + "www.googleapis.com/auth/dialogflowB\252\001\n#c"
           + "om.google.cloud.dialogflow.v2beta1B\014Cont"
           + "extProtoP\001ZIgoogle.golang.org/genproto/g"
           + "oogleapis/cloud/dialogflow/v2beta1;dialo"
@@ -133,10 +136,10 @@ public final class ContextProto {
         descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.api.AnnotationsProto.getDescriptor(),
-          com.google.api.ResourceProto.getDescriptor(),
           com.google.protobuf.EmptyProto.getDescriptor(),
           com.google.protobuf.FieldMaskProto.getDescriptor(),
           com.google.protobuf.StructProto.getDescriptor(),
+          com.google.api.ClientProto.getDescriptor(),
         },
         assigner);
     internal_static_google_cloud_dialogflow_v2beta1_Context_descriptor =
@@ -205,14 +208,16 @@ public final class ContextProto {
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.ClientProto.defaultHost);
     registry.add(com.google.api.AnnotationsProto.http);
+    registry.add(com.google.api.ClientProto.oauthScopes);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.AnnotationsProto.getDescriptor();
-    com.google.api.ResourceProto.getDescriptor();
     com.google.protobuf.EmptyProto.getDescriptor();
     com.google.protobuf.FieldMaskProto.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();
+    com.google.api.ClientProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

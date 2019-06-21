@@ -21,16 +21,17 @@
  *
  * <p>================= DataCatalogClient =================
  *
- * <p>Service Description: Cloud Data Catalog is a service that allows clients to discover, manage,
- * and understand their Google Cloud data resources.
+ * <p>Service Description: Data Catalog API service allows clients to discover, understand, and
+ * manage their data.
  *
  * <p>Sample for DataCatalogClient:
  *
  * <pre>
  * <code>
  * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
- *   LookupEntryRequest request = LookupEntryRequest.newBuilder().build();
- *   Entry response = dataCatalogClient.lookupEntry(request);
+ *   Entry entry = Entry.newBuilder().build();
+ *   FieldMask updateMask = FieldMask.newBuilder().build();
+ *   Entry response = dataCatalogClient.updateEntry(entry, updateMask);
  * }
  * </code>
  * </pre>

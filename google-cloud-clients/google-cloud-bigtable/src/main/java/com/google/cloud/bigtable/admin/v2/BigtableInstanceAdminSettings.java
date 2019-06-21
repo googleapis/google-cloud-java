@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 /**
  * Settings class to configure an instance of {@link BigtableInstanceAdminClient}.
  *
- * <p>It must be configured with a project id and can be used to change default RPC settings.
+ * <p>It must be configured with a project ID and can be used to change default RPC settings.
  *
  * <p>Example usage:
  *
@@ -48,20 +48,20 @@ public final class BigtableInstanceAdminSettings {
   private final BigtableInstanceAdminStubSettings stubSettings;
 
   private BigtableInstanceAdminSettings(Builder builder) throws IOException {
-    Preconditions.checkNotNull(builder.projectId, "Project ud must be set");
+    Preconditions.checkNotNull(builder.projectId, "Project ID must be set");
     Verify.verifyNotNull(builder.stubSettings, "stubSettings should never be null");
 
     this.projectId = builder.projectId;
     this.stubSettings = builder.stubSettings.build();
   }
 
-  /** Gets the id of the project whose instances the client will manage. */
+  /** Gets the ID of the project whose instances the client will manage. */
   @Nonnull
   public String getProjectId() {
     return projectId;
   }
 
-  /** Gets the CredentialsProvider to use for getting the credentials to make calls with. */
+  /** Gets the credentials provider to use for getting the credentials to make calls with. */
   public CredentialsProvider getCredentialsProvider() {
     return stubSettings.getCredentialsProvider();
   }
@@ -96,14 +96,14 @@ public final class BigtableInstanceAdminSettings {
       this.stubSettings = settings.stubSettings.toBuilder();
     }
 
-    /** Sets the id of the project whose instances the client will manage. */
+    /** Sets the ID of the project whose instances the client will manage. */
     public Builder setProjectId(@Nonnull String projectId) {
       Preconditions.checkNotNull(projectId);
       this.projectId = projectId;
       return this;
     }
 
-    /** Gets the id of the project whose instances the client will manage. */
+    /** Gets the ID of the project whose instances the client will manage. */
     @Nullable
     public String getProjectId() {
       return projectId;

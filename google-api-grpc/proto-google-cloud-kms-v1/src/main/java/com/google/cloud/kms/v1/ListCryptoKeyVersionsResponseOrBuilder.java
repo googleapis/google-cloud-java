@@ -65,8 +65,8 @@ public interface ListCryptoKeyVersionsResponseOrBuilder
    *
    * <pre>
    * A token to retrieve next page of results. Pass this value in
-   * [ListCryptoKeyVersionsRequest.page_token][google.cloud.kms.v1.ListCryptoKeyVersionsRequest.page_token]
-   * to retrieve the next page of results.
+   * [ListCryptoKeyVersionsRequest.page_token][google.cloud.kms.v1.ListCryptoKeyVersionsRequest.page_token] to retrieve the next page of
+   * results.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -77,8 +77,8 @@ public interface ListCryptoKeyVersionsResponseOrBuilder
    *
    * <pre>
    * A token to retrieve next page of results. Pass this value in
-   * [ListCryptoKeyVersionsRequest.page_token][google.cloud.kms.v1.ListCryptoKeyVersionsRequest.page_token]
-   * to retrieve the next page of results.
+   * [ListCryptoKeyVersionsRequest.page_token][google.cloud.kms.v1.ListCryptoKeyVersionsRequest.page_token] to retrieve the next page of
+   * results.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -89,8 +89,7 @@ public interface ListCryptoKeyVersionsResponseOrBuilder
    *
    *
    * <pre>
-   * The total number of
-   * [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion] that matched the
+   * The total number of [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion] that matched the
    * query.
    * </pre>
    *

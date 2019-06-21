@@ -10,7 +10,7 @@ package com.google.cloud.dialogflow.v2beta1;
  * Represents the query input. It can contain either:
  * 1.  An audio config which
  *     instructs the speech recognizer how to process the speech audio.
- * 2.  A conversational query in the form of text,.
+ * 2.  A conversational query in the form of text.
  * 3.  An event that specifies which intent to trigger.
  * </pre>
  *
@@ -522,7 +522,7 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
    * Represents the query input. It can contain either:
    * 1.  An audio config which
    *     instructs the speech recognizer how to process the speech audio.
-   * 2.  A conversational query in the form of text,.
+   * 2.  A conversational query in the form of text.
    * 3.  An event that specifies which intent to trigger.
    * </pre>
    *

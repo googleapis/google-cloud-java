@@ -36,7 +36,7 @@ public interface TextInputOrBuilder
    *
    * <pre>
    * Required. The language of this conversational query. See [Language
-   * Support](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+   * Support](https://cloud.google.com/dialogflow/docs/reference/language)
    * for a list of the currently supported language codes. Note that queries in
    * the same session do not necessarily need to specify the same language.
    * </pre>
@@ -49,7 +49,7 @@ public interface TextInputOrBuilder
    *
    * <pre>
    * Required. The language of this conversational query. See [Language
-   * Support](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+   * Support](https://cloud.google.com/dialogflow/docs/reference/language)
    * for a list of the currently supported language codes. Note that queries in
    * the same session do not necessarily need to specify the same language.
    * </pre>

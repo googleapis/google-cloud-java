@@ -8,8 +8,8 @@ package com.google.cloud.dialogflow.v2beta1;
  *
  * <pre>
  * Represents knowledge base resource.
- * Note: resource `projects.agent.knowledgeBases` is deprecated, please use
- * `projects.knowledgeBases` instead.
+ * Note: The `projects.agent.knowledgeBases` resource is deprecated;
+ * only use `projects.knowledgeBases`.
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2beta1.KnowledgeBase}
@@ -366,8 +366,8 @@ public final class KnowledgeBase extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Represents knowledge base resource.
-   * Note: resource `projects.agent.knowledgeBases` is deprecated, please use
-   * `projects.knowledgeBases` instead.
+   * Note: The `projects.agent.knowledgeBases` resource is deprecated;
+   * only use `projects.knowledgeBases`.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2beta1.KnowledgeBase}

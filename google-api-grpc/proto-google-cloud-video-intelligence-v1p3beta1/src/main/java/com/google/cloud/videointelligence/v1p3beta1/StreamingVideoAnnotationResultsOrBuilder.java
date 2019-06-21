@@ -130,7 +130,7 @@ public interface StreamingVideoAnnotationResultsOrBuilder
    *
    *
    * <pre>
-   * Explicit content detection results.
+   * Explicit content annotation results.
    * </pre>
    *
    * <code>
@@ -142,7 +142,7 @@ public interface StreamingVideoAnnotationResultsOrBuilder
    *
    *
    * <pre>
-   * Explicit content detection results.
+   * Explicit content annotation results.
    * </pre>
    *
    * <code>
@@ -154,7 +154,7 @@ public interface StreamingVideoAnnotationResultsOrBuilder
    *
    *
    * <pre>
-   * Explicit content detection results.
+   * Explicit content annotation results.
    * </pre>
    *
    * <code>

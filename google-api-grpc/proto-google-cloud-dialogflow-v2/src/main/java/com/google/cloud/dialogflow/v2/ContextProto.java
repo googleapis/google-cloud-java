@@ -55,51 +55,54 @@ public final class ContextProto {
     java.lang.String[] descriptorData = {
       "\n(google/cloud/dialogflow/v2/context.pro"
           + "to\022\032google.cloud.dialogflow.v2\032\034google/a"
-          + "pi/annotations.proto\032\031google/api/resourc"
-          + "e.proto\032\033google/protobuf/empty.proto\032 go"
-          + "ogle/protobuf/field_mask.proto\032\034google/p"
-          + "rotobuf/struct.proto\"\\\n\007Context\022\014\n\004name\030"
-          + "\001 \001(\t\022\026\n\016lifespan_count\030\002 \001(\005\022+\n\nparamet"
-          + "ers\030\003 \001(\0132\027.google.protobuf.Struct\"L\n\023Li"
-          + "stContextsRequest\022\016\n\006parent\030\001 \001(\t\022\021\n\tpag"
-          + "e_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"f\n\024List"
-          + "ContextsResponse\0225\n\010contexts\030\001 \003(\0132#.goo"
-          + "gle.cloud.dialogflow.v2.Context\022\027\n\017next_"
-          + "page_token\030\002 \001(\t\"!\n\021GetContextRequest\022\014\n"
-          + "\004name\030\001 \001(\t\"\\\n\024CreateContextRequest\022\016\n\006p"
-          + "arent\030\001 \001(\t\0224\n\007context\030\002 \001(\0132#.google.cl"
-          + "oud.dialogflow.v2.Context\"}\n\024UpdateConte"
-          + "xtRequest\0224\n\007context\030\001 \001(\0132#.google.clou"
-          + "d.dialogflow.v2.Context\022/\n\013update_mask\030\002"
-          + " \001(\0132\032.google.protobuf.FieldMask\"$\n\024Dele"
-          + "teContextRequest\022\014\n\004name\030\001 \001(\t\"*\n\030Delete"
-          + "AllContextsRequest\022\016\n\006parent\030\001 \001(\t2\357\007\n\010C"
-          + "ontexts\022\254\001\n\014ListContexts\022/.google.cloud."
-          + "dialogflow.v2.ListContextsRequest\0320.goog"
-          + "le.cloud.dialogflow.v2.ListContextsRespo"
-          + "nse\"9\202\323\344\223\0023\0221/v2/{parent=projects/*/agen"
-          + "t/sessions/*}/contexts\022\233\001\n\nGetContext\022-."
-          + "google.cloud.dialogflow.v2.GetContextReq"
-          + "uest\032#.google.cloud.dialogflow.v2.Contex"
-          + "t\"9\202\323\344\223\0023\0221/v2/{name=projects/*/agent/se"
-          + "ssions/*/contexts/*}\022\252\001\n\rCreateContext\0220"
-          + ".google.cloud.dialogflow.v2.CreateContex"
-          + "tRequest\032#.google.cloud.dialogflow.v2.Co"
-          + "ntext\"B\202\323\344\223\002<\"1/v2/{parent=projects/*/ag"
-          + "ent/sessions/*}/contexts:\007context\022\262\001\n\rUp"
-          + "dateContext\0220.google.cloud.dialogflow.v2"
-          + ".UpdateContextRequest\032#.google.cloud.dia"
-          + "logflow.v2.Context\"J\202\323\344\223\002D29/v2/{context"
-          + ".name=projects/*/agent/sessions/*/contex"
-          + "ts/*}:\007context\022\224\001\n\rDeleteContext\0220.googl"
-          + "e.cloud.dialogflow.v2.DeleteContextReque"
-          + "st\032\026.google.protobuf.Empty\"9\202\323\344\223\0023*1/v2/"
-          + "{name=projects/*/agent/sessions/*/contex"
-          + "ts/*}\022\234\001\n\021DeleteAllContexts\0224.google.clo"
-          + "ud.dialogflow.v2.DeleteAllContextsReques"
-          + "t\032\026.google.protobuf.Empty\"9\202\323\344\223\0023*1/v2/{"
-          + "parent=projects/*/agent/sessions/*}/cont"
-          + "extsB\233\001\n\036com.google.cloud.dialogflow.v2B"
+          + "pi/annotations.proto\032\033google/protobuf/em"
+          + "pty.proto\032 google/protobuf/field_mask.pr"
+          + "oto\032\034google/protobuf/struct.proto\032\027googl"
+          + "e/api/client.proto\"\\\n\007Context\022\014\n\004name\030\001 "
+          + "\001(\t\022\026\n\016lifespan_count\030\002 \001(\005\022+\n\nparameter"
+          + "s\030\003 \001(\0132\027.google.protobuf.Struct\"L\n\023List"
+          + "ContextsRequest\022\016\n\006parent\030\001 \001(\t\022\021\n\tpage_"
+          + "size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"f\n\024ListCo"
+          + "ntextsResponse\0225\n\010contexts\030\001 \003(\0132#.googl"
+          + "e.cloud.dialogflow.v2.Context\022\027\n\017next_pa"
+          + "ge_token\030\002 \001(\t\"!\n\021GetContextRequest\022\014\n\004n"
+          + "ame\030\001 \001(\t\"\\\n\024CreateContextRequest\022\016\n\006par"
+          + "ent\030\001 \001(\t\0224\n\007context\030\002 \001(\0132#.google.clou"
+          + "d.dialogflow.v2.Context\"}\n\024UpdateContext"
+          + "Request\0224\n\007context\030\001 \001(\0132#.google.cloud."
+          + "dialogflow.v2.Context\022/\n\013update_mask\030\002 \001"
+          + "(\0132\032.google.protobuf.FieldMask\"$\n\024Delete"
+          + "ContextRequest\022\014\n\004name\030\001 \001(\t\"*\n\030DeleteAl"
+          + "lContextsRequest\022\016\n\006parent\030\001 \001(\t2\351\010\n\010Con"
+          + "texts\022\254\001\n\014ListContexts\022/.google.cloud.di"
+          + "alogflow.v2.ListContextsRequest\0320.google"
+          + ".cloud.dialogflow.v2.ListContextsRespons"
+          + "e\"9\202\323\344\223\0023\0221/v2/{parent=projects/*/agent/"
+          + "sessions/*}/contexts\022\233\001\n\nGetContext\022-.go"
+          + "ogle.cloud.dialogflow.v2.GetContextReque"
+          + "st\032#.google.cloud.dialogflow.v2.Context\""
+          + "9\202\323\344\223\0023\0221/v2/{name=projects/*/agent/sess"
+          + "ions/*/contexts/*}\022\252\001\n\rCreateContext\0220.g"
+          + "oogle.cloud.dialogflow.v2.CreateContextR"
+          + "equest\032#.google.cloud.dialogflow.v2.Cont"
+          + "ext\"B\202\323\344\223\002<\"1/v2/{parent=projects/*/agen"
+          + "t/sessions/*}/contexts:\007context\022\262\001\n\rUpda"
+          + "teContext\0220.google.cloud.dialogflow.v2.U"
+          + "pdateContextRequest\032#.google.cloud.dialo"
+          + "gflow.v2.Context\"J\202\323\344\223\002D29/v2/{context.n"
+          + "ame=projects/*/agent/sessions/*/contexts"
+          + "/*}:\007context\022\224\001\n\rDeleteContext\0220.google."
+          + "cloud.dialogflow.v2.DeleteContextRequest"
+          + "\032\026.google.protobuf.Empty\"9\202\323\344\223\0023*1/v2/{n"
+          + "ame=projects/*/agent/sessions/*/contexts"
+          + "/*}\022\234\001\n\021DeleteAllContexts\0224.google.cloud"
+          + ".dialogflow.v2.DeleteAllContextsRequest\032"
+          + "\026.google.protobuf.Empty\"9\202\323\344\223\0023*1/v2/{pa"
+          + "rent=projects/*/agent/sessions/*}/contex"
+          + "ts\032x\312A\031dialogflow.googleapis.com\322AYhttps"
+          + "://www.googleapis.com/auth/cloud-platfor"
+          + "m,https://www.googleapis.com/auth/dialog"
+          + "flowB\233\001\n\036com.google.cloud.dialogflow.v2B"
           + "\014ContextProtoP\001ZDgoogle.golang.org/genpr"
           + "oto/googleapis/cloud/dialogflow/v2;dialo"
           + "gflow\370\001\001\242\002\002DF\252\002\032Google.Cloud.Dialogflow."
@@ -117,10 +120,10 @@ public final class ContextProto {
         descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.api.AnnotationsProto.getDescriptor(),
-          com.google.api.ResourceProto.getDescriptor(),
           com.google.protobuf.EmptyProto.getDescriptor(),
           com.google.protobuf.FieldMaskProto.getDescriptor(),
           com.google.protobuf.StructProto.getDescriptor(),
+          com.google.api.ClientProto.getDescriptor(),
         },
         assigner);
     internal_static_google_cloud_dialogflow_v2_Context_descriptor =
@@ -189,14 +192,16 @@ public final class ContextProto {
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.ClientProto.defaultHost);
     registry.add(com.google.api.AnnotationsProto.http);
+    registry.add(com.google.api.ClientProto.oauthScopes);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.AnnotationsProto.getDescriptor();
-    com.google.api.ResourceProto.getDescriptor();
     com.google.protobuf.EmptyProto.getDescriptor();
     com.google.protobuf.FieldMaskProto.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();
+    com.google.api.ClientProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

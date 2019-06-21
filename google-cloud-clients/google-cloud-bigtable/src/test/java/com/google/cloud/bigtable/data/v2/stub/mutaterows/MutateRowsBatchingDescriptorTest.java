@@ -125,7 +125,7 @@ public class MutateRowsBatchingDescriptorTest {
     } catch (ExecutionException t) {
       error1 = t.getCause();
     }
-    assertThat(error1).isSameAs(serverError);
+    assertThat(error1).isSameInstanceAs(serverError);
 
     Throwable error2 = null;
     try {
@@ -133,7 +133,7 @@ public class MutateRowsBatchingDescriptorTest {
     } catch (ExecutionException t) {
       error2 = t.getCause();
     }
-    assertThat(error2).isSameAs(serverError);
+    assertThat(error2).isSameInstanceAs(serverError);
   }
 
   @Test

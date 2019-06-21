@@ -21,7 +21,7 @@ import synthtool.languages.java as java
 gapic = gcp.GAPICGenerator()
 
 service = 'websecurityscanner'
-versions = ['v1alpha']
+versions = ['v1alpha', 'v1beta']
 config_pattern = '/google/cloud/websecurityscanner/artman_websecurityscanner_{version}.yaml'
 
 for version in versions:

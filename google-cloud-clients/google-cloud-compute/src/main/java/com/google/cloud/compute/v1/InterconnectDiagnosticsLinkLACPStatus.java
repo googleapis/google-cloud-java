@@ -84,6 +84,11 @@ public final class InterconnectDiagnosticsLinkLACPStatus implements ApiMessage {
     return neighborSystemId;
   }
 
+  /**
+   * The state of a LACP link, which can take one of the following values: - ACTIVE: The link is
+   * configured and active within the bundle. - DETACHED: The link is not configured within the
+   * bundle. This means that the rest of the object should be empty.
+   */
   public String getState() {
     return state;
   }
@@ -159,10 +164,20 @@ public final class InterconnectDiagnosticsLinkLACPStatus implements ApiMessage {
       return this;
     }
 
+    /**
+     * The state of a LACP link, which can take one of the following values: - ACTIVE: The link is
+     * configured and active within the bundle. - DETACHED: The link is not configured within the
+     * bundle. This means that the rest of the object should be empty.
+     */
     public String getState() {
       return state;
     }
 
+    /**
+     * The state of a LACP link, which can take one of the following values: - ACTIVE: The link is
+     * configured and active within the bundle. - DETACHED: The link is not configured within the
+     * bundle. This means that the rest of the object should be empty.
+     */
     public Builder setState(String state) {
       this.state = state;
       return this;

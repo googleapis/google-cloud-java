@@ -84,8 +84,8 @@ public final class RawDisk implements ApiMessage {
   }
 
   /**
-   * An optional SHA1 checksum of the disk image before unpackaging provided by the client when the
-   * disk image is created.
+   * [Deprecated] This field is deprecated. An optional SHA1 checksum of the disk image before
+   * unpackaging provided by the client when the disk image is created.
    */
   public String getSha1Checksum() {
     return sha1Checksum;
@@ -168,16 +168,16 @@ public final class RawDisk implements ApiMessage {
     }
 
     /**
-     * An optional SHA1 checksum of the disk image before unpackaging provided by the client when
-     * the disk image is created.
+     * [Deprecated] This field is deprecated. An optional SHA1 checksum of the disk image before
+     * unpackaging provided by the client when the disk image is created.
      */
     public String getSha1Checksum() {
       return sha1Checksum;
     }
 
     /**
-     * An optional SHA1 checksum of the disk image before unpackaging provided by the client when
-     * the disk image is created.
+     * [Deprecated] This field is deprecated. An optional SHA1 checksum of the disk image before
+     * unpackaging provided by the client when the disk image is created.
      */
     public Builder setSha1Checksum(String sha1Checksum) {
       this.sha1Checksum = sha1Checksum;

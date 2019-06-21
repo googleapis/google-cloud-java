@@ -13,9 +13,11 @@ public interface LocationOrBuilder
    *
    * <pre>
    * The type of a location, which corresponds to the address lines field of
-   * [PostalAddress][]. For example, "Downtown, Atlanta, GA, USA" has a type of
-   * [LocationType#NEIGHBORHOOD][], and "Kansas City, KS, USA" has a type of
-   * [LocationType#LOCALITY][].
+   * [google.type.PostalAddress][google.type.PostalAddress]. For example,
+   * "Downtown, Atlanta, GA, USA" has a type of
+   * [LocationType.NEIGHBORHOOD][google.cloud.talent.v4beta1.Location.LocationType.NEIGHBORHOOD],
+   * and "Kansas City, KS, USA" has a type of
+   * [LocationType.LOCALITY][google.cloud.talent.v4beta1.Location.LocationType.LOCALITY].
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Location.LocationType location_type = 1;</code>
@@ -26,9 +28,11 @@ public interface LocationOrBuilder
    *
    * <pre>
    * The type of a location, which corresponds to the address lines field of
-   * [PostalAddress][]. For example, "Downtown, Atlanta, GA, USA" has a type of
-   * [LocationType#NEIGHBORHOOD][], and "Kansas City, KS, USA" has a type of
-   * [LocationType#LOCALITY][].
+   * [google.type.PostalAddress][google.type.PostalAddress]. For example,
+   * "Downtown, Atlanta, GA, USA" has a type of
+   * [LocationType.NEIGHBORHOOD][google.cloud.talent.v4beta1.Location.LocationType.NEIGHBORHOOD],
+   * and "Kansas City, KS, USA" has a type of
+   * [LocationType.LOCALITY][google.cloud.talent.v4beta1.Location.LocationType.LOCALITY].
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Location.LocationType location_type = 1;</code>
@@ -112,9 +116,9 @@ public interface LocationOrBuilder
    * <pre>
    * Radius in miles of the job location. This value is derived from the
    * location bounding box in which a circle with the specified radius
-   * centered from [LatLng][] covers the area associated with the job location.
-   * For example, currently, "Mountain View, CA, USA" has a radius of
-   * 6.17 miles.
+   * centered from [google.type.LatLng][google.type.LatLng] covers the area
+   * associated with the job location. For example, currently, "Mountain View,
+   * CA, USA" has a radius of 6.17 miles.
    * </pre>
    *
    * <code>double radius_miles = 4;</code>

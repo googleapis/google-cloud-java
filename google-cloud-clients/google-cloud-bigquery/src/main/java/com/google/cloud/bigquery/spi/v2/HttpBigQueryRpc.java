@@ -41,6 +41,9 @@ import com.google.api.services.bigquery.model.GetQueryResultsResponse;
 import com.google.api.services.bigquery.model.Job;
 import com.google.api.services.bigquery.model.JobList;
 import com.google.api.services.bigquery.model.JobStatus;
+import com.google.api.services.bigquery.model.ListModelsResponse;
+import com.google.api.services.bigquery.model.Model;
+import com.google.api.services.bigquery.model.ModelReference;
 import com.google.api.services.bigquery.model.Table;
 import com.google.api.services.bigquery.model.TableDataInsertAllRequest;
 import com.google.api.services.bigquery.model.TableDataInsertAllResponse;
@@ -290,6 +293,71 @@ public class HttpBigQueryRpc implements BigQueryRpc {
   public boolean deleteTable(String projectId, String datasetId, String tableId) {
     try {
       bigquery.tables().delete(projectId, datasetId, tableId).execute();
+      return true;
+    } catch (IOException ex) {
+      BigQueryException serviceException = translate(ex);
+      if (serviceException.getCode() == HTTP_NOT_FOUND) {
+        return false;
+      }
+      throw serviceException;
+    }
+  }
+
+  @Override
+  public Model patch(Model model, Map<Option, ?> options) {
+    try {
+      // unset the type, as it is output only
+      ModelReference reference = model.getModelReference();
+      return bigquery
+          .models()
+          .patch(reference.getProjectId(), reference.getDatasetId(), reference.getModelId(), model)
+          .setFields(Option.FIELDS.getString(options))
+          .execute();
+    } catch (IOException ex) {
+      throw translate(ex);
+    }
+  }
+
+  @Override
+  public Model getModel(
+      String projectId, String datasetId, String modelId, Map<Option, ?> options) {
+    try {
+      return bigquery
+          .models()
+          .get(projectId, datasetId, modelId)
+          .setFields(Option.FIELDS.getString(options))
+          .execute();
+    } catch (IOException ex) {
+      BigQueryException serviceException = translate(ex);
+      if (serviceException.getCode() == HTTP_NOT_FOUND) {
+        return null;
+      }
+      throw serviceException;
+    }
+  }
+
+  @Override
+  public Tuple<String, Iterable<Model>> listModels(
+      String projectId, String datasetId, Map<Option, ?> options) {
+    try {
+      ListModelsResponse modelList =
+          bigquery
+              .models()
+              .list(projectId, datasetId)
+              .setMaxResults(Option.MAX_RESULTS.getLong(options))
+              .setPageToken(Option.PAGE_TOKEN.getString(options))
+              .execute();
+      Iterable<Model> models = modelList.getModels();
+      return Tuple.of(modelList.getNextPageToken(), models);
+    } catch (IOException ex) {
+      throw translate(ex);
+    }
+  }
+
+  @Override
+  public boolean deleteModel(String projectId, String datasetId, String modelId) {
+    try {
+      bigquery.models().delete(projectId, datasetId, modelId).execute();
       return true;
     } catch (IOException ex) {
       BigQueryException serviceException = translate(ex);

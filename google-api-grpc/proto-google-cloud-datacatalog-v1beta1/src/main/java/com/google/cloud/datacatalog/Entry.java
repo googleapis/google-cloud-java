@@ -12,7 +12,9 @@ package com.google.cloud.datacatalog;
  * Cloud Platform, such as a BigQuery Dataset or a Pub/Sub Topic. Clients can
  * use the `linked_resource` field in the Entry resource to refer to the
  * original resource id of the source system.
- * An Entry resource contains resource details, such as its schema.
+ * An Entry resource contains resource details, such as its schema. An Entry can
+ * also be used to attach flexible metadata, such as a
+ * [Tag][google.cloud.datacatalog.v1beta1.Tag].
  * </pre>
  *
  * Protobuf type {@code google.cloud.datacatalog.v1beta1.Entry}
@@ -143,6 +145,25 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
               typeSpecCase_ = 12;
               break;
             }
+          case 122:
+            {
+              com.google.cloud.datacatalog.BigQueryDateShardedSpec.Builder subBuilder = null;
+              if (typeSpecCase_ == 15) {
+                subBuilder =
+                    ((com.google.cloud.datacatalog.BigQueryDateShardedSpec) typeSpec_).toBuilder();
+              }
+              typeSpec_ =
+                  input.readMessage(
+                      com.google.cloud.datacatalog.BigQueryDateShardedSpec.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.cloud.datacatalog.BigQueryDateShardedSpec) typeSpec_);
+                typeSpec_ = subBuilder.buildPartial();
+              }
+              typeSpecCase_ = 15;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -182,6 +203,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
 
   public enum TypeSpecCase implements com.google.protobuf.Internal.EnumLite {
     BIGQUERY_TABLE_SPEC(12),
+    BIGQUERY_DATE_SHARDED_SPEC(15),
     TYPESPEC_NOT_SET(0);
     private final int value;
 
@@ -198,6 +220,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       switch (value) {
         case 12:
           return BIGQUERY_TABLE_SPEC;
+        case 15:
+          return BIGQUERY_DATE_SHARDED_SPEC;
         case 0:
           return TYPESPEC_NOT_SET;
         default:
@@ -220,9 +244,12 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The Data Catalog resource name of the entry in URL format. For
-   * example,
+   * Required when used in
+   * [UpdateEntryRequest][google.cloud.datacatalog.v1beta1.UpdateEntryRequest].
+   * The Data Catalog resource name of the entry in URL format. For example,
    * "projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}".
+   * Note that this Entry and its child resources may not actually be stored in
+   * the location in this name.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -242,9 +269,12 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The Data Catalog resource name of the entry in URL format. For
-   * example,
+   * Required when used in
+   * [UpdateEntryRequest][google.cloud.datacatalog.v1beta1.UpdateEntryRequest].
+   * The Data Catalog resource name of the entry in URL format. For example,
    * "projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}".
+   * Note that this Entry and its child resources may not actually be stored in
+   * the location in this name.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -267,7 +297,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The full name of the cloud resource the entry belongs to. See:
+   * Output only. The full name of the cloud resource the entry belongs to. See:
    * https://cloud.google.com/apis/design/resource_names#full_resource_name
    * Data Catalog supports resources from select Google Cloud Platform systems.
    * `linked_resource` is the full name of the Google Cloud Platform resource.
@@ -292,7 +322,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The full name of the cloud resource the entry belongs to. See:
+   * Output only. The full name of the cloud resource the entry belongs to. See:
    * https://cloud.google.com/apis/design/resource_names#full_resource_name
    * Data Catalog supports resources from select Google Cloud Platform systems.
    * `linked_resource` is the full name of the Google Cloud Platform resource.
@@ -320,7 +350,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Type of entry.
+   * Required. Type of entry.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.EntryType type = 2;</code>
@@ -332,7 +362,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Type of entry.
+   * Required. Type of entry.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.EntryType type = 2;</code>
@@ -391,15 +421,72 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.datacatalog.BigQueryTableSpec.getDefaultInstance();
   }
 
+  public static final int BIGQUERY_DATE_SHARDED_SPEC_FIELD_NUMBER = 15;
+  /**
+   *
+   *
+   * <pre>
+   * Specification for a group of BigQuery tables with name pattern
+   * [prefix]YYYYMMDD. Context:
+   * https://cloud.google.com/bigquery/docs/partitioned-tables#partitioning_versus_sharding
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datacatalog.v1beta1.BigQueryDateShardedSpec bigquery_date_sharded_spec = 15;
+   * </code>
+   */
+  public boolean hasBigqueryDateShardedSpec() {
+    return typeSpecCase_ == 15;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specification for a group of BigQuery tables with name pattern
+   * [prefix]YYYYMMDD. Context:
+   * https://cloud.google.com/bigquery/docs/partitioned-tables#partitioning_versus_sharding
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datacatalog.v1beta1.BigQueryDateShardedSpec bigquery_date_sharded_spec = 15;
+   * </code>
+   */
+  public com.google.cloud.datacatalog.BigQueryDateShardedSpec getBigqueryDateShardedSpec() {
+    if (typeSpecCase_ == 15) {
+      return (com.google.cloud.datacatalog.BigQueryDateShardedSpec) typeSpec_;
+    }
+    return com.google.cloud.datacatalog.BigQueryDateShardedSpec.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specification for a group of BigQuery tables with name pattern
+   * [prefix]YYYYMMDD. Context:
+   * https://cloud.google.com/bigquery/docs/partitioned-tables#partitioning_versus_sharding
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datacatalog.v1beta1.BigQueryDateShardedSpec bigquery_date_sharded_spec = 15;
+   * </code>
+   */
+  public com.google.cloud.datacatalog.BigQueryDateShardedSpecOrBuilder
+      getBigqueryDateShardedSpecOrBuilder() {
+    if (typeSpecCase_ == 15) {
+      return (com.google.cloud.datacatalog.BigQueryDateShardedSpec) typeSpec_;
+    }
+    return com.google.cloud.datacatalog.BigQueryDateShardedSpec.getDefaultInstance();
+  }
+
   public static final int DISPLAY_NAME_FIELD_NUMBER = 3;
   private volatile java.lang.Object displayName_;
   /**
    *
    *
    * <pre>
-   * Display information such as title and description.
-   * A short name to identify the entry, for example,
-   * "Analytics Data - Jan 2011".
+   * Optional. Display information such as title and description. A short name
+   * to identify the entry, for example, "Analytics Data - Jan 2011". Default
+   * value is an empty string.
    * </pre>
    *
    * <code>string display_name = 3;</code>
@@ -419,9 +506,9 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Display information such as title and description.
-   * A short name to identify the entry, for example,
-   * "Analytics Data - Jan 2011".
+   * Optional. Display information such as title and description. A short name
+   * to identify the entry, for example, "Analytics Data - Jan 2011". Default
+   * value is an empty string.
    * </pre>
    *
    * <code>string display_name = 3;</code>
@@ -444,8 +531,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Entry description, which can consist of several sentences or paragraphs
-   * that describe entry contents.
+   * Optional. Entry description, which can consist of several sentences or
+   * paragraphs that describe entry contents. Default value is an empty string.
    * </pre>
    *
    * <code>string description = 4;</code>
@@ -465,8 +552,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Entry description, which can consist of several sentences or paragraphs
-   * that describe entry contents.
+   * Optional. Entry description, which can consist of several sentences or
+   * paragraphs that describe entry contents. Default value is an empty string.
    * </pre>
    *
    * <code>string description = 4;</code>
@@ -489,7 +576,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Schema of the entry.
+   * Optional. Schema of the entry. An entry might not have any schema attached
+   * to it.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.Schema schema = 5;</code>
@@ -501,7 +589,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Schema of the entry.
+   * Optional. Schema of the entry. An entry might not have any schema attached
+   * to it.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.Schema schema = 5;</code>
@@ -513,7 +602,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Schema of the entry.
+   * Optional. Schema of the entry. An entry might not have any schema attached
+   * to it.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.Schema schema = 5;</code>
@@ -528,8 +618,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Timestamps about the underlying Google Cloud Platform resource -- not about
-   * this Data Catalog Entry.
+   * Output only. Timestamps about the underlying Google Cloud Platform resource
+   * -- not about this Data Catalog Entry.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.SystemTimestamps source_system_timestamps = 7;</code>
@@ -541,8 +631,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Timestamps about the underlying Google Cloud Platform resource -- not about
-   * this Data Catalog Entry.
+   * Output only. Timestamps about the underlying Google Cloud Platform resource
+   * -- not about this Data Catalog Entry.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.SystemTimestamps source_system_timestamps = 7;</code>
@@ -556,8 +646,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Timestamps about the underlying Google Cloud Platform resource -- not about
-   * this Data Catalog Entry.
+   * Output only. Timestamps about the underlying Google Cloud Platform resource
+   * -- not about this Data Catalog Entry.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.SystemTimestamps source_system_timestamps = 7;</code>
@@ -605,6 +695,9 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
     if (typeSpecCase_ == 12) {
       output.writeMessage(12, (com.google.cloud.datacatalog.BigQueryTableSpec) typeSpec_);
     }
+    if (typeSpecCase_ == 15) {
+      output.writeMessage(15, (com.google.cloud.datacatalog.BigQueryDateShardedSpec) typeSpec_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -641,6 +734,11 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               12, (com.google.cloud.datacatalog.BigQueryTableSpec) typeSpec_);
     }
+    if (typeSpecCase_ == 15) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              15, (com.google.cloud.datacatalog.BigQueryDateShardedSpec) typeSpec_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -673,6 +771,9 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
     switch (typeSpecCase_) {
       case 12:
         if (!getBigqueryTableSpec().equals(other.getBigqueryTableSpec())) return false;
+        break;
+      case 15:
+        if (!getBigqueryDateShardedSpec().equals(other.getBigqueryDateShardedSpec())) return false;
         break;
       case 0:
       default:
@@ -710,6 +811,10 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       case 12:
         hash = (37 * hash) + BIGQUERY_TABLE_SPEC_FIELD_NUMBER;
         hash = (53 * hash) + getBigqueryTableSpec().hashCode();
+        break;
+      case 15:
+        hash = (37 * hash) + BIGQUERY_DATE_SHARDED_SPEC_FIELD_NUMBER;
+        hash = (53 * hash) + getBigqueryDateShardedSpec().hashCode();
         break;
       case 0:
       default:
@@ -822,7 +927,9 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    * Cloud Platform, such as a BigQuery Dataset or a Pub/Sub Topic. Clients can
    * use the `linked_resource` field in the Entry resource to refer to the
    * original resource id of the source system.
-   * An Entry resource contains resource details, such as its schema.
+   * An Entry resource contains resource details, such as its schema. An Entry can
+   * also be used to attach flexible metadata, such as a
+   * [Tag][google.cloud.datacatalog.v1beta1.Tag].
    * </pre>
    *
    * Protobuf type {@code google.cloud.datacatalog.v1beta1.Entry}
@@ -923,6 +1030,13 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
           result.typeSpec_ = bigqueryTableSpecBuilder_.build();
         }
       }
+      if (typeSpecCase_ == 15) {
+        if (bigqueryDateShardedSpecBuilder_ == null) {
+          result.typeSpec_ = typeSpec_;
+        } else {
+          result.typeSpec_ = bigqueryDateShardedSpecBuilder_.build();
+        }
+      }
       result.displayName_ = displayName_;
       result.description_ = description_;
       if (schemaBuilder_ == null) {
@@ -1016,6 +1130,11 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
             mergeBigqueryTableSpec(other.getBigqueryTableSpec());
             break;
           }
+        case BIGQUERY_DATE_SHARDED_SPEC:
+          {
+            mergeBigqueryDateShardedSpec(other.getBigqueryDateShardedSpec());
+            break;
+          }
         case TYPESPEC_NOT_SET:
           {
             break;
@@ -1069,9 +1188,12 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The Data Catalog resource name of the entry in URL format. For
-     * example,
+     * Required when used in
+     * [UpdateEntryRequest][google.cloud.datacatalog.v1beta1.UpdateEntryRequest].
+     * The Data Catalog resource name of the entry in URL format. For example,
      * "projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}".
+     * Note that this Entry and its child resources may not actually be stored in
+     * the location in this name.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1091,9 +1213,12 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The Data Catalog resource name of the entry in URL format. For
-     * example,
+     * Required when used in
+     * [UpdateEntryRequest][google.cloud.datacatalog.v1beta1.UpdateEntryRequest].
+     * The Data Catalog resource name of the entry in URL format. For example,
      * "projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}".
+     * Note that this Entry and its child resources may not actually be stored in
+     * the location in this name.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1113,9 +1238,12 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The Data Catalog resource name of the entry in URL format. For
-     * example,
+     * Required when used in
+     * [UpdateEntryRequest][google.cloud.datacatalog.v1beta1.UpdateEntryRequest].
+     * The Data Catalog resource name of the entry in URL format. For example,
      * "projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}".
+     * Note that this Entry and its child resources may not actually be stored in
+     * the location in this name.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1133,9 +1261,12 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The Data Catalog resource name of the entry in URL format. For
-     * example,
+     * Required when used in
+     * [UpdateEntryRequest][google.cloud.datacatalog.v1beta1.UpdateEntryRequest].
+     * The Data Catalog resource name of the entry in URL format. For example,
      * "projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}".
+     * Note that this Entry and its child resources may not actually be stored in
+     * the location in this name.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1150,9 +1281,12 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The Data Catalog resource name of the entry in URL format. For
-     * example,
+     * Required when used in
+     * [UpdateEntryRequest][google.cloud.datacatalog.v1beta1.UpdateEntryRequest].
+     * The Data Catalog resource name of the entry in URL format. For example,
      * "projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}".
+     * Note that this Entry and its child resources may not actually be stored in
+     * the location in this name.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1173,7 +1307,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The full name of the cloud resource the entry belongs to. See:
+     * Output only. The full name of the cloud resource the entry belongs to. See:
      * https://cloud.google.com/apis/design/resource_names#full_resource_name
      * Data Catalog supports resources from select Google Cloud Platform systems.
      * `linked_resource` is the full name of the Google Cloud Platform resource.
@@ -1198,7 +1332,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The full name of the cloud resource the entry belongs to. See:
+     * Output only. The full name of the cloud resource the entry belongs to. See:
      * https://cloud.google.com/apis/design/resource_names#full_resource_name
      * Data Catalog supports resources from select Google Cloud Platform systems.
      * `linked_resource` is the full name of the Google Cloud Platform resource.
@@ -1223,7 +1357,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The full name of the cloud resource the entry belongs to. See:
+     * Output only. The full name of the cloud resource the entry belongs to. See:
      * https://cloud.google.com/apis/design/resource_names#full_resource_name
      * Data Catalog supports resources from select Google Cloud Platform systems.
      * `linked_resource` is the full name of the Google Cloud Platform resource.
@@ -1246,7 +1380,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The full name of the cloud resource the entry belongs to. See:
+     * Output only. The full name of the cloud resource the entry belongs to. See:
      * https://cloud.google.com/apis/design/resource_names#full_resource_name
      * Data Catalog supports resources from select Google Cloud Platform systems.
      * `linked_resource` is the full name of the Google Cloud Platform resource.
@@ -1266,7 +1400,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The full name of the cloud resource the entry belongs to. See:
+     * Output only. The full name of the cloud resource the entry belongs to. See:
      * https://cloud.google.com/apis/design/resource_names#full_resource_name
      * Data Catalog supports resources from select Google Cloud Platform systems.
      * `linked_resource` is the full name of the Google Cloud Platform resource.
@@ -1292,7 +1426,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Type of entry.
+     * Required. Type of entry.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.EntryType type = 2;</code>
@@ -1304,7 +1438,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Type of entry.
+     * Required. Type of entry.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.EntryType type = 2;</code>
@@ -1318,7 +1452,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Type of entry.
+     * Required. Type of entry.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.EntryType type = 2;</code>
@@ -1333,7 +1467,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Type of entry.
+     * Required. Type of entry.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.EntryType type = 2;</code>
@@ -1351,7 +1485,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Type of entry.
+     * Required. Type of entry.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.EntryType type = 2;</code>
@@ -1574,14 +1708,257 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       return bigqueryTableSpecBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datacatalog.BigQueryDateShardedSpec,
+            com.google.cloud.datacatalog.BigQueryDateShardedSpec.Builder,
+            com.google.cloud.datacatalog.BigQueryDateShardedSpecOrBuilder>
+        bigqueryDateShardedSpecBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Specification for a group of BigQuery tables with name pattern
+     * [prefix]YYYYMMDD. Context:
+     * https://cloud.google.com/bigquery/docs/partitioned-tables#partitioning_versus_sharding
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.BigQueryDateShardedSpec bigquery_date_sharded_spec = 15;
+     * </code>
+     */
+    public boolean hasBigqueryDateShardedSpec() {
+      return typeSpecCase_ == 15;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specification for a group of BigQuery tables with name pattern
+     * [prefix]YYYYMMDD. Context:
+     * https://cloud.google.com/bigquery/docs/partitioned-tables#partitioning_versus_sharding
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.BigQueryDateShardedSpec bigquery_date_sharded_spec = 15;
+     * </code>
+     */
+    public com.google.cloud.datacatalog.BigQueryDateShardedSpec getBigqueryDateShardedSpec() {
+      if (bigqueryDateShardedSpecBuilder_ == null) {
+        if (typeSpecCase_ == 15) {
+          return (com.google.cloud.datacatalog.BigQueryDateShardedSpec) typeSpec_;
+        }
+        return com.google.cloud.datacatalog.BigQueryDateShardedSpec.getDefaultInstance();
+      } else {
+        if (typeSpecCase_ == 15) {
+          return bigqueryDateShardedSpecBuilder_.getMessage();
+        }
+        return com.google.cloud.datacatalog.BigQueryDateShardedSpec.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specification for a group of BigQuery tables with name pattern
+     * [prefix]YYYYMMDD. Context:
+     * https://cloud.google.com/bigquery/docs/partitioned-tables#partitioning_versus_sharding
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.BigQueryDateShardedSpec bigquery_date_sharded_spec = 15;
+     * </code>
+     */
+    public Builder setBigqueryDateShardedSpec(
+        com.google.cloud.datacatalog.BigQueryDateShardedSpec value) {
+      if (bigqueryDateShardedSpecBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        typeSpec_ = value;
+        onChanged();
+      } else {
+        bigqueryDateShardedSpecBuilder_.setMessage(value);
+      }
+      typeSpecCase_ = 15;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specification for a group of BigQuery tables with name pattern
+     * [prefix]YYYYMMDD. Context:
+     * https://cloud.google.com/bigquery/docs/partitioned-tables#partitioning_versus_sharding
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.BigQueryDateShardedSpec bigquery_date_sharded_spec = 15;
+     * </code>
+     */
+    public Builder setBigqueryDateShardedSpec(
+        com.google.cloud.datacatalog.BigQueryDateShardedSpec.Builder builderForValue) {
+      if (bigqueryDateShardedSpecBuilder_ == null) {
+        typeSpec_ = builderForValue.build();
+        onChanged();
+      } else {
+        bigqueryDateShardedSpecBuilder_.setMessage(builderForValue.build());
+      }
+      typeSpecCase_ = 15;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specification for a group of BigQuery tables with name pattern
+     * [prefix]YYYYMMDD. Context:
+     * https://cloud.google.com/bigquery/docs/partitioned-tables#partitioning_versus_sharding
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.BigQueryDateShardedSpec bigquery_date_sharded_spec = 15;
+     * </code>
+     */
+    public Builder mergeBigqueryDateShardedSpec(
+        com.google.cloud.datacatalog.BigQueryDateShardedSpec value) {
+      if (bigqueryDateShardedSpecBuilder_ == null) {
+        if (typeSpecCase_ == 15
+            && typeSpec_
+                != com.google.cloud.datacatalog.BigQueryDateShardedSpec.getDefaultInstance()) {
+          typeSpec_ =
+              com.google.cloud.datacatalog.BigQueryDateShardedSpec.newBuilder(
+                      (com.google.cloud.datacatalog.BigQueryDateShardedSpec) typeSpec_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          typeSpec_ = value;
+        }
+        onChanged();
+      } else {
+        if (typeSpecCase_ == 15) {
+          bigqueryDateShardedSpecBuilder_.mergeFrom(value);
+        }
+        bigqueryDateShardedSpecBuilder_.setMessage(value);
+      }
+      typeSpecCase_ = 15;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specification for a group of BigQuery tables with name pattern
+     * [prefix]YYYYMMDD. Context:
+     * https://cloud.google.com/bigquery/docs/partitioned-tables#partitioning_versus_sharding
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.BigQueryDateShardedSpec bigquery_date_sharded_spec = 15;
+     * </code>
+     */
+    public Builder clearBigqueryDateShardedSpec() {
+      if (bigqueryDateShardedSpecBuilder_ == null) {
+        if (typeSpecCase_ == 15) {
+          typeSpecCase_ = 0;
+          typeSpec_ = null;
+          onChanged();
+        }
+      } else {
+        if (typeSpecCase_ == 15) {
+          typeSpecCase_ = 0;
+          typeSpec_ = null;
+        }
+        bigqueryDateShardedSpecBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specification for a group of BigQuery tables with name pattern
+     * [prefix]YYYYMMDD. Context:
+     * https://cloud.google.com/bigquery/docs/partitioned-tables#partitioning_versus_sharding
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.BigQueryDateShardedSpec bigquery_date_sharded_spec = 15;
+     * </code>
+     */
+    public com.google.cloud.datacatalog.BigQueryDateShardedSpec.Builder
+        getBigqueryDateShardedSpecBuilder() {
+      return getBigqueryDateShardedSpecFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specification for a group of BigQuery tables with name pattern
+     * [prefix]YYYYMMDD. Context:
+     * https://cloud.google.com/bigquery/docs/partitioned-tables#partitioning_versus_sharding
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.BigQueryDateShardedSpec bigquery_date_sharded_spec = 15;
+     * </code>
+     */
+    public com.google.cloud.datacatalog.BigQueryDateShardedSpecOrBuilder
+        getBigqueryDateShardedSpecOrBuilder() {
+      if ((typeSpecCase_ == 15) && (bigqueryDateShardedSpecBuilder_ != null)) {
+        return bigqueryDateShardedSpecBuilder_.getMessageOrBuilder();
+      } else {
+        if (typeSpecCase_ == 15) {
+          return (com.google.cloud.datacatalog.BigQueryDateShardedSpec) typeSpec_;
+        }
+        return com.google.cloud.datacatalog.BigQueryDateShardedSpec.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specification for a group of BigQuery tables with name pattern
+     * [prefix]YYYYMMDD. Context:
+     * https://cloud.google.com/bigquery/docs/partitioned-tables#partitioning_versus_sharding
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.BigQueryDateShardedSpec bigquery_date_sharded_spec = 15;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datacatalog.BigQueryDateShardedSpec,
+            com.google.cloud.datacatalog.BigQueryDateShardedSpec.Builder,
+            com.google.cloud.datacatalog.BigQueryDateShardedSpecOrBuilder>
+        getBigqueryDateShardedSpecFieldBuilder() {
+      if (bigqueryDateShardedSpecBuilder_ == null) {
+        if (!(typeSpecCase_ == 15)) {
+          typeSpec_ = com.google.cloud.datacatalog.BigQueryDateShardedSpec.getDefaultInstance();
+        }
+        bigqueryDateShardedSpecBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.datacatalog.BigQueryDateShardedSpec,
+                com.google.cloud.datacatalog.BigQueryDateShardedSpec.Builder,
+                com.google.cloud.datacatalog.BigQueryDateShardedSpecOrBuilder>(
+                (com.google.cloud.datacatalog.BigQueryDateShardedSpec) typeSpec_,
+                getParentForChildren(),
+                isClean());
+        typeSpec_ = null;
+      }
+      typeSpecCase_ = 15;
+      onChanged();
+      ;
+      return bigqueryDateShardedSpecBuilder_;
+    }
+
     private java.lang.Object displayName_ = "";
     /**
      *
      *
      * <pre>
-     * Display information such as title and description.
-     * A short name to identify the entry, for example,
-     * "Analytics Data - Jan 2011".
+     * Optional. Display information such as title and description. A short name
+     * to identify the entry, for example, "Analytics Data - Jan 2011". Default
+     * value is an empty string.
      * </pre>
      *
      * <code>string display_name = 3;</code>
@@ -1601,9 +1978,9 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Display information such as title and description.
-     * A short name to identify the entry, for example,
-     * "Analytics Data - Jan 2011".
+     * Optional. Display information such as title and description. A short name
+     * to identify the entry, for example, "Analytics Data - Jan 2011". Default
+     * value is an empty string.
      * </pre>
      *
      * <code>string display_name = 3;</code>
@@ -1623,9 +2000,9 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Display information such as title and description.
-     * A short name to identify the entry, for example,
-     * "Analytics Data - Jan 2011".
+     * Optional. Display information such as title and description. A short name
+     * to identify the entry, for example, "Analytics Data - Jan 2011". Default
+     * value is an empty string.
      * </pre>
      *
      * <code>string display_name = 3;</code>
@@ -1643,9 +2020,9 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Display information such as title and description.
-     * A short name to identify the entry, for example,
-     * "Analytics Data - Jan 2011".
+     * Optional. Display information such as title and description. A short name
+     * to identify the entry, for example, "Analytics Data - Jan 2011". Default
+     * value is an empty string.
      * </pre>
      *
      * <code>string display_name = 3;</code>
@@ -1660,9 +2037,9 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Display information such as title and description.
-     * A short name to identify the entry, for example,
-     * "Analytics Data - Jan 2011".
+     * Optional. Display information such as title and description. A short name
+     * to identify the entry, for example, "Analytics Data - Jan 2011". Default
+     * value is an empty string.
      * </pre>
      *
      * <code>string display_name = 3;</code>
@@ -1683,8 +2060,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Entry description, which can consist of several sentences or paragraphs
-     * that describe entry contents.
+     * Optional. Entry description, which can consist of several sentences or
+     * paragraphs that describe entry contents. Default value is an empty string.
      * </pre>
      *
      * <code>string description = 4;</code>
@@ -1704,8 +2081,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Entry description, which can consist of several sentences or paragraphs
-     * that describe entry contents.
+     * Optional. Entry description, which can consist of several sentences or
+     * paragraphs that describe entry contents. Default value is an empty string.
      * </pre>
      *
      * <code>string description = 4;</code>
@@ -1725,8 +2102,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Entry description, which can consist of several sentences or paragraphs
-     * that describe entry contents.
+     * Optional. Entry description, which can consist of several sentences or
+     * paragraphs that describe entry contents. Default value is an empty string.
      * </pre>
      *
      * <code>string description = 4;</code>
@@ -1744,8 +2121,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Entry description, which can consist of several sentences or paragraphs
-     * that describe entry contents.
+     * Optional. Entry description, which can consist of several sentences or
+     * paragraphs that describe entry contents. Default value is an empty string.
      * </pre>
      *
      * <code>string description = 4;</code>
@@ -1760,8 +2137,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Entry description, which can consist of several sentences or paragraphs
-     * that describe entry contents.
+     * Optional. Entry description, which can consist of several sentences or
+     * paragraphs that describe entry contents. Default value is an empty string.
      * </pre>
      *
      * <code>string description = 4;</code>
@@ -1787,7 +2164,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Schema of the entry.
+     * Optional. Schema of the entry. An entry might not have any schema attached
+     * to it.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.Schema schema = 5;</code>
@@ -1799,7 +2177,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Schema of the entry.
+     * Optional. Schema of the entry. An entry might not have any schema attached
+     * to it.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.Schema schema = 5;</code>
@@ -1815,7 +2194,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Schema of the entry.
+     * Optional. Schema of the entry. An entry might not have any schema attached
+     * to it.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.Schema schema = 5;</code>
@@ -1837,7 +2217,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Schema of the entry.
+     * Optional. Schema of the entry. An entry might not have any schema attached
+     * to it.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.Schema schema = 5;</code>
@@ -1856,7 +2237,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Schema of the entry.
+     * Optional. Schema of the entry. An entry might not have any schema attached
+     * to it.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.Schema schema = 5;</code>
@@ -1882,7 +2264,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Schema of the entry.
+     * Optional. Schema of the entry. An entry might not have any schema attached
+     * to it.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.Schema schema = 5;</code>
@@ -1902,7 +2285,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Schema of the entry.
+     * Optional. Schema of the entry. An entry might not have any schema attached
+     * to it.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.Schema schema = 5;</code>
@@ -1916,7 +2300,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Schema of the entry.
+     * Optional. Schema of the entry. An entry might not have any schema attached
+     * to it.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.Schema schema = 5;</code>
@@ -1932,7 +2317,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Schema of the entry.
+     * Optional. Schema of the entry. An entry might not have any schema attached
+     * to it.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.Schema schema = 5;</code>
@@ -1964,8 +2350,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Timestamps about the underlying Google Cloud Platform resource -- not about
-     * this Data Catalog Entry.
+     * Output only. Timestamps about the underlying Google Cloud Platform resource
+     * -- not about this Data Catalog Entry.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.SystemTimestamps source_system_timestamps = 7;</code>
@@ -1977,8 +2363,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Timestamps about the underlying Google Cloud Platform resource -- not about
-     * this Data Catalog Entry.
+     * Output only. Timestamps about the underlying Google Cloud Platform resource
+     * -- not about this Data Catalog Entry.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.SystemTimestamps source_system_timestamps = 7;</code>
@@ -1996,8 +2382,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Timestamps about the underlying Google Cloud Platform resource -- not about
-     * this Data Catalog Entry.
+     * Output only. Timestamps about the underlying Google Cloud Platform resource
+     * -- not about this Data Catalog Entry.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.SystemTimestamps source_system_timestamps = 7;</code>
@@ -2019,8 +2405,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Timestamps about the underlying Google Cloud Platform resource -- not about
-     * this Data Catalog Entry.
+     * Output only. Timestamps about the underlying Google Cloud Platform resource
+     * -- not about this Data Catalog Entry.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.SystemTimestamps source_system_timestamps = 7;</code>
@@ -2040,8 +2426,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Timestamps about the underlying Google Cloud Platform resource -- not about
-     * this Data Catalog Entry.
+     * Output only. Timestamps about the underlying Google Cloud Platform resource
+     * -- not about this Data Catalog Entry.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.SystemTimestamps source_system_timestamps = 7;</code>
@@ -2068,8 +2454,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Timestamps about the underlying Google Cloud Platform resource -- not about
-     * this Data Catalog Entry.
+     * Output only. Timestamps about the underlying Google Cloud Platform resource
+     * -- not about this Data Catalog Entry.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.SystemTimestamps source_system_timestamps = 7;</code>
@@ -2089,8 +2475,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Timestamps about the underlying Google Cloud Platform resource -- not about
-     * this Data Catalog Entry.
+     * Output only. Timestamps about the underlying Google Cloud Platform resource
+     * -- not about this Data Catalog Entry.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.SystemTimestamps source_system_timestamps = 7;</code>
@@ -2105,8 +2491,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Timestamps about the underlying Google Cloud Platform resource -- not about
-     * this Data Catalog Entry.
+     * Output only. Timestamps about the underlying Google Cloud Platform resource
+     * -- not about this Data Catalog Entry.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.SystemTimestamps source_system_timestamps = 7;</code>
@@ -2125,8 +2511,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Timestamps about the underlying Google Cloud Platform resource -- not about
-     * this Data Catalog Entry.
+     * Output only. Timestamps about the underlying Google Cloud Platform resource
+     * -- not about this Data Catalog Entry.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.SystemTimestamps source_system_timestamps = 7;</code>

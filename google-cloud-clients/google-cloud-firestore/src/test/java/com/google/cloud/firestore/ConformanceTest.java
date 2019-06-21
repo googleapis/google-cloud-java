@@ -16,6 +16,10 @@
 
 package com.google.cloud.firestore;
 
+import static com.google.cloud.firestore.ConformanceConversions.convertInput;
+import static com.google.cloud.firestore.ConformanceConversions.convertPath;
+import static com.google.cloud.firestore.ConformanceConversions.convertPaths;
+import static com.google.cloud.firestore.ConformanceConversions.convertPrecondition;
 import static com.google.cloud.firestore.LocalFirestoreHelper.commitResponse;
 import static com.google.cloud.firestore.LocalFirestoreHelper.getAllResponse;
 import static com.google.cloud.firestore.LocalFirestoreHelper.queryResponse;
@@ -41,6 +45,7 @@ import com.google.cloud.firestore.conformance.TestDefinition.DocChange;
 import com.google.cloud.firestore.conformance.TestDefinition.DocChange.Kind;
 import com.google.cloud.firestore.conformance.TestDefinition.DocSnapshot;
 import com.google.cloud.firestore.conformance.TestDefinition.GetTest;
+import com.google.cloud.firestore.conformance.TestDefinition.ListenTest;
 import com.google.cloud.firestore.conformance.TestDefinition.OrderBy;
 import com.google.cloud.firestore.conformance.TestDefinition.SetTest;
 import com.google.cloud.firestore.conformance.TestDefinition.Snapshot;
@@ -54,24 +59,17 @@ import com.google.firestore.v1.CommitRequest;
 import com.google.firestore.v1.Document;
 import com.google.firestore.v1.ListenRequest;
 import com.google.firestore.v1.ListenResponse;
-import com.google.firestore.v1.Precondition;
 import com.google.firestore.v1.RunQueryRequest;
 import com.google.firestore.v1.Value;
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Message;
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.lang.reflect.Type;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
-import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import javax.annotation.Nullable;
@@ -95,665 +93,670 @@ import org.mockito.stubbing.Answer;
 
 @RunWith(AllTests.class)
 public class ConformanceTest {
-  private static final String TEST_FILE = "./src/test/resources/test-suite.binproto";
 
-  /** Interface implemented by the conformance test cases. */
-  private interface ConformanceTestCase extends Test, Describable {}
+  private static final String TEST_FILE =
+      "/com/google/cloud/firestore/conformance/test-suite.binproto";
 
   /** Excluded tests by test description. */
-  private final Set<String> excludedTests = Collections.emptySet();
+  private static final Set<String> excludedTests = Collections.emptySet();
 
   /** If non-empty, only runs tests included in this set. */
-  private final Set<String> includedTests = Collections.emptySet();
+  private static final Set<String> includedTests = Collections.emptySet();
 
   /** If true, prints debug information to System.out. */
-  private final boolean DEBUG_MODE = !includedTests.isEmpty();
+  private static final boolean DEBUG_MODE = !includedTests.isEmpty();
 
-  @Captor private ArgumentCaptor<CommitRequest> commitCapture;
-
-  @Captor private ArgumentCaptor<BatchGetDocumentsRequest> getAllCapture;
-
-  @Captor private ArgumentCaptor<ApiStreamObserver<AbstractMessage>> streamObserverCapture;
-
-  @Captor private ArgumentCaptor<RunQueryRequest> runQueryCapture;
-
-  private Gson gson = new Gson();
-
-  @Mock private ApiStreamObserver<ListenRequest> noOpRequestObserver;
-
-  private FirestoreImpl firestoreMock;
-
-  private Query watchQuery;
-
-  public ConformanceTest() {
-    ScheduledExecutorService firestoreExecutor = Executors.newSingleThreadScheduledExecutor();
-    FirestoreRpc firestoreRpc = Mockito.mock(FirestoreRpc.class);
-    when(firestoreRpc.getExecutor()).thenReturn(firestoreExecutor);
-
-    firestoreMock =
-        Mockito.spy(
-            new FirestoreImpl(
-                FirestoreOptions.newBuilder().setProjectId("projectID").build(), firestoreRpc));
-    watchQuery = collection("projects/projectID/databases/(default)/documents/C").orderBy("a");
-  }
+  public ConformanceTest() {}
 
   /** Generate the test suite based on the tests defined in test_data.binprotos. */
   public static TestSuite suite() throws IOException {
     TestSuite suite = new TestSuite();
-    ConformanceTest conformanceTest = new ConformanceTest();
-    MockitoAnnotations.initMocks(conformanceTest);
-    for (Test test : conformanceTest.parseTests()) {
+    final TestDefinition.TestSuite testSuite = parseTests();
+    for (Test test : initTests(testSuite)) {
       suite.addTest(test);
     }
     return suite;
   }
 
-  /** Creates a document reference from an absolute path. */
-  private DocumentReference document(String absolutePath) {
-    String root = "projects/projectID/databases/(default)/documents/";
-    Preconditions.checkState(absolutePath.startsWith(root));
-    return firestoreMock.document(absolutePath.substring(root.length()));
-  }
-
-  /** Creates a collection reference from an absolute path. */
-  private CollectionReference collection(String absolutePath) {
-    String root = "projects/projectID/databases/(default)/documents/";
-    Preconditions.checkState(absolutePath.startsWith(root));
-    return firestoreMock.collection(absolutePath.substring(root.length()));
-  }
-
-  /** Converts a Protobuf Precondition to its API counterpart. */
-  private com.google.cloud.firestore.Precondition convertPrecondition(Precondition precondition) {
-    switch (precondition.getConditionTypeCase()) {
-      case EXISTS:
-        return com.google.cloud.firestore.Precondition.exists(precondition.getExists());
-      case UPDATE_TIME:
-        return com.google.cloud.firestore.Precondition.updatedAt(
-            Timestamp.fromProto(precondition.getUpdateTime()));
-      default:
-        return com.google.cloud.firestore.Precondition.NONE;
-    }
-  }
-
-  /** Converts a list of Proto FieldPaths to its API counterpart. */
-  private List<FieldPath> convertPaths(List<TestDefinition.FieldPath> fieldsList) {
-    List<FieldPath> convertedPaths = new ArrayList<>();
-    for (TestDefinition.FieldPath fieldPath : fieldsList) {
-      convertedPaths.add(convertPath(fieldPath));
-    }
-    return convertedPaths;
-  }
-
-  /** Converts a Proto FieldPath to its API counterpart. */
-  private FieldPath convertPath(TestDefinition.FieldPath fieldPath) {
-    return FieldPath.of(fieldPath.getFieldList().toArray(new String[0]));
-  }
-
-  /** Converts a JSON string into a Java Map. */
-  private Map<String, Object> convertInput(String jsonMap) {
-    Type type = new TypeToken<Map<String, Object>>() {}.getType();
-    Map<String, Object> parsedData = gson.fromJson(jsonMap, type);
-    return convertMap(parsedData);
-  }
-
-  /** Converts a list of Strings into a Java Object. Parses JSON when provided. */
-  private List<Object> convertInput(List<String> jsonValues) {
-    List<Object> result = new ArrayList<>();
-    for (String input : jsonValues) {
-      if (input.matches("^\\{.*}$")) {
-        result.add(convertInput(input));
-      } else {
-        // We need to "fake" a proper JSON object to let GSON convert to native types.
-        result.add(convertInput("{a:" + input + "}").get("a"));
-      }
-    }
-    return result;
-  }
-
-  /** Converts a DocumentSnapshot proto into a DocumentSnapshot. */
-  private DocumentSnapshot convertDocument(DocSnapshot snapshot) {
-    return DocumentSnapshot.fromObject(
-        firestoreMock,
-        document(snapshot.getPath()),
-        convertInput(snapshot.getJsonData()),
-        NO_DELETES);
-  }
-
-  /** Helper function to convert test values in a nested Map to Firestore API types. */
-  private Map<String, Object> convertMap(Map<String, Object> parsedData) {
-    for (Entry<String, Object> entry : parsedData.entrySet()) {
-      parsedData.put(entry.getKey(), convertValue(entry.getValue()));
-    }
-    return parsedData;
-  }
-
-  /**
-   * Converts test values to Firestore API types. Replaces sentinel values with their FieldValue
-   * constants.
-   */
-  private Object convertValue(Object data) {
-    if (data instanceof Map) {
-      return convertMap((Map<String, Object>) data);
-    } else if (data instanceof List) {
-      return convertArray((List<Object>) data);
-    } else if ("NaN".equals(data)) {
-      return Double.NaN;
-    } else if ("Delete".equals(data)) {
-      return FieldValue.delete();
-    } else if ("ServerTimestamp".equals(data)) {
-      return FieldValue.serverTimestamp();
-    } else if (data instanceof Double
-        && Double.compare((double) data, Math.floor((double) data)) == 0) {
-      return (long) (double) data;
-    } else {
-      return data;
-    }
-  }
-
-  /** Converts a Kind into a DocumentChange.Type */
-  private DocumentChange.Type convertKind(Kind kind) {
-    DocumentChange.Type changeType = null;
-
-    switch (kind) {
-      case ADDED:
-        changeType = DocumentChange.Type.ADDED;
-        break;
-      case REMOVED:
-        changeType = DocumentChange.Type.REMOVED;
-        break;
-      case MODIFIED:
-        changeType = DocumentChange.Type.MODIFIED;
-        break;
-      default:
-        Assert.fail("Unable to convert document change for kind: " + kind);
-        break;
-    }
-
-    return changeType;
-  }
-
-  /** Converts a test snapshot to its API representation. */
-  private QuerySnapshot convertQuerySnapshot(Snapshot testSnapshot) {
-    Timestamp readTime = Timestamp.fromProto(testSnapshot.getReadTime());
-
-    final List<QueryDocumentSnapshot> documentSnapshots = new ArrayList<>();
-
-    for (Document document : testSnapshot.getDocsList()) {
-      documentSnapshots.add(
-          QueryDocumentSnapshot.fromDocument(
-              firestoreMock, Timestamp.fromProto(testSnapshot.getReadTime()), document));
-    }
-
-    DocumentSet documentSet =
-        DocumentSet.emptySet(
-            new Comparator<QueryDocumentSnapshot>() {
-              @Override
-              public int compare(QueryDocumentSnapshot o1, QueryDocumentSnapshot o2) {
-                // Comparator that preserves the insertion order as defined in the test case.
-                for (QueryDocumentSnapshot snapshot : documentSnapshots) {
-                  if (o1.equals(o2)) {
-                    return 0;
-                  } else if (o1.equals(snapshot)) {
-                    return -1;
-                  } else if (o2.equals(snapshot)) {
-                    return 1;
-                  }
-                }
-
-                Assert.fail("Unable to find position for document snapshot");
-                return 0;
-              }
-            });
-
-    for (QueryDocumentSnapshot snapshot : documentSnapshots) {
-      documentSet = documentSet.add(snapshot);
-    }
-
-    List<DocumentChange> documentChanges = new ArrayList<>();
-
-    for (DocChange documentChange : testSnapshot.getChangesList()) {
-      QueryDocumentSnapshot documentSnapshot =
-          QueryDocumentSnapshot.fromDocument(
-              firestoreMock,
-              Timestamp.fromProto(testSnapshot.getReadTime()),
-              documentChange.getDoc());
-      DocumentChange.Type changeType = convertKind(documentChange.getKind());
-      documentChanges.add(
-          new DocumentChange(
-              documentSnapshot,
-              changeType,
-              documentChange.getOldIndex(),
-              documentChange.getNewIndex()));
-    }
-
-    return QuerySnapshot.withChanges(watchQuery, readTime, documentSet, documentChanges);
-  }
-
-  /** Helper function to convert test values in a list to Firestore API types. */
-  private Object convertArray(List<Object> list) {
-    if (!list.isEmpty() && list.get(0).equals("ArrayUnion")) {
-      return FieldValue.arrayUnion(
-          ((List<Object>) convertArray(list.subList(1, list.size()))).toArray());
-    } else if (!list.isEmpty() && list.get(0).equals("ArrayRemove")) {
-      return FieldValue.arrayRemove(
-          ((List<Object>) convertArray(list.subList(1, list.size()))).toArray());
-    } else {
-      for (int i = 0; i < list.size(); ++i) {
-        list.set(i, convertValue(list.get(i)));
-      }
-      return list;
-    }
-  }
-
-  /** Reads the test definition from the Proto file. */
-  private List<Test> parseTests() throws IOException {
-    List<Test> tests = new ArrayList<>();
-
-    TestDefinition.TestSuite testSuite =
-        TestDefinition.TestSuite.parseFrom(new FileInputStream(TEST_FILE));
-    for (TestDefinition.Test testDefinition : testSuite.getTestsList()) {
+  private static List<Test> initTests(TestDefinition.TestSuite testSuite) {
+    final List<Test> tests = new ArrayList<>();
+    for (final TestDefinition.Test testDefinition : testSuite.getTestsList()) {
       if (!includedTests.isEmpty() && !includedTests.contains(testDefinition.getDescription())
           || excludedTests.contains(testDefinition.getDescription())) {
         continue;
       }
-      Test test = buildTest(testDefinition);
+      final Test test = buildTest(testDefinition);
+      MockitoAnnotations.initMocks(test);
       tests.add(test);
     }
 
     return tests;
   }
 
+  /** Reads the test definition from the Proto file. */
+  private static TestDefinition.TestSuite parseTests() throws IOException {
+    final InputStream is = ConformanceTest.class.getResourceAsStream(TEST_FILE);
+    return TestDefinition.TestSuite.parseFrom(is);
+  }
+
   /** Returns the test case for the provided test definition. */
-  private Test buildTest(final TestDefinition.Test testDefinition) {
-    return new ConformanceTestCase() {
-      @Override
-      public Description getDescription() {
-        return Description.createTestDescription(
-            ConformanceTest.class.getName(), testDefinition.getDescription());
-      }
-
-      @Override
-      public int countTestCases() {
-        return 1;
-      }
-
-      @Override
-      public void run(TestResult testResult) {
-        testResult.startTest(this);
-        testResult.runProtected(
-            this,
-            new Protectable() {
-              @Override
-              public void protect() throws Throwable {
-                if (DEBUG_MODE) {
-                  System.out.println(testDefinition);
-                }
-
-                switch (testDefinition.getTestCase()) {
-                  case GET:
-                    runGetTest(testDefinition.getGet());
-                    break;
-                  case CREATE:
-                    runCreateTest(testDefinition.getCreate());
-                    break;
-                  case SET:
-                    runSetTest(testDefinition.getSet());
-                    break;
-                  case UPDATE:
-                    runUpdateTest(testDefinition.getUpdate());
-                    break;
-                  case UPDATE_PATHS:
-                    runUpdatePathTest(testDefinition.getUpdatePaths());
-                    break;
-                  case DELETE:
-                    runDeleteTest(testDefinition.getDelete());
-                    break;
-                  case QUERY:
-                    runQueryTest(testDefinition.getQuery());
-                    break;
-                  case LISTEN:
-                    runWatchTest(testDefinition.getListen());
-                    break;
-                  default:
-                    throw new UnsupportedOperationException();
-                }
-              }
-            });
-        testResult.endTest(this);
-      }
-    };
-  }
-
-  private void runQueryTest(TestDefinition.QueryTest testCase) {
-    doAnswer(queryResponse())
-        .when(firestoreMock)
-        .streamRequest(
-            runQueryCapture.capture(),
-            streamObserverCapture.capture(),
-            Matchers.<ServerStreamingCallable>any());
-
-    Query query = collection(testCase.getCollPath());
-
-    try {
-      for (Clause clause : testCase.getClausesList()) {
-        query = applyClause(query, clause);
-      }
-
-      ApiFuture<QuerySnapshot> apiCall = query.get();
-      Assert.assertFalse(testCase.getIsError());
-
-      apiCall.get();
-      RunQueryRequest request = runQueryCapture.getValue();
-      Assert.assertEquals(testCase.getQuery(), request.getStructuredQuery());
-    } catch (Exception e) {
-      Assert.assertTrue(testCase.getIsError());
-    }
-  }
-
-  private void runWatchTest(final TestDefinition.ListenTest testCase)
-      throws ExecutionException, InterruptedException {
-    final SettableApiFuture<Void> testCaseStarted = SettableApiFuture.create();
-    final SettableApiFuture<Void> testCaseFinished = SettableApiFuture.create();
-
-    doAnswer(
-            new Answer<ApiStreamObserver<ListenRequest>>() {
-              @Override
-              public ApiStreamObserver<ListenRequest> answer(InvocationOnMock invocationOnMock) {
-                testCaseStarted.set(null);
-                return noOpRequestObserver;
-              }
-            })
-        .when(firestoreMock)
-        .streamRequest(streamObserverCapture.capture(), Matchers.any(BidiStreamingCallable.class));
-
-    final List<Snapshot> expectedSnapshots = new ArrayList<>(testCase.getSnapshotsList());
-
-    final ListenerRegistration registration =
-        watchQuery.addSnapshotListener(
-            new EventListener<QuerySnapshot>() {
-              @Override
-              public void onEvent(
-                  @Nullable QuerySnapshot actualSnapshot, @Nullable FirestoreException error) {
-                try {
-                  if (actualSnapshot != null) {
-                    Assert.assertNull(error);
-                    Assert.assertFalse(expectedSnapshots.isEmpty());
-                    Snapshot expectedSnapshot = expectedSnapshots.remove(0);
-                    Assert.assertEquals(convertQuerySnapshot(expectedSnapshot), actualSnapshot);
-                    if (expectedSnapshots.isEmpty()) {
-                      if (!testCase.getIsError()) {
-                        testCaseFinished.set(null);
-                      }
-                    }
-                  } else { // Error case
-                    Assert.assertNotNull(error);
-                    Assert.assertTrue(expectedSnapshots.isEmpty());
-                    Assert.assertTrue(testCase.getIsError());
-                    testCaseFinished.set(null);
-                  }
-                } catch (AssertionError e) {
-                  testCaseFinished.setException(e);
-                }
-              }
-            });
-
-    testCaseStarted.get();
-
-    for (ListenResponse response : testCase.getResponsesList()) {
-      streamObserverCapture.getValue().onNext(response);
-    }
-
-    testCaseFinished.get();
-    registration.remove();
-  }
-
-  /** Returns a new query with 'clause' applied. */
-  private Query applyClause(Query query, Clause clause) {
-    FieldPath fieldPath;
-    Object value;
-    Cursor cursor;
-
-    switch (clause.getClauseCase()) {
-      case SELECT:
-        query =
-            query.select(
-                convertPaths(clause.getSelect().getFieldsList()).toArray(new FieldPath[] {}));
-        break;
-      case WHERE:
-        Where whereClause = clause.getWhere();
-        fieldPath = convertPath(whereClause.getPath());
-        value = convertInput(Collections.singletonList(whereClause.getJsonValue())).get(0);
-        switch (whereClause.getOp()) {
-          case "<":
-            query = query.whereLessThan(fieldPath, value);
-            break;
-          case "<=":
-            query = query.whereLessThanOrEqualTo(fieldPath, value);
-            break;
-          case "==":
-            query = query.whereEqualTo(fieldPath, value);
-            break;
-          case ">=":
-            query = query.whereGreaterThanOrEqualTo(fieldPath, value);
-            break;
-          case ">":
-            query = query.whereGreaterThan(fieldPath, value);
-            break;
-          default:
-            throw new UnsupportedOperationException();
-        }
-        break;
-      case ORDER_BY:
-        OrderBy orderClause = clause.getOrderBy();
-        fieldPath = convertPath(orderClause.getPath());
-        switch (orderClause.getDirection()) {
-          case "asc":
-            query = query.orderBy(fieldPath, Direction.ASCENDING);
-            break;
-          case "desc":
-            query = query.orderBy(fieldPath, Direction.DESCENDING);
-            break;
-          default:
-            throw new UnsupportedOperationException();
-        }
-        break;
-      case OFFSET:
-        query = query.offset(clause.getOffset());
-        break;
-      case LIMIT:
-        query = query.limit(clause.getLimit());
-        break;
-      case START_AT:
-        cursor = clause.getStartAt();
-        if (cursor.hasDocSnapshot()) {
-          query = query.startAt(convertDocument(cursor.getDocSnapshot()));
-        } else {
-          query = query.startAt(convertInput(cursor.getJsonValuesList()).toArray());
-        }
-        break;
-      case START_AFTER:
-        cursor = clause.getStartAfter();
-        if (cursor.hasDocSnapshot()) {
-          query = query.startAfter(convertDocument(cursor.getDocSnapshot()));
-        } else {
-          query = query.startAfter(convertInput(cursor.getJsonValuesList()).toArray());
-        }
-        break;
-      case END_AT:
-        cursor = clause.getEndAt();
-        if (cursor.hasDocSnapshot()) {
-          query = query.endAt(convertDocument(cursor.getDocSnapshot()));
-        } else {
-          query = query.endAt(convertInput(cursor.getJsonValuesList()).toArray());
-        }
-        break;
-      case END_BEFORE:
-        cursor = clause.getEndBefore();
-        if (cursor.hasDocSnapshot()) {
-          query = query.endBefore(convertDocument(cursor.getDocSnapshot()));
-        } else {
-          query = query.endBefore(convertInput(cursor.getJsonValuesList()).toArray());
-        }
-        break;
+  private static Test buildTest(final TestDefinition.Test td) {
+    switch (td.getTestCase()) {
+      case GET:
+        return new ConformanceGetTestRunner(td.getDescription(), td.getGet());
+      case CREATE:
+        return new ConformanceCreateTestRunner(td.getDescription(), td.getCreate());
+      case SET:
+        return new ConformanceSetTestRunner(td.getDescription(), td.getSet());
+      case UPDATE:
+        return new ConformanceUpdateTestRunner(td.getDescription(), td.getUpdate());
+      case UPDATE_PATHS:
+        return new ConformanceUpdatePathsTestRunner(td.getDescription(), td.getUpdatePaths());
+      case DELETE:
+        return new ConformanceDeleteTestRunner(td.getDescription(), td.getDelete());
+      case QUERY:
+        return new ConformanceQueryTestRunner(td.getDescription(), td.getQuery());
+      case LISTEN:
+        return new ConformanceListenTestRunner(td.getDescription(), td.getListen());
       default:
-        throw new UnsupportedOperationException();
+        throw new UnsupportedOperationException("Unknown test case type: " + td.getTestCase());
     }
-    return query;
   }
 
-  private void runUpdatePathTest(UpdatePathsTest testCase) {
-    doReturn(commitResponse(testCase.getRequest().getWritesCount(), 0))
-        .when(firestoreMock)
-        .sendRequest(commitCapture.capture(), Matchers.<UnaryCallable<Message, Message>>any());
+  private abstract static class BaseConformanceTestRunner<T> implements Test, Describable {
+    private static final String DEBUG_MESSAGE_FORMAT =
+        "--- Test Description -----------------------------------------------------------%n"
+            + "%s%n"
+            + "--- Test Case ------------------------------------------------------------------%n"
+            + "%s%n"
+            + "--------------------------------------------------------------------------------%n";
 
-    try {
+    protected static final String ROOT_COLLECTION_PATH =
+        "projects/projectID/databases/(default)/documents/";
+
+    private final Description description;
+    protected final T testParameters;
+    protected final FirestoreImpl firestore;
+
+    protected BaseConformanceTestRunner(final String description, final T testParameters) {
+      this.description =
+          Description.createTestDescription(ConformanceTest.class.getName(), description);
+      this.testParameters = testParameters;
+      ScheduledExecutorService firestoreExecutor = Executors.newSingleThreadScheduledExecutor();
+      FirestoreRpc firestoreRpc = Mockito.mock(FirestoreRpc.class);
+      when(firestoreRpc.getExecutor()).thenReturn(firestoreExecutor);
+      this.firestore =
+          Mockito.spy(
+              new FirestoreImpl(
+                  FirestoreOptions.newBuilder().setProjectId("projectID").build(), firestoreRpc));
+    }
+
+    @Override
+    public final Description getDescription() {
+      return description;
+    }
+
+    @Override
+    public final int countTestCases() {
+      return 1;
+    }
+
+    @Override
+    public final void run(TestResult testResult) {
+      testResult.startTest(this);
+      testResult.runProtected(
+          this,
+          new Protectable() {
+            @Override
+            public void protect() throws Throwable {
+              if (DEBUG_MODE) {
+                System.out.printf(DEBUG_MESSAGE_FORMAT, description, testParameters);
+              }
+              runTest();
+            }
+          });
+      testResult.endTest(this);
+    }
+
+    public abstract void runTest() throws Throwable;
+
+    @Override
+    public final String toString() {
+      return getClass().getSimpleName() + "{" + "description=" + description.getDisplayName() + '}';
+    }
+
+    /** Creates a document reference from an absolute path. */
+    final DocumentReference document(final String absolutePath) {
+      Preconditions.checkState(absolutePath.startsWith(ROOT_COLLECTION_PATH));
+      return firestore.document(absolutePath.substring(ROOT_COLLECTION_PATH.length()));
+    }
+
+    /** Creates a collection reference from an absolute path. */
+    final CollectionReference collection(final String absolutePath) {
+      Preconditions.checkState(absolutePath.startsWith(ROOT_COLLECTION_PATH));
+      return firestore.collection(absolutePath.substring(ROOT_COLLECTION_PATH.length()));
+    }
+  }
+
+  private static final class ConformanceGetTestRunner extends BaseConformanceTestRunner<GetTest> {
+
+    @Captor private ArgumentCaptor<BatchGetDocumentsRequest> getAllCapture;
+    @Captor private ArgumentCaptor<ApiStreamObserver<AbstractMessage>> streamObserverCapture;
+
+    private ConformanceGetTestRunner(String description, GetTest testParameters) {
+      super(description, testParameters);
+    }
+
+    @Override
+    public void runTest() throws Throwable {
+      doAnswer(getAllResponse(Collections.<String, Value>emptyMap()))
+          .when(firestore)
+          .streamRequest(
+              getAllCapture.capture(),
+              streamObserverCapture.capture(),
+              Matchers.<ServerStreamingCallable>any());
+
+      document(testParameters.getDocRefPath()).get().get();
+
+      BatchGetDocumentsRequest request = getAllCapture.getValue();
+
+      Assert.assertEquals(1, request.getDocumentsCount());
+      Assert.assertEquals(testParameters.getRequest().getName(), request.getDocuments(0));
+    }
+  }
+
+  private static final class ConformanceCreateTestRunner
+      extends BaseConformanceTestRunner<CreateTest> {
+
+    @Captor private ArgumentCaptor<CommitRequest> commitCapture;
+
+    private ConformanceCreateTestRunner(String description, CreateTest testParameters) {
+      super(description, testParameters);
+    }
+
+    @Override
+    public void runTest() {
+      doReturn(commitResponse(testParameters.getRequest().getWritesCount(), 0))
+          .when(firestore)
+          .sendRequest(commitCapture.capture(), Matchers.<UnaryCallable<Message, Message>>any());
+
+      try {
+        ApiFuture<WriteResult> apiCall =
+            document(testParameters.getDocRefPath())
+                .create(convertInput(testParameters.getJsonData()));
+
+        Assert.assertFalse(testParameters.getIsError());
+        apiCall.get();
+
+        CommitRequest request = commitCapture.getValue();
+        Assert.assertEquals(testParameters.getRequest(), request);
+
+      } catch (Exception e) {
+        Assert.assertTrue(testParameters.getIsError());
+      }
+    }
+  }
+
+  private static final class ConformanceSetTestRunner extends BaseConformanceTestRunner<SetTest> {
+
+    @Captor private ArgumentCaptor<CommitRequest> commitCapture;
+
+    private ConformanceSetTestRunner(String description, SetTest testParameters) {
+      super(description, testParameters);
+    }
+
+    @Override
+    public void runTest() {
+      doReturn(commitResponse(testParameters.getRequest().getWritesCount(), 0))
+          .when(firestore)
+          .sendRequest(commitCapture.capture(), Matchers.<UnaryCallable<Message, Message>>any());
       ApiFuture<WriteResult> apiCall;
 
-      List<FieldPath> fieldPaths = convertPaths(testCase.getFieldPathsList());
-      FieldPath firstField = fieldPaths.remove(0);
+      try {
+        if (testParameters.hasOption() && testParameters.getOption().getAll()) {
+          apiCall =
+              document(testParameters.getDocRefPath())
+                  .set(convertInput(testParameters.getJsonData()), SetOptions.merge());
+        } else if (testParameters.hasOption() && testParameters.getOption().getFieldsCount() > 0) {
+          apiCall =
+              document(testParameters.getDocRefPath())
+                  .set(
+                      convertInput(testParameters.getJsonData()),
+                      SetOptions.mergeFieldPaths(
+                          convertPaths(testParameters.getOption().getFieldsList())));
+        } else {
+          apiCall =
+              document(testParameters.getDocRefPath())
+                  .set(convertInput(testParameters.getJsonData()));
+        }
 
-      List<Object> values = convertInput(testCase.getJsonValuesList());
-      Object firstValue = values.remove(0);
+        Assert.assertFalse(testParameters.getIsError());
+        apiCall.get();
 
-      Object[] moreFieldsAndValues = new Object[2 * fieldPaths.size()];
-
-      for (int i = 0; i < fieldPaths.size(); ++i) {
-        moreFieldsAndValues[2 * i] = fieldPaths.get(i);
-        moreFieldsAndValues[2 * i + 1] = values.get(i);
+        CommitRequest request = commitCapture.getValue();
+        Assert.assertEquals(testParameters.getRequest(), request);
+      } catch (Exception e) {
+        Assert.assertTrue(testParameters.getIsError());
       }
+    }
+  }
 
-      if (testCase.hasPrecondition()) {
-        apiCall =
-            document(testCase.getDocRefPath())
-                .update(
-                    convertPrecondition(testCase.getPrecondition()),
-                    firstField,
-                    firstValue,
-                    moreFieldsAndValues);
+  private static final class ConformanceUpdateTestRunner
+      extends BaseConformanceTestRunner<UpdateTest> {
+
+    @Captor private ArgumentCaptor<CommitRequest> commitCapture;
+
+    private ConformanceUpdateTestRunner(String description, UpdateTest testParameters) {
+      super(description, testParameters);
+    }
+
+    @Override
+    public void runTest() {
+      doReturn(commitResponse(testParameters.getRequest().getWritesCount(), 0))
+          .when(firestore)
+          .sendRequest(commitCapture.capture(), Matchers.<UnaryCallable<Message, Message>>any());
+
+      try {
+        ApiFuture<WriteResult> apiCall;
+
+        if (testParameters.hasPrecondition()) {
+          apiCall =
+              document(testParameters.getDocRefPath())
+                  .update(
+                      convertInput(testParameters.getJsonData()),
+                      convertPrecondition(testParameters.getPrecondition()));
+        } else {
+          apiCall =
+              document(testParameters.getDocRefPath())
+                  .update(convertInput(testParameters.getJsonData()));
+        }
+
+        Assert.assertFalse(testParameters.getIsError());
+
+        apiCall.get();
+        CommitRequest request = commitCapture.getValue();
+        Assert.assertEquals(testParameters.getRequest(), request);
+      } catch (Exception e) {
+        Assert.assertTrue(testParameters.getIsError());
+      }
+    }
+  }
+
+  private static final class ConformanceUpdatePathsTestRunner
+      extends BaseConformanceTestRunner<UpdatePathsTest> {
+
+    @Captor private ArgumentCaptor<CommitRequest> commitCapture;
+
+    private ConformanceUpdatePathsTestRunner(String description, UpdatePathsTest testParameters) {
+      super(description, testParameters);
+    }
+
+    @Override
+    public void runTest() {
+      doReturn(commitResponse(testParameters.getRequest().getWritesCount(), 0))
+          .when(firestore)
+          .sendRequest(commitCapture.capture(), Matchers.<UnaryCallable<Message, Message>>any());
+
+      try {
+        ApiFuture<WriteResult> apiCall;
+
+        List<FieldPath> fieldPaths = convertPaths(testParameters.getFieldPathsList());
+        FieldPath firstField = fieldPaths.remove(0);
+
+        List<Object> values = convertInput(testParameters.getJsonValuesList());
+        Object firstValue = values.remove(0);
+
+        Object[] moreFieldsAndValues = new Object[2 * fieldPaths.size()];
+
+        for (int i = 0; i < fieldPaths.size(); ++i) {
+          moreFieldsAndValues[2 * i] = fieldPaths.get(i);
+          moreFieldsAndValues[2 * i + 1] = values.get(i);
+        }
+
+        if (testParameters.hasPrecondition()) {
+          apiCall =
+              document(testParameters.getDocRefPath())
+                  .update(
+                      convertPrecondition(testParameters.getPrecondition()),
+                      firstField,
+                      firstValue,
+                      moreFieldsAndValues);
+        } else {
+          apiCall =
+              document(testParameters.getDocRefPath())
+                  .update(firstField, firstValue, moreFieldsAndValues);
+        }
+
+        Assert.assertFalse(testParameters.getIsError());
+
+        apiCall.get();
+        CommitRequest request = commitCapture.getValue();
+        Assert.assertEquals(testParameters.getRequest(), request);
+      } catch (Exception e) {
+        Assert.assertTrue(testParameters.getIsError());
+      }
+    }
+  }
+
+  private static final class ConformanceDeleteTestRunner
+      extends BaseConformanceTestRunner<DeleteTest> {
+
+    @Captor private ArgumentCaptor<CommitRequest> commitCapture;
+
+    private ConformanceDeleteTestRunner(String description, DeleteTest testParameters) {
+      super(description, testParameters);
+    }
+
+    @Override
+    public void runTest() throws Throwable {
+      doReturn(commitResponse(0, testParameters.getRequest().getWritesCount()))
+          .when(firestore)
+          .sendRequest(commitCapture.capture(), Matchers.<UnaryCallable<Message, Message>>any());
+
+      if (!testParameters.hasPrecondition()) {
+        document(testParameters.getDocRefPath()).delete().get();
       } else {
-        apiCall =
-            document(testCase.getDocRefPath()).update(firstField, firstValue, moreFieldsAndValues);
+        document(testParameters.getDocRefPath())
+            .delete(convertPrecondition(testParameters.getPrecondition()))
+            .get();
       }
 
-      Assert.assertFalse(testCase.getIsError());
-
-      apiCall.get();
       CommitRequest request = commitCapture.getValue();
-      Assert.assertEquals(testCase.getRequest(), request);
-    } catch (Exception e) {
-      Assert.assertTrue(testCase.getIsError());
+      Assert.assertEquals(testParameters.getRequest(), request);
     }
   }
 
-  private void runUpdateTest(UpdateTest testCase) {
-    doReturn(commitResponse(testCase.getRequest().getWritesCount(), 0))
-        .when(firestoreMock)
-        .sendRequest(commitCapture.capture(), Matchers.<UnaryCallable<Message, Message>>any());
+  private static final class ConformanceQueryTestRunner
+      extends BaseConformanceTestRunner<TestDefinition.QueryTest> {
 
-    try {
-      ApiFuture<WriteResult> apiCall;
+    @Captor private ArgumentCaptor<RunQueryRequest> runQueryCapture;
+    @Captor private ArgumentCaptor<ApiStreamObserver<AbstractMessage>> streamObserverCapture;
 
-      if (testCase.hasPrecondition()) {
-        apiCall =
-            document(testCase.getDocRefPath())
-                .update(
-                    convertInput(testCase.getJsonData()),
-                    convertPrecondition(testCase.getPrecondition()));
-      } else {
-        apiCall = document(testCase.getDocRefPath()).update(convertInput(testCase.getJsonData()));
+    private ConformanceQueryTestRunner(
+        String description, TestDefinition.QueryTest testParameters) {
+      super(description, testParameters);
+    }
+
+    @Override
+    public void runTest() {
+      doAnswer(queryResponse())
+          .when(firestore)
+          .streamRequest(
+              runQueryCapture.capture(),
+              streamObserverCapture.capture(),
+              Matchers.<ServerStreamingCallable>any());
+
+      Query query = collection(testParameters.getCollPath());
+
+      try {
+        for (Clause clause : testParameters.getClausesList()) {
+          query = applyClause(query, clause);
+        }
+
+        ApiFuture<QuerySnapshot> apiCall = query.get();
+        Assert.assertFalse(testParameters.getIsError());
+
+        apiCall.get();
+        RunQueryRequest request = runQueryCapture.getValue();
+        Assert.assertEquals(testParameters.getQuery(), request.getStructuredQuery());
+      } catch (Exception e) {
+        Assert.assertTrue(testParameters.getIsError());
+      }
+    }
+
+    /** Returns a new query with 'clause' applied. */
+    private Query applyClause(Query query, Clause clause) {
+      FieldPath fieldPath;
+      Object value;
+      Cursor cursor;
+
+      switch (clause.getClauseCase()) {
+        case SELECT:
+          query =
+              query.select(
+                  convertPaths(clause.getSelect().getFieldsList()).toArray(new FieldPath[] {}));
+          break;
+        case WHERE:
+          Where whereClause = clause.getWhere();
+          fieldPath = convertPath(whereClause.getPath());
+          value = convertInput(Collections.singletonList(whereClause.getJsonValue())).get(0);
+          switch (whereClause.getOp()) {
+            case "<":
+              query = query.whereLessThan(fieldPath, value);
+              break;
+            case "<=":
+              query = query.whereLessThanOrEqualTo(fieldPath, value);
+              break;
+            case "==":
+              query = query.whereEqualTo(fieldPath, value);
+              break;
+            case ">=":
+              query = query.whereGreaterThanOrEqualTo(fieldPath, value);
+              break;
+            case ">":
+              query = query.whereGreaterThan(fieldPath, value);
+              break;
+            default:
+              throw new UnsupportedOperationException();
+          }
+          break;
+        case ORDER_BY:
+          OrderBy orderClause = clause.getOrderBy();
+          fieldPath = convertPath(orderClause.getPath());
+          switch (orderClause.getDirection()) {
+            case "asc":
+              query = query.orderBy(fieldPath, Direction.ASCENDING);
+              break;
+            case "desc":
+              query = query.orderBy(fieldPath, Direction.DESCENDING);
+              break;
+            default:
+              throw new UnsupportedOperationException();
+          }
+          break;
+        case OFFSET:
+          query = query.offset(clause.getOffset());
+          break;
+        case LIMIT:
+          query = query.limit(clause.getLimit());
+          break;
+        case START_AT:
+          cursor = clause.getStartAt();
+          if (cursor.hasDocSnapshot()) {
+            query = query.startAt(convertDocument(cursor.getDocSnapshot()));
+          } else {
+            query = query.startAt(convertInput(cursor.getJsonValuesList()).toArray());
+          }
+          break;
+        case START_AFTER:
+          cursor = clause.getStartAfter();
+          if (cursor.hasDocSnapshot()) {
+            query = query.startAfter(convertDocument(cursor.getDocSnapshot()));
+          } else {
+            query = query.startAfter(convertInput(cursor.getJsonValuesList()).toArray());
+          }
+          break;
+        case END_AT:
+          cursor = clause.getEndAt();
+          if (cursor.hasDocSnapshot()) {
+            query = query.endAt(convertDocument(cursor.getDocSnapshot()));
+          } else {
+            query = query.endAt(convertInput(cursor.getJsonValuesList()).toArray());
+          }
+          break;
+        case END_BEFORE:
+          cursor = clause.getEndBefore();
+          if (cursor.hasDocSnapshot()) {
+            query = query.endBefore(convertDocument(cursor.getDocSnapshot()));
+          } else {
+            query = query.endBefore(convertInput(cursor.getJsonValuesList()).toArray());
+          }
+          break;
+        default:
+          throw new UnsupportedOperationException();
+      }
+      return query;
+    }
+
+    /** Converts a DocumentSnapshot proto into a DocumentSnapshot. */
+    private DocumentSnapshot convertDocument(DocSnapshot snapshot) {
+      return DocumentSnapshot.fromObject(
+          firestore,
+          document(snapshot.getPath()),
+          convertInput(snapshot.getJsonData()),
+          NO_DELETES);
+    }
+  }
+
+  private static final class ConformanceListenTestRunner
+      extends BaseConformanceTestRunner<ListenTest> {
+
+    @Captor private ArgumentCaptor<ApiStreamObserver<AbstractMessage>> streamObserverCapture;
+    @Mock private ApiStreamObserver<ListenRequest> noOpRequestObserver;
+
+    private Query watchQuery;
+
+    private ConformanceListenTestRunner(
+        String description, TestDefinition.ListenTest testParameters) {
+      super(description, testParameters);
+      watchQuery = collection(ROOT_COLLECTION_PATH + "C").orderBy("a");
+    }
+
+    @Override
+    public void runTest() throws Throwable {
+      final SettableApiFuture<Void> testCaseStarted = SettableApiFuture.create();
+      final SettableApiFuture<Void> testCaseFinished = SettableApiFuture.create();
+
+      doAnswer(
+              new Answer<ApiStreamObserver<ListenRequest>>() {
+                @Override
+                public ApiStreamObserver<ListenRequest> answer(InvocationOnMock invocationOnMock) {
+                  testCaseStarted.set(null);
+                  return noOpRequestObserver;
+                }
+              })
+          .when(firestore)
+          .streamRequest(
+              streamObserverCapture.capture(), Matchers.any(BidiStreamingCallable.class));
+
+      final List<Snapshot> expectedSnapshots = new ArrayList<>(testParameters.getSnapshotsList());
+
+      final ListenerRegistration registration =
+          watchQuery.addSnapshotListener(
+              new EventListener<QuerySnapshot>() {
+                @Override
+                public void onEvent(
+                    @Nullable QuerySnapshot actualSnapshot, @Nullable FirestoreException error) {
+                  try {
+                    if (actualSnapshot != null) {
+                      Assert.assertNull(error);
+                      Assert.assertFalse(expectedSnapshots.isEmpty());
+                      Snapshot expectedSnapshot = expectedSnapshots.remove(0);
+                      Assert.assertEquals(convertQuerySnapshot(expectedSnapshot), actualSnapshot);
+                      if (expectedSnapshots.isEmpty()) {
+                        if (!testParameters.getIsError()) {
+                          testCaseFinished.set(null);
+                        }
+                      }
+                    } else { // Error case
+                      Assert.assertNotNull(error);
+                      Assert.assertTrue(expectedSnapshots.isEmpty());
+                      Assert.assertTrue(testParameters.getIsError());
+                      testCaseFinished.set(null);
+                    }
+                  } catch (AssertionError e) {
+                    testCaseFinished.setException(e);
+                  }
+                }
+              });
+
+      testCaseStarted.get();
+
+      for (ListenResponse response : testParameters.getResponsesList()) {
+        streamObserverCapture.getValue().onNext(response);
       }
 
-      Assert.assertFalse(testCase.getIsError());
-
-      apiCall.get();
-      CommitRequest request = commitCapture.getValue();
-      Assert.assertEquals(testCase.getRequest(), request);
-    } catch (Exception e) {
-      Assert.assertTrue(testCase.getIsError());
-    }
-  }
-
-  private void runDeleteTest(DeleteTest testCase) throws ExecutionException, InterruptedException {
-    doReturn(commitResponse(0, testCase.getRequest().getWritesCount()))
-        .when(firestoreMock)
-        .sendRequest(commitCapture.capture(), Matchers.<UnaryCallable<Message, Message>>any());
-
-    if (!testCase.hasPrecondition()) {
-      document(testCase.getDocRefPath()).delete().get();
-    } else {
-      document(testCase.getDocRefPath())
-          .delete(convertPrecondition(testCase.getPrecondition()))
-          .get();
+      testCaseFinished.get();
+      registration.remove();
     }
 
-    CommitRequest request = commitCapture.getValue();
-    Assert.assertEquals(testCase.getRequest(), request);
-  }
+    /** Converts a test snapshot to its API representation. */
+    private QuerySnapshot convertQuerySnapshot(Snapshot testSnapshot) {
+      Timestamp readTime = Timestamp.fromProto(testSnapshot.getReadTime());
 
-  private void runCreateTest(CreateTest testCase) {
-    doReturn(commitResponse(testCase.getRequest().getWritesCount(), 0))
-        .when(firestoreMock)
-        .sendRequest(commitCapture.capture(), Matchers.<UnaryCallable<Message, Message>>any());
+      final List<QueryDocumentSnapshot> documentSnapshots = new ArrayList<>();
 
-    try {
-      ApiFuture<WriteResult> apiCall =
-          document(testCase.getDocRefPath()).create(convertInput(testCase.getJsonData()));
-
-      Assert.assertFalse(testCase.getIsError());
-      apiCall.get();
-
-      CommitRequest request = commitCapture.getValue();
-      Assert.assertEquals(testCase.getRequest(), request);
-
-    } catch (Exception e) {
-      Assert.assertTrue(testCase.getIsError());
-    }
-  }
-
-  private void runSetTest(SetTest testCase) throws InterruptedException {
-    doReturn(commitResponse(testCase.getRequest().getWritesCount(), 0))
-        .when(firestoreMock)
-        .sendRequest(commitCapture.capture(), Matchers.<UnaryCallable<Message, Message>>any());
-    ApiFuture<WriteResult> apiCall;
-
-    try {
-      if (testCase.hasOption() && testCase.getOption().getAll()) {
-        apiCall =
-            document(testCase.getDocRefPath())
-                .set(convertInput(testCase.getJsonData()), SetOptions.merge());
-      } else if (testCase.hasOption() && testCase.getOption().getFieldsCount() > 0) {
-        apiCall =
-            document(testCase.getDocRefPath())
-                .set(
-                    convertInput(testCase.getJsonData()),
-                    SetOptions.mergeFieldPaths(convertPaths(testCase.getOption().getFieldsList())));
-      } else {
-        apiCall = document(testCase.getDocRefPath()).set(convertInput(testCase.getJsonData()));
+      for (Document document : testSnapshot.getDocsList()) {
+        documentSnapshots.add(
+            QueryDocumentSnapshot.fromDocument(
+                firestore, Timestamp.fromProto(testSnapshot.getReadTime()), document));
       }
 
-      Assert.assertFalse(testCase.getIsError());
-      apiCall.get();
+      DocumentSet documentSet =
+          DocumentSet.emptySet(
+              new Comparator<QueryDocumentSnapshot>() {
+                @Override
+                public int compare(QueryDocumentSnapshot o1, QueryDocumentSnapshot o2) {
+                  // Comparator that preserves the insertion order as defined in the test case.
+                  for (QueryDocumentSnapshot snapshot : documentSnapshots) {
+                    if (o1.equals(o2)) {
+                      return 0;
+                    } else if (o1.equals(snapshot)) {
+                      return -1;
+                    } else if (o2.equals(snapshot)) {
+                      return 1;
+                    }
+                  }
 
-      CommitRequest request = commitCapture.getValue();
-      Assert.assertEquals(testCase.getRequest(), request);
-    } catch (Exception e) {
-      Assert.assertTrue(testCase.getIsError());
+                  Assert.fail("Unable to find position for document snapshot");
+                  return 0;
+                }
+              });
+
+      for (QueryDocumentSnapshot snapshot : documentSnapshots) {
+        documentSet = documentSet.add(snapshot);
+      }
+
+      List<DocumentChange> documentChanges = new ArrayList<>();
+
+      for (DocChange documentChange : testSnapshot.getChangesList()) {
+        QueryDocumentSnapshot documentSnapshot =
+            QueryDocumentSnapshot.fromDocument(
+                firestore,
+                Timestamp.fromProto(testSnapshot.getReadTime()),
+                documentChange.getDoc());
+        DocumentChange.Type changeType = convertKind(documentChange.getKind());
+        documentChanges.add(
+            new DocumentChange(
+                documentSnapshot,
+                changeType,
+                documentChange.getOldIndex(),
+                documentChange.getNewIndex()));
+      }
+
+      return QuerySnapshot.withChanges(watchQuery, readTime, documentSet, documentChanges);
     }
-  }
 
-  private void runGetTest(GetTest testCase) throws ExecutionException, InterruptedException {
-    doAnswer(getAllResponse(Collections.<String, Value>emptyMap()))
-        .when(firestoreMock)
-        .streamRequest(
-            getAllCapture.capture(),
-            streamObserverCapture.capture(),
-            Matchers.<ServerStreamingCallable>any());
+    /** Converts a Kind into a DocumentChange.Type */
+    private static DocumentChange.Type convertKind(Kind kind) {
+      DocumentChange.Type changeType = null;
 
-    document(testCase.getDocRefPath()).get().get();
+      switch (kind) {
+        case ADDED:
+          changeType = DocumentChange.Type.ADDED;
+          break;
+        case REMOVED:
+          changeType = DocumentChange.Type.REMOVED;
+          break;
+        case MODIFIED:
+          changeType = DocumentChange.Type.MODIFIED;
+          break;
+        default:
+          Assert.fail("Unable to convert document change for kind: " + kind);
+          break;
+      }
 
-    BatchGetDocumentsRequest request = getAllCapture.getValue();
-
-    Assert.assertEquals(1, request.getDocumentsCount());
-    Assert.assertEquals(testCase.getRequest().getName(), request.getDocuments(0));
+      return changeType;
+    }
   }
 }

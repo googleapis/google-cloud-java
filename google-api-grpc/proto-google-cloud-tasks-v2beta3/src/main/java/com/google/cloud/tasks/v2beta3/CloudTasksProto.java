@@ -84,12 +84,12 @@ public final class CloudTasksProto {
       "\n+google/cloud/tasks/v2beta3/cloudtasks."
           + "proto\022\032google.cloud.tasks.v2beta3\032\034googl"
           + "e/api/annotations.proto\032\031google/api/reso"
-          + "urce.proto\032\033google/protobuf/empty.proto\032"
-          + " google/protobuf/field_mask.proto\032%googl"
-          + "e/cloud/tasks/v2beta3/task.proto\032&google"
-          + "/cloud/tasks/v2beta3/queue.proto\032\036google"
-          + "/iam/v1/iam_policy.proto\032\032google/iam/v1/"
-          + "policy.proto\032\025google/rpc/code.proto\"Z\n\021L"
+          + "urce.proto\032&google/cloud/tasks/v2beta3/q"
+          + "ueue.proto\032%google/cloud/tasks/v2beta3/t"
+          + "ask.proto\032\036google/iam/v1/iam_policy.prot"
+          + "o\032\032google/iam/v1/policy.proto\032\033google/pr"
+          + "otobuf/empty.proto\032 google/protobuf/fiel"
+          + "d_mask.proto\032\025google/rpc/code.proto\"Z\n\021L"
           + "istQueuesRequest\022\016\n\006parent\030\001 \001(\t\022\016\n\006filt"
           + "er\030\002 \001(\t\022\021\n\tpage_size\030\003 \001(\005\022\022\n\npage_toke"
           + "n\030\004 \001(\t\"`\n\022ListQueuesResponse\0221\n\006queues\030"
@@ -202,12 +202,12 @@ public final class CloudTasksProto {
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.api.AnnotationsProto.getDescriptor(),
           com.google.api.ResourceProto.getDescriptor(),
-          com.google.protobuf.EmptyProto.getDescriptor(),
-          com.google.protobuf.FieldMaskProto.getDescriptor(),
-          com.google.cloud.tasks.v2beta3.TaskProto.getDescriptor(),
           com.google.cloud.tasks.v2beta3.QueueProto.getDescriptor(),
+          com.google.cloud.tasks.v2beta3.TaskProto.getDescriptor(),
           com.google.iam.v1.IamPolicyProto.getDescriptor(),
           com.google.iam.v1.PolicyProto.getDescriptor(),
+          com.google.protobuf.EmptyProto.getDescriptor(),
+          com.google.protobuf.FieldMaskProto.getDescriptor(),
           com.google.rpc.CodeProto.getDescriptor(),
         },
         assigner);
@@ -338,12 +338,12 @@ public final class CloudTasksProto {
         descriptor, registry);
     com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
-    com.google.protobuf.EmptyProto.getDescriptor();
-    com.google.protobuf.FieldMaskProto.getDescriptor();
-    com.google.cloud.tasks.v2beta3.TaskProto.getDescriptor();
     com.google.cloud.tasks.v2beta3.QueueProto.getDescriptor();
+    com.google.cloud.tasks.v2beta3.TaskProto.getDescriptor();
     com.google.iam.v1.IamPolicyProto.getDescriptor();
     com.google.iam.v1.PolicyProto.getDescriptor();
+    com.google.protobuf.EmptyProto.getDescriptor();
+    com.google.protobuf.FieldMaskProto.getDescriptor();
     com.google.rpc.CodeProto.getDescriptor();
   }
 

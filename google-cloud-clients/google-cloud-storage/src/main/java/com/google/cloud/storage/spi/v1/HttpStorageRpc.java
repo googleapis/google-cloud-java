@@ -33,11 +33,9 @@ import com.google.api.client.http.HttpResponse;
 import com.google.api.client.http.HttpResponseException;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.InputStreamContent;
-import com.google.api.client.http.LowLevelHttpResponse;
 import com.google.api.client.http.json.JsonHttpContent;
 import com.google.api.client.json.JsonFactory;
 import com.google.api.client.json.jackson2.JacksonFactory;
-import com.google.api.client.util.IOUtils;
 import com.google.api.services.storage.Storage;
 import com.google.api.services.storage.Storage.Objects.Get;
 import com.google.api.services.storage.Storage.Objects.Insert;
@@ -53,7 +51,6 @@ import com.google.api.services.storage.model.Policy;
 import com.google.api.services.storage.model.ServiceAccount;
 import com.google.api.services.storage.model.StorageObject;
 import com.google.api.services.storage.model.TestIamPermissionsResponse;
-import com.google.cloud.BaseServiceException;
 import com.google.cloud.Tuple;
 import com.google.cloud.http.CensusHttpModule;
 import com.google.cloud.http.HttpTransportOptions;
@@ -75,19 +72,20 @@ import io.opencensus.trace.Tracing;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.lang.reflect.Field;
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
-import org.apache.http.HttpStatus;
 
 public class HttpStorageRpc implements StorageRpc {
   public static final String DEFAULT_PROJECTION = "full";
   public static final String NO_ACL_PROJECTION = "noAcl";
   private static final String ENCRYPTION_KEY_PREFIX = "x-goog-encryption-";
   private static final String SOURCE_ENCRYPTION_KEY_PREFIX = "x-goog-copy-source-encryption-";
+
+  // declare this HttpStatus code here as it's not included in java.net.HttpURLConnection
+  private static final int SC_REQUESTED_RANGE_NOT_SATISFIABLE = 416;
 
   private final StorageOptions options;
   private final Storage storage;
@@ -665,30 +663,14 @@ public class HttpStorageRpc implements StorageRpc {
       requestHeaders.setRange(range.toString());
       setEncryptionHeaders(requestHeaders, ENCRYPTION_KEY_PREFIX, options);
       ByteArrayOutputStream output = new ByteArrayOutputStream(bytes);
-      HttpResponse httpResponse = req.executeMedia();
-      // todo(mziccard) remove when
-      // https://github.com/googleapis/google-cloud-java/issues/982 is fixed
-      String contentEncoding = httpResponse.getContentEncoding();
-      if (contentEncoding != null && contentEncoding.contains("gzip")) {
-        try {
-          Field responseField = httpResponse.getClass().getDeclaredField("response");
-          responseField.setAccessible(true);
-          LowLevelHttpResponse lowLevelHttpResponse =
-              (LowLevelHttpResponse) responseField.get(httpResponse);
-          IOUtils.copy(lowLevelHttpResponse.getContent(), output);
-        } catch (IllegalAccessException | NoSuchFieldException ex) {
-          throw new StorageException(
-              BaseServiceException.UNKNOWN_CODE, "Error parsing gzip response", ex);
-        }
-      } else {
-        httpResponse.download(output);
-      }
+      req.setReturnRawInputStream(true);
+      req.executeMedia().download(output);
       String etag = req.getLastResponseHeaders().getETag();
       return Tuple.of(etag, output.toByteArray());
     } catch (IOException ex) {
       span.setStatus(Status.UNKNOWN.withDescription(ex.getMessage()));
       StorageException serviceException = translate(ex);
-      if (serviceException.getCode() == HttpStatus.SC_REQUESTED_RANGE_NOT_SATISFIABLE) {
+      if (serviceException.getCode() == SC_REQUESTED_RANGE_NOT_SATISFIABLE) {
         return Tuple.of(null, new byte[0]);
       }
       throw serviceException;

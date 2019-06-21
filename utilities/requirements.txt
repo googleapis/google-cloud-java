@@ -2,5 +2,5 @@ attr
 gcp-releasetool
 gcp-synthtool
 jinja2
-lxml~=4.2
-typing~=3.6
+lxml==4.3.4
+typing==3.6.6

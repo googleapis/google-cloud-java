@@ -307,7 +307,9 @@ public class DiskClient implements BackgroundResource {
    * </code></pre>
    *
    * @param disk Name of the persistent disk to snapshot.
-   * @param guestFlush
+   * @param guestFlush [Input Only] Specifies to create an application consistent snapshot by
+   *     informing the OS to prepare for the snapshot process. Currently only supported on Windows
+   *     instances using the Volume Shadow Copy Service (VSS).
    * @param snapshotResource A persistent disk snapshot resource. (== resource_for beta.snapshots
    *     ==) (== resource_for v1.snapshots ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -341,7 +343,9 @@ public class DiskClient implements BackgroundResource {
    * </code></pre>
    *
    * @param disk Name of the persistent disk to snapshot.
-   * @param guestFlush
+   * @param guestFlush [Input Only] Specifies to create an application consistent snapshot by
+   *     informing the OS to prepare for the snapshot process. Currently only supported on Windows
+   *     instances using the Volume Shadow Copy Service (VSS).
    * @param snapshotResource A persistent disk snapshot resource. (== resource_for beta.snapshots
    *     ==) (== resource_for v1.snapshots ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails

@@ -205,7 +205,7 @@ public class CloudRedisClient implements BackgroundResource {
    * </code></pre>
    *
    * @param parent Required. The resource name of the instance location using the form:
-   *     `projects/{project_id}/locations/{location_id}` where `location_id` refers to a GCP region
+   *     `projects/{project_id}/locations/{location_id}` where `location_id` refers to a GCP region.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListInstancesPagedResponse listInstances(LocationName parent) {
@@ -239,7 +239,7 @@ public class CloudRedisClient implements BackgroundResource {
    * </code></pre>
    *
    * @param parent Required. The resource name of the instance location using the form:
-   *     `projects/{project_id}/locations/{location_id}` where `location_id` refers to a GCP region
+   *     `projects/{project_id}/locations/{location_id}` where `location_id` refers to a GCP region.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListInstancesPagedResponse listInstances(String parent) {
@@ -364,7 +364,7 @@ public class CloudRedisClient implements BackgroundResource {
    *
    * @param name Required. Redis instance resource name using the form:
    *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}` where `location_id`
-   *     refers to a GCP region
+   *     refers to a GCP region.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Instance getInstance(InstanceName name) {
@@ -389,7 +389,7 @@ public class CloudRedisClient implements BackgroundResource {
    *
    * @param name Required. Redis instance resource name using the form:
    *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}` where `location_id`
-   *     refers to a GCP region
+   *     refers to a GCP region.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Instance getInstance(String name) {
@@ -475,7 +475,7 @@ public class CloudRedisClient implements BackgroundResource {
    * </code></pre>
    *
    * @param parent Required. The resource name of the instance location using the form:
-   *     `projects/{project_id}/locations/{location_id}` where `location_id` refers to a GCP region
+   *     `projects/{project_id}/locations/{location_id}` where `location_id` refers to a GCP region.
    * @param instanceId Required. The logical name of the Redis instance in the customer project with
    *     the following restrictions:
    *     <p>&#42; Must contain only lowercase letters, numbers, and hyphens. &#42; Must start with a
@@ -530,7 +530,7 @@ public class CloudRedisClient implements BackgroundResource {
    * </code></pre>
    *
    * @param parent Required. The resource name of the instance location using the form:
-   *     `projects/{project_id}/locations/{location_id}` where `location_id` refers to a GCP region
+   *     `projects/{project_id}/locations/{location_id}` where `location_id` refers to a GCP region.
    * @param instanceId Required. The logical name of the Redis instance in the customer project with
    *     the following restrictions:
    *     <p>&#42; Must contain only lowercase letters, numbers, and hyphens. &#42; Must start with a
@@ -703,11 +703,9 @@ public class CloudRedisClient implements BackgroundResource {
    *   FieldMask updateMask = FieldMask.newBuilder()
    *     .addAllPaths(paths)
    *     .build();
-   *   String displayName = "UpdatedDisplayName";
-   *   int memorySizeGb = 4;
+   *   String displayName = " instance.memory_size_gb=4";
    *   Instance instance = Instance.newBuilder()
    *     .setDisplayName(displayName)
-   *     .setMemorySizeGb(memorySizeGb)
    *     .build();
    *   Instance response = cloudRedisClient.updateInstanceAsync(updateMask, instance).get();
    * }
@@ -748,11 +746,9 @@ public class CloudRedisClient implements BackgroundResource {
    *   FieldMask updateMask = FieldMask.newBuilder()
    *     .addAllPaths(paths)
    *     .build();
-   *   String displayName = "UpdatedDisplayName";
-   *   int memorySizeGb = 4;
+   *   String displayName = " instance.memory_size_gb=4";
    *   Instance instance = Instance.newBuilder()
    *     .setDisplayName(displayName)
-   *     .setMemorySizeGb(memorySizeGb)
    *     .build();
    *   UpdateInstanceRequest request = UpdateInstanceRequest.newBuilder()
    *     .setUpdateMask(updateMask)
@@ -790,11 +786,9 @@ public class CloudRedisClient implements BackgroundResource {
    *   FieldMask updateMask = FieldMask.newBuilder()
    *     .addAllPaths(paths)
    *     .build();
-   *   String displayName = "UpdatedDisplayName";
-   *   int memorySizeGb = 4;
+   *   String displayName = " instance.memory_size_gb=4";
    *   Instance instance = Instance.newBuilder()
    *     .setDisplayName(displayName)
-   *     .setMemorySizeGb(memorySizeGb)
    *     .build();
    *   UpdateInstanceRequest request = UpdateInstanceRequest.newBuilder()
    *     .setUpdateMask(updateMask)
@@ -830,11 +824,9 @@ public class CloudRedisClient implements BackgroundResource {
    *   FieldMask updateMask = FieldMask.newBuilder()
    *     .addAllPaths(paths)
    *     .build();
-   *   String displayName = "UpdatedDisplayName";
-   *   int memorySizeGb = 4;
+   *   String displayName = " instance.memory_size_gb=4";
    *   Instance instance = Instance.newBuilder()
    *     .setDisplayName(displayName)
-   *     .setMemorySizeGb(memorySizeGb)
    *     .build();
    *   UpdateInstanceRequest request = UpdateInstanceRequest.newBuilder()
    *     .setUpdateMask(updateMask)
@@ -852,6 +844,417 @@ public class CloudRedisClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
+   * Import a Redis RDB snapshot file from Cloud Storage into a Redis instance.
+   *
+   * <p>Redis may stop serving during this operation. Instance state will be IMPORTING for entire
+   * operation. When complete, the instance will contain only data from the imported file.
+   *
+   * <p>The returned operation is automatically deleted after a few hours, so there is no need to
+   * call DeleteOperation.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
+   *   String formattedName = InstanceName.format("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+   *   InputConfig inputConfig = InputConfig.newBuilder().build();
+   *   Instance response = cloudRedisClient.importInstanceAsync(formattedName, inputConfig).get();
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Redis instance resource name using the form:
+   *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}` where `location_id`
+   *     refers to a GCP region.
+   * @param inputConfig Required. Specify data to be imported.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Instance, OperationMetadata> importInstanceAsync(
+      String name, InputConfig inputConfig) {
+
+    ImportInstanceRequest request =
+        ImportInstanceRequest.newBuilder().setName(name).setInputConfig(inputConfig).build();
+    return importInstanceAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Import a Redis RDB snapshot file from Cloud Storage into a Redis instance.
+   *
+   * <p>Redis may stop serving during this operation. Instance state will be IMPORTING for entire
+   * operation. When complete, the instance will contain only data from the imported file.
+   *
+   * <p>The returned operation is automatically deleted after a few hours, so there is no need to
+   * call DeleteOperation.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
+   *   String formattedName = InstanceName.format("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+   *   InputConfig inputConfig = InputConfig.newBuilder().build();
+   *   ImportInstanceRequest request = ImportInstanceRequest.newBuilder()
+   *     .setName(formattedName)
+   *     .setInputConfig(inputConfig)
+   *     .build();
+   *   Instance response = cloudRedisClient.importInstanceAsync(request).get();
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Instance, OperationMetadata> importInstanceAsync(
+      ImportInstanceRequest request) {
+    return importInstanceOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Import a Redis RDB snapshot file from Cloud Storage into a Redis instance.
+   *
+   * <p>Redis may stop serving during this operation. Instance state will be IMPORTING for entire
+   * operation. When complete, the instance will contain only data from the imported file.
+   *
+   * <p>The returned operation is automatically deleted after a few hours, so there is no need to
+   * call DeleteOperation.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
+   *   String formattedName = InstanceName.format("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+   *   InputConfig inputConfig = InputConfig.newBuilder().build();
+   *   ImportInstanceRequest request = ImportInstanceRequest.newBuilder()
+   *     .setName(formattedName)
+   *     .setInputConfig(inputConfig)
+   *     .build();
+   *   OperationFuture&lt;Instance, OperationMetadata&gt; future = cloudRedisClient.importInstanceOperationCallable().futureCall(request);
+   *   // Do something
+   *   Instance response = future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public final OperationCallable<ImportInstanceRequest, Instance, OperationMetadata>
+      importInstanceOperationCallable() {
+    return stub.importInstanceOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Import a Redis RDB snapshot file from Cloud Storage into a Redis instance.
+   *
+   * <p>Redis may stop serving during this operation. Instance state will be IMPORTING for entire
+   * operation. When complete, the instance will contain only data from the imported file.
+   *
+   * <p>The returned operation is automatically deleted after a few hours, so there is no need to
+   * call DeleteOperation.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
+   *   String formattedName = InstanceName.format("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+   *   InputConfig inputConfig = InputConfig.newBuilder().build();
+   *   ImportInstanceRequest request = ImportInstanceRequest.newBuilder()
+   *     .setName(formattedName)
+   *     .setInputConfig(inputConfig)
+   *     .build();
+   *   ApiFuture&lt;Operation&gt; future = cloudRedisClient.importInstanceCallable().futureCall(request);
+   *   // Do something
+   *   Operation response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<ImportInstanceRequest, Operation> importInstanceCallable() {
+    return stub.importInstanceCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Export Redis instance data into a Redis RDB format file in Cloud Storage.
+   *
+   * <p>Redis will continue serving during this operation.
+   *
+   * <p>The returned operation is automatically deleted after a few hours, so there is no need to
+   * call DeleteOperation.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
+   *   String formattedName = InstanceName.format("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+   *   OutputConfig outputConfig = OutputConfig.newBuilder().build();
+   *   Instance response = cloudRedisClient.exportInstanceAsync(formattedName, outputConfig).get();
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Redis instance resource name using the form:
+   *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}` where `location_id`
+   *     refers to a GCP region.
+   * @param outputConfig Required. Specify data to be exported.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Instance, OperationMetadata> exportInstanceAsync(
+      String name, OutputConfig outputConfig) {
+
+    ExportInstanceRequest request =
+        ExportInstanceRequest.newBuilder().setName(name).setOutputConfig(outputConfig).build();
+    return exportInstanceAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Export Redis instance data into a Redis RDB format file in Cloud Storage.
+   *
+   * <p>Redis will continue serving during this operation.
+   *
+   * <p>The returned operation is automatically deleted after a few hours, so there is no need to
+   * call DeleteOperation.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
+   *   String formattedName = InstanceName.format("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+   *   OutputConfig outputConfig = OutputConfig.newBuilder().build();
+   *   ExportInstanceRequest request = ExportInstanceRequest.newBuilder()
+   *     .setName(formattedName)
+   *     .setOutputConfig(outputConfig)
+   *     .build();
+   *   Instance response = cloudRedisClient.exportInstanceAsync(request).get();
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Instance, OperationMetadata> exportInstanceAsync(
+      ExportInstanceRequest request) {
+    return exportInstanceOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Export Redis instance data into a Redis RDB format file in Cloud Storage.
+   *
+   * <p>Redis will continue serving during this operation.
+   *
+   * <p>The returned operation is automatically deleted after a few hours, so there is no need to
+   * call DeleteOperation.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
+   *   String formattedName = InstanceName.format("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+   *   OutputConfig outputConfig = OutputConfig.newBuilder().build();
+   *   ExportInstanceRequest request = ExportInstanceRequest.newBuilder()
+   *     .setName(formattedName)
+   *     .setOutputConfig(outputConfig)
+   *     .build();
+   *   OperationFuture&lt;Instance, OperationMetadata&gt; future = cloudRedisClient.exportInstanceOperationCallable().futureCall(request);
+   *   // Do something
+   *   Instance response = future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public final OperationCallable<ExportInstanceRequest, Instance, OperationMetadata>
+      exportInstanceOperationCallable() {
+    return stub.exportInstanceOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Export Redis instance data into a Redis RDB format file in Cloud Storage.
+   *
+   * <p>Redis will continue serving during this operation.
+   *
+   * <p>The returned operation is automatically deleted after a few hours, so there is no need to
+   * call DeleteOperation.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
+   *   String formattedName = InstanceName.format("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+   *   OutputConfig outputConfig = OutputConfig.newBuilder().build();
+   *   ExportInstanceRequest request = ExportInstanceRequest.newBuilder()
+   *     .setName(formattedName)
+   *     .setOutputConfig(outputConfig)
+   *     .build();
+   *   ApiFuture&lt;Operation&gt; future = cloudRedisClient.exportInstanceCallable().futureCall(request);
+   *   // Do something
+   *   Operation response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<ExportInstanceRequest, Operation> exportInstanceCallable() {
+    return stub.exportInstanceCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Initiates a failover of the master node to current replica node for a specific STANDARD tier
+   * Cloud Memorystore for Redis instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
+   *   InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+   *   FailoverInstanceRequest.DataProtectionMode dataProtectionMode = FailoverInstanceRequest.DataProtectionMode.DATA_PROTECTION_MODE_UNSPECIFIED;
+   *   Instance response = cloudRedisClient.failoverInstanceAsync(name, dataProtectionMode).get();
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Redis instance resource name using the form:
+   *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}` where `location_id`
+   *     refers to a GCP region.
+   * @param dataProtectionMode Optional. Available data protection modes that the user can choose.
+   *     If it's unspecified, data protection mode will be LIMITED_DATA_LOSS by default.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Instance, OperationMetadata> failoverInstanceAsync(
+      InstanceName name, FailoverInstanceRequest.DataProtectionMode dataProtectionMode) {
+
+    FailoverInstanceRequest request =
+        FailoverInstanceRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setDataProtectionMode(dataProtectionMode)
+            .build();
+    return failoverInstanceAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Initiates a failover of the master node to current replica node for a specific STANDARD tier
+   * Cloud Memorystore for Redis instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
+   *   InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+   *   FailoverInstanceRequest.DataProtectionMode dataProtectionMode = FailoverInstanceRequest.DataProtectionMode.DATA_PROTECTION_MODE_UNSPECIFIED;
+   *   Instance response = cloudRedisClient.failoverInstanceAsync(name.toString(), dataProtectionMode).get();
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Redis instance resource name using the form:
+   *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}` where `location_id`
+   *     refers to a GCP region.
+   * @param dataProtectionMode Optional. Available data protection modes that the user can choose.
+   *     If it's unspecified, data protection mode will be LIMITED_DATA_LOSS by default.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Instance, OperationMetadata> failoverInstanceAsync(
+      String name, FailoverInstanceRequest.DataProtectionMode dataProtectionMode) {
+
+    FailoverInstanceRequest request =
+        FailoverInstanceRequest.newBuilder()
+            .setName(name)
+            .setDataProtectionMode(dataProtectionMode)
+            .build();
+    return failoverInstanceAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Initiates a failover of the master node to current replica node for a specific STANDARD tier
+   * Cloud Memorystore for Redis instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
+   *   InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+   *   FailoverInstanceRequest.DataProtectionMode dataProtectionMode = FailoverInstanceRequest.DataProtectionMode.DATA_PROTECTION_MODE_UNSPECIFIED;
+   *   FailoverInstanceRequest request = FailoverInstanceRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .setDataProtectionMode(dataProtectionMode)
+   *     .build();
+   *   Instance response = cloudRedisClient.failoverInstanceAsync(request).get();
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Instance, OperationMetadata> failoverInstanceAsync(
+      FailoverInstanceRequest request) {
+    return failoverInstanceOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Initiates a failover of the master node to current replica node for a specific STANDARD tier
+   * Cloud Memorystore for Redis instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
+   *   InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+   *   FailoverInstanceRequest.DataProtectionMode dataProtectionMode = FailoverInstanceRequest.DataProtectionMode.DATA_PROTECTION_MODE_UNSPECIFIED;
+   *   FailoverInstanceRequest request = FailoverInstanceRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .setDataProtectionMode(dataProtectionMode)
+   *     .build();
+   *   OperationFuture&lt;Instance, OperationMetadata&gt; future = cloudRedisClient.failoverInstanceOperationCallable().futureCall(request);
+   *   // Do something
+   *   Instance response = future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public final OperationCallable<FailoverInstanceRequest, Instance, OperationMetadata>
+      failoverInstanceOperationCallable() {
+    return stub.failoverInstanceOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Initiates a failover of the master node to current replica node for a specific STANDARD tier
+   * Cloud Memorystore for Redis instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
+   *   InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+   *   FailoverInstanceRequest.DataProtectionMode dataProtectionMode = FailoverInstanceRequest.DataProtectionMode.DATA_PROTECTION_MODE_UNSPECIFIED;
+   *   FailoverInstanceRequest request = FailoverInstanceRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .setDataProtectionMode(dataProtectionMode)
+   *     .build();
+   *   ApiFuture&lt;Operation&gt; future = cloudRedisClient.failoverInstanceCallable().futureCall(request);
+   *   // Do something
+   *   Operation response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<FailoverInstanceRequest, Operation> failoverInstanceCallable() {
+    return stub.failoverInstanceCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
    * Deletes a specific Redis instance. Instance stops serving and data is deleted.
    *
    * <p>Sample code:
@@ -865,7 +1268,7 @@ public class CloudRedisClient implements BackgroundResource {
    *
    * @param name Required. Redis instance resource name using the form:
    *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}` where `location_id`
-   *     refers to a GCP region
+   *     refers to a GCP region.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi(
@@ -892,7 +1295,7 @@ public class CloudRedisClient implements BackgroundResource {
    *
    * @param name Required. Redis instance resource name using the form:
    *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}` where `location_id`
-   *     refers to a GCP region
+   *     refers to a GCP region.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi(
@@ -973,157 +1376,6 @@ public class CloudRedisClient implements BackgroundResource {
    */
   public final UnaryCallable<DeleteInstanceRequest, Operation> deleteInstanceCallable() {
     return stub.deleteInstanceCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Failover the master role to current replica node against a specific STANDARD tier redis
-   * instance.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
-   *   InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
-   *   FailoverInstanceRequest.DataProtectionMode dataProtectionMode = FailoverInstanceRequest.DataProtectionMode.DATA_PROTECTION_MODE_UNSPECIFIED;
-   *   Instance response = cloudRedisClient.failoverInstanceAsync(name, dataProtectionMode).get();
-   * }
-   * </code></pre>
-   *
-   * @param name Required. Redis instance resource name using the form:
-   *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}` where `location_id`
-   *     refers to a GCP region
-   * @param dataProtectionMode Optional. Available data protection modes that the user can choose.
-   *     If it's unspecified, data protection mode will be LIMITED_DATA_LOSS by default.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public final OperationFuture<Instance, OperationMetadata> failoverInstanceAsync(
-      InstanceName name, FailoverInstanceRequest.DataProtectionMode dataProtectionMode) {
-
-    FailoverInstanceRequest request =
-        FailoverInstanceRequest.newBuilder()
-            .setName(name == null ? null : name.toString())
-            .setDataProtectionMode(dataProtectionMode)
-            .build();
-    return failoverInstanceAsync(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Failover the master role to current replica node against a specific STANDARD tier redis
-   * instance.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
-   *   InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
-   *   FailoverInstanceRequest.DataProtectionMode dataProtectionMode = FailoverInstanceRequest.DataProtectionMode.DATA_PROTECTION_MODE_UNSPECIFIED;
-   *   Instance response = cloudRedisClient.failoverInstanceAsync(name.toString(), dataProtectionMode).get();
-   * }
-   * </code></pre>
-   *
-   * @param name Required. Redis instance resource name using the form:
-   *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}` where `location_id`
-   *     refers to a GCP region
-   * @param dataProtectionMode Optional. Available data protection modes that the user can choose.
-   *     If it's unspecified, data protection mode will be LIMITED_DATA_LOSS by default.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public final OperationFuture<Instance, OperationMetadata> failoverInstanceAsync(
-      String name, FailoverInstanceRequest.DataProtectionMode dataProtectionMode) {
-
-    FailoverInstanceRequest request =
-        FailoverInstanceRequest.newBuilder()
-            .setName(name)
-            .setDataProtectionMode(dataProtectionMode)
-            .build();
-    return failoverInstanceAsync(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Failover the master role to current replica node against a specific STANDARD tier redis
-   * instance.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
-   *   InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
-   *   FailoverInstanceRequest.DataProtectionMode dataProtectionMode = FailoverInstanceRequest.DataProtectionMode.DATA_PROTECTION_MODE_UNSPECIFIED;
-   *   FailoverInstanceRequest request = FailoverInstanceRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .setDataProtectionMode(dataProtectionMode)
-   *     .build();
-   *   Instance response = cloudRedisClient.failoverInstanceAsync(request).get();
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public final OperationFuture<Instance, OperationMetadata> failoverInstanceAsync(
-      FailoverInstanceRequest request) {
-    return failoverInstanceOperationCallable().futureCall(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Failover the master role to current replica node against a specific STANDARD tier redis
-   * instance.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
-   *   InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
-   *   FailoverInstanceRequest.DataProtectionMode dataProtectionMode = FailoverInstanceRequest.DataProtectionMode.DATA_PROTECTION_MODE_UNSPECIFIED;
-   *   FailoverInstanceRequest request = FailoverInstanceRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .setDataProtectionMode(dataProtectionMode)
-   *     .build();
-   *   OperationFuture&lt;Instance, OperationMetadata&gt; future = cloudRedisClient.failoverInstanceOperationCallable().futureCall(request);
-   *   // Do something
-   *   Instance response = future.get();
-   * }
-   * </code></pre>
-   */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public final OperationCallable<FailoverInstanceRequest, Instance, OperationMetadata>
-      failoverInstanceOperationCallable() {
-    return stub.failoverInstanceOperationCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Failover the master role to current replica node against a specific STANDARD tier redis
-   * instance.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
-   *   InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
-   *   FailoverInstanceRequest.DataProtectionMode dataProtectionMode = FailoverInstanceRequest.DataProtectionMode.DATA_PROTECTION_MODE_UNSPECIFIED;
-   *   FailoverInstanceRequest request = FailoverInstanceRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .setDataProtectionMode(dataProtectionMode)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = cloudRedisClient.failoverInstanceCallable().futureCall(request);
-   *   // Do something
-   *   Operation response = future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<FailoverInstanceRequest, Operation> failoverInstanceCallable() {
-    return stub.failoverInstanceCallable();
   }
 
   @Override

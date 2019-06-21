@@ -180,7 +180,7 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
    * <pre>
    * Further describes this batch predict's output.
    * Supplements
-   * [BatchPredictionOutputConfig][google.cloud.automl.v1beta1.BatchPredictionOutputConfig].
+   * [BatchPredictOutputConfig][google.cloud.automl.v1beta1.BatchPredictOutputConfig].
    * </pre>
    *
    * Protobuf type {@code
@@ -635,7 +635,7 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
      * <pre>
      * Further describes this batch predict's output.
      * Supplements
-     * [BatchPredictionOutputConfig][google.cloud.automl.v1beta1.BatchPredictionOutputConfig].
+     * [BatchPredictOutputConfig][google.cloud.automl.v1beta1.BatchPredictOutputConfig].
      * </pre>
      *
      * Protobuf type {@code

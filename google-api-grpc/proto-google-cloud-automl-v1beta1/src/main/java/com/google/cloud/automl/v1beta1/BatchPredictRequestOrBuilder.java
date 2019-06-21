@@ -127,6 +127,16 @@ public interface BatchPredictRequestOrBuilder
    *        type, the quality of it depends on training data, but there are no
    *        metrics provided to describe that quality. The default is
    *        "false".
+   * *  For Video Object Tracking:
+   *    `score_threshold` - (float) When Model detects objects on video frames,
+   *        it will only produce bounding boxes which have at least this
+   *        confidence score. Value in 0 to 1 range, default is 0.5.
+   *    `max_bounding_box_count` - (int64) No more than this number of bounding
+   *        boxes will be returned per frame. Default is 100, the requested
+   *        value may be limited by server.
+   *    `min_bounding_box_size` - (float) Only bounding boxes with shortest edge
+   *      at least that long as a relative value of video frame size will be
+   *      returned. Value in 0 to 1 range. Default is 0.
    * </pre>
    *
    * <code>map&lt;string, string&gt; params = 5;</code>
@@ -165,6 +175,16 @@ public interface BatchPredictRequestOrBuilder
    *        type, the quality of it depends on training data, but there are no
    *        metrics provided to describe that quality. The default is
    *        "false".
+   * *  For Video Object Tracking:
+   *    `score_threshold` - (float) When Model detects objects on video frames,
+   *        it will only produce bounding boxes which have at least this
+   *        confidence score. Value in 0 to 1 range, default is 0.5.
+   *    `max_bounding_box_count` - (int64) No more than this number of bounding
+   *        boxes will be returned per frame. Default is 100, the requested
+   *        value may be limited by server.
+   *    `min_bounding_box_size` - (float) Only bounding boxes with shortest edge
+   *      at least that long as a relative value of video frame size will be
+   *      returned. Value in 0 to 1 range. Default is 0.
    * </pre>
    *
    * <code>map&lt;string, string&gt; params = 5;</code>
@@ -206,6 +226,16 @@ public interface BatchPredictRequestOrBuilder
    *        type, the quality of it depends on training data, but there are no
    *        metrics provided to describe that quality. The default is
    *        "false".
+   * *  For Video Object Tracking:
+   *    `score_threshold` - (float) When Model detects objects on video frames,
+   *        it will only produce bounding boxes which have at least this
+   *        confidence score. Value in 0 to 1 range, default is 0.5.
+   *    `max_bounding_box_count` - (int64) No more than this number of bounding
+   *        boxes will be returned per frame. Default is 100, the requested
+   *        value may be limited by server.
+   *    `min_bounding_box_size` - (float) Only bounding boxes with shortest edge
+   *      at least that long as a relative value of video frame size will be
+   *      returned. Value in 0 to 1 range. Default is 0.
    * </pre>
    *
    * <code>map&lt;string, string&gt; params = 5;</code>
@@ -244,6 +274,16 @@ public interface BatchPredictRequestOrBuilder
    *        type, the quality of it depends on training data, but there are no
    *        metrics provided to describe that quality. The default is
    *        "false".
+   * *  For Video Object Tracking:
+   *    `score_threshold` - (float) When Model detects objects on video frames,
+   *        it will only produce bounding boxes which have at least this
+   *        confidence score. Value in 0 to 1 range, default is 0.5.
+   *    `max_bounding_box_count` - (int64) No more than this number of bounding
+   *        boxes will be returned per frame. Default is 100, the requested
+   *        value may be limited by server.
+   *    `min_bounding_box_size` - (float) Only bounding boxes with shortest edge
+   *      at least that long as a relative value of video frame size will be
+   *      returned. Value in 0 to 1 range. Default is 0.
    * </pre>
    *
    * <code>map&lt;string, string&gt; params = 5;</code>
@@ -282,6 +322,16 @@ public interface BatchPredictRequestOrBuilder
    *        type, the quality of it depends on training data, but there are no
    *        metrics provided to describe that quality. The default is
    *        "false".
+   * *  For Video Object Tracking:
+   *    `score_threshold` - (float) When Model detects objects on video frames,
+   *        it will only produce bounding boxes which have at least this
+   *        confidence score. Value in 0 to 1 range, default is 0.5.
+   *    `max_bounding_box_count` - (int64) No more than this number of bounding
+   *        boxes will be returned per frame. Default is 100, the requested
+   *        value may be limited by server.
+   *    `min_bounding_box_size` - (float) Only bounding boxes with shortest edge
+   *      at least that long as a relative value of video frame size will be
+   *      returned. Value in 0 to 1 range. Default is 0.
    * </pre>
    *
    * <code>map&lt;string, string&gt; params = 5;</code>

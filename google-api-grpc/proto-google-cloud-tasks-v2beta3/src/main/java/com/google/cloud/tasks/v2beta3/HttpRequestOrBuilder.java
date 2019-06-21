@@ -238,8 +238,8 @@ public interface HttpRequestOrBuilder
    * [OAuth token](https://developers.google.com/identity/protocols/OAuth2)
    * will be generated and attached as an `Authorization` header in the HTTP
    * request.
-   * This type of authorization should be used when sending requests to a GCP
-   * endpoint.
+   * This type of authorization should generally only be used when calling
+   * Google APIs hosted on *.googleapis.com.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.OAuthToken oauth_token = 5;</code>
@@ -253,8 +253,8 @@ public interface HttpRequestOrBuilder
    * [OAuth token](https://developers.google.com/identity/protocols/OAuth2)
    * will be generated and attached as an `Authorization` header in the HTTP
    * request.
-   * This type of authorization should be used when sending requests to a GCP
-   * endpoint.
+   * This type of authorization should generally only be used when calling
+   * Google APIs hosted on *.googleapis.com.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.OAuthToken oauth_token = 5;</code>
@@ -268,8 +268,8 @@ public interface HttpRequestOrBuilder
    * [OAuth token](https://developers.google.com/identity/protocols/OAuth2)
    * will be generated and attached as an `Authorization` header in the HTTP
    * request.
-   * This type of authorization should be used when sending requests to a GCP
-   * endpoint.
+   * This type of authorization should generally only be used when calling
+   * Google APIs hosted on *.googleapis.com.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.OAuthToken oauth_token = 5;</code>
@@ -284,8 +284,9 @@ public interface HttpRequestOrBuilder
    * [OIDC](https://developers.google.com/identity/protocols/OpenIDConnect)
    * token will be generated and attached as an `Authorization` header in the
    * HTTP request.
-   * This type of authorization should be used when sending requests to third
-   * party endpoints.
+   * This type of authorization can be used for many scenarios, including
+   * calling Cloud Run, or endpoints where you intend to validate the token
+   * yourself.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.OidcToken oidc_token = 6;</code>
@@ -299,8 +300,9 @@ public interface HttpRequestOrBuilder
    * [OIDC](https://developers.google.com/identity/protocols/OpenIDConnect)
    * token will be generated and attached as an `Authorization` header in the
    * HTTP request.
-   * This type of authorization should be used when sending requests to third
-   * party endpoints.
+   * This type of authorization can be used for many scenarios, including
+   * calling Cloud Run, or endpoints where you intend to validate the token
+   * yourself.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.OidcToken oidc_token = 6;</code>
@@ -314,8 +316,9 @@ public interface HttpRequestOrBuilder
    * [OIDC](https://developers.google.com/identity/protocols/OpenIDConnect)
    * token will be generated and attached as an `Authorization` header in the
    * HTTP request.
-   * This type of authorization should be used when sending requests to third
-   * party endpoints.
+   * This type of authorization can be used for many scenarios, including
+   * calling Cloud Run, or endpoints where you intend to validate the token
+   * yourself.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.OidcToken oidc_token = 6;</code>

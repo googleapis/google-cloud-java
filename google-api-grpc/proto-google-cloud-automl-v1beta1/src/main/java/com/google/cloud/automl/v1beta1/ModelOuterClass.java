@@ -26,14 +26,14 @@ public final class ModelOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\'google/cloud/automl/v1beta1/model.prot"
-          + "o\022\033google.cloud.automl.v1beta1\032\034google/a"
-          + "pi/annotations.proto\032\'google/cloud/autom"
-          + "l/v1beta1/image.proto\032(google/cloud/auto"
-          + "ml/v1beta1/tables.proto\032&google/cloud/au"
-          + "toml/v1beta1/text.proto\032-google/cloud/au"
-          + "toml/v1beta1/translation.proto\032\'google/c"
-          + "loud/automl/v1beta1/video.proto\032\037google/"
-          + "protobuf/timestamp.proto\"\203\t\n\005Model\022[\n\032tr"
+          + "o\022\033google.cloud.automl.v1beta1\032\'google/c"
+          + "loud/automl/v1beta1/image.proto\032(google/"
+          + "cloud/automl/v1beta1/tables.proto\032&googl"
+          + "e/cloud/automl/v1beta1/text.proto\032-googl"
+          + "e/cloud/automl/v1beta1/translation.proto"
+          + "\032\'google/cloud/automl/v1beta1/video.prot"
+          + "o\032\037google/protobuf/timestamp.proto\032\034goog"
+          + "le/api/annotations.proto\"\362\t\n\005Model\022[\n\032tr"
           + "anslation_model_metadata\030\017 \001(\01325.google."
           + "cloud.automl.v1beta1.TranslationModelMet"
           + "adataH\000\022l\n#image_classification_model_me"
@@ -47,26 +47,28 @@ public final class ModelOuterClass {
           + "ionModelMetadataH\000\022l\n#video_classificati"
           + "on_model_metadata\030\027 \001(\0132=.google.cloud.a"
           + "utoml.v1beta1.VideoClassificationModelMe"
-          + "tadataH\000\022b\n\036text_extraction_model_metada"
-          + "ta\030\023 \001(\01328.google.cloud.automl.v1beta1.T"
-          + "extExtractionModelMetadataH\000\022Q\n\025tables_m"
-          + "odel_metadata\030\030 \001(\01320.google.cloud.autom"
-          + "l.v1beta1.TablesModelMetadataH\000\022`\n\035text_"
-          + "sentiment_model_metadata\030\026 \001(\01327.google."
-          + "cloud.automl.v1beta1.TextSentimentModelM"
-          + "etadataH\000\022\014\n\004name\030\001 \001(\t\022\024\n\014display_name\030"
-          + "\002 \001(\t\022\022\n\ndataset_id\030\003 \001(\t\022/\n\013create_time"
-          + "\030\007 \001(\0132\032.google.protobuf.Timestamp\022/\n\013up"
-          + "date_time\030\013 \001(\0132\032.google.protobuf.Timest"
-          + "amp\022L\n\020deployment_state\030\010 \001(\01622.google.c"
-          + "loud.automl.v1beta1.Model.DeploymentStat"
-          + "e\"Q\n\017DeploymentState\022 \n\034DEPLOYMENT_STATE"
-          + "_UNSPECIFIED\020\000\022\014\n\010DEPLOYED\020\001\022\016\n\nUNDEPLOY"
-          + "ED\020\002B\020\n\016model_metadataB\204\001\n\037com.google.cl"
-          + "oud.automl.v1beta1P\001ZAgoogle.golang.org/"
-          + "genproto/googleapis/cloud/automl/v1beta1"
-          + ";automl\312\002\033Google\\Cloud\\AutoMl\\V1beta1b\006p"
-          + "roto3"
+          + "tadataH\000\022m\n$video_object_tracking_model_"
+          + "metadata\030\025 \001(\0132=.google.cloud.automl.v1b"
+          + "eta1.VideoObjectTrackingModelMetadataH\000\022"
+          + "b\n\036text_extraction_model_metadata\030\023 \001(\0132"
+          + "8.google.cloud.automl.v1beta1.TextExtrac"
+          + "tionModelMetadataH\000\022Q\n\025tables_model_meta"
+          + "data\030\030 \001(\01320.google.cloud.automl.v1beta1"
+          + ".TablesModelMetadataH\000\022`\n\035text_sentiment"
+          + "_model_metadata\030\026 \001(\01327.google.cloud.aut"
+          + "oml.v1beta1.TextSentimentModelMetadataH\000"
+          + "\022\014\n\004name\030\001 \001(\t\022\024\n\014display_name\030\002 \001(\t\022\022\n\n"
+          + "dataset_id\030\003 \001(\t\022/\n\013create_time\030\007 \001(\0132\032."
+          + "google.protobuf.Timestamp\022/\n\013update_time"
+          + "\030\013 \001(\0132\032.google.protobuf.Timestamp\022L\n\020de"
+          + "ployment_state\030\010 \001(\01622.google.cloud.auto"
+          + "ml.v1beta1.Model.DeploymentState\"Q\n\017Depl"
+          + "oymentState\022 \n\034DEPLOYMENT_STATE_UNSPECIF"
+          + "IED\020\000\022\014\n\010DEPLOYED\020\001\022\016\n\nUNDEPLOYED\020\002B\020\n\016m"
+          + "odel_metadataB\204\001\n\037com.google.cloud.autom"
+          + "l.v1beta1P\001ZAgoogle.golang.org/genproto/"
+          + "googleapis/cloud/automl/v1beta1;automl\312\002"
+          + "\033Google\\Cloud\\AutoMl\\V1beta1b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -79,13 +81,13 @@ public final class ModelOuterClass {
     com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
         descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.api.AnnotationsProto.getDescriptor(),
           com.google.cloud.automl.v1beta1.ImageProto.getDescriptor(),
           com.google.cloud.automl.v1beta1.Tables.getDescriptor(),
           com.google.cloud.automl.v1beta1.TextProto.getDescriptor(),
           com.google.cloud.automl.v1beta1.TranslationProto.getDescriptor(),
           com.google.cloud.automl.v1beta1.VideoProto.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
+          com.google.api.AnnotationsProto.getDescriptor(),
         },
         assigner);
     internal_static_google_cloud_automl_v1beta1_Model_descriptor =
@@ -99,6 +101,7 @@ public final class ModelOuterClass {
               "TextClassificationModelMetadata",
               "ImageObjectDetectionModelMetadata",
               "VideoClassificationModelMetadata",
+              "VideoObjectTrackingModelMetadata",
               "TextExtractionModelMetadata",
               "TablesModelMetadata",
               "TextSentimentModelMetadata",
@@ -110,13 +113,13 @@ public final class ModelOuterClass {
               "DeploymentState",
               "ModelMetadata",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.cloud.automl.v1beta1.ImageProto.getDescriptor();
     com.google.cloud.automl.v1beta1.Tables.getDescriptor();
     com.google.cloud.automl.v1beta1.TextProto.getDescriptor();
     com.google.cloud.automl.v1beta1.TranslationProto.getDescriptor();
     com.google.cloud.automl.v1beta1.VideoProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
+    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

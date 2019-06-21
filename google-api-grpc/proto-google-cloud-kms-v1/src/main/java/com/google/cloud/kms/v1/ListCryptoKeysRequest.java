@@ -7,8 +7,7 @@ package com.google.cloud.kms.v1;
  *
  *
  * <pre>
- * Request message for
- * [KeyManagementService.ListCryptoKeys][google.cloud.kms.v1.KeyManagementService.ListCryptoKeys].
+ * Request message for [KeyManagementService.ListCryptoKeys][google.cloud.kms.v1.KeyManagementService.ListCryptoKeys].
  * </pre>
  *
  * Protobuf type {@code google.cloud.kms.v1.ListCryptoKeysRequest}
@@ -27,6 +26,8 @@ public final class ListCryptoKeysRequest extends com.google.protobuf.GeneratedMe
     parent_ = "";
     pageToken_ = "";
     versionView_ = 0;
+    filter_ = "";
+    orderBy_ = "";
   }
 
   @java.lang.Override
@@ -79,6 +80,20 @@ public final class ListCryptoKeysRequest extends com.google.protobuf.GeneratedMe
               versionView_ = rawValue;
               break;
             }
+          case 42:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              filter_ = s;
+              break;
+            }
+          case 50:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              orderBy_ = s;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -119,8 +134,8 @@ public final class ListCryptoKeysRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. The resource name of the [KeyRing][google.cloud.kms.v1.KeyRing]
-   * to list, in the format `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;`.
+   * Required. The resource name of the [KeyRing][google.cloud.kms.v1.KeyRing] to list, in the format
+   * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;`.
    * </pre>
    *
    * <code>string parent = 1;</code>
@@ -140,8 +155,8 @@ public final class ListCryptoKeysRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. The resource name of the [KeyRing][google.cloud.kms.v1.KeyRing]
-   * to list, in the format `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;`.
+   * Required. The resource name of the [KeyRing][google.cloud.kms.v1.KeyRing] to list, in the format
+   * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;`.
    * </pre>
    *
    * <code>string parent = 1;</code>
@@ -164,13 +179,10 @@ public final class ListCryptoKeysRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Optional limit on the number of [CryptoKeys][google.cloud.kms.v1.CryptoKey]
-   * to include in the response.  Further
-   * [CryptoKeys][google.cloud.kms.v1.CryptoKey] can subsequently be obtained by
-   * including the
-   * [ListCryptoKeysResponse.next_page_token][google.cloud.kms.v1.ListCryptoKeysResponse.next_page_token]
-   * in a subsequent request.  If unspecified, the server will pick an
-   * appropriate default.
+   * Optional limit on the number of [CryptoKeys][google.cloud.kms.v1.CryptoKey] to include in the
+   * response.  Further [CryptoKeys][google.cloud.kms.v1.CryptoKey] can subsequently be obtained by
+   * including the [ListCryptoKeysResponse.next_page_token][google.cloud.kms.v1.ListCryptoKeysResponse.next_page_token] in a subsequent
+   * request.  If unspecified, the server will pick an appropriate default.
    * </pre>
    *
    * <code>int32 page_size = 2;</code>
@@ -256,6 +268,94 @@ public final class ListCryptoKeysRequest extends com.google.protobuf.GeneratedMe
         : result;
   }
 
+  public static final int FILTER_FIELD_NUMBER = 5;
+  private volatile java.lang.Object filter_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Only include resources that match the filter in the response.
+   * </pre>
+   *
+   * <code>string filter = 5;</code>
+   */
+  public java.lang.String getFilter() {
+    java.lang.Object ref = filter_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      filter_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Only include resources that match the filter in the response.
+   * </pre>
+   *
+   * <code>string filter = 5;</code>
+   */
+  public com.google.protobuf.ByteString getFilterBytes() {
+    java.lang.Object ref = filter_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      filter_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int ORDER_BY_FIELD_NUMBER = 6;
+  private volatile java.lang.Object orderBy_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specify how the results should be sorted. If not specified, the
+   * results will be sorted in the default order.
+   * </pre>
+   *
+   * <code>string order_by = 6;</code>
+   */
+  public java.lang.String getOrderBy() {
+    java.lang.Object ref = orderBy_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      orderBy_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specify how the results should be sorted. If not specified, the
+   * results will be sorted in the default order.
+   * </pre>
+   *
+   * <code>string order_by = 6;</code>
+   */
+  public com.google.protobuf.ByteString getOrderByBytes() {
+    java.lang.Object ref = orderBy_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      orderBy_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -285,6 +385,12 @@ public final class ListCryptoKeysRequest extends com.google.protobuf.GeneratedMe
             .getNumber()) {
       output.writeEnum(4, versionView_);
     }
+    if (!getFilterBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, filter_);
+    }
+    if (!getOrderByBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, orderBy_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -309,6 +415,12 @@ public final class ListCryptoKeysRequest extends com.google.protobuf.GeneratedMe
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, versionView_);
     }
+    if (!getFilterBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, filter_);
+    }
+    if (!getOrderByBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, orderBy_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -329,6 +441,8 @@ public final class ListCryptoKeysRequest extends com.google.protobuf.GeneratedMe
     if (getPageSize() != other.getPageSize()) return false;
     if (!getPageToken().equals(other.getPageToken())) return false;
     if (versionView_ != other.versionView_) return false;
+    if (!getFilter().equals(other.getFilter())) return false;
+    if (!getOrderBy().equals(other.getOrderBy())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -348,6 +462,10 @@ public final class ListCryptoKeysRequest extends com.google.protobuf.GeneratedMe
     hash = (53 * hash) + getPageToken().hashCode();
     hash = (37 * hash) + VERSION_VIEW_FIELD_NUMBER;
     hash = (53 * hash) + versionView_;
+    hash = (37 * hash) + FILTER_FIELD_NUMBER;
+    hash = (53 * hash) + getFilter().hashCode();
+    hash = (37 * hash) + ORDER_BY_FIELD_NUMBER;
+    hash = (53 * hash) + getOrderBy().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -452,8 +570,7 @@ public final class ListCryptoKeysRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Request message for
-   * [KeyManagementService.ListCryptoKeys][google.cloud.kms.v1.KeyManagementService.ListCryptoKeys].
+   * Request message for [KeyManagementService.ListCryptoKeys][google.cloud.kms.v1.KeyManagementService.ListCryptoKeys].
    * </pre>
    *
    * Protobuf type {@code google.cloud.kms.v1.ListCryptoKeysRequest}
@@ -502,6 +619,10 @@ public final class ListCryptoKeysRequest extends com.google.protobuf.GeneratedMe
 
       versionView_ = 0;
 
+      filter_ = "";
+
+      orderBy_ = "";
+
       return this;
     }
 
@@ -533,6 +654,8 @@ public final class ListCryptoKeysRequest extends com.google.protobuf.GeneratedMe
       result.pageSize_ = pageSize_;
       result.pageToken_ = pageToken_;
       result.versionView_ = versionView_;
+      result.filter_ = filter_;
+      result.orderBy_ = orderBy_;
       onBuilt();
       return result;
     }
@@ -596,6 +719,14 @@ public final class ListCryptoKeysRequest extends com.google.protobuf.GeneratedMe
       if (other.versionView_ != 0) {
         setVersionViewValue(other.getVersionViewValue());
       }
+      if (!other.getFilter().isEmpty()) {
+        filter_ = other.filter_;
+        onChanged();
+      }
+      if (!other.getOrderBy().isEmpty()) {
+        orderBy_ = other.orderBy_;
+        onChanged();
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -630,8 +761,8 @@ public final class ListCryptoKeysRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The resource name of the [KeyRing][google.cloud.kms.v1.KeyRing]
-     * to list, in the format `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;`.
+     * Required. The resource name of the [KeyRing][google.cloud.kms.v1.KeyRing] to list, in the format
+     * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;`.
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -651,8 +782,8 @@ public final class ListCryptoKeysRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The resource name of the [KeyRing][google.cloud.kms.v1.KeyRing]
-     * to list, in the format `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;`.
+     * Required. The resource name of the [KeyRing][google.cloud.kms.v1.KeyRing] to list, in the format
+     * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;`.
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -672,8 +803,8 @@ public final class ListCryptoKeysRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The resource name of the [KeyRing][google.cloud.kms.v1.KeyRing]
-     * to list, in the format `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;`.
+     * Required. The resource name of the [KeyRing][google.cloud.kms.v1.KeyRing] to list, in the format
+     * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;`.
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -691,8 +822,8 @@ public final class ListCryptoKeysRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The resource name of the [KeyRing][google.cloud.kms.v1.KeyRing]
-     * to list, in the format `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;`.
+     * Required. The resource name of the [KeyRing][google.cloud.kms.v1.KeyRing] to list, in the format
+     * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;`.
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -707,8 +838,8 @@ public final class ListCryptoKeysRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The resource name of the [KeyRing][google.cloud.kms.v1.KeyRing]
-     * to list, in the format `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;`.
+     * Required. The resource name of the [KeyRing][google.cloud.kms.v1.KeyRing] to list, in the format
+     * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;`.
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -729,13 +860,10 @@ public final class ListCryptoKeysRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional limit on the number of [CryptoKeys][google.cloud.kms.v1.CryptoKey]
-     * to include in the response.  Further
-     * [CryptoKeys][google.cloud.kms.v1.CryptoKey] can subsequently be obtained by
-     * including the
-     * [ListCryptoKeysResponse.next_page_token][google.cloud.kms.v1.ListCryptoKeysResponse.next_page_token]
-     * in a subsequent request.  If unspecified, the server will pick an
-     * appropriate default.
+     * Optional limit on the number of [CryptoKeys][google.cloud.kms.v1.CryptoKey] to include in the
+     * response.  Further [CryptoKeys][google.cloud.kms.v1.CryptoKey] can subsequently be obtained by
+     * including the [ListCryptoKeysResponse.next_page_token][google.cloud.kms.v1.ListCryptoKeysResponse.next_page_token] in a subsequent
+     * request.  If unspecified, the server will pick an appropriate default.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>
@@ -747,13 +875,10 @@ public final class ListCryptoKeysRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional limit on the number of [CryptoKeys][google.cloud.kms.v1.CryptoKey]
-     * to include in the response.  Further
-     * [CryptoKeys][google.cloud.kms.v1.CryptoKey] can subsequently be obtained by
-     * including the
-     * [ListCryptoKeysResponse.next_page_token][google.cloud.kms.v1.ListCryptoKeysResponse.next_page_token]
-     * in a subsequent request.  If unspecified, the server will pick an
-     * appropriate default.
+     * Optional limit on the number of [CryptoKeys][google.cloud.kms.v1.CryptoKey] to include in the
+     * response.  Further [CryptoKeys][google.cloud.kms.v1.CryptoKey] can subsequently be obtained by
+     * including the [ListCryptoKeysResponse.next_page_token][google.cloud.kms.v1.ListCryptoKeysResponse.next_page_token] in a subsequent
+     * request.  If unspecified, the server will pick an appropriate default.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>
@@ -768,13 +893,10 @@ public final class ListCryptoKeysRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional limit on the number of [CryptoKeys][google.cloud.kms.v1.CryptoKey]
-     * to include in the response.  Further
-     * [CryptoKeys][google.cloud.kms.v1.CryptoKey] can subsequently be obtained by
-     * including the
-     * [ListCryptoKeysResponse.next_page_token][google.cloud.kms.v1.ListCryptoKeysResponse.next_page_token]
-     * in a subsequent request.  If unspecified, the server will pick an
-     * appropriate default.
+     * Optional limit on the number of [CryptoKeys][google.cloud.kms.v1.CryptoKey] to include in the
+     * response.  Further [CryptoKeys][google.cloud.kms.v1.CryptoKey] can subsequently be obtained by
+     * including the [ListCryptoKeysResponse.next_page_token][google.cloud.kms.v1.ListCryptoKeysResponse.next_page_token] in a subsequent
+     * request.  If unspecified, the server will pick an appropriate default.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>
@@ -960,6 +1082,199 @@ public final class ListCryptoKeysRequest extends com.google.protobuf.GeneratedMe
     public Builder clearVersionView() {
 
       versionView_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object filter_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Only include resources that match the filter in the response.
+     * </pre>
+     *
+     * <code>string filter = 5;</code>
+     */
+    public java.lang.String getFilter() {
+      java.lang.Object ref = filter_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        filter_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Only include resources that match the filter in the response.
+     * </pre>
+     *
+     * <code>string filter = 5;</code>
+     */
+    public com.google.protobuf.ByteString getFilterBytes() {
+      java.lang.Object ref = filter_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        filter_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Only include resources that match the filter in the response.
+     * </pre>
+     *
+     * <code>string filter = 5;</code>
+     */
+    public Builder setFilter(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      filter_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Only include resources that match the filter in the response.
+     * </pre>
+     *
+     * <code>string filter = 5;</code>
+     */
+    public Builder clearFilter() {
+
+      filter_ = getDefaultInstance().getFilter();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Only include resources that match the filter in the response.
+     * </pre>
+     *
+     * <code>string filter = 5;</code>
+     */
+    public Builder setFilterBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      filter_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object orderBy_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specify how the results should be sorted. If not specified, the
+     * results will be sorted in the default order.
+     * </pre>
+     *
+     * <code>string order_by = 6;</code>
+     */
+    public java.lang.String getOrderBy() {
+      java.lang.Object ref = orderBy_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        orderBy_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specify how the results should be sorted. If not specified, the
+     * results will be sorted in the default order.
+     * </pre>
+     *
+     * <code>string order_by = 6;</code>
+     */
+    public com.google.protobuf.ByteString getOrderByBytes() {
+      java.lang.Object ref = orderBy_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        orderBy_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specify how the results should be sorted. If not specified, the
+     * results will be sorted in the default order.
+     * </pre>
+     *
+     * <code>string order_by = 6;</code>
+     */
+    public Builder setOrderBy(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      orderBy_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specify how the results should be sorted. If not specified, the
+     * results will be sorted in the default order.
+     * </pre>
+     *
+     * <code>string order_by = 6;</code>
+     */
+    public Builder clearOrderBy() {
+
+      orderBy_ = getDefaultInstance().getOrderBy();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specify how the results should be sorted. If not specified, the
+     * results will be sorted in the default order.
+     * </pre>
+     *
+     * <code>string order_by = 6;</code>
+     */
+    public Builder setOrderByBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      orderBy_ = value;
       onChanged();
       return this;
     }

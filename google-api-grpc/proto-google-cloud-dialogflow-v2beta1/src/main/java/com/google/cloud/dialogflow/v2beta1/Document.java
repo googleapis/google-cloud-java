@@ -8,8 +8,8 @@ package com.google.cloud.dialogflow.v2beta1;
  *
  * <pre>
  * A document resource.
- * Note: resource `projects.agent.knowledgeBases.documents` is deprecated,
- * please use `projects.knowledgeBases.documents` instead.
+ * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
+ * only use `projects.knowledgeBases.documents`.
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2beta1.Document}
@@ -985,8 +985,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A document resource.
-   * Note: resource `projects.agent.knowledgeBases.documents` is deprecated,
-   * please use `projects.knowledgeBases.documents` instead.
+   * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
+   * only use `projects.knowledgeBases.documents`.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2beta1.Document}

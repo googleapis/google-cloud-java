@@ -327,8 +327,8 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * For batch transfer runs, specifies the date and time that
-   * data should be ingested.
+   * For batch transfer runs, specifies the date and time of the data should be
+   * ingested.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp run_time = 10;</code>
@@ -340,8 +340,8 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * For batch transfer runs, specifies the date and time that
-   * data should be ingested.
+   * For batch transfer runs, specifies the date and time of the data should be
+   * ingested.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp run_time = 10;</code>
@@ -353,8 +353,8 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * For batch transfer runs, specifies the date and time that
-   * data should be ingested.
+   * For batch transfer runs, specifies the date and time of the data should be
+   * ingested.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp run_time = 10;</code>
@@ -688,11 +688,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Unique ID of the user on whose behalf transfer is done.
-   * Applicable only to data sources that do not support service accounts.
-   * When set to 0, the data source service account credentials are used.
-   * May be negative. Note, that this identifier is not stable.
-   * It may change over time even for the same user.
+   * Deprecated. Unique ID of the user on whose behalf transfer is done.
    * </pre>
    *
    * <code>int64 user_id = 11;</code>
@@ -711,7 +707,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
    * created as part of a regular schedule. For batch transfer runs that are
    * scheduled manually, this is empty.
    * NOTE: the system might choose to delay the schedule depending on the
-   * current load, so `schedule_time` doesn't always matches this.
+   * current load, so `schedule_time` doesn't always match this.
    * </pre>
    *
    * <code>string schedule = 12;</code>
@@ -735,7 +731,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
    * created as part of a regular schedule. For batch transfer runs that are
    * scheduled manually, this is empty.
    * NOTE: the system might choose to delay the schedule depending on the
-   * current load, so `schedule_time` doesn't always matches this.
+   * current load, so `schedule_time` doesn't always match this.
    * </pre>
    *
    * <code>string schedule = 12;</code>
@@ -1649,8 +1645,8 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * For batch transfer runs, specifies the date and time that
-     * data should be ingested.
+     * For batch transfer runs, specifies the date and time of the data should be
+     * ingested.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp run_time = 10;</code>
@@ -1662,8 +1658,8 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * For batch transfer runs, specifies the date and time that
-     * data should be ingested.
+     * For batch transfer runs, specifies the date and time of the data should be
+     * ingested.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp run_time = 10;</code>
@@ -1679,8 +1675,8 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * For batch transfer runs, specifies the date and time that
-     * data should be ingested.
+     * For batch transfer runs, specifies the date and time of the data should be
+     * ingested.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp run_time = 10;</code>
@@ -1702,8 +1698,8 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * For batch transfer runs, specifies the date and time that
-     * data should be ingested.
+     * For batch transfer runs, specifies the date and time of the data should be
+     * ingested.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp run_time = 10;</code>
@@ -1722,8 +1718,8 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * For batch transfer runs, specifies the date and time that
-     * data should be ingested.
+     * For batch transfer runs, specifies the date and time of the data should be
+     * ingested.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp run_time = 10;</code>
@@ -1747,8 +1743,8 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * For batch transfer runs, specifies the date and time that
-     * data should be ingested.
+     * For batch transfer runs, specifies the date and time of the data should be
+     * ingested.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp run_time = 10;</code>
@@ -1768,8 +1764,8 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * For batch transfer runs, specifies the date and time that
-     * data should be ingested.
+     * For batch transfer runs, specifies the date and time of the data should be
+     * ingested.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp run_time = 10;</code>
@@ -1783,8 +1779,8 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * For batch transfer runs, specifies the date and time that
-     * data should be ingested.
+     * For batch transfer runs, specifies the date and time of the data should be
+     * ingested.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp run_time = 10;</code>
@@ -1800,8 +1796,8 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * For batch transfer runs, specifies the date and time that
-     * data should be ingested.
+     * For batch transfer runs, specifies the date and time of the data should be
+     * ingested.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp run_time = 10;</code>
@@ -2986,11 +2982,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Unique ID of the user on whose behalf transfer is done.
-     * Applicable only to data sources that do not support service accounts.
-     * When set to 0, the data source service account credentials are used.
-     * May be negative. Note, that this identifier is not stable.
-     * It may change over time even for the same user.
+     * Deprecated. Unique ID of the user on whose behalf transfer is done.
      * </pre>
      *
      * <code>int64 user_id = 11;</code>
@@ -3002,11 +2994,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Unique ID of the user on whose behalf transfer is done.
-     * Applicable only to data sources that do not support service accounts.
-     * When set to 0, the data source service account credentials are used.
-     * May be negative. Note, that this identifier is not stable.
-     * It may change over time even for the same user.
+     * Deprecated. Unique ID of the user on whose behalf transfer is done.
      * </pre>
      *
      * <code>int64 user_id = 11;</code>
@@ -3021,11 +3009,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Unique ID of the user on whose behalf transfer is done.
-     * Applicable only to data sources that do not support service accounts.
-     * When set to 0, the data source service account credentials are used.
-     * May be negative. Note, that this identifier is not stable.
-     * It may change over time even for the same user.
+     * Deprecated. Unique ID of the user on whose behalf transfer is done.
      * </pre>
      *
      * <code>int64 user_id = 11;</code>
@@ -3046,7 +3030,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      * created as part of a regular schedule. For batch transfer runs that are
      * scheduled manually, this is empty.
      * NOTE: the system might choose to delay the schedule depending on the
-     * current load, so `schedule_time` doesn't always matches this.
+     * current load, so `schedule_time` doesn't always match this.
      * </pre>
      *
      * <code>string schedule = 12;</code>
@@ -3070,7 +3054,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      * created as part of a regular schedule. For batch transfer runs that are
      * scheduled manually, this is empty.
      * NOTE: the system might choose to delay the schedule depending on the
-     * current load, so `schedule_time` doesn't always matches this.
+     * current load, so `schedule_time` doesn't always match this.
      * </pre>
      *
      * <code>string schedule = 12;</code>
@@ -3094,7 +3078,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      * created as part of a regular schedule. For batch transfer runs that are
      * scheduled manually, this is empty.
      * NOTE: the system might choose to delay the schedule depending on the
-     * current load, so `schedule_time` doesn't always matches this.
+     * current load, so `schedule_time` doesn't always match this.
      * </pre>
      *
      * <code>string schedule = 12;</code>
@@ -3116,7 +3100,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      * created as part of a regular schedule. For batch transfer runs that are
      * scheduled manually, this is empty.
      * NOTE: the system might choose to delay the schedule depending on the
-     * current load, so `schedule_time` doesn't always matches this.
+     * current load, so `schedule_time` doesn't always match this.
      * </pre>
      *
      * <code>string schedule = 12;</code>
@@ -3135,7 +3119,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      * created as part of a regular schedule. For batch transfer runs that are
      * scheduled manually, this is empty.
      * NOTE: the system might choose to delay the schedule depending on the
-     * current load, so `schedule_time` doesn't always matches this.
+     * current load, so `schedule_time` doesn't always match this.
      * </pre>
      *
      * <code>string schedule = 12;</code>

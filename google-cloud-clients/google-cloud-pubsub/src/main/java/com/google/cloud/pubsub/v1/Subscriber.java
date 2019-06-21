@@ -29,7 +29,6 @@ import com.google.api.gax.batching.FlowController.LimitExceededBehavior;
 import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.core.Distribution;
 import com.google.api.gax.core.ExecutorProvider;
-import com.google.api.gax.core.FixedExecutorProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.rpc.HeaderProvider;
 import com.google.api.gax.rpc.NoHeaderProvider;
@@ -41,12 +40,15 @@ import com.google.cloud.pubsub.v1.stub.SubscriberStub;
 import com.google.cloud.pubsub.v1.stub.SubscriberStubSettings;
 import com.google.common.base.Optional;
 import com.google.common.base.Preconditions;
+import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import com.google.pubsub.v1.ProjectSubscriptionName;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.ThreadFactory;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.annotation.Nullable;
@@ -138,13 +140,8 @@ public class Subscriber extends AbstractApiService {
     executorProvider = builder.executorProvider;
 
     ExecutorProvider systemExecutorProvider = builder.systemExecutorProvider;
-    if (systemExecutorProvider == null) {
-      systemExecutorProvider =
-          FixedExecutorProvider.create(
-              Executors.newScheduledThreadPool(Math.max(6, 2 * numPullers)));
-    }
-
     alarmsExecutor = systemExecutorProvider.getExecutor();
+
     if (systemExecutorProvider.shouldAutoClose()) {
       closeables.add(
           new AutoCloseable() {
@@ -405,6 +402,7 @@ public class Subscriber extends AbstractApiService {
         InstantiatingExecutorProvider.newBuilder()
             .setExecutorThreadCount(THREADS_PER_CHANNEL)
             .build();
+    private static final AtomicInteger SYSTEM_EXECUTOR_COUNTER = new AtomicInteger();
 
     private String subscriptionName;
     private MessageReceiver receiver;
@@ -543,6 +541,28 @@ public class Subscriber extends AbstractApiService {
     }
 
     public Subscriber build() {
+      if (systemExecutorProvider == null) {
+        ThreadFactory threadFactory =
+            new ThreadFactoryBuilder()
+                .setDaemon(true)
+                .setNameFormat("Subscriber-SE-" + SYSTEM_EXECUTOR_COUNTER.incrementAndGet() + "-%d")
+                .build();
+        int threadCount = Math.max(6, 2 * parallelPullCount);
+        final ScheduledExecutorService executor =
+            Executors.newScheduledThreadPool(threadCount, threadFactory);
+        systemExecutorProvider =
+            new ExecutorProvider() {
+              @Override
+              public boolean shouldAutoClose() {
+                return true;
+              }
+
+              @Override
+              public ScheduledExecutorService getExecutor() {
+                return executor;
+              }
+            };
+      }
       return new Subscriber(this);
     }
   }

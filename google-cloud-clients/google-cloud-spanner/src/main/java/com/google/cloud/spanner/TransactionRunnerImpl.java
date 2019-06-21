@@ -36,7 +36,6 @@ import com.google.spanner.v1.ExecuteSqlRequest;
 import com.google.spanner.v1.ExecuteSqlRequest.QueryMode;
 import com.google.spanner.v1.RollbackRequest;
 import com.google.spanner.v1.TransactionSelector;
-import io.grpc.Context;
 import io.opencensus.common.Scope;
 import io.opencensus.trace.AttributeValue;
 import io.opencensus.trace.Span;
@@ -45,6 +44,7 @@ import io.opencensus.trace.Tracing;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Callable;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.annotation.Nullable;
@@ -124,15 +124,7 @@ class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
       final CommitRequest commitRequest = builder.build();
       Span opSpan = tracer.spanBuilderWithExplicitParent(SpannerImpl.COMMIT, span).startSpan();
       try (Scope s = tracer.withSpan(opSpan)) {
-        CommitResponse commitResponse =
-            SpannerImpl.runWithRetries(
-                new Callable<CommitResponse>() {
-                  @Override
-                  public CommitResponse call() throws Exception {
-                    return rpc.commit(commitRequest, session.getOptions());
-                  }
-                });
-
+        CommitResponse commitResponse = rpc.commit(commitRequest, session.getOptions());
         if (!commitResponse.hasCommitTimestamp()) {
           throw newSpannerException(
               ErrorCode.INTERNAL, "Missing commitTimestamp:\n" + session.getName());
@@ -239,13 +231,7 @@ class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
       final ExecuteSqlRequest.Builder builder =
           getExecuteSqlRequestBuilder(statement, QueryMode.NORMAL);
       com.google.spanner.v1.ResultSet resultSet =
-          SpannerImpl.runWithRetries(
-              new Callable<com.google.spanner.v1.ResultSet>() {
-                @Override
-                public com.google.spanner.v1.ResultSet call() throws Exception {
-                  return rpc.executeQuery(builder.build(), session.getOptions());
-                }
-              });
+          rpc.executeQuery(builder.build(), session.getOptions());
       if (!resultSet.hasStats()) {
         throw new IllegalArgumentException(
             "DML response missing stats possibly due to non-DML statement as input");
@@ -259,13 +245,7 @@ class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
       beforeReadOrQuery();
       final ExecuteBatchDmlRequest.Builder builder = getExecuteBatchDmlRequestBuilder(statements);
       com.google.spanner.v1.ExecuteBatchDmlResponse response =
-          SpannerImpl.runWithRetries(
-              new Callable<com.google.spanner.v1.ExecuteBatchDmlResponse>() {
-                @Override
-                public com.google.spanner.v1.ExecuteBatchDmlResponse call() throws Exception {
-                  return rpc.executeBatchDml(builder.build(), session.getOptions());
-                }
-              });
+          rpc.executeBatchDml(builder.build(), session.getOptions());
       long[] results = new long[response.getResultSetsCount()];
       for (int i = 0; i < response.getResultSetsCount(); ++i) {
         results[i] = response.getResultSets(i).getStats().getRowCountExact();
@@ -287,16 +267,7 @@ class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
   }
 
   private boolean blockNestedTxn = true;
-
-  /** Allow for testing of backoff logic */
-  static class Sleeper {
-    void backoffSleep(Context context, long backoffMillis) {
-      SpannerImpl.backoffSleep(context, backoffMillis);
-    }
-  }
-
   private final SessionImpl session;
-  private final TransactionRunnerImpl.Sleeper sleeper;
   private final Span span;
   private TransactionContextImpl txn;
   private volatile boolean isValid = true;
@@ -307,19 +278,9 @@ class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
     return this;
   }
 
-  TransactionRunnerImpl(
-      SessionImpl session,
-      SpannerRpc rpc,
-      TransactionRunnerImpl.Sleeper sleeper,
-      int defaultPrefetchChunks) {
-    this.session = session;
-    this.sleeper = sleeper;
-    this.span = Tracing.getTracer().getCurrentSpan();
-    this.txn = session.newTransaction();
-  }
-
   TransactionRunnerImpl(SessionImpl session, SpannerRpc rpc, int defaultPrefetchChunks) {
-    this(session, rpc, new Sleeper(), defaultPrefetchChunks);
+    this.session = session;
+    this.span = Tracing.getTracer().getCurrentSpan();
   }
 
   @Nullable
@@ -329,7 +290,6 @@ class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
       if (blockNestedTxn) {
         SessionImpl.hasPendingTransaction.set(Boolean.TRUE);
       }
-
       return runInternal(callable);
     } catch (RuntimeException e) {
       TraceUtil.endSpanWithFailure(span, e);
@@ -342,96 +302,98 @@ class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
     }
   }
 
-  private <T> T runInternal(TransactionCallable<T> callable) {
-    BackOff backoff = SpannerImpl.newBackOff();
-    final Context context = Context.current();
-    int attempt = 0;
-    // TODO: Change this to use TransactionManager.
-    while (true) {
-      checkState(
-          isValid, "TransactionRunner has been invalidated by a new operation on the session");
-      SpannerImpl.checkContext(context);
-      attempt++;
-      // TODO(user): When using streaming reads, consider using the first read to begin
-      // the txn.
-      span.addAnnotation(
-          "Starting Transaction Attempt",
-          ImmutableMap.of("Attempt", AttributeValue.longAttributeValue(attempt)));
-      txn.ensureTxn();
+  private <T> T runInternal(final TransactionCallable<T> txCallable) {
+    final AtomicInteger attempt = new AtomicInteger();
+    Callable<T> retryCallable =
+        new Callable<T>() {
+          @Override
+          public T call() {
+            txn = session.newTransaction();
+            checkState(
+                isValid,
+                "TransactionRunner has been invalidated by a new operation on the session");
+            attempt.incrementAndGet();
+            // TODO(user): When using streaming reads, consider using the first read to begin
+            // the txn.
+            span.addAnnotation(
+                "Starting Transaction Attempt",
+                ImmutableMap.of("Attempt", AttributeValue.longAttributeValue(attempt.longValue())));
+            txn.ensureTxn();
 
-      T result;
-      boolean shouldRollback = true;
-      try {
-        result = callable.run(txn);
-        shouldRollback = false;
-      } catch (Exception e) {
-        txnLogger.log(Level.FINE, "User-provided TransactionCallable raised exception", e);
-        if (txn.isAborted() || (e instanceof AbortedException)) {
-          span.addAnnotation(
-              "Transaction Attempt Aborted in user operation. Retrying",
-              ImmutableMap.of("Attempt", AttributeValue.longAttributeValue(attempt)));
-          shouldRollback = false;
-          backoff(context, backoff);
-          continue;
-        }
-        SpannerException toThrow;
-        if (e instanceof SpannerException) {
-          toThrow = (SpannerException) e;
-        } else {
-          toThrow = newSpannerException(ErrorCode.UNKNOWN, e.getMessage(), e);
-        }
-        span.addAnnotation(
-            "Transaction Attempt Failed in user operation",
-            ImmutableMap.<String, AttributeValue>builder()
-                .putAll(TraceUtil.getExceptionAnnotations(toThrow))
-                .put("Attempt", AttributeValue.longAttributeValue(attempt))
-                .build());
-        throw toThrow;
-      } finally {
-        if (shouldRollback) {
-          txn.rollback();
-        }
-      }
+            T result;
+            boolean shouldRollback = true;
+            try {
+              result = txCallable.run(txn);
+              shouldRollback = false;
+            } catch (Exception e) {
+              txnLogger.log(Level.FINE, "User-provided TransactionCallable raised exception", e);
+              if (txn.isAborted() || (e instanceof AbortedException)) {
+                span.addAnnotation(
+                    "Transaction Attempt Aborted in user operation. Retrying",
+                    ImmutableMap.of(
+                        "Attempt", AttributeValue.longAttributeValue(attempt.longValue())));
+                shouldRollback = false;
+                if (e instanceof AbortedException) {
+                  throw (AbortedException) e;
+                }
+                throw SpannerExceptionFactory.newSpannerException(
+                    ErrorCode.ABORTED, e.getMessage(), e);
+              }
+              SpannerException toThrow;
+              if (e instanceof SpannerException) {
+                toThrow = (SpannerException) e;
+              } else {
+                toThrow = newSpannerException(ErrorCode.UNKNOWN, e.getMessage(), e);
+              }
+              span.addAnnotation(
+                  "Transaction Attempt Failed in user operation",
+                  ImmutableMap.<String, AttributeValue>builder()
+                      .putAll(TraceUtil.getExceptionAnnotations(toThrow))
+                      .put("Attempt", AttributeValue.longAttributeValue(attempt.longValue()))
+                      .build());
+              throw toThrow;
+            } finally {
+              if (shouldRollback) {
+                txn.rollback();
+              }
+            }
 
-      try {
-        txn.commit();
-        span.addAnnotation(
-            "Transaction Attempt Succeeded",
-            ImmutableMap.of("Attempt", AttributeValue.longAttributeValue(attempt)));
-        return result;
-      } catch (AbortedException e) {
-        txnLogger.log(Level.FINE, "Commit aborted", e);
-        span.addAnnotation(
-            "Transaction Attempt Aborted in Commit. Retrying",
-            ImmutableMap.of("Attempt", AttributeValue.longAttributeValue(attempt)));
-        backoff(context, backoff);
-      } catch (SpannerException e) {
-        span.addAnnotation(
-            "Transaction Attempt Failed in Commit",
-            ImmutableMap.<String, AttributeValue>builder()
-                .putAll(TraceUtil.getExceptionAnnotations(e))
-                .put("Attempt", AttributeValue.longAttributeValue(attempt))
-                .build());
-        throw e;
-      }
-    }
+            try {
+              txn.commit();
+              span.addAnnotation(
+                  "Transaction Attempt Succeeded",
+                  ImmutableMap.of(
+                      "Attempt", AttributeValue.longAttributeValue(attempt.longValue())));
+              return result;
+            } catch (AbortedException e) {
+              txnLogger.log(Level.FINE, "Commit aborted", e);
+              span.addAnnotation(
+                  "Transaction Attempt Aborted in Commit. Retrying",
+                  ImmutableMap.of(
+                      "Attempt", AttributeValue.longAttributeValue(attempt.longValue())));
+              throw e;
+            } catch (SpannerException e) {
+              span.addAnnotation(
+                  "Transaction Attempt Failed in Commit",
+                  ImmutableMap.<String, AttributeValue>builder()
+                      .putAll(TraceUtil.getExceptionAnnotations(e))
+                      .put("Attempt", AttributeValue.longAttributeValue(attempt.longValue()))
+                      .build());
+              throw e;
+            }
+          }
+        };
+    return SpannerRetryHelper.runTxWithRetriesOnAborted(retryCallable);
   }
 
   @Override
   public Timestamp getCommitTimestamp() {
+    checkState(txn != null, "run() has not yet returned normally");
     return txn.commitTimestamp();
   }
 
   @Override
   public void invalidate() {
     isValid = false;
-  }
-
-  private void backoff(Context context, BackOff backoff) {
-    long delay = txn.getRetryDelayInMillis(backoff);
-    txn = session.newTransaction();
-    span.addAnnotation(
-        "Backing off", ImmutableMap.of("Delay", AttributeValue.longAttributeValue(delay)));
-    sleeper.backoffSleep(context, delay);
   }
 }

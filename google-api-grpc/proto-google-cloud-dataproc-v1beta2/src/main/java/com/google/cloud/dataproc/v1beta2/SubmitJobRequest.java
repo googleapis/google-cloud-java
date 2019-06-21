@@ -257,10 +257,9 @@ public final class SubmitJobRequest extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Optional. A unique id used to identify the request. If the server
-   * receives two
-   * [SubmitJobRequest][google.cloud.dataproc.v1beta2.SubmitJobRequest] requests
-   * with the same id, then the second request will be ignored and the first
-   * [Job][google.cloud.dataproc.v1beta2.Job] created and stored in the backend
+   * receives two [SubmitJobRequest][google.cloud.dataproc.v1beta2.SubmitJobRequest] requests  with the same
+   * id, then the second request will be ignored and the
+   * first [Job][google.cloud.dataproc.v1beta2.Job] created and stored in the backend
    * is returned.
    * It is recommended to always set this value to a
    * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
@@ -286,10 +285,9 @@ public final class SubmitJobRequest extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Optional. A unique id used to identify the request. If the server
-   * receives two
-   * [SubmitJobRequest][google.cloud.dataproc.v1beta2.SubmitJobRequest] requests
-   * with the same id, then the second request will be ignored and the first
-   * [Job][google.cloud.dataproc.v1beta2.Job] created and stored in the backend
+   * receives two [SubmitJobRequest][google.cloud.dataproc.v1beta2.SubmitJobRequest] requests  with the same
+   * id, then the second request will be ignored and the
+   * first [Job][google.cloud.dataproc.v1beta2.Job] created and stored in the backend
    * is returned.
    * It is recommended to always set this value to a
    * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
@@ -1065,10 +1063,9 @@ public final class SubmitJobRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. A unique id used to identify the request. If the server
-     * receives two
-     * [SubmitJobRequest][google.cloud.dataproc.v1beta2.SubmitJobRequest] requests
-     * with the same id, then the second request will be ignored and the first
-     * [Job][google.cloud.dataproc.v1beta2.Job] created and stored in the backend
+     * receives two [SubmitJobRequest][google.cloud.dataproc.v1beta2.SubmitJobRequest] requests  with the same
+     * id, then the second request will be ignored and the
+     * first [Job][google.cloud.dataproc.v1beta2.Job] created and stored in the backend
      * is returned.
      * It is recommended to always set this value to a
      * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
@@ -1094,10 +1091,9 @@ public final class SubmitJobRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. A unique id used to identify the request. If the server
-     * receives two
-     * [SubmitJobRequest][google.cloud.dataproc.v1beta2.SubmitJobRequest] requests
-     * with the same id, then the second request will be ignored and the first
-     * [Job][google.cloud.dataproc.v1beta2.Job] created and stored in the backend
+     * receives two [SubmitJobRequest][google.cloud.dataproc.v1beta2.SubmitJobRequest] requests  with the same
+     * id, then the second request will be ignored and the
+     * first [Job][google.cloud.dataproc.v1beta2.Job] created and stored in the backend
      * is returned.
      * It is recommended to always set this value to a
      * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
@@ -1123,10 +1119,9 @@ public final class SubmitJobRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. A unique id used to identify the request. If the server
-     * receives two
-     * [SubmitJobRequest][google.cloud.dataproc.v1beta2.SubmitJobRequest] requests
-     * with the same id, then the second request will be ignored and the first
-     * [Job][google.cloud.dataproc.v1beta2.Job] created and stored in the backend
+     * receives two [SubmitJobRequest][google.cloud.dataproc.v1beta2.SubmitJobRequest] requests  with the same
+     * id, then the second request will be ignored and the
+     * first [Job][google.cloud.dataproc.v1beta2.Job] created and stored in the backend
      * is returned.
      * It is recommended to always set this value to a
      * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
@@ -1150,10 +1145,9 @@ public final class SubmitJobRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. A unique id used to identify the request. If the server
-     * receives two
-     * [SubmitJobRequest][google.cloud.dataproc.v1beta2.SubmitJobRequest] requests
-     * with the same id, then the second request will be ignored and the first
-     * [Job][google.cloud.dataproc.v1beta2.Job] created and stored in the backend
+     * receives two [SubmitJobRequest][google.cloud.dataproc.v1beta2.SubmitJobRequest] requests  with the same
+     * id, then the second request will be ignored and the
+     * first [Job][google.cloud.dataproc.v1beta2.Job] created and stored in the backend
      * is returned.
      * It is recommended to always set this value to a
      * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
@@ -1174,10 +1168,9 @@ public final class SubmitJobRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. A unique id used to identify the request. If the server
-     * receives two
-     * [SubmitJobRequest][google.cloud.dataproc.v1beta2.SubmitJobRequest] requests
-     * with the same id, then the second request will be ignored and the first
-     * [Job][google.cloud.dataproc.v1beta2.Job] created and stored in the backend
+     * receives two [SubmitJobRequest][google.cloud.dataproc.v1beta2.SubmitJobRequest] requests  with the same
+     * id, then the second request will be ignored and the
+     * first [Job][google.cloud.dataproc.v1beta2.Job] created and stored in the backend
      * is returned.
      * It is recommended to always set this value to a
      * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).

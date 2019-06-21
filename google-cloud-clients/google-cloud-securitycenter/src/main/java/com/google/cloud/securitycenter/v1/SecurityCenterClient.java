@@ -420,9 +420,8 @@ public class SecurityCenterClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param resource REQUIRED: The resource for which the policy is being requested. `resource` is
-   *     usually specified as a path. For example, a Project resource is specified as
-   *     `projects/{project}`.
+   * @param resource REQUIRED: The resource for which the policy is being requested. See the
+   *     operation documentation for the appropriate value for this field.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Policy getIamPolicy(SourceName resource) {
@@ -447,9 +446,8 @@ public class SecurityCenterClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param resource REQUIRED: The resource for which the policy is being requested. `resource` is
-   *     usually specified as a path. For example, a Project resource is specified as
-   *     `projects/{project}`.
+   * @param resource REQUIRED: The resource for which the policy is being requested. See the
+   *     operation documentation for the appropriate value for this field.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Policy getIamPolicy(String resource) {
@@ -1266,7 +1264,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * <pre><code>
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
-   *   securityCenterClient.runAssetDiscoveryAsync(parent).get();
+   *   RunAssetDiscoveryResponse response = securityCenterClient.runAssetDiscoveryAsync(parent).get();
    * }
    * </code></pre>
    *
@@ -1276,7 +1274,8 @@ public class SecurityCenterClient implements BackgroundResource {
    */
   @BetaApi(
       "The surface for long-running operations is not stable yet and may change in the future.")
-  public final OperationFuture<Empty, Empty> runAssetDiscoveryAsync(OrganizationName parent) {
+  public final OperationFuture<RunAssetDiscoveryResponse, Empty> runAssetDiscoveryAsync(
+      OrganizationName parent) {
 
     RunAssetDiscoveryRequest request =
         RunAssetDiscoveryRequest.newBuilder()
@@ -1297,7 +1296,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * <pre><code>
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
-   *   securityCenterClient.runAssetDiscoveryAsync(parent.toString()).get();
+   *   RunAssetDiscoveryResponse response = securityCenterClient.runAssetDiscoveryAsync(parent.toString()).get();
    * }
    * </code></pre>
    *
@@ -1307,7 +1306,8 @@ public class SecurityCenterClient implements BackgroundResource {
    */
   @BetaApi(
       "The surface for long-running operations is not stable yet and may change in the future.")
-  public final OperationFuture<Empty, Empty> runAssetDiscoveryAsync(String parent) {
+  public final OperationFuture<RunAssetDiscoveryResponse, Empty> runAssetDiscoveryAsync(
+      String parent) {
 
     RunAssetDiscoveryRequest request =
         RunAssetDiscoveryRequest.newBuilder().setParent(parent).build();
@@ -1329,7 +1329,7 @@ public class SecurityCenterClient implements BackgroundResource {
    *   RunAssetDiscoveryRequest request = RunAssetDiscoveryRequest.newBuilder()
    *     .setParent(parent.toString())
    *     .build();
-   *   securityCenterClient.runAssetDiscoveryAsync(request).get();
+   *   RunAssetDiscoveryResponse response = securityCenterClient.runAssetDiscoveryAsync(request).get();
    * }
    * </code></pre>
    *
@@ -1338,7 +1338,7 @@ public class SecurityCenterClient implements BackgroundResource {
    */
   @BetaApi(
       "The surface for long-running operations is not stable yet and may change in the future.")
-  public final OperationFuture<Empty, Empty> runAssetDiscoveryAsync(
+  public final OperationFuture<RunAssetDiscoveryResponse, Empty> runAssetDiscoveryAsync(
       RunAssetDiscoveryRequest request) {
     return runAssetDiscoveryOperationCallable().futureCall(request);
   }
@@ -1358,14 +1358,14 @@ public class SecurityCenterClient implements BackgroundResource {
    *   RunAssetDiscoveryRequest request = RunAssetDiscoveryRequest.newBuilder()
    *     .setParent(parent.toString())
    *     .build();
-   *   OperationFuture&lt;Empty, Empty&gt; future = securityCenterClient.runAssetDiscoveryOperationCallable().futureCall(request);
+   *   OperationFuture&lt;RunAssetDiscoveryResponse, Empty&gt; future = securityCenterClient.runAssetDiscoveryOperationCallable().futureCall(request);
    *   // Do something
-   *   future.get();
+   *   RunAssetDiscoveryResponse response = future.get();
    * }
    * </code></pre>
    */
   @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public final OperationCallable<RunAssetDiscoveryRequest, Empty, Empty>
+  public final OperationCallable<RunAssetDiscoveryRequest, RunAssetDiscoveryResponse, Empty>
       runAssetDiscoveryOperationCallable() {
     return stub.runAssetDiscoveryOperationCallable();
   }
@@ -1387,7 +1387,7 @@ public class SecurityCenterClient implements BackgroundResource {
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = securityCenterClient.runAssetDiscoveryCallable().futureCall(request);
    *   // Do something
-   *   future.get();
+   *   Operation response = future.get();
    * }
    * </code></pre>
    */
@@ -1528,9 +1528,8 @@ public class SecurityCenterClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param resource REQUIRED: The resource for which the policy is being specified. `resource` is
-   *     usually specified as a path. For example, a Project resource is specified as
-   *     `projects/{project}`.
+   * @param resource REQUIRED: The resource for which the policy is being specified. See the
+   *     operation documentation for the appropriate value for this field.
    * @param policy REQUIRED: The complete policy to be applied to the `resource`. The size of the
    *     policy is limited to a few 10s of KB. An empty policy is a valid policy but certain Cloud
    *     Platform services (such as Projects) might reject them.
@@ -1560,9 +1559,8 @@ public class SecurityCenterClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param resource REQUIRED: The resource for which the policy is being specified. `resource` is
-   *     usually specified as a path. For example, a Project resource is specified as
-   *     `projects/{project}`.
+   * @param resource REQUIRED: The resource for which the policy is being specified. See the
+   *     operation documentation for the appropriate value for this field.
    * @param policy REQUIRED: The complete policy to be applied to the `resource`. The size of the
    *     policy is limited to a few 10s of KB. An empty policy is a valid policy but certain Cloud
    *     Platform services (such as Projects) might reject them.
@@ -1638,9 +1636,8 @@ public class SecurityCenterClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param resource REQUIRED: The resource for which the policy detail is being requested.
-   *     `resource` is usually specified as a path. For example, a Project resource is specified as
-   *     `projects/{project}`.
+   * @param resource REQUIRED: The resource for which the policy detail is being requested. See the
+   *     operation documentation for the appropriate value for this field.
    * @param permissions The set of permissions to check for the `resource`. Permissions with
    *     wildcards (such as '&#42;' or 'storage.&#42;') are not allowed. For more information see
    *     [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions).
@@ -1671,9 +1668,8 @@ public class SecurityCenterClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param resource REQUIRED: The resource for which the policy detail is being requested.
-   *     `resource` is usually specified as a path. For example, a Project resource is specified as
-   *     `projects/{project}`.
+   * @param resource REQUIRED: The resource for which the policy detail is being requested. See the
+   *     operation documentation for the appropriate value for this field.
    * @param permissions The set of permissions to check for the `resource`. Permissions with
    *     wildcards (such as '&#42;' or 'storage.&#42;') are not allowed. For more information see
    *     [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions).

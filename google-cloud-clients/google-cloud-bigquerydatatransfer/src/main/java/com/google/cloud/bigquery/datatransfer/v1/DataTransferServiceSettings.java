@@ -144,6 +144,12 @@ public class DataTransferServiceSettings extends ClientSettings<DataTransferServ
     return ((DataTransferServiceStubSettings) getStubSettings()).checkValidCredsSettings();
   }
 
+  /** Returns the object with the settings used for calls to startManualTransferRuns. */
+  public UnaryCallSettings<StartManualTransferRunsRequest, StartManualTransferRunsResponse>
+      startManualTransferRunsSettings() {
+    return ((DataTransferServiceStubSettings) getStubSettings()).startManualTransferRunsSettings();
+  }
+
   public static final DataTransferServiceSettings create(DataTransferServiceStubSettings stub)
       throws IOException {
     return new DataTransferServiceSettings.Builder(stub.toBuilder()).build();
@@ -320,6 +326,13 @@ public class DataTransferServiceSettings extends ClientSettings<DataTransferServ
     public UnaryCallSettings.Builder<CheckValidCredsRequest, CheckValidCredsResponse>
         checkValidCredsSettings() {
       return getStubSettingsBuilder().checkValidCredsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to startManualTransferRuns. */
+    public UnaryCallSettings.Builder<
+            StartManualTransferRunsRequest, StartManualTransferRunsResponse>
+        startManualTransferRunsSettings() {
+      return getStubSettingsBuilder().startManualTransferRunsSettings();
     }
 
     @Override

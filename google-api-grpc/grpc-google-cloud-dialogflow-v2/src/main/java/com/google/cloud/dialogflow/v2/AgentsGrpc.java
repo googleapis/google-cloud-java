@@ -22,18 +22,18 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  * You can create an agent using both Dialogflow Standard Edition and
  * Dialogflow Enterprise Edition. For details, see
  * [Dialogflow
- * Editions](https://cloud.google.com/dialogflow-enterprise/docs/editions).
+ * Editions](https://cloud.google.com/dialogflow/docs/editions).
  * You can save your agent for backup or versioning by exporting the agent by
  * using the [ExportAgent][google.cloud.dialogflow.v2.Agents.ExportAgent] method. You can import a saved
  * agent by using the [ImportAgent][google.cloud.dialogflow.v2.Agents.ImportAgent] method.
  * Dialogflow provides several
  * [prebuilt
- * agents](https://cloud.google.com/dialogflow-enterprise/docs/agents-prebuilt)
+ * agents](https://cloud.google.com/dialogflow/docs/agents-prebuilt)
  * for common conversation scenarios such as determining a date and time,
  * converting currency, and so on.
  * For more information about agents, see the
  * [Dialogflow
- * documentation](https://cloud.google.com/dialogflow-enterprise/docs/agents-overview).
+ * documentation](https://cloud.google.com/dialogflow/docs/agents-overview).
  * </pre>
  */
 @javax.annotation.Generated(
@@ -94,6 +94,108 @@ public final class AgentsGrpc {
       }
     }
     return getGetAgentMethod;
+  }
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getSetAgentMethod()} instead.
+  public static final io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.v2.SetAgentRequest, com.google.cloud.dialogflow.v2.Agent>
+      METHOD_SET_AGENT = getSetAgentMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.v2.SetAgentRequest, com.google.cloud.dialogflow.v2.Agent>
+      getSetAgentMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.v2.SetAgentRequest, com.google.cloud.dialogflow.v2.Agent>
+      getSetAgentMethod() {
+    return getSetAgentMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.v2.SetAgentRequest, com.google.cloud.dialogflow.v2.Agent>
+      getSetAgentMethodHelper() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dialogflow.v2.SetAgentRequest, com.google.cloud.dialogflow.v2.Agent>
+        getSetAgentMethod;
+    if ((getSetAgentMethod = AgentsGrpc.getSetAgentMethod) == null) {
+      synchronized (AgentsGrpc.class) {
+        if ((getSetAgentMethod = AgentsGrpc.getSetAgentMethod) == null) {
+          AgentsGrpc.getSetAgentMethod =
+              getSetAgentMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dialogflow.v2.SetAgentRequest,
+                          com.google.cloud.dialogflow.v2.Agent>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName("google.cloud.dialogflow.v2.Agents", "SetAgent"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dialogflow.v2.SetAgentRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dialogflow.v2.Agent.getDefaultInstance()))
+                      .setSchemaDescriptor(new AgentsMethodDescriptorSupplier("SetAgent"))
+                      .build();
+        }
+      }
+    }
+    return getSetAgentMethod;
+  }
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getDeleteAgentMethod()} instead.
+  public static final io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.v2.DeleteAgentRequest, com.google.protobuf.Empty>
+      METHOD_DELETE_AGENT = getDeleteAgentMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.v2.DeleteAgentRequest, com.google.protobuf.Empty>
+      getDeleteAgentMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.v2.DeleteAgentRequest, com.google.protobuf.Empty>
+      getDeleteAgentMethod() {
+    return getDeleteAgentMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.v2.DeleteAgentRequest, com.google.protobuf.Empty>
+      getDeleteAgentMethodHelper() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dialogflow.v2.DeleteAgentRequest, com.google.protobuf.Empty>
+        getDeleteAgentMethod;
+    if ((getDeleteAgentMethod = AgentsGrpc.getDeleteAgentMethod) == null) {
+      synchronized (AgentsGrpc.class) {
+        if ((getDeleteAgentMethod = AgentsGrpc.getDeleteAgentMethod) == null) {
+          AgentsGrpc.getDeleteAgentMethod =
+              getDeleteAgentMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dialogflow.v2.DeleteAgentRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              "google.cloud.dialogflow.v2.Agents", "DeleteAgent"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dialogflow.v2.DeleteAgentRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(new AgentsMethodDescriptorSupplier("DeleteAgent"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteAgentMethod;
   }
 
   @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
@@ -393,18 +495,18 @@ public final class AgentsGrpc {
    * You can create an agent using both Dialogflow Standard Edition and
    * Dialogflow Enterprise Edition. For details, see
    * [Dialogflow
-   * Editions](https://cloud.google.com/dialogflow-enterprise/docs/editions).
+   * Editions](https://cloud.google.com/dialogflow/docs/editions).
    * You can save your agent for backup or versioning by exporting the agent by
    * using the [ExportAgent][google.cloud.dialogflow.v2.Agents.ExportAgent] method. You can import a saved
    * agent by using the [ImportAgent][google.cloud.dialogflow.v2.Agents.ImportAgent] method.
    * Dialogflow provides several
    * [prebuilt
-   * agents](https://cloud.google.com/dialogflow-enterprise/docs/agents-prebuilt)
+   * agents](https://cloud.google.com/dialogflow/docs/agents-prebuilt)
    * for common conversation scenarios such as determining a date and time,
    * converting currency, and so on.
    * For more information about agents, see the
    * [Dialogflow
-   * documentation](https://cloud.google.com/dialogflow-enterprise/docs/agents-overview).
+   * documentation](https://cloud.google.com/dialogflow/docs/agents-overview).
    * </pre>
    */
   public abstract static class AgentsImplBase implements io.grpc.BindableService {
@@ -420,6 +522,32 @@ public final class AgentsGrpc {
         com.google.cloud.dialogflow.v2.GetAgentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2.Agent> responseObserver) {
       asyncUnimplementedUnaryCall(getGetAgentMethodHelper(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates/updates the specified agent.
+     * </pre>
+     */
+    public void setAgent(
+        com.google.cloud.dialogflow.v2.SetAgentRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2.Agent> responseObserver) {
+      asyncUnimplementedUnaryCall(getSetAgentMethodHelper(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified agent.
+     * </pre>
+     */
+    public void deleteAgent(
+        com.google.cloud.dialogflow.v2.DeleteAgentRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      asyncUnimplementedUnaryCall(getDeleteAgentMethodHelper(), responseObserver);
     }
 
     /**
@@ -512,6 +640,18 @@ public final class AgentsGrpc {
                       com.google.cloud.dialogflow.v2.GetAgentRequest,
                       com.google.cloud.dialogflow.v2.Agent>(this, METHODID_GET_AGENT)))
           .addMethod(
+              getSetAgentMethodHelper(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.dialogflow.v2.SetAgentRequest,
+                      com.google.cloud.dialogflow.v2.Agent>(this, METHODID_SET_AGENT)))
+          .addMethod(
+              getDeleteAgentMethodHelper(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.dialogflow.v2.DeleteAgentRequest, com.google.protobuf.Empty>(
+                      this, METHODID_DELETE_AGENT)))
+          .addMethod(
               getSearchAgentsMethodHelper(),
               asyncUnaryCall(
                   new MethodHandlers<
@@ -561,18 +701,18 @@ public final class AgentsGrpc {
    * You can create an agent using both Dialogflow Standard Edition and
    * Dialogflow Enterprise Edition. For details, see
    * [Dialogflow
-   * Editions](https://cloud.google.com/dialogflow-enterprise/docs/editions).
+   * Editions](https://cloud.google.com/dialogflow/docs/editions).
    * You can save your agent for backup or versioning by exporting the agent by
    * using the [ExportAgent][google.cloud.dialogflow.v2.Agents.ExportAgent] method. You can import a saved
    * agent by using the [ImportAgent][google.cloud.dialogflow.v2.Agents.ImportAgent] method.
    * Dialogflow provides several
    * [prebuilt
-   * agents](https://cloud.google.com/dialogflow-enterprise/docs/agents-prebuilt)
+   * agents](https://cloud.google.com/dialogflow/docs/agents-prebuilt)
    * for common conversation scenarios such as determining a date and time,
    * converting currency, and so on.
    * For more information about agents, see the
    * [Dialogflow
-   * documentation](https://cloud.google.com/dialogflow-enterprise/docs/agents-overview).
+   * documentation](https://cloud.google.com/dialogflow/docs/agents-overview).
    * </pre>
    */
   public static final class AgentsStub extends io.grpc.stub.AbstractStub<AgentsStub> {
@@ -601,6 +741,38 @@ public final class AgentsGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2.Agent> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getGetAgentMethodHelper(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates/updates the specified agent.
+     * </pre>
+     */
+    public void setAgent(
+        com.google.cloud.dialogflow.v2.SetAgentRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2.Agent> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getSetAgentMethodHelper(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified agent.
+     * </pre>
+     */
+    public void deleteAgent(
+        com.google.cloud.dialogflow.v2.DeleteAgentRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getDeleteAgentMethodHelper(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -716,18 +888,18 @@ public final class AgentsGrpc {
    * You can create an agent using both Dialogflow Standard Edition and
    * Dialogflow Enterprise Edition. For details, see
    * [Dialogflow
-   * Editions](https://cloud.google.com/dialogflow-enterprise/docs/editions).
+   * Editions](https://cloud.google.com/dialogflow/docs/editions).
    * You can save your agent for backup or versioning by exporting the agent by
    * using the [ExportAgent][google.cloud.dialogflow.v2.Agents.ExportAgent] method. You can import a saved
    * agent by using the [ImportAgent][google.cloud.dialogflow.v2.Agents.ImportAgent] method.
    * Dialogflow provides several
    * [prebuilt
-   * agents](https://cloud.google.com/dialogflow-enterprise/docs/agents-prebuilt)
+   * agents](https://cloud.google.com/dialogflow/docs/agents-prebuilt)
    * for common conversation scenarios such as determining a date and time,
    * converting currency, and so on.
    * For more information about agents, see the
    * [Dialogflow
-   * documentation](https://cloud.google.com/dialogflow-enterprise/docs/agents-overview).
+   * documentation](https://cloud.google.com/dialogflow/docs/agents-overview).
    * </pre>
    */
   public static final class AgentsBlockingStub
@@ -755,6 +927,31 @@ public final class AgentsGrpc {
     public com.google.cloud.dialogflow.v2.Agent getAgent(
         com.google.cloud.dialogflow.v2.GetAgentRequest request) {
       return blockingUnaryCall(getChannel(), getGetAgentMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates/updates the specified agent.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.v2.Agent setAgent(
+        com.google.cloud.dialogflow.v2.SetAgentRequest request) {
+      return blockingUnaryCall(getChannel(), getSetAgentMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified agent.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteAgent(
+        com.google.cloud.dialogflow.v2.DeleteAgentRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getDeleteAgentMethodHelper(), getCallOptions(), request);
     }
 
     /**
@@ -852,18 +1049,18 @@ public final class AgentsGrpc {
    * You can create an agent using both Dialogflow Standard Edition and
    * Dialogflow Enterprise Edition. For details, see
    * [Dialogflow
-   * Editions](https://cloud.google.com/dialogflow-enterprise/docs/editions).
+   * Editions](https://cloud.google.com/dialogflow/docs/editions).
    * You can save your agent for backup or versioning by exporting the agent by
    * using the [ExportAgent][google.cloud.dialogflow.v2.Agents.ExportAgent] method. You can import a saved
    * agent by using the [ImportAgent][google.cloud.dialogflow.v2.Agents.ImportAgent] method.
    * Dialogflow provides several
    * [prebuilt
-   * agents](https://cloud.google.com/dialogflow-enterprise/docs/agents-prebuilt)
+   * agents](https://cloud.google.com/dialogflow/docs/agents-prebuilt)
    * for common conversation scenarios such as determining a date and time,
    * converting currency, and so on.
    * For more information about agents, see the
    * [Dialogflow
-   * documentation](https://cloud.google.com/dialogflow-enterprise/docs/agents-overview).
+   * documentation](https://cloud.google.com/dialogflow/docs/agents-overview).
    * </pre>
    */
   public static final class AgentsFutureStub extends io.grpc.stub.AbstractStub<AgentsFutureStub> {
@@ -891,6 +1088,32 @@ public final class AgentsGrpc {
         getAgent(com.google.cloud.dialogflow.v2.GetAgentRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getGetAgentMethodHelper(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates/updates the specified agent.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.dialogflow.v2.Agent>
+        setAgent(com.google.cloud.dialogflow.v2.SetAgentRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getSetAgentMethodHelper(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified agent.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        deleteAgent(com.google.cloud.dialogflow.v2.DeleteAgentRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getDeleteAgentMethodHelper(), getCallOptions()), request);
     }
 
     /**
@@ -975,11 +1198,13 @@ public final class AgentsGrpc {
   }
 
   private static final int METHODID_GET_AGENT = 0;
-  private static final int METHODID_SEARCH_AGENTS = 1;
-  private static final int METHODID_TRAIN_AGENT = 2;
-  private static final int METHODID_EXPORT_AGENT = 3;
-  private static final int METHODID_IMPORT_AGENT = 4;
-  private static final int METHODID_RESTORE_AGENT = 5;
+  private static final int METHODID_SET_AGENT = 1;
+  private static final int METHODID_DELETE_AGENT = 2;
+  private static final int METHODID_SEARCH_AGENTS = 3;
+  private static final int METHODID_TRAIN_AGENT = 4;
+  private static final int METHODID_EXPORT_AGENT = 5;
+  private static final int METHODID_IMPORT_AGENT = 6;
+  private static final int METHODID_RESTORE_AGENT = 7;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1002,6 +1227,16 @@ public final class AgentsGrpc {
           serviceImpl.getAgent(
               (com.google.cloud.dialogflow.v2.GetAgentRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2.Agent>) responseObserver);
+          break;
+        case METHODID_SET_AGENT:
+          serviceImpl.setAgent(
+              (com.google.cloud.dialogflow.v2.SetAgentRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2.Agent>) responseObserver);
+          break;
+        case METHODID_DELETE_AGENT:
+          serviceImpl.deleteAgent(
+              (com.google.cloud.dialogflow.v2.DeleteAgentRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
         case METHODID_SEARCH_AGENTS:
           serviceImpl.searchAgents(
@@ -1092,6 +1327,8 @@ public final class AgentsGrpc {
                   io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
                       .setSchemaDescriptor(new AgentsFileDescriptorSupplier())
                       .addMethod(getGetAgentMethodHelper())
+                      .addMethod(getSetAgentMethodHelper())
+                      .addMethod(getDeleteAgentMethodHelper())
                       .addMethod(getSearchAgentsMethodHelper())
                       .addMethod(getTrainAgentMethodHelper())
                       .addMethod(getExportAgentMethodHelper())

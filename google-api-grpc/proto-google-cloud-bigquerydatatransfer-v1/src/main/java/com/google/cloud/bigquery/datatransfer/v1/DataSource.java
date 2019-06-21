@@ -727,7 +727,6 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Data source client id which should be used to receive refresh token.
-   * When not supplied, no offline credentials are populated for data transfer.
    * </pre>
    *
    * <code>string client_id = 5;</code>
@@ -748,7 +747,6 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Data source client id which should be used to receive refresh token.
-   * When not supplied, no offline credentials are populated for data transfer.
    * </pre>
    *
    * <code>string client_id = 5;</code>
@@ -771,10 +769,9 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Api auth scopes for which refresh token needs to be obtained. Only valid
-   * when `client_id` is specified. Ignored otherwise. These are scopes needed
-   * by a data source to prepare data and ingest them into BigQuery,
-   * e.g., https://www.googleapis.com/auth/bigquery
+   * Api auth scopes for which refresh token needs to be obtained. These are
+   * scopes needed by a data source to prepare data and ingest them into
+   * BigQuery, e.g., https://www.googleapis.com/auth/bigquery
    * </pre>
    *
    * <code>repeated string scopes = 6;</code>
@@ -786,10 +783,9 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Api auth scopes for which refresh token needs to be obtained. Only valid
-   * when `client_id` is specified. Ignored otherwise. These are scopes needed
-   * by a data source to prepare data and ingest them into BigQuery,
-   * e.g., https://www.googleapis.com/auth/bigquery
+   * Api auth scopes for which refresh token needs to be obtained. These are
+   * scopes needed by a data source to prepare data and ingest them into
+   * BigQuery, e.g., https://www.googleapis.com/auth/bigquery
    * </pre>
    *
    * <code>repeated string scopes = 6;</code>
@@ -801,10 +797,9 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Api auth scopes for which refresh token needs to be obtained. Only valid
-   * when `client_id` is specified. Ignored otherwise. These are scopes needed
-   * by a data source to prepare data and ingest them into BigQuery,
-   * e.g., https://www.googleapis.com/auth/bigquery
+   * Api auth scopes for which refresh token needs to be obtained. These are
+   * scopes needed by a data source to prepare data and ingest them into
+   * BigQuery, e.g., https://www.googleapis.com/auth/bigquery
    * </pre>
    *
    * <code>repeated string scopes = 6;</code>
@@ -816,10 +811,9 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Api auth scopes for which refresh token needs to be obtained. Only valid
-   * when `client_id` is specified. Ignored otherwise. These are scopes needed
-   * by a data source to prepare data and ingest them into BigQuery,
-   * e.g., https://www.googleapis.com/auth/bigquery
+   * Api auth scopes for which refresh token needs to be obtained. These are
+   * scopes needed by a data source to prepare data and ingest them into
+   * BigQuery, e.g., https://www.googleapis.com/auth/bigquery
    * </pre>
    *
    * <code>repeated string scopes = 6;</code>
@@ -837,8 +831,11 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    * Deprecated. This field has no effect.
    * </pre>
    *
-   * <code>.google.cloud.bigquery.datatransfer.v1.TransferType transfer_type = 7;</code>
+   * <code>
+   * .google.cloud.bigquery.datatransfer.v1.TransferType transfer_type = 7 [deprecated = true];
+   * </code>
    */
+  @java.lang.Deprecated
   public int getTransferTypeValue() {
     return transferType_;
   }
@@ -849,8 +846,11 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    * Deprecated. This field has no effect.
    * </pre>
    *
-   * <code>.google.cloud.bigquery.datatransfer.v1.TransferType transfer_type = 7;</code>
+   * <code>
+   * .google.cloud.bigquery.datatransfer.v1.TransferType transfer_type = 7 [deprecated = true];
+   * </code>
    */
+  @java.lang.Deprecated
   public com.google.cloud.bigquery.datatransfer.v1.TransferType getTransferType() {
     @SuppressWarnings("deprecation")
     com.google.cloud.bigquery.datatransfer.v1.TransferType result =
@@ -866,12 +866,12 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Indicates whether the data source supports multiple transfers
-   * to different BigQuery targets.
+   * Deprecated. This field has no effect.
    * </pre>
    *
-   * <code>bool supports_multiple_transfers = 8;</code>
+   * <code>bool supports_multiple_transfers = 8 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   public boolean getSupportsMultipleTransfers() {
     return supportsMultipleTransfers_;
   }
@@ -883,7 +883,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The number of seconds to wait for an update from the data source
-   * before BigQuery marks the transfer as failed.
+   * before the Data Transfer Service marks the transfer as FAILED.
    * </pre>
    *
    * <code>int32 update_deadline_seconds = 9;</code>
@@ -2284,7 +2284,6 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Data source client id which should be used to receive refresh token.
-     * When not supplied, no offline credentials are populated for data transfer.
      * </pre>
      *
      * <code>string client_id = 5;</code>
@@ -2305,7 +2304,6 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Data source client id which should be used to receive refresh token.
-     * When not supplied, no offline credentials are populated for data transfer.
      * </pre>
      *
      * <code>string client_id = 5;</code>
@@ -2326,7 +2324,6 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Data source client id which should be used to receive refresh token.
-     * When not supplied, no offline credentials are populated for data transfer.
      * </pre>
      *
      * <code>string client_id = 5;</code>
@@ -2345,7 +2342,6 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Data source client id which should be used to receive refresh token.
-     * When not supplied, no offline credentials are populated for data transfer.
      * </pre>
      *
      * <code>string client_id = 5;</code>
@@ -2361,7 +2357,6 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Data source client id which should be used to receive refresh token.
-     * When not supplied, no offline credentials are populated for data transfer.
      * </pre>
      *
      * <code>string client_id = 5;</code>
@@ -2390,10 +2385,9 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Api auth scopes for which refresh token needs to be obtained. Only valid
-     * when `client_id` is specified. Ignored otherwise. These are scopes needed
-     * by a data source to prepare data and ingest them into BigQuery,
-     * e.g., https://www.googleapis.com/auth/bigquery
+     * Api auth scopes for which refresh token needs to be obtained. These are
+     * scopes needed by a data source to prepare data and ingest them into
+     * BigQuery, e.g., https://www.googleapis.com/auth/bigquery
      * </pre>
      *
      * <code>repeated string scopes = 6;</code>
@@ -2405,10 +2399,9 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Api auth scopes for which refresh token needs to be obtained. Only valid
-     * when `client_id` is specified. Ignored otherwise. These are scopes needed
-     * by a data source to prepare data and ingest them into BigQuery,
-     * e.g., https://www.googleapis.com/auth/bigquery
+     * Api auth scopes for which refresh token needs to be obtained. These are
+     * scopes needed by a data source to prepare data and ingest them into
+     * BigQuery, e.g., https://www.googleapis.com/auth/bigquery
      * </pre>
      *
      * <code>repeated string scopes = 6;</code>
@@ -2420,10 +2413,9 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Api auth scopes for which refresh token needs to be obtained. Only valid
-     * when `client_id` is specified. Ignored otherwise. These are scopes needed
-     * by a data source to prepare data and ingest them into BigQuery,
-     * e.g., https://www.googleapis.com/auth/bigquery
+     * Api auth scopes for which refresh token needs to be obtained. These are
+     * scopes needed by a data source to prepare data and ingest them into
+     * BigQuery, e.g., https://www.googleapis.com/auth/bigquery
      * </pre>
      *
      * <code>repeated string scopes = 6;</code>
@@ -2435,10 +2427,9 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Api auth scopes for which refresh token needs to be obtained. Only valid
-     * when `client_id` is specified. Ignored otherwise. These are scopes needed
-     * by a data source to prepare data and ingest them into BigQuery,
-     * e.g., https://www.googleapis.com/auth/bigquery
+     * Api auth scopes for which refresh token needs to be obtained. These are
+     * scopes needed by a data source to prepare data and ingest them into
+     * BigQuery, e.g., https://www.googleapis.com/auth/bigquery
      * </pre>
      *
      * <code>repeated string scopes = 6;</code>
@@ -2450,10 +2441,9 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Api auth scopes for which refresh token needs to be obtained. Only valid
-     * when `client_id` is specified. Ignored otherwise. These are scopes needed
-     * by a data source to prepare data and ingest them into BigQuery,
-     * e.g., https://www.googleapis.com/auth/bigquery
+     * Api auth scopes for which refresh token needs to be obtained. These are
+     * scopes needed by a data source to prepare data and ingest them into
+     * BigQuery, e.g., https://www.googleapis.com/auth/bigquery
      * </pre>
      *
      * <code>repeated string scopes = 6;</code>
@@ -2471,10 +2461,9 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Api auth scopes for which refresh token needs to be obtained. Only valid
-     * when `client_id` is specified. Ignored otherwise. These are scopes needed
-     * by a data source to prepare data and ingest them into BigQuery,
-     * e.g., https://www.googleapis.com/auth/bigquery
+     * Api auth scopes for which refresh token needs to be obtained. These are
+     * scopes needed by a data source to prepare data and ingest them into
+     * BigQuery, e.g., https://www.googleapis.com/auth/bigquery
      * </pre>
      *
      * <code>repeated string scopes = 6;</code>
@@ -2492,10 +2481,9 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Api auth scopes for which refresh token needs to be obtained. Only valid
-     * when `client_id` is specified. Ignored otherwise. These are scopes needed
-     * by a data source to prepare data and ingest them into BigQuery,
-     * e.g., https://www.googleapis.com/auth/bigquery
+     * Api auth scopes for which refresh token needs to be obtained. These are
+     * scopes needed by a data source to prepare data and ingest them into
+     * BigQuery, e.g., https://www.googleapis.com/auth/bigquery
      * </pre>
      *
      * <code>repeated string scopes = 6;</code>
@@ -2510,10 +2498,9 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Api auth scopes for which refresh token needs to be obtained. Only valid
-     * when `client_id` is specified. Ignored otherwise. These are scopes needed
-     * by a data source to prepare data and ingest them into BigQuery,
-     * e.g., https://www.googleapis.com/auth/bigquery
+     * Api auth scopes for which refresh token needs to be obtained. These are
+     * scopes needed by a data source to prepare data and ingest them into
+     * BigQuery, e.g., https://www.googleapis.com/auth/bigquery
      * </pre>
      *
      * <code>repeated string scopes = 6;</code>
@@ -2528,10 +2515,9 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Api auth scopes for which refresh token needs to be obtained. Only valid
-     * when `client_id` is specified. Ignored otherwise. These are scopes needed
-     * by a data source to prepare data and ingest them into BigQuery,
-     * e.g., https://www.googleapis.com/auth/bigquery
+     * Api auth scopes for which refresh token needs to be obtained. These are
+     * scopes needed by a data source to prepare data and ingest them into
+     * BigQuery, e.g., https://www.googleapis.com/auth/bigquery
      * </pre>
      *
      * <code>repeated string scopes = 6;</code>
@@ -2555,8 +2541,11 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * Deprecated. This field has no effect.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.datatransfer.v1.TransferType transfer_type = 7;</code>
+     * <code>
+     * .google.cloud.bigquery.datatransfer.v1.TransferType transfer_type = 7 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public int getTransferTypeValue() {
       return transferType_;
     }
@@ -2567,8 +2556,11 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * Deprecated. This field has no effect.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.datatransfer.v1.TransferType transfer_type = 7;</code>
+     * <code>
+     * .google.cloud.bigquery.datatransfer.v1.TransferType transfer_type = 7 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder setTransferTypeValue(int value) {
       transferType_ = value;
       onChanged();
@@ -2581,8 +2573,11 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * Deprecated. This field has no effect.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.datatransfer.v1.TransferType transfer_type = 7;</code>
+     * <code>
+     * .google.cloud.bigquery.datatransfer.v1.TransferType transfer_type = 7 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.bigquery.datatransfer.v1.TransferType getTransferType() {
       @SuppressWarnings("deprecation")
       com.google.cloud.bigquery.datatransfer.v1.TransferType result =
@@ -2598,8 +2593,11 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * Deprecated. This field has no effect.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.datatransfer.v1.TransferType transfer_type = 7;</code>
+     * <code>
+     * .google.cloud.bigquery.datatransfer.v1.TransferType transfer_type = 7 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder setTransferType(com.google.cloud.bigquery.datatransfer.v1.TransferType value) {
       if (value == null) {
         throw new NullPointerException();
@@ -2616,8 +2614,11 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * Deprecated. This field has no effect.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.datatransfer.v1.TransferType transfer_type = 7;</code>
+     * <code>
+     * .google.cloud.bigquery.datatransfer.v1.TransferType transfer_type = 7 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder clearTransferType() {
 
       transferType_ = 0;
@@ -2630,12 +2631,12 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Indicates whether the data source supports multiple transfers
-     * to different BigQuery targets.
+     * Deprecated. This field has no effect.
      * </pre>
      *
-     * <code>bool supports_multiple_transfers = 8;</code>
+     * <code>bool supports_multiple_transfers = 8 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public boolean getSupportsMultipleTransfers() {
       return supportsMultipleTransfers_;
     }
@@ -2643,12 +2644,12 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Indicates whether the data source supports multiple transfers
-     * to different BigQuery targets.
+     * Deprecated. This field has no effect.
      * </pre>
      *
-     * <code>bool supports_multiple_transfers = 8;</code>
+     * <code>bool supports_multiple_transfers = 8 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder setSupportsMultipleTransfers(boolean value) {
 
       supportsMultipleTransfers_ = value;
@@ -2659,12 +2660,12 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Indicates whether the data source supports multiple transfers
-     * to different BigQuery targets.
+     * Deprecated. This field has no effect.
      * </pre>
      *
-     * <code>bool supports_multiple_transfers = 8;</code>
+     * <code>bool supports_multiple_transfers = 8 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder clearSupportsMultipleTransfers() {
 
       supportsMultipleTransfers_ = false;
@@ -2678,7 +2679,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The number of seconds to wait for an update from the data source
-     * before BigQuery marks the transfer as failed.
+     * before the Data Transfer Service marks the transfer as FAILED.
      * </pre>
      *
      * <code>int32 update_deadline_seconds = 9;</code>
@@ -2691,7 +2692,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The number of seconds to wait for an update from the data source
-     * before BigQuery marks the transfer as failed.
+     * before the Data Transfer Service marks the transfer as FAILED.
      * </pre>
      *
      * <code>int32 update_deadline_seconds = 9;</code>
@@ -2707,7 +2708,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The number of seconds to wait for an update from the data source
-     * before BigQuery marks the transfer as failed.
+     * before the Data Transfer Service marks the transfer as FAILED.
      * </pre>
      *
      * <code>int32 update_deadline_seconds = 9;</code>

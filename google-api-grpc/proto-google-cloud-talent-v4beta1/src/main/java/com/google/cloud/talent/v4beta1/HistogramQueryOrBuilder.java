@@ -14,8 +14,11 @@ public interface HistogramQueryOrBuilder
    * <pre>
    * An expression specifies a histogram request against matching resources
    * (for example, jobs, profiles) for searches.
-   * See [SearchJobsRequest.histogram_queries][google.cloud.talent.v4beta1.SearchJobsRequest.histogram_queries] and
-   * [SearchProfilesRequest.histogram_queries][google.cloud.talent.v4beta1.SearchProfilesRequest.histogram_queries] for details about syntax.
+   * See
+   * [SearchJobsRequest.histogram_queries][google.cloud.talent.v4beta1.SearchJobsRequest.histogram_queries]
+   * and
+   * [SearchProfilesRequest.histogram_queries][google.cloud.talent.v4beta1.SearchProfilesRequest.histogram_queries]
+   * for details about syntax.
    * </pre>
    *
    * <code>string histogram_query = 1;</code>
@@ -27,8 +30,11 @@ public interface HistogramQueryOrBuilder
    * <pre>
    * An expression specifies a histogram request against matching resources
    * (for example, jobs, profiles) for searches.
-   * See [SearchJobsRequest.histogram_queries][google.cloud.talent.v4beta1.SearchJobsRequest.histogram_queries] and
-   * [SearchProfilesRequest.histogram_queries][google.cloud.talent.v4beta1.SearchProfilesRequest.histogram_queries] for details about syntax.
+   * See
+   * [SearchJobsRequest.histogram_queries][google.cloud.talent.v4beta1.SearchJobsRequest.histogram_queries]
+   * and
+   * [SearchProfilesRequest.histogram_queries][google.cloud.talent.v4beta1.SearchProfilesRequest.histogram_queries]
+   * for details about syntax.
    * </pre>
    *
    * <code>string histogram_query = 1;</code>

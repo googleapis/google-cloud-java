@@ -22,6 +22,7 @@ import com.google.cloud.securitycenter.v1.GroupResult;
 import com.google.cloud.securitycenter.v1.ListAssetsRequest;
 import com.google.cloud.securitycenter.v1.ListAssetsResponse.ListAssetsResult;
 import com.google.cloud.securitycenter.v1.OrganizationName;
+import com.google.cloud.securitycenter.v1.RunAssetDiscoveryResponse;
 import com.google.cloud.securitycenter.v1.SecurityCenterClient;
 import com.google.cloud.securitycenter.v1.SecurityCenterClient.GroupAssetsPagedResponse;
 import com.google.cloud.securitycenter.v1.SecurityCenterClient.ListAssetsPagedResponse;
@@ -291,7 +292,8 @@ public class AssetSnippets {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
       // Call the API.  Note calls to runAssetDiscovery are throttled if too many requests
       // are made.
-      OperationFuture<Empty, Empty> result = client.runAssetDiscoveryAsync(organizationName);
+      OperationFuture<RunAssetDiscoveryResponse, Empty> result =
+          client.runAssetDiscoveryAsync(organizationName);
 
       // Uncomment this line to wait for a certain amount of time for the asset discovery run
       // to complete.

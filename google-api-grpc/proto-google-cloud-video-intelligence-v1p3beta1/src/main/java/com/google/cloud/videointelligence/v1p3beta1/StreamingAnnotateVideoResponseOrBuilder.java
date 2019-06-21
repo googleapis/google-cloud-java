@@ -12,7 +12,7 @@ public interface StreamingAnnotateVideoResponseOrBuilder
    *
    *
    * <pre>
-   * If set, returns a [google.rpc.Status][] message that
+   * If set, returns a [google.rpc.Status][google.rpc.Status] message that
    * specifies the error for the operation.
    * </pre>
    *
@@ -23,7 +23,7 @@ public interface StreamingAnnotateVideoResponseOrBuilder
    *
    *
    * <pre>
-   * If set, returns a [google.rpc.Status][] message that
+   * If set, returns a [google.rpc.Status][google.rpc.Status] message that
    * specifies the error for the operation.
    * </pre>
    *
@@ -34,7 +34,7 @@ public interface StreamingAnnotateVideoResponseOrBuilder
    *
    *
    * <pre>
-   * If set, returns a [google.rpc.Status][] message that
+   * If set, returns a [google.rpc.Status][google.rpc.Status] message that
    * specifies the error for the operation.
    * </pre>
    *

@@ -126,6 +126,16 @@ public class AgentsSettings extends ClientSettings<AgentsSettings> {
     return ((AgentsStubSettings) getStubSettings()).restoreAgentOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to setAgent. */
+  public UnaryCallSettings<SetAgentRequest, Agent> setAgentSettings() {
+    return ((AgentsStubSettings) getStubSettings()).setAgentSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteAgent. */
+  public UnaryCallSettings<DeleteAgentRequest, Empty> deleteAgentSettings() {
+    return ((AgentsStubSettings) getStubSettings()).deleteAgentSettings();
+  }
+
   public static final AgentsSettings create(AgentsStubSettings stub) throws IOException {
     return new AgentsSettings.Builder(stub.toBuilder()).build();
   }
@@ -284,6 +294,16 @@ public class AgentsSettings extends ClientSettings<AgentsSettings> {
     public OperationCallSettings.Builder<RestoreAgentRequest, Empty, Struct>
         restoreAgentOperationSettings() {
       return getStubSettingsBuilder().restoreAgentOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setAgent. */
+    public UnaryCallSettings.Builder<SetAgentRequest, Agent> setAgentSettings() {
+      return getStubSettingsBuilder().setAgentSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteAgent. */
+    public UnaryCallSettings.Builder<DeleteAgentRequest, Empty> deleteAgentSettings() {
+      return getStubSettingsBuilder().deleteAgentSettings();
     }
 
     @Override

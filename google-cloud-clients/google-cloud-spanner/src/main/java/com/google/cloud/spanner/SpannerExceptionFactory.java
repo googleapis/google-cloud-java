@@ -147,6 +147,11 @@ public final class SpannerExceptionFactory {
     switch (code) {
       case ABORTED:
         return new AbortedException(token, message, cause);
+      case NOT_FOUND:
+        if (message != null && message.contains("Session not found")) {
+          return new SessionNotFoundException(token, message, cause);
+        }
+        // Fall through to the default.
       default:
         return new SpannerException(token, code, isRetryable(code, cause), message, cause);
     }

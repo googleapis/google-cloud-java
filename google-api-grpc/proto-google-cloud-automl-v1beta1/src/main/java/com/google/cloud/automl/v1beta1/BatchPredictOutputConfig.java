@@ -15,7 +15,7 @@ package com.google.cloud.automl.v1beta1;
  * will be
  * "prediction-&lt;model-display-name&gt;-&lt;timestamp-of-prediction-call&gt;",
  * where timestamp is in YYYY-MM-DDThh:mm:ss.sssZ ISO-8601 format. The contents
- * of it depend on the ML problem the predictions are made for.
+ * of it depends on the ML problem the predictions are made for.
  *  *  For Video Classification:
  *         In the created directory a video_classification.csv file, and a .JSON
  *         file per each video classification requested in the input (i.e. each
@@ -28,9 +28,9 @@ package com.google.cloud.automl.v1beta1;
  *             precisely the same number of lines as the prediction input had.)
  *         JSON_FILE_NAME = Name of .JSON file in the output directory, which
  *             contains prediction responses for the video time segment.
- *         STATUS = "OK" if prediction completed successfully, or an error
- *             code and,or message otherwise. If STATUS is not "OK" then the
- *             .JSON file for that line may not exist or be empty.
+ *         STATUS = "OK" if prediction completed successfully, or an error code
+ *             with message otherwise. If STATUS is not "OK" then the .JSON file
+ *             for that line may not exist or be empty.
  *         Each .JSON file, assuming STATUS is "OK", will contain a list of
  *         AnnotationPayload protos in JSON format, which are the predictions
  *         for the video time segment the file is assigned to in the
@@ -39,6 +39,28 @@ package com.google.cloud.automl.v1beta1;
  *         video_classification.type field (note that the returned types are
  *         governed by `classifaction_types` parameter in
  *         [PredictService.BatchPredictRequest.params][]).
+ *  *  For Video Object Tracking:
+ *         In the created directory a video_object_tracking.csv file will be
+ *         created, and multiple files video_object_trackinng_1.json,
+ *         video_object_trackinng_2.json,..., video_object_trackinng_N.json,
+ *         where N is the number of requests in the input (i.e. the number of
+ *         lines in given CSV(s)).
+ *         The format of video_object_tracking.csv is:
+ * GCS_FILE_PATH,TIME_SEGMENT_START,TIME_SEGMENT_END,JSON_FILE_NAME,STATUS
+ *         where:
+ *         GCS_FILE_PATH,TIME_SEGMENT_START,TIME_SEGMENT_END = matches 1 to 1
+ *             the prediction input lines (i.e. video_object_tracking.csv has
+ *             precisely the same number of lines as the prediction input had.)
+ *         JSON_FILE_NAME = Name of .JSON file in the output directory, which
+ *             contains prediction responses for the video time segment.
+ *         STATUS = "OK" if prediction completed successfully, or an error
+ *             code with message otherwise. If STATUS is not "OK" then the .JSON
+ *             file for that line may not exist or be empty.
+ *         Each .JSON file, assuming STATUS is "OK", will contain a list of
+ *         AnnotationPayload protos in JSON format, which are the predictions
+ *         for each frame of the video time segment the file is assigned to in
+ *         video_object_tracking.csv. All AnnotationPayload protos will have
+ *         video_object_tracking field set.
  *   *  For Text Extraction:
  *         In the created directory files `text_extraction_1.jsonl`,
  *         `text_extraction_2.jsonl`,...,`text_extraction_N.jsonl`
@@ -82,11 +104,11 @@ package com.google.cloud.automl.v1beta1;
  *           In the created directory files `tables_1.csv`, `tables_2.csv`,...,
  *           `tables_N.csv` will be created, where N may be 1, and depends on
  *           the total number of the successfully predicted rows.
- *           For the classification models:
- *             Each .csv file will contain a header, listing all model's
- * [input_feature_column_specs'][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
- * [display_names][google.cloud.automl.v1beta1.ColumnSpec.display_name]
- *             followed by M target column names in the format of
+ *           For all CLASSIFICATION
+ * [prediction_type-s][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type]:
+ *             Each .csv file will contain a header, listing all columns'
+ * [display_name-s][google.cloud.automl.v1beta1.ColumnSpec.display_name]
+ *             given on input followed by M target column names in the format of
  * "&lt;[target_column_specs][google.cloud.automl.v1beta1.TablesModelMetadata.target_column_spec]
  * [display_name][google.cloud.automl.v1beta1.ColumnSpec.display_name]&gt;_&lt;target
  *             value&gt;_score" where M is the number of distinct target values,
@@ -95,26 +117,27 @@ package com.google.cloud.automl.v1beta1;
  *             respective values of successfully predicted rows, with the last,
  *             i.e. the target, columns having the corresponding prediction
  *             [scores][google.cloud.automl.v1beta1.TablesAnnotation.score].
- *           For the regression models:
- *             Each .csv file will contain a header, listing all model's
- * [input_feature_column_specs][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
- *             [display_names][google.cloud.automl.v1beta1.display_name]
- *             followed by the target column with name equal to
- * [target_column_specs'][google.cloud.automl.v1beta1.TablesModelMetadata.target_column_spec]
- * [display_name][google.cloud.automl.v1beta1.ColumnSpec.display_name].
+ *           For REGRESSION and FORECASTING
+ * [prediction_type-s][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type]:
+ *             Each .csv file will contain a header, listing all columns'
+ *             [display_name-s][google.cloud.automl.v1beta1.display_name] given
+ *             on input followed by the predicted target column with name in the
+ *             format of
+ * "predicted_&lt;[target_column_specs][google.cloud.automl.v1beta1.TablesModelMetadata.target_column_spec]
+ * [display_name][google.cloud.automl.v1beta1.ColumnSpec.display_name]&gt;"
  *             Subsequent lines will contain the respective values of
  *             successfully predicted rows, with the last, i.e. the target,
  *             column having the predicted target value.
- *           If prediction for any rows failed, then an additional
- *           `errors_1.csv`, `errors_2.csv`,..., `errors_N.csv` will be created
- *           (N depends on total number of failed rows). These files will have
- *           analogous format as `tables_*.csv`, but always with a single target
- *           column having
+ *             If prediction for any rows failed, then an additional
+ *             `errors_1.csv`, `errors_2.csv`,..., `errors_N.csv` will be
+ *             created (N depends on total number of failed rows). These files
+ *             will have analogous format as `tables_*.csv`, but always with a
+ *             single target column having
  * [`google.rpc.Status`](https:
  * //github.com/googleapis/googleapis/blob/master/google/rpc/status.proto)
- *           represented as a JSON string, and containing only `code` and
- *           `message`.
- *        BigQuery case:
+ *             represented as a JSON string, and containing only `code` and
+ *             `message`.
+ *         BigQuery case:
  * [bigquery_destination][google.cloud.automl.v1beta1.OutputConfig.bigquery_destination]
  *           pointing to a BigQuery project must be set. In the given project a
  *           new dataset will be created with name
@@ -124,12 +147,11 @@ package com.google.cloud.automl.v1beta1;
  *           become underscores), and timestamp will be in
  *           YYYY_MM_DDThh_mm_ss_sssZ "based on ISO-8601" format. In the dataset
  *           two tables will be created, `predictions`, and `errors`.
- *           The `predictions` table's column names will be the
- * [input_feature_column_specs'][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
- * [display_names][google.cloud.automl.v1beta1.ColumnSpec.display_name]
- *           followed by model's
- * [target_column_specs'][google.cloud.automl.v1beta1.TablesModelMetadata.target_column_spec]
- * [display_name][google.cloud.automl.v1beta1.ColumnSpec.display_name].
+ *           The `predictions` table's column names will be the input columns'
+ * [display_name-s][google.cloud.automl.v1beta1.ColumnSpec.display_name]
+ *           followed by the target column with name in the format of
+ * "predicted_&lt;[target_column_specs][google.cloud.automl.v1beta1.TablesModelMetadata.target_column_spec]
+ * [display_name][google.cloud.automl.v1beta1.ColumnSpec.display_name]&gt;"
  *           The input feature columns will contain the respective values of
  *           successfully predicted rows, with the target column having an
  *           ARRAY of
@@ -137,8 +159,11 @@ package com.google.cloud.automl.v1beta1;
  *           represented as STRUCT-s, containing
  *           [TablesAnnotation][google.cloud.automl.v1beta1.TablesAnnotation].
  *           The `errors` table contains rows for which the prediction has
- *           failed, it has analogous input feature and target columns, but
- *           here the target column as a value has
+ *           failed, it has analogous input columns while the target column name
+ *           is in the format of
+ * "errors_&lt;[target_column_specs][google.cloud.automl.v1beta1.TablesModelMetadata.target_column_spec]
+ * [display_name][google.cloud.automl.v1beta1.ColumnSpec.display_name]&gt;",
+ *           and as a value has
  * [`google.rpc.Status`](https:
  * //github.com/googleapis/googleapis/blob/master/google/rpc/status.proto)
  *           represented as a STRUCT, and containing only `code` and `message`.
@@ -587,7 +612,7 @@ public final class BatchPredictOutputConfig extends com.google.protobuf.Generate
    * will be
    * "prediction-&lt;model-display-name&gt;-&lt;timestamp-of-prediction-call&gt;",
    * where timestamp is in YYYY-MM-DDThh:mm:ss.sssZ ISO-8601 format. The contents
-   * of it depend on the ML problem the predictions are made for.
+   * of it depends on the ML problem the predictions are made for.
    *  *  For Video Classification:
    *         In the created directory a video_classification.csv file, and a .JSON
    *         file per each video classification requested in the input (i.e. each
@@ -600,9 +625,9 @@ public final class BatchPredictOutputConfig extends com.google.protobuf.Generate
    *             precisely the same number of lines as the prediction input had.)
    *         JSON_FILE_NAME = Name of .JSON file in the output directory, which
    *             contains prediction responses for the video time segment.
-   *         STATUS = "OK" if prediction completed successfully, or an error
-   *             code and,or message otherwise. If STATUS is not "OK" then the
-   *             .JSON file for that line may not exist or be empty.
+   *         STATUS = "OK" if prediction completed successfully, or an error code
+   *             with message otherwise. If STATUS is not "OK" then the .JSON file
+   *             for that line may not exist or be empty.
    *         Each .JSON file, assuming STATUS is "OK", will contain a list of
    *         AnnotationPayload protos in JSON format, which are the predictions
    *         for the video time segment the file is assigned to in the
@@ -611,6 +636,28 @@ public final class BatchPredictOutputConfig extends com.google.protobuf.Generate
    *         video_classification.type field (note that the returned types are
    *         governed by `classifaction_types` parameter in
    *         [PredictService.BatchPredictRequest.params][]).
+   *  *  For Video Object Tracking:
+   *         In the created directory a video_object_tracking.csv file will be
+   *         created, and multiple files video_object_trackinng_1.json,
+   *         video_object_trackinng_2.json,..., video_object_trackinng_N.json,
+   *         where N is the number of requests in the input (i.e. the number of
+   *         lines in given CSV(s)).
+   *         The format of video_object_tracking.csv is:
+   * GCS_FILE_PATH,TIME_SEGMENT_START,TIME_SEGMENT_END,JSON_FILE_NAME,STATUS
+   *         where:
+   *         GCS_FILE_PATH,TIME_SEGMENT_START,TIME_SEGMENT_END = matches 1 to 1
+   *             the prediction input lines (i.e. video_object_tracking.csv has
+   *             precisely the same number of lines as the prediction input had.)
+   *         JSON_FILE_NAME = Name of .JSON file in the output directory, which
+   *             contains prediction responses for the video time segment.
+   *         STATUS = "OK" if prediction completed successfully, or an error
+   *             code with message otherwise. If STATUS is not "OK" then the .JSON
+   *             file for that line may not exist or be empty.
+   *         Each .JSON file, assuming STATUS is "OK", will contain a list of
+   *         AnnotationPayload protos in JSON format, which are the predictions
+   *         for each frame of the video time segment the file is assigned to in
+   *         video_object_tracking.csv. All AnnotationPayload protos will have
+   *         video_object_tracking field set.
    *   *  For Text Extraction:
    *         In the created directory files `text_extraction_1.jsonl`,
    *         `text_extraction_2.jsonl`,...,`text_extraction_N.jsonl`
@@ -654,11 +701,11 @@ public final class BatchPredictOutputConfig extends com.google.protobuf.Generate
    *           In the created directory files `tables_1.csv`, `tables_2.csv`,...,
    *           `tables_N.csv` will be created, where N may be 1, and depends on
    *           the total number of the successfully predicted rows.
-   *           For the classification models:
-   *             Each .csv file will contain a header, listing all model's
-   * [input_feature_column_specs'][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
-   * [display_names][google.cloud.automl.v1beta1.ColumnSpec.display_name]
-   *             followed by M target column names in the format of
+   *           For all CLASSIFICATION
+   * [prediction_type-s][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type]:
+   *             Each .csv file will contain a header, listing all columns'
+   * [display_name-s][google.cloud.automl.v1beta1.ColumnSpec.display_name]
+   *             given on input followed by M target column names in the format of
    * "&lt;[target_column_specs][google.cloud.automl.v1beta1.TablesModelMetadata.target_column_spec]
    * [display_name][google.cloud.automl.v1beta1.ColumnSpec.display_name]&gt;_&lt;target
    *             value&gt;_score" where M is the number of distinct target values,
@@ -667,26 +714,27 @@ public final class BatchPredictOutputConfig extends com.google.protobuf.Generate
    *             respective values of successfully predicted rows, with the last,
    *             i.e. the target, columns having the corresponding prediction
    *             [scores][google.cloud.automl.v1beta1.TablesAnnotation.score].
-   *           For the regression models:
-   *             Each .csv file will contain a header, listing all model's
-   * [input_feature_column_specs][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
-   *             [display_names][google.cloud.automl.v1beta1.display_name]
-   *             followed by the target column with name equal to
-   * [target_column_specs'][google.cloud.automl.v1beta1.TablesModelMetadata.target_column_spec]
-   * [display_name][google.cloud.automl.v1beta1.ColumnSpec.display_name].
+   *           For REGRESSION and FORECASTING
+   * [prediction_type-s][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type]:
+   *             Each .csv file will contain a header, listing all columns'
+   *             [display_name-s][google.cloud.automl.v1beta1.display_name] given
+   *             on input followed by the predicted target column with name in the
+   *             format of
+   * "predicted_&lt;[target_column_specs][google.cloud.automl.v1beta1.TablesModelMetadata.target_column_spec]
+   * [display_name][google.cloud.automl.v1beta1.ColumnSpec.display_name]&gt;"
    *             Subsequent lines will contain the respective values of
    *             successfully predicted rows, with the last, i.e. the target,
    *             column having the predicted target value.
-   *           If prediction for any rows failed, then an additional
-   *           `errors_1.csv`, `errors_2.csv`,..., `errors_N.csv` will be created
-   *           (N depends on total number of failed rows). These files will have
-   *           analogous format as `tables_*.csv`, but always with a single target
-   *           column having
+   *             If prediction for any rows failed, then an additional
+   *             `errors_1.csv`, `errors_2.csv`,..., `errors_N.csv` will be
+   *             created (N depends on total number of failed rows). These files
+   *             will have analogous format as `tables_*.csv`, but always with a
+   *             single target column having
    * [`google.rpc.Status`](https:
    * //github.com/googleapis/googleapis/blob/master/google/rpc/status.proto)
-   *           represented as a JSON string, and containing only `code` and
-   *           `message`.
-   *        BigQuery case:
+   *             represented as a JSON string, and containing only `code` and
+   *             `message`.
+   *         BigQuery case:
    * [bigquery_destination][google.cloud.automl.v1beta1.OutputConfig.bigquery_destination]
    *           pointing to a BigQuery project must be set. In the given project a
    *           new dataset will be created with name
@@ -696,12 +744,11 @@ public final class BatchPredictOutputConfig extends com.google.protobuf.Generate
    *           become underscores), and timestamp will be in
    *           YYYY_MM_DDThh_mm_ss_sssZ "based on ISO-8601" format. In the dataset
    *           two tables will be created, `predictions`, and `errors`.
-   *           The `predictions` table's column names will be the
-   * [input_feature_column_specs'][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
-   * [display_names][google.cloud.automl.v1beta1.ColumnSpec.display_name]
-   *           followed by model's
-   * [target_column_specs'][google.cloud.automl.v1beta1.TablesModelMetadata.target_column_spec]
-   * [display_name][google.cloud.automl.v1beta1.ColumnSpec.display_name].
+   *           The `predictions` table's column names will be the input columns'
+   * [display_name-s][google.cloud.automl.v1beta1.ColumnSpec.display_name]
+   *           followed by the target column with name in the format of
+   * "predicted_&lt;[target_column_specs][google.cloud.automl.v1beta1.TablesModelMetadata.target_column_spec]
+   * [display_name][google.cloud.automl.v1beta1.ColumnSpec.display_name]&gt;"
    *           The input feature columns will contain the respective values of
    *           successfully predicted rows, with the target column having an
    *           ARRAY of
@@ -709,8 +756,11 @@ public final class BatchPredictOutputConfig extends com.google.protobuf.Generate
    *           represented as STRUCT-s, containing
    *           [TablesAnnotation][google.cloud.automl.v1beta1.TablesAnnotation].
    *           The `errors` table contains rows for which the prediction has
-   *           failed, it has analogous input feature and target columns, but
-   *           here the target column as a value has
+   *           failed, it has analogous input columns while the target column name
+   *           is in the format of
+   * "errors_&lt;[target_column_specs][google.cloud.automl.v1beta1.TablesModelMetadata.target_column_spec]
+   * [display_name][google.cloud.automl.v1beta1.ColumnSpec.display_name]&gt;",
+   *           and as a value has
    * [`google.rpc.Status`](https:
    * //github.com/googleapis/googleapis/blob/master/google/rpc/status.proto)
    *           represented as a STRUCT, and containing only `code` and `message`.

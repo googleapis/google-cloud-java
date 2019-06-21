@@ -130,7 +130,9 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional.
      * Given/first name.
-     * It's derived from [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name] if not provided.
+     * It's derived from
+     * [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name]
+     * if not provided.
      * Number of characters allowed is 100.
      * </pre>
      *
@@ -143,7 +145,9 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional.
      * Given/first name.
-     * It's derived from [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name] if not provided.
+     * It's derived from
+     * [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name]
+     * if not provided.
      * Number of characters allowed is 100.
      * </pre>
      *
@@ -156,8 +160,35 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional.
+     * Preferred given/first name or nickname.
+     * Number of characters allowed is 100.
+     * </pre>
+     *
+     * <code>string preferred_name = 6;</code>
+     */
+    java.lang.String getPreferredName();
+    /**
+     *
+     *
+     * <pre>
+     * Optional.
+     * Preferred given/first name or nickname.
+     * Number of characters allowed is 100.
+     * </pre>
+     *
+     * <code>string preferred_name = 6;</code>
+     */
+    com.google.protobuf.ByteString getPreferredNameBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional.
      * Middle initial.
-     * It's derived from [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name] if not provided.
+     * It's derived from
+     * [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name]
+     * if not provided.
      * Number of characters allowed is 20.
      * </pre>
      *
@@ -170,7 +201,9 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional.
      * Middle initial.
-     * It's derived from [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name] if not provided.
+     * It's derived from
+     * [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name]
+     * if not provided.
      * Number of characters allowed is 20.
      * </pre>
      *
@@ -184,7 +217,9 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional.
      * Family/last name.
-     * It's derived from [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name] if not provided.
+     * It's derived from
+     * [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name]
+     * if not provided.
      * Number of characters allowed is 100.
      * </pre>
      *
@@ -197,7 +232,9 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional.
      * Family/last name.
-     * It's derived from [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name] if not provided.
+     * It's derived from
+     * [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name]
+     * if not provided.
      * Number of characters allowed is 100.
      * </pre>
      *
@@ -324,6 +361,7 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
 
     private PersonStructuredName() {
       givenName_ = "";
+      preferredName_ = "";
       middleInitial_ = "";
       familyName_ = "";
       suffixes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -378,9 +416,9 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
             case 34:
               {
                 java.lang.String s = input.readStringRequireUtf8();
-                if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                if (!((mutable_bitField0_ & 0x00000010) != 0)) {
                   suffixes_ = new com.google.protobuf.LazyStringArrayList();
-                  mutable_bitField0_ |= 0x00000008;
+                  mutable_bitField0_ |= 0x00000010;
                 }
                 suffixes_.add(s);
                 break;
@@ -388,11 +426,18 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
             case 42:
               {
                 java.lang.String s = input.readStringRequireUtf8();
-                if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+                if (!((mutable_bitField0_ & 0x00000020) != 0)) {
                   prefixes_ = new com.google.protobuf.LazyStringArrayList();
-                  mutable_bitField0_ |= 0x00000010;
+                  mutable_bitField0_ |= 0x00000020;
                 }
                 prefixes_.add(s);
+                break;
+              }
+            case 50:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                preferredName_ = s;
                 break;
               }
             default:
@@ -409,10 +454,10 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000008) != 0)) {
+        if (((mutable_bitField0_ & 0x00000010) != 0)) {
           suffixes_ = suffixes_.getUnmodifiableView();
         }
-        if (((mutable_bitField0_ & 0x00000010) != 0)) {
+        if (((mutable_bitField0_ & 0x00000020) != 0)) {
           prefixes_ = prefixes_.getUnmodifiableView();
         }
         this.unknownFields = unknownFields.build();
@@ -444,7 +489,9 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional.
      * Given/first name.
-     * It's derived from [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name] if not provided.
+     * It's derived from
+     * [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name]
+     * if not provided.
      * Number of characters allowed is 100.
      * </pre>
      *
@@ -467,7 +514,9 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional.
      * Given/first name.
-     * It's derived from [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name] if not provided.
+     * It's derived from
+     * [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name]
+     * if not provided.
      * Number of characters allowed is 100.
      * </pre>
      *
@@ -485,6 +534,53 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
       }
     }
 
+    public static final int PREFERRED_NAME_FIELD_NUMBER = 6;
+    private volatile java.lang.Object preferredName_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional.
+     * Preferred given/first name or nickname.
+     * Number of characters allowed is 100.
+     * </pre>
+     *
+     * <code>string preferred_name = 6;</code>
+     */
+    public java.lang.String getPreferredName() {
+      java.lang.Object ref = preferredName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        preferredName_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional.
+     * Preferred given/first name or nickname.
+     * Number of characters allowed is 100.
+     * </pre>
+     *
+     * <code>string preferred_name = 6;</code>
+     */
+    public com.google.protobuf.ByteString getPreferredNameBytes() {
+      java.lang.Object ref = preferredName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        preferredName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     public static final int MIDDLE_INITIAL_FIELD_NUMBER = 2;
     private volatile java.lang.Object middleInitial_;
     /**
@@ -493,7 +589,9 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional.
      * Middle initial.
-     * It's derived from [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name] if not provided.
+     * It's derived from
+     * [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name]
+     * if not provided.
      * Number of characters allowed is 20.
      * </pre>
      *
@@ -516,7 +614,9 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional.
      * Middle initial.
-     * It's derived from [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name] if not provided.
+     * It's derived from
+     * [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name]
+     * if not provided.
      * Number of characters allowed is 20.
      * </pre>
      *
@@ -542,7 +642,9 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional.
      * Family/last name.
-     * It's derived from [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name] if not provided.
+     * It's derived from
+     * [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name]
+     * if not provided.
      * Number of characters allowed is 100.
      * </pre>
      *
@@ -565,7 +667,9 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional.
      * Family/last name.
-     * It's derived from [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name] if not provided.
+     * It's derived from
+     * [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name]
+     * if not provided.
      * Number of characters allowed is 100.
      * </pre>
      *
@@ -730,6 +834,9 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
       for (int i = 0; i < prefixes_.size(); i++) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, prefixes_.getRaw(i));
       }
+      if (!getPreferredNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, preferredName_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -764,6 +871,9 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
         size += dataSize;
         size += 1 * getPrefixesList().size();
       }
+      if (!getPreferredNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, preferredName_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -781,6 +891,7 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
           (com.google.cloud.talent.v4beta1.PersonName.PersonStructuredName) obj;
 
       if (!getGivenName().equals(other.getGivenName())) return false;
+      if (!getPreferredName().equals(other.getPreferredName())) return false;
       if (!getMiddleInitial().equals(other.getMiddleInitial())) return false;
       if (!getFamilyName().equals(other.getFamilyName())) return false;
       if (!getSuffixesList().equals(other.getSuffixesList())) return false;
@@ -798,6 +909,8 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + GIVEN_NAME_FIELD_NUMBER;
       hash = (53 * hash) + getGivenName().hashCode();
+      hash = (37 * hash) + PREFERRED_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getPreferredName().hashCode();
       hash = (37 * hash) + MIDDLE_INITIAL_FIELD_NUMBER;
       hash = (53 * hash) + getMiddleInitial().hashCode();
       hash = (37 * hash) + FAMILY_NAME_FIELD_NUMBER;
@@ -962,14 +1075,16 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
         super.clear();
         givenName_ = "";
 
+        preferredName_ = "";
+
         middleInitial_ = "";
 
         familyName_ = "";
 
         suffixes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000008);
-        prefixes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000010);
+        prefixes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000020);
         return this;
       }
 
@@ -1001,16 +1116,17 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         result.givenName_ = givenName_;
+        result.preferredName_ = preferredName_;
         result.middleInitial_ = middleInitial_;
         result.familyName_ = familyName_;
-        if (((bitField0_ & 0x00000008) != 0)) {
+        if (((bitField0_ & 0x00000010) != 0)) {
           suffixes_ = suffixes_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000010);
         }
         result.suffixes_ = suffixes_;
-        if (((bitField0_ & 0x00000010) != 0)) {
+        if (((bitField0_ & 0x00000020) != 0)) {
           prefixes_ = prefixes_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000020);
         }
         result.prefixes_ = prefixes_;
         result.bitField0_ = to_bitField0_;
@@ -1072,6 +1188,10 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
           givenName_ = other.givenName_;
           onChanged();
         }
+        if (!other.getPreferredName().isEmpty()) {
+          preferredName_ = other.preferredName_;
+          onChanged();
+        }
         if (!other.getMiddleInitial().isEmpty()) {
           middleInitial_ = other.middleInitial_;
           onChanged();
@@ -1083,7 +1203,7 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
         if (!other.suffixes_.isEmpty()) {
           if (suffixes_.isEmpty()) {
             suffixes_ = other.suffixes_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000010);
           } else {
             ensureSuffixesIsMutable();
             suffixes_.addAll(other.suffixes_);
@@ -1093,7 +1213,7 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
         if (!other.prefixes_.isEmpty()) {
           if (prefixes_.isEmpty()) {
             prefixes_ = other.prefixes_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000020);
           } else {
             ensurePrefixesIsMutable();
             prefixes_.addAll(other.prefixes_);
@@ -1140,7 +1260,9 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Optional.
        * Given/first name.
-       * It's derived from [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name] if not provided.
+       * It's derived from
+       * [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name]
+       * if not provided.
        * Number of characters allowed is 100.
        * </pre>
        *
@@ -1163,7 +1285,9 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Optional.
        * Given/first name.
-       * It's derived from [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name] if not provided.
+       * It's derived from
+       * [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name]
+       * if not provided.
        * Number of characters allowed is 100.
        * </pre>
        *
@@ -1186,7 +1310,9 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Optional.
        * Given/first name.
-       * It's derived from [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name] if not provided.
+       * It's derived from
+       * [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name]
+       * if not provided.
        * Number of characters allowed is 100.
        * </pre>
        *
@@ -1207,7 +1333,9 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Optional.
        * Given/first name.
-       * It's derived from [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name] if not provided.
+       * It's derived from
+       * [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name]
+       * if not provided.
        * Number of characters allowed is 100.
        * </pre>
        *
@@ -1225,7 +1353,9 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Optional.
        * Given/first name.
-       * It's derived from [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name] if not provided.
+       * It's derived from
+       * [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name]
+       * if not provided.
        * Number of characters allowed is 100.
        * </pre>
        *
@@ -1242,6 +1372,110 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
         return this;
       }
 
+      private java.lang.Object preferredName_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Optional.
+       * Preferred given/first name or nickname.
+       * Number of characters allowed is 100.
+       * </pre>
+       *
+       * <code>string preferred_name = 6;</code>
+       */
+      public java.lang.String getPreferredName() {
+        java.lang.Object ref = preferredName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          preferredName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional.
+       * Preferred given/first name or nickname.
+       * Number of characters allowed is 100.
+       * </pre>
+       *
+       * <code>string preferred_name = 6;</code>
+       */
+      public com.google.protobuf.ByteString getPreferredNameBytes() {
+        java.lang.Object ref = preferredName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          preferredName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional.
+       * Preferred given/first name or nickname.
+       * Number of characters allowed is 100.
+       * </pre>
+       *
+       * <code>string preferred_name = 6;</code>
+       */
+      public Builder setPreferredName(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        preferredName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional.
+       * Preferred given/first name or nickname.
+       * Number of characters allowed is 100.
+       * </pre>
+       *
+       * <code>string preferred_name = 6;</code>
+       */
+      public Builder clearPreferredName() {
+
+        preferredName_ = getDefaultInstance().getPreferredName();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional.
+       * Preferred given/first name or nickname.
+       * Number of characters allowed is 100.
+       * </pre>
+       *
+       * <code>string preferred_name = 6;</code>
+       */
+      public Builder setPreferredNameBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
+        preferredName_ = value;
+        onChanged();
+        return this;
+      }
+
       private java.lang.Object middleInitial_ = "";
       /**
        *
@@ -1249,7 +1483,9 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Optional.
        * Middle initial.
-       * It's derived from [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name] if not provided.
+       * It's derived from
+       * [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name]
+       * if not provided.
        * Number of characters allowed is 20.
        * </pre>
        *
@@ -1272,7 +1508,9 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Optional.
        * Middle initial.
-       * It's derived from [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name] if not provided.
+       * It's derived from
+       * [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name]
+       * if not provided.
        * Number of characters allowed is 20.
        * </pre>
        *
@@ -1295,7 +1533,9 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Optional.
        * Middle initial.
-       * It's derived from [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name] if not provided.
+       * It's derived from
+       * [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name]
+       * if not provided.
        * Number of characters allowed is 20.
        * </pre>
        *
@@ -1316,7 +1556,9 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Optional.
        * Middle initial.
-       * It's derived from [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name] if not provided.
+       * It's derived from
+       * [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name]
+       * if not provided.
        * Number of characters allowed is 20.
        * </pre>
        *
@@ -1334,7 +1576,9 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Optional.
        * Middle initial.
-       * It's derived from [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name] if not provided.
+       * It's derived from
+       * [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name]
+       * if not provided.
        * Number of characters allowed is 20.
        * </pre>
        *
@@ -1358,7 +1602,9 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Optional.
        * Family/last name.
-       * It's derived from [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name] if not provided.
+       * It's derived from
+       * [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name]
+       * if not provided.
        * Number of characters allowed is 100.
        * </pre>
        *
@@ -1381,7 +1627,9 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Optional.
        * Family/last name.
-       * It's derived from [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name] if not provided.
+       * It's derived from
+       * [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name]
+       * if not provided.
        * Number of characters allowed is 100.
        * </pre>
        *
@@ -1404,7 +1652,9 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Optional.
        * Family/last name.
-       * It's derived from [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name] if not provided.
+       * It's derived from
+       * [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name]
+       * if not provided.
        * Number of characters allowed is 100.
        * </pre>
        *
@@ -1425,7 +1675,9 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Optional.
        * Family/last name.
-       * It's derived from [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name] if not provided.
+       * It's derived from
+       * [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name]
+       * if not provided.
        * Number of characters allowed is 100.
        * </pre>
        *
@@ -1443,7 +1695,9 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Optional.
        * Family/last name.
-       * It's derived from [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name] if not provided.
+       * It's derived from
+       * [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name]
+       * if not provided.
        * Number of characters allowed is 100.
        * </pre>
        *
@@ -1464,9 +1718,9 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.LazyStringArrayList.EMPTY;
 
       private void ensureSuffixesIsMutable() {
-        if (!((bitField0_ & 0x00000008) != 0)) {
+        if (!((bitField0_ & 0x00000010) != 0)) {
           suffixes_ = new com.google.protobuf.LazyStringArrayList(suffixes_);
-          bitField0_ |= 0x00000008;
+          bitField0_ |= 0x00000010;
         }
       }
       /**
@@ -1595,7 +1849,7 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder clearSuffixes() {
         suffixes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
         return this;
       }
@@ -1625,9 +1879,9 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.LazyStringArrayList.EMPTY;
 
       private void ensurePrefixesIsMutable() {
-        if (!((bitField0_ & 0x00000010) != 0)) {
+        if (!((bitField0_ & 0x00000020) != 0)) {
           prefixes_ = new com.google.protobuf.LazyStringArrayList(prefixes_);
-          bitField0_ |= 0x00000010;
+          bitField0_ |= 0x00000020;
         }
       }
       /**
@@ -1756,7 +2010,7 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder clearPrefixes() {
         prefixes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
         return this;
       }
@@ -1991,7 +2245,10 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional.
-   * Preferred name for the person.
+   * Preferred name for the person. This field is ignored if
+   * [structured_name][google.cloud.talent.v4beta1.PersonName.structured_name]
+   * is provided.
+   * Number of characters allowed is 100.
    * </pre>
    *
    * <code>string preferred_name = 3;</code>
@@ -2012,7 +2269,10 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional.
-   * Preferred name for the person.
+   * Preferred name for the person. This field is ignored if
+   * [structured_name][google.cloud.talent.v4beta1.PersonName.structured_name]
+   * is provided.
+   * Number of characters allowed is 100.
    * </pre>
    *
    * <code>string preferred_name = 3;</code>
@@ -2785,7 +3045,10 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional.
-     * Preferred name for the person.
+     * Preferred name for the person. This field is ignored if
+     * [structured_name][google.cloud.talent.v4beta1.PersonName.structured_name]
+     * is provided.
+     * Number of characters allowed is 100.
      * </pre>
      *
      * <code>string preferred_name = 3;</code>
@@ -2806,7 +3069,10 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional.
-     * Preferred name for the person.
+     * Preferred name for the person. This field is ignored if
+     * [structured_name][google.cloud.talent.v4beta1.PersonName.structured_name]
+     * is provided.
+     * Number of characters allowed is 100.
      * </pre>
      *
      * <code>string preferred_name = 3;</code>
@@ -2827,7 +3093,10 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional.
-     * Preferred name for the person.
+     * Preferred name for the person. This field is ignored if
+     * [structured_name][google.cloud.talent.v4beta1.PersonName.structured_name]
+     * is provided.
+     * Number of characters allowed is 100.
      * </pre>
      *
      * <code>string preferred_name = 3;</code>
@@ -2846,7 +3115,10 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional.
-     * Preferred name for the person.
+     * Preferred name for the person. This field is ignored if
+     * [structured_name][google.cloud.talent.v4beta1.PersonName.structured_name]
+     * is provided.
+     * Number of characters allowed is 100.
      * </pre>
      *
      * <code>string preferred_name = 3;</code>
@@ -2862,7 +3134,10 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional.
-     * Preferred name for the person.
+     * Preferred name for the person. This field is ignored if
+     * [structured_name][google.cloud.talent.v4beta1.PersonName.structured_name]
+     * is provided.
+     * Number of characters allowed is 100.
      * </pre>
      *
      * <code>string preferred_name = 3;</code>

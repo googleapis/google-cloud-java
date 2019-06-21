@@ -95,5 +95,13 @@ public final class CloudStorageOptions {
     return OptionMaxChannelReopens.create(count);
   }
 
+  /**
+   * Allows one to use trailing slashes in file names. You really shouldn't (this is here for tests
+   * only).
+   */
+  static CloudStorageOption.Open allowTrailingSlash() {
+    return OptionAllowTrailingSlash.getInstance();
+  }
+
   private CloudStorageOptions() {}
 }

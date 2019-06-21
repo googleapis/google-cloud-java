@@ -62,10 +62,12 @@ public class BigtableInstanceAdminSettingsTest {
             .setCredentialsProvider(credentialsProvider)
             .build();
 
-    assertThat(settings.getCredentialsProvider()).isSameAs(credentialsProvider);
-    assertThat(settings.getStubSettings().getCredentialsProvider()).isSameAs(credentialsProvider);
-    assertThat(settings.toBuilder().getCredentialsProvider()).isSameAs(credentialsProvider);
-    assertThat(settings.toBuilder().build().getCredentialsProvider()).isSameAs(credentialsProvider);
+    assertThat(settings.getCredentialsProvider()).isSameInstanceAs(credentialsProvider);
+    assertThat(settings.getStubSettings().getCredentialsProvider())
+        .isSameInstanceAs(credentialsProvider);
+    assertThat(settings.toBuilder().getCredentialsProvider()).isSameInstanceAs(credentialsProvider);
+    assertThat(settings.toBuilder().build().getCredentialsProvider())
+        .isSameInstanceAs(credentialsProvider);
   }
 
   @Test

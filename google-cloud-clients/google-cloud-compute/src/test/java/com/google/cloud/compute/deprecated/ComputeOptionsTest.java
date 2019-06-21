@@ -29,6 +29,7 @@ public class ComputeOptionsTest {
   @Test
   public void testInvalidTransport() {
     thrown.expect(IllegalArgumentException.class);
-    ComputeOptions.newBuilder().setTransportOptions(EasyMock.createMock(TransportOptions.class));
+    ComputeOptions.newBuilder()
+        .setTransportOptions(EasyMock.<TransportOptions>createMock(TransportOptions.class));
   }
 }

@@ -1718,17 +1718,29 @@ public interface Storage extends Service<StorageOptions> {
 
   /**
    * Updates blob information. Original metadata are merged with metadata in the provided {@code
-   * blobInfo}. To replace metadata instead you first have to unset them. Unsetting metadata can be
-   * done by setting the provided {@code blobInfo}'s metadata to {@code null}.
+   * blobInfo}. If the original metadata already contains a key specified in the provided {@code
+   * blobInfo's} metadata map, it will be replaced by the new value. Removing metadata can be done
+   * by setting that metadata's value to {@code null}.
    *
-   * <p>Example of replacing blob's metadata.
+   * <p>Example of adding new metadata values or updating existing ones.
    *
    * <pre>{@code
    * String bucketName = "my_unique_bucket";
    * String blobName = "my_blob_name";
    * Map<String, String> newMetadata = new HashMap<>();
-   * newMetadata.put("key", "value");
-   * storage.update(BlobInfo.newBuilder(bucketName, blobName).setMetadata(null).build());
+   * newMetadata.put("keyToAddOrUpdate", "value");
+   * Blob blob = storage.update(BlobInfo.newBuilder(bucketName, blobName)
+   *     .setMetadata(newMetadata)
+   *     .build());
+   * }</pre>
+   *
+   * <p>Example of removing metadata values.
+   *
+   * <pre>{@code
+   * String bucketName = "my_unique_bucket";
+   * String blobName = "my_blob_name";
+   * Map<String, String> newMetadata = new HashMap<>();
+   * newMetadata.put("keyToRemove", null);
    * Blob blob = storage.update(BlobInfo.newBuilder(bucketName, blobName)
    *     .setMetadata(newMetadata)
    *     .build());
