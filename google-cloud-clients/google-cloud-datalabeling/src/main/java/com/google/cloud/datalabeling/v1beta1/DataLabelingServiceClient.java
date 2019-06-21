@@ -34,6 +34,7 @@ import com.google.common.util.concurrent.MoreExecutors;
 import com.google.longrunning.Operation;
 import com.google.longrunning.OperationsClient;
 import com.google.protobuf.Empty;
+import com.google.protobuf.FieldMask;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -129,6 +130,13 @@ public class DataLabelingServiceClient implements BackgroundResource {
   private static final PathTemplate DATASET_PATH_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding("projects/{project}/datasets/{dataset}");
 
+  private static final PathTemplate EVALUATION_PATH_TEMPLATE =
+      PathTemplate.createWithoutUrlEncoding(
+          "projects/{project}/datasets/{dataset}/evaluations/{evaluation}");
+
+  private static final PathTemplate EVALUATION_JOB_PATH_TEMPLATE =
+      PathTemplate.createWithoutUrlEncoding("projects/{project}/evaluationJobs/{evaluation_job}");
+
   private static final PathTemplate EXAMPLE_PATH_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding(
           "projects/{project}/datasets/{dataset}/annotatedDatasets/{annotated_dataset}/examples/{example}");
@@ -189,6 +197,32 @@ public class DataLabelingServiceClient implements BackgroundResource {
     return DATASET_PATH_TEMPLATE.instantiate(
         "project", project,
         "dataset", dataset);
+  }
+
+  /**
+   * Formats a string containing the fully-qualified path to represent a evaluation resource.
+   *
+   * @deprecated Use the {@link EvaluationName} class instead.
+   */
+  @Deprecated
+  public static final String formatEvaluationName(
+      String project, String dataset, String evaluation) {
+    return EVALUATION_PATH_TEMPLATE.instantiate(
+        "project", project,
+        "dataset", dataset,
+        "evaluation", evaluation);
+  }
+
+  /**
+   * Formats a string containing the fully-qualified path to represent a evaluation_job resource.
+   *
+   * @deprecated Use the {@link EvaluationJobName} class instead.
+   */
+  @Deprecated
+  public static final String formatEvaluationJobName(String project, String evaluationJob) {
+    return EVALUATION_JOB_PATH_TEMPLATE.instantiate(
+        "project", project,
+        "evaluation_job", evaluationJob);
   }
 
   /**
@@ -335,6 +369,59 @@ public class DataLabelingServiceClient implements BackgroundResource {
   @Deprecated
   public static final String parseDatasetFromDatasetName(String datasetName) {
     return DATASET_PATH_TEMPLATE.parse(datasetName).get("dataset");
+  }
+
+  /**
+   * Parses the project from the given fully-qualified path which represents a evaluation resource.
+   *
+   * @deprecated Use the {@link EvaluationName} class instead.
+   */
+  @Deprecated
+  public static final String parseProjectFromEvaluationName(String evaluationName) {
+    return EVALUATION_PATH_TEMPLATE.parse(evaluationName).get("project");
+  }
+
+  /**
+   * Parses the dataset from the given fully-qualified path which represents a evaluation resource.
+   *
+   * @deprecated Use the {@link EvaluationName} class instead.
+   */
+  @Deprecated
+  public static final String parseDatasetFromEvaluationName(String evaluationName) {
+    return EVALUATION_PATH_TEMPLATE.parse(evaluationName).get("dataset");
+  }
+
+  /**
+   * Parses the evaluation from the given fully-qualified path which represents a evaluation
+   * resource.
+   *
+   * @deprecated Use the {@link EvaluationName} class instead.
+   */
+  @Deprecated
+  public static final String parseEvaluationFromEvaluationName(String evaluationName) {
+    return EVALUATION_PATH_TEMPLATE.parse(evaluationName).get("evaluation");
+  }
+
+  /**
+   * Parses the project from the given fully-qualified path which represents a evaluation_job
+   * resource.
+   *
+   * @deprecated Use the {@link EvaluationJobName} class instead.
+   */
+  @Deprecated
+  public static final String parseProjectFromEvaluationJobName(String evaluationJobName) {
+    return EVALUATION_JOB_PATH_TEMPLATE.parse(evaluationJobName).get("project");
+  }
+
+  /**
+   * Parses the evaluation_job from the given fully-qualified path which represents a evaluation_job
+   * resource.
+   *
+   * @deprecated Use the {@link EvaluationJobName} class instead.
+   */
+  @Deprecated
+  public static final String parseEvaluationJobFromEvaluationJobName(String evaluationJobName) {
+    return EVALUATION_JOB_PATH_TEMPLATE.parse(evaluationJobName).get("evaluation_job");
   }
 
   /**
@@ -1770,129 +1857,6 @@ public class DataLabelingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Starts a labeling task for audio. The type of audio labeling task is configured by feature in
-   * the request.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedParent = DataLabelingServiceClient.formatDatasetName("[PROJECT]", "[DATASET]");
-   *   HumanAnnotationConfig basicConfig = HumanAnnotationConfig.newBuilder().build();
-   *   LabelAudioRequest.Feature feature = LabelAudioRequest.Feature.FEATURE_UNSPECIFIED;
-   *   AnnotatedDataset response = dataLabelingServiceClient.labelAudioAsync(formattedParent, basicConfig, feature).get();
-   * }
-   * </code></pre>
-   *
-   * @param parent Required. Name of the dataset to request labeling task, format:
-   *     projects/{project_id}/datasets/{dataset_id}
-   * @param basicConfig Required. Basic human annotation config.
-   * @param feature Required. The type of audio labeling task.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public final OperationFuture<AnnotatedDataset, LabelOperationMetadata> labelAudioAsync(
-      String parent, HumanAnnotationConfig basicConfig, LabelAudioRequest.Feature feature) {
-    DATASET_PATH_TEMPLATE.validate(parent, "labelAudio");
-    LabelAudioRequest request =
-        LabelAudioRequest.newBuilder()
-            .setParent(parent)
-            .setBasicConfig(basicConfig)
-            .setFeature(feature)
-            .build();
-    return labelAudioAsync(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Starts a labeling task for audio. The type of audio labeling task is configured by feature in
-   * the request.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedParent = DataLabelingServiceClient.formatDatasetName("[PROJECT]", "[DATASET]");
-   *   HumanAnnotationConfig basicConfig = HumanAnnotationConfig.newBuilder().build();
-   *   LabelAudioRequest.Feature feature = LabelAudioRequest.Feature.FEATURE_UNSPECIFIED;
-   *   LabelAudioRequest request = LabelAudioRequest.newBuilder()
-   *     .setParent(formattedParent)
-   *     .setBasicConfig(basicConfig)
-   *     .setFeature(feature)
-   *     .build();
-   *   AnnotatedDataset response = dataLabelingServiceClient.labelAudioAsync(request).get();
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public final OperationFuture<AnnotatedDataset, LabelOperationMetadata> labelAudioAsync(
-      LabelAudioRequest request) {
-    return labelAudioOperationCallable().futureCall(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Starts a labeling task for audio. The type of audio labeling task is configured by feature in
-   * the request.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedParent = DataLabelingServiceClient.formatDatasetName("[PROJECT]", "[DATASET]");
-   *   HumanAnnotationConfig basicConfig = HumanAnnotationConfig.newBuilder().build();
-   *   LabelAudioRequest.Feature feature = LabelAudioRequest.Feature.FEATURE_UNSPECIFIED;
-   *   LabelAudioRequest request = LabelAudioRequest.newBuilder()
-   *     .setParent(formattedParent)
-   *     .setBasicConfig(basicConfig)
-   *     .setFeature(feature)
-   *     .build();
-   *   OperationFuture&lt;AnnotatedDataset, LabelOperationMetadata&gt; future = dataLabelingServiceClient.labelAudioOperationCallable().futureCall(request);
-   *   // Do something
-   *   AnnotatedDataset response = future.get();
-   * }
-   * </code></pre>
-   */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public final OperationCallable<LabelAudioRequest, AnnotatedDataset, LabelOperationMetadata>
-      labelAudioOperationCallable() {
-    return stub.labelAudioOperationCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Starts a labeling task for audio. The type of audio labeling task is configured by feature in
-   * the request.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedParent = DataLabelingServiceClient.formatDatasetName("[PROJECT]", "[DATASET]");
-   *   HumanAnnotationConfig basicConfig = HumanAnnotationConfig.newBuilder().build();
-   *   LabelAudioRequest.Feature feature = LabelAudioRequest.Feature.FEATURE_UNSPECIFIED;
-   *   LabelAudioRequest request = LabelAudioRequest.newBuilder()
-   *     .setParent(formattedParent)
-   *     .setBasicConfig(basicConfig)
-   *     .setFeature(feature)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = dataLabelingServiceClient.labelAudioCallable().futureCall(request);
-   *   // Do something
-   *   Operation response = future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<LabelAudioRequest, Operation> labelAudioCallable() {
-    return stub.labelAudioCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
    * Gets an example by resource name, including both data and annotation.
    *
    * <p>Sample code:
@@ -2760,6 +2724,858 @@ public class DataLabelingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
+   * Gets an evaluation by resource name.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   String formattedName = DataLabelingServiceClient.formatEvaluationName("[PROJECT]", "[DATASET]", "[EVALUATION]");
+   *   Evaluation response = dataLabelingServiceClient.getEvaluation(formattedName);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Name of the evaluation. Format:
+   *     'projects/{project_id}/datasets/{dataset_id}/evaluations/{evaluation_id}'
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Evaluation getEvaluation(String name) {
+    EVALUATION_PATH_TEMPLATE.validate(name, "getEvaluation");
+    GetEvaluationRequest request = GetEvaluationRequest.newBuilder().setName(name).build();
+    return getEvaluation(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets an evaluation by resource name.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   String formattedName = DataLabelingServiceClient.formatEvaluationName("[PROJECT]", "[DATASET]", "[EVALUATION]");
+   *   GetEvaluationRequest request = GetEvaluationRequest.newBuilder()
+   *     .setName(formattedName)
+   *     .build();
+   *   Evaluation response = dataLabelingServiceClient.getEvaluation(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Evaluation getEvaluation(GetEvaluationRequest request) {
+    return getEvaluationCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets an evaluation by resource name.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   String formattedName = DataLabelingServiceClient.formatEvaluationName("[PROJECT]", "[DATASET]", "[EVALUATION]");
+   *   GetEvaluationRequest request = GetEvaluationRequest.newBuilder()
+   *     .setName(formattedName)
+   *     .build();
+   *   ApiFuture&lt;Evaluation&gt; future = dataLabelingServiceClient.getEvaluationCallable().futureCall(request);
+   *   // Do something
+   *   Evaluation response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<GetEvaluationRequest, Evaluation> getEvaluationCallable() {
+    return stub.getEvaluationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Searchs evaluations within a project. Supported filter: evaluation_job, evaluation_time.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   String formattedParent = DataLabelingServiceClient.formatProjectName("[PROJECT]");
+   *   String filter = "";
+   *   for (Evaluation element : dataLabelingServiceClient.searchEvaluations(formattedParent, filter).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. Evaluation search parent. Format: projects/{project_id}
+   * @param filter Optional. Support filtering by model id, job state, start and end time. Format:
+   *     "evaluation_job.evaluation_job_id = {evaluation_job_id} AND
+   *     evaluation_job.evaluation_job_run_time_start = {timestamp} AND
+   *     evaluation_job.evaluation_job_run_time_end = {timestamp} AND annotation_spec.display_name =
+   *     {display_name}"
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SearchEvaluationsPagedResponse searchEvaluations(String parent, String filter) {
+    PROJECT_PATH_TEMPLATE.validate(parent, "searchEvaluations");
+    SearchEvaluationsRequest request =
+        SearchEvaluationsRequest.newBuilder().setParent(parent).setFilter(filter).build();
+    return searchEvaluations(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Searchs evaluations within a project. Supported filter: evaluation_job, evaluation_time.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   String formattedParent = DataLabelingServiceClient.formatProjectName("[PROJECT]");
+   *   String filter = "";
+   *   SearchEvaluationsRequest request = SearchEvaluationsRequest.newBuilder()
+   *     .setParent(formattedParent)
+   *     .setFilter(filter)
+   *     .build();
+   *   for (Evaluation element : dataLabelingServiceClient.searchEvaluations(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SearchEvaluationsPagedResponse searchEvaluations(SearchEvaluationsRequest request) {
+    return searchEvaluationsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Searchs evaluations within a project. Supported filter: evaluation_job, evaluation_time.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   String formattedParent = DataLabelingServiceClient.formatProjectName("[PROJECT]");
+   *   String filter = "";
+   *   SearchEvaluationsRequest request = SearchEvaluationsRequest.newBuilder()
+   *     .setParent(formattedParent)
+   *     .setFilter(filter)
+   *     .build();
+   *   ApiFuture&lt;SearchEvaluationsPagedResponse&gt; future = dataLabelingServiceClient.searchEvaluationsPagedCallable().futureCall(request);
+   *   // Do something
+   *   for (Evaluation element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<SearchEvaluationsRequest, SearchEvaluationsPagedResponse>
+      searchEvaluationsPagedCallable() {
+    return stub.searchEvaluationsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Searchs evaluations within a project. Supported filter: evaluation_job, evaluation_time.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   String formattedParent = DataLabelingServiceClient.formatProjectName("[PROJECT]");
+   *   String filter = "";
+   *   SearchEvaluationsRequest request = SearchEvaluationsRequest.newBuilder()
+   *     .setParent(formattedParent)
+   *     .setFilter(filter)
+   *     .build();
+   *   while (true) {
+   *     SearchEvaluationsResponse response = dataLabelingServiceClient.searchEvaluationsCallable().call(request);
+   *     for (Evaluation element : response.getEvaluationsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<SearchEvaluationsRequest, SearchEvaluationsResponse>
+      searchEvaluationsCallable() {
+    return stub.searchEvaluationsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Searchs example comparisons in evaluation, in format of examples of both ground truth and
+   * prediction(s). It is represented as a search with evaluation id.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   String formattedParent = DataLabelingServiceClient.formatEvaluationName("[PROJECT]", "[DATASET]", "[EVALUATION]");
+   *   for (SearchExampleComparisonsResponse.ExampleComparison element : dataLabelingServiceClient.searchExampleComparisons(formattedParent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. Name of the Evaluation resource to search example comparison from.
+   *     Format: projects/{project_id}/datasets/{dataset_id}/evaluations/{evaluation_id}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SearchExampleComparisonsPagedResponse searchExampleComparisons(String parent) {
+    EVALUATION_PATH_TEMPLATE.validate(parent, "searchExampleComparisons");
+    SearchExampleComparisonsRequest request =
+        SearchExampleComparisonsRequest.newBuilder().setParent(parent).build();
+    return searchExampleComparisons(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Searchs example comparisons in evaluation, in format of examples of both ground truth and
+   * prediction(s). It is represented as a search with evaluation id.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   String formattedParent = DataLabelingServiceClient.formatEvaluationName("[PROJECT]", "[DATASET]", "[EVALUATION]");
+   *   SearchExampleComparisonsRequest request = SearchExampleComparisonsRequest.newBuilder()
+   *     .setParent(formattedParent)
+   *     .build();
+   *   for (SearchExampleComparisonsResponse.ExampleComparison element : dataLabelingServiceClient.searchExampleComparisons(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SearchExampleComparisonsPagedResponse searchExampleComparisons(
+      SearchExampleComparisonsRequest request) {
+    return searchExampleComparisonsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Searchs example comparisons in evaluation, in format of examples of both ground truth and
+   * prediction(s). It is represented as a search with evaluation id.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   String formattedParent = DataLabelingServiceClient.formatEvaluationName("[PROJECT]", "[DATASET]", "[EVALUATION]");
+   *   SearchExampleComparisonsRequest request = SearchExampleComparisonsRequest.newBuilder()
+   *     .setParent(formattedParent)
+   *     .build();
+   *   ApiFuture&lt;SearchExampleComparisonsPagedResponse&gt; future = dataLabelingServiceClient.searchExampleComparisonsPagedCallable().futureCall(request);
+   *   // Do something
+   *   for (SearchExampleComparisonsResponse.ExampleComparison element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<SearchExampleComparisonsRequest, SearchExampleComparisonsPagedResponse>
+      searchExampleComparisonsPagedCallable() {
+    return stub.searchExampleComparisonsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Searchs example comparisons in evaluation, in format of examples of both ground truth and
+   * prediction(s). It is represented as a search with evaluation id.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   String formattedParent = DataLabelingServiceClient.formatEvaluationName("[PROJECT]", "[DATASET]", "[EVALUATION]");
+   *   SearchExampleComparisonsRequest request = SearchExampleComparisonsRequest.newBuilder()
+   *     .setParent(formattedParent)
+   *     .build();
+   *   while (true) {
+   *     SearchExampleComparisonsResponse response = dataLabelingServiceClient.searchExampleComparisonsCallable().call(request);
+   *     for (SearchExampleComparisonsResponse.ExampleComparison element : response.getExampleComparisonsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<SearchExampleComparisonsRequest, SearchExampleComparisonsResponse>
+      searchExampleComparisonsCallable() {
+    return stub.searchExampleComparisonsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates an evaluation job.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   String formattedParent = DataLabelingServiceClient.formatProjectName("[PROJECT]");
+   *   EvaluationJob job = EvaluationJob.newBuilder().build();
+   *   EvaluationJob response = dataLabelingServiceClient.createEvaluationJob(formattedParent, job);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. Evaluation job resource parent, format: projects/{project_id}.
+   * @param job Required. The evaluation job to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final EvaluationJob createEvaluationJob(String parent, EvaluationJob job) {
+    PROJECT_PATH_TEMPLATE.validate(parent, "createEvaluationJob");
+    CreateEvaluationJobRequest request =
+        CreateEvaluationJobRequest.newBuilder().setParent(parent).setJob(job).build();
+    return createEvaluationJob(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates an evaluation job.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   String formattedParent = DataLabelingServiceClient.formatProjectName("[PROJECT]");
+   *   EvaluationJob job = EvaluationJob.newBuilder().build();
+   *   CreateEvaluationJobRequest request = CreateEvaluationJobRequest.newBuilder()
+   *     .setParent(formattedParent)
+   *     .setJob(job)
+   *     .build();
+   *   EvaluationJob response = dataLabelingServiceClient.createEvaluationJob(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final EvaluationJob createEvaluationJob(CreateEvaluationJobRequest request) {
+    return createEvaluationJobCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates an evaluation job.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   String formattedParent = DataLabelingServiceClient.formatProjectName("[PROJECT]");
+   *   EvaluationJob job = EvaluationJob.newBuilder().build();
+   *   CreateEvaluationJobRequest request = CreateEvaluationJobRequest.newBuilder()
+   *     .setParent(formattedParent)
+   *     .setJob(job)
+   *     .build();
+   *   ApiFuture&lt;EvaluationJob&gt; future = dataLabelingServiceClient.createEvaluationJobCallable().futureCall(request);
+   *   // Do something
+   *   EvaluationJob response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<CreateEvaluationJobRequest, EvaluationJob>
+      createEvaluationJobCallable() {
+    return stub.createEvaluationJobCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates an evaluation job.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   EvaluationJob evaluationJob = EvaluationJob.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   EvaluationJob response = dataLabelingServiceClient.updateEvaluationJob(evaluationJob, updateMask);
+   * }
+   * </code></pre>
+   *
+   * @param evaluationJob Required. Evaluation job that is going to be updated.
+   * @param updateMask Optional. Mask for which field in evaluation_job should be updated.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final EvaluationJob updateEvaluationJob(
+      EvaluationJob evaluationJob, FieldMask updateMask) {
+
+    UpdateEvaluationJobRequest request =
+        UpdateEvaluationJobRequest.newBuilder()
+            .setEvaluationJob(evaluationJob)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateEvaluationJob(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates an evaluation job.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   EvaluationJob evaluationJob = EvaluationJob.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   UpdateEvaluationJobRequest request = UpdateEvaluationJobRequest.newBuilder()
+   *     .setEvaluationJob(evaluationJob)
+   *     .setUpdateMask(updateMask)
+   *     .build();
+   *   EvaluationJob response = dataLabelingServiceClient.updateEvaluationJob(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final EvaluationJob updateEvaluationJob(UpdateEvaluationJobRequest request) {
+    return updateEvaluationJobCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates an evaluation job.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   EvaluationJob evaluationJob = EvaluationJob.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   UpdateEvaluationJobRequest request = UpdateEvaluationJobRequest.newBuilder()
+   *     .setEvaluationJob(evaluationJob)
+   *     .setUpdateMask(updateMask)
+   *     .build();
+   *   ApiFuture&lt;EvaluationJob&gt; future = dataLabelingServiceClient.updateEvaluationJobCallable().futureCall(request);
+   *   // Do something
+   *   EvaluationJob response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<UpdateEvaluationJobRequest, EvaluationJob>
+      updateEvaluationJobCallable() {
+    return stub.updateEvaluationJobCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets an evaluation job by resource name.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   String formattedName = DataLabelingServiceClient.formatEvaluationJobName("[PROJECT]", "[EVALUATION_JOB]");
+   *   EvaluationJob response = dataLabelingServiceClient.getEvaluationJob(formattedName);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Name of the evaluation job. Format:
+   *     'projects/{project_id}/evaluationJobs/{evaluation_job_id}'
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final EvaluationJob getEvaluationJob(String name) {
+    EVALUATION_JOB_PATH_TEMPLATE.validate(name, "getEvaluationJob");
+    GetEvaluationJobRequest request = GetEvaluationJobRequest.newBuilder().setName(name).build();
+    return getEvaluationJob(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets an evaluation job by resource name.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   String formattedName = DataLabelingServiceClient.formatEvaluationJobName("[PROJECT]", "[EVALUATION_JOB]");
+   *   GetEvaluationJobRequest request = GetEvaluationJobRequest.newBuilder()
+   *     .setName(formattedName)
+   *     .build();
+   *   EvaluationJob response = dataLabelingServiceClient.getEvaluationJob(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final EvaluationJob getEvaluationJob(GetEvaluationJobRequest request) {
+    return getEvaluationJobCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets an evaluation job by resource name.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   String formattedName = DataLabelingServiceClient.formatEvaluationJobName("[PROJECT]", "[EVALUATION_JOB]");
+   *   GetEvaluationJobRequest request = GetEvaluationJobRequest.newBuilder()
+   *     .setName(formattedName)
+   *     .build();
+   *   ApiFuture&lt;EvaluationJob&gt; future = dataLabelingServiceClient.getEvaluationJobCallable().futureCall(request);
+   *   // Do something
+   *   EvaluationJob response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<GetEvaluationJobRequest, EvaluationJob> getEvaluationJobCallable() {
+    return stub.getEvaluationJobCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Pauses an evaluation job. Pausing a evaluation job that is already in PAUSED state will be a
+   * no-op.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   String formattedName = DataLabelingServiceClient.formatEvaluationJobName("[PROJECT]", "[EVALUATION_JOB]");
+   *   dataLabelingServiceClient.pauseEvaluationJob(formattedName);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Name of the evaluation job that is going to be paused. Format:
+   *     'projects/{project_id}/evaluationJobs/{evaluation_job_id}'
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void pauseEvaluationJob(String name) {
+    EVALUATION_JOB_PATH_TEMPLATE.validate(name, "pauseEvaluationJob");
+    PauseEvaluationJobRequest request =
+        PauseEvaluationJobRequest.newBuilder().setName(name).build();
+    pauseEvaluationJob(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Pauses an evaluation job. Pausing a evaluation job that is already in PAUSED state will be a
+   * no-op.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   String formattedName = DataLabelingServiceClient.formatEvaluationJobName("[PROJECT]", "[EVALUATION_JOB]");
+   *   PauseEvaluationJobRequest request = PauseEvaluationJobRequest.newBuilder()
+   *     .setName(formattedName)
+   *     .build();
+   *   dataLabelingServiceClient.pauseEvaluationJob(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void pauseEvaluationJob(PauseEvaluationJobRequest request) {
+    pauseEvaluationJobCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Pauses an evaluation job. Pausing a evaluation job that is already in PAUSED state will be a
+   * no-op.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   String formattedName = DataLabelingServiceClient.formatEvaluationJobName("[PROJECT]", "[EVALUATION_JOB]");
+   *   PauseEvaluationJobRequest request = PauseEvaluationJobRequest.newBuilder()
+   *     .setName(formattedName)
+   *     .build();
+   *   ApiFuture&lt;Void&gt; future = dataLabelingServiceClient.pauseEvaluationJobCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<PauseEvaluationJobRequest, Empty> pauseEvaluationJobCallable() {
+    return stub.pauseEvaluationJobCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Resumes a paused evaluation job. Deleted evaluation job can't be resumed. Resuming a running
+   * evaluation job will be a no-op.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   String formattedName = DataLabelingServiceClient.formatEvaluationJobName("[PROJECT]", "[EVALUATION_JOB]");
+   *   dataLabelingServiceClient.resumeEvaluationJob(formattedName);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Name of the evaluation job that is going to be resumed. Format:
+   *     'projects/{project_id}/evaluationJobs/{evaluation_job_id}'
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void resumeEvaluationJob(String name) {
+    EVALUATION_JOB_PATH_TEMPLATE.validate(name, "resumeEvaluationJob");
+    ResumeEvaluationJobRequest request =
+        ResumeEvaluationJobRequest.newBuilder().setName(name).build();
+    resumeEvaluationJob(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Resumes a paused evaluation job. Deleted evaluation job can't be resumed. Resuming a running
+   * evaluation job will be a no-op.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   String formattedName = DataLabelingServiceClient.formatEvaluationJobName("[PROJECT]", "[EVALUATION_JOB]");
+   *   ResumeEvaluationJobRequest request = ResumeEvaluationJobRequest.newBuilder()
+   *     .setName(formattedName)
+   *     .build();
+   *   dataLabelingServiceClient.resumeEvaluationJob(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void resumeEvaluationJob(ResumeEvaluationJobRequest request) {
+    resumeEvaluationJobCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Resumes a paused evaluation job. Deleted evaluation job can't be resumed. Resuming a running
+   * evaluation job will be a no-op.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   String formattedName = DataLabelingServiceClient.formatEvaluationJobName("[PROJECT]", "[EVALUATION_JOB]");
+   *   ResumeEvaluationJobRequest request = ResumeEvaluationJobRequest.newBuilder()
+   *     .setName(formattedName)
+   *     .build();
+   *   ApiFuture&lt;Void&gt; future = dataLabelingServiceClient.resumeEvaluationJobCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<ResumeEvaluationJobRequest, Empty> resumeEvaluationJobCallable() {
+    return stub.resumeEvaluationJobCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Stops and deletes an evaluation job.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   String formattedName = DataLabelingServiceClient.formatEvaluationJobName("[PROJECT]", "[EVALUATION_JOB]");
+   *   dataLabelingServiceClient.deleteEvaluationJob(formattedName);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Name of the evaluation job that is going to be deleted. Format:
+   *     'projects/{project_id}/evaluationJobs/{evaluation_job_id}'
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteEvaluationJob(String name) {
+    EVALUATION_JOB_PATH_TEMPLATE.validate(name, "deleteEvaluationJob");
+    DeleteEvaluationJobRequest request =
+        DeleteEvaluationJobRequest.newBuilder().setName(name).build();
+    deleteEvaluationJob(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Stops and deletes an evaluation job.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   String formattedName = DataLabelingServiceClient.formatEvaluationJobName("[PROJECT]", "[EVALUATION_JOB]");
+   *   DeleteEvaluationJobRequest request = DeleteEvaluationJobRequest.newBuilder()
+   *     .setName(formattedName)
+   *     .build();
+   *   dataLabelingServiceClient.deleteEvaluationJob(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteEvaluationJob(DeleteEvaluationJobRequest request) {
+    deleteEvaluationJobCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Stops and deletes an evaluation job.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   String formattedName = DataLabelingServiceClient.formatEvaluationJobName("[PROJECT]", "[EVALUATION_JOB]");
+   *   DeleteEvaluationJobRequest request = DeleteEvaluationJobRequest.newBuilder()
+   *     .setName(formattedName)
+   *     .build();
+   *   ApiFuture&lt;Void&gt; future = dataLabelingServiceClient.deleteEvaluationJobCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<DeleteEvaluationJobRequest, Empty> deleteEvaluationJobCallable() {
+    return stub.deleteEvaluationJobCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists all evaluation jobs within a project with possible filters. Pagination is supported.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   String formattedParent = DataLabelingServiceClient.formatProjectName("[PROJECT]");
+   *   String filter = "";
+   *   for (EvaluationJob element : dataLabelingServiceClient.listEvaluationJobs(formattedParent, filter).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. Evaluation resource parent. Format: "projects/{project_id}"
+   * @param filter Optional. Only support filter by model id and job state. Format:
+   *     "evaluation_job.model_id = {model_id} AND evaluation_job.state = {EvaluationJob::State}"
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListEvaluationJobsPagedResponse listEvaluationJobs(String parent, String filter) {
+    PROJECT_PATH_TEMPLATE.validate(parent, "listEvaluationJobs");
+    ListEvaluationJobsRequest request =
+        ListEvaluationJobsRequest.newBuilder().setParent(parent).setFilter(filter).build();
+    return listEvaluationJobs(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists all evaluation jobs within a project with possible filters. Pagination is supported.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   String formattedParent = DataLabelingServiceClient.formatProjectName("[PROJECT]");
+   *   String filter = "";
+   *   ListEvaluationJobsRequest request = ListEvaluationJobsRequest.newBuilder()
+   *     .setParent(formattedParent)
+   *     .setFilter(filter)
+   *     .build();
+   *   for (EvaluationJob element : dataLabelingServiceClient.listEvaluationJobs(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListEvaluationJobsPagedResponse listEvaluationJobs(
+      ListEvaluationJobsRequest request) {
+    return listEvaluationJobsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists all evaluation jobs within a project with possible filters. Pagination is supported.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   String formattedParent = DataLabelingServiceClient.formatProjectName("[PROJECT]");
+   *   String filter = "";
+   *   ListEvaluationJobsRequest request = ListEvaluationJobsRequest.newBuilder()
+   *     .setParent(formattedParent)
+   *     .setFilter(filter)
+   *     .build();
+   *   ApiFuture&lt;ListEvaluationJobsPagedResponse&gt; future = dataLabelingServiceClient.listEvaluationJobsPagedCallable().futureCall(request);
+   *   // Do something
+   *   for (EvaluationJob element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<ListEvaluationJobsRequest, ListEvaluationJobsPagedResponse>
+      listEvaluationJobsPagedCallable() {
+    return stub.listEvaluationJobsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists all evaluation jobs within a project with possible filters. Pagination is supported.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   String formattedParent = DataLabelingServiceClient.formatProjectName("[PROJECT]");
+   *   String filter = "";
+   *   ListEvaluationJobsRequest request = ListEvaluationJobsRequest.newBuilder()
+   *     .setParent(formattedParent)
+   *     .setFilter(filter)
+   *     .build();
+   *   while (true) {
+   *     ListEvaluationJobsResponse response = dataLabelingServiceClient.listEvaluationJobsCallable().call(request);
+   *     for (EvaluationJob element : response.getEvaluationJobsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<ListEvaluationJobsRequest, ListEvaluationJobsResponse>
+      listEvaluationJobsCallable() {
+    return stub.listEvaluationJobsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
    * Deletes an annotated dataset by resource name.
    *
    * <p>Sample code:
@@ -3330,6 +4146,274 @@ public class DataLabelingServiceClient implements BackgroundResource {
     protected ListInstructionsFixedSizeCollection createCollection(
         List<ListInstructionsPage> pages, int collectionSize) {
       return new ListInstructionsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class SearchEvaluationsPagedResponse
+      extends AbstractPagedListResponse<
+          SearchEvaluationsRequest,
+          SearchEvaluationsResponse,
+          Evaluation,
+          SearchEvaluationsPage,
+          SearchEvaluationsFixedSizeCollection> {
+
+    public static ApiFuture<SearchEvaluationsPagedResponse> createAsync(
+        PageContext<SearchEvaluationsRequest, SearchEvaluationsResponse, Evaluation> context,
+        ApiFuture<SearchEvaluationsResponse> futureResponse) {
+      ApiFuture<SearchEvaluationsPage> futurePage =
+          SearchEvaluationsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          new ApiFunction<SearchEvaluationsPage, SearchEvaluationsPagedResponse>() {
+            @Override
+            public SearchEvaluationsPagedResponse apply(SearchEvaluationsPage input) {
+              return new SearchEvaluationsPagedResponse(input);
+            }
+          },
+          MoreExecutors.directExecutor());
+    }
+
+    private SearchEvaluationsPagedResponse(SearchEvaluationsPage page) {
+      super(page, SearchEvaluationsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class SearchEvaluationsPage
+      extends AbstractPage<
+          SearchEvaluationsRequest, SearchEvaluationsResponse, Evaluation, SearchEvaluationsPage> {
+
+    private SearchEvaluationsPage(
+        PageContext<SearchEvaluationsRequest, SearchEvaluationsResponse, Evaluation> context,
+        SearchEvaluationsResponse response) {
+      super(context, response);
+    }
+
+    private static SearchEvaluationsPage createEmptyPage() {
+      return new SearchEvaluationsPage(null, null);
+    }
+
+    @Override
+    protected SearchEvaluationsPage createPage(
+        PageContext<SearchEvaluationsRequest, SearchEvaluationsResponse, Evaluation> context,
+        SearchEvaluationsResponse response) {
+      return new SearchEvaluationsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<SearchEvaluationsPage> createPageAsync(
+        PageContext<SearchEvaluationsRequest, SearchEvaluationsResponse, Evaluation> context,
+        ApiFuture<SearchEvaluationsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class SearchEvaluationsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          SearchEvaluationsRequest,
+          SearchEvaluationsResponse,
+          Evaluation,
+          SearchEvaluationsPage,
+          SearchEvaluationsFixedSizeCollection> {
+
+    private SearchEvaluationsFixedSizeCollection(
+        List<SearchEvaluationsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static SearchEvaluationsFixedSizeCollection createEmptyCollection() {
+      return new SearchEvaluationsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected SearchEvaluationsFixedSizeCollection createCollection(
+        List<SearchEvaluationsPage> pages, int collectionSize) {
+      return new SearchEvaluationsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class SearchExampleComparisonsPagedResponse
+      extends AbstractPagedListResponse<
+          SearchExampleComparisonsRequest,
+          SearchExampleComparisonsResponse,
+          SearchExampleComparisonsResponse.ExampleComparison,
+          SearchExampleComparisonsPage,
+          SearchExampleComparisonsFixedSizeCollection> {
+
+    public static ApiFuture<SearchExampleComparisonsPagedResponse> createAsync(
+        PageContext<
+                SearchExampleComparisonsRequest,
+                SearchExampleComparisonsResponse,
+                SearchExampleComparisonsResponse.ExampleComparison>
+            context,
+        ApiFuture<SearchExampleComparisonsResponse> futureResponse) {
+      ApiFuture<SearchExampleComparisonsPage> futurePage =
+          SearchExampleComparisonsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          new ApiFunction<SearchExampleComparisonsPage, SearchExampleComparisonsPagedResponse>() {
+            @Override
+            public SearchExampleComparisonsPagedResponse apply(SearchExampleComparisonsPage input) {
+              return new SearchExampleComparisonsPagedResponse(input);
+            }
+          },
+          MoreExecutors.directExecutor());
+    }
+
+    private SearchExampleComparisonsPagedResponse(SearchExampleComparisonsPage page) {
+      super(page, SearchExampleComparisonsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class SearchExampleComparisonsPage
+      extends AbstractPage<
+          SearchExampleComparisonsRequest,
+          SearchExampleComparisonsResponse,
+          SearchExampleComparisonsResponse.ExampleComparison,
+          SearchExampleComparisonsPage> {
+
+    private SearchExampleComparisonsPage(
+        PageContext<
+                SearchExampleComparisonsRequest,
+                SearchExampleComparisonsResponse,
+                SearchExampleComparisonsResponse.ExampleComparison>
+            context,
+        SearchExampleComparisonsResponse response) {
+      super(context, response);
+    }
+
+    private static SearchExampleComparisonsPage createEmptyPage() {
+      return new SearchExampleComparisonsPage(null, null);
+    }
+
+    @Override
+    protected SearchExampleComparisonsPage createPage(
+        PageContext<
+                SearchExampleComparisonsRequest,
+                SearchExampleComparisonsResponse,
+                SearchExampleComparisonsResponse.ExampleComparison>
+            context,
+        SearchExampleComparisonsResponse response) {
+      return new SearchExampleComparisonsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<SearchExampleComparisonsPage> createPageAsync(
+        PageContext<
+                SearchExampleComparisonsRequest,
+                SearchExampleComparisonsResponse,
+                SearchExampleComparisonsResponse.ExampleComparison>
+            context,
+        ApiFuture<SearchExampleComparisonsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class SearchExampleComparisonsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          SearchExampleComparisonsRequest,
+          SearchExampleComparisonsResponse,
+          SearchExampleComparisonsResponse.ExampleComparison,
+          SearchExampleComparisonsPage,
+          SearchExampleComparisonsFixedSizeCollection> {
+
+    private SearchExampleComparisonsFixedSizeCollection(
+        List<SearchExampleComparisonsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static SearchExampleComparisonsFixedSizeCollection createEmptyCollection() {
+      return new SearchExampleComparisonsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected SearchExampleComparisonsFixedSizeCollection createCollection(
+        List<SearchExampleComparisonsPage> pages, int collectionSize) {
+      return new SearchExampleComparisonsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListEvaluationJobsPagedResponse
+      extends AbstractPagedListResponse<
+          ListEvaluationJobsRequest,
+          ListEvaluationJobsResponse,
+          EvaluationJob,
+          ListEvaluationJobsPage,
+          ListEvaluationJobsFixedSizeCollection> {
+
+    public static ApiFuture<ListEvaluationJobsPagedResponse> createAsync(
+        PageContext<ListEvaluationJobsRequest, ListEvaluationJobsResponse, EvaluationJob> context,
+        ApiFuture<ListEvaluationJobsResponse> futureResponse) {
+      ApiFuture<ListEvaluationJobsPage> futurePage =
+          ListEvaluationJobsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          new ApiFunction<ListEvaluationJobsPage, ListEvaluationJobsPagedResponse>() {
+            @Override
+            public ListEvaluationJobsPagedResponse apply(ListEvaluationJobsPage input) {
+              return new ListEvaluationJobsPagedResponse(input);
+            }
+          },
+          MoreExecutors.directExecutor());
+    }
+
+    private ListEvaluationJobsPagedResponse(ListEvaluationJobsPage page) {
+      super(page, ListEvaluationJobsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListEvaluationJobsPage
+      extends AbstractPage<
+          ListEvaluationJobsRequest,
+          ListEvaluationJobsResponse,
+          EvaluationJob,
+          ListEvaluationJobsPage> {
+
+    private ListEvaluationJobsPage(
+        PageContext<ListEvaluationJobsRequest, ListEvaluationJobsResponse, EvaluationJob> context,
+        ListEvaluationJobsResponse response) {
+      super(context, response);
+    }
+
+    private static ListEvaluationJobsPage createEmptyPage() {
+      return new ListEvaluationJobsPage(null, null);
+    }
+
+    @Override
+    protected ListEvaluationJobsPage createPage(
+        PageContext<ListEvaluationJobsRequest, ListEvaluationJobsResponse, EvaluationJob> context,
+        ListEvaluationJobsResponse response) {
+      return new ListEvaluationJobsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListEvaluationJobsPage> createPageAsync(
+        PageContext<ListEvaluationJobsRequest, ListEvaluationJobsResponse, EvaluationJob> context,
+        ApiFuture<ListEvaluationJobsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListEvaluationJobsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListEvaluationJobsRequest,
+          ListEvaluationJobsResponse,
+          EvaluationJob,
+          ListEvaluationJobsPage,
+          ListEvaluationJobsFixedSizeCollection> {
+
+    private ListEvaluationJobsFixedSizeCollection(
+        List<ListEvaluationJobsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListEvaluationJobsFixedSizeCollection createEmptyCollection() {
+      return new ListEvaluationJobsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListEvaluationJobsFixedSizeCollection createCollection(
+        List<ListEvaluationJobsPage> pages, int collectionSize) {
+      return new ListEvaluationJobsFixedSizeCollection(pages, collectionSize);
     }
   }
 }

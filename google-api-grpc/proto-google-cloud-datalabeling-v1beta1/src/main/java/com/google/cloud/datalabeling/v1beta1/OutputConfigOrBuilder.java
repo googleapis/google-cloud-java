@@ -12,8 +12,8 @@ public interface OutputConfigOrBuilder
    *
    *
    * <pre>
-   * Output to a GCS file. Should be used for labeling output other than Audio
-   * transcription.
+   * Output to a file in Cloud Storage. Should be used for labeling output
+   * other thanimage segmentation.
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.GcsDestination gcs_destination = 1;</code>
@@ -23,8 +23,8 @@ public interface OutputConfigOrBuilder
    *
    *
    * <pre>
-   * Output to a GCS file. Should be used for labeling output other than Audio
-   * transcription.
+   * Output to a file in Cloud Storage. Should be used for labeling output
+   * other thanimage segmentation.
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.GcsDestination gcs_destination = 1;</code>
@@ -34,8 +34,8 @@ public interface OutputConfigOrBuilder
    *
    *
    * <pre>
-   * Output to a GCS file. Should be used for labeling output other than Audio
-   * transcription.
+   * Output to a file in Cloud Storage. Should be used for labeling output
+   * other thanimage segmentation.
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.GcsDestination gcs_destination = 1;</code>
@@ -46,8 +46,8 @@ public interface OutputConfigOrBuilder
    *
    *
    * <pre>
-   * Output to a GCS folder. Should be used for Audio transcription
-   * labeling output.
+   * Output to a folder in Cloud Storage. Should be used for image
+   * segmentation labeling output.
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.GcsFolderDestination gcs_folder_destination = 2;
@@ -58,8 +58,8 @@ public interface OutputConfigOrBuilder
    *
    *
    * <pre>
-   * Output to a GCS folder. Should be used for Audio transcription
-   * labeling output.
+   * Output to a folder in Cloud Storage. Should be used for image
+   * segmentation labeling output.
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.GcsFolderDestination gcs_folder_destination = 2;
@@ -70,8 +70,8 @@ public interface OutputConfigOrBuilder
    *
    *
    * <pre>
-   * Output to a GCS folder. Should be used for Audio transcription
-   * labeling output.
+   * Output to a folder in Cloud Storage. Should be used for image
+   * segmentation labeling output.
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.GcsFolderDestination gcs_folder_destination = 2;

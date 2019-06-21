@@ -32,6 +32,7 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
     displayName_ = "";
     description_ = "";
     dataType_ = 0;
+    blockingResources_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
@@ -150,6 +151,16 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
+          case 82:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000100) != 0)) {
+                blockingResources_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000100;
+              }
+              blockingResources_.add(s);
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -164,6 +175,9 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000100) != 0)) {
+        blockingResources_ = blockingResources_.getUnmodifiableView();
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -184,6 +198,7 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.datalabeling.v1beta1.Instruction.Builder.class);
   }
 
+  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -431,11 +446,11 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * One of CSV and PDF instruction is required.
-   * Instruction from a csv file, such as for classification task.
-   * Csv file should have exact two columns, in the format of:
-   * The first column is labeled data, such as image reference, text.
-   * The second column is comma separated labels associated with data.
+   * One of CSV or PDF instruction is required.
+   * Instruction from a CSV file, such as for classification task.
+   * The CSV file should have exact two columns, in the following format:
+   * * The first column is labeled data, such as an image reference, text.
+   * * The second column is comma separated labels associated with data.
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.CsvInstruction csv_instruction = 7;</code>
@@ -447,11 +462,11 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * One of CSV and PDF instruction is required.
-   * Instruction from a csv file, such as for classification task.
-   * Csv file should have exact two columns, in the format of:
-   * The first column is labeled data, such as image reference, text.
-   * The second column is comma separated labels associated with data.
+   * One of CSV or PDF instruction is required.
+   * Instruction from a CSV file, such as for classification task.
+   * The CSV file should have exact two columns, in the following format:
+   * * The first column is labeled data, such as an image reference, text.
+   * * The second column is comma separated labels associated with data.
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.CsvInstruction csv_instruction = 7;</code>
@@ -465,11 +480,11 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * One of CSV and PDF instruction is required.
-   * Instruction from a csv file, such as for classification task.
-   * Csv file should have exact two columns, in the format of:
-   * The first column is labeled data, such as image reference, text.
-   * The second column is comma separated labels associated with data.
+   * One of CSV or PDF instruction is required.
+   * Instruction from a CSV file, such as for classification task.
+   * The CSV file should have exact two columns, in the following format:
+   * * The first column is labeled data, such as an image reference, text.
+   * * The second column is comma separated labels associated with data.
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.CsvInstruction csv_instruction = 7;</code>
@@ -485,8 +500,9 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * One of CSV and PDF instruction is required.
-   * Instruction from a PDF doc. The PDF doc should be in GCS bucket.
+   * One of CSV or PDF instruction is required.
+   * Instruction from a PDF document. The PDF should be in a Cloud Storage
+   * bucket.
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.PdfInstruction pdf_instruction = 9;</code>
@@ -498,8 +514,9 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * One of CSV and PDF instruction is required.
-   * Instruction from a PDF doc. The PDF doc should be in GCS bucket.
+   * One of CSV or PDF instruction is required.
+   * Instruction from a PDF document. The PDF should be in a Cloud Storage
+   * bucket.
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.PdfInstruction pdf_instruction = 9;</code>
@@ -513,8 +530,9 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * One of CSV and PDF instruction is required.
-   * Instruction from a PDF doc. The PDF doc should be in GCS bucket.
+   * One of CSV or PDF instruction is required.
+   * Instruction from a PDF document. The PDF should be in a Cloud Storage
+   * bucket.
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.PdfInstruction pdf_instruction = 9;</code>
@@ -522,6 +540,61 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.datalabeling.v1beta1.PdfInstructionOrBuilder
       getPdfInstructionOrBuilder() {
     return getPdfInstruction();
+  }
+
+  public static final int BLOCKING_RESOURCES_FIELD_NUMBER = 10;
+  private com.google.protobuf.LazyStringList blockingResources_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The names of any related resources that are blocking changes
+   * to the instruction.
+   * </pre>
+   *
+   * <code>repeated string blocking_resources = 10;</code>
+   */
+  public com.google.protobuf.ProtocolStringList getBlockingResourcesList() {
+    return blockingResources_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The names of any related resources that are blocking changes
+   * to the instruction.
+   * </pre>
+   *
+   * <code>repeated string blocking_resources = 10;</code>
+   */
+  public int getBlockingResourcesCount() {
+    return blockingResources_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The names of any related resources that are blocking changes
+   * to the instruction.
+   * </pre>
+   *
+   * <code>repeated string blocking_resources = 10;</code>
+   */
+  public java.lang.String getBlockingResources(int index) {
+    return blockingResources_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The names of any related resources that are blocking changes
+   * to the instruction.
+   * </pre>
+   *
+   * <code>repeated string blocking_resources = 10;</code>
+   */
+  public com.google.protobuf.ByteString getBlockingResourcesBytes(int index) {
+    return blockingResources_.getByteString(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -563,6 +636,9 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
     if (pdfInstruction_ != null) {
       output.writeMessage(9, getPdfInstruction());
     }
+    for (int i = 0; i < blockingResources_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 10, blockingResources_.getRaw(i));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -596,6 +672,14 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
     }
     if (pdfInstruction_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getPdfInstruction());
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < blockingResources_.size(); i++) {
+        dataSize += computeStringSizeNoTag(blockingResources_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getBlockingResourcesList().size();
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -633,6 +717,7 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
     if (hasPdfInstruction()) {
       if (!getPdfInstruction().equals(other.getPdfInstruction())) return false;
     }
+    if (!getBlockingResourcesList().equals(other.getBlockingResourcesList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -667,6 +752,10 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
     if (hasPdfInstruction()) {
       hash = (37 * hash) + PDF_INSTRUCTION_FIELD_NUMBER;
       hash = (53 * hash) + getPdfInstruction().hashCode();
+    }
+    if (getBlockingResourcesCount() > 0) {
+      hash = (37 * hash) + BLOCKING_RESOURCES_FIELD_NUMBER;
+      hash = (53 * hash) + getBlockingResourcesList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -850,6 +939,8 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
         pdfInstruction_ = null;
         pdfInstructionBuilder_ = null;
       }
+      blockingResources_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000100);
       return this;
     }
 
@@ -877,6 +968,8 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.datalabeling.v1beta1.Instruction buildPartial() {
       com.google.cloud.datalabeling.v1beta1.Instruction result =
           new com.google.cloud.datalabeling.v1beta1.Instruction(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       result.name_ = name_;
       result.displayName_ = displayName_;
       result.description_ = description_;
@@ -901,6 +994,12 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.pdfInstruction_ = pdfInstructionBuilder_.build();
       }
+      if (((bitField0_ & 0x00000100) != 0)) {
+        blockingResources_ = blockingResources_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000100);
+      }
+      result.blockingResources_ = blockingResources_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -978,6 +1077,16 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
       if (other.hasPdfInstruction()) {
         mergePdfInstruction(other.getPdfInstruction());
       }
+      if (!other.blockingResources_.isEmpty()) {
+        if (blockingResources_.isEmpty()) {
+          blockingResources_ = other.blockingResources_;
+          bitField0_ = (bitField0_ & ~0x00000100);
+        } else {
+          ensureBlockingResourcesIsMutable();
+          blockingResources_.addAll(other.blockingResources_);
+        }
+        onChanged();
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -1007,6 +1116,8 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -1744,11 +1855,11 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * One of CSV and PDF instruction is required.
-     * Instruction from a csv file, such as for classification task.
-     * Csv file should have exact two columns, in the format of:
-     * The first column is labeled data, such as image reference, text.
-     * The second column is comma separated labels associated with data.
+     * One of CSV or PDF instruction is required.
+     * Instruction from a CSV file, such as for classification task.
+     * The CSV file should have exact two columns, in the following format:
+     * * The first column is labeled data, such as an image reference, text.
+     * * The second column is comma separated labels associated with data.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.CsvInstruction csv_instruction = 7;</code>
@@ -1760,11 +1871,11 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * One of CSV and PDF instruction is required.
-     * Instruction from a csv file, such as for classification task.
-     * Csv file should have exact two columns, in the format of:
-     * The first column is labeled data, such as image reference, text.
-     * The second column is comma separated labels associated with data.
+     * One of CSV or PDF instruction is required.
+     * Instruction from a CSV file, such as for classification task.
+     * The CSV file should have exact two columns, in the following format:
+     * * The first column is labeled data, such as an image reference, text.
+     * * The second column is comma separated labels associated with data.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.CsvInstruction csv_instruction = 7;</code>
@@ -1782,11 +1893,11 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * One of CSV and PDF instruction is required.
-     * Instruction from a csv file, such as for classification task.
-     * Csv file should have exact two columns, in the format of:
-     * The first column is labeled data, such as image reference, text.
-     * The second column is comma separated labels associated with data.
+     * One of CSV or PDF instruction is required.
+     * Instruction from a CSV file, such as for classification task.
+     * The CSV file should have exact two columns, in the following format:
+     * * The first column is labeled data, such as an image reference, text.
+     * * The second column is comma separated labels associated with data.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.CsvInstruction csv_instruction = 7;</code>
@@ -1808,11 +1919,11 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * One of CSV and PDF instruction is required.
-     * Instruction from a csv file, such as for classification task.
-     * Csv file should have exact two columns, in the format of:
-     * The first column is labeled data, such as image reference, text.
-     * The second column is comma separated labels associated with data.
+     * One of CSV or PDF instruction is required.
+     * Instruction from a CSV file, such as for classification task.
+     * The CSV file should have exact two columns, in the following format:
+     * * The first column is labeled data, such as an image reference, text.
+     * * The second column is comma separated labels associated with data.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.CsvInstruction csv_instruction = 7;</code>
@@ -1832,11 +1943,11 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * One of CSV and PDF instruction is required.
-     * Instruction from a csv file, such as for classification task.
-     * Csv file should have exact two columns, in the format of:
-     * The first column is labeled data, such as image reference, text.
-     * The second column is comma separated labels associated with data.
+     * One of CSV or PDF instruction is required.
+     * Instruction from a CSV file, such as for classification task.
+     * The CSV file should have exact two columns, in the following format:
+     * * The first column is labeled data, such as an image reference, text.
+     * * The second column is comma separated labels associated with data.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.CsvInstruction csv_instruction = 7;</code>
@@ -1862,11 +1973,11 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * One of CSV and PDF instruction is required.
-     * Instruction from a csv file, such as for classification task.
-     * Csv file should have exact two columns, in the format of:
-     * The first column is labeled data, such as image reference, text.
-     * The second column is comma separated labels associated with data.
+     * One of CSV or PDF instruction is required.
+     * Instruction from a CSV file, such as for classification task.
+     * The CSV file should have exact two columns, in the following format:
+     * * The first column is labeled data, such as an image reference, text.
+     * * The second column is comma separated labels associated with data.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.CsvInstruction csv_instruction = 7;</code>
@@ -1886,11 +1997,11 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * One of CSV and PDF instruction is required.
-     * Instruction from a csv file, such as for classification task.
-     * Csv file should have exact two columns, in the format of:
-     * The first column is labeled data, such as image reference, text.
-     * The second column is comma separated labels associated with data.
+     * One of CSV or PDF instruction is required.
+     * Instruction from a CSV file, such as for classification task.
+     * The CSV file should have exact two columns, in the following format:
+     * * The first column is labeled data, such as an image reference, text.
+     * * The second column is comma separated labels associated with data.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.CsvInstruction csv_instruction = 7;</code>
@@ -1904,11 +2015,11 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * One of CSV and PDF instruction is required.
-     * Instruction from a csv file, such as for classification task.
-     * Csv file should have exact two columns, in the format of:
-     * The first column is labeled data, such as image reference, text.
-     * The second column is comma separated labels associated with data.
+     * One of CSV or PDF instruction is required.
+     * Instruction from a CSV file, such as for classification task.
+     * The CSV file should have exact two columns, in the following format:
+     * * The first column is labeled data, such as an image reference, text.
+     * * The second column is comma separated labels associated with data.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.CsvInstruction csv_instruction = 7;</code>
@@ -1927,11 +2038,11 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * One of CSV and PDF instruction is required.
-     * Instruction from a csv file, such as for classification task.
-     * Csv file should have exact two columns, in the format of:
-     * The first column is labeled data, such as image reference, text.
-     * The second column is comma separated labels associated with data.
+     * One of CSV or PDF instruction is required.
+     * Instruction from a CSV file, such as for classification task.
+     * The CSV file should have exact two columns, in the following format:
+     * * The first column is labeled data, such as an image reference, text.
+     * * The second column is comma separated labels associated with data.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.CsvInstruction csv_instruction = 7;</code>
@@ -1963,8 +2074,9 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * One of CSV and PDF instruction is required.
-     * Instruction from a PDF doc. The PDF doc should be in GCS bucket.
+     * One of CSV or PDF instruction is required.
+     * Instruction from a PDF document. The PDF should be in a Cloud Storage
+     * bucket.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.PdfInstruction pdf_instruction = 9;</code>
@@ -1976,8 +2088,9 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * One of CSV and PDF instruction is required.
-     * Instruction from a PDF doc. The PDF doc should be in GCS bucket.
+     * One of CSV or PDF instruction is required.
+     * Instruction from a PDF document. The PDF should be in a Cloud Storage
+     * bucket.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.PdfInstruction pdf_instruction = 9;</code>
@@ -1995,8 +2108,9 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * One of CSV and PDF instruction is required.
-     * Instruction from a PDF doc. The PDF doc should be in GCS bucket.
+     * One of CSV or PDF instruction is required.
+     * Instruction from a PDF document. The PDF should be in a Cloud Storage
+     * bucket.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.PdfInstruction pdf_instruction = 9;</code>
@@ -2018,8 +2132,9 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * One of CSV and PDF instruction is required.
-     * Instruction from a PDF doc. The PDF doc should be in GCS bucket.
+     * One of CSV or PDF instruction is required.
+     * Instruction from a PDF document. The PDF should be in a Cloud Storage
+     * bucket.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.PdfInstruction pdf_instruction = 9;</code>
@@ -2039,8 +2154,9 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * One of CSV and PDF instruction is required.
-     * Instruction from a PDF doc. The PDF doc should be in GCS bucket.
+     * One of CSV or PDF instruction is required.
+     * Instruction from a PDF document. The PDF should be in a Cloud Storage
+     * bucket.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.PdfInstruction pdf_instruction = 9;</code>
@@ -2066,8 +2182,9 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * One of CSV and PDF instruction is required.
-     * Instruction from a PDF doc. The PDF doc should be in GCS bucket.
+     * One of CSV or PDF instruction is required.
+     * Instruction from a PDF document. The PDF should be in a Cloud Storage
+     * bucket.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.PdfInstruction pdf_instruction = 9;</code>
@@ -2087,8 +2204,9 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * One of CSV and PDF instruction is required.
-     * Instruction from a PDF doc. The PDF doc should be in GCS bucket.
+     * One of CSV or PDF instruction is required.
+     * Instruction from a PDF document. The PDF should be in a Cloud Storage
+     * bucket.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.PdfInstruction pdf_instruction = 9;</code>
@@ -2102,8 +2220,9 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * One of CSV and PDF instruction is required.
-     * Instruction from a PDF doc. The PDF doc should be in GCS bucket.
+     * One of CSV or PDF instruction is required.
+     * Instruction from a PDF document. The PDF should be in a Cloud Storage
+     * bucket.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.PdfInstruction pdf_instruction = 9;</code>
@@ -2122,8 +2241,9 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * One of CSV and PDF instruction is required.
-     * Instruction from a PDF doc. The PDF doc should be in GCS bucket.
+     * One of CSV or PDF instruction is required.
+     * Instruction from a PDF document. The PDF should be in a Cloud Storage
+     * bucket.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.PdfInstruction pdf_instruction = 9;</code>
@@ -2143,6 +2263,158 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
         pdfInstruction_ = null;
       }
       return pdfInstructionBuilder_;
+    }
+
+    private com.google.protobuf.LazyStringList blockingResources_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
+    private void ensureBlockingResourcesIsMutable() {
+      if (!((bitField0_ & 0x00000100) != 0)) {
+        blockingResources_ = new com.google.protobuf.LazyStringArrayList(blockingResources_);
+        bitField0_ |= 0x00000100;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The names of any related resources that are blocking changes
+     * to the instruction.
+     * </pre>
+     *
+     * <code>repeated string blocking_resources = 10;</code>
+     */
+    public com.google.protobuf.ProtocolStringList getBlockingResourcesList() {
+      return blockingResources_.getUnmodifiableView();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The names of any related resources that are blocking changes
+     * to the instruction.
+     * </pre>
+     *
+     * <code>repeated string blocking_resources = 10;</code>
+     */
+    public int getBlockingResourcesCount() {
+      return blockingResources_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The names of any related resources that are blocking changes
+     * to the instruction.
+     * </pre>
+     *
+     * <code>repeated string blocking_resources = 10;</code>
+     */
+    public java.lang.String getBlockingResources(int index) {
+      return blockingResources_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The names of any related resources that are blocking changes
+     * to the instruction.
+     * </pre>
+     *
+     * <code>repeated string blocking_resources = 10;</code>
+     */
+    public com.google.protobuf.ByteString getBlockingResourcesBytes(int index) {
+      return blockingResources_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The names of any related resources that are blocking changes
+     * to the instruction.
+     * </pre>
+     *
+     * <code>repeated string blocking_resources = 10;</code>
+     */
+    public Builder setBlockingResources(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureBlockingResourcesIsMutable();
+      blockingResources_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The names of any related resources that are blocking changes
+     * to the instruction.
+     * </pre>
+     *
+     * <code>repeated string blocking_resources = 10;</code>
+     */
+    public Builder addBlockingResources(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureBlockingResourcesIsMutable();
+      blockingResources_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The names of any related resources that are blocking changes
+     * to the instruction.
+     * </pre>
+     *
+     * <code>repeated string blocking_resources = 10;</code>
+     */
+    public Builder addAllBlockingResources(java.lang.Iterable<java.lang.String> values) {
+      ensureBlockingResourcesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, blockingResources_);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The names of any related resources that are blocking changes
+     * to the instruction.
+     * </pre>
+     *
+     * <code>repeated string blocking_resources = 10;</code>
+     */
+    public Builder clearBlockingResources() {
+      blockingResources_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000100);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The names of any related resources that are blocking changes
+     * to the instruction.
+     * </pre>
+     *
+     * <code>repeated string blocking_resources = 10;</code>
+     */
+    public Builder addBlockingResourcesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureBlockingResourcesIsMutable();
+      blockingResources_.add(value);
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

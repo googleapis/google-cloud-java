@@ -28,6 +28,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
     displayName_ = "";
     description_ = "";
     inputConfigs_ = java.util.Collections.emptyList();
+    blockingResources_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
@@ -103,6 +104,21 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
                       extensionRegistry));
               break;
             }
+          case 50:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+                blockingResources_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000020;
+              }
+              blockingResources_.add(s);
+              break;
+            }
+          case 56:
+            {
+              dataItemCount_ = input.readInt64();
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -119,6 +135,9 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
     } finally {
       if (((mutable_bitField0_ & 0x00000010) != 0)) {
         inputConfigs_ = java.util.Collections.unmodifiableList(inputConfigs_);
+      }
+      if (((mutable_bitField0_ & 0x00000020) != 0)) {
+        blockingResources_ = blockingResources_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -147,8 +166,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only.
-   * Dataset resource name, format is:
+   * Output only. Dataset resource name, format is:
    * projects/{project_id}/datasets/{dataset_id}
    * </pre>
    *
@@ -169,8 +187,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only.
-   * Dataset resource name, format is:
+   * Output only. Dataset resource name, format is:
    * projects/{project_id}/datasets/{dataset_id}
    * </pre>
    *
@@ -390,6 +407,76 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
     return inputConfigs_.get(index);
   }
 
+  public static final int BLOCKING_RESOURCES_FIELD_NUMBER = 6;
+  private com.google.protobuf.LazyStringList blockingResources_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The names of any related resources that are blocking changes
+   * to the dataset.
+   * </pre>
+   *
+   * <code>repeated string blocking_resources = 6;</code>
+   */
+  public com.google.protobuf.ProtocolStringList getBlockingResourcesList() {
+    return blockingResources_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The names of any related resources that are blocking changes
+   * to the dataset.
+   * </pre>
+   *
+   * <code>repeated string blocking_resources = 6;</code>
+   */
+  public int getBlockingResourcesCount() {
+    return blockingResources_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The names of any related resources that are blocking changes
+   * to the dataset.
+   * </pre>
+   *
+   * <code>repeated string blocking_resources = 6;</code>
+   */
+  public java.lang.String getBlockingResources(int index) {
+    return blockingResources_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The names of any related resources that are blocking changes
+   * to the dataset.
+   * </pre>
+   *
+   * <code>repeated string blocking_resources = 6;</code>
+   */
+  public com.google.protobuf.ByteString getBlockingResourcesBytes(int index) {
+    return blockingResources_.getByteString(index);
+  }
+
+  public static final int DATA_ITEM_COUNT_FIELD_NUMBER = 7;
+  private long dataItemCount_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The number of data items in the dataset.
+   * </pre>
+   *
+   * <code>int64 data_item_count = 7;</code>
+   */
+  public long getDataItemCount() {
+    return dataItemCount_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -419,6 +506,12 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < inputConfigs_.size(); i++) {
       output.writeMessage(5, inputConfigs_.get(i));
     }
+    for (int i = 0; i < blockingResources_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, blockingResources_.getRaw(i));
+    }
+    if (dataItemCount_ != 0L) {
+      output.writeInt64(7, dataItemCount_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -442,6 +535,17 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
     }
     for (int i = 0; i < inputConfigs_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, inputConfigs_.get(i));
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < blockingResources_.size(); i++) {
+        dataSize += computeStringSizeNoTag(blockingResources_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getBlockingResourcesList().size();
+    }
+    if (dataItemCount_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(7, dataItemCount_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -467,6 +571,8 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       if (!getCreateTime().equals(other.getCreateTime())) return false;
     }
     if (!getInputConfigsList().equals(other.getInputConfigsList())) return false;
+    if (!getBlockingResourcesList().equals(other.getBlockingResourcesList())) return false;
+    if (getDataItemCount() != other.getDataItemCount()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -492,6 +598,12 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + INPUT_CONFIGS_FIELD_NUMBER;
       hash = (53 * hash) + getInputConfigsList().hashCode();
     }
+    if (getBlockingResourcesCount() > 0) {
+      hash = (37 * hash) + BLOCKING_RESOURCES_FIELD_NUMBER;
+      hash = (53 * hash) + getBlockingResourcesList().hashCode();
+    }
+    hash = (37 * hash) + DATA_ITEM_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getDataItemCount());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -658,6 +770,10 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       } else {
         inputConfigsBuilder_.clear();
       }
+      blockingResources_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      dataItemCount_ = 0L;
+
       return this;
     }
 
@@ -704,6 +820,12 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.inputConfigs_ = inputConfigsBuilder_.build();
       }
+      if (((bitField0_ & 0x00000020) != 0)) {
+        blockingResources_ = blockingResources_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000020);
+      }
+      result.blockingResources_ = blockingResources_;
+      result.dataItemCount_ = dataItemCount_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -796,6 +918,19 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
+      if (!other.blockingResources_.isEmpty()) {
+        if (blockingResources_.isEmpty()) {
+          blockingResources_ = other.blockingResources_;
+          bitField0_ = (bitField0_ & ~0x00000020);
+        } else {
+          ensureBlockingResourcesIsMutable();
+          blockingResources_.addAll(other.blockingResources_);
+        }
+        onChanged();
+      }
+      if (other.getDataItemCount() != 0L) {
+        setDataItemCount(other.getDataItemCount());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -832,8 +967,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only.
-     * Dataset resource name, format is:
+     * Output only. Dataset resource name, format is:
      * projects/{project_id}/datasets/{dataset_id}
      * </pre>
      *
@@ -854,8 +988,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only.
-     * Dataset resource name, format is:
+     * Output only. Dataset resource name, format is:
      * projects/{project_id}/datasets/{dataset_id}
      * </pre>
      *
@@ -876,8 +1009,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only.
-     * Dataset resource name, format is:
+     * Output only. Dataset resource name, format is:
      * projects/{project_id}/datasets/{dataset_id}
      * </pre>
      *
@@ -896,8 +1028,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only.
-     * Dataset resource name, format is:
+     * Output only. Dataset resource name, format is:
      * projects/{project_id}/datasets/{dataset_id}
      * </pre>
      *
@@ -913,8 +1044,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only.
-     * Dataset resource name, format is:
+     * Output only. Dataset resource name, format is:
      * projects/{project_id}/datasets/{dataset_id}
      * </pre>
      *
@@ -1695,6 +1825,202 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
         inputConfigs_ = null;
       }
       return inputConfigsBuilder_;
+    }
+
+    private com.google.protobuf.LazyStringList blockingResources_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
+    private void ensureBlockingResourcesIsMutable() {
+      if (!((bitField0_ & 0x00000020) != 0)) {
+        blockingResources_ = new com.google.protobuf.LazyStringArrayList(blockingResources_);
+        bitField0_ |= 0x00000020;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The names of any related resources that are blocking changes
+     * to the dataset.
+     * </pre>
+     *
+     * <code>repeated string blocking_resources = 6;</code>
+     */
+    public com.google.protobuf.ProtocolStringList getBlockingResourcesList() {
+      return blockingResources_.getUnmodifiableView();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The names of any related resources that are blocking changes
+     * to the dataset.
+     * </pre>
+     *
+     * <code>repeated string blocking_resources = 6;</code>
+     */
+    public int getBlockingResourcesCount() {
+      return blockingResources_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The names of any related resources that are blocking changes
+     * to the dataset.
+     * </pre>
+     *
+     * <code>repeated string blocking_resources = 6;</code>
+     */
+    public java.lang.String getBlockingResources(int index) {
+      return blockingResources_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The names of any related resources that are blocking changes
+     * to the dataset.
+     * </pre>
+     *
+     * <code>repeated string blocking_resources = 6;</code>
+     */
+    public com.google.protobuf.ByteString getBlockingResourcesBytes(int index) {
+      return blockingResources_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The names of any related resources that are blocking changes
+     * to the dataset.
+     * </pre>
+     *
+     * <code>repeated string blocking_resources = 6;</code>
+     */
+    public Builder setBlockingResources(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureBlockingResourcesIsMutable();
+      blockingResources_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The names of any related resources that are blocking changes
+     * to the dataset.
+     * </pre>
+     *
+     * <code>repeated string blocking_resources = 6;</code>
+     */
+    public Builder addBlockingResources(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureBlockingResourcesIsMutable();
+      blockingResources_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The names of any related resources that are blocking changes
+     * to the dataset.
+     * </pre>
+     *
+     * <code>repeated string blocking_resources = 6;</code>
+     */
+    public Builder addAllBlockingResources(java.lang.Iterable<java.lang.String> values) {
+      ensureBlockingResourcesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, blockingResources_);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The names of any related resources that are blocking changes
+     * to the dataset.
+     * </pre>
+     *
+     * <code>repeated string blocking_resources = 6;</code>
+     */
+    public Builder clearBlockingResources() {
+      blockingResources_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The names of any related resources that are blocking changes
+     * to the dataset.
+     * </pre>
+     *
+     * <code>repeated string blocking_resources = 6;</code>
+     */
+    public Builder addBlockingResourcesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureBlockingResourcesIsMutable();
+      blockingResources_.add(value);
+      onChanged();
+      return this;
+    }
+
+    private long dataItemCount_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The number of data items in the dataset.
+     * </pre>
+     *
+     * <code>int64 data_item_count = 7;</code>
+     */
+    public long getDataItemCount() {
+      return dataItemCount_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The number of data items in the dataset.
+     * </pre>
+     *
+     * <code>int64 data_item_count = 7;</code>
+     */
+    public Builder setDataItemCount(long value) {
+
+      dataItemCount_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The number of data items in the dataset.
+     * </pre>
+     *
+     * <code>int64 data_item_count = 7;</code>
+     */
+    public Builder clearDataItemCount() {
+
+      dataItemCount_ = 0L;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

@@ -19,8 +19,11 @@ import static com.google.cloud.datalabeling.v1beta1.DataLabelingServiceClient.Li
 import static com.google.cloud.datalabeling.v1beta1.DataLabelingServiceClient.ListAnnotationSpecSetsPagedResponse;
 import static com.google.cloud.datalabeling.v1beta1.DataLabelingServiceClient.ListDataItemsPagedResponse;
 import static com.google.cloud.datalabeling.v1beta1.DataLabelingServiceClient.ListDatasetsPagedResponse;
+import static com.google.cloud.datalabeling.v1beta1.DataLabelingServiceClient.ListEvaluationJobsPagedResponse;
 import static com.google.cloud.datalabeling.v1beta1.DataLabelingServiceClient.ListExamplesPagedResponse;
 import static com.google.cloud.datalabeling.v1beta1.DataLabelingServiceClient.ListInstructionsPagedResponse;
+import static com.google.cloud.datalabeling.v1beta1.DataLabelingServiceClient.SearchEvaluationsPagedResponse;
+import static com.google.cloud.datalabeling.v1beta1.DataLabelingServiceClient.SearchExampleComparisonsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
@@ -184,19 +187,6 @@ public class DataLabelingServiceSettings extends ClientSettings<DataLabelingServ
     return ((DataLabelingServiceStubSettings) getStubSettings()).labelTextOperationSettings();
   }
 
-  /** Returns the object with the settings used for calls to labelAudio. */
-  public UnaryCallSettings<LabelAudioRequest, Operation> labelAudioSettings() {
-    return ((DataLabelingServiceStubSettings) getStubSettings()).labelAudioSettings();
-  }
-
-  /** Returns the object with the settings used for calls to labelAudio. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public OperationCallSettings<LabelAudioRequest, AnnotatedDataset, LabelOperationMetadata>
-      labelAudioOperationSettings() {
-    return ((DataLabelingServiceStubSettings) getStubSettings()).labelAudioOperationSettings();
-  }
-
   /** Returns the object with the settings used for calls to getExample. */
   public UnaryCallSettings<GetExampleRequest, Example> getExampleSettings() {
     return ((DataLabelingServiceStubSettings) getStubSettings()).getExampleSettings();
@@ -264,6 +254,66 @@ public class DataLabelingServiceSettings extends ClientSettings<DataLabelingServ
   /** Returns the object with the settings used for calls to deleteInstruction. */
   public UnaryCallSettings<DeleteInstructionRequest, Empty> deleteInstructionSettings() {
     return ((DataLabelingServiceStubSettings) getStubSettings()).deleteInstructionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getEvaluation. */
+  public UnaryCallSettings<GetEvaluationRequest, Evaluation> getEvaluationSettings() {
+    return ((DataLabelingServiceStubSettings) getStubSettings()).getEvaluationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to searchEvaluations. */
+  public PagedCallSettings<
+          SearchEvaluationsRequest, SearchEvaluationsResponse, SearchEvaluationsPagedResponse>
+      searchEvaluationsSettings() {
+    return ((DataLabelingServiceStubSettings) getStubSettings()).searchEvaluationsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to searchExampleComparisons. */
+  public PagedCallSettings<
+          SearchExampleComparisonsRequest,
+          SearchExampleComparisonsResponse,
+          SearchExampleComparisonsPagedResponse>
+      searchExampleComparisonsSettings() {
+    return ((DataLabelingServiceStubSettings) getStubSettings()).searchExampleComparisonsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createEvaluationJob. */
+  public UnaryCallSettings<CreateEvaluationJobRequest, EvaluationJob>
+      createEvaluationJobSettings() {
+    return ((DataLabelingServiceStubSettings) getStubSettings()).createEvaluationJobSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateEvaluationJob. */
+  public UnaryCallSettings<UpdateEvaluationJobRequest, EvaluationJob>
+      updateEvaluationJobSettings() {
+    return ((DataLabelingServiceStubSettings) getStubSettings()).updateEvaluationJobSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getEvaluationJob. */
+  public UnaryCallSettings<GetEvaluationJobRequest, EvaluationJob> getEvaluationJobSettings() {
+    return ((DataLabelingServiceStubSettings) getStubSettings()).getEvaluationJobSettings();
+  }
+
+  /** Returns the object with the settings used for calls to pauseEvaluationJob. */
+  public UnaryCallSettings<PauseEvaluationJobRequest, Empty> pauseEvaluationJobSettings() {
+    return ((DataLabelingServiceStubSettings) getStubSettings()).pauseEvaluationJobSettings();
+  }
+
+  /** Returns the object with the settings used for calls to resumeEvaluationJob. */
+  public UnaryCallSettings<ResumeEvaluationJobRequest, Empty> resumeEvaluationJobSettings() {
+    return ((DataLabelingServiceStubSettings) getStubSettings()).resumeEvaluationJobSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteEvaluationJob. */
+  public UnaryCallSettings<DeleteEvaluationJobRequest, Empty> deleteEvaluationJobSettings() {
+    return ((DataLabelingServiceStubSettings) getStubSettings()).deleteEvaluationJobSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listEvaluationJobs. */
+  public PagedCallSettings<
+          ListEvaluationJobsRequest, ListEvaluationJobsResponse, ListEvaluationJobsPagedResponse>
+      listEvaluationJobsSettings() {
+    return ((DataLabelingServiceStubSettings) getStubSettings()).listEvaluationJobsSettings();
   }
 
   /** Returns the object with the settings used for calls to deleteAnnotatedDataset. */
@@ -486,20 +536,6 @@ public class DataLabelingServiceSettings extends ClientSettings<DataLabelingServ
       return getStubSettingsBuilder().labelTextOperationSettings();
     }
 
-    /** Returns the builder for the settings used for calls to labelAudio. */
-    public UnaryCallSettings.Builder<LabelAudioRequest, Operation> labelAudioSettings() {
-      return getStubSettingsBuilder().labelAudioSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to labelAudio. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
-    public OperationCallSettings.Builder<
-            LabelAudioRequest, AnnotatedDataset, LabelOperationMetadata>
-        labelAudioOperationSettings() {
-      return getStubSettingsBuilder().labelAudioOperationSettings();
-    }
-
     /** Returns the builder for the settings used for calls to getExample. */
     public UnaryCallSettings.Builder<GetExampleRequest, Example> getExampleSettings() {
       return getStubSettingsBuilder().getExampleSettings();
@@ -569,6 +605,70 @@ public class DataLabelingServiceSettings extends ClientSettings<DataLabelingServ
     /** Returns the builder for the settings used for calls to deleteInstruction. */
     public UnaryCallSettings.Builder<DeleteInstructionRequest, Empty> deleteInstructionSettings() {
       return getStubSettingsBuilder().deleteInstructionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getEvaluation. */
+    public UnaryCallSettings.Builder<GetEvaluationRequest, Evaluation> getEvaluationSettings() {
+      return getStubSettingsBuilder().getEvaluationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to searchEvaluations. */
+    public PagedCallSettings.Builder<
+            SearchEvaluationsRequest, SearchEvaluationsResponse, SearchEvaluationsPagedResponse>
+        searchEvaluationsSettings() {
+      return getStubSettingsBuilder().searchEvaluationsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to searchExampleComparisons. */
+    public PagedCallSettings.Builder<
+            SearchExampleComparisonsRequest,
+            SearchExampleComparisonsResponse,
+            SearchExampleComparisonsPagedResponse>
+        searchExampleComparisonsSettings() {
+      return getStubSettingsBuilder().searchExampleComparisonsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createEvaluationJob. */
+    public UnaryCallSettings.Builder<CreateEvaluationJobRequest, EvaluationJob>
+        createEvaluationJobSettings() {
+      return getStubSettingsBuilder().createEvaluationJobSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateEvaluationJob. */
+    public UnaryCallSettings.Builder<UpdateEvaluationJobRequest, EvaluationJob>
+        updateEvaluationJobSettings() {
+      return getStubSettingsBuilder().updateEvaluationJobSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getEvaluationJob. */
+    public UnaryCallSettings.Builder<GetEvaluationJobRequest, EvaluationJob>
+        getEvaluationJobSettings() {
+      return getStubSettingsBuilder().getEvaluationJobSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to pauseEvaluationJob. */
+    public UnaryCallSettings.Builder<PauseEvaluationJobRequest, Empty>
+        pauseEvaluationJobSettings() {
+      return getStubSettingsBuilder().pauseEvaluationJobSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to resumeEvaluationJob. */
+    public UnaryCallSettings.Builder<ResumeEvaluationJobRequest, Empty>
+        resumeEvaluationJobSettings() {
+      return getStubSettingsBuilder().resumeEvaluationJobSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteEvaluationJob. */
+    public UnaryCallSettings.Builder<DeleteEvaluationJobRequest, Empty>
+        deleteEvaluationJobSettings() {
+      return getStubSettingsBuilder().deleteEvaluationJobSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listEvaluationJobs. */
+    public PagedCallSettings.Builder<
+            ListEvaluationJobsRequest, ListEvaluationJobsResponse, ListEvaluationJobsPagedResponse>
+        listEvaluationJobsSettings() {
+      return getStubSettingsBuilder().listEvaluationJobsSettings();
     }
 
     /** Returns the builder for the settings used for calls to deleteAnnotatedDataset. */

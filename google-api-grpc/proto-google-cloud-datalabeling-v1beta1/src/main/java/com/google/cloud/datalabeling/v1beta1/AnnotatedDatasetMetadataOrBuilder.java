@@ -12,44 +12,6 @@ public interface AnnotatedDatasetMetadataOrBuilder
    *
    *
    * <pre>
-   * HumanAnnotationConfig used when requesting the human labeling task for this
-   * AnnotatedDataset.
-   * </pre>
-   *
-   * <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig human_annotation_config = 1;
-   * </code>
-   */
-  boolean hasHumanAnnotationConfig();
-  /**
-   *
-   *
-   * <pre>
-   * HumanAnnotationConfig used when requesting the human labeling task for this
-   * AnnotatedDataset.
-   * </pre>
-   *
-   * <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig human_annotation_config = 1;
-   * </code>
-   */
-  com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig getHumanAnnotationConfig();
-  /**
-   *
-   *
-   * <pre>
-   * HumanAnnotationConfig used when requesting the human labeling task for this
-   * AnnotatedDataset.
-   * </pre>
-   *
-   * <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig human_annotation_config = 1;
-   * </code>
-   */
-  com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfigOrBuilder
-      getHumanAnnotationConfigOrBuilder();
-
-  /**
-   *
-   *
-   * <pre>
    * Configuration for image classification task.
    * </pre>
    *
@@ -393,6 +355,44 @@ public interface AnnotatedDatasetMetadataOrBuilder
    */
   com.google.cloud.datalabeling.v1beta1.TextEntityExtractionConfigOrBuilder
       getTextEntityExtractionConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * HumanAnnotationConfig used when requesting the human labeling task for this
+   * AnnotatedDataset.
+   * </pre>
+   *
+   * <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig human_annotation_config = 1;
+   * </code>
+   */
+  boolean hasHumanAnnotationConfig();
+  /**
+   *
+   *
+   * <pre>
+   * HumanAnnotationConfig used when requesting the human labeling task for this
+   * AnnotatedDataset.
+   * </pre>
+   *
+   * <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig human_annotation_config = 1;
+   * </code>
+   */
+  com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig getHumanAnnotationConfig();
+  /**
+   *
+   *
+   * <pre>
+   * HumanAnnotationConfig used when requesting the human labeling task for this
+   * AnnotatedDataset.
+   * </pre>
+   *
+   * <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig human_annotation_config = 1;
+   * </code>
+   */
+  com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfigOrBuilder
+      getHumanAnnotationConfigOrBuilder();
 
   public com.google.cloud.datalabeling.v1beta1.AnnotatedDatasetMetadata.AnnotationRequestConfigCase
       getAnnotationRequestConfigCase();

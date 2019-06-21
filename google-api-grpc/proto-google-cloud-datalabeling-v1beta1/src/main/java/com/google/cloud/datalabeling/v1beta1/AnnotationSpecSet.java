@@ -29,6 +29,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
     displayName_ = "";
     description_ = "";
     annotationSpecs_ = java.util.Collections.emptyList();
+    blockingResources_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
@@ -89,6 +90,16 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
                       extensionRegistry));
               break;
             }
+          case 42:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+                blockingResources_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000010;
+              }
+              blockingResources_.add(s);
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -105,6 +116,9 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
     } finally {
       if (((mutable_bitField0_ & 0x00000008) != 0)) {
         annotationSpecs_ = java.util.Collections.unmodifiableList(annotationSpecs_);
+      }
+      if (((mutable_bitField0_ & 0x00000010) != 0)) {
+        blockingResources_ = blockingResources_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -133,8 +147,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Output only.
-   * AnnotationSpecSet resource name, format:
+   * Output only. AnnotationSpecSet resource name, format:
    * projects/{project_id}/annotationSpecSets/{annotation_spec_set_id}
    * </pre>
    *
@@ -155,8 +168,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Output only.
-   * AnnotationSpecSet resource name, format:
+   * Output only. AnnotationSpecSet resource name, format:
    * projects/{project_id}/annotationSpecSets/{annotation_spec_set_id}
    * </pre>
    *
@@ -330,6 +342,61 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
     return annotationSpecs_.get(index);
   }
 
+  public static final int BLOCKING_RESOURCES_FIELD_NUMBER = 5;
+  private com.google.protobuf.LazyStringList blockingResources_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The names of any related resources that are blocking changes
+   * to the annotation spec set.
+   * </pre>
+   *
+   * <code>repeated string blocking_resources = 5;</code>
+   */
+  public com.google.protobuf.ProtocolStringList getBlockingResourcesList() {
+    return blockingResources_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The names of any related resources that are blocking changes
+   * to the annotation spec set.
+   * </pre>
+   *
+   * <code>repeated string blocking_resources = 5;</code>
+   */
+  public int getBlockingResourcesCount() {
+    return blockingResources_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The names of any related resources that are blocking changes
+   * to the annotation spec set.
+   * </pre>
+   *
+   * <code>repeated string blocking_resources = 5;</code>
+   */
+  public java.lang.String getBlockingResources(int index) {
+    return blockingResources_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The names of any related resources that are blocking changes
+   * to the annotation spec set.
+   * </pre>
+   *
+   * <code>repeated string blocking_resources = 5;</code>
+   */
+  public com.google.protobuf.ByteString getBlockingResourcesBytes(int index) {
+    return blockingResources_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -356,6 +423,9 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
     for (int i = 0; i < annotationSpecs_.size(); i++) {
       output.writeMessage(4, annotationSpecs_.get(i));
     }
+    for (int i = 0; i < blockingResources_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, blockingResources_.getRaw(i));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -377,6 +447,14 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
     for (int i = 0; i < annotationSpecs_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, annotationSpecs_.get(i));
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < blockingResources_.size(); i++) {
+        dataSize += computeStringSizeNoTag(blockingResources_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getBlockingResourcesList().size();
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -397,6 +475,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
     if (!getDisplayName().equals(other.getDisplayName())) return false;
     if (!getDescription().equals(other.getDescription())) return false;
     if (!getAnnotationSpecsList().equals(other.getAnnotationSpecsList())) return false;
+    if (!getBlockingResourcesList().equals(other.getBlockingResourcesList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -417,6 +496,10 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
     if (getAnnotationSpecsCount() > 0) {
       hash = (37 * hash) + ANNOTATION_SPECS_FIELD_NUMBER;
       hash = (53 * hash) + getAnnotationSpecsList().hashCode();
+    }
+    if (getBlockingResourcesCount() > 0) {
+      hash = (37 * hash) + BLOCKING_RESOURCES_FIELD_NUMBER;
+      hash = (53 * hash) + getBlockingResourcesList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -580,6 +663,8 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
       } else {
         annotationSpecsBuilder_.clear();
       }
+      blockingResources_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000010);
       return this;
     }
 
@@ -621,6 +706,11 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
       } else {
         result.annotationSpecs_ = annotationSpecsBuilder_.build();
       }
+      if (((bitField0_ & 0x00000010) != 0)) {
+        blockingResources_ = blockingResources_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000010);
+      }
+      result.blockingResources_ = blockingResources_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -711,6 +801,16 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
           }
         }
       }
+      if (!other.blockingResources_.isEmpty()) {
+        if (blockingResources_.isEmpty()) {
+          blockingResources_ = other.blockingResources_;
+          bitField0_ = (bitField0_ & ~0x00000010);
+        } else {
+          ensureBlockingResourcesIsMutable();
+          blockingResources_.addAll(other.blockingResources_);
+        }
+        onChanged();
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -748,8 +848,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only.
-     * AnnotationSpecSet resource name, format:
+     * Output only. AnnotationSpecSet resource name, format:
      * projects/{project_id}/annotationSpecSets/{annotation_spec_set_id}
      * </pre>
      *
@@ -770,8 +869,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only.
-     * AnnotationSpecSet resource name, format:
+     * Output only. AnnotationSpecSet resource name, format:
      * projects/{project_id}/annotationSpecSets/{annotation_spec_set_id}
      * </pre>
      *
@@ -792,8 +890,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only.
-     * AnnotationSpecSet resource name, format:
+     * Output only. AnnotationSpecSet resource name, format:
      * projects/{project_id}/annotationSpecSets/{annotation_spec_set_id}
      * </pre>
      *
@@ -812,8 +909,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only.
-     * AnnotationSpecSet resource name, format:
+     * Output only. AnnotationSpecSet resource name, format:
      * projects/{project_id}/annotationSpecSets/{annotation_spec_set_id}
      * </pre>
      *
@@ -829,8 +925,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only.
-     * AnnotationSpecSet resource name, format:
+     * Output only. AnnotationSpecSet resource name, format:
      * projects/{project_id}/annotationSpecSets/{annotation_spec_set_id}
      * </pre>
      *
@@ -1406,6 +1501,158 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
         annotationSpecs_ = null;
       }
       return annotationSpecsBuilder_;
+    }
+
+    private com.google.protobuf.LazyStringList blockingResources_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
+    private void ensureBlockingResourcesIsMutable() {
+      if (!((bitField0_ & 0x00000010) != 0)) {
+        blockingResources_ = new com.google.protobuf.LazyStringArrayList(blockingResources_);
+        bitField0_ |= 0x00000010;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The names of any related resources that are blocking changes
+     * to the annotation spec set.
+     * </pre>
+     *
+     * <code>repeated string blocking_resources = 5;</code>
+     */
+    public com.google.protobuf.ProtocolStringList getBlockingResourcesList() {
+      return blockingResources_.getUnmodifiableView();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The names of any related resources that are blocking changes
+     * to the annotation spec set.
+     * </pre>
+     *
+     * <code>repeated string blocking_resources = 5;</code>
+     */
+    public int getBlockingResourcesCount() {
+      return blockingResources_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The names of any related resources that are blocking changes
+     * to the annotation spec set.
+     * </pre>
+     *
+     * <code>repeated string blocking_resources = 5;</code>
+     */
+    public java.lang.String getBlockingResources(int index) {
+      return blockingResources_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The names of any related resources that are blocking changes
+     * to the annotation spec set.
+     * </pre>
+     *
+     * <code>repeated string blocking_resources = 5;</code>
+     */
+    public com.google.protobuf.ByteString getBlockingResourcesBytes(int index) {
+      return blockingResources_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The names of any related resources that are blocking changes
+     * to the annotation spec set.
+     * </pre>
+     *
+     * <code>repeated string blocking_resources = 5;</code>
+     */
+    public Builder setBlockingResources(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureBlockingResourcesIsMutable();
+      blockingResources_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The names of any related resources that are blocking changes
+     * to the annotation spec set.
+     * </pre>
+     *
+     * <code>repeated string blocking_resources = 5;</code>
+     */
+    public Builder addBlockingResources(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureBlockingResourcesIsMutable();
+      blockingResources_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The names of any related resources that are blocking changes
+     * to the annotation spec set.
+     * </pre>
+     *
+     * <code>repeated string blocking_resources = 5;</code>
+     */
+    public Builder addAllBlockingResources(java.lang.Iterable<java.lang.String> values) {
+      ensureBlockingResourcesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, blockingResources_);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The names of any related resources that are blocking changes
+     * to the annotation spec set.
+     * </pre>
+     *
+     * <code>repeated string blocking_resources = 5;</code>
+     */
+    public Builder clearBlockingResources() {
+      blockingResources_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The names of any related resources that are blocking changes
+     * to the annotation spec set.
+     * </pre>
+     *
+     * <code>repeated string blocking_resources = 5;</code>
+     */
+    public Builder addBlockingResourcesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureBlockingResourcesIsMutable();
+      blockingResources_.add(value);
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

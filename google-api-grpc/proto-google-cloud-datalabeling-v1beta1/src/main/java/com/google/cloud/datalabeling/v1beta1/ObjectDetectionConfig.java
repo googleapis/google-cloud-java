@@ -28,7 +28,6 @@ public final class ObjectDetectionConfig extends com.google.protobuf.GeneratedMe
 
   private ObjectDetectionConfig() {
     annotationSpecSet_ = "";
-    instructionMessage_ = "";
   }
 
   @java.lang.Override
@@ -60,13 +59,6 @@ public final class ObjectDetectionConfig extends com.google.protobuf.GeneratedMe
               java.lang.String s = input.readStringRequireUtf8();
 
               annotationSpecSet_ = s;
-              break;
-            }
-          case 18:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              instructionMessage_ = s;
               break;
             }
           case 25:
@@ -151,49 +143,6 @@ public final class ObjectDetectionConfig extends com.google.protobuf.GeneratedMe
     }
   }
 
-  public static final int INSTRUCTION_MESSAGE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object instructionMessage_;
-  /**
-   *
-   *
-   * <pre>
-   * Optional. Instruction message showed on labelers UI.
-   * </pre>
-   *
-   * <code>string instruction_message = 2;</code>
-   */
-  public java.lang.String getInstructionMessage() {
-    java.lang.Object ref = instructionMessage_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      instructionMessage_ = s;
-      return s;
-    }
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Optional. Instruction message showed on labelers UI.
-   * </pre>
-   *
-   * <code>string instruction_message = 2;</code>
-   */
-  public com.google.protobuf.ByteString getInstructionMessageBytes() {
-    java.lang.Object ref = instructionMessage_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      instructionMessage_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
   public static final int EXTRACTION_FRAME_RATE_FIELD_NUMBER = 3;
   private double extractionFrameRate_;
   /**
@@ -226,9 +175,6 @@ public final class ObjectDetectionConfig extends com.google.protobuf.GeneratedMe
     if (!getAnnotationSpecSetBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, annotationSpecSet_);
     }
-    if (!getInstructionMessageBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, instructionMessage_);
-    }
     if (extractionFrameRate_ != 0D) {
       output.writeDouble(3, extractionFrameRate_);
     }
@@ -243,9 +189,6 @@ public final class ObjectDetectionConfig extends com.google.protobuf.GeneratedMe
     size = 0;
     if (!getAnnotationSpecSetBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, annotationSpecSet_);
-    }
-    if (!getInstructionMessageBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, instructionMessage_);
     }
     if (extractionFrameRate_ != 0D) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(3, extractionFrameRate_);
@@ -267,7 +210,6 @@ public final class ObjectDetectionConfig extends com.google.protobuf.GeneratedMe
         (com.google.cloud.datalabeling.v1beta1.ObjectDetectionConfig) obj;
 
     if (!getAnnotationSpecSet().equals(other.getAnnotationSpecSet())) return false;
-    if (!getInstructionMessage().equals(other.getInstructionMessage())) return false;
     if (java.lang.Double.doubleToLongBits(getExtractionFrameRate())
         != java.lang.Double.doubleToLongBits(other.getExtractionFrameRate())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -283,8 +225,6 @@ public final class ObjectDetectionConfig extends com.google.protobuf.GeneratedMe
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + ANNOTATION_SPEC_SET_FIELD_NUMBER;
     hash = (53 * hash) + getAnnotationSpecSet().hashCode();
-    hash = (37 * hash) + INSTRUCTION_MESSAGE_FIELD_NUMBER;
-    hash = (53 * hash) + getInstructionMessage().hashCode();
     hash = (37 * hash) + EXTRACTION_FRAME_RATE_FIELD_NUMBER;
     hash =
         (53 * hash)
@@ -442,8 +382,6 @@ public final class ObjectDetectionConfig extends com.google.protobuf.GeneratedMe
       super.clear();
       annotationSpecSet_ = "";
 
-      instructionMessage_ = "";
-
       extractionFrameRate_ = 0D;
 
       return this;
@@ -474,7 +412,6 @@ public final class ObjectDetectionConfig extends com.google.protobuf.GeneratedMe
       com.google.cloud.datalabeling.v1beta1.ObjectDetectionConfig result =
           new com.google.cloud.datalabeling.v1beta1.ObjectDetectionConfig(this);
       result.annotationSpecSet_ = annotationSpecSet_;
-      result.instructionMessage_ = instructionMessage_;
       result.extractionFrameRate_ = extractionFrameRate_;
       onBuilt();
       return result;
@@ -528,10 +465,6 @@ public final class ObjectDetectionConfig extends com.google.protobuf.GeneratedMe
         return this;
       if (!other.getAnnotationSpecSet().isEmpty()) {
         annotationSpecSet_ = other.annotationSpecSet_;
-        onChanged();
-      }
-      if (!other.getInstructionMessage().isEmpty()) {
-        instructionMessage_ = other.instructionMessage_;
         onChanged();
       }
       if (other.getExtractionFrameRate() != 0D) {
@@ -657,100 +590,6 @@ public final class ObjectDetectionConfig extends com.google.protobuf.GeneratedMe
       checkByteStringIsUtf8(value);
 
       annotationSpecSet_ = value;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object instructionMessage_ = "";
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Instruction message showed on labelers UI.
-     * </pre>
-     *
-     * <code>string instruction_message = 2;</code>
-     */
-    public java.lang.String getInstructionMessage() {
-      java.lang.Object ref = instructionMessage_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        instructionMessage_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Instruction message showed on labelers UI.
-     * </pre>
-     *
-     * <code>string instruction_message = 2;</code>
-     */
-    public com.google.protobuf.ByteString getInstructionMessageBytes() {
-      java.lang.Object ref = instructionMessage_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        instructionMessage_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Instruction message showed on labelers UI.
-     * </pre>
-     *
-     * <code>string instruction_message = 2;</code>
-     */
-    public Builder setInstructionMessage(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-
-      instructionMessage_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Instruction message showed on labelers UI.
-     * </pre>
-     *
-     * <code>string instruction_message = 2;</code>
-     */
-    public Builder clearInstructionMessage() {
-
-      instructionMessage_ = getDefaultInstance().getInstructionMessage();
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Instruction message showed on labelers UI.
-     * </pre>
-     *
-     * <code>string instruction_message = 2;</code>
-     */
-    public Builder setInstructionMessageBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-
-      instructionMessage_ = value;
       onChanged();
       return this;
     }

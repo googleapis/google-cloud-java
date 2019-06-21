@@ -43,12 +43,44 @@ public interface OperatorMetadataOrBuilder
    */
   int getLabelVotes();
 
-  /** <code>repeated string comments = 4;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Comments from contributors.
+   * </pre>
+   *
+   * <code>repeated string comments = 4;</code>
+   */
   java.util.List<java.lang.String> getCommentsList();
-  /** <code>repeated string comments = 4;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Comments from contributors.
+   * </pre>
+   *
+   * <code>repeated string comments = 4;</code>
+   */
   int getCommentsCount();
-  /** <code>repeated string comments = 4;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Comments from contributors.
+   * </pre>
+   *
+   * <code>repeated string comments = 4;</code>
+   */
   java.lang.String getComments(int index);
-  /** <code>repeated string comments = 4;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Comments from contributors.
+   * </pre>
+   *
+   * <code>repeated string comments = 4;</code>
+   */
   com.google.protobuf.ByteString getCommentsBytes(int index);
 }

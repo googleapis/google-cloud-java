@@ -35,10 +35,10 @@ public final class InstructionOuterClass {
     java.lang.String[] descriptorData = {
       "\n3google/cloud/datalabeling/v1beta1/inst"
           + "ruction.proto\022!google.cloud.datalabeling"
-          + ".v1beta1\032/google/cloud/datalabeling/v1be"
-          + "ta1/dataset.proto\032\037google/protobuf/times"
-          + "tamp.proto\032\034google/api/annotations.proto"
-          + "\"\200\003\n\013Instruction\022\014\n\004name\030\001 \001(\t\022\024\n\014displa"
+          + ".v1beta1\032\034google/api/annotations.proto\032/"
+          + "google/cloud/datalabeling/v1beta1/datase"
+          + "t.proto\032\037google/protobuf/timestamp.proto"
+          + "\"\234\003\n\013Instruction\022\014\n\004name\030\001 \001(\t\022\024\n\014displa"
           + "y_name\030\002 \001(\t\022\023\n\013description\030\003 \001(\t\022/\n\013cre"
           + "ate_time\030\004 \001(\0132\032.google.protobuf.Timesta"
           + "mp\022/\n\013update_time\030\005 \001(\0132\032.google.protobu"
@@ -47,12 +47,13 @@ public final class InstructionOuterClass {
           + "sv_instruction\030\007 \001(\01321.google.cloud.data"
           + "labeling.v1beta1.CsvInstruction\022J\n\017pdf_i"
           + "nstruction\030\t \001(\01321.google.cloud.datalabe"
-          + "ling.v1beta1.PdfInstruction\"&\n\016CsvInstru"
-          + "ction\022\024\n\014gcs_file_uri\030\001 \001(\t\"&\n\016PdfInstru"
-          + "ction\022\024\n\014gcs_file_uri\030\001 \001(\tBx\n%com.googl"
-          + "e.cloud.datalabeling.v1beta1P\001ZMgoogle.g"
-          + "olang.org/genproto/googleapis/cloud/data"
-          + "labeling/v1beta1;datalabelingb\006proto3"
+          + "ling.v1beta1.PdfInstruction\022\032\n\022blocking_"
+          + "resources\030\n \003(\t\"&\n\016CsvInstruction\022\024\n\014gcs"
+          + "_file_uri\030\001 \001(\t\"&\n\016PdfInstruction\022\024\n\014gcs"
+          + "_file_uri\030\001 \001(\tBx\n%com.google.cloud.data"
+          + "labeling.v1beta1P\001ZMgoogle.golang.org/ge"
+          + "nproto/googleapis/cloud/datalabeling/v1b"
+          + "eta1;datalabelingb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -65,9 +66,9 @@ public final class InstructionOuterClass {
     com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
         descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          com.google.api.AnnotationsProto.getDescriptor(),
           com.google.cloud.datalabeling.v1beta1.DatasetOuterClass.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
-          com.google.api.AnnotationsProto.getDescriptor(),
         },
         assigner);
     internal_static_google_cloud_datalabeling_v1beta1_Instruction_descriptor =
@@ -84,6 +85,7 @@ public final class InstructionOuterClass {
               "DataType",
               "CsvInstruction",
               "PdfInstruction",
+              "BlockingResources",
             });
     internal_static_google_cloud_datalabeling_v1beta1_CsvInstruction_descriptor =
         getDescriptor().getMessageTypes().get(1);
@@ -101,9 +103,9 @@ public final class InstructionOuterClass {
             new java.lang.String[] {
               "GcsFileUri",
             });
+    com.google.api.AnnotationsProto.getDescriptor();
     com.google.cloud.datalabeling.v1beta1.DatasetOuterClass.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)
