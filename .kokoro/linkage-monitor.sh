@@ -21,6 +21,10 @@ cd github/google-cloud-java/
 java -version
 echo $JOB_TYPE
 
+# Linkage Monitor uses SNAPSHOT version but google-cloud-java's HEAD does not
+# have SNAPSHOT
+mvn versions:set -DnextSnapshot=true
+
 mvn install -DskipTests=true -Dmaven.javadoc.skip=true -Dgcloud.download.skip=true -B -V
 
 # Kokoro job cloud-opensource-java/ubuntu/linkage-monitor-gcs creates this JAR
