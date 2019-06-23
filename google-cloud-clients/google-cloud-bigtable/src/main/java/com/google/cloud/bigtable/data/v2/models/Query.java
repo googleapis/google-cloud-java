@@ -43,7 +43,7 @@ public final class Query implements Serializable {
   private static final long serialVersionUID = -316972783499434755L;
 
   private final String tableId;
-  private transient ReadRowsRequest.Builder builder = ReadRowsRequest.newBuilder();
+  private transient ReadRowsRequest.Builder builder;
 
   /**
    * Constructs a new Query object for the specified table id. The table id will be combined with
@@ -51,11 +51,17 @@ public final class Query implements Serializable {
    * com.google.cloud.bigtable.data.v2.BigtableDataSettings}.
    */
   public static Query create(String tableId) {
-    return new Query(tableId);
+    return new Query(tableId, ReadRowsRequest.newBuilder());
   }
 
-  private Query(String tableId) {
+  /** Constructs a new Query object copying the state of the specified Query. */
+  public static Query create(Query query) {
+    return new Query(query.tableId, query.builder);
+  }
+
+  private Query(String tableId, ReadRowsRequest.Builder builder) {
     this.tableId = tableId;
+    this.builder = ReadRowsRequest.newBuilder(builder.buildPartial());
   }
 
   private void readObject(ObjectInputStream input) throws IOException, ClassNotFoundException {
@@ -229,7 +235,7 @@ public final class Query implements Serializable {
     List<Query> shards = Lists.newArrayListWithCapacity(shardedRowSets.size());
 
     for (RowSet rowSet : shardedRowSets) {
-      Query queryShard = new Query(tableId);
+      Query queryShard = Query.create(tableId);
       queryShard.builder.mergeFrom(this.builder.build());
       queryShard.builder.setRows(rowSet);
       shards.add(queryShard);
@@ -268,7 +274,7 @@ public final class Query implements Serializable {
   public static Query fromProto(@Nonnull ReadRowsRequest request) {
     Preconditions.checkArgument(request != null, "ReadRowsRequest must not be null");
 
-    Query query = new Query(NameUtil.extractTableIdFromTableName(request.getTableName()));
+    Query query = Query.create(NameUtil.extractTableIdFromTableName(request.getTableName()));
     query.builder = request.toBuilder();
 
     return query;

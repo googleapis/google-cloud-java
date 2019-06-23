@@ -68,6 +68,13 @@ public class QueryTest {
   }
 
   @Test
+  public void copyTest() {
+    Query original = Query.create(TABLE_ID).limit(1).range("a", "z");
+    Query copy = Query.create(original);
+    assertThat(copy).isEqualTo(original);
+  }
+
+  @Test
   public void rowKeysTest() {
     Query query =
         Query.create(TABLE_ID)
