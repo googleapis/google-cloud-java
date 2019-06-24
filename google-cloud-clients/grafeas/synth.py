@@ -62,6 +62,26 @@ for version in versions:
       f"{license}\npackage io.grafeas.{version};"
   )
 
+  # strip out Google-specific parts
+  # Remove default scope
+  s.replace(
+      library / f'gapic-google-cloud-{service}-{version}/src/**/GrafeasStubSettings.java',
+      r'^(.*)ImmutableList\.<String>builder\(\).add\(".*"\)\.build\(\);',
+      '\g<1>ImmutableList.of();'
+  )
+  # Remove default service endpoint
+  s.replace(
+      library / f'gapic-google-cloud-{service}-{version}/src/**/GrafeasStubSettings.java',
+      '    return "containeranalysis.googleapis.com:443";',
+      '    return null;'
+  )
+  # Remove default service endpoint javadoc
+  s.replace(
+      library / f'gapic-google-cloud-{service}-{version}/src/**/GrafeasStubSettings.java',
+      '\s+\*.*default service address.*\n\s+\*.*',
+      ''
+  )
+
   s.copy(library / f'gapic-google-cloud-{service}-{version}/src', 'src')
   s.copy(library / f'grpc-google-cloud-{service}-{version}/src', 'src')
   s.copy(library / f'proto-google-cloud-{service}-{version}/src', 'src')

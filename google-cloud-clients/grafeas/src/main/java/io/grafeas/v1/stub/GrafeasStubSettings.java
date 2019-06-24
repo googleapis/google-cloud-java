@@ -79,8 +79,6 @@ import org.threeten.bp.Duration;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (containeranalysis.googleapis.com) and default port (443) are
- *       used.
  *   <li>Credentials are acquired automatically through Application Default Credentials.
  *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
@@ -103,8 +101,7 @@ import org.threeten.bp.Duration;
 @BetaApi
 public class GrafeasStubSettings extends StubSettings<GrafeasStubSettings> {
   /** The default scopes of the service. */
-  private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
-      ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
+  private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES = ImmutableList.of();
 
   private final UnaryCallSettings<GetOccurrenceRequest, Occurrence> getOccurrenceSettings;
   private final PagedCallSettings<
@@ -224,7 +221,7 @@ public class GrafeasStubSettings extends StubSettings<GrafeasStubSettings> {
 
   /** Returns the default service endpoint. */
   public static String getDefaultEndpoint() {
-    return "containeranalysis.googleapis.com:443";
+    return null;
   }
 
   /** Returns the default service scopes. */
