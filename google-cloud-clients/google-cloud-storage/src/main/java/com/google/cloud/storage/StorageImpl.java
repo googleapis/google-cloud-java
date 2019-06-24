@@ -302,28 +302,16 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
 
     private static final long serialVersionUID = 308012320541700881L;
     private final StorageOptions serviceOptions;
-    private final ServiceAccount serviceAccount;
-    private final String nextPageToken;
-    private final Long maxResults;
-    private final boolean showDeletedKeys;
+    private final Map<StorageRpc.Option, ?> options;
 
-    HmacKeyMetadataPageFetcher(
-        StorageOptions serviceOptions,
-        ServiceAccount serviceAccount,
-        String nextPageToken,
-        Long maxResults,
-        boolean showDeletedKeys) {
+    HmacKeyMetadataPageFetcher(StorageOptions serviceOptions, Map<StorageRpc.Option, ?> options) {
       this.serviceOptions = serviceOptions;
-      this.serviceAccount = serviceAccount;
-      this.nextPageToken = nextPageToken;
-      this.maxResults = maxResults;
-      this.showDeletedKeys = showDeletedKeys;
+      this.options = options;
     }
 
     @Override
     public Page<HmacKeyMetadata> getNextPage() {
-      return listHmacKeys(
-          serviceOptions, serviceAccount, nextPageToken, maxResults, showDeletedKeys);
+      return listHmacKeys(serviceOptions, options);
     }
   }
 
@@ -1212,16 +1200,8 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
   }
 
   @Override
-  public Page<HmacKeyMetadata> listHmacKeys(
-      final ServiceAccount serviceAccount,
-      final String pageToken,
-      final Long maxResults,
-      final boolean showDeletedKeys) {
-    return listHmacKeys(getOptions(), serviceAccount, pageToken, maxResults, showDeletedKeys);
-  }
-
-  public Page<HmacKeyMetadata> listHmacKeys(final ServiceAccount serviceAccount) {
-    return listHmacKeys(getOptions(), serviceAccount, null, null, false);
+  public Page<HmacKeyMetadata> listHmacKeys(ListHmacKeysOption... options) {
+    return listHmacKeys(getOptions(), optionMap(options));
   }
 
   @Override
@@ -1293,11 +1273,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
   }
 
   private static Page<HmacKeyMetadata> listHmacKeys(
-      final StorageOptions serviceOptions,
-      final ServiceAccount serviceAccount,
-      final String pageToken,
-      final Long maxResults,
-      final boolean showDeletedKeys) {
+      final StorageOptions serviceOptions, final Map<StorageRpc.Option, ?> options) {
     try {
       Tuple<String, Iterable<com.google.api.services.storage.model.HmacKeyMetadata>> result =
           runWithRetries(
@@ -1308,13 +1284,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
                 public Tuple<
                         String, Iterable<com.google.api.services.storage.model.HmacKeyMetadata>>
                     call() {
-                  return serviceOptions
-                      .getStorageRpcV1()
-                      .listHmacKeys(
-                          serviceAccount == null ? null : serviceAccount.getEmail(),
-                          pageToken,
-                          maxResults,
-                          showDeletedKeys);
+                  return serviceOptions.getStorageRpcV1().listHmacKeys(options);
                 }
               },
               serviceOptions.getRetrySettings(),
@@ -1335,10 +1305,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
                     }
                   });
       return new PageImpl<>(
-          new HmacKeyMetadataPageFetcher(
-              serviceOptions, serviceAccount, pageToken, maxResults, showDeletedKeys),
-          cursor,
-          metadata);
+          new HmacKeyMetadataPageFetcher(serviceOptions, options), cursor, metadata);
     } catch (RetryHelperException e) {
       throw StorageException.translateAndThrow(e);
     }

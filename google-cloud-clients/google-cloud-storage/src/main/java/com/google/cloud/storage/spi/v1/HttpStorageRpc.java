@@ -1254,8 +1254,7 @@ public class HttpStorageRpc implements StorageRpc {
   }
 
   @Override
-  public Tuple<String, Iterable<HmacKeyMetadata>> listHmacKeys(
-      String serviceAccountEmail, String pageToken, Long maxResults, boolean showDeletedKeys) {
+  public Tuple<String, Iterable<HmacKeyMetadata>> listHmacKeys(Map<Option, ?> options) {
     Span span = startSpan(HttpStorageRpcSpans.SPAN_NAME_LIST_HMAC_KEYS);
     Scope scope = tracer.withSpan(span);
     try {
@@ -1264,10 +1263,10 @@ public class HttpStorageRpc implements StorageRpc {
               .projects()
               .hmacKeys()
               .list(this.options.getProjectId())
-              .setServiceAccountEmail(serviceAccountEmail)
-              .setPageToken(pageToken)
-              .setMaxResults(maxResults)
-              .setShowDeletedKeys(showDeletedKeys)
+              .setServiceAccountEmail(Option.SERVICE_ACCOUNT_EMAIL.getString(options))
+              .setPageToken(Option.PAGE_TOKEN.getString(options))
+              .setMaxResults(Option.MAX_RESULTS.getLong(options))
+              .setShowDeletedKeys(Option.SHOW_DELETED_KEYS.getBoolean(options))
               .execute();
       return Tuple.<String, Iterable<HmacKeyMetadata>>of(
           hmacKeysMetadata.getNextPageToken(), hmacKeysMetadata.getItems());

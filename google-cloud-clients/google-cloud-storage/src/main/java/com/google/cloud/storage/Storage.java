@@ -254,6 +254,40 @@ public interface Storage extends Service<StorageOptions> {
     }
   }
 
+  /** Class for specifying listHmacKeys options */
+  class ListHmacKeysOption extends Option {
+    private ListHmacKeysOption(StorageRpc.Option rpcOption, Object value) {
+      super(rpcOption, value);
+    }
+
+    /**
+     * Returns an option for the Service Account whose keys to list. If this option is not used,
+     * keys for all accounts will be listed.
+     */
+    public static ListHmacKeysOption serviceAccount(ServiceAccount serviceAccount) {
+      return new ListHmacKeysOption(
+          StorageRpc.Option.SERVICE_ACCOUNT_EMAIL, serviceAccount.getEmail());
+    }
+
+    /** Returns an option for the maximum amount of HMAC keys returned per page. */
+    public static ListHmacKeysOption maxResults(long pageSize) {
+      return new ListHmacKeysOption(StorageRpc.Option.MAX_RESULTS, pageSize);
+    }
+
+    /** Returns an option to specify the page token from which to start listing HMAC keys. */
+    public static ListHmacKeysOption pageToken(String pageToken) {
+      return new ListHmacKeysOption(StorageRpc.Option.PAGE_TOKEN, pageToken);
+    }
+
+    /**
+     * Returns an option to specify whether to show deleted keys in the result. This option is false
+     * by default.
+     */
+    public static ListHmacKeysOption showDeletedKeys(boolean showDeletedKeys) {
+      return new ListHmacKeysOption(StorageRpc.Option.SHOW_DELETED_KEYS, showDeletedKeys);
+    }
+  }
+
   /** Class for specifying bucket get options. */
   class BucketGetOption extends Option {
 
@@ -2737,41 +2771,19 @@ public interface Storage extends Service<StorageOptions> {
    * <pre>{@code
    * ServiceAccount serviceAccount = ServiceAccount.of("my-service-account@google.com");
    *
-   * Page<HmacKey.HmacKeyMetadata> metadataPage = storage.listHmacKeys(serviceAccount, null, 10, true);
+   * Page<HmacKey.HmacKeyMetadata> metadataPage = storage.listHmacKeys(
+   *     Storage.ListHmacKeysOption.serviceAccount(serviceAccount),
+   *     Storage.ListHmacKeysOption.maxResults(10L),
+   *     Storage.ListHmacKeysOption.showDeletedKeys(true));
    * for (HmacKey.HmacKeyMetadata hmacKeyMetadata : metadataPage.getValues()) {
    *     //do something with the metadata
    * }
    * }</pre>
    *
-   * @param serviceAccount the service account whose HMAC keys to list
-   * @param pageToken the page from which to start results
-   * @param maxResults the maximum amount of results that can be returned by this request
-   * @param showDeletedKeys whether to show keys with the DELETED state in the result
+   * @param options the options to apply to this operation
    * @throws StorageException upon failure
    */
-  Page<HmacKeyMetadata> listHmacKeys(
-      ServiceAccount serviceAccount, String pageToken, Long maxResults, boolean showDeletedKeys);
-
-  /**
-   * Lists active HMAC keys for a given service account. Note this returns {@code HmacKeyMetadata}
-   * objects, which do not contain secret keys. This is the same as calling {@code
-   * listHmacKeys(serviceAccount, null, null, false)}. If {@code serviceAccount} is null, the keys
-   * for all service accounts will be listed.
-   *
-   * <p>Example of listing HMAC keys.
-   *
-   * <pre>{@code
-   * ServiceAccount serviceAccount = ServiceAccount.of("my-service-account@google.com");
-   *
-   * Page<HmacKey.HmacKeyMetadata> metadataPage = storage.listHmacKeys(serviceAccount);
-   * for (HmacKey.HmacKeyMetadata hmacKeyMetadata : metadataPage.getValues()) {
-   *     //do something with the metadata
-   * }
-   * }</pre>
-   *
-   * @throws StorageException upon failure
-   */
-  Page<HmacKeyMetadata> listHmacKeys(ServiceAccount serviceAccount);
+  Page<HmacKeyMetadata> listHmacKeys(ListHmacKeysOption... options);
 
   /**
    * Gets an HMAC key given its access id. Note that this returns a {@code HmacKeyMetadata} object,

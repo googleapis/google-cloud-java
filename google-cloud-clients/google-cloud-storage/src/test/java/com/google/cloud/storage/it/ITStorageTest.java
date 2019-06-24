@@ -2129,7 +2129,8 @@ public class ITStorageTest {
       assertNotNull(metadata.getCreateTime());
       assertNotNull(metadata.getUpdateTime());
 
-      Page<HmacKey.HmacKeyMetadata> metadatas = storage.listHmacKeys(serviceAccount);
+      Page<HmacKey.HmacKeyMetadata> metadatas =
+          storage.listHmacKeys(Storage.ListHmacKeysOption.serviceAccount(serviceAccount));
       boolean createdHmacKeyIsInList = false;
       for (HmacKey.HmacKeyMetadata hmacKeyMetadata : metadatas.iterateAll()) {
         if (accessId.equals(hmacKeyMetadata.getAccessId())) {
@@ -2149,7 +2150,7 @@ public class ITStorageTest {
 
       storage.deleteHmacKey(accessId);
 
-      metadatas = storage.listHmacKeys(serviceAccount);
+      metadatas = storage.listHmacKeys(Storage.ListHmacKeysOption.serviceAccount(serviceAccount));
       createdHmacKeyIsInList = false;
       for (HmacKey.HmacKeyMetadata hmacKeyMetadata : metadatas.iterateAll()) {
         if (accessId.equals(hmacKeyMetadata.getAccessId())) {
@@ -2167,17 +2168,25 @@ public class ITStorageTest {
       storage.createHmacKey(serviceAccount);
       storage.createHmacKey(serviceAccount);
 
-      metadatas = storage.listHmacKeys(serviceAccount, null, 2L, false);
+      metadatas =
+          storage.listHmacKeys(
+              Storage.ListHmacKeysOption.serviceAccount(serviceAccount),
+              Storage.ListHmacKeysOption.maxResults(2L));
 
       String nextPageToken = metadatas.getNextPageToken();
 
       assertEquals(2, Iterators.size(metadatas.getValues().iterator()));
 
-      metadatas = storage.listHmacKeys(serviceAccount, nextPageToken, 2L, false);
+      metadatas =
+          storage.listHmacKeys(
+              Storage.ListHmacKeysOption.serviceAccount(serviceAccount),
+              Storage.ListHmacKeysOption.maxResults(2L),
+              Storage.ListHmacKeysOption.pageToken(nextPageToken));
 
       assertEquals(2, Iterators.size(metadatas.getValues().iterator()));
     } finally {
-      Page<HmacKey.HmacKeyMetadata> metadatas = storage.listHmacKeys(serviceAccount);
+      Page<HmacKey.HmacKeyMetadata> metadatas =
+          storage.listHmacKeys(Storage.ListHmacKeysOption.serviceAccount(serviceAccount));
       for (HmacKey.HmacKeyMetadata hmacKeyMetadata : metadatas.iterateAll()) {
         storage.updateHmacKeyState(hmacKeyMetadata, HmacKey.HmacKeyState.INACTIVE);
         storage.deleteHmacKey(hmacKeyMetadata.getAccessId());

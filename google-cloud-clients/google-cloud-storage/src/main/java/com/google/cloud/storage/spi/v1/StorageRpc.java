@@ -60,7 +60,9 @@ public interface StorageRpc extends ServiceRpc {
     FIELDS("fields"),
     CUSTOMER_SUPPLIED_KEY("customerSuppliedKey"),
     USER_PROJECT("userProject"),
-    KMS_KEY_NAME("kmsKeyName");
+    KMS_KEY_NAME("kmsKeyName"),
+    SERVICE_ACCOUNT_EMAIL("serviceAccount"),
+    SHOW_DELETED_KEYS("showDeletedKeys");
 
     private final String value;
 
@@ -448,8 +450,7 @@ public interface StorageRpc extends ServiceRpc {
    *
    * @throws StorageException upon failure
    */
-  Tuple<String, Iterable<HmacKeyMetadata>> listHmacKeys(
-      String serviceAccountEmail, String pageToken, Long maxResults, boolean showDeletedKeys);
+  Tuple<String, Iterable<HmacKeyMetadata>> listHmacKeys(Map<Option, ?> options);
 
   /**
    * Updates an HMAC key for the provided metadata object and returns the updated object. Only
