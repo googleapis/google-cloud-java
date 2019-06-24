@@ -29,7 +29,7 @@ public class GrafeasInteropTest {
     ContainerAnalysisClient client =
         ContainerAnalysisClient.create(ContainerAnalysisSettings.newBuilder().build());
     GrafeasClient grafeasClient = client.getGrafeasClient();
-    System.out.println(grafeasClient);
+
     ContainerAnalysisSettings settings = client.getSettings();
     GrafeasSettings grafeasSettings = grafeasClient.getSettings();
 
