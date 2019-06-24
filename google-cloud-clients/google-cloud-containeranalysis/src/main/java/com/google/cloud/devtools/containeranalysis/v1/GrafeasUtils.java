@@ -25,9 +25,7 @@ import java.io.IOException;
  */
 class GrafeasUtils {
 
-  /**
-   * Converts ContainerAnalysisSettings to GrafeasSettings using the same configuration.
-   */
+  /** Converts ContainerAnalysisSettings to GrafeasSettings using the same configuration. */
   static GrafeasSettings transformSettings(ContainerAnalysisSettings settings) throws IOException {
     return GrafeasSettings.newBuilder()
         .setClock(settings.getClock())
