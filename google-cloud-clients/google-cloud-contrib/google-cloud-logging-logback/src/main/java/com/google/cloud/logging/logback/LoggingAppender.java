@@ -277,7 +277,12 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
         .addLabel(LEVEL_VALUE_KEY, String.valueOf(level.toInt()));
 
     for (Map.Entry<String, String> entry : e.getMDCPropertyMap().entrySet()) {
-      builder.addLabel(entry.getKey(), entry.getValue());
+      String key = entry.getKey();
+      String value = entry.getValue();
+
+      if (null != key && null != value) {
+        builder.addLabel(key, value);
+      }
     }
 
     if (loggingEnhancers != null) {
