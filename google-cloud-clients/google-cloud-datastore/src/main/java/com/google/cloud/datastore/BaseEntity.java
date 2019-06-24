@@ -631,7 +631,8 @@ public abstract class BaseEntity<K extends IncompleteKey> implements Serializabl
     return properties.keySet();
   }
 
-  ImmutableSortedMap<String, Value<?>> getProperties() {
+  /** Returns the properties. */
+  public Map<String, Value<?>> getProperties() {
     return properties;
   }
 

@@ -58,19 +58,6 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
               parent_ = s;
               break;
             }
-          case 18:
-            {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                labels_ =
-                    com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000002;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
-                  input.readMessage(
-                      LabelsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              labels_.getMutableMap().put(labels__.getKey(), labels__.getValue());
-              break;
-            }
           case 26:
             {
               com.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsRequest.TimeRange
@@ -134,17 +121,6 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.bigquery.datatransfer.v1.DataTransferProto
         .internal_static_google_cloud_bigquery_datatransfer_v1_StartManualTransferRunsRequest_descriptor;
-  }
-
-  @SuppressWarnings({"rawtypes"})
-  @java.lang.Override
-  protected com.google.protobuf.MapField internalGetMapField(int number) {
-    switch (number) {
-      case 2:
-        return internalGetLabels();
-      default:
-        throw new RuntimeException("Invalid map field number: " + number);
-    }
   }
 
   @java.lang.Override
@@ -1311,7 +1287,6 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
     }
   }
 
-  private int bitField0_;
   private int timeCase_ = 0;
   private java.lang.Object time_;
 
@@ -1395,99 +1370,6 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
-  }
-
-  public static final int LABELS_FIELD_NUMBER = 2;
-
-  private static final class LabelsDefaultEntryHolder {
-    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
-        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
-            com.google.cloud.bigquery.datatransfer.v1.DataTransferProto
-                .internal_static_google_cloud_bigquery_datatransfer_v1_StartManualTransferRunsRequest_LabelsEntry_descriptor,
-            com.google.protobuf.WireFormat.FieldType.STRING,
-            "",
-            com.google.protobuf.WireFormat.FieldType.STRING,
-            "");
-  }
-
-  private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
-
-  private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
-    if (labels_ == null) {
-      return com.google.protobuf.MapField.emptyMapField(LabelsDefaultEntryHolder.defaultEntry);
-    }
-    return labels_;
-  }
-
-  public int getLabelsCount() {
-    return internalGetLabels().getMap().size();
-  }
-  /**
-   *
-   *
-   * <pre>
-   * User labels to add to the backfilled runs.
-   * </pre>
-   *
-   * <code>map&lt;string, string&gt; labels = 2;</code>
-   */
-  public boolean containsLabels(java.lang.String key) {
-    if (key == null) {
-      throw new java.lang.NullPointerException();
-    }
-    return internalGetLabels().getMap().containsKey(key);
-  }
-  /** Use {@link #getLabelsMap()} instead. */
-  @java.lang.Deprecated
-  public java.util.Map<java.lang.String, java.lang.String> getLabels() {
-    return getLabelsMap();
-  }
-  /**
-   *
-   *
-   * <pre>
-   * User labels to add to the backfilled runs.
-   * </pre>
-   *
-   * <code>map&lt;string, string&gt; labels = 2;</code>
-   */
-  public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
-    return internalGetLabels().getMap();
-  }
-  /**
-   *
-   *
-   * <pre>
-   * User labels to add to the backfilled runs.
-   * </pre>
-   *
-   * <code>map&lt;string, string&gt; labels = 2;</code>
-   */
-  public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
-    if (key == null) {
-      throw new java.lang.NullPointerException();
-    }
-    java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
-    return map.containsKey(key) ? map.get(key) : defaultValue;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * User labels to add to the backfilled runs.
-   * </pre>
-   *
-   * <code>map&lt;string, string&gt; labels = 2;</code>
-   */
-  public java.lang.String getLabelsOrThrow(java.lang.String key) {
-    if (key == null) {
-      throw new java.lang.NullPointerException();
-    }
-    java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
-    if (!map.containsKey(key)) {
-      throw new java.lang.IllegalArgumentException();
-    }
-    return map.get(key);
   }
 
   public static final int REQUESTED_TIME_RANGE_FIELD_NUMBER = 3;
@@ -1610,8 +1492,6 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
     if (!getParentBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, parent_);
     }
-    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
-        output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 2);
     if (timeCase_ == 3) {
       output.writeMessage(
           3,
@@ -1632,16 +1512,6 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
     size = 0;
     if (!getParentBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, parent_);
-    }
-    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
-        internalGetLabels().getMap().entrySet()) {
-      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
-          LabelsDefaultEntryHolder.defaultEntry
-              .newBuilderForType()
-              .setKey(entry.getKey())
-              .setValue(entry.getValue())
-              .build();
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, labels__);
     }
     if (timeCase_ == 3) {
       size +=
@@ -1673,7 +1543,6 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
         (com.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsRequest) obj;
 
     if (!getParent().equals(other.getParent())) return false;
-    if (!internalGetLabels().equals(other.internalGetLabels())) return false;
     if (!getTimeCase().equals(other.getTimeCase())) return false;
     switch (timeCase_) {
       case 3:
@@ -1698,10 +1567,6 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + PARENT_FIELD_NUMBER;
     hash = (53 * hash) + getParent().hashCode();
-    if (!internalGetLabels().getMap().isEmpty()) {
-      hash = (37 * hash) + LABELS_FIELD_NUMBER;
-      hash = (53 * hash) + internalGetLabels().hashCode();
-    }
     switch (timeCase_) {
       case 3:
         hash = (37 * hash) + REQUESTED_TIME_RANGE_FIELD_NUMBER;
@@ -1834,26 +1699,6 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
           .internal_static_google_cloud_bigquery_datatransfer_v1_StartManualTransferRunsRequest_descriptor;
     }
 
-    @SuppressWarnings({"rawtypes"})
-    protected com.google.protobuf.MapField internalGetMapField(int number) {
-      switch (number) {
-        case 2:
-          return internalGetLabels();
-        default:
-          throw new RuntimeException("Invalid map field number: " + number);
-      }
-    }
-
-    @SuppressWarnings({"rawtypes"})
-    protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
-      switch (number) {
-        case 2:
-          return internalGetMutableLabels();
-        default:
-          throw new RuntimeException("Invalid map field number: " + number);
-      }
-    }
-
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -1885,7 +1730,6 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
       super.clear();
       parent_ = "";
 
-      internalGetMutableLabels().clear();
       timeCase_ = 0;
       time_ = null;
       return this;
@@ -1918,11 +1762,7 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
     public com.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsRequest buildPartial() {
       com.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsRequest result =
           new com.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsRequest(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.parent_ = parent_;
-      result.labels_ = internalGetLabels();
-      result.labels_.makeImmutable();
       if (timeCase_ == 3) {
         if (requestedTimeRangeBuilder_ == null) {
           result.time_ = time_;
@@ -1937,7 +1777,6 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
           result.time_ = requestedRunTimeBuilder_.build();
         }
       }
-      result.bitField0_ = to_bitField0_;
       result.timeCase_ = timeCase_;
       onBuilt();
       return result;
@@ -1997,7 +1836,6 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
         parent_ = other.parent_;
         onChanged();
       }
-      internalGetMutableLabels().mergeFrom(other.internalGetLabels());
       switch (other.getTimeCase()) {
         case REQUESTED_TIME_RANGE:
           {
@@ -2058,8 +1896,6 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
-    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -2157,158 +1993,6 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
 
       parent_ = value;
       onChanged();
-      return this;
-    }
-
-    private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
-
-    private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
-      if (labels_ == null) {
-        return com.google.protobuf.MapField.emptyMapField(LabelsDefaultEntryHolder.defaultEntry);
-      }
-      return labels_;
-    }
-
-    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-        internalGetMutableLabels() {
-      onChanged();
-      ;
-      if (labels_ == null) {
-        labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
-      }
-      if (!labels_.isMutable()) {
-        labels_ = labels_.copy();
-      }
-      return labels_;
-    }
-
-    public int getLabelsCount() {
-      return internalGetLabels().getMap().size();
-    }
-    /**
-     *
-     *
-     * <pre>
-     * User labels to add to the backfilled runs.
-     * </pre>
-     *
-     * <code>map&lt;string, string&gt; labels = 2;</code>
-     */
-    public boolean containsLabels(java.lang.String key) {
-      if (key == null) {
-        throw new java.lang.NullPointerException();
-      }
-      return internalGetLabels().getMap().containsKey(key);
-    }
-    /** Use {@link #getLabelsMap()} instead. */
-    @java.lang.Deprecated
-    public java.util.Map<java.lang.String, java.lang.String> getLabels() {
-      return getLabelsMap();
-    }
-    /**
-     *
-     *
-     * <pre>
-     * User labels to add to the backfilled runs.
-     * </pre>
-     *
-     * <code>map&lt;string, string&gt; labels = 2;</code>
-     */
-    public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
-      return internalGetLabels().getMap();
-    }
-    /**
-     *
-     *
-     * <pre>
-     * User labels to add to the backfilled runs.
-     * </pre>
-     *
-     * <code>map&lt;string, string&gt; labels = 2;</code>
-     */
-    public java.lang.String getLabelsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
-      if (key == null) {
-        throw new java.lang.NullPointerException();
-      }
-      java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
-      return map.containsKey(key) ? map.get(key) : defaultValue;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * User labels to add to the backfilled runs.
-     * </pre>
-     *
-     * <code>map&lt;string, string&gt; labels = 2;</code>
-     */
-    public java.lang.String getLabelsOrThrow(java.lang.String key) {
-      if (key == null) {
-        throw new java.lang.NullPointerException();
-      }
-      java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
-      if (!map.containsKey(key)) {
-        throw new java.lang.IllegalArgumentException();
-      }
-      return map.get(key);
-    }
-
-    public Builder clearLabels() {
-      internalGetMutableLabels().getMutableMap().clear();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * User labels to add to the backfilled runs.
-     * </pre>
-     *
-     * <code>map&lt;string, string&gt; labels = 2;</code>
-     */
-    public Builder removeLabels(java.lang.String key) {
-      if (key == null) {
-        throw new java.lang.NullPointerException();
-      }
-      internalGetMutableLabels().getMutableMap().remove(key);
-      return this;
-    }
-    /** Use alternate mutation accessors instead. */
-    @java.lang.Deprecated
-    public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
-      return internalGetMutableLabels().getMutableMap();
-    }
-    /**
-     *
-     *
-     * <pre>
-     * User labels to add to the backfilled runs.
-     * </pre>
-     *
-     * <code>map&lt;string, string&gt; labels = 2;</code>
-     */
-    public Builder putLabels(java.lang.String key, java.lang.String value) {
-      if (key == null) {
-        throw new java.lang.NullPointerException();
-      }
-      if (value == null) {
-        throw new java.lang.NullPointerException();
-      }
-      internalGetMutableLabels().getMutableMap().put(key, value);
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * User labels to add to the backfilled runs.
-     * </pre>
-     *
-     * <code>map&lt;string, string&gt; labels = 2;</code>
-     */
-    public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
-      internalGetMutableLabels().getMutableMap().putAll(values);
       return this;
     }
 

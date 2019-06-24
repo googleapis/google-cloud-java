@@ -12,8 +12,7 @@ public interface KeyRingOrBuilder
    *
    *
    * <pre>
-   * Output only. The resource name for the
-   * [KeyRing][google.cloud.kms.v1.KeyRing] in the format
+   * Output only. The resource name for the [KeyRing][google.cloud.kms.v1.KeyRing] in the format
    * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;`.
    * </pre>
    *
@@ -24,8 +23,7 @@ public interface KeyRingOrBuilder
    *
    *
    * <pre>
-   * Output only. The resource name for the
-   * [KeyRing][google.cloud.kms.v1.KeyRing] in the format
+   * Output only. The resource name for the [KeyRing][google.cloud.kms.v1.KeyRing] in the format
    * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;`.
    * </pre>
    *
@@ -37,8 +35,7 @@ public interface KeyRingOrBuilder
    *
    *
    * <pre>
-   * Output only. The time at which this [KeyRing][google.cloud.kms.v1.KeyRing]
-   * was created.
+   * Output only. The time at which this [KeyRing][google.cloud.kms.v1.KeyRing] was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 2;</code>
@@ -48,8 +45,7 @@ public interface KeyRingOrBuilder
    *
    *
    * <pre>
-   * Output only. The time at which this [KeyRing][google.cloud.kms.v1.KeyRing]
-   * was created.
+   * Output only. The time at which this [KeyRing][google.cloud.kms.v1.KeyRing] was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 2;</code>
@@ -59,8 +55,7 @@ public interface KeyRingOrBuilder
    *
    *
    * <pre>
-   * Output only. The time at which this [KeyRing][google.cloud.kms.v1.KeyRing]
-   * was created.
+   * Output only. The time at which this [KeyRing][google.cloud.kms.v1.KeyRing] was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 2;</code>

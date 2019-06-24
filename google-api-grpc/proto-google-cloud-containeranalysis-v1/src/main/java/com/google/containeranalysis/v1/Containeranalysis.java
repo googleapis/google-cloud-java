@@ -41,12 +41,13 @@ public final class Containeranalysis {
           + "amPermissionsResponse\"\200\001\202\323\344\223\002z\"4/v1/{res"
           + "ource=projects/*/notes/*}:testIamPermiss"
           + "ions:\001*Z?\":/v1/{resource=projects/*/occu"
-          + "rrences/*}:testIamPermissions:\001*B\255\001\n\037com"
+          + "rrences/*}:testIamPermissions:\001*B\324\001\n\037com"
           + ".google.containeranalysis.v1P\001ZUgoogle.g"
           + "olang.org/genproto/googleapis/devtools/c"
           + "ontaineranalysis/v1;containeranalysis\242\002\003"
           + "GCA\252\002*Google.Cloud.DevTools.ContainerAna"
-          + "lysis.V1b\006proto3"
+          + "lysis.V1\352\002$Google::Cloud::ContainerAnaly"
+          + "sis::V1b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {

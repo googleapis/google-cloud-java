@@ -28,7 +28,6 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
     dataSourceId_ = "";
     state_ = 0;
     schedule_ = "";
-    partnerToken_ = "";
   }
 
   @java.lang.Override
@@ -198,26 +197,6 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
-          case 178:
-            {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                labels_ =
-                    com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000002;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
-                  input.readMessage(
-                      LabelsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              labels_.getMutableMap().put(labels__.getKey(), labels__.getValue());
-              break;
-            }
-          case 226:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              partnerToken_ = s;
-              break;
-            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -242,17 +221,6 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
         .internal_static_google_cloud_bigquery_datatransfer_v1_TransferRun_descriptor;
   }
 
-  @SuppressWarnings({"rawtypes"})
-  @java.lang.Override
-  protected com.google.protobuf.MapField internalGetMapField(int number) {
-    switch (number) {
-      case 22:
-        return internalGetLabels();
-      default:
-        throw new RuntimeException("Invalid map field number: " + number);
-    }
-  }
-
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
@@ -263,7 +231,6 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.bigquery.datatransfer.v1.TransferRun.Builder.class);
   }
 
-  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -313,99 +280,6 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int LABELS_FIELD_NUMBER = 22;
-
-  private static final class LabelsDefaultEntryHolder {
-    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
-        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
-            com.google.cloud.bigquery.datatransfer.v1.TransferProto
-                .internal_static_google_cloud_bigquery_datatransfer_v1_TransferRun_LabelsEntry_descriptor,
-            com.google.protobuf.WireFormat.FieldType.STRING,
-            "",
-            com.google.protobuf.WireFormat.FieldType.STRING,
-            "");
-  }
-
-  private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
-
-  private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
-    if (labels_ == null) {
-      return com.google.protobuf.MapField.emptyMapField(LabelsDefaultEntryHolder.defaultEntry);
-    }
-    return labels_;
-  }
-
-  public int getLabelsCount() {
-    return internalGetLabels().getMap().size();
-  }
-  /**
-   *
-   *
-   * <pre>
-   * User labels.
-   * </pre>
-   *
-   * <code>map&lt;string, string&gt; labels = 22;</code>
-   */
-  public boolean containsLabels(java.lang.String key) {
-    if (key == null) {
-      throw new java.lang.NullPointerException();
-    }
-    return internalGetLabels().getMap().containsKey(key);
-  }
-  /** Use {@link #getLabelsMap()} instead. */
-  @java.lang.Deprecated
-  public java.util.Map<java.lang.String, java.lang.String> getLabels() {
-    return getLabelsMap();
-  }
-  /**
-   *
-   *
-   * <pre>
-   * User labels.
-   * </pre>
-   *
-   * <code>map&lt;string, string&gt; labels = 22;</code>
-   */
-  public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
-    return internalGetLabels().getMap();
-  }
-  /**
-   *
-   *
-   * <pre>
-   * User labels.
-   * </pre>
-   *
-   * <code>map&lt;string, string&gt; labels = 22;</code>
-   */
-  public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
-    if (key == null) {
-      throw new java.lang.NullPointerException();
-    }
-    java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
-    return map.containsKey(key) ? map.get(key) : defaultValue;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * User labels.
-   * </pre>
-   *
-   * <code>map&lt;string, string&gt; labels = 22;</code>
-   */
-  public java.lang.String getLabelsOrThrow(java.lang.String key) {
-    if (key == null) {
-      throw new java.lang.NullPointerException();
-    }
-    java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
-    if (!map.containsKey(key)) {
-      throw new java.lang.IllegalArgumentException();
-    }
-    return map.get(key);
-  }
-
   public static final int SCHEDULE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp scheduleTime_;
   /**
@@ -453,8 +327,8 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * For batch transfer runs, specifies the date and time that
-   * data should be ingested.
+   * For batch transfer runs, specifies the date and time of the data should be
+   * ingested.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp run_time = 10;</code>
@@ -466,8 +340,8 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * For batch transfer runs, specifies the date and time that
-   * data should be ingested.
+   * For batch transfer runs, specifies the date and time of the data should be
+   * ingested.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp run_time = 10;</code>
@@ -479,8 +353,8 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * For batch transfer runs, specifies the date and time that
-   * data should be ingested.
+   * For batch transfer runs, specifies the date and time of the data should be
+   * ingested.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp run_time = 10;</code>
@@ -874,59 +748,6 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int PARTNER_TOKEN_FIELD_NUMBER = 28;
-  private volatile java.lang.Object partnerToken_;
-  /**
-   *
-   *
-   * <pre>
-   * Output only. This is the same token initialized from TransferConfig.
-   * Partner token is a unique identifier used for identifying a transfer setup
-   * stored on external partner side. The token is opaque to DTS and can only be
-   * interpreted by partner. Partner data source should create a mapping between
-   * the config id and the token to validate that a transfer config/run is
-   * legitimate.
-   * </pre>
-   *
-   * <code>string partner_token = 28;</code>
-   */
-  public java.lang.String getPartnerToken() {
-    java.lang.Object ref = partnerToken_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      partnerToken_ = s;
-      return s;
-    }
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Output only. This is the same token initialized from TransferConfig.
-   * Partner token is a unique identifier used for identifying a transfer setup
-   * stored on external partner side. The token is opaque to DTS and can only be
-   * interpreted by partner. Partner data source should create a mapping between
-   * the config id and the token to validate that a transfer config/run is
-   * legitimate.
-   * </pre>
-   *
-   * <code>string partner_token = 28;</code>
-   */
-  public com.google.protobuf.ByteString getPartnerTokenBytes() {
-    java.lang.Object ref = partnerToken_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      partnerToken_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -982,11 +803,6 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
     if (errorStatus_ != null) {
       output.writeMessage(21, getErrorStatus());
     }
-    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
-        output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 22);
-    if (!getPartnerTokenBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 28, partnerToken_);
-    }
     unknownFields.writeTo(output);
   }
 
@@ -1037,19 +853,6 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
     if (errorStatus_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(21, getErrorStatus());
     }
-    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
-        internalGetLabels().getMap().entrySet()) {
-      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
-          LabelsDefaultEntryHolder.defaultEntry
-              .newBuilderForType()
-              .setKey(entry.getKey())
-              .setValue(entry.getValue())
-              .build();
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(22, labels__);
-    }
-    if (!getPartnerTokenBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(28, partnerToken_);
-    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1067,7 +870,6 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
         (com.google.cloud.bigquery.datatransfer.v1.TransferRun) obj;
 
     if (!getName().equals(other.getName())) return false;
-    if (!internalGetLabels().equals(other.internalGetLabels())) return false;
     if (hasScheduleTime() != other.hasScheduleTime()) return false;
     if (hasScheduleTime()) {
       if (!getScheduleTime().equals(other.getScheduleTime())) return false;
@@ -1101,7 +903,6 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
     if (state_ != other.state_) return false;
     if (getUserId() != other.getUserId()) return false;
     if (!getSchedule().equals(other.getSchedule())) return false;
-    if (!getPartnerToken().equals(other.getPartnerToken())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1115,10 +916,6 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
-    if (!internalGetLabels().getMap().isEmpty()) {
-      hash = (37 * hash) + LABELS_FIELD_NUMBER;
-      hash = (53 * hash) + internalGetLabels().hashCode();
-    }
     if (hasScheduleTime()) {
       hash = (37 * hash) + SCHEDULE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getScheduleTime().hashCode();
@@ -1157,8 +954,6 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getUserId());
     hash = (37 * hash) + SCHEDULE_FIELD_NUMBER;
     hash = (53 * hash) + getSchedule().hashCode();
-    hash = (37 * hash) + PARTNER_TOKEN_FIELD_NUMBER;
-    hash = (53 * hash) + getPartnerToken().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1278,26 +1073,6 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
           .internal_static_google_cloud_bigquery_datatransfer_v1_TransferRun_descriptor;
     }
 
-    @SuppressWarnings({"rawtypes"})
-    protected com.google.protobuf.MapField internalGetMapField(int number) {
-      switch (number) {
-        case 22:
-          return internalGetLabels();
-        default:
-          throw new RuntimeException("Invalid map field number: " + number);
-      }
-    }
-
-    @SuppressWarnings({"rawtypes"})
-    protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
-      switch (number) {
-        case 22:
-          return internalGetMutableLabels();
-        default:
-          throw new RuntimeException("Invalid map field number: " + number);
-      }
-    }
-
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -1327,7 +1102,6 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       name_ = "";
 
-      internalGetMutableLabels().clear();
       if (scheduleTimeBuilder_ == null) {
         scheduleTime_ = null;
       } else {
@@ -1380,8 +1154,6 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
 
       schedule_ = "";
 
-      partnerToken_ = "";
-
       return this;
     }
 
@@ -1409,11 +1181,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.bigquery.datatransfer.v1.TransferRun buildPartial() {
       com.google.cloud.bigquery.datatransfer.v1.TransferRun result =
           new com.google.cloud.bigquery.datatransfer.v1.TransferRun(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.name_ = name_;
-      result.labels_ = internalGetLabels();
-      result.labels_.makeImmutable();
       if (scheduleTimeBuilder_ == null) {
         result.scheduleTime_ = scheduleTime_;
       } else {
@@ -1454,8 +1222,6 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
       result.state_ = state_;
       result.userId_ = userId_;
       result.schedule_ = schedule_;
-      result.partnerToken_ = partnerToken_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1510,7 +1276,6 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
         name_ = other.name_;
         onChanged();
       }
-      internalGetMutableLabels().mergeFrom(other.internalGetLabels());
       if (other.hasScheduleTime()) {
         mergeScheduleTime(other.getScheduleTime());
       }
@@ -1550,10 +1315,6 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
         schedule_ = other.schedule_;
         onChanged();
       }
-      if (!other.getPartnerToken().isEmpty()) {
-        partnerToken_ = other.partnerToken_;
-        onChanged();
-      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -1583,8 +1344,6 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
-    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -1692,158 +1451,6 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
 
       name_ = value;
       onChanged();
-      return this;
-    }
-
-    private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
-
-    private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
-      if (labels_ == null) {
-        return com.google.protobuf.MapField.emptyMapField(LabelsDefaultEntryHolder.defaultEntry);
-      }
-      return labels_;
-    }
-
-    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-        internalGetMutableLabels() {
-      onChanged();
-      ;
-      if (labels_ == null) {
-        labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
-      }
-      if (!labels_.isMutable()) {
-        labels_ = labels_.copy();
-      }
-      return labels_;
-    }
-
-    public int getLabelsCount() {
-      return internalGetLabels().getMap().size();
-    }
-    /**
-     *
-     *
-     * <pre>
-     * User labels.
-     * </pre>
-     *
-     * <code>map&lt;string, string&gt; labels = 22;</code>
-     */
-    public boolean containsLabels(java.lang.String key) {
-      if (key == null) {
-        throw new java.lang.NullPointerException();
-      }
-      return internalGetLabels().getMap().containsKey(key);
-    }
-    /** Use {@link #getLabelsMap()} instead. */
-    @java.lang.Deprecated
-    public java.util.Map<java.lang.String, java.lang.String> getLabels() {
-      return getLabelsMap();
-    }
-    /**
-     *
-     *
-     * <pre>
-     * User labels.
-     * </pre>
-     *
-     * <code>map&lt;string, string&gt; labels = 22;</code>
-     */
-    public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
-      return internalGetLabels().getMap();
-    }
-    /**
-     *
-     *
-     * <pre>
-     * User labels.
-     * </pre>
-     *
-     * <code>map&lt;string, string&gt; labels = 22;</code>
-     */
-    public java.lang.String getLabelsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
-      if (key == null) {
-        throw new java.lang.NullPointerException();
-      }
-      java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
-      return map.containsKey(key) ? map.get(key) : defaultValue;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * User labels.
-     * </pre>
-     *
-     * <code>map&lt;string, string&gt; labels = 22;</code>
-     */
-    public java.lang.String getLabelsOrThrow(java.lang.String key) {
-      if (key == null) {
-        throw new java.lang.NullPointerException();
-      }
-      java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
-      if (!map.containsKey(key)) {
-        throw new java.lang.IllegalArgumentException();
-      }
-      return map.get(key);
-    }
-
-    public Builder clearLabels() {
-      internalGetMutableLabels().getMutableMap().clear();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * User labels.
-     * </pre>
-     *
-     * <code>map&lt;string, string&gt; labels = 22;</code>
-     */
-    public Builder removeLabels(java.lang.String key) {
-      if (key == null) {
-        throw new java.lang.NullPointerException();
-      }
-      internalGetMutableLabels().getMutableMap().remove(key);
-      return this;
-    }
-    /** Use alternate mutation accessors instead. */
-    @java.lang.Deprecated
-    public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
-      return internalGetMutableLabels().getMutableMap();
-    }
-    /**
-     *
-     *
-     * <pre>
-     * User labels.
-     * </pre>
-     *
-     * <code>map&lt;string, string&gt; labels = 22;</code>
-     */
-    public Builder putLabels(java.lang.String key, java.lang.String value) {
-      if (key == null) {
-        throw new java.lang.NullPointerException();
-      }
-      if (value == null) {
-        throw new java.lang.NullPointerException();
-      }
-      internalGetMutableLabels().getMutableMap().put(key, value);
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * User labels.
-     * </pre>
-     *
-     * <code>map&lt;string, string&gt; labels = 22;</code>
-     */
-    public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
-      internalGetMutableLabels().getMutableMap().putAll(values);
       return this;
     }
 
@@ -2038,8 +1645,8 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * For batch transfer runs, specifies the date and time that
-     * data should be ingested.
+     * For batch transfer runs, specifies the date and time of the data should be
+     * ingested.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp run_time = 10;</code>
@@ -2051,8 +1658,8 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * For batch transfer runs, specifies the date and time that
-     * data should be ingested.
+     * For batch transfer runs, specifies the date and time of the data should be
+     * ingested.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp run_time = 10;</code>
@@ -2068,8 +1675,8 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * For batch transfer runs, specifies the date and time that
-     * data should be ingested.
+     * For batch transfer runs, specifies the date and time of the data should be
+     * ingested.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp run_time = 10;</code>
@@ -2091,8 +1698,8 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * For batch transfer runs, specifies the date and time that
-     * data should be ingested.
+     * For batch transfer runs, specifies the date and time of the data should be
+     * ingested.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp run_time = 10;</code>
@@ -2111,8 +1718,8 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * For batch transfer runs, specifies the date and time that
-     * data should be ingested.
+     * For batch transfer runs, specifies the date and time of the data should be
+     * ingested.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp run_time = 10;</code>
@@ -2136,8 +1743,8 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * For batch transfer runs, specifies the date and time that
-     * data should be ingested.
+     * For batch transfer runs, specifies the date and time of the data should be
+     * ingested.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp run_time = 10;</code>
@@ -2157,8 +1764,8 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * For batch transfer runs, specifies the date and time that
-     * data should be ingested.
+     * For batch transfer runs, specifies the date and time of the data should be
+     * ingested.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp run_time = 10;</code>
@@ -2172,8 +1779,8 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * For batch transfer runs, specifies the date and time that
-     * data should be ingested.
+     * For batch transfer runs, specifies the date and time of the data should be
+     * ingested.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp run_time = 10;</code>
@@ -2189,8 +1796,8 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * For batch transfer runs, specifies the date and time that
-     * data should be ingested.
+     * For batch transfer runs, specifies the date and time of the data should be
+     * ingested.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp run_time = 10;</code>
@@ -3524,125 +3131,6 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
 
       schedule_ = value;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object partnerToken_ = "";
-    /**
-     *
-     *
-     * <pre>
-     * Output only. This is the same token initialized from TransferConfig.
-     * Partner token is a unique identifier used for identifying a transfer setup
-     * stored on external partner side. The token is opaque to DTS and can only be
-     * interpreted by partner. Partner data source should create a mapping between
-     * the config id and the token to validate that a transfer config/run is
-     * legitimate.
-     * </pre>
-     *
-     * <code>string partner_token = 28;</code>
-     */
-    public java.lang.String getPartnerToken() {
-      java.lang.Object ref = partnerToken_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        partnerToken_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Output only. This is the same token initialized from TransferConfig.
-     * Partner token is a unique identifier used for identifying a transfer setup
-     * stored on external partner side. The token is opaque to DTS and can only be
-     * interpreted by partner. Partner data source should create a mapping between
-     * the config id and the token to validate that a transfer config/run is
-     * legitimate.
-     * </pre>
-     *
-     * <code>string partner_token = 28;</code>
-     */
-    public com.google.protobuf.ByteString getPartnerTokenBytes() {
-      java.lang.Object ref = partnerToken_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        partnerToken_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Output only. This is the same token initialized from TransferConfig.
-     * Partner token is a unique identifier used for identifying a transfer setup
-     * stored on external partner side. The token is opaque to DTS and can only be
-     * interpreted by partner. Partner data source should create a mapping between
-     * the config id and the token to validate that a transfer config/run is
-     * legitimate.
-     * </pre>
-     *
-     * <code>string partner_token = 28;</code>
-     */
-    public Builder setPartnerToken(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-
-      partnerToken_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Output only. This is the same token initialized from TransferConfig.
-     * Partner token is a unique identifier used for identifying a transfer setup
-     * stored on external partner side. The token is opaque to DTS and can only be
-     * interpreted by partner. Partner data source should create a mapping between
-     * the config id and the token to validate that a transfer config/run is
-     * legitimate.
-     * </pre>
-     *
-     * <code>string partner_token = 28;</code>
-     */
-    public Builder clearPartnerToken() {
-
-      partnerToken_ = getDefaultInstance().getPartnerToken();
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Output only. This is the same token initialized from TransferConfig.
-     * Partner token is a unique identifier used for identifying a transfer setup
-     * stored on external partner side. The token is opaque to DTS and can only be
-     * interpreted by partner. Partner data source should create a mapping between
-     * the config id and the token to validate that a transfer config/run is
-     * legitimate.
-     * </pre>
-     *
-     * <code>string partner_token = 28;</code>
-     */
-    public Builder setPartnerTokenBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-
-      partnerToken_ = value;
       onChanged();
       return this;
     }

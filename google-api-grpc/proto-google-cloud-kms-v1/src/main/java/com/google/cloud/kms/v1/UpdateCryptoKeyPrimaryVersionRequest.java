@@ -7,8 +7,7 @@ package com.google.cloud.kms.v1;
  *
  *
  * <pre>
- * Request message for
- * [KeyManagementService.UpdateCryptoKeyPrimaryVersion][google.cloud.kms.v1.KeyManagementService.UpdateCryptoKeyPrimaryVersion].
+ * Request message for [KeyManagementService.UpdateCryptoKeyPrimaryVersion][google.cloud.kms.v1.KeyManagementService.UpdateCryptoKeyPrimaryVersion].
  * </pre>
  *
  * Protobuf type {@code google.cloud.kms.v1.UpdateCryptoKeyPrimaryVersionRequest}
@@ -108,8 +107,7 @@ public final class UpdateCryptoKeyPrimaryVersionRequest
    *
    *
    * <pre>
-   * The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to
-   * update.
+   * The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to update.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -129,8 +127,7 @@ public final class UpdateCryptoKeyPrimaryVersionRequest
    *
    *
    * <pre>
-   * The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to
-   * update.
+   * The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to update.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -153,8 +150,7 @@ public final class UpdateCryptoKeyPrimaryVersionRequest
    *
    *
    * <pre>
-   * The id of the child
-   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use as primary.
+   * The id of the child [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use as primary.
    * </pre>
    *
    * <code>string crypto_key_version_id = 2;</code>
@@ -174,8 +170,7 @@ public final class UpdateCryptoKeyPrimaryVersionRequest
    *
    *
    * <pre>
-   * The id of the child
-   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use as primary.
+   * The id of the child [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use as primary.
    * </pre>
    *
    * <code>string crypto_key_version_id = 2;</code>
@@ -365,8 +360,7 @@ public final class UpdateCryptoKeyPrimaryVersionRequest
    *
    *
    * <pre>
-   * Request message for
-   * [KeyManagementService.UpdateCryptoKeyPrimaryVersion][google.cloud.kms.v1.KeyManagementService.UpdateCryptoKeyPrimaryVersion].
+   * Request message for [KeyManagementService.UpdateCryptoKeyPrimaryVersion][google.cloud.kms.v1.KeyManagementService.UpdateCryptoKeyPrimaryVersion].
    * </pre>
    *
    * Protobuf type {@code google.cloud.kms.v1.UpdateCryptoKeyPrimaryVersionRequest}
@@ -535,8 +529,7 @@ public final class UpdateCryptoKeyPrimaryVersionRequest
      *
      *
      * <pre>
-     * The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to
-     * update.
+     * The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to update.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -556,8 +549,7 @@ public final class UpdateCryptoKeyPrimaryVersionRequest
      *
      *
      * <pre>
-     * The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to
-     * update.
+     * The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to update.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -577,8 +569,7 @@ public final class UpdateCryptoKeyPrimaryVersionRequest
      *
      *
      * <pre>
-     * The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to
-     * update.
+     * The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to update.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -596,8 +587,7 @@ public final class UpdateCryptoKeyPrimaryVersionRequest
      *
      *
      * <pre>
-     * The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to
-     * update.
+     * The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to update.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -612,8 +602,7 @@ public final class UpdateCryptoKeyPrimaryVersionRequest
      *
      *
      * <pre>
-     * The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to
-     * update.
+     * The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to update.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -634,8 +623,7 @@ public final class UpdateCryptoKeyPrimaryVersionRequest
      *
      *
      * <pre>
-     * The id of the child
-     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use as primary.
+     * The id of the child [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use as primary.
      * </pre>
      *
      * <code>string crypto_key_version_id = 2;</code>
@@ -655,8 +643,7 @@ public final class UpdateCryptoKeyPrimaryVersionRequest
      *
      *
      * <pre>
-     * The id of the child
-     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use as primary.
+     * The id of the child [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use as primary.
      * </pre>
      *
      * <code>string crypto_key_version_id = 2;</code>
@@ -676,8 +663,7 @@ public final class UpdateCryptoKeyPrimaryVersionRequest
      *
      *
      * <pre>
-     * The id of the child
-     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use as primary.
+     * The id of the child [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use as primary.
      * </pre>
      *
      * <code>string crypto_key_version_id = 2;</code>
@@ -695,8 +681,7 @@ public final class UpdateCryptoKeyPrimaryVersionRequest
      *
      *
      * <pre>
-     * The id of the child
-     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use as primary.
+     * The id of the child [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use as primary.
      * </pre>
      *
      * <code>string crypto_key_version_id = 2;</code>
@@ -711,8 +696,7 @@ public final class UpdateCryptoKeyPrimaryVersionRequest
      *
      *
      * <pre>
-     * The id of the child
-     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use as primary.
+     * The id of the child [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use as primary.
      * </pre>
      *
      * <code>string crypto_key_version_id = 2;</code>

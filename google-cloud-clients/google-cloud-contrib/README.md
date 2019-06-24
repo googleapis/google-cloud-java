@@ -13,34 +13,7 @@ Contents
  * [google-cloud-logging-logback](./google-cloud-logging-logback): Logback appender for Google Cloud Logging.
  * [google-cloud-nio](./google-cloud-nio/): NIO Filesystem Provider for Google Cloud Storage.
  * [google-cloud-nio-examples](./google-cloud-nio-examples/): How to add Google Cloud Storage NIO after the fact.
-
-Quickstart
-----------
-
-### google-cloud-nio
-
-[//]: # ({x-version-update-start:google-cloud-contrib:released})
-If you are using Maven, add this to your pom.xml file
-```xml
-<dependency>
-  <groupId>com.google.cloud</groupId>
-  <artifactId>google-cloud-contrib</artifactId>
-  <version>0.95.0-alpha</version>
-</dependency>
-```
-If you are using Gradle, add this to your dependencies
-```Groovy
-compile 'com.google.cloud:google-cloud-contrib:0.95.0-alpha'
-```
-If you are using SBT, add this to your dependencies
-```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-contrib" % "0.95.0-alpha"
-```
-[//]: # ({x-version-update-end})
-
-### google-cloud-nio-examples
-
-See its [README](./google-cloud-nio-examples/README.md) for instructions on how to run it.
+ * [google-cloud-notification](./google-cloud-notification/): Google Cloud Java Client for Cloud Pub/Sub Notifications
 
 Java Versions
 -------------

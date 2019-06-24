@@ -37,7 +37,7 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  *     Dialogflow API agent to better match intents.
  * For more information about intents, see the
  * [Dialogflow
- * documentation](https://cloud.google.com/dialogflow-enterprise/docs/intents-overview).
+ * documentation](https://cloud.google.com/dialogflow/docs/intents-overview).
  * </pre>
  */
 @javax.annotation.Generated(
@@ -479,7 +479,7 @@ public final class IntentsGrpc {
    *     Dialogflow API agent to better match intents.
    * For more information about intents, see the
    * [Dialogflow
-   * documentation](https://cloud.google.com/dialogflow-enterprise/docs/intents-overview).
+   * documentation](https://cloud.google.com/dialogflow/docs/intents-overview).
    * </pre>
    */
   public abstract static class IntentsImplBase implements io.grpc.BindableService {
@@ -658,7 +658,7 @@ public final class IntentsGrpc {
    *     Dialogflow API agent to better match intents.
    * For more information about intents, see the
    * [Dialogflow
-   * documentation](https://cloud.google.com/dialogflow-enterprise/docs/intents-overview).
+   * documentation](https://cloud.google.com/dialogflow/docs/intents-overview).
    * </pre>
    */
   public static final class IntentsStub extends io.grpc.stub.AbstractStub<IntentsStub> {
@@ -821,7 +821,7 @@ public final class IntentsGrpc {
    *     Dialogflow API agent to better match intents.
    * For more information about intents, see the
    * [Dialogflow
-   * documentation](https://cloud.google.com/dialogflow-enterprise/docs/intents-overview).
+   * documentation](https://cloud.google.com/dialogflow/docs/intents-overview).
    * </pre>
    */
   public static final class IntentsBlockingStub
@@ -962,7 +962,7 @@ public final class IntentsGrpc {
    *     Dialogflow API agent to better match intents.
    * For more information about intents, see the
    * [Dialogflow
-   * documentation](https://cloud.google.com/dialogflow-enterprise/docs/intents-overview).
+   * documentation](https://cloud.google.com/dialogflow/docs/intents-overview).
    * </pre>
    */
   public static final class IntentsFutureStub extends io.grpc.stub.AbstractStub<IntentsFutureStub> {

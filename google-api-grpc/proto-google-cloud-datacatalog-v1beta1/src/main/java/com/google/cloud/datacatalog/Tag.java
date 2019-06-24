@@ -188,7 +188,8 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
    * [UpdateTagRequest][google.cloud.datacatalog.v1beta1.UpdateTagRequest]. The
    * resource name of the tag in URL format. For example,
    * projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}",
-   * where tag_id is a system-generated identifier.
+   * where tag_id is a system-generated identifier. Note that this Tag may not
+   * actually be stored in the location in this name.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -212,7 +213,8 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
    * [UpdateTagRequest][google.cloud.datacatalog.v1beta1.UpdateTagRequest]. The
    * resource name of the tag in URL format. For example,
    * projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}",
-   * where tag_id is a system-generated identifier.
+   * where tag_id is a system-generated identifier. Note that this Tag may not
+   * actually be stored in the location in this name.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -945,7 +947,8 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
      * [UpdateTagRequest][google.cloud.datacatalog.v1beta1.UpdateTagRequest]. The
      * resource name of the tag in URL format. For example,
      * projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}",
-     * where tag_id is a system-generated identifier.
+     * where tag_id is a system-generated identifier. Note that this Tag may not
+     * actually be stored in the location in this name.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -969,7 +972,8 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
      * [UpdateTagRequest][google.cloud.datacatalog.v1beta1.UpdateTagRequest]. The
      * resource name of the tag in URL format. For example,
      * projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}",
-     * where tag_id is a system-generated identifier.
+     * where tag_id is a system-generated identifier. Note that this Tag may not
+     * actually be stored in the location in this name.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -993,7 +997,8 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
      * [UpdateTagRequest][google.cloud.datacatalog.v1beta1.UpdateTagRequest]. The
      * resource name of the tag in URL format. For example,
      * projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}",
-     * where tag_id is a system-generated identifier.
+     * where tag_id is a system-generated identifier. Note that this Tag may not
+     * actually be stored in the location in this name.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1015,7 +1020,8 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
      * [UpdateTagRequest][google.cloud.datacatalog.v1beta1.UpdateTagRequest]. The
      * resource name of the tag in URL format. For example,
      * projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}",
-     * where tag_id is a system-generated identifier.
+     * where tag_id is a system-generated identifier. Note that this Tag may not
+     * actually be stored in the location in this name.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1034,7 +1040,8 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
      * [UpdateTagRequest][google.cloud.datacatalog.v1beta1.UpdateTagRequest]. The
      * resource name of the tag in URL format. For example,
      * projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}",
-     * where tag_id is a system-generated identifier.
+     * where tag_id is a system-generated identifier. Note that this Tag may not
+     * actually be stored in the location in this name.
      * </pre>
      *
      * <code>string name = 1;</code>

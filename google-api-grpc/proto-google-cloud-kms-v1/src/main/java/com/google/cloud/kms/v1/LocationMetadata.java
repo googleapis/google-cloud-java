@@ -7,8 +7,7 @@ package com.google.cloud.kms.v1;
  *
  *
  * <pre>
- * Cloud KMS metadata for the given
- * [google.cloud.location.Location][google.cloud.location.Location].
+ * Cloud KMS metadata for the given [google.cloud.location.Location][google.cloud.location.Location].
  * </pre>
  *
  * Protobuf type {@code google.cloud.kms.v1.LocationMetadata}
@@ -96,8 +95,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Indicates whether [CryptoKeys][google.cloud.kms.v1.CryptoKey] with
    * [protection_level][google.cloud.kms.v1.CryptoKeyVersionTemplate.protection_level]
-   * [HSM][google.cloud.kms.v1.ProtectionLevel.HSM] can be created in this
-   * location.
+   * [HSM][google.cloud.kms.v1.ProtectionLevel.HSM] can be created in this location.
    * </pre>
    *
    * <code>bool hsm_available = 1;</code>
@@ -268,8 +266,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Cloud KMS metadata for the given
-   * [google.cloud.location.Location][google.cloud.location.Location].
+   * Cloud KMS metadata for the given [google.cloud.location.Location][google.cloud.location.Location].
    * </pre>
    *
    * Protobuf type {@code google.cloud.kms.v1.LocationMetadata}
@@ -428,8 +425,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Indicates whether [CryptoKeys][google.cloud.kms.v1.CryptoKey] with
      * [protection_level][google.cloud.kms.v1.CryptoKeyVersionTemplate.protection_level]
-     * [HSM][google.cloud.kms.v1.ProtectionLevel.HSM] can be created in this
-     * location.
+     * [HSM][google.cloud.kms.v1.ProtectionLevel.HSM] can be created in this location.
      * </pre>
      *
      * <code>bool hsm_available = 1;</code>
@@ -443,8 +439,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Indicates whether [CryptoKeys][google.cloud.kms.v1.CryptoKey] with
      * [protection_level][google.cloud.kms.v1.CryptoKeyVersionTemplate.protection_level]
-     * [HSM][google.cloud.kms.v1.ProtectionLevel.HSM] can be created in this
-     * location.
+     * [HSM][google.cloud.kms.v1.ProtectionLevel.HSM] can be created in this location.
      * </pre>
      *
      * <code>bool hsm_available = 1;</code>
@@ -461,8 +456,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Indicates whether [CryptoKeys][google.cloud.kms.v1.CryptoKey] with
      * [protection_level][google.cloud.kms.v1.CryptoKeyVersionTemplate.protection_level]
-     * [HSM][google.cloud.kms.v1.ProtectionLevel.HSM] can be created in this
-     * location.
+     * [HSM][google.cloud.kms.v1.ProtectionLevel.HSM] can be created in this location.
      * </pre>
      *
      * <code>bool hsm_available = 1;</code>

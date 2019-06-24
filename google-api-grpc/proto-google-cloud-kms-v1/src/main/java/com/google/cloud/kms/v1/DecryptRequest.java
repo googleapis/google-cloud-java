@@ -7,8 +7,7 @@ package com.google.cloud.kms.v1;
  *
  *
  * <pre>
- * Request message for
- * [KeyManagementService.Decrypt][google.cloud.kms.v1.KeyManagementService.Decrypt].
+ * Request message for [KeyManagementService.Decrypt][google.cloud.kms.v1.KeyManagementService.Decrypt].
  * </pre>
  *
  * Protobuf type {@code google.cloud.kms.v1.DecryptRequest}
@@ -110,9 +109,8 @@ public final class DecryptRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The resource name of the
-   * [CryptoKey][google.cloud.kms.v1.CryptoKey] to use for decryption. The
-   * server will choose the appropriate version.
+   * Required. The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to use for decryption.
+   * The server will choose the appropriate version.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -132,9 +130,8 @@ public final class DecryptRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The resource name of the
-   * [CryptoKey][google.cloud.kms.v1.CryptoKey] to use for decryption. The
-   * server will choose the appropriate version.
+   * Required. The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to use for decryption.
+   * The server will choose the appropriate version.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -365,8 +362,7 @@ public final class DecryptRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Request message for
-   * [KeyManagementService.Decrypt][google.cloud.kms.v1.KeyManagementService.Decrypt].
+   * Request message for [KeyManagementService.Decrypt][google.cloud.kms.v1.KeyManagementService.Decrypt].
    * </pre>
    *
    * Protobuf type {@code google.cloud.kms.v1.DecryptRequest}
@@ -536,9 +532,8 @@ public final class DecryptRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The resource name of the
-     * [CryptoKey][google.cloud.kms.v1.CryptoKey] to use for decryption. The
-     * server will choose the appropriate version.
+     * Required. The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to use for decryption.
+     * The server will choose the appropriate version.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -558,9 +553,8 @@ public final class DecryptRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The resource name of the
-     * [CryptoKey][google.cloud.kms.v1.CryptoKey] to use for decryption. The
-     * server will choose the appropriate version.
+     * Required. The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to use for decryption.
+     * The server will choose the appropriate version.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -580,9 +574,8 @@ public final class DecryptRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The resource name of the
-     * [CryptoKey][google.cloud.kms.v1.CryptoKey] to use for decryption. The
-     * server will choose the appropriate version.
+     * Required. The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to use for decryption.
+     * The server will choose the appropriate version.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -600,9 +593,8 @@ public final class DecryptRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The resource name of the
-     * [CryptoKey][google.cloud.kms.v1.CryptoKey] to use for decryption. The
-     * server will choose the appropriate version.
+     * Required. The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to use for decryption.
+     * The server will choose the appropriate version.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -617,9 +609,8 @@ public final class DecryptRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The resource name of the
-     * [CryptoKey][google.cloud.kms.v1.CryptoKey] to use for decryption. The
-     * server will choose the appropriate version.
+     * Required. The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to use for decryption.
+     * The server will choose the appropriate version.
      * </pre>
      *
      * <code>string name = 1;</code>

@@ -209,9 +209,7 @@ public interface DetectIntentResponseOrBuilder
    *
    *
    * <pre>
-   * Instructs the speech synthesizer how to generate the output audio. This
-   * field is populated from the agent-level speech synthesizer configuration,
-   * if enabled.
+   * The config used by the speech synthesizer to generate the output audio.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.OutputAudioConfig output_audio_config = 6;</code>
@@ -221,9 +219,7 @@ public interface DetectIntentResponseOrBuilder
    *
    *
    * <pre>
-   * Instructs the speech synthesizer how to generate the output audio. This
-   * field is populated from the agent-level speech synthesizer configuration,
-   * if enabled.
+   * The config used by the speech synthesizer to generate the output audio.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.OutputAudioConfig output_audio_config = 6;</code>
@@ -233,9 +229,7 @@ public interface DetectIntentResponseOrBuilder
    *
    *
    * <pre>
-   * Instructs the speech synthesizer how to generate the output audio. This
-   * field is populated from the agent-level speech synthesizer configuration,
-   * if enabled.
+   * The config used by the speech synthesizer to generate the output audio.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.OutputAudioConfig output_audio_config = 6;</code>

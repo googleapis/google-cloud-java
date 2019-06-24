@@ -76,9 +76,9 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
           case 34:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
                 phraseHints_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000010;
               }
               phraseHints_.add(s);
               break;
@@ -97,6 +97,11 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
               modelVariant_ = rawValue;
               break;
             }
+          case 104:
+            {
+              enableWordInfo_ = input.readBool();
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -111,7 +116,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+      if (((mutable_bitField0_ & 0x00000010) != 0)) {
         phraseHints_ = phraseHints_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -192,7 +197,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Required. The language of the supplied audio. Dialogflow does not do
    * translations. See [Language
-   * Support](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+   * Support](https://cloud.google.com/dialogflow/docs/reference/language)
    * for a list of the currently supported language codes. Note that queries in
    * the same session do not necessarily need to specify the same language.
    * </pre>
@@ -216,7 +221,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Required. The language of the supplied audio. Dialogflow does not do
    * translations. See [Language
-   * Support](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+   * Support](https://cloud.google.com/dialogflow/docs/reference/language)
    * for a list of the currently supported language codes. Note that queries in
    * the same session do not necessarily need to specify the same language.
    * </pre>
@@ -235,16 +240,33 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int ENABLE_WORD_INFO_FIELD_NUMBER = 13;
+  private boolean enableWordInfo_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If `true`, Dialogflow returns [SpeechWordInfo][google.cloud.dialogflow.v2beta1.SpeechWordInfo] in
+   * [StreamingRecognitionResult][google.cloud.dialogflow.v2beta1.StreamingRecognitionResult] with information about the recognized speech
+   * words, e.g. start and end time offsets. If false or unspecified, Speech
+   * doesn't return any word-level information.
+   * </pre>
+   *
+   * <code>bool enable_word_info = 13;</code>
+   */
+  public boolean getEnableWordInfo() {
+    return enableWordInfo_;
+  }
+
   public static final int PHRASE_HINTS_FIELD_NUMBER = 4;
   private com.google.protobuf.LazyStringList phraseHints_;
   /**
    *
    *
    * <pre>
-   * Optional. The collection of phrase hints which are used to boost accuracy
-   * of speech recognition.
-   * Refer to
-   * [Cloud Speech API
+   * Optional. A list of strings containing words and phrases that the speech
+   * recognizer should recognize with higher likelihood.
+   * See [the Cloud Speech
    * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
    * for more details.
    * </pre>
@@ -258,10 +280,9 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The collection of phrase hints which are used to boost accuracy
-   * of speech recognition.
-   * Refer to
-   * [Cloud Speech API
+   * Optional. A list of strings containing words and phrases that the speech
+   * recognizer should recognize with higher likelihood.
+   * See [the Cloud Speech
    * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
    * for more details.
    * </pre>
@@ -275,10 +296,9 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The collection of phrase hints which are used to boost accuracy
-   * of speech recognition.
-   * Refer to
-   * [Cloud Speech API
+   * Optional. A list of strings containing words and phrases that the speech
+   * recognizer should recognize with higher likelihood.
+   * See [the Cloud Speech
    * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
    * for more details.
    * </pre>
@@ -292,10 +312,9 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The collection of phrase hints which are used to boost accuracy
-   * of speech recognition.
-   * Refer to
-   * [Cloud Speech API
+   * Optional. A list of strings containing words and phrases that the speech
+   * recognizer should recognize with higher likelihood.
+   * See [the Cloud Speech
    * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
    * for more details.
    * </pre>
@@ -437,6 +456,9 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
             .getNumber()) {
       output.writeEnum(10, modelVariant_);
     }
+    if (enableWordInfo_ != false) {
+      output.writeBool(13, enableWordInfo_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -473,6 +495,9 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(10, modelVariant_);
     }
+    if (enableWordInfo_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(13, enableWordInfo_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -492,6 +517,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     if (audioEncoding_ != other.audioEncoding_) return false;
     if (getSampleRateHertz() != other.getSampleRateHertz()) return false;
     if (!getLanguageCode().equals(other.getLanguageCode())) return false;
+    if (getEnableWordInfo() != other.getEnableWordInfo()) return false;
     if (!getPhraseHintsList().equals(other.getPhraseHintsList())) return false;
     if (!getModel().equals(other.getModel())) return false;
     if (modelVariant_ != other.modelVariant_) return false;
@@ -512,6 +538,8 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + getSampleRateHertz();
     hash = (37 * hash) + LANGUAGE_CODE_FIELD_NUMBER;
     hash = (53 * hash) + getLanguageCode().hashCode();
+    hash = (37 * hash) + ENABLE_WORD_INFO_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableWordInfo());
     if (getPhraseHintsCount() > 0) {
       hash = (37 * hash) + PHRASE_HINTS_FIELD_NUMBER;
       hash = (53 * hash) + getPhraseHintsList().hashCode();
@@ -671,8 +699,10 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
 
       languageCode_ = "";
 
+      enableWordInfo_ = false;
+
       phraseHints_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       model_ = "";
 
       modelVariant_ = 0;
@@ -709,9 +739,10 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
       result.audioEncoding_ = audioEncoding_;
       result.sampleRateHertz_ = sampleRateHertz_;
       result.languageCode_ = languageCode_;
-      if (((bitField0_ & 0x00000008) != 0)) {
+      result.enableWordInfo_ = enableWordInfo_;
+      if (((bitField0_ & 0x00000010) != 0)) {
         phraseHints_ = phraseHints_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000010);
       }
       result.phraseHints_ = phraseHints_;
       result.model_ = model_;
@@ -777,10 +808,13 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
         languageCode_ = other.languageCode_;
         onChanged();
       }
+      if (other.getEnableWordInfo() != false) {
+        setEnableWordInfo(other.getEnableWordInfo());
+      }
       if (!other.phraseHints_.isEmpty()) {
         if (phraseHints_.isEmpty()) {
           phraseHints_ = other.phraseHints_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000010);
         } else {
           ensurePhraseHintsIsMutable();
           phraseHints_.addAll(other.phraseHints_);
@@ -967,7 +1001,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Required. The language of the supplied audio. Dialogflow does not do
      * translations. See [Language
-     * Support](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+     * Support](https://cloud.google.com/dialogflow/docs/reference/language)
      * for a list of the currently supported language codes. Note that queries in
      * the same session do not necessarily need to specify the same language.
      * </pre>
@@ -991,7 +1025,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Required. The language of the supplied audio. Dialogflow does not do
      * translations. See [Language
-     * Support](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+     * Support](https://cloud.google.com/dialogflow/docs/reference/language)
      * for a list of the currently supported language codes. Note that queries in
      * the same session do not necessarily need to specify the same language.
      * </pre>
@@ -1015,7 +1049,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Required. The language of the supplied audio. Dialogflow does not do
      * translations. See [Language
-     * Support](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+     * Support](https://cloud.google.com/dialogflow/docs/reference/language)
      * for a list of the currently supported language codes. Note that queries in
      * the same session do not necessarily need to specify the same language.
      * </pre>
@@ -1037,7 +1071,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Required. The language of the supplied audio. Dialogflow does not do
      * translations. See [Language
-     * Support](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+     * Support](https://cloud.google.com/dialogflow/docs/reference/language)
      * for a list of the currently supported language codes. Note that queries in
      * the same session do not necessarily need to specify the same language.
      * </pre>
@@ -1056,7 +1090,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Required. The language of the supplied audio. Dialogflow does not do
      * translations. See [Language
-     * Support](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+     * Support](https://cloud.google.com/dialogflow/docs/reference/language)
      * for a list of the currently supported language codes. Note that queries in
      * the same session do not necessarily need to specify the same language.
      * </pre>
@@ -1074,23 +1108,75 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private boolean enableWordInfo_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If `true`, Dialogflow returns [SpeechWordInfo][google.cloud.dialogflow.v2beta1.SpeechWordInfo] in
+     * [StreamingRecognitionResult][google.cloud.dialogflow.v2beta1.StreamingRecognitionResult] with information about the recognized speech
+     * words, e.g. start and end time offsets. If false or unspecified, Speech
+     * doesn't return any word-level information.
+     * </pre>
+     *
+     * <code>bool enable_word_info = 13;</code>
+     */
+    public boolean getEnableWordInfo() {
+      return enableWordInfo_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If `true`, Dialogflow returns [SpeechWordInfo][google.cloud.dialogflow.v2beta1.SpeechWordInfo] in
+     * [StreamingRecognitionResult][google.cloud.dialogflow.v2beta1.StreamingRecognitionResult] with information about the recognized speech
+     * words, e.g. start and end time offsets. If false or unspecified, Speech
+     * doesn't return any word-level information.
+     * </pre>
+     *
+     * <code>bool enable_word_info = 13;</code>
+     */
+    public Builder setEnableWordInfo(boolean value) {
+
+      enableWordInfo_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If `true`, Dialogflow returns [SpeechWordInfo][google.cloud.dialogflow.v2beta1.SpeechWordInfo] in
+     * [StreamingRecognitionResult][google.cloud.dialogflow.v2beta1.StreamingRecognitionResult] with information about the recognized speech
+     * words, e.g. start and end time offsets. If false or unspecified, Speech
+     * doesn't return any word-level information.
+     * </pre>
+     *
+     * <code>bool enable_word_info = 13;</code>
+     */
+    public Builder clearEnableWordInfo() {
+
+      enableWordInfo_ = false;
+      onChanged();
+      return this;
+    }
+
     private com.google.protobuf.LazyStringList phraseHints_ =
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensurePhraseHintsIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         phraseHints_ = new com.google.protobuf.LazyStringArrayList(phraseHints_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
       }
     }
     /**
      *
      *
      * <pre>
-     * Optional. The collection of phrase hints which are used to boost accuracy
-     * of speech recognition.
-     * Refer to
-     * [Cloud Speech API
+     * Optional. A list of strings containing words and phrases that the speech
+     * recognizer should recognize with higher likelihood.
+     * See [the Cloud Speech
      * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
      * for more details.
      * </pre>
@@ -1104,10 +1190,9 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The collection of phrase hints which are used to boost accuracy
-     * of speech recognition.
-     * Refer to
-     * [Cloud Speech API
+     * Optional. A list of strings containing words and phrases that the speech
+     * recognizer should recognize with higher likelihood.
+     * See [the Cloud Speech
      * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
      * for more details.
      * </pre>
@@ -1121,10 +1206,9 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The collection of phrase hints which are used to boost accuracy
-     * of speech recognition.
-     * Refer to
-     * [Cloud Speech API
+     * Optional. A list of strings containing words and phrases that the speech
+     * recognizer should recognize with higher likelihood.
+     * See [the Cloud Speech
      * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
      * for more details.
      * </pre>
@@ -1138,10 +1222,9 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The collection of phrase hints which are used to boost accuracy
-     * of speech recognition.
-     * Refer to
-     * [Cloud Speech API
+     * Optional. A list of strings containing words and phrases that the speech
+     * recognizer should recognize with higher likelihood.
+     * See [the Cloud Speech
      * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
      * for more details.
      * </pre>
@@ -1155,10 +1238,9 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The collection of phrase hints which are used to boost accuracy
-     * of speech recognition.
-     * Refer to
-     * [Cloud Speech API
+     * Optional. A list of strings containing words and phrases that the speech
+     * recognizer should recognize with higher likelihood.
+     * See [the Cloud Speech
      * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
      * for more details.
      * </pre>
@@ -1178,10 +1260,9 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The collection of phrase hints which are used to boost accuracy
-     * of speech recognition.
-     * Refer to
-     * [Cloud Speech API
+     * Optional. A list of strings containing words and phrases that the speech
+     * recognizer should recognize with higher likelihood.
+     * See [the Cloud Speech
      * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
      * for more details.
      * </pre>
@@ -1201,10 +1282,9 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The collection of phrase hints which are used to boost accuracy
-     * of speech recognition.
-     * Refer to
-     * [Cloud Speech API
+     * Optional. A list of strings containing words and phrases that the speech
+     * recognizer should recognize with higher likelihood.
+     * See [the Cloud Speech
      * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
      * for more details.
      * </pre>
@@ -1221,10 +1301,9 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The collection of phrase hints which are used to boost accuracy
-     * of speech recognition.
-     * Refer to
-     * [Cloud Speech API
+     * Optional. A list of strings containing words and phrases that the speech
+     * recognizer should recognize with higher likelihood.
+     * See [the Cloud Speech
      * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
      * for more details.
      * </pre>
@@ -1233,7 +1312,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearPhraseHints() {
       phraseHints_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1241,10 +1320,9 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The collection of phrase hints which are used to boost accuracy
-     * of speech recognition.
-     * Refer to
-     * [Cloud Speech API
+     * Optional. A list of strings containing words and phrases that the speech
+     * recognizer should recognize with higher likelihood.
+     * See [the Cloud Speech
      * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
      * for more details.
      * </pre>

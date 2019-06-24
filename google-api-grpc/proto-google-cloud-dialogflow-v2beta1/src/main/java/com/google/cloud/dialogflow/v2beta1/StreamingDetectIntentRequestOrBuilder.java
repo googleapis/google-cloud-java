@@ -18,7 +18,7 @@ public interface StreamingDetectIntentRequestOrBuilder
    * `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
    * ID&gt;/sessions/&lt;Session ID&gt;`. If `Environment ID` is not specified, we assume
    * default 'draft' environment. If `User ID` is not specified, we are using
-   * "-". It’s up to the API caller to choose an appropriate `Session ID` and
+   * "-". It's up to the API caller to choose an appropriate `Session ID` and
    * `User Id`. They can be a random numbers or some type of user and session
    * identifiers (preferably hashed). The length of the `Session ID` and
    * `User ID` must not exceed 36 characters.
@@ -37,7 +37,7 @@ public interface StreamingDetectIntentRequestOrBuilder
    * `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
    * ID&gt;/sessions/&lt;Session ID&gt;`. If `Environment ID` is not specified, we assume
    * default 'draft' environment. If `User ID` is not specified, we are using
-   * "-". It’s up to the API caller to choose an appropriate `Session ID` and
+   * "-". It's up to the API caller to choose an appropriate `Session ID` and
    * `User Id`. They can be a random numbers or some type of user and session
    * identifiers (preferably hashed). The length of the `Session ID` and
    * `User ID` must not exceed 36 characters.

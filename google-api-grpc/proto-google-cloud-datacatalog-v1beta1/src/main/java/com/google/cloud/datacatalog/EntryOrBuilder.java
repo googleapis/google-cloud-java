@@ -16,6 +16,8 @@ public interface EntryOrBuilder
    * [UpdateEntryRequest][google.cloud.datacatalog.v1beta1.UpdateEntryRequest].
    * The Data Catalog resource name of the entry in URL format. For example,
    * "projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}".
+   * Note that this Entry and its child resources may not actually be stored in
+   * the location in this name.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -29,6 +31,8 @@ public interface EntryOrBuilder
    * [UpdateEntryRequest][google.cloud.datacatalog.v1beta1.UpdateEntryRequest].
    * The Data Catalog resource name of the entry in URL format. For example,
    * "projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}".
+   * Note that this Entry and its child resources may not actually be stored in
+   * the location in this name.
    * </pre>
    *
    * <code>string name = 1;</code>

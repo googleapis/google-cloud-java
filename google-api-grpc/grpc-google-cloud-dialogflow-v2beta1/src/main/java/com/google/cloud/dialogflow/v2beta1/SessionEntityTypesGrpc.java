@@ -21,7 +21,7 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  * entity type at the session level.
  * For more information about entity types, see the
  * [Dialogflow
- * documentation](https://cloud.google.com/dialogflow-enterprise/docs/entities-overview).
+ * documentation](https://cloud.google.com/dialogflow/docs/entities-overview).
  * </pre>
  */
 @javax.annotation.Generated(
@@ -378,7 +378,7 @@ public final class SessionEntityTypesGrpc {
    * entity type at the session level.
    * For more information about entity types, see the
    * [Dialogflow
-   * documentation](https://cloud.google.com/dialogflow-enterprise/docs/entities-overview).
+   * documentation](https://cloud.google.com/dialogflow/docs/entities-overview).
    * </pre>
    */
   public abstract static class SessionEntityTypesImplBase implements io.grpc.BindableService {
@@ -510,7 +510,7 @@ public final class SessionEntityTypesGrpc {
    * entity type at the session level.
    * For more information about entity types, see the
    * [Dialogflow
-   * documentation](https://cloud.google.com/dialogflow-enterprise/docs/entities-overview).
+   * documentation](https://cloud.google.com/dialogflow/docs/entities-overview).
    * </pre>
    */
   public static final class SessionEntityTypesStub
@@ -631,7 +631,7 @@ public final class SessionEntityTypesGrpc {
    * entity type at the session level.
    * For more information about entity types, see the
    * [Dialogflow
-   * documentation](https://cloud.google.com/dialogflow-enterprise/docs/entities-overview).
+   * documentation](https://cloud.google.com/dialogflow/docs/entities-overview).
    * </pre>
    */
   public static final class SessionEntityTypesBlockingStub
@@ -734,7 +734,7 @@ public final class SessionEntityTypesGrpc {
    * entity type at the session level.
    * For more information about entity types, see the
    * [Dialogflow
-   * documentation](https://cloud.google.com/dialogflow-enterprise/docs/entities-overview).
+   * documentation](https://cloud.google.com/dialogflow/docs/entities-overview).
    * </pre>
    */
   public static final class SessionEntityTypesFutureStub

@@ -7,7 +7,9 @@ package com.google.cloud.kms.v1;
  *
  *
  * <pre>
- * Contains an HSM-generated attestation about a key operation.
+ * Contains an HSM-generated attestation about a key operation. For more
+ * information, see [Verifying attestations]
+ * (https://cloud.google.com/kms/docs/attest-key).
  * </pre>
  *
  * Protobuf type {@code google.cloud.kms.v1.KeyOperationAttestation}
@@ -101,13 +103,21 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Attestion formats provided by the HSM.
+   * Attestation formats provided by the HSM.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.kms.v1.KeyOperationAttestation.AttestationFormat}
    */
   public enum AttestationFormat implements com.google.protobuf.ProtocolMessageEnum {
-    /** <code>ATTESTATION_FORMAT_UNSPECIFIED = 0;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Not specified.
+     * </pre>
+     *
+     * <code>ATTESTATION_FORMAT_UNSPECIFIED = 0;</code>
+     */
     ATTESTATION_FORMAT_UNSPECIFIED(0),
     /**
      *
@@ -125,7 +135,7 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
      *
      * <pre>
      * Cavium HSM attestation V2 compressed with gzip. This is a new format
-     * Introduced in Cavium's version 3.2-08
+     * introduced in Cavium's version 3.2-08.
      * </pre>
      *
      * <code>CAVIUM_V2_COMPRESSED = 4;</code>
@@ -134,7 +144,15 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
     UNRECOGNIZED(-1),
     ;
 
-    /** <code>ATTESTATION_FORMAT_UNSPECIFIED = 0;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Not specified.
+     * </pre>
+     *
+     * <code>ATTESTATION_FORMAT_UNSPECIFIED = 0;</code>
+     */
     public static final int ATTESTATION_FORMAT_UNSPECIFIED_VALUE = 0;
     /**
      *
@@ -152,7 +170,7 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
      *
      * <pre>
      * Cavium HSM attestation V2 compressed with gzip. This is a new format
-     * Introduced in Cavium's version 3.2-08
+     * introduced in Cavium's version 3.2-08.
      * </pre>
      *
      * <code>CAVIUM_V2_COMPRESSED = 4;</code>
@@ -459,7 +477,9 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Contains an HSM-generated attestation about a key operation.
+   * Contains an HSM-generated attestation about a key operation. For more
+   * information, see [Verifying attestations]
+   * (https://cloud.google.com/kms/docs/attest-key).
    * </pre>
    *
    * Protobuf type {@code google.cloud.kms.v1.KeyOperationAttestation}

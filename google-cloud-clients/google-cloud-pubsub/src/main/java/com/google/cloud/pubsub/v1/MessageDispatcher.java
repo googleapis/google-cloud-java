@@ -87,6 +87,7 @@ class MessageDispatcher {
   private final AtomicBoolean extendDeadline = new AtomicBoolean(true);
   private final Lock jobLock;
   private ScheduledFuture<?> backgroundJob;
+  private ScheduledFuture<?> setExtendedDeadlineFuture;
 
   // To keep track of number of seconds the receiver takes to process messages.
   private final Distribution ackLatencyDistribution;
@@ -241,11 +242,15 @@ class MessageDispatcher {
                       int newDeadlineSec = computeDeadlineSeconds();
                       messageDeadlineSeconds.set(newDeadlineSec);
                       extendDeadlines();
-                      // Don't bother cancelling this when we stop. It'd just set an atomic boolean.
-                      systemExecutor.schedule(
-                          setExtendDeadline,
-                          newDeadlineSec - ackExpirationPadding.getSeconds(),
-                          TimeUnit.SECONDS);
+                      if (setExtendedDeadlineFuture != null && !backgroundJob.isDone()) {
+                        setExtendedDeadlineFuture.cancel(true);
+                      }
+
+                      setExtendedDeadlineFuture =
+                          systemExecutor.schedule(
+                              setExtendDeadline,
+                              newDeadlineSec - ackExpirationPadding.getSeconds(),
+                              TimeUnit.SECONDS);
                     }
                     processOutstandingAckOperations();
                   } catch (Throwable t) {
@@ -268,8 +273,12 @@ class MessageDispatcher {
     try {
       if (backgroundJob != null) {
         backgroundJob.cancel(false);
-        backgroundJob = null;
       }
+      if (setExtendedDeadlineFuture != null) {
+        setExtendedDeadlineFuture.cancel(true);
+      }
+      backgroundJob = null;
+      setExtendedDeadlineFuture = null;
     } finally {
       jobLock.unlock();
     }

@@ -29,6 +29,7 @@ public class DnsOptionsTest {
   @Test
   public void testInvalidTransport() {
     thrown.expect(IllegalArgumentException.class);
-    DnsOptions.newBuilder().setTransportOptions(EasyMock.createMock(TransportOptions.class));
+    DnsOptions.newBuilder()
+        .setTransportOptions(EasyMock.<TransportOptions>createMock(TransportOptions.class));
   }
 }

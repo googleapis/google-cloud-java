@@ -14,8 +14,7 @@ public interface LocationMetadataOrBuilder
    * <pre>
    * Indicates whether [CryptoKeys][google.cloud.kms.v1.CryptoKey] with
    * [protection_level][google.cloud.kms.v1.CryptoKeyVersionTemplate.protection_level]
-   * [HSM][google.cloud.kms.v1.ProtectionLevel.HSM] can be created in this
-   * location.
+   * [HSM][google.cloud.kms.v1.ProtectionLevel.HSM] can be created in this location.
    * </pre>
    *
    * <code>bool hsm_available = 1;</code>

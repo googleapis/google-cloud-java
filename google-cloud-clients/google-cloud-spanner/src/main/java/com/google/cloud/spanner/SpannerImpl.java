@@ -245,16 +245,6 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
   }
 
   /**
-   * Checks that the current context is still valid, throwing a CANCELLED or DEADLINE_EXCEEDED error
-   * if not.
-   */
-  static void checkContext(Context context) {
-    if (context.isCancelled()) {
-      throw newSpannerExceptionForCancellation(context, null);
-    }
-  }
-
-  /**
    * Encapsulates state to be passed to the {@link SpannerRpc} layer for a given session. Currently
    * used to select the {@link io.grpc.Channel} to be used in issuing the RPCs in a Session.
    */

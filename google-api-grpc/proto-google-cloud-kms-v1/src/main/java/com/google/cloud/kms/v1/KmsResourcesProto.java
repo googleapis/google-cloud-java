@@ -40,6 +40,14 @@ public final class KmsResourcesProto {
       internal_static_google_cloud_kms_v1_PublicKey_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_kms_v1_PublicKey_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_kms_v1_ImportJob_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_kms_v1_ImportJob_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_kms_v1_ImportJob_WrappingPublicKey_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_kms_v1_ImportJob_WrappingPublicKey_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -80,7 +88,7 @@ public final class KmsResourcesProto {
           + "tation.AttestationFormat\022\017\n\007content\030\005 \001("
           + "\014\"k\n\021AttestationFormat\022\"\n\036ATTESTATION_FO"
           + "RMAT_UNSPECIFIED\020\000\022\030\n\024CAVIUM_V1_COMPRESS"
-          + "ED\020\003\022\030\n\024CAVIUM_V2_COMPRESSED\020\004\"\270\t\n\020Crypt"
+          + "ED\020\003\022\030\n\024CAVIUM_V2_COMPRESSED\020\004\"\243\013\n\020Crypt"
           + "oKeyVersion\022\014\n\004name\030\001 \001(\t\022J\n\005state\030\003 \001(\016"
           + "2;.google.cloud.kms.v1.CryptoKeyVersion."
           + "CryptoKeyVersionState\022>\n\020protection_leve"
@@ -94,32 +102,58 @@ public final class KmsResourcesProto {
           + "otobuf.Timestamp\0220\n\014destroy_time\030\005 \001(\0132\032"
           + ".google.protobuf.Timestamp\0226\n\022destroy_ev"
           + "ent_time\030\006 \001(\0132\032.google.protobuf.Timesta"
-          + "mp\"\274\003\n\031CryptoKeyVersionAlgorithm\022,\n(CRYP"
-          + "TO_KEY_VERSION_ALGORITHM_UNSPECIFIED\020\000\022\037"
-          + "\n\033GOOGLE_SYMMETRIC_ENCRYPTION\020\001\022\034\n\030RSA_S"
-          + "IGN_PSS_2048_SHA256\020\002\022\034\n\030RSA_SIGN_PSS_30"
-          + "72_SHA256\020\003\022\034\n\030RSA_SIGN_PSS_4096_SHA256\020"
-          + "\004\022\036\n\032RSA_SIGN_PKCS1_2048_SHA256\020\005\022\036\n\032RSA"
-          + "_SIGN_PKCS1_3072_SHA256\020\006\022\036\n\032RSA_SIGN_PK"
-          + "CS1_4096_SHA256\020\007\022 \n\034RSA_DECRYPT_OAEP_20"
-          + "48_SHA256\020\010\022 \n\034RSA_DECRYPT_OAEP_3072_SHA"
-          + "256\020\t\022 \n\034RSA_DECRYPT_OAEP_4096_SHA256\020\n\022"
-          + "\027\n\023EC_SIGN_P256_SHA256\020\014\022\027\n\023EC_SIGN_P384"
-          + "_SHA384\020\r\"\232\001\n\025CryptoKeyVersionState\022(\n$C"
-          + "RYPTO_KEY_VERSION_STATE_UNSPECIFIED\020\000\022\026\n"
-          + "\022PENDING_GENERATION\020\005\022\013\n\007ENABLED\020\001\022\014\n\010DI"
-          + "SABLED\020\002\022\r\n\tDESTROYED\020\003\022\025\n\021DESTROY_SCHED"
-          + "ULED\020\004\"I\n\024CryptoKeyVersionView\022\'\n#CRYPTO"
-          + "_KEY_VERSION_VIEW_UNSPECIFIED\020\000\022\010\n\004FULL\020"
-          + "\001\"l\n\tPublicKey\022\013\n\003pem\030\001 \001(\t\022R\n\talgorithm"
-          + "\030\002 \001(\0162?.google.cloud.kms.v1.CryptoKeyVe"
-          + "rsion.CryptoKeyVersionAlgorithm*J\n\017Prote"
-          + "ctionLevel\022 \n\034PROTECTION_LEVEL_UNSPECIFI"
-          + "ED\020\000\022\014\n\010SOFTWARE\020\001\022\007\n\003HSM\020\002B\225\001\n\027com.goog"
-          + "le.cloud.kms.v1B\021KmsResourcesProtoP\001Z6go"
-          + "ogle.golang.org/genproto/googleapis/clou"
-          + "d/kms/v1;kms\370\001\001\252\002\023Google.Cloud.Kms.V1\312\002\023"
-          + "Google\\Cloud\\Kms\\V1b\006proto3"
+          + "mp\022\022\n\nimport_job\030\016 \001(\t\022/\n\013import_time\030\017 "
+          + "\001(\0132\032.google.protobuf.Timestamp\022\035\n\025impor"
+          + "t_failure_reason\030\020 \001(\t\"\234\004\n\031CryptoKeyVers"
+          + "ionAlgorithm\022,\n(CRYPTO_KEY_VERSION_ALGOR"
+          + "ITHM_UNSPECIFIED\020\000\022\037\n\033GOOGLE_SYMMETRIC_E"
+          + "NCRYPTION\020\001\022\034\n\030RSA_SIGN_PSS_2048_SHA256\020"
+          + "\002\022\034\n\030RSA_SIGN_PSS_3072_SHA256\020\003\022\034\n\030RSA_S"
+          + "IGN_PSS_4096_SHA256\020\004\022\034\n\030RSA_SIGN_PSS_40"
+          + "96_SHA512\020\017\022\036\n\032RSA_SIGN_PKCS1_2048_SHA25"
+          + "6\020\005\022\036\n\032RSA_SIGN_PKCS1_3072_SHA256\020\006\022\036\n\032R"
+          + "SA_SIGN_PKCS1_4096_SHA256\020\007\022\036\n\032RSA_SIGN_"
+          + "PKCS1_4096_SHA512\020\020\022 \n\034RSA_DECRYPT_OAEP_"
+          + "2048_SHA256\020\010\022 \n\034RSA_DECRYPT_OAEP_3072_S"
+          + "HA256\020\t\022 \n\034RSA_DECRYPT_OAEP_4096_SHA256\020"
+          + "\n\022 \n\034RSA_DECRYPT_OAEP_4096_SHA512\020\021\022\027\n\023E"
+          + "C_SIGN_P256_SHA256\020\014\022\027\n\023EC_SIGN_P384_SHA"
+          + "384\020\r\"\301\001\n\025CryptoKeyVersionState\022(\n$CRYPT"
+          + "O_KEY_VERSION_STATE_UNSPECIFIED\020\000\022\026\n\022PEN"
+          + "DING_GENERATION\020\005\022\013\n\007ENABLED\020\001\022\014\n\010DISABL"
+          + "ED\020\002\022\r\n\tDESTROYED\020\003\022\025\n\021DESTROY_SCHEDULED"
+          + "\020\004\022\022\n\016PENDING_IMPORT\020\006\022\021\n\rIMPORT_FAILED\020"
+          + "\007\"I\n\024CryptoKeyVersionView\022\'\n#CRYPTO_KEY_"
+          + "VERSION_VIEW_UNSPECIFIED\020\000\022\010\n\004FULL\020\001\"l\n\t"
+          + "PublicKey\022\013\n\003pem\030\001 \001(\t\022R\n\talgorithm\030\002 \001("
+          + "\0162?.google.cloud.kms.v1.CryptoKeyVersion"
+          + ".CryptoKeyVersionAlgorithm\"\246\006\n\tImportJob"
+          + "\022\014\n\004name\030\001 \001(\t\022B\n\rimport_method\030\002 \001(\0162+."
+          + "google.cloud.kms.v1.ImportJob.ImportMeth"
+          + "od\022>\n\020protection_level\030\t \001(\0162$.google.cl"
+          + "oud.kms.v1.ProtectionLevel\022/\n\013create_tim"
+          + "e\030\003 \001(\0132\032.google.protobuf.Timestamp\0221\n\rg"
+          + "enerate_time\030\004 \001(\0132\032.google.protobuf.Tim"
+          + "estamp\022/\n\013expire_time\030\005 \001(\0132\032.google.pro"
+          + "tobuf.Timestamp\0225\n\021expire_event_time\030\n \001"
+          + "(\0132\032.google.protobuf.Timestamp\022<\n\005state\030"
+          + "\006 \001(\0162-.google.cloud.kms.v1.ImportJob.Im"
+          + "portJobState\022D\n\npublic_key\030\007 \001(\01320.googl"
+          + "e.cloud.kms.v1.ImportJob.WrappingPublicK"
+          + "ey\022A\n\013attestation\030\010 \001(\0132,.google.cloud.k"
+          + "ms.v1.KeyOperationAttestation\032 \n\021Wrappin"
+          + "gPublicKey\022\013\n\003pem\030\001 \001(\t\"m\n\014ImportMethod\022"
+          + "\035\n\031IMPORT_METHOD_UNSPECIFIED\020\000\022\036\n\032RSA_OA"
+          + "EP_3072_SHA1_AES_256\020\001\022\036\n\032RSA_OAEP_4096_"
+          + "SHA1_AES_256\020\002\"c\n\016ImportJobState\022 \n\034IMPO"
+          + "RT_JOB_STATE_UNSPECIFIED\020\000\022\026\n\022PENDING_GE"
+          + "NERATION\020\001\022\n\n\006ACTIVE\020\002\022\013\n\007EXPIRED\020\003*J\n\017P"
+          + "rotectionLevel\022 \n\034PROTECTION_LEVEL_UNSPE"
+          + "CIFIED\020\000\022\014\n\010SOFTWARE\020\001\022\007\n\003HSM\020\002B\225\001\n\027com."
+          + "google.cloud.kms.v1B\021KmsResourcesProtoP\001"
+          + "Z6google.golang.org/genproto/googleapis/"
+          + "cloud/kms/v1;kms\370\001\001\252\002\023Google.Cloud.Kms.V"
+          + "1\312\002\023Google\\Cloud\\Kms\\V1b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -200,6 +234,9 @@ public final class KmsResourcesProto {
               "GenerateTime",
               "DestroyTime",
               "DestroyEventTime",
+              "ImportJob",
+              "ImportTime",
+              "ImportFailureReason",
             });
     internal_static_google_cloud_kms_v1_PublicKey_descriptor =
         getDescriptor().getMessageTypes().get(5);
@@ -208,6 +245,31 @@ public final class KmsResourcesProto {
             internal_static_google_cloud_kms_v1_PublicKey_descriptor,
             new java.lang.String[] {
               "Pem", "Algorithm",
+            });
+    internal_static_google_cloud_kms_v1_ImportJob_descriptor =
+        getDescriptor().getMessageTypes().get(6);
+    internal_static_google_cloud_kms_v1_ImportJob_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_kms_v1_ImportJob_descriptor,
+            new java.lang.String[] {
+              "Name",
+              "ImportMethod",
+              "ProtectionLevel",
+              "CreateTime",
+              "GenerateTime",
+              "ExpireTime",
+              "ExpireEventTime",
+              "State",
+              "PublicKey",
+              "Attestation",
+            });
+    internal_static_google_cloud_kms_v1_ImportJob_WrappingPublicKey_descriptor =
+        internal_static_google_cloud_kms_v1_ImportJob_descriptor.getNestedTypes().get(0);
+    internal_static_google_cloud_kms_v1_ImportJob_WrappingPublicKey_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_kms_v1_ImportJob_WrappingPublicKey_descriptor,
+            new java.lang.String[] {
+              "Pem",
             });
     com.google.api.AnnotationsProto.getDescriptor();
     com.google.protobuf.DurationProto.getDescriptor();
