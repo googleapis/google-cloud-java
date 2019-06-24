@@ -1110,6 +1110,11 @@
         <artifactId>google-cloud-recaptchaenterprise</artifactId>
         <version>0.8.1-SNAPSHOT</version><!--{x-version-update:google-cloud-recaptchaenterprise:current}-->
       </dependency>
+      <dependency>
+        <groupId>io.grafeas</groupId>
+        <artifactId>grafeas</artifactId>
+        <version>0.0.1-SNAPSHOT</version><!--{x-version-update:grafeas:current}-->
+      </dependency>
     </dependencies>
   </dependencyManagement>
 
