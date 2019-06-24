@@ -18,8 +18,16 @@ package com.google.cloud.devtools.containeranalysis.v1;
 import io.grafeas.v1.GrafeasSettings;
 import java.io.IOException;
 
+/**
+ * This internal class is used to link the ContainerAnalysisClient to GrafeasClient implementations.
+ * Given a ContainerAnalysisClient, we need to instantiate a GrafeasClient with the same
+ * configuration.
+ */
 class GrafeasUtils {
 
+  /**
+   * Converts ContainerAnalysisSettings to GrafeasSettings using the same configuration.
+   */
   static GrafeasSettings transformSettings(ContainerAnalysisSettings settings) throws IOException {
     return GrafeasSettings.newBuilder()
         .setClock(settings.getClock())
