@@ -16,7 +16,6 @@
 package com.google.cloud.devtools.containeranalysis.v1;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 
 import io.grafeas.v1.GrafeasClient;
 import io.grafeas.v1.GrafeasSettings;
@@ -27,7 +26,8 @@ public class GrafeasInteropTest {
 
   @Test
   public void createsGrafeasClient() throws IOException {
-    ContainerAnalysisClient client = ContainerAnalysisClient.create(ContainerAnalysisSettings.newBuilder().build());
+    ContainerAnalysisClient client =
+        ContainerAnalysisClient.create(ContainerAnalysisSettings.newBuilder().build());
     GrafeasClient grafeasClient = client.getGrafeasClient();
     System.out.println(grafeasClient);
     ContainerAnalysisSettings settings = client.getSettings();
@@ -38,9 +38,9 @@ public class GrafeasInteropTest {
     assertEquals(settings.getEndpoint(), grafeasSettings.getEndpoint());
     assertEquals(settings.getExecutorProvider(), grafeasSettings.getExecutorProvider());
     assertEquals(settings.getHeaderProvider(), grafeasSettings.getHeaderProvider());
-    assertEquals(settings.getTransportChannelProvider(), grafeasSettings.getTransportChannelProvider());
+    assertEquals(
+        settings.getTransportChannelProvider(), grafeasSettings.getTransportChannelProvider());
     assertEquals(settings.getWatchdogCheckInterval(), grafeasSettings.getWatchdogCheckInterval());
     assertEquals(settings.getWatchdogProvider(), grafeasSettings.getWatchdogProvider());
   }
-
 }

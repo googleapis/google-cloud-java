@@ -32,5 +32,4 @@ class GrafeasUtils {
         .setWatchdogProvider(settings.getWatchdogProvider())
         .build();
   }
-
 }

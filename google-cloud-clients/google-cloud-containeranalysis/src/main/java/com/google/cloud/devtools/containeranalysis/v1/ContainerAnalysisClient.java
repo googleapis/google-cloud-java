@@ -115,8 +115,6 @@ import javax.annotation.Generated;
 public class ContainerAnalysisClient implements BackgroundResource {
   private final ContainerAnalysisSettings settings;
   private final ContainerAnalysisStub stub;
-  private GrafeasClient grafeasClient;
-
   /**
    * Returns a new GrafeasClient with the same configured settings.
    *
