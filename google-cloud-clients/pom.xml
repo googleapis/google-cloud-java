@@ -471,6 +471,7 @@
     <module>google-cloud-video-intelligence</module>
     <module>google-cloud-webrisk</module>
     <module>google-cloud-websecurityscanner</module>
+    <module>grafeas</module>
   </modules>
   <pluginRepositories>
     <pluginRepository>
