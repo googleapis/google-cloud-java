@@ -116,16 +116,15 @@ public final class SpannerExceptionFactory {
       @Nullable Context context, @Nullable Throwable cause) {
     if (context != null && context.isCancelled()) {
       Throwable cancellationCause = context.cancellationCause();
+      Throwable throwable =
+          cause == null && cancellationCause == null
+              ? null
+              : MoreObjects.firstNonNull(cause, cancellationCause);
       if (cancellationCause instanceof TimeoutException) {
         return newSpannerException(
-            ErrorCode.DEADLINE_EXCEEDED,
-            "Current context exceeded deadline",
-            MoreObjects.firstNonNull(cause, cancellationCause));
+            ErrorCode.DEADLINE_EXCEEDED, "Current context exceeded deadline", throwable);
       } else {
-        return newSpannerException(
-            ErrorCode.CANCELLED,
-            "Current context was cancelled",
-            MoreObjects.firstNonNull(cause, cancellationCause));
+        return newSpannerException(ErrorCode.CANCELLED, "Current context was cancelled", throwable);
       }
     }
     return newSpannerException(
