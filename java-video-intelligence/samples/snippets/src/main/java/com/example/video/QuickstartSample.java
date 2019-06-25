@@ -39,7 +39,7 @@ public class QuickstartSample {
     // Instantiate a video intelligence client
     try (VideoIntelligenceServiceClient client = VideoIntelligenceServiceClient.create()) {
       // The Google Cloud Storage path to the video to annotate.
-      String gcsUri = "gs://demomaker/cat.mp4";
+      String gcsUri = "gs://cloud-samples-data/video/cat.mp4";
 
       // Create an operation that will contain the response when the operation completes.
       AnnotateVideoRequest request = AnnotateVideoRequest.newBuilder()
