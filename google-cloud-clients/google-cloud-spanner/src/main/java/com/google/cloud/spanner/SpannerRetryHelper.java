@@ -58,6 +58,15 @@ class SpannerRetryHelper {
     @Override
     public TimedAttemptSettings createNextAttempt(
         Throwable prevThrowable, T prevResponse, TimedAttemptSettings prevSettings) {
+      if (prevThrowable != null) {
+        long retryDelay = SpannerException.extractRetryDelay(prevThrowable);
+        if (retryDelay > -1L) {
+          return prevSettings
+              .toBuilder()
+              .setRandomizedRetryDelay(Duration.ofMillis(retryDelay))
+              .build();
+        }
+      }
       return null;
     }
 
