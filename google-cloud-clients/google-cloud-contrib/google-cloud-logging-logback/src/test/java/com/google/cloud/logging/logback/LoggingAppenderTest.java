@@ -22,6 +22,8 @@ import static org.easymock.EasyMock.capture;
 import static org.easymock.EasyMock.expectLastCall;
 import static org.easymock.EasyMock.replay;
 import static org.easymock.EasyMock.verify;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.fail;
 
 import ch.qos.logback.classic.Level;
@@ -36,12 +38,14 @@ import com.google.cloud.logging.LoggingOptions;
 import com.google.cloud.logging.Payload.StringPayload;
 import com.google.cloud.logging.Severity;
 import com.google.common.collect.ImmutableMap;
+import java.util.Map;
 import org.easymock.Capture;
 import org.easymock.EasyMock;
 import org.easymock.EasyMockRunner;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.slf4j.MDC;
 
 @RunWith(EasyMockRunner.class)
 public class LoggingAppenderTest {
@@ -245,5 +249,29 @@ public class LoggingAppenderTest {
     loggingEvent.setLevel(level);
     loggingEvent.setTimeStamp(timestamp);
     return loggingEvent;
+  }
+
+  @Test
+  public void testMdcValuesAreConvertedToLabelsWithPassingNullValues() {
+    MDC.put("mdc1", "value1");
+    MDC.put("mdc2", null);
+    MDC.put("mdc3", "value3");
+    logging.setFlushSeverity(Severity.ERROR);
+    Capture<Iterable<LogEntry>> capturedArgument = Capture.newInstance();
+    logging.write(capture(capturedArgument), (WriteOption) anyObject(), (WriteOption) anyObject());
+    expectLastCall().once();
+    replay(logging);
+    Timestamp timestamp = Timestamp.ofTimeSecondsAndNanos(100000, 0);
+    LoggingEvent loggingEvent = createLoggingEvent(Level.INFO, timestamp.getSeconds());
+    loggingAppender.start();
+    loggingAppender.doAppend(loggingEvent);
+    verify(logging);
+    MDC.remove("mdc1");
+    MDC.remove("mdc3");
+    Map<String, String> capturedArgumentMap =
+        capturedArgument.getValue().iterator().next().getLabels();
+    assertEquals("value1", capturedArgumentMap.get("mdc1"));
+    assertNull(capturedArgumentMap.get("mdc2"));
+    assertEquals("value3", capturedArgumentMap.get("mdc3"));
   }
 }
