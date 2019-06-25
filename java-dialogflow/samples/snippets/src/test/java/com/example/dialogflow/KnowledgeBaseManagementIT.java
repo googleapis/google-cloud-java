@@ -21,13 +21,14 @@ import static org.junit.Assert.assertEquals;
 
 import com.google.cloud.dialogflow.v2beta1.DeleteDocumentRequest;
 import com.google.cloud.dialogflow.v2beta1.Document;
+import com.google.cloud.dialogflow.v2beta1.DocumentName;
 import com.google.cloud.dialogflow.v2beta1.DocumentsClient;
 import com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers;
 import com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer;
 import com.google.cloud.dialogflow.v2beta1.KnowledgeBase;
+import com.google.cloud.dialogflow.v2beta1.KnowledgeBaseName;
 import com.google.cloud.dialogflow.v2beta1.KnowledgeBasesClient;
 import com.google.cloud.dialogflow.v2beta1.ProjectName;
-
 import com.google.common.collect.ImmutableList;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
@@ -48,6 +49,8 @@ import org.junit.runners.JUnit4;
 public class KnowledgeBaseManagementIT {
 
   private static String PROJECT_ID = System.getenv().get("GOOGLE_CLOUD_PROJECT");
+  private static String TEST_KNOWLEDGE_BASE_ID = "NjcyODA2NTU4MTk4OTIzMjY0MA";
+  private static String TEST_DOCUMENT_ID = "NjY2NDk4ODc5ODkyNjk3OTA3Mg";
   private static String SESSION_ID = "fake_session_for_testing";
   private static String LANGUAGE_CODE = "en-US";
   private static String KNOWLEDGE_BASE_NAME = "fake_knowledge_base_name";
@@ -71,13 +74,19 @@ public class KnowledgeBaseManagementIT {
         ProjectName projectName = ProjectName.of(PROJECT_ID);
         for (KnowledgeBase knowledgeBase :
             knowledgeBasesClient.listKnowledgeBases(projectName).iterateAll()) {
-          // Delete any documents in the knowledge base.
-          for (Document document : documentsClient.listDocuments(
-              knowledgeBase.getName()).iterateAll()) {
-            documentsClient.deleteDocumentCallable().call(
-                DeleteDocumentRequest.newBuilder().setName(document.getName()).build());
+          // DO NOT DELETE THE TEST KNOWLEDGE BASE
+          if (!knowledgeBase.getName().contains(TEST_KNOWLEDGE_BASE_ID)) {
+            // Delete any documents in the knowledge base.
+            for (Document document : documentsClient.listDocuments(
+                    knowledgeBase.getName()).iterateAll()) {
+              // DO NOT DELETE THE TEST DOCUMENT
+              if (!document.getName().contains(TEST_DOCUMENT_ID)) {
+                documentsClient.deleteDocumentCallable().call(
+                        DeleteDocumentRequest.newBuilder().setName(document.getName()).build());
+              }
+            }
+            knowledgeBasesClient.deleteKnowledgeBase(knowledgeBase.getName());
           }
-          knowledgeBasesClient.deleteKnowledgeBase(knowledgeBase.getName());
         }
       }
     }
@@ -88,7 +97,7 @@ public class KnowledgeBaseManagementIT {
   public void testKnowledgeBase() throws Exception {
     // Check the knowledge base does not yet exist
     List<KnowledgeBase> knowledgeBases = KnowledgeBaseManagement.listKnowledgeBases(PROJECT_ID);
-    assertEquals(0, knowledgeBases.size());
+    assertEquals(1, knowledgeBases.size());
 
     // Create a Knowledge Base
     KnowledgeBase knowledgeBase =
@@ -101,15 +110,22 @@ public class KnowledgeBaseManagementIT {
 
     // List Knowledge Bases
     knowledgeBases = KnowledgeBaseManagement.listKnowledgeBases(PROJECT_ID);
-    assertEquals(1, knowledgeBases.size());
-    assertEquals(KNOWLEDGE_BASE_NAME, knowledgeBases.get(0).getDisplayName());
+    assertEquals(2, knowledgeBases.size());
+
+    int found = 0;
+    for (KnowledgeBase knowledgeBase1 : knowledgeBases) {
+      if (knowledgeBase1.getDisplayName().equals(KNOWLEDGE_BASE_NAME)) {
+        found += 1;
+      }
+    }
+    assertEquals(1, found);
 
     // Delete the Knowledge Base
     KnowledgeBaseManagement.deleteKnowledgeBase(knowledgeBase.getName());
 
     // List Knowledge Bases (ensure delete success)
     knowledgeBases = KnowledgeBaseManagement.listKnowledgeBases(PROJECT_ID);
-    assertEquals(0, knowledgeBases.size());
+    assertEquals(1, knowledgeBases.size());
   }
 
   @Test
@@ -147,29 +163,25 @@ public class KnowledgeBaseManagementIT {
 
   @Test
   public void testDetectIntentKnowledge() throws Exception {
-    // Create a Knowledge Base
-    KnowledgeBase knowledgeBase =
-        KnowledgeBaseManagement.createKnowledgeBase(PROJECT_ID, KNOWLEDGE_BASE_NAME);
-    String knowledgeBaseName = knowledgeBase.getName();
+    KnowledgeBaseName knowledgeBaseName =  KnowledgeBaseName.newBuilder()
+            .setProject(PROJECT_ID).setKnowledgeBase(TEST_KNOWLEDGE_BASE_ID).build();
 
-    // Create a Document - one needs to exist in order for detectIntentKnowledge to provide answers.
-    Document document = DocumentManagement.createDocument(
-        knowledgeBaseName,
-        DOCUMENT_BASE_NAME,
-        "text/html",
-        "FAQ",
-        "https://cloud.google.com/storage/docs/faq");
-    assertEquals(DOCUMENT_BASE_NAME, document.getDisplayName());
+    DocumentName documentName = DocumentName.newBuilder()
+            .setProject(PROJECT_ID)
+            .setKnowledgeBase(TEST_KNOWLEDGE_BASE_ID)
+            .setDocument(TEST_DOCUMENT_ID)
+            .build();
 
-    Map<String, KnowledgeAnswers> allAnswers = DetectIntentKnowledge
-        .detectIntentKnowledge(PROJECT_ID, knowledgeBaseName, SESSION_ID, LANGUAGE_CODE, TEXTS);
+    Map<String, KnowledgeAnswers> allAnswers = DetectIntentKnowledge.detectIntentKnowledge(
+            PROJECT_ID, knowledgeBaseName.toString(), SESSION_ID, LANGUAGE_CODE, TEXTS);
     assertEquals(TEXTS.size(), allAnswers.size());
     int answersFound = 0;
     for (String text : TEXTS) {
       KnowledgeAnswers knowledgeAnswers = allAnswers.get(text);
       if (knowledgeAnswers.getAnswersCount() > 0) {
         Answer answer = knowledgeAnswers.getAnswers(0);
-        if (text.equals(answer.getFaqQuestion()) && document.getName().equals(answer.getSource())) {
+        if (text.equals(answer.getFaqQuestion())
+                && documentName.toString().equals(answer.getSource())) {
           answersFound++;
         }
       }
