@@ -76,17 +76,17 @@ public class SpannerOptionsTest {
   public void testSpannerDefaultRetrySettings() {
     RetrySettings defaultRetrySettings =
         RetrySettings.newBuilder()
-            .setInitialRetryDelay(Duration.ofSeconds(1L))
-            .setRetryDelayMultiplier(1.3D)
-            .setMaxRetryDelay(Duration.ofSeconds(32L))
-            .setInitialRpcTimeout(Duration.ofSeconds(60L))
-            .setRpcTimeoutMultiplier(1.0D)
-            .setMaxRpcTimeout(Duration.ofSeconds(60L))
-            .setTotalTimeout(Duration.ofSeconds(600L))
+            .setInitialRetryDelay(Duration.ofMillis(250L))
+            .setRetryDelayMultiplier(1.3)
+            .setMaxRetryDelay(Duration.ofMillis(32000L))
+            .setInitialRpcTimeout(Duration.ofMillis(60000L))
+            .setRpcTimeoutMultiplier(1.0)
+            .setMaxRpcTimeout(Duration.ofMillis(60000L))
+            .setTotalTimeout(Duration.ofMillis(600000L))
             .build();
     RetrySettings streamingRetrySettings =
         RetrySettings.newBuilder()
-            .setInitialRetryDelay(Duration.ofMillis(1000L))
+            .setInitialRetryDelay(Duration.ofMillis(250L))
             .setRetryDelayMultiplier(1.3)
             .setMaxRetryDelay(Duration.ofMillis(32000L))
             .setInitialRpcTimeout(Duration.ofMillis(120000L))
@@ -96,7 +96,7 @@ public class SpannerOptionsTest {
             .build();
     RetrySettings longRunningRetrySettings =
         RetrySettings.newBuilder()
-            .setInitialRetryDelay(Duration.ofMillis(1000L))
+            .setInitialRetryDelay(Duration.ofMillis(250L))
             .setRetryDelayMultiplier(1.3)
             .setMaxRetryDelay(Duration.ofMillis(32000L))
             .setInitialRpcTimeout(Duration.ofMillis(3600000L))
