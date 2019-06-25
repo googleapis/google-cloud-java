@@ -84,7 +84,8 @@ public class DetectIT {
 
   @Test
   public void testTrackObjectsGcs() throws Exception {
-    VideoAnnotationResults result = TrackObjects.trackObjectsGcs("gs://demomaker/cat.mp4");
+    VideoAnnotationResults result = TrackObjects.trackObjectsGcs(
+            "gs://cloud-samples-data/video/cat.mp4");
 
     boolean textExists = false;
     for (ObjectTrackingAnnotation objectTrackingAnnotation : result.getObjectAnnotationsList()) {
