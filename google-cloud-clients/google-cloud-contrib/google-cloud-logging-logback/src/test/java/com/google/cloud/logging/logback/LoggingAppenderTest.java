@@ -22,8 +22,6 @@ import static org.easymock.EasyMock.capture;
 import static org.easymock.EasyMock.expectLastCall;
 import static org.easymock.EasyMock.replay;
 import static org.easymock.EasyMock.verify;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
 import static org.junit.Assert.fail;
 
 import ch.qos.logback.classic.Level;
@@ -270,8 +268,8 @@ public class LoggingAppenderTest {
     MDC.remove("mdc3");
     Map<String, String> capturedArgumentMap =
         capturedArgument.getValue().iterator().next().getLabels();
-    assertEquals("value1", capturedArgumentMap.get("mdc1"));
-    assertNull(capturedArgumentMap.get("mdc2"));
-    assertEquals("value3", capturedArgumentMap.get("mdc3"));
+    assertThat(capturedArgumentMap.get("mdc1")).isEqualTo("value1");
+    assertThat(capturedArgumentMap.get("mdc2")).isNull();
+    assertThat(capturedArgumentMap.get("mdc3")).isEqualTo("value3");
   }
 }
