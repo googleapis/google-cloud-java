@@ -521,7 +521,7 @@ public abstract class ServiceOptions<
   }
 
   /**
-   * @param cachedService The currently cached service object
+   * @param cachedRpc The currently cached service object
    * @return true if the currently cached service object should be refreshed.
    */
   protected boolean shouldRefreshRpc(ServiceRpc cachedRpc) {
