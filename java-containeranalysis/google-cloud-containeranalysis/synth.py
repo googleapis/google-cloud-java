@@ -24,12 +24,39 @@ service = 'containeranalysis'
 versions = ['v1beta1', 'v1']
 config_pattern = '/google/devtools/containeranalysis/artman_containeranalysis_{version}.yaml'
 
+get_grafeas_code = """
+  /**
+   * Returns a new GrafeasClient with the same configured settings.
+   *
+   * @throws IOException
+   */
+  public GrafeasClient getGrafeasClient() throws IOException {
+    return GrafeasClient.create(GrafeasUtils.transformSettings(settings));
+  }
+"""
+
+
 for version in versions:
   library = gapic.java_library(
       service=service,
       version=version,
       config_path=config_pattern.format(version=version),
       artman_output_name='')
+
+  if version == 'v1':
+    # add GrafeasClient import
+    s.replace(
+        library / f'gapic-google-cloud-{service}-{version}/src/**/ContainerAnalysisClient.java',
+        'import com.google.iam.v1.TestIamPermissionsResponse;',
+        'import com.google.iam.v1.TestIamPermissionsResponse;\nimport io.grafeas.v1.GrafeasClient;'
+    )
+
+    # add getGrafeasClient()
+    s.replace(
+        library / f'gapic-google-cloud-{service}-{version}/src/**/ContainerAnalysisClient.java',
+        r'(\s+private final ContainerAnalysisStub stub;.*)',
+        f'\g<1>{get_grafeas_code}'
+    )
 
   s.copy(library / f'gapic-google-cloud-{service}-{version}/src', 'src')
   s.copy(library / f'grpc-google-cloud-{service}-{version}/src', f'../../google-api-grpc/grpc-google-cloud-{service}-{version}/src')
