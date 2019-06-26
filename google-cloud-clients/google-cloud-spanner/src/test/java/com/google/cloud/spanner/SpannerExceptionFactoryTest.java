@@ -20,6 +20,7 @@ import static com.google.common.truth.Truth.assertThat;
 
 import com.google.protobuf.Duration;
 import com.google.rpc.RetryInfo;
+import io.grpc.Context;
 import io.grpc.Metadata;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
@@ -27,6 +28,7 @@ import io.grpc.protobuf.ProtoUtils;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
+import org.mockito.Mockito;
 
 /** Unit tests for {@link SpannerExceptionFactory}. */
 @RunWith(JUnit4.class)
@@ -114,5 +116,15 @@ public class SpannerExceptionFactoryTest {
         SpannerExceptionFactory.newSpannerException(new StatusRuntimeException(status, trailers));
     assertThat(e).isInstanceOf(AbortedException.class);
     assertThat(((AbortedException) e).getRetryDelayInMillis()).isEqualTo(-1L);
+  }
+
+  @Test
+  public void nullCancel() {
+    Context context = Mockito.mock(Context.class);
+    Mockito.when(context.isCancelled()).thenReturn(true);
+    Mockito.when(context.cancellationCause()).thenReturn(null);
+    SpannerException spannerException =
+        SpannerExceptionFactory.newSpannerExceptionForCancellation(context, null);
+    assertThat(spannerException.getMessage()).isEqualTo("CANCELLED: Current context was cancelled");
   }
 }
