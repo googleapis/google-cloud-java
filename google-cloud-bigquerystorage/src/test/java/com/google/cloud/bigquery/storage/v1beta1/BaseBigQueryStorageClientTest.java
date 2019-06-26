@@ -137,7 +137,8 @@ public class BaseBigQueryStorageClientTest {
   @Test
   @SuppressWarnings("all")
   public void readRowsTest() throws Exception {
-    ReadRowsResponse expectedResponse = ReadRowsResponse.newBuilder().build();
+    long rowCount = 1340416618L;
+    ReadRowsResponse expectedResponse = ReadRowsResponse.newBuilder().setRowCount(rowCount).build();
     mockBigQueryStorage.addResponse(expectedResponse);
     StreamPosition readPosition = StreamPosition.newBuilder().build();
     ReadRowsRequest request = ReadRowsRequest.newBuilder().setReadPosition(readPosition).build();
