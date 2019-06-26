@@ -21,9 +21,21 @@ public final class DatasetOuterClass {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_datalabeling_v1beta1_InputConfig_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_datalabeling_v1beta1_TextMetadata_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_datalabeling_v1beta1_TextMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_datalabeling_v1beta1_ClassificationMetadata_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_datalabeling_v1beta1_ClassificationMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_datalabeling_v1beta1_GcsSource_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_datalabeling_v1beta1_GcsSource_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_datalabeling_v1beta1_BigQuerySource_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_datalabeling_v1beta1_BigQuerySource_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_datalabeling_v1beta1_OutputConfig_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -45,10 +57,6 @@ public final class DatasetOuterClass {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_datalabeling_v1beta1_AnnotatedDataset_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-      internal_static_google_cloud_datalabeling_v1beta1_AnnotatedDatasetMetadata_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_cloud_datalabeling_v1beta1_AnnotatedDatasetMetadata_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_datalabeling_v1beta1_LabelStats_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_datalabeling_v1beta1_LabelStats_fieldAccessorTable;
@@ -57,29 +65,13 @@ public final class DatasetOuterClass {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_datalabeling_v1beta1_LabelStats_ExampleCountEntry_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_datalabeling_v1beta1_AnnotatedDatasetMetadata_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_datalabeling_v1beta1_AnnotatedDatasetMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_datalabeling_v1beta1_Example_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_datalabeling_v1beta1_Example_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-      internal_static_google_cloud_datalabeling_v1beta1_ImagePayload_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_cloud_datalabeling_v1beta1_ImagePayload_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-      internal_static_google_cloud_datalabeling_v1beta1_TextPayload_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_cloud_datalabeling_v1beta1_TextPayload_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-      internal_static_google_cloud_datalabeling_v1beta1_VideoThumbnail_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_cloud_datalabeling_v1beta1_VideoThumbnail_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-      internal_static_google_cloud_datalabeling_v1beta1_VideoPayload_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_cloud_datalabeling_v1beta1_VideoPayload_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-      internal_static_google_cloud_datalabeling_v1beta1_AudioPayload_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_cloud_datalabeling_v1beta1_AudioPayload_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -91,39 +83,50 @@ public final class DatasetOuterClass {
     java.lang.String[] descriptorData = {
       "\n/google/cloud/datalabeling/v1beta1/data"
           + "set.proto\022!google.cloud.datalabeling.v1b"
-          + "eta1\0322google/cloud/datalabeling/v1beta1/"
-          + "annotation.proto\032?google/cloud/datalabel"
-          + "ing/v1beta1/human_annotation_config.prot"
-          + "o\032\036google/protobuf/duration.proto\032\034googl"
-          + "e/protobuf/struct.proto\032\037google/protobuf"
-          + "/timestamp.proto\032\034google/api/annotations"
-          + ".proto\"\272\001\n\007Dataset\022\014\n\004name\030\001 \001(\t\022\024\n\014disp"
-          + "lay_name\030\002 \001(\t\022\023\n\013description\030\003 \001(\t\022/\n\013c"
-          + "reate_time\030\004 \001(\0132\032.google.protobuf.Times"
-          + "tamp\022E\n\rinput_configs\030\005 \003(\0132..google.clo"
-          + "ud.datalabeling.v1beta1.InputConfig\"\233\001\n\013"
-          + "InputConfig\022B\n\ngcs_source\030\002 \001(\0132,.google"
-          + ".cloud.datalabeling.v1beta1.GcsSourceH\000\022"
-          + ">\n\tdata_type\030\001 \001(\0162+.google.cloud.datala"
-          + "beling.v1beta1.DataTypeB\010\n\006source\"1\n\tGcs"
-          + "Source\022\021\n\tinput_uri\030\001 \001(\t\022\021\n\tmime_type\030\002"
-          + " \001(\t\"\306\001\n\014OutputConfig\022L\n\017gcs_destination"
-          + "\030\001 \001(\01321.google.cloud.datalabeling.v1bet"
-          + "a1.GcsDestinationH\000\022Y\n\026gcs_folder_destin"
-          + "ation\030\002 \001(\01327.google.cloud.datalabeling."
-          + "v1beta1.GcsFolderDestinationH\000B\r\n\013destin"
-          + "ation\"7\n\016GcsDestination\022\022\n\noutput_uri\030\001 "
-          + "\001(\t\022\021\n\tmime_type\030\002 \001(\t\"1\n\024GcsFolderDesti"
-          + "nation\022\031\n\021output_folder_uri\030\001 \001(\t\"\311\002\n\010Da"
-          + "taItem\022H\n\rimage_payload\030\002 \001(\0132/.google.c"
-          + "loud.datalabeling.v1beta1.ImagePayloadH\000"
-          + "\022F\n\014text_payload\030\003 \001(\0132..google.cloud.da"
-          + "talabeling.v1beta1.TextPayloadH\000\022H\n\rvide"
-          + "o_payload\030\004 \001(\0132/.google.cloud.datalabel"
-          + "ing.v1beta1.VideoPayloadH\000\022H\n\raudio_payl"
-          + "oad\030\005 \001(\0132/.google.cloud.datalabeling.v1"
-          + "beta1.AudioPayloadH\000\022\014\n\004name\030\001 \001(\tB\t\n\007pa"
-          + "yload\"\343\003\n\020AnnotatedDataset\022\014\n\004name\030\001 \001(\t"
+          + "eta1\032\034google/api/annotations.proto\0322goog"
+          + "le/cloud/datalabeling/v1beta1/annotation"
+          + ".proto\0325google/cloud/datalabeling/v1beta"
+          + "1/data_payloads.proto\032?google/cloud/data"
+          + "labeling/v1beta1/human_annotation_config"
+          + ".proto\032\037google/protobuf/timestamp.proto\""
+          + "\357\001\n\007Dataset\022\014\n\004name\030\001 \001(\t\022\024\n\014display_nam"
+          + "e\030\002 \001(\t\022\023\n\013description\030\003 \001(\t\022/\n\013create_t"
+          + "ime\030\004 \001(\0132\032.google.protobuf.Timestamp\022E\n"
+          + "\rinput_configs\030\005 \003(\0132..google.cloud.data"
+          + "labeling.v1beta1.InputConfig\022\032\n\022blocking"
+          + "_resources\030\006 \003(\t\022\027\n\017data_item_count\030\007 \001("
+          + "\003\"\361\003\n\013InputConfig\022H\n\rtext_metadata\030\006 \001(\013"
+          + "2/.google.cloud.datalabeling.v1beta1.Tex"
+          + "tMetadataH\000\022B\n\ngcs_source\030\002 \001(\0132,.google"
+          + ".cloud.datalabeling.v1beta1.GcsSourceH\001\022"
+          + "L\n\017bigquery_source\030\005 \001(\01321.google.cloud."
+          + "datalabeling.v1beta1.BigQuerySourceH\001\022>\n"
+          + "\tdata_type\030\001 \001(\0162+.google.cloud.datalabe"
+          + "ling.v1beta1.DataType\022J\n\017annotation_type"
+          + "\030\003 \001(\01621.google.cloud.datalabeling.v1bet"
+          + "a1.AnnotationType\022Z\n\027classification_meta"
+          + "data\030\004 \001(\01329.google.cloud.datalabeling.v"
+          + "1beta1.ClassificationMetadataB\024\n\022data_ty"
+          + "pe_metadataB\010\n\006source\"%\n\014TextMetadata\022\025\n"
+          + "\rlanguage_code\030\001 \001(\t\"0\n\026ClassificationMe"
+          + "tadata\022\026\n\016is_multi_label\030\001 \001(\010\"1\n\tGcsSou"
+          + "rce\022\021\n\tinput_uri\030\001 \001(\t\022\021\n\tmime_type\030\002 \001("
+          + "\t\"#\n\016BigQuerySource\022\021\n\tinput_uri\030\001 \001(\t\"\306"
+          + "\001\n\014OutputConfig\022L\n\017gcs_destination\030\001 \001(\013"
+          + "21.google.cloud.datalabeling.v1beta1.Gcs"
+          + "DestinationH\000\022Y\n\026gcs_folder_destination\030"
+          + "\002 \001(\01327.google.cloud.datalabeling.v1beta"
+          + "1.GcsFolderDestinationH\000B\r\n\013destination\""
+          + "7\n\016GcsDestination\022\022\n\noutput_uri\030\001 \001(\t\022\021\n"
+          + "\tmime_type\030\002 \001(\t\"1\n\024GcsFolderDestination"
+          + "\022\031\n\021output_folder_uri\030\001 \001(\t\"\377\001\n\010DataItem"
+          + "\022H\n\rimage_payload\030\002 \001(\0132/.google.cloud.d"
+          + "atalabeling.v1beta1.ImagePayloadH\000\022F\n\014te"
+          + "xt_payload\030\003 \001(\0132..google.cloud.datalabe"
+          + "ling.v1beta1.TextPayloadH\000\022H\n\rvideo_payl"
+          + "oad\030\004 \001(\0132/.google.cloud.datalabeling.v1"
+          + "beta1.VideoPayloadH\000\022\014\n\004name\030\001 \001(\tB\t\n\007pa"
+          + "yload\"\377\003\n\020AnnotatedDataset\022\014\n\004name\030\001 \001(\t"
           + "\022\024\n\014display_name\030\002 \001(\t\022\023\n\013description\030\t "
           + "\001(\t\022N\n\021annotation_source\030\003 \001(\01623.google."
           + "cloud.datalabeling.v1beta1.AnnotationSou"
@@ -135,63 +138,51 @@ public final class DatasetOuterClass {
           + "ats\022/\n\013create_time\030\007 \001(\0132\032.google.protob"
           + "uf.Timestamp\022M\n\010metadata\030\n \001(\0132;.google."
           + "cloud.datalabeling.v1beta1.AnnotatedData"
-          + "setMetadata\"\242\010\n\030AnnotatedDatasetMetadata"
-          + "\022Y\n\027human_annotation_config\030\001 \001(\01328.goog"
-          + "le.cloud.datalabeling.v1beta1.HumanAnnot"
-          + "ationConfig\022c\n\033image_classification_conf"
-          + "ig\030\002 \001(\0132<.google.cloud.datalabeling.v1b"
-          + "eta1.ImageClassificationConfigH\000\022U\n\024boun"
-          + "ding_poly_config\030\003 \001(\01325.google.cloud.da"
-          + "talabeling.v1beta1.BoundingPolyConfigH\000\022"
-          + "L\n\017polyline_config\030\004 \001(\01321.google.cloud."
-          + "datalabeling.v1beta1.PolylineConfigH\000\022T\n"
-          + "\023segmentation_config\030\005 \001(\01325.google.clou"
-          + "d.datalabeling.v1beta1.SegmentationConfi"
-          + "gH\000\022c\n\033video_classification_config\030\006 \001(\013"
-          + "2<.google.cloud.datalabeling.v1beta1.Vid"
-          + "eoClassificationConfigH\000\022[\n\027object_detec"
-          + "tion_config\030\007 \001(\01328.google.cloud.datalab"
-          + "eling.v1beta1.ObjectDetectionConfigH\000\022Y\n"
-          + "\026object_tracking_config\030\010 \001(\01327.google.c"
-          + "loud.datalabeling.v1beta1.ObjectTracking"
-          + "ConfigH\000\022F\n\014event_config\030\t \001(\0132..google."
-          + "cloud.datalabeling.v1beta1.EventConfigH\000"
-          + "\022a\n\032text_classification_config\030\n \001(\0132;.g"
-          + "oogle.cloud.datalabeling.v1beta1.TextCla"
-          + "ssificationConfigH\000\022f\n\035text_entity_extra"
-          + "ction_config\030\013 \001(\0132=.google.cloud.datala"
-          + "beling.v1beta1.TextEntityExtractionConfi"
-          + "gH\000B\033\n\031annotation_request_config\"\231\001\n\nLab"
-          + "elStats\022V\n\rexample_count\030\001 \003(\0132?.google."
-          + "cloud.datalabeling.v1beta1.LabelStats.Ex"
-          + "ampleCountEntry\0323\n\021ExampleCountEntry\022\013\n\003"
-          + "key\030\001 \001(\t\022\r\n\005value\030\002 \001(\003:\0028\001\"\214\003\n\007Example"
-          + "\022H\n\rimage_payload\030\002 \001(\0132/.google.cloud.d"
-          + "atalabeling.v1beta1.ImagePayloadH\000\022F\n\014te"
-          + "xt_payload\030\006 \001(\0132..google.cloud.datalabe"
-          + "ling.v1beta1.TextPayloadH\000\022H\n\rvideo_payl"
-          + "oad\030\007 \001(\0132/.google.cloud.datalabeling.v1"
-          + "beta1.VideoPayloadH\000\022H\n\raudio_payload\030\010 "
-          + "\001(\0132/.google.cloud.datalabeling.v1beta1."
-          + "AudioPayloadH\000\022\014\n\004name\030\001 \001(\t\022B\n\013annotati"
-          + "ons\030\005 \003(\0132-.google.cloud.datalabeling.v1"
-          + "beta1.AnnotationB\t\n\007payload\"M\n\014ImagePayl"
-          + "oad\022\021\n\tmime_type\030\001 \001(\t\022\027\n\017image_thumbnai"
-          + "l\030\002 \001(\014\022\021\n\timage_uri\030\003 \001(\t\"#\n\013TextPayloa"
-          + "d\022\024\n\014text_content\030\001 \001(\t\"S\n\016VideoThumbnai"
-          + "l\022\021\n\tthumbnail\030\001 \001(\014\022.\n\013time_offset\030\002 \001("
-          + "\0132\031.google.protobuf.Duration\"\225\001\n\014VideoPa"
-          + "yload\022\021\n\tmime_type\030\001 \001(\t\022\021\n\tvideo_uri\030\002 "
-          + "\001(\t\022K\n\020video_thumbnails\030\003 \003(\01321.google.c"
-          + "loud.datalabeling.v1beta1.VideoThumbnail"
-          + "\022\022\n\nframe_rate\030\004 \001(\002\"<\n\014AudioPayload\022\021\n\t"
-          + "audio_uri\030\001 \001(\t\022\031\n\021sample_rate_hertz\030\003 \001"
-          + "(\005*P\n\010DataType\022\031\n\025DATA_TYPE_UNSPECIFIED\020"
-          + "\000\022\t\n\005IMAGE\020\001\022\t\n\005VIDEO\020\002\022\010\n\004TEXT\020\004\022\t\n\005AUD"
-          + "IO\020\005Bx\n%com.google.cloud.datalabeling.v1"
-          + "beta1P\001ZMgoogle.golang.org/genproto/goog"
-          + "leapis/cloud/datalabeling/v1beta1;datala"
-          + "belingb\006proto3"
+          + "setMetadata\022\032\n\022blocking_resources\030\013 \003(\t\""
+          + "\231\001\n\nLabelStats\022V\n\rexample_count\030\001 \003(\0132?."
+          + "google.cloud.datalabeling.v1beta1.LabelS"
+          + "tats.ExampleCountEntry\0323\n\021ExampleCountEn"
+          + "try\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\003:\0028\001\"\242\010\n\030"
+          + "AnnotatedDatasetMetadata\022c\n\033image_classi"
+          + "fication_config\030\002 \001(\0132<.google.cloud.dat"
+          + "alabeling.v1beta1.ImageClassificationCon"
+          + "figH\000\022U\n\024bounding_poly_config\030\003 \001(\01325.go"
+          + "ogle.cloud.datalabeling.v1beta1.Bounding"
+          + "PolyConfigH\000\022L\n\017polyline_config\030\004 \001(\01321."
+          + "google.cloud.datalabeling.v1beta1.Polyli"
+          + "neConfigH\000\022T\n\023segmentation_config\030\005 \001(\0132"
+          + "5.google.cloud.datalabeling.v1beta1.Segm"
+          + "entationConfigH\000\022c\n\033video_classification"
+          + "_config\030\006 \001(\0132<.google.cloud.datalabelin"
+          + "g.v1beta1.VideoClassificationConfigH\000\022[\n"
+          + "\027object_detection_config\030\007 \001(\01328.google."
+          + "cloud.datalabeling.v1beta1.ObjectDetecti"
+          + "onConfigH\000\022Y\n\026object_tracking_config\030\010 \001"
+          + "(\01327.google.cloud.datalabeling.v1beta1.O"
+          + "bjectTrackingConfigH\000\022F\n\014event_config\030\t "
+          + "\001(\0132..google.cloud.datalabeling.v1beta1."
+          + "EventConfigH\000\022a\n\032text_classification_con"
+          + "fig\030\n \001(\0132;.google.cloud.datalabeling.v1"
+          + "beta1.TextClassificationConfigH\000\022f\n\035text"
+          + "_entity_extraction_config\030\013 \001(\0132=.google"
+          + ".cloud.datalabeling.v1beta1.TextEntityEx"
+          + "tractionConfigH\000\022Y\n\027human_annotation_con"
+          + "fig\030\001 \001(\01328.google.cloud.datalabeling.v1"
+          + "beta1.HumanAnnotationConfigB\033\n\031annotatio"
+          + "n_request_config\"\302\002\n\007Example\022H\n\rimage_pa"
+          + "yload\030\002 \001(\0132/.google.cloud.datalabeling."
+          + "v1beta1.ImagePayloadH\000\022F\n\014text_payload\030\006"
+          + " \001(\0132..google.cloud.datalabeling.v1beta1"
+          + ".TextPayloadH\000\022H\n\rvideo_payload\030\007 \001(\0132/."
+          + "google.cloud.datalabeling.v1beta1.VideoP"
+          + "ayloadH\000\022\014\n\004name\030\001 \001(\t\022B\n\013annotations\030\005 "
+          + "\003(\0132-.google.cloud.datalabeling.v1beta1."
+          + "AnnotationB\t\n\007payload*W\n\010DataType\022\031\n\025DAT"
+          + "A_TYPE_UNSPECIFIED\020\000\022\t\n\005IMAGE\020\001\022\t\n\005VIDEO"
+          + "\020\002\022\010\n\004TEXT\020\004\022\020\n\014GENERAL_DATA\020\006Bx\n%com.go"
+          + "ogle.cloud.datalabeling.v1beta1P\001ZMgoogl"
+          + "e.golang.org/genproto/googleapis/cloud/d"
+          + "atalabeling/v1beta1;datalabelingb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -204,12 +195,11 @@ public final class DatasetOuterClass {
     com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
         descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.cloud.datalabeling.v1beta1.AnnotationOuterClass.getDescriptor(),
-          com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfigOuterClass.getDescriptor(),
-          com.google.protobuf.DurationProto.getDescriptor(),
-          com.google.protobuf.StructProto.getDescriptor(),
-          com.google.protobuf.TimestampProto.getDescriptor(),
           com.google.api.AnnotationsProto.getDescriptor(),
+          com.google.cloud.datalabeling.v1beta1.AnnotationOuterClass.getDescriptor(),
+          com.google.cloud.datalabeling.v1beta1.DataPayloads.getDescriptor(),
+          com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfigOuterClass.getDescriptor(),
+          com.google.protobuf.TimestampProto.getDescriptor(),
         },
         assigner);
     internal_static_google_cloud_datalabeling_v1beta1_Dataset_descriptor =
@@ -218,7 +208,13 @@ public final class DatasetOuterClass {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datalabeling_v1beta1_Dataset_descriptor,
             new java.lang.String[] {
-              "Name", "DisplayName", "Description", "CreateTime", "InputConfigs",
+              "Name",
+              "DisplayName",
+              "Description",
+              "CreateTime",
+              "InputConfigs",
+              "BlockingResources",
+              "DataItemCount",
             });
     internal_static_google_cloud_datalabeling_v1beta1_InputConfig_descriptor =
         getDescriptor().getMessageTypes().get(1);
@@ -226,18 +222,49 @@ public final class DatasetOuterClass {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datalabeling_v1beta1_InputConfig_descriptor,
             new java.lang.String[] {
-              "GcsSource", "DataType", "Source",
+              "TextMetadata",
+              "GcsSource",
+              "BigquerySource",
+              "DataType",
+              "AnnotationType",
+              "ClassificationMetadata",
+              "DataTypeMetadata",
+              "Source",
+            });
+    internal_static_google_cloud_datalabeling_v1beta1_TextMetadata_descriptor =
+        getDescriptor().getMessageTypes().get(2);
+    internal_static_google_cloud_datalabeling_v1beta1_TextMetadata_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_datalabeling_v1beta1_TextMetadata_descriptor,
+            new java.lang.String[] {
+              "LanguageCode",
+            });
+    internal_static_google_cloud_datalabeling_v1beta1_ClassificationMetadata_descriptor =
+        getDescriptor().getMessageTypes().get(3);
+    internal_static_google_cloud_datalabeling_v1beta1_ClassificationMetadata_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_datalabeling_v1beta1_ClassificationMetadata_descriptor,
+            new java.lang.String[] {
+              "IsMultiLabel",
             });
     internal_static_google_cloud_datalabeling_v1beta1_GcsSource_descriptor =
-        getDescriptor().getMessageTypes().get(2);
+        getDescriptor().getMessageTypes().get(4);
     internal_static_google_cloud_datalabeling_v1beta1_GcsSource_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datalabeling_v1beta1_GcsSource_descriptor,
             new java.lang.String[] {
               "InputUri", "MimeType",
             });
+    internal_static_google_cloud_datalabeling_v1beta1_BigQuerySource_descriptor =
+        getDescriptor().getMessageTypes().get(5);
+    internal_static_google_cloud_datalabeling_v1beta1_BigQuerySource_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_datalabeling_v1beta1_BigQuerySource_descriptor,
+            new java.lang.String[] {
+              "InputUri",
+            });
     internal_static_google_cloud_datalabeling_v1beta1_OutputConfig_descriptor =
-        getDescriptor().getMessageTypes().get(3);
+        getDescriptor().getMessageTypes().get(6);
     internal_static_google_cloud_datalabeling_v1beta1_OutputConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datalabeling_v1beta1_OutputConfig_descriptor,
@@ -245,7 +272,7 @@ public final class DatasetOuterClass {
               "GcsDestination", "GcsFolderDestination", "Destination",
             });
     internal_static_google_cloud_datalabeling_v1beta1_GcsDestination_descriptor =
-        getDescriptor().getMessageTypes().get(4);
+        getDescriptor().getMessageTypes().get(7);
     internal_static_google_cloud_datalabeling_v1beta1_GcsDestination_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datalabeling_v1beta1_GcsDestination_descriptor,
@@ -253,7 +280,7 @@ public final class DatasetOuterClass {
               "OutputUri", "MimeType",
             });
     internal_static_google_cloud_datalabeling_v1beta1_GcsFolderDestination_descriptor =
-        getDescriptor().getMessageTypes().get(5);
+        getDescriptor().getMessageTypes().get(8);
     internal_static_google_cloud_datalabeling_v1beta1_GcsFolderDestination_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datalabeling_v1beta1_GcsFolderDestination_descriptor,
@@ -261,15 +288,15 @@ public final class DatasetOuterClass {
               "OutputFolderUri",
             });
     internal_static_google_cloud_datalabeling_v1beta1_DataItem_descriptor =
-        getDescriptor().getMessageTypes().get(6);
+        getDescriptor().getMessageTypes().get(9);
     internal_static_google_cloud_datalabeling_v1beta1_DataItem_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datalabeling_v1beta1_DataItem_descriptor,
             new java.lang.String[] {
-              "ImagePayload", "TextPayload", "VideoPayload", "AudioPayload", "Name", "Payload",
+              "ImagePayload", "TextPayload", "VideoPayload", "Name", "Payload",
             });
     internal_static_google_cloud_datalabeling_v1beta1_AnnotatedDataset_descriptor =
-        getDescriptor().getMessageTypes().get(7);
+        getDescriptor().getMessageTypes().get(10);
     internal_static_google_cloud_datalabeling_v1beta1_AnnotatedDataset_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datalabeling_v1beta1_AnnotatedDataset_descriptor,
@@ -284,28 +311,10 @@ public final class DatasetOuterClass {
               "LabelStats",
               "CreateTime",
               "Metadata",
-            });
-    internal_static_google_cloud_datalabeling_v1beta1_AnnotatedDatasetMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(8);
-    internal_static_google_cloud_datalabeling_v1beta1_AnnotatedDatasetMetadata_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-            internal_static_google_cloud_datalabeling_v1beta1_AnnotatedDatasetMetadata_descriptor,
-            new java.lang.String[] {
-              "HumanAnnotationConfig",
-              "ImageClassificationConfig",
-              "BoundingPolyConfig",
-              "PolylineConfig",
-              "SegmentationConfig",
-              "VideoClassificationConfig",
-              "ObjectDetectionConfig",
-              "ObjectTrackingConfig",
-              "EventConfig",
-              "TextClassificationConfig",
-              "TextEntityExtractionConfig",
-              "AnnotationRequestConfig",
+              "BlockingResources",
             });
     internal_static_google_cloud_datalabeling_v1beta1_LabelStats_descriptor =
-        getDescriptor().getMessageTypes().get(9);
+        getDescriptor().getMessageTypes().get(11);
     internal_static_google_cloud_datalabeling_v1beta1_LabelStats_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datalabeling_v1beta1_LabelStats_descriptor,
@@ -322,66 +331,38 @@ public final class DatasetOuterClass {
             new java.lang.String[] {
               "Key", "Value",
             });
+    internal_static_google_cloud_datalabeling_v1beta1_AnnotatedDatasetMetadata_descriptor =
+        getDescriptor().getMessageTypes().get(12);
+    internal_static_google_cloud_datalabeling_v1beta1_AnnotatedDatasetMetadata_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_datalabeling_v1beta1_AnnotatedDatasetMetadata_descriptor,
+            new java.lang.String[] {
+              "ImageClassificationConfig",
+              "BoundingPolyConfig",
+              "PolylineConfig",
+              "SegmentationConfig",
+              "VideoClassificationConfig",
+              "ObjectDetectionConfig",
+              "ObjectTrackingConfig",
+              "EventConfig",
+              "TextClassificationConfig",
+              "TextEntityExtractionConfig",
+              "HumanAnnotationConfig",
+              "AnnotationRequestConfig",
+            });
     internal_static_google_cloud_datalabeling_v1beta1_Example_descriptor =
-        getDescriptor().getMessageTypes().get(10);
+        getDescriptor().getMessageTypes().get(13);
     internal_static_google_cloud_datalabeling_v1beta1_Example_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datalabeling_v1beta1_Example_descriptor,
             new java.lang.String[] {
-              "ImagePayload",
-              "TextPayload",
-              "VideoPayload",
-              "AudioPayload",
-              "Name",
-              "Annotations",
-              "Payload",
+              "ImagePayload", "TextPayload", "VideoPayload", "Name", "Annotations", "Payload",
             });
-    internal_static_google_cloud_datalabeling_v1beta1_ImagePayload_descriptor =
-        getDescriptor().getMessageTypes().get(11);
-    internal_static_google_cloud_datalabeling_v1beta1_ImagePayload_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-            internal_static_google_cloud_datalabeling_v1beta1_ImagePayload_descriptor,
-            new java.lang.String[] {
-              "MimeType", "ImageThumbnail", "ImageUri",
-            });
-    internal_static_google_cloud_datalabeling_v1beta1_TextPayload_descriptor =
-        getDescriptor().getMessageTypes().get(12);
-    internal_static_google_cloud_datalabeling_v1beta1_TextPayload_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-            internal_static_google_cloud_datalabeling_v1beta1_TextPayload_descriptor,
-            new java.lang.String[] {
-              "TextContent",
-            });
-    internal_static_google_cloud_datalabeling_v1beta1_VideoThumbnail_descriptor =
-        getDescriptor().getMessageTypes().get(13);
-    internal_static_google_cloud_datalabeling_v1beta1_VideoThumbnail_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-            internal_static_google_cloud_datalabeling_v1beta1_VideoThumbnail_descriptor,
-            new java.lang.String[] {
-              "Thumbnail", "TimeOffset",
-            });
-    internal_static_google_cloud_datalabeling_v1beta1_VideoPayload_descriptor =
-        getDescriptor().getMessageTypes().get(14);
-    internal_static_google_cloud_datalabeling_v1beta1_VideoPayload_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-            internal_static_google_cloud_datalabeling_v1beta1_VideoPayload_descriptor,
-            new java.lang.String[] {
-              "MimeType", "VideoUri", "VideoThumbnails", "FrameRate",
-            });
-    internal_static_google_cloud_datalabeling_v1beta1_AudioPayload_descriptor =
-        getDescriptor().getMessageTypes().get(15);
-    internal_static_google_cloud_datalabeling_v1beta1_AudioPayload_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-            internal_static_google_cloud_datalabeling_v1beta1_AudioPayload_descriptor,
-            new java.lang.String[] {
-              "AudioUri", "SampleRateHertz",
-            });
-    com.google.cloud.datalabeling.v1beta1.AnnotationOuterClass.getDescriptor();
-    com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfigOuterClass.getDescriptor();
-    com.google.protobuf.DurationProto.getDescriptor();
-    com.google.protobuf.StructProto.getDescriptor();
-    com.google.protobuf.TimestampProto.getDescriptor();
     com.google.api.AnnotationsProto.getDescriptor();
+    com.google.cloud.datalabeling.v1beta1.AnnotationOuterClass.getDescriptor();
+    com.google.cloud.datalabeling.v1beta1.DataPayloads.getDescriptor();
+    com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfigOuterClass.getDescriptor();
+    com.google.protobuf.TimestampProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

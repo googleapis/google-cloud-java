@@ -111,24 +111,6 @@ public final class DataItem extends com.google.protobuf.GeneratedMessageV3
               payloadCase_ = 4;
               break;
             }
-          case 42:
-            {
-              com.google.cloud.datalabeling.v1beta1.AudioPayload.Builder subBuilder = null;
-              if (payloadCase_ == 5) {
-                subBuilder =
-                    ((com.google.cloud.datalabeling.v1beta1.AudioPayload) payload_).toBuilder();
-              }
-              payload_ =
-                  input.readMessage(
-                      com.google.cloud.datalabeling.v1beta1.AudioPayload.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.cloud.datalabeling.v1beta1.AudioPayload) payload_);
-                payload_ = subBuilder.buildPartial();
-              }
-              payloadCase_ = 5;
-              break;
-            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -170,7 +152,6 @@ public final class DataItem extends com.google.protobuf.GeneratedMessageV3
     IMAGE_PAYLOAD(2),
     TEXT_PAYLOAD(3),
     VIDEO_PAYLOAD(4),
-    AUDIO_PAYLOAD(5),
     PAYLOAD_NOT_SET(0);
     private final int value;
 
@@ -191,8 +172,6 @@ public final class DataItem extends com.google.protobuf.GeneratedMessageV3
           return TEXT_PAYLOAD;
         case 4:
           return VIDEO_PAYLOAD;
-        case 5:
-          return AUDIO_PAYLOAD;
         case 0:
           return PAYLOAD_NOT_SET;
         default:
@@ -341,50 +320,6 @@ public final class DataItem extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.datalabeling.v1beta1.VideoPayload.getDefaultInstance();
   }
 
-  public static final int AUDIO_PAYLOAD_FIELD_NUMBER = 5;
-  /**
-   *
-   *
-   * <pre>
-   * The audio payload, a container of the audio uri.
-   * </pre>
-   *
-   * <code>.google.cloud.datalabeling.v1beta1.AudioPayload audio_payload = 5;</code>
-   */
-  public boolean hasAudioPayload() {
-    return payloadCase_ == 5;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * The audio payload, a container of the audio uri.
-   * </pre>
-   *
-   * <code>.google.cloud.datalabeling.v1beta1.AudioPayload audio_payload = 5;</code>
-   */
-  public com.google.cloud.datalabeling.v1beta1.AudioPayload getAudioPayload() {
-    if (payloadCase_ == 5) {
-      return (com.google.cloud.datalabeling.v1beta1.AudioPayload) payload_;
-    }
-    return com.google.cloud.datalabeling.v1beta1.AudioPayload.getDefaultInstance();
-  }
-  /**
-   *
-   *
-   * <pre>
-   * The audio payload, a container of the audio uri.
-   * </pre>
-   *
-   * <code>.google.cloud.datalabeling.v1beta1.AudioPayload audio_payload = 5;</code>
-   */
-  public com.google.cloud.datalabeling.v1beta1.AudioPayloadOrBuilder getAudioPayloadOrBuilder() {
-    if (payloadCase_ == 5) {
-      return (com.google.cloud.datalabeling.v1beta1.AudioPayload) payload_;
-    }
-    return com.google.cloud.datalabeling.v1beta1.AudioPayload.getDefaultInstance();
-  }
-
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -456,9 +391,6 @@ public final class DataItem extends com.google.protobuf.GeneratedMessageV3
     if (payloadCase_ == 4) {
       output.writeMessage(4, (com.google.cloud.datalabeling.v1beta1.VideoPayload) payload_);
     }
-    if (payloadCase_ == 5) {
-      output.writeMessage(5, (com.google.cloud.datalabeling.v1beta1.AudioPayload) payload_);
-    }
     unknownFields.writeTo(output);
   }
 
@@ -485,11 +417,6 @@ public final class DataItem extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               4, (com.google.cloud.datalabeling.v1beta1.VideoPayload) payload_);
-    }
-    if (payloadCase_ == 5) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              5, (com.google.cloud.datalabeling.v1beta1.AudioPayload) payload_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -519,9 +446,6 @@ public final class DataItem extends com.google.protobuf.GeneratedMessageV3
       case 4:
         if (!getVideoPayload().equals(other.getVideoPayload())) return false;
         break;
-      case 5:
-        if (!getAudioPayload().equals(other.getAudioPayload())) return false;
-        break;
       case 0:
       default:
     }
@@ -550,10 +474,6 @@ public final class DataItem extends com.google.protobuf.GeneratedMessageV3
       case 4:
         hash = (37 * hash) + VIDEO_PAYLOAD_FIELD_NUMBER;
         hash = (53 * hash) + getVideoPayload().hashCode();
-        break;
-      case 5:
-        hash = (37 * hash) + AUDIO_PAYLOAD_FIELD_NUMBER;
-        hash = (53 * hash) + getAudioPayload().hashCode();
         break;
       case 0:
       default:
@@ -755,13 +675,6 @@ public final class DataItem extends com.google.protobuf.GeneratedMessageV3
           result.payload_ = videoPayloadBuilder_.build();
         }
       }
-      if (payloadCase_ == 5) {
-        if (audioPayloadBuilder_ == null) {
-          result.payload_ = payload_;
-        } else {
-          result.payload_ = audioPayloadBuilder_.build();
-        }
-      }
       result.name_ = name_;
       result.payloadCase_ = payloadCase_;
       onBuilt();
@@ -831,11 +744,6 @@ public final class DataItem extends com.google.protobuf.GeneratedMessageV3
         case VIDEO_PAYLOAD:
           {
             mergeVideoPayload(other.getVideoPayload());
-            break;
-          }
-        case AUDIO_PAYLOAD:
-          {
-            mergeAudioPayload(other.getAudioPayload());
             break;
           }
         case PAYLOAD_NOT_SET:
@@ -1492,209 +1400,6 @@ public final class DataItem extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       ;
       return videoPayloadBuilder_;
-    }
-
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.datalabeling.v1beta1.AudioPayload,
-            com.google.cloud.datalabeling.v1beta1.AudioPayload.Builder,
-            com.google.cloud.datalabeling.v1beta1.AudioPayloadOrBuilder>
-        audioPayloadBuilder_;
-    /**
-     *
-     *
-     * <pre>
-     * The audio payload, a container of the audio uri.
-     * </pre>
-     *
-     * <code>.google.cloud.datalabeling.v1beta1.AudioPayload audio_payload = 5;</code>
-     */
-    public boolean hasAudioPayload() {
-      return payloadCase_ == 5;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The audio payload, a container of the audio uri.
-     * </pre>
-     *
-     * <code>.google.cloud.datalabeling.v1beta1.AudioPayload audio_payload = 5;</code>
-     */
-    public com.google.cloud.datalabeling.v1beta1.AudioPayload getAudioPayload() {
-      if (audioPayloadBuilder_ == null) {
-        if (payloadCase_ == 5) {
-          return (com.google.cloud.datalabeling.v1beta1.AudioPayload) payload_;
-        }
-        return com.google.cloud.datalabeling.v1beta1.AudioPayload.getDefaultInstance();
-      } else {
-        if (payloadCase_ == 5) {
-          return audioPayloadBuilder_.getMessage();
-        }
-        return com.google.cloud.datalabeling.v1beta1.AudioPayload.getDefaultInstance();
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The audio payload, a container of the audio uri.
-     * </pre>
-     *
-     * <code>.google.cloud.datalabeling.v1beta1.AudioPayload audio_payload = 5;</code>
-     */
-    public Builder setAudioPayload(com.google.cloud.datalabeling.v1beta1.AudioPayload value) {
-      if (audioPayloadBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        payload_ = value;
-        onChanged();
-      } else {
-        audioPayloadBuilder_.setMessage(value);
-      }
-      payloadCase_ = 5;
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The audio payload, a container of the audio uri.
-     * </pre>
-     *
-     * <code>.google.cloud.datalabeling.v1beta1.AudioPayload audio_payload = 5;</code>
-     */
-    public Builder setAudioPayload(
-        com.google.cloud.datalabeling.v1beta1.AudioPayload.Builder builderForValue) {
-      if (audioPayloadBuilder_ == null) {
-        payload_ = builderForValue.build();
-        onChanged();
-      } else {
-        audioPayloadBuilder_.setMessage(builderForValue.build());
-      }
-      payloadCase_ = 5;
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The audio payload, a container of the audio uri.
-     * </pre>
-     *
-     * <code>.google.cloud.datalabeling.v1beta1.AudioPayload audio_payload = 5;</code>
-     */
-    public Builder mergeAudioPayload(com.google.cloud.datalabeling.v1beta1.AudioPayload value) {
-      if (audioPayloadBuilder_ == null) {
-        if (payloadCase_ == 5
-            && payload_
-                != com.google.cloud.datalabeling.v1beta1.AudioPayload.getDefaultInstance()) {
-          payload_ =
-              com.google.cloud.datalabeling.v1beta1.AudioPayload.newBuilder(
-                      (com.google.cloud.datalabeling.v1beta1.AudioPayload) payload_)
-                  .mergeFrom(value)
-                  .buildPartial();
-        } else {
-          payload_ = value;
-        }
-        onChanged();
-      } else {
-        if (payloadCase_ == 5) {
-          audioPayloadBuilder_.mergeFrom(value);
-        }
-        audioPayloadBuilder_.setMessage(value);
-      }
-      payloadCase_ = 5;
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The audio payload, a container of the audio uri.
-     * </pre>
-     *
-     * <code>.google.cloud.datalabeling.v1beta1.AudioPayload audio_payload = 5;</code>
-     */
-    public Builder clearAudioPayload() {
-      if (audioPayloadBuilder_ == null) {
-        if (payloadCase_ == 5) {
-          payloadCase_ = 0;
-          payload_ = null;
-          onChanged();
-        }
-      } else {
-        if (payloadCase_ == 5) {
-          payloadCase_ = 0;
-          payload_ = null;
-        }
-        audioPayloadBuilder_.clear();
-      }
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The audio payload, a container of the audio uri.
-     * </pre>
-     *
-     * <code>.google.cloud.datalabeling.v1beta1.AudioPayload audio_payload = 5;</code>
-     */
-    public com.google.cloud.datalabeling.v1beta1.AudioPayload.Builder getAudioPayloadBuilder() {
-      return getAudioPayloadFieldBuilder().getBuilder();
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The audio payload, a container of the audio uri.
-     * </pre>
-     *
-     * <code>.google.cloud.datalabeling.v1beta1.AudioPayload audio_payload = 5;</code>
-     */
-    public com.google.cloud.datalabeling.v1beta1.AudioPayloadOrBuilder getAudioPayloadOrBuilder() {
-      if ((payloadCase_ == 5) && (audioPayloadBuilder_ != null)) {
-        return audioPayloadBuilder_.getMessageOrBuilder();
-      } else {
-        if (payloadCase_ == 5) {
-          return (com.google.cloud.datalabeling.v1beta1.AudioPayload) payload_;
-        }
-        return com.google.cloud.datalabeling.v1beta1.AudioPayload.getDefaultInstance();
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The audio payload, a container of the audio uri.
-     * </pre>
-     *
-     * <code>.google.cloud.datalabeling.v1beta1.AudioPayload audio_payload = 5;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.datalabeling.v1beta1.AudioPayload,
-            com.google.cloud.datalabeling.v1beta1.AudioPayload.Builder,
-            com.google.cloud.datalabeling.v1beta1.AudioPayloadOrBuilder>
-        getAudioPayloadFieldBuilder() {
-      if (audioPayloadBuilder_ == null) {
-        if (!(payloadCase_ == 5)) {
-          payload_ = com.google.cloud.datalabeling.v1beta1.AudioPayload.getDefaultInstance();
-        }
-        audioPayloadBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.cloud.datalabeling.v1beta1.AudioPayload,
-                com.google.cloud.datalabeling.v1beta1.AudioPayload.Builder,
-                com.google.cloud.datalabeling.v1beta1.AudioPayloadOrBuilder>(
-                (com.google.cloud.datalabeling.v1beta1.AudioPayload) payload_,
-                getParentForChildren(),
-                isClean());
-        payload_ = null;
-      }
-      payloadCase_ = 5;
-      onChanged();
-      ;
-      return audioPayloadBuilder_;
     }
 
     private java.lang.Object name_ = "";

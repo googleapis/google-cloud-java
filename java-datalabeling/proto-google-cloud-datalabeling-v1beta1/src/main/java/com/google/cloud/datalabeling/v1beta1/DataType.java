@@ -13,8 +13,8 @@ public enum DataType implements com.google.protobuf.ProtocolMessageEnum {
   VIDEO(2),
   /** <code>TEXT = 4;</code> */
   TEXT(4),
-  /** <code>AUDIO = 5;</code> */
-  AUDIO(5),
+  /** <code>GENERAL_DATA = 6;</code> */
+  GENERAL_DATA(6),
   UNRECOGNIZED(-1),
   ;
 
@@ -26,8 +26,8 @@ public enum DataType implements com.google.protobuf.ProtocolMessageEnum {
   public static final int VIDEO_VALUE = 2;
   /** <code>TEXT = 4;</code> */
   public static final int TEXT_VALUE = 4;
-  /** <code>AUDIO = 5;</code> */
-  public static final int AUDIO_VALUE = 5;
+  /** <code>GENERAL_DATA = 6;</code> */
+  public static final int GENERAL_DATA_VALUE = 6;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -53,8 +53,8 @@ public enum DataType implements com.google.protobuf.ProtocolMessageEnum {
         return VIDEO;
       case 4:
         return TEXT;
-      case 5:
-        return AUDIO;
+      case 6:
+        return GENERAL_DATA;
       default:
         return null;
     }

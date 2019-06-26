@@ -8,12 +8,74 @@ public interface InputConfigOrBuilder
     // @@protoc_insertion_point(interface_extends:google.cloud.datalabeling.v1beta1.InputConfig)
     com.google.protobuf.MessageOrBuilder {
 
-  /** <code>.google.cloud.datalabeling.v1beta1.GcsSource gcs_source = 2;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Required for text import, as language code must be specified.
+   * </pre>
+   *
+   * <code>.google.cloud.datalabeling.v1beta1.TextMetadata text_metadata = 6;</code>
+   */
+  boolean hasTextMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Required for text import, as language code must be specified.
+   * </pre>
+   *
+   * <code>.google.cloud.datalabeling.v1beta1.TextMetadata text_metadata = 6;</code>
+   */
+  com.google.cloud.datalabeling.v1beta1.TextMetadata getTextMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Required for text import, as language code must be specified.
+   * </pre>
+   *
+   * <code>.google.cloud.datalabeling.v1beta1.TextMetadata text_metadata = 6;</code>
+   */
+  com.google.cloud.datalabeling.v1beta1.TextMetadataOrBuilder getTextMetadataOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Source located in Cloud Storage.
+   * </pre>
+   *
+   * <code>.google.cloud.datalabeling.v1beta1.GcsSource gcs_source = 2;</code>
+   */
   boolean hasGcsSource();
-  /** <code>.google.cloud.datalabeling.v1beta1.GcsSource gcs_source = 2;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Source located in Cloud Storage.
+   * </pre>
+   *
+   * <code>.google.cloud.datalabeling.v1beta1.GcsSource gcs_source = 2;</code>
+   */
   com.google.cloud.datalabeling.v1beta1.GcsSource getGcsSource();
-  /** <code>.google.cloud.datalabeling.v1beta1.GcsSource gcs_source = 2;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Source located in Cloud Storage.
+   * </pre>
+   *
+   * <code>.google.cloud.datalabeling.v1beta1.GcsSource gcs_source = 2;</code>
+   */
   com.google.cloud.datalabeling.v1beta1.GcsSourceOrBuilder getGcsSourceOrBuilder();
+
+  /** <code>.google.cloud.datalabeling.v1beta1.BigQuerySource bigquery_source = 5;</code> */
+  boolean hasBigquerySource();
+  /** <code>.google.cloud.datalabeling.v1beta1.BigQuerySource bigquery_source = 5;</code> */
+  com.google.cloud.datalabeling.v1beta1.BigQuerySource getBigquerySource();
+  /** <code>.google.cloud.datalabeling.v1beta1.BigQuerySource bigquery_source = 5;</code> */
+  com.google.cloud.datalabeling.v1beta1.BigQuerySourceOrBuilder getBigquerySourceOrBuilder();
 
   /**
    *
@@ -35,6 +97,75 @@ public interface InputConfigOrBuilder
    * <code>.google.cloud.datalabeling.v1beta1.DataType data_type = 1;</code>
    */
   com.google.cloud.datalabeling.v1beta1.DataType getDataType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If input contains annotation, user needs to specify the
+   * type and metadata of the annotation when creating it as an annotated
+   * dataset.
+   * </pre>
+   *
+   * <code>.google.cloud.datalabeling.v1beta1.AnnotationType annotation_type = 3;</code>
+   */
+  int getAnnotationTypeValue();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If input contains annotation, user needs to specify the
+   * type and metadata of the annotation when creating it as an annotated
+   * dataset.
+   * </pre>
+   *
+   * <code>.google.cloud.datalabeling.v1beta1.AnnotationType annotation_type = 3;</code>
+   */
+  com.google.cloud.datalabeling.v1beta1.AnnotationType getAnnotationType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Metadata about annotations in the input. Each annotation type may
+   * have different metadata.
+   * Metadata for classification problem.
+   * </pre>
+   *
+   * <code>.google.cloud.datalabeling.v1beta1.ClassificationMetadata classification_metadata = 4;
+   * </code>
+   */
+  boolean hasClassificationMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Metadata about annotations in the input. Each annotation type may
+   * have different metadata.
+   * Metadata for classification problem.
+   * </pre>
+   *
+   * <code>.google.cloud.datalabeling.v1beta1.ClassificationMetadata classification_metadata = 4;
+   * </code>
+   */
+  com.google.cloud.datalabeling.v1beta1.ClassificationMetadata getClassificationMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Metadata about annotations in the input. Each annotation type may
+   * have different metadata.
+   * Metadata for classification problem.
+   * </pre>
+   *
+   * <code>.google.cloud.datalabeling.v1beta1.ClassificationMetadata classification_metadata = 4;
+   * </code>
+   */
+  com.google.cloud.datalabeling.v1beta1.ClassificationMetadataOrBuilder
+      getClassificationMetadataOrBuilder();
+
+  public com.google.cloud.datalabeling.v1beta1.InputConfig.DataTypeMetadataCase
+      getDataTypeMetadataCase();
 
   public com.google.cloud.datalabeling.v1beta1.InputConfig.SourceCase getSourceCase();
 }

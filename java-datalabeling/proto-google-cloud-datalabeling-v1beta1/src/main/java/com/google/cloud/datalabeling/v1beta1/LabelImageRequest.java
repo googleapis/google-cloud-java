@@ -479,7 +479,7 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Configuration for image classification task.
    * One of image_classification_config, bounding_poly_config,
-   * polyline_config and segmentation_config is required.
+   * polyline_config and segmentation_config are required.
    * </pre>
    *
    * <code>
@@ -495,7 +495,7 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Configuration for image classification task.
    * One of image_classification_config, bounding_poly_config,
-   * polyline_config and segmentation_config is required.
+   * polyline_config and segmentation_config are required.
    * </pre>
    *
    * <code>
@@ -515,7 +515,7 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Configuration for image classification task.
    * One of image_classification_config, bounding_poly_config,
-   * polyline_config and segmentation_config is required.
+   * polyline_config and segmentation_config are required.
    * </pre>
    *
    * <code>
@@ -537,7 +537,7 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Configuration for bounding box and bounding poly task.
    * One of image_classification_config, bounding_poly_config,
-   * polyline_config and segmentation_config is required.
+   * polyline_config and segmentation_config are required.
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.BoundingPolyConfig bounding_poly_config = 5;</code>
@@ -551,7 +551,7 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Configuration for bounding box and bounding poly task.
    * One of image_classification_config, bounding_poly_config,
-   * polyline_config and segmentation_config is required.
+   * polyline_config and segmentation_config are required.
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.BoundingPolyConfig bounding_poly_config = 5;</code>
@@ -568,7 +568,7 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Configuration for bounding box and bounding poly task.
    * One of image_classification_config, bounding_poly_config,
-   * polyline_config and segmentation_config is required.
+   * polyline_config and segmentation_config are required.
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.BoundingPolyConfig bounding_poly_config = 5;</code>
@@ -588,7 +588,7 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Configuration for polyline task.
    * One of image_classification_config, bounding_poly_config,
-   * polyline_config and segmentation_config is required.
+   * polyline_config and segmentation_config are required.
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.PolylineConfig polyline_config = 6;</code>
@@ -602,7 +602,7 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Configuration for polyline task.
    * One of image_classification_config, bounding_poly_config,
-   * polyline_config and segmentation_config is required.
+   * polyline_config and segmentation_config are required.
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.PolylineConfig polyline_config = 6;</code>
@@ -619,7 +619,7 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Configuration for polyline task.
    * One of image_classification_config, bounding_poly_config,
-   * polyline_config and segmentation_config is required.
+   * polyline_config and segmentation_config are required.
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.PolylineConfig polyline_config = 6;</code>
@@ -639,7 +639,7 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Configuration for segmentation task.
    * One of image_classification_config, bounding_poly_config,
-   * polyline_config and segmentation_config is required.
+   * polyline_config and segmentation_config are required.
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.SegmentationConfig segmentation_config = 7;</code>
@@ -653,7 +653,7 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Configuration for segmentation task.
    * One of image_classification_config, bounding_poly_config,
-   * polyline_config and segmentation_config is required.
+   * polyline_config and segmentation_config are required.
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.SegmentationConfig segmentation_config = 7;</code>
@@ -670,7 +670,7 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Configuration for segmentation task.
    * One of image_classification_config, bounding_poly_config,
-   * polyline_config and segmentation_config is required.
+   * polyline_config and segmentation_config are required.
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.SegmentationConfig segmentation_config = 7;</code>
@@ -1323,7 +1323,7 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Configuration for image classification task.
      * One of image_classification_config, bounding_poly_config,
-     * polyline_config and segmentation_config is required.
+     * polyline_config and segmentation_config are required.
      * </pre>
      *
      * <code>
@@ -1339,7 +1339,7 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Configuration for image classification task.
      * One of image_classification_config, bounding_poly_config,
-     * polyline_config and segmentation_config is required.
+     * polyline_config and segmentation_config are required.
      * </pre>
      *
      * <code>
@@ -1366,7 +1366,7 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Configuration for image classification task.
      * One of image_classification_config, bounding_poly_config,
-     * polyline_config and segmentation_config is required.
+     * polyline_config and segmentation_config are required.
      * </pre>
      *
      * <code>
@@ -1393,7 +1393,7 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Configuration for image classification task.
      * One of image_classification_config, bounding_poly_config,
-     * polyline_config and segmentation_config is required.
+     * polyline_config and segmentation_config are required.
      * </pre>
      *
      * <code>
@@ -1417,7 +1417,7 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Configuration for image classification task.
      * One of image_classification_config, bounding_poly_config,
-     * polyline_config and segmentation_config is required.
+     * polyline_config and segmentation_config are required.
      * </pre>
      *
      * <code>
@@ -1456,7 +1456,7 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Configuration for image classification task.
      * One of image_classification_config, bounding_poly_config,
-     * polyline_config and segmentation_config is required.
+     * polyline_config and segmentation_config are required.
      * </pre>
      *
      * <code>
@@ -1485,7 +1485,7 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Configuration for image classification task.
      * One of image_classification_config, bounding_poly_config,
-     * polyline_config and segmentation_config is required.
+     * polyline_config and segmentation_config are required.
      * </pre>
      *
      * <code>
@@ -1502,7 +1502,7 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Configuration for image classification task.
      * One of image_classification_config, bounding_poly_config,
-     * polyline_config and segmentation_config is required.
+     * polyline_config and segmentation_config are required.
      * </pre>
      *
      * <code>
@@ -1526,7 +1526,7 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Configuration for image classification task.
      * One of image_classification_config, bounding_poly_config,
-     * polyline_config and segmentation_config is required.
+     * polyline_config and segmentation_config are required.
      * </pre>
      *
      * <code>
@@ -1570,7 +1570,7 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Configuration for bounding box and bounding poly task.
      * One of image_classification_config, bounding_poly_config,
-     * polyline_config and segmentation_config is required.
+     * polyline_config and segmentation_config are required.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.BoundingPolyConfig bounding_poly_config = 5;</code>
@@ -1584,7 +1584,7 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Configuration for bounding box and bounding poly task.
      * One of image_classification_config, bounding_poly_config,
-     * polyline_config and segmentation_config is required.
+     * polyline_config and segmentation_config are required.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.BoundingPolyConfig bounding_poly_config = 5;</code>
@@ -1608,7 +1608,7 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Configuration for bounding box and bounding poly task.
      * One of image_classification_config, bounding_poly_config,
-     * polyline_config and segmentation_config is required.
+     * polyline_config and segmentation_config are required.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.BoundingPolyConfig bounding_poly_config = 5;</code>
@@ -1633,7 +1633,7 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Configuration for bounding box and bounding poly task.
      * One of image_classification_config, bounding_poly_config,
-     * polyline_config and segmentation_config is required.
+     * polyline_config and segmentation_config are required.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.BoundingPolyConfig bounding_poly_config = 5;</code>
@@ -1655,7 +1655,7 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Configuration for bounding box and bounding poly task.
      * One of image_classification_config, bounding_poly_config,
-     * polyline_config and segmentation_config is required.
+     * polyline_config and segmentation_config are required.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.BoundingPolyConfig bounding_poly_config = 5;</code>
@@ -1690,7 +1690,7 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Configuration for bounding box and bounding poly task.
      * One of image_classification_config, bounding_poly_config,
-     * polyline_config and segmentation_config is required.
+     * polyline_config and segmentation_config are required.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.BoundingPolyConfig bounding_poly_config = 5;</code>
@@ -1717,7 +1717,7 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Configuration for bounding box and bounding poly task.
      * One of image_classification_config, bounding_poly_config,
-     * polyline_config and segmentation_config is required.
+     * polyline_config and segmentation_config are required.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.BoundingPolyConfig bounding_poly_config = 5;</code>
@@ -1732,7 +1732,7 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Configuration for bounding box and bounding poly task.
      * One of image_classification_config, bounding_poly_config,
-     * polyline_config and segmentation_config is required.
+     * polyline_config and segmentation_config are required.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.BoundingPolyConfig bounding_poly_config = 5;</code>
@@ -1754,7 +1754,7 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Configuration for bounding box and bounding poly task.
      * One of image_classification_config, bounding_poly_config,
-     * polyline_config and segmentation_config is required.
+     * polyline_config and segmentation_config are required.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.BoundingPolyConfig bounding_poly_config = 5;</code>
@@ -1796,7 +1796,7 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Configuration for polyline task.
      * One of image_classification_config, bounding_poly_config,
-     * polyline_config and segmentation_config is required.
+     * polyline_config and segmentation_config are required.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.PolylineConfig polyline_config = 6;</code>
@@ -1810,7 +1810,7 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Configuration for polyline task.
      * One of image_classification_config, bounding_poly_config,
-     * polyline_config and segmentation_config is required.
+     * polyline_config and segmentation_config are required.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.PolylineConfig polyline_config = 6;</code>
@@ -1834,7 +1834,7 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Configuration for polyline task.
      * One of image_classification_config, bounding_poly_config,
-     * polyline_config and segmentation_config is required.
+     * polyline_config and segmentation_config are required.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.PolylineConfig polyline_config = 6;</code>
@@ -1858,7 +1858,7 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Configuration for polyline task.
      * One of image_classification_config, bounding_poly_config,
-     * polyline_config and segmentation_config is required.
+     * polyline_config and segmentation_config are required.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.PolylineConfig polyline_config = 6;</code>
@@ -1880,7 +1880,7 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Configuration for polyline task.
      * One of image_classification_config, bounding_poly_config,
-     * polyline_config and segmentation_config is required.
+     * polyline_config and segmentation_config are required.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.PolylineConfig polyline_config = 6;</code>
@@ -1914,7 +1914,7 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Configuration for polyline task.
      * One of image_classification_config, bounding_poly_config,
-     * polyline_config and segmentation_config is required.
+     * polyline_config and segmentation_config are required.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.PolylineConfig polyline_config = 6;</code>
@@ -1941,7 +1941,7 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Configuration for polyline task.
      * One of image_classification_config, bounding_poly_config,
-     * polyline_config and segmentation_config is required.
+     * polyline_config and segmentation_config are required.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.PolylineConfig polyline_config = 6;</code>
@@ -1955,7 +1955,7 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Configuration for polyline task.
      * One of image_classification_config, bounding_poly_config,
-     * polyline_config and segmentation_config is required.
+     * polyline_config and segmentation_config are required.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.PolylineConfig polyline_config = 6;</code>
@@ -1977,7 +1977,7 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Configuration for polyline task.
      * One of image_classification_config, bounding_poly_config,
-     * polyline_config and segmentation_config is required.
+     * polyline_config and segmentation_config are required.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.PolylineConfig polyline_config = 6;</code>
@@ -2019,7 +2019,7 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Configuration for segmentation task.
      * One of image_classification_config, bounding_poly_config,
-     * polyline_config and segmentation_config is required.
+     * polyline_config and segmentation_config are required.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.SegmentationConfig segmentation_config = 7;</code>
@@ -2033,7 +2033,7 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Configuration for segmentation task.
      * One of image_classification_config, bounding_poly_config,
-     * polyline_config and segmentation_config is required.
+     * polyline_config and segmentation_config are required.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.SegmentationConfig segmentation_config = 7;</code>
@@ -2057,7 +2057,7 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Configuration for segmentation task.
      * One of image_classification_config, bounding_poly_config,
-     * polyline_config and segmentation_config is required.
+     * polyline_config and segmentation_config are required.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.SegmentationConfig segmentation_config = 7;</code>
@@ -2082,7 +2082,7 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Configuration for segmentation task.
      * One of image_classification_config, bounding_poly_config,
-     * polyline_config and segmentation_config is required.
+     * polyline_config and segmentation_config are required.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.SegmentationConfig segmentation_config = 7;</code>
@@ -2104,7 +2104,7 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Configuration for segmentation task.
      * One of image_classification_config, bounding_poly_config,
-     * polyline_config and segmentation_config is required.
+     * polyline_config and segmentation_config are required.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.SegmentationConfig segmentation_config = 7;</code>
@@ -2139,7 +2139,7 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Configuration for segmentation task.
      * One of image_classification_config, bounding_poly_config,
-     * polyline_config and segmentation_config is required.
+     * polyline_config and segmentation_config are required.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.SegmentationConfig segmentation_config = 7;</code>
@@ -2166,7 +2166,7 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Configuration for segmentation task.
      * One of image_classification_config, bounding_poly_config,
-     * polyline_config and segmentation_config is required.
+     * polyline_config and segmentation_config are required.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.SegmentationConfig segmentation_config = 7;</code>
@@ -2181,7 +2181,7 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Configuration for segmentation task.
      * One of image_classification_config, bounding_poly_config,
-     * polyline_config and segmentation_config is required.
+     * polyline_config and segmentation_config are required.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.SegmentationConfig segmentation_config = 7;</code>
@@ -2203,7 +2203,7 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Configuration for segmentation task.
      * One of image_classification_config, bounding_poly_config,
-     * polyline_config and segmentation_config is required.
+     * polyline_config and segmentation_config are required.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.SegmentationConfig segmentation_config = 7;</code>

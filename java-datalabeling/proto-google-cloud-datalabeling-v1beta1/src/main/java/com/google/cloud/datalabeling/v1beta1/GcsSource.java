@@ -7,8 +7,7 @@ package com.google.cloud.datalabeling.v1beta1;
  *
  *
  * <pre>
- * Source of the GCS file to be imported. Only gcs path is allowed in
- * input_uri.
+ * Source of the Cloud Storage file to be imported.
  * </pre>
  *
  * Protobuf type {@code google.cloud.datalabeling.v1beta1.GcsSource}
@@ -106,7 +105,8 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The input uri of source file.
+   * Required. The input URI of source file. This must be a Cloud Storage path
+   * (`gs://...`).
    * </pre>
    *
    * <code>string input_uri = 1;</code>
@@ -126,7 +126,8 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The input uri of source file.
+   * Required. The input URI of source file. This must be a Cloud Storage path
+   * (`gs://...`).
    * </pre>
    *
    * <code>string input_uri = 1;</code>
@@ -149,7 +150,7 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The format of the gcs source. Only "text/csv" is supported.
+   * Required. The format of the source file. Only "text/csv" is supported.
    * </pre>
    *
    * <code>string mime_type = 2;</code>
@@ -169,7 +170,7 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The format of the gcs source. Only "text/csv" is supported.
+   * Required. The format of the source file. Only "text/csv" is supported.
    * </pre>
    *
    * <code>string mime_type = 2;</code>
@@ -358,8 +359,7 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Source of the GCS file to be imported. Only gcs path is allowed in
-   * input_uri.
+   * Source of the Cloud Storage file to be imported.
    * </pre>
    *
    * Protobuf type {@code google.cloud.datalabeling.v1beta1.GcsSource}
@@ -525,7 +525,8 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The input uri of source file.
+     * Required. The input URI of source file. This must be a Cloud Storage path
+     * (`gs://...`).
      * </pre>
      *
      * <code>string input_uri = 1;</code>
@@ -545,7 +546,8 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The input uri of source file.
+     * Required. The input URI of source file. This must be a Cloud Storage path
+     * (`gs://...`).
      * </pre>
      *
      * <code>string input_uri = 1;</code>
@@ -565,7 +567,8 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The input uri of source file.
+     * Required. The input URI of source file. This must be a Cloud Storage path
+     * (`gs://...`).
      * </pre>
      *
      * <code>string input_uri = 1;</code>
@@ -583,7 +586,8 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The input uri of source file.
+     * Required. The input URI of source file. This must be a Cloud Storage path
+     * (`gs://...`).
      * </pre>
      *
      * <code>string input_uri = 1;</code>
@@ -598,7 +602,8 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The input uri of source file.
+     * Required. The input URI of source file. This must be a Cloud Storage path
+     * (`gs://...`).
      * </pre>
      *
      * <code>string input_uri = 1;</code>
@@ -619,7 +624,7 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The format of the gcs source. Only "text/csv" is supported.
+     * Required. The format of the source file. Only "text/csv" is supported.
      * </pre>
      *
      * <code>string mime_type = 2;</code>
@@ -639,7 +644,7 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The format of the gcs source. Only "text/csv" is supported.
+     * Required. The format of the source file. Only "text/csv" is supported.
      * </pre>
      *
      * <code>string mime_type = 2;</code>
@@ -659,7 +664,7 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The format of the gcs source. Only "text/csv" is supported.
+     * Required. The format of the source file. Only "text/csv" is supported.
      * </pre>
      *
      * <code>string mime_type = 2;</code>
@@ -677,7 +682,7 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The format of the gcs source. Only "text/csv" is supported.
+     * Required. The format of the source file. Only "text/csv" is supported.
      * </pre>
      *
      * <code>string mime_type = 2;</code>
@@ -692,7 +697,7 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The format of the gcs source. Only "text/csv" is supported.
+     * Required. The format of the source file. Only "text/csv" is supported.
      * </pre>
      *
      * <code>string mime_type = 2;</code>

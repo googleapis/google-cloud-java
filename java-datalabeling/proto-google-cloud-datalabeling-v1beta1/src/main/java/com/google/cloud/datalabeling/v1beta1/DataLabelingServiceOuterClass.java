@@ -61,13 +61,13 @@ public final class DataLabelingServiceOuterClass {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_datalabeling_v1beta1_ListAnnotatedDatasetsRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-      internal_static_google_cloud_datalabeling_v1beta1_DeleteAnnotatedDatasetRequest_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_cloud_datalabeling_v1beta1_DeleteAnnotatedDatasetRequest_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_datalabeling_v1beta1_ListAnnotatedDatasetsResponse_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_datalabeling_v1beta1_ListAnnotatedDatasetsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_datalabeling_v1beta1_DeleteAnnotatedDatasetRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_datalabeling_v1beta1_DeleteAnnotatedDatasetRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_datalabeling_v1beta1_LabelImageRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -80,10 +80,6 @@ public final class DataLabelingServiceOuterClass {
       internal_static_google_cloud_datalabeling_v1beta1_LabelTextRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_datalabeling_v1beta1_LabelTextRequest_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-      internal_static_google_cloud_datalabeling_v1beta1_LabelAudioRequest_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_cloud_datalabeling_v1beta1_LabelAudioRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_datalabeling_v1beta1_GetExampleRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -136,6 +132,62 @@ public final class DataLabelingServiceOuterClass {
       internal_static_google_cloud_datalabeling_v1beta1_ListInstructionsResponse_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_datalabeling_v1beta1_ListInstructionsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_datalabeling_v1beta1_GetEvaluationRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_datalabeling_v1beta1_GetEvaluationRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_datalabeling_v1beta1_SearchEvaluationsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_datalabeling_v1beta1_SearchEvaluationsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_datalabeling_v1beta1_SearchEvaluationsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_datalabeling_v1beta1_SearchEvaluationsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_datalabeling_v1beta1_SearchExampleComparisonsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_datalabeling_v1beta1_SearchExampleComparisonsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_datalabeling_v1beta1_SearchExampleComparisonsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_datalabeling_v1beta1_SearchExampleComparisonsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_datalabeling_v1beta1_SearchExampleComparisonsResponse_ExampleComparison_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_datalabeling_v1beta1_SearchExampleComparisonsResponse_ExampleComparison_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_datalabeling_v1beta1_CreateEvaluationJobRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_datalabeling_v1beta1_CreateEvaluationJobRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_datalabeling_v1beta1_UpdateEvaluationJobRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_datalabeling_v1beta1_UpdateEvaluationJobRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_datalabeling_v1beta1_GetEvaluationJobRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_datalabeling_v1beta1_GetEvaluationJobRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_datalabeling_v1beta1_PauseEvaluationJobRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_datalabeling_v1beta1_PauseEvaluationJobRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_datalabeling_v1beta1_ResumeEvaluationJobRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_datalabeling_v1beta1_ResumeEvaluationJobRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_datalabeling_v1beta1_DeleteEvaluationJobRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_datalabeling_v1beta1_DeleteEvaluationJobRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_datalabeling_v1beta1_ListEvaluationJobsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_datalabeling_v1beta1_ListEvaluationJobsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_datalabeling_v1beta1_ListEvaluationJobsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_datalabeling_v1beta1_ListEvaluationJobsResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -148,246 +200,325 @@ public final class DataLabelingServiceOuterClass {
       "\n=google/cloud/datalabeling/v1beta1/data"
           + "_labeling_service.proto\022!google.cloud.da"
           + "talabeling.v1beta1\032\034google/api/annotatio"
-          + "ns.proto\032;google/cloud/datalabeling/v1be"
-          + "ta1/annotation_spec_set.proto\032/google/cl"
-          + "oud/datalabeling/v1beta1/dataset.proto\032?"
-          + "google/cloud/datalabeling/v1beta1/human_"
-          + "annotation_config.proto\0323google/cloud/da"
-          + "talabeling/v1beta1/instruction.proto\0322go"
-          + "ogle/cloud/datalabeling/v1beta1/operatio"
-          + "ns.proto\032#google/longrunning/operations."
-          + "proto\032\033google/protobuf/empty.proto\032 goog"
-          + "le/protobuf/field_mask.proto\"c\n\024CreateDa"
-          + "tasetRequest\022\016\n\006parent\030\001 \001(\t\022;\n\007dataset\030"
-          + "\002 \001(\0132*.google.cloud.datalabeling.v1beta"
-          + "1.Dataset\"!\n\021GetDatasetRequest\022\014\n\004name\030\001"
-          + " \001(\t\"\\\n\023ListDatasetsRequest\022\016\n\006parent\030\001 "
-          + "\001(\t\022\016\n\006filter\030\002 \001(\t\022\021\n\tpage_size\030\003 \001(\005\022\022"
-          + "\n\npage_token\030\004 \001(\t\"m\n\024ListDatasetsRespon"
-          + "se\022<\n\010datasets\030\001 \003(\0132*.google.cloud.data"
-          + "labeling.v1beta1.Dataset\022\027\n\017next_page_to"
-          + "ken\030\002 \001(\t\"$\n\024DeleteDatasetRequest\022\014\n\004nam"
-          + "e\030\001 \001(\t\"g\n\021ImportDataRequest\022\014\n\004name\030\001 \001"
-          + "(\t\022D\n\014input_config\030\002 \001(\0132..google.cloud."
-          + "datalabeling.v1beta1.InputConfig\"\224\001\n\021Exp"
-          + "ortDataRequest\022\014\n\004name\030\001 \001(\t\022\031\n\021annotate"
-          + "d_dataset\030\002 \001(\t\022\016\n\006filter\030\003 \001(\t\022F\n\routpu"
-          + "t_config\030\004 \001(\0132/.google.cloud.datalabeli"
-          + "ng.v1beta1.OutputConfig\"\"\n\022GetDataItemRe"
-          + "quest\022\014\n\004name\030\001 \001(\t\"]\n\024ListDataItemsRequ"
-          + "est\022\016\n\006parent\030\001 \001(\t\022\016\n\006filter\030\002 \001(\t\022\021\n\tp"
-          + "age_size\030\003 \001(\005\022\022\n\npage_token\030\004 \001(\t\"q\n\025Li"
-          + "stDataItemsResponse\022?\n\ndata_items\030\001 \003(\0132"
-          + "+.google.cloud.datalabeling.v1beta1.Data"
-          + "Item\022\027\n\017next_page_token\030\002 \001(\t\"*\n\032GetAnno"
-          + "tatedDatasetRequest\022\014\n\004name\030\001 \001(\t\"e\n\034Lis"
-          + "tAnnotatedDatasetsRequest\022\016\n\006parent\030\001 \001("
-          + "\t\022\016\n\006filter\030\002 \001(\t\022\021\n\tpage_size\030\003 \001(\005\022\022\n\n"
-          + "page_token\030\004 \001(\t\"-\n\035DeleteAnnotatedDatas"
-          + "etRequest\022\014\n\004name\030\001 \001(\t\"\211\001\n\035ListAnnotate"
-          + "dDatasetsResponse\022O\n\022annotated_datasets\030"
-          + "\001 \003(\01323.google.cloud.datalabeling.v1beta"
-          + "1.AnnotatedDataset\022\027\n\017next_page_token\030\002 "
-          + "\001(\t\"\315\005\n\021LabelImageRequest\022c\n\033image_class"
-          + "ification_config\030\004 \001(\0132<.google.cloud.da"
-          + "talabeling.v1beta1.ImageClassificationCo"
-          + "nfigH\000\022U\n\024bounding_poly_config\030\005 \001(\01325.g"
-          + "oogle.cloud.datalabeling.v1beta1.Boundin"
-          + "gPolyConfigH\000\022L\n\017polyline_config\030\006 \001(\01321"
-          + ".google.cloud.datalabeling.v1beta1.Polyl"
-          + "ineConfigH\000\022T\n\023segmentation_config\030\007 \001(\013"
-          + "25.google.cloud.datalabeling.v1beta1.Seg"
-          + "mentationConfigH\000\022\016\n\006parent\030\001 \001(\t\022N\n\014bas"
-          + "ic_config\030\002 \001(\01328.google.cloud.datalabel"
-          + "ing.v1beta1.HumanAnnotationConfig\022M\n\007fea"
-          + "ture\030\003 \001(\0162<.google.cloud.datalabeling.v"
-          + "1beta1.LabelImageRequest.Feature\"\226\001\n\007Fea"
-          + "ture\022\027\n\023FEATURE_UNSPECIFIED\020\000\022\022\n\016CLASSIF"
-          + "ICATION\020\001\022\020\n\014BOUNDING_BOX\020\002\022\031\n\025ORIENTED_"
-          + "BOUNDING_BOX\020\006\022\021\n\rBOUNDING_POLY\020\003\022\014\n\010POL"
-          + "YLINE\020\004\022\020\n\014SEGMENTATION\020\005B\020\n\016request_con"
-          + "fig\"\247\005\n\021LabelVideoRequest\022c\n\033video_class"
-          + "ification_config\030\004 \001(\0132<.google.cloud.da"
-          + "talabeling.v1beta1.VideoClassificationCo"
-          + "nfigH\000\022[\n\027object_detection_config\030\005 \001(\0132"
-          + "8.google.cloud.datalabeling.v1beta1.Obje"
-          + "ctDetectionConfigH\000\022Y\n\026object_tracking_c"
-          + "onfig\030\006 \001(\01327.google.cloud.datalabeling."
-          + "v1beta1.ObjectTrackingConfigH\000\022F\n\014event_"
-          + "config\030\007 \001(\0132..google.cloud.datalabeling"
-          + ".v1beta1.EventConfigH\000\022\016\n\006parent\030\001 \001(\t\022N"
-          + "\n\014basic_config\030\002 \001(\01328.google.cloud.data"
-          + "labeling.v1beta1.HumanAnnotationConfig\022M"
-          + "\n\007feature\030\003 \001(\0162<.google.cloud.datalabel"
-          + "ing.v1beta1.LabelVideoRequest.Feature\"l\n"
-          + "\007Feature\022\027\n\023FEATURE_UNSPECIFIED\020\000\022\022\n\016CLA"
-          + "SSIFICATION\020\001\022\024\n\020OBJECT_DETECTION\020\002\022\023\n\017O"
-          + "BJECT_TRACKING\020\003\022\t\n\005EVENT\020\004B\020\n\016request_c"
-          + "onfig\"\366\003\n\020LabelTextRequest\022a\n\032text_class"
-          + "ification_config\030\004 \001(\0132;.google.cloud.da"
-          + "talabeling.v1beta1.TextClassificationCon"
-          + "figH\000\022f\n\035text_entity_extraction_config\030\005"
-          + " \001(\0132=.google.cloud.datalabeling.v1beta1"
-          + ".TextEntityExtractionConfigH\000\022\016\n\006parent\030"
-          + "\001 \001(\t\022N\n\014basic_config\030\002 \001(\01328.google.clo"
-          + "ud.datalabeling.v1beta1.HumanAnnotationC"
-          + "onfig\022L\n\007feature\030\006 \001(\0162;.google.cloud.da"
-          + "talabeling.v1beta1.LabelTextRequest.Feat"
-          + "ure\"W\n\007Feature\022\027\n\023FEATURE_UNSPECIFIED\020\000\022"
-          + "\027\n\023TEXT_CLASSIFICATION\020\001\022\032\n\026TEXT_ENTITY_"
-          + "EXTRACTION\020\002B\020\n\016request_config\"\377\001\n\021Label"
-          + "AudioRequest\022\016\n\006parent\030\001 \001(\t\022N\n\014basic_co"
+          + "ns.proto\032\027google/api/client.proto\0322googl"
+          + "e/cloud/datalabeling/v1beta1/annotation."
+          + "proto\032;google/cloud/datalabeling/v1beta1"
+          + "/annotation_spec_set.proto\032/google/cloud"
+          + "/datalabeling/v1beta1/dataset.proto\0322goo"
+          + "gle/cloud/datalabeling/v1beta1/evaluatio"
+          + "n.proto\0326google/cloud/datalabeling/v1bet"
+          + "a1/evaluation_job.proto\032?google/cloud/da"
+          + "talabeling/v1beta1/human_annotation_conf"
+          + "ig.proto\0323google/cloud/datalabeling/v1be"
+          + "ta1/instruction.proto\032#google/longrunnin"
+          + "g/operations.proto\032\033google/protobuf/empt"
+          + "y.proto\032 google/protobuf/field_mask.prot"
+          + "o\"c\n\024CreateDatasetRequest\022\016\n\006parent\030\001 \001("
+          + "\t\022;\n\007dataset\030\002 \001(\0132*.google.cloud.datala"
+          + "beling.v1beta1.Dataset\"!\n\021GetDatasetRequ"
+          + "est\022\014\n\004name\030\001 \001(\t\"\\\n\023ListDatasetsRequest"
+          + "\022\016\n\006parent\030\001 \001(\t\022\016\n\006filter\030\002 \001(\t\022\021\n\tpage"
+          + "_size\030\003 \001(\005\022\022\n\npage_token\030\004 \001(\t\"m\n\024ListD"
+          + "atasetsResponse\022<\n\010datasets\030\001 \003(\0132*.goog"
+          + "le.cloud.datalabeling.v1beta1.Dataset\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\"$\n\024DeleteDatasetR"
+          + "equest\022\014\n\004name\030\001 \001(\t\"\203\001\n\021ImportDataReque"
+          + "st\022\014\n\004name\030\001 \001(\t\022D\n\014input_config\030\002 \001(\0132."
+          + ".google.cloud.datalabeling.v1beta1.Input"
+          + "Config\022\032\n\022user_email_address\030\003 \001(\t\"\260\001\n\021E"
+          + "xportDataRequest\022\014\n\004name\030\001 \001(\t\022\031\n\021annota"
+          + "ted_dataset\030\002 \001(\t\022\016\n\006filter\030\003 \001(\t\022F\n\rout"
+          + "put_config\030\004 \001(\0132/.google.cloud.datalabe"
+          + "ling.v1beta1.OutputConfig\022\032\n\022user_email_"
+          + "address\030\005 \001(\t\"\"\n\022GetDataItemRequest\022\014\n\004n"
+          + "ame\030\001 \001(\t\"]\n\024ListDataItemsRequest\022\016\n\006par"
+          + "ent\030\001 \001(\t\022\016\n\006filter\030\002 \001(\t\022\021\n\tpage_size\030\003"
+          + " \001(\005\022\022\n\npage_token\030\004 \001(\t\"q\n\025ListDataItem"
+          + "sResponse\022?\n\ndata_items\030\001 \003(\0132+.google.c"
+          + "loud.datalabeling.v1beta1.DataItem\022\027\n\017ne"
+          + "xt_page_token\030\002 \001(\t\"*\n\032GetAnnotatedDatas"
+          + "etRequest\022\014\n\004name\030\001 \001(\t\"e\n\034ListAnnotated"
+          + "DatasetsRequest\022\016\n\006parent\030\001 \001(\t\022\016\n\006filte"
+          + "r\030\002 \001(\t\022\021\n\tpage_size\030\003 \001(\005\022\022\n\npage_token"
+          + "\030\004 \001(\t\"\211\001\n\035ListAnnotatedDatasetsResponse"
+          + "\022O\n\022annotated_datasets\030\001 \003(\01323.google.cl"
+          + "oud.datalabeling.v1beta1.AnnotatedDatase"
+          + "t\022\027\n\017next_page_token\030\002 \001(\t\"-\n\035DeleteAnno"
+          + "tatedDatasetRequest\022\014\n\004name\030\001 \001(\t\"\315\005\n\021La"
+          + "belImageRequest\022c\n\033image_classification_"
+          + "config\030\004 \001(\0132<.google.cloud.datalabeling"
+          + ".v1beta1.ImageClassificationConfigH\000\022U\n\024"
+          + "bounding_poly_config\030\005 \001(\01325.google.clou"
+          + "d.datalabeling.v1beta1.BoundingPolyConfi"
+          + "gH\000\022L\n\017polyline_config\030\006 \001(\01321.google.cl"
+          + "oud.datalabeling.v1beta1.PolylineConfigH"
+          + "\000\022T\n\023segmentation_config\030\007 \001(\01325.google."
+          + "cloud.datalabeling.v1beta1.SegmentationC"
+          + "onfigH\000\022\016\n\006parent\030\001 \001(\t\022N\n\014basic_config\030"
+          + "\002 \001(\01328.google.cloud.datalabeling.v1beta"
+          + "1.HumanAnnotationConfig\022M\n\007feature\030\003 \001(\016"
+          + "2<.google.cloud.datalabeling.v1beta1.Lab"
+          + "elImageRequest.Feature\"\226\001\n\007Feature\022\027\n\023FE"
+          + "ATURE_UNSPECIFIED\020\000\022\022\n\016CLASSIFICATION\020\001\022"
+          + "\020\n\014BOUNDING_BOX\020\002\022\031\n\025ORIENTED_BOUNDING_B"
+          + "OX\020\006\022\021\n\rBOUNDING_POLY\020\003\022\014\n\010POLYLINE\020\004\022\020\n"
+          + "\014SEGMENTATION\020\005B\020\n\016request_config\"\247\005\n\021La"
+          + "belVideoRequest\022c\n\033video_classification_"
+          + "config\030\004 \001(\0132<.google.cloud.datalabeling"
+          + ".v1beta1.VideoClassificationConfigH\000\022[\n\027"
+          + "object_detection_config\030\005 \001(\01328.google.c"
+          + "loud.datalabeling.v1beta1.ObjectDetectio"
+          + "nConfigH\000\022Y\n\026object_tracking_config\030\006 \001("
+          + "\01327.google.cloud.datalabeling.v1beta1.Ob"
+          + "jectTrackingConfigH\000\022F\n\014event_config\030\007 \001"
+          + "(\0132..google.cloud.datalabeling.v1beta1.E"
+          + "ventConfigH\000\022\016\n\006parent\030\001 \001(\t\022N\n\014basic_co"
           + "nfig\030\002 \001(\01328.google.cloud.datalabeling.v"
           + "1beta1.HumanAnnotationConfig\022M\n\007feature\030"
           + "\003 \001(\0162<.google.cloud.datalabeling.v1beta"
-          + "1.LabelAudioRequest.Feature\";\n\007Feature\022\027"
-          + "\n\023FEATURE_UNSPECIFIED\020\000\022\027\n\023AUDIO_TRANSCR"
-          + "IPTION\020\001\"1\n\021GetExampleRequest\022\014\n\004name\030\001 "
-          + "\001(\t\022\016\n\006filter\030\002 \001(\t\"\\\n\023ListExamplesReque"
-          + "st\022\016\n\006parent\030\001 \001(\t\022\016\n\006filter\030\002 \001(\t\022\021\n\tpa"
-          + "ge_size\030\003 \001(\005\022\022\n\npage_token\030\004 \001(\t\"m\n\024Lis"
-          + "tExamplesResponse\022<\n\010examples\030\001 \003(\0132*.go"
-          + "ogle.cloud.datalabeling.v1beta1.Example\022"
-          + "\027\n\017next_page_token\030\002 \001(\t\"\203\001\n\036CreateAnnot"
-          + "ationSpecSetRequest\022\016\n\006parent\030\001 \001(\t\022Q\n\023a"
-          + "nnotation_spec_set\030\002 \001(\01324.google.cloud."
-          + "datalabeling.v1beta1.AnnotationSpecSet\"+"
-          + "\n\033GetAnnotationSpecSetRequest\022\014\n\004name\030\001 "
-          + "\001(\t\"f\n\035ListAnnotationSpecSetsRequest\022\016\n\006"
-          + "parent\030\001 \001(\t\022\016\n\006filter\030\002 \001(\t\022\021\n\tpage_siz"
-          + "e\030\003 \001(\005\022\022\n\npage_token\030\004 \001(\t\"\215\001\n\036ListAnno"
-          + "tationSpecSetsResponse\022R\n\024annotation_spe"
-          + "c_sets\030\001 \003(\01324.google.cloud.datalabeling"
-          + ".v1beta1.AnnotationSpecSet\022\027\n\017next_page_"
-          + "token\030\002 \001(\t\".\n\036DeleteAnnotationSpecSetRe"
-          + "quest\022\014\n\004name\030\001 \001(\t\"o\n\030CreateInstruction"
-          + "Request\022\016\n\006parent\030\001 \001(\t\022C\n\013instruction\030\002"
-          + " \001(\0132..google.cloud.datalabeling.v1beta1"
-          + ".Instruction\"%\n\025GetInstructionRequest\022\014\n"
-          + "\004name\030\001 \001(\t\"(\n\030DeleteInstructionRequest\022"
-          + "\014\n\004name\030\001 \001(\t\"`\n\027ListInstructionsRequest"
-          + "\022\016\n\006parent\030\001 \001(\t\022\016\n\006filter\030\002 \001(\t\022\021\n\tpage"
-          + "_size\030\003 \001(\005\022\022\n\npage_token\030\004 \001(\t\"y\n\030ListI"
-          + "nstructionsResponse\022D\n\014instructions\030\001 \003("
-          + "\0132..google.cloud.datalabeling.v1beta1.In"
-          + "struction\022\027\n\017next_page_token\030\002 \001(\t2\256#\n\023D"
-          + "ataLabelingService\022\246\001\n\rCreateDataset\0227.g"
-          + "oogle.cloud.datalabeling.v1beta1.CreateD"
-          + "atasetRequest\032*.google.cloud.datalabelin"
-          + "g.v1beta1.Dataset\"0\202\323\344\223\002*\"%/v1beta1/{par"
-          + "ent=projects/*}/datasets:\001*\022\235\001\n\nGetDatas"
-          + "et\0224.google.cloud.datalabeling.v1beta1.G"
-          + "etDatasetRequest\032*.google.cloud.datalabe"
-          + "ling.v1beta1.Dataset\"-\202\323\344\223\002\'\022%/v1beta1/{"
-          + "name=projects/*/datasets/*}\022\256\001\n\014ListData"
-          + "sets\0226.google.cloud.datalabeling.v1beta1"
-          + ".ListDatasetsRequest\0327.google.cloud.data"
-          + "labeling.v1beta1.ListDatasetsResponse\"-\202"
-          + "\323\344\223\002\'\022%/v1beta1/{parent=projects/*}/data"
-          + "sets\022\217\001\n\rDeleteDataset\0227.google.cloud.da"
-          + "talabeling.v1beta1.DeleteDatasetRequest\032"
-          + "\026.google.protobuf.Empty\"-\202\323\344\223\002\'*%/v1beta"
-          + "1/{name=projects/*/datasets/*}\022\236\001\n\nImpor"
-          + "tData\0224.google.cloud.datalabeling.v1beta"
-          + "1.ImportDataRequest\032\035.google.longrunning"
-          + ".Operation\";\202\323\344\223\0025\"0/v1beta1/{name=proje"
-          + "cts/*/datasets/*}:importData:\001*\022\236\001\n\nExpo"
-          + "rtData\0224.google.cloud.datalabeling.v1bet"
-          + "a1.ExportDataRequest\032\035.google.longrunnin"
-          + "g.Operation\";\202\323\344\223\0025\"0/v1beta1/{name=proj"
-          + "ects/*/datasets/*}:exportData:\001*\022\254\001\n\013Get"
-          + "DataItem\0225.google.cloud.datalabeling.v1b"
-          + "eta1.GetDataItemRequest\032+.google.cloud.d"
-          + "atalabeling.v1beta1.DataItem\"9\202\323\344\223\0023\0221/v"
-          + "1beta1/{name=projects/*/datasets/*/dataI"
-          + "tems/*}\022\275\001\n\rListDataItems\0227.google.cloud"
-          + ".datalabeling.v1beta1.ListDataItemsReque"
-          + "st\0328.google.cloud.datalabeling.v1beta1.L"
-          + "istDataItemsResponse\"9\202\323\344\223\0023\0221/v1beta1/{"
-          + "parent=projects/*/datasets/*}/dataItems\022"
-          + "\314\001\n\023GetAnnotatedDataset\022=.google.cloud.d"
-          + "atalabeling.v1beta1.GetAnnotatedDatasetR"
-          + "equest\0323.google.cloud.datalabeling.v1bet"
-          + "a1.AnnotatedDataset\"A\202\323\344\223\002;\0229/v1beta1/{n"
-          + "ame=projects/*/datasets/*/annotatedDatas"
-          + "ets/*}\022\335\001\n\025ListAnnotatedDatasets\022?.googl"
-          + "e.cloud.datalabeling.v1beta1.ListAnnotat"
-          + "edDatasetsRequest\032@.google.cloud.datalab"
-          + "eling.v1beta1.ListAnnotatedDatasetsRespo"
-          + "nse\"A\202\323\344\223\002;\0229/v1beta1/{parent=projects/*"
-          + "/datasets/*}/annotatedDatasets\022\265\001\n\026Delet"
-          + "eAnnotatedDataset\022@.google.cloud.datalab"
-          + "eling.v1beta1.DeleteAnnotatedDatasetRequ"
-          + "est\032\026.google.protobuf.Empty\"A\202\323\344\223\002;*9/v1"
-          + "beta1/{name=projects/*/datasets/*/annota"
-          + "tedDatasets/*}\022\241\001\n\nLabelImage\0224.google.c"
-          + "loud.datalabeling.v1beta1.LabelImageRequ"
-          + "est\032\035.google.longrunning.Operation\">\202\323\344\223"
-          + "\0028\"3/v1beta1/{parent=projects/*/datasets"
-          + "/*}/image:label:\001*\022\241\001\n\nLabelVideo\0224.goog"
-          + "le.cloud.datalabeling.v1beta1.LabelVideo"
-          + "Request\032\035.google.longrunning.Operation\">"
-          + "\202\323\344\223\0028\"3/v1beta1/{parent=projects/*/data"
-          + "sets/*}/video:label:\001*\022\236\001\n\tLabelText\0223.g"
-          + "oogle.cloud.datalabeling.v1beta1.LabelTe"
-          + "xtRequest\032\035.google.longrunning.Operation"
-          + "\"=\202\323\344\223\0027\"2/v1beta1/{parent=projects/*/da"
-          + "tasets/*}/text:label:\001*\022\241\001\n\nLabelAudio\0224"
-          + ".google.cloud.datalabeling.v1beta1.Label"
-          + "AudioRequest\032\035.google.longrunning.Operat"
-          + "ion\">\202\323\344\223\0028\"3/v1beta1/{parent=projects/*"
-          + "/datasets/*}/audio:label:\001*\022\274\001\n\nGetExamp"
-          + "le\0224.google.cloud.datalabeling.v1beta1.G"
-          + "etExampleRequest\032*.google.cloud.datalabe"
-          + "ling.v1beta1.Example\"L\202\323\344\223\002F\022D/v1beta1/{"
-          + "name=projects/*/datasets/*/annotatedData"
-          + "sets/*/examples/*}\022\315\001\n\014ListExamples\0226.go"
-          + "ogle.cloud.datalabeling.v1beta1.ListExam"
-          + "plesRequest\0327.google.cloud.datalabeling."
-          + "v1beta1.ListExamplesResponse\"L\202\323\344\223\002F\022D/v"
-          + "1beta1/{parent=projects/*/datasets/*/ann"
-          + "otatedDatasets/*}/examples\022\316\001\n\027CreateAnn"
-          + "otationSpecSet\022A.google.cloud.datalabeli"
-          + "ng.v1beta1.CreateAnnotationSpecSetReques"
-          + "t\0324.google.cloud.datalabeling.v1beta1.An"
-          + "notationSpecSet\":\202\323\344\223\0024\"//v1beta1/{paren"
-          + "t=projects/*}/annotationSpecSets:\001*\022\305\001\n\024"
-          + "GetAnnotationSpecSet\022>.google.cloud.data"
-          + "labeling.v1beta1.GetAnnotationSpecSetReq"
-          + "uest\0324.google.cloud.datalabeling.v1beta1"
-          + ".AnnotationSpecSet\"7\202\323\344\223\0021\022//v1beta1/{na"
-          + "me=projects/*/annotationSpecSets/*}\022\326\001\n\026"
-          + "ListAnnotationSpecSets\022@.google.cloud.da"
-          + "talabeling.v1beta1.ListAnnotationSpecSet"
-          + "sRequest\032A.google.cloud.datalabeling.v1b"
-          + "eta1.ListAnnotationSpecSetsResponse\"7\202\323\344"
-          + "\223\0021\022//v1beta1/{parent=projects/*}/annota"
-          + "tionSpecSets\022\255\001\n\027DeleteAnnotationSpecSet"
-          + "\022A.google.cloud.datalabeling.v1beta1.Del"
-          + "eteAnnotationSpecSetRequest\032\026.google.pro"
-          + "tobuf.Empty\"7\202\323\344\223\0021*//v1beta1/{name=proj"
-          + "ects/*/annotationSpecSets/*}\022\245\001\n\021CreateI"
-          + "nstruction\022;.google.cloud.datalabeling.v"
-          + "1beta1.CreateInstructionRequest\032\035.google"
-          + ".longrunning.Operation\"4\202\323\344\223\002.\")/v1beta1"
-          + "/{parent=projects/*}/instructions:\001*\022\255\001\n"
-          + "\016GetInstruction\0228.google.cloud.datalabel"
-          + "ing.v1beta1.GetInstructionRequest\032..goog"
-          + "le.cloud.datalabeling.v1beta1.Instructio"
-          + "n\"1\202\323\344\223\002+\022)/v1beta1/{name=projects/*/ins"
-          + "tructions/*}\022\276\001\n\020ListInstructions\022:.goog"
-          + "le.cloud.datalabeling.v1beta1.ListInstru"
-          + "ctionsRequest\032;.google.cloud.datalabelin"
-          + "g.v1beta1.ListInstructionsResponse\"1\202\323\344\223"
-          + "\002+\022)/v1beta1/{parent=projects/*}/instruc"
-          + "tions\022\233\001\n\021DeleteInstruction\022;.google.clo"
-          + "ud.datalabeling.v1beta1.DeleteInstructio"
-          + "nRequest\032\026.google.protobuf.Empty\"1\202\323\344\223\002+"
-          + "*)/v1beta1/{name=projects/*/instructions"
-          + "/*}Bx\n%com.google.cloud.datalabeling.v1b"
-          + "eta1P\001ZMgoogle.golang.org/genproto/googl"
-          + "eapis/cloud/datalabeling/v1beta1;datalab"
-          + "elingb\006proto3"
+          + "1.LabelVideoRequest.Feature\"l\n\007Feature\022\027"
+          + "\n\023FEATURE_UNSPECIFIED\020\000\022\022\n\016CLASSIFICATIO"
+          + "N\020\001\022\024\n\020OBJECT_DETECTION\020\002\022\023\n\017OBJECT_TRAC"
+          + "KING\020\003\022\t\n\005EVENT\020\004B\020\n\016request_config\"\366\003\n\020"
+          + "LabelTextRequest\022a\n\032text_classification_"
+          + "config\030\004 \001(\0132;.google.cloud.datalabeling"
+          + ".v1beta1.TextClassificationConfigH\000\022f\n\035t"
+          + "ext_entity_extraction_config\030\005 \001(\0132=.goo"
+          + "gle.cloud.datalabeling.v1beta1.TextEntit"
+          + "yExtractionConfigH\000\022\016\n\006parent\030\001 \001(\t\022N\n\014b"
+          + "asic_config\030\002 \001(\01328.google.cloud.datalab"
+          + "eling.v1beta1.HumanAnnotationConfig\022L\n\007f"
+          + "eature\030\006 \001(\0162;.google.cloud.datalabeling"
+          + ".v1beta1.LabelTextRequest.Feature\"W\n\007Fea"
+          + "ture\022\027\n\023FEATURE_UNSPECIFIED\020\000\022\027\n\023TEXT_CL"
+          + "ASSIFICATION\020\001\022\032\n\026TEXT_ENTITY_EXTRACTION"
+          + "\020\002B\020\n\016request_config\"1\n\021GetExampleReques"
+          + "t\022\014\n\004name\030\001 \001(\t\022\016\n\006filter\030\002 \001(\t\"\\\n\023ListE"
+          + "xamplesRequest\022\016\n\006parent\030\001 \001(\t\022\016\n\006filter"
+          + "\030\002 \001(\t\022\021\n\tpage_size\030\003 \001(\005\022\022\n\npage_token\030"
+          + "\004 \001(\t\"m\n\024ListExamplesResponse\022<\n\010example"
+          + "s\030\001 \003(\0132*.google.cloud.datalabeling.v1be"
+          + "ta1.Example\022\027\n\017next_page_token\030\002 \001(\t\"\203\001\n"
+          + "\036CreateAnnotationSpecSetRequest\022\016\n\006paren"
+          + "t\030\001 \001(\t\022Q\n\023annotation_spec_set\030\002 \001(\01324.g"
+          + "oogle.cloud.datalabeling.v1beta1.Annotat"
+          + "ionSpecSet\"+\n\033GetAnnotationSpecSetReques"
+          + "t\022\014\n\004name\030\001 \001(\t\"f\n\035ListAnnotationSpecSet"
+          + "sRequest\022\016\n\006parent\030\001 \001(\t\022\016\n\006filter\030\002 \001(\t"
+          + "\022\021\n\tpage_size\030\003 \001(\005\022\022\n\npage_token\030\004 \001(\t\""
+          + "\215\001\n\036ListAnnotationSpecSetsResponse\022R\n\024an"
+          + "notation_spec_sets\030\001 \003(\01324.google.cloud."
+          + "datalabeling.v1beta1.AnnotationSpecSet\022\027"
+          + "\n\017next_page_token\030\002 \001(\t\".\n\036DeleteAnnotat"
+          + "ionSpecSetRequest\022\014\n\004name\030\001 \001(\t\"o\n\030Creat"
+          + "eInstructionRequest\022\016\n\006parent\030\001 \001(\t\022C\n\013i"
+          + "nstruction\030\002 \001(\0132..google.cloud.datalabe"
+          + "ling.v1beta1.Instruction\"%\n\025GetInstructi"
+          + "onRequest\022\014\n\004name\030\001 \001(\t\"(\n\030DeleteInstruc"
+          + "tionRequest\022\014\n\004name\030\001 \001(\t\"`\n\027ListInstruc"
+          + "tionsRequest\022\016\n\006parent\030\001 \001(\t\022\016\n\006filter\030\002"
+          + " \001(\t\022\021\n\tpage_size\030\003 \001(\005\022\022\n\npage_token\030\004 "
+          + "\001(\t\"y\n\030ListInstructionsResponse\022D\n\014instr"
+          + "uctions\030\001 \003(\0132..google.cloud.datalabelin"
+          + "g.v1beta1.Instruction\022\027\n\017next_page_token"
+          + "\030\002 \001(\t\"$\n\024GetEvaluationRequest\022\014\n\004name\030\001"
+          + " \001(\t\"a\n\030SearchEvaluationsRequest\022\016\n\006pare"
+          + "nt\030\001 \001(\t\022\016\n\006filter\030\002 \001(\t\022\021\n\tpage_size\030\003 "
+          + "\001(\005\022\022\n\npage_token\030\004 \001(\t\"x\n\031SearchEvaluat"
+          + "ionsResponse\022B\n\013evaluations\030\001 \003(\0132-.goog"
+          + "le.cloud.datalabeling.v1beta1.Evaluation"
+          + "\022\027\n\017next_page_token\030\002 \001(\t\"X\n\037SearchExamp"
+          + "leComparisonsRequest\022\016\n\006parent\030\001 \001(\t\022\021\n\t"
+          + "page_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"\333\002\n "
+          + "SearchExampleComparisonsResponse\022r\n\023exam"
+          + "ple_comparisons\030\001 \003(\0132U.google.cloud.dat"
+          + "alabeling.v1beta1.SearchExampleCompariso"
+          + "nsResponse.ExampleComparison\022\027\n\017next_pag"
+          + "e_token\030\002 \001(\t\032\251\001\n\021ExampleComparison\022H\n\024g"
+          + "round_truth_example\030\001 \001(\0132*.google.cloud"
+          + ".datalabeling.v1beta1.Example\022J\n\026model_c"
+          + "reated_examples\030\002 \003(\0132*.google.cloud.dat"
+          + "alabeling.v1beta1.Example\"k\n\032CreateEvalu"
+          + "ationJobRequest\022\016\n\006parent\030\001 \001(\t\022=\n\003job\030\002"
+          + " \001(\01320.google.cloud.datalabeling.v1beta1"
+          + ".EvaluationJob\"\227\001\n\032UpdateEvaluationJobRe"
+          + "quest\022H\n\016evaluation_job\030\001 \001(\01320.google.c"
+          + "loud.datalabeling.v1beta1.EvaluationJob\022"
+          + "/\n\013update_mask\030\002 \001(\0132\032.google.protobuf.F"
+          + "ieldMask\"\'\n\027GetEvaluationJobRequest\022\014\n\004n"
+          + "ame\030\001 \001(\t\")\n\031PauseEvaluationJobRequest\022\014"
+          + "\n\004name\030\001 \001(\t\"*\n\032ResumeEvaluationJobReque"
+          + "st\022\014\n\004name\030\001 \001(\t\"*\n\032DeleteEvaluationJobR"
+          + "equest\022\014\n\004name\030\001 \001(\t\"b\n\031ListEvaluationJo"
+          + "bsRequest\022\016\n\006parent\030\001 \001(\t\022\016\n\006filter\030\002 \001("
+          + "\t\022\021\n\tpage_size\030\003 \001(\005\022\022\n\npage_token\030\004 \001(\t"
+          + "\"\200\001\n\032ListEvaluationJobsResponse\022I\n\017evalu"
+          + "ation_jobs\030\001 \003(\01320.google.cloud.datalabe"
+          + "ling.v1beta1.EvaluationJob\022\027\n\017next_page_"
+          + "token\030\002 \001(\t2\3721\n\023DataLabelingService\022\246\001\n\r"
+          + "CreateDataset\0227.google.cloud.datalabelin"
+          + "g.v1beta1.CreateDatasetRequest\032*.google."
+          + "cloud.datalabeling.v1beta1.Dataset\"0\202\323\344\223"
+          + "\002*\"%/v1beta1/{parent=projects/*}/dataset"
+          + "s:\001*\022\235\001\n\nGetDataset\0224.google.cloud.datal"
+          + "abeling.v1beta1.GetDatasetRequest\032*.goog"
+          + "le.cloud.datalabeling.v1beta1.Dataset\"-\202"
+          + "\323\344\223\002\'\022%/v1beta1/{name=projects/*/dataset"
+          + "s/*}\022\256\001\n\014ListDatasets\0226.google.cloud.dat"
+          + "alabeling.v1beta1.ListDatasetsRequest\0327."
+          + "google.cloud.datalabeling.v1beta1.ListDa"
+          + "tasetsResponse\"-\202\323\344\223\002\'\022%/v1beta1/{parent"
+          + "=projects/*}/datasets\022\217\001\n\rDeleteDataset\022"
+          + "7.google.cloud.datalabeling.v1beta1.Dele"
+          + "teDatasetRequest\032\026.google.protobuf.Empty"
+          + "\"-\202\323\344\223\002\'*%/v1beta1/{name=projects/*/data"
+          + "sets/*}\022\236\001\n\nImportData\0224.google.cloud.da"
+          + "talabeling.v1beta1.ImportDataRequest\032\035.g"
+          + "oogle.longrunning.Operation\";\202\323\344\223\0025\"0/v1"
+          + "beta1/{name=projects/*/datasets/*}:impor"
+          + "tData:\001*\022\236\001\n\nExportData\0224.google.cloud.d"
+          + "atalabeling.v1beta1.ExportDataRequest\032\035."
+          + "google.longrunning.Operation\";\202\323\344\223\0025\"0/v"
+          + "1beta1/{name=projects/*/datasets/*}:expo"
+          + "rtData:\001*\022\254\001\n\013GetDataItem\0225.google.cloud"
+          + ".datalabeling.v1beta1.GetDataItemRequest"
+          + "\032+.google.cloud.datalabeling.v1beta1.Dat"
+          + "aItem\"9\202\323\344\223\0023\0221/v1beta1/{name=projects/*"
+          + "/datasets/*/dataItems/*}\022\275\001\n\rListDataIte"
+          + "ms\0227.google.cloud.datalabeling.v1beta1.L"
+          + "istDataItemsRequest\0328.google.cloud.datal"
+          + "abeling.v1beta1.ListDataItemsResponse\"9\202"
+          + "\323\344\223\0023\0221/v1beta1/{parent=projects/*/datas"
+          + "ets/*}/dataItems\022\314\001\n\023GetAnnotatedDataset"
+          + "\022=.google.cloud.datalabeling.v1beta1.Get"
+          + "AnnotatedDatasetRequest\0323.google.cloud.d"
+          + "atalabeling.v1beta1.AnnotatedDataset\"A\202\323"
+          + "\344\223\002;\0229/v1beta1/{name=projects/*/datasets"
+          + "/*/annotatedDatasets/*}\022\335\001\n\025ListAnnotate"
+          + "dDatasets\022?.google.cloud.datalabeling.v1"
+          + "beta1.ListAnnotatedDatasetsRequest\032@.goo"
+          + "gle.cloud.datalabeling.v1beta1.ListAnnot"
+          + "atedDatasetsResponse\"A\202\323\344\223\002;\0229/v1beta1/{"
+          + "parent=projects/*/datasets/*}/annotatedD"
+          + "atasets\022\265\001\n\026DeleteAnnotatedDataset\022@.goo"
+          + "gle.cloud.datalabeling.v1beta1.DeleteAnn"
+          + "otatedDatasetRequest\032\026.google.protobuf.E"
+          + "mpty\"A\202\323\344\223\002;*9/v1beta1/{name=projects/*/"
+          + "datasets/*/annotatedDatasets/*}\022\241\001\n\nLabe"
+          + "lImage\0224.google.cloud.datalabeling.v1bet"
+          + "a1.LabelImageRequest\032\035.google.longrunnin"
+          + "g.Operation\">\202\323\344\223\0028\"3/v1beta1/{parent=pr"
+          + "ojects/*/datasets/*}/image:label:\001*\022\241\001\n\n"
+          + "LabelVideo\0224.google.cloud.datalabeling.v"
+          + "1beta1.LabelVideoRequest\032\035.google.longru"
+          + "nning.Operation\">\202\323\344\223\0028\"3/v1beta1/{paren"
+          + "t=projects/*/datasets/*}/video:label:\001*\022"
+          + "\236\001\n\tLabelText\0223.google.cloud.datalabelin"
+          + "g.v1beta1.LabelTextRequest\032\035.google.long"
+          + "running.Operation\"=\202\323\344\223\0027\"2/v1beta1/{par"
+          + "ent=projects/*/datasets/*}/text:label:\001*"
+          + "\022\274\001\n\nGetExample\0224.google.cloud.datalabel"
+          + "ing.v1beta1.GetExampleRequest\032*.google.c"
+          + "loud.datalabeling.v1beta1.Example\"L\202\323\344\223\002"
+          + "F\022D/v1beta1/{name=projects/*/datasets/*/"
+          + "annotatedDatasets/*/examples/*}\022\315\001\n\014List"
+          + "Examples\0226.google.cloud.datalabeling.v1b"
+          + "eta1.ListExamplesRequest\0327.google.cloud."
+          + "datalabeling.v1beta1.ListExamplesRespons"
+          + "e\"L\202\323\344\223\002F\022D/v1beta1/{parent=projects/*/d"
+          + "atasets/*/annotatedDatasets/*}/examples\022"
+          + "\316\001\n\027CreateAnnotationSpecSet\022A.google.clo"
+          + "ud.datalabeling.v1beta1.CreateAnnotation"
+          + "SpecSetRequest\0324.google.cloud.datalabeli"
+          + "ng.v1beta1.AnnotationSpecSet\":\202\323\344\223\0024\"//v"
+          + "1beta1/{parent=projects/*}/annotationSpe"
+          + "cSets:\001*\022\305\001\n\024GetAnnotationSpecSet\022>.goog"
+          + "le.cloud.datalabeling.v1beta1.GetAnnotat"
+          + "ionSpecSetRequest\0324.google.cloud.datalab"
+          + "eling.v1beta1.AnnotationSpecSet\"7\202\323\344\223\0021\022"
+          + "//v1beta1/{name=projects/*/annotationSpe"
+          + "cSets/*}\022\326\001\n\026ListAnnotationSpecSets\022@.go"
+          + "ogle.cloud.datalabeling.v1beta1.ListAnno"
+          + "tationSpecSetsRequest\032A.google.cloud.dat"
+          + "alabeling.v1beta1.ListAnnotationSpecSets"
+          + "Response\"7\202\323\344\223\0021\022//v1beta1/{parent=proje"
+          + "cts/*}/annotationSpecSets\022\255\001\n\027DeleteAnno"
+          + "tationSpecSet\022A.google.cloud.datalabelin"
+          + "g.v1beta1.DeleteAnnotationSpecSetRequest"
+          + "\032\026.google.protobuf.Empty\"7\202\323\344\223\0021*//v1bet"
+          + "a1/{name=projects/*/annotationSpecSets/*"
+          + "}\022\245\001\n\021CreateInstruction\022;.google.cloud.d"
+          + "atalabeling.v1beta1.CreateInstructionReq"
+          + "uest\032\035.google.longrunning.Operation\"4\202\323\344"
+          + "\223\002.\")/v1beta1/{parent=projects/*}/instru"
+          + "ctions:\001*\022\255\001\n\016GetInstruction\0228.google.cl"
+          + "oud.datalabeling.v1beta1.GetInstructionR"
+          + "equest\032..google.cloud.datalabeling.v1bet"
+          + "a1.Instruction\"1\202\323\344\223\002+\022)/v1beta1/{name=p"
+          + "rojects/*/instructions/*}\022\276\001\n\020ListInstru"
+          + "ctions\022:.google.cloud.datalabeling.v1bet"
+          + "a1.ListInstructionsRequest\032;.google.clou"
+          + "d.datalabeling.v1beta1.ListInstructionsR"
+          + "esponse\"1\202\323\344\223\002+\022)/v1beta1/{parent=projec"
+          + "ts/*}/instructions\022\233\001\n\021DeleteInstruction"
+          + "\022;.google.cloud.datalabeling.v1beta1.Del"
+          + "eteInstructionRequest\032\026.google.protobuf."
+          + "Empty\"1\202\323\344\223\002+*)/v1beta1/{name=projects/*"
+          + "/instructions/*}\022\264\001\n\rGetEvaluation\0227.goo"
+          + "gle.cloud.datalabeling.v1beta1.GetEvalua"
+          + "tionRequest\032-.google.cloud.datalabeling."
+          + "v1beta1.Evaluation\";\202\323\344\223\0025\0223/v1beta1/{na"
+          + "me=projects/*/datasets/*/evaluations/*}\022"
+          + "\307\001\n\021SearchEvaluations\022;.google.cloud.dat"
+          + "alabeling.v1beta1.SearchEvaluationsReque"
+          + "st\032<.google.cloud.datalabeling.v1beta1.S"
+          + "earchEvaluationsResponse\"7\202\323\344\223\0021\022//v1bet"
+          + "a1/{parent=projects/*}/evaluations:searc"
+          + "h\022\377\001\n\030SearchExampleComparisons\022B.google."
+          + "cloud.datalabeling.v1beta1.SearchExample"
+          + "ComparisonsRequest\032C.google.cloud.datala"
+          + "beling.v1beta1.SearchExampleComparisonsR"
+          + "esponse\"Z\202\323\344\223\002T\"O/v1beta1/{parent=projec"
+          + "ts/*/datasets/*/evaluations/*}/exampleCo"
+          + "mparisons:search:\001*\022\276\001\n\023CreateEvaluation"
+          + "Job\022=.google.cloud.datalabeling.v1beta1."
+          + "CreateEvaluationJobRequest\0320.google.clou"
+          + "d.datalabeling.v1beta1.EvaluationJob\"6\202\323"
+          + "\344\223\0020\"+/v1beta1/{parent=projects/*}/evalu"
+          + "ationJobs:\001*\022\332\001\n\023UpdateEvaluationJob\022=.g"
+          + "oogle.cloud.datalabeling.v1beta1.UpdateE"
+          + "valuationJobRequest\0320.google.cloud.datal"
+          + "abeling.v1beta1.EvaluationJob\"R\202\323\344\223\002L2:/"
+          + "v1beta1/{evaluation_job.name=projects/*/"
+          + "evaluationJobs/*}:\016evaluation_job\022\265\001\n\020Ge"
+          + "tEvaluationJob\022:.google.cloud.datalabeli"
+          + "ng.v1beta1.GetEvaluationJobRequest\0320.goo"
+          + "gle.cloud.datalabeling.v1beta1.Evaluatio"
+          + "nJob\"3\202\323\344\223\002-\022+/v1beta1/{name=projects/*/"
+          + "evaluationJobs/*}\022\250\001\n\022PauseEvaluationJob"
+          + "\022<.google.cloud.datalabeling.v1beta1.Pau"
+          + "seEvaluationJobRequest\032\026.google.protobuf"
+          + ".Empty\"<\202\323\344\223\0026\"1/v1beta1/{name=projects/"
+          + "*/evaluationJobs/*}:pause:\001*\022\253\001\n\023ResumeE"
+          + "valuationJob\022=.google.cloud.datalabeling"
+          + ".v1beta1.ResumeEvaluationJobRequest\032\026.go"
+          + "ogle.protobuf.Empty\"=\202\323\344\223\0027\"2/v1beta1/{n"
+          + "ame=projects/*/evaluationJobs/*}:resume:"
+          + "\001*\022\241\001\n\023DeleteEvaluationJob\022=.google.clou"
+          + "d.datalabeling.v1beta1.DeleteEvaluationJ"
+          + "obRequest\032\026.google.protobuf.Empty\"3\202\323\344\223\002"
+          + "-*+/v1beta1/{name=projects/*/evaluationJ"
+          + "obs/*}\022\306\001\n\022ListEvaluationJobs\022<.google.c"
+          + "loud.datalabeling.v1beta1.ListEvaluation"
+          + "JobsRequest\032=.google.cloud.datalabeling."
+          + "v1beta1.ListEvaluationJobsResponse\"3\202\323\344\223"
+          + "\002-\022+/v1beta1/{parent=projects/*}/evaluat"
+          + "ionJobs\032O\312A\033datalabeling.googleapis.com\322"
+          + "A.https://www.googleapis.com/auth/cloud-"
+          + "platformBx\n%com.google.cloud.datalabelin"
+          + "g.v1beta1P\001ZMgoogle.golang.org/genproto/"
+          + "googleapis/cloud/datalabeling/v1beta1;da"
+          + "talabelingb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -401,11 +532,14 @@ public final class DataLabelingServiceOuterClass {
         descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.api.AnnotationsProto.getDescriptor(),
+          com.google.api.ClientProto.getDescriptor(),
+          com.google.cloud.datalabeling.v1beta1.AnnotationOuterClass.getDescriptor(),
           com.google.cloud.datalabeling.v1beta1.AnnotationSpecSetOuterClass.getDescriptor(),
           com.google.cloud.datalabeling.v1beta1.DatasetOuterClass.getDescriptor(),
+          com.google.cloud.datalabeling.v1beta1.EvaluationOuterClass.getDescriptor(),
+          com.google.cloud.datalabeling.v1beta1.EvaluationJobOuterClass.getDescriptor(),
           com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfigOuterClass.getDescriptor(),
           com.google.cloud.datalabeling.v1beta1.InstructionOuterClass.getDescriptor(),
-          com.google.cloud.datalabeling.v1beta1.Operations.getDescriptor(),
           com.google.longrunning.OperationsProto.getDescriptor(),
           com.google.protobuf.EmptyProto.getDescriptor(),
           com.google.protobuf.FieldMaskProto.getDescriptor(),
@@ -457,7 +591,7 @@ public final class DataLabelingServiceOuterClass {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datalabeling_v1beta1_ImportDataRequest_descriptor,
             new java.lang.String[] {
-              "Name", "InputConfig",
+              "Name", "InputConfig", "UserEmailAddress",
             });
     internal_static_google_cloud_datalabeling_v1beta1_ExportDataRequest_descriptor =
         getDescriptor().getMessageTypes().get(6);
@@ -465,7 +599,7 @@ public final class DataLabelingServiceOuterClass {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datalabeling_v1beta1_ExportDataRequest_descriptor,
             new java.lang.String[] {
-              "Name", "AnnotatedDataset", "Filter", "OutputConfig",
+              "Name", "AnnotatedDataset", "Filter", "OutputConfig", "UserEmailAddress",
             });
     internal_static_google_cloud_datalabeling_v1beta1_GetDataItemRequest_descriptor =
         getDescriptor().getMessageTypes().get(7);
@@ -507,21 +641,21 @@ public final class DataLabelingServiceOuterClass {
             new java.lang.String[] {
               "Parent", "Filter", "PageSize", "PageToken",
             });
-    internal_static_google_cloud_datalabeling_v1beta1_DeleteAnnotatedDatasetRequest_descriptor =
-        getDescriptor().getMessageTypes().get(12);
-    internal_static_google_cloud_datalabeling_v1beta1_DeleteAnnotatedDatasetRequest_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-            internal_static_google_cloud_datalabeling_v1beta1_DeleteAnnotatedDatasetRequest_descriptor,
-            new java.lang.String[] {
-              "Name",
-            });
     internal_static_google_cloud_datalabeling_v1beta1_ListAnnotatedDatasetsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(13);
+        getDescriptor().getMessageTypes().get(12);
     internal_static_google_cloud_datalabeling_v1beta1_ListAnnotatedDatasetsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datalabeling_v1beta1_ListAnnotatedDatasetsResponse_descriptor,
             new java.lang.String[] {
               "AnnotatedDatasets", "NextPageToken",
+            });
+    internal_static_google_cloud_datalabeling_v1beta1_DeleteAnnotatedDatasetRequest_descriptor =
+        getDescriptor().getMessageTypes().get(13);
+    internal_static_google_cloud_datalabeling_v1beta1_DeleteAnnotatedDatasetRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_datalabeling_v1beta1_DeleteAnnotatedDatasetRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
             });
     internal_static_google_cloud_datalabeling_v1beta1_LabelImageRequest_descriptor =
         getDescriptor().getMessageTypes().get(14);
@@ -566,16 +700,8 @@ public final class DataLabelingServiceOuterClass {
               "Feature",
               "RequestConfig",
             });
-    internal_static_google_cloud_datalabeling_v1beta1_LabelAudioRequest_descriptor =
-        getDescriptor().getMessageTypes().get(17);
-    internal_static_google_cloud_datalabeling_v1beta1_LabelAudioRequest_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-            internal_static_google_cloud_datalabeling_v1beta1_LabelAudioRequest_descriptor,
-            new java.lang.String[] {
-              "Parent", "BasicConfig", "Feature",
-            });
     internal_static_google_cloud_datalabeling_v1beta1_GetExampleRequest_descriptor =
-        getDescriptor().getMessageTypes().get(18);
+        getDescriptor().getMessageTypes().get(17);
     internal_static_google_cloud_datalabeling_v1beta1_GetExampleRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datalabeling_v1beta1_GetExampleRequest_descriptor,
@@ -583,7 +709,7 @@ public final class DataLabelingServiceOuterClass {
               "Name", "Filter",
             });
     internal_static_google_cloud_datalabeling_v1beta1_ListExamplesRequest_descriptor =
-        getDescriptor().getMessageTypes().get(19);
+        getDescriptor().getMessageTypes().get(18);
     internal_static_google_cloud_datalabeling_v1beta1_ListExamplesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datalabeling_v1beta1_ListExamplesRequest_descriptor,
@@ -591,7 +717,7 @@ public final class DataLabelingServiceOuterClass {
               "Parent", "Filter", "PageSize", "PageToken",
             });
     internal_static_google_cloud_datalabeling_v1beta1_ListExamplesResponse_descriptor =
-        getDescriptor().getMessageTypes().get(20);
+        getDescriptor().getMessageTypes().get(19);
     internal_static_google_cloud_datalabeling_v1beta1_ListExamplesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datalabeling_v1beta1_ListExamplesResponse_descriptor,
@@ -599,7 +725,7 @@ public final class DataLabelingServiceOuterClass {
               "Examples", "NextPageToken",
             });
     internal_static_google_cloud_datalabeling_v1beta1_CreateAnnotationSpecSetRequest_descriptor =
-        getDescriptor().getMessageTypes().get(21);
+        getDescriptor().getMessageTypes().get(20);
     internal_static_google_cloud_datalabeling_v1beta1_CreateAnnotationSpecSetRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datalabeling_v1beta1_CreateAnnotationSpecSetRequest_descriptor,
@@ -607,7 +733,7 @@ public final class DataLabelingServiceOuterClass {
               "Parent", "AnnotationSpecSet",
             });
     internal_static_google_cloud_datalabeling_v1beta1_GetAnnotationSpecSetRequest_descriptor =
-        getDescriptor().getMessageTypes().get(22);
+        getDescriptor().getMessageTypes().get(21);
     internal_static_google_cloud_datalabeling_v1beta1_GetAnnotationSpecSetRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datalabeling_v1beta1_GetAnnotationSpecSetRequest_descriptor,
@@ -615,7 +741,7 @@ public final class DataLabelingServiceOuterClass {
               "Name",
             });
     internal_static_google_cloud_datalabeling_v1beta1_ListAnnotationSpecSetsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(23);
+        getDescriptor().getMessageTypes().get(22);
     internal_static_google_cloud_datalabeling_v1beta1_ListAnnotationSpecSetsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datalabeling_v1beta1_ListAnnotationSpecSetsRequest_descriptor,
@@ -623,7 +749,7 @@ public final class DataLabelingServiceOuterClass {
               "Parent", "Filter", "PageSize", "PageToken",
             });
     internal_static_google_cloud_datalabeling_v1beta1_ListAnnotationSpecSetsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(24);
+        getDescriptor().getMessageTypes().get(23);
     internal_static_google_cloud_datalabeling_v1beta1_ListAnnotationSpecSetsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datalabeling_v1beta1_ListAnnotationSpecSetsResponse_descriptor,
@@ -631,7 +757,7 @@ public final class DataLabelingServiceOuterClass {
               "AnnotationSpecSets", "NextPageToken",
             });
     internal_static_google_cloud_datalabeling_v1beta1_DeleteAnnotationSpecSetRequest_descriptor =
-        getDescriptor().getMessageTypes().get(25);
+        getDescriptor().getMessageTypes().get(24);
     internal_static_google_cloud_datalabeling_v1beta1_DeleteAnnotationSpecSetRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datalabeling_v1beta1_DeleteAnnotationSpecSetRequest_descriptor,
@@ -639,7 +765,7 @@ public final class DataLabelingServiceOuterClass {
               "Name",
             });
     internal_static_google_cloud_datalabeling_v1beta1_CreateInstructionRequest_descriptor =
-        getDescriptor().getMessageTypes().get(26);
+        getDescriptor().getMessageTypes().get(25);
     internal_static_google_cloud_datalabeling_v1beta1_CreateInstructionRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datalabeling_v1beta1_CreateInstructionRequest_descriptor,
@@ -647,7 +773,7 @@ public final class DataLabelingServiceOuterClass {
               "Parent", "Instruction",
             });
     internal_static_google_cloud_datalabeling_v1beta1_GetInstructionRequest_descriptor =
-        getDescriptor().getMessageTypes().get(27);
+        getDescriptor().getMessageTypes().get(26);
     internal_static_google_cloud_datalabeling_v1beta1_GetInstructionRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datalabeling_v1beta1_GetInstructionRequest_descriptor,
@@ -655,7 +781,7 @@ public final class DataLabelingServiceOuterClass {
               "Name",
             });
     internal_static_google_cloud_datalabeling_v1beta1_DeleteInstructionRequest_descriptor =
-        getDescriptor().getMessageTypes().get(28);
+        getDescriptor().getMessageTypes().get(27);
     internal_static_google_cloud_datalabeling_v1beta1_DeleteInstructionRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datalabeling_v1beta1_DeleteInstructionRequest_descriptor,
@@ -663,7 +789,7 @@ public final class DataLabelingServiceOuterClass {
               "Name",
             });
     internal_static_google_cloud_datalabeling_v1beta1_ListInstructionsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(29);
+        getDescriptor().getMessageTypes().get(28);
     internal_static_google_cloud_datalabeling_v1beta1_ListInstructionsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datalabeling_v1beta1_ListInstructionsRequest_descriptor,
@@ -671,24 +797,143 @@ public final class DataLabelingServiceOuterClass {
               "Parent", "Filter", "PageSize", "PageToken",
             });
     internal_static_google_cloud_datalabeling_v1beta1_ListInstructionsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(30);
+        getDescriptor().getMessageTypes().get(29);
     internal_static_google_cloud_datalabeling_v1beta1_ListInstructionsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datalabeling_v1beta1_ListInstructionsResponse_descriptor,
             new java.lang.String[] {
               "Instructions", "NextPageToken",
             });
+    internal_static_google_cloud_datalabeling_v1beta1_GetEvaluationRequest_descriptor =
+        getDescriptor().getMessageTypes().get(30);
+    internal_static_google_cloud_datalabeling_v1beta1_GetEvaluationRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_datalabeling_v1beta1_GetEvaluationRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_datalabeling_v1beta1_SearchEvaluationsRequest_descriptor =
+        getDescriptor().getMessageTypes().get(31);
+    internal_static_google_cloud_datalabeling_v1beta1_SearchEvaluationsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_datalabeling_v1beta1_SearchEvaluationsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Filter", "PageSize", "PageToken",
+            });
+    internal_static_google_cloud_datalabeling_v1beta1_SearchEvaluationsResponse_descriptor =
+        getDescriptor().getMessageTypes().get(32);
+    internal_static_google_cloud_datalabeling_v1beta1_SearchEvaluationsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_datalabeling_v1beta1_SearchEvaluationsResponse_descriptor,
+            new java.lang.String[] {
+              "Evaluations", "NextPageToken",
+            });
+    internal_static_google_cloud_datalabeling_v1beta1_SearchExampleComparisonsRequest_descriptor =
+        getDescriptor().getMessageTypes().get(33);
+    internal_static_google_cloud_datalabeling_v1beta1_SearchExampleComparisonsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_datalabeling_v1beta1_SearchExampleComparisonsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "PageSize", "PageToken",
+            });
+    internal_static_google_cloud_datalabeling_v1beta1_SearchExampleComparisonsResponse_descriptor =
+        getDescriptor().getMessageTypes().get(34);
+    internal_static_google_cloud_datalabeling_v1beta1_SearchExampleComparisonsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_datalabeling_v1beta1_SearchExampleComparisonsResponse_descriptor,
+            new java.lang.String[] {
+              "ExampleComparisons", "NextPageToken",
+            });
+    internal_static_google_cloud_datalabeling_v1beta1_SearchExampleComparisonsResponse_ExampleComparison_descriptor =
+        internal_static_google_cloud_datalabeling_v1beta1_SearchExampleComparisonsResponse_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_datalabeling_v1beta1_SearchExampleComparisonsResponse_ExampleComparison_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_datalabeling_v1beta1_SearchExampleComparisonsResponse_ExampleComparison_descriptor,
+            new java.lang.String[] {
+              "GroundTruthExample", "ModelCreatedExamples",
+            });
+    internal_static_google_cloud_datalabeling_v1beta1_CreateEvaluationJobRequest_descriptor =
+        getDescriptor().getMessageTypes().get(35);
+    internal_static_google_cloud_datalabeling_v1beta1_CreateEvaluationJobRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_datalabeling_v1beta1_CreateEvaluationJobRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Job",
+            });
+    internal_static_google_cloud_datalabeling_v1beta1_UpdateEvaluationJobRequest_descriptor =
+        getDescriptor().getMessageTypes().get(36);
+    internal_static_google_cloud_datalabeling_v1beta1_UpdateEvaluationJobRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_datalabeling_v1beta1_UpdateEvaluationJobRequest_descriptor,
+            new java.lang.String[] {
+              "EvaluationJob", "UpdateMask",
+            });
+    internal_static_google_cloud_datalabeling_v1beta1_GetEvaluationJobRequest_descriptor =
+        getDescriptor().getMessageTypes().get(37);
+    internal_static_google_cloud_datalabeling_v1beta1_GetEvaluationJobRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_datalabeling_v1beta1_GetEvaluationJobRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_datalabeling_v1beta1_PauseEvaluationJobRequest_descriptor =
+        getDescriptor().getMessageTypes().get(38);
+    internal_static_google_cloud_datalabeling_v1beta1_PauseEvaluationJobRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_datalabeling_v1beta1_PauseEvaluationJobRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_datalabeling_v1beta1_ResumeEvaluationJobRequest_descriptor =
+        getDescriptor().getMessageTypes().get(39);
+    internal_static_google_cloud_datalabeling_v1beta1_ResumeEvaluationJobRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_datalabeling_v1beta1_ResumeEvaluationJobRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_datalabeling_v1beta1_DeleteEvaluationJobRequest_descriptor =
+        getDescriptor().getMessageTypes().get(40);
+    internal_static_google_cloud_datalabeling_v1beta1_DeleteEvaluationJobRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_datalabeling_v1beta1_DeleteEvaluationJobRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_datalabeling_v1beta1_ListEvaluationJobsRequest_descriptor =
+        getDescriptor().getMessageTypes().get(41);
+    internal_static_google_cloud_datalabeling_v1beta1_ListEvaluationJobsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_datalabeling_v1beta1_ListEvaluationJobsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Filter", "PageSize", "PageToken",
+            });
+    internal_static_google_cloud_datalabeling_v1beta1_ListEvaluationJobsResponse_descriptor =
+        getDescriptor().getMessageTypes().get(42);
+    internal_static_google_cloud_datalabeling_v1beta1_ListEvaluationJobsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_datalabeling_v1beta1_ListEvaluationJobsResponse_descriptor,
+            new java.lang.String[] {
+              "EvaluationJobs", "NextPageToken",
+            });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.ClientProto.defaultHost);
     registry.add(com.google.api.AnnotationsProto.http);
+    registry.add(com.google.api.ClientProto.oauthScopes);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.AnnotationsProto.getDescriptor();
+    com.google.api.ClientProto.getDescriptor();
+    com.google.cloud.datalabeling.v1beta1.AnnotationOuterClass.getDescriptor();
     com.google.cloud.datalabeling.v1beta1.AnnotationSpecSetOuterClass.getDescriptor();
     com.google.cloud.datalabeling.v1beta1.DatasetOuterClass.getDescriptor();
+    com.google.cloud.datalabeling.v1beta1.EvaluationOuterClass.getDescriptor();
+    com.google.cloud.datalabeling.v1beta1.EvaluationJobOuterClass.getDescriptor();
     com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfigOuterClass.getDescriptor();
     com.google.cloud.datalabeling.v1beta1.InstructionOuterClass.getDescriptor();
-    com.google.cloud.datalabeling.v1beta1.Operations.getDescriptor();
     com.google.longrunning.OperationsProto.getDescriptor();
     com.google.protobuf.EmptyProto.getDescriptor();
     com.google.protobuf.FieldMaskProto.getDescriptor();

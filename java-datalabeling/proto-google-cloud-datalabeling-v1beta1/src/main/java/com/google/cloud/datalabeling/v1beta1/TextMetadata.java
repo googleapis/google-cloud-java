@@ -7,23 +7,23 @@ package com.google.cloud.datalabeling.v1beta1;
  *
  *
  * <pre>
- * Container of information of an audio.
+ * Metadata for the text.
  * </pre>
  *
- * Protobuf type {@code google.cloud.datalabeling.v1beta1.AudioPayload}
+ * Protobuf type {@code google.cloud.datalabeling.v1beta1.TextMetadata}
  */
-public final class AudioPayload extends com.google.protobuf.GeneratedMessageV3
+public final class TextMetadata extends com.google.protobuf.GeneratedMessageV3
     implements
-    // @@protoc_insertion_point(message_implements:google.cloud.datalabeling.v1beta1.AudioPayload)
-    AudioPayloadOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.cloud.datalabeling.v1beta1.TextMetadata)
+    TextMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-  // Use AudioPayload.newBuilder() to construct.
-  private AudioPayload(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use TextMetadata.newBuilder() to construct.
+  private TextMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private AudioPayload() {
-    audioUri_ = "";
+  private TextMetadata() {
+    languageCode_ = "";
   }
 
   @java.lang.Override
@@ -31,7 +31,7 @@ public final class AudioPayload extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private AudioPayload(
+  private TextMetadata(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -54,12 +54,7 @@ public final class AudioPayload extends com.google.protobuf.GeneratedMessageV3
             {
               java.lang.String s = input.readStringRequireUtf8();
 
-              audioUri_ = s;
-              break;
-            }
-          case 24:
-            {
-              sampleRateHertz_ = input.readInt32();
+              languageCode_ = s;
               break;
             }
           default:
@@ -83,38 +78,40 @@ public final class AudioPayload extends com.google.protobuf.GeneratedMessageV3
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datalabeling.v1beta1.DatasetOuterClass
-        .internal_static_google_cloud_datalabeling_v1beta1_AudioPayload_descriptor;
+        .internal_static_google_cloud_datalabeling_v1beta1_TextMetadata_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloud.datalabeling.v1beta1.DatasetOuterClass
-        .internal_static_google_cloud_datalabeling_v1beta1_AudioPayload_fieldAccessorTable
+        .internal_static_google_cloud_datalabeling_v1beta1_TextMetadata_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.datalabeling.v1beta1.AudioPayload.class,
-            com.google.cloud.datalabeling.v1beta1.AudioPayload.Builder.class);
+            com.google.cloud.datalabeling.v1beta1.TextMetadata.class,
+            com.google.cloud.datalabeling.v1beta1.TextMetadata.Builder.class);
   }
 
-  public static final int AUDIO_URI_FIELD_NUMBER = 1;
-  private volatile java.lang.Object audioUri_;
+  public static final int LANGUAGE_CODE_FIELD_NUMBER = 1;
+  private volatile java.lang.Object languageCode_;
   /**
    *
    *
    * <pre>
-   * Audio uri in user bucket.
+   * The language of this text, as a
+   * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt).
+   * Default value is en-US.
    * </pre>
    *
-   * <code>string audio_uri = 1;</code>
+   * <code>string language_code = 1;</code>
    */
-  public java.lang.String getAudioUri() {
-    java.lang.Object ref = audioUri_;
+  public java.lang.String getLanguageCode() {
+    java.lang.Object ref = languageCode_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      audioUri_ = s;
+      languageCode_ = s;
       return s;
     }
   }
@@ -122,39 +119,23 @@ public final class AudioPayload extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Audio uri in user bucket.
+   * The language of this text, as a
+   * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt).
+   * Default value is en-US.
    * </pre>
    *
-   * <code>string audio_uri = 1;</code>
+   * <code>string language_code = 1;</code>
    */
-  public com.google.protobuf.ByteString getAudioUriBytes() {
-    java.lang.Object ref = audioUri_;
+  public com.google.protobuf.ByteString getLanguageCodeBytes() {
+    java.lang.Object ref = languageCode_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      audioUri_ = b;
+      languageCode_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
-  }
-
-  public static final int SAMPLE_RATE_HERTZ_FIELD_NUMBER = 3;
-  private int sampleRateHertz_;
-  /**
-   *
-   *
-   * <pre>
-   * Sample rate in Hertz of the audio data sent in all
-   * `RecognitionAudio` messages. This field is optional for `FLAC` and `WAV`
-   * audio files and required for all other audio formats. For details,
-   * see [AudioEncoding][google.cloud.datalabeling.v1beta1.AudioPayload.AudioEncoding].
-   * </pre>
-   *
-   * <code>int32 sample_rate_hertz = 3;</code>
-   */
-  public int getSampleRateHertz() {
-    return sampleRateHertz_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -171,11 +152,8 @@ public final class AudioPayload extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getAudioUriBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, audioUri_);
-    }
-    if (sampleRateHertz_ != 0) {
-      output.writeInt32(3, sampleRateHertz_);
+    if (!getLanguageCodeBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, languageCode_);
     }
     unknownFields.writeTo(output);
   }
@@ -186,11 +164,8 @@ public final class AudioPayload extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getAudioUriBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, audioUri_);
-    }
-    if (sampleRateHertz_ != 0) {
-      size += com.google.protobuf.CodedOutputStream.computeInt32Size(3, sampleRateHertz_);
+    if (!getLanguageCodeBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, languageCode_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -202,14 +177,13 @@ public final class AudioPayload extends com.google.protobuf.GeneratedMessageV3
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof com.google.cloud.datalabeling.v1beta1.AudioPayload)) {
+    if (!(obj instanceof com.google.cloud.datalabeling.v1beta1.TextMetadata)) {
       return super.equals(obj);
     }
-    com.google.cloud.datalabeling.v1beta1.AudioPayload other =
-        (com.google.cloud.datalabeling.v1beta1.AudioPayload) obj;
+    com.google.cloud.datalabeling.v1beta1.TextMetadata other =
+        (com.google.cloud.datalabeling.v1beta1.TextMetadata) obj;
 
-    if (!getAudioUri().equals(other.getAudioUri())) return false;
-    if (getSampleRateHertz() != other.getSampleRateHertz()) return false;
+    if (!getLanguageCode().equals(other.getLanguageCode())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -221,80 +195,78 @@ public final class AudioPayload extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + AUDIO_URI_FIELD_NUMBER;
-    hash = (53 * hash) + getAudioUri().hashCode();
-    hash = (37 * hash) + SAMPLE_RATE_HERTZ_FIELD_NUMBER;
-    hash = (53 * hash) + getSampleRateHertz();
+    hash = (37 * hash) + LANGUAGE_CODE_FIELD_NUMBER;
+    hash = (53 * hash) + getLanguageCode().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.google.cloud.datalabeling.v1beta1.AudioPayload parseFrom(
+  public static com.google.cloud.datalabeling.v1beta1.TextMetadata parseFrom(
       java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.datalabeling.v1beta1.AudioPayload parseFrom(
+  public static com.google.cloud.datalabeling.v1beta1.TextMetadata parseFrom(
       java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.datalabeling.v1beta1.AudioPayload parseFrom(
+  public static com.google.cloud.datalabeling.v1beta1.TextMetadata parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.datalabeling.v1beta1.AudioPayload parseFrom(
+  public static com.google.cloud.datalabeling.v1beta1.TextMetadata parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.datalabeling.v1beta1.AudioPayload parseFrom(byte[] data)
+  public static com.google.cloud.datalabeling.v1beta1.TextMetadata parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.datalabeling.v1beta1.AudioPayload parseFrom(
+  public static com.google.cloud.datalabeling.v1beta1.TextMetadata parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.datalabeling.v1beta1.AudioPayload parseFrom(
+  public static com.google.cloud.datalabeling.v1beta1.TextMetadata parseFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.datalabeling.v1beta1.AudioPayload parseFrom(
+  public static com.google.cloud.datalabeling.v1beta1.TextMetadata parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.datalabeling.v1beta1.AudioPayload parseDelimitedFrom(
+  public static com.google.cloud.datalabeling.v1beta1.TextMetadata parseDelimitedFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.datalabeling.v1beta1.AudioPayload parseDelimitedFrom(
+  public static com.google.cloud.datalabeling.v1beta1.TextMetadata parseDelimitedFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.datalabeling.v1beta1.AudioPayload parseFrom(
+  public static com.google.cloud.datalabeling.v1beta1.TextMetadata parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.datalabeling.v1beta1.AudioPayload parseFrom(
+  public static com.google.cloud.datalabeling.v1beta1.TextMetadata parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -311,7 +283,7 @@ public final class AudioPayload extends com.google.protobuf.GeneratedMessageV3
     return DEFAULT_INSTANCE.toBuilder();
   }
 
-  public static Builder newBuilder(com.google.cloud.datalabeling.v1beta1.AudioPayload prototype) {
+  public static Builder newBuilder(com.google.cloud.datalabeling.v1beta1.TextMetadata prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -329,31 +301,31 @@ public final class AudioPayload extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Container of information of an audio.
+   * Metadata for the text.
    * </pre>
    *
-   * Protobuf type {@code google.cloud.datalabeling.v1beta1.AudioPayload}
+   * Protobuf type {@code google.cloud.datalabeling.v1beta1.TextMetadata}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.cloud.datalabeling.v1beta1.AudioPayload)
-      com.google.cloud.datalabeling.v1beta1.AudioPayloadOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.cloud.datalabeling.v1beta1.TextMetadata)
+      com.google.cloud.datalabeling.v1beta1.TextMetadataOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.datalabeling.v1beta1.DatasetOuterClass
-          .internal_static_google_cloud_datalabeling_v1beta1_AudioPayload_descriptor;
+          .internal_static_google_cloud_datalabeling_v1beta1_TextMetadata_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.datalabeling.v1beta1.DatasetOuterClass
-          .internal_static_google_cloud_datalabeling_v1beta1_AudioPayload_fieldAccessorTable
+          .internal_static_google_cloud_datalabeling_v1beta1_TextMetadata_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.datalabeling.v1beta1.AudioPayload.class,
-              com.google.cloud.datalabeling.v1beta1.AudioPayload.Builder.class);
+              com.google.cloud.datalabeling.v1beta1.TextMetadata.class,
+              com.google.cloud.datalabeling.v1beta1.TextMetadata.Builder.class);
     }
 
-    // Construct using com.google.cloud.datalabeling.v1beta1.AudioPayload.newBuilder()
+    // Construct using com.google.cloud.datalabeling.v1beta1.TextMetadata.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -370,9 +342,7 @@ public final class AudioPayload extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      audioUri_ = "";
-
-      sampleRateHertz_ = 0;
+      languageCode_ = "";
 
       return this;
     }
@@ -380,17 +350,17 @@ public final class AudioPayload extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.cloud.datalabeling.v1beta1.DatasetOuterClass
-          .internal_static_google_cloud_datalabeling_v1beta1_AudioPayload_descriptor;
+          .internal_static_google_cloud_datalabeling_v1beta1_TextMetadata_descriptor;
     }
 
     @java.lang.Override
-    public com.google.cloud.datalabeling.v1beta1.AudioPayload getDefaultInstanceForType() {
-      return com.google.cloud.datalabeling.v1beta1.AudioPayload.getDefaultInstance();
+    public com.google.cloud.datalabeling.v1beta1.TextMetadata getDefaultInstanceForType() {
+      return com.google.cloud.datalabeling.v1beta1.TextMetadata.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.cloud.datalabeling.v1beta1.AudioPayload build() {
-      com.google.cloud.datalabeling.v1beta1.AudioPayload result = buildPartial();
+    public com.google.cloud.datalabeling.v1beta1.TextMetadata build() {
+      com.google.cloud.datalabeling.v1beta1.TextMetadata result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -398,11 +368,10 @@ public final class AudioPayload extends com.google.protobuf.GeneratedMessageV3
     }
 
     @java.lang.Override
-    public com.google.cloud.datalabeling.v1beta1.AudioPayload buildPartial() {
-      com.google.cloud.datalabeling.v1beta1.AudioPayload result =
-          new com.google.cloud.datalabeling.v1beta1.AudioPayload(this);
-      result.audioUri_ = audioUri_;
-      result.sampleRateHertz_ = sampleRateHertz_;
+    public com.google.cloud.datalabeling.v1beta1.TextMetadata buildPartial() {
+      com.google.cloud.datalabeling.v1beta1.TextMetadata result =
+          new com.google.cloud.datalabeling.v1beta1.TextMetadata(this);
+      result.languageCode_ = languageCode_;
       onBuilt();
       return result;
     }
@@ -442,23 +411,20 @@ public final class AudioPayload extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.cloud.datalabeling.v1beta1.AudioPayload) {
-        return mergeFrom((com.google.cloud.datalabeling.v1beta1.AudioPayload) other);
+      if (other instanceof com.google.cloud.datalabeling.v1beta1.TextMetadata) {
+        return mergeFrom((com.google.cloud.datalabeling.v1beta1.TextMetadata) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.cloud.datalabeling.v1beta1.AudioPayload other) {
-      if (other == com.google.cloud.datalabeling.v1beta1.AudioPayload.getDefaultInstance())
+    public Builder mergeFrom(com.google.cloud.datalabeling.v1beta1.TextMetadata other) {
+      if (other == com.google.cloud.datalabeling.v1beta1.TextMetadata.getDefaultInstance())
         return this;
-      if (!other.getAudioUri().isEmpty()) {
-        audioUri_ = other.audioUri_;
+      if (!other.getLanguageCode().isEmpty()) {
+        languageCode_ = other.languageCode_;
         onChanged();
-      }
-      if (other.getSampleRateHertz() != 0) {
-        setSampleRateHertz(other.getSampleRateHertz());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -475,12 +441,12 @@ public final class AudioPayload extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.datalabeling.v1beta1.AudioPayload parsedMessage = null;
+      com.google.cloud.datalabeling.v1beta1.TextMetadata parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         parsedMessage =
-            (com.google.cloud.datalabeling.v1beta1.AudioPayload) e.getUnfinishedMessage();
+            (com.google.cloud.datalabeling.v1beta1.TextMetadata) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -490,22 +456,24 @@ public final class AudioPayload extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private java.lang.Object audioUri_ = "";
+    private java.lang.Object languageCode_ = "";
     /**
      *
      *
      * <pre>
-     * Audio uri in user bucket.
+     * The language of this text, as a
+     * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt).
+     * Default value is en-US.
      * </pre>
      *
-     * <code>string audio_uri = 1;</code>
+     * <code>string language_code = 1;</code>
      */
-    public java.lang.String getAudioUri() {
-      java.lang.Object ref = audioUri_;
+    public java.lang.String getLanguageCode() {
+      java.lang.Object ref = languageCode_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        audioUri_ = s;
+        languageCode_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -515,17 +483,19 @@ public final class AudioPayload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Audio uri in user bucket.
+     * The language of this text, as a
+     * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt).
+     * Default value is en-US.
      * </pre>
      *
-     * <code>string audio_uri = 1;</code>
+     * <code>string language_code = 1;</code>
      */
-    public com.google.protobuf.ByteString getAudioUriBytes() {
-      java.lang.Object ref = audioUri_;
+    public com.google.protobuf.ByteString getLanguageCodeBytes() {
+      java.lang.Object ref = languageCode_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        audioUri_ = b;
+        languageCode_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -535,17 +505,19 @@ public final class AudioPayload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Audio uri in user bucket.
+     * The language of this text, as a
+     * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt).
+     * Default value is en-US.
      * </pre>
      *
-     * <code>string audio_uri = 1;</code>
+     * <code>string language_code = 1;</code>
      */
-    public Builder setAudioUri(java.lang.String value) {
+    public Builder setLanguageCode(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
       }
 
-      audioUri_ = value;
+      languageCode_ = value;
       onChanged();
       return this;
     }
@@ -553,14 +525,16 @@ public final class AudioPayload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Audio uri in user bucket.
+     * The language of this text, as a
+     * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt).
+     * Default value is en-US.
      * </pre>
      *
-     * <code>string audio_uri = 1;</code>
+     * <code>string language_code = 1;</code>
      */
-    public Builder clearAudioUri() {
+    public Builder clearLanguageCode() {
 
-      audioUri_ = getDefaultInstance().getAudioUri();
+      languageCode_ = getDefaultInstance().getLanguageCode();
       onChanged();
       return this;
     }
@@ -568,71 +542,20 @@ public final class AudioPayload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Audio uri in user bucket.
+     * The language of this text, as a
+     * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt).
+     * Default value is en-US.
      * </pre>
      *
-     * <code>string audio_uri = 1;</code>
+     * <code>string language_code = 1;</code>
      */
-    public Builder setAudioUriBytes(com.google.protobuf.ByteString value) {
+    public Builder setLanguageCodeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
 
-      audioUri_ = value;
-      onChanged();
-      return this;
-    }
-
-    private int sampleRateHertz_;
-    /**
-     *
-     *
-     * <pre>
-     * Sample rate in Hertz of the audio data sent in all
-     * `RecognitionAudio` messages. This field is optional for `FLAC` and `WAV`
-     * audio files and required for all other audio formats. For details,
-     * see [AudioEncoding][google.cloud.datalabeling.v1beta1.AudioPayload.AudioEncoding].
-     * </pre>
-     *
-     * <code>int32 sample_rate_hertz = 3;</code>
-     */
-    public int getSampleRateHertz() {
-      return sampleRateHertz_;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Sample rate in Hertz of the audio data sent in all
-     * `RecognitionAudio` messages. This field is optional for `FLAC` and `WAV`
-     * audio files and required for all other audio formats. For details,
-     * see [AudioEncoding][google.cloud.datalabeling.v1beta1.AudioPayload.AudioEncoding].
-     * </pre>
-     *
-     * <code>int32 sample_rate_hertz = 3;</code>
-     */
-    public Builder setSampleRateHertz(int value) {
-
-      sampleRateHertz_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Sample rate in Hertz of the audio data sent in all
-     * `RecognitionAudio` messages. This field is optional for `FLAC` and `WAV`
-     * audio files and required for all other audio formats. For details,
-     * see [AudioEncoding][google.cloud.datalabeling.v1beta1.AudioPayload.AudioEncoding].
-     * </pre>
-     *
-     * <code>int32 sample_rate_hertz = 3;</code>
-     */
-    public Builder clearSampleRateHertz() {
-
-      sampleRateHertz_ = 0;
+      languageCode_ = value;
       onChanged();
       return this;
     }
@@ -648,42 +571,42 @@ public final class AudioPayload extends com.google.protobuf.GeneratedMessageV3
       return super.mergeUnknownFields(unknownFields);
     }
 
-    // @@protoc_insertion_point(builder_scope:google.cloud.datalabeling.v1beta1.AudioPayload)
+    // @@protoc_insertion_point(builder_scope:google.cloud.datalabeling.v1beta1.TextMetadata)
   }
 
-  // @@protoc_insertion_point(class_scope:google.cloud.datalabeling.v1beta1.AudioPayload)
-  private static final com.google.cloud.datalabeling.v1beta1.AudioPayload DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.cloud.datalabeling.v1beta1.TextMetadata)
+  private static final com.google.cloud.datalabeling.v1beta1.TextMetadata DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new com.google.cloud.datalabeling.v1beta1.AudioPayload();
+    DEFAULT_INSTANCE = new com.google.cloud.datalabeling.v1beta1.TextMetadata();
   }
 
-  public static com.google.cloud.datalabeling.v1beta1.AudioPayload getDefaultInstance() {
+  public static com.google.cloud.datalabeling.v1beta1.TextMetadata getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<AudioPayload> PARSER =
-      new com.google.protobuf.AbstractParser<AudioPayload>() {
+  private static final com.google.protobuf.Parser<TextMetadata> PARSER =
+      new com.google.protobuf.AbstractParser<TextMetadata>() {
         @java.lang.Override
-        public AudioPayload parsePartialFrom(
+        public TextMetadata parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new AudioPayload(input, extensionRegistry);
+          return new TextMetadata(input, extensionRegistry);
         }
       };
 
-  public static com.google.protobuf.Parser<AudioPayload> parser() {
+  public static com.google.protobuf.Parser<TextMetadata> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<AudioPayload> getParserForType() {
+  public com.google.protobuf.Parser<TextMetadata> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.cloud.datalabeling.v1beta1.AudioPayload getDefaultInstanceForType() {
+  public com.google.cloud.datalabeling.v1beta1.TextMetadata getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 }

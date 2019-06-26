@@ -29,6 +29,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
     labelGroup_ = "";
     languageCode_ = "";
     contributorEmails_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    userEmailAddress_ = "";
   }
 
   @java.lang.Override
@@ -118,6 +119,13 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
                 mutable_bitField0_ |= 0x00000080;
               }
               contributorEmails_.add(s);
+              break;
+            }
+          case 82:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              userEmailAddress_ = s;
               break;
             }
           default:
@@ -518,6 +526,51 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
     return contributorEmails_.getByteString(index);
   }
 
+  public static final int USER_EMAIL_ADDRESS_FIELD_NUMBER = 10;
+  private volatile java.lang.Object userEmailAddress_;
+  /**
+   *
+   *
+   * <pre>
+   * Email of the user who started the labeling task and should be notified by
+   * email. If empty no notification will be sent.
+   * </pre>
+   *
+   * <code>string user_email_address = 10;</code>
+   */
+  public java.lang.String getUserEmailAddress() {
+    java.lang.Object ref = userEmailAddress_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      userEmailAddress_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Email of the user who started the labeling task and should be notified by
+   * email. If empty no notification will be sent.
+   * </pre>
+   *
+   * <code>string user_email_address = 10;</code>
+   */
+  public com.google.protobuf.ByteString getUserEmailAddressBytes() {
+    java.lang.Object ref = userEmailAddress_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      userEmailAddress_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -555,6 +608,9 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
     }
     for (int i = 0; i < contributorEmails_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, contributorEmails_.getRaw(i));
+    }
+    if (!getUserEmailAddressBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 10, userEmailAddress_);
     }
     unknownFields.writeTo(output);
   }
@@ -596,6 +652,9 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
       size += dataSize;
       size += 1 * getContributorEmailsList().size();
     }
+    if (!getUserEmailAddressBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, userEmailAddress_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -625,6 +684,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
       if (!getQuestionDuration().equals(other.getQuestionDuration())) return false;
     }
     if (!getContributorEmailsList().equals(other.getContributorEmailsList())) return false;
+    if (!getUserEmailAddress().equals(other.getUserEmailAddress())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -656,6 +716,8 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
       hash = (37 * hash) + CONTRIBUTOR_EMAILS_FIELD_NUMBER;
       hash = (53 * hash) + getContributorEmailsList().hashCode();
     }
+    hash = (37 * hash) + USER_EMAIL_ADDRESS_FIELD_NUMBER;
+    hash = (53 * hash) + getUserEmailAddress().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -822,6 +884,8 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
       }
       contributorEmails_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000080);
+      userEmailAddress_ = "";
+
       return this;
     }
 
@@ -867,6 +931,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
         bitField0_ = (bitField0_ & ~0x00000080);
       }
       result.contributorEmails_ = contributorEmails_;
+      result.userEmailAddress_ = userEmailAddress_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -952,6 +1017,10 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
           ensureContributorEmailsIsMutable();
           contributorEmails_.addAll(other.contributorEmails_);
         }
+        onChanged();
+      }
+      if (!other.getUserEmailAddress().isEmpty()) {
+        userEmailAddress_ = other.userEmailAddress_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -1914,6 +1983,105 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
       checkByteStringIsUtf8(value);
       ensureContributorEmailsIsMutable();
       contributorEmails_.add(value);
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object userEmailAddress_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Email of the user who started the labeling task and should be notified by
+     * email. If empty no notification will be sent.
+     * </pre>
+     *
+     * <code>string user_email_address = 10;</code>
+     */
+    public java.lang.String getUserEmailAddress() {
+      java.lang.Object ref = userEmailAddress_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        userEmailAddress_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Email of the user who started the labeling task and should be notified by
+     * email. If empty no notification will be sent.
+     * </pre>
+     *
+     * <code>string user_email_address = 10;</code>
+     */
+    public com.google.protobuf.ByteString getUserEmailAddressBytes() {
+      java.lang.Object ref = userEmailAddress_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        userEmailAddress_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Email of the user who started the labeling task and should be notified by
+     * email. If empty no notification will be sent.
+     * </pre>
+     *
+     * <code>string user_email_address = 10;</code>
+     */
+    public Builder setUserEmailAddress(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      userEmailAddress_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Email of the user who started the labeling task and should be notified by
+     * email. If empty no notification will be sent.
+     * </pre>
+     *
+     * <code>string user_email_address = 10;</code>
+     */
+    public Builder clearUserEmailAddress() {
+
+      userEmailAddress_ = getDefaultInstance().getUserEmailAddress();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Email of the user who started the labeling task and should be notified by
+     * email. If empty no notification will be sent.
+     * </pre>
+     *
+     * <code>string user_email_address = 10;</code>
+     */
+    public Builder setUserEmailAddressBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      userEmailAddress_ = value;
       onChanged();
       return this;
     }

@@ -12,8 +12,7 @@ public interface AnnotatedDatasetOrBuilder
    *
    *
    * <pre>
-   * Output only.
-   * AnnotatedDataset resource name in format of:
+   * Output only. AnnotatedDataset resource name in format of:
    * projects/{project_id}/datasets/{dataset_id}/annotatedDatasets/
    * {annotated_dataset_id}
    * </pre>
@@ -25,8 +24,7 @@ public interface AnnotatedDatasetOrBuilder
    *
    *
    * <pre>
-   * Output only.
-   * AnnotatedDataset resource name in format of:
+   * Output only. AnnotatedDataset resource name in format of:
    * projects/{project_id}/datasets/{dataset_id}/annotatedDatasets/
    * {annotated_dataset_id}
    * </pre>
@@ -244,4 +242,49 @@ public interface AnnotatedDatasetOrBuilder
    * <code>.google.cloud.datalabeling.v1beta1.AnnotatedDatasetMetadata metadata = 10;</code>
    */
   com.google.cloud.datalabeling.v1beta1.AnnotatedDatasetMetadataOrBuilder getMetadataOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The names of any related resources that are blocking changes
+   * to the annotated dataset.
+   * </pre>
+   *
+   * <code>repeated string blocking_resources = 11;</code>
+   */
+  java.util.List<java.lang.String> getBlockingResourcesList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The names of any related resources that are blocking changes
+   * to the annotated dataset.
+   * </pre>
+   *
+   * <code>repeated string blocking_resources = 11;</code>
+   */
+  int getBlockingResourcesCount();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The names of any related resources that are blocking changes
+   * to the annotated dataset.
+   * </pre>
+   *
+   * <code>repeated string blocking_resources = 11;</code>
+   */
+  java.lang.String getBlockingResources(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The names of any related resources that are blocking changes
+   * to the annotated dataset.
+   * </pre>
+   *
+   * <code>repeated string blocking_resources = 11;</code>
+   */
+  com.google.protobuf.ByteString getBlockingResourcesBytes(int index);
 }

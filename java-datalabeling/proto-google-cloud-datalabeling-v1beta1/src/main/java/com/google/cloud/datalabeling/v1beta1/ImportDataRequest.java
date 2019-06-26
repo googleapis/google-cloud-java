@@ -24,6 +24,7 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
 
   private ImportDataRequest() {
     name_ = "";
+    userEmailAddress_ = "";
   }
 
   @java.lang.Override
@@ -72,6 +73,13 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
                 inputConfig_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 26:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              userEmailAddress_ = s;
               break;
             }
           default:
@@ -194,6 +202,51 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
     return getInputConfig();
   }
 
+  public static final int USER_EMAIL_ADDRESS_FIELD_NUMBER = 3;
+  private volatile java.lang.Object userEmailAddress_;
+  /**
+   *
+   *
+   * <pre>
+   * Email of the user who started the import task and should be notified by
+   * email. If empty no notification will be sent.
+   * </pre>
+   *
+   * <code>string user_email_address = 3;</code>
+   */
+  public java.lang.String getUserEmailAddress() {
+    java.lang.Object ref = userEmailAddress_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      userEmailAddress_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Email of the user who started the import task and should be notified by
+   * email. If empty no notification will be sent.
+   * </pre>
+   *
+   * <code>string user_email_address = 3;</code>
+   */
+  public com.google.protobuf.ByteString getUserEmailAddressBytes() {
+    java.lang.Object ref = userEmailAddress_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      userEmailAddress_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -214,6 +267,9 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
     if (inputConfig_ != null) {
       output.writeMessage(2, getInputConfig());
     }
+    if (!getUserEmailAddressBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, userEmailAddress_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -228,6 +284,9 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
     }
     if (inputConfig_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getInputConfig());
+    }
+    if (!getUserEmailAddressBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, userEmailAddress_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -250,6 +309,7 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
     if (hasInputConfig()) {
       if (!getInputConfig().equals(other.getInputConfig())) return false;
     }
+    if (!getUserEmailAddress().equals(other.getUserEmailAddress())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -267,6 +327,8 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
       hash = (37 * hash) + INPUT_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getInputConfig().hashCode();
     }
+    hash = (37 * hash) + USER_EMAIL_ADDRESS_FIELD_NUMBER;
+    hash = (53 * hash) + getUserEmailAddress().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -421,6 +483,8 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
         inputConfig_ = null;
         inputConfigBuilder_ = null;
       }
+      userEmailAddress_ = "";
+
       return this;
     }
 
@@ -454,6 +518,7 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
       } else {
         result.inputConfig_ = inputConfigBuilder_.build();
       }
+      result.userEmailAddress_ = userEmailAddress_;
       onBuilt();
       return result;
     }
@@ -510,6 +575,10 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
       }
       if (other.hasInputConfig()) {
         mergeInputConfig(other.getInputConfig());
+      }
+      if (!other.getUserEmailAddress().isEmpty()) {
+        userEmailAddress_ = other.userEmailAddress_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -820,6 +889,105 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
         inputConfig_ = null;
       }
       return inputConfigBuilder_;
+    }
+
+    private java.lang.Object userEmailAddress_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Email of the user who started the import task and should be notified by
+     * email. If empty no notification will be sent.
+     * </pre>
+     *
+     * <code>string user_email_address = 3;</code>
+     */
+    public java.lang.String getUserEmailAddress() {
+      java.lang.Object ref = userEmailAddress_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        userEmailAddress_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Email of the user who started the import task and should be notified by
+     * email. If empty no notification will be sent.
+     * </pre>
+     *
+     * <code>string user_email_address = 3;</code>
+     */
+    public com.google.protobuf.ByteString getUserEmailAddressBytes() {
+      java.lang.Object ref = userEmailAddress_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        userEmailAddress_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Email of the user who started the import task and should be notified by
+     * email. If empty no notification will be sent.
+     * </pre>
+     *
+     * <code>string user_email_address = 3;</code>
+     */
+    public Builder setUserEmailAddress(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      userEmailAddress_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Email of the user who started the import task and should be notified by
+     * email. If empty no notification will be sent.
+     * </pre>
+     *
+     * <code>string user_email_address = 3;</code>
+     */
+    public Builder clearUserEmailAddress() {
+
+      userEmailAddress_ = getDefaultInstance().getUserEmailAddress();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Email of the user who started the import task and should be notified by
+     * email. If empty no notification will be sent.
+     * </pre>
+     *
+     * <code>string user_email_address = 3;</code>
+     */
+    public Builder setUserEmailAddressBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      userEmailAddress_ = value;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

@@ -162,19 +162,51 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
 
   public static final int COMMENTS_FIELD_NUMBER = 4;
   private com.google.protobuf.LazyStringList comments_;
-  /** <code>repeated string comments = 4;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Comments from contributors.
+   * </pre>
+   *
+   * <code>repeated string comments = 4;</code>
+   */
   public com.google.protobuf.ProtocolStringList getCommentsList() {
     return comments_;
   }
-  /** <code>repeated string comments = 4;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Comments from contributors.
+   * </pre>
+   *
+   * <code>repeated string comments = 4;</code>
+   */
   public int getCommentsCount() {
     return comments_.size();
   }
-  /** <code>repeated string comments = 4;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Comments from contributors.
+   * </pre>
+   *
+   * <code>repeated string comments = 4;</code>
+   */
   public java.lang.String getComments(int index) {
     return comments_.get(index);
   }
-  /** <code>repeated string comments = 4;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Comments from contributors.
+   * </pre>
+   *
+   * <code>repeated string comments = 4;</code>
+   */
   public com.google.protobuf.ByteString getCommentsBytes(int index) {
     return comments_.getByteString(index);
   }
@@ -713,23 +745,63 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
         bitField0_ |= 0x00000008;
       }
     }
-    /** <code>repeated string comments = 4;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Comments from contributors.
+     * </pre>
+     *
+     * <code>repeated string comments = 4;</code>
+     */
     public com.google.protobuf.ProtocolStringList getCommentsList() {
       return comments_.getUnmodifiableView();
     }
-    /** <code>repeated string comments = 4;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Comments from contributors.
+     * </pre>
+     *
+     * <code>repeated string comments = 4;</code>
+     */
     public int getCommentsCount() {
       return comments_.size();
     }
-    /** <code>repeated string comments = 4;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Comments from contributors.
+     * </pre>
+     *
+     * <code>repeated string comments = 4;</code>
+     */
     public java.lang.String getComments(int index) {
       return comments_.get(index);
     }
-    /** <code>repeated string comments = 4;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Comments from contributors.
+     * </pre>
+     *
+     * <code>repeated string comments = 4;</code>
+     */
     public com.google.protobuf.ByteString getCommentsBytes(int index) {
       return comments_.getByteString(index);
     }
-    /** <code>repeated string comments = 4;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Comments from contributors.
+     * </pre>
+     *
+     * <code>repeated string comments = 4;</code>
+     */
     public Builder setComments(int index, java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
@@ -739,7 +811,15 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-    /** <code>repeated string comments = 4;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Comments from contributors.
+     * </pre>
+     *
+     * <code>repeated string comments = 4;</code>
+     */
     public Builder addComments(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
@@ -749,21 +829,45 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-    /** <code>repeated string comments = 4;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Comments from contributors.
+     * </pre>
+     *
+     * <code>repeated string comments = 4;</code>
+     */
     public Builder addAllComments(java.lang.Iterable<java.lang.String> values) {
       ensureCommentsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, comments_);
       onChanged();
       return this;
     }
-    /** <code>repeated string comments = 4;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Comments from contributors.
+     * </pre>
+     *
+     * <code>repeated string comments = 4;</code>
+     */
     public Builder clearComments() {
       comments_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
-    /** <code>repeated string comments = 4;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Comments from contributors.
+     * </pre>
+     *
+     * <code>repeated string comments = 4;</code>
+     */
     public Builder addCommentsBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();

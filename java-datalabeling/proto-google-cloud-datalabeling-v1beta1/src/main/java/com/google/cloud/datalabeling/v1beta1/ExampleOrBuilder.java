@@ -105,37 +105,6 @@ public interface ExampleOrBuilder
    *
    *
    * <pre>
-   * The audio payload, a container of the audio uri.
-   * </pre>
-   *
-   * <code>.google.cloud.datalabeling.v1beta1.AudioPayload audio_payload = 8;</code>
-   */
-  boolean hasAudioPayload();
-  /**
-   *
-   *
-   * <pre>
-   * The audio payload, a container of the audio uri.
-   * </pre>
-   *
-   * <code>.google.cloud.datalabeling.v1beta1.AudioPayload audio_payload = 8;</code>
-   */
-  com.google.cloud.datalabeling.v1beta1.AudioPayload getAudioPayload();
-  /**
-   *
-   *
-   * <pre>
-   * The audio payload, a container of the audio uri.
-   * </pre>
-   *
-   * <code>.google.cloud.datalabeling.v1beta1.AudioPayload audio_payload = 8;</code>
-   */
-  com.google.cloud.datalabeling.v1beta1.AudioPayloadOrBuilder getAudioPayloadOrBuilder();
-
-  /**
-   *
-   *
-   * <pre>
    * Output only. Name of the example, in format of:
    * projects/{project_id}/datasets/{dataset_id}/annotatedDatasets/
    * {annotated_dataset_id}/examples/{example_id}
