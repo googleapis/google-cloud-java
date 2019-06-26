@@ -30,10 +30,6 @@
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-asset-v1beta1</artifactId>
     </dependency>
-    <dependency>
-      <groupId>io.grpc</groupId>
-      <artifactId>grpc-stub</artifactId>
-    </dependency>
     <!-- Test dependencies -->
     <dependency>
       <groupId>junit</groupId>
