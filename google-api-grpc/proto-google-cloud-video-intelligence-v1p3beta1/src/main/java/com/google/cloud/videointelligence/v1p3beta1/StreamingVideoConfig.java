@@ -160,6 +160,60 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
               streamingConfigCase_ = 5;
               break;
             }
+          case 170:
+            {
+              com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig
+                      .Builder
+                  subBuilder = null;
+              if (streamingConfigCase_ == 21) {
+                subBuilder =
+                    ((com.google.cloud.videointelligence.v1p3beta1
+                                .StreamingAutomlClassificationConfig)
+                            streamingConfig_)
+                        .toBuilder();
+              }
+              streamingConfig_ =
+                  input.readMessage(
+                      com.google.cloud.videointelligence.v1p3beta1
+                          .StreamingAutomlClassificationConfig.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.cloud.videointelligence.v1p3beta1
+                            .StreamingAutomlClassificationConfig)
+                        streamingConfig_);
+                streamingConfig_ = subBuilder.buildPartial();
+              }
+              streamingConfigCase_ = 21;
+              break;
+            }
+          case 178:
+            {
+              com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlObjectTrackingConfig
+                      .Builder
+                  subBuilder = null;
+              if (streamingConfigCase_ == 22) {
+                subBuilder =
+                    ((com.google.cloud.videointelligence.v1p3beta1
+                                .StreamingAutomlObjectTrackingConfig)
+                            streamingConfig_)
+                        .toBuilder();
+              }
+              streamingConfig_ =
+                  input.readMessage(
+                      com.google.cloud.videointelligence.v1p3beta1
+                          .StreamingAutomlObjectTrackingConfig.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.cloud.videointelligence.v1p3beta1
+                            .StreamingAutomlObjectTrackingConfig)
+                        streamingConfig_);
+                streamingConfig_ = subBuilder.buildPartial();
+              }
+              streamingConfigCase_ = 22;
+              break;
+            }
           case 242:
             {
               com.google.cloud.videointelligence.v1p3beta1.StreamingStorageConfig.Builder
@@ -220,6 +274,8 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
     LABEL_DETECTION_CONFIG(3),
     EXPLICIT_CONTENT_DETECTION_CONFIG(4),
     OBJECT_TRACKING_CONFIG(5),
+    AUTOML_CLASSIFICATION_CONFIG(21),
+    AUTOML_OBJECT_TRACKING_CONFIG(22),
     STREAMINGCONFIG_NOT_SET(0);
     private final int value;
 
@@ -242,6 +298,10 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
           return EXPLICIT_CONTENT_DETECTION_CONFIG;
         case 5:
           return OBJECT_TRACKING_CONFIG;
+        case 21:
+          return AUTOML_CLASSIFICATION_CONFIG;
+        case 22:
+          return AUTOML_OBJECT_TRACKING_CONFIG;
         case 0:
           return STREAMINGCONFIG_NOT_SET;
         default:
@@ -515,6 +575,118 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
         .getDefaultInstance();
   }
 
+  public static final int AUTOML_CLASSIFICATION_CONFIG_FIELD_NUMBER = 21;
+  /**
+   *
+   *
+   * <pre>
+   * Config for STREAMING_AUTOML_CLASSIFICATION.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig automl_classification_config = 21;
+   * </code>
+   */
+  public boolean hasAutomlClassificationConfig() {
+    return streamingConfigCase_ == 21;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Config for STREAMING_AUTOML_CLASSIFICATION.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig automl_classification_config = 21;
+   * </code>
+   */
+  public com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig
+      getAutomlClassificationConfig() {
+    if (streamingConfigCase_ == 21) {
+      return (com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig)
+          streamingConfig_;
+    }
+    return com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig
+        .getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Config for STREAMING_AUTOML_CLASSIFICATION.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig automl_classification_config = 21;
+   * </code>
+   */
+  public com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfigOrBuilder
+      getAutomlClassificationConfigOrBuilder() {
+    if (streamingConfigCase_ == 21) {
+      return (com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig)
+          streamingConfig_;
+    }
+    return com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig
+        .getDefaultInstance();
+  }
+
+  public static final int AUTOML_OBJECT_TRACKING_CONFIG_FIELD_NUMBER = 22;
+  /**
+   *
+   *
+   * <pre>
+   * Config for STREAMING_AUTOML_OBJECT_TRACKING.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.videointelligence.v1p3beta1.StreamingAutomlObjectTrackingConfig automl_object_tracking_config = 22;
+   * </code>
+   */
+  public boolean hasAutomlObjectTrackingConfig() {
+    return streamingConfigCase_ == 22;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Config for STREAMING_AUTOML_OBJECT_TRACKING.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.videointelligence.v1p3beta1.StreamingAutomlObjectTrackingConfig automl_object_tracking_config = 22;
+   * </code>
+   */
+  public com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlObjectTrackingConfig
+      getAutomlObjectTrackingConfig() {
+    if (streamingConfigCase_ == 22) {
+      return (com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlObjectTrackingConfig)
+          streamingConfig_;
+    }
+    return com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlObjectTrackingConfig
+        .getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Config for STREAMING_AUTOML_OBJECT_TRACKING.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.videointelligence.v1p3beta1.StreamingAutomlObjectTrackingConfig automl_object_tracking_config = 22;
+   * </code>
+   */
+  public com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlObjectTrackingConfigOrBuilder
+      getAutomlObjectTrackingConfigOrBuilder() {
+    if (streamingConfigCase_ == 22) {
+      return (com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlObjectTrackingConfig)
+          streamingConfig_;
+    }
+    return com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlObjectTrackingConfig
+        .getDefaultInstance();
+  }
+
   public static final int STORAGE_CONFIG_FIELD_NUMBER = 30;
   private com.google.cloud.videointelligence.v1p3beta1.StreamingStorageConfig storageConfig_;
   /**
@@ -604,6 +776,18 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
           (com.google.cloud.videointelligence.v1p3beta1.StreamingObjectTrackingConfig)
               streamingConfig_);
     }
+    if (streamingConfigCase_ == 21) {
+      output.writeMessage(
+          21,
+          (com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig)
+              streamingConfig_);
+    }
+    if (streamingConfigCase_ == 22) {
+      output.writeMessage(
+          22,
+          (com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlObjectTrackingConfig)
+              streamingConfig_);
+    }
     if (storageConfig_ != null) {
       output.writeMessage(30, getStorageConfig());
     }
@@ -650,6 +834,20 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
               (com.google.cloud.videointelligence.v1p3beta1.StreamingObjectTrackingConfig)
                   streamingConfig_);
     }
+    if (streamingConfigCase_ == 21) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              21,
+              (com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig)
+                  streamingConfig_);
+    }
+    if (streamingConfigCase_ == 22) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              22,
+              (com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlObjectTrackingConfig)
+                  streamingConfig_);
+    }
     if (storageConfig_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(30, getStorageConfig());
     }
@@ -690,6 +888,14 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
       case 5:
         if (!getObjectTrackingConfig().equals(other.getObjectTrackingConfig())) return false;
         break;
+      case 21:
+        if (!getAutomlClassificationConfig().equals(other.getAutomlClassificationConfig()))
+          return false;
+        break;
+      case 22:
+        if (!getAutomlObjectTrackingConfig().equals(other.getAutomlObjectTrackingConfig()))
+          return false;
+        break;
       case 0:
       default:
     }
@@ -726,6 +932,14 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
       case 5:
         hash = (37 * hash) + OBJECT_TRACKING_CONFIG_FIELD_NUMBER;
         hash = (53 * hash) + getObjectTrackingConfig().hashCode();
+        break;
+      case 21:
+        hash = (37 * hash) + AUTOML_CLASSIFICATION_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getAutomlClassificationConfig().hashCode();
+        break;
+      case 22:
+        hash = (37 * hash) + AUTOML_OBJECT_TRACKING_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getAutomlObjectTrackingConfig().hashCode();
         break;
       case 0:
       default:
@@ -946,6 +1160,20 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
           result.streamingConfig_ = objectTrackingConfigBuilder_.build();
         }
       }
+      if (streamingConfigCase_ == 21) {
+        if (automlClassificationConfigBuilder_ == null) {
+          result.streamingConfig_ = streamingConfig_;
+        } else {
+          result.streamingConfig_ = automlClassificationConfigBuilder_.build();
+        }
+      }
+      if (streamingConfigCase_ == 22) {
+        if (automlObjectTrackingConfigBuilder_ == null) {
+          result.streamingConfig_ = streamingConfig_;
+        } else {
+          result.streamingConfig_ = automlObjectTrackingConfigBuilder_.build();
+        }
+      }
       if (storageConfigBuilder_ == null) {
         result.storageConfig_ = storageConfig_;
       } else {
@@ -1029,6 +1257,16 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
         case OBJECT_TRACKING_CONFIG:
           {
             mergeObjectTrackingConfig(other.getObjectTrackingConfig());
+            break;
+          }
+        case AUTOML_CLASSIFICATION_CONFIG:
+          {
+            mergeAutomlClassificationConfig(other.getAutomlClassificationConfig());
+            break;
+          }
+        case AUTOML_OBJECT_TRACKING_CONFIG:
+          {
+            mergeAutomlObjectTrackingConfig(other.getAutomlObjectTrackingConfig());
             break;
           }
         case STREAMINGCONFIG_NOT_SET:
@@ -2129,6 +2367,496 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       ;
       return objectTrackingConfigBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig,
+            com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig
+                .Builder,
+            com.google.cloud.videointelligence.v1p3beta1
+                .StreamingAutomlClassificationConfigOrBuilder>
+        automlClassificationConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Config for STREAMING_AUTOML_CLASSIFICATION.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig automl_classification_config = 21;
+     * </code>
+     */
+    public boolean hasAutomlClassificationConfig() {
+      return streamingConfigCase_ == 21;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config for STREAMING_AUTOML_CLASSIFICATION.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig automl_classification_config = 21;
+     * </code>
+     */
+    public com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig
+        getAutomlClassificationConfig() {
+      if (automlClassificationConfigBuilder_ == null) {
+        if (streamingConfigCase_ == 21) {
+          return (com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig)
+              streamingConfig_;
+        }
+        return com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig
+            .getDefaultInstance();
+      } else {
+        if (streamingConfigCase_ == 21) {
+          return automlClassificationConfigBuilder_.getMessage();
+        }
+        return com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config for STREAMING_AUTOML_CLASSIFICATION.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig automl_classification_config = 21;
+     * </code>
+     */
+    public Builder setAutomlClassificationConfig(
+        com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig value) {
+      if (automlClassificationConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        streamingConfig_ = value;
+        onChanged();
+      } else {
+        automlClassificationConfigBuilder_.setMessage(value);
+      }
+      streamingConfigCase_ = 21;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config for STREAMING_AUTOML_CLASSIFICATION.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig automl_classification_config = 21;
+     * </code>
+     */
+    public Builder setAutomlClassificationConfig(
+        com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig.Builder
+            builderForValue) {
+      if (automlClassificationConfigBuilder_ == null) {
+        streamingConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        automlClassificationConfigBuilder_.setMessage(builderForValue.build());
+      }
+      streamingConfigCase_ = 21;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config for STREAMING_AUTOML_CLASSIFICATION.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig automl_classification_config = 21;
+     * </code>
+     */
+    public Builder mergeAutomlClassificationConfig(
+        com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig value) {
+      if (automlClassificationConfigBuilder_ == null) {
+        if (streamingConfigCase_ == 21
+            && streamingConfig_
+                != com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig
+                    .getDefaultInstance()) {
+          streamingConfig_ =
+              com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig
+                  .newBuilder(
+                      (com.google.cloud.videointelligence.v1p3beta1
+                              .StreamingAutomlClassificationConfig)
+                          streamingConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          streamingConfig_ = value;
+        }
+        onChanged();
+      } else {
+        if (streamingConfigCase_ == 21) {
+          automlClassificationConfigBuilder_.mergeFrom(value);
+        }
+        automlClassificationConfigBuilder_.setMessage(value);
+      }
+      streamingConfigCase_ = 21;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config for STREAMING_AUTOML_CLASSIFICATION.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig automl_classification_config = 21;
+     * </code>
+     */
+    public Builder clearAutomlClassificationConfig() {
+      if (automlClassificationConfigBuilder_ == null) {
+        if (streamingConfigCase_ == 21) {
+          streamingConfigCase_ = 0;
+          streamingConfig_ = null;
+          onChanged();
+        }
+      } else {
+        if (streamingConfigCase_ == 21) {
+          streamingConfigCase_ = 0;
+          streamingConfig_ = null;
+        }
+        automlClassificationConfigBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config for STREAMING_AUTOML_CLASSIFICATION.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig automl_classification_config = 21;
+     * </code>
+     */
+    public com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig.Builder
+        getAutomlClassificationConfigBuilder() {
+      return getAutomlClassificationConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config for STREAMING_AUTOML_CLASSIFICATION.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig automl_classification_config = 21;
+     * </code>
+     */
+    public com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfigOrBuilder
+        getAutomlClassificationConfigOrBuilder() {
+      if ((streamingConfigCase_ == 21) && (automlClassificationConfigBuilder_ != null)) {
+        return automlClassificationConfigBuilder_.getMessageOrBuilder();
+      } else {
+        if (streamingConfigCase_ == 21) {
+          return (com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig)
+              streamingConfig_;
+        }
+        return com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config for STREAMING_AUTOML_CLASSIFICATION.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig automl_classification_config = 21;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig,
+            com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig
+                .Builder,
+            com.google.cloud.videointelligence.v1p3beta1
+                .StreamingAutomlClassificationConfigOrBuilder>
+        getAutomlClassificationConfigFieldBuilder() {
+      if (automlClassificationConfigBuilder_ == null) {
+        if (!(streamingConfigCase_ == 21)) {
+          streamingConfig_ =
+              com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig
+                  .getDefaultInstance();
+        }
+        automlClassificationConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig,
+                com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig
+                    .Builder,
+                com.google.cloud.videointelligence.v1p3beta1
+                    .StreamingAutomlClassificationConfigOrBuilder>(
+                (com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig)
+                    streamingConfig_,
+                getParentForChildren(),
+                isClean());
+        streamingConfig_ = null;
+      }
+      streamingConfigCase_ = 21;
+      onChanged();
+      ;
+      return automlClassificationConfigBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlObjectTrackingConfig,
+            com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlObjectTrackingConfig
+                .Builder,
+            com.google.cloud.videointelligence.v1p3beta1
+                .StreamingAutomlObjectTrackingConfigOrBuilder>
+        automlObjectTrackingConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Config for STREAMING_AUTOML_OBJECT_TRACKING.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.videointelligence.v1p3beta1.StreamingAutomlObjectTrackingConfig automl_object_tracking_config = 22;
+     * </code>
+     */
+    public boolean hasAutomlObjectTrackingConfig() {
+      return streamingConfigCase_ == 22;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config for STREAMING_AUTOML_OBJECT_TRACKING.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.videointelligence.v1p3beta1.StreamingAutomlObjectTrackingConfig automl_object_tracking_config = 22;
+     * </code>
+     */
+    public com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlObjectTrackingConfig
+        getAutomlObjectTrackingConfig() {
+      if (automlObjectTrackingConfigBuilder_ == null) {
+        if (streamingConfigCase_ == 22) {
+          return (com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlObjectTrackingConfig)
+              streamingConfig_;
+        }
+        return com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlObjectTrackingConfig
+            .getDefaultInstance();
+      } else {
+        if (streamingConfigCase_ == 22) {
+          return automlObjectTrackingConfigBuilder_.getMessage();
+        }
+        return com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlObjectTrackingConfig
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config for STREAMING_AUTOML_OBJECT_TRACKING.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.videointelligence.v1p3beta1.StreamingAutomlObjectTrackingConfig automl_object_tracking_config = 22;
+     * </code>
+     */
+    public Builder setAutomlObjectTrackingConfig(
+        com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlObjectTrackingConfig value) {
+      if (automlObjectTrackingConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        streamingConfig_ = value;
+        onChanged();
+      } else {
+        automlObjectTrackingConfigBuilder_.setMessage(value);
+      }
+      streamingConfigCase_ = 22;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config for STREAMING_AUTOML_OBJECT_TRACKING.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.videointelligence.v1p3beta1.StreamingAutomlObjectTrackingConfig automl_object_tracking_config = 22;
+     * </code>
+     */
+    public Builder setAutomlObjectTrackingConfig(
+        com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlObjectTrackingConfig.Builder
+            builderForValue) {
+      if (automlObjectTrackingConfigBuilder_ == null) {
+        streamingConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        automlObjectTrackingConfigBuilder_.setMessage(builderForValue.build());
+      }
+      streamingConfigCase_ = 22;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config for STREAMING_AUTOML_OBJECT_TRACKING.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.videointelligence.v1p3beta1.StreamingAutomlObjectTrackingConfig automl_object_tracking_config = 22;
+     * </code>
+     */
+    public Builder mergeAutomlObjectTrackingConfig(
+        com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlObjectTrackingConfig value) {
+      if (automlObjectTrackingConfigBuilder_ == null) {
+        if (streamingConfigCase_ == 22
+            && streamingConfig_
+                != com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlObjectTrackingConfig
+                    .getDefaultInstance()) {
+          streamingConfig_ =
+              com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlObjectTrackingConfig
+                  .newBuilder(
+                      (com.google.cloud.videointelligence.v1p3beta1
+                              .StreamingAutomlObjectTrackingConfig)
+                          streamingConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          streamingConfig_ = value;
+        }
+        onChanged();
+      } else {
+        if (streamingConfigCase_ == 22) {
+          automlObjectTrackingConfigBuilder_.mergeFrom(value);
+        }
+        automlObjectTrackingConfigBuilder_.setMessage(value);
+      }
+      streamingConfigCase_ = 22;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config for STREAMING_AUTOML_OBJECT_TRACKING.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.videointelligence.v1p3beta1.StreamingAutomlObjectTrackingConfig automl_object_tracking_config = 22;
+     * </code>
+     */
+    public Builder clearAutomlObjectTrackingConfig() {
+      if (automlObjectTrackingConfigBuilder_ == null) {
+        if (streamingConfigCase_ == 22) {
+          streamingConfigCase_ = 0;
+          streamingConfig_ = null;
+          onChanged();
+        }
+      } else {
+        if (streamingConfigCase_ == 22) {
+          streamingConfigCase_ = 0;
+          streamingConfig_ = null;
+        }
+        automlObjectTrackingConfigBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config for STREAMING_AUTOML_OBJECT_TRACKING.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.videointelligence.v1p3beta1.StreamingAutomlObjectTrackingConfig automl_object_tracking_config = 22;
+     * </code>
+     */
+    public com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlObjectTrackingConfig.Builder
+        getAutomlObjectTrackingConfigBuilder() {
+      return getAutomlObjectTrackingConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config for STREAMING_AUTOML_OBJECT_TRACKING.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.videointelligence.v1p3beta1.StreamingAutomlObjectTrackingConfig automl_object_tracking_config = 22;
+     * </code>
+     */
+    public com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlObjectTrackingConfigOrBuilder
+        getAutomlObjectTrackingConfigOrBuilder() {
+      if ((streamingConfigCase_ == 22) && (automlObjectTrackingConfigBuilder_ != null)) {
+        return automlObjectTrackingConfigBuilder_.getMessageOrBuilder();
+      } else {
+        if (streamingConfigCase_ == 22) {
+          return (com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlObjectTrackingConfig)
+              streamingConfig_;
+        }
+        return com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlObjectTrackingConfig
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config for STREAMING_AUTOML_OBJECT_TRACKING.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.videointelligence.v1p3beta1.StreamingAutomlObjectTrackingConfig automl_object_tracking_config = 22;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlObjectTrackingConfig,
+            com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlObjectTrackingConfig
+                .Builder,
+            com.google.cloud.videointelligence.v1p3beta1
+                .StreamingAutomlObjectTrackingConfigOrBuilder>
+        getAutomlObjectTrackingConfigFieldBuilder() {
+      if (automlObjectTrackingConfigBuilder_ == null) {
+        if (!(streamingConfigCase_ == 22)) {
+          streamingConfig_ =
+              com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlObjectTrackingConfig
+                  .getDefaultInstance();
+        }
+        automlObjectTrackingConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlObjectTrackingConfig,
+                com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlObjectTrackingConfig
+                    .Builder,
+                com.google.cloud.videointelligence.v1p3beta1
+                    .StreamingAutomlObjectTrackingConfigOrBuilder>(
+                (com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlObjectTrackingConfig)
+                    streamingConfig_,
+                getParentForChildren(),
+                isClean());
+        streamingConfig_ = null;
+      }
+      streamingConfigCase_ = 22;
+      onChanged();
+      ;
+      return automlObjectTrackingConfigBuilder_;
     }
 
     private com.google.cloud.videointelligence.v1p3beta1.StreamingStorageConfig storageConfig_;
