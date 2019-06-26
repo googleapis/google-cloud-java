@@ -42,6 +42,8 @@ public final class Storage {
      * <code>AVRO = 1;</code>
      */
     AVRO(1),
+    /** <code>ARROW = 3;</code> */
+    ARROW(3),
     UNRECOGNIZED(-1),
     ;
 
@@ -66,6 +68,8 @@ public final class Storage {
      * <code>AVRO = 1;</code>
      */
     public static final int AVRO_VALUE = 1;
+    /** <code>ARROW = 3;</code> */
+    public static final int ARROW_VALUE = 3;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -87,6 +91,8 @@ public final class Storage {
           return DATA_FORMAT_UNSPECIFIED;
         case 1:
           return AVRO;
+        case 3:
+          return ARROW;
         default:
           return null;
       }
@@ -138,6 +144,171 @@ public final class Storage {
     // @@protoc_insertion_point(enum_scope:google.cloud.bigquery.storage.v1beta1.DataFormat)
   }
 
+  /**
+   *
+   *
+   * <pre>
+   * Strategy for distributing data among multiple streams in a read session.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.bigquery.storage.v1beta1.ShardingStrategy}
+   */
+  public enum ShardingStrategy implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Same as LIQUID.
+     * </pre>
+     *
+     * <code>SHARDING_STRATEGY_UNSPECIFIED = 0;</code>
+     */
+    SHARDING_STRATEGY_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Assigns data to each stream based on the client's read rate. The faster the
+     * client reads from a stream, the more data is assigned to the stream. In
+     * this strategy, it's possible to read all data from a single stream even if
+     * there are other streams present.
+     * </pre>
+     *
+     * <code>LIQUID = 1;</code>
+     */
+    LIQUID(1),
+    /**
+     *
+     *
+     * <pre>
+     * Assigns data to each stream such that roughly the same number of rows can
+     * be read from each stream. Because the server-side unit for assigning data
+     * is collections of rows, the API does not guarantee that each stream will
+     * return the same number or rows. Additionally, the limits are enforced based
+     * on the number of pre-filtering rows, so some filters can lead to lopsided
+     * assignments.
+     * </pre>
+     *
+     * <code>BALANCED = 2;</code>
+     */
+    BALANCED(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Same as LIQUID.
+     * </pre>
+     *
+     * <code>SHARDING_STRATEGY_UNSPECIFIED = 0;</code>
+     */
+    public static final int SHARDING_STRATEGY_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Assigns data to each stream based on the client's read rate. The faster the
+     * client reads from a stream, the more data is assigned to the stream. In
+     * this strategy, it's possible to read all data from a single stream even if
+     * there are other streams present.
+     * </pre>
+     *
+     * <code>LIQUID = 1;</code>
+     */
+    public static final int LIQUID_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Assigns data to each stream such that roughly the same number of rows can
+     * be read from each stream. Because the server-side unit for assigning data
+     * is collections of rows, the API does not guarantee that each stream will
+     * return the same number or rows. Additionally, the limits are enforced based
+     * on the number of pre-filtering rows, so some filters can lead to lopsided
+     * assignments.
+     * </pre>
+     *
+     * <code>BALANCED = 2;</code>
+     */
+    public static final int BALANCED_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /** @deprecated Use {@link #forNumber(int)} instead. */
+    @java.lang.Deprecated
+    public static ShardingStrategy valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static ShardingStrategy forNumber(int value) {
+      switch (value) {
+        case 0:
+          return SHARDING_STRATEGY_UNSPECIFIED;
+        case 1:
+          return LIQUID;
+        case 2:
+          return BALANCED;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<ShardingStrategy> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<ShardingStrategy>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<ShardingStrategy>() {
+              public ShardingStrategy findValueByNumber(int number) {
+                return ShardingStrategy.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.bigquery.storage.v1beta1.Storage.getDescriptor()
+          .getEnumTypes()
+          .get(1);
+    }
+
+    private static final ShardingStrategy[] VALUES = values();
+
+    public static ShardingStrategy valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private ShardingStrategy(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.bigquery.storage.v1beta1.ShardingStrategy)
+  }
+
   public interface StreamOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.bigquery.storage.v1beta1.Stream)
@@ -165,17 +336,6 @@ public final class Storage {
      * <code>string name = 1;</code>
      */
     com.google.protobuf.ByteString getNameBytes();
-
-    /**
-     *
-     *
-     * <pre>
-     * Rows in the stream.
-     * </pre>
-     *
-     * <code>int64 row_count = 2;</code>
-     */
-    long getRowCount();
   }
   /**
    *
@@ -229,11 +389,6 @@ public final class Storage {
                 java.lang.String s = input.readStringRequireUtf8();
 
                 name_ = s;
-                break;
-              }
-            case 16:
-              {
-                rowCount_ = input.readInt64();
                 break;
               }
             default:
@@ -315,21 +470,6 @@ public final class Storage {
       }
     }
 
-    public static final int ROW_COUNT_FIELD_NUMBER = 2;
-    private long rowCount_;
-    /**
-     *
-     *
-     * <pre>
-     * Rows in the stream.
-     * </pre>
-     *
-     * <code>int64 row_count = 2;</code>
-     */
-    public long getRowCount() {
-      return rowCount_;
-    }
-
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -347,9 +487,6 @@ public final class Storage {
       if (!getNameBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
       }
-      if (rowCount_ != 0L) {
-        output.writeInt64(2, rowCount_);
-      }
       unknownFields.writeTo(output);
     }
 
@@ -361,9 +498,6 @@ public final class Storage {
       size = 0;
       if (!getNameBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
-      }
-      if (rowCount_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream.computeInt64Size(2, rowCount_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -382,7 +516,6 @@ public final class Storage {
           (com.google.cloud.bigquery.storage.v1beta1.Storage.Stream) obj;
 
       if (!getName().equals(other.getName())) return false;
-      if (getRowCount() != other.getRowCount()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -396,8 +529,6 @@ public final class Storage {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + NAME_FIELD_NUMBER;
       hash = (53 * hash) + getName().hashCode();
-      hash = (37 * hash) + ROW_COUNT_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getRowCount());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -548,8 +679,6 @@ public final class Storage {
         super.clear();
         name_ = "";
 
-        rowCount_ = 0L;
-
         return this;
       }
 
@@ -578,7 +707,6 @@ public final class Storage {
         com.google.cloud.bigquery.storage.v1beta1.Storage.Stream result =
             new com.google.cloud.bigquery.storage.v1beta1.Storage.Stream(this);
         result.name_ = name_;
-        result.rowCount_ = rowCount_;
         onBuilt();
         return result;
       }
@@ -634,9 +762,6 @@ public final class Storage {
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
           onChanged();
-        }
-        if (other.getRowCount() != 0L) {
-          setRowCount(other.getRowCount());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -763,50 +888,6 @@ public final class Storage {
         checkByteStringIsUtf8(value);
 
         name_ = value;
-        onChanged();
-        return this;
-      }
-
-      private long rowCount_;
-      /**
-       *
-       *
-       * <pre>
-       * Rows in the stream.
-       * </pre>
-       *
-       * <code>int64 row_count = 2;</code>
-       */
-      public long getRowCount() {
-        return rowCount_;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Rows in the stream.
-       * </pre>
-       *
-       * <code>int64 row_count = 2;</code>
-       */
-      public Builder setRowCount(long value) {
-
-        rowCount_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Rows in the stream.
-       * </pre>
-       *
-       * <code>int64 row_count = 2;</code>
-       */
-      public Builder clearRowCount() {
-
-        rowCount_ = 0L;
         onChanged();
         return this;
       }
@@ -1805,6 +1886,38 @@ public final class Storage {
      *
      *
      * <pre>
+     * Arrow schema.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.storage.v1beta1.ArrowSchema arrow_schema = 6;</code>
+     */
+    boolean hasArrowSchema();
+    /**
+     *
+     *
+     * <pre>
+     * Arrow schema.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.storage.v1beta1.ArrowSchema arrow_schema = 6;</code>
+     */
+    com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowSchema getArrowSchema();
+    /**
+     *
+     *
+     * <pre>
+     * Arrow schema.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.storage.v1beta1.ArrowSchema arrow_schema = 6;</code>
+     */
+    com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowSchemaOrBuilder
+        getArrowSchemaOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
      * Streams associated with this session.
      * </pre>
      *
@@ -1920,6 +2033,27 @@ public final class Storage {
     com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiersOrBuilder
         getTableModifiersOrBuilder();
 
+    /**
+     *
+     *
+     * <pre>
+     * The strategy to use for distributing data among the streams.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.storage.v1beta1.ShardingStrategy sharding_strategy = 9;</code>
+     */
+    int getShardingStrategyValue();
+    /**
+     *
+     *
+     * <pre>
+     * The strategy to use for distributing data among the streams.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.storage.v1beta1.ShardingStrategy sharding_strategy = 9;</code>
+     */
+    com.google.cloud.bigquery.storage.v1beta1.Storage.ShardingStrategy getShardingStrategy();
+
     public com.google.cloud.bigquery.storage.v1beta1.Storage.ReadSession.SchemaCase getSchemaCase();
   }
   /**
@@ -1944,6 +2078,7 @@ public final class Storage {
     private ReadSession() {
       name_ = "";
       streams_ = java.util.Collections.emptyList();
+      shardingStrategy_ = 0;
     }
 
     @java.lang.Override
@@ -1994,11 +2129,11 @@ public final class Storage {
               }
             case 34:
               {
-                if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                if (!((mutable_bitField0_ & 0x00000010) != 0)) {
                   streams_ =
                       new java.util.ArrayList<
                           com.google.cloud.bigquery.storage.v1beta1.Storage.Stream>();
-                  mutable_bitField0_ |= 0x00000008;
+                  mutable_bitField0_ |= 0x00000010;
                 }
                 streams_.add(
                     input.readMessage(
@@ -2025,6 +2160,27 @@ public final class Storage {
                   schema_ = subBuilder.buildPartial();
                 }
                 schemaCase_ = 5;
+                break;
+              }
+            case 50:
+              {
+                com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowSchema.Builder
+                    subBuilder = null;
+                if (schemaCase_ == 6) {
+                  subBuilder =
+                      ((com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowSchema) schema_)
+                          .toBuilder();
+                }
+                schema_ =
+                    input.readMessage(
+                        com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowSchema.parser(),
+                        extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(
+                      (com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowSchema) schema_);
+                  schema_ = subBuilder.buildPartial();
+                }
+                schemaCase_ = 6;
                 break;
               }
             case 58:
@@ -2065,6 +2221,13 @@ public final class Storage {
 
                 break;
               }
+            case 72:
+              {
+                int rawValue = input.readEnum();
+
+                shardingStrategy_ = rawValue;
+                break;
+              }
             default:
               {
                 if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -2079,7 +2242,7 @@ public final class Storage {
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000008) != 0)) {
+        if (((mutable_bitField0_ & 0x00000010) != 0)) {
           streams_ = java.util.Collections.unmodifiableList(streams_);
         }
         this.unknownFields = unknownFields.build();
@@ -2108,6 +2271,7 @@ public final class Storage {
 
     public enum SchemaCase implements com.google.protobuf.Internal.EnumLite {
       AVRO_SCHEMA(5),
+      ARROW_SCHEMA(6),
       SCHEMA_NOT_SET(0);
       private final int value;
 
@@ -2124,6 +2288,8 @@ public final class Storage {
         switch (value) {
           case 5:
             return AVRO_SCHEMA;
+          case 6:
+            return ARROW_SCHEMA;
           case 0:
             return SCHEMA_NOT_SET;
           default:
@@ -2270,6 +2436,51 @@ public final class Storage {
         return (com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchema) schema_;
       }
       return com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchema.getDefaultInstance();
+    }
+
+    public static final int ARROW_SCHEMA_FIELD_NUMBER = 6;
+    /**
+     *
+     *
+     * <pre>
+     * Arrow schema.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.storage.v1beta1.ArrowSchema arrow_schema = 6;</code>
+     */
+    public boolean hasArrowSchema() {
+      return schemaCase_ == 6;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Arrow schema.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.storage.v1beta1.ArrowSchema arrow_schema = 6;</code>
+     */
+    public com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowSchema getArrowSchema() {
+      if (schemaCase_ == 6) {
+        return (com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowSchema) schema_;
+      }
+      return com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowSchema.getDefaultInstance();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Arrow schema.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.storage.v1beta1.ArrowSchema arrow_schema = 6;</code>
+     */
+    public com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowSchemaOrBuilder
+        getArrowSchemaOrBuilder() {
+      if (schemaCase_ == 6) {
+        return (com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowSchema) schema_;
+      }
+      return com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowSchema.getDefaultInstance();
     }
 
     public static final int STREAMS_FIELD_NUMBER = 4;
@@ -2429,6 +2640,40 @@ public final class Storage {
       return getTableModifiers();
     }
 
+    public static final int SHARDING_STRATEGY_FIELD_NUMBER = 9;
+    private int shardingStrategy_;
+    /**
+     *
+     *
+     * <pre>
+     * The strategy to use for distributing data among the streams.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.storage.v1beta1.ShardingStrategy sharding_strategy = 9;</code>
+     */
+    public int getShardingStrategyValue() {
+      return shardingStrategy_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The strategy to use for distributing data among the streams.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.storage.v1beta1.ShardingStrategy sharding_strategy = 9;</code>
+     */
+    public com.google.cloud.bigquery.storage.v1beta1.Storage.ShardingStrategy
+        getShardingStrategy() {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.bigquery.storage.v1beta1.Storage.ShardingStrategy result =
+          com.google.cloud.bigquery.storage.v1beta1.Storage.ShardingStrategy.valueOf(
+              shardingStrategy_);
+      return result == null
+          ? com.google.cloud.bigquery.storage.v1beta1.Storage.ShardingStrategy.UNRECOGNIZED
+          : result;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -2456,11 +2701,21 @@ public final class Storage {
         output.writeMessage(
             5, (com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchema) schema_);
       }
+      if (schemaCase_ == 6) {
+        output.writeMessage(
+            6, (com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowSchema) schema_);
+      }
       if (tableReference_ != null) {
         output.writeMessage(7, getTableReference());
       }
       if (tableModifiers_ != null) {
         output.writeMessage(8, getTableModifiers());
+      }
+      if (shardingStrategy_
+          != com.google.cloud.bigquery.storage.v1beta1.Storage.ShardingStrategy
+              .SHARDING_STRATEGY_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(9, shardingStrategy_);
       }
       unknownFields.writeTo(output);
     }
@@ -2485,11 +2740,22 @@ public final class Storage {
             com.google.protobuf.CodedOutputStream.computeMessageSize(
                 5, (com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchema) schema_);
       }
+      if (schemaCase_ == 6) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                6, (com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowSchema) schema_);
+      }
       if (tableReference_ != null) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getTableReference());
       }
       if (tableModifiers_ != null) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getTableModifiers());
+      }
+      if (shardingStrategy_
+          != com.google.cloud.bigquery.storage.v1beta1.Storage.ShardingStrategy
+              .SHARDING_STRATEGY_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(9, shardingStrategy_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2521,10 +2787,14 @@ public final class Storage {
       if (hasTableModifiers()) {
         if (!getTableModifiers().equals(other.getTableModifiers())) return false;
       }
+      if (shardingStrategy_ != other.shardingStrategy_) return false;
       if (!getSchemaCase().equals(other.getSchemaCase())) return false;
       switch (schemaCase_) {
         case 5:
           if (!getAvroSchema().equals(other.getAvroSchema())) return false;
+          break;
+        case 6:
+          if (!getArrowSchema().equals(other.getArrowSchema())) return false;
           break;
         case 0:
         default:
@@ -2558,10 +2828,16 @@ public final class Storage {
         hash = (37 * hash) + TABLE_MODIFIERS_FIELD_NUMBER;
         hash = (53 * hash) + getTableModifiers().hashCode();
       }
+      hash = (37 * hash) + SHARDING_STRATEGY_FIELD_NUMBER;
+      hash = (53 * hash) + shardingStrategy_;
       switch (schemaCase_) {
         case 5:
           hash = (37 * hash) + AVRO_SCHEMA_FIELD_NUMBER;
           hash = (53 * hash) + getAvroSchema().hashCode();
+          break;
+        case 6:
+          hash = (37 * hash) + ARROW_SCHEMA_FIELD_NUMBER;
+          hash = (53 * hash) + getArrowSchema().hashCode();
           break;
         case 0:
         default:
@@ -2726,7 +3002,7 @@ public final class Storage {
         }
         if (streamsBuilder_ == null) {
           streams_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000010);
         } else {
           streamsBuilder_.clear();
         }
@@ -2742,6 +3018,8 @@ public final class Storage {
           tableModifiers_ = null;
           tableModifiersBuilder_ = null;
         }
+        shardingStrategy_ = 0;
+
         schemaCase_ = 0;
         schema_ = null;
         return this;
@@ -2787,10 +3065,17 @@ public final class Storage {
             result.schema_ = avroSchemaBuilder_.build();
           }
         }
+        if (schemaCase_ == 6) {
+          if (arrowSchemaBuilder_ == null) {
+            result.schema_ = schema_;
+          } else {
+            result.schema_ = arrowSchemaBuilder_.build();
+          }
+        }
         if (streamsBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) != 0)) {
+          if (((bitField0_ & 0x00000010) != 0)) {
             streams_ = java.util.Collections.unmodifiableList(streams_);
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000010);
           }
           result.streams_ = streams_;
         } else {
@@ -2806,6 +3091,7 @@ public final class Storage {
         } else {
           result.tableModifiers_ = tableModifiersBuilder_.build();
         }
+        result.shardingStrategy_ = shardingStrategy_;
         result.bitField0_ = to_bitField0_;
         result.schemaCase_ = schemaCase_;
         onBuilt();
@@ -2873,7 +3159,7 @@ public final class Storage {
           if (!other.streams_.isEmpty()) {
             if (streams_.isEmpty()) {
               streams_ = other.streams_;
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000010);
             } else {
               ensureStreamsIsMutable();
               streams_.addAll(other.streams_);
@@ -2886,7 +3172,7 @@ public final class Storage {
               streamsBuilder_.dispose();
               streamsBuilder_ = null;
               streams_ = other.streams_;
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000010);
               streamsBuilder_ =
                   com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                       ? getStreamsFieldBuilder()
@@ -2902,10 +3188,18 @@ public final class Storage {
         if (other.hasTableModifiers()) {
           mergeTableModifiers(other.getTableModifiers());
         }
+        if (other.shardingStrategy_ != 0) {
+          setShardingStrategyValue(other.getShardingStrategyValue());
+        }
         switch (other.getSchemaCase()) {
           case AVRO_SCHEMA:
             {
               mergeAvroSchema(other.getAvroSchema());
+              break;
+            }
+          case ARROW_SCHEMA:
+            {
+              mergeArrowSchema(other.getArrowSchema());
               break;
             }
           case SCHEMA_NOT_SET:
@@ -3461,15 +3755,229 @@ public final class Storage {
         return avroSchemaBuilder_;
       }
 
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowSchema,
+              com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowSchema.Builder,
+              com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowSchemaOrBuilder>
+          arrowSchemaBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Arrow schema.
+       * </pre>
+       *
+       * <code>.google.cloud.bigquery.storage.v1beta1.ArrowSchema arrow_schema = 6;</code>
+       */
+      public boolean hasArrowSchema() {
+        return schemaCase_ == 6;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Arrow schema.
+       * </pre>
+       *
+       * <code>.google.cloud.bigquery.storage.v1beta1.ArrowSchema arrow_schema = 6;</code>
+       */
+      public com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowSchema getArrowSchema() {
+        if (arrowSchemaBuilder_ == null) {
+          if (schemaCase_ == 6) {
+            return (com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowSchema) schema_;
+          }
+          return com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowSchema
+              .getDefaultInstance();
+        } else {
+          if (schemaCase_ == 6) {
+            return arrowSchemaBuilder_.getMessage();
+          }
+          return com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowSchema
+              .getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Arrow schema.
+       * </pre>
+       *
+       * <code>.google.cloud.bigquery.storage.v1beta1.ArrowSchema arrow_schema = 6;</code>
+       */
+      public Builder setArrowSchema(
+          com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowSchema value) {
+        if (arrowSchemaBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          schema_ = value;
+          onChanged();
+        } else {
+          arrowSchemaBuilder_.setMessage(value);
+        }
+        schemaCase_ = 6;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Arrow schema.
+       * </pre>
+       *
+       * <code>.google.cloud.bigquery.storage.v1beta1.ArrowSchema arrow_schema = 6;</code>
+       */
+      public Builder setArrowSchema(
+          com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowSchema.Builder
+              builderForValue) {
+        if (arrowSchemaBuilder_ == null) {
+          schema_ = builderForValue.build();
+          onChanged();
+        } else {
+          arrowSchemaBuilder_.setMessage(builderForValue.build());
+        }
+        schemaCase_ = 6;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Arrow schema.
+       * </pre>
+       *
+       * <code>.google.cloud.bigquery.storage.v1beta1.ArrowSchema arrow_schema = 6;</code>
+       */
+      public Builder mergeArrowSchema(
+          com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowSchema value) {
+        if (arrowSchemaBuilder_ == null) {
+          if (schemaCase_ == 6
+              && schema_
+                  != com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowSchema
+                      .getDefaultInstance()) {
+            schema_ =
+                com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowSchema.newBuilder(
+                        (com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowSchema) schema_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            schema_ = value;
+          }
+          onChanged();
+        } else {
+          if (schemaCase_ == 6) {
+            arrowSchemaBuilder_.mergeFrom(value);
+          }
+          arrowSchemaBuilder_.setMessage(value);
+        }
+        schemaCase_ = 6;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Arrow schema.
+       * </pre>
+       *
+       * <code>.google.cloud.bigquery.storage.v1beta1.ArrowSchema arrow_schema = 6;</code>
+       */
+      public Builder clearArrowSchema() {
+        if (arrowSchemaBuilder_ == null) {
+          if (schemaCase_ == 6) {
+            schemaCase_ = 0;
+            schema_ = null;
+            onChanged();
+          }
+        } else {
+          if (schemaCase_ == 6) {
+            schemaCase_ = 0;
+            schema_ = null;
+          }
+          arrowSchemaBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Arrow schema.
+       * </pre>
+       *
+       * <code>.google.cloud.bigquery.storage.v1beta1.ArrowSchema arrow_schema = 6;</code>
+       */
+      public com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowSchema.Builder
+          getArrowSchemaBuilder() {
+        return getArrowSchemaFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Arrow schema.
+       * </pre>
+       *
+       * <code>.google.cloud.bigquery.storage.v1beta1.ArrowSchema arrow_schema = 6;</code>
+       */
+      public com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowSchemaOrBuilder
+          getArrowSchemaOrBuilder() {
+        if ((schemaCase_ == 6) && (arrowSchemaBuilder_ != null)) {
+          return arrowSchemaBuilder_.getMessageOrBuilder();
+        } else {
+          if (schemaCase_ == 6) {
+            return (com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowSchema) schema_;
+          }
+          return com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowSchema
+              .getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Arrow schema.
+       * </pre>
+       *
+       * <code>.google.cloud.bigquery.storage.v1beta1.ArrowSchema arrow_schema = 6;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowSchema,
+              com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowSchema.Builder,
+              com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowSchemaOrBuilder>
+          getArrowSchemaFieldBuilder() {
+        if (arrowSchemaBuilder_ == null) {
+          if (!(schemaCase_ == 6)) {
+            schema_ =
+                com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowSchema
+                    .getDefaultInstance();
+          }
+          arrowSchemaBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowSchema,
+                  com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowSchema.Builder,
+                  com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowSchemaOrBuilder>(
+                  (com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowSchema) schema_,
+                  getParentForChildren(),
+                  isClean());
+          schema_ = null;
+        }
+        schemaCase_ = 6;
+        onChanged();
+        ;
+        return arrowSchemaBuilder_;
+      }
+
       private java.util.List<com.google.cloud.bigquery.storage.v1beta1.Storage.Stream> streams_ =
           java.util.Collections.emptyList();
 
       private void ensureStreamsIsMutable() {
-        if (!((bitField0_ & 0x00000008) != 0)) {
+        if (!((bitField0_ & 0x00000010) != 0)) {
           streams_ =
               new java.util.ArrayList<com.google.cloud.bigquery.storage.v1beta1.Storage.Stream>(
                   streams_);
-          bitField0_ |= 0x00000008;
+          bitField0_ |= 0x00000010;
         }
       }
 
@@ -3691,7 +4199,7 @@ public final class Storage {
       public Builder clearStreams() {
         if (streamsBuilder_ == null) {
           streams_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000010);
           onChanged();
         } else {
           streamsBuilder_.clear();
@@ -3820,7 +4328,7 @@ public final class Storage {
                   com.google.cloud.bigquery.storage.v1beta1.Storage.Stream,
                   com.google.cloud.bigquery.storage.v1beta1.Storage.Stream.Builder,
                   com.google.cloud.bigquery.storage.v1beta1.Storage.StreamOrBuilder>(
-                  streams_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
+                  streams_, ((bitField0_ & 0x00000010) != 0), getParentForChildren(), isClean());
           streams_ = null;
         }
         return streamsBuilder_;
@@ -4214,6 +4722,87 @@ public final class Storage {
         return tableModifiersBuilder_;
       }
 
+      private int shardingStrategy_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * The strategy to use for distributing data among the streams.
+       * </pre>
+       *
+       * <code>.google.cloud.bigquery.storage.v1beta1.ShardingStrategy sharding_strategy = 9;</code>
+       */
+      public int getShardingStrategyValue() {
+        return shardingStrategy_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The strategy to use for distributing data among the streams.
+       * </pre>
+       *
+       * <code>.google.cloud.bigquery.storage.v1beta1.ShardingStrategy sharding_strategy = 9;</code>
+       */
+      public Builder setShardingStrategyValue(int value) {
+        shardingStrategy_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The strategy to use for distributing data among the streams.
+       * </pre>
+       *
+       * <code>.google.cloud.bigquery.storage.v1beta1.ShardingStrategy sharding_strategy = 9;</code>
+       */
+      public com.google.cloud.bigquery.storage.v1beta1.Storage.ShardingStrategy
+          getShardingStrategy() {
+        @SuppressWarnings("deprecation")
+        com.google.cloud.bigquery.storage.v1beta1.Storage.ShardingStrategy result =
+            com.google.cloud.bigquery.storage.v1beta1.Storage.ShardingStrategy.valueOf(
+                shardingStrategy_);
+        return result == null
+            ? com.google.cloud.bigquery.storage.v1beta1.Storage.ShardingStrategy.UNRECOGNIZED
+            : result;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The strategy to use for distributing data among the streams.
+       * </pre>
+       *
+       * <code>.google.cloud.bigquery.storage.v1beta1.ShardingStrategy sharding_strategy = 9;</code>
+       */
+      public Builder setShardingStrategy(
+          com.google.cloud.bigquery.storage.v1beta1.Storage.ShardingStrategy value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        shardingStrategy_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The strategy to use for distributing data among the streams.
+       * </pre>
+       *
+       * <code>.google.cloud.bigquery.storage.v1beta1.ShardingStrategy sharding_strategy = 9;</code>
+       */
+      public Builder clearShardingStrategy() {
+
+        shardingStrategy_ = 0;
+        onChanged();
+        return this;
+      }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -4433,6 +5022,29 @@ public final class Storage {
      * <code>.google.cloud.bigquery.storage.v1beta1.DataFormat format = 5;</code>
      */
     com.google.cloud.bigquery.storage.v1beta1.Storage.DataFormat getFormat();
+
+    /**
+     *
+     *
+     * <pre>
+     * The strategy to use for distributing data among multiple streams. Currently
+     * defaults to liquid sharding.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.storage.v1beta1.ShardingStrategy sharding_strategy = 7;</code>
+     */
+    int getShardingStrategyValue();
+    /**
+     *
+     *
+     * <pre>
+     * The strategy to use for distributing data among multiple streams. Currently
+     * defaults to liquid sharding.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.storage.v1beta1.ShardingStrategy sharding_strategy = 7;</code>
+     */
+    com.google.cloud.bigquery.storage.v1beta1.Storage.ShardingStrategy getShardingStrategy();
   }
   /**
    *
@@ -4457,6 +5069,7 @@ public final class Storage {
     private CreateReadSessionRequest() {
       parent_ = "";
       format_ = 0;
+      shardingStrategy_ = 0;
     }
 
     @java.lang.Override
@@ -4557,6 +5170,13 @@ public final class Storage {
                 java.lang.String s = input.readStringRequireUtf8();
 
                 parent_ = s;
+                break;
+              }
+            case 56:
+              {
+                int rawValue = input.readEnum();
+
+                shardingStrategy_ = rawValue;
                 break;
               }
             default:
@@ -4826,6 +5446,42 @@ public final class Storage {
           : result;
     }
 
+    public static final int SHARDING_STRATEGY_FIELD_NUMBER = 7;
+    private int shardingStrategy_;
+    /**
+     *
+     *
+     * <pre>
+     * The strategy to use for distributing data among multiple streams. Currently
+     * defaults to liquid sharding.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.storage.v1beta1.ShardingStrategy sharding_strategy = 7;</code>
+     */
+    public int getShardingStrategyValue() {
+      return shardingStrategy_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The strategy to use for distributing data among multiple streams. Currently
+     * defaults to liquid sharding.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.storage.v1beta1.ShardingStrategy sharding_strategy = 7;</code>
+     */
+    public com.google.cloud.bigquery.storage.v1beta1.Storage.ShardingStrategy
+        getShardingStrategy() {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.bigquery.storage.v1beta1.Storage.ShardingStrategy result =
+          com.google.cloud.bigquery.storage.v1beta1.Storage.ShardingStrategy.valueOf(
+              shardingStrategy_);
+      return result == null
+          ? com.google.cloud.bigquery.storage.v1beta1.Storage.ShardingStrategy.UNRECOGNIZED
+          : result;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -4860,6 +5516,12 @@ public final class Storage {
       if (!getParentBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, parent_);
       }
+      if (shardingStrategy_
+          != com.google.cloud.bigquery.storage.v1beta1.Storage.ShardingStrategy
+              .SHARDING_STRATEGY_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(7, shardingStrategy_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -4888,6 +5550,12 @@ public final class Storage {
       }
       if (!getParentBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, parent_);
+      }
+      if (shardingStrategy_
+          != com.google.cloud.bigquery.storage.v1beta1.Storage.ShardingStrategy
+              .SHARDING_STRATEGY_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(7, shardingStrategy_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -4921,6 +5589,7 @@ public final class Storage {
         if (!getReadOptions().equals(other.getReadOptions())) return false;
       }
       if (format_ != other.format_) return false;
+      if (shardingStrategy_ != other.shardingStrategy_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -4950,6 +5619,8 @@ public final class Storage {
       }
       hash = (37 * hash) + FORMAT_FIELD_NUMBER;
       hash = (53 * hash) + format_;
+      hash = (37 * hash) + SHARDING_STRATEGY_FIELD_NUMBER;
+      hash = (53 * hash) + shardingStrategy_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -5131,6 +5802,8 @@ public final class Storage {
         }
         format_ = 0;
 
+        shardingStrategy_ = 0;
+
         return this;
       }
 
@@ -5180,6 +5853,7 @@ public final class Storage {
           result.readOptions_ = readOptionsBuilder_.build();
         }
         result.format_ = format_;
+        result.shardingStrategy_ = shardingStrategy_;
         onBuilt();
         return result;
       }
@@ -5254,6 +5928,9 @@ public final class Storage {
         }
         if (other.format_ != 0) {
           setFormatValue(other.getFormatValue());
+        }
+        if (other.shardingStrategy_ != 0) {
+          setShardingStrategyValue(other.getShardingStrategyValue());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -6103,6 +6780,92 @@ public final class Storage {
       public Builder clearFormat() {
 
         format_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int shardingStrategy_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * The strategy to use for distributing data among multiple streams. Currently
+       * defaults to liquid sharding.
+       * </pre>
+       *
+       * <code>.google.cloud.bigquery.storage.v1beta1.ShardingStrategy sharding_strategy = 7;</code>
+       */
+      public int getShardingStrategyValue() {
+        return shardingStrategy_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The strategy to use for distributing data among multiple streams. Currently
+       * defaults to liquid sharding.
+       * </pre>
+       *
+       * <code>.google.cloud.bigquery.storage.v1beta1.ShardingStrategy sharding_strategy = 7;</code>
+       */
+      public Builder setShardingStrategyValue(int value) {
+        shardingStrategy_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The strategy to use for distributing data among multiple streams. Currently
+       * defaults to liquid sharding.
+       * </pre>
+       *
+       * <code>.google.cloud.bigquery.storage.v1beta1.ShardingStrategy sharding_strategy = 7;</code>
+       */
+      public com.google.cloud.bigquery.storage.v1beta1.Storage.ShardingStrategy
+          getShardingStrategy() {
+        @SuppressWarnings("deprecation")
+        com.google.cloud.bigquery.storage.v1beta1.Storage.ShardingStrategy result =
+            com.google.cloud.bigquery.storage.v1beta1.Storage.ShardingStrategy.valueOf(
+                shardingStrategy_);
+        return result == null
+            ? com.google.cloud.bigquery.storage.v1beta1.Storage.ShardingStrategy.UNRECOGNIZED
+            : result;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The strategy to use for distributing data among multiple streams. Currently
+       * defaults to liquid sharding.
+       * </pre>
+       *
+       * <code>.google.cloud.bigquery.storage.v1beta1.ShardingStrategy sharding_strategy = 7;</code>
+       */
+      public Builder setShardingStrategy(
+          com.google.cloud.bigquery.storage.v1beta1.Storage.ShardingStrategy value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        shardingStrategy_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The strategy to use for distributing data among multiple streams. Currently
+       * defaults to liquid sharding.
+       * </pre>
+       *
+       * <code>.google.cloud.bigquery.storage.v1beta1.ShardingStrategy sharding_strategy = 7;</code>
+       */
+      public Builder clearShardingStrategy() {
+
+        shardingStrategy_ = 0;
         onChanged();
         return this;
       }
@@ -6974,6 +7737,37 @@ public final class Storage {
      * <code>int64 estimated_row_count = 1;</code>
      */
     long getEstimatedRowCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * A value in the range [0.0, 1.0] that represents the fraction of rows
+     * assigned to this stream that have been processed by the server. In the
+     * presence of read filters, the server may process more rows than it returns,
+     * so this value reflects progress through the pre-filtering rows.
+     * This value is only populated for sessions created through the BALANCED
+     * sharding strategy.
+     * </pre>
+     *
+     * <code>float fraction_consumed = 2;</code>
+     */
+    float getFractionConsumed();
+
+    /**
+     *
+     *
+     * <pre>
+     * Whether this stream can be split. For sessions that use the LIQUID sharding
+     * strategy, this value is always false. For BALANCED sessions, this value is
+     * false when enough data have been read such that no more splits are possible
+     * at that point or beyond. For small tables or streams that are the result of
+     * a chain of splits, this value may never be true.
+     * </pre>
+     *
+     * <code>bool is_splittable = 3;</code>
+     */
+    boolean getIsSplittable();
   }
   /**
    *
@@ -7023,6 +7817,16 @@ public final class Storage {
             case 8:
               {
                 estimatedRowCount_ = input.readInt64();
+                break;
+              }
+            case 21:
+              {
+                fractionConsumed_ = input.readFloat();
+                break;
+              }
+            case 24:
+              {
+                isSplittable_ = input.readBool();
                 break;
               }
             default:
@@ -7076,6 +7880,45 @@ public final class Storage {
       return estimatedRowCount_;
     }
 
+    public static final int FRACTION_CONSUMED_FIELD_NUMBER = 2;
+    private float fractionConsumed_;
+    /**
+     *
+     *
+     * <pre>
+     * A value in the range [0.0, 1.0] that represents the fraction of rows
+     * assigned to this stream that have been processed by the server. In the
+     * presence of read filters, the server may process more rows than it returns,
+     * so this value reflects progress through the pre-filtering rows.
+     * This value is only populated for sessions created through the BALANCED
+     * sharding strategy.
+     * </pre>
+     *
+     * <code>float fraction_consumed = 2;</code>
+     */
+    public float getFractionConsumed() {
+      return fractionConsumed_;
+    }
+
+    public static final int IS_SPLITTABLE_FIELD_NUMBER = 3;
+    private boolean isSplittable_;
+    /**
+     *
+     *
+     * <pre>
+     * Whether this stream can be split. For sessions that use the LIQUID sharding
+     * strategy, this value is always false. For BALANCED sessions, this value is
+     * false when enough data have been read such that no more splits are possible
+     * at that point or beyond. For small tables or streams that are the result of
+     * a chain of splits, this value may never be true.
+     * </pre>
+     *
+     * <code>bool is_splittable = 3;</code>
+     */
+    public boolean getIsSplittable() {
+      return isSplittable_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -7093,6 +7936,12 @@ public final class Storage {
       if (estimatedRowCount_ != 0L) {
         output.writeInt64(1, estimatedRowCount_);
       }
+      if (fractionConsumed_ != 0F) {
+        output.writeFloat(2, fractionConsumed_);
+      }
+      if (isSplittable_ != false) {
+        output.writeBool(3, isSplittable_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -7104,6 +7953,12 @@ public final class Storage {
       size = 0;
       if (estimatedRowCount_ != 0L) {
         size += com.google.protobuf.CodedOutputStream.computeInt64Size(1, estimatedRowCount_);
+      }
+      if (fractionConsumed_ != 0F) {
+        size += com.google.protobuf.CodedOutputStream.computeFloatSize(2, fractionConsumed_);
+      }
+      if (isSplittable_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, isSplittable_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -7122,6 +7977,9 @@ public final class Storage {
           (com.google.cloud.bigquery.storage.v1beta1.Storage.StreamStatus) obj;
 
       if (getEstimatedRowCount() != other.getEstimatedRowCount()) return false;
+      if (java.lang.Float.floatToIntBits(getFractionConsumed())
+          != java.lang.Float.floatToIntBits(other.getFractionConsumed())) return false;
+      if (getIsSplittable() != other.getIsSplittable()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -7135,6 +7993,10 @@ public final class Storage {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ESTIMATED_ROW_COUNT_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getEstimatedRowCount());
+      hash = (37 * hash) + FRACTION_CONSUMED_FIELD_NUMBER;
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(getFractionConsumed());
+      hash = (37 * hash) + IS_SPLITTABLE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIsSplittable());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -7285,6 +8147,10 @@ public final class Storage {
         super.clear();
         estimatedRowCount_ = 0L;
 
+        fractionConsumed_ = 0F;
+
+        isSplittable_ = false;
+
         return this;
       }
 
@@ -7314,6 +8180,8 @@ public final class Storage {
         com.google.cloud.bigquery.storage.v1beta1.Storage.StreamStatus result =
             new com.google.cloud.bigquery.storage.v1beta1.Storage.StreamStatus(this);
         result.estimatedRowCount_ = estimatedRowCount_;
+        result.fractionConsumed_ = fractionConsumed_;
+        result.isSplittable_ = isSplittable_;
         onBuilt();
         return result;
       }
@@ -7370,6 +8238,12 @@ public final class Storage {
           return this;
         if (other.getEstimatedRowCount() != 0L) {
           setEstimatedRowCount(other.getEstimatedRowCount());
+        }
+        if (other.getFractionConsumed() != 0F) {
+          setFractionConsumed(other.getFractionConsumed());
+        }
+        if (other.getIsSplittable() != false) {
+          setIsSplittable(other.getIsSplittable());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -7448,6 +8322,121 @@ public final class Storage {
       public Builder clearEstimatedRowCount() {
 
         estimatedRowCount_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private float fractionConsumed_;
+      /**
+       *
+       *
+       * <pre>
+       * A value in the range [0.0, 1.0] that represents the fraction of rows
+       * assigned to this stream that have been processed by the server. In the
+       * presence of read filters, the server may process more rows than it returns,
+       * so this value reflects progress through the pre-filtering rows.
+       * This value is only populated for sessions created through the BALANCED
+       * sharding strategy.
+       * </pre>
+       *
+       * <code>float fraction_consumed = 2;</code>
+       */
+      public float getFractionConsumed() {
+        return fractionConsumed_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A value in the range [0.0, 1.0] that represents the fraction of rows
+       * assigned to this stream that have been processed by the server. In the
+       * presence of read filters, the server may process more rows than it returns,
+       * so this value reflects progress through the pre-filtering rows.
+       * This value is only populated for sessions created through the BALANCED
+       * sharding strategy.
+       * </pre>
+       *
+       * <code>float fraction_consumed = 2;</code>
+       */
+      public Builder setFractionConsumed(float value) {
+
+        fractionConsumed_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A value in the range [0.0, 1.0] that represents the fraction of rows
+       * assigned to this stream that have been processed by the server. In the
+       * presence of read filters, the server may process more rows than it returns,
+       * so this value reflects progress through the pre-filtering rows.
+       * This value is only populated for sessions created through the BALANCED
+       * sharding strategy.
+       * </pre>
+       *
+       * <code>float fraction_consumed = 2;</code>
+       */
+      public Builder clearFractionConsumed() {
+
+        fractionConsumed_ = 0F;
+        onChanged();
+        return this;
+      }
+
+      private boolean isSplittable_;
+      /**
+       *
+       *
+       * <pre>
+       * Whether this stream can be split. For sessions that use the LIQUID sharding
+       * strategy, this value is always false. For BALANCED sessions, this value is
+       * false when enough data have been read such that no more splits are possible
+       * at that point or beyond. For small tables or streams that are the result of
+       * a chain of splits, this value may never be true.
+       * </pre>
+       *
+       * <code>bool is_splittable = 3;</code>
+       */
+      public boolean getIsSplittable() {
+        return isSplittable_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Whether this stream can be split. For sessions that use the LIQUID sharding
+       * strategy, this value is always false. For BALANCED sessions, this value is
+       * false when enough data have been read such that no more splits are possible
+       * at that point or beyond. For small tables or streams that are the result of
+       * a chain of splits, this value may never be true.
+       * </pre>
+       *
+       * <code>bool is_splittable = 3;</code>
+       */
+      public Builder setIsSplittable(boolean value) {
+
+        isSplittable_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Whether this stream can be split. For sessions that use the LIQUID sharding
+       * strategy, this value is always false. For BALANCED sessions, this value is
+       * false when enough data have been read such that no more splits are possible
+       * at that point or beyond. For small tables or streams that are the result of
+       * a chain of splits, this value may never be true.
+       * </pre>
+       *
+       * <code>bool is_splittable = 3;</code>
+       */
+      public Builder clearIsSplittable() {
+
+        isSplittable_ = false;
         onChanged();
         return this;
       }
@@ -8096,6 +9085,52 @@ public final class Storage {
      *
      *
      * <pre>
+     * Serialized row data in Arrow RecordBatch format.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.storage.v1beta1.ArrowRecordBatch arrow_record_batch = 4;</code>
+     */
+    boolean hasArrowRecordBatch();
+    /**
+     *
+     *
+     * <pre>
+     * Serialized row data in Arrow RecordBatch format.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.storage.v1beta1.ArrowRecordBatch arrow_record_batch = 4;</code>
+     */
+    com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowRecordBatch getArrowRecordBatch();
+    /**
+     *
+     *
+     * <pre>
+     * Serialized row data in Arrow RecordBatch format.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.storage.v1beta1.ArrowRecordBatch arrow_record_batch = 4;</code>
+     */
+    com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowRecordBatchOrBuilder
+        getArrowRecordBatchOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Number of serialized rows in the rows block. This value is recorded here,
+     * in addition to the row_count values in the output-specific messages in
+     * `rows`, so that code which needs to record progress through the stream can
+     * do so in an output format-independent way.
+     * </pre>
+     *
+     * <code>int64 row_count = 6;</code>
+     */
+    long getRowCount();
+
+    /**
+     *
+     *
+     * <pre>
      * Estimated stream statistics.
      * </pre>
      *
@@ -8246,6 +9281,30 @@ public final class Storage {
                 rowsCase_ = 3;
                 break;
               }
+            case 34:
+              {
+                com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowRecordBatch.Builder
+                    subBuilder = null;
+                if (rowsCase_ == 4) {
+                  subBuilder =
+                      ((com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowRecordBatch)
+                              rows_)
+                          .toBuilder();
+                }
+                rows_ =
+                    input.readMessage(
+                        com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowRecordBatch
+                            .parser(),
+                        extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(
+                      (com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowRecordBatch)
+                          rows_);
+                  rows_ = subBuilder.buildPartial();
+                }
+                rowsCase_ = 4;
+                break;
+              }
             case 42:
               {
                 com.google.cloud.bigquery.storage.v1beta1.Storage.ThrottleStatus.Builder
@@ -8262,6 +9321,11 @@ public final class Storage {
                   throttleStatus_ = subBuilder.buildPartial();
                 }
 
+                break;
+              }
+            case 48:
+              {
+                rowCount_ = input.readInt64();
                 break;
               }
             default:
@@ -8303,6 +9367,7 @@ public final class Storage {
 
     public enum RowsCase implements com.google.protobuf.Internal.EnumLite {
       AVRO_ROWS(3),
+      ARROW_RECORD_BATCH(4),
       ROWS_NOT_SET(0);
       private final int value;
 
@@ -8319,6 +9384,8 @@ public final class Storage {
         switch (value) {
           case 3:
             return AVRO_ROWS;
+          case 4:
+            return ARROW_RECORD_BATCH;
           case 0:
             return ROWS_NOT_SET;
           default:
@@ -8378,6 +9445,72 @@ public final class Storage {
         return (com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroRows) rows_;
       }
       return com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroRows.getDefaultInstance();
+    }
+
+    public static final int ARROW_RECORD_BATCH_FIELD_NUMBER = 4;
+    /**
+     *
+     *
+     * <pre>
+     * Serialized row data in Arrow RecordBatch format.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.storage.v1beta1.ArrowRecordBatch arrow_record_batch = 4;</code>
+     */
+    public boolean hasArrowRecordBatch() {
+      return rowsCase_ == 4;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Serialized row data in Arrow RecordBatch format.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.storage.v1beta1.ArrowRecordBatch arrow_record_batch = 4;</code>
+     */
+    public com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowRecordBatch
+        getArrowRecordBatch() {
+      if (rowsCase_ == 4) {
+        return (com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowRecordBatch) rows_;
+      }
+      return com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowRecordBatch
+          .getDefaultInstance();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Serialized row data in Arrow RecordBatch format.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.storage.v1beta1.ArrowRecordBatch arrow_record_batch = 4;</code>
+     */
+    public com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowRecordBatchOrBuilder
+        getArrowRecordBatchOrBuilder() {
+      if (rowsCase_ == 4) {
+        return (com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowRecordBatch) rows_;
+      }
+      return com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowRecordBatch
+          .getDefaultInstance();
+    }
+
+    public static final int ROW_COUNT_FIELD_NUMBER = 6;
+    private long rowCount_;
+    /**
+     *
+     *
+     * <pre>
+     * Number of serialized rows in the rows block. This value is recorded here,
+     * in addition to the row_count values in the output-specific messages in
+     * `rows`, so that code which needs to record progress through the stream can
+     * do so in an output format-independent way.
+     * </pre>
+     *
+     * <code>int64 row_count = 6;</code>
+     */
+    public long getRowCount() {
+      return rowCount_;
     }
 
     public static final int STATUS_FIELD_NUMBER = 2;
@@ -8488,8 +9621,15 @@ public final class Storage {
         output.writeMessage(
             3, (com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroRows) rows_);
       }
+      if (rowsCase_ == 4) {
+        output.writeMessage(
+            4, (com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowRecordBatch) rows_);
+      }
       if (throttleStatus_ != null) {
         output.writeMessage(5, getThrottleStatus());
+      }
+      if (rowCount_ != 0L) {
+        output.writeInt64(6, rowCount_);
       }
       unknownFields.writeTo(output);
     }
@@ -8508,8 +9648,16 @@ public final class Storage {
             com.google.protobuf.CodedOutputStream.computeMessageSize(
                 3, (com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroRows) rows_);
       }
+      if (rowsCase_ == 4) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                4, (com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowRecordBatch) rows_);
+      }
       if (throttleStatus_ != null) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getThrottleStatus());
+      }
+      if (rowCount_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream.computeInt64Size(6, rowCount_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -8527,6 +9675,7 @@ public final class Storage {
       com.google.cloud.bigquery.storage.v1beta1.Storage.ReadRowsResponse other =
           (com.google.cloud.bigquery.storage.v1beta1.Storage.ReadRowsResponse) obj;
 
+      if (getRowCount() != other.getRowCount()) return false;
       if (hasStatus() != other.hasStatus()) return false;
       if (hasStatus()) {
         if (!getStatus().equals(other.getStatus())) return false;
@@ -8539,6 +9688,9 @@ public final class Storage {
       switch (rowsCase_) {
         case 3:
           if (!getAvroRows().equals(other.getAvroRows())) return false;
+          break;
+        case 4:
+          if (!getArrowRecordBatch().equals(other.getArrowRecordBatch())) return false;
           break;
         case 0:
         default:
@@ -8554,6 +9706,8 @@ public final class Storage {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ROW_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getRowCount());
       if (hasStatus()) {
         hash = (37 * hash) + STATUS_FIELD_NUMBER;
         hash = (53 * hash) + getStatus().hashCode();
@@ -8566,6 +9720,10 @@ public final class Storage {
         case 3:
           hash = (37 * hash) + AVRO_ROWS_FIELD_NUMBER;
           hash = (53 * hash) + getAvroRows().hashCode();
+          break;
+        case 4:
+          hash = (37 * hash) + ARROW_RECORD_BATCH_FIELD_NUMBER;
+          hash = (53 * hash) + getArrowRecordBatch().hashCode();
           break;
         case 0:
         default:
@@ -8721,6 +9879,8 @@ public final class Storage {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        rowCount_ = 0L;
+
         if (statusBuilder_ == null) {
           status_ = null;
         } else {
@@ -8771,6 +9931,14 @@ public final class Storage {
             result.rows_ = avroRowsBuilder_.build();
           }
         }
+        if (rowsCase_ == 4) {
+          if (arrowRecordBatchBuilder_ == null) {
+            result.rows_ = rows_;
+          } else {
+            result.rows_ = arrowRecordBatchBuilder_.build();
+          }
+        }
+        result.rowCount_ = rowCount_;
         if (statusBuilder_ == null) {
           result.status_ = status_;
         } else {
@@ -8837,6 +10005,9 @@ public final class Storage {
         if (other
             == com.google.cloud.bigquery.storage.v1beta1.Storage.ReadRowsResponse
                 .getDefaultInstance()) return this;
+        if (other.getRowCount() != 0L) {
+          setRowCount(other.getRowCount());
+        }
         if (other.hasStatus()) {
           mergeStatus(other.getStatus());
         }
@@ -8847,6 +10018,11 @@ public final class Storage {
           case AVRO_ROWS:
             {
               mergeAvroRows(other.getAvroRows());
+              break;
+            }
+          case ARROW_RECORD_BATCH:
+            {
+              mergeArrowRecordBatch(other.getArrowRecordBatch());
               break;
             }
           case ROWS_NOT_SET:
@@ -9106,6 +10282,284 @@ public final class Storage {
         onChanged();
         ;
         return avroRowsBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowRecordBatch,
+              com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowRecordBatch.Builder,
+              com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowRecordBatchOrBuilder>
+          arrowRecordBatchBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Serialized row data in Arrow RecordBatch format.
+       * </pre>
+       *
+       * <code>.google.cloud.bigquery.storage.v1beta1.ArrowRecordBatch arrow_record_batch = 4;
+       * </code>
+       */
+      public boolean hasArrowRecordBatch() {
+        return rowsCase_ == 4;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Serialized row data in Arrow RecordBatch format.
+       * </pre>
+       *
+       * <code>.google.cloud.bigquery.storage.v1beta1.ArrowRecordBatch arrow_record_batch = 4;
+       * </code>
+       */
+      public com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowRecordBatch
+          getArrowRecordBatch() {
+        if (arrowRecordBatchBuilder_ == null) {
+          if (rowsCase_ == 4) {
+            return (com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowRecordBatch) rows_;
+          }
+          return com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowRecordBatch
+              .getDefaultInstance();
+        } else {
+          if (rowsCase_ == 4) {
+            return arrowRecordBatchBuilder_.getMessage();
+          }
+          return com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowRecordBatch
+              .getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Serialized row data in Arrow RecordBatch format.
+       * </pre>
+       *
+       * <code>.google.cloud.bigquery.storage.v1beta1.ArrowRecordBatch arrow_record_batch = 4;
+       * </code>
+       */
+      public Builder setArrowRecordBatch(
+          com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowRecordBatch value) {
+        if (arrowRecordBatchBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          rows_ = value;
+          onChanged();
+        } else {
+          arrowRecordBatchBuilder_.setMessage(value);
+        }
+        rowsCase_ = 4;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Serialized row data in Arrow RecordBatch format.
+       * </pre>
+       *
+       * <code>.google.cloud.bigquery.storage.v1beta1.ArrowRecordBatch arrow_record_batch = 4;
+       * </code>
+       */
+      public Builder setArrowRecordBatch(
+          com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowRecordBatch.Builder
+              builderForValue) {
+        if (arrowRecordBatchBuilder_ == null) {
+          rows_ = builderForValue.build();
+          onChanged();
+        } else {
+          arrowRecordBatchBuilder_.setMessage(builderForValue.build());
+        }
+        rowsCase_ = 4;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Serialized row data in Arrow RecordBatch format.
+       * </pre>
+       *
+       * <code>.google.cloud.bigquery.storage.v1beta1.ArrowRecordBatch arrow_record_batch = 4;
+       * </code>
+       */
+      public Builder mergeArrowRecordBatch(
+          com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowRecordBatch value) {
+        if (arrowRecordBatchBuilder_ == null) {
+          if (rowsCase_ == 4
+              && rows_
+                  != com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowRecordBatch
+                      .getDefaultInstance()) {
+            rows_ =
+                com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowRecordBatch.newBuilder(
+                        (com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowRecordBatch)
+                            rows_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            rows_ = value;
+          }
+          onChanged();
+        } else {
+          if (rowsCase_ == 4) {
+            arrowRecordBatchBuilder_.mergeFrom(value);
+          }
+          arrowRecordBatchBuilder_.setMessage(value);
+        }
+        rowsCase_ = 4;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Serialized row data in Arrow RecordBatch format.
+       * </pre>
+       *
+       * <code>.google.cloud.bigquery.storage.v1beta1.ArrowRecordBatch arrow_record_batch = 4;
+       * </code>
+       */
+      public Builder clearArrowRecordBatch() {
+        if (arrowRecordBatchBuilder_ == null) {
+          if (rowsCase_ == 4) {
+            rowsCase_ = 0;
+            rows_ = null;
+            onChanged();
+          }
+        } else {
+          if (rowsCase_ == 4) {
+            rowsCase_ = 0;
+            rows_ = null;
+          }
+          arrowRecordBatchBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Serialized row data in Arrow RecordBatch format.
+       * </pre>
+       *
+       * <code>.google.cloud.bigquery.storage.v1beta1.ArrowRecordBatch arrow_record_batch = 4;
+       * </code>
+       */
+      public com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowRecordBatch.Builder
+          getArrowRecordBatchBuilder() {
+        return getArrowRecordBatchFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Serialized row data in Arrow RecordBatch format.
+       * </pre>
+       *
+       * <code>.google.cloud.bigquery.storage.v1beta1.ArrowRecordBatch arrow_record_batch = 4;
+       * </code>
+       */
+      public com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowRecordBatchOrBuilder
+          getArrowRecordBatchOrBuilder() {
+        if ((rowsCase_ == 4) && (arrowRecordBatchBuilder_ != null)) {
+          return arrowRecordBatchBuilder_.getMessageOrBuilder();
+        } else {
+          if (rowsCase_ == 4) {
+            return (com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowRecordBatch) rows_;
+          }
+          return com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowRecordBatch
+              .getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Serialized row data in Arrow RecordBatch format.
+       * </pre>
+       *
+       * <code>.google.cloud.bigquery.storage.v1beta1.ArrowRecordBatch arrow_record_batch = 4;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowRecordBatch,
+              com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowRecordBatch.Builder,
+              com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowRecordBatchOrBuilder>
+          getArrowRecordBatchFieldBuilder() {
+        if (arrowRecordBatchBuilder_ == null) {
+          if (!(rowsCase_ == 4)) {
+            rows_ =
+                com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowRecordBatch
+                    .getDefaultInstance();
+          }
+          arrowRecordBatchBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowRecordBatch,
+                  com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowRecordBatch.Builder,
+                  com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowRecordBatchOrBuilder>(
+                  (com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowRecordBatch) rows_,
+                  getParentForChildren(),
+                  isClean());
+          rows_ = null;
+        }
+        rowsCase_ = 4;
+        onChanged();
+        ;
+        return arrowRecordBatchBuilder_;
+      }
+
+      private long rowCount_;
+      /**
+       *
+       *
+       * <pre>
+       * Number of serialized rows in the rows block. This value is recorded here,
+       * in addition to the row_count values in the output-specific messages in
+       * `rows`, so that code which needs to record progress through the stream can
+       * do so in an output format-independent way.
+       * </pre>
+       *
+       * <code>int64 row_count = 6;</code>
+       */
+      public long getRowCount() {
+        return rowCount_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Number of serialized rows in the rows block. This value is recorded here,
+       * in addition to the row_count values in the output-specific messages in
+       * `rows`, so that code which needs to record progress through the stream can
+       * do so in an output format-independent way.
+       * </pre>
+       *
+       * <code>int64 row_count = 6;</code>
+       */
+      public Builder setRowCount(long value) {
+
+        rowCount_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Number of serialized rows in the rows block. This value is recorded here,
+       * in addition to the row_count values in the output-specific messages in
+       * `rows`, so that code which needs to record progress through the stream can
+       * do so in an output format-independent way.
+       * </pre>
+       *
+       * <code>int64 row_count = 6;</code>
+       */
+      public Builder clearRowCount() {
+
+        rowCount_ = 0L;
+        onChanged();
+        return this;
       }
 
       private com.google.cloud.bigquery.storage.v1beta1.Storage.StreamStatus status_;
@@ -12336,6 +13790,23 @@ public final class Storage {
      * <code>.google.cloud.bigquery.storage.v1beta1.Stream original_stream = 1;</code>
      */
     com.google.cloud.bigquery.storage.v1beta1.Storage.StreamOrBuilder getOriginalStreamOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * A value in the range (0.0, 1.0) that specifies the fractional point at
+     * which the original stream should be split. The actual split point is
+     * evaluated on pre-filtered rows, so if a filter is provided, then there is
+     * no guarantee that the division of the rows between the new child streams
+     * will be proportional to this fractional value. Additionally, because the
+     * server-side unit for assigning data is collections of rows, this fraction
+     * will always map to to a data storage boundary on the server side.
+     * </pre>
+     *
+     * <code>float fraction = 2;</code>
+     */
+    float getFraction();
   }
   /**
    *
@@ -12397,6 +13868,11 @@ public final class Storage {
                   originalStream_ = subBuilder.buildPartial();
                 }
 
+                break;
+              }
+            case 21:
+              {
+                fraction_ = input.readFloat();
                 break;
               }
             default:
@@ -12476,6 +13952,27 @@ public final class Storage {
       return getOriginalStream();
     }
 
+    public static final int FRACTION_FIELD_NUMBER = 2;
+    private float fraction_;
+    /**
+     *
+     *
+     * <pre>
+     * A value in the range (0.0, 1.0) that specifies the fractional point at
+     * which the original stream should be split. The actual split point is
+     * evaluated on pre-filtered rows, so if a filter is provided, then there is
+     * no guarantee that the division of the rows between the new child streams
+     * will be proportional to this fractional value. Additionally, because the
+     * server-side unit for assigning data is collections of rows, this fraction
+     * will always map to to a data storage boundary on the server side.
+     * </pre>
+     *
+     * <code>float fraction = 2;</code>
+     */
+    public float getFraction() {
+      return fraction_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -12493,6 +13990,9 @@ public final class Storage {
       if (originalStream_ != null) {
         output.writeMessage(1, getOriginalStream());
       }
+      if (fraction_ != 0F) {
+        output.writeFloat(2, fraction_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -12504,6 +14004,9 @@ public final class Storage {
       size = 0;
       if (originalStream_ != null) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getOriginalStream());
+      }
+      if (fraction_ != 0F) {
+        size += com.google.protobuf.CodedOutputStream.computeFloatSize(2, fraction_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -12526,6 +14029,8 @@ public final class Storage {
       if (hasOriginalStream()) {
         if (!getOriginalStream().equals(other.getOriginalStream())) return false;
       }
+      if (java.lang.Float.floatToIntBits(getFraction())
+          != java.lang.Float.floatToIntBits(other.getFraction())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -12541,6 +14046,8 @@ public final class Storage {
         hash = (37 * hash) + ORIGINAL_STREAM_FIELD_NUMBER;
         hash = (53 * hash) + getOriginalStream().hashCode();
       }
+      hash = (37 * hash) + FRACTION_FIELD_NUMBER;
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(getFraction());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -12703,6 +14210,8 @@ public final class Storage {
           originalStream_ = null;
           originalStreamBuilder_ = null;
         }
+        fraction_ = 0F;
+
         return this;
       }
 
@@ -12739,6 +14248,7 @@ public final class Storage {
         } else {
           result.originalStream_ = originalStreamBuilder_.build();
         }
+        result.fraction_ = fraction_;
         onBuilt();
         return result;
       }
@@ -12797,6 +14307,9 @@ public final class Storage {
                 .getDefaultInstance()) return this;
         if (other.hasOriginalStream()) {
           mergeOriginalStream(other.getOriginalStream());
+        }
+        if (other.getFraction() != 0F) {
+          setFraction(other.getFraction());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -13016,6 +14529,68 @@ public final class Storage {
         return originalStreamBuilder_;
       }
 
+      private float fraction_;
+      /**
+       *
+       *
+       * <pre>
+       * A value in the range (0.0, 1.0) that specifies the fractional point at
+       * which the original stream should be split. The actual split point is
+       * evaluated on pre-filtered rows, so if a filter is provided, then there is
+       * no guarantee that the division of the rows between the new child streams
+       * will be proportional to this fractional value. Additionally, because the
+       * server-side unit for assigning data is collections of rows, this fraction
+       * will always map to to a data storage boundary on the server side.
+       * </pre>
+       *
+       * <code>float fraction = 2;</code>
+       */
+      public float getFraction() {
+        return fraction_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A value in the range (0.0, 1.0) that specifies the fractional point at
+       * which the original stream should be split. The actual split point is
+       * evaluated on pre-filtered rows, so if a filter is provided, then there is
+       * no guarantee that the division of the rows between the new child streams
+       * will be proportional to this fractional value. Additionally, because the
+       * server-side unit for assigning data is collections of rows, this fraction
+       * will always map to to a data storage boundary on the server side.
+       * </pre>
+       *
+       * <code>float fraction = 2;</code>
+       */
+      public Builder setFraction(float value) {
+
+        fraction_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A value in the range (0.0, 1.0) that specifies the fractional point at
+       * which the original stream should be split. The actual split point is
+       * evaluated on pre-filtered rows, so if a filter is provided, then there is
+       * no guarantee that the division of the rows between the new child streams
+       * will be proportional to this fractional value. Additionally, because the
+       * server-side unit for assigning data is collections of rows, this fraction
+       * will always map to to a data storage boundary on the server side.
+       * </pre>
+       *
+       * <code>float fraction = 2;</code>
+       */
+      public Builder clearFraction() {
+
+        fraction_ = 0F;
+        onChanged();
+        return this;
+      }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -13081,8 +14656,9 @@ public final class Storage {
      *
      *
      * <pre>
-     * Primary stream. Will contain the beginning portion of
-     * |original_stream|.
+     * Primary stream, which contains the beginning portion of
+     * |original_stream|. An empty value indicates that the original stream can no
+     * longer be split.
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.Stream primary_stream = 1;</code>
@@ -13092,8 +14668,9 @@ public final class Storage {
      *
      *
      * <pre>
-     * Primary stream. Will contain the beginning portion of
-     * |original_stream|.
+     * Primary stream, which contains the beginning portion of
+     * |original_stream|. An empty value indicates that the original stream can no
+     * longer be split.
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.Stream primary_stream = 1;</code>
@@ -13103,8 +14680,9 @@ public final class Storage {
      *
      *
      * <pre>
-     * Primary stream. Will contain the beginning portion of
-     * |original_stream|.
+     * Primary stream, which contains the beginning portion of
+     * |original_stream|. An empty value indicates that the original stream can no
+     * longer be split.
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.Stream primary_stream = 1;</code>
@@ -13115,7 +14693,8 @@ public final class Storage {
      *
      *
      * <pre>
-     * Remainder stream. Will contain the tail of |original_stream|.
+     * Remainder stream, which contains the tail of |original_stream|. An empty
+     * value indicates that the original stream can no longer be split.
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.Stream remainder_stream = 2;</code>
@@ -13125,7 +14704,8 @@ public final class Storage {
      *
      *
      * <pre>
-     * Remainder stream. Will contain the tail of |original_stream|.
+     * Remainder stream, which contains the tail of |original_stream|. An empty
+     * value indicates that the original stream can no longer be split.
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.Stream remainder_stream = 2;</code>
@@ -13135,7 +14715,8 @@ public final class Storage {
      *
      *
      * <pre>
-     * Remainder stream. Will contain the tail of |original_stream|.
+     * Remainder stream, which contains the tail of |original_stream|. An empty
+     * value indicates that the original stream can no longer be split.
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.Stream remainder_stream = 2;</code>
@@ -13262,8 +14843,9 @@ public final class Storage {
      *
      *
      * <pre>
-     * Primary stream. Will contain the beginning portion of
-     * |original_stream|.
+     * Primary stream, which contains the beginning portion of
+     * |original_stream|. An empty value indicates that the original stream can no
+     * longer be split.
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.Stream primary_stream = 1;</code>
@@ -13275,8 +14857,9 @@ public final class Storage {
      *
      *
      * <pre>
-     * Primary stream. Will contain the beginning portion of
-     * |original_stream|.
+     * Primary stream, which contains the beginning portion of
+     * |original_stream|. An empty value indicates that the original stream can no
+     * longer be split.
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.Stream primary_stream = 1;</code>
@@ -13290,8 +14873,9 @@ public final class Storage {
      *
      *
      * <pre>
-     * Primary stream. Will contain the beginning portion of
-     * |original_stream|.
+     * Primary stream, which contains the beginning portion of
+     * |original_stream|. An empty value indicates that the original stream can no
+     * longer be split.
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.Stream primary_stream = 1;</code>
@@ -13307,7 +14891,8 @@ public final class Storage {
      *
      *
      * <pre>
-     * Remainder stream. Will contain the tail of |original_stream|.
+     * Remainder stream, which contains the tail of |original_stream|. An empty
+     * value indicates that the original stream can no longer be split.
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.Stream remainder_stream = 2;</code>
@@ -13319,7 +14904,8 @@ public final class Storage {
      *
      *
      * <pre>
-     * Remainder stream. Will contain the tail of |original_stream|.
+     * Remainder stream, which contains the tail of |original_stream|. An empty
+     * value indicates that the original stream can no longer be split.
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.Stream remainder_stream = 2;</code>
@@ -13333,7 +14919,8 @@ public final class Storage {
      *
      *
      * <pre>
-     * Remainder stream. Will contain the tail of |original_stream|.
+     * Remainder stream, which contains the tail of |original_stream|. An empty
+     * value indicates that the original stream can no longer be split.
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.Stream remainder_stream = 2;</code>
@@ -13735,8 +15322,9 @@ public final class Storage {
        *
        *
        * <pre>
-       * Primary stream. Will contain the beginning portion of
-       * |original_stream|.
+       * Primary stream, which contains the beginning portion of
+       * |original_stream|. An empty value indicates that the original stream can no
+       * longer be split.
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.Stream primary_stream = 1;</code>
@@ -13748,8 +15336,9 @@ public final class Storage {
        *
        *
        * <pre>
-       * Primary stream. Will contain the beginning portion of
-       * |original_stream|.
+       * Primary stream, which contains the beginning portion of
+       * |original_stream|. An empty value indicates that the original stream can no
+       * longer be split.
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.Stream primary_stream = 1;</code>
@@ -13767,8 +15356,9 @@ public final class Storage {
        *
        *
        * <pre>
-       * Primary stream. Will contain the beginning portion of
-       * |original_stream|.
+       * Primary stream, which contains the beginning portion of
+       * |original_stream|. An empty value indicates that the original stream can no
+       * longer be split.
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.Stream primary_stream = 1;</code>
@@ -13791,8 +15381,9 @@ public final class Storage {
        *
        *
        * <pre>
-       * Primary stream. Will contain the beginning portion of
-       * |original_stream|.
+       * Primary stream, which contains the beginning portion of
+       * |original_stream|. An empty value indicates that the original stream can no
+       * longer be split.
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.Stream primary_stream = 1;</code>
@@ -13812,8 +15403,9 @@ public final class Storage {
        *
        *
        * <pre>
-       * Primary stream. Will contain the beginning portion of
-       * |original_stream|.
+       * Primary stream, which contains the beginning portion of
+       * |original_stream|. An empty value indicates that the original stream can no
+       * longer be split.
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.Stream primary_stream = 1;</code>
@@ -13840,8 +15432,9 @@ public final class Storage {
        *
        *
        * <pre>
-       * Primary stream. Will contain the beginning portion of
-       * |original_stream|.
+       * Primary stream, which contains the beginning portion of
+       * |original_stream|. An empty value indicates that the original stream can no
+       * longer be split.
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.Stream primary_stream = 1;</code>
@@ -13861,8 +15454,9 @@ public final class Storage {
        *
        *
        * <pre>
-       * Primary stream. Will contain the beginning portion of
-       * |original_stream|.
+       * Primary stream, which contains the beginning portion of
+       * |original_stream|. An empty value indicates that the original stream can no
+       * longer be split.
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.Stream primary_stream = 1;</code>
@@ -13877,8 +15471,9 @@ public final class Storage {
        *
        *
        * <pre>
-       * Primary stream. Will contain the beginning portion of
-       * |original_stream|.
+       * Primary stream, which contains the beginning portion of
+       * |original_stream|. An empty value indicates that the original stream can no
+       * longer be split.
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.Stream primary_stream = 1;</code>
@@ -13897,8 +15492,9 @@ public final class Storage {
        *
        *
        * <pre>
-       * Primary stream. Will contain the beginning portion of
-       * |original_stream|.
+       * Primary stream, which contains the beginning portion of
+       * |original_stream|. An empty value indicates that the original stream can no
+       * longer be split.
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.Stream primary_stream = 1;</code>
@@ -13930,7 +15526,8 @@ public final class Storage {
        *
        *
        * <pre>
-       * Remainder stream. Will contain the tail of |original_stream|.
+       * Remainder stream, which contains the tail of |original_stream|. An empty
+       * value indicates that the original stream can no longer be split.
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.Stream remainder_stream = 2;</code>
@@ -13942,7 +15539,8 @@ public final class Storage {
        *
        *
        * <pre>
-       * Remainder stream. Will contain the tail of |original_stream|.
+       * Remainder stream, which contains the tail of |original_stream|. An empty
+       * value indicates that the original stream can no longer be split.
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.Stream remainder_stream = 2;</code>
@@ -13960,7 +15558,8 @@ public final class Storage {
        *
        *
        * <pre>
-       * Remainder stream. Will contain the tail of |original_stream|.
+       * Remainder stream, which contains the tail of |original_stream|. An empty
+       * value indicates that the original stream can no longer be split.
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.Stream remainder_stream = 2;</code>
@@ -13983,7 +15582,8 @@ public final class Storage {
        *
        *
        * <pre>
-       * Remainder stream. Will contain the tail of |original_stream|.
+       * Remainder stream, which contains the tail of |original_stream|. An empty
+       * value indicates that the original stream can no longer be split.
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.Stream remainder_stream = 2;</code>
@@ -14003,7 +15603,8 @@ public final class Storage {
        *
        *
        * <pre>
-       * Remainder stream. Will contain the tail of |original_stream|.
+       * Remainder stream, which contains the tail of |original_stream|. An empty
+       * value indicates that the original stream can no longer be split.
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.Stream remainder_stream = 2;</code>
@@ -14031,7 +15632,8 @@ public final class Storage {
        *
        *
        * <pre>
-       * Remainder stream. Will contain the tail of |original_stream|.
+       * Remainder stream, which contains the tail of |original_stream|. An empty
+       * value indicates that the original stream can no longer be split.
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.Stream remainder_stream = 2;</code>
@@ -14051,7 +15653,8 @@ public final class Storage {
        *
        *
        * <pre>
-       * Remainder stream. Will contain the tail of |original_stream|.
+       * Remainder stream, which contains the tail of |original_stream|. An empty
+       * value indicates that the original stream can no longer be split.
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.Stream remainder_stream = 2;</code>
@@ -14066,7 +15669,8 @@ public final class Storage {
        *
        *
        * <pre>
-       * Remainder stream. Will contain the tail of |original_stream|.
+       * Remainder stream, which contains the tail of |original_stream|. An empty
+       * value indicates that the original stream can no longer be split.
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.Stream remainder_stream = 2;</code>
@@ -14085,7 +15689,8 @@ public final class Storage {
        *
        *
        * <pre>
-       * Remainder stream. Will contain the tail of |original_stream|.
+       * Remainder stream, which contains the tail of |original_stream|. An empty
+       * value indicates that the original stream can no longer be split.
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.Stream remainder_stream = 2;</code>
@@ -14227,94 +15832,110 @@ public final class Storage {
       "\n3google/cloud/bigquery/storage/v1beta1/"
           + "storage.proto\022%google.cloud.bigquery.sto"
           + "rage.v1beta1\032\034google/api/annotations.pro"
-          + "to\032\031google/api/resource.proto\0320google/cl"
-          + "oud/bigquery/storage/v1beta1/avro.proto\032"
-          + "8google/cloud/bigquery/storage/v1beta1/r"
-          + "ead_options.proto\032;google/cloud/bigquery"
-          + "/storage/v1beta1/table_reference.proto\032\033"
-          + "google/protobuf/empty.proto\032\037google/prot"
-          + "obuf/timestamp.proto\")\n\006Stream\022\014\n\004name\030\001"
-          + " \001(\t\022\021\n\trow_count\030\002 \001(\003\"_\n\016StreamPositio"
-          + "n\022=\n\006stream\030\001 \001(\0132-.google.cloud.bigquer"
-          + "y.storage.v1beta1.Stream\022\016\n\006offset\030\002 \001(\003"
-          + "\"\200\003\n\013ReadSession\022\014\n\004name\030\001 \001(\t\022/\n\013expire"
-          + "_time\030\002 \001(\0132\032.google.protobuf.Timestamp\022"
-          + "H\n\013avro_schema\030\005 \001(\01321.google.cloud.bigq"
-          + "uery.storage.v1beta1.AvroSchemaH\000\022>\n\007str"
-          + "eams\030\004 \003(\0132-.google.cloud.bigquery.stora"
-          + "ge.v1beta1.Stream\022N\n\017table_reference\030\007 \001"
-          + "(\01325.google.cloud.bigquery.storage.v1bet"
-          + "a1.TableReference\022N\n\017table_modifiers\030\010 \001"
-          + "(\01325.google.cloud.bigquery.storage.v1bet"
-          + "a1.TableModifiersB\010\n\006schema\"\367\002\n\030CreateRe"
-          + "adSessionRequest\022N\n\017table_reference\030\001 \001("
+          + "to\0321google/cloud/bigquery/storage/v1beta"
+          + "1/arrow.proto\0320google/cloud/bigquery/sto"
+          + "rage/v1beta1/avro.proto\0328google/cloud/bi"
+          + "gquery/storage/v1beta1/read_options.prot"
+          + "o\032;google/cloud/bigquery/storage/v1beta1"
+          + "/table_reference.proto\032\033google/protobuf/"
+          + "empty.proto\032\037google/protobuf/timestamp.p"
+          + "roto\032\027google/api/client.proto\"\026\n\006Stream\022"
+          + "\014\n\004name\030\001 \001(\t\"_\n\016StreamPosition\022=\n\006strea"
+          + "m\030\001 \001(\0132-.google.cloud.bigquery.storage."
+          + "v1beta1.Stream\022\016\n\006offset\030\002 \001(\003\"\240\004\n\013ReadS"
+          + "ession\022\014\n\004name\030\001 \001(\t\022/\n\013expire_time\030\002 \001("
+          + "\0132\032.google.protobuf.Timestamp\022H\n\013avro_sc"
+          + "hema\030\005 \001(\01321.google.cloud.bigquery.stora"
+          + "ge.v1beta1.AvroSchemaH\000\022J\n\014arrow_schema\030"
+          + "\006 \001(\01322.google.cloud.bigquery.storage.v1"
+          + "beta1.ArrowSchemaH\000\022>\n\007streams\030\004 \003(\0132-.g"
+          + "oogle.cloud.bigquery.storage.v1beta1.Str"
+          + "eam\022N\n\017table_reference\030\007 \001(\01325.google.cl"
+          + "oud.bigquery.storage.v1beta1.TableRefere"
+          + "nce\022N\n\017table_modifiers\030\010 \001(\01325.google.cl"
+          + "oud.bigquery.storage.v1beta1.TableModifi"
+          + "ers\022R\n\021sharding_strategy\030\t \001(\01627.google."
+          + "cloud.bigquery.storage.v1beta1.ShardingS"
+          + "trategyB\010\n\006schema\"\313\003\n\030CreateReadSessionR"
+          + "equest\022N\n\017table_reference\030\001 \001(\01325.google"
+          + ".cloud.bigquery.storage.v1beta1.TableRef"
+          + "erence\022\016\n\006parent\030\006 \001(\t\022N\n\017table_modifier"
+          + "s\030\002 \001(\01325.google.cloud.bigquery.storage."
+          + "v1beta1.TableModifiers\022\031\n\021requested_stre"
+          + "ams\030\003 \001(\005\022M\n\014read_options\030\004 \001(\01327.google"
+          + ".cloud.bigquery.storage.v1beta1.TableRea"
+          + "dOptions\022A\n\006format\030\005 \001(\01621.google.cloud."
+          + "bigquery.storage.v1beta1.DataFormat\022R\n\021s"
+          + "harding_strategy\030\007 \001(\01627.google.cloud.bi"
+          + "gquery.storage.v1beta1.ShardingStrategy\""
+          + "_\n\017ReadRowsRequest\022L\n\rread_position\030\001 \001("
           + "\01325.google.cloud.bigquery.storage.v1beta"
-          + "1.TableReference\022\016\n\006parent\030\006 \001(\t\022N\n\017tabl"
-          + "e_modifiers\030\002 \001(\01325.google.cloud.bigquer"
-          + "y.storage.v1beta1.TableModifiers\022\031\n\021requ"
-          + "ested_streams\030\003 \001(\005\022M\n\014read_options\030\004 \001("
-          + "\01327.google.cloud.bigquery.storage.v1beta"
-          + "1.TableReadOptions\022A\n\006format\030\005 \001(\01621.goo"
-          + "gle.cloud.bigquery.storage.v1beta1.DataF"
-          + "ormat\"_\n\017ReadRowsRequest\022L\n\rread_positio"
-          + "n\030\001 \001(\01325.google.cloud.bigquery.storage."
-          + "v1beta1.StreamPosition\"+\n\014StreamStatus\022\033"
-          + "\n\023estimated_row_count\030\001 \001(\003\"*\n\016ThrottleS"
-          + "tatus\022\030\n\020throttle_percent\030\001 \001(\005\"\365\001\n\020Read"
-          + "RowsResponse\022D\n\tavro_rows\030\003 \001(\0132/.google"
-          + ".cloud.bigquery.storage.v1beta1.AvroRows"
-          + "H\000\022C\n\006status\030\002 \001(\01323.google.cloud.bigque"
-          + "ry.storage.v1beta1.StreamStatus\022N\n\017throt"
-          + "tle_status\030\005 \001(\01325.google.cloud.bigquery"
-          + ".storage.v1beta1.ThrottleStatusB\006\n\004rows\""
-          + "\206\001\n$BatchCreateReadSessionStreamsRequest"
-          + "\022C\n\007session\030\001 \001(\01322.google.cloud.bigquer"
-          + "y.storage.v1beta1.ReadSession\022\031\n\021request"
-          + "ed_streams\030\002 \001(\005\"g\n%BatchCreateReadSessi"
-          + "onStreamsResponse\022>\n\007streams\030\001 \003(\0132-.goo"
-          + "gle.cloud.bigquery.storage.v1beta1.Strea"
-          + "m\"V\n\025FinalizeStreamRequest\022=\n\006stream\030\002 \001"
-          + "(\0132-.google.cloud.bigquery.storage.v1bet"
-          + "a1.Stream\"`\n\026SplitReadStreamRequest\022F\n\017o"
-          + "riginal_stream\030\001 \001(\0132-.google.cloud.bigq"
-          + "uery.storage.v1beta1.Stream\"\251\001\n\027SplitRea"
-          + "dStreamResponse\022E\n\016primary_stream\030\001 \001(\0132"
-          + "-.google.cloud.bigquery.storage.v1beta1."
-          + "Stream\022G\n\020remainder_stream\030\002 \001(\0132-.googl"
-          + "e.cloud.bigquery.storage.v1beta1.Stream*"
-          + "3\n\nDataFormat\022\033\n\027DATA_FORMAT_UNSPECIFIED"
-          + "\020\000\022\010\n\004AVRO\020\0012\307\010\n\017BigQueryStorage\022\207\002\n\021Cre"
-          + "ateReadSession\022?.google.cloud.bigquery.s"
-          + "torage.v1beta1.CreateReadSessionRequest\032"
-          + "2.google.cloud.bigquery.storage.v1beta1."
-          + "ReadSession\"}\202\323\344\223\002w\"0/v1beta1/{table_ref"
-          + "erence.project_id=projects/*}:\001*Z@\";/v1b"
-          + "eta1/{table_reference.dataset_id=project"
-          + "s/*/datasets/*}:\001*\022\300\001\n\010ReadRows\0226.google"
-          + ".cloud.bigquery.storage.v1beta1.ReadRows"
-          + "Request\0327.google.cloud.bigquery.storage."
-          + "v1beta1.ReadRowsResponse\"A\202\323\344\223\002;\0229/v1bet"
-          + "a1/{read_position.stream.name=projects/*"
-          + "/streams/*}0\001\022\364\001\n\035BatchCreateReadSession"
-          + "Streams\022K.google.cloud.bigquery.storage."
-          + "v1beta1.BatchCreateReadSessionStreamsReq"
-          + "uest\032L.google.cloud.bigquery.storage.v1b"
-          + "eta1.BatchCreateReadSessionStreamsRespon"
-          + "se\"8\202\323\344\223\0022\"-/v1beta1/{session.name=proje"
-          + "cts/*/sessions/*}:\001*\022\236\001\n\016FinalizeStream\022"
-          + "<.google.cloud.bigquery.storage.v1beta1."
-          + "FinalizeStreamRequest\032\026.google.protobuf."
-          + "Empty\"6\202\323\344\223\0020\"+/v1beta1/{stream.name=pro"
-          + "jects/*/streams/*}:\001*\022\316\001\n\017SplitReadStrea"
-          + "m\022=.google.cloud.bigquery.storage.v1beta"
-          + "1.SplitReadStreamRequest\032>.google.cloud."
-          + "bigquery.storage.v1beta1.SplitReadStream"
-          + "Response\"<\202\323\344\223\0026\0224/v1beta1/{original_str"
-          + "eam.name=projects/*/streams/*}By\n)com.go"
-          + "ogle.cloud.bigquery.storage.v1beta1ZLgoo"
-          + "gle.golang.org/genproto/googleapis/cloud"
-          + "/bigquery/storage/v1beta1;storageb\006proto"
-          + "3"
+          + "1.StreamPosition\"]\n\014StreamStatus\022\033\n\023esti"
+          + "mated_row_count\030\001 \001(\003\022\031\n\021fraction_consum"
+          + "ed\030\002 \001(\002\022\025\n\ris_splittable\030\003 \001(\010\"*\n\016Throt"
+          + "tleStatus\022\030\n\020throttle_percent\030\001 \001(\005\"\337\002\n\020"
+          + "ReadRowsResponse\022D\n\tavro_rows\030\003 \001(\0132/.go"
+          + "ogle.cloud.bigquery.storage.v1beta1.Avro"
+          + "RowsH\000\022U\n\022arrow_record_batch\030\004 \001(\01327.goo"
+          + "gle.cloud.bigquery.storage.v1beta1.Arrow"
+          + "RecordBatchH\000\022\021\n\trow_count\030\006 \001(\003\022C\n\006stat"
+          + "us\030\002 \001(\01323.google.cloud.bigquery.storage"
+          + ".v1beta1.StreamStatus\022N\n\017throttle_status"
+          + "\030\005 \001(\01325.google.cloud.bigquery.storage.v"
+          + "1beta1.ThrottleStatusB\006\n\004rows\"\206\001\n$BatchC"
+          + "reateReadSessionStreamsRequest\022C\n\007sessio"
+          + "n\030\001 \001(\01322.google.cloud.bigquery.storage."
+          + "v1beta1.ReadSession\022\031\n\021requested_streams"
+          + "\030\002 \001(\005\"g\n%BatchCreateReadSessionStreamsR"
+          + "esponse\022>\n\007streams\030\001 \003(\0132-.google.cloud."
+          + "bigquery.storage.v1beta1.Stream\"V\n\025Final"
+          + "izeStreamRequest\022=\n\006stream\030\002 \001(\0132-.googl"
+          + "e.cloud.bigquery.storage.v1beta1.Stream\""
+          + "r\n\026SplitReadStreamRequest\022F\n\017original_st"
+          + "ream\030\001 \001(\0132-.google.cloud.bigquery.stora"
+          + "ge.v1beta1.Stream\022\020\n\010fraction\030\002 \001(\002\"\251\001\n\027"
+          + "SplitReadStreamResponse\022E\n\016primary_strea"
+          + "m\030\001 \001(\0132-.google.cloud.bigquery.storage."
+          + "v1beta1.Stream\022G\n\020remainder_stream\030\002 \001(\013"
+          + "2-.google.cloud.bigquery.storage.v1beta1"
+          + ".Stream*>\n\nDataFormat\022\033\n\027DATA_FORMAT_UNS"
+          + "PECIFIED\020\000\022\010\n\004AVRO\020\001\022\t\n\005ARROW\020\003*O\n\020Shard"
+          + "ingStrategy\022!\n\035SHARDING_STRATEGY_UNSPECI"
+          + "FIED\020\000\022\n\n\006LIQUID\020\001\022\014\n\010BALANCED\020\0022\304\t\n\017Big"
+          + "QueryStorage\022\207\002\n\021CreateReadSession\022?.goo"
+          + "gle.cloud.bigquery.storage.v1beta1.Creat"
+          + "eReadSessionRequest\0322.google.cloud.bigqu"
+          + "ery.storage.v1beta1.ReadSession\"}\202\323\344\223\002w\""
+          + "0/v1beta1/{table_reference.project_id=pr"
+          + "ojects/*}:\001*Z@\";/v1beta1/{table_referenc"
+          + "e.dataset_id=projects/*/datasets/*}:\001*\022\300"
+          + "\001\n\010ReadRows\0226.google.cloud.bigquery.stor"
+          + "age.v1beta1.ReadRowsRequest\0327.google.clo"
+          + "ud.bigquery.storage.v1beta1.ReadRowsResp"
+          + "onse\"A\202\323\344\223\002;\0229/v1beta1/{read_position.st"
+          + "ream.name=projects/*/streams/*}0\001\022\364\001\n\035Ba"
+          + "tchCreateReadSessionStreams\022K.google.clo"
+          + "ud.bigquery.storage.v1beta1.BatchCreateR"
+          + "eadSessionStreamsRequest\032L.google.cloud."
+          + "bigquery.storage.v1beta1.BatchCreateRead"
+          + "SessionStreamsResponse\"8\202\323\344\223\0022\"-/v1beta1"
+          + "/{session.name=projects/*/sessions/*}:\001*"
+          + "\022\236\001\n\016FinalizeStream\022<.google.cloud.bigqu"
+          + "ery.storage.v1beta1.FinalizeStreamReques"
+          + "t\032\026.google.protobuf.Empty\"6\202\323\344\223\0020\"+/v1be"
+          + "ta1/{stream.name=projects/*/streams/*}:\001"
+          + "*\022\316\001\n\017SplitReadStream\022=.google.cloud.big"
+          + "query.storage.v1beta1.SplitReadStreamReq"
+          + "uest\032>.google.cloud.bigquery.storage.v1b"
+          + "eta1.SplitReadStreamResponse\"<\202\323\344\223\0026\0224/v"
+          + "1beta1/{original_stream.name=projects/*/"
+          + "streams/*}\032{\312A\036bigquerystorage.googleapi"
+          + "s.com\322AWhttps://www.googleapis.com/auth/"
+          + "bigquery,https://www.googleapis.com/auth"
+          + "/cloud-platformBy\n)com.google.cloud.bigq"
+          + "uery.storage.v1beta1ZLgoogle.golang.org/"
+          + "genproto/googleapis/cloud/bigquery/stora"
+          + "ge/v1beta1;storageb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -14328,12 +15949,13 @@ public final class Storage {
         descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.api.AnnotationsProto.getDescriptor(),
-          com.google.api.ResourceProto.getDescriptor(),
+          com.google.cloud.bigquery.storage.v1beta1.ArrowProto.getDescriptor(),
           com.google.cloud.bigquery.storage.v1beta1.AvroProto.getDescriptor(),
           com.google.cloud.bigquery.storage.v1beta1.ReadOptions.getDescriptor(),
           com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.getDescriptor(),
           com.google.protobuf.EmptyProto.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
+          com.google.api.ClientProto.getDescriptor(),
         },
         assigner);
     internal_static_google_cloud_bigquery_storage_v1beta1_Stream_descriptor =
@@ -14342,7 +15964,7 @@ public final class Storage {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_storage_v1beta1_Stream_descriptor,
             new java.lang.String[] {
-              "Name", "RowCount",
+              "Name",
             });
     internal_static_google_cloud_bigquery_storage_v1beta1_StreamPosition_descriptor =
         getDescriptor().getMessageTypes().get(1);
@@ -14361,9 +15983,11 @@ public final class Storage {
               "Name",
               "ExpireTime",
               "AvroSchema",
+              "ArrowSchema",
               "Streams",
               "TableReference",
               "TableModifiers",
+              "ShardingStrategy",
               "Schema",
             });
     internal_static_google_cloud_bigquery_storage_v1beta1_CreateReadSessionRequest_descriptor =
@@ -14378,6 +16002,7 @@ public final class Storage {
               "RequestedStreams",
               "ReadOptions",
               "Format",
+              "ShardingStrategy",
             });
     internal_static_google_cloud_bigquery_storage_v1beta1_ReadRowsRequest_descriptor =
         getDescriptor().getMessageTypes().get(4);
@@ -14393,7 +16018,7 @@ public final class Storage {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_storage_v1beta1_StreamStatus_descriptor,
             new java.lang.String[] {
-              "EstimatedRowCount",
+              "EstimatedRowCount", "FractionConsumed", "IsSplittable",
             });
     internal_static_google_cloud_bigquery_storage_v1beta1_ThrottleStatus_descriptor =
         getDescriptor().getMessageTypes().get(6);
@@ -14409,7 +16034,7 @@ public final class Storage {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_storage_v1beta1_ReadRowsResponse_descriptor,
             new java.lang.String[] {
-              "AvroRows", "Status", "ThrottleStatus", "Rows",
+              "AvroRows", "ArrowRecordBatch", "RowCount", "Status", "ThrottleStatus", "Rows",
             });
     internal_static_google_cloud_bigquery_storage_v1beta1_BatchCreateReadSessionStreamsRequest_descriptor =
         getDescriptor().getMessageTypes().get(8);
@@ -14441,7 +16066,7 @@ public final class Storage {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_storage_v1beta1_SplitReadStreamRequest_descriptor,
             new java.lang.String[] {
-              "OriginalStream",
+              "OriginalStream", "Fraction",
             });
     internal_static_google_cloud_bigquery_storage_v1beta1_SplitReadStreamResponse_descriptor =
         getDescriptor().getMessageTypes().get(12);
@@ -14453,16 +16078,19 @@ public final class Storage {
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.ClientProto.defaultHost);
     registry.add(com.google.api.AnnotationsProto.http);
+    registry.add(com.google.api.ClientProto.oauthScopes);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.AnnotationsProto.getDescriptor();
-    com.google.api.ResourceProto.getDescriptor();
+    com.google.cloud.bigquery.storage.v1beta1.ArrowProto.getDescriptor();
     com.google.cloud.bigquery.storage.v1beta1.AvroProto.getDescriptor();
     com.google.cloud.bigquery.storage.v1beta1.ReadOptions.getDescriptor();
     com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.getDescriptor();
     com.google.protobuf.EmptyProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
+    com.google.api.ClientProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)
