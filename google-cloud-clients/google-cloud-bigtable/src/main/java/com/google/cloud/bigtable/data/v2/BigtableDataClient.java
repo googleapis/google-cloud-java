@@ -1151,7 +1151,6 @@ public class BigtableDataClient implements AutoCloseable {
    *   }
    * }
    * }</pre>
-   * This is callable.
    */
   public UnaryCallable<ReadModifyWriteRow, Row> readModifyWriteRowCallable() {
     return stub.readModifyWriteRowCallable();
