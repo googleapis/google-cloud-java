@@ -39,19 +39,6 @@
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-translate-v3beta1</artifactId>
     </dependency>
-    <dependency>
-      <groupId>io.grpc</groupId>
-      <artifactId>grpc-netty-shaded</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>io.grpc</groupId>
-      <artifactId>grpc-stub</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>io.grpc</groupId>
-      <artifactId>grpc-auth</artifactId>
-    </dependency>
-
     <!-- Test dependencies -->
     <dependency>
       <groupId>${project.groupId}</groupId>
