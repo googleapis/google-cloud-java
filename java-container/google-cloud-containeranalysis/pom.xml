@@ -38,6 +38,10 @@
       <artifactId>proto-google-cloud-containeranalysis-v1beta1</artifactId>
     </dependency>
     <dependency>
+      <groupId>io.grafeas</groupId>
+      <artifactId>grafeas</artifactId>
+    </dependency>
+    <dependency>
       <groupId>io.grpc</groupId>
       <artifactId>grpc-netty-shaded</artifactId>
     </dependency>
