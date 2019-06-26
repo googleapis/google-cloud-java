@@ -64,9 +64,13 @@ public class StandardSQLDataType implements Serializable {
         }
 
         BuilderImpl(StandardSqlDataType dataTypePb) {
-            this.arrayElementType = StandardSQLDataType.fromPb(dataTypePb.getArrayElementType());
-            this.structType = StandardSQLStructType.fromPb(dataTypePb.getStructType());
             this.typeKind = dataTypePb.getTypeKind();
+            if (this.arrayElementType != null) {
+                this.arrayElementType = StandardSQLDataType.fromPb(dataTypePb.getArrayElementType());
+            }
+            if (this.structType != null) {
+                this.structType = StandardSQLStructType.fromPb(dataTypePb.getStructType());
+            }
         }
 
         @Override
@@ -98,6 +102,12 @@ public class StandardSQLDataType implements Serializable {
         this.structType = builder.structType;
         this.typeKind = builder.typeKind;
     }
+
+    public String getTypeKind() { return typeKind; }
+
+    public StandardSQLDataType getArrayElementType() { return arrayElementType; }
+
+    public StandardSQLStructType getStructType() { return structType; }
 
     public Builder toBuilder() {
         return new BuilderImpl(this);
@@ -135,9 +145,13 @@ public class StandardSQLDataType implements Serializable {
 
     StandardSqlDataType toPb() {
         StandardSqlDataType dataTypePb = new StandardSqlDataType();
-        dataTypePb.setArrayElementType(arrayElementType.toPb());
-        dataTypePb.setStructType(structType.toPb());
         dataTypePb.setTypeKind(typeKind);
+        if (arrayElementType != null) {
+            dataTypePb.setArrayElementType(arrayElementType.toPb());
+        }
+        if (structType != null) {
+            dataTypePb.setStructType(structType.toPb());
+        }
         return dataTypePb;
     }
 

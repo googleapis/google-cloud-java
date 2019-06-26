@@ -132,7 +132,9 @@ public class StandardSQLField implements Serializable {
     public StandardSqlField toPb() {
         StandardSqlField fieldPb = new StandardSqlField();
         fieldPb.setName(name);
-        fieldPb.setType(dataType.toPb());
+        if (dataType != null) {
+            fieldPb.setType(dataType.toPb());
+        }
         return fieldPb;
     }
 

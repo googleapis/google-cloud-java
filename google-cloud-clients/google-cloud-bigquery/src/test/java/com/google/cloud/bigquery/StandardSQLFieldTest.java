@@ -36,7 +36,7 @@ public class StandardSQLFieldTest {
             .setArrayElementType(STRING_DATA_TYPE)
             .build();
     private static final StandardSQLField STANDARD_SQL_FIELD_1 = StandardSQLField
-            .newBuilder(NAME, STRING_DATA_TYPE)
+            .newBuilder(STRING_DATA_TYPE)
             .build();
     private static final StandardSQLField STANDARD_SQL_FIELD_2 = StandardSQLField
             .newBuilder(NAME, ARRAY_OF_STRING_DATA_TYPE)
@@ -53,7 +53,7 @@ public class StandardSQLFieldTest {
 
     @Test
     public void testBuilder() {
-        assertEquals(NAME, STANDARD_SQL_FIELD_1.getName());
+        assertEquals(null, STANDARD_SQL_FIELD_1.getName());
         assertEquals(STRING_DATA_TYPE, STANDARD_SQL_FIELD_1.getDataType());
         assertEquals(ARRAY_OF_STRING_DATA_TYPE, STANDARD_SQL_FIELD_2.getDataType());
     }
