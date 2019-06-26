@@ -22,10 +22,14 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 
 import javax.annotation.Nullable;
+import java.io.Serializable;
+import java.util.Collections;
 import java.util.List;
 
+import static com.google.common.base.Preconditions.checkNotNull;
+
 @AutoValue
-public abstract class RoutineInfo {
+public class RoutineInfo implements Serializable {
 
     static final Function<Routine, RoutineInfo> FROM_PB_FUNCTION =
             new Function<Routine, RoutineInfo>() {
@@ -43,43 +47,165 @@ public abstract class RoutineInfo {
             };
 
 
-    @AutoValue.Builder
+    private final RoutineId routineId;
+    private final String etag;
+    private final String routineType;
+    private final Long creationTime;
+    private final Long lastModifiedTime;
+    private final List<RoutineArgument> argumentList;
+    private final StandardSQLDataType returnType;
+    private final List<String> importedLibrariesList;
+    private final String body;
+
     public abstract static class Builder {
+         abstract Builder setRoutineId(RoutineId id);
          abstract Builder setEtag(String etag);
          public abstract Builder setRoutineType(String routineType);
          abstract Builder setCreationTime(Long creationMillis);
          abstract Builder setLastModifiedTime(Long lastModifiedMillis);
-         public abstract Builder setArguments(List<RoutineArgument> arguments);
+         public abstract Builder setArguments(List<RoutineArgument> argumentList);
          public abstract Builder setReturnType(StandardSQLDataType returnType);
-         public abstract Builder setImportedLibraries(List<String> libraries);
+         public abstract Builder setImportedLibraries(List<String> importedLibrariesList);
          public abstract Builder setBody(String body);
          public abstract RoutineInfo build();
     }
 
-    @Nullable
-    public abstract String getEtag();
+    static class BuilderImpl extends Builder {
+        private RoutineId routineId;
+        private String etag;
+        private String routineType;
+        private Long creationTime;
+        private Long lastModifiedTime;
+        private List<RoutineArgument> argumentList;
+        private StandardSQLDataType returnType;
+        private List<String> importedLibrariesList;
+        private String body;
 
-    @Nullable
-    public abstract String getRoutineType();
+        BuilderImpl() {}
 
-    @Nullable
-    public abstract Long getCreationTime();
+        BuilderImpl(RoutineInfo routineInfo) {
+            this.routineId = routineInfo.routineId;
+            this.etag = routineInfo.etag;
+            this.routineType = routineInfo.routineType;
+            this.creationTime = routineInfo.creationTime;
+            this.lastModifiedTime = routineInfo.lastModifiedTime;
+            this.argumentList = routineInfo.argumentList;
+            this.returnType = routineInfo.returnType;
+            this.importedLibrariesList = routineInfo.importedLibrariesList;
+            this.body = routineInfo.body;
+        }
 
-    @Nullable
-    public abstract Long getLastModifiedTime();
+        BuilderImpl(Routine routinePb) {
+            this.routineId = RoutineId.fromPb(routinePb.getRoutineReference());
+            this.etag = routinePb.getEtag();
+            this.routineType = routinePb.getRoutineType();
+            this.creationTime = routinePb.getCreationTime();
+            this.lastModifiedTime = routinePb.getLastModifiedTime();
+            if (routinePb.getArguments() != null) {
+                this.argumentList = Lists.transform(routinePb.getArguments(), RoutineArgument.FROM_PB_FUNCTION);
+            }
+            if (routinePb.getReturnType() != null) {
+                this.returnType = StandardSQLDataType.fromPb(routinePb.getReturnType());
+            }
+            if (routinePb.getImportedLibraries() == null) {
+                this.importedLibrariesList = Collections.emptyList();
+            } else {
+                this.importedLibrariesList = routinePb.getImportedLibraries();
+            }
+            this.body = routinePb.getDefinitionBody();
+        }
 
-    public abstract List<RoutineArgument> getArguments();
+        @Override
+        Builder setRoutineId(RoutineId id) {
+            this.routineId = id;
+            return this;
+        }
 
-    public abstract StandardSQLDataType getReturnType();
+        @Override
+        Builder setEtag(String etag) {
+            this.etag = etag;
+            return this;
+        }
 
-    public abstract List<String> getImportedLibraries();
+        @Override
+        public Builder setRoutineType(String routineType) {
+            this.routineType = routineType;
+            return this;
+        }
 
-    @Nullable
-    public abstract String getBody();
+        @Override
+        Builder setCreationTime(Long creationMillis) {
+            this.creationTime = creationMillis;
+            return this;
+        }
 
-    public abstract Builder toBuilder();
+        @Override
+        Builder setLastModifiedTime(Long lastModifiedMillis) {
+            this.lastModifiedTime = lastModifiedMillis;
+            return this;
+        }
 
-    static Builder newBuilder() { return new AutoValue_RoutineInfo.Builder(); }
+        @Override
+        public Builder setArguments(List<RoutineArgument> argumentList) {
+            this.argumentList = argumentList;
+            return this;
+        }
+
+        @Override
+        public Builder setReturnType(StandardSQLDataType returnType) {
+            this.returnType = returnType;
+            return this;
+        }
+
+        @Override
+        public Builder setImportedLibraries(List<String> importedLibrariesList) {
+            this.importedLibrariesList = importedLibrariesList;
+            return this;
+        }
+
+        @Override
+        public Builder setBody(String body) {
+            this.body = body;
+            return this;
+        }
+
+        @Override
+        public RoutineInfo build() {
+            return new RoutineInfo(this);
+        }
+    }
+
+    RoutineInfo(BuilderImpl builder) {
+        this.routineId = checkNotNull(builder.routineId);
+        this.etag = builder.etag;
+        this.routineType = builder.routineType;
+        this.creationTime = builder.creationTime;
+        this.lastModifiedTime = builder.lastModifiedTime;
+        this.argumentList = builder.argumentList;
+        this.returnType = builder.returnType;
+        this.importedLibrariesList = builder.importedLibrariesList;
+        this.body = builder.body;
+    }
+
+    public RoutineId getRoutineId() { return routineId; }
+
+    public  String getEtag() { return etag; }
+
+    public String getRoutineType() { return routineType; }
+
+    public Long getCreationTime() { return creationTime; }
+
+    public Long getLastModifiedTime() { return lastModifiedTime; }
+
+    public List<RoutineArgument> getArguments() { return argumentList; }
+
+    public StandardSQLDataType getReturnType() { return returnType; }
+
+    public List<String> getImportedLibraries() { return importedLibrariesList; }
+
+    public String getBody() { return body; }
+
+    public Builder toBuilder() { return new BuilderImpl(this); }
 
     Routine toPb() {
         Routine routinePb = new Routine()
@@ -87,29 +213,19 @@ public abstract class RoutineInfo {
                 .setRoutineType(getRoutineType())
                 .setCreationTime(getCreationTime())
                 .setLastModifiedTime(getLastModifiedTime());
+        if (getRoutineId() != null) {
+            routinePb.setRoutineReference(getRoutineId().toPb());
+        }
         if (getArguments() != null) {
             routinePb.setArguments(Lists.transform(getArguments(), RoutineArgument.TO_PB_FUNCTION));
         }
         return routinePb;
     }
 
+
+
     static RoutineInfo fromPb(Routine routinePb) {
-            Builder builder = newBuilder();
-            builder.setEtag(routinePb.getEtag());
-            builder.setRoutineType(routinePb.getRoutineType());
-            builder.setCreationTime(routinePb.getCreationTime());
-            builder.setLastModifiedTime(routinePb.getLastModifiedTime());
-            if (routinePb.getArguments() != null) {
-                builder.setArguments(Lists.transform(routinePb.getArguments(), RoutineArgument.FROM_PB_FUNCTION));
-            }
-            if (routinePb.getReturnType() != null) {
-                builder.setReturnType(StandardSQLDataType.fromPb(routinePb.getReturnType()));
-            }
-            if (routinePb.getImportedLibraries() != null) {
-                builder.setImportedLibraries(ImmutableList.copyOf(routinePb.getImportedLibraries()));
-            }
-            builder.setBody(routinePb.getDefinitionBody());
-            return builder.build();
+            return new BuilderImpl(routinePb).build();
     }
 
 }

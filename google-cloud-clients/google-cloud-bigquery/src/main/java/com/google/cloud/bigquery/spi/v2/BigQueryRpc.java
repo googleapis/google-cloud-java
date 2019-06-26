@@ -21,6 +21,7 @@ import com.google.api.services.bigquery.model.Dataset;
 import com.google.api.services.bigquery.model.GetQueryResultsResponse;
 import com.google.api.services.bigquery.model.Job;
 import com.google.api.services.bigquery.model.Model;
+import com.google.api.services.bigquery.model.Routine;
 import com.google.api.services.bigquery.model.Table;
 import com.google.api.services.bigquery.model.TableDataInsertAllRequest;
 import com.google.api.services.bigquery.model.TableDataInsertAllResponse;
@@ -28,6 +29,7 @@ import com.google.api.services.bigquery.model.TableDataList;
 import com.google.cloud.ServiceRpc;
 import com.google.cloud.Tuple;
 import com.google.cloud.bigquery.BigQueryException;
+
 import java.util.Map;
 
 @InternalExtensionOnly
@@ -186,6 +188,17 @@ public interface BigQueryRpc extends ServiceRpc {
    * @throws BigQueryException upon failure
    */
   boolean deleteModel(String projectId, String datasetId, String modelId);
+
+  // TODO: document these
+  Routine update(Routine routine, Map<Option, ?> options);
+
+  Routine getRoutine(String projectId, String datasetId, String routineId, Map<Option, ?> options);
+
+  Tuple<String, Iterable<Routine>> listRoutines(
+          String projectId, String datasetId, Map<Option, ?> options);
+
+  boolean deleteRoutine(String projectId, String datasetId, String routineId);
+
 
   /**
    * Sends an insert all request.
