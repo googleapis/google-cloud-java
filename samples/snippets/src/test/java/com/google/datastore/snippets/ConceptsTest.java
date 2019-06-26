@@ -33,6 +33,7 @@ import com.google.cloud.datastore.FullEntity;
 import com.google.cloud.datastore.IncompleteKey;
 import com.google.cloud.datastore.Key;
 import com.google.cloud.datastore.KeyFactory;
+import com.google.cloud.datastore.ListValue;
 import com.google.cloud.datastore.PathElement;
 import com.google.cloud.datastore.ProjectionEntity;
 import com.google.cloud.datastore.Query;
@@ -224,7 +225,7 @@ public class ConceptsTest {
     // [START datastore_array_value]
     Entity task = Entity.newBuilder(taskKey)
         .set("tags", "fun", "programming")
-        .set("collaborators", "alice", "bob")
+        .set("collaborators", ListValue.of("alice", "bob"))
         .build();
     // [END datastore_array_value]
     assertValidEntity(task);
