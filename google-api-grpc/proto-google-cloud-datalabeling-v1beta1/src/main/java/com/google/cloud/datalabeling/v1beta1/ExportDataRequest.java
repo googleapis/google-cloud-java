@@ -26,6 +26,7 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
     name_ = "";
     annotatedDataset_ = "";
     filter_ = "";
+    userEmailAddress_ = "";
   }
 
   @java.lang.Override
@@ -88,6 +89,13 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
                 outputConfig_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 42:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              userEmailAddress_ = s;
               break;
             }
           default:
@@ -304,6 +312,51 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
     return getOutputConfig();
   }
 
+  public static final int USER_EMAIL_ADDRESS_FIELD_NUMBER = 5;
+  private volatile java.lang.Object userEmailAddress_;
+  /**
+   *
+   *
+   * <pre>
+   * Email of the user who started the export task and should be notified by
+   * email. If empty no notification will be sent.
+   * </pre>
+   *
+   * <code>string user_email_address = 5;</code>
+   */
+  public java.lang.String getUserEmailAddress() {
+    java.lang.Object ref = userEmailAddress_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      userEmailAddress_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Email of the user who started the export task and should be notified by
+   * email. If empty no notification will be sent.
+   * </pre>
+   *
+   * <code>string user_email_address = 5;</code>
+   */
+  public com.google.protobuf.ByteString getUserEmailAddressBytes() {
+    java.lang.Object ref = userEmailAddress_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      userEmailAddress_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -330,6 +383,9 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
     if (outputConfig_ != null) {
       output.writeMessage(4, getOutputConfig());
     }
+    if (!getUserEmailAddressBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, userEmailAddress_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -350,6 +406,9 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
     }
     if (outputConfig_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getOutputConfig());
+    }
+    if (!getUserEmailAddressBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, userEmailAddress_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -374,6 +433,7 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
     if (hasOutputConfig()) {
       if (!getOutputConfig().equals(other.getOutputConfig())) return false;
     }
+    if (!getUserEmailAddress().equals(other.getUserEmailAddress())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -395,6 +455,8 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
       hash = (37 * hash) + OUTPUT_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getOutputConfig().hashCode();
     }
+    hash = (37 * hash) + USER_EMAIL_ADDRESS_FIELD_NUMBER;
+    hash = (53 * hash) + getUserEmailAddress().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -553,6 +615,8 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
         outputConfig_ = null;
         outputConfigBuilder_ = null;
       }
+      userEmailAddress_ = "";
+
       return this;
     }
 
@@ -588,6 +652,7 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
       } else {
         result.outputConfig_ = outputConfigBuilder_.build();
       }
+      result.userEmailAddress_ = userEmailAddress_;
       onBuilt();
       return result;
     }
@@ -652,6 +717,10 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
       }
       if (other.hasOutputConfig()) {
         mergeOutputConfig(other.getOutputConfig());
+      }
+      if (!other.getUserEmailAddress().isEmpty()) {
+        userEmailAddress_ = other.userEmailAddress_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1170,6 +1239,105 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
         outputConfig_ = null;
       }
       return outputConfigBuilder_;
+    }
+
+    private java.lang.Object userEmailAddress_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Email of the user who started the export task and should be notified by
+     * email. If empty no notification will be sent.
+     * </pre>
+     *
+     * <code>string user_email_address = 5;</code>
+     */
+    public java.lang.String getUserEmailAddress() {
+      java.lang.Object ref = userEmailAddress_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        userEmailAddress_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Email of the user who started the export task and should be notified by
+     * email. If empty no notification will be sent.
+     * </pre>
+     *
+     * <code>string user_email_address = 5;</code>
+     */
+    public com.google.protobuf.ByteString getUserEmailAddressBytes() {
+      java.lang.Object ref = userEmailAddress_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        userEmailAddress_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Email of the user who started the export task and should be notified by
+     * email. If empty no notification will be sent.
+     * </pre>
+     *
+     * <code>string user_email_address = 5;</code>
+     */
+    public Builder setUserEmailAddress(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      userEmailAddress_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Email of the user who started the export task and should be notified by
+     * email. If empty no notification will be sent.
+     * </pre>
+     *
+     * <code>string user_email_address = 5;</code>
+     */
+    public Builder clearUserEmailAddress() {
+
+      userEmailAddress_ = getDefaultInstance().getUserEmailAddress();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Email of the user who started the export task and should be notified by
+     * email. If empty no notification will be sent.
+     * </pre>
+     *
+     * <code>string user_email_address = 5;</code>
+     */
+    public Builder setUserEmailAddressBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      userEmailAddress_ = value;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

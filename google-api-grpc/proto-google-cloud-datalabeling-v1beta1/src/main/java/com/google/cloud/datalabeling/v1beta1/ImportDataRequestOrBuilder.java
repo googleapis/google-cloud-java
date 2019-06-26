@@ -61,4 +61,27 @@ public interface ImportDataRequestOrBuilder
    * <code>.google.cloud.datalabeling.v1beta1.InputConfig input_config = 2;</code>
    */
   com.google.cloud.datalabeling.v1beta1.InputConfigOrBuilder getInputConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Email of the user who started the import task and should be notified by
+   * email. If empty no notification will be sent.
+   * </pre>
+   *
+   * <code>string user_email_address = 3;</code>
+   */
+  java.lang.String getUserEmailAddress();
+  /**
+   *
+   *
+   * <pre>
+   * Email of the user who started the import task and should be notified by
+   * email. If empty no notification will be sent.
+   * </pre>
+   *
+   * <code>string user_email_address = 3;</code>
+   */
+  com.google.protobuf.ByteString getUserEmailAddressBytes();
 }

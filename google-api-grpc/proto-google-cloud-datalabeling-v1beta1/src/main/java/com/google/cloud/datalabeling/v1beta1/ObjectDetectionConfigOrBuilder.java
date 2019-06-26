@@ -33,27 +33,6 @@ public interface ObjectDetectionConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. Instruction message showed on labelers UI.
-   * </pre>
-   *
-   * <code>string instruction_message = 2;</code>
-   */
-  java.lang.String getInstructionMessage();
-  /**
-   *
-   *
-   * <pre>
-   * Optional. Instruction message showed on labelers UI.
-   * </pre>
-   *
-   * <code>string instruction_message = 2;</code>
-   */
-  com.google.protobuf.ByteString getInstructionMessageBytes();
-
-  /**
-   *
-   *
-   * <pre>
    * Required. Number of frames per second to be extracted from the video.
    * </pre>
    *

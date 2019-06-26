@@ -19,8 +19,11 @@ import static com.google.cloud.datalabeling.v1beta1.DataLabelingServiceClient.Li
 import static com.google.cloud.datalabeling.v1beta1.DataLabelingServiceClient.ListAnnotationSpecSetsPagedResponse;
 import static com.google.cloud.datalabeling.v1beta1.DataLabelingServiceClient.ListDataItemsPagedResponse;
 import static com.google.cloud.datalabeling.v1beta1.DataLabelingServiceClient.ListDatasetsPagedResponse;
+import static com.google.cloud.datalabeling.v1beta1.DataLabelingServiceClient.ListEvaluationJobsPagedResponse;
 import static com.google.cloud.datalabeling.v1beta1.DataLabelingServiceClient.ListExamplesPagedResponse;
 import static com.google.cloud.datalabeling.v1beta1.DataLabelingServiceClient.ListInstructionsPagedResponse;
+import static com.google.cloud.datalabeling.v1beta1.DataLabelingServiceClient.SearchEvaluationsPagedResponse;
+import static com.google.cloud.datalabeling.v1beta1.DataLabelingServiceClient.SearchExampleComparisonsPagedResponse;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -35,6 +38,7 @@ import com.google.cloud.datalabeling.v1beta1.AnnotatedDataset;
 import com.google.cloud.datalabeling.v1beta1.AnnotationSpecSet;
 import com.google.cloud.datalabeling.v1beta1.CreateAnnotationSpecSetRequest;
 import com.google.cloud.datalabeling.v1beta1.CreateDatasetRequest;
+import com.google.cloud.datalabeling.v1beta1.CreateEvaluationJobRequest;
 import com.google.cloud.datalabeling.v1beta1.CreateInstructionMetadata;
 import com.google.cloud.datalabeling.v1beta1.CreateInstructionRequest;
 import com.google.cloud.datalabeling.v1beta1.DataItem;
@@ -42,7 +46,10 @@ import com.google.cloud.datalabeling.v1beta1.Dataset;
 import com.google.cloud.datalabeling.v1beta1.DeleteAnnotatedDatasetRequest;
 import com.google.cloud.datalabeling.v1beta1.DeleteAnnotationSpecSetRequest;
 import com.google.cloud.datalabeling.v1beta1.DeleteDatasetRequest;
+import com.google.cloud.datalabeling.v1beta1.DeleteEvaluationJobRequest;
 import com.google.cloud.datalabeling.v1beta1.DeleteInstructionRequest;
+import com.google.cloud.datalabeling.v1beta1.Evaluation;
+import com.google.cloud.datalabeling.v1beta1.EvaluationJob;
 import com.google.cloud.datalabeling.v1beta1.Example;
 import com.google.cloud.datalabeling.v1beta1.ExportDataOperationMetadata;
 import com.google.cloud.datalabeling.v1beta1.ExportDataOperationResponse;
@@ -51,13 +58,14 @@ import com.google.cloud.datalabeling.v1beta1.GetAnnotatedDatasetRequest;
 import com.google.cloud.datalabeling.v1beta1.GetAnnotationSpecSetRequest;
 import com.google.cloud.datalabeling.v1beta1.GetDataItemRequest;
 import com.google.cloud.datalabeling.v1beta1.GetDatasetRequest;
+import com.google.cloud.datalabeling.v1beta1.GetEvaluationJobRequest;
+import com.google.cloud.datalabeling.v1beta1.GetEvaluationRequest;
 import com.google.cloud.datalabeling.v1beta1.GetExampleRequest;
 import com.google.cloud.datalabeling.v1beta1.GetInstructionRequest;
 import com.google.cloud.datalabeling.v1beta1.ImportDataOperationMetadata;
 import com.google.cloud.datalabeling.v1beta1.ImportDataOperationResponse;
 import com.google.cloud.datalabeling.v1beta1.ImportDataRequest;
 import com.google.cloud.datalabeling.v1beta1.Instruction;
-import com.google.cloud.datalabeling.v1beta1.LabelAudioRequest;
 import com.google.cloud.datalabeling.v1beta1.LabelImageRequest;
 import com.google.cloud.datalabeling.v1beta1.LabelOperationMetadata;
 import com.google.cloud.datalabeling.v1beta1.LabelTextRequest;
@@ -70,10 +78,19 @@ import com.google.cloud.datalabeling.v1beta1.ListDataItemsRequest;
 import com.google.cloud.datalabeling.v1beta1.ListDataItemsResponse;
 import com.google.cloud.datalabeling.v1beta1.ListDatasetsRequest;
 import com.google.cloud.datalabeling.v1beta1.ListDatasetsResponse;
+import com.google.cloud.datalabeling.v1beta1.ListEvaluationJobsRequest;
+import com.google.cloud.datalabeling.v1beta1.ListEvaluationJobsResponse;
 import com.google.cloud.datalabeling.v1beta1.ListExamplesRequest;
 import com.google.cloud.datalabeling.v1beta1.ListExamplesResponse;
 import com.google.cloud.datalabeling.v1beta1.ListInstructionsRequest;
 import com.google.cloud.datalabeling.v1beta1.ListInstructionsResponse;
+import com.google.cloud.datalabeling.v1beta1.PauseEvaluationJobRequest;
+import com.google.cloud.datalabeling.v1beta1.ResumeEvaluationJobRequest;
+import com.google.cloud.datalabeling.v1beta1.SearchEvaluationsRequest;
+import com.google.cloud.datalabeling.v1beta1.SearchEvaluationsResponse;
+import com.google.cloud.datalabeling.v1beta1.SearchExampleComparisonsRequest;
+import com.google.cloud.datalabeling.v1beta1.SearchExampleComparisonsResponse;
+import com.google.cloud.datalabeling.v1beta1.UpdateEvaluationJobRequest;
 import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
@@ -203,13 +220,6 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(LabelTextRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
           .build();
-  private static final MethodDescriptor<LabelAudioRequest, Operation> labelAudioMethodDescriptor =
-      MethodDescriptor.<LabelAudioRequest, Operation>newBuilder()
-          .setType(MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName("google.cloud.datalabeling.v1beta1.DataLabelingService/LabelAudio")
-          .setRequestMarshaller(ProtoUtils.marshaller(LabelAudioRequest.getDefaultInstance()))
-          .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
-          .build();
   private static final MethodDescriptor<GetExampleRequest, Example> getExampleMethodDescriptor =
       MethodDescriptor.<GetExampleRequest, Example>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -311,6 +321,111 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                   ProtoUtils.marshaller(DeleteInstructionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
+  private static final MethodDescriptor<GetEvaluationRequest, Evaluation>
+      getEvaluationMethodDescriptor =
+          MethodDescriptor.<GetEvaluationRequest, Evaluation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.datalabeling.v1beta1.DataLabelingService/GetEvaluation")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetEvaluationRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Evaluation.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<SearchEvaluationsRequest, SearchEvaluationsResponse>
+      searchEvaluationsMethodDescriptor =
+          MethodDescriptor.<SearchEvaluationsRequest, SearchEvaluationsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.datalabeling.v1beta1.DataLabelingService/SearchEvaluations")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(SearchEvaluationsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(SearchEvaluationsResponse.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<
+          SearchExampleComparisonsRequest, SearchExampleComparisonsResponse>
+      searchExampleComparisonsMethodDescriptor =
+          MethodDescriptor
+              .<SearchExampleComparisonsRequest, SearchExampleComparisonsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.datalabeling.v1beta1.DataLabelingService/SearchExampleComparisons")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(SearchExampleComparisonsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(SearchExampleComparisonsResponse.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<CreateEvaluationJobRequest, EvaluationJob>
+      createEvaluationJobMethodDescriptor =
+          MethodDescriptor.<CreateEvaluationJobRequest, EvaluationJob>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.datalabeling.v1beta1.DataLabelingService/CreateEvaluationJob")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateEvaluationJobRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(EvaluationJob.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<UpdateEvaluationJobRequest, EvaluationJob>
+      updateEvaluationJobMethodDescriptor =
+          MethodDescriptor.<UpdateEvaluationJobRequest, EvaluationJob>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.datalabeling.v1beta1.DataLabelingService/UpdateEvaluationJob")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateEvaluationJobRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(EvaluationJob.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<GetEvaluationJobRequest, EvaluationJob>
+      getEvaluationJobMethodDescriptor =
+          MethodDescriptor.<GetEvaluationJobRequest, EvaluationJob>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.datalabeling.v1beta1.DataLabelingService/GetEvaluationJob")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetEvaluationJobRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(EvaluationJob.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<PauseEvaluationJobRequest, Empty>
+      pauseEvaluationJobMethodDescriptor =
+          MethodDescriptor.<PauseEvaluationJobRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.datalabeling.v1beta1.DataLabelingService/PauseEvaluationJob")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(PauseEvaluationJobRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<ResumeEvaluationJobRequest, Empty>
+      resumeEvaluationJobMethodDescriptor =
+          MethodDescriptor.<ResumeEvaluationJobRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.datalabeling.v1beta1.DataLabelingService/ResumeEvaluationJob")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ResumeEvaluationJobRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<DeleteEvaluationJobRequest, Empty>
+      deleteEvaluationJobMethodDescriptor =
+          MethodDescriptor.<DeleteEvaluationJobRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.datalabeling.v1beta1.DataLabelingService/DeleteEvaluationJob")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteEvaluationJobRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<ListEvaluationJobsRequest, ListEvaluationJobsResponse>
+      listEvaluationJobsMethodDescriptor =
+          MethodDescriptor.<ListEvaluationJobsRequest, ListEvaluationJobsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.datalabeling.v1beta1.DataLabelingService/ListEvaluationJobs")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListEvaluationJobsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListEvaluationJobsResponse.getDefaultInstance()))
+              .build();
   private static final MethodDescriptor<DeleteAnnotatedDatasetRequest, Empty>
       deleteAnnotatedDatasetMethodDescriptor =
           MethodDescriptor.<DeleteAnnotatedDatasetRequest, Empty>newBuilder()
@@ -358,9 +473,6 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
   private final UnaryCallable<LabelTextRequest, Operation> labelTextCallable;
   private final OperationCallable<LabelTextRequest, AnnotatedDataset, LabelOperationMetadata>
       labelTextOperationCallable;
-  private final UnaryCallable<LabelAudioRequest, Operation> labelAudioCallable;
-  private final OperationCallable<LabelAudioRequest, AnnotatedDataset, LabelOperationMetadata>
-      labelAudioOperationCallable;
   private final UnaryCallable<GetExampleRequest, Example> getExampleCallable;
   private final UnaryCallable<ListExamplesRequest, ListExamplesResponse> listExamplesCallable;
   private final UnaryCallable<ListExamplesRequest, ListExamplesPagedResponse>
@@ -384,6 +496,28 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
   private final UnaryCallable<ListInstructionsRequest, ListInstructionsPagedResponse>
       listInstructionsPagedCallable;
   private final UnaryCallable<DeleteInstructionRequest, Empty> deleteInstructionCallable;
+  private final UnaryCallable<GetEvaluationRequest, Evaluation> getEvaluationCallable;
+  private final UnaryCallable<SearchEvaluationsRequest, SearchEvaluationsResponse>
+      searchEvaluationsCallable;
+  private final UnaryCallable<SearchEvaluationsRequest, SearchEvaluationsPagedResponse>
+      searchEvaluationsPagedCallable;
+  private final UnaryCallable<SearchExampleComparisonsRequest, SearchExampleComparisonsResponse>
+      searchExampleComparisonsCallable;
+  private final UnaryCallable<
+          SearchExampleComparisonsRequest, SearchExampleComparisonsPagedResponse>
+      searchExampleComparisonsPagedCallable;
+  private final UnaryCallable<CreateEvaluationJobRequest, EvaluationJob>
+      createEvaluationJobCallable;
+  private final UnaryCallable<UpdateEvaluationJobRequest, EvaluationJob>
+      updateEvaluationJobCallable;
+  private final UnaryCallable<GetEvaluationJobRequest, EvaluationJob> getEvaluationJobCallable;
+  private final UnaryCallable<PauseEvaluationJobRequest, Empty> pauseEvaluationJobCallable;
+  private final UnaryCallable<ResumeEvaluationJobRequest, Empty> resumeEvaluationJobCallable;
+  private final UnaryCallable<DeleteEvaluationJobRequest, Empty> deleteEvaluationJobCallable;
+  private final UnaryCallable<ListEvaluationJobsRequest, ListEvaluationJobsResponse>
+      listEvaluationJobsCallable;
+  private final UnaryCallable<ListEvaluationJobsRequest, ListEvaluationJobsPagedResponse>
+      listEvaluationJobsPagedCallable;
   private final UnaryCallable<DeleteAnnotatedDatasetRequest, Empty> deleteAnnotatedDatasetCallable;
 
   private final GrpcStubCallableFactory callableFactory;
@@ -600,19 +734,6 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                   }
                 })
             .build();
-    GrpcCallSettings<LabelAudioRequest, Operation> labelAudioTransportSettings =
-        GrpcCallSettings.<LabelAudioRequest, Operation>newBuilder()
-            .setMethodDescriptor(labelAudioMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<LabelAudioRequest>() {
-                  @Override
-                  public Map<String, String> extract(LabelAudioRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
-                })
-            .build();
     GrpcCallSettings<GetExampleRequest, Example> getExampleTransportSettings =
         GrpcCallSettings.<GetExampleRequest, Example>newBuilder()
             .setMethodDescriptor(getExampleMethodDescriptor)
@@ -749,6 +870,144 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                   }
                 })
             .build();
+    GrpcCallSettings<GetEvaluationRequest, Evaluation> getEvaluationTransportSettings =
+        GrpcCallSettings.<GetEvaluationRequest, Evaluation>newBuilder()
+            .setMethodDescriptor(getEvaluationMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<GetEvaluationRequest>() {
+                  @Override
+                  public Map<String, String> extract(GetEvaluationRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<SearchEvaluationsRequest, SearchEvaluationsResponse>
+        searchEvaluationsTransportSettings =
+            GrpcCallSettings.<SearchEvaluationsRequest, SearchEvaluationsResponse>newBuilder()
+                .setMethodDescriptor(searchEvaluationsMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<SearchEvaluationsRequest>() {
+                      @Override
+                      public Map<String, String> extract(SearchEvaluationsRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("parent", String.valueOf(request.getParent()));
+                        return params.build();
+                      }
+                    })
+                .build();
+    GrpcCallSettings<SearchExampleComparisonsRequest, SearchExampleComparisonsResponse>
+        searchExampleComparisonsTransportSettings =
+            GrpcCallSettings
+                .<SearchExampleComparisonsRequest, SearchExampleComparisonsResponse>newBuilder()
+                .setMethodDescriptor(searchExampleComparisonsMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<SearchExampleComparisonsRequest>() {
+                      @Override
+                      public Map<String, String> extract(SearchExampleComparisonsRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("parent", String.valueOf(request.getParent()));
+                        return params.build();
+                      }
+                    })
+                .build();
+    GrpcCallSettings<CreateEvaluationJobRequest, EvaluationJob>
+        createEvaluationJobTransportSettings =
+            GrpcCallSettings.<CreateEvaluationJobRequest, EvaluationJob>newBuilder()
+                .setMethodDescriptor(createEvaluationJobMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<CreateEvaluationJobRequest>() {
+                      @Override
+                      public Map<String, String> extract(CreateEvaluationJobRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("parent", String.valueOf(request.getParent()));
+                        return params.build();
+                      }
+                    })
+                .build();
+    GrpcCallSettings<UpdateEvaluationJobRequest, EvaluationJob>
+        updateEvaluationJobTransportSettings =
+            GrpcCallSettings.<UpdateEvaluationJobRequest, EvaluationJob>newBuilder()
+                .setMethodDescriptor(updateEvaluationJobMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<UpdateEvaluationJobRequest>() {
+                      @Override
+                      public Map<String, String> extract(UpdateEvaluationJobRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put(
+                            "evaluation_job.name",
+                            String.valueOf(request.getEvaluationJob().getName()));
+                        return params.build();
+                      }
+                    })
+                .build();
+    GrpcCallSettings<GetEvaluationJobRequest, EvaluationJob> getEvaluationJobTransportSettings =
+        GrpcCallSettings.<GetEvaluationJobRequest, EvaluationJob>newBuilder()
+            .setMethodDescriptor(getEvaluationJobMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<GetEvaluationJobRequest>() {
+                  @Override
+                  public Map<String, String> extract(GetEvaluationJobRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<PauseEvaluationJobRequest, Empty> pauseEvaluationJobTransportSettings =
+        GrpcCallSettings.<PauseEvaluationJobRequest, Empty>newBuilder()
+            .setMethodDescriptor(pauseEvaluationJobMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<PauseEvaluationJobRequest>() {
+                  @Override
+                  public Map<String, String> extract(PauseEvaluationJobRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<ResumeEvaluationJobRequest, Empty> resumeEvaluationJobTransportSettings =
+        GrpcCallSettings.<ResumeEvaluationJobRequest, Empty>newBuilder()
+            .setMethodDescriptor(resumeEvaluationJobMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<ResumeEvaluationJobRequest>() {
+                  @Override
+                  public Map<String, String> extract(ResumeEvaluationJobRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<DeleteEvaluationJobRequest, Empty> deleteEvaluationJobTransportSettings =
+        GrpcCallSettings.<DeleteEvaluationJobRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteEvaluationJobMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<DeleteEvaluationJobRequest>() {
+                  @Override
+                  public Map<String, String> extract(DeleteEvaluationJobRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<ListEvaluationJobsRequest, ListEvaluationJobsResponse>
+        listEvaluationJobsTransportSettings =
+            GrpcCallSettings.<ListEvaluationJobsRequest, ListEvaluationJobsResponse>newBuilder()
+                .setMethodDescriptor(listEvaluationJobsMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<ListEvaluationJobsRequest>() {
+                      @Override
+                      public Map<String, String> extract(ListEvaluationJobsRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("parent", String.valueOf(request.getParent()));
+                        return params.build();
+                      }
+                    })
+                .build();
     GrpcCallSettings<DeleteAnnotatedDatasetRequest, Empty> deleteAnnotatedDatasetTransportSettings =
         GrpcCallSettings.<DeleteAnnotatedDatasetRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteAnnotatedDatasetMethodDescriptor)
@@ -847,15 +1106,6 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
             settings.labelTextOperationSettings(),
             clientContext,
             this.operationsStub);
-    this.labelAudioCallable =
-        callableFactory.createUnaryCallable(
-            labelAudioTransportSettings, settings.labelAudioSettings(), clientContext);
-    this.labelAudioOperationCallable =
-        callableFactory.createOperationCallable(
-            labelAudioTransportSettings,
-            settings.labelAudioOperationSettings(),
-            clientContext,
-            this.operationsStub);
     this.getExampleCallable =
         callableFactory.createUnaryCallable(
             getExampleTransportSettings, settings.getExampleSettings(), clientContext);
@@ -914,6 +1164,67 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
         callableFactory.createUnaryCallable(
             deleteInstructionTransportSettings,
             settings.deleteInstructionSettings(),
+            clientContext);
+    this.getEvaluationCallable =
+        callableFactory.createUnaryCallable(
+            getEvaluationTransportSettings, settings.getEvaluationSettings(), clientContext);
+    this.searchEvaluationsCallable =
+        callableFactory.createUnaryCallable(
+            searchEvaluationsTransportSettings,
+            settings.searchEvaluationsSettings(),
+            clientContext);
+    this.searchEvaluationsPagedCallable =
+        callableFactory.createPagedCallable(
+            searchEvaluationsTransportSettings,
+            settings.searchEvaluationsSettings(),
+            clientContext);
+    this.searchExampleComparisonsCallable =
+        callableFactory.createUnaryCallable(
+            searchExampleComparisonsTransportSettings,
+            settings.searchExampleComparisonsSettings(),
+            clientContext);
+    this.searchExampleComparisonsPagedCallable =
+        callableFactory.createPagedCallable(
+            searchExampleComparisonsTransportSettings,
+            settings.searchExampleComparisonsSettings(),
+            clientContext);
+    this.createEvaluationJobCallable =
+        callableFactory.createUnaryCallable(
+            createEvaluationJobTransportSettings,
+            settings.createEvaluationJobSettings(),
+            clientContext);
+    this.updateEvaluationJobCallable =
+        callableFactory.createUnaryCallable(
+            updateEvaluationJobTransportSettings,
+            settings.updateEvaluationJobSettings(),
+            clientContext);
+    this.getEvaluationJobCallable =
+        callableFactory.createUnaryCallable(
+            getEvaluationJobTransportSettings, settings.getEvaluationJobSettings(), clientContext);
+    this.pauseEvaluationJobCallable =
+        callableFactory.createUnaryCallable(
+            pauseEvaluationJobTransportSettings,
+            settings.pauseEvaluationJobSettings(),
+            clientContext);
+    this.resumeEvaluationJobCallable =
+        callableFactory.createUnaryCallable(
+            resumeEvaluationJobTransportSettings,
+            settings.resumeEvaluationJobSettings(),
+            clientContext);
+    this.deleteEvaluationJobCallable =
+        callableFactory.createUnaryCallable(
+            deleteEvaluationJobTransportSettings,
+            settings.deleteEvaluationJobSettings(),
+            clientContext);
+    this.listEvaluationJobsCallable =
+        callableFactory.createUnaryCallable(
+            listEvaluationJobsTransportSettings,
+            settings.listEvaluationJobsSettings(),
+            clientContext);
+    this.listEvaluationJobsPagedCallable =
+        callableFactory.createPagedCallable(
+            listEvaluationJobsTransportSettings,
+            settings.listEvaluationJobsSettings(),
             clientContext);
     this.deleteAnnotatedDatasetCallable =
         callableFactory.createUnaryCallable(
@@ -1028,16 +1339,6 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
     return labelTextCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<LabelAudioRequest, AnnotatedDataset, LabelOperationMetadata>
-      labelAudioOperationCallable() {
-    return labelAudioOperationCallable;
-  }
-
-  public UnaryCallable<LabelAudioRequest, Operation> labelAudioCallable() {
-    return labelAudioCallable;
-  }
-
   public UnaryCallable<GetExampleRequest, Example> getExampleCallable() {
     return getExampleCallable;
   }
@@ -1100,6 +1401,64 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
 
   public UnaryCallable<DeleteInstructionRequest, Empty> deleteInstructionCallable() {
     return deleteInstructionCallable;
+  }
+
+  public UnaryCallable<GetEvaluationRequest, Evaluation> getEvaluationCallable() {
+    return getEvaluationCallable;
+  }
+
+  public UnaryCallable<SearchEvaluationsRequest, SearchEvaluationsPagedResponse>
+      searchEvaluationsPagedCallable() {
+    return searchEvaluationsPagedCallable;
+  }
+
+  public UnaryCallable<SearchEvaluationsRequest, SearchEvaluationsResponse>
+      searchEvaluationsCallable() {
+    return searchEvaluationsCallable;
+  }
+
+  public UnaryCallable<SearchExampleComparisonsRequest, SearchExampleComparisonsPagedResponse>
+      searchExampleComparisonsPagedCallable() {
+    return searchExampleComparisonsPagedCallable;
+  }
+
+  public UnaryCallable<SearchExampleComparisonsRequest, SearchExampleComparisonsResponse>
+      searchExampleComparisonsCallable() {
+    return searchExampleComparisonsCallable;
+  }
+
+  public UnaryCallable<CreateEvaluationJobRequest, EvaluationJob> createEvaluationJobCallable() {
+    return createEvaluationJobCallable;
+  }
+
+  public UnaryCallable<UpdateEvaluationJobRequest, EvaluationJob> updateEvaluationJobCallable() {
+    return updateEvaluationJobCallable;
+  }
+
+  public UnaryCallable<GetEvaluationJobRequest, EvaluationJob> getEvaluationJobCallable() {
+    return getEvaluationJobCallable;
+  }
+
+  public UnaryCallable<PauseEvaluationJobRequest, Empty> pauseEvaluationJobCallable() {
+    return pauseEvaluationJobCallable;
+  }
+
+  public UnaryCallable<ResumeEvaluationJobRequest, Empty> resumeEvaluationJobCallable() {
+    return resumeEvaluationJobCallable;
+  }
+
+  public UnaryCallable<DeleteEvaluationJobRequest, Empty> deleteEvaluationJobCallable() {
+    return deleteEvaluationJobCallable;
+  }
+
+  public UnaryCallable<ListEvaluationJobsRequest, ListEvaluationJobsPagedResponse>
+      listEvaluationJobsPagedCallable() {
+    return listEvaluationJobsPagedCallable;
+  }
+
+  public UnaryCallable<ListEvaluationJobsRequest, ListEvaluationJobsResponse>
+      listEvaluationJobsCallable() {
+    return listEvaluationJobsCallable;
   }
 
   public UnaryCallable<DeleteAnnotatedDatasetRequest, Empty> deleteAnnotatedDatasetCallable() {

@@ -79,10 +79,10 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
             }
           case 42:
             {
-              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
                 annotations_ =
                     new java.util.ArrayList<com.google.cloud.datalabeling.v1beta1.Annotation>();
-                mutable_bitField0_ |= 0x00000020;
+                mutable_bitField0_ |= 0x00000010;
               }
               annotations_.add(
                   input.readMessage(
@@ -126,24 +126,6 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
               payloadCase_ = 7;
               break;
             }
-          case 66:
-            {
-              com.google.cloud.datalabeling.v1beta1.AudioPayload.Builder subBuilder = null;
-              if (payloadCase_ == 8) {
-                subBuilder =
-                    ((com.google.cloud.datalabeling.v1beta1.AudioPayload) payload_).toBuilder();
-              }
-              payload_ =
-                  input.readMessage(
-                      com.google.cloud.datalabeling.v1beta1.AudioPayload.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.cloud.datalabeling.v1beta1.AudioPayload) payload_);
-                payload_ = subBuilder.buildPartial();
-              }
-              payloadCase_ = 8;
-              break;
-            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -158,7 +140,7 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000020) != 0)) {
+      if (((mutable_bitField0_ & 0x00000010) != 0)) {
         annotations_ = java.util.Collections.unmodifiableList(annotations_);
       }
       this.unknownFields = unknownFields.build();
@@ -189,7 +171,6 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
     IMAGE_PAYLOAD(2),
     TEXT_PAYLOAD(6),
     VIDEO_PAYLOAD(7),
-    AUDIO_PAYLOAD(8),
     PAYLOAD_NOT_SET(0);
     private final int value;
 
@@ -210,8 +191,6 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
           return TEXT_PAYLOAD;
         case 7:
           return VIDEO_PAYLOAD;
-        case 8:
-          return AUDIO_PAYLOAD;
         case 0:
           return PAYLOAD_NOT_SET;
         default:
@@ -360,50 +339,6 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.datalabeling.v1beta1.VideoPayload.getDefaultInstance();
   }
 
-  public static final int AUDIO_PAYLOAD_FIELD_NUMBER = 8;
-  /**
-   *
-   *
-   * <pre>
-   * The audio payload, a container of the audio uri.
-   * </pre>
-   *
-   * <code>.google.cloud.datalabeling.v1beta1.AudioPayload audio_payload = 8;</code>
-   */
-  public boolean hasAudioPayload() {
-    return payloadCase_ == 8;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * The audio payload, a container of the audio uri.
-   * </pre>
-   *
-   * <code>.google.cloud.datalabeling.v1beta1.AudioPayload audio_payload = 8;</code>
-   */
-  public com.google.cloud.datalabeling.v1beta1.AudioPayload getAudioPayload() {
-    if (payloadCase_ == 8) {
-      return (com.google.cloud.datalabeling.v1beta1.AudioPayload) payload_;
-    }
-    return com.google.cloud.datalabeling.v1beta1.AudioPayload.getDefaultInstance();
-  }
-  /**
-   *
-   *
-   * <pre>
-   * The audio payload, a container of the audio uri.
-   * </pre>
-   *
-   * <code>.google.cloud.datalabeling.v1beta1.AudioPayload audio_payload = 8;</code>
-   */
-  public com.google.cloud.datalabeling.v1beta1.AudioPayloadOrBuilder getAudioPayloadOrBuilder() {
-    if (payloadCase_ == 8) {
-      return (com.google.cloud.datalabeling.v1beta1.AudioPayload) payload_;
-    }
-    return com.google.cloud.datalabeling.v1beta1.AudioPayload.getDefaultInstance();
-  }
-
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -550,9 +485,6 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
     if (payloadCase_ == 7) {
       output.writeMessage(7, (com.google.cloud.datalabeling.v1beta1.VideoPayload) payload_);
     }
-    if (payloadCase_ == 8) {
-      output.writeMessage(8, (com.google.cloud.datalabeling.v1beta1.AudioPayload) payload_);
-    }
     unknownFields.writeTo(output);
   }
 
@@ -583,11 +515,6 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               7, (com.google.cloud.datalabeling.v1beta1.VideoPayload) payload_);
     }
-    if (payloadCase_ == 8) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              8, (com.google.cloud.datalabeling.v1beta1.AudioPayload) payload_);
-    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -616,9 +543,6 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
         break;
       case 7:
         if (!getVideoPayload().equals(other.getVideoPayload())) return false;
-        break;
-      case 8:
-        if (!getAudioPayload().equals(other.getAudioPayload())) return false;
         break;
       case 0:
       default:
@@ -652,10 +576,6 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
       case 7:
         hash = (37 * hash) + VIDEO_PAYLOAD_FIELD_NUMBER;
         hash = (53 * hash) + getVideoPayload().hashCode();
-        break;
-      case 8:
-        hash = (37 * hash) + AUDIO_PAYLOAD_FIELD_NUMBER;
-        hash = (53 * hash) + getAudioPayload().hashCode();
         break;
       case 0:
       default:
@@ -812,7 +732,7 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
 
       if (annotationsBuilder_ == null) {
         annotations_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000010);
       } else {
         annotationsBuilder_.clear();
       }
@@ -868,18 +788,11 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
           result.payload_ = videoPayloadBuilder_.build();
         }
       }
-      if (payloadCase_ == 8) {
-        if (audioPayloadBuilder_ == null) {
-          result.payload_ = payload_;
-        } else {
-          result.payload_ = audioPayloadBuilder_.build();
-        }
-      }
       result.name_ = name_;
       if (annotationsBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)) {
+        if (((bitField0_ & 0x00000010) != 0)) {
           annotations_ = java.util.Collections.unmodifiableList(annotations_);
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000010);
         }
         result.annotations_ = annotations_;
       } else {
@@ -944,7 +857,7 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
         if (!other.annotations_.isEmpty()) {
           if (annotations_.isEmpty()) {
             annotations_ = other.annotations_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000010);
           } else {
             ensureAnnotationsIsMutable();
             annotations_.addAll(other.annotations_);
@@ -957,7 +870,7 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
             annotationsBuilder_.dispose();
             annotationsBuilder_ = null;
             annotations_ = other.annotations_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000010);
             annotationsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getAnnotationsFieldBuilder()
@@ -981,11 +894,6 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
         case VIDEO_PAYLOAD:
           {
             mergeVideoPayload(other.getVideoPayload());
-            break;
-          }
-        case AUDIO_PAYLOAD:
-          {
-            mergeAudioPayload(other.getAudioPayload());
             break;
           }
         case PAYLOAD_NOT_SET:
@@ -1646,209 +1554,6 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
       return videoPayloadBuilder_;
     }
 
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.datalabeling.v1beta1.AudioPayload,
-            com.google.cloud.datalabeling.v1beta1.AudioPayload.Builder,
-            com.google.cloud.datalabeling.v1beta1.AudioPayloadOrBuilder>
-        audioPayloadBuilder_;
-    /**
-     *
-     *
-     * <pre>
-     * The audio payload, a container of the audio uri.
-     * </pre>
-     *
-     * <code>.google.cloud.datalabeling.v1beta1.AudioPayload audio_payload = 8;</code>
-     */
-    public boolean hasAudioPayload() {
-      return payloadCase_ == 8;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The audio payload, a container of the audio uri.
-     * </pre>
-     *
-     * <code>.google.cloud.datalabeling.v1beta1.AudioPayload audio_payload = 8;</code>
-     */
-    public com.google.cloud.datalabeling.v1beta1.AudioPayload getAudioPayload() {
-      if (audioPayloadBuilder_ == null) {
-        if (payloadCase_ == 8) {
-          return (com.google.cloud.datalabeling.v1beta1.AudioPayload) payload_;
-        }
-        return com.google.cloud.datalabeling.v1beta1.AudioPayload.getDefaultInstance();
-      } else {
-        if (payloadCase_ == 8) {
-          return audioPayloadBuilder_.getMessage();
-        }
-        return com.google.cloud.datalabeling.v1beta1.AudioPayload.getDefaultInstance();
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The audio payload, a container of the audio uri.
-     * </pre>
-     *
-     * <code>.google.cloud.datalabeling.v1beta1.AudioPayload audio_payload = 8;</code>
-     */
-    public Builder setAudioPayload(com.google.cloud.datalabeling.v1beta1.AudioPayload value) {
-      if (audioPayloadBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        payload_ = value;
-        onChanged();
-      } else {
-        audioPayloadBuilder_.setMessage(value);
-      }
-      payloadCase_ = 8;
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The audio payload, a container of the audio uri.
-     * </pre>
-     *
-     * <code>.google.cloud.datalabeling.v1beta1.AudioPayload audio_payload = 8;</code>
-     */
-    public Builder setAudioPayload(
-        com.google.cloud.datalabeling.v1beta1.AudioPayload.Builder builderForValue) {
-      if (audioPayloadBuilder_ == null) {
-        payload_ = builderForValue.build();
-        onChanged();
-      } else {
-        audioPayloadBuilder_.setMessage(builderForValue.build());
-      }
-      payloadCase_ = 8;
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The audio payload, a container of the audio uri.
-     * </pre>
-     *
-     * <code>.google.cloud.datalabeling.v1beta1.AudioPayload audio_payload = 8;</code>
-     */
-    public Builder mergeAudioPayload(com.google.cloud.datalabeling.v1beta1.AudioPayload value) {
-      if (audioPayloadBuilder_ == null) {
-        if (payloadCase_ == 8
-            && payload_
-                != com.google.cloud.datalabeling.v1beta1.AudioPayload.getDefaultInstance()) {
-          payload_ =
-              com.google.cloud.datalabeling.v1beta1.AudioPayload.newBuilder(
-                      (com.google.cloud.datalabeling.v1beta1.AudioPayload) payload_)
-                  .mergeFrom(value)
-                  .buildPartial();
-        } else {
-          payload_ = value;
-        }
-        onChanged();
-      } else {
-        if (payloadCase_ == 8) {
-          audioPayloadBuilder_.mergeFrom(value);
-        }
-        audioPayloadBuilder_.setMessage(value);
-      }
-      payloadCase_ = 8;
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The audio payload, a container of the audio uri.
-     * </pre>
-     *
-     * <code>.google.cloud.datalabeling.v1beta1.AudioPayload audio_payload = 8;</code>
-     */
-    public Builder clearAudioPayload() {
-      if (audioPayloadBuilder_ == null) {
-        if (payloadCase_ == 8) {
-          payloadCase_ = 0;
-          payload_ = null;
-          onChanged();
-        }
-      } else {
-        if (payloadCase_ == 8) {
-          payloadCase_ = 0;
-          payload_ = null;
-        }
-        audioPayloadBuilder_.clear();
-      }
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The audio payload, a container of the audio uri.
-     * </pre>
-     *
-     * <code>.google.cloud.datalabeling.v1beta1.AudioPayload audio_payload = 8;</code>
-     */
-    public com.google.cloud.datalabeling.v1beta1.AudioPayload.Builder getAudioPayloadBuilder() {
-      return getAudioPayloadFieldBuilder().getBuilder();
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The audio payload, a container of the audio uri.
-     * </pre>
-     *
-     * <code>.google.cloud.datalabeling.v1beta1.AudioPayload audio_payload = 8;</code>
-     */
-    public com.google.cloud.datalabeling.v1beta1.AudioPayloadOrBuilder getAudioPayloadOrBuilder() {
-      if ((payloadCase_ == 8) && (audioPayloadBuilder_ != null)) {
-        return audioPayloadBuilder_.getMessageOrBuilder();
-      } else {
-        if (payloadCase_ == 8) {
-          return (com.google.cloud.datalabeling.v1beta1.AudioPayload) payload_;
-        }
-        return com.google.cloud.datalabeling.v1beta1.AudioPayload.getDefaultInstance();
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The audio payload, a container of the audio uri.
-     * </pre>
-     *
-     * <code>.google.cloud.datalabeling.v1beta1.AudioPayload audio_payload = 8;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.datalabeling.v1beta1.AudioPayload,
-            com.google.cloud.datalabeling.v1beta1.AudioPayload.Builder,
-            com.google.cloud.datalabeling.v1beta1.AudioPayloadOrBuilder>
-        getAudioPayloadFieldBuilder() {
-      if (audioPayloadBuilder_ == null) {
-        if (!(payloadCase_ == 8)) {
-          payload_ = com.google.cloud.datalabeling.v1beta1.AudioPayload.getDefaultInstance();
-        }
-        audioPayloadBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.cloud.datalabeling.v1beta1.AudioPayload,
-                com.google.cloud.datalabeling.v1beta1.AudioPayload.Builder,
-                com.google.cloud.datalabeling.v1beta1.AudioPayloadOrBuilder>(
-                (com.google.cloud.datalabeling.v1beta1.AudioPayload) payload_,
-                getParentForChildren(),
-                isClean());
-        payload_ = null;
-      }
-      payloadCase_ = 8;
-      onChanged();
-      ;
-      return audioPayloadBuilder_;
-    }
-
     private java.lang.Object name_ = "";
     /**
      *
@@ -1957,10 +1662,10 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureAnnotationsIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         annotations_ =
             new java.util.ArrayList<com.google.cloud.datalabeling.v1beta1.Annotation>(annotations_);
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000010;
       }
     }
 
@@ -2189,7 +1894,7 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
     public Builder clearAnnotations() {
       if (annotationsBuilder_ == null) {
         annotations_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
       } else {
         annotationsBuilder_.clear();
@@ -2321,7 +2026,7 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.datalabeling.v1beta1.Annotation,
                 com.google.cloud.datalabeling.v1beta1.Annotation.Builder,
                 com.google.cloud.datalabeling.v1beta1.AnnotationOrBuilder>(
-                annotations_, ((bitField0_ & 0x00000020) != 0), getParentForChildren(), isClean());
+                annotations_, ((bitField0_ & 0x00000010) != 0), getParentForChildren(), isClean());
         annotations_ = null;
       }
       return annotationsBuilder_;

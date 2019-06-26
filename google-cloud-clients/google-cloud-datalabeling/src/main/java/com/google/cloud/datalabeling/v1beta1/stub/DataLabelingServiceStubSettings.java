@@ -19,8 +19,11 @@ import static com.google.cloud.datalabeling.v1beta1.DataLabelingServiceClient.Li
 import static com.google.cloud.datalabeling.v1beta1.DataLabelingServiceClient.ListAnnotationSpecSetsPagedResponse;
 import static com.google.cloud.datalabeling.v1beta1.DataLabelingServiceClient.ListDataItemsPagedResponse;
 import static com.google.cloud.datalabeling.v1beta1.DataLabelingServiceClient.ListDatasetsPagedResponse;
+import static com.google.cloud.datalabeling.v1beta1.DataLabelingServiceClient.ListEvaluationJobsPagedResponse;
 import static com.google.cloud.datalabeling.v1beta1.DataLabelingServiceClient.ListExamplesPagedResponse;
 import static com.google.cloud.datalabeling.v1beta1.DataLabelingServiceClient.ListInstructionsPagedResponse;
+import static com.google.cloud.datalabeling.v1beta1.DataLabelingServiceClient.SearchEvaluationsPagedResponse;
+import static com.google.cloud.datalabeling.v1beta1.DataLabelingServiceClient.SearchExampleComparisonsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
@@ -52,6 +55,7 @@ import com.google.cloud.datalabeling.v1beta1.AnnotatedDataset;
 import com.google.cloud.datalabeling.v1beta1.AnnotationSpecSet;
 import com.google.cloud.datalabeling.v1beta1.CreateAnnotationSpecSetRequest;
 import com.google.cloud.datalabeling.v1beta1.CreateDatasetRequest;
+import com.google.cloud.datalabeling.v1beta1.CreateEvaluationJobRequest;
 import com.google.cloud.datalabeling.v1beta1.CreateInstructionMetadata;
 import com.google.cloud.datalabeling.v1beta1.CreateInstructionRequest;
 import com.google.cloud.datalabeling.v1beta1.DataItem;
@@ -59,7 +63,10 @@ import com.google.cloud.datalabeling.v1beta1.Dataset;
 import com.google.cloud.datalabeling.v1beta1.DeleteAnnotatedDatasetRequest;
 import com.google.cloud.datalabeling.v1beta1.DeleteAnnotationSpecSetRequest;
 import com.google.cloud.datalabeling.v1beta1.DeleteDatasetRequest;
+import com.google.cloud.datalabeling.v1beta1.DeleteEvaluationJobRequest;
 import com.google.cloud.datalabeling.v1beta1.DeleteInstructionRequest;
+import com.google.cloud.datalabeling.v1beta1.Evaluation;
+import com.google.cloud.datalabeling.v1beta1.EvaluationJob;
 import com.google.cloud.datalabeling.v1beta1.Example;
 import com.google.cloud.datalabeling.v1beta1.ExportDataOperationMetadata;
 import com.google.cloud.datalabeling.v1beta1.ExportDataOperationResponse;
@@ -68,13 +75,14 @@ import com.google.cloud.datalabeling.v1beta1.GetAnnotatedDatasetRequest;
 import com.google.cloud.datalabeling.v1beta1.GetAnnotationSpecSetRequest;
 import com.google.cloud.datalabeling.v1beta1.GetDataItemRequest;
 import com.google.cloud.datalabeling.v1beta1.GetDatasetRequest;
+import com.google.cloud.datalabeling.v1beta1.GetEvaluationJobRequest;
+import com.google.cloud.datalabeling.v1beta1.GetEvaluationRequest;
 import com.google.cloud.datalabeling.v1beta1.GetExampleRequest;
 import com.google.cloud.datalabeling.v1beta1.GetInstructionRequest;
 import com.google.cloud.datalabeling.v1beta1.ImportDataOperationMetadata;
 import com.google.cloud.datalabeling.v1beta1.ImportDataOperationResponse;
 import com.google.cloud.datalabeling.v1beta1.ImportDataRequest;
 import com.google.cloud.datalabeling.v1beta1.Instruction;
-import com.google.cloud.datalabeling.v1beta1.LabelAudioRequest;
 import com.google.cloud.datalabeling.v1beta1.LabelImageRequest;
 import com.google.cloud.datalabeling.v1beta1.LabelOperationMetadata;
 import com.google.cloud.datalabeling.v1beta1.LabelTextRequest;
@@ -87,10 +95,19 @@ import com.google.cloud.datalabeling.v1beta1.ListDataItemsRequest;
 import com.google.cloud.datalabeling.v1beta1.ListDataItemsResponse;
 import com.google.cloud.datalabeling.v1beta1.ListDatasetsRequest;
 import com.google.cloud.datalabeling.v1beta1.ListDatasetsResponse;
+import com.google.cloud.datalabeling.v1beta1.ListEvaluationJobsRequest;
+import com.google.cloud.datalabeling.v1beta1.ListEvaluationJobsResponse;
 import com.google.cloud.datalabeling.v1beta1.ListExamplesRequest;
 import com.google.cloud.datalabeling.v1beta1.ListExamplesResponse;
 import com.google.cloud.datalabeling.v1beta1.ListInstructionsRequest;
 import com.google.cloud.datalabeling.v1beta1.ListInstructionsResponse;
+import com.google.cloud.datalabeling.v1beta1.PauseEvaluationJobRequest;
+import com.google.cloud.datalabeling.v1beta1.ResumeEvaluationJobRequest;
+import com.google.cloud.datalabeling.v1beta1.SearchEvaluationsRequest;
+import com.google.cloud.datalabeling.v1beta1.SearchEvaluationsResponse;
+import com.google.cloud.datalabeling.v1beta1.SearchExampleComparisonsRequest;
+import com.google.cloud.datalabeling.v1beta1.SearchExampleComparisonsResponse;
+import com.google.cloud.datalabeling.v1beta1.UpdateEvaluationJobRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -169,9 +186,6 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
   private final UnaryCallSettings<LabelTextRequest, Operation> labelTextSettings;
   private final OperationCallSettings<LabelTextRequest, AnnotatedDataset, LabelOperationMetadata>
       labelTextOperationSettings;
-  private final UnaryCallSettings<LabelAudioRequest, Operation> labelAudioSettings;
-  private final OperationCallSettings<LabelAudioRequest, AnnotatedDataset, LabelOperationMetadata>
-      labelAudioOperationSettings;
   private final UnaryCallSettings<GetExampleRequest, Example> getExampleSettings;
   private final PagedCallSettings<
           ListExamplesRequest, ListExamplesResponse, ListExamplesPagedResponse>
@@ -196,6 +210,26 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
           ListInstructionsRequest, ListInstructionsResponse, ListInstructionsPagedResponse>
       listInstructionsSettings;
   private final UnaryCallSettings<DeleteInstructionRequest, Empty> deleteInstructionSettings;
+  private final UnaryCallSettings<GetEvaluationRequest, Evaluation> getEvaluationSettings;
+  private final PagedCallSettings<
+          SearchEvaluationsRequest, SearchEvaluationsResponse, SearchEvaluationsPagedResponse>
+      searchEvaluationsSettings;
+  private final PagedCallSettings<
+          SearchExampleComparisonsRequest,
+          SearchExampleComparisonsResponse,
+          SearchExampleComparisonsPagedResponse>
+      searchExampleComparisonsSettings;
+  private final UnaryCallSettings<CreateEvaluationJobRequest, EvaluationJob>
+      createEvaluationJobSettings;
+  private final UnaryCallSettings<UpdateEvaluationJobRequest, EvaluationJob>
+      updateEvaluationJobSettings;
+  private final UnaryCallSettings<GetEvaluationJobRequest, EvaluationJob> getEvaluationJobSettings;
+  private final UnaryCallSettings<PauseEvaluationJobRequest, Empty> pauseEvaluationJobSettings;
+  private final UnaryCallSettings<ResumeEvaluationJobRequest, Empty> resumeEvaluationJobSettings;
+  private final UnaryCallSettings<DeleteEvaluationJobRequest, Empty> deleteEvaluationJobSettings;
+  private final PagedCallSettings<
+          ListEvaluationJobsRequest, ListEvaluationJobsResponse, ListEvaluationJobsPagedResponse>
+      listEvaluationJobsSettings;
   private final UnaryCallSettings<DeleteAnnotatedDatasetRequest, Empty>
       deleteAnnotatedDatasetSettings;
 
@@ -308,18 +342,6 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
     return labelTextOperationSettings;
   }
 
-  /** Returns the object with the settings used for calls to labelAudio. */
-  public UnaryCallSettings<LabelAudioRequest, Operation> labelAudioSettings() {
-    return labelAudioSettings;
-  }
-
-  /** Returns the object with the settings used for calls to labelAudio. */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallSettings<LabelAudioRequest, AnnotatedDataset, LabelOperationMetadata>
-      labelAudioOperationSettings() {
-    return labelAudioOperationSettings;
-  }
-
   /** Returns the object with the settings used for calls to getExample. */
   public UnaryCallSettings<GetExampleRequest, Example> getExampleSettings() {
     return getExampleSettings;
@@ -385,6 +407,66 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
   /** Returns the object with the settings used for calls to deleteInstruction. */
   public UnaryCallSettings<DeleteInstructionRequest, Empty> deleteInstructionSettings() {
     return deleteInstructionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getEvaluation. */
+  public UnaryCallSettings<GetEvaluationRequest, Evaluation> getEvaluationSettings() {
+    return getEvaluationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to searchEvaluations. */
+  public PagedCallSettings<
+          SearchEvaluationsRequest, SearchEvaluationsResponse, SearchEvaluationsPagedResponse>
+      searchEvaluationsSettings() {
+    return searchEvaluationsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to searchExampleComparisons. */
+  public PagedCallSettings<
+          SearchExampleComparisonsRequest,
+          SearchExampleComparisonsResponse,
+          SearchExampleComparisonsPagedResponse>
+      searchExampleComparisonsSettings() {
+    return searchExampleComparisonsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createEvaluationJob. */
+  public UnaryCallSettings<CreateEvaluationJobRequest, EvaluationJob>
+      createEvaluationJobSettings() {
+    return createEvaluationJobSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateEvaluationJob. */
+  public UnaryCallSettings<UpdateEvaluationJobRequest, EvaluationJob>
+      updateEvaluationJobSettings() {
+    return updateEvaluationJobSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getEvaluationJob. */
+  public UnaryCallSettings<GetEvaluationJobRequest, EvaluationJob> getEvaluationJobSettings() {
+    return getEvaluationJobSettings;
+  }
+
+  /** Returns the object with the settings used for calls to pauseEvaluationJob. */
+  public UnaryCallSettings<PauseEvaluationJobRequest, Empty> pauseEvaluationJobSettings() {
+    return pauseEvaluationJobSettings;
+  }
+
+  /** Returns the object with the settings used for calls to resumeEvaluationJob. */
+  public UnaryCallSettings<ResumeEvaluationJobRequest, Empty> resumeEvaluationJobSettings() {
+    return resumeEvaluationJobSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteEvaluationJob. */
+  public UnaryCallSettings<DeleteEvaluationJobRequest, Empty> deleteEvaluationJobSettings() {
+    return deleteEvaluationJobSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listEvaluationJobs. */
+  public PagedCallSettings<
+          ListEvaluationJobsRequest, ListEvaluationJobsResponse, ListEvaluationJobsPagedResponse>
+      listEvaluationJobsSettings() {
+    return listEvaluationJobsSettings;
   }
 
   /** Returns the object with the settings used for calls to deleteAnnotatedDataset. */
@@ -478,8 +560,6 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
     labelVideoOperationSettings = settingsBuilder.labelVideoOperationSettings().build();
     labelTextSettings = settingsBuilder.labelTextSettings().build();
     labelTextOperationSettings = settingsBuilder.labelTextOperationSettings().build();
-    labelAudioSettings = settingsBuilder.labelAudioSettings().build();
-    labelAudioOperationSettings = settingsBuilder.labelAudioOperationSettings().build();
     getExampleSettings = settingsBuilder.getExampleSettings().build();
     listExamplesSettings = settingsBuilder.listExamplesSettings().build();
     createAnnotationSpecSetSettings = settingsBuilder.createAnnotationSpecSetSettings().build();
@@ -492,6 +572,16 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
     getInstructionSettings = settingsBuilder.getInstructionSettings().build();
     listInstructionsSettings = settingsBuilder.listInstructionsSettings().build();
     deleteInstructionSettings = settingsBuilder.deleteInstructionSettings().build();
+    getEvaluationSettings = settingsBuilder.getEvaluationSettings().build();
+    searchEvaluationsSettings = settingsBuilder.searchEvaluationsSettings().build();
+    searchExampleComparisonsSettings = settingsBuilder.searchExampleComparisonsSettings().build();
+    createEvaluationJobSettings = settingsBuilder.createEvaluationJobSettings().build();
+    updateEvaluationJobSettings = settingsBuilder.updateEvaluationJobSettings().build();
+    getEvaluationJobSettings = settingsBuilder.getEvaluationJobSettings().build();
+    pauseEvaluationJobSettings = settingsBuilder.pauseEvaluationJobSettings().build();
+    resumeEvaluationJobSettings = settingsBuilder.resumeEvaluationJobSettings().build();
+    deleteEvaluationJobSettings = settingsBuilder.deleteEvaluationJobSettings().build();
+    listEvaluationJobsSettings = settingsBuilder.listEvaluationJobsSettings().build();
     deleteAnnotatedDatasetSettings = settingsBuilder.deleteAnnotatedDatasetSettings().build();
   }
 
@@ -727,6 +817,135 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
             }
           };
 
+  private static final PagedListDescriptor<
+          SearchEvaluationsRequest, SearchEvaluationsResponse, Evaluation>
+      SEARCH_EVALUATIONS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              SearchEvaluationsRequest, SearchEvaluationsResponse, Evaluation>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public SearchEvaluationsRequest injectToken(
+                SearchEvaluationsRequest payload, String token) {
+              return SearchEvaluationsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public SearchEvaluationsRequest injectPageSize(
+                SearchEvaluationsRequest payload, int pageSize) {
+              return SearchEvaluationsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(SearchEvaluationsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(SearchEvaluationsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Evaluation> extractResources(SearchEvaluationsResponse payload) {
+              return payload.getEvaluationsList() != null
+                  ? payload.getEvaluationsList()
+                  : ImmutableList.<Evaluation>of();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          SearchExampleComparisonsRequest,
+          SearchExampleComparisonsResponse,
+          SearchExampleComparisonsResponse.ExampleComparison>
+      SEARCH_EXAMPLE_COMPARISONS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              SearchExampleComparisonsRequest,
+              SearchExampleComparisonsResponse,
+              SearchExampleComparisonsResponse.ExampleComparison>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public SearchExampleComparisonsRequest injectToken(
+                SearchExampleComparisonsRequest payload, String token) {
+              return SearchExampleComparisonsRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public SearchExampleComparisonsRequest injectPageSize(
+                SearchExampleComparisonsRequest payload, int pageSize) {
+              return SearchExampleComparisonsRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(SearchExampleComparisonsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(SearchExampleComparisonsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<SearchExampleComparisonsResponse.ExampleComparison> extractResources(
+                SearchExampleComparisonsResponse payload) {
+              return payload.getExampleComparisonsList() != null
+                  ? payload.getExampleComparisonsList()
+                  : ImmutableList.<SearchExampleComparisonsResponse.ExampleComparison>of();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListEvaluationJobsRequest, ListEvaluationJobsResponse, EvaluationJob>
+      LIST_EVALUATION_JOBS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListEvaluationJobsRequest, ListEvaluationJobsResponse, EvaluationJob>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListEvaluationJobsRequest injectToken(
+                ListEvaluationJobsRequest payload, String token) {
+              return ListEvaluationJobsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListEvaluationJobsRequest injectPageSize(
+                ListEvaluationJobsRequest payload, int pageSize) {
+              return ListEvaluationJobsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListEvaluationJobsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListEvaluationJobsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<EvaluationJob> extractResources(ListEvaluationJobsResponse payload) {
+              return payload.getEvaluationJobsList() != null
+                  ? payload.getEvaluationJobsList()
+                  : ImmutableList.<EvaluationJob>of();
+            }
+          };
+
   private static final PagedListResponseFactory<
           ListDatasetsRequest, ListDatasetsResponse, ListDatasetsPagedResponse>
       LIST_DATASETS_PAGE_STR_FACT =
@@ -848,6 +1067,75 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
             }
           };
 
+  private static final PagedListResponseFactory<
+          SearchEvaluationsRequest, SearchEvaluationsResponse, SearchEvaluationsPagedResponse>
+      SEARCH_EVALUATIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              SearchEvaluationsRequest,
+              SearchEvaluationsResponse,
+              SearchEvaluationsPagedResponse>() {
+            @Override
+            public ApiFuture<SearchEvaluationsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<SearchEvaluationsRequest, SearchEvaluationsResponse> callable,
+                SearchEvaluationsRequest request,
+                ApiCallContext context,
+                ApiFuture<SearchEvaluationsResponse> futureResponse) {
+              PageContext<SearchEvaluationsRequest, SearchEvaluationsResponse, Evaluation>
+                  pageContext =
+                      PageContext.create(
+                          callable, SEARCH_EVALUATIONS_PAGE_STR_DESC, request, context);
+              return SearchEvaluationsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          SearchExampleComparisonsRequest,
+          SearchExampleComparisonsResponse,
+          SearchExampleComparisonsPagedResponse>
+      SEARCH_EXAMPLE_COMPARISONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              SearchExampleComparisonsRequest,
+              SearchExampleComparisonsResponse,
+              SearchExampleComparisonsPagedResponse>() {
+            @Override
+            public ApiFuture<SearchExampleComparisonsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<SearchExampleComparisonsRequest, SearchExampleComparisonsResponse>
+                    callable,
+                SearchExampleComparisonsRequest request,
+                ApiCallContext context,
+                ApiFuture<SearchExampleComparisonsResponse> futureResponse) {
+              PageContext<
+                      SearchExampleComparisonsRequest,
+                      SearchExampleComparisonsResponse,
+                      SearchExampleComparisonsResponse.ExampleComparison>
+                  pageContext =
+                      PageContext.create(
+                          callable, SEARCH_EXAMPLE_COMPARISONS_PAGE_STR_DESC, request, context);
+              return SearchExampleComparisonsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListEvaluationJobsRequest, ListEvaluationJobsResponse, ListEvaluationJobsPagedResponse>
+      LIST_EVALUATION_JOBS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListEvaluationJobsRequest,
+              ListEvaluationJobsResponse,
+              ListEvaluationJobsPagedResponse>() {
+            @Override
+            public ApiFuture<ListEvaluationJobsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListEvaluationJobsRequest, ListEvaluationJobsResponse> callable,
+                ListEvaluationJobsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListEvaluationJobsResponse> futureResponse) {
+              PageContext<ListEvaluationJobsRequest, ListEvaluationJobsResponse, EvaluationJob>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_EVALUATION_JOBS_PAGE_STR_DESC, request, context);
+              return ListEvaluationJobsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
   /** Builder for DataLabelingServiceStubSettings. */
   public static class Builder
       extends StubSettings.Builder<DataLabelingServiceStubSettings, Builder> {
@@ -890,10 +1178,6 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
     private final OperationCallSettings.Builder<
             LabelTextRequest, AnnotatedDataset, LabelOperationMetadata>
         labelTextOperationSettings;
-    private final UnaryCallSettings.Builder<LabelAudioRequest, Operation> labelAudioSettings;
-    private final OperationCallSettings.Builder<
-            LabelAudioRequest, AnnotatedDataset, LabelOperationMetadata>
-        labelAudioOperationSettings;
     private final UnaryCallSettings.Builder<GetExampleRequest, Example> getExampleSettings;
     private final PagedCallSettings.Builder<
             ListExamplesRequest, ListExamplesResponse, ListExamplesPagedResponse>
@@ -921,6 +1205,30 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
         listInstructionsSettings;
     private final UnaryCallSettings.Builder<DeleteInstructionRequest, Empty>
         deleteInstructionSettings;
+    private final UnaryCallSettings.Builder<GetEvaluationRequest, Evaluation> getEvaluationSettings;
+    private final PagedCallSettings.Builder<
+            SearchEvaluationsRequest, SearchEvaluationsResponse, SearchEvaluationsPagedResponse>
+        searchEvaluationsSettings;
+    private final PagedCallSettings.Builder<
+            SearchExampleComparisonsRequest,
+            SearchExampleComparisonsResponse,
+            SearchExampleComparisonsPagedResponse>
+        searchExampleComparisonsSettings;
+    private final UnaryCallSettings.Builder<CreateEvaluationJobRequest, EvaluationJob>
+        createEvaluationJobSettings;
+    private final UnaryCallSettings.Builder<UpdateEvaluationJobRequest, EvaluationJob>
+        updateEvaluationJobSettings;
+    private final UnaryCallSettings.Builder<GetEvaluationJobRequest, EvaluationJob>
+        getEvaluationJobSettings;
+    private final UnaryCallSettings.Builder<PauseEvaluationJobRequest, Empty>
+        pauseEvaluationJobSettings;
+    private final UnaryCallSettings.Builder<ResumeEvaluationJobRequest, Empty>
+        resumeEvaluationJobSettings;
+    private final UnaryCallSettings.Builder<DeleteEvaluationJobRequest, Empty>
+        deleteEvaluationJobSettings;
+    private final PagedCallSettings.Builder<
+            ListEvaluationJobsRequest, ListEvaluationJobsResponse, ListEvaluationJobsPagedResponse>
+        listEvaluationJobsSettings;
     private final UnaryCallSettings.Builder<DeleteAnnotatedDatasetRequest, Empty>
         deleteAnnotatedDatasetSettings;
 
@@ -1002,10 +1310,6 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
 
       labelTextOperationSettings = OperationCallSettings.newBuilder();
 
-      labelAudioSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      labelAudioOperationSettings = OperationCallSettings.newBuilder();
-
       getExampleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       listExamplesSettings = PagedCallSettings.newBuilder(LIST_EXAMPLES_PAGE_STR_FACT);
@@ -1029,6 +1333,27 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
 
       deleteInstructionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
+      getEvaluationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      searchEvaluationsSettings = PagedCallSettings.newBuilder(SEARCH_EVALUATIONS_PAGE_STR_FACT);
+
+      searchExampleComparisonsSettings =
+          PagedCallSettings.newBuilder(SEARCH_EXAMPLE_COMPARISONS_PAGE_STR_FACT);
+
+      createEvaluationJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      updateEvaluationJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      getEvaluationJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      pauseEvaluationJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      resumeEvaluationJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      deleteEvaluationJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      listEvaluationJobsSettings = PagedCallSettings.newBuilder(LIST_EVALUATION_JOBS_PAGE_STR_FACT);
+
       deleteAnnotatedDatasetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
@@ -1046,7 +1371,6 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
               labelImageSettings,
               labelVideoSettings,
               labelTextSettings,
-              labelAudioSettings,
               getExampleSettings,
               listExamplesSettings,
               createAnnotationSpecSetSettings,
@@ -1057,6 +1381,16 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
               getInstructionSettings,
               listInstructionsSettings,
               deleteInstructionSettings,
+              getEvaluationSettings,
+              searchEvaluationsSettings,
+              searchExampleComparisonsSettings,
+              createEvaluationJobSettings,
+              updateEvaluationJobSettings,
+              getEvaluationJobSettings,
+              pauseEvaluationJobSettings,
+              resumeEvaluationJobSettings,
+              deleteEvaluationJobSettings,
+              listEvaluationJobsSettings,
               deleteAnnotatedDatasetSettings);
 
       initDefaults(this);
@@ -1139,11 +1473,6 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
-          .labelAudioSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
           .getExampleSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
@@ -1190,6 +1519,56 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
 
       builder
           .deleteInstructionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .getEvaluationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .searchEvaluationsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .searchExampleComparisonsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .createEvaluationJobSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .updateEvaluationJobSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .getEvaluationJobSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .pauseEvaluationJobSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .resumeEvaluationJobSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .deleteEvaluationJobSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .listEvaluationJobsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
@@ -1312,28 +1691,6 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
                       .setTotalTimeout(Duration.ofMillis(300000L))
                       .build()));
       builder
-          .labelAudioOperationSettings()
-          .setInitialCallSettings(
-              UnaryCallSettings.<LabelAudioRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
-                  .build())
-          .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(AnnotatedDataset.class))
-          .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(LabelOperationMetadata.class))
-          .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
-                  RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(5000L))
-                      .setInitialRpcTimeout(Duration.ZERO) // ignored
-                      .setRpcTimeoutMultiplier(1.0) // ignored
-                      .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(300000L))
-                      .build()));
-      builder
           .createInstructionOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings
@@ -1382,8 +1739,6 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
       labelVideoOperationSettings = settings.labelVideoOperationSettings.toBuilder();
       labelTextSettings = settings.labelTextSettings.toBuilder();
       labelTextOperationSettings = settings.labelTextOperationSettings.toBuilder();
-      labelAudioSettings = settings.labelAudioSettings.toBuilder();
-      labelAudioOperationSettings = settings.labelAudioOperationSettings.toBuilder();
       getExampleSettings = settings.getExampleSettings.toBuilder();
       listExamplesSettings = settings.listExamplesSettings.toBuilder();
       createAnnotationSpecSetSettings = settings.createAnnotationSpecSetSettings.toBuilder();
@@ -1395,6 +1750,16 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
       getInstructionSettings = settings.getInstructionSettings.toBuilder();
       listInstructionsSettings = settings.listInstructionsSettings.toBuilder();
       deleteInstructionSettings = settings.deleteInstructionSettings.toBuilder();
+      getEvaluationSettings = settings.getEvaluationSettings.toBuilder();
+      searchEvaluationsSettings = settings.searchEvaluationsSettings.toBuilder();
+      searchExampleComparisonsSettings = settings.searchExampleComparisonsSettings.toBuilder();
+      createEvaluationJobSettings = settings.createEvaluationJobSettings.toBuilder();
+      updateEvaluationJobSettings = settings.updateEvaluationJobSettings.toBuilder();
+      getEvaluationJobSettings = settings.getEvaluationJobSettings.toBuilder();
+      pauseEvaluationJobSettings = settings.pauseEvaluationJobSettings.toBuilder();
+      resumeEvaluationJobSettings = settings.resumeEvaluationJobSettings.toBuilder();
+      deleteEvaluationJobSettings = settings.deleteEvaluationJobSettings.toBuilder();
+      listEvaluationJobsSettings = settings.listEvaluationJobsSettings.toBuilder();
       deleteAnnotatedDatasetSettings = settings.deleteAnnotatedDatasetSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
@@ -1412,7 +1777,6 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
               labelImageSettings,
               labelVideoSettings,
               labelTextSettings,
-              labelAudioSettings,
               getExampleSettings,
               listExamplesSettings,
               createAnnotationSpecSetSettings,
@@ -1423,6 +1787,16 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
               getInstructionSettings,
               listInstructionsSettings,
               deleteInstructionSettings,
+              getEvaluationSettings,
+              searchEvaluationsSettings,
+              searchExampleComparisonsSettings,
+              createEvaluationJobSettings,
+              updateEvaluationJobSettings,
+              getEvaluationJobSettings,
+              pauseEvaluationJobSettings,
+              resumeEvaluationJobSettings,
+              deleteEvaluationJobSettings,
+              listEvaluationJobsSettings,
               deleteAnnotatedDatasetSettings);
     }
 
@@ -1560,20 +1934,6 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
       return labelTextOperationSettings;
     }
 
-    /** Returns the builder for the settings used for calls to labelAudio. */
-    public UnaryCallSettings.Builder<LabelAudioRequest, Operation> labelAudioSettings() {
-      return labelAudioSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to labelAudio. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
-    public OperationCallSettings.Builder<
-            LabelAudioRequest, AnnotatedDataset, LabelOperationMetadata>
-        labelAudioOperationSettings() {
-      return labelAudioOperationSettings;
-    }
-
     /** Returns the builder for the settings used for calls to getExample. */
     public UnaryCallSettings.Builder<GetExampleRequest, Example> getExampleSettings() {
       return getExampleSettings;
@@ -1643,6 +2003,70 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
     /** Returns the builder for the settings used for calls to deleteInstruction. */
     public UnaryCallSettings.Builder<DeleteInstructionRequest, Empty> deleteInstructionSettings() {
       return deleteInstructionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getEvaluation. */
+    public UnaryCallSettings.Builder<GetEvaluationRequest, Evaluation> getEvaluationSettings() {
+      return getEvaluationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to searchEvaluations. */
+    public PagedCallSettings.Builder<
+            SearchEvaluationsRequest, SearchEvaluationsResponse, SearchEvaluationsPagedResponse>
+        searchEvaluationsSettings() {
+      return searchEvaluationsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to searchExampleComparisons. */
+    public PagedCallSettings.Builder<
+            SearchExampleComparisonsRequest,
+            SearchExampleComparisonsResponse,
+            SearchExampleComparisonsPagedResponse>
+        searchExampleComparisonsSettings() {
+      return searchExampleComparisonsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createEvaluationJob. */
+    public UnaryCallSettings.Builder<CreateEvaluationJobRequest, EvaluationJob>
+        createEvaluationJobSettings() {
+      return createEvaluationJobSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateEvaluationJob. */
+    public UnaryCallSettings.Builder<UpdateEvaluationJobRequest, EvaluationJob>
+        updateEvaluationJobSettings() {
+      return updateEvaluationJobSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getEvaluationJob. */
+    public UnaryCallSettings.Builder<GetEvaluationJobRequest, EvaluationJob>
+        getEvaluationJobSettings() {
+      return getEvaluationJobSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to pauseEvaluationJob. */
+    public UnaryCallSettings.Builder<PauseEvaluationJobRequest, Empty>
+        pauseEvaluationJobSettings() {
+      return pauseEvaluationJobSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to resumeEvaluationJob. */
+    public UnaryCallSettings.Builder<ResumeEvaluationJobRequest, Empty>
+        resumeEvaluationJobSettings() {
+      return resumeEvaluationJobSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteEvaluationJob. */
+    public UnaryCallSettings.Builder<DeleteEvaluationJobRequest, Empty>
+        deleteEvaluationJobSettings() {
+      return deleteEvaluationJobSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listEvaluationJobs. */
+    public PagedCallSettings.Builder<
+            ListEvaluationJobsRequest, ListEvaluationJobsResponse, ListEvaluationJobsPagedResponse>
+        listEvaluationJobsSettings() {
+      return listEvaluationJobsSettings;
     }
 
     /** Returns the builder for the settings used for calls to deleteAnnotatedDataset. */

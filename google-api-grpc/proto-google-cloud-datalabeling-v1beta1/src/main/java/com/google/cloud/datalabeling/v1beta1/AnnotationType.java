@@ -112,16 +112,6 @@ public enum AnnotationType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Speech to text annotation.
-   * </pre>
-   *
-   * <code>AUDIO_TRANSCRIPTION_ANNOTATION = 7;</code>
-   */
-  AUDIO_TRANSCRIPTION_ANNOTATION(7),
-  /**
-   *
-   *
-   * <pre>
    * Classification for text.
    * </pre>
    *
@@ -138,6 +128,16 @@ public enum AnnotationType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>TEXT_ENTITY_EXTRACTION_ANNOTATION = 9;</code>
    */
   TEXT_ENTITY_EXTRACTION_ANNOTATION(9),
+  /**
+   *
+   *
+   * <pre>
+   * General classification.
+   * </pre>
+   *
+   * <code>GENERAL_CLASSIFICATION_ANNOTATION = 14;</code>
+   */
+  GENERAL_CLASSIFICATION_ANNOTATION(14),
   UNRECOGNIZED(-1),
   ;
 
@@ -248,16 +248,6 @@ public enum AnnotationType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Speech to text annotation.
-   * </pre>
-   *
-   * <code>AUDIO_TRANSCRIPTION_ANNOTATION = 7;</code>
-   */
-  public static final int AUDIO_TRANSCRIPTION_ANNOTATION_VALUE = 7;
-  /**
-   *
-   *
-   * <pre>
    * Classification for text.
    * </pre>
    *
@@ -274,6 +264,16 @@ public enum AnnotationType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>TEXT_ENTITY_EXTRACTION_ANNOTATION = 9;</code>
    */
   public static final int TEXT_ENTITY_EXTRACTION_ANNOTATION_VALUE = 9;
+  /**
+   *
+   *
+   * <pre>
+   * General classification.
+   * </pre>
+   *
+   * <code>GENERAL_CLASSIFICATION_ANNOTATION = 14;</code>
+   */
+  public static final int GENERAL_CLASSIFICATION_ANNOTATION_VALUE = 14;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -313,12 +313,12 @@ public enum AnnotationType implements com.google.protobuf.ProtocolMessageEnum {
         return VIDEO_OBJECT_DETECTION_ANNOTATION;
       case 6:
         return VIDEO_EVENT_ANNOTATION;
-      case 7:
-        return AUDIO_TRANSCRIPTION_ANNOTATION;
       case 8:
         return TEXT_CLASSIFICATION_ANNOTATION;
       case 9:
         return TEXT_ENTITY_EXTRACTION_ANNOTATION;
+      case 14:
+        return GENERAL_CLASSIFICATION_ANNOTATION;
       default:
         return null;
     }

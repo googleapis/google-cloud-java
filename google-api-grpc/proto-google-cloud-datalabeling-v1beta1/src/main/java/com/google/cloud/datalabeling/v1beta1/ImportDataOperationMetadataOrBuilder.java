@@ -91,4 +91,35 @@ public interface ImportDataOperationMetadataOrBuilder
    * <code>repeated .google.rpc.Status partial_failures = 2;</code>
    */
   com.google.rpc.StatusOrBuilder getPartialFailuresOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Timestamp when import dataset request was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 3;</code>
+   */
+  boolean hasCreateTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Timestamp when import dataset request was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 3;</code>
+   */
+  com.google.protobuf.Timestamp getCreateTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Timestamp when import dataset request was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 3;</code>
+   */
+  com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
 }

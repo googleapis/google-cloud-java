@@ -215,6 +215,45 @@ public interface AnnotationValueOrBuilder
    *
    *
    * <pre>
+   * Annotation value for text entity extraction case.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.TextEntityExtractionAnnotation text_entity_extraction_annotation = 10;
+   * </code>
+   */
+  boolean hasTextEntityExtractionAnnotation();
+  /**
+   *
+   *
+   * <pre>
+   * Annotation value for text entity extraction case.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.TextEntityExtractionAnnotation text_entity_extraction_annotation = 10;
+   * </code>
+   */
+  com.google.cloud.datalabeling.v1beta1.TextEntityExtractionAnnotation
+      getTextEntityExtractionAnnotation();
+  /**
+   *
+   *
+   * <pre>
+   * Annotation value for text entity extraction case.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.TextEntityExtractionAnnotation text_entity_extraction_annotation = 10;
+   * </code>
+   */
+  com.google.cloud.datalabeling.v1beta1.TextEntityExtractionAnnotationOrBuilder
+      getTextEntityExtractionAnnotationOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Annotation value for video classification case.
    * </pre>
    *
@@ -323,44 +362,6 @@ public interface AnnotationValueOrBuilder
    */
   com.google.cloud.datalabeling.v1beta1.VideoEventAnnotationOrBuilder
       getVideoEventAnnotationOrBuilder();
-
-  /**
-   *
-   *
-   * <pre>
-   * Annotation value for speech audio recognition case.
-   * </pre>
-   *
-   * <code>
-   * .google.cloud.datalabeling.v1beta1.AudioRecognitionAnnotation audio_recognition_annotation = 7;
-   * </code>
-   */
-  boolean hasAudioRecognitionAnnotation();
-  /**
-   *
-   *
-   * <pre>
-   * Annotation value for speech audio recognition case.
-   * </pre>
-   *
-   * <code>
-   * .google.cloud.datalabeling.v1beta1.AudioRecognitionAnnotation audio_recognition_annotation = 7;
-   * </code>
-   */
-  com.google.cloud.datalabeling.v1beta1.AudioRecognitionAnnotation getAudioRecognitionAnnotation();
-  /**
-   *
-   *
-   * <pre>
-   * Annotation value for speech audio recognition case.
-   * </pre>
-   *
-   * <code>
-   * .google.cloud.datalabeling.v1beta1.AudioRecognitionAnnotation audio_recognition_annotation = 7;
-   * </code>
-   */
-  com.google.cloud.datalabeling.v1beta1.AudioRecognitionAnnotationOrBuilder
-      getAudioRecognitionAnnotationOrBuilder();
 
   public com.google.cloud.datalabeling.v1beta1.AnnotationValue.ValueTypeCase getValueTypeCase();
 }

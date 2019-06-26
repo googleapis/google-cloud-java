@@ -233,4 +233,27 @@ public interface HumanAnnotationConfigOrBuilder
    * <code>repeated string contributor_emails = 9;</code>
    */
   com.google.protobuf.ByteString getContributorEmailsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Email of the user who started the labeling task and should be notified by
+   * email. If empty no notification will be sent.
+   * </pre>
+   *
+   * <code>string user_email_address = 10;</code>
+   */
+  java.lang.String getUserEmailAddress();
+  /**
+   *
+   *
+   * <pre>
+   * Email of the user who started the labeling task and should be notified by
+   * email. If empty no notification will be sent.
+   * </pre>
+   *
+   * <code>string user_email_address = 10;</code>
+   */
+  com.google.protobuf.ByteString getUserEmailAddressBytes();
 }

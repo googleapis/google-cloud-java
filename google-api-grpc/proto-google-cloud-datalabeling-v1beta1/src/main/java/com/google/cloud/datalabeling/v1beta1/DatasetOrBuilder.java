@@ -12,8 +12,7 @@ public interface DatasetOrBuilder
    *
    *
    * <pre>
-   * Output only.
-   * Dataset resource name, format is:
+   * Output only. Dataset resource name, format is:
    * projects/{project_id}/datasets/{dataset_id}
    * </pre>
    *
@@ -24,8 +23,7 @@ public interface DatasetOrBuilder
    *
    *
    * <pre>
-   * Output only.
-   * Dataset resource name, format is:
+   * Output only. Dataset resource name, format is:
    * projects/{project_id}/datasets/{dataset_id}
    * </pre>
    *
@@ -169,4 +167,60 @@ public interface DatasetOrBuilder
    * <code>repeated .google.cloud.datalabeling.v1beta1.InputConfig input_configs = 5;</code>
    */
   com.google.cloud.datalabeling.v1beta1.InputConfigOrBuilder getInputConfigsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The names of any related resources that are blocking changes
+   * to the dataset.
+   * </pre>
+   *
+   * <code>repeated string blocking_resources = 6;</code>
+   */
+  java.util.List<java.lang.String> getBlockingResourcesList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The names of any related resources that are blocking changes
+   * to the dataset.
+   * </pre>
+   *
+   * <code>repeated string blocking_resources = 6;</code>
+   */
+  int getBlockingResourcesCount();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The names of any related resources that are blocking changes
+   * to the dataset.
+   * </pre>
+   *
+   * <code>repeated string blocking_resources = 6;</code>
+   */
+  java.lang.String getBlockingResources(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The names of any related resources that are blocking changes
+   * to the dataset.
+   * </pre>
+   *
+   * <code>repeated string blocking_resources = 6;</code>
+   */
+  com.google.protobuf.ByteString getBlockingResourcesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The number of data items in the dataset.
+   * </pre>
+   *
+   * <code>int64 data_item_count = 7;</code>
+   */
+  long getDataItemCount();
 }
