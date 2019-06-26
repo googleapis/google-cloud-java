@@ -19,10 +19,6 @@
     </properties>
     <dependencies>
         <dependency>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>google-cloud-core</artifactId>
-        </dependency>
-        <dependency>
             <groupId>com.google.api.grpc</groupId>
             <artifactId>proto-google-cloud-bigquerystorage-v1beta1</artifactId>
         </dependency>
@@ -32,11 +28,6 @@
         </dependency>
 
         <!-- Test dependencies -->
-        <dependency>
-            <groupId>com.google.api</groupId>
-            <artifactId>gax-grpc</artifactId>
-            <scope>test</scope>
-        </dependency>
         <dependency>
             <groupId>com.google.cloud</groupId>
             <artifactId>google-cloud-bigquery</artifactId>
@@ -53,11 +44,6 @@
             <groupId>com.google.api</groupId>
             <artifactId>gax-grpc</artifactId>
             <classifier>testlib</classifier>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.google.api</groupId>
-            <artifactId>gax</artifactId>
             <scope>test</scope>
         </dependency>
         <dependency>
