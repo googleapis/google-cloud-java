@@ -15,25 +15,30 @@
  */
 package com.google.cloud.tasks.v2beta3;
 
+import com.google.api.gax.rpc.AlreadyExistsException;
 import com.google.common.base.Preconditions;
 import com.google.protobuf.ByteString;
-import org.junit.Test;
+import org.junit.*;
 
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import static org.junit.Assert.fail;
+
 public class CloudTasksSmokeTest {
   private static final String PROJECT_ENV_NAME = "GOOGLE_CLOUD_PROJECT";
   private static final String LEGACY_PROJECT_ENV_NAME = "GCLOUD_PROJECT";
-  private static final String LOCATION_ID = "us-east1";
+  private static final String LOCATION_ENV_NAME = "GOOGLE_CLOUD_LOCATION";
+  private static final String DEFAULT_LOCATION_ID = "us-central1";
   private static final String QUEUE_ID = "default";
+  static Queue queue;
 
   public static void main(String args[]) {
     Logger.getLogger("").setLevel(Level.WARNING);
     try {
-      createTask();
+      createTask(getProjectId(), getLocationId(), QUEUE_ID);
       System.out.println("OK");
     } catch (IOException e) {
       System.err.println("Failed with exception:");
@@ -42,18 +47,36 @@ public class CloudTasksSmokeTest {
     }
   }
 
+  @BeforeClass
+  public static void setupQueue() {
+    String queueName = QueueName.of(getProjectId(), getLocationId(), QUEUE_ID).toString();
+    try (CloudTasksClient client = CloudTasksClient.create()) {
+      Queue q = Queue.newBuilder()
+              .setName(queueName)
+              .build();
+      try {
+
+        queue = client.createQueue(LocationName.of(getProjectId(), getLocationId()), q);
+      } catch (AlreadyExistsException e) {
+        queue = client.getQueue(queueName);
+      }
+    } catch (IOException e) {
+      fail("Failed to create queue: " + e.getMessage());
+    }
+  }
+
   @Test
   public void run() {
     main(null);
   }
 
-  public static void createTask() throws IOException {
+  public static void createTask(String project, String location, String queue) throws IOException {
     try (CloudTasksClient client = CloudTasksClient.create()) {
       String url = "https://example.com/taskhandler";
       String payload = "Hello, World!";
 
       // Construct the fully qualified queue name.
-      String queuePath = QueueName.of(getProjectId(), LOCATION_ID, QUEUE_ID).toString();
+      String queuePath = QueueName.of(project, location, queue).toString();
 
       // Construct the task body.
       Task.Builder taskBuilder =
@@ -80,5 +103,13 @@ public class CloudTasksSmokeTest {
     }
     Preconditions.checkArgument(projectId != null, "A project ID is required.");
     return projectId;
+  }
+
+  private static String getLocationId() {
+    String locationId = System.getProperty(LOCATION_ENV_NAME, System.getenv(LOCATION_ENV_NAME));
+    if (locationId == null) {
+      return DEFAULT_LOCATION_ID;
+    }
+    return locationId;
   }
 }
