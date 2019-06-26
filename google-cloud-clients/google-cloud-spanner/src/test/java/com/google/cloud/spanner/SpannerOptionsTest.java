@@ -368,14 +368,17 @@ public class SpannerOptionsTest {
     Spanner service1 = options.getService();
     Spanner service2 = options.getService();
     assertThat(service1 == service2, is(true));
+    assertThat(service1.isClosed()).isFalse();
     // Closing a service instance should cause the SpannerOptions to create a new service.
     service1.close();
     Spanner service3 = options.getService();
     assertThat(service3 == service1, is(false));
-    assertThat(service3.isClosed(), is(false));
+    assertThat(service1.isClosed()).isTrue();
+    assertThat(service3.isClosed()).isFalse();;
     // Getting another service from the SpannerOptions should return the new cached instance.
     Spanner service4 = options.getService();
     assertThat(service3 == service4, is(true));
+    assertThat(service3.isClosed()).isFalse();
     service3.close();
   }
 }
