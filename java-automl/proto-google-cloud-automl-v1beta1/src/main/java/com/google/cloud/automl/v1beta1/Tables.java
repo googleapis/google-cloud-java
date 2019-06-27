@@ -81,10 +81,11 @@ public final class Tables {
           + ".TablesModelColumnInfo\"j\n\025TablesModelCol"
           + "umnInfo\022\030\n\020column_spec_name\030\001 \001(\t\022\033\n\023col"
           + "umn_display_name\030\002 \001(\t\022\032\n\022feature_import"
-          + "ance\030\003 \001(\002B\204\001\n\037com.google.cloud.automl.v"
+          + "ance\030\003 \001(\002B\245\001\n\037com.google.cloud.automl.v"
           + "1beta1P\001ZAgoogle.golang.org/genproto/goo"
           + "gleapis/cloud/automl/v1beta1;automl\312\002\033Go"
-          + "ogle\\Cloud\\AutoMl\\V1beta1b\006proto3"
+          + "ogle\\Cloud\\AutoMl\\V1beta1\352\002\036Google::Clou"
+          + "d::AutoML::V1beta1b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {

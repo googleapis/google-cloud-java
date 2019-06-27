@@ -62,10 +62,11 @@ public final class DataItems {
           + "ippetH\000\0229\n\010document\030\004 \001(\0132%.google.cloud"
           + ".automl.v1beta1.DocumentH\000\022/\n\003row\030\003 \001(\0132"
           + " .google.cloud.automl.v1beta1.RowH\000B\t\n\007p"
-          + "ayloadB\204\001\n\037com.google.cloud.automl.v1bet"
+          + "ayloadB\245\001\n\037com.google.cloud.automl.v1bet"
           + "a1P\001ZAgoogle.golang.org/genproto/googlea"
           + "pis/cloud/automl/v1beta1;automl\312\002\033Google"
-          + "\\Cloud\\AutoMl\\V1beta1b\006proto3"
+          + "\\Cloud\\AutoMl\\V1beta1\352\002\036Google::Cloud::A"
+          + "utoML::V1beta1b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {

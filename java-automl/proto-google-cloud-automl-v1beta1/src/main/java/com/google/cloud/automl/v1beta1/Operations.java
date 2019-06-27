@@ -139,11 +139,12 @@ public final class Operations {
           + "oml.v1beta1.ExportEvaluatedExamplesOpera"
           + "tionMetadata.ExportEvaluatedExamplesOutp"
           + "utInfo\032D\n!ExportEvaluatedExamplesOutputI"
-          + "nfo\022\037\n\027bigquery_output_dataset\030\002 \001(\tB\204\001\n"
+          + "nfo\022\037\n\027bigquery_output_dataset\030\002 \001(\tB\245\001\n"
           + "\037com.google.cloud.automl.v1beta1P\001ZAgoog"
           + "le.golang.org/genproto/googleapis/cloud/"
           + "automl/v1beta1;automl\312\002\033Google\\Cloud\\Aut"
-          + "oMl\\V1beta1b\006proto3"
+          + "oMl\\V1beta1\352\002\036Google::Cloud::AutoML::V1b"
+          + "eta1b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
