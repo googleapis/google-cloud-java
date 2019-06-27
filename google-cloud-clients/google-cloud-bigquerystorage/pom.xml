@@ -7,7 +7,7 @@
     <name>Google Cloud Bigquery Storage</name>
     <url>https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-clients/google-cloud-bigquerystorage</url>
     <description>
-        BigQuery Storage API provides fast access to BigQuery table data.
+       BigQuery Storage API provides fast access to BigQuery table data.
     </description>
     <parent>
         <groupId>com.google.cloud</groupId>
