@@ -34,6 +34,27 @@ import org.junit.Test;
 
 public class ConformanceTestLocatorTest {
 
+  private static final Set<String> ALL_RESOURCES_ORG_JUNIT_VALIDATOR =
+      newHashSet(
+          "org/junit/validator/AnnotationsValidator.class",
+          "org/junit/validator/AnnotationsValidator$1.class",
+          "org/junit/validator/AnnotationsValidator$AnnotatableValidator.class",
+          "org/junit/validator/AnnotationsValidator$ClassValidator.class",
+          "org/junit/validator/AnnotationsValidator$FieldValidator.class",
+          "org/junit/validator/AnnotationsValidator$MethodValidator.class",
+          "org/junit/validator/AnnotationValidator.class",
+          "org/junit/validator/AnnotationValidatorFactory.class",
+          "org/junit/validator/PublicClassValidator.class",
+          "org/junit/validator/TestClassValidator.class",
+          "org/junit/validator/ValidateWith.class");
+
+  private static final Set<String> ALL_RESOURCES_JUNIT_RUNNER_GIF =
+      newHashSet(
+          "junit/runner/smalllogo.gif", // in junit:junit:4.12
+          "junit/runner/logo.gif", // in junit:junit:4.12
+          "junit/runner/next-2019-hashtag.gif" // in ../src/test/resources
+      );
+
   @Test
   public void load_all__org_junit_validator() throws IOException, URISyntaxException {
     doTest(newMatchPattern("org/junit/validator", ".class"), ALL_RESOURCES_ORG_JUNIT_VALIDATOR);
@@ -92,24 +113,4 @@ public class ConformanceTestLocatorTest {
     assertEquals(expectedS, actualS);
   }
 
-  private static final Set<String> ALL_RESOURCES_ORG_JUNIT_VALIDATOR =
-      newHashSet(
-          "org/junit/validator/AnnotationsValidator.class",
-          "org/junit/validator/AnnotationsValidator$1.class",
-          "org/junit/validator/AnnotationsValidator$AnnotatableValidator.class",
-          "org/junit/validator/AnnotationsValidator$ClassValidator.class",
-          "org/junit/validator/AnnotationsValidator$FieldValidator.class",
-          "org/junit/validator/AnnotationsValidator$MethodValidator.class",
-          "org/junit/validator/AnnotationValidator.class",
-          "org/junit/validator/AnnotationValidatorFactory.class",
-          "org/junit/validator/PublicClassValidator.class",
-          "org/junit/validator/TestClassValidator.class",
-          "org/junit/validator/ValidateWith.class");
-
-  private static final Set<String> ALL_RESOURCES_JUNIT_RUNNER_GIF =
-      newHashSet(
-          "junit/runner/smalllogo.gif", // in junit:junit:4.12
-          "junit/runner/logo.gif", // in junit:junit:4.12
-          "junit/runner/next-2019-hashtag.gif" // in ../src/test/resources
-          );
 }
