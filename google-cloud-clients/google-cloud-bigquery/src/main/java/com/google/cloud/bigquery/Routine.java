@@ -77,6 +77,12 @@ public class Routine extends RoutineInfo {
         }
 
         @Override
+        public RoutineInfo.Builder setLanguage(String language) {
+            infoBuilder.setLanguage(language);
+            return this;
+        }
+
+        @Override
         public Builder setArguments(List<RoutineArgument> arguments) {
             infoBuilder.setArguments(arguments);
             return this;

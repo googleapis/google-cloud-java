@@ -178,7 +178,6 @@ public class HttpBigQueryRpc implements BigQueryRpc {
   @Override
   public Routine create(Routine routine, Map<Option, ?> options) {
     try {
-      // unset the type, as it is output only
       RoutineReference reference = routine.getRoutineReference();
       return bigquery
               .routines()
@@ -389,7 +388,6 @@ public class HttpBigQueryRpc implements BigQueryRpc {
   @Override
   public Routine update(Routine routine, Map<Option, ?> options) {
     try {
-      // unset the type, as it is output only
       RoutineReference reference = routine.getRoutineReference();
       return bigquery
               .routines()

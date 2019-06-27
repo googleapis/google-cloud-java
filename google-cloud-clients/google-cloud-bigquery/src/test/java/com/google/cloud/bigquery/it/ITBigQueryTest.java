@@ -65,6 +65,9 @@ import com.google.cloud.bigquery.ModelId;
 import com.google.cloud.bigquery.ModelInfo;
 import com.google.cloud.bigquery.QueryJobConfiguration;
 import com.google.cloud.bigquery.QueryParameterValue;
+import com.google.cloud.bigquery.Routine;
+import com.google.cloud.bigquery.RoutineId;
+import com.google.cloud.bigquery.RoutineInfo;
 import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.StandardTableDefinition;
 import com.google.cloud.bigquery.Table;
@@ -122,6 +125,7 @@ public class ITBigQueryTest {
   private static final String DESCRIPTION = "Test dataset";
   private static final String OTHER_DATASET = RemoteBigQueryHelper.generateDatasetName();
   private static final String MODEL_DATASET = RemoteBigQueryHelper.generateDatasetName();
+  private static final String ROUTINE_DATASET = RemoteBigQueryHelper.generateDatasetName();
   private static final Map<String, String> LABELS =
       ImmutableMap.of(
           "example-label1", "example-value1",
@@ -286,6 +290,9 @@ public class ITBigQueryTest {
     DatasetInfo info2 =
         DatasetInfo.newBuilder(MODEL_DATASET).setDescription("java model lifecycle").build();
     bigquery.create(info2);
+    DatasetInfo info3 =
+            DatasetInfo.newBuilder(ROUTINE_DATASET).setDescription("java routine lifecycle").build();
+    bigquery.create(info3);
     LoadJobConfiguration configuration =
         LoadJobConfiguration.newBuilder(
                 TABLE_ID, "gs://" + BUCKET + "/" + JSON_LOAD_FILE, FormatOptions.json())
@@ -302,6 +309,8 @@ public class ITBigQueryTest {
     if (bigquery != null) {
       RemoteBigQueryHelper.forceDelete(bigquery, DATASET);
       RemoteBigQueryHelper.forceDelete(bigquery, MODEL_DATASET);
+      RemoteBigQueryHelper.forceDelete(bigquery, ROUTINE_DATASET);
+
     }
     if (storage != null) {
       boolean wasDeleted = RemoteStorageHelper.forceDelete(storage, BUCKET, 10, TimeUnit.SECONDS);
@@ -1108,6 +1117,51 @@ public class ITBigQueryTest {
     // Delete the model.
     assertTrue(bigquery.delete(modelId));
   }
+
+  @Test
+  public void testRoutineLifecycle() throws InterruptedException {
+
+    String routineName = RemoteBigQueryHelper.generateRoutineName();
+    // Create a routine using SQL.
+    String sql =
+            "CREATE FUNCTION `"
+                    + ROUTINE_DATASET
+                    + "."
+                    + routineName
+                    + "`"
+                    + "(x INT64) AS (x * 3)";
+    QueryJobConfiguration config = QueryJobConfiguration.newBuilder(sql).build();
+    Job job = bigquery.create(JobInfo.of(JobId.of(), config));
+    job.waitFor();
+    assertNull(job.getStatus().getError());
+
+    // Routine is created.  Fetch.
+    RoutineId routineId = RoutineId.of(ROUTINE_DATASET, routineName);
+    Routine routine = bigquery.getRoutine(routineId);
+    assertNotNull(routine);
+    assertEquals(routine.getRoutineType(), "SCALAR_FUNCTION");
+
+    // Mutate metadata.
+    RoutineInfo info = routine.toBuilder().setBody("x * 4").build();
+    Routine afterUpdate = bigquery.update(info);
+    assertEquals(afterUpdate.getBody(), "x * 4");
+
+    // Ensure routine is present in listRoutines.
+    Page<Routine> routines = bigquery.listRoutines(ROUTINE_DATASET);
+    Boolean found = false;
+    for (Routine r : routines.getValues()) {
+      if (r.getRoutineId().getRoutine().equals(routineName)) {
+        found = true;
+        break;
+      }
+    }
+    assertTrue(found);
+
+    // Delete the routine.
+    assertTrue(bigquery.delete(routineId));
+  }
+
+
 
   @Test
   public void testQuery() throws InterruptedException {
