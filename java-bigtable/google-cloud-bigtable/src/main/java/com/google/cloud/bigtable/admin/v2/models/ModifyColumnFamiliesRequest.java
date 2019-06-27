@@ -42,33 +42,18 @@ public final class ModifyColumnFamiliesRequest {
     return new ModifyColumnFamiliesRequest(tableId);
   }
 
-  /**
-   * Configures the tableId to execute the modifications
-   *
-   * @param tableId
-   */
+  /** Configures the tableId to execute the modifications */
   ModifyColumnFamiliesRequest(String tableId) {
     Preconditions.checkNotNull(tableId);
     this.tableId = tableId;
   }
 
-  /**
-   * Configures the name of the new ColumnFamily to be created
-   *
-   * @param familyId
-   * @return
-   */
+  /** Configures the name of the new {@link ColumnFamily} to be created */
   public ModifyColumnFamiliesRequest addFamily(String familyId) {
     return addFamily(familyId, GCRules.GCRULES.defaultRule());
   }
 
-  /**
-   * Configures the name and GcRule of the new ColumnFamily to be created
-   *
-   * @param familyId
-   * @param gcRule
-   * @return
-   */
+  /** Configures the name and {@link GCRule} of the new {@link ColumnFamily} to be created */
   public ModifyColumnFamiliesRequest addFamily(String familyId, GCRule gcRule) {
     Preconditions.checkNotNull(gcRule);
     Modification.Builder modification = Modification.newBuilder().setId(familyId);
@@ -77,13 +62,7 @@ public final class ModifyColumnFamiliesRequest {
     return this;
   }
 
-  /**
-   * Updates the GCRule of existing ColumnFamily
-   *
-   * @param familyId
-   * @param gcRule
-   * @return
-   */
+  /** Updates the {@link GCRule} of existing {@link ColumnFamily} */
   public ModifyColumnFamiliesRequest updateFamily(String familyId, GCRule gcRule) {
     Preconditions.checkNotNull(gcRule);
     Modification.Builder modification = Modification.newBuilder().setId(familyId);
@@ -92,12 +71,7 @@ public final class ModifyColumnFamiliesRequest {
     return this;
   }
 
-  /**
-   * Drops the specified ColumnFamily
-   *
-   * @param familyId
-   * @return
-   */
+  /** Drops the specified {@link ColumnFamily} */
   public ModifyColumnFamiliesRequest dropFamily(String familyId) {
     Modification.Builder modification = Modification.newBuilder().setId(familyId).setDrop(true);
     modFamilyRequest.addModifications(modification.build());
