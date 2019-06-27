@@ -22,8 +22,6 @@ import com.google.cloud.iam.credentials.v1.GenerateAccessTokenRequest;
 import com.google.cloud.iam.credentials.v1.GenerateAccessTokenResponse;
 import com.google.cloud.iam.credentials.v1.GenerateIdTokenRequest;
 import com.google.cloud.iam.credentials.v1.GenerateIdTokenResponse;
-import com.google.cloud.iam.credentials.v1.GenerateIdentityBindingAccessTokenRequest;
-import com.google.cloud.iam.credentials.v1.GenerateIdentityBindingAccessTokenResponse;
 import com.google.cloud.iam.credentials.v1.SignBlobRequest;
 import com.google.cloud.iam.credentials.v1.SignBlobResponse;
 import com.google.cloud.iam.credentials.v1.SignJwtRequest;
@@ -55,13 +53,6 @@ public abstract class IamCredentialsStub implements BackgroundResource {
 
   public UnaryCallable<SignJwtRequest, SignJwtResponse> signJwtCallable() {
     throw new UnsupportedOperationException("Not implemented: signJwtCallable()");
-  }
-
-  public UnaryCallable<
-          GenerateIdentityBindingAccessTokenRequest, GenerateIdentityBindingAccessTokenResponse>
-      generateIdentityBindingAccessTokenCallable() {
-    throw new UnsupportedOperationException(
-        "Not implemented: generateIdentityBindingAccessTokenCallable()");
   }
 
   @Override

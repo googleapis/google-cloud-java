@@ -114,20 +114,4 @@ public class MockIAMCredentialsImpl extends IAMCredentialsImplBase {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
   }
-
-  @Override
-  public void generateIdentityBindingAccessToken(
-      GenerateIdentityBindingAccessTokenRequest request,
-      StreamObserver<GenerateIdentityBindingAccessTokenResponse> responseObserver) {
-    Object response = responses.remove();
-    if (response instanceof GenerateIdentityBindingAccessTokenResponse) {
-      requests.add(request);
-      responseObserver.onNext((GenerateIdentityBindingAccessTokenResponse) response);
-      responseObserver.onCompleted();
-    } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
-    } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
-    }
-  }
 }
