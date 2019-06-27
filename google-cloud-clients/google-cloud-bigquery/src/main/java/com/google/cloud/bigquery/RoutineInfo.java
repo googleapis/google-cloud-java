@@ -280,6 +280,7 @@ public class RoutineInfo implements Serializable {
         Routine routinePb = new Routine()
                 .setEtag(getEtag())
                 .setRoutineType(getRoutineType())
+                .setDefinitionBody(getBody())
                 .setCreationTime(getCreationTime())
                 .setLastModifiedTime(getLastModifiedTime())
                 .setLanguage(getLanguage());

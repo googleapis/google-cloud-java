@@ -25,6 +25,13 @@ import static com.google.common.base.Preconditions.checkNotNull;
 import com.google.cloud.bigquery.BigQuery.RoutineOption;
 
 
+/**
+ * A Google BigQuery Routine.
+ *
+ * <p>Objects of this class are immutable. Operations that modify the routine like {@link #update}
+ * return a new object. To get a {@code routine} object with the most recent information use {@link
+ * #reload}.
+ */
 public class Routine extends RoutineInfo {
 
     private final BigQueryOptions options;
@@ -43,7 +50,7 @@ public class Routine extends RoutineInfo {
 
         Builder(Routine routine) {
             this.bigquery = routine.bigquery;
-            this.infoBuilder = new RoutineInfo.BuilderImpl();
+            this.infoBuilder = new RoutineInfo.BuilderImpl(routine);
         }
 
         @Override
@@ -77,7 +84,7 @@ public class Routine extends RoutineInfo {
         }
 
         @Override
-        public RoutineInfo.Builder setLanguage(String language) {
+        public Builder setLanguage(String language) {
             infoBuilder.setLanguage(language);
             return this;
         }

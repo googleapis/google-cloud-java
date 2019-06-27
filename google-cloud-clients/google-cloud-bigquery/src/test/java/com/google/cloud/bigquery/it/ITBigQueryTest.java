@@ -1142,8 +1142,13 @@ public class ITBigQueryTest {
     assertEquals(routine.getRoutineType(), "SCALAR_FUNCTION");
 
     // Mutate metadata.
-    RoutineInfo info = routine.toBuilder().setBody("x * 4").build();
-    Routine afterUpdate = bigquery.update(info);
+    RoutineInfo newInfo = routine.toBuilder()
+            .setBody("x * 4")
+            .setReturnType(routine.getReturnType())
+            .setArguments(routine.getArguments())
+            .setRoutineType(routine.getRoutineType())
+            .build();
+    Routine afterUpdate = bigquery.update(newInfo);
     assertEquals(afterUpdate.getBody(), "x * 4");
 
     // Ensure routine is present in listRoutines.
