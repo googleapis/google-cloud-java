@@ -33,10 +33,11 @@ public final class TableSpecOuterClass {
           + "\022\021\n\trow_count\030\003 \001(\003\022\024\n\014column_count\030\007 \001("
           + "\003\022?\n\rinput_configs\030\005 \003(\0132(.google.cloud."
           + "automl.v1beta1.InputConfig\022\014\n\004etag\030\006 \001(\t"
-          + "B\204\001\n\037com.google.cloud.automl.v1beta1P\001ZA"
+          + "B\245\001\n\037com.google.cloud.automl.v1beta1P\001ZA"
           + "google.golang.org/genproto/googleapis/cl"
           + "oud/automl/v1beta1;automl\312\002\033Google\\Cloud"
-          + "\\AutoMl\\V1beta1b\006proto3"
+          + "\\AutoMl\\V1beta1\352\002\036Google::Cloud::AutoML:"
+          + ":V1beta1b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {

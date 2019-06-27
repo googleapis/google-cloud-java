@@ -47,10 +47,11 @@ public final class TextExtraction {
           + "ceMetricsEntry\032k\n\026ConfidenceMetricsEntry"
           + "\022\034\n\024confidence_threshold\030\001 \001(\002\022\016\n\006recall"
           + "\030\003 \001(\002\022\021\n\tprecision\030\004 \001(\002\022\020\n\010f1_score\030\005 "
-          + "\001(\002B\204\001\n\037com.google.cloud.automl.v1beta1P"
+          + "\001(\002B\245\001\n\037com.google.cloud.automl.v1beta1P"
           + "\001ZAgoogle.golang.org/genproto/googleapis"
           + "/cloud/automl/v1beta1;automl\312\002\033Google\\Cl"
-          + "oud\\AutoMl\\V1beta1b\006proto3"
+          + "oud\\AutoMl\\V1beta1\352\002\036Google::Cloud::Auto"
+          + "ML::V1beta1b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {

@@ -60,10 +60,11 @@ public final class ModelEvaluationOuterClass {
           + "tion_spec_id\030\002 \001(\t\022\024\n\014display_name\030\017 \001(\t"
           + "\022/\n\013create_time\030\005 \001(\0132\032.google.protobuf."
           + "Timestamp\022\037\n\027evaluated_example_count\030\006 \001"
-          + "(\005B\t\n\007metricsB\204\001\n\037com.google.cloud.autom"
+          + "(\005B\t\n\007metricsB\245\001\n\037com.google.cloud.autom"
           + "l.v1beta1P\001ZAgoogle.golang.org/genproto/"
           + "googleapis/cloud/automl/v1beta1;automl\312\002"
-          + "\033Google\\Cloud\\AutoMl\\V1beta1b\006proto3"
+          + "\033Google\\Cloud\\AutoMl\\V1beta1\352\002\036Google::C"
+          + "loud::AutoML::V1beta1b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
