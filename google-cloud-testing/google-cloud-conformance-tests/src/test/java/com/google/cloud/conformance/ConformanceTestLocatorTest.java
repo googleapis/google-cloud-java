@@ -53,7 +53,7 @@ public class ConformanceTestLocatorTest {
           "junit/runner/smalllogo.gif", // in junit:junit:4.12
           "junit/runner/logo.gif", // in junit:junit:4.12
           "junit/runner/next-2019-hashtag.gif" // in ../src/test/resources
-      );
+          );
 
   @Test
   public void load_all__org_junit_validator() throws IOException, URISyntaxException {
@@ -112,5 +112,4 @@ public class ConformanceTestLocatorTest {
     final String actualS = joiner.join(actual);
     assertEquals(expectedS, actualS);
   }
-
 }
