@@ -122,11 +122,11 @@ public class ProjectInfo implements Serializable {
       return new ResourceId(checkNotNull(id), checkNotNull(type));
     }
 
-    String getId() {
+    public String getId() {
       return id;
     }
 
-    String type() {
+    public String getType() {
       return type;
     }
 
@@ -205,7 +205,7 @@ public class ProjectInfo implements Serializable {
 
     abstract Builder setCreateTimeMillis(Long createTimeMillis);
 
-    abstract Builder setParent(ResourceId parent);
+    public abstract Builder setParent(ResourceId parent);
 
     public abstract ProjectInfo build();
   }
@@ -289,7 +289,7 @@ public class ProjectInfo implements Serializable {
     }
 
     @Override
-    Builder setParent(ResourceId parent) {
+    public Builder setParent(ResourceId parent) {
       this.parent = parent;
       return this;
     }
