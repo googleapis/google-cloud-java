@@ -17,7 +17,6 @@ package com.google.cloud.bigquery;
 
 import com.google.common.collect.ImmutableList;
 import org.junit.Test;
-
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
@@ -61,7 +60,7 @@ public class StandardSQLDataTypeTest {
 
     @Test
     public void testToAndFromPb() {
-
+        compareStandardSQLDataType(ARRAY_OF_STRING_DATA_TYPE, StandardSQLDataType.fromPb(ARRAY_OF_STRING_DATA_TYPE.toPb()));
     }
 
     private void compareStandardSQLDataType(StandardSQLDataType expected, StandardSQLDataType value) {

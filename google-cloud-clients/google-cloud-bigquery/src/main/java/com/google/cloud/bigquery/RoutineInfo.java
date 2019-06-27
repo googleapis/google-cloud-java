@@ -16,7 +16,6 @@
 package com.google.cloud.bigquery;
 
 import com.google.api.services.bigquery.model.Routine;
-import com.google.auto.value.AutoValue;
 import com.google.common.base.Function;
 import com.google.common.base.Strings;
 import com.google.common.collect.Lists;
@@ -27,7 +26,6 @@ import java.util.List;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
-@AutoValue
 public class RoutineInfo implements Serializable {
 
     static final Function<Routine, RoutineInfo> FROM_PB_FUNCTION =

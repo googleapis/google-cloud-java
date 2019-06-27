@@ -16,17 +16,18 @@
 package com.google.cloud.bigquery;
 
 import com.google.api.services.bigquery.model.StandardSqlDataType;
+import com.google.auto.value.AutoValue;
 import com.google.common.base.MoreObjects;
 
+import javax.annotation.Nullable;
 import java.io.Serializable;
 import java.util.Objects;
 
-public class StandardSQLDataType implements Serializable {
+@AutoValue
+public abstract class StandardSQLDataType implements Serializable {
 
-    private final StandardSQLDataType arrayElementType;
-    private final StandardSQLStructType structType;
-    private final String typeKind;
 
+    @AutoValue.Builder
     public abstract static class Builder {
         /** Sets the type of an array's elements, when the TypeKind is
          *  ARRAY.
@@ -49,114 +50,45 @@ public class StandardSQLDataType implements Serializable {
 
     }
 
-    static class BuilderImpl extends Builder {
 
-        private String typeKind;
-        private StandardSQLDataType arrayElementType;
-        private StandardSQLStructType structType;
+    public abstract String getTypeKind();
 
-        BuilderImpl() {}
+    @Nullable
+    public abstract StandardSQLDataType getArrayElementType();
 
-        BuilderImpl(StandardSQLDataType dataType) {
-            this.arrayElementType = dataType.arrayElementType;
-            this.structType = dataType.structType;
-            this.typeKind = dataType.typeKind;
-        }
+    @Nullable
+    public abstract StandardSQLStructType getStructType();
 
-        BuilderImpl(StandardSqlDataType dataTypePb) {
-            this.typeKind = dataTypePb.getTypeKind();
-            if (this.arrayElementType != null) {
-                this.arrayElementType = StandardSQLDataType.fromPb(dataTypePb.getArrayElementType());
-            }
-            if (this.structType != null) {
-                this.structType = StandardSQLStructType.fromPb(dataTypePb.getStructType());
-            }
-        }
+    public abstract Builder toBuilder();
 
-        @Override
-        public Builder setArrayElementType(StandardSQLDataType arrayElementType) {
-            this.arrayElementType = arrayElementType;
-            return this;
-        }
 
-        @Override
-        public Builder setStructType(StandardSQLStructType structType) {
-            this.structType = structType;
-            return this;
-        }
-
-        @Override
-        public Builder setTypeKind(String typeKind) {
-            this.typeKind = typeKind;
-            return this;
-        }
-
-        @Override
-        public StandardSQLDataType build() {
-            return new StandardSQLDataType(this);
-        }
-    }
-
-    StandardSQLDataType(BuilderImpl builder) {
-        this.arrayElementType = builder.arrayElementType;
-        this.structType = builder.structType;
-        this.typeKind = builder.typeKind;
-    }
-
-    public String getTypeKind() { return typeKind; }
-
-    public StandardSQLDataType getArrayElementType() { return arrayElementType; }
-
-    public StandardSQLStructType getStructType() { return structType; }
-
-    public Builder toBuilder() {
-        return new BuilderImpl(this);
-    }
-
-    @Override
-    public String toString() {
-        return MoreObjects.toStringHelper(this)
-                .add("arrayElementType", arrayElementType)
-                .add("structType", structType)
-                .add("typeKind", typeKind)
-                .toString();
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(
-                typeKind,
-                arrayElementType,
-                structType
-        );
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        return obj == this
-                || obj != null
-                && obj.getClass().equals(StandardSQLDataType.class)
-                && Objects.equals(toPb(), ((StandardSQLDataType) obj).toPb());
-    }
+    public static Builder newBuilder() { return new AutoValue_StandardSQLDataType.Builder(); }
 
     public static Builder newBuilder(String typeKind) {
-        return new BuilderImpl().setTypeKind(typeKind);
+        return newBuilder().setTypeKind(typeKind);
     }
 
     StandardSqlDataType toPb() {
         StandardSqlDataType dataTypePb = new StandardSqlDataType();
-        dataTypePb.setTypeKind(typeKind);
-        if (arrayElementType != null) {
-            dataTypePb.setArrayElementType(arrayElementType.toPb());
+        dataTypePb.setTypeKind(getTypeKind());
+        if (getArrayElementType() != null) {
+            dataTypePb.setArrayElementType(getArrayElementType().toPb());
         }
-        if (structType != null) {
-            dataTypePb.setStructType(structType.toPb());
+        if (getStructType() != null) {
+            dataTypePb.setStructType(getStructType().toPb());
         }
         return dataTypePb;
     }
 
     static StandardSQLDataType fromPb(StandardSqlDataType dataTypePb) {
-        return new BuilderImpl(dataTypePb).build();
+        Builder builder = newBuilder();
+        builder.setTypeKind(dataTypePb.getTypeKind());
+        if (dataTypePb.getArrayElementType() != null) {
+            builder.setArrayElementType(StandardSQLDataType.fromPb(dataTypePb.getArrayElementType()));
+        }
+        if (dataTypePb.getStructType() != null) {
+            builder.setStructType(StandardSQLStructType.fromPb(dataTypePb.getStructType()));
+        }
+        return builder.build();
     }
-
 }

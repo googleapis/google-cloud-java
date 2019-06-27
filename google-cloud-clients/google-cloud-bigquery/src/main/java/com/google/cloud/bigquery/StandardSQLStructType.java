@@ -17,71 +17,18 @@
 package com.google.cloud.bigquery;
 
 import com.google.api.services.bigquery.model.StandardSqlStructType;
+import com.google.auto.value.AutoValue;
 import com.google.common.collect.Lists;
 
 import java.io.Serializable;
-import java.util.Collections;
 import java.util.List;
-import java.util.Objects;
 
-import static com.google.common.base.Preconditions.checkNotNull;
 
-public final class StandardSQLStructType implements Serializable {
+@AutoValue
+public abstract class StandardSQLStructType implements Serializable {
 
-    private final List<StandardSQLField> fieldList;
 
-    private StandardSQLStructType(BuilderImpl builder) {
-        this.fieldList = builder.fieldList;
-    }
-
-    static StandardSQLStructType fromPb(com.google.api.services.bigquery.model.StandardSqlStructType structTypePb) {
-        Builder builder = new StandardSQLStructType.BuilderImpl();
-        if (structTypePb.getFields() == null) {
-            builder.setFields(Collections.<StandardSQLField>emptyList());
-        } else {
-            builder.setFields(Lists.transform(structTypePb.getFields(), StandardSQLField.FROM_PB_FUNCTION));
-        }
-        return builder.build();
-    }
-
-    public List<StandardSQLField> getFields() {
-        return fieldList;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        return obj == this || obj instanceof StandardSQLStructType && Objects.equals(toPb(), ((StandardSQLStructType) obj).toPb());
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(fieldList);
-    }
-
-    /**
-     * Returns a builder for the StandardSQLStructType object.
-     */
-    public Builder toBuilder() {
-        return new BuilderImpl(this);
-    }
-
-    @Override
-    public String toString() {
-        return toPb().toString();
-    }
-
-    public static Builder newBuilder(List<StandardSQLField> fieldList) {
-        return new BuilderImpl().setFields(fieldList);
-    }
-
-    StandardSqlStructType toPb() {
-        StandardSqlStructType structTypePb = new StandardSqlStructType();
-        if (fieldList != null) {
-            structTypePb.setFields(Lists.transform(fieldList, StandardSQLField.TO_PB_FUNCTION));
-        }
-        return structTypePb;
-    }
-
+    @AutoValue.Builder
     public abstract static class Builder {
 
         public abstract Builder setFields(List<StandardSQLField> fields);
@@ -90,35 +37,30 @@ public final class StandardSQLStructType implements Serializable {
 
     }
 
-    static class BuilderImpl extends Builder {
+    public abstract List<StandardSQLField> getFields();
 
-        private List<StandardSQLField> fieldList;
+    public abstract Builder toBuilder();
 
-        BuilderImpl() {
+    public static Builder newBuilder() { return new AutoValue_StandardSQLStructType.Builder(); }
+
+    public static Builder newBuilder(List<StandardSQLField> fieldList) {
+        return newBuilder().setFields(fieldList);
+    }
+
+    static StandardSQLStructType fromPb(com.google.api.services.bigquery.model.StandardSqlStructType structTypePb) {
+        Builder builder = newBuilder();
+        if (structTypePb.getFields() != null) {
+            builder.setFields(Lists.transform(structTypePb.getFields(), StandardSQLField.FROM_PB_FUNCTION));
         }
+        return builder.build();
+    }
 
-        BuilderImpl(StandardSQLStructType structType) {
-            this.fieldList = structType.fieldList;
+    StandardSqlStructType toPb() {
+        StandardSqlStructType structTypePb = new StandardSqlStructType();
+        if (getFields() != null) {
+            structTypePb.setFields(Lists.transform(getFields(), StandardSQLField.TO_PB_FUNCTION));
         }
-
-        BuilderImpl(StandardSqlStructType structTypePb) {
-            if (structTypePb.getFields() == null) {
-                this.fieldList = Collections.emptyList();
-            }
-            this.fieldList = Lists.transform(structTypePb.getFields(), StandardSQLField.FROM_PB_FUNCTION);
-        }
-
-        @Override
-        public Builder setFields(List<StandardSQLField> fieldList) {
-            this.fieldList = checkNotNull(fieldList);
-            return this;
-        }
-
-        @Override
-        public StandardSQLStructType build() {
-            return new StandardSQLStructType(this);
-        }
-
+        return structTypePb;
     }
 
 }

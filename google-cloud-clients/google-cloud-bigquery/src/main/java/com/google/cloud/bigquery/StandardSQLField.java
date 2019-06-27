@@ -16,13 +16,14 @@
 package com.google.cloud.bigquery;
 
 import com.google.api.services.bigquery.model.StandardSqlField;
+import com.google.auto.value.AutoValue;
 import com.google.common.base.Function;
-import com.google.common.base.MoreObjects;
 
+import javax.annotation.Nullable;
 import java.io.Serializable;
-import java.util.Objects;
 
-public class StandardSQLField implements Serializable {
+@AutoValue
+public abstract class StandardSQLField implements Serializable {
 
     static final Function<StandardSqlField, StandardSQLField> FROM_PB_FUNCTION =
             new Function<StandardSqlField, StandardSQLField>() {
@@ -39,9 +40,7 @@ public class StandardSQLField implements Serializable {
                 }
             };
 
-    private final String name;
-    private final StandardSQLDataType dataType;
-
+    @AutoValue.Builder
     public abstract static class Builder {
 
         public abstract Builder setName(String name);
@@ -51,95 +50,39 @@ public class StandardSQLField implements Serializable {
         public abstract StandardSQLField build();
     }
 
-    static class BuilderImpl extends Builder {
+    @Nullable
+    public abstract String getName();
 
-        private String name;
-        private StandardSQLDataType dataType;
+    public abstract StandardSQLDataType getDataType();
 
-        BuilderImpl() {}
+    public abstract Builder toBuilder();
 
-        BuilderImpl(StandardSQLField field) {
-            this.name = field.name;
-            this.dataType = field.dataType;
-        }
+    public static Builder newBuilder() { return new AutoValue_StandardSQLField.Builder(); }
 
-        BuilderImpl(StandardSqlField fieldPb) {
-            this.name = fieldPb.getName();
-            this.dataType = StandardSQLDataType.fromPb(fieldPb.getType());
-        }
-
-        @Override
-        public Builder setName(String name) {
-            this.name = name;
-            return this;
-        }
-
-        @Override
-        public Builder setDataType(StandardSQLDataType dataType) {
-            this.dataType = dataType;
-            return this;
-        }
-
-        @Override
-        public StandardSQLField build() {
-            return new StandardSQLField(this);
-        }
-    }
-
-    StandardSQLField(BuilderImpl builder) {
-        this.name = builder.name;
-        this.dataType = builder.dataType;
-    }
-
-    public String getName() { return name; }
-
-    public StandardSQLDataType getDataType() { return dataType; }
-
-    public Builder toBuilder() { return new BuilderImpl(this); }
-
-    @Override
-    public String toString() {
-        return MoreObjects.toStringHelper(this)
-                .add("name", name)
-                .add("dataType", dataType)
-                .toString();
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(
-                name,
-                dataType
-        );
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        return obj == this
-                || obj != null
-                && obj.getClass().equals(StandardSQLField.class)
-                && Objects.equals(toPb(), ((StandardSQLField) obj).toPb());
+    public static Builder newBuilder(StandardSQLDataType dataType) {
+        return newBuilder().setDataType(dataType);
     }
 
     public static Builder newBuilder(String name, StandardSQLDataType dataType) {
-        return new BuilderImpl().setDataType(dataType).setName(name);
-    }
-
-    public static Builder newBuilder(StandardSQLDataType dataType) {
-        return new BuilderImpl().setDataType(dataType);
+        return newBuilder().setName(name).setDataType(dataType);
     }
 
     public StandardSqlField toPb() {
         StandardSqlField fieldPb = new StandardSqlField();
-        fieldPb.setName(name);
-        if (dataType != null) {
-            fieldPb.setType(dataType.toPb());
+        fieldPb.setName(getName());
+        if (getDataType() != null) {
+            fieldPb.setType(getDataType().toPb());
         }
         return fieldPb;
     }
 
     static StandardSQLField fromPb(StandardSqlField fieldPb) {
-        return new BuilderImpl(fieldPb).build();
+        Builder builder = newBuilder();
+        builder.setName(fieldPb.getName());
+        if (fieldPb.getType() != null) {
+            builder.setDataType(StandardSQLDataType.fromPb(fieldPb.getType()));
+        }
+        return builder.build();
     }
 
 
