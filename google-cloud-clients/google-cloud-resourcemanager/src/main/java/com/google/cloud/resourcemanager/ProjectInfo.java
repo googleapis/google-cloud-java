@@ -106,7 +106,7 @@ public class ProjectInfo implements Serializable {
     }
   }
 
-  static class ResourceId implements Serializable {
+  public static class ResourceId implements Serializable {
 
     private static final long serialVersionUID = -325199985993344726L;
 
@@ -118,11 +118,15 @@ public class ProjectInfo implements Serializable {
       this.type = checkNotNull(type);
     }
 
-    String getId() {
+    public static ResourceId of(String id, String type) {
+      return new ResourceId(checkNotNull(id), checkNotNull(type));
+    }
+
+    public String getId() {
       return id;
     }
 
-    String type() {
+    public String getType() {
       return type;
     }
 
@@ -201,7 +205,7 @@ public class ProjectInfo implements Serializable {
 
     abstract Builder setCreateTimeMillis(Long createTimeMillis);
 
-    abstract Builder setParent(ResourceId parent);
+    public abstract Builder setParent(ResourceId parent);
 
     public abstract ProjectInfo build();
   }
@@ -285,7 +289,7 @@ public class ProjectInfo implements Serializable {
     }
 
     @Override
-    Builder setParent(ResourceId parent) {
+    public Builder setParent(ResourceId parent) {
       this.parent = parent;
       return this;
     }
