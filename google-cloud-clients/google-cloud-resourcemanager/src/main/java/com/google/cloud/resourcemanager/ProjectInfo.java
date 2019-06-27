@@ -106,7 +106,7 @@ public class ProjectInfo implements Serializable {
     }
   }
 
-  static class ResourceId implements Serializable {
+  public static class ResourceId implements Serializable {
 
     private static final long serialVersionUID = -325199985993344726L;
 
@@ -116,6 +116,10 @@ public class ProjectInfo implements Serializable {
     ResourceId(String id, String type) {
       this.id = checkNotNull(id);
       this.type = checkNotNull(type);
+    }
+
+    public static ResourceId of(String id, String type) {
+      return new ResourceId(checkNotNull(id), checkNotNull(type));
     }
 
     String getId() {
