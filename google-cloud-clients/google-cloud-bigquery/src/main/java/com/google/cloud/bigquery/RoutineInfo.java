@@ -18,10 +18,9 @@ package com.google.cloud.bigquery;
 import com.google.api.services.bigquery.model.Routine;
 import com.google.auto.value.AutoValue;
 import com.google.common.base.Function;
-import com.google.common.collect.ImmutableList;
+import com.google.common.base.Strings;
 import com.google.common.collect.Lists;
 
-import javax.annotation.Nullable;
 import java.io.Serializable;
 import java.util.Collections;
 import java.util.List;
@@ -206,6 +205,13 @@ public class RoutineInfo implements Serializable {
     public String getBody() { return body; }
 
     public Builder toBuilder() { return new BuilderImpl(this); }
+
+    RoutineInfo setProjectId(String projectId) {
+        if (Strings.isNullOrEmpty(getRoutineId().getProject())) {
+            return toBuilder().setRoutineId(getRoutineId().setProjectId(projectId)).build();
+        }
+        return this;
+    }
 
     Routine toPb() {
         Routine routinePb = new Routine()

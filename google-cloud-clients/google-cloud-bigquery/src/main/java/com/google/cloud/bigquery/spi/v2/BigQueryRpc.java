@@ -190,6 +190,9 @@ public interface BigQueryRpc extends ServiceRpc {
   boolean deleteModel(String projectId, String datasetId, String modelId);
 
   // TODO: document these
+
+  Routine create(Routine routine, Map<Option, ?> options);
+
   Routine update(Routine routine, Map<Option, ?> options);
 
   Routine getRoutine(String projectId, String datasetId, String routineId, Map<Option, ?> options);

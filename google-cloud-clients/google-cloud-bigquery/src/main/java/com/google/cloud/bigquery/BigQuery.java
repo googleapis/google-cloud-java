@@ -295,6 +295,27 @@ public interface BigQuery extends Service<BigQueryOptions> {
   }
 
   /** Class for specifying table list options. */
+  class RoutineListOption extends Option {
+
+    private static final long serialVersionUID = 8660294969063312498L;
+
+    private RoutineListOption(BigQueryRpc.Option option, Object value) {
+      super(option, value);
+    }
+
+    /** Returns an option to specify the maximum number of models returned per page. */
+    public static RoutineListOption pageSize(long pageSize) {
+      checkArgument(pageSize >= 0);
+      return new RoutineListOption(BigQueryRpc.Option.MAX_RESULTS, pageSize);
+    }
+
+    /** Returns an option to specify the page token from which to start listing models. */
+    public static RoutineListOption pageToken(String pageToken) {
+      return new RoutineListOption(BigQueryRpc.Option.PAGE_TOKEN, pageToken);
+    }
+  }
+
+  /** Class for specifying table list options. */
   class TableListOption extends Option {
 
     private static final long serialVersionUID = 8660294969063340498L;
@@ -636,7 +657,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
    *
    * @throws BigQueryException upon failure
    */
-  Table create(RoutineInfo routineInfo, RoutineOption... options);
+  Routine create(RoutineInfo routineInfo, RoutineOption... options);
 
   /**
    * Creates a new job.
@@ -1047,6 +1068,12 @@ public interface BigQuery extends Service<BigQueryOptions> {
 
   // TODO: docs
   Routine getRoutine(RoutineId routineId, RoutineOption... options);
+
+  /** Lists the models in the dataset. */
+  Page<Routine> listRoutines(String datasetId, RoutineListOption... options);
+
+  /** Lists the models in the dataset. */
+  Page<Routine> listRoutines(DatasetId datasetId, RoutineListOption... options);
 
   /**
    * Lists the tables in the dataset. This method returns partial information on each table: ({@link

@@ -176,6 +176,21 @@ public class HttpBigQueryRpc implements BigQueryRpc {
   }
 
   @Override
+  public Routine create(Routine routine, Map<Option, ?> options) {
+    try {
+      // unset the type, as it is output only
+      RoutineReference reference = routine.getRoutineReference();
+      return bigquery
+              .routines()
+              .insert(reference.getProjectId(), reference.getDatasetId(), routine)
+              .setFields(Option.FIELDS.getString(options))
+              .execute();
+    } catch (IOException ex) {
+      throw translate(ex);
+    }
+  }
+
+  @Override
   public Job create(Job job, Map<Option, ?> options) {
     try {
       String projectId =
