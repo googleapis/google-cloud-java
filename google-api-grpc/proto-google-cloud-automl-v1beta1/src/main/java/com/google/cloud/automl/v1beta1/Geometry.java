@@ -34,11 +34,12 @@ public final class Geometry {
           + "e/api/annotations.proto\"(\n\020NormalizedVer"
           + "tex\022\t\n\001x\030\001 \001(\002\022\t\n\001y\030\002 \001(\002\"Z\n\014BoundingPol"
           + "y\022J\n\023normalized_vertices\030\002 \003(\0132-.google."
-          + "cloud.automl.v1beta1.NormalizedVertexB\204\001"
+          + "cloud.automl.v1beta1.NormalizedVertexB\245\001"
           + "\n\037com.google.cloud.automl.v1beta1P\001ZAgoo"
           + "gle.golang.org/genproto/googleapis/cloud"
           + "/automl/v1beta1;automl\312\002\033Google\\Cloud\\Au"
-          + "toMl\\V1beta1b\006proto3"
+          + "toMl\\V1beta1\352\002\036Google::Cloud::AutoML::V1"
+          + "beta1b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {

@@ -29,11 +29,12 @@ public final class TextSegmentProto {
           + "nt.proto\022\033google.cloud.automl.v1beta1\032\034g"
           + "oogle/api/annotations.proto\"H\n\013TextSegme"
           + "nt\022\017\n\007content\030\003 \001(\t\022\024\n\014start_offset\030\001 \001("
-          + "\003\022\022\n\nend_offset\030\002 \001(\003B\226\001\n\037com.google.clo"
+          + "\003\022\022\n\nend_offset\030\002 \001(\003B\267\001\n\037com.google.clo"
           + "ud.automl.v1beta1B\020TextSegmentProtoP\001ZAg"
           + "oogle.golang.org/genproto/googleapis/clo"
           + "ud/automl/v1beta1;automl\312\002\033Google\\Cloud\\"
-          + "AutoMl\\V1beta1b\006proto3"
+          + "AutoMl\\V1beta1\352\002\036Google::Cloud::AutoML::"
+          + "V1beta1b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {

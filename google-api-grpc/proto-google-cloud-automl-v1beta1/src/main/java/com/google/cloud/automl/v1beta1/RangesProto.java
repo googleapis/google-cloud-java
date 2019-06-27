@@ -28,11 +28,12 @@ public final class RangesProto {
       "\n(google/cloud/automl/v1beta1/ranges.pro"
           + "to\022\033google.cloud.automl.v1beta1\032\034google/"
           + "api/annotations.proto\")\n\013DoubleRange\022\r\n\005"
-          + "start\030\001 \001(\001\022\013\n\003end\030\002 \001(\001B\221\001\n\037com.google."
+          + "start\030\001 \001(\001\022\013\n\003end\030\002 \001(\001B\262\001\n\037com.google."
           + "cloud.automl.v1beta1B\013RangesProtoP\001ZAgoo"
           + "gle.golang.org/genproto/googleapis/cloud"
           + "/automl/v1beta1;automl\312\002\033Google\\Cloud\\Au"
-          + "toMl\\V1beta1b\006proto3"
+          + "toMl\\V1beta1\352\002\036Google::Cloud::AutoML::V1"
+          + "beta1b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {

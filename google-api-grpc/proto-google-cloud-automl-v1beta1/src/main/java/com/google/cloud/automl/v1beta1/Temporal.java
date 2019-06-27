@@ -31,10 +31,11 @@ public final class Temporal {
           + "notations.proto\"w\n\013TimeSegment\0224\n\021start_"
           + "time_offset\030\001 \001(\0132\031.google.protobuf.Dura"
           + "tion\0222\n\017end_time_offset\030\002 \001(\0132\031.google.p"
-          + "rotobuf.DurationB\204\001\n\037com.google.cloud.au"
+          + "rotobuf.DurationB\245\001\n\037com.google.cloud.au"
           + "toml.v1beta1P\001ZAgoogle.golang.org/genpro"
           + "to/googleapis/cloud/automl/v1beta1;autom"
-          + "l\312\002\033Google\\Cloud\\AutoMl\\V1beta1b\006proto3"
+          + "l\312\002\033Google\\Cloud\\AutoMl\\V1beta1\352\002\036Google"
+          + "::Cloud::AutoML::V1beta1b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {

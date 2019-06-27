@@ -126,11 +126,11 @@ public final class DataStatsOuterClass {
           + "oud.automl.v1beta1.CategoryStats.SingleC"
           + "ategoryStats\0323\n\023SingleCategoryStats\022\r\n\005v"
           + "alue\030\001 \001(\t\022\r\n\005count\030\002 \001(\003\"%\n\020Correlation"
-          + "Stats\022\021\n\tcramers_v\030\001 \001(\001B\204\001\n\037com.google."
+          + "Stats\022\021\n\tcramers_v\030\001 \001(\001B\245\001\n\037com.google."
           + "cloud.automl.v1beta1P\001ZAgoogle.golang.or"
           + "g/genproto/googleapis/cloud/automl/v1bet"
-          + "a1;automl\312\002\033Google\\Cloud\\AutoMl\\V1beta1b"
-          + "\006proto3"
+          + "a1;automl\312\002\033Google\\Cloud\\AutoMl\\V1beta1\352"
+          + "\002\036Google::Cloud::AutoML::V1beta1b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
