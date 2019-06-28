@@ -15,47 +15,49 @@
  */
 package com.google.cloud.bigquery;
 
-import org.junit.Test;
-
 import static org.junit.Assert.assertEquals;
+
+import org.junit.Test;
 
 public class RoutineArgumentTest {
 
-    private static final String NAME = "foo";
-    private static final String KIND = "SCALAR_FUNCTION";
-    private static final String MODE = "IN";
-    private static final StandardSQLDataType DATA_TYPE = StandardSQLDataType.newBuilder("STRING").build();
-    private static final RoutineArgument ARGUMENT = RoutineArgument.newBuilder()
-            .setName(NAME)
-            .setKind(KIND)
-            .setMode(MODE)
-            .setDataType(DATA_TYPE)
-            .build();
+  private static final String NAME = "foo";
+  private static final String KIND = "SCALAR_FUNCTION";
+  private static final String MODE = "IN";
+  private static final StandardSQLDataType DATA_TYPE =
+      StandardSQLDataType.newBuilder("STRING").build();
+  private static final RoutineArgument ARGUMENT =
+      RoutineArgument.newBuilder()
+          .setName(NAME)
+          .setKind(KIND)
+          .setMode(MODE)
+          .setDataType(DATA_TYPE)
+          .build();
 
+  @Test
+  public void testToBuilder() {
+    compareRoutineArguments(ARGUMENT, ARGUMENT.toBuilder().build());
+  }
 
-    @Test
-    public void testToBuilder() {
-        compareRoutineArguments(ARGUMENT, ARGUMENT.toBuilder().build());
-    }
+  @Test
+  public void testBuilder() {
+    assertEquals(NAME, ARGUMENT.getName());
+    assertEquals(KIND, ARGUMENT.getKind());
+    assertEquals(MODE, ARGUMENT.getMode());
+    assertEquals(DATA_TYPE, ARGUMENT.getDataType());
+  }
 
-    @Test
-    public void testBuilder() {
-        assertEquals(NAME, ARGUMENT.getName());
-        assertEquals(KIND, ARGUMENT.getKind());
-        assertEquals(MODE, ARGUMENT.getMode());
-        assertEquals(DATA_TYPE, ARGUMENT.getDataType());
-    }
-    @Test
-    public void testToPbAndFromPb() {
-        compareRoutineArguments(ARGUMENT, RoutineArgument.fromPb(ARGUMENT.toPb()));
-    }
+  @Test
+  public void testToPbAndFromPb() {
+    compareRoutineArguments(ARGUMENT, RoutineArgument.fromPb(ARGUMENT.toPb()));
+  }
 
-    public void compareRoutineArguments(RoutineArgument expected, RoutineArgument value) {
-        assertEquals(expected, value);
-        assertEquals(expected.getName(), value.getName());
-        assertEquals(expected.getKind(), value.getKind());
-        assertEquals(expected.getMode(), value.getMode());
-        assertEquals(expected.getDataType(), value.getDataType());
-        assertEquals(expected.hashCode(), value.hashCode());
-    }
+  public void compareRoutineArguments(RoutineArgument expected, RoutineArgument value) {
+    assertEquals(expected, value);
+    assertEquals(expected.getName(), value.getName());
+    assertEquals(expected.getKind(), value.getKind());
+    assertEquals(expected.getMode(), value.getMode());
+    assertEquals(expected.getDataType(), value.getDataType());
+    assertEquals(expected.hashCode(), value.hashCode());
+  }
 }

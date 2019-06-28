@@ -16,6 +16,10 @@
 
 package com.google.cloud.bigquery.it;
 
+import static com.google.cloud.bigquery.JobStatus.State.DONE;
+import static com.google.common.truth.Truth.assertThat;
+import static org.junit.Assert.*;
+
 import com.google.api.gax.paging.Page;
 import com.google.cloud.Date;
 import com.google.cloud.RetryOption;
@@ -83,13 +87,6 @@ import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Sets;
 import com.google.common.io.BaseEncoding;
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.rules.Timeout;
-import org.threeten.bp.Duration;
-
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.nio.ByteBuffer;
@@ -107,10 +104,12 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
-import static com.google.cloud.bigquery.JobStatus.State.DONE;
-import static com.google.common.truth.Truth.assertThat;
-import static org.junit.Assert.*;
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
+import org.junit.Rule;
+import org.junit.Test;
+import org.junit.rules.Timeout;
+import org.threeten.bp.Duration;
 
 public class ITBigQueryTest {
 
@@ -288,7 +287,7 @@ public class ITBigQueryTest {
         DatasetInfo.newBuilder(MODEL_DATASET).setDescription("java model lifecycle").build();
     bigquery.create(info2);
     DatasetInfo info3 =
-            DatasetInfo.newBuilder(ROUTINE_DATASET).setDescription("java routine lifecycle").build();
+        DatasetInfo.newBuilder(ROUTINE_DATASET).setDescription("java routine lifecycle").build();
     bigquery.create(info3);
     LoadJobConfiguration configuration =
         LoadJobConfiguration.newBuilder(
@@ -307,7 +306,6 @@ public class ITBigQueryTest {
       RemoteBigQueryHelper.forceDelete(bigquery, DATASET);
       RemoteBigQueryHelper.forceDelete(bigquery, MODEL_DATASET);
       RemoteBigQueryHelper.forceDelete(bigquery, ROUTINE_DATASET);
-
     }
     if (storage != null) {
       boolean wasDeleted = RemoteStorageHelper.forceDelete(storage, BUCKET, 10, TimeUnit.SECONDS);
@@ -1121,12 +1119,7 @@ public class ITBigQueryTest {
     String routineName = RemoteBigQueryHelper.generateRoutineName();
     // Create a routine using SQL.
     String sql =
-            "CREATE FUNCTION `"
-                    + ROUTINE_DATASET
-                    + "."
-                    + routineName
-                    + "`"
-                    + "(x INT64) AS (x * 3)";
+        "CREATE FUNCTION `" + ROUTINE_DATASET + "." + routineName + "`" + "(x INT64) AS (x * 3)";
     QueryJobConfiguration config = QueryJobConfiguration.newBuilder(sql).build();
     Job job = bigquery.create(JobInfo.of(JobId.of(), config));
     job.waitFor();
@@ -1139,7 +1132,9 @@ public class ITBigQueryTest {
     assertEquals(routine.getRoutineType(), "SCALAR_FUNCTION");
 
     // Mutate metadata.
-    RoutineInfo newInfo = routine.toBuilder()
+    RoutineInfo newInfo =
+        routine
+            .toBuilder()
             .setBody("x * 4")
             .setReturnType(routine.getReturnType())
             .setArguments(routine.getArguments())
@@ -1167,16 +1162,17 @@ public class ITBigQueryTest {
   public void testRoutineAPICreation() {
     String routineName = RemoteBigQueryHelper.generateRoutineName();
     RoutineId routineId = RoutineId.of(ROUTINE_DATASET, routineName);
-    RoutineInfo routineInfo = RoutineInfo.newBuilder(routineId)
+    RoutineInfo routineInfo =
+        RoutineInfo.newBuilder(routineId)
             .setRoutineType("SCALAR_FUNCTION")
             .setBody("x * 3")
             .setLanguage("SQL")
             .setArguments(
-                    ImmutableList.of(
-                            RoutineArgument.newBuilder()
-                                    .setName("x")
-                                    .setDataType(StandardSQLDataType.newBuilder("INT64").build())
-                                    .build()))
+                ImmutableList.of(
+                    RoutineArgument.newBuilder()
+                        .setName("x")
+                        .setDataType(StandardSQLDataType.newBuilder("INT64").build())
+                        .build()))
             .build();
 
     Routine routine = bigquery.create(routineInfo);

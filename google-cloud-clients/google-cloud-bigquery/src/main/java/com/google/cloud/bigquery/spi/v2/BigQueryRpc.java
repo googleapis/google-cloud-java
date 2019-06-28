@@ -29,7 +29,6 @@ import com.google.api.services.bigquery.model.TableDataList;
 import com.google.cloud.ServiceRpc;
 import com.google.cloud.Tuple;
 import com.google.cloud.bigquery.BigQueryException;
-
 import java.util.Map;
 
 @InternalExtensionOnly
@@ -198,10 +197,9 @@ public interface BigQueryRpc extends ServiceRpc {
   Routine getRoutine(String projectId, String datasetId, String routineId, Map<Option, ?> options);
 
   Tuple<String, Iterable<Routine>> listRoutines(
-          String projectId, String datasetId, Map<Option, ?> options);
+      String projectId, String datasetId, Map<Option, ?> options);
 
   boolean deleteRoutine(String projectId, String datasetId, String routineId);
-
 
   /**
    * Sends an insert all request.

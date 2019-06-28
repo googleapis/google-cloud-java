@@ -34,7 +34,7 @@ public class JobStatisticsTest {
   private static final Boolean CACHE_HIT = true;
   private static final String DDL_OPERATION_PERFORMED = "SKIP";
   private static final TableId DDL_TARGET_TABLE = TableId.of("foo", "bar", "baz");
-  private static final RoutineId DDL_TARGET_ROUTINE = RoutineId.of("alpha","beta", "gamma");
+  private static final RoutineId DDL_TARGET_ROUTINE = RoutineId.of("alpha", "beta", "gamma");
   private static final Long ESTIMATE_BYTES_PROCESSED = 101L;
   private static final Long NUM_DML_AFFECTED_ROWS = 88L;
   private static final QueryStatistics.StatementType STATEMENT_TYPE =
@@ -137,7 +137,7 @@ public class JobStatisticsTest {
           .setCacheHit(CACHE_HIT)
           .setDDLOperationPerformed(DDL_OPERATION_PERFORMED)
           .setDDLTargetTable(DDL_TARGET_TABLE)
-              .setDDLTargetRoutine(DDL_TARGET_ROUTINE)
+          .setDDLTargetRoutine(DDL_TARGET_ROUTINE)
           .setEstimatedBytesProcessed(ESTIMATE_BYTES_PROCESSED)
           .setNumDmlAffectedRows(NUM_DML_AFFECTED_ROWS)
           .setReferenceTables(REFERENCED_TABLES)

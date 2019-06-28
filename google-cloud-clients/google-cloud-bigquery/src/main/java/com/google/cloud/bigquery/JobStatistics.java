@@ -358,7 +358,8 @@ public abstract class JobStatistics implements Serializable {
       public static final StatementType CREATE_VIEW = type.createAndRegister("CREATE_VIEW");
       public static final StatementType CREATE_MODEL = type.createAndRegister("CREATE_MODEL");
       public static final StatementType CREATE_FUNCTION = type.createAndRegister("CREATE_FUNCTION");
-      public static final StatementType CREATE_PROCEDURE = type.createAndRegister("CREATE_PROCEDURE");
+      public static final StatementType CREATE_PROCEDURE =
+          type.createAndRegister("CREATE_PROCEDURE");
       public static final StatementType ALTER_TABLE = type.createAndRegister("ALTER_TABLE");
       public static final StatementType ALTER_VIEW = type.createAndRegister("ALTER_VIEW");
       public static final StatementType DROP_TABLE = type.createAndRegister("DROP_TABLE");
@@ -590,7 +591,9 @@ public abstract class JobStatistics implements Serializable {
     }
 
     /** [BETA] For DDL queries, returns the RoutineId of the targeted routine. */
-    public RoutineId getDdlTargetRoutine() { return ddlTargetRoutine; }
+    public RoutineId getDdlTargetRoutine() {
+      return ddlTargetRoutine;
+    }
 
     /** The original estimate of bytes processed for the job. */
     public Long getEstimatedBytesProcessed() {

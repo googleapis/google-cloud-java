@@ -180,10 +180,10 @@ public class HttpBigQueryRpc implements BigQueryRpc {
     try {
       RoutineReference reference = routine.getRoutineReference();
       return bigquery
-              .routines()
-              .insert(reference.getProjectId(), reference.getDatasetId(), routine)
-              .setFields(Option.FIELDS.getString(options))
-              .execute();
+          .routines()
+          .insert(reference.getProjectId(), reference.getDatasetId(), routine)
+          .setFields(Option.FIELDS.getString(options))
+          .execute();
     } catch (IOException ex) {
       throw translate(ex);
     }
@@ -390,23 +390,25 @@ public class HttpBigQueryRpc implements BigQueryRpc {
     try {
       RoutineReference reference = routine.getRoutineReference();
       return bigquery
-              .routines()
-              .update(reference.getProjectId(), reference.getDatasetId(), reference.getRoutineId(), routine)
-              .setFields(Option.FIELDS.getString(options))
-              .execute();
+          .routines()
+          .update(
+              reference.getProjectId(), reference.getDatasetId(), reference.getRoutineId(), routine)
+          .setFields(Option.FIELDS.getString(options))
+          .execute();
     } catch (IOException ex) {
       throw translate(ex);
     }
   }
 
   @Override
-  public Routine getRoutine(String projectId, String datasetId, String routineId, Map<Option, ?> options) {
+  public Routine getRoutine(
+      String projectId, String datasetId, String routineId, Map<Option, ?> options) {
     try {
       return bigquery
-              .routines()
-              .get(projectId, datasetId, routineId)
-              .setFields(Option.FIELDS.getString(options))
-              .execute();
+          .routines()
+          .get(projectId, datasetId, routineId)
+          .setFields(Option.FIELDS.getString(options))
+          .execute();
     } catch (IOException ex) {
       BigQueryException serviceException = translate(ex);
       if (serviceException.getCode() == HTTP_NOT_FOUND) {
@@ -417,15 +419,16 @@ public class HttpBigQueryRpc implements BigQueryRpc {
   }
 
   @Override
-  public Tuple<String, Iterable<Routine>> listRoutines(String projectId, String datasetId, Map<Option, ?> options) {
+  public Tuple<String, Iterable<Routine>> listRoutines(
+      String projectId, String datasetId, Map<Option, ?> options) {
     try {
       ListRoutinesResponse routineList =
-              bigquery
-                      .routines()
-                      .list(projectId, datasetId)
-                      .setMaxResults(Option.MAX_RESULTS.getLong(options))
-                      .setPageToken(Option.PAGE_TOKEN.getString(options))
-                      .execute();
+          bigquery
+              .routines()
+              .list(projectId, datasetId)
+              .setMaxResults(Option.MAX_RESULTS.getLong(options))
+              .setPageToken(Option.PAGE_TOKEN.getString(options))
+              .execute();
       Iterable<Routine> routines = routineList.getRoutines();
       return Tuple.of(routineList.getNextPageToken(), routines);
     } catch (IOException ex) {

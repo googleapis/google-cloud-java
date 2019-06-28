@@ -169,7 +169,8 @@ public interface BigQuery extends Service<BigQueryOptions> {
     ROUTINE_REFERENCE("routineReference"),
     ROUTINE_TYPE("routineType");
 
-    static final List<? extends FieldSelector> REQUIRED_FIELDS = ImmutableList.of(ROUTINE_REFERENCE);
+    static final List<? extends FieldSelector> REQUIRED_FIELDS =
+        ImmutableList.of(ROUTINE_REFERENCE);
 
     private final String selector;
 
@@ -398,7 +399,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
      */
     public static RoutineOption fields(RoutineField... fields) {
       return new RoutineOption(
-              BigQueryRpc.Option.FIELDS, Helper.selector(RoutineField.REQUIRED_FIELDS, fields));
+          BigQueryRpc.Option.FIELDS, Helper.selector(RoutineField.REQUIRED_FIELDS, fields));
     }
   }
 
@@ -657,8 +658,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
   Table create(TableInfo tableInfo, TableOption... options);
 
   /**
-   * Creates a new routine.
-   * TODO: docs
+   * Creates a new routine. TODO: docs
    *
    * @throws BigQueryException upon failure
    */
@@ -908,7 +908,6 @@ public interface BigQuery extends Service<BigQueryOptions> {
    */
   boolean delete(RoutineId routineId);
 
-
   /**
    * Updates dataset information.
    *
@@ -1005,8 +1004,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
   Model update(ModelInfo modelInfo, ModelOption... options);
 
   /**
-   * Updates routine information.
-   * TODO: docs
+   * Updates routine information. TODO: docs
    *
    * @throws BigQueryException upon failure
    */

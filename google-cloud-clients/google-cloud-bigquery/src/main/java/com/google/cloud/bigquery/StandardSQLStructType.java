@@ -19,48 +19,47 @@ package com.google.cloud.bigquery;
 import com.google.api.services.bigquery.model.StandardSqlStructType;
 import com.google.auto.value.AutoValue;
 import com.google.common.collect.Lists;
-
 import java.io.Serializable;
 import java.util.List;
-
 
 @AutoValue
 public abstract class StandardSQLStructType implements Serializable {
 
+  @AutoValue.Builder
+  public abstract static class Builder {
 
-    @AutoValue.Builder
-    public abstract static class Builder {
+    public abstract Builder setFields(List<StandardSQLField> fields);
 
-        public abstract Builder setFields(List<StandardSQLField> fields);
+    public abstract StandardSQLStructType build();
+  }
 
-        public abstract StandardSQLStructType build();
+  public abstract List<StandardSQLField> getFields();
 
+  public abstract Builder toBuilder();
+
+  public static Builder newBuilder() {
+    return new AutoValue_StandardSQLStructType.Builder();
+  }
+
+  public static Builder newBuilder(List<StandardSQLField> fieldList) {
+    return newBuilder().setFields(fieldList);
+  }
+
+  static StandardSQLStructType fromPb(
+      com.google.api.services.bigquery.model.StandardSqlStructType structTypePb) {
+    Builder builder = newBuilder();
+    if (structTypePb.getFields() != null) {
+      builder.setFields(
+          Lists.transform(structTypePb.getFields(), StandardSQLField.FROM_PB_FUNCTION));
     }
+    return builder.build();
+  }
 
-    public abstract List<StandardSQLField> getFields();
-
-    public abstract Builder toBuilder();
-
-    public static Builder newBuilder() { return new AutoValue_StandardSQLStructType.Builder(); }
-
-    public static Builder newBuilder(List<StandardSQLField> fieldList) {
-        return newBuilder().setFields(fieldList);
+  StandardSqlStructType toPb() {
+    StandardSqlStructType structTypePb = new StandardSqlStructType();
+    if (getFields() != null) {
+      structTypePb.setFields(Lists.transform(getFields(), StandardSQLField.TO_PB_FUNCTION));
     }
-
-    static StandardSQLStructType fromPb(com.google.api.services.bigquery.model.StandardSqlStructType structTypePb) {
-        Builder builder = newBuilder();
-        if (structTypePb.getFields() != null) {
-            builder.setFields(Lists.transform(structTypePb.getFields(), StandardSQLField.FROM_PB_FUNCTION));
-        }
-        return builder.build();
-    }
-
-    StandardSqlStructType toPb() {
-        StandardSqlStructType structTypePb = new StandardSqlStructType();
-        if (getFields() != null) {
-            structTypePb.setFields(Lists.transform(getFields(), StandardSQLField.TO_PB_FUNCTION));
-        }
-        return structTypePb;
-    }
-
+    return structTypePb;
+  }
 }

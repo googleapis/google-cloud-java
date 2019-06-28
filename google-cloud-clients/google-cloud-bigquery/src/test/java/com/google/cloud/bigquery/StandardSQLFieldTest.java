@@ -16,57 +16,44 @@
 package com.google.cloud.bigquery;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
 
-import com.google.api.services.bigquery.model.TrainingOptions;
-import com.google.api.services.bigquery.model.TrainingRun;
-import java.util.Arrays;
-import java.util.List;
 import org.junit.Test;
 
 public class StandardSQLFieldTest {
 
+  private static final String NAME = "field_name";
+  private static final StandardSQLDataType STRING_DATA_TYPE =
+      StandardSQLDataType.newBuilder("STRING").build();
+  private static final StandardSQLDataType ARRAY_OF_STRING_DATA_TYPE =
+      StandardSQLDataType.newBuilder("ARRAY").setArrayElementType(STRING_DATA_TYPE).build();
+  private static final StandardSQLField STANDARD_SQL_FIELD_1 =
+      StandardSQLField.newBuilder(STRING_DATA_TYPE).build();
+  private static final StandardSQLField STANDARD_SQL_FIELD_2 =
+      StandardSQLField.newBuilder(NAME, ARRAY_OF_STRING_DATA_TYPE).build();
 
-    private static final String NAME = "field_name";
-    private static final StandardSQLDataType STRING_DATA_TYPE = StandardSQLDataType
-            .newBuilder("STRING")
-            .build();
-    private static final StandardSQLDataType ARRAY_OF_STRING_DATA_TYPE = StandardSQLDataType
-            .newBuilder("ARRAY")
-            .setArrayElementType(STRING_DATA_TYPE)
-            .build();
-    private static final StandardSQLField STANDARD_SQL_FIELD_1 = StandardSQLField
-            .newBuilder(STRING_DATA_TYPE)
-            .build();
-    private static final StandardSQLField STANDARD_SQL_FIELD_2 = StandardSQLField
-            .newBuilder(NAME, ARRAY_OF_STRING_DATA_TYPE)
-            .build();
+  @Test
+  public void testToBuilder() {
+    compareStandardSQLField(STANDARD_SQL_FIELD_1, STANDARD_SQL_FIELD_1.toBuilder().build());
+    compareStandardSQLField(STANDARD_SQL_FIELD_2, STANDARD_SQL_FIELD_2.toBuilder().build());
+  }
 
+  @Test
+  public void testBuilder() {
+    assertEquals(null, STANDARD_SQL_FIELD_1.getName());
+    assertEquals(STRING_DATA_TYPE, STANDARD_SQL_FIELD_1.getDataType());
+    assertEquals(ARRAY_OF_STRING_DATA_TYPE, STANDARD_SQL_FIELD_2.getDataType());
+  }
 
+  @Test
+  public void testToAndFromPb() {
+    compareStandardSQLField(
+        STANDARD_SQL_FIELD_1, StandardSQLField.fromPb(STANDARD_SQL_FIELD_1.toPb()));
+  }
 
-    @Test
-    public void testToBuilder() {
-        compareStandardSQLField(STANDARD_SQL_FIELD_1, STANDARD_SQL_FIELD_1.toBuilder().build());
-        compareStandardSQLField(STANDARD_SQL_FIELD_2, STANDARD_SQL_FIELD_2.toBuilder().build());
-
-    }
-
-    @Test
-    public void testBuilder() {
-        assertEquals(null, STANDARD_SQL_FIELD_1.getName());
-        assertEquals(STRING_DATA_TYPE, STANDARD_SQL_FIELD_1.getDataType());
-        assertEquals(ARRAY_OF_STRING_DATA_TYPE, STANDARD_SQL_FIELD_2.getDataType());
-    }
-
-    @Test
-    public void testToAndFromPb() {
-        compareStandardSQLField(STANDARD_SQL_FIELD_1, StandardSQLField.fromPb(STANDARD_SQL_FIELD_1.toPb()));
-    }
-
-    private void compareStandardSQLField(StandardSQLField expected, StandardSQLField value) {
-        assertEquals(expected, value);
-        assertEquals(expected.getName(), value.getName());
-        assertEquals(expected.getDataType(), value.getDataType());
-        assertEquals(expected.hashCode(), value.hashCode());
-    }
+  private void compareStandardSQLField(StandardSQLField expected, StandardSQLField value) {
+    assertEquals(expected, value);
+    assertEquals(expected.getName(), value.getName());
+    assertEquals(expected.getDataType(), value.getDataType());
+    assertEquals(expected.hashCode(), value.hashCode());
+  }
 }
