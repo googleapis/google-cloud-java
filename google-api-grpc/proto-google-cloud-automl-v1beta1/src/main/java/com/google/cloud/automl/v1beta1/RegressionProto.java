@@ -962,11 +962,12 @@ public final class RegressionProto {
           + "rror\030\001 \001(\002\022\033\n\023mean_absolute_error\030\002 \001(\002\022"
           + "&\n\036mean_absolute_percentage_error\030\003 \001(\002\022"
           + "\021\n\tr_squared\030\004 \001(\002\022#\n\033root_mean_squared_"
-          + "log_error\030\005 \001(\002B\223\001\n\037com.google.cloud.aut"
+          + "log_error\030\005 \001(\002B\264\001\n\037com.google.cloud.aut"
           + "oml.v1beta1B\017RegressionProtoZAgoogle.gol"
           + "ang.org/genproto/googleapis/cloud/automl"
           + "/v1beta1;automl\312\002\033Google\\Cloud\\AutoMl\\V1"
-          + "beta1b\006proto3"
+          + "beta1\352\002\036Google::Cloud::AutoML::V1beta1b\006"
+          + "proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {

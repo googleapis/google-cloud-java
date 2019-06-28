@@ -9052,11 +9052,12 @@ public final class ClassificationProto {
           + "ix.Row\032\034\n\003Row\022\025\n\rexample_count\030\001 \003(\005*Y\n\022"
           + "ClassificationType\022#\n\037CLASSIFICATION_TYP"
           + "E_UNSPECIFIED\020\000\022\016\n\nMULTICLASS\020\001\022\016\n\nMULTI"
-          + "LABEL\020\002B\227\001\n\037com.google.cloud.automl.v1be"
+          + "LABEL\020\002B\270\001\n\037com.google.cloud.automl.v1be"
           + "ta1B\023ClassificationProtoZAgoogle.golang."
           + "org/genproto/googleapis/cloud/automl/v1b"
           + "eta1;automl\312\002\033Google\\Cloud\\AutoMl\\V1beta"
-          + "1b\006proto3"
+          + "1\352\002\036Google::Cloud::AutoML::V1beta1b\006prot"
+          + "o3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {

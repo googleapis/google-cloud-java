@@ -62,10 +62,11 @@ public final class DatasetOuterClass {
           + "description\030\003 \001(\t\022\025\n\rexample_count\030\025 \001(\005"
           + "\022/\n\013create_time\030\016 \001(\0132\032.google.protobuf."
           + "Timestamp\022\014\n\004etag\030\021 \001(\tB\022\n\020dataset_metad"
-          + "ataB\204\001\n\037com.google.cloud.automl.v1beta1P"
+          + "ataB\245\001\n\037com.google.cloud.automl.v1beta1P"
           + "\001ZAgoogle.golang.org/genproto/googleapis"
           + "/cloud/automl/v1beta1;automl\312\002\033Google\\Cl"
-          + "oud\\AutoMl\\V1beta1b\006proto3"
+          + "oud\\AutoMl\\V1beta1\352\002\036Google::Cloud::Auto"
+          + "ML::V1beta1b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {

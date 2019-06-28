@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-clients</artifactId>
   <packaging>pom</packaging>
-  <version>0.98.0-alpha</version><!-- {x-version-update:google-cloud-clients:current} -->
+  <version>0.98.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-clients:current} -->
   <name>Google Cloud</name>
   <url>https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-clients</url>
   <description>
@@ -153,7 +153,7 @@
     <project.javadoc.protobufBaseURL>https://googleapis.github.io/google-cloud-java/google-api-grpc/apidocs</project.javadoc.protobufBaseURL>
     <github.global.server>github</github.global.server>
     <site.installationModule>google-cloud-clients</site.installationModule>
-    <bom.version>0.98.0-alpha</bom.version><!-- {x-version-update:google-cloud-bom:current} -->
+    <bom.version>0.98.1-alpha-SNAPSHOT</bom.version><!-- {x-version-update:google-cloud-bom:current} -->
     <api-client.version>1.30.1</api-client.version>
     <!-- make sure to keep gax version in sync with google-cloud-bom -->
     <gax.version>1.46.1</gax.version>
@@ -227,7 +227,7 @@
       <dependency>
         <groupId>com.google.apis</groupId>
         <artifactId>google-api-services-compute</artifactId>
-        <version>v1-rev20190530-1.28.0</version>
+        <version>v1-rev20190607-1.30.1</version>
       </dependency>
       <dependency>
         <groupId>com.google.cloud.datastore</groupId>
@@ -268,7 +268,7 @@
       <dependency>
         <groupId>com.google.apis</groupId>
         <artifactId>google-api-services-storage</artifactId>
-        <version>v1-rev20190523-1.28.0</version>
+        <version>v1-rev20190620-1.30.1</version>
       </dependency>
       <dependency>
         <groupId>com.google.apis</groupId>
@@ -278,7 +278,7 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-core</artifactId>
-        <version>1.80.0</version><!-- {x-version-update:google-cloud-core:current} -->
+        <version>1.80.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-core:current} -->
         <type>test-jar</type>
       </dependency>
       <dependency>
@@ -413,7 +413,7 @@
       <dependency>
         <groupId>com.google.truth</groupId>
         <artifactId>truth</artifactId>
-        <version>0.45</version>
+        <version>0.46</version>
       </dependency>
       <dependency>
         <groupId>org.checkerframework</groupId>

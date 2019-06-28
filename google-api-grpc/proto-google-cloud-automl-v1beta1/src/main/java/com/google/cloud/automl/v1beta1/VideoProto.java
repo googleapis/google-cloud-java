@@ -44,11 +44,12 @@ public final class VideoProto {
           + "lassificationDatasetMetadata\"$\n\"VideoObj"
           + "ectTrackingDatasetMetadata\"\"\n VideoClass"
           + "ificationModelMetadata\"\"\n VideoObjectTra"
-          + "ckingModelMetadataB\220\001\n\037com.google.cloud."
+          + "ckingModelMetadataB\261\001\n\037com.google.cloud."
           + "automl.v1beta1B\nVideoProtoP\001ZAgoogle.gol"
           + "ang.org/genproto/googleapis/cloud/automl"
           + "/v1beta1;automl\312\002\033Google\\Cloud\\AutoMl\\V1"
-          + "beta1b\006proto3"
+          + "beta1\352\002\036Google::Cloud::AutoML::V1beta1b\006"
+          + "proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {

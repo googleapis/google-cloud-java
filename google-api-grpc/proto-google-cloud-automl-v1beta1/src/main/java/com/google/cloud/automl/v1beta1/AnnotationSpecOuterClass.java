@@ -29,11 +29,12 @@ public final class AnnotationSpecOuterClass {
           + "_spec.proto\022\033google.cloud.automl.v1beta1"
           + "\032\034google/api/annotations.proto\"K\n\016Annota"
           + "tionSpec\022\014\n\004name\030\001 \001(\t\022\024\n\014display_name\030\002"
-          + " \001(\t\022\025\n\rexample_count\030\t \001(\005B\204\001\n\037com.goog"
+          + " \001(\t\022\025\n\rexample_count\030\t \001(\005B\245\001\n\037com.goog"
           + "le.cloud.automl.v1beta1P\001ZAgoogle.golang"
           + ".org/genproto/googleapis/cloud/automl/v1"
           + "beta1;automl\312\002\033Google\\Cloud\\AutoMl\\V1bet"
-          + "a1b\006proto3"
+          + "a1\352\002\036Google::Cloud::AutoML::V1beta1b\006pro"
+          + "to3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {

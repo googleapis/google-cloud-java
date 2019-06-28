@@ -105,7 +105,7 @@ public class Project extends ProjectInfo {
     }
 
     @Override
-    Builder setParent(ResourceId parent) {
+    public Builder setParent(ResourceId parent) {
       infoBuilder.setParent(parent);
       return this;
     }
