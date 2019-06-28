@@ -19,8 +19,11 @@ import static com.google.cloud.datalabeling.v1beta1.DataLabelingServiceClient.Li
 import static com.google.cloud.datalabeling.v1beta1.DataLabelingServiceClient.ListAnnotationSpecSetsPagedResponse;
 import static com.google.cloud.datalabeling.v1beta1.DataLabelingServiceClient.ListDataItemsPagedResponse;
 import static com.google.cloud.datalabeling.v1beta1.DataLabelingServiceClient.ListDatasetsPagedResponse;
+import static com.google.cloud.datalabeling.v1beta1.DataLabelingServiceClient.ListEvaluationJobsPagedResponse;
 import static com.google.cloud.datalabeling.v1beta1.DataLabelingServiceClient.ListExamplesPagedResponse;
 import static com.google.cloud.datalabeling.v1beta1.DataLabelingServiceClient.ListInstructionsPagedResponse;
+import static com.google.cloud.datalabeling.v1beta1.DataLabelingServiceClient.SearchEvaluationsPagedResponse;
+import static com.google.cloud.datalabeling.v1beta1.DataLabelingServiceClient.SearchExampleComparisonsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
@@ -35,6 +38,7 @@ import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
 import com.google.protobuf.Empty;
+import com.google.protobuf.FieldMask;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
@@ -92,11 +96,13 @@ public class DataLabelingServiceClientTest {
     String name = "name3373707";
     String displayName = "displayName1615086568";
     String description = "description-1724546052";
+    long dataItemCount = 2014260376L;
     Dataset expectedResponse =
         Dataset.newBuilder()
             .setName(name)
             .setDisplayName(displayName)
             .setDescription(description)
+            .setDataItemCount(dataItemCount)
             .build();
     mockDataLabelingService.addResponse(expectedResponse);
 
@@ -141,11 +147,13 @@ public class DataLabelingServiceClientTest {
     String name2 = "name2-1052831874";
     String displayName = "displayName1615086568";
     String description = "description-1724546052";
+    long dataItemCount = 2014260376L;
     Dataset expectedResponse =
         Dataset.newBuilder()
             .setName(name2)
             .setDisplayName(displayName)
             .setDescription(description)
+            .setDataItemCount(dataItemCount)
             .build();
     mockDataLabelingService.addResponse(expectedResponse);
 
@@ -792,72 +800,6 @@ public class DataLabelingServiceClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void labelAudioTest() throws Exception {
-    String name = "name3373707";
-    String displayName = "displayName1615086568";
-    String description = "description-1724546052";
-    long exampleCount = 1517063674L;
-    long completedExampleCount = 612567290L;
-    AnnotatedDataset expectedResponse =
-        AnnotatedDataset.newBuilder()
-            .setName(name)
-            .setDisplayName(displayName)
-            .setDescription(description)
-            .setExampleCount(exampleCount)
-            .setCompletedExampleCount(completedExampleCount)
-            .build();
-    Operation resultOperation =
-        Operation.newBuilder()
-            .setName("labelAudioTest")
-            .setDone(true)
-            .setResponse(Any.pack(expectedResponse))
-            .build();
-    mockDataLabelingService.addResponse(resultOperation);
-
-    String formattedParent = DataLabelingServiceClient.formatDatasetName("[PROJECT]", "[DATASET]");
-    HumanAnnotationConfig basicConfig = HumanAnnotationConfig.newBuilder().build();
-    LabelAudioRequest.Feature feature = LabelAudioRequest.Feature.FEATURE_UNSPECIFIED;
-
-    AnnotatedDataset actualResponse =
-        client.labelAudioAsync(formattedParent, basicConfig, feature).get();
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockDataLabelingService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    LabelAudioRequest actualRequest = (LabelAudioRequest) actualRequests.get(0);
-
-    Assert.assertEquals(formattedParent, actualRequest.getParent());
-    Assert.assertEquals(basicConfig, actualRequest.getBasicConfig());
-    Assert.assertEquals(feature, actualRequest.getFeature());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void labelAudioExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockDataLabelingService.addException(exception);
-
-    try {
-      String formattedParent =
-          DataLabelingServiceClient.formatDatasetName("[PROJECT]", "[DATASET]");
-      HumanAnnotationConfig basicConfig = HumanAnnotationConfig.newBuilder().build();
-      LabelAudioRequest.Feature feature = LabelAudioRequest.Feature.FEATURE_UNSPECIFIED;
-
-      client.labelAudioAsync(formattedParent, basicConfig, feature).get();
-      Assert.fail("No exception raised");
-    } catch (ExecutionException e) {
-      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
-      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
-      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
   public void getExampleTest() {
     String name2 = "name2-1052831874";
     Example expectedResponse = Example.newBuilder().setName(name2).build();
@@ -1341,6 +1283,489 @@ public class DataLabelingServiceClientTest {
           DataLabelingServiceClient.formatInstructionName("[PROJECT]", "[INSTRUCTION]");
 
       client.deleteInstruction(formattedName);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void getEvaluationTest() {
+    String name2 = "name2-1052831874";
+    long evaluatedItemCount = 358077111L;
+    Evaluation expectedResponse =
+        Evaluation.newBuilder().setName(name2).setEvaluatedItemCount(evaluatedItemCount).build();
+    mockDataLabelingService.addResponse(expectedResponse);
+
+    String formattedName =
+        DataLabelingServiceClient.formatEvaluationName("[PROJECT]", "[DATASET]", "[EVALUATION]");
+
+    Evaluation actualResponse = client.getEvaluation(formattedName);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataLabelingService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetEvaluationRequest actualRequest = (GetEvaluationRequest) actualRequests.get(0);
+
+    Assert.assertEquals(formattedName, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void getEvaluationExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockDataLabelingService.addException(exception);
+
+    try {
+      String formattedName =
+          DataLabelingServiceClient.formatEvaluationName("[PROJECT]", "[DATASET]", "[EVALUATION]");
+
+      client.getEvaluation(formattedName);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void searchEvaluationsTest() {
+    String nextPageToken = "";
+    Evaluation evaluationsElement = Evaluation.newBuilder().build();
+    List<Evaluation> evaluations = Arrays.asList(evaluationsElement);
+    SearchEvaluationsResponse expectedResponse =
+        SearchEvaluationsResponse.newBuilder()
+            .setNextPageToken(nextPageToken)
+            .addAllEvaluations(evaluations)
+            .build();
+    mockDataLabelingService.addResponse(expectedResponse);
+
+    String formattedParent = DataLabelingServiceClient.formatProjectName("[PROJECT]");
+    String filter = "filter-1274492040";
+
+    SearchEvaluationsPagedResponse pagedListResponse =
+        client.searchEvaluations(formattedParent, filter);
+
+    List<Evaluation> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getEvaluationsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockDataLabelingService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    SearchEvaluationsRequest actualRequest = (SearchEvaluationsRequest) actualRequests.get(0);
+
+    Assert.assertEquals(formattedParent, actualRequest.getParent());
+    Assert.assertEquals(filter, actualRequest.getFilter());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void searchEvaluationsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockDataLabelingService.addException(exception);
+
+    try {
+      String formattedParent = DataLabelingServiceClient.formatProjectName("[PROJECT]");
+      String filter = "filter-1274492040";
+
+      client.searchEvaluations(formattedParent, filter);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void searchExampleComparisonsTest() {
+    String nextPageToken = "";
+    SearchExampleComparisonsResponse.ExampleComparison exampleComparisonsElement =
+        SearchExampleComparisonsResponse.ExampleComparison.newBuilder().build();
+    List<SearchExampleComparisonsResponse.ExampleComparison> exampleComparisons =
+        Arrays.asList(exampleComparisonsElement);
+    SearchExampleComparisonsResponse expectedResponse =
+        SearchExampleComparisonsResponse.newBuilder()
+            .setNextPageToken(nextPageToken)
+            .addAllExampleComparisons(exampleComparisons)
+            .build();
+    mockDataLabelingService.addResponse(expectedResponse);
+
+    String formattedParent =
+        DataLabelingServiceClient.formatEvaluationName("[PROJECT]", "[DATASET]", "[EVALUATION]");
+
+    SearchExampleComparisonsPagedResponse pagedListResponse =
+        client.searchExampleComparisons(formattedParent);
+
+    List<SearchExampleComparisonsResponse.ExampleComparison> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getExampleComparisonsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockDataLabelingService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    SearchExampleComparisonsRequest actualRequest =
+        (SearchExampleComparisonsRequest) actualRequests.get(0);
+
+    Assert.assertEquals(formattedParent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void searchExampleComparisonsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockDataLabelingService.addException(exception);
+
+    try {
+      String formattedParent =
+          DataLabelingServiceClient.formatEvaluationName("[PROJECT]", "[DATASET]", "[EVALUATION]");
+
+      client.searchExampleComparisons(formattedParent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void createEvaluationJobTest() {
+    String name = "name3373707";
+    String description = "description-1724546052";
+    String schedule = "schedule-697920873";
+    String modelVersion = "modelVersion-1669102142";
+    String annotationSpecSet = "annotationSpecSet1881405678";
+    boolean labelMissingGroundTruth = false;
+    EvaluationJob expectedResponse =
+        EvaluationJob.newBuilder()
+            .setName(name)
+            .setDescription(description)
+            .setSchedule(schedule)
+            .setModelVersion(modelVersion)
+            .setAnnotationSpecSet(annotationSpecSet)
+            .setLabelMissingGroundTruth(labelMissingGroundTruth)
+            .build();
+    mockDataLabelingService.addResponse(expectedResponse);
+
+    String formattedParent = DataLabelingServiceClient.formatProjectName("[PROJECT]");
+    EvaluationJob job = EvaluationJob.newBuilder().build();
+
+    EvaluationJob actualResponse = client.createEvaluationJob(formattedParent, job);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataLabelingService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateEvaluationJobRequest actualRequest = (CreateEvaluationJobRequest) actualRequests.get(0);
+
+    Assert.assertEquals(formattedParent, actualRequest.getParent());
+    Assert.assertEquals(job, actualRequest.getJob());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void createEvaluationJobExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockDataLabelingService.addException(exception);
+
+    try {
+      String formattedParent = DataLabelingServiceClient.formatProjectName("[PROJECT]");
+      EvaluationJob job = EvaluationJob.newBuilder().build();
+
+      client.createEvaluationJob(formattedParent, job);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void updateEvaluationJobTest() {
+    String name = "name3373707";
+    String description = "description-1724546052";
+    String schedule = "schedule-697920873";
+    String modelVersion = "modelVersion-1669102142";
+    String annotationSpecSet = "annotationSpecSet1881405678";
+    boolean labelMissingGroundTruth = false;
+    EvaluationJob expectedResponse =
+        EvaluationJob.newBuilder()
+            .setName(name)
+            .setDescription(description)
+            .setSchedule(schedule)
+            .setModelVersion(modelVersion)
+            .setAnnotationSpecSet(annotationSpecSet)
+            .setLabelMissingGroundTruth(labelMissingGroundTruth)
+            .build();
+    mockDataLabelingService.addResponse(expectedResponse);
+
+    EvaluationJob evaluationJob = EvaluationJob.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    EvaluationJob actualResponse = client.updateEvaluationJob(evaluationJob, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataLabelingService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateEvaluationJobRequest actualRequest = (UpdateEvaluationJobRequest) actualRequests.get(0);
+
+    Assert.assertEquals(evaluationJob, actualRequest.getEvaluationJob());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void updateEvaluationJobExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockDataLabelingService.addException(exception);
+
+    try {
+      EvaluationJob evaluationJob = EvaluationJob.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+
+      client.updateEvaluationJob(evaluationJob, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void getEvaluationJobTest() {
+    String name2 = "name2-1052831874";
+    String description = "description-1724546052";
+    String schedule = "schedule-697920873";
+    String modelVersion = "modelVersion-1669102142";
+    String annotationSpecSet = "annotationSpecSet1881405678";
+    boolean labelMissingGroundTruth = false;
+    EvaluationJob expectedResponse =
+        EvaluationJob.newBuilder()
+            .setName(name2)
+            .setDescription(description)
+            .setSchedule(schedule)
+            .setModelVersion(modelVersion)
+            .setAnnotationSpecSet(annotationSpecSet)
+            .setLabelMissingGroundTruth(labelMissingGroundTruth)
+            .build();
+    mockDataLabelingService.addResponse(expectedResponse);
+
+    String formattedName =
+        DataLabelingServiceClient.formatEvaluationJobName("[PROJECT]", "[EVALUATION_JOB]");
+
+    EvaluationJob actualResponse = client.getEvaluationJob(formattedName);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataLabelingService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetEvaluationJobRequest actualRequest = (GetEvaluationJobRequest) actualRequests.get(0);
+
+    Assert.assertEquals(formattedName, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void getEvaluationJobExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockDataLabelingService.addException(exception);
+
+    try {
+      String formattedName =
+          DataLabelingServiceClient.formatEvaluationJobName("[PROJECT]", "[EVALUATION_JOB]");
+
+      client.getEvaluationJob(formattedName);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void pauseEvaluationJobTest() {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockDataLabelingService.addResponse(expectedResponse);
+
+    String formattedName =
+        DataLabelingServiceClient.formatEvaluationJobName("[PROJECT]", "[EVALUATION_JOB]");
+
+    client.pauseEvaluationJob(formattedName);
+
+    List<AbstractMessage> actualRequests = mockDataLabelingService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    PauseEvaluationJobRequest actualRequest = (PauseEvaluationJobRequest) actualRequests.get(0);
+
+    Assert.assertEquals(formattedName, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void pauseEvaluationJobExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockDataLabelingService.addException(exception);
+
+    try {
+      String formattedName =
+          DataLabelingServiceClient.formatEvaluationJobName("[PROJECT]", "[EVALUATION_JOB]");
+
+      client.pauseEvaluationJob(formattedName);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void resumeEvaluationJobTest() {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockDataLabelingService.addResponse(expectedResponse);
+
+    String formattedName =
+        DataLabelingServiceClient.formatEvaluationJobName("[PROJECT]", "[EVALUATION_JOB]");
+
+    client.resumeEvaluationJob(formattedName);
+
+    List<AbstractMessage> actualRequests = mockDataLabelingService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ResumeEvaluationJobRequest actualRequest = (ResumeEvaluationJobRequest) actualRequests.get(0);
+
+    Assert.assertEquals(formattedName, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void resumeEvaluationJobExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockDataLabelingService.addException(exception);
+
+    try {
+      String formattedName =
+          DataLabelingServiceClient.formatEvaluationJobName("[PROJECT]", "[EVALUATION_JOB]");
+
+      client.resumeEvaluationJob(formattedName);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteEvaluationJobTest() {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockDataLabelingService.addResponse(expectedResponse);
+
+    String formattedName =
+        DataLabelingServiceClient.formatEvaluationJobName("[PROJECT]", "[EVALUATION_JOB]");
+
+    client.deleteEvaluationJob(formattedName);
+
+    List<AbstractMessage> actualRequests = mockDataLabelingService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteEvaluationJobRequest actualRequest = (DeleteEvaluationJobRequest) actualRequests.get(0);
+
+    Assert.assertEquals(formattedName, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteEvaluationJobExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockDataLabelingService.addException(exception);
+
+    try {
+      String formattedName =
+          DataLabelingServiceClient.formatEvaluationJobName("[PROJECT]", "[EVALUATION_JOB]");
+
+      client.deleteEvaluationJob(formattedName);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void listEvaluationJobsTest() {
+    String nextPageToken = "";
+    EvaluationJob evaluationJobsElement = EvaluationJob.newBuilder().build();
+    List<EvaluationJob> evaluationJobs = Arrays.asList(evaluationJobsElement);
+    ListEvaluationJobsResponse expectedResponse =
+        ListEvaluationJobsResponse.newBuilder()
+            .setNextPageToken(nextPageToken)
+            .addAllEvaluationJobs(evaluationJobs)
+            .build();
+    mockDataLabelingService.addResponse(expectedResponse);
+
+    String formattedParent = DataLabelingServiceClient.formatProjectName("[PROJECT]");
+    String filter = "filter-1274492040";
+
+    ListEvaluationJobsPagedResponse pagedListResponse =
+        client.listEvaluationJobs(formattedParent, filter);
+
+    List<EvaluationJob> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getEvaluationJobsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockDataLabelingService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListEvaluationJobsRequest actualRequest = (ListEvaluationJobsRequest) actualRequests.get(0);
+
+    Assert.assertEquals(formattedParent, actualRequest.getParent());
+    Assert.assertEquals(filter, actualRequest.getFilter());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void listEvaluationJobsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockDataLabelingService.addException(exception);
+
+    try {
+      String formattedParent = DataLabelingServiceClient.formatProjectName("[PROJECT]");
+      String filter = "filter-1274492040";
+
+      client.listEvaluationJobs(formattedParent, filter);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

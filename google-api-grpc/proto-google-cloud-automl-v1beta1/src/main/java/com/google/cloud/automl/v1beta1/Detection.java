@@ -76,10 +76,11 @@ public final class Detection {
           + "g_box_metrics_entries\030\004 \003(\01324.google.clo"
           + "ud.automl.v1beta1.BoundingBoxMetricsEntr"
           + "y\022+\n#bounding_box_mean_average_precision"
-          + "\030\006 \001(\002B\204\001\n\037com.google.cloud.automl.v1bet"
+          + "\030\006 \001(\002B\245\001\n\037com.google.cloud.automl.v1bet"
           + "a1P\001ZAgoogle.golang.org/genproto/googlea"
           + "pis/cloud/automl/v1beta1;automl\312\002\033Google"
-          + "\\Cloud\\AutoMl\\V1beta1b\006proto3"
+          + "\\Cloud\\AutoMl\\V1beta1\352\002\036Google::Cloud::A"
+          + "utoML::V1beta1b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {

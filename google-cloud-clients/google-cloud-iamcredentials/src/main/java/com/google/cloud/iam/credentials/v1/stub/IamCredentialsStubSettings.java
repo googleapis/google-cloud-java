@@ -34,8 +34,6 @@ import com.google.cloud.iam.credentials.v1.GenerateAccessTokenRequest;
 import com.google.cloud.iam.credentials.v1.GenerateAccessTokenResponse;
 import com.google.cloud.iam.credentials.v1.GenerateIdTokenRequest;
 import com.google.cloud.iam.credentials.v1.GenerateIdTokenResponse;
-import com.google.cloud.iam.credentials.v1.GenerateIdentityBindingAccessTokenRequest;
-import com.google.cloud.iam.credentials.v1.GenerateIdentityBindingAccessTokenResponse;
 import com.google.cloud.iam.credentials.v1.SignBlobRequest;
 import com.google.cloud.iam.credentials.v1.SignBlobResponse;
 import com.google.cloud.iam.credentials.v1.SignJwtRequest;
@@ -89,9 +87,6 @@ public class IamCredentialsStubSettings extends StubSettings<IamCredentialsStubS
       generateIdTokenSettings;
   private final UnaryCallSettings<SignBlobRequest, SignBlobResponse> signBlobSettings;
   private final UnaryCallSettings<SignJwtRequest, SignJwtResponse> signJwtSettings;
-  private final UnaryCallSettings<
-          GenerateIdentityBindingAccessTokenRequest, GenerateIdentityBindingAccessTokenResponse>
-      generateIdentityBindingAccessTokenSettings;
 
   /** Returns the object with the settings used for calls to generateAccessToken. */
   public UnaryCallSettings<GenerateAccessTokenRequest, GenerateAccessTokenResponse>
@@ -113,13 +108,6 @@ public class IamCredentialsStubSettings extends StubSettings<IamCredentialsStubS
   /** Returns the object with the settings used for calls to signJwt. */
   public UnaryCallSettings<SignJwtRequest, SignJwtResponse> signJwtSettings() {
     return signJwtSettings;
-  }
-
-  /** Returns the object with the settings used for calls to generateIdentityBindingAccessToken. */
-  public UnaryCallSettings<
-          GenerateIdentityBindingAccessTokenRequest, GenerateIdentityBindingAccessTokenResponse>
-      generateIdentityBindingAccessTokenSettings() {
-    return generateIdentityBindingAccessTokenSettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -194,8 +182,6 @@ public class IamCredentialsStubSettings extends StubSettings<IamCredentialsStubS
     generateIdTokenSettings = settingsBuilder.generateIdTokenSettings().build();
     signBlobSettings = settingsBuilder.signBlobSettings().build();
     signJwtSettings = settingsBuilder.signJwtSettings().build();
-    generateIdentityBindingAccessTokenSettings =
-        settingsBuilder.generateIdentityBindingAccessTokenSettings().build();
   }
 
   /** Builder for IamCredentialsStubSettings. */
@@ -208,9 +194,6 @@ public class IamCredentialsStubSettings extends StubSettings<IamCredentialsStubS
         generateIdTokenSettings;
     private final UnaryCallSettings.Builder<SignBlobRequest, SignBlobResponse> signBlobSettings;
     private final UnaryCallSettings.Builder<SignJwtRequest, SignJwtResponse> signJwtSettings;
-    private final UnaryCallSettings.Builder<
-            GenerateIdentityBindingAccessTokenRequest, GenerateIdentityBindingAccessTokenResponse>
-        generateIdentityBindingAccessTokenSettings;
 
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
@@ -261,15 +244,12 @@ public class IamCredentialsStubSettings extends StubSettings<IamCredentialsStubS
 
       signJwtSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
-      generateIdentityBindingAccessTokenSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               generateAccessTokenSettings,
               generateIdTokenSettings,
               signBlobSettings,
-              signJwtSettings,
-              generateIdentityBindingAccessTokenSettings);
+              signJwtSettings);
 
       initDefaults(this);
     }
@@ -305,11 +285,6 @@ public class IamCredentialsStubSettings extends StubSettings<IamCredentialsStubS
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
-      builder
-          .generateIdentityBindingAccessTokenSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
       return builder;
     }
 
@@ -320,16 +295,13 @@ public class IamCredentialsStubSettings extends StubSettings<IamCredentialsStubS
       generateIdTokenSettings = settings.generateIdTokenSettings.toBuilder();
       signBlobSettings = settings.signBlobSettings.toBuilder();
       signJwtSettings = settings.signJwtSettings.toBuilder();
-      generateIdentityBindingAccessTokenSettings =
-          settings.generateIdentityBindingAccessTokenSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               generateAccessTokenSettings,
               generateIdTokenSettings,
               signBlobSettings,
-              signJwtSettings,
-              generateIdentityBindingAccessTokenSettings);
+              signJwtSettings);
     }
 
     // NEXT_MAJOR_VER: remove 'throws Exception'
@@ -368,15 +340,6 @@ public class IamCredentialsStubSettings extends StubSettings<IamCredentialsStubS
     /** Returns the builder for the settings used for calls to signJwt. */
     public UnaryCallSettings.Builder<SignJwtRequest, SignJwtResponse> signJwtSettings() {
       return signJwtSettings;
-    }
-
-    /**
-     * Returns the builder for the settings used for calls to generateIdentityBindingAccessToken.
-     */
-    public UnaryCallSettings.Builder<
-            GenerateIdentityBindingAccessTokenRequest, GenerateIdentityBindingAccessTokenResponse>
-        generateIdentityBindingAccessTokenSettings() {
-      return generateIdentityBindingAccessTokenSettings;
     }
 
     @Override

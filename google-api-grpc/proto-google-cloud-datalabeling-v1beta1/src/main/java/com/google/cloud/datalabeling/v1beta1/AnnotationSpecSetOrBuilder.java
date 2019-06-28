@@ -12,8 +12,7 @@ public interface AnnotationSpecSetOrBuilder
    *
    *
    * <pre>
-   * Output only.
-   * AnnotationSpecSet resource name, format:
+   * Output only. AnnotationSpecSet resource name, format:
    * projects/{project_id}/annotationSpecSets/{annotation_spec_set_id}
    * </pre>
    *
@@ -24,8 +23,7 @@ public interface AnnotationSpecSetOrBuilder
    *
    *
    * <pre>
-   * Output only.
-   * AnnotationSpecSet resource name, format:
+   * Output only. AnnotationSpecSet resource name, format:
    * projects/{project_id}/annotationSpecSets/{annotation_spec_set_id}
    * </pre>
    *
@@ -131,4 +129,49 @@ public interface AnnotationSpecSetOrBuilder
    */
   com.google.cloud.datalabeling.v1beta1.AnnotationSpecOrBuilder getAnnotationSpecsOrBuilder(
       int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The names of any related resources that are blocking changes
+   * to the annotation spec set.
+   * </pre>
+   *
+   * <code>repeated string blocking_resources = 5;</code>
+   */
+  java.util.List<java.lang.String> getBlockingResourcesList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The names of any related resources that are blocking changes
+   * to the annotation spec set.
+   * </pre>
+   *
+   * <code>repeated string blocking_resources = 5;</code>
+   */
+  int getBlockingResourcesCount();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The names of any related resources that are blocking changes
+   * to the annotation spec set.
+   * </pre>
+   *
+   * <code>repeated string blocking_resources = 5;</code>
+   */
+  java.lang.String getBlockingResources(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The names of any related resources that are blocking changes
+   * to the annotation spec set.
+   * </pre>
+   *
+   * <code>repeated string blocking_resources = 5;</code>
+   */
+  com.google.protobuf.ByteString getBlockingResourcesBytes(int index);
 }

@@ -12,7 +12,8 @@ public interface GcsSourceOrBuilder
    *
    *
    * <pre>
-   * Required. The input uri of source file.
+   * Required. The input URI of source file. This must be a Cloud Storage path
+   * (`gs://...`).
    * </pre>
    *
    * <code>string input_uri = 1;</code>
@@ -22,7 +23,8 @@ public interface GcsSourceOrBuilder
    *
    *
    * <pre>
-   * Required. The input uri of source file.
+   * Required. The input URI of source file. This must be a Cloud Storage path
+   * (`gs://...`).
    * </pre>
    *
    * <code>string input_uri = 1;</code>
@@ -33,7 +35,7 @@ public interface GcsSourceOrBuilder
    *
    *
    * <pre>
-   * Required. The format of the gcs source. Only "text/csv" is supported.
+   * Required. The format of the source file. Only "text/csv" is supported.
    * </pre>
    *
    * <code>string mime_type = 2;</code>
@@ -43,7 +45,7 @@ public interface GcsSourceOrBuilder
    *
    *
    * <pre>
-   * Required. The format of the gcs source. Only "text/csv" is supported.
+   * Required. The format of the source file. Only "text/csv" is supported.
    * </pre>
    *
    * <code>string mime_type = 2;</code>

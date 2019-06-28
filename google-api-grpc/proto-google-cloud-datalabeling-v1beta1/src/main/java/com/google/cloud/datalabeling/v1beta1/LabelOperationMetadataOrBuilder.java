@@ -12,8 +12,474 @@ public interface LabelOperationMetadataOrBuilder
    *
    *
    * <pre>
+   * Details of label image classification operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadata image_classification_details = 3;
+   * </code>
+   */
+  boolean hasImageClassificationDetails();
+  /**
+   *
+   *
+   * <pre>
+   * Details of label image classification operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadata image_classification_details = 3;
+   * </code>
+   */
+  com.google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadata
+      getImageClassificationDetails();
+  /**
+   *
+   *
+   * <pre>
+   * Details of label image classification operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadata image_classification_details = 3;
+   * </code>
+   */
+  com.google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadataOrBuilder
+      getImageClassificationDetailsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Details of label image bounding box operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata image_bounding_box_details = 4;
+   * </code>
+   */
+  boolean hasImageBoundingBoxDetails();
+  /**
+   *
+   *
+   * <pre>
+   * Details of label image bounding box operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata image_bounding_box_details = 4;
+   * </code>
+   */
+  com.google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata
+      getImageBoundingBoxDetails();
+  /**
+   *
+   *
+   * <pre>
+   * Details of label image bounding box operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata image_bounding_box_details = 4;
+   * </code>
+   */
+  com.google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadataOrBuilder
+      getImageBoundingBoxDetailsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Details of label image bounding poly operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata image_bounding_poly_details = 11;
+   * </code>
+   */
+  boolean hasImageBoundingPolyDetails();
+  /**
+   *
+   *
+   * <pre>
+   * Details of label image bounding poly operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata image_bounding_poly_details = 11;
+   * </code>
+   */
+  com.google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata
+      getImageBoundingPolyDetails();
+  /**
+   *
+   *
+   * <pre>
+   * Details of label image bounding poly operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata image_bounding_poly_details = 11;
+   * </code>
+   */
+  com.google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadataOrBuilder
+      getImageBoundingPolyDetailsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Details of label image oriented bounding box operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.LabelImageOrientedBoundingBoxOperationMetadata image_oriented_bounding_box_details = 14;
+   * </code>
+   */
+  boolean hasImageOrientedBoundingBoxDetails();
+  /**
+   *
+   *
+   * <pre>
+   * Details of label image oriented bounding box operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.LabelImageOrientedBoundingBoxOperationMetadata image_oriented_bounding_box_details = 14;
+   * </code>
+   */
+  com.google.cloud.datalabeling.v1beta1.LabelImageOrientedBoundingBoxOperationMetadata
+      getImageOrientedBoundingBoxDetails();
+  /**
+   *
+   *
+   * <pre>
+   * Details of label image oriented bounding box operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.LabelImageOrientedBoundingBoxOperationMetadata image_oriented_bounding_box_details = 14;
+   * </code>
+   */
+  com.google.cloud.datalabeling.v1beta1.LabelImageOrientedBoundingBoxOperationMetadataOrBuilder
+      getImageOrientedBoundingBoxDetailsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Details of label image polyline operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata image_polyline_details = 12;
+   * </code>
+   */
+  boolean hasImagePolylineDetails();
+  /**
+   *
+   *
+   * <pre>
+   * Details of label image polyline operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata image_polyline_details = 12;
+   * </code>
+   */
+  com.google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata
+      getImagePolylineDetails();
+  /**
+   *
+   *
+   * <pre>
+   * Details of label image polyline operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata image_polyline_details = 12;
+   * </code>
+   */
+  com.google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadataOrBuilder
+      getImagePolylineDetailsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Details of label image segmentation operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata image_segmentation_details = 15;
+   * </code>
+   */
+  boolean hasImageSegmentationDetails();
+  /**
+   *
+   *
+   * <pre>
+   * Details of label image segmentation operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata image_segmentation_details = 15;
+   * </code>
+   */
+  com.google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata
+      getImageSegmentationDetails();
+  /**
+   *
+   *
+   * <pre>
+   * Details of label image segmentation operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata image_segmentation_details = 15;
+   * </code>
+   */
+  com.google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadataOrBuilder
+      getImageSegmentationDetailsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Details of label video classification operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadata video_classification_details = 5;
+   * </code>
+   */
+  boolean hasVideoClassificationDetails();
+  /**
+   *
+   *
+   * <pre>
+   * Details of label video classification operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadata video_classification_details = 5;
+   * </code>
+   */
+  com.google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadata
+      getVideoClassificationDetails();
+  /**
+   *
+   *
+   * <pre>
+   * Details of label video classification operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadata video_classification_details = 5;
+   * </code>
+   */
+  com.google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadataOrBuilder
+      getVideoClassificationDetailsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Details of label video object detection operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadata video_object_detection_details = 6;
+   * </code>
+   */
+  boolean hasVideoObjectDetectionDetails();
+  /**
+   *
+   *
+   * <pre>
+   * Details of label video object detection operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadata video_object_detection_details = 6;
+   * </code>
+   */
+  com.google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadata
+      getVideoObjectDetectionDetails();
+  /**
+   *
+   *
+   * <pre>
+   * Details of label video object detection operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadata video_object_detection_details = 6;
+   * </code>
+   */
+  com.google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadataOrBuilder
+      getVideoObjectDetectionDetailsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Details of label video object tracking operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadata video_object_tracking_details = 7;
+   * </code>
+   */
+  boolean hasVideoObjectTrackingDetails();
+  /**
+   *
+   *
+   * <pre>
+   * Details of label video object tracking operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadata video_object_tracking_details = 7;
+   * </code>
+   */
+  com.google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadata
+      getVideoObjectTrackingDetails();
+  /**
+   *
+   *
+   * <pre>
+   * Details of label video object tracking operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadata video_object_tracking_details = 7;
+   * </code>
+   */
+  com.google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadataOrBuilder
+      getVideoObjectTrackingDetailsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Details of label video event operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata video_event_details = 8;
+   * </code>
+   */
+  boolean hasVideoEventDetails();
+  /**
+   *
+   *
+   * <pre>
+   * Details of label video event operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata video_event_details = 8;
+   * </code>
+   */
+  com.google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata getVideoEventDetails();
+  /**
+   *
+   *
+   * <pre>
+   * Details of label video event operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata video_event_details = 8;
+   * </code>
+   */
+  com.google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadataOrBuilder
+      getVideoEventDetailsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Details of label text classification operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata text_classification_details = 9;
+   * </code>
+   */
+  boolean hasTextClassificationDetails();
+  /**
+   *
+   *
+   * <pre>
+   * Details of label text classification operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata text_classification_details = 9;
+   * </code>
+   */
+  com.google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata
+      getTextClassificationDetails();
+  /**
+   *
+   *
+   * <pre>
+   * Details of label text classification operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata text_classification_details = 9;
+   * </code>
+   */
+  com.google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadataOrBuilder
+      getTextClassificationDetailsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Details of label text entity extraction operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata text_entity_extraction_details = 13;
+   * </code>
+   */
+  boolean hasTextEntityExtractionDetails();
+  /**
+   *
+   *
+   * <pre>
+   * Details of label text entity extraction operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata text_entity_extraction_details = 13;
+   * </code>
+   */
+  com.google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata
+      getTextEntityExtractionDetails();
+  /**
+   *
+   *
+   * <pre>
+   * Details of label text entity extraction operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata text_entity_extraction_details = 13;
+   * </code>
+   */
+  com.google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadataOrBuilder
+      getTextEntityExtractionDetailsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. Progress of label operation. Range: [0, 100].
-   * Currently not supported.
    * </pre>
    *
    * <code>int32 progress_percent = 1;</code>
@@ -82,276 +548,35 @@ public interface LabelOperationMetadataOrBuilder
   com.google.rpc.StatusOrBuilder getPartialFailuresOrBuilder(int index);
 
   /**
-   * <code>
-   * .google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadata image_classification_details = 3;
-   * </code>
+   *
+   *
+   * <pre>
+   * Output only. Timestamp when labeling request was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 16;</code>
    */
-  boolean hasImageClassificationDetails();
+  boolean hasCreateTime();
   /**
-   * <code>
-   * .google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadata image_classification_details = 3;
-   * </code>
+   *
+   *
+   * <pre>
+   * Output only. Timestamp when labeling request was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 16;</code>
    */
-  com.google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadata
-      getImageClassificationDetails();
+  com.google.protobuf.Timestamp getCreateTime();
   /**
-   * <code>
-   * .google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadata image_classification_details = 3;
-   * </code>
+   *
+   *
+   * <pre>
+   * Output only. Timestamp when labeling request was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 16;</code>
    */
-  com.google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadataOrBuilder
-      getImageClassificationDetailsOrBuilder();
-
-  /**
-   * <code>
-   * .google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata image_bounding_box_details = 4;
-   * </code>
-   */
-  boolean hasImageBoundingBoxDetails();
-  /**
-   * <code>
-   * .google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata image_bounding_box_details = 4;
-   * </code>
-   */
-  com.google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata
-      getImageBoundingBoxDetails();
-  /**
-   * <code>
-   * .google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata image_bounding_box_details = 4;
-   * </code>
-   */
-  com.google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadataOrBuilder
-      getImageBoundingBoxDetailsOrBuilder();
-
-  /**
-   * <code>
-   * .google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata image_bounding_poly_details = 11;
-   * </code>
-   */
-  boolean hasImageBoundingPolyDetails();
-  /**
-   * <code>
-   * .google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata image_bounding_poly_details = 11;
-   * </code>
-   */
-  com.google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata
-      getImageBoundingPolyDetails();
-  /**
-   * <code>
-   * .google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata image_bounding_poly_details = 11;
-   * </code>
-   */
-  com.google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadataOrBuilder
-      getImageBoundingPolyDetailsOrBuilder();
-
-  /**
-   * <code>
-   * .google.cloud.datalabeling.v1beta1.LabelImageOrientedBoundingBoxOperationMetadata image_oriented_bounding_box_details = 14;
-   * </code>
-   */
-  boolean hasImageOrientedBoundingBoxDetails();
-  /**
-   * <code>
-   * .google.cloud.datalabeling.v1beta1.LabelImageOrientedBoundingBoxOperationMetadata image_oriented_bounding_box_details = 14;
-   * </code>
-   */
-  com.google.cloud.datalabeling.v1beta1.LabelImageOrientedBoundingBoxOperationMetadata
-      getImageOrientedBoundingBoxDetails();
-  /**
-   * <code>
-   * .google.cloud.datalabeling.v1beta1.LabelImageOrientedBoundingBoxOperationMetadata image_oriented_bounding_box_details = 14;
-   * </code>
-   */
-  com.google.cloud.datalabeling.v1beta1.LabelImageOrientedBoundingBoxOperationMetadataOrBuilder
-      getImageOrientedBoundingBoxDetailsOrBuilder();
-
-  /**
-   * <code>
-   * .google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata image_polyline_details = 12;
-   * </code>
-   */
-  boolean hasImagePolylineDetails();
-  /**
-   * <code>
-   * .google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata image_polyline_details = 12;
-   * </code>
-   */
-  com.google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata
-      getImagePolylineDetails();
-  /**
-   * <code>
-   * .google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata image_polyline_details = 12;
-   * </code>
-   */
-  com.google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadataOrBuilder
-      getImagePolylineDetailsOrBuilder();
-
-  /**
-   * <code>
-   * .google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata image_segmentation_details = 15;
-   * </code>
-   */
-  boolean hasImageSegmentationDetails();
-  /**
-   * <code>
-   * .google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata image_segmentation_details = 15;
-   * </code>
-   */
-  com.google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata
-      getImageSegmentationDetails();
-  /**
-   * <code>
-   * .google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata image_segmentation_details = 15;
-   * </code>
-   */
-  com.google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadataOrBuilder
-      getImageSegmentationDetailsOrBuilder();
-
-  /**
-   * <code>
-   * .google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadata video_classification_details = 5;
-   * </code>
-   */
-  boolean hasVideoClassificationDetails();
-  /**
-   * <code>
-   * .google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadata video_classification_details = 5;
-   * </code>
-   */
-  com.google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadata
-      getVideoClassificationDetails();
-  /**
-   * <code>
-   * .google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadata video_classification_details = 5;
-   * </code>
-   */
-  com.google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadataOrBuilder
-      getVideoClassificationDetailsOrBuilder();
-
-  /**
-   * <code>
-   * .google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadata video_object_detection_details = 6;
-   * </code>
-   */
-  boolean hasVideoObjectDetectionDetails();
-  /**
-   * <code>
-   * .google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadata video_object_detection_details = 6;
-   * </code>
-   */
-  com.google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadata
-      getVideoObjectDetectionDetails();
-  /**
-   * <code>
-   * .google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadata video_object_detection_details = 6;
-   * </code>
-   */
-  com.google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadataOrBuilder
-      getVideoObjectDetectionDetailsOrBuilder();
-
-  /**
-   * <code>
-   * .google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadata video_object_tracking_details = 7;
-   * </code>
-   */
-  boolean hasVideoObjectTrackingDetails();
-  /**
-   * <code>
-   * .google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadata video_object_tracking_details = 7;
-   * </code>
-   */
-  com.google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadata
-      getVideoObjectTrackingDetails();
-  /**
-   * <code>
-   * .google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadata video_object_tracking_details = 7;
-   * </code>
-   */
-  com.google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadataOrBuilder
-      getVideoObjectTrackingDetailsOrBuilder();
-
-  /**
-   * <code>
-   * .google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata video_event_details = 8;
-   * </code>
-   */
-  boolean hasVideoEventDetails();
-  /**
-   * <code>
-   * .google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata video_event_details = 8;
-   * </code>
-   */
-  com.google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata getVideoEventDetails();
-  /**
-   * <code>
-   * .google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata video_event_details = 8;
-   * </code>
-   */
-  com.google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadataOrBuilder
-      getVideoEventDetailsOrBuilder();
-
-  /**
-   * <code>
-   * .google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata text_classification_details = 9;
-   * </code>
-   */
-  boolean hasTextClassificationDetails();
-  /**
-   * <code>
-   * .google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata text_classification_details = 9;
-   * </code>
-   */
-  com.google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata
-      getTextClassificationDetails();
-  /**
-   * <code>
-   * .google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata text_classification_details = 9;
-   * </code>
-   */
-  com.google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadataOrBuilder
-      getTextClassificationDetailsOrBuilder();
-
-  /**
-   * <code>
-   * .google.cloud.datalabeling.v1beta1.LabelAudioTranscriptionOperationMetadata audio_transcription_details = 10;
-   * </code>
-   */
-  boolean hasAudioTranscriptionDetails();
-  /**
-   * <code>
-   * .google.cloud.datalabeling.v1beta1.LabelAudioTranscriptionOperationMetadata audio_transcription_details = 10;
-   * </code>
-   */
-  com.google.cloud.datalabeling.v1beta1.LabelAudioTranscriptionOperationMetadata
-      getAudioTranscriptionDetails();
-  /**
-   * <code>
-   * .google.cloud.datalabeling.v1beta1.LabelAudioTranscriptionOperationMetadata audio_transcription_details = 10;
-   * </code>
-   */
-  com.google.cloud.datalabeling.v1beta1.LabelAudioTranscriptionOperationMetadataOrBuilder
-      getAudioTranscriptionDetailsOrBuilder();
-
-  /**
-   * <code>
-   * .google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata text_entity_extraction_details = 13;
-   * </code>
-   */
-  boolean hasTextEntityExtractionDetails();
-  /**
-   * <code>
-   * .google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata text_entity_extraction_details = 13;
-   * </code>
-   */
-  com.google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata
-      getTextEntityExtractionDetails();
-  /**
-   * <code>
-   * .google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata text_entity_extraction_details = 13;
-   * </code>
-   */
-  com.google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadataOrBuilder
-      getTextEntityExtractionDetailsOrBuilder();
+  com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
 
   public com.google.cloud.datalabeling.v1beta1.LabelOperationMetadata.DetailsCase getDetailsCase();
 }

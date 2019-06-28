@@ -2513,11 +2513,12 @@ public final class TextSentimentProto {
           + "\020confusion_matrix\030\010 \001(\0132L.google.cloud.a"
           + "utoml.v1beta1.ClassificationEvaluationMe"
           + "trics.ConfusionMatrix\022\036\n\022annotation_spec"
-          + "_id\030\t \003(\tB\002\030\001B\226\001\n\037com.google.cloud.autom"
+          + "_id\030\t \003(\tB\002\030\001B\267\001\n\037com.google.cloud.autom"
           + "l.v1beta1B\022TextSentimentProtoZAgoogle.go"
           + "lang.org/genproto/googleapis/cloud/autom"
           + "l/v1beta1;automl\312\002\033Google\\Cloud\\AutoMl\\V"
-          + "1beta1b\006proto3"
+          + "1beta1\352\002\036Google::Cloud::AutoML::V1beta1b"
+          + "\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {

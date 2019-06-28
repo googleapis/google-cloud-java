@@ -383,7 +383,7 @@ public class SpannerStubSettings extends StubSettings<SpannerStubSettings> {
       RetrySettings settings = null;
       settings =
           RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(1000L))
+              .setInitialRetryDelay(Duration.ofMillis(250L))
               .setRetryDelayMultiplier(1.3)
               .setMaxRetryDelay(Duration.ofMillis(32000L))
               .setInitialRpcTimeout(Duration.ofMillis(60000L))
@@ -394,7 +394,7 @@ public class SpannerStubSettings extends StubSettings<SpannerStubSettings> {
       definitions.put("default", settings);
       settings =
           RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(1000L))
+              .setInitialRetryDelay(Duration.ofMillis(250L))
               .setRetryDelayMultiplier(1.3)
               .setMaxRetryDelay(Duration.ofMillis(32000L))
               .setInitialRpcTimeout(Duration.ofMillis(120000L))
@@ -405,7 +405,7 @@ public class SpannerStubSettings extends StubSettings<SpannerStubSettings> {
       definitions.put("streaming", settings);
       settings =
           RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(1000L))
+              .setInitialRetryDelay(Duration.ofMillis(250L))
               .setRetryDelayMultiplier(1.3)
               .setMaxRetryDelay(Duration.ofMillis(32000L))
               .setInitialRpcTimeout(Duration.ofMillis(3600000L))

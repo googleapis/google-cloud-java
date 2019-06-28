@@ -162,11 +162,11 @@ public interface InstructionOrBuilder
    *
    *
    * <pre>
-   * One of CSV and PDF instruction is required.
-   * Instruction from a csv file, such as for classification task.
-   * Csv file should have exact two columns, in the format of:
-   * The first column is labeled data, such as image reference, text.
-   * The second column is comma separated labels associated with data.
+   * One of CSV or PDF instruction is required.
+   * Instruction from a CSV file, such as for classification task.
+   * The CSV file should have exact two columns, in the following format:
+   * * The first column is labeled data, such as an image reference, text.
+   * * The second column is comma separated labels associated with data.
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.CsvInstruction csv_instruction = 7;</code>
@@ -176,11 +176,11 @@ public interface InstructionOrBuilder
    *
    *
    * <pre>
-   * One of CSV and PDF instruction is required.
-   * Instruction from a csv file, such as for classification task.
-   * Csv file should have exact two columns, in the format of:
-   * The first column is labeled data, such as image reference, text.
-   * The second column is comma separated labels associated with data.
+   * One of CSV or PDF instruction is required.
+   * Instruction from a CSV file, such as for classification task.
+   * The CSV file should have exact two columns, in the following format:
+   * * The first column is labeled data, such as an image reference, text.
+   * * The second column is comma separated labels associated with data.
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.CsvInstruction csv_instruction = 7;</code>
@@ -190,11 +190,11 @@ public interface InstructionOrBuilder
    *
    *
    * <pre>
-   * One of CSV and PDF instruction is required.
-   * Instruction from a csv file, such as for classification task.
-   * Csv file should have exact two columns, in the format of:
-   * The first column is labeled data, such as image reference, text.
-   * The second column is comma separated labels associated with data.
+   * One of CSV or PDF instruction is required.
+   * Instruction from a CSV file, such as for classification task.
+   * The CSV file should have exact two columns, in the following format:
+   * * The first column is labeled data, such as an image reference, text.
+   * * The second column is comma separated labels associated with data.
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.CsvInstruction csv_instruction = 7;</code>
@@ -205,8 +205,9 @@ public interface InstructionOrBuilder
    *
    *
    * <pre>
-   * One of CSV and PDF instruction is required.
-   * Instruction from a PDF doc. The PDF doc should be in GCS bucket.
+   * One of CSV or PDF instruction is required.
+   * Instruction from a PDF document. The PDF should be in a Cloud Storage
+   * bucket.
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.PdfInstruction pdf_instruction = 9;</code>
@@ -216,8 +217,9 @@ public interface InstructionOrBuilder
    *
    *
    * <pre>
-   * One of CSV and PDF instruction is required.
-   * Instruction from a PDF doc. The PDF doc should be in GCS bucket.
+   * One of CSV or PDF instruction is required.
+   * Instruction from a PDF document. The PDF should be in a Cloud Storage
+   * bucket.
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.PdfInstruction pdf_instruction = 9;</code>
@@ -227,11 +229,57 @@ public interface InstructionOrBuilder
    *
    *
    * <pre>
-   * One of CSV and PDF instruction is required.
-   * Instruction from a PDF doc. The PDF doc should be in GCS bucket.
+   * One of CSV or PDF instruction is required.
+   * Instruction from a PDF document. The PDF should be in a Cloud Storage
+   * bucket.
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.PdfInstruction pdf_instruction = 9;</code>
    */
   com.google.cloud.datalabeling.v1beta1.PdfInstructionOrBuilder getPdfInstructionOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The names of any related resources that are blocking changes
+   * to the instruction.
+   * </pre>
+   *
+   * <code>repeated string blocking_resources = 10;</code>
+   */
+  java.util.List<java.lang.String> getBlockingResourcesList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The names of any related resources that are blocking changes
+   * to the instruction.
+   * </pre>
+   *
+   * <code>repeated string blocking_resources = 10;</code>
+   */
+  int getBlockingResourcesCount();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The names of any related resources that are blocking changes
+   * to the instruction.
+   * </pre>
+   *
+   * <code>repeated string blocking_resources = 10;</code>
+   */
+  java.lang.String getBlockingResources(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The names of any related resources that are blocking changes
+   * to the instruction.
+   * </pre>
+   *
+   * <code>repeated string blocking_resources = 10;</code>
+   */
+  com.google.protobuf.ByteString getBlockingResourcesBytes(int index);
 }

@@ -385,54 +385,6 @@ public final class AnnotatedDatasetMetadata extends com.google.protobuf.Generate
     return AnnotationRequestConfigCase.forNumber(annotationRequestConfigCase_);
   }
 
-  public static final int HUMAN_ANNOTATION_CONFIG_FIELD_NUMBER = 1;
-  private com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig humanAnnotationConfig_;
-  /**
-   *
-   *
-   * <pre>
-   * HumanAnnotationConfig used when requesting the human labeling task for this
-   * AnnotatedDataset.
-   * </pre>
-   *
-   * <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig human_annotation_config = 1;
-   * </code>
-   */
-  public boolean hasHumanAnnotationConfig() {
-    return humanAnnotationConfig_ != null;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * HumanAnnotationConfig used when requesting the human labeling task for this
-   * AnnotatedDataset.
-   * </pre>
-   *
-   * <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig human_annotation_config = 1;
-   * </code>
-   */
-  public com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig getHumanAnnotationConfig() {
-    return humanAnnotationConfig_ == null
-        ? com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig.getDefaultInstance()
-        : humanAnnotationConfig_;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * HumanAnnotationConfig used when requesting the human labeling task for this
-   * AnnotatedDataset.
-   * </pre>
-   *
-   * <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig human_annotation_config = 1;
-   * </code>
-   */
-  public com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfigOrBuilder
-      getHumanAnnotationConfigOrBuilder() {
-    return getHumanAnnotationConfig();
-  }
-
   public static final int IMAGE_CLASSIFICATION_CONFIG_FIELD_NUMBER = 2;
   /**
    *
@@ -924,6 +876,54 @@ public final class AnnotatedDatasetMetadata extends com.google.protobuf.Generate
     return com.google.cloud.datalabeling.v1beta1.TextEntityExtractionConfig.getDefaultInstance();
   }
 
+  public static final int HUMAN_ANNOTATION_CONFIG_FIELD_NUMBER = 1;
+  private com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig humanAnnotationConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * HumanAnnotationConfig used when requesting the human labeling task for this
+   * AnnotatedDataset.
+   * </pre>
+   *
+   * <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig human_annotation_config = 1;
+   * </code>
+   */
+  public boolean hasHumanAnnotationConfig() {
+    return humanAnnotationConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * HumanAnnotationConfig used when requesting the human labeling task for this
+   * AnnotatedDataset.
+   * </pre>
+   *
+   * <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig human_annotation_config = 1;
+   * </code>
+   */
+  public com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig getHumanAnnotationConfig() {
+    return humanAnnotationConfig_ == null
+        ? com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig.getDefaultInstance()
+        : humanAnnotationConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * HumanAnnotationConfig used when requesting the human labeling task for this
+   * AnnotatedDataset.
+   * </pre>
+   *
+   * <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig human_annotation_config = 1;
+   * </code>
+   */
+  public com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfigOrBuilder
+      getHumanAnnotationConfigOrBuilder() {
+    return getHumanAnnotationConfig();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1368,11 +1368,6 @@ public final class AnnotatedDatasetMetadata extends com.google.protobuf.Generate
     public com.google.cloud.datalabeling.v1beta1.AnnotatedDatasetMetadata buildPartial() {
       com.google.cloud.datalabeling.v1beta1.AnnotatedDatasetMetadata result =
           new com.google.cloud.datalabeling.v1beta1.AnnotatedDatasetMetadata(this);
-      if (humanAnnotationConfigBuilder_ == null) {
-        result.humanAnnotationConfig_ = humanAnnotationConfig_;
-      } else {
-        result.humanAnnotationConfig_ = humanAnnotationConfigBuilder_.build();
-      }
       if (annotationRequestConfigCase_ == 2) {
         if (imageClassificationConfigBuilder_ == null) {
           result.annotationRequestConfig_ = annotationRequestConfig_;
@@ -1442,6 +1437,11 @@ public final class AnnotatedDatasetMetadata extends com.google.protobuf.Generate
         } else {
           result.annotationRequestConfig_ = textEntityExtractionConfigBuilder_.build();
         }
+      }
+      if (humanAnnotationConfigBuilder_ == null) {
+        result.humanAnnotationConfig_ = humanAnnotationConfig_;
+      } else {
+        result.humanAnnotationConfig_ = humanAnnotationConfigBuilder_.build();
       }
       result.annotationRequestConfigCase_ = annotationRequestConfigCase_;
       onBuilt();
@@ -1597,211 +1597,6 @@ public final class AnnotatedDatasetMetadata extends com.google.protobuf.Generate
       annotationRequestConfig_ = null;
       onChanged();
       return this;
-    }
-
-    private com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig humanAnnotationConfig_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig,
-            com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig.Builder,
-            com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfigOrBuilder>
-        humanAnnotationConfigBuilder_;
-    /**
-     *
-     *
-     * <pre>
-     * HumanAnnotationConfig used when requesting the human labeling task for this
-     * AnnotatedDataset.
-     * </pre>
-     *
-     * <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig human_annotation_config = 1;
-     * </code>
-     */
-    public boolean hasHumanAnnotationConfig() {
-      return humanAnnotationConfigBuilder_ != null || humanAnnotationConfig_ != null;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * HumanAnnotationConfig used when requesting the human labeling task for this
-     * AnnotatedDataset.
-     * </pre>
-     *
-     * <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig human_annotation_config = 1;
-     * </code>
-     */
-    public com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig getHumanAnnotationConfig() {
-      if (humanAnnotationConfigBuilder_ == null) {
-        return humanAnnotationConfig_ == null
-            ? com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig.getDefaultInstance()
-            : humanAnnotationConfig_;
-      } else {
-        return humanAnnotationConfigBuilder_.getMessage();
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * HumanAnnotationConfig used when requesting the human labeling task for this
-     * AnnotatedDataset.
-     * </pre>
-     *
-     * <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig human_annotation_config = 1;
-     * </code>
-     */
-    public Builder setHumanAnnotationConfig(
-        com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig value) {
-      if (humanAnnotationConfigBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        humanAnnotationConfig_ = value;
-        onChanged();
-      } else {
-        humanAnnotationConfigBuilder_.setMessage(value);
-      }
-
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * HumanAnnotationConfig used when requesting the human labeling task for this
-     * AnnotatedDataset.
-     * </pre>
-     *
-     * <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig human_annotation_config = 1;
-     * </code>
-     */
-    public Builder setHumanAnnotationConfig(
-        com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig.Builder builderForValue) {
-      if (humanAnnotationConfigBuilder_ == null) {
-        humanAnnotationConfig_ = builderForValue.build();
-        onChanged();
-      } else {
-        humanAnnotationConfigBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * HumanAnnotationConfig used when requesting the human labeling task for this
-     * AnnotatedDataset.
-     * </pre>
-     *
-     * <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig human_annotation_config = 1;
-     * </code>
-     */
-    public Builder mergeHumanAnnotationConfig(
-        com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig value) {
-      if (humanAnnotationConfigBuilder_ == null) {
-        if (humanAnnotationConfig_ != null) {
-          humanAnnotationConfig_ =
-              com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig.newBuilder(
-                      humanAnnotationConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
-        } else {
-          humanAnnotationConfig_ = value;
-        }
-        onChanged();
-      } else {
-        humanAnnotationConfigBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * HumanAnnotationConfig used when requesting the human labeling task for this
-     * AnnotatedDataset.
-     * </pre>
-     *
-     * <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig human_annotation_config = 1;
-     * </code>
-     */
-    public Builder clearHumanAnnotationConfig() {
-      if (humanAnnotationConfigBuilder_ == null) {
-        humanAnnotationConfig_ = null;
-        onChanged();
-      } else {
-        humanAnnotationConfig_ = null;
-        humanAnnotationConfigBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * HumanAnnotationConfig used when requesting the human labeling task for this
-     * AnnotatedDataset.
-     * </pre>
-     *
-     * <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig human_annotation_config = 1;
-     * </code>
-     */
-    public com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig.Builder
-        getHumanAnnotationConfigBuilder() {
-
-      onChanged();
-      return getHumanAnnotationConfigFieldBuilder().getBuilder();
-    }
-    /**
-     *
-     *
-     * <pre>
-     * HumanAnnotationConfig used when requesting the human labeling task for this
-     * AnnotatedDataset.
-     * </pre>
-     *
-     * <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig human_annotation_config = 1;
-     * </code>
-     */
-    public com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfigOrBuilder
-        getHumanAnnotationConfigOrBuilder() {
-      if (humanAnnotationConfigBuilder_ != null) {
-        return humanAnnotationConfigBuilder_.getMessageOrBuilder();
-      } else {
-        return humanAnnotationConfig_ == null
-            ? com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig.getDefaultInstance()
-            : humanAnnotationConfig_;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * HumanAnnotationConfig used when requesting the human labeling task for this
-     * AnnotatedDataset.
-     * </pre>
-     *
-     * <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig human_annotation_config = 1;
-     * </code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig,
-            com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig.Builder,
-            com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfigOrBuilder>
-        getHumanAnnotationConfigFieldBuilder() {
-      if (humanAnnotationConfigBuilder_ == null) {
-        humanAnnotationConfigBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig,
-                com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig.Builder,
-                com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfigOrBuilder>(
-                getHumanAnnotationConfig(), getParentForChildren(), isClean());
-        humanAnnotationConfig_ = null;
-      }
-      return humanAnnotationConfigBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -4009,6 +3804,211 @@ public final class AnnotatedDatasetMetadata extends com.google.protobuf.Generate
       onChanged();
       ;
       return textEntityExtractionConfigBuilder_;
+    }
+
+    private com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig humanAnnotationConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig,
+            com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig.Builder,
+            com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfigOrBuilder>
+        humanAnnotationConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * HumanAnnotationConfig used when requesting the human labeling task for this
+     * AnnotatedDataset.
+     * </pre>
+     *
+     * <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig human_annotation_config = 1;
+     * </code>
+     */
+    public boolean hasHumanAnnotationConfig() {
+      return humanAnnotationConfigBuilder_ != null || humanAnnotationConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * HumanAnnotationConfig used when requesting the human labeling task for this
+     * AnnotatedDataset.
+     * </pre>
+     *
+     * <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig human_annotation_config = 1;
+     * </code>
+     */
+    public com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig getHumanAnnotationConfig() {
+      if (humanAnnotationConfigBuilder_ == null) {
+        return humanAnnotationConfig_ == null
+            ? com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig.getDefaultInstance()
+            : humanAnnotationConfig_;
+      } else {
+        return humanAnnotationConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * HumanAnnotationConfig used when requesting the human labeling task for this
+     * AnnotatedDataset.
+     * </pre>
+     *
+     * <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig human_annotation_config = 1;
+     * </code>
+     */
+    public Builder setHumanAnnotationConfig(
+        com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig value) {
+      if (humanAnnotationConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        humanAnnotationConfig_ = value;
+        onChanged();
+      } else {
+        humanAnnotationConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * HumanAnnotationConfig used when requesting the human labeling task for this
+     * AnnotatedDataset.
+     * </pre>
+     *
+     * <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig human_annotation_config = 1;
+     * </code>
+     */
+    public Builder setHumanAnnotationConfig(
+        com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig.Builder builderForValue) {
+      if (humanAnnotationConfigBuilder_ == null) {
+        humanAnnotationConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        humanAnnotationConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * HumanAnnotationConfig used when requesting the human labeling task for this
+     * AnnotatedDataset.
+     * </pre>
+     *
+     * <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig human_annotation_config = 1;
+     * </code>
+     */
+    public Builder mergeHumanAnnotationConfig(
+        com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig value) {
+      if (humanAnnotationConfigBuilder_ == null) {
+        if (humanAnnotationConfig_ != null) {
+          humanAnnotationConfig_ =
+              com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig.newBuilder(
+                      humanAnnotationConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          humanAnnotationConfig_ = value;
+        }
+        onChanged();
+      } else {
+        humanAnnotationConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * HumanAnnotationConfig used when requesting the human labeling task for this
+     * AnnotatedDataset.
+     * </pre>
+     *
+     * <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig human_annotation_config = 1;
+     * </code>
+     */
+    public Builder clearHumanAnnotationConfig() {
+      if (humanAnnotationConfigBuilder_ == null) {
+        humanAnnotationConfig_ = null;
+        onChanged();
+      } else {
+        humanAnnotationConfig_ = null;
+        humanAnnotationConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * HumanAnnotationConfig used when requesting the human labeling task for this
+     * AnnotatedDataset.
+     * </pre>
+     *
+     * <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig human_annotation_config = 1;
+     * </code>
+     */
+    public com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig.Builder
+        getHumanAnnotationConfigBuilder() {
+
+      onChanged();
+      return getHumanAnnotationConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * HumanAnnotationConfig used when requesting the human labeling task for this
+     * AnnotatedDataset.
+     * </pre>
+     *
+     * <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig human_annotation_config = 1;
+     * </code>
+     */
+    public com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfigOrBuilder
+        getHumanAnnotationConfigOrBuilder() {
+      if (humanAnnotationConfigBuilder_ != null) {
+        return humanAnnotationConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return humanAnnotationConfig_ == null
+            ? com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig.getDefaultInstance()
+            : humanAnnotationConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * HumanAnnotationConfig used when requesting the human labeling task for this
+     * AnnotatedDataset.
+     * </pre>
+     *
+     * <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig human_annotation_config = 1;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig,
+            com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig.Builder,
+            com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfigOrBuilder>
+        getHumanAnnotationConfigFieldBuilder() {
+      if (humanAnnotationConfigBuilder_ == null) {
+        humanAnnotationConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig,
+                com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig.Builder,
+                com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfigOrBuilder>(
+                getHumanAnnotationConfig(), getParentForChildren(), isClean());
+        humanAnnotationConfig_ = null;
+      }
+      return humanAnnotationConfigBuilder_;
     }
 
     @java.lang.Override

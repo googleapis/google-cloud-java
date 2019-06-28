@@ -54,10 +54,11 @@ public final class AnnotationPayloadOuterClass {
           + "ionH\000\022?\n\006tables\030\n \001(\0132-.google.cloud.aut"
           + "oml.v1beta1.TablesAnnotationH\000\022\032\n\022annota"
           + "tion_spec_id\030\001 \001(\t\022\024\n\014display_name\030\005 \001(\t"
-          + "B\010\n\006detailB\204\001\n\037com.google.cloud.automl.v"
+          + "B\010\n\006detailB\245\001\n\037com.google.cloud.automl.v"
           + "1beta1P\001ZAgoogle.golang.org/genproto/goo"
           + "gleapis/cloud/automl/v1beta1;automl\312\002\033Go"
-          + "ogle\\Cloud\\AutoMl\\V1beta1b\006proto3"
+          + "ogle\\Cloud\\AutoMl\\V1beta1\352\002\036Google::Clou"
+          + "d::AutoML::V1beta1b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {

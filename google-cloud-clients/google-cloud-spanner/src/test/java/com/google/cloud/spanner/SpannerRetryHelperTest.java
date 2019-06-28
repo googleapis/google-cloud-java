@@ -21,9 +21,16 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.fail;
 
+import com.google.common.base.Stopwatch;
+import com.google.protobuf.Duration;
+import com.google.rpc.RetryInfo;
 import io.grpc.Context;
 import io.grpc.Context.CancellableContext;
 import io.grpc.Deadline;
+import io.grpc.Metadata;
+import io.grpc.Status;
+import io.grpc.StatusRuntimeException;
+import io.grpc.protobuf.ProtoUtils;
 import java.util.concurrent.Callable;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
@@ -177,5 +184,36 @@ public class SpannerRetryHelperTest {
           }
         };
     SpannerRetryHelper.runTxWithRetriesOnAborted(callable);
+  }
+
+  @Test
+  public void testExceptionWithRetryInfo() {
+    Metadata.Key<RetryInfo> key = ProtoUtils.keyForProto(RetryInfo.getDefaultInstance());
+    Status status = Status.fromCodeValue(Status.Code.ABORTED.value());
+    Metadata trailers = new Metadata();
+    RetryInfo retryInfo =
+        RetryInfo.newBuilder()
+            .setRetryDelay(Duration.newBuilder().setNanos(100000000).build())
+            .build();
+    trailers.put(key, retryInfo);
+    final SpannerException e =
+        SpannerExceptionFactory.newSpannerException(new StatusRuntimeException(status, trailers));
+    final AtomicInteger attempts = new AtomicInteger();
+    Callable<Integer> callable =
+        new Callable<Integer>() {
+          @Override
+          public Integer call() throws Exception {
+            if (attempts.getAndIncrement() == 0) {
+              throw e;
+            }
+            return 1 + 1;
+          }
+        };
+    // The following call should take at least 100ms, as that is the retry delay specified in the
+    // retry info of the exception.
+    Stopwatch watch = Stopwatch.createStarted();
+    assertThat(SpannerRetryHelper.runTxWithRetriesOnAborted(callable), is(equalTo(2)));
+    long elapsed = watch.elapsed(TimeUnit.MILLISECONDS);
+    assertThat(elapsed >= 100L, is(true));
   }
 }

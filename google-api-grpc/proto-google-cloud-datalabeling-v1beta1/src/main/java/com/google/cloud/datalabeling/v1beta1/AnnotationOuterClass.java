@@ -69,6 +69,14 @@ public final class AnnotationOuterClass {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_datalabeling_v1beta1_TextClassificationAnnotation_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_datalabeling_v1beta1_TextEntityExtractionAnnotation_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_datalabeling_v1beta1_TextEntityExtractionAnnotation_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_datalabeling_v1beta1_SequentialSegment_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_datalabeling_v1beta1_SequentialSegment_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_datalabeling_v1beta1_TimeSegment_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_datalabeling_v1beta1_TimeSegment_fieldAccessorTable;
@@ -89,10 +97,6 @@ public final class AnnotationOuterClass {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_datalabeling_v1beta1_VideoEventAnnotation_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-      internal_static_google_cloud_datalabeling_v1beta1_AudioRecognitionAnnotation_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_cloud_datalabeling_v1beta1_AudioRecognitionAnnotation_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_datalabeling_v1beta1_AnnotationMetadata_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_datalabeling_v1beta1_AnnotationMetadata_fieldAccessorTable;
@@ -111,136 +115,138 @@ public final class AnnotationOuterClass {
     java.lang.String[] descriptorData = {
       "\n2google/cloud/datalabeling/v1beta1/anno"
           + "tation.proto\022!google.cloud.datalabeling."
-          + "v1beta1\032;google/cloud/datalabeling/v1bet"
-          + "a1/annotation_spec_set.proto\032\036google/pro"
-          + "tobuf/duration.proto\032\034google/protobuf/st"
-          + "ruct.proto\032\037google/protobuf/timestamp.pr"
-          + "oto\032\034google/api/annotations.proto\"\342\002\n\nAn"
-          + "notation\022\014\n\004name\030\001 \001(\t\022N\n\021annotation_sou"
-          + "rce\030\002 \001(\01623.google.cloud.datalabeling.v1"
-          + "beta1.AnnotationSource\022L\n\020annotation_val"
-          + "ue\030\003 \001(\01322.google.cloud.datalabeling.v1b"
-          + "eta1.AnnotationValue\022R\n\023annotation_metad"
-          + "ata\030\004 \001(\01325.google.cloud.datalabeling.v1"
-          + "beta1.AnnotationMetadata\022T\n\024annotation_s"
-          + "entiment\030\006 \001(\01626.google.cloud.datalabeli"
-          + "ng.v1beta1.AnnotationSentiment\"\310\007\n\017Annot"
-          + "ationValue\022k\n\037image_classification_annot"
-          + "ation\030\001 \001(\0132@.google.cloud.datalabeling."
-          + "v1beta1.ImageClassificationAnnotationH\000\022"
-          + "h\n\036image_bounding_poly_annotation\030\002 \001(\0132"
-          + ">.google.cloud.datalabeling.v1beta1.Imag"
-          + "eBoundingPolyAnnotationH\000\022_\n\031image_polyl"
-          + "ine_annotation\030\010 \001(\0132:.google.cloud.data"
-          + "labeling.v1beta1.ImagePolylineAnnotation"
-          + "H\000\022g\n\035image_segmentation_annotation\030\t \001("
-          + "\0132>.google.cloud.datalabeling.v1beta1.Im"
-          + "ageSegmentationAnnotationH\000\022i\n\036text_clas"
-          + "sification_annotation\030\003 \001(\0132?.google.clo"
-          + "ud.datalabeling.v1beta1.TextClassificati"
-          + "onAnnotationH\000\022k\n\037video_classification_a"
-          + "nnotation\030\004 \001(\0132@.google.cloud.datalabel"
-          + "ing.v1beta1.VideoClassificationAnnotatio"
-          + "nH\000\022l\n video_object_tracking_annotation\030"
-          + "\005 \001(\0132@.google.cloud.datalabeling.v1beta"
-          + "1.VideoObjectTrackingAnnotationH\000\022Y\n\026vid"
-          + "eo_event_annotation\030\006 \001(\01327.google.cloud"
-          + ".datalabeling.v1beta1.VideoEventAnnotati"
-          + "onH\000\022e\n\034audio_recognition_annotation\030\007 \001"
-          + "(\0132=.google.cloud.datalabeling.v1beta1.A"
-          + "udioRecognitionAnnotationH\000B\014\n\nvalue_typ"
-          + "e\"k\n\035ImageClassificationAnnotation\022J\n\017an"
-          + "notation_spec\030\001 \001(\01321.google.cloud.datal"
-          + "abeling.v1beta1.AnnotationSpec\"\036\n\006Vertex"
-          + "\022\t\n\001x\030\001 \001(\005\022\t\n\001y\030\002 \001(\005\"(\n\020NormalizedVert"
-          + "ex\022\t\n\001x\030\001 \001(\002\022\t\n\001y\030\002 \001(\002\"K\n\014BoundingPoly"
-          + "\022;\n\010vertices\030\001 \003(\0132).google.cloud.datala"
-          + "beling.v1beta1.Vertex\"j\n\026NormalizedBound"
-          + "ingPoly\022P\n\023normalized_vertices\030\001 \003(\01323.g"
-          + "oogle.cloud.datalabeling.v1beta1.Normali"
-          + "zedVertex\"\242\002\n\033ImageBoundingPolyAnnotatio"
-          + "n\022H\n\rbounding_poly\030\002 \001(\0132/.google.cloud."
-          + "datalabeling.v1beta1.BoundingPolyH\000\022]\n\030n"
-          + "ormalized_bounding_poly\030\003 \001(\01329.google.c"
-          + "loud.datalabeling.v1beta1.NormalizedBoun"
-          + "dingPolyH\000\022J\n\017annotation_spec\030\001 \001(\01321.go"
-          + "ogle.cloud.datalabeling.v1beta1.Annotati"
-          + "onSpecB\016\n\014bounded_area\"G\n\010Polyline\022;\n\010ve"
-          + "rtices\030\001 \003(\0132).google.cloud.datalabeling"
-          + ".v1beta1.Vertex\"f\n\022NormalizedPolyline\022P\n"
-          + "\023normalized_vertices\030\001 \003(\01323.google.clou"
-          + "d.datalabeling.v1beta1.NormalizedVertex\""
-          + "\204\002\n\027ImagePolylineAnnotation\022?\n\010polyline\030"
-          + "\002 \001(\0132+.google.cloud.datalabeling.v1beta"
-          + "1.PolylineH\000\022T\n\023normalized_polyline\030\003 \001("
-          + "\01325.google.cloud.datalabeling.v1beta1.No"
-          + "rmalizedPolylineH\000\022J\n\017annotation_spec\030\001 "
+          + "v1beta1\032\034google/api/annotations.proto\032;g"
+          + "oogle/cloud/datalabeling/v1beta1/annotat"
+          + "ion_spec_set.proto\0325google/cloud/datalab"
+          + "eling/v1beta1/data_payloads.proto\032\036googl"
+          + "e/protobuf/duration.proto\"\342\002\n\nAnnotation"
+          + "\022\014\n\004name\030\001 \001(\t\022N\n\021annotation_source\030\002 \001("
+          + "\01623.google.cloud.datalabeling.v1beta1.An"
+          + "notationSource\022L\n\020annotation_value\030\003 \001(\013"
+          + "22.google.cloud.datalabeling.v1beta1.Ann"
+          + "otationValue\022R\n\023annotation_metadata\030\004 \001("
+          + "\01325.google.cloud.datalabeling.v1beta1.An"
+          + "notationMetadata\022T\n\024annotation_sentiment"
+          + "\030\006 \001(\01626.google.cloud.datalabeling.v1bet"
+          + "a1.AnnotationSentiment\"\321\007\n\017AnnotationVal"
+          + "ue\022k\n\037image_classification_annotation\030\001 "
+          + "\001(\0132@.google.cloud.datalabeling.v1beta1."
+          + "ImageClassificationAnnotationH\000\022h\n\036image"
+          + "_bounding_poly_annotation\030\002 \001(\0132>.google"
+          + ".cloud.datalabeling.v1beta1.ImageBoundin"
+          + "gPolyAnnotationH\000\022_\n\031image_polyline_anno"
+          + "tation\030\010 \001(\0132:.google.cloud.datalabeling"
+          + ".v1beta1.ImagePolylineAnnotationH\000\022g\n\035im"
+          + "age_segmentation_annotation\030\t \001(\0132>.goog"
+          + "le.cloud.datalabeling.v1beta1.ImageSegme"
+          + "ntationAnnotationH\000\022i\n\036text_classificati"
+          + "on_annotation\030\003 \001(\0132?.google.cloud.datal"
+          + "abeling.v1beta1.TextClassificationAnnota"
+          + "tionH\000\022n\n!text_entity_extraction_annotat"
+          + "ion\030\n \001(\0132A.google.cloud.datalabeling.v1"
+          + "beta1.TextEntityExtractionAnnotationH\000\022k"
+          + "\n\037video_classification_annotation\030\004 \001(\0132"
+          + "@.google.cloud.datalabeling.v1beta1.Vide"
+          + "oClassificationAnnotationH\000\022l\n video_obj"
+          + "ect_tracking_annotation\030\005 \001(\0132@.google.c"
+          + "loud.datalabeling.v1beta1.VideoObjectTra"
+          + "ckingAnnotationH\000\022Y\n\026video_event_annotat"
+          + "ion\030\006 \001(\01327.google.cloud.datalabeling.v1"
+          + "beta1.VideoEventAnnotationH\000B\014\n\nvalue_ty"
+          + "pe\"k\n\035ImageClassificationAnnotation\022J\n\017a"
+          + "nnotation_spec\030\001 \001(\01321.google.cloud.data"
+          + "labeling.v1beta1.AnnotationSpec\"\036\n\006Verte"
+          + "x\022\t\n\001x\030\001 \001(\005\022\t\n\001y\030\002 \001(\005\"(\n\020NormalizedVer"
+          + "tex\022\t\n\001x\030\001 \001(\002\022\t\n\001y\030\002 \001(\002\"K\n\014BoundingPol"
+          + "y\022;\n\010vertices\030\001 \003(\0132).google.cloud.datal"
+          + "abeling.v1beta1.Vertex\"j\n\026NormalizedBoun"
+          + "dingPoly\022P\n\023normalized_vertices\030\001 \003(\01323."
+          + "google.cloud.datalabeling.v1beta1.Normal"
+          + "izedVertex\"\242\002\n\033ImageBoundingPolyAnnotati"
+          + "on\022H\n\rbounding_poly\030\002 \001(\0132/.google.cloud"
+          + ".datalabeling.v1beta1.BoundingPolyH\000\022]\n\030"
+          + "normalized_bounding_poly\030\003 \001(\01329.google."
+          + "cloud.datalabeling.v1beta1.NormalizedBou"
+          + "ndingPolyH\000\022J\n\017annotation_spec\030\001 \001(\01321.g"
+          + "oogle.cloud.datalabeling.v1beta1.Annotat"
+          + "ionSpecB\016\n\014bounded_area\"G\n\010Polyline\022;\n\010v"
+          + "ertices\030\001 \003(\0132).google.cloud.datalabelin"
+          + "g.v1beta1.Vertex\"f\n\022NormalizedPolyline\022P"
+          + "\n\023normalized_vertices\030\001 \003(\01323.google.clo"
+          + "ud.datalabeling.v1beta1.NormalizedVertex"
+          + "\"\204\002\n\027ImagePolylineAnnotation\022?\n\010polyline"
+          + "\030\002 \001(\0132+.google.cloud.datalabeling.v1bet"
+          + "a1.PolylineH\000\022T\n\023normalized_polyline\030\003 \001"
+          + "(\01325.google.cloud.datalabeling.v1beta1.N"
+          + "ormalizedPolylineH\000\022J\n\017annotation_spec\030\001"
+          + " \001(\01321.google.cloud.datalabeling.v1beta1"
+          + ".AnnotationSpecB\006\n\004poly\"\242\002\n\033ImageSegment"
+          + "ationAnnotation\022o\n\021annotation_colors\030\001 \003"
+          + "(\0132T.google.cloud.datalabeling.v1beta1.I"
+          + "mageSegmentationAnnotation.AnnotationCol"
+          + "orsEntry\022\021\n\tmime_type\030\002 \001(\t\022\023\n\013image_byt"
+          + "es\030\003 \001(\014\032j\n\025AnnotationColorsEntry\022\013\n\003key"
+          + "\030\001 \001(\t\022@\n\005value\030\002 \001(\01321.google.cloud.dat"
+          + "alabeling.v1beta1.AnnotationSpec:\0028\001\"j\n\034"
+          + "TextClassificationAnnotation\022J\n\017annotati"
+          + "on_spec\030\001 \001(\01321.google.cloud.datalabelin"
+          + "g.v1beta1.AnnotationSpec\"\276\001\n\036TextEntityE"
+          + "xtractionAnnotation\022J\n\017annotation_spec\030\001"
+          + " \001(\01321.google.cloud.datalabeling.v1beta1"
+          + ".AnnotationSpec\022P\n\022sequential_segment\030\002 "
+          + "\001(\01324.google.cloud.datalabeling.v1beta1."
+          + "SequentialSegment\"/\n\021SequentialSegment\022\r"
+          + "\n\005start\030\001 \001(\005\022\013\n\003end\030\002 \001(\005\"w\n\013TimeSegmen"
+          + "t\0224\n\021start_time_offset\030\001 \001(\0132\031.google.pr"
+          + "otobuf.Duration\0222\n\017end_time_offset\030\002 \001(\013"
+          + "2\031.google.protobuf.Duration\"\261\001\n\035VideoCla"
+          + "ssificationAnnotation\022D\n\014time_segment\030\001 "
+          + "\001(\0132..google.cloud.datalabeling.v1beta1."
+          + "TimeSegment\022J\n\017annotation_spec\030\002 \001(\01321.g"
+          + "oogle.cloud.datalabeling.v1beta1.Annotat"
+          + "ionSpec\"\376\001\n\023ObjectTrackingFrame\022H\n\rbound"
+          + "ing_poly\030\001 \001(\0132/.google.cloud.datalabeli"
+          + "ng.v1beta1.BoundingPolyH\000\022]\n\030normalized_"
+          + "bounding_poly\030\002 \001(\01329.google.cloud.datal"
+          + "abeling.v1beta1.NormalizedBoundingPolyH\000"
+          + "\022.\n\013time_offset\030\003 \001(\0132\031.google.protobuf."
+          + "DurationB\016\n\014bounded_area\"\211\002\n\035VideoObject"
+          + "TrackingAnnotation\022J\n\017annotation_spec\030\001 "
           + "\001(\01321.google.cloud.datalabeling.v1beta1."
-          + "AnnotationSpecB\006\n\004poly\"\242\002\n\033ImageSegmenta"
-          + "tionAnnotation\022o\n\021annotation_colors\030\001 \003("
-          + "\0132T.google.cloud.datalabeling.v1beta1.Im"
-          + "ageSegmentationAnnotation.AnnotationColo"
-          + "rsEntry\022\021\n\tmime_type\030\002 \001(\t\022\023\n\013image_byte"
-          + "s\030\003 \001(\014\032j\n\025AnnotationColorsEntry\022\013\n\003key\030"
-          + "\001 \001(\t\022@\n\005value\030\002 \001(\01321.google.cloud.data"
-          + "labeling.v1beta1.AnnotationSpec:\0028\001\"j\n\034T"
-          + "extClassificationAnnotation\022J\n\017annotatio"
-          + "n_spec\030\001 \001(\01321.google.cloud.datalabeling"
-          + ".v1beta1.AnnotationSpec\"w\n\013TimeSegment\0224"
-          + "\n\021start_time_offset\030\001 \001(\0132\031.google.proto"
-          + "buf.Duration\0222\n\017end_time_offset\030\002 \001(\0132\031."
-          + "google.protobuf.Duration\"\261\001\n\035VideoClassi"
-          + "ficationAnnotation\022D\n\014time_segment\030\001 \001(\013"
-          + "2..google.cloud.datalabeling.v1beta1.Tim"
-          + "eSegment\022J\n\017annotation_spec\030\002 \001(\01321.goog"
-          + "le.cloud.datalabeling.v1beta1.Annotation"
-          + "Spec\"\376\001\n\023ObjectTrackingFrame\022H\n\rbounding"
-          + "_poly\030\001 \001(\0132/.google.cloud.datalabeling."
-          + "v1beta1.BoundingPolyH\000\022]\n\030normalized_bou"
-          + "nding_poly\030\002 \001(\01329.google.cloud.datalabe"
-          + "ling.v1beta1.NormalizedBoundingPolyH\000\022.\n"
-          + "\013time_offset\030\003 \001(\0132\031.google.protobuf.Dur"
-          + "ationB\016\n\014bounded_area\"\211\002\n\035VideoObjectTra"
-          + "ckingAnnotation\022J\n\017annotation_spec\030\001 \001(\013"
-          + "21.google.cloud.datalabeling.v1beta1.Ann"
-          + "otationSpec\022D\n\014time_segment\030\002 \001(\0132..goog"
-          + "le.cloud.datalabeling.v1beta1.TimeSegmen"
-          + "t\022V\n\026object_tracking_frames\030\003 \003(\01326.goog"
-          + "le.cloud.datalabeling.v1beta1.ObjectTrac"
-          + "kingFrame\"\250\001\n\024VideoEventAnnotation\022J\n\017an"
-          + "notation_spec\030\001 \001(\01321.google.cloud.datal"
-          + "abeling.v1beta1.AnnotationSpec\022D\n\014time_s"
-          + "egment\030\002 \001(\0132..google.cloud.datalabeling"
-          + ".v1beta1.TimeSegment\"\220\001\n\032AudioRecognitio"
-          + "nAnnotation\022\022\n\ntranscript\030\001 \001(\t\022/\n\014start"
-          + "_offset\030\002 \001(\0132\031.google.protobuf.Duration"
-          + "\022-\n\nend_offset\030\003 \001(\0132\031.google.protobuf.D"
-          + "uration\"d\n\022AnnotationMetadata\022N\n\021operato"
-          + "r_metadata\030\002 \001(\01323.google.cloud.datalabe"
-          + "ling.v1beta1.OperatorMetadata\"]\n\020Operato"
-          + "rMetadata\022\r\n\005score\030\001 \001(\002\022\023\n\013total_votes\030"
-          + "\002 \001(\005\022\023\n\013label_votes\030\003 \001(\005\022\020\n\010comments\030\004"
-          + " \003(\t*C\n\020AnnotationSource\022!\n\035ANNOTATION_S"
-          + "OURCE_UNSPECIFIED\020\000\022\014\n\010OPERATOR\020\003*W\n\023Ann"
-          + "otationSentiment\022$\n ANNOTATION_SENTIMENT"
-          + "_UNSPECIFIED\020\000\022\014\n\010NEGATIVE\020\001\022\014\n\010POSITIVE"
-          + "\020\002*\216\004\n\016AnnotationType\022\037\n\033ANNOTATION_TYPE"
-          + "_UNSPECIFIED\020\000\022#\n\037IMAGE_CLASSIFICATION_A"
-          + "NNOTATION\020\001\022!\n\035IMAGE_BOUNDING_BOX_ANNOTA"
-          + "TION\020\002\022*\n&IMAGE_ORIENTED_BOUNDING_BOX_AN"
-          + "NOTATION\020\r\022\"\n\036IMAGE_BOUNDING_POLY_ANNOTA"
-          + "TION\020\n\022\035\n\031IMAGE_POLYLINE_ANNOTATION\020\013\022!\n"
-          + "\035IMAGE_SEGMENTATION_ANNOTATION\020\014\022)\n%VIDE"
-          + "O_SHOTS_CLASSIFICATION_ANNOTATION\020\003\022$\n V"
-          + "IDEO_OBJECT_TRACKING_ANNOTATION\020\004\022%\n!VID"
-          + "EO_OBJECT_DETECTION_ANNOTATION\020\005\022\032\n\026VIDE"
-          + "O_EVENT_ANNOTATION\020\006\022\"\n\036AUDIO_TRANSCRIPT"
-          + "ION_ANNOTATION\020\007\022\"\n\036TEXT_CLASSIFICATION_"
-          + "ANNOTATION\020\010\022%\n!TEXT_ENTITY_EXTRACTION_A"
-          + "NNOTATION\020\tBx\n%com.google.cloud.datalabe"
-          + "ling.v1beta1P\001ZMgoogle.golang.org/genpro"
-          + "to/googleapis/cloud/datalabeling/v1beta1"
-          + ";datalabelingb\006proto3"
+          + "AnnotationSpec\022D\n\014time_segment\030\002 \001(\0132..g"
+          + "oogle.cloud.datalabeling.v1beta1.TimeSeg"
+          + "ment\022V\n\026object_tracking_frames\030\003 \003(\01326.g"
+          + "oogle.cloud.datalabeling.v1beta1.ObjectT"
+          + "rackingFrame\"\250\001\n\024VideoEventAnnotation\022J\n"
+          + "\017annotation_spec\030\001 \001(\01321.google.cloud.da"
+          + "talabeling.v1beta1.AnnotationSpec\022D\n\014tim"
+          + "e_segment\030\002 \001(\0132..google.cloud.datalabel"
+          + "ing.v1beta1.TimeSegment\"d\n\022AnnotationMet"
+          + "adata\022N\n\021operator_metadata\030\002 \001(\01323.googl"
+          + "e.cloud.datalabeling.v1beta1.OperatorMet"
+          + "adata\"]\n\020OperatorMetadata\022\r\n\005score\030\001 \001(\002"
+          + "\022\023\n\013total_votes\030\002 \001(\005\022\023\n\013label_votes\030\003 \001"
+          + "(\005\022\020\n\010comments\030\004 \003(\t*C\n\020AnnotationSource"
+          + "\022!\n\035ANNOTATION_SOURCE_UNSPECIFIED\020\000\022\014\n\010O"
+          + "PERATOR\020\003*W\n\023AnnotationSentiment\022$\n ANNO"
+          + "TATION_SENTIMENT_UNSPECIFIED\020\000\022\014\n\010NEGATI"
+          + "VE\020\001\022\014\n\010POSITIVE\020\002*\221\004\n\016AnnotationType\022\037\n"
+          + "\033ANNOTATION_TYPE_UNSPECIFIED\020\000\022#\n\037IMAGE_"
+          + "CLASSIFICATION_ANNOTATION\020\001\022!\n\035IMAGE_BOU"
+          + "NDING_BOX_ANNOTATION\020\002\022*\n&IMAGE_ORIENTED"
+          + "_BOUNDING_BOX_ANNOTATION\020\r\022\"\n\036IMAGE_BOUN"
+          + "DING_POLY_ANNOTATION\020\n\022\035\n\031IMAGE_POLYLINE"
+          + "_ANNOTATION\020\013\022!\n\035IMAGE_SEGMENTATION_ANNO"
+          + "TATION\020\014\022)\n%VIDEO_SHOTS_CLASSIFICATION_A"
+          + "NNOTATION\020\003\022$\n VIDEO_OBJECT_TRACKING_ANN"
+          + "OTATION\020\004\022%\n!VIDEO_OBJECT_DETECTION_ANNO"
+          + "TATION\020\005\022\032\n\026VIDEO_EVENT_ANNOTATION\020\006\022\"\n\036"
+          + "TEXT_CLASSIFICATION_ANNOTATION\020\010\022%\n!TEXT"
+          + "_ENTITY_EXTRACTION_ANNOTATION\020\t\022%\n!GENER"
+          + "AL_CLASSIFICATION_ANNOTATION\020\016Bx\n%com.go"
+          + "ogle.cloud.datalabeling.v1beta1P\001ZMgoogl"
+          + "e.golang.org/genproto/googleapis/cloud/d"
+          + "atalabeling/v1beta1;datalabelingb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -253,11 +259,10 @@ public final class AnnotationOuterClass {
     com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
         descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.cloud.datalabeling.v1beta1.AnnotationSpecSetOuterClass.getDescriptor(),
-          com.google.protobuf.DurationProto.getDescriptor(),
-          com.google.protobuf.StructProto.getDescriptor(),
-          com.google.protobuf.TimestampProto.getDescriptor(),
           com.google.api.AnnotationsProto.getDescriptor(),
+          com.google.cloud.datalabeling.v1beta1.AnnotationSpecSetOuterClass.getDescriptor(),
+          com.google.cloud.datalabeling.v1beta1.DataPayloads.getDescriptor(),
+          com.google.protobuf.DurationProto.getDescriptor(),
         },
         assigner);
     internal_static_google_cloud_datalabeling_v1beta1_Annotation_descriptor =
@@ -283,10 +288,10 @@ public final class AnnotationOuterClass {
               "ImagePolylineAnnotation",
               "ImageSegmentationAnnotation",
               "TextClassificationAnnotation",
+              "TextEntityExtractionAnnotation",
               "VideoClassificationAnnotation",
               "VideoObjectTrackingAnnotation",
               "VideoEventAnnotation",
-              "AudioRecognitionAnnotation",
               "ValueType",
             });
     internal_static_google_cloud_datalabeling_v1beta1_ImageClassificationAnnotation_descriptor =
@@ -387,8 +392,24 @@ public final class AnnotationOuterClass {
             new java.lang.String[] {
               "AnnotationSpec",
             });
-    internal_static_google_cloud_datalabeling_v1beta1_TimeSegment_descriptor =
+    internal_static_google_cloud_datalabeling_v1beta1_TextEntityExtractionAnnotation_descriptor =
         getDescriptor().getMessageTypes().get(13);
+    internal_static_google_cloud_datalabeling_v1beta1_TextEntityExtractionAnnotation_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_datalabeling_v1beta1_TextEntityExtractionAnnotation_descriptor,
+            new java.lang.String[] {
+              "AnnotationSpec", "SequentialSegment",
+            });
+    internal_static_google_cloud_datalabeling_v1beta1_SequentialSegment_descriptor =
+        getDescriptor().getMessageTypes().get(14);
+    internal_static_google_cloud_datalabeling_v1beta1_SequentialSegment_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_datalabeling_v1beta1_SequentialSegment_descriptor,
+            new java.lang.String[] {
+              "Start", "End",
+            });
+    internal_static_google_cloud_datalabeling_v1beta1_TimeSegment_descriptor =
+        getDescriptor().getMessageTypes().get(15);
     internal_static_google_cloud_datalabeling_v1beta1_TimeSegment_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datalabeling_v1beta1_TimeSegment_descriptor,
@@ -396,7 +417,7 @@ public final class AnnotationOuterClass {
               "StartTimeOffset", "EndTimeOffset",
             });
     internal_static_google_cloud_datalabeling_v1beta1_VideoClassificationAnnotation_descriptor =
-        getDescriptor().getMessageTypes().get(14);
+        getDescriptor().getMessageTypes().get(16);
     internal_static_google_cloud_datalabeling_v1beta1_VideoClassificationAnnotation_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datalabeling_v1beta1_VideoClassificationAnnotation_descriptor,
@@ -404,7 +425,7 @@ public final class AnnotationOuterClass {
               "TimeSegment", "AnnotationSpec",
             });
     internal_static_google_cloud_datalabeling_v1beta1_ObjectTrackingFrame_descriptor =
-        getDescriptor().getMessageTypes().get(15);
+        getDescriptor().getMessageTypes().get(17);
     internal_static_google_cloud_datalabeling_v1beta1_ObjectTrackingFrame_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datalabeling_v1beta1_ObjectTrackingFrame_descriptor,
@@ -412,7 +433,7 @@ public final class AnnotationOuterClass {
               "BoundingPoly", "NormalizedBoundingPoly", "TimeOffset", "BoundedArea",
             });
     internal_static_google_cloud_datalabeling_v1beta1_VideoObjectTrackingAnnotation_descriptor =
-        getDescriptor().getMessageTypes().get(16);
+        getDescriptor().getMessageTypes().get(18);
     internal_static_google_cloud_datalabeling_v1beta1_VideoObjectTrackingAnnotation_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datalabeling_v1beta1_VideoObjectTrackingAnnotation_descriptor,
@@ -420,23 +441,15 @@ public final class AnnotationOuterClass {
               "AnnotationSpec", "TimeSegment", "ObjectTrackingFrames",
             });
     internal_static_google_cloud_datalabeling_v1beta1_VideoEventAnnotation_descriptor =
-        getDescriptor().getMessageTypes().get(17);
+        getDescriptor().getMessageTypes().get(19);
     internal_static_google_cloud_datalabeling_v1beta1_VideoEventAnnotation_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datalabeling_v1beta1_VideoEventAnnotation_descriptor,
             new java.lang.String[] {
               "AnnotationSpec", "TimeSegment",
             });
-    internal_static_google_cloud_datalabeling_v1beta1_AudioRecognitionAnnotation_descriptor =
-        getDescriptor().getMessageTypes().get(18);
-    internal_static_google_cloud_datalabeling_v1beta1_AudioRecognitionAnnotation_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-            internal_static_google_cloud_datalabeling_v1beta1_AudioRecognitionAnnotation_descriptor,
-            new java.lang.String[] {
-              "Transcript", "StartOffset", "EndOffset",
-            });
     internal_static_google_cloud_datalabeling_v1beta1_AnnotationMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(19);
+        getDescriptor().getMessageTypes().get(20);
     internal_static_google_cloud_datalabeling_v1beta1_AnnotationMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datalabeling_v1beta1_AnnotationMetadata_descriptor,
@@ -444,18 +457,17 @@ public final class AnnotationOuterClass {
               "OperatorMetadata",
             });
     internal_static_google_cloud_datalabeling_v1beta1_OperatorMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(20);
+        getDescriptor().getMessageTypes().get(21);
     internal_static_google_cloud_datalabeling_v1beta1_OperatorMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datalabeling_v1beta1_OperatorMetadata_descriptor,
             new java.lang.String[] {
               "Score", "TotalVotes", "LabelVotes", "Comments",
             });
-    com.google.cloud.datalabeling.v1beta1.AnnotationSpecSetOuterClass.getDescriptor();
-    com.google.protobuf.DurationProto.getDescriptor();
-    com.google.protobuf.StructProto.getDescriptor();
-    com.google.protobuf.TimestampProto.getDescriptor();
     com.google.api.AnnotationsProto.getDescriptor();
+    com.google.cloud.datalabeling.v1beta1.AnnotationSpecSetOuterClass.getDescriptor();
+    com.google.cloud.datalabeling.v1beta1.DataPayloads.getDescriptor();
+    com.google.protobuf.DurationProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

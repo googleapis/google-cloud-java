@@ -56,11 +56,11 @@ public final class TextProto {
           + "asetMetadata\"\035\n\033TextExtractionModelMetad"
           + "ata\"5\n\034TextSentimentDatasetMetadata\022\025\n\rs"
           + "entiment_max\030\001 \001(\005\"\034\n\032TextSentimentModel"
-          + "MetadataB\217\001\n\037com.google.cloud.automl.v1b"
+          + "MetadataB\260\001\n\037com.google.cloud.automl.v1b"
           + "eta1B\tTextProtoP\001ZAgoogle.golang.org/gen"
           + "proto/googleapis/cloud/automl/v1beta1;au"
-          + "toml\312\002\033Google\\Cloud\\AutoMl\\V1beta1b\006prot"
-          + "o3"
+          + "toml\312\002\033Google\\Cloud\\AutoMl\\V1beta1\352\002\036Goo"
+          + "gle::Cloud::AutoML::V1beta1b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
