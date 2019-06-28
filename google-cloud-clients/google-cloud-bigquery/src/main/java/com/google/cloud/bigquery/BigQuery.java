@@ -158,11 +158,16 @@ public interface BigQuery extends Service<BigQueryOptions> {
    *     Resource</a>
    */
   enum RoutineField implements FieldSelector {
+    ARGUMENTS("arguments"),
     CREATION_TIME("creationTime"),
+    DEFINITION_BODY("definitionBody"),
     ETAG("etag"),
+    IMPORTED_LIBRARIES("importedLibraries"),
+    LANGUAGE("language"),
     LAST_MODIFIED_TIME("lastModifiedTime"),
+    RETURN_TYPE("returnType"),
     ROUTINE_REFERENCE("routineReference"),
-    TYPE("modelType");
+    ROUTINE_TYPE("routineType");
 
     static final List<? extends FieldSelector> REQUIRED_FIELDS = ImmutableList.of(ROUTINE_REFERENCE);
 
