@@ -16,16 +16,6 @@
 
 package com.google.cloud.bigquery.it;
 
-import static com.google.cloud.bigquery.JobStatus.State.DONE;
-import static com.google.common.truth.Truth.assertThat;
-import static org.junit.Assert.assertArrayEquals;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
-
 import com.google.api.gax.paging.Page;
 import com.google.cloud.Date;
 import com.google.cloud.RetryOption;
@@ -66,9 +56,11 @@ import com.google.cloud.bigquery.ModelInfo;
 import com.google.cloud.bigquery.QueryJobConfiguration;
 import com.google.cloud.bigquery.QueryParameterValue;
 import com.google.cloud.bigquery.Routine;
+import com.google.cloud.bigquery.RoutineArgument;
 import com.google.cloud.bigquery.RoutineId;
 import com.google.cloud.bigquery.RoutineInfo;
 import com.google.cloud.bigquery.Schema;
+import com.google.cloud.bigquery.StandardSQLDataType;
 import com.google.cloud.bigquery.StandardTableDefinition;
 import com.google.cloud.bigquery.Table;
 import com.google.cloud.bigquery.TableDataWriteChannel;
@@ -91,6 +83,13 @@ import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Sets;
 import com.google.common.io.BaseEncoding;
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
+import org.junit.Rule;
+import org.junit.Test;
+import org.junit.rules.Timeout;
+import org.threeten.bp.Duration;
+
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.nio.ByteBuffer;
@@ -108,12 +107,10 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.rules.Timeout;
-import org.threeten.bp.Duration;
+
+import static com.google.cloud.bigquery.JobStatus.State.DONE;
+import static com.google.common.truth.Truth.assertThat;
+import static org.junit.Assert.*;
 
 public class ITBigQueryTest {
 
@@ -1166,7 +1163,26 @@ public class ITBigQueryTest {
     assertTrue(bigquery.delete(routineId));
   }
 
+  @Test
+  public void testRoutineAPICreation() {
+    String routineName = RemoteBigQueryHelper.generateRoutineName();
+    RoutineId routineId = RoutineId.of(ROUTINE_DATASET, routineName);
+    RoutineInfo routineInfo = RoutineInfo.newBuilder(routineId)
+            .setRoutineType("SCALAR_FUNCTION")
+            .setBody("x * 3")
+            .setLanguage("SQL")
+            .setArguments(
+                    ImmutableList.of(
+                            RoutineArgument.newBuilder()
+                                    .setName("x")
+                                    .setDataType(StandardSQLDataType.newBuilder("INT64").build())
+                                    .build()))
+            .build();
 
+    Routine routine = bigquery.create(routineInfo);
+    assertNotNull(routine);
+    assertEquals(routine.getRoutineType(), "SCALAR_FUNCTION");
+  }
 
   @Test
   public void testQuery() throws InterruptedException {

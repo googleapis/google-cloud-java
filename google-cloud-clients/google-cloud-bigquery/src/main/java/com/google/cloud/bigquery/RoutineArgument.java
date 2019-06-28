@@ -64,7 +64,7 @@ public abstract class RoutineArgument {
 
     public abstract Builder toBuilder();
 
-    static Builder newBuilder() { return new AutoValue_RoutineArgument.Builder(); }
+    public static Builder newBuilder() { return new AutoValue_RoutineArgument.Builder(); }
 
     Argument toPb() {
         Argument argumentPb = new Argument()
