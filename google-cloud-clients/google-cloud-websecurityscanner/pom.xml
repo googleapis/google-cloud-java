@@ -54,6 +54,12 @@
       <classifier>testlib</classifier>
       <scope>test</scope>
     </dependency>
+    <!-- Dependency to make truth assertion and failure messages more readable -->
+    <dependency>
+      <groupId>com.google.truth</groupId>
+      <artifactId>truth</artifactId>
+      <scope>test</scope>
+    </dependency>
   </dependencies>
 
   <reporting>
