@@ -15,17 +15,16 @@
  */
 package com.google.cloud.tasks.v2beta3;
 
+import static org.junit.Assert.fail;
+
 import com.google.api.gax.rpc.AlreadyExistsException;
 import com.google.common.base.Preconditions;
 import com.google.protobuf.ByteString;
-import org.junit.*;
-
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
-import static org.junit.Assert.fail;
+import org.junit.*;
 
 public class CloudTasksSmokeTest {
   private static final String PROJECT_ENV_NAME = "GOOGLE_CLOUD_PROJECT";
@@ -51,9 +50,7 @@ public class CloudTasksSmokeTest {
   public static void setupQueue() {
     String queueName = QueueName.of(getProjectId(), getLocationId(), QUEUE_ID).toString();
     try (CloudTasksClient client = CloudTasksClient.create()) {
-      Queue q = Queue.newBuilder()
-              .setName(queueName)
-              .build();
+      Queue q = Queue.newBuilder().setName(queueName).build();
       try {
 
         queue = client.createQueue(LocationName.of(getProjectId(), getLocationId()), q);
@@ -80,13 +77,13 @@ public class CloudTasksSmokeTest {
 
       // Construct the task body.
       Task.Builder taskBuilder =
-              Task.newBuilder()
-                      .setHttpRequest(
-                              HttpRequest.newBuilder()
-                                      .setBody(ByteString.copyFrom(payload, Charset.defaultCharset()))
-                                      .setUrl(url)
-                                      .setHttpMethod(HttpMethod.POST)
-                                      .build());
+          Task.newBuilder()
+              .setHttpRequest(
+                  HttpRequest.newBuilder()
+                      .setBody(ByteString.copyFrom(payload, Charset.defaultCharset()))
+                      .setUrl(url)
+                      .setHttpMethod(HttpMethod.POST)
+                      .build());
 
       // Send create task request.
       Task task = client.createTask(queuePath, taskBuilder.build());
@@ -94,12 +91,11 @@ public class CloudTasksSmokeTest {
     }
   }
 
-
   private static String getProjectId() {
     String projectId = System.getProperty(PROJECT_ENV_NAME, System.getenv(PROJECT_ENV_NAME));
     if (projectId == null) {
       projectId =
-              System.getProperty(LEGACY_PROJECT_ENV_NAME, System.getenv(LEGACY_PROJECT_ENV_NAME));
+          System.getProperty(LEGACY_PROJECT_ENV_NAME, System.getenv(LEGACY_PROJECT_ENV_NAME));
     }
     Preconditions.checkArgument(projectId != null, "A project ID is required.");
     return projectId;
