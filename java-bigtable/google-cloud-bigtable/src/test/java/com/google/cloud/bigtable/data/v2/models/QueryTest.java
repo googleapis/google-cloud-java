@@ -258,4 +258,32 @@ public class QueryTest {
     expect.expect(IllegalArgumentException.class);
     expect.expectMessage("Invalid table name:");
   }
+
+  @Test
+  public void testEquality() {
+    Query request =
+        Query.create(TABLE_ID)
+            .rowKey("row-key")
+            .range("a", "z")
+            .limit(3)
+            .filter(FILTERS.family().exactMatch("test"));
+
+    // Query#toProto should not change the Query instance state
+    request.toProto(requestContext);
+    assertThat(request)
+        .isEqualTo(
+            Query.create(TABLE_ID)
+                .rowKey("row-key")
+                .range("a", "z")
+                .limit(3)
+                .filter(FILTERS.family().exactMatch("test")));
+
+    assertThat(Query.create(TABLE_ID).rowKey("row-key"))
+        .isNotEqualTo(Query.create(TABLE_ID).rowKey("row-key-1"));
+    assertThat(Query.create(TABLE_ID).range("a", "z"))
+        .isNotEqualTo(Query.create(TABLE_ID).range("a", "s"));
+    assertThat(Query.create(TABLE_ID).filter(FILTERS.family().regex("test")))
+        .isNotEqualTo(Query.create(TABLE_ID).filter(FILTERS.family().exactMatch("test-one")));
+    assertThat(Query.create(TABLE_ID).limit(4)).isNotEqualTo(Query.create(TABLE_ID).limit(5));
+  }
 }
