@@ -600,9 +600,6 @@
           </execution>
         </executions>
         <configuration>
-          <includes>
-            <include>**/*SmokeTest.java</include>
-          </includes>
           <forkedProcessTimeoutInSeconds>1200</forkedProcessTimeoutInSeconds>
           <reportNameSuffix>sponge_log</reportNameSuffix>
           <includes>
