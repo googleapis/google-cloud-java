@@ -596,6 +596,7 @@
           <forkedProcessTimeoutInSeconds>1200</forkedProcessTimeoutInSeconds>
           <reportNameSuffix>sponge_log</reportNameSuffix>
           <includes>
+            <include>**/IT*.java</include>
             <include>**/*SmokeTest.java</include>
           </includes>
         </configuration>
