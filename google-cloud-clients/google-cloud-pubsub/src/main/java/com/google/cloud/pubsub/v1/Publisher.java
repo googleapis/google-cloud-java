@@ -342,6 +342,7 @@ public class Publisher {
         } else if (key.isEmpty()) {
           // We will publish the batch with no ordering key outside messagesBatchLock.
           unorderedOutstandingBatch = batch.popOutstandingBatch();
+          it.remove();
         } else if (!sequentialExecutor.hasTasksInflight(key)) {
           publishOutstandingBatch(batch.popOutstandingBatch());
           it.remove();
