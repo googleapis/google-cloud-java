@@ -532,7 +532,6 @@
           <excludes>
             <exclude>**/*SmokeTest.java</exclude>
             <exclude>**/IT*.java</exclude>
-            <exclude>**/*SmokeTest.java</exclude>
           </excludes>
           <reportNameSuffix>sponge_log</reportNameSuffix>
         </configuration>
@@ -596,6 +595,9 @@
         <configuration>
           <forkedProcessTimeoutInSeconds>1200</forkedProcessTimeoutInSeconds>
           <reportNameSuffix>sponge_log</reportNameSuffix>
+          <includes>
+            <include>**/*SmokeTest.java</include>
+          </includes>
         </configuration>
       </plugin>
       <plugin>
