@@ -46,48 +46,8 @@
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>com.google.protobuf</groupId>
-      <artifactId>protobuf-java</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>com.google.protobuf</groupId>
-      <artifactId>protobuf-java-util</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>io.grpc</groupId>
-      <artifactId>grpc-protobuf</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>io.grpc</groupId>
-      <artifactId>grpc-context</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>io.grpc</groupId>
-      <artifactId>grpc-netty-shaded</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>io.grpc</groupId>
-      <artifactId>grpc-stub</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>io.grpc</groupId>
-      <artifactId>grpc-auth</artifactId>
-    </dependency>
-    <dependency>
       <groupId>com.google.api</groupId>
       <artifactId>gax-grpc</artifactId>
-    </dependency>
-
-    <!-- Test dependencies -->
-    <dependency>
-      <groupId>com.google.truth</groupId>
-      <artifactId>truth</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>com.google.guava</groupId>
-      <artifactId>guava-testlib</artifactId>
-      <scope>test</scope>
     </dependency>
   </dependencies>
 </project>
