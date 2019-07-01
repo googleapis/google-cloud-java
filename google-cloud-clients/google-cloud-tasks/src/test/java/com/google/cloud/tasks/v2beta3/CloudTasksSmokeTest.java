@@ -20,11 +20,13 @@ import static org.junit.Assert.fail;
 import com.google.api.gax.rpc.AlreadyExistsException;
 import com.google.common.base.Preconditions;
 import com.google.protobuf.ByteString;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.junit.*;
 
 public class CloudTasksSmokeTest {
   private static final String PROJECT_ENV_NAME = "GOOGLE_CLOUD_PROJECT";
