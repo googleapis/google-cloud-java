@@ -217,14 +217,15 @@ public final class VideoIntelligenceServiceProto {
           + "\rAnnotateVideo\022>.google.cloud.videointel"
           + "ligence.v1p1beta1.AnnotateVideoRequest\032\035"
           + ".google.longrunning.Operation\"%\202\323\344\223\002\037\"\032/"
-          + "v1p1beta1/videos:annotate:\001*B\200\002\n,com.goo"
+          + "v1p1beta1/videos:annotate:\001*B\256\002\n,com.goo"
           + "gle.cloud.videointelligence.v1p1beta1B\035V"
           + "ideoIntelligenceServiceProtoP\001ZYgoogle.g"
           + "olang.org/genproto/googleapis/cloud/vide"
           + "ointelligence/v1p1beta1;videointelligenc"
           + "e\252\002(Google.Cloud.VideoIntelligence.V1P1B"
           + "eta1\312\002(Google\\Cloud\\VideoIntelligence\\V1"
-          + "p1beta1b\006proto3"
+          + "p1beta1\352\002+Google::Cloud::VideoIntelligen"
+          + "ce::V1p1beta1b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
