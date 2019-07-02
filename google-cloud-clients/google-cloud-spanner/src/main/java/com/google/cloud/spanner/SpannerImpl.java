@@ -59,8 +59,8 @@ import javax.annotation.concurrent.GuardedBy;
 
 /** Default implementation of the Cloud Spanner interface. */
 class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
-  private static final int MIN_BACKOFF_MS = 1000;
-  private static final int MAX_BACKOFF_MS = 32000;
+  static final int MIN_BACKOFF_MS = 250;
+  static final int MAX_BACKOFF_MS = 32000;
 
   private static final Logger logger = Logger.getLogger(SpannerImpl.class.getName());
   private static final Tracer tracer = Tracing.getTracer();

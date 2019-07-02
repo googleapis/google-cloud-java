@@ -36,8 +36,8 @@ import org.threeten.bp.Duration;
 class SpannerRetryHelper {
   private static final RetrySettings txRetrySettings =
       RetrySettings.newBuilder()
-          .setInitialRetryDelay(Duration.ofMillis(1000L))
-          .setMaxRetryDelay(Duration.ofMillis(32000L))
+          .setInitialRetryDelay(Duration.ofMillis(SpannerImpl.MIN_BACKOFF_MS))
+          .setMaxRetryDelay(Duration.ofMillis(SpannerImpl.MAX_BACKOFF_MS))
           .setTotalTimeout(Duration.ofMillis(Integer.MAX_VALUE))
           .build();
 
