@@ -110,8 +110,8 @@ public final class ListApplicationsRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required.
-   * Resource name of the profile under which the application is created.
+   * Required. Resource name of the profile under which the application is
+   * created.
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}", for
    * example, "projects/test-project/tenants/test-tenant/profiles/test-profile".
@@ -134,8 +134,8 @@ public final class ListApplicationsRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required.
-   * Resource name of the profile under which the application is created.
+   * Required. Resource name of the profile under which the application is
+   * created.
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}", for
    * example, "projects/test-project/tenants/test-tenant/profiles/test-profile".
@@ -161,8 +161,7 @@ public final class ListApplicationsRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Optional.
-   * The starting indicator from which to return results.
+   * Optional. The starting indicator from which to return results.
    * </pre>
    *
    * <code>string page_token = 2;</code>
@@ -182,8 +181,7 @@ public final class ListApplicationsRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Optional.
-   * The starting indicator from which to return results.
+   * Optional. The starting indicator from which to return results.
    * </pre>
    *
    * <code>string page_token = 2;</code>
@@ -206,8 +204,7 @@ public final class ListApplicationsRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Optional.
-   * The maximum number of applications to be returned, at most 100.
+   * Optional. The maximum number of applications to be returned, at most 100.
    * Default is 100 if a non-positive number is provided.
    * </pre>
    *
@@ -572,8 +569,8 @@ public final class ListApplicationsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required.
-     * Resource name of the profile under which the application is created.
+     * Required. Resource name of the profile under which the application is
+     * created.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}", for
      * example, "projects/test-project/tenants/test-tenant/profiles/test-profile".
@@ -596,8 +593,8 @@ public final class ListApplicationsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required.
-     * Resource name of the profile under which the application is created.
+     * Required. Resource name of the profile under which the application is
+     * created.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}", for
      * example, "projects/test-project/tenants/test-tenant/profiles/test-profile".
@@ -620,8 +617,8 @@ public final class ListApplicationsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required.
-     * Resource name of the profile under which the application is created.
+     * Required. Resource name of the profile under which the application is
+     * created.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}", for
      * example, "projects/test-project/tenants/test-tenant/profiles/test-profile".
@@ -642,8 +639,8 @@ public final class ListApplicationsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required.
-     * Resource name of the profile under which the application is created.
+     * Required. Resource name of the profile under which the application is
+     * created.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}", for
      * example, "projects/test-project/tenants/test-tenant/profiles/test-profile".
@@ -661,8 +658,8 @@ public final class ListApplicationsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required.
-     * Resource name of the profile under which the application is created.
+     * Required. Resource name of the profile under which the application is
+     * created.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}", for
      * example, "projects/test-project/tenants/test-tenant/profiles/test-profile".
@@ -686,8 +683,7 @@ public final class ListApplicationsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Optional.
-     * The starting indicator from which to return results.
+     * Optional. The starting indicator from which to return results.
      * </pre>
      *
      * <code>string page_token = 2;</code>
@@ -707,8 +703,7 @@ public final class ListApplicationsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Optional.
-     * The starting indicator from which to return results.
+     * Optional. The starting indicator from which to return results.
      * </pre>
      *
      * <code>string page_token = 2;</code>
@@ -728,8 +723,7 @@ public final class ListApplicationsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Optional.
-     * The starting indicator from which to return results.
+     * Optional. The starting indicator from which to return results.
      * </pre>
      *
      * <code>string page_token = 2;</code>
@@ -747,8 +741,7 @@ public final class ListApplicationsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Optional.
-     * The starting indicator from which to return results.
+     * Optional. The starting indicator from which to return results.
      * </pre>
      *
      * <code>string page_token = 2;</code>
@@ -763,8 +756,7 @@ public final class ListApplicationsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Optional.
-     * The starting indicator from which to return results.
+     * Optional. The starting indicator from which to return results.
      * </pre>
      *
      * <code>string page_token = 2;</code>
@@ -785,8 +777,7 @@ public final class ListApplicationsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Optional.
-     * The maximum number of applications to be returned, at most 100.
+     * Optional. The maximum number of applications to be returned, at most 100.
      * Default is 100 if a non-positive number is provided.
      * </pre>
      *
@@ -799,8 +790,7 @@ public final class ListApplicationsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Optional.
-     * The maximum number of applications to be returned, at most 100.
+     * Optional. The maximum number of applications to be returned, at most 100.
      * Default is 100 if a non-positive number is provided.
      * </pre>
      *
@@ -816,8 +806,7 @@ public final class ListApplicationsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Optional.
-     * The maximum number of applications to be returned, at most 100.
+     * Optional. The maximum number of applications to be returned, at most 100.
      * Default is 100 if a non-positive number is provided.
      * </pre>
      *

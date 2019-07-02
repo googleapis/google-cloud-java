@@ -103,8 +103,8 @@ public final class JobTitleFilter extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required.
-   * The job title, for example, "Software engineer", or "Product manager".
+   * Required. The job title, for example, "Software engineer", or "Product
+   * manager".
    * </pre>
    *
    * <code>string job_title = 1;</code>
@@ -124,8 +124,8 @@ public final class JobTitleFilter extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required.
-   * The job title, for example, "Software engineer", or "Product manager".
+   * Required. The job title, for example, "Software engineer", or "Product
+   * manager".
    * </pre>
    *
    * <code>string job_title = 1;</code>
@@ -148,9 +148,8 @@ public final class JobTitleFilter extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * Whether to apply negation to the filter so profiles matching the filter
-   * are excluded.
+   * Optional. Whether to apply negation to the filter so profiles matching the
+   * filter are excluded.
    * </pre>
    *
    * <code>bool negated = 2;</code>
@@ -496,8 +495,8 @@ public final class JobTitleFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required.
-     * The job title, for example, "Software engineer", or "Product manager".
+     * Required. The job title, for example, "Software engineer", or "Product
+     * manager".
      * </pre>
      *
      * <code>string job_title = 1;</code>
@@ -517,8 +516,8 @@ public final class JobTitleFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required.
-     * The job title, for example, "Software engineer", or "Product manager".
+     * Required. The job title, for example, "Software engineer", or "Product
+     * manager".
      * </pre>
      *
      * <code>string job_title = 1;</code>
@@ -538,8 +537,8 @@ public final class JobTitleFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required.
-     * The job title, for example, "Software engineer", or "Product manager".
+     * Required. The job title, for example, "Software engineer", or "Product
+     * manager".
      * </pre>
      *
      * <code>string job_title = 1;</code>
@@ -557,8 +556,8 @@ public final class JobTitleFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required.
-     * The job title, for example, "Software engineer", or "Product manager".
+     * Required. The job title, for example, "Software engineer", or "Product
+     * manager".
      * </pre>
      *
      * <code>string job_title = 1;</code>
@@ -573,8 +572,8 @@ public final class JobTitleFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required.
-     * The job title, for example, "Software engineer", or "Product manager".
+     * Required. The job title, for example, "Software engineer", or "Product
+     * manager".
      * </pre>
      *
      * <code>string job_title = 1;</code>
@@ -595,9 +594,8 @@ public final class JobTitleFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Whether to apply negation to the filter so profiles matching the filter
-     * are excluded.
+     * Optional. Whether to apply negation to the filter so profiles matching the
+     * filter are excluded.
      * </pre>
      *
      * <code>bool negated = 2;</code>
@@ -609,9 +607,8 @@ public final class JobTitleFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Whether to apply negation to the filter so profiles matching the filter
-     * are excluded.
+     * Optional. Whether to apply negation to the filter so profiles matching the
+     * filter are excluded.
      * </pre>
      *
      * <code>bool negated = 2;</code>
@@ -626,9 +623,8 @@ public final class JobTitleFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Whether to apply negation to the filter so profiles matching the filter
-     * are excluded.
+     * Optional. Whether to apply negation to the filter so profiles matching the
+     * filter are excluded.
      * </pre>
      *
      * <code>bool negated = 2;</code>

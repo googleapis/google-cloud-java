@@ -169,14 +169,12 @@ public class CompanyServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required.
-   *     <p>Resource name of the tenant under which the company is created.
+   * @param parent Required. Resource name of the tenant under which the company is created.
    *     <p>The format is "projects/{project_id}/tenants/{tenant_id}", for example,
    *     "projects/api-test-project/tenant/foo".
    *     <p>Tenant id is optional and a default tenant is created if unspecified, for example,
    *     "projects/api-test-project".
-   * @param company Required.
-   *     <p>The company to be created.
+   * @param company Required. The company to be created.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Company createCompany(TenantOrProjectName parent, Company company) {
@@ -203,14 +201,12 @@ public class CompanyServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required.
-   *     <p>Resource name of the tenant under which the company is created.
+   * @param parent Required. Resource name of the tenant under which the company is created.
    *     <p>The format is "projects/{project_id}/tenants/{tenant_id}", for example,
    *     "projects/api-test-project/tenant/foo".
    *     <p>Tenant id is optional and a default tenant is created if unspecified, for example,
    *     "projects/api-test-project".
-   * @param company Required.
-   *     <p>The company to be created.
+   * @param company Required. The company to be created.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Company createCompany(String parent, Company company) {
@@ -282,8 +278,7 @@ public class CompanyServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Required.
-   *     <p>The resource name of the company to be retrieved.
+   * @param name Required. The resource name of the company to be retrieved.
    *     <p>The format is "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
    *     example, "projects/api-test-project/tenants/foo/companies/bar".
    *     <p>Tenant id is optional and the default tenant is used if unspecified, for example,
@@ -310,8 +305,7 @@ public class CompanyServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Required.
-   *     <p>The resource name of the company to be retrieved.
+   * @param name Required. The resource name of the company to be retrieved.
    *     <p>The format is "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
    *     example, "projects/api-test-project/tenants/foo/companies/bar".
    *     <p>Tenant id is optional and the default tenant is used if unspecified, for example,
@@ -382,8 +376,7 @@ public class CompanyServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param company Required.
-   *     <p>The company resource to replace the current resource in the system.
+   * @param company Required. The company resource to replace the current resource in the system.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Company updateCompany(Company company) {
@@ -450,8 +443,7 @@ public class CompanyServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Required.
-   *     <p>The resource name of the company to be deleted.
+   * @param name Required. The resource name of the company to be deleted.
    *     <p>The format is "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
    *     example, "projects/api-test-project/tenants/foo/companies/bar".
    *     <p>Tenant id is optional and the default tenant is used if unspecified, for example,
@@ -478,8 +470,7 @@ public class CompanyServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Required.
-   *     <p>The resource name of the company to be deleted.
+   * @param name Required. The resource name of the company to be deleted.
    *     <p>The format is "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
    *     example, "projects/api-test-project/tenants/foo/companies/bar".
    *     <p>Tenant id is optional and the default tenant is used if unspecified, for example,
@@ -552,8 +543,7 @@ public class CompanyServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required.
-   *     <p>Resource name of the tenant under which the company is created.
+   * @param parent Required. Resource name of the tenant under which the company is created.
    *     <p>The format is "projects/{project_id}/tenants/{tenant_id}", for example,
    *     "projects/api-test-project/tenant/foo".
    *     <p>Tenant id is optional and the default tenant is used if unspecified, for example,
@@ -583,8 +573,7 @@ public class CompanyServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required.
-   *     <p>Resource name of the tenant under which the company is created.
+   * @param parent Required. Resource name of the tenant under which the company is created.
    *     <p>The format is "projects/{project_id}/tenants/{tenant_id}", for example,
    *     "projects/api-test-project/tenant/foo".
    *     <p>Tenant id is optional and the default tenant is used if unspecified, for example,

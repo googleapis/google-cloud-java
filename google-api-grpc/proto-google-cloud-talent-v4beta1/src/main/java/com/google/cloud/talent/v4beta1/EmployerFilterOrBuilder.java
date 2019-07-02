@@ -12,8 +12,7 @@ public interface EmployerFilterOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * The name of the employer, for example "Google", "Alphabet".
+   * Required. The name of the employer, for example "Google", "Alphabet".
    * </pre>
    *
    * <code>string employer = 1;</code>
@@ -23,8 +22,7 @@ public interface EmployerFilterOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * The name of the employer, for example "Google", "Alphabet".
+   * Required. The name of the employer, for example "Google", "Alphabet".
    * </pre>
    *
    * <code>string employer = 1;</code>
@@ -35,8 +33,7 @@ public interface EmployerFilterOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * Define set of
+   * Optional. Define set of
    * [EmploymentRecord][google.cloud.talent.v4beta1.EmploymentRecord]s to search
    * against.
    * Defaults to
@@ -50,8 +47,7 @@ public interface EmployerFilterOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * Define set of
+   * Optional. Define set of
    * [EmploymentRecord][google.cloud.talent.v4beta1.EmploymentRecord]s to search
    * against.
    * Defaults to
@@ -66,9 +62,8 @@ public interface EmployerFilterOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * Whether to apply negation to the filter so profiles matching the filter
-   * is excluded.
+   * Optional. Whether to apply negation to the filter so profiles matching the
+   * filter is excluded.
    * </pre>
    *
    * <code>bool negated = 3;</code>

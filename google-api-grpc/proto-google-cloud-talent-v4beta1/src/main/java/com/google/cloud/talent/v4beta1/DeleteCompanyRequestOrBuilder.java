@@ -12,8 +12,7 @@ public interface DeleteCompanyRequestOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * The resource name of the company to be deleted.
+   * Required. The resource name of the company to be deleted.
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
    * example, "projects/api-test-project/tenants/foo/companies/bar".
@@ -28,8 +27,7 @@ public interface DeleteCompanyRequestOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * The resource name of the company to be deleted.
+   * Required. The resource name of the company to be deleted.
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
    * example, "projects/api-test-project/tenants/foo/companies/bar".

@@ -26,9 +26,9 @@ public final class TenantResourceProto {
   static {
     java.lang.String[] descriptorData = {
       "\n(google/cloud/talent/v4beta1/tenant.pro"
-          + "to\022\033google.cloud.talent.v4beta1\032(google/"
-          + "cloud/talent/v4beta1/common.proto\032\034googl"
-          + "e/api/annotations.proto\"\370\001\n\006Tenant\022\014\n\004na"
+          + "to\022\033google.cloud.talent.v4beta1\032\034google/"
+          + "api/annotations.proto\032(google/cloud/tale"
+          + "nt/v4beta1/common.proto\"\370\001\n\006Tenant\022\014\n\004na"
           + "me\030\001 \001(\t\022\023\n\013external_id\030\002 \001(\t\022E\n\nusage_t"
           + "ype\030\003 \001(\01621.google.cloud.talent.v4beta1."
           + "Tenant.DataUsageType\0224\n,keyword_searchab"
@@ -51,8 +51,8 @@ public final class TenantResourceProto {
     com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
         descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.cloud.talent.v4beta1.CommonProto.getDescriptor(),
           com.google.api.AnnotationsProto.getDescriptor(),
+          com.google.cloud.talent.v4beta1.CommonProto.getDescriptor(),
         },
         assigner);
     internal_static_google_cloud_talent_v4beta1_Tenant_descriptor =
@@ -63,8 +63,8 @@ public final class TenantResourceProto {
             new java.lang.String[] {
               "Name", "ExternalId", "UsageType", "KeywordSearchableProfileCustomAttributes",
             });
-    com.google.cloud.talent.v4beta1.CommonProto.getDescriptor();
     com.google.api.AnnotationsProto.getDescriptor();
+    com.google.cloud.talent.v4beta1.CommonProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

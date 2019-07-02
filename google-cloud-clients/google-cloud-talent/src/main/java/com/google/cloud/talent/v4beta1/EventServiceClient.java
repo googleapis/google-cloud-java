@@ -161,15 +161,13 @@ public class EventServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required.
-   *     <p>Resource name of the tenant under which the event is created.
+   * @param parent Required. Resource name of the tenant under which the event is created.
    *     <p>The format is "projects/{project_id}/tenants/{tenant_id}", for example,
    *     "projects/api-test-project/tenant/foo".
    *     <p>Tenant id is optional and a default tenant is created if unspecified, for example,
    *     "projects/api-test-project".
-   * @param clientEvent Required.
-   *     <p>Events issued when end user interacts with customer's application that uses Cloud Talent
-   *     Solution.
+   * @param clientEvent Required. Events issued when end user interacts with customer's application
+   *     that uses Cloud Talent Solution.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ClientEvent createClientEvent(TenantOrProjectName parent, ClientEvent clientEvent) {
@@ -199,15 +197,13 @@ public class EventServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required.
-   *     <p>Resource name of the tenant under which the event is created.
+   * @param parent Required. Resource name of the tenant under which the event is created.
    *     <p>The format is "projects/{project_id}/tenants/{tenant_id}", for example,
    *     "projects/api-test-project/tenant/foo".
    *     <p>Tenant id is optional and a default tenant is created if unspecified, for example,
    *     "projects/api-test-project".
-   * @param clientEvent Required.
-   *     <p>Events issued when end user interacts with customer's application that uses Cloud Talent
-   *     Solution.
+   * @param clientEvent Required. Events issued when end user interacts with customer's application
+   *     that uses Cloud Talent Solution.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ClientEvent createClientEvent(String parent, ClientEvent clientEvent) {

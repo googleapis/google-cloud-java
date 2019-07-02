@@ -12,8 +12,7 @@ public interface EmploymentRecordOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * Start date of the employment.
+   * Optional. Start date of the employment.
    * </pre>
    *
    * <code>.google.type.Date start_date = 1;</code>
@@ -23,8 +22,7 @@ public interface EmploymentRecordOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * Start date of the employment.
+   * Optional. Start date of the employment.
    * </pre>
    *
    * <code>.google.type.Date start_date = 1;</code>
@@ -34,8 +32,7 @@ public interface EmploymentRecordOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * Start date of the employment.
+   * Optional. Start date of the employment.
    * </pre>
    *
    * <code>.google.type.Date start_date = 1;</code>
@@ -46,8 +43,7 @@ public interface EmploymentRecordOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * End date of the employment.
+   * Optional. End date of the employment.
    * </pre>
    *
    * <code>.google.type.Date end_date = 2;</code>
@@ -57,8 +53,7 @@ public interface EmploymentRecordOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * End date of the employment.
+   * Optional. End date of the employment.
    * </pre>
    *
    * <code>.google.type.Date end_date = 2;</code>
@@ -68,8 +63,7 @@ public interface EmploymentRecordOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * End date of the employment.
+   * Optional. End date of the employment.
    * </pre>
    *
    * <code>.google.type.Date end_date = 2;</code>
@@ -80,8 +74,7 @@ public interface EmploymentRecordOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * The name of the employer company/organization.
+   * Optional. The name of the employer company/organization.
    * For example, "Google", "Alphabet", and so on.
    * Number of characters allowed is 100.
    * </pre>
@@ -93,8 +86,7 @@ public interface EmploymentRecordOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * The name of the employer company/organization.
+   * Optional. The name of the employer company/organization.
    * For example, "Google", "Alphabet", and so on.
    * Number of characters allowed is 100.
    * </pre>
@@ -107,8 +99,7 @@ public interface EmploymentRecordOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * The division name of the employment.
+   * Optional. The division name of the employment.
    * For example, division, department, client, and so on.
    * Number of characters allowed is 100.
    * </pre>
@@ -120,8 +111,7 @@ public interface EmploymentRecordOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * The division name of the employment.
+   * Optional. The division name of the employment.
    * For example, division, department, client, and so on.
    * Number of characters allowed is 100.
    * </pre>
@@ -134,8 +124,7 @@ public interface EmploymentRecordOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * The physical address of the employer.
+   * Optional. The physical address of the employer.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Address address = 5;</code>
@@ -145,8 +134,7 @@ public interface EmploymentRecordOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * The physical address of the employer.
+   * Optional. The physical address of the employer.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Address address = 5;</code>
@@ -156,8 +144,7 @@ public interface EmploymentRecordOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * The physical address of the employer.
+   * Optional. The physical address of the employer.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Address address = 5;</code>
@@ -168,8 +155,7 @@ public interface EmploymentRecordOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * The job title of the employment.
+   * Optional. The job title of the employment.
    * For example, "Software Engineer", "Data Scientist", and so on.
    * Number of characters allowed is 100.
    * </pre>
@@ -181,8 +167,7 @@ public interface EmploymentRecordOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * The job title of the employment.
+   * Optional. The job title of the employment.
    * For example, "Software Engineer", "Data Scientist", and so on.
    * Number of characters allowed is 100.
    * </pre>
@@ -195,8 +180,7 @@ public interface EmploymentRecordOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * The description of job content.
+   * Optional. The description of job content.
    * Number of characters allowed is 100,000.
    * </pre>
    *
@@ -207,8 +191,7 @@ public interface EmploymentRecordOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * The description of job content.
+   * Optional. The description of job content.
    * Number of characters allowed is 100,000.
    * </pre>
    *
@@ -220,8 +203,7 @@ public interface EmploymentRecordOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * If the jobs is a supervisor position.
+   * Optional. If the jobs is a supervisor position.
    * </pre>
    *
    * <code>.google.protobuf.BoolValue is_supervisor = 8;</code>
@@ -231,8 +213,7 @@ public interface EmploymentRecordOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * If the jobs is a supervisor position.
+   * Optional. If the jobs is a supervisor position.
    * </pre>
    *
    * <code>.google.protobuf.BoolValue is_supervisor = 8;</code>
@@ -242,8 +223,7 @@ public interface EmploymentRecordOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * If the jobs is a supervisor position.
+   * Optional. If the jobs is a supervisor position.
    * </pre>
    *
    * <code>.google.protobuf.BoolValue is_supervisor = 8;</code>
@@ -254,8 +234,7 @@ public interface EmploymentRecordOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * If this employment is self-employed.
+   * Optional. If this employment is self-employed.
    * </pre>
    *
    * <code>.google.protobuf.BoolValue is_self_employed = 9;</code>
@@ -265,8 +244,7 @@ public interface EmploymentRecordOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * If this employment is self-employed.
+   * Optional. If this employment is self-employed.
    * </pre>
    *
    * <code>.google.protobuf.BoolValue is_self_employed = 9;</code>
@@ -276,8 +254,7 @@ public interface EmploymentRecordOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * If this employment is self-employed.
+   * Optional. If this employment is self-employed.
    * </pre>
    *
    * <code>.google.protobuf.BoolValue is_self_employed = 9;</code>
@@ -288,8 +265,7 @@ public interface EmploymentRecordOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * If this employment is current.
+   * Optional. If this employment is current.
    * </pre>
    *
    * <code>.google.protobuf.BoolValue is_current = 10;</code>
@@ -299,8 +275,7 @@ public interface EmploymentRecordOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * If this employment is current.
+   * Optional. If this employment is current.
    * </pre>
    *
    * <code>.google.protobuf.BoolValue is_current = 10;</code>
@@ -310,8 +285,7 @@ public interface EmploymentRecordOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * If this employment is current.
+   * Optional. If this employment is current.
    * </pre>
    *
    * <code>.google.protobuf.BoolValue is_current = 10;</code>

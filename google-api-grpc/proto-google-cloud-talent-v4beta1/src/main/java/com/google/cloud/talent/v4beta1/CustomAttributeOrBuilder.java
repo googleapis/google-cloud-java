@@ -148,9 +148,8 @@ public interface CustomAttributeOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * If the `filterable` flag is true, custom field values are searchable.
-   * If false, values are not searchable.
+   * Optional. If the `filterable` flag is true, custom field values are
+   * searchable. If false, values are not searchable.
    * Default is false.
    * </pre>
    *

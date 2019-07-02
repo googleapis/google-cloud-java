@@ -103,8 +103,7 @@ public final class SkillFilter extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required.
-   * The skill name. For example, "java", "j2ee", and so on.
+   * Required. The skill name. For example, "java", "j2ee", and so on.
    * </pre>
    *
    * <code>string skill = 1;</code>
@@ -124,8 +123,7 @@ public final class SkillFilter extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required.
-   * The skill name. For example, "java", "j2ee", and so on.
+   * Required. The skill name. For example, "java", "j2ee", and so on.
    * </pre>
    *
    * <code>string skill = 1;</code>
@@ -148,9 +146,8 @@ public final class SkillFilter extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * Whether to apply negation to the filter so profiles matching the filter
-   * are excluded.
+   * Optional. Whether to apply negation to the filter so profiles matching the
+   * filter are excluded.
    * </pre>
    *
    * <code>bool negated = 2;</code>
@@ -496,8 +493,7 @@ public final class SkillFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required.
-     * The skill name. For example, "java", "j2ee", and so on.
+     * Required. The skill name. For example, "java", "j2ee", and so on.
      * </pre>
      *
      * <code>string skill = 1;</code>
@@ -517,8 +513,7 @@ public final class SkillFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required.
-     * The skill name. For example, "java", "j2ee", and so on.
+     * Required. The skill name. For example, "java", "j2ee", and so on.
      * </pre>
      *
      * <code>string skill = 1;</code>
@@ -538,8 +533,7 @@ public final class SkillFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required.
-     * The skill name. For example, "java", "j2ee", and so on.
+     * Required. The skill name. For example, "java", "j2ee", and so on.
      * </pre>
      *
      * <code>string skill = 1;</code>
@@ -557,8 +551,7 @@ public final class SkillFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required.
-     * The skill name. For example, "java", "j2ee", and so on.
+     * Required. The skill name. For example, "java", "j2ee", and so on.
      * </pre>
      *
      * <code>string skill = 1;</code>
@@ -573,8 +566,7 @@ public final class SkillFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required.
-     * The skill name. For example, "java", "j2ee", and so on.
+     * Required. The skill name. For example, "java", "j2ee", and so on.
      * </pre>
      *
      * <code>string skill = 1;</code>
@@ -595,9 +587,8 @@ public final class SkillFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Whether to apply negation to the filter so profiles matching the filter
-     * are excluded.
+     * Optional. Whether to apply negation to the filter so profiles matching the
+     * filter are excluded.
      * </pre>
      *
      * <code>bool negated = 2;</code>
@@ -609,9 +600,8 @@ public final class SkillFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Whether to apply negation to the filter so profiles matching the filter
-     * are excluded.
+     * Optional. Whether to apply negation to the filter so profiles matching the
+     * filter are excluded.
      * </pre>
      *
      * <code>bool negated = 2;</code>
@@ -626,9 +616,8 @@ public final class SkillFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Whether to apply negation to the filter so profiles matching the filter
-     * are excluded.
+     * Optional. Whether to apply negation to the filter so profiles matching the
+     * filter are excluded.
      * </pre>
      *
      * <code>bool negated = 2;</code>

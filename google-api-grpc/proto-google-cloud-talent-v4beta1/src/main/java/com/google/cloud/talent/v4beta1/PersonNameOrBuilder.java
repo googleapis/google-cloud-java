@@ -12,8 +12,8 @@ public interface PersonNameOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * A string represents a person's full name. For example, "Dr. John Smith".
+   * Optional. A string represents a person's full name. For example, "Dr.
+   * John Smith".
    * Number of characters allowed is 100.
    * </pre>
    *
@@ -24,8 +24,8 @@ public interface PersonNameOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * A string represents a person's full name. For example, "Dr. John Smith".
+   * Optional. A string represents a person's full name. For example, "Dr.
+   * John Smith".
    * Number of characters allowed is 100.
    * </pre>
    *
@@ -37,9 +37,8 @@ public interface PersonNameOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * A person's name in a structured way (last name, first name, suffix, and
-   * so on.)
+   * Optional. A person's name in a structured way (last name, first name,
+   * suffix, and so on.)
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.PersonName.PersonStructuredName structured_name = 2;</code>
@@ -49,9 +48,8 @@ public interface PersonNameOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * A person's name in a structured way (last name, first name, suffix, and
-   * so on.)
+   * Optional. A person's name in a structured way (last name, first name,
+   * suffix, and so on.)
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.PersonName.PersonStructuredName structured_name = 2;</code>
@@ -61,9 +59,8 @@ public interface PersonNameOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * A person's name in a structured way (last name, first name, suffix, and
-   * so on.)
+   * Optional. A person's name in a structured way (last name, first name,
+   * suffix, and so on.)
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.PersonName.PersonStructuredName structured_name = 2;</code>
@@ -75,8 +72,7 @@ public interface PersonNameOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * Preferred name for the person. This field is ignored if
+   * Optional. Preferred name for the person. This field is ignored if
    * [structured_name][google.cloud.talent.v4beta1.PersonName.structured_name]
    * is provided.
    * Number of characters allowed is 100.
@@ -89,8 +85,7 @@ public interface PersonNameOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * Preferred name for the person. This field is ignored if
+   * Optional. Preferred name for the person. This field is ignored if
    * [structured_name][google.cloud.talent.v4beta1.PersonName.structured_name]
    * is provided.
    * Number of characters allowed is 100.

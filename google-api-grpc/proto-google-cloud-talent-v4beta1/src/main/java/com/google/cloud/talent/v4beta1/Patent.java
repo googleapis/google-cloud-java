@@ -189,8 +189,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * Name of the patent.
+   * Optional. Name of the patent.
    * Number of characters allowed is 100.
    * </pre>
    *
@@ -211,8 +210,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * Name of the patent.
+   * Optional. Name of the patent.
    * Number of characters allowed is 100.
    * </pre>
    *
@@ -236,8 +234,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * A list of inventors' names.
+   * Optional. A list of inventors' names.
    * Number of characters allowed for each is 100.
    * </pre>
    *
@@ -250,8 +247,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * A list of inventors' names.
+   * Optional. A list of inventors' names.
    * Number of characters allowed for each is 100.
    * </pre>
    *
@@ -264,8 +260,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * A list of inventors' names.
+   * Optional. A list of inventors' names.
    * Number of characters allowed for each is 100.
    * </pre>
    *
@@ -278,8 +273,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * A list of inventors' names.
+   * Optional. A list of inventors' names.
    * Number of characters allowed for each is 100.
    * </pre>
    *
@@ -295,8 +289,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * The status of the patent.
+   * Optional. The status of the patent.
    * Number of characters allowed is 100.
    * </pre>
    *
@@ -317,8 +310,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * The status of the patent.
+   * Optional. The status of the patent.
    * Number of characters allowed is 100.
    * </pre>
    *
@@ -342,8 +334,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * The date the last time the status of the patent was checked.
+   * Optional. The date the last time the status of the patent was checked.
    * </pre>
    *
    * <code>.google.type.Date patent_status_date = 4;</code>
@@ -355,8 +346,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * The date the last time the status of the patent was checked.
+   * Optional. The date the last time the status of the patent was checked.
    * </pre>
    *
    * <code>.google.type.Date patent_status_date = 4;</code>
@@ -370,8 +360,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * The date the last time the status of the patent was checked.
+   * Optional. The date the last time the status of the patent was checked.
    * </pre>
    *
    * <code>.google.type.Date patent_status_date = 4;</code>
@@ -386,8 +375,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * The date that the patent was filed.
+   * Optional. The date that the patent was filed.
    * </pre>
    *
    * <code>.google.type.Date patent_filing_date = 5;</code>
@@ -399,8 +387,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * The date that the patent was filed.
+   * Optional. The date that the patent was filed.
    * </pre>
    *
    * <code>.google.type.Date patent_filing_date = 5;</code>
@@ -414,8 +401,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * The date that the patent was filed.
+   * Optional. The date that the patent was filed.
    * </pre>
    *
    * <code>.google.type.Date patent_filing_date = 5;</code>
@@ -430,8 +416,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * The name of the patent office.
+   * Optional. The name of the patent office.
    * Number of characters allowed is 100.
    * </pre>
    *
@@ -452,8 +437,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * The name of the patent office.
+   * Optional. The name of the patent office.
    * Number of characters allowed is 100.
    * </pre>
    *
@@ -477,8 +461,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * The number of the patent.
+   * Optional. The number of the patent.
    * Number of characters allowed is 100.
    * </pre>
    *
@@ -499,8 +482,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * The number of the patent.
+   * Optional. The number of the patent.
    * Number of characters allowed is 100.
    * </pre>
    *
@@ -524,8 +506,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * The description of the patent.
+   * Optional. The description of the patent.
    * Number of characters allowed is 100,000.
    * </pre>
    *
@@ -546,8 +527,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * The description of the patent.
+   * Optional. The description of the patent.
    * Number of characters allowed is 100,000.
    * </pre>
    *
@@ -571,8 +551,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * The skills used in this patent.
+   * Optional. The skills used in this patent.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.Skill skills_used = 9;</code>
@@ -584,8 +563,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * The skills used in this patent.
+   * Optional. The skills used in this patent.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.Skill skills_used = 9;</code>
@@ -598,8 +576,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * The skills used in this patent.
+   * Optional. The skills used in this patent.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.Skill skills_used = 9;</code>
@@ -611,8 +588,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * The skills used in this patent.
+   * Optional. The skills used in this patent.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.Skill skills_used = 9;</code>
@@ -624,8 +600,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * The skills used in this patent.
+   * Optional. The skills used in this patent.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.Skill skills_used = 9;</code>
@@ -1167,8 +1142,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Name of the patent.
+     * Optional. Name of the patent.
      * Number of characters allowed is 100.
      * </pre>
      *
@@ -1189,8 +1163,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Name of the patent.
+     * Optional. Name of the patent.
      * Number of characters allowed is 100.
      * </pre>
      *
@@ -1211,8 +1184,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Name of the patent.
+     * Optional. Name of the patent.
      * Number of characters allowed is 100.
      * </pre>
      *
@@ -1231,8 +1203,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Name of the patent.
+     * Optional. Name of the patent.
      * Number of characters allowed is 100.
      * </pre>
      *
@@ -1248,8 +1219,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Name of the patent.
+     * Optional. Name of the patent.
      * Number of characters allowed is 100.
      * </pre>
      *
@@ -1279,8 +1249,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * A list of inventors' names.
+     * Optional. A list of inventors' names.
      * Number of characters allowed for each is 100.
      * </pre>
      *
@@ -1293,8 +1262,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * A list of inventors' names.
+     * Optional. A list of inventors' names.
      * Number of characters allowed for each is 100.
      * </pre>
      *
@@ -1307,8 +1275,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * A list of inventors' names.
+     * Optional. A list of inventors' names.
      * Number of characters allowed for each is 100.
      * </pre>
      *
@@ -1321,8 +1288,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * A list of inventors' names.
+     * Optional. A list of inventors' names.
      * Number of characters allowed for each is 100.
      * </pre>
      *
@@ -1335,8 +1301,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * A list of inventors' names.
+     * Optional. A list of inventors' names.
      * Number of characters allowed for each is 100.
      * </pre>
      *
@@ -1355,8 +1320,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * A list of inventors' names.
+     * Optional. A list of inventors' names.
      * Number of characters allowed for each is 100.
      * </pre>
      *
@@ -1375,8 +1339,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * A list of inventors' names.
+     * Optional. A list of inventors' names.
      * Number of characters allowed for each is 100.
      * </pre>
      *
@@ -1392,8 +1355,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * A list of inventors' names.
+     * Optional. A list of inventors' names.
      * Number of characters allowed for each is 100.
      * </pre>
      *
@@ -1409,8 +1371,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * A list of inventors' names.
+     * Optional. A list of inventors' names.
      * Number of characters allowed for each is 100.
      * </pre>
      *
@@ -1432,8 +1393,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The status of the patent.
+     * Optional. The status of the patent.
      * Number of characters allowed is 100.
      * </pre>
      *
@@ -1454,8 +1414,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The status of the patent.
+     * Optional. The status of the patent.
      * Number of characters allowed is 100.
      * </pre>
      *
@@ -1476,8 +1435,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The status of the patent.
+     * Optional. The status of the patent.
      * Number of characters allowed is 100.
      * </pre>
      *
@@ -1496,8 +1454,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The status of the patent.
+     * Optional. The status of the patent.
      * Number of characters allowed is 100.
      * </pre>
      *
@@ -1513,8 +1470,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The status of the patent.
+     * Optional. The status of the patent.
      * Number of characters allowed is 100.
      * </pre>
      *
@@ -1539,8 +1495,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The date the last time the status of the patent was checked.
+     * Optional. The date the last time the status of the patent was checked.
      * </pre>
      *
      * <code>.google.type.Date patent_status_date = 4;</code>
@@ -1552,8 +1507,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The date the last time the status of the patent was checked.
+     * Optional. The date the last time the status of the patent was checked.
      * </pre>
      *
      * <code>.google.type.Date patent_status_date = 4;</code>
@@ -1571,8 +1525,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The date the last time the status of the patent was checked.
+     * Optional. The date the last time the status of the patent was checked.
      * </pre>
      *
      * <code>.google.type.Date patent_status_date = 4;</code>
@@ -1594,8 +1547,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The date the last time the status of the patent was checked.
+     * Optional. The date the last time the status of the patent was checked.
      * </pre>
      *
      * <code>.google.type.Date patent_status_date = 4;</code>
@@ -1614,8 +1566,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The date the last time the status of the patent was checked.
+     * Optional. The date the last time the status of the patent was checked.
      * </pre>
      *
      * <code>.google.type.Date patent_status_date = 4;</code>
@@ -1639,8 +1590,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The date the last time the status of the patent was checked.
+     * Optional. The date the last time the status of the patent was checked.
      * </pre>
      *
      * <code>.google.type.Date patent_status_date = 4;</code>
@@ -1660,8 +1610,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The date the last time the status of the patent was checked.
+     * Optional. The date the last time the status of the patent was checked.
      * </pre>
      *
      * <code>.google.type.Date patent_status_date = 4;</code>
@@ -1675,8 +1624,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The date the last time the status of the patent was checked.
+     * Optional. The date the last time the status of the patent was checked.
      * </pre>
      *
      * <code>.google.type.Date patent_status_date = 4;</code>
@@ -1694,8 +1642,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The date the last time the status of the patent was checked.
+     * Optional. The date the last time the status of the patent was checked.
      * </pre>
      *
      * <code>.google.type.Date patent_status_date = 4;</code>
@@ -1721,8 +1668,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The date that the patent was filed.
+     * Optional. The date that the patent was filed.
      * </pre>
      *
      * <code>.google.type.Date patent_filing_date = 5;</code>
@@ -1734,8 +1680,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The date that the patent was filed.
+     * Optional. The date that the patent was filed.
      * </pre>
      *
      * <code>.google.type.Date patent_filing_date = 5;</code>
@@ -1753,8 +1698,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The date that the patent was filed.
+     * Optional. The date that the patent was filed.
      * </pre>
      *
      * <code>.google.type.Date patent_filing_date = 5;</code>
@@ -1776,8 +1720,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The date that the patent was filed.
+     * Optional. The date that the patent was filed.
      * </pre>
      *
      * <code>.google.type.Date patent_filing_date = 5;</code>
@@ -1796,8 +1739,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The date that the patent was filed.
+     * Optional. The date that the patent was filed.
      * </pre>
      *
      * <code>.google.type.Date patent_filing_date = 5;</code>
@@ -1821,8 +1763,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The date that the patent was filed.
+     * Optional. The date that the patent was filed.
      * </pre>
      *
      * <code>.google.type.Date patent_filing_date = 5;</code>
@@ -1842,8 +1783,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The date that the patent was filed.
+     * Optional. The date that the patent was filed.
      * </pre>
      *
      * <code>.google.type.Date patent_filing_date = 5;</code>
@@ -1857,8 +1797,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The date that the patent was filed.
+     * Optional. The date that the patent was filed.
      * </pre>
      *
      * <code>.google.type.Date patent_filing_date = 5;</code>
@@ -1876,8 +1815,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The date that the patent was filed.
+     * Optional. The date that the patent was filed.
      * </pre>
      *
      * <code>.google.type.Date patent_filing_date = 5;</code>
@@ -1900,8 +1838,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The name of the patent office.
+     * Optional. The name of the patent office.
      * Number of characters allowed is 100.
      * </pre>
      *
@@ -1922,8 +1859,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The name of the patent office.
+     * Optional. The name of the patent office.
      * Number of characters allowed is 100.
      * </pre>
      *
@@ -1944,8 +1880,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The name of the patent office.
+     * Optional. The name of the patent office.
      * Number of characters allowed is 100.
      * </pre>
      *
@@ -1964,8 +1899,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The name of the patent office.
+     * Optional. The name of the patent office.
      * Number of characters allowed is 100.
      * </pre>
      *
@@ -1981,8 +1915,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The name of the patent office.
+     * Optional. The name of the patent office.
      * Number of characters allowed is 100.
      * </pre>
      *
@@ -2004,8 +1937,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The number of the patent.
+     * Optional. The number of the patent.
      * Number of characters allowed is 100.
      * </pre>
      *
@@ -2026,8 +1958,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The number of the patent.
+     * Optional. The number of the patent.
      * Number of characters allowed is 100.
      * </pre>
      *
@@ -2048,8 +1979,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The number of the patent.
+     * Optional. The number of the patent.
      * Number of characters allowed is 100.
      * </pre>
      *
@@ -2068,8 +1998,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The number of the patent.
+     * Optional. The number of the patent.
      * Number of characters allowed is 100.
      * </pre>
      *
@@ -2085,8 +2014,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The number of the patent.
+     * Optional. The number of the patent.
      * Number of characters allowed is 100.
      * </pre>
      *
@@ -2108,8 +2036,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The description of the patent.
+     * Optional. The description of the patent.
      * Number of characters allowed is 100,000.
      * </pre>
      *
@@ -2130,8 +2057,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The description of the patent.
+     * Optional. The description of the patent.
      * Number of characters allowed is 100,000.
      * </pre>
      *
@@ -2152,8 +2078,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The description of the patent.
+     * Optional. The description of the patent.
      * Number of characters allowed is 100,000.
      * </pre>
      *
@@ -2172,8 +2097,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The description of the patent.
+     * Optional. The description of the patent.
      * Number of characters allowed is 100,000.
      * </pre>
      *
@@ -2189,8 +2113,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The description of the patent.
+     * Optional. The description of the patent.
      * Number of characters allowed is 100,000.
      * </pre>
      *
@@ -2227,8 +2150,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The skills used in this patent.
+     * Optional. The skills used in this patent.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Skill skills_used = 9;</code>
@@ -2244,8 +2166,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The skills used in this patent.
+     * Optional. The skills used in this patent.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Skill skills_used = 9;</code>
@@ -2261,8 +2182,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The skills used in this patent.
+     * Optional. The skills used in this patent.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Skill skills_used = 9;</code>
@@ -2278,8 +2198,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The skills used in this patent.
+     * Optional. The skills used in this patent.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Skill skills_used = 9;</code>
@@ -2301,8 +2220,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The skills used in this patent.
+     * Optional. The skills used in this patent.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Skill skills_used = 9;</code>
@@ -2322,8 +2240,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The skills used in this patent.
+     * Optional. The skills used in this patent.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Skill skills_used = 9;</code>
@@ -2345,8 +2262,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The skills used in this patent.
+     * Optional. The skills used in this patent.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Skill skills_used = 9;</code>
@@ -2368,8 +2284,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The skills used in this patent.
+     * Optional. The skills used in this patent.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Skill skills_used = 9;</code>
@@ -2388,8 +2303,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The skills used in this patent.
+     * Optional. The skills used in this patent.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Skill skills_used = 9;</code>
@@ -2409,8 +2323,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The skills used in this patent.
+     * Optional. The skills used in this patent.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Skill skills_used = 9;</code>
@@ -2430,8 +2343,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The skills used in this patent.
+     * Optional. The skills used in this patent.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Skill skills_used = 9;</code>
@@ -2450,8 +2362,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The skills used in this patent.
+     * Optional. The skills used in this patent.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Skill skills_used = 9;</code>
@@ -2470,8 +2381,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The skills used in this patent.
+     * Optional. The skills used in this patent.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Skill skills_used = 9;</code>
@@ -2483,8 +2393,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The skills used in this patent.
+     * Optional. The skills used in this patent.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Skill skills_used = 9;</code>
@@ -2500,8 +2409,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The skills used in this patent.
+     * Optional. The skills used in this patent.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Skill skills_used = 9;</code>
@@ -2518,8 +2426,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The skills used in this patent.
+     * Optional. The skills used in this patent.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Skill skills_used = 9;</code>
@@ -2532,8 +2439,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The skills used in this patent.
+     * Optional. The skills used in this patent.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Skill skills_used = 9;</code>
@@ -2546,8 +2452,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The skills used in this patent.
+     * Optional. The skills used in this patent.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Skill skills_used = 9;</code>
