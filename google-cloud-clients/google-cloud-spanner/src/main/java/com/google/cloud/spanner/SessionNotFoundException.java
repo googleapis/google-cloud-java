@@ -26,6 +26,11 @@ import javax.annotation.Nullable;
 public class SessionNotFoundException extends SpannerException {
   private static final long serialVersionUID = -6395746612598975751L;
 
+  static boolean isSessionNotFoundMessage(String message) {
+    return message != null && message.contains("Session not found")
+        || message.contains("Session was concurrently deleted");
+  }
+
   /** Private constructor. Use {@link SpannerExceptionFactory} to create instances. */
   SessionNotFoundException(
       DoNotConstructDirectly token, @Nullable String message, @Nullable Throwable cause) {
