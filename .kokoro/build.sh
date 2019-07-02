@@ -76,6 +76,9 @@ javadoc)
 integration)
     mvn -B -pl ${INTEGRATION_TEST_ARGS} -DtrimStackTrace=false -fae verify
     ;;
+dependencies)
+    mvn -B dependency:analyze -DfailOnWarning=true
+    ;;
 *)
     ;;
 esac
