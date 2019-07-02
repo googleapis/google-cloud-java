@@ -12,8 +12,8 @@ public interface ListProfilesRequestOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * The resource name of the tenant under which the job is created.
+   * Required. The resource name of the tenant under which the profile is
+   * created.
    * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
    * "projects/api-test-project/tenants/foo".
    * </pre>
@@ -25,8 +25,8 @@ public interface ListProfilesRequestOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * The resource name of the tenant under which the job is created.
+   * Required. The resource name of the tenant under which the profile is
+   * created.
    * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
    * "projects/api-test-project/tenants/foo".
    * </pre>
@@ -39,8 +39,8 @@ public interface ListProfilesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * The token that specifies the current offset (that is, starting result).
+   * Optional. The token that specifies the current offset (that is, starting
+   * result).
    * Please set the value to
    * [ListProfilesResponse.next_page_token][google.cloud.talent.v4beta1.ListProfilesResponse.next_page_token]
    * to continue the list.
@@ -53,8 +53,8 @@ public interface ListProfilesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * The token that specifies the current offset (that is, starting result).
+   * Optional. The token that specifies the current offset (that is, starting
+   * result).
    * Please set the value to
    * [ListProfilesResponse.next_page_token][google.cloud.talent.v4beta1.ListProfilesResponse.next_page_token]
    * to continue the list.
@@ -68,8 +68,7 @@ public interface ListProfilesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * The maximum number of profiles to be returned, at most 100.
+   * Optional. The maximum number of profiles to be returned, at most 100.
    * Default is 100 unless a positive number smaller than 100 is specified.
    * </pre>
    *
@@ -81,9 +80,8 @@ public interface ListProfilesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * A field mask to specify the profile fields to be listed in response.
-   * All fields are listed if it is unset.
+   * Optional. A field mask to specify the profile fields to be listed in
+   * response. All fields are listed if it is unset.
    * Valid values are:
    * * name
    * </pre>
@@ -95,9 +93,8 @@ public interface ListProfilesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * A field mask to specify the profile fields to be listed in response.
-   * All fields are listed if it is unset.
+   * Optional. A field mask to specify the profile fields to be listed in
+   * response. All fields are listed if it is unset.
    * Valid values are:
    * * name
    * </pre>
@@ -109,9 +106,8 @@ public interface ListProfilesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * A field mask to specify the profile fields to be listed in response.
-   * All fields are listed if it is unset.
+   * Optional. A field mask to specify the profile fields to be listed in
+   * response. All fields are listed if it is unset.
    * Valid values are:
    * * name
    * </pre>

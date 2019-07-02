@@ -12,8 +12,8 @@ public interface AdditionalContactInfoOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * The usage of this contact method. For example, SCHOOL, WORK, PERSONAL.
+   * Optional. The usage of this contact method. For example, SCHOOL, WORK,
+   * PERSONAL.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.ContactInfoUsage usage = 1;</code>
@@ -23,8 +23,8 @@ public interface AdditionalContactInfoOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * The usage of this contact method. For example, SCHOOL, WORK, PERSONAL.
+   * Optional. The usage of this contact method. For example, SCHOOL, WORK,
+   * PERSONAL.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.ContactInfoUsage usage = 1;</code>
@@ -35,8 +35,7 @@ public interface AdditionalContactInfoOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * The name of the contact method.
+   * Optional. The name of the contact method.
    * For example, "hangout", "skype".
    * Number of characters allowed is 100.
    * </pre>
@@ -48,8 +47,7 @@ public interface AdditionalContactInfoOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * The name of the contact method.
+   * Optional. The name of the contact method.
    * For example, "hangout", "skype".
    * Number of characters allowed is 100.
    * </pre>
@@ -62,8 +60,7 @@ public interface AdditionalContactInfoOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * The contact id.
+   * Optional. The contact id.
    * Number of characters allowed is 100.
    * </pre>
    *
@@ -74,8 +71,7 @@ public interface AdditionalContactInfoOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * The contact id.
+   * Optional. The contact id.
    * Number of characters allowed is 100.
    * </pre>
    *

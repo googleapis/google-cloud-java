@@ -12,8 +12,8 @@ public interface CommuteFilterOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * The method of transportation for which to calculate the commute time.
+   * Required. The method of transportation for which to calculate the commute
+   * time.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.CommuteMethod commute_method = 1;</code>
@@ -23,8 +23,8 @@ public interface CommuteFilterOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * The method of transportation for which to calculate the commute time.
+   * Required. The method of transportation for which to calculate the commute
+   * time.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.CommuteMethod commute_method = 1;</code>
@@ -35,9 +35,8 @@ public interface CommuteFilterOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * The latitude and longitude of the location from which to calculate the
-   * commute time.
+   * Required. The latitude and longitude of the location from which to
+   * calculate the commute time.
    * </pre>
    *
    * <code>.google.type.LatLng start_coordinates = 2;</code>
@@ -47,9 +46,8 @@ public interface CommuteFilterOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * The latitude and longitude of the location from which to calculate the
-   * commute time.
+   * Required. The latitude and longitude of the location from which to
+   * calculate the commute time.
    * </pre>
    *
    * <code>.google.type.LatLng start_coordinates = 2;</code>
@@ -59,9 +57,8 @@ public interface CommuteFilterOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * The latitude and longitude of the location from which to calculate the
-   * commute time.
+   * Required. The latitude and longitude of the location from which to
+   * calculate the commute time.
    * </pre>
    *
    * <code>.google.type.LatLng start_coordinates = 2;</code>
@@ -72,9 +69,8 @@ public interface CommuteFilterOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * The maximum travel time in seconds. The maximum allowed value is `3600s`
-   * (one hour). Format is `123s`.
+   * Required. The maximum travel time in seconds. The maximum allowed value is
+   * `3600s` (one hour). Format is `123s`.
    * </pre>
    *
    * <code>.google.protobuf.Duration travel_duration = 3;</code>
@@ -84,9 +80,8 @@ public interface CommuteFilterOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * The maximum travel time in seconds. The maximum allowed value is `3600s`
-   * (one hour). Format is `123s`.
+   * Required. The maximum travel time in seconds. The maximum allowed value is
+   * `3600s` (one hour). Format is `123s`.
    * </pre>
    *
    * <code>.google.protobuf.Duration travel_duration = 3;</code>
@@ -96,9 +91,8 @@ public interface CommuteFilterOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * The maximum travel time in seconds. The maximum allowed value is `3600s`
-   * (one hour). Format is `123s`.
+   * Required. The maximum travel time in seconds. The maximum allowed value is
+   * `3600s` (one hour). Format is `123s`.
    * </pre>
    *
    * <code>.google.protobuf.Duration travel_duration = 3;</code>
@@ -109,12 +103,11 @@ public interface CommuteFilterOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * If `true`, jobs without street level addresses may also be returned.
-   * For city level addresses, the city center is used. For state and coarser
-   * level addresses, text matching is used.
-   * If this field is set to `false` or isn't specified, only jobs that include
-   * street level addresses will be returned by commute search.
+   * Optional. If `true`, jobs without street level addresses may also be
+   * returned. For city level addresses, the city center is used. For state and
+   * coarser level addresses, text matching is used. If this field is set to
+   * `false` or isn't specified, only jobs that include street level addresses
+   * will be returned by commute search.
    * </pre>
    *
    * <code>bool allow_imprecise_addresses = 4;</code>
@@ -125,8 +118,8 @@ public interface CommuteFilterOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * Specifies the traffic density to use when calculating commute time.
+   * Optional. Specifies the traffic density to use when calculating commute
+   * time.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.CommuteFilter.RoadTraffic road_traffic = 5;</code>
@@ -136,8 +129,8 @@ public interface CommuteFilterOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * Specifies the traffic density to use when calculating commute time.
+   * Optional. Specifies the traffic density to use when calculating commute
+   * time.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.CommuteFilter.RoadTraffic road_traffic = 5;</code>
@@ -148,9 +141,9 @@ public interface CommuteFilterOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * The departure time used to calculate traffic impact, represented as
-   * [google.type.TimeOfDay][google.type.TimeOfDay] in local time zone.
+   * Optional. The departure time used to calculate traffic impact,
+   * represented as [google.type.TimeOfDay][google.type.TimeOfDay] in local
+   * time zone.
    * Currently traffic model is restricted to hour level resolution.
    * </pre>
    *
@@ -161,9 +154,9 @@ public interface CommuteFilterOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * The departure time used to calculate traffic impact, represented as
-   * [google.type.TimeOfDay][google.type.TimeOfDay] in local time zone.
+   * Optional. The departure time used to calculate traffic impact,
+   * represented as [google.type.TimeOfDay][google.type.TimeOfDay] in local
+   * time zone.
    * Currently traffic model is restricted to hour level resolution.
    * </pre>
    *
@@ -174,9 +167,9 @@ public interface CommuteFilterOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * The departure time used to calculate traffic impact, represented as
-   * [google.type.TimeOfDay][google.type.TimeOfDay] in local time zone.
+   * Optional. The departure time used to calculate traffic impact,
+   * represented as [google.type.TimeOfDay][google.type.TimeOfDay] in local
+   * time zone.
    * Currently traffic model is restricted to hour level resolution.
    * </pre>
    *

@@ -12,8 +12,7 @@ public interface SearchProfilesRequestOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * The resource name of the tenant to search within.
+   * Required. The resource name of the tenant to search within.
    * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
    * "projects/api-test-project/tenants/foo".
    * </pre>
@@ -25,8 +24,7 @@ public interface SearchProfilesRequestOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * The resource name of the tenant to search within.
+   * Required. The resource name of the tenant to search within.
    * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
    * "projects/api-test-project/tenants/foo".
    * </pre>
@@ -39,10 +37,9 @@ public interface SearchProfilesRequestOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * The meta information collected about the profile search user. This is used
-   * to improve the search quality of the service. These values are provided by
-   * users, and must be precise and consistent.
+   * Required. The meta information collected about the profile search user.
+   * This is used to improve the search quality of the service. These values are
+   * provided by users, and must be precise and consistent.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.RequestMetadata request_metadata = 2;</code>
@@ -52,10 +49,9 @@ public interface SearchProfilesRequestOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * The meta information collected about the profile search user. This is used
-   * to improve the search quality of the service. These values are provided by
-   * users, and must be precise and consistent.
+   * Required. The meta information collected about the profile search user.
+   * This is used to improve the search quality of the service. These values are
+   * provided by users, and must be precise and consistent.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.RequestMetadata request_metadata = 2;</code>
@@ -65,10 +61,9 @@ public interface SearchProfilesRequestOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * The meta information collected about the profile search user. This is used
-   * to improve the search quality of the service. These values are provided by
-   * users, and must be precise and consistent.
+   * Required. The meta information collected about the profile search user.
+   * This is used to improve the search quality of the service. These values are
+   * provided by users, and must be precise and consistent.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.RequestMetadata request_metadata = 2;</code>
@@ -79,8 +74,7 @@ public interface SearchProfilesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * Search query to execute. See
+   * Optional. Search query to execute. See
    * [ProfileQuery][google.cloud.talent.v4beta1.ProfileQuery] for more details.
    * </pre>
    *
@@ -91,8 +85,7 @@ public interface SearchProfilesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * Search query to execute. See
+   * Optional. Search query to execute. See
    * [ProfileQuery][google.cloud.talent.v4beta1.ProfileQuery] for more details.
    * </pre>
    *
@@ -103,8 +96,7 @@ public interface SearchProfilesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * Search query to execute. See
+   * Optional. Search query to execute. See
    * [ProfileQuery][google.cloud.talent.v4beta1.ProfileQuery] for more details.
    * </pre>
    *
@@ -116,8 +108,7 @@ public interface SearchProfilesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * A limit on the number of profiles returned in the search results.
+   * Optional. A limit on the number of profiles returned in the search results.
    * A value above the default value 10 can increase search response time.
    * The maximum value allowed is 100. Otherwise an error is thrown.
    * </pre>
@@ -130,10 +121,9 @@ public interface SearchProfilesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * The pageToken, similar to offset enables users of the API to paginate
-   * through the search results. To retrieve the first page of results, set the
-   * pageToken to empty. The search response includes a
+   * Optional. The pageToken, similar to offset enables users of the API to
+   * paginate through the search results. To retrieve the first page of results,
+   * set the pageToken to empty. The search response includes a
    * [nextPageToken][google.cloud.talent.v4beta1.SearchProfilesResponse.next_page_token]
    * field that can be used to populate the pageToken field for the next page of
    * results. Using pageToken instead of offset increases the performance of the
@@ -147,10 +137,9 @@ public interface SearchProfilesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * The pageToken, similar to offset enables users of the API to paginate
-   * through the search results. To retrieve the first page of results, set the
-   * pageToken to empty. The search response includes a
+   * Optional. The pageToken, similar to offset enables users of the API to
+   * paginate through the search results. To retrieve the first page of results,
+   * set the pageToken to empty. The search response includes a
    * [nextPageToken][google.cloud.talent.v4beta1.SearchProfilesResponse.next_page_token]
    * field that can be used to populate the pageToken field for the next page of
    * results. Using pageToken instead of offset increases the performance of the
@@ -165,9 +154,8 @@ public interface SearchProfilesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * An integer that specifies the current offset (that is, starting result) in
-   * search results. This field is only considered if
+   * Optional. An integer that specifies the current offset (that is, starting
+   * result) in search results. This field is only considered if
    * [page_token][google.cloud.talent.v4beta1.SearchProfilesRequest.page_token]
    * is unset.
    * The maximum allowed value is 5000. Otherwise an error is thrown.
@@ -184,8 +172,7 @@ public interface SearchProfilesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * This flag controls the spell-check feature. If `false`, the
+   * Optional. This flag controls the spell-check feature. If `false`, the
    * service attempts to correct a misspelled query.
    * For example, "enginee" is corrected to "engineer".
    * </pre>
@@ -198,8 +185,7 @@ public interface SearchProfilesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * The criteria that determines how search results are sorted.
+   * Optional. The criteria that determines how search results are sorted.
    * Defaults is "relevance desc" if no value is specified.
    * Supported options are:
    * * "relevance desc": By descending relevance, as determined by the API
@@ -235,8 +221,7 @@ public interface SearchProfilesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * The criteria that determines how search results are sorted.
+   * Optional. The criteria that determines how search results are sorted.
    * Defaults is "relevance desc" if no value is specified.
    * Supported options are:
    * * "relevance desc": By descending relevance, as determined by the API
@@ -273,10 +258,9 @@ public interface SearchProfilesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * When sort by field is based on alphabetical order, sort values case
-   * sensitively (based on ASCII) when the value is set to true. Default value
-   * is case in-sensitive sort (false).
+   * Optional. When sort by field is based on alphabetical order, sort values
+   * case sensitively (based on ASCII) when the value is set to true. Default
+   * value is case in-sensitive sort (false).
    * </pre>
    *
    * <code>bool case_sensitive_sort = 9;</code>
@@ -287,9 +271,8 @@ public interface SearchProfilesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * A list of expressions specifies histogram requests against matching
-   * profiles for
+   * Optional. A list of expressions specifies histogram requests against
+   * matching profiles for
    * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
    * The expression syntax looks like a function definition with optional
    * parameters.
@@ -367,9 +350,8 @@ public interface SearchProfilesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * A list of expressions specifies histogram requests against matching
-   * profiles for
+   * Optional. A list of expressions specifies histogram requests against
+   * matching profiles for
    * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
    * The expression syntax looks like a function definition with optional
    * parameters.
@@ -447,9 +429,8 @@ public interface SearchProfilesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * A list of expressions specifies histogram requests against matching
-   * profiles for
+   * Optional. A list of expressions specifies histogram requests against
+   * matching profiles for
    * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
    * The expression syntax looks like a function definition with optional
    * parameters.
@@ -527,9 +508,8 @@ public interface SearchProfilesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * A list of expressions specifies histogram requests against matching
-   * profiles for
+   * Optional. A list of expressions specifies histogram requests against
+   * matching profiles for
    * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
    * The expression syntax looks like a function definition with optional
    * parameters.
@@ -608,9 +588,8 @@ public interface SearchProfilesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * A list of expressions specifies histogram requests against matching
-   * profiles for
+   * Optional. A list of expressions specifies histogram requests against
+   * matching profiles for
    * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
    * The expression syntax looks like a function definition with optional
    * parameters.
@@ -684,4 +663,67 @@ public interface SearchProfilesRequestOrBuilder
    * <code>repeated .google.cloud.talent.v4beta1.HistogramQuery histogram_queries = 10;</code>
    */
   com.google.cloud.talent.v4beta1.HistogramQueryOrBuilder getHistogramQueriesOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An id that uniquely identifies the result set of a
+   * [SearchProfiles][] call.  The id should be retrieved from the
+   * [SearchProfilesResponse][google.cloud.talent.v4beta1.SearchProfilesResponse]
+   * message returned from a previous invocation of [SearchProfiles][].
+   * A result set is an ordered list of search results.
+   * If this field is not set, a new result set is computed based on the
+   * [profile_query][google.cloud.talent.v4beta1.SearchProfilesRequest.profile_query].
+   * A new
+   * [result_set_id][google.cloud.talent.v4beta1.SearchProfilesRequest.result_set_id]
+   * is returned as a handle to access this result set.
+   * If this field is set, the service will ignore the resource and
+   * [profile_query][google.cloud.talent.v4beta1.SearchProfilesRequest.profile_query]
+   * values, and simply retrieve a page of results from the corresponding result
+   * set.  In this case, one and only one of [page_token] or [offset] must be
+   * set.
+   * A typical use case is to invoke
+   * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest]
+   * without this field, then use the resulting
+   * [result_set_id][google.cloud.talent.v4beta1.SearchProfilesRequest.result_set_id]
+   * in
+   * [SearchProfilesResponse][google.cloud.talent.v4beta1.SearchProfilesResponse]
+   * to page through the results.
+   * </pre>
+   *
+   * <code>string result_set_id = 12;</code>
+   */
+  java.lang.String getResultSetId();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An id that uniquely identifies the result set of a
+   * [SearchProfiles][] call.  The id should be retrieved from the
+   * [SearchProfilesResponse][google.cloud.talent.v4beta1.SearchProfilesResponse]
+   * message returned from a previous invocation of [SearchProfiles][].
+   * A result set is an ordered list of search results.
+   * If this field is not set, a new result set is computed based on the
+   * [profile_query][google.cloud.talent.v4beta1.SearchProfilesRequest.profile_query].
+   * A new
+   * [result_set_id][google.cloud.talent.v4beta1.SearchProfilesRequest.result_set_id]
+   * is returned as a handle to access this result set.
+   * If this field is set, the service will ignore the resource and
+   * [profile_query][google.cloud.talent.v4beta1.SearchProfilesRequest.profile_query]
+   * values, and simply retrieve a page of results from the corresponding result
+   * set.  In this case, one and only one of [page_token] or [offset] must be
+   * set.
+   * A typical use case is to invoke
+   * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest]
+   * without this field, then use the resulting
+   * [result_set_id][google.cloud.talent.v4beta1.SearchProfilesRequest.result_set_id]
+   * in
+   * [SearchProfilesResponse][google.cloud.talent.v4beta1.SearchProfilesResponse]
+   * to page through the results.
+   * </pre>
+   *
+   * <code>string result_set_id = 12;</code>
+   */
+  com.google.protobuf.ByteString getResultSetIdBytes();
 }

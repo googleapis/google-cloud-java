@@ -12,8 +12,8 @@ public interface CreateApplicationRequestOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * Resource name of the profile under which the application is created.
+   * Required. Resource name of the profile under which the application is
+   * created.
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}", for
    * example, "projects/test-project/tenants/test-tenant/profiles/test-profile".
@@ -26,8 +26,8 @@ public interface CreateApplicationRequestOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * Resource name of the profile under which the application is created.
+   * Required. Resource name of the profile under which the application is
+   * created.
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}", for
    * example, "projects/test-project/tenants/test-tenant/profiles/test-profile".
@@ -41,8 +41,7 @@ public interface CreateApplicationRequestOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * The application to be created.
+   * Required. The application to be created.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Application application = 2;</code>
@@ -52,8 +51,7 @@ public interface CreateApplicationRequestOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * The application to be created.
+   * Required. The application to be created.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Application application = 2;</code>
@@ -63,8 +61,7 @@ public interface CreateApplicationRequestOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * The application to be created.
+   * Required. The application to be created.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Application application = 2;</code>

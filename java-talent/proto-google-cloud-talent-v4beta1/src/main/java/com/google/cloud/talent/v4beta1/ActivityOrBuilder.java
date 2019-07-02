@@ -12,8 +12,7 @@ public interface ActivityOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * Activity display name.
+   * Optional. Activity display name.
    * Number of characters allowed is 100.
    * </pre>
    *
@@ -24,8 +23,7 @@ public interface ActivityOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * Activity display name.
+   * Optional. Activity display name.
    * Number of characters allowed is 100.
    * </pre>
    *
@@ -37,8 +35,7 @@ public interface ActivityOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * Activity description.
+   * Optional. Activity description.
    * Number of characters allowed is 100,000.
    * </pre>
    *
@@ -49,8 +46,7 @@ public interface ActivityOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * Activity description.
+   * Optional. Activity description.
    * Number of characters allowed is 100,000.
    * </pre>
    *
@@ -62,8 +58,7 @@ public interface ActivityOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * Activity URI.
+   * Optional. Activity URI.
    * Number of characters allowed is 4,000.
    * </pre>
    *
@@ -74,8 +69,7 @@ public interface ActivityOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * Activity URI.
+   * Optional. Activity URI.
    * Number of characters allowed is 4,000.
    * </pre>
    *
@@ -87,8 +81,7 @@ public interface ActivityOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * The first creation date of the activity.
+   * Optional. The first creation date of the activity.
    * </pre>
    *
    * <code>.google.type.Date create_date = 4;</code>
@@ -98,8 +91,7 @@ public interface ActivityOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * The first creation date of the activity.
+   * Optional. The first creation date of the activity.
    * </pre>
    *
    * <code>.google.type.Date create_date = 4;</code>
@@ -109,8 +101,7 @@ public interface ActivityOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * The first creation date of the activity.
+   * Optional. The first creation date of the activity.
    * </pre>
    *
    * <code>.google.type.Date create_date = 4;</code>
@@ -121,8 +112,7 @@ public interface ActivityOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * The last update date of the activity.
+   * Optional. The last update date of the activity.
    * </pre>
    *
    * <code>.google.type.Date update_date = 5;</code>
@@ -132,8 +122,7 @@ public interface ActivityOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * The last update date of the activity.
+   * Optional. The last update date of the activity.
    * </pre>
    *
    * <code>.google.type.Date update_date = 5;</code>
@@ -143,8 +132,7 @@ public interface ActivityOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * The last update date of the activity.
+   * Optional. The last update date of the activity.
    * </pre>
    *
    * <code>.google.type.Date update_date = 5;</code>
@@ -155,8 +143,7 @@ public interface ActivityOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * A list of team members involved in this activity.
+   * Optional. A list of team members involved in this activity.
    * Number of characters allowed is 100.
    * </pre>
    *
@@ -167,8 +154,7 @@ public interface ActivityOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * A list of team members involved in this activity.
+   * Optional. A list of team members involved in this activity.
    * Number of characters allowed is 100.
    * </pre>
    *
@@ -179,8 +165,7 @@ public interface ActivityOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * A list of team members involved in this activity.
+   * Optional. A list of team members involved in this activity.
    * Number of characters allowed is 100.
    * </pre>
    *
@@ -191,8 +176,7 @@ public interface ActivityOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * A list of team members involved in this activity.
+   * Optional. A list of team members involved in this activity.
    * Number of characters allowed is 100.
    * </pre>
    *
@@ -204,8 +188,7 @@ public interface ActivityOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * A list of skills used in this activity.
+   * Optional. A list of skills used in this activity.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.Skill skills_used = 7;</code>
@@ -215,8 +198,7 @@ public interface ActivityOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * A list of skills used in this activity.
+   * Optional. A list of skills used in this activity.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.Skill skills_used = 7;</code>
@@ -226,8 +208,7 @@ public interface ActivityOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * A list of skills used in this activity.
+   * Optional. A list of skills used in this activity.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.Skill skills_used = 7;</code>
@@ -237,8 +218,7 @@ public interface ActivityOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * A list of skills used in this activity.
+   * Optional. A list of skills used in this activity.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.Skill skills_used = 7;</code>
@@ -249,8 +229,7 @@ public interface ActivityOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * A list of skills used in this activity.
+   * Optional. A list of skills used in this activity.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.Skill skills_used = 7;</code>

@@ -43,8 +43,7 @@ public interface ApplicationOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * Client side application identifier, used to uniquely identify the
+   * Required. Client side application identifier, used to uniquely identify the
    * application.
    * The maximum number of allowed characters is 255.
    * </pre>
@@ -56,8 +55,7 @@ public interface ApplicationOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * Client side application identifier, used to uniquely identify the
+   * Required. Client side application identifier, used to uniquely identify the
    * application.
    * The maximum number of allowed characters is 255.
    * </pre>
@@ -155,8 +153,7 @@ public interface ApplicationOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * The application date.
+   * Optional. The application date.
    * </pre>
    *
    * <code>.google.type.Date application_date = 7;</code>
@@ -166,8 +163,7 @@ public interface ApplicationOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * The application date.
+   * Optional. The application date.
    * </pre>
    *
    * <code>.google.type.Date application_date = 7;</code>
@@ -177,8 +173,7 @@ public interface ApplicationOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * The application date.
+   * Optional. The application date.
    * </pre>
    *
    * <code>.google.type.Date application_date = 7;</code>
@@ -189,9 +184,8 @@ public interface ApplicationOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * What is the most recent stage of the application (that is, new, screen,
-   * send cv, hired, finished work)?  This field is intentionally not
+   * Required. What is the most recent stage of the application (that is, new,
+   * screen, send cv, hired, finished work)?  This field is intentionally not
    * comprehensive of every possible status, but instead, represents statuses
    * that would be used to indicate to the ML models good / bad matches.
    * </pre>
@@ -203,9 +197,8 @@ public interface ApplicationOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * What is the most recent stage of the application (that is, new, screen,
-   * send cv, hired, finished work)?  This field is intentionally not
+   * Required. What is the most recent stage of the application (that is, new,
+   * screen, send cv, hired, finished work)?  This field is intentionally not
    * comprehensive of every possible status, but instead, represents statuses
    * that would be used to indicate to the ML models good / bad matches.
    * </pre>
@@ -218,8 +211,7 @@ public interface ApplicationOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * The application state.
+   * Optional. The application state.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Application.ApplicationState state = 13;</code>
@@ -229,8 +221,7 @@ public interface ApplicationOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * The application state.
+   * Optional. The application state.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Application.ApplicationState state = 13;</code>
@@ -241,9 +232,8 @@ public interface ApplicationOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * All interviews (screen, onsite, and so on) conducted as part of this
-   * application (includes details such as user conducting the interview,
+   * Optional. All interviews (screen, onsite, and so on) conducted as part of
+   * this application (includes details such as user conducting the interview,
    * timestamp, feedback, and so on).
    * </pre>
    *
@@ -254,9 +244,8 @@ public interface ApplicationOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * All interviews (screen, onsite, and so on) conducted as part of this
-   * application (includes details such as user conducting the interview,
+   * Optional. All interviews (screen, onsite, and so on) conducted as part of
+   * this application (includes details such as user conducting the interview,
    * timestamp, feedback, and so on).
    * </pre>
    *
@@ -267,9 +256,8 @@ public interface ApplicationOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * All interviews (screen, onsite, and so on) conducted as part of this
-   * application (includes details such as user conducting the interview,
+   * Optional. All interviews (screen, onsite, and so on) conducted as part of
+   * this application (includes details such as user conducting the interview,
    * timestamp, feedback, and so on).
    * </pre>
    *
@@ -280,9 +268,8 @@ public interface ApplicationOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * All interviews (screen, onsite, and so on) conducted as part of this
-   * application (includes details such as user conducting the interview,
+   * Optional. All interviews (screen, onsite, and so on) conducted as part of
+   * this application (includes details such as user conducting the interview,
    * timestamp, feedback, and so on).
    * </pre>
    *
@@ -294,9 +281,8 @@ public interface ApplicationOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * All interviews (screen, onsite, and so on) conducted as part of this
-   * application (includes details such as user conducting the interview,
+   * Optional. All interviews (screen, onsite, and so on) conducted as part of
+   * this application (includes details such as user conducting the interview,
    * timestamp, feedback, and so on).
    * </pre>
    *
@@ -308,8 +294,7 @@ public interface ApplicationOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * If the candidate is referred by a employee.
+   * Optional. If the candidate is referred by a employee.
    * </pre>
    *
    * <code>.google.protobuf.BoolValue referral = 18;</code>
@@ -319,8 +304,7 @@ public interface ApplicationOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * If the candidate is referred by a employee.
+   * Optional. If the candidate is referred by a employee.
    * </pre>
    *
    * <code>.google.protobuf.BoolValue referral = 18;</code>
@@ -330,8 +314,7 @@ public interface ApplicationOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * If the candidate is referred by a employee.
+   * Optional. If the candidate is referred by a employee.
    * </pre>
    *
    * <code>.google.protobuf.BoolValue referral = 18;</code>
@@ -342,8 +325,7 @@ public interface ApplicationOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * Reflects the time that the application was created.
+   * Required. Reflects the time that the application was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 19;</code>
@@ -353,8 +335,7 @@ public interface ApplicationOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * Reflects the time that the application was created.
+   * Required. Reflects the time that the application was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 19;</code>
@@ -364,8 +345,7 @@ public interface ApplicationOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * Reflects the time that the application was created.
+   * Required. Reflects the time that the application was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 19;</code>
@@ -376,8 +356,7 @@ public interface ApplicationOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * The last update timestamp.
+   * Optional. The last update timestamp.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 20;</code>
@@ -387,8 +366,7 @@ public interface ApplicationOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * The last update timestamp.
+   * Optional. The last update timestamp.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 20;</code>
@@ -398,8 +376,7 @@ public interface ApplicationOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * The last update timestamp.
+   * Optional. The last update timestamp.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 20;</code>
@@ -410,9 +387,9 @@ public interface ApplicationOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * Free text reason behind the recruitement outcome (for example, reason for
-   * withdraw / reject, reason for an unsuccessful finish, and so on).
+   * Optional. Free text reason behind the recruitement outcome (for example,
+   * reason for withdraw / reject, reason for an unsuccessful finish, and so
+   * on).
    * Number of characters allowed is 100.
    * </pre>
    *
@@ -423,9 +400,9 @@ public interface ApplicationOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * Free text reason behind the recruitement outcome (for example, reason for
-   * withdraw / reject, reason for an unsuccessful finish, and so on).
+   * Optional. Free text reason behind the recruitement outcome (for example,
+   * reason for withdraw / reject, reason for an unsuccessful finish, and so
+   * on).
    * Number of characters allowed is 100.
    * </pre>
    *
@@ -437,8 +414,7 @@ public interface ApplicationOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * Outcome positiveness shows how positive the outcome is.
+   * Optional. Outcome positiveness shows how positive the outcome is.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Outcome outcome = 22;</code>
@@ -448,8 +424,7 @@ public interface ApplicationOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * Outcome positiveness shows how positive the outcome is.
+   * Optional. Outcome positiveness shows how positive the outcome is.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Outcome outcome = 22;</code>

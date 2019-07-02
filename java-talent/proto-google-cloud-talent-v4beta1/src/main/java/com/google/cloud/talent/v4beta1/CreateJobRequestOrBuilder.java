@@ -12,8 +12,7 @@ public interface CreateJobRequestOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * The resource name of the tenant under which the job is created.
+   * Required. The resource name of the tenant under which the job is created.
    * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
    * "projects/api-test-project/tenant/foo".
    * Tenant id is optional and a default tenant is created if unspecified, for
@@ -27,8 +26,7 @@ public interface CreateJobRequestOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * The resource name of the tenant under which the job is created.
+   * Required. The resource name of the tenant under which the job is created.
    * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
    * "projects/api-test-project/tenant/foo".
    * Tenant id is optional and a default tenant is created if unspecified, for
@@ -43,8 +41,7 @@ public interface CreateJobRequestOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * The Job to be created.
+   * Required. The Job to be created.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Job job = 2;</code>
@@ -54,8 +51,7 @@ public interface CreateJobRequestOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * The Job to be created.
+   * Required. The Job to be created.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Job job = 2;</code>
@@ -65,8 +61,7 @@ public interface CreateJobRequestOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * The Job to be created.
+   * Required. The Job to be created.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Job job = 2;</code>

@@ -216,6 +216,23 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
               customAttributeFilter_ = s;
               break;
             }
+          case 130:
+            {
+              com.google.cloud.talent.v4beta1.CandidateAvailabilityFilter.Builder subBuilder = null;
+              if (candidateAvailabilityFilter_ != null) {
+                subBuilder = candidateAvailabilityFilter_.toBuilder();
+              }
+              candidateAvailabilityFilter_ =
+                  input.readMessage(
+                      com.google.cloud.talent.v4beta1.CandidateAvailabilityFilter.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(candidateAvailabilityFilter_);
+                candidateAvailabilityFilter_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -288,8 +305,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * Keywords to match any text fields of profiles.
+   * Optional. Keywords to match any text fields of profiles.
    * For example, "software engineer in Palo Alto".
    * </pre>
    *
@@ -310,8 +326,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * Keywords to match any text fields of profiles.
+   * Optional. Keywords to match any text fields of profiles.
    * For example, "software engineer in Palo Alto".
    * </pre>
    *
@@ -335,9 +350,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * The location filter specifies geo-regions containing the profiles to
-   * search against.
+   * Optional. The location filter specifies geo-regions containing the profiles
+   * to search against.
    * If a location filter isn't specified, profiles fitting the other search
    * criteria are retrieved regardless of where they're located.
    * If
@@ -355,9 +369,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * The location filter specifies geo-regions containing the profiles to
-   * search against.
+   * Optional. The location filter specifies geo-regions containing the profiles
+   * to search against.
    * If a location filter isn't specified, profiles fitting the other search
    * criteria are retrieved regardless of where they're located.
    * If
@@ -376,9 +389,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * The location filter specifies geo-regions containing the profiles to
-   * search against.
+   * Optional. The location filter specifies geo-regions containing the profiles
+   * to search against.
    * If a location filter isn't specified, profiles fitting the other search
    * criteria are retrieved regardless of where they're located.
    * If
@@ -396,9 +408,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * The location filter specifies geo-regions containing the profiles to
-   * search against.
+   * Optional. The location filter specifies geo-regions containing the profiles
+   * to search against.
    * If a location filter isn't specified, profiles fitting the other search
    * criteria are retrieved regardless of where they're located.
    * If
@@ -416,9 +427,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * The location filter specifies geo-regions containing the profiles to
-   * search against.
+   * Optional. The location filter specifies geo-regions containing the profiles
+   * to search against.
    * If a location filter isn't specified, profiles fitting the other search
    * criteria are retrieved regardless of where they're located.
    * If
@@ -440,8 +450,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * Job title filter specifies job titles of profiles to match on.
+   * Optional. Job title filter specifies job titles of profiles to match on.
    * If a job title isn't specified, profiles with any titles are retrieved.
    * If multiple values are specified, profiles are retrieved with any of the
    * specified job titles.
@@ -460,8 +469,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * Job title filter specifies job titles of profiles to match on.
+   * Optional. Job title filter specifies job titles of profiles to match on.
    * If a job title isn't specified, profiles with any titles are retrieved.
    * If multiple values are specified, profiles are retrieved with any of the
    * specified job titles.
@@ -481,8 +489,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * Job title filter specifies job titles of profiles to match on.
+   * Optional. Job title filter specifies job titles of profiles to match on.
    * If a job title isn't specified, profiles with any titles are retrieved.
    * If multiple values are specified, profiles are retrieved with any of the
    * specified job titles.
@@ -501,8 +508,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * Job title filter specifies job titles of profiles to match on.
+   * Optional. Job title filter specifies job titles of profiles to match on.
    * If a job title isn't specified, profiles with any titles are retrieved.
    * If multiple values are specified, profiles are retrieved with any of the
    * specified job titles.
@@ -521,8 +527,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * Job title filter specifies job titles of profiles to match on.
+   * Optional. Job title filter specifies job titles of profiles to match on.
    * If a job title isn't specified, profiles with any titles are retrieved.
    * If multiple values are specified, profiles are retrieved with any of the
    * specified job titles.
@@ -545,8 +550,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * Employer filter specifies employers of profiles to match on.
+   * Optional. Employer filter specifies employers of profiles to match on.
    * If an employer filter isn't specified, profiles with any employers are
    * retrieved.
    * If multiple employer filters are specified, profiles with any matching
@@ -567,8 +571,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * Employer filter specifies employers of profiles to match on.
+   * Optional. Employer filter specifies employers of profiles to match on.
    * If an employer filter isn't specified, profiles with any employers are
    * retrieved.
    * If multiple employer filters are specified, profiles with any matching
@@ -590,8 +593,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * Employer filter specifies employers of profiles to match on.
+   * Optional. Employer filter specifies employers of profiles to match on.
    * If an employer filter isn't specified, profiles with any employers are
    * retrieved.
    * If multiple employer filters are specified, profiles with any matching
@@ -612,8 +614,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * Employer filter specifies employers of profiles to match on.
+   * Optional. Employer filter specifies employers of profiles to match on.
    * If an employer filter isn't specified, profiles with any employers are
    * retrieved.
    * If multiple employer filters are specified, profiles with any matching
@@ -634,8 +635,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * Employer filter specifies employers of profiles to match on.
+   * Optional. Employer filter specifies employers of profiles to match on.
    * If an employer filter isn't specified, profiles with any employers are
    * retrieved.
    * If multiple employer filters are specified, profiles with any matching
@@ -660,8 +660,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * Education filter specifies education of profiles to match on.
+   * Optional. Education filter specifies education of profiles to match on.
    * If an education filter isn't specified, profiles with any education are
    * retrieved.
    * If multiple education filters are specified, profiles that match any
@@ -681,8 +680,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * Education filter specifies education of profiles to match on.
+   * Optional. Education filter specifies education of profiles to match on.
    * If an education filter isn't specified, profiles with any education are
    * retrieved.
    * If multiple education filters are specified, profiles that match any
@@ -703,8 +701,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * Education filter specifies education of profiles to match on.
+   * Optional. Education filter specifies education of profiles to match on.
    * If an education filter isn't specified, profiles with any education are
    * retrieved.
    * If multiple education filters are specified, profiles that match any
@@ -724,8 +721,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * Education filter specifies education of profiles to match on.
+   * Optional. Education filter specifies education of profiles to match on.
    * If an education filter isn't specified, profiles with any education are
    * retrieved.
    * If multiple education filters are specified, profiles that match any
@@ -745,8 +741,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * Education filter specifies education of profiles to match on.
+   * Optional. Education filter specifies education of profiles to match on.
    * If an education filter isn't specified, profiles with any education are
    * retrieved.
    * If multiple education filters are specified, profiles that match any
@@ -770,8 +765,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * Skill filter specifies skill of profiles to match on.
+   * Optional. Skill filter specifies skill of profiles to match on.
    * If a skill filter isn't specified, profiles with any skills are retrieved.
    * If multiple skill filters are specified, profiles that match any skill
    * filters are retrieved.
@@ -790,8 +784,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * Skill filter specifies skill of profiles to match on.
+   * Optional. Skill filter specifies skill of profiles to match on.
    * If a skill filter isn't specified, profiles with any skills are retrieved.
    * If multiple skill filters are specified, profiles that match any skill
    * filters are retrieved.
@@ -811,8 +804,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * Skill filter specifies skill of profiles to match on.
+   * Optional. Skill filter specifies skill of profiles to match on.
    * If a skill filter isn't specified, profiles with any skills are retrieved.
    * If multiple skill filters are specified, profiles that match any skill
    * filters are retrieved.
@@ -831,8 +823,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * Skill filter specifies skill of profiles to match on.
+   * Optional. Skill filter specifies skill of profiles to match on.
    * If a skill filter isn't specified, profiles with any skills are retrieved.
    * If multiple skill filters are specified, profiles that match any skill
    * filters are retrieved.
@@ -851,8 +842,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * Skill filter specifies skill of profiles to match on.
+   * Optional. Skill filter specifies skill of profiles to match on.
    * If a skill filter isn't specified, profiles with any skills are retrieved.
    * If multiple skill filters are specified, profiles that match any skill
    * filters are retrieved.
@@ -875,9 +865,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * Work experience filter specifies the total working experience of profiles
-   * to match on.
+   * Optional. Work experience filter specifies the total working experience of
+   * profiles to match on.
    * If a work experience filter isn't specified, profiles with any
    * professional experience are retrieved.
    * If multiple work experience filters are specified, profiles that match any
@@ -896,9 +885,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * Work experience filter specifies the total working experience of profiles
-   * to match on.
+   * Optional. Work experience filter specifies the total working experience of
+   * profiles to match on.
    * If a work experience filter isn't specified, profiles with any
    * professional experience are retrieved.
    * If multiple work experience filters are specified, profiles that match any
@@ -917,9 +905,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * Work experience filter specifies the total working experience of profiles
-   * to match on.
+   * Optional. Work experience filter specifies the total working experience of
+   * profiles to match on.
    * If a work experience filter isn't specified, profiles with any
    * professional experience are retrieved.
    * If multiple work experience filters are specified, profiles that match any
@@ -937,9 +924,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * Work experience filter specifies the total working experience of profiles
-   * to match on.
+   * Optional. Work experience filter specifies the total working experience of
+   * profiles to match on.
    * If a work experience filter isn't specified, profiles with any
    * professional experience are retrieved.
    * If multiple work experience filters are specified, profiles that match any
@@ -957,9 +943,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * Work experience filter specifies the total working experience of profiles
-   * to match on.
+   * Optional. Work experience filter specifies the total working experience of
+   * profiles to match on.
    * If a work experience filter isn't specified, profiles with any
    * professional experience are retrieved.
    * If multiple work experience filters are specified, profiles that match any
@@ -981,9 +966,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * Time filter specifies the create/update timestamp of the profiles to match
-   * on.
+   * Optional. Time filter specifies the create/update timestamp of the profiles
+   * to match on.
    * For example, search for profiles created since "2018-1-1".
    * </pre>
    *
@@ -996,9 +980,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * Time filter specifies the create/update timestamp of the profiles to match
-   * on.
+   * Optional. Time filter specifies the create/update timestamp of the profiles
+   * to match on.
    * For example, search for profiles created since "2018-1-1".
    * </pre>
    *
@@ -1012,9 +995,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * Time filter specifies the create/update timestamp of the profiles to match
-   * on.
+   * Optional. Time filter specifies the create/update timestamp of the profiles
+   * to match on.
    * For example, search for profiles created since "2018-1-1".
    * </pre>
    *
@@ -1027,9 +1009,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * Time filter specifies the create/update timestamp of the profiles to match
-   * on.
+   * Optional. Time filter specifies the create/update timestamp of the profiles
+   * to match on.
    * For example, search for profiles created since "2018-1-1".
    * </pre>
    *
@@ -1042,9 +1023,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * Time filter specifies the create/update timestamp of the profiles to match
-   * on.
+   * Optional. Time filter specifies the create/update timestamp of the profiles
+   * to match on.
    * For example, search for profiles created since "2018-1-1".
    * </pre>
    *
@@ -1060,8 +1040,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * The hirable filter specifies the profile's hirable status to match on.
+   * Optional. The hirable filter specifies the profile's hirable status to
+   * match on.
    * </pre>
    *
    * <code>.google.protobuf.BoolValue hirable_filter = 9;</code>
@@ -1073,8 +1053,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * The hirable filter specifies the profile's hirable status to match on.
+   * Optional. The hirable filter specifies the profile's hirable status to
+   * match on.
    * </pre>
    *
    * <code>.google.protobuf.BoolValue hirable_filter = 9;</code>
@@ -1088,8 +1068,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * The hirable filter specifies the profile's hirable status to match on.
+   * Optional. The hirable filter specifies the profile's hirable status to
+   * match on.
    * </pre>
    *
    * <code>.google.protobuf.BoolValue hirable_filter = 9;</code>
@@ -1105,8 +1085,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * The application date filters specify application date ranges to match on.
+   * Optional. The application date filters specify application date ranges to
+   * match on.
    * </pre>
    *
    * <code>
@@ -1121,8 +1101,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * The application date filters specify application date ranges to match on.
+   * Optional. The application date filters specify application date ranges to
+   * match on.
    * </pre>
    *
    * <code>
@@ -1137,8 +1117,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * The application date filters specify application date ranges to match on.
+   * Optional. The application date filters specify application date ranges to
+   * match on.
    * </pre>
    *
    * <code>
@@ -1152,8 +1132,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * The application date filters specify application date ranges to match on.
+   * Optional. The application date filters specify application date ranges to
+   * match on.
    * </pre>
    *
    * <code>
@@ -1168,8 +1148,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * The application date filters specify application date ranges to match on.
+   * Optional. The application date filters specify application date ranges to
+   * match on.
    * </pre>
    *
    * <code>
@@ -1188,9 +1168,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * The application outcome notes filters specify the notes for the outcome of
-   * the job application.
+   * Optional. The application outcome notes filters specify the notes for the
+   * outcome of the job application.
    * </pre>
    *
    * <code>
@@ -1205,9 +1184,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * The application outcome notes filters specify the notes for the outcome of
-   * the job application.
+   * Optional. The application outcome notes filters specify the notes for the
+   * outcome of the job application.
    * </pre>
    *
    * <code>
@@ -1223,9 +1201,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * The application outcome notes filters specify the notes for the outcome of
-   * the job application.
+   * Optional. The application outcome notes filters specify the notes for the
+   * outcome of the job application.
    * </pre>
    *
    * <code>
@@ -1239,9 +1216,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * The application outcome notes filters specify the notes for the outcome of
-   * the job application.
+   * Optional. The application outcome notes filters specify the notes for the
+   * outcome of the job application.
    * </pre>
    *
    * <code>
@@ -1256,9 +1232,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * The application outcome notes filters specify the notes for the outcome of
-   * the job application.
+   * Optional. The application outcome notes filters specify the notes for the
+   * outcome of the job application.
    * </pre>
    *
    * <code>
@@ -1277,8 +1252,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * The application job filters specify the job applied for in the application.
+   * Optional. The application job filters specify the job applied for in the
+   * application.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.ApplicationJobFilter application_job_filters = 13;
@@ -1292,8 +1267,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * The application job filters specify the job applied for in the application.
+   * Optional. The application job filters specify the job applied for in the
+   * application.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.ApplicationJobFilter application_job_filters = 13;
@@ -1307,8 +1282,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * The application job filters specify the job applied for in the application.
+   * Optional. The application job filters specify the job applied for in the
+   * application.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.ApplicationJobFilter application_job_filters = 13;
@@ -1321,8 +1296,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * The application job filters specify the job applied for in the application.
+   * Optional. The application job filters specify the job applied for in the
+   * application.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.ApplicationJobFilter application_job_filters = 13;
@@ -1335,8 +1310,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * The application job filters specify the job applied for in the application.
+   * Optional. The application job filters specify the job applied for in the
+   * application.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.ApplicationJobFilter application_job_filters = 13;
@@ -1353,8 +1328,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * This filter specifies a structured syntax to match against the
+   * Optional. This filter specifies a structured syntax to match against the
    * [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes]
    * that are marked as `filterable`.
    * The syntax for this expression is a subset of Google SQL syntax.
@@ -1392,8 +1366,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * This filter specifies a structured syntax to match against the
+   * Optional. This filter specifies a structured syntax to match against the
    * [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes]
    * that are marked as `filterable`.
    * The syntax for this expression is a subset of Google SQL syntax.
@@ -1426,6 +1399,91 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int CANDIDATE_AVAILABILITY_FILTER_FIELD_NUMBER = 16;
+  private com.google.cloud.talent.v4beta1.CandidateAvailabilityFilter candidateAvailabilityFilter_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The candidate availability filter which filters based on
+   * availability signals.
+   * Signal 1: Number of days since most recent job application.  See
+   * [Availability.JobApplicationAvailabilitySignal][google.cloud.talent.v4beta1.Availability.JobApplicationAvailabilitySignal]
+   * for the details of this signal.
+   * Signal 2: Number of days since last profile update. See
+   * [Availability.ProfileUpdateAvailabilitySignal][google.cloud.talent.v4beta1.Availability.ProfileUpdateAvailabilitySignal]
+   * for the details of this signal.
+   * The candidate availability filter helps a recruiter understand if a
+   * specific candidate is likely to be actively seeking new job opportunities
+   * based on an aggregated set of signals.  Specifically, the intent is NOT to
+   * indicate the candidate's potential qualification / interest / close ability
+   * for a specific job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.talent.v4beta1.CandidateAvailabilityFilter candidate_availability_filter = 16;
+   * </code>
+   */
+  public boolean hasCandidateAvailabilityFilter() {
+    return candidateAvailabilityFilter_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The candidate availability filter which filters based on
+   * availability signals.
+   * Signal 1: Number of days since most recent job application.  See
+   * [Availability.JobApplicationAvailabilitySignal][google.cloud.talent.v4beta1.Availability.JobApplicationAvailabilitySignal]
+   * for the details of this signal.
+   * Signal 2: Number of days since last profile update. See
+   * [Availability.ProfileUpdateAvailabilitySignal][google.cloud.talent.v4beta1.Availability.ProfileUpdateAvailabilitySignal]
+   * for the details of this signal.
+   * The candidate availability filter helps a recruiter understand if a
+   * specific candidate is likely to be actively seeking new job opportunities
+   * based on an aggregated set of signals.  Specifically, the intent is NOT to
+   * indicate the candidate's potential qualification / interest / close ability
+   * for a specific job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.talent.v4beta1.CandidateAvailabilityFilter candidate_availability_filter = 16;
+   * </code>
+   */
+  public com.google.cloud.talent.v4beta1.CandidateAvailabilityFilter
+      getCandidateAvailabilityFilter() {
+    return candidateAvailabilityFilter_ == null
+        ? com.google.cloud.talent.v4beta1.CandidateAvailabilityFilter.getDefaultInstance()
+        : candidateAvailabilityFilter_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The candidate availability filter which filters based on
+   * availability signals.
+   * Signal 1: Number of days since most recent job application.  See
+   * [Availability.JobApplicationAvailabilitySignal][google.cloud.talent.v4beta1.Availability.JobApplicationAvailabilitySignal]
+   * for the details of this signal.
+   * Signal 2: Number of days since last profile update. See
+   * [Availability.ProfileUpdateAvailabilitySignal][google.cloud.talent.v4beta1.Availability.ProfileUpdateAvailabilitySignal]
+   * for the details of this signal.
+   * The candidate availability filter helps a recruiter understand if a
+   * specific candidate is likely to be actively seeking new job opportunities
+   * based on an aggregated set of signals.  Specifically, the intent is NOT to
+   * indicate the candidate's potential qualification / interest / close ability
+   * for a specific job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.talent.v4beta1.CandidateAvailabilityFilter candidate_availability_filter = 16;
+   * </code>
+   */
+  public com.google.cloud.talent.v4beta1.CandidateAvailabilityFilterOrBuilder
+      getCandidateAvailabilityFilterOrBuilder() {
+    return getCandidateAvailabilityFilter();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1480,6 +1538,9 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
     }
     if (!getCustomAttributeFilterBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 15, customAttributeFilter_);
+    }
+    if (candidateAvailabilityFilter_ != null) {
+      output.writeMessage(16, getCandidateAvailabilityFilter());
     }
     unknownFields.writeTo(output);
   }
@@ -1536,6 +1597,11 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
     if (!getCustomAttributeFilterBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, customAttributeFilter_);
     }
+    if (candidateAvailabilityFilter_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              16, getCandidateAvailabilityFilter());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1570,6 +1636,11 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
         .equals(other.getApplicationOutcomeNotesFiltersList())) return false;
     if (!getApplicationJobFiltersList().equals(other.getApplicationJobFiltersList())) return false;
     if (!getCustomAttributeFilter().equals(other.getCustomAttributeFilter())) return false;
+    if (hasCandidateAvailabilityFilter() != other.hasCandidateAvailabilityFilter()) return false;
+    if (hasCandidateAvailabilityFilter()) {
+      if (!getCandidateAvailabilityFilter().equals(other.getCandidateAvailabilityFilter()))
+        return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1629,6 +1700,10 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + CUSTOM_ATTRIBUTE_FILTER_FIELD_NUMBER;
     hash = (53 * hash) + getCustomAttributeFilter().hashCode();
+    if (hasCandidateAvailabilityFilter()) {
+      hash = (37 * hash) + CANDIDATE_AVAILABILITY_FILTER_FIELD_NUMBER;
+      hash = (53 * hash) + getCandidateAvailabilityFilter().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1855,6 +1930,12 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
       }
       customAttributeFilter_ = "";
 
+      if (candidateAvailabilityFilterBuilder_ == null) {
+        candidateAvailabilityFilter_ = null;
+      } else {
+        candidateAvailabilityFilter_ = null;
+        candidateAvailabilityFilterBuilder_ = null;
+      }
       return this;
     }
 
@@ -1982,6 +2063,11 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
         result.applicationJobFilters_ = applicationJobFiltersBuilder_.build();
       }
       result.customAttributeFilter_ = customAttributeFilter_;
+      if (candidateAvailabilityFilterBuilder_ == null) {
+        result.candidateAvailabilityFilter_ = candidateAvailabilityFilter_;
+      } else {
+        result.candidateAvailabilityFilter_ = candidateAvailabilityFilterBuilder_.build();
+      }
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -2314,6 +2400,9 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
         customAttributeFilter_ = other.customAttributeFilter_;
         onChanged();
       }
+      if (other.hasCandidateAvailabilityFilter()) {
+        mergeCandidateAvailabilityFilter(other.getCandidateAvailabilityFilter());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -2350,8 +2439,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Keywords to match any text fields of profiles.
+     * Optional. Keywords to match any text fields of profiles.
      * For example, "software engineer in Palo Alto".
      * </pre>
      *
@@ -2372,8 +2460,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Keywords to match any text fields of profiles.
+     * Optional. Keywords to match any text fields of profiles.
      * For example, "software engineer in Palo Alto".
      * </pre>
      *
@@ -2394,8 +2481,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Keywords to match any text fields of profiles.
+     * Optional. Keywords to match any text fields of profiles.
      * For example, "software engineer in Palo Alto".
      * </pre>
      *
@@ -2414,8 +2500,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Keywords to match any text fields of profiles.
+     * Optional. Keywords to match any text fields of profiles.
      * For example, "software engineer in Palo Alto".
      * </pre>
      *
@@ -2431,8 +2516,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Keywords to match any text fields of profiles.
+     * Optional. Keywords to match any text fields of profiles.
      * For example, "software engineer in Palo Alto".
      * </pre>
      *
@@ -2471,9 +2555,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The location filter specifies geo-regions containing the profiles to
-     * search against.
+     * Optional. The location filter specifies geo-regions containing the profiles
+     * to search against.
      * If a location filter isn't specified, profiles fitting the other search
      * criteria are retrieved regardless of where they're located.
      * If
@@ -2495,9 +2578,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The location filter specifies geo-regions containing the profiles to
-     * search against.
+     * Optional. The location filter specifies geo-regions containing the profiles
+     * to search against.
      * If a location filter isn't specified, profiles fitting the other search
      * criteria are retrieved regardless of where they're located.
      * If
@@ -2519,9 +2601,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The location filter specifies geo-regions containing the profiles to
-     * search against.
+     * Optional. The location filter specifies geo-regions containing the profiles
+     * to search against.
      * If a location filter isn't specified, profiles fitting the other search
      * criteria are retrieved regardless of where they're located.
      * If
@@ -2543,9 +2624,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The location filter specifies geo-regions containing the profiles to
-     * search against.
+     * Optional. The location filter specifies geo-regions containing the profiles
+     * to search against.
      * If a location filter isn't specified, profiles fitting the other search
      * criteria are retrieved regardless of where they're located.
      * If
@@ -2574,9 +2654,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The location filter specifies geo-regions containing the profiles to
-     * search against.
+     * Optional. The location filter specifies geo-regions containing the profiles
+     * to search against.
      * If a location filter isn't specified, profiles fitting the other search
      * criteria are retrieved regardless of where they're located.
      * If
@@ -2602,9 +2681,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The location filter specifies geo-regions containing the profiles to
-     * search against.
+     * Optional. The location filter specifies geo-regions containing the profiles
+     * to search against.
      * If a location filter isn't specified, profiles fitting the other search
      * criteria are retrieved regardless of where they're located.
      * If
@@ -2632,9 +2710,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The location filter specifies geo-regions containing the profiles to
-     * search against.
+     * Optional. The location filter specifies geo-regions containing the profiles
+     * to search against.
      * If a location filter isn't specified, profiles fitting the other search
      * criteria are retrieved regardless of where they're located.
      * If
@@ -2663,9 +2740,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The location filter specifies geo-regions containing the profiles to
-     * search against.
+     * Optional. The location filter specifies geo-regions containing the profiles
+     * to search against.
      * If a location filter isn't specified, profiles fitting the other search
      * criteria are retrieved regardless of where they're located.
      * If
@@ -2691,9 +2767,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The location filter specifies geo-regions containing the profiles to
-     * search against.
+     * Optional. The location filter specifies geo-regions containing the profiles
+     * to search against.
      * If a location filter isn't specified, profiles fitting the other search
      * criteria are retrieved regardless of where they're located.
      * If
@@ -2719,9 +2794,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The location filter specifies geo-regions containing the profiles to
-     * search against.
+     * Optional. The location filter specifies geo-regions containing the profiles
+     * to search against.
      * If a location filter isn't specified, profiles fitting the other search
      * criteria are retrieved regardless of where they're located.
      * If
@@ -2747,9 +2821,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The location filter specifies geo-regions containing the profiles to
-     * search against.
+     * Optional. The location filter specifies geo-regions containing the profiles
+     * to search against.
      * If a location filter isn't specified, profiles fitting the other search
      * criteria are retrieved regardless of where they're located.
      * If
@@ -2774,9 +2847,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The location filter specifies geo-regions containing the profiles to
-     * search against.
+     * Optional. The location filter specifies geo-regions containing the profiles
+     * to search against.
      * If a location filter isn't specified, profiles fitting the other search
      * criteria are retrieved regardless of where they're located.
      * If
@@ -2801,9 +2873,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The location filter specifies geo-regions containing the profiles to
-     * search against.
+     * Optional. The location filter specifies geo-regions containing the profiles
+     * to search against.
      * If a location filter isn't specified, profiles fitting the other search
      * criteria are retrieved regardless of where they're located.
      * If
@@ -2822,9 +2893,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The location filter specifies geo-regions containing the profiles to
-     * search against.
+     * Optional. The location filter specifies geo-regions containing the profiles
+     * to search against.
      * If a location filter isn't specified, profiles fitting the other search
      * criteria are retrieved regardless of where they're located.
      * If
@@ -2847,9 +2917,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The location filter specifies geo-regions containing the profiles to
-     * search against.
+     * Optional. The location filter specifies geo-regions containing the profiles
+     * to search against.
      * If a location filter isn't specified, profiles fitting the other search
      * criteria are retrieved regardless of where they're located.
      * If
@@ -2872,9 +2941,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The location filter specifies geo-regions containing the profiles to
-     * search against.
+     * Optional. The location filter specifies geo-regions containing the profiles
+     * to search against.
      * If a location filter isn't specified, profiles fitting the other search
      * criteria are retrieved regardless of where they're located.
      * If
@@ -2893,9 +2961,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The location filter specifies geo-regions containing the profiles to
-     * search against.
+     * Optional. The location filter specifies geo-regions containing the profiles
+     * to search against.
      * If a location filter isn't specified, profiles fitting the other search
      * criteria are retrieved regardless of where they're located.
      * If
@@ -2915,9 +2982,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The location filter specifies geo-regions containing the profiles to
-     * search against.
+     * Optional. The location filter specifies geo-regions containing the profiles
+     * to search against.
      * If a location filter isn't specified, profiles fitting the other search
      * criteria are retrieved regardless of where they're located.
      * If
@@ -2975,8 +3041,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Job title filter specifies job titles of profiles to match on.
+     * Optional. Job title filter specifies job titles of profiles to match on.
      * If a job title isn't specified, profiles with any titles are retrieved.
      * If multiple values are specified, profiles are retrieved with any of the
      * specified job titles.
@@ -2999,8 +3064,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Job title filter specifies job titles of profiles to match on.
+     * Optional. Job title filter specifies job titles of profiles to match on.
      * If a job title isn't specified, profiles with any titles are retrieved.
      * If multiple values are specified, profiles are retrieved with any of the
      * specified job titles.
@@ -3023,8 +3087,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Job title filter specifies job titles of profiles to match on.
+     * Optional. Job title filter specifies job titles of profiles to match on.
      * If a job title isn't specified, profiles with any titles are retrieved.
      * If multiple values are specified, profiles are retrieved with any of the
      * specified job titles.
@@ -3047,8 +3110,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Job title filter specifies job titles of profiles to match on.
+     * Optional. Job title filter specifies job titles of profiles to match on.
      * If a job title isn't specified, profiles with any titles are retrieved.
      * If multiple values are specified, profiles are retrieved with any of the
      * specified job titles.
@@ -3078,8 +3140,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Job title filter specifies job titles of profiles to match on.
+     * Optional. Job title filter specifies job titles of profiles to match on.
      * If a job title isn't specified, profiles with any titles are retrieved.
      * If multiple values are specified, profiles are retrieved with any of the
      * specified job titles.
@@ -3106,8 +3167,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Job title filter specifies job titles of profiles to match on.
+     * Optional. Job title filter specifies job titles of profiles to match on.
      * If a job title isn't specified, profiles with any titles are retrieved.
      * If multiple values are specified, profiles are retrieved with any of the
      * specified job titles.
@@ -3136,8 +3196,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Job title filter specifies job titles of profiles to match on.
+     * Optional. Job title filter specifies job titles of profiles to match on.
      * If a job title isn't specified, profiles with any titles are retrieved.
      * If multiple values are specified, profiles are retrieved with any of the
      * specified job titles.
@@ -3167,8 +3226,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Job title filter specifies job titles of profiles to match on.
+     * Optional. Job title filter specifies job titles of profiles to match on.
      * If a job title isn't specified, profiles with any titles are retrieved.
      * If multiple values are specified, profiles are retrieved with any of the
      * specified job titles.
@@ -3195,8 +3253,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Job title filter specifies job titles of profiles to match on.
+     * Optional. Job title filter specifies job titles of profiles to match on.
      * If a job title isn't specified, profiles with any titles are retrieved.
      * If multiple values are specified, profiles are retrieved with any of the
      * specified job titles.
@@ -3223,8 +3280,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Job title filter specifies job titles of profiles to match on.
+     * Optional. Job title filter specifies job titles of profiles to match on.
      * If a job title isn't specified, profiles with any titles are retrieved.
      * If multiple values are specified, profiles are retrieved with any of the
      * specified job titles.
@@ -3251,8 +3307,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Job title filter specifies job titles of profiles to match on.
+     * Optional. Job title filter specifies job titles of profiles to match on.
      * If a job title isn't specified, profiles with any titles are retrieved.
      * If multiple values are specified, profiles are retrieved with any of the
      * specified job titles.
@@ -3278,8 +3333,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Job title filter specifies job titles of profiles to match on.
+     * Optional. Job title filter specifies job titles of profiles to match on.
      * If a job title isn't specified, profiles with any titles are retrieved.
      * If multiple values are specified, profiles are retrieved with any of the
      * specified job titles.
@@ -3305,8 +3359,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Job title filter specifies job titles of profiles to match on.
+     * Optional. Job title filter specifies job titles of profiles to match on.
      * If a job title isn't specified, profiles with any titles are retrieved.
      * If multiple values are specified, profiles are retrieved with any of the
      * specified job titles.
@@ -3326,8 +3379,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Job title filter specifies job titles of profiles to match on.
+     * Optional. Job title filter specifies job titles of profiles to match on.
      * If a job title isn't specified, profiles with any titles are retrieved.
      * If multiple values are specified, profiles are retrieved with any of the
      * specified job titles.
@@ -3351,8 +3403,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Job title filter specifies job titles of profiles to match on.
+     * Optional. Job title filter specifies job titles of profiles to match on.
      * If a job title isn't specified, profiles with any titles are retrieved.
      * If multiple values are specified, profiles are retrieved with any of the
      * specified job titles.
@@ -3376,8 +3427,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Job title filter specifies job titles of profiles to match on.
+     * Optional. Job title filter specifies job titles of profiles to match on.
      * If a job title isn't specified, profiles with any titles are retrieved.
      * If multiple values are specified, profiles are retrieved with any of the
      * specified job titles.
@@ -3397,8 +3447,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Job title filter specifies job titles of profiles to match on.
+     * Optional. Job title filter specifies job titles of profiles to match on.
      * If a job title isn't specified, profiles with any titles are retrieved.
      * If multiple values are specified, profiles are retrieved with any of the
      * specified job titles.
@@ -3419,8 +3468,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Job title filter specifies job titles of profiles to match on.
+     * Optional. Job title filter specifies job titles of profiles to match on.
      * If a job title isn't specified, profiles with any titles are retrieved.
      * If multiple values are specified, profiles are retrieved with any of the
      * specified job titles.
@@ -3479,8 +3527,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Employer filter specifies employers of profiles to match on.
+     * Optional. Employer filter specifies employers of profiles to match on.
      * If an employer filter isn't specified, profiles with any employers are
      * retrieved.
      * If multiple employer filters are specified, profiles with any matching
@@ -3505,8 +3552,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Employer filter specifies employers of profiles to match on.
+     * Optional. Employer filter specifies employers of profiles to match on.
      * If an employer filter isn't specified, profiles with any employers are
      * retrieved.
      * If multiple employer filters are specified, profiles with any matching
@@ -3531,8 +3577,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Employer filter specifies employers of profiles to match on.
+     * Optional. Employer filter specifies employers of profiles to match on.
      * If an employer filter isn't specified, profiles with any employers are
      * retrieved.
      * If multiple employer filters are specified, profiles with any matching
@@ -3557,8 +3602,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Employer filter specifies employers of profiles to match on.
+     * Optional. Employer filter specifies employers of profiles to match on.
      * If an employer filter isn't specified, profiles with any employers are
      * retrieved.
      * If multiple employer filters are specified, profiles with any matching
@@ -3590,8 +3634,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Employer filter specifies employers of profiles to match on.
+     * Optional. Employer filter specifies employers of profiles to match on.
      * If an employer filter isn't specified, profiles with any employers are
      * retrieved.
      * If multiple employer filters are specified, profiles with any matching
@@ -3620,8 +3663,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Employer filter specifies employers of profiles to match on.
+     * Optional. Employer filter specifies employers of profiles to match on.
      * If an employer filter isn't specified, profiles with any employers are
      * retrieved.
      * If multiple employer filters are specified, profiles with any matching
@@ -3652,8 +3694,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Employer filter specifies employers of profiles to match on.
+     * Optional. Employer filter specifies employers of profiles to match on.
      * If an employer filter isn't specified, profiles with any employers are
      * retrieved.
      * If multiple employer filters are specified, profiles with any matching
@@ -3685,8 +3726,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Employer filter specifies employers of profiles to match on.
+     * Optional. Employer filter specifies employers of profiles to match on.
      * If an employer filter isn't specified, profiles with any employers are
      * retrieved.
      * If multiple employer filters are specified, profiles with any matching
@@ -3715,8 +3755,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Employer filter specifies employers of profiles to match on.
+     * Optional. Employer filter specifies employers of profiles to match on.
      * If an employer filter isn't specified, profiles with any employers are
      * retrieved.
      * If multiple employer filters are specified, profiles with any matching
@@ -3745,8 +3784,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Employer filter specifies employers of profiles to match on.
+     * Optional. Employer filter specifies employers of profiles to match on.
      * If an employer filter isn't specified, profiles with any employers are
      * retrieved.
      * If multiple employer filters are specified, profiles with any matching
@@ -3775,8 +3813,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Employer filter specifies employers of profiles to match on.
+     * Optional. Employer filter specifies employers of profiles to match on.
      * If an employer filter isn't specified, profiles with any employers are
      * retrieved.
      * If multiple employer filters are specified, profiles with any matching
@@ -3804,8 +3841,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Employer filter specifies employers of profiles to match on.
+     * Optional. Employer filter specifies employers of profiles to match on.
      * If an employer filter isn't specified, profiles with any employers are
      * retrieved.
      * If multiple employer filters are specified, profiles with any matching
@@ -3833,8 +3869,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Employer filter specifies employers of profiles to match on.
+     * Optional. Employer filter specifies employers of profiles to match on.
      * If an employer filter isn't specified, profiles with any employers are
      * retrieved.
      * If multiple employer filters are specified, profiles with any matching
@@ -3856,8 +3891,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Employer filter specifies employers of profiles to match on.
+     * Optional. Employer filter specifies employers of profiles to match on.
      * If an employer filter isn't specified, profiles with any employers are
      * retrieved.
      * If multiple employer filters are specified, profiles with any matching
@@ -3883,8 +3917,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Employer filter specifies employers of profiles to match on.
+     * Optional. Employer filter specifies employers of profiles to match on.
      * If an employer filter isn't specified, profiles with any employers are
      * retrieved.
      * If multiple employer filters are specified, profiles with any matching
@@ -3910,8 +3943,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Employer filter specifies employers of profiles to match on.
+     * Optional. Employer filter specifies employers of profiles to match on.
      * If an employer filter isn't specified, profiles with any employers are
      * retrieved.
      * If multiple employer filters are specified, profiles with any matching
@@ -3933,8 +3965,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Employer filter specifies employers of profiles to match on.
+     * Optional. Employer filter specifies employers of profiles to match on.
      * If an employer filter isn't specified, profiles with any employers are
      * retrieved.
      * If multiple employer filters are specified, profiles with any matching
@@ -3957,8 +3988,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Employer filter specifies employers of profiles to match on.
+     * Optional. Employer filter specifies employers of profiles to match on.
      * If an employer filter isn't specified, profiles with any employers are
      * retrieved.
      * If multiple employer filters are specified, profiles with any matching
@@ -4019,8 +4049,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Education filter specifies education of profiles to match on.
+     * Optional. Education filter specifies education of profiles to match on.
      * If an education filter isn't specified, profiles with any education are
      * retrieved.
      * If multiple education filters are specified, profiles that match any
@@ -4045,8 +4074,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Education filter specifies education of profiles to match on.
+     * Optional. Education filter specifies education of profiles to match on.
      * If an education filter isn't specified, profiles with any education are
      * retrieved.
      * If multiple education filters are specified, profiles that match any
@@ -4070,8 +4098,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Education filter specifies education of profiles to match on.
+     * Optional. Education filter specifies education of profiles to match on.
      * If an education filter isn't specified, profiles with any education are
      * retrieved.
      * If multiple education filters are specified, profiles that match any
@@ -4095,8 +4122,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Education filter specifies education of profiles to match on.
+     * Optional. Education filter specifies education of profiles to match on.
      * If an education filter isn't specified, profiles with any education are
      * retrieved.
      * If multiple education filters are specified, profiles that match any
@@ -4127,8 +4153,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Education filter specifies education of profiles to match on.
+     * Optional. Education filter specifies education of profiles to match on.
      * If an education filter isn't specified, profiles with any education are
      * retrieved.
      * If multiple education filters are specified, profiles that match any
@@ -4156,8 +4181,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Education filter specifies education of profiles to match on.
+     * Optional. Education filter specifies education of profiles to match on.
      * If an education filter isn't specified, profiles with any education are
      * retrieved.
      * If multiple education filters are specified, profiles that match any
@@ -4187,8 +4211,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Education filter specifies education of profiles to match on.
+     * Optional. Education filter specifies education of profiles to match on.
      * If an education filter isn't specified, profiles with any education are
      * retrieved.
      * If multiple education filters are specified, profiles that match any
@@ -4219,8 +4242,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Education filter specifies education of profiles to match on.
+     * Optional. Education filter specifies education of profiles to match on.
      * If an education filter isn't specified, profiles with any education are
      * retrieved.
      * If multiple education filters are specified, profiles that match any
@@ -4248,8 +4270,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Education filter specifies education of profiles to match on.
+     * Optional. Education filter specifies education of profiles to match on.
      * If an education filter isn't specified, profiles with any education are
      * retrieved.
      * If multiple education filters are specified, profiles that match any
@@ -4277,8 +4298,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Education filter specifies education of profiles to match on.
+     * Optional. Education filter specifies education of profiles to match on.
      * If an education filter isn't specified, profiles with any education are
      * retrieved.
      * If multiple education filters are specified, profiles that match any
@@ -4306,8 +4326,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Education filter specifies education of profiles to match on.
+     * Optional. Education filter specifies education of profiles to match on.
      * If an education filter isn't specified, profiles with any education are
      * retrieved.
      * If multiple education filters are specified, profiles that match any
@@ -4334,8 +4353,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Education filter specifies education of profiles to match on.
+     * Optional. Education filter specifies education of profiles to match on.
      * If an education filter isn't specified, profiles with any education are
      * retrieved.
      * If multiple education filters are specified, profiles that match any
@@ -4362,8 +4380,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Education filter specifies education of profiles to match on.
+     * Optional. Education filter specifies education of profiles to match on.
      * If an education filter isn't specified, profiles with any education are
      * retrieved.
      * If multiple education filters are specified, profiles that match any
@@ -4384,8 +4401,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Education filter specifies education of profiles to match on.
+     * Optional. Education filter specifies education of profiles to match on.
      * If an education filter isn't specified, profiles with any education are
      * retrieved.
      * If multiple education filters are specified, profiles that match any
@@ -4410,8 +4426,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Education filter specifies education of profiles to match on.
+     * Optional. Education filter specifies education of profiles to match on.
      * If an education filter isn't specified, profiles with any education are
      * retrieved.
      * If multiple education filters are specified, profiles that match any
@@ -4436,8 +4451,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Education filter specifies education of profiles to match on.
+     * Optional. Education filter specifies education of profiles to match on.
      * If an education filter isn't specified, profiles with any education are
      * retrieved.
      * If multiple education filters are specified, profiles that match any
@@ -4458,8 +4472,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Education filter specifies education of profiles to match on.
+     * Optional. Education filter specifies education of profiles to match on.
      * If an education filter isn't specified, profiles with any education are
      * retrieved.
      * If multiple education filters are specified, profiles that match any
@@ -4481,8 +4494,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Education filter specifies education of profiles to match on.
+     * Optional. Education filter specifies education of profiles to match on.
      * If an education filter isn't specified, profiles with any education are
      * retrieved.
      * If multiple education filters are specified, profiles that match any
@@ -4541,8 +4553,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Skill filter specifies skill of profiles to match on.
+     * Optional. Skill filter specifies skill of profiles to match on.
      * If a skill filter isn't specified, profiles with any skills are retrieved.
      * If multiple skill filters are specified, profiles that match any skill
      * filters are retrieved.
@@ -4565,8 +4576,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Skill filter specifies skill of profiles to match on.
+     * Optional. Skill filter specifies skill of profiles to match on.
      * If a skill filter isn't specified, profiles with any skills are retrieved.
      * If multiple skill filters are specified, profiles that match any skill
      * filters are retrieved.
@@ -4589,8 +4599,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Skill filter specifies skill of profiles to match on.
+     * Optional. Skill filter specifies skill of profiles to match on.
      * If a skill filter isn't specified, profiles with any skills are retrieved.
      * If multiple skill filters are specified, profiles that match any skill
      * filters are retrieved.
@@ -4613,8 +4622,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Skill filter specifies skill of profiles to match on.
+     * Optional. Skill filter specifies skill of profiles to match on.
      * If a skill filter isn't specified, profiles with any skills are retrieved.
      * If multiple skill filters are specified, profiles that match any skill
      * filters are retrieved.
@@ -4643,8 +4651,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Skill filter specifies skill of profiles to match on.
+     * Optional. Skill filter specifies skill of profiles to match on.
      * If a skill filter isn't specified, profiles with any skills are retrieved.
      * If multiple skill filters are specified, profiles that match any skill
      * filters are retrieved.
@@ -4671,8 +4678,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Skill filter specifies skill of profiles to match on.
+     * Optional. Skill filter specifies skill of profiles to match on.
      * If a skill filter isn't specified, profiles with any skills are retrieved.
      * If multiple skill filters are specified, profiles that match any skill
      * filters are retrieved.
@@ -4701,8 +4707,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Skill filter specifies skill of profiles to match on.
+     * Optional. Skill filter specifies skill of profiles to match on.
      * If a skill filter isn't specified, profiles with any skills are retrieved.
      * If multiple skill filters are specified, profiles that match any skill
      * filters are retrieved.
@@ -4731,8 +4736,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Skill filter specifies skill of profiles to match on.
+     * Optional. Skill filter specifies skill of profiles to match on.
      * If a skill filter isn't specified, profiles with any skills are retrieved.
      * If multiple skill filters are specified, profiles that match any skill
      * filters are retrieved.
@@ -4759,8 +4763,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Skill filter specifies skill of profiles to match on.
+     * Optional. Skill filter specifies skill of profiles to match on.
      * If a skill filter isn't specified, profiles with any skills are retrieved.
      * If multiple skill filters are specified, profiles that match any skill
      * filters are retrieved.
@@ -4787,8 +4790,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Skill filter specifies skill of profiles to match on.
+     * Optional. Skill filter specifies skill of profiles to match on.
      * If a skill filter isn't specified, profiles with any skills are retrieved.
      * If multiple skill filters are specified, profiles that match any skill
      * filters are retrieved.
@@ -4815,8 +4817,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Skill filter specifies skill of profiles to match on.
+     * Optional. Skill filter specifies skill of profiles to match on.
      * If a skill filter isn't specified, profiles with any skills are retrieved.
      * If multiple skill filters are specified, profiles that match any skill
      * filters are retrieved.
@@ -4842,8 +4843,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Skill filter specifies skill of profiles to match on.
+     * Optional. Skill filter specifies skill of profiles to match on.
      * If a skill filter isn't specified, profiles with any skills are retrieved.
      * If multiple skill filters are specified, profiles that match any skill
      * filters are retrieved.
@@ -4869,8 +4869,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Skill filter specifies skill of profiles to match on.
+     * Optional. Skill filter specifies skill of profiles to match on.
      * If a skill filter isn't specified, profiles with any skills are retrieved.
      * If multiple skill filters are specified, profiles that match any skill
      * filters are retrieved.
@@ -4889,8 +4888,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Skill filter specifies skill of profiles to match on.
+     * Optional. Skill filter specifies skill of profiles to match on.
      * If a skill filter isn't specified, profiles with any skills are retrieved.
      * If multiple skill filters are specified, profiles that match any skill
      * filters are retrieved.
@@ -4914,8 +4912,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Skill filter specifies skill of profiles to match on.
+     * Optional. Skill filter specifies skill of profiles to match on.
      * If a skill filter isn't specified, profiles with any skills are retrieved.
      * If multiple skill filters are specified, profiles that match any skill
      * filters are retrieved.
@@ -4939,8 +4936,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Skill filter specifies skill of profiles to match on.
+     * Optional. Skill filter specifies skill of profiles to match on.
      * If a skill filter isn't specified, profiles with any skills are retrieved.
      * If multiple skill filters are specified, profiles that match any skill
      * filters are retrieved.
@@ -4960,8 +4956,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Skill filter specifies skill of profiles to match on.
+     * Optional. Skill filter specifies skill of profiles to match on.
      * If a skill filter isn't specified, profiles with any skills are retrieved.
      * If multiple skill filters are specified, profiles that match any skill
      * filters are retrieved.
@@ -4981,8 +4976,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Skill filter specifies skill of profiles to match on.
+     * Optional. Skill filter specifies skill of profiles to match on.
      * If a skill filter isn't specified, profiles with any skills are retrieved.
      * If multiple skill filters are specified, profiles that match any skill
      * filters are retrieved.
@@ -5038,9 +5032,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Work experience filter specifies the total working experience of profiles
-     * to match on.
+     * Optional. Work experience filter specifies the total working experience of
+     * profiles to match on.
      * If a work experience filter isn't specified, profiles with any
      * professional experience are retrieved.
      * If multiple work experience filters are specified, profiles that match any
@@ -5063,9 +5056,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Work experience filter specifies the total working experience of profiles
-     * to match on.
+     * Optional. Work experience filter specifies the total working experience of
+     * profiles to match on.
      * If a work experience filter isn't specified, profiles with any
      * professional experience are retrieved.
      * If multiple work experience filters are specified, profiles that match any
@@ -5087,9 +5079,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Work experience filter specifies the total working experience of profiles
-     * to match on.
+     * Optional. Work experience filter specifies the total working experience of
+     * profiles to match on.
      * If a work experience filter isn't specified, profiles with any
      * professional experience are retrieved.
      * If multiple work experience filters are specified, profiles that match any
@@ -5111,9 +5102,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Work experience filter specifies the total working experience of profiles
-     * to match on.
+     * Optional. Work experience filter specifies the total working experience of
+     * profiles to match on.
      * If a work experience filter isn't specified, profiles with any
      * professional experience are retrieved.
      * If multiple work experience filters are specified, profiles that match any
@@ -5142,9 +5132,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Work experience filter specifies the total working experience of profiles
-     * to match on.
+     * Optional. Work experience filter specifies the total working experience of
+     * profiles to match on.
      * If a work experience filter isn't specified, profiles with any
      * professional experience are retrieved.
      * If multiple work experience filters are specified, profiles that match any
@@ -5170,9 +5159,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Work experience filter specifies the total working experience of profiles
-     * to match on.
+     * Optional. Work experience filter specifies the total working experience of
+     * profiles to match on.
      * If a work experience filter isn't specified, profiles with any
      * professional experience are retrieved.
      * If multiple work experience filters are specified, profiles that match any
@@ -5201,9 +5189,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Work experience filter specifies the total working experience of profiles
-     * to match on.
+     * Optional. Work experience filter specifies the total working experience of
+     * profiles to match on.
      * If a work experience filter isn't specified, profiles with any
      * professional experience are retrieved.
      * If multiple work experience filters are specified, profiles that match any
@@ -5232,9 +5219,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Work experience filter specifies the total working experience of profiles
-     * to match on.
+     * Optional. Work experience filter specifies the total working experience of
+     * profiles to match on.
      * If a work experience filter isn't specified, profiles with any
      * professional experience are retrieved.
      * If multiple work experience filters are specified, profiles that match any
@@ -5260,9 +5246,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Work experience filter specifies the total working experience of profiles
-     * to match on.
+     * Optional. Work experience filter specifies the total working experience of
+     * profiles to match on.
      * If a work experience filter isn't specified, profiles with any
      * professional experience are retrieved.
      * If multiple work experience filters are specified, profiles that match any
@@ -5288,9 +5273,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Work experience filter specifies the total working experience of profiles
-     * to match on.
+     * Optional. Work experience filter specifies the total working experience of
+     * profiles to match on.
      * If a work experience filter isn't specified, profiles with any
      * professional experience are retrieved.
      * If multiple work experience filters are specified, profiles that match any
@@ -5316,9 +5300,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Work experience filter specifies the total working experience of profiles
-     * to match on.
+     * Optional. Work experience filter specifies the total working experience of
+     * profiles to match on.
      * If a work experience filter isn't specified, profiles with any
      * professional experience are retrieved.
      * If multiple work experience filters are specified, profiles that match any
@@ -5343,9 +5326,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Work experience filter specifies the total working experience of profiles
-     * to match on.
+     * Optional. Work experience filter specifies the total working experience of
+     * profiles to match on.
      * If a work experience filter isn't specified, profiles with any
      * professional experience are retrieved.
      * If multiple work experience filters are specified, profiles that match any
@@ -5370,9 +5352,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Work experience filter specifies the total working experience of profiles
-     * to match on.
+     * Optional. Work experience filter specifies the total working experience of
+     * profiles to match on.
      * If a work experience filter isn't specified, profiles with any
      * professional experience are retrieved.
      * If multiple work experience filters are specified, profiles that match any
@@ -5391,9 +5372,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Work experience filter specifies the total working experience of profiles
-     * to match on.
+     * Optional. Work experience filter specifies the total working experience of
+     * profiles to match on.
      * If a work experience filter isn't specified, profiles with any
      * professional experience are retrieved.
      * If multiple work experience filters are specified, profiles that match any
@@ -5416,9 +5396,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Work experience filter specifies the total working experience of profiles
-     * to match on.
+     * Optional. Work experience filter specifies the total working experience of
+     * profiles to match on.
      * If a work experience filter isn't specified, profiles with any
      * professional experience are retrieved.
      * If multiple work experience filters are specified, profiles that match any
@@ -5441,9 +5420,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Work experience filter specifies the total working experience of profiles
-     * to match on.
+     * Optional. Work experience filter specifies the total working experience of
+     * profiles to match on.
      * If a work experience filter isn't specified, profiles with any
      * professional experience are retrieved.
      * If multiple work experience filters are specified, profiles that match any
@@ -5463,9 +5441,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Work experience filter specifies the total working experience of profiles
-     * to match on.
+     * Optional. Work experience filter specifies the total working experience of
+     * profiles to match on.
      * If a work experience filter isn't specified, profiles with any
      * professional experience are retrieved.
      * If multiple work experience filters are specified, profiles that match any
@@ -5486,9 +5463,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Work experience filter specifies the total working experience of profiles
-     * to match on.
+     * Optional. Work experience filter specifies the total working experience of
+     * profiles to match on.
      * If a work experience filter isn't specified, profiles with any
      * professional experience are retrieved.
      * If multiple work experience filters are specified, profiles that match any
@@ -5545,9 +5521,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Time filter specifies the create/update timestamp of the profiles to match
-     * on.
+     * Optional. Time filter specifies the create/update timestamp of the profiles
+     * to match on.
      * For example, search for profiles created since "2018-1-1".
      * </pre>
      *
@@ -5564,9 +5539,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Time filter specifies the create/update timestamp of the profiles to match
-     * on.
+     * Optional. Time filter specifies the create/update timestamp of the profiles
+     * to match on.
      * For example, search for profiles created since "2018-1-1".
      * </pre>
      *
@@ -5583,9 +5557,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Time filter specifies the create/update timestamp of the profiles to match
-     * on.
+     * Optional. Time filter specifies the create/update timestamp of the profiles
+     * to match on.
      * For example, search for profiles created since "2018-1-1".
      * </pre>
      *
@@ -5602,9 +5575,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Time filter specifies the create/update timestamp of the profiles to match
-     * on.
+     * Optional. Time filter specifies the create/update timestamp of the profiles
+     * to match on.
      * For example, search for profiles created since "2018-1-1".
      * </pre>
      *
@@ -5627,9 +5599,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Time filter specifies the create/update timestamp of the profiles to match
-     * on.
+     * Optional. Time filter specifies the create/update timestamp of the profiles
+     * to match on.
      * For example, search for profiles created since "2018-1-1".
      * </pre>
      *
@@ -5650,9 +5621,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Time filter specifies the create/update timestamp of the profiles to match
-     * on.
+     * Optional. Time filter specifies the create/update timestamp of the profiles
+     * to match on.
      * For example, search for profiles created since "2018-1-1".
      * </pre>
      *
@@ -5675,9 +5645,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Time filter specifies the create/update timestamp of the profiles to match
-     * on.
+     * Optional. Time filter specifies the create/update timestamp of the profiles
+     * to match on.
      * For example, search for profiles created since "2018-1-1".
      * </pre>
      *
@@ -5700,9 +5669,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Time filter specifies the create/update timestamp of the profiles to match
-     * on.
+     * Optional. Time filter specifies the create/update timestamp of the profiles
+     * to match on.
      * For example, search for profiles created since "2018-1-1".
      * </pre>
      *
@@ -5723,9 +5691,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Time filter specifies the create/update timestamp of the profiles to match
-     * on.
+     * Optional. Time filter specifies the create/update timestamp of the profiles
+     * to match on.
      * For example, search for profiles created since "2018-1-1".
      * </pre>
      *
@@ -5746,9 +5713,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Time filter specifies the create/update timestamp of the profiles to match
-     * on.
+     * Optional. Time filter specifies the create/update timestamp of the profiles
+     * to match on.
      * For example, search for profiles created since "2018-1-1".
      * </pre>
      *
@@ -5769,9 +5735,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Time filter specifies the create/update timestamp of the profiles to match
-     * on.
+     * Optional. Time filter specifies the create/update timestamp of the profiles
+     * to match on.
      * For example, search for profiles created since "2018-1-1".
      * </pre>
      *
@@ -5791,9 +5756,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Time filter specifies the create/update timestamp of the profiles to match
-     * on.
+     * Optional. Time filter specifies the create/update timestamp of the profiles
+     * to match on.
      * For example, search for profiles created since "2018-1-1".
      * </pre>
      *
@@ -5813,9 +5777,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Time filter specifies the create/update timestamp of the profiles to match
-     * on.
+     * Optional. Time filter specifies the create/update timestamp of the profiles
+     * to match on.
      * For example, search for profiles created since "2018-1-1".
      * </pre>
      *
@@ -5828,9 +5791,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Time filter specifies the create/update timestamp of the profiles to match
-     * on.
+     * Optional. Time filter specifies the create/update timestamp of the profiles
+     * to match on.
      * For example, search for profiles created since "2018-1-1".
      * </pre>
      *
@@ -5847,9 +5809,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Time filter specifies the create/update timestamp of the profiles to match
-     * on.
+     * Optional. Time filter specifies the create/update timestamp of the profiles
+     * to match on.
      * For example, search for profiles created since "2018-1-1".
      * </pre>
      *
@@ -5867,9 +5828,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Time filter specifies the create/update timestamp of the profiles to match
-     * on.
+     * Optional. Time filter specifies the create/update timestamp of the profiles
+     * to match on.
      * For example, search for profiles created since "2018-1-1".
      * </pre>
      *
@@ -5883,9 +5843,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Time filter specifies the create/update timestamp of the profiles to match
-     * on.
+     * Optional. Time filter specifies the create/update timestamp of the profiles
+     * to match on.
      * For example, search for profiles created since "2018-1-1".
      * </pre>
      *
@@ -5899,9 +5858,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Time filter specifies the create/update timestamp of the profiles to match
-     * on.
+     * Optional. Time filter specifies the create/update timestamp of the profiles
+     * to match on.
      * For example, search for profiles created since "2018-1-1".
      * </pre>
      *
@@ -5939,8 +5897,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The hirable filter specifies the profile's hirable status to match on.
+     * Optional. The hirable filter specifies the profile's hirable status to
+     * match on.
      * </pre>
      *
      * <code>.google.protobuf.BoolValue hirable_filter = 9;</code>
@@ -5952,8 +5910,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The hirable filter specifies the profile's hirable status to match on.
+     * Optional. The hirable filter specifies the profile's hirable status to
+     * match on.
      * </pre>
      *
      * <code>.google.protobuf.BoolValue hirable_filter = 9;</code>
@@ -5971,8 +5929,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The hirable filter specifies the profile's hirable status to match on.
+     * Optional. The hirable filter specifies the profile's hirable status to
+     * match on.
      * </pre>
      *
      * <code>.google.protobuf.BoolValue hirable_filter = 9;</code>
@@ -5994,8 +5952,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The hirable filter specifies the profile's hirable status to match on.
+     * Optional. The hirable filter specifies the profile's hirable status to
+     * match on.
      * </pre>
      *
      * <code>.google.protobuf.BoolValue hirable_filter = 9;</code>
@@ -6014,8 +5972,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The hirable filter specifies the profile's hirable status to match on.
+     * Optional. The hirable filter specifies the profile's hirable status to
+     * match on.
      * </pre>
      *
      * <code>.google.protobuf.BoolValue hirable_filter = 9;</code>
@@ -6041,8 +5999,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The hirable filter specifies the profile's hirable status to match on.
+     * Optional. The hirable filter specifies the profile's hirable status to
+     * match on.
      * </pre>
      *
      * <code>.google.protobuf.BoolValue hirable_filter = 9;</code>
@@ -6062,8 +6020,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The hirable filter specifies the profile's hirable status to match on.
+     * Optional. The hirable filter specifies the profile's hirable status to
+     * match on.
      * </pre>
      *
      * <code>.google.protobuf.BoolValue hirable_filter = 9;</code>
@@ -6077,8 +6035,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The hirable filter specifies the profile's hirable status to match on.
+     * Optional. The hirable filter specifies the profile's hirable status to
+     * match on.
      * </pre>
      *
      * <code>.google.protobuf.BoolValue hirable_filter = 9;</code>
@@ -6096,8 +6054,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The hirable filter specifies the profile's hirable status to match on.
+     * Optional. The hirable filter specifies the profile's hirable status to
+     * match on.
      * </pre>
      *
      * <code>.google.protobuf.BoolValue hirable_filter = 9;</code>
@@ -6141,8 +6099,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The application date filters specify application date ranges to match on.
+     * Optional. The application date filters specify application date ranges to
+     * match on.
      * </pre>
      *
      * <code>
@@ -6161,8 +6119,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The application date filters specify application date ranges to match on.
+     * Optional. The application date filters specify application date ranges to
+     * match on.
      * </pre>
      *
      * <code>
@@ -6180,8 +6138,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The application date filters specify application date ranges to match on.
+     * Optional. The application date filters specify application date ranges to
+     * match on.
      * </pre>
      *
      * <code>
@@ -6200,8 +6158,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The application date filters specify application date ranges to match on.
+     * Optional. The application date filters specify application date ranges to
+     * match on.
      * </pre>
      *
      * <code>
@@ -6226,8 +6184,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The application date filters specify application date ranges to match on.
+     * Optional. The application date filters specify application date ranges to
+     * match on.
      * </pre>
      *
      * <code>
@@ -6249,8 +6207,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The application date filters specify application date ranges to match on.
+     * Optional. The application date filters specify application date ranges to
+     * match on.
      * </pre>
      *
      * <code>
@@ -6275,8 +6233,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The application date filters specify application date ranges to match on.
+     * Optional. The application date filters specify application date ranges to
+     * match on.
      * </pre>
      *
      * <code>
@@ -6301,8 +6259,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The application date filters specify application date ranges to match on.
+     * Optional. The application date filters specify application date ranges to
+     * match on.
      * </pre>
      *
      * <code>
@@ -6324,8 +6282,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The application date filters specify application date ranges to match on.
+     * Optional. The application date filters specify application date ranges to
+     * match on.
      * </pre>
      *
      * <code>
@@ -6347,8 +6305,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The application date filters specify application date ranges to match on.
+     * Optional. The application date filters specify application date ranges to
+     * match on.
      * </pre>
      *
      * <code>
@@ -6371,8 +6329,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The application date filters specify application date ranges to match on.
+     * Optional. The application date filters specify application date ranges to
+     * match on.
      * </pre>
      *
      * <code>
@@ -6393,8 +6351,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The application date filters specify application date ranges to match on.
+     * Optional. The application date filters specify application date ranges to
+     * match on.
      * </pre>
      *
      * <code>
@@ -6415,8 +6373,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The application date filters specify application date ranges to match on.
+     * Optional. The application date filters specify application date ranges to
+     * match on.
      * </pre>
      *
      * <code>
@@ -6431,8 +6389,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The application date filters specify application date ranges to match on.
+     * Optional. The application date filters specify application date ranges to
+     * match on.
      * </pre>
      *
      * <code>
@@ -6451,8 +6409,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The application date filters specify application date ranges to match on.
+     * Optional. The application date filters specify application date ranges to
+     * match on.
      * </pre>
      *
      * <code>
@@ -6471,8 +6429,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The application date filters specify application date ranges to match on.
+     * Optional. The application date filters specify application date ranges to
+     * match on.
      * </pre>
      *
      * <code>
@@ -6488,8 +6446,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The application date filters specify application date ranges to match on.
+     * Optional. The application date filters specify application date ranges to
+     * match on.
      * </pre>
      *
      * <code>
@@ -6506,8 +6464,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The application date filters specify application date ranges to match on.
+     * Optional. The application date filters specify application date ranges to
+     * match on.
      * </pre>
      *
      * <code>
@@ -6561,9 +6519,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The application outcome notes filters specify the notes for the outcome of
-     * the job application.
+     * Optional. The application outcome notes filters specify the notes for the
+     * outcome of the job application.
      * </pre>
      *
      * <code>
@@ -6582,9 +6539,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The application outcome notes filters specify the notes for the outcome of
-     * the job application.
+     * Optional. The application outcome notes filters specify the notes for the
+     * outcome of the job application.
      * </pre>
      *
      * <code>
@@ -6602,9 +6558,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The application outcome notes filters specify the notes for the outcome of
-     * the job application.
+     * Optional. The application outcome notes filters specify the notes for the
+     * outcome of the job application.
      * </pre>
      *
      * <code>
@@ -6623,9 +6578,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The application outcome notes filters specify the notes for the outcome of
-     * the job application.
+     * Optional. The application outcome notes filters specify the notes for the
+     * outcome of the job application.
      * </pre>
      *
      * <code>
@@ -6650,9 +6604,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The application outcome notes filters specify the notes for the outcome of
-     * the job application.
+     * Optional. The application outcome notes filters specify the notes for the
+     * outcome of the job application.
      * </pre>
      *
      * <code>
@@ -6675,9 +6628,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The application outcome notes filters specify the notes for the outcome of
-     * the job application.
+     * Optional. The application outcome notes filters specify the notes for the
+     * outcome of the job application.
      * </pre>
      *
      * <code>
@@ -6702,9 +6654,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The application outcome notes filters specify the notes for the outcome of
-     * the job application.
+     * Optional. The application outcome notes filters specify the notes for the
+     * outcome of the job application.
      * </pre>
      *
      * <code>
@@ -6729,9 +6680,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The application outcome notes filters specify the notes for the outcome of
-     * the job application.
+     * Optional. The application outcome notes filters specify the notes for the
+     * outcome of the job application.
      * </pre>
      *
      * <code>
@@ -6753,9 +6703,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The application outcome notes filters specify the notes for the outcome of
-     * the job application.
+     * Optional. The application outcome notes filters specify the notes for the
+     * outcome of the job application.
      * </pre>
      *
      * <code>
@@ -6778,9 +6727,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The application outcome notes filters specify the notes for the outcome of
-     * the job application.
+     * Optional. The application outcome notes filters specify the notes for the
+     * outcome of the job application.
      * </pre>
      *
      * <code>
@@ -6804,9 +6752,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The application outcome notes filters specify the notes for the outcome of
-     * the job application.
+     * Optional. The application outcome notes filters specify the notes for the
+     * outcome of the job application.
      * </pre>
      *
      * <code>
@@ -6827,9 +6774,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The application outcome notes filters specify the notes for the outcome of
-     * the job application.
+     * Optional. The application outcome notes filters specify the notes for the
+     * outcome of the job application.
      * </pre>
      *
      * <code>
@@ -6850,9 +6796,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The application outcome notes filters specify the notes for the outcome of
-     * the job application.
+     * Optional. The application outcome notes filters specify the notes for the
+     * outcome of the job application.
      * </pre>
      *
      * <code>
@@ -6867,9 +6812,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The application outcome notes filters specify the notes for the outcome of
-     * the job application.
+     * Optional. The application outcome notes filters specify the notes for the
+     * outcome of the job application.
      * </pre>
      *
      * <code>
@@ -6888,9 +6832,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The application outcome notes filters specify the notes for the outcome of
-     * the job application.
+     * Optional. The application outcome notes filters specify the notes for the
+     * outcome of the job application.
      * </pre>
      *
      * <code>
@@ -6910,9 +6853,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The application outcome notes filters specify the notes for the outcome of
-     * the job application.
+     * Optional. The application outcome notes filters specify the notes for the
+     * outcome of the job application.
      * </pre>
      *
      * <code>
@@ -6929,9 +6871,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The application outcome notes filters specify the notes for the outcome of
-     * the job application.
+     * Optional. The application outcome notes filters specify the notes for the
+     * outcome of the job application.
      * </pre>
      *
      * <code>
@@ -6949,9 +6890,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The application outcome notes filters specify the notes for the outcome of
-     * the job application.
+     * Optional. The application outcome notes filters specify the notes for the
+     * outcome of the job application.
      * </pre>
      *
      * <code>
@@ -7005,8 +6945,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The application job filters specify the job applied for in the application.
+     * Optional. The application job filters specify the job applied for in the
+     * application.
      * </pre>
      *
      * <code>
@@ -7025,8 +6965,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The application job filters specify the job applied for in the application.
+     * Optional. The application job filters specify the job applied for in the
+     * application.
      * </pre>
      *
      * <code>
@@ -7044,8 +6984,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The application job filters specify the job applied for in the application.
+     * Optional. The application job filters specify the job applied for in the
+     * application.
      * </pre>
      *
      * <code>
@@ -7064,8 +7004,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The application job filters specify the job applied for in the application.
+     * Optional. The application job filters specify the job applied for in the
+     * application.
      * </pre>
      *
      * <code>
@@ -7090,8 +7030,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The application job filters specify the job applied for in the application.
+     * Optional. The application job filters specify the job applied for in the
+     * application.
      * </pre>
      *
      * <code>
@@ -7113,8 +7053,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The application job filters specify the job applied for in the application.
+     * Optional. The application job filters specify the job applied for in the
+     * application.
      * </pre>
      *
      * <code>
@@ -7139,8 +7079,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The application job filters specify the job applied for in the application.
+     * Optional. The application job filters specify the job applied for in the
+     * application.
      * </pre>
      *
      * <code>
@@ -7165,8 +7105,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The application job filters specify the job applied for in the application.
+     * Optional. The application job filters specify the job applied for in the
+     * application.
      * </pre>
      *
      * <code>
@@ -7188,8 +7128,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The application job filters specify the job applied for in the application.
+     * Optional. The application job filters specify the job applied for in the
+     * application.
      * </pre>
      *
      * <code>
@@ -7211,8 +7151,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The application job filters specify the job applied for in the application.
+     * Optional. The application job filters specify the job applied for in the
+     * application.
      * </pre>
      *
      * <code>
@@ -7234,8 +7174,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The application job filters specify the job applied for in the application.
+     * Optional. The application job filters specify the job applied for in the
+     * application.
      * </pre>
      *
      * <code>
@@ -7256,8 +7196,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The application job filters specify the job applied for in the application.
+     * Optional. The application job filters specify the job applied for in the
+     * application.
      * </pre>
      *
      * <code>
@@ -7278,8 +7218,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The application job filters specify the job applied for in the application.
+     * Optional. The application job filters specify the job applied for in the
+     * application.
      * </pre>
      *
      * <code>
@@ -7294,8 +7234,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The application job filters specify the job applied for in the application.
+     * Optional. The application job filters specify the job applied for in the
+     * application.
      * </pre>
      *
      * <code>
@@ -7314,8 +7254,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The application job filters specify the job applied for in the application.
+     * Optional. The application job filters specify the job applied for in the
+     * application.
      * </pre>
      *
      * <code>
@@ -7334,8 +7274,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The application job filters specify the job applied for in the application.
+     * Optional. The application job filters specify the job applied for in the
+     * application.
      * </pre>
      *
      * <code>
@@ -7351,8 +7291,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The application job filters specify the job applied for in the application.
+     * Optional. The application job filters specify the job applied for in the
+     * application.
      * </pre>
      *
      * <code>
@@ -7369,8 +7309,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The application job filters specify the job applied for in the application.
+     * Optional. The application job filters specify the job applied for in the
+     * application.
      * </pre>
      *
      * <code>
@@ -7407,8 +7347,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * This filter specifies a structured syntax to match against the
+     * Optional. This filter specifies a structured syntax to match against the
      * [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes]
      * that are marked as `filterable`.
      * The syntax for this expression is a subset of Google SQL syntax.
@@ -7446,8 +7385,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * This filter specifies a structured syntax to match against the
+     * Optional. This filter specifies a structured syntax to match against the
      * [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes]
      * that are marked as `filterable`.
      * The syntax for this expression is a subset of Google SQL syntax.
@@ -7485,8 +7423,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * This filter specifies a structured syntax to match against the
+     * Optional. This filter specifies a structured syntax to match against the
      * [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes]
      * that are marked as `filterable`.
      * The syntax for this expression is a subset of Google SQL syntax.
@@ -7522,8 +7459,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * This filter specifies a structured syntax to match against the
+     * Optional. This filter specifies a structured syntax to match against the
      * [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes]
      * that are marked as `filterable`.
      * The syntax for this expression is a subset of Google SQL syntax.
@@ -7556,8 +7492,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * This filter specifies a structured syntax to match against the
+     * Optional. This filter specifies a structured syntax to match against the
      * [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes]
      * that are marked as `filterable`.
      * The syntax for this expression is a subset of Google SQL syntax.
@@ -7589,6 +7524,321 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
       customAttributeFilter_ = value;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.talent.v4beta1.CandidateAvailabilityFilter
+        candidateAvailabilityFilter_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.talent.v4beta1.CandidateAvailabilityFilter,
+            com.google.cloud.talent.v4beta1.CandidateAvailabilityFilter.Builder,
+            com.google.cloud.talent.v4beta1.CandidateAvailabilityFilterOrBuilder>
+        candidateAvailabilityFilterBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The candidate availability filter which filters based on
+     * availability signals.
+     * Signal 1: Number of days since most recent job application.  See
+     * [Availability.JobApplicationAvailabilitySignal][google.cloud.talent.v4beta1.Availability.JobApplicationAvailabilitySignal]
+     * for the details of this signal.
+     * Signal 2: Number of days since last profile update. See
+     * [Availability.ProfileUpdateAvailabilitySignal][google.cloud.talent.v4beta1.Availability.ProfileUpdateAvailabilitySignal]
+     * for the details of this signal.
+     * The candidate availability filter helps a recruiter understand if a
+     * specific candidate is likely to be actively seeking new job opportunities
+     * based on an aggregated set of signals.  Specifically, the intent is NOT to
+     * indicate the candidate's potential qualification / interest / close ability
+     * for a specific job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.talent.v4beta1.CandidateAvailabilityFilter candidate_availability_filter = 16;
+     * </code>
+     */
+    public boolean hasCandidateAvailabilityFilter() {
+      return candidateAvailabilityFilterBuilder_ != null || candidateAvailabilityFilter_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The candidate availability filter which filters based on
+     * availability signals.
+     * Signal 1: Number of days since most recent job application.  See
+     * [Availability.JobApplicationAvailabilitySignal][google.cloud.talent.v4beta1.Availability.JobApplicationAvailabilitySignal]
+     * for the details of this signal.
+     * Signal 2: Number of days since last profile update. See
+     * [Availability.ProfileUpdateAvailabilitySignal][google.cloud.talent.v4beta1.Availability.ProfileUpdateAvailabilitySignal]
+     * for the details of this signal.
+     * The candidate availability filter helps a recruiter understand if a
+     * specific candidate is likely to be actively seeking new job opportunities
+     * based on an aggregated set of signals.  Specifically, the intent is NOT to
+     * indicate the candidate's potential qualification / interest / close ability
+     * for a specific job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.talent.v4beta1.CandidateAvailabilityFilter candidate_availability_filter = 16;
+     * </code>
+     */
+    public com.google.cloud.talent.v4beta1.CandidateAvailabilityFilter
+        getCandidateAvailabilityFilter() {
+      if (candidateAvailabilityFilterBuilder_ == null) {
+        return candidateAvailabilityFilter_ == null
+            ? com.google.cloud.talent.v4beta1.CandidateAvailabilityFilter.getDefaultInstance()
+            : candidateAvailabilityFilter_;
+      } else {
+        return candidateAvailabilityFilterBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The candidate availability filter which filters based on
+     * availability signals.
+     * Signal 1: Number of days since most recent job application.  See
+     * [Availability.JobApplicationAvailabilitySignal][google.cloud.talent.v4beta1.Availability.JobApplicationAvailabilitySignal]
+     * for the details of this signal.
+     * Signal 2: Number of days since last profile update. See
+     * [Availability.ProfileUpdateAvailabilitySignal][google.cloud.talent.v4beta1.Availability.ProfileUpdateAvailabilitySignal]
+     * for the details of this signal.
+     * The candidate availability filter helps a recruiter understand if a
+     * specific candidate is likely to be actively seeking new job opportunities
+     * based on an aggregated set of signals.  Specifically, the intent is NOT to
+     * indicate the candidate's potential qualification / interest / close ability
+     * for a specific job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.talent.v4beta1.CandidateAvailabilityFilter candidate_availability_filter = 16;
+     * </code>
+     */
+    public Builder setCandidateAvailabilityFilter(
+        com.google.cloud.talent.v4beta1.CandidateAvailabilityFilter value) {
+      if (candidateAvailabilityFilterBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        candidateAvailabilityFilter_ = value;
+        onChanged();
+      } else {
+        candidateAvailabilityFilterBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The candidate availability filter which filters based on
+     * availability signals.
+     * Signal 1: Number of days since most recent job application.  See
+     * [Availability.JobApplicationAvailabilitySignal][google.cloud.talent.v4beta1.Availability.JobApplicationAvailabilitySignal]
+     * for the details of this signal.
+     * Signal 2: Number of days since last profile update. See
+     * [Availability.ProfileUpdateAvailabilitySignal][google.cloud.talent.v4beta1.Availability.ProfileUpdateAvailabilitySignal]
+     * for the details of this signal.
+     * The candidate availability filter helps a recruiter understand if a
+     * specific candidate is likely to be actively seeking new job opportunities
+     * based on an aggregated set of signals.  Specifically, the intent is NOT to
+     * indicate the candidate's potential qualification / interest / close ability
+     * for a specific job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.talent.v4beta1.CandidateAvailabilityFilter candidate_availability_filter = 16;
+     * </code>
+     */
+    public Builder setCandidateAvailabilityFilter(
+        com.google.cloud.talent.v4beta1.CandidateAvailabilityFilter.Builder builderForValue) {
+      if (candidateAvailabilityFilterBuilder_ == null) {
+        candidateAvailabilityFilter_ = builderForValue.build();
+        onChanged();
+      } else {
+        candidateAvailabilityFilterBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The candidate availability filter which filters based on
+     * availability signals.
+     * Signal 1: Number of days since most recent job application.  See
+     * [Availability.JobApplicationAvailabilitySignal][google.cloud.talent.v4beta1.Availability.JobApplicationAvailabilitySignal]
+     * for the details of this signal.
+     * Signal 2: Number of days since last profile update. See
+     * [Availability.ProfileUpdateAvailabilitySignal][google.cloud.talent.v4beta1.Availability.ProfileUpdateAvailabilitySignal]
+     * for the details of this signal.
+     * The candidate availability filter helps a recruiter understand if a
+     * specific candidate is likely to be actively seeking new job opportunities
+     * based on an aggregated set of signals.  Specifically, the intent is NOT to
+     * indicate the candidate's potential qualification / interest / close ability
+     * for a specific job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.talent.v4beta1.CandidateAvailabilityFilter candidate_availability_filter = 16;
+     * </code>
+     */
+    public Builder mergeCandidateAvailabilityFilter(
+        com.google.cloud.talent.v4beta1.CandidateAvailabilityFilter value) {
+      if (candidateAvailabilityFilterBuilder_ == null) {
+        if (candidateAvailabilityFilter_ != null) {
+          candidateAvailabilityFilter_ =
+              com.google.cloud.talent.v4beta1.CandidateAvailabilityFilter.newBuilder(
+                      candidateAvailabilityFilter_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          candidateAvailabilityFilter_ = value;
+        }
+        onChanged();
+      } else {
+        candidateAvailabilityFilterBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The candidate availability filter which filters based on
+     * availability signals.
+     * Signal 1: Number of days since most recent job application.  See
+     * [Availability.JobApplicationAvailabilitySignal][google.cloud.talent.v4beta1.Availability.JobApplicationAvailabilitySignal]
+     * for the details of this signal.
+     * Signal 2: Number of days since last profile update. See
+     * [Availability.ProfileUpdateAvailabilitySignal][google.cloud.talent.v4beta1.Availability.ProfileUpdateAvailabilitySignal]
+     * for the details of this signal.
+     * The candidate availability filter helps a recruiter understand if a
+     * specific candidate is likely to be actively seeking new job opportunities
+     * based on an aggregated set of signals.  Specifically, the intent is NOT to
+     * indicate the candidate's potential qualification / interest / close ability
+     * for a specific job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.talent.v4beta1.CandidateAvailabilityFilter candidate_availability_filter = 16;
+     * </code>
+     */
+    public Builder clearCandidateAvailabilityFilter() {
+      if (candidateAvailabilityFilterBuilder_ == null) {
+        candidateAvailabilityFilter_ = null;
+        onChanged();
+      } else {
+        candidateAvailabilityFilter_ = null;
+        candidateAvailabilityFilterBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The candidate availability filter which filters based on
+     * availability signals.
+     * Signal 1: Number of days since most recent job application.  See
+     * [Availability.JobApplicationAvailabilitySignal][google.cloud.talent.v4beta1.Availability.JobApplicationAvailabilitySignal]
+     * for the details of this signal.
+     * Signal 2: Number of days since last profile update. See
+     * [Availability.ProfileUpdateAvailabilitySignal][google.cloud.talent.v4beta1.Availability.ProfileUpdateAvailabilitySignal]
+     * for the details of this signal.
+     * The candidate availability filter helps a recruiter understand if a
+     * specific candidate is likely to be actively seeking new job opportunities
+     * based on an aggregated set of signals.  Specifically, the intent is NOT to
+     * indicate the candidate's potential qualification / interest / close ability
+     * for a specific job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.talent.v4beta1.CandidateAvailabilityFilter candidate_availability_filter = 16;
+     * </code>
+     */
+    public com.google.cloud.talent.v4beta1.CandidateAvailabilityFilter.Builder
+        getCandidateAvailabilityFilterBuilder() {
+
+      onChanged();
+      return getCandidateAvailabilityFilterFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The candidate availability filter which filters based on
+     * availability signals.
+     * Signal 1: Number of days since most recent job application.  See
+     * [Availability.JobApplicationAvailabilitySignal][google.cloud.talent.v4beta1.Availability.JobApplicationAvailabilitySignal]
+     * for the details of this signal.
+     * Signal 2: Number of days since last profile update. See
+     * [Availability.ProfileUpdateAvailabilitySignal][google.cloud.talent.v4beta1.Availability.ProfileUpdateAvailabilitySignal]
+     * for the details of this signal.
+     * The candidate availability filter helps a recruiter understand if a
+     * specific candidate is likely to be actively seeking new job opportunities
+     * based on an aggregated set of signals.  Specifically, the intent is NOT to
+     * indicate the candidate's potential qualification / interest / close ability
+     * for a specific job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.talent.v4beta1.CandidateAvailabilityFilter candidate_availability_filter = 16;
+     * </code>
+     */
+    public com.google.cloud.talent.v4beta1.CandidateAvailabilityFilterOrBuilder
+        getCandidateAvailabilityFilterOrBuilder() {
+      if (candidateAvailabilityFilterBuilder_ != null) {
+        return candidateAvailabilityFilterBuilder_.getMessageOrBuilder();
+      } else {
+        return candidateAvailabilityFilter_ == null
+            ? com.google.cloud.talent.v4beta1.CandidateAvailabilityFilter.getDefaultInstance()
+            : candidateAvailabilityFilter_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The candidate availability filter which filters based on
+     * availability signals.
+     * Signal 1: Number of days since most recent job application.  See
+     * [Availability.JobApplicationAvailabilitySignal][google.cloud.talent.v4beta1.Availability.JobApplicationAvailabilitySignal]
+     * for the details of this signal.
+     * Signal 2: Number of days since last profile update. See
+     * [Availability.ProfileUpdateAvailabilitySignal][google.cloud.talent.v4beta1.Availability.ProfileUpdateAvailabilitySignal]
+     * for the details of this signal.
+     * The candidate availability filter helps a recruiter understand if a
+     * specific candidate is likely to be actively seeking new job opportunities
+     * based on an aggregated set of signals.  Specifically, the intent is NOT to
+     * indicate the candidate's potential qualification / interest / close ability
+     * for a specific job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.talent.v4beta1.CandidateAvailabilityFilter candidate_availability_filter = 16;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.talent.v4beta1.CandidateAvailabilityFilter,
+            com.google.cloud.talent.v4beta1.CandidateAvailabilityFilter.Builder,
+            com.google.cloud.talent.v4beta1.CandidateAvailabilityFilterOrBuilder>
+        getCandidateAvailabilityFilterFieldBuilder() {
+      if (candidateAvailabilityFilterBuilder_ == null) {
+        candidateAvailabilityFilterBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.talent.v4beta1.CandidateAvailabilityFilter,
+                com.google.cloud.talent.v4beta1.CandidateAvailabilityFilter.Builder,
+                com.google.cloud.talent.v4beta1.CandidateAvailabilityFilterOrBuilder>(
+                getCandidateAvailabilityFilter(), getParentForChildren(), isClean());
+        candidateAvailabilityFilter_ = null;
+      }
+      return candidateAvailabilityFilterBuilder_;
     }
 
     @java.lang.Override
