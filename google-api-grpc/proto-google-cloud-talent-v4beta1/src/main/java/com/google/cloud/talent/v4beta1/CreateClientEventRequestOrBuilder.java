@@ -12,8 +12,7 @@ public interface CreateClientEventRequestOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * Resource name of the tenant under which the event is created.
+   * Required. Resource name of the tenant under which the event is created.
    * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
    * "projects/api-test-project/tenant/foo".
    * Tenant id is optional and a default tenant is created if unspecified, for
@@ -27,8 +26,7 @@ public interface CreateClientEventRequestOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * Resource name of the tenant under which the event is created.
+   * Required. Resource name of the tenant under which the event is created.
    * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
    * "projects/api-test-project/tenant/foo".
    * Tenant id is optional and a default tenant is created if unspecified, for
@@ -43,9 +41,8 @@ public interface CreateClientEventRequestOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * Events issued when end user interacts with customer's application that
-   * uses Cloud Talent Solution.
+   * Required. Events issued when end user interacts with customer's application
+   * that uses Cloud Talent Solution.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.ClientEvent client_event = 2;</code>
@@ -55,9 +52,8 @@ public interface CreateClientEventRequestOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * Events issued when end user interacts with customer's application that
-   * uses Cloud Talent Solution.
+   * Required. Events issued when end user interacts with customer's application
+   * that uses Cloud Talent Solution.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.ClientEvent client_event = 2;</code>
@@ -67,9 +63,8 @@ public interface CreateClientEventRequestOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * Events issued when end user interacts with customer's application that
-   * uses Cloud Talent Solution.
+   * Required. Events issued when end user interacts with customer's application
+   * that uses Cloud Talent Solution.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.ClientEvent client_event = 2;</code>

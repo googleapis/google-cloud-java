@@ -41,8 +41,8 @@ public interface TenantOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * Client side tenant identifier, used to uniquely identify the tenant.
+   * Required. Client side tenant identifier, used to uniquely identify the
+   * tenant.
    * The maximum number of allowed characters is 255.
    * </pre>
    *
@@ -53,8 +53,8 @@ public interface TenantOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * Client side tenant identifier, used to uniquely identify the tenant.
+   * Required. Client side tenant identifier, used to uniquely identify the
+   * tenant.
    * The maximum number of allowed characters is 255.
    * </pre>
    *
@@ -66,10 +66,11 @@ public interface TenantOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * Indicates whether data owned by this tenant may be used to provide product
-   * improvements across other tenants.
-   * Defaults behavior is [DataUsageType.ISOLATED][google.cloud.talent.v4beta1.Tenant.DataUsageType.ISOLATED] if it's unset.
+   * Optional. Indicates whether data owned by this tenant may be used to
+   * provide product improvements across other tenants.
+   * Defaults behavior is
+   * [DataUsageType.ISOLATED][google.cloud.talent.v4beta1.Tenant.DataUsageType.ISOLATED]
+   * if it's unset.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Tenant.DataUsageType usage_type = 3;</code>
@@ -79,10 +80,11 @@ public interface TenantOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * Indicates whether data owned by this tenant may be used to provide product
-   * improvements across other tenants.
-   * Defaults behavior is [DataUsageType.ISOLATED][google.cloud.talent.v4beta1.Tenant.DataUsageType.ISOLATED] if it's unset.
+   * Optional. Indicates whether data owned by this tenant may be used to
+   * provide product improvements across other tenants.
+   * Defaults behavior is
+   * [DataUsageType.ISOLATED][google.cloud.talent.v4beta1.Tenant.DataUsageType.ISOLATED]
+   * if it's unset.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Tenant.DataUsageType usage_type = 3;</code>
@@ -93,10 +95,10 @@ public interface TenantOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * A list of keys of filterable [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes], whose
-   * corresponding `string_values` are used in keyword searches. Profiles with
-   * `string_values` under these specified field keys are returned if any
+   * Optional. A list of keys of filterable
+   * [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes],
+   * whose corresponding `string_values` are used in keyword searches. Profiles
+   * with `string_values` under these specified field keys are returned if any
    * of the values match the search keyword. Custom field values with
    * parenthesis, brackets and special symbols are not searchable as-is,
    * and must be surrounded by quotes.
@@ -109,10 +111,10 @@ public interface TenantOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * A list of keys of filterable [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes], whose
-   * corresponding `string_values` are used in keyword searches. Profiles with
-   * `string_values` under these specified field keys are returned if any
+   * Optional. A list of keys of filterable
+   * [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes],
+   * whose corresponding `string_values` are used in keyword searches. Profiles
+   * with `string_values` under these specified field keys are returned if any
    * of the values match the search keyword. Custom field values with
    * parenthesis, brackets and special symbols are not searchable as-is,
    * and must be surrounded by quotes.
@@ -125,10 +127,10 @@ public interface TenantOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * A list of keys of filterable [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes], whose
-   * corresponding `string_values` are used in keyword searches. Profiles with
-   * `string_values` under these specified field keys are returned if any
+   * Optional. A list of keys of filterable
+   * [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes],
+   * whose corresponding `string_values` are used in keyword searches. Profiles
+   * with `string_values` under these specified field keys are returned if any
    * of the values match the search keyword. Custom field values with
    * parenthesis, brackets and special symbols are not searchable as-is,
    * and must be surrounded by quotes.
@@ -141,10 +143,10 @@ public interface TenantOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * A list of keys of filterable [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes], whose
-   * corresponding `string_values` are used in keyword searches. Profiles with
-   * `string_values` under these specified field keys are returned if any
+   * Optional. A list of keys of filterable
+   * [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes],
+   * whose corresponding `string_values` are used in keyword searches. Profiles
+   * with `string_values` under these specified field keys are returned if any
    * of the values match the search keyword. Custom field values with
    * parenthesis, brackets and special symbols are not searchable as-is,
    * and must be surrounded by quotes.

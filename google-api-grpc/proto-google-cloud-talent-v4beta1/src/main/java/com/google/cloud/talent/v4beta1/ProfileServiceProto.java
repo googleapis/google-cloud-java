@@ -59,78 +59,82 @@ public final class ProfileServiceProto {
     java.lang.String[] descriptorData = {
       "\n1google/cloud/talent/v4beta1/profile_se"
           + "rvice.proto\022\033google.cloud.talent.v4beta1"
-          + "\032\034google/api/annotations.proto\032(google/c"
-          + "loud/talent/v4beta1/common.proto\032)google"
-          + "/cloud/talent/v4beta1/filters.proto\032+goo"
-          + "gle/cloud/talent/v4beta1/histogram.proto"
-          + "\032)google/cloud/talent/v4beta1/profile.pr"
-          + "oto\032\033google/protobuf/empty.proto\032 google"
-          + "/protobuf/field_mask.proto\"{\n\023ListProfil"
-          + "esRequest\022\016\n\006parent\030\001 \001(\t\022\022\n\npage_token\030"
-          + "\002 \001(\t\022\021\n\tpage_size\030\003 \001(\005\022-\n\tread_mask\030\004 "
-          + "\001(\0132\032.google.protobuf.FieldMask\"g\n\024ListP"
-          + "rofilesResponse\0226\n\010profiles\030\001 \003(\0132$.goog"
-          + "le.cloud.talent.v4beta1.Profile\022\027\n\017next_"
-          + "page_token\030\002 \001(\t\"]\n\024CreateProfileRequest"
-          + "\022\016\n\006parent\030\001 \001(\t\0225\n\007profile\030\002 \001(\0132$.goog"
-          + "le.cloud.talent.v4beta1.Profile\"!\n\021GetPr"
-          + "ofileRequest\022\014\n\004name\030\001 \001(\t\"~\n\024UpdateProf"
-          + "ileRequest\0225\n\007profile\030\001 \001(\0132$.google.clo"
-          + "ud.talent.v4beta1.Profile\022/\n\013update_mask"
-          + "\030\002 \001(\0132\032.google.protobuf.FieldMask\"$\n\024De"
-          + "leteProfileRequest\022\014\n\004name\030\001 \001(\t\"\374\002\n\025Sea"
-          + "rchProfilesRequest\022\016\n\006parent\030\001 \001(\t\022F\n\020re"
-          + "quest_metadata\030\002 \001(\0132,.google.cloud.tale"
-          + "nt.v4beta1.RequestMetadata\022@\n\rprofile_qu"
-          + "ery\030\003 \001(\0132).google.cloud.talent.v4beta1."
-          + "ProfileQuery\022\021\n\tpage_size\030\004 \001(\005\022\022\n\npage_"
-          + "token\030\005 \001(\t\022\016\n\006offset\030\006 \001(\005\022\033\n\023disable_s"
-          + "pell_check\030\007 \001(\010\022\020\n\010order_by\030\010 \001(\t\022\033\n\023ca"
-          + "se_sensitive_sort\030\t \001(\010\022F\n\021histogram_que"
-          + "ries\030\n \003(\0132+.google.cloud.talent.v4beta1"
-          + ".HistogramQuery\"\374\002\n\026SearchProfilesRespon"
-          + "se\022\034\n\024estimated_total_size\030\001 \001(\003\022I\n\020spel"
-          + "l_correction\030\002 \001(\0132/.google.cloud.talent"
-          + ".v4beta1.SpellingCorrection\022?\n\010metadata\030"
-          + "\003 \001(\0132-.google.cloud.talent.v4beta1.Resp"
-          + "onseMetadata\022\027\n\017next_page_token\030\004 \001(\t\022R\n"
-          + "\027histogram_query_results\030\005 \003(\01321.google."
-          + "cloud.talent.v4beta1.HistogramQueryResul"
-          + "t\022K\n\023summarized_profiles\030\006 \003(\0132..google."
-          + "cloud.talent.v4beta1.SummarizedProfile\"\202"
-          + "\001\n\021SummarizedProfile\0226\n\010profiles\030\001 \003(\0132$"
-          + ".google.cloud.talent.v4beta1.Profile\0225\n\007"
-          + "summary\030\002 \001(\0132$.google.cloud.talent.v4be"
-          + "ta1.Profile2\377\007\n\016ProfileService\022\254\001\n\014ListP"
-          + "rofiles\0220.google.cloud.talent.v4beta1.Li"
-          + "stProfilesRequest\0321.google.cloud.talent."
-          + "v4beta1.ListProfilesResponse\"7\202\323\344\223\0021\022//v"
-          + "4beta1/{parent=projects/*/tenants/*}/pro"
-          + "files\022\244\001\n\rCreateProfile\0221.google.cloud.t"
-          + "alent.v4beta1.CreateProfileRequest\032$.goo"
-          + "gle.cloud.talent.v4beta1.Profile\":\202\323\344\223\0024"
-          + "\"//v4beta1/{parent=projects/*/tenants/*}"
-          + "/profiles:\001*\022\233\001\n\nGetProfile\022..google.clo"
-          + "ud.talent.v4beta1.GetProfileRequest\032$.go"
-          + "ogle.cloud.talent.v4beta1.Profile\"7\202\323\344\223\002"
-          + "1\022//v4beta1/{name=projects/*/tenants/*/p"
-          + "rofiles/*}\022\254\001\n\rUpdateProfile\0221.google.cl"
-          + "oud.talent.v4beta1.UpdateProfileRequest\032"
-          + "$.google.cloud.talent.v4beta1.Profile\"B\202"
-          + "\323\344\223\002<27/v4beta1/{profile.name=projects/*"
-          + "/tenants/*/profiles/*}:\001*\022\223\001\n\rDeleteProf"
-          + "ile\0221.google.cloud.talent.v4beta1.Delete"
-          + "ProfileRequest\032\026.google.protobuf.Empty\"7"
-          + "\202\323\344\223\0021*//v4beta1/{name=projects/*/tenant"
-          + "s/*/profiles/*}\022\263\001\n\016SearchProfiles\0222.goo"
-          + "gle.cloud.talent.v4beta1.SearchProfilesR"
-          + "equest\0323.google.cloud.talent.v4beta1.Sea"
-          + "rchProfilesResponse\"8\202\323\344\223\0022\"-/v4beta1/{p"
-          + "arent=projects/*/tenants/*}:search:\001*B\201\001"
-          + "\n\037com.google.cloud.talent.v4beta1B\023Profi"
-          + "leServiceProtoP\001ZAgoogle.golang.org/genp"
-          + "roto/googleapis/cloud/talent/v4beta1;tal"
-          + "ent\242\002\003CTSb\006proto3"
+          + "\032\034google/api/annotations.proto\032\027google/a"
+          + "pi/client.proto\032(google/cloud/talent/v4b"
+          + "eta1/common.proto\032)google/cloud/talent/v"
+          + "4beta1/filters.proto\032+google/cloud/talen"
+          + "t/v4beta1/histogram.proto\032)google/cloud/"
+          + "talent/v4beta1/profile.proto\032\033google/pro"
+          + "tobuf/empty.proto\032 google/protobuf/field"
+          + "_mask.proto\"{\n\023ListProfilesRequest\022\016\n\006pa"
+          + "rent\030\001 \001(\t\022\022\n\npage_token\030\002 \001(\t\022\021\n\tpage_s"
+          + "ize\030\003 \001(\005\022-\n\tread_mask\030\004 \001(\0132\032.google.pr"
+          + "otobuf.FieldMask\"g\n\024ListProfilesResponse"
+          + "\0226\n\010profiles\030\001 \003(\0132$.google.cloud.talent"
+          + ".v4beta1.Profile\022\027\n\017next_page_token\030\002 \001("
+          + "\t\"]\n\024CreateProfileRequest\022\016\n\006parent\030\001 \001("
+          + "\t\0225\n\007profile\030\002 \001(\0132$.google.cloud.talent"
+          + ".v4beta1.Profile\"!\n\021GetProfileRequest\022\014\n"
+          + "\004name\030\001 \001(\t\"~\n\024UpdateProfileRequest\0225\n\007p"
+          + "rofile\030\001 \001(\0132$.google.cloud.talent.v4bet"
+          + "a1.Profile\022/\n\013update_mask\030\002 \001(\0132\032.google"
+          + ".protobuf.FieldMask\"$\n\024DeleteProfileRequ"
+          + "est\022\014\n\004name\030\001 \001(\t\"\223\003\n\025SearchProfilesRequ"
+          + "est\022\016\n\006parent\030\001 \001(\t\022F\n\020request_metadata\030"
+          + "\002 \001(\0132,.google.cloud.talent.v4beta1.Requ"
+          + "estMetadata\022@\n\rprofile_query\030\003 \001(\0132).goo"
+          + "gle.cloud.talent.v4beta1.ProfileQuery\022\021\n"
+          + "\tpage_size\030\004 \001(\005\022\022\n\npage_token\030\005 \001(\t\022\016\n\006"
+          + "offset\030\006 \001(\005\022\033\n\023disable_spell_check\030\007 \001("
+          + "\010\022\020\n\010order_by\030\010 \001(\t\022\033\n\023case_sensitive_so"
+          + "rt\030\t \001(\010\022F\n\021histogram_queries\030\n \003(\0132+.go"
+          + "ogle.cloud.talent.v4beta1.HistogramQuery"
+          + "\022\025\n\rresult_set_id\030\014 \001(\t\"\223\003\n\026SearchProfil"
+          + "esResponse\022\034\n\024estimated_total_size\030\001 \001(\003"
+          + "\022I\n\020spell_correction\030\002 \001(\0132/.google.clou"
+          + "d.talent.v4beta1.SpellingCorrection\022?\n\010m"
+          + "etadata\030\003 \001(\0132-.google.cloud.talent.v4be"
+          + "ta1.ResponseMetadata\022\027\n\017next_page_token\030"
+          + "\004 \001(\t\022R\n\027histogram_query_results\030\005 \003(\01321"
+          + ".google.cloud.talent.v4beta1.HistogramQu"
+          + "eryResult\022K\n\023summarized_profiles\030\006 \003(\0132."
+          + ".google.cloud.talent.v4beta1.SummarizedP"
+          + "rofile\022\025\n\rresult_set_id\030\007 \001(\t\"\202\001\n\021Summar"
+          + "izedProfile\0226\n\010profiles\030\001 \003(\0132$.google.c"
+          + "loud.talent.v4beta1.Profile\0225\n\007summary\030\002"
+          + " \001(\0132$.google.cloud.talent.v4beta1.Profi"
+          + "le2\355\010\n\016ProfileService\022\254\001\n\014ListProfiles\0220"
+          + ".google.cloud.talent.v4beta1.ListProfile"
+          + "sRequest\0321.google.cloud.talent.v4beta1.L"
+          + "istProfilesResponse\"7\202\323\344\223\0021\022//v4beta1/{p"
+          + "arent=projects/*/tenants/*}/profiles\022\244\001\n"
+          + "\rCreateProfile\0221.google.cloud.talent.v4b"
+          + "eta1.CreateProfileRequest\032$.google.cloud"
+          + ".talent.v4beta1.Profile\":\202\323\344\223\0024\"//v4beta"
+          + "1/{parent=projects/*/tenants/*}/profiles"
+          + ":\001*\022\233\001\n\nGetProfile\022..google.cloud.talent"
+          + ".v4beta1.GetProfileRequest\032$.google.clou"
+          + "d.talent.v4beta1.Profile\"7\202\323\344\223\0021\022//v4bet"
+          + "a1/{name=projects/*/tenants/*/profiles/*"
+          + "}\022\254\001\n\rUpdateProfile\0221.google.cloud.talen"
+          + "t.v4beta1.UpdateProfileRequest\032$.google."
+          + "cloud.talent.v4beta1.Profile\"B\202\323\344\223\002<27/v"
+          + "4beta1/{profile.name=projects/*/tenants/"
+          + "*/profiles/*}:\001*\022\223\001\n\rDeleteProfile\0221.goo"
+          + "gle.cloud.talent.v4beta1.DeleteProfileRe"
+          + "quest\032\026.google.protobuf.Empty\"7\202\323\344\223\0021*//"
+          + "v4beta1/{name=projects/*/tenants/*/profi"
+          + "les/*}\022\263\001\n\016SearchProfiles\0222.google.cloud"
+          + ".talent.v4beta1.SearchProfilesRequest\0323."
+          + "google.cloud.talent.v4beta1.SearchProfil"
+          + "esResponse\"8\202\323\344\223\0022\"-/v4beta1/{parent=pro"
+          + "jects/*/tenants/*}:search:\001*\032l\312A\023jobs.go"
+          + "ogleapis.com\322AShttps://www.googleapis.co"
+          + "m/auth/cloud-platform,https://www.google"
+          + "apis.com/auth/jobsB\201\001\n\037com.google.cloud."
+          + "talent.v4beta1B\023ProfileServiceProtoP\001ZAg"
+          + "oogle.golang.org/genproto/googleapis/clo"
+          + "ud/talent/v4beta1;talent\242\002\003CTSb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -144,6 +148,7 @@ public final class ProfileServiceProto {
         descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.api.AnnotationsProto.getDescriptor(),
+          com.google.api.ClientProto.getDescriptor(),
           com.google.cloud.talent.v4beta1.CommonProto.getDescriptor(),
           com.google.cloud.talent.v4beta1.FiltersProto.getDescriptor(),
           com.google.cloud.talent.v4beta1.HistogramProto.getDescriptor(),
@@ -216,6 +221,7 @@ public final class ProfileServiceProto {
               "OrderBy",
               "CaseSensitiveSort",
               "HistogramQueries",
+              "ResultSetId",
             });
     internal_static_google_cloud_talent_v4beta1_SearchProfilesResponse_descriptor =
         getDescriptor().getMessageTypes().get(7);
@@ -229,6 +235,7 @@ public final class ProfileServiceProto {
               "NextPageToken",
               "HistogramQueryResults",
               "SummarizedProfiles",
+              "ResultSetId",
             });
     internal_static_google_cloud_talent_v4beta1_SummarizedProfile_descriptor =
         getDescriptor().getMessageTypes().get(8);
@@ -240,10 +247,13 @@ public final class ProfileServiceProto {
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.ClientProto.defaultHost);
     registry.add(com.google.api.AnnotationsProto.http);
+    registry.add(com.google.api.ClientProto.oauthScopes);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.AnnotationsProto.getDescriptor();
+    com.google.api.ClientProto.getDescriptor();
     com.google.cloud.talent.v4beta1.CommonProto.getDescriptor();
     com.google.cloud.talent.v4beta1.FiltersProto.getDescriptor();
     com.google.cloud.talent.v4beta1.HistogramProto.getDescriptor();

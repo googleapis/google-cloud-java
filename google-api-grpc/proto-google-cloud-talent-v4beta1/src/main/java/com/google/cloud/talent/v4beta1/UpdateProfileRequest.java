@@ -119,8 +119,7 @@ public final class UpdateProfileRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required.
-   * Profile to be updated.
+   * Required. Profile to be updated.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Profile profile = 1;</code>
@@ -132,8 +131,7 @@ public final class UpdateProfileRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required.
-   * Profile to be updated.
+   * Required. Profile to be updated.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Profile profile = 1;</code>
@@ -147,8 +145,7 @@ public final class UpdateProfileRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required.
-   * Profile to be updated.
+   * Required. Profile to be updated.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Profile profile = 1;</code>
@@ -163,33 +160,32 @@ public final class UpdateProfileRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional.
-   * A field mask to specify the profile fields to update.
+   * Optional. A field mask to specify the profile fields to update.
    * A full update is performed if it is unset.
    * Valid values are:
-   * * externalId
+   * * external_id
    * * source
    * * uri
-   * * isHirable
-   * * createTime
-   * * updateTime
-   * * resumeHrxml
-   * * personNames
+   * * is_hirable
+   * * create_time
+   * * update_time
+   * * resume
+   * * person_names
    * * addresses
-   * * emailAddresses
-   * * phoneNumbers
-   * * personalUris
-   * * additionalContactInfo
-   * * employmentRecords
-   * * educationRecords
+   * * email_addresses
+   * * phone_numbers
+   * * personal_uris
+   * * additional_contact_info
+   * * employment_records
+   * * education_records
    * * skills
    * * projects
    * * publications
    * * patents
    * * certifications
-   * * recruitingNotes
-   * * customAttributes
-   * * groupId
+   * * recruiting_notes
+   * * custom_attributes
+   * * group_id
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -201,33 +197,32 @@ public final class UpdateProfileRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional.
-   * A field mask to specify the profile fields to update.
+   * Optional. A field mask to specify the profile fields to update.
    * A full update is performed if it is unset.
    * Valid values are:
-   * * externalId
+   * * external_id
    * * source
    * * uri
-   * * isHirable
-   * * createTime
-   * * updateTime
-   * * resumeHrxml
-   * * personNames
+   * * is_hirable
+   * * create_time
+   * * update_time
+   * * resume
+   * * person_names
    * * addresses
-   * * emailAddresses
-   * * phoneNumbers
-   * * personalUris
-   * * additionalContactInfo
-   * * employmentRecords
-   * * educationRecords
+   * * email_addresses
+   * * phone_numbers
+   * * personal_uris
+   * * additional_contact_info
+   * * employment_records
+   * * education_records
    * * skills
    * * projects
    * * publications
    * * patents
    * * certifications
-   * * recruitingNotes
-   * * customAttributes
-   * * groupId
+   * * recruiting_notes
+   * * custom_attributes
+   * * group_id
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -239,33 +234,32 @@ public final class UpdateProfileRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional.
-   * A field mask to specify the profile fields to update.
+   * Optional. A field mask to specify the profile fields to update.
    * A full update is performed if it is unset.
    * Valid values are:
-   * * externalId
+   * * external_id
    * * source
    * * uri
-   * * isHirable
-   * * createTime
-   * * updateTime
-   * * resumeHrxml
-   * * personNames
+   * * is_hirable
+   * * create_time
+   * * update_time
+   * * resume
+   * * person_names
    * * addresses
-   * * emailAddresses
-   * * phoneNumbers
-   * * personalUris
-   * * additionalContactInfo
-   * * employmentRecords
-   * * educationRecords
+   * * email_addresses
+   * * phone_numbers
+   * * personal_uris
+   * * additional_contact_info
+   * * employment_records
+   * * education_records
    * * skills
    * * projects
    * * publications
    * * patents
    * * certifications
-   * * recruitingNotes
-   * * customAttributes
-   * * groupId
+   * * recruiting_notes
+   * * custom_attributes
+   * * group_id
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -642,8 +636,7 @@ public final class UpdateProfileRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required.
-     * Profile to be updated.
+     * Required. Profile to be updated.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Profile profile = 1;</code>
@@ -655,8 +648,7 @@ public final class UpdateProfileRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required.
-     * Profile to be updated.
+     * Required. Profile to be updated.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Profile profile = 1;</code>
@@ -674,8 +666,7 @@ public final class UpdateProfileRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required.
-     * Profile to be updated.
+     * Required. Profile to be updated.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Profile profile = 1;</code>
@@ -697,8 +688,7 @@ public final class UpdateProfileRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required.
-     * Profile to be updated.
+     * Required. Profile to be updated.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Profile profile = 1;</code>
@@ -717,8 +707,7 @@ public final class UpdateProfileRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required.
-     * Profile to be updated.
+     * Required. Profile to be updated.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Profile profile = 1;</code>
@@ -744,8 +733,7 @@ public final class UpdateProfileRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required.
-     * Profile to be updated.
+     * Required. Profile to be updated.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Profile profile = 1;</code>
@@ -765,8 +753,7 @@ public final class UpdateProfileRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required.
-     * Profile to be updated.
+     * Required. Profile to be updated.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Profile profile = 1;</code>
@@ -780,8 +767,7 @@ public final class UpdateProfileRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required.
-     * Profile to be updated.
+     * Required. Profile to be updated.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Profile profile = 1;</code>
@@ -799,8 +785,7 @@ public final class UpdateProfileRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required.
-     * Profile to be updated.
+     * Required. Profile to be updated.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Profile profile = 1;</code>
@@ -832,33 +817,32 @@ public final class UpdateProfileRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional.
-     * A field mask to specify the profile fields to update.
+     * Optional. A field mask to specify the profile fields to update.
      * A full update is performed if it is unset.
      * Valid values are:
-     * * externalId
+     * * external_id
      * * source
      * * uri
-     * * isHirable
-     * * createTime
-     * * updateTime
-     * * resumeHrxml
-     * * personNames
+     * * is_hirable
+     * * create_time
+     * * update_time
+     * * resume
+     * * person_names
      * * addresses
-     * * emailAddresses
-     * * phoneNumbers
-     * * personalUris
-     * * additionalContactInfo
-     * * employmentRecords
-     * * educationRecords
+     * * email_addresses
+     * * phone_numbers
+     * * personal_uris
+     * * additional_contact_info
+     * * employment_records
+     * * education_records
      * * skills
      * * projects
      * * publications
      * * patents
      * * certifications
-     * * recruitingNotes
-     * * customAttributes
-     * * groupId
+     * * recruiting_notes
+     * * custom_attributes
+     * * group_id
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -870,33 +854,32 @@ public final class UpdateProfileRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional.
-     * A field mask to specify the profile fields to update.
+     * Optional. A field mask to specify the profile fields to update.
      * A full update is performed if it is unset.
      * Valid values are:
-     * * externalId
+     * * external_id
      * * source
      * * uri
-     * * isHirable
-     * * createTime
-     * * updateTime
-     * * resumeHrxml
-     * * personNames
+     * * is_hirable
+     * * create_time
+     * * update_time
+     * * resume
+     * * person_names
      * * addresses
-     * * emailAddresses
-     * * phoneNumbers
-     * * personalUris
-     * * additionalContactInfo
-     * * employmentRecords
-     * * educationRecords
+     * * email_addresses
+     * * phone_numbers
+     * * personal_uris
+     * * additional_contact_info
+     * * employment_records
+     * * education_records
      * * skills
      * * projects
      * * publications
      * * patents
      * * certifications
-     * * recruitingNotes
-     * * customAttributes
-     * * groupId
+     * * recruiting_notes
+     * * custom_attributes
+     * * group_id
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -914,33 +897,32 @@ public final class UpdateProfileRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional.
-     * A field mask to specify the profile fields to update.
+     * Optional. A field mask to specify the profile fields to update.
      * A full update is performed if it is unset.
      * Valid values are:
-     * * externalId
+     * * external_id
      * * source
      * * uri
-     * * isHirable
-     * * createTime
-     * * updateTime
-     * * resumeHrxml
-     * * personNames
+     * * is_hirable
+     * * create_time
+     * * update_time
+     * * resume
+     * * person_names
      * * addresses
-     * * emailAddresses
-     * * phoneNumbers
-     * * personalUris
-     * * additionalContactInfo
-     * * employmentRecords
-     * * educationRecords
+     * * email_addresses
+     * * phone_numbers
+     * * personal_uris
+     * * additional_contact_info
+     * * employment_records
+     * * education_records
      * * skills
      * * projects
      * * publications
      * * patents
      * * certifications
-     * * recruitingNotes
-     * * customAttributes
-     * * groupId
+     * * recruiting_notes
+     * * custom_attributes
+     * * group_id
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -962,33 +944,32 @@ public final class UpdateProfileRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional.
-     * A field mask to specify the profile fields to update.
+     * Optional. A field mask to specify the profile fields to update.
      * A full update is performed if it is unset.
      * Valid values are:
-     * * externalId
+     * * external_id
      * * source
      * * uri
-     * * isHirable
-     * * createTime
-     * * updateTime
-     * * resumeHrxml
-     * * personNames
+     * * is_hirable
+     * * create_time
+     * * update_time
+     * * resume
+     * * person_names
      * * addresses
-     * * emailAddresses
-     * * phoneNumbers
-     * * personalUris
-     * * additionalContactInfo
-     * * employmentRecords
-     * * educationRecords
+     * * email_addresses
+     * * phone_numbers
+     * * personal_uris
+     * * additional_contact_info
+     * * employment_records
+     * * education_records
      * * skills
      * * projects
      * * publications
      * * patents
      * * certifications
-     * * recruitingNotes
-     * * customAttributes
-     * * groupId
+     * * recruiting_notes
+     * * custom_attributes
+     * * group_id
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -1007,33 +988,32 @@ public final class UpdateProfileRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional.
-     * A field mask to specify the profile fields to update.
+     * Optional. A field mask to specify the profile fields to update.
      * A full update is performed if it is unset.
      * Valid values are:
-     * * externalId
+     * * external_id
      * * source
      * * uri
-     * * isHirable
-     * * createTime
-     * * updateTime
-     * * resumeHrxml
-     * * personNames
+     * * is_hirable
+     * * create_time
+     * * update_time
+     * * resume
+     * * person_names
      * * addresses
-     * * emailAddresses
-     * * phoneNumbers
-     * * personalUris
-     * * additionalContactInfo
-     * * employmentRecords
-     * * educationRecords
+     * * email_addresses
+     * * phone_numbers
+     * * personal_uris
+     * * additional_contact_info
+     * * employment_records
+     * * education_records
      * * skills
      * * projects
      * * publications
      * * patents
      * * certifications
-     * * recruitingNotes
-     * * customAttributes
-     * * groupId
+     * * recruiting_notes
+     * * custom_attributes
+     * * group_id
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -1057,33 +1037,32 @@ public final class UpdateProfileRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional.
-     * A field mask to specify the profile fields to update.
+     * Optional. A field mask to specify the profile fields to update.
      * A full update is performed if it is unset.
      * Valid values are:
-     * * externalId
+     * * external_id
      * * source
      * * uri
-     * * isHirable
-     * * createTime
-     * * updateTime
-     * * resumeHrxml
-     * * personNames
+     * * is_hirable
+     * * create_time
+     * * update_time
+     * * resume
+     * * person_names
      * * addresses
-     * * emailAddresses
-     * * phoneNumbers
-     * * personalUris
-     * * additionalContactInfo
-     * * employmentRecords
-     * * educationRecords
+     * * email_addresses
+     * * phone_numbers
+     * * personal_uris
+     * * additional_contact_info
+     * * employment_records
+     * * education_records
      * * skills
      * * projects
      * * publications
      * * patents
      * * certifications
-     * * recruitingNotes
-     * * customAttributes
-     * * groupId
+     * * recruiting_notes
+     * * custom_attributes
+     * * group_id
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -1103,33 +1082,32 @@ public final class UpdateProfileRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional.
-     * A field mask to specify the profile fields to update.
+     * Optional. A field mask to specify the profile fields to update.
      * A full update is performed if it is unset.
      * Valid values are:
-     * * externalId
+     * * external_id
      * * source
      * * uri
-     * * isHirable
-     * * createTime
-     * * updateTime
-     * * resumeHrxml
-     * * personNames
+     * * is_hirable
+     * * create_time
+     * * update_time
+     * * resume
+     * * person_names
      * * addresses
-     * * emailAddresses
-     * * phoneNumbers
-     * * personalUris
-     * * additionalContactInfo
-     * * employmentRecords
-     * * educationRecords
+     * * email_addresses
+     * * phone_numbers
+     * * personal_uris
+     * * additional_contact_info
+     * * employment_records
+     * * education_records
      * * skills
      * * projects
      * * publications
      * * patents
      * * certifications
-     * * recruitingNotes
-     * * customAttributes
-     * * groupId
+     * * recruiting_notes
+     * * custom_attributes
+     * * group_id
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -1143,33 +1121,32 @@ public final class UpdateProfileRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional.
-     * A field mask to specify the profile fields to update.
+     * Optional. A field mask to specify the profile fields to update.
      * A full update is performed if it is unset.
      * Valid values are:
-     * * externalId
+     * * external_id
      * * source
      * * uri
-     * * isHirable
-     * * createTime
-     * * updateTime
-     * * resumeHrxml
-     * * personNames
+     * * is_hirable
+     * * create_time
+     * * update_time
+     * * resume
+     * * person_names
      * * addresses
-     * * emailAddresses
-     * * phoneNumbers
-     * * personalUris
-     * * additionalContactInfo
-     * * employmentRecords
-     * * educationRecords
+     * * email_addresses
+     * * phone_numbers
+     * * personal_uris
+     * * additional_contact_info
+     * * employment_records
+     * * education_records
      * * skills
      * * projects
      * * publications
      * * patents
      * * certifications
-     * * recruitingNotes
-     * * customAttributes
-     * * groupId
+     * * recruiting_notes
+     * * custom_attributes
+     * * group_id
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -1187,33 +1164,32 @@ public final class UpdateProfileRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional.
-     * A field mask to specify the profile fields to update.
+     * Optional. A field mask to specify the profile fields to update.
      * A full update is performed if it is unset.
      * Valid values are:
-     * * externalId
+     * * external_id
      * * source
      * * uri
-     * * isHirable
-     * * createTime
-     * * updateTime
-     * * resumeHrxml
-     * * personNames
+     * * is_hirable
+     * * create_time
+     * * update_time
+     * * resume
+     * * person_names
      * * addresses
-     * * emailAddresses
-     * * phoneNumbers
-     * * personalUris
-     * * additionalContactInfo
-     * * employmentRecords
-     * * educationRecords
+     * * email_addresses
+     * * phone_numbers
+     * * personal_uris
+     * * additional_contact_info
+     * * employment_records
+     * * education_records
      * * skills
      * * projects
      * * publications
      * * patents
      * * certifications
-     * * recruitingNotes
-     * * customAttributes
-     * * groupId
+     * * recruiting_notes
+     * * custom_attributes
+     * * group_id
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>

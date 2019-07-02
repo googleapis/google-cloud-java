@@ -12,8 +12,7 @@ public interface CompensationInfoOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * Job compensation information.
+   * Optional. Job compensation information.
    * At most one entry can be of type
    * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.BASE],
    * which is referred as **base compensation entry** for the job.
@@ -28,8 +27,7 @@ public interface CompensationInfoOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * Job compensation information.
+   * Optional. Job compensation information.
    * At most one entry can be of type
    * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.BASE],
    * which is referred as **base compensation entry** for the job.
@@ -43,8 +41,7 @@ public interface CompensationInfoOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * Job compensation information.
+   * Optional. Job compensation information.
    * At most one entry can be of type
    * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.BASE],
    * which is referred as **base compensation entry** for the job.
@@ -58,8 +55,7 @@ public interface CompensationInfoOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * Job compensation information.
+   * Optional. Job compensation information.
    * At most one entry can be of type
    * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.BASE],
    * which is referred as **base compensation entry** for the job.
@@ -75,8 +71,7 @@ public interface CompensationInfoOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * Job compensation information.
+   * Optional. Job compensation information.
    * At most one entry can be of type
    * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.BASE],
    * which is referred as **base compensation entry** for the job.

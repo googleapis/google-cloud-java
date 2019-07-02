@@ -12,8 +12,7 @@ public interface CertificationOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * Name of license or certification.
+   * Optional. Name of license or certification.
    * Number of characters allowed is 100.
    * </pre>
    *
@@ -24,8 +23,7 @@ public interface CertificationOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * Name of license or certification.
+   * Optional. Name of license or certification.
    * Number of characters allowed is 100.
    * </pre>
    *
@@ -37,8 +35,7 @@ public interface CertificationOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * Acquisition date or effective date of license or certification.
+   * Optional. Acquisition date or effective date of license or certification.
    * </pre>
    *
    * <code>.google.type.Date acquire_date = 2;</code>
@@ -48,8 +45,7 @@ public interface CertificationOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * Acquisition date or effective date of license or certification.
+   * Optional. Acquisition date or effective date of license or certification.
    * </pre>
    *
    * <code>.google.type.Date acquire_date = 2;</code>
@@ -59,8 +55,7 @@ public interface CertificationOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * Acquisition date or effective date of license or certification.
+   * Optional. Acquisition date or effective date of license or certification.
    * </pre>
    *
    * <code>.google.type.Date acquire_date = 2;</code>
@@ -71,8 +66,7 @@ public interface CertificationOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * Expiration date of license of certification.
+   * Optional. Expiration date of license of certification.
    * </pre>
    *
    * <code>.google.type.Date expire_date = 3;</code>
@@ -82,8 +76,7 @@ public interface CertificationOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * Expiration date of license of certification.
+   * Optional. Expiration date of license of certification.
    * </pre>
    *
    * <code>.google.type.Date expire_date = 3;</code>
@@ -93,8 +86,7 @@ public interface CertificationOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * Expiration date of license of certification.
+   * Optional. Expiration date of license of certification.
    * </pre>
    *
    * <code>.google.type.Date expire_date = 3;</code>
@@ -105,8 +97,7 @@ public interface CertificationOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * Authority of license, such as government.
+   * Optional. Authority of license, such as government.
    * Number of characters allowed is 100.
    * </pre>
    *
@@ -117,8 +108,7 @@ public interface CertificationOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * Authority of license, such as government.
+   * Optional. Authority of license, such as government.
    * Number of characters allowed is 100.
    * </pre>
    *
@@ -130,8 +120,7 @@ public interface CertificationOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * Description of license or certification.
+   * Optional. Description of license or certification.
    * Number of characters allowed is 100,000.
    * </pre>
    *
@@ -142,8 +131,7 @@ public interface CertificationOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * Description of license or certification.
+   * Optional. Description of license or certification.
    * Number of characters allowed is 100,000.
    * </pre>
    *

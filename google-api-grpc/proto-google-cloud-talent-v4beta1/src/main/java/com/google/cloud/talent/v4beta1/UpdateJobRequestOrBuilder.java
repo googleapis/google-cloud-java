@@ -12,8 +12,7 @@ public interface UpdateJobRequestOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * The Job to be updated.
+   * Required. The Job to be updated.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
@@ -23,8 +22,7 @@ public interface UpdateJobRequestOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * The Job to be updated.
+   * Required. The Job to be updated.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
@@ -34,8 +32,7 @@ public interface UpdateJobRequestOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * The Job to be updated.
+   * Required. The Job to be updated.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>

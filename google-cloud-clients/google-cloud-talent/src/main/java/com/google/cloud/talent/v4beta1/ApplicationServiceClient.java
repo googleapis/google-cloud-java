@@ -171,12 +171,10 @@ public class ApplicationServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required.
-   *     <p>Resource name of the profile under which the application is created.
+   * @param parent Required. Resource name of the profile under which the application is created.
    *     <p>The format is "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}", for
    *     example, "projects/test-project/tenants/test-tenant/profiles/test-profile".
-   * @param application Required.
-   *     <p>The application to be created.
+   * @param application Required. The application to be created.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Application createApplication(ProfileName parent, Application application) {
@@ -203,12 +201,10 @@ public class ApplicationServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required.
-   *     <p>Resource name of the profile under which the application is created.
+   * @param parent Required. Resource name of the profile under which the application is created.
    *     <p>The format is "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}", for
    *     example, "projects/test-project/tenants/test-tenant/profiles/test-profile".
-   * @param application Required.
-   *     <p>The application to be created.
+   * @param application Required. The application to be created.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Application createApplication(String parent, Application application) {
@@ -280,8 +276,7 @@ public class ApplicationServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Required.
-   *     <p>The resource name of the application to be retrieved.
+   * @param name Required. The resource name of the application to be retrieved.
    *     <p>The format is
    *     "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}/applications/{application_id}",
    *     for example,
@@ -308,8 +303,7 @@ public class ApplicationServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Required.
-   *     <p>The resource name of the application to be retrieved.
+   * @param name Required. The resource name of the application to be retrieved.
    *     <p>The format is
    *     "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}/applications/{application_id}",
    *     for example,
@@ -380,8 +374,8 @@ public class ApplicationServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param application Required.
-   *     <p>The application resource to replace the current resource in the system.
+   * @param application Required. The application resource to replace the current resource in the
+   *     system.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Application updateApplication(Application application) {
@@ -449,8 +443,7 @@ public class ApplicationServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Required.
-   *     <p>The resource name of the application to be deleted.
+   * @param name Required. The resource name of the application to be deleted.
    *     <p>The format is
    *     "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}/applications/{application_id}",
    *     for example,
@@ -479,8 +472,7 @@ public class ApplicationServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Required.
-   *     <p>The resource name of the application to be deleted.
+   * @param name Required. The resource name of the application to be deleted.
    *     <p>The format is
    *     "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}/applications/{application_id}",
    *     for example,
@@ -553,8 +545,7 @@ public class ApplicationServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required.
-   *     <p>Resource name of the profile under which the application is created.
+   * @param parent Required. Resource name of the profile under which the application is created.
    *     <p>The format is "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}", for
    *     example, "projects/test-project/tenants/test-tenant/profiles/test-profile".
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -582,8 +573,7 @@ public class ApplicationServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required.
-   *     <p>Resource name of the profile under which the application is created.
+   * @param parent Required. Resource name of the profile under which the application is created.
    *     <p>The format is "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}", for
    *     example, "projects/test-project/tenants/test-tenant/profiles/test-profile".
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails

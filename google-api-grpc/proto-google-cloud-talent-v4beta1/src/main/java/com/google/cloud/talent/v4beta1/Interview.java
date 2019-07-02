@@ -113,8 +113,7 @@ public final class Interview extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * The rating on this interview.
+   * Optional. The rating on this interview.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Rating rating = 6;</code>
@@ -126,8 +125,7 @@ public final class Interview extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * The rating on this interview.
+   * Optional. The rating on this interview.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Rating rating = 6;</code>
@@ -139,8 +137,7 @@ public final class Interview extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * The rating on this interview.
+   * Optional. The rating on this interview.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Rating rating = 6;</code>
@@ -155,9 +152,8 @@ public final class Interview extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required.
-   * The overall decision resulting from this interview (positive, negative,
-   * nuetral).
+   * Required. The overall decision resulting from this interview (positive,
+   * negative, nuetral).
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Outcome outcome = 7;</code>
@@ -169,9 +165,8 @@ public final class Interview extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required.
-   * The overall decision resulting from this interview (positive, negative,
-   * nuetral).
+   * Required. The overall decision resulting from this interview (positive,
+   * negative, nuetral).
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Outcome outcome = 7;</code>
@@ -536,8 +531,7 @@ public final class Interview extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The rating on this interview.
+     * Optional. The rating on this interview.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Rating rating = 6;</code>
@@ -549,8 +543,7 @@ public final class Interview extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The rating on this interview.
+     * Optional. The rating on this interview.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Rating rating = 6;</code>
@@ -568,8 +561,7 @@ public final class Interview extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The rating on this interview.
+     * Optional. The rating on this interview.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Rating rating = 6;</code>
@@ -591,8 +583,7 @@ public final class Interview extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The rating on this interview.
+     * Optional. The rating on this interview.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Rating rating = 6;</code>
@@ -611,8 +602,7 @@ public final class Interview extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The rating on this interview.
+     * Optional. The rating on this interview.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Rating rating = 6;</code>
@@ -638,8 +628,7 @@ public final class Interview extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The rating on this interview.
+     * Optional. The rating on this interview.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Rating rating = 6;</code>
@@ -659,8 +648,7 @@ public final class Interview extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The rating on this interview.
+     * Optional. The rating on this interview.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Rating rating = 6;</code>
@@ -674,8 +662,7 @@ public final class Interview extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The rating on this interview.
+     * Optional. The rating on this interview.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Rating rating = 6;</code>
@@ -693,8 +680,7 @@ public final class Interview extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The rating on this interview.
+     * Optional. The rating on this interview.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Rating rating = 6;</code>
@@ -721,9 +707,8 @@ public final class Interview extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required.
-     * The overall decision resulting from this interview (positive, negative,
-     * nuetral).
+     * Required. The overall decision resulting from this interview (positive,
+     * negative, nuetral).
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Outcome outcome = 7;</code>
@@ -735,9 +720,8 @@ public final class Interview extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required.
-     * The overall decision resulting from this interview (positive, negative,
-     * nuetral).
+     * Required. The overall decision resulting from this interview (positive,
+     * negative, nuetral).
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Outcome outcome = 7;</code>
@@ -751,9 +735,8 @@ public final class Interview extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required.
-     * The overall decision resulting from this interview (positive, negative,
-     * nuetral).
+     * Required. The overall decision resulting from this interview (positive,
+     * negative, nuetral).
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Outcome outcome = 7;</code>
@@ -768,9 +751,8 @@ public final class Interview extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required.
-     * The overall decision resulting from this interview (positive, negative,
-     * nuetral).
+     * Required. The overall decision resulting from this interview (positive,
+     * negative, nuetral).
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Outcome outcome = 7;</code>
@@ -788,9 +770,8 @@ public final class Interview extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required.
-     * The overall decision resulting from this interview (positive, negative,
-     * nuetral).
+     * Required. The overall decision resulting from this interview (positive,
+     * negative, nuetral).
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Outcome outcome = 7;</code>

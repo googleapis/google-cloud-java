@@ -113,8 +113,7 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required.
-   * The resource name of the tenant under which the job is created.
+   * Required. The resource name of the tenant under which the job is created.
    * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
    * "projects/api-test-project/tenant/foo".
    * Tenant id is optional and a default tenant is created if unspecified, for
@@ -138,8 +137,7 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required.
-   * The resource name of the tenant under which the job is created.
+   * Required. The resource name of the tenant under which the job is created.
    * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
    * "projects/api-test-project/tenant/foo".
    * Tenant id is optional and a default tenant is created if unspecified, for
@@ -166,8 +164,7 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required.
-   * The jobs to be created.
+   * Required. The jobs to be created.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
@@ -179,8 +176,7 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required.
-   * The jobs to be created.
+   * Required. The jobs to be created.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
@@ -193,8 +189,7 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required.
-   * The jobs to be created.
+   * Required. The jobs to be created.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
@@ -206,8 +201,7 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required.
-   * The jobs to be created.
+   * Required. The jobs to be created.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
@@ -219,8 +213,7 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required.
-   * The jobs to be created.
+   * Required. The jobs to be created.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
@@ -613,8 +606,7 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required.
-     * The resource name of the tenant under which the job is created.
+     * Required. The resource name of the tenant under which the job is created.
      * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
      * "projects/api-test-project/tenant/foo".
      * Tenant id is optional and a default tenant is created if unspecified, for
@@ -638,8 +630,7 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required.
-     * The resource name of the tenant under which the job is created.
+     * Required. The resource name of the tenant under which the job is created.
      * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
      * "projects/api-test-project/tenant/foo".
      * Tenant id is optional and a default tenant is created if unspecified, for
@@ -663,8 +654,7 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required.
-     * The resource name of the tenant under which the job is created.
+     * Required. The resource name of the tenant under which the job is created.
      * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
      * "projects/api-test-project/tenant/foo".
      * Tenant id is optional and a default tenant is created if unspecified, for
@@ -686,8 +676,7 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required.
-     * The resource name of the tenant under which the job is created.
+     * Required. The resource name of the tenant under which the job is created.
      * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
      * "projects/api-test-project/tenant/foo".
      * Tenant id is optional and a default tenant is created if unspecified, for
@@ -706,8 +695,7 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required.
-     * The resource name of the tenant under which the job is created.
+     * Required. The resource name of the tenant under which the job is created.
      * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
      * "projects/api-test-project/tenant/foo".
      * Tenant id is optional and a default tenant is created if unspecified, for
@@ -747,8 +735,7 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required.
-     * The jobs to be created.
+     * Required. The jobs to be created.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
@@ -764,8 +751,7 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required.
-     * The jobs to be created.
+     * Required. The jobs to be created.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
@@ -781,8 +767,7 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required.
-     * The jobs to be created.
+     * Required. The jobs to be created.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
@@ -798,8 +783,7 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required.
-     * The jobs to be created.
+     * Required. The jobs to be created.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
@@ -821,8 +805,7 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required.
-     * The jobs to be created.
+     * Required. The jobs to be created.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
@@ -841,8 +824,7 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required.
-     * The jobs to be created.
+     * Required. The jobs to be created.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
@@ -864,8 +846,7 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required.
-     * The jobs to be created.
+     * Required. The jobs to be created.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
@@ -887,8 +868,7 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required.
-     * The jobs to be created.
+     * Required. The jobs to be created.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
@@ -907,8 +887,7 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required.
-     * The jobs to be created.
+     * Required. The jobs to be created.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
@@ -927,8 +906,7 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required.
-     * The jobs to be created.
+     * Required. The jobs to be created.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
@@ -948,8 +926,7 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required.
-     * The jobs to be created.
+     * Required. The jobs to be created.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
@@ -968,8 +945,7 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required.
-     * The jobs to be created.
+     * Required. The jobs to be created.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
@@ -988,8 +964,7 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required.
-     * The jobs to be created.
+     * Required. The jobs to be created.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
@@ -1001,8 +976,7 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required.
-     * The jobs to be created.
+     * Required. The jobs to be created.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
@@ -1018,8 +992,7 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required.
-     * The jobs to be created.
+     * Required. The jobs to be created.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
@@ -1036,8 +1009,7 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required.
-     * The jobs to be created.
+     * Required. The jobs to be created.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
@@ -1050,8 +1022,7 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required.
-     * The jobs to be created.
+     * Required. The jobs to be created.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
@@ -1064,8 +1035,7 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required.
-     * The jobs to be created.
+     * Required. The jobs to be created.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>

@@ -97,8 +97,7 @@ public final class GetTenantRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required.
-   * The resource name of the tenant to be retrieved.
+   * Required. The resource name of the tenant to be retrieved.
    * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
    * "projects/api-test-project/tenants/foo".
    * </pre>
@@ -120,8 +119,7 @@ public final class GetTenantRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required.
-   * The resource name of the tenant to be retrieved.
+   * Required. The resource name of the tenant to be retrieved.
    * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
    * "projects/api-test-project/tenants/foo".
    * </pre>
@@ -462,8 +460,7 @@ public final class GetTenantRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required.
-     * The resource name of the tenant to be retrieved.
+     * Required. The resource name of the tenant to be retrieved.
      * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
      * "projects/api-test-project/tenants/foo".
      * </pre>
@@ -485,8 +482,7 @@ public final class GetTenantRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required.
-     * The resource name of the tenant to be retrieved.
+     * Required. The resource name of the tenant to be retrieved.
      * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
      * "projects/api-test-project/tenants/foo".
      * </pre>
@@ -508,8 +504,7 @@ public final class GetTenantRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required.
-     * The resource name of the tenant to be retrieved.
+     * Required. The resource name of the tenant to be retrieved.
      * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
      * "projects/api-test-project/tenants/foo".
      * </pre>
@@ -529,8 +524,7 @@ public final class GetTenantRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required.
-     * The resource name of the tenant to be retrieved.
+     * Required. The resource name of the tenant to be retrieved.
      * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
      * "projects/api-test-project/tenants/foo".
      * </pre>
@@ -547,8 +541,7 @@ public final class GetTenantRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required.
-     * The resource name of the tenant to be retrieved.
+     * Required. The resource name of the tenant to be retrieved.
      * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
      * "projects/api-test-project/tenants/foo".
      * </pre>
