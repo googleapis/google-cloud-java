@@ -248,14 +248,15 @@ public final class VideoIntelligenceServiceProto {
           + "o\022>.google.cloud.videointelligence.v1p2b"
           + "eta1.AnnotateVideoRequest\032\035.google.longr"
           + "unning.Operation\"%\202\323\344\223\002\037\"\032/v1p2beta1/vid"
-          + "eos:annotate:\001*B\200\002\n,com.google.cloud.vid"
+          + "eos:annotate:\001*B\256\002\n,com.google.cloud.vid"
           + "eointelligence.v1p2beta1B\035VideoIntellige"
           + "nceServiceProtoP\001ZYgoogle.golang.org/gen"
           + "proto/googleapis/cloud/videointelligence"
           + "/v1p2beta1;videointelligence\252\002(Google.Cl"
           + "oud.VideoIntelligence.V1P2Beta1\312\002(Google"
-          + "\\Cloud\\VideoIntelligence\\V1p2beta1b\006prot"
-          + "o3"
+          + "\\Cloud\\VideoIntelligence\\V1p2beta1\352\002+Goo"
+          + "gle::Cloud::VideoIntelligence::V1p2beta1"
+          + "b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
