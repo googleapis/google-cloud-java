@@ -274,8 +274,12 @@ public class PublisherImplTest {
     ApiFuture<String> publishFuture5 = sendTestMessageWithOrderingKey(publisher, "m5", "OrderA");
     // Verify that they were delivered in order per ordering key.
     assertTrue(Integer.parseInt(publishFuture1.get()) < Integer.parseInt(publishFuture3.get()));
-    assertTrue(Integer.parseInt(publishFuture2.get()) < Integer.parseInt(publishFuture4.get()));
     assertTrue(Integer.parseInt(publishFuture3.get()) < Integer.parseInt(publishFuture5.get()));
+
+    // The other batch reaches the limit.
+    ApiFuture<String> publishFuture6 = sendTestMessageWithOrderingKey(publisher, "m6", "OrderB");
+    assertTrue(Integer.parseInt(publishFuture2.get()) < Integer.parseInt(publishFuture4.get()));
+    assertTrue(Integer.parseInt(publishFuture4.get()) < Integer.parseInt(publishFuture6.get()));
 
     // Verify that every message within the same batch has the same ordering key.
     List<PublishRequest> requests = testPublisherServiceImpl.getCapturedRequests();
@@ -422,24 +426,26 @@ public class PublisherImplTest {
                     .build())
             .setEnableMessageOrdering(true)
             .build();
+    testPublisherServiceImpl.setAutoPublishResponse(true);
 
-    sendTestMessageWithOrderingKey(publisher, "m1", "orderA");
+    ApiFuture<String> publishFuture1 = sendTestMessageWithOrderingKey(publisher, "m1", "orderA");
 
     // The timer goes off, and the first message is sent.
     fakeExecutor.advanceTime(Duration.ofSeconds(10));
-    publisher.sequentialExecutor.hasTasksInflight("orderA");
-    assertFalse(publisher.messagesBatches.containsKey("orderA"));
 
-    // The timer goes off, but the first message is in complete.
-    sendTestMessageWithOrderingKey(publisher, "m2", "orderA");
+    // The timer goes off, but the first message is incomplete.
+    ApiFuture<String> publishFuture2 = sendTestMessageWithOrderingKey(publisher, "m2", "orderA");
     fakeExecutor.advanceTime(Duration.ofSeconds(10));
-    publisher.sequentialExecutor.hasTasksInflight("orderA");
-    assertTrue(publisher.messagesBatches.containsKey("orderA"));
 
     // The batch should now be full.
-    sendTestMessageWithOrderingKey(publisher, "m2", "orderA");
-    publisher.sequentialExecutor.hasTasksInflight("orderA");
-    assertFalse(publisher.messagesBatches.containsKey("orderA"));
+    ApiFuture<String> publishFuture3 = sendTestMessageWithOrderingKey(publisher, "m3", "orderA");
+
+    assertEquals("1", publishFuture1.get());
+    assertEquals("2", publishFuture2.get());
+    assertEquals("3", publishFuture3.get());
+
+    assertEquals(1, testPublisherServiceImpl.getCapturedRequests().get(0).getMessagesCount());
+    assertEquals(2, testPublisherServiceImpl.getCapturedRequests().get(1).getMessagesCount());
 
     publisher.shutdown();
   }

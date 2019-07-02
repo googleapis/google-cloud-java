@@ -91,14 +91,17 @@ public class Publisher {
   private final boolean enableMessageOrdering;
 
   private final Lock messagesBatchLock;
-  final Map<String, MessagesBatch> messagesBatches;
+
+  private final Map<String, MessagesBatch> messagesBatches;
 
   private final AtomicBoolean activeAlarm;
 
   private final PublisherStub publisherStub;
 
   private final ScheduledExecutorService executor;
-  final SequentialExecutorService.CallbackExecutor sequentialExecutor;
+
+  private final SequentialExecutorService.CallbackExecutor sequentialExecutor;
+
   private final AtomicBoolean shutdown;
   private final BackgroundResource backgroundResources;
   private final MessageWaiter messagesWaiter;
@@ -230,13 +233,12 @@ public class Publisher {
       if (!batchesToSend.isEmpty() && messagesBatch.isEmpty()) {
         messagesBatches.remove(orderingKey);
       }
+      // Setup the next duration based delivery alarm if there are messages batched.
       setupAlarm();
-      // For messages with an ordering key, then we need to publish with messagesBatchLock held in
-      // order to ensure another publish doesn't slip in and send a batch before these batches we
-      // already want to send.
+      // For messages with an ordering key, we need to publish with messagesBatchLock held in order
+      // to ensure another publish doesn't slip in and send a batch before these batches we already
+      // want to send.
       if (!batchesToSend.isEmpty() && !orderingKey.isEmpty()) {
-        publishAllWithoutInflight();
-
         for (final OutstandingBatch batch : batchesToSend) {
           logger.log(Level.FINER, "Scheduling a batch for immediate sending.");
           publishOutstandingBatch(batch);
@@ -306,20 +308,27 @@ public class Publisher {
    * futures returned from {@code publish}.
    */
   public void publishAllOutstanding() {
+    OutstandingBatch unorderedOutstandingBatch = null;
     messagesBatchLock.lock();
     try {
       for (MessagesBatch batch : messagesBatches.values()) {
         if (!batch.isEmpty()) {
-          // TODO(kimkyung-goog): Do not release `messagesBatchLock` when publishing a batch. If
-          // it's released, the order of publishing cannot be guaranteed if `publish()` is called
-          // while this function is running. This locking mechanism needs to be improved if it
-          // causes any performance degradation.
-          publishOutstandingBatch(batch.popOutstandingBatch());
+          if (!batch.orderingKey.isEmpty()) {
+            // For messages with an ordering key, we need to publish with messagesBatchLock held in order
+            // order to ensure another publish doesn't slip in and send a batch before these batches
+            // we already want to send.
+            publishOutstandingBatch(batch.popOutstandingBatch());
+          } else {
+            unorderedOutstandingBatch = batch.popOutstandingBatch();
+          }
         }
       }
       messagesBatches.clear();
     } finally {
       messagesBatchLock.unlock();
+    }
+    if (unorderedOutstandingBatch != null) {
+      publishOutstandingBatch(unorderedOutstandingBatch);
     }
   }
 
