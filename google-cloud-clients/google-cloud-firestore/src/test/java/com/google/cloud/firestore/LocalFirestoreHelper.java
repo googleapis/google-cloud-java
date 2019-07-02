@@ -89,6 +89,9 @@ public final class LocalFirestoreHelper {
   public static final Map<String, Object> UPDATED_FIELD_MAP;
   public static final Map<String, Value> UPDATED_FIELD_PROTO;
 
+  public static final Map<String, Float> SINGLE_FLOAT_MAP;
+  public static final Map<String, Value> SINGLE_FLOAT_PROTO;
+
   public static final NestedClass NESTED_CLASS_OBJECT;
 
   public static final Map<String, Object> SERVER_TIMESTAMP_MAP;
@@ -695,6 +698,8 @@ public final class LocalFirestoreHelper {
             123000); // Firestore truncates to microsecond precision.
     GEO_POINT = new GeoPoint(50.1430847, -122.9477780);
     BLOB = Blob.fromBytes(new byte[] {1, 2, 3});
+    SINGLE_FLOAT_MAP = map("float", 0.1F);
+    SINGLE_FLOAT_PROTO = map("float", Value.newBuilder().setDoubleValue((Float) 0.1F).build());
 
     DATABASE_NAME = "projects/test-project/databases/(default)";
     COLLECTION_ID = "coll";

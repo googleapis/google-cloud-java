@@ -170,6 +170,29 @@ public class WriteBatchTest {
   }
 
   @Test
+  public void setDocumentWithFloat() throws Exception {
+    doReturn(commitResponse(1, 0))
+        .when(firestoreMock)
+        .sendRequest(
+            commitCapture.capture(), Matchers.<UnaryCallable<CommitRequest, CommitResponse>>any());
+
+    batch.set(documentReference, LocalFirestoreHelper.SINGLE_FLOAT_MAP);
+
+    List<Write> writes = new ArrayList<>();
+    writes.add(set(LocalFirestoreHelper.SINGLE_FLOAT_PROTO));
+
+    assertEquals(1, batch.getMutationsSize());
+
+    List<WriteResult> writeResults = batch.commit().get();
+    for (int i = 0; i < writeResults.size(); ++i) {
+      assertEquals(Timestamp.ofTimeSecondsAndNanos(i, i), writeResults.get(i).getUpdateTime());
+    }
+
+    CommitRequest commitRequest = commitCapture.getValue();
+    assertEquals(commit(writes.toArray(new Write[] {})), commitRequest);
+  }
+
+  @Test
   public void omitWriteResultForDocumentTransforms() throws Exception {
     doReturn(commitResponse(2, 0))
         .when(firestoreMock)
@@ -228,6 +251,29 @@ public class WriteBatchTest {
     for (int i = 0; i < writeResults.size(); ++i) {
       assertEquals(Timestamp.ofTimeSecondsAndNanos(i, i), writeResults.get(i).getUpdateTime());
       writes.add(create(LocalFirestoreHelper.SINGLE_FIELD_PROTO));
+    }
+
+    CommitRequest commitRequest = commitCapture.getValue();
+    assertEquals(commit(writes.toArray(new Write[] {})), commitRequest);
+  }
+
+  @Test
+  public void createDocumentWithFloat() throws Exception {
+    doReturn(commitResponse(1, 0))
+        .when(firestoreMock)
+        .sendRequest(
+            commitCapture.capture(), Matchers.<UnaryCallable<CommitRequest, CommitResponse>>any());
+
+    batch.create(documentReference, LocalFirestoreHelper.SINGLE_FLOAT_MAP);
+
+    assertEquals(1, batch.getMutationsSize());
+
+    List<WriteResult> writeResults = batch.commit().get();
+    List<Write> writes = new ArrayList<>();
+
+    for (int i = 0; i < writeResults.size(); ++i) {
+      assertEquals(Timestamp.ofTimeSecondsAndNanos(i, i), writeResults.get(i).getUpdateTime());
+      writes.add(create(LocalFirestoreHelper.SINGLE_FLOAT_PROTO));
     }
 
     CommitRequest commitRequest = commitCapture.getValue();
