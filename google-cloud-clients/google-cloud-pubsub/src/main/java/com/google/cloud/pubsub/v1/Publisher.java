@@ -314,7 +314,8 @@ public class Publisher {
       for (MessagesBatch batch : messagesBatches.values()) {
         if (!batch.isEmpty()) {
           if (!batch.orderingKey.isEmpty()) {
-            // For messages with an ordering key, we need to publish with messagesBatchLock held in order
+            // For messages with an ordering key, we need to publish with messagesBatchLock held in
+            // order
             // order to ensure another publish doesn't slip in and send a batch before these batches
             // we already want to send.
             publishOutstandingBatch(batch.popOutstandingBatch());
