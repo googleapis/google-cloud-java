@@ -21,7 +21,6 @@ import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertTrue;
 
 import com.google.api.gax.rpc.ServerStream;
 import com.google.cloud.RetryOption;
@@ -185,10 +184,7 @@ public class ITBigQueryStorageTest {
     long rowCount = ReadStreamToOffset(session.getStreams(0), /* rowOffset = */ 34_846);
 
     StreamPosition readPosition =
-        StreamPosition.newBuilder()
-            .setStream(session.getStreams(0))
-            .setOffset(rowCount)
-            .build();
+        StreamPosition.newBuilder().setStream(session.getStreams(0)).setOffset(rowCount).build();
 
     ReadRowsRequest readRowsRequest =
         ReadRowsRequest.newBuilder().setReadPosition(readPosition).build();

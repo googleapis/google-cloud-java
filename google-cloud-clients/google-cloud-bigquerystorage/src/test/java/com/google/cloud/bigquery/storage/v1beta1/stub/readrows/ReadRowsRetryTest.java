@@ -231,9 +231,7 @@ public class ReadRowsRetryTest {
     }
 
     static ReadRowsResponse createResponse(int numberOfRows) {
-      return ReadRowsResponse.newBuilder()
-          .setRowCount(numberOfRows)
-          .build();
+      return ReadRowsResponse.newBuilder().setRowCount(numberOfRows).build();
     }
 
     RpcExpectation expectRequest(String streamName, long offset) {
