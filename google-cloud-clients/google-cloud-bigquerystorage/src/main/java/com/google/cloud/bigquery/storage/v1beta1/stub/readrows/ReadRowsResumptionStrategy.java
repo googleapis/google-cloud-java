@@ -42,7 +42,7 @@ public class ReadRowsResumptionStrategy
 
   @Override
   public ReadRowsResponse processResponse(ReadRowsResponse response) {
-    rowsProcessed += response.getAvroRows().getRowCount();
+    rowsProcessed += response.getRowCount();
     return response;
   }
 
