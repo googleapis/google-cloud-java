@@ -104,6 +104,7 @@ import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.ThreadFactory;
+import java.util.concurrent.TimeUnit;
 import javax.annotation.Nullable;
 import org.threeten.bp.Duration;
 
@@ -624,10 +625,19 @@ public class GapicSpannerRpc implements SpannerRpc {
   public void shutdown() {
     this.rpcIsClosed = true;
     this.spannerStub.close();
+    this.partitionedDmlStub.close();
     this.instanceAdminStub.close();
     this.databaseAdminStub.close();
     this.spannerWatchdog.shutdown();
     this.executorProvider.shutdown();
+    try {
+      this.spannerStub.awaitTermination(1L, TimeUnit.SECONDS);
+      this.partitionedDmlStub.awaitTermination(1L, TimeUnit.SECONDS);
+      this.instanceAdminStub.awaitTermination(1L, TimeUnit.SECONDS);
+      this.databaseAdminStub.awaitTermination(1L, TimeUnit.SECONDS);
+    } catch (InterruptedException e) {
+      Thread.currentThread().interrupt();
+    }
   }
 
   @Override

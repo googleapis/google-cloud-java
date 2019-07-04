@@ -104,8 +104,9 @@ public class DatabaseClientImplTest {
   }
 
   @AfterClass
-  public static void stopServer() {
+  public static void stopServer() throws InterruptedException {
     server.shutdown();
+    server.awaitTermination();
   }
 
   @Before
