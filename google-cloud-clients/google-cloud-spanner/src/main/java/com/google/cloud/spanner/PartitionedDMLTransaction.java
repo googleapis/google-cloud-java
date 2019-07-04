@@ -83,7 +83,7 @@ class PartitionedDMLTransaction implements SessionTransaction {
                 builder.putParamTypes(param.getKey(), param.getValue().getType().toProto());
               }
             }
-            return rpc.executeQuery(builder.build(), session.getOptions());
+            return rpc.executePartitionedDml(builder.build(), session.getOptions());
           }
         };
     com.google.spanner.v1.ResultSet resultSet =

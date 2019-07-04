@@ -34,6 +34,7 @@ import com.google.cloud.spanner.spi.v1.GapicSpannerRpc;
 import com.google.cloud.spanner.spi.v1.SpannerRpc;
 import com.google.cloud.spanner.v1.SpannerSettings;
 import com.google.cloud.spanner.v1.stub.SpannerStubSettings;
+import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -43,6 +44,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Map;
 import java.util.Set;
+import org.threeten.bp.Duration;
 
 /** Options for the Cloud Spanner service. */
 public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
@@ -66,6 +68,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   private final int numChannels;
   private final ImmutableMap<String, String> sessionLabels;
   private final SpannerStubSettings spannerStubSettings;
+  private final SpannerStubSettings partitionedDmlStubSettings;
   private final InstanceAdminStubSettings instanceAdminStubSettings;
   private final DatabaseAdminStubSettings databaseAdminStubSettings;
 
@@ -109,6 +112,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     sessionLabels = builder.sessionLabels;
     try {
       spannerStubSettings = builder.spannerStubSettingsBuilder.build();
+      partitionedDmlStubSettings = builder.partitionedDmlStubSettingsBuilder.build();
       instanceAdminStubSettings = builder.instanceAdminStubSettingsBuilder.build();
       databaseAdminStubSettings = builder.databaseAdminStubSettingsBuilder.build();
     } catch (IOException e) {
@@ -135,12 +139,26 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     private ImmutableMap<String, String> sessionLabels;
     private SpannerStubSettings.Builder spannerStubSettingsBuilder =
         SpannerStubSettings.newBuilder();
+    private SpannerStubSettings.Builder partitionedDmlStubSettingsBuilder =
+        SpannerStubSettings.newBuilder();
     private InstanceAdminStubSettings.Builder instanceAdminStubSettingsBuilder =
         InstanceAdminStubSettings.newBuilder();
     private DatabaseAdminStubSettings.Builder databaseAdminStubSettingsBuilder =
         DatabaseAdminStubSettings.newBuilder();
 
-    private Builder() {}
+    private Builder() {
+      partitionedDmlStubSettingsBuilder
+          .executeSqlSettings()
+          .setRetrySettings(
+              SpannerStubSettings.newBuilder()
+                  .executeSqlSettings()
+                  .getRetrySettings()
+                  .toBuilder()
+                  .setInitialRpcTimeout(Duration.ofHours(2L))
+                  .setMaxRpcTimeout(Duration.ofHours(2L))
+                  .setTotalTimeout(Duration.ofHours(2L))
+                  .build());
+    }
 
     Builder(SpannerOptions options) {
       super(options);
@@ -149,6 +167,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
       this.prefetchChunks = options.prefetchChunks;
       this.sessionLabels = options.sessionLabels;
       this.spannerStubSettingsBuilder = options.spannerStubSettings.toBuilder();
+      this.partitionedDmlStubSettingsBuilder = options.partitionedDmlStubSettings.toBuilder();
       this.instanceAdminStubSettingsBuilder = options.instanceAdminStubSettings.toBuilder();
       this.databaseAdminStubSettingsBuilder = options.databaseAdminStubSettings.toBuilder();
       this.channelProvider = options.channelProvider;
@@ -272,6 +291,11 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
       return spannerStubSettingsBuilder;
     }
 
+    @VisibleForTesting
+    SpannerStubSettings.Builder getPartitionedDmlStubSettingsBuilder() {
+      return partitionedDmlStubSettingsBuilder;
+    }
+
     /**
      * Returns the {@link InstanceAdminStubSettings.Builder} that will be used to build the {@link
      * SpannerRpc}. Use this to set custom {@link RetrySettings} for individual gRPC methods.
@@ -386,6 +410,10 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
 
   public SpannerStubSettings getSpannerStubSettings() {
     return spannerStubSettings;
+  }
+
+  public SpannerStubSettings getPartitionedDmlStubSettings() {
+    return partitionedDmlStubSettings;
   }
 
   public InstanceAdminStubSettings getInstanceAdminStubSettings() {

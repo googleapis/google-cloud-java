@@ -161,6 +161,7 @@ public class GapicSpannerRpc implements SpannerRpc {
   private final ManagedInstantiatingExecutorProvider executorProvider;
   private boolean rpcIsClosed;
   private final SpannerStub spannerStub;
+  private final SpannerStub partitionedDmlStub;
   private final InstanceAdminStub instanceAdminStub;
   private final DatabaseAdminStub databaseAdminStub;
   private final String projectId;
@@ -272,6 +273,19 @@ public class GapicSpannerRpc implements SpannerRpc {
           GrpcDatabaseAdminStub.create(
               options
                   .getDatabaseAdminStubSettings()
+                  .toBuilder()
+                  .setTransportChannelProvider(channelProvider)
+                  .setCredentialsProvider(credentialsProvider)
+                  .setStreamWatchdogProvider(watchdogProvider)
+                  .build());
+
+      // Create a separate Spanner stub for executing PDML.
+      // This allows us to set different timeout values for PDML
+      // than for normal DML execution.
+      this.partitionedDmlStub =
+          GrpcSpannerStub.create(
+              options
+                  .getPartitionedDmlStubSettings()
                   .toBuilder()
                   .setTransportChannelProvider(channelProvider)
                   .setCredentialsProvider(credentialsProvider)
@@ -531,6 +545,13 @@ public class GapicSpannerRpc implements SpannerRpc {
         controller.cancel();
       }
     };
+  }
+
+  @Override
+  public ResultSet executePartitionedDml(
+      ExecuteSqlRequest request, @Nullable Map<Option, ?> options) {
+    GrpcCallContext context = newCallContext(options, request.getSession());
+    return get(partitionedDmlStub.executeSqlCallable().futureCall(request, context));
   }
 
   @Override
