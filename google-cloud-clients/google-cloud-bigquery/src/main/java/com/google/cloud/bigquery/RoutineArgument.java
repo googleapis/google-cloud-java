@@ -20,6 +20,7 @@ import com.google.auto.value.AutoValue;
 import com.google.common.base.Function;
 import javax.annotation.Nullable;
 
+/** An argument for a BigQuery Routine. */
 @AutoValue
 public abstract class RoutineArgument {
 
@@ -40,31 +41,56 @@ public abstract class RoutineArgument {
 
   @AutoValue.Builder
   public abstract static class Builder {
+    /** Sets the argument name. */
     public abstract Builder setName(String name);
 
+    /**
+     * Sets the kind of argument.
+     *
+     * <p>A FIXED_TYPE argument is a fully specified type. It can be a struct or an array, but not a
+     * table.
+     *
+     * <p>An ANY_TYPE argument is any type. It can be a struct or an array, but not a table.
+     */
     public abstract Builder setKind(String kind);
 
+    /**
+     * Optionally specifies the input/output mode of the argument.
+     *
+     * <p>An IN mode argument is input-only. An OUT mode argument is output-only. An INOUT mode
+     * argument is both an input and output.
+     */
     public abstract Builder setMode(String mode);
 
+    /**
+     * Sets the data type specification for the argument. It is required except for ANY_TYPE
+     * argument kinds.
+     */
     public abstract Builder setDataType(StandardSQLDataType dataType);
 
+    /** Creates a {@code RoutineArgument} object. */
     public abstract RoutineArgument build();
   }
 
+  /** Returns the name of the argument. */
   @Nullable
   public abstract String getName();
 
+  /** Returns the kind of the argument. */
   @Nullable
   public abstract String getKind();
 
+  /** Returns the mode of the argument. */
   @Nullable
   public abstract String getMode();
 
   @Nullable
   public abstract StandardSQLDataType getDataType();
 
+  /** Returns a builder pre-populated using the current values of this {@code RoutineArgument}. */
   public abstract Builder toBuilder();
 
+  /** Returns a builder for a {@Code RoutineArgument} object. */
   public static Builder newBuilder() {
     return new AutoValue_RoutineArgument.Builder();
   }

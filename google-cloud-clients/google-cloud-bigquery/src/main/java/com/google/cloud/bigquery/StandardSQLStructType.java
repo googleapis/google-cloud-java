@@ -22,25 +22,32 @@ import com.google.common.collect.Lists;
 import java.io.Serializable;
 import java.util.List;
 
+/** A set of fields contained within a SQL STRUCT in Google BigQuery. */
 @AutoValue
 public abstract class StandardSQLStructType implements Serializable {
 
   @AutoValue.Builder
   public abstract static class Builder {
 
+    /** Sets the fields of the struct type. */
     public abstract Builder setFields(List<StandardSQLField> fields);
 
+    /** Creates a {@code StandardSQLStructType} object. */
     public abstract StandardSQLStructType build();
   }
 
+  /** Returns the list of fields within a struct type. */
   public abstract List<StandardSQLField> getFields();
 
+  /** Returns a builder pre-populated using the current values of this field. */
   public abstract Builder toBuilder();
 
+  /** Returns a builder for a {@code StandardSQLStructType} object. */
   public static Builder newBuilder() {
     return new AutoValue_StandardSQLStructType.Builder();
   }
 
+  /** Returns a builder for a {@code StandardSQLStructType} object with the specified fields. */
   public static Builder newBuilder(List<StandardSQLField> fieldList) {
     return newBuilder().setFields(fieldList);
   }

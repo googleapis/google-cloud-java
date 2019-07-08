@@ -25,6 +25,7 @@ import com.google.common.base.Strings;
 import java.io.Serializable;
 import java.util.Objects;
 
+/** RoutineId represents the identifier for a given Routine. */
 public final class RoutineId implements Serializable {
 
   static final Function<RoutineReference, RoutineId> FROM_PB_FUNCTION =

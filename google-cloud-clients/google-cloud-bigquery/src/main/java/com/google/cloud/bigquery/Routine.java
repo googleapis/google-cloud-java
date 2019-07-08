@@ -123,22 +123,37 @@ public class Routine extends RoutineInfo {
     this.options = bigquery.getOptions();
   }
 
+  /** Checks if this routine exists. */
   public boolean exists() {
     return bigquery.getRoutine(getRoutineId(), RoutineOption.fields()) != null;
   }
 
+  /**
+   * Fetches this routine's latest information. Returns {@code null} if the routine does not exist.
+   */
   public Routine reload(RoutineOption... options) {
     return bigquery.getRoutine(getRoutineId(), options);
   }
 
+  /**
+   * Update's the routine's information with this Routine's information. This method does not allow
+   * changing the RoutineId identifier of the routine. A new {@code Routine} is returned.
+   */
   public Routine update(RoutineOption... options) {
     return bigquery.update(this, options);
   }
 
+  /**
+   * Deletes this routine.
+   *
+   * @return {@code true} if routine was deleted, {@code false} if it was not found
+   * @throws BigQueryException upon failure
+   */
   public boolean delete() {
     return bigquery.delete(getRoutineId());
   }
 
+  /** Returns the routine's {@code BigQuery} object used to issue requests. */
   public BigQuery getBigQuery() {
     return bigquery;
   }

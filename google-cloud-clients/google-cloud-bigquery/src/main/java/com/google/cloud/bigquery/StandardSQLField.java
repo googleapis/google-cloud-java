@@ -21,6 +21,7 @@ import com.google.common.base.Function;
 import java.io.Serializable;
 import javax.annotation.Nullable;
 
+/** A Google BigQuery SQL Field. */
 @AutoValue
 public abstract class StandardSQLField implements Serializable {
 
@@ -42,33 +43,45 @@ public abstract class StandardSQLField implements Serializable {
   @AutoValue.Builder
   public abstract static class Builder {
 
+    /** Sets the name of the field. */
     public abstract Builder setName(String name);
 
+    /** Sets the data type of the field. */
     public abstract Builder setDataType(StandardSQLDataType dataType);
 
+    /** Creates a {@code StandardSQLField} object. */
     public abstract StandardSQLField build();
   }
 
+  /** Returns the field name. */
   @Nullable
   public abstract String getName();
 
+  /** Returns the field's data type. */
   public abstract StandardSQLDataType getDataType();
 
+  /** Returns a builder pre-populated using the current values of this field. */
   public abstract Builder toBuilder();
 
+  /** Returns a builder for a {@code StandardSQLField} object. */
   public static Builder newBuilder() {
     return new AutoValue_StandardSQLField.Builder();
   }
 
+  /** Returns a builder for a {@code StandardSQLField} object with the specified data type. */
   public static Builder newBuilder(StandardSQLDataType dataType) {
     return newBuilder().setDataType(dataType);
   }
 
+  /**
+   * Returns a builder for a {@code StandardSQLField} object with the specified field name and data
+   * type.
+   */
   public static Builder newBuilder(String name, StandardSQLDataType dataType) {
     return newBuilder().setName(name).setDataType(dataType);
   }
 
-  public StandardSqlField toPb() {
+  StandardSqlField toPb() {
     StandardSqlField fieldPb = new StandardSqlField();
     fieldPb.setName(getName());
     if (getDataType() != null) {

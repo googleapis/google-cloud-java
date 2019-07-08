@@ -658,7 +658,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
   Table create(TableInfo tableInfo, TableOption... options);
 
   /**
-   * Creates a new routine. TODO: docs
+   * Creates a new routine.
    *
    * @throws BigQueryException upon failure
    */
@@ -1004,7 +1004,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
   Model update(ModelInfo modelInfo, ModelOption... options);
 
   /**
-   * Updates routine information. TODO: docs
+   * Updates routine information.
    *
    * @throws BigQueryException upon failure
    */
@@ -1066,16 +1066,24 @@ public interface BigQuery extends Service<BigQueryOptions> {
    */
   Model getModel(ModelId tableId, ModelOption... options);
 
-  // TODO: docs
+  /**
+   * Returns the requested routine or {@code null} if not found.
+   *
+   * @throws BigQueryException upon failure
+   */
   Routine getRoutine(String datasetId, String routineId, RoutineOption... options);
 
-  // TODO: docs
+  /**
+   * Returns the requested routine or {@code null} if not found.
+   *
+   * @throws BigQueryException upon failure
+   */
   Routine getRoutine(RoutineId routineId, RoutineOption... options);
 
-  /** Lists the models in the dataset. */
+  /** Lists the routines in the specified dataset. */
   Page<Routine> listRoutines(String datasetId, RoutineListOption... options);
 
-  /** Lists the models in the dataset. */
+  /** Lists the routines in the specified dataset. */
   Page<Routine> listRoutines(DatasetId datasetId, RoutineListOption... options);
 
   /**

@@ -20,6 +20,7 @@ import com.google.auto.value.AutoValue;
 import java.io.Serializable;
 import javax.annotation.Nullable;
 
+/** Represents Standard SQL data type information. */
 @AutoValue
 public abstract class StandardSQLDataType implements Serializable {
 
@@ -41,11 +42,19 @@ public abstract class StandardSQLDataType implements Serializable {
     public abstract StandardSQLDataType build();
   }
 
+  /**
+   * Returns the type kind of the data type.
+   *
+   * <p>Can be any standard SQL data type. For more information, see
+   * https://cloud.google.com/bigquery/docs/reference/standard-sql/data-types
+   */
   public abstract String getTypeKind();
 
+  /** Returns the type of an ARRAY's elements. */
   @Nullable
   public abstract StandardSQLDataType getArrayElementType();
 
+  /** Returns the struct definition's list of fields for a STRUCT type. */
   @Nullable
   public abstract StandardSQLStructType getStructType();
 
@@ -55,8 +64,14 @@ public abstract class StandardSQLDataType implements Serializable {
     return new AutoValue_StandardSQLDataType.Builder();
   }
 
+  /** Returns a new builder initialized with the type kind. */
   public static Builder newBuilder(String typeKind) {
     return newBuilder().setTypeKind(typeKind);
+  }
+
+  /** Returns a new builder initialized with a StandardSQLTypeName as the type kind. */
+  public static Builder newBuilder(StandardSQLTypeName typeName) {
+    return newBuilder().setTypeKind(typeName.toString());
   }
 
   StandardSqlDataType toPb() {
