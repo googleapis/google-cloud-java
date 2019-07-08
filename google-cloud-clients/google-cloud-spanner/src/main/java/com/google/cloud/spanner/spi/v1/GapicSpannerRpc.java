@@ -24,16 +24,21 @@ import com.google.api.gax.core.ExecutorProvider;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.GrpcCallContext;
+import com.google.api.gax.grpc.GrpcCallSettings;
+import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.rpc.AlreadyExistsException;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
+import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.HeaderProvider;
 import com.google.api.gax.rpc.InstantiatingWatchdogProvider;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.ResponseObserver;
 import com.google.api.gax.rpc.StreamController;
 import com.google.api.gax.rpc.TransportChannelProvider;
+import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.gax.rpc.WatchdogProvider;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.ServiceOptions;
@@ -45,10 +50,11 @@ import com.google.cloud.spanner.admin.database.v1.stub.DatabaseAdminStub;
 import com.google.cloud.spanner.admin.database.v1.stub.GrpcDatabaseAdminStub;
 import com.google.cloud.spanner.admin.instance.v1.stub.GrpcInstanceAdminStub;
 import com.google.cloud.spanner.admin.instance.v1.stub.InstanceAdminStub;
+import com.google.cloud.spanner.v1.stub.GrpcSpannerCallableFactory;
 import com.google.cloud.spanner.v1.stub.GrpcSpannerStub;
-import com.google.cloud.spanner.v1.stub.SpannerStub;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
+import com.google.common.collect.ImmutableMap;
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import com.google.longrunning.GetOperationRequest;
 import com.google.longrunning.Operation;
@@ -95,6 +101,9 @@ import com.google.spanner.v1.RollbackRequest;
 import com.google.spanner.v1.Session;
 import com.google.spanner.v1.Transaction;
 import io.grpc.Context;
+import io.grpc.MethodDescriptor;
+import io.grpc.protobuf.ProtoUtils;
+import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -146,6 +155,43 @@ public class GapicSpannerRpc implements SpannerRpc {
     }
   }
 
+  private static final class GrpcSpannerStubWithSeparatePDmlSettings extends GrpcSpannerStub {
+    private static final MethodDescriptor<ExecuteSqlRequest, ResultSet> executeSqlMethodDescriptor =
+        MethodDescriptor.<ExecuteSqlRequest, ResultSet>newBuilder()
+            .setType(MethodDescriptor.MethodType.UNARY)
+            .setFullMethodName("google.spanner.v1.Spanner/ExecuteSql")
+            .setRequestMarshaller(ProtoUtils.marshaller(ExecuteSqlRequest.getDefaultInstance()))
+            .setResponseMarshaller(ProtoUtils.marshaller(ResultSet.getDefaultInstance()))
+            .build();
+    private final UnaryCallable<ExecuteSqlRequest, ResultSet> executePartitionedDmlCallable;
+
+    private GrpcSpannerStubWithSeparatePDmlSettings(
+        SpannerOptions options,
+        ClientContext clientContext,
+        GrpcStubCallableFactory callableFactory)
+        throws IOException {
+      super(options.getSpannerStubSettings(), clientContext, callableFactory);
+      GrpcCallSettings<ExecuteSqlRequest, ResultSet> executeSqlTransportSettings =
+          GrpcCallSettings.<ExecuteSqlRequest, ResultSet>newBuilder()
+              .setMethodDescriptor(executeSqlMethodDescriptor)
+              .setParamsExtractor(
+                  new RequestParamsExtractor<ExecuteSqlRequest>() {
+                    @Override
+                    public Map<String, String> extract(ExecuteSqlRequest request) {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("session", String.valueOf(request.getSession()));
+                      return params.build();
+                    }
+                  })
+              .build();
+      executePartitionedDmlCallable =
+          callableFactory.createUnaryCallable(
+              executeSqlTransportSettings,
+              options.getPartitionedDmlStubSettings().executeSqlSettings(),
+              clientContext);
+    }
+  }
+
   private static final PathTemplate PROJECT_NAME_TEMPLATE =
       PathTemplate.create("projects/{project}");
   private static final PathTemplate OPERATION_NAME_TEMPLATE =
@@ -161,8 +207,7 @@ public class GapicSpannerRpc implements SpannerRpc {
 
   private final ManagedInstantiatingExecutorProvider executorProvider;
   private boolean rpcIsClosed;
-  private final SpannerStub spannerStub;
-  private final SpannerStub partitionedDmlStub;
+  private final GrpcSpannerStubWithSeparatePDmlSettings spannerStub;
   private final InstanceAdminStub instanceAdminStub;
   private final DatabaseAdminStub databaseAdminStub;
   private final String projectId;
@@ -250,8 +295,8 @@ public class GapicSpannerRpc implements SpannerRpc {
             .withClock(NanoClock.getDefaultClock());
 
     try {
-      this.spannerStub =
-          GrpcSpannerStub.create(
+      ClientContext clientContext =
+          ClientContext.create(
               options
                   .getSpannerStubSettings()
                   .toBuilder()
@@ -259,6 +304,12 @@ public class GapicSpannerRpc implements SpannerRpc {
                   .setCredentialsProvider(credentialsProvider)
                   .setStreamWatchdogProvider(watchdogProvider)
                   .build());
+      // Create a Spanner stub with separate timeout settings for Partitioned DML. This stub will
+      // share the same client context and executors for both the generated methods on the base
+      // SpannerStub as well as the partitioned DML method on the handwritten stub.
+      this.spannerStub =
+          new GrpcSpannerStubWithSeparatePDmlSettings(
+              options, clientContext, new GrpcSpannerCallableFactory());
 
       this.instanceAdminStub =
           GrpcInstanceAdminStub.create(
@@ -274,19 +325,6 @@ public class GapicSpannerRpc implements SpannerRpc {
           GrpcDatabaseAdminStub.create(
               options
                   .getDatabaseAdminStubSettings()
-                  .toBuilder()
-                  .setTransportChannelProvider(channelProvider)
-                  .setCredentialsProvider(credentialsProvider)
-                  .setStreamWatchdogProvider(watchdogProvider)
-                  .build());
-
-      // Create a separate Spanner stub for executing PDML.
-      // This allows us to set different timeout values for PDML
-      // than for normal DML execution.
-      this.partitionedDmlStub =
-          GrpcSpannerStub.create(
-              options
-                  .getPartitionedDmlStubSettings()
                   .toBuilder()
                   .setTransportChannelProvider(channelProvider)
                   .setCredentialsProvider(credentialsProvider)
@@ -552,7 +590,7 @@ public class GapicSpannerRpc implements SpannerRpc {
   public ResultSet executePartitionedDml(
       ExecuteSqlRequest request, @Nullable Map<Option, ?> options) {
     GrpcCallContext context = newCallContext(options, request.getSession());
-    return get(partitionedDmlStub.executeSqlCallable().futureCall(request, context));
+    return get(spannerStub.executePartitionedDmlCallable.futureCall(request, context));
   }
 
   @Override
@@ -625,14 +663,12 @@ public class GapicSpannerRpc implements SpannerRpc {
   public void shutdown() {
     this.rpcIsClosed = true;
     this.spannerStub.close();
-    this.partitionedDmlStub.close();
     this.instanceAdminStub.close();
     this.databaseAdminStub.close();
     this.spannerWatchdog.shutdown();
     this.executorProvider.shutdown();
     try {
       this.spannerStub.awaitTermination(1L, TimeUnit.SECONDS);
-      this.partitionedDmlStub.awaitTermination(1L, TimeUnit.SECONDS);
       this.instanceAdminStub.awaitTermination(1L, TimeUnit.SECONDS);
       this.databaseAdminStub.awaitTermination(1L, TimeUnit.SECONDS);
     } catch (InterruptedException e) {
