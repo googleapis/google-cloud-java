@@ -365,9 +365,7 @@
         <artifactId>opencensus-contrib-http-util</artifactId>
         <version>${opencensus.version}</version>
       </dependency>
-      <!-- testlib deps. Only put testlib dependencies here, which are testlib packages
-      that correspond to another non-test package. Put pure test dependencies (e.g.
-      junit) in the main pom.xml. -->
+      <!-- Test dependencies -->
       <dependency>
         <groupId>com.google.guava</groupId>
         <artifactId>guava-testlib</artifactId>
