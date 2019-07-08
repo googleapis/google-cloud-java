@@ -51,8 +51,8 @@
  * <pre>
  * <code>
  * try (AgentsClient agentsClient = AgentsClient.create()) {
- *   ProjectName parent = ProjectName.of("[PROJECT]");
- *   Agent response = agentsClient.getAgent(parent);
+ *   Agent agent = Agent.newBuilder().build();
+ *   Agent response = agentsClient.setAgent(agent);
  * }
  * </code>
  * </pre>
