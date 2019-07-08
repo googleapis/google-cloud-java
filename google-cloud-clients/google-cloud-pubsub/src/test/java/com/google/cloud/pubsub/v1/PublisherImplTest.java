@@ -414,43 +414,6 @@ public class PublisherImplTest {
   }
 
   @Test
-  public void testEnableMessageOrdering_dontSendWhileInflight() throws Exception {
-    // Set maxAttempts to 1 and enableMessageOrdering to true at the same time.
-    Publisher publisher =
-        getTestPublisherBuilder()
-            .setBatchingSettings(
-                Publisher.Builder.DEFAULT_BATCHING_SETTINGS
-                    .toBuilder()
-                    .setElementCountThreshold(2L)
-                    .setDelayThreshold(Duration.ofSeconds(5))
-                    .build())
-            .setEnableMessageOrdering(true)
-            .build();
-    testPublisherServiceImpl.setAutoPublishResponse(true);
-
-    ApiFuture<String> publishFuture1 = sendTestMessageWithOrderingKey(publisher, "m1", "orderA");
-
-    // The timer goes off, and the first message is sent.
-    fakeExecutor.advanceTime(Duration.ofSeconds(10));
-
-    // The timer goes off, but the first message is incomplete.
-    ApiFuture<String> publishFuture2 = sendTestMessageWithOrderingKey(publisher, "m2", "orderA");
-    fakeExecutor.advanceTime(Duration.ofSeconds(10));
-
-    // The batch should now be full.
-    ApiFuture<String> publishFuture3 = sendTestMessageWithOrderingKey(publisher, "m3", "orderA");
-
-    assertEquals("1", publishFuture1.get());
-    assertEquals("2", publishFuture2.get());
-    assertEquals("3", publishFuture3.get());
-
-    assertEquals(1, testPublisherServiceImpl.getCapturedRequests().get(0).getMessagesCount());
-    assertEquals(2, testPublisherServiceImpl.getCapturedRequests().get(1).getMessagesCount());
-
-    publisher.shutdown();
-  }
-
-  @Test
   /**
    * Make sure that resume publishing works as expected:
    *
