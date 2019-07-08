@@ -18,6 +18,9 @@ package com.google.cloud.spanner;
 
 import static com.google.cloud.spanner.SpannerMatchers.isSpannerException;
 import static com.google.common.truth.Truth.assertThat;
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertThat;
 import static org.junit.Assert.fail;
 import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.atMost;
@@ -46,6 +49,17 @@ import com.google.spanner.v1.ExecuteBatchDmlRequest;
 import com.google.spanner.v1.ExecuteSqlRequest;
 import com.google.spanner.v1.ResultSetStats;
 import com.google.spanner.v1.RollbackRequest;
+import io.opencensus.trace.Span;
+import io.opencensus.trace.Status.CanonicalCode;
+import io.opencensus.trace.Tracer;
+import io.opencensus.trace.Tracing;
+import io.opencensus.trace.config.TraceConfig;
+import io.opencensus.trace.config.TraceParams;
+import io.opencensus.trace.export.SampledSpanStore;
+import io.opencensus.trace.export.SampledSpanStore.ErrorFilter;
+import io.opencensus.trace.export.SpanData;
+import io.opencensus.trace.export.SpanExporter.Handler;
+import io.opencensus.trace.samplers.Samplers;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -562,6 +576,75 @@ public class SessionPoolTest extends BaseSessionPoolTest {
     runMaintainanceLoop(clock, pool, pool.poolMaintainer.numKeepAliveCycles);
     verify(session, times(3)).singleUse(any(TimestampBound.class));
     pool.closeAsync().get();
+  }
+
+  @Test
+  public void blockAndTimeoutOnPoolExhaustion() {
+    // Setup a dummy trace handler.
+    Handler handler =
+        new Handler() {
+          @Override
+          public void export(Collection<SpanData> spanDataList) {}
+        };
+    Tracing.getExportComponent()
+        .getSpanExporter()
+        .registerHandler(SessionPoolTest.class.getName(), handler);
+    TraceConfig traceConfig = Tracing.getTraceConfig();
+    TraceParams activeTraceParams = traceConfig.getActiveTraceParams();
+    traceConfig.updateActiveTraceParams(
+        activeTraceParams.toBuilder().setSampler(Samplers.alwaysSample()).build());
+    // Create a session pool with max 1 session and a low timeout for waiting for a session.
+    options =
+        SessionPoolOptions.newBuilder()
+            .setMinSessions(minSessions)
+            .setMaxSessions(1)
+            .setBlockForSessionTimeoutMillis(50L)
+            .build();
+    SessionImpl mockSession = mockSession();
+    when(client.createSession(db)).thenReturn(mockSession);
+    pool = createPool();
+
+    Tracer tracer = Tracing.getTracer();
+    Span span = tracer.spanBuilder("RunTest").startSpan();
+    // Take the only session that can be in the pool.
+    Session session1 = pool.getReadSession();
+    // Try to take a read or a read/write session. These requests should timeout.
+    for (Boolean write : new Boolean[] {false, true}) {
+      try {
+        if (write) {
+          pool.getReadWriteSession();
+        } else {
+          pool.getReadSession();
+        }
+        fail("expected DEADLINE_EXCEEDED");
+      } catch (SpannerException e) {
+        if (e.getErrorCode() != ErrorCode.DEADLINE_EXCEEDED) {
+          fail("expected DEADLINE_EXCEEDED");
+        }
+      }
+    }
+    session1.close();
+    session1 = pool.getReadSession();
+    assertThat(session1).isNotNull();
+    session1.close();
+    span.end();
+    Tracing.getExportComponent().shutdown();
+    // Verify that we got a DEADLINE_EXCEEDED span for both read and read/write session.
+    SampledSpanStore samples = Tracing.getExportComponent().getSampledSpanStore();
+    assertThat(
+        samples
+            .getErrorSampledSpans(
+                ErrorFilter.create(
+                    SessionPool.WAIT_FOR_READ_SESSION, CanonicalCode.DEADLINE_EXCEEDED, 0))
+            .size(),
+        is(equalTo(1)));
+    assertThat(
+        samples
+            .getErrorSampledSpans(
+                ErrorFilter.create(
+                    SessionPool.WAIT_FOR_READ_WRITE_SESSION, CanonicalCode.DEADLINE_EXCEEDED, 0))
+            .size(),
+        is(equalTo(1)));
   }
 
   @Test

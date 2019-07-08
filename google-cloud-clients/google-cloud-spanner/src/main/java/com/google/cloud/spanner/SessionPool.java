@@ -33,9 +33,11 @@ import com.google.common.util.concurrent.ListenableFuture;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.common.util.concurrent.SettableFuture;
 import com.google.common.util.concurrent.Uninterruptibles;
+import io.opencensus.common.Scope;
 import io.opencensus.trace.Annotation;
 import io.opencensus.trace.AttributeValue;
 import io.opencensus.trace.Span;
+import io.opencensus.trace.Tracer;
 import io.opencensus.trace.Tracing;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -62,6 +64,12 @@ import org.threeten.bp.Instant;
 final class SessionPool {
 
   private static final Logger logger = Logger.getLogger(SessionPool.class.getName());
+  static final String WAIT_FOR_READ_SESSION = "SessionPool.WaitForReadSession";
+  static final String WAIT_FOR_READ_WRITE_SESSION = "SessionPool.WaitForReadWriteSession";
+
+  static {
+    TraceUtil.exportSpans(WAIT_FOR_READ_SESSION, WAIT_FOR_READ_WRITE_SESSION);
+  }
 
   /**
    * Wrapper around current time so that we can fake it in tests. TODO(user): Replace with Java 8
@@ -810,7 +818,7 @@ final class SessionPool {
     }
   }
 
-  private static final class Waiter {
+  private final class Waiter {
     private final SynchronousQueue<SessionOrError> waiter = new SynchronousQueue<>();
 
     private void put(PooledSession session) {
@@ -822,11 +830,43 @@ final class SessionPool {
     }
 
     private PooledSession take() throws SpannerException {
-      SessionOrError s = Uninterruptibles.takeUninterruptibly(waiter);
+      SessionOrError s = takeUninterruptiblyWithTimeout();
       if (s.e != null) {
         throw newSpannerException(s.e);
       }
       return s.session;
+    }
+
+    private SessionOrError takeUninterruptiblyWithTimeout() {
+      boolean interrupted = false;
+      try {
+        while (true) {
+          try {
+            SessionOrError res =
+                waiter.poll(options.getWaitForSessionTimeoutMillis(), TimeUnit.MILLISECONDS);
+            if (res == null) {
+              executor.submit(
+                  new Runnable() {
+                    @Override
+                    public void run() {
+                      handleCreateSessionFailure(
+                          newSpannerException(
+                              ErrorCode.DEADLINE_EXCEEDED,
+                              "Timeout while waiting for session to become available"));
+                    }
+                  });
+            } else {
+              return res;
+            }
+          } catch (InterruptedException e) {
+            interrupted = true;
+          }
+        }
+      } finally {
+        if (interrupted) {
+          Thread.currentThread().interrupt();
+        }
+      }
     }
   }
 
@@ -1179,7 +1219,17 @@ final class SessionPool {
           Level.FINE,
           "No session available in the pool. Blocking for one to become available/created");
       span.addAnnotation("Waiting for read only session to be available");
-      sess = waiter.take();
+      Tracer tracer = Tracing.getTracer();
+      Scope waitScope = tracer.spanBuilder(WAIT_FOR_READ_SESSION).startScopedSpan();
+      try {
+        sess = waiter.take();
+        tracer.getCurrentSpan().end();
+      } catch (Exception e) {
+        TraceUtil.endSpanWithFailure(tracer.getCurrentSpan(), e);
+        throw e;
+      } finally {
+        waitScope.close();
+      }
     }
     sess.markBusy();
     incrementNumSessionsInUse();
@@ -1237,7 +1287,17 @@ final class SessionPool {
           Level.FINE,
           "No session available in the pool. Blocking for one to become available/created");
       span.addAnnotation("Waiting for read write session to be available");
-      sess = waiter.take();
+      Tracer tracer = Tracing.getTracer();
+      Scope waitScope = tracer.spanBuilder(WAIT_FOR_READ_WRITE_SESSION).startScopedSpan();
+      try {
+        sess = waiter.take();
+        tracer.getCurrentSpan().end();
+      } catch (Exception e) {
+        TraceUtil.endSpanWithFailure(tracer.getCurrentSpan(), e);
+        throw e;
+      } finally {
+        waitScope.close();
+      }
     }
     sess.markBusy();
     incrementNumSessionsInUse();
