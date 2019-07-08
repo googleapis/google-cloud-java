@@ -244,6 +244,11 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     }
   }
 
+  @Override
+  public boolean isClosed() {
+    return spannerIsClosed;
+  }
+
   /**
    * Encapsulates state to be passed to the {@link SpannerRpc} layer for a given session. Currently
    * used to select the {@link io.grpc.Channel} to be used in issuing the RPCs in a Session.

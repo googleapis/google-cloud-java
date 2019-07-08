@@ -24,7 +24,6 @@ import com.google.api.core.ApiFunction;
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.testing.LocalChannelProvider;
 import com.google.api.gax.retrying.RetrySettings;
-import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallSettings.Builder;
 import com.google.cloud.NoCredentials;
@@ -33,7 +32,6 @@ import com.google.cloud.spanner.MockSpannerServiceImpl.StatementResult;
 import com.google.cloud.spanner.TransactionRunner.TransactionCallable;
 import com.google.cloud.spanner.v1.SpannerClient;
 import com.google.cloud.spanner.v1.SpannerSettings;
-import com.google.common.collect.ImmutableSet;
 import com.google.protobuf.ListValue;
 import com.google.spanner.v1.ResultSetMetadata;
 import com.google.spanner.v1.StructType;
@@ -43,26 +41,22 @@ import io.grpc.Server;
 import io.grpc.StatusRuntimeException;
 import io.grpc.inprocess.InProcessServerBuilder;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
-import java.util.List;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized;
-import org.junit.runners.Parameterized.Parameter;
-import org.junit.runners.Parameterized.Parameters;
+import org.junit.runners.JUnit4;
 import org.threeten.bp.Duration;
 
-@RunWith(Parameterized.class)
+@RunWith(JUnit4.class)
 public class SpannerGaxRetryTest {
   private static final ResultSetMetadata READ_METADATA =
       ResultSetMetadata.newBuilder()
@@ -144,17 +138,6 @@ public class SpannerGaxRetryTest {
   private static Spanner spanner;
   private static DatabaseClient client;
 
-  @Parameter(0)
-  public boolean enableGaxRetries;
-
-  @Parameters(name = "enable GAX retries = {0}")
-  public static Collection<Object[]> data() {
-    List<Object[]> params = new ArrayList<>();
-    params.add(new Object[] {true});
-    params.add(new Object[] {false});
-    return params;
-  }
-
   @Rule public ExpectedException expectedException = ExpectedException.none();
 
   @BeforeClass
@@ -232,27 +215,6 @@ public class SpannerGaxRetryTest {
         .executeStreamingSqlSettings()
         .setRetrySettings(retrySettings);
     builder.getSpannerStubSettingsBuilder().streamingReadSettings().setRetrySettings(retrySettings);
-    if (!enableGaxRetries) {
-      // Disable retries by removing all retryable codes.
-      builder
-          .getSpannerStubSettingsBuilder()
-          .applyToAllUnaryMethods(
-              new ApiFunction<UnaryCallSettings.Builder<?, ?>, Void>() {
-                @Override
-                public Void apply(Builder<?, ?> input) {
-                  input.setRetryableCodes(ImmutableSet.<StatusCode.Code>of());
-                  return null;
-                }
-              });
-      builder
-          .getSpannerStubSettingsBuilder()
-          .executeStreamingSqlSettings()
-          .setRetryableCodes(ImmutableSet.<StatusCode.Code>of());
-      builder
-          .getSpannerStubSettingsBuilder()
-          .streamingReadSettings()
-          .setRetryableCodes(ImmutableSet.<StatusCode.Code>of());
-    }
     spanner = builder.build().getService();
     client = spanner.getDatabaseClient(DatabaseId.of("[PROJECT]", "[INSTANCE]", "[DATABASE]"));
   }
@@ -297,9 +259,7 @@ public class SpannerGaxRetryTest {
 
   @Test
   public void singleUseTimeout() {
-    if (enableGaxRetries) {
-      expectedException.expect(SpannerMatchers.isSpannerException(ErrorCode.DEADLINE_EXCEEDED));
-    }
+    expectedException.expect(SpannerMatchers.isSpannerException(ErrorCode.DEADLINE_EXCEEDED));
     mockSpanner.setCreateSessionExecutionTime(ONE_SECOND);
     try (ResultSet rs = client.singleUse().executeQuery(SELECT1AND2)) {
       while (rs.next()) {}
@@ -308,9 +268,6 @@ public class SpannerGaxRetryTest {
 
   @Test
   public void singleUseUnavailable() {
-    if (!enableGaxRetries) {
-      expectedException.expect(SpannerMatchers.isSpannerException(ErrorCode.UNAVAILABLE));
-    }
     mockSpanner.addException(UNAVAILABLE);
     try (ResultSet rs = client.singleUse().executeQuery(SELECT1AND2)) {
       while (rs.next()) {}
@@ -346,9 +303,7 @@ public class SpannerGaxRetryTest {
 
   @Test
   public void singleUseReadOnlyTransactionTimeout() {
-    if (enableGaxRetries) {
-      expectedException.expect(SpannerMatchers.isSpannerException(ErrorCode.DEADLINE_EXCEEDED));
-    }
+    expectedException.expect(SpannerMatchers.isSpannerException(ErrorCode.DEADLINE_EXCEEDED));
     mockSpanner.setCreateSessionExecutionTime(ONE_SECOND);
     try (ResultSet rs = client.singleUseReadOnlyTransaction().executeQuery(SELECT1AND2)) {
       while (rs.next()) {}
@@ -357,9 +312,6 @@ public class SpannerGaxRetryTest {
 
   @Test
   public void singleUseReadOnlyTransactionUnavailable() {
-    if (!enableGaxRetries) {
-      expectedException.expect(SpannerMatchers.isSpannerException(ErrorCode.UNAVAILABLE));
-    }
     mockSpanner.addException(UNAVAILABLE);
     try (ResultSet rs = client.singleUseReadOnlyTransaction().executeQuery(SELECT1AND2)) {
       while (rs.next()) {}
@@ -367,18 +319,17 @@ public class SpannerGaxRetryTest {
   }
 
   @Test
+  @Ignore("enable once gax 1.47 is released")
   public void singleUseExecuteStreamingSqlTimeout() {
-    // Streaming calls do not timeout.
-    mockSpanner.setExecuteStreamingSqlExecutionTime(ONE_SECOND);
+    expectedException.expect(SpannerMatchers.isSpannerException(ErrorCode.DEADLINE_EXCEEDED));
     try (ResultSet rs = client.singleUse().executeQuery(SELECT1AND2)) {
+      mockSpanner.setExecuteStreamingSqlExecutionTime(ONE_SECOND);
       while (rs.next()) {}
     }
   }
 
   @Test
   public void singleUseExecuteStreamingSqlUnavailable() {
-    // executeStreamingSql is always retried by the Spanner library, even if gax retries have been
-    // disabled.
     try (ResultSet rs = client.singleUse().executeQuery(SELECT1AND2)) {
       mockSpanner.addException(UNAVAILABLE);
       while (rs.next()) {}
@@ -388,9 +339,7 @@ public class SpannerGaxRetryTest {
   @Test
   public void readWriteTransactionTimeout() {
     warmUpSessionPool();
-    if (enableGaxRetries) {
-      expectedException.expect(SpannerMatchers.isSpannerException(ErrorCode.DEADLINE_EXCEEDED));
-    }
+    expectedException.expect(SpannerMatchers.isSpannerException(ErrorCode.DEADLINE_EXCEEDED));
     mockSpanner.setBeginTransactionExecutionTime(ONE_SECOND);
     TransactionRunner runner = client.readWriteTransaction();
     long updateCount =
@@ -407,9 +356,6 @@ public class SpannerGaxRetryTest {
   @Test
   public void readWriteTransactionUnavailable() {
     warmUpSessionPool();
-    if (!enableGaxRetries) {
-      expectedException.expect(SpannerMatchers.isSpannerException(ErrorCode.UNAVAILABLE));
-    }
     mockSpanner.addException(UNAVAILABLE);
     TransactionRunner runner = client.readWriteTransaction();
     long updateCount =
@@ -492,9 +438,7 @@ public class SpannerGaxRetryTest {
   @Test
   public void transactionManagerTimeout() {
     warmUpSessionPool();
-    if (enableGaxRetries) {
-      expectedException.expect(SpannerMatchers.isSpannerException(ErrorCode.DEADLINE_EXCEEDED));
-    }
+    expectedException.expect(SpannerMatchers.isSpannerException(ErrorCode.DEADLINE_EXCEEDED));
     mockSpanner.setBeginTransactionExecutionTime(ONE_SECOND);
     try (TransactionManager txManager = client.transactionManager()) {
       TransactionContext tx = txManager.begin();
@@ -514,9 +458,6 @@ public class SpannerGaxRetryTest {
   @Test
   public void transactionManagerUnavailable() {
     warmUpSessionPool();
-    if (!enableGaxRetries) {
-      expectedException.expect(SpannerMatchers.isSpannerException(ErrorCode.UNAVAILABLE));
-    }
     mockSpanner.addException(UNAVAILABLE);
     try (TransactionManager txManager = client.transactionManager()) {
       TransactionContext tx = txManager.begin();

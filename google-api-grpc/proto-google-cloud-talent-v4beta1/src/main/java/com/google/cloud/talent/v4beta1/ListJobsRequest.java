@@ -127,8 +127,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Required.
-   * The resource name of the tenant under which the job is created.
+   * Required. The resource name of the tenant under which the job is created.
    * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
    * "projects/api-test-project/tenant/foo".
    * Tenant id is optional and the default tenant is used if unspecified, for
@@ -152,8 +151,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Required.
-   * The resource name of the tenant under which the job is created.
+   * Required. The resource name of the tenant under which the job is created.
    * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
    * "projects/api-test-project/tenant/foo".
    * Tenant id is optional and the default tenant is used if unspecified, for
@@ -180,8 +178,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Required.
-   * The filter string specifies the jobs to be enumerated.
+   * Required. The filter string specifies the jobs to be enumerated.
    * Supported operator: =, AND
    * The fields eligible for filtering are:
    * * `companyName` (Required)
@@ -213,8 +210,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Required.
-   * The filter string specifies the jobs to be enumerated.
+   * Required. The filter string specifies the jobs to be enumerated.
    * Supported operator: =, AND
    * The fields eligible for filtering are:
    * * `companyName` (Required)
@@ -249,8 +245,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional.
-   * The starting point of a query result.
+   * Optional. The starting point of a query result.
    * </pre>
    *
    * <code>string page_token = 3;</code>
@@ -270,8 +265,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional.
-   * The starting point of a query result.
+   * Optional. The starting point of a query result.
    * </pre>
    *
    * <code>string page_token = 3;</code>
@@ -294,8 +288,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional.
-   * The maximum number of jobs to be returned per page of results.
+   * Optional. The maximum number of jobs to be returned per page of results.
    * If [job_view][google.cloud.talent.v4beta1.ListJobsRequest.job_view] is set
    * to
    * [JobView.JOB_VIEW_ID_ONLY][google.cloud.talent.v4beta1.JobView.JOB_VIEW_ID_ONLY],
@@ -316,8 +309,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional.
-   * The desired job attributes returned for jobs in the
+   * Optional. The desired job attributes returned for jobs in the
    * search response. Defaults to
    * [JobView.JOB_VIEW_FULL][google.cloud.talent.v4beta1.JobView.JOB_VIEW_FULL]
    * if no value is specified.
@@ -332,8 +324,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional.
-   * The desired job attributes returned for jobs in the
+   * Optional. The desired job attributes returned for jobs in the
    * search response. Defaults to
    * [JobView.JOB_VIEW_FULL][google.cloud.talent.v4beta1.JobView.JOB_VIEW_FULL]
    * if no value is specified.
@@ -733,8 +724,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required.
-     * The resource name of the tenant under which the job is created.
+     * Required. The resource name of the tenant under which the job is created.
      * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
      * "projects/api-test-project/tenant/foo".
      * Tenant id is optional and the default tenant is used if unspecified, for
@@ -758,8 +748,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required.
-     * The resource name of the tenant under which the job is created.
+     * Required. The resource name of the tenant under which the job is created.
      * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
      * "projects/api-test-project/tenant/foo".
      * Tenant id is optional and the default tenant is used if unspecified, for
@@ -783,8 +772,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required.
-     * The resource name of the tenant under which the job is created.
+     * Required. The resource name of the tenant under which the job is created.
      * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
      * "projects/api-test-project/tenant/foo".
      * Tenant id is optional and the default tenant is used if unspecified, for
@@ -806,8 +794,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required.
-     * The resource name of the tenant under which the job is created.
+     * Required. The resource name of the tenant under which the job is created.
      * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
      * "projects/api-test-project/tenant/foo".
      * Tenant id is optional and the default tenant is used if unspecified, for
@@ -826,8 +813,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required.
-     * The resource name of the tenant under which the job is created.
+     * Required. The resource name of the tenant under which the job is created.
      * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
      * "projects/api-test-project/tenant/foo".
      * Tenant id is optional and the default tenant is used if unspecified, for
@@ -852,8 +838,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required.
-     * The filter string specifies the jobs to be enumerated.
+     * Required. The filter string specifies the jobs to be enumerated.
      * Supported operator: =, AND
      * The fields eligible for filtering are:
      * * `companyName` (Required)
@@ -885,8 +870,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required.
-     * The filter string specifies the jobs to be enumerated.
+     * Required. The filter string specifies the jobs to be enumerated.
      * Supported operator: =, AND
      * The fields eligible for filtering are:
      * * `companyName` (Required)
@@ -918,8 +902,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required.
-     * The filter string specifies the jobs to be enumerated.
+     * Required. The filter string specifies the jobs to be enumerated.
      * Supported operator: =, AND
      * The fields eligible for filtering are:
      * * `companyName` (Required)
@@ -949,8 +932,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required.
-     * The filter string specifies the jobs to be enumerated.
+     * Required. The filter string specifies the jobs to be enumerated.
      * Supported operator: =, AND
      * The fields eligible for filtering are:
      * * `companyName` (Required)
@@ -977,8 +959,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required.
-     * The filter string specifies the jobs to be enumerated.
+     * Required. The filter string specifies the jobs to be enumerated.
      * Supported operator: =, AND
      * The fields eligible for filtering are:
      * * `companyName` (Required)
@@ -1011,8 +992,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional.
-     * The starting point of a query result.
+     * Optional. The starting point of a query result.
      * </pre>
      *
      * <code>string page_token = 3;</code>
@@ -1032,8 +1012,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional.
-     * The starting point of a query result.
+     * Optional. The starting point of a query result.
      * </pre>
      *
      * <code>string page_token = 3;</code>
@@ -1053,8 +1032,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional.
-     * The starting point of a query result.
+     * Optional. The starting point of a query result.
      * </pre>
      *
      * <code>string page_token = 3;</code>
@@ -1072,8 +1050,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional.
-     * The starting point of a query result.
+     * Optional. The starting point of a query result.
      * </pre>
      *
      * <code>string page_token = 3;</code>
@@ -1088,8 +1065,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional.
-     * The starting point of a query result.
+     * Optional. The starting point of a query result.
      * </pre>
      *
      * <code>string page_token = 3;</code>
@@ -1110,8 +1086,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional.
-     * The maximum number of jobs to be returned per page of results.
+     * Optional. The maximum number of jobs to be returned per page of results.
      * If [job_view][google.cloud.talent.v4beta1.ListJobsRequest.job_view] is set
      * to
      * [JobView.JOB_VIEW_ID_ONLY][google.cloud.talent.v4beta1.JobView.JOB_VIEW_ID_ONLY],
@@ -1129,8 +1104,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional.
-     * The maximum number of jobs to be returned per page of results.
+     * Optional. The maximum number of jobs to be returned per page of results.
      * If [job_view][google.cloud.talent.v4beta1.ListJobsRequest.job_view] is set
      * to
      * [JobView.JOB_VIEW_ID_ONLY][google.cloud.talent.v4beta1.JobView.JOB_VIEW_ID_ONLY],
@@ -1151,8 +1125,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional.
-     * The maximum number of jobs to be returned per page of results.
+     * Optional. The maximum number of jobs to be returned per page of results.
      * If [job_view][google.cloud.talent.v4beta1.ListJobsRequest.job_view] is set
      * to
      * [JobView.JOB_VIEW_ID_ONLY][google.cloud.talent.v4beta1.JobView.JOB_VIEW_ID_ONLY],
@@ -1175,8 +1148,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional.
-     * The desired job attributes returned for jobs in the
+     * Optional. The desired job attributes returned for jobs in the
      * search response. Defaults to
      * [JobView.JOB_VIEW_FULL][google.cloud.talent.v4beta1.JobView.JOB_VIEW_FULL]
      * if no value is specified.
@@ -1191,8 +1163,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional.
-     * The desired job attributes returned for jobs in the
+     * Optional. The desired job attributes returned for jobs in the
      * search response. Defaults to
      * [JobView.JOB_VIEW_FULL][google.cloud.talent.v4beta1.JobView.JOB_VIEW_FULL]
      * if no value is specified.
@@ -1209,8 +1180,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional.
-     * The desired job attributes returned for jobs in the
+     * Optional. The desired job attributes returned for jobs in the
      * search response. Defaults to
      * [JobView.JOB_VIEW_FULL][google.cloud.talent.v4beta1.JobView.JOB_VIEW_FULL]
      * if no value is specified.
@@ -1228,8 +1198,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional.
-     * The desired job attributes returned for jobs in the
+     * Optional. The desired job attributes returned for jobs in the
      * search response. Defaults to
      * [JobView.JOB_VIEW_FULL][google.cloud.talent.v4beta1.JobView.JOB_VIEW_FULL]
      * if no value is specified.
@@ -1250,8 +1219,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional.
-     * The desired job attributes returned for jobs in the
+     * Optional. The desired job attributes returned for jobs in the
      * search response. Defaults to
      * [JobView.JOB_VIEW_FULL][google.cloud.talent.v4beta1.JobView.JOB_VIEW_FULL]
      * if no value is specified.

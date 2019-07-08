@@ -72,8 +72,8 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (AgentsClient agentsClient = AgentsClient.create()) {
- *   ProjectName parent = ProjectName.of("[PROJECT]");
- *   Agent response = agentsClient.getAgent(parent);
+ *   Agent agent = Agent.newBuilder().build();
+ *   Agent response = agentsClient.setAgent(agent);
  * }
  * </code>
  * </pre>
@@ -191,6 +191,167 @@ public class AgentsClient implements BackgroundResource {
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationsClient getOperationsClient() {
     return operationsClient;
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates/updates the specified agent.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AgentsClient agentsClient = AgentsClient.create()) {
+   *   Agent agent = Agent.newBuilder().build();
+   *   Agent response = agentsClient.setAgent(agent);
+   * }
+   * </code></pre>
+   *
+   * @param agent Required. The agent to update.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Agent setAgent(Agent agent) {
+
+    SetAgentRequest request = SetAgentRequest.newBuilder().setAgent(agent).build();
+    return setAgent(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates/updates the specified agent.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AgentsClient agentsClient = AgentsClient.create()) {
+   *   Agent agent = Agent.newBuilder().build();
+   *   SetAgentRequest request = SetAgentRequest.newBuilder()
+   *     .setAgent(agent)
+   *     .build();
+   *   Agent response = agentsClient.setAgent(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Agent setAgent(SetAgentRequest request) {
+    return setAgentCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates/updates the specified agent.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AgentsClient agentsClient = AgentsClient.create()) {
+   *   Agent agent = Agent.newBuilder().build();
+   *   SetAgentRequest request = SetAgentRequest.newBuilder()
+   *     .setAgent(agent)
+   *     .build();
+   *   ApiFuture&lt;Agent&gt; future = agentsClient.setAgentCallable().futureCall(request);
+   *   // Do something
+   *   Agent response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<SetAgentRequest, Agent> setAgentCallable() {
+    return stub.setAgentCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes the specified agent.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AgentsClient agentsClient = AgentsClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   agentsClient.deleteAgent(parent);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The project that the agent to delete is associated with. Format:
+   *     `projects/&lt;Project ID&gt;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteAgent(ProjectName parent) {
+
+    DeleteAgentRequest request =
+        DeleteAgentRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    deleteAgent(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes the specified agent.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AgentsClient agentsClient = AgentsClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   agentsClient.deleteAgent(parent.toString());
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The project that the agent to delete is associated with. Format:
+   *     `projects/&lt;Project ID&gt;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteAgent(String parent) {
+
+    DeleteAgentRequest request = DeleteAgentRequest.newBuilder().setParent(parent).build();
+    deleteAgent(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes the specified agent.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AgentsClient agentsClient = AgentsClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   DeleteAgentRequest request = DeleteAgentRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .build();
+   *   agentsClient.deleteAgent(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteAgent(DeleteAgentRequest request) {
+    deleteAgentCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes the specified agent.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AgentsClient agentsClient = AgentsClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   DeleteAgentRequest request = DeleteAgentRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .build();
+   *   ApiFuture&lt;Void&gt; future = agentsClient.deleteAgentCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<DeleteAgentRequest, Empty> deleteAgentCallable() {
+    return stub.deleteAgentCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -882,84 +1043,6 @@ public class AgentsClient implements BackgroundResource {
    */
   public final UnaryCallable<RestoreAgentRequest, Operation> restoreAgentCallable() {
     return stub.restoreAgentCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Creates/updates the specified agent.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AgentsClient agentsClient = AgentsClient.create()) {
-   *   SetAgentRequest request = SetAgentRequest.newBuilder().build();
-   *   Agent response = agentsClient.setAgent(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final Agent setAgent(SetAgentRequest request) {
-    return setAgentCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Creates/updates the specified agent.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AgentsClient agentsClient = AgentsClient.create()) {
-   *   SetAgentRequest request = SetAgentRequest.newBuilder().build();
-   *   ApiFuture&lt;Agent&gt; future = agentsClient.setAgentCallable().futureCall(request);
-   *   // Do something
-   *   Agent response = future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<SetAgentRequest, Agent> setAgentCallable() {
-    return stub.setAgentCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes the specified agent.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AgentsClient agentsClient = AgentsClient.create()) {
-   *   DeleteAgentRequest request = DeleteAgentRequest.newBuilder().build();
-   *   agentsClient.deleteAgent(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteAgent(DeleteAgentRequest request) {
-    deleteAgentCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes the specified agent.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AgentsClient agentsClient = AgentsClient.create()) {
-   *   DeleteAgentRequest request = DeleteAgentRequest.newBuilder().build();
-   *   ApiFuture&lt;Void&gt; future = agentsClient.deleteAgentCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<DeleteAgentRequest, Empty> deleteAgentCallable() {
-    return stub.deleteAgentCallable();
   }
 
   @Override

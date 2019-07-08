@@ -17,11 +17,15 @@
 package com.google.cloud.spanner;
 
 import static com.google.common.truth.Truth.assertThat;
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertThat;
 import static org.junit.Assert.fail;
 import static org.mockito.Mockito.when;
 
 import com.google.api.core.NanoClock;
 import com.google.api.gax.retrying.RetrySettings;
+import com.google.cloud.NoCredentials;
+import com.google.cloud.ServiceRpc;
 import com.google.cloud.grpc.GrpcTransportOptions;
 import com.google.cloud.spanner.spi.v1.SpannerRpc;
 import java.util.HashMap;
@@ -121,5 +125,43 @@ public class SpannerImplTest {
     } catch (IllegalStateException e) {
       assertThat(e.getMessage()).contains("Cloud Spanner client has been closed");
     }
+  }
+
+  @Test
+  public void testSpannerClosed() throws InterruptedException {
+    SpannerOptions options = createSpannerOptions();
+    Spanner spanner1 = options.getService();
+    Spanner spanner2 = options.getService();
+    ServiceRpc rpc1 = options.getRpc();
+    ServiceRpc rpc2 = options.getRpc();
+    // The SpannerOptions object should return the same instance.
+    assertThat(spanner1 == spanner2, is(true));
+    assertThat(rpc1 == rpc2, is(true));
+    spanner1.close();
+    // A new instance should be returned as the Spanner instance has been closed.
+    Spanner spanner3 = options.getService();
+    assertThat(spanner1 == spanner3, is(false));
+    // A new instance should be returned as the Spanner instance has been closed.
+    ServiceRpc rpc3 = options.getRpc();
+    assertThat(rpc1 == rpc3, is(false));
+    // Creating a copy of the SpannerOptions should result in new instances.
+    options = options.toBuilder().build();
+    Spanner spanner4 = options.getService();
+    ServiceRpc rpc4 = options.getRpc();
+    assertThat(spanner4 == spanner3, is(false));
+    assertThat(rpc4 == rpc3, is(false));
+    Spanner spanner5 = options.getService();
+    ServiceRpc rpc5 = options.getRpc();
+    assertThat(spanner4 == spanner5, is(true));
+    assertThat(rpc4 == rpc5, is(true));
+    spanner3.close();
+    spanner4.close();
+  }
+
+  private SpannerOptions createSpannerOptions() {
+    return SpannerOptions.newBuilder()
+        .setProjectId("[PROJECT]")
+        .setCredentials(NoCredentials.getInstance())
+        .build();
   }
 }

@@ -98,8 +98,7 @@ public final class DeleteJobRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required.
-   * The resource name of the job to be deleted.
+   * Required. The resource name of the job to be deleted.
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
    * example, "projects/api-test-project/tenants/foo/jobs/1234".
@@ -124,8 +123,7 @@ public final class DeleteJobRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required.
-   * The resource name of the job to be deleted.
+   * Required. The resource name of the job to be deleted.
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
    * example, "projects/api-test-project/tenants/foo/jobs/1234".
@@ -470,8 +468,7 @@ public final class DeleteJobRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required.
-     * The resource name of the job to be deleted.
+     * Required. The resource name of the job to be deleted.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
      * example, "projects/api-test-project/tenants/foo/jobs/1234".
@@ -496,8 +493,7 @@ public final class DeleteJobRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required.
-     * The resource name of the job to be deleted.
+     * Required. The resource name of the job to be deleted.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
      * example, "projects/api-test-project/tenants/foo/jobs/1234".
@@ -522,8 +518,7 @@ public final class DeleteJobRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required.
-     * The resource name of the job to be deleted.
+     * Required. The resource name of the job to be deleted.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
      * example, "projects/api-test-project/tenants/foo/jobs/1234".
@@ -546,8 +541,7 @@ public final class DeleteJobRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required.
-     * The resource name of the job to be deleted.
+     * Required. The resource name of the job to be deleted.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
      * example, "projects/api-test-project/tenants/foo/jobs/1234".
@@ -567,8 +561,7 @@ public final class DeleteJobRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required.
-     * The resource name of the job to be deleted.
+     * Required. The resource name of the job to be deleted.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
      * example, "projects/api-test-project/tenants/foo/jobs/1234".

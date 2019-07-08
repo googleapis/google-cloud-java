@@ -187,14 +187,12 @@ public class JobServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required.
-   *     <p>The resource name of the tenant under which the job is created.
+   * @param parent Required. The resource name of the tenant under which the job is created.
    *     <p>The format is "projects/{project_id}/tenants/{tenant_id}", for example,
    *     "projects/api-test-project/tenant/foo".
    *     <p>Tenant id is optional and a default tenant is created if unspecified, for example,
    *     "projects/api-test-project".
-   * @param job Required.
-   *     <p>The Job to be created.
+   * @param job Required. The Job to be created.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Job createJob(TenantOrProjectName parent, Job job) {
@@ -223,14 +221,12 @@ public class JobServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required.
-   *     <p>The resource name of the tenant under which the job is created.
+   * @param parent Required. The resource name of the tenant under which the job is created.
    *     <p>The format is "projects/{project_id}/tenants/{tenant_id}", for example,
    *     "projects/api-test-project/tenant/foo".
    *     <p>Tenant id is optional and a default tenant is created if unspecified, for example,
    *     "projects/api-test-project".
-   * @param job Required.
-   *     <p>The Job to be created.
+   * @param job Required. The Job to be created.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Job createJob(String parent, Job job) {
@@ -305,8 +301,7 @@ public class JobServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Required.
-   *     <p>The resource name of the job to retrieve.
+   * @param name Required. The resource name of the job to retrieve.
    *     <p>The format is "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for example,
    *     "projects/api-test-project/tenants/foo/jobs/1234".
    *     <p>Tenant id is optional and the default tenant is used if unspecified, for example,
@@ -333,8 +328,7 @@ public class JobServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Required.
-   *     <p>The resource name of the job to retrieve.
+   * @param name Required. The resource name of the job to retrieve.
    *     <p>The format is "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for example,
    *     "projects/api-test-project/tenants/foo/jobs/1234".
    *     <p>Tenant id is optional and the default tenant is used if unspecified, for example,
@@ -408,8 +402,7 @@ public class JobServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param job Required.
-   *     <p>The Job to be updated.
+   * @param job Required. The Job to be updated.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Job updateJob(Job job) {
@@ -484,8 +477,7 @@ public class JobServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Required.
-   *     <p>The resource name of the job to be deleted.
+   * @param name Required. The resource name of the job to be deleted.
    *     <p>The format is "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for example,
    *     "projects/api-test-project/tenants/foo/jobs/1234".
    *     <p>Tenant id is optional and the default tenant is used if unspecified, for example,
@@ -514,8 +506,7 @@ public class JobServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Required.
-   *     <p>The resource name of the job to be deleted.
+   * @param name Required. The resource name of the job to be deleted.
    *     <p>The format is "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for example,
    *     "projects/api-test-project/tenants/foo/jobs/1234".
    *     <p>Tenant id is optional and the default tenant is used if unspecified, for example,
@@ -593,14 +584,12 @@ public class JobServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required.
-   *     <p>The resource name of the tenant under which the job is created.
+   * @param parent Required. The resource name of the tenant under which the job is created.
    *     <p>The format is "projects/{project_id}/tenants/{tenant_id}", for example,
    *     "projects/api-test-project/tenant/foo".
    *     <p>Tenant id is optional and the default tenant is used if unspecified, for example,
    *     "projects/api-test-project".
-   * @param filter Required.
-   *     <p>The filter string specifies the jobs to be enumerated.
+   * @param filter Required. The filter string specifies the jobs to be enumerated.
    *     <p>Supported operator: =, AND
    *     <p>The fields eligible for filtering are:
    *     <p>&#42; `companyName` (Required) &#42; `requisitionId` (Optional) &#42; `status`
@@ -637,14 +626,12 @@ public class JobServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required.
-   *     <p>The resource name of the tenant under which the job is created.
+   * @param parent Required. The resource name of the tenant under which the job is created.
    *     <p>The format is "projects/{project_id}/tenants/{tenant_id}", for example,
    *     "projects/api-test-project/tenant/foo".
    *     <p>Tenant id is optional and the default tenant is used if unspecified, for example,
    *     "projects/api-test-project".
-   * @param filter Required.
-   *     <p>The filter string specifies the jobs to be enumerated.
+   * @param filter Required. The filter string specifies the jobs to be enumerated.
    *     <p>Supported operator: =, AND
    *     <p>The fields eligible for filtering are:
    *     <p>&#42; `companyName` (Required) &#42; `requisitionId` (Optional) &#42; `status`
@@ -762,14 +749,12 @@ public class JobServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required.
-   *     <p>The resource name of the tenant under which the job is created.
+   * @param parent Required. The resource name of the tenant under which the job is created.
    *     <p>The format is "projects/{project_id}/tenants/{tenant_id}", for example,
    *     "projects/api-test-project/tenant/foo".
    *     <p>Tenant id is optional and the default tenant is used if unspecified, for example,
    *     "projects/api-test-project".
-   * @param filter Required.
-   *     <p>The filter string specifies the jobs to be deleted.
+   * @param filter Required. The filter string specifies the jobs to be deleted.
    *     <p>Supported operator: =, AND
    *     <p>The fields eligible for filtering are:
    *     <p>&#42; `companyName` (Required) &#42; `requisitionId` (Required)
@@ -801,14 +786,12 @@ public class JobServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required.
-   *     <p>The resource name of the tenant under which the job is created.
+   * @param parent Required. The resource name of the tenant under which the job is created.
    *     <p>The format is "projects/{project_id}/tenants/{tenant_id}", for example,
    *     "projects/api-test-project/tenant/foo".
    *     <p>Tenant id is optional and the default tenant is used if unspecified, for example,
    *     "projects/api-test-project".
-   * @param filter Required.
-   *     <p>The filter string specifies the jobs to be deleted.
+   * @param filter Required. The filter string specifies the jobs to be deleted.
    *     <p>Supported operator: =, AND
    *     <p>The fields eligible for filtering are:
    *     <p>&#42; `companyName` (Required) &#42; `requisitionId` (Required)
@@ -1098,14 +1081,12 @@ public class JobServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required.
-   *     <p>The resource name of the tenant under which the job is created.
+   * @param parent Required. The resource name of the tenant under which the job is created.
    *     <p>The format is "projects/{project_id}/tenants/{tenant_id}", for example,
    *     "projects/api-test-project/tenant/foo".
    *     <p>Tenant id is optional and a default tenant is created if unspecified, for example,
    *     "projects/api-test-project".
-   * @param jobs Required.
-   *     <p>The jobs to be created.
+   * @param jobs Required. The jobs to be created.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi(
@@ -1210,14 +1191,12 @@ public class JobServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required.
-   *     <p>The resource name of the tenant under which the job is created.
+   * @param parent Required. The resource name of the tenant under which the job is created.
    *     <p>The format is "projects/{project_id}/tenants/{tenant_id}", for example,
    *     "projects/api-test-project/tenant/foo".
    *     <p>Tenant id is optional and the default tenant is used if unspecified, for example,
    *     "projects/api-test-project".
-   * @param jobs Required.
-   *     <p>The jobs to be updated.
+   * @param jobs Required. The jobs to be updated.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi(

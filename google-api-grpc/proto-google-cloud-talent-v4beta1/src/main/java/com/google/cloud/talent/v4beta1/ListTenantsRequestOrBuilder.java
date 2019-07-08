@@ -12,8 +12,7 @@ public interface ListTenantsRequestOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * Resource name of the project under which the tenant is created.
+   * Required. Resource name of the project under which the tenant is created.
    * The format is "projects/{project_id}", for example,
    * "projects/api-test-project".
    * </pre>
@@ -25,8 +24,7 @@ public interface ListTenantsRequestOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * Resource name of the project under which the tenant is created.
+   * Required. Resource name of the project under which the tenant is created.
    * The format is "projects/{project_id}", for example,
    * "projects/api-test-project".
    * </pre>
@@ -39,8 +37,7 @@ public interface ListTenantsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * The starting indicator from which to return results.
+   * Optional. The starting indicator from which to return results.
    * </pre>
    *
    * <code>string page_token = 2;</code>
@@ -50,8 +47,7 @@ public interface ListTenantsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * The starting indicator from which to return results.
+   * Optional. The starting indicator from which to return results.
    * </pre>
    *
    * <code>string page_token = 2;</code>
@@ -62,8 +58,7 @@ public interface ListTenantsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * The maximum number of tenants to be returned, at most 100.
+   * Optional. The maximum number of tenants to be returned, at most 100.
    * Default is 100 if a non-positive number is provided.
    * </pre>
    *

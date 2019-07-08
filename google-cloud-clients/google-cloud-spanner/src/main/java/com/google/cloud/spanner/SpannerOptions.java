@@ -436,6 +436,26 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     return (SpannerRpc) getRpc();
   }
 
+  /**
+   * @return <code>true</code> if the cached Spanner service instance is <code>null</code> or
+   *     closed. This will cause the method {@link #getService()} to create a new {@link SpannerRpc}
+   *     instance when one is requested.
+   */
+  @Override
+  protected boolean shouldRefreshService(Spanner cachedService) {
+    return cachedService == null || cachedService.isClosed();
+  }
+
+  /**
+   * @return <code>true</code> if the cached {@link ServiceRpc} instance is <code>null</code> or
+   *     closed. This will cause the method {@link #getRpc()} to create a new {@link Spanner}
+   *     instance when one is requested.
+   */
+  @Override
+  protected boolean shouldRefreshRpc(ServiceRpc cachedRpc) {
+    return cachedRpc == null || ((SpannerRpc) cachedRpc).isClosed();
+  }
+
   @SuppressWarnings("unchecked")
   @Override
   public Builder toBuilder() {
