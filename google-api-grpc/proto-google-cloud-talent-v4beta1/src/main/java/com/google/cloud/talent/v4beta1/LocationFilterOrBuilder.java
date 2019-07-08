@@ -12,8 +12,7 @@ public interface LocationFilterOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * The address name, such as "Mountain View" or "Bay Area".
+   * Optional. The address name, such as "Mountain View" or "Bay Area".
    * </pre>
    *
    * <code>string address = 1;</code>
@@ -23,8 +22,7 @@ public interface LocationFilterOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * The address name, such as "Mountain View" or "Bay Area".
+   * Optional. The address name, such as "Mountain View" or "Bay Area".
    * </pre>
    *
    * <code>string address = 1;</code>
@@ -35,15 +33,15 @@ public interface LocationFilterOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * CLDR region code of the country/region of the address. This is used
-   * to address ambiguity of the user-input location, for example, "Liverpool"
-   * against "Liverpool, NY, US" or "Liverpool, UK".
+   * Optional. CLDR region code of the country/region of the address. This is
+   * used to address ambiguity of the user-input location, for example,
+   * "Liverpool" against "Liverpool, NY, US" or "Liverpool, UK".
    * Set this field if all the jobs to search against are from a same region,
    * or jobs are world-wide, but the job seeker is from a specific region.
    * See http://cldr.unicode.org/ and
    * http://www.unicode.org/cldr/charts/30/supplemental/territory_information.html
    * for details. Example: "CH" for Switzerland.
+   * Note that this filter is not applicable for Profile Search related queries.
    * </pre>
    *
    * <code>string region_code = 2;</code>
@@ -53,15 +51,15 @@ public interface LocationFilterOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * CLDR region code of the country/region of the address. This is used
-   * to address ambiguity of the user-input location, for example, "Liverpool"
-   * against "Liverpool, NY, US" or "Liverpool, UK".
+   * Optional. CLDR region code of the country/region of the address. This is
+   * used to address ambiguity of the user-input location, for example,
+   * "Liverpool" against "Liverpool, NY, US" or "Liverpool, UK".
    * Set this field if all the jobs to search against are from a same region,
    * or jobs are world-wide, but the job seeker is from a specific region.
    * See http://cldr.unicode.org/ and
    * http://www.unicode.org/cldr/charts/30/supplemental/territory_information.html
    * for details. Example: "CH" for Switzerland.
+   * Note that this filter is not applicable for Profile Search related queries.
    * </pre>
    *
    * <code>string region_code = 2;</code>
@@ -72,8 +70,7 @@ public interface LocationFilterOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * The latitude and longitude of the geographic center from which to
+   * Optional. The latitude and longitude of the geographic center from which to
    * search. This field's ignored if `address` is provided.
    * </pre>
    *
@@ -84,8 +81,7 @@ public interface LocationFilterOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * The latitude and longitude of the geographic center from which to
+   * Optional. The latitude and longitude of the geographic center from which to
    * search. This field's ignored if `address` is provided.
    * </pre>
    *
@@ -96,8 +92,7 @@ public interface LocationFilterOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * The latitude and longitude of the geographic center from which to
+   * Optional. The latitude and longitude of the geographic center from which to
    * search. This field's ignored if `address` is provided.
    * </pre>
    *
@@ -109,10 +104,9 @@ public interface LocationFilterOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * The distance_in_miles is applied when the location being searched for is
-   * identified as a city or smaller. When the location being searched for is a
-   * state or larger, this field is ignored.
+   * Optional. The distance_in_miles is applied when the location being searched
+   * for is identified as a city or smaller. When the location being searched
+   * for is a state or larger, this field is ignored.
    * </pre>
    *
    * <code>double distance_in_miles = 4;</code>
@@ -123,9 +117,8 @@ public interface LocationFilterOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * Allows the client to return jobs without a
-   * set location, specifically, telecommuting jobs (telecomuting is considered
+   * Optional. Allows the client to return jobs without a
+   * set location, specifically, telecommuting jobs (telecommuting is considered
    * by the service as a special location.
    * [Job.posting_region][google.cloud.talent.v4beta1.Job.posting_region]
    * indicates if a job permits telecommuting. If this field is set to
@@ -153,9 +146,8 @@ public interface LocationFilterOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * Allows the client to return jobs without a
-   * set location, specifically, telecommuting jobs (telecomuting is considered
+   * Optional. Allows the client to return jobs without a
+   * set location, specifically, telecommuting jobs (telecommuting is considered
    * by the service as a special location.
    * [Job.posting_region][google.cloud.talent.v4beta1.Job.posting_region]
    * indicates if a job permits telecommuting. If this field is set to
@@ -184,9 +176,8 @@ public interface LocationFilterOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * Whether to apply negation to the filter so profiles matching the filter
-   * are excluded.
+   * Optional. Whether to apply negation to the filter so profiles matching the
+   * filter are excluded.
    * Currently only supported in profile search.
    * </pre>
    *

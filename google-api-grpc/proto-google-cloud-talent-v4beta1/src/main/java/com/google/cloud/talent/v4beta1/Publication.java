@@ -175,8 +175,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * A list of author names.
+   * Optional. A list of author names.
    * Number of characters allowed is 100.
    * </pre>
    *
@@ -189,8 +188,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * A list of author names.
+   * Optional. A list of author names.
    * Number of characters allowed is 100.
    * </pre>
    *
@@ -203,8 +201,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * A list of author names.
+   * Optional. A list of author names.
    * Number of characters allowed is 100.
    * </pre>
    *
@@ -217,8 +214,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * A list of author names.
+   * Optional. A list of author names.
    * Number of characters allowed is 100.
    * </pre>
    *
@@ -234,8 +230,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * The title of the publication.
+   * Optional. The title of the publication.
    * Number of characters allowed is 100.
    * </pre>
    *
@@ -256,8 +251,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * The title of the publication.
+   * Optional. The title of the publication.
    * Number of characters allowed is 100.
    * </pre>
    *
@@ -281,8 +275,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * The description of the publication.
+   * Optional. The description of the publication.
    * Number of characters allowed is 100,000.
    * </pre>
    *
@@ -303,8 +296,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * The description of the publication.
+   * Optional. The description of the publication.
    * Number of characters allowed is 100,000.
    * </pre>
    *
@@ -328,8 +320,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * The journal name of the publication.
+   * Optional. The journal name of the publication.
    * Number of characters allowed is 100.
    * </pre>
    *
@@ -350,8 +341,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * The journal name of the publication.
+   * Optional. The journal name of the publication.
    * Number of characters allowed is 100.
    * </pre>
    *
@@ -375,8 +365,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * Volume number.
+   * Optional. Volume number.
    * Number of characters allowed is 100.
    * </pre>
    *
@@ -397,8 +386,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * Volume number.
+   * Optional. Volume number.
    * Number of characters allowed is 100.
    * </pre>
    *
@@ -422,8 +410,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * The publisher of the journal.
+   * Optional. The publisher of the journal.
    * Number of characters allowed is 100.
    * </pre>
    *
@@ -444,8 +431,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * The publisher of the journal.
+   * Optional. The publisher of the journal.
    * Number of characters allowed is 100.
    * </pre>
    *
@@ -469,8 +455,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * The publication date.
+   * Optional. The publication date.
    * </pre>
    *
    * <code>.google.type.Date publication_date = 7;</code>
@@ -482,8 +467,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * The publication date.
+   * Optional. The publication date.
    * </pre>
    *
    * <code>.google.type.Date publication_date = 7;</code>
@@ -495,8 +479,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * The publication date.
+   * Optional. The publication date.
    * </pre>
    *
    * <code>.google.type.Date publication_date = 7;</code>
@@ -511,8 +494,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * The publication type.
+   * Optional. The publication type.
    * Number of characters allowed is 100.
    * </pre>
    *
@@ -533,8 +515,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * The publication type.
+   * Optional. The publication type.
    * Number of characters allowed is 100.
    * </pre>
    *
@@ -558,8 +539,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * ISBN number.
+   * Optional. ISBN number.
    * Number of characters allowed is 100.
    * </pre>
    *
@@ -580,8 +560,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * ISBN number.
+   * Optional. ISBN number.
    * Number of characters allowed is 100.
    * </pre>
    *
@@ -1090,8 +1069,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * A list of author names.
+     * Optional. A list of author names.
      * Number of characters allowed is 100.
      * </pre>
      *
@@ -1104,8 +1082,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * A list of author names.
+     * Optional. A list of author names.
      * Number of characters allowed is 100.
      * </pre>
      *
@@ -1118,8 +1095,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * A list of author names.
+     * Optional. A list of author names.
      * Number of characters allowed is 100.
      * </pre>
      *
@@ -1132,8 +1108,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * A list of author names.
+     * Optional. A list of author names.
      * Number of characters allowed is 100.
      * </pre>
      *
@@ -1146,8 +1121,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * A list of author names.
+     * Optional. A list of author names.
      * Number of characters allowed is 100.
      * </pre>
      *
@@ -1166,8 +1140,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * A list of author names.
+     * Optional. A list of author names.
      * Number of characters allowed is 100.
      * </pre>
      *
@@ -1186,8 +1159,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * A list of author names.
+     * Optional. A list of author names.
      * Number of characters allowed is 100.
      * </pre>
      *
@@ -1203,8 +1175,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * A list of author names.
+     * Optional. A list of author names.
      * Number of characters allowed is 100.
      * </pre>
      *
@@ -1220,8 +1191,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * A list of author names.
+     * Optional. A list of author names.
      * Number of characters allowed is 100.
      * </pre>
      *
@@ -1243,8 +1213,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The title of the publication.
+     * Optional. The title of the publication.
      * Number of characters allowed is 100.
      * </pre>
      *
@@ -1265,8 +1234,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The title of the publication.
+     * Optional. The title of the publication.
      * Number of characters allowed is 100.
      * </pre>
      *
@@ -1287,8 +1255,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The title of the publication.
+     * Optional. The title of the publication.
      * Number of characters allowed is 100.
      * </pre>
      *
@@ -1307,8 +1274,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The title of the publication.
+     * Optional. The title of the publication.
      * Number of characters allowed is 100.
      * </pre>
      *
@@ -1324,8 +1290,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The title of the publication.
+     * Optional. The title of the publication.
      * Number of characters allowed is 100.
      * </pre>
      *
@@ -1347,8 +1312,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The description of the publication.
+     * Optional. The description of the publication.
      * Number of characters allowed is 100,000.
      * </pre>
      *
@@ -1369,8 +1333,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The description of the publication.
+     * Optional. The description of the publication.
      * Number of characters allowed is 100,000.
      * </pre>
      *
@@ -1391,8 +1354,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The description of the publication.
+     * Optional. The description of the publication.
      * Number of characters allowed is 100,000.
      * </pre>
      *
@@ -1411,8 +1373,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The description of the publication.
+     * Optional. The description of the publication.
      * Number of characters allowed is 100,000.
      * </pre>
      *
@@ -1428,8 +1389,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The description of the publication.
+     * Optional. The description of the publication.
      * Number of characters allowed is 100,000.
      * </pre>
      *
@@ -1451,8 +1411,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The journal name of the publication.
+     * Optional. The journal name of the publication.
      * Number of characters allowed is 100.
      * </pre>
      *
@@ -1473,8 +1432,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The journal name of the publication.
+     * Optional. The journal name of the publication.
      * Number of characters allowed is 100.
      * </pre>
      *
@@ -1495,8 +1453,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The journal name of the publication.
+     * Optional. The journal name of the publication.
      * Number of characters allowed is 100.
      * </pre>
      *
@@ -1515,8 +1472,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The journal name of the publication.
+     * Optional. The journal name of the publication.
      * Number of characters allowed is 100.
      * </pre>
      *
@@ -1532,8 +1488,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The journal name of the publication.
+     * Optional. The journal name of the publication.
      * Number of characters allowed is 100.
      * </pre>
      *
@@ -1555,8 +1510,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Volume number.
+     * Optional. Volume number.
      * Number of characters allowed is 100.
      * </pre>
      *
@@ -1577,8 +1531,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Volume number.
+     * Optional. Volume number.
      * Number of characters allowed is 100.
      * </pre>
      *
@@ -1599,8 +1552,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Volume number.
+     * Optional. Volume number.
      * Number of characters allowed is 100.
      * </pre>
      *
@@ -1619,8 +1571,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Volume number.
+     * Optional. Volume number.
      * Number of characters allowed is 100.
      * </pre>
      *
@@ -1636,8 +1587,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Volume number.
+     * Optional. Volume number.
      * Number of characters allowed is 100.
      * </pre>
      *
@@ -1659,8 +1609,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The publisher of the journal.
+     * Optional. The publisher of the journal.
      * Number of characters allowed is 100.
      * </pre>
      *
@@ -1681,8 +1630,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The publisher of the journal.
+     * Optional. The publisher of the journal.
      * Number of characters allowed is 100.
      * </pre>
      *
@@ -1703,8 +1651,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The publisher of the journal.
+     * Optional. The publisher of the journal.
      * Number of characters allowed is 100.
      * </pre>
      *
@@ -1723,8 +1670,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The publisher of the journal.
+     * Optional. The publisher of the journal.
      * Number of characters allowed is 100.
      * </pre>
      *
@@ -1740,8 +1686,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The publisher of the journal.
+     * Optional. The publisher of the journal.
      * Number of characters allowed is 100.
      * </pre>
      *
@@ -1766,8 +1711,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The publication date.
+     * Optional. The publication date.
      * </pre>
      *
      * <code>.google.type.Date publication_date = 7;</code>
@@ -1779,8 +1723,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The publication date.
+     * Optional. The publication date.
      * </pre>
      *
      * <code>.google.type.Date publication_date = 7;</code>
@@ -1798,8 +1741,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The publication date.
+     * Optional. The publication date.
      * </pre>
      *
      * <code>.google.type.Date publication_date = 7;</code>
@@ -1821,8 +1763,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The publication date.
+     * Optional. The publication date.
      * </pre>
      *
      * <code>.google.type.Date publication_date = 7;</code>
@@ -1841,8 +1782,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The publication date.
+     * Optional. The publication date.
      * </pre>
      *
      * <code>.google.type.Date publication_date = 7;</code>
@@ -1866,8 +1806,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The publication date.
+     * Optional. The publication date.
      * </pre>
      *
      * <code>.google.type.Date publication_date = 7;</code>
@@ -1887,8 +1826,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The publication date.
+     * Optional. The publication date.
      * </pre>
      *
      * <code>.google.type.Date publication_date = 7;</code>
@@ -1902,8 +1840,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The publication date.
+     * Optional. The publication date.
      * </pre>
      *
      * <code>.google.type.Date publication_date = 7;</code>
@@ -1921,8 +1858,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The publication date.
+     * Optional. The publication date.
      * </pre>
      *
      * <code>.google.type.Date publication_date = 7;</code>
@@ -1945,8 +1881,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The publication type.
+     * Optional. The publication type.
      * Number of characters allowed is 100.
      * </pre>
      *
@@ -1967,8 +1902,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The publication type.
+     * Optional. The publication type.
      * Number of characters allowed is 100.
      * </pre>
      *
@@ -1989,8 +1923,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The publication type.
+     * Optional. The publication type.
      * Number of characters allowed is 100.
      * </pre>
      *
@@ -2009,8 +1942,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The publication type.
+     * Optional. The publication type.
      * Number of characters allowed is 100.
      * </pre>
      *
@@ -2026,8 +1958,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The publication type.
+     * Optional. The publication type.
      * Number of characters allowed is 100.
      * </pre>
      *
@@ -2049,8 +1980,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * ISBN number.
+     * Optional. ISBN number.
      * Number of characters allowed is 100.
      * </pre>
      *
@@ -2071,8 +2001,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * ISBN number.
+     * Optional. ISBN number.
      * Number of characters allowed is 100.
      * </pre>
      *
@@ -2093,8 +2022,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * ISBN number.
+     * Optional. ISBN number.
      * Number of characters allowed is 100.
      * </pre>
      *
@@ -2113,8 +2041,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * ISBN number.
+     * Optional. ISBN number.
      * Number of characters allowed is 100.
      * </pre>
      *
@@ -2130,8 +2057,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * ISBN number.
+     * Optional. ISBN number.
      * Number of characters allowed is 100.
      * </pre>
      *

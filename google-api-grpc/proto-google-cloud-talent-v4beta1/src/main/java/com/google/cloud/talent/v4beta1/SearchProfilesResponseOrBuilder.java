@@ -229,4 +229,29 @@ public interface SearchProfilesResponseOrBuilder
    */
   com.google.cloud.talent.v4beta1.SummarizedProfileOrBuilder getSummarizedProfilesOrBuilder(
       int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * An id that uniquely identifies the result set of a
+   * [SearchProfiles][google.cloud.talent.v4beta1.ProfileService.SearchProfiles]
+   * call for consistent results.
+   * </pre>
+   *
+   * <code>string result_set_id = 7;</code>
+   */
+  java.lang.String getResultSetId();
+  /**
+   *
+   *
+   * <pre>
+   * An id that uniquely identifies the result set of a
+   * [SearchProfiles][google.cloud.talent.v4beta1.ProfileService.SearchProfiles]
+   * call for consistent results.
+   * </pre>
+   *
+   * <code>string result_set_id = 7;</code>
+   */
+  com.google.protobuf.ByteString getResultSetIdBytes();
 }

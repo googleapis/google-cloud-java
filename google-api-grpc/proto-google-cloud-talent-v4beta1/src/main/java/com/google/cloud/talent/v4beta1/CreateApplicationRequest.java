@@ -113,8 +113,8 @@ public final class CreateApplicationRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Required.
-   * Resource name of the profile under which the application is created.
+   * Required. Resource name of the profile under which the application is
+   * created.
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}", for
    * example, "projects/test-project/tenants/test-tenant/profiles/test-profile".
@@ -137,8 +137,8 @@ public final class CreateApplicationRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Required.
-   * Resource name of the profile under which the application is created.
+   * Required. Resource name of the profile under which the application is
+   * created.
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}", for
    * example, "projects/test-project/tenants/test-tenant/profiles/test-profile".
@@ -164,8 +164,7 @@ public final class CreateApplicationRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Required.
-   * The application to be created.
+   * Required. The application to be created.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Application application = 2;</code>
@@ -177,8 +176,7 @@ public final class CreateApplicationRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Required.
-   * The application to be created.
+   * Required. The application to be created.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Application application = 2;</code>
@@ -192,8 +190,7 @@ public final class CreateApplicationRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Required.
-   * The application to be created.
+   * Required. The application to be created.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Application application = 2;</code>
@@ -554,8 +551,8 @@ public final class CreateApplicationRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required.
-     * Resource name of the profile under which the application is created.
+     * Required. Resource name of the profile under which the application is
+     * created.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}", for
      * example, "projects/test-project/tenants/test-tenant/profiles/test-profile".
@@ -578,8 +575,8 @@ public final class CreateApplicationRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required.
-     * Resource name of the profile under which the application is created.
+     * Required. Resource name of the profile under which the application is
+     * created.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}", for
      * example, "projects/test-project/tenants/test-tenant/profiles/test-profile".
@@ -602,8 +599,8 @@ public final class CreateApplicationRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required.
-     * Resource name of the profile under which the application is created.
+     * Required. Resource name of the profile under which the application is
+     * created.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}", for
      * example, "projects/test-project/tenants/test-tenant/profiles/test-profile".
@@ -624,8 +621,8 @@ public final class CreateApplicationRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required.
-     * Resource name of the profile under which the application is created.
+     * Required. Resource name of the profile under which the application is
+     * created.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}", for
      * example, "projects/test-project/tenants/test-tenant/profiles/test-profile".
@@ -643,8 +640,8 @@ public final class CreateApplicationRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required.
-     * Resource name of the profile under which the application is created.
+     * Required. Resource name of the profile under which the application is
+     * created.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}", for
      * example, "projects/test-project/tenants/test-tenant/profiles/test-profile".
@@ -673,8 +670,7 @@ public final class CreateApplicationRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required.
-     * The application to be created.
+     * Required. The application to be created.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Application application = 2;</code>
@@ -686,8 +682,7 @@ public final class CreateApplicationRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required.
-     * The application to be created.
+     * Required. The application to be created.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Application application = 2;</code>
@@ -705,8 +700,7 @@ public final class CreateApplicationRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required.
-     * The application to be created.
+     * Required. The application to be created.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Application application = 2;</code>
@@ -728,8 +722,7 @@ public final class CreateApplicationRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required.
-     * The application to be created.
+     * Required. The application to be created.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Application application = 2;</code>
@@ -749,8 +742,7 @@ public final class CreateApplicationRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required.
-     * The application to be created.
+     * Required. The application to be created.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Application application = 2;</code>
@@ -776,8 +768,7 @@ public final class CreateApplicationRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required.
-     * The application to be created.
+     * Required. The application to be created.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Application application = 2;</code>
@@ -797,8 +788,7 @@ public final class CreateApplicationRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required.
-     * The application to be created.
+     * Required. The application to be created.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Application application = 2;</code>
@@ -812,8 +802,7 @@ public final class CreateApplicationRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required.
-     * The application to be created.
+     * Required. The application to be created.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Application application = 2;</code>
@@ -831,8 +820,7 @@ public final class CreateApplicationRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required.
-     * The application to be created.
+     * Required. The application to be created.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Application application = 2;</code>

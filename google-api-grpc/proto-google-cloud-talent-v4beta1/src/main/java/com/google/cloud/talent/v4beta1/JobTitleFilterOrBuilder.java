@@ -12,8 +12,8 @@ public interface JobTitleFilterOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * The job title, for example, "Software engineer", or "Product manager".
+   * Required. The job title, for example, "Software engineer", or "Product
+   * manager".
    * </pre>
    *
    * <code>string job_title = 1;</code>
@@ -23,8 +23,8 @@ public interface JobTitleFilterOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * The job title, for example, "Software engineer", or "Product manager".
+   * Required. The job title, for example, "Software engineer", or "Product
+   * manager".
    * </pre>
    *
    * <code>string job_title = 1;</code>
@@ -35,9 +35,8 @@ public interface JobTitleFilterOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * Whether to apply negation to the filter so profiles matching the filter
-   * are excluded.
+   * Optional. Whether to apply negation to the filter so profiles matching the
+   * filter are excluded.
    * </pre>
    *
    * <code>bool negated = 2;</code>

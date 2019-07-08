@@ -12,8 +12,7 @@ public interface CompensationFilterOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * Type of filter.
+   * Required. Type of filter.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.CompensationFilter.FilterType type = 1;</code>
@@ -23,8 +22,7 @@ public interface CompensationFilterOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * Type of filter.
+   * Required. Type of filter.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.CompensationFilter.FilterType type = 1;</code>
@@ -35,8 +33,7 @@ public interface CompensationFilterOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * Specify desired `base compensation entry's`
+   * Required. Specify desired `base compensation entry's`
    * [CompensationInfo.CompensationUnit][google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit].
    * </pre>
    *
@@ -47,8 +44,7 @@ public interface CompensationFilterOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * Specify desired `base compensation entry's`
+   * Required. Specify desired `base compensation entry's`
    * [CompensationInfo.CompensationUnit][google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit].
    * </pre>
    *
@@ -59,8 +55,7 @@ public interface CompensationFilterOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * Specify desired `base compensation entry's`
+   * Required. Specify desired `base compensation entry's`
    * [CompensationInfo.CompensationUnit][google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit].
    * </pre>
    *
@@ -71,8 +66,7 @@ public interface CompensationFilterOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * Specify desired `base compensation entry's`
+   * Required. Specify desired `base compensation entry's`
    * [CompensationInfo.CompensationUnit][google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit].
    * </pre>
    *
@@ -83,8 +77,7 @@ public interface CompensationFilterOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * Specify desired `base compensation entry's`
+   * Required. Specify desired `base compensation entry's`
    * [CompensationInfo.CompensationUnit][google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit].
    * </pre>
    *
@@ -96,8 +89,7 @@ public interface CompensationFilterOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * Compensation range.
+   * Optional. Compensation range.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange range = 3;</code>
@@ -107,8 +99,7 @@ public interface CompensationFilterOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * Compensation range.
+   * Optional. Compensation range.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange range = 3;</code>
@@ -118,8 +109,7 @@ public interface CompensationFilterOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * Compensation range.
+   * Optional. Compensation range.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange range = 3;</code>
@@ -130,9 +120,8 @@ public interface CompensationFilterOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * If set to true, jobs with unspecified compensation range fields are
-   * included.
+   * Optional. If set to true, jobs with unspecified compensation range fields
+   * are included.
    * </pre>
    *
    * <code>bool include_jobs_with_unspecified_compensation_range = 4;</code>

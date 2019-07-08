@@ -12,8 +12,7 @@ public interface InterviewOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * The rating on this interview.
+   * Optional. The rating on this interview.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Rating rating = 6;</code>
@@ -23,8 +22,7 @@ public interface InterviewOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * The rating on this interview.
+   * Optional. The rating on this interview.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Rating rating = 6;</code>
@@ -34,8 +32,7 @@ public interface InterviewOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * The rating on this interview.
+   * Optional. The rating on this interview.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Rating rating = 6;</code>
@@ -46,9 +43,8 @@ public interface InterviewOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * The overall decision resulting from this interview (positive, negative,
-   * nuetral).
+   * Required. The overall decision resulting from this interview (positive,
+   * negative, nuetral).
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Outcome outcome = 7;</code>
@@ -58,9 +54,8 @@ public interface InterviewOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * The overall decision resulting from this interview (positive, negative,
-   * nuetral).
+   * Required. The overall decision resulting from this interview (positive,
+   * negative, nuetral).
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Outcome outcome = 7;</code>

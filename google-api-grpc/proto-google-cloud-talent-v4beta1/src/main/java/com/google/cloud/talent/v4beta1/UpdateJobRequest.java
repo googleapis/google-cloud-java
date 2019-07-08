@@ -120,8 +120,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required.
-   * The Job to be updated.
+   * Required. The Job to be updated.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
@@ -133,8 +132,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required.
-   * The Job to be updated.
+   * Required. The Job to be updated.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
@@ -146,8 +144,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required.
-   * The Job to be updated.
+   * Required. The Job to be updated.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
@@ -584,8 +581,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required.
-     * The Job to be updated.
+     * Required. The Job to be updated.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
@@ -597,8 +593,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required.
-     * The Job to be updated.
+     * Required. The Job to be updated.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
@@ -614,8 +609,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required.
-     * The Job to be updated.
+     * Required. The Job to be updated.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
@@ -637,8 +631,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required.
-     * The Job to be updated.
+     * Required. The Job to be updated.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
@@ -657,8 +650,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required.
-     * The Job to be updated.
+     * Required. The Job to be updated.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
@@ -682,8 +674,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required.
-     * The Job to be updated.
+     * Required. The Job to be updated.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
@@ -703,8 +694,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required.
-     * The Job to be updated.
+     * Required. The Job to be updated.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
@@ -718,8 +708,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required.
-     * The Job to be updated.
+     * Required. The Job to be updated.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
@@ -735,8 +724,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required.
-     * The Job to be updated.
+     * Required. The Job to be updated.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>

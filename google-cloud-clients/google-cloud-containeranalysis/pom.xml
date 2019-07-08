@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <artifactId>google-cloud-containeranalysis</artifactId>
-  <version>0.98.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-containeranalysis:current} -->
+  <version>0.99.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-containeranalysis:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Container Analysis</name>
   <url>https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-clients/google-cloud-containeranalysis
@@ -15,16 +15,12 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-clients</artifactId>
-    <version>0.98.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-clients:current} -->
+    <version>0.99.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-clients:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-containeranalysis</site.installationModule>
   </properties>
   <dependencies>
-    <dependency>
-      <groupId>${project.groupId}</groupId>
-      <artifactId>google-cloud-core</artifactId>
-    </dependency>
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>google-cloud-core-grpc</artifactId>
@@ -40,18 +36,6 @@
     <dependency>
       <groupId>io.grafeas</groupId>
       <artifactId>grafeas</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>io.grpc</groupId>
-      <artifactId>grpc-netty-shaded</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>io.grpc</groupId>
-      <artifactId>grpc-stub</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>io.grpc</groupId>
-      <artifactId>grpc-auth</artifactId>
     </dependency>
 
     <!-- Test dependencies -->

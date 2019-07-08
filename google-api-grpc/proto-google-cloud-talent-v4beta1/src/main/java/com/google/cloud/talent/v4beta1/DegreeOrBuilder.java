@@ -12,8 +12,7 @@ public interface DegreeOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * ISCED degree type.
+   * Optional. ISCED degree type.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.DegreeType degree_type = 1;</code>
@@ -23,8 +22,7 @@ public interface DegreeOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * ISCED degree type.
+   * Optional. ISCED degree type.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.DegreeType degree_type = 1;</code>
@@ -35,8 +33,7 @@ public interface DegreeOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * Full Degree name.
+   * Optional. Full Degree name.
    * For example, "B.S.", "Master of Arts", and so on.
    * Number of characters allowed is 100.
    * </pre>
@@ -48,8 +45,7 @@ public interface DegreeOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * Full Degree name.
+   * Optional. Full Degree name.
    * For example, "B.S.", "Master of Arts", and so on.
    * Number of characters allowed is 100.
    * </pre>
@@ -62,8 +58,7 @@ public interface DegreeOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * Fields of study for the degree.
+   * Optional. Fields of study for the degree.
    * For example, "Computer science", "engineering".
    * Number of characters allowed is 100.
    * </pre>
@@ -75,8 +70,7 @@ public interface DegreeOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * Fields of study for the degree.
+   * Optional. Fields of study for the degree.
    * For example, "Computer science", "engineering".
    * Number of characters allowed is 100.
    * </pre>
@@ -88,8 +82,7 @@ public interface DegreeOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * Fields of study for the degree.
+   * Optional. Fields of study for the degree.
    * For example, "Computer science", "engineering".
    * Number of characters allowed is 100.
    * </pre>
@@ -101,8 +94,7 @@ public interface DegreeOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * Fields of study for the degree.
+   * Optional. Fields of study for the degree.
    * For example, "Computer science", "engineering".
    * Number of characters allowed is 100.
    * </pre>

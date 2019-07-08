@@ -139,8 +139,7 @@ public interface RequestMetadataOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * If set to `true`,
+   * Optional. If set to `true`,
    * [domain][google.cloud.talent.v4beta1.RequestMetadata.domain],
    * [session_id][google.cloud.talent.v4beta1.RequestMetadata.session_id] and
    * [user_id][google.cloud.talent.v4beta1.RequestMetadata.user_id] are
@@ -160,9 +159,8 @@ public interface RequestMetadataOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * The type of device used by the job seeker at the time of the call to the
-   * service.
+   * Optional. The type of device used by the job seeker at the time of the call
+   * to the service.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.DeviceInfo device_info = 5;</code>
@@ -172,9 +170,8 @@ public interface RequestMetadataOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * The type of device used by the job seeker at the time of the call to the
-   * service.
+   * Optional. The type of device used by the job seeker at the time of the call
+   * to the service.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.DeviceInfo device_info = 5;</code>
@@ -184,9 +181,8 @@ public interface RequestMetadataOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * The type of device used by the job seeker at the time of the call to the
-   * service.
+   * Optional. The type of device used by the job seeker at the time of the call
+   * to the service.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.DeviceInfo device_info = 5;</code>

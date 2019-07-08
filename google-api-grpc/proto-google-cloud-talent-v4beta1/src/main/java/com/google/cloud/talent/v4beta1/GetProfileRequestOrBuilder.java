@@ -12,8 +12,7 @@ public interface GetProfileRequestOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * Resource name of the profile to get.
+   * Required. Resource name of the profile to get.
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
    * for example, "projects/api-test-project/tenants/foo/profiles/bar".
@@ -26,8 +25,7 @@ public interface GetProfileRequestOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * Resource name of the profile to get.
+   * Required. Resource name of the profile to get.
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
    * for example, "projects/api-test-project/tenants/foo/profiles/bar".
