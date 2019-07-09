@@ -92,6 +92,9 @@ public class BucketTest {
   private static final Long RETENTION_EFFECTIVE_TIME = 10L;
   private static final Long RETENTION_PERIOD = 10L;
   private static final Boolean RETENTION_POLICY_IS_LOCKED = false;
+  private static final List<String> LOCATION_TYPES =
+      ImmutableList.of("multi-region", "region", "dual-region");
+  private static final String LOCATION_TYPE = "multi-region";
   private static final BucketInfo FULL_BUCKET_INFO =
       BucketInfo.newBuilder("b")
           .setAcl(ACLS)
@@ -786,6 +789,7 @@ public class BucketTest {
             .setIndexPage(INDEX_PAGE)
             .setNotFoundPage(NOT_FOUND_PAGE)
             .setLocation(LOCATION)
+            .setLocationType(LOCATION_TYPE)
             .setStorageClass(STORAGE_CLASS)
             .setVersioningEnabled(VERSIONING_ENABLED)
             .setLabels(BUCKET_LABELS)
@@ -821,5 +825,6 @@ public class BucketTest {
     assertEquals(RETENTION_PERIOD, bucket.getRetentionPeriod());
     assertEquals(RETENTION_POLICY_IS_LOCKED, bucket.retentionPolicyIsLocked());
     assertEquals(storage.getOptions(), bucket.getStorage().getOptions());
+    assertTrue(LOCATION_TYPES.contains(LOCATION_TYPE));
   }
 }
