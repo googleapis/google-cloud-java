@@ -1296,8 +1296,7 @@ public class BucketInfo implements Serializable {
   }
 
   /**
-   * Returns the bucket's locationType. Data for blobs in the bucket resides in physical storage
-   * within this region.
+   * Returns the bucket's locationType.
    *
    * @see <a href="https://cloud.google.com/storage/docs/bucket-locations">Bucket locationType</a>
    */
