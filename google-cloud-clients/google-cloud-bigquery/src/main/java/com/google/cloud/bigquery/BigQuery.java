@@ -300,7 +300,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
     }
   }
 
-  /** Class for specifying table list options. */
+  /** Class for specifying routine list options. */
   class RoutineListOption extends Option {
 
     private static final long serialVersionUID = 8660294969063312498L;
@@ -309,13 +309,13 @@ public interface BigQuery extends Service<BigQueryOptions> {
       super(option, value);
     }
 
-    /** Returns an option to specify the maximum number of models returned per page. */
+    /** Returns an option to specify the maximum number of routines returned per page. */
     public static RoutineListOption pageSize(long pageSize) {
       checkArgument(pageSize >= 0);
       return new RoutineListOption(BigQueryRpc.Option.MAX_RESULTS, pageSize);
     }
 
-    /** Returns an option to specify the page token from which to start listing models. */
+    /** Returns an option to specify the page token from which to start listing routines. */
     public static RoutineListOption pageToken(String pageToken) {
       return new RoutineListOption(BigQueryRpc.Option.PAGE_TOKEN, pageToken);
     }

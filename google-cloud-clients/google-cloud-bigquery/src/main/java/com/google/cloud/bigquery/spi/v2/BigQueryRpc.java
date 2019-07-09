@@ -159,7 +159,7 @@ public interface BigQueryRpc extends ServiceRpc {
   boolean deleteTable(String projectId, String datasetId, String tableId);
 
   /**
-   * Updates table information.
+   * Updates model information.
    *
    * @throws BigQueryException upon failure
    */
@@ -188,17 +188,35 @@ public interface BigQueryRpc extends ServiceRpc {
    */
   boolean deleteModel(String projectId, String datasetId, String modelId);
 
-  // TODO: document these
-
+  /**
+   * Creates the requested routine.
+   *
+   * @throws BigQueryException upon failure
+   */
   Routine create(Routine routine, Map<Option, ?> options);
 
+  /**
+   * Updates the requested routine.
+   *
+   * @throws BigQueryException upon failure
+   */
   Routine update(Routine routine, Map<Option, ?> options);
 
+  /**
+   *  Returns the requested routine or {@code null} if not found.
+   *
+   * @throws BigQueryException upon failure
+   */
   Routine getRoutine(String projectId, String datasetId, String routineId, Map<Option, ?> options);
 
   Tuple<String, Iterable<Routine>> listRoutines(
       String projectId, String datasetId, Map<Option, ?> options);
-
+  /**
+   * Deletes the requested routine.
+   *
+   * @return {@code true} if routine was deleted, {@code false} if it was not found
+   * @throws BigQueryException upon failure
+   */
   boolean deleteRoutine(String projectId, String datasetId, String routineId);
 
   /**
