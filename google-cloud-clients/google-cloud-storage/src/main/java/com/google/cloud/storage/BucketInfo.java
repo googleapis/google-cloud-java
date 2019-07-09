@@ -849,7 +849,7 @@ public class BucketInfo implements Serializable {
 
     abstract Builder setMetageneration(Long metageneration);
 
-    abstract Builder setLocationType(String location);
+    abstract Builder setLocationType(String locationType);
 
     /**
      * Sets the bucket's Cross-Origin Resource Sharing (CORS) configuration.
@@ -1298,7 +1298,7 @@ public class BucketInfo implements Serializable {
   /**
    * Returns the bucket's locationType.
    *
-   * @see <a href="https://cloud.google.com/storage/docs/bucket-locations">Bucket locationType</a>
+   * @see <a href="https://cloud.google.com/storage/docs/bucket-locations">Bucket LocationType</a>
    */
   public String getLocationType() {
     return locationType;

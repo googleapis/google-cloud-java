@@ -156,6 +156,8 @@ public class ITStorageTest {
   private static final boolean IS_VPC_TEST =
       System.getenv("GOOGLE_CLOUD_TESTS_IN_VPCSC") != null
           && System.getenv("GOOGLE_CLOUD_TESTS_IN_VPCSC").equalsIgnoreCase("true");
+  private static final List<String> LOCATION_TYPES =
+      ImmutableList.of("multi-region", "region", "dual-region");
 
   @BeforeClass
   public static void beforeClass() throws IOException {
@@ -2583,5 +2585,14 @@ public class ITStorageTest {
 
     assertEquals(bytesArrayToUpload.length, lengthOfDownLoadBytes);
     assertTrue(storage.delete(BUCKET, blobName));
+  }
+
+  @Test
+  public void testbucketLocationType() {
+    Storage storage = StorageOptions.getDefaultInstance().getService();
+    long bucketMetageneration = 42;
+    Bucket bucket =
+        storage.get(BUCKET, Storage.BucketGetOption.metagenerationNotMatch(bucketMetageneration));
+    assertTrue(LOCATION_TYPES.contains(bucket.getLocationType()));
   }
 }
