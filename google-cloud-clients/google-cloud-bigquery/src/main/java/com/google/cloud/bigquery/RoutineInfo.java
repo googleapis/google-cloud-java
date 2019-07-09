@@ -28,13 +28,15 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- * Google BigQuery routine information.
+ * Google BigQuery routine information. A Routine is an API abstraction that encapsulates several
+ * related concepts inside the BigQuery service, including scalar user defined functions (UDFS) and
+ * stored procedures.
  *
  * <p>For more information about the REST representation of routines, see:
  * https://cloud.google.com/bigquery/docs/reference/rest/v2/routines
  *
- * <p>For more information about interacting with scalar functions via DDL query jobs, see:
- * https://cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language#create_function_statement
+ * <p>For more information about working with scalar functions, see:
+ * https://cloud.google.com/bigquery/docs/reference/standard-sql/user-defined-functions
  */
 public class RoutineInfo implements Serializable {
 
@@ -70,7 +72,11 @@ public class RoutineInfo implements Serializable {
 
     abstract Builder setEtag(String etag);
 
-    /** Sets the routine type for the Builder (e.g. SCALAR_FUNCTION). * */
+    /**
+     * Sets the routine type for the Builder (e.g. SCALAR_FUNCTION).
+     *
+     * <p>See https://cloud.google.com/bigquery/docs/reference/rest/v2/routines
+     */
     public abstract Builder setRoutineType(String routineType);
 
     abstract Builder setCreationTime(Long creationMillis);
@@ -80,7 +86,7 @@ public class RoutineInfo implements Serializable {
     /** Sets the language for the routine (e.g. SQL or JAVASCRIPT) */
     public abstract Builder setLanguage(String language);
 
-    /** Specifies the list of arguments for the routine. */
+    /** Specifies the list of input/output arguments for the routine. */
     public abstract Builder setArguments(List<RoutineArgument> argumentList);
 
     /**

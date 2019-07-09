@@ -203,7 +203,7 @@ public interface BigQueryRpc extends ServiceRpc {
   Routine update(Routine routine, Map<Option, ?> options);
 
   /**
-   *  Returns the requested routine or {@code null} if not found.
+   * Returns the requested routine or {@code null} if not found.
    *
    * @throws BigQueryException upon failure
    */
