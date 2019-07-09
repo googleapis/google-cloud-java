@@ -77,10 +77,6 @@ public final class Operations {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_datalabeling_v1beta1_LabelTextClassificationOperationMetadata_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-      internal_static_google_cloud_datalabeling_v1beta1_LabelAudioTranscriptionOperationMetadata_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_cloud_datalabeling_v1beta1_LabelAudioTranscriptionOperationMetadata_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_datalabeling_v1beta1_LabelTextEntityExtractionOperationMetadata_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_datalabeling_v1beta1_LabelTextEntityExtractionOperationMetadata_fieldAccessorTable;
@@ -99,112 +95,110 @@ public final class Operations {
     java.lang.String[] descriptorData = {
       "\n2google/cloud/datalabeling/v1beta1/oper"
           + "ations.proto\022!google.cloud.datalabeling."
-          + "v1beta1\032/google/cloud/datalabeling/v1bet"
-          + "a1/dataset.proto\032?google/cloud/datalabel"
-          + "ing/v1beta1/human_annotation_config.prot"
-          + "o\0323google/cloud/datalabeling/v1beta1/ins"
-          + "truction.proto\032\037google/protobuf/timestam"
-          + "p.proto\032\027google/rpc/status.proto\032\034google"
-          + "/api/annotations.proto\"Y\n\033ImportDataOper"
-          + "ationResponse\022\017\n\007dataset\030\001 \001(\t\022\023\n\013total_"
-          + "count\030\002 \001(\005\022\024\n\014import_count\030\003 \001(\005\"\345\001\n\033Ex"
-          + "portDataOperationResponse\022\017\n\007dataset\030\001 \001"
-          + "(\t\022\023\n\013total_count\030\002 \001(\005\022\024\n\014export_count\030"
-          + "\003 \001(\005\022B\n\013label_stats\030\004 \001(\0132-.google.clou"
-          + "d.datalabeling.v1beta1.LabelStats\022F\n\rout"
-          + "put_config\030\005 \001(\0132/.google.cloud.datalabe"
-          + "ling.v1beta1.OutputConfig\"\\\n\033ImportDataO"
-          + "perationMetadata\022\017\n\007dataset\030\001 \001(\t\022,\n\020par"
-          + "tial_failures\030\002 \003(\0132\022.google.rpc.Status\""
-          + "\\\n\033ExportDataOperationMetadata\022\017\n\007datase"
-          + "t\030\001 \001(\t\022,\n\020partial_failures\030\002 \003(\0132\022.goog"
-          + "le.rpc.Status\"\317\014\n\026LabelOperationMetadata"
-          + "\022\030\n\020progress_percent\030\001 \001(\005\022,\n\020partial_fa"
-          + "ilures\030\002 \003(\0132\022.google.rpc.Status\022t\n\034imag"
-          + "e_classification_details\030\003 \001(\0132L.google."
-          + "cloud.datalabeling.v1beta1.LabelImageCla"
-          + "ssificationOperationMetadataH\000\022o\n\032image_"
-          + "bounding_box_details\030\004 \001(\0132I.google.clou"
-          + "d.datalabeling.v1beta1.LabelImageBoundin"
-          + "gBoxOperationMetadataH\000\022q\n\033image_boundin"
-          + "g_poly_details\030\013 \001(\0132J.google.cloud.data"
-          + "labeling.v1beta1.LabelImageBoundingPolyO"
-          + "perationMetadataH\000\022\200\001\n#image_oriented_bo"
-          + "unding_box_details\030\016 \001(\0132Q.google.cloud."
-          + "datalabeling.v1beta1.LabelImageOrientedB"
-          + "oundingBoxOperationMetadataH\000\022h\n\026image_p"
-          + "olyline_details\030\014 \001(\0132F.google.cloud.dat"
-          + "alabeling.v1beta1.LabelImagePolylineOper"
-          + "ationMetadataH\000\022p\n\032image_segmentation_de"
-          + "tails\030\017 \001(\0132J.google.cloud.datalabeling."
-          + "v1beta1.LabelImageSegmentationOperationM"
-          + "etadataH\000\022t\n\034video_classification_detail"
-          + "s\030\005 \001(\0132L.google.cloud.datalabeling.v1be"
-          + "ta1.LabelVideoClassificationOperationMet"
-          + "adataH\000\022w\n\036video_object_detection_detail"
-          + "s\030\006 \001(\0132M.google.cloud.datalabeling.v1be"
-          + "ta1.LabelVideoObjectDetectionOperationMe"
-          + "tadataH\000\022u\n\035video_object_tracking_detail"
-          + "s\030\007 \001(\0132L.google.cloud.datalabeling.v1be"
-          + "ta1.LabelVideoObjectTrackingOperationMet"
-          + "adataH\000\022b\n\023video_event_details\030\010 \001(\0132C.g"
-          + "oogle.cloud.datalabeling.v1beta1.LabelVi"
-          + "deoEventOperationMetadataH\000\022r\n\033text_clas"
-          + "sification_details\030\t \001(\0132K.google.cloud."
-          + "datalabeling.v1beta1.LabelTextClassifica"
-          + "tionOperationMetadataH\000\022r\n\033audio_transcr"
-          + "iption_details\030\n \001(\0132K.google.cloud.data"
-          + "labeling.v1beta1.LabelAudioTranscription"
-          + "OperationMetadataH\000\022w\n\036text_entity_extra"
-          + "ction_details\030\r \001(\0132M.google.cloud.datal"
-          + "abeling.v1beta1.LabelTextEntityExtractio"
-          + "nOperationMetadataH\000B\t\n\007details\"{\n)Label"
-          + "ImageClassificationOperationMetadata\022N\n\014"
-          + "basic_config\030\001 \001(\01328.google.cloud.datala"
-          + "beling.v1beta1.HumanAnnotationConfig\"x\n&"
-          + "LabelImageBoundingBoxOperationMetadata\022N"
-          + "\n\014basic_config\030\001 \001(\01328.google.cloud.data"
-          + "labeling.v1beta1.HumanAnnotationConfig\"\200"
-          + "\001\n.LabelImageOrientedBoundingBoxOperatio"
-          + "nMetadata\022N\n\014basic_config\030\001 \001(\01328.google"
-          + ".cloud.datalabeling.v1beta1.HumanAnnotat"
-          + "ionConfig\"y\n\'LabelImageBoundingPolyOpera"
-          + "tionMetadata\022N\n\014basic_config\030\001 \001(\01328.goo"
-          + "gle.cloud.datalabeling.v1beta1.HumanAnno"
-          + "tationConfig\"u\n#LabelImagePolylineOperat"
-          + "ionMetadata\022N\n\014basic_config\030\001 \001(\01328.goog"
-          + "le.cloud.datalabeling.v1beta1.HumanAnnot"
-          + "ationConfig\"y\n\'LabelImageSegmentationOpe"
-          + "rationMetadata\022N\n\014basic_config\030\001 \001(\01328.g"
-          + "oogle.cloud.datalabeling.v1beta1.HumanAn"
-          + "notationConfig\"{\n)LabelVideoClassificati"
-          + "onOperationMetadata\022N\n\014basic_config\030\001 \001("
-          + "\01328.google.cloud.datalabeling.v1beta1.Hu"
-          + "manAnnotationConfig\"|\n*LabelVideoObjectD"
-          + "etectionOperationMetadata\022N\n\014basic_confi"
-          + "g\030\001 \001(\01328.google.cloud.datalabeling.v1be"
-          + "ta1.HumanAnnotationConfig\"{\n)LabelVideoO"
-          + "bjectTrackingOperationMetadata\022N\n\014basic_"
-          + "config\030\001 \001(\01328.google.cloud.datalabeling"
-          + ".v1beta1.HumanAnnotationConfig\"r\n LabelV"
-          + "ideoEventOperationMetadata\022N\n\014basic_conf"
-          + "ig\030\001 \001(\01328.google.cloud.datalabeling.v1b"
-          + "eta1.HumanAnnotationConfig\"z\n(LabelTextC"
-          + "lassificationOperationMetadata\022N\n\014basic_"
-          + "config\030\001 \001(\01328.google.cloud.datalabeling"
-          + ".v1beta1.HumanAnnotationConfig\"z\n(LabelA"
-          + "udioTranscriptionOperationMetadata\022N\n\014ba"
+          + "v1beta1\032\034google/api/annotations.proto\032/g"
+          + "oogle/cloud/datalabeling/v1beta1/dataset"
+          + ".proto\032?google/cloud/datalabeling/v1beta"
+          + "1/human_annotation_config.proto\032\037google/"
+          + "protobuf/timestamp.proto\032\027google/rpc/sta"
+          + "tus.proto\"Y\n\033ImportDataOperationResponse"
+          + "\022\017\n\007dataset\030\001 \001(\t\022\023\n\013total_count\030\002 \001(\005\022\024"
+          + "\n\014import_count\030\003 \001(\005\"\345\001\n\033ExportDataOpera"
+          + "tionResponse\022\017\n\007dataset\030\001 \001(\t\022\023\n\013total_c"
+          + "ount\030\002 \001(\005\022\024\n\014export_count\030\003 \001(\005\022B\n\013labe"
+          + "l_stats\030\004 \001(\0132-.google.cloud.datalabelin"
+          + "g.v1beta1.LabelStats\022F\n\routput_config\030\005 "
+          + "\001(\0132/.google.cloud.datalabeling.v1beta1."
+          + "OutputConfig\"\215\001\n\033ImportDataOperationMeta"
+          + "data\022\017\n\007dataset\030\001 \001(\t\022,\n\020partial_failure"
+          + "s\030\002 \003(\0132\022.google.rpc.Status\022/\n\013create_ti"
+          + "me\030\003 \001(\0132\032.google.protobuf.Timestamp\"\215\001\n"
+          + "\033ExportDataOperationMetadata\022\017\n\007dataset\030"
+          + "\001 \001(\t\022,\n\020partial_failures\030\002 \003(\0132\022.google"
+          + ".rpc.Status\022/\n\013create_time\030\003 \001(\0132\032.googl"
+          + "e.protobuf.Timestamp\"\214\014\n\026LabelOperationM"
+          + "etadata\022t\n\034image_classification_details\030"
+          + "\003 \001(\0132L.google.cloud.datalabeling.v1beta"
+          + "1.LabelImageClassificationOperationMetad"
+          + "ataH\000\022o\n\032image_bounding_box_details\030\004 \001("
+          + "\0132I.google.cloud.datalabeling.v1beta1.La"
+          + "belImageBoundingBoxOperationMetadataH\000\022q"
+          + "\n\033image_bounding_poly_details\030\013 \001(\0132J.go"
+          + "ogle.cloud.datalabeling.v1beta1.LabelIma"
+          + "geBoundingPolyOperationMetadataH\000\022\200\001\n#im"
+          + "age_oriented_bounding_box_details\030\016 \001(\0132"
+          + "Q.google.cloud.datalabeling.v1beta1.Labe"
+          + "lImageOrientedBoundingBoxOperationMetada"
+          + "taH\000\022h\n\026image_polyline_details\030\014 \001(\0132F.g"
+          + "oogle.cloud.datalabeling.v1beta1.LabelIm"
+          + "agePolylineOperationMetadataH\000\022p\n\032image_"
+          + "segmentation_details\030\017 \001(\0132J.google.clou"
+          + "d.datalabeling.v1beta1.LabelImageSegment"
+          + "ationOperationMetadataH\000\022t\n\034video_classi"
+          + "fication_details\030\005 \001(\0132L.google.cloud.da"
+          + "talabeling.v1beta1.LabelVideoClassificat"
+          + "ionOperationMetadataH\000\022w\n\036video_object_d"
+          + "etection_details\030\006 \001(\0132M.google.cloud.da"
+          + "talabeling.v1beta1.LabelVideoObjectDetec"
+          + "tionOperationMetadataH\000\022u\n\035video_object_"
+          + "tracking_details\030\007 \001(\0132L.google.cloud.da"
+          + "talabeling.v1beta1.LabelVideoObjectTrack"
+          + "ingOperationMetadataH\000\022b\n\023video_event_de"
+          + "tails\030\010 \001(\0132C.google.cloud.datalabeling."
+          + "v1beta1.LabelVideoEventOperationMetadata"
+          + "H\000\022r\n\033text_classification_details\030\t \001(\0132"
+          + "K.google.cloud.datalabeling.v1beta1.Labe"
+          + "lTextClassificationOperationMetadataH\000\022w"
+          + "\n\036text_entity_extraction_details\030\r \001(\0132M"
+          + ".google.cloud.datalabeling.v1beta1.Label"
+          + "TextEntityExtractionOperationMetadataH\000\022"
+          + "\030\n\020progress_percent\030\001 \001(\005\022,\n\020partial_fai"
+          + "lures\030\002 \003(\0132\022.google.rpc.Status\022/\n\013creat"
+          + "e_time\030\020 \001(\0132\032.google.protobuf.Timestamp"
+          + "B\t\n\007details\"{\n)LabelImageClassificationO"
+          + "perationMetadata\022N\n\014basic_config\030\001 \001(\01328"
+          + ".google.cloud.datalabeling.v1beta1.Human"
+          + "AnnotationConfig\"x\n&LabelImageBoundingBo"
+          + "xOperationMetadata\022N\n\014basic_config\030\001 \001(\013"
+          + "28.google.cloud.datalabeling.v1beta1.Hum"
+          + "anAnnotationConfig\"\200\001\n.LabelImageOriente"
+          + "dBoundingBoxOperationMetadata\022N\n\014basic_c"
+          + "onfig\030\001 \001(\01328.google.cloud.datalabeling."
+          + "v1beta1.HumanAnnotationConfig\"y\n\'LabelIm"
+          + "ageBoundingPolyOperationMetadata\022N\n\014basi"
+          + "c_config\030\001 \001(\01328.google.cloud.datalabeli"
+          + "ng.v1beta1.HumanAnnotationConfig\"u\n#Labe"
+          + "lImagePolylineOperationMetadata\022N\n\014basic"
+          + "_config\030\001 \001(\01328.google.cloud.datalabelin"
+          + "g.v1beta1.HumanAnnotationConfig\"y\n\'Label"
+          + "ImageSegmentationOperationMetadata\022N\n\014ba"
           + "sic_config\030\001 \001(\01328.google.cloud.datalabe"
-          + "ling.v1beta1.HumanAnnotationConfig\"|\n*La"
-          + "belTextEntityExtractionOperationMetadata"
-          + "\022N\n\014basic_config\030\001 \001(\01328.google.cloud.da"
-          + "talabeling.v1beta1.HumanAnnotationConfig"
-          + "\"^\n\031CreateInstructionMetadata\022\023\n\013instruc"
-          + "tion\030\001 \001(\t\022,\n\020partial_failures\030\002 \003(\0132\022.g"
-          + "oogle.rpc.StatusBx\n%com.google.cloud.dat"
-          + "alabeling.v1beta1P\001ZMgoogle.golang.org/g"
-          + "enproto/googleapis/cloud/datalabeling/v1"
-          + "beta1;datalabelingb\006proto3"
+          + "ling.v1beta1.HumanAnnotationConfig\"{\n)La"
+          + "belVideoClassificationOperationMetadata\022"
+          + "N\n\014basic_config\030\001 \001(\01328.google.cloud.dat"
+          + "alabeling.v1beta1.HumanAnnotationConfig\""
+          + "|\n*LabelVideoObjectDetectionOperationMet"
+          + "adata\022N\n\014basic_config\030\001 \001(\01328.google.clo"
+          + "ud.datalabeling.v1beta1.HumanAnnotationC"
+          + "onfig\"{\n)LabelVideoObjectTrackingOperati"
+          + "onMetadata\022N\n\014basic_config\030\001 \001(\01328.googl"
+          + "e.cloud.datalabeling.v1beta1.HumanAnnota"
+          + "tionConfig\"r\n LabelVideoEventOperationMe"
+          + "tadata\022N\n\014basic_config\030\001 \001(\01328.google.cl"
+          + "oud.datalabeling.v1beta1.HumanAnnotation"
+          + "Config\"z\n(LabelTextClassificationOperati"
+          + "onMetadata\022N\n\014basic_config\030\001 \001(\01328.googl"
+          + "e.cloud.datalabeling.v1beta1.HumanAnnota"
+          + "tionConfig\"|\n*LabelTextEntityExtractionO"
+          + "perationMetadata\022N\n\014basic_config\030\001 \001(\01328"
+          + ".google.cloud.datalabeling.v1beta1.Human"
+          + "AnnotationConfig\"\217\001\n\031CreateInstructionMe"
+          + "tadata\022\023\n\013instruction\030\001 \001(\t\022,\n\020partial_f"
+          + "ailures\030\002 \003(\0132\022.google.rpc.Status\022/\n\013cre"
+          + "ate_time\030\003 \001(\0132\032.google.protobuf.Timesta"
+          + "mpBx\n%com.google.cloud.datalabeling.v1be"
+          + "ta1P\001ZMgoogle.golang.org/genproto/google"
+          + "apis/cloud/datalabeling/v1beta1;datalabe"
+          + "lingb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -217,12 +211,11 @@ public final class Operations {
     com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
         descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          com.google.api.AnnotationsProto.getDescriptor(),
           com.google.cloud.datalabeling.v1beta1.DatasetOuterClass.getDescriptor(),
           com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfigOuterClass.getDescriptor(),
-          com.google.cloud.datalabeling.v1beta1.InstructionOuterClass.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
           com.google.rpc.StatusProto.getDescriptor(),
-          com.google.api.AnnotationsProto.getDescriptor(),
         },
         assigner);
     internal_static_google_cloud_datalabeling_v1beta1_ImportDataOperationResponse_descriptor =
@@ -247,7 +240,7 @@ public final class Operations {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datalabeling_v1beta1_ImportDataOperationMetadata_descriptor,
             new java.lang.String[] {
-              "Dataset", "PartialFailures",
+              "Dataset", "PartialFailures", "CreateTime",
             });
     internal_static_google_cloud_datalabeling_v1beta1_ExportDataOperationMetadata_descriptor =
         getDescriptor().getMessageTypes().get(3);
@@ -255,7 +248,7 @@ public final class Operations {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datalabeling_v1beta1_ExportDataOperationMetadata_descriptor,
             new java.lang.String[] {
-              "Dataset", "PartialFailures",
+              "Dataset", "PartialFailures", "CreateTime",
             });
     internal_static_google_cloud_datalabeling_v1beta1_LabelOperationMetadata_descriptor =
         getDescriptor().getMessageTypes().get(4);
@@ -263,8 +256,6 @@ public final class Operations {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datalabeling_v1beta1_LabelOperationMetadata_descriptor,
             new java.lang.String[] {
-              "ProgressPercent",
-              "PartialFailures",
               "ImageClassificationDetails",
               "ImageBoundingBoxDetails",
               "ImageBoundingPolyDetails",
@@ -276,8 +267,10 @@ public final class Operations {
               "VideoObjectTrackingDetails",
               "VideoEventDetails",
               "TextClassificationDetails",
-              "AudioTranscriptionDetails",
               "TextEntityExtractionDetails",
+              "ProgressPercent",
+              "PartialFailures",
+              "CreateTime",
               "Details",
             });
     internal_static_google_cloud_datalabeling_v1beta1_LabelImageClassificationOperationMetadata_descriptor =
@@ -368,16 +361,8 @@ public final class Operations {
             new java.lang.String[] {
               "BasicConfig",
             });
-    internal_static_google_cloud_datalabeling_v1beta1_LabelAudioTranscriptionOperationMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(16);
-    internal_static_google_cloud_datalabeling_v1beta1_LabelAudioTranscriptionOperationMetadata_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-            internal_static_google_cloud_datalabeling_v1beta1_LabelAudioTranscriptionOperationMetadata_descriptor,
-            new java.lang.String[] {
-              "BasicConfig",
-            });
     internal_static_google_cloud_datalabeling_v1beta1_LabelTextEntityExtractionOperationMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(17);
+        getDescriptor().getMessageTypes().get(16);
     internal_static_google_cloud_datalabeling_v1beta1_LabelTextEntityExtractionOperationMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datalabeling_v1beta1_LabelTextEntityExtractionOperationMetadata_descriptor,
@@ -385,19 +370,18 @@ public final class Operations {
               "BasicConfig",
             });
     internal_static_google_cloud_datalabeling_v1beta1_CreateInstructionMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(18);
+        getDescriptor().getMessageTypes().get(17);
     internal_static_google_cloud_datalabeling_v1beta1_CreateInstructionMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datalabeling_v1beta1_CreateInstructionMetadata_descriptor,
             new java.lang.String[] {
-              "Instruction", "PartialFailures",
+              "Instruction", "PartialFailures", "CreateTime",
             });
+    com.google.api.AnnotationsProto.getDescriptor();
     com.google.cloud.datalabeling.v1beta1.DatasetOuterClass.getDescriptor();
     com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfigOuterClass.getDescriptor();
-    com.google.cloud.datalabeling.v1beta1.InstructionOuterClass.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.rpc.StatusProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

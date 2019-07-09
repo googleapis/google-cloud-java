@@ -44,6 +44,7 @@ import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.v2.Agent;
+import com.google.cloud.dialogflow.v2.DeleteAgentRequest;
 import com.google.cloud.dialogflow.v2.ExportAgentRequest;
 import com.google.cloud.dialogflow.v2.ExportAgentResponse;
 import com.google.cloud.dialogflow.v2.GetAgentRequest;
@@ -51,6 +52,7 @@ import com.google.cloud.dialogflow.v2.ImportAgentRequest;
 import com.google.cloud.dialogflow.v2.RestoreAgentRequest;
 import com.google.cloud.dialogflow.v2.SearchAgentsRequest;
 import com.google.cloud.dialogflow.v2.SearchAgentsResponse;
+import com.google.cloud.dialogflow.v2.SetAgentRequest;
 import com.google.cloud.dialogflow.v2.TrainAgentRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -78,13 +80,13 @@ import org.threeten.bp.Duration;
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object. For
- * example, to set the total timeout of getAgent to 30 seconds:
+ * example, to set the total timeout of setAgent to 30 seconds:
  *
  * <pre>
  * <code>
  * AgentsStubSettings.Builder agentsSettingsBuilder =
  *     AgentsStubSettings.newBuilder();
- * agentsSettingsBuilder.getAgentSettings().getRetrySettings().toBuilder()
+ * agentsSettingsBuilder.setAgentSettings().getRetrySettings().toBuilder()
  *     .setTotalTimeout(Duration.ofSeconds(30));
  * AgentsStubSettings agentsSettings = agentsSettingsBuilder.build();
  * </code>
@@ -100,6 +102,8 @@ public class AgentsStubSettings extends StubSettings<AgentsStubSettings> {
           .add("https://www.googleapis.com/auth/dialogflow")
           .build();
 
+  private final UnaryCallSettings<SetAgentRequest, Agent> setAgentSettings;
+  private final UnaryCallSettings<DeleteAgentRequest, Empty> deleteAgentSettings;
   private final UnaryCallSettings<GetAgentRequest, Agent> getAgentSettings;
   private final PagedCallSettings<
           SearchAgentsRequest, SearchAgentsResponse, SearchAgentsPagedResponse>
@@ -115,6 +119,16 @@ public class AgentsStubSettings extends StubSettings<AgentsStubSettings> {
   private final UnaryCallSettings<RestoreAgentRequest, Operation> restoreAgentSettings;
   private final OperationCallSettings<RestoreAgentRequest, Empty, Struct>
       restoreAgentOperationSettings;
+
+  /** Returns the object with the settings used for calls to setAgent. */
+  public UnaryCallSettings<SetAgentRequest, Agent> setAgentSettings() {
+    return setAgentSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteAgent. */
+  public UnaryCallSettings<DeleteAgentRequest, Empty> deleteAgentSettings() {
+    return deleteAgentSettings;
+  }
 
   /** Returns the object with the settings used for calls to getAgent. */
   public UnaryCallSettings<GetAgentRequest, Agent> getAgentSettings() {
@@ -239,6 +253,8 @@ public class AgentsStubSettings extends StubSettings<AgentsStubSettings> {
   protected AgentsStubSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
+    setAgentSettings = settingsBuilder.setAgentSettings().build();
+    deleteAgentSettings = settingsBuilder.deleteAgentSettings().build();
     getAgentSettings = settingsBuilder.getAgentSettings().build();
     searchAgentsSettings = settingsBuilder.searchAgentsSettings().build();
     trainAgentSettings = settingsBuilder.trainAgentSettings().build();
@@ -308,6 +324,8 @@ public class AgentsStubSettings extends StubSettings<AgentsStubSettings> {
   public static class Builder extends StubSettings.Builder<AgentsStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
+    private final UnaryCallSettings.Builder<SetAgentRequest, Agent> setAgentSettings;
+    private final UnaryCallSettings.Builder<DeleteAgentRequest, Empty> deleteAgentSettings;
     private final UnaryCallSettings.Builder<GetAgentRequest, Agent> getAgentSettings;
     private final PagedCallSettings.Builder<
             SearchAgentsRequest, SearchAgentsResponse, SearchAgentsPagedResponse>
@@ -366,6 +384,10 @@ public class AgentsStubSettings extends StubSettings<AgentsStubSettings> {
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
+      setAgentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      deleteAgentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       getAgentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       searchAgentsSettings = PagedCallSettings.newBuilder(SEARCH_AGENTS_PAGE_STR_FACT);
@@ -388,6 +410,8 @@ public class AgentsStubSettings extends StubSettings<AgentsStubSettings> {
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              setAgentSettings,
+              deleteAgentSettings,
               getAgentSettings,
               searchAgentsSettings,
               trainAgentSettings,
@@ -408,6 +432,16 @@ public class AgentsStubSettings extends StubSettings<AgentsStubSettings> {
     }
 
     private static Builder initDefaults(Builder builder) {
+
+      builder
+          .setAgentSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .deleteAgentSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
           .getAgentSettings()
@@ -534,6 +568,8 @@ public class AgentsStubSettings extends StubSettings<AgentsStubSettings> {
     protected Builder(AgentsStubSettings settings) {
       super(settings);
 
+      setAgentSettings = settings.setAgentSettings.toBuilder();
+      deleteAgentSettings = settings.deleteAgentSettings.toBuilder();
       getAgentSettings = settings.getAgentSettings.toBuilder();
       searchAgentsSettings = settings.searchAgentsSettings.toBuilder();
       trainAgentSettings = settings.trainAgentSettings.toBuilder();
@@ -547,6 +583,8 @@ public class AgentsStubSettings extends StubSettings<AgentsStubSettings> {
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              setAgentSettings,
+              deleteAgentSettings,
               getAgentSettings,
               searchAgentsSettings,
               trainAgentSettings,
@@ -569,6 +607,16 @@ public class AgentsStubSettings extends StubSettings<AgentsStubSettings> {
 
     public ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders() {
       return unaryMethodSettingsBuilders;
+    }
+
+    /** Returns the builder for the settings used for calls to setAgent. */
+    public UnaryCallSettings.Builder<SetAgentRequest, Agent> setAgentSettings() {
+      return setAgentSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteAgent. */
+    public UnaryCallSettings.Builder<DeleteAgentRequest, Empty> deleteAgentSettings() {
+      return deleteAgentSettings;
     }
 
     /** Returns the builder for the settings used for calls to getAgent. */

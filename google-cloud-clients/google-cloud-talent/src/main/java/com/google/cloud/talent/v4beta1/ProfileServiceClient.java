@@ -171,8 +171,7 @@ public class ProfileServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required.
-   *     <p>The resource name of the tenant under which the job is created.
+   * @param parent Required. The resource name of the tenant under which the profile is created.
    *     <p>The format is "projects/{project_id}/tenants/{tenant_id}", for example,
    *     "projects/api-test-project/tenants/foo".
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -200,8 +199,7 @@ public class ProfileServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required.
-   *     <p>The resource name of the tenant under which the job is created.
+   * @param parent Required. The resource name of the tenant under which the profile is created.
    *     <p>The format is "projects/{project_id}/tenants/{tenant_id}", for example,
    *     "projects/api-test-project/tenants/foo".
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -306,12 +304,10 @@ public class ProfileServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required.
-   *     <p>The name of the tenant this profile belongs to.
+   * @param parent Required. The name of the tenant this profile belongs to.
    *     <p>The format is "projects/{project_id}/tenants/{tenant_id}", for example,
    *     "projects/api-test-project/tenants/foo".
-   * @param profile Required.
-   *     <p>The profile to be created.
+   * @param profile Required. The profile to be created.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Profile createProfile(TenantName parent, Profile profile) {
@@ -338,12 +334,10 @@ public class ProfileServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required.
-   *     <p>The name of the tenant this profile belongs to.
+   * @param parent Required. The name of the tenant this profile belongs to.
    *     <p>The format is "projects/{project_id}/tenants/{tenant_id}", for example,
    *     "projects/api-test-project/tenants/foo".
-   * @param profile Required.
-   *     <p>The profile to be created.
+   * @param profile Required. The profile to be created.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Profile createProfile(String parent, Profile profile) {
@@ -415,8 +409,7 @@ public class ProfileServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Required.
-   *     <p>Resource name of the profile to get.
+   * @param name Required. Resource name of the profile to get.
    *     <p>The format is "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}", for
    *     example, "projects/api-test-project/tenants/foo/profiles/bar".
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -441,8 +434,7 @@ public class ProfileServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Required.
-   *     <p>Resource name of the profile to get.
+   * @param name Required. Resource name of the profile to get.
    *     <p>The format is "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}", for
    *     example, "projects/api-test-project/tenants/foo/profiles/bar".
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -511,8 +503,7 @@ public class ProfileServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param profile Required.
-   *     <p>Profile to be updated.
+   * @param profile Required. Profile to be updated.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Profile updateProfile(Profile profile) {
@@ -580,8 +571,7 @@ public class ProfileServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Required.
-   *     <p>Resource name of the profile to be deleted.
+   * @param name Required. Resource name of the profile to be deleted.
    *     <p>The format is "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}", for
    *     example, "projects/api-test-project/tenants/foo/profiles/bar".
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -607,8 +597,7 @@ public class ProfileServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Required.
-   *     <p>Resource name of the profile to be deleted.
+   * @param name Required. Resource name of the profile to be deleted.
    *     <p>The format is "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}", for
    *     example, "projects/api-test-project/tenants/foo/profiles/bar".
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails

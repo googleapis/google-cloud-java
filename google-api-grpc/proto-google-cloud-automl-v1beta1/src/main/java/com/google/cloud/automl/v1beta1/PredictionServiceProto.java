@@ -88,11 +88,12 @@ public final class PredictionServiceProto {
           + "=projects/*/locations/*/models/*}:batchP"
           + "redict:\001*\032I\312A\025automl.googleapis.com\322A.ht"
           + "tps://www.googleapis.com/auth/cloud-plat"
-          + "formB\234\001\n\037com.google.cloud.automl.v1beta1"
+          + "formB\275\001\n\037com.google.cloud.automl.v1beta1"
           + "B\026PredictionServiceProtoP\001ZAgoogle.golan"
           + "g.org/genproto/googleapis/cloud/automl/v"
           + "1beta1;automl\312\002\033Google\\Cloud\\AutoMl\\V1be"
-          + "ta1b\006proto3"
+          + "ta1\352\002\036Google::Cloud::AutoML::V1beta1b\006pr"
+          + "oto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {

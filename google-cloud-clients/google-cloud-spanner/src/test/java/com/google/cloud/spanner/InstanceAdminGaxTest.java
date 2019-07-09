@@ -21,13 +21,11 @@ import com.google.api.gax.grpc.testing.LocalChannelProvider;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.Page;
 import com.google.api.gax.retrying.RetrySettings;
-import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallSettings.Builder;
 import com.google.cloud.NoCredentials;
 import com.google.cloud.spanner.admin.instance.v1.MockInstanceAdminImpl;
 import com.google.common.base.Throwables;
-import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
@@ -186,22 +184,17 @@ public class InstanceAdminGaxTest {
   private static LocalChannelProvider channelProvider;
 
   @Parameter(0)
-  public boolean enableGaxRetries;
-
-  @Parameter(1)
   public int exceptionAtCall;
 
-  @Parameter(2)
+  @Parameter(1)
   public ExceptionType exceptionType;
 
-  @Parameters(name = "enable GAX retries = {0}, exception at call = {1}, exception type = {2}")
+  @Parameters(name = "exception at call = {0}, exception type = {1}")
   public static Collection<Object[]> data() {
     List<Object[]> params = new ArrayList<>();
-    for (boolean enableRetries : new boolean[] {true, false}) {
-      for (int exceptionAtCall : new int[] {0, 1}) {
-        for (ExceptionType exceptionType : ExceptionType.values()) {
-          params.add(new Object[] {enableRetries, exceptionAtCall, exceptionType});
-        }
+    for (int exceptionAtCall : new int[] {0, 1}) {
+      for (ExceptionType exceptionType : ExceptionType.values()) {
+        params.add(new Object[] {exceptionAtCall, exceptionType});
       }
     }
     return params;
@@ -275,43 +268,6 @@ public class InstanceAdminGaxTest {
                 .toBuilder()
                 .setRetrySettings(retrySettings)
                 .build());
-    if (!enableGaxRetries) {
-      // Disable retries by removing all retryable codes.
-      builder
-          .getInstanceAdminStubSettingsBuilder()
-          .applyToAllUnaryMethods(
-              new ApiFunction<UnaryCallSettings.Builder<?, ?>, Void>() {
-                @Override
-                public Void apply(Builder<?, ?> input) {
-                  input.setRetryableCodes(ImmutableSet.<StatusCode.Code>of());
-                  return null;
-                }
-              });
-      builder
-          .getInstanceAdminStubSettingsBuilder()
-          .createInstanceOperationSettings()
-          .setInitialCallSettings(
-              builder
-                  .getInstanceAdminStubSettingsBuilder()
-                  .createInstanceOperationSettings()
-                  .getInitialCallSettings()
-                  .toBuilder()
-                  .setRetrySettings(retrySettings)
-                  .setRetryableCodes(ImmutableSet.<StatusCode.Code>of())
-                  .build());
-      builder
-          .getInstanceAdminStubSettingsBuilder()
-          .updateInstanceOperationSettings()
-          .setInitialCallSettings(
-              builder
-                  .getInstanceAdminStubSettingsBuilder()
-                  .updateInstanceOperationSettings()
-                  .getInitialCallSettings()
-                  .toBuilder()
-                  .setRetrySettings(retrySettings)
-                  .setRetryableCodes(ImmutableSet.<StatusCode.Code>of())
-                  .build());
-    }
     spanner = builder.build().getService();
     client = spanner.getInstanceAdminClient();
   }
@@ -322,12 +278,7 @@ public class InstanceAdminGaxTest {
   }
 
   private Exception setupException() {
-    if (exceptionType.isRetryable()) {
-      if (!enableGaxRetries) {
-        expectedException.expect(
-            SpannerMatchers.isSpannerException(exceptionType.getExpectedErrorCodeWithoutGax()));
-      }
-    } else {
+    if (!exceptionType.isRetryable()) {
       expectedException.expect(
           SpannerMatchers.isSpannerException(exceptionType.getExpectedErrorCodeWithGax()));
     }

@@ -12,7 +12,7 @@ public interface CreateInstructionMetadataOrBuilder
    *
    *
    * <pre>
-   * Output only. The name of the created Instruction.
+   * The name of the created Instruction.
    * projects/{project_id}/instructions/{instruction_id}
    * </pre>
    *
@@ -23,7 +23,7 @@ public interface CreateInstructionMetadataOrBuilder
    *
    *
    * <pre>
-   * Output only. The name of the created Instruction.
+   * The name of the created Instruction.
    * projects/{project_id}/instructions/{instruction_id}
    * </pre>
    *
@@ -35,7 +35,7 @@ public interface CreateInstructionMetadataOrBuilder
    *
    *
    * <pre>
-   * Output only. Partial failures encountered.
+   * Partial failures encountered.
    * E.g. single files that couldn't be read.
    * Status details field will contain standard GCP error details.
    * </pre>
@@ -47,7 +47,7 @@ public interface CreateInstructionMetadataOrBuilder
    *
    *
    * <pre>
-   * Output only. Partial failures encountered.
+   * Partial failures encountered.
    * E.g. single files that couldn't be read.
    * Status details field will contain standard GCP error details.
    * </pre>
@@ -59,7 +59,7 @@ public interface CreateInstructionMetadataOrBuilder
    *
    *
    * <pre>
-   * Output only. Partial failures encountered.
+   * Partial failures encountered.
    * E.g. single files that couldn't be read.
    * Status details field will contain standard GCP error details.
    * </pre>
@@ -71,7 +71,7 @@ public interface CreateInstructionMetadataOrBuilder
    *
    *
    * <pre>
-   * Output only. Partial failures encountered.
+   * Partial failures encountered.
    * E.g. single files that couldn't be read.
    * Status details field will contain standard GCP error details.
    * </pre>
@@ -83,7 +83,7 @@ public interface CreateInstructionMetadataOrBuilder
    *
    *
    * <pre>
-   * Output only. Partial failures encountered.
+   * Partial failures encountered.
    * E.g. single files that couldn't be read.
    * Status details field will contain standard GCP error details.
    * </pre>
@@ -91,4 +91,35 @@ public interface CreateInstructionMetadataOrBuilder
    * <code>repeated .google.rpc.Status partial_failures = 2;</code>
    */
   com.google.rpc.StatusOrBuilder getPartialFailuresOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Timestamp when create instruction request was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 3;</code>
+   */
+  boolean hasCreateTime();
+  /**
+   *
+   *
+   * <pre>
+   * Timestamp when create instruction request was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 3;</code>
+   */
+  com.google.protobuf.Timestamp getCreateTime();
+  /**
+   *
+   *
+   * <pre>
+   * Timestamp when create instruction request was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 3;</code>
+   */
+  com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
 }

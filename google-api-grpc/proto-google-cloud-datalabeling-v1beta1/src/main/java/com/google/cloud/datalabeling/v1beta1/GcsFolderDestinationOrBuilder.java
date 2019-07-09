@@ -12,7 +12,7 @@ public interface GcsFolderDestinationOrBuilder
    *
    *
    * <pre>
-   * Required. GCS folder to export data to.
+   * Required. Cloud Storage directory to export data to.
    * </pre>
    *
    * <code>string output_folder_uri = 1;</code>
@@ -22,7 +22,7 @@ public interface GcsFolderDestinationOrBuilder
    *
    *
    * <pre>
-   * Required. GCS folder to export data to.
+   * Required. Cloud Storage directory to export data to.
    * </pre>
    *
    * <code>string output_folder_uri = 1;</code>

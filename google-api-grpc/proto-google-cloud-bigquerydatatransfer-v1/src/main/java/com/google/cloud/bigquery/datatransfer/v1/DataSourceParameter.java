@@ -186,6 +186,11 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
               recurse_ = input.readBool();
               break;
             }
+          case 160:
+            {
+              deprecated_ = input.readBool();
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -1012,6 +1017,22 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
     return recurse_;
   }
 
+  public static final int DEPRECATED_FIELD_NUMBER = 20;
+  private boolean deprecated_;
+  /**
+   *
+   *
+   * <pre>
+   * If true, it should not be used in new transfers, and it should not be
+   * visible to users.
+   * </pre>
+   *
+   * <code>bool deprecated = 20;</code>
+   */
+  public boolean getDeprecated() {
+    return deprecated_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1072,6 +1093,9 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
     }
     if (recurse_ != false) {
       output.writeBool(15, recurse_);
+    }
+    if (deprecated_ != false) {
+      output.writeBool(20, deprecated_);
     }
     unknownFields.writeTo(output);
   }
@@ -1134,6 +1158,9 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
     if (recurse_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(15, recurse_);
     }
+    if (deprecated_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(20, deprecated_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1171,6 +1198,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
     if (!getValidationHelpUrl().equals(other.getValidationHelpUrl())) return false;
     if (getImmutable() != other.getImmutable()) return false;
     if (getRecurse() != other.getRecurse()) return false;
+    if (getDeprecated() != other.getDeprecated()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1220,6 +1248,8 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getImmutable());
     hash = (37 * hash) + RECURSE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getRecurse());
+    hash = (37 * hash) + DEPRECATED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDeprecated());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1415,6 +1445,8 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
 
       recurse_ = false;
 
+      deprecated_ = false;
+
       return this;
     }
 
@@ -1480,6 +1512,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
       result.validationHelpUrl_ = validationHelpUrl_;
       result.immutable_ = immutable_;
       result.recurse_ = recurse_;
+      result.deprecated_ = deprecated_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -1613,6 +1646,9 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
       }
       if (other.getRecurse() != false) {
         setRecurse(other.getRecurse());
+      }
+      if (other.getDeprecated() != false) {
+        setDeprecated(other.getDeprecated());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -3326,6 +3362,53 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
     public Builder clearRecurse() {
 
       recurse_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean deprecated_;
+    /**
+     *
+     *
+     * <pre>
+     * If true, it should not be used in new transfers, and it should not be
+     * visible to users.
+     * </pre>
+     *
+     * <code>bool deprecated = 20;</code>
+     */
+    public boolean getDeprecated() {
+      return deprecated_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If true, it should not be used in new transfers, and it should not be
+     * visible to users.
+     * </pre>
+     *
+     * <code>bool deprecated = 20;</code>
+     */
+    public Builder setDeprecated(boolean value) {
+
+      deprecated_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If true, it should not be used in new transfers, and it should not be
+     * visible to users.
+     * </pre>
+     *
+     * <code>bool deprecated = 20;</code>
+     */
+    public Builder clearDeprecated() {
+
+      deprecated_ = false;
       onChanged();
       return this;
     }

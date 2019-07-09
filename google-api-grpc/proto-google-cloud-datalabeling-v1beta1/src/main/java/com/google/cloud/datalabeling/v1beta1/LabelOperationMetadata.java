@@ -8,7 +8,7 @@ package com.google.cloud.datalabeling.v1beta1;
  *
  * <pre>
  * Metadata of a labeling operation, such as LabelImage or LabelVideo.
- * Next tag: 16
+ * Next tag: 18
  * </pre>
  *
  * Protobuf type {@code google.cloud.datalabeling.v1beta1.LabelOperationMetadata}
@@ -58,9 +58,9 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
             }
           case 18:
             {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00002000) != 0)) {
                 partialFailures_ = new java.util.ArrayList<com.google.rpc.Status>();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00002000;
               }
               partialFailures_.add(
                   input.readMessage(com.google.rpc.Status.parser(), extensionRegistry));
@@ -247,31 +247,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
               detailsCase_ = 9;
               break;
             }
-          case 82:
-            {
-              com.google.cloud.datalabeling.v1beta1.LabelAudioTranscriptionOperationMetadata.Builder
-                  subBuilder = null;
-              if (detailsCase_ == 10) {
-                subBuilder =
-                    ((com.google.cloud.datalabeling.v1beta1
-                                .LabelAudioTranscriptionOperationMetadata)
-                            details_)
-                        .toBuilder();
-              }
-              details_ =
-                  input.readMessage(
-                      com.google.cloud.datalabeling.v1beta1.LabelAudioTranscriptionOperationMetadata
-                          .parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.datalabeling.v1beta1.LabelAudioTranscriptionOperationMetadata)
-                        details_);
-                details_ = subBuilder.buildPartial();
-              }
-              detailsCase_ = 10;
-              break;
-            }
           case 90:
             {
               com.google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata.Builder
@@ -398,6 +373,21 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
               detailsCase_ = 15;
               break;
             }
+          case 130:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (createTime_ != null) {
+                subBuilder = createTime_.toBuilder();
+              }
+              createTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(createTime_);
+                createTime_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -412,7 +402,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00002000) != 0)) {
         partialFailures_ = java.util.Collections.unmodifiableList(partialFailures_);
       }
       this.unknownFields = unknownFields.build();
@@ -451,7 +441,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
     VIDEO_OBJECT_TRACKING_DETAILS(7),
     VIDEO_EVENT_DETAILS(8),
     TEXT_CLASSIFICATION_DETAILS(9),
-    AUDIO_TRANSCRIPTION_DETAILS(10),
     TEXT_ENTITY_EXTRACTION_DETAILS(13),
     DETAILS_NOT_SET(0);
     private final int value;
@@ -489,8 +478,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
           return VIDEO_EVENT_DETAILS;
         case 9:
           return TEXT_CLASSIFICATION_DETAILS;
-        case 10:
-          return AUDIO_TRANSCRIPTION_DETAILS;
         case 13:
           return TEXT_ENTITY_EXTRACTION_DETAILS;
         case 0:
@@ -509,6 +496,675 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
     return DetailsCase.forNumber(detailsCase_);
   }
 
+  public static final int IMAGE_CLASSIFICATION_DETAILS_FIELD_NUMBER = 3;
+  /**
+   *
+   *
+   * <pre>
+   * Details of label image classification operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadata image_classification_details = 3;
+   * </code>
+   */
+  public boolean hasImageClassificationDetails() {
+    return detailsCase_ == 3;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Details of label image classification operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadata image_classification_details = 3;
+   * </code>
+   */
+  public com.google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadata
+      getImageClassificationDetails() {
+    if (detailsCase_ == 3) {
+      return (com.google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadata)
+          details_;
+    }
+    return com.google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadata
+        .getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Details of label image classification operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadata image_classification_details = 3;
+   * </code>
+   */
+  public com.google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadataOrBuilder
+      getImageClassificationDetailsOrBuilder() {
+    if (detailsCase_ == 3) {
+      return (com.google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadata)
+          details_;
+    }
+    return com.google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadata
+        .getDefaultInstance();
+  }
+
+  public static final int IMAGE_BOUNDING_BOX_DETAILS_FIELD_NUMBER = 4;
+  /**
+   *
+   *
+   * <pre>
+   * Details of label image bounding box operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata image_bounding_box_details = 4;
+   * </code>
+   */
+  public boolean hasImageBoundingBoxDetails() {
+    return detailsCase_ == 4;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Details of label image bounding box operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata image_bounding_box_details = 4;
+   * </code>
+   */
+  public com.google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata
+      getImageBoundingBoxDetails() {
+    if (detailsCase_ == 4) {
+      return (com.google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata)
+          details_;
+    }
+    return com.google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata
+        .getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Details of label image bounding box operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata image_bounding_box_details = 4;
+   * </code>
+   */
+  public com.google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadataOrBuilder
+      getImageBoundingBoxDetailsOrBuilder() {
+    if (detailsCase_ == 4) {
+      return (com.google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata)
+          details_;
+    }
+    return com.google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata
+        .getDefaultInstance();
+  }
+
+  public static final int IMAGE_BOUNDING_POLY_DETAILS_FIELD_NUMBER = 11;
+  /**
+   *
+   *
+   * <pre>
+   * Details of label image bounding poly operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata image_bounding_poly_details = 11;
+   * </code>
+   */
+  public boolean hasImageBoundingPolyDetails() {
+    return detailsCase_ == 11;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Details of label image bounding poly operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata image_bounding_poly_details = 11;
+   * </code>
+   */
+  public com.google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata
+      getImageBoundingPolyDetails() {
+    if (detailsCase_ == 11) {
+      return (com.google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata)
+          details_;
+    }
+    return com.google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata
+        .getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Details of label image bounding poly operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata image_bounding_poly_details = 11;
+   * </code>
+   */
+  public com.google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadataOrBuilder
+      getImageBoundingPolyDetailsOrBuilder() {
+    if (detailsCase_ == 11) {
+      return (com.google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata)
+          details_;
+    }
+    return com.google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata
+        .getDefaultInstance();
+  }
+
+  public static final int IMAGE_ORIENTED_BOUNDING_BOX_DETAILS_FIELD_NUMBER = 14;
+  /**
+   *
+   *
+   * <pre>
+   * Details of label image oriented bounding box operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.LabelImageOrientedBoundingBoxOperationMetadata image_oriented_bounding_box_details = 14;
+   * </code>
+   */
+  public boolean hasImageOrientedBoundingBoxDetails() {
+    return detailsCase_ == 14;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Details of label image oriented bounding box operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.LabelImageOrientedBoundingBoxOperationMetadata image_oriented_bounding_box_details = 14;
+   * </code>
+   */
+  public com.google.cloud.datalabeling.v1beta1.LabelImageOrientedBoundingBoxOperationMetadata
+      getImageOrientedBoundingBoxDetails() {
+    if (detailsCase_ == 14) {
+      return (com.google.cloud.datalabeling.v1beta1.LabelImageOrientedBoundingBoxOperationMetadata)
+          details_;
+    }
+    return com.google.cloud.datalabeling.v1beta1.LabelImageOrientedBoundingBoxOperationMetadata
+        .getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Details of label image oriented bounding box operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.LabelImageOrientedBoundingBoxOperationMetadata image_oriented_bounding_box_details = 14;
+   * </code>
+   */
+  public com.google.cloud.datalabeling.v1beta1
+          .LabelImageOrientedBoundingBoxOperationMetadataOrBuilder
+      getImageOrientedBoundingBoxDetailsOrBuilder() {
+    if (detailsCase_ == 14) {
+      return (com.google.cloud.datalabeling.v1beta1.LabelImageOrientedBoundingBoxOperationMetadata)
+          details_;
+    }
+    return com.google.cloud.datalabeling.v1beta1.LabelImageOrientedBoundingBoxOperationMetadata
+        .getDefaultInstance();
+  }
+
+  public static final int IMAGE_POLYLINE_DETAILS_FIELD_NUMBER = 12;
+  /**
+   *
+   *
+   * <pre>
+   * Details of label image polyline operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata image_polyline_details = 12;
+   * </code>
+   */
+  public boolean hasImagePolylineDetails() {
+    return detailsCase_ == 12;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Details of label image polyline operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata image_polyline_details = 12;
+   * </code>
+   */
+  public com.google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata
+      getImagePolylineDetails() {
+    if (detailsCase_ == 12) {
+      return (com.google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata) details_;
+    }
+    return com.google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata
+        .getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Details of label image polyline operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata image_polyline_details = 12;
+   * </code>
+   */
+  public com.google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadataOrBuilder
+      getImagePolylineDetailsOrBuilder() {
+    if (detailsCase_ == 12) {
+      return (com.google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata) details_;
+    }
+    return com.google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata
+        .getDefaultInstance();
+  }
+
+  public static final int IMAGE_SEGMENTATION_DETAILS_FIELD_NUMBER = 15;
+  /**
+   *
+   *
+   * <pre>
+   * Details of label image segmentation operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata image_segmentation_details = 15;
+   * </code>
+   */
+  public boolean hasImageSegmentationDetails() {
+    return detailsCase_ == 15;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Details of label image segmentation operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata image_segmentation_details = 15;
+   * </code>
+   */
+  public com.google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata
+      getImageSegmentationDetails() {
+    if (detailsCase_ == 15) {
+      return (com.google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata)
+          details_;
+    }
+    return com.google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata
+        .getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Details of label image segmentation operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata image_segmentation_details = 15;
+   * </code>
+   */
+  public com.google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadataOrBuilder
+      getImageSegmentationDetailsOrBuilder() {
+    if (detailsCase_ == 15) {
+      return (com.google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata)
+          details_;
+    }
+    return com.google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata
+        .getDefaultInstance();
+  }
+
+  public static final int VIDEO_CLASSIFICATION_DETAILS_FIELD_NUMBER = 5;
+  /**
+   *
+   *
+   * <pre>
+   * Details of label video classification operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadata video_classification_details = 5;
+   * </code>
+   */
+  public boolean hasVideoClassificationDetails() {
+    return detailsCase_ == 5;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Details of label video classification operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadata video_classification_details = 5;
+   * </code>
+   */
+  public com.google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadata
+      getVideoClassificationDetails() {
+    if (detailsCase_ == 5) {
+      return (com.google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadata)
+          details_;
+    }
+    return com.google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadata
+        .getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Details of label video classification operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadata video_classification_details = 5;
+   * </code>
+   */
+  public com.google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadataOrBuilder
+      getVideoClassificationDetailsOrBuilder() {
+    if (detailsCase_ == 5) {
+      return (com.google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadata)
+          details_;
+    }
+    return com.google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadata
+        .getDefaultInstance();
+  }
+
+  public static final int VIDEO_OBJECT_DETECTION_DETAILS_FIELD_NUMBER = 6;
+  /**
+   *
+   *
+   * <pre>
+   * Details of label video object detection operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadata video_object_detection_details = 6;
+   * </code>
+   */
+  public boolean hasVideoObjectDetectionDetails() {
+    return detailsCase_ == 6;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Details of label video object detection operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadata video_object_detection_details = 6;
+   * </code>
+   */
+  public com.google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadata
+      getVideoObjectDetectionDetails() {
+    if (detailsCase_ == 6) {
+      return (com.google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadata)
+          details_;
+    }
+    return com.google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadata
+        .getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Details of label video object detection operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadata video_object_detection_details = 6;
+   * </code>
+   */
+  public com.google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadataOrBuilder
+      getVideoObjectDetectionDetailsOrBuilder() {
+    if (detailsCase_ == 6) {
+      return (com.google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadata)
+          details_;
+    }
+    return com.google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadata
+        .getDefaultInstance();
+  }
+
+  public static final int VIDEO_OBJECT_TRACKING_DETAILS_FIELD_NUMBER = 7;
+  /**
+   *
+   *
+   * <pre>
+   * Details of label video object tracking operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadata video_object_tracking_details = 7;
+   * </code>
+   */
+  public boolean hasVideoObjectTrackingDetails() {
+    return detailsCase_ == 7;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Details of label video object tracking operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadata video_object_tracking_details = 7;
+   * </code>
+   */
+  public com.google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadata
+      getVideoObjectTrackingDetails() {
+    if (detailsCase_ == 7) {
+      return (com.google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadata)
+          details_;
+    }
+    return com.google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadata
+        .getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Details of label video object tracking operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadata video_object_tracking_details = 7;
+   * </code>
+   */
+  public com.google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadataOrBuilder
+      getVideoObjectTrackingDetailsOrBuilder() {
+    if (detailsCase_ == 7) {
+      return (com.google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadata)
+          details_;
+    }
+    return com.google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadata
+        .getDefaultInstance();
+  }
+
+  public static final int VIDEO_EVENT_DETAILS_FIELD_NUMBER = 8;
+  /**
+   *
+   *
+   * <pre>
+   * Details of label video event operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata video_event_details = 8;
+   * </code>
+   */
+  public boolean hasVideoEventDetails() {
+    return detailsCase_ == 8;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Details of label video event operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata video_event_details = 8;
+   * </code>
+   */
+  public com.google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata
+      getVideoEventDetails() {
+    if (detailsCase_ == 8) {
+      return (com.google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata) details_;
+    }
+    return com.google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata
+        .getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Details of label video event operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata video_event_details = 8;
+   * </code>
+   */
+  public com.google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadataOrBuilder
+      getVideoEventDetailsOrBuilder() {
+    if (detailsCase_ == 8) {
+      return (com.google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata) details_;
+    }
+    return com.google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata
+        .getDefaultInstance();
+  }
+
+  public static final int TEXT_CLASSIFICATION_DETAILS_FIELD_NUMBER = 9;
+  /**
+   *
+   *
+   * <pre>
+   * Details of label text classification operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata text_classification_details = 9;
+   * </code>
+   */
+  public boolean hasTextClassificationDetails() {
+    return detailsCase_ == 9;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Details of label text classification operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata text_classification_details = 9;
+   * </code>
+   */
+  public com.google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata
+      getTextClassificationDetails() {
+    if (detailsCase_ == 9) {
+      return (com.google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata)
+          details_;
+    }
+    return com.google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata
+        .getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Details of label text classification operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata text_classification_details = 9;
+   * </code>
+   */
+  public com.google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadataOrBuilder
+      getTextClassificationDetailsOrBuilder() {
+    if (detailsCase_ == 9) {
+      return (com.google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata)
+          details_;
+    }
+    return com.google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata
+        .getDefaultInstance();
+  }
+
+  public static final int TEXT_ENTITY_EXTRACTION_DETAILS_FIELD_NUMBER = 13;
+  /**
+   *
+   *
+   * <pre>
+   * Details of label text entity extraction operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata text_entity_extraction_details = 13;
+   * </code>
+   */
+  public boolean hasTextEntityExtractionDetails() {
+    return detailsCase_ == 13;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Details of label text entity extraction operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata text_entity_extraction_details = 13;
+   * </code>
+   */
+  public com.google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata
+      getTextEntityExtractionDetails() {
+    if (detailsCase_ == 13) {
+      return (com.google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata)
+          details_;
+    }
+    return com.google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata
+        .getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Details of label text entity extraction operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata text_entity_extraction_details = 13;
+   * </code>
+   */
+  public com.google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadataOrBuilder
+      getTextEntityExtractionDetailsOrBuilder() {
+    if (detailsCase_ == 13) {
+      return (com.google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata)
+          details_;
+    }
+    return com.google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata
+        .getDefaultInstance();
+  }
+
   public static final int PROGRESS_PERCENT_FIELD_NUMBER = 1;
   private int progressPercent_;
   /**
@@ -516,7 +1172,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Output only. Progress of label operation. Range: [0, 100].
-   * Currently not supported.
    * </pre>
    *
    * <code>int32 progress_percent = 1;</code>
@@ -599,495 +1254,43 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
     return partialFailures_.get(index);
   }
 
-  public static final int IMAGE_CLASSIFICATION_DETAILS_FIELD_NUMBER = 3;
+  public static final int CREATE_TIME_FIELD_NUMBER = 16;
+  private com.google.protobuf.Timestamp createTime_;
   /**
-   * <code>
-   * .google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadata image_classification_details = 3;
-   * </code>
+   *
+   *
+   * <pre>
+   * Output only. Timestamp when labeling request was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 16;</code>
    */
-  public boolean hasImageClassificationDetails() {
-    return detailsCase_ == 3;
+  public boolean hasCreateTime() {
+    return createTime_ != null;
   }
   /**
-   * <code>
-   * .google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadata image_classification_details = 3;
-   * </code>
+   *
+   *
+   * <pre>
+   * Output only. Timestamp when labeling request was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 16;</code>
    */
-  public com.google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadata
-      getImageClassificationDetails() {
-    if (detailsCase_ == 3) {
-      return (com.google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadata)
-          details_;
-    }
-    return com.google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadata
-        .getDefaultInstance();
+  public com.google.protobuf.Timestamp getCreateTime() {
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
   /**
-   * <code>
-   * .google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadata image_classification_details = 3;
-   * </code>
+   *
+   *
+   * <pre>
+   * Output only. Timestamp when labeling request was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 16;</code>
    */
-  public com.google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadataOrBuilder
-      getImageClassificationDetailsOrBuilder() {
-    if (detailsCase_ == 3) {
-      return (com.google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadata)
-          details_;
-    }
-    return com.google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadata
-        .getDefaultInstance();
-  }
-
-  public static final int IMAGE_BOUNDING_BOX_DETAILS_FIELD_NUMBER = 4;
-  /**
-   * <code>
-   * .google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata image_bounding_box_details = 4;
-   * </code>
-   */
-  public boolean hasImageBoundingBoxDetails() {
-    return detailsCase_ == 4;
-  }
-  /**
-   * <code>
-   * .google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata image_bounding_box_details = 4;
-   * </code>
-   */
-  public com.google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata
-      getImageBoundingBoxDetails() {
-    if (detailsCase_ == 4) {
-      return (com.google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata)
-          details_;
-    }
-    return com.google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata
-        .getDefaultInstance();
-  }
-  /**
-   * <code>
-   * .google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata image_bounding_box_details = 4;
-   * </code>
-   */
-  public com.google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadataOrBuilder
-      getImageBoundingBoxDetailsOrBuilder() {
-    if (detailsCase_ == 4) {
-      return (com.google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata)
-          details_;
-    }
-    return com.google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata
-        .getDefaultInstance();
-  }
-
-  public static final int IMAGE_BOUNDING_POLY_DETAILS_FIELD_NUMBER = 11;
-  /**
-   * <code>
-   * .google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata image_bounding_poly_details = 11;
-   * </code>
-   */
-  public boolean hasImageBoundingPolyDetails() {
-    return detailsCase_ == 11;
-  }
-  /**
-   * <code>
-   * .google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata image_bounding_poly_details = 11;
-   * </code>
-   */
-  public com.google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata
-      getImageBoundingPolyDetails() {
-    if (detailsCase_ == 11) {
-      return (com.google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata)
-          details_;
-    }
-    return com.google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata
-        .getDefaultInstance();
-  }
-  /**
-   * <code>
-   * .google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata image_bounding_poly_details = 11;
-   * </code>
-   */
-  public com.google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadataOrBuilder
-      getImageBoundingPolyDetailsOrBuilder() {
-    if (detailsCase_ == 11) {
-      return (com.google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata)
-          details_;
-    }
-    return com.google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata
-        .getDefaultInstance();
-  }
-
-  public static final int IMAGE_ORIENTED_BOUNDING_BOX_DETAILS_FIELD_NUMBER = 14;
-  /**
-   * <code>
-   * .google.cloud.datalabeling.v1beta1.LabelImageOrientedBoundingBoxOperationMetadata image_oriented_bounding_box_details = 14;
-   * </code>
-   */
-  public boolean hasImageOrientedBoundingBoxDetails() {
-    return detailsCase_ == 14;
-  }
-  /**
-   * <code>
-   * .google.cloud.datalabeling.v1beta1.LabelImageOrientedBoundingBoxOperationMetadata image_oriented_bounding_box_details = 14;
-   * </code>
-   */
-  public com.google.cloud.datalabeling.v1beta1.LabelImageOrientedBoundingBoxOperationMetadata
-      getImageOrientedBoundingBoxDetails() {
-    if (detailsCase_ == 14) {
-      return (com.google.cloud.datalabeling.v1beta1.LabelImageOrientedBoundingBoxOperationMetadata)
-          details_;
-    }
-    return com.google.cloud.datalabeling.v1beta1.LabelImageOrientedBoundingBoxOperationMetadata
-        .getDefaultInstance();
-  }
-  /**
-   * <code>
-   * .google.cloud.datalabeling.v1beta1.LabelImageOrientedBoundingBoxOperationMetadata image_oriented_bounding_box_details = 14;
-   * </code>
-   */
-  public com.google.cloud.datalabeling.v1beta1
-          .LabelImageOrientedBoundingBoxOperationMetadataOrBuilder
-      getImageOrientedBoundingBoxDetailsOrBuilder() {
-    if (detailsCase_ == 14) {
-      return (com.google.cloud.datalabeling.v1beta1.LabelImageOrientedBoundingBoxOperationMetadata)
-          details_;
-    }
-    return com.google.cloud.datalabeling.v1beta1.LabelImageOrientedBoundingBoxOperationMetadata
-        .getDefaultInstance();
-  }
-
-  public static final int IMAGE_POLYLINE_DETAILS_FIELD_NUMBER = 12;
-  /**
-   * <code>
-   * .google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata image_polyline_details = 12;
-   * </code>
-   */
-  public boolean hasImagePolylineDetails() {
-    return detailsCase_ == 12;
-  }
-  /**
-   * <code>
-   * .google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata image_polyline_details = 12;
-   * </code>
-   */
-  public com.google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata
-      getImagePolylineDetails() {
-    if (detailsCase_ == 12) {
-      return (com.google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata) details_;
-    }
-    return com.google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata
-        .getDefaultInstance();
-  }
-  /**
-   * <code>
-   * .google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata image_polyline_details = 12;
-   * </code>
-   */
-  public com.google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadataOrBuilder
-      getImagePolylineDetailsOrBuilder() {
-    if (detailsCase_ == 12) {
-      return (com.google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata) details_;
-    }
-    return com.google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata
-        .getDefaultInstance();
-  }
-
-  public static final int IMAGE_SEGMENTATION_DETAILS_FIELD_NUMBER = 15;
-  /**
-   * <code>
-   * .google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata image_segmentation_details = 15;
-   * </code>
-   */
-  public boolean hasImageSegmentationDetails() {
-    return detailsCase_ == 15;
-  }
-  /**
-   * <code>
-   * .google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata image_segmentation_details = 15;
-   * </code>
-   */
-  public com.google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata
-      getImageSegmentationDetails() {
-    if (detailsCase_ == 15) {
-      return (com.google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata)
-          details_;
-    }
-    return com.google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata
-        .getDefaultInstance();
-  }
-  /**
-   * <code>
-   * .google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata image_segmentation_details = 15;
-   * </code>
-   */
-  public com.google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadataOrBuilder
-      getImageSegmentationDetailsOrBuilder() {
-    if (detailsCase_ == 15) {
-      return (com.google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata)
-          details_;
-    }
-    return com.google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata
-        .getDefaultInstance();
-  }
-
-  public static final int VIDEO_CLASSIFICATION_DETAILS_FIELD_NUMBER = 5;
-  /**
-   * <code>
-   * .google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadata video_classification_details = 5;
-   * </code>
-   */
-  public boolean hasVideoClassificationDetails() {
-    return detailsCase_ == 5;
-  }
-  /**
-   * <code>
-   * .google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadata video_classification_details = 5;
-   * </code>
-   */
-  public com.google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadata
-      getVideoClassificationDetails() {
-    if (detailsCase_ == 5) {
-      return (com.google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadata)
-          details_;
-    }
-    return com.google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadata
-        .getDefaultInstance();
-  }
-  /**
-   * <code>
-   * .google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadata video_classification_details = 5;
-   * </code>
-   */
-  public com.google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadataOrBuilder
-      getVideoClassificationDetailsOrBuilder() {
-    if (detailsCase_ == 5) {
-      return (com.google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadata)
-          details_;
-    }
-    return com.google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadata
-        .getDefaultInstance();
-  }
-
-  public static final int VIDEO_OBJECT_DETECTION_DETAILS_FIELD_NUMBER = 6;
-  /**
-   * <code>
-   * .google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadata video_object_detection_details = 6;
-   * </code>
-   */
-  public boolean hasVideoObjectDetectionDetails() {
-    return detailsCase_ == 6;
-  }
-  /**
-   * <code>
-   * .google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadata video_object_detection_details = 6;
-   * </code>
-   */
-  public com.google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadata
-      getVideoObjectDetectionDetails() {
-    if (detailsCase_ == 6) {
-      return (com.google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadata)
-          details_;
-    }
-    return com.google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadata
-        .getDefaultInstance();
-  }
-  /**
-   * <code>
-   * .google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadata video_object_detection_details = 6;
-   * </code>
-   */
-  public com.google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadataOrBuilder
-      getVideoObjectDetectionDetailsOrBuilder() {
-    if (detailsCase_ == 6) {
-      return (com.google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadata)
-          details_;
-    }
-    return com.google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadata
-        .getDefaultInstance();
-  }
-
-  public static final int VIDEO_OBJECT_TRACKING_DETAILS_FIELD_NUMBER = 7;
-  /**
-   * <code>
-   * .google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadata video_object_tracking_details = 7;
-   * </code>
-   */
-  public boolean hasVideoObjectTrackingDetails() {
-    return detailsCase_ == 7;
-  }
-  /**
-   * <code>
-   * .google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadata video_object_tracking_details = 7;
-   * </code>
-   */
-  public com.google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadata
-      getVideoObjectTrackingDetails() {
-    if (detailsCase_ == 7) {
-      return (com.google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadata)
-          details_;
-    }
-    return com.google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadata
-        .getDefaultInstance();
-  }
-  /**
-   * <code>
-   * .google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadata video_object_tracking_details = 7;
-   * </code>
-   */
-  public com.google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadataOrBuilder
-      getVideoObjectTrackingDetailsOrBuilder() {
-    if (detailsCase_ == 7) {
-      return (com.google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadata)
-          details_;
-    }
-    return com.google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadata
-        .getDefaultInstance();
-  }
-
-  public static final int VIDEO_EVENT_DETAILS_FIELD_NUMBER = 8;
-  /**
-   * <code>
-   * .google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata video_event_details = 8;
-   * </code>
-   */
-  public boolean hasVideoEventDetails() {
-    return detailsCase_ == 8;
-  }
-  /**
-   * <code>
-   * .google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata video_event_details = 8;
-   * </code>
-   */
-  public com.google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata
-      getVideoEventDetails() {
-    if (detailsCase_ == 8) {
-      return (com.google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata) details_;
-    }
-    return com.google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata
-        .getDefaultInstance();
-  }
-  /**
-   * <code>
-   * .google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata video_event_details = 8;
-   * </code>
-   */
-  public com.google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadataOrBuilder
-      getVideoEventDetailsOrBuilder() {
-    if (detailsCase_ == 8) {
-      return (com.google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata) details_;
-    }
-    return com.google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata
-        .getDefaultInstance();
-  }
-
-  public static final int TEXT_CLASSIFICATION_DETAILS_FIELD_NUMBER = 9;
-  /**
-   * <code>
-   * .google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata text_classification_details = 9;
-   * </code>
-   */
-  public boolean hasTextClassificationDetails() {
-    return detailsCase_ == 9;
-  }
-  /**
-   * <code>
-   * .google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata text_classification_details = 9;
-   * </code>
-   */
-  public com.google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata
-      getTextClassificationDetails() {
-    if (detailsCase_ == 9) {
-      return (com.google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata)
-          details_;
-    }
-    return com.google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata
-        .getDefaultInstance();
-  }
-  /**
-   * <code>
-   * .google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata text_classification_details = 9;
-   * </code>
-   */
-  public com.google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadataOrBuilder
-      getTextClassificationDetailsOrBuilder() {
-    if (detailsCase_ == 9) {
-      return (com.google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata)
-          details_;
-    }
-    return com.google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata
-        .getDefaultInstance();
-  }
-
-  public static final int AUDIO_TRANSCRIPTION_DETAILS_FIELD_NUMBER = 10;
-  /**
-   * <code>
-   * .google.cloud.datalabeling.v1beta1.LabelAudioTranscriptionOperationMetadata audio_transcription_details = 10;
-   * </code>
-   */
-  public boolean hasAudioTranscriptionDetails() {
-    return detailsCase_ == 10;
-  }
-  /**
-   * <code>
-   * .google.cloud.datalabeling.v1beta1.LabelAudioTranscriptionOperationMetadata audio_transcription_details = 10;
-   * </code>
-   */
-  public com.google.cloud.datalabeling.v1beta1.LabelAudioTranscriptionOperationMetadata
-      getAudioTranscriptionDetails() {
-    if (detailsCase_ == 10) {
-      return (com.google.cloud.datalabeling.v1beta1.LabelAudioTranscriptionOperationMetadata)
-          details_;
-    }
-    return com.google.cloud.datalabeling.v1beta1.LabelAudioTranscriptionOperationMetadata
-        .getDefaultInstance();
-  }
-  /**
-   * <code>
-   * .google.cloud.datalabeling.v1beta1.LabelAudioTranscriptionOperationMetadata audio_transcription_details = 10;
-   * </code>
-   */
-  public com.google.cloud.datalabeling.v1beta1.LabelAudioTranscriptionOperationMetadataOrBuilder
-      getAudioTranscriptionDetailsOrBuilder() {
-    if (detailsCase_ == 10) {
-      return (com.google.cloud.datalabeling.v1beta1.LabelAudioTranscriptionOperationMetadata)
-          details_;
-    }
-    return com.google.cloud.datalabeling.v1beta1.LabelAudioTranscriptionOperationMetadata
-        .getDefaultInstance();
-  }
-
-  public static final int TEXT_ENTITY_EXTRACTION_DETAILS_FIELD_NUMBER = 13;
-  /**
-   * <code>
-   * .google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata text_entity_extraction_details = 13;
-   * </code>
-   */
-  public boolean hasTextEntityExtractionDetails() {
-    return detailsCase_ == 13;
-  }
-  /**
-   * <code>
-   * .google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata text_entity_extraction_details = 13;
-   * </code>
-   */
-  public com.google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata
-      getTextEntityExtractionDetails() {
-    if (detailsCase_ == 13) {
-      return (com.google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata)
-          details_;
-    }
-    return com.google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata
-        .getDefaultInstance();
-  }
-  /**
-   * <code>
-   * .google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata text_entity_extraction_details = 13;
-   * </code>
-   */
-  public com.google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadataOrBuilder
-      getTextEntityExtractionDetailsOrBuilder() {
-    if (detailsCase_ == 13) {
-      return (com.google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata)
-          details_;
-    }
-    return com.google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata
-        .getDefaultInstance();
+  public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
+    return getCreateTime();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1149,12 +1352,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
           (com.google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata)
               details_);
     }
-    if (detailsCase_ == 10) {
-      output.writeMessage(
-          10,
-          (com.google.cloud.datalabeling.v1beta1.LabelAudioTranscriptionOperationMetadata)
-              details_);
-    }
     if (detailsCase_ == 11) {
       output.writeMessage(
           11,
@@ -1180,6 +1377,9 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       output.writeMessage(
           15,
           (com.google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata) details_);
+    }
+    if (createTime_ != null) {
+      output.writeMessage(16, getCreateTime());
     }
     unknownFields.writeTo(output);
   }
@@ -1243,13 +1443,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
               (com.google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata)
                   details_);
     }
-    if (detailsCase_ == 10) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              10,
-              (com.google.cloud.datalabeling.v1beta1.LabelAudioTranscriptionOperationMetadata)
-                  details_);
-    }
     if (detailsCase_ == 11) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
@@ -1284,6 +1477,9 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
               (com.google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata)
                   details_);
     }
+    if (createTime_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(16, getCreateTime());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1302,6 +1498,10 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
 
     if (getProgressPercent() != other.getProgressPercent()) return false;
     if (!getPartialFailuresList().equals(other.getPartialFailuresList())) return false;
+    if (hasCreateTime() != other.hasCreateTime()) return false;
+    if (hasCreateTime()) {
+      if (!getCreateTime().equals(other.getCreateTime())) return false;
+    }
     if (!getDetailsCase().equals(other.getDetailsCase())) return false;
     switch (detailsCase_) {
       case 3:
@@ -1345,10 +1545,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
         if (!getTextClassificationDetails().equals(other.getTextClassificationDetails()))
           return false;
         break;
-      case 10:
-        if (!getAudioTranscriptionDetails().equals(other.getAudioTranscriptionDetails()))
-          return false;
-        break;
       case 13:
         if (!getTextEntityExtractionDetails().equals(other.getTextEntityExtractionDetails()))
           return false;
@@ -1372,6 +1568,10 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
     if (getPartialFailuresCount() > 0) {
       hash = (37 * hash) + PARTIAL_FAILURES_FIELD_NUMBER;
       hash = (53 * hash) + getPartialFailuresList().hashCode();
+    }
+    if (hasCreateTime()) {
+      hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getCreateTime().hashCode();
     }
     switch (detailsCase_) {
       case 3:
@@ -1417,10 +1617,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       case 9:
         hash = (37 * hash) + TEXT_CLASSIFICATION_DETAILS_FIELD_NUMBER;
         hash = (53 * hash) + getTextClassificationDetails().hashCode();
-        break;
-      case 10:
-        hash = (37 * hash) + AUDIO_TRANSCRIPTION_DETAILS_FIELD_NUMBER;
-        hash = (53 * hash) + getAudioTranscriptionDetails().hashCode();
         break;
       case 13:
         hash = (37 * hash) + TEXT_ENTITY_EXTRACTION_DETAILS_FIELD_NUMBER;
@@ -1535,7 +1731,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Metadata of a labeling operation, such as LabelImage or LabelVideo.
-   * Next tag: 16
+   * Next tag: 18
    * </pre>
    *
    * Protobuf type {@code google.cloud.datalabeling.v1beta1.LabelOperationMetadata}
@@ -1582,9 +1778,15 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
 
       if (partialFailuresBuilder_ == null) {
         partialFailures_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00002000);
       } else {
         partialFailuresBuilder_.clear();
+      }
+      if (createTimeBuilder_ == null) {
+        createTime_ = null;
+      } else {
+        createTime_ = null;
+        createTimeBuilder_ = null;
       }
       detailsCase_ = 0;
       details_ = null;
@@ -1618,16 +1820,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
           new com.google.cloud.datalabeling.v1beta1.LabelOperationMetadata(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
-      result.progressPercent_ = progressPercent_;
-      if (partialFailuresBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
-          partialFailures_ = java.util.Collections.unmodifiableList(partialFailures_);
-          bitField0_ = (bitField0_ & ~0x00000002);
-        }
-        result.partialFailures_ = partialFailures_;
-      } else {
-        result.partialFailures_ = partialFailuresBuilder_.build();
-      }
       if (detailsCase_ == 3) {
         if (imageClassificationDetailsBuilder_ == null) {
           result.details_ = details_;
@@ -1705,19 +1897,27 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
           result.details_ = textClassificationDetailsBuilder_.build();
         }
       }
-      if (detailsCase_ == 10) {
-        if (audioTranscriptionDetailsBuilder_ == null) {
-          result.details_ = details_;
-        } else {
-          result.details_ = audioTranscriptionDetailsBuilder_.build();
-        }
-      }
       if (detailsCase_ == 13) {
         if (textEntityExtractionDetailsBuilder_ == null) {
           result.details_ = details_;
         } else {
           result.details_ = textEntityExtractionDetailsBuilder_.build();
         }
+      }
+      result.progressPercent_ = progressPercent_;
+      if (partialFailuresBuilder_ == null) {
+        if (((bitField0_ & 0x00002000) != 0)) {
+          partialFailures_ = java.util.Collections.unmodifiableList(partialFailures_);
+          bitField0_ = (bitField0_ & ~0x00002000);
+        }
+        result.partialFailures_ = partialFailures_;
+      } else {
+        result.partialFailures_ = partialFailuresBuilder_.build();
+      }
+      if (createTimeBuilder_ == null) {
+        result.createTime_ = createTime_;
+      } else {
+        result.createTime_ = createTimeBuilder_.build();
       }
       result.bitField0_ = to_bitField0_;
       result.detailsCase_ = detailsCase_;
@@ -1779,7 +1979,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
         if (!other.partialFailures_.isEmpty()) {
           if (partialFailures_.isEmpty()) {
             partialFailures_ = other.partialFailures_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00002000);
           } else {
             ensurePartialFailuresIsMutable();
             partialFailures_.addAll(other.partialFailures_);
@@ -1792,7 +1992,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
             partialFailuresBuilder_.dispose();
             partialFailuresBuilder_ = null;
             partialFailures_ = other.partialFailures_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00002000);
             partialFailuresBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getPartialFailuresFieldBuilder()
@@ -1801,6 +2001,9 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
             partialFailuresBuilder_.addAllMessages(other.partialFailures_);
           }
         }
+      }
+      if (other.hasCreateTime()) {
+        mergeCreateTime(other.getCreateTime());
       }
       switch (other.getDetailsCase()) {
         case IMAGE_CLASSIFICATION_DETAILS:
@@ -1856,11 +2059,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
         case TEXT_CLASSIFICATION_DETAILS:
           {
             mergeTextClassificationDetails(other.getTextClassificationDetails());
-            break;
-          }
-        case AUDIO_TRANSCRIPTION_DETAILS:
-          {
-            mergeAudioTranscriptionDetails(other.getAudioTranscriptionDetails());
             break;
           }
         case TEXT_ENTITY_EXTRACTION_DETAILS:
@@ -1919,13 +2117,2918 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
 
     private int bitField0_;
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadata,
+            com.google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadata.Builder,
+            com.google.cloud.datalabeling.v1beta1
+                .LabelImageClassificationOperationMetadataOrBuilder>
+        imageClassificationDetailsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Details of label image classification operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadata image_classification_details = 3;
+     * </code>
+     */
+    public boolean hasImageClassificationDetails() {
+      return detailsCase_ == 3;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of label image classification operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadata image_classification_details = 3;
+     * </code>
+     */
+    public com.google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadata
+        getImageClassificationDetails() {
+      if (imageClassificationDetailsBuilder_ == null) {
+        if (detailsCase_ == 3) {
+          return (com.google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadata)
+              details_;
+        }
+        return com.google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadata
+            .getDefaultInstance();
+      } else {
+        if (detailsCase_ == 3) {
+          return imageClassificationDetailsBuilder_.getMessage();
+        }
+        return com.google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadata
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of label image classification operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadata image_classification_details = 3;
+     * </code>
+     */
+    public Builder setImageClassificationDetails(
+        com.google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadata value) {
+      if (imageClassificationDetailsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        details_ = value;
+        onChanged();
+      } else {
+        imageClassificationDetailsBuilder_.setMessage(value);
+      }
+      detailsCase_ = 3;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of label image classification operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadata image_classification_details = 3;
+     * </code>
+     */
+    public Builder setImageClassificationDetails(
+        com.google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadata.Builder
+            builderForValue) {
+      if (imageClassificationDetailsBuilder_ == null) {
+        details_ = builderForValue.build();
+        onChanged();
+      } else {
+        imageClassificationDetailsBuilder_.setMessage(builderForValue.build());
+      }
+      detailsCase_ = 3;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of label image classification operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadata image_classification_details = 3;
+     * </code>
+     */
+    public Builder mergeImageClassificationDetails(
+        com.google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadata value) {
+      if (imageClassificationDetailsBuilder_ == null) {
+        if (detailsCase_ == 3
+            && details_
+                != com.google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadata
+                    .getDefaultInstance()) {
+          details_ =
+              com.google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadata
+                  .newBuilder(
+                      (com.google.cloud.datalabeling.v1beta1
+                              .LabelImageClassificationOperationMetadata)
+                          details_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          details_ = value;
+        }
+        onChanged();
+      } else {
+        if (detailsCase_ == 3) {
+          imageClassificationDetailsBuilder_.mergeFrom(value);
+        }
+        imageClassificationDetailsBuilder_.setMessage(value);
+      }
+      detailsCase_ = 3;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of label image classification operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadata image_classification_details = 3;
+     * </code>
+     */
+    public Builder clearImageClassificationDetails() {
+      if (imageClassificationDetailsBuilder_ == null) {
+        if (detailsCase_ == 3) {
+          detailsCase_ = 0;
+          details_ = null;
+          onChanged();
+        }
+      } else {
+        if (detailsCase_ == 3) {
+          detailsCase_ = 0;
+          details_ = null;
+        }
+        imageClassificationDetailsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of label image classification operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadata image_classification_details = 3;
+     * </code>
+     */
+    public com.google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadata.Builder
+        getImageClassificationDetailsBuilder() {
+      return getImageClassificationDetailsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of label image classification operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadata image_classification_details = 3;
+     * </code>
+     */
+    public com.google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadataOrBuilder
+        getImageClassificationDetailsOrBuilder() {
+      if ((detailsCase_ == 3) && (imageClassificationDetailsBuilder_ != null)) {
+        return imageClassificationDetailsBuilder_.getMessageOrBuilder();
+      } else {
+        if (detailsCase_ == 3) {
+          return (com.google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadata)
+              details_;
+        }
+        return com.google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadata
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of label image classification operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadata image_classification_details = 3;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadata,
+            com.google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadata.Builder,
+            com.google.cloud.datalabeling.v1beta1
+                .LabelImageClassificationOperationMetadataOrBuilder>
+        getImageClassificationDetailsFieldBuilder() {
+      if (imageClassificationDetailsBuilder_ == null) {
+        if (!(detailsCase_ == 3)) {
+          details_ =
+              com.google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadata
+                  .getDefaultInstance();
+        }
+        imageClassificationDetailsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadata,
+                com.google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadata
+                    .Builder,
+                com.google.cloud.datalabeling.v1beta1
+                    .LabelImageClassificationOperationMetadataOrBuilder>(
+                (com.google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadata)
+                    details_,
+                getParentForChildren(),
+                isClean());
+        details_ = null;
+      }
+      detailsCase_ = 3;
+      onChanged();
+      ;
+      return imageClassificationDetailsBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata,
+            com.google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata.Builder,
+            com.google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadataOrBuilder>
+        imageBoundingBoxDetailsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Details of label image bounding box operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata image_bounding_box_details = 4;
+     * </code>
+     */
+    public boolean hasImageBoundingBoxDetails() {
+      return detailsCase_ == 4;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of label image bounding box operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata image_bounding_box_details = 4;
+     * </code>
+     */
+    public com.google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata
+        getImageBoundingBoxDetails() {
+      if (imageBoundingBoxDetailsBuilder_ == null) {
+        if (detailsCase_ == 4) {
+          return (com.google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata)
+              details_;
+        }
+        return com.google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata
+            .getDefaultInstance();
+      } else {
+        if (detailsCase_ == 4) {
+          return imageBoundingBoxDetailsBuilder_.getMessage();
+        }
+        return com.google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of label image bounding box operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata image_bounding_box_details = 4;
+     * </code>
+     */
+    public Builder setImageBoundingBoxDetails(
+        com.google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata value) {
+      if (imageBoundingBoxDetailsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        details_ = value;
+        onChanged();
+      } else {
+        imageBoundingBoxDetailsBuilder_.setMessage(value);
+      }
+      detailsCase_ = 4;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of label image bounding box operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata image_bounding_box_details = 4;
+     * </code>
+     */
+    public Builder setImageBoundingBoxDetails(
+        com.google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata.Builder
+            builderForValue) {
+      if (imageBoundingBoxDetailsBuilder_ == null) {
+        details_ = builderForValue.build();
+        onChanged();
+      } else {
+        imageBoundingBoxDetailsBuilder_.setMessage(builderForValue.build());
+      }
+      detailsCase_ = 4;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of label image bounding box operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata image_bounding_box_details = 4;
+     * </code>
+     */
+    public Builder mergeImageBoundingBoxDetails(
+        com.google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata value) {
+      if (imageBoundingBoxDetailsBuilder_ == null) {
+        if (detailsCase_ == 4
+            && details_
+                != com.google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata
+                    .getDefaultInstance()) {
+          details_ =
+              com.google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata
+                  .newBuilder(
+                      (com.google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata)
+                          details_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          details_ = value;
+        }
+        onChanged();
+      } else {
+        if (detailsCase_ == 4) {
+          imageBoundingBoxDetailsBuilder_.mergeFrom(value);
+        }
+        imageBoundingBoxDetailsBuilder_.setMessage(value);
+      }
+      detailsCase_ = 4;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of label image bounding box operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata image_bounding_box_details = 4;
+     * </code>
+     */
+    public Builder clearImageBoundingBoxDetails() {
+      if (imageBoundingBoxDetailsBuilder_ == null) {
+        if (detailsCase_ == 4) {
+          detailsCase_ = 0;
+          details_ = null;
+          onChanged();
+        }
+      } else {
+        if (detailsCase_ == 4) {
+          detailsCase_ = 0;
+          details_ = null;
+        }
+        imageBoundingBoxDetailsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of label image bounding box operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata image_bounding_box_details = 4;
+     * </code>
+     */
+    public com.google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata.Builder
+        getImageBoundingBoxDetailsBuilder() {
+      return getImageBoundingBoxDetailsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of label image bounding box operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata image_bounding_box_details = 4;
+     * </code>
+     */
+    public com.google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadataOrBuilder
+        getImageBoundingBoxDetailsOrBuilder() {
+      if ((detailsCase_ == 4) && (imageBoundingBoxDetailsBuilder_ != null)) {
+        return imageBoundingBoxDetailsBuilder_.getMessageOrBuilder();
+      } else {
+        if (detailsCase_ == 4) {
+          return (com.google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata)
+              details_;
+        }
+        return com.google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of label image bounding box operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata image_bounding_box_details = 4;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata,
+            com.google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata.Builder,
+            com.google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadataOrBuilder>
+        getImageBoundingBoxDetailsFieldBuilder() {
+      if (imageBoundingBoxDetailsBuilder_ == null) {
+        if (!(detailsCase_ == 4)) {
+          details_ =
+              com.google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata
+                  .getDefaultInstance();
+        }
+        imageBoundingBoxDetailsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata,
+                com.google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata
+                    .Builder,
+                com.google.cloud.datalabeling.v1beta1
+                    .LabelImageBoundingBoxOperationMetadataOrBuilder>(
+                (com.google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata)
+                    details_,
+                getParentForChildren(),
+                isClean());
+        details_ = null;
+      }
+      detailsCase_ = 4;
+      onChanged();
+      ;
+      return imageBoundingBoxDetailsBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata,
+            com.google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata.Builder,
+            com.google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadataOrBuilder>
+        imageBoundingPolyDetailsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Details of label image bounding poly operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata image_bounding_poly_details = 11;
+     * </code>
+     */
+    public boolean hasImageBoundingPolyDetails() {
+      return detailsCase_ == 11;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of label image bounding poly operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata image_bounding_poly_details = 11;
+     * </code>
+     */
+    public com.google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata
+        getImageBoundingPolyDetails() {
+      if (imageBoundingPolyDetailsBuilder_ == null) {
+        if (detailsCase_ == 11) {
+          return (com.google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata)
+              details_;
+        }
+        return com.google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata
+            .getDefaultInstance();
+      } else {
+        if (detailsCase_ == 11) {
+          return imageBoundingPolyDetailsBuilder_.getMessage();
+        }
+        return com.google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of label image bounding poly operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata image_bounding_poly_details = 11;
+     * </code>
+     */
+    public Builder setImageBoundingPolyDetails(
+        com.google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata value) {
+      if (imageBoundingPolyDetailsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        details_ = value;
+        onChanged();
+      } else {
+        imageBoundingPolyDetailsBuilder_.setMessage(value);
+      }
+      detailsCase_ = 11;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of label image bounding poly operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata image_bounding_poly_details = 11;
+     * </code>
+     */
+    public Builder setImageBoundingPolyDetails(
+        com.google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata.Builder
+            builderForValue) {
+      if (imageBoundingPolyDetailsBuilder_ == null) {
+        details_ = builderForValue.build();
+        onChanged();
+      } else {
+        imageBoundingPolyDetailsBuilder_.setMessage(builderForValue.build());
+      }
+      detailsCase_ = 11;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of label image bounding poly operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata image_bounding_poly_details = 11;
+     * </code>
+     */
+    public Builder mergeImageBoundingPolyDetails(
+        com.google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata value) {
+      if (imageBoundingPolyDetailsBuilder_ == null) {
+        if (detailsCase_ == 11
+            && details_
+                != com.google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata
+                    .getDefaultInstance()) {
+          details_ =
+              com.google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata
+                  .newBuilder(
+                      (com.google.cloud.datalabeling.v1beta1
+                              .LabelImageBoundingPolyOperationMetadata)
+                          details_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          details_ = value;
+        }
+        onChanged();
+      } else {
+        if (detailsCase_ == 11) {
+          imageBoundingPolyDetailsBuilder_.mergeFrom(value);
+        }
+        imageBoundingPolyDetailsBuilder_.setMessage(value);
+      }
+      detailsCase_ = 11;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of label image bounding poly operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata image_bounding_poly_details = 11;
+     * </code>
+     */
+    public Builder clearImageBoundingPolyDetails() {
+      if (imageBoundingPolyDetailsBuilder_ == null) {
+        if (detailsCase_ == 11) {
+          detailsCase_ = 0;
+          details_ = null;
+          onChanged();
+        }
+      } else {
+        if (detailsCase_ == 11) {
+          detailsCase_ = 0;
+          details_ = null;
+        }
+        imageBoundingPolyDetailsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of label image bounding poly operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata image_bounding_poly_details = 11;
+     * </code>
+     */
+    public com.google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata.Builder
+        getImageBoundingPolyDetailsBuilder() {
+      return getImageBoundingPolyDetailsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of label image bounding poly operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata image_bounding_poly_details = 11;
+     * </code>
+     */
+    public com.google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadataOrBuilder
+        getImageBoundingPolyDetailsOrBuilder() {
+      if ((detailsCase_ == 11) && (imageBoundingPolyDetailsBuilder_ != null)) {
+        return imageBoundingPolyDetailsBuilder_.getMessageOrBuilder();
+      } else {
+        if (detailsCase_ == 11) {
+          return (com.google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata)
+              details_;
+        }
+        return com.google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of label image bounding poly operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata image_bounding_poly_details = 11;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata,
+            com.google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata.Builder,
+            com.google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadataOrBuilder>
+        getImageBoundingPolyDetailsFieldBuilder() {
+      if (imageBoundingPolyDetailsBuilder_ == null) {
+        if (!(detailsCase_ == 11)) {
+          details_ =
+              com.google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata
+                  .getDefaultInstance();
+        }
+        imageBoundingPolyDetailsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata,
+                com.google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata
+                    .Builder,
+                com.google.cloud.datalabeling.v1beta1
+                    .LabelImageBoundingPolyOperationMetadataOrBuilder>(
+                (com.google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata)
+                    details_,
+                getParentForChildren(),
+                isClean());
+        details_ = null;
+      }
+      detailsCase_ = 11;
+      onChanged();
+      ;
+      return imageBoundingPolyDetailsBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datalabeling.v1beta1.LabelImageOrientedBoundingBoxOperationMetadata,
+            com.google.cloud.datalabeling.v1beta1.LabelImageOrientedBoundingBoxOperationMetadata
+                .Builder,
+            com.google.cloud.datalabeling.v1beta1
+                .LabelImageOrientedBoundingBoxOperationMetadataOrBuilder>
+        imageOrientedBoundingBoxDetailsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Details of label image oriented bounding box operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelImageOrientedBoundingBoxOperationMetadata image_oriented_bounding_box_details = 14;
+     * </code>
+     */
+    public boolean hasImageOrientedBoundingBoxDetails() {
+      return detailsCase_ == 14;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of label image oriented bounding box operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelImageOrientedBoundingBoxOperationMetadata image_oriented_bounding_box_details = 14;
+     * </code>
+     */
+    public com.google.cloud.datalabeling.v1beta1.LabelImageOrientedBoundingBoxOperationMetadata
+        getImageOrientedBoundingBoxDetails() {
+      if (imageOrientedBoundingBoxDetailsBuilder_ == null) {
+        if (detailsCase_ == 14) {
+          return (com.google.cloud.datalabeling.v1beta1
+                  .LabelImageOrientedBoundingBoxOperationMetadata)
+              details_;
+        }
+        return com.google.cloud.datalabeling.v1beta1.LabelImageOrientedBoundingBoxOperationMetadata
+            .getDefaultInstance();
+      } else {
+        if (detailsCase_ == 14) {
+          return imageOrientedBoundingBoxDetailsBuilder_.getMessage();
+        }
+        return com.google.cloud.datalabeling.v1beta1.LabelImageOrientedBoundingBoxOperationMetadata
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of label image oriented bounding box operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelImageOrientedBoundingBoxOperationMetadata image_oriented_bounding_box_details = 14;
+     * </code>
+     */
+    public Builder setImageOrientedBoundingBoxDetails(
+        com.google.cloud.datalabeling.v1beta1.LabelImageOrientedBoundingBoxOperationMetadata
+            value) {
+      if (imageOrientedBoundingBoxDetailsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        details_ = value;
+        onChanged();
+      } else {
+        imageOrientedBoundingBoxDetailsBuilder_.setMessage(value);
+      }
+      detailsCase_ = 14;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of label image oriented bounding box operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelImageOrientedBoundingBoxOperationMetadata image_oriented_bounding_box_details = 14;
+     * </code>
+     */
+    public Builder setImageOrientedBoundingBoxDetails(
+        com.google.cloud.datalabeling.v1beta1.LabelImageOrientedBoundingBoxOperationMetadata.Builder
+            builderForValue) {
+      if (imageOrientedBoundingBoxDetailsBuilder_ == null) {
+        details_ = builderForValue.build();
+        onChanged();
+      } else {
+        imageOrientedBoundingBoxDetailsBuilder_.setMessage(builderForValue.build());
+      }
+      detailsCase_ = 14;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of label image oriented bounding box operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelImageOrientedBoundingBoxOperationMetadata image_oriented_bounding_box_details = 14;
+     * </code>
+     */
+    public Builder mergeImageOrientedBoundingBoxDetails(
+        com.google.cloud.datalabeling.v1beta1.LabelImageOrientedBoundingBoxOperationMetadata
+            value) {
+      if (imageOrientedBoundingBoxDetailsBuilder_ == null) {
+        if (detailsCase_ == 14
+            && details_
+                != com.google.cloud.datalabeling.v1beta1
+                    .LabelImageOrientedBoundingBoxOperationMetadata.getDefaultInstance()) {
+          details_ =
+              com.google.cloud.datalabeling.v1beta1.LabelImageOrientedBoundingBoxOperationMetadata
+                  .newBuilder(
+                      (com.google.cloud.datalabeling.v1beta1
+                              .LabelImageOrientedBoundingBoxOperationMetadata)
+                          details_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          details_ = value;
+        }
+        onChanged();
+      } else {
+        if (detailsCase_ == 14) {
+          imageOrientedBoundingBoxDetailsBuilder_.mergeFrom(value);
+        }
+        imageOrientedBoundingBoxDetailsBuilder_.setMessage(value);
+      }
+      detailsCase_ = 14;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of label image oriented bounding box operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelImageOrientedBoundingBoxOperationMetadata image_oriented_bounding_box_details = 14;
+     * </code>
+     */
+    public Builder clearImageOrientedBoundingBoxDetails() {
+      if (imageOrientedBoundingBoxDetailsBuilder_ == null) {
+        if (detailsCase_ == 14) {
+          detailsCase_ = 0;
+          details_ = null;
+          onChanged();
+        }
+      } else {
+        if (detailsCase_ == 14) {
+          detailsCase_ = 0;
+          details_ = null;
+        }
+        imageOrientedBoundingBoxDetailsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of label image oriented bounding box operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelImageOrientedBoundingBoxOperationMetadata image_oriented_bounding_box_details = 14;
+     * </code>
+     */
+    public com.google.cloud.datalabeling.v1beta1.LabelImageOrientedBoundingBoxOperationMetadata
+            .Builder
+        getImageOrientedBoundingBoxDetailsBuilder() {
+      return getImageOrientedBoundingBoxDetailsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of label image oriented bounding box operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelImageOrientedBoundingBoxOperationMetadata image_oriented_bounding_box_details = 14;
+     * </code>
+     */
+    public com.google.cloud.datalabeling.v1beta1
+            .LabelImageOrientedBoundingBoxOperationMetadataOrBuilder
+        getImageOrientedBoundingBoxDetailsOrBuilder() {
+      if ((detailsCase_ == 14) && (imageOrientedBoundingBoxDetailsBuilder_ != null)) {
+        return imageOrientedBoundingBoxDetailsBuilder_.getMessageOrBuilder();
+      } else {
+        if (detailsCase_ == 14) {
+          return (com.google.cloud.datalabeling.v1beta1
+                  .LabelImageOrientedBoundingBoxOperationMetadata)
+              details_;
+        }
+        return com.google.cloud.datalabeling.v1beta1.LabelImageOrientedBoundingBoxOperationMetadata
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of label image oriented bounding box operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelImageOrientedBoundingBoxOperationMetadata image_oriented_bounding_box_details = 14;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datalabeling.v1beta1.LabelImageOrientedBoundingBoxOperationMetadata,
+            com.google.cloud.datalabeling.v1beta1.LabelImageOrientedBoundingBoxOperationMetadata
+                .Builder,
+            com.google.cloud.datalabeling.v1beta1
+                .LabelImageOrientedBoundingBoxOperationMetadataOrBuilder>
+        getImageOrientedBoundingBoxDetailsFieldBuilder() {
+      if (imageOrientedBoundingBoxDetailsBuilder_ == null) {
+        if (!(detailsCase_ == 14)) {
+          details_ =
+              com.google.cloud.datalabeling.v1beta1.LabelImageOrientedBoundingBoxOperationMetadata
+                  .getDefaultInstance();
+        }
+        imageOrientedBoundingBoxDetailsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.datalabeling.v1beta1
+                    .LabelImageOrientedBoundingBoxOperationMetadata,
+                com.google.cloud.datalabeling.v1beta1.LabelImageOrientedBoundingBoxOperationMetadata
+                    .Builder,
+                com.google.cloud.datalabeling.v1beta1
+                    .LabelImageOrientedBoundingBoxOperationMetadataOrBuilder>(
+                (com.google.cloud.datalabeling.v1beta1
+                        .LabelImageOrientedBoundingBoxOperationMetadata)
+                    details_,
+                getParentForChildren(),
+                isClean());
+        details_ = null;
+      }
+      detailsCase_ = 14;
+      onChanged();
+      ;
+      return imageOrientedBoundingBoxDetailsBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata,
+            com.google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata.Builder,
+            com.google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadataOrBuilder>
+        imagePolylineDetailsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Details of label image polyline operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata image_polyline_details = 12;
+     * </code>
+     */
+    public boolean hasImagePolylineDetails() {
+      return detailsCase_ == 12;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of label image polyline operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata image_polyline_details = 12;
+     * </code>
+     */
+    public com.google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata
+        getImagePolylineDetails() {
+      if (imagePolylineDetailsBuilder_ == null) {
+        if (detailsCase_ == 12) {
+          return (com.google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata)
+              details_;
+        }
+        return com.google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata
+            .getDefaultInstance();
+      } else {
+        if (detailsCase_ == 12) {
+          return imagePolylineDetailsBuilder_.getMessage();
+        }
+        return com.google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of label image polyline operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata image_polyline_details = 12;
+     * </code>
+     */
+    public Builder setImagePolylineDetails(
+        com.google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata value) {
+      if (imagePolylineDetailsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        details_ = value;
+        onChanged();
+      } else {
+        imagePolylineDetailsBuilder_.setMessage(value);
+      }
+      detailsCase_ = 12;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of label image polyline operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata image_polyline_details = 12;
+     * </code>
+     */
+    public Builder setImagePolylineDetails(
+        com.google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata.Builder
+            builderForValue) {
+      if (imagePolylineDetailsBuilder_ == null) {
+        details_ = builderForValue.build();
+        onChanged();
+      } else {
+        imagePolylineDetailsBuilder_.setMessage(builderForValue.build());
+      }
+      detailsCase_ = 12;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of label image polyline operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata image_polyline_details = 12;
+     * </code>
+     */
+    public Builder mergeImagePolylineDetails(
+        com.google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata value) {
+      if (imagePolylineDetailsBuilder_ == null) {
+        if (detailsCase_ == 12
+            && details_
+                != com.google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata
+                    .getDefaultInstance()) {
+          details_ =
+              com.google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata.newBuilder(
+                      (com.google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata)
+                          details_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          details_ = value;
+        }
+        onChanged();
+      } else {
+        if (detailsCase_ == 12) {
+          imagePolylineDetailsBuilder_.mergeFrom(value);
+        }
+        imagePolylineDetailsBuilder_.setMessage(value);
+      }
+      detailsCase_ = 12;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of label image polyline operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata image_polyline_details = 12;
+     * </code>
+     */
+    public Builder clearImagePolylineDetails() {
+      if (imagePolylineDetailsBuilder_ == null) {
+        if (detailsCase_ == 12) {
+          detailsCase_ = 0;
+          details_ = null;
+          onChanged();
+        }
+      } else {
+        if (detailsCase_ == 12) {
+          detailsCase_ = 0;
+          details_ = null;
+        }
+        imagePolylineDetailsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of label image polyline operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata image_polyline_details = 12;
+     * </code>
+     */
+    public com.google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata.Builder
+        getImagePolylineDetailsBuilder() {
+      return getImagePolylineDetailsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of label image polyline operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata image_polyline_details = 12;
+     * </code>
+     */
+    public com.google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadataOrBuilder
+        getImagePolylineDetailsOrBuilder() {
+      if ((detailsCase_ == 12) && (imagePolylineDetailsBuilder_ != null)) {
+        return imagePolylineDetailsBuilder_.getMessageOrBuilder();
+      } else {
+        if (detailsCase_ == 12) {
+          return (com.google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata)
+              details_;
+        }
+        return com.google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of label image polyline operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata image_polyline_details = 12;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata,
+            com.google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata.Builder,
+            com.google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadataOrBuilder>
+        getImagePolylineDetailsFieldBuilder() {
+      if (imagePolylineDetailsBuilder_ == null) {
+        if (!(detailsCase_ == 12)) {
+          details_ =
+              com.google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata
+                  .getDefaultInstance();
+        }
+        imagePolylineDetailsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata,
+                com.google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata.Builder,
+                com.google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadataOrBuilder>(
+                (com.google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata)
+                    details_,
+                getParentForChildren(),
+                isClean());
+        details_ = null;
+      }
+      detailsCase_ = 12;
+      onChanged();
+      ;
+      return imagePolylineDetailsBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata,
+            com.google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata.Builder,
+            com.google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadataOrBuilder>
+        imageSegmentationDetailsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Details of label image segmentation operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata image_segmentation_details = 15;
+     * </code>
+     */
+    public boolean hasImageSegmentationDetails() {
+      return detailsCase_ == 15;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of label image segmentation operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata image_segmentation_details = 15;
+     * </code>
+     */
+    public com.google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata
+        getImageSegmentationDetails() {
+      if (imageSegmentationDetailsBuilder_ == null) {
+        if (detailsCase_ == 15) {
+          return (com.google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata)
+              details_;
+        }
+        return com.google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata
+            .getDefaultInstance();
+      } else {
+        if (detailsCase_ == 15) {
+          return imageSegmentationDetailsBuilder_.getMessage();
+        }
+        return com.google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of label image segmentation operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata image_segmentation_details = 15;
+     * </code>
+     */
+    public Builder setImageSegmentationDetails(
+        com.google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata value) {
+      if (imageSegmentationDetailsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        details_ = value;
+        onChanged();
+      } else {
+        imageSegmentationDetailsBuilder_.setMessage(value);
+      }
+      detailsCase_ = 15;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of label image segmentation operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata image_segmentation_details = 15;
+     * </code>
+     */
+    public Builder setImageSegmentationDetails(
+        com.google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata.Builder
+            builderForValue) {
+      if (imageSegmentationDetailsBuilder_ == null) {
+        details_ = builderForValue.build();
+        onChanged();
+      } else {
+        imageSegmentationDetailsBuilder_.setMessage(builderForValue.build());
+      }
+      detailsCase_ = 15;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of label image segmentation operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata image_segmentation_details = 15;
+     * </code>
+     */
+    public Builder mergeImageSegmentationDetails(
+        com.google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata value) {
+      if (imageSegmentationDetailsBuilder_ == null) {
+        if (detailsCase_ == 15
+            && details_
+                != com.google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata
+                    .getDefaultInstance()) {
+          details_ =
+              com.google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata
+                  .newBuilder(
+                      (com.google.cloud.datalabeling.v1beta1
+                              .LabelImageSegmentationOperationMetadata)
+                          details_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          details_ = value;
+        }
+        onChanged();
+      } else {
+        if (detailsCase_ == 15) {
+          imageSegmentationDetailsBuilder_.mergeFrom(value);
+        }
+        imageSegmentationDetailsBuilder_.setMessage(value);
+      }
+      detailsCase_ = 15;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of label image segmentation operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata image_segmentation_details = 15;
+     * </code>
+     */
+    public Builder clearImageSegmentationDetails() {
+      if (imageSegmentationDetailsBuilder_ == null) {
+        if (detailsCase_ == 15) {
+          detailsCase_ = 0;
+          details_ = null;
+          onChanged();
+        }
+      } else {
+        if (detailsCase_ == 15) {
+          detailsCase_ = 0;
+          details_ = null;
+        }
+        imageSegmentationDetailsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of label image segmentation operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata image_segmentation_details = 15;
+     * </code>
+     */
+    public com.google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata.Builder
+        getImageSegmentationDetailsBuilder() {
+      return getImageSegmentationDetailsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of label image segmentation operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata image_segmentation_details = 15;
+     * </code>
+     */
+    public com.google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadataOrBuilder
+        getImageSegmentationDetailsOrBuilder() {
+      if ((detailsCase_ == 15) && (imageSegmentationDetailsBuilder_ != null)) {
+        return imageSegmentationDetailsBuilder_.getMessageOrBuilder();
+      } else {
+        if (detailsCase_ == 15) {
+          return (com.google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata)
+              details_;
+        }
+        return com.google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of label image segmentation operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata image_segmentation_details = 15;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata,
+            com.google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata.Builder,
+            com.google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadataOrBuilder>
+        getImageSegmentationDetailsFieldBuilder() {
+      if (imageSegmentationDetailsBuilder_ == null) {
+        if (!(detailsCase_ == 15)) {
+          details_ =
+              com.google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata
+                  .getDefaultInstance();
+        }
+        imageSegmentationDetailsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata,
+                com.google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata
+                    .Builder,
+                com.google.cloud.datalabeling.v1beta1
+                    .LabelImageSegmentationOperationMetadataOrBuilder>(
+                (com.google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata)
+                    details_,
+                getParentForChildren(),
+                isClean());
+        details_ = null;
+      }
+      detailsCase_ = 15;
+      onChanged();
+      ;
+      return imageSegmentationDetailsBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadata,
+            com.google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadata.Builder,
+            com.google.cloud.datalabeling.v1beta1
+                .LabelVideoClassificationOperationMetadataOrBuilder>
+        videoClassificationDetailsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Details of label video classification operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadata video_classification_details = 5;
+     * </code>
+     */
+    public boolean hasVideoClassificationDetails() {
+      return detailsCase_ == 5;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of label video classification operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadata video_classification_details = 5;
+     * </code>
+     */
+    public com.google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadata
+        getVideoClassificationDetails() {
+      if (videoClassificationDetailsBuilder_ == null) {
+        if (detailsCase_ == 5) {
+          return (com.google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadata)
+              details_;
+        }
+        return com.google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadata
+            .getDefaultInstance();
+      } else {
+        if (detailsCase_ == 5) {
+          return videoClassificationDetailsBuilder_.getMessage();
+        }
+        return com.google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadata
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of label video classification operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadata video_classification_details = 5;
+     * </code>
+     */
+    public Builder setVideoClassificationDetails(
+        com.google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadata value) {
+      if (videoClassificationDetailsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        details_ = value;
+        onChanged();
+      } else {
+        videoClassificationDetailsBuilder_.setMessage(value);
+      }
+      detailsCase_ = 5;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of label video classification operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadata video_classification_details = 5;
+     * </code>
+     */
+    public Builder setVideoClassificationDetails(
+        com.google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadata.Builder
+            builderForValue) {
+      if (videoClassificationDetailsBuilder_ == null) {
+        details_ = builderForValue.build();
+        onChanged();
+      } else {
+        videoClassificationDetailsBuilder_.setMessage(builderForValue.build());
+      }
+      detailsCase_ = 5;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of label video classification operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadata video_classification_details = 5;
+     * </code>
+     */
+    public Builder mergeVideoClassificationDetails(
+        com.google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadata value) {
+      if (videoClassificationDetailsBuilder_ == null) {
+        if (detailsCase_ == 5
+            && details_
+                != com.google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadata
+                    .getDefaultInstance()) {
+          details_ =
+              com.google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadata
+                  .newBuilder(
+                      (com.google.cloud.datalabeling.v1beta1
+                              .LabelVideoClassificationOperationMetadata)
+                          details_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          details_ = value;
+        }
+        onChanged();
+      } else {
+        if (detailsCase_ == 5) {
+          videoClassificationDetailsBuilder_.mergeFrom(value);
+        }
+        videoClassificationDetailsBuilder_.setMessage(value);
+      }
+      detailsCase_ = 5;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of label video classification operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadata video_classification_details = 5;
+     * </code>
+     */
+    public Builder clearVideoClassificationDetails() {
+      if (videoClassificationDetailsBuilder_ == null) {
+        if (detailsCase_ == 5) {
+          detailsCase_ = 0;
+          details_ = null;
+          onChanged();
+        }
+      } else {
+        if (detailsCase_ == 5) {
+          detailsCase_ = 0;
+          details_ = null;
+        }
+        videoClassificationDetailsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of label video classification operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadata video_classification_details = 5;
+     * </code>
+     */
+    public com.google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadata.Builder
+        getVideoClassificationDetailsBuilder() {
+      return getVideoClassificationDetailsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of label video classification operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadata video_classification_details = 5;
+     * </code>
+     */
+    public com.google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadataOrBuilder
+        getVideoClassificationDetailsOrBuilder() {
+      if ((detailsCase_ == 5) && (videoClassificationDetailsBuilder_ != null)) {
+        return videoClassificationDetailsBuilder_.getMessageOrBuilder();
+      } else {
+        if (detailsCase_ == 5) {
+          return (com.google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadata)
+              details_;
+        }
+        return com.google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadata
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of label video classification operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadata video_classification_details = 5;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadata,
+            com.google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadata.Builder,
+            com.google.cloud.datalabeling.v1beta1
+                .LabelVideoClassificationOperationMetadataOrBuilder>
+        getVideoClassificationDetailsFieldBuilder() {
+      if (videoClassificationDetailsBuilder_ == null) {
+        if (!(detailsCase_ == 5)) {
+          details_ =
+              com.google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadata
+                  .getDefaultInstance();
+        }
+        videoClassificationDetailsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadata,
+                com.google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadata
+                    .Builder,
+                com.google.cloud.datalabeling.v1beta1
+                    .LabelVideoClassificationOperationMetadataOrBuilder>(
+                (com.google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadata)
+                    details_,
+                getParentForChildren(),
+                isClean());
+        details_ = null;
+      }
+      detailsCase_ = 5;
+      onChanged();
+      ;
+      return videoClassificationDetailsBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadata,
+            com.google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadata
+                .Builder,
+            com.google.cloud.datalabeling.v1beta1
+                .LabelVideoObjectDetectionOperationMetadataOrBuilder>
+        videoObjectDetectionDetailsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Details of label video object detection operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadata video_object_detection_details = 6;
+     * </code>
+     */
+    public boolean hasVideoObjectDetectionDetails() {
+      return detailsCase_ == 6;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of label video object detection operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadata video_object_detection_details = 6;
+     * </code>
+     */
+    public com.google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadata
+        getVideoObjectDetectionDetails() {
+      if (videoObjectDetectionDetailsBuilder_ == null) {
+        if (detailsCase_ == 6) {
+          return (com.google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadata)
+              details_;
+        }
+        return com.google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadata
+            .getDefaultInstance();
+      } else {
+        if (detailsCase_ == 6) {
+          return videoObjectDetectionDetailsBuilder_.getMessage();
+        }
+        return com.google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadata
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of label video object detection operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadata video_object_detection_details = 6;
+     * </code>
+     */
+    public Builder setVideoObjectDetectionDetails(
+        com.google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadata value) {
+      if (videoObjectDetectionDetailsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        details_ = value;
+        onChanged();
+      } else {
+        videoObjectDetectionDetailsBuilder_.setMessage(value);
+      }
+      detailsCase_ = 6;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of label video object detection operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadata video_object_detection_details = 6;
+     * </code>
+     */
+    public Builder setVideoObjectDetectionDetails(
+        com.google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadata.Builder
+            builderForValue) {
+      if (videoObjectDetectionDetailsBuilder_ == null) {
+        details_ = builderForValue.build();
+        onChanged();
+      } else {
+        videoObjectDetectionDetailsBuilder_.setMessage(builderForValue.build());
+      }
+      detailsCase_ = 6;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of label video object detection operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadata video_object_detection_details = 6;
+     * </code>
+     */
+    public Builder mergeVideoObjectDetectionDetails(
+        com.google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadata value) {
+      if (videoObjectDetectionDetailsBuilder_ == null) {
+        if (detailsCase_ == 6
+            && details_
+                != com.google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadata
+                    .getDefaultInstance()) {
+          details_ =
+              com.google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadata
+                  .newBuilder(
+                      (com.google.cloud.datalabeling.v1beta1
+                              .LabelVideoObjectDetectionOperationMetadata)
+                          details_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          details_ = value;
+        }
+        onChanged();
+      } else {
+        if (detailsCase_ == 6) {
+          videoObjectDetectionDetailsBuilder_.mergeFrom(value);
+        }
+        videoObjectDetectionDetailsBuilder_.setMessage(value);
+      }
+      detailsCase_ = 6;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of label video object detection operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadata video_object_detection_details = 6;
+     * </code>
+     */
+    public Builder clearVideoObjectDetectionDetails() {
+      if (videoObjectDetectionDetailsBuilder_ == null) {
+        if (detailsCase_ == 6) {
+          detailsCase_ = 0;
+          details_ = null;
+          onChanged();
+        }
+      } else {
+        if (detailsCase_ == 6) {
+          detailsCase_ = 0;
+          details_ = null;
+        }
+        videoObjectDetectionDetailsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of label video object detection operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadata video_object_detection_details = 6;
+     * </code>
+     */
+    public com.google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadata.Builder
+        getVideoObjectDetectionDetailsBuilder() {
+      return getVideoObjectDetectionDetailsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of label video object detection operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadata video_object_detection_details = 6;
+     * </code>
+     */
+    public com.google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadataOrBuilder
+        getVideoObjectDetectionDetailsOrBuilder() {
+      if ((detailsCase_ == 6) && (videoObjectDetectionDetailsBuilder_ != null)) {
+        return videoObjectDetectionDetailsBuilder_.getMessageOrBuilder();
+      } else {
+        if (detailsCase_ == 6) {
+          return (com.google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadata)
+              details_;
+        }
+        return com.google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadata
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of label video object detection operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadata video_object_detection_details = 6;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadata,
+            com.google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadata
+                .Builder,
+            com.google.cloud.datalabeling.v1beta1
+                .LabelVideoObjectDetectionOperationMetadataOrBuilder>
+        getVideoObjectDetectionDetailsFieldBuilder() {
+      if (videoObjectDetectionDetailsBuilder_ == null) {
+        if (!(detailsCase_ == 6)) {
+          details_ =
+              com.google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadata
+                  .getDefaultInstance();
+        }
+        videoObjectDetectionDetailsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadata,
+                com.google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadata
+                    .Builder,
+                com.google.cloud.datalabeling.v1beta1
+                    .LabelVideoObjectDetectionOperationMetadataOrBuilder>(
+                (com.google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadata)
+                    details_,
+                getParentForChildren(),
+                isClean());
+        details_ = null;
+      }
+      detailsCase_ = 6;
+      onChanged();
+      ;
+      return videoObjectDetectionDetailsBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadata,
+            com.google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadata.Builder,
+            com.google.cloud.datalabeling.v1beta1
+                .LabelVideoObjectTrackingOperationMetadataOrBuilder>
+        videoObjectTrackingDetailsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Details of label video object tracking operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadata video_object_tracking_details = 7;
+     * </code>
+     */
+    public boolean hasVideoObjectTrackingDetails() {
+      return detailsCase_ == 7;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of label video object tracking operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadata video_object_tracking_details = 7;
+     * </code>
+     */
+    public com.google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadata
+        getVideoObjectTrackingDetails() {
+      if (videoObjectTrackingDetailsBuilder_ == null) {
+        if (detailsCase_ == 7) {
+          return (com.google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadata)
+              details_;
+        }
+        return com.google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadata
+            .getDefaultInstance();
+      } else {
+        if (detailsCase_ == 7) {
+          return videoObjectTrackingDetailsBuilder_.getMessage();
+        }
+        return com.google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadata
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of label video object tracking operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadata video_object_tracking_details = 7;
+     * </code>
+     */
+    public Builder setVideoObjectTrackingDetails(
+        com.google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadata value) {
+      if (videoObjectTrackingDetailsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        details_ = value;
+        onChanged();
+      } else {
+        videoObjectTrackingDetailsBuilder_.setMessage(value);
+      }
+      detailsCase_ = 7;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of label video object tracking operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadata video_object_tracking_details = 7;
+     * </code>
+     */
+    public Builder setVideoObjectTrackingDetails(
+        com.google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadata.Builder
+            builderForValue) {
+      if (videoObjectTrackingDetailsBuilder_ == null) {
+        details_ = builderForValue.build();
+        onChanged();
+      } else {
+        videoObjectTrackingDetailsBuilder_.setMessage(builderForValue.build());
+      }
+      detailsCase_ = 7;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of label video object tracking operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadata video_object_tracking_details = 7;
+     * </code>
+     */
+    public Builder mergeVideoObjectTrackingDetails(
+        com.google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadata value) {
+      if (videoObjectTrackingDetailsBuilder_ == null) {
+        if (detailsCase_ == 7
+            && details_
+                != com.google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadata
+                    .getDefaultInstance()) {
+          details_ =
+              com.google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadata
+                  .newBuilder(
+                      (com.google.cloud.datalabeling.v1beta1
+                              .LabelVideoObjectTrackingOperationMetadata)
+                          details_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          details_ = value;
+        }
+        onChanged();
+      } else {
+        if (detailsCase_ == 7) {
+          videoObjectTrackingDetailsBuilder_.mergeFrom(value);
+        }
+        videoObjectTrackingDetailsBuilder_.setMessage(value);
+      }
+      detailsCase_ = 7;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of label video object tracking operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadata video_object_tracking_details = 7;
+     * </code>
+     */
+    public Builder clearVideoObjectTrackingDetails() {
+      if (videoObjectTrackingDetailsBuilder_ == null) {
+        if (detailsCase_ == 7) {
+          detailsCase_ = 0;
+          details_ = null;
+          onChanged();
+        }
+      } else {
+        if (detailsCase_ == 7) {
+          detailsCase_ = 0;
+          details_ = null;
+        }
+        videoObjectTrackingDetailsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of label video object tracking operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadata video_object_tracking_details = 7;
+     * </code>
+     */
+    public com.google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadata.Builder
+        getVideoObjectTrackingDetailsBuilder() {
+      return getVideoObjectTrackingDetailsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of label video object tracking operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadata video_object_tracking_details = 7;
+     * </code>
+     */
+    public com.google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadataOrBuilder
+        getVideoObjectTrackingDetailsOrBuilder() {
+      if ((detailsCase_ == 7) && (videoObjectTrackingDetailsBuilder_ != null)) {
+        return videoObjectTrackingDetailsBuilder_.getMessageOrBuilder();
+      } else {
+        if (detailsCase_ == 7) {
+          return (com.google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadata)
+              details_;
+        }
+        return com.google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadata
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of label video object tracking operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadata video_object_tracking_details = 7;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadata,
+            com.google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadata.Builder,
+            com.google.cloud.datalabeling.v1beta1
+                .LabelVideoObjectTrackingOperationMetadataOrBuilder>
+        getVideoObjectTrackingDetailsFieldBuilder() {
+      if (videoObjectTrackingDetailsBuilder_ == null) {
+        if (!(detailsCase_ == 7)) {
+          details_ =
+              com.google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadata
+                  .getDefaultInstance();
+        }
+        videoObjectTrackingDetailsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadata,
+                com.google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadata
+                    .Builder,
+                com.google.cloud.datalabeling.v1beta1
+                    .LabelVideoObjectTrackingOperationMetadataOrBuilder>(
+                (com.google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadata)
+                    details_,
+                getParentForChildren(),
+                isClean());
+        details_ = null;
+      }
+      detailsCase_ = 7;
+      onChanged();
+      ;
+      return videoObjectTrackingDetailsBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata,
+            com.google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata.Builder,
+            com.google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadataOrBuilder>
+        videoEventDetailsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Details of label video event operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata video_event_details = 8;
+     * </code>
+     */
+    public boolean hasVideoEventDetails() {
+      return detailsCase_ == 8;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of label video event operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata video_event_details = 8;
+     * </code>
+     */
+    public com.google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata
+        getVideoEventDetails() {
+      if (videoEventDetailsBuilder_ == null) {
+        if (detailsCase_ == 8) {
+          return (com.google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata) details_;
+        }
+        return com.google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata
+            .getDefaultInstance();
+      } else {
+        if (detailsCase_ == 8) {
+          return videoEventDetailsBuilder_.getMessage();
+        }
+        return com.google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of label video event operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata video_event_details = 8;
+     * </code>
+     */
+    public Builder setVideoEventDetails(
+        com.google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata value) {
+      if (videoEventDetailsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        details_ = value;
+        onChanged();
+      } else {
+        videoEventDetailsBuilder_.setMessage(value);
+      }
+      detailsCase_ = 8;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of label video event operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata video_event_details = 8;
+     * </code>
+     */
+    public Builder setVideoEventDetails(
+        com.google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata.Builder
+            builderForValue) {
+      if (videoEventDetailsBuilder_ == null) {
+        details_ = builderForValue.build();
+        onChanged();
+      } else {
+        videoEventDetailsBuilder_.setMessage(builderForValue.build());
+      }
+      detailsCase_ = 8;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of label video event operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata video_event_details = 8;
+     * </code>
+     */
+    public Builder mergeVideoEventDetails(
+        com.google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata value) {
+      if (videoEventDetailsBuilder_ == null) {
+        if (detailsCase_ == 8
+            && details_
+                != com.google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata
+                    .getDefaultInstance()) {
+          details_ =
+              com.google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata.newBuilder(
+                      (com.google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata)
+                          details_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          details_ = value;
+        }
+        onChanged();
+      } else {
+        if (detailsCase_ == 8) {
+          videoEventDetailsBuilder_.mergeFrom(value);
+        }
+        videoEventDetailsBuilder_.setMessage(value);
+      }
+      detailsCase_ = 8;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of label video event operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata video_event_details = 8;
+     * </code>
+     */
+    public Builder clearVideoEventDetails() {
+      if (videoEventDetailsBuilder_ == null) {
+        if (detailsCase_ == 8) {
+          detailsCase_ = 0;
+          details_ = null;
+          onChanged();
+        }
+      } else {
+        if (detailsCase_ == 8) {
+          detailsCase_ = 0;
+          details_ = null;
+        }
+        videoEventDetailsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of label video event operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata video_event_details = 8;
+     * </code>
+     */
+    public com.google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata.Builder
+        getVideoEventDetailsBuilder() {
+      return getVideoEventDetailsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of label video event operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata video_event_details = 8;
+     * </code>
+     */
+    public com.google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadataOrBuilder
+        getVideoEventDetailsOrBuilder() {
+      if ((detailsCase_ == 8) && (videoEventDetailsBuilder_ != null)) {
+        return videoEventDetailsBuilder_.getMessageOrBuilder();
+      } else {
+        if (detailsCase_ == 8) {
+          return (com.google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata) details_;
+        }
+        return com.google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of label video event operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata video_event_details = 8;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata,
+            com.google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata.Builder,
+            com.google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadataOrBuilder>
+        getVideoEventDetailsFieldBuilder() {
+      if (videoEventDetailsBuilder_ == null) {
+        if (!(detailsCase_ == 8)) {
+          details_ =
+              com.google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata
+                  .getDefaultInstance();
+        }
+        videoEventDetailsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata,
+                com.google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata.Builder,
+                com.google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadataOrBuilder>(
+                (com.google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata) details_,
+                getParentForChildren(),
+                isClean());
+        details_ = null;
+      }
+      detailsCase_ = 8;
+      onChanged();
+      ;
+      return videoEventDetailsBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata,
+            com.google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata.Builder,
+            com.google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadataOrBuilder>
+        textClassificationDetailsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Details of label text classification operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata text_classification_details = 9;
+     * </code>
+     */
+    public boolean hasTextClassificationDetails() {
+      return detailsCase_ == 9;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of label text classification operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata text_classification_details = 9;
+     * </code>
+     */
+    public com.google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata
+        getTextClassificationDetails() {
+      if (textClassificationDetailsBuilder_ == null) {
+        if (detailsCase_ == 9) {
+          return (com.google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata)
+              details_;
+        }
+        return com.google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata
+            .getDefaultInstance();
+      } else {
+        if (detailsCase_ == 9) {
+          return textClassificationDetailsBuilder_.getMessage();
+        }
+        return com.google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of label text classification operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata text_classification_details = 9;
+     * </code>
+     */
+    public Builder setTextClassificationDetails(
+        com.google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata value) {
+      if (textClassificationDetailsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        details_ = value;
+        onChanged();
+      } else {
+        textClassificationDetailsBuilder_.setMessage(value);
+      }
+      detailsCase_ = 9;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of label text classification operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata text_classification_details = 9;
+     * </code>
+     */
+    public Builder setTextClassificationDetails(
+        com.google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata.Builder
+            builderForValue) {
+      if (textClassificationDetailsBuilder_ == null) {
+        details_ = builderForValue.build();
+        onChanged();
+      } else {
+        textClassificationDetailsBuilder_.setMessage(builderForValue.build());
+      }
+      detailsCase_ = 9;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of label text classification operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata text_classification_details = 9;
+     * </code>
+     */
+    public Builder mergeTextClassificationDetails(
+        com.google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata value) {
+      if (textClassificationDetailsBuilder_ == null) {
+        if (detailsCase_ == 9
+            && details_
+                != com.google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata
+                    .getDefaultInstance()) {
+          details_ =
+              com.google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata
+                  .newBuilder(
+                      (com.google.cloud.datalabeling.v1beta1
+                              .LabelTextClassificationOperationMetadata)
+                          details_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          details_ = value;
+        }
+        onChanged();
+      } else {
+        if (detailsCase_ == 9) {
+          textClassificationDetailsBuilder_.mergeFrom(value);
+        }
+        textClassificationDetailsBuilder_.setMessage(value);
+      }
+      detailsCase_ = 9;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of label text classification operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata text_classification_details = 9;
+     * </code>
+     */
+    public Builder clearTextClassificationDetails() {
+      if (textClassificationDetailsBuilder_ == null) {
+        if (detailsCase_ == 9) {
+          detailsCase_ = 0;
+          details_ = null;
+          onChanged();
+        }
+      } else {
+        if (detailsCase_ == 9) {
+          detailsCase_ = 0;
+          details_ = null;
+        }
+        textClassificationDetailsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of label text classification operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata text_classification_details = 9;
+     * </code>
+     */
+    public com.google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata.Builder
+        getTextClassificationDetailsBuilder() {
+      return getTextClassificationDetailsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of label text classification operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata text_classification_details = 9;
+     * </code>
+     */
+    public com.google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadataOrBuilder
+        getTextClassificationDetailsOrBuilder() {
+      if ((detailsCase_ == 9) && (textClassificationDetailsBuilder_ != null)) {
+        return textClassificationDetailsBuilder_.getMessageOrBuilder();
+      } else {
+        if (detailsCase_ == 9) {
+          return (com.google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata)
+              details_;
+        }
+        return com.google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of label text classification operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata text_classification_details = 9;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata,
+            com.google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata.Builder,
+            com.google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadataOrBuilder>
+        getTextClassificationDetailsFieldBuilder() {
+      if (textClassificationDetailsBuilder_ == null) {
+        if (!(detailsCase_ == 9)) {
+          details_ =
+              com.google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata
+                  .getDefaultInstance();
+        }
+        textClassificationDetailsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata,
+                com.google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata
+                    .Builder,
+                com.google.cloud.datalabeling.v1beta1
+                    .LabelTextClassificationOperationMetadataOrBuilder>(
+                (com.google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata)
+                    details_,
+                getParentForChildren(),
+                isClean());
+        details_ = null;
+      }
+      detailsCase_ = 9;
+      onChanged();
+      ;
+      return textClassificationDetailsBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata,
+            com.google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata
+                .Builder,
+            com.google.cloud.datalabeling.v1beta1
+                .LabelTextEntityExtractionOperationMetadataOrBuilder>
+        textEntityExtractionDetailsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Details of label text entity extraction operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata text_entity_extraction_details = 13;
+     * </code>
+     */
+    public boolean hasTextEntityExtractionDetails() {
+      return detailsCase_ == 13;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of label text entity extraction operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata text_entity_extraction_details = 13;
+     * </code>
+     */
+    public com.google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata
+        getTextEntityExtractionDetails() {
+      if (textEntityExtractionDetailsBuilder_ == null) {
+        if (detailsCase_ == 13) {
+          return (com.google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata)
+              details_;
+        }
+        return com.google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata
+            .getDefaultInstance();
+      } else {
+        if (detailsCase_ == 13) {
+          return textEntityExtractionDetailsBuilder_.getMessage();
+        }
+        return com.google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of label text entity extraction operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata text_entity_extraction_details = 13;
+     * </code>
+     */
+    public Builder setTextEntityExtractionDetails(
+        com.google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata value) {
+      if (textEntityExtractionDetailsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        details_ = value;
+        onChanged();
+      } else {
+        textEntityExtractionDetailsBuilder_.setMessage(value);
+      }
+      detailsCase_ = 13;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of label text entity extraction operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata text_entity_extraction_details = 13;
+     * </code>
+     */
+    public Builder setTextEntityExtractionDetails(
+        com.google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata.Builder
+            builderForValue) {
+      if (textEntityExtractionDetailsBuilder_ == null) {
+        details_ = builderForValue.build();
+        onChanged();
+      } else {
+        textEntityExtractionDetailsBuilder_.setMessage(builderForValue.build());
+      }
+      detailsCase_ = 13;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of label text entity extraction operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata text_entity_extraction_details = 13;
+     * </code>
+     */
+    public Builder mergeTextEntityExtractionDetails(
+        com.google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata value) {
+      if (textEntityExtractionDetailsBuilder_ == null) {
+        if (detailsCase_ == 13
+            && details_
+                != com.google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata
+                    .getDefaultInstance()) {
+          details_ =
+              com.google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata
+                  .newBuilder(
+                      (com.google.cloud.datalabeling.v1beta1
+                              .LabelTextEntityExtractionOperationMetadata)
+                          details_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          details_ = value;
+        }
+        onChanged();
+      } else {
+        if (detailsCase_ == 13) {
+          textEntityExtractionDetailsBuilder_.mergeFrom(value);
+        }
+        textEntityExtractionDetailsBuilder_.setMessage(value);
+      }
+      detailsCase_ = 13;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of label text entity extraction operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata text_entity_extraction_details = 13;
+     * </code>
+     */
+    public Builder clearTextEntityExtractionDetails() {
+      if (textEntityExtractionDetailsBuilder_ == null) {
+        if (detailsCase_ == 13) {
+          detailsCase_ = 0;
+          details_ = null;
+          onChanged();
+        }
+      } else {
+        if (detailsCase_ == 13) {
+          detailsCase_ = 0;
+          details_ = null;
+        }
+        textEntityExtractionDetailsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of label text entity extraction operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata text_entity_extraction_details = 13;
+     * </code>
+     */
+    public com.google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata.Builder
+        getTextEntityExtractionDetailsBuilder() {
+      return getTextEntityExtractionDetailsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of label text entity extraction operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata text_entity_extraction_details = 13;
+     * </code>
+     */
+    public com.google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadataOrBuilder
+        getTextEntityExtractionDetailsOrBuilder() {
+      if ((detailsCase_ == 13) && (textEntityExtractionDetailsBuilder_ != null)) {
+        return textEntityExtractionDetailsBuilder_.getMessageOrBuilder();
+      } else {
+        if (detailsCase_ == 13) {
+          return (com.google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata)
+              details_;
+        }
+        return com.google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of label text entity extraction operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata text_entity_extraction_details = 13;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata,
+            com.google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata
+                .Builder,
+            com.google.cloud.datalabeling.v1beta1
+                .LabelTextEntityExtractionOperationMetadataOrBuilder>
+        getTextEntityExtractionDetailsFieldBuilder() {
+      if (textEntityExtractionDetailsBuilder_ == null) {
+        if (!(detailsCase_ == 13)) {
+          details_ =
+              com.google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata
+                  .getDefaultInstance();
+        }
+        textEntityExtractionDetailsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata,
+                com.google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata
+                    .Builder,
+                com.google.cloud.datalabeling.v1beta1
+                    .LabelTextEntityExtractionOperationMetadataOrBuilder>(
+                (com.google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata)
+                    details_,
+                getParentForChildren(),
+                isClean());
+        details_ = null;
+      }
+      detailsCase_ = 13;
+      onChanged();
+      ;
+      return textEntityExtractionDetailsBuilder_;
+    }
+
     private int progressPercent_;
     /**
      *
      *
      * <pre>
      * Output only. Progress of label operation. Range: [0, 100].
-     * Currently not supported.
      * </pre>
      *
      * <code>int32 progress_percent = 1;</code>
@@ -1938,7 +5041,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Output only. Progress of label operation. Range: [0, 100].
-     * Currently not supported.
      * </pre>
      *
      * <code>int32 progress_percent = 1;</code>
@@ -1954,7 +5056,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Output only. Progress of label operation. Range: [0, 100].
-     * Currently not supported.
      * </pre>
      *
      * <code>int32 progress_percent = 1;</code>
@@ -1970,9 +5071,9 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
         java.util.Collections.emptyList();
 
     private void ensurePartialFailuresIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00002000) != 0)) {
         partialFailures_ = new java.util.ArrayList<com.google.rpc.Status>(partialFailures_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00002000;
       }
     }
 
@@ -2205,7 +5306,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
     public Builder clearPartialFailures() {
       if (partialFailuresBuilder_ == null) {
         partialFailures_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00002000);
         onChanged();
       } else {
         partialFailuresBuilder_.clear();
@@ -2339,7 +5440,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
                 com.google.rpc.Status.Builder,
                 com.google.rpc.StatusOrBuilder>(
                 partialFailures_,
-                ((bitField0_ & 0x00000002) != 0),
+                ((bitField0_ & 0x00002000) != 0),
                 getParentForChildren(),
                 isClean());
         partialFailures_ = null;
@@ -2347,2449 +5448,183 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       return partialFailuresBuilder_;
     }
 
+    private com.google.protobuf.Timestamp createTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadata,
-            com.google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadata.Builder,
-            com.google.cloud.datalabeling.v1beta1
-                .LabelImageClassificationOperationMetadataOrBuilder>
-        imageClassificationDetailsBuilder_;
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        createTimeBuilder_;
     /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadata image_classification_details = 3;
-     * </code>
+     *
+     *
+     * <pre>
+     * Output only. Timestamp when labeling request was created.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_time = 16;</code>
      */
-    public boolean hasImageClassificationDetails() {
-      return detailsCase_ == 3;
+    public boolean hasCreateTime() {
+      return createTimeBuilder_ != null || createTime_ != null;
     }
     /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadata image_classification_details = 3;
-     * </code>
+     *
+     *
+     * <pre>
+     * Output only. Timestamp when labeling request was created.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_time = 16;</code>
      */
-    public com.google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadata
-        getImageClassificationDetails() {
-      if (imageClassificationDetailsBuilder_ == null) {
-        if (detailsCase_ == 3) {
-          return (com.google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadata)
-              details_;
-        }
-        return com.google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadata
-            .getDefaultInstance();
+    public com.google.protobuf.Timestamp getCreateTime() {
+      if (createTimeBuilder_ == null) {
+        return createTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : createTime_;
       } else {
-        if (detailsCase_ == 3) {
-          return imageClassificationDetailsBuilder_.getMessage();
-        }
-        return com.google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadata
-            .getDefaultInstance();
+        return createTimeBuilder_.getMessage();
       }
     }
     /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadata image_classification_details = 3;
-     * </code>
+     *
+     *
+     * <pre>
+     * Output only. Timestamp when labeling request was created.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_time = 16;</code>
      */
-    public Builder setImageClassificationDetails(
-        com.google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadata value) {
-      if (imageClassificationDetailsBuilder_ == null) {
+    public Builder setCreateTime(com.google.protobuf.Timestamp value) {
+      if (createTimeBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        details_ = value;
+        createTime_ = value;
         onChanged();
       } else {
-        imageClassificationDetailsBuilder_.setMessage(value);
+        createTimeBuilder_.setMessage(value);
       }
-      detailsCase_ = 3;
-      return this;
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadata image_classification_details = 3;
-     * </code>
-     */
-    public Builder setImageClassificationDetails(
-        com.google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadata.Builder
-            builderForValue) {
-      if (imageClassificationDetailsBuilder_ == null) {
-        details_ = builderForValue.build();
-        onChanged();
-      } else {
-        imageClassificationDetailsBuilder_.setMessage(builderForValue.build());
-      }
-      detailsCase_ = 3;
-      return this;
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadata image_classification_details = 3;
-     * </code>
-     */
-    public Builder mergeImageClassificationDetails(
-        com.google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadata value) {
-      if (imageClassificationDetailsBuilder_ == null) {
-        if (detailsCase_ == 3
-            && details_
-                != com.google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadata
-                    .getDefaultInstance()) {
-          details_ =
-              com.google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadata
-                  .newBuilder(
-                      (com.google.cloud.datalabeling.v1beta1
-                              .LabelImageClassificationOperationMetadata)
-                          details_)
-                  .mergeFrom(value)
-                  .buildPartial();
-        } else {
-          details_ = value;
-        }
-        onChanged();
-      } else {
-        if (detailsCase_ == 3) {
-          imageClassificationDetailsBuilder_.mergeFrom(value);
-        }
-        imageClassificationDetailsBuilder_.setMessage(value);
-      }
-      detailsCase_ = 3;
-      return this;
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadata image_classification_details = 3;
-     * </code>
-     */
-    public Builder clearImageClassificationDetails() {
-      if (imageClassificationDetailsBuilder_ == null) {
-        if (detailsCase_ == 3) {
-          detailsCase_ = 0;
-          details_ = null;
-          onChanged();
-        }
-      } else {
-        if (detailsCase_ == 3) {
-          detailsCase_ = 0;
-          details_ = null;
-        }
-        imageClassificationDetailsBuilder_.clear();
-      }
-      return this;
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadata image_classification_details = 3;
-     * </code>
-     */
-    public com.google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadata.Builder
-        getImageClassificationDetailsBuilder() {
-      return getImageClassificationDetailsFieldBuilder().getBuilder();
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadata image_classification_details = 3;
-     * </code>
-     */
-    public com.google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadataOrBuilder
-        getImageClassificationDetailsOrBuilder() {
-      if ((detailsCase_ == 3) && (imageClassificationDetailsBuilder_ != null)) {
-        return imageClassificationDetailsBuilder_.getMessageOrBuilder();
-      } else {
-        if (detailsCase_ == 3) {
-          return (com.google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadata)
-              details_;
-        }
-        return com.google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadata
-            .getDefaultInstance();
-      }
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadata image_classification_details = 3;
-     * </code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadata,
-            com.google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadata.Builder,
-            com.google.cloud.datalabeling.v1beta1
-                .LabelImageClassificationOperationMetadataOrBuilder>
-        getImageClassificationDetailsFieldBuilder() {
-      if (imageClassificationDetailsBuilder_ == null) {
-        if (!(detailsCase_ == 3)) {
-          details_ =
-              com.google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadata
-                  .getDefaultInstance();
-        }
-        imageClassificationDetailsBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadata,
-                com.google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadata
-                    .Builder,
-                com.google.cloud.datalabeling.v1beta1
-                    .LabelImageClassificationOperationMetadataOrBuilder>(
-                (com.google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadata)
-                    details_,
-                getParentForChildren(),
-                isClean());
-        details_ = null;
-      }
-      detailsCase_ = 3;
-      onChanged();
-      ;
-      return imageClassificationDetailsBuilder_;
-    }
 
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata,
-            com.google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata.Builder,
-            com.google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadataOrBuilder>
-        imageBoundingBoxDetailsBuilder_;
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata image_bounding_box_details = 4;
-     * </code>
-     */
-    public boolean hasImageBoundingBoxDetails() {
-      return detailsCase_ == 4;
+      return this;
     }
     /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata image_bounding_box_details = 4;
-     * </code>
+     *
+     *
+     * <pre>
+     * Output only. Timestamp when labeling request was created.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_time = 16;</code>
      */
-    public com.google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata
-        getImageBoundingBoxDetails() {
-      if (imageBoundingBoxDetailsBuilder_ == null) {
-        if (detailsCase_ == 4) {
-          return (com.google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata)
-              details_;
-        }
-        return com.google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata
-            .getDefaultInstance();
-      } else {
-        if (detailsCase_ == 4) {
-          return imageBoundingBoxDetailsBuilder_.getMessage();
-        }
-        return com.google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata
-            .getDefaultInstance();
-      }
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata image_bounding_box_details = 4;
-     * </code>
-     */
-    public Builder setImageBoundingBoxDetails(
-        com.google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata value) {
-      if (imageBoundingBoxDetailsBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        details_ = value;
+    public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (createTimeBuilder_ == null) {
+        createTime_ = builderForValue.build();
         onChanged();
       } else {
-        imageBoundingBoxDetailsBuilder_.setMessage(value);
+        createTimeBuilder_.setMessage(builderForValue.build());
       }
-      detailsCase_ = 4;
-      return this;
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata image_bounding_box_details = 4;
-     * </code>
-     */
-    public Builder setImageBoundingBoxDetails(
-        com.google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata.Builder
-            builderForValue) {
-      if (imageBoundingBoxDetailsBuilder_ == null) {
-        details_ = builderForValue.build();
-        onChanged();
-      } else {
-        imageBoundingBoxDetailsBuilder_.setMessage(builderForValue.build());
-      }
-      detailsCase_ = 4;
-      return this;
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata image_bounding_box_details = 4;
-     * </code>
-     */
-    public Builder mergeImageBoundingBoxDetails(
-        com.google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata value) {
-      if (imageBoundingBoxDetailsBuilder_ == null) {
-        if (detailsCase_ == 4
-            && details_
-                != com.google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata
-                    .getDefaultInstance()) {
-          details_ =
-              com.google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata
-                  .newBuilder(
-                      (com.google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata)
-                          details_)
-                  .mergeFrom(value)
-                  .buildPartial();
-        } else {
-          details_ = value;
-        }
-        onChanged();
-      } else {
-        if (detailsCase_ == 4) {
-          imageBoundingBoxDetailsBuilder_.mergeFrom(value);
-        }
-        imageBoundingBoxDetailsBuilder_.setMessage(value);
-      }
-      detailsCase_ = 4;
-      return this;
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata image_bounding_box_details = 4;
-     * </code>
-     */
-    public Builder clearImageBoundingBoxDetails() {
-      if (imageBoundingBoxDetailsBuilder_ == null) {
-        if (detailsCase_ == 4) {
-          detailsCase_ = 0;
-          details_ = null;
-          onChanged();
-        }
-      } else {
-        if (detailsCase_ == 4) {
-          detailsCase_ = 0;
-          details_ = null;
-        }
-        imageBoundingBoxDetailsBuilder_.clear();
-      }
-      return this;
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata image_bounding_box_details = 4;
-     * </code>
-     */
-    public com.google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata.Builder
-        getImageBoundingBoxDetailsBuilder() {
-      return getImageBoundingBoxDetailsFieldBuilder().getBuilder();
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata image_bounding_box_details = 4;
-     * </code>
-     */
-    public com.google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadataOrBuilder
-        getImageBoundingBoxDetailsOrBuilder() {
-      if ((detailsCase_ == 4) && (imageBoundingBoxDetailsBuilder_ != null)) {
-        return imageBoundingBoxDetailsBuilder_.getMessageOrBuilder();
-      } else {
-        if (detailsCase_ == 4) {
-          return (com.google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata)
-              details_;
-        }
-        return com.google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata
-            .getDefaultInstance();
-      }
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata image_bounding_box_details = 4;
-     * </code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata,
-            com.google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata.Builder,
-            com.google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadataOrBuilder>
-        getImageBoundingBoxDetailsFieldBuilder() {
-      if (imageBoundingBoxDetailsBuilder_ == null) {
-        if (!(detailsCase_ == 4)) {
-          details_ =
-              com.google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata
-                  .getDefaultInstance();
-        }
-        imageBoundingBoxDetailsBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata,
-                com.google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata
-                    .Builder,
-                com.google.cloud.datalabeling.v1beta1
-                    .LabelImageBoundingBoxOperationMetadataOrBuilder>(
-                (com.google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata)
-                    details_,
-                getParentForChildren(),
-                isClean());
-        details_ = null;
-      }
-      detailsCase_ = 4;
-      onChanged();
-      ;
-      return imageBoundingBoxDetailsBuilder_;
-    }
 
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata,
-            com.google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata.Builder,
-            com.google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadataOrBuilder>
-        imageBoundingPolyDetailsBuilder_;
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata image_bounding_poly_details = 11;
-     * </code>
-     */
-    public boolean hasImageBoundingPolyDetails() {
-      return detailsCase_ == 11;
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata image_bounding_poly_details = 11;
-     * </code>
-     */
-    public com.google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata
-        getImageBoundingPolyDetails() {
-      if (imageBoundingPolyDetailsBuilder_ == null) {
-        if (detailsCase_ == 11) {
-          return (com.google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata)
-              details_;
-        }
-        return com.google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata
-            .getDefaultInstance();
-      } else {
-        if (detailsCase_ == 11) {
-          return imageBoundingPolyDetailsBuilder_.getMessage();
-        }
-        return com.google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata
-            .getDefaultInstance();
-      }
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata image_bounding_poly_details = 11;
-     * </code>
-     */
-    public Builder setImageBoundingPolyDetails(
-        com.google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata value) {
-      if (imageBoundingPolyDetailsBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        details_ = value;
-        onChanged();
-      } else {
-        imageBoundingPolyDetailsBuilder_.setMessage(value);
-      }
-      detailsCase_ = 11;
       return this;
     }
     /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata image_bounding_poly_details = 11;
-     * </code>
+     *
+     *
+     * <pre>
+     * Output only. Timestamp when labeling request was created.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_time = 16;</code>
      */
-    public Builder setImageBoundingPolyDetails(
-        com.google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata.Builder
-            builderForValue) {
-      if (imageBoundingPolyDetailsBuilder_ == null) {
-        details_ = builderForValue.build();
-        onChanged();
-      } else {
-        imageBoundingPolyDetailsBuilder_.setMessage(builderForValue.build());
-      }
-      detailsCase_ = 11;
-      return this;
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata image_bounding_poly_details = 11;
-     * </code>
-     */
-    public Builder mergeImageBoundingPolyDetails(
-        com.google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata value) {
-      if (imageBoundingPolyDetailsBuilder_ == null) {
-        if (detailsCase_ == 11
-            && details_
-                != com.google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata
-                    .getDefaultInstance()) {
-          details_ =
-              com.google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata
-                  .newBuilder(
-                      (com.google.cloud.datalabeling.v1beta1
-                              .LabelImageBoundingPolyOperationMetadata)
-                          details_)
-                  .mergeFrom(value)
-                  .buildPartial();
+    public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
+      if (createTimeBuilder_ == null) {
+        if (createTime_ != null) {
+          createTime_ =
+              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
         } else {
-          details_ = value;
+          createTime_ = value;
         }
         onChanged();
       } else {
-        if (detailsCase_ == 11) {
-          imageBoundingPolyDetailsBuilder_.mergeFrom(value);
-        }
-        imageBoundingPolyDetailsBuilder_.setMessage(value);
+        createTimeBuilder_.mergeFrom(value);
       }
-      detailsCase_ = 11;
-      return this;
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata image_bounding_poly_details = 11;
-     * </code>
-     */
-    public Builder clearImageBoundingPolyDetails() {
-      if (imageBoundingPolyDetailsBuilder_ == null) {
-        if (detailsCase_ == 11) {
-          detailsCase_ = 0;
-          details_ = null;
-          onChanged();
-        }
-      } else {
-        if (detailsCase_ == 11) {
-          detailsCase_ = 0;
-          details_ = null;
-        }
-        imageBoundingPolyDetailsBuilder_.clear();
-      }
-      return this;
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata image_bounding_poly_details = 11;
-     * </code>
-     */
-    public com.google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata.Builder
-        getImageBoundingPolyDetailsBuilder() {
-      return getImageBoundingPolyDetailsFieldBuilder().getBuilder();
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata image_bounding_poly_details = 11;
-     * </code>
-     */
-    public com.google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadataOrBuilder
-        getImageBoundingPolyDetailsOrBuilder() {
-      if ((detailsCase_ == 11) && (imageBoundingPolyDetailsBuilder_ != null)) {
-        return imageBoundingPolyDetailsBuilder_.getMessageOrBuilder();
-      } else {
-        if (detailsCase_ == 11) {
-          return (com.google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata)
-              details_;
-        }
-        return com.google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata
-            .getDefaultInstance();
-      }
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata image_bounding_poly_details = 11;
-     * </code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata,
-            com.google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata.Builder,
-            com.google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadataOrBuilder>
-        getImageBoundingPolyDetailsFieldBuilder() {
-      if (imageBoundingPolyDetailsBuilder_ == null) {
-        if (!(detailsCase_ == 11)) {
-          details_ =
-              com.google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata
-                  .getDefaultInstance();
-        }
-        imageBoundingPolyDetailsBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata,
-                com.google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata
-                    .Builder,
-                com.google.cloud.datalabeling.v1beta1
-                    .LabelImageBoundingPolyOperationMetadataOrBuilder>(
-                (com.google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata)
-                    details_,
-                getParentForChildren(),
-                isClean());
-        details_ = null;
-      }
-      detailsCase_ = 11;
-      onChanged();
-      ;
-      return imageBoundingPolyDetailsBuilder_;
-    }
 
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.datalabeling.v1beta1.LabelImageOrientedBoundingBoxOperationMetadata,
-            com.google.cloud.datalabeling.v1beta1.LabelImageOrientedBoundingBoxOperationMetadata
-                .Builder,
-            com.google.cloud.datalabeling.v1beta1
-                .LabelImageOrientedBoundingBoxOperationMetadataOrBuilder>
-        imageOrientedBoundingBoxDetailsBuilder_;
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelImageOrientedBoundingBoxOperationMetadata image_oriented_bounding_box_details = 14;
-     * </code>
-     */
-    public boolean hasImageOrientedBoundingBoxDetails() {
-      return detailsCase_ == 14;
+      return this;
     }
     /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelImageOrientedBoundingBoxOperationMetadata image_oriented_bounding_box_details = 14;
-     * </code>
+     *
+     *
+     * <pre>
+     * Output only. Timestamp when labeling request was created.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_time = 16;</code>
      */
-    public com.google.cloud.datalabeling.v1beta1.LabelImageOrientedBoundingBoxOperationMetadata
-        getImageOrientedBoundingBoxDetails() {
-      if (imageOrientedBoundingBoxDetailsBuilder_ == null) {
-        if (detailsCase_ == 14) {
-          return (com.google.cloud.datalabeling.v1beta1
-                  .LabelImageOrientedBoundingBoxOperationMetadata)
-              details_;
-        }
-        return com.google.cloud.datalabeling.v1beta1.LabelImageOrientedBoundingBoxOperationMetadata
-            .getDefaultInstance();
-      } else {
-        if (detailsCase_ == 14) {
-          return imageOrientedBoundingBoxDetailsBuilder_.getMessage();
-        }
-        return com.google.cloud.datalabeling.v1beta1.LabelImageOrientedBoundingBoxOperationMetadata
-            .getDefaultInstance();
-      }
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelImageOrientedBoundingBoxOperationMetadata image_oriented_bounding_box_details = 14;
-     * </code>
-     */
-    public Builder setImageOrientedBoundingBoxDetails(
-        com.google.cloud.datalabeling.v1beta1.LabelImageOrientedBoundingBoxOperationMetadata
-            value) {
-      if (imageOrientedBoundingBoxDetailsBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        details_ = value;
+    public Builder clearCreateTime() {
+      if (createTimeBuilder_ == null) {
+        createTime_ = null;
         onChanged();
       } else {
-        imageOrientedBoundingBoxDetailsBuilder_.setMessage(value);
+        createTime_ = null;
+        createTimeBuilder_ = null;
       }
-      detailsCase_ = 14;
-      return this;
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelImageOrientedBoundingBoxOperationMetadata image_oriented_bounding_box_details = 14;
-     * </code>
-     */
-    public Builder setImageOrientedBoundingBoxDetails(
-        com.google.cloud.datalabeling.v1beta1.LabelImageOrientedBoundingBoxOperationMetadata.Builder
-            builderForValue) {
-      if (imageOrientedBoundingBoxDetailsBuilder_ == null) {
-        details_ = builderForValue.build();
-        onChanged();
-      } else {
-        imageOrientedBoundingBoxDetailsBuilder_.setMessage(builderForValue.build());
-      }
-      detailsCase_ = 14;
-      return this;
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelImageOrientedBoundingBoxOperationMetadata image_oriented_bounding_box_details = 14;
-     * </code>
-     */
-    public Builder mergeImageOrientedBoundingBoxDetails(
-        com.google.cloud.datalabeling.v1beta1.LabelImageOrientedBoundingBoxOperationMetadata
-            value) {
-      if (imageOrientedBoundingBoxDetailsBuilder_ == null) {
-        if (detailsCase_ == 14
-            && details_
-                != com.google.cloud.datalabeling.v1beta1
-                    .LabelImageOrientedBoundingBoxOperationMetadata.getDefaultInstance()) {
-          details_ =
-              com.google.cloud.datalabeling.v1beta1.LabelImageOrientedBoundingBoxOperationMetadata
-                  .newBuilder(
-                      (com.google.cloud.datalabeling.v1beta1
-                              .LabelImageOrientedBoundingBoxOperationMetadata)
-                          details_)
-                  .mergeFrom(value)
-                  .buildPartial();
-        } else {
-          details_ = value;
-        }
-        onChanged();
-      } else {
-        if (detailsCase_ == 14) {
-          imageOrientedBoundingBoxDetailsBuilder_.mergeFrom(value);
-        }
-        imageOrientedBoundingBoxDetailsBuilder_.setMessage(value);
-      }
-      detailsCase_ = 14;
-      return this;
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelImageOrientedBoundingBoxOperationMetadata image_oriented_bounding_box_details = 14;
-     * </code>
-     */
-    public Builder clearImageOrientedBoundingBoxDetails() {
-      if (imageOrientedBoundingBoxDetailsBuilder_ == null) {
-        if (detailsCase_ == 14) {
-          detailsCase_ = 0;
-          details_ = null;
-          onChanged();
-        }
-      } else {
-        if (detailsCase_ == 14) {
-          detailsCase_ = 0;
-          details_ = null;
-        }
-        imageOrientedBoundingBoxDetailsBuilder_.clear();
-      }
-      return this;
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelImageOrientedBoundingBoxOperationMetadata image_oriented_bounding_box_details = 14;
-     * </code>
-     */
-    public com.google.cloud.datalabeling.v1beta1.LabelImageOrientedBoundingBoxOperationMetadata
-            .Builder
-        getImageOrientedBoundingBoxDetailsBuilder() {
-      return getImageOrientedBoundingBoxDetailsFieldBuilder().getBuilder();
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelImageOrientedBoundingBoxOperationMetadata image_oriented_bounding_box_details = 14;
-     * </code>
-     */
-    public com.google.cloud.datalabeling.v1beta1
-            .LabelImageOrientedBoundingBoxOperationMetadataOrBuilder
-        getImageOrientedBoundingBoxDetailsOrBuilder() {
-      if ((detailsCase_ == 14) && (imageOrientedBoundingBoxDetailsBuilder_ != null)) {
-        return imageOrientedBoundingBoxDetailsBuilder_.getMessageOrBuilder();
-      } else {
-        if (detailsCase_ == 14) {
-          return (com.google.cloud.datalabeling.v1beta1
-                  .LabelImageOrientedBoundingBoxOperationMetadata)
-              details_;
-        }
-        return com.google.cloud.datalabeling.v1beta1.LabelImageOrientedBoundingBoxOperationMetadata
-            .getDefaultInstance();
-      }
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelImageOrientedBoundingBoxOperationMetadata image_oriented_bounding_box_details = 14;
-     * </code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.datalabeling.v1beta1.LabelImageOrientedBoundingBoxOperationMetadata,
-            com.google.cloud.datalabeling.v1beta1.LabelImageOrientedBoundingBoxOperationMetadata
-                .Builder,
-            com.google.cloud.datalabeling.v1beta1
-                .LabelImageOrientedBoundingBoxOperationMetadataOrBuilder>
-        getImageOrientedBoundingBoxDetailsFieldBuilder() {
-      if (imageOrientedBoundingBoxDetailsBuilder_ == null) {
-        if (!(detailsCase_ == 14)) {
-          details_ =
-              com.google.cloud.datalabeling.v1beta1.LabelImageOrientedBoundingBoxOperationMetadata
-                  .getDefaultInstance();
-        }
-        imageOrientedBoundingBoxDetailsBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.cloud.datalabeling.v1beta1
-                    .LabelImageOrientedBoundingBoxOperationMetadata,
-                com.google.cloud.datalabeling.v1beta1.LabelImageOrientedBoundingBoxOperationMetadata
-                    .Builder,
-                com.google.cloud.datalabeling.v1beta1
-                    .LabelImageOrientedBoundingBoxOperationMetadataOrBuilder>(
-                (com.google.cloud.datalabeling.v1beta1
-                        .LabelImageOrientedBoundingBoxOperationMetadata)
-                    details_,
-                getParentForChildren(),
-                isClean());
-        details_ = null;
-      }
-      detailsCase_ = 14;
-      onChanged();
-      ;
-      return imageOrientedBoundingBoxDetailsBuilder_;
-    }
 
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata,
-            com.google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata.Builder,
-            com.google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadataOrBuilder>
-        imagePolylineDetailsBuilder_;
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata image_polyline_details = 12;
-     * </code>
-     */
-    public boolean hasImagePolylineDetails() {
-      return detailsCase_ == 12;
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata image_polyline_details = 12;
-     * </code>
-     */
-    public com.google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata
-        getImagePolylineDetails() {
-      if (imagePolylineDetailsBuilder_ == null) {
-        if (detailsCase_ == 12) {
-          return (com.google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata)
-              details_;
-        }
-        return com.google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata
-            .getDefaultInstance();
-      } else {
-        if (detailsCase_ == 12) {
-          return imagePolylineDetailsBuilder_.getMessage();
-        }
-        return com.google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata
-            .getDefaultInstance();
-      }
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata image_polyline_details = 12;
-     * </code>
-     */
-    public Builder setImagePolylineDetails(
-        com.google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata value) {
-      if (imagePolylineDetailsBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        details_ = value;
-        onChanged();
-      } else {
-        imagePolylineDetailsBuilder_.setMessage(value);
-      }
-      detailsCase_ = 12;
       return this;
     }
     /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata image_polyline_details = 12;
-     * </code>
+     *
+     *
+     * <pre>
+     * Output only. Timestamp when labeling request was created.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_time = 16;</code>
      */
-    public Builder setImagePolylineDetails(
-        com.google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata.Builder
-            builderForValue) {
-      if (imagePolylineDetailsBuilder_ == null) {
-        details_ = builderForValue.build();
-        onChanged();
-      } else {
-        imagePolylineDetailsBuilder_.setMessage(builderForValue.build());
-      }
-      detailsCase_ = 12;
-      return this;
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata image_polyline_details = 12;
-     * </code>
-     */
-    public Builder mergeImagePolylineDetails(
-        com.google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata value) {
-      if (imagePolylineDetailsBuilder_ == null) {
-        if (detailsCase_ == 12
-            && details_
-                != com.google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata
-                    .getDefaultInstance()) {
-          details_ =
-              com.google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata.newBuilder(
-                      (com.google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata)
-                          details_)
-                  .mergeFrom(value)
-                  .buildPartial();
-        } else {
-          details_ = value;
-        }
-        onChanged();
-      } else {
-        if (detailsCase_ == 12) {
-          imagePolylineDetailsBuilder_.mergeFrom(value);
-        }
-        imagePolylineDetailsBuilder_.setMessage(value);
-      }
-      detailsCase_ = 12;
-      return this;
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata image_polyline_details = 12;
-     * </code>
-     */
-    public Builder clearImagePolylineDetails() {
-      if (imagePolylineDetailsBuilder_ == null) {
-        if (detailsCase_ == 12) {
-          detailsCase_ = 0;
-          details_ = null;
-          onChanged();
-        }
-      } else {
-        if (detailsCase_ == 12) {
-          detailsCase_ = 0;
-          details_ = null;
-        }
-        imagePolylineDetailsBuilder_.clear();
-      }
-      return this;
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata image_polyline_details = 12;
-     * </code>
-     */
-    public com.google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata.Builder
-        getImagePolylineDetailsBuilder() {
-      return getImagePolylineDetailsFieldBuilder().getBuilder();
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata image_polyline_details = 12;
-     * </code>
-     */
-    public com.google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadataOrBuilder
-        getImagePolylineDetailsOrBuilder() {
-      if ((detailsCase_ == 12) && (imagePolylineDetailsBuilder_ != null)) {
-        return imagePolylineDetailsBuilder_.getMessageOrBuilder();
-      } else {
-        if (detailsCase_ == 12) {
-          return (com.google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata)
-              details_;
-        }
-        return com.google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata
-            .getDefaultInstance();
-      }
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata image_polyline_details = 12;
-     * </code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata,
-            com.google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata.Builder,
-            com.google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadataOrBuilder>
-        getImagePolylineDetailsFieldBuilder() {
-      if (imagePolylineDetailsBuilder_ == null) {
-        if (!(detailsCase_ == 12)) {
-          details_ =
-              com.google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata
-                  .getDefaultInstance();
-        }
-        imagePolylineDetailsBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata,
-                com.google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata.Builder,
-                com.google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadataOrBuilder>(
-                (com.google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata)
-                    details_,
-                getParentForChildren(),
-                isClean());
-        details_ = null;
-      }
-      detailsCase_ = 12;
-      onChanged();
-      ;
-      return imagePolylineDetailsBuilder_;
-    }
+    public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
 
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata,
-            com.google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata.Builder,
-            com.google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadataOrBuilder>
-        imageSegmentationDetailsBuilder_;
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata image_segmentation_details = 15;
-     * </code>
-     */
-    public boolean hasImageSegmentationDetails() {
-      return detailsCase_ == 15;
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata image_segmentation_details = 15;
-     * </code>
-     */
-    public com.google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata
-        getImageSegmentationDetails() {
-      if (imageSegmentationDetailsBuilder_ == null) {
-        if (detailsCase_ == 15) {
-          return (com.google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata)
-              details_;
-        }
-        return com.google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata
-            .getDefaultInstance();
-      } else {
-        if (detailsCase_ == 15) {
-          return imageSegmentationDetailsBuilder_.getMessage();
-        }
-        return com.google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata
-            .getDefaultInstance();
-      }
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata image_segmentation_details = 15;
-     * </code>
-     */
-    public Builder setImageSegmentationDetails(
-        com.google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata value) {
-      if (imageSegmentationDetailsBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        details_ = value;
-        onChanged();
-      } else {
-        imageSegmentationDetailsBuilder_.setMessage(value);
-      }
-      detailsCase_ = 15;
-      return this;
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata image_segmentation_details = 15;
-     * </code>
-     */
-    public Builder setImageSegmentationDetails(
-        com.google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata.Builder
-            builderForValue) {
-      if (imageSegmentationDetailsBuilder_ == null) {
-        details_ = builderForValue.build();
-        onChanged();
-      } else {
-        imageSegmentationDetailsBuilder_.setMessage(builderForValue.build());
-      }
-      detailsCase_ = 15;
-      return this;
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata image_segmentation_details = 15;
-     * </code>
-     */
-    public Builder mergeImageSegmentationDetails(
-        com.google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata value) {
-      if (imageSegmentationDetailsBuilder_ == null) {
-        if (detailsCase_ == 15
-            && details_
-                != com.google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata
-                    .getDefaultInstance()) {
-          details_ =
-              com.google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata
-                  .newBuilder(
-                      (com.google.cloud.datalabeling.v1beta1
-                              .LabelImageSegmentationOperationMetadata)
-                          details_)
-                  .mergeFrom(value)
-                  .buildPartial();
-        } else {
-          details_ = value;
-        }
-        onChanged();
-      } else {
-        if (detailsCase_ == 15) {
-          imageSegmentationDetailsBuilder_.mergeFrom(value);
-        }
-        imageSegmentationDetailsBuilder_.setMessage(value);
-      }
-      detailsCase_ = 15;
-      return this;
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata image_segmentation_details = 15;
-     * </code>
-     */
-    public Builder clearImageSegmentationDetails() {
-      if (imageSegmentationDetailsBuilder_ == null) {
-        if (detailsCase_ == 15) {
-          detailsCase_ = 0;
-          details_ = null;
-          onChanged();
-        }
-      } else {
-        if (detailsCase_ == 15) {
-          detailsCase_ = 0;
-          details_ = null;
-        }
-        imageSegmentationDetailsBuilder_.clear();
-      }
-      return this;
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata image_segmentation_details = 15;
-     * </code>
-     */
-    public com.google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata.Builder
-        getImageSegmentationDetailsBuilder() {
-      return getImageSegmentationDetailsFieldBuilder().getBuilder();
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata image_segmentation_details = 15;
-     * </code>
-     */
-    public com.google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadataOrBuilder
-        getImageSegmentationDetailsOrBuilder() {
-      if ((detailsCase_ == 15) && (imageSegmentationDetailsBuilder_ != null)) {
-        return imageSegmentationDetailsBuilder_.getMessageOrBuilder();
-      } else {
-        if (detailsCase_ == 15) {
-          return (com.google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata)
-              details_;
-        }
-        return com.google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata
-            .getDefaultInstance();
-      }
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata image_segmentation_details = 15;
-     * </code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata,
-            com.google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata.Builder,
-            com.google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadataOrBuilder>
-        getImageSegmentationDetailsFieldBuilder() {
-      if (imageSegmentationDetailsBuilder_ == null) {
-        if (!(detailsCase_ == 15)) {
-          details_ =
-              com.google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata
-                  .getDefaultInstance();
-        }
-        imageSegmentationDetailsBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata,
-                com.google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata
-                    .Builder,
-                com.google.cloud.datalabeling.v1beta1
-                    .LabelImageSegmentationOperationMetadataOrBuilder>(
-                (com.google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata)
-                    details_,
-                getParentForChildren(),
-                isClean());
-        details_ = null;
-      }
-      detailsCase_ = 15;
       onChanged();
-      ;
-      return imageSegmentationDetailsBuilder_;
-    }
-
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadata,
-            com.google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadata.Builder,
-            com.google.cloud.datalabeling.v1beta1
-                .LabelVideoClassificationOperationMetadataOrBuilder>
-        videoClassificationDetailsBuilder_;
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadata video_classification_details = 5;
-     * </code>
-     */
-    public boolean hasVideoClassificationDetails() {
-      return detailsCase_ == 5;
+      return getCreateTimeFieldBuilder().getBuilder();
     }
     /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadata video_classification_details = 5;
-     * </code>
+     *
+     *
+     * <pre>
+     * Output only. Timestamp when labeling request was created.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_time = 16;</code>
      */
-    public com.google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadata
-        getVideoClassificationDetails() {
-      if (videoClassificationDetailsBuilder_ == null) {
-        if (detailsCase_ == 5) {
-          return (com.google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadata)
-              details_;
-        }
-        return com.google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadata
-            .getDefaultInstance();
+    public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
+      if (createTimeBuilder_ != null) {
+        return createTimeBuilder_.getMessageOrBuilder();
       } else {
-        if (detailsCase_ == 5) {
-          return videoClassificationDetailsBuilder_.getMessage();
-        }
-        return com.google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadata
-            .getDefaultInstance();
+        return createTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : createTime_;
       }
     }
     /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadata video_classification_details = 5;
-     * </code>
-     */
-    public Builder setVideoClassificationDetails(
-        com.google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadata value) {
-      if (videoClassificationDetailsBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        details_ = value;
-        onChanged();
-      } else {
-        videoClassificationDetailsBuilder_.setMessage(value);
-      }
-      detailsCase_ = 5;
-      return this;
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadata video_classification_details = 5;
-     * </code>
-     */
-    public Builder setVideoClassificationDetails(
-        com.google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadata.Builder
-            builderForValue) {
-      if (videoClassificationDetailsBuilder_ == null) {
-        details_ = builderForValue.build();
-        onChanged();
-      } else {
-        videoClassificationDetailsBuilder_.setMessage(builderForValue.build());
-      }
-      detailsCase_ = 5;
-      return this;
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadata video_classification_details = 5;
-     * </code>
-     */
-    public Builder mergeVideoClassificationDetails(
-        com.google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadata value) {
-      if (videoClassificationDetailsBuilder_ == null) {
-        if (detailsCase_ == 5
-            && details_
-                != com.google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadata
-                    .getDefaultInstance()) {
-          details_ =
-              com.google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadata
-                  .newBuilder(
-                      (com.google.cloud.datalabeling.v1beta1
-                              .LabelVideoClassificationOperationMetadata)
-                          details_)
-                  .mergeFrom(value)
-                  .buildPartial();
-        } else {
-          details_ = value;
-        }
-        onChanged();
-      } else {
-        if (detailsCase_ == 5) {
-          videoClassificationDetailsBuilder_.mergeFrom(value);
-        }
-        videoClassificationDetailsBuilder_.setMessage(value);
-      }
-      detailsCase_ = 5;
-      return this;
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadata video_classification_details = 5;
-     * </code>
-     */
-    public Builder clearVideoClassificationDetails() {
-      if (videoClassificationDetailsBuilder_ == null) {
-        if (detailsCase_ == 5) {
-          detailsCase_ = 0;
-          details_ = null;
-          onChanged();
-        }
-      } else {
-        if (detailsCase_ == 5) {
-          detailsCase_ = 0;
-          details_ = null;
-        }
-        videoClassificationDetailsBuilder_.clear();
-      }
-      return this;
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadata video_classification_details = 5;
-     * </code>
-     */
-    public com.google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadata.Builder
-        getVideoClassificationDetailsBuilder() {
-      return getVideoClassificationDetailsFieldBuilder().getBuilder();
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadata video_classification_details = 5;
-     * </code>
-     */
-    public com.google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadataOrBuilder
-        getVideoClassificationDetailsOrBuilder() {
-      if ((detailsCase_ == 5) && (videoClassificationDetailsBuilder_ != null)) {
-        return videoClassificationDetailsBuilder_.getMessageOrBuilder();
-      } else {
-        if (detailsCase_ == 5) {
-          return (com.google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadata)
-              details_;
-        }
-        return com.google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadata
-            .getDefaultInstance();
-      }
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadata video_classification_details = 5;
-     * </code>
+     *
+     *
+     * <pre>
+     * Output only. Timestamp when labeling request was created.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_time = 16;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadata,
-            com.google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadata.Builder,
-            com.google.cloud.datalabeling.v1beta1
-                .LabelVideoClassificationOperationMetadataOrBuilder>
-        getVideoClassificationDetailsFieldBuilder() {
-      if (videoClassificationDetailsBuilder_ == null) {
-        if (!(detailsCase_ == 5)) {
-          details_ =
-              com.google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadata
-                  .getDefaultInstance();
-        }
-        videoClassificationDetailsBuilder_ =
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getCreateTimeFieldBuilder() {
+      if (createTimeBuilder_ == null) {
+        createTimeBuilder_ =
             new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadata,
-                com.google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadata
-                    .Builder,
-                com.google.cloud.datalabeling.v1beta1
-                    .LabelVideoClassificationOperationMetadataOrBuilder>(
-                (com.google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadata)
-                    details_,
-                getParentForChildren(),
-                isClean());
-        details_ = null;
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getCreateTime(), getParentForChildren(), isClean());
+        createTime_ = null;
       }
-      detailsCase_ = 5;
-      onChanged();
-      ;
-      return videoClassificationDetailsBuilder_;
-    }
-
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadata,
-            com.google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadata
-                .Builder,
-            com.google.cloud.datalabeling.v1beta1
-                .LabelVideoObjectDetectionOperationMetadataOrBuilder>
-        videoObjectDetectionDetailsBuilder_;
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadata video_object_detection_details = 6;
-     * </code>
-     */
-    public boolean hasVideoObjectDetectionDetails() {
-      return detailsCase_ == 6;
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadata video_object_detection_details = 6;
-     * </code>
-     */
-    public com.google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadata
-        getVideoObjectDetectionDetails() {
-      if (videoObjectDetectionDetailsBuilder_ == null) {
-        if (detailsCase_ == 6) {
-          return (com.google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadata)
-              details_;
-        }
-        return com.google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadata
-            .getDefaultInstance();
-      } else {
-        if (detailsCase_ == 6) {
-          return videoObjectDetectionDetailsBuilder_.getMessage();
-        }
-        return com.google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadata
-            .getDefaultInstance();
-      }
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadata video_object_detection_details = 6;
-     * </code>
-     */
-    public Builder setVideoObjectDetectionDetails(
-        com.google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadata value) {
-      if (videoObjectDetectionDetailsBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        details_ = value;
-        onChanged();
-      } else {
-        videoObjectDetectionDetailsBuilder_.setMessage(value);
-      }
-      detailsCase_ = 6;
-      return this;
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadata video_object_detection_details = 6;
-     * </code>
-     */
-    public Builder setVideoObjectDetectionDetails(
-        com.google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadata.Builder
-            builderForValue) {
-      if (videoObjectDetectionDetailsBuilder_ == null) {
-        details_ = builderForValue.build();
-        onChanged();
-      } else {
-        videoObjectDetectionDetailsBuilder_.setMessage(builderForValue.build());
-      }
-      detailsCase_ = 6;
-      return this;
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadata video_object_detection_details = 6;
-     * </code>
-     */
-    public Builder mergeVideoObjectDetectionDetails(
-        com.google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadata value) {
-      if (videoObjectDetectionDetailsBuilder_ == null) {
-        if (detailsCase_ == 6
-            && details_
-                != com.google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadata
-                    .getDefaultInstance()) {
-          details_ =
-              com.google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadata
-                  .newBuilder(
-                      (com.google.cloud.datalabeling.v1beta1
-                              .LabelVideoObjectDetectionOperationMetadata)
-                          details_)
-                  .mergeFrom(value)
-                  .buildPartial();
-        } else {
-          details_ = value;
-        }
-        onChanged();
-      } else {
-        if (detailsCase_ == 6) {
-          videoObjectDetectionDetailsBuilder_.mergeFrom(value);
-        }
-        videoObjectDetectionDetailsBuilder_.setMessage(value);
-      }
-      detailsCase_ = 6;
-      return this;
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadata video_object_detection_details = 6;
-     * </code>
-     */
-    public Builder clearVideoObjectDetectionDetails() {
-      if (videoObjectDetectionDetailsBuilder_ == null) {
-        if (detailsCase_ == 6) {
-          detailsCase_ = 0;
-          details_ = null;
-          onChanged();
-        }
-      } else {
-        if (detailsCase_ == 6) {
-          detailsCase_ = 0;
-          details_ = null;
-        }
-        videoObjectDetectionDetailsBuilder_.clear();
-      }
-      return this;
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadata video_object_detection_details = 6;
-     * </code>
-     */
-    public com.google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadata.Builder
-        getVideoObjectDetectionDetailsBuilder() {
-      return getVideoObjectDetectionDetailsFieldBuilder().getBuilder();
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadata video_object_detection_details = 6;
-     * </code>
-     */
-    public com.google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadataOrBuilder
-        getVideoObjectDetectionDetailsOrBuilder() {
-      if ((detailsCase_ == 6) && (videoObjectDetectionDetailsBuilder_ != null)) {
-        return videoObjectDetectionDetailsBuilder_.getMessageOrBuilder();
-      } else {
-        if (detailsCase_ == 6) {
-          return (com.google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadata)
-              details_;
-        }
-        return com.google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadata
-            .getDefaultInstance();
-      }
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadata video_object_detection_details = 6;
-     * </code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadata,
-            com.google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadata
-                .Builder,
-            com.google.cloud.datalabeling.v1beta1
-                .LabelVideoObjectDetectionOperationMetadataOrBuilder>
-        getVideoObjectDetectionDetailsFieldBuilder() {
-      if (videoObjectDetectionDetailsBuilder_ == null) {
-        if (!(detailsCase_ == 6)) {
-          details_ =
-              com.google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadata
-                  .getDefaultInstance();
-        }
-        videoObjectDetectionDetailsBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadata,
-                com.google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadata
-                    .Builder,
-                com.google.cloud.datalabeling.v1beta1
-                    .LabelVideoObjectDetectionOperationMetadataOrBuilder>(
-                (com.google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadata)
-                    details_,
-                getParentForChildren(),
-                isClean());
-        details_ = null;
-      }
-      detailsCase_ = 6;
-      onChanged();
-      ;
-      return videoObjectDetectionDetailsBuilder_;
-    }
-
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadata,
-            com.google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadata.Builder,
-            com.google.cloud.datalabeling.v1beta1
-                .LabelVideoObjectTrackingOperationMetadataOrBuilder>
-        videoObjectTrackingDetailsBuilder_;
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadata video_object_tracking_details = 7;
-     * </code>
-     */
-    public boolean hasVideoObjectTrackingDetails() {
-      return detailsCase_ == 7;
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadata video_object_tracking_details = 7;
-     * </code>
-     */
-    public com.google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadata
-        getVideoObjectTrackingDetails() {
-      if (videoObjectTrackingDetailsBuilder_ == null) {
-        if (detailsCase_ == 7) {
-          return (com.google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadata)
-              details_;
-        }
-        return com.google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadata
-            .getDefaultInstance();
-      } else {
-        if (detailsCase_ == 7) {
-          return videoObjectTrackingDetailsBuilder_.getMessage();
-        }
-        return com.google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadata
-            .getDefaultInstance();
-      }
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadata video_object_tracking_details = 7;
-     * </code>
-     */
-    public Builder setVideoObjectTrackingDetails(
-        com.google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadata value) {
-      if (videoObjectTrackingDetailsBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        details_ = value;
-        onChanged();
-      } else {
-        videoObjectTrackingDetailsBuilder_.setMessage(value);
-      }
-      detailsCase_ = 7;
-      return this;
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadata video_object_tracking_details = 7;
-     * </code>
-     */
-    public Builder setVideoObjectTrackingDetails(
-        com.google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadata.Builder
-            builderForValue) {
-      if (videoObjectTrackingDetailsBuilder_ == null) {
-        details_ = builderForValue.build();
-        onChanged();
-      } else {
-        videoObjectTrackingDetailsBuilder_.setMessage(builderForValue.build());
-      }
-      detailsCase_ = 7;
-      return this;
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadata video_object_tracking_details = 7;
-     * </code>
-     */
-    public Builder mergeVideoObjectTrackingDetails(
-        com.google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadata value) {
-      if (videoObjectTrackingDetailsBuilder_ == null) {
-        if (detailsCase_ == 7
-            && details_
-                != com.google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadata
-                    .getDefaultInstance()) {
-          details_ =
-              com.google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadata
-                  .newBuilder(
-                      (com.google.cloud.datalabeling.v1beta1
-                              .LabelVideoObjectTrackingOperationMetadata)
-                          details_)
-                  .mergeFrom(value)
-                  .buildPartial();
-        } else {
-          details_ = value;
-        }
-        onChanged();
-      } else {
-        if (detailsCase_ == 7) {
-          videoObjectTrackingDetailsBuilder_.mergeFrom(value);
-        }
-        videoObjectTrackingDetailsBuilder_.setMessage(value);
-      }
-      detailsCase_ = 7;
-      return this;
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadata video_object_tracking_details = 7;
-     * </code>
-     */
-    public Builder clearVideoObjectTrackingDetails() {
-      if (videoObjectTrackingDetailsBuilder_ == null) {
-        if (detailsCase_ == 7) {
-          detailsCase_ = 0;
-          details_ = null;
-          onChanged();
-        }
-      } else {
-        if (detailsCase_ == 7) {
-          detailsCase_ = 0;
-          details_ = null;
-        }
-        videoObjectTrackingDetailsBuilder_.clear();
-      }
-      return this;
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadata video_object_tracking_details = 7;
-     * </code>
-     */
-    public com.google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadata.Builder
-        getVideoObjectTrackingDetailsBuilder() {
-      return getVideoObjectTrackingDetailsFieldBuilder().getBuilder();
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadata video_object_tracking_details = 7;
-     * </code>
-     */
-    public com.google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadataOrBuilder
-        getVideoObjectTrackingDetailsOrBuilder() {
-      if ((detailsCase_ == 7) && (videoObjectTrackingDetailsBuilder_ != null)) {
-        return videoObjectTrackingDetailsBuilder_.getMessageOrBuilder();
-      } else {
-        if (detailsCase_ == 7) {
-          return (com.google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadata)
-              details_;
-        }
-        return com.google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadata
-            .getDefaultInstance();
-      }
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadata video_object_tracking_details = 7;
-     * </code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadata,
-            com.google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadata.Builder,
-            com.google.cloud.datalabeling.v1beta1
-                .LabelVideoObjectTrackingOperationMetadataOrBuilder>
-        getVideoObjectTrackingDetailsFieldBuilder() {
-      if (videoObjectTrackingDetailsBuilder_ == null) {
-        if (!(detailsCase_ == 7)) {
-          details_ =
-              com.google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadata
-                  .getDefaultInstance();
-        }
-        videoObjectTrackingDetailsBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadata,
-                com.google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadata
-                    .Builder,
-                com.google.cloud.datalabeling.v1beta1
-                    .LabelVideoObjectTrackingOperationMetadataOrBuilder>(
-                (com.google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadata)
-                    details_,
-                getParentForChildren(),
-                isClean());
-        details_ = null;
-      }
-      detailsCase_ = 7;
-      onChanged();
-      ;
-      return videoObjectTrackingDetailsBuilder_;
-    }
-
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata,
-            com.google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata.Builder,
-            com.google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadataOrBuilder>
-        videoEventDetailsBuilder_;
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata video_event_details = 8;
-     * </code>
-     */
-    public boolean hasVideoEventDetails() {
-      return detailsCase_ == 8;
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata video_event_details = 8;
-     * </code>
-     */
-    public com.google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata
-        getVideoEventDetails() {
-      if (videoEventDetailsBuilder_ == null) {
-        if (detailsCase_ == 8) {
-          return (com.google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata) details_;
-        }
-        return com.google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata
-            .getDefaultInstance();
-      } else {
-        if (detailsCase_ == 8) {
-          return videoEventDetailsBuilder_.getMessage();
-        }
-        return com.google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata
-            .getDefaultInstance();
-      }
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata video_event_details = 8;
-     * </code>
-     */
-    public Builder setVideoEventDetails(
-        com.google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata value) {
-      if (videoEventDetailsBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        details_ = value;
-        onChanged();
-      } else {
-        videoEventDetailsBuilder_.setMessage(value);
-      }
-      detailsCase_ = 8;
-      return this;
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata video_event_details = 8;
-     * </code>
-     */
-    public Builder setVideoEventDetails(
-        com.google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata.Builder
-            builderForValue) {
-      if (videoEventDetailsBuilder_ == null) {
-        details_ = builderForValue.build();
-        onChanged();
-      } else {
-        videoEventDetailsBuilder_.setMessage(builderForValue.build());
-      }
-      detailsCase_ = 8;
-      return this;
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata video_event_details = 8;
-     * </code>
-     */
-    public Builder mergeVideoEventDetails(
-        com.google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata value) {
-      if (videoEventDetailsBuilder_ == null) {
-        if (detailsCase_ == 8
-            && details_
-                != com.google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata
-                    .getDefaultInstance()) {
-          details_ =
-              com.google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata.newBuilder(
-                      (com.google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata)
-                          details_)
-                  .mergeFrom(value)
-                  .buildPartial();
-        } else {
-          details_ = value;
-        }
-        onChanged();
-      } else {
-        if (detailsCase_ == 8) {
-          videoEventDetailsBuilder_.mergeFrom(value);
-        }
-        videoEventDetailsBuilder_.setMessage(value);
-      }
-      detailsCase_ = 8;
-      return this;
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata video_event_details = 8;
-     * </code>
-     */
-    public Builder clearVideoEventDetails() {
-      if (videoEventDetailsBuilder_ == null) {
-        if (detailsCase_ == 8) {
-          detailsCase_ = 0;
-          details_ = null;
-          onChanged();
-        }
-      } else {
-        if (detailsCase_ == 8) {
-          detailsCase_ = 0;
-          details_ = null;
-        }
-        videoEventDetailsBuilder_.clear();
-      }
-      return this;
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata video_event_details = 8;
-     * </code>
-     */
-    public com.google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata.Builder
-        getVideoEventDetailsBuilder() {
-      return getVideoEventDetailsFieldBuilder().getBuilder();
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata video_event_details = 8;
-     * </code>
-     */
-    public com.google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadataOrBuilder
-        getVideoEventDetailsOrBuilder() {
-      if ((detailsCase_ == 8) && (videoEventDetailsBuilder_ != null)) {
-        return videoEventDetailsBuilder_.getMessageOrBuilder();
-      } else {
-        if (detailsCase_ == 8) {
-          return (com.google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata) details_;
-        }
-        return com.google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata
-            .getDefaultInstance();
-      }
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata video_event_details = 8;
-     * </code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata,
-            com.google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata.Builder,
-            com.google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadataOrBuilder>
-        getVideoEventDetailsFieldBuilder() {
-      if (videoEventDetailsBuilder_ == null) {
-        if (!(detailsCase_ == 8)) {
-          details_ =
-              com.google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata
-                  .getDefaultInstance();
-        }
-        videoEventDetailsBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata,
-                com.google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata.Builder,
-                com.google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadataOrBuilder>(
-                (com.google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata) details_,
-                getParentForChildren(),
-                isClean());
-        details_ = null;
-      }
-      detailsCase_ = 8;
-      onChanged();
-      ;
-      return videoEventDetailsBuilder_;
-    }
-
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata,
-            com.google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata.Builder,
-            com.google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadataOrBuilder>
-        textClassificationDetailsBuilder_;
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata text_classification_details = 9;
-     * </code>
-     */
-    public boolean hasTextClassificationDetails() {
-      return detailsCase_ == 9;
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata text_classification_details = 9;
-     * </code>
-     */
-    public com.google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata
-        getTextClassificationDetails() {
-      if (textClassificationDetailsBuilder_ == null) {
-        if (detailsCase_ == 9) {
-          return (com.google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata)
-              details_;
-        }
-        return com.google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata
-            .getDefaultInstance();
-      } else {
-        if (detailsCase_ == 9) {
-          return textClassificationDetailsBuilder_.getMessage();
-        }
-        return com.google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata
-            .getDefaultInstance();
-      }
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata text_classification_details = 9;
-     * </code>
-     */
-    public Builder setTextClassificationDetails(
-        com.google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata value) {
-      if (textClassificationDetailsBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        details_ = value;
-        onChanged();
-      } else {
-        textClassificationDetailsBuilder_.setMessage(value);
-      }
-      detailsCase_ = 9;
-      return this;
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata text_classification_details = 9;
-     * </code>
-     */
-    public Builder setTextClassificationDetails(
-        com.google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata.Builder
-            builderForValue) {
-      if (textClassificationDetailsBuilder_ == null) {
-        details_ = builderForValue.build();
-        onChanged();
-      } else {
-        textClassificationDetailsBuilder_.setMessage(builderForValue.build());
-      }
-      detailsCase_ = 9;
-      return this;
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata text_classification_details = 9;
-     * </code>
-     */
-    public Builder mergeTextClassificationDetails(
-        com.google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata value) {
-      if (textClassificationDetailsBuilder_ == null) {
-        if (detailsCase_ == 9
-            && details_
-                != com.google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata
-                    .getDefaultInstance()) {
-          details_ =
-              com.google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata
-                  .newBuilder(
-                      (com.google.cloud.datalabeling.v1beta1
-                              .LabelTextClassificationOperationMetadata)
-                          details_)
-                  .mergeFrom(value)
-                  .buildPartial();
-        } else {
-          details_ = value;
-        }
-        onChanged();
-      } else {
-        if (detailsCase_ == 9) {
-          textClassificationDetailsBuilder_.mergeFrom(value);
-        }
-        textClassificationDetailsBuilder_.setMessage(value);
-      }
-      detailsCase_ = 9;
-      return this;
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata text_classification_details = 9;
-     * </code>
-     */
-    public Builder clearTextClassificationDetails() {
-      if (textClassificationDetailsBuilder_ == null) {
-        if (detailsCase_ == 9) {
-          detailsCase_ = 0;
-          details_ = null;
-          onChanged();
-        }
-      } else {
-        if (detailsCase_ == 9) {
-          detailsCase_ = 0;
-          details_ = null;
-        }
-        textClassificationDetailsBuilder_.clear();
-      }
-      return this;
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata text_classification_details = 9;
-     * </code>
-     */
-    public com.google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata.Builder
-        getTextClassificationDetailsBuilder() {
-      return getTextClassificationDetailsFieldBuilder().getBuilder();
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata text_classification_details = 9;
-     * </code>
-     */
-    public com.google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadataOrBuilder
-        getTextClassificationDetailsOrBuilder() {
-      if ((detailsCase_ == 9) && (textClassificationDetailsBuilder_ != null)) {
-        return textClassificationDetailsBuilder_.getMessageOrBuilder();
-      } else {
-        if (detailsCase_ == 9) {
-          return (com.google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata)
-              details_;
-        }
-        return com.google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata
-            .getDefaultInstance();
-      }
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata text_classification_details = 9;
-     * </code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata,
-            com.google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata.Builder,
-            com.google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadataOrBuilder>
-        getTextClassificationDetailsFieldBuilder() {
-      if (textClassificationDetailsBuilder_ == null) {
-        if (!(detailsCase_ == 9)) {
-          details_ =
-              com.google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata
-                  .getDefaultInstance();
-        }
-        textClassificationDetailsBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata,
-                com.google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata
-                    .Builder,
-                com.google.cloud.datalabeling.v1beta1
-                    .LabelTextClassificationOperationMetadataOrBuilder>(
-                (com.google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata)
-                    details_,
-                getParentForChildren(),
-                isClean());
-        details_ = null;
-      }
-      detailsCase_ = 9;
-      onChanged();
-      ;
-      return textClassificationDetailsBuilder_;
-    }
-
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.datalabeling.v1beta1.LabelAudioTranscriptionOperationMetadata,
-            com.google.cloud.datalabeling.v1beta1.LabelAudioTranscriptionOperationMetadata.Builder,
-            com.google.cloud.datalabeling.v1beta1.LabelAudioTranscriptionOperationMetadataOrBuilder>
-        audioTranscriptionDetailsBuilder_;
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelAudioTranscriptionOperationMetadata audio_transcription_details = 10;
-     * </code>
-     */
-    public boolean hasAudioTranscriptionDetails() {
-      return detailsCase_ == 10;
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelAudioTranscriptionOperationMetadata audio_transcription_details = 10;
-     * </code>
-     */
-    public com.google.cloud.datalabeling.v1beta1.LabelAudioTranscriptionOperationMetadata
-        getAudioTranscriptionDetails() {
-      if (audioTranscriptionDetailsBuilder_ == null) {
-        if (detailsCase_ == 10) {
-          return (com.google.cloud.datalabeling.v1beta1.LabelAudioTranscriptionOperationMetadata)
-              details_;
-        }
-        return com.google.cloud.datalabeling.v1beta1.LabelAudioTranscriptionOperationMetadata
-            .getDefaultInstance();
-      } else {
-        if (detailsCase_ == 10) {
-          return audioTranscriptionDetailsBuilder_.getMessage();
-        }
-        return com.google.cloud.datalabeling.v1beta1.LabelAudioTranscriptionOperationMetadata
-            .getDefaultInstance();
-      }
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelAudioTranscriptionOperationMetadata audio_transcription_details = 10;
-     * </code>
-     */
-    public Builder setAudioTranscriptionDetails(
-        com.google.cloud.datalabeling.v1beta1.LabelAudioTranscriptionOperationMetadata value) {
-      if (audioTranscriptionDetailsBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        details_ = value;
-        onChanged();
-      } else {
-        audioTranscriptionDetailsBuilder_.setMessage(value);
-      }
-      detailsCase_ = 10;
-      return this;
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelAudioTranscriptionOperationMetadata audio_transcription_details = 10;
-     * </code>
-     */
-    public Builder setAudioTranscriptionDetails(
-        com.google.cloud.datalabeling.v1beta1.LabelAudioTranscriptionOperationMetadata.Builder
-            builderForValue) {
-      if (audioTranscriptionDetailsBuilder_ == null) {
-        details_ = builderForValue.build();
-        onChanged();
-      } else {
-        audioTranscriptionDetailsBuilder_.setMessage(builderForValue.build());
-      }
-      detailsCase_ = 10;
-      return this;
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelAudioTranscriptionOperationMetadata audio_transcription_details = 10;
-     * </code>
-     */
-    public Builder mergeAudioTranscriptionDetails(
-        com.google.cloud.datalabeling.v1beta1.LabelAudioTranscriptionOperationMetadata value) {
-      if (audioTranscriptionDetailsBuilder_ == null) {
-        if (detailsCase_ == 10
-            && details_
-                != com.google.cloud.datalabeling.v1beta1.LabelAudioTranscriptionOperationMetadata
-                    .getDefaultInstance()) {
-          details_ =
-              com.google.cloud.datalabeling.v1beta1.LabelAudioTranscriptionOperationMetadata
-                  .newBuilder(
-                      (com.google.cloud.datalabeling.v1beta1
-                              .LabelAudioTranscriptionOperationMetadata)
-                          details_)
-                  .mergeFrom(value)
-                  .buildPartial();
-        } else {
-          details_ = value;
-        }
-        onChanged();
-      } else {
-        if (detailsCase_ == 10) {
-          audioTranscriptionDetailsBuilder_.mergeFrom(value);
-        }
-        audioTranscriptionDetailsBuilder_.setMessage(value);
-      }
-      detailsCase_ = 10;
-      return this;
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelAudioTranscriptionOperationMetadata audio_transcription_details = 10;
-     * </code>
-     */
-    public Builder clearAudioTranscriptionDetails() {
-      if (audioTranscriptionDetailsBuilder_ == null) {
-        if (detailsCase_ == 10) {
-          detailsCase_ = 0;
-          details_ = null;
-          onChanged();
-        }
-      } else {
-        if (detailsCase_ == 10) {
-          detailsCase_ = 0;
-          details_ = null;
-        }
-        audioTranscriptionDetailsBuilder_.clear();
-      }
-      return this;
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelAudioTranscriptionOperationMetadata audio_transcription_details = 10;
-     * </code>
-     */
-    public com.google.cloud.datalabeling.v1beta1.LabelAudioTranscriptionOperationMetadata.Builder
-        getAudioTranscriptionDetailsBuilder() {
-      return getAudioTranscriptionDetailsFieldBuilder().getBuilder();
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelAudioTranscriptionOperationMetadata audio_transcription_details = 10;
-     * </code>
-     */
-    public com.google.cloud.datalabeling.v1beta1.LabelAudioTranscriptionOperationMetadataOrBuilder
-        getAudioTranscriptionDetailsOrBuilder() {
-      if ((detailsCase_ == 10) && (audioTranscriptionDetailsBuilder_ != null)) {
-        return audioTranscriptionDetailsBuilder_.getMessageOrBuilder();
-      } else {
-        if (detailsCase_ == 10) {
-          return (com.google.cloud.datalabeling.v1beta1.LabelAudioTranscriptionOperationMetadata)
-              details_;
-        }
-        return com.google.cloud.datalabeling.v1beta1.LabelAudioTranscriptionOperationMetadata
-            .getDefaultInstance();
-      }
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelAudioTranscriptionOperationMetadata audio_transcription_details = 10;
-     * </code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.datalabeling.v1beta1.LabelAudioTranscriptionOperationMetadata,
-            com.google.cloud.datalabeling.v1beta1.LabelAudioTranscriptionOperationMetadata.Builder,
-            com.google.cloud.datalabeling.v1beta1.LabelAudioTranscriptionOperationMetadataOrBuilder>
-        getAudioTranscriptionDetailsFieldBuilder() {
-      if (audioTranscriptionDetailsBuilder_ == null) {
-        if (!(detailsCase_ == 10)) {
-          details_ =
-              com.google.cloud.datalabeling.v1beta1.LabelAudioTranscriptionOperationMetadata
-                  .getDefaultInstance();
-        }
-        audioTranscriptionDetailsBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.cloud.datalabeling.v1beta1.LabelAudioTranscriptionOperationMetadata,
-                com.google.cloud.datalabeling.v1beta1.LabelAudioTranscriptionOperationMetadata
-                    .Builder,
-                com.google.cloud.datalabeling.v1beta1
-                    .LabelAudioTranscriptionOperationMetadataOrBuilder>(
-                (com.google.cloud.datalabeling.v1beta1.LabelAudioTranscriptionOperationMetadata)
-                    details_,
-                getParentForChildren(),
-                isClean());
-        details_ = null;
-      }
-      detailsCase_ = 10;
-      onChanged();
-      ;
-      return audioTranscriptionDetailsBuilder_;
-    }
-
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata,
-            com.google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata
-                .Builder,
-            com.google.cloud.datalabeling.v1beta1
-                .LabelTextEntityExtractionOperationMetadataOrBuilder>
-        textEntityExtractionDetailsBuilder_;
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata text_entity_extraction_details = 13;
-     * </code>
-     */
-    public boolean hasTextEntityExtractionDetails() {
-      return detailsCase_ == 13;
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata text_entity_extraction_details = 13;
-     * </code>
-     */
-    public com.google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata
-        getTextEntityExtractionDetails() {
-      if (textEntityExtractionDetailsBuilder_ == null) {
-        if (detailsCase_ == 13) {
-          return (com.google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata)
-              details_;
-        }
-        return com.google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata
-            .getDefaultInstance();
-      } else {
-        if (detailsCase_ == 13) {
-          return textEntityExtractionDetailsBuilder_.getMessage();
-        }
-        return com.google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata
-            .getDefaultInstance();
-      }
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata text_entity_extraction_details = 13;
-     * </code>
-     */
-    public Builder setTextEntityExtractionDetails(
-        com.google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata value) {
-      if (textEntityExtractionDetailsBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        details_ = value;
-        onChanged();
-      } else {
-        textEntityExtractionDetailsBuilder_.setMessage(value);
-      }
-      detailsCase_ = 13;
-      return this;
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata text_entity_extraction_details = 13;
-     * </code>
-     */
-    public Builder setTextEntityExtractionDetails(
-        com.google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata.Builder
-            builderForValue) {
-      if (textEntityExtractionDetailsBuilder_ == null) {
-        details_ = builderForValue.build();
-        onChanged();
-      } else {
-        textEntityExtractionDetailsBuilder_.setMessage(builderForValue.build());
-      }
-      detailsCase_ = 13;
-      return this;
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata text_entity_extraction_details = 13;
-     * </code>
-     */
-    public Builder mergeTextEntityExtractionDetails(
-        com.google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata value) {
-      if (textEntityExtractionDetailsBuilder_ == null) {
-        if (detailsCase_ == 13
-            && details_
-                != com.google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata
-                    .getDefaultInstance()) {
-          details_ =
-              com.google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata
-                  .newBuilder(
-                      (com.google.cloud.datalabeling.v1beta1
-                              .LabelTextEntityExtractionOperationMetadata)
-                          details_)
-                  .mergeFrom(value)
-                  .buildPartial();
-        } else {
-          details_ = value;
-        }
-        onChanged();
-      } else {
-        if (detailsCase_ == 13) {
-          textEntityExtractionDetailsBuilder_.mergeFrom(value);
-        }
-        textEntityExtractionDetailsBuilder_.setMessage(value);
-      }
-      detailsCase_ = 13;
-      return this;
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata text_entity_extraction_details = 13;
-     * </code>
-     */
-    public Builder clearTextEntityExtractionDetails() {
-      if (textEntityExtractionDetailsBuilder_ == null) {
-        if (detailsCase_ == 13) {
-          detailsCase_ = 0;
-          details_ = null;
-          onChanged();
-        }
-      } else {
-        if (detailsCase_ == 13) {
-          detailsCase_ = 0;
-          details_ = null;
-        }
-        textEntityExtractionDetailsBuilder_.clear();
-      }
-      return this;
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata text_entity_extraction_details = 13;
-     * </code>
-     */
-    public com.google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata.Builder
-        getTextEntityExtractionDetailsBuilder() {
-      return getTextEntityExtractionDetailsFieldBuilder().getBuilder();
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata text_entity_extraction_details = 13;
-     * </code>
-     */
-    public com.google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadataOrBuilder
-        getTextEntityExtractionDetailsOrBuilder() {
-      if ((detailsCase_ == 13) && (textEntityExtractionDetailsBuilder_ != null)) {
-        return textEntityExtractionDetailsBuilder_.getMessageOrBuilder();
-      } else {
-        if (detailsCase_ == 13) {
-          return (com.google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata)
-              details_;
-        }
-        return com.google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata
-            .getDefaultInstance();
-      }
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata text_entity_extraction_details = 13;
-     * </code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata,
-            com.google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata
-                .Builder,
-            com.google.cloud.datalabeling.v1beta1
-                .LabelTextEntityExtractionOperationMetadataOrBuilder>
-        getTextEntityExtractionDetailsFieldBuilder() {
-      if (textEntityExtractionDetailsBuilder_ == null) {
-        if (!(detailsCase_ == 13)) {
-          details_ =
-              com.google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata
-                  .getDefaultInstance();
-        }
-        textEntityExtractionDetailsBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata,
-                com.google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata
-                    .Builder,
-                com.google.cloud.datalabeling.v1beta1
-                    .LabelTextEntityExtractionOperationMetadataOrBuilder>(
-                (com.google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata)
-                    details_,
-                getParentForChildren(),
-                isClean());
-        details_ = null;
-      }
-      detailsCase_ = 13;
-      onChanged();
-      ;
-      return textEntityExtractionDetailsBuilder_;
+      return createTimeBuilder_;
     }
 
     @java.lang.Override

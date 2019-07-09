@@ -291,12 +291,15 @@ public final class Query implements Serializable {
     }
     Query query = (Query) o;
     return Objects.equal(tableId, query.tableId)
-        && Objects.equal(builder.build(), query.builder.build());
+        && Objects.equal(builder.getRows(), query.builder.getRows())
+        && Objects.equal(builder.getFilter(), query.builder.getFilter())
+        && Objects.equal(builder.getRowsLimit(), query.builder.getRowsLimit());
   }
 
   @Override
   public int hashCode() {
-    return Objects.hashCode(tableId, builder.build());
+    return Objects.hashCode(
+        tableId, builder.getRows(), builder.getFilter(), builder.getRowsLimit());
   }
 
   @Override
@@ -308,6 +311,7 @@ public final class Query implements Serializable {
         .add("keys", request.getRows().getRowKeysList())
         .add("ranges", request.getRows().getRowRangesList())
         .add("filter", request.getFilter())
+        .add("limit", request.getRowsLimit())
         .toString();
   }
 }

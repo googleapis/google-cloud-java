@@ -12,8 +12,7 @@ public interface DeleteApplicationRequestOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * The resource name of the application to be deleted.
+   * Required. The resource name of the application to be deleted.
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}/applications/{application_id}",
    * for example,
@@ -27,8 +26,7 @@ public interface DeleteApplicationRequestOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * The resource name of the application to be deleted.
+   * Required. The resource name of the application to be deleted.
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}/applications/{application_id}",
    * for example,

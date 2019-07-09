@@ -63,6 +63,26 @@ public enum StreamingFeature implements com.google.protobuf.ProtocolMessageEnum 
    * <code>STREAMING_OBJECT_TRACKING = 4;</code>
    */
   STREAMING_OBJECT_TRACKING(4),
+  /**
+   *
+   *
+   * <pre>
+   * Video classification based on AutoML model.
+   * </pre>
+   *
+   * <code>STREAMING_AUTOML_CLASSIFICATION = 21;</code>
+   */
+  STREAMING_AUTOML_CLASSIFICATION(21),
+  /**
+   *
+   *
+   * <pre>
+   * Object detection and tracking based on AutoML model.
+   * </pre>
+   *
+   * <code>STREAMING_AUTOML_OBJECT_TRACKING = 22;</code>
+   */
+  STREAMING_AUTOML_OBJECT_TRACKING(22),
   UNRECOGNIZED(-1),
   ;
 
@@ -116,6 +136,26 @@ public enum StreamingFeature implements com.google.protobuf.ProtocolMessageEnum 
    * <code>STREAMING_OBJECT_TRACKING = 4;</code>
    */
   public static final int STREAMING_OBJECT_TRACKING_VALUE = 4;
+  /**
+   *
+   *
+   * <pre>
+   * Video classification based on AutoML model.
+   * </pre>
+   *
+   * <code>STREAMING_AUTOML_CLASSIFICATION = 21;</code>
+   */
+  public static final int STREAMING_AUTOML_CLASSIFICATION_VALUE = 21;
+  /**
+   *
+   *
+   * <pre>
+   * Object detection and tracking based on AutoML model.
+   * </pre>
+   *
+   * <code>STREAMING_AUTOML_OBJECT_TRACKING = 22;</code>
+   */
+  public static final int STREAMING_AUTOML_OBJECT_TRACKING_VALUE = 22;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -143,6 +183,10 @@ public enum StreamingFeature implements com.google.protobuf.ProtocolMessageEnum 
         return STREAMING_EXPLICIT_CONTENT_DETECTION;
       case 4:
         return STREAMING_OBJECT_TRACKING;
+      case 21:
+        return STREAMING_AUTOML_CLASSIFICATION;
+      case 22:
+        return STREAMING_AUTOML_OBJECT_TRACKING;
       default:
         return null;
     }

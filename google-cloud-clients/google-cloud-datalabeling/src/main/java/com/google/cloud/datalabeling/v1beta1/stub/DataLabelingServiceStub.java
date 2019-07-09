@@ -19,8 +19,11 @@ import static com.google.cloud.datalabeling.v1beta1.DataLabelingServiceClient.Li
 import static com.google.cloud.datalabeling.v1beta1.DataLabelingServiceClient.ListAnnotationSpecSetsPagedResponse;
 import static com.google.cloud.datalabeling.v1beta1.DataLabelingServiceClient.ListDataItemsPagedResponse;
 import static com.google.cloud.datalabeling.v1beta1.DataLabelingServiceClient.ListDatasetsPagedResponse;
+import static com.google.cloud.datalabeling.v1beta1.DataLabelingServiceClient.ListEvaluationJobsPagedResponse;
 import static com.google.cloud.datalabeling.v1beta1.DataLabelingServiceClient.ListExamplesPagedResponse;
 import static com.google.cloud.datalabeling.v1beta1.DataLabelingServiceClient.ListInstructionsPagedResponse;
+import static com.google.cloud.datalabeling.v1beta1.DataLabelingServiceClient.SearchEvaluationsPagedResponse;
+import static com.google.cloud.datalabeling.v1beta1.DataLabelingServiceClient.SearchExampleComparisonsPagedResponse;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -30,6 +33,7 @@ import com.google.cloud.datalabeling.v1beta1.AnnotatedDataset;
 import com.google.cloud.datalabeling.v1beta1.AnnotationSpecSet;
 import com.google.cloud.datalabeling.v1beta1.CreateAnnotationSpecSetRequest;
 import com.google.cloud.datalabeling.v1beta1.CreateDatasetRequest;
+import com.google.cloud.datalabeling.v1beta1.CreateEvaluationJobRequest;
 import com.google.cloud.datalabeling.v1beta1.CreateInstructionMetadata;
 import com.google.cloud.datalabeling.v1beta1.CreateInstructionRequest;
 import com.google.cloud.datalabeling.v1beta1.DataItem;
@@ -37,7 +41,10 @@ import com.google.cloud.datalabeling.v1beta1.Dataset;
 import com.google.cloud.datalabeling.v1beta1.DeleteAnnotatedDatasetRequest;
 import com.google.cloud.datalabeling.v1beta1.DeleteAnnotationSpecSetRequest;
 import com.google.cloud.datalabeling.v1beta1.DeleteDatasetRequest;
+import com.google.cloud.datalabeling.v1beta1.DeleteEvaluationJobRequest;
 import com.google.cloud.datalabeling.v1beta1.DeleteInstructionRequest;
+import com.google.cloud.datalabeling.v1beta1.Evaluation;
+import com.google.cloud.datalabeling.v1beta1.EvaluationJob;
 import com.google.cloud.datalabeling.v1beta1.Example;
 import com.google.cloud.datalabeling.v1beta1.ExportDataOperationMetadata;
 import com.google.cloud.datalabeling.v1beta1.ExportDataOperationResponse;
@@ -46,13 +53,14 @@ import com.google.cloud.datalabeling.v1beta1.GetAnnotatedDatasetRequest;
 import com.google.cloud.datalabeling.v1beta1.GetAnnotationSpecSetRequest;
 import com.google.cloud.datalabeling.v1beta1.GetDataItemRequest;
 import com.google.cloud.datalabeling.v1beta1.GetDatasetRequest;
+import com.google.cloud.datalabeling.v1beta1.GetEvaluationJobRequest;
+import com.google.cloud.datalabeling.v1beta1.GetEvaluationRequest;
 import com.google.cloud.datalabeling.v1beta1.GetExampleRequest;
 import com.google.cloud.datalabeling.v1beta1.GetInstructionRequest;
 import com.google.cloud.datalabeling.v1beta1.ImportDataOperationMetadata;
 import com.google.cloud.datalabeling.v1beta1.ImportDataOperationResponse;
 import com.google.cloud.datalabeling.v1beta1.ImportDataRequest;
 import com.google.cloud.datalabeling.v1beta1.Instruction;
-import com.google.cloud.datalabeling.v1beta1.LabelAudioRequest;
 import com.google.cloud.datalabeling.v1beta1.LabelImageRequest;
 import com.google.cloud.datalabeling.v1beta1.LabelOperationMetadata;
 import com.google.cloud.datalabeling.v1beta1.LabelTextRequest;
@@ -65,10 +73,19 @@ import com.google.cloud.datalabeling.v1beta1.ListDataItemsRequest;
 import com.google.cloud.datalabeling.v1beta1.ListDataItemsResponse;
 import com.google.cloud.datalabeling.v1beta1.ListDatasetsRequest;
 import com.google.cloud.datalabeling.v1beta1.ListDatasetsResponse;
+import com.google.cloud.datalabeling.v1beta1.ListEvaluationJobsRequest;
+import com.google.cloud.datalabeling.v1beta1.ListEvaluationJobsResponse;
 import com.google.cloud.datalabeling.v1beta1.ListExamplesRequest;
 import com.google.cloud.datalabeling.v1beta1.ListExamplesResponse;
 import com.google.cloud.datalabeling.v1beta1.ListInstructionsRequest;
 import com.google.cloud.datalabeling.v1beta1.ListInstructionsResponse;
+import com.google.cloud.datalabeling.v1beta1.PauseEvaluationJobRequest;
+import com.google.cloud.datalabeling.v1beta1.ResumeEvaluationJobRequest;
+import com.google.cloud.datalabeling.v1beta1.SearchEvaluationsRequest;
+import com.google.cloud.datalabeling.v1beta1.SearchEvaluationsResponse;
+import com.google.cloud.datalabeling.v1beta1.SearchExampleComparisonsRequest;
+import com.google.cloud.datalabeling.v1beta1.SearchExampleComparisonsResponse;
+import com.google.cloud.datalabeling.v1beta1.UpdateEvaluationJobRequest;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.OperationsStub;
 import com.google.protobuf.Empty;
@@ -189,16 +206,6 @@ public abstract class DataLabelingServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: labelTextCallable()");
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<LabelAudioRequest, AnnotatedDataset, LabelOperationMetadata>
-      labelAudioOperationCallable() {
-    throw new UnsupportedOperationException("Not implemented: labelAudioOperationCallable()");
-  }
-
-  public UnaryCallable<LabelAudioRequest, Operation> labelAudioCallable() {
-    throw new UnsupportedOperationException("Not implemented: labelAudioCallable()");
-  }
-
   public UnaryCallable<GetExampleRequest, Example> getExampleCallable() {
     throw new UnsupportedOperationException("Not implemented: getExampleCallable()");
   }
@@ -263,6 +270,65 @@ public abstract class DataLabelingServiceStub implements BackgroundResource {
 
   public UnaryCallable<DeleteInstructionRequest, Empty> deleteInstructionCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteInstructionCallable()");
+  }
+
+  public UnaryCallable<GetEvaluationRequest, Evaluation> getEvaluationCallable() {
+    throw new UnsupportedOperationException("Not implemented: getEvaluationCallable()");
+  }
+
+  public UnaryCallable<SearchEvaluationsRequest, SearchEvaluationsPagedResponse>
+      searchEvaluationsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: searchEvaluationsPagedCallable()");
+  }
+
+  public UnaryCallable<SearchEvaluationsRequest, SearchEvaluationsResponse>
+      searchEvaluationsCallable() {
+    throw new UnsupportedOperationException("Not implemented: searchEvaluationsCallable()");
+  }
+
+  public UnaryCallable<SearchExampleComparisonsRequest, SearchExampleComparisonsPagedResponse>
+      searchExampleComparisonsPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: searchExampleComparisonsPagedCallable()");
+  }
+
+  public UnaryCallable<SearchExampleComparisonsRequest, SearchExampleComparisonsResponse>
+      searchExampleComparisonsCallable() {
+    throw new UnsupportedOperationException("Not implemented: searchExampleComparisonsCallable()");
+  }
+
+  public UnaryCallable<CreateEvaluationJobRequest, EvaluationJob> createEvaluationJobCallable() {
+    throw new UnsupportedOperationException("Not implemented: createEvaluationJobCallable()");
+  }
+
+  public UnaryCallable<UpdateEvaluationJobRequest, EvaluationJob> updateEvaluationJobCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateEvaluationJobCallable()");
+  }
+
+  public UnaryCallable<GetEvaluationJobRequest, EvaluationJob> getEvaluationJobCallable() {
+    throw new UnsupportedOperationException("Not implemented: getEvaluationJobCallable()");
+  }
+
+  public UnaryCallable<PauseEvaluationJobRequest, Empty> pauseEvaluationJobCallable() {
+    throw new UnsupportedOperationException("Not implemented: pauseEvaluationJobCallable()");
+  }
+
+  public UnaryCallable<ResumeEvaluationJobRequest, Empty> resumeEvaluationJobCallable() {
+    throw new UnsupportedOperationException("Not implemented: resumeEvaluationJobCallable()");
+  }
+
+  public UnaryCallable<DeleteEvaluationJobRequest, Empty> deleteEvaluationJobCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteEvaluationJobCallable()");
+  }
+
+  public UnaryCallable<ListEvaluationJobsRequest, ListEvaluationJobsPagedResponse>
+      listEvaluationJobsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listEvaluationJobsPagedCallable()");
+  }
+
+  public UnaryCallable<ListEvaluationJobsRequest, ListEvaluationJobsResponse>
+      listEvaluationJobsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listEvaluationJobsCallable()");
   }
 
   public UnaryCallable<DeleteAnnotatedDatasetRequest, Empty> deleteAnnotatedDatasetCallable() {

@@ -262,20 +262,6 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
   }
 
   @Override
-  public void labelAudio(LabelAudioRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
-    if (response instanceof Operation) {
-      requests.add(request);
-      responseObserver.onNext((Operation) response);
-      responseObserver.onCompleted();
-    } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
-    } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
-    }
-  }
-
-  @Override
   public void getExample(GetExampleRequest request, StreamObserver<Example> responseObserver) {
     Object response = responses.remove();
     if (response instanceof Example) {
@@ -417,6 +403,159 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext((Empty) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void getEvaluation(
+      GetEvaluationRequest request, StreamObserver<Evaluation> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof Evaluation) {
+      requests.add(request);
+      responseObserver.onNext((Evaluation) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void searchEvaluations(
+      SearchEvaluationsRequest request,
+      StreamObserver<SearchEvaluationsResponse> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof SearchEvaluationsResponse) {
+      requests.add(request);
+      responseObserver.onNext((SearchEvaluationsResponse) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void searchExampleComparisons(
+      SearchExampleComparisonsRequest request,
+      StreamObserver<SearchExampleComparisonsResponse> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof SearchExampleComparisonsResponse) {
+      requests.add(request);
+      responseObserver.onNext((SearchExampleComparisonsResponse) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void createEvaluationJob(
+      CreateEvaluationJobRequest request, StreamObserver<EvaluationJob> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof EvaluationJob) {
+      requests.add(request);
+      responseObserver.onNext((EvaluationJob) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void updateEvaluationJob(
+      UpdateEvaluationJobRequest request, StreamObserver<EvaluationJob> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof EvaluationJob) {
+      requests.add(request);
+      responseObserver.onNext((EvaluationJob) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void getEvaluationJob(
+      GetEvaluationJobRequest request, StreamObserver<EvaluationJob> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof EvaluationJob) {
+      requests.add(request);
+      responseObserver.onNext((EvaluationJob) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void pauseEvaluationJob(
+      PauseEvaluationJobRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext((Empty) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void resumeEvaluationJob(
+      ResumeEvaluationJobRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext((Empty) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void deleteEvaluationJob(
+      DeleteEvaluationJobRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext((Empty) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void listEvaluationJobs(
+      ListEvaluationJobsRequest request,
+      StreamObserver<ListEvaluationJobsResponse> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof ListEvaluationJobsResponse) {
+      requests.add(request);
+      responseObserver.onNext((ListEvaluationJobsResponse) response);
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
       responseObserver.onError((Exception) response);

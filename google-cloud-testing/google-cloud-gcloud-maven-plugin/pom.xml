@@ -7,11 +7,11 @@
   <parent>
     <artifactId>google-cloud-testing</artifactId>
     <groupId>com.google.cloud</groupId>
-    <version>0.96.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-testing:current} -->
+    <version>0.99.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-testing:current} -->
   </parent>
 
   <artifactId>google-cloud-gcloud-maven-plugin</artifactId>
-  <version>0.96.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-gcloud-maven-plugin:current} -->
+  <version>0.99.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-gcloud-maven-plugin:current} -->
   <packaging>maven-plugin</packaging>
   <description>Experimental Maven plugin to interact with the Google Cloud SDK
     (https://cloud.google.com/sdk/). Currently this plugin is meant to be an internal implementation
@@ -19,7 +19,7 @@
   </description>
 
   <properties>
-    <maven.version>3.5.0</maven.version>
+    <maven.version>3.6.1</maven.version>
   </properties>
 
   <build>
@@ -80,7 +80,7 @@
     <dependency>
       <groupId>commons-io</groupId>
       <artifactId>commons-io</artifactId>
-      <version>2.5</version>
+      <version>2.6</version>
     </dependency>
 
     <!-- Test deps -->

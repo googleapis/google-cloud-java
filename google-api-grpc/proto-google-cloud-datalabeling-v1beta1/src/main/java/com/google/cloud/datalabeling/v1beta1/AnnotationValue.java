@@ -181,27 +181,6 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
               valueTypeCase_ = 6;
               break;
             }
-          case 58:
-            {
-              com.google.cloud.datalabeling.v1beta1.AudioRecognitionAnnotation.Builder subBuilder =
-                  null;
-              if (valueTypeCase_ == 7) {
-                subBuilder =
-                    ((com.google.cloud.datalabeling.v1beta1.AudioRecognitionAnnotation) valueType_)
-                        .toBuilder();
-              }
-              valueType_ =
-                  input.readMessage(
-                      com.google.cloud.datalabeling.v1beta1.AudioRecognitionAnnotation.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.datalabeling.v1beta1.AudioRecognitionAnnotation) valueType_);
-                valueType_ = subBuilder.buildPartial();
-              }
-              valueTypeCase_ = 7;
-              break;
-            }
           case 66:
             {
               com.google.cloud.datalabeling.v1beta1.ImagePolylineAnnotation.Builder subBuilder =
@@ -242,6 +221,29 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
                 valueType_ = subBuilder.buildPartial();
               }
               valueTypeCase_ = 9;
+              break;
+            }
+          case 82:
+            {
+              com.google.cloud.datalabeling.v1beta1.TextEntityExtractionAnnotation.Builder
+                  subBuilder = null;
+              if (valueTypeCase_ == 10) {
+                subBuilder =
+                    ((com.google.cloud.datalabeling.v1beta1.TextEntityExtractionAnnotation)
+                            valueType_)
+                        .toBuilder();
+              }
+              valueType_ =
+                  input.readMessage(
+                      com.google.cloud.datalabeling.v1beta1.TextEntityExtractionAnnotation.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.cloud.datalabeling.v1beta1.TextEntityExtractionAnnotation)
+                        valueType_);
+                valueType_ = subBuilder.buildPartial();
+              }
+              valueTypeCase_ = 10;
               break;
             }
           default:
@@ -287,10 +289,10 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
     IMAGE_POLYLINE_ANNOTATION(8),
     IMAGE_SEGMENTATION_ANNOTATION(9),
     TEXT_CLASSIFICATION_ANNOTATION(3),
+    TEXT_ENTITY_EXTRACTION_ANNOTATION(10),
     VIDEO_CLASSIFICATION_ANNOTATION(4),
     VIDEO_OBJECT_TRACKING_ANNOTATION(5),
     VIDEO_EVENT_ANNOTATION(6),
-    AUDIO_RECOGNITION_ANNOTATION(7),
     VALUETYPE_NOT_SET(0);
     private final int value;
 
@@ -315,14 +317,14 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
           return IMAGE_SEGMENTATION_ANNOTATION;
         case 3:
           return TEXT_CLASSIFICATION_ANNOTATION;
+        case 10:
+          return TEXT_ENTITY_EXTRACTION_ANNOTATION;
         case 4:
           return VIDEO_CLASSIFICATION_ANNOTATION;
         case 5:
           return VIDEO_OBJECT_TRACKING_ANNOTATION;
         case 6:
           return VIDEO_EVENT_ANNOTATION;
-        case 7:
-          return AUDIO_RECOGNITION_ANNOTATION;
         case 0:
           return VALUETYPE_NOT_SET;
         default:
@@ -608,6 +610,60 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
     return com.google.cloud.datalabeling.v1beta1.TextClassificationAnnotation.getDefaultInstance();
   }
 
+  public static final int TEXT_ENTITY_EXTRACTION_ANNOTATION_FIELD_NUMBER = 10;
+  /**
+   *
+   *
+   * <pre>
+   * Annotation value for text entity extraction case.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.TextEntityExtractionAnnotation text_entity_extraction_annotation = 10;
+   * </code>
+   */
+  public boolean hasTextEntityExtractionAnnotation() {
+    return valueTypeCase_ == 10;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Annotation value for text entity extraction case.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.TextEntityExtractionAnnotation text_entity_extraction_annotation = 10;
+   * </code>
+   */
+  public com.google.cloud.datalabeling.v1beta1.TextEntityExtractionAnnotation
+      getTextEntityExtractionAnnotation() {
+    if (valueTypeCase_ == 10) {
+      return (com.google.cloud.datalabeling.v1beta1.TextEntityExtractionAnnotation) valueType_;
+    }
+    return com.google.cloud.datalabeling.v1beta1.TextEntityExtractionAnnotation
+        .getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Annotation value for text entity extraction case.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.TextEntityExtractionAnnotation text_entity_extraction_annotation = 10;
+   * </code>
+   */
+  public com.google.cloud.datalabeling.v1beta1.TextEntityExtractionAnnotationOrBuilder
+      getTextEntityExtractionAnnotationOrBuilder() {
+    if (valueTypeCase_ == 10) {
+      return (com.google.cloud.datalabeling.v1beta1.TextEntityExtractionAnnotation) valueType_;
+    }
+    return com.google.cloud.datalabeling.v1beta1.TextEntityExtractionAnnotation
+        .getDefaultInstance();
+  }
+
   public static final int VIDEO_CLASSIFICATION_ANNOTATION_FIELD_NUMBER = 4;
   /**
    *
@@ -760,58 +816,6 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
     return com.google.cloud.datalabeling.v1beta1.VideoEventAnnotation.getDefaultInstance();
   }
 
-  public static final int AUDIO_RECOGNITION_ANNOTATION_FIELD_NUMBER = 7;
-  /**
-   *
-   *
-   * <pre>
-   * Annotation value for speech audio recognition case.
-   * </pre>
-   *
-   * <code>
-   * .google.cloud.datalabeling.v1beta1.AudioRecognitionAnnotation audio_recognition_annotation = 7;
-   * </code>
-   */
-  public boolean hasAudioRecognitionAnnotation() {
-    return valueTypeCase_ == 7;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Annotation value for speech audio recognition case.
-   * </pre>
-   *
-   * <code>
-   * .google.cloud.datalabeling.v1beta1.AudioRecognitionAnnotation audio_recognition_annotation = 7;
-   * </code>
-   */
-  public com.google.cloud.datalabeling.v1beta1.AudioRecognitionAnnotation
-      getAudioRecognitionAnnotation() {
-    if (valueTypeCase_ == 7) {
-      return (com.google.cloud.datalabeling.v1beta1.AudioRecognitionAnnotation) valueType_;
-    }
-    return com.google.cloud.datalabeling.v1beta1.AudioRecognitionAnnotation.getDefaultInstance();
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Annotation value for speech audio recognition case.
-   * </pre>
-   *
-   * <code>
-   * .google.cloud.datalabeling.v1beta1.AudioRecognitionAnnotation audio_recognition_annotation = 7;
-   * </code>
-   */
-  public com.google.cloud.datalabeling.v1beta1.AudioRecognitionAnnotationOrBuilder
-      getAudioRecognitionAnnotationOrBuilder() {
-    if (valueTypeCase_ == 7) {
-      return (com.google.cloud.datalabeling.v1beta1.AudioRecognitionAnnotation) valueType_;
-    }
-    return com.google.cloud.datalabeling.v1beta1.AudioRecognitionAnnotation.getDefaultInstance();
-  }
-
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -850,10 +854,6 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
       output.writeMessage(
           6, (com.google.cloud.datalabeling.v1beta1.VideoEventAnnotation) valueType_);
     }
-    if (valueTypeCase_ == 7) {
-      output.writeMessage(
-          7, (com.google.cloud.datalabeling.v1beta1.AudioRecognitionAnnotation) valueType_);
-    }
     if (valueTypeCase_ == 8) {
       output.writeMessage(
           8, (com.google.cloud.datalabeling.v1beta1.ImagePolylineAnnotation) valueType_);
@@ -861,6 +861,10 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
     if (valueTypeCase_ == 9) {
       output.writeMessage(
           9, (com.google.cloud.datalabeling.v1beta1.ImageSegmentationAnnotation) valueType_);
+    }
+    if (valueTypeCase_ == 10) {
+      output.writeMessage(
+          10, (com.google.cloud.datalabeling.v1beta1.TextEntityExtractionAnnotation) valueType_);
     }
     unknownFields.writeTo(output);
   }
@@ -901,11 +905,6 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               6, (com.google.cloud.datalabeling.v1beta1.VideoEventAnnotation) valueType_);
     }
-    if (valueTypeCase_ == 7) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              7, (com.google.cloud.datalabeling.v1beta1.AudioRecognitionAnnotation) valueType_);
-    }
     if (valueTypeCase_ == 8) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
@@ -915,6 +914,12 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               9, (com.google.cloud.datalabeling.v1beta1.ImageSegmentationAnnotation) valueType_);
+    }
+    if (valueTypeCase_ == 10) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              10,
+              (com.google.cloud.datalabeling.v1beta1.TextEntityExtractionAnnotation) valueType_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -953,6 +958,10 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
         if (!getTextClassificationAnnotation().equals(other.getTextClassificationAnnotation()))
           return false;
         break;
+      case 10:
+        if (!getTextEntityExtractionAnnotation().equals(other.getTextEntityExtractionAnnotation()))
+          return false;
+        break;
       case 4:
         if (!getVideoClassificationAnnotation().equals(other.getVideoClassificationAnnotation()))
           return false;
@@ -963,10 +972,6 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
         break;
       case 6:
         if (!getVideoEventAnnotation().equals(other.getVideoEventAnnotation())) return false;
-        break;
-      case 7:
-        if (!getAudioRecognitionAnnotation().equals(other.getAudioRecognitionAnnotation()))
-          return false;
         break;
       case 0:
       default:
@@ -1003,6 +1008,10 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
         hash = (37 * hash) + TEXT_CLASSIFICATION_ANNOTATION_FIELD_NUMBER;
         hash = (53 * hash) + getTextClassificationAnnotation().hashCode();
         break;
+      case 10:
+        hash = (37 * hash) + TEXT_ENTITY_EXTRACTION_ANNOTATION_FIELD_NUMBER;
+        hash = (53 * hash) + getTextEntityExtractionAnnotation().hashCode();
+        break;
       case 4:
         hash = (37 * hash) + VIDEO_CLASSIFICATION_ANNOTATION_FIELD_NUMBER;
         hash = (53 * hash) + getVideoClassificationAnnotation().hashCode();
@@ -1014,10 +1023,6 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
       case 6:
         hash = (37 * hash) + VIDEO_EVENT_ANNOTATION_FIELD_NUMBER;
         hash = (53 * hash) + getVideoEventAnnotation().hashCode();
-        break;
-      case 7:
-        hash = (37 * hash) + AUDIO_RECOGNITION_ANNOTATION_FIELD_NUMBER;
-        hash = (53 * hash) + getAudioRecognitionAnnotation().hashCode();
         break;
       case 0:
       default:
@@ -1232,6 +1237,13 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
           result.valueType_ = textClassificationAnnotationBuilder_.build();
         }
       }
+      if (valueTypeCase_ == 10) {
+        if (textEntityExtractionAnnotationBuilder_ == null) {
+          result.valueType_ = valueType_;
+        } else {
+          result.valueType_ = textEntityExtractionAnnotationBuilder_.build();
+        }
+      }
       if (valueTypeCase_ == 4) {
         if (videoClassificationAnnotationBuilder_ == null) {
           result.valueType_ = valueType_;
@@ -1251,13 +1263,6 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
           result.valueType_ = valueType_;
         } else {
           result.valueType_ = videoEventAnnotationBuilder_.build();
-        }
-      }
-      if (valueTypeCase_ == 7) {
-        if (audioRecognitionAnnotationBuilder_ == null) {
-          result.valueType_ = valueType_;
-        } else {
-          result.valueType_ = audioRecognitionAnnotationBuilder_.build();
         }
       }
       result.valueTypeCase_ = valueTypeCase_;
@@ -1337,6 +1342,11 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
             mergeTextClassificationAnnotation(other.getTextClassificationAnnotation());
             break;
           }
+        case TEXT_ENTITY_EXTRACTION_ANNOTATION:
+          {
+            mergeTextEntityExtractionAnnotation(other.getTextEntityExtractionAnnotation());
+            break;
+          }
         case VIDEO_CLASSIFICATION_ANNOTATION:
           {
             mergeVideoClassificationAnnotation(other.getVideoClassificationAnnotation());
@@ -1350,11 +1360,6 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
         case VIDEO_EVENT_ANNOTATION:
           {
             mergeVideoEventAnnotation(other.getVideoEventAnnotation());
-            break;
-          }
-        case AUDIO_RECOGNITION_ANNOTATION:
-          {
-            mergeAudioRecognitionAnnotation(other.getAudioRecognitionAnnotation());
             break;
           }
         case VALUETYPE_NOT_SET:
@@ -2605,6 +2610,240 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datalabeling.v1beta1.TextEntityExtractionAnnotation,
+            com.google.cloud.datalabeling.v1beta1.TextEntityExtractionAnnotation.Builder,
+            com.google.cloud.datalabeling.v1beta1.TextEntityExtractionAnnotationOrBuilder>
+        textEntityExtractionAnnotationBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Annotation value for text entity extraction case.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.TextEntityExtractionAnnotation text_entity_extraction_annotation = 10;
+     * </code>
+     */
+    public boolean hasTextEntityExtractionAnnotation() {
+      return valueTypeCase_ == 10;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Annotation value for text entity extraction case.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.TextEntityExtractionAnnotation text_entity_extraction_annotation = 10;
+     * </code>
+     */
+    public com.google.cloud.datalabeling.v1beta1.TextEntityExtractionAnnotation
+        getTextEntityExtractionAnnotation() {
+      if (textEntityExtractionAnnotationBuilder_ == null) {
+        if (valueTypeCase_ == 10) {
+          return (com.google.cloud.datalabeling.v1beta1.TextEntityExtractionAnnotation) valueType_;
+        }
+        return com.google.cloud.datalabeling.v1beta1.TextEntityExtractionAnnotation
+            .getDefaultInstance();
+      } else {
+        if (valueTypeCase_ == 10) {
+          return textEntityExtractionAnnotationBuilder_.getMessage();
+        }
+        return com.google.cloud.datalabeling.v1beta1.TextEntityExtractionAnnotation
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Annotation value for text entity extraction case.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.TextEntityExtractionAnnotation text_entity_extraction_annotation = 10;
+     * </code>
+     */
+    public Builder setTextEntityExtractionAnnotation(
+        com.google.cloud.datalabeling.v1beta1.TextEntityExtractionAnnotation value) {
+      if (textEntityExtractionAnnotationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        valueType_ = value;
+        onChanged();
+      } else {
+        textEntityExtractionAnnotationBuilder_.setMessage(value);
+      }
+      valueTypeCase_ = 10;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Annotation value for text entity extraction case.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.TextEntityExtractionAnnotation text_entity_extraction_annotation = 10;
+     * </code>
+     */
+    public Builder setTextEntityExtractionAnnotation(
+        com.google.cloud.datalabeling.v1beta1.TextEntityExtractionAnnotation.Builder
+            builderForValue) {
+      if (textEntityExtractionAnnotationBuilder_ == null) {
+        valueType_ = builderForValue.build();
+        onChanged();
+      } else {
+        textEntityExtractionAnnotationBuilder_.setMessage(builderForValue.build());
+      }
+      valueTypeCase_ = 10;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Annotation value for text entity extraction case.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.TextEntityExtractionAnnotation text_entity_extraction_annotation = 10;
+     * </code>
+     */
+    public Builder mergeTextEntityExtractionAnnotation(
+        com.google.cloud.datalabeling.v1beta1.TextEntityExtractionAnnotation value) {
+      if (textEntityExtractionAnnotationBuilder_ == null) {
+        if (valueTypeCase_ == 10
+            && valueType_
+                != com.google.cloud.datalabeling.v1beta1.TextEntityExtractionAnnotation
+                    .getDefaultInstance()) {
+          valueType_ =
+              com.google.cloud.datalabeling.v1beta1.TextEntityExtractionAnnotation.newBuilder(
+                      (com.google.cloud.datalabeling.v1beta1.TextEntityExtractionAnnotation)
+                          valueType_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          valueType_ = value;
+        }
+        onChanged();
+      } else {
+        if (valueTypeCase_ == 10) {
+          textEntityExtractionAnnotationBuilder_.mergeFrom(value);
+        }
+        textEntityExtractionAnnotationBuilder_.setMessage(value);
+      }
+      valueTypeCase_ = 10;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Annotation value for text entity extraction case.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.TextEntityExtractionAnnotation text_entity_extraction_annotation = 10;
+     * </code>
+     */
+    public Builder clearTextEntityExtractionAnnotation() {
+      if (textEntityExtractionAnnotationBuilder_ == null) {
+        if (valueTypeCase_ == 10) {
+          valueTypeCase_ = 0;
+          valueType_ = null;
+          onChanged();
+        }
+      } else {
+        if (valueTypeCase_ == 10) {
+          valueTypeCase_ = 0;
+          valueType_ = null;
+        }
+        textEntityExtractionAnnotationBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Annotation value for text entity extraction case.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.TextEntityExtractionAnnotation text_entity_extraction_annotation = 10;
+     * </code>
+     */
+    public com.google.cloud.datalabeling.v1beta1.TextEntityExtractionAnnotation.Builder
+        getTextEntityExtractionAnnotationBuilder() {
+      return getTextEntityExtractionAnnotationFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Annotation value for text entity extraction case.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.TextEntityExtractionAnnotation text_entity_extraction_annotation = 10;
+     * </code>
+     */
+    public com.google.cloud.datalabeling.v1beta1.TextEntityExtractionAnnotationOrBuilder
+        getTextEntityExtractionAnnotationOrBuilder() {
+      if ((valueTypeCase_ == 10) && (textEntityExtractionAnnotationBuilder_ != null)) {
+        return textEntityExtractionAnnotationBuilder_.getMessageOrBuilder();
+      } else {
+        if (valueTypeCase_ == 10) {
+          return (com.google.cloud.datalabeling.v1beta1.TextEntityExtractionAnnotation) valueType_;
+        }
+        return com.google.cloud.datalabeling.v1beta1.TextEntityExtractionAnnotation
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Annotation value for text entity extraction case.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.TextEntityExtractionAnnotation text_entity_extraction_annotation = 10;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datalabeling.v1beta1.TextEntityExtractionAnnotation,
+            com.google.cloud.datalabeling.v1beta1.TextEntityExtractionAnnotation.Builder,
+            com.google.cloud.datalabeling.v1beta1.TextEntityExtractionAnnotationOrBuilder>
+        getTextEntityExtractionAnnotationFieldBuilder() {
+      if (textEntityExtractionAnnotationBuilder_ == null) {
+        if (!(valueTypeCase_ == 10)) {
+          valueType_ =
+              com.google.cloud.datalabeling.v1beta1.TextEntityExtractionAnnotation
+                  .getDefaultInstance();
+        }
+        textEntityExtractionAnnotationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.datalabeling.v1beta1.TextEntityExtractionAnnotation,
+                com.google.cloud.datalabeling.v1beta1.TextEntityExtractionAnnotation.Builder,
+                com.google.cloud.datalabeling.v1beta1.TextEntityExtractionAnnotationOrBuilder>(
+                (com.google.cloud.datalabeling.v1beta1.TextEntityExtractionAnnotation) valueType_,
+                getParentForChildren(),
+                isClean());
+        valueType_ = null;
+      }
+      valueTypeCase_ = 10;
+      onChanged();
+      ;
+      return textEntityExtractionAnnotationBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.datalabeling.v1beta1.VideoClassificationAnnotation,
             com.google.cloud.datalabeling.v1beta1.VideoClassificationAnnotation.Builder,
             com.google.cloud.datalabeling.v1beta1.VideoClassificationAnnotationOrBuilder>
@@ -3288,237 +3527,6 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
       onChanged();
       ;
       return videoEventAnnotationBuilder_;
-    }
-
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.datalabeling.v1beta1.AudioRecognitionAnnotation,
-            com.google.cloud.datalabeling.v1beta1.AudioRecognitionAnnotation.Builder,
-            com.google.cloud.datalabeling.v1beta1.AudioRecognitionAnnotationOrBuilder>
-        audioRecognitionAnnotationBuilder_;
-    /**
-     *
-     *
-     * <pre>
-     * Annotation value for speech audio recognition case.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.AudioRecognitionAnnotation audio_recognition_annotation = 7;
-     * </code>
-     */
-    public boolean hasAudioRecognitionAnnotation() {
-      return valueTypeCase_ == 7;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Annotation value for speech audio recognition case.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.AudioRecognitionAnnotation audio_recognition_annotation = 7;
-     * </code>
-     */
-    public com.google.cloud.datalabeling.v1beta1.AudioRecognitionAnnotation
-        getAudioRecognitionAnnotation() {
-      if (audioRecognitionAnnotationBuilder_ == null) {
-        if (valueTypeCase_ == 7) {
-          return (com.google.cloud.datalabeling.v1beta1.AudioRecognitionAnnotation) valueType_;
-        }
-        return com.google.cloud.datalabeling.v1beta1.AudioRecognitionAnnotation
-            .getDefaultInstance();
-      } else {
-        if (valueTypeCase_ == 7) {
-          return audioRecognitionAnnotationBuilder_.getMessage();
-        }
-        return com.google.cloud.datalabeling.v1beta1.AudioRecognitionAnnotation
-            .getDefaultInstance();
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Annotation value for speech audio recognition case.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.AudioRecognitionAnnotation audio_recognition_annotation = 7;
-     * </code>
-     */
-    public Builder setAudioRecognitionAnnotation(
-        com.google.cloud.datalabeling.v1beta1.AudioRecognitionAnnotation value) {
-      if (audioRecognitionAnnotationBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        valueType_ = value;
-        onChanged();
-      } else {
-        audioRecognitionAnnotationBuilder_.setMessage(value);
-      }
-      valueTypeCase_ = 7;
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Annotation value for speech audio recognition case.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.AudioRecognitionAnnotation audio_recognition_annotation = 7;
-     * </code>
-     */
-    public Builder setAudioRecognitionAnnotation(
-        com.google.cloud.datalabeling.v1beta1.AudioRecognitionAnnotation.Builder builderForValue) {
-      if (audioRecognitionAnnotationBuilder_ == null) {
-        valueType_ = builderForValue.build();
-        onChanged();
-      } else {
-        audioRecognitionAnnotationBuilder_.setMessage(builderForValue.build());
-      }
-      valueTypeCase_ = 7;
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Annotation value for speech audio recognition case.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.AudioRecognitionAnnotation audio_recognition_annotation = 7;
-     * </code>
-     */
-    public Builder mergeAudioRecognitionAnnotation(
-        com.google.cloud.datalabeling.v1beta1.AudioRecognitionAnnotation value) {
-      if (audioRecognitionAnnotationBuilder_ == null) {
-        if (valueTypeCase_ == 7
-            && valueType_
-                != com.google.cloud.datalabeling.v1beta1.AudioRecognitionAnnotation
-                    .getDefaultInstance()) {
-          valueType_ =
-              com.google.cloud.datalabeling.v1beta1.AudioRecognitionAnnotation.newBuilder(
-                      (com.google.cloud.datalabeling.v1beta1.AudioRecognitionAnnotation) valueType_)
-                  .mergeFrom(value)
-                  .buildPartial();
-        } else {
-          valueType_ = value;
-        }
-        onChanged();
-      } else {
-        if (valueTypeCase_ == 7) {
-          audioRecognitionAnnotationBuilder_.mergeFrom(value);
-        }
-        audioRecognitionAnnotationBuilder_.setMessage(value);
-      }
-      valueTypeCase_ = 7;
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Annotation value for speech audio recognition case.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.AudioRecognitionAnnotation audio_recognition_annotation = 7;
-     * </code>
-     */
-    public Builder clearAudioRecognitionAnnotation() {
-      if (audioRecognitionAnnotationBuilder_ == null) {
-        if (valueTypeCase_ == 7) {
-          valueTypeCase_ = 0;
-          valueType_ = null;
-          onChanged();
-        }
-      } else {
-        if (valueTypeCase_ == 7) {
-          valueTypeCase_ = 0;
-          valueType_ = null;
-        }
-        audioRecognitionAnnotationBuilder_.clear();
-      }
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Annotation value for speech audio recognition case.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.AudioRecognitionAnnotation audio_recognition_annotation = 7;
-     * </code>
-     */
-    public com.google.cloud.datalabeling.v1beta1.AudioRecognitionAnnotation.Builder
-        getAudioRecognitionAnnotationBuilder() {
-      return getAudioRecognitionAnnotationFieldBuilder().getBuilder();
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Annotation value for speech audio recognition case.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.AudioRecognitionAnnotation audio_recognition_annotation = 7;
-     * </code>
-     */
-    public com.google.cloud.datalabeling.v1beta1.AudioRecognitionAnnotationOrBuilder
-        getAudioRecognitionAnnotationOrBuilder() {
-      if ((valueTypeCase_ == 7) && (audioRecognitionAnnotationBuilder_ != null)) {
-        return audioRecognitionAnnotationBuilder_.getMessageOrBuilder();
-      } else {
-        if (valueTypeCase_ == 7) {
-          return (com.google.cloud.datalabeling.v1beta1.AudioRecognitionAnnotation) valueType_;
-        }
-        return com.google.cloud.datalabeling.v1beta1.AudioRecognitionAnnotation
-            .getDefaultInstance();
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Annotation value for speech audio recognition case.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.AudioRecognitionAnnotation audio_recognition_annotation = 7;
-     * </code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.datalabeling.v1beta1.AudioRecognitionAnnotation,
-            com.google.cloud.datalabeling.v1beta1.AudioRecognitionAnnotation.Builder,
-            com.google.cloud.datalabeling.v1beta1.AudioRecognitionAnnotationOrBuilder>
-        getAudioRecognitionAnnotationFieldBuilder() {
-      if (audioRecognitionAnnotationBuilder_ == null) {
-        if (!(valueTypeCase_ == 7)) {
-          valueType_ =
-              com.google.cloud.datalabeling.v1beta1.AudioRecognitionAnnotation.getDefaultInstance();
-        }
-        audioRecognitionAnnotationBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.cloud.datalabeling.v1beta1.AudioRecognitionAnnotation,
-                com.google.cloud.datalabeling.v1beta1.AudioRecognitionAnnotation.Builder,
-                com.google.cloud.datalabeling.v1beta1.AudioRecognitionAnnotationOrBuilder>(
-                (com.google.cloud.datalabeling.v1beta1.AudioRecognitionAnnotation) valueType_,
-                getParentForChildren(),
-                isClean());
-        valueType_ = null;
-      }
-      valueTypeCase_ = 7;
-      onChanged();
-      ;
-      return audioRecognitionAnnotationBuilder_;
     }
 
     @java.lang.Override

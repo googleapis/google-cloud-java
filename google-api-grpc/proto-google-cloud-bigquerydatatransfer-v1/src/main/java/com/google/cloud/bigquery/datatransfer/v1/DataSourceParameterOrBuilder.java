@@ -356,4 +356,16 @@ public interface DataSourceParameterOrBuilder
    * <code>bool recurse = 15;</code>
    */
   boolean getRecurse();
+
+  /**
+   *
+   *
+   * <pre>
+   * If true, it should not be used in new transfers, and it should not be
+   * visible to users.
+   * </pre>
+   *
+   * <code>bool deprecated = 20;</code>
+   */
+  boolean getDeprecated();
 }

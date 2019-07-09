@@ -29,12 +29,9 @@ import com.google.cloud.bigquery.datatransfer.v1.CreateTransferConfigRequest;
 import com.google.cloud.bigquery.datatransfer.v1.DataSource;
 import com.google.cloud.bigquery.datatransfer.v1.DeleteTransferConfigRequest;
 import com.google.cloud.bigquery.datatransfer.v1.DeleteTransferRunRequest;
-import com.google.cloud.bigquery.datatransfer.v1.EnableDataTransferServiceRequest;
 import com.google.cloud.bigquery.datatransfer.v1.GetDataSourceRequest;
 import com.google.cloud.bigquery.datatransfer.v1.GetTransferConfigRequest;
 import com.google.cloud.bigquery.datatransfer.v1.GetTransferRunRequest;
-import com.google.cloud.bigquery.datatransfer.v1.IsDataTransferServiceEnabledRequest;
-import com.google.cloud.bigquery.datatransfer.v1.IsDataTransferServiceEnabledResponse;
 import com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesRequest;
 import com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesResponse;
 import com.google.cloud.bigquery.datatransfer.v1.ListTransferConfigsRequest;
@@ -142,17 +139,6 @@ public abstract class DataTransferServiceStub implements BackgroundResource {
   public UnaryCallable<StartManualTransferRunsRequest, StartManualTransferRunsResponse>
       startManualTransferRunsCallable() {
     throw new UnsupportedOperationException("Not implemented: startManualTransferRunsCallable()");
-  }
-
-  public UnaryCallable<EnableDataTransferServiceRequest, Empty>
-      enableDataTransferServiceCallable() {
-    throw new UnsupportedOperationException("Not implemented: enableDataTransferServiceCallable()");
-  }
-
-  public UnaryCallable<IsDataTransferServiceEnabledRequest, IsDataTransferServiceEnabledResponse>
-      isDataTransferServiceEnabledCallable() {
-    throw new UnsupportedOperationException(
-        "Not implemented: isDataTransferServiceEnabledCallable()");
   }
 
   @Override

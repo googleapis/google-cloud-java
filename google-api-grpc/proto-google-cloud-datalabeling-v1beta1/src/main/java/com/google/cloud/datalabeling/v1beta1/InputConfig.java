@@ -24,6 +24,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
 
   private InputConfig() {
     dataType_ = 0;
+    annotationType_ = 0;
   }
 
   @java.lang.Override
@@ -74,6 +75,70 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
               sourceCase_ = 2;
               break;
             }
+          case 24:
+            {
+              int rawValue = input.readEnum();
+
+              annotationType_ = rawValue;
+              break;
+            }
+          case 34:
+            {
+              com.google.cloud.datalabeling.v1beta1.ClassificationMetadata.Builder subBuilder =
+                  null;
+              if (classificationMetadata_ != null) {
+                subBuilder = classificationMetadata_.toBuilder();
+              }
+              classificationMetadata_ =
+                  input.readMessage(
+                      com.google.cloud.datalabeling.v1beta1.ClassificationMetadata.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(classificationMetadata_);
+                classificationMetadata_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 42:
+            {
+              com.google.cloud.datalabeling.v1beta1.BigQuerySource.Builder subBuilder = null;
+              if (sourceCase_ == 5) {
+                subBuilder =
+                    ((com.google.cloud.datalabeling.v1beta1.BigQuerySource) source_).toBuilder();
+              }
+              source_ =
+                  input.readMessage(
+                      com.google.cloud.datalabeling.v1beta1.BigQuerySource.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.cloud.datalabeling.v1beta1.BigQuerySource) source_);
+                source_ = subBuilder.buildPartial();
+              }
+              sourceCase_ = 5;
+              break;
+            }
+          case 50:
+            {
+              com.google.cloud.datalabeling.v1beta1.TextMetadata.Builder subBuilder = null;
+              if (dataTypeMetadataCase_ == 6) {
+                subBuilder =
+                    ((com.google.cloud.datalabeling.v1beta1.TextMetadata) dataTypeMetadata_)
+                        .toBuilder();
+              }
+              dataTypeMetadata_ =
+                  input.readMessage(
+                      com.google.cloud.datalabeling.v1beta1.TextMetadata.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.cloud.datalabeling.v1beta1.TextMetadata) dataTypeMetadata_);
+                dataTypeMetadata_ = subBuilder.buildPartial();
+              }
+              dataTypeMetadataCase_ = 6;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -108,11 +173,49 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.datalabeling.v1beta1.InputConfig.Builder.class);
   }
 
+  private int dataTypeMetadataCase_ = 0;
+  private java.lang.Object dataTypeMetadata_;
+
+  public enum DataTypeMetadataCase implements com.google.protobuf.Internal.EnumLite {
+    TEXT_METADATA(6),
+    DATATYPEMETADATA_NOT_SET(0);
+    private final int value;
+
+    private DataTypeMetadataCase(int value) {
+      this.value = value;
+    }
+    /** @deprecated Use {@link #forNumber(int)} instead. */
+    @java.lang.Deprecated
+    public static DataTypeMetadataCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static DataTypeMetadataCase forNumber(int value) {
+      switch (value) {
+        case 6:
+          return TEXT_METADATA;
+        case 0:
+          return DATATYPEMETADATA_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public DataTypeMetadataCase getDataTypeMetadataCase() {
+    return DataTypeMetadataCase.forNumber(dataTypeMetadataCase_);
+  }
+
   private int sourceCase_ = 0;
   private java.lang.Object source_;
 
   public enum SourceCase implements com.google.protobuf.Internal.EnumLite {
     GCS_SOURCE(2),
+    BIGQUERY_SOURCE(5),
     SOURCE_NOT_SET(0);
     private final int value;
 
@@ -129,6 +232,8 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       switch (value) {
         case 2:
           return GCS_SOURCE;
+        case 5:
+          return BIGQUERY_SOURCE;
         case 0:
           return SOURCE_NOT_SET;
         default:
@@ -145,24 +250,113 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
     return SourceCase.forNumber(sourceCase_);
   }
 
+  public static final int TEXT_METADATA_FIELD_NUMBER = 6;
+  /**
+   *
+   *
+   * <pre>
+   * Required for text import, as language code must be specified.
+   * </pre>
+   *
+   * <code>.google.cloud.datalabeling.v1beta1.TextMetadata text_metadata = 6;</code>
+   */
+  public boolean hasTextMetadata() {
+    return dataTypeMetadataCase_ == 6;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Required for text import, as language code must be specified.
+   * </pre>
+   *
+   * <code>.google.cloud.datalabeling.v1beta1.TextMetadata text_metadata = 6;</code>
+   */
+  public com.google.cloud.datalabeling.v1beta1.TextMetadata getTextMetadata() {
+    if (dataTypeMetadataCase_ == 6) {
+      return (com.google.cloud.datalabeling.v1beta1.TextMetadata) dataTypeMetadata_;
+    }
+    return com.google.cloud.datalabeling.v1beta1.TextMetadata.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Required for text import, as language code must be specified.
+   * </pre>
+   *
+   * <code>.google.cloud.datalabeling.v1beta1.TextMetadata text_metadata = 6;</code>
+   */
+  public com.google.cloud.datalabeling.v1beta1.TextMetadataOrBuilder getTextMetadataOrBuilder() {
+    if (dataTypeMetadataCase_ == 6) {
+      return (com.google.cloud.datalabeling.v1beta1.TextMetadata) dataTypeMetadata_;
+    }
+    return com.google.cloud.datalabeling.v1beta1.TextMetadata.getDefaultInstance();
+  }
+
   public static final int GCS_SOURCE_FIELD_NUMBER = 2;
-  /** <code>.google.cloud.datalabeling.v1beta1.GcsSource gcs_source = 2;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Source located in Cloud Storage.
+   * </pre>
+   *
+   * <code>.google.cloud.datalabeling.v1beta1.GcsSource gcs_source = 2;</code>
+   */
   public boolean hasGcsSource() {
     return sourceCase_ == 2;
   }
-  /** <code>.google.cloud.datalabeling.v1beta1.GcsSource gcs_source = 2;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Source located in Cloud Storage.
+   * </pre>
+   *
+   * <code>.google.cloud.datalabeling.v1beta1.GcsSource gcs_source = 2;</code>
+   */
   public com.google.cloud.datalabeling.v1beta1.GcsSource getGcsSource() {
     if (sourceCase_ == 2) {
       return (com.google.cloud.datalabeling.v1beta1.GcsSource) source_;
     }
     return com.google.cloud.datalabeling.v1beta1.GcsSource.getDefaultInstance();
   }
-  /** <code>.google.cloud.datalabeling.v1beta1.GcsSource gcs_source = 2;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Source located in Cloud Storage.
+   * </pre>
+   *
+   * <code>.google.cloud.datalabeling.v1beta1.GcsSource gcs_source = 2;</code>
+   */
   public com.google.cloud.datalabeling.v1beta1.GcsSourceOrBuilder getGcsSourceOrBuilder() {
     if (sourceCase_ == 2) {
       return (com.google.cloud.datalabeling.v1beta1.GcsSource) source_;
     }
     return com.google.cloud.datalabeling.v1beta1.GcsSource.getDefaultInstance();
+  }
+
+  public static final int BIGQUERY_SOURCE_FIELD_NUMBER = 5;
+  /** <code>.google.cloud.datalabeling.v1beta1.BigQuerySource bigquery_source = 5;</code> */
+  public boolean hasBigquerySource() {
+    return sourceCase_ == 5;
+  }
+  /** <code>.google.cloud.datalabeling.v1beta1.BigQuerySource bigquery_source = 5;</code> */
+  public com.google.cloud.datalabeling.v1beta1.BigQuerySource getBigquerySource() {
+    if (sourceCase_ == 5) {
+      return (com.google.cloud.datalabeling.v1beta1.BigQuerySource) source_;
+    }
+    return com.google.cloud.datalabeling.v1beta1.BigQuerySource.getDefaultInstance();
+  }
+  /** <code>.google.cloud.datalabeling.v1beta1.BigQuerySource bigquery_source = 5;</code> */
+  public com.google.cloud.datalabeling.v1beta1.BigQuerySourceOrBuilder
+      getBigquerySourceOrBuilder() {
+    if (sourceCase_ == 5) {
+      return (com.google.cloud.datalabeling.v1beta1.BigQuerySource) source_;
+    }
+    return com.google.cloud.datalabeling.v1beta1.BigQuerySource.getDefaultInstance();
   }
 
   public static final int DATA_TYPE_FIELD_NUMBER = 1;
@@ -195,6 +389,93 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
     return result == null ? com.google.cloud.datalabeling.v1beta1.DataType.UNRECOGNIZED : result;
   }
 
+  public static final int ANNOTATION_TYPE_FIELD_NUMBER = 3;
+  private int annotationType_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If input contains annotation, user needs to specify the
+   * type and metadata of the annotation when creating it as an annotated
+   * dataset.
+   * </pre>
+   *
+   * <code>.google.cloud.datalabeling.v1beta1.AnnotationType annotation_type = 3;</code>
+   */
+  public int getAnnotationTypeValue() {
+    return annotationType_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If input contains annotation, user needs to specify the
+   * type and metadata of the annotation when creating it as an annotated
+   * dataset.
+   * </pre>
+   *
+   * <code>.google.cloud.datalabeling.v1beta1.AnnotationType annotation_type = 3;</code>
+   */
+  public com.google.cloud.datalabeling.v1beta1.AnnotationType getAnnotationType() {
+    @SuppressWarnings("deprecation")
+    com.google.cloud.datalabeling.v1beta1.AnnotationType result =
+        com.google.cloud.datalabeling.v1beta1.AnnotationType.valueOf(annotationType_);
+    return result == null
+        ? com.google.cloud.datalabeling.v1beta1.AnnotationType.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int CLASSIFICATION_METADATA_FIELD_NUMBER = 4;
+  private com.google.cloud.datalabeling.v1beta1.ClassificationMetadata classificationMetadata_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Metadata about annotations in the input. Each annotation type may
+   * have different metadata.
+   * Metadata for classification problem.
+   * </pre>
+   *
+   * <code>.google.cloud.datalabeling.v1beta1.ClassificationMetadata classification_metadata = 4;
+   * </code>
+   */
+  public boolean hasClassificationMetadata() {
+    return classificationMetadata_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Metadata about annotations in the input. Each annotation type may
+   * have different metadata.
+   * Metadata for classification problem.
+   * </pre>
+   *
+   * <code>.google.cloud.datalabeling.v1beta1.ClassificationMetadata classification_metadata = 4;
+   * </code>
+   */
+  public com.google.cloud.datalabeling.v1beta1.ClassificationMetadata getClassificationMetadata() {
+    return classificationMetadata_ == null
+        ? com.google.cloud.datalabeling.v1beta1.ClassificationMetadata.getDefaultInstance()
+        : classificationMetadata_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Metadata about annotations in the input. Each annotation type may
+   * have different metadata.
+   * Metadata for classification problem.
+   * </pre>
+   *
+   * <code>.google.cloud.datalabeling.v1beta1.ClassificationMetadata classification_metadata = 4;
+   * </code>
+   */
+  public com.google.cloud.datalabeling.v1beta1.ClassificationMetadataOrBuilder
+      getClassificationMetadataOrBuilder() {
+    return getClassificationMetadata();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -216,6 +497,21 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
     if (sourceCase_ == 2) {
       output.writeMessage(2, (com.google.cloud.datalabeling.v1beta1.GcsSource) source_);
     }
+    if (annotationType_
+        != com.google.cloud.datalabeling.v1beta1.AnnotationType.ANNOTATION_TYPE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(3, annotationType_);
+    }
+    if (classificationMetadata_ != null) {
+      output.writeMessage(4, getClassificationMetadata());
+    }
+    if (sourceCase_ == 5) {
+      output.writeMessage(5, (com.google.cloud.datalabeling.v1beta1.BigQuerySource) source_);
+    }
+    if (dataTypeMetadataCase_ == 6) {
+      output.writeMessage(
+          6, (com.google.cloud.datalabeling.v1beta1.TextMetadata) dataTypeMetadata_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -234,6 +530,25 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               2, (com.google.cloud.datalabeling.v1beta1.GcsSource) source_);
     }
+    if (annotationType_
+        != com.google.cloud.datalabeling.v1beta1.AnnotationType.ANNOTATION_TYPE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(3, annotationType_);
+    }
+    if (classificationMetadata_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(4, getClassificationMetadata());
+    }
+    if (sourceCase_ == 5) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              5, (com.google.cloud.datalabeling.v1beta1.BigQuerySource) source_);
+    }
+    if (dataTypeMetadataCase_ == 6) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              6, (com.google.cloud.datalabeling.v1beta1.TextMetadata) dataTypeMetadata_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -251,10 +566,26 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
         (com.google.cloud.datalabeling.v1beta1.InputConfig) obj;
 
     if (dataType_ != other.dataType_) return false;
+    if (annotationType_ != other.annotationType_) return false;
+    if (hasClassificationMetadata() != other.hasClassificationMetadata()) return false;
+    if (hasClassificationMetadata()) {
+      if (!getClassificationMetadata().equals(other.getClassificationMetadata())) return false;
+    }
+    if (!getDataTypeMetadataCase().equals(other.getDataTypeMetadataCase())) return false;
+    switch (dataTypeMetadataCase_) {
+      case 6:
+        if (!getTextMetadata().equals(other.getTextMetadata())) return false;
+        break;
+      case 0:
+      default:
+    }
     if (!getSourceCase().equals(other.getSourceCase())) return false;
     switch (sourceCase_) {
       case 2:
         if (!getGcsSource().equals(other.getGcsSource())) return false;
+        break;
+      case 5:
+        if (!getBigquerySource().equals(other.getBigquerySource())) return false;
         break;
       case 0:
       default:
@@ -272,10 +603,28 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + DATA_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + dataType_;
+    hash = (37 * hash) + ANNOTATION_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + annotationType_;
+    if (hasClassificationMetadata()) {
+      hash = (37 * hash) + CLASSIFICATION_METADATA_FIELD_NUMBER;
+      hash = (53 * hash) + getClassificationMetadata().hashCode();
+    }
+    switch (dataTypeMetadataCase_) {
+      case 6:
+        hash = (37 * hash) + TEXT_METADATA_FIELD_NUMBER;
+        hash = (53 * hash) + getTextMetadata().hashCode();
+        break;
+      case 0:
+      default:
+    }
     switch (sourceCase_) {
       case 2:
         hash = (37 * hash) + GCS_SOURCE_FIELD_NUMBER;
         hash = (53 * hash) + getGcsSource().hashCode();
+        break;
+      case 5:
+        hash = (37 * hash) + BIGQUERY_SOURCE_FIELD_NUMBER;
+        hash = (53 * hash) + getBigquerySource().hashCode();
         break;
       case 0:
       default:
@@ -427,6 +776,16 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       dataType_ = 0;
 
+      annotationType_ = 0;
+
+      if (classificationMetadataBuilder_ == null) {
+        classificationMetadata_ = null;
+      } else {
+        classificationMetadata_ = null;
+        classificationMetadataBuilder_ = null;
+      }
+      dataTypeMetadataCase_ = 0;
+      dataTypeMetadata_ = null;
       sourceCase_ = 0;
       source_ = null;
       return this;
@@ -456,6 +815,13 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.datalabeling.v1beta1.InputConfig buildPartial() {
       com.google.cloud.datalabeling.v1beta1.InputConfig result =
           new com.google.cloud.datalabeling.v1beta1.InputConfig(this);
+      if (dataTypeMetadataCase_ == 6) {
+        if (textMetadataBuilder_ == null) {
+          result.dataTypeMetadata_ = dataTypeMetadata_;
+        } else {
+          result.dataTypeMetadata_ = textMetadataBuilder_.build();
+        }
+      }
       if (sourceCase_ == 2) {
         if (gcsSourceBuilder_ == null) {
           result.source_ = source_;
@@ -463,7 +829,21 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
           result.source_ = gcsSourceBuilder_.build();
         }
       }
+      if (sourceCase_ == 5) {
+        if (bigquerySourceBuilder_ == null) {
+          result.source_ = source_;
+        } else {
+          result.source_ = bigquerySourceBuilder_.build();
+        }
+      }
       result.dataType_ = dataType_;
+      result.annotationType_ = annotationType_;
+      if (classificationMetadataBuilder_ == null) {
+        result.classificationMetadata_ = classificationMetadata_;
+      } else {
+        result.classificationMetadata_ = classificationMetadataBuilder_.build();
+      }
+      result.dataTypeMetadataCase_ = dataTypeMetadataCase_;
       result.sourceCase_ = sourceCase_;
       onBuilt();
       return result;
@@ -518,10 +898,32 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       if (other.dataType_ != 0) {
         setDataTypeValue(other.getDataTypeValue());
       }
+      if (other.annotationType_ != 0) {
+        setAnnotationTypeValue(other.getAnnotationTypeValue());
+      }
+      if (other.hasClassificationMetadata()) {
+        mergeClassificationMetadata(other.getClassificationMetadata());
+      }
+      switch (other.getDataTypeMetadataCase()) {
+        case TEXT_METADATA:
+          {
+            mergeTextMetadata(other.getTextMetadata());
+            break;
+          }
+        case DATATYPEMETADATA_NOT_SET:
+          {
+            break;
+          }
+      }
       switch (other.getSourceCase()) {
         case GCS_SOURCE:
           {
             mergeGcsSource(other.getGcsSource());
+            break;
+          }
+        case BIGQUERY_SOURCE:
+          {
+            mergeBigquerySource(other.getBigquerySource());
             break;
           }
         case SOURCE_NOT_SET:
@@ -559,6 +961,20 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int dataTypeMetadataCase_ = 0;
+    private java.lang.Object dataTypeMetadata_;
+
+    public DataTypeMetadataCase getDataTypeMetadataCase() {
+      return DataTypeMetadataCase.forNumber(dataTypeMetadataCase_);
+    }
+
+    public Builder clearDataTypeMetadata() {
+      dataTypeMetadataCase_ = 0;
+      dataTypeMetadata_ = null;
+      onChanged();
+      return this;
+    }
+
     private int sourceCase_ = 0;
     private java.lang.Object source_;
 
@@ -574,15 +990,235 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datalabeling.v1beta1.TextMetadata,
+            com.google.cloud.datalabeling.v1beta1.TextMetadata.Builder,
+            com.google.cloud.datalabeling.v1beta1.TextMetadataOrBuilder>
+        textMetadataBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Required for text import, as language code must be specified.
+     * </pre>
+     *
+     * <code>.google.cloud.datalabeling.v1beta1.TextMetadata text_metadata = 6;</code>
+     */
+    public boolean hasTextMetadata() {
+      return dataTypeMetadataCase_ == 6;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required for text import, as language code must be specified.
+     * </pre>
+     *
+     * <code>.google.cloud.datalabeling.v1beta1.TextMetadata text_metadata = 6;</code>
+     */
+    public com.google.cloud.datalabeling.v1beta1.TextMetadata getTextMetadata() {
+      if (textMetadataBuilder_ == null) {
+        if (dataTypeMetadataCase_ == 6) {
+          return (com.google.cloud.datalabeling.v1beta1.TextMetadata) dataTypeMetadata_;
+        }
+        return com.google.cloud.datalabeling.v1beta1.TextMetadata.getDefaultInstance();
+      } else {
+        if (dataTypeMetadataCase_ == 6) {
+          return textMetadataBuilder_.getMessage();
+        }
+        return com.google.cloud.datalabeling.v1beta1.TextMetadata.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required for text import, as language code must be specified.
+     * </pre>
+     *
+     * <code>.google.cloud.datalabeling.v1beta1.TextMetadata text_metadata = 6;</code>
+     */
+    public Builder setTextMetadata(com.google.cloud.datalabeling.v1beta1.TextMetadata value) {
+      if (textMetadataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        dataTypeMetadata_ = value;
+        onChanged();
+      } else {
+        textMetadataBuilder_.setMessage(value);
+      }
+      dataTypeMetadataCase_ = 6;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required for text import, as language code must be specified.
+     * </pre>
+     *
+     * <code>.google.cloud.datalabeling.v1beta1.TextMetadata text_metadata = 6;</code>
+     */
+    public Builder setTextMetadata(
+        com.google.cloud.datalabeling.v1beta1.TextMetadata.Builder builderForValue) {
+      if (textMetadataBuilder_ == null) {
+        dataTypeMetadata_ = builderForValue.build();
+        onChanged();
+      } else {
+        textMetadataBuilder_.setMessage(builderForValue.build());
+      }
+      dataTypeMetadataCase_ = 6;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required for text import, as language code must be specified.
+     * </pre>
+     *
+     * <code>.google.cloud.datalabeling.v1beta1.TextMetadata text_metadata = 6;</code>
+     */
+    public Builder mergeTextMetadata(com.google.cloud.datalabeling.v1beta1.TextMetadata value) {
+      if (textMetadataBuilder_ == null) {
+        if (dataTypeMetadataCase_ == 6
+            && dataTypeMetadata_
+                != com.google.cloud.datalabeling.v1beta1.TextMetadata.getDefaultInstance()) {
+          dataTypeMetadata_ =
+              com.google.cloud.datalabeling.v1beta1.TextMetadata.newBuilder(
+                      (com.google.cloud.datalabeling.v1beta1.TextMetadata) dataTypeMetadata_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          dataTypeMetadata_ = value;
+        }
+        onChanged();
+      } else {
+        if (dataTypeMetadataCase_ == 6) {
+          textMetadataBuilder_.mergeFrom(value);
+        }
+        textMetadataBuilder_.setMessage(value);
+      }
+      dataTypeMetadataCase_ = 6;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required for text import, as language code must be specified.
+     * </pre>
+     *
+     * <code>.google.cloud.datalabeling.v1beta1.TextMetadata text_metadata = 6;</code>
+     */
+    public Builder clearTextMetadata() {
+      if (textMetadataBuilder_ == null) {
+        if (dataTypeMetadataCase_ == 6) {
+          dataTypeMetadataCase_ = 0;
+          dataTypeMetadata_ = null;
+          onChanged();
+        }
+      } else {
+        if (dataTypeMetadataCase_ == 6) {
+          dataTypeMetadataCase_ = 0;
+          dataTypeMetadata_ = null;
+        }
+        textMetadataBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required for text import, as language code must be specified.
+     * </pre>
+     *
+     * <code>.google.cloud.datalabeling.v1beta1.TextMetadata text_metadata = 6;</code>
+     */
+    public com.google.cloud.datalabeling.v1beta1.TextMetadata.Builder getTextMetadataBuilder() {
+      return getTextMetadataFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required for text import, as language code must be specified.
+     * </pre>
+     *
+     * <code>.google.cloud.datalabeling.v1beta1.TextMetadata text_metadata = 6;</code>
+     */
+    public com.google.cloud.datalabeling.v1beta1.TextMetadataOrBuilder getTextMetadataOrBuilder() {
+      if ((dataTypeMetadataCase_ == 6) && (textMetadataBuilder_ != null)) {
+        return textMetadataBuilder_.getMessageOrBuilder();
+      } else {
+        if (dataTypeMetadataCase_ == 6) {
+          return (com.google.cloud.datalabeling.v1beta1.TextMetadata) dataTypeMetadata_;
+        }
+        return com.google.cloud.datalabeling.v1beta1.TextMetadata.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required for text import, as language code must be specified.
+     * </pre>
+     *
+     * <code>.google.cloud.datalabeling.v1beta1.TextMetadata text_metadata = 6;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datalabeling.v1beta1.TextMetadata,
+            com.google.cloud.datalabeling.v1beta1.TextMetadata.Builder,
+            com.google.cloud.datalabeling.v1beta1.TextMetadataOrBuilder>
+        getTextMetadataFieldBuilder() {
+      if (textMetadataBuilder_ == null) {
+        if (!(dataTypeMetadataCase_ == 6)) {
+          dataTypeMetadata_ =
+              com.google.cloud.datalabeling.v1beta1.TextMetadata.getDefaultInstance();
+        }
+        textMetadataBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.datalabeling.v1beta1.TextMetadata,
+                com.google.cloud.datalabeling.v1beta1.TextMetadata.Builder,
+                com.google.cloud.datalabeling.v1beta1.TextMetadataOrBuilder>(
+                (com.google.cloud.datalabeling.v1beta1.TextMetadata) dataTypeMetadata_,
+                getParentForChildren(),
+                isClean());
+        dataTypeMetadata_ = null;
+      }
+      dataTypeMetadataCase_ = 6;
+      onChanged();
+      ;
+      return textMetadataBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.datalabeling.v1beta1.GcsSource,
             com.google.cloud.datalabeling.v1beta1.GcsSource.Builder,
             com.google.cloud.datalabeling.v1beta1.GcsSourceOrBuilder>
         gcsSourceBuilder_;
-    /** <code>.google.cloud.datalabeling.v1beta1.GcsSource gcs_source = 2;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Source located in Cloud Storage.
+     * </pre>
+     *
+     * <code>.google.cloud.datalabeling.v1beta1.GcsSource gcs_source = 2;</code>
+     */
     public boolean hasGcsSource() {
       return sourceCase_ == 2;
     }
-    /** <code>.google.cloud.datalabeling.v1beta1.GcsSource gcs_source = 2;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Source located in Cloud Storage.
+     * </pre>
+     *
+     * <code>.google.cloud.datalabeling.v1beta1.GcsSource gcs_source = 2;</code>
+     */
     public com.google.cloud.datalabeling.v1beta1.GcsSource getGcsSource() {
       if (gcsSourceBuilder_ == null) {
         if (sourceCase_ == 2) {
@@ -596,7 +1232,15 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.datalabeling.v1beta1.GcsSource.getDefaultInstance();
       }
     }
-    /** <code>.google.cloud.datalabeling.v1beta1.GcsSource gcs_source = 2;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Source located in Cloud Storage.
+     * </pre>
+     *
+     * <code>.google.cloud.datalabeling.v1beta1.GcsSource gcs_source = 2;</code>
+     */
     public Builder setGcsSource(com.google.cloud.datalabeling.v1beta1.GcsSource value) {
       if (gcsSourceBuilder_ == null) {
         if (value == null) {
@@ -610,7 +1254,15 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       sourceCase_ = 2;
       return this;
     }
-    /** <code>.google.cloud.datalabeling.v1beta1.GcsSource gcs_source = 2;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Source located in Cloud Storage.
+     * </pre>
+     *
+     * <code>.google.cloud.datalabeling.v1beta1.GcsSource gcs_source = 2;</code>
+     */
     public Builder setGcsSource(
         com.google.cloud.datalabeling.v1beta1.GcsSource.Builder builderForValue) {
       if (gcsSourceBuilder_ == null) {
@@ -622,7 +1274,15 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       sourceCase_ = 2;
       return this;
     }
-    /** <code>.google.cloud.datalabeling.v1beta1.GcsSource gcs_source = 2;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Source located in Cloud Storage.
+     * </pre>
+     *
+     * <code>.google.cloud.datalabeling.v1beta1.GcsSource gcs_source = 2;</code>
+     */
     public Builder mergeGcsSource(com.google.cloud.datalabeling.v1beta1.GcsSource value) {
       if (gcsSourceBuilder_ == null) {
         if (sourceCase_ == 2
@@ -645,7 +1305,15 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       sourceCase_ = 2;
       return this;
     }
-    /** <code>.google.cloud.datalabeling.v1beta1.GcsSource gcs_source = 2;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Source located in Cloud Storage.
+     * </pre>
+     *
+     * <code>.google.cloud.datalabeling.v1beta1.GcsSource gcs_source = 2;</code>
+     */
     public Builder clearGcsSource() {
       if (gcsSourceBuilder_ == null) {
         if (sourceCase_ == 2) {
@@ -662,11 +1330,27 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-    /** <code>.google.cloud.datalabeling.v1beta1.GcsSource gcs_source = 2;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Source located in Cloud Storage.
+     * </pre>
+     *
+     * <code>.google.cloud.datalabeling.v1beta1.GcsSource gcs_source = 2;</code>
+     */
     public com.google.cloud.datalabeling.v1beta1.GcsSource.Builder getGcsSourceBuilder() {
       return getGcsSourceFieldBuilder().getBuilder();
     }
-    /** <code>.google.cloud.datalabeling.v1beta1.GcsSource gcs_source = 2;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Source located in Cloud Storage.
+     * </pre>
+     *
+     * <code>.google.cloud.datalabeling.v1beta1.GcsSource gcs_source = 2;</code>
+     */
     public com.google.cloud.datalabeling.v1beta1.GcsSourceOrBuilder getGcsSourceOrBuilder() {
       if ((sourceCase_ == 2) && (gcsSourceBuilder_ != null)) {
         return gcsSourceBuilder_.getMessageOrBuilder();
@@ -677,7 +1361,15 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.datalabeling.v1beta1.GcsSource.getDefaultInstance();
       }
     }
-    /** <code>.google.cloud.datalabeling.v1beta1.GcsSource gcs_source = 2;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Source located in Cloud Storage.
+     * </pre>
+     *
+     * <code>.google.cloud.datalabeling.v1beta1.GcsSource gcs_source = 2;</code>
+     */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.datalabeling.v1beta1.GcsSource,
             com.google.cloud.datalabeling.v1beta1.GcsSource.Builder,
@@ -701,6 +1393,138 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       ;
       return gcsSourceBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datalabeling.v1beta1.BigQuerySource,
+            com.google.cloud.datalabeling.v1beta1.BigQuerySource.Builder,
+            com.google.cloud.datalabeling.v1beta1.BigQuerySourceOrBuilder>
+        bigquerySourceBuilder_;
+    /** <code>.google.cloud.datalabeling.v1beta1.BigQuerySource bigquery_source = 5;</code> */
+    public boolean hasBigquerySource() {
+      return sourceCase_ == 5;
+    }
+    /** <code>.google.cloud.datalabeling.v1beta1.BigQuerySource bigquery_source = 5;</code> */
+    public com.google.cloud.datalabeling.v1beta1.BigQuerySource getBigquerySource() {
+      if (bigquerySourceBuilder_ == null) {
+        if (sourceCase_ == 5) {
+          return (com.google.cloud.datalabeling.v1beta1.BigQuerySource) source_;
+        }
+        return com.google.cloud.datalabeling.v1beta1.BigQuerySource.getDefaultInstance();
+      } else {
+        if (sourceCase_ == 5) {
+          return bigquerySourceBuilder_.getMessage();
+        }
+        return com.google.cloud.datalabeling.v1beta1.BigQuerySource.getDefaultInstance();
+      }
+    }
+    /** <code>.google.cloud.datalabeling.v1beta1.BigQuerySource bigquery_source = 5;</code> */
+    public Builder setBigquerySource(com.google.cloud.datalabeling.v1beta1.BigQuerySource value) {
+      if (bigquerySourceBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        source_ = value;
+        onChanged();
+      } else {
+        bigquerySourceBuilder_.setMessage(value);
+      }
+      sourceCase_ = 5;
+      return this;
+    }
+    /** <code>.google.cloud.datalabeling.v1beta1.BigQuerySource bigquery_source = 5;</code> */
+    public Builder setBigquerySource(
+        com.google.cloud.datalabeling.v1beta1.BigQuerySource.Builder builderForValue) {
+      if (bigquerySourceBuilder_ == null) {
+        source_ = builderForValue.build();
+        onChanged();
+      } else {
+        bigquerySourceBuilder_.setMessage(builderForValue.build());
+      }
+      sourceCase_ = 5;
+      return this;
+    }
+    /** <code>.google.cloud.datalabeling.v1beta1.BigQuerySource bigquery_source = 5;</code> */
+    public Builder mergeBigquerySource(com.google.cloud.datalabeling.v1beta1.BigQuerySource value) {
+      if (bigquerySourceBuilder_ == null) {
+        if (sourceCase_ == 5
+            && source_
+                != com.google.cloud.datalabeling.v1beta1.BigQuerySource.getDefaultInstance()) {
+          source_ =
+              com.google.cloud.datalabeling.v1beta1.BigQuerySource.newBuilder(
+                      (com.google.cloud.datalabeling.v1beta1.BigQuerySource) source_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          source_ = value;
+        }
+        onChanged();
+      } else {
+        if (sourceCase_ == 5) {
+          bigquerySourceBuilder_.mergeFrom(value);
+        }
+        bigquerySourceBuilder_.setMessage(value);
+      }
+      sourceCase_ = 5;
+      return this;
+    }
+    /** <code>.google.cloud.datalabeling.v1beta1.BigQuerySource bigquery_source = 5;</code> */
+    public Builder clearBigquerySource() {
+      if (bigquerySourceBuilder_ == null) {
+        if (sourceCase_ == 5) {
+          sourceCase_ = 0;
+          source_ = null;
+          onChanged();
+        }
+      } else {
+        if (sourceCase_ == 5) {
+          sourceCase_ = 0;
+          source_ = null;
+        }
+        bigquerySourceBuilder_.clear();
+      }
+      return this;
+    }
+    /** <code>.google.cloud.datalabeling.v1beta1.BigQuerySource bigquery_source = 5;</code> */
+    public com.google.cloud.datalabeling.v1beta1.BigQuerySource.Builder getBigquerySourceBuilder() {
+      return getBigquerySourceFieldBuilder().getBuilder();
+    }
+    /** <code>.google.cloud.datalabeling.v1beta1.BigQuerySource bigquery_source = 5;</code> */
+    public com.google.cloud.datalabeling.v1beta1.BigQuerySourceOrBuilder
+        getBigquerySourceOrBuilder() {
+      if ((sourceCase_ == 5) && (bigquerySourceBuilder_ != null)) {
+        return bigquerySourceBuilder_.getMessageOrBuilder();
+      } else {
+        if (sourceCase_ == 5) {
+          return (com.google.cloud.datalabeling.v1beta1.BigQuerySource) source_;
+        }
+        return com.google.cloud.datalabeling.v1beta1.BigQuerySource.getDefaultInstance();
+      }
+    }
+    /** <code>.google.cloud.datalabeling.v1beta1.BigQuerySource bigquery_source = 5;</code> */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datalabeling.v1beta1.BigQuerySource,
+            com.google.cloud.datalabeling.v1beta1.BigQuerySource.Builder,
+            com.google.cloud.datalabeling.v1beta1.BigQuerySourceOrBuilder>
+        getBigquerySourceFieldBuilder() {
+      if (bigquerySourceBuilder_ == null) {
+        if (!(sourceCase_ == 5)) {
+          source_ = com.google.cloud.datalabeling.v1beta1.BigQuerySource.getDefaultInstance();
+        }
+        bigquerySourceBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.datalabeling.v1beta1.BigQuerySource,
+                com.google.cloud.datalabeling.v1beta1.BigQuerySource.Builder,
+                com.google.cloud.datalabeling.v1beta1.BigQuerySourceOrBuilder>(
+                (com.google.cloud.datalabeling.v1beta1.BigQuerySource) source_,
+                getParentForChildren(),
+                isClean());
+        source_ = null;
+      }
+      sourceCase_ = 5;
+      onChanged();
+      ;
+      return bigquerySourceBuilder_;
     }
 
     private int dataType_ = 0;
@@ -777,6 +1601,309 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       dataType_ = 0;
       onChanged();
       return this;
+    }
+
+    private int annotationType_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If input contains annotation, user needs to specify the
+     * type and metadata of the annotation when creating it as an annotated
+     * dataset.
+     * </pre>
+     *
+     * <code>.google.cloud.datalabeling.v1beta1.AnnotationType annotation_type = 3;</code>
+     */
+    public int getAnnotationTypeValue() {
+      return annotationType_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If input contains annotation, user needs to specify the
+     * type and metadata of the annotation when creating it as an annotated
+     * dataset.
+     * </pre>
+     *
+     * <code>.google.cloud.datalabeling.v1beta1.AnnotationType annotation_type = 3;</code>
+     */
+    public Builder setAnnotationTypeValue(int value) {
+      annotationType_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If input contains annotation, user needs to specify the
+     * type and metadata of the annotation when creating it as an annotated
+     * dataset.
+     * </pre>
+     *
+     * <code>.google.cloud.datalabeling.v1beta1.AnnotationType annotation_type = 3;</code>
+     */
+    public com.google.cloud.datalabeling.v1beta1.AnnotationType getAnnotationType() {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.datalabeling.v1beta1.AnnotationType result =
+          com.google.cloud.datalabeling.v1beta1.AnnotationType.valueOf(annotationType_);
+      return result == null
+          ? com.google.cloud.datalabeling.v1beta1.AnnotationType.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If input contains annotation, user needs to specify the
+     * type and metadata of the annotation when creating it as an annotated
+     * dataset.
+     * </pre>
+     *
+     * <code>.google.cloud.datalabeling.v1beta1.AnnotationType annotation_type = 3;</code>
+     */
+    public Builder setAnnotationType(com.google.cloud.datalabeling.v1beta1.AnnotationType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      annotationType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If input contains annotation, user needs to specify the
+     * type and metadata of the annotation when creating it as an annotated
+     * dataset.
+     * </pre>
+     *
+     * <code>.google.cloud.datalabeling.v1beta1.AnnotationType annotation_type = 3;</code>
+     */
+    public Builder clearAnnotationType() {
+
+      annotationType_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.datalabeling.v1beta1.ClassificationMetadata classificationMetadata_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datalabeling.v1beta1.ClassificationMetadata,
+            com.google.cloud.datalabeling.v1beta1.ClassificationMetadata.Builder,
+            com.google.cloud.datalabeling.v1beta1.ClassificationMetadataOrBuilder>
+        classificationMetadataBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Metadata about annotations in the input. Each annotation type may
+     * have different metadata.
+     * Metadata for classification problem.
+     * </pre>
+     *
+     * <code>.google.cloud.datalabeling.v1beta1.ClassificationMetadata classification_metadata = 4;
+     * </code>
+     */
+    public boolean hasClassificationMetadata() {
+      return classificationMetadataBuilder_ != null || classificationMetadata_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Metadata about annotations in the input. Each annotation type may
+     * have different metadata.
+     * Metadata for classification problem.
+     * </pre>
+     *
+     * <code>.google.cloud.datalabeling.v1beta1.ClassificationMetadata classification_metadata = 4;
+     * </code>
+     */
+    public com.google.cloud.datalabeling.v1beta1.ClassificationMetadata
+        getClassificationMetadata() {
+      if (classificationMetadataBuilder_ == null) {
+        return classificationMetadata_ == null
+            ? com.google.cloud.datalabeling.v1beta1.ClassificationMetadata.getDefaultInstance()
+            : classificationMetadata_;
+      } else {
+        return classificationMetadataBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Metadata about annotations in the input. Each annotation type may
+     * have different metadata.
+     * Metadata for classification problem.
+     * </pre>
+     *
+     * <code>.google.cloud.datalabeling.v1beta1.ClassificationMetadata classification_metadata = 4;
+     * </code>
+     */
+    public Builder setClassificationMetadata(
+        com.google.cloud.datalabeling.v1beta1.ClassificationMetadata value) {
+      if (classificationMetadataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        classificationMetadata_ = value;
+        onChanged();
+      } else {
+        classificationMetadataBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Metadata about annotations in the input. Each annotation type may
+     * have different metadata.
+     * Metadata for classification problem.
+     * </pre>
+     *
+     * <code>.google.cloud.datalabeling.v1beta1.ClassificationMetadata classification_metadata = 4;
+     * </code>
+     */
+    public Builder setClassificationMetadata(
+        com.google.cloud.datalabeling.v1beta1.ClassificationMetadata.Builder builderForValue) {
+      if (classificationMetadataBuilder_ == null) {
+        classificationMetadata_ = builderForValue.build();
+        onChanged();
+      } else {
+        classificationMetadataBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Metadata about annotations in the input. Each annotation type may
+     * have different metadata.
+     * Metadata for classification problem.
+     * </pre>
+     *
+     * <code>.google.cloud.datalabeling.v1beta1.ClassificationMetadata classification_metadata = 4;
+     * </code>
+     */
+    public Builder mergeClassificationMetadata(
+        com.google.cloud.datalabeling.v1beta1.ClassificationMetadata value) {
+      if (classificationMetadataBuilder_ == null) {
+        if (classificationMetadata_ != null) {
+          classificationMetadata_ =
+              com.google.cloud.datalabeling.v1beta1.ClassificationMetadata.newBuilder(
+                      classificationMetadata_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          classificationMetadata_ = value;
+        }
+        onChanged();
+      } else {
+        classificationMetadataBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Metadata about annotations in the input. Each annotation type may
+     * have different metadata.
+     * Metadata for classification problem.
+     * </pre>
+     *
+     * <code>.google.cloud.datalabeling.v1beta1.ClassificationMetadata classification_metadata = 4;
+     * </code>
+     */
+    public Builder clearClassificationMetadata() {
+      if (classificationMetadataBuilder_ == null) {
+        classificationMetadata_ = null;
+        onChanged();
+      } else {
+        classificationMetadata_ = null;
+        classificationMetadataBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Metadata about annotations in the input. Each annotation type may
+     * have different metadata.
+     * Metadata for classification problem.
+     * </pre>
+     *
+     * <code>.google.cloud.datalabeling.v1beta1.ClassificationMetadata classification_metadata = 4;
+     * </code>
+     */
+    public com.google.cloud.datalabeling.v1beta1.ClassificationMetadata.Builder
+        getClassificationMetadataBuilder() {
+
+      onChanged();
+      return getClassificationMetadataFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Metadata about annotations in the input. Each annotation type may
+     * have different metadata.
+     * Metadata for classification problem.
+     * </pre>
+     *
+     * <code>.google.cloud.datalabeling.v1beta1.ClassificationMetadata classification_metadata = 4;
+     * </code>
+     */
+    public com.google.cloud.datalabeling.v1beta1.ClassificationMetadataOrBuilder
+        getClassificationMetadataOrBuilder() {
+      if (classificationMetadataBuilder_ != null) {
+        return classificationMetadataBuilder_.getMessageOrBuilder();
+      } else {
+        return classificationMetadata_ == null
+            ? com.google.cloud.datalabeling.v1beta1.ClassificationMetadata.getDefaultInstance()
+            : classificationMetadata_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Metadata about annotations in the input. Each annotation type may
+     * have different metadata.
+     * Metadata for classification problem.
+     * </pre>
+     *
+     * <code>.google.cloud.datalabeling.v1beta1.ClassificationMetadata classification_metadata = 4;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datalabeling.v1beta1.ClassificationMetadata,
+            com.google.cloud.datalabeling.v1beta1.ClassificationMetadata.Builder,
+            com.google.cloud.datalabeling.v1beta1.ClassificationMetadataOrBuilder>
+        getClassificationMetadataFieldBuilder() {
+      if (classificationMetadataBuilder_ == null) {
+        classificationMetadataBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.datalabeling.v1beta1.ClassificationMetadata,
+                com.google.cloud.datalabeling.v1beta1.ClassificationMetadata.Builder,
+                com.google.cloud.datalabeling.v1beta1.ClassificationMetadataOrBuilder>(
+                getClassificationMetadata(), getParentForChildren(), isClean());
+        classificationMetadata_ = null;
+      }
+      return classificationMetadataBuilder_;
     }
 
     @java.lang.Override

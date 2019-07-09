@@ -189,6 +189,84 @@ public interface StreamingVideoConfigOrBuilder
    *
    *
    * <pre>
+   * Config for STREAMING_AUTOML_CLASSIFICATION.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig automl_classification_config = 21;
+   * </code>
+   */
+  boolean hasAutomlClassificationConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Config for STREAMING_AUTOML_CLASSIFICATION.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig automl_classification_config = 21;
+   * </code>
+   */
+  com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig
+      getAutomlClassificationConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Config for STREAMING_AUTOML_CLASSIFICATION.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig automl_classification_config = 21;
+   * </code>
+   */
+  com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfigOrBuilder
+      getAutomlClassificationConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Config for STREAMING_AUTOML_OBJECT_TRACKING.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.videointelligence.v1p3beta1.StreamingAutomlObjectTrackingConfig automl_object_tracking_config = 22;
+   * </code>
+   */
+  boolean hasAutomlObjectTrackingConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Config for STREAMING_AUTOML_OBJECT_TRACKING.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.videointelligence.v1p3beta1.StreamingAutomlObjectTrackingConfig automl_object_tracking_config = 22;
+   * </code>
+   */
+  com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlObjectTrackingConfig
+      getAutomlObjectTrackingConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Config for STREAMING_AUTOML_OBJECT_TRACKING.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.videointelligence.v1p3beta1.StreamingAutomlObjectTrackingConfig automl_object_tracking_config = 22;
+   * </code>
+   */
+  com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlObjectTrackingConfigOrBuilder
+      getAutomlObjectTrackingConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Streaming storage option. By default: storage is disabled.
    * </pre>
    *

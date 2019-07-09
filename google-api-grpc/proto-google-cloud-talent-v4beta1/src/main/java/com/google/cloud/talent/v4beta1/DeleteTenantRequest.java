@@ -97,8 +97,7 @@ public final class DeleteTenantRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required.
-   * The resource name of the tenant to be deleted.
+   * Required. The resource name of the tenant to be deleted.
    * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
    * "projects/api-test-project/tenants/foo".
    * </pre>
@@ -120,8 +119,7 @@ public final class DeleteTenantRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required.
-   * The resource name of the tenant to be deleted.
+   * Required. The resource name of the tenant to be deleted.
    * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
    * "projects/api-test-project/tenants/foo".
    * </pre>
@@ -463,8 +461,7 @@ public final class DeleteTenantRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required.
-     * The resource name of the tenant to be deleted.
+     * Required. The resource name of the tenant to be deleted.
      * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
      * "projects/api-test-project/tenants/foo".
      * </pre>
@@ -486,8 +483,7 @@ public final class DeleteTenantRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required.
-     * The resource name of the tenant to be deleted.
+     * Required. The resource name of the tenant to be deleted.
      * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
      * "projects/api-test-project/tenants/foo".
      * </pre>
@@ -509,8 +505,7 @@ public final class DeleteTenantRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required.
-     * The resource name of the tenant to be deleted.
+     * Required. The resource name of the tenant to be deleted.
      * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
      * "projects/api-test-project/tenants/foo".
      * </pre>
@@ -530,8 +525,7 @@ public final class DeleteTenantRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required.
-     * The resource name of the tenant to be deleted.
+     * Required. The resource name of the tenant to be deleted.
      * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
      * "projects/api-test-project/tenants/foo".
      * </pre>
@@ -548,8 +542,7 @@ public final class DeleteTenantRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required.
-     * The resource name of the tenant to be deleted.
+     * Required. The resource name of the tenant to be deleted.
      * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
      * "projects/api-test-project/tenants/foo".
      * </pre>

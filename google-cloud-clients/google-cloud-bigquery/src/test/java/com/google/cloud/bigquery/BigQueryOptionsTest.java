@@ -28,6 +28,7 @@ public class BigQueryOptionsTest {
   @Test
   public void testInvalidTransport() {
     thrown.expect(IllegalArgumentException.class);
-    BigQueryOptions.newBuilder().setTransportOptions(EasyMock.createMock(TransportOptions.class));
+    BigQueryOptions.newBuilder()
+        .setTransportOptions(EasyMock.<TransportOptions>createMock(TransportOptions.class));
   }
 }

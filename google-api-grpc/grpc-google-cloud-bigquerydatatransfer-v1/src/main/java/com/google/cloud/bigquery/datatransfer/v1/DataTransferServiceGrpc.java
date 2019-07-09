@@ -885,137 +885,6 @@ public final class DataTransferServiceGrpc {
     return getCheckValidCredsMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getEnableDataTransferServiceMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.bigquery.datatransfer.v1.EnableDataTransferServiceRequest,
-          com.google.protobuf.Empty>
-      METHOD_ENABLE_DATA_TRANSFER_SERVICE = getEnableDataTransferServiceMethodHelper();
-
-  private static volatile io.grpc.MethodDescriptor<
-          com.google.cloud.bigquery.datatransfer.v1.EnableDataTransferServiceRequest,
-          com.google.protobuf.Empty>
-      getEnableDataTransferServiceMethod;
-
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  public static io.grpc.MethodDescriptor<
-          com.google.cloud.bigquery.datatransfer.v1.EnableDataTransferServiceRequest,
-          com.google.protobuf.Empty>
-      getEnableDataTransferServiceMethod() {
-    return getEnableDataTransferServiceMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.bigquery.datatransfer.v1.EnableDataTransferServiceRequest,
-          com.google.protobuf.Empty>
-      getEnableDataTransferServiceMethodHelper() {
-    io.grpc.MethodDescriptor<
-            com.google.cloud.bigquery.datatransfer.v1.EnableDataTransferServiceRequest,
-            com.google.protobuf.Empty>
-        getEnableDataTransferServiceMethod;
-    if ((getEnableDataTransferServiceMethod =
-            DataTransferServiceGrpc.getEnableDataTransferServiceMethod)
-        == null) {
-      synchronized (DataTransferServiceGrpc.class) {
-        if ((getEnableDataTransferServiceMethod =
-                DataTransferServiceGrpc.getEnableDataTransferServiceMethod)
-            == null) {
-          DataTransferServiceGrpc.getEnableDataTransferServiceMethod =
-              getEnableDataTransferServiceMethod =
-                  io.grpc.MethodDescriptor
-                      .<com.google.cloud.bigquery.datatransfer.v1.EnableDataTransferServiceRequest,
-                          com.google.protobuf.Empty>
-                          newBuilder()
-                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.bigquery.datatransfer.v1.DataTransferService",
-                              "EnableDataTransferService"))
-                      .setSampledToLocalTracing(true)
-                      .setRequestMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.bigquery.datatransfer.v1
-                                  .EnableDataTransferServiceRequest.getDefaultInstance()))
-                      .setResponseMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.protobuf.Empty.getDefaultInstance()))
-                      .setSchemaDescriptor(
-                          new DataTransferServiceMethodDescriptorSupplier(
-                              "EnableDataTransferService"))
-                      .build();
-        }
-      }
-    }
-    return getEnableDataTransferServiceMethod;
-  }
-
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getIsDataTransferServiceEnabledMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.bigquery.datatransfer.v1.IsDataTransferServiceEnabledRequest,
-          com.google.cloud.bigquery.datatransfer.v1.IsDataTransferServiceEnabledResponse>
-      METHOD_IS_DATA_TRANSFER_SERVICE_ENABLED = getIsDataTransferServiceEnabledMethodHelper();
-
-  private static volatile io.grpc.MethodDescriptor<
-          com.google.cloud.bigquery.datatransfer.v1.IsDataTransferServiceEnabledRequest,
-          com.google.cloud.bigquery.datatransfer.v1.IsDataTransferServiceEnabledResponse>
-      getIsDataTransferServiceEnabledMethod;
-
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  public static io.grpc.MethodDescriptor<
-          com.google.cloud.bigquery.datatransfer.v1.IsDataTransferServiceEnabledRequest,
-          com.google.cloud.bigquery.datatransfer.v1.IsDataTransferServiceEnabledResponse>
-      getIsDataTransferServiceEnabledMethod() {
-    return getIsDataTransferServiceEnabledMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.bigquery.datatransfer.v1.IsDataTransferServiceEnabledRequest,
-          com.google.cloud.bigquery.datatransfer.v1.IsDataTransferServiceEnabledResponse>
-      getIsDataTransferServiceEnabledMethodHelper() {
-    io.grpc.MethodDescriptor<
-            com.google.cloud.bigquery.datatransfer.v1.IsDataTransferServiceEnabledRequest,
-            com.google.cloud.bigquery.datatransfer.v1.IsDataTransferServiceEnabledResponse>
-        getIsDataTransferServiceEnabledMethod;
-    if ((getIsDataTransferServiceEnabledMethod =
-            DataTransferServiceGrpc.getIsDataTransferServiceEnabledMethod)
-        == null) {
-      synchronized (DataTransferServiceGrpc.class) {
-        if ((getIsDataTransferServiceEnabledMethod =
-                DataTransferServiceGrpc.getIsDataTransferServiceEnabledMethod)
-            == null) {
-          DataTransferServiceGrpc.getIsDataTransferServiceEnabledMethod =
-              getIsDataTransferServiceEnabledMethod =
-                  io.grpc.MethodDescriptor
-                      .<com.google.cloud.bigquery.datatransfer.v1
-                              .IsDataTransferServiceEnabledRequest,
-                          com.google.cloud.bigquery.datatransfer.v1
-                              .IsDataTransferServiceEnabledResponse>
-                          newBuilder()
-                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.bigquery.datatransfer.v1.DataTransferService",
-                              "IsDataTransferServiceEnabled"))
-                      .setSampledToLocalTracing(true)
-                      .setRequestMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.bigquery.datatransfer.v1
-                                  .IsDataTransferServiceEnabledRequest.getDefaultInstance()))
-                      .setResponseMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.bigquery.datatransfer.v1
-                                  .IsDataTransferServiceEnabledResponse.getDefaultInstance()))
-                      .setSchemaDescriptor(
-                          new DataTransferServiceMethodDescriptorSupplier(
-                              "IsDataTransferServiceEnabled"))
-                      .build();
-        }
-      }
-    }
-    return getIsDataTransferServiceEnabledMethod;
-  }
-
   /** Creates a new async stub that supports all call types for the service */
   public static DataTransferServiceStub newStub(io.grpc.Channel channel) {
     return new DataTransferServiceStub(channel);
@@ -1262,37 +1131,6 @@ public final class DataTransferServiceGrpc {
       asyncUnimplementedUnaryCall(getCheckValidCredsMethodHelper(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Enables data transfer service for a given project. This
-     * method requires the additional scope of
-     * 'https://www.googleapis.com/auth/cloudplatformprojects'
-     * to manage the cloud project permissions.
-     * </pre>
-     */
-    public void enableDataTransferService(
-        com.google.cloud.bigquery.datatransfer.v1.EnableDataTransferServiceRequest request,
-        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getEnableDataTransferServiceMethodHelper(), responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Returns true if data transfer is enabled for a project.
-     * </pre>
-     */
-    public void isDataTransferServiceEnabled(
-        com.google.cloud.bigquery.datatransfer.v1.IsDataTransferServiceEnabledRequest request,
-        io.grpc.stub.StreamObserver<
-                com.google.cloud.bigquery.datatransfer.v1.IsDataTransferServiceEnabledResponse>
-            responseObserver) {
-      asyncUnimplementedUnaryCall(getIsDataTransferServiceEnabledMethodHelper(), responseObserver);
-    }
-
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
@@ -1392,20 +1230,6 @@ public final class DataTransferServiceGrpc {
                       com.google.cloud.bigquery.datatransfer.v1.CheckValidCredsRequest,
                       com.google.cloud.bigquery.datatransfer.v1.CheckValidCredsResponse>(
                       this, METHODID_CHECK_VALID_CREDS)))
-          .addMethod(
-              getEnableDataTransferServiceMethodHelper(),
-              asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.datatransfer.v1.EnableDataTransferServiceRequest,
-                      com.google.protobuf.Empty>(this, METHODID_ENABLE_DATA_TRANSFER_SERVICE)))
-          .addMethod(
-              getIsDataTransferServiceEnabledMethodHelper(),
-              asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.datatransfer.v1.IsDataTransferServiceEnabledRequest,
-                      com.google.cloud.bigquery.datatransfer.v1
-                          .IsDataTransferServiceEnabledResponse>(
-                      this, METHODID_IS_DATA_TRANSFER_SERVICE_ENABLED)))
           .build();
     }
   }
@@ -1694,43 +1518,6 @@ public final class DataTransferServiceGrpc {
           request,
           responseObserver);
     }
-
-    /**
-     *
-     *
-     * <pre>
-     * Enables data transfer service for a given project. This
-     * method requires the additional scope of
-     * 'https://www.googleapis.com/auth/cloudplatformprojects'
-     * to manage the cloud project permissions.
-     * </pre>
-     */
-    public void enableDataTransferService(
-        com.google.cloud.bigquery.datatransfer.v1.EnableDataTransferServiceRequest request,
-        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
-          getChannel().newCall(getEnableDataTransferServiceMethodHelper(), getCallOptions()),
-          request,
-          responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Returns true if data transfer is enabled for a project.
-     * </pre>
-     */
-    public void isDataTransferServiceEnabled(
-        com.google.cloud.bigquery.datatransfer.v1.IsDataTransferServiceEnabledRequest request,
-        io.grpc.stub.StreamObserver<
-                com.google.cloud.bigquery.datatransfer.v1.IsDataTransferServiceEnabledResponse>
-            responseObserver) {
-      asyncUnaryCall(
-          getChannel().newCall(getIsDataTransferServiceEnabledMethodHelper(), getCallOptions()),
-          request,
-          responseObserver);
-    }
   }
 
   /**
@@ -1959,36 +1746,6 @@ public final class DataTransferServiceGrpc {
         com.google.cloud.bigquery.datatransfer.v1.CheckValidCredsRequest request) {
       return blockingUnaryCall(
           getChannel(), getCheckValidCredsMethodHelper(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Enables data transfer service for a given project. This
-     * method requires the additional scope of
-     * 'https://www.googleapis.com/auth/cloudplatformprojects'
-     * to manage the cloud project permissions.
-     * </pre>
-     */
-    public com.google.protobuf.Empty enableDataTransferService(
-        com.google.cloud.bigquery.datatransfer.v1.EnableDataTransferServiceRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getEnableDataTransferServiceMethodHelper(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Returns true if data transfer is enabled for a project.
-     * </pre>
-     */
-    public com.google.cloud.bigquery.datatransfer.v1.IsDataTransferServiceEnabledResponse
-        isDataTransferServiceEnabled(
-            com.google.cloud.bigquery.datatransfer.v1.IsDataTransferServiceEnabledRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getIsDataTransferServiceEnabledMethodHelper(), getCallOptions(), request);
     }
   }
 
@@ -2239,40 +1996,6 @@ public final class DataTransferServiceGrpc {
       return futureUnaryCall(
           getChannel().newCall(getCheckValidCredsMethodHelper(), getCallOptions()), request);
     }
-
-    /**
-     *
-     *
-     * <pre>
-     * Enables data transfer service for a given project. This
-     * method requires the additional scope of
-     * 'https://www.googleapis.com/auth/cloudplatformprojects'
-     * to manage the cloud project permissions.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
-        enableDataTransferService(
-            com.google.cloud.bigquery.datatransfer.v1.EnableDataTransferServiceRequest request) {
-      return futureUnaryCall(
-          getChannel().newCall(getEnableDataTransferServiceMethodHelper(), getCallOptions()),
-          request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Returns true if data transfer is enabled for a project.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<
-            com.google.cloud.bigquery.datatransfer.v1.IsDataTransferServiceEnabledResponse>
-        isDataTransferServiceEnabled(
-            com.google.cloud.bigquery.datatransfer.v1.IsDataTransferServiceEnabledRequest request) {
-      return futureUnaryCall(
-          getChannel().newCall(getIsDataTransferServiceEnabledMethodHelper(), getCallOptions()),
-          request);
-    }
   }
 
   private static final int METHODID_GET_DATA_SOURCE = 0;
@@ -2289,8 +2012,6 @@ public final class DataTransferServiceGrpc {
   private static final int METHODID_LIST_TRANSFER_RUNS = 11;
   private static final int METHODID_LIST_TRANSFER_LOGS = 12;
   private static final int METHODID_CHECK_VALID_CREDS = 13;
-  private static final int METHODID_ENABLE_DATA_TRANSFER_SERVICE = 14;
-  private static final int METHODID_IS_DATA_TRANSFER_SERVICE_ENABLED = 15;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2401,20 +2122,6 @@ public final class DataTransferServiceGrpc {
                       com.google.cloud.bigquery.datatransfer.v1.CheckValidCredsResponse>)
                   responseObserver);
           break;
-        case METHODID_ENABLE_DATA_TRANSFER_SERVICE:
-          serviceImpl.enableDataTransferService(
-              (com.google.cloud.bigquery.datatransfer.v1.EnableDataTransferServiceRequest) request,
-              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
-          break;
-        case METHODID_IS_DATA_TRANSFER_SERVICE_ENABLED:
-          serviceImpl.isDataTransferServiceEnabled(
-              (com.google.cloud.bigquery.datatransfer.v1.IsDataTransferServiceEnabledRequest)
-                  request,
-              (io.grpc.stub.StreamObserver<
-                      com.google.cloud.bigquery.datatransfer.v1
-                          .IsDataTransferServiceEnabledResponse>)
-                  responseObserver);
-          break;
         default:
           throw new AssertionError();
       }
@@ -2493,8 +2200,6 @@ public final class DataTransferServiceGrpc {
                       .addMethod(getListTransferRunsMethodHelper())
                       .addMethod(getListTransferLogsMethodHelper())
                       .addMethod(getCheckValidCredsMethodHelper())
-                      .addMethod(getEnableDataTransferServiceMethodHelper())
-                      .addMethod(getIsDataTransferServiceEnabledMethodHelper())
                       .build();
         }
       }

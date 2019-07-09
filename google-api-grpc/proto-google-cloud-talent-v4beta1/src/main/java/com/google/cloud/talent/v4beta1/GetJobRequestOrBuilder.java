@@ -12,8 +12,7 @@ public interface GetJobRequestOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * The resource name of the job to retrieve.
+   * Required. The resource name of the job to retrieve.
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
    * example, "projects/api-test-project/tenants/foo/jobs/1234".
@@ -28,8 +27,7 @@ public interface GetJobRequestOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * The resource name of the job to retrieve.
+   * Required. The resource name of the job to retrieve.
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
    * example, "projects/api-test-project/tenants/foo/jobs/1234".

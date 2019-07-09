@@ -228,9 +228,9 @@ public final class ListExamplesRequest extends com.google.protobuf.GeneratedMess
    * <pre>
    * Optional. A token identifying a page of results for the server to return.
    * Typically obtained by
-   * [ListExamplesResponse.next_page_token][google.cloud.datalabeling.v1beta1.ListExamplesResponse.next_page_token] of the previous
-   * [DataLabelingService.ListExamples] call.
-   * Return first page if empty.
+   * [ListExamplesResponse.next_page_token][google.cloud.datalabeling.v1beta1.ListExamplesResponse.next_page_token]
+   * of the previous [DataLabelingService.ListExamples] call. Return first page
+   * if empty.
    * </pre>
    *
    * <code>string page_token = 4;</code>
@@ -252,9 +252,9 @@ public final class ListExamplesRequest extends com.google.protobuf.GeneratedMess
    * <pre>
    * Optional. A token identifying a page of results for the server to return.
    * Typically obtained by
-   * [ListExamplesResponse.next_page_token][google.cloud.datalabeling.v1beta1.ListExamplesResponse.next_page_token] of the previous
-   * [DataLabelingService.ListExamples] call.
-   * Return first page if empty.
+   * [ListExamplesResponse.next_page_token][google.cloud.datalabeling.v1beta1.ListExamplesResponse.next_page_token]
+   * of the previous [DataLabelingService.ListExamples] call. Return first page
+   * if empty.
    * </pre>
    *
    * <code>string page_token = 4;</code>
@@ -894,9 +894,9 @@ public final class ListExamplesRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Optional. A token identifying a page of results for the server to return.
      * Typically obtained by
-     * [ListExamplesResponse.next_page_token][google.cloud.datalabeling.v1beta1.ListExamplesResponse.next_page_token] of the previous
-     * [DataLabelingService.ListExamples] call.
-     * Return first page if empty.
+     * [ListExamplesResponse.next_page_token][google.cloud.datalabeling.v1beta1.ListExamplesResponse.next_page_token]
+     * of the previous [DataLabelingService.ListExamples] call. Return first page
+     * if empty.
      * </pre>
      *
      * <code>string page_token = 4;</code>
@@ -918,9 +918,9 @@ public final class ListExamplesRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Optional. A token identifying a page of results for the server to return.
      * Typically obtained by
-     * [ListExamplesResponse.next_page_token][google.cloud.datalabeling.v1beta1.ListExamplesResponse.next_page_token] of the previous
-     * [DataLabelingService.ListExamples] call.
-     * Return first page if empty.
+     * [ListExamplesResponse.next_page_token][google.cloud.datalabeling.v1beta1.ListExamplesResponse.next_page_token]
+     * of the previous [DataLabelingService.ListExamples] call. Return first page
+     * if empty.
      * </pre>
      *
      * <code>string page_token = 4;</code>
@@ -942,9 +942,9 @@ public final class ListExamplesRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Optional. A token identifying a page of results for the server to return.
      * Typically obtained by
-     * [ListExamplesResponse.next_page_token][google.cloud.datalabeling.v1beta1.ListExamplesResponse.next_page_token] of the previous
-     * [DataLabelingService.ListExamples] call.
-     * Return first page if empty.
+     * [ListExamplesResponse.next_page_token][google.cloud.datalabeling.v1beta1.ListExamplesResponse.next_page_token]
+     * of the previous [DataLabelingService.ListExamples] call. Return first page
+     * if empty.
      * </pre>
      *
      * <code>string page_token = 4;</code>
@@ -964,9 +964,9 @@ public final class ListExamplesRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Optional. A token identifying a page of results for the server to return.
      * Typically obtained by
-     * [ListExamplesResponse.next_page_token][google.cloud.datalabeling.v1beta1.ListExamplesResponse.next_page_token] of the previous
-     * [DataLabelingService.ListExamples] call.
-     * Return first page if empty.
+     * [ListExamplesResponse.next_page_token][google.cloud.datalabeling.v1beta1.ListExamplesResponse.next_page_token]
+     * of the previous [DataLabelingService.ListExamples] call. Return first page
+     * if empty.
      * </pre>
      *
      * <code>string page_token = 4;</code>
@@ -983,9 +983,9 @@ public final class ListExamplesRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Optional. A token identifying a page of results for the server to return.
      * Typically obtained by
-     * [ListExamplesResponse.next_page_token][google.cloud.datalabeling.v1beta1.ListExamplesResponse.next_page_token] of the previous
-     * [DataLabelingService.ListExamples] call.
-     * Return first page if empty.
+     * [ListExamplesResponse.next_page_token][google.cloud.datalabeling.v1beta1.ListExamplesResponse.next_page_token]
+     * of the previous [DataLabelingService.ListExamples] call. Return first page
+     * if empty.
      * </pre>
      *
      * <code>string page_token = 4;</code>

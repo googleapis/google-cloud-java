@@ -7,8 +7,7 @@ package com.google.cloud.kms.v1;
  *
  *
  * <pre>
- * Request message for
- * [KeyManagementService.CreateCryptoKey][google.cloud.kms.v1.KeyManagementService.CreateCryptoKey].
+ * Request message for [KeyManagementService.CreateCryptoKey][google.cloud.kms.v1.KeyManagementService.CreateCryptoKey].
  * </pre>
  *
  * Protobuf type {@code google.cloud.kms.v1.CreateCryptoKeyRequest}
@@ -81,6 +80,11 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
 
               break;
             }
+          case 40:
+            {
+              skipInitialVersionCreation_ = input.readBool();
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -121,8 +125,8 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. The [name][google.cloud.kms.v1.KeyRing.name] of the KeyRing
-   * associated with the [CryptoKeys][google.cloud.kms.v1.CryptoKey].
+   * Required. The [name][google.cloud.kms.v1.KeyRing.name] of the KeyRing associated with the
+   * [CryptoKeys][google.cloud.kms.v1.CryptoKey].
    * </pre>
    *
    * <code>string parent = 1;</code>
@@ -142,8 +146,8 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. The [name][google.cloud.kms.v1.KeyRing.name] of the KeyRing
-   * associated with the [CryptoKeys][google.cloud.kms.v1.CryptoKey].
+   * Required. The [name][google.cloud.kms.v1.KeyRing.name] of the KeyRing associated with the
+   * [CryptoKeys][google.cloud.kms.v1.CryptoKey].
    * </pre>
    *
    * <code>string parent = 1;</code>
@@ -244,6 +248,25 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
     return getCryptoKey();
   }
 
+  public static final int SKIP_INITIAL_VERSION_CREATION_FIELD_NUMBER = 5;
+  private boolean skipInitialVersionCreation_;
+  /**
+   *
+   *
+   * <pre>
+   * If set to true, the request will create a [CryptoKey][google.cloud.kms.v1.CryptoKey] without any
+   * [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion]. You must manually call
+   * [CreateCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.CreateCryptoKeyVersion] or
+   * [ImportCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.ImportCryptoKeyVersion]
+   * before you can use this [CryptoKey][google.cloud.kms.v1.CryptoKey].
+   * </pre>
+   *
+   * <code>bool skip_initial_version_creation = 5;</code>
+   */
+  public boolean getSkipInitialVersionCreation() {
+    return skipInitialVersionCreation_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -267,6 +290,9 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
     if (cryptoKey_ != null) {
       output.writeMessage(3, getCryptoKey());
     }
+    if (skipInitialVersionCreation_ != false) {
+      output.writeBool(5, skipInitialVersionCreation_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -284,6 +310,9 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
     }
     if (cryptoKey_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getCryptoKey());
+    }
+    if (skipInitialVersionCreation_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(5, skipInitialVersionCreation_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -307,6 +336,7 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
     if (hasCryptoKey()) {
       if (!getCryptoKey().equals(other.getCryptoKey())) return false;
     }
+    if (getSkipInitialVersionCreation() != other.getSkipInitialVersionCreation()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -326,6 +356,8 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
       hash = (37 * hash) + CRYPTO_KEY_FIELD_NUMBER;
       hash = (53 * hash) + getCryptoKey().hashCode();
     }
+    hash = (37 * hash) + SKIP_INITIAL_VERSION_CREATION_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSkipInitialVersionCreation());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -430,8 +462,7 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Request message for
-   * [KeyManagementService.CreateCryptoKey][google.cloud.kms.v1.KeyManagementService.CreateCryptoKey].
+   * Request message for [KeyManagementService.CreateCryptoKey][google.cloud.kms.v1.KeyManagementService.CreateCryptoKey].
    * </pre>
    *
    * Protobuf type {@code google.cloud.kms.v1.CreateCryptoKeyRequest}
@@ -482,6 +513,8 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
         cryptoKey_ = null;
         cryptoKeyBuilder_ = null;
       }
+      skipInitialVersionCreation_ = false;
+
       return this;
     }
 
@@ -516,6 +549,7 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
       } else {
         result.cryptoKey_ = cryptoKeyBuilder_.build();
       }
+      result.skipInitialVersionCreation_ = skipInitialVersionCreation_;
       onBuilt();
       return result;
     }
@@ -576,6 +610,9 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
       if (other.hasCryptoKey()) {
         mergeCryptoKey(other.getCryptoKey());
       }
+      if (other.getSkipInitialVersionCreation() != false) {
+        setSkipInitialVersionCreation(other.getSkipInitialVersionCreation());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -610,8 +647,8 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The [name][google.cloud.kms.v1.KeyRing.name] of the KeyRing
-     * associated with the [CryptoKeys][google.cloud.kms.v1.CryptoKey].
+     * Required. The [name][google.cloud.kms.v1.KeyRing.name] of the KeyRing associated with the
+     * [CryptoKeys][google.cloud.kms.v1.CryptoKey].
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -631,8 +668,8 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The [name][google.cloud.kms.v1.KeyRing.name] of the KeyRing
-     * associated with the [CryptoKeys][google.cloud.kms.v1.CryptoKey].
+     * Required. The [name][google.cloud.kms.v1.KeyRing.name] of the KeyRing associated with the
+     * [CryptoKeys][google.cloud.kms.v1.CryptoKey].
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -652,8 +689,8 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The [name][google.cloud.kms.v1.KeyRing.name] of the KeyRing
-     * associated with the [CryptoKeys][google.cloud.kms.v1.CryptoKey].
+     * Required. The [name][google.cloud.kms.v1.KeyRing.name] of the KeyRing associated with the
+     * [CryptoKeys][google.cloud.kms.v1.CryptoKey].
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -671,8 +708,8 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The [name][google.cloud.kms.v1.KeyRing.name] of the KeyRing
-     * associated with the [CryptoKeys][google.cloud.kms.v1.CryptoKey].
+     * Required. The [name][google.cloud.kms.v1.KeyRing.name] of the KeyRing associated with the
+     * [CryptoKeys][google.cloud.kms.v1.CryptoKey].
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -687,8 +724,8 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The [name][google.cloud.kms.v1.KeyRing.name] of the KeyRing
-     * associated with the [CryptoKeys][google.cloud.kms.v1.CryptoKey].
+     * Required. The [name][google.cloud.kms.v1.KeyRing.name] of the KeyRing associated with the
+     * [CryptoKeys][google.cloud.kms.v1.CryptoKey].
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -982,6 +1019,62 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
         cryptoKey_ = null;
       }
       return cryptoKeyBuilder_;
+    }
+
+    private boolean skipInitialVersionCreation_;
+    /**
+     *
+     *
+     * <pre>
+     * If set to true, the request will create a [CryptoKey][google.cloud.kms.v1.CryptoKey] without any
+     * [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion]. You must manually call
+     * [CreateCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.CreateCryptoKeyVersion] or
+     * [ImportCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.ImportCryptoKeyVersion]
+     * before you can use this [CryptoKey][google.cloud.kms.v1.CryptoKey].
+     * </pre>
+     *
+     * <code>bool skip_initial_version_creation = 5;</code>
+     */
+    public boolean getSkipInitialVersionCreation() {
+      return skipInitialVersionCreation_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If set to true, the request will create a [CryptoKey][google.cloud.kms.v1.CryptoKey] without any
+     * [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion]. You must manually call
+     * [CreateCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.CreateCryptoKeyVersion] or
+     * [ImportCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.ImportCryptoKeyVersion]
+     * before you can use this [CryptoKey][google.cloud.kms.v1.CryptoKey].
+     * </pre>
+     *
+     * <code>bool skip_initial_version_creation = 5;</code>
+     */
+    public Builder setSkipInitialVersionCreation(boolean value) {
+
+      skipInitialVersionCreation_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If set to true, the request will create a [CryptoKey][google.cloud.kms.v1.CryptoKey] without any
+     * [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion]. You must manually call
+     * [CreateCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.CreateCryptoKeyVersion] or
+     * [ImportCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.ImportCryptoKeyVersion]
+     * before you can use this [CryptoKey][google.cloud.kms.v1.CryptoKey].
+     * </pre>
+     *
+     * <code>bool skip_initial_version_creation = 5;</code>
+     */
+    public Builder clearSkipInitialVersionCreation() {
+
+      skipInitialVersionCreation_ = false;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

@@ -3,4 +3,4 @@ gcp-releasetool
 gcp-synthtool
 jinja2
 lxml==4.3.4
-typing==3.6.6
+typing==3.7.4

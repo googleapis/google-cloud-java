@@ -53,8 +53,7 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * The resource name of the company listing the job.
+   * Required. The resource name of the company listing the job.
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
    * example, "projects/api-test-project/tenants/foo/companies/bar".
@@ -69,8 +68,7 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * The resource name of the company listing the job.
+   * Required. The resource name of the company listing the job.
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
    * example, "projects/api-test-project/tenants/foo/companies/bar".
@@ -86,11 +84,10 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * The requisition ID, also referred to as the posting ID, is assigned by the
-   * client to identify a job. This field is intended to be used by clients
-   * for client identification and tracking of postings. A job isn't allowed
-   * to be created if there is another job with the same
+   * Required. The requisition ID, also referred to as the posting ID, is
+   * assigned by the client to identify a job. This field is intended to be used
+   * by clients for client identification and tracking of postings. A job isn't
+   * allowed to be created if there is another job with the same
    * [company][google.cloud.talent.v4beta1.Job.name],
    * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
    * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
@@ -104,11 +101,10 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * The requisition ID, also referred to as the posting ID, is assigned by the
-   * client to identify a job. This field is intended to be used by clients
-   * for client identification and tracking of postings. A job isn't allowed
-   * to be created if there is another job with the same
+   * Required. The requisition ID, also referred to as the posting ID, is
+   * assigned by the client to identify a job. This field is intended to be used
+   * by clients for client identification and tracking of postings. A job isn't
+   * allowed to be created if there is another job with the same
    * [company][google.cloud.talent.v4beta1.Job.name],
    * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
    * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
@@ -123,8 +119,7 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * The title of the job, such as "Software Engineer"
+   * Required. The title of the job, such as "Software Engineer"
    * The maximum number of allowed characters is 500.
    * </pre>
    *
@@ -135,8 +130,7 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * The title of the job, such as "Software Engineer"
+   * Required. The title of the job, such as "Software Engineer"
    * The maximum number of allowed characters is 500.
    * </pre>
    *
@@ -148,10 +142,9 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * The description of the job, which typically includes a multi-paragraph
-   * description of the company and related information. Separate fields are
-   * provided on the job object for
+   * Required. The description of the job, which typically includes a
+   * multi-paragraph description of the company and related information.
+   * Separate fields are provided on the job object for
    * [responsibilities][google.cloud.talent.v4beta1.Job.responsibilities],
    * [qualifications][google.cloud.talent.v4beta1.Job.qualifications], and other
    * job characteristics. Use of these separate job fields is recommended.
@@ -167,10 +160,9 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * The description of the job, which typically includes a multi-paragraph
-   * description of the company and related information. Separate fields are
-   * provided on the job object for
+   * Required. The description of the job, which typically includes a
+   * multi-paragraph description of the company and related information.
+   * Separate fields are provided on the job object for
    * [responsibilities][google.cloud.talent.v4beta1.Job.responsibilities],
    * [qualifications][google.cloud.talent.v4beta1.Job.qualifications], and other
    * job characteristics. Use of these separate job fields is recommended.
@@ -292,8 +284,7 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * Job application information.
+   * Optional. Job application information.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Job.ApplicationInfo application_info = 7;</code>
@@ -303,8 +294,7 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * Job application information.
+   * Optional. Job application information.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Job.ApplicationInfo application_info = 7;</code>
@@ -314,8 +304,7 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * Job application information.
+   * Optional. Job application information.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Job.ApplicationInfo application_info = 7;</code>
@@ -326,8 +315,7 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * The benefits included with the job.
+   * Optional. The benefits included with the job.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.JobBenefit job_benefits = 8;</code>
@@ -337,8 +325,7 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * The benefits included with the job.
+   * Optional. The benefits included with the job.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.JobBenefit job_benefits = 8;</code>
@@ -348,8 +335,7 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * The benefits included with the job.
+   * Optional. The benefits included with the job.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.JobBenefit job_benefits = 8;</code>
@@ -359,8 +345,7 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * The benefits included with the job.
+   * Optional. The benefits included with the job.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.JobBenefit job_benefits = 8;</code>
@@ -370,8 +355,7 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * The benefits included with the job.
+   * Optional. The benefits included with the job.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.JobBenefit job_benefits = 8;</code>
@@ -382,9 +366,8 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * Job compensation information (a.k.a. "pay rate") i.e., the compensation
-   * that will paid to the employee.
+   * Optional. Job compensation information (a.k.a. "pay rate") i.e., the
+   * compensation that will paid to the employee.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.CompensationInfo compensation_info = 9;</code>
@@ -394,9 +377,8 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * Job compensation information (a.k.a. "pay rate") i.e., the compensation
-   * that will paid to the employee.
+   * Optional. Job compensation information (a.k.a. "pay rate") i.e., the
+   * compensation that will paid to the employee.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.CompensationInfo compensation_info = 9;</code>
@@ -406,9 +388,8 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * Job compensation information (a.k.a. "pay rate") i.e., the compensation
-   * that will paid to the employee.
+   * Optional. Job compensation information (a.k.a. "pay rate") i.e., the
+   * compensation that will paid to the employee.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.CompensationInfo compensation_info = 9;</code>
@@ -419,9 +400,8 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * A map of fields to hold both filterable and non-filterable custom job
-   * attributes that are not covered by the provided structured fields.
+   * Optional. A map of fields to hold both filterable and non-filterable custom
+   * job attributes that are not covered by the provided structured fields.
    * The keys of the map are strings up to 64 bytes and must match the
    * pattern: [a-zA-Z][a-zA-Z0-9_]*. For example, key0LikeThis or
    * KEY_1_LIKE_THIS.
@@ -440,9 +420,8 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * A map of fields to hold both filterable and non-filterable custom job
-   * attributes that are not covered by the provided structured fields.
+   * Optional. A map of fields to hold both filterable and non-filterable custom
+   * job attributes that are not covered by the provided structured fields.
    * The keys of the map are strings up to 64 bytes and must match the
    * pattern: [a-zA-Z][a-zA-Z0-9_]*. For example, key0LikeThis or
    * KEY_1_LIKE_THIS.
@@ -465,9 +444,8 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * A map of fields to hold both filterable and non-filterable custom job
-   * attributes that are not covered by the provided structured fields.
+   * Optional. A map of fields to hold both filterable and non-filterable custom
+   * job attributes that are not covered by the provided structured fields.
    * The keys of the map are strings up to 64 bytes and must match the
    * pattern: [a-zA-Z][a-zA-Z0-9_]*. For example, key0LikeThis or
    * KEY_1_LIKE_THIS.
@@ -487,9 +465,8 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * A map of fields to hold both filterable and non-filterable custom job
-   * attributes that are not covered by the provided structured fields.
+   * Optional. A map of fields to hold both filterable and non-filterable custom
+   * job attributes that are not covered by the provided structured fields.
    * The keys of the map are strings up to 64 bytes and must match the
    * pattern: [a-zA-Z][a-zA-Z0-9_]*. For example, key0LikeThis or
    * KEY_1_LIKE_THIS.
@@ -509,9 +486,8 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * A map of fields to hold both filterable and non-filterable custom job
-   * attributes that are not covered by the provided structured fields.
+   * Optional. A map of fields to hold both filterable and non-filterable custom
+   * job attributes that are not covered by the provided structured fields.
    * The keys of the map are strings up to 64 bytes and must match the
    * pattern: [a-zA-Z][a-zA-Z0-9_]*. For example, key0LikeThis or
    * KEY_1_LIKE_THIS.
@@ -531,8 +507,8 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * The desired education degrees for the job, such as Bachelors, Masters.
+   * Optional. The desired education degrees for the job, such as Bachelors,
+   * Masters.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.DegreeType degree_types = 11;</code>
@@ -542,8 +518,8 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * The desired education degrees for the job, such as Bachelors, Masters.
+   * Optional. The desired education degrees for the job, such as Bachelors,
+   * Masters.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.DegreeType degree_types = 11;</code>
@@ -553,8 +529,8 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * The desired education degrees for the job, such as Bachelors, Masters.
+   * Optional. The desired education degrees for the job, such as Bachelors,
+   * Masters.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.DegreeType degree_types = 11;</code>
@@ -564,8 +540,8 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * The desired education degrees for the job, such as Bachelors, Masters.
+   * Optional. The desired education degrees for the job, such as Bachelors,
+   * Masters.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.DegreeType degree_types = 11;</code>
@@ -575,8 +551,8 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * The desired education degrees for the job, such as Bachelors, Masters.
+   * Optional. The desired education degrees for the job, such as Bachelors,
+   * Masters.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.DegreeType degree_types = 11;</code>
@@ -587,9 +563,8 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * The department or functional area within the company with the open
-   * position.
+   * Optional. The department or functional area within the company with the
+   * open position.
    * The maximum number of allowed characters is 255.
    * </pre>
    *
@@ -600,9 +575,8 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * The department or functional area within the company with the open
-   * position.
+   * Optional. The department or functional area within the company with the
+   * open position.
    * The maximum number of allowed characters is 255.
    * </pre>
    *
@@ -614,8 +588,7 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * The employment type(s) of a job, for example,
+   * Optional. The employment type(s) of a job, for example,
    * [full time][google.cloud.talent.v4beta1.EmploymentType.FULL_TIME] or
    * [part time][google.cloud.talent.v4beta1.EmploymentType.PART_TIME].
    * </pre>
@@ -627,8 +600,7 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * The employment type(s) of a job, for example,
+   * Optional. The employment type(s) of a job, for example,
    * [full time][google.cloud.talent.v4beta1.EmploymentType.FULL_TIME] or
    * [part time][google.cloud.talent.v4beta1.EmploymentType.PART_TIME].
    * </pre>
@@ -640,8 +612,7 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * The employment type(s) of a job, for example,
+   * Optional. The employment type(s) of a job, for example,
    * [full time][google.cloud.talent.v4beta1.EmploymentType.FULL_TIME] or
    * [part time][google.cloud.talent.v4beta1.EmploymentType.PART_TIME].
    * </pre>
@@ -653,8 +624,7 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * The employment type(s) of a job, for example,
+   * Optional. The employment type(s) of a job, for example,
    * [full time][google.cloud.talent.v4beta1.EmploymentType.FULL_TIME] or
    * [part time][google.cloud.talent.v4beta1.EmploymentType.PART_TIME].
    * </pre>
@@ -666,8 +636,7 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * The employment type(s) of a job, for example,
+   * Optional. The employment type(s) of a job, for example,
    * [full time][google.cloud.talent.v4beta1.EmploymentType.FULL_TIME] or
    * [part time][google.cloud.talent.v4beta1.EmploymentType.PART_TIME].
    * </pre>
@@ -680,8 +649,7 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * A description of bonus, commission, and other compensation
+   * Optional. A description of bonus, commission, and other compensation
    * incentives associated with the job not including salary or pay.
    * The maximum number of allowed characters is 10,000.
    * </pre>
@@ -693,8 +661,7 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * A description of bonus, commission, and other compensation
+   * Optional. A description of bonus, commission, and other compensation
    * incentives associated with the job not including salary or pay.
    * The maximum number of allowed characters is 10,000.
    * </pre>
@@ -707,8 +674,7 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * The language of the posting. This field is distinct from
+   * Optional. The language of the posting. This field is distinct from
    * any requirements for fluency that are associated with the job.
    * Language codes must be in BCP-47 format, such as "en-US" or "sr-Latn".
    * For more information, see
@@ -728,8 +694,7 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * The language of the posting. This field is distinct from
+   * Optional. The language of the posting. This field is distinct from
    * any requirements for fluency that are associated with the job.
    * Language codes must be in BCP-47 format, such as "en-US" or "sr-Latn".
    * For more information, see
@@ -750,8 +715,8 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * The experience level associated with the job, such as "Entry Level".
+   * Optional. The experience level associated with the job, such as "Entry
+   * Level".
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.JobLevel job_level = 16;</code>
@@ -761,8 +726,8 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * The experience level associated with the job, such as "Entry Level".
+   * Optional. The experience level associated with the job, such as "Entry
+   * Level".
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.JobLevel job_level = 16;</code>
@@ -773,8 +738,7 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * A promotion value of the job, as determined by the client.
+   * Optional. A promotion value of the job, as determined by the client.
    * The value determines the sort order of the jobs returned when searching for
    * jobs using the featured jobs search call, with higher promotional values
    * being returned first and ties being resolved by relevance sort. Only the
@@ -790,8 +754,7 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * A description of the qualifications required to perform the
+   * Optional. A description of the qualifications required to perform the
    * job. The use of this field is recommended
    * as an alternative to using the more general
    * [description][google.cloud.talent.v4beta1.Job.description] field.
@@ -807,8 +770,7 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * A description of the qualifications required to perform the
+   * Optional. A description of the qualifications required to perform the
    * job. The use of this field is recommended
    * as an alternative to using the more general
    * [description][google.cloud.talent.v4beta1.Job.description] field.
@@ -825,8 +787,7 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * A description of job responsibilities. The use of this field is
+   * Optional. A description of job responsibilities. The use of this field is
    * recommended as an alternative to using the more general
    * [description][google.cloud.talent.v4beta1.Job.description] field.
    * This field accepts and sanitizes HTML input, and also accepts
@@ -841,8 +802,7 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * A description of job responsibilities. The use of this field is
+   * Optional. A description of job responsibilities. The use of this field is
    * recommended as an alternative to using the more general
    * [description][google.cloud.talent.v4beta1.Job.description] field.
    * This field accepts and sanitizes HTML input, and also accepts
@@ -858,13 +818,12 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * The job [PostingRegion][google.cloud.talent.v4beta1.PostingRegion] (for
-   * example, state, country) throughout which the job is available. If this
-   * field is set, a
-   * [LocationFilter][google.cloud.talent.v4beta1.LocationFilter] in a search
-   * query within the job region finds this job posting if an exact location
-   * match isn't specified. If this field is set to
+   * Optional. The job
+   * [PostingRegion][google.cloud.talent.v4beta1.PostingRegion] (for example,
+   * state, country) throughout which the job is available. If this field is
+   * set, a [LocationFilter][google.cloud.talent.v4beta1.LocationFilter] in a
+   * search query within the job region finds this job posting if an exact
+   * location match isn't specified. If this field is set to
    * [PostingRegion.NATION][google.cloud.talent.v4beta1.PostingRegion.NATION] or
    * [PostingRegion.ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.PostingRegion.ADMINISTRATIVE_AREA],
    * setting job [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] to
@@ -878,13 +837,12 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * The job [PostingRegion][google.cloud.talent.v4beta1.PostingRegion] (for
-   * example, state, country) throughout which the job is available. If this
-   * field is set, a
-   * [LocationFilter][google.cloud.talent.v4beta1.LocationFilter] in a search
-   * query within the job region finds this job posting if an exact location
-   * match isn't specified. If this field is set to
+   * Optional. The job
+   * [PostingRegion][google.cloud.talent.v4beta1.PostingRegion] (for example,
+   * state, country) throughout which the job is available. If this field is
+   * set, a [LocationFilter][google.cloud.talent.v4beta1.LocationFilter] in a
+   * search query within the job region finds this job posting if an exact
+   * location match isn't specified. If this field is set to
    * [PostingRegion.NATION][google.cloud.talent.v4beta1.PostingRegion.NATION] or
    * [PostingRegion.ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.PostingRegion.ADMINISTRATIVE_AREA],
    * setting job [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] to
@@ -899,8 +857,7 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * The visibility of the job.
+   * Optional. The visibility of the job.
    * Defaults to
    * [Visibility.ACCOUNT_ONLY][google.cloud.talent.v4beta1.Visibility.ACCOUNT_ONLY]
    * if not specified.
@@ -913,8 +870,7 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * The visibility of the job.
+   * Optional. The visibility of the job.
    * Defaults to
    * [Visibility.ACCOUNT_ONLY][google.cloud.talent.v4beta1.Visibility.ACCOUNT_ONLY]
    * if not specified.
@@ -928,9 +884,8 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * The start timestamp of the job in UTC time zone. Typically this field
-   * is used for contracting engagements. Invalid timestamps are ignored.
+   * Optional. The start timestamp of the job in UTC time zone. Typically this
+   * field is used for contracting engagements. Invalid timestamps are ignored.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp job_start_time = 22;</code>
@@ -940,9 +895,8 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * The start timestamp of the job in UTC time zone. Typically this field
-   * is used for contracting engagements. Invalid timestamps are ignored.
+   * Optional. The start timestamp of the job in UTC time zone. Typically this
+   * field is used for contracting engagements. Invalid timestamps are ignored.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp job_start_time = 22;</code>
@@ -952,9 +906,8 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * The start timestamp of the job in UTC time zone. Typically this field
-   * is used for contracting engagements. Invalid timestamps are ignored.
+   * Optional. The start timestamp of the job in UTC time zone. Typically this
+   * field is used for contracting engagements. Invalid timestamps are ignored.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp job_start_time = 22;</code>
@@ -965,9 +918,8 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * The end timestamp of the job. Typically this field is used for contracting
-   * engagements. Invalid timestamps are ignored.
+   * Optional. The end timestamp of the job. Typically this field is used for
+   * contracting engagements. Invalid timestamps are ignored.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp job_end_time = 23;</code>
@@ -977,9 +929,8 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * The end timestamp of the job. Typically this field is used for contracting
-   * engagements. Invalid timestamps are ignored.
+   * Optional. The end timestamp of the job. Typically this field is used for
+   * contracting engagements. Invalid timestamps are ignored.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp job_end_time = 23;</code>
@@ -989,9 +940,8 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * The end timestamp of the job. Typically this field is used for contracting
-   * engagements. Invalid timestamps are ignored.
+   * Optional. The end timestamp of the job. Typically this field is used for
+   * contracting engagements. Invalid timestamps are ignored.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp job_end_time = 23;</code>
@@ -1002,10 +952,9 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * The timestamp this job posting was most recently published. The default
-   * value is the time the request arrives at the server. Invalid timestamps are
-   * ignored.
+   * Optional. The timestamp this job posting was most recently published. The
+   * default value is the time the request arrives at the server. Invalid
+   * timestamps are ignored.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp posting_publish_time = 24;</code>
@@ -1015,10 +964,9 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * The timestamp this job posting was most recently published. The default
-   * value is the time the request arrives at the server. Invalid timestamps are
-   * ignored.
+   * Optional. The timestamp this job posting was most recently published. The
+   * default value is the time the request arrives at the server. Invalid
+   * timestamps are ignored.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp posting_publish_time = 24;</code>
@@ -1028,10 +976,9 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * The timestamp this job posting was most recently published. The default
-   * value is the time the request arrives at the server. Invalid timestamps are
-   * ignored.
+   * Optional. The timestamp this job posting was most recently published. The
+   * default value is the time the request arrives at the server. Invalid
+   * timestamps are ignored.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp posting_publish_time = 24;</code>
@@ -1046,25 +993,35 @@ public interface JobOrBuilder
    * experience.
    * The expiration timestamp of the job. After this timestamp, the
    * job is marked as expired, and it no longer appears in search results. The
-   * expired job can't be deleted or listed by the
-   * [DeleteJob][google.cloud.talent.v4beta1.JobService.DeleteJob] and
-   * [ListJobs][google.cloud.talent.v4beta1.JobService.ListJobs] APIs, but it
-   * can be retrieved with the
+   * expired job can't be listed by the
+   * [ListJobs][google.cloud.talent.v4beta1.JobService.ListJobs] API, but it can
+   * be retrieved with the
    * [GetJob][google.cloud.talent.v4beta1.JobService.GetJob] API or updated with
-   * the [UpdateJob][google.cloud.talent.v4beta1.JobService.UpdateJob] API. An
+   * the [UpdateJob][google.cloud.talent.v4beta1.JobService.UpdateJob] API or
+   * deleted with the
+   * [DeleteJob][google.cloud.talent.v4beta1.JobService.DeleteJob] API. An
    * expired job can be updated and opened again by using a future expiration
    * timestamp. Updating an expired job fails if there is another existing open
    * job with same [company][google.cloud.talent.v4beta1.Job.company],
    * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
    * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
    * The expired jobs are retained in our system for 90 days. However, the
-   * overall expired job count cannot exceed 3 times the maximum of open jobs
-   * count over the past week, otherwise jobs with earlier expire time are
-   * cleaned first. Expired jobs are no longer accessible after they are cleaned
+   * overall expired job count cannot exceed 3 times the maximum number of
+   * open jobs over previous 7 days. If this threshold is exceeded,
+   * expired jobs are cleaned out in order of earliest expire time.
+   * Expired jobs are no longer accessible after they are cleaned
    * out.
    * Invalid timestamps are ignored, and treated as expire time not provided.
-   * Timestamp before the instant request is made is considered valid, the job
-   * will be treated as expired immediately.
+   * If the timestamp is before the instant request is made, the job
+   * is treated as expired immediately on creation. This kind of job can
+   * not be updated. And when creating a job with past timestamp, the
+   * [posting_publish_time][google.cloud.talent.v4beta1.Job.posting_publish_time]
+   * must be set before
+   * [posting_expire_time][google.cloud.talent.v4beta1.Job.posting_expire_time].
+   * The purpose of this feature is to allow other objects, such as
+   * [Application][google.cloud.talent.v4beta1.Application], to refer a job that
+   * didn't exist in the system prior to becoming expired. If you want to modify
+   * a job that was expired on creation, delete it and create a new one.
    * If this value isn't provided at the time of job creation or is invalid,
    * the job posting expires after 30 days from the job's creation time. For
    * example, if the job was created on 2017/01/01 13:00AM UTC with an
@@ -1090,25 +1047,35 @@ public interface JobOrBuilder
    * experience.
    * The expiration timestamp of the job. After this timestamp, the
    * job is marked as expired, and it no longer appears in search results. The
-   * expired job can't be deleted or listed by the
-   * [DeleteJob][google.cloud.talent.v4beta1.JobService.DeleteJob] and
-   * [ListJobs][google.cloud.talent.v4beta1.JobService.ListJobs] APIs, but it
-   * can be retrieved with the
+   * expired job can't be listed by the
+   * [ListJobs][google.cloud.talent.v4beta1.JobService.ListJobs] API, but it can
+   * be retrieved with the
    * [GetJob][google.cloud.talent.v4beta1.JobService.GetJob] API or updated with
-   * the [UpdateJob][google.cloud.talent.v4beta1.JobService.UpdateJob] API. An
+   * the [UpdateJob][google.cloud.talent.v4beta1.JobService.UpdateJob] API or
+   * deleted with the
+   * [DeleteJob][google.cloud.talent.v4beta1.JobService.DeleteJob] API. An
    * expired job can be updated and opened again by using a future expiration
    * timestamp. Updating an expired job fails if there is another existing open
    * job with same [company][google.cloud.talent.v4beta1.Job.company],
    * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
    * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
    * The expired jobs are retained in our system for 90 days. However, the
-   * overall expired job count cannot exceed 3 times the maximum of open jobs
-   * count over the past week, otherwise jobs with earlier expire time are
-   * cleaned first. Expired jobs are no longer accessible after they are cleaned
+   * overall expired job count cannot exceed 3 times the maximum number of
+   * open jobs over previous 7 days. If this threshold is exceeded,
+   * expired jobs are cleaned out in order of earliest expire time.
+   * Expired jobs are no longer accessible after they are cleaned
    * out.
    * Invalid timestamps are ignored, and treated as expire time not provided.
-   * Timestamp before the instant request is made is considered valid, the job
-   * will be treated as expired immediately.
+   * If the timestamp is before the instant request is made, the job
+   * is treated as expired immediately on creation. This kind of job can
+   * not be updated. And when creating a job with past timestamp, the
+   * [posting_publish_time][google.cloud.talent.v4beta1.Job.posting_publish_time]
+   * must be set before
+   * [posting_expire_time][google.cloud.talent.v4beta1.Job.posting_expire_time].
+   * The purpose of this feature is to allow other objects, such as
+   * [Application][google.cloud.talent.v4beta1.Application], to refer a job that
+   * didn't exist in the system prior to becoming expired. If you want to modify
+   * a job that was expired on creation, delete it and create a new one.
    * If this value isn't provided at the time of job creation or is invalid,
    * the job posting expires after 30 days from the job's creation time. For
    * example, if the job was created on 2017/01/01 13:00AM UTC with an
@@ -1134,25 +1101,35 @@ public interface JobOrBuilder
    * experience.
    * The expiration timestamp of the job. After this timestamp, the
    * job is marked as expired, and it no longer appears in search results. The
-   * expired job can't be deleted or listed by the
-   * [DeleteJob][google.cloud.talent.v4beta1.JobService.DeleteJob] and
-   * [ListJobs][google.cloud.talent.v4beta1.JobService.ListJobs] APIs, but it
-   * can be retrieved with the
+   * expired job can't be listed by the
+   * [ListJobs][google.cloud.talent.v4beta1.JobService.ListJobs] API, but it can
+   * be retrieved with the
    * [GetJob][google.cloud.talent.v4beta1.JobService.GetJob] API or updated with
-   * the [UpdateJob][google.cloud.talent.v4beta1.JobService.UpdateJob] API. An
+   * the [UpdateJob][google.cloud.talent.v4beta1.JobService.UpdateJob] API or
+   * deleted with the
+   * [DeleteJob][google.cloud.talent.v4beta1.JobService.DeleteJob] API. An
    * expired job can be updated and opened again by using a future expiration
    * timestamp. Updating an expired job fails if there is another existing open
    * job with same [company][google.cloud.talent.v4beta1.Job.company],
    * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
    * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
    * The expired jobs are retained in our system for 90 days. However, the
-   * overall expired job count cannot exceed 3 times the maximum of open jobs
-   * count over the past week, otherwise jobs with earlier expire time are
-   * cleaned first. Expired jobs are no longer accessible after they are cleaned
+   * overall expired job count cannot exceed 3 times the maximum number of
+   * open jobs over previous 7 days. If this threshold is exceeded,
+   * expired jobs are cleaned out in order of earliest expire time.
+   * Expired jobs are no longer accessible after they are cleaned
    * out.
    * Invalid timestamps are ignored, and treated as expire time not provided.
-   * Timestamp before the instant request is made is considered valid, the job
-   * will be treated as expired immediately.
+   * If the timestamp is before the instant request is made, the job
+   * is treated as expired immediately on creation. This kind of job can
+   * not be updated. And when creating a job with past timestamp, the
+   * [posting_publish_time][google.cloud.talent.v4beta1.Job.posting_publish_time]
+   * must be set before
+   * [posting_expire_time][google.cloud.talent.v4beta1.Job.posting_expire_time].
+   * The purpose of this feature is to allow other objects, such as
+   * [Application][google.cloud.talent.v4beta1.Application], to refer a job that
+   * didn't exist in the system prior to becoming expired. If you want to modify
+   * a job that was expired on creation, delete it and create a new one.
    * If this value isn't provided at the time of job creation or is invalid,
    * the job posting expires after 30 days from the job's creation time. For
    * example, if the job was created on 2017/01/01 13:00AM UTC with an
@@ -1289,8 +1266,7 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * Options for job processing.
+   * Optional. Options for job processing.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Job.ProcessingOptions processing_options = 30;</code>
@@ -1300,8 +1276,7 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * Options for job processing.
+   * Optional. Options for job processing.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Job.ProcessingOptions processing_options = 30;</code>
@@ -1311,8 +1286,7 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * Options for job processing.
+   * Optional. Options for job processing.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Job.ProcessingOptions processing_options = 30;</code>

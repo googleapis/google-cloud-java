@@ -27,6 +27,7 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
     pageToken_ = "";
     orderBy_ = "";
     histogramQueries_ = java.util.Collections.emptyList();
+    resultSetId_ = "";
   }
 
   @java.lang.Override
@@ -138,6 +139,13 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
                       com.google.cloud.talent.v4beta1.HistogramQuery.parser(), extensionRegistry));
               break;
             }
+          case 98:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              resultSetId_ = s;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -182,8 +190,7 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required.
-   * The resource name of the tenant to search within.
+   * Required. The resource name of the tenant to search within.
    * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
    * "projects/api-test-project/tenants/foo".
    * </pre>
@@ -205,8 +212,7 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required.
-   * The resource name of the tenant to search within.
+   * Required. The resource name of the tenant to search within.
    * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
    * "projects/api-test-project/tenants/foo".
    * </pre>
@@ -231,10 +237,9 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required.
-   * The meta information collected about the profile search user. This is used
-   * to improve the search quality of the service. These values are provided by
-   * users, and must be precise and consistent.
+   * Required. The meta information collected about the profile search user.
+   * This is used to improve the search quality of the service. These values are
+   * provided by users, and must be precise and consistent.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.RequestMetadata request_metadata = 2;</code>
@@ -246,10 +251,9 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required.
-   * The meta information collected about the profile search user. This is used
-   * to improve the search quality of the service. These values are provided by
-   * users, and must be precise and consistent.
+   * Required. The meta information collected about the profile search user.
+   * This is used to improve the search quality of the service. These values are
+   * provided by users, and must be precise and consistent.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.RequestMetadata request_metadata = 2;</code>
@@ -263,10 +267,9 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required.
-   * The meta information collected about the profile search user. This is used
-   * to improve the search quality of the service. These values are provided by
-   * users, and must be precise and consistent.
+   * Required. The meta information collected about the profile search user.
+   * This is used to improve the search quality of the service. These values are
+   * provided by users, and must be precise and consistent.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.RequestMetadata request_metadata = 2;</code>
@@ -281,8 +284,7 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Optional.
-   * Search query to execute. See
+   * Optional. Search query to execute. See
    * [ProfileQuery][google.cloud.talent.v4beta1.ProfileQuery] for more details.
    * </pre>
    *
@@ -295,8 +297,7 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Optional.
-   * Search query to execute. See
+   * Optional. Search query to execute. See
    * [ProfileQuery][google.cloud.talent.v4beta1.ProfileQuery] for more details.
    * </pre>
    *
@@ -311,8 +312,7 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Optional.
-   * Search query to execute. See
+   * Optional. Search query to execute. See
    * [ProfileQuery][google.cloud.talent.v4beta1.ProfileQuery] for more details.
    * </pre>
    *
@@ -328,8 +328,7 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Optional.
-   * A limit on the number of profiles returned in the search results.
+   * Optional. A limit on the number of profiles returned in the search results.
    * A value above the default value 10 can increase search response time.
    * The maximum value allowed is 100. Otherwise an error is thrown.
    * </pre>
@@ -346,10 +345,9 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Optional.
-   * The pageToken, similar to offset enables users of the API to paginate
-   * through the search results. To retrieve the first page of results, set the
-   * pageToken to empty. The search response includes a
+   * Optional. The pageToken, similar to offset enables users of the API to
+   * paginate through the search results. To retrieve the first page of results,
+   * set the pageToken to empty. The search response includes a
    * [nextPageToken][google.cloud.talent.v4beta1.SearchProfilesResponse.next_page_token]
    * field that can be used to populate the pageToken field for the next page of
    * results. Using pageToken instead of offset increases the performance of the
@@ -373,10 +371,9 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Optional.
-   * The pageToken, similar to offset enables users of the API to paginate
-   * through the search results. To retrieve the first page of results, set the
-   * pageToken to empty. The search response includes a
+   * Optional. The pageToken, similar to offset enables users of the API to
+   * paginate through the search results. To retrieve the first page of results,
+   * set the pageToken to empty. The search response includes a
    * [nextPageToken][google.cloud.talent.v4beta1.SearchProfilesResponse.next_page_token]
    * field that can be used to populate the pageToken field for the next page of
    * results. Using pageToken instead of offset increases the performance of the
@@ -403,9 +400,8 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Optional.
-   * An integer that specifies the current offset (that is, starting result) in
-   * search results. This field is only considered if
+   * Optional. An integer that specifies the current offset (that is, starting
+   * result) in search results. This field is only considered if
    * [page_token][google.cloud.talent.v4beta1.SearchProfilesRequest.page_token]
    * is unset.
    * The maximum allowed value is 5000. Otherwise an error is thrown.
@@ -426,8 +422,7 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Optional.
-   * This flag controls the spell-check feature. If `false`, the
+   * Optional. This flag controls the spell-check feature. If `false`, the
    * service attempts to correct a misspelled query.
    * For example, "enginee" is corrected to "engineer".
    * </pre>
@@ -444,8 +439,7 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Optional.
-   * The criteria that determines how search results are sorted.
+   * Optional. The criteria that determines how search results are sorted.
    * Defaults is "relevance desc" if no value is specified.
    * Supported options are:
    * * "relevance desc": By descending relevance, as determined by the API
@@ -491,8 +485,7 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Optional.
-   * The criteria that determines how search results are sorted.
+   * Optional. The criteria that determines how search results are sorted.
    * Defaults is "relevance desc" if no value is specified.
    * Supported options are:
    * * "relevance desc": By descending relevance, as determined by the API
@@ -541,10 +534,9 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Optional.
-   * When sort by field is based on alphabetical order, sort values case
-   * sensitively (based on ASCII) when the value is set to true. Default value
-   * is case in-sensitive sort (false).
+   * Optional. When sort by field is based on alphabetical order, sort values
+   * case sensitively (based on ASCII) when the value is set to true. Default
+   * value is case in-sensitive sort (false).
    * </pre>
    *
    * <code>bool case_sensitive_sort = 9;</code>
@@ -559,9 +551,8 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Optional.
-   * A list of expressions specifies histogram requests against matching
-   * profiles for
+   * Optional. A list of expressions specifies histogram requests against
+   * matching profiles for
    * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
    * The expression syntax looks like a function definition with optional
    * parameters.
@@ -641,9 +632,8 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Optional.
-   * A list of expressions specifies histogram requests against matching
-   * profiles for
+   * Optional. A list of expressions specifies histogram requests against
+   * matching profiles for
    * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
    * The expression syntax looks like a function definition with optional
    * parameters.
@@ -724,9 +714,8 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Optional.
-   * A list of expressions specifies histogram requests against matching
-   * profiles for
+   * Optional. A list of expressions specifies histogram requests against
+   * matching profiles for
    * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
    * The expression syntax looks like a function definition with optional
    * parameters.
@@ -806,9 +795,8 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Optional.
-   * A list of expressions specifies histogram requests against matching
-   * profiles for
+   * Optional. A list of expressions specifies histogram requests against
+   * matching profiles for
    * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
    * The expression syntax looks like a function definition with optional
    * parameters.
@@ -888,9 +876,8 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Optional.
-   * A list of expressions specifies histogram requests against matching
-   * profiles for
+   * Optional. A list of expressions specifies histogram requests against
+   * matching profiles for
    * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
    * The expression syntax looks like a function definition with optional
    * parameters.
@@ -968,6 +955,91 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
     return histogramQueries_.get(index);
   }
 
+  public static final int RESULT_SET_ID_FIELD_NUMBER = 12;
+  private volatile java.lang.Object resultSetId_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An id that uniquely identifies the result set of a
+   * [SearchProfiles][] call.  The id should be retrieved from the
+   * [SearchProfilesResponse][google.cloud.talent.v4beta1.SearchProfilesResponse]
+   * message returned from a previous invocation of [SearchProfiles][].
+   * A result set is an ordered list of search results.
+   * If this field is not set, a new result set is computed based on the
+   * [profile_query][google.cloud.talent.v4beta1.SearchProfilesRequest.profile_query].
+   * A new
+   * [result_set_id][google.cloud.talent.v4beta1.SearchProfilesRequest.result_set_id]
+   * is returned as a handle to access this result set.
+   * If this field is set, the service will ignore the resource and
+   * [profile_query][google.cloud.talent.v4beta1.SearchProfilesRequest.profile_query]
+   * values, and simply retrieve a page of results from the corresponding result
+   * set.  In this case, one and only one of [page_token] or [offset] must be
+   * set.
+   * A typical use case is to invoke
+   * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest]
+   * without this field, then use the resulting
+   * [result_set_id][google.cloud.talent.v4beta1.SearchProfilesRequest.result_set_id]
+   * in
+   * [SearchProfilesResponse][google.cloud.talent.v4beta1.SearchProfilesResponse]
+   * to page through the results.
+   * </pre>
+   *
+   * <code>string result_set_id = 12;</code>
+   */
+  public java.lang.String getResultSetId() {
+    java.lang.Object ref = resultSetId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      resultSetId_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An id that uniquely identifies the result set of a
+   * [SearchProfiles][] call.  The id should be retrieved from the
+   * [SearchProfilesResponse][google.cloud.talent.v4beta1.SearchProfilesResponse]
+   * message returned from a previous invocation of [SearchProfiles][].
+   * A result set is an ordered list of search results.
+   * If this field is not set, a new result set is computed based on the
+   * [profile_query][google.cloud.talent.v4beta1.SearchProfilesRequest.profile_query].
+   * A new
+   * [result_set_id][google.cloud.talent.v4beta1.SearchProfilesRequest.result_set_id]
+   * is returned as a handle to access this result set.
+   * If this field is set, the service will ignore the resource and
+   * [profile_query][google.cloud.talent.v4beta1.SearchProfilesRequest.profile_query]
+   * values, and simply retrieve a page of results from the corresponding result
+   * set.  In this case, one and only one of [page_token] or [offset] must be
+   * set.
+   * A typical use case is to invoke
+   * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest]
+   * without this field, then use the resulting
+   * [result_set_id][google.cloud.talent.v4beta1.SearchProfilesRequest.result_set_id]
+   * in
+   * [SearchProfilesResponse][google.cloud.talent.v4beta1.SearchProfilesResponse]
+   * to page through the results.
+   * </pre>
+   *
+   * <code>string result_set_id = 12;</code>
+   */
+  public com.google.protobuf.ByteString getResultSetIdBytes() {
+    java.lang.Object ref = resultSetId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      resultSetId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1012,6 +1084,9 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
     for (int i = 0; i < histogramQueries_.size(); i++) {
       output.writeMessage(10, histogramQueries_.get(i));
     }
+    if (!getResultSetIdBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 12, resultSetId_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -1052,6 +1127,9 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(10, histogramQueries_.get(i));
     }
+    if (!getResultSetIdBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, resultSetId_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1084,6 +1162,7 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
     if (!getOrderBy().equals(other.getOrderBy())) return false;
     if (getCaseSensitiveSort() != other.getCaseSensitiveSort()) return false;
     if (!getHistogramQueriesList().equals(other.getHistogramQueriesList())) return false;
+    if (!getResultSetId().equals(other.getResultSetId())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1121,6 +1200,8 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
       hash = (37 * hash) + HISTOGRAM_QUERIES_FIELD_NUMBER;
       hash = (53 * hash) + getHistogramQueriesList().hashCode();
     }
+    hash = (37 * hash) + RESULT_SET_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getResultSetId().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1301,6 +1382,8 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
       } else {
         histogramQueriesBuilder_.clear();
       }
+      resultSetId_ = "";
+
       return this;
     }
 
@@ -1356,6 +1439,7 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
       } else {
         result.histogramQueries_ = histogramQueriesBuilder_.build();
       }
+      result.resultSetId_ = resultSetId_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -1464,6 +1548,10 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
           }
         }
       }
+      if (!other.getResultSetId().isEmpty()) {
+        resultSetId_ = other.resultSetId_;
+        onChanged();
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -1501,8 +1589,7 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required.
-     * The resource name of the tenant to search within.
+     * Required. The resource name of the tenant to search within.
      * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
      * "projects/api-test-project/tenants/foo".
      * </pre>
@@ -1524,8 +1611,7 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required.
-     * The resource name of the tenant to search within.
+     * Required. The resource name of the tenant to search within.
      * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
      * "projects/api-test-project/tenants/foo".
      * </pre>
@@ -1547,8 +1633,7 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required.
-     * The resource name of the tenant to search within.
+     * Required. The resource name of the tenant to search within.
      * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
      * "projects/api-test-project/tenants/foo".
      * </pre>
@@ -1568,8 +1653,7 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required.
-     * The resource name of the tenant to search within.
+     * Required. The resource name of the tenant to search within.
      * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
      * "projects/api-test-project/tenants/foo".
      * </pre>
@@ -1586,8 +1670,7 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required.
-     * The resource name of the tenant to search within.
+     * Required. The resource name of the tenant to search within.
      * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
      * "projects/api-test-project/tenants/foo".
      * </pre>
@@ -1615,10 +1698,9 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required.
-     * The meta information collected about the profile search user. This is used
-     * to improve the search quality of the service. These values are provided by
-     * users, and must be precise and consistent.
+     * Required. The meta information collected about the profile search user.
+     * This is used to improve the search quality of the service. These values are
+     * provided by users, and must be precise and consistent.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.RequestMetadata request_metadata = 2;</code>
@@ -1630,10 +1712,9 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required.
-     * The meta information collected about the profile search user. This is used
-     * to improve the search quality of the service. These values are provided by
-     * users, and must be precise and consistent.
+     * Required. The meta information collected about the profile search user.
+     * This is used to improve the search quality of the service. These values are
+     * provided by users, and must be precise and consistent.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.RequestMetadata request_metadata = 2;</code>
@@ -1651,10 +1732,9 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required.
-     * The meta information collected about the profile search user. This is used
-     * to improve the search quality of the service. These values are provided by
-     * users, and must be precise and consistent.
+     * Required. The meta information collected about the profile search user.
+     * This is used to improve the search quality of the service. These values are
+     * provided by users, and must be precise and consistent.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.RequestMetadata request_metadata = 2;</code>
@@ -1676,10 +1756,9 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required.
-     * The meta information collected about the profile search user. This is used
-     * to improve the search quality of the service. These values are provided by
-     * users, and must be precise and consistent.
+     * Required. The meta information collected about the profile search user.
+     * This is used to improve the search quality of the service. These values are
+     * provided by users, and must be precise and consistent.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.RequestMetadata request_metadata = 2;</code>
@@ -1699,10 +1778,9 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required.
-     * The meta information collected about the profile search user. This is used
-     * to improve the search quality of the service. These values are provided by
-     * users, and must be precise and consistent.
+     * Required. The meta information collected about the profile search user.
+     * This is used to improve the search quality of the service. These values are
+     * provided by users, and must be precise and consistent.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.RequestMetadata request_metadata = 2;</code>
@@ -1728,10 +1806,9 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required.
-     * The meta information collected about the profile search user. This is used
-     * to improve the search quality of the service. These values are provided by
-     * users, and must be precise and consistent.
+     * Required. The meta information collected about the profile search user.
+     * This is used to improve the search quality of the service. These values are
+     * provided by users, and must be precise and consistent.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.RequestMetadata request_metadata = 2;</code>
@@ -1751,10 +1828,9 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required.
-     * The meta information collected about the profile search user. This is used
-     * to improve the search quality of the service. These values are provided by
-     * users, and must be precise and consistent.
+     * Required. The meta information collected about the profile search user.
+     * This is used to improve the search quality of the service. These values are
+     * provided by users, and must be precise and consistent.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.RequestMetadata request_metadata = 2;</code>
@@ -1768,10 +1844,9 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required.
-     * The meta information collected about the profile search user. This is used
-     * to improve the search quality of the service. These values are provided by
-     * users, and must be precise and consistent.
+     * Required. The meta information collected about the profile search user.
+     * This is used to improve the search quality of the service. These values are
+     * provided by users, and must be precise and consistent.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.RequestMetadata request_metadata = 2;</code>
@@ -1789,10 +1864,9 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required.
-     * The meta information collected about the profile search user. This is used
-     * to improve the search quality of the service. These values are provided by
-     * users, and must be precise and consistent.
+     * Required. The meta information collected about the profile search user.
+     * This is used to improve the search quality of the service. These values are
+     * provided by users, and must be precise and consistent.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.RequestMetadata request_metadata = 2;</code>
@@ -1824,8 +1898,7 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional.
-     * Search query to execute. See
+     * Optional. Search query to execute. See
      * [ProfileQuery][google.cloud.talent.v4beta1.ProfileQuery] for more details.
      * </pre>
      *
@@ -1838,8 +1911,7 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional.
-     * Search query to execute. See
+     * Optional. Search query to execute. See
      * [ProfileQuery][google.cloud.talent.v4beta1.ProfileQuery] for more details.
      * </pre>
      *
@@ -1858,8 +1930,7 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional.
-     * Search query to execute. See
+     * Optional. Search query to execute. See
      * [ProfileQuery][google.cloud.talent.v4beta1.ProfileQuery] for more details.
      * </pre>
      *
@@ -1882,8 +1953,7 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional.
-     * Search query to execute. See
+     * Optional. Search query to execute. See
      * [ProfileQuery][google.cloud.talent.v4beta1.ProfileQuery] for more details.
      * </pre>
      *
@@ -1904,8 +1974,7 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional.
-     * Search query to execute. See
+     * Optional. Search query to execute. See
      * [ProfileQuery][google.cloud.talent.v4beta1.ProfileQuery] for more details.
      * </pre>
      *
@@ -1932,8 +2001,7 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional.
-     * Search query to execute. See
+     * Optional. Search query to execute. See
      * [ProfileQuery][google.cloud.talent.v4beta1.ProfileQuery] for more details.
      * </pre>
      *
@@ -1954,8 +2022,7 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional.
-     * Search query to execute. See
+     * Optional. Search query to execute. See
      * [ProfileQuery][google.cloud.talent.v4beta1.ProfileQuery] for more details.
      * </pre>
      *
@@ -1970,8 +2037,7 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional.
-     * Search query to execute. See
+     * Optional. Search query to execute. See
      * [ProfileQuery][google.cloud.talent.v4beta1.ProfileQuery] for more details.
      * </pre>
      *
@@ -1990,8 +2056,7 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional.
-     * Search query to execute. See
+     * Optional. Search query to execute. See
      * [ProfileQuery][google.cloud.talent.v4beta1.ProfileQuery] for more details.
      * </pre>
      *
@@ -2019,8 +2084,7 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional.
-     * A limit on the number of profiles returned in the search results.
+     * Optional. A limit on the number of profiles returned in the search results.
      * A value above the default value 10 can increase search response time.
      * The maximum value allowed is 100. Otherwise an error is thrown.
      * </pre>
@@ -2034,8 +2098,7 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional.
-     * A limit on the number of profiles returned in the search results.
+     * Optional. A limit on the number of profiles returned in the search results.
      * A value above the default value 10 can increase search response time.
      * The maximum value allowed is 100. Otherwise an error is thrown.
      * </pre>
@@ -2052,8 +2115,7 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional.
-     * A limit on the number of profiles returned in the search results.
+     * Optional. A limit on the number of profiles returned in the search results.
      * A value above the default value 10 can increase search response time.
      * The maximum value allowed is 100. Otherwise an error is thrown.
      * </pre>
@@ -2072,10 +2134,9 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional.
-     * The pageToken, similar to offset enables users of the API to paginate
-     * through the search results. To retrieve the first page of results, set the
-     * pageToken to empty. The search response includes a
+     * Optional. The pageToken, similar to offset enables users of the API to
+     * paginate through the search results. To retrieve the first page of results,
+     * set the pageToken to empty. The search response includes a
      * [nextPageToken][google.cloud.talent.v4beta1.SearchProfilesResponse.next_page_token]
      * field that can be used to populate the pageToken field for the next page of
      * results. Using pageToken instead of offset increases the performance of the
@@ -2099,10 +2160,9 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional.
-     * The pageToken, similar to offset enables users of the API to paginate
-     * through the search results. To retrieve the first page of results, set the
-     * pageToken to empty. The search response includes a
+     * Optional. The pageToken, similar to offset enables users of the API to
+     * paginate through the search results. To retrieve the first page of results,
+     * set the pageToken to empty. The search response includes a
      * [nextPageToken][google.cloud.talent.v4beta1.SearchProfilesResponse.next_page_token]
      * field that can be used to populate the pageToken field for the next page of
      * results. Using pageToken instead of offset increases the performance of the
@@ -2126,10 +2186,9 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional.
-     * The pageToken, similar to offset enables users of the API to paginate
-     * through the search results. To retrieve the first page of results, set the
-     * pageToken to empty. The search response includes a
+     * Optional. The pageToken, similar to offset enables users of the API to
+     * paginate through the search results. To retrieve the first page of results,
+     * set the pageToken to empty. The search response includes a
      * [nextPageToken][google.cloud.talent.v4beta1.SearchProfilesResponse.next_page_token]
      * field that can be used to populate the pageToken field for the next page of
      * results. Using pageToken instead of offset increases the performance of the
@@ -2151,10 +2210,9 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional.
-     * The pageToken, similar to offset enables users of the API to paginate
-     * through the search results. To retrieve the first page of results, set the
-     * pageToken to empty. The search response includes a
+     * Optional. The pageToken, similar to offset enables users of the API to
+     * paginate through the search results. To retrieve the first page of results,
+     * set the pageToken to empty. The search response includes a
      * [nextPageToken][google.cloud.talent.v4beta1.SearchProfilesResponse.next_page_token]
      * field that can be used to populate the pageToken field for the next page of
      * results. Using pageToken instead of offset increases the performance of the
@@ -2173,10 +2231,9 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional.
-     * The pageToken, similar to offset enables users of the API to paginate
-     * through the search results. To retrieve the first page of results, set the
-     * pageToken to empty. The search response includes a
+     * Optional. The pageToken, similar to offset enables users of the API to
+     * paginate through the search results. To retrieve the first page of results,
+     * set the pageToken to empty. The search response includes a
      * [nextPageToken][google.cloud.talent.v4beta1.SearchProfilesResponse.next_page_token]
      * field that can be used to populate the pageToken field for the next page of
      * results. Using pageToken instead of offset increases the performance of the
@@ -2201,9 +2258,8 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional.
-     * An integer that specifies the current offset (that is, starting result) in
-     * search results. This field is only considered if
+     * Optional. An integer that specifies the current offset (that is, starting
+     * result) in search results. This field is only considered if
      * [page_token][google.cloud.talent.v4beta1.SearchProfilesRequest.page_token]
      * is unset.
      * The maximum allowed value is 5000. Otherwise an error is thrown.
@@ -2221,9 +2277,8 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional.
-     * An integer that specifies the current offset (that is, starting result) in
-     * search results. This field is only considered if
+     * Optional. An integer that specifies the current offset (that is, starting
+     * result) in search results. This field is only considered if
      * [page_token][google.cloud.talent.v4beta1.SearchProfilesRequest.page_token]
      * is unset.
      * The maximum allowed value is 5000. Otherwise an error is thrown.
@@ -2244,9 +2299,8 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional.
-     * An integer that specifies the current offset (that is, starting result) in
-     * search results. This field is only considered if
+     * Optional. An integer that specifies the current offset (that is, starting
+     * result) in search results. This field is only considered if
      * [page_token][google.cloud.talent.v4beta1.SearchProfilesRequest.page_token]
      * is unset.
      * The maximum allowed value is 5000. Otherwise an error is thrown.
@@ -2269,8 +2323,7 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional.
-     * This flag controls the spell-check feature. If `false`, the
+     * Optional. This flag controls the spell-check feature. If `false`, the
      * service attempts to correct a misspelled query.
      * For example, "enginee" is corrected to "engineer".
      * </pre>
@@ -2284,8 +2337,7 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional.
-     * This flag controls the spell-check feature. If `false`, the
+     * Optional. This flag controls the spell-check feature. If `false`, the
      * service attempts to correct a misspelled query.
      * For example, "enginee" is corrected to "engineer".
      * </pre>
@@ -2302,8 +2354,7 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional.
-     * This flag controls the spell-check feature. If `false`, the
+     * Optional. This flag controls the spell-check feature. If `false`, the
      * service attempts to correct a misspelled query.
      * For example, "enginee" is corrected to "engineer".
      * </pre>
@@ -2322,8 +2373,7 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional.
-     * The criteria that determines how search results are sorted.
+     * Optional. The criteria that determines how search results are sorted.
      * Defaults is "relevance desc" if no value is specified.
      * Supported options are:
      * * "relevance desc": By descending relevance, as determined by the API
@@ -2369,8 +2419,7 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional.
-     * The criteria that determines how search results are sorted.
+     * Optional. The criteria that determines how search results are sorted.
      * Defaults is "relevance desc" if no value is specified.
      * Supported options are:
      * * "relevance desc": By descending relevance, as determined by the API
@@ -2416,8 +2465,7 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional.
-     * The criteria that determines how search results are sorted.
+     * Optional. The criteria that determines how search results are sorted.
      * Defaults is "relevance desc" if no value is specified.
      * Supported options are:
      * * "relevance desc": By descending relevance, as determined by the API
@@ -2461,8 +2509,7 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional.
-     * The criteria that determines how search results are sorted.
+     * Optional. The criteria that determines how search results are sorted.
      * Defaults is "relevance desc" if no value is specified.
      * Supported options are:
      * * "relevance desc": By descending relevance, as determined by the API
@@ -2503,8 +2550,7 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional.
-     * The criteria that determines how search results are sorted.
+     * Optional. The criteria that determines how search results are sorted.
      * Defaults is "relevance desc" if no value is specified.
      * Supported options are:
      * * "relevance desc": By descending relevance, as determined by the API
@@ -2551,10 +2597,9 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional.
-     * When sort by field is based on alphabetical order, sort values case
-     * sensitively (based on ASCII) when the value is set to true. Default value
-     * is case in-sensitive sort (false).
+     * Optional. When sort by field is based on alphabetical order, sort values
+     * case sensitively (based on ASCII) when the value is set to true. Default
+     * value is case in-sensitive sort (false).
      * </pre>
      *
      * <code>bool case_sensitive_sort = 9;</code>
@@ -2566,10 +2611,9 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional.
-     * When sort by field is based on alphabetical order, sort values case
-     * sensitively (based on ASCII) when the value is set to true. Default value
-     * is case in-sensitive sort (false).
+     * Optional. When sort by field is based on alphabetical order, sort values
+     * case sensitively (based on ASCII) when the value is set to true. Default
+     * value is case in-sensitive sort (false).
      * </pre>
      *
      * <code>bool case_sensitive_sort = 9;</code>
@@ -2584,10 +2628,9 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional.
-     * When sort by field is based on alphabetical order, sort values case
-     * sensitively (based on ASCII) when the value is set to true. Default value
-     * is case in-sensitive sort (false).
+     * Optional. When sort by field is based on alphabetical order, sort values
+     * case sensitively (based on ASCII) when the value is set to true. Default
+     * value is case in-sensitive sort (false).
      * </pre>
      *
      * <code>bool case_sensitive_sort = 9;</code>
@@ -2621,9 +2664,8 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional.
-     * A list of expressions specifies histogram requests against matching
-     * profiles for
+     * Optional. A list of expressions specifies histogram requests against
+     * matching profiles for
      * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
      * The expression syntax looks like a function definition with optional
      * parameters.
@@ -2708,9 +2750,8 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional.
-     * A list of expressions specifies histogram requests against matching
-     * profiles for
+     * Optional. A list of expressions specifies histogram requests against
+     * matching profiles for
      * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
      * The expression syntax looks like a function definition with optional
      * parameters.
@@ -2794,9 +2835,8 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional.
-     * A list of expressions specifies histogram requests against matching
-     * profiles for
+     * Optional. A list of expressions specifies histogram requests against
+     * matching profiles for
      * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
      * The expression syntax looks like a function definition with optional
      * parameters.
@@ -2880,9 +2920,8 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional.
-     * A list of expressions specifies histogram requests against matching
-     * profiles for
+     * Optional. A list of expressions specifies histogram requests against
+     * matching profiles for
      * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
      * The expression syntax looks like a function definition with optional
      * parameters.
@@ -2973,9 +3012,8 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional.
-     * A list of expressions specifies histogram requests against matching
-     * profiles for
+     * Optional. A list of expressions specifies histogram requests against
+     * matching profiles for
      * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
      * The expression syntax looks like a function definition with optional
      * parameters.
@@ -3063,9 +3101,8 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional.
-     * A list of expressions specifies histogram requests against matching
-     * profiles for
+     * Optional. A list of expressions specifies histogram requests against
+     * matching profiles for
      * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
      * The expression syntax looks like a function definition with optional
      * parameters.
@@ -3155,9 +3192,8 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional.
-     * A list of expressions specifies histogram requests against matching
-     * profiles for
+     * Optional. A list of expressions specifies histogram requests against
+     * matching profiles for
      * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
      * The expression syntax looks like a function definition with optional
      * parameters.
@@ -3248,9 +3284,8 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional.
-     * A list of expressions specifies histogram requests against matching
-     * profiles for
+     * Optional. A list of expressions specifies histogram requests against
+     * matching profiles for
      * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
      * The expression syntax looks like a function definition with optional
      * parameters.
@@ -3338,9 +3373,8 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional.
-     * A list of expressions specifies histogram requests against matching
-     * profiles for
+     * Optional. A list of expressions specifies histogram requests against
+     * matching profiles for
      * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
      * The expression syntax looks like a function definition with optional
      * parameters.
@@ -3428,9 +3462,8 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional.
-     * A list of expressions specifies histogram requests against matching
-     * profiles for
+     * Optional. A list of expressions specifies histogram requests against
+     * matching profiles for
      * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
      * The expression syntax looks like a function definition with optional
      * parameters.
@@ -3518,9 +3551,8 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional.
-     * A list of expressions specifies histogram requests against matching
-     * profiles for
+     * Optional. A list of expressions specifies histogram requests against
+     * matching profiles for
      * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
      * The expression syntax looks like a function definition with optional
      * parameters.
@@ -3607,9 +3639,8 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional.
-     * A list of expressions specifies histogram requests against matching
-     * profiles for
+     * Optional. A list of expressions specifies histogram requests against
+     * matching profiles for
      * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
      * The expression syntax looks like a function definition with optional
      * parameters.
@@ -3696,9 +3727,8 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional.
-     * A list of expressions specifies histogram requests against matching
-     * profiles for
+     * Optional. A list of expressions specifies histogram requests against
+     * matching profiles for
      * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
      * The expression syntax looks like a function definition with optional
      * parameters.
@@ -3779,9 +3809,8 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional.
-     * A list of expressions specifies histogram requests against matching
-     * profiles for
+     * Optional. A list of expressions specifies histogram requests against
+     * matching profiles for
      * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
      * The expression syntax looks like a function definition with optional
      * parameters.
@@ -3866,9 +3895,8 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional.
-     * A list of expressions specifies histogram requests against matching
-     * profiles for
+     * Optional. A list of expressions specifies histogram requests against
+     * matching profiles for
      * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
      * The expression syntax looks like a function definition with optional
      * parameters.
@@ -3953,9 +3981,8 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional.
-     * A list of expressions specifies histogram requests against matching
-     * profiles for
+     * Optional. A list of expressions specifies histogram requests against
+     * matching profiles for
      * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
      * The expression syntax looks like a function definition with optional
      * parameters.
@@ -4036,9 +4063,8 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional.
-     * A list of expressions specifies histogram requests against matching
-     * profiles for
+     * Optional. A list of expressions specifies histogram requests against
+     * matching profiles for
      * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
      * The expression syntax looks like a function definition with optional
      * parameters.
@@ -4120,9 +4146,8 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional.
-     * A list of expressions specifies histogram requests against matching
-     * profiles for
+     * Optional. A list of expressions specifies histogram requests against
+     * matching profiles for
      * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
      * The expression syntax looks like a function definition with optional
      * parameters.
@@ -4218,6 +4243,205 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
         histogramQueries_ = null;
       }
       return histogramQueriesBuilder_;
+    }
+
+    private java.lang.Object resultSetId_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An id that uniquely identifies the result set of a
+     * [SearchProfiles][] call.  The id should be retrieved from the
+     * [SearchProfilesResponse][google.cloud.talent.v4beta1.SearchProfilesResponse]
+     * message returned from a previous invocation of [SearchProfiles][].
+     * A result set is an ordered list of search results.
+     * If this field is not set, a new result set is computed based on the
+     * [profile_query][google.cloud.talent.v4beta1.SearchProfilesRequest.profile_query].
+     * A new
+     * [result_set_id][google.cloud.talent.v4beta1.SearchProfilesRequest.result_set_id]
+     * is returned as a handle to access this result set.
+     * If this field is set, the service will ignore the resource and
+     * [profile_query][google.cloud.talent.v4beta1.SearchProfilesRequest.profile_query]
+     * values, and simply retrieve a page of results from the corresponding result
+     * set.  In this case, one and only one of [page_token] or [offset] must be
+     * set.
+     * A typical use case is to invoke
+     * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest]
+     * without this field, then use the resulting
+     * [result_set_id][google.cloud.talent.v4beta1.SearchProfilesRequest.result_set_id]
+     * in
+     * [SearchProfilesResponse][google.cloud.talent.v4beta1.SearchProfilesResponse]
+     * to page through the results.
+     * </pre>
+     *
+     * <code>string result_set_id = 12;</code>
+     */
+    public java.lang.String getResultSetId() {
+      java.lang.Object ref = resultSetId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        resultSetId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An id that uniquely identifies the result set of a
+     * [SearchProfiles][] call.  The id should be retrieved from the
+     * [SearchProfilesResponse][google.cloud.talent.v4beta1.SearchProfilesResponse]
+     * message returned from a previous invocation of [SearchProfiles][].
+     * A result set is an ordered list of search results.
+     * If this field is not set, a new result set is computed based on the
+     * [profile_query][google.cloud.talent.v4beta1.SearchProfilesRequest.profile_query].
+     * A new
+     * [result_set_id][google.cloud.talent.v4beta1.SearchProfilesRequest.result_set_id]
+     * is returned as a handle to access this result set.
+     * If this field is set, the service will ignore the resource and
+     * [profile_query][google.cloud.talent.v4beta1.SearchProfilesRequest.profile_query]
+     * values, and simply retrieve a page of results from the corresponding result
+     * set.  In this case, one and only one of [page_token] or [offset] must be
+     * set.
+     * A typical use case is to invoke
+     * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest]
+     * without this field, then use the resulting
+     * [result_set_id][google.cloud.talent.v4beta1.SearchProfilesRequest.result_set_id]
+     * in
+     * [SearchProfilesResponse][google.cloud.talent.v4beta1.SearchProfilesResponse]
+     * to page through the results.
+     * </pre>
+     *
+     * <code>string result_set_id = 12;</code>
+     */
+    public com.google.protobuf.ByteString getResultSetIdBytes() {
+      java.lang.Object ref = resultSetId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        resultSetId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An id that uniquely identifies the result set of a
+     * [SearchProfiles][] call.  The id should be retrieved from the
+     * [SearchProfilesResponse][google.cloud.talent.v4beta1.SearchProfilesResponse]
+     * message returned from a previous invocation of [SearchProfiles][].
+     * A result set is an ordered list of search results.
+     * If this field is not set, a new result set is computed based on the
+     * [profile_query][google.cloud.talent.v4beta1.SearchProfilesRequest.profile_query].
+     * A new
+     * [result_set_id][google.cloud.talent.v4beta1.SearchProfilesRequest.result_set_id]
+     * is returned as a handle to access this result set.
+     * If this field is set, the service will ignore the resource and
+     * [profile_query][google.cloud.talent.v4beta1.SearchProfilesRequest.profile_query]
+     * values, and simply retrieve a page of results from the corresponding result
+     * set.  In this case, one and only one of [page_token] or [offset] must be
+     * set.
+     * A typical use case is to invoke
+     * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest]
+     * without this field, then use the resulting
+     * [result_set_id][google.cloud.talent.v4beta1.SearchProfilesRequest.result_set_id]
+     * in
+     * [SearchProfilesResponse][google.cloud.talent.v4beta1.SearchProfilesResponse]
+     * to page through the results.
+     * </pre>
+     *
+     * <code>string result_set_id = 12;</code>
+     */
+    public Builder setResultSetId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      resultSetId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An id that uniquely identifies the result set of a
+     * [SearchProfiles][] call.  The id should be retrieved from the
+     * [SearchProfilesResponse][google.cloud.talent.v4beta1.SearchProfilesResponse]
+     * message returned from a previous invocation of [SearchProfiles][].
+     * A result set is an ordered list of search results.
+     * If this field is not set, a new result set is computed based on the
+     * [profile_query][google.cloud.talent.v4beta1.SearchProfilesRequest.profile_query].
+     * A new
+     * [result_set_id][google.cloud.talent.v4beta1.SearchProfilesRequest.result_set_id]
+     * is returned as a handle to access this result set.
+     * If this field is set, the service will ignore the resource and
+     * [profile_query][google.cloud.talent.v4beta1.SearchProfilesRequest.profile_query]
+     * values, and simply retrieve a page of results from the corresponding result
+     * set.  In this case, one and only one of [page_token] or [offset] must be
+     * set.
+     * A typical use case is to invoke
+     * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest]
+     * without this field, then use the resulting
+     * [result_set_id][google.cloud.talent.v4beta1.SearchProfilesRequest.result_set_id]
+     * in
+     * [SearchProfilesResponse][google.cloud.talent.v4beta1.SearchProfilesResponse]
+     * to page through the results.
+     * </pre>
+     *
+     * <code>string result_set_id = 12;</code>
+     */
+    public Builder clearResultSetId() {
+
+      resultSetId_ = getDefaultInstance().getResultSetId();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An id that uniquely identifies the result set of a
+     * [SearchProfiles][] call.  The id should be retrieved from the
+     * [SearchProfilesResponse][google.cloud.talent.v4beta1.SearchProfilesResponse]
+     * message returned from a previous invocation of [SearchProfiles][].
+     * A result set is an ordered list of search results.
+     * If this field is not set, a new result set is computed based on the
+     * [profile_query][google.cloud.talent.v4beta1.SearchProfilesRequest.profile_query].
+     * A new
+     * [result_set_id][google.cloud.talent.v4beta1.SearchProfilesRequest.result_set_id]
+     * is returned as a handle to access this result set.
+     * If this field is set, the service will ignore the resource and
+     * [profile_query][google.cloud.talent.v4beta1.SearchProfilesRequest.profile_query]
+     * values, and simply retrieve a page of results from the corresponding result
+     * set.  In this case, one and only one of [page_token] or [offset] must be
+     * set.
+     * A typical use case is to invoke
+     * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest]
+     * without this field, then use the resulting
+     * [result_set_id][google.cloud.talent.v4beta1.SearchProfilesRequest.result_set_id]
+     * in
+     * [SearchProfilesResponse][google.cloud.talent.v4beta1.SearchProfilesResponse]
+     * to page through the results.
+     * </pre>
+     *
+     * <code>string result_set_id = 12;</code>
+     */
+    public Builder setResultSetIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      resultSetId_ = value;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

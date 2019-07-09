@@ -105,37 +105,6 @@ public interface DataItemOrBuilder
    *
    *
    * <pre>
-   * The audio payload, a container of the audio uri.
-   * </pre>
-   *
-   * <code>.google.cloud.datalabeling.v1beta1.AudioPayload audio_payload = 5;</code>
-   */
-  boolean hasAudioPayload();
-  /**
-   *
-   *
-   * <pre>
-   * The audio payload, a container of the audio uri.
-   * </pre>
-   *
-   * <code>.google.cloud.datalabeling.v1beta1.AudioPayload audio_payload = 5;</code>
-   */
-  com.google.cloud.datalabeling.v1beta1.AudioPayload getAudioPayload();
-  /**
-   *
-   *
-   * <pre>
-   * The audio payload, a container of the audio uri.
-   * </pre>
-   *
-   * <code>.google.cloud.datalabeling.v1beta1.AudioPayload audio_payload = 5;</code>
-   */
-  com.google.cloud.datalabeling.v1beta1.AudioPayloadOrBuilder getAudioPayloadOrBuilder();
-
-  /**
-   *
-   *
-   * <pre>
    * Output only. Name of the data item, in format of:
    * projects/{project_id}/datasets/{dataset_id}/dataItems/{data_item_id}
    * </pre>

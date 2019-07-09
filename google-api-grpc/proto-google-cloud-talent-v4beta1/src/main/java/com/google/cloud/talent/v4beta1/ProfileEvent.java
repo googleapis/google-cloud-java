@@ -144,7 +144,42 @@ public final class ProfileEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The profile is displayed.
+     * Send this event when a
+     * [ProfileEvent.profiles][google.cloud.talent.v4beta1.ProfileEvent.profiles]
+     * meets all of the following criteria:
+     * * Was sent as a part of a result set for a CTS API call.
+     * * Was rendered in the end user's UI (that is, the
+     * [ProfileEvent.recruiter][google.cloud.talent.v4beta1.ProfileEvent.recruiter]).
+     * * That UI rendering was displayed in the end user's viewport for &gt;=3
+     * seconds.
+     * In other words, send this event when the end user of the CTS service
+     * actually saw a resulting profile in their viewport.
+     * To understand how to use this event, consider an example:
+     * * The customer's UI for interacting with CTS
+     * result sets is accessed by the end user through a web browser.
+     * * The UI calls for a page size of 15 candidates (that is, 15 candidates
+     * are rendered on each page of results).
+     * * However, the UI design calls for only 5 candidates to be shown at any
+     * given time in the viewport (that is, the end user can only see 5 results
+     * at any given time and needs to scroll up or down to view all 15 results).
+     * To render each page of results, the customer will send a
+     * request to CTS with a page size = 15.
+     * * User loads page #1 of results.
+     * * User scrolls down to expose results #1 - #5 and dwells on this view for
+     * 30 seconds.
+     * * Send an IMPRESSION event for result 1, 2, 3, 4, 5.
+     * * User scrolls down a bit, exposing results #2 - #6 in the viewport and
+     * dwells on this view for 5 minutes.
+     * * Send an IMPRESSION event for result 6.
+     * * User scrolls to the bottom of the page, with results #7 - #15 shown in
+     * the viewport for ~5 seconds each.
+     * * Specifically, NO IMPRESSION events are sent for result 7, 8, 9, 10, 11,
+     * 12, 13, 14, 15.
+     * * User clicks to the next page and loads page #2 of results.
+     * * Within 2 seconds, user scrolls to expose results #20 - #24 in the
+     * viewport and dwells on this view for 20 mins.
+     * * Send an IMPRESSION event for result 20, 21, 22, 23, 24
+     * * User closes their browser window.
      * </pre>
      *
      * <code>IMPRESSION = 1;</code>
@@ -154,7 +189,34 @@ public final class ProfileEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The profile is viewed.
+     * The VIEW event allows CTS to understand if a candidate's profile was
+     * viewed by an end user (that is, recruiter) of the system for &gt;=3 seconds.
+     * This is critical to tracking product metrics and should be sent for every
+     * profile VIEW that happens in the customer's system.
+     * VIEW events should be sent whether an end user views a candidate's
+     * profile as a result of seeing that profile in the result set of a
+     * CTS API request or whether the end user
+     * views the profile for some other reason (that is, clicks to the
+     * candidate's profile in the ATS, and so on).
+     * For a VIEW that happens as a result of seeing the profile in
+     * a CTS API request's result set, the
+     * [ClientEvent.request_id][google.cloud.talent.v4beta1.ClientEvent.request_id]
+     * should be populated.  If the VIEW happens for some other reason, the
+     * [requestId] should not be populated.
+     * This event requires a valid recruiter and one valid ID in profiles.
+     * To understand how to use this event, consider 2 examples in which a VIEW
+     * event should be sent:
+     * * End user makes a request to the CTS API for a result set.
+     * * Results for the request are shown to the end user.
+     * * End user clicks on one of the candidates that are shown as part of the
+     * results.
+     * * A VIEW event with the
+     * [ClientEvent.request_id][google.cloud.talent.v4beta1.ClientEvent.request_id]
+     * of the API call in the first step of this example is sent.
+     * * End user browses to a candidate's profile in the ATS.
+     * * A VIEW event without a
+     * [ClientEvent.request_id][google.cloud.talent.v4beta1.ClientEvent.request_id]
+     * is sent.
      * </pre>
      *
      * <code>VIEW = 2;</code>
@@ -187,7 +249,42 @@ public final class ProfileEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The profile is displayed.
+     * Send this event when a
+     * [ProfileEvent.profiles][google.cloud.talent.v4beta1.ProfileEvent.profiles]
+     * meets all of the following criteria:
+     * * Was sent as a part of a result set for a CTS API call.
+     * * Was rendered in the end user's UI (that is, the
+     * [ProfileEvent.recruiter][google.cloud.talent.v4beta1.ProfileEvent.recruiter]).
+     * * That UI rendering was displayed in the end user's viewport for &gt;=3
+     * seconds.
+     * In other words, send this event when the end user of the CTS service
+     * actually saw a resulting profile in their viewport.
+     * To understand how to use this event, consider an example:
+     * * The customer's UI for interacting with CTS
+     * result sets is accessed by the end user through a web browser.
+     * * The UI calls for a page size of 15 candidates (that is, 15 candidates
+     * are rendered on each page of results).
+     * * However, the UI design calls for only 5 candidates to be shown at any
+     * given time in the viewport (that is, the end user can only see 5 results
+     * at any given time and needs to scroll up or down to view all 15 results).
+     * To render each page of results, the customer will send a
+     * request to CTS with a page size = 15.
+     * * User loads page #1 of results.
+     * * User scrolls down to expose results #1 - #5 and dwells on this view for
+     * 30 seconds.
+     * * Send an IMPRESSION event for result 1, 2, 3, 4, 5.
+     * * User scrolls down a bit, exposing results #2 - #6 in the viewport and
+     * dwells on this view for 5 minutes.
+     * * Send an IMPRESSION event for result 6.
+     * * User scrolls to the bottom of the page, with results #7 - #15 shown in
+     * the viewport for ~5 seconds each.
+     * * Specifically, NO IMPRESSION events are sent for result 7, 8, 9, 10, 11,
+     * 12, 13, 14, 15.
+     * * User clicks to the next page and loads page #2 of results.
+     * * Within 2 seconds, user scrolls to expose results #20 - #24 in the
+     * viewport and dwells on this view for 20 mins.
+     * * Send an IMPRESSION event for result 20, 21, 22, 23, 24
+     * * User closes their browser window.
      * </pre>
      *
      * <code>IMPRESSION = 1;</code>
@@ -197,7 +294,34 @@ public final class ProfileEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The profile is viewed.
+     * The VIEW event allows CTS to understand if a candidate's profile was
+     * viewed by an end user (that is, recruiter) of the system for &gt;=3 seconds.
+     * This is critical to tracking product metrics and should be sent for every
+     * profile VIEW that happens in the customer's system.
+     * VIEW events should be sent whether an end user views a candidate's
+     * profile as a result of seeing that profile in the result set of a
+     * CTS API request or whether the end user
+     * views the profile for some other reason (that is, clicks to the
+     * candidate's profile in the ATS, and so on).
+     * For a VIEW that happens as a result of seeing the profile in
+     * a CTS API request's result set, the
+     * [ClientEvent.request_id][google.cloud.talent.v4beta1.ClientEvent.request_id]
+     * should be populated.  If the VIEW happens for some other reason, the
+     * [requestId] should not be populated.
+     * This event requires a valid recruiter and one valid ID in profiles.
+     * To understand how to use this event, consider 2 examples in which a VIEW
+     * event should be sent:
+     * * End user makes a request to the CTS API for a result set.
+     * * Results for the request are shown to the end user.
+     * * End user clicks on one of the candidates that are shown as part of the
+     * results.
+     * * A VIEW event with the
+     * [ClientEvent.request_id][google.cloud.talent.v4beta1.ClientEvent.request_id]
+     * of the API call in the first step of this example is sent.
+     * * End user browses to a candidate's profile in the ATS.
+     * * A VIEW event without a
+     * [ClientEvent.request_id][google.cloud.talent.v4beta1.ClientEvent.request_id]
+     * is sent.
      * </pre>
      *
      * <code>VIEW = 2;</code>
@@ -296,8 +420,7 @@ public final class ProfileEvent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required.
-   * Type of event.
+   * Required. Type of event.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.ProfileEvent.ProfileEventType type = 1;</code>
@@ -309,8 +432,7 @@ public final class ProfileEvent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required.
-   * Type of event.
+   * Required. Type of event.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.ProfileEvent.ProfileEventType type = 1;</code>
@@ -330,9 +452,8 @@ public final class ProfileEvent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required.
-   * The [profile name(s)][google.cloud.talent.v4beta1.Profile.name] associated
-   * with this client event.
+   * Required. The [profile name(s)][google.cloud.talent.v4beta1.Profile.name]
+   * associated with this client event.
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
    * for example, "projects/api-test-project/tenants/foo/profiles/bar".
@@ -347,9 +468,8 @@ public final class ProfileEvent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required.
-   * The [profile name(s)][google.cloud.talent.v4beta1.Profile.name] associated
-   * with this client event.
+   * Required. The [profile name(s)][google.cloud.talent.v4beta1.Profile.name]
+   * associated with this client event.
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
    * for example, "projects/api-test-project/tenants/foo/profiles/bar".
@@ -364,9 +484,8 @@ public final class ProfileEvent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required.
-   * The [profile name(s)][google.cloud.talent.v4beta1.Profile.name] associated
-   * with this client event.
+   * Required. The [profile name(s)][google.cloud.talent.v4beta1.Profile.name]
+   * associated with this client event.
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
    * for example, "projects/api-test-project/tenants/foo/profiles/bar".
@@ -381,9 +500,8 @@ public final class ProfileEvent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required.
-   * The [profile name(s)][google.cloud.talent.v4beta1.Profile.name] associated
-   * with this client event.
+   * Required. The [profile name(s)][google.cloud.talent.v4beta1.Profile.name]
+   * associated with this client event.
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
    * for example, "projects/api-test-project/tenants/foo/profiles/bar".
@@ -401,9 +519,9 @@ public final class ProfileEvent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with
-   * this client event. Leave it empty if the event isn't associated with a job.
+   * Optional. The [job name(s)][google.cloud.talent.v4beta1.Job.name]
+   * associated with this client event. Leave it empty if the event isn't
+   * associated with a job.
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
    * example, "projects/api-test-project/tenants/foo/jobs/1234".
@@ -418,9 +536,9 @@ public final class ProfileEvent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with
-   * this client event. Leave it empty if the event isn't associated with a job.
+   * Optional. The [job name(s)][google.cloud.talent.v4beta1.Job.name]
+   * associated with this client event. Leave it empty if the event isn't
+   * associated with a job.
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
    * example, "projects/api-test-project/tenants/foo/jobs/1234".
@@ -435,9 +553,9 @@ public final class ProfileEvent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with
-   * this client event. Leave it empty if the event isn't associated with a job.
+   * Optional. The [job name(s)][google.cloud.talent.v4beta1.Job.name]
+   * associated with this client event. Leave it empty if the event isn't
+   * associated with a job.
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
    * example, "projects/api-test-project/tenants/foo/jobs/1234".
@@ -452,9 +570,9 @@ public final class ProfileEvent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with
-   * this client event. Leave it empty if the event isn't associated with a job.
+   * Optional. The [job name(s)][google.cloud.talent.v4beta1.Job.name]
+   * associated with this client event. Leave it empty if the event isn't
+   * associated with a job.
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
    * example, "projects/api-test-project/tenants/foo/jobs/1234".
@@ -864,8 +982,7 @@ public final class ProfileEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required.
-     * Type of event.
+     * Required. Type of event.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.ProfileEvent.ProfileEventType type = 1;</code>
@@ -877,8 +994,7 @@ public final class ProfileEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required.
-     * Type of event.
+     * Required. Type of event.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.ProfileEvent.ProfileEventType type = 1;</code>
@@ -892,8 +1008,7 @@ public final class ProfileEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required.
-     * Type of event.
+     * Required. Type of event.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.ProfileEvent.ProfileEventType type = 1;</code>
@@ -910,8 +1025,7 @@ public final class ProfileEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required.
-     * Type of event.
+     * Required. Type of event.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.ProfileEvent.ProfileEventType type = 1;</code>
@@ -929,8 +1043,7 @@ public final class ProfileEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required.
-     * Type of event.
+     * Required. Type of event.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.ProfileEvent.ProfileEventType type = 1;</code>
@@ -955,9 +1068,8 @@ public final class ProfileEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required.
-     * The [profile name(s)][google.cloud.talent.v4beta1.Profile.name] associated
-     * with this client event.
+     * Required. The [profile name(s)][google.cloud.talent.v4beta1.Profile.name]
+     * associated with this client event.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
      * for example, "projects/api-test-project/tenants/foo/profiles/bar".
@@ -972,9 +1084,8 @@ public final class ProfileEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required.
-     * The [profile name(s)][google.cloud.talent.v4beta1.Profile.name] associated
-     * with this client event.
+     * Required. The [profile name(s)][google.cloud.talent.v4beta1.Profile.name]
+     * associated with this client event.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
      * for example, "projects/api-test-project/tenants/foo/profiles/bar".
@@ -989,9 +1100,8 @@ public final class ProfileEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required.
-     * The [profile name(s)][google.cloud.talent.v4beta1.Profile.name] associated
-     * with this client event.
+     * Required. The [profile name(s)][google.cloud.talent.v4beta1.Profile.name]
+     * associated with this client event.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
      * for example, "projects/api-test-project/tenants/foo/profiles/bar".
@@ -1006,9 +1116,8 @@ public final class ProfileEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required.
-     * The [profile name(s)][google.cloud.talent.v4beta1.Profile.name] associated
-     * with this client event.
+     * Required. The [profile name(s)][google.cloud.talent.v4beta1.Profile.name]
+     * associated with this client event.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
      * for example, "projects/api-test-project/tenants/foo/profiles/bar".
@@ -1023,9 +1132,8 @@ public final class ProfileEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required.
-     * The [profile name(s)][google.cloud.talent.v4beta1.Profile.name] associated
-     * with this client event.
+     * Required. The [profile name(s)][google.cloud.talent.v4beta1.Profile.name]
+     * associated with this client event.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
      * for example, "projects/api-test-project/tenants/foo/profiles/bar".
@@ -1046,9 +1154,8 @@ public final class ProfileEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required.
-     * The [profile name(s)][google.cloud.talent.v4beta1.Profile.name] associated
-     * with this client event.
+     * Required. The [profile name(s)][google.cloud.talent.v4beta1.Profile.name]
+     * associated with this client event.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
      * for example, "projects/api-test-project/tenants/foo/profiles/bar".
@@ -1069,9 +1176,8 @@ public final class ProfileEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required.
-     * The [profile name(s)][google.cloud.talent.v4beta1.Profile.name] associated
-     * with this client event.
+     * Required. The [profile name(s)][google.cloud.talent.v4beta1.Profile.name]
+     * associated with this client event.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
      * for example, "projects/api-test-project/tenants/foo/profiles/bar".
@@ -1089,9 +1195,8 @@ public final class ProfileEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required.
-     * The [profile name(s)][google.cloud.talent.v4beta1.Profile.name] associated
-     * with this client event.
+     * Required. The [profile name(s)][google.cloud.talent.v4beta1.Profile.name]
+     * associated with this client event.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
      * for example, "projects/api-test-project/tenants/foo/profiles/bar".
@@ -1109,9 +1214,8 @@ public final class ProfileEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required.
-     * The [profile name(s)][google.cloud.talent.v4beta1.Profile.name] associated
-     * with this client event.
+     * Required. The [profile name(s)][google.cloud.talent.v4beta1.Profile.name]
+     * associated with this client event.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
      * for example, "projects/api-test-project/tenants/foo/profiles/bar".
@@ -1143,9 +1247,9 @@ public final class ProfileEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with
-     * this client event. Leave it empty if the event isn't associated with a job.
+     * Optional. The [job name(s)][google.cloud.talent.v4beta1.Job.name]
+     * associated with this client event. Leave it empty if the event isn't
+     * associated with a job.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
      * example, "projects/api-test-project/tenants/foo/jobs/1234".
@@ -1160,9 +1264,9 @@ public final class ProfileEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with
-     * this client event. Leave it empty if the event isn't associated with a job.
+     * Optional. The [job name(s)][google.cloud.talent.v4beta1.Job.name]
+     * associated with this client event. Leave it empty if the event isn't
+     * associated with a job.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
      * example, "projects/api-test-project/tenants/foo/jobs/1234".
@@ -1177,9 +1281,9 @@ public final class ProfileEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with
-     * this client event. Leave it empty if the event isn't associated with a job.
+     * Optional. The [job name(s)][google.cloud.talent.v4beta1.Job.name]
+     * associated with this client event. Leave it empty if the event isn't
+     * associated with a job.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
      * example, "projects/api-test-project/tenants/foo/jobs/1234".
@@ -1194,9 +1298,9 @@ public final class ProfileEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with
-     * this client event. Leave it empty if the event isn't associated with a job.
+     * Optional. The [job name(s)][google.cloud.talent.v4beta1.Job.name]
+     * associated with this client event. Leave it empty if the event isn't
+     * associated with a job.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
      * example, "projects/api-test-project/tenants/foo/jobs/1234".
@@ -1211,9 +1315,9 @@ public final class ProfileEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with
-     * this client event. Leave it empty if the event isn't associated with a job.
+     * Optional. The [job name(s)][google.cloud.talent.v4beta1.Job.name]
+     * associated with this client event. Leave it empty if the event isn't
+     * associated with a job.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
      * example, "projects/api-test-project/tenants/foo/jobs/1234".
@@ -1234,9 +1338,9 @@ public final class ProfileEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with
-     * this client event. Leave it empty if the event isn't associated with a job.
+     * Optional. The [job name(s)][google.cloud.talent.v4beta1.Job.name]
+     * associated with this client event. Leave it empty if the event isn't
+     * associated with a job.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
      * example, "projects/api-test-project/tenants/foo/jobs/1234".
@@ -1257,9 +1361,9 @@ public final class ProfileEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with
-     * this client event. Leave it empty if the event isn't associated with a job.
+     * Optional. The [job name(s)][google.cloud.talent.v4beta1.Job.name]
+     * associated with this client event. Leave it empty if the event isn't
+     * associated with a job.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
      * example, "projects/api-test-project/tenants/foo/jobs/1234".
@@ -1277,9 +1381,9 @@ public final class ProfileEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with
-     * this client event. Leave it empty if the event isn't associated with a job.
+     * Optional. The [job name(s)][google.cloud.talent.v4beta1.Job.name]
+     * associated with this client event. Leave it empty if the event isn't
+     * associated with a job.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
      * example, "projects/api-test-project/tenants/foo/jobs/1234".
@@ -1297,9 +1401,9 @@ public final class ProfileEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with
-     * this client event. Leave it empty if the event isn't associated with a job.
+     * Optional. The [job name(s)][google.cloud.talent.v4beta1.Job.name]
+     * associated with this client event. Leave it empty if the event isn't
+     * associated with a job.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
      * example, "projects/api-test-project/tenants/foo/jobs/1234".

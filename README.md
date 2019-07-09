@@ -32,6 +32,7 @@ This library supports the following Google Cloud Platform services with clients 
 -  [BigQuery Data Transfer](google-cloud-clients/google-cloud-bigquerydatatransfer) (Beta)
 -  [Cloud Asset](google-cloud-clients/google-cloud-asset) (Beta)
 -  [Cloud AutoML](google-cloud-clients/google-cloud-automl) (Beta)
+-  [Cloud Bigtable](google-cloud-clients/google-cloud-bigtable) (Beta)
 -  [Cloud Container Analysis](google-cloud-clients/google-cloud-containeranalysis) (Beta)
 -  [Cloud Data Loss Prevention](google-cloud-clients/google-cloud-dlp) (Beta)
 -  [Cloud IoT Core](google-cloud-clients/google-cloud-iot) (Beta)
@@ -48,7 +49,6 @@ This library supports the following Google Cloud Platform services with clients 
 This library supports the following Google Cloud Platform services with clients at an [Alpha](#versioning) quality level:
 
 -  [BigQuery Storage](google-cloud-clients/google-cloud-bigquerystorage) (Alpha)
--  [Cloud Bigtable](google-cloud-clients/google-cloud-bigtable) (Alpha)
 -  [Cloud Compute](google-cloud-clients/google-cloud-compute) (Alpha)
 -  [Cloud Data Catalog](google-cloud-clients/google-cloud-datacatalog) (Alpha)
 -  [Cloud Data Labeling](google-cloud-clients/google-cloud-datalabeling) (Alpha)
@@ -76,7 +76,7 @@ If you are using Maven, add this to your pom.xml file
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-bom</artifactId>
-        <version>0.96.0-alpha</version>
+        <version>0.99.0-alpha</version>
         <type>pom</type>
         <scope>import</scope>
        </dependency>
@@ -95,11 +95,11 @@ If you are using Maven, add this to your pom.xml file
 [//]: # ({x-version-update-start:google-cloud-storage:released})
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-storage:1.78.0'
+compile 'com.google.cloud:google-cloud-storage:1.81.0'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-storage" % "1.78.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-storage" % "1.81.0"
 ```
 [//]: # ({x-version-update-end})
 
@@ -120,7 +120,7 @@ If you are running into problems with version conflicts, the easiest way to solv
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-bom</artifactId>
-        <version>0.96.0-alpha</version>
+        <version>0.99.0-alpha</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>

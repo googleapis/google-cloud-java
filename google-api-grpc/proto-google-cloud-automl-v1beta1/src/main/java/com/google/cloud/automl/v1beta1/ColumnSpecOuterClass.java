@@ -43,11 +43,12 @@ public final class ColumnSpecOuterClass {
           + ".CorrelatedColumn\022\014\n\004etag\030\006 \001(\t\032t\n\020Corre"
           + "latedColumn\022\026\n\016column_spec_id\030\001 \001(\t\022H\n\021c"
           + "orrelation_stats\030\002 \001(\0132-.google.cloud.au"
-          + "toml.v1beta1.CorrelationStatsB\204\001\n\037com.go"
+          + "toml.v1beta1.CorrelationStatsB\245\001\n\037com.go"
           + "ogle.cloud.automl.v1beta1P\001ZAgoogle.gola"
           + "ng.org/genproto/googleapis/cloud/automl/"
           + "v1beta1;automl\312\002\033Google\\Cloud\\AutoMl\\V1b"
-          + "eta1b\006proto3"
+          + "eta1\352\002\036Google::Cloud::AutoML::V1beta1b\006p"
+          + "roto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {

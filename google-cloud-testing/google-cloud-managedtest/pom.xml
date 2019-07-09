@@ -4,13 +4,13 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <artifactId>google-cloud-managedtest</artifactId>
-  <version>0.96.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-managedtest:current} -->
+  <version>0.99.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-managedtest:current} -->
   <packaging>jar</packaging>
 
   <parent>
     <artifactId>google-cloud-testing</artifactId>
     <groupId>com.google.cloud</groupId>
-    <version>0.96.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-testing:current} -->
+    <version>0.99.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-testing:current} -->
   </parent>
 
   <dependencies>
@@ -136,7 +136,7 @@
     <dependency>
       <groupId>org.mockito</groupId>
       <artifactId>mockito-all</artifactId>
-      <version>1.9.5</version>
+      <version>1.10.19</version>
       <exclusions>
         <exclusion>
           <groupId>org.objenesis</groupId>

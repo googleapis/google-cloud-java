@@ -58,7 +58,7 @@ public interface AgentOrBuilder
    * <pre>
    * Required. The default language of the agent as a language tag. See
    * [Language
-   * Support](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+   * Support](https://cloud.google.com/dialogflow/docs/reference/language)
    * for a list of the currently supported language codes. This field cannot be
    * set by the `Update` method.
    * </pre>
@@ -72,7 +72,7 @@ public interface AgentOrBuilder
    * <pre>
    * Required. The default language of the agent as a language tag. See
    * [Language
-   * Support](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+   * Support](https://cloud.google.com/dialogflow/docs/reference/language)
    * for a list of the currently supported language codes. This field cannot be
    * set by the `Update` method.
    * </pre>
@@ -181,7 +181,7 @@ public interface AgentOrBuilder
    * Optional. The URI of the agent's avatar.
    * Avatars are used throughout the Dialogflow console and in the self-hosted
    * [Web
-   * Demo](https://cloud.google.com/dialogflow-enterprise/docs/integrations/web-demo)
+   * Demo](https://cloud.google.com/dialogflow/docs/integrations/web-demo)
    * integration.
    * </pre>
    *
@@ -195,7 +195,7 @@ public interface AgentOrBuilder
    * Optional. The URI of the agent's avatar.
    * Avatars are used throughout the Dialogflow console and in the self-hosted
    * [Web
-   * Demo](https://cloud.google.com/dialogflow-enterprise/docs/integrations/web-demo)
+   * Demo](https://cloud.google.com/dialogflow/docs/integrations/web-demo)
    * integration.
    * </pre>
    *
@@ -251,4 +251,52 @@ public interface AgentOrBuilder
    * <code>float classification_threshold = 10;</code>
    */
   float getClassificationThreshold();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. API version displayed in Dialogflow console. If not specified,
+   * V2 API is assumed. Clients are free to query different service endpoints
+   * for different API versions. However, bots connectors and webhook calls will
+   * follow the specified API version.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2.Agent.ApiVersion api_version = 14;</code>
+   */
+  int getApiVersionValue();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. API version displayed in Dialogflow console. If not specified,
+   * V2 API is assumed. Clients are free to query different service endpoints
+   * for different API versions. However, bots connectors and webhook calls will
+   * follow the specified API version.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2.Agent.ApiVersion api_version = 14;</code>
+   */
+  com.google.cloud.dialogflow.v2.Agent.ApiVersion getApiVersion();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The agent tier. If not specified, TIER_STANDARD is assumed.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2.Agent.Tier tier = 15;</code>
+   */
+  int getTierValue();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The agent tier. If not specified, TIER_STANDARD is assumed.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2.Agent.Tier tier = 15;</code>
+   */
+  com.google.cloud.dialogflow.v2.Agent.Tier getTier();
 }

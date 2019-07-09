@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <artifactId>google-cloud-logging-logback</artifactId>
-  <version>0.96.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-logging-logback:current} -->
+  <version>0.99.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-logging-logback:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Logging Logback Appender</name>
   <url>https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-clients/google-cloud-contrib/google-cloud-logging-logback</url>
@@ -20,7 +20,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-contrib</artifactId>
-    <version>0.96.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-contrib:current} -->
+    <version>0.99.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-contrib:current} -->
   </parent>
   <dependencies>
     <dependency>
@@ -36,17 +36,6 @@
     <dependency>
       <groupId>org.easymock</groupId>
       <artifactId>easymock</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.objenesis</groupId>
-      <artifactId>objenesis</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.12</version>
       <scope>test</scope>
     </dependency>
     <dependency>

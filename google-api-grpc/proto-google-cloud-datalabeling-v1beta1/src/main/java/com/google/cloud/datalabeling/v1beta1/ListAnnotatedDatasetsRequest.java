@@ -224,9 +224,9 @@ public final class ListAnnotatedDatasetsRequest extends com.google.protobuf.Gene
    * <pre>
    * Optional. A token identifying a page of results for the server to return.
    * Typically obtained by
-   * [ListAnnotatedDatasetsResponse.next_page_token][google.cloud.datalabeling.v1beta1.ListAnnotatedDatasetsResponse.next_page_token] of the previous
-   * [DataLabelingService.ListAnnotatedDatasets] call.
-   * Return first page if empty.
+   * [ListAnnotatedDatasetsResponse.next_page_token][google.cloud.datalabeling.v1beta1.ListAnnotatedDatasetsResponse.next_page_token]
+   * of the previous [DataLabelingService.ListAnnotatedDatasets] call. Return
+   * first page if empty.
    * </pre>
    *
    * <code>string page_token = 4;</code>
@@ -248,9 +248,9 @@ public final class ListAnnotatedDatasetsRequest extends com.google.protobuf.Gene
    * <pre>
    * Optional. A token identifying a page of results for the server to return.
    * Typically obtained by
-   * [ListAnnotatedDatasetsResponse.next_page_token][google.cloud.datalabeling.v1beta1.ListAnnotatedDatasetsResponse.next_page_token] of the previous
-   * [DataLabelingService.ListAnnotatedDatasets] call.
-   * Return first page if empty.
+   * [ListAnnotatedDatasetsResponse.next_page_token][google.cloud.datalabeling.v1beta1.ListAnnotatedDatasetsResponse.next_page_token]
+   * of the previous [DataLabelingService.ListAnnotatedDatasets] call. Return
+   * first page if empty.
    * </pre>
    *
    * <code>string page_token = 4;</code>
@@ -888,9 +888,9 @@ public final class ListAnnotatedDatasetsRequest extends com.google.protobuf.Gene
      * <pre>
      * Optional. A token identifying a page of results for the server to return.
      * Typically obtained by
-     * [ListAnnotatedDatasetsResponse.next_page_token][google.cloud.datalabeling.v1beta1.ListAnnotatedDatasetsResponse.next_page_token] of the previous
-     * [DataLabelingService.ListAnnotatedDatasets] call.
-     * Return first page if empty.
+     * [ListAnnotatedDatasetsResponse.next_page_token][google.cloud.datalabeling.v1beta1.ListAnnotatedDatasetsResponse.next_page_token]
+     * of the previous [DataLabelingService.ListAnnotatedDatasets] call. Return
+     * first page if empty.
      * </pre>
      *
      * <code>string page_token = 4;</code>
@@ -912,9 +912,9 @@ public final class ListAnnotatedDatasetsRequest extends com.google.protobuf.Gene
      * <pre>
      * Optional. A token identifying a page of results for the server to return.
      * Typically obtained by
-     * [ListAnnotatedDatasetsResponse.next_page_token][google.cloud.datalabeling.v1beta1.ListAnnotatedDatasetsResponse.next_page_token] of the previous
-     * [DataLabelingService.ListAnnotatedDatasets] call.
-     * Return first page if empty.
+     * [ListAnnotatedDatasetsResponse.next_page_token][google.cloud.datalabeling.v1beta1.ListAnnotatedDatasetsResponse.next_page_token]
+     * of the previous [DataLabelingService.ListAnnotatedDatasets] call. Return
+     * first page if empty.
      * </pre>
      *
      * <code>string page_token = 4;</code>
@@ -936,9 +936,9 @@ public final class ListAnnotatedDatasetsRequest extends com.google.protobuf.Gene
      * <pre>
      * Optional. A token identifying a page of results for the server to return.
      * Typically obtained by
-     * [ListAnnotatedDatasetsResponse.next_page_token][google.cloud.datalabeling.v1beta1.ListAnnotatedDatasetsResponse.next_page_token] of the previous
-     * [DataLabelingService.ListAnnotatedDatasets] call.
-     * Return first page if empty.
+     * [ListAnnotatedDatasetsResponse.next_page_token][google.cloud.datalabeling.v1beta1.ListAnnotatedDatasetsResponse.next_page_token]
+     * of the previous [DataLabelingService.ListAnnotatedDatasets] call. Return
+     * first page if empty.
      * </pre>
      *
      * <code>string page_token = 4;</code>
@@ -958,9 +958,9 @@ public final class ListAnnotatedDatasetsRequest extends com.google.protobuf.Gene
      * <pre>
      * Optional. A token identifying a page of results for the server to return.
      * Typically obtained by
-     * [ListAnnotatedDatasetsResponse.next_page_token][google.cloud.datalabeling.v1beta1.ListAnnotatedDatasetsResponse.next_page_token] of the previous
-     * [DataLabelingService.ListAnnotatedDatasets] call.
-     * Return first page if empty.
+     * [ListAnnotatedDatasetsResponse.next_page_token][google.cloud.datalabeling.v1beta1.ListAnnotatedDatasetsResponse.next_page_token]
+     * of the previous [DataLabelingService.ListAnnotatedDatasets] call. Return
+     * first page if empty.
      * </pre>
      *
      * <code>string page_token = 4;</code>
@@ -977,9 +977,9 @@ public final class ListAnnotatedDatasetsRequest extends com.google.protobuf.Gene
      * <pre>
      * Optional. A token identifying a page of results for the server to return.
      * Typically obtained by
-     * [ListAnnotatedDatasetsResponse.next_page_token][google.cloud.datalabeling.v1beta1.ListAnnotatedDatasetsResponse.next_page_token] of the previous
-     * [DataLabelingService.ListAnnotatedDatasets] call.
-     * Return first page if empty.
+     * [ListAnnotatedDatasetsResponse.next_page_token][google.cloud.datalabeling.v1beta1.ListAnnotatedDatasetsResponse.next_page_token]
+     * of the previous [DataLabelingService.ListAnnotatedDatasets] call. Return
+     * first page if empty.
      * </pre>
      *
      * <code>string page_token = 4;</code>

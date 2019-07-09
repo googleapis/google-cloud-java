@@ -60,11 +60,12 @@ public final class ImageProto {
           + "son\030\005 \001(\t\022%\n\035train_budget_milli_node_hou"
           + "rs\030\006 \001(\003\022#\n\033train_cost_milli_node_hours\030"
           + "\007 \001(\003\"A\n+ImageObjectDetectionModelDeploy"
-          + "mentMetadata\022\022\n\nnode_count\030\001 \001(\003B\220\001\n\037com"
+          + "mentMetadata\022\022\n\nnode_count\030\001 \001(\003B\261\001\n\037com"
           + ".google.cloud.automl.v1beta1B\nImageProto"
           + "P\001ZAgoogle.golang.org/genproto/googleapi"
           + "s/cloud/automl/v1beta1;automl\312\002\033Google\\C"
-          + "loud\\AutoMl\\V1beta1b\006proto3"
+          + "loud\\AutoMl\\V1beta1\352\002\036Google::Cloud::Aut"
+          + "oML::V1beta1b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {

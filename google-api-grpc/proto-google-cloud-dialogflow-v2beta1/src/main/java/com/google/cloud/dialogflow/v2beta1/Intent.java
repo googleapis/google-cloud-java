@@ -3733,7 +3733,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The collection of prompts that the agent can present to the
-     * user in order to collect value for the parameter.
+     * user in order to collect a value for the parameter.
      * </pre>
      *
      * <code>repeated string prompts = 7;</code>
@@ -3744,7 +3744,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The collection of prompts that the agent can present to the
-     * user in order to collect value for the parameter.
+     * user in order to collect a value for the parameter.
      * </pre>
      *
      * <code>repeated string prompts = 7;</code>
@@ -3755,7 +3755,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The collection of prompts that the agent can present to the
-     * user in order to collect value for the parameter.
+     * user in order to collect a value for the parameter.
      * </pre>
      *
      * <code>repeated string prompts = 7;</code>
@@ -3766,7 +3766,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The collection of prompts that the agent can present to the
-     * user in order to collect value for the parameter.
+     * user in order to collect a value for the parameter.
      * </pre>
      *
      * <code>repeated string prompts = 7;</code>
@@ -4188,7 +4188,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The collection of prompts that the agent can present to the
-     * user in order to collect value for the parameter.
+     * user in order to collect a value for the parameter.
      * </pre>
      *
      * <code>repeated string prompts = 7;</code>
@@ -4201,7 +4201,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The collection of prompts that the agent can present to the
-     * user in order to collect value for the parameter.
+     * user in order to collect a value for the parameter.
      * </pre>
      *
      * <code>repeated string prompts = 7;</code>
@@ -4214,7 +4214,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The collection of prompts that the agent can present to the
-     * user in order to collect value for the parameter.
+     * user in order to collect a value for the parameter.
      * </pre>
      *
      * <code>repeated string prompts = 7;</code>
@@ -4227,7 +4227,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The collection of prompts that the agent can present to the
-     * user in order to collect value for the parameter.
+     * user in order to collect a value for the parameter.
      * </pre>
      *
      * <code>repeated string prompts = 7;</code>
@@ -5290,7 +5290,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. The collection of prompts that the agent can present to the
-       * user in order to collect value for the parameter.
+       * user in order to collect a value for the parameter.
        * </pre>
        *
        * <code>repeated string prompts = 7;</code>
@@ -5303,7 +5303,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. The collection of prompts that the agent can present to the
-       * user in order to collect value for the parameter.
+       * user in order to collect a value for the parameter.
        * </pre>
        *
        * <code>repeated string prompts = 7;</code>
@@ -5316,7 +5316,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. The collection of prompts that the agent can present to the
-       * user in order to collect value for the parameter.
+       * user in order to collect a value for the parameter.
        * </pre>
        *
        * <code>repeated string prompts = 7;</code>
@@ -5329,7 +5329,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. The collection of prompts that the agent can present to the
-       * user in order to collect value for the parameter.
+       * user in order to collect a value for the parameter.
        * </pre>
        *
        * <code>repeated string prompts = 7;</code>
@@ -5342,7 +5342,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. The collection of prompts that the agent can present to the
-       * user in order to collect value for the parameter.
+       * user in order to collect a value for the parameter.
        * </pre>
        *
        * <code>repeated string prompts = 7;</code>
@@ -5361,7 +5361,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. The collection of prompts that the agent can present to the
-       * user in order to collect value for the parameter.
+       * user in order to collect a value for the parameter.
        * </pre>
        *
        * <code>repeated string prompts = 7;</code>
@@ -5380,7 +5380,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. The collection of prompts that the agent can present to the
-       * user in order to collect value for the parameter.
+       * user in order to collect a value for the parameter.
        * </pre>
        *
        * <code>repeated string prompts = 7;</code>
@@ -5396,7 +5396,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. The collection of prompts that the agent can present to the
-       * user in order to collect value for the parameter.
+       * user in order to collect a value for the parameter.
        * </pre>
        *
        * <code>repeated string prompts = 7;</code>
@@ -5412,7 +5412,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. The collection of prompts that the agent can present to the
-       * user in order to collect value for the parameter.
+       * user in order to collect a value for the parameter.
        * </pre>
        *
        * <code>repeated string prompts = 7;</code>

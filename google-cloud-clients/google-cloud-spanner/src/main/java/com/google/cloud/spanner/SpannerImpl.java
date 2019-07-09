@@ -244,14 +244,9 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     }
   }
 
-  /**
-   * Checks that the current context is still valid, throwing a CANCELLED or DEADLINE_EXCEEDED error
-   * if not.
-   */
-  static void checkContext(Context context) {
-    if (context.isCancelled()) {
-      throw newSpannerExceptionForCancellation(context, null);
-    }
+  @Override
+  public boolean isClosed() {
+    return spannerIsClosed;
   }
 
   /**

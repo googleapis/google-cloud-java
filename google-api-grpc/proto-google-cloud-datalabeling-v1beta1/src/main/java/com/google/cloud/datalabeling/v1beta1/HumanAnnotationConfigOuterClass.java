@@ -75,51 +75,51 @@ public final class HumanAnnotationConfigOuterClass {
     java.lang.String[] descriptorData = {
       "\n?google/cloud/datalabeling/v1beta1/huma"
           + "n_annotation_config.proto\022!google.cloud."
-          + "datalabeling.v1beta1\032\036google/protobuf/du"
-          + "ration.proto\032\034google/api/annotations.pro"
-          + "to\"\220\002\n\025HumanAnnotationConfig\022\023\n\013instruct"
+          + "datalabeling.v1beta1\032\034google/api/annotat"
+          + "ions.proto\032\036google/protobuf/duration.pro"
+          + "to\"\254\002\n\025HumanAnnotationConfig\022\023\n\013instruct"
           + "ion\030\001 \001(\t\022&\n\036annotated_dataset_display_n"
           + "ame\030\002 \001(\t\022%\n\035annotated_dataset_descripti"
           + "on\030\003 \001(\t\022\023\n\013label_group\030\004 \001(\t\022\025\n\rlanguag"
           + "e_code\030\005 \001(\t\022\025\n\rreplica_count\030\006 \001(\005\0224\n\021q"
           + "uestion_duration\030\007 \001(\0132\031.google.protobuf"
-          + ".Duration\022\032\n\022contributor_emails\030\t \003(\t\"\256\001"
-          + "\n\031ImageClassificationConfig\022\033\n\023annotatio"
-          + "n_spec_set\030\001 \001(\t\022\031\n\021allow_multi_label\030\002 "
-          + "\001(\010\022Y\n\027answer_aggregation_type\030\003 \001(\01628.g"
-          + "oogle.cloud.datalabeling.v1beta1.StringA"
-          + "ggregationType\"N\n\022BoundingPolyConfig\022\033\n\023"
-          + "annotation_spec_set\030\001 \001(\t\022\033\n\023instruction"
-          + "_message\030\002 \001(\t\"J\n\016PolylineConfig\022\033\n\023anno"
-          + "tation_spec_set\030\001 \001(\t\022\033\n\023instruction_mes"
-          + "sage\030\002 \001(\t\"N\n\022SegmentationConfig\022\033\n\023anno"
-          + "tation_spec_set\030\001 \001(\t\022\033\n\023instruction_mes"
-          + "sage\030\002 \001(\t\"\207\002\n\031VideoClassificationConfig"
-          + "\022y\n\033annotation_spec_set_configs\030\001 \003(\0132T."
-          + "google.cloud.datalabeling.v1beta1.VideoC"
-          + "lassificationConfig.AnnotationSpecSetCon"
-          + "fig\022\034\n\024apply_shot_detection\030\002 \001(\010\032Q\n\027Ann"
-          + "otationSpecSetConfig\022\033\n\023annotation_spec_"
-          + "set\030\001 \001(\t\022\031\n\021allow_multi_label\030\002 \001(\010\"p\n\025"
-          + "ObjectDetectionConfig\022\033\n\023annotation_spec"
-          + "_set\030\001 \001(\t\022\033\n\023instruction_message\030\002 \001(\t\022"
-          + "\035\n\025extraction_frame_rate\030\003 \001(\001\"3\n\024Object"
-          + "TrackingConfig\022\033\n\023annotation_spec_set\030\001 "
-          + "\001(\t\"+\n\013EventConfig\022\034\n\024annotation_spec_se"
-          + "ts\030\001 \003(\t\"\240\001\n\030TextClassificationConfig\022\031\n"
-          + "\021allow_multi_label\030\001 \001(\010\022\033\n\023annotation_s"
-          + "pec_set\030\002 \001(\t\022L\n\020sentiment_config\030\003 \001(\0132"
-          + "2.google.cloud.datalabeling.v1beta1.Sent"
-          + "imentConfig\";\n\017SentimentConfig\022(\n enable"
-          + "_label_sentiment_selection\030\001 \001(\010\"9\n\032Text"
-          + "EntityExtractionConfig\022\033\n\023annotation_spe"
-          + "c_set\030\001 \001(\t*{\n\025StringAggregationType\022\'\n#"
-          + "STRING_AGGREGATION_TYPE_UNSPECIFIED\020\000\022\021\n"
-          + "\rMAJORITY_VOTE\020\001\022\022\n\016UNANIMOUS_VOTE\020\002\022\022\n\016"
-          + "NO_AGGREGATION\020\003Bx\n%com.google.cloud.dat"
-          + "alabeling.v1beta1P\001ZMgoogle.golang.org/g"
-          + "enproto/googleapis/cloud/datalabeling/v1"
-          + "beta1;datalabelingb\006proto3"
+          + ".Duration\022\032\n\022contributor_emails\030\t \003(\t\022\032\n"
+          + "\022user_email_address\030\n \001(\t\"\256\001\n\031ImageClass"
+          + "ificationConfig\022\033\n\023annotation_spec_set\030\001"
+          + " \001(\t\022\031\n\021allow_multi_label\030\002 \001(\010\022Y\n\027answe"
+          + "r_aggregation_type\030\003 \001(\01628.google.cloud."
+          + "datalabeling.v1beta1.StringAggregationTy"
+          + "pe\"N\n\022BoundingPolyConfig\022\033\n\023annotation_s"
+          + "pec_set\030\001 \001(\t\022\033\n\023instruction_message\030\002 \001"
+          + "(\t\"J\n\016PolylineConfig\022\033\n\023annotation_spec_"
+          + "set\030\001 \001(\t\022\033\n\023instruction_message\030\002 \001(\t\"N"
+          + "\n\022SegmentationConfig\022\033\n\023annotation_spec_"
+          + "set\030\001 \001(\t\022\033\n\023instruction_message\030\002 \001(\t\"\207"
+          + "\002\n\031VideoClassificationConfig\022y\n\033annotati"
+          + "on_spec_set_configs\030\001 \003(\0132T.google.cloud"
+          + ".datalabeling.v1beta1.VideoClassificatio"
+          + "nConfig.AnnotationSpecSetConfig\022\034\n\024apply"
+          + "_shot_detection\030\002 \001(\010\032Q\n\027AnnotationSpecS"
+          + "etConfig\022\033\n\023annotation_spec_set\030\001 \001(\t\022\031\n"
+          + "\021allow_multi_label\030\002 \001(\010\"S\n\025ObjectDetect"
+          + "ionConfig\022\033\n\023annotation_spec_set\030\001 \001(\t\022\035"
+          + "\n\025extraction_frame_rate\030\003 \001(\001\"3\n\024ObjectT"
+          + "rackingConfig\022\033\n\023annotation_spec_set\030\001 \001"
+          + "(\t\"+\n\013EventConfig\022\034\n\024annotation_spec_set"
+          + "s\030\001 \003(\t\"\240\001\n\030TextClassificationConfig\022\031\n\021"
+          + "allow_multi_label\030\001 \001(\010\022\033\n\023annotation_sp"
+          + "ec_set\030\002 \001(\t\022L\n\020sentiment_config\030\003 \001(\01322"
+          + ".google.cloud.datalabeling.v1beta1.Senti"
+          + "mentConfig\";\n\017SentimentConfig\022(\n enable_"
+          + "label_sentiment_selection\030\001 \001(\010\"9\n\032TextE"
+          + "ntityExtractionConfig\022\033\n\023annotation_spec"
+          + "_set\030\001 \001(\t*{\n\025StringAggregationType\022\'\n#S"
+          + "TRING_AGGREGATION_TYPE_UNSPECIFIED\020\000\022\021\n\r"
+          + "MAJORITY_VOTE\020\001\022\022\n\016UNANIMOUS_VOTE\020\002\022\022\n\016N"
+          + "O_AGGREGATION\020\003Bx\n%com.google.cloud.data"
+          + "labeling.v1beta1P\001ZMgoogle.golang.org/ge"
+          + "nproto/googleapis/cloud/datalabeling/v1b"
+          + "eta1;datalabelingb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -132,8 +132,8 @@ public final class HumanAnnotationConfigOuterClass {
     com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
         descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.protobuf.DurationProto.getDescriptor(),
           com.google.api.AnnotationsProto.getDescriptor(),
+          com.google.protobuf.DurationProto.getDescriptor(),
         },
         assigner);
     internal_static_google_cloud_datalabeling_v1beta1_HumanAnnotationConfig_descriptor =
@@ -150,6 +150,7 @@ public final class HumanAnnotationConfigOuterClass {
               "ReplicaCount",
               "QuestionDuration",
               "ContributorEmails",
+              "UserEmailAddress",
             });
     internal_static_google_cloud_datalabeling_v1beta1_ImageClassificationConfig_descriptor =
         getDescriptor().getMessageTypes().get(1);
@@ -207,7 +208,7 @@ public final class HumanAnnotationConfigOuterClass {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datalabeling_v1beta1_ObjectDetectionConfig_descriptor,
             new java.lang.String[] {
-              "AnnotationSpecSet", "InstructionMessage", "ExtractionFrameRate",
+              "AnnotationSpecSet", "ExtractionFrameRate",
             });
     internal_static_google_cloud_datalabeling_v1beta1_ObjectTrackingConfig_descriptor =
         getDescriptor().getMessageTypes().get(7);
@@ -249,8 +250,8 @@ public final class HumanAnnotationConfigOuterClass {
             new java.lang.String[] {
               "AnnotationSpecSet",
             });
-    com.google.protobuf.DurationProto.getDescriptor();
     com.google.api.AnnotationsProto.getDescriptor();
+    com.google.protobuf.DurationProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

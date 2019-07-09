@@ -7,8 +7,7 @@ package com.google.cloud.kms.v1;
  *
  *
  * <pre>
- * Request message for
- * [KeyManagementService.GetKeyRing][google.cloud.kms.v1.KeyManagementService.GetKeyRing].
+ * Request message for [KeyManagementService.GetKeyRing][google.cloud.kms.v1.KeyManagementService.GetKeyRing].
  * </pre>
  *
  * Protobuf type {@code google.cloud.kms.v1.GetKeyRingRequest}
@@ -98,8 +97,7 @@ public final class GetKeyRingRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The [name][google.cloud.kms.v1.KeyRing.name] of the
-   * [KeyRing][google.cloud.kms.v1.KeyRing] to get.
+   * The [name][google.cloud.kms.v1.KeyRing.name] of the [KeyRing][google.cloud.kms.v1.KeyRing] to get.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -119,8 +117,7 @@ public final class GetKeyRingRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The [name][google.cloud.kms.v1.KeyRing.name] of the
-   * [KeyRing][google.cloud.kms.v1.KeyRing] to get.
+   * The [name][google.cloud.kms.v1.KeyRing.name] of the [KeyRing][google.cloud.kms.v1.KeyRing] to get.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -300,8 +297,7 @@ public final class GetKeyRingRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Request message for
-   * [KeyManagementService.GetKeyRing][google.cloud.kms.v1.KeyManagementService.GetKeyRing].
+   * Request message for [KeyManagementService.GetKeyRing][google.cloud.kms.v1.KeyManagementService.GetKeyRing].
    * </pre>
    *
    * Protobuf type {@code google.cloud.kms.v1.GetKeyRingRequest}
@@ -459,8 +455,7 @@ public final class GetKeyRingRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The [name][google.cloud.kms.v1.KeyRing.name] of the
-     * [KeyRing][google.cloud.kms.v1.KeyRing] to get.
+     * The [name][google.cloud.kms.v1.KeyRing.name] of the [KeyRing][google.cloud.kms.v1.KeyRing] to get.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -480,8 +475,7 @@ public final class GetKeyRingRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The [name][google.cloud.kms.v1.KeyRing.name] of the
-     * [KeyRing][google.cloud.kms.v1.KeyRing] to get.
+     * The [name][google.cloud.kms.v1.KeyRing.name] of the [KeyRing][google.cloud.kms.v1.KeyRing] to get.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -501,8 +495,7 @@ public final class GetKeyRingRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The [name][google.cloud.kms.v1.KeyRing.name] of the
-     * [KeyRing][google.cloud.kms.v1.KeyRing] to get.
+     * The [name][google.cloud.kms.v1.KeyRing.name] of the [KeyRing][google.cloud.kms.v1.KeyRing] to get.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -520,8 +513,7 @@ public final class GetKeyRingRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The [name][google.cloud.kms.v1.KeyRing.name] of the
-     * [KeyRing][google.cloud.kms.v1.KeyRing] to get.
+     * The [name][google.cloud.kms.v1.KeyRing.name] of the [KeyRing][google.cloud.kms.v1.KeyRing] to get.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -536,8 +528,7 @@ public final class GetKeyRingRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The [name][google.cloud.kms.v1.KeyRing.name] of the
-     * [KeyRing][google.cloud.kms.v1.KeyRing] to get.
+     * The [name][google.cloud.kms.v1.KeyRing.name] of the [KeyRing][google.cloud.kms.v1.KeyRing] to get.
      * </pre>
      *
      * <code>string name = 1;</code>

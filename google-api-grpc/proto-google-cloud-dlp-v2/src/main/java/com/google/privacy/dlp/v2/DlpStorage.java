@@ -256,12 +256,13 @@ public final class DlpStorage {
           + "d*t\n\nLikelihood\022\032\n\026LIKELIHOOD_UNSPECIFIE"
           + "D\020\000\022\021\n\rVERY_UNLIKELY\020\001\022\014\n\010UNLIKELY\020\002\022\014\n\010"
           + "POSSIBLE\020\003\022\n\n\006LIKELY\020\004\022\017\n\013VERY_LIKELY\020\005*"
-          + "P\n\010FileType\022\031\n\025FILE_TYPE_UNSPECIFIED\020\000\022\017"
+          + "Z\n\010FileType\022\031\n\025FILE_TYPE_UNSPECIFIED\020\000\022\017"
           + "\n\013BINARY_FILE\020\001\022\r\n\tTEXT_FILE\020\002\022\t\n\005IMAGE\020"
-          + "\003B\217\001\n\031com.google.privacy.dlp.v2B\nDlpStor"
-          + "ageP\001Z8google.golang.org/genproto/google"
-          + "apis/privacy/dlp/v2;dlp\252\002\023Google.Cloud.D"
-          + "lp.V2\312\002\023Google\\Cloud\\Dlp\\V2b\006proto3"
+          + "\003\022\010\n\004AVRO\020\007B\217\001\n\031com.google.privacy.dlp.v"
+          + "2B\nDlpStorageP\001Z8google.golang.org/genpr"
+          + "oto/googleapis/privacy/dlp/v2;dlp\252\002\023Goog"
+          + "le.Cloud.Dlp.V2\312\002\023Google\\Cloud\\Dlp\\V2b\006p"
+          + "roto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {

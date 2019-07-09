@@ -267,6 +267,8 @@ public interface WebhookResponseOrBuilder
    * <pre>
    * Optional. Makes the platform immediately invoke another `DetectIntent` call
    * internally with the specified event as input.
+   * When this field is set, Dialogflow ignores the `fulfillment_text`,
+   * `fulfillment_messages`, and `payload` fields.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.EventInput followup_event_input = 6;</code>
@@ -278,6 +280,8 @@ public interface WebhookResponseOrBuilder
    * <pre>
    * Optional. Makes the platform immediately invoke another `DetectIntent` call
    * internally with the specified event as input.
+   * When this field is set, Dialogflow ignores the `fulfillment_text`,
+   * `fulfillment_messages`, and `payload` fields.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.EventInput followup_event_input = 6;</code>
@@ -289,6 +293,8 @@ public interface WebhookResponseOrBuilder
    * <pre>
    * Optional. Makes the platform immediately invoke another `DetectIntent` call
    * internally with the specified event as input.
+   * When this field is set, Dialogflow ignores the `fulfillment_text`,
+   * `fulfillment_messages`, and `payload` fields.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.EventInput followup_event_input = 6;</code>

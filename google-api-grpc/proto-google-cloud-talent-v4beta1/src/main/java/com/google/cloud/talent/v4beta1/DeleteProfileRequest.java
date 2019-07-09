@@ -97,8 +97,7 @@ public final class DeleteProfileRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required.
-   * Resource name of the profile to be deleted.
+   * Required. Resource name of the profile to be deleted.
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
    * for example, "projects/api-test-project/tenants/foo/profiles/bar".
@@ -121,8 +120,7 @@ public final class DeleteProfileRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required.
-   * Resource name of the profile to be deleted.
+   * Required. Resource name of the profile to be deleted.
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
    * for example, "projects/api-test-project/tenants/foo/profiles/bar".
@@ -465,8 +463,7 @@ public final class DeleteProfileRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required.
-     * Resource name of the profile to be deleted.
+     * Required. Resource name of the profile to be deleted.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
      * for example, "projects/api-test-project/tenants/foo/profiles/bar".
@@ -489,8 +486,7 @@ public final class DeleteProfileRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required.
-     * Resource name of the profile to be deleted.
+     * Required. Resource name of the profile to be deleted.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
      * for example, "projects/api-test-project/tenants/foo/profiles/bar".
@@ -513,8 +509,7 @@ public final class DeleteProfileRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required.
-     * Resource name of the profile to be deleted.
+     * Required. Resource name of the profile to be deleted.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
      * for example, "projects/api-test-project/tenants/foo/profiles/bar".
@@ -535,8 +530,7 @@ public final class DeleteProfileRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required.
-     * Resource name of the profile to be deleted.
+     * Required. Resource name of the profile to be deleted.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
      * for example, "projects/api-test-project/tenants/foo/profiles/bar".
@@ -554,8 +548,7 @@ public final class DeleteProfileRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required.
-     * Resource name of the profile to be deleted.
+     * Required. Resource name of the profile to be deleted.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
      * for example, "projects/api-test-project/tenants/foo/profiles/bar".

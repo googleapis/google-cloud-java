@@ -55,7 +55,7 @@ public interface ContextOrBuilder
    * <pre>
    * Optional. The collection of parameters associated with this context.
    * Refer to [this
-   * doc](https://cloud.google.com/dialogflow-enterprise/docs/intents-actions-parameters)
+   * doc](https://cloud.google.com/dialogflow/docs/intents-actions-parameters)
    * for syntax.
    * </pre>
    *
@@ -68,7 +68,7 @@ public interface ContextOrBuilder
    * <pre>
    * Optional. The collection of parameters associated with this context.
    * Refer to [this
-   * doc](https://cloud.google.com/dialogflow-enterprise/docs/intents-actions-parameters)
+   * doc](https://cloud.google.com/dialogflow/docs/intents-actions-parameters)
    * for syntax.
    * </pre>
    *
@@ -81,7 +81,7 @@ public interface ContextOrBuilder
    * <pre>
    * Optional. The collection of parameters associated with this context.
    * Refer to [this
-   * doc](https://cloud.google.com/dialogflow-enterprise/docs/intents-actions-parameters)
+   * doc](https://cloud.google.com/dialogflow/docs/intents-actions-parameters)
    * for syntax.
    * </pre>
    *

@@ -111,4 +111,27 @@ public interface ExportDataRequestOrBuilder
    * <code>.google.cloud.datalabeling.v1beta1.OutputConfig output_config = 4;</code>
    */
   com.google.cloud.datalabeling.v1beta1.OutputConfigOrBuilder getOutputConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Email of the user who started the export task and should be notified by
+   * email. If empty no notification will be sent.
+   * </pre>
+   *
+   * <code>string user_email_address = 5;</code>
+   */
+  java.lang.String getUserEmailAddress();
+  /**
+   *
+   *
+   * <pre>
+   * Email of the user who started the export task and should be notified by
+   * email. If empty no notification will be sent.
+   * </pre>
+   *
+   * <code>string user_email_address = 5;</code>
+   */
+  com.google.protobuf.ByteString getUserEmailAddressBytes();
 }

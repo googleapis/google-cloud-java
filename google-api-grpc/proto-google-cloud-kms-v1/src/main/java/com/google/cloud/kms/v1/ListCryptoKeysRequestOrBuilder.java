@@ -12,8 +12,8 @@ public interface ListCryptoKeysRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the [KeyRing][google.cloud.kms.v1.KeyRing]
-   * to list, in the format `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;`.
+   * Required. The resource name of the [KeyRing][google.cloud.kms.v1.KeyRing] to list, in the format
+   * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;`.
    * </pre>
    *
    * <code>string parent = 1;</code>
@@ -23,8 +23,8 @@ public interface ListCryptoKeysRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the [KeyRing][google.cloud.kms.v1.KeyRing]
-   * to list, in the format `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;`.
+   * Required. The resource name of the [KeyRing][google.cloud.kms.v1.KeyRing] to list, in the format
+   * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;`.
    * </pre>
    *
    * <code>string parent = 1;</code>
@@ -35,13 +35,10 @@ public interface ListCryptoKeysRequestOrBuilder
    *
    *
    * <pre>
-   * Optional limit on the number of [CryptoKeys][google.cloud.kms.v1.CryptoKey]
-   * to include in the response.  Further
-   * [CryptoKeys][google.cloud.kms.v1.CryptoKey] can subsequently be obtained by
-   * including the
-   * [ListCryptoKeysResponse.next_page_token][google.cloud.kms.v1.ListCryptoKeysResponse.next_page_token]
-   * in a subsequent request.  If unspecified, the server will pick an
-   * appropriate default.
+   * Optional limit on the number of [CryptoKeys][google.cloud.kms.v1.CryptoKey] to include in the
+   * response.  Further [CryptoKeys][google.cloud.kms.v1.CryptoKey] can subsequently be obtained by
+   * including the [ListCryptoKeysResponse.next_page_token][google.cloud.kms.v1.ListCryptoKeysResponse.next_page_token] in a subsequent
+   * request.  If unspecified, the server will pick an appropriate default.
    * </pre>
    *
    * <code>int32 page_size = 2;</code>
@@ -91,4 +88,48 @@ public interface ListCryptoKeysRequestOrBuilder
    * <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionView version_view = 4;</code>
    */
   com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionView getVersionView();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Only include resources that match the filter in the response.
+   * </pre>
+   *
+   * <code>string filter = 5;</code>
+   */
+  java.lang.String getFilter();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Only include resources that match the filter in the response.
+   * </pre>
+   *
+   * <code>string filter = 5;</code>
+   */
+  com.google.protobuf.ByteString getFilterBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specify how the results should be sorted. If not specified, the
+   * results will be sorted in the default order.
+   * </pre>
+   *
+   * <code>string order_by = 6;</code>
+   */
+  java.lang.String getOrderBy();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specify how the results should be sorted. If not specified, the
+   * results will be sorted in the default order.
+   * </pre>
+   *
+   * <code>string order_by = 6;</code>
+   */
+  com.google.protobuf.ByteString getOrderByBytes();
 }

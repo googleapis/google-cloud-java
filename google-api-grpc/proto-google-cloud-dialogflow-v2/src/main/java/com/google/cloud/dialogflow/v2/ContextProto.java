@@ -57,52 +57,56 @@ public final class ContextProto {
           + "to\022\032google.cloud.dialogflow.v2\032\034google/a"
           + "pi/annotations.proto\032\033google/protobuf/em"
           + "pty.proto\032 google/protobuf/field_mask.pr"
-          + "oto\032\034google/protobuf/struct.proto\"\\\n\007Con"
-          + "text\022\014\n\004name\030\001 \001(\t\022\026\n\016lifespan_count\030\002 \001"
-          + "(\005\022+\n\nparameters\030\003 \001(\0132\027.google.protobuf"
-          + ".Struct\"L\n\023ListContextsRequest\022\016\n\006parent"
-          + "\030\001 \001(\t\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030"
-          + "\003 \001(\t\"f\n\024ListContextsResponse\0225\n\010context"
-          + "s\030\001 \003(\0132#.google.cloud.dialogflow.v2.Con"
-          + "text\022\027\n\017next_page_token\030\002 \001(\t\"!\n\021GetCont"
-          + "extRequest\022\014\n\004name\030\001 \001(\t\"\\\n\024CreateContex"
-          + "tRequest\022\016\n\006parent\030\001 \001(\t\0224\n\007context\030\002 \001("
-          + "\0132#.google.cloud.dialogflow.v2.Context\"}"
-          + "\n\024UpdateContextRequest\0224\n\007context\030\001 \001(\0132"
-          + "#.google.cloud.dialogflow.v2.Context\022/\n\013"
-          + "update_mask\030\002 \001(\0132\032.google.protobuf.Fiel"
-          + "dMask\"$\n\024DeleteContextRequest\022\014\n\004name\030\001 "
-          + "\001(\t\"*\n\030DeleteAllContextsRequest\022\016\n\006paren"
-          + "t\030\001 \001(\t2\357\007\n\010Contexts\022\254\001\n\014ListContexts\022/."
-          + "google.cloud.dialogflow.v2.ListContextsR"
-          + "equest\0320.google.cloud.dialogflow.v2.List"
-          + "ContextsResponse\"9\202\323\344\223\0023\0221/v2/{parent=pr"
-          + "ojects/*/agent/sessions/*}/contexts\022\233\001\n\n"
-          + "GetContext\022-.google.cloud.dialogflow.v2."
-          + "GetContextRequest\032#.google.cloud.dialogf"
-          + "low.v2.Context\"9\202\323\344\223\0023\0221/v2/{name=projec"
-          + "ts/*/agent/sessions/*/contexts/*}\022\252\001\n\rCr"
-          + "eateContext\0220.google.cloud.dialogflow.v2"
-          + ".CreateContextRequest\032#.google.cloud.dia"
-          + "logflow.v2.Context\"B\202\323\344\223\002<\"1/v2/{parent="
-          + "projects/*/agent/sessions/*}/contexts:\007c"
-          + "ontext\022\262\001\n\rUpdateContext\0220.google.cloud."
-          + "dialogflow.v2.UpdateContextRequest\032#.goo"
-          + "gle.cloud.dialogflow.v2.Context\"J\202\323\344\223\002D2"
-          + "9/v2/{context.name=projects/*/agent/sess"
-          + "ions/*/contexts/*}:\007context\022\224\001\n\rDeleteCo"
-          + "ntext\0220.google.cloud.dialogflow.v2.Delet"
-          + "eContextRequest\032\026.google.protobuf.Empty\""
-          + "9\202\323\344\223\0023*1/v2/{name=projects/*/agent/sess"
-          + "ions/*/contexts/*}\022\234\001\n\021DeleteAllContexts"
-          + "\0224.google.cloud.dialogflow.v2.DeleteAllC"
-          + "ontextsRequest\032\026.google.protobuf.Empty\"9"
-          + "\202\323\344\223\0023*1/v2/{parent=projects/*/agent/ses"
-          + "sions/*}/contextsB\233\001\n\036com.google.cloud.d"
-          + "ialogflow.v2B\014ContextProtoP\001ZDgoogle.gol"
-          + "ang.org/genproto/googleapis/cloud/dialog"
-          + "flow/v2;dialogflow\370\001\001\242\002\002DF\252\002\032Google.Clou"
-          + "d.Dialogflow.V2b\006proto3"
+          + "oto\032\034google/protobuf/struct.proto\032\027googl"
+          + "e/api/client.proto\"\\\n\007Context\022\014\n\004name\030\001 "
+          + "\001(\t\022\026\n\016lifespan_count\030\002 \001(\005\022+\n\nparameter"
+          + "s\030\003 \001(\0132\027.google.protobuf.Struct\"L\n\023List"
+          + "ContextsRequest\022\016\n\006parent\030\001 \001(\t\022\021\n\tpage_"
+          + "size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"f\n\024ListCo"
+          + "ntextsResponse\0225\n\010contexts\030\001 \003(\0132#.googl"
+          + "e.cloud.dialogflow.v2.Context\022\027\n\017next_pa"
+          + "ge_token\030\002 \001(\t\"!\n\021GetContextRequest\022\014\n\004n"
+          + "ame\030\001 \001(\t\"\\\n\024CreateContextRequest\022\016\n\006par"
+          + "ent\030\001 \001(\t\0224\n\007context\030\002 \001(\0132#.google.clou"
+          + "d.dialogflow.v2.Context\"}\n\024UpdateContext"
+          + "Request\0224\n\007context\030\001 \001(\0132#.google.cloud."
+          + "dialogflow.v2.Context\022/\n\013update_mask\030\002 \001"
+          + "(\0132\032.google.protobuf.FieldMask\"$\n\024Delete"
+          + "ContextRequest\022\014\n\004name\030\001 \001(\t\"*\n\030DeleteAl"
+          + "lContextsRequest\022\016\n\006parent\030\001 \001(\t2\351\010\n\010Con"
+          + "texts\022\254\001\n\014ListContexts\022/.google.cloud.di"
+          + "alogflow.v2.ListContextsRequest\0320.google"
+          + ".cloud.dialogflow.v2.ListContextsRespons"
+          + "e\"9\202\323\344\223\0023\0221/v2/{parent=projects/*/agent/"
+          + "sessions/*}/contexts\022\233\001\n\nGetContext\022-.go"
+          + "ogle.cloud.dialogflow.v2.GetContextReque"
+          + "st\032#.google.cloud.dialogflow.v2.Context\""
+          + "9\202\323\344\223\0023\0221/v2/{name=projects/*/agent/sess"
+          + "ions/*/contexts/*}\022\252\001\n\rCreateContext\0220.g"
+          + "oogle.cloud.dialogflow.v2.CreateContextR"
+          + "equest\032#.google.cloud.dialogflow.v2.Cont"
+          + "ext\"B\202\323\344\223\002<\"1/v2/{parent=projects/*/agen"
+          + "t/sessions/*}/contexts:\007context\022\262\001\n\rUpda"
+          + "teContext\0220.google.cloud.dialogflow.v2.U"
+          + "pdateContextRequest\032#.google.cloud.dialo"
+          + "gflow.v2.Context\"J\202\323\344\223\002D29/v2/{context.n"
+          + "ame=projects/*/agent/sessions/*/contexts"
+          + "/*}:\007context\022\224\001\n\rDeleteContext\0220.google."
+          + "cloud.dialogflow.v2.DeleteContextRequest"
+          + "\032\026.google.protobuf.Empty\"9\202\323\344\223\0023*1/v2/{n"
+          + "ame=projects/*/agent/sessions/*/contexts"
+          + "/*}\022\234\001\n\021DeleteAllContexts\0224.google.cloud"
+          + ".dialogflow.v2.DeleteAllContextsRequest\032"
+          + "\026.google.protobuf.Empty\"9\202\323\344\223\0023*1/v2/{pa"
+          + "rent=projects/*/agent/sessions/*}/contex"
+          + "ts\032x\312A\031dialogflow.googleapis.com\322AYhttps"
+          + "://www.googleapis.com/auth/cloud-platfor"
+          + "m,https://www.googleapis.com/auth/dialog"
+          + "flowB\233\001\n\036com.google.cloud.dialogflow.v2B"
+          + "\014ContextProtoP\001ZDgoogle.golang.org/genpr"
+          + "oto/googleapis/cloud/dialogflow/v2;dialo"
+          + "gflow\370\001\001\242\002\002DF\252\002\032Google.Cloud.Dialogflow."
+          + "V2b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -119,6 +123,7 @@ public final class ContextProto {
           com.google.protobuf.EmptyProto.getDescriptor(),
           com.google.protobuf.FieldMaskProto.getDescriptor(),
           com.google.protobuf.StructProto.getDescriptor(),
+          com.google.api.ClientProto.getDescriptor(),
         },
         assigner);
     internal_static_google_cloud_dialogflow_v2_Context_descriptor =
@@ -187,13 +192,16 @@ public final class ContextProto {
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.ClientProto.defaultHost);
     registry.add(com.google.api.AnnotationsProto.http);
+    registry.add(com.google.api.ClientProto.oauthScopes);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.AnnotationsProto.getDescriptor();
     com.google.protobuf.EmptyProto.getDescriptor();
     com.google.protobuf.FieldMaskProto.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();
+    com.google.api.ClientProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

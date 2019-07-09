@@ -30,6 +30,6 @@ public class ResourceManagerOptionsTest {
   public void testInvalidTransport() {
     thrown.expect(IllegalArgumentException.class);
     ResourceManagerOptions.newBuilder()
-        .setTransportOptions(EasyMock.createMock(TransportOptions.class));
+        .setTransportOptions(EasyMock.<TransportOptions>createMock(TransportOptions.class));
   }
 }

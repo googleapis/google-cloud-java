@@ -119,10 +119,11 @@ public final class Io {
           + "\n\016GcsDestination\022\031\n\021output_uri_prefix\030\001 "
           + "\001(\t\")\n\023BigQueryDestination\022\022\n\noutput_uri"
           + "\030\001 \001(\t\"$\n\016GcrDestination\022\022\n\noutput_uri\030\001"
-          + " \001(\tB\204\001\n\037com.google.cloud.automl.v1beta1"
+          + " \001(\tB\245\001\n\037com.google.cloud.automl.v1beta1"
           + "P\001ZAgoogle.golang.org/genproto/googleapi"
           + "s/cloud/automl/v1beta1;automl\312\002\033Google\\C"
-          + "loud\\AutoMl\\V1beta1b\006proto3"
+          + "loud\\AutoMl\\V1beta1\352\002\036Google::Cloud::Aut"
+          + "oML::V1beta1b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {

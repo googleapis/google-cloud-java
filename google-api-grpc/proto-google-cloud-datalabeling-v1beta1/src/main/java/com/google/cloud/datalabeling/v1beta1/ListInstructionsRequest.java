@@ -224,9 +224,9 @@ public final class ListInstructionsRequest extends com.google.protobuf.Generated
    * <pre>
    * Optional. A token identifying a page of results for the server to return.
    * Typically obtained by
-   * [ListInstructionsResponse.next_page_token][google.cloud.datalabeling.v1beta1.ListInstructionsResponse.next_page_token] of the previous
-   * [DataLabelingService.ListInstructions] call.
-   * Return first page if empty.
+   * [ListInstructionsResponse.next_page_token][google.cloud.datalabeling.v1beta1.ListInstructionsResponse.next_page_token]
+   * of the previous [DataLabelingService.ListInstructions] call. Return first
+   * page if empty.
    * </pre>
    *
    * <code>string page_token = 4;</code>
@@ -248,9 +248,9 @@ public final class ListInstructionsRequest extends com.google.protobuf.Generated
    * <pre>
    * Optional. A token identifying a page of results for the server to return.
    * Typically obtained by
-   * [ListInstructionsResponse.next_page_token][google.cloud.datalabeling.v1beta1.ListInstructionsResponse.next_page_token] of the previous
-   * [DataLabelingService.ListInstructions] call.
-   * Return first page if empty.
+   * [ListInstructionsResponse.next_page_token][google.cloud.datalabeling.v1beta1.ListInstructionsResponse.next_page_token]
+   * of the previous [DataLabelingService.ListInstructions] call. Return first
+   * page if empty.
    * </pre>
    *
    * <code>string page_token = 4;</code>
@@ -883,9 +883,9 @@ public final class ListInstructionsRequest extends com.google.protobuf.Generated
      * <pre>
      * Optional. A token identifying a page of results for the server to return.
      * Typically obtained by
-     * [ListInstructionsResponse.next_page_token][google.cloud.datalabeling.v1beta1.ListInstructionsResponse.next_page_token] of the previous
-     * [DataLabelingService.ListInstructions] call.
-     * Return first page if empty.
+     * [ListInstructionsResponse.next_page_token][google.cloud.datalabeling.v1beta1.ListInstructionsResponse.next_page_token]
+     * of the previous [DataLabelingService.ListInstructions] call. Return first
+     * page if empty.
      * </pre>
      *
      * <code>string page_token = 4;</code>
@@ -907,9 +907,9 @@ public final class ListInstructionsRequest extends com.google.protobuf.Generated
      * <pre>
      * Optional. A token identifying a page of results for the server to return.
      * Typically obtained by
-     * [ListInstructionsResponse.next_page_token][google.cloud.datalabeling.v1beta1.ListInstructionsResponse.next_page_token] of the previous
-     * [DataLabelingService.ListInstructions] call.
-     * Return first page if empty.
+     * [ListInstructionsResponse.next_page_token][google.cloud.datalabeling.v1beta1.ListInstructionsResponse.next_page_token]
+     * of the previous [DataLabelingService.ListInstructions] call. Return first
+     * page if empty.
      * </pre>
      *
      * <code>string page_token = 4;</code>
@@ -931,9 +931,9 @@ public final class ListInstructionsRequest extends com.google.protobuf.Generated
      * <pre>
      * Optional. A token identifying a page of results for the server to return.
      * Typically obtained by
-     * [ListInstructionsResponse.next_page_token][google.cloud.datalabeling.v1beta1.ListInstructionsResponse.next_page_token] of the previous
-     * [DataLabelingService.ListInstructions] call.
-     * Return first page if empty.
+     * [ListInstructionsResponse.next_page_token][google.cloud.datalabeling.v1beta1.ListInstructionsResponse.next_page_token]
+     * of the previous [DataLabelingService.ListInstructions] call. Return first
+     * page if empty.
      * </pre>
      *
      * <code>string page_token = 4;</code>
@@ -953,9 +953,9 @@ public final class ListInstructionsRequest extends com.google.protobuf.Generated
      * <pre>
      * Optional. A token identifying a page of results for the server to return.
      * Typically obtained by
-     * [ListInstructionsResponse.next_page_token][google.cloud.datalabeling.v1beta1.ListInstructionsResponse.next_page_token] of the previous
-     * [DataLabelingService.ListInstructions] call.
-     * Return first page if empty.
+     * [ListInstructionsResponse.next_page_token][google.cloud.datalabeling.v1beta1.ListInstructionsResponse.next_page_token]
+     * of the previous [DataLabelingService.ListInstructions] call. Return first
+     * page if empty.
      * </pre>
      *
      * <code>string page_token = 4;</code>
@@ -972,9 +972,9 @@ public final class ListInstructionsRequest extends com.google.protobuf.Generated
      * <pre>
      * Optional. A token identifying a page of results for the server to return.
      * Typically obtained by
-     * [ListInstructionsResponse.next_page_token][google.cloud.datalabeling.v1beta1.ListInstructionsResponse.next_page_token] of the previous
-     * [DataLabelingService.ListInstructions] call.
-     * Return first page if empty.
+     * [ListInstructionsResponse.next_page_token][google.cloud.datalabeling.v1beta1.ListInstructionsResponse.next_page_token]
+     * of the previous [DataLabelingService.ListInstructions] call. Return first
+     * page if empty.
      * </pre>
      *
      * <code>string page_token = 4;</code>

@@ -224,9 +224,9 @@ public final class ListDataItemsRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Optional. A token identifying a page of results for the server to return.
    * Typically obtained by
-   * [ListDataItemsResponse.next_page_token][google.cloud.datalabeling.v1beta1.ListDataItemsResponse.next_page_token] of the previous
-   * [DataLabelingService.ListDataItems] call.
-   * Return first page if empty.
+   * [ListDataItemsResponse.next_page_token][google.cloud.datalabeling.v1beta1.ListDataItemsResponse.next_page_token]
+   * of the previous [DataLabelingService.ListDataItems] call. Return first page
+   * if empty.
    * </pre>
    *
    * <code>string page_token = 4;</code>
@@ -248,9 +248,9 @@ public final class ListDataItemsRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Optional. A token identifying a page of results for the server to return.
    * Typically obtained by
-   * [ListDataItemsResponse.next_page_token][google.cloud.datalabeling.v1beta1.ListDataItemsResponse.next_page_token] of the previous
-   * [DataLabelingService.ListDataItems] call.
-   * Return first page if empty.
+   * [ListDataItemsResponse.next_page_token][google.cloud.datalabeling.v1beta1.ListDataItemsResponse.next_page_token]
+   * of the previous [DataLabelingService.ListDataItems] call. Return first page
+   * if empty.
    * </pre>
    *
    * <code>string page_token = 4;</code>
@@ -880,9 +880,9 @@ public final class ListDataItemsRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. A token identifying a page of results for the server to return.
      * Typically obtained by
-     * [ListDataItemsResponse.next_page_token][google.cloud.datalabeling.v1beta1.ListDataItemsResponse.next_page_token] of the previous
-     * [DataLabelingService.ListDataItems] call.
-     * Return first page if empty.
+     * [ListDataItemsResponse.next_page_token][google.cloud.datalabeling.v1beta1.ListDataItemsResponse.next_page_token]
+     * of the previous [DataLabelingService.ListDataItems] call. Return first page
+     * if empty.
      * </pre>
      *
      * <code>string page_token = 4;</code>
@@ -904,9 +904,9 @@ public final class ListDataItemsRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. A token identifying a page of results for the server to return.
      * Typically obtained by
-     * [ListDataItemsResponse.next_page_token][google.cloud.datalabeling.v1beta1.ListDataItemsResponse.next_page_token] of the previous
-     * [DataLabelingService.ListDataItems] call.
-     * Return first page if empty.
+     * [ListDataItemsResponse.next_page_token][google.cloud.datalabeling.v1beta1.ListDataItemsResponse.next_page_token]
+     * of the previous [DataLabelingService.ListDataItems] call. Return first page
+     * if empty.
      * </pre>
      *
      * <code>string page_token = 4;</code>
@@ -928,9 +928,9 @@ public final class ListDataItemsRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. A token identifying a page of results for the server to return.
      * Typically obtained by
-     * [ListDataItemsResponse.next_page_token][google.cloud.datalabeling.v1beta1.ListDataItemsResponse.next_page_token] of the previous
-     * [DataLabelingService.ListDataItems] call.
-     * Return first page if empty.
+     * [ListDataItemsResponse.next_page_token][google.cloud.datalabeling.v1beta1.ListDataItemsResponse.next_page_token]
+     * of the previous [DataLabelingService.ListDataItems] call. Return first page
+     * if empty.
      * </pre>
      *
      * <code>string page_token = 4;</code>
@@ -950,9 +950,9 @@ public final class ListDataItemsRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. A token identifying a page of results for the server to return.
      * Typically obtained by
-     * [ListDataItemsResponse.next_page_token][google.cloud.datalabeling.v1beta1.ListDataItemsResponse.next_page_token] of the previous
-     * [DataLabelingService.ListDataItems] call.
-     * Return first page if empty.
+     * [ListDataItemsResponse.next_page_token][google.cloud.datalabeling.v1beta1.ListDataItemsResponse.next_page_token]
+     * of the previous [DataLabelingService.ListDataItems] call. Return first page
+     * if empty.
      * </pre>
      *
      * <code>string page_token = 4;</code>
@@ -969,9 +969,9 @@ public final class ListDataItemsRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. A token identifying a page of results for the server to return.
      * Typically obtained by
-     * [ListDataItemsResponse.next_page_token][google.cloud.datalabeling.v1beta1.ListDataItemsResponse.next_page_token] of the previous
-     * [DataLabelingService.ListDataItems] call.
-     * Return first page if empty.
+     * [ListDataItemsResponse.next_page_token][google.cloud.datalabeling.v1beta1.ListDataItemsResponse.next_page_token]
+     * of the previous [DataLabelingService.ListDataItems] call. Return first page
+     * if empty.
      * </pre>
      *
      * <code>string page_token = 4;</code>

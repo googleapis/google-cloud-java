@@ -82,14 +82,6 @@ public class IamCredentialsSettings extends ClientSettings<IamCredentialsSetting
     return ((IamCredentialsStubSettings) getStubSettings()).signJwtSettings();
   }
 
-  /** Returns the object with the settings used for calls to generateIdentityBindingAccessToken. */
-  public UnaryCallSettings<
-          GenerateIdentityBindingAccessTokenRequest, GenerateIdentityBindingAccessTokenResponse>
-      generateIdentityBindingAccessTokenSettings() {
-    return ((IamCredentialsStubSettings) getStubSettings())
-        .generateIdentityBindingAccessTokenSettings();
-  }
-
   public static final IamCredentialsSettings create(IamCredentialsStubSettings stub)
       throws IOException {
     return new IamCredentialsSettings.Builder(stub.toBuilder()).build();
@@ -207,15 +199,6 @@ public class IamCredentialsSettings extends ClientSettings<IamCredentialsSetting
     /** Returns the builder for the settings used for calls to signJwt. */
     public UnaryCallSettings.Builder<SignJwtRequest, SignJwtResponse> signJwtSettings() {
       return getStubSettingsBuilder().signJwtSettings();
-    }
-
-    /**
-     * Returns the builder for the settings used for calls to generateIdentityBindingAccessToken.
-     */
-    public UnaryCallSettings.Builder<
-            GenerateIdentityBindingAccessTokenRequest, GenerateIdentityBindingAccessTokenResponse>
-        generateIdentityBindingAccessTokenSettings() {
-      return getStubSettingsBuilder().generateIdentityBindingAccessTokenSettings();
     }
 
     @Override

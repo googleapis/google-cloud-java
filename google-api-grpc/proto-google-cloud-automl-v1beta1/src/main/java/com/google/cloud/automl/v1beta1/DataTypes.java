@@ -49,10 +49,11 @@ public final class DataTypes {
           + "taType:\0028\001*r\n\010TypeCode\022\031\n\025TYPE_CODE_UNSP"
           + "ECIFIED\020\000\022\013\n\007FLOAT64\020\003\022\r\n\tTIMESTAMP\020\004\022\n\n"
           + "\006STRING\020\006\022\t\n\005ARRAY\020\010\022\n\n\006STRUCT\020\t\022\014\n\010CATE"
-          + "GORY\020\nB\204\001\n\037com.google.cloud.automl.v1bet"
+          + "GORY\020\nB\245\001\n\037com.google.cloud.automl.v1bet"
           + "a1P\001ZAgoogle.golang.org/genproto/googlea"
           + "pis/cloud/automl/v1beta1;automl\312\002\033Google"
-          + "\\Cloud\\AutoMl\\V1beta1b\006proto3"
+          + "\\Cloud\\AutoMl\\V1beta1\352\002\036Google::Cloud::A"
+          + "utoML::V1beta1b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {

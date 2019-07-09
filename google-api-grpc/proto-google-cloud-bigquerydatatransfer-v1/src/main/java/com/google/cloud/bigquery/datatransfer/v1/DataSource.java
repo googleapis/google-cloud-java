@@ -36,8 +36,6 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     helpUrl_ = "";
     authorizationType_ = 0;
     dataRefreshType_ = 0;
-    partnerLegalName_ = "";
-    redirectUrl_ = "";
   }
 
   @java.lang.Override
@@ -196,20 +194,6 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
                 minimumScheduleInterval_ = subBuilder.buildPartial();
               }
 
-              break;
-            }
-          case 178:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              partnerLegalName_ = s;
-              break;
-            }
-          case 186:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              redirectUrl_ = s;
               break;
             }
           default:
@@ -1243,92 +1227,6 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     return getMinimumScheduleInterval();
   }
 
-  public static final int PARTNER_LEGAL_NAME_FIELD_NUMBER = 22;
-  private volatile java.lang.Object partnerLegalName_;
-  /**
-   *
-   *
-   * <pre>
-   * Partner's legal name of this data source
-   * </pre>
-   *
-   * <code>string partner_legal_name = 22;</code>
-   */
-  public java.lang.String getPartnerLegalName() {
-    java.lang.Object ref = partnerLegalName_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      partnerLegalName_ = s;
-      return s;
-    }
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Partner's legal name of this data source
-   * </pre>
-   *
-   * <code>string partner_legal_name = 22;</code>
-   */
-  public com.google.protobuf.ByteString getPartnerLegalNameBytes() {
-    java.lang.Object ref = partnerLegalName_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      partnerLegalName_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int REDIRECT_URL_FIELD_NUMBER = 23;
-  private volatile java.lang.Object redirectUrl_;
-  /**
-   *
-   *
-   * <pre>
-   * Redirect URL to complete transfer config setup for 3rd party data sources.
-   * </pre>
-   *
-   * <code>string redirect_url = 23;</code>
-   */
-  public java.lang.String getRedirectUrl() {
-    java.lang.Object ref = redirectUrl_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      redirectUrl_ = s;
-      return s;
-    }
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Redirect URL to complete transfer config setup for 3rd party data sources.
-   * </pre>
-   *
-   * <code>string redirect_url = 23;</code>
-   */
-  public com.google.protobuf.ByteString getRedirectUrlBytes() {
-    java.lang.Object ref = redirectUrl_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      redirectUrl_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1404,12 +1302,6 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     }
     if (minimumScheduleInterval_ != null) {
       output.writeMessage(18, getMinimumScheduleInterval());
-    }
-    if (!getPartnerLegalNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 22, partnerLegalName_);
-    }
-    if (!getRedirectUrlBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 23, redirectUrl_);
     }
     unknownFields.writeTo(output);
   }
@@ -1490,12 +1382,6 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               18, getMinimumScheduleInterval());
     }
-    if (!getPartnerLegalNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(22, partnerLegalName_);
-    }
-    if (!getRedirectUrlBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(23, redirectUrl_);
-    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1533,8 +1419,6 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     if (hasMinimumScheduleInterval()) {
       if (!getMinimumScheduleInterval().equals(other.getMinimumScheduleInterval())) return false;
     }
-    if (!getPartnerLegalName().equals(other.getPartnerLegalName())) return false;
-    if (!getRedirectUrl().equals(other.getRedirectUrl())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1588,10 +1472,6 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + MINIMUM_SCHEDULE_INTERVAL_FIELD_NUMBER;
       hash = (53 * hash) + getMinimumScheduleInterval().hashCode();
     }
-    hash = (37 * hash) + PARTNER_LEGAL_NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getPartnerLegalName().hashCode();
-    hash = (37 * hash) + REDIRECT_URL_FIELD_NUMBER;
-    hash = (53 * hash) + getRedirectUrl().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1784,10 +1664,6 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
         minimumScheduleInterval_ = null;
         minimumScheduleIntervalBuilder_ = null;
       }
-      partnerLegalName_ = "";
-
-      redirectUrl_ = "";
-
       return this;
     }
 
@@ -1851,8 +1727,6 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.minimumScheduleInterval_ = minimumScheduleIntervalBuilder_.build();
       }
-      result.partnerLegalName_ = partnerLegalName_;
-      result.redirectUrl_ = redirectUrl_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -1995,14 +1869,6 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasMinimumScheduleInterval()) {
         mergeMinimumScheduleInterval(other.getMinimumScheduleInterval());
-      }
-      if (!other.getPartnerLegalName().isEmpty()) {
-        partnerLegalName_ = other.partnerLegalName_;
-        onChanged();
-      }
-      if (!other.getRedirectUrl().isEmpty()) {
-        redirectUrl_ = other.redirectUrl_;
-        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -3968,194 +3834,6 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
         minimumScheduleInterval_ = null;
       }
       return minimumScheduleIntervalBuilder_;
-    }
-
-    private java.lang.Object partnerLegalName_ = "";
-    /**
-     *
-     *
-     * <pre>
-     * Partner's legal name of this data source
-     * </pre>
-     *
-     * <code>string partner_legal_name = 22;</code>
-     */
-    public java.lang.String getPartnerLegalName() {
-      java.lang.Object ref = partnerLegalName_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        partnerLegalName_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Partner's legal name of this data source
-     * </pre>
-     *
-     * <code>string partner_legal_name = 22;</code>
-     */
-    public com.google.protobuf.ByteString getPartnerLegalNameBytes() {
-      java.lang.Object ref = partnerLegalName_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        partnerLegalName_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Partner's legal name of this data source
-     * </pre>
-     *
-     * <code>string partner_legal_name = 22;</code>
-     */
-    public Builder setPartnerLegalName(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-
-      partnerLegalName_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Partner's legal name of this data source
-     * </pre>
-     *
-     * <code>string partner_legal_name = 22;</code>
-     */
-    public Builder clearPartnerLegalName() {
-
-      partnerLegalName_ = getDefaultInstance().getPartnerLegalName();
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Partner's legal name of this data source
-     * </pre>
-     *
-     * <code>string partner_legal_name = 22;</code>
-     */
-    public Builder setPartnerLegalNameBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-
-      partnerLegalName_ = value;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object redirectUrl_ = "";
-    /**
-     *
-     *
-     * <pre>
-     * Redirect URL to complete transfer config setup for 3rd party data sources.
-     * </pre>
-     *
-     * <code>string redirect_url = 23;</code>
-     */
-    public java.lang.String getRedirectUrl() {
-      java.lang.Object ref = redirectUrl_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        redirectUrl_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Redirect URL to complete transfer config setup for 3rd party data sources.
-     * </pre>
-     *
-     * <code>string redirect_url = 23;</code>
-     */
-    public com.google.protobuf.ByteString getRedirectUrlBytes() {
-      java.lang.Object ref = redirectUrl_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        redirectUrl_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Redirect URL to complete transfer config setup for 3rd party data sources.
-     * </pre>
-     *
-     * <code>string redirect_url = 23;</code>
-     */
-    public Builder setRedirectUrl(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-
-      redirectUrl_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Redirect URL to complete transfer config setup for 3rd party data sources.
-     * </pre>
-     *
-     * <code>string redirect_url = 23;</code>
-     */
-    public Builder clearRedirectUrl() {
-
-      redirectUrl_ = getDefaultInstance().getRedirectUrl();
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Redirect URL to complete transfer config setup for 3rd party data sources.
-     * </pre>
-     *
-     * <code>string redirect_url = 23;</code>
-     */
-    public Builder setRedirectUrlBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-
-      redirectUrl_ = value;
-      onChanged();
-      return this;
     }
 
     @java.lang.Override

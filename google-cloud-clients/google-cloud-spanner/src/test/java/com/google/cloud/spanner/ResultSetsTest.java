@@ -192,7 +192,7 @@ public class ResultSetsTest {
     assertThat(rs.getLongArray("longArray")).isEqualTo(longArray);
     assertThat(rs.getLongList(9)).isEqualTo(Longs.asList(longArray));
     assertThat(rs.getLongList("longArray")).isEqualTo(Longs.asList(longArray));
-    assertThat(rs.getDoubleArray(10)).usingTolerance(0.0).containsAllOf(doubleArray);
+    assertThat(rs.getDoubleArray(10)).usingTolerance(0.0).containsAtLeast(doubleArray);
     assertThat(rs.getDoubleArray("doubleArray"))
         .usingTolerance(0.0)
         .containsExactly(doubleArray)
