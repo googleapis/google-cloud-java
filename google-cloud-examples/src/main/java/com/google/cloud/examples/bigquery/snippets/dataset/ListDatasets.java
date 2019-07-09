@@ -25,18 +25,18 @@ import com.google.cloud.bigquery.Dataset;
 
 public class ListDatasets {
 
-    public static Page<Dataset> listDatasets() {
+  public static Page<Dataset> listDatasets() {
 
-        // Get an instance of the BigQuery service.
-        BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService();
+    // Get an instance of the BigQuery service.
+    BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService();
 
-        // List datasets in the default project.
-        Page<Dataset> datasets = bigquery.listDatasets(BigQuery.DatasetListOption.pageSize(100));
-        for (Dataset dataset : datasets.iterateAll()) {
-            System.out.println("Dataset: " + dataset.getDatasetId().getDataset());
-        }
-        return datasets;
+    // List datasets in the default project.
+    Page<Dataset> datasets = bigquery.listDatasets(BigQuery.DatasetListOption.pageSize(100));
+    for (Dataset dataset : datasets.iterateAll()) {
+      System.out.println("Dataset: " + dataset.getDatasetId().getDataset());
     }
+    return datasets;
+  }
 }
 
 // [END bigquery_list_datasets]

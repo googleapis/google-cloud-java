@@ -26,16 +26,16 @@ import com.google.cloud.bigquery.DatasetInfo;
 
 public class UpdateDatasetDescription {
 
-    public static Dataset updateDatasetDescription(String projectId, String datasetName, String newDescription) {
-        // Get an instance of the BigQuery service.
-        BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService();
+  public static Dataset updateDatasetDescription(
+      String projectId, String datasetName, String newDescription) {
+    // Get an instance of the BigQuery service.
+    BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService();
 
-        Dataset oldDataset = bigquery.getDataset(DatasetId.of(projectId, datasetName));
-        DatasetInfo datasetInfo = oldDataset.toBuilder().setDescription(newDescription).build();
-        Dataset newDataset = bigquery.update(datasetInfo);
-        return newDataset;
-    }
+    Dataset oldDataset = bigquery.getDataset(DatasetId.of(projectId, datasetName));
+    DatasetInfo datasetInfo = oldDataset.toBuilder().setDescription(newDescription).build();
+    Dataset newDataset = bigquery.update(datasetInfo);
+    return newDataset;
+  }
 }
 
 // [END bigquery_update_dataset_description]
-

@@ -25,14 +25,14 @@ import com.google.cloud.bigquery.DatasetId;
 
 public class GetDataset {
 
-    public static Dataset getDataset(String projectId, String datasetName) {
-        // Get an instance of the BigQuery service.
-        BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService();
+  public static Dataset getDataset(String projectId, String datasetName) {
+    // Get an instance of the BigQuery service.
+    BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService();
 
-        DatasetId datasetId = DatasetId.of(projectId, datasetName);
-        Dataset dataset = bigquery.getDataset(datasetId);
-        return dataset;
-    }
+    DatasetId datasetId = DatasetId.of(projectId, datasetName);
+    Dataset dataset = bigquery.getDataset(datasetId);
+    return dataset;
+  }
 }
 
 // [END bigquery_get_dataset]

@@ -26,8 +26,6 @@ import static org.junit.Assert.assertTrue;
 import com.google.api.gax.paging.Page;
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQuery.DatasetDeleteOption;
-import com.google.cloud.bigquery.Dataset;
-import com.google.cloud.bigquery.DatasetId;
 import com.google.cloud.bigquery.DatasetInfo;
 import com.google.cloud.bigquery.Field;
 import com.google.cloud.bigquery.FieldValueList;
@@ -66,8 +64,7 @@ public class ITBigQuerySnippets {
 
   private static final String DATASET = RemoteBigQueryHelper.generateDatasetName();
   private static final String OTHER_DATASET = RemoteBigQueryHelper.generateDatasetName();
-  private static final String QUERY =
-      "SELECT 17 as foo, CURRENT_TIMESTAMP() as ts";
+  private static final String QUERY = "SELECT 17 as foo, CURRENT_TIMESTAMP() as ts";
   private static final Function<Job, JobId> TO_JOB_ID_FUNCTION =
       new Function<Job, JobId>() {
         @Override

@@ -24,27 +24,28 @@ import com.google.cloud.bigquery.DatasetId;
 
 public class DeleteDataset {
 
-    public static boolean deleteDataset(String projectId, String dataset, Boolean deleteContents) {
-        // Get an instance of the BigQuery service.
-        BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService();
+  public static boolean deleteDataset(String projectId, String dataset, Boolean deleteContents) {
+    // Get an instance of the BigQuery service.
+    BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService();
 
-        DatasetId datasetId = DatasetId.of(projectId, dataset);
+    DatasetId datasetId = DatasetId.of(projectId, dataset);
 
-        // You can choose to safely delete which will fail if the dataset is not empty, or a recursive delete.
-        Boolean deleted = false;
-        if (deleteContents) {
-            deleted = bigquery.delete(datasetId, BigQuery.DatasetDeleteOption.deleteContents());
-        } else {
-            deleted = bigquery.delete(datasetId);
-        }
-
-        if (deleted) {
-            // the dataset was deleted
-        } else {
-            // the dataset was not found
-        }
-        return deleted;
+    // You can choose to safely delete which will fail if the dataset is not empty, or a recursive
+    // delete.
+    Boolean deleted = false;
+    if (deleteContents) {
+      deleted = bigquery.delete(datasetId, BigQuery.DatasetDeleteOption.deleteContents());
+    } else {
+      deleted = bigquery.delete(datasetId);
     }
+
+    if (deleted) {
+      // the dataset was deleted
+    } else {
+      // the dataset was not found
+    }
+    return deleted;
+  }
 }
 
 // [END bigquery_delete_dataset]

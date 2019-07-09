@@ -27,22 +27,22 @@ import com.google.cloud.bigquery.DatasetInfo;
 
 public class CreateDataset {
 
-    public static Dataset createDataset(String projectId, String datasetName) {
+  public static Dataset createDataset(String projectId, String datasetName) {
 
-        // Get an instance of the BigQuery service.
-        BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService();
+    // Get an instance of the BigQuery service.
+    BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService();
 
-        Dataset dataset = null;
+    Dataset dataset = null;
 
-        DatasetInfo datasetInfo = DatasetInfo.newBuilder(DatasetId.of(projectId, datasetName)).build();
-        try {
-            // the dataset was created
-            dataset = bigquery.create(datasetInfo);
-        } catch (BigQueryException e) {
-            // the dataset was not created
-        }
-        return dataset;
+    DatasetInfo datasetInfo = DatasetInfo.newBuilder(DatasetId.of(projectId, datasetName)).build();
+    try {
+      // the dataset was created
+      dataset = bigquery.create(datasetInfo);
+    } catch (BigQueryException e) {
+      // the dataset was not created
     }
+    return dataset;
+  }
 }
 
 // [END bigquery_create_dataset]

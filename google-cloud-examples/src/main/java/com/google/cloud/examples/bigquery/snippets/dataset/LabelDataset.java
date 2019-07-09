@@ -23,21 +23,19 @@ import com.google.cloud.bigquery.BigQueryOptions;
 import com.google.cloud.bigquery.Dataset;
 import com.google.cloud.bigquery.DatasetId;
 import com.google.cloud.bigquery.DatasetInfo;
-
 import java.util.Map;
 
 public class LabelDataset {
 
-    public Dataset labelDataset(String projectId, String datasetName, Map<String, String> labels) {
-        // Get an instance of the BigQuery service.
-        BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService();
+  public Dataset labelDataset(String projectId, String datasetName, Map<String, String> labels) {
+    // Get an instance of the BigQuery service.
+    BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService();
 
-        Dataset oldDataset = bigquery.getDataset(DatasetId.of(projectId, datasetName));
-        DatasetInfo datasetInfo = oldDataset.toBuilder().setLabels(labels).build();
-        Dataset newDataset = bigquery.update(datasetInfo);
-        return newDataset;
-    }
+    Dataset oldDataset = bigquery.getDataset(DatasetId.of(projectId, datasetName));
+    DatasetInfo datasetInfo = oldDataset.toBuilder().setLabels(labels).build();
+    Dataset newDataset = bigquery.update(datasetInfo);
+    return newDataset;
+  }
 }
 
 // [END bigquery_label_dataset]
-
