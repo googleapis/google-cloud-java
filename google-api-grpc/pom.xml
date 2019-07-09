@@ -815,7 +815,17 @@
         <artifactId>grpc-google-cloud-recaptchaenterprise-v1beta1</artifactId>
         <version>0.10.1-SNAPSHOT</version><!--{x-version-update:grpc-google-cloud-recaptchaenterprise-v1beta1:current}-->
       </dependency>
-    <dependency><groupId>com.google.api.grpc</groupId><artifactId>proto-google-cloud-gameservices-v1alpha</artifactId><version>0.0.1-SNAPSHOT</version><!--{x-version-update:proto-google-cloud-gameservices-v1alpha:current}--></dependency><dependency><groupId>com.google.api.grpc</groupId><artifactId>grpc-google-cloud-gameservices-v1alpha</artifactId><version>0.0.1-SNAPSHOT</version><!--{x-version-update:grpc-google-cloud-gameservices-v1alpha:current}--></dependency></dependencies>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-gameservices-v1alpha</artifactId>
+        <version>0.0.1-SNAPSHOT</version><!--{x-version-update:proto-google-cloud-gameservices-v1alpha:current}-->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-gameservices-v1alpha</artifactId>
+        <version>0.0.1-SNAPSHOT</version><!--{x-version-update:grpc-google-cloud-gameservices-v1alpha:current}-->
+      </dependency>
+    </dependencies>
   </dependencyManagement>
 
   <modules>
