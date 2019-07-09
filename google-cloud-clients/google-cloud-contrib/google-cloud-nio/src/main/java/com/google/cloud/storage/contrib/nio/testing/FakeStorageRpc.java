@@ -31,6 +31,7 @@ import com.google.cloud.storage.spi.v1.RpcBatch;
 import com.google.cloud.storage.spi.v1.StorageRpc;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
 import java.math.BigInteger;
 import java.nio.file.FileAlreadyExistsException;
 import java.util.ArrayList;
@@ -295,6 +296,37 @@ class FakeStorageRpc implements StorageRpc {
     byte[] ret = new byte[bytes];
     System.arraycopy(full, (int) position, ret, 0, bytes);
     return Tuple.of("etag-goes-here", ret);
+  }
+
+  @Override
+  public long read(
+      StorageObject from, Map<Option, ?> options, long position, OutputStream outputStream) {
+    // if non-null, then we check the file's at that generation.
+    Long generationMatch = null;
+    for (Option op : options.keySet()) {
+      if (op.equals(StorageRpc.Option.IF_GENERATION_MATCH)) {
+        generationMatch = (Long) options.get(op);
+      } else {
+        throw new UnsupportedOperationException("Unknown option: " + op);
+      }
+    }
+    String key = fullname(from);
+    if (!contents.containsKey(key)) {
+      throw new StorageException(404, "File not found: " + key);
+    }
+    checkGeneration(key, generationMatch);
+    if (position < 0) {
+      position = 0;
+    }
+    byte[] full = contents.get(key);
+    int bytes = (int) (full.length - position);
+    if (bytes <= 0) {
+      // special case: you're trying to read past the end
+      return 0;
+    }
+    byte[] ret = new byte[bytes];
+    System.arraycopy(full, (int) position, ret, 0, bytes);
+    return bytes;
   }
 
   @Override
