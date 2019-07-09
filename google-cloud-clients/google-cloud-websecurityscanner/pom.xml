@@ -14,9 +14,6 @@
     <artifactId>google-cloud-clients</artifactId>
     <version>0.99.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-clients:current} -->
   </parent>
-  <properties>
-    <site.installationModule>google-cloud-websecurityscanner</site.installationModule>
-  </properties>
   <dependencies>
     <dependency>
       <groupId>${project.groupId}</groupId>
@@ -54,10 +51,11 @@
       <classifier>testlib</classifier>
       <scope>test</scope>
     </dependency>
-    <!-- Dependency to make truth assertion and failure messages more readable -->
+    <!--Test dependency for joda time -->
     <dependency>
-      <groupId>com.google.truth</groupId>
-      <artifactId>truth</artifactId>
+      <groupId>joda-time</groupId>
+      <artifactId>joda-time</artifactId>
+      <version>2.10.3</version>
       <scope>test</scope>
     </dependency>
   </dependencies>

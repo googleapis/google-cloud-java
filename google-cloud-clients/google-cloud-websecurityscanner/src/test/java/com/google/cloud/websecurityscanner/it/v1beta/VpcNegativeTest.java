@@ -13,9 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.websecurityscanner.it.v1beta;
 
-import static com.google.common.truth.Truth.assertWithMessage;
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 import static org.junit.Assume.assumeTrue;
 
@@ -31,28 +32,26 @@ import com.google.cloud.websecurityscanner.v1beta.WebSecurityScannerSettings;
 import com.google.common.collect.Lists;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.time.ZoneId;
-import java.time.ZonedDateTime;
-import java.time.format.DateTimeFormatter;
+import org.joda.time.DateTime;
+import org.joda.time.DateTimeZone;
+import org.joda.time.format.DateTimeFormat;
+import org.joda.time.format.DateTimeFormatter;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-/**
- * Negative Integration tests for VPC-SC.
- */
+/** Negative Integration tests for VPC-SC. */
 @RunWith(JUnit4.class)
 public class VpcNegativeTest {
 
   private static final String IN_VPCSC_GOOGLE_CLOUD_TEST_ENV = "GOOGLE_CLOUD_TESTS_IN_VPCSC";
   private static final String OUT_VPCSC_PROJECT_ENV =
-      "GOOGLE_CLOUD_TESTS_WEB_SECURITY_SCANNER_OUTSIDE_VPC_PROJECT";
+      "GOOGLE_CLOUD_TESTS_VPCSC_OUTSIDE_PERIMETER_PROJECT";
   private static final String OUT_VPCSC_HOSTNAME_ENV =
-      "GOOGLE_CLOUD_TESTS_WEB_SECURITY_SCANNER_OUTSIDE_VPC_HOSTNAME";
-  private static final String OUT_VPCSC_GOOGLE_CREDENTIAL_ENV =
-      "GOOGLE_CLOUD_TESTS_WEB_SECURITY_SCANNER_OUTSIDE_VPC_CREDENTIALS";
+      "GOOGLE_CLOUD_WEBSECURITYSCANNER_OUTSIDE_HOSTNAME";
+  private static final String GOOGLE_CREDENTIAL_DEFAULT_ENV = "GOOGLE_APPLICATION_CREDENTIALS";
   private static final String GOOGLE_API_CLOUD_PLATFORM_LINK =
       "https://www.googleapis.com/auth/cloud-platform";
 
@@ -60,36 +59,42 @@ public class VpcNegativeTest {
   private static final String OUT_VPCSC_PROJECT = System.getenv(OUT_VPCSC_PROJECT_ENV);
   private static final String OUT_VPCSC_HOSTNAME = System.getenv(OUT_VPCSC_HOSTNAME_ENV);
   private static final String OUT_VPCSC_GOOGLE_CREDENTIAL =
-      System.getenv(OUT_VPCSC_GOOGLE_CREDENTIAL_ENV);
+      System.getenv(GOOGLE_CREDENTIAL_DEFAULT_ENV);
 
   private String testScanConfigCreationDisplayName;
 
+  private static boolean isNotEmpty(String value) {
+    return value != null && value.length() != 0;
+  }
+
   @BeforeClass
   public static void setUpClass() {
-
     assumeTrue(
         "To run tests, GOOGLE_CLOUD_TESTS_IN_VPCSC environment variable needs to be set to true",
         IN_VPCSC_TEST != null && IN_VPCSC_TEST.equalsIgnoreCase("true"));
 
-    assertWithMessage(OUT_VPCSC_PROJECT_ENV + " must be set to project that resides outside VPCSC")
-        .that(OUT_VPCSC_PROJECT)
-        .isNotEmpty();
+    assertTrue(
+        OUT_VPCSC_PROJECT_ENV
+            + " environment variable needs to be set to a GCP "
+            + "project that is out of the VPC perimeter",
+        isNotEmpty(OUT_VPCSC_PROJECT));
 
-    assertWithMessage(OUT_VPCSC_HOSTNAME_ENV + " must be set to host that resides outside VPCSC")
-        .that(OUT_VPCSC_HOSTNAME)
-        .isNotEmpty();
+    assertTrue(
+        OUT_VPCSC_HOSTNAME_ENV + " must be set to a webapp that resides in " + OUT_VPCSC_PROJECT,
+        isNotEmpty(OUT_VPCSC_HOSTNAME));
 
-    assertWithMessage(
-        OUT_VPCSC_GOOGLE_CREDENTIAL_ENV
-            + " must be set to google application credentials that resides outside VPCSC")
-        .that(OUT_VPCSC_GOOGLE_CREDENTIAL)
-        .isNotEmpty();
+    assertTrue(
+        GOOGLE_CREDENTIAL_DEFAULT_ENV
+            + " must be set to google application credentials "
+            + "that is outside VPCSC perimeter",
+        isNotEmpty(OUT_VPCSC_GOOGLE_CREDENTIAL));
   }
 
   @Before
   public void setup() {
-    ZonedDateTime zonedDateTime = ZonedDateTime.now(ZoneId.of("America/Los_Angeles"));
-    String currentTime = DateTimeFormatter.ISO_OFFSET_DATE_TIME.format(zonedDateTime);
+    DateTimeFormatter formatter =
+        DateTimeFormat.fullDateTime().withZone(DateTimeZone.forID("America/Los_Angeles"));
+    String currentTime = formatter.print(DateTime.now(DateTimeZone.forID("America/Los_Angeles")));
     testScanConfigCreationDisplayName = "vpcsc-neg-test" + currentTime + "-0";
   }
 
