@@ -135,8 +135,7 @@ public final class Skill extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * Skill display name.
+   * Optional. Skill display name.
    * For example, "Java", "Python".
    * Number of characters allowed is 100.
    * </pre>
@@ -158,8 +157,7 @@ public final class Skill extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * Skill display name.
+   * Optional. Skill display name.
    * For example, "Java", "Python".
    * Number of characters allowed is 100.
    * </pre>
@@ -184,8 +182,7 @@ public final class Skill extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * The last time this skill was used.
+   * Optional. The last time this skill was used.
    * </pre>
    *
    * <code>.google.type.Date last_used_date = 2;</code>
@@ -197,8 +194,7 @@ public final class Skill extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * The last time this skill was used.
+   * Optional. The last time this skill was used.
    * </pre>
    *
    * <code>.google.type.Date last_used_date = 2;</code>
@@ -210,8 +206,7 @@ public final class Skill extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * The last time this skill was used.
+   * Optional. The last time this skill was used.
    * </pre>
    *
    * <code>.google.type.Date last_used_date = 2;</code>
@@ -226,9 +221,8 @@ public final class Skill extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * Skill proficiency level which indicates how proficient the candidate is at
-   * this skill.
+   * Optional. Skill proficiency level which indicates how proficient the
+   * candidate is at this skill.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.SkillProficiencyLevel level = 3;</code>
@@ -240,9 +234,8 @@ public final class Skill extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * Skill proficiency level which indicates how proficient the candidate is at
-   * this skill.
+   * Optional. Skill proficiency level which indicates how proficient the
+   * candidate is at this skill.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.SkillProficiencyLevel level = 3;</code>
@@ -262,8 +255,7 @@ public final class Skill extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * A paragraph describes context of this skill.
+   * Optional. A paragraph describes context of this skill.
    * Number of characters allowed is 100,000.
    * </pre>
    *
@@ -284,8 +276,7 @@ public final class Skill extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * A paragraph describes context of this skill.
+   * Optional. A paragraph describes context of this skill.
    * Number of characters allowed is 100,000.
    * </pre>
    *
@@ -752,8 +743,7 @@ public final class Skill extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Skill display name.
+     * Optional. Skill display name.
      * For example, "Java", "Python".
      * Number of characters allowed is 100.
      * </pre>
@@ -775,8 +765,7 @@ public final class Skill extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Skill display name.
+     * Optional. Skill display name.
      * For example, "Java", "Python".
      * Number of characters allowed is 100.
      * </pre>
@@ -798,8 +787,7 @@ public final class Skill extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Skill display name.
+     * Optional. Skill display name.
      * For example, "Java", "Python".
      * Number of characters allowed is 100.
      * </pre>
@@ -819,8 +807,7 @@ public final class Skill extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Skill display name.
+     * Optional. Skill display name.
      * For example, "Java", "Python".
      * Number of characters allowed is 100.
      * </pre>
@@ -837,8 +824,7 @@ public final class Skill extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Skill display name.
+     * Optional. Skill display name.
      * For example, "Java", "Python".
      * Number of characters allowed is 100.
      * </pre>
@@ -864,8 +850,7 @@ public final class Skill extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The last time this skill was used.
+     * Optional. The last time this skill was used.
      * </pre>
      *
      * <code>.google.type.Date last_used_date = 2;</code>
@@ -877,8 +862,7 @@ public final class Skill extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The last time this skill was used.
+     * Optional. The last time this skill was used.
      * </pre>
      *
      * <code>.google.type.Date last_used_date = 2;</code>
@@ -894,8 +878,7 @@ public final class Skill extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The last time this skill was used.
+     * Optional. The last time this skill was used.
      * </pre>
      *
      * <code>.google.type.Date last_used_date = 2;</code>
@@ -917,8 +900,7 @@ public final class Skill extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The last time this skill was used.
+     * Optional. The last time this skill was used.
      * </pre>
      *
      * <code>.google.type.Date last_used_date = 2;</code>
@@ -937,8 +919,7 @@ public final class Skill extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The last time this skill was used.
+     * Optional. The last time this skill was used.
      * </pre>
      *
      * <code>.google.type.Date last_used_date = 2;</code>
@@ -962,8 +943,7 @@ public final class Skill extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The last time this skill was used.
+     * Optional. The last time this skill was used.
      * </pre>
      *
      * <code>.google.type.Date last_used_date = 2;</code>
@@ -983,8 +963,7 @@ public final class Skill extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The last time this skill was used.
+     * Optional. The last time this skill was used.
      * </pre>
      *
      * <code>.google.type.Date last_used_date = 2;</code>
@@ -998,8 +977,7 @@ public final class Skill extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The last time this skill was used.
+     * Optional. The last time this skill was used.
      * </pre>
      *
      * <code>.google.type.Date last_used_date = 2;</code>
@@ -1015,8 +993,7 @@ public final class Skill extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * The last time this skill was used.
+     * Optional. The last time this skill was used.
      * </pre>
      *
      * <code>.google.type.Date last_used_date = 2;</code>
@@ -1039,9 +1016,8 @@ public final class Skill extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Skill proficiency level which indicates how proficient the candidate is at
-     * this skill.
+     * Optional. Skill proficiency level which indicates how proficient the
+     * candidate is at this skill.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.SkillProficiencyLevel level = 3;</code>
@@ -1053,9 +1029,8 @@ public final class Skill extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Skill proficiency level which indicates how proficient the candidate is at
-     * this skill.
+     * Optional. Skill proficiency level which indicates how proficient the
+     * candidate is at this skill.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.SkillProficiencyLevel level = 3;</code>
@@ -1069,9 +1044,8 @@ public final class Skill extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Skill proficiency level which indicates how proficient the candidate is at
-     * this skill.
+     * Optional. Skill proficiency level which indicates how proficient the
+     * candidate is at this skill.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.SkillProficiencyLevel level = 3;</code>
@@ -1088,9 +1062,8 @@ public final class Skill extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Skill proficiency level which indicates how proficient the candidate is at
-     * this skill.
+     * Optional. Skill proficiency level which indicates how proficient the
+     * candidate is at this skill.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.SkillProficiencyLevel level = 3;</code>
@@ -1108,9 +1081,8 @@ public final class Skill extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * Skill proficiency level which indicates how proficient the candidate is at
-     * this skill.
+     * Optional. Skill proficiency level which indicates how proficient the
+     * candidate is at this skill.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.SkillProficiencyLevel level = 3;</code>
@@ -1127,8 +1099,7 @@ public final class Skill extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * A paragraph describes context of this skill.
+     * Optional. A paragraph describes context of this skill.
      * Number of characters allowed is 100,000.
      * </pre>
      *
@@ -1149,8 +1120,7 @@ public final class Skill extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * A paragraph describes context of this skill.
+     * Optional. A paragraph describes context of this skill.
      * Number of characters allowed is 100,000.
      * </pre>
      *
@@ -1171,8 +1141,7 @@ public final class Skill extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * A paragraph describes context of this skill.
+     * Optional. A paragraph describes context of this skill.
      * Number of characters allowed is 100,000.
      * </pre>
      *
@@ -1191,8 +1160,7 @@ public final class Skill extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * A paragraph describes context of this skill.
+     * Optional. A paragraph describes context of this skill.
      * Number of characters allowed is 100,000.
      * </pre>
      *
@@ -1208,8 +1176,7 @@ public final class Skill extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * A paragraph describes context of this skill.
+     * Optional. A paragraph describes context of this skill.
      * Number of characters allowed is 100,000.
      * </pre>
      *

@@ -711,8 +711,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional.
-     * Compensation type.
+     * Optional. Compensation type.
      * Default is
      * [CompensationType.COMPENSATION_TYPE_UNSPECIFIED][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.COMPENSATION_TYPE_UNSPECIFIED].
      * </pre>
@@ -724,8 +723,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional.
-     * Compensation type.
+     * Optional. Compensation type.
      * Default is
      * [CompensationType.COMPENSATION_TYPE_UNSPECIFIED][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.COMPENSATION_TYPE_UNSPECIFIED].
      * </pre>
@@ -738,8 +736,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional.
-     * Frequency of the specified amount.
+     * Optional. Frequency of the specified amount.
      * Default is
      * [CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED][google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED].
      * </pre>
@@ -751,8 +748,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional.
-     * Frequency of the specified amount.
+     * Optional. Frequency of the specified amount.
      * Default is
      * [CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED][google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED].
      * </pre>
@@ -765,8 +761,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional.
-     * Compensation amount.
+     * Optional. Compensation amount.
      * </pre>
      *
      * <code>.google.type.Money amount = 3;</code>
@@ -776,8 +771,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional.
-     * Compensation amount.
+     * Optional. Compensation amount.
      * </pre>
      *
      * <code>.google.type.Money amount = 3;</code>
@@ -787,8 +781,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional.
-     * Compensation amount.
+     * Optional. Compensation amount.
      * </pre>
      *
      * <code>.google.type.Money amount = 3;</code>
@@ -799,8 +792,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional.
-     * Compensation range.
+     * Optional. Compensation range.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange range = 4;</code>
@@ -810,8 +802,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional.
-     * Compensation range.
+     * Optional. Compensation range.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange range = 4;</code>
@@ -821,8 +812,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional.
-     * Compensation range.
+     * Optional. Compensation range.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange range = 4;</code>
@@ -833,8 +823,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional.
-     * Compensation description.  For example, could
+     * Optional. Compensation description.  For example, could
      * indicate equity terms or provide additional context to an estimated
      * bonus.
      * </pre>
@@ -846,8 +835,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional.
-     * Compensation description.  For example, could
+     * Optional. Compensation description.  For example, could
      * indicate equity terms or provide additional context to an estimated
      * bonus.
      * </pre>
@@ -860,8 +848,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional.
-     * Expected number of units paid each year. If not specified, when
+     * Optional. Expected number of units paid each year. If not specified, when
      * [Job.employment_types][google.cloud.talent.v4beta1.Job.employment_types]
      * is FULLTIME, a default value is inferred based on
      * [unit][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.unit].
@@ -880,8 +867,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional.
-     * Expected number of units paid each year. If not specified, when
+     * Optional. Expected number of units paid each year. If not specified, when
      * [Job.employment_types][google.cloud.talent.v4beta1.Job.employment_types]
      * is FULLTIME, a default value is inferred based on
      * [unit][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.unit].
@@ -900,8 +886,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional.
-     * Expected number of units paid each year. If not specified, when
+     * Optional. Expected number of units paid each year. If not specified, when
      * [Job.employment_types][google.cloud.talent.v4beta1.Job.employment_types]
      * is FULLTIME, a default value is inferred based on
      * [unit][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.unit].
@@ -1137,8 +1122,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional.
-     * Compensation type.
+     * Optional. Compensation type.
      * Default is
      * [CompensationType.COMPENSATION_TYPE_UNSPECIFIED][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.COMPENSATION_TYPE_UNSPECIFIED].
      * </pre>
@@ -1152,8 +1136,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional.
-     * Compensation type.
+     * Optional. Compensation type.
      * Default is
      * [CompensationType.COMPENSATION_TYPE_UNSPECIFIED][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.COMPENSATION_TYPE_UNSPECIFIED].
      * </pre>
@@ -1175,8 +1158,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional.
-     * Frequency of the specified amount.
+     * Optional. Frequency of the specified amount.
      * Default is
      * [CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED][google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED].
      * </pre>
@@ -1190,8 +1172,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional.
-     * Frequency of the specified amount.
+     * Optional. Frequency of the specified amount.
      * Default is
      * [CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED][google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED].
      * </pre>
@@ -1212,8 +1193,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional.
-     * Compensation amount.
+     * Optional. Compensation amount.
      * </pre>
      *
      * <code>.google.type.Money amount = 3;</code>
@@ -1225,8 +1205,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional.
-     * Compensation amount.
+     * Optional. Compensation amount.
      * </pre>
      *
      * <code>.google.type.Money amount = 3;</code>
@@ -1241,8 +1220,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional.
-     * Compensation amount.
+     * Optional. Compensation amount.
      * </pre>
      *
      * <code>.google.type.Money amount = 3;</code>
@@ -1259,8 +1237,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional.
-     * Compensation range.
+     * Optional. Compensation range.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange range = 4;</code>
@@ -1272,8 +1249,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional.
-     * Compensation range.
+     * Optional. Compensation range.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange range = 4;</code>
@@ -1290,8 +1266,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional.
-     * Compensation range.
+     * Optional. Compensation range.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange range = 4;</code>
@@ -1312,8 +1287,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional.
-     * Compensation description.  For example, could
+     * Optional. Compensation description.  For example, could
      * indicate equity terms or provide additional context to an estimated
      * bonus.
      * </pre>
@@ -1335,8 +1309,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional.
-     * Compensation description.  For example, could
+     * Optional. Compensation description.  For example, could
      * indicate equity terms or provide additional context to an estimated
      * bonus.
      * </pre>
@@ -1361,8 +1334,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional.
-     * Expected number of units paid each year. If not specified, when
+     * Optional. Expected number of units paid each year. If not specified, when
      * [Job.employment_types][google.cloud.talent.v4beta1.Job.employment_types]
      * is FULLTIME, a default value is inferred based on
      * [unit][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.unit].
@@ -1383,8 +1355,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional.
-     * Expected number of units paid each year. If not specified, when
+     * Optional. Expected number of units paid each year. If not specified, when
      * [Job.employment_types][google.cloud.talent.v4beta1.Job.employment_types]
      * is FULLTIME, a default value is inferred based on
      * [unit][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.unit].
@@ -1407,8 +1378,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional.
-     * Expected number of units paid each year. If not specified, when
+     * Optional. Expected number of units paid each year. If not specified, when
      * [Job.employment_types][google.cloud.talent.v4beta1.Job.employment_types]
      * is FULLTIME, a default value is inferred based on
      * [unit][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.unit].
@@ -1938,8 +1908,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional.
-       * Compensation type.
+       * Optional. Compensation type.
        * Default is
        * [CompensationType.COMPENSATION_TYPE_UNSPECIFIED][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.COMPENSATION_TYPE_UNSPECIFIED].
        * </pre>
@@ -1953,8 +1922,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional.
-       * Compensation type.
+       * Optional. Compensation type.
        * Default is
        * [CompensationType.COMPENSATION_TYPE_UNSPECIFIED][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.COMPENSATION_TYPE_UNSPECIFIED].
        * </pre>
@@ -1970,8 +1938,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional.
-       * Compensation type.
+       * Optional. Compensation type.
        * Default is
        * [CompensationType.COMPENSATION_TYPE_UNSPECIFIED][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.COMPENSATION_TYPE_UNSPECIFIED].
        * </pre>
@@ -1990,8 +1957,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional.
-       * Compensation type.
+       * Optional. Compensation type.
        * Default is
        * [CompensationType.COMPENSATION_TYPE_UNSPECIFIED][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.COMPENSATION_TYPE_UNSPECIFIED].
        * </pre>
@@ -2012,8 +1978,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional.
-       * Compensation type.
+       * Optional. Compensation type.
        * Default is
        * [CompensationType.COMPENSATION_TYPE_UNSPECIFIED][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.COMPENSATION_TYPE_UNSPECIFIED].
        * </pre>
@@ -2032,8 +1997,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional.
-       * Frequency of the specified amount.
+       * Optional. Frequency of the specified amount.
        * Default is
        * [CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED][google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED].
        * </pre>
@@ -2047,8 +2011,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional.
-       * Frequency of the specified amount.
+       * Optional. Frequency of the specified amount.
        * Default is
        * [CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED][google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED].
        * </pre>
@@ -2064,8 +2027,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional.
-       * Frequency of the specified amount.
+       * Optional. Frequency of the specified amount.
        * Default is
        * [CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED][google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED].
        * </pre>
@@ -2084,8 +2046,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional.
-       * Frequency of the specified amount.
+       * Optional. Frequency of the specified amount.
        * Default is
        * [CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED][google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED].
        * </pre>
@@ -2106,8 +2067,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional.
-       * Frequency of the specified amount.
+       * Optional. Frequency of the specified amount.
        * Default is
        * [CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED][google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED].
        * </pre>
@@ -2128,8 +2088,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional.
-       * Compensation amount.
+       * Optional. Compensation amount.
        * </pre>
        *
        * <code>.google.type.Money amount = 3;</code>
@@ -2141,8 +2100,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional.
-       * Compensation amount.
+       * Optional. Compensation amount.
        * </pre>
        *
        * <code>.google.type.Money amount = 3;</code>
@@ -2164,8 +2122,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional.
-       * Compensation amount.
+       * Optional. Compensation amount.
        * </pre>
        *
        * <code>.google.type.Money amount = 3;</code>
@@ -2187,8 +2144,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional.
-       * Compensation amount.
+       * Optional. Compensation amount.
        * </pre>
        *
        * <code>.google.type.Money amount = 3;</code>
@@ -2207,8 +2163,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional.
-       * Compensation amount.
+       * Optional. Compensation amount.
        * </pre>
        *
        * <code>.google.type.Money amount = 3;</code>
@@ -2238,8 +2193,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional.
-       * Compensation amount.
+       * Optional. Compensation amount.
        * </pre>
        *
        * <code>.google.type.Money amount = 3;</code>
@@ -2264,8 +2218,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional.
-       * Compensation amount.
+       * Optional. Compensation amount.
        * </pre>
        *
        * <code>.google.type.Money amount = 3;</code>
@@ -2277,8 +2230,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional.
-       * Compensation amount.
+       * Optional. Compensation amount.
        * </pre>
        *
        * <code>.google.type.Money amount = 3;</code>
@@ -2297,8 +2249,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional.
-       * Compensation amount.
+       * Optional. Compensation amount.
        * </pre>
        *
        * <code>.google.type.Money amount = 3;</code>
@@ -2333,8 +2284,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional.
-       * Compensation range.
+       * Optional. Compensation range.
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange range = 4;</code>
@@ -2346,8 +2296,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional.
-       * Compensation range.
+       * Optional. Compensation range.
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange range = 4;</code>
@@ -2372,8 +2321,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional.
-       * Compensation range.
+       * Optional. Compensation range.
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange range = 4;</code>
@@ -2396,8 +2344,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional.
-       * Compensation range.
+       * Optional. Compensation range.
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange range = 4;</code>
@@ -2418,8 +2365,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional.
-       * Compensation range.
+       * Optional. Compensation range.
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange range = 4;</code>
@@ -2454,8 +2400,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional.
-       * Compensation range.
+       * Optional. Compensation range.
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange range = 4;</code>
@@ -2480,8 +2425,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional.
-       * Compensation range.
+       * Optional. Compensation range.
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange range = 4;</code>
@@ -2494,8 +2438,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional.
-       * Compensation range.
+       * Optional. Compensation range.
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange range = 4;</code>
@@ -2517,8 +2460,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional.
-       * Compensation range.
+       * Optional. Compensation range.
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange range = 4;</code>
@@ -2556,8 +2498,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional.
-       * Compensation description.  For example, could
+       * Optional. Compensation description.  For example, could
        * indicate equity terms or provide additional context to an estimated
        * bonus.
        * </pre>
@@ -2579,8 +2520,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional.
-       * Compensation description.  For example, could
+       * Optional. Compensation description.  For example, could
        * indicate equity terms or provide additional context to an estimated
        * bonus.
        * </pre>
@@ -2602,8 +2542,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional.
-       * Compensation description.  For example, could
+       * Optional. Compensation description.  For example, could
        * indicate equity terms or provide additional context to an estimated
        * bonus.
        * </pre>
@@ -2623,8 +2562,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional.
-       * Compensation description.  For example, could
+       * Optional. Compensation description.  For example, could
        * indicate equity terms or provide additional context to an estimated
        * bonus.
        * </pre>
@@ -2641,8 +2579,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional.
-       * Compensation description.  For example, could
+       * Optional. Compensation description.  For example, could
        * indicate equity terms or provide additional context to an estimated
        * bonus.
        * </pre>
@@ -2670,8 +2607,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional.
-       * Expected number of units paid each year. If not specified, when
+       * Optional. Expected number of units paid each year. If not specified, when
        * [Job.employment_types][google.cloud.talent.v4beta1.Job.employment_types]
        * is FULLTIME, a default value is inferred based on
        * [unit][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.unit].
@@ -2692,8 +2628,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional.
-       * Expected number of units paid each year. If not specified, when
+       * Optional. Expected number of units paid each year. If not specified, when
        * [Job.employment_types][google.cloud.talent.v4beta1.Job.employment_types]
        * is FULLTIME, a default value is inferred based on
        * [unit][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.unit].
@@ -2720,8 +2655,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional.
-       * Expected number of units paid each year. If not specified, when
+       * Optional. Expected number of units paid each year. If not specified, when
        * [Job.employment_types][google.cloud.talent.v4beta1.Job.employment_types]
        * is FULLTIME, a default value is inferred based on
        * [unit][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.unit].
@@ -2752,8 +2686,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional.
-       * Expected number of units paid each year. If not specified, when
+       * Optional. Expected number of units paid each year. If not specified, when
        * [Job.employment_types][google.cloud.talent.v4beta1.Job.employment_types]
        * is FULLTIME, a default value is inferred based on
        * [unit][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.unit].
@@ -2782,8 +2715,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional.
-       * Expected number of units paid each year. If not specified, when
+       * Optional. Expected number of units paid each year. If not specified, when
        * [Job.employment_types][google.cloud.talent.v4beta1.Job.employment_types]
        * is FULLTIME, a default value is inferred based on
        * [unit][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.unit].
@@ -2818,8 +2750,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional.
-       * Expected number of units paid each year. If not specified, when
+       * Optional. Expected number of units paid each year. If not specified, when
        * [Job.employment_types][google.cloud.talent.v4beta1.Job.employment_types]
        * is FULLTIME, a default value is inferred based on
        * [unit][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.unit].
@@ -2848,8 +2779,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional.
-       * Expected number of units paid each year. If not specified, when
+       * Optional. Expected number of units paid each year. If not specified, when
        * [Job.employment_types][google.cloud.talent.v4beta1.Job.employment_types]
        * is FULLTIME, a default value is inferred based on
        * [unit][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.unit].
@@ -2872,8 +2802,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional.
-       * Expected number of units paid each year. If not specified, when
+       * Optional. Expected number of units paid each year. If not specified, when
        * [Job.employment_types][google.cloud.talent.v4beta1.Job.employment_types]
        * is FULLTIME, a default value is inferred based on
        * [unit][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.unit].
@@ -2900,8 +2829,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional.
-       * Expected number of units paid each year. If not specified, when
+       * Optional. Expected number of units paid each year. If not specified, when
        * [Job.employment_types][google.cloud.talent.v4beta1.Job.employment_types]
        * is FULLTIME, a default value is inferred based on
        * [unit][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.unit].
@@ -2996,11 +2924,9 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional.
-     * The maximum amount of compensation. If left empty, the value is set
-     * to a maximal compensation value and the currency code is set to
-     * match the [currency code][google.type.Money.currency_code] of
-     * min_compensation.
+     * Optional. The maximum amount of compensation. If left empty, the value is
+     * set to a maximal compensation value and the currency code is set to match
+     * the [currency code][google.type.Money.currency_code] of min_compensation.
      * </pre>
      *
      * <code>.google.type.Money max_compensation = 2;</code>
@@ -3010,11 +2936,9 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional.
-     * The maximum amount of compensation. If left empty, the value is set
-     * to a maximal compensation value and the currency code is set to
-     * match the [currency code][google.type.Money.currency_code] of
-     * min_compensation.
+     * Optional. The maximum amount of compensation. If left empty, the value is
+     * set to a maximal compensation value and the currency code is set to match
+     * the [currency code][google.type.Money.currency_code] of min_compensation.
      * </pre>
      *
      * <code>.google.type.Money max_compensation = 2;</code>
@@ -3024,11 +2948,9 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional.
-     * The maximum amount of compensation. If left empty, the value is set
-     * to a maximal compensation value and the currency code is set to
-     * match the [currency code][google.type.Money.currency_code] of
-     * min_compensation.
+     * Optional. The maximum amount of compensation. If left empty, the value is
+     * set to a maximal compensation value and the currency code is set to match
+     * the [currency code][google.type.Money.currency_code] of min_compensation.
      * </pre>
      *
      * <code>.google.type.Money max_compensation = 2;</code>
@@ -3039,10 +2961,9 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional.
-     * The minimum amount of compensation. If left empty, the value is set
-     * to zero and the currency code is set to match the
-     * [currency code][google.type.Money.currency_code] of max_compensation.
+     * Optional. The minimum amount of compensation. If left empty, the value is
+     * set to zero and the currency code is set to match the [currency
+     * code][google.type.Money.currency_code] of max_compensation.
      * </pre>
      *
      * <code>.google.type.Money min_compensation = 1;</code>
@@ -3052,10 +2973,9 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional.
-     * The minimum amount of compensation. If left empty, the value is set
-     * to zero and the currency code is set to match the
-     * [currency code][google.type.Money.currency_code] of max_compensation.
+     * Optional. The minimum amount of compensation. If left empty, the value is
+     * set to zero and the currency code is set to match the [currency
+     * code][google.type.Money.currency_code] of max_compensation.
      * </pre>
      *
      * <code>.google.type.Money min_compensation = 1;</code>
@@ -3065,10 +2985,9 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional.
-     * The minimum amount of compensation. If left empty, the value is set
-     * to zero and the currency code is set to match the
-     * [currency code][google.type.Money.currency_code] of max_compensation.
+     * Optional. The minimum amount of compensation. If left empty, the value is
+     * set to zero and the currency code is set to match the [currency
+     * code][google.type.Money.currency_code] of max_compensation.
      * </pre>
      *
      * <code>.google.type.Money min_compensation = 1;</code>
@@ -3190,11 +3109,9 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional.
-     * The maximum amount of compensation. If left empty, the value is set
-     * to a maximal compensation value and the currency code is set to
-     * match the [currency code][google.type.Money.currency_code] of
-     * min_compensation.
+     * Optional. The maximum amount of compensation. If left empty, the value is
+     * set to a maximal compensation value and the currency code is set to match
+     * the [currency code][google.type.Money.currency_code] of min_compensation.
      * </pre>
      *
      * <code>.google.type.Money max_compensation = 2;</code>
@@ -3206,11 +3123,9 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional.
-     * The maximum amount of compensation. If left empty, the value is set
-     * to a maximal compensation value and the currency code is set to
-     * match the [currency code][google.type.Money.currency_code] of
-     * min_compensation.
+     * Optional. The maximum amount of compensation. If left empty, the value is
+     * set to a maximal compensation value and the currency code is set to match
+     * the [currency code][google.type.Money.currency_code] of min_compensation.
      * </pre>
      *
      * <code>.google.type.Money max_compensation = 2;</code>
@@ -3224,11 +3139,9 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional.
-     * The maximum amount of compensation. If left empty, the value is set
-     * to a maximal compensation value and the currency code is set to
-     * match the [currency code][google.type.Money.currency_code] of
-     * min_compensation.
+     * Optional. The maximum amount of compensation. If left empty, the value is
+     * set to a maximal compensation value and the currency code is set to match
+     * the [currency code][google.type.Money.currency_code] of min_compensation.
      * </pre>
      *
      * <code>.google.type.Money max_compensation = 2;</code>
@@ -3243,10 +3156,9 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional.
-     * The minimum amount of compensation. If left empty, the value is set
-     * to zero and the currency code is set to match the
-     * [currency code][google.type.Money.currency_code] of max_compensation.
+     * Optional. The minimum amount of compensation. If left empty, the value is
+     * set to zero and the currency code is set to match the [currency
+     * code][google.type.Money.currency_code] of max_compensation.
      * </pre>
      *
      * <code>.google.type.Money min_compensation = 1;</code>
@@ -3258,10 +3170,9 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional.
-     * The minimum amount of compensation. If left empty, the value is set
-     * to zero and the currency code is set to match the
-     * [currency code][google.type.Money.currency_code] of max_compensation.
+     * Optional. The minimum amount of compensation. If left empty, the value is
+     * set to zero and the currency code is set to match the [currency
+     * code][google.type.Money.currency_code] of max_compensation.
      * </pre>
      *
      * <code>.google.type.Money min_compensation = 1;</code>
@@ -3275,10 +3186,9 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional.
-     * The minimum amount of compensation. If left empty, the value is set
-     * to zero and the currency code is set to match the
-     * [currency code][google.type.Money.currency_code] of max_compensation.
+     * Optional. The minimum amount of compensation. If left empty, the value is
+     * set to zero and the currency code is set to match the [currency
+     * code][google.type.Money.currency_code] of max_compensation.
      * </pre>
      *
      * <code>.google.type.Money min_compensation = 1;</code>
@@ -3666,11 +3576,9 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional.
-       * The maximum amount of compensation. If left empty, the value is set
-       * to a maximal compensation value and the currency code is set to
-       * match the [currency code][google.type.Money.currency_code] of
-       * min_compensation.
+       * Optional. The maximum amount of compensation. If left empty, the value is
+       * set to a maximal compensation value and the currency code is set to match
+       * the [currency code][google.type.Money.currency_code] of min_compensation.
        * </pre>
        *
        * <code>.google.type.Money max_compensation = 2;</code>
@@ -3682,11 +3590,9 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional.
-       * The maximum amount of compensation. If left empty, the value is set
-       * to a maximal compensation value and the currency code is set to
-       * match the [currency code][google.type.Money.currency_code] of
-       * min_compensation.
+       * Optional. The maximum amount of compensation. If left empty, the value is
+       * set to a maximal compensation value and the currency code is set to match
+       * the [currency code][google.type.Money.currency_code] of min_compensation.
        * </pre>
        *
        * <code>.google.type.Money max_compensation = 2;</code>
@@ -3704,11 +3610,9 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional.
-       * The maximum amount of compensation. If left empty, the value is set
-       * to a maximal compensation value and the currency code is set to
-       * match the [currency code][google.type.Money.currency_code] of
-       * min_compensation.
+       * Optional. The maximum amount of compensation. If left empty, the value is
+       * set to a maximal compensation value and the currency code is set to match
+       * the [currency code][google.type.Money.currency_code] of min_compensation.
        * </pre>
        *
        * <code>.google.type.Money max_compensation = 2;</code>
@@ -3730,11 +3634,9 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional.
-       * The maximum amount of compensation. If left empty, the value is set
-       * to a maximal compensation value and the currency code is set to
-       * match the [currency code][google.type.Money.currency_code] of
-       * min_compensation.
+       * Optional. The maximum amount of compensation. If left empty, the value is
+       * set to a maximal compensation value and the currency code is set to match
+       * the [currency code][google.type.Money.currency_code] of min_compensation.
        * </pre>
        *
        * <code>.google.type.Money max_compensation = 2;</code>
@@ -3753,11 +3655,9 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional.
-       * The maximum amount of compensation. If left empty, the value is set
-       * to a maximal compensation value and the currency code is set to
-       * match the [currency code][google.type.Money.currency_code] of
-       * min_compensation.
+       * Optional. The maximum amount of compensation. If left empty, the value is
+       * set to a maximal compensation value and the currency code is set to match
+       * the [currency code][google.type.Money.currency_code] of min_compensation.
        * </pre>
        *
        * <code>.google.type.Money max_compensation = 2;</code>
@@ -3781,11 +3681,9 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional.
-       * The maximum amount of compensation. If left empty, the value is set
-       * to a maximal compensation value and the currency code is set to
-       * match the [currency code][google.type.Money.currency_code] of
-       * min_compensation.
+       * Optional. The maximum amount of compensation. If left empty, the value is
+       * set to a maximal compensation value and the currency code is set to match
+       * the [currency code][google.type.Money.currency_code] of min_compensation.
        * </pre>
        *
        * <code>.google.type.Money max_compensation = 2;</code>
@@ -3805,11 +3703,9 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional.
-       * The maximum amount of compensation. If left empty, the value is set
-       * to a maximal compensation value and the currency code is set to
-       * match the [currency code][google.type.Money.currency_code] of
-       * min_compensation.
+       * Optional. The maximum amount of compensation. If left empty, the value is
+       * set to a maximal compensation value and the currency code is set to match
+       * the [currency code][google.type.Money.currency_code] of min_compensation.
        * </pre>
        *
        * <code>.google.type.Money max_compensation = 2;</code>
@@ -3823,11 +3719,9 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional.
-       * The maximum amount of compensation. If left empty, the value is set
-       * to a maximal compensation value and the currency code is set to
-       * match the [currency code][google.type.Money.currency_code] of
-       * min_compensation.
+       * Optional. The maximum amount of compensation. If left empty, the value is
+       * set to a maximal compensation value and the currency code is set to match
+       * the [currency code][google.type.Money.currency_code] of min_compensation.
        * </pre>
        *
        * <code>.google.type.Money max_compensation = 2;</code>
@@ -3845,11 +3739,9 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional.
-       * The maximum amount of compensation. If left empty, the value is set
-       * to a maximal compensation value and the currency code is set to
-       * match the [currency code][google.type.Money.currency_code] of
-       * min_compensation.
+       * Optional. The maximum amount of compensation. If left empty, the value is
+       * set to a maximal compensation value and the currency code is set to match
+       * the [currency code][google.type.Money.currency_code] of min_compensation.
        * </pre>
        *
        * <code>.google.type.Money max_compensation = 2;</code>
@@ -3877,10 +3769,9 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional.
-       * The minimum amount of compensation. If left empty, the value is set
-       * to zero and the currency code is set to match the
-       * [currency code][google.type.Money.currency_code] of max_compensation.
+       * Optional. The minimum amount of compensation. If left empty, the value is
+       * set to zero and the currency code is set to match the [currency
+       * code][google.type.Money.currency_code] of max_compensation.
        * </pre>
        *
        * <code>.google.type.Money min_compensation = 1;</code>
@@ -3892,10 +3783,9 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional.
-       * The minimum amount of compensation. If left empty, the value is set
-       * to zero and the currency code is set to match the
-       * [currency code][google.type.Money.currency_code] of max_compensation.
+       * Optional. The minimum amount of compensation. If left empty, the value is
+       * set to zero and the currency code is set to match the [currency
+       * code][google.type.Money.currency_code] of max_compensation.
        * </pre>
        *
        * <code>.google.type.Money min_compensation = 1;</code>
@@ -3913,10 +3803,9 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional.
-       * The minimum amount of compensation. If left empty, the value is set
-       * to zero and the currency code is set to match the
-       * [currency code][google.type.Money.currency_code] of max_compensation.
+       * Optional. The minimum amount of compensation. If left empty, the value is
+       * set to zero and the currency code is set to match the [currency
+       * code][google.type.Money.currency_code] of max_compensation.
        * </pre>
        *
        * <code>.google.type.Money min_compensation = 1;</code>
@@ -3938,10 +3827,9 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional.
-       * The minimum amount of compensation. If left empty, the value is set
-       * to zero and the currency code is set to match the
-       * [currency code][google.type.Money.currency_code] of max_compensation.
+       * Optional. The minimum amount of compensation. If left empty, the value is
+       * set to zero and the currency code is set to match the [currency
+       * code][google.type.Money.currency_code] of max_compensation.
        * </pre>
        *
        * <code>.google.type.Money min_compensation = 1;</code>
@@ -3960,10 +3848,9 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional.
-       * The minimum amount of compensation. If left empty, the value is set
-       * to zero and the currency code is set to match the
-       * [currency code][google.type.Money.currency_code] of max_compensation.
+       * Optional. The minimum amount of compensation. If left empty, the value is
+       * set to zero and the currency code is set to match the [currency
+       * code][google.type.Money.currency_code] of max_compensation.
        * </pre>
        *
        * <code>.google.type.Money min_compensation = 1;</code>
@@ -3987,10 +3874,9 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional.
-       * The minimum amount of compensation. If left empty, the value is set
-       * to zero and the currency code is set to match the
-       * [currency code][google.type.Money.currency_code] of max_compensation.
+       * Optional. The minimum amount of compensation. If left empty, the value is
+       * set to zero and the currency code is set to match the [currency
+       * code][google.type.Money.currency_code] of max_compensation.
        * </pre>
        *
        * <code>.google.type.Money min_compensation = 1;</code>
@@ -4010,10 +3896,9 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional.
-       * The minimum amount of compensation. If left empty, the value is set
-       * to zero and the currency code is set to match the
-       * [currency code][google.type.Money.currency_code] of max_compensation.
+       * Optional. The minimum amount of compensation. If left empty, the value is
+       * set to zero and the currency code is set to match the [currency
+       * code][google.type.Money.currency_code] of max_compensation.
        * </pre>
        *
        * <code>.google.type.Money min_compensation = 1;</code>
@@ -4027,10 +3912,9 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional.
-       * The minimum amount of compensation. If left empty, the value is set
-       * to zero and the currency code is set to match the
-       * [currency code][google.type.Money.currency_code] of max_compensation.
+       * Optional. The minimum amount of compensation. If left empty, the value is
+       * set to zero and the currency code is set to match the [currency
+       * code][google.type.Money.currency_code] of max_compensation.
        * </pre>
        *
        * <code>.google.type.Money min_compensation = 1;</code>
@@ -4048,10 +3932,9 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional.
-       * The minimum amount of compensation. If left empty, the value is set
-       * to zero and the currency code is set to match the
-       * [currency code][google.type.Money.currency_code] of max_compensation.
+       * Optional. The minimum amount of compensation. If left empty, the value is
+       * set to zero and the currency code is set to match the [currency
+       * code][google.type.Money.currency_code] of max_compensation.
        * </pre>
        *
        * <code>.google.type.Money min_compensation = 1;</code>
@@ -4134,8 +4017,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional.
-   * Job compensation information.
+   * Optional. Job compensation information.
    * At most one entry can be of type
    * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.BASE],
    * which is referred as **base compensation entry** for the job.
@@ -4152,8 +4034,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional.
-   * Job compensation information.
+   * Optional. Job compensation information.
    * At most one entry can be of type
    * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.BASE],
    * which is referred as **base compensation entry** for the job.
@@ -4171,8 +4052,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional.
-   * Job compensation information.
+   * Optional. Job compensation information.
    * At most one entry can be of type
    * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.BASE],
    * which is referred as **base compensation entry** for the job.
@@ -4188,8 +4068,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional.
-   * Job compensation information.
+   * Optional. Job compensation information.
    * At most one entry can be of type
    * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.BASE],
    * which is referred as **base compensation entry** for the job.
@@ -4205,8 +4084,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional.
-   * Job compensation information.
+   * Optional. Job compensation information.
    * At most one entry can be of type
    * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.BASE],
    * which is referred as **base compensation entry** for the job.
@@ -4809,8 +4687,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional.
-     * Job compensation information.
+     * Optional. Job compensation information.
      * At most one entry can be of type
      * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.BASE],
      * which is referred as **base compensation entry** for the job.
@@ -4831,8 +4708,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional.
-     * Job compensation information.
+     * Optional. Job compensation information.
      * At most one entry can be of type
      * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.BASE],
      * which is referred as **base compensation entry** for the job.
@@ -4852,8 +4728,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional.
-     * Job compensation information.
+     * Optional. Job compensation information.
      * At most one entry can be of type
      * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.BASE],
      * which is referred as **base compensation entry** for the job.
@@ -4874,8 +4749,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional.
-     * Job compensation information.
+     * Optional. Job compensation information.
      * At most one entry can be of type
      * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.BASE],
      * which is referred as **base compensation entry** for the job.
@@ -4902,8 +4776,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional.
-     * Job compensation information.
+     * Optional. Job compensation information.
      * At most one entry can be of type
      * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.BASE],
      * which is referred as **base compensation entry** for the job.
@@ -4929,8 +4802,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional.
-     * Job compensation information.
+     * Optional. Job compensation information.
      * At most one entry can be of type
      * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.BASE],
      * which is referred as **base compensation entry** for the job.
@@ -4957,8 +4829,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional.
-     * Job compensation information.
+     * Optional. Job compensation information.
      * At most one entry can be of type
      * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.BASE],
      * which is referred as **base compensation entry** for the job.
@@ -4985,8 +4856,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional.
-     * Job compensation information.
+     * Optional. Job compensation information.
      * At most one entry can be of type
      * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.BASE],
      * which is referred as **base compensation entry** for the job.
@@ -5011,8 +4881,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional.
-     * Job compensation information.
+     * Optional. Job compensation information.
      * At most one entry can be of type
      * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.BASE],
      * which is referred as **base compensation entry** for the job.
@@ -5038,8 +4907,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional.
-     * Job compensation information.
+     * Optional. Job compensation information.
      * At most one entry can be of type
      * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.BASE],
      * which is referred as **base compensation entry** for the job.
@@ -5065,8 +4933,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional.
-     * Job compensation information.
+     * Optional. Job compensation information.
      * At most one entry can be of type
      * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.BASE],
      * which is referred as **base compensation entry** for the job.
@@ -5089,8 +4956,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional.
-     * Job compensation information.
+     * Optional. Job compensation information.
      * At most one entry can be of type
      * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.BASE],
      * which is referred as **base compensation entry** for the job.
@@ -5113,8 +4979,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional.
-     * Job compensation information.
+     * Optional. Job compensation information.
      * At most one entry can be of type
      * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.BASE],
      * which is referred as **base compensation entry** for the job.
@@ -5131,8 +4996,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional.
-     * Job compensation information.
+     * Optional. Job compensation information.
      * At most one entry can be of type
      * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.BASE],
      * which is referred as **base compensation entry** for the job.
@@ -5153,8 +5017,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional.
-     * Job compensation information.
+     * Optional. Job compensation information.
      * At most one entry can be of type
      * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.BASE],
      * which is referred as **base compensation entry** for the job.
@@ -5176,8 +5039,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional.
-     * Job compensation information.
+     * Optional. Job compensation information.
      * At most one entry can be of type
      * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.BASE],
      * which is referred as **base compensation entry** for the job.
@@ -5197,8 +5059,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional.
-     * Job compensation information.
+     * Optional. Job compensation information.
      * At most one entry can be of type
      * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.BASE],
      * which is referred as **base compensation entry** for the job.
@@ -5219,8 +5080,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional.
-     * Job compensation information.
+     * Optional. Job compensation information.
      * At most one entry can be of type
      * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.BASE],
      * which is referred as **base compensation entry** for the job.

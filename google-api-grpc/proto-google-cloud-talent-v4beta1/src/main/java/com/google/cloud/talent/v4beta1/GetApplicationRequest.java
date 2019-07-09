@@ -97,8 +97,7 @@ public final class GetApplicationRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required.
-   * The resource name of the application to be retrieved.
+   * Required. The resource name of the application to be retrieved.
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}/applications/{application_id}",
    * for example,
@@ -122,8 +121,7 @@ public final class GetApplicationRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required.
-   * The resource name of the application to be retrieved.
+   * Required. The resource name of the application to be retrieved.
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}/applications/{application_id}",
    * for example,
@@ -468,8 +466,7 @@ public final class GetApplicationRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required.
-     * The resource name of the application to be retrieved.
+     * Required. The resource name of the application to be retrieved.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}/applications/{application_id}",
      * for example,
@@ -493,8 +490,7 @@ public final class GetApplicationRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required.
-     * The resource name of the application to be retrieved.
+     * Required. The resource name of the application to be retrieved.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}/applications/{application_id}",
      * for example,
@@ -518,8 +514,7 @@ public final class GetApplicationRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required.
-     * The resource name of the application to be retrieved.
+     * Required. The resource name of the application to be retrieved.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}/applications/{application_id}",
      * for example,
@@ -541,8 +536,7 @@ public final class GetApplicationRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required.
-     * The resource name of the application to be retrieved.
+     * Required. The resource name of the application to be retrieved.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}/applications/{application_id}",
      * for example,
@@ -561,8 +555,7 @@ public final class GetApplicationRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required.
-     * The resource name of the application to be retrieved.
+     * Required. The resource name of the application to be retrieved.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}/applications/{application_id}",
      * for example,

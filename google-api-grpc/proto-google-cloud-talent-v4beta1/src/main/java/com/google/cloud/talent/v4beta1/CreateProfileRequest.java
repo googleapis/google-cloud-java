@@ -113,8 +113,7 @@ public final class CreateProfileRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required.
-   * The name of the tenant this profile belongs to.
+   * Required. The name of the tenant this profile belongs to.
    * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
    * "projects/api-test-project/tenants/foo".
    * </pre>
@@ -136,8 +135,7 @@ public final class CreateProfileRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required.
-   * The name of the tenant this profile belongs to.
+   * Required. The name of the tenant this profile belongs to.
    * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
    * "projects/api-test-project/tenants/foo".
    * </pre>
@@ -162,8 +160,7 @@ public final class CreateProfileRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required.
-   * The profile to be created.
+   * Required. The profile to be created.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Profile profile = 2;</code>
@@ -175,8 +172,7 @@ public final class CreateProfileRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required.
-   * The profile to be created.
+   * Required. The profile to be created.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Profile profile = 2;</code>
@@ -190,8 +186,7 @@ public final class CreateProfileRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required.
-   * The profile to be created.
+   * Required. The profile to be created.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Profile profile = 2;</code>
@@ -551,8 +546,7 @@ public final class CreateProfileRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required.
-     * The name of the tenant this profile belongs to.
+     * Required. The name of the tenant this profile belongs to.
      * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
      * "projects/api-test-project/tenants/foo".
      * </pre>
@@ -574,8 +568,7 @@ public final class CreateProfileRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required.
-     * The name of the tenant this profile belongs to.
+     * Required. The name of the tenant this profile belongs to.
      * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
      * "projects/api-test-project/tenants/foo".
      * </pre>
@@ -597,8 +590,7 @@ public final class CreateProfileRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required.
-     * The name of the tenant this profile belongs to.
+     * Required. The name of the tenant this profile belongs to.
      * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
      * "projects/api-test-project/tenants/foo".
      * </pre>
@@ -618,8 +610,7 @@ public final class CreateProfileRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required.
-     * The name of the tenant this profile belongs to.
+     * Required. The name of the tenant this profile belongs to.
      * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
      * "projects/api-test-project/tenants/foo".
      * </pre>
@@ -636,8 +627,7 @@ public final class CreateProfileRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required.
-     * The name of the tenant this profile belongs to.
+     * Required. The name of the tenant this profile belongs to.
      * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
      * "projects/api-test-project/tenants/foo".
      * </pre>
@@ -665,8 +655,7 @@ public final class CreateProfileRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required.
-     * The profile to be created.
+     * Required. The profile to be created.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Profile profile = 2;</code>
@@ -678,8 +667,7 @@ public final class CreateProfileRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required.
-     * The profile to be created.
+     * Required. The profile to be created.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Profile profile = 2;</code>
@@ -697,8 +685,7 @@ public final class CreateProfileRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required.
-     * The profile to be created.
+     * Required. The profile to be created.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Profile profile = 2;</code>
@@ -720,8 +707,7 @@ public final class CreateProfileRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required.
-     * The profile to be created.
+     * Required. The profile to be created.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Profile profile = 2;</code>
@@ -740,8 +726,7 @@ public final class CreateProfileRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required.
-     * The profile to be created.
+     * Required. The profile to be created.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Profile profile = 2;</code>
@@ -767,8 +752,7 @@ public final class CreateProfileRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required.
-     * The profile to be created.
+     * Required. The profile to be created.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Profile profile = 2;</code>
@@ -788,8 +772,7 @@ public final class CreateProfileRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required.
-     * The profile to be created.
+     * Required. The profile to be created.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Profile profile = 2;</code>
@@ -803,8 +786,7 @@ public final class CreateProfileRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required.
-     * The profile to be created.
+     * Required. The profile to be created.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Profile profile = 2;</code>
@@ -822,8 +804,7 @@ public final class CreateProfileRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required.
-     * The profile to be created.
+     * Required. The profile to be created.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Profile profile = 2;</code>

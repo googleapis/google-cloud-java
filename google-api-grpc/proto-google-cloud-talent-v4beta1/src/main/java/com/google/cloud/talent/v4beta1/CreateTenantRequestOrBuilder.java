@@ -12,8 +12,7 @@ public interface CreateTenantRequestOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * Resource name of the project under which the tenant is created.
+   * Required. Resource name of the project under which the tenant is created.
    * The format is "projects/{project_id}", for example,
    * "projects/api-test-project".
    * </pre>
@@ -25,8 +24,7 @@ public interface CreateTenantRequestOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * Resource name of the project under which the tenant is created.
+   * Required. Resource name of the project under which the tenant is created.
    * The format is "projects/{project_id}", for example,
    * "projects/api-test-project".
    * </pre>
@@ -39,8 +37,7 @@ public interface CreateTenantRequestOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * The tenant to be created.
+   * Required. The tenant to be created.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Tenant tenant = 2;</code>
@@ -50,8 +47,7 @@ public interface CreateTenantRequestOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * The tenant to be created.
+   * Required. The tenant to be created.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Tenant tenant = 2;</code>
@@ -61,8 +57,7 @@ public interface CreateTenantRequestOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * The tenant to be created.
+   * Required. The tenant to be created.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Tenant tenant = 2;</code>
