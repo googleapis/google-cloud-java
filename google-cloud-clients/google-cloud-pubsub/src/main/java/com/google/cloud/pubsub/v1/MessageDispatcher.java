@@ -62,6 +62,7 @@ class MessageDispatcher {
   @InternalApi static final Duration PENDING_ACKS_SEND_DELAY = Duration.ofMillis(100);
 
   private final Executor executor;
+  private final SequentialExecutorService.AutoExecutor sequentialExecutor;
   private final ScheduledExecutorService systemExecutor;
   private final ApiClock clock;
 
@@ -206,6 +207,7 @@ class MessageDispatcher {
     jobLock = new ReentrantLock();
     messagesWaiter = new MessageWaiter();
     this.clock = clock;
+    this.sequentialExecutor = new SequentialExecutorService.AutoExecutor(executor);
   }
 
   void start() {
@@ -358,7 +360,7 @@ class MessageDispatcher {
           }
         };
     ApiFutures.addCallback(response, ackHandler, MoreExecutors.directExecutor());
-    executor.execute(
+    Runnable deliverMessageTask =
         new Runnable() {
           @Override
           public void run() {
@@ -379,7 +381,12 @@ class MessageDispatcher {
               response.setException(e);
             }
           }
-        });
+        };
+    if (message.getOrderingKey().isEmpty()) {
+      executor.execute(deliverMessageTask);
+    } else {
+      sequentialExecutor.submit(message.getOrderingKey(), deliverMessageTask);
+    }
   }
 
   /** Compute the ideal deadline, set subsequent modacks to this deadline, and return it. */
