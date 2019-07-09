@@ -49,6 +49,7 @@ import com.google.spanner.v1.Transaction;
 import java.util.List;
 import java.util.Map;
 import javax.annotation.Nullable;
+import org.threeten.bp.Duration;
 
 /**
  * Abstracts remote calls to the Cloud Spanner service. Typically end-consumer code will never use
@@ -212,6 +213,9 @@ public interface SpannerRpc extends ServiceRpc {
       ReadRequest request, ResultStreamConsumer consumer, @Nullable Map<Option, ?> options);
 
   ResultSet executeQuery(ExecuteSqlRequest request, @Nullable Map<Option, ?> options);
+
+  ResultSet executePartitionedDml(
+      ExecuteSqlRequest request, @Nullable Map<Option, ?> options, Duration timeout);
 
   StreamingCall executeQuery(
       ExecuteSqlRequest request, ResultStreamConsumer consumer, @Nullable Map<Option, ?> options);
