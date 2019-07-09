@@ -40,7 +40,7 @@ public class SessionPoolOptions {
     this.writeSessionsFraction = builder.writeSessionsFraction;
     this.actionOnExhaustion = builder.actionOnExhaustion;
     this.actionOnSessionNotFound = builder.actionOnSessionNotFound;
-    this.waitForSessionTimeoutMillis = builder.blockForSessionTimeoutMillis;
+    this.waitForSessionTimeoutMillis = builder.waitForSessionTimeoutMillis;
     this.keepAliveIntervalMinutes = builder.keepAliveIntervalMinutes;
   }
 
@@ -102,7 +102,7 @@ public class SessionPoolOptions {
     private int maxIdleSessions;
     private float writeSessionsFraction = 0.2f;
     private ActionOnExhaustion actionOnExhaustion = DEFAULT_ACTION;
-    private long blockForSessionTimeoutMillis = 30_000L;
+    private long waitForSessionTimeoutMillis = 30_000L;
     private ActionOnSessionNotFound actionOnSessionNotFound = ActionOnSessionNotFound.RETRY;
     private int keepAliveIntervalMinutes = 30;
 
@@ -168,10 +168,10 @@ public class SessionPoolOptions {
     }
 
     /**
-     * The number of milliseconds to block for a session to become available when one is requested.
+     * The number of milliseconds to wait for a session to become available when one is requested.
      */
-    public Builder setBlockForSessionTimeoutMillis(long timeout) {
-      this.blockForSessionTimeoutMillis = timeout;
+    public Builder setWaitForSessionTimeoutMillis(long timeout) {
+      this.waitForSessionTimeoutMillis = timeout;
       return this;
     }
 
