@@ -14,6 +14,9 @@
     <artifactId>google-cloud-clients</artifactId>
     <version>0.99.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-clients:current} -->
   </parent>
+  <properties>
+    <site.installationModule>google-cloud-websecurityscanner</site.installationModule>
+  </properties>
   <dependencies>
     <dependency>
       <groupId>${project.groupId}</groupId>
