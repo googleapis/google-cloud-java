@@ -80,36 +80,6 @@ public class BigQuerySnippets {
     this.bigquery = bigquery;
   }
 
-  /** Example of creating a dataset. */
-  // [TARGET create(DatasetInfo, DatasetOption...)]
-  // [VARIABLE "my_dataset_name"]
-  public Dataset createDataset(String datasetName) {
-    // [START bigquery_create_dataset]
-    Dataset dataset = null;
-    DatasetInfo datasetInfo = DatasetInfo.newBuilder(datasetName).build();
-    try {
-      // the dataset was created
-      dataset = bigquery.create(datasetInfo);
-    } catch (BigQueryException e) {
-      // the dataset was not created
-    }
-    // [END bigquery_create_dataset]
-    return dataset;
-  }
-
-  /** Example of updating a dataset by changing its description. */
-  // [TARGET update(DatasetInfo, DatasetOption...)]
-  // [VARIABLE "my_dataset_name"]
-  // [VARIABLE "some_new_description"]
-  public Dataset updateDataset(String datasetName, String newDescription) {
-    // [START bigquery_update_dataset_description]
-    Dataset oldDataset = bigquery.getDataset(datasetName);
-    DatasetInfo datasetInfo = oldDataset.toBuilder().setDescription(newDescription).build();
-    Dataset newDataset = bigquery.update(datasetInfo);
-    // [END bigquery_update_dataset_description]
-    return newDataset;
-  }
-
   /** Example of updating a table by changing its description. */
   public Table updateTableDescription(String datasetName, String tableName, String newDescription) {
     // [START bigquery_update_table_description]
@@ -140,32 +110,6 @@ public class BigQuerySnippets {
     return afterTable;
   }
 
-  /** Example of listing datasets, specifying the page size. */
-  // [TARGET listDatasets(DatasetListOption...)]
-  public Page<Dataset> listDatasets() {
-    // [START bigquery_list_datasets]
-    // List datasets in the default project
-    Page<Dataset> datasets = bigquery.listDatasets(DatasetListOption.pageSize(100));
-    for (Dataset dataset : datasets.iterateAll()) {
-      // do something with the dataset
-    }
-    // [END bigquery_list_datasets]
-    return datasets;
-  }
-
-  /** Example of listing datasets in a project, specifying the page size. */
-  // [TARGET listDatasets(String, DatasetListOption...)]
-  // [VARIABLE "my_project_id"]
-  public Page<Dataset> listDatasets(String projectId) {
-    // [START bigquery_list_datasets]
-    // List datasets in a specified project
-    Page<Dataset> datasets = bigquery.listDatasets(projectId, DatasetListOption.pageSize(100));
-    for (Dataset dataset : datasets.iterateAll()) {
-      // do something with the dataset
-    }
-    // [END bigquery_list_datasets]
-    return datasets;
-  }
 
   /** Example of deleting a dataset from its id, even if non-empty. */
   // [TARGET delete(String, DatasetDeleteOption...)]
@@ -179,23 +123,6 @@ public class BigQuerySnippets {
       // the dataset was not found
     }
     // [END ]
-    return deleted;
-  }
-
-  /** Example of deleting a dataset, even if non-empty. */
-  // [TARGET delete(DatasetId, DatasetDeleteOption...)]
-  // [VARIABLE "my_project_id"]
-  // [VARIABLE "my_dataset_name"]
-  public boolean deleteDatasetFromId(String projectId, String datasetName) {
-    // [START bigquery_delete_dataset]
-    DatasetId datasetId = DatasetId.of(projectId, datasetName);
-    boolean deleted = bigquery.delete(datasetId, DatasetDeleteOption.deleteContents());
-    if (deleted) {
-      // the dataset was deleted
-    } else {
-      // the dataset was not found
-    }
-    // [END bigquery_delete_dataset]
     return deleted;
   }
 
@@ -260,28 +187,6 @@ public class BigQuerySnippets {
     }
     // [END bigquery_list_tables]
     return tables;
-  }
-
-  /** Example of getting a dataset. */
-  // [TARGET getDataset(String, DatasetOption...)]
-  // [VARIABLE "my_dataset"]
-  public Dataset getDataset(String datasetName) {
-    // [START ]
-    Dataset dataset = bigquery.getDataset(datasetName);
-    // [END ]
-    return dataset;
-  }
-
-  /** Example of getting a dataset. */
-  // [TARGET getDataset(DatasetId, DatasetOption...)]
-  // [VARIABLE "my_project_id"]
-  // [VARIABLE "my_dataset_name"]
-  public Dataset getDatasetFromId(String projectId, String datasetName) {
-    // [START bigquery_get_dataset]
-    DatasetId datasetId = DatasetId.of(projectId, datasetName);
-    Dataset dataset = bigquery.getDataset(datasetId);
-    // [END bigquery_get_dataset]
-    return dataset;
   }
 
   /** Example of getting a table. */
