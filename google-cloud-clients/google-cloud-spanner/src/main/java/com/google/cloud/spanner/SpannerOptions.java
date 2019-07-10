@@ -43,6 +43,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Map;
 import java.util.Set;
+import org.threeten.bp.Duration;
 
 /** Options for the Cloud Spanner service. */
 public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
@@ -68,6 +69,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   private final SpannerStubSettings spannerStubSettings;
   private final InstanceAdminStubSettings instanceAdminStubSettings;
   private final DatabaseAdminStubSettings databaseAdminStubSettings;
+  private final Duration partitionedDmlTimeout;
 
   /** Default implementation of {@code SpannerFactory}. */
   private static class DefaultSpannerFactory implements SpannerFactory {
@@ -114,6 +116,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     } catch (IOException e) {
       throw SpannerExceptionFactory.newSpannerException(e);
     }
+    partitionedDmlTimeout = builder.partitionedDmlTimeout;
   }
 
   /** Builder for {@link SpannerOptions} instances. */
@@ -139,6 +142,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
         InstanceAdminStubSettings.newBuilder();
     private DatabaseAdminStubSettings.Builder databaseAdminStubSettingsBuilder =
         DatabaseAdminStubSettings.newBuilder();
+    private Duration partitionedDmlTimeout = Duration.ofHours(2L);
 
     private Builder() {}
 
@@ -151,6 +155,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
       this.spannerStubSettingsBuilder = options.spannerStubSettings.toBuilder();
       this.instanceAdminStubSettingsBuilder = options.instanceAdminStubSettings.toBuilder();
       this.databaseAdminStubSettingsBuilder = options.databaseAdminStubSettings.toBuilder();
+      this.partitionedDmlTimeout = options.partitionedDmlTimeout;
       this.channelProvider = options.channelProvider;
       this.channelConfigurator = options.channelConfigurator;
       this.interceptorProvider = options.interceptorProvider;
@@ -329,6 +334,15 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     }
 
     /**
+     * Sets a timeout specifically for Partitioned DML statements executed through {@link
+     * DatabaseClient#executePartitionedUpdate(Statement)}. The default is 2 hours.
+     */
+    public Builder setPartitionedDmlTimeout(Duration timeout) {
+      this.partitionedDmlTimeout = timeout;
+      return this;
+    }
+
+    /**
      * Specifying this will allow the client to prefetch up to {@code prefetchChunks} {@code
      * PartialResultSet} chunks for each read and query. The data size of each chunk depends on the
      * server implementation but a good rule of thumb is that each chunk will be up to 1 MiB. Larger
@@ -394,6 +408,10 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
 
   public DatabaseAdminStubSettings getDatabaseAdminStubSettings() {
     return databaseAdminStubSettings;
+  }
+
+  public Duration getPartitionedDmlTimeout() {
+    return partitionedDmlTimeout;
   }
 
   public int getPrefetchChunks() {
