@@ -18,6 +18,7 @@ package com.google.cloud.bigquery.it;
 
 import static com.google.cloud.bigquery.JobStatus.State.DONE;
 import static com.google.common.truth.Truth.assertThat;
+import static java.lang.System.currentTimeMillis;
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -32,6 +33,7 @@ import com.google.cloud.RetryOption;
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQuery.DatasetDeleteOption;
 import com.google.cloud.bigquery.BigQuery.DatasetField;
+import com.google.cloud.bigquery.BigQuery.DatasetListOption;
 import com.google.cloud.bigquery.BigQuery.DatasetOption;
 import com.google.cloud.bigquery.BigQuery.JobField;
 import com.google.cloud.bigquery.BigQuery.JobListOption;
@@ -322,6 +324,24 @@ public class ITBigQueryTest {
     for (String type : PUBLIC_DATASETS) {
       assertTrue(datasetNames.contains(type));
     }
+  }
+
+  @Test
+  public void testListDatasetsWithFilter() {
+
+    String labelFilter = "labels.example-label1:example-value1";
+    Page<Dataset> datasets = bigquery.listDatasets(DatasetListOption.labelFilter(labelFilter));
+    int count = 0;
+    for (Dataset dataset : datasets.getValues()) {
+      assertTrue(
+          "seeking "
+              + dataset.getDatasetId().getDataset()
+              + " label in labels"
+              + dataset.getLabels(),
+          dataset.getLabels().containsKey("example-label1"));
+      count++;
+    }
+    assertTrue(count > 0);
   }
 
   @Test
@@ -1241,6 +1261,26 @@ public class ITBigQueryTest {
       assertNull(job.getStatistics());
       assertNull(job.getGeneratedId());
     }
+  }
+
+  @Test
+  public void testListJobsWithCreationBounding() {
+    long currentMillis = currentTimeMillis();
+    long lowerBound = currentMillis - 3600 * 1000;
+    long upperBound = currentMillis;
+    Page<Job> jobs =
+        bigquery.listJobs(
+            JobListOption.minCreationTime(lowerBound), JobListOption.maxCreationTime(upperBound));
+    long foundMin = upperBound;
+    long foundMax = lowerBound;
+    for (Job job : jobs.getValues()) {
+      foundMin = Math.min(job.getStatistics().getCreationTime(), foundMin);
+      foundMax = Math.max(job.getStatistics().getCreationTime(), foundMax);
+    }
+    assertTrue(
+        "Found min job time " + foundMin + " earlier than " + lowerBound, foundMin >= lowerBound);
+    assertTrue(
+        "Found max job time " + foundMax + " later than " + upperBound, foundMax <= upperBound);
   }
 
   @Test

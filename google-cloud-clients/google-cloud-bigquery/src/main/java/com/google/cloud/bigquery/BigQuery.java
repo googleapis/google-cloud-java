@@ -191,6 +191,14 @@ public interface BigQuery extends Service<BigQueryOptions> {
       super(option, value);
     }
 
+    /**
+     * Returns an option to specify a label filter. See
+     * https://cloud.google.com/bigquery/docs/adding-using-labels#filtering_datasets_using_labels
+     */
+    public static DatasetListOption labelFilter(String labelFilter) {
+      return new DatasetListOption(BigQueryRpc.Option.LABEL_FILTER, labelFilter);
+    }
+
     /** Returns an option to specify the maximum number of datasets returned per page. */
     public static DatasetListOption pageSize(long pageSize) {
       return new DatasetListOption(BigQueryRpc.Option.MAX_RESULTS, pageSize);
@@ -385,6 +393,14 @@ public interface BigQuery extends Service<BigQueryOptions> {
                 }
               });
       return new JobListOption(BigQueryRpc.Option.STATE_FILTER, stringFilters);
+    }
+
+    public static JobListOption minCreationTime(long minCreationTime) {
+      return new JobListOption(BigQueryRpc.Option.MIN_CREATION_TIME, minCreationTime);
+    }
+
+    public static JobListOption maxCreationTime(long maxCreationTime) {
+      return new JobListOption(BigQueryRpc.Option.MAX_CREATION_TIME, maxCreationTime);
     }
 
     /** Returns an option to specify the maximum number of jobs returned per page. */
