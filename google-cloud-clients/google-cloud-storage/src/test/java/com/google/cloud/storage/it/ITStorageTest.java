@@ -2588,11 +2588,37 @@ public class ITStorageTest {
   }
 
   @Test
-  public void testbucketLocationType() {
-    Storage storage = StorageOptions.getDefaultInstance().getService();
+  public void testBucketLocationType() throws ExecutionException, InterruptedException {
+    String bucketName = RemoteStorageHelper.generateBucketName();
     long bucketMetageneration = 42;
+    storage.create(
+        BucketInfo.newBuilder(bucketName)
+            .setLocation("us")
+            .setRetentionPeriod(RETENTION_PERIOD)
+            .build());
     Bucket bucket =
-        storage.get(BUCKET, Storage.BucketGetOption.metagenerationNotMatch(bucketMetageneration));
+        storage.get(
+            bucketName, Storage.BucketGetOption.metagenerationNotMatch(bucketMetageneration));
     assertTrue(LOCATION_TYPES.contains(bucket.getLocationType()));
+
+    Bucket bucket1 =
+        storage.lockRetentionPolicy(bucket, Storage.BucketTargetOption.metagenerationMatch());
+    assertTrue(LOCATION_TYPES.contains(bucket1.getLocationType()));
+
+    Bucket updatedBucket =
+        storage.update(
+            BucketInfo.newBuilder(bucketName)
+                .setLocation("asia")
+                .setRetentionPeriod(RETENTION_PERIOD)
+                .build());
+    assertTrue(LOCATION_TYPES.contains(updatedBucket.getLocationType()));
+
+    Iterator<Bucket> bucketIterator =
+        storage.list(Storage.BucketListOption.prefix(bucketName)).iterateAll().iterator();
+    while (bucketIterator.hasNext()) {
+      Bucket remoteBucket = bucketIterator.next();
+      assertTrue(LOCATION_TYPES.contains(remoteBucket.getLocationType()));
+    }
+    RemoteStorageHelper.forceDelete(storage, bucketName, 5, TimeUnit.SECONDS);
   }
 }
