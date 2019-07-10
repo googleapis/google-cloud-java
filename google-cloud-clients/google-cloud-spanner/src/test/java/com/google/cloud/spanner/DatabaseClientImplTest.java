@@ -189,7 +189,8 @@ public class DatabaseClientImplTest {
       DatabaseClient client =
           spanner.getDatabaseClient(DatabaseId.of("[PROJECT]", "[INSTANCE]", "[DATABASE]"));
 
-      assertThat(spanner.getOptions().getPartitionedDmlTimeout(), is(equalTo(Duration.ofHours(2L))));
+      assertThat(
+          spanner.getOptions().getPartitionedDmlTimeout(), is(equalTo(Duration.ofHours(2L))));
 
       // PDML should not timeout with these settings.
       long updateCount = client.executePartitionedUpdate(UPDATE_STATEMENT);
@@ -230,7 +231,8 @@ public class DatabaseClientImplTest {
       DatabaseClient client =
           spanner.getDatabaseClient(DatabaseId.of("[PROJECT]", "[INSTANCE]", "[DATABASE]"));
 
-      assertThat(spanner.getOptions().getPartitionedDmlTimeout(), is(equalTo(Duration.ofMillis(1L))));
+      assertThat(
+          spanner.getOptions().getPartitionedDmlTimeout(), is(equalTo(Duration.ofMillis(1L))));
 
       // PDML should timeout with these settings.
       try {
