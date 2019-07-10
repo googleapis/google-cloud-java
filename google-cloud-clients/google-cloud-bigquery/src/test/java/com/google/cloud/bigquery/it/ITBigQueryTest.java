@@ -334,11 +334,10 @@ public class ITBigQueryTest {
     int count = 0;
     for (Dataset dataset : datasets.getValues()) {
       assertTrue(
-          "seeking "
-              + dataset.getDatasetId().getDataset()
-              + " label in labels"
-              + dataset.getLabels(),
-          dataset.getLabels().containsKey("example-label1"));
+          "failed to find label key in dataset", dataset.getLabels().containsKey("example-label1"));
+      assertTrue(
+          "failed to find label value in dataset",
+          dataset.getLabels().get("example-label1").equals("example-value1"));
       count++;
     }
     assertTrue(count > 0);
