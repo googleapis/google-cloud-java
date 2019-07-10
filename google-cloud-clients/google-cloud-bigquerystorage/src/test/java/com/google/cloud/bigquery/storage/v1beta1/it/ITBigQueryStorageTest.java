@@ -21,7 +21,6 @@ import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertTrue;
 
 import com.google.api.gax.rpc.ServerStream;
 import com.google.cloud.RetryOption;
@@ -149,18 +148,13 @@ public class ITBigQueryStorageTest {
     ReadRowsRequest readRowsRequest =
         ReadRowsRequest.newBuilder().setReadPosition(readPosition).build();
 
-    long avroRowCount = 0;
+    long rowCount = 0;
     ServerStream<ReadRowsResponse> stream = client.readRowsCallable().call(readRowsRequest);
     for (ReadRowsResponse response : stream) {
-      assertTrue(
-          String.format(
-              "Response is missing 'avro_rows'. Read %d rows so far. ReadRows response:%n%s",
-              avroRowCount, response.toString()),
-          response.hasAvroRows());
-      avroRowCount += response.getAvroRows().getRowCount();
+      rowCount += response.getRowCount();
     }
 
-    assertEquals(164_656, avroRowCount);
+    assertEquals(164_656, rowCount);
   }
 
   @Test
@@ -187,13 +181,10 @@ public class ITBigQueryStorageTest {
     // We have to read some number of rows in order to be able to resume. More details:
     // https://cloud.google.com/bigquery/docs/reference/storage/rpc/google.cloud.bigquery.storage.v1beta1#google.cloud.bigquery.storage.v1beta1.ReadRowsRequest
 
-    long avroRowCount = ReadStreamToOffset(session.getStreams(0), /* rowOffset = */ 34_846);
+    long rowCount = ReadStreamToOffset(session.getStreams(0), /* rowOffset = */ 34_846);
 
     StreamPosition readPosition =
-        StreamPosition.newBuilder()
-            .setStream(session.getStreams(0))
-            .setOffset(avroRowCount)
-            .build();
+        StreamPosition.newBuilder().setStream(session.getStreams(0)).setOffset(rowCount).build();
 
     ReadRowsRequest readRowsRequest =
         ReadRowsRequest.newBuilder().setReadPosition(readPosition).build();
@@ -201,17 +192,12 @@ public class ITBigQueryStorageTest {
     ServerStream<ReadRowsResponse> stream = client.readRowsCallable().call(readRowsRequest);
 
     for (ReadRowsResponse response : stream) {
-      assertTrue(
-          String.format(
-              "Response is missing 'avro_rows'. Read %d rows so far. ReadRows response:%n%s",
-              avroRowCount, response.toString()),
-          response.hasAvroRows());
-      avroRowCount += response.getAvroRows().getRowCount();
+      rowCount += response.getRowCount();
     }
 
     // Verifies that the number of rows skipped and read equals to the total number of rows in the
     // table.
-    assertEquals(164_656, avroRowCount);
+    assertEquals(164_656, rowCount);
   }
 
   @Test
@@ -252,17 +238,11 @@ public class ITBigQueryStorageTest {
     SimpleRowReader reader =
         new SimpleRowReader(new Schema.Parser().parse(session.getAvroSchema().getSchema()));
 
-    long avroRowCount = 0;
+    long rowCount = 0;
 
     ServerStream<ReadRowsResponse> stream = client.readRowsCallable().call(readRowsRequest);
     for (ReadRowsResponse response : stream) {
-      assertTrue(
-          String.format(
-              "Response is missing 'avro_rows'. Read %d rows so far. ReadRows response:%n%s",
-              avroRowCount, response.toString()),
-          response.hasAvroRows());
-      avroRowCount += response.getAvroRows().getRowCount();
-
+      rowCount += response.getRowCount();
       reader.processRows(
           response.getAvroRows(),
           new SimpleRowReader.AvroRowConsumer() {
@@ -276,7 +256,7 @@ public class ITBigQueryStorageTest {
           });
     }
 
-    assertEquals(1_333, avroRowCount);
+    assertEquals(1_333, rowCount);
   }
 
   @Test
@@ -336,15 +316,10 @@ public class ITBigQueryStorageTest {
 
     SimpleRowReader reader = new SimpleRowReader(avroSchema);
 
-    long avroRowCount = 0;
+    long rowCount = 0;
     ServerStream<ReadRowsResponse> stream = client.readRowsCallable().call(readRowsRequest);
     for (ReadRowsResponse response : stream) {
-      assertTrue(
-          String.format(
-              "Response is missing 'avro_rows'. Read %d rows so far. ReadRows response:%n%s",
-              avroRowCount, response.toString()),
-          response.hasAvroRows());
-      avroRowCount += response.getAvroRows().getRowCount();
+      rowCount += response.getRowCount();
       reader.processRows(
           response.getAvroRows(),
           new SimpleRowReader.AvroRowConsumer() {
@@ -362,7 +337,7 @@ public class ITBigQueryStorageTest {
           });
     }
 
-    assertEquals(1_333, avroRowCount);
+    assertEquals(1_333, rowCount);
   }
 
   @Test
@@ -864,19 +839,19 @@ public class ITBigQueryStorageTest {
     ReadRowsRequest readRowsRequest =
         ReadRowsRequest.newBuilder().setReadPosition(readPosition).build();
 
-    long avroRowCount = 0;
+    long rowCount = 0;
     ServerStream<ReadRowsResponse> serverStream = client.readRowsCallable().call(readRowsRequest);
     Iterator<ReadRowsResponse> responseIterator = serverStream.iterator();
 
     while (responseIterator.hasNext()) {
       ReadRowsResponse response = responseIterator.next();
-      avroRowCount += response.getAvroRows().getRowCount();
-      if (avroRowCount >= rowOffset) {
+      rowCount += response.getRowCount();
+      if (rowCount >= rowOffset) {
         return rowOffset;
       }
     }
 
-    return avroRowCount;
+    return rowCount;
   }
 
   /**
