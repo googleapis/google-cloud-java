@@ -54,6 +54,13 @@
       <classifier>testlib</classifier>
       <scope>test</scope>
     </dependency>
+    <!--Test dependency for joda time -->
+    <dependency>
+      <groupId>joda-time</groupId>
+      <artifactId>joda-time</artifactId>
+      <version>2.10.3</version>
+      <scope>test</scope>
+    </dependency>
   </dependencies>
 
   <reporting>
