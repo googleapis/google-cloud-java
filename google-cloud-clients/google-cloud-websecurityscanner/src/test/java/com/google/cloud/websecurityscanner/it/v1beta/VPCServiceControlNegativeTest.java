@@ -21,6 +21,7 @@ import static org.junit.Assert.fail;
 import static org.junit.Assume.assumeTrue;
 
 import com.google.api.gax.core.FixedCredentialsProvider;
+import com.google.api.gax.rpc.PermissionDeniedException;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.websecurityscanner.v1beta.CreateScanConfigRequest;
 import com.google.cloud.websecurityscanner.v1beta.ListScanConfigsRequest;
@@ -34,8 +35,8 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import org.joda.time.DateTime;
 import org.joda.time.DateTimeZone;
-import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
+import org.joda.time.format.ISODateTimeFormat;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -44,7 +45,7 @@ import org.junit.runners.JUnit4;
 
 /** Negative Integration tests for VPC-SC. */
 @RunWith(JUnit4.class)
-public class VpcNegativeTest {
+public class VPCServiceControlNegativeTest {
 
   private static final String IN_VPCSC_GOOGLE_CLOUD_TEST_ENV = "GOOGLE_CLOUD_TESTS_IN_VPCSC";
   private static final String OUT_VPCSC_PROJECT_ENV =
@@ -93,7 +94,7 @@ public class VpcNegativeTest {
   @Before
   public void setup() {
     DateTimeFormatter formatter =
-        DateTimeFormat.fullDateTime().withZone(DateTimeZone.forID("America/Los_Angeles"));
+        ISODateTimeFormat.basicDateTime().withZone(DateTimeZone.forID("America/Los_Angeles"));
     String currentTime = formatter.print(DateTime.now(DateTimeZone.forID("America/Los_Angeles")));
     testScanConfigCreationDisplayName = "vpcsc-neg-test" + currentTime + "-0";
   }
@@ -125,7 +126,7 @@ public class VpcNegativeTest {
 
       ScanConfig responseScanConfig = wssClient.createScanConfig(request);
       fail("Exception must occur for non-accessible project");
-    } catch (Exception e) {
+    } catch (PermissionDeniedException expected) {
     }
   }
 
@@ -139,7 +140,7 @@ public class VpcNegativeTest {
           ListScanConfigsRequest.newBuilder().setParent(formattedParent).build();
       ListScanConfigsPagedResponse scanConfigsList = wssClient.listScanConfigs(lscRequest);
       fail("Exception must occur for non-acceessible project scan-configs");
-    } catch (Exception e) {
+    } catch (PermissionDeniedException expected) {
     }
   }
 }

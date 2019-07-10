@@ -42,8 +42,8 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import org.joda.time.DateTime;
 import org.joda.time.DateTimeZone;
-import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
+import org.joda.time.format.ISODateTimeFormat;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -52,7 +52,7 @@ import org.junit.runners.JUnit4;
 
 /** Positive Integration Tests for VPC-SC */
 @RunWith(JUnit4.class)
-public class VpcPositiveTest {
+public class VPCServiceControlPositiveTest {
   private static final String IN_VPCSC_GOOGLE_CLOUD_TEST_ENV = "GOOGLE_CLOUD_TESTS_IN_VPCSC";
   private static final String IN_VPCSC_PROJECT_ENV =
       "GOOGLE_CLOUD_TESTS_VPCSC_INSIDE_PERIMETER_PROJECT";
@@ -103,7 +103,7 @@ public class VpcPositiveTest {
   @Before
   public void setUp() {
     DateTimeFormatter formatter =
-        DateTimeFormat.fullDateTime().withZone(DateTimeZone.forID("America/Los_Angeles"));
+        ISODateTimeFormat.basicDateTime().withZone(DateTimeZone.forID("America/Los_Angeles"));
     String currentTime = formatter.print(DateTime.now(DateTimeZone.forID("America/Los_Angeles")));
     test0DisplayName = "vpcsctest-" + currentTime + "-0";
     test1DisplayName = "vpcsctest-" + currentTime + "-1";
@@ -118,22 +118,22 @@ public class VpcPositiveTest {
         .build();
   }
 
-  private WebSecurityScannerSettings getWssSettingWithoutCredentials() throws IOException {
+  private WebSecurityScannerSettings getWssSettingWithDefaultCredentials() throws IOException {
     // If google-credentials is not passed explicitly then google apis uses the authentication
     // credentials provided in environment variable GOOGLE_APPLICATION_CREDENTIALS is used
     return WebSecurityScannerSettings.newBuilder().build();
   }
 
   @Test
-  public void test0() throws IOException {
+  public void testWithDefaultCredentials() throws IOException {
     try (WebSecurityScannerClient wssClient =
-        WebSecurityScannerClient.create(getWssSettingWithoutCredentials())) {
+        WebSecurityScannerClient.create(getWssSettingWithDefaultCredentials())) {
       test(wssClient, test0DisplayName);
     }
   }
 
   @Test
-  public void test1() throws IOException {
+  public void testWithCredentials() throws IOException {
     try (WebSecurityScannerClient wssClient =
         WebSecurityScannerClient.create(getWssSettingWithCredentials())) {
       test(wssClient, test1DisplayName);
