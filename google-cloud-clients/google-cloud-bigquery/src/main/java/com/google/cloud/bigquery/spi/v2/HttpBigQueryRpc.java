@@ -419,19 +419,24 @@ public class HttpBigQueryRpc implements BigQueryRpc {
   @Override
   public Tuple<String, Iterable<Job>> listJobs(String projectId, Map<Option, ?> options) {
     try {
-      JobList jobsList =
+      Bigquery.Jobs.List request =
           bigquery
               .jobs()
               .list(projectId)
               .setAllUsers(Option.ALL_USERS.getBoolean(options))
               .setFields(Option.FIELDS.getString(options))
-              .setMinCreationTime(BigInteger.valueOf(Option.MIN_CREATION_TIME.getLong(options)))
-              .setMaxCreationTime(BigInteger.valueOf(Option.MAX_CREATION_TIME.getLong(options)))
               .setStateFilter(Option.STATE_FILTER.<List<String>>get(options))
               .setMaxResults(Option.MAX_RESULTS.getLong(options))
               .setPageToken(Option.PAGE_TOKEN.getString(options))
-              .setProjection(DEFAULT_PROJECTION)
-              .execute();
+              .setProjection(DEFAULT_PROJECTION);
+      if (Option.MIN_CREATION_TIME.getLong(options) != null) {
+        request.setMinCreationTime(BigInteger.valueOf(Option.MIN_CREATION_TIME.getLong(options)));
+      }
+      if (Option.MAX_CREATION_TIME.getLong(options) != null) {
+        request.setMaxCreationTime(BigInteger.valueOf(Option.MAX_CREATION_TIME.getLong(options)));
+      }
+      JobList jobsList = request.execute();
+
       Iterable<JobList.Jobs> jobs = jobsList.getJobs();
       return Tuple.of(
           jobsList.getNextPageToken(),
