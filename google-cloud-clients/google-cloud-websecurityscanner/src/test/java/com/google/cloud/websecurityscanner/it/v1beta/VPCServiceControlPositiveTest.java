@@ -263,7 +263,7 @@ public class VPCServiceControlPositiveTest {
       try {
         ScanConfig deletedScanConfig = wssClient.getScanConfig(getScanConfigRequest);
         fail("NotFoundException must be throw as scan-config must already be deleted");
-      } catch (NotFoundException nfe) {
+      } catch (NotFoundException expected) {
       }
     }
   }
