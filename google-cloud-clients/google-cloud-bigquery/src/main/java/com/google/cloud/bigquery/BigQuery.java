@@ -901,7 +901,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * } else {
    *   // the routine was not found
    * }
-   * }</pre>
+   * </pre>
    *
    * @return {@code true} if routine was deleted, {@code false} if it was not found
    * @throws BigQueryException upon failure
