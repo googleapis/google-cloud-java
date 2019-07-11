@@ -120,15 +120,15 @@ public class SinkInfoTest {
     assertEquals(NAME, BUCKET_SINK_INFO.getName());
     assertEquals(BUCKET_DESTINATION, BUCKET_SINK_INFO.getDestination());
     assertEquals(FILTER, BUCKET_SINK_INFO.getFilter());
-    // assertEquals(VERSION, BUCKET_SINK_INFO.getVersionFormat());
+    assertEquals(VERSION, BUCKET_SINK_INFO.getVersionFormat());
     assertEquals(NAME, DATASET_SINK_INFO.getName());
     assertEquals(DATASET_DESTINATION, DATASET_SINK_INFO.getDestination());
     assertEquals(FILTER, DATASET_SINK_INFO.getFilter());
-    // assertEquals(VERSION, DATASET_SINK_INFO.getVersionFormat());
+    assertEquals(VERSION, DATASET_SINK_INFO.getVersionFormat());
     assertEquals(NAME, TOPIC_SINK_INFO.getName());
     assertEquals(TOPIC_DESTINATION, TOPIC_SINK_INFO.getDestination());
     assertEquals(FILTER, TOPIC_SINK_INFO.getFilter());
-    // assertEquals(VERSION, TOPIC_SINK_INFO.getVersionFormat());
+    assertEquals(VERSION, TOPIC_SINK_INFO.getVersionFormat());
   }
 
   @Test
@@ -142,19 +142,19 @@ public class SinkInfoTest {
             .setDestination(TOPIC_DESTINATION)
             .setName("newName")
             .setFilter("logName=projects/my-projectid/logs/syslog")
-            // .setVersionFormat(VersionFormat.V2)
+            .setVersionFormat(VersionFormat.V2)
             .build();
     assertEquals("newName", updatedSinkInfo.getName());
     assertEquals(TOPIC_DESTINATION, updatedSinkInfo.getDestination());
     assertEquals("logName=projects/my-projectid/logs/syslog", updatedSinkInfo.getFilter());
-    // assertEquals(VersionFormat.V2, updatedSinkInfo.getVersionFormat());
+    assertEquals(VersionFormat.V2, updatedSinkInfo.getVersionFormat());
     updatedSinkInfo =
         BUCKET_SINK_INFO
             .toBuilder()
             .setDestination(BUCKET_DESTINATION)
             .setName(NAME)
             .setFilter(FILTER)
-            // .setVersionFormat(VersionFormat.V1)
+            .setVersionFormat(VersionFormat.V2)
             .build();
     assertEquals(BUCKET_SINK_INFO, updatedSinkInfo);
   }

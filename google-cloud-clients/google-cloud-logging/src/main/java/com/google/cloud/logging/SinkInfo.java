@@ -578,11 +578,6 @@ public class SinkInfo implements Serializable {
     return new BuilderImpl(name, destination).build();
   }
 
-  /** Creates a {@code SinkInfo} object given the name of the sink and its destination. */
-  public static SinkInfo of(SinkInfo sink) {
-    return new BuilderImpl(sink).build();
-  }
-
   LogSink toPb(String projectId) {
     LogSink.Builder builder =
         LogSink.newBuilder().setName(name).setDestination(destination.toPb(projectId));
