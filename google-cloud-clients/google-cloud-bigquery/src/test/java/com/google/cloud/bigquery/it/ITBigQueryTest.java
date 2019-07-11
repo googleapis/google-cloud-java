@@ -328,7 +328,6 @@ public class ITBigQueryTest {
 
   @Test
   public void testListDatasetsWithFilter() {
-
     String labelFilter = "labels.example-label1:example-value1";
     Page<Dataset> datasets = bigquery.listDatasets(DatasetListOption.labelFilter(labelFilter));
     int count = 0;
@@ -1272,7 +1271,9 @@ public class ITBigQueryTest {
             JobListOption.minCreationTime(lowerBound), JobListOption.maxCreationTime(upperBound));
     long foundMin = upperBound;
     long foundMax = lowerBound;
+    long jobCount = 0;
     for (Job job : jobs.getValues()) {
+      jobCount++;
       foundMin = Math.min(job.getStatistics().getCreationTime(), foundMin);
       foundMax = Math.max(job.getStatistics().getCreationTime(), foundMax);
     }
@@ -1280,6 +1281,7 @@ public class ITBigQueryTest {
         "Found min job time " + foundMin + " earlier than " + lowerBound, foundMin >= lowerBound);
     assertTrue(
         "Found max job time " + foundMax + " later than " + upperBound, foundMax <= upperBound);
+    assertTrue("no jobs listed", jobCount > 0);
   }
 
   @Test

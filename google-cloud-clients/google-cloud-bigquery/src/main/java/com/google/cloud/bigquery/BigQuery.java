@@ -395,10 +395,12 @@ public interface BigQuery extends Service<BigQueryOptions> {
       return new JobListOption(BigQueryRpc.Option.STATE_FILTER, stringFilters);
     }
 
+    /** Returns an option to filter out jobs before the given minimum creation time. */
     public static JobListOption minCreationTime(long minCreationTime) {
       return new JobListOption(BigQueryRpc.Option.MIN_CREATION_TIME, minCreationTime);
     }
 
+    /** Returns an option to filter out jobs after the given maximum creation time. */
     public static JobListOption maxCreationTime(long maxCreationTime) {
       return new JobListOption(BigQueryRpc.Option.MAX_CREATION_TIME, maxCreationTime);
     }
