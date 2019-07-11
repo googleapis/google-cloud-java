@@ -89,11 +89,11 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
             }
           case 42:
             {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
                 tablesModelColumnInfo_ =
                     new java.util.ArrayList<
                         com.google.cloud.automl.v1beta1.TablesModelColumnInfo>();
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000020;
               }
               tablesModelColumnInfo_.add(
                   input.readMessage(
@@ -116,6 +116,18 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
               disableEarlyStopping_ = input.readBool();
               break;
             }
+          case 141:
+            {
+              additionalOptimizationObjectiveConfigCase_ = 17;
+              additionalOptimizationObjectiveConfig_ = input.readFloat();
+              break;
+            }
+          case 149:
+            {
+              additionalOptimizationObjectiveConfigCase_ = 18;
+              additionalOptimizationObjectiveConfig_ = input.readFloat();
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -133,7 +145,7 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
       if (((mutable_bitField0_ & 0x00000002) != 0)) {
         inputFeatureColumnSpecs_ = java.util.Collections.unmodifiableList(inputFeatureColumnSpecs_);
       }
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+      if (((mutable_bitField0_ & 0x00000020) != 0)) {
         tablesModelColumnInfo_ = java.util.Collections.unmodifiableList(tablesModelColumnInfo_);
       }
       this.unknownFields = unknownFields.build();
@@ -157,6 +169,48 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
   }
 
   private int bitField0_;
+  private int additionalOptimizationObjectiveConfigCase_ = 0;
+  private java.lang.Object additionalOptimizationObjectiveConfig_;
+
+  public enum AdditionalOptimizationObjectiveConfigCase
+      implements com.google.protobuf.Internal.EnumLite {
+    OPTIMIZATION_OBJECTIVE_RECALL_VALUE(17),
+    OPTIMIZATION_OBJECTIVE_PRECISION_VALUE(18),
+    ADDITIONALOPTIMIZATIONOBJECTIVECONFIG_NOT_SET(0);
+    private final int value;
+
+    private AdditionalOptimizationObjectiveConfigCase(int value) {
+      this.value = value;
+    }
+    /** @deprecated Use {@link #forNumber(int)} instead. */
+    @java.lang.Deprecated
+    public static AdditionalOptimizationObjectiveConfigCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static AdditionalOptimizationObjectiveConfigCase forNumber(int value) {
+      switch (value) {
+        case 17:
+          return OPTIMIZATION_OBJECTIVE_RECALL_VALUE;
+        case 18:
+          return OPTIMIZATION_OBJECTIVE_PRECISION_VALUE;
+        case 0:
+          return ADDITIONALOPTIMIZATIONOBJECTIVECONFIG_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public AdditionalOptimizationObjectiveConfigCase getAdditionalOptimizationObjectiveConfigCase() {
+    return AdditionalOptimizationObjectiveConfigCase.forNumber(
+        additionalOptimizationObjectiveConfigCase_);
+  }
+
   public static final int TARGET_COLUMN_SPEC_FIELD_NUMBER = 2;
   private com.google.cloud.automl.v1beta1.ColumnSpec targetColumnSpec_;
   /**
@@ -374,6 +428,10 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
    *                                 operating characteristic (ROC) curve.
    *   "MINIMIZE_LOG_LOSS" - Minimize log loss.
    *   "MAXIMIZE_AU_PRC" - Maximize the area under the precision-recall curve.
+   *   "MAXIMIZE_PRECISION_AT_RECALL" - Maximize precision for a specified
+   *                                   recall value.
+   *   "MAXIMIZE_RECALL_AT_PRECISION" - Maximize recall for a specified
+   *                                    precision value.
    * CLASSIFICATION_MULTI_CLASS :
    *   "MINIMIZE_LOG_LOSS" (default) - Minimize log loss.
    * REGRESSION:
@@ -412,6 +470,10 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
    *                                 operating characteristic (ROC) curve.
    *   "MINIMIZE_LOG_LOSS" - Minimize log loss.
    *   "MAXIMIZE_AU_PRC" - Maximize the area under the precision-recall curve.
+   *   "MAXIMIZE_PRECISION_AT_RECALL" - Maximize precision for a specified
+   *                                   recall value.
+   *   "MAXIMIZE_RECALL_AT_PRECISION" - Maximize recall for a specified
+   *                                    precision value.
    * CLASSIFICATION_MULTI_CLASS :
    *   "MINIMIZE_LOG_LOSS" (default) - Minimize log loss.
    * REGRESSION:
@@ -435,6 +497,42 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int OPTIMIZATION_OBJECTIVE_RECALL_VALUE_FIELD_NUMBER = 17;
+  /**
+   *
+   *
+   * <pre>
+   * Required when optimization_objective is "MAXIMIZE_PRECISION_AT_RECALL".
+   * Must be between 0 and 1, inclusive.
+   * </pre>
+   *
+   * <code>float optimization_objective_recall_value = 17;</code>
+   */
+  public float getOptimizationObjectiveRecallValue() {
+    if (additionalOptimizationObjectiveConfigCase_ == 17) {
+      return (java.lang.Float) additionalOptimizationObjectiveConfig_;
+    }
+    return 0F;
+  }
+
+  public static final int OPTIMIZATION_OBJECTIVE_PRECISION_VALUE_FIELD_NUMBER = 18;
+  /**
+   *
+   *
+   * <pre>
+   * Required when optimization_objective is "MAXIMIZE_RECALL_AT_PRECISION".
+   * Must be between 0 and 1, inclusive.
+   * </pre>
+   *
+   * <code>float optimization_objective_precision_value = 18;</code>
+   */
+  public float getOptimizationObjectivePrecisionValue() {
+    if (additionalOptimizationObjectiveConfigCase_ == 18) {
+      return (java.lang.Float) additionalOptimizationObjectiveConfig_;
+    }
+    return 0F;
   }
 
   public static final int TABLES_MODEL_COLUMN_INFO_FIELD_NUMBER = 5;
@@ -608,6 +706,12 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
     if (disableEarlyStopping_ != false) {
       output.writeBool(12, disableEarlyStopping_);
     }
+    if (additionalOptimizationObjectiveConfigCase_ == 17) {
+      output.writeFloat(17, (float) ((java.lang.Float) additionalOptimizationObjectiveConfig_));
+    }
+    if (additionalOptimizationObjectiveConfigCase_ == 18) {
+      output.writeFloat(18, (float) ((java.lang.Float) additionalOptimizationObjectiveConfig_));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -642,6 +746,16 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
     if (disableEarlyStopping_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(12, disableEarlyStopping_);
     }
+    if (additionalOptimizationObjectiveConfigCase_ == 17) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeFloatSize(
+              17, (float) ((java.lang.Float) additionalOptimizationObjectiveConfig_));
+    }
+    if (additionalOptimizationObjectiveConfigCase_ == 18) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeFloatSize(
+              18, (float) ((java.lang.Float) additionalOptimizationObjectiveConfig_));
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -669,6 +783,22 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
     if (getTrainBudgetMilliNodeHours() != other.getTrainBudgetMilliNodeHours()) return false;
     if (getTrainCostMilliNodeHours() != other.getTrainCostMilliNodeHours()) return false;
     if (getDisableEarlyStopping() != other.getDisableEarlyStopping()) return false;
+    if (!getAdditionalOptimizationObjectiveConfigCase()
+        .equals(other.getAdditionalOptimizationObjectiveConfigCase())) return false;
+    switch (additionalOptimizationObjectiveConfigCase_) {
+      case 17:
+        if (java.lang.Float.floatToIntBits(getOptimizationObjectiveRecallValue())
+            != java.lang.Float.floatToIntBits(other.getOptimizationObjectiveRecallValue()))
+          return false;
+        break;
+      case 18:
+        if (java.lang.Float.floatToIntBits(getOptimizationObjectivePrecisionValue())
+            != java.lang.Float.floatToIntBits(other.getOptimizationObjectivePrecisionValue()))
+          return false;
+        break;
+      case 0:
+      default:
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -700,6 +830,19 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getTrainCostMilliNodeHours());
     hash = (37 * hash) + DISABLE_EARLY_STOPPING_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDisableEarlyStopping());
+    switch (additionalOptimizationObjectiveConfigCase_) {
+      case 17:
+        hash = (37 * hash) + OPTIMIZATION_OBJECTIVE_RECALL_VALUE_FIELD_NUMBER;
+        hash = (53 * hash) + java.lang.Float.floatToIntBits(getOptimizationObjectiveRecallValue());
+        break;
+      case 18:
+        hash = (37 * hash) + OPTIMIZATION_OBJECTIVE_PRECISION_VALUE_FIELD_NUMBER;
+        hash =
+            (53 * hash) + java.lang.Float.floatToIntBits(getOptimizationObjectivePrecisionValue());
+        break;
+      case 0:
+      default:
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -864,7 +1007,7 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
 
       if (tablesModelColumnInfoBuilder_ == null) {
         tablesModelColumnInfo_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000020);
       } else {
         tablesModelColumnInfoBuilder_.clear();
       }
@@ -874,6 +1017,8 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
 
       disableEarlyStopping_ = false;
 
+      additionalOptimizationObjectiveConfigCase_ = 0;
+      additionalOptimizationObjectiveConfig_ = null;
       return this;
     }
 
@@ -919,10 +1064,16 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
         result.inputFeatureColumnSpecs_ = inputFeatureColumnSpecsBuilder_.build();
       }
       result.optimizationObjective_ = optimizationObjective_;
+      if (additionalOptimizationObjectiveConfigCase_ == 17) {
+        result.additionalOptimizationObjectiveConfig_ = additionalOptimizationObjectiveConfig_;
+      }
+      if (additionalOptimizationObjectiveConfigCase_ == 18) {
+        result.additionalOptimizationObjectiveConfig_ = additionalOptimizationObjectiveConfig_;
+      }
       if (tablesModelColumnInfoBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)) {
+        if (((bitField0_ & 0x00000020) != 0)) {
           tablesModelColumnInfo_ = java.util.Collections.unmodifiableList(tablesModelColumnInfo_);
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000020);
         }
         result.tablesModelColumnInfo_ = tablesModelColumnInfo_;
       } else {
@@ -932,6 +1083,8 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
       result.trainCostMilliNodeHours_ = trainCostMilliNodeHours_;
       result.disableEarlyStopping_ = disableEarlyStopping_;
       result.bitField0_ = to_bitField0_;
+      result.additionalOptimizationObjectiveConfigCase_ =
+          additionalOptimizationObjectiveConfigCase_;
       onBuilt();
       return result;
     }
@@ -1020,7 +1173,7 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
         if (!other.tablesModelColumnInfo_.isEmpty()) {
           if (tablesModelColumnInfo_.isEmpty()) {
             tablesModelColumnInfo_ = other.tablesModelColumnInfo_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000020);
           } else {
             ensureTablesModelColumnInfoIsMutable();
             tablesModelColumnInfo_.addAll(other.tablesModelColumnInfo_);
@@ -1033,7 +1186,7 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
             tablesModelColumnInfoBuilder_.dispose();
             tablesModelColumnInfoBuilder_ = null;
             tablesModelColumnInfo_ = other.tablesModelColumnInfo_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000020);
             tablesModelColumnInfoBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getTablesModelColumnInfoFieldBuilder()
@@ -1051,6 +1204,22 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
       }
       if (other.getDisableEarlyStopping() != false) {
         setDisableEarlyStopping(other.getDisableEarlyStopping());
+      }
+      switch (other.getAdditionalOptimizationObjectiveConfigCase()) {
+        case OPTIMIZATION_OBJECTIVE_RECALL_VALUE:
+          {
+            setOptimizationObjectiveRecallValue(other.getOptimizationObjectiveRecallValue());
+            break;
+          }
+        case OPTIMIZATION_OBJECTIVE_PRECISION_VALUE:
+          {
+            setOptimizationObjectivePrecisionValue(other.getOptimizationObjectivePrecisionValue());
+            break;
+          }
+        case ADDITIONALOPTIMIZATIONOBJECTIVECONFIG_NOT_SET:
+          {
+            break;
+          }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1079,6 +1248,22 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
           mergeFrom(parsedMessage);
         }
       }
+      return this;
+    }
+
+    private int additionalOptimizationObjectiveConfigCase_ = 0;
+    private java.lang.Object additionalOptimizationObjectiveConfig_;
+
+    public AdditionalOptimizationObjectiveConfigCase
+        getAdditionalOptimizationObjectiveConfigCase() {
+      return AdditionalOptimizationObjectiveConfigCase.forNumber(
+          additionalOptimizationObjectiveConfigCase_);
+    }
+
+    public Builder clearAdditionalOptimizationObjectiveConfig() {
+      additionalOptimizationObjectiveConfigCase_ = 0;
+      additionalOptimizationObjectiveConfig_ = null;
+      onChanged();
       return this;
     }
 
@@ -1966,6 +2151,10 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
      *                                 operating characteristic (ROC) curve.
      *   "MINIMIZE_LOG_LOSS" - Minimize log loss.
      *   "MAXIMIZE_AU_PRC" - Maximize the area under the precision-recall curve.
+     *   "MAXIMIZE_PRECISION_AT_RECALL" - Maximize precision for a specified
+     *                                   recall value.
+     *   "MAXIMIZE_RECALL_AT_PRECISION" - Maximize recall for a specified
+     *                                    precision value.
      * CLASSIFICATION_MULTI_CLASS :
      *   "MINIMIZE_LOG_LOSS" (default) - Minimize log loss.
      * REGRESSION:
@@ -2004,6 +2193,10 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
      *                                 operating characteristic (ROC) curve.
      *   "MINIMIZE_LOG_LOSS" - Minimize log loss.
      *   "MAXIMIZE_AU_PRC" - Maximize the area under the precision-recall curve.
+     *   "MAXIMIZE_PRECISION_AT_RECALL" - Maximize precision for a specified
+     *                                   recall value.
+     *   "MAXIMIZE_RECALL_AT_PRECISION" - Maximize recall for a specified
+     *                                    precision value.
      * CLASSIFICATION_MULTI_CLASS :
      *   "MINIMIZE_LOG_LOSS" (default) - Minimize log loss.
      * REGRESSION:
@@ -2042,6 +2235,10 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
      *                                 operating characteristic (ROC) curve.
      *   "MINIMIZE_LOG_LOSS" - Minimize log loss.
      *   "MAXIMIZE_AU_PRC" - Maximize the area under the precision-recall curve.
+     *   "MAXIMIZE_PRECISION_AT_RECALL" - Maximize precision for a specified
+     *                                   recall value.
+     *   "MAXIMIZE_RECALL_AT_PRECISION" - Maximize recall for a specified
+     *                                    precision value.
      * CLASSIFICATION_MULTI_CLASS :
      *   "MINIMIZE_LOG_LOSS" (default) - Minimize log loss.
      * REGRESSION:
@@ -2078,6 +2275,10 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
      *                                 operating characteristic (ROC) curve.
      *   "MINIMIZE_LOG_LOSS" - Minimize log loss.
      *   "MAXIMIZE_AU_PRC" - Maximize the area under the precision-recall curve.
+     *   "MAXIMIZE_PRECISION_AT_RECALL" - Maximize precision for a specified
+     *                                   recall value.
+     *   "MAXIMIZE_RECALL_AT_PRECISION" - Maximize recall for a specified
+     *                                    precision value.
      * CLASSIFICATION_MULTI_CLASS :
      *   "MINIMIZE_LOG_LOSS" (default) - Minimize log loss.
      * REGRESSION:
@@ -2111,6 +2312,10 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
      *                                 operating characteristic (ROC) curve.
      *   "MINIMIZE_LOG_LOSS" - Minimize log loss.
      *   "MAXIMIZE_AU_PRC" - Maximize the area under the precision-recall curve.
+     *   "MAXIMIZE_PRECISION_AT_RECALL" - Maximize precision for a specified
+     *                                   recall value.
+     *   "MAXIMIZE_RECALL_AT_PRECISION" - Maximize recall for a specified
+     *                                    precision value.
      * CLASSIFICATION_MULTI_CLASS :
      *   "MINIMIZE_LOG_LOSS" (default) - Minimize log loss.
      * REGRESSION:
@@ -2135,15 +2340,117 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
       return this;
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Required when optimization_objective is "MAXIMIZE_PRECISION_AT_RECALL".
+     * Must be between 0 and 1, inclusive.
+     * </pre>
+     *
+     * <code>float optimization_objective_recall_value = 17;</code>
+     */
+    public float getOptimizationObjectiveRecallValue() {
+      if (additionalOptimizationObjectiveConfigCase_ == 17) {
+        return (java.lang.Float) additionalOptimizationObjectiveConfig_;
+      }
+      return 0F;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required when optimization_objective is "MAXIMIZE_PRECISION_AT_RECALL".
+     * Must be between 0 and 1, inclusive.
+     * </pre>
+     *
+     * <code>float optimization_objective_recall_value = 17;</code>
+     */
+    public Builder setOptimizationObjectiveRecallValue(float value) {
+      additionalOptimizationObjectiveConfigCase_ = 17;
+      additionalOptimizationObjectiveConfig_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required when optimization_objective is "MAXIMIZE_PRECISION_AT_RECALL".
+     * Must be between 0 and 1, inclusive.
+     * </pre>
+     *
+     * <code>float optimization_objective_recall_value = 17;</code>
+     */
+    public Builder clearOptimizationObjectiveRecallValue() {
+      if (additionalOptimizationObjectiveConfigCase_ == 17) {
+        additionalOptimizationObjectiveConfigCase_ = 0;
+        additionalOptimizationObjectiveConfig_ = null;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required when optimization_objective is "MAXIMIZE_RECALL_AT_PRECISION".
+     * Must be between 0 and 1, inclusive.
+     * </pre>
+     *
+     * <code>float optimization_objective_precision_value = 18;</code>
+     */
+    public float getOptimizationObjectivePrecisionValue() {
+      if (additionalOptimizationObjectiveConfigCase_ == 18) {
+        return (java.lang.Float) additionalOptimizationObjectiveConfig_;
+      }
+      return 0F;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required when optimization_objective is "MAXIMIZE_RECALL_AT_PRECISION".
+     * Must be between 0 and 1, inclusive.
+     * </pre>
+     *
+     * <code>float optimization_objective_precision_value = 18;</code>
+     */
+    public Builder setOptimizationObjectivePrecisionValue(float value) {
+      additionalOptimizationObjectiveConfigCase_ = 18;
+      additionalOptimizationObjectiveConfig_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required when optimization_objective is "MAXIMIZE_RECALL_AT_PRECISION".
+     * Must be between 0 and 1, inclusive.
+     * </pre>
+     *
+     * <code>float optimization_objective_precision_value = 18;</code>
+     */
+    public Builder clearOptimizationObjectivePrecisionValue() {
+      if (additionalOptimizationObjectiveConfigCase_ == 18) {
+        additionalOptimizationObjectiveConfigCase_ = 0;
+        additionalOptimizationObjectiveConfig_ = null;
+        onChanged();
+      }
+      return this;
+    }
+
     private java.util.List<com.google.cloud.automl.v1beta1.TablesModelColumnInfo>
         tablesModelColumnInfo_ = java.util.Collections.emptyList();
 
     private void ensureTablesModelColumnInfoIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         tablesModelColumnInfo_ =
             new java.util.ArrayList<com.google.cloud.automl.v1beta1.TablesModelColumnInfo>(
                 tablesModelColumnInfo_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000020;
       }
     }
 
@@ -2398,7 +2705,7 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
     public Builder clearTablesModelColumnInfo() {
       if (tablesModelColumnInfoBuilder_ == null) {
         tablesModelColumnInfo_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
       } else {
         tablesModelColumnInfoBuilder_.clear();
@@ -2547,7 +2854,7 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
                 com.google.cloud.automl.v1beta1.TablesModelColumnInfo.Builder,
                 com.google.cloud.automl.v1beta1.TablesModelColumnInfoOrBuilder>(
                 tablesModelColumnInfo_,
-                ((bitField0_ & 0x00000008) != 0),
+                ((bitField0_ & 0x00000020) != 0),
                 getParentForChildren(),
                 isClean());
         tablesModelColumnInfo_ = null;

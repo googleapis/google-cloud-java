@@ -200,6 +200,10 @@ public interface TablesModelMetadataOrBuilder
    *                                 operating characteristic (ROC) curve.
    *   "MINIMIZE_LOG_LOSS" - Minimize log loss.
    *   "MAXIMIZE_AU_PRC" - Maximize the area under the precision-recall curve.
+   *   "MAXIMIZE_PRECISION_AT_RECALL" - Maximize precision for a specified
+   *                                   recall value.
+   *   "MAXIMIZE_RECALL_AT_PRECISION" - Maximize recall for a specified
+   *                                    precision value.
    * CLASSIFICATION_MULTI_CLASS :
    *   "MINIMIZE_LOG_LOSS" (default) - Minimize log loss.
    * REGRESSION:
@@ -228,6 +232,10 @@ public interface TablesModelMetadataOrBuilder
    *                                 operating characteristic (ROC) curve.
    *   "MINIMIZE_LOG_LOSS" - Minimize log loss.
    *   "MAXIMIZE_AU_PRC" - Maximize the area under the precision-recall curve.
+   *   "MAXIMIZE_PRECISION_AT_RECALL" - Maximize precision for a specified
+   *                                   recall value.
+   *   "MAXIMIZE_RECALL_AT_PRECISION" - Maximize recall for a specified
+   *                                    precision value.
    * CLASSIFICATION_MULTI_CLASS :
    *   "MINIMIZE_LOG_LOSS" (default) - Minimize log loss.
    * REGRESSION:
@@ -242,6 +250,30 @@ public interface TablesModelMetadataOrBuilder
    * <code>string optimization_objective = 4;</code>
    */
   com.google.protobuf.ByteString getOptimizationObjectiveBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required when optimization_objective is "MAXIMIZE_PRECISION_AT_RECALL".
+   * Must be between 0 and 1, inclusive.
+   * </pre>
+   *
+   * <code>float optimization_objective_recall_value = 17;</code>
+   */
+  float getOptimizationObjectiveRecallValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required when optimization_objective is "MAXIMIZE_RECALL_AT_PRECISION".
+   * Must be between 0 and 1, inclusive.
+   * </pre>
+   *
+   * <code>float optimization_objective_precision_value = 18;</code>
+   */
+  float getOptimizationObjectivePrecisionValue();
 
   /**
    *
@@ -353,4 +385,8 @@ public interface TablesModelMetadataOrBuilder
    * <code>bool disable_early_stopping = 12;</code>
    */
   boolean getDisableEarlyStopping();
+
+  public com.google.cloud.automl.v1beta1.TablesModelMetadata
+          .AdditionalOptimizationObjectiveConfigCase
+      getAdditionalOptimizationObjectiveConfigCase();
 }
