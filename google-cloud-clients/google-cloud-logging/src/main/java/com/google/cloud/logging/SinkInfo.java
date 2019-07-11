@@ -578,15 +578,14 @@ public class SinkInfo implements Serializable {
     return new BuilderImpl(name, destination).build();
   }
 
+  /** Creates a {@code SinkInfo} object given the name of the sink and its destination. */
+  public static SinkInfo of(SinkInfo sink) {
+    return new BuilderImpl(sink).build();
+  }
+
   LogSink toPb(String projectId) {
     LogSink.Builder builder =
-        LogSink.newBuilder()
-            .setName(name)
-            .setDestination(destination.toPb(projectId))
-            .setOutputVersionFormat(
-                versionFormat == null
-                    ? LogSink.VersionFormat.VERSION_FORMAT_UNSPECIFIED
-                    : versionFormat.toPb());
+        LogSink.newBuilder().setName(name).setDestination(destination.toPb(projectId));
     if (filter != null) {
       builder.setFilter(filter);
     }
@@ -596,7 +595,7 @@ public class SinkInfo implements Serializable {
   static SinkInfo fromPb(LogSink sinkPb) {
     Builder builder =
         newBuilder(sinkPb.getName(), Destination.fromPb(sinkPb.getDestination()))
-            .setVersionFormat(VersionFormat.fromPb(sinkPb.getOutputVersionFormat()));
+            .setVersionFormat(VersionFormat.fromPb(LogSink.VersionFormat.V2));
     if (!sinkPb.getFilter().equals("")) {
       builder.setFilter(sinkPb.getFilter());
     }

@@ -83,8 +83,11 @@ public class LoggingImplTest {
   private static final String PROJECT = "project";
   private static final String PROJECT_PB = "projects/" + PROJECT;
   private static final String SINK_NAME = "sink";
+  private static final SinkInfo.VersionFormat VERSION = SinkInfo.VersionFormat.V2;
   private static final SinkInfo SINK_INFO =
-      SinkInfo.of(SINK_NAME, Destination.BucketDestination.of("bucket"));
+      SinkInfo.newBuilder(SINK_NAME, Destination.BucketDestination.of("bucket"))
+          .setVersionFormat(VERSION)
+          .build();
   private static final String SINK_NAME_PB = "projects/" + PROJECT + "/sinks/" + SINK_NAME;
   private static final String METRIC_NAME = "metric";
   private static final String METRIC_NAME_PB = "projects/" + PROJECT + "/metrics/" + METRIC_NAME;
