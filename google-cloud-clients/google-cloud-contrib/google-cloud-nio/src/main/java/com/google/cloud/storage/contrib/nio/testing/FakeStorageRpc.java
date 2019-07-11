@@ -429,8 +429,7 @@ class FakeStorageRpc implements StorageRpc {
   }
 
   @Override
-  public Tuple<String, Iterable<HmacKeyMetadata>> listHmacKeys(
-      String serviceAccountEmail, String pageToken, Long maxResults, boolean showDeletedKeys) {
+  public Tuple<String, Iterable<HmacKeyMetadata>> listHmacKeys(Map<Option, ?> options) {
     throw new UnsupportedOperationException();
   }
 
