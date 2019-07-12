@@ -1181,14 +1181,15 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
     }
   }
 
-  public HmacKey createHmacKey(final ServiceAccount serviceAccount) {
+  public HmacKey createHmacKey(
+      final ServiceAccount serviceAccount, final CreateHmacKeyOption... options) {
     try {
       return HmacKey.fromPb(
           runWithRetries(
               new Callable<com.google.api.services.storage.model.HmacKey>() {
                 @Override
                 public com.google.api.services.storage.model.HmacKey call() {
-                  return storageRpc.createHmacKey(serviceAccount.getEmail());
+                  return storageRpc.createHmacKey(serviceAccount.getEmail(), optionMap(options));
                 }
               },
               getOptions().getRetrySettings(),
@@ -1205,14 +1206,14 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
   }
 
   @Override
-  public HmacKeyMetadata getHmacKey(final String accessId) {
+  public HmacKeyMetadata getHmacKey(final String accessId, final GetHmacKeyOption... options) {
     try {
       return HmacKeyMetadata.fromPb(
           runWithRetries(
               new Callable<com.google.api.services.storage.model.HmacKeyMetadata>() {
                 @Override
                 public com.google.api.services.storage.model.HmacKeyMetadata call() {
-                  return storageRpc.getHmacKey(accessId);
+                  return storageRpc.getHmacKey(accessId, optionMap(options));
                 }
               },
               getOptions().getRetrySettings(),
@@ -1223,14 +1224,15 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
     }
   }
 
-  private HmacKeyMetadata updateHmacKey(final HmacKeyMetadata hmacKeyMetadata) {
+  private HmacKeyMetadata updateHmacKey(
+      final HmacKeyMetadata hmacKeyMetadata, final UpdateHmacKeyOption... options) {
     try {
       return HmacKeyMetadata.fromPb(
           runWithRetries(
               new Callable<com.google.api.services.storage.model.HmacKeyMetadata>() {
                 @Override
                 public com.google.api.services.storage.model.HmacKeyMetadata call() {
-                  return storageRpc.updateHmacKey(hmacKeyMetadata.toPb());
+                  return storageRpc.updateHmacKey(hmacKeyMetadata.toPb(), optionMap(options));
                 }
               },
               getOptions().getRetrySettings(),
@@ -1243,24 +1245,26 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
 
   @Override
   public HmacKeyMetadata updateHmacKeyState(
-      final HmacKeyMetadata hmacKeyMetadata, final HmacKey.HmacKeyState state) {
+      final HmacKeyMetadata hmacKeyMetadata,
+      final HmacKey.HmacKeyState state,
+      final UpdateHmacKeyOption... options) {
     HmacKeyMetadata updatedMetadata =
         HmacKeyMetadata.newBuilder(hmacKeyMetadata.getServiceAccount())
             .setProjectId(hmacKeyMetadata.getProjectId())
             .setAccessId(hmacKeyMetadata.getAccessId())
             .setState(state)
             .build();
-    return updateHmacKey(updatedMetadata);
+    return updateHmacKey(updatedMetadata, options);
   }
 
   @Override
-  public void deleteHmacKey(final String accessId) {
+  public void deleteHmacKey(final String accessId, final DeleteHmacKeyOption... options) {
     try {
       runWithRetries(
           new Callable<Void>() {
             @Override
             public Void call() {
-              storageRpc.deleteHmacKey(accessId);
+              storageRpc.deleteHmacKey(accessId, optionMap(options));
               return null;
             }
           },

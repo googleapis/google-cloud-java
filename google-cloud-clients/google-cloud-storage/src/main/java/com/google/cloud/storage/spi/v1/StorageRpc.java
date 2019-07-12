@@ -443,7 +443,7 @@ public interface StorageRpc extends ServiceRpc {
    *
    * @throws StorageException upon failure
    */
-  HmacKey createHmacKey(String serviceAccountEmail);
+  HmacKey createHmacKey(String serviceAccountEmail, Map<Option, ?> options);
 
   /**
    * Lists the HMAC keys for the provided service account email.
@@ -458,21 +458,21 @@ public interface StorageRpc extends ServiceRpc {
    *
    * @throws StorageException upon failure
    */
-  HmacKeyMetadata updateHmacKey(HmacKeyMetadata hmacKeyMetadata);
+  HmacKeyMetadata updateHmacKey(HmacKeyMetadata hmacKeyMetadata, Map<Option, ?> options);
 
   /**
    * Returns the HMAC key associated with the provided access id.
    *
    * @throws StorageException upon failure
    */
-  HmacKeyMetadata getHmacKey(String accessId);
+  HmacKeyMetadata getHmacKey(String accessId, Map<Option, ?> options);
 
   /**
    * Deletes the HMAC key associated with the provided access id.
    *
    * @throws StorageException upon failure
    */
-  void deleteHmacKey(String accessId);
+  void deleteHmacKey(String accessId, Map<Option, ?> options);
 
   /**
    * Returns the IAM policy for the specified bucket.

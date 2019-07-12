@@ -286,6 +286,74 @@ public interface Storage extends Service<StorageOptions> {
     public static ListHmacKeysOption showDeletedKeys(boolean showDeletedKeys) {
       return new ListHmacKeysOption(StorageRpc.Option.SHOW_DELETED_KEYS, showDeletedKeys);
     }
+
+    /**
+     * Returns an option to specify the project to be billed for this request. Required for
+     * Requester Pays buckets.
+     */
+    public static ListHmacKeysOption userProject(String userProject) {
+      return new ListHmacKeysOption(StorageRpc.Option.USER_PROJECT, userProject);
+    }
+  }
+
+  /** Class for specifying createHmacKey options */
+  class CreateHmacKeyOption extends Option {
+    private CreateHmacKeyOption(StorageRpc.Option rpcOption, Object value) {
+      super(rpcOption, value);
+    }
+
+    /**
+     * Returns an option to specify the project to be billed for this request. Required for
+     * Requester Pays buckets.
+     */
+    public static CreateHmacKeyOption userProject(String userProject) {
+      return new CreateHmacKeyOption(StorageRpc.Option.USER_PROJECT, userProject);
+    }
+  }
+
+  /** Class for specifying getHmacKey options */
+  class GetHmacKeyOption extends Option {
+    private GetHmacKeyOption(StorageRpc.Option rpcOption, Object value) {
+      super(rpcOption, value);
+    }
+
+    /**
+     * Returns an option to specify the project to be billed for this request. Required for
+     * Requester Pays buckets.
+     */
+    public static GetHmacKeyOption userProject(String userProject) {
+      return new GetHmacKeyOption(StorageRpc.Option.USER_PROJECT, userProject);
+    }
+  }
+
+  /** Class for specifying deleteHmacKey options */
+  class DeleteHmacKeyOption extends Option {
+    private DeleteHmacKeyOption(StorageRpc.Option rpcOption, Object value) {
+      super(rpcOption, value);
+    }
+
+    /**
+     * Returns an option to specify the project to be billed for this request. Required for
+     * Requester Pays buckets.
+     */
+    public static DeleteHmacKeyOption userProject(String userProject) {
+      return new DeleteHmacKeyOption(StorageRpc.Option.USER_PROJECT, userProject);
+    }
+  }
+
+  /** Class for specifying updateHmacKey options */
+  class UpdateHmacKeyOption extends Option {
+    private UpdateHmacKeyOption(StorageRpc.Option rpcOption, Object value) {
+      super(rpcOption, value);
+    }
+
+    /**
+     * Returns an option to specify the project to be billed for this request. Required for
+     * Requester Pays buckets.
+     */
+    public static UpdateHmacKeyOption userProject(String userProject) {
+      return new UpdateHmacKeyOption(StorageRpc.Option.USER_PROJECT, userProject);
+    }
   }
 
   /** Class for specifying bucket get options. */
@@ -2760,7 +2828,7 @@ public interface Storage extends Service<StorageOptions> {
    *
    * @throws StorageException upon failure
    */
-  HmacKey createHmacKey(ServiceAccount serviceAccount);
+  HmacKey createHmacKey(ServiceAccount serviceAccount, CreateHmacKeyOption... options);
 
   /**
    * Lists HMAC keys for a given service account. Note this returns {@code HmacKeyMetadata} objects,
@@ -2798,7 +2866,7 @@ public interface Storage extends Service<StorageOptions> {
    *
    * @throws StorageException upon failure
    */
-  HmacKeyMetadata getHmacKey(String accessId);
+  HmacKeyMetadata getHmacKey(String accessId, GetHmacKeyOption... options);
 
   /**
    * Deletes an HMAC key given its access ID. Note that only an {@code INACTIVE} key can be deleted.
@@ -2817,7 +2885,7 @@ public interface Storage extends Service<StorageOptions> {
    *
    * @throws StorageException upon failure
    */
-  void deleteHmacKey(String accessId);
+  void deleteHmacKey(String accessId, DeleteHmacKeyOption... options);
 
   /**
    * Updates the state of an HMAC key and returns the updated metadata.
@@ -2834,7 +2902,9 @@ public interface Storage extends Service<StorageOptions> {
    * @throws StorageException upon failure
    */
   HmacKeyMetadata updateHmacKeyState(
-      final HmacKeyMetadata hmacKeyMetadata, final HmacKey.HmacKeyState state);
+      final HmacKeyMetadata hmacKeyMetadata,
+      final HmacKey.HmacKeyState state,
+      UpdateHmacKeyOption... options);
   /**
    * Gets the IAM policy for the provided bucket.
    *
