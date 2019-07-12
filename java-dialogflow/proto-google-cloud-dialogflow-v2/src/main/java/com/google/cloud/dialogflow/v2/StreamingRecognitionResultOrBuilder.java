@@ -36,7 +36,7 @@ public interface StreamingRecognitionResultOrBuilder
    *
    * <pre>
    * Transcript text representing the words that the user spoke.
-   * Populated if and only if `message_type` = `MESSAGE_TYPE_TRANSCRIPT`.
+   * Populated if and only if `message_type` = `TRANSCRIPT`.
    * </pre>
    *
    * <code>string transcript = 2;</code>
@@ -47,7 +47,7 @@ public interface StreamingRecognitionResultOrBuilder
    *
    * <pre>
    * Transcript text representing the words that the user spoke.
-   * Populated if and only if `message_type` = `MESSAGE_TYPE_TRANSCRIPT`.
+   * Populated if and only if `message_type` = `TRANSCRIPT`.
    * </pre>
    *
    * <code>string transcript = 2;</code>
@@ -61,7 +61,7 @@ public interface StreamingRecognitionResultOrBuilder
    * If `false`, the `StreamingRecognitionResult` represents an
    * interim result that may change. If `true`, the recognizer will not return
    * any further hypotheses about this piece of the audio. May only be populated
-   * for `message_type` = `MESSAGE_TYPE_TRANSCRIPT`.
+   * for `message_type` = `TRANSCRIPT`.
    * </pre>
    *
    * <code>bool is_final = 3;</code>
