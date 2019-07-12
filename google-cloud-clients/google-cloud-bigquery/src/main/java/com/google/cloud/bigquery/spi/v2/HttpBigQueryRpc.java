@@ -131,6 +131,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
               .datasets()
               .list(projectId)
               .setAll(Option.ALL_DATASETS.getBoolean(options))
+              .setFilter(Option.LABEL_FILTER.getString(options))
               .setMaxResults(Option.MAX_RESULTS.getLong(options))
               .setPageToken(Option.PAGE_TOKEN.getString(options))
               .setPageToken(Option.PAGE_TOKEN.getString(options))
@@ -500,7 +501,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
   @Override
   public Tuple<String, Iterable<Job>> listJobs(String projectId, Map<Option, ?> options) {
     try {
-      JobList jobsList =
+      Bigquery.Jobs.List request =
           bigquery
               .jobs()
               .list(projectId)
@@ -509,8 +510,15 @@ public class HttpBigQueryRpc implements BigQueryRpc {
               .setStateFilter(Option.STATE_FILTER.<List<String>>get(options))
               .setMaxResults(Option.MAX_RESULTS.getLong(options))
               .setPageToken(Option.PAGE_TOKEN.getString(options))
-              .setProjection(DEFAULT_PROJECTION)
-              .execute();
+              .setProjection(DEFAULT_PROJECTION);
+      if (Option.MIN_CREATION_TIME.getLong(options) != null) {
+        request.setMinCreationTime(BigInteger.valueOf(Option.MIN_CREATION_TIME.getLong(options)));
+      }
+      if (Option.MAX_CREATION_TIME.getLong(options) != null) {
+        request.setMaxCreationTime(BigInteger.valueOf(Option.MAX_CREATION_TIME.getLong(options)));
+      }
+      JobList jobsList = request.execute();
+
       Iterable<JobList.Jobs> jobs = jobsList.getJobs();
       return Tuple.of(
           jobsList.getNextPageToken(),
