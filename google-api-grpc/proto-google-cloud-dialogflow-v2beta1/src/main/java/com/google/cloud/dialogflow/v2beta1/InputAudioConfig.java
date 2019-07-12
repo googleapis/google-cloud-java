@@ -90,6 +90,11 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
               model_ = s;
               break;
             }
+          case 64:
+            {
+              singleUtterance_ = input.readBool();
+              break;
+            }
           case 80:
             {
               int rawValue = input.readEnum();
@@ -420,6 +425,30 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
         : result;
   }
 
+  public static final int SINGLE_UTTERANCE_FIELD_NUMBER = 8;
+  private boolean singleUtterance_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If `false` (default), recognition does not cease until the
+   * client closes the stream.
+   * If `true`, the recognizer will detect a single spoken utterance in input
+   * audio. Recognition ceases when it detects the audio's voice has
+   * stopped or paused. In this case, once a detected intent is received, the
+   * client should close the stream and start a new request with a new stream as
+   * needed.
+   * Note: This setting is relevant only for streaming methods.
+   * Note: When specified, InputAudioConfig.single_utterance takes precedence
+   * over StreamingDetectIntentRequest.single_utterance.
+   * </pre>
+   *
+   * <code>bool single_utterance = 8;</code>
+   */
+  public boolean getSingleUtterance() {
+    return singleUtterance_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -450,6 +479,9 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     }
     if (!getModelBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, model_);
+    }
+    if (singleUtterance_ != false) {
+      output.writeBool(8, singleUtterance_);
     }
     if (modelVariant_
         != com.google.cloud.dialogflow.v2beta1.SpeechModelVariant.SPEECH_MODEL_VARIANT_UNSPECIFIED
@@ -490,6 +522,9 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     if (!getModelBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, model_);
     }
+    if (singleUtterance_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(8, singleUtterance_);
+    }
     if (modelVariant_
         != com.google.cloud.dialogflow.v2beta1.SpeechModelVariant.SPEECH_MODEL_VARIANT_UNSPECIFIED
             .getNumber()) {
@@ -521,6 +556,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     if (!getPhraseHintsList().equals(other.getPhraseHintsList())) return false;
     if (!getModel().equals(other.getModel())) return false;
     if (modelVariant_ != other.modelVariant_) return false;
+    if (getSingleUtterance() != other.getSingleUtterance()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -548,6 +584,8 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + getModel().hashCode();
     hash = (37 * hash) + MODEL_VARIANT_FIELD_NUMBER;
     hash = (53 * hash) + modelVariant_;
+    hash = (37 * hash) + SINGLE_UTTERANCE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSingleUtterance());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -707,6 +745,8 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
 
       modelVariant_ = 0;
 
+      singleUtterance_ = false;
+
       return this;
     }
 
@@ -747,6 +787,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
       result.phraseHints_ = phraseHints_;
       result.model_ = model_;
       result.modelVariant_ = modelVariant_;
+      result.singleUtterance_ = singleUtterance_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -827,6 +868,9 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
       }
       if (other.modelVariant_ != 0) {
         setModelVariantValue(other.getModelVariantValue());
+      }
+      if (other.getSingleUtterance() != false) {
+        setSingleUtterance(other.getSingleUtterance());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1558,6 +1602,77 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     public Builder clearModelVariant() {
 
       modelVariant_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private boolean singleUtterance_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If `false` (default), recognition does not cease until the
+     * client closes the stream.
+     * If `true`, the recognizer will detect a single spoken utterance in input
+     * audio. Recognition ceases when it detects the audio's voice has
+     * stopped or paused. In this case, once a detected intent is received, the
+     * client should close the stream and start a new request with a new stream as
+     * needed.
+     * Note: This setting is relevant only for streaming methods.
+     * Note: When specified, InputAudioConfig.single_utterance takes precedence
+     * over StreamingDetectIntentRequest.single_utterance.
+     * </pre>
+     *
+     * <code>bool single_utterance = 8;</code>
+     */
+    public boolean getSingleUtterance() {
+      return singleUtterance_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If `false` (default), recognition does not cease until the
+     * client closes the stream.
+     * If `true`, the recognizer will detect a single spoken utterance in input
+     * audio. Recognition ceases when it detects the audio's voice has
+     * stopped or paused. In this case, once a detected intent is received, the
+     * client should close the stream and start a new request with a new stream as
+     * needed.
+     * Note: This setting is relevant only for streaming methods.
+     * Note: When specified, InputAudioConfig.single_utterance takes precedence
+     * over StreamingDetectIntentRequest.single_utterance.
+     * </pre>
+     *
+     * <code>bool single_utterance = 8;</code>
+     */
+    public Builder setSingleUtterance(boolean value) {
+
+      singleUtterance_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If `false` (default), recognition does not cease until the
+     * client closes the stream.
+     * If `true`, the recognizer will detect a single spoken utterance in input
+     * audio. Recognition ceases when it detects the audio's voice has
+     * stopped or paused. In this case, once a detected intent is received, the
+     * client should close the stream and start a new request with a new stream as
+     * needed.
+     * Note: This setting is relevant only for streaming methods.
+     * Note: When specified, InputAudioConfig.single_utterance takes precedence
+     * over StreamingDetectIntentRequest.single_utterance.
+     * </pre>
+     *
+     * <code>bool single_utterance = 8;</code>
+     */
+    public Builder clearSingleUtterance() {
+
+      singleUtterance_ = false;
       onChanged();
       return this;
     }

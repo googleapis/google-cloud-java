@@ -18,15 +18,15 @@ package com.google.cloud.dialogflow.v2;
  *     is_final: true
  * 5.  transcript: " that's"
  * 6.  transcript: " that is"
- * 7.  message_type: `MESSAGE_TYPE_END_OF_SINGLE_UTTERANCE`
+ * 7.  message_type: `END_OF_SINGLE_UTTERANCE`
  * 8.  transcript: " that is the question"
  *     is_final: true
  * Only two of the responses contain final results (#4 and #8 indicated by
  * `is_final: true`). Concatenating these generates the full transcript: "to be
  * or not to be that is the question".
  * In each response we populate:
- * *  for `MESSAGE_TYPE_TRANSCRIPT`: `transcript` and possibly `is_final`.
- * *  for `MESSAGE_TYPE_END_OF_SINGLE_UTTERANCE`: only `message_type`.
+ * *  for `TRANSCRIPT`: `transcript` and possibly `is_final`.
+ * *  for `END_OF_SINGLE_UTTERANCE`: only `message_type`.
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2.StreamingRecognitionResult}
@@ -328,7 +328,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
    *
    * <pre>
    * Transcript text representing the words that the user spoke.
-   * Populated if and only if `message_type` = `MESSAGE_TYPE_TRANSCRIPT`.
+   * Populated if and only if `message_type` = `TRANSCRIPT`.
    * </pre>
    *
    * <code>string transcript = 2;</code>
@@ -349,7 +349,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
    *
    * <pre>
    * Transcript text representing the words that the user spoke.
-   * Populated if and only if `message_type` = `MESSAGE_TYPE_TRANSCRIPT`.
+   * Populated if and only if `message_type` = `TRANSCRIPT`.
    * </pre>
    *
    * <code>string transcript = 2;</code>
@@ -375,7 +375,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
    * If `false`, the `StreamingRecognitionResult` represents an
    * interim result that may change. If `true`, the recognizer will not return
    * any further hypotheses about this piece of the audio. May only be populated
-   * for `message_type` = `MESSAGE_TYPE_TRANSCRIPT`.
+   * for `message_type` = `TRANSCRIPT`.
    * </pre>
    *
    * <code>bool is_final = 3;</code>
@@ -613,15 +613,15 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
    *     is_final: true
    * 5.  transcript: " that's"
    * 6.  transcript: " that is"
-   * 7.  message_type: `MESSAGE_TYPE_END_OF_SINGLE_UTTERANCE`
+   * 7.  message_type: `END_OF_SINGLE_UTTERANCE`
    * 8.  transcript: " that is the question"
    *     is_final: true
    * Only two of the responses contain final results (#4 and #8 indicated by
    * `is_final: true`). Concatenating these generates the full transcript: "to be
    * or not to be that is the question".
    * In each response we populate:
-   * *  for `MESSAGE_TYPE_TRANSCRIPT`: `transcript` and possibly `is_final`.
-   * *  for `MESSAGE_TYPE_END_OF_SINGLE_UTTERANCE`: only `message_type`.
+   * *  for `TRANSCRIPT`: `transcript` and possibly `is_final`.
+   * *  for `END_OF_SINGLE_UTTERANCE`: only `message_type`.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2.StreamingRecognitionResult}
@@ -885,7 +885,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      * <pre>
      * Transcript text representing the words that the user spoke.
-     * Populated if and only if `message_type` = `MESSAGE_TYPE_TRANSCRIPT`.
+     * Populated if and only if `message_type` = `TRANSCRIPT`.
      * </pre>
      *
      * <code>string transcript = 2;</code>
@@ -906,7 +906,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      * <pre>
      * Transcript text representing the words that the user spoke.
-     * Populated if and only if `message_type` = `MESSAGE_TYPE_TRANSCRIPT`.
+     * Populated if and only if `message_type` = `TRANSCRIPT`.
      * </pre>
      *
      * <code>string transcript = 2;</code>
@@ -927,7 +927,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      * <pre>
      * Transcript text representing the words that the user spoke.
-     * Populated if and only if `message_type` = `MESSAGE_TYPE_TRANSCRIPT`.
+     * Populated if and only if `message_type` = `TRANSCRIPT`.
      * </pre>
      *
      * <code>string transcript = 2;</code>
@@ -946,7 +946,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      * <pre>
      * Transcript text representing the words that the user spoke.
-     * Populated if and only if `message_type` = `MESSAGE_TYPE_TRANSCRIPT`.
+     * Populated if and only if `message_type` = `TRANSCRIPT`.
      * </pre>
      *
      * <code>string transcript = 2;</code>
@@ -962,7 +962,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      * <pre>
      * Transcript text representing the words that the user spoke.
-     * Populated if and only if `message_type` = `MESSAGE_TYPE_TRANSCRIPT`.
+     * Populated if and only if `message_type` = `TRANSCRIPT`.
      * </pre>
      *
      * <code>string transcript = 2;</code>
@@ -986,7 +986,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      * If `false`, the `StreamingRecognitionResult` represents an
      * interim result that may change. If `true`, the recognizer will not return
      * any further hypotheses about this piece of the audio. May only be populated
-     * for `message_type` = `MESSAGE_TYPE_TRANSCRIPT`.
+     * for `message_type` = `TRANSCRIPT`.
      * </pre>
      *
      * <code>bool is_final = 3;</code>
@@ -1001,7 +1001,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      * If `false`, the `StreamingRecognitionResult` represents an
      * interim result that may change. If `true`, the recognizer will not return
      * any further hypotheses about this piece of the audio. May only be populated
-     * for `message_type` = `MESSAGE_TYPE_TRANSCRIPT`.
+     * for `message_type` = `TRANSCRIPT`.
      * </pre>
      *
      * <code>bool is_final = 3;</code>
@@ -1019,7 +1019,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      * If `false`, the `StreamingRecognitionResult` represents an
      * interim result that may change. If `true`, the recognizer will not return
      * any further hypotheses about this piece of the audio. May only be populated
-     * for `message_type` = `MESSAGE_TYPE_TRANSCRIPT`.
+     * for `message_type` = `TRANSCRIPT`.
      * </pre>
      *
      * <code>bool is_final = 3;</code>

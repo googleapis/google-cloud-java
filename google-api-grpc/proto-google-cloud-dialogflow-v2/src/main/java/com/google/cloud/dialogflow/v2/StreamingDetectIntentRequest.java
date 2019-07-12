@@ -11,7 +11,7 @@ package com.google.cloud.dialogflow.v2;
  * `StreamingDetectIntent` method.
  * Multiple request messages should be sent in order:
  * 1.  The first message must contain `session`, `query_input` plus optionally
- *     `query_params` and/or `single_utterance`. The message must not contain `input_audio`.
+ *     `query_params`. The message must not contain `input_audio`.
  * 2.  If `query_input` was set to a streaming input audio config,
  *     all subsequent messages must contain only `input_audio`.
  *     Otherwise, finish the request stream.
@@ -310,18 +310,19 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Optional. If `false` (default), recognition does not cease until the
-   * client closes the stream.
-   * If `true`, the recognizer will detect a single spoken utterance in input
-   * audio. Recognition ceases when it detects the audio's voice has
-   * stopped or paused. In this case, once a detected intent is received, the
-   * client should close the stream and start a new request with a new stream as
-   * needed.
+   * DEPRECATED. Please use [InputAudioConfig.single_utterance][google.cloud.dialogflow.v2.InputAudioConfig.single_utterance] instead.
+   * Optional. If `false` (default), recognition does not cease until
+   * the client closes the stream. If `true`, the recognizer will detect a
+   * single spoken utterance in input audio. Recognition ceases when it detects
+   * the audio's voice has stopped or paused. In this case, once a detected
+   * intent is received, the client should close the stream and start a new
+   * request with a new stream as needed.
    * This setting is ignored when `query_input` is a piece of text or an event.
    * </pre>
    *
-   * <code>bool single_utterance = 4;</code>
+   * <code>bool single_utterance = 4 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   public boolean getSingleUtterance() {
     return singleUtterance_;
   }
@@ -618,7 +619,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
    * `StreamingDetectIntent` method.
    * Multiple request messages should be sent in order:
    * 1.  The first message must contain `session`, `query_input` plus optionally
-   *     `query_params` and/or `single_utterance`. The message must not contain `input_audio`.
+   *     `query_params`. The message must not contain `input_audio`.
    * 2.  If `query_input` was set to a streaming input audio config,
    *     all subsequent messages must contain only `input_audio`.
    *     Otherwise, finish the request stream.
@@ -1354,18 +1355,19 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. If `false` (default), recognition does not cease until the
-     * client closes the stream.
-     * If `true`, the recognizer will detect a single spoken utterance in input
-     * audio. Recognition ceases when it detects the audio's voice has
-     * stopped or paused. In this case, once a detected intent is received, the
-     * client should close the stream and start a new request with a new stream as
-     * needed.
+     * DEPRECATED. Please use [InputAudioConfig.single_utterance][google.cloud.dialogflow.v2.InputAudioConfig.single_utterance] instead.
+     * Optional. If `false` (default), recognition does not cease until
+     * the client closes the stream. If `true`, the recognizer will detect a
+     * single spoken utterance in input audio. Recognition ceases when it detects
+     * the audio's voice has stopped or paused. In this case, once a detected
+     * intent is received, the client should close the stream and start a new
+     * request with a new stream as needed.
      * This setting is ignored when `query_input` is a piece of text or an event.
      * </pre>
      *
-     * <code>bool single_utterance = 4;</code>
+     * <code>bool single_utterance = 4 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public boolean getSingleUtterance() {
       return singleUtterance_;
     }
@@ -1373,18 +1375,19 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. If `false` (default), recognition does not cease until the
-     * client closes the stream.
-     * If `true`, the recognizer will detect a single spoken utterance in input
-     * audio. Recognition ceases when it detects the audio's voice has
-     * stopped or paused. In this case, once a detected intent is received, the
-     * client should close the stream and start a new request with a new stream as
-     * needed.
+     * DEPRECATED. Please use [InputAudioConfig.single_utterance][google.cloud.dialogflow.v2.InputAudioConfig.single_utterance] instead.
+     * Optional. If `false` (default), recognition does not cease until
+     * the client closes the stream. If `true`, the recognizer will detect a
+     * single spoken utterance in input audio. Recognition ceases when it detects
+     * the audio's voice has stopped or paused. In this case, once a detected
+     * intent is received, the client should close the stream and start a new
+     * request with a new stream as needed.
      * This setting is ignored when `query_input` is a piece of text or an event.
      * </pre>
      *
-     * <code>bool single_utterance = 4;</code>
+     * <code>bool single_utterance = 4 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder setSingleUtterance(boolean value) {
 
       singleUtterance_ = value;
@@ -1395,18 +1398,19 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. If `false` (default), recognition does not cease until the
-     * client closes the stream.
-     * If `true`, the recognizer will detect a single spoken utterance in input
-     * audio. Recognition ceases when it detects the audio's voice has
-     * stopped or paused. In this case, once a detected intent is received, the
-     * client should close the stream and start a new request with a new stream as
-     * needed.
+     * DEPRECATED. Please use [InputAudioConfig.single_utterance][google.cloud.dialogflow.v2.InputAudioConfig.single_utterance] instead.
+     * Optional. If `false` (default), recognition does not cease until
+     * the client closes the stream. If `true`, the recognizer will detect a
+     * single spoken utterance in input audio. Recognition ceases when it detects
+     * the audio's voice has stopped or paused. In this case, once a detected
+     * intent is received, the client should close the stream and start a new
+     * request with a new stream as needed.
      * This setting is ignored when `query_input` is a piece of text or an event.
      * </pre>
      *
-     * <code>bool single_utterance = 4;</code>
+     * <code>bool single_utterance = 4 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder clearSingleUtterance() {
 
       singleUtterance_ = false;

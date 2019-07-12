@@ -11,9 +11,9 @@ package com.google.cloud.dialogflow.v2beta1;
  * `StreamingDetectIntent` method.
  * Multiple request messages should be sent in order:
  * 1.  The first message must contain `session`, `query_input` plus optionally
- *     `query_params` and/or `single_utterance`. If the client wants to receive
- *     an audio response, it should also contain `output_audio_config`.
- *     The message must not contain `input_audio`.
+ *     `query_params`. If the client wants to receive an audio response, it
+ *     should also contain `output_audio_config`. The message must not contain
+ *     `input_audio`.
  * 2.  If `query_input` was set to a streaming input audio config,
  *     all subsequent messages must contain `input_audio`. Otherwise, finish the request stream.
  * </pre>
@@ -173,7 +173,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
    * ID&gt;/sessions/&lt;Session ID&gt;`. If `Environment ID` is not specified, we assume
    * default 'draft' environment. If `User ID` is not specified, we are using
    * "-". It's up to the API caller to choose an appropriate `Session ID` and
-   * `User Id`. They can be a random numbers or some type of user and session
+   * `User Id`. They can be a random number or some type of user and session
    * identifiers (preferably hashed). The length of the `Session ID` and
    * `User ID` must not exceed 36 characters.
    * </pre>
@@ -202,7 +202,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
    * ID&gt;/sessions/&lt;Session ID&gt;`. If `Environment ID` is not specified, we assume
    * default 'draft' environment. If `User ID` is not specified, we are using
    * "-". It's up to the API caller to choose an appropriate `Session ID` and
-   * `User Id`. They can be a random numbers or some type of user and session
+   * `User Id`. They can be a random number or some type of user and session
    * identifiers (preferably hashed). The length of the `Session ID` and
    * `User ID` must not exceed 36 characters.
    * </pre>
@@ -321,6 +321,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
+   * DEPRECATED. Please use [InputAudioConfig.single_utterance][google.cloud.dialogflow.v2beta1.InputAudioConfig.single_utterance] instead.
    * Optional. If `false` (default), recognition does not cease until the
    * client closes the stream.
    * If `true`, the recognizer will detect a single spoken utterance in input
@@ -630,9 +631,9 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
    * `StreamingDetectIntent` method.
    * Multiple request messages should be sent in order:
    * 1.  The first message must contain `session`, `query_input` plus optionally
-   *     `query_params` and/or `single_utterance`. If the client wants to receive
-   *     an audio response, it should also contain `output_audio_config`.
-   *     The message must not contain `input_audio`.
+   *     `query_params`. If the client wants to receive an audio response, it
+   *     should also contain `output_audio_config`. The message must not contain
+   *     `input_audio`.
    * 2.  If `query_input` was set to a streaming input audio config,
    *     all subsequent messages must contain `input_audio`. Otherwise, finish the request stream.
    * </pre>
@@ -859,7 +860,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      * ID&gt;/sessions/&lt;Session ID&gt;`. If `Environment ID` is not specified, we assume
      * default 'draft' environment. If `User ID` is not specified, we are using
      * "-". It's up to the API caller to choose an appropriate `Session ID` and
-     * `User Id`. They can be a random numbers or some type of user and session
+     * `User Id`. They can be a random number or some type of user and session
      * identifiers (preferably hashed). The length of the `Session ID` and
      * `User ID` must not exceed 36 characters.
      * </pre>
@@ -888,7 +889,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      * ID&gt;/sessions/&lt;Session ID&gt;`. If `Environment ID` is not specified, we assume
      * default 'draft' environment. If `User ID` is not specified, we are using
      * "-". It's up to the API caller to choose an appropriate `Session ID` and
-     * `User Id`. They can be a random numbers or some type of user and session
+     * `User Id`. They can be a random number or some type of user and session
      * identifiers (preferably hashed). The length of the `Session ID` and
      * `User ID` must not exceed 36 characters.
      * </pre>
@@ -917,7 +918,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      * ID&gt;/sessions/&lt;Session ID&gt;`. If `Environment ID` is not specified, we assume
      * default 'draft' environment. If `User ID` is not specified, we are using
      * "-". It's up to the API caller to choose an appropriate `Session ID` and
-     * `User Id`. They can be a random numbers or some type of user and session
+     * `User Id`. They can be a random number or some type of user and session
      * identifiers (preferably hashed). The length of the `Session ID` and
      * `User ID` must not exceed 36 characters.
      * </pre>
@@ -944,7 +945,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      * ID&gt;/sessions/&lt;Session ID&gt;`. If `Environment ID` is not specified, we assume
      * default 'draft' environment. If `User ID` is not specified, we are using
      * "-". It's up to the API caller to choose an appropriate `Session ID` and
-     * `User Id`. They can be a random numbers or some type of user and session
+     * `User Id`. They can be a random number or some type of user and session
      * identifiers (preferably hashed). The length of the `Session ID` and
      * `User ID` must not exceed 36 characters.
      * </pre>
@@ -968,7 +969,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      * ID&gt;/sessions/&lt;Session ID&gt;`. If `Environment ID` is not specified, we assume
      * default 'draft' environment. If `User ID` is not specified, we are using
      * "-". It's up to the API caller to choose an appropriate `Session ID` and
-     * `User Id`. They can be a random numbers or some type of user and session
+     * `User Id`. They can be a random number or some type of user and session
      * identifiers (preferably hashed). The length of the `Session ID` and
      * `User ID` must not exceed 36 characters.
      * </pre>
@@ -1391,6 +1392,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
+     * DEPRECATED. Please use [InputAudioConfig.single_utterance][google.cloud.dialogflow.v2beta1.InputAudioConfig.single_utterance] instead.
      * Optional. If `false` (default), recognition does not cease until the
      * client closes the stream.
      * If `true`, the recognizer will detect a single spoken utterance in input
@@ -1410,6 +1412,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
+     * DEPRECATED. Please use [InputAudioConfig.single_utterance][google.cloud.dialogflow.v2beta1.InputAudioConfig.single_utterance] instead.
      * Optional. If `false` (default), recognition does not cease until the
      * client closes the stream.
      * If `true`, the recognizer will detect a single spoken utterance in input
@@ -1432,6 +1435,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
+     * DEPRECATED. Please use [InputAudioConfig.single_utterance][google.cloud.dialogflow.v2beta1.InputAudioConfig.single_utterance] instead.
      * Optional. If `false` (default), recognition does not cease until the
      * client closes the stream.
      * If `true`, the recognizer will detect a single spoken utterance in input
