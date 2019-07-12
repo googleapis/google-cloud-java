@@ -116,23 +116,6 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
-          case 42:
-            {
-              com.google.cloud.videointelligence.v1.FaceDetectionConfig.Builder subBuilder = null;
-              if (faceDetectionConfig_ != null) {
-                subBuilder = faceDetectionConfig_.toBuilder();
-              }
-              faceDetectionConfig_ =
-                  input.readMessage(
-                      com.google.cloud.videointelligence.v1.FaceDetectionConfig.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(faceDetectionConfig_);
-                faceDetectionConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
           case 50:
             {
               com.google.cloud.videointelligence.v1.SpeechTranscriptionConfig.Builder subBuilder =
@@ -443,48 +426,6 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
     return getExplicitContentDetectionConfig();
   }
 
-  public static final int FACE_DETECTION_CONFIG_FIELD_NUMBER = 5;
-  private com.google.cloud.videointelligence.v1.FaceDetectionConfig faceDetectionConfig_;
-  /**
-   *
-   *
-   * <pre>
-   * Config for FACE_DETECTION.
-   * </pre>
-   *
-   * <code>.google.cloud.videointelligence.v1.FaceDetectionConfig face_detection_config = 5;</code>
-   */
-  public boolean hasFaceDetectionConfig() {
-    return faceDetectionConfig_ != null;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Config for FACE_DETECTION.
-   * </pre>
-   *
-   * <code>.google.cloud.videointelligence.v1.FaceDetectionConfig face_detection_config = 5;</code>
-   */
-  public com.google.cloud.videointelligence.v1.FaceDetectionConfig getFaceDetectionConfig() {
-    return faceDetectionConfig_ == null
-        ? com.google.cloud.videointelligence.v1.FaceDetectionConfig.getDefaultInstance()
-        : faceDetectionConfig_;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Config for FACE_DETECTION.
-   * </pre>
-   *
-   * <code>.google.cloud.videointelligence.v1.FaceDetectionConfig face_detection_config = 5;</code>
-   */
-  public com.google.cloud.videointelligence.v1.FaceDetectionConfigOrBuilder
-      getFaceDetectionConfigOrBuilder() {
-    return getFaceDetectionConfig();
-  }
-
   public static final int SPEECH_TRANSCRIPTION_CONFIG_FIELD_NUMBER = 6;
   private com.google.cloud.videointelligence.v1.SpeechTranscriptionConfig
       speechTranscriptionConfig_;
@@ -648,9 +589,6 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
     if (explicitContentDetectionConfig_ != null) {
       output.writeMessage(4, getExplicitContentDetectionConfig());
     }
-    if (faceDetectionConfig_ != null) {
-      output.writeMessage(5, getFaceDetectionConfig());
-    }
     if (speechTranscriptionConfig_ != null) {
       output.writeMessage(6, getSpeechTranscriptionConfig());
     }
@@ -685,9 +623,6 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               4, getExplicitContentDetectionConfig());
-    }
-    if (faceDetectionConfig_ != null) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getFaceDetectionConfig());
     }
     if (speechTranscriptionConfig_ != null) {
       size +=
@@ -733,10 +668,6 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
       if (!getExplicitContentDetectionConfig().equals(other.getExplicitContentDetectionConfig()))
         return false;
     }
-    if (hasFaceDetectionConfig() != other.hasFaceDetectionConfig()) return false;
-    if (hasFaceDetectionConfig()) {
-      if (!getFaceDetectionConfig().equals(other.getFaceDetectionConfig())) return false;
-    }
     if (hasSpeechTranscriptionConfig() != other.hasSpeechTranscriptionConfig()) return false;
     if (hasSpeechTranscriptionConfig()) {
       if (!getSpeechTranscriptionConfig().equals(other.getSpeechTranscriptionConfig()))
@@ -776,10 +707,6 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
     if (hasExplicitContentDetectionConfig()) {
       hash = (37 * hash) + EXPLICIT_CONTENT_DETECTION_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getExplicitContentDetectionConfig().hashCode();
-    }
-    if (hasFaceDetectionConfig()) {
-      hash = (37 * hash) + FACE_DETECTION_CONFIG_FIELD_NUMBER;
-      hash = (53 * hash) + getFaceDetectionConfig().hashCode();
     }
     if (hasSpeechTranscriptionConfig()) {
       hash = (37 * hash) + SPEECH_TRANSCRIPTION_CONFIG_FIELD_NUMBER;
@@ -964,12 +891,6 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
         explicitContentDetectionConfig_ = null;
         explicitContentDetectionConfigBuilder_ = null;
       }
-      if (faceDetectionConfigBuilder_ == null) {
-        faceDetectionConfig_ = null;
-      } else {
-        faceDetectionConfig_ = null;
-        faceDetectionConfigBuilder_ = null;
-      }
       if (speechTranscriptionConfigBuilder_ == null) {
         speechTranscriptionConfig_ = null;
       } else {
@@ -1040,11 +961,6 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
         result.explicitContentDetectionConfig_ = explicitContentDetectionConfig_;
       } else {
         result.explicitContentDetectionConfig_ = explicitContentDetectionConfigBuilder_.build();
-      }
-      if (faceDetectionConfigBuilder_ == null) {
-        result.faceDetectionConfig_ = faceDetectionConfig_;
-      } else {
-        result.faceDetectionConfig_ = faceDetectionConfigBuilder_.build();
       }
       if (speechTranscriptionConfigBuilder_ == null) {
         result.speechTranscriptionConfig_ = speechTranscriptionConfig_;
@@ -1147,9 +1063,6 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasExplicitContentDetectionConfig()) {
         mergeExplicitContentDetectionConfig(other.getExplicitContentDetectionConfig());
-      }
-      if (other.hasFaceDetectionConfig()) {
-        mergeFaceDetectionConfig(other.getFaceDetectionConfig());
       }
       if (other.hasSpeechTranscriptionConfig()) {
         mergeSpeechTranscriptionConfig(other.getSpeechTranscriptionConfig());
@@ -2197,202 +2110,6 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
         explicitContentDetectionConfig_ = null;
       }
       return explicitContentDetectionConfigBuilder_;
-    }
-
-    private com.google.cloud.videointelligence.v1.FaceDetectionConfig faceDetectionConfig_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.videointelligence.v1.FaceDetectionConfig,
-            com.google.cloud.videointelligence.v1.FaceDetectionConfig.Builder,
-            com.google.cloud.videointelligence.v1.FaceDetectionConfigOrBuilder>
-        faceDetectionConfigBuilder_;
-    /**
-     *
-     *
-     * <pre>
-     * Config for FACE_DETECTION.
-     * </pre>
-     *
-     * <code>.google.cloud.videointelligence.v1.FaceDetectionConfig face_detection_config = 5;
-     * </code>
-     */
-    public boolean hasFaceDetectionConfig() {
-      return faceDetectionConfigBuilder_ != null || faceDetectionConfig_ != null;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Config for FACE_DETECTION.
-     * </pre>
-     *
-     * <code>.google.cloud.videointelligence.v1.FaceDetectionConfig face_detection_config = 5;
-     * </code>
-     */
-    public com.google.cloud.videointelligence.v1.FaceDetectionConfig getFaceDetectionConfig() {
-      if (faceDetectionConfigBuilder_ == null) {
-        return faceDetectionConfig_ == null
-            ? com.google.cloud.videointelligence.v1.FaceDetectionConfig.getDefaultInstance()
-            : faceDetectionConfig_;
-      } else {
-        return faceDetectionConfigBuilder_.getMessage();
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Config for FACE_DETECTION.
-     * </pre>
-     *
-     * <code>.google.cloud.videointelligence.v1.FaceDetectionConfig face_detection_config = 5;
-     * </code>
-     */
-    public Builder setFaceDetectionConfig(
-        com.google.cloud.videointelligence.v1.FaceDetectionConfig value) {
-      if (faceDetectionConfigBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        faceDetectionConfig_ = value;
-        onChanged();
-      } else {
-        faceDetectionConfigBuilder_.setMessage(value);
-      }
-
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Config for FACE_DETECTION.
-     * </pre>
-     *
-     * <code>.google.cloud.videointelligence.v1.FaceDetectionConfig face_detection_config = 5;
-     * </code>
-     */
-    public Builder setFaceDetectionConfig(
-        com.google.cloud.videointelligence.v1.FaceDetectionConfig.Builder builderForValue) {
-      if (faceDetectionConfigBuilder_ == null) {
-        faceDetectionConfig_ = builderForValue.build();
-        onChanged();
-      } else {
-        faceDetectionConfigBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Config for FACE_DETECTION.
-     * </pre>
-     *
-     * <code>.google.cloud.videointelligence.v1.FaceDetectionConfig face_detection_config = 5;
-     * </code>
-     */
-    public Builder mergeFaceDetectionConfig(
-        com.google.cloud.videointelligence.v1.FaceDetectionConfig value) {
-      if (faceDetectionConfigBuilder_ == null) {
-        if (faceDetectionConfig_ != null) {
-          faceDetectionConfig_ =
-              com.google.cloud.videointelligence.v1.FaceDetectionConfig.newBuilder(
-                      faceDetectionConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
-        } else {
-          faceDetectionConfig_ = value;
-        }
-        onChanged();
-      } else {
-        faceDetectionConfigBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Config for FACE_DETECTION.
-     * </pre>
-     *
-     * <code>.google.cloud.videointelligence.v1.FaceDetectionConfig face_detection_config = 5;
-     * </code>
-     */
-    public Builder clearFaceDetectionConfig() {
-      if (faceDetectionConfigBuilder_ == null) {
-        faceDetectionConfig_ = null;
-        onChanged();
-      } else {
-        faceDetectionConfig_ = null;
-        faceDetectionConfigBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Config for FACE_DETECTION.
-     * </pre>
-     *
-     * <code>.google.cloud.videointelligence.v1.FaceDetectionConfig face_detection_config = 5;
-     * </code>
-     */
-    public com.google.cloud.videointelligence.v1.FaceDetectionConfig.Builder
-        getFaceDetectionConfigBuilder() {
-
-      onChanged();
-      return getFaceDetectionConfigFieldBuilder().getBuilder();
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Config for FACE_DETECTION.
-     * </pre>
-     *
-     * <code>.google.cloud.videointelligence.v1.FaceDetectionConfig face_detection_config = 5;
-     * </code>
-     */
-    public com.google.cloud.videointelligence.v1.FaceDetectionConfigOrBuilder
-        getFaceDetectionConfigOrBuilder() {
-      if (faceDetectionConfigBuilder_ != null) {
-        return faceDetectionConfigBuilder_.getMessageOrBuilder();
-      } else {
-        return faceDetectionConfig_ == null
-            ? com.google.cloud.videointelligence.v1.FaceDetectionConfig.getDefaultInstance()
-            : faceDetectionConfig_;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Config for FACE_DETECTION.
-     * </pre>
-     *
-     * <code>.google.cloud.videointelligence.v1.FaceDetectionConfig face_detection_config = 5;
-     * </code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.videointelligence.v1.FaceDetectionConfig,
-            com.google.cloud.videointelligence.v1.FaceDetectionConfig.Builder,
-            com.google.cloud.videointelligence.v1.FaceDetectionConfigOrBuilder>
-        getFaceDetectionConfigFieldBuilder() {
-      if (faceDetectionConfigBuilder_ == null) {
-        faceDetectionConfigBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.cloud.videointelligence.v1.FaceDetectionConfig,
-                com.google.cloud.videointelligence.v1.FaceDetectionConfig.Builder,
-                com.google.cloud.videointelligence.v1.FaceDetectionConfigOrBuilder>(
-                getFaceDetectionConfig(), getParentForChildren(), isClean());
-        faceDetectionConfig_ = null;
-      }
-      return faceDetectionConfigBuilder_;
     }
 
     private com.google.cloud.videointelligence.v1.SpeechTranscriptionConfig

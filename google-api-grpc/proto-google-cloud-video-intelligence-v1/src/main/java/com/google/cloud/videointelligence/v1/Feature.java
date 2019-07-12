@@ -57,16 +57,6 @@ public enum Feature implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Human face detection and tracking.
-   * </pre>
-   *
-   * <code>FACE_DETECTION = 4;</code>
-   */
-  FACE_DETECTION(4),
-  /**
-   *
-   *
-   * <pre>
    * Speech transcription.
    * </pre>
    *
@@ -140,16 +130,6 @@ public enum Feature implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Human face detection and tracking.
-   * </pre>
-   *
-   * <code>FACE_DETECTION = 4;</code>
-   */
-  public static final int FACE_DETECTION_VALUE = 4;
-  /**
-   *
-   *
-   * <pre>
    * Speech transcription.
    * </pre>
    *
@@ -201,8 +181,6 @@ public enum Feature implements com.google.protobuf.ProtocolMessageEnum {
         return SHOT_CHANGE_DETECTION;
       case 3:
         return EXPLICIT_CONTENT_DETECTION;
-      case 4:
-        return FACE_DETECTION;
       case 6:
         return SPEECH_TRANSCRIPTION;
       case 7:

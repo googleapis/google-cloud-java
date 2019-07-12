@@ -186,38 +186,6 @@ public interface VideoContextOrBuilder
    *
    *
    * <pre>
-   * Config for FACE_DETECTION.
-   * </pre>
-   *
-   * <code>.google.cloud.videointelligence.v1.FaceDetectionConfig face_detection_config = 5;</code>
-   */
-  boolean hasFaceDetectionConfig();
-  /**
-   *
-   *
-   * <pre>
-   * Config for FACE_DETECTION.
-   * </pre>
-   *
-   * <code>.google.cloud.videointelligence.v1.FaceDetectionConfig face_detection_config = 5;</code>
-   */
-  com.google.cloud.videointelligence.v1.FaceDetectionConfig getFaceDetectionConfig();
-  /**
-   *
-   *
-   * <pre>
-   * Config for FACE_DETECTION.
-   * </pre>
-   *
-   * <code>.google.cloud.videointelligence.v1.FaceDetectionConfig face_detection_config = 5;</code>
-   */
-  com.google.cloud.videointelligence.v1.FaceDetectionConfigOrBuilder
-      getFaceDetectionConfigOrBuilder();
-
-  /**
-   *
-   *
-   * <pre>
    * Config for SPEECH_TRANSCRIPTION.
    * </pre>
    *
