@@ -16,6 +16,7 @@
 
 package com.google.cloud.logging;
 
+import static com.google.cloud.logging.SinkInfo.VersionFormat;
 import static org.easymock.EasyMock.replay;
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
@@ -83,10 +84,9 @@ public class LoggingImplTest {
   private static final String PROJECT = "project";
   private static final String PROJECT_PB = "projects/" + PROJECT;
   private static final String SINK_NAME = "sink";
-  private static final SinkInfo.VersionFormat VERSION = SinkInfo.VersionFormat.V2;
   private static final SinkInfo SINK_INFO =
       SinkInfo.newBuilder(SINK_NAME, Destination.BucketDestination.of("bucket"))
-          .setVersionFormat(VERSION)
+          .setVersionFormat(VersionFormat.V2)
           .build();
   private static final String SINK_NAME_PB = "projects/" + PROJECT + "/sinks/" + SINK_NAME;
   private static final String METRIC_NAME = "metric";
