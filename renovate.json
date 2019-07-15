@@ -3,6 +3,7 @@
     "config:base"
   ],
   "ignoreDeps": [
+    "com.google.api:gax-bom",
     "com.google.guava:guava",
     "com.google.guava:guava-testlib",
     "com.google.protobuf:protobuf-java",
