@@ -112,8 +112,8 @@ import com.google.cloud.bigtable.data.v2.models.Row;
 Then, to make a query to Bigtable, use the following code:
 ```java
 // Instantiates a client
-String projectId = "my-instance";
-String instanceId = "my-database";
+String projectId = "my-project";
+String instanceId = "my-instance";
 String tableId = "my-table";
 
 // Create the client
