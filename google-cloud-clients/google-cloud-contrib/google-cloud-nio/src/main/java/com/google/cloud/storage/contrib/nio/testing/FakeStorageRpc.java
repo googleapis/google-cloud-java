@@ -406,11 +406,21 @@ class FakeStorageRpc implements StorageRpc {
 
     String destKey = fullname(rewriteRequest.target);
 
+    // if this is a new file, set generation to 1, else increment the existing generation
+    long generation = 1;
+    if (metadata.containsKey(destKey)) {
+      generation = metadata.get(destKey).getGeneration() + 1;
+    }
+
     checkGeneration(destKey, generationMatch);
+
+    byte[] data = contents.get(sourceKey);
+
+    rewriteRequest.target.setGeneration(generation);
+    rewriteRequest.target.setSize(BigInteger.valueOf(data.length));
 
     metadata.put(destKey, rewriteRequest.target);
 
-    byte[] data = contents.get(sourceKey);
     contents.put(destKey, Arrays.copyOf(data, data.length));
     return new RewriteResponse(
         rewriteRequest,
