@@ -231,7 +231,9 @@ public class DocumentSnapshot {
   @Nullable
   public <T> T toObject(@Nonnull Class<T> valueType) {
     Map<String, Object> data = getData();
-    return data == null ? null : CustomClassMapper.convertToCustomClass(getData(), valueType, docRef);
+    return data == null
+        ? null
+        : CustomClassMapper.convertToCustomClass(getData(), valueType, docRef);
   }
 
   /**
