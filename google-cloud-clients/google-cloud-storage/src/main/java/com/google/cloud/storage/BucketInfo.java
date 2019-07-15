@@ -1133,7 +1133,7 @@ public class BucketInfo implements Serializable {
     }
 
     @Override
-    public Builder setLocationType(String locationType) {
+    Builder setLocationType(String locationType) {
       this.locationType = locationType;
       return this;
     }

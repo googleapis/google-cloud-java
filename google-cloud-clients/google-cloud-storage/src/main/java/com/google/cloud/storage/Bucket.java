@@ -662,7 +662,7 @@ public class Bucket extends BucketInfo {
     }
 
     @Override
-    public Builder setLocationType(String locationType) {
+    Builder setLocationType(String locationType) {
       infoBuilder.setLocationType(locationType);
       return this;
     }
