@@ -35,7 +35,7 @@ public interface VideoAnnotationResultsOrBuilder
    *
    *
    * <pre>
-   * Label annotations on video level or user specified segment level.
+   * Topical label annotations on video level or user specified segment level.
    * There is exactly one element for each unique label.
    * </pre>
    *
@@ -49,7 +49,7 @@ public interface VideoAnnotationResultsOrBuilder
    *
    *
    * <pre>
-   * Label annotations on video level or user specified segment level.
+   * Topical label annotations on video level or user specified segment level.
    * There is exactly one element for each unique label.
    * </pre>
    *
@@ -62,7 +62,7 @@ public interface VideoAnnotationResultsOrBuilder
    *
    *
    * <pre>
-   * Label annotations on video level or user specified segment level.
+   * Topical label annotations on video level or user specified segment level.
    * There is exactly one element for each unique label.
    * </pre>
    *
@@ -75,7 +75,7 @@ public interface VideoAnnotationResultsOrBuilder
    *
    *
    * <pre>
-   * Label annotations on video level or user specified segment level.
+   * Topical label annotations on video level or user specified segment level.
    * There is exactly one element for each unique label.
    * </pre>
    *
@@ -89,7 +89,7 @@ public interface VideoAnnotationResultsOrBuilder
    *
    *
    * <pre>
-   * Label annotations on video level or user specified segment level.
+   * Topical label annotations on video level or user specified segment level.
    * There is exactly one element for each unique label.
    * </pre>
    *
@@ -104,7 +104,7 @@ public interface VideoAnnotationResultsOrBuilder
    *
    *
    * <pre>
-   * Label annotations on shot level.
+   * Topical label annotations on shot level.
    * There is exactly one element for each unique label.
    * </pre>
    *
@@ -117,7 +117,7 @@ public interface VideoAnnotationResultsOrBuilder
    *
    *
    * <pre>
-   * Label annotations on shot level.
+   * Topical label annotations on shot level.
    * There is exactly one element for each unique label.
    * </pre>
    *
@@ -129,7 +129,7 @@ public interface VideoAnnotationResultsOrBuilder
    *
    *
    * <pre>
-   * Label annotations on shot level.
+   * Topical label annotations on shot level.
    * There is exactly one element for each unique label.
    * </pre>
    *
@@ -141,7 +141,7 @@ public interface VideoAnnotationResultsOrBuilder
    *
    *
    * <pre>
-   * Label annotations on shot level.
+   * Topical label annotations on shot level.
    * There is exactly one element for each unique label.
    * </pre>
    *
@@ -154,7 +154,7 @@ public interface VideoAnnotationResultsOrBuilder
    *
    *
    * <pre>
-   * Label annotations on shot level.
+   * Topical label annotations on shot level.
    * There is exactly one element for each unique label.
    * </pre>
    *
@@ -226,59 +226,6 @@ public interface VideoAnnotationResultsOrBuilder
    * </code>
    */
   com.google.cloud.videointelligence.v1.LabelAnnotationOrBuilder getFrameLabelAnnotationsOrBuilder(
-      int index);
-
-  /**
-   *
-   *
-   * <pre>
-   * Face annotations. There is exactly one element for each unique face.
-   * </pre>
-   *
-   * <code>repeated .google.cloud.videointelligence.v1.FaceAnnotation face_annotations = 5;</code>
-   */
-  java.util.List<com.google.cloud.videointelligence.v1.FaceAnnotation> getFaceAnnotationsList();
-  /**
-   *
-   *
-   * <pre>
-   * Face annotations. There is exactly one element for each unique face.
-   * </pre>
-   *
-   * <code>repeated .google.cloud.videointelligence.v1.FaceAnnotation face_annotations = 5;</code>
-   */
-  com.google.cloud.videointelligence.v1.FaceAnnotation getFaceAnnotations(int index);
-  /**
-   *
-   *
-   * <pre>
-   * Face annotations. There is exactly one element for each unique face.
-   * </pre>
-   *
-   * <code>repeated .google.cloud.videointelligence.v1.FaceAnnotation face_annotations = 5;</code>
-   */
-  int getFaceAnnotationsCount();
-  /**
-   *
-   *
-   * <pre>
-   * Face annotations. There is exactly one element for each unique face.
-   * </pre>
-   *
-   * <code>repeated .google.cloud.videointelligence.v1.FaceAnnotation face_annotations = 5;</code>
-   */
-  java.util.List<? extends com.google.cloud.videointelligence.v1.FaceAnnotationOrBuilder>
-      getFaceAnnotationsOrBuilderList();
-  /**
-   *
-   *
-   * <pre>
-   * Face annotations. There is exactly one element for each unique face.
-   * </pre>
-   *
-   * <code>repeated .google.cloud.videointelligence.v1.FaceAnnotation face_annotations = 5;</code>
-   */
-  com.google.cloud.videointelligence.v1.FaceAnnotationOrBuilder getFaceAnnotationsOrBuilder(
       int index);
 
   /**
