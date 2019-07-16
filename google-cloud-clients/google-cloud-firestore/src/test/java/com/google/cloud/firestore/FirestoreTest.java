@@ -21,7 +21,6 @@ import static com.google.cloud.firestore.LocalFirestoreHelper.commitResponse;
 import static com.google.cloud.firestore.LocalFirestoreHelper.getAllResponse;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
-import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.fail;
 import static org.mockito.Mockito.doAnswer;
 import static org.mockito.Mockito.doReturn;
@@ -37,11 +36,9 @@ import com.google.firestore.v1.BatchGetDocumentsRequest;
 import com.google.firestore.v1.CommitRequest;
 import com.google.firestore.v1.CommitResponse;
 import com.google.firestore.v1.ListCollectionIdsRequest;
-
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ExecutionException;
-
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.ArgumentCaptor;
