@@ -31,7 +31,7 @@ public class SessionPoolOptions {
   private final ActionOnExhaustion actionOnExhaustion;
   private final int keepAliveIntervalMinutes;
   private final ActionOnSessionNotFound actionOnSessionNotFound;
-  private final long waitForSessionTimeoutMillis;
+  private final long initialWaitForSessionTimeoutMillis;
 
   private SessionPoolOptions(Builder builder) {
     this.minSessions = builder.minSessions;
@@ -40,7 +40,7 @@ public class SessionPoolOptions {
     this.writeSessionsFraction = builder.writeSessionsFraction;
     this.actionOnExhaustion = builder.actionOnExhaustion;
     this.actionOnSessionNotFound = builder.actionOnSessionNotFound;
-    this.waitForSessionTimeoutMillis = builder.waitForSessionTimeoutMillis;
+    this.initialWaitForSessionTimeoutMillis = builder.initialWaitForSessionTimeoutMillis;
     this.keepAliveIntervalMinutes = builder.keepAliveIntervalMinutes;
   }
 
@@ -72,8 +72,9 @@ public class SessionPoolOptions {
     return actionOnExhaustion == ActionOnExhaustion.BLOCK;
   }
 
-  public long getWaitForSessionTimeoutMillis() {
-    return waitForSessionTimeoutMillis;
+  @VisibleForTesting
+  long getInitialWaitForSessionTimeoutMillis() {
+    return initialWaitForSessionTimeoutMillis;
   }
 
   @VisibleForTesting
@@ -102,7 +103,7 @@ public class SessionPoolOptions {
     private int maxIdleSessions;
     private float writeSessionsFraction = 0.2f;
     private ActionOnExhaustion actionOnExhaustion = DEFAULT_ACTION;
-    private long waitForSessionTimeoutMillis = 30_000L;
+    private long initialWaitForSessionTimeoutMillis = 30_000L;
     private ActionOnSessionNotFound actionOnSessionNotFound = ActionOnSessionNotFound.RETRY;
     private int keepAliveIntervalMinutes = 30;
 
@@ -168,10 +169,13 @@ public class SessionPoolOptions {
     }
 
     /**
-     * The number of milliseconds to wait for a session to become available when one is requested.
+     * The initial number of milliseconds to wait for a session to become available when one is
+     * requested. The session pool will keep retrying to get a session, and the timeout will be
+     * doubled for each new attempt. The default is 30 seconds.
      */
-    public Builder setWaitForSessionTimeoutMillis(long timeout) {
-      this.waitForSessionTimeoutMillis = timeout;
+    @VisibleForTesting
+    Builder setInitialWaitForSessionTimeoutMillis(long timeout) {
+      this.initialWaitForSessionTimeoutMillis = timeout;
       return this;
     }
 

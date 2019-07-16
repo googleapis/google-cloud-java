@@ -36,7 +36,9 @@ import com.google.common.util.concurrent.Uninterruptibles;
 import io.opencensus.common.Scope;
 import io.opencensus.trace.Annotation;
 import io.opencensus.trace.AttributeValue;
+import io.opencensus.trace.EndSpanOptions;
 import io.opencensus.trace.Span;
+import io.opencensus.trace.Status;
 import io.opencensus.trace.Tracer;
 import io.opencensus.trace.Tracing;
 import java.util.HashSet;
@@ -64,11 +66,10 @@ import org.threeten.bp.Instant;
 final class SessionPool {
 
   private static final Logger logger = Logger.getLogger(SessionPool.class.getName());
-  static final String WAIT_FOR_READ_SESSION = "SessionPool.WaitForReadSession";
-  static final String WAIT_FOR_READ_WRITE_SESSION = "SessionPool.WaitForReadWriteSession";
+  static final String WAIT_FOR_SESSION = "SessionPool.WaitForSession";
 
   static {
-    TraceUtil.exportSpans(WAIT_FOR_READ_SESSION, WAIT_FOR_READ_WRITE_SESSION);
+    TraceUtil.exportSpans(WAIT_FOR_SESSION);
   }
 
   /**
@@ -819,6 +820,7 @@ final class SessionPool {
   }
 
   private final class Waiter {
+    private static final long MAX_SESSION_WAIT_TIMEOUT = 240_000L;
     private final SynchronousQueue<SessionOrError> waiter = new SynchronousQueue<>();
 
     private void put(PooledSession session) {
@@ -830,34 +832,40 @@ final class SessionPool {
     }
 
     private PooledSession take() throws SpannerException {
-      SessionOrError s = takeUninterruptiblyWithTimeout();
-      if (s.e != null) {
-        throw newSpannerException(s.e);
+      long currentTimeout = options.getInitialWaitForSessionTimeoutMillis();
+      while (true) {
+        Tracer tracer = Tracing.getTracer();
+        Scope waitScope = tracer.spanBuilder(WAIT_FOR_SESSION).startScopedSpan();
+        try {
+          SessionOrError s = pollUninterruptiblyWithTimeout(currentTimeout);
+          if (s == null) {
+            // End the span with status DEADLINE_EXCEEDED and retry.
+            tracer
+                .getCurrentSpan()
+                .end(EndSpanOptions.builder().setStatus(Status.DEADLINE_EXCEEDED).build());
+            currentTimeout = Math.min(currentTimeout * 2, MAX_SESSION_WAIT_TIMEOUT);
+          } else {
+            if (s.e != null) {
+              throw newSpannerException(s.e);
+            }
+            tracer.getCurrentSpan().end();
+            return s.session;
+          }
+        } catch (Exception e) {
+          TraceUtil.endSpanWithFailure(tracer.getCurrentSpan(), e);
+          throw e;
+        } finally {
+          waitScope.close();
+        }
       }
-      return s.session;
     }
 
-    private SessionOrError takeUninterruptiblyWithTimeout() {
+    private SessionOrError pollUninterruptiblyWithTimeout(long timeoutMillis) {
       boolean interrupted = false;
       try {
         while (true) {
           try {
-            SessionOrError res =
-                waiter.poll(options.getWaitForSessionTimeoutMillis(), TimeUnit.MILLISECONDS);
-            if (res == null) {
-              executor.submit(
-                  new Runnable() {
-                    @Override
-                    public void run() {
-                      handleCreateSessionFailure(
-                          newSpannerException(
-                              ErrorCode.DEADLINE_EXCEEDED,
-                              "Timeout while waiting for session to become available"));
-                    }
-                  });
-            } else {
-              return res;
-            }
+            return waiter.poll(timeoutMillis, TimeUnit.MILLISECONDS);
           } catch (InterruptedException e) {
             interrupted = true;
           }
@@ -1219,17 +1227,7 @@ final class SessionPool {
           Level.FINE,
           "No session available in the pool. Blocking for one to become available/created");
       span.addAnnotation("Waiting for read only session to be available");
-      Tracer tracer = Tracing.getTracer();
-      Scope waitScope = tracer.spanBuilder(WAIT_FOR_READ_SESSION).startScopedSpan();
-      try {
-        sess = waiter.take();
-        tracer.getCurrentSpan().end();
-      } catch (Exception e) {
-        TraceUtil.endSpanWithFailure(tracer.getCurrentSpan(), e);
-        throw e;
-      } finally {
-        waitScope.close();
-      }
+      sess = waiter.take();
     }
     sess.markBusy();
     incrementNumSessionsInUse();
@@ -1287,17 +1285,7 @@ final class SessionPool {
           Level.FINE,
           "No session available in the pool. Blocking for one to become available/created");
       span.addAnnotation("Waiting for read write session to be available");
-      Tracer tracer = Tracing.getTracer();
-      Scope waitScope = tracer.spanBuilder(WAIT_FOR_READ_WRITE_SESSION).startScopedSpan();
-      try {
-        sess = waiter.take();
-        tracer.getCurrentSpan().end();
-      } catch (Exception e) {
-        TraceUtil.endSpanWithFailure(tracer.getCurrentSpan(), e);
-        throw e;
-      } finally {
-        waitScope.close();
-      }
+      sess = waiter.take();
     }
     sess.markBusy();
     incrementNumSessionsInUse();

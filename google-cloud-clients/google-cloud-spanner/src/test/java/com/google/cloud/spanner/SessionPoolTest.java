@@ -50,13 +50,11 @@ import com.google.spanner.v1.ExecuteSqlRequest;
 import com.google.spanner.v1.ResultSetStats;
 import com.google.spanner.v1.RollbackRequest;
 import io.opencensus.trace.Span;
-import io.opencensus.trace.Status.CanonicalCode;
+import io.opencensus.trace.Status;
 import io.opencensus.trace.Tracer;
 import io.opencensus.trace.Tracing;
 import io.opencensus.trace.config.TraceConfig;
 import io.opencensus.trace.config.TraceParams;
-import io.opencensus.trace.export.SampledSpanStore;
-import io.opencensus.trace.export.SampledSpanStore.ErrorFilter;
 import io.opencensus.trace.export.SpanData;
 import io.opencensus.trace.export.SpanExporter.Handler;
 import io.opencensus.trace.samplers.Samplers;
@@ -65,8 +63,14 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.Callable;
 import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.junit.Before;
@@ -579,12 +583,24 @@ public class SessionPoolTest extends BaseSessionPoolTest {
   }
 
   @Test
-  public void blockAndTimeoutOnPoolExhaustion() {
+  public void blockAndTimeoutOnPoolExhaustion() throws InterruptedException, ExecutionException {
+    if (minSessions != 0) {
+      // Only execute for minSessions == 0 as we need to setup and shutdown a mock sampler during
+      // the test case. A second run would not work as there is no way to restart the sampler.
+      return;
+    }
     // Setup a dummy trace handler.
+    final AtomicInteger deadlineExceededCount = new AtomicInteger();
     Handler handler =
         new Handler() {
           @Override
-          public void export(Collection<SpanData> spanDataList) {}
+          public void export(Collection<SpanData> spanDataList) {
+            for (SpanData sd : spanDataList) {
+              if (sd.getStatus() == Status.DEADLINE_EXCEEDED) {
+                deadlineExceededCount.incrementAndGet();
+              }
+            }
+          }
         };
     Tracing.getExportComponent()
         .getSpanExporter()
@@ -598,7 +614,7 @@ public class SessionPoolTest extends BaseSessionPoolTest {
         SessionPoolOptions.newBuilder()
             .setMinSessions(minSessions)
             .setMaxSessions(1)
-            .setWaitForSessionTimeoutMillis(50L)
+            .setInitialWaitForSessionTimeoutMillis(20L)
             .build();
     SessionImpl mockSession = mockSession();
     when(client.createSession(db)).thenReturn(mockSession);
@@ -606,45 +622,45 @@ public class SessionPoolTest extends BaseSessionPoolTest {
 
     Tracer tracer = Tracing.getTracer();
     Span span = tracer.spanBuilder("RunTest").startSpan();
-    // Take the only session that can be in the pool.
-    Session session1 = pool.getReadSession();
-    // Try to take a read or a read/write session. These requests should timeout.
-    for (Boolean write : new Boolean[] {false, true}) {
+    // Try to take a read or a read/write session. These requests should block.
+    for (Boolean write : new Boolean[] {true, false}) {
+      // Take the only session that can be in the pool.
+      Session checkedOutSession = pool.getReadSession();
+      final Boolean finWrite = write;
+      ExecutorService executor = Executors.newFixedThreadPool(1);
+      Future<Void> fut =
+          executor.submit(
+              new Callable<Void>() {
+                @Override
+                public Void call() throws Exception {
+                  Session session;
+                  if (finWrite) {
+                    session = pool.getReadWriteSession();
+                  } else {
+                    session = pool.getReadSession();
+                  }
+                  session.close();
+                  return null;
+                }
+              });
       try {
-        if (write) {
-          pool.getReadWriteSession();
-        } else {
-          pool.getReadSession();
-        }
-        fail("expected DEADLINE_EXCEEDED");
-      } catch (SpannerException e) {
-        if (e.getErrorCode() != ErrorCode.DEADLINE_EXCEEDED) {
-          fail("expected DEADLINE_EXCEEDED");
-        }
+        fut.get(40L, TimeUnit.MILLISECONDS);
+        fail("missing expected timeout exception");
+      } catch (TimeoutException e) {
+        // Return the checked out session to the pool so the async request will get a session and
+        // finish.
+        checkedOutSession.close();
+        fut.get();
+        executor.shutdown();
       }
     }
-    session1.close();
-    session1 = pool.getReadSession();
-    assertThat(session1).isNotNull();
-    session1.close();
+    Session session = pool.getReadSession();
+    assertThat(session).isNotNull();
+    session.close();
     span.end();
     Tracing.getExportComponent().shutdown();
     // Verify that we got a DEADLINE_EXCEEDED span for both read and read/write session.
-    SampledSpanStore samples = Tracing.getExportComponent().getSampledSpanStore();
-    assertThat(
-        samples
-            .getErrorSampledSpans(
-                ErrorFilter.create(
-                    SessionPool.WAIT_FOR_READ_SESSION, CanonicalCode.DEADLINE_EXCEEDED, 0))
-            .size(),
-        is(equalTo(1)));
-    assertThat(
-        samples
-            .getErrorSampledSpans(
-                ErrorFilter.create(
-                    SessionPool.WAIT_FOR_READ_WRITE_SESSION, CanonicalCode.DEADLINE_EXCEEDED, 0))
-            .size(),
-        is(equalTo(1)));
+    assertThat(deadlineExceededCount.get(), is(equalTo(2)));
   }
 
   @Test
