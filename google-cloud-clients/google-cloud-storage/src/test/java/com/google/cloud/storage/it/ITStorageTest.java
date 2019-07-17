@@ -156,6 +156,8 @@ public class ITStorageTest {
   private static final boolean IS_VPC_TEST =
       System.getenv("GOOGLE_CLOUD_TESTS_IN_VPCSC") != null
           && System.getenv("GOOGLE_CLOUD_TESTS_IN_VPCSC").equalsIgnoreCase("true");
+  private static final List<String> LOCATION_TYPES =
+      ImmutableList.of("multi-region", "region", "dual-region");
 
   @BeforeClass
   public static void beforeClass() throws IOException {
@@ -2583,5 +2585,40 @@ public class ITStorageTest {
 
     assertEquals(bytesArrayToUpload.length, lengthOfDownLoadBytes);
     assertTrue(storage.delete(BUCKET, blobName));
+  }
+
+  @Test
+  public void testBucketLocationType() throws ExecutionException, InterruptedException {
+    String bucketName = RemoteStorageHelper.generateBucketName();
+    long bucketMetageneration = 42;
+    storage.create(
+        BucketInfo.newBuilder(bucketName)
+            .setLocation("us")
+            .setRetentionPeriod(RETENTION_PERIOD)
+            .build());
+    Bucket bucket =
+        storage.get(
+            bucketName, Storage.BucketGetOption.metagenerationNotMatch(bucketMetageneration));
+    assertTrue(LOCATION_TYPES.contains(bucket.getLocationType()));
+
+    Bucket bucket1 =
+        storage.lockRetentionPolicy(bucket, Storage.BucketTargetOption.metagenerationMatch());
+    assertTrue(LOCATION_TYPES.contains(bucket1.getLocationType()));
+
+    Bucket updatedBucket =
+        storage.update(
+            BucketInfo.newBuilder(bucketName)
+                .setLocation("asia")
+                .setRetentionPeriod(RETENTION_PERIOD)
+                .build());
+    assertTrue(LOCATION_TYPES.contains(updatedBucket.getLocationType()));
+
+    Iterator<Bucket> bucketIterator =
+        storage.list(Storage.BucketListOption.prefix(bucketName)).iterateAll().iterator();
+    while (bucketIterator.hasNext()) {
+      Bucket remoteBucket = bucketIterator.next();
+      assertTrue(LOCATION_TYPES.contains(remoteBucket.getLocationType()));
+    }
+    RemoteStorageHelper.forceDelete(storage, bucketName, 5, TimeUnit.SECONDS);
   }
 }
