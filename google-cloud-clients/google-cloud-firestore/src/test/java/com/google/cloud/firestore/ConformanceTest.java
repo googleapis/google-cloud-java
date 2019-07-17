@@ -16,6 +16,7 @@
 
 package com.google.cloud.firestore;
 
+import static com.google.cloud.conformance.ConformanceTestLocator.newMatchPattern;
 import static com.google.cloud.firestore.ConformanceConversions.convertInput;
 import static com.google.cloud.firestore.ConformanceConversions.convertPath;
 import static com.google.cloud.firestore.ConformanceConversions.convertPaths;
@@ -35,23 +36,25 @@ import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.Timestamp;
+import com.google.cloud.conformance.ConformanceTestLocator;
+import com.google.cloud.conformance.ConformanceTestLocator.MatchPattern;
+import com.google.cloud.conformance.firestore.v1.TestDefinition;
+import com.google.cloud.conformance.firestore.v1.TestDefinition.Clause;
+import com.google.cloud.conformance.firestore.v1.TestDefinition.CreateTest;
+import com.google.cloud.conformance.firestore.v1.TestDefinition.Cursor;
+import com.google.cloud.conformance.firestore.v1.TestDefinition.DeleteTest;
+import com.google.cloud.conformance.firestore.v1.TestDefinition.DocChange;
+import com.google.cloud.conformance.firestore.v1.TestDefinition.DocChange.Kind;
+import com.google.cloud.conformance.firestore.v1.TestDefinition.DocSnapshot;
+import com.google.cloud.conformance.firestore.v1.TestDefinition.GetTest;
+import com.google.cloud.conformance.firestore.v1.TestDefinition.ListenTest;
+import com.google.cloud.conformance.firestore.v1.TestDefinition.OrderBy;
+import com.google.cloud.conformance.firestore.v1.TestDefinition.SetTest;
+import com.google.cloud.conformance.firestore.v1.TestDefinition.Snapshot;
+import com.google.cloud.conformance.firestore.v1.TestDefinition.UpdatePathsTest;
+import com.google.cloud.conformance.firestore.v1.TestDefinition.UpdateTest;
+import com.google.cloud.conformance.firestore.v1.TestDefinition.Where;
 import com.google.cloud.firestore.Query.Direction;
-import com.google.cloud.firestore.conformance.TestDefinition;
-import com.google.cloud.firestore.conformance.TestDefinition.Clause;
-import com.google.cloud.firestore.conformance.TestDefinition.CreateTest;
-import com.google.cloud.firestore.conformance.TestDefinition.Cursor;
-import com.google.cloud.firestore.conformance.TestDefinition.DeleteTest;
-import com.google.cloud.firestore.conformance.TestDefinition.DocChange;
-import com.google.cloud.firestore.conformance.TestDefinition.DocChange.Kind;
-import com.google.cloud.firestore.conformance.TestDefinition.DocSnapshot;
-import com.google.cloud.firestore.conformance.TestDefinition.GetTest;
-import com.google.cloud.firestore.conformance.TestDefinition.ListenTest;
-import com.google.cloud.firestore.conformance.TestDefinition.OrderBy;
-import com.google.cloud.firestore.conformance.TestDefinition.SetTest;
-import com.google.cloud.firestore.conformance.TestDefinition.Snapshot;
-import com.google.cloud.firestore.conformance.TestDefinition.UpdatePathsTest;
-import com.google.cloud.firestore.conformance.TestDefinition.UpdateTest;
-import com.google.cloud.firestore.conformance.TestDefinition.Where;
 import com.google.cloud.firestore.spi.v1.FirestoreRpc;
 import com.google.common.base.Preconditions;
 import com.google.firestore.v1.BatchGetDocumentsRequest;
@@ -63,8 +66,11 @@ import com.google.firestore.v1.RunQueryRequest;
 import com.google.firestore.v1.Value;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Message;
+import com.google.protobuf.util.JsonFormat;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -94,9 +100,6 @@ import org.mockito.stubbing.Answer;
 @RunWith(AllTests.class)
 public class ConformanceTest {
 
-  private static final String TEST_FILE =
-      "/com/google/cloud/firestore/conformance/test-suite.binproto";
-
   /** Excluded tests by test description. */
   private static final Set<String> excludedTests = Collections.emptySet();
 
@@ -109,16 +112,16 @@ public class ConformanceTest {
   public ConformanceTest() {}
 
   /** Generate the test suite based on the tests defined in test_data.binprotos. */
-  public static TestSuite suite() throws IOException {
+  public static TestSuite suite() throws Exception {
     TestSuite suite = new TestSuite();
-    final TestDefinition.TestSuite testSuite = parseTests();
+    final TestDefinition.TestFile testSuite = parseTests();
     for (Test test : initTests(testSuite)) {
       suite.addTest(test);
     }
     return suite;
   }
 
-  private static List<Test> initTests(TestDefinition.TestSuite testSuite) {
+  private static List<Test> initTests(TestDefinition.TestFile testSuite) {
     final List<Test> tests = new ArrayList<>();
     for (final TestDefinition.Test testDefinition : testSuite.getTestsList()) {
       if (!includedTests.isEmpty() && !includedTests.contains(testDefinition.getDescription())
@@ -134,9 +137,24 @@ public class ConformanceTest {
   }
 
   /** Reads the test definition from the Proto file. */
-  private static TestDefinition.TestSuite parseTests() throws IOException {
-    final InputStream is = ConformanceTest.class.getResourceAsStream(TEST_FILE);
-    return TestDefinition.TestSuite.parseFrom(is);
+  private static TestDefinition.TestFile parseTests() throws IOException, URISyntaxException {
+    final ClassLoader cl = Thread.currentThread().getContextClassLoader();
+    final MatchPattern matchPattern =
+        newMatchPattern("com/google/cloud/conformance/firestore/v1", ".json");
+    final List<String> jsonResources =
+        ConformanceTestLocator.findAllResourcePaths(matchPattern, cl);
+
+    final TestDefinition.TestFile.Builder suite = TestDefinition.TestFile.newBuilder();
+
+    for (String jsonResource : jsonResources) {
+      final InputStream is = cl.getResourceAsStream(jsonResource);
+      Assert.assertNotNull(String.format("Unable to load test definition: '%s'", jsonResource), is);
+      final InputStreamReader reader = new InputStreamReader(is);
+      final TestDefinition.TestFile.Builder testBuilder = TestDefinition.TestFile.newBuilder();
+      JsonFormat.parser().merge(reader, testBuilder);
+      suite.addAllTests(testBuilder.build().getTestsList());
+    }
+    return suite.build();
   }
 
   /** Returns the test case for the provided test definition. */

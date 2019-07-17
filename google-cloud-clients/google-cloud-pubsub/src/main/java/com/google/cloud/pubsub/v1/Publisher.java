@@ -269,9 +269,8 @@ public class Publisher {
    *
    * @param key The key for which to resume publishing.
    */
-  // TODO: make this public when Ordering keys is live
-  @BetaApi
-  void resumePublish(String key) {
+  @BetaApi("Ordering is not yet fully supported and requires special project enablements.")
+  public void resumePublish(String key) {
     Preconditions.checkState(!shutdown.get(), "Cannot publish on a shut-down publisher.");
     sequentialExecutor.resumePublish(key);
   }
@@ -692,9 +691,8 @@ public class Publisher {
     }
 
     /** Sets the message ordering option. */
-    // TODO: make this public when Ordering keys is live
-    @BetaApi
-    Builder setEnableMessageOrdering(boolean enableMessageOrdering) {
+    @BetaApi("Ordering is not yet fully supported and requires special project enablements.")
+    public Builder setEnableMessageOrdering(boolean enableMessageOrdering) {
       this.enableMessageOrdering = enableMessageOrdering;
       return this;
     }

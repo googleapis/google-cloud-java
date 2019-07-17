@@ -89,12 +89,13 @@ import javax.annotation.Nonnull;
  * To customize the endpoint:
  *
  * <pre>{@code
- * BigtableInstanceAdminSettings settings = BigtableInstanceAdminSettings.newBuilder()
- *   .setProjectId("my-project")
- *   .setEndpoint(myEndpoint)
- *   .build();
+ * BigtableInstanceAdminSettings.Builder settingsBuilder = BigtableInstanceAdminSettings.newBuilder()
+ *   .setProjectId("my-project");
  *
- * BigtableInstanceAdminClient client = BigtableInstanceAdminClient.create(settings);
+ * settingsBuilder.stubSettings()
+ *   .setEndpoint(myEndpoint);
+ *
+ * BigtableInstanceAdminClient client = BigtableInstanceAdminClient.create(settingsBuilder.build());
  * }</pre>
  */
 public final class BigtableInstanceAdminClient implements AutoCloseable {

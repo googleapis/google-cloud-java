@@ -96,6 +96,7 @@ public class BucketInfo implements Serializable {
   private final Boolean retentionPolicyIsLocked;
   private final Long retentionPeriod;
   private final IamConfiguration iamConfiguration;
+  private final String locationType;
 
   /**
    * The Bucket's IAM Configuration.
@@ -848,6 +849,8 @@ public class BucketInfo implements Serializable {
 
     abstract Builder setMetageneration(Long metageneration);
 
+    abstract Builder setLocationType(String locationType);
+
     /**
      * Sets the bucket's Cross-Origin Resource Sharing (CORS) configuration.
      *
@@ -938,6 +941,7 @@ public class BucketInfo implements Serializable {
     private Boolean retentionPolicyIsLocked;
     private Long retentionPeriod;
     private IamConfiguration iamConfiguration;
+    private String locationType;
 
     BuilderImpl(String name) {
       this.name = name;
@@ -969,6 +973,7 @@ public class BucketInfo implements Serializable {
       retentionPolicyIsLocked = bucketInfo.retentionPolicyIsLocked;
       retentionPeriod = bucketInfo.retentionPeriod;
       iamConfiguration = bucketInfo.iamConfiguration;
+      locationType = bucketInfo.locationType;
     }
 
     @Override
@@ -1128,6 +1133,12 @@ public class BucketInfo implements Serializable {
     }
 
     @Override
+    Builder setLocationType(String locationType) {
+      this.locationType = locationType;
+      return this;
+    }
+
+    @Override
     public BucketInfo build() {
       checkNotNull(name);
       return new BucketInfo(this);
@@ -1160,6 +1171,7 @@ public class BucketInfo implements Serializable {
     retentionPolicyIsLocked = builder.retentionPolicyIsLocked;
     retentionPeriod = builder.retentionPeriod;
     iamConfiguration = builder.iamConfiguration;
+    locationType = builder.locationType;
   }
 
   /** Returns the service-generated id for the bucket. */
@@ -1281,6 +1293,15 @@ public class BucketInfo implements Serializable {
    */
   public String getLocation() {
     return location;
+  }
+
+  /**
+   * Returns the bucket's locationType.
+   *
+   * @see <a href="https://cloud.google.com/storage/docs/bucket-locations">Bucket LocationType</a>
+   */
+  public String getLocationType() {
+    return locationType;
   }
 
   /**
@@ -1441,6 +1462,9 @@ public class BucketInfo implements Serializable {
     }
     if (location != null) {
       bucketPb.setLocation(location);
+    }
+    if (locationType != null) {
+      bucketPb.setLocationType(locationType);
     }
     if (storageClass != null) {
       bucketPb.setStorageClass(storageClass.toString());
@@ -1666,6 +1690,11 @@ public class BucketInfo implements Serializable {
       }
     }
     Bucket.IamConfiguration iamConfiguration = bucketPb.getIamConfiguration();
+
+    if (bucketPb.getLocationType() != null) {
+      builder.setLocationType(bucketPb.getLocationType());
+    }
+
     if (iamConfiguration != null) {
       builder.setIamConfiguration(IamConfiguration.fromPb(iamConfiguration));
     }

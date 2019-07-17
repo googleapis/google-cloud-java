@@ -42,8 +42,11 @@ import com.google.api.services.bigquery.model.Job;
 import com.google.api.services.bigquery.model.JobList;
 import com.google.api.services.bigquery.model.JobStatus;
 import com.google.api.services.bigquery.model.ListModelsResponse;
+import com.google.api.services.bigquery.model.ListRoutinesResponse;
 import com.google.api.services.bigquery.model.Model;
 import com.google.api.services.bigquery.model.ModelReference;
+import com.google.api.services.bigquery.model.Routine;
+import com.google.api.services.bigquery.model.RoutineReference;
 import com.google.api.services.bigquery.model.Table;
 import com.google.api.services.bigquery.model.TableDataInsertAllRequest;
 import com.google.api.services.bigquery.model.TableDataInsertAllResponse;
@@ -128,6 +131,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
               .datasets()
               .list(projectId)
               .setAll(Option.ALL_DATASETS.getBoolean(options))
+              .setFilter(Option.LABEL_FILTER.getString(options))
               .setMaxResults(Option.MAX_RESULTS.getLong(options))
               .setPageToken(Option.PAGE_TOKEN.getString(options))
               .setPageToken(Option.PAGE_TOKEN.getString(options))
@@ -165,6 +169,20 @@ public class HttpBigQueryRpc implements BigQueryRpc {
       return bigquery
           .tables()
           .insert(reference.getProjectId(), reference.getDatasetId(), table)
+          .setFields(Option.FIELDS.getString(options))
+          .execute();
+    } catch (IOException ex) {
+      throw translate(ex);
+    }
+  }
+
+  @Override
+  public Routine create(Routine routine, Map<Option, ?> options) {
+    try {
+      RoutineReference reference = routine.getRoutineReference();
+      return bigquery
+          .routines()
+          .insert(reference.getProjectId(), reference.getDatasetId(), routine)
           .setFields(Option.FIELDS.getString(options))
           .execute();
     } catch (IOException ex) {
@@ -369,6 +387,71 @@ public class HttpBigQueryRpc implements BigQueryRpc {
   }
 
   @Override
+  public Routine update(Routine routine, Map<Option, ?> options) {
+    try {
+      RoutineReference reference = routine.getRoutineReference();
+      return bigquery
+          .routines()
+          .update(
+              reference.getProjectId(), reference.getDatasetId(), reference.getRoutineId(), routine)
+          .setFields(Option.FIELDS.getString(options))
+          .execute();
+    } catch (IOException ex) {
+      throw translate(ex);
+    }
+  }
+
+  @Override
+  public Routine getRoutine(
+      String projectId, String datasetId, String routineId, Map<Option, ?> options) {
+    try {
+      return bigquery
+          .routines()
+          .get(projectId, datasetId, routineId)
+          .setFields(Option.FIELDS.getString(options))
+          .execute();
+    } catch (IOException ex) {
+      BigQueryException serviceException = translate(ex);
+      if (serviceException.getCode() == HTTP_NOT_FOUND) {
+        return null;
+      }
+      throw serviceException;
+    }
+  }
+
+  @Override
+  public Tuple<String, Iterable<Routine>> listRoutines(
+      String projectId, String datasetId, Map<Option, ?> options) {
+    try {
+      ListRoutinesResponse routineList =
+          bigquery
+              .routines()
+              .list(projectId, datasetId)
+              .setMaxResults(Option.MAX_RESULTS.getLong(options))
+              .setPageToken(Option.PAGE_TOKEN.getString(options))
+              .execute();
+      Iterable<Routine> routines = routineList.getRoutines();
+      return Tuple.of(routineList.getNextPageToken(), routines);
+    } catch (IOException ex) {
+      throw translate(ex);
+    }
+  }
+
+  @Override
+  public boolean deleteRoutine(String projectId, String datasetId, String routineId) {
+    try {
+      bigquery.routines().delete(projectId, datasetId, routineId).execute();
+      return true;
+    } catch (IOException ex) {
+      BigQueryException serviceException = translate(ex);
+      if (serviceException.getCode() == HTTP_NOT_FOUND) {
+        return false;
+      }
+      throw serviceException;
+    }
+  }
+
+  @Override
   public TableDataInsertAllResponse insertAll(
       String projectId, String datasetId, String tableId, TableDataInsertAllRequest request) {
     try {
@@ -418,7 +501,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
   @Override
   public Tuple<String, Iterable<Job>> listJobs(String projectId, Map<Option, ?> options) {
     try {
-      JobList jobsList =
+      Bigquery.Jobs.List request =
           bigquery
               .jobs()
               .list(projectId)
@@ -427,8 +510,15 @@ public class HttpBigQueryRpc implements BigQueryRpc {
               .setStateFilter(Option.STATE_FILTER.<List<String>>get(options))
               .setMaxResults(Option.MAX_RESULTS.getLong(options))
               .setPageToken(Option.PAGE_TOKEN.getString(options))
-              .setProjection(DEFAULT_PROJECTION)
-              .execute();
+              .setProjection(DEFAULT_PROJECTION);
+      if (Option.MIN_CREATION_TIME.getLong(options) != null) {
+        request.setMinCreationTime(BigInteger.valueOf(Option.MIN_CREATION_TIME.getLong(options)));
+      }
+      if (Option.MAX_CREATION_TIME.getLong(options) != null) {
+        request.setMaxCreationTime(BigInteger.valueOf(Option.MAX_CREATION_TIME.getLong(options)));
+      }
+      JobList jobsList = request.execute();
+
       Iterable<JobList.Jobs> jobs = jobsList.getJobs();
       return Tuple.of(
           jobsList.getNextPageToken(),
