@@ -31,6 +31,10 @@
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-firestore-v1</artifactId>
     </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>proto-google-cloud-bigtable-v2</artifactId>
+    </dependency>
   </dependencies>
 
   <build>
