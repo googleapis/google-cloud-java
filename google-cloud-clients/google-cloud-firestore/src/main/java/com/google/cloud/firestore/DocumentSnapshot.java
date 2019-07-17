@@ -233,7 +233,7 @@ public class DocumentSnapshot {
     Map<String, Object> data = getData();
     return data == null
         ? null
-        : CustomClassMapper.convertToCustomClass(getData(), valueType, docRef);
+        : CustomClassMapper.convertToCustomClass(data, valueType, docRef);
   }
 
   /**

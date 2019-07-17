@@ -23,7 +23,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /** A set of utilities for tests */
-public class TestUtil {
+class TestUtil {
 
   @SuppressWarnings("unchecked")
   public static <T> Map<String, T> map(Object... entries) {

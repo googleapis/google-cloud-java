@@ -1174,7 +1174,7 @@ class CustomClassMapper {
   }
 
   /** Holds information a deserialization operation needs to complete the job. */
-  static class DeserializeContext {
+  private static class DeserializeContext {
 
     /** Current path to the field being deserialized, used for better error messages. */
     final ErrorPath errorPath;
