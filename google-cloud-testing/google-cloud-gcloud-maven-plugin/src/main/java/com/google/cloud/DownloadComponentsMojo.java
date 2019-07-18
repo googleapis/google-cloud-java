@@ -42,11 +42,17 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 import org.apache.commons.compress.archivers.ArchiveEntry;
 import org.apache.commons.compress.archivers.tar.TarArchiveInputStream;
 import org.apache.commons.compress.compressors.gzip.GzipCompressorInputStream;
 import org.apache.commons.compress.utils.IOUtils;
+import org.apache.commons.compress.utils.Lists;
 import org.apache.commons.io.FileUtils;
 import org.apache.maven.execution.MavenSession;
 import org.apache.maven.plugin.AbstractMojo;
@@ -83,7 +89,20 @@ public class DownloadComponentsMojo extends AbstractMojo {
   @Parameter(defaultValue = "${session}", readonly = true)
   private MavenSession session;
 
+  private ExecutorService executor;
+
   public void execute() throws MojoExecutionException {
+    executor = Executors.newCachedThreadPool();
+
+    try {
+      executeInner();
+    } finally {
+      executor.shutdown();
+      executor = null;
+    }
+  }
+
+  private void executeInner() throws MojoExecutionException {
     if (shouldSkipDownload) {
       return;
     }
@@ -119,17 +138,34 @@ public class DownloadComponentsMojo extends AbstractMojo {
       checksums = new HashMap<>();
     }
 
-    // Download any updated components
-    for (Component component : components) {
+    // Download any updated components in parallel
+    List<Future<?>> futures = Lists.newArrayList();
+
+    for (final Component component : components) {
       if (!forceRefresh && component.getChecksum().equals(checksums.get(component.getId()))) {
         continue;
       }
 
+      futures.add(downloadComponentAsync(component));
+    }
+
+    // Wait for all downloads to finish and unwrap any errors
+    for (Future<?> future : futures) {
       try {
-        downloadComponent(component);
-      } catch (Exception e) {
-        throw new MojoExecutionException("Failed to download component " + component.getId(), e);
+        future.get();
+      } catch (ExecutionException e) {
+        if (e.getCause() instanceof MojoExecutionException) {
+          throw ((MojoExecutionException) e.getCause());
+        } else {
+          throw new MojoExecutionException("Unexpected execution error downloading component", e.getCause());
+        }
+      } catch (InterruptedException e) {
+        Thread.currentThread().interrupt();
+        throw new MojoExecutionException("Interrupted while downloading component");
       }
+    }
+    if (futures.size() > 0) {
+      getLog().info("Finished downloading all components");
     }
 
     // Write the checksums of the newly updated components.
@@ -249,6 +285,21 @@ public class DownloadComponentsMojo extends AbstractMojo {
       }
     }
     return results;
+  }
+
+  private Future<Void> downloadComponentAsync(final Component component) {
+    return executor.submit(new Callable<Void>() {
+      @Override
+      public Void call() throws MojoExecutionException {
+        try {
+          downloadComponent(component);
+        } catch (Exception e) {
+          throw new MojoExecutionException("Failed to download " + component.getId(), e);
+        }
+
+        return null;
+      }
+    });
   }
 
   /** Downloads and extracts the component into the destinationDir. */
