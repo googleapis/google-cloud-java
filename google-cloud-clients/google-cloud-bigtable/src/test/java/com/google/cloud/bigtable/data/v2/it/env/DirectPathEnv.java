@@ -51,8 +51,8 @@ import java.util.concurrent.TimeoutException;
 public class DirectPathEnv implements TestEnv {
   // TODO(igorbernstein): move direct path conditional logic to gax
   private static final String DIRECT_PATH_ENV_VAR = "GOOGLE_CLOUD_ENABLE_DIRECT_PATH";
-  private static final String DIRECT_PATH_SERVICE_NAME =
-      "testdirectpath-bigtable.sandbox.googleapis.com";
+  private static final String DIRECT_PATH_END_POINT =
+      "testdirectpath-bigtable.sandbox.googleapis.com:443";
 
   private static final String PROJECT_PROPERTY_NAME = "bigtable.project";
   private static final String INSTANCE_PROPERTY_NAME = "bigtable.instance";
@@ -90,7 +90,7 @@ public class DirectPathEnv implements TestEnv {
         BigtableDataSettings.newBuilder().setProjectId(projectId).setInstanceId(instanceId);
 
     // Direct path test environment uses a different endpoint.
-    settingsBuilder.stubSettings().setEndpoint(DIRECT_PATH_SERVICE_NAME + ":443");
+    settingsBuilder.stubSettings().setEndpoint(DIRECT_PATH_END_POINT);
 
     // TODO(igorbernstein): move direct path conditional logic to gax
     // Direct path environment can be accessed via CFE or direct path. When using direct path,
@@ -173,7 +173,7 @@ public class DirectPathEnv implements TestEnv {
     }
 
     for (String service : whiteList.split(",")) {
-      if (!service.isEmpty() && DIRECT_PATH_SERVICE_NAME.contains(service)) {
+      if (!service.isEmpty() && DIRECT_PATH_END_POINT.contains(service)) {
         return true;
       }
     }
