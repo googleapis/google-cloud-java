@@ -94,11 +94,14 @@
           <parallel>classes</parallel>
           <perCoreThreadCount>true</perCoreThreadCount>
           <threadCount>2</threadCount>
+          <trimStackTrace>false</trimStackTrace>
+          <test>com.google.cloud.bigtable.data.v2.it.**</test>
+          <test>com.google.cloud.bigtable.admin.v2.it.**</test>
         </configuration>
         <dependencies>
           <dependency>
             <groupId>org.apache.maven.surefire</groupId>
-            <artifactId>surefire-junit4</artifactId>
+            <artifactId>surefire-junit47</artifactId>
             <version>3.0.0-M3</version>
           </dependency>
         </dependencies>
@@ -109,10 +112,18 @@
         <dependencies>
           <dependency>
             <groupId>org.apache.maven.surefire</groupId>
-            <artifactId>surefire-junit4</artifactId>
+            <artifactId>surefire-junit47</artifactId>
             <version>3.0.0-M3</version>
           </dependency>
         </dependencies>
+
+        <configuration>
+          <!--
+            TODO(igorbernstein): enable parallel tests once the generate client tests use unique
+            names for the mock server
+          -->
+          <trimStackTrace>false</trimStackTrace>
+        </configuration>
       </plugin>
     </plugins>
   </build>
