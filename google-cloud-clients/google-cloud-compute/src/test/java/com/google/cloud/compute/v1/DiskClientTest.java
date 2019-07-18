@@ -17,6 +17,7 @@ package com.google.cloud.compute.v1;
 
 import static com.google.cloud.compute.v1.DiskClient.AggregatedListDisksPagedResponse;
 import static com.google.cloud.compute.v1.DiskClient.ListDisksPagedResponse;
+import static com.google.cloud.compute.v1.stub.HttpJsonDiskStub.addResourcePoliciesDiskMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonDiskStub.aggregatedListDisksMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonDiskStub.createSnapshotDiskMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonDiskStub.deleteDiskMethodDescriptor;
@@ -24,6 +25,7 @@ import static com.google.cloud.compute.v1.stub.HttpJsonDiskStub.getDiskMethodDes
 import static com.google.cloud.compute.v1.stub.HttpJsonDiskStub.getIamPolicyDiskMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonDiskStub.insertDiskMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonDiskStub.listDisksMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonDiskStub.removeResourcePoliciesDiskMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonDiskStub.resizeDiskMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonDiskStub.setIamPolicyDiskMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonDiskStub.setLabelsDiskMethodDescriptor;
@@ -59,6 +61,7 @@ public class DiskClientTest {
   private static final List<ApiMethodDescriptor> METHOD_DESCRIPTORS =
       ImmutableList.copyOf(
           Lists.<ApiMethodDescriptor>newArrayList(
+              addResourcePoliciesDiskMethodDescriptor,
               aggregatedListDisksMethodDescriptor,
               createSnapshotDiskMethodDescriptor,
               deleteDiskMethodDescriptor,
@@ -66,6 +69,7 @@ public class DiskClientTest {
               getIamPolicyDiskMethodDescriptor,
               insertDiskMethodDescriptor,
               listDisksMethodDescriptor,
+              removeResourcePoliciesDiskMethodDescriptor,
               resizeDiskMethodDescriptor,
               setIamPolicyDiskMethodDescriptor,
               setLabelsDiskMethodDescriptor,
@@ -97,6 +101,99 @@ public class DiskClientTest {
   @AfterClass
   public static void tearDown() throws Exception {
     client.close();
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void addResourcePoliciesDiskTest() {
+    String clientOperationId = "clientOperationId-239630617";
+    String creationTimestamp = "creationTimestamp567396278";
+    String description = "description-1724546052";
+    String endTime = "endTime1725551537";
+    String httpErrorMessage = "httpErrorMessage1276263769";
+    Integer httpErrorStatusCode = 1386087020;
+    String id = "id3355";
+    String insertTime = "insertTime-103148397";
+    String kind = "kind3292052";
+    String name = "name3373707";
+    String operationType = "operationType-1432962286";
+    Integer progress = 1001078227;
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+    String selfLink = "selfLink-1691268851";
+    String startTime = "startTime-1573145462";
+    String status = "status-892481550";
+    String statusMessage = "statusMessage-239442758";
+    String targetId = "targetId-815576439";
+    String targetLink = "targetLink-2084812312";
+    String user = "user3599307";
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
+    Operation expectedResponse =
+        Operation.newBuilder()
+            .setClientOperationId(clientOperationId)
+            .setCreationTimestamp(creationTimestamp)
+            .setDescription(description)
+            .setEndTime(endTime)
+            .setHttpErrorMessage(httpErrorMessage)
+            .setHttpErrorStatusCode(httpErrorStatusCode)
+            .setId(id)
+            .setInsertTime(insertTime)
+            .setKind(kind)
+            .setName(name)
+            .setOperationType(operationType)
+            .setProgress(progress)
+            .setRegion(region.toString())
+            .setSelfLink(selfLink)
+            .setStartTime(startTime)
+            .setStatus(status)
+            .setStatusMessage(statusMessage)
+            .setTargetId(targetId)
+            .setTargetLink(targetLink)
+            .setUser(user)
+            .setZone(zone.toString())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ProjectZoneDiskName disk = ProjectZoneDiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
+    DisksAddResourcePoliciesRequest disksAddResourcePoliciesRequestResource =
+        DisksAddResourcePoliciesRequest.newBuilder().build();
+
+    Operation actualResponse =
+        client.addResourcePoliciesDisk(disk, disksAddResourcePoliciesRequestResource);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void addResourcePoliciesDiskExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ProjectZoneDiskName disk = ProjectZoneDiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
+      DisksAddResourcePoliciesRequest disksAddResourcePoliciesRequestResource =
+          DisksAddResourcePoliciesRequest.newBuilder().build();
+
+      client.addResourcePoliciesDisk(disk, disksAddResourcePoliciesRequestResource);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
   }
 
   @Test
@@ -621,6 +718,99 @@ public class DiskClientTest {
       ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
 
       client.listDisks(zone);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void removeResourcePoliciesDiskTest() {
+    String clientOperationId = "clientOperationId-239630617";
+    String creationTimestamp = "creationTimestamp567396278";
+    String description = "description-1724546052";
+    String endTime = "endTime1725551537";
+    String httpErrorMessage = "httpErrorMessage1276263769";
+    Integer httpErrorStatusCode = 1386087020;
+    String id = "id3355";
+    String insertTime = "insertTime-103148397";
+    String kind = "kind3292052";
+    String name = "name3373707";
+    String operationType = "operationType-1432962286";
+    Integer progress = 1001078227;
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+    String selfLink = "selfLink-1691268851";
+    String startTime = "startTime-1573145462";
+    String status = "status-892481550";
+    String statusMessage = "statusMessage-239442758";
+    String targetId = "targetId-815576439";
+    String targetLink = "targetLink-2084812312";
+    String user = "user3599307";
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
+    Operation expectedResponse =
+        Operation.newBuilder()
+            .setClientOperationId(clientOperationId)
+            .setCreationTimestamp(creationTimestamp)
+            .setDescription(description)
+            .setEndTime(endTime)
+            .setHttpErrorMessage(httpErrorMessage)
+            .setHttpErrorStatusCode(httpErrorStatusCode)
+            .setId(id)
+            .setInsertTime(insertTime)
+            .setKind(kind)
+            .setName(name)
+            .setOperationType(operationType)
+            .setProgress(progress)
+            .setRegion(region.toString())
+            .setSelfLink(selfLink)
+            .setStartTime(startTime)
+            .setStatus(status)
+            .setStatusMessage(statusMessage)
+            .setTargetId(targetId)
+            .setTargetLink(targetLink)
+            .setUser(user)
+            .setZone(zone.toString())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ProjectZoneDiskName disk = ProjectZoneDiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
+    DisksRemoveResourcePoliciesRequest disksRemoveResourcePoliciesRequestResource =
+        DisksRemoveResourcePoliciesRequest.newBuilder().build();
+
+    Operation actualResponse =
+        client.removeResourcePoliciesDisk(disk, disksRemoveResourcePoliciesRequestResource);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void removeResourcePoliciesDiskExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ProjectZoneDiskName disk = ProjectZoneDiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
+      DisksRemoveResourcePoliciesRequest disksRemoveResourcePoliciesRequestResource =
+          DisksRemoveResourcePoliciesRequest.newBuilder().build();
+
+      client.removeResourcePoliciesDisk(disk, disksRemoveResourcePoliciesRequestResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

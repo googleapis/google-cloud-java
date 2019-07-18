@@ -369,10 +369,10 @@ public class SslPolicyClient implements BackgroundResource {
    * </code></pre>
    *
    * @param project Project ID for this request.
-   * @param sslPolicyResource A SSL policy specifies the server-side support for SSL features. This
-   *     can be attached to a TargetHttpsProxy or a TargetSslProxy. This affects connections between
-   *     clients and the HTTPS or SSL proxy load balancer. They do not affect the connection between
-   *     the load balancers and the backends.
+   * @param sslPolicyResource Represents a Cloud Armor Security Policy resource.
+   *     <p>Only external backend services used by HTTP or HTTPS load balancers can reference a
+   *     Security Policy. For more information, read read Cloud Armor Security Policy Concepts. (==
+   *     resource_for beta.sslPolicies ==) (== resource_for v1.sslPolicies ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -402,10 +402,10 @@ public class SslPolicyClient implements BackgroundResource {
    * </code></pre>
    *
    * @param project Project ID for this request.
-   * @param sslPolicyResource A SSL policy specifies the server-side support for SSL features. This
-   *     can be attached to a TargetHttpsProxy or a TargetSslProxy. This affects connections between
-   *     clients and the HTTPS or SSL proxy load balancer. They do not affect the connection between
-   *     the load balancers and the backends.
+   * @param sslPolicyResource Represents a Cloud Armor Security Policy resource.
+   *     <p>Only external backend services used by HTTP or HTTPS load balancers can reference a
+   *     Security Policy. For more information, read read Cloud Armor Security Policy Concepts. (==
+   *     resource_for beta.sslPolicies ==) (== resource_for v1.sslPolicies ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -728,10 +728,10 @@ public class SslPolicyClient implements BackgroundResource {
    *
    * @param sslPolicy Name of the SSL policy to update. The name must be 1-63 characters long, and
    *     comply with RFC1035.
-   * @param sslPolicyResource A SSL policy specifies the server-side support for SSL features. This
-   *     can be attached to a TargetHttpsProxy or a TargetSslProxy. This affects connections between
-   *     clients and the HTTPS or SSL proxy load balancer. They do not affect the connection between
-   *     the load balancers and the backends.
+   * @param sslPolicyResource Represents a Cloud Armor Security Policy resource.
+   *     <p>Only external backend services used by HTTP or HTTPS load balancers can reference a
+   *     Security Policy. For more information, read read Cloud Armor Security Policy Concepts. (==
+   *     resource_for beta.sslPolicies ==) (== resource_for v1.sslPolicies ==)
    * @param fieldMask The fields that should be serialized (even if they have empty values). If the
    *     containing message object has a non-null fieldmask, then all the fields in the field mask
    *     (and only those fields in the field mask) will be serialized. If the containing object does
@@ -768,10 +768,10 @@ public class SslPolicyClient implements BackgroundResource {
    *
    * @param sslPolicy Name of the SSL policy to update. The name must be 1-63 characters long, and
    *     comply with RFC1035.
-   * @param sslPolicyResource A SSL policy specifies the server-side support for SSL features. This
-   *     can be attached to a TargetHttpsProxy or a TargetSslProxy. This affects connections between
-   *     clients and the HTTPS or SSL proxy load balancer. They do not affect the connection between
-   *     the load balancers and the backends.
+   * @param sslPolicyResource Represents a Cloud Armor Security Policy resource.
+   *     <p>Only external backend services used by HTTP or HTTPS load balancers can reference a
+   *     Security Policy. For more information, read read Cloud Armor Security Policy Concepts. (==
+   *     resource_for beta.sslPolicies ==) (== resource_for v1.sslPolicies ==)
    * @param fieldMask The fields that should be serialized (even if they have empty values). If the
    *     containing message object has a non-null fieldmask, then all the fields in the field mask
    *     (and only those fields in the field mask) will be serialized. If the containing object does

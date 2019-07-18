@@ -145,9 +145,18 @@ public final class UpdateBackendServiceHttpRequest implements ApiMessage {
   }
 
   /**
-   * A BackendService resource. This resource defines a group of backend virtual machines and their
-   * serving capacity. (== resource_for v1.backendService ==) (== resource_for beta.backendService
-   * ==)
+   * Represents a Backend Service resource.
+   *
+   * <p>Backend services must have an associated health check. Backend services also store
+   * information about session affinity. For more information, read Backend Services.
+   *
+   * <p>A backendServices resource represents a global backend service. Global backend services are
+   * used for HTTP(S), SSL Proxy, TCP Proxy load balancing and Traffic Director.
+   *
+   * <p>A regionBackendServices resource represents a regional backend service. Regional backend
+   * services are used for internal TCP/UDP load balancing. For more information, read Internal
+   * TCP/UDP Load balancing. (== resource_for v1.backendService ==) (== resource_for
+   * beta.backendService ==)
    */
   public BackendService getBackendServiceResource() {
     return backendServiceResource;
@@ -336,8 +345,17 @@ public final class UpdateBackendServiceHttpRequest implements ApiMessage {
     }
 
     /**
-     * A BackendService resource. This resource defines a group of backend virtual machines and
-     * their serving capacity. (== resource_for v1.backendService ==) (== resource_for
+     * Represents a Backend Service resource.
+     *
+     * <p>Backend services must have an associated health check. Backend services also store
+     * information about session affinity. For more information, read Backend Services.
+     *
+     * <p>A backendServices resource represents a global backend service. Global backend services
+     * are used for HTTP(S), SSL Proxy, TCP Proxy load balancing and Traffic Director.
+     *
+     * <p>A regionBackendServices resource represents a regional backend service. Regional backend
+     * services are used for internal TCP/UDP load balancing. For more information, read Internal
+     * TCP/UDP Load balancing. (== resource_for v1.backendService ==) (== resource_for
      * beta.backendService ==)
      */
     public BackendService getBackendServiceResource() {
@@ -345,8 +363,17 @@ public final class UpdateBackendServiceHttpRequest implements ApiMessage {
     }
 
     /**
-     * A BackendService resource. This resource defines a group of backend virtual machines and
-     * their serving capacity. (== resource_for v1.backendService ==) (== resource_for
+     * Represents a Backend Service resource.
+     *
+     * <p>Backend services must have an associated health check. Backend services also store
+     * information about session affinity. For more information, read Backend Services.
+     *
+     * <p>A backendServices resource represents a global backend service. Global backend services
+     * are used for HTTP(S), SSL Proxy, TCP Proxy load balancing and Traffic Director.
+     *
+     * <p>A regionBackendServices resource represents a regional backend service. Regional backend
+     * services are used for internal TCP/UDP load balancing. For more information, read Internal
+     * TCP/UDP Load balancing. (== resource_for v1.backendService ==) (== resource_for
      * beta.backendService ==)
      */
     public Builder setBackendServiceResource(BackendService backendServiceResource) {

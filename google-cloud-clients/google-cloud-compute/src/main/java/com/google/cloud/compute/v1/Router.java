@@ -25,7 +25,11 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
-/** Router resource. */
+/**
+ * Represents a Cloud Router resource.
+ *
+ * <p>For more information about Cloud Router, read the the Cloud Router overview.
+ */
 public final class Router implements ApiMessage {
   private final RouterBgp bgp;
   private final List<RouterBgpPeer> bgpPeers;

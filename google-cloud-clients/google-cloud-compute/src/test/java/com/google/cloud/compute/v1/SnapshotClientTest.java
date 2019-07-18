@@ -179,6 +179,7 @@ public class SnapshotClientTest {
   @Test
   @SuppressWarnings("all")
   public void getSnapshotTest() {
+    Boolean autoCreated = true;
     String creationTimestamp = "creationTimestamp567396278";
     String description = "description-1724546052";
     String diskSizeGb = "diskSizeGb-757478089";
@@ -194,6 +195,7 @@ public class SnapshotClientTest {
     String storageBytesStatus = "storageBytesStatus1027609994";
     Snapshot expectedResponse =
         Snapshot.newBuilder()
+            .setAutoCreated(autoCreated)
             .setCreationTimestamp(creationTimestamp)
             .setDescription(description)
             .setDiskSizeGb(diskSizeGb)

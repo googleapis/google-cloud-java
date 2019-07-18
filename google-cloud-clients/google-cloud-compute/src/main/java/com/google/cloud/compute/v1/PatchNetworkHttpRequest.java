@@ -167,8 +167,11 @@ public final class PatchNetworkHttpRequest implements ApiMessage {
   }
 
   /**
-   * Represents a Network resource. Read Virtual Private Cloud (VPC) Network Overview for more
-   * information. (== resource_for v1.networks ==) (== resource_for beta.networks ==)
+   * Represents a VPC Network resource.
+   *
+   * <p>Networks connect resources to each other and to the internet. For more information, read
+   * Virtual Private Cloud (VPC) Network. (== resource_for v1.networks ==) (== resource_for
+   * beta.networks ==)
    */
   public Network getNetworkResource() {
     return networkResource;
@@ -401,16 +404,22 @@ public final class PatchNetworkHttpRequest implements ApiMessage {
     }
 
     /**
-     * Represents a Network resource. Read Virtual Private Cloud (VPC) Network Overview for more
-     * information. (== resource_for v1.networks ==) (== resource_for beta.networks ==)
+     * Represents a VPC Network resource.
+     *
+     * <p>Networks connect resources to each other and to the internet. For more information, read
+     * Virtual Private Cloud (VPC) Network. (== resource_for v1.networks ==) (== resource_for
+     * beta.networks ==)
      */
     public Network getNetworkResource() {
       return networkResource;
     }
 
     /**
-     * Represents a Network resource. Read Virtual Private Cloud (VPC) Network Overview for more
-     * information. (== resource_for v1.networks ==) (== resource_for beta.networks ==)
+     * Represents a VPC Network resource.
+     *
+     * <p>Networks connect resources to each other and to the internet. For more information, read
+     * Virtual Private Cloud (VPC) Network. (== resource_for v1.networks ==) (== resource_for
+     * beta.networks ==)
      */
     public Builder setNetworkResource(Network networkResource) {
       this.networkResource = networkResource;

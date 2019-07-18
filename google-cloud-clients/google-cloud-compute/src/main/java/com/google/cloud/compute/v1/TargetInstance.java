@@ -25,9 +25,12 @@ import javax.annotation.Nullable;
 @Generated("by GAPIC")
 @BetaApi
 /**
- * A TargetInstance resource. This resource defines an endpoint instance that terminates traffic of
- * certain protocols. (== resource_for beta.targetInstances ==) (== resource_for v1.targetInstances
- * ==)
+ * Represents a Target Instance resource.
+ *
+ * <p>You can use a target instance to handle traffic for one or more forwarding rules, which is
+ * ideal for forwarding protocol traffic that is managed by a single source. For example, ESP, AH,
+ * TCP, or UDP. For more information, read Target instances. (== resource_for beta.targetInstances
+ * ==) (== resource_for v1.targetInstances ==)
  */
 public final class TargetInstance implements ApiMessage {
   private final String creationTimestamp;

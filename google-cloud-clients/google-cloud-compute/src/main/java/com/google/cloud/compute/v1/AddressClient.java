@@ -485,7 +485,7 @@ public class AddressClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates an address resource in the specified project using the data included in the request.
+   * Creates an address resource in the specified project by using the data included in the request.
    *
    * <p>Sample code:
    *
@@ -498,9 +498,19 @@ public class AddressClient implements BackgroundResource {
    * </code></pre>
    *
    * @param region Name of the region for this request.
-   * @param addressResource A reserved address resource. (== resource_for beta.addresses ==) (==
-   *     resource_for v1.addresses ==) (== resource_for beta.globalAddresses ==) (== resource_for
-   *     v1.globalAddresses ==)
+   * @param addressResource Represents an IP Address resource.
+   *     <p>An address resource represents a regional internal IP address. Regional internal IP
+   *     addresses are RFC 1918 addresses that come from either a primary or secondary IP range of a
+   *     subnet in a VPC network. Regional external IP addresses can be assigned to GCP VM
+   *     instances, Cloud VPN gateways, regional external forwarding rules for network load
+   *     balancers (in either Standard or Premium Tier), and regional external forwarding rules for
+   *     HTTP(S), SSL Proxy, and TCP Proxy load balancers in Standard Tier. For more information,
+   *     read IP addresses.
+   *     <p>A globalAddresses resource represent a global external IP address. Global external IP
+   *     addresses are IPv4 or IPv6 addresses. They can only be assigned to global forwarding rules
+   *     for HTTP(S), SSL Proxy, or TCP Proxy load balancers in Premium Tier. For more information,
+   *     read Global resources. (== resource_for beta.addresses ==) (== resource_for v1.addresses
+   *     ==) (== resource_for beta.globalAddresses ==) (== resource_for v1.globalAddresses ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -516,7 +526,7 @@ public class AddressClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates an address resource in the specified project using the data included in the request.
+   * Creates an address resource in the specified project by using the data included in the request.
    *
    * <p>Sample code:
    *
@@ -529,9 +539,19 @@ public class AddressClient implements BackgroundResource {
    * </code></pre>
    *
    * @param region Name of the region for this request.
-   * @param addressResource A reserved address resource. (== resource_for beta.addresses ==) (==
-   *     resource_for v1.addresses ==) (== resource_for beta.globalAddresses ==) (== resource_for
-   *     v1.globalAddresses ==)
+   * @param addressResource Represents an IP Address resource.
+   *     <p>An address resource represents a regional internal IP address. Regional internal IP
+   *     addresses are RFC 1918 addresses that come from either a primary or secondary IP range of a
+   *     subnet in a VPC network. Regional external IP addresses can be assigned to GCP VM
+   *     instances, Cloud VPN gateways, regional external forwarding rules for network load
+   *     balancers (in either Standard or Premium Tier), and regional external forwarding rules for
+   *     HTTP(S), SSL Proxy, and TCP Proxy load balancers in Standard Tier. For more information,
+   *     read IP addresses.
+   *     <p>A globalAddresses resource represent a global external IP address. Global external IP
+   *     addresses are IPv4 or IPv6 addresses. They can only be assigned to global forwarding rules
+   *     for HTTP(S), SSL Proxy, or TCP Proxy load balancers in Premium Tier. For more information,
+   *     read Global resources. (== resource_for beta.addresses ==) (== resource_for v1.addresses
+   *     ==) (== resource_for beta.globalAddresses ==) (== resource_for v1.globalAddresses ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -547,7 +567,7 @@ public class AddressClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates an address resource in the specified project using the data included in the request.
+   * Creates an address resource in the specified project by using the data included in the request.
    *
    * <p>Sample code:
    *
@@ -573,7 +593,7 @@ public class AddressClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates an address resource in the specified project using the data included in the request.
+   * Creates an address resource in the specified project by using the data included in the request.
    *
    * <p>Sample code:
    *

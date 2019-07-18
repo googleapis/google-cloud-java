@@ -145,11 +145,33 @@ public final class InsertGlobalForwardingRuleHttpRequest implements ApiMessage {
   }
 
   /**
-   * A ForwardingRule resource. A ForwardingRule resource specifies which pool of target virtual
-   * machines to forward a packet to if it matches the given [IPAddress, IPProtocol, ports] tuple.
-   * (== resource_for beta.forwardingRules ==) (== resource_for v1.forwardingRules ==) (==
-   * resource_for beta.globalForwardingRules ==) (== resource_for v1.globalForwardingRules ==) (==
-   * resource_for beta.regionForwardingRules ==) (== resource_for v1.regionForwardingRules ==)
+   * Represents a Forwarding Rule resource.
+   *
+   * <p>A forwardingRules resource represents a regional forwarding rule.
+   *
+   * <p>Regional external forwarding rules can reference any of the following resources:
+   *
+   * <p>- A target instance - A Cloud VPN Classic gateway (targetVpnGateway), - A target pool for a
+   * Network Load Balancer - A global target HTTP(S) proxy for an HTTP(S) load balancer using
+   * Standard Tier - A target SSL proxy for a SSL Proxy load balancer using Standard Tier - A target
+   * TCP proxy for a TCP Proxy load balancer using Standard Tier.
+   *
+   * <p>Regional internal forwarding rules can reference the backend service of an internal TCP/UDP
+   * load balancer.
+   *
+   * <p>For regional internal forwarding rules, the following applies: - If the loadBalancingScheme
+   * for the load balancer is INTERNAL, then the forwarding rule references a regional internal
+   * backend service. - If the loadBalancingScheme for the load balancer is INTERNAL_MANAGED, then
+   * the forwarding rule must reference a regional target HTTP(S) proxy.
+   *
+   * <p>For more information, read Using Forwarding rules.
+   *
+   * <p>A globalForwardingRules resource represents a global forwarding rule.
+   *
+   * <p>Global forwarding rules are only used by load balancers that use Premium Tier. (==
+   * resource_for beta.forwardingRules ==) (== resource_for v1.forwardingRules ==) (== resource_for
+   * beta.globalForwardingRules ==) (== resource_for v1.globalForwardingRules ==) (== resource_for
+   * beta.regionForwardingRules ==) (== resource_for v1.regionForwardingRules ==)
    */
   public ForwardingRule getForwardingRuleResource() {
     return forwardingRuleResource;
@@ -321,9 +343,31 @@ public final class InsertGlobalForwardingRuleHttpRequest implements ApiMessage {
     }
 
     /**
-     * A ForwardingRule resource. A ForwardingRule resource specifies which pool of target virtual
-     * machines to forward a packet to if it matches the given [IPAddress, IPProtocol, ports] tuple.
-     * (== resource_for beta.forwardingRules ==) (== resource_for v1.forwardingRules ==) (==
+     * Represents a Forwarding Rule resource.
+     *
+     * <p>A forwardingRules resource represents a regional forwarding rule.
+     *
+     * <p>Regional external forwarding rules can reference any of the following resources:
+     *
+     * <p>- A target instance - A Cloud VPN Classic gateway (targetVpnGateway), - A target pool for
+     * a Network Load Balancer - A global target HTTP(S) proxy for an HTTP(S) load balancer using
+     * Standard Tier - A target SSL proxy for a SSL Proxy load balancer using Standard Tier - A
+     * target TCP proxy for a TCP Proxy load balancer using Standard Tier.
+     *
+     * <p>Regional internal forwarding rules can reference the backend service of an internal
+     * TCP/UDP load balancer.
+     *
+     * <p>For regional internal forwarding rules, the following applies: - If the
+     * loadBalancingScheme for the load balancer is INTERNAL, then the forwarding rule references a
+     * regional internal backend service. - If the loadBalancingScheme for the load balancer is
+     * INTERNAL_MANAGED, then the forwarding rule must reference a regional target HTTP(S) proxy.
+     *
+     * <p>For more information, read Using Forwarding rules.
+     *
+     * <p>A globalForwardingRules resource represents a global forwarding rule.
+     *
+     * <p>Global forwarding rules are only used by load balancers that use Premium Tier. (==
+     * resource_for beta.forwardingRules ==) (== resource_for v1.forwardingRules ==) (==
      * resource_for beta.globalForwardingRules ==) (== resource_for v1.globalForwardingRules ==) (==
      * resource_for beta.regionForwardingRules ==) (== resource_for v1.regionForwardingRules ==)
      */
@@ -332,9 +376,31 @@ public final class InsertGlobalForwardingRuleHttpRequest implements ApiMessage {
     }
 
     /**
-     * A ForwardingRule resource. A ForwardingRule resource specifies which pool of target virtual
-     * machines to forward a packet to if it matches the given [IPAddress, IPProtocol, ports] tuple.
-     * (== resource_for beta.forwardingRules ==) (== resource_for v1.forwardingRules ==) (==
+     * Represents a Forwarding Rule resource.
+     *
+     * <p>A forwardingRules resource represents a regional forwarding rule.
+     *
+     * <p>Regional external forwarding rules can reference any of the following resources:
+     *
+     * <p>- A target instance - A Cloud VPN Classic gateway (targetVpnGateway), - A target pool for
+     * a Network Load Balancer - A global target HTTP(S) proxy for an HTTP(S) load balancer using
+     * Standard Tier - A target SSL proxy for a SSL Proxy load balancer using Standard Tier - A
+     * target TCP proxy for a TCP Proxy load balancer using Standard Tier.
+     *
+     * <p>Regional internal forwarding rules can reference the backend service of an internal
+     * TCP/UDP load balancer.
+     *
+     * <p>For regional internal forwarding rules, the following applies: - If the
+     * loadBalancingScheme for the load balancer is INTERNAL, then the forwarding rule references a
+     * regional internal backend service. - If the loadBalancingScheme for the load balancer is
+     * INTERNAL_MANAGED, then the forwarding rule must reference a regional target HTTP(S) proxy.
+     *
+     * <p>For more information, read Using Forwarding rules.
+     *
+     * <p>A globalForwardingRules resource represents a global forwarding rule.
+     *
+     * <p>Global forwarding rules are only used by load balancers that use Premium Tier. (==
+     * resource_for beta.forwardingRules ==) (== resource_for v1.forwardingRules ==) (==
      * resource_for beta.globalForwardingRules ==) (== resource_for v1.globalForwardingRules ==) (==
      * resource_for beta.regionForwardingRules ==) (== resource_for v1.regionForwardingRules ==)
      */

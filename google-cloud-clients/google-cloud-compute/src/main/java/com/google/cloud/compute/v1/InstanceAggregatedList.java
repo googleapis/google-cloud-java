@@ -104,8 +104,8 @@ public final class InstanceAggregatedList implements ApiMessage {
   }
 
   /**
-   * A list of InstancesScopedList resources. The key for the map is: [Output Only] Name of the
-   * scope containing this set of instances.
+   * An object that contains a list of instances scoped by zone. The key for the map is: [Output
+   * Only] Name of the scope containing this set of instances.
    */
   public Map<String, InstancesScopedList> getItemsMap() {
     return items;
@@ -215,16 +215,16 @@ public final class InstanceAggregatedList implements ApiMessage {
     }
 
     /**
-     * A list of InstancesScopedList resources. The key for the map is: [Output Only] Name of the
-     * scope containing this set of instances.
+     * An object that contains a list of instances scoped by zone. The key for the map is: [Output
+     * Only] Name of the scope containing this set of instances.
      */
     public Map<String, InstancesScopedList> getItemsMap() {
       return items;
     }
 
     /**
-     * A list of InstancesScopedList resources. The key for the map is: [Output Only] Name of the
-     * scope containing this set of instances.
+     * An object that contains a list of instances scoped by zone. The key for the map is: [Output
+     * Only] Name of the scope containing this set of instances.
      */
     public Builder putAllItems(Map<String, InstancesScopedList> items) {
       this.items = items;

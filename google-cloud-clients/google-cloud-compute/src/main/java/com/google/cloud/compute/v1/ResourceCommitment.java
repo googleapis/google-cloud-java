@@ -26,21 +26,27 @@ import javax.annotation.Nullable;
 @BetaApi
 /** Commitment for a particular resource (a Commitment is composed of one or more of these). */
 public final class ResourceCommitment implements ApiMessage {
+  private final String acceleratorType;
   private final String amount;
   private final String type;
 
   private ResourceCommitment() {
+    this.acceleratorType = null;
     this.amount = null;
     this.type = null;
   }
 
-  private ResourceCommitment(String amount, String type) {
+  private ResourceCommitment(String acceleratorType, String amount, String type) {
+    this.acceleratorType = acceleratorType;
     this.amount = amount;
     this.type = type;
   }
 
   @Override
   public Object getFieldValue(String fieldName) {
+    if ("acceleratorType".equals(fieldName)) {
+      return acceleratorType;
+    }
     if ("amount".equals(fieldName)) {
       return amount;
     }
@@ -66,6 +72,11 @@ public final class ResourceCommitment implements ApiMessage {
    */
   public List<String> getFieldMask() {
     return null;
+  }
+
+  /** Name of the accelerator type resource. Applicable only when the type is ACCELERATOR. */
+  public String getAcceleratorType() {
+    return acceleratorType;
   }
 
   /**
@@ -105,6 +116,7 @@ public final class ResourceCommitment implements ApiMessage {
   }
 
   public static class Builder {
+    private String acceleratorType;
     private String amount;
     private String type;
 
@@ -112,6 +124,9 @@ public final class ResourceCommitment implements ApiMessage {
 
     public Builder mergeFrom(ResourceCommitment other) {
       if (other == ResourceCommitment.getDefaultInstance()) return this;
+      if (other.getAcceleratorType() != null) {
+        this.acceleratorType = other.acceleratorType;
+      }
       if (other.getAmount() != null) {
         this.amount = other.amount;
       }
@@ -122,8 +137,20 @@ public final class ResourceCommitment implements ApiMessage {
     }
 
     Builder(ResourceCommitment source) {
+      this.acceleratorType = source.acceleratorType;
       this.amount = source.amount;
       this.type = source.type;
+    }
+
+    /** Name of the accelerator type resource. Applicable only when the type is ACCELERATOR. */
+    public String getAcceleratorType() {
+      return acceleratorType;
+    }
+
+    /** Name of the accelerator type resource. Applicable only when the type is ACCELERATOR. */
+    public Builder setAcceleratorType(String acceleratorType) {
+      this.acceleratorType = acceleratorType;
+      return this;
     }
 
     /**
@@ -158,11 +185,12 @@ public final class ResourceCommitment implements ApiMessage {
 
     public ResourceCommitment build() {
 
-      return new ResourceCommitment(amount, type);
+      return new ResourceCommitment(acceleratorType, amount, type);
     }
 
     public Builder clone() {
       Builder newBuilder = new Builder();
+      newBuilder.setAcceleratorType(this.acceleratorType);
       newBuilder.setAmount(this.amount);
       newBuilder.setType(this.type);
       return newBuilder;
@@ -171,7 +199,16 @@ public final class ResourceCommitment implements ApiMessage {
 
   @Override
   public String toString() {
-    return "ResourceCommitment{" + "amount=" + amount + ", " + "type=" + type + "}";
+    return "ResourceCommitment{"
+        + "acceleratorType="
+        + acceleratorType
+        + ", "
+        + "amount="
+        + amount
+        + ", "
+        + "type="
+        + type
+        + "}";
   }
 
   @Override
@@ -181,7 +218,8 @@ public final class ResourceCommitment implements ApiMessage {
     }
     if (o instanceof ResourceCommitment) {
       ResourceCommitment that = (ResourceCommitment) o;
-      return Objects.equals(this.amount, that.getAmount())
+      return Objects.equals(this.acceleratorType, that.getAcceleratorType())
+          && Objects.equals(this.amount, that.getAmount())
           && Objects.equals(this.type, that.getType());
     }
     return false;
@@ -189,6 +227,6 @@ public final class ResourceCommitment implements ApiMessage {
 
   @Override
   public int hashCode() {
-    return Objects.hash(amount, type);
+    return Objects.hash(acceleratorType, amount, type);
   }
 }

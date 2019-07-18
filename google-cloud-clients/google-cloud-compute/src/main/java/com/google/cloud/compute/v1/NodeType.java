@@ -24,7 +24,14 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
-/** A Node Type resource. */
+/**
+ * Represent a sole-tenant Node Type resource.
+ *
+ * <p>Each node within a node group must have a node type. A node type specifies the total amount of
+ * cores and memory for that node. Currently, the only available node type is n1-node-96-624 node
+ * type that has 96 vCPUs and 624 GB of memory, available in multiple zones. For more information
+ * read Node types. (== resource_for beta.nodeTypes ==) (== resource_for v1.nodeTypes ==)
+ */
 public final class NodeType implements ApiMessage {
   private final String cpuPlatform;
   private final String creationTimestamp;

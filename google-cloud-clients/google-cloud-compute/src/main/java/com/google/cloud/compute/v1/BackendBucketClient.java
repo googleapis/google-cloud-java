@@ -601,8 +601,9 @@ public class BackendBucketClient implements BackgroundResource {
    * </code></pre>
    *
    * @param project Project ID for this request.
-   * @param backendBucketResource A BackendBucket resource. This resource defines a Cloud Storage
-   *     bucket.
+   * @param backendBucketResource Represents a Cloud Storage Bucket resource.
+   *     <p>This Cloud Storage bucket resource is referenced by a URL map of a load balancer. For
+   *     more information, read Backend Buckets.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -633,8 +634,9 @@ public class BackendBucketClient implements BackgroundResource {
    * </code></pre>
    *
    * @param project Project ID for this request.
-   * @param backendBucketResource A BackendBucket resource. This resource defines a Cloud Storage
-   *     bucket.
+   * @param backendBucketResource Represents a Cloud Storage Bucket resource.
+   *     <p>This Cloud Storage bucket resource is referenced by a URL map of a load balancer. For
+   *     more information, read Backend Buckets.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -857,8 +859,9 @@ public class BackendBucketClient implements BackgroundResource {
    * </code></pre>
    *
    * @param backendBucket Name of the BackendBucket resource to patch.
-   * @param backendBucketResource A BackendBucket resource. This resource defines a Cloud Storage
-   *     bucket.
+   * @param backendBucketResource Represents a Cloud Storage Bucket resource.
+   *     <p>This Cloud Storage bucket resource is referenced by a URL map of a load balancer. For
+   *     more information, read Backend Buckets.
    * @param fieldMask The fields that should be serialized (even if they have empty values). If the
    *     containing message object has a non-null fieldmask, then all the fields in the field mask
    *     (and only those fields in the field mask) will be serialized. If the containing object does
@@ -897,8 +900,9 @@ public class BackendBucketClient implements BackgroundResource {
    * </code></pre>
    *
    * @param backendBucket Name of the BackendBucket resource to patch.
-   * @param backendBucketResource A BackendBucket resource. This resource defines a Cloud Storage
-   *     bucket.
+   * @param backendBucketResource Represents a Cloud Storage Bucket resource.
+   *     <p>This Cloud Storage bucket resource is referenced by a URL map of a load balancer. For
+   *     more information, read Backend Buckets.
    * @param fieldMask The fields that should be serialized (even if they have empty values). If the
    *     containing message object has a non-null fieldmask, then all the fields in the field mask
    *     (and only those fields in the field mask) will be serialized. If the containing object does
@@ -992,8 +996,9 @@ public class BackendBucketClient implements BackgroundResource {
    * </code></pre>
    *
    * @param backendBucket Name of the BackendBucket resource to update.
-   * @param backendBucketResource A BackendBucket resource. This resource defines a Cloud Storage
-   *     bucket.
+   * @param backendBucketResource Represents a Cloud Storage Bucket resource.
+   *     <p>This Cloud Storage bucket resource is referenced by a URL map of a load balancer. For
+   *     more information, read Backend Buckets.
    * @param fieldMask The fields that should be serialized (even if they have empty values). If the
    *     containing message object has a non-null fieldmask, then all the fields in the field mask
    *     (and only those fields in the field mask) will be serialized. If the containing object does
@@ -1031,8 +1036,9 @@ public class BackendBucketClient implements BackgroundResource {
    * </code></pre>
    *
    * @param backendBucket Name of the BackendBucket resource to update.
-   * @param backendBucketResource A BackendBucket resource. This resource defines a Cloud Storage
-   *     bucket.
+   * @param backendBucketResource Represents a Cloud Storage Bucket resource.
+   *     <p>This Cloud Storage bucket resource is referenced by a URL map of a load balancer. For
+   *     more information, read Backend Buckets.
    * @param fieldMask The fields that should be serialized (even if they have empty values). If the
    *     containing message object has a non-null fieldmask, then all the fields in the field mask
    *     (and only those fields in the field mask) will be serialized. If the containing object does

@@ -26,8 +26,12 @@ import javax.annotation.Nullable;
 @Generated("by GAPIC")
 @BetaApi
 /**
- * A TargetHttpsProxy resource. This resource defines an HTTPS proxy. (== resource_for
- * beta.targetHttpsProxies ==) (== resource_for v1.targetHttpsProxies ==)
+ * Represents a Target HTTPS Proxy resource.
+ *
+ * <p>A target HTTPS proxy is a component of certain types of load balancers. Global forwarding
+ * rules reference a target HTTPS proxy, and the target proxy then references a URL map. For more
+ * information, read Using Target Proxies. (== resource_for beta.targetHttpsProxies ==) (==
+ * resource_for v1.targetHttpsProxies ==)
  */
 public final class TargetHttpsProxy implements ApiMessage {
   private final String creationTimestamp;

@@ -188,20 +188,11 @@ public final class InsertRouteHttpRequest implements ApiMessage {
   }
 
   /**
-   * Represents a Route resource. A route specifies how certain packets should be handled by the
-   * network. Routes are associated with instances by tags and the set of routes for a particular
-   * instance is called its routing table.
+   * Represents a Route resource.
    *
-   * <p>For each packet leaving an instance, the system searches that instance's routing table for a
-   * single best matching route. Routes match packets by destination IP address, preferring smaller
-   * or more specific ranges over larger ones. If there is a tie, the system selects the route with
-   * the smallest priority value. If there is still a tie, it uses the layer three and four packet
-   * headers to select just one of the remaining matching routes. The packet is then forwarded as
-   * specified by the nextHop field of the winning route - either to another instance destination,
-   * an instance gateway, or a Google Compute Engine-operated gateway.
-   *
-   * <p>Packets that do not match any route in the sending instance's routing table are dropped. (==
-   * resource_for beta.routes ==) (== resource_for v1.routes ==)
+   * <p>A route defines a path from VM instances in the VPC network to a specific destination. This
+   * destination can be inside or outside the VPC network. For more information, read the Routes
+   * overview. (== resource_for beta.routes ==) (== resource_for v1.routes ==)
    */
   public Route getRouteResource() {
     return routeResource;
@@ -421,40 +412,22 @@ public final class InsertRouteHttpRequest implements ApiMessage {
     }
 
     /**
-     * Represents a Route resource. A route specifies how certain packets should be handled by the
-     * network. Routes are associated with instances by tags and the set of routes for a particular
-     * instance is called its routing table.
+     * Represents a Route resource.
      *
-     * <p>For each packet leaving an instance, the system searches that instance's routing table for
-     * a single best matching route. Routes match packets by destination IP address, preferring
-     * smaller or more specific ranges over larger ones. If there is a tie, the system selects the
-     * route with the smallest priority value. If there is still a tie, it uses the layer three and
-     * four packet headers to select just one of the remaining matching routes. The packet is then
-     * forwarded as specified by the nextHop field of the winning route - either to another instance
-     * destination, an instance gateway, or a Google Compute Engine-operated gateway.
-     *
-     * <p>Packets that do not match any route in the sending instance's routing table are dropped.
-     * (== resource_for beta.routes ==) (== resource_for v1.routes ==)
+     * <p>A route defines a path from VM instances in the VPC network to a specific destination.
+     * This destination can be inside or outside the VPC network. For more information, read the
+     * Routes overview. (== resource_for beta.routes ==) (== resource_for v1.routes ==)
      */
     public Route getRouteResource() {
       return routeResource;
     }
 
     /**
-     * Represents a Route resource. A route specifies how certain packets should be handled by the
-     * network. Routes are associated with instances by tags and the set of routes for a particular
-     * instance is called its routing table.
+     * Represents a Route resource.
      *
-     * <p>For each packet leaving an instance, the system searches that instance's routing table for
-     * a single best matching route. Routes match packets by destination IP address, preferring
-     * smaller or more specific ranges over larger ones. If there is a tie, the system selects the
-     * route with the smallest priority value. If there is still a tie, it uses the layer three and
-     * four packet headers to select just one of the remaining matching routes. The packet is then
-     * forwarded as specified by the nextHop field of the winning route - either to another instance
-     * destination, an instance gateway, or a Google Compute Engine-operated gateway.
-     *
-     * <p>Packets that do not match any route in the sending instance's routing table are dropped.
-     * (== resource_for beta.routes ==) (== resource_for v1.routes ==)
+     * <p>A route defines a path from VM instances in the VPC network to a specific destination.
+     * This destination can be inside or outside the VPC network. For more information, read the
+     * Routes overview. (== resource_for beta.routes ==) (== resource_for v1.routes ==)
      */
     public Builder setRouteResource(Route routeResource) {
       this.routeResource = routeResource;

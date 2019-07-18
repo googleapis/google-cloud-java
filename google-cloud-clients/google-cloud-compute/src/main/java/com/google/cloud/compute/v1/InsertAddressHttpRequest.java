@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.addresses.insert. Creates an address resource in the specified
- * project using the data included in the request.
+ * project by using the data included in the request.
  */
 public final class InsertAddressHttpRequest implements ApiMessage {
   private final String access_token;
@@ -135,8 +135,20 @@ public final class InsertAddressHttpRequest implements ApiMessage {
   }
 
   /**
-   * A reserved address resource. (== resource_for beta.addresses ==) (== resource_for v1.addresses
-   * ==) (== resource_for beta.globalAddresses ==) (== resource_for v1.globalAddresses ==)
+   * Represents an IP Address resource.
+   *
+   * <p>An address resource represents a regional internal IP address. Regional internal IP
+   * addresses are RFC 1918 addresses that come from either a primary or secondary IP range of a
+   * subnet in a VPC network. Regional external IP addresses can be assigned to GCP VM instances,
+   * Cloud VPN gateways, regional external forwarding rules for network load balancers (in either
+   * Standard or Premium Tier), and regional external forwarding rules for HTTP(S), SSL Proxy, and
+   * TCP Proxy load balancers in Standard Tier. For more information, read IP addresses.
+   *
+   * <p>A globalAddresses resource represent a global external IP address. Global external IP
+   * addresses are IPv4 or IPv6 addresses. They can only be assigned to global forwarding rules for
+   * HTTP(S), SSL Proxy, or TCP Proxy load balancers in Premium Tier. For more information, read
+   * Global resources. (== resource_for beta.addresses ==) (== resource_for v1.addresses ==) (==
+   * resource_for beta.globalAddresses ==) (== resource_for v1.globalAddresses ==)
    */
   public Address getAddressResource() {
     return addressResource;
@@ -296,18 +308,40 @@ public final class InsertAddressHttpRequest implements ApiMessage {
     }
 
     /**
-     * A reserved address resource. (== resource_for beta.addresses ==) (== resource_for
-     * v1.addresses ==) (== resource_for beta.globalAddresses ==) (== resource_for
-     * v1.globalAddresses ==)
+     * Represents an IP Address resource.
+     *
+     * <p>An address resource represents a regional internal IP address. Regional internal IP
+     * addresses are RFC 1918 addresses that come from either a primary or secondary IP range of a
+     * subnet in a VPC network. Regional external IP addresses can be assigned to GCP VM instances,
+     * Cloud VPN gateways, regional external forwarding rules for network load balancers (in either
+     * Standard or Premium Tier), and regional external forwarding rules for HTTP(S), SSL Proxy, and
+     * TCP Proxy load balancers in Standard Tier. For more information, read IP addresses.
+     *
+     * <p>A globalAddresses resource represent a global external IP address. Global external IP
+     * addresses are IPv4 or IPv6 addresses. They can only be assigned to global forwarding rules
+     * for HTTP(S), SSL Proxy, or TCP Proxy load balancers in Premium Tier. For more information,
+     * read Global resources. (== resource_for beta.addresses ==) (== resource_for v1.addresses ==)
+     * (== resource_for beta.globalAddresses ==) (== resource_for v1.globalAddresses ==)
      */
     public Address getAddressResource() {
       return addressResource;
     }
 
     /**
-     * A reserved address resource. (== resource_for beta.addresses ==) (== resource_for
-     * v1.addresses ==) (== resource_for beta.globalAddresses ==) (== resource_for
-     * v1.globalAddresses ==)
+     * Represents an IP Address resource.
+     *
+     * <p>An address resource represents a regional internal IP address. Regional internal IP
+     * addresses are RFC 1918 addresses that come from either a primary or secondary IP range of a
+     * subnet in a VPC network. Regional external IP addresses can be assigned to GCP VM instances,
+     * Cloud VPN gateways, regional external forwarding rules for network load balancers (in either
+     * Standard or Premium Tier), and regional external forwarding rules for HTTP(S), SSL Proxy, and
+     * TCP Proxy load balancers in Standard Tier. For more information, read IP addresses.
+     *
+     * <p>A globalAddresses resource represent a global external IP address. Global external IP
+     * addresses are IPv4 or IPv6 addresses. They can only be assigned to global forwarding rules
+     * for HTTP(S), SSL Proxy, or TCP Proxy load balancers in Premium Tier. For more information,
+     * read Global resources. (== resource_for beta.addresses ==) (== resource_for v1.addresses ==)
+     * (== resource_for beta.globalAddresses ==) (== resource_for v1.globalAddresses ==)
      */
     public Builder setAddressResource(Address addressResource) {
       this.addressResource = addressResource;

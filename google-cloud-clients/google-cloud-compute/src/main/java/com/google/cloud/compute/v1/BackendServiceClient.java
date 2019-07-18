@@ -860,9 +860,15 @@ public class BackendServiceClient implements BackgroundResource {
    * </code></pre>
    *
    * @param project Project ID for this request.
-   * @param backendServiceResource A BackendService resource. This resource defines a group of
-   *     backend virtual machines and their serving capacity. (== resource_for v1.backendService ==)
-   *     (== resource_for beta.backendService ==)
+   * @param backendServiceResource Represents a Backend Service resource.
+   *     <p>Backend services must have an associated health check. Backend services also store
+   *     information about session affinity. For more information, read Backend Services.
+   *     <p>A backendServices resource represents a global backend service. Global backend services
+   *     are used for HTTP(S), SSL Proxy, TCP Proxy load balancing and Traffic Director.
+   *     <p>A regionBackendServices resource represents a regional backend service. Regional backend
+   *     services are used for internal TCP/UDP load balancing. For more information, read Internal
+   *     TCP/UDP Load balancing. (== resource_for v1.backendService ==) (== resource_for
+   *     beta.backendService ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -894,9 +900,15 @@ public class BackendServiceClient implements BackgroundResource {
    * </code></pre>
    *
    * @param project Project ID for this request.
-   * @param backendServiceResource A BackendService resource. This resource defines a group of
-   *     backend virtual machines and their serving capacity. (== resource_for v1.backendService ==)
-   *     (== resource_for beta.backendService ==)
+   * @param backendServiceResource Represents a Backend Service resource.
+   *     <p>Backend services must have an associated health check. Backend services also store
+   *     information about session affinity. For more information, read Backend Services.
+   *     <p>A backendServices resource represents a global backend service. Global backend services
+   *     are used for HTTP(S), SSL Proxy, TCP Proxy load balancing and Traffic Director.
+   *     <p>A regionBackendServices resource represents a regional backend service. Regional backend
+   *     services are used for internal TCP/UDP load balancing. For more information, read Internal
+   *     TCP/UDP Load balancing. (== resource_for v1.backendService ==) (== resource_for
+   *     beta.backendService ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -1124,9 +1136,15 @@ public class BackendServiceClient implements BackgroundResource {
    * </code></pre>
    *
    * @param backendService Name of the BackendService resource to patch.
-   * @param backendServiceResource A BackendService resource. This resource defines a group of
-   *     backend virtual machines and their serving capacity. (== resource_for v1.backendService ==)
-   *     (== resource_for beta.backendService ==)
+   * @param backendServiceResource Represents a Backend Service resource.
+   *     <p>Backend services must have an associated health check. Backend services also store
+   *     information about session affinity. For more information, read Backend Services.
+   *     <p>A backendServices resource represents a global backend service. Global backend services
+   *     are used for HTTP(S), SSL Proxy, TCP Proxy load balancing and Traffic Director.
+   *     <p>A regionBackendServices resource represents a regional backend service. Regional backend
+   *     services are used for internal TCP/UDP load balancing. For more information, read Internal
+   *     TCP/UDP Load balancing. (== resource_for v1.backendService ==) (== resource_for
+   *     beta.backendService ==)
    * @param fieldMask The fields that should be serialized (even if they have empty values). If the
    *     containing message object has a non-null fieldmask, then all the fields in the field mask
    *     (and only those fields in the field mask) will be serialized. If the containing object does
@@ -1167,9 +1185,15 @@ public class BackendServiceClient implements BackgroundResource {
    * </code></pre>
    *
    * @param backendService Name of the BackendService resource to patch.
-   * @param backendServiceResource A BackendService resource. This resource defines a group of
-   *     backend virtual machines and their serving capacity. (== resource_for v1.backendService ==)
-   *     (== resource_for beta.backendService ==)
+   * @param backendServiceResource Represents a Backend Service resource.
+   *     <p>Backend services must have an associated health check. Backend services also store
+   *     information about session affinity. For more information, read Backend Services.
+   *     <p>A backendServices resource represents a global backend service. Global backend services
+   *     are used for HTTP(S), SSL Proxy, TCP Proxy load balancing and Traffic Director.
+   *     <p>A regionBackendServices resource represents a regional backend service. Regional backend
+   *     services are used for internal TCP/UDP load balancing. For more information, read Internal
+   *     TCP/UDP Load balancing. (== resource_for v1.backendService ==) (== resource_for
+   *     beta.backendService ==)
    * @param fieldMask The fields that should be serialized (even if they have empty values). If the
    *     containing message object has a non-null fieldmask, then all the fields in the field mask
    *     (and only those fields in the field mask) will be serialized. If the containing object does
@@ -1385,9 +1409,15 @@ public class BackendServiceClient implements BackgroundResource {
    * </code></pre>
    *
    * @param backendService Name of the BackendService resource to update.
-   * @param backendServiceResource A BackendService resource. This resource defines a group of
-   *     backend virtual machines and their serving capacity. (== resource_for v1.backendService ==)
-   *     (== resource_for beta.backendService ==)
+   * @param backendServiceResource Represents a Backend Service resource.
+   *     <p>Backend services must have an associated health check. Backend services also store
+   *     information about session affinity. For more information, read Backend Services.
+   *     <p>A backendServices resource represents a global backend service. Global backend services
+   *     are used for HTTP(S), SSL Proxy, TCP Proxy load balancing and Traffic Director.
+   *     <p>A regionBackendServices resource represents a regional backend service. Regional backend
+   *     services are used for internal TCP/UDP load balancing. For more information, read Internal
+   *     TCP/UDP Load balancing. (== resource_for v1.backendService ==) (== resource_for
+   *     beta.backendService ==)
    * @param fieldMask The fields that should be serialized (even if they have empty values). If the
    *     containing message object has a non-null fieldmask, then all the fields in the field mask
    *     (and only those fields in the field mask) will be serialized. If the containing object does
@@ -1427,9 +1457,15 @@ public class BackendServiceClient implements BackgroundResource {
    * </code></pre>
    *
    * @param backendService Name of the BackendService resource to update.
-   * @param backendServiceResource A BackendService resource. This resource defines a group of
-   *     backend virtual machines and their serving capacity. (== resource_for v1.backendService ==)
-   *     (== resource_for beta.backendService ==)
+   * @param backendServiceResource Represents a Backend Service resource.
+   *     <p>Backend services must have an associated health check. Backend services also store
+   *     information about session affinity. For more information, read Backend Services.
+   *     <p>A backendServices resource represents a global backend service. Global backend services
+   *     are used for HTTP(S), SSL Proxy, TCP Proxy load balancing and Traffic Director.
+   *     <p>A regionBackendServices resource represents a regional backend service. Regional backend
+   *     services are used for internal TCP/UDP load balancing. For more information, read Internal
+   *     TCP/UDP Load balancing. (== resource_for v1.backendService ==) (== resource_for
+   *     beta.backendService ==)
    * @param fieldMask The fields that should be serialized (even if they have empty values). If the
    *     containing message object has a non-null fieldmask, then all the fields in the field mask
    *     (and only those fields in the field mask) will be serialized. If the containing object does

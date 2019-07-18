@@ -188,8 +188,14 @@ public final class InsertUrlMapHttpRequest implements ApiMessage {
   }
 
   /**
-   * A UrlMap resource. This resource defines the mapping from URL to the BackendService resource,
-   * based on the "longest-match" of the URL's host and path.
+   * Represents a URL Map resource.
+   *
+   * <p>A URL map resource is a component of certain types of load balancers. This resource defines
+   * mappings from host names and URL paths to either a backend service or a backend bucket.
+   *
+   * <p>To use this resource, the backend service must have a loadBalancingScheme of either
+   * EXTERNAL, INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED For more information, read URL Map
+   * Concepts.
    */
   public UrlMap getUrlMapResource() {
     return urlMapResource;
@@ -409,16 +415,30 @@ public final class InsertUrlMapHttpRequest implements ApiMessage {
     }
 
     /**
-     * A UrlMap resource. This resource defines the mapping from URL to the BackendService resource,
-     * based on the "longest-match" of the URL's host and path.
+     * Represents a URL Map resource.
+     *
+     * <p>A URL map resource is a component of certain types of load balancers. This resource
+     * defines mappings from host names and URL paths to either a backend service or a backend
+     * bucket.
+     *
+     * <p>To use this resource, the backend service must have a loadBalancingScheme of either
+     * EXTERNAL, INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED For more information, read URL Map
+     * Concepts.
      */
     public UrlMap getUrlMapResource() {
       return urlMapResource;
     }
 
     /**
-     * A UrlMap resource. This resource defines the mapping from URL to the BackendService resource,
-     * based on the "longest-match" of the URL's host and path.
+     * Represents a URL Map resource.
+     *
+     * <p>A URL map resource is a component of certain types of load balancers. This resource
+     * defines mappings from host names and URL paths to either a backend service or a backend
+     * bucket.
+     *
+     * <p>To use this resource, the backend service must have a loadBalancingScheme of either
+     * EXTERNAL, INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED For more information, read URL Map
+     * Concepts.
      */
     public Builder setUrlMapResource(UrlMap urlMapResource) {
       this.urlMapResource = urlMapResource;

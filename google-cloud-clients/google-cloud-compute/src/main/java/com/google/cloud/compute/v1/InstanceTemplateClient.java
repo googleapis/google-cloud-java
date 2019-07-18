@@ -488,8 +488,10 @@ public class InstanceTemplateClient implements BackgroundResource {
    * </code></pre>
    *
    * @param project Project ID for this request.
-   * @param instanceTemplateResource An Instance Template resource. (== resource_for
-   *     beta.instanceTemplates ==) (== resource_for v1.instanceTemplates ==)
+   * @param instanceTemplateResource Represents an Instance Template resource.
+   *     <p>You can use instance templates to create VM instances and managed instance groups. For
+   *     more information, read Instance Templates. (== resource_for beta.instanceTemplates ==) (==
+   *     resource_for v1.instanceTemplates ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -522,8 +524,10 @@ public class InstanceTemplateClient implements BackgroundResource {
    * </code></pre>
    *
    * @param project Project ID for this request.
-   * @param instanceTemplateResource An Instance Template resource. (== resource_for
-   *     beta.instanceTemplates ==) (== resource_for v1.instanceTemplates ==)
+   * @param instanceTemplateResource Represents an Instance Template resource.
+   *     <p>You can use instance templates to create VM instances and managed instance groups. For
+   *     more information, read Instance Templates. (== resource_for beta.instanceTemplates ==) (==
+   *     resource_for v1.instanceTemplates ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi

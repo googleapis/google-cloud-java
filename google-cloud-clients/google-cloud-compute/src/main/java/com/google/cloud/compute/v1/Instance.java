@@ -26,7 +26,13 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
-/** An Instance resource. (== resource_for beta.instances ==) (== resource_for v1.instances ==) */
+/**
+ * Represents an Instance resource.
+ *
+ * <p>An instance is a virtual machine that is hosted on Google Cloud Platform. For more
+ * information, read Virtual Machine Instances. (== resource_for beta.instances ==) (== resource_for
+ * v1.instances ==)
+ */
 public final class Instance implements ApiMessage {
   private final Boolean canIpForward;
   private final String cpuPlatform;
@@ -45,6 +51,7 @@ public final class Instance implements ApiMessage {
   private final String minCpuPlatform;
   private final String name;
   private final List<NetworkInterface> networkInterfaces;
+  private final ReservationAffinity reservationAffinity;
   private final Scheduling scheduling;
   private final String selfLink;
   private final List<ServiceAccount> serviceAccounts;
@@ -74,6 +81,7 @@ public final class Instance implements ApiMessage {
     this.minCpuPlatform = null;
     this.name = null;
     this.networkInterfaces = null;
+    this.reservationAffinity = null;
     this.scheduling = null;
     this.selfLink = null;
     this.serviceAccounts = null;
@@ -104,6 +112,7 @@ public final class Instance implements ApiMessage {
       String minCpuPlatform,
       String name,
       List<NetworkInterface> networkInterfaces,
+      ReservationAffinity reservationAffinity,
       Scheduling scheduling,
       String selfLink,
       List<ServiceAccount> serviceAccounts,
@@ -131,6 +140,7 @@ public final class Instance implements ApiMessage {
     this.minCpuPlatform = minCpuPlatform;
     this.name = name;
     this.networkInterfaces = networkInterfaces;
+    this.reservationAffinity = reservationAffinity;
     this.scheduling = scheduling;
     this.selfLink = selfLink;
     this.serviceAccounts = serviceAccounts;
@@ -195,6 +205,9 @@ public final class Instance implements ApiMessage {
     }
     if ("networkInterfaces".equals(fieldName)) {
       return networkInterfaces;
+    }
+    if ("reservationAffinity".equals(fieldName)) {
+      return reservationAffinity;
     }
     if ("scheduling".equals(fieldName)) {
       return scheduling;
@@ -380,6 +393,11 @@ public final class Instance implements ApiMessage {
     return networkInterfaces;
   }
 
+  /** Specifies the reservations that this instance can consume from. */
+  public ReservationAffinity getReservationAffinity() {
+    return reservationAffinity;
+  }
+
   /** Sets the scheduling options for this instance. */
   public Scheduling getScheduling() {
     return scheduling;
@@ -488,6 +506,7 @@ public final class Instance implements ApiMessage {
     private String minCpuPlatform;
     private String name;
     private List<NetworkInterface> networkInterfaces;
+    private ReservationAffinity reservationAffinity;
     private Scheduling scheduling;
     private String selfLink;
     private List<ServiceAccount> serviceAccounts;
@@ -554,6 +573,9 @@ public final class Instance implements ApiMessage {
       if (other.getNetworkInterfacesList() != null) {
         this.networkInterfaces = other.networkInterfaces;
       }
+      if (other.getReservationAffinity() != null) {
+        this.reservationAffinity = other.reservationAffinity;
+      }
       if (other.getScheduling() != null) {
         this.scheduling = other.scheduling;
       }
@@ -605,6 +627,7 @@ public final class Instance implements ApiMessage {
       this.minCpuPlatform = source.minCpuPlatform;
       this.name = source.name;
       this.networkInterfaces = source.networkInterfaces;
+      this.reservationAffinity = source.reservationAffinity;
       this.scheduling = source.scheduling;
       this.selfLink = source.selfLink;
       this.serviceAccounts = source.serviceAccounts;
@@ -947,6 +970,17 @@ public final class Instance implements ApiMessage {
       return this;
     }
 
+    /** Specifies the reservations that this instance can consume from. */
+    public ReservationAffinity getReservationAffinity() {
+      return reservationAffinity;
+    }
+
+    /** Specifies the reservations that this instance can consume from. */
+    public Builder setReservationAffinity(ReservationAffinity reservationAffinity) {
+      this.reservationAffinity = reservationAffinity;
+      return this;
+    }
+
     /** Sets the scheduling options for this instance. */
     public Scheduling getScheduling() {
       return scheduling;
@@ -1135,6 +1169,7 @@ public final class Instance implements ApiMessage {
           minCpuPlatform,
           name,
           networkInterfaces,
+          reservationAffinity,
           scheduling,
           selfLink,
           serviceAccounts,
@@ -1166,6 +1201,7 @@ public final class Instance implements ApiMessage {
       newBuilder.setMinCpuPlatform(this.minCpuPlatform);
       newBuilder.setName(this.name);
       newBuilder.addAllNetworkInterfaces(this.networkInterfaces);
+      newBuilder.setReservationAffinity(this.reservationAffinity);
       newBuilder.setScheduling(this.scheduling);
       newBuilder.setSelfLink(this.selfLink);
       newBuilder.addAllServiceAccounts(this.serviceAccounts);
@@ -1234,6 +1270,9 @@ public final class Instance implements ApiMessage {
         + "networkInterfaces="
         + networkInterfaces
         + ", "
+        + "reservationAffinity="
+        + reservationAffinity
+        + ", "
         + "scheduling="
         + scheduling
         + ", "
@@ -1290,6 +1329,7 @@ public final class Instance implements ApiMessage {
           && Objects.equals(this.minCpuPlatform, that.getMinCpuPlatform())
           && Objects.equals(this.name, that.getName())
           && Objects.equals(this.networkInterfaces, that.getNetworkInterfacesList())
+          && Objects.equals(this.reservationAffinity, that.getReservationAffinity())
           && Objects.equals(this.scheduling, that.getScheduling())
           && Objects.equals(this.selfLink, that.getSelfLink())
           && Objects.equals(this.serviceAccounts, that.getServiceAccountsList())
@@ -1325,6 +1365,7 @@ public final class Instance implements ApiMessage {
         minCpuPlatform,
         name,
         networkInterfaces,
+        reservationAffinity,
         scheduling,
         selfLink,
         serviceAccounts,

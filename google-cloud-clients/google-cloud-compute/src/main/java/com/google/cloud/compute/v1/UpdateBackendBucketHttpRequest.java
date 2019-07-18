@@ -142,7 +142,12 @@ public final class UpdateBackendBucketHttpRequest implements ApiMessage {
     return backendBucket;
   }
 
-  /** A BackendBucket resource. This resource defines a Cloud Storage bucket. */
+  /**
+   * Represents a Cloud Storage Bucket resource.
+   *
+   * <p>This Cloud Storage bucket resource is referenced by a URL map of a load balancer. For more
+   * information, read Backend Buckets.
+   */
   public BackendBucket getBackendBucketResource() {
     return backendBucketResource;
   }
@@ -329,12 +334,22 @@ public final class UpdateBackendBucketHttpRequest implements ApiMessage {
       return this;
     }
 
-    /** A BackendBucket resource. This resource defines a Cloud Storage bucket. */
+    /**
+     * Represents a Cloud Storage Bucket resource.
+     *
+     * <p>This Cloud Storage bucket resource is referenced by a URL map of a load balancer. For more
+     * information, read Backend Buckets.
+     */
     public BackendBucket getBackendBucketResource() {
       return backendBucketResource;
     }
 
-    /** A BackendBucket resource. This resource defines a Cloud Storage bucket. */
+    /**
+     * Represents a Cloud Storage Bucket resource.
+     *
+     * <p>This Cloud Storage bucket resource is referenced by a URL map of a load balancer. For more
+     * information, read Backend Buckets.
+     */
     public Builder setBackendBucketResource(BackendBucket backendBucketResource) {
       this.backendBucketResource = backendBucketResource;
       return this;

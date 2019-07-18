@@ -26,9 +26,11 @@ import javax.annotation.Nullable;
 @Generated("by GAPIC")
 @BetaApi
 /**
- * A Node Template resource. To learn more about node templates and sole-tenant nodes, read the
- * Sole-tenant nodes documentation. (== resource_for beta.nodeTemplates ==) (== resource_for
- * v1.nodeTemplates ==)
+ * Represent a sole-tenant Node Template resource.
+ *
+ * <p>You can use a template to define properties for nodes in a node group. For more information,
+ * read Creating node groups and instances. (== resource_for beta.nodeTemplates ==) (== resource_for
+ * v1.nodeTemplates ==) (== NextID: 16 ==)
  */
 public final class NodeTemplate implements ApiMessage {
   private final String creationTimestamp;
@@ -41,6 +43,7 @@ public final class NodeTemplate implements ApiMessage {
   private final NodeTemplateNodeTypeFlexibility nodeTypeFlexibility;
   private final String region;
   private final String selfLink;
+  private final ServerBinding serverBinding;
   private final String status;
   private final String statusMessage;
 
@@ -55,6 +58,7 @@ public final class NodeTemplate implements ApiMessage {
     this.nodeTypeFlexibility = null;
     this.region = null;
     this.selfLink = null;
+    this.serverBinding = null;
     this.status = null;
     this.statusMessage = null;
   }
@@ -70,6 +74,7 @@ public final class NodeTemplate implements ApiMessage {
       NodeTemplateNodeTypeFlexibility nodeTypeFlexibility,
       String region,
       String selfLink,
+      ServerBinding serverBinding,
       String status,
       String statusMessage) {
     this.creationTimestamp = creationTimestamp;
@@ -82,6 +87,7 @@ public final class NodeTemplate implements ApiMessage {
     this.nodeTypeFlexibility = nodeTypeFlexibility;
     this.region = region;
     this.selfLink = selfLink;
+    this.serverBinding = serverBinding;
     this.status = status;
     this.statusMessage = statusMessage;
   }
@@ -117,6 +123,9 @@ public final class NodeTemplate implements ApiMessage {
     }
     if ("selfLink".equals(fieldName)) {
       return selfLink;
+    }
+    if ("serverBinding".equals(fieldName)) {
+      return serverBinding;
     }
     if ("status".equals(fieldName)) {
       return status;
@@ -212,6 +221,17 @@ public final class NodeTemplate implements ApiMessage {
   }
 
   /**
+   * Sets the binding properties for the physical server. Valid values include: - [Default]
+   * RESTART_NODE_ON_ANY_SERVER: Restarts VMs on any available physical server -
+   * RESTART_NODE_ON_MINIMAL_SERVER: Restarts VMs on the same physical server whenever possible
+   *
+   * <p>See Sole-tenant node options for more information.
+   */
+  public ServerBinding getServerBinding() {
+    return serverBinding;
+  }
+
+  /**
    * [Output Only] The status of the node template. One of the following values: CREATING, READY,
    * and DELETING.
    */
@@ -257,6 +277,7 @@ public final class NodeTemplate implements ApiMessage {
     private NodeTemplateNodeTypeFlexibility nodeTypeFlexibility;
     private String region;
     private String selfLink;
+    private ServerBinding serverBinding;
     private String status;
     private String statusMessage;
 
@@ -294,6 +315,9 @@ public final class NodeTemplate implements ApiMessage {
       if (other.getSelfLink() != null) {
         this.selfLink = other.selfLink;
       }
+      if (other.getServerBinding() != null) {
+        this.serverBinding = other.serverBinding;
+      }
       if (other.getStatus() != null) {
         this.status = other.status;
       }
@@ -314,6 +338,7 @@ public final class NodeTemplate implements ApiMessage {
       this.nodeTypeFlexibility = source.nodeTypeFlexibility;
       this.region = source.region;
       this.selfLink = source.selfLink;
+      this.serverBinding = source.serverBinding;
       this.status = source.status;
       this.statusMessage = source.statusMessage;
     }
@@ -469,6 +494,29 @@ public final class NodeTemplate implements ApiMessage {
     }
 
     /**
+     * Sets the binding properties for the physical server. Valid values include: - [Default]
+     * RESTART_NODE_ON_ANY_SERVER: Restarts VMs on any available physical server -
+     * RESTART_NODE_ON_MINIMAL_SERVER: Restarts VMs on the same physical server whenever possible
+     *
+     * <p>See Sole-tenant node options for more information.
+     */
+    public ServerBinding getServerBinding() {
+      return serverBinding;
+    }
+
+    /**
+     * Sets the binding properties for the physical server. Valid values include: - [Default]
+     * RESTART_NODE_ON_ANY_SERVER: Restarts VMs on any available physical server -
+     * RESTART_NODE_ON_MINIMAL_SERVER: Restarts VMs on the same physical server whenever possible
+     *
+     * <p>See Sole-tenant node options for more information.
+     */
+    public Builder setServerBinding(ServerBinding serverBinding) {
+      this.serverBinding = serverBinding;
+      return this;
+    }
+
+    /**
      * [Output Only] The status of the node template. One of the following values: CREATING, READY,
      * and DELETING.
      */
@@ -509,6 +557,7 @@ public final class NodeTemplate implements ApiMessage {
           nodeTypeFlexibility,
           region,
           selfLink,
+          serverBinding,
           status,
           statusMessage);
     }
@@ -525,6 +574,7 @@ public final class NodeTemplate implements ApiMessage {
       newBuilder.setNodeTypeFlexibility(this.nodeTypeFlexibility);
       newBuilder.setRegion(this.region);
       newBuilder.setSelfLink(this.selfLink);
+      newBuilder.setServerBinding(this.serverBinding);
       newBuilder.setStatus(this.status);
       newBuilder.setStatusMessage(this.statusMessage);
       return newBuilder;
@@ -564,6 +614,9 @@ public final class NodeTemplate implements ApiMessage {
         + "selfLink="
         + selfLink
         + ", "
+        + "serverBinding="
+        + serverBinding
+        + ", "
         + "status="
         + status
         + ", "
@@ -589,6 +642,7 @@ public final class NodeTemplate implements ApiMessage {
           && Objects.equals(this.nodeTypeFlexibility, that.getNodeTypeFlexibility())
           && Objects.equals(this.region, that.getRegion())
           && Objects.equals(this.selfLink, that.getSelfLink())
+          && Objects.equals(this.serverBinding, that.getServerBinding())
           && Objects.equals(this.status, that.getStatus())
           && Objects.equals(this.statusMessage, that.getStatusMessage());
     }
@@ -608,6 +662,7 @@ public final class NodeTemplate implements ApiMessage {
         nodeTypeFlexibility,
         region,
         selfLink,
+        serverBinding,
         status,
         statusMessage);
   }

@@ -26,9 +26,11 @@ import javax.annotation.Nullable;
 @Generated("by GAPIC")
 @BetaApi
 /**
- * Represents an Interconnects resource. The Interconnects resource is a dedicated connection
- * between Google's network and your on-premises network. For more information, see the Dedicated
- * overview page. (== resource_for v1.interconnects ==) (== resource_for beta.interconnects ==)
+ * Represents an Interconnect resource.
+ *
+ * <p>An Interconnect resource is a dedicated connection between the GCP network and your
+ * on-premises network. For more information, read the Dedicated Interconnect Overview. (==
+ * resource_for v1.interconnects ==) (== resource_for beta.interconnects ==)
  */
 public final class Interconnect implements ApiMessage {
   private final Boolean adminEnabled;

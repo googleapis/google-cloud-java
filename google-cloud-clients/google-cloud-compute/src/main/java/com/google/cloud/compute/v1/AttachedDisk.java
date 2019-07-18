@@ -237,6 +237,7 @@ public final class AttachedDisk implements ApiMessage {
    * default is SCSI. Persistent disks must always use SCSI and the request will fail if you attempt
    * to attach a persistent disk in any other format than SCSI. Local SSDs can use either NVME or
    * SCSI. For performance characteristics of SCSI over NVMe, see Local SSD performance.
+   * TODO(b/131765817): Update documentation when NVME is supported.
    */
   public String getInterface() {
     return interface2;
@@ -568,6 +569,7 @@ public final class AttachedDisk implements ApiMessage {
      * The default is SCSI. Persistent disks must always use SCSI and the request will fail if you
      * attempt to attach a persistent disk in any other format than SCSI. Local SSDs can use either
      * NVME or SCSI. For performance characteristics of SCSI over NVMe, see Local SSD performance.
+     * TODO(b/131765817): Update documentation when NVME is supported.
      */
     public String getInterface() {
       return interface2;
@@ -578,6 +580,7 @@ public final class AttachedDisk implements ApiMessage {
      * The default is SCSI. Persistent disks must always use SCSI and the request will fail if you
      * attempt to attach a persistent disk in any other format than SCSI. Local SSDs can use either
      * NVME or SCSI. For performance characteristics of SCSI over NVMe, see Local SSD performance.
+     * TODO(b/131765817): Update documentation when NVME is supported.
      */
     public Builder setInterface(String interface2) {
       this.interface2 = interface2;

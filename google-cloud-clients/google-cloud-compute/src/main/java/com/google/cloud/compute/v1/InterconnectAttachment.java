@@ -26,8 +26,11 @@ import javax.annotation.Nullable;
 @Generated("by GAPIC")
 @BetaApi
 /**
- * Represents an InterconnectAttachment (VLAN attachment) resource. For more information, see
- * Creating VLAN Attachments. (== resource_for beta.interconnectAttachments ==) (== resource_for
+ * Represents an Interconnect Attachment (VLAN) resource.
+ *
+ * <p>You can use Interconnect attachments (VLANS) to connect your Virtual Private Cloud networks to
+ * your on-premises networks through an Interconnect. For more information, read Creating VLAN
+ * Attachments. (== resource_for beta.interconnectAttachments ==) (== resource_for
  * v1.interconnectAttachments ==)
  */
 public final class InterconnectAttachment implements ApiMessage {
@@ -299,7 +302,7 @@ public final class InterconnectAttachment implements ApiMessage {
 
   /**
    * [Output Only] Google reference ID, to be used when raising support tickets with Google or
-   * otherwise to debug backend connectivity issues.
+   * otherwise to debug backend connectivity issues. [Deprecated] This field is not used.
    */
   public String getGoogleReferenceId() {
     return googleReferenceId;
@@ -763,7 +766,7 @@ public final class InterconnectAttachment implements ApiMessage {
 
     /**
      * [Output Only] Google reference ID, to be used when raising support tickets with Google or
-     * otherwise to debug backend connectivity issues.
+     * otherwise to debug backend connectivity issues. [Deprecated] This field is not used.
      */
     public String getGoogleReferenceId() {
       return googleReferenceId;
@@ -771,7 +774,7 @@ public final class InterconnectAttachment implements ApiMessage {
 
     /**
      * [Output Only] Google reference ID, to be used when raising support tickets with Google or
-     * otherwise to debug backend connectivity issues.
+     * otherwise to debug backend connectivity issues. [Deprecated] This field is not used.
      */
     public Builder setGoogleReferenceId(String googleReferenceId) {
       this.googleReferenceId = googleReferenceId;

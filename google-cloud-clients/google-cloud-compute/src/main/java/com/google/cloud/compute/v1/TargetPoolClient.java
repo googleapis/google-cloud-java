@@ -844,24 +844,19 @@ public class TargetPoolClient implements BackgroundResource {
    * <pre><code>
    * try (TargetPoolClient targetPoolClient = TargetPoolClient.create()) {
    *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
-   *   TargetPool targetPoolResource = TargetPool.newBuilder().build();
-   *   Operation response = targetPoolClient.insertTargetPool(region, targetPoolResource);
+   *   Operation response = targetPoolClient.insertTargetPool(region);
    * }
    * </code></pre>
    *
    * @param region Name of the region scoping this request.
-   * @param targetPoolResource A TargetPool resource. This resource defines a pool of instances, an
-   *     associated HttpHealthCheck resource, and the fallback target pool. (== resource_for
-   *     beta.targetPools ==) (== resource_for v1.targetPools ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation insertTargetPool(ProjectRegionName region, TargetPool targetPoolResource) {
+  public final Operation insertTargetPool(ProjectRegionName region) {
 
     InsertTargetPoolHttpRequest request =
         InsertTargetPoolHttpRequest.newBuilder()
             .setRegion(region == null ? null : region.toString())
-            .setTargetPoolResource(targetPoolResource)
             .build();
     return insertTargetPool(request);
   }
@@ -876,25 +871,18 @@ public class TargetPoolClient implements BackgroundResource {
    * <pre><code>
    * try (TargetPoolClient targetPoolClient = TargetPoolClient.create()) {
    *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
-   *   TargetPool targetPoolResource = TargetPool.newBuilder().build();
-   *   Operation response = targetPoolClient.insertTargetPool(region.toString(), targetPoolResource);
+   *   Operation response = targetPoolClient.insertTargetPool(region.toString());
    * }
    * </code></pre>
    *
    * @param region Name of the region scoping this request.
-   * @param targetPoolResource A TargetPool resource. This resource defines a pool of instances, an
-   *     associated HttpHealthCheck resource, and the fallback target pool. (== resource_for
-   *     beta.targetPools ==) (== resource_for v1.targetPools ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation insertTargetPool(String region, TargetPool targetPoolResource) {
+  public final Operation insertTargetPool(String region) {
 
     InsertTargetPoolHttpRequest request =
-        InsertTargetPoolHttpRequest.newBuilder()
-            .setRegion(region)
-            .setTargetPoolResource(targetPoolResource)
-            .build();
+        InsertTargetPoolHttpRequest.newBuilder().setRegion(region).build();
     return insertTargetPool(request);
   }
 
@@ -908,10 +896,8 @@ public class TargetPoolClient implements BackgroundResource {
    * <pre><code>
    * try (TargetPoolClient targetPoolClient = TargetPoolClient.create()) {
    *   String formattedRegion = ProjectRegionName.format("[PROJECT]", "[REGION]");
-   *   TargetPool targetPoolResource = TargetPool.newBuilder().build();
    *   InsertTargetPoolHttpRequest request = InsertTargetPoolHttpRequest.newBuilder()
    *     .setRegion(formattedRegion)
-   *     .setTargetPoolResource(targetPoolResource)
    *     .build();
    *   Operation response = targetPoolClient.insertTargetPool(request);
    * }
@@ -935,10 +921,8 @@ public class TargetPoolClient implements BackgroundResource {
    * <pre><code>
    * try (TargetPoolClient targetPoolClient = TargetPoolClient.create()) {
    *   String formattedRegion = ProjectRegionName.format("[PROJECT]", "[REGION]");
-   *   TargetPool targetPoolResource = TargetPool.newBuilder().build();
    *   InsertTargetPoolHttpRequest request = InsertTargetPoolHttpRequest.newBuilder()
    *     .setRegion(formattedRegion)
-   *     .setTargetPoolResource(targetPoolResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = targetPoolClient.insertTargetPoolCallable().futureCall(request);
    *   // Do something

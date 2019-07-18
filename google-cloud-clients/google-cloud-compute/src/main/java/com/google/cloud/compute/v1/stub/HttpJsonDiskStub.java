@@ -31,6 +31,7 @@ import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.pathtemplate.PathTemplate;
+import com.google.cloud.compute.v1.AddResourcePoliciesDiskHttpRequest;
 import com.google.cloud.compute.v1.AggregatedListDisksHttpRequest;
 import com.google.cloud.compute.v1.CreateSnapshotDiskHttpRequest;
 import com.google.cloud.compute.v1.DeleteDiskHttpRequest;
@@ -47,6 +48,7 @@ import com.google.cloud.compute.v1.ProjectName;
 import com.google.cloud.compute.v1.ProjectZoneDiskName;
 import com.google.cloud.compute.v1.ProjectZoneDiskResourceName;
 import com.google.cloud.compute.v1.ProjectZoneName;
+import com.google.cloud.compute.v1.RemoveResourcePoliciesDiskHttpRequest;
 import com.google.cloud.compute.v1.ResizeDiskHttpRequest;
 import com.google.cloud.compute.v1.SetIamPolicyDiskHttpRequest;
 import com.google.cloud.compute.v1.SetLabelsDiskHttpRequest;
@@ -66,6 +68,27 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonDiskStub extends DiskStub {
+  @InternalApi
+  public static final ApiMethodDescriptor<AddResourcePoliciesDiskHttpRequest, Operation>
+      addResourcePoliciesDiskMethodDescriptor =
+          ApiMethodDescriptor.<AddResourcePoliciesDiskHttpRequest, Operation>newBuilder()
+              .setFullMethodName("compute.disks.addResourcePolicies")
+              .setHttpMethod(HttpMethods.POST)
+              .setRequestFormatter(
+                  ApiMessageHttpRequestFormatter.<AddResourcePoliciesDiskHttpRequest>newBuilder()
+                      .setPathTemplate(
+                          PathTemplate.create(
+                              "{project}/zones/{zone}/disks/{disk}/addResourcePolicies"))
+                      .setQueryParams(Sets.<String>newHashSet("requestId"))
+                      .setResourceNameFactory(ProjectZoneDiskName.newFactory())
+                      .setResourceNameField("disk")
+                      .build())
+              .setResponseParser(
+                  ApiMessageHttpResponseParser.<Operation>newBuilder()
+                      .setResponseInstance(Operation.getDefaultInstance())
+                      .build())
+              .build();
+
   @InternalApi
   public static final ApiMethodDescriptor<AggregatedListDisksHttpRequest, DiskAggregatedList>
       aggregatedListDisksMethodDescriptor =
@@ -204,6 +227,27 @@ public class HttpJsonDiskStub extends DiskStub {
               .build();
 
   @InternalApi
+  public static final ApiMethodDescriptor<RemoveResourcePoliciesDiskHttpRequest, Operation>
+      removeResourcePoliciesDiskMethodDescriptor =
+          ApiMethodDescriptor.<RemoveResourcePoliciesDiskHttpRequest, Operation>newBuilder()
+              .setFullMethodName("compute.disks.removeResourcePolicies")
+              .setHttpMethod(HttpMethods.POST)
+              .setRequestFormatter(
+                  ApiMessageHttpRequestFormatter.<RemoveResourcePoliciesDiskHttpRequest>newBuilder()
+                      .setPathTemplate(
+                          PathTemplate.create(
+                              "{project}/zones/{zone}/disks/{disk}/removeResourcePolicies"))
+                      .setQueryParams(Sets.<String>newHashSet("requestId"))
+                      .setResourceNameFactory(ProjectZoneDiskName.newFactory())
+                      .setResourceNameField("disk")
+                      .build())
+              .setResponseParser(
+                  ApiMessageHttpResponseParser.<Operation>newBuilder()
+                      .setResponseInstance(Operation.getDefaultInstance())
+                      .build())
+              .build();
+
+  @InternalApi
   public static final ApiMethodDescriptor<ResizeDiskHttpRequest, Operation>
       resizeDiskMethodDescriptor =
           ApiMethodDescriptor.<ResizeDiskHttpRequest, Operation>newBuilder()
@@ -289,6 +333,8 @@ public class HttpJsonDiskStub extends DiskStub {
 
   private final BackgroundResource backgroundResources;
 
+  private final UnaryCallable<AddResourcePoliciesDiskHttpRequest, Operation>
+      addResourcePoliciesDiskCallable;
   private final UnaryCallable<AggregatedListDisksHttpRequest, DiskAggregatedList>
       aggregatedListDisksCallable;
   private final UnaryCallable<AggregatedListDisksHttpRequest, AggregatedListDisksPagedResponse>
@@ -300,6 +346,8 @@ public class HttpJsonDiskStub extends DiskStub {
   private final UnaryCallable<InsertDiskHttpRequest, Operation> insertDiskCallable;
   private final UnaryCallable<ListDisksHttpRequest, DiskList> listDisksCallable;
   private final UnaryCallable<ListDisksHttpRequest, ListDisksPagedResponse> listDisksPagedCallable;
+  private final UnaryCallable<RemoveResourcePoliciesDiskHttpRequest, Operation>
+      removeResourcePoliciesDiskCallable;
   private final UnaryCallable<ResizeDiskHttpRequest, Operation> resizeDiskCallable;
   private final UnaryCallable<SetIamPolicyDiskHttpRequest, Policy> setIamPolicyDiskCallable;
   private final UnaryCallable<SetLabelsDiskHttpRequest, Operation> setLabelsDiskCallable;
@@ -342,6 +390,11 @@ public class HttpJsonDiskStub extends DiskStub {
       throws IOException {
     this.callableFactory = callableFactory;
 
+    HttpJsonCallSettings<AddResourcePoliciesDiskHttpRequest, Operation>
+        addResourcePoliciesDiskTransportSettings =
+            HttpJsonCallSettings.<AddResourcePoliciesDiskHttpRequest, Operation>newBuilder()
+                .setMethodDescriptor(addResourcePoliciesDiskMethodDescriptor)
+                .build();
     HttpJsonCallSettings<AggregatedListDisksHttpRequest, DiskAggregatedList>
         aggregatedListDisksTransportSettings =
             HttpJsonCallSettings.<AggregatedListDisksHttpRequest, DiskAggregatedList>newBuilder()
@@ -372,6 +425,11 @@ public class HttpJsonDiskStub extends DiskStub {
         HttpJsonCallSettings.<ListDisksHttpRequest, DiskList>newBuilder()
             .setMethodDescriptor(listDisksMethodDescriptor)
             .build();
+    HttpJsonCallSettings<RemoveResourcePoliciesDiskHttpRequest, Operation>
+        removeResourcePoliciesDiskTransportSettings =
+            HttpJsonCallSettings.<RemoveResourcePoliciesDiskHttpRequest, Operation>newBuilder()
+                .setMethodDescriptor(removeResourcePoliciesDiskMethodDescriptor)
+                .build();
     HttpJsonCallSettings<ResizeDiskHttpRequest, Operation> resizeDiskTransportSettings =
         HttpJsonCallSettings.<ResizeDiskHttpRequest, Operation>newBuilder()
             .setMethodDescriptor(resizeDiskMethodDescriptor)
@@ -391,6 +449,11 @@ public class HttpJsonDiskStub extends DiskStub {
                 .setMethodDescriptor(testIamPermissionsDiskMethodDescriptor)
                 .build();
 
+    this.addResourcePoliciesDiskCallable =
+        callableFactory.createUnaryCallable(
+            addResourcePoliciesDiskTransportSettings,
+            settings.addResourcePoliciesDiskSettings(),
+            clientContext);
     this.aggregatedListDisksCallable =
         callableFactory.createUnaryCallable(
             aggregatedListDisksTransportSettings,
@@ -424,6 +487,11 @@ public class HttpJsonDiskStub extends DiskStub {
     this.listDisksPagedCallable =
         callableFactory.createPagedCallable(
             listDisksTransportSettings, settings.listDisksSettings(), clientContext);
+    this.removeResourcePoliciesDiskCallable =
+        callableFactory.createUnaryCallable(
+            removeResourcePoliciesDiskTransportSettings,
+            settings.removeResourcePoliciesDiskSettings(),
+            clientContext);
     this.resizeDiskCallable =
         callableFactory.createUnaryCallable(
             resizeDiskTransportSettings, settings.resizeDiskSettings(), clientContext);
@@ -440,6 +508,12 @@ public class HttpJsonDiskStub extends DiskStub {
             clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+  }
+
+  @BetaApi
+  public UnaryCallable<AddResourcePoliciesDiskHttpRequest, Operation>
+      addResourcePoliciesDiskCallable() {
+    return addResourcePoliciesDiskCallable;
   }
 
   @BetaApi
@@ -487,6 +561,12 @@ public class HttpJsonDiskStub extends DiskStub {
   @BetaApi
   public UnaryCallable<ListDisksHttpRequest, DiskList> listDisksCallable() {
     return listDisksCallable;
+  }
+
+  @BetaApi
+  public UnaryCallable<RemoveResourcePoliciesDiskHttpRequest, Operation>
+      removeResourcePoliciesDiskCallable() {
+    return removeResourcePoliciesDiskCallable;
   }
 
   @BetaApi

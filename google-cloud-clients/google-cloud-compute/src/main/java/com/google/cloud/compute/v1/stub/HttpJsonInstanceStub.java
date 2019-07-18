@@ -38,10 +38,12 @@ import com.google.cloud.compute.v1.AttachDiskInstanceHttpRequest;
 import com.google.cloud.compute.v1.DeleteAccessConfigInstanceHttpRequest;
 import com.google.cloud.compute.v1.DeleteInstanceHttpRequest;
 import com.google.cloud.compute.v1.DetachDiskInstanceHttpRequest;
+import com.google.cloud.compute.v1.GetGuestAttributesInstanceHttpRequest;
 import com.google.cloud.compute.v1.GetIamPolicyInstanceHttpRequest;
 import com.google.cloud.compute.v1.GetInstanceHttpRequest;
 import com.google.cloud.compute.v1.GetSerialPortOutputInstanceHttpRequest;
 import com.google.cloud.compute.v1.GetShieldedInstanceIdentityInstanceHttpRequest;
+import com.google.cloud.compute.v1.GuestAttributes;
 import com.google.cloud.compute.v1.InsertInstanceHttpRequest;
 import com.google.cloud.compute.v1.Instance;
 import com.google.cloud.compute.v1.InstanceAggregatedList;
@@ -237,6 +239,27 @@ public class HttpJsonInstanceStub extends InstanceStub {
               .setResponseParser(
                   ApiMessageHttpResponseParser.<Instance>newBuilder()
                       .setResponseInstance(Instance.getDefaultInstance())
+                      .build())
+              .build();
+
+  @InternalApi
+  public static final ApiMethodDescriptor<GetGuestAttributesInstanceHttpRequest, GuestAttributes>
+      getGuestAttributesInstanceMethodDescriptor =
+          ApiMethodDescriptor.<GetGuestAttributesInstanceHttpRequest, GuestAttributes>newBuilder()
+              .setFullMethodName("compute.instances.getGuestAttributes")
+              .setHttpMethod(HttpMethods.GET)
+              .setRequestFormatter(
+                  ApiMessageHttpRequestFormatter.<GetGuestAttributesInstanceHttpRequest>newBuilder()
+                      .setPathTemplate(
+                          PathTemplate.create(
+                              "{project}/zones/{zone}/instances/{instance}/getGuestAttributes"))
+                      .setQueryParams(Sets.<String>newHashSet("queryPath", "variableKey"))
+                      .setResourceNameFactory(ProjectZoneInstanceName.newFactory())
+                      .setResourceNameField("instance")
+                      .build())
+              .setResponseParser(
+                  ApiMessageHttpResponseParser.<GuestAttributes>newBuilder()
+                      .setResponseInstance(GuestAttributes.getDefaultInstance())
                       .build())
               .build();
 
@@ -837,6 +860,8 @@ public class HttpJsonInstanceStub extends InstanceStub {
       deleteAccessConfigInstanceCallable;
   private final UnaryCallable<DetachDiskInstanceHttpRequest, Operation> detachDiskInstanceCallable;
   private final UnaryCallable<GetInstanceHttpRequest, Instance> getInstanceCallable;
+  private final UnaryCallable<GetGuestAttributesInstanceHttpRequest, GuestAttributes>
+      getGuestAttributesInstanceCallable;
   private final UnaryCallable<GetIamPolicyInstanceHttpRequest, Policy> getIamPolicyInstanceCallable;
   private final UnaryCallable<GetSerialPortOutputInstanceHttpRequest, SerialPortOutput>
       getSerialPortOutputInstanceCallable;
@@ -962,6 +987,12 @@ public class HttpJsonInstanceStub extends InstanceStub {
         HttpJsonCallSettings.<GetInstanceHttpRequest, Instance>newBuilder()
             .setMethodDescriptor(getInstanceMethodDescriptor)
             .build();
+    HttpJsonCallSettings<GetGuestAttributesInstanceHttpRequest, GuestAttributes>
+        getGuestAttributesInstanceTransportSettings =
+            HttpJsonCallSettings
+                .<GetGuestAttributesInstanceHttpRequest, GuestAttributes>newBuilder()
+                .setMethodDescriptor(getGuestAttributesInstanceMethodDescriptor)
+                .build();
     HttpJsonCallSettings<GetIamPolicyInstanceHttpRequest, Policy>
         getIamPolicyInstanceTransportSettings =
             HttpJsonCallSettings.<GetIamPolicyInstanceHttpRequest, Policy>newBuilder()
@@ -1136,6 +1167,11 @@ public class HttpJsonInstanceStub extends InstanceStub {
     this.getInstanceCallable =
         callableFactory.createUnaryCallable(
             getInstanceTransportSettings, settings.getInstanceSettings(), clientContext);
+    this.getGuestAttributesInstanceCallable =
+        callableFactory.createUnaryCallable(
+            getGuestAttributesInstanceTransportSettings,
+            settings.getGuestAttributesInstanceSettings(),
+            clientContext);
     this.getIamPolicyInstanceCallable =
         callableFactory.createUnaryCallable(
             getIamPolicyInstanceTransportSettings,
@@ -1313,6 +1349,12 @@ public class HttpJsonInstanceStub extends InstanceStub {
   @BetaApi
   public UnaryCallable<GetInstanceHttpRequest, Instance> getInstanceCallable() {
     return getInstanceCallable;
+  }
+
+  @BetaApi
+  public UnaryCallable<GetGuestAttributesInstanceHttpRequest, GuestAttributes>
+      getGuestAttributesInstanceCallable() {
+    return getGuestAttributesInstanceCallable;
   }
 
   @BetaApi

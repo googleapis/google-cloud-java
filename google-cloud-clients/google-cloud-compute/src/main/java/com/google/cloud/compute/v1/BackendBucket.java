@@ -24,7 +24,12 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
-/** A BackendBucket resource. This resource defines a Cloud Storage bucket. */
+/**
+ * Represents a Cloud Storage Bucket resource.
+ *
+ * <p>This Cloud Storage bucket resource is referenced by a URL map of a load balancer. For more
+ * information, read Backend Buckets.
+ */
 public final class BackendBucket implements ApiMessage {
   private final String bucketName;
   private final BackendBucketCdnPolicy cdnPolicy;

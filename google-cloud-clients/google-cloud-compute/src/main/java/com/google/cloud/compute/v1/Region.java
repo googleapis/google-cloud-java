@@ -25,7 +25,12 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
-/** Region resource. (== resource_for beta.regions ==) (== resource_for v1.regions ==) */
+/**
+ * Represents a Region resource.
+ *
+ * <p>A region is a geographical area where a resource is located. For more information, read
+ * Regions and Zones. (== resource_for beta.regions ==) (== resource_for v1.regions ==)
+ */
 public final class Region implements ApiMessage {
   private final String creationTimestamp;
   private final DeprecationStatus deprecated;

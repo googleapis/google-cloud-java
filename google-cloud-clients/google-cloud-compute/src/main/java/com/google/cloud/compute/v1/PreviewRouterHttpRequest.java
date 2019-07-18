@@ -163,7 +163,11 @@ public final class PreviewRouterHttpRequest implements ApiMessage {
     return router;
   }
 
-  /** Router resource. */
+  /**
+   * Represents a Cloud Router resource.
+   *
+   * <p>For more information about Cloud Router, read the the Cloud Router overview.
+   */
   public Router getRouterResource() {
     return routerResource;
   }
@@ -343,12 +347,20 @@ public final class PreviewRouterHttpRequest implements ApiMessage {
       return this;
     }
 
-    /** Router resource. */
+    /**
+     * Represents a Cloud Router resource.
+     *
+     * <p>For more information about Cloud Router, read the the Cloud Router overview.
+     */
     public Router getRouterResource() {
       return routerResource;
     }
 
-    /** Router resource. */
+    /**
+     * Represents a Cloud Router resource.
+     *
+     * <p>For more information about Cloud Router, read the the Cloud Router overview.
+     */
     public Builder setRouterResource(Router routerResource) {
       this.routerResource = routerResource;
       return this;

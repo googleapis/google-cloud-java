@@ -467,10 +467,10 @@ public class InterconnectClient implements BackgroundResource {
    * </code></pre>
    *
    * @param project Project ID for this request.
-   * @param interconnectResource Represents an Interconnects resource. The Interconnects resource is
-   *     a dedicated connection between Google's network and your on-premises network. For more
-   *     information, see the Dedicated overview page. (== resource_for v1.interconnects ==) (==
-   *     resource_for beta.interconnects ==)
+   * @param interconnectResource Represents an Interconnect resource.
+   *     <p>An Interconnect resource is a dedicated connection between the GCP network and your
+   *     on-premises network. For more information, read the Dedicated Interconnect Overview. (==
+   *     resource_for v1.interconnects ==) (== resource_for beta.interconnects ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -500,10 +500,10 @@ public class InterconnectClient implements BackgroundResource {
    * </code></pre>
    *
    * @param project Project ID for this request.
-   * @param interconnectResource Represents an Interconnects resource. The Interconnects resource is
-   *     a dedicated connection between Google's network and your on-premises network. For more
-   *     information, see the Dedicated overview page. (== resource_for v1.interconnects ==) (==
-   *     resource_for beta.interconnects ==)
+   * @param interconnectResource Represents an Interconnect resource.
+   *     <p>An Interconnect resource is a dedicated connection between the GCP network and your
+   *     on-premises network. For more information, read the Dedicated Interconnect Overview. (==
+   *     resource_for v1.interconnects ==) (== resource_for beta.interconnects ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -724,10 +724,10 @@ public class InterconnectClient implements BackgroundResource {
    * </code></pre>
    *
    * @param interconnect Name of the interconnect to update.
-   * @param interconnectResource Represents an Interconnects resource. The Interconnects resource is
-   *     a dedicated connection between Google's network and your on-premises network. For more
-   *     information, see the Dedicated overview page. (== resource_for v1.interconnects ==) (==
-   *     resource_for beta.interconnects ==)
+   * @param interconnectResource Represents an Interconnect resource.
+   *     <p>An Interconnect resource is a dedicated connection between the GCP network and your
+   *     on-premises network. For more information, read the Dedicated Interconnect Overview. (==
+   *     resource_for v1.interconnects ==) (== resource_for beta.interconnects ==)
    * @param fieldMask The fields that should be serialized (even if they have empty values). If the
    *     containing message object has a non-null fieldmask, then all the fields in the field mask
    *     (and only those fields in the field mask) will be serialized. If the containing object does
@@ -766,10 +766,10 @@ public class InterconnectClient implements BackgroundResource {
    * </code></pre>
    *
    * @param interconnect Name of the interconnect to update.
-   * @param interconnectResource Represents an Interconnects resource. The Interconnects resource is
-   *     a dedicated connection between Google's network and your on-premises network. For more
-   *     information, see the Dedicated overview page. (== resource_for v1.interconnects ==) (==
-   *     resource_for beta.interconnects ==)
+   * @param interconnectResource Represents an Interconnect resource.
+   *     <p>An Interconnect resource is a dedicated connection between the GCP network and your
+   *     on-premises network. For more information, read the Dedicated Interconnect Overview. (==
+   *     resource_for v1.interconnects ==) (== resource_for beta.interconnects ==)
    * @param fieldMask The fields that should be serialized (even if they have empty values). If the
    *     containing message object has a non-null fieldmask, then all the fields in the field mask
    *     (and only those fields in the field mask) will be serialized. If the containing object does

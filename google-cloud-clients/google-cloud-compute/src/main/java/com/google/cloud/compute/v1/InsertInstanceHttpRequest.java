@@ -151,7 +151,13 @@ public final class InsertInstanceHttpRequest implements ApiMessage {
     return fields;
   }
 
-  /** An Instance resource. (== resource_for beta.instances ==) (== resource_for v1.instances ==) */
+  /**
+   * Represents an Instance resource.
+   *
+   * <p>An instance is a virtual machine that is hosted on Google Cloud Platform. For more
+   * information, read Virtual Machine Instances. (== resource_for beta.instances ==) (==
+   * resource_for v1.instances ==)
+   */
   public Instance getInstanceResource() {
     return instanceResource;
   }
@@ -340,14 +346,22 @@ public final class InsertInstanceHttpRequest implements ApiMessage {
     }
 
     /**
-     * An Instance resource. (== resource_for beta.instances ==) (== resource_for v1.instances ==)
+     * Represents an Instance resource.
+     *
+     * <p>An instance is a virtual machine that is hosted on Google Cloud Platform. For more
+     * information, read Virtual Machine Instances. (== resource_for beta.instances ==) (==
+     * resource_for v1.instances ==)
      */
     public Instance getInstanceResource() {
       return instanceResource;
     }
 
     /**
-     * An Instance resource. (== resource_for beta.instances ==) (== resource_for v1.instances ==)
+     * Represents an Instance resource.
+     *
+     * <p>An instance is a virtual machine that is hosted on Google Cloud Platform. For more
+     * information, read Virtual Machine Instances. (== resource_for beta.instances ==) (==
+     * resource_for v1.instances ==)
      */
     public Builder setInstanceResource(Instance instanceResource) {
       this.instanceResource = instanceResource;

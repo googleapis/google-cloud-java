@@ -25,8 +25,11 @@ import javax.annotation.Nullable;
 @Generated("by GAPIC")
 @BetaApi
 /**
- * An Instance Template resource. (== resource_for beta.instanceTemplates ==) (== resource_for
- * v1.instanceTemplates ==)
+ * Represents an Instance Template resource.
+ *
+ * <p>You can use instance templates to create VM instances and managed instance groups. For more
+ * information, read Instance Templates. (== resource_for beta.instanceTemplates ==) (==
+ * resource_for v1.instanceTemplates ==)
  */
 public final class InstanceTemplate implements ApiMessage {
   private final String creationTimestamp;

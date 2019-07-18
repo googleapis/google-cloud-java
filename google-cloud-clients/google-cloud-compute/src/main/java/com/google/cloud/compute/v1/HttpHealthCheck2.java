@@ -25,8 +25,10 @@ import javax.annotation.Nullable;
 @Generated("by GAPIC")
 @BetaApi
 /**
- * An HttpHealthCheck resource. This resource defines a template for how individual instances should
- * be checked for health, via HTTP.
+ * Represents a legacy HTTP Health Check resource.
+ *
+ * <p>Legacy health checks are required by network load balancers. For more information, read Health
+ * Check Concepts.
  */
 public final class HttpHealthCheck2 implements ApiMessage {
   private final Integer checkIntervalSec;
@@ -211,7 +213,10 @@ public final class HttpHealthCheck2 implements ApiMessage {
     return port;
   }
 
-  /** The request path of the HTTP health check request. The default value is /. */
+  /**
+   * The request path of the HTTP health check request. The default value is /. This field does not
+   * support query parameters.
+   */
   public String getRequestPath() {
     return requestPath;
   }
@@ -473,12 +478,18 @@ public final class HttpHealthCheck2 implements ApiMessage {
       return this;
     }
 
-    /** The request path of the HTTP health check request. The default value is /. */
+    /**
+     * The request path of the HTTP health check request. The default value is /. This field does
+     * not support query parameters.
+     */
     public String getRequestPath() {
       return requestPath;
     }
 
-    /** The request path of the HTTP health check request. The default value is /. */
+    /**
+     * The request path of the HTTP health check request. The default value is /. This field does
+     * not support query parameters.
+     */
     public Builder setRequestPath(String requestPath) {
       this.requestPath = requestPath;
       return this;

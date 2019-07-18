@@ -25,8 +25,10 @@ import javax.annotation.Nullable;
 @Generated("by GAPIC")
 @BetaApi
 /**
- * An HttpsHealthCheck resource. This resource defines a template for how individual instances
- * should be checked for health, via HTTPS.
+ * Represents a legacy HTTPS Health Check resource.
+ *
+ * <p>Legacy health checks are required by network load balancers. For more information, read Health
+ * Check Concepts.
  */
 public final class HttpsHealthCheck2 implements ApiMessage {
   private final Integer checkIntervalSec;

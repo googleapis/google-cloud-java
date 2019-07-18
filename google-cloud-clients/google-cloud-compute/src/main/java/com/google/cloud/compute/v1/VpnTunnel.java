@@ -25,7 +25,12 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
-/** VPN tunnel resource. (== resource_for beta.vpnTunnels ==) (== resource_for v1.vpnTunnels ==) */
+/**
+ * Represents a Cloud VPN Tunnel resource.
+ *
+ * <p>For more information about VPN, read the the Cloud VPN Overview. (== resource_for
+ * beta.vpnTunnels ==) (== resource_for v1.vpnTunnels ==)
+ */
 public final class VpnTunnel implements ApiMessage {
   private final String creationTimestamp;
   private final String description;

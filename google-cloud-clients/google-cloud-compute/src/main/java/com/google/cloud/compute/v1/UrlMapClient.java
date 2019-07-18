@@ -363,8 +363,13 @@ public class UrlMapClient implements BackgroundResource {
    * </code></pre>
    *
    * @param project Project ID for this request.
-   * @param urlMapResource A UrlMap resource. This resource defines the mapping from URL to the
-   *     BackendService resource, based on the "longest-match" of the URL's host and path.
+   * @param urlMapResource Represents a URL Map resource.
+   *     <p>A URL map resource is a component of certain types of load balancers. This resource
+   *     defines mappings from host names and URL paths to either a backend service or a backend
+   *     bucket.
+   *     <p>To use this resource, the backend service must have a loadBalancingScheme of either
+   *     EXTERNAL, INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED For more information, read URL Map
+   *     Concepts.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -393,8 +398,13 @@ public class UrlMapClient implements BackgroundResource {
    * </code></pre>
    *
    * @param project Project ID for this request.
-   * @param urlMapResource A UrlMap resource. This resource defines the mapping from URL to the
-   *     BackendService resource, based on the "longest-match" of the URL's host and path.
+   * @param urlMapResource Represents a URL Map resource.
+   *     <p>A URL map resource is a component of certain types of load balancers. This resource
+   *     defines mappings from host names and URL paths to either a backend service or a backend
+   *     bucket.
+   *     <p>To use this resource, the backend service must have a loadBalancingScheme of either
+   *     EXTERNAL, INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED For more information, read URL Map
+   *     Concepts.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -728,8 +738,13 @@ public class UrlMapClient implements BackgroundResource {
    * </code></pre>
    *
    * @param urlMap Name of the UrlMap resource to patch.
-   * @param urlMapResource A UrlMap resource. This resource defines the mapping from URL to the
-   *     BackendService resource, based on the "longest-match" of the URL's host and path.
+   * @param urlMapResource Represents a URL Map resource.
+   *     <p>A URL map resource is a component of certain types of load balancers. This resource
+   *     defines mappings from host names and URL paths to either a backend service or a backend
+   *     bucket.
+   *     <p>To use this resource, the backend service must have a loadBalancingScheme of either
+   *     EXTERNAL, INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED For more information, read URL Map
+   *     Concepts.
    * @param fieldMask The fields that should be serialized (even if they have empty values). If the
    *     containing message object has a non-null fieldmask, then all the fields in the field mask
    *     (and only those fields in the field mask) will be serialized. If the containing object does
@@ -766,8 +781,13 @@ public class UrlMapClient implements BackgroundResource {
    * </code></pre>
    *
    * @param urlMap Name of the UrlMap resource to patch.
-   * @param urlMapResource A UrlMap resource. This resource defines the mapping from URL to the
-   *     BackendService resource, based on the "longest-match" of the URL's host and path.
+   * @param urlMapResource Represents a URL Map resource.
+   *     <p>A URL map resource is a component of certain types of load balancers. This resource
+   *     defines mappings from host names and URL paths to either a backend service or a backend
+   *     bucket.
+   *     <p>To use this resource, the backend service must have a loadBalancingScheme of either
+   *     EXTERNAL, INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED For more information, read URL Map
+   *     Concepts.
    * @param fieldMask The fields that should be serialized (even if they have empty values). If the
    *     containing message object has a non-null fieldmask, then all the fields in the field mask
    *     (and only those fields in the field mask) will be serialized. If the containing object does
@@ -859,8 +879,13 @@ public class UrlMapClient implements BackgroundResource {
    * </code></pre>
    *
    * @param urlMap Name of the UrlMap resource to update.
-   * @param urlMapResource A UrlMap resource. This resource defines the mapping from URL to the
-   *     BackendService resource, based on the "longest-match" of the URL's host and path.
+   * @param urlMapResource Represents a URL Map resource.
+   *     <p>A URL map resource is a component of certain types of load balancers. This resource
+   *     defines mappings from host names and URL paths to either a backend service or a backend
+   *     bucket.
+   *     <p>To use this resource, the backend service must have a loadBalancingScheme of either
+   *     EXTERNAL, INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED For more information, read URL Map
+   *     Concepts.
    * @param fieldMask The fields that should be serialized (even if they have empty values). If the
    *     containing message object has a non-null fieldmask, then all the fields in the field mask
    *     (and only those fields in the field mask) will be serialized. If the containing object does
@@ -896,8 +921,13 @@ public class UrlMapClient implements BackgroundResource {
    * </code></pre>
    *
    * @param urlMap Name of the UrlMap resource to update.
-   * @param urlMapResource A UrlMap resource. This resource defines the mapping from URL to the
-   *     BackendService resource, based on the "longest-match" of the URL's host and path.
+   * @param urlMapResource Represents a URL Map resource.
+   *     <p>A URL map resource is a component of certain types of load balancers. This resource
+   *     defines mappings from host names and URL paths to either a backend service or a backend
+   *     bucket.
+   *     <p>To use this resource, the backend service must have a loadBalancingScheme of either
+   *     EXTERNAL, INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED For more information, read URL Map
+   *     Concepts.
    * @param fieldMask The fields that should be serialized (even if they have empty values). If the
    *     containing message object has a non-null fieldmask, then all the fields in the field mask
    *     (and only those fields in the field mask) will be serialized. If the containing object does

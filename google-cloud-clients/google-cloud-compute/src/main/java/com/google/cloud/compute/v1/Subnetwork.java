@@ -26,7 +26,12 @@ import javax.annotation.Nullable;
 @Generated("by GAPIC")
 @BetaApi
 /**
- * A Subnetwork resource. (== resource_for beta.subnetworks ==) (== resource_for v1.subnetworks ==)
+ * Represents a Subnetwork resource.
+ *
+ * <p>A subnetwork (also known as a subnet) is a logical partition of a Virtual Private Cloud
+ * network with one primary IP range and zero or more secondary IP ranges. For more information,
+ * read Virtual Private Cloud (VPC) Network. (== resource_for beta.subnetworks ==) (== resource_for
+ * v1.subnetworks ==)
  */
 public final class Subnetwork implements ApiMessage {
   private final String creationTimestamp;

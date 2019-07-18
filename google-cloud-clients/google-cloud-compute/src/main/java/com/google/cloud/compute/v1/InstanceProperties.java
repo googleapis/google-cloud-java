@@ -36,6 +36,7 @@ public final class InstanceProperties implements ApiMessage {
   private final Metadata metadata;
   private final String minCpuPlatform;
   private final List<NetworkInterface> networkInterfaces;
+  private final ReservationAffinity reservationAffinity;
   private final Scheduling scheduling;
   private final List<ServiceAccount> serviceAccounts;
   private final ShieldedInstanceConfig shieldedInstanceConfig;
@@ -51,6 +52,7 @@ public final class InstanceProperties implements ApiMessage {
     this.metadata = null;
     this.minCpuPlatform = null;
     this.networkInterfaces = null;
+    this.reservationAffinity = null;
     this.scheduling = null;
     this.serviceAccounts = null;
     this.shieldedInstanceConfig = null;
@@ -67,6 +69,7 @@ public final class InstanceProperties implements ApiMessage {
       Metadata metadata,
       String minCpuPlatform,
       List<NetworkInterface> networkInterfaces,
+      ReservationAffinity reservationAffinity,
       Scheduling scheduling,
       List<ServiceAccount> serviceAccounts,
       ShieldedInstanceConfig shieldedInstanceConfig,
@@ -80,6 +83,7 @@ public final class InstanceProperties implements ApiMessage {
     this.metadata = metadata;
     this.minCpuPlatform = minCpuPlatform;
     this.networkInterfaces = networkInterfaces;
+    this.reservationAffinity = reservationAffinity;
     this.scheduling = scheduling;
     this.serviceAccounts = serviceAccounts;
     this.shieldedInstanceConfig = shieldedInstanceConfig;
@@ -114,6 +118,9 @@ public final class InstanceProperties implements ApiMessage {
     }
     if ("networkInterfaces".equals(fieldName)) {
       return networkInterfaces;
+    }
+    if ("reservationAffinity".equals(fieldName)) {
+      return reservationAffinity;
     }
     if ("scheduling".equals(fieldName)) {
       return scheduling;
@@ -215,6 +222,11 @@ public final class InstanceProperties implements ApiMessage {
     return networkInterfaces;
   }
 
+  /** Specifies the reservations that this instance can consume from. */
+  public ReservationAffinity getReservationAffinity() {
+    return reservationAffinity;
+  }
+
   /** Specifies the scheduling options for the instances that are created from this template. */
   public Scheduling getScheduling() {
     return scheduling;
@@ -274,6 +286,7 @@ public final class InstanceProperties implements ApiMessage {
     private Metadata metadata;
     private String minCpuPlatform;
     private List<NetworkInterface> networkInterfaces;
+    private ReservationAffinity reservationAffinity;
     private Scheduling scheduling;
     private List<ServiceAccount> serviceAccounts;
     private ShieldedInstanceConfig shieldedInstanceConfig;
@@ -310,6 +323,9 @@ public final class InstanceProperties implements ApiMessage {
       if (other.getNetworkInterfacesList() != null) {
         this.networkInterfaces = other.networkInterfaces;
       }
+      if (other.getReservationAffinity() != null) {
+        this.reservationAffinity = other.reservationAffinity;
+      }
       if (other.getScheduling() != null) {
         this.scheduling = other.scheduling;
       }
@@ -335,6 +351,7 @@ public final class InstanceProperties implements ApiMessage {
       this.metadata = source.metadata;
       this.minCpuPlatform = source.minCpuPlatform;
       this.networkInterfaces = source.networkInterfaces;
+      this.reservationAffinity = source.reservationAffinity;
       this.scheduling = source.scheduling;
       this.serviceAccounts = source.serviceAccounts;
       this.shieldedInstanceConfig = source.shieldedInstanceConfig;
@@ -525,6 +542,17 @@ public final class InstanceProperties implements ApiMessage {
       return this;
     }
 
+    /** Specifies the reservations that this instance can consume from. */
+    public ReservationAffinity getReservationAffinity() {
+      return reservationAffinity;
+    }
+
+    /** Specifies the reservations that this instance can consume from. */
+    public Builder setReservationAffinity(ReservationAffinity reservationAffinity) {
+      this.reservationAffinity = reservationAffinity;
+      return this;
+    }
+
     /** Specifies the scheduling options for the instances that are created from this template. */
     public Scheduling getScheduling() {
       return scheduling;
@@ -611,6 +639,7 @@ public final class InstanceProperties implements ApiMessage {
           metadata,
           minCpuPlatform,
           networkInterfaces,
+          reservationAffinity,
           scheduling,
           serviceAccounts,
           shieldedInstanceConfig,
@@ -628,6 +657,7 @@ public final class InstanceProperties implements ApiMessage {
       newBuilder.setMetadata(this.metadata);
       newBuilder.setMinCpuPlatform(this.minCpuPlatform);
       newBuilder.addAllNetworkInterfaces(this.networkInterfaces);
+      newBuilder.setReservationAffinity(this.reservationAffinity);
       newBuilder.setScheduling(this.scheduling);
       newBuilder.addAllServiceAccounts(this.serviceAccounts);
       newBuilder.setShieldedInstanceConfig(this.shieldedInstanceConfig);
@@ -666,6 +696,9 @@ public final class InstanceProperties implements ApiMessage {
         + "networkInterfaces="
         + networkInterfaces
         + ", "
+        + "reservationAffinity="
+        + reservationAffinity
+        + ", "
         + "scheduling="
         + scheduling
         + ", "
@@ -696,6 +729,7 @@ public final class InstanceProperties implements ApiMessage {
           && Objects.equals(this.metadata, that.getMetadata())
           && Objects.equals(this.minCpuPlatform, that.getMinCpuPlatform())
           && Objects.equals(this.networkInterfaces, that.getNetworkInterfacesList())
+          && Objects.equals(this.reservationAffinity, that.getReservationAffinity())
           && Objects.equals(this.scheduling, that.getScheduling())
           && Objects.equals(this.serviceAccounts, that.getServiceAccountsList())
           && Objects.equals(this.shieldedInstanceConfig, that.getShieldedInstanceConfig())
@@ -716,6 +750,7 @@ public final class InstanceProperties implements ApiMessage {
         metadata,
         minCpuPlatform,
         networkInterfaces,
+        reservationAffinity,
         scheduling,
         serviceAccounts,
         shieldedInstanceConfig,

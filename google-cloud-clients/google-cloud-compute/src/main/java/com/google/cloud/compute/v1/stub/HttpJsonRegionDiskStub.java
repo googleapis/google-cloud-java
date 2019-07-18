@@ -30,6 +30,7 @@ import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.pathtemplate.PathTemplate;
+import com.google.cloud.compute.v1.AddResourcePoliciesRegionDiskHttpRequest;
 import com.google.cloud.compute.v1.CreateSnapshotRegionDiskHttpRequest;
 import com.google.cloud.compute.v1.DeleteRegionDiskHttpRequest;
 import com.google.cloud.compute.v1.Disk;
@@ -41,6 +42,7 @@ import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.ProjectRegionDiskName;
 import com.google.cloud.compute.v1.ProjectRegionDiskResourceName;
 import com.google.cloud.compute.v1.ProjectRegionName;
+import com.google.cloud.compute.v1.RemoveResourcePoliciesRegionDiskHttpRequest;
 import com.google.cloud.compute.v1.ResizeRegionDiskHttpRequest;
 import com.google.cloud.compute.v1.SetLabelsRegionDiskHttpRequest;
 import com.google.cloud.compute.v1.TestIamPermissionsRegionDiskHttpRequest;
@@ -59,6 +61,28 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonRegionDiskStub extends RegionDiskStub {
+  @InternalApi
+  public static final ApiMethodDescriptor<AddResourcePoliciesRegionDiskHttpRequest, Operation>
+      addResourcePoliciesRegionDiskMethodDescriptor =
+          ApiMethodDescriptor.<AddResourcePoliciesRegionDiskHttpRequest, Operation>newBuilder()
+              .setFullMethodName("compute.regionDisks.addResourcePolicies")
+              .setHttpMethod(HttpMethods.POST)
+              .setRequestFormatter(
+                  ApiMessageHttpRequestFormatter
+                      .<AddResourcePoliciesRegionDiskHttpRequest>newBuilder()
+                      .setPathTemplate(
+                          PathTemplate.create(
+                              "{project}/regions/{region}/disks/{disk}/addResourcePolicies"))
+                      .setQueryParams(Sets.<String>newHashSet("requestId"))
+                      .setResourceNameFactory(ProjectRegionDiskName.newFactory())
+                      .setResourceNameField("disk")
+                      .build())
+              .setResponseParser(
+                  ApiMessageHttpResponseParser.<Operation>newBuilder()
+                      .setResponseInstance(Operation.getDefaultInstance())
+                      .build())
+              .build();
+
   @InternalApi
   public static final ApiMethodDescriptor<CreateSnapshotRegionDiskHttpRequest, Operation>
       createSnapshotRegionDiskMethodDescriptor =
@@ -160,6 +184,28 @@ public class HttpJsonRegionDiskStub extends RegionDiskStub {
               .build();
 
   @InternalApi
+  public static final ApiMethodDescriptor<RemoveResourcePoliciesRegionDiskHttpRequest, Operation>
+      removeResourcePoliciesRegionDiskMethodDescriptor =
+          ApiMethodDescriptor.<RemoveResourcePoliciesRegionDiskHttpRequest, Operation>newBuilder()
+              .setFullMethodName("compute.regionDisks.removeResourcePolicies")
+              .setHttpMethod(HttpMethods.POST)
+              .setRequestFormatter(
+                  ApiMessageHttpRequestFormatter
+                      .<RemoveResourcePoliciesRegionDiskHttpRequest>newBuilder()
+                      .setPathTemplate(
+                          PathTemplate.create(
+                              "{project}/regions/{region}/disks/{disk}/removeResourcePolicies"))
+                      .setQueryParams(Sets.<String>newHashSet("requestId"))
+                      .setResourceNameFactory(ProjectRegionDiskName.newFactory())
+                      .setResourceNameField("disk")
+                      .build())
+              .setResponseParser(
+                  ApiMessageHttpResponseParser.<Operation>newBuilder()
+                      .setResponseInstance(Operation.getDefaultInstance())
+                      .build())
+              .build();
+
+  @InternalApi
   public static final ApiMethodDescriptor<ResizeRegionDiskHttpRequest, Operation>
       resizeRegionDiskMethodDescriptor =
           ApiMethodDescriptor.<ResizeRegionDiskHttpRequest, Operation>newBuilder()
@@ -226,6 +272,8 @@ public class HttpJsonRegionDiskStub extends RegionDiskStub {
 
   private final BackgroundResource backgroundResources;
 
+  private final UnaryCallable<AddResourcePoliciesRegionDiskHttpRequest, Operation>
+      addResourcePoliciesRegionDiskCallable;
   private final UnaryCallable<CreateSnapshotRegionDiskHttpRequest, Operation>
       createSnapshotRegionDiskCallable;
   private final UnaryCallable<DeleteRegionDiskHttpRequest, Operation> deleteRegionDiskCallable;
@@ -234,6 +282,8 @@ public class HttpJsonRegionDiskStub extends RegionDiskStub {
   private final UnaryCallable<ListRegionDisksHttpRequest, DiskList> listRegionDisksCallable;
   private final UnaryCallable<ListRegionDisksHttpRequest, ListRegionDisksPagedResponse>
       listRegionDisksPagedCallable;
+  private final UnaryCallable<RemoveResourcePoliciesRegionDiskHttpRequest, Operation>
+      removeResourcePoliciesRegionDiskCallable;
   private final UnaryCallable<ResizeRegionDiskHttpRequest, Operation> resizeRegionDiskCallable;
   private final UnaryCallable<SetLabelsRegionDiskHttpRequest, Operation>
       setLabelsRegionDiskCallable;
@@ -280,6 +330,11 @@ public class HttpJsonRegionDiskStub extends RegionDiskStub {
       throws IOException {
     this.callableFactory = callableFactory;
 
+    HttpJsonCallSettings<AddResourcePoliciesRegionDiskHttpRequest, Operation>
+        addResourcePoliciesRegionDiskTransportSettings =
+            HttpJsonCallSettings.<AddResourcePoliciesRegionDiskHttpRequest, Operation>newBuilder()
+                .setMethodDescriptor(addResourcePoliciesRegionDiskMethodDescriptor)
+                .build();
     HttpJsonCallSettings<CreateSnapshotRegionDiskHttpRequest, Operation>
         createSnapshotRegionDiskTransportSettings =
             HttpJsonCallSettings.<CreateSnapshotRegionDiskHttpRequest, Operation>newBuilder()
@@ -301,6 +356,12 @@ public class HttpJsonRegionDiskStub extends RegionDiskStub {
         HttpJsonCallSettings.<ListRegionDisksHttpRequest, DiskList>newBuilder()
             .setMethodDescriptor(listRegionDisksMethodDescriptor)
             .build();
+    HttpJsonCallSettings<RemoveResourcePoliciesRegionDiskHttpRequest, Operation>
+        removeResourcePoliciesRegionDiskTransportSettings =
+            HttpJsonCallSettings
+                .<RemoveResourcePoliciesRegionDiskHttpRequest, Operation>newBuilder()
+                .setMethodDescriptor(removeResourcePoliciesRegionDiskMethodDescriptor)
+                .build();
     HttpJsonCallSettings<ResizeRegionDiskHttpRequest, Operation> resizeRegionDiskTransportSettings =
         HttpJsonCallSettings.<ResizeRegionDiskHttpRequest, Operation>newBuilder()
             .setMethodDescriptor(resizeRegionDiskMethodDescriptor)
@@ -317,6 +378,11 @@ public class HttpJsonRegionDiskStub extends RegionDiskStub {
                 .setMethodDescriptor(testIamPermissionsRegionDiskMethodDescriptor)
                 .build();
 
+    this.addResourcePoliciesRegionDiskCallable =
+        callableFactory.createUnaryCallable(
+            addResourcePoliciesRegionDiskTransportSettings,
+            settings.addResourcePoliciesRegionDiskSettings(),
+            clientContext);
     this.createSnapshotRegionDiskCallable =
         callableFactory.createUnaryCallable(
             createSnapshotRegionDiskTransportSettings,
@@ -337,6 +403,11 @@ public class HttpJsonRegionDiskStub extends RegionDiskStub {
     this.listRegionDisksPagedCallable =
         callableFactory.createPagedCallable(
             listRegionDisksTransportSettings, settings.listRegionDisksSettings(), clientContext);
+    this.removeResourcePoliciesRegionDiskCallable =
+        callableFactory.createUnaryCallable(
+            removeResourcePoliciesRegionDiskTransportSettings,
+            settings.removeResourcePoliciesRegionDiskSettings(),
+            clientContext);
     this.resizeRegionDiskCallable =
         callableFactory.createUnaryCallable(
             resizeRegionDiskTransportSettings, settings.resizeRegionDiskSettings(), clientContext);
@@ -352,6 +423,12 @@ public class HttpJsonRegionDiskStub extends RegionDiskStub {
             clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+  }
+
+  @BetaApi
+  public UnaryCallable<AddResourcePoliciesRegionDiskHttpRequest, Operation>
+      addResourcePoliciesRegionDiskCallable() {
+    return addResourcePoliciesRegionDiskCallable;
   }
 
   @BetaApi
@@ -384,6 +461,12 @@ public class HttpJsonRegionDiskStub extends RegionDiskStub {
   @BetaApi
   public UnaryCallable<ListRegionDisksHttpRequest, DiskList> listRegionDisksCallable() {
     return listRegionDisksCallable;
+  }
+
+  @BetaApi
+  public UnaryCallable<RemoveResourcePoliciesRegionDiskHttpRequest, Operation>
+      removeResourcePoliciesRegionDiskCallable() {
+    return removeResourcePoliciesRegionDiskCallable;
   }
 
   @BetaApi

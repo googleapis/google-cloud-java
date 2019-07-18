@@ -17,6 +17,7 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
@@ -39,6 +40,7 @@ public final class AttachedDiskInitializeParams implements ApiMessage {
   private final String diskSizeGb;
   private final String diskType;
   private final Map<String, String> labels;
+  private final List<String> resourcePolicies;
   private final String sourceImage;
   private final CustomerEncryptionKey sourceImageEncryptionKey;
   private final String sourceSnapshot;
@@ -50,6 +52,7 @@ public final class AttachedDiskInitializeParams implements ApiMessage {
     this.diskSizeGb = null;
     this.diskType = null;
     this.labels = null;
+    this.resourcePolicies = null;
     this.sourceImage = null;
     this.sourceImageEncryptionKey = null;
     this.sourceSnapshot = null;
@@ -62,6 +65,7 @@ public final class AttachedDiskInitializeParams implements ApiMessage {
       String diskSizeGb,
       String diskType,
       Map<String, String> labels,
+      List<String> resourcePolicies,
       String sourceImage,
       CustomerEncryptionKey sourceImageEncryptionKey,
       String sourceSnapshot,
@@ -71,6 +75,7 @@ public final class AttachedDiskInitializeParams implements ApiMessage {
     this.diskSizeGb = diskSizeGb;
     this.diskType = diskType;
     this.labels = labels;
+    this.resourcePolicies = resourcePolicies;
     this.sourceImage = sourceImage;
     this.sourceImageEncryptionKey = sourceImageEncryptionKey;
     this.sourceSnapshot = sourceSnapshot;
@@ -93,6 +98,9 @@ public final class AttachedDiskInitializeParams implements ApiMessage {
     }
     if ("labels".equals(fieldName)) {
       return labels;
+    }
+    if ("resourcePolicies".equals(fieldName)) {
+      return resourcePolicies;
     }
     if ("sourceImage".equals(fieldName)) {
       return sourceImage;
@@ -167,6 +175,14 @@ public final class AttachedDiskInitializeParams implements ApiMessage {
    */
   public Map<String, String> getLabelsMap() {
     return labels;
+  }
+
+  /**
+   * Resource policies applied to this disk for automatic snapshot creations. Specified using the
+   * full or partial URL. For instance template, specify only the resource policy name.
+   */
+  public List<String> getResourcePoliciesList() {
+    return resourcePolicies;
   }
 
   /**
@@ -251,6 +267,7 @@ public final class AttachedDiskInitializeParams implements ApiMessage {
     private String diskSizeGb;
     private String diskType;
     private Map<String, String> labels;
+    private List<String> resourcePolicies;
     private String sourceImage;
     private CustomerEncryptionKey sourceImageEncryptionKey;
     private String sourceSnapshot;
@@ -275,6 +292,9 @@ public final class AttachedDiskInitializeParams implements ApiMessage {
       if (other.getLabelsMap() != null) {
         this.labels = other.labels;
       }
+      if (other.getResourcePoliciesList() != null) {
+        this.resourcePolicies = other.resourcePolicies;
+      }
       if (other.getSourceImage() != null) {
         this.sourceImage = other.sourceImage;
       }
@@ -296,6 +316,7 @@ public final class AttachedDiskInitializeParams implements ApiMessage {
       this.diskSizeGb = source.diskSizeGb;
       this.diskType = source.diskType;
       this.labels = source.labels;
+      this.resourcePolicies = source.resourcePolicies;
       this.sourceImage = source.sourceImage;
       this.sourceImageEncryptionKey = source.sourceImageEncryptionKey;
       this.sourceSnapshot = source.sourceSnapshot;
@@ -388,6 +409,38 @@ public final class AttachedDiskInitializeParams implements ApiMessage {
      */
     public Builder putAllLabels(Map<String, String> labels) {
       this.labels = labels;
+      return this;
+    }
+
+    /**
+     * Resource policies applied to this disk for automatic snapshot creations. Specified using the
+     * full or partial URL. For instance template, specify only the resource policy name.
+     */
+    public List<String> getResourcePoliciesList() {
+      return resourcePolicies;
+    }
+
+    /**
+     * Resource policies applied to this disk for automatic snapshot creations. Specified using the
+     * full or partial URL. For instance template, specify only the resource policy name.
+     */
+    public Builder addAllResourcePolicies(List<String> resourcePolicies) {
+      if (this.resourcePolicies == null) {
+        this.resourcePolicies = new LinkedList<>();
+      }
+      this.resourcePolicies.addAll(resourcePolicies);
+      return this;
+    }
+
+    /**
+     * Resource policies applied to this disk for automatic snapshot creations. Specified using the
+     * full or partial URL. For instance template, specify only the resource policy name.
+     */
+    public Builder addResourcePolicies(String resourcePolicies) {
+      if (this.resourcePolicies == null) {
+        this.resourcePolicies = new LinkedList<>();
+      }
+      this.resourcePolicies.add(resourcePolicies);
       return this;
     }
 
@@ -512,6 +565,7 @@ public final class AttachedDiskInitializeParams implements ApiMessage {
           diskSizeGb,
           diskType,
           labels,
+          resourcePolicies,
           sourceImage,
           sourceImageEncryptionKey,
           sourceSnapshot,
@@ -525,6 +579,7 @@ public final class AttachedDiskInitializeParams implements ApiMessage {
       newBuilder.setDiskSizeGb(this.diskSizeGb);
       newBuilder.setDiskType(this.diskType);
       newBuilder.putAllLabels(this.labels);
+      newBuilder.addAllResourcePolicies(this.resourcePolicies);
       newBuilder.setSourceImage(this.sourceImage);
       newBuilder.setSourceImageEncryptionKey(this.sourceImageEncryptionKey);
       newBuilder.setSourceSnapshot(this.sourceSnapshot);
@@ -550,6 +605,9 @@ public final class AttachedDiskInitializeParams implements ApiMessage {
         + ", "
         + "labels="
         + labels
+        + ", "
+        + "resourcePolicies="
+        + resourcePolicies
         + ", "
         + "sourceImage="
         + sourceImage
@@ -577,6 +635,7 @@ public final class AttachedDiskInitializeParams implements ApiMessage {
           && Objects.equals(this.diskSizeGb, that.getDiskSizeGb())
           && Objects.equals(this.diskType, that.getDiskType())
           && Objects.equals(this.labels, that.getLabelsMap())
+          && Objects.equals(this.resourcePolicies, that.getResourcePoliciesList())
           && Objects.equals(this.sourceImage, that.getSourceImage())
           && Objects.equals(this.sourceImageEncryptionKey, that.getSourceImageEncryptionKey())
           && Objects.equals(this.sourceSnapshot, that.getSourceSnapshot())
@@ -594,6 +653,7 @@ public final class AttachedDiskInitializeParams implements ApiMessage {
         diskSizeGb,
         diskType,
         labels,
+        resourcePolicies,
         sourceImage,
         sourceImageEncryptionKey,
         sourceSnapshot,

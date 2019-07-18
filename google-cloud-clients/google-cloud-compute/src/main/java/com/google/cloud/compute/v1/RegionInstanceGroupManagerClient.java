@@ -716,9 +716,13 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    * </code></pre>
    *
    * @param region Name of the region scoping this request.
-   * @param instanceGroupManagerResource An Instance Group Manager resource. (== resource_for
-   *     beta.instanceGroupManagers ==) (== resource_for v1.instanceGroupManagers ==) (==
-   *     resource_for beta.regionInstanceGroupManagers ==) (== resource_for
+   * @param instanceGroupManagerResource Represents a Managed Instance Group resource.
+   *     <p>An instance group is a collection of VM instances that you can manage as a single
+   *     entity. For more information, read Instance groups.
+   *     <p>For zonal Managed Instance Group, use the instanceGroupManagers resource.
+   *     <p>For regional Managed Instance Group, use the regionInstanceGroupManagers resource. (==
+   *     resource_for beta.instanceGroupManagers ==) (== resource_for v1.instanceGroupManagers ==)
+   *     (== resource_for beta.regionInstanceGroupManagers ==) (== resource_for
    *     v1.regionInstanceGroupManagers ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -755,9 +759,13 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    * </code></pre>
    *
    * @param region Name of the region scoping this request.
-   * @param instanceGroupManagerResource An Instance Group Manager resource. (== resource_for
-   *     beta.instanceGroupManagers ==) (== resource_for v1.instanceGroupManagers ==) (==
-   *     resource_for beta.regionInstanceGroupManagers ==) (== resource_for
+   * @param instanceGroupManagerResource Represents a Managed Instance Group resource.
+   *     <p>An instance group is a collection of VM instances that you can manage as a single
+   *     entity. For more information, read Instance groups.
+   *     <p>For zonal Managed Instance Group, use the instanceGroupManagers resource.
+   *     <p>For regional Managed Instance Group, use the regionInstanceGroupManagers resource. (==
+   *     resource_for beta.instanceGroupManagers ==) (== resource_for v1.instanceGroupManagers ==)
+   *     (== resource_for beta.regionInstanceGroupManagers ==) (== resource_for
    *     v1.regionInstanceGroupManagers ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1112,9 +1120,13 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    * </code></pre>
    *
    * @param instanceGroupManager The name of the instance group manager.
-   * @param instanceGroupManagerResource An Instance Group Manager resource. (== resource_for
-   *     beta.instanceGroupManagers ==) (== resource_for v1.instanceGroupManagers ==) (==
-   *     resource_for beta.regionInstanceGroupManagers ==) (== resource_for
+   * @param instanceGroupManagerResource Represents a Managed Instance Group resource.
+   *     <p>An instance group is a collection of VM instances that you can manage as a single
+   *     entity. For more information, read Instance groups.
+   *     <p>For zonal Managed Instance Group, use the instanceGroupManagers resource.
+   *     <p>For regional Managed Instance Group, use the regionInstanceGroupManagers resource. (==
+   *     resource_for beta.instanceGroupManagers ==) (== resource_for v1.instanceGroupManagers ==)
+   *     (== resource_for beta.regionInstanceGroupManagers ==) (== resource_for
    *     v1.regionInstanceGroupManagers ==)
    * @param fieldMask The fields that should be serialized (even if they have empty values). If the
    *     containing message object has a non-null fieldmask, then all the fields in the field mask
@@ -1158,9 +1170,13 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    * </code></pre>
    *
    * @param instanceGroupManager The name of the instance group manager.
-   * @param instanceGroupManagerResource An Instance Group Manager resource. (== resource_for
-   *     beta.instanceGroupManagers ==) (== resource_for v1.instanceGroupManagers ==) (==
-   *     resource_for beta.regionInstanceGroupManagers ==) (== resource_for
+   * @param instanceGroupManagerResource Represents a Managed Instance Group resource.
+   *     <p>An instance group is a collection of VM instances that you can manage as a single
+   *     entity. For more information, read Instance groups.
+   *     <p>For zonal Managed Instance Group, use the instanceGroupManagers resource.
+   *     <p>For regional Managed Instance Group, use the regionInstanceGroupManagers resource. (==
+   *     resource_for beta.instanceGroupManagers ==) (== resource_for v1.instanceGroupManagers ==)
+   *     (== resource_for beta.regionInstanceGroupManagers ==) (== resource_for
    *     v1.regionInstanceGroupManagers ==)
    * @param fieldMask The fields that should be serialized (even if they have empty values). If the
    *     containing message object has a non-null fieldmask, then all the fields in the field mask

@@ -122,6 +122,12 @@ public final class InstanceGroupManagerUpdatePolicy implements ApiMessage {
     return minimalAction;
   }
 
+  /**
+   * The type of update process. You can specify either PROACTIVE so that the instance group manager
+   * proactively executes actions in order to bring instances to their target versions or
+   * OPPORTUNISTIC so that no action is proactively executed but the update will be performed as
+   * part of other actions (for example, resizes or recreateInstances calls).
+   */
   public String getType() {
     return type;
   }
@@ -267,10 +273,22 @@ public final class InstanceGroupManagerUpdatePolicy implements ApiMessage {
       return this;
     }
 
+    /**
+     * The type of update process. You can specify either PROACTIVE so that the instance group
+     * manager proactively executes actions in order to bring instances to their target versions or
+     * OPPORTUNISTIC so that no action is proactively executed but the update will be performed as
+     * part of other actions (for example, resizes or recreateInstances calls).
+     */
     public String getType() {
       return type;
     }
 
+    /**
+     * The type of update process. You can specify either PROACTIVE so that the instance group
+     * manager proactively executes actions in order to bring instances to their target versions or
+     * OPPORTUNISTIC so that no action is proactively executed but the update will be performed as
+     * part of other actions (for example, resizes or recreateInstances calls).
+     */
     public Builder setType(String type) {
       this.type = type;
       return this;

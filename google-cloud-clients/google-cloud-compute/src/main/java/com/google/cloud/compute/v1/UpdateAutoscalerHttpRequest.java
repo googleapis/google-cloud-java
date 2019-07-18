@@ -143,11 +143,17 @@ public final class UpdateAutoscalerHttpRequest implements ApiMessage {
   }
 
   /**
-   * Represents an Autoscaler resource. Autoscalers allow you to automatically scale virtual machine
-   * instances in managed instance groups according to an autoscaling policy that you define. For
-   * more information, read Autoscaling Groups of Instances. (== resource_for beta.autoscalers ==)
-   * (== resource_for v1.autoscalers ==) (== resource_for beta.regionAutoscalers ==) (==
-   * resource_for v1.regionAutoscalers ==)
+   * Represents an Autoscaler resource.
+   *
+   * <p>Use autoscalers to automatically add or delete instances from a managed instance group
+   * according to your defined autoscaling policy. For more information, read Autoscaling Groups of
+   * Instances.
+   *
+   * <p>For zonal managed instance groups resource, use the autoscaler resource.
+   *
+   * <p>For regional managed instance groups, use the regionAutoscalers resource. (== resource_for
+   * beta.autoscalers ==) (== resource_for v1.autoscalers ==) (== resource_for
+   * beta.regionAutoscalers ==) (== resource_for v1.regionAutoscalers ==)
    */
   public Autoscaler getAutoscalerResource() {
     return autoscalerResource;
@@ -338,9 +344,15 @@ public final class UpdateAutoscalerHttpRequest implements ApiMessage {
     }
 
     /**
-     * Represents an Autoscaler resource. Autoscalers allow you to automatically scale virtual
-     * machine instances in managed instance groups according to an autoscaling policy that you
-     * define. For more information, read Autoscaling Groups of Instances. (== resource_for
+     * Represents an Autoscaler resource.
+     *
+     * <p>Use autoscalers to automatically add or delete instances from a managed instance group
+     * according to your defined autoscaling policy. For more information, read Autoscaling Groups
+     * of Instances.
+     *
+     * <p>For zonal managed instance groups resource, use the autoscaler resource.
+     *
+     * <p>For regional managed instance groups, use the regionAutoscalers resource. (== resource_for
      * beta.autoscalers ==) (== resource_for v1.autoscalers ==) (== resource_for
      * beta.regionAutoscalers ==) (== resource_for v1.regionAutoscalers ==)
      */
@@ -349,9 +361,15 @@ public final class UpdateAutoscalerHttpRequest implements ApiMessage {
     }
 
     /**
-     * Represents an Autoscaler resource. Autoscalers allow you to automatically scale virtual
-     * machine instances in managed instance groups according to an autoscaling policy that you
-     * define. For more information, read Autoscaling Groups of Instances. (== resource_for
+     * Represents an Autoscaler resource.
+     *
+     * <p>Use autoscalers to automatically add or delete instances from a managed instance group
+     * according to your defined autoscaling policy. For more information, read Autoscaling Groups
+     * of Instances.
+     *
+     * <p>For zonal managed instance groups resource, use the autoscaler resource.
+     *
+     * <p>For regional managed instance groups, use the regionAutoscalers resource. (== resource_for
      * beta.autoscalers ==) (== resource_for v1.autoscalers ==) (== resource_for
      * beta.regionAutoscalers ==) (== resource_for v1.regionAutoscalers ==)
      */

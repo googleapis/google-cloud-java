@@ -145,8 +145,10 @@ public final class InsertHttpHealthCheckHttpRequest implements ApiMessage {
   }
 
   /**
-   * An HttpHealthCheck resource. This resource defines a template for how individual instances
-   * should be checked for health, via HTTP.
+   * Represents a legacy HTTP Health Check resource.
+   *
+   * <p>Legacy health checks are required by network load balancers. For more information, read
+   * Health Check Concepts.
    */
   public HttpHealthCheck2 getHttpHealthCheckResource() {
     return httpHealthCheckResource;
@@ -318,16 +320,20 @@ public final class InsertHttpHealthCheckHttpRequest implements ApiMessage {
     }
 
     /**
-     * An HttpHealthCheck resource. This resource defines a template for how individual instances
-     * should be checked for health, via HTTP.
+     * Represents a legacy HTTP Health Check resource.
+     *
+     * <p>Legacy health checks are required by network load balancers. For more information, read
+     * Health Check Concepts.
      */
     public HttpHealthCheck2 getHttpHealthCheckResource() {
       return httpHealthCheckResource;
     }
 
     /**
-     * An HttpHealthCheck resource. This resource defines a template for how individual instances
-     * should be checked for health, via HTTP.
+     * Represents a legacy HTTP Health Check resource.
+     *
+     * <p>Legacy health checks are required by network load balancers. For more information, read
+     * Health Check Concepts.
      */
     public Builder setHttpHealthCheckResource(HttpHealthCheck2 httpHealthCheckResource) {
       this.httpHealthCheckResource = httpHealthCheckResource;

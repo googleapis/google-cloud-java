@@ -26,10 +26,11 @@ import javax.annotation.Nullable;
 @Generated("by GAPIC")
 @BetaApi
 /**
- * A SSL policy specifies the server-side support for SSL features. This can be attached to a
- * TargetHttpsProxy or a TargetSslProxy. This affects connections between clients and the HTTPS or
- * SSL proxy load balancer. They do not affect the connection between the load balancers and the
- * backends.
+ * Represents a Cloud Armor Security Policy resource.
+ *
+ * <p>Only external backend services used by HTTP or HTTPS load balancers can reference a Security
+ * Policy. For more information, read read Cloud Armor Security Policy Concepts. (== resource_for
+ * beta.sslPolicies ==) (== resource_for v1.sslPolicies ==)
  */
 public final class SslPolicy implements ApiMessage {
   private final String creationTimestamp;

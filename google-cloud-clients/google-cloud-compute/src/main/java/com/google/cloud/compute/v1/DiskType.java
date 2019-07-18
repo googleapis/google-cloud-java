@@ -24,7 +24,20 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
-/** A DiskType resource. (== resource_for beta.diskTypes ==) (== resource_for v1.diskTypes ==) */
+/**
+ * Represents a Disk Type resource.
+ *
+ * <p>You can choose from a variety of disk types based on your needs. For more information, read
+ * Storage options.
+ *
+ * <p>The diskTypes resource represents disk types for a zonal persistent disk. For more
+ * information, read Zonal persistent disks.
+ *
+ * <p>The regionDiskTypes resource represents disk types for a regional persistent disk. For more
+ * information, read Regional persistent disks. (== resource_for beta.diskTypes ==) (== resource_for
+ * v1.diskTypes ==) (== resource_for v1.regionDiskTypes ==) (== resource_for beta.regionDiskTypes
+ * ==)
+ */
 public final class DiskType implements ApiMessage {
   private final String creationTimestamp;
   private final String defaultDiskSizeGb;

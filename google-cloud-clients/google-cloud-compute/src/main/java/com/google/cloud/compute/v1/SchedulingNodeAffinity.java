@@ -82,7 +82,10 @@ public final class SchedulingNodeAffinity implements ApiMessage {
     return key;
   }
 
-  /** Defines the operation of node selection. */
+  /**
+   * Defines the operation of node selection. Valid operators are IN for affinity and NOT_IN for
+   * anti-affinity.
+   */
   public String getOperator() {
     return operator;
   }
@@ -152,12 +155,18 @@ public final class SchedulingNodeAffinity implements ApiMessage {
       return this;
     }
 
-    /** Defines the operation of node selection. */
+    /**
+     * Defines the operation of node selection. Valid operators are IN for affinity and NOT_IN for
+     * anti-affinity.
+     */
     public String getOperator() {
       return operator;
     }
 
-    /** Defines the operation of node selection. */
+    /**
+     * Defines the operation of node selection. Valid operators are IN for affinity and NOT_IN for
+     * anti-affinity.
+     */
     public Builder setOperator(String operator) {
       this.operator = operator;
       return this;

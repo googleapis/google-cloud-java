@@ -365,9 +365,11 @@ public class HealthCheckClient implements BackgroundResource {
    * </code></pre>
    *
    * @param project Project ID for this request.
-   * @param healthCheckResource An HealthCheck resource. This resource defines a template for how
-   *     individual virtual machines should be checked for health, via one of the supported
-   *     protocols.
+   * @param healthCheckResource Represents a Health Check resource.
+   *     <p>Health checks are used for most GCP load balancers and managed instance group
+   *     auto-healing. For more information, read Health Check Concepts.
+   *     <p>To perform health checks on network load balancers, you must use either httpHealthChecks
+   *     or httpsHealthChecks.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -396,9 +398,11 @@ public class HealthCheckClient implements BackgroundResource {
    * </code></pre>
    *
    * @param project Project ID for this request.
-   * @param healthCheckResource An HealthCheck resource. This resource defines a template for how
-   *     individual virtual machines should be checked for health, via one of the supported
-   *     protocols.
+   * @param healthCheckResource Represents a Health Check resource.
+   *     <p>Health checks are used for most GCP load balancers and managed instance group
+   *     auto-healing. For more information, read Health Check Concepts.
+   *     <p>To perform health checks on network load balancers, you must use either httpHealthChecks
+   *     or httpsHealthChecks.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -617,9 +621,11 @@ public class HealthCheckClient implements BackgroundResource {
    * </code></pre>
    *
    * @param healthCheck Name of the HealthCheck resource to patch.
-   * @param healthCheckResource An HealthCheck resource. This resource defines a template for how
-   *     individual virtual machines should be checked for health, via one of the supported
-   *     protocols.
+   * @param healthCheckResource Represents a Health Check resource.
+   *     <p>Health checks are used for most GCP load balancers and managed instance group
+   *     auto-healing. For more information, read Health Check Concepts.
+   *     <p>To perform health checks on network load balancers, you must use either httpHealthChecks
+   *     or httpsHealthChecks.
    * @param fieldMask The fields that should be serialized (even if they have empty values). If the
    *     containing message object has a non-null fieldmask, then all the fields in the field mask
    *     (and only those fields in the field mask) will be serialized. If the containing object does
@@ -658,9 +664,11 @@ public class HealthCheckClient implements BackgroundResource {
    * </code></pre>
    *
    * @param healthCheck Name of the HealthCheck resource to patch.
-   * @param healthCheckResource An HealthCheck resource. This resource defines a template for how
-   *     individual virtual machines should be checked for health, via one of the supported
-   *     protocols.
+   * @param healthCheckResource Represents a Health Check resource.
+   *     <p>Health checks are used for most GCP load balancers and managed instance group
+   *     auto-healing. For more information, read Health Check Concepts.
+   *     <p>To perform health checks on network load balancers, you must use either httpHealthChecks
+   *     or httpsHealthChecks.
    * @param fieldMask The fields that should be serialized (even if they have empty values). If the
    *     containing message object has a non-null fieldmask, then all the fields in the field mask
    *     (and only those fields in the field mask) will be serialized. If the containing object does
@@ -753,9 +761,11 @@ public class HealthCheckClient implements BackgroundResource {
    * </code></pre>
    *
    * @param healthCheck Name of the HealthCheck resource to update.
-   * @param healthCheckResource An HealthCheck resource. This resource defines a template for how
-   *     individual virtual machines should be checked for health, via one of the supported
-   *     protocols.
+   * @param healthCheckResource Represents a Health Check resource.
+   *     <p>Health checks are used for most GCP load balancers and managed instance group
+   *     auto-healing. For more information, read Health Check Concepts.
+   *     <p>To perform health checks on network load balancers, you must use either httpHealthChecks
+   *     or httpsHealthChecks.
    * @param fieldMask The fields that should be serialized (even if they have empty values). If the
    *     containing message object has a non-null fieldmask, then all the fields in the field mask
    *     (and only those fields in the field mask) will be serialized. If the containing object does
@@ -793,9 +803,11 @@ public class HealthCheckClient implements BackgroundResource {
    * </code></pre>
    *
    * @param healthCheck Name of the HealthCheck resource to update.
-   * @param healthCheckResource An HealthCheck resource. This resource defines a template for how
-   *     individual virtual machines should be checked for health, via one of the supported
-   *     protocols.
+   * @param healthCheckResource Represents a Health Check resource.
+   *     <p>Health checks are used for most GCP load balancers and managed instance group
+   *     auto-healing. For more information, read Health Check Concepts.
+   *     <p>To perform health checks on network load balancers, you must use either httpHealthChecks
+   *     or httpsHealthChecks.
    * @param fieldMask The fields that should be serialized (even if they have empty values). If the
    *     containing message object has a non-null fieldmask, then all the fields in the field mask
    *     (and only those fields in the field mask) will be serialized. If the containing object does

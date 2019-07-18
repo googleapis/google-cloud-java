@@ -521,9 +521,11 @@ public class InterconnectAttachmentClient implements BackgroundResource {
    * </code></pre>
    *
    * @param region Name of the region for this request.
-   * @param interconnectAttachmentResource Represents an InterconnectAttachment (VLAN attachment)
-   *     resource. For more information, see Creating VLAN Attachments. (== resource_for
-   *     beta.interconnectAttachments ==) (== resource_for v1.interconnectAttachments ==)
+   * @param interconnectAttachmentResource Represents an Interconnect Attachment (VLAN) resource.
+   *     <p>You can use Interconnect attachments (VLANS) to connect your Virtual Private Cloud
+   *     networks to your on-premises networks through an Interconnect. For more information, read
+   *     Creating VLAN Attachments. (== resource_for beta.interconnectAttachments ==) (==
+   *     resource_for v1.interconnectAttachments ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -554,9 +556,11 @@ public class InterconnectAttachmentClient implements BackgroundResource {
    * </code></pre>
    *
    * @param region Name of the region for this request.
-   * @param interconnectAttachmentResource Represents an InterconnectAttachment (VLAN attachment)
-   *     resource. For more information, see Creating VLAN Attachments. (== resource_for
-   *     beta.interconnectAttachments ==) (== resource_for v1.interconnectAttachments ==)
+   * @param interconnectAttachmentResource Represents an Interconnect Attachment (VLAN) resource.
+   *     <p>You can use Interconnect attachments (VLANS) to connect your Virtual Private Cloud
+   *     networks to your on-premises networks through an Interconnect. For more information, read
+   *     Creating VLAN Attachments. (== resource_for beta.interconnectAttachments ==) (==
+   *     resource_for v1.interconnectAttachments ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -783,9 +787,11 @@ public class InterconnectAttachmentClient implements BackgroundResource {
    * </code></pre>
    *
    * @param interconnectAttachment Name of the interconnect attachment to patch.
-   * @param interconnectAttachmentResource Represents an InterconnectAttachment (VLAN attachment)
-   *     resource. For more information, see Creating VLAN Attachments. (== resource_for
-   *     beta.interconnectAttachments ==) (== resource_for v1.interconnectAttachments ==)
+   * @param interconnectAttachmentResource Represents an Interconnect Attachment (VLAN) resource.
+   *     <p>You can use Interconnect attachments (VLANS) to connect your Virtual Private Cloud
+   *     networks to your on-premises networks through an Interconnect. For more information, read
+   *     Creating VLAN Attachments. (== resource_for beta.interconnectAttachments ==) (==
+   *     resource_for v1.interconnectAttachments ==)
    * @param fieldMask The fields that should be serialized (even if they have empty values). If the
    *     containing message object has a non-null fieldmask, then all the fields in the field mask
    *     (and only those fields in the field mask) will be serialized. If the containing object does
@@ -825,9 +831,11 @@ public class InterconnectAttachmentClient implements BackgroundResource {
    * </code></pre>
    *
    * @param interconnectAttachment Name of the interconnect attachment to patch.
-   * @param interconnectAttachmentResource Represents an InterconnectAttachment (VLAN attachment)
-   *     resource. For more information, see Creating VLAN Attachments. (== resource_for
-   *     beta.interconnectAttachments ==) (== resource_for v1.interconnectAttachments ==)
+   * @param interconnectAttachmentResource Represents an Interconnect Attachment (VLAN) resource.
+   *     <p>You can use Interconnect attachments (VLANS) to connect your Virtual Private Cloud
+   *     networks to your on-premises networks through an Interconnect. For more information, read
+   *     Creating VLAN Attachments. (== resource_for beta.interconnectAttachments ==) (==
+   *     resource_for v1.interconnectAttachments ==)
    * @param fieldMask The fields that should be serialized (even if they have empty values). If the
    *     containing message object has a non-null fieldmask, then all the fields in the field mask
    *     (and only those fields in the field mask) will be serialized. If the containing object does

@@ -25,8 +25,8 @@ import javax.annotation.Nullable;
 @Generated("by GAPIC")
 @BetaApi
 /**
- * Request object for method compute.projects.disableXpnResource. Disable a serivce resource (a.k.a
- * service project) associated with this host project.
+ * Request object for method compute.projects.disableXpnResource. Disable a service resource (also
+ * known as service project) associated with this host project.
  */
 public final class DisableXpnResourceProjectHttpRequest implements ApiMessage {
   private final String access_token;

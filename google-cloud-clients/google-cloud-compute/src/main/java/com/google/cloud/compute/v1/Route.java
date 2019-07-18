@@ -26,20 +26,11 @@ import javax.annotation.Nullable;
 @Generated("by GAPIC")
 @BetaApi
 /**
- * Represents a Route resource. A route specifies how certain packets should be handled by the
- * network. Routes are associated with instances by tags and the set of routes for a particular
- * instance is called its routing table.
+ * Represents a Route resource.
  *
- * <p>For each packet leaving an instance, the system searches that instance's routing table for a
- * single best matching route. Routes match packets by destination IP address, preferring smaller or
- * more specific ranges over larger ones. If there is a tie, the system selects the route with the
- * smallest priority value. If there is still a tie, it uses the layer three and four packet headers
- * to select just one of the remaining matching routes. The packet is then forwarded as specified by
- * the nextHop field of the winning route - either to another instance destination, an instance
- * gateway, or a Google Compute Engine-operated gateway.
- *
- * <p>Packets that do not match any route in the sending instance's routing table are dropped. (==
- * resource_for beta.routes ==) (== resource_for v1.routes ==)
+ * <p>A route defines a path from VM instances in the VPC network to a specific destination. This
+ * destination can be inside or outside the VPC network. For more information, read the Routes
+ * overview. (== resource_for beta.routes ==) (== resource_for v1.routes ==)
  */
 public final class Route implements ApiMessage {
   private final String creationTimestamp;
@@ -196,9 +187,7 @@ public final class Route implements ApiMessage {
     return creationTimestamp;
   }
 
-  /**
-   * An optional description of this resource. Provide this property when you create the resource.
-   */
+  /** An optional description of this resource. Provide this field when you create the resource. */
   public String getDescription() {
     return description;
   }
@@ -225,9 +214,9 @@ public final class Route implements ApiMessage {
   /**
    * Name of the resource. Provided by the client when the resource is created. The name must be
    * 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters
-   * long and match the regular expression `[a-z]([-a-z0-9]&#42;[a-z0-9])?` which means the first
-   * character must be a lowercase letter, and all following characters must be a dash, lowercase
-   * letter, or digit, except the last character, which cannot be a dash.
+   * long and match the regular expression `[a-z]([-a-z0-9]&#42;[a-z0-9])?`. The first character
+   * must be a lowercase letter, and all following characters (except for the last character) must
+   * be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit.
    */
   public String getName() {
     return name;
@@ -241,7 +230,7 @@ public final class Route implements ApiMessage {
   /**
    * The URL to a gateway that should handle matching packets. You can only specify the internet
    * gateway using a full or partial valid URL:
-   * projects/&lt;project-id&gt;/global/gateways/default-internet-gateway
+   * projects/project/global/gateways/default-internet-gateway
    */
   public String getNextHopGateway() {
     return nextHopGateway;
@@ -284,9 +273,9 @@ public final class Route implements ApiMessage {
 
   /**
    * The priority of this route. Priority is used to break ties in cases where there is more than
-   * one matching route of equal prefix length. In the case of two routes with equal prefix length,
-   * the one with the lowest-numbered priority value wins. Default value is 1000. Valid range is 0
-   * through 65535.
+   * one matching route of equal prefix length. In cases where multiple routes have equal prefix
+   * length, the one with the lowest-numbered priority value wins. The default value is `1000`. The
+   * priority value must be from `0` to `65535`, inclusive.
    */
   public Integer getPriority() {
     return priority;
@@ -441,14 +430,14 @@ public final class Route implements ApiMessage {
     }
 
     /**
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this field when you create the resource.
      */
     public String getDescription() {
       return description;
     }
 
     /**
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this field when you create the resource.
      */
     public Builder setDescription(String description) {
       this.description = description;
@@ -501,9 +490,10 @@ public final class Route implements ApiMessage {
     /**
      * Name of the resource. Provided by the client when the resource is created. The name must be
      * 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters
-     * long and match the regular expression `[a-z]([-a-z0-9]&#42;[a-z0-9])?` which means the first
-     * character must be a lowercase letter, and all following characters must be a dash, lowercase
-     * letter, or digit, except the last character, which cannot be a dash.
+     * long and match the regular expression `[a-z]([-a-z0-9]&#42;[a-z0-9])?`. The first character
+     * must be a lowercase letter, and all following characters (except for the last character) must
+     * be a dash, lowercase letter, or digit. The last character must be a lowercase letter or
+     * digit.
      */
     public String getName() {
       return name;
@@ -512,9 +502,10 @@ public final class Route implements ApiMessage {
     /**
      * Name of the resource. Provided by the client when the resource is created. The name must be
      * 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters
-     * long and match the regular expression `[a-z]([-a-z0-9]&#42;[a-z0-9])?` which means the first
-     * character must be a lowercase letter, and all following characters must be a dash, lowercase
-     * letter, or digit, except the last character, which cannot be a dash.
+     * long and match the regular expression `[a-z]([-a-z0-9]&#42;[a-z0-9])?`. The first character
+     * must be a lowercase letter, and all following characters (except for the last character) must
+     * be a dash, lowercase letter, or digit. The last character must be a lowercase letter or
+     * digit.
      */
     public Builder setName(String name) {
       this.name = name;
@@ -535,7 +526,7 @@ public final class Route implements ApiMessage {
     /**
      * The URL to a gateway that should handle matching packets. You can only specify the internet
      * gateway using a full or partial valid URL:
-     * projects/&lt;project-id&gt;/global/gateways/default-internet-gateway
+     * projects/project/global/gateways/default-internet-gateway
      */
     public String getNextHopGateway() {
       return nextHopGateway;
@@ -544,7 +535,7 @@ public final class Route implements ApiMessage {
     /**
      * The URL to a gateway that should handle matching packets. You can only specify the internet
      * gateway using a full or partial valid URL:
-     * projects/&lt;project-id&gt;/global/gateways/default-internet-gateway
+     * projects/project/global/gateways/default-internet-gateway
      */
     public Builder setNextHopGateway(String nextHopGateway) {
       this.nextHopGateway = nextHopGateway;
@@ -628,9 +619,9 @@ public final class Route implements ApiMessage {
 
     /**
      * The priority of this route. Priority is used to break ties in cases where there is more than
-     * one matching route of equal prefix length. In the case of two routes with equal prefix
-     * length, the one with the lowest-numbered priority value wins. Default value is 1000. Valid
-     * range is 0 through 65535.
+     * one matching route of equal prefix length. In cases where multiple routes have equal prefix
+     * length, the one with the lowest-numbered priority value wins. The default value is `1000`.
+     * The priority value must be from `0` to `65535`, inclusive.
      */
     public Integer getPriority() {
       return priority;
@@ -638,9 +629,9 @@ public final class Route implements ApiMessage {
 
     /**
      * The priority of this route. Priority is used to break ties in cases where there is more than
-     * one matching route of equal prefix length. In the case of two routes with equal prefix
-     * length, the one with the lowest-numbered priority value wins. Default value is 1000. Valid
-     * range is 0 through 65535.
+     * one matching route of equal prefix length. In cases where multiple routes have equal prefix
+     * length, the one with the lowest-numbered priority value wins. The default value is `1000`.
+     * The priority value must be from `0` to `65535`, inclusive.
      */
     public Builder setPriority(Integer priority) {
       this.priority = priority;

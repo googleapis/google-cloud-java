@@ -106,6 +106,12 @@ public class InstanceSettings extends ClientSettings<InstanceSettings> {
     return ((InstanceStubSettings) getStubSettings()).getInstanceSettings();
   }
 
+  /** Returns the object with the settings used for calls to getGuestAttributesInstance. */
+  public UnaryCallSettings<GetGuestAttributesInstanceHttpRequest, GuestAttributes>
+      getGuestAttributesInstanceSettings() {
+    return ((InstanceStubSettings) getStubSettings()).getGuestAttributesInstanceSettings();
+  }
+
   /** Returns the object with the settings used for calls to getIamPolicyInstance. */
   public UnaryCallSettings<GetIamPolicyInstanceHttpRequest, Policy> getIamPolicyInstanceSettings() {
     return ((InstanceStubSettings) getStubSettings()).getIamPolicyInstanceSettings();
@@ -413,6 +419,12 @@ public class InstanceSettings extends ClientSettings<InstanceSettings> {
     /** Returns the builder for the settings used for calls to getInstance. */
     public UnaryCallSettings.Builder<GetInstanceHttpRequest, Instance> getInstanceSettings() {
       return getStubSettingsBuilder().getInstanceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getGuestAttributesInstance. */
+    public UnaryCallSettings.Builder<GetGuestAttributesInstanceHttpRequest, GuestAttributes>
+        getGuestAttributesInstanceSettings() {
+      return getStubSettingsBuilder().getGuestAttributesInstanceSettings();
     }
 
     /** Returns the builder for the settings used for calls to getIamPolicyInstance. */

@@ -48,13 +48,13 @@ import javax.annotation.Generated;
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object. For
- * example, to set the total timeout of createSnapshotRegionDisk to 30 seconds:
+ * example, to set the total timeout of addResourcePoliciesRegionDisk to 30 seconds:
  *
  * <pre>
  * <code>
  * RegionDiskSettings.Builder regionDiskSettingsBuilder =
  *     RegionDiskSettings.newBuilder();
- * regionDiskSettingsBuilder.createSnapshotRegionDiskSettings().getRetrySettings().toBuilder()
+ * regionDiskSettingsBuilder.addResourcePoliciesRegionDiskSettings().getRetrySettings().toBuilder()
  *     .setTotalTimeout(Duration.ofSeconds(30));
  * RegionDiskSettings regionDiskSettings = regionDiskSettingsBuilder.build();
  * </code>
@@ -63,6 +63,12 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator")
 @BetaApi
 public class RegionDiskSettings extends ClientSettings<RegionDiskSettings> {
+  /** Returns the object with the settings used for calls to addResourcePoliciesRegionDisk. */
+  public UnaryCallSettings<AddResourcePoliciesRegionDiskHttpRequest, Operation>
+      addResourcePoliciesRegionDiskSettings() {
+    return ((RegionDiskStubSettings) getStubSettings()).addResourcePoliciesRegionDiskSettings();
+  }
+
   /** Returns the object with the settings used for calls to createSnapshotRegionDisk. */
   public UnaryCallSettings<CreateSnapshotRegionDiskHttpRequest, Operation>
       createSnapshotRegionDiskSettings() {
@@ -88,6 +94,12 @@ public class RegionDiskSettings extends ClientSettings<RegionDiskSettings> {
   public PagedCallSettings<ListRegionDisksHttpRequest, DiskList, ListRegionDisksPagedResponse>
       listRegionDisksSettings() {
     return ((RegionDiskStubSettings) getStubSettings()).listRegionDisksSettings();
+  }
+
+  /** Returns the object with the settings used for calls to removeResourcePoliciesRegionDisk. */
+  public UnaryCallSettings<RemoveResourcePoliciesRegionDiskHttpRequest, Operation>
+      removeResourcePoliciesRegionDiskSettings() {
+    return ((RegionDiskStubSettings) getStubSettings()).removeResourcePoliciesRegionDiskSettings();
   }
 
   /** Returns the object with the settings used for calls to resizeRegionDisk. */
@@ -208,6 +220,12 @@ public class RegionDiskSettings extends ClientSettings<RegionDiskSettings> {
       return this;
     }
 
+    /** Returns the builder for the settings used for calls to addResourcePoliciesRegionDisk. */
+    public UnaryCallSettings.Builder<AddResourcePoliciesRegionDiskHttpRequest, Operation>
+        addResourcePoliciesRegionDiskSettings() {
+      return getStubSettingsBuilder().addResourcePoliciesRegionDiskSettings();
+    }
+
     /** Returns the builder for the settings used for calls to createSnapshotRegionDisk. */
     public UnaryCallSettings.Builder<CreateSnapshotRegionDiskHttpRequest, Operation>
         createSnapshotRegionDiskSettings() {
@@ -236,6 +254,12 @@ public class RegionDiskSettings extends ClientSettings<RegionDiskSettings> {
             ListRegionDisksHttpRequest, DiskList, ListRegionDisksPagedResponse>
         listRegionDisksSettings() {
       return getStubSettingsBuilder().listRegionDisksSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to removeResourcePoliciesRegionDisk. */
+    public UnaryCallSettings.Builder<RemoveResourcePoliciesRegionDiskHttpRequest, Operation>
+        removeResourcePoliciesRegionDiskSettings() {
+      return getStubSettingsBuilder().removeResourcePoliciesRegionDiskSettings();
     }
 
     /** Returns the builder for the settings used for calls to resizeRegionDisk. */

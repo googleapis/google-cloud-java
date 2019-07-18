@@ -145,8 +145,17 @@ public final class InsertInstanceGroupHttpRequest implements ApiMessage {
   }
 
   /**
-   * InstanceGroups (== resource_for beta.instanceGroups ==) (== resource_for v1.instanceGroups ==)
-   * (== resource_for beta.regionInstanceGroups ==) (== resource_for v1.regionInstanceGroups ==)
+   * Represents an unmanaged Instance Group resource.
+   *
+   * <p>Use unmanaged instance groups if you need to apply load balancing to groups of heterogeneous
+   * instances or if you need to manage the instances yourself. For more information, read Instance
+   * groups.
+   *
+   * <p>For zonal unmanaged Instance Group, use instanceGroups resource.
+   *
+   * <p>For regional unmanaged Instance Group, use regionInstanceGroups resource. (== resource_for
+   * beta.instanceGroups ==) (== resource_for v1.instanceGroups ==) (== resource_for
+   * beta.regionInstanceGroups ==) (== resource_for v1.regionInstanceGroups ==)
    */
   public InstanceGroup getInstanceGroupResource() {
     return instanceGroupResource;
@@ -318,18 +327,34 @@ public final class InsertInstanceGroupHttpRequest implements ApiMessage {
     }
 
     /**
-     * InstanceGroups (== resource_for beta.instanceGroups ==) (== resource_for v1.instanceGroups
-     * ==) (== resource_for beta.regionInstanceGroups ==) (== resource_for v1.regionInstanceGroups
-     * ==)
+     * Represents an unmanaged Instance Group resource.
+     *
+     * <p>Use unmanaged instance groups if you need to apply load balancing to groups of
+     * heterogeneous instances or if you need to manage the instances yourself. For more
+     * information, read Instance groups.
+     *
+     * <p>For zonal unmanaged Instance Group, use instanceGroups resource.
+     *
+     * <p>For regional unmanaged Instance Group, use regionInstanceGroups resource. (== resource_for
+     * beta.instanceGroups ==) (== resource_for v1.instanceGroups ==) (== resource_for
+     * beta.regionInstanceGroups ==) (== resource_for v1.regionInstanceGroups ==)
      */
     public InstanceGroup getInstanceGroupResource() {
       return instanceGroupResource;
     }
 
     /**
-     * InstanceGroups (== resource_for beta.instanceGroups ==) (== resource_for v1.instanceGroups
-     * ==) (== resource_for beta.regionInstanceGroups ==) (== resource_for v1.regionInstanceGroups
-     * ==)
+     * Represents an unmanaged Instance Group resource.
+     *
+     * <p>Use unmanaged instance groups if you need to apply load balancing to groups of
+     * heterogeneous instances or if you need to manage the instances yourself. For more
+     * information, read Instance groups.
+     *
+     * <p>For zonal unmanaged Instance Group, use instanceGroups resource.
+     *
+     * <p>For regional unmanaged Instance Group, use regionInstanceGroups resource. (== resource_for
+     * beta.instanceGroups ==) (== resource_for v1.instanceGroups ==) (== resource_for
+     * beta.regionInstanceGroups ==) (== resource_for v1.regionInstanceGroups ==)
      */
     public Builder setInstanceGroupResource(InstanceGroup instanceGroupResource) {
       this.instanceGroupResource = instanceGroupResource;
