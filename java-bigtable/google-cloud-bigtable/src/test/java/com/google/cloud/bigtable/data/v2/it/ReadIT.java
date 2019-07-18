@@ -38,6 +38,7 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicReference;
 import org.junit.Before;
 import org.junit.ClassRule;
 import org.junit.Test;
@@ -135,6 +136,7 @@ public class ReadIT {
             .getDataClient()
             .readRowAsync(testEnvRule.env().getTableId(), "somenonexistentkey");
 
+    final AtomicReference<Throwable> unexpectedError = new AtomicReference<>();
     final AtomicBoolean found = new AtomicBoolean();
     final CountDownLatch latch = new CountDownLatch(1);
 
@@ -143,6 +145,7 @@ public class ReadIT {
         new ApiFutureCallback<Row>() {
           @Override
           public void onFailure(Throwable t) {
+            unexpectedError.set(t);
             latch.countDown();
           }
 
@@ -155,6 +158,10 @@ public class ReadIT {
         MoreExecutors.directExecutor());
 
     latch.await(1, TimeUnit.MINUTES);
+
+    if (unexpectedError.get() != null) {
+      throw new RuntimeException("Unexpected async error", unexpectedError.get());
+    }
     assertThat(found.get()).isTrue();
   }
 
