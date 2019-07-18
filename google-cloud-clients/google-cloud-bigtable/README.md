@@ -19,16 +19,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-bigtable</artifactId>
-  <version>0.100.0</version>
+  <version>0.101.0</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-bigtable:0.100.0'
+compile 'com.google.cloud:google-cloud-bigtable:0.101.0'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-bigtable" % "0.100.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-bigtable" % "0.101.0"
 ```
 [//]: # ({x-version-update-end})
 
@@ -112,8 +112,8 @@ import com.google.cloud.bigtable.data.v2.models.Row;
 Then, to make a query to Bigtable, use the following code:
 ```java
 // Instantiates a client
-String projectId = "my-instance";
-String instanceId = "my-database";
+String projectId = "my-project";
+String instanceId = "my-instance";
 String tableId = "my-table";
 
 // Create the client

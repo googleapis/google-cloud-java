@@ -29,6 +29,9 @@ public enum Regions {
   ASIA_NORTHEAST1(
       "asia-northeast1",
       new String[] {"asia-northeast1-a", "asia-northeast1-b", "asia-northeast1-c"}),
+  ASIA_NORTHEAST2(
+      "asia-northeast2",
+      new String[] {"asia-northeast2-a", "asia-northeast2-b", "asia-northeast2-c"}),
   ASIA_SOUTH1("asia-south1", new String[] {"asia-south1-a", "asia-south1-b", "asia-south1-c"}),
   ASIA_SOUTHEAST1(
       "asia-southeast1",
@@ -42,6 +45,7 @@ public enum Regions {
   EUROPE_WEST2("europe-west2", new String[] {"europe-west2-a", "europe-west2-b", "europe-west2-c"}),
   EUROPE_WEST3("europe-west3", new String[] {"europe-west3-a", "europe-west3-b", "europe-west3-c"}),
   EUROPE_WEST4("europe-west4", new String[] {"europe-west4-a", "europe-west4-b", "europe-west4-c"}),
+  EUROPE_WEST6("europe-west6", new String[] {"europe-west6-a", "europe-west6-b", "europe-west6-c"}),
   NORTHAMERICA_NORTHEAST1(
       "northamerica-northeast1",
       new String[] {

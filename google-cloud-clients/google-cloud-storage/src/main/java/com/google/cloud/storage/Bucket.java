@@ -662,6 +662,12 @@ public class Bucket extends BucketInfo {
     }
 
     @Override
+    Builder setLocationType(String locationType) {
+      infoBuilder.setLocationType(locationType);
+      return this;
+    }
+
+    @Override
     public Bucket build() {
       return new Bucket(storage, infoBuilder);
     }

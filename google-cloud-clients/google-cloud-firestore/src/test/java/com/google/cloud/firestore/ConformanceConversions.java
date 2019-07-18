@@ -17,7 +17,7 @@
 package com.google.cloud.firestore;
 
 import com.google.cloud.Timestamp;
-import com.google.cloud.firestore.conformance.TestDefinition;
+import com.google.cloud.conformance.firestore.v1.TestDefinition;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import java.lang.reflect.Type;

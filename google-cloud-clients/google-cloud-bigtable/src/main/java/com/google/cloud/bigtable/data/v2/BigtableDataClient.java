@@ -99,12 +99,15 @@ import javax.annotation.Nullable;
  * To customize the endpoint:
  *
  * <pre>{@code
- * BigtableDataSettings bigtableDataSettings =
+ * BigtableDataSettings.Builder bigtableDataSettingsBuilder =
  *     BigtableDataSettings.newBuilder()
  *       .setProjectId("[PROJECT]")
- *       .setInstanceId("[INSTANCE]")
+ *       .setInstanceId("[INSTANCE]");
+ *
+ * bigtableDataSettingsBuilder.stubSettings()
  *       .setEndpoint(myEndpoint).build();
- * try(BigtableDataClient bigtableDataClient = BigtableDataClient.create(bigtableDataSettings)) {
+ *
+ * try(BigtableDataClient bigtableDataClient = BigtableDataClient.create(bigtableDataSettingsBuilder.build())) {
  *   // ..
  * }
  * }</pre>
