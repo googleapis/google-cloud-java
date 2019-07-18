@@ -157,7 +157,8 @@ public class DownloadComponentsMojo extends AbstractMojo {
         if (e.getCause() instanceof MojoExecutionException) {
           throw ((MojoExecutionException) e.getCause());
         } else {
-          throw new MojoExecutionException("Unexpected execution error downloading component", e.getCause());
+          throw new MojoExecutionException(
+              "Unexpected execution error downloading component", e.getCause());
         }
       } catch (InterruptedException e) {
         Thread.currentThread().interrupt();
@@ -288,18 +289,19 @@ public class DownloadComponentsMojo extends AbstractMojo {
   }
 
   private Future<Void> downloadComponentAsync(final Component component) {
-    return executor.submit(new Callable<Void>() {
-      @Override
-      public Void call() throws MojoExecutionException {
-        try {
-          downloadComponent(component);
-        } catch (Exception e) {
-          throw new MojoExecutionException("Failed to download " + component.getId(), e);
-        }
+    return executor.submit(
+        new Callable<Void>() {
+          @Override
+          public Void call() throws MojoExecutionException {
+            try {
+              downloadComponent(component);
+            } catch (Exception e) {
+              throw new MojoExecutionException("Failed to download " + component.getId(), e);
+            }
 
-        return null;
-      }
-    });
+            return null;
+          }
+        });
   }
 
   /** Downloads and extracts the component into the destinationDir. */
