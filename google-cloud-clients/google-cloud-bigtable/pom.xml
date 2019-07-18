@@ -97,7 +97,7 @@
                 </goals>
                 <configuration>
                   <systemPropertyVariables>
-                    <bigtable.env>prod</bigtable.env>
+                    <bigtable.env>emulator</bigtable.env>
                   </systemPropertyVariables>
                   <test>com.google.cloud.bigtable.data.v2.it.**</test>
                   <summaryFile>target/failsafe-reports/failsafe-summary-emulator-it.xml</summaryFile>
