@@ -43,6 +43,7 @@ import org.junit.AfterClass;
 import org.junit.AssumptionViolatedException;
 import org.junit.Before;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.threeten.bp.Duration;
 
@@ -223,7 +224,7 @@ public class BigtableTableAdminClientIT {
 
   @Test
   public void listTablesAsync() throws Exception {
-    String tableId = getTableId("adminListTest");
+    String tableId = getTableId("adminListAsyncTest");
 
     try {
       tableAdmin.createTable(CreateTableRequest.of(tableId));
@@ -235,6 +236,7 @@ public class BigtableTableAdminClientIT {
     }
   }
 
+  @Ignore
   @Test
   public void dropRowRange() {
     String tableId = getTableId("adminDropRowrangeTest");
