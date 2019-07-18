@@ -16,8 +16,8 @@
 
 package com.google.cloud.firestore;
 
-import static com.google.cloud.firestore.TestUtil.fromSingleQuotedString;
-import static com.google.cloud.firestore.TestUtil.map;
+import static com.google.cloud.firestore.LocalFirestoreHelper.fromSingleQuotedString;
+import static com.google.cloud.firestore.LocalFirestoreHelper.mapAnyType;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
@@ -1417,36 +1417,36 @@ public class MapperTest {
   @Test
   public void beansCanContainUpperBoundedMaps() {
     Date date = new Date(1491847082123L);
-    Map<String, Object> source = map("values", map("foo", date));
+    Map<String, Object> source = mapAnyType("values", mapAnyType("foo", date));
     UpperBoundedMapBean bean = convertToCustomClass(source, UpperBoundedMapBean.class);
-    Map<String, Object> expected = map("foo", date);
+    Map<String, Object> expected = mapAnyType("foo", date);
     assertEquals(expected, bean.values);
   }
 
   @Test
   public void beansCanContainMultiBoundedMaps() {
     Date date = new Date(1491847082123L);
-    Map<String, Object> source = map("map", map("values", map("foo", date)));
+    Map<String, Object> source = mapAnyType("map", mapAnyType("values", mapAnyType("foo", date)));
     MultiBoundedMapHolderBean bean = convertToCustomClass(source, MultiBoundedMapHolderBean.class);
 
-    Map<String, Object> expected = map("foo", date);
+    Map<String, Object> expected = mapAnyType("foo", date);
     assertEquals(expected, bean.map.values);
   }
 
   @Test
   public void beansCanContainUnboundedMaps() {
     UnboundedMapBean bean = deserialize("{'values': {'foo': 'bar'}}", UnboundedMapBean.class);
-    Map<String, Object> expected = map("foo", "bar");
+    Map<String, Object> expected = mapAnyType("foo", "bar");
     assertEquals(expected, bean.values);
   }
 
   @Test
   public void beansCanContainUnboundedTypeVariableMaps() {
-    Map<String, Object> source = map("map", map("values", map("foo", "bar")));
+    Map<String, Object> source = mapAnyType("map", mapAnyType("values", mapAnyType("foo", "bar")));
     UnboundedTypeVariableMapHolderBean bean =
         convertToCustomClass(source, UnboundedTypeVariableMapHolderBean.class);
 
-    Map<String, Object> expected = map("foo", "bar");
+    Map<String, Object> expected = mapAnyType("foo", "bar");
     assertEquals(expected, bean.map.values);
   }
 
@@ -1454,7 +1454,7 @@ public class MapperTest {
   public void beansCanContainNestedUnboundedMaps() {
     UnboundedMapBean bean =
         deserialize("{'values': {'foo': {'bar': 'baz'}}}", UnboundedMapBean.class);
-    Map<String, Object> expected = map("foo", map("bar", "baz"));
+    Map<String, Object> expected = mapAnyType("foo", mapAnyType("bar", "baz"));
     assertEquals(expected, bean.values);
   }
 
@@ -1526,7 +1526,7 @@ public class MapperTest {
     bean.value = 0.5f;
 
     // We don't use assertJson as it converts all floating point numbers to Double.
-    assertEquals(map("value", 0.5f), serialize(bean));
+    assertEquals(mapAnyType("value", 0.5f), serialize(bean));
   }
 
   @Test
@@ -1680,7 +1680,8 @@ public class MapperTest {
     values.put("foo", date);
 
     bean.values = values;
-    Map<String, Object> expected = map("values", map("foo", new Date(date.getTime())));
+    Map<String, Object> expected =
+        mapAnyType("values", mapAnyType("foo", new Date(date.getTime())));
     assertEquals(expected, serialize(bean));
   }
 
@@ -1695,7 +1696,8 @@ public class MapperTest {
     holder.map = new MultiBoundedMapBean<>();
     holder.map.values = values;
 
-    Map<String, Object> expected = map("map", map("values", map("foo", new Date(date.getTime()))));
+    Map<String, Object> expected =
+        mapAnyType("map", mapAnyType("values", mapAnyType("foo", new Date(date.getTime()))));
     assertEquals(expected, serialize(holder));
   }
 
