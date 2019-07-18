@@ -892,9 +892,10 @@ public class ITSystemTest {
     final Semaphore semaphore = new Semaphore(0);
     ListenerRegistration registration = null;
 
-    final Set<String> expectedOperations =
-        Sets.newTreeSet(newHashSet("case 0", "case 1", "case 2", "case 3", "case 4", "case 5"));
-    final Set<String> actualOperations = Collections.synchronizedSet(new TreeSet<String>());
+    final Set<String> expectedEvents =
+        Sets.newTreeSet(
+            newHashSet("event 0", "event 1", "event 2", "event 3", "event 4", "event 5"));
+    final Set<String> actualEvents = Collections.synchronizedSet(new TreeSet<String>());
 
     try {
       registration =
@@ -912,27 +913,27 @@ public class ITSystemTest {
                       try {
                         switch (semaphore.availablePermits()) {
                           case 0:
-                            actualOperations.add("case 0");
+                            actualEvents.add("event 0");
                             assertTrue(value.isEmpty());
                             ref1 = randomColl.add(map("foo", "foo")).get();
                             ref2 = randomColl.add(map("foo", "bar")).get();
                             break;
                           case 1:
-                            actualOperations.add("case 1");
+                            actualEvents.add("event 1");
                             assertEquals(1, value.size());
                             assertEquals(1, value.getDocumentChanges().size());
                             assertEquals(Type.ADDED, value.getDocumentChanges().get(0).getType());
                             ref1.set(map("foo", "bar"));
                             break;
                           case 2:
-                            actualOperations.add("case 2");
+                            actualEvents.add("event 2");
                             assertEquals(2, value.size());
                             assertEquals(1, value.getDocumentChanges().size());
                             assertEquals(Type.ADDED, value.getDocumentChanges().get(0).getType());
                             ref1.set(map("foo", "bar", "bar", " foo"));
                             break;
                           case 3:
-                            actualOperations.add("case 3");
+                            actualEvents.add("event 3");
                             assertEquals(2, value.size());
                             assertEquals(1, value.getDocumentChanges().size());
                             assertEquals(
@@ -940,14 +941,14 @@ public class ITSystemTest {
                             ref2.set(map("foo", "foo"));
                             break;
                           case 4:
-                            actualOperations.add("case 4");
+                            actualEvents.add("event 4");
                             assertEquals(1, value.size());
                             assertEquals(1, value.getDocumentChanges().size());
                             assertEquals(Type.REMOVED, value.getDocumentChanges().get(0).getType());
                             ref1.delete();
                             break;
                           case 5:
-                            actualOperations.add("case 5");
+                            actualEvents.add("event 5");
                             assertTrue(value.isEmpty());
                             assertEquals(1, value.getDocumentChanges().size());
                             assertEquals(Type.REMOVED, value.getDocumentChanges().get(0).getType());
@@ -963,13 +964,13 @@ public class ITSystemTest {
       final boolean tryAcquire = semaphore.tryAcquire(6, 60, TimeUnit.SECONDS);
 
       final Joiner j = Joiner.on(", ");
-      final String expectedString = j.join(expectedOperations);
-      final String actualString = j.join(actualOperations);
+      final String expectedString = j.join(expectedEvents);
+      final String actualString = j.join(actualEvents);
       assertTrue(
           String.format(
-              "did not receive all expected messages within the deadline.%n"
-                  + "expectedOperations = [%s]%n"
-                  + "  actualOperations = [%s]%n",
+              "did not receive all expected events within the deadline.%n"
+                  + "expectedEvents = [%s]%n"
+                  + "  actualEvents = [%s]%n",
               expectedString, actualString),
           tryAcquire);
     } finally {
