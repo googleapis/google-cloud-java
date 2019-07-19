@@ -439,7 +439,7 @@ public class DocumentsStubSettings extends StubSettings<DocumentsStubSettings> {
           .setInitialCallSettings(
               UnaryCallSettings
                   .<CreateDocumentRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
                   .build())
           .setResponseTransformer(
@@ -487,7 +487,7 @@ public class DocumentsStubSettings extends StubSettings<DocumentsStubSettings> {
           .setInitialCallSettings(
               UnaryCallSettings
                   .<UpdateDocumentRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
                   .build())
           .setResponseTransformer(
