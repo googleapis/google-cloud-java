@@ -1123,7 +1123,7 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
           .importDataOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings.<ImportDataRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
                   .build())
           .setResponseTransformer(
@@ -1145,7 +1145,7 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
           .exportDataOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings.<ExportDataRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
                   .build())
           .setResponseTransformer(
@@ -1167,7 +1167,7 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
           .createModelOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings.<CreateModelRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
                   .build())
           .setResponseTransformer(
@@ -1211,7 +1211,7 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
           .deployModelOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings.<DeployModelRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
                   .build())
           .setResponseTransformer(
@@ -1234,7 +1234,7 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
           .setInitialCallSettings(
               UnaryCallSettings
                   .<UndeployModelRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
                   .build())
           .setResponseTransformer(
@@ -1256,7 +1256,7 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
           .exportModelOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings.<ExportModelRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
                   .build())
           .setResponseTransformer(
@@ -1279,7 +1279,7 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
           .setInitialCallSettings(
               UnaryCallSettings
                   .<ExportEvaluatedExamplesRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
                   .build())
           .setResponseTransformer(
