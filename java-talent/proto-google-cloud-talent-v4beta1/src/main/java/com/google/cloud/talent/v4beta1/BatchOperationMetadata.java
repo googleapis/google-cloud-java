@@ -220,7 +220,8 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The batch operation is in the process of cancelling after
-     * [google.longrunning.Operation.CancelOperation] is called.
+     * [google.longrunning.Operations.CancelOperation][google.longrunning.Operations.CancelOperation]
+     * is called.
      * </pre>
      *
      * <code>CANCELLING = 5;</code>
@@ -231,8 +232,9 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The batch operation is done after
-     * [google.longrunning.Operation.CancelOperation] is called. Any items
-     * processed before cancelling are returned in the response.
+     * [google.longrunning.Operations.CancelOperation][google.longrunning.Operations.CancelOperation]
+     * is called. Any items processed before cancelling are returned in the
+     * response.
      * </pre>
      *
      * <code>CANCELLED = 6;</code>
@@ -297,7 +299,8 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The batch operation is in the process of cancelling after
-     * [google.longrunning.Operation.CancelOperation] is called.
+     * [google.longrunning.Operations.CancelOperation][google.longrunning.Operations.CancelOperation]
+     * is called.
      * </pre>
      *
      * <code>CANCELLING = 5;</code>
@@ -308,8 +311,9 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The batch operation is done after
-     * [google.longrunning.Operation.CancelOperation] is called. Any items
-     * processed before cancelling are returned in the response.
+     * [google.longrunning.Operations.CancelOperation][google.longrunning.Operations.CancelOperation]
+     * is called. Any items processed before cancelling are returned in the
+     * response.
      * </pre>
      *
      * <code>CANCELLED = 6;</code>

@@ -202,7 +202,8 @@ public final class ProfileEvent extends com.google.protobuf.GeneratedMessageV3
      * a CTS API request's result set, the
      * [ClientEvent.request_id][google.cloud.talent.v4beta1.ClientEvent.request_id]
      * should be populated.  If the VIEW happens for some other reason, the
-     * [requestId] should not be populated.
+     * [request_id][google.cloud.talent.v4beta1.ClientEvent.request_id] should
+     * not be populated.
      * This event requires a valid recruiter and one valid ID in profiles.
      * To understand how to use this event, consider 2 examples in which a VIEW
      * event should be sent:
@@ -307,7 +308,8 @@ public final class ProfileEvent extends com.google.protobuf.GeneratedMessageV3
      * a CTS API request's result set, the
      * [ClientEvent.request_id][google.cloud.talent.v4beta1.ClientEvent.request_id]
      * should be populated.  If the VIEW happens for some other reason, the
-     * [requestId] should not be populated.
+     * [request_id][google.cloud.talent.v4beta1.ClientEvent.request_id] should
+     * not be populated.
      * This event requires a valid recruiter and one valid ID in profiles.
      * To understand how to use this event, consider 2 examples in which a VIEW
      * event should be sent:
