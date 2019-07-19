@@ -621,4 +621,50 @@ public class BlobTest {
     byte actual[] = Files.readAllBytes(file.toPath());
     assertArrayEquals(expected, actual);
   }
+
+  @Test
+  public void testDownloadWithRetries() throws Exception {
+    final byte[] expected = {1, 2};
+    StorageRpc mockStorageRpc = createNiceMock(StorageRpc.class);
+    expect(storage.getOptions()).andReturn(mockOptions);
+    replay(storage);
+    expect(mockOptions.getStorageRpcV1()).andReturn(mockStorageRpc);
+    expect(mockOptions.getRetrySettings()).andReturn(RETRY_SETTINGS);
+    expect(mockOptions.getClock()).andReturn(API_CLOCK);
+    replay(mockOptions);
+    blob = new Blob(storage, new BlobInfo.BuilderImpl(BLOB_INFO));
+    expect(
+            mockStorageRpc.read(
+                anyObject(StorageObject.class),
+                anyObject(Map.class),
+                eq(0l),
+                anyObject(OutputStream.class)))
+        .andAnswer(
+            new IAnswer<Long>() {
+              @Override
+              public Long answer() throws Throwable {
+                ((OutputStream) getCurrentArguments()[3]).write(expected[0]);
+                throw new StorageException(504, "error");
+              }
+            });
+    expect(
+            mockStorageRpc.read(
+                anyObject(StorageObject.class),
+                anyObject(Map.class),
+                eq(1l),
+                anyObject(OutputStream.class)))
+        .andAnswer(
+            new IAnswer<Long>() {
+              @Override
+              public Long answer() throws Throwable {
+                ((OutputStream) getCurrentArguments()[3]).write(expected[1]);
+                return 1l;
+              }
+            });
+    replay(mockStorageRpc);
+    File file = File.createTempFile("blob", ".tmp");
+    blob.downloadTo(file.toPath());
+    byte actual[] = Files.readAllBytes(file.toPath());
+    assertArrayEquals(expected, actual);
+  }
 }
