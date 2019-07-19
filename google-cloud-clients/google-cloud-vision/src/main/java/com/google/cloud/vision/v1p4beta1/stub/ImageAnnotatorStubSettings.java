@@ -339,7 +339,7 @@ public class ImageAnnotatorStubSettings extends StubSettings<ImageAnnotatorStubS
           .setInitialCallSettings(
               UnaryCallSettings
                   .<AsyncBatchAnnotateImagesRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
                   .build())
           .setResponseTransformer(
@@ -363,7 +363,7 @@ public class ImageAnnotatorStubSettings extends StubSettings<ImageAnnotatorStubS
           .setInitialCallSettings(
               UnaryCallSettings
                   .<AsyncBatchAnnotateFilesRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
                   .build())
           .setResponseTransformer(
