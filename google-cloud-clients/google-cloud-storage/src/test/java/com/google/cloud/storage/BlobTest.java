@@ -51,7 +51,6 @@ import com.google.common.io.BaseEncoding;
 import java.io.File;
 import java.io.OutputStream;
 import java.net.URL;
-import java.nio.ByteBuffer;
 import java.nio.file.Files;
 import java.security.Key;
 import java.util.List;
@@ -603,12 +602,11 @@ public class BlobTest {
     replay(mockOptions);
     blob = new Blob(storage, new BlobInfo.BuilderImpl(BLOB_INFO));
     expect(
-        mockStorageRpc.read(
-            anyObject(StorageObject.class),
-            anyObject(Map.class),
-            eq(0l),
-            anyObject(OutputStream.class)
-            ))
+            mockStorageRpc.read(
+                anyObject(StorageObject.class),
+                anyObject(Map.class),
+                eq(0l),
+                anyObject(OutputStream.class)))
         .andAnswer(
             new IAnswer<Long>() {
               @Override
