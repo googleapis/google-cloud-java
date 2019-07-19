@@ -18,6 +18,8 @@ package com.google.cloud.firestore;
 
 import static org.junit.Assert.assertEquals;
 
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.gax.rpc.ApiStreamObserver;
@@ -53,6 +55,7 @@ import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
 import com.google.protobuf.NullValue;
 import com.google.type.LatLng;
+import java.io.IOException;
 import java.math.BigInteger;
 import java.nio.charset.Charset;
 import java.text.ParseException;
@@ -821,5 +824,27 @@ public final class LocalFirestoreHelper {
 
   public static String autoId() {
     return FirestoreImpl.autoId();
+  }
+
+  @SuppressWarnings("unchecked")
+  public static <T> Map<String, T> mapAnyType(Object... entries) {
+    Map<String, T> res = new HashMap<>();
+    for (int i = 0; i < entries.length; i += 2) {
+      res.put((String) entries[i], (T) entries[i + 1]);
+    }
+    return res;
+  }
+
+  private static Map<String, Object> fromJsonString(String json) {
+    try {
+      ObjectMapper mapper = new ObjectMapper();
+      return mapper.readValue(json, new TypeReference<Map<String, Object>>() {});
+    } catch (IOException e) {
+      throw new RuntimeException(e);
+    }
+  }
+
+  public static Map<String, Object> fromSingleQuotedString(String json) {
+    return fromJsonString(json.replace("'", "\""));
   }
 }

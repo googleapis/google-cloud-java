@@ -48,9 +48,6 @@ Bigtable integration tests can either be run against an emulator or a real Bigta
 target environment can be selected by setting a maven profile. By default it is set to
 `bigtable-emulator-it` and other options are `bigtable-prod-it` and `bigtable-directpath-it`.
 
-To use the `emulator` environment, please install the gcloud sdk and use it to install the
-`cbtemulator` via `gcloud components install bigtable`.
-
 To use the `bigtable-prod-it` and `bigtable-directpath-it` environments:
 1. Set up the target table using `google-cloud-bigtable/scripts/setup-test-table.sh`
 2. Download the [JSON service account credentials file][create-service-account] from the Google 
