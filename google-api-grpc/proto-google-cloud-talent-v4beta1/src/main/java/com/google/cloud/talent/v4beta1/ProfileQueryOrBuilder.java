@@ -999,4 +999,72 @@ public interface ProfileQueryOrBuilder
    */
   com.google.cloud.talent.v4beta1.CandidateAvailabilityFilterOrBuilder
       getCandidateAvailabilityFilterOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Person name filter specifies person name of profiles to match on.
+   * If multiple person name filters are specified, profiles that match any
+   * person name filters are retrieved.
+   * For example, search for profiles of candidates with name "John Smith".
+   * </pre>
+   *
+   * <code>repeated .google.cloud.talent.v4beta1.PersonNameFilter person_name_filters = 17;</code>
+   */
+  java.util.List<com.google.cloud.talent.v4beta1.PersonNameFilter> getPersonNameFiltersList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Person name filter specifies person name of profiles to match on.
+   * If multiple person name filters are specified, profiles that match any
+   * person name filters are retrieved.
+   * For example, search for profiles of candidates with name "John Smith".
+   * </pre>
+   *
+   * <code>repeated .google.cloud.talent.v4beta1.PersonNameFilter person_name_filters = 17;</code>
+   */
+  com.google.cloud.talent.v4beta1.PersonNameFilter getPersonNameFilters(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Person name filter specifies person name of profiles to match on.
+   * If multiple person name filters are specified, profiles that match any
+   * person name filters are retrieved.
+   * For example, search for profiles of candidates with name "John Smith".
+   * </pre>
+   *
+   * <code>repeated .google.cloud.talent.v4beta1.PersonNameFilter person_name_filters = 17;</code>
+   */
+  int getPersonNameFiltersCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Person name filter specifies person name of profiles to match on.
+   * If multiple person name filters are specified, profiles that match any
+   * person name filters are retrieved.
+   * For example, search for profiles of candidates with name "John Smith".
+   * </pre>
+   *
+   * <code>repeated .google.cloud.talent.v4beta1.PersonNameFilter person_name_filters = 17;</code>
+   */
+  java.util.List<? extends com.google.cloud.talent.v4beta1.PersonNameFilterOrBuilder>
+      getPersonNameFiltersOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Person name filter specifies person name of profiles to match on.
+   * If multiple person name filters are specified, profiles that match any
+   * person name filters are retrieved.
+   * For example, search for profiles of candidates with name "John Smith".
+   * </pre>
+   *
+   * <code>repeated .google.cloud.talent.v4beta1.PersonNameFilter person_name_filters = 17;</code>
+   */
+  com.google.cloud.talent.v4beta1.PersonNameFilterOrBuilder getPersonNameFiltersOrBuilder(
+      int index);
 }

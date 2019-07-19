@@ -642,6 +642,7 @@ public interface ProfileOrBuilder
    * [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current]
    * for the current employment if possible. If not, it's inferred from user
    * inputs.
+   * The limitation for max number of employment records is 50.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.EmploymentRecord employment_records = 17;</code>
@@ -663,6 +664,7 @@ public interface ProfileOrBuilder
    * [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current]
    * for the current employment if possible. If not, it's inferred from user
    * inputs.
+   * The limitation for max number of employment records is 50.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.EmploymentRecord employment_records = 17;</code>
@@ -684,6 +686,7 @@ public interface ProfileOrBuilder
    * [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current]
    * for the current employment if possible. If not, it's inferred from user
    * inputs.
+   * The limitation for max number of employment records is 50.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.EmploymentRecord employment_records = 17;</code>
@@ -705,6 +708,7 @@ public interface ProfileOrBuilder
    * [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current]
    * for the current employment if possible. If not, it's inferred from user
    * inputs.
+   * The limitation for max number of employment records is 50.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.EmploymentRecord employment_records = 17;</code>
@@ -727,6 +731,7 @@ public interface ProfileOrBuilder
    * [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current]
    * for the current employment if possible. If not, it's inferred from user
    * inputs.
+   * The limitation for max number of employment records is 50.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.EmploymentRecord employment_records = 17;</code>
@@ -749,6 +754,7 @@ public interface ProfileOrBuilder
    * [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current]
    * for the current education if possible. If not, it's inferred from user
    * inputs.
+   * The limitation for max number of education records is 10.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.EducationRecord education_records = 18;</code>
@@ -769,6 +775,7 @@ public interface ProfileOrBuilder
    * [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current]
    * for the current education if possible. If not, it's inferred from user
    * inputs.
+   * The limitation for max number of education records is 10.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.EducationRecord education_records = 18;</code>
@@ -789,6 +796,7 @@ public interface ProfileOrBuilder
    * [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current]
    * for the current education if possible. If not, it's inferred from user
    * inputs.
+   * The limitation for max number of education records is 10.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.EducationRecord education_records = 18;</code>
@@ -809,6 +817,7 @@ public interface ProfileOrBuilder
    * [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current]
    * for the current education if possible. If not, it's inferred from user
    * inputs.
+   * The limitation for max number of education records is 10.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.EducationRecord education_records = 18;</code>
@@ -830,6 +839,7 @@ public interface ProfileOrBuilder
    * [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current]
    * for the current education if possible. If not, it's inferred from user
    * inputs.
+   * The limitation for max number of education records is 10.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.EducationRecord education_records = 18;</code>
@@ -842,6 +852,7 @@ public interface ProfileOrBuilder
    * <pre>
    * Optional. The skill set of the candidate. It's highly recommended to
    * provide as much information as possible to help improve the search quality.
+   * The limitation for max number of skills is 100.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.Skill skills = 19;</code>
@@ -853,6 +864,7 @@ public interface ProfileOrBuilder
    * <pre>
    * Optional. The skill set of the candidate. It's highly recommended to
    * provide as much information as possible to help improve the search quality.
+   * The limitation for max number of skills is 100.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.Skill skills = 19;</code>
@@ -864,6 +876,7 @@ public interface ProfileOrBuilder
    * <pre>
    * Optional. The skill set of the candidate. It's highly recommended to
    * provide as much information as possible to help improve the search quality.
+   * The limitation for max number of skills is 100.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.Skill skills = 19;</code>
@@ -875,6 +888,7 @@ public interface ProfileOrBuilder
    * <pre>
    * Optional. The skill set of the candidate. It's highly recommended to
    * provide as much information as possible to help improve the search quality.
+   * The limitation for max number of skills is 100.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.Skill skills = 19;</code>
@@ -886,6 +900,7 @@ public interface ProfileOrBuilder
    * <pre>
    * Optional. The skill set of the candidate. It's highly recommended to
    * provide as much information as possible to help improve the search quality.
+   * The limitation for max number of skills is 100.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.Skill skills = 19;</code>
@@ -900,6 +915,7 @@ public interface ProfileOrBuilder
    * has participated in, for example, open-source projects, class assignments
    * that aren't listed in
    * [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
+   * The limitation for max number of activities is 50.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.Activity activities = 20;</code>
@@ -913,6 +929,7 @@ public interface ProfileOrBuilder
    * has participated in, for example, open-source projects, class assignments
    * that aren't listed in
    * [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
+   * The limitation for max number of activities is 50.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.Activity activities = 20;</code>
@@ -926,6 +943,7 @@ public interface ProfileOrBuilder
    * has participated in, for example, open-source projects, class assignments
    * that aren't listed in
    * [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
+   * The limitation for max number of activities is 50.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.Activity activities = 20;</code>
@@ -939,6 +957,7 @@ public interface ProfileOrBuilder
    * has participated in, for example, open-source projects, class assignments
    * that aren't listed in
    * [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
+   * The limitation for max number of activities is 50.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.Activity activities = 20;</code>
@@ -953,6 +972,7 @@ public interface ProfileOrBuilder
    * has participated in, for example, open-source projects, class assignments
    * that aren't listed in
    * [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
+   * The limitation for max number of activities is 50.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.Activity activities = 20;</code>
@@ -964,6 +984,7 @@ public interface ProfileOrBuilder
    *
    * <pre>
    * Optional. The publications published by the candidate.
+   * The limitation for max number of publications is 50.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.Publication publications = 21;</code>
@@ -974,6 +995,7 @@ public interface ProfileOrBuilder
    *
    * <pre>
    * Optional. The publications published by the candidate.
+   * The limitation for max number of publications is 50.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.Publication publications = 21;</code>
@@ -984,6 +1006,7 @@ public interface ProfileOrBuilder
    *
    * <pre>
    * Optional. The publications published by the candidate.
+   * The limitation for max number of publications is 50.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.Publication publications = 21;</code>
@@ -994,6 +1017,7 @@ public interface ProfileOrBuilder
    *
    * <pre>
    * Optional. The publications published by the candidate.
+   * The limitation for max number of publications is 50.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.Publication publications = 21;</code>
@@ -1005,6 +1029,7 @@ public interface ProfileOrBuilder
    *
    * <pre>
    * Optional. The publications published by the candidate.
+   * The limitation for max number of publications is 50.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.Publication publications = 21;</code>

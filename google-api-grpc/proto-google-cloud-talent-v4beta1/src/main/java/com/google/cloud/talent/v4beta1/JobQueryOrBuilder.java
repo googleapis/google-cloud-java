@@ -474,7 +474,7 @@ public interface JobQueryOrBuilder
    * Boolean expressions (AND/OR/NOT) are supported up to 3 levels of
    * nesting (for example, "((A AND B AND C) OR NOT D) AND E"), a maximum of 100
    * comparisons or functions are allowed in the expression. The expression
-   * must be &lt; 3000 bytes in length.
+   * must be &lt; 6000 bytes in length.
    * Sample Query:
    * `(LOWER(driving_license)="class &#92;"a&#92;"" OR EMPTY(driving_license)) AND
    * driving_years &gt; 10`
@@ -501,7 +501,7 @@ public interface JobQueryOrBuilder
    * Boolean expressions (AND/OR/NOT) are supported up to 3 levels of
    * nesting (for example, "((A AND B AND C) OR NOT D) AND E"), a maximum of 100
    * comparisons or functions are allowed in the expression. The expression
-   * must be &lt; 3000 bytes in length.
+   * must be &lt; 6000 bytes in length.
    * Sample Query:
    * `(LOWER(driving_license)="class &#92;"a&#92;"" OR EMPTY(driving_license)) AND
    * driving_years &gt; 10`
