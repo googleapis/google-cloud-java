@@ -81,20 +81,108 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+
+  <profiles>
+    <profile>
+      <id>bigtable-emulator-it</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+
+      <build>
+        <plugins>
+          <plugin>
+            <artifactId>maven-failsafe-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>emulator-it</id>
+                <goals>
+                  <goal>integration-test</goal>
+                  <goal>verify</goal>
+                </goals>
+                <configuration>
+                  <systemPropertyVariables>
+                    <bigtable.env>emulator</bigtable.env>
+                  </systemPropertyVariables>
+                  <test>com.google.cloud.bigtable.data.v2.it.**</test>
+                  <summaryFile>target/failsafe-reports/failsafe-summary-emulator-it.xml</summaryFile>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+
+    <profile>
+      <id>bigtable-prod-it</id>
+      <build>
+        <plugins>
+          <plugin>
+            <artifactId>maven-failsafe-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>prod-it</id>
+                <goals>
+                  <goal>integration-test</goal>
+                  <goal>verify</goal>
+                </goals>
+                <configuration>
+                  <systemPropertyVariables>
+                    <bigtable.env>prod</bigtable.env>
+                  </systemPropertyVariables>
+                  <test>com.google.cloud.bigtable.data.v2.it.**</test>
+                  <test>com.google.cloud.bigtable.admin.v2.it.**</test>
+                  <summaryFile>target/failsafe-reports/failsafe-summary-prod-it.xml</summaryFile>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+
+    <profile>
+      <id>bigtable-directpath-it</id>
+      <build>
+        <plugins>
+          <plugin>
+            <artifactId>maven-failsafe-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>directpath-it</id>
+                <goals>
+                  <goal>integration-test</goal>
+                  <goal>verify</goal>
+                </goals>
+                <configuration>
+                  <systemPropertyVariables>
+                    <bigtable.env>direct_path</bigtable.env>
+                    <!-- TODO(igorbernstein): This property should be auto set by gax -->
+                    <io.grpc.internal.DnsNameResolverProvider.enable_grpclb>true</io.grpc.internal.DnsNameResolverProvider.enable_grpclb>
+                  </systemPropertyVariables>
+                  <!-- Enable directpath for bigtable -->
+                  <environmentVariables>
+                    <GOOGLE_CLOUD_ENABLE_DIRECT_PATH>bigtable</GOOGLE_CLOUD_ENABLE_DIRECT_PATH>
+                  </environmentVariables>
+                  <!-- TODO(igorbernstein): Once the control plane is accessible via directpath, add admin tests -->
+                  <test>com.google.cloud.bigtable.data.v2.it.**</test>
+                  <summaryFile>target/failsafe-reports/failsafe-summary-directpath-it.xml</summaryFile>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+
   <build>
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-failsafe-plugin</artifactId>
         <version>3.0.0-M3</version>
-        <executions>
-          <execution>
-            <goals>
-              <goal>integration-test</goal>
-              <goal>verify</goal>
-            </goals>
-          </execution>
-        </executions>
         <configuration>
           <parallel>classes</parallel>
           <perCoreThreadCount>true</perCoreThreadCount>
