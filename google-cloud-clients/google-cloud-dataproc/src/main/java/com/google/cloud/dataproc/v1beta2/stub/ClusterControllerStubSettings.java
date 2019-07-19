@@ -454,7 +454,7 @@ public class ClusterControllerStubSettings extends StubSettings<ClusterControlle
           .setInitialCallSettings(
               UnaryCallSettings
                   .<CreateClusterRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
                   .build())
           .setResponseTransformer(
@@ -477,7 +477,7 @@ public class ClusterControllerStubSettings extends StubSettings<ClusterControlle
           .setInitialCallSettings(
               UnaryCallSettings
                   .<UpdateClusterRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
                   .build())
           .setResponseTransformer(
@@ -500,7 +500,7 @@ public class ClusterControllerStubSettings extends StubSettings<ClusterControlle
           .setInitialCallSettings(
               UnaryCallSettings
                   .<DeleteClusterRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
                   .build())
           .setResponseTransformer(
@@ -523,7 +523,7 @@ public class ClusterControllerStubSettings extends StubSettings<ClusterControlle
           .setInitialCallSettings(
               UnaryCallSettings
                   .<DiagnoseClusterRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
                   .build())
           .setResponseTransformer(
