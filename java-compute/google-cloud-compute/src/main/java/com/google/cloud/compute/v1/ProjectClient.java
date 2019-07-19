@@ -251,7 +251,7 @@ public class ProjectClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Disable a serivce resource (a.k.a service project) associated with this host project.
+   * Disable a service resource (also known as service project) associated with this host project.
    *
    * <p>Sample code:
    *
@@ -282,7 +282,7 @@ public class ProjectClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Disable a serivce resource (a.k.a service project) associated with this host project.
+   * Disable a service resource (also known as service project) associated with this host project.
    *
    * <p>Sample code:
    *
@@ -312,7 +312,7 @@ public class ProjectClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Disable a serivce resource (a.k.a service project) associated with this host project.
+   * Disable a service resource (also known as service project) associated with this host project.
    *
    * <p>Sample code:
    *
@@ -338,7 +338,7 @@ public class ProjectClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Disable a serivce resource (a.k.a service project) associated with this host project.
+   * Disable a service resource (also known as service project) associated with this host project.
    *
    * <p>Sample code:
    *

@@ -144,7 +144,12 @@ public final class InsertFirewallHttpRequest implements ApiMessage {
     return fields;
   }
 
-  /** Represents a Firewall resource. */
+  /**
+   * Represents a Firewall Rule resource.
+   *
+   * <p>Firewall rules allow or deny ingress traffic to, and egress traffic from your instances. For
+   * more information, read Firewall rules.
+   */
   public Firewall getFirewallResource() {
     return firewallResource;
   }
@@ -314,12 +319,22 @@ public final class InsertFirewallHttpRequest implements ApiMessage {
       return this;
     }
 
-    /** Represents a Firewall resource. */
+    /**
+     * Represents a Firewall Rule resource.
+     *
+     * <p>Firewall rules allow or deny ingress traffic to, and egress traffic from your instances.
+     * For more information, read Firewall rules.
+     */
     public Firewall getFirewallResource() {
       return firewallResource;
     }
 
-    /** Represents a Firewall resource. */
+    /**
+     * Represents a Firewall Rule resource.
+     *
+     * <p>Firewall rules allow or deny ingress traffic to, and egress traffic from your instances.
+     * For more information, read Firewall rules.
+     */
     public Builder setFirewallResource(Firewall firewallResource) {
       this.firewallResource = firewallResource;
       return this;

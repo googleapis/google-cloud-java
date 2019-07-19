@@ -371,8 +371,11 @@ public class TargetHttpProxyClient implements BackgroundResource {
    * </code></pre>
    *
    * @param project Project ID for this request.
-   * @param targetHttpProxyResource A TargetHttpProxy resource. This resource defines an HTTP proxy.
-   *     (== resource_for beta.targetHttpProxies ==) (== resource_for v1.targetHttpProxies ==)
+   * @param targetHttpProxyResource Represents a Target HTTP Proxy resource.
+   *     <p>A target HTTP proxy is a component of certain types of load balancers. Global forwarding
+   *     rules reference a target HTTP proxy, and the target proxy then references a URL map. For
+   *     more information, read Using Target Proxies. (== resource_for beta.targetHttpProxies ==)
+   *     (== resource_for v1.targetHttpProxies ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -403,8 +406,11 @@ public class TargetHttpProxyClient implements BackgroundResource {
    * </code></pre>
    *
    * @param project Project ID for this request.
-   * @param targetHttpProxyResource A TargetHttpProxy resource. This resource defines an HTTP proxy.
-   *     (== resource_for beta.targetHttpProxies ==) (== resource_for v1.targetHttpProxies ==)
+   * @param targetHttpProxyResource Represents a Target HTTP Proxy resource.
+   *     <p>A target HTTP proxy is a component of certain types of load balancers. Global forwarding
+   *     rules reference a target HTTP proxy, and the target proxy then references a URL map. For
+   *     more information, read Using Target Proxies. (== resource_for beta.targetHttpProxies ==)
+   *     (== resource_for v1.targetHttpProxies ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi

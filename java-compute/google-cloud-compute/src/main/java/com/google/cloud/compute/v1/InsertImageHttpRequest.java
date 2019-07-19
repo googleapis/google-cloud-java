@@ -156,7 +156,12 @@ public final class InsertImageHttpRequest implements ApiMessage {
     return forceCreate;
   }
 
-  /** An Image resource. (== resource_for beta.images ==) (== resource_for v1.images ==) */
+  /**
+   * Represents an Image resource.
+   *
+   * <p>You can use images to create boot disks for your VM instances. For more information, read
+   * Images. (== resource_for beta.images ==) (== resource_for v1.images ==)
+   */
   public Image getImageResource() {
     return imageResource;
   }
@@ -342,12 +347,22 @@ public final class InsertImageHttpRequest implements ApiMessage {
       return this;
     }
 
-    /** An Image resource. (== resource_for beta.images ==) (== resource_for v1.images ==) */
+    /**
+     * Represents an Image resource.
+     *
+     * <p>You can use images to create boot disks for your VM instances. For more information, read
+     * Images. (== resource_for beta.images ==) (== resource_for v1.images ==)
+     */
     public Image getImageResource() {
       return imageResource;
     }
 
-    /** An Image resource. (== resource_for beta.images ==) (== resource_for v1.images ==) */
+    /**
+     * Represents an Image resource.
+     *
+     * <p>You can use images to create boot disks for your VM instances. For more information, read
+     * Images. (== resource_for beta.images ==) (== resource_for v1.images ==)
+     */
     public Builder setImageResource(Image imageResource) {
       this.imageResource = imageResource;
       return this;

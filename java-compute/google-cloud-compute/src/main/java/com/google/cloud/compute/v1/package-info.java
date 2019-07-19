@@ -121,9 +121,8 @@
  * <code>
  * try (DiskClient diskClient = DiskClient.create()) {
  *   ProjectZoneDiskName disk = ProjectZoneDiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
- *   Boolean guestFlush = false;
- *   Snapshot snapshotResource = Snapshot.newBuilder().build();
- *   Operation response = diskClient.createSnapshotDisk(disk, guestFlush, snapshotResource);
+ *   DisksAddResourcePoliciesRequest disksAddResourcePoliciesRequestResource = DisksAddResourcePoliciesRequest.newBuilder().build();
+ *   Operation response = diskClient.addResourcePoliciesDisk(disk, disksAddResourcePoliciesRequestResource);
  * }
  * </code>
  * </pre>
@@ -580,8 +579,8 @@
  * <code>
  * try (RegionDiskClient regionDiskClient = RegionDiskClient.create()) {
  *   ProjectRegionDiskName disk = ProjectRegionDiskName.of("[PROJECT]", "[REGION]", "[DISK]");
- *   Snapshot snapshotResource = Snapshot.newBuilder().build();
- *   Operation response = regionDiskClient.createSnapshotRegionDisk(disk, snapshotResource);
+ *   RegionDisksAddResourcePoliciesRequest regionDisksAddResourcePoliciesRequestResource = RegionDisksAddResourcePoliciesRequest.newBuilder().build();
+ *   Operation response = regionDiskClient.addResourcePoliciesRegionDisk(disk, regionDisksAddResourcePoliciesRequestResource);
  * }
  * </code>
  * </pre>
@@ -644,6 +643,36 @@
  * try (RegionClient regionClient = RegionClient.create()) {
  *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
  *   Region response = regionClient.getRegion(region);
+ * }
+ * </code>
+ * </pre>
+ *
+ * ================= ReservationClient =================
+ *
+ * <p>Service Description: Creates and runs virtual machines on Google Cloud Platform.
+ *
+ * <p>Sample for ReservationClient:
+ *
+ * <pre>
+ * <code>
+ * try (ReservationClient reservationClient = ReservationClient.create()) {
+ *   ProjectZoneReservationName reservation = ProjectZoneReservationName.of("[PROJECT]", "[ZONE]", "[RESERVATION]");
+ *   Operation response = reservationClient.deleteReservation(reservation);
+ * }
+ * </code>
+ * </pre>
+ *
+ * ==================== ResourcePolicyClient ====================
+ *
+ * <p>Service Description: Creates and runs virtual machines on Google Cloud Platform.
+ *
+ * <p>Sample for ResourcePolicyClient:
+ *
+ * <pre>
+ * <code>
+ * try (ResourcePolicyClient resourcePolicyClient = ResourcePolicyClient.create()) {
+ *   ProjectRegionResourcePolicyName resourcePolicy = ProjectRegionResourcePolicyName.of("[PROJECT]", "[REGION]", "[RESOURCE_POLICY]");
+ *   Operation response = resourcePolicyClient.deleteResourcePolicy(resourcePolicy);
  * }
  * </code>
  * </pre>

@@ -26,8 +26,18 @@ import javax.annotation.Nullable;
 @Generated("by GAPIC")
 @BetaApi
 /**
- * A BackendService resource. This resource defines a group of backend virtual machines and their
- * serving capacity. (== resource_for v1.backendService ==) (== resource_for beta.backendService ==)
+ * Represents a Backend Service resource.
+ *
+ * <p>Backend services must have an associated health check. Backend services also store information
+ * about session affinity. For more information, read Backend Services.
+ *
+ * <p>A backendServices resource represents a global backend service. Global backend services are
+ * used for HTTP(S), SSL Proxy, TCP Proxy load balancing and Traffic Director.
+ *
+ * <p>A regionBackendServices resource represents a regional backend service. Regional backend
+ * services are used for internal TCP/UDP load balancing. For more information, read Internal
+ * TCP/UDP Load balancing. (== resource_for v1.backendService ==) (== resource_for
+ * beta.backendService ==)
  */
 public final class BackendService implements ApiMessage {
   private final Integer affinityCookieTtlSec;
@@ -222,11 +232,8 @@ public final class BackendService implements ApiMessage {
   }
 
   /**
-   * Lifetime of cookies in seconds if session_affinity is GENERATED_COOKIE. If set to 0, the cookie
-   * is non-persistent and lasts only until the end of the browser session (or equivalent). The
-   * maximum allowed value for TTL is one day.
-   *
-   * <p>When the load balancing scheme is INTERNAL, this field is not used.
+   * If set to 0, the cookie is non-persistent and lasts only until the end of the browser session
+   * (or equivalent). The maximum allowed value is one day (86,400).
    */
   public Integer getAffinityCookieTtlSec() {
     return affinityCookieTtlSec;
@@ -264,9 +271,8 @@ public final class BackendService implements ApiMessage {
   }
 
   /**
-   * If true, enable Cloud CDN for this BackendService.
-   *
-   * <p>When the load balancing scheme is INTERNAL, this field is not used.
+   * If true, enables Cloud CDN for the backend service. Only applicable if the loadBalancingScheme
+   * is EXTERNAL and the protocol is HTTP or HTTPS.
    */
   public Boolean getEnableCDN() {
     return enableCDN;
@@ -336,17 +342,20 @@ public final class BackendService implements ApiMessage {
    * Deprecated in favor of portName. The TCP port to connect on the backend. The default value is
    * 80.
    *
-   * <p>This cannot be used for internal load balancing.
+   * <p>This cannot be used if the loadBalancingScheme is INTERNAL (Internal TCP/UDP Load
+   * Balancing).
    */
   public Integer getPort() {
     return port;
   }
 
   /**
-   * Name of backend port. The same name should appear in the instance groups referenced by this
-   * service. Required when the load balancing scheme is EXTERNAL.
+   * A named port on a backend instance group representing the port for communication to the backend
+   * VMs in that group. Required when the loadBalancingScheme is EXTERNAL and the backends are
+   * instance groups. The named port must be defined on each backend instance group. This parameter
+   * has no meaning if the backends are NEGs.
    *
-   * <p>When the load balancing scheme is INTERNAL, this field is not used.
+   * <p>Must be omitted when the loadBalancingScheme is INTERNAL (Internal TCP/UDP Load Blaancing).
    */
   public String getPortName() {
     return portName;
@@ -355,9 +364,9 @@ public final class BackendService implements ApiMessage {
   /**
    * The protocol this BackendService uses to communicate with backends.
    *
-   * <p>Possible values are HTTP, HTTPS, TCP, and SSL. The default is HTTP.
-   *
-   * <p>For internal load balancing, the possible values are TCP and UDP, and the default is TCP.
+   * <p>Possible values are HTTP, HTTPS, TCP, SSL, or UDP, depending on the chosen load balancer or
+   * Traffic Director configuration. Refer to the documentation for the load balancer or for Traffic
+   * director for more information.
    */
   public String getProtocol() {
     return protocol;
@@ -385,22 +394,25 @@ public final class BackendService implements ApiMessage {
   }
 
   /**
-   * Type of session affinity to use. The default is NONE.
+   * Type of session affinity to use. The default is NONE. Session affinity is not applicable if the
+   * --protocol is UDP.
    *
-   * <p>When the load balancing scheme is EXTERNAL, can be NONE, CLIENT_IP, or GENERATED_COOKIE.
+   * <p>When the loadBalancingScheme is EXTERNAL, possible values are NONE, CLIENT_IP, or
+   * GENERATED_COOKIE. GENERATED_COOKIE is only available if the protocol is HTTP or HTTPS.
    *
-   * <p>When the load balancing scheme is INTERNAL, can be NONE, CLIENT_IP, CLIENT_IP_PROTO, or
-   * CLIENT_IP_PORT_PROTO.
+   * <p>When the loadBalancingScheme is INTERNAL, possible values are NONE, CLIENT_IP,
+   * CLIENT_IP_PROTO, or CLIENT_IP_PORT_PROTO.
    *
-   * <p>When the protocol is UDP, this field is not used.
+   * <p>When the loadBalancingScheme is INTERNAL_SELF_MANAGED, possible values are NONE, CLIENT_IP,
+   * GENERATED_COOKIE, HEADER_FIELD, or HTTP_COOKIE.
    */
   public String getSessionAffinity() {
     return sessionAffinity;
   }
 
   /**
-   * How many seconds to wait for the backend before considering it a failed request. Default is 30
-   * seconds.
+   * The backend service timeout has a different meaning depending on the type of load balancer. For
+   * more information read, Backend service settings The default is 30 seconds.
    */
   public Integer getTimeoutSec() {
     return timeoutSec;
@@ -556,22 +568,16 @@ public final class BackendService implements ApiMessage {
     }
 
     /**
-     * Lifetime of cookies in seconds if session_affinity is GENERATED_COOKIE. If set to 0, the
-     * cookie is non-persistent and lasts only until the end of the browser session (or equivalent).
-     * The maximum allowed value for TTL is one day.
-     *
-     * <p>When the load balancing scheme is INTERNAL, this field is not used.
+     * If set to 0, the cookie is non-persistent and lasts only until the end of the browser session
+     * (or equivalent). The maximum allowed value is one day (86,400).
      */
     public Integer getAffinityCookieTtlSec() {
       return affinityCookieTtlSec;
     }
 
     /**
-     * Lifetime of cookies in seconds if session_affinity is GENERATED_COOKIE. If set to 0, the
-     * cookie is non-persistent and lasts only until the end of the browser session (or equivalent).
-     * The maximum allowed value for TTL is one day.
-     *
-     * <p>When the load balancing scheme is INTERNAL, this field is not used.
+     * If set to 0, the cookie is non-persistent and lasts only until the end of the browser session
+     * (or equivalent). The maximum allowed value is one day (86,400).
      */
     public Builder setAffinityCookieTtlSec(Integer affinityCookieTtlSec) {
       this.affinityCookieTtlSec = affinityCookieTtlSec;
@@ -671,18 +677,16 @@ public final class BackendService implements ApiMessage {
     }
 
     /**
-     * If true, enable Cloud CDN for this BackendService.
-     *
-     * <p>When the load balancing scheme is INTERNAL, this field is not used.
+     * If true, enables Cloud CDN for the backend service. Only applicable if the
+     * loadBalancingScheme is EXTERNAL and the protocol is HTTP or HTTPS.
      */
     public Boolean getEnableCDN() {
       return enableCDN;
     }
 
     /**
-     * If true, enable Cloud CDN for this BackendService.
-     *
-     * <p>When the load balancing scheme is INTERNAL, this field is not used.
+     * If true, enables Cloud CDN for the backend service. Only applicable if the
+     * loadBalancingScheme is EXTERNAL and the protocol is HTTP or HTTPS.
      */
     public Builder setEnableCDN(Boolean enableCDN) {
       this.enableCDN = enableCDN;
@@ -841,7 +845,8 @@ public final class BackendService implements ApiMessage {
      * Deprecated in favor of portName. The TCP port to connect on the backend. The default value is
      * 80.
      *
-     * <p>This cannot be used for internal load balancing.
+     * <p>This cannot be used if the loadBalancingScheme is INTERNAL (Internal TCP/UDP Load
+     * Balancing).
      */
     public Integer getPort() {
       return port;
@@ -851,7 +856,8 @@ public final class BackendService implements ApiMessage {
      * Deprecated in favor of portName. The TCP port to connect on the backend. The default value is
      * 80.
      *
-     * <p>This cannot be used for internal load balancing.
+     * <p>This cannot be used if the loadBalancingScheme is INTERNAL (Internal TCP/UDP Load
+     * Balancing).
      */
     public Builder setPort(Integer port) {
       this.port = port;
@@ -859,20 +865,26 @@ public final class BackendService implements ApiMessage {
     }
 
     /**
-     * Name of backend port. The same name should appear in the instance groups referenced by this
-     * service. Required when the load balancing scheme is EXTERNAL.
+     * A named port on a backend instance group representing the port for communication to the
+     * backend VMs in that group. Required when the loadBalancingScheme is EXTERNAL and the backends
+     * are instance groups. The named port must be defined on each backend instance group. This
+     * parameter has no meaning if the backends are NEGs.
      *
-     * <p>When the load balancing scheme is INTERNAL, this field is not used.
+     * <p>Must be omitted when the loadBalancingScheme is INTERNAL (Internal TCP/UDP Load
+     * Blaancing).
      */
     public String getPortName() {
       return portName;
     }
 
     /**
-     * Name of backend port. The same name should appear in the instance groups referenced by this
-     * service. Required when the load balancing scheme is EXTERNAL.
+     * A named port on a backend instance group representing the port for communication to the
+     * backend VMs in that group. Required when the loadBalancingScheme is EXTERNAL and the backends
+     * are instance groups. The named port must be defined on each backend instance group. This
+     * parameter has no meaning if the backends are NEGs.
      *
-     * <p>When the load balancing scheme is INTERNAL, this field is not used.
+     * <p>Must be omitted when the loadBalancingScheme is INTERNAL (Internal TCP/UDP Load
+     * Blaancing).
      */
     public Builder setPortName(String portName) {
       this.portName = portName;
@@ -882,9 +894,9 @@ public final class BackendService implements ApiMessage {
     /**
      * The protocol this BackendService uses to communicate with backends.
      *
-     * <p>Possible values are HTTP, HTTPS, TCP, and SSL. The default is HTTP.
-     *
-     * <p>For internal load balancing, the possible values are TCP and UDP, and the default is TCP.
+     * <p>Possible values are HTTP, HTTPS, TCP, SSL, or UDP, depending on the chosen load balancer
+     * or Traffic Director configuration. Refer to the documentation for the load balancer or for
+     * Traffic director for more information.
      */
     public String getProtocol() {
       return protocol;
@@ -893,9 +905,9 @@ public final class BackendService implements ApiMessage {
     /**
      * The protocol this BackendService uses to communicate with backends.
      *
-     * <p>Possible values are HTTP, HTTPS, TCP, and SSL. The default is HTTP.
-     *
-     * <p>For internal load balancing, the possible values are TCP and UDP, and the default is TCP.
+     * <p>Possible values are HTTP, HTTPS, TCP, SSL, or UDP, depending on the chosen load balancer
+     * or Traffic Director configuration. Refer to the documentation for the load balancer or for
+     * Traffic director for more information.
      */
     public Builder setProtocol(String protocol) {
       this.protocol = protocol;
@@ -948,28 +960,34 @@ public final class BackendService implements ApiMessage {
     }
 
     /**
-     * Type of session affinity to use. The default is NONE.
+     * Type of session affinity to use. The default is NONE. Session affinity is not applicable if
+     * the --protocol is UDP.
      *
-     * <p>When the load balancing scheme is EXTERNAL, can be NONE, CLIENT_IP, or GENERATED_COOKIE.
+     * <p>When the loadBalancingScheme is EXTERNAL, possible values are NONE, CLIENT_IP, or
+     * GENERATED_COOKIE. GENERATED_COOKIE is only available if the protocol is HTTP or HTTPS.
      *
-     * <p>When the load balancing scheme is INTERNAL, can be NONE, CLIENT_IP, CLIENT_IP_PROTO, or
-     * CLIENT_IP_PORT_PROTO.
+     * <p>When the loadBalancingScheme is INTERNAL, possible values are NONE, CLIENT_IP,
+     * CLIENT_IP_PROTO, or CLIENT_IP_PORT_PROTO.
      *
-     * <p>When the protocol is UDP, this field is not used.
+     * <p>When the loadBalancingScheme is INTERNAL_SELF_MANAGED, possible values are NONE,
+     * CLIENT_IP, GENERATED_COOKIE, HEADER_FIELD, or HTTP_COOKIE.
      */
     public String getSessionAffinity() {
       return sessionAffinity;
     }
 
     /**
-     * Type of session affinity to use. The default is NONE.
+     * Type of session affinity to use. The default is NONE. Session affinity is not applicable if
+     * the --protocol is UDP.
      *
-     * <p>When the load balancing scheme is EXTERNAL, can be NONE, CLIENT_IP, or GENERATED_COOKIE.
+     * <p>When the loadBalancingScheme is EXTERNAL, possible values are NONE, CLIENT_IP, or
+     * GENERATED_COOKIE. GENERATED_COOKIE is only available if the protocol is HTTP or HTTPS.
      *
-     * <p>When the load balancing scheme is INTERNAL, can be NONE, CLIENT_IP, CLIENT_IP_PROTO, or
-     * CLIENT_IP_PORT_PROTO.
+     * <p>When the loadBalancingScheme is INTERNAL, possible values are NONE, CLIENT_IP,
+     * CLIENT_IP_PROTO, or CLIENT_IP_PORT_PROTO.
      *
-     * <p>When the protocol is UDP, this field is not used.
+     * <p>When the loadBalancingScheme is INTERNAL_SELF_MANAGED, possible values are NONE,
+     * CLIENT_IP, GENERATED_COOKIE, HEADER_FIELD, or HTTP_COOKIE.
      */
     public Builder setSessionAffinity(String sessionAffinity) {
       this.sessionAffinity = sessionAffinity;
@@ -977,16 +995,16 @@ public final class BackendService implements ApiMessage {
     }
 
     /**
-     * How many seconds to wait for the backend before considering it a failed request. Default is
-     * 30 seconds.
+     * The backend service timeout has a different meaning depending on the type of load balancer.
+     * For more information read, Backend service settings The default is 30 seconds.
      */
     public Integer getTimeoutSec() {
       return timeoutSec;
     }
 
     /**
-     * How many seconds to wait for the backend before considering it a failed request. Default is
-     * 30 seconds.
+     * The backend service timeout has a different meaning depending on the type of load balancer.
+     * For more information read, Backend service settings The default is 30 seconds.
      */
     public Builder setTimeoutSec(Integer timeoutSec) {
       this.timeoutSec = timeoutSec;

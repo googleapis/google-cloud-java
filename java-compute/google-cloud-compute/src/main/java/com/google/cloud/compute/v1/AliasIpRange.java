@@ -69,19 +69,18 @@ public final class AliasIpRange implements ApiMessage {
   }
 
   /**
-   * The IP CIDR range represented by this alias IP range. This IP CIDR range must belong to the
+   * The IP alias ranges to allocate for this interface. This IP CIDR range must belong to the
    * specified subnetwork and cannot contain IP addresses reserved by system or used by other
-   * network interfaces. This range may be a single IP address (e.g. 10.2.3.4), a netmask (e.g. /24)
-   * or a CIDR format string (e.g. 10.1.2.0/24).
+   * network interfaces. This range may be a single IP address (such as 10.2.3.4), a netmask (such
+   * as /24) or a CIDR-formatted string (such as 10.1.2.0/24).
    */
   public String getIpCidrRange() {
     return ipCidrRange;
   }
 
   /**
-   * Optional subnetwork secondary range name specifying the secondary range from which to allocate
-   * the IP CIDR range for this alias IP range. If left unspecified, the primary range of the
-   * subnetwork will be used.
+   * The name of a subnetwork secondary IP range from which to allocate an IP alias range. If not
+   * specified, the primary range of the subnetwork is used.
    */
   public String getSubnetworkRangeName() {
     return subnetworkRangeName;
@@ -132,20 +131,20 @@ public final class AliasIpRange implements ApiMessage {
     }
 
     /**
-     * The IP CIDR range represented by this alias IP range. This IP CIDR range must belong to the
+     * The IP alias ranges to allocate for this interface. This IP CIDR range must belong to the
      * specified subnetwork and cannot contain IP addresses reserved by system or used by other
-     * network interfaces. This range may be a single IP address (e.g. 10.2.3.4), a netmask (e.g.
-     * /24) or a CIDR format string (e.g. 10.1.2.0/24).
+     * network interfaces. This range may be a single IP address (such as 10.2.3.4), a netmask (such
+     * as /24) or a CIDR-formatted string (such as 10.1.2.0/24).
      */
     public String getIpCidrRange() {
       return ipCidrRange;
     }
 
     /**
-     * The IP CIDR range represented by this alias IP range. This IP CIDR range must belong to the
+     * The IP alias ranges to allocate for this interface. This IP CIDR range must belong to the
      * specified subnetwork and cannot contain IP addresses reserved by system or used by other
-     * network interfaces. This range may be a single IP address (e.g. 10.2.3.4), a netmask (e.g.
-     * /24) or a CIDR format string (e.g. 10.1.2.0/24).
+     * network interfaces. This range may be a single IP address (such as 10.2.3.4), a netmask (such
+     * as /24) or a CIDR-formatted string (such as 10.1.2.0/24).
      */
     public Builder setIpCidrRange(String ipCidrRange) {
       this.ipCidrRange = ipCidrRange;
@@ -153,18 +152,16 @@ public final class AliasIpRange implements ApiMessage {
     }
 
     /**
-     * Optional subnetwork secondary range name specifying the secondary range from which to
-     * allocate the IP CIDR range for this alias IP range. If left unspecified, the primary range of
-     * the subnetwork will be used.
+     * The name of a subnetwork secondary IP range from which to allocate an IP alias range. If not
+     * specified, the primary range of the subnetwork is used.
      */
     public String getSubnetworkRangeName() {
       return subnetworkRangeName;
     }
 
     /**
-     * Optional subnetwork secondary range name specifying the secondary range from which to
-     * allocate the IP CIDR range for this alias IP range. If left unspecified, the primary range of
-     * the subnetwork will be used.
+     * The name of a subnetwork secondary IP range from which to allocate an IP alias range. If not
+     * specified, the primary range of the subnetwork is used.
      */
     public Builder setSubnetworkRangeName(String subnetworkRangeName) {
       this.subnetworkRangeName = subnetworkRangeName;

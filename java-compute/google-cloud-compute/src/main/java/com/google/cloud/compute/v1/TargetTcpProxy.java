@@ -25,7 +25,11 @@ import javax.annotation.Nullable;
 @Generated("by GAPIC")
 @BetaApi
 /**
- * A TargetTcpProxy resource. This resource defines a TCP proxy. (== resource_for
+ * Represents a Target TCP Proxy resource.
+ *
+ * <p>A target TCP proxy is a component of a TCP Proxy load balancer. Global forwarding rules
+ * reference ta target TCP proxy, and the target proxy then references an external backend service.
+ * For more information, read TCP Proxy Load Balancing Concepts. (== resource_for
  * beta.targetTcpProxies ==) (== resource_for v1.targetTcpProxies ==)
  */
 public final class TargetTcpProxy implements ApiMessage {

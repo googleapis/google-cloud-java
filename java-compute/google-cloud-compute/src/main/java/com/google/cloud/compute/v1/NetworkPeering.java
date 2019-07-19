@@ -103,21 +103,20 @@ public final class NetworkPeering implements ApiMessage {
   }
 
   /**
-   * This field will be deprecated soon. Prefer using exchange_subnet_routes instead. Indicates
-   * whether full mesh connectivity is created and managed automatically. When it is set to true,
-   * Google Compute Engine will automatically create and manage the routes between two networks when
-   * the state is ACTIVE. Otherwise, user needs to create routes manually to route packets to peer
-   * network.
+   * This field will be deprecated soon. Use the exchange_subnet_routes field instead. Indicates
+   * whether full mesh connectivity is created and managed automatically between peered networks.
+   * Currently this field should always be true since Google Compute Engine will automatically
+   * create and manage subnetwork routes between two networks when peering state is ACTIVE.
    */
   public Boolean getAutoCreateRoutes() {
     return autoCreateRoutes;
   }
 
   /**
-   * Whether full mesh connectivity is created and managed automatically. When it is set to true,
-   * Google Compute Engine will automatically create and manage the routes between two networks when
-   * the peering state is ACTIVE. Otherwise, user needs to create routes manually to route packets
-   * to peer network.
+   * Indicates whether full mesh connectivity is created and managed automatically between peered
+   * networks. Currently this field should always be true since Google Compute Engine will
+   * automatically create and manage subnetwork routes between two networks when peering state is
+   * ACTIVE.
    */
   public Boolean getExchangeSubnetRoutes() {
     return exchangeSubnetRoutes;
@@ -126,9 +125,9 @@ public final class NetworkPeering implements ApiMessage {
   /**
    * Name of this peering. Provided by the client when the peering is created. The name must comply
    * with RFC1035. Specifically, the name must be 1-63 characters long and match regular expression
-   * `[a-z]([-a-z0-9]&#42;[a-z0-9])?` which means the first character must be a lowercase letter,
-   * and all the following characters must be a dash, lowercase letter, or digit, except the last
-   * character, which cannot be a dash.
+   * `[a-z]([-a-z0-9]&#42;[a-z0-9])?`. The first character must be a lowercase letter, and all the
+   * following characters must be a dash, lowercase letter, or digit, except the last character,
+   * which cannot be a dash.
    */
   public String getName() {
     return name;
@@ -143,7 +142,10 @@ public final class NetworkPeering implements ApiMessage {
     return network;
   }
 
-  /** [Output Only] State for the peering. */
+  /**
+   * [Output Only] State for the peering, either `ACTIVE` or `INACTIVE`. The peering is `ACTIVE`
+   * when there's a matching configuration in the peer network.
+   */
   public String getState() {
     return state;
   }
@@ -218,22 +220,20 @@ public final class NetworkPeering implements ApiMessage {
     }
 
     /**
-     * This field will be deprecated soon. Prefer using exchange_subnet_routes instead. Indicates
-     * whether full mesh connectivity is created and managed automatically. When it is set to true,
-     * Google Compute Engine will automatically create and manage the routes between two networks
-     * when the state is ACTIVE. Otherwise, user needs to create routes manually to route packets to
-     * peer network.
+     * This field will be deprecated soon. Use the exchange_subnet_routes field instead. Indicates
+     * whether full mesh connectivity is created and managed automatically between peered networks.
+     * Currently this field should always be true since Google Compute Engine will automatically
+     * create and manage subnetwork routes between two networks when peering state is ACTIVE.
      */
     public Boolean getAutoCreateRoutes() {
       return autoCreateRoutes;
     }
 
     /**
-     * This field will be deprecated soon. Prefer using exchange_subnet_routes instead. Indicates
-     * whether full mesh connectivity is created and managed automatically. When it is set to true,
-     * Google Compute Engine will automatically create and manage the routes between two networks
-     * when the state is ACTIVE. Otherwise, user needs to create routes manually to route packets to
-     * peer network.
+     * This field will be deprecated soon. Use the exchange_subnet_routes field instead. Indicates
+     * whether full mesh connectivity is created and managed automatically between peered networks.
+     * Currently this field should always be true since Google Compute Engine will automatically
+     * create and manage subnetwork routes between two networks when peering state is ACTIVE.
      */
     public Builder setAutoCreateRoutes(Boolean autoCreateRoutes) {
       this.autoCreateRoutes = autoCreateRoutes;
@@ -241,20 +241,20 @@ public final class NetworkPeering implements ApiMessage {
     }
 
     /**
-     * Whether full mesh connectivity is created and managed automatically. When it is set to true,
-     * Google Compute Engine will automatically create and manage the routes between two networks
-     * when the peering state is ACTIVE. Otherwise, user needs to create routes manually to route
-     * packets to peer network.
+     * Indicates whether full mesh connectivity is created and managed automatically between peered
+     * networks. Currently this field should always be true since Google Compute Engine will
+     * automatically create and manage subnetwork routes between two networks when peering state is
+     * ACTIVE.
      */
     public Boolean getExchangeSubnetRoutes() {
       return exchangeSubnetRoutes;
     }
 
     /**
-     * Whether full mesh connectivity is created and managed automatically. When it is set to true,
-     * Google Compute Engine will automatically create and manage the routes between two networks
-     * when the peering state is ACTIVE. Otherwise, user needs to create routes manually to route
-     * packets to peer network.
+     * Indicates whether full mesh connectivity is created and managed automatically between peered
+     * networks. Currently this field should always be true since Google Compute Engine will
+     * automatically create and manage subnetwork routes between two networks when peering state is
+     * ACTIVE.
      */
     public Builder setExchangeSubnetRoutes(Boolean exchangeSubnetRoutes) {
       this.exchangeSubnetRoutes = exchangeSubnetRoutes;
@@ -264,9 +264,9 @@ public final class NetworkPeering implements ApiMessage {
     /**
      * Name of this peering. Provided by the client when the peering is created. The name must
      * comply with RFC1035. Specifically, the name must be 1-63 characters long and match regular
-     * expression `[a-z]([-a-z0-9]&#42;[a-z0-9])?` which means the first character must be a
-     * lowercase letter, and all the following characters must be a dash, lowercase letter, or
-     * digit, except the last character, which cannot be a dash.
+     * expression `[a-z]([-a-z0-9]&#42;[a-z0-9])?`. The first character must be a lowercase letter,
+     * and all the following characters must be a dash, lowercase letter, or digit, except the last
+     * character, which cannot be a dash.
      */
     public String getName() {
       return name;
@@ -275,9 +275,9 @@ public final class NetworkPeering implements ApiMessage {
     /**
      * Name of this peering. Provided by the client when the peering is created. The name must
      * comply with RFC1035. Specifically, the name must be 1-63 characters long and match regular
-     * expression `[a-z]([-a-z0-9]&#42;[a-z0-9])?` which means the first character must be a
-     * lowercase letter, and all the following characters must be a dash, lowercase letter, or
-     * digit, except the last character, which cannot be a dash.
+     * expression `[a-z]([-a-z0-9]&#42;[a-z0-9])?`. The first character must be a lowercase letter,
+     * and all the following characters must be a dash, lowercase letter, or digit, except the last
+     * character, which cannot be a dash.
      */
     public Builder setName(String name) {
       this.name = name;
@@ -303,12 +303,18 @@ public final class NetworkPeering implements ApiMessage {
       return this;
     }
 
-    /** [Output Only] State for the peering. */
+    /**
+     * [Output Only] State for the peering, either `ACTIVE` or `INACTIVE`. The peering is `ACTIVE`
+     * when there's a matching configuration in the peer network.
+     */
     public String getState() {
       return state;
     }
 
-    /** [Output Only] State for the peering. */
+    /**
+     * [Output Only] State for the peering, either `ACTIVE` or `INACTIVE`. The peering is `ACTIVE`
+     * when there's a matching configuration in the peer network.
+     */
     public Builder setState(String state) {
       this.state = state;
       return this;

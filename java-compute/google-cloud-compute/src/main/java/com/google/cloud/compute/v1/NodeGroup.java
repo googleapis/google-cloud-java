@@ -25,9 +25,13 @@ import javax.annotation.Nullable;
 @Generated("by GAPIC")
 @BetaApi
 /**
- * A NodeGroup resource. To create a node group, you must first create a node templates. To learn
- * more about node groups and sole-tenant nodes, read the Sole-tenant nodes documentation. (==
- * resource_for beta.nodeGroups ==) (== resource_for v1.nodeGroups ==)
+ * Represent a sole-tenant Node Group resource.
+ *
+ * <p>A sole-tenant node is a physical server that is dedicated to hosting VM instances only for
+ * your specific project. Use sole-tenant nodes to keep your instances physically separated from
+ * instances in other projects, or to group your instances together on the same host hardware. For
+ * more information, read Sole-tenant nodes. (== resource_for beta.nodeGroups ==) (== resource_for
+ * v1.nodeGroups ==) NextID: 15
  */
 public final class NodeGroup implements ApiMessage {
   private final String creationTimestamp;

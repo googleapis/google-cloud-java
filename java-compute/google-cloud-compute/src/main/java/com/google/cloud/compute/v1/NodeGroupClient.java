@@ -838,10 +838,12 @@ public class NodeGroupClient implements BackgroundResource {
    *
    * @param initialNodeCount Initial count of nodes in the node group.
    * @param zone The name of the zone for this request.
-   * @param nodeGroupResource A NodeGroup resource. To create a node group, you must first create a
-   *     node templates. To learn more about node groups and sole-tenant nodes, read the Sole-tenant
-   *     nodes documentation. (== resource_for beta.nodeGroups ==) (== resource_for v1.nodeGroups
-   *     ==)
+   * @param nodeGroupResource Represent a sole-tenant Node Group resource.
+   *     <p>A sole-tenant node is a physical server that is dedicated to hosting VM instances only
+   *     for your specific project. Use sole-tenant nodes to keep your instances physically
+   *     separated from instances in other projects, or to group your instances together on the same
+   *     host hardware. For more information, read Sole-tenant nodes. (== resource_for
+   *     beta.nodeGroups ==) (== resource_for v1.nodeGroups ==) NextID: 15
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -874,10 +876,12 @@ public class NodeGroupClient implements BackgroundResource {
    *
    * @param initialNodeCount Initial count of nodes in the node group.
    * @param zone The name of the zone for this request.
-   * @param nodeGroupResource A NodeGroup resource. To create a node group, you must first create a
-   *     node templates. To learn more about node groups and sole-tenant nodes, read the Sole-tenant
-   *     nodes documentation. (== resource_for beta.nodeGroups ==) (== resource_for v1.nodeGroups
-   *     ==)
+   * @param nodeGroupResource Represent a sole-tenant Node Group resource.
+   *     <p>A sole-tenant node is a physical server that is dedicated to hosting VM instances only
+   *     for your specific project. Use sole-tenant nodes to keep your instances physically
+   *     separated from instances in other projects, or to group your instances together on the same
+   *     host hardware. For more information, read Sole-tenant nodes. (== resource_for
+   *     beta.nodeGroups ==) (== resource_for v1.nodeGroups ==) NextID: 15
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi

@@ -81,8 +81,11 @@ public final class NetworksAddPeeringRequest implements ApiMessage {
   }
 
   /**
-   * This field will be deprecated soon. Prefer using exchange_subnet_routes in network_peering
-   * instead. Whether Google Compute Engine manages the routes automatically.
+   * This field will be deprecated soon. Use exchange_subnet_routes in network_peering instead.
+   * Indicates whether full mesh connectivity is created and managed automatically between peered
+   * networks. Currently this field should always be true since Google Compute Engine will
+   * automatically create and manage subnetwork routes between two networks when peering state is
+   * ACTIVE.
    */
   public Boolean getAutoCreateRoutes() {
     return autoCreateRoutes;
@@ -94,9 +97,9 @@ public final class NetworksAddPeeringRequest implements ApiMessage {
   }
 
   /**
-   * Network peering parameters. In order to specify route policies for peering using import/export
-   * custom routes, you will have to fill all peering related parameters (name, peer network,
-   * exchange_subnet_routes) in network_peeringfield. Corresponding fields in
+   * Network peering parameters. In order to specify route policies for peering using import and
+   * export custom routes, you must specify all peering related parameters (name, peer network,
+   * exchange_subnet_routes) in the network_peering field. The corresponding fields in
    * NetworksAddPeeringRequest will be deprecated soon.
    */
   public NetworkPeering getNetworkPeering() {
@@ -167,16 +170,22 @@ public final class NetworksAddPeeringRequest implements ApiMessage {
     }
 
     /**
-     * This field will be deprecated soon. Prefer using exchange_subnet_routes in network_peering
-     * instead. Whether Google Compute Engine manages the routes automatically.
+     * This field will be deprecated soon. Use exchange_subnet_routes in network_peering instead.
+     * Indicates whether full mesh connectivity is created and managed automatically between peered
+     * networks. Currently this field should always be true since Google Compute Engine will
+     * automatically create and manage subnetwork routes between two networks when peering state is
+     * ACTIVE.
      */
     public Boolean getAutoCreateRoutes() {
       return autoCreateRoutes;
     }
 
     /**
-     * This field will be deprecated soon. Prefer using exchange_subnet_routes in network_peering
-     * instead. Whether Google Compute Engine manages the routes automatically.
+     * This field will be deprecated soon. Use exchange_subnet_routes in network_peering instead.
+     * Indicates whether full mesh connectivity is created and managed automatically between peered
+     * networks. Currently this field should always be true since Google Compute Engine will
+     * automatically create and manage subnetwork routes between two networks when peering state is
+     * ACTIVE.
      */
     public Builder setAutoCreateRoutes(Boolean autoCreateRoutes) {
       this.autoCreateRoutes = autoCreateRoutes;
@@ -195,9 +204,9 @@ public final class NetworksAddPeeringRequest implements ApiMessage {
     }
 
     /**
-     * Network peering parameters. In order to specify route policies for peering using
-     * import/export custom routes, you will have to fill all peering related parameters (name, peer
-     * network, exchange_subnet_routes) in network_peeringfield. Corresponding fields in
+     * Network peering parameters. In order to specify route policies for peering using import and
+     * export custom routes, you must specify all peering related parameters (name, peer network,
+     * exchange_subnet_routes) in the network_peering field. The corresponding fields in
      * NetworksAddPeeringRequest will be deprecated soon.
      */
     public NetworkPeering getNetworkPeering() {
@@ -205,9 +214,9 @@ public final class NetworksAddPeeringRequest implements ApiMessage {
     }
 
     /**
-     * Network peering parameters. In order to specify route policies for peering using
-     * import/export custom routes, you will have to fill all peering related parameters (name, peer
-     * network, exchange_subnet_routes) in network_peeringfield. Corresponding fields in
+     * Network peering parameters. In order to specify route policies for peering using import and
+     * export custom routes, you must specify all peering related parameters (name, peer network,
+     * exchange_subnet_routes) in the network_peering field. The corresponding fields in
      * NetworksAddPeeringRequest will be deprecated soon.
      */
     public Builder setNetworkPeering(NetworkPeering networkPeering) {

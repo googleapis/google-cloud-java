@@ -114,8 +114,8 @@ public final class AccessConfig implements ApiMessage {
   }
 
   /**
-   * The name of this access configuration. The default and recommended name is External NAT but you
-   * can use any arbitrary string you would like. For example, My external IP or Network Access.
+   * The name of this access configuration. The default and recommended name is External NAT, but
+   * you can use any arbitrary string, such as My external IP or Network Access.
    */
   public String getName() {
     return name;
@@ -146,15 +146,15 @@ public final class AccessConfig implements ApiMessage {
   }
 
   /**
-   * The DNS domain name for the public PTR record. This field can only be set when the
-   * set_public_ptr field is enabled.
+   * The DNS domain name for the public PTR record. You can set this field only if the
+   * `setPublicPtr` field is enabled.
    */
   public String getPublicPtrDomainName() {
     return publicPtrDomainName;
   }
 
   /**
-   * Specifies whether a public DNS ?PTR? record should be created to map the external IP address of
+   * Specifies whether a public DNS 'PTR' record should be created to map the external IP address of
    * the instance to a DNS domain name.
    */
   public Boolean getSetPublicPtr() {
@@ -247,18 +247,16 @@ public final class AccessConfig implements ApiMessage {
     }
 
     /**
-     * The name of this access configuration. The default and recommended name is External NAT but
-     * you can use any arbitrary string you would like. For example, My external IP or Network
-     * Access.
+     * The name of this access configuration. The default and recommended name is External NAT, but
+     * you can use any arbitrary string, such as My external IP or Network Access.
      */
     public String getName() {
       return name;
     }
 
     /**
-     * The name of this access configuration. The default and recommended name is External NAT but
-     * you can use any arbitrary string you would like. For example, My external IP or Network
-     * Access.
+     * The name of this access configuration. The default and recommended name is External NAT, but
+     * you can use any arbitrary string, such as My external IP or Network Access.
      */
     public Builder setName(String name) {
       this.name = name;
@@ -316,16 +314,16 @@ public final class AccessConfig implements ApiMessage {
     }
 
     /**
-     * The DNS domain name for the public PTR record. This field can only be set when the
-     * set_public_ptr field is enabled.
+     * The DNS domain name for the public PTR record. You can set this field only if the
+     * `setPublicPtr` field is enabled.
      */
     public String getPublicPtrDomainName() {
       return publicPtrDomainName;
     }
 
     /**
-     * The DNS domain name for the public PTR record. This field can only be set when the
-     * set_public_ptr field is enabled.
+     * The DNS domain name for the public PTR record. You can set this field only if the
+     * `setPublicPtr` field is enabled.
      */
     public Builder setPublicPtrDomainName(String publicPtrDomainName) {
       this.publicPtrDomainName = publicPtrDomainName;
@@ -333,7 +331,7 @@ public final class AccessConfig implements ApiMessage {
     }
 
     /**
-     * Specifies whether a public DNS ?PTR? record should be created to map the external IP address
+     * Specifies whether a public DNS 'PTR' record should be created to map the external IP address
      * of the instance to a DNS domain name.
      */
     public Boolean getSetPublicPtr() {
@@ -341,7 +339,7 @@ public final class AccessConfig implements ApiMessage {
     }
 
     /**
-     * Specifies whether a public DNS ?PTR? record should be created to map the external IP address
+     * Specifies whether a public DNS 'PTR' record should be created to map the external IP address
      * of the instance to a DNS domain name.
      */
     public Builder setSetPublicPtr(Boolean setPublicPtr) {

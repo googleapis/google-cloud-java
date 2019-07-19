@@ -24,6 +24,7 @@ import static com.google.cloud.compute.v1.stub.HttpJsonInstanceStub.attachDiskIn
 import static com.google.cloud.compute.v1.stub.HttpJsonInstanceStub.deleteAccessConfigInstanceMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonInstanceStub.deleteInstanceMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonInstanceStub.detachDiskInstanceMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonInstanceStub.getGuestAttributesInstanceMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonInstanceStub.getIamPolicyInstanceMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonInstanceStub.getInstanceMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonInstanceStub.getSerialPortOutputInstanceMethodDescriptor;
@@ -91,6 +92,7 @@ public class InstanceClientTest {
               deleteAccessConfigInstanceMethodDescriptor,
               detachDiskInstanceMethodDescriptor,
               getInstanceMethodDescriptor,
+              getGuestAttributesInstanceMethodDescriptor,
               getIamPolicyInstanceMethodDescriptor,
               getSerialPortOutputInstanceMethodDescriptor,
               getShieldedInstanceIdentityInstanceMethodDescriptor,
@@ -754,6 +756,69 @@ public class InstanceClientTest {
           ProjectZoneInstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
 
       client.getInstance(instance);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void getGuestAttributesInstanceTest() {
+    String kind = "kind3292052";
+    String queryPath2 = "queryPath21491922415";
+    String selfLink = "selfLink-1691268851";
+    String variableKey2 = "variableKey2-1496058161";
+    String variableValue = "variableValue-1486030354";
+    GuestAttributes expectedResponse =
+        GuestAttributes.newBuilder()
+            .setKind(kind)
+            .setQueryPath(queryPath2)
+            .setSelfLink(selfLink)
+            .setVariableKey(variableKey2)
+            .setVariableValue(variableValue)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ProjectZoneInstanceName instance =
+        ProjectZoneInstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+    String queryPath = "queryPath-168279748";
+    String variableKey = "variableKey-372506084";
+
+    GuestAttributes actualResponse =
+        client.getGuestAttributesInstance(instance, queryPath, variableKey);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void getGuestAttributesInstanceExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ProjectZoneInstanceName instance =
+          ProjectZoneInstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+      String queryPath = "queryPath-168279748";
+      String variableKey = "variableKey-372506084";
+
+      client.getGuestAttributesInstance(instance, queryPath, variableKey);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
