@@ -33,6 +33,9 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
+import com.google.api.core.ApiClock;
+import com.google.api.gax.retrying.RetrySettings;
+import com.google.api.services.storage.model.StorageObject;
 import com.google.cloud.ReadChannel;
 import com.google.cloud.storage.Acl.Project;
 import com.google.cloud.storage.Acl.Project.ProjectRole;
@@ -41,10 +44,12 @@ import com.google.cloud.storage.Acl.User;
 import com.google.cloud.storage.Blob.BlobSourceOption;
 import com.google.cloud.storage.Storage.BlobWriteOption;
 import com.google.cloud.storage.Storage.CopyRequest;
+import com.google.cloud.storage.spi.v1.StorageRpc;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.io.BaseEncoding;
 import java.io.File;
+import java.io.OutputStream;
 import java.net.URL;
 import java.nio.ByteBuffer;
 import java.nio.file.Files;
@@ -58,6 +63,7 @@ import org.easymock.IAnswer;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.threeten.bp.Duration;
 
 public class BlobTest {
 
@@ -130,6 +136,28 @@ public class BlobTest {
   private static final String BASE64_KEY = "JVzfVl8NLD9FjedFuStegjRfES5ll5zc59CIXw572OA=";
   private static final Key KEY =
       new SecretKeySpec(BaseEncoding.base64().decode(BASE64_KEY), "AES256");
+  private static final RetrySettings RETRY_SETTINGS =
+      RetrySettings.newBuilder()
+          .setInitialRetryDelay(Duration.ofMillis(100L))
+          .setRetryDelayMultiplier(1.3)
+          .setMaxRetryDelay(Duration.ofMillis(60000L))
+          .setInitialRpcTimeout(Duration.ofMillis(20000L))
+          .setRpcTimeoutMultiplier(1.0)
+          .setMaxRpcTimeout(Duration.ofMillis(20000L))
+          .setTotalTimeout(Duration.ofMillis(600000L))
+          .build();
+  private static final ApiClock API_CLOCK =
+      new ApiClock() {
+        @Override
+        public long nanoTime() {
+          return 42_000_000_000L;
+        }
+
+        @Override
+        public long millisTime() {
+          return 42_000L;
+        }
+      };
 
   private Storage storage;
   private Blob blob;
@@ -566,28 +594,30 @@ public class BlobTest {
   @Test
   public void testDownload() throws Exception {
     final byte[] expected = {1, 2};
-
-    initializeExpectedBlob(2);
-    ReadChannel channel = createNiceMock(ReadChannel.class);
-    expect(storage.getOptions()).andReturn(mockOptions);
-    expect(storage.reader(BLOB_INFO.getBlobId())).andReturn(channel);
+    StorageRpc mockStorageRpc = createNiceMock(StorageRpc.class);
+    expect(storage.getOptions()).andReturn(mockOptions).times(1);
     replay(storage);
-    // First read should return 2 bytes.
-    expect(channel.read(anyObject(ByteBuffer.class)))
+    expect(mockOptions.getStorageRpcV1()).andReturn(mockStorageRpc);
+    expect(mockOptions.getRetrySettings()).andReturn(RETRY_SETTINGS);
+    expect(mockOptions.getClock()).andReturn(API_CLOCK);
+    replay(mockOptions);
+    blob = new Blob(storage, new BlobInfo.BuilderImpl(BLOB_INFO));
+    expect(
+        mockStorageRpc.read(
+            anyObject(StorageObject.class),
+            anyObject(Map.class),
+            eq(0l),
+            anyObject(OutputStream.class)
+            ))
         .andAnswer(
-            new IAnswer<Integer>() {
+            new IAnswer<Long>() {
               @Override
-              public Integer answer() throws Throwable {
-                // Modify the argument to match the expected behavior of `read`.
-                ((ByteBuffer) getCurrentArguments()[0]).put(expected);
-                return 2;
+              public Long answer() throws Throwable {
+                ((OutputStream) getCurrentArguments()[3]).write(expected);
+                return 2l;
               }
             });
-    // Second read should return 0 bytes.
-    expect(channel.read(anyObject(ByteBuffer.class))).andReturn(0);
-    replay(channel);
-    initializeBlob();
-
+    replay(mockStorageRpc);
     File file = File.createTempFile("blob", ".tmp");
     blob.downloadTo(file.toPath());
     byte actual[] = Files.readAllBytes(file.toPath());
