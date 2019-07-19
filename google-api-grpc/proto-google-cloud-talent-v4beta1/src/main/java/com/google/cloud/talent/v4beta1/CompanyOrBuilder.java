@@ -47,7 +47,7 @@ public interface CompanyOrBuilder
    *
    *
    * <pre>
-   * Required. The display name of the company, for example, "Google, LLC".
+   * Required. The display name of the company, for example, "Google LLC".
    * </pre>
    *
    * <code>string display_name = 2;</code>
@@ -57,7 +57,7 @@ public interface CompanyOrBuilder
    *
    *
    * <pre>
-   * Required. The display name of the company, for example, "Google, LLC".
+   * Required. The display name of the company, for example, "Google LLC".
    * </pre>
    *
    * <code>string display_name = 2;</code>

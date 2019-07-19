@@ -669,9 +669,11 @@ public interface SearchProfilesRequestOrBuilder
    *
    * <pre>
    * Optional. An id that uniquely identifies the result set of a
-   * [SearchProfiles][] call.  The id should be retrieved from the
+   * [SearchProfiles][google.cloud.talent.v4beta1.ProfileService.SearchProfiles]
+   * call. The id should be retrieved from the
    * [SearchProfilesResponse][google.cloud.talent.v4beta1.SearchProfilesResponse]
-   * message returned from a previous invocation of [SearchProfiles][].
+   * message returned from a previous invocation of
+   * [SearchProfiles][google.cloud.talent.v4beta1.ProfileService.SearchProfiles].
    * A result set is an ordered list of search results.
    * If this field is not set, a new result set is computed based on the
    * [profile_query][google.cloud.talent.v4beta1.SearchProfilesRequest.profile_query].
@@ -681,8 +683,10 @@ public interface SearchProfilesRequestOrBuilder
    * If this field is set, the service will ignore the resource and
    * [profile_query][google.cloud.talent.v4beta1.SearchProfilesRequest.profile_query]
    * values, and simply retrieve a page of results from the corresponding result
-   * set.  In this case, one and only one of [page_token] or [offset] must be
-   * set.
+   * set.  In this case, one and only one of
+   * [page_token][google.cloud.talent.v4beta1.SearchProfilesRequest.page_token]
+   * or [offset][google.cloud.talent.v4beta1.SearchProfilesRequest.offset] must
+   * be set.
    * A typical use case is to invoke
    * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest]
    * without this field, then use the resulting
@@ -700,9 +704,11 @@ public interface SearchProfilesRequestOrBuilder
    *
    * <pre>
    * Optional. An id that uniquely identifies the result set of a
-   * [SearchProfiles][] call.  The id should be retrieved from the
+   * [SearchProfiles][google.cloud.talent.v4beta1.ProfileService.SearchProfiles]
+   * call. The id should be retrieved from the
    * [SearchProfilesResponse][google.cloud.talent.v4beta1.SearchProfilesResponse]
-   * message returned from a previous invocation of [SearchProfiles][].
+   * message returned from a previous invocation of
+   * [SearchProfiles][google.cloud.talent.v4beta1.ProfileService.SearchProfiles].
    * A result set is an ordered list of search results.
    * If this field is not set, a new result set is computed based on the
    * [profile_query][google.cloud.talent.v4beta1.SearchProfilesRequest.profile_query].
@@ -712,8 +718,10 @@ public interface SearchProfilesRequestOrBuilder
    * If this field is set, the service will ignore the resource and
    * [profile_query][google.cloud.talent.v4beta1.SearchProfilesRequest.profile_query]
    * values, and simply retrieve a page of results from the corresponding result
-   * set.  In this case, one and only one of [page_token] or [offset] must be
-   * set.
+   * set.  In this case, one and only one of
+   * [page_token][google.cloud.talent.v4beta1.SearchProfilesRequest.page_token]
+   * or [offset][google.cloud.talent.v4beta1.SearchProfilesRequest.offset] must
+   * be set.
    * A typical use case is to invoke
    * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest]
    * without this field, then use the resulting
@@ -726,4 +734,26 @@ public interface SearchProfilesRequestOrBuilder
    * <code>string result_set_id = 12;</code>
    */
   com.google.protobuf.ByteString getResultSetIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This flag is used to indicate whether the service will attempt to
+   * understand synonyms and terms related to the search query or treat the
+   * query "as is" when it generates a set of results. By default this flag is
+   * set to false, thus allowing expanded results to also be returned. For
+   * example a search for "software engineer" might also return candidates who
+   * have experience in jobs similar to software engineer positions. By setting
+   * this flag to true, the service will only attempt to deliver candidates has
+   * software engineer in his/her global fields by treating "software engineer"
+   * as a keyword.
+   * It is recommended to provide a feature in the UI (such as a checkbox) to
+   * allow recruiters to set this flag to true if they intend to search for
+   * longer boolean strings.
+   * </pre>
+   *
+   * <code>bool strict_keywords_search = 13;</code>
+   */
+  boolean getStrictKeywordsSearch();
 }

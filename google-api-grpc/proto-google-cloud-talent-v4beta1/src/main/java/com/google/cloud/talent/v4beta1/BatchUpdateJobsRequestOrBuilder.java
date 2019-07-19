@@ -104,9 +104,10 @@ public interface BatchUpdateJobsRequestOrBuilder
    * If
    * [update_mask][google.cloud.talent.v4beta1.BatchUpdateJobsRequest.update_mask]
    * is provided, The [Job][google.cloud.talent.v4beta1.Job] inside
-   * [JobResult][] will only contains fields that is updated, plus the Id of the
-   * Job. Otherwise,  [Job][google.cloud.talent.v4beta1.Job] will include all
-   * fields, which can yield a very large response.
+   * [JobResult][google.cloud.talent.v4beta1.JobOperationResult.JobResult]
+   * will only contains fields that is updated, plus the Id of the Job.
+   * Otherwise,  [Job][google.cloud.talent.v4beta1.Job] will include all fields,
+   * which can yield a very large response.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 3;</code>
@@ -128,9 +129,10 @@ public interface BatchUpdateJobsRequestOrBuilder
    * If
    * [update_mask][google.cloud.talent.v4beta1.BatchUpdateJobsRequest.update_mask]
    * is provided, The [Job][google.cloud.talent.v4beta1.Job] inside
-   * [JobResult][] will only contains fields that is updated, plus the Id of the
-   * Job. Otherwise,  [Job][google.cloud.talent.v4beta1.Job] will include all
-   * fields, which can yield a very large response.
+   * [JobResult][google.cloud.talent.v4beta1.JobOperationResult.JobResult]
+   * will only contains fields that is updated, plus the Id of the Job.
+   * Otherwise,  [Job][google.cloud.talent.v4beta1.Job] will include all fields,
+   * which can yield a very large response.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 3;</code>
@@ -152,9 +154,10 @@ public interface BatchUpdateJobsRequestOrBuilder
    * If
    * [update_mask][google.cloud.talent.v4beta1.BatchUpdateJobsRequest.update_mask]
    * is provided, The [Job][google.cloud.talent.v4beta1.Job] inside
-   * [JobResult][] will only contains fields that is updated, plus the Id of the
-   * Job. Otherwise,  [Job][google.cloud.talent.v4beta1.Job] will include all
-   * fields, which can yield a very large response.
+   * [JobResult][google.cloud.talent.v4beta1.JobOperationResult.JobResult]
+   * will only contains fields that is updated, plus the Id of the Job.
+   * Otherwise,  [Job][google.cloud.talent.v4beta1.Job] will include all fields,
+   * which can yield a very large response.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 3;</code>
