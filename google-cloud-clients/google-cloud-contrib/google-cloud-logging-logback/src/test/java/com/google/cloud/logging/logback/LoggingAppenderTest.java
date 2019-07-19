@@ -27,6 +27,7 @@ import static org.junit.Assert.fail;
 import ch.qos.logback.classic.Level;
 import ch.qos.logback.classic.filter.ThresholdFilter;
 import ch.qos.logback.classic.spi.LoggingEvent;
+import com.google.api.core.ApiFutures;
 import com.google.cloud.MonitoredResource;
 import com.google.cloud.Timestamp;
 import com.google.cloud.logging.LogEntry;
@@ -91,6 +92,7 @@ public class LoggingAppenderTest {
     logging.setFlushSeverity(Severity.WARNING);
     Capture<Iterable<LogEntry>> capturedArgument = Capture.newInstance();
     logging.write(capture(capturedArgument), (WriteOption) anyObject(), (WriteOption) anyObject());
+    expectLastCall().andReturn(ApiFutures.immediateFuture(Boolean.TRUE)).once();
     replay(logging);
     Timestamp timestamp = Timestamp.ofTimeSecondsAndNanos(100000, 0);
     LoggingEvent loggingEvent = createLoggingEvent(Level.WARN, timestamp.getSeconds());
@@ -118,7 +120,7 @@ public class LoggingAppenderTest {
     logging.setFlushSeverity(Severity.ERROR);
     Capture<Iterable<LogEntry>> capturedArgument = Capture.newInstance();
     logging.write(capture(capturedArgument), (WriteOption) anyObject(), (WriteOption) anyObject());
-    expectLastCall().once();
+    expectLastCall().andReturn(ApiFutures.immediateFuture(Boolean.TRUE)).once();
     replay(logging);
     Timestamp timestamp = Timestamp.ofTimeSecondsAndNanos(100000, 0);
     LoggingEvent loggingEvent1 = createLoggingEvent(Level.INFO, timestamp.getSeconds());
@@ -154,7 +156,7 @@ public class LoggingAppenderTest {
     logging.setFlushSeverity(Severity.ERROR);
     Capture<Iterable<LogEntry>> capturedArgument = Capture.newInstance();
     logging.write(capture(capturedArgument), (WriteOption) anyObject(), (WriteOption) anyObject());
-    expectLastCall().once();
+    expectLastCall().andReturn(ApiFutures.immediateFuture(Boolean.TRUE)).once();
     replay(logging);
     loggingAppender.addEnhancer("com.example.enhancers.TestLoggingEnhancer");
     loggingAppender.addEnhancer("com.example.enhancers.AnotherTestLoggingEnhancer");
@@ -173,7 +175,7 @@ public class LoggingAppenderTest {
     Capture<WriteOption> logNameArg = Capture.newInstance();
     Capture<WriteOption> resourceArg = Capture.newInstance();
     logging.write((Iterable<LogEntry>) anyObject(), capture(logNameArg), capture(resourceArg));
-    expectLastCall().once();
+    expectLastCall().andReturn(ApiFutures.immediateFuture(Boolean.TRUE)).once();
     replay(logging);
     loggingAppender.start();
     Timestamp timestamp = Timestamp.ofTimeSecondsAndNanos(100000, 0);
@@ -202,7 +204,7 @@ public class LoggingAppenderTest {
     logging.setFlushSeverity(Severity.ERROR);
     Capture<Iterable<LogEntry>> capturedArgument = Capture.newInstance();
     logging.write(capture(capturedArgument), (WriteOption) anyObject(), (WriteOption) anyObject());
-    expectLastCall().once();
+    expectLastCall().andReturn(ApiFutures.immediateFuture(Boolean.TRUE)).once();
     replay(logging);
     Timestamp timestamp = Timestamp.ofTimeSecondsAndNanos(100000, 0);
     LoggingEvent loggingEvent = createLoggingEvent(Level.INFO, timestamp.getSeconds());
@@ -257,7 +259,7 @@ public class LoggingAppenderTest {
     logging.setFlushSeverity(Severity.ERROR);
     Capture<Iterable<LogEntry>> capturedArgument = Capture.newInstance();
     logging.write(capture(capturedArgument), (WriteOption) anyObject(), (WriteOption) anyObject());
-    expectLastCall().once();
+    expectLastCall().andReturn(ApiFutures.immediateFuture(Boolean.TRUE)).once();
     replay(logging);
     Timestamp timestamp = Timestamp.ofTimeSecondsAndNanos(100000, 0);
     LoggingEvent loggingEvent = createLoggingEvent(Level.INFO, timestamp.getSeconds());

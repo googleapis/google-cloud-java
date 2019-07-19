@@ -240,31 +240,31 @@ public class LoggingHandlerTest {
     logging.setWriteSynchronicity(Synchronicity.ASYNC);
     expectLastCall().once();
     logging.write(ImmutableList.of(FINEST_ENTRY), DEFAULT_OPTIONS);
-    expectLastCall().andReturn(ApiFutures.immediateFuture(null)).once();
+    expectLastCall().andReturn(ApiFutures.immediateFuture(Boolean.TRUE)).once();
     logging.write(ImmutableList.of(FINER_ENTRY), DEFAULT_OPTIONS);
-    expectLastCall().andReturn(ApiFutures.immediateFuture(null)).once();
+    expectLastCall().andReturn(ApiFutures.immediateFuture(Boolean.TRUE)).once();
     logging.write(ImmutableList.of(FINE_ENTRY), DEFAULT_OPTIONS);
-    expectLastCall().andReturn(ApiFutures.immediateFuture(null)).once();
+    expectLastCall().andReturn(ApiFutures.immediateFuture(Boolean.TRUE)).once();
     logging.write(ImmutableList.of(CONFIG_ENTRY), DEFAULT_OPTIONS);
-    expectLastCall().andReturn(ApiFutures.immediateFuture(null)).once();
+    expectLastCall().andReturn(ApiFutures.immediateFuture(Boolean.TRUE)).once();
     logging.write(ImmutableList.of(INFO_ENTRY), DEFAULT_OPTIONS);
-    expectLastCall().andReturn(ApiFutures.immediateFuture(null)).once();
+    expectLastCall().andReturn(ApiFutures.immediateFuture(Boolean.TRUE)).once();
     logging.write(ImmutableList.of(WARNING_ENTRY), DEFAULT_OPTIONS);
-    expectLastCall().andReturn(ApiFutures.immediateFuture(null)).once();
+    expectLastCall().andReturn(ApiFutures.immediateFuture(Boolean.TRUE)).once();
     logging.write(ImmutableList.of(SEVERE_ENTRY), DEFAULT_OPTIONS);
-    expectLastCall().andReturn(ApiFutures.immediateFuture(null)).once();
+    expectLastCall().andReturn(ApiFutures.immediateFuture(Boolean.TRUE)).once();
     logging.write(ImmutableList.of(DEBUG_ENTRY), DEFAULT_OPTIONS);
-    expectLastCall().andReturn(ApiFutures.immediateFuture(null)).once();
+    expectLastCall().andReturn(ApiFutures.immediateFuture(Boolean.TRUE)).once();
     logging.write(ImmutableList.of(NOTICE_ENTRY), DEFAULT_OPTIONS);
-    expectLastCall().andReturn(ApiFutures.immediateFuture(null)).once();
+    expectLastCall().andReturn(ApiFutures.immediateFuture(Boolean.TRUE)).once();
     logging.write(ImmutableList.of(ERROR_ENTRY), DEFAULT_OPTIONS);
-    expectLastCall().andReturn(ApiFutures.immediateFuture(null)).once();
+    expectLastCall().andReturn(ApiFutures.immediateFuture(Boolean.TRUE)).once();
     logging.write(ImmutableList.of(CRITICAL_ENTRY), DEFAULT_OPTIONS);
-    expectLastCall().andReturn(ApiFutures.immediateFuture(null)).once();
+    expectLastCall().andReturn(ApiFutures.immediateFuture(Boolean.TRUE)).once();
     logging.write(ImmutableList.of(ALERT_ENTRY), DEFAULT_OPTIONS);
-    expectLastCall().andReturn(ApiFutures.immediateFuture(null)).once();
+    expectLastCall().andReturn(ApiFutures.immediateFuture(Boolean.TRUE)).once();
     logging.write(ImmutableList.of(EMERGENCY_ENTRY), DEFAULT_OPTIONS);
-    expectLastCall().andReturn(ApiFutures.immediateFuture(null)).once();
+    expectLastCall().andReturn(ApiFutures.immediateFuture(Boolean.TRUE)).once();
     replay(options, logging);
     Handler handler = new LoggingHandler(LOG_NAME, options, DEFAULT_RESOURCE);
     handler.setLevel(Level.ALL);
@@ -300,7 +300,7 @@ public class LoggingHandlerTest {
         WriteOption.logName(LOG_NAME),
         WriteOption.resource(resource),
         WriteOption.labels(BASE_SEVERITY_MAP));
-    expectLastCall().andReturn(ApiFutures.immediateFuture(null)).once();
+    expectLastCall().andReturn(ApiFutures.immediateFuture(Boolean.TRUE)).once();
     replay(options, logging);
     Handler handler = new LoggingHandler(LOG_NAME, options, resource);
     handler.setLevel(Level.ALL);
@@ -322,7 +322,7 @@ public class LoggingHandlerTest {
         WriteOption.logName(LOG_NAME),
         WriteOption.resource(resource),
         WriteOption.labels(BASE_SEVERITY_MAP));
-    expectLastCall().andReturn(ApiFutures.immediateFuture(null)).once();
+    expectLastCall().andReturn(ApiFutures.immediateFuture(Boolean.TRUE)).once();
     replay(options, logging);
     LoggingEnhancer enhancer =
         new LoggingEnhancer() {
@@ -352,7 +352,7 @@ public class LoggingHandlerTest {
         WriteOption.logName(LOG_NAME),
         WriteOption.resource(resource),
         WriteOption.labels(BASE_SEVERITY_MAP));
-    expectLastCall().andReturn(ApiFutures.immediateFuture(null)).once();
+    expectLastCall().andReturn(ApiFutures.immediateFuture(Boolean.TRUE)).once();
     replay(options, logging);
     LoggingEnhancer enhancer = new TraceLoggingEnhancer();
     TraceLoggingEnhancer.setCurrentTraceId("projects/projectId/traces/traceId");
@@ -397,7 +397,7 @@ public class LoggingHandlerTest {
     logging.setWriteSynchronicity(Synchronicity.ASYNC);
     expectLastCall().once();
     logging.write(ImmutableList.of(FINEST_ENTRY), DEFAULT_OPTIONS);
-    expectLastCall().andReturn(ApiFutures.immediateFuture(null)).once();
+    expectLastCall().andReturn(ApiFutures.immediateFuture(Boolean.TRUE)).once();
     logging.flush();
     expectLastCall().andThrow(ex);
     ErrorManager errorManager = EasyMock.createStrictMock(ErrorManager.class);
@@ -487,7 +487,7 @@ public class LoggingHandlerTest {
     logging.setWriteSynchronicity(Synchronicity.SYNC);
     expectLastCall().once();
     logging.write(ImmutableList.of(entry), DEFAULT_OPTIONS);
-    expectLastCall().andReturn(ApiFutures.immediateFuture(null)).once();
+    expectLastCall().andReturn(ApiFutures.immediateFuture(Boolean.TRUE)).once();
     replay(options, logging);
 
     LoggingHandler handler = new LoggingHandler(LOG_NAME, options, DEFAULT_RESOURCE);
@@ -508,7 +508,7 @@ public class LoggingHandlerTest {
     logging.setWriteSynchronicity(Synchronicity.ASYNC);
     expectLastCall().andVoid();
     logging.write(ImmutableList.of(FINEST_ENTRY), DEFAULT_OPTIONS);
-    expectLastCall().andReturn(ApiFutures.immediateFuture(null)).once();
+    expectLastCall().andReturn(ApiFutures.immediateFuture(Boolean.TRUE)).once();
     replay(options, logging);
     LoggingHandler handler =
         new LoggingHandler(LOG_NAME, options, DEFAULT_RESOURCE) {
@@ -534,7 +534,7 @@ public class LoggingHandlerTest {
     logging.setWriteSynchronicity(Synchronicity.ASYNC);
     expectLastCall().once();
     logging.write(ImmutableList.of(FINEST_ENTRY), DEFAULT_OPTIONS);
-    expectLastCall().andReturn(ApiFutures.immediateFuture(null)).once();
+    expectLastCall().andReturn(ApiFutures.immediateFuture(Boolean.TRUE)).once();
     logging.close();
     expectLastCall().once();
     replay(options, logging);
