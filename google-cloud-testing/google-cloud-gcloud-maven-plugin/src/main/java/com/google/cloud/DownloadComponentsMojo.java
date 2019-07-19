@@ -104,6 +104,7 @@ public class DownloadComponentsMojo extends AbstractMojo {
 
   private void executeInner() throws MojoExecutionException {
     if (shouldSkipDownload) {
+      getLog().info("Skipping download because shouldSkipDownload=true");
       return;
     }
 

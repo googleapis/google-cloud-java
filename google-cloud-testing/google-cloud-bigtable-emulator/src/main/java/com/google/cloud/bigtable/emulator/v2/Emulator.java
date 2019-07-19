@@ -96,7 +96,18 @@ public class Emulator {
     }
     this.port = getAvailablePort();
 
-    process = Runtime.getRuntime().exec(String.format("%s -port %d", executable, port));
+    // Workaround https://bugs.openjdk.java.net/browse/JDK-8068370
+    for (int attemptsLeft = 3; process == null; attemptsLeft--) {
+      try {
+        process = Runtime.getRuntime().exec(String.format("%s -port %d", executable, port));
+      } catch (IOException e) {
+        if (attemptsLeft > 0) {
+          Thread.sleep(1000);
+          continue;
+        }
+        throw e;
+      }
+    }
     pipeStreamToLog(process.getInputStream(), Level.INFO);
     pipeStreamToLog(process.getErrorStream(), Level.WARNING);
     isStopped = false;
