@@ -1580,7 +1580,7 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
           .importDataOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings.<ImportDataRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
                   .build())
           .setResponseTransformer(
@@ -1628,7 +1628,7 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
           .labelImageOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings.<LabelImageRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
                   .build())
           .setResponseTransformer(
@@ -1650,7 +1650,7 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
           .labelVideoOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings.<LabelVideoRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
                   .build())
           .setResponseTransformer(
@@ -1672,7 +1672,7 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
           .labelTextOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings.<LabelTextRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
                   .build())
           .setResponseTransformer(
@@ -1695,7 +1695,7 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
           .setInitialCallSettings(
               UnaryCallSettings
                   .<CreateInstructionRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
                   .build())
           .setResponseTransformer(
