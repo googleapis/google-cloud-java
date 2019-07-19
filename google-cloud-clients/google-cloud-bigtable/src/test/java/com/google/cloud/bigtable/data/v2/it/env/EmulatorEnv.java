@@ -15,8 +15,12 @@
  */
 package com.google.cloud.bigtable.data.v2.it.env;
 
+import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient;
+import com.google.cloud.bigtable.admin.v2.BigtableTableAdminSettings;
 import com.google.cloud.bigtable.admin.v2.models.CreateTableRequest;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
+import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
+import com.google.cloud.bigtable.emulator.v2.Emulator;
 
 public class EmulatorEnv implements TestEnv {
   private static final String PROJECT_ID = "fake-project";
@@ -25,19 +29,28 @@ public class EmulatorEnv implements TestEnv {
   private static final String FAMILY_ID = "cf";
 
   private Emulator emulator;
+  private BigtableTableAdminClient tableAdminClient;
+  private BigtableDataClient dataClient;
 
   @Override
   public void start() throws Exception {
-    emulator = Emulator.createGCloud();
+    emulator = Emulator.createBundled();
     emulator.start();
 
-    emulator
-        .getTableAdminClient()
-        .createTable(CreateTableRequest.of(TABLE_ID).addFamily(FAMILY_ID));
+    tableAdminClient =
+        BigtableTableAdminClient.create(
+            BigtableTableAdminSettings.newBuilderForEmulator(emulator.getPort()).build());
+    dataClient =
+        BigtableDataClient.create(
+            BigtableDataSettings.newBuilderForEmulator(emulator.getPort()).build());
+
+    tableAdminClient.createTable(CreateTableRequest.of(TABLE_ID).addFamily(FAMILY_ID));
   }
 
   @Override
   public void stop() throws Exception {
+    tableAdminClient.close();
+    dataClient.close();
     emulator.stop();
   }
 
@@ -63,7 +76,7 @@ public class EmulatorEnv implements TestEnv {
 
   @Override
   public BigtableDataClient getDataClient() {
-    return emulator.getDataClient();
+    return dataClient;
   }
 
   @Override
