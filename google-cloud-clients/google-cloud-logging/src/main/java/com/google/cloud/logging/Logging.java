@@ -24,6 +24,7 @@ import com.google.cloud.MonitoredResourceDescriptor;
 import com.google.cloud.Service;
 import com.google.common.collect.ImmutableMap;
 import java.util.Map;
+import java.util.concurrent.ExecutionException;
 
 public interface Logging extends AutoCloseable, Service<LoggingOptions> {
 
@@ -682,7 +683,11 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    * to provide a log name for those entries that do not specify one. Use {@link
    * WriteOption#resource(MonitoredResource)} to provide a monitored resource for those entries that
    * do not specify one. Use {@link WriteOption#labels(Map)} to provide some labels to be added to
-   * every entry in {@code logEntries}.
+   * every entry in {@code logEntries}. This method returns an {@code ApiFuture} object to consume
+   * the result. {@link ApiFuture#get()} returns <code>true</code> if the log entries were
+   * successfully written, and <code>false</code> if nothing was written because the {@link Logging}
+   * instance had already been closed. {@link ApiFuture#get()} will throw an {@link
+   * ExecutionException} if the write failed for other reasons.
    *
    * <p>Example of writing log entries and providing a default log name and monitored resource.
    *
@@ -699,7 +704,7 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    *     WriteOption.resource(MonitoredResource.newBuilder("global").build()));
    * }</pre>
    */
-  void write(Iterable<LogEntry> logEntries, WriteOption... options);
+  ApiFuture<Boolean> write(Iterable<LogEntry> logEntries, WriteOption... options);
 
   /**
    * Lists log entries. This method returns a {@link Page} object that can be used to consume

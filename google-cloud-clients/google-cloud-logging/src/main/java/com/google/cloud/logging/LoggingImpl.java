@@ -82,7 +82,7 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
 
   private static final int FLUSH_WAIT_TIMEOUT_SECONDS = 6;
   private final LoggingRpc rpc;
-  private final Map<Object, ApiFuture<Void>> pendingWrites = new ConcurrentHashMap<>();
+  private final Map<Object, ApiFuture<Boolean>> pendingWrites = new ConcurrentHashMap<>();
 
   private volatile Synchronicity writeSynchronicity = Synchronicity.ASYNC;
   private volatile Severity flushSeverity = null;
@@ -95,11 +95,11 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
           return input != null;
         }
       };
-  private static final Function<WriteLogEntriesResponse, Void> WRITE_RESPONSE_TO_VOID_FUNCTION =
-      new Function<WriteLogEntriesResponse, Void>() {
+  private static final Function<WriteLogEntriesResponse, Boolean> WRITE_RESPONSE_TO_BOOL_FUNCTION =
+      new Function<WriteLogEntriesResponse, Boolean>() {
         @Override
-        public Void apply(WriteLogEntriesResponse input) {
-          return null;
+        public Boolean apply(WriteLogEntriesResponse input) {
+          return Boolean.TRUE;
         }
       };
   private static final ThreadLocal<Boolean> inWriteCall = new ThreadLocal<>();
@@ -547,14 +547,15 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
     return builder.build();
   }
 
-  public void write(Iterable<LogEntry> logEntries, WriteOption... options) {
+  @Override
+  public ApiFuture<Boolean> write(Iterable<LogEntry> logEntries, WriteOption... options) {
     if (inWriteCall.get() != null) {
-      return;
+      return ApiFutures.immediateFuture(Boolean.FALSE);
     }
     inWriteCall.set(true);
 
     try {
-      writeLogEntries(logEntries, options);
+      ApiFuture<Boolean> writeFuture = writeLogEntries(logEntries, options);
       if (flushSeverity != null) {
         for (LogEntry logEntry : logEntries) {
           // flush pending writes if log severity at or above flush severity
@@ -564,6 +565,7 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
           }
         }
       }
+      return writeFuture;
     } finally {
       inWriteCall.remove();
     }
@@ -572,7 +574,7 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
   public void flush() {
     // BUG(1795): We should force batcher to issue RPC call for buffered messages,
     // so the code below doesn't wait uselessly.
-    ArrayList<ApiFuture<Void>> writesToFlush = new ArrayList<>();
+    ArrayList<ApiFuture<Boolean>> writesToFlush = new ArrayList<>();
     writesToFlush.addAll(pendingWrites.values());
 
     try {
@@ -583,28 +585,28 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
   }
 
   /* Write logs synchronously or asynchronously based on writeSynchronicity setting. */
-  private void writeLogEntries(Iterable<LogEntry> logEntries, WriteOption... writeOptions) {
-    if (closed) return;
+  private ApiFuture<Boolean> writeLogEntries(
+      Iterable<LogEntry> logEntries, WriteOption... writeOptions) {
+    if (closed) return ApiFutures.immediateFuture(Boolean.FALSE);
 
     switch (this.writeSynchronicity) {
       case SYNC:
-        get(writeAsync(logEntries, writeOptions));
-        break;
+        return ApiFutures.immediateFuture(get(writeAsync(logEntries, writeOptions)));
 
       case ASYNC:
       default:
-        final ApiFuture<Void> writeFuture = writeAsync(logEntries, writeOptions);
+        final ApiFuture<Boolean> writeFuture = writeAsync(logEntries, writeOptions);
         final Object pendingKey = new Object();
         pendingWrites.put(pendingKey, writeFuture);
         ApiFutures.addCallback(
             writeFuture,
-            new ApiFutureCallback<Void>() {
+            new ApiFutureCallback<Boolean>() {
               private void removeFromPending() {
                 pendingWrites.remove(pendingKey);
               }
 
               @Override
-              public void onSuccess(Void v) {
+              public void onSuccess(Boolean v) {
                 removeFromPending();
               }
 
@@ -619,14 +621,14 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
               }
             },
             MoreExecutors.directExecutor());
-        break;
+        return writeFuture;
     }
   }
 
-  private ApiFuture<Void> writeAsync(Iterable<LogEntry> logEntries, WriteOption... options) {
+  private ApiFuture<Boolean> writeAsync(Iterable<LogEntry> logEntries, WriteOption... options) {
     return transform(
         rpc.write(writeLogEntriesRequest(getOptions(), logEntries, optionMap(options))),
-        WRITE_RESPONSE_TO_VOID_FUNCTION);
+        WRITE_RESPONSE_TO_BOOL_FUNCTION);
   }
 
   static ListLogEntriesRequest listLogEntriesRequest(

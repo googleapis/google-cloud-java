@@ -23,8 +23,10 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 import com.google.api.core.ApiFuture;
+import com.google.api.core.ApiFutureCallback;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.paging.AsyncPage;
@@ -45,6 +47,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
+import com.google.common.util.concurrent.MoreExecutors;
 import com.google.logging.v2.CreateLogMetricRequest;
 import com.google.logging.v2.CreateSinkRequest;
 import com.google.logging.v2.DeleteLogMetricRequest;
@@ -67,9 +70,12 @@ import com.google.logging.v2.UpdateSinkRequest;
 import com.google.logging.v2.WriteLogEntriesRequest;
 import com.google.logging.v2.WriteLogEntriesResponse;
 import com.google.protobuf.Empty;
+import io.grpc.Status;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.easymock.EasyMock;
 import org.junit.After;
@@ -1259,12 +1265,15 @@ public class LoggingImplTest {
     EasyMock.expect(loggingRpcMock.write(request)).andReturn(ApiFutures.immediateFuture(response));
     EasyMock.replay(rpcFactoryMock, loggingRpcMock);
     logging = options.getService();
-    logging.write(ImmutableList.of(LOG_ENTRY1, LOG_ENTRY2));
+    logging.setWriteSynchronicity(Synchronicity.ASYNC);
+    ApiFuture<Boolean> future = logging.write(ImmutableList.of(LOG_ENTRY1, LOG_ENTRY2));
     logging.flush();
+    assertTrue(future.get());
   }
 
   @Test
-  public void testWriteLogEntriesAsyncWithOptions() {
+  public void testWriteLogEntriesAsyncWithOptions()
+      throws InterruptedException, ExecutionException {
     Map<String, String> labels = ImmutableMap.of("key", "value");
     WriteLogEntriesRequest request =
         WriteLogEntriesRequest.newBuilder()
@@ -1279,12 +1288,83 @@ public class LoggingImplTest {
     EasyMock.expect(loggingRpcMock.write(request)).andReturn(ApiFutures.immediateFuture(response));
     EasyMock.replay(rpcFactoryMock, loggingRpcMock);
     logging = options.getService();
-    logging.write(
-        ImmutableList.of(LOG_ENTRY1, LOG_ENTRY2),
-        WriteOption.logName(LOG_NAME),
-        WriteOption.resource(MONITORED_RESOURCE),
-        WriteOption.labels(labels));
+    logging.setWriteSynchronicity(Synchronicity.ASYNC);
+    ApiFuture<Boolean> future =
+        logging.write(
+            ImmutableList.of(LOG_ENTRY1, LOG_ENTRY2),
+            WriteOption.logName(LOG_NAME),
+            WriteOption.resource(MONITORED_RESOURCE),
+            WriteOption.labels(labels));
     logging.flush();
+    assertTrue(future.get());
+  }
+
+  @Test(expected = CancellationException.class)
+  public void testWriteLogEntriesAsyncCancelled() throws ExecutionException, InterruptedException {
+    WriteLogEntriesRequest request =
+        WriteLogEntriesRequest.newBuilder()
+            .addAllEntries(
+                Iterables.transform(
+                    ImmutableList.of(LOG_ENTRY1, LOG_ENTRY2), LogEntry.toPbFunction(PROJECT)))
+            .build();
+    EasyMock.expect(loggingRpcMock.write(request))
+        .andReturn(ApiFutures.<WriteLogEntriesResponse>immediateCancelledFuture());
+    EasyMock.replay(rpcFactoryMock, loggingRpcMock);
+    logging = options.getService();
+    logging.setWriteSynchronicity(Synchronicity.ASYNC);
+    logging.write(ImmutableList.of(LOG_ENTRY1, LOG_ENTRY2)).get();
+  }
+
+  @Test
+  public void testWriteLogEntriesAsyncError() throws ExecutionException, InterruptedException {
+    WriteLogEntriesRequest request =
+        WriteLogEntriesRequest.newBuilder()
+            .addAllEntries(
+                Iterables.transform(
+                    ImmutableList.of(LOG_ENTRY1, LOG_ENTRY2), LogEntry.toPbFunction(PROJECT)))
+            .build();
+    EasyMock.expect(loggingRpcMock.write(request))
+        .andReturn(
+            ApiFutures.<WriteLogEntriesResponse>immediateFailedFuture(
+                Status.NOT_FOUND.withDescription("TestException").asRuntimeException()));
+    EasyMock.replay(rpcFactoryMock, loggingRpcMock);
+    logging = options.getService();
+    logging.setWriteSynchronicity(Synchronicity.ASYNC);
+    ApiFuture<Boolean> future = logging.write(ImmutableList.of(LOG_ENTRY1, LOG_ENTRY2));
+    final AtomicBoolean success = new AtomicBoolean(true);
+    ApiFutures.addCallback(
+        future,
+        new ApiFutureCallback<Boolean>() {
+          @Override
+          public void onFailure(Throwable t) {
+            success.set(false);
+          }
+
+          @Override
+          public void onSuccess(Boolean result) {
+            success.set(result);
+          }
+        },
+        MoreExecutors.directExecutor());
+    try {
+      success.set(future.get());
+      fail("missing expected exception");
+    } catch (Exception e) {
+      // Ignore
+    }
+    assertFalse(success.get());
+  }
+
+  @Test
+  public void testWriteLogEntriesAsyncClosed() throws Exception {
+    loggingRpcMock.close();
+    EasyMock.expectLastCall().once();
+    EasyMock.replay(rpcFactoryMock, loggingRpcMock);
+    logging = options.getService();
+    logging.setWriteSynchronicity(Synchronicity.ASYNC);
+    logging.close();
+    ApiFuture<Boolean> future = logging.write(ImmutableList.of(LOG_ENTRY1, LOG_ENTRY2));
+    assertFalse(future.get());
   }
 
   @Test
