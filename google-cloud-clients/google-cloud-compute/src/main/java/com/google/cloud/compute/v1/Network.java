@@ -27,8 +27,11 @@ import javax.annotation.Nullable;
 @Generated("by GAPIC")
 @BetaApi
 /**
- * Represents a Network resource. Read Virtual Private Cloud (VPC) Network Overview for more
- * information. (== resource_for v1.networks ==) (== resource_for beta.networks ==)
+ * Represents a VPC Network resource.
+ *
+ * <p>Networks connect resources to each other and to the internet. For more information, read
+ * Virtual Private Cloud (VPC) Network. (== resource_for v1.networks ==) (== resource_for
+ * beta.networks ==)
  */
 public final class Network implements ApiMessage {
   private final Boolean autoCreateSubnetworks;
@@ -164,17 +167,12 @@ public final class Network implements ApiMessage {
     return creationTimestamp;
   }
 
-  /**
-   * An optional description of this resource. Provide this property when you create the resource.
-   */
+  /** An optional description of this resource. Provide this field when you create the resource. */
   public String getDescription() {
     return description;
   }
 
-  /**
-   * [Output Only] The gateway address for default routing out of the network. This value is read
-   * only and is selected by GCP.
-   */
+  /** [Output Only] The gateway address for default routing out of the network, selected by GCP. */
   public String getGatewayIPv4() {
     return gatewayIPv4;
   }
@@ -203,9 +201,9 @@ public final class Network implements ApiMessage {
   /**
    * Name of the resource. Provided by the client when the resource is created. The name must be
    * 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters
-   * long and match the regular expression `[a-z]([-a-z0-9]&#42;[a-z0-9])?` which means the first
-   * character must be a lowercase letter, and all following characters must be a dash, lowercase
-   * letter, or digit, except the last character, which cannot be a dash.
+   * long and match the regular expression `[a-z]([-a-z0-9]&#42;[a-z0-9])?. The first character must
+   * be a lowercase letter, and all following characters (except for the last character) must be a
+   * dash, lowercase letter, or digit. The last character must be a lowercase letter or digit.
    */
   public String getName() {
     return name;
@@ -363,14 +361,14 @@ public final class Network implements ApiMessage {
     }
 
     /**
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this field when you create the resource.
      */
     public String getDescription() {
       return description;
     }
 
     /**
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this field when you create the resource.
      */
     public Builder setDescription(String description) {
       this.description = description;
@@ -378,16 +376,14 @@ public final class Network implements ApiMessage {
     }
 
     /**
-     * [Output Only] The gateway address for default routing out of the network. This value is read
-     * only and is selected by GCP.
+     * [Output Only] The gateway address for default routing out of the network, selected by GCP.
      */
     public String getGatewayIPv4() {
       return gatewayIPv4;
     }
 
     /**
-     * [Output Only] The gateway address for default routing out of the network. This value is read
-     * only and is selected by GCP.
+     * [Output Only] The gateway address for default routing out of the network, selected by GCP.
      */
     public Builder setGatewayIPv4(String gatewayIPv4) {
       this.gatewayIPv4 = gatewayIPv4;
@@ -444,9 +440,10 @@ public final class Network implements ApiMessage {
     /**
      * Name of the resource. Provided by the client when the resource is created. The name must be
      * 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters
-     * long and match the regular expression `[a-z]([-a-z0-9]&#42;[a-z0-9])?` which means the first
-     * character must be a lowercase letter, and all following characters must be a dash, lowercase
-     * letter, or digit, except the last character, which cannot be a dash.
+     * long and match the regular expression `[a-z]([-a-z0-9]&#42;[a-z0-9])?. The first character
+     * must be a lowercase letter, and all following characters (except for the last character) must
+     * be a dash, lowercase letter, or digit. The last character must be a lowercase letter or
+     * digit.
      */
     public String getName() {
       return name;
@@ -455,9 +452,10 @@ public final class Network implements ApiMessage {
     /**
      * Name of the resource. Provided by the client when the resource is created. The name must be
      * 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters
-     * long and match the regular expression `[a-z]([-a-z0-9]&#42;[a-z0-9])?` which means the first
-     * character must be a lowercase letter, and all following characters must be a dash, lowercase
-     * letter, or digit, except the last character, which cannot be a dash.
+     * long and match the regular expression `[a-z]([-a-z0-9]&#42;[a-z0-9])?. The first character
+     * must be a lowercase letter, and all following characters (except for the last character) must
+     * be a dash, lowercase letter, or digit. The last character must be a lowercase letter or
+     * digit.
      */
     public Builder setName(String name) {
       this.name = name;

@@ -21,6 +21,7 @@ import static com.google.cloud.compute.v1.DiskClient.ListDisksPagedResponse;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.compute.v1.AddResourcePoliciesDiskHttpRequest;
 import com.google.cloud.compute.v1.AggregatedListDisksHttpRequest;
 import com.google.cloud.compute.v1.CreateSnapshotDiskHttpRequest;
 import com.google.cloud.compute.v1.DeleteDiskHttpRequest;
@@ -33,6 +34,7 @@ import com.google.cloud.compute.v1.InsertDiskHttpRequest;
 import com.google.cloud.compute.v1.ListDisksHttpRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.Policy;
+import com.google.cloud.compute.v1.RemoveResourcePoliciesDiskHttpRequest;
 import com.google.cloud.compute.v1.ResizeDiskHttpRequest;
 import com.google.cloud.compute.v1.SetIamPolicyDiskHttpRequest;
 import com.google.cloud.compute.v1.SetLabelsDiskHttpRequest;
@@ -49,6 +51,12 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class DiskStub implements BackgroundResource {
+
+  @BetaApi
+  public UnaryCallable<AddResourcePoliciesDiskHttpRequest, Operation>
+      addResourcePoliciesDiskCallable() {
+    throw new UnsupportedOperationException("Not implemented: addResourcePoliciesDiskCallable()");
+  }
 
   @BetaApi
   public UnaryCallable<AggregatedListDisksHttpRequest, AggregatedListDisksPagedResponse>
@@ -95,6 +103,13 @@ public abstract class DiskStub implements BackgroundResource {
   @BetaApi
   public UnaryCallable<ListDisksHttpRequest, DiskList> listDisksCallable() {
     throw new UnsupportedOperationException("Not implemented: listDisksCallable()");
+  }
+
+  @BetaApi
+  public UnaryCallable<RemoveResourcePoliciesDiskHttpRequest, Operation>
+      removeResourcePoliciesDiskCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: removeResourcePoliciesDiskCallable()");
   }
 
   @BetaApi

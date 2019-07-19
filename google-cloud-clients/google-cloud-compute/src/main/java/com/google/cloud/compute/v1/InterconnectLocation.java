@@ -26,9 +26,10 @@ import javax.annotation.Nullable;
 @Generated("by GAPIC")
 @BetaApi
 /**
- * Represents an InterconnectLocations resource. The InterconnectLocations resource describes the
- * locations where you can connect to Google's networks. For more information, see Colocation
- * Facilities.
+ * Represents an Interconnect Attachment (VLAN) Location resource.
+ *
+ * <p>You can use this resource to find location details about an Interconnect attachment (VLAN).
+ * For more information about interconnect attachments, read Creating VLAN Attachments.
  */
 public final class InterconnectLocation implements ApiMessage {
   private final String address;

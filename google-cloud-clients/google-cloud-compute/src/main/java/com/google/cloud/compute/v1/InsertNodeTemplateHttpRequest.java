@@ -150,9 +150,11 @@ public final class InsertNodeTemplateHttpRequest implements ApiMessage {
   }
 
   /**
-   * A Node Template resource. To learn more about node templates and sole-tenant nodes, read the
-   * Sole-tenant nodes documentation. (== resource_for beta.nodeTemplates ==) (== resource_for
-   * v1.nodeTemplates ==)
+   * Represent a sole-tenant Node Template resource.
+   *
+   * <p>You can use a template to define properties for nodes in a node group. For more information,
+   * read Creating node groups and instances. (== resource_for beta.nodeTemplates ==) (==
+   * resource_for v1.nodeTemplates ==) (== NextID: 16 ==)
    */
   public NodeTemplate getNodeTemplateResource() {
     return nodeTemplateResource;
@@ -330,18 +332,22 @@ public final class InsertNodeTemplateHttpRequest implements ApiMessage {
     }
 
     /**
-     * A Node Template resource. To learn more about node templates and sole-tenant nodes, read the
-     * Sole-tenant nodes documentation. (== resource_for beta.nodeTemplates ==) (== resource_for
-     * v1.nodeTemplates ==)
+     * Represent a sole-tenant Node Template resource.
+     *
+     * <p>You can use a template to define properties for nodes in a node group. For more
+     * information, read Creating node groups and instances. (== resource_for beta.nodeTemplates ==)
+     * (== resource_for v1.nodeTemplates ==) (== NextID: 16 ==)
      */
     public NodeTemplate getNodeTemplateResource() {
       return nodeTemplateResource;
     }
 
     /**
-     * A Node Template resource. To learn more about node templates and sole-tenant nodes, read the
-     * Sole-tenant nodes documentation. (== resource_for beta.nodeTemplates ==) (== resource_for
-     * v1.nodeTemplates ==)
+     * Represent a sole-tenant Node Template resource.
+     *
+     * <p>You can use a template to define properties for nodes in a node group. For more
+     * information, read Creating node groups and instances. (== resource_for beta.nodeTemplates ==)
+     * (== resource_for v1.nodeTemplates ==) (== NextID: 16 ==)
      */
     public Builder setNodeTemplateResource(NodeTemplate nodeTemplateResource) {
       this.nodeTemplateResource = nodeTemplateResource;

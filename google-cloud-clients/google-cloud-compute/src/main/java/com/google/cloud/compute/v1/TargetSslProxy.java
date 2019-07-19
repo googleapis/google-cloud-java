@@ -26,8 +26,12 @@ import javax.annotation.Nullable;
 @Generated("by GAPIC")
 @BetaApi
 /**
- * A TargetSslProxy resource. This resource defines an SSL proxy. (== resource_for
- * beta.targetSslProxies ==) (== resource_for v1.targetSslProxies ==)
+ * Represents a Target SSL Proxy resource.
+ *
+ * <p>A target SSL proxy is a component of a SSL Proxy load balancer. Global forwarding rules
+ * reference a target SSL proxy, and the target proxy then references an external backend service.
+ * For more information, read Using Target Proxies. (== resource_for beta.targetSslProxies ==) (==
+ * resource_for v1.targetSslProxies ==)
  */
 public final class TargetSslProxy implements ApiMessage {
   private final String creationTimestamp;

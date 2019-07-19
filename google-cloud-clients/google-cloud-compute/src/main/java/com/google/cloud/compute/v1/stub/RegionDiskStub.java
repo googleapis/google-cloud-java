@@ -20,6 +20,7 @@ import static com.google.cloud.compute.v1.RegionDiskClient.ListRegionDisksPagedR
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.compute.v1.AddResourcePoliciesRegionDiskHttpRequest;
 import com.google.cloud.compute.v1.CreateSnapshotRegionDiskHttpRequest;
 import com.google.cloud.compute.v1.DeleteRegionDiskHttpRequest;
 import com.google.cloud.compute.v1.Disk;
@@ -28,6 +29,7 @@ import com.google.cloud.compute.v1.GetRegionDiskHttpRequest;
 import com.google.cloud.compute.v1.InsertRegionDiskHttpRequest;
 import com.google.cloud.compute.v1.ListRegionDisksHttpRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.RemoveResourcePoliciesRegionDiskHttpRequest;
 import com.google.cloud.compute.v1.ResizeRegionDiskHttpRequest;
 import com.google.cloud.compute.v1.SetLabelsRegionDiskHttpRequest;
 import com.google.cloud.compute.v1.TestIamPermissionsRegionDiskHttpRequest;
@@ -43,6 +45,13 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class RegionDiskStub implements BackgroundResource {
+
+  @BetaApi
+  public UnaryCallable<AddResourcePoliciesRegionDiskHttpRequest, Operation>
+      addResourcePoliciesRegionDiskCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: addResourcePoliciesRegionDiskCallable()");
+  }
 
   @BetaApi
   public UnaryCallable<CreateSnapshotRegionDiskHttpRequest, Operation>
@@ -74,6 +83,13 @@ public abstract class RegionDiskStub implements BackgroundResource {
   @BetaApi
   public UnaryCallable<ListRegionDisksHttpRequest, DiskList> listRegionDisksCallable() {
     throw new UnsupportedOperationException("Not implemented: listRegionDisksCallable()");
+  }
+
+  @BetaApi
+  public UnaryCallable<RemoveResourcePoliciesRegionDiskHttpRequest, Operation>
+      removeResourcePoliciesRegionDiskCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: removeResourcePoliciesRegionDiskCallable()");
   }
 
   @BetaApi

@@ -26,8 +26,11 @@ import javax.annotation.Nullable;
 @Generated("by GAPIC")
 @BetaApi
 /**
- * Represents a Target VPN gateway resource. (== resource_for beta.targetVpnGateways ==) (==
- * resource_for v1.targetVpnGateways ==)
+ * Represents a Target VPN Gateway resource.
+ *
+ * <p>The target VPN gateway resource represents a Classic Cloud VPN gateway. For more information,
+ * read the the Cloud VPN Overview. (== resource_for beta.targetVpnGateways ==) (== resource_for
+ * v1.targetVpnGateways ==)
  */
 public final class TargetVpnGateway implements ApiMessage {
   private final String creationTimestamp;

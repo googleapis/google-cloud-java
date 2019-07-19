@@ -188,8 +188,11 @@ public final class InsertSecurityPolicyHttpRequest implements ApiMessage {
   }
 
   /**
-   * A security policy is comprised of one or more rules. It can also be associated with one or more
-   * 'targets'. (== resource_for v1.securityPolicies ==) (== resource_for beta.securityPolicies ==)
+   * Represents a Cloud Armor Security Policy resource.
+   *
+   * <p>Only external backend services that use load balancers can reference a Security Policy. For
+   * more information, read Cloud Armor Security Policy Concepts. (== resource_for
+   * v1.securityPolicies ==) (== resource_for beta.securityPolicies ==)
    */
   public SecurityPolicy getSecurityPolicyResource() {
     return securityPolicyResource;
@@ -409,18 +412,22 @@ public final class InsertSecurityPolicyHttpRequest implements ApiMessage {
     }
 
     /**
-     * A security policy is comprised of one or more rules. It can also be associated with one or
-     * more 'targets'. (== resource_for v1.securityPolicies ==) (== resource_for
-     * beta.securityPolicies ==)
+     * Represents a Cloud Armor Security Policy resource.
+     *
+     * <p>Only external backend services that use load balancers can reference a Security Policy.
+     * For more information, read Cloud Armor Security Policy Concepts. (== resource_for
+     * v1.securityPolicies ==) (== resource_for beta.securityPolicies ==)
      */
     public SecurityPolicy getSecurityPolicyResource() {
       return securityPolicyResource;
     }
 
     /**
-     * A security policy is comprised of one or more rules. It can also be associated with one or
-     * more 'targets'. (== resource_for v1.securityPolicies ==) (== resource_for
-     * beta.securityPolicies ==)
+     * Represents a Cloud Armor Security Policy resource.
+     *
+     * <p>Only external backend services that use load balancers can reference a Security Policy.
+     * For more information, read Cloud Armor Security Policy Concepts. (== resource_for
+     * v1.securityPolicies ==) (== resource_for beta.securityPolicies ==)
      */
     public Builder setSecurityPolicyResource(SecurityPolicy securityPolicyResource) {
       this.securityPolicyResource = securityPolicyResource;

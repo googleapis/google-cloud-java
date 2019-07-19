@@ -187,7 +187,7 @@ public final class SetSchedulingInstanceHttpRequest implements ApiMessage {
     return requestId;
   }
 
-  /** Sets the scheduling options for an Instance. */
+  /** Sets the scheduling options for an Instance. NextID: 9 */
   public Scheduling getSchedulingResource() {
     return schedulingResource;
   }
@@ -407,12 +407,12 @@ public final class SetSchedulingInstanceHttpRequest implements ApiMessage {
       return this;
     }
 
-    /** Sets the scheduling options for an Instance. */
+    /** Sets the scheduling options for an Instance. NextID: 9 */
     public Scheduling getSchedulingResource() {
       return schedulingResource;
     }
 
-    /** Sets the scheduling options for an Instance. */
+    /** Sets the scheduling options for an Instance. NextID: 9 */
     public Builder setSchedulingResource(Scheduling schedulingResource) {
       this.schedulingResource = schedulingResource;
       return this;

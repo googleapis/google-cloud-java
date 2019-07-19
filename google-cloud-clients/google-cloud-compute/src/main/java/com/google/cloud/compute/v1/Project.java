@@ -26,8 +26,11 @@ import javax.annotation.Nullable;
 @Generated("by GAPIC")
 @BetaApi
 /**
- * A Project resource. For an overview of projects, see Cloud Platform Resource Hierarchy. (==
- * resource_for v1.projects ==) (== resource_for beta.projects ==)
+ * Represents a Project resource.
+ *
+ * <p>A project is used to organize resources in a Google Cloud Platform environment. For more
+ * information, read about the Resource Hierarchy. (== resource_for v1.projects ==) (== resource_for
+ * beta.projects ==)
  */
 public final class Project implements ApiMessage {
   private final Metadata commonInstanceMetadata;

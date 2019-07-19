@@ -25,7 +25,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
-/** Sets the scheduling options for an Instance. */
+/** Sets the scheduling options for an Instance. NextID: 9 */
 public final class Scheduling implements ApiMessage {
   private final Boolean automaticRestart;
   private final List<SchedulingNodeAffinity> nodeAffinities;
@@ -97,7 +97,10 @@ public final class Scheduling implements ApiMessage {
     return automaticRestart;
   }
 
-  /** A set of node affinity and anti-affinity. */
+  /**
+   * A set of node affinity and anti-affinity configurations. Refer to Configuring node affinity for
+   * more information.
+   */
   public List<SchedulingNodeAffinity> getNodeAffinitiesList() {
     return nodeAffinities;
   }
@@ -198,12 +201,18 @@ public final class Scheduling implements ApiMessage {
       return this;
     }
 
-    /** A set of node affinity and anti-affinity. */
+    /**
+     * A set of node affinity and anti-affinity configurations. Refer to Configuring node affinity
+     * for more information.
+     */
     public List<SchedulingNodeAffinity> getNodeAffinitiesList() {
       return nodeAffinities;
     }
 
-    /** A set of node affinity and anti-affinity. */
+    /**
+     * A set of node affinity and anti-affinity configurations. Refer to Configuring node affinity
+     * for more information.
+     */
     public Builder addAllNodeAffinities(List<SchedulingNodeAffinity> nodeAffinities) {
       if (this.nodeAffinities == null) {
         this.nodeAffinities = new LinkedList<>();
@@ -212,7 +221,10 @@ public final class Scheduling implements ApiMessage {
       return this;
     }
 
-    /** A set of node affinity and anti-affinity. */
+    /**
+     * A set of node affinity and anti-affinity configurations. Refer to Configuring node affinity
+     * for more information.
+     */
     public Builder addNodeAffinities(SchedulingNodeAffinity nodeAffinities) {
       if (this.nodeAffinities == null) {
         this.nodeAffinities = new LinkedList<>();

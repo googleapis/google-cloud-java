@@ -44,9 +44,8 @@ import javax.annotation.Generated;
  * <code>
  * try (DiskClient diskClient = DiskClient.create()) {
  *   ProjectZoneDiskName disk = ProjectZoneDiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
- *   Boolean guestFlush = false;
- *   Snapshot snapshotResource = Snapshot.newBuilder().build();
- *   Operation response = diskClient.createSnapshotDisk(disk, guestFlush, snapshotResource);
+ *   DisksAddResourcePoliciesRequest disksAddResourcePoliciesRequestResource = DisksAddResourcePoliciesRequest.newBuilder().build();
+ *   Operation response = diskClient.addResourcePoliciesDisk(disk, disksAddResourcePoliciesRequestResource);
  * }
  * </code>
  * </pre>
@@ -151,6 +150,123 @@ public class DiskClient implements BackgroundResource {
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public DiskStub getStub() {
     return stub;
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Adds existing resource policies to a disk. You can only add one policy which will be applied to
+   * this disk for scheduling snapshot creation.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DiskClient diskClient = DiskClient.create()) {
+   *   ProjectZoneDiskName disk = ProjectZoneDiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
+   *   DisksAddResourcePoliciesRequest disksAddResourcePoliciesRequestResource = DisksAddResourcePoliciesRequest.newBuilder().build();
+   *   Operation response = diskClient.addResourcePoliciesDisk(disk, disksAddResourcePoliciesRequestResource);
+   * }
+   * </code></pre>
+   *
+   * @param disk The disk name for this request.
+   * @param disksAddResourcePoliciesRequestResource
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation addResourcePoliciesDisk(
+      ProjectZoneDiskName disk,
+      DisksAddResourcePoliciesRequest disksAddResourcePoliciesRequestResource) {
+
+    AddResourcePoliciesDiskHttpRequest request =
+        AddResourcePoliciesDiskHttpRequest.newBuilder()
+            .setDisk(disk == null ? null : disk.toString())
+            .setDisksAddResourcePoliciesRequestResource(disksAddResourcePoliciesRequestResource)
+            .build();
+    return addResourcePoliciesDisk(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Adds existing resource policies to a disk. You can only add one policy which will be applied to
+   * this disk for scheduling snapshot creation.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DiskClient diskClient = DiskClient.create()) {
+   *   ProjectZoneDiskName disk = ProjectZoneDiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
+   *   DisksAddResourcePoliciesRequest disksAddResourcePoliciesRequestResource = DisksAddResourcePoliciesRequest.newBuilder().build();
+   *   Operation response = diskClient.addResourcePoliciesDisk(disk.toString(), disksAddResourcePoliciesRequestResource);
+   * }
+   * </code></pre>
+   *
+   * @param disk The disk name for this request.
+   * @param disksAddResourcePoliciesRequestResource
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation addResourcePoliciesDisk(
+      String disk, DisksAddResourcePoliciesRequest disksAddResourcePoliciesRequestResource) {
+
+    AddResourcePoliciesDiskHttpRequest request =
+        AddResourcePoliciesDiskHttpRequest.newBuilder()
+            .setDisk(disk)
+            .setDisksAddResourcePoliciesRequestResource(disksAddResourcePoliciesRequestResource)
+            .build();
+    return addResourcePoliciesDisk(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Adds existing resource policies to a disk. You can only add one policy which will be applied to
+   * this disk for scheduling snapshot creation.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DiskClient diskClient = DiskClient.create()) {
+   *   String formattedDisk = ProjectZoneDiskName.format("[PROJECT]", "[ZONE]", "[DISK]");
+   *   DisksAddResourcePoliciesRequest disksAddResourcePoliciesRequestResource = DisksAddResourcePoliciesRequest.newBuilder().build();
+   *   AddResourcePoliciesDiskHttpRequest request = AddResourcePoliciesDiskHttpRequest.newBuilder()
+   *     .setDisk(formattedDisk)
+   *     .setDisksAddResourcePoliciesRequestResource(disksAddResourcePoliciesRequestResource)
+   *     .build();
+   *   Operation response = diskClient.addResourcePoliciesDisk(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation addResourcePoliciesDisk(AddResourcePoliciesDiskHttpRequest request) {
+    return addResourcePoliciesDiskCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Adds existing resource policies to a disk. You can only add one policy which will be applied to
+   * this disk for scheduling snapshot creation.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DiskClient diskClient = DiskClient.create()) {
+   *   String formattedDisk = ProjectZoneDiskName.format("[PROJECT]", "[ZONE]", "[DISK]");
+   *   DisksAddResourcePoliciesRequest disksAddResourcePoliciesRequestResource = DisksAddResourcePoliciesRequest.newBuilder().build();
+   *   AddResourcePoliciesDiskHttpRequest request = AddResourcePoliciesDiskHttpRequest.newBuilder()
+   *     .setDisk(formattedDisk)
+   *     .setDisksAddResourcePoliciesRequestResource(disksAddResourcePoliciesRequestResource)
+   *     .build();
+   *   ApiFuture&lt;Operation&gt; future = diskClient.addResourcePoliciesDiskCallable().futureCall(request);
+   *   // Do something
+   *   Operation response = future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi
+  public final UnaryCallable<AddResourcePoliciesDiskHttpRequest, Operation>
+      addResourcePoliciesDiskCallable() {
+    return stub.addResourcePoliciesDiskCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -310,8 +426,10 @@ public class DiskClient implements BackgroundResource {
    * @param guestFlush [Input Only] Specifies to create an application consistent snapshot by
    *     informing the OS to prepare for the snapshot process. Currently only supported on Windows
    *     instances using the Volume Shadow Copy Service (VSS).
-   * @param snapshotResource A persistent disk snapshot resource. (== resource_for beta.snapshots
-   *     ==) (== resource_for v1.snapshots ==)
+   * @param snapshotResource Represents a Persistent Disk Snapshot resource.
+   *     <p>You can use snapshots to back up data on a regular interval. For more information, read
+   *     Creating persistent disk snapshots. (== resource_for beta.snapshots ==) (== resource_for
+   *     v1.snapshots ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -346,8 +464,10 @@ public class DiskClient implements BackgroundResource {
    * @param guestFlush [Input Only] Specifies to create an application consistent snapshot by
    *     informing the OS to prepare for the snapshot process. Currently only supported on Windows
    *     instances using the Volume Shadow Copy Service (VSS).
-   * @param snapshotResource A persistent disk snapshot resource. (== resource_for beta.snapshots
-   *     ==) (== resource_for v1.snapshots ==)
+   * @param snapshotResource Represents a Persistent Disk Snapshot resource.
+   *     <p>You can use snapshots to back up data on a regular interval. For more information, read
+   *     Creating persistent disk snapshots. (== resource_for beta.snapshots ==) (== resource_for
+   *     v1.snapshots ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -738,8 +858,15 @@ public class DiskClient implements BackgroundResource {
    * </code></pre>
    *
    * @param zone The name of the zone for this request.
-   * @param diskResource A Disk resource. (== resource_for beta.disks ==) (== resource_for v1.disks
-   *     ==)
+   * @param diskResource Represents a Persistent Disk resource.
+   *     <p>Persistent disks are required for running your VM instances. Create both boot and
+   *     non-boot (data) persistent disks. For more information, read Persistent Disks. For more
+   *     storage options, read Storage options.
+   *     <p>The disks resource represents a zonal persistent disk. For more information, read Zonal
+   *     persistent disks.
+   *     <p>The regionDisks resource represents a regional persistent disk. For more information,
+   *     read Regional resources. (== resource_for beta.disks ==) (== resource_for v1.disks ==) (==
+   *     resource_for v1.regionDisks ==) (== resource_for beta.regionDisks ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -771,8 +898,15 @@ public class DiskClient implements BackgroundResource {
    * </code></pre>
    *
    * @param zone The name of the zone for this request.
-   * @param diskResource A Disk resource. (== resource_for beta.disks ==) (== resource_for v1.disks
-   *     ==)
+   * @param diskResource Represents a Persistent Disk resource.
+   *     <p>Persistent disks are required for running your VM instances. Create both boot and
+   *     non-boot (data) persistent disks. For more information, read Persistent Disks. For more
+   *     storage options, read Storage options.
+   *     <p>The disks resource represents a zonal persistent disk. For more information, read Zonal
+   *     persistent disks.
+   *     <p>The regionDisks resource represents a regional persistent disk. For more information,
+   *     read Regional resources. (== resource_for beta.disks ==) (== resource_for v1.disks ==) (==
+   *     resource_for v1.regionDisks ==) (== resource_for beta.regionDisks ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -971,6 +1105,121 @@ public class DiskClient implements BackgroundResource {
   @BetaApi
   public final UnaryCallable<ListDisksHttpRequest, DiskList> listDisksCallable() {
     return stub.listDisksCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Removes resource policies from a disk.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DiskClient diskClient = DiskClient.create()) {
+   *   ProjectZoneDiskName disk = ProjectZoneDiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
+   *   DisksRemoveResourcePoliciesRequest disksRemoveResourcePoliciesRequestResource = DisksRemoveResourcePoliciesRequest.newBuilder().build();
+   *   Operation response = diskClient.removeResourcePoliciesDisk(disk, disksRemoveResourcePoliciesRequestResource);
+   * }
+   * </code></pre>
+   *
+   * @param disk The disk name for this request.
+   * @param disksRemoveResourcePoliciesRequestResource
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation removeResourcePoliciesDisk(
+      ProjectZoneDiskName disk,
+      DisksRemoveResourcePoliciesRequest disksRemoveResourcePoliciesRequestResource) {
+
+    RemoveResourcePoliciesDiskHttpRequest request =
+        RemoveResourcePoliciesDiskHttpRequest.newBuilder()
+            .setDisk(disk == null ? null : disk.toString())
+            .setDisksRemoveResourcePoliciesRequestResource(
+                disksRemoveResourcePoliciesRequestResource)
+            .build();
+    return removeResourcePoliciesDisk(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Removes resource policies from a disk.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DiskClient diskClient = DiskClient.create()) {
+   *   ProjectZoneDiskName disk = ProjectZoneDiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
+   *   DisksRemoveResourcePoliciesRequest disksRemoveResourcePoliciesRequestResource = DisksRemoveResourcePoliciesRequest.newBuilder().build();
+   *   Operation response = diskClient.removeResourcePoliciesDisk(disk.toString(), disksRemoveResourcePoliciesRequestResource);
+   * }
+   * </code></pre>
+   *
+   * @param disk The disk name for this request.
+   * @param disksRemoveResourcePoliciesRequestResource
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation removeResourcePoliciesDisk(
+      String disk, DisksRemoveResourcePoliciesRequest disksRemoveResourcePoliciesRequestResource) {
+
+    RemoveResourcePoliciesDiskHttpRequest request =
+        RemoveResourcePoliciesDiskHttpRequest.newBuilder()
+            .setDisk(disk)
+            .setDisksRemoveResourcePoliciesRequestResource(
+                disksRemoveResourcePoliciesRequestResource)
+            .build();
+    return removeResourcePoliciesDisk(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Removes resource policies from a disk.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DiskClient diskClient = DiskClient.create()) {
+   *   String formattedDisk = ProjectZoneDiskName.format("[PROJECT]", "[ZONE]", "[DISK]");
+   *   DisksRemoveResourcePoliciesRequest disksRemoveResourcePoliciesRequestResource = DisksRemoveResourcePoliciesRequest.newBuilder().build();
+   *   RemoveResourcePoliciesDiskHttpRequest request = RemoveResourcePoliciesDiskHttpRequest.newBuilder()
+   *     .setDisk(formattedDisk)
+   *     .setDisksRemoveResourcePoliciesRequestResource(disksRemoveResourcePoliciesRequestResource)
+   *     .build();
+   *   Operation response = diskClient.removeResourcePoliciesDisk(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation removeResourcePoliciesDisk(RemoveResourcePoliciesDiskHttpRequest request) {
+    return removeResourcePoliciesDiskCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Removes resource policies from a disk.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DiskClient diskClient = DiskClient.create()) {
+   *   String formattedDisk = ProjectZoneDiskName.format("[PROJECT]", "[ZONE]", "[DISK]");
+   *   DisksRemoveResourcePoliciesRequest disksRemoveResourcePoliciesRequestResource = DisksRemoveResourcePoliciesRequest.newBuilder().build();
+   *   RemoveResourcePoliciesDiskHttpRequest request = RemoveResourcePoliciesDiskHttpRequest.newBuilder()
+   *     .setDisk(formattedDisk)
+   *     .setDisksRemoveResourcePoliciesRequestResource(disksRemoveResourcePoliciesRequestResource)
+   *     .build();
+   *   ApiFuture&lt;Operation&gt; future = diskClient.removeResourcePoliciesDiskCallable().futureCall(request);
+   *   // Do something
+   *   Operation response = future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi
+  public final UnaryCallable<RemoveResourcePoliciesDiskHttpRequest, Operation>
+      removeResourcePoliciesDiskCallable() {
+    return stub.removeResourcePoliciesDiskCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD

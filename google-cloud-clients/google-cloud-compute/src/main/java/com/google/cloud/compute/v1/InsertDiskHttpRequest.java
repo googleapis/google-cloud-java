@@ -148,7 +148,20 @@ public final class InsertDiskHttpRequest implements ApiMessage {
     return callback;
   }
 
-  /** A Disk resource. (== resource_for beta.disks ==) (== resource_for v1.disks ==) */
+  /**
+   * Represents a Persistent Disk resource.
+   *
+   * <p>Persistent disks are required for running your VM instances. Create both boot and non-boot
+   * (data) persistent disks. For more information, read Persistent Disks. For more storage options,
+   * read Storage options.
+   *
+   * <p>The disks resource represents a zonal persistent disk. For more information, read Zonal
+   * persistent disks.
+   *
+   * <p>The regionDisks resource represents a regional persistent disk. For more information, read
+   * Regional resources. (== resource_for beta.disks ==) (== resource_for v1.disks ==) (==
+   * resource_for v1.regionDisks ==) (== resource_for beta.regionDisks ==)
+   */
   public Disk getDiskResource() {
     return diskResource;
   }
@@ -322,12 +335,38 @@ public final class InsertDiskHttpRequest implements ApiMessage {
       return this;
     }
 
-    /** A Disk resource. (== resource_for beta.disks ==) (== resource_for v1.disks ==) */
+    /**
+     * Represents a Persistent Disk resource.
+     *
+     * <p>Persistent disks are required for running your VM instances. Create both boot and non-boot
+     * (data) persistent disks. For more information, read Persistent Disks. For more storage
+     * options, read Storage options.
+     *
+     * <p>The disks resource represents a zonal persistent disk. For more information, read Zonal
+     * persistent disks.
+     *
+     * <p>The regionDisks resource represents a regional persistent disk. For more information, read
+     * Regional resources. (== resource_for beta.disks ==) (== resource_for v1.disks ==) (==
+     * resource_for v1.regionDisks ==) (== resource_for beta.regionDisks ==)
+     */
     public Disk getDiskResource() {
       return diskResource;
     }
 
-    /** A Disk resource. (== resource_for beta.disks ==) (== resource_for v1.disks ==) */
+    /**
+     * Represents a Persistent Disk resource.
+     *
+     * <p>Persistent disks are required for running your VM instances. Create both boot and non-boot
+     * (data) persistent disks. For more information, read Persistent Disks. For more storage
+     * options, read Storage options.
+     *
+     * <p>The disks resource represents a zonal persistent disk. For more information, read Zonal
+     * persistent disks.
+     *
+     * <p>The regionDisks resource represents a regional persistent disk. For more information, read
+     * Regional resources. (== resource_for beta.disks ==) (== resource_for v1.disks ==) (==
+     * resource_for v1.regionDisks ==) (== resource_for beta.regionDisks ==)
+     */
     public Builder setDiskResource(Disk diskResource) {
       this.diskResource = diskResource;
       return this;

@@ -26,7 +26,20 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
-/** A Disk resource. (== resource_for beta.disks ==) (== resource_for v1.disks ==) */
+/**
+ * Represents a Persistent Disk resource.
+ *
+ * <p>Persistent disks are required for running your VM instances. Create both boot and non-boot
+ * (data) persistent disks. For more information, read Persistent Disks. For more storage options,
+ * read Storage options.
+ *
+ * <p>The disks resource represents a zonal persistent disk. For more information, read Zonal
+ * persistent disks.
+ *
+ * <p>The regionDisks resource represents a regional persistent disk. For more information, read
+ * Regional resources. (== resource_for beta.disks ==) (== resource_for v1.disks ==) (==
+ * resource_for v1.regionDisks ==) (== resource_for beta.regionDisks ==)
+ */
 public final class Disk implements ApiMessage {
   private final String creationTimestamp;
   private final String description;
@@ -45,6 +58,7 @@ public final class Disk implements ApiMessage {
   private final String physicalBlockSizeBytes;
   private final String region;
   private final List<String> replicaZones;
+  private final List<String> resourcePolicies;
   private final String selfLink;
   private final String sizeGb;
   private final String sourceImage;
@@ -76,6 +90,7 @@ public final class Disk implements ApiMessage {
     this.physicalBlockSizeBytes = null;
     this.region = null;
     this.replicaZones = null;
+    this.resourcePolicies = null;
     this.selfLink = null;
     this.sizeGb = null;
     this.sourceImage = null;
@@ -108,6 +123,7 @@ public final class Disk implements ApiMessage {
       String physicalBlockSizeBytes,
       String region,
       List<String> replicaZones,
+      List<String> resourcePolicies,
       String selfLink,
       String sizeGb,
       String sourceImage,
@@ -137,6 +153,7 @@ public final class Disk implements ApiMessage {
     this.physicalBlockSizeBytes = physicalBlockSizeBytes;
     this.region = region;
     this.replicaZones = replicaZones;
+    this.resourcePolicies = resourcePolicies;
     this.selfLink = selfLink;
     this.sizeGb = sizeGb;
     this.sourceImage = sourceImage;
@@ -203,6 +220,9 @@ public final class Disk implements ApiMessage {
     }
     if ("replicaZones".equals(fieldName)) {
       return replicaZones;
+    }
+    if ("resourcePolicies".equals(fieldName)) {
+      return resourcePolicies;
     }
     if ("selfLink".equals(fieldName)) {
       return selfLink;
@@ -391,6 +411,11 @@ public final class Disk implements ApiMessage {
     return replicaZones;
   }
 
+  /** Resource policies applied to this disk for automatic snapshot creations. */
+  public List<String> getResourcePoliciesList() {
+    return resourcePolicies;
+  }
+
   /** [Output Only] Server-defined fully-qualified URL for this resource. */
   public String getSelfLink() {
     return selfLink;
@@ -547,6 +572,7 @@ public final class Disk implements ApiMessage {
     private String physicalBlockSizeBytes;
     private String region;
     private List<String> replicaZones;
+    private List<String> resourcePolicies;
     private String selfLink;
     private String sizeGb;
     private String sourceImage;
@@ -615,6 +641,9 @@ public final class Disk implements ApiMessage {
       if (other.getReplicaZonesList() != null) {
         this.replicaZones = other.replicaZones;
       }
+      if (other.getResourcePoliciesList() != null) {
+        this.resourcePolicies = other.resourcePolicies;
+      }
       if (other.getSelfLink() != null) {
         this.selfLink = other.selfLink;
       }
@@ -672,6 +701,7 @@ public final class Disk implements ApiMessage {
       this.physicalBlockSizeBytes = source.physicalBlockSizeBytes;
       this.region = source.region;
       this.replicaZones = source.replicaZones;
+      this.resourcePolicies = source.resourcePolicies;
       this.selfLink = source.selfLink;
       this.sizeGb = source.sizeGb;
       this.sourceImage = source.sourceImage;
@@ -1019,6 +1049,29 @@ public final class Disk implements ApiMessage {
       return this;
     }
 
+    /** Resource policies applied to this disk for automatic snapshot creations. */
+    public List<String> getResourcePoliciesList() {
+      return resourcePolicies;
+    }
+
+    /** Resource policies applied to this disk for automatic snapshot creations. */
+    public Builder addAllResourcePolicies(List<String> resourcePolicies) {
+      if (this.resourcePolicies == null) {
+        this.resourcePolicies = new LinkedList<>();
+      }
+      this.resourcePolicies.addAll(resourcePolicies);
+      return this;
+    }
+
+    /** Resource policies applied to this disk for automatic snapshot creations. */
+    public Builder addResourcePolicies(String resourcePolicies) {
+      if (this.resourcePolicies == null) {
+        this.resourcePolicies = new LinkedList<>();
+      }
+      this.resourcePolicies.add(resourcePolicies);
+      return this;
+    }
+
     /** [Output Only] Server-defined fully-qualified URL for this resource. */
     public String getSelfLink() {
       return selfLink;
@@ -1299,6 +1352,7 @@ public final class Disk implements ApiMessage {
           physicalBlockSizeBytes,
           region,
           replicaZones,
+          resourcePolicies,
           selfLink,
           sizeGb,
           sourceImage,
@@ -1332,6 +1386,7 @@ public final class Disk implements ApiMessage {
       newBuilder.setPhysicalBlockSizeBytes(this.physicalBlockSizeBytes);
       newBuilder.setRegion(this.region);
       newBuilder.addAllReplicaZones(this.replicaZones);
+      newBuilder.addAllResourcePolicies(this.resourcePolicies);
       newBuilder.setSelfLink(this.selfLink);
       newBuilder.setSizeGb(this.sizeGb);
       newBuilder.setSourceImage(this.sourceImage);
@@ -1402,6 +1457,9 @@ public final class Disk implements ApiMessage {
         + "replicaZones="
         + replicaZones
         + ", "
+        + "resourcePolicies="
+        + resourcePolicies
+        + ", "
         + "selfLink="
         + selfLink
         + ", "
@@ -1464,6 +1522,7 @@ public final class Disk implements ApiMessage {
           && Objects.equals(this.physicalBlockSizeBytes, that.getPhysicalBlockSizeBytes())
           && Objects.equals(this.region, that.getRegion())
           && Objects.equals(this.replicaZones, that.getReplicaZonesList())
+          && Objects.equals(this.resourcePolicies, that.getResourcePoliciesList())
           && Objects.equals(this.selfLink, that.getSelfLink())
           && Objects.equals(this.sizeGb, that.getSizeGb())
           && Objects.equals(this.sourceImage, that.getSourceImage())
@@ -1500,6 +1559,7 @@ public final class Disk implements ApiMessage {
         physicalBlockSizeBytes,
         region,
         replicaZones,
+        resourcePolicies,
         selfLink,
         sizeGb,
         sourceImage,

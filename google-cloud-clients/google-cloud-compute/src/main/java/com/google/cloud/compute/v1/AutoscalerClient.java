@@ -504,11 +504,14 @@ public class AutoscalerClient implements BackgroundResource {
    * </code></pre>
    *
    * @param zone Name of the zone for this request.
-   * @param autoscalerResource Represents an Autoscaler resource. Autoscalers allow you to
-   *     automatically scale virtual machine instances in managed instance groups according to an
-   *     autoscaling policy that you define. For more information, read Autoscaling Groups of
-   *     Instances. (== resource_for beta.autoscalers ==) (== resource_for v1.autoscalers ==) (==
-   *     resource_for beta.regionAutoscalers ==) (== resource_for v1.regionAutoscalers ==)
+   * @param autoscalerResource Represents an Autoscaler resource.
+   *     <p>Use autoscalers to automatically add or delete instances from a managed instance group
+   *     according to your defined autoscaling policy. For more information, read Autoscaling Groups
+   *     of Instances.
+   *     <p>For zonal managed instance groups resource, use the autoscaler resource.
+   *     <p>For regional managed instance groups, use the regionAutoscalers resource. (==
+   *     resource_for beta.autoscalers ==) (== resource_for v1.autoscalers ==) (== resource_for
+   *     beta.regionAutoscalers ==) (== resource_for v1.regionAutoscalers ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -537,11 +540,14 @@ public class AutoscalerClient implements BackgroundResource {
    * </code></pre>
    *
    * @param zone Name of the zone for this request.
-   * @param autoscalerResource Represents an Autoscaler resource. Autoscalers allow you to
-   *     automatically scale virtual machine instances in managed instance groups according to an
-   *     autoscaling policy that you define. For more information, read Autoscaling Groups of
-   *     Instances. (== resource_for beta.autoscalers ==) (== resource_for v1.autoscalers ==) (==
-   *     resource_for beta.regionAutoscalers ==) (== resource_for v1.regionAutoscalers ==)
+   * @param autoscalerResource Represents an Autoscaler resource.
+   *     <p>Use autoscalers to automatically add or delete instances from a managed instance group
+   *     according to your defined autoscaling policy. For more information, read Autoscaling Groups
+   *     of Instances.
+   *     <p>For zonal managed instance groups resource, use the autoscaler resource.
+   *     <p>For regional managed instance groups, use the regionAutoscalers resource. (==
+   *     resource_for beta.autoscalers ==) (== resource_for v1.autoscalers ==) (== resource_for
+   *     beta.regionAutoscalers ==) (== resource_for v1.regionAutoscalers ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -761,11 +767,14 @@ public class AutoscalerClient implements BackgroundResource {
    *
    * @param autoscaler Name of the autoscaler to patch.
    * @param zone Name of the zone for this request.
-   * @param autoscalerResource Represents an Autoscaler resource. Autoscalers allow you to
-   *     automatically scale virtual machine instances in managed instance groups according to an
-   *     autoscaling policy that you define. For more information, read Autoscaling Groups of
-   *     Instances. (== resource_for beta.autoscalers ==) (== resource_for v1.autoscalers ==) (==
-   *     resource_for beta.regionAutoscalers ==) (== resource_for v1.regionAutoscalers ==)
+   * @param autoscalerResource Represents an Autoscaler resource.
+   *     <p>Use autoscalers to automatically add or delete instances from a managed instance group
+   *     according to your defined autoscaling policy. For more information, read Autoscaling Groups
+   *     of Instances.
+   *     <p>For zonal managed instance groups resource, use the autoscaler resource.
+   *     <p>For regional managed instance groups, use the regionAutoscalers resource. (==
+   *     resource_for beta.autoscalers ==) (== resource_for v1.autoscalers ==) (== resource_for
+   *     beta.regionAutoscalers ==) (== resource_for v1.regionAutoscalers ==)
    * @param fieldMask The fields that should be serialized (even if they have empty values). If the
    *     containing message object has a non-null fieldmask, then all the fields in the field mask
    *     (and only those fields in the field mask) will be serialized. If the containing object does
@@ -808,11 +817,14 @@ public class AutoscalerClient implements BackgroundResource {
    *
    * @param autoscaler Name of the autoscaler to patch.
    * @param zone Name of the zone for this request.
-   * @param autoscalerResource Represents an Autoscaler resource. Autoscalers allow you to
-   *     automatically scale virtual machine instances in managed instance groups according to an
-   *     autoscaling policy that you define. For more information, read Autoscaling Groups of
-   *     Instances. (== resource_for beta.autoscalers ==) (== resource_for v1.autoscalers ==) (==
-   *     resource_for beta.regionAutoscalers ==) (== resource_for v1.regionAutoscalers ==)
+   * @param autoscalerResource Represents an Autoscaler resource.
+   *     <p>Use autoscalers to automatically add or delete instances from a managed instance group
+   *     according to your defined autoscaling policy. For more information, read Autoscaling Groups
+   *     of Instances.
+   *     <p>For zonal managed instance groups resource, use the autoscaler resource.
+   *     <p>For regional managed instance groups, use the regionAutoscalers resource. (==
+   *     resource_for beta.autoscalers ==) (== resource_for v1.autoscalers ==) (== resource_for
+   *     beta.regionAutoscalers ==) (== resource_for v1.regionAutoscalers ==)
    * @param fieldMask The fields that should be serialized (even if they have empty values). If the
    *     containing message object has a non-null fieldmask, then all the fields in the field mask
    *     (and only those fields in the field mask) will be serialized. If the containing object does
@@ -912,11 +924,14 @@ public class AutoscalerClient implements BackgroundResource {
    *
    * @param autoscaler Name of the autoscaler to update.
    * @param zone Name of the zone for this request.
-   * @param autoscalerResource Represents an Autoscaler resource. Autoscalers allow you to
-   *     automatically scale virtual machine instances in managed instance groups according to an
-   *     autoscaling policy that you define. For more information, read Autoscaling Groups of
-   *     Instances. (== resource_for beta.autoscalers ==) (== resource_for v1.autoscalers ==) (==
-   *     resource_for beta.regionAutoscalers ==) (== resource_for v1.regionAutoscalers ==)
+   * @param autoscalerResource Represents an Autoscaler resource.
+   *     <p>Use autoscalers to automatically add or delete instances from a managed instance group
+   *     according to your defined autoscaling policy. For more information, read Autoscaling Groups
+   *     of Instances.
+   *     <p>For zonal managed instance groups resource, use the autoscaler resource.
+   *     <p>For regional managed instance groups, use the regionAutoscalers resource. (==
+   *     resource_for beta.autoscalers ==) (== resource_for v1.autoscalers ==) (== resource_for
+   *     beta.regionAutoscalers ==) (== resource_for v1.regionAutoscalers ==)
    * @param fieldMask The fields that should be serialized (even if they have empty values). If the
    *     containing message object has a non-null fieldmask, then all the fields in the field mask
    *     (and only those fields in the field mask) will be serialized. If the containing object does
@@ -958,11 +973,14 @@ public class AutoscalerClient implements BackgroundResource {
    *
    * @param autoscaler Name of the autoscaler to update.
    * @param zone Name of the zone for this request.
-   * @param autoscalerResource Represents an Autoscaler resource. Autoscalers allow you to
-   *     automatically scale virtual machine instances in managed instance groups according to an
-   *     autoscaling policy that you define. For more information, read Autoscaling Groups of
-   *     Instances. (== resource_for beta.autoscalers ==) (== resource_for v1.autoscalers ==) (==
-   *     resource_for beta.regionAutoscalers ==) (== resource_for v1.regionAutoscalers ==)
+   * @param autoscalerResource Represents an Autoscaler resource.
+   *     <p>Use autoscalers to automatically add or delete instances from a managed instance group
+   *     according to your defined autoscaling policy. For more information, read Autoscaling Groups
+   *     of Instances.
+   *     <p>For zonal managed instance groups resource, use the autoscaler resource.
+   *     <p>For regional managed instance groups, use the regionAutoscalers resource. (==
+   *     resource_for beta.autoscalers ==) (== resource_for v1.autoscalers ==) (== resource_for
+   *     beta.regionAutoscalers ==) (== resource_for v1.regionAutoscalers ==)
    * @param fieldMask The fields that should be serialized (even if they have empty values). If the
    *     containing message object has a non-null fieldmask, then all the fields in the field mask
    *     (and only those fields in the field mask) will be serialized. If the containing object does

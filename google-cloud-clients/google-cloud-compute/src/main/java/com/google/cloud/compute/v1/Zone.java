@@ -25,7 +25,13 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
-/** A Zone resource. (== resource_for beta.zones ==) (== resource_for v1.zones ==) Next ID: 17 */
+/**
+ * Represents a Zone resource.
+ *
+ * <p>A zone is a deployment area. These deployment areas are subsets of a region. For example the
+ * zone us-east1-a is located in the us-east1 region. For more information, read Regions and Zones.
+ * (== resource_for beta.zones ==) (== resource_for v1.zones ==)
+ */
 public final class Zone implements ApiMessage {
   private final List<String> availableCpuPlatforms;
   private final String creationTimestamp;
