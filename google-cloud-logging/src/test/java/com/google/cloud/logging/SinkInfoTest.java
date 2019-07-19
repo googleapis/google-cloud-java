@@ -33,7 +33,7 @@ public class SinkInfoTest {
   private static final String NAME = "name";
   private static final String FILTER =
       "logName=projects/my-projectid/logs/syslog AND severity>=ERROR";
-  private static final VersionFormat VERSION = VersionFormat.V1;
+  private static final VersionFormat VERSION = VersionFormat.V2;
   private static final BucketDestination BUCKET_DESTINATION = BucketDestination.of("bucket");
   private static final DatasetDestination DATASET_DESTINATION =
       DatasetDestination.of("project", "dataset");
@@ -154,7 +154,7 @@ public class SinkInfoTest {
             .setDestination(BUCKET_DESTINATION)
             .setName(NAME)
             .setFilter(FILTER)
-            .setVersionFormat(VersionFormat.V1)
+            .setVersionFormat(VersionFormat.V2)
             .build();
     assertEquals(BUCKET_SINK_INFO, updatedSinkInfo);
   }
@@ -164,22 +164,24 @@ public class SinkInfoTest {
     compareSinkInfo(BUCKET_SINK_INFO, SinkInfo.fromPb(BUCKET_SINK_INFO.toPb("project")));
     compareSinkInfo(DATASET_SINK_INFO, SinkInfo.fromPb(DATASET_SINK_INFO.toPb("project")));
     compareSinkInfo(TOPIC_SINK_INFO, SinkInfo.fromPb(TOPIC_SINK_INFO.toPb("project")));
-    SinkInfo sinkInfo = SinkInfo.of("name", BUCKET_DESTINATION);
+    SinkInfo sinkInfo =
+        SinkInfo.newBuilder(NAME, BUCKET_DESTINATION).setVersionFormat(VERSION).build();
     compareSinkInfo(sinkInfo, SinkInfo.fromPb(sinkInfo.toPb("project")));
-    sinkInfo = SinkInfo.of("name", DATASET_DESTINATION);
+    sinkInfo = SinkInfo.newBuilder(NAME, DATASET_DESTINATION).setVersionFormat(VERSION).build();
     compareSinkInfo(sinkInfo, SinkInfo.fromPb(sinkInfo.toPb("project")));
-    sinkInfo = SinkInfo.of("name", TOPIC_DESTINATION);
+    sinkInfo = SinkInfo.newBuilder(NAME, TOPIC_DESTINATION).setVersionFormat(VERSION).build();
     compareSinkInfo(sinkInfo, SinkInfo.fromPb(sinkInfo.toPb("project")));
   }
 
   @Test
   public void testToAndFromPb_NoProjectId() {
     DatasetDestination datasetDestination = DatasetDestination.of("dataset");
-    SinkInfo sinkInfo = SinkInfo.of("name", DATASET_DESTINATION);
+    SinkInfo sinkInfo =
+        SinkInfo.newBuilder(NAME, DATASET_DESTINATION).setVersionFormat(VERSION).build();
     compareSinkInfo(
         sinkInfo, SinkInfo.fromPb(SinkInfo.of("name", datasetDestination).toPb("project")));
     TopicDestination topicDestination = TopicDestination.of("topic");
-    sinkInfo = SinkInfo.of("name", TOPIC_DESTINATION);
+    sinkInfo = SinkInfo.newBuilder(NAME, TOPIC_DESTINATION).setVersionFormat(VERSION).build();
     compareSinkInfo(
         sinkInfo, SinkInfo.fromPb(SinkInfo.of("name", topicDestination).toPb("project")));
   }
