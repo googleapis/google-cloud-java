@@ -18,6 +18,11 @@
             <scope>compile</scope>
         </dependency>
         <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
             <groupId>com.google.api</groupId>
             <artifactId>api-common</artifactId>
             <scope>compile</scope>

@@ -17,15 +17,5 @@
       <artifactId>protobuf-java</artifactId>
       <scope>compile</scope>
     </dependency>
-    <dependency>
-      <groupId>com.google.api</groupId>
-      <artifactId>api-common</artifactId>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>com.google.api.grpc</groupId>
-      <artifactId>proto-google-common-protos</artifactId>
-      <scope>compile</scope>
-    </dependency>
   </dependencies>
 </project>
