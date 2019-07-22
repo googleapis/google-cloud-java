@@ -1126,6 +1126,39 @@ public class StorageSnippets {
     return bucket;
   }
 
+  /** Example of displaying Bucket metadata */
+  public void getBucketMetadata(String bucketName) throws StorageException {
+    // [START storage_get_bucket_metadata]
+    Storage storage = StorageOptions.getDefaultInstance().getService();
+
+    // The name of a bucket, e.g. "my-bucket"
+    // String bucketName = "my-bucket";
+
+    // Select all fields
+    // Fields can be selected individually e.g. Storage.BucketField.NAME
+    Bucket bucket = storage.get(bucketName, BucketGetOption.fields(Storage.BucketField.values()));
+
+    // Print bucket metadata
+    System.out.println("BucketName: " + bucket.getName());
+    System.out.println("DefaultEventBasedHold: " + bucket.getDefaultEventBasedHold());
+    System.out.println("DefaultKmsKeyName: " + bucket.getDefaultKmsKeyName());
+    System.out.println("Id: " + bucket.getGeneratedId());
+    System.out.println("IndexPage: " + bucket.getIndexPage());
+    System.out.println("Labels: " + bucket.getLabels());
+    System.out.println("Location: " + bucket.getLocation());
+    System.out.println("LocationType: " + bucket.getLocationType());
+    System.out.println("Metageneration: " + bucket.getMetageneration());
+    System.out.println("NotFoundPage: " + bucket.getNotFoundPage());
+    System.out.println("RetentionEffectiveTime: " + bucket.getRetentionEffectiveTime());
+    System.out.println("RetentionPeriod: " + bucket.getRetentionPeriod());
+    System.out.println("RetentionPolicyIsLocked: " + bucket.retentionPolicyIsLocked());
+    System.out.println("RequesterPays: " + bucket.requesterPays());
+    System.out.println("SelfLink: " + bucket.getSelfLink());
+    System.out.println("StorageClass: " +  bucket.getStorageClass().name());
+    System.out.println("TimeCreated: " + bucket.getCreateTime());
+    System.out.println("VersioningEnabled: " + bucket.versioningEnabled());
+    // [END storage_get_bucket_metadata]
+  }
   /** Example of displaying Blob metadata */
   public void getBlobMetadata(String bucketName, String blobName) throws StorageException {
     // [START storage_get_metadata]
