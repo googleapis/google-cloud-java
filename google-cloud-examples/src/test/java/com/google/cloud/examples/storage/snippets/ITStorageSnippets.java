@@ -458,6 +458,38 @@ public class ITStorageSnippets {
   }
 
   @Test
+  public void testGetBucketMetadata() {
+    final ByteArrayOutputStream snippetOutputCapture = new ByteArrayOutputStream();
+    System.setOut(new PrintStream(snippetOutputCapture));
+    storageSnippets.getBucketMetadata(BUCKET);
+    Bucket bucket =
+        storage.get(BUCKET, Storage.BucketGetOption.fields(Storage.BucketField.values()));
+    String snippetOutput = snippetOutputCapture.toString();
+    System.setOut(System.out);
+    assertTrue(snippetOutput.contains(("BucketName: " + bucket.getName())));
+    assertTrue(
+        snippetOutput.contains(("DefaultEventBasedHold: " + bucket.getDefaultEventBasedHold())));
+    assertTrue(snippetOutput.contains(("DefaultKmsKeyName: " + bucket.getDefaultKmsKeyName())));
+    assertTrue(snippetOutput.contains(("Id: " + bucket.getGeneratedId())));
+    assertTrue(snippetOutput.contains(("IndexPage: " + bucket.getIndexPage())));
+    assertTrue(snippetOutput.contains(("Labels: " + bucket.getLabels())));
+    assertTrue(snippetOutput.contains(("Location: " + bucket.getLocation())));
+    assertTrue(snippetOutput.contains(("LocationType: " + bucket.getLocationType())));
+    assertTrue(snippetOutput.contains(("Metageneration: " + bucket.getMetageneration())));
+    assertTrue(snippetOutput.contains(("NotFoundPage: " + bucket.getNotFoundPage())));
+    assertTrue(
+        snippetOutput.contains(("RetentionEffectiveTime: " + bucket.getRetentionEffectiveTime())));
+    assertTrue(snippetOutput.contains(("RetentionPeriod: " + bucket.getRetentionPeriod())));
+    assertTrue(
+        snippetOutput.contains(("RetentionPolicyIsLocked: " + bucket.retentionPolicyIsLocked())));
+    assertTrue(snippetOutput.contains(("RequesterPays: " + bucket.requesterPays())));
+    assertTrue(snippetOutput.contains(("SelfLink: " + bucket.getSelfLink())));
+    assertTrue(snippetOutput.contains(("StorageClass: " + bucket.getStorageClass().name())));
+    assertTrue(snippetOutput.contains(("TimeCreated: " + bucket.getCreateTime())));
+    assertTrue(snippetOutput.contains(("VersioningEnabled: " + bucket.versioningEnabled())));
+  }
+
+  @Test
   public void testGetBlobMetadata() {
     String blobName = "test-create-empty-blob";
     BlobId blobId = BlobId.of(BUCKET, blobName);
