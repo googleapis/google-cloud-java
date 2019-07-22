@@ -60,7 +60,7 @@ mvn install -B -V \
   -Dgcloud.download.skip=true \
   -T 1C
 
-# prepend Kokoro root directory onto GOOGLE_APPLICATION_CREDENTIALS path
+# if GOOGLE_APPLICATION_CREDIENTIALS is specified as a relative path prepend Kokoro root directory onto it
 if [[ ! -z "${GOOGLE_APPLICATION_CREDENTIALS}" && "${GOOGLE_APPLICATION_CREDENTIALS}" != /* ]]; then
     export GOOGLE_APPLICATION_CREDENTIALS=$(realpath ${KOKORO_ROOT}/src/${GOOGLE_APPLICATION_CREDENTIALS})
 fi
