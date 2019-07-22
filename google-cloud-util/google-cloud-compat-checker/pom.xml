@@ -17,8 +17,6 @@
   <properties>
     <site.installationModule>google-cloud-compat-checker</site.installationModule>
     <grpc.version>1.21.0</grpc.version>
-    <!-- We are currently using the *-android version to support JDK7. -->
-    <guava.version>27.1-android</guava.version>
   </properties>
   <dependencies>
     <dependency>
@@ -35,24 +33,12 @@
       <version>1.6.2</version>
     </dependency>
     <dependency>
-      <groupId>org.codehaus.plexus</groupId>
-      <artifactId>plexus-utils</artifactId>
-    </dependency>
-    <dependency>
       <groupId>com.google.guava</groupId>
       <artifactId>guava</artifactId>
-      <version>${guava.version}</version>
+      <version>28.0-android</version>
+      <scope>runtime</scope>
     </dependency>
   </dependencies>
-  <dependencyManagement>
-    <dependencies>
-      <dependency>
-        <groupId>org.codehaus.plexus</groupId>
-        <artifactId>plexus-utils</artifactId>
-        <version>3.2.1</version>
-      </dependency>
-    </dependencies>
-  </dependencyManagement>
   <build>
     <plugins>
       <plugin>
