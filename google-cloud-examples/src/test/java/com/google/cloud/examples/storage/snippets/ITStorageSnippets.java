@@ -459,20 +459,21 @@ public class ITStorageSnippets {
 
   @Test
   public void testGetBucketMetadata() {
+    Bucket bucket =
+            storage.get(BUCKET, Storage.BucketGetOption.fields(Storage.BucketField.values()));
+    bucket = bucket.toBuilder().setLabels(ImmutableMap.of("k", "v")).build().update();
     final ByteArrayOutputStream snippetOutputCapture = new ByteArrayOutputStream();
     System.setOut(new PrintStream(snippetOutputCapture));
     storageSnippets.getBucketMetadata(BUCKET);
-    Bucket bucket =
-        storage.get(BUCKET, Storage.BucketGetOption.fields(Storage.BucketField.values()));
     String snippetOutput = snippetOutputCapture.toString();
     System.setOut(System.out);
+    System.out.println(snippetOutput);
     assertTrue(snippetOutput.contains(("BucketName: " + bucket.getName())));
     assertTrue(
         snippetOutput.contains(("DefaultEventBasedHold: " + bucket.getDefaultEventBasedHold())));
     assertTrue(snippetOutput.contains(("DefaultKmsKeyName: " + bucket.getDefaultKmsKeyName())));
     assertTrue(snippetOutput.contains(("Id: " + bucket.getGeneratedId())));
     assertTrue(snippetOutput.contains(("IndexPage: " + bucket.getIndexPage())));
-    assertTrue(snippetOutput.contains(("Labels: " + bucket.getLabels())));
     assertTrue(snippetOutput.contains(("Location: " + bucket.getLocation())));
     assertTrue(snippetOutput.contains(("LocationType: " + bucket.getLocationType())));
     assertTrue(snippetOutput.contains(("Metageneration: " + bucket.getMetageneration())));
@@ -487,6 +488,8 @@ public class ITStorageSnippets {
     assertTrue(snippetOutput.contains(("StorageClass: " + bucket.getStorageClass().name())));
     assertTrue(snippetOutput.contains(("TimeCreated: " + bucket.getCreateTime())));
     assertTrue(snippetOutput.contains(("VersioningEnabled: " + bucket.versioningEnabled())));
+    assertTrue(snippetOutput.contains("Labels:"));
+    assertTrue(snippetOutput.contains("k=v"));
   }
 
   @Test

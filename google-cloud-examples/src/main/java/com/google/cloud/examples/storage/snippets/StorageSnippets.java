@@ -1152,21 +1152,12 @@ public class StorageSnippets {
     System.out.println("StorageClass: " + bucket.getStorageClass().name());
     System.out.println("TimeCreated: " + bucket.getCreateTime());
     System.out.println("VersioningEnabled: " + bucket.versioningEnabled());
-    String labelsString = null;
     if(bucket.getLabels() != null) {
-      StringBuilder labels = new StringBuilder("{");
-      Iterator<Map.Entry<String, String>> iterator = bucket.getLabels().entrySet().iterator();
-      while (iterator.hasNext()) {
-        Map.Entry<String, String> next = iterator.next();
-        labels.append(next.getKey() + "=" + next.getValue());
-        if (iterator.hasNext()) {
-          labels.append(",");
-        }
+      System.out.println("\n\n\nLabels:");
+      for(Map.Entry<String, String> label : bucket.getLabels().entrySet()) {
+        System.out.println(label.getKey() + "="  + label.getValue());
       }
-      labels.append("}");
-      labelsString = labels.toString();
     }
-    System.out.println("Labels: " + labelsString);
     // [END storage_get_bucket_metadata]
   }
   /** Example of displaying Blob metadata */
