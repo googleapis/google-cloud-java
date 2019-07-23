@@ -134,6 +134,12 @@
       <artifactId>objenesis</artifactId>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>io.opencensus</groupId>
+      <artifactId>opencensus-impl</artifactId>
+      <version>${opencensus.version}</version>
+      <scope>test</scope>
+    </dependency>
   </dependencies>
 
   <reporting>
@@ -168,7 +174,7 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-dependency-plugin</artifactId>
         <configuration>
-          <ignoredUnusedDeclaredDependencies>com.google.auto.value:auto-value,org.objenesis:objenesis</ignoredUnusedDeclaredDependencies>
+          <ignoredUnusedDeclaredDependencies>com.google.auto.value:auto-value,org.objenesis:objenesis,io.opencensus:opencensus-impl</ignoredUnusedDeclaredDependencies>
         </configuration>
       </plugin>
     </plugins>
