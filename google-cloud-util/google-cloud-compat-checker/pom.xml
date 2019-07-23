@@ -17,6 +17,7 @@
   <properties>
     <site.installationModule>google-cloud-compat-checker</site.installationModule>
     <grpc.version>1.21.0</grpc.version>
+    <guava.version>28.0-android</guava.version>
   </properties>
   <dependencies>
     <dependency>
@@ -35,8 +36,7 @@
     <dependency>
       <groupId>com.google.guava</groupId>
       <artifactId>guava</artifactId>
-      <version>28.0-android</version>
-      <scope>runtime</scope>
+      <version>${guava.version}</version>
     </dependency>
   </dependencies>
   <build>
