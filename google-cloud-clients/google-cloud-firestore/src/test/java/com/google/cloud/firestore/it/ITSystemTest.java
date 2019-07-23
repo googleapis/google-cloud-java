@@ -1056,7 +1056,7 @@ public class ITSystemTest {
   }
 
   @Test
-  public void testCollectionGroupQueriesWithStartAtEndAtWithArbitraryDocumentIds()
+  public void collectionGroupQueriesWithStartAtEndAtWithArbitraryDocumentIds()
       throws ExecutionException, InterruptedException {
     // Use `randomColl` to get a random collection group name to use but ensure it starts with 'b'
     // for predictable ordering.
@@ -1101,7 +1101,7 @@ public class ITSystemTest {
   }
 
   @Test
-  public void testCollectionGroupQueriesWithWhereFiltersOnArbitraryDocumentIds()
+  public void collectionGroupQueriesWithWhereFiltersOnArbitraryDocumentIds()
       throws ExecutionException, InterruptedException {
     // Use `randomColl` to get a random collection group name to use but ensure it starts with 'b'
     // for predictable ordering.
@@ -1142,6 +1142,37 @@ public class ITSystemTest {
             .get()
             .get();
     assertEquals(asList("cg-doc2"), querySnapshotToIds(querySnapshot));
+  }
+
+  @Test
+  public void inQueries() throws Exception {
+    addDocument("a", map("zip", 98101));
+    addDocument("b", map("zip", 91102));
+    addDocument("c", map("zip", 98103));
+    addDocument("d", map("zip", asList(98101)));
+    addDocument("e", map("zip", asList("98101", map("zip", 98101))));
+    addDocument("f", map("zip", map("code", 500)));
+
+    QuerySnapshot querySnapshot =
+            randomColl.whereIn("zip", Arrays.<Object>asList(98101, 98103)).get().get();
+
+    assertEquals(asList("a", "c"), querySnapshotToIds(querySnapshot));
+  }
+
+  @Test
+  public void arrayContainsAnyQueries() throws Exception {
+    addDocument("a", map("array", asList(42)));
+    addDocument("b", map("array", asList("a", 42, "c")));
+    addDocument("c", map("array", asList(41.999, "42", map("a", 42))));
+    addDocument("d", map("array", asList(41), "array2", "sigh"));
+    addDocument("e", map("array", asList(43)));
+    addDocument("f", map("array", asList(map("a", 42))));
+    addDocument("e", map("array", 42));
+
+    QuerySnapshot querySnapshot =
+            randomColl.whereArrayContainsAny("array", Arrays.<Object>asList(42, 43)).get().get();
+
+    assertEquals(asList("a", "b", "c", "e"), querySnapshotToIds(querySnapshot));
   }
 
   @Test
