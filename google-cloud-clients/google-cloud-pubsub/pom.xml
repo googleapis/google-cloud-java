@@ -129,6 +129,11 @@
       <classifier>testlib</classifier>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>org.objenesis</groupId>
+      <artifactId>objenesis</artifactId>
+      <scope>test</scope>
+    </dependency>
   </dependencies>
 
   <reporting>
@@ -163,7 +168,7 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-dependency-plugin</artifactId>
         <configuration>
-          <ignoredUnusedDeclaredDependencies>com.google.auto.value:auto-value</ignoredUnusedDeclaredDependencies>
+          <ignoredUnusedDeclaredDependencies>com.google.auto.value:auto-value,org.objenesis:objenesis</ignoredUnusedDeclaredDependencies>
         </configuration>
       </plugin>
     </plugins>
