@@ -203,6 +203,11 @@
 
     <!-- Test dependencies -->
     <dependency>
+      <groupId>org.hamcrest</groupId>
+      <artifactId>hamcrest</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <scope>test</scope>
@@ -223,12 +228,6 @@
           <artifactId>objenesis</artifactId>
         </exclusion>
       </exclusions>
-    </dependency>
-    <dependency>
-      <groupId>org.hamcrest</groupId>
-      <artifactId>hamcrest</artifactId>
-      <scope>test</scope>
-      <version>2.1</version>
     </dependency>
     <dependency>
       <groupId>com.google.guava</groupId>
