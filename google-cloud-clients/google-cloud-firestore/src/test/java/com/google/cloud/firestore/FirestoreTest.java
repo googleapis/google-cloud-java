@@ -27,7 +27,6 @@ import com.google.api.gax.rpc.ApiStreamObserver;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.cloud.firestore.spi.v1.FirestoreRpc;
 import com.google.firestore.v1.BatchGetDocumentsRequest;
-import com.google.firestore.v1.CommitRequest;
 import com.google.firestore.v1.ListCollectionIdsRequest;
 import java.util.List;
 import org.junit.Test;
@@ -53,8 +52,6 @@ public class FirestoreTest {
   @Captor private ArgumentCaptor<ListCollectionIdsRequest> listCollectionIdsCapture;
 
   @Captor private ArgumentCaptor<ApiStreamObserver> streamObserverCapture;
-
-  @Captor private ArgumentCaptor<CommitRequest> commitCapture;
 
   @Test
   public void encodeFieldPath() {
