@@ -36,7 +36,7 @@ enum AutocommitDmlMode {
    * @return a string representation of this {@link AutocommitDmlMode} that can be used in a SQL
    *     statement.
    */
-  public String statementString() {
+  public String getStatementString() {
     return statementString;
   }
 }
