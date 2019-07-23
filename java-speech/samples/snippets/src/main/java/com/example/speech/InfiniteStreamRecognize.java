@@ -176,7 +176,7 @@ public class InfiniteStreamRecognize {
       RecognitionConfig recognitionConfig =
           RecognitionConfig.newBuilder()
               .setEncoding(RecognitionConfig.AudioEncoding.LINEAR16)
-              .setLanguageCode("en-US")
+              .setLanguageCode(languageCode)
               .setSampleRateHertz(16000)
               .build();
 
