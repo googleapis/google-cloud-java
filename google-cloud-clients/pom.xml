@@ -170,7 +170,7 @@
     <!-- make sure to keep version in sync with google-http-client -->
     <apache.httpclient.version>4.5.5</apache.httpclient.version>
     <!-- test dependency versions -->
-    <easymock.version>3.6</easymock.version>
+    <easymock.version>4.0.2</easymock.version>
     <objenesis.version>2.6</objenesis.version>
   </properties>
   <!-- All non-test dependency versions should be added to google-cloud-bom/pom.xml -->
