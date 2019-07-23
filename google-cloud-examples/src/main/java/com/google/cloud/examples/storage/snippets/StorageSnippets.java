@@ -64,11 +64,7 @@ import java.io.InputStream;
 import java.net.URL;
 import java.nio.ByteBuffer;
 import java.nio.file.Path;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.TimeUnit;
 
 /** This class contains a number of snippets for the {@link Storage} interface. */
@@ -1144,7 +1140,6 @@ public class StorageSnippets {
     System.out.println("DefaultKmsKeyName: " + bucket.getDefaultKmsKeyName());
     System.out.println("Id: " + bucket.getGeneratedId());
     System.out.println("IndexPage: " + bucket.getIndexPage());
-    System.out.println("Labels: " + bucket.getLabels());
     System.out.println("Location: " + bucket.getLocation());
     System.out.println("LocationType: " + bucket.getLocationType());
     System.out.println("Metageneration: " + bucket.getMetageneration());
@@ -1157,6 +1152,21 @@ public class StorageSnippets {
     System.out.println("StorageClass: " + bucket.getStorageClass().name());
     System.out.println("TimeCreated: " + bucket.getCreateTime());
     System.out.println("VersioningEnabled: " + bucket.versioningEnabled());
+    String labelsString = null;
+    if(bucket.getLabels() != null) {
+      StringBuilder labels = new StringBuilder("{");
+      Iterator<Map.Entry<String, String>> iterator = bucket.getLabels().entrySet().iterator();
+      while (iterator.hasNext()) {
+        Map.Entry<String, String> next = iterator.next();
+        labels.append(next.getKey() + "=" + next.getValue());
+        if (iterator.hasNext()) {
+          labels.append(",");
+        }
+      }
+      labels.append("}");
+      labelsString = labels.toString();
+    }
+    System.out.println("Labels: " + labelsString);
     // [END storage_get_bucket_metadata]
   }
   /** Example of displaying Blob metadata */
