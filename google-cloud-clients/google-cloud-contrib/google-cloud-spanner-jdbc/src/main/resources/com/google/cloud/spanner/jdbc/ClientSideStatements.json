@@ -24,7 +24,7 @@
 	  "regex": "(?is)\\A\\s*show\\s+variable\\s+retry_aborts_internally\\s*\\z",
 	  "method": "statementShowRetryAbortsInternally",
 	  "exampleStatements": ["show variable retry_aborts_internally"],
-	  "prerequisiteStatements": ["set readonly=false", "set autocommit=false"]
+	  "examplePrerequisiteStatements": ["set readonly=false", "set autocommit=false"]
 	},
 	{
 	  "name": "SHOW VARIABLE AUTOCOMMIT_DML_MODE",
@@ -49,7 +49,7 @@
 	  "regex": "(?is)\\A\\s*show\\s+variable\\s+read_timestamp\\s*\\z",
 	  "method": "statementShowReadTimestamp",
 	  "exampleStatements": ["show variable read_timestamp"],
-	  "prerequisiteStatements": ["set readonly = true", "SELECT 1 AS TEST"]
+	  "examplePrerequisiteStatements": ["set readonly = true", "SELECT 1 AS TEST"]
 	},
 	{
 	  "name": "SHOW VARIABLE COMMIT_TIMESTAMP",
@@ -58,7 +58,7 @@
 	  "regex": "(?is)\\A\\s*show\\s+variable\\s+commit_timestamp\\s*\\z",
 	  "method": "statementShowCommitTimestamp",
 	  "exampleStatements": ["show variable commit_timestamp"],
-	  "prerequisiteStatements": ["update foo set bar=1"]
+	  "examplePrerequisiteStatements": ["update foo set bar=1"]
 	},
 	{
 	  "name": "SHOW VARIABLE READ_ONLY_STALENESS",
@@ -83,7 +83,7 @@
 	  "regex": "(?is)\\A\\s*(?:commit)(?:\\s+transaction)?\\s*\\z",
 	  "method": "statementCommit",
 	  "exampleStatements": ["commit", "commit transaction"],
-	  "prerequisiteStatements": ["begin transaction"]
+	  "examplePrerequisiteStatements": ["begin transaction"]
 	},
 	{
 	  "name": "ROLLBACK TRANSACTION",
@@ -92,7 +92,7 @@
 	  "regex": "(?is)\\A\\s*(?:rollback)(?:\\s+transaction)?\\s*\\z",
 	  "method": "statementRollback",
 	  "exampleStatements": ["rollback", "rollback transaction"],
-	  "prerequisiteStatements": ["begin transaction"]
+	  "examplePrerequisiteStatements": ["begin transaction"]
 	},
 	{
 	  "name": "START BATCH DDL",
@@ -117,7 +117,7 @@
 	  "regex": "(?is)\\A\\s*(?:run)(?:\\s+batch)\\s*\\z",
 	  "method": "statementRunBatch",
 	  "exampleStatements": ["run batch"],
-	  "prerequisiteStatements": ["start batch ddl"]
+	  "examplePrerequisiteStatements": ["start batch ddl"]
 	},
 	{
 	  "name": "ABORT BATCH",
@@ -126,7 +126,7 @@
 	  "regex": "(?is)\\A\\s*(?:abort)(?:\\s+batch)\\s*\\z",
 	  "method": "statementAbortBatch",
 	  "exampleStatements": ["abort batch"],
-	  "prerequisiteStatements": ["start batch ddl"]
+	  "examplePrerequisiteStatements": ["start batch ddl"]
 	},
 	{
 	  "name": "SET AUTOCOMMIT = TRUE|FALSE",
@@ -163,7 +163,7 @@
 	  "regex": "(?is)\\A\\s*set\\s+retry_aborts_internally\\s*(?:=)\\s*(.*)\\z",
 	  "method": "statementSetRetryAbortsInternally",
 	  "exampleStatements": ["set retry_aborts_internally = true", "set retry_aborts_internally = false"],
-	  "prerequisiteStatements": ["set readonly = false", "set autocommit = false"],
+	  "examplePrerequisiteStatements": ["set readonly = false", "set autocommit = false"],
 	  "setStatement": {
 	    "propertyName": "RETRY_ABORTS_INTERNALLY",
 	    "separator": "=",
@@ -206,7 +206,7 @@
 	  "regex": "(?is)\\A\\s*set\\s+transaction\\s*(?:\\s+)\\s*(.*)\\z",
 	  "method": "statementSetTransactionMode",
 	  "exampleStatements": ["set transaction read only", "set transaction read write"],
-	  "prerequisiteStatements": ["set autocommit = false"],
+	  "examplePrerequisiteStatements": ["set autocommit = false"],
 	  "setStatement": {
 	    "propertyName": "TRANSACTION",
 	    "separator": "\\s+",

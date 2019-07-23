@@ -37,7 +37,7 @@ interface ClientSideStatement {
    *     statements may be executed on a connection. For GET READ_TIMESTAMP this would for example
    *     be a couple of statements that generate a read-only transaction.
    */
-  List<String> getPrerequisiteStatements();
+  List<String> getExamplePrerequisiteStatements();
 
   /**
    * @return <code>true</code> if this {@link ClientSideStatement} will return a {@link ResultSet}.
