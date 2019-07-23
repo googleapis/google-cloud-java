@@ -17,6 +17,7 @@
 package com.google.cloud.firestore.it;
 
 import static com.google.cloud.firestore.LocalFirestoreHelper.map;
+import static com.google.common.collect.Sets.newHashSet;
 import static java.util.Arrays.asList;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -52,7 +53,9 @@ import com.google.cloud.firestore.Transaction;
 import com.google.cloud.firestore.Transaction.Function;
 import com.google.cloud.firestore.WriteBatch;
 import com.google.cloud.firestore.WriteResult;
+import com.google.common.base.Joiner;
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.Sets;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -60,9 +63,12 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
+import java.util.TreeSet;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Semaphore;
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import javax.annotation.Nullable;
 import org.junit.After;
@@ -886,6 +892,11 @@ public class ITSystemTest {
     final Semaphore semaphore = new Semaphore(0);
     ListenerRegistration registration = null;
 
+    final Set<String> expectedEvents =
+        Sets.newTreeSet(
+            newHashSet("event 0", "event 1", "event 2", "event 3", "event 4", "event 5"));
+    final Set<String> actualEvents = Collections.synchronizedSet(new TreeSet<String>());
+
     try {
       registration =
           randomColl
@@ -898,26 +909,31 @@ public class ITSystemTest {
                     @Override
                     public void onEvent(
                         @Nullable QuerySnapshot value, @Nullable FirestoreException error) {
+                      System.out.printf("onEvent(value : %s, error : %s)%n", value, error);
                       try {
                         switch (semaphore.availablePermits()) {
                           case 0:
+                            actualEvents.add("event 0");
                             assertTrue(value.isEmpty());
                             ref1 = randomColl.add(map("foo", "foo")).get();
                             ref2 = randomColl.add(map("foo", "bar")).get();
                             break;
                           case 1:
+                            actualEvents.add("event 1");
                             assertEquals(1, value.size());
                             assertEquals(1, value.getDocumentChanges().size());
                             assertEquals(Type.ADDED, value.getDocumentChanges().get(0).getType());
                             ref1.set(map("foo", "bar"));
                             break;
                           case 2:
+                            actualEvents.add("event 2");
                             assertEquals(2, value.size());
                             assertEquals(1, value.getDocumentChanges().size());
                             assertEquals(Type.ADDED, value.getDocumentChanges().get(0).getType());
                             ref1.set(map("foo", "bar", "bar", " foo"));
                             break;
                           case 3:
+                            actualEvents.add("event 3");
                             assertEquals(2, value.size());
                             assertEquals(1, value.getDocumentChanges().size());
                             assertEquals(
@@ -925,12 +941,14 @@ public class ITSystemTest {
                             ref2.set(map("foo", "foo"));
                             break;
                           case 4:
+                            actualEvents.add("event 4");
                             assertEquals(1, value.size());
                             assertEquals(1, value.getDocumentChanges().size());
                             assertEquals(Type.REMOVED, value.getDocumentChanges().get(0).getType());
                             ref1.delete();
                             break;
                           case 5:
+                            actualEvents.add("event 5");
                             assertTrue(value.isEmpty());
                             assertEquals(1, value.getDocumentChanges().size());
                             assertEquals(Type.REMOVED, value.getDocumentChanges().get(0).getType());
@@ -943,7 +961,18 @@ public class ITSystemTest {
                     }
                   });
 
-      semaphore.acquire(6);
+      final boolean tryAcquire = semaphore.tryAcquire(6, 60, TimeUnit.SECONDS);
+
+      final Joiner j = Joiner.on(", ");
+      final String expectedString = j.join(expectedEvents);
+      final String actualString = j.join(actualEvents);
+      assertTrue(
+          String.format(
+              "did not receive all expected events within the deadline.%n"
+                  + "expectedEvents = [%s]%n"
+                  + "  actualEvents = [%s]%n",
+              expectedString, actualString),
+          tryAcquire);
     } finally {
       if (registration != null) {
         registration.remove();
