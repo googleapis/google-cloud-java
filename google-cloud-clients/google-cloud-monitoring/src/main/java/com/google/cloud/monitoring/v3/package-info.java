@@ -115,4 +115,7 @@
  * </code>
  * </pre>
  */
+@Generated("by gapic-generator")
 package com.google.cloud.monitoring.v3;
+
+import javax.annotation.Generated;
