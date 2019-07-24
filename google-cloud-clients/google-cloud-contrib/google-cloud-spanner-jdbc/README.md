@@ -1,6 +1,6 @@
-#JDBC driver for Google Cloud Spanner
+# JDBC Driver for Google Cloud Spanner
 
-JDBC driver for
+JDBC Driver for
 [Google Cloud Spanner](https://cloud.google.com/spanner/).
 
 ## Quickstart
@@ -64,7 +64,7 @@ The supported connection properties are:
 CloudSpannerJdbcConnection#setRetryAbortsInternally(boolean) for more information.
 
 ### Authentication
-The JDBC driver will either use the credentials that are specified in the connection URL, or if none specified, the default credentials of the environment.
+The JDBC Driver will either use the credentials that are specified in the connection URL, or if none specified, the default credentials of the environment.
 
 See the
 [Authentication](https://github.com/googleapis/google-cloud-java#authentication)
@@ -72,19 +72,19 @@ section in the base directory's README for more information.
 
 ## Examples
 
-The google-cloud-spanner-jdbc-examples project contains a number of examples on how to use the JDBC driver. These include:
+The google-cloud-spanner-jdbc-examples project contains a number of examples on how to use the JDBC Driver. These include:
 
 * JdbcConnectExamples: Contains examples on how to obtain a JDBC connection for Cloud Spanner.
 * JdbcAutocommitExamples: Contains examples on how to use a JDBC connection in autocommit mode.
 * JdbcTransactionExamples: Contains examples on how to use the JDBC connection with read/write and read-only transactions.
-* JdbcBatchExamples: Shows the batching capabilities of the Cloud Spanner JDBC driver.
+* JdbcBatchExamples: Shows the batching capabilities of the Cloud Spanner JDBC Driver.
 * JdbcVariablesExamples: Shows how to use custom SQL statements to read and write variables from a JDBC connection.
 * JdbcCustomMethodsExample: Shows how to use the custom methods that are exposed by the `com.google.cloud.spanner.jdbc.CloudSpannerJdbcConnection` interface.
 
 
 ## Shaded JAR
 
-You can build a shaded JAR of the JDBC driver to use with third-party tools using the following command:
+You can build a shaded JAR of the JDBC Driver to use with third-party tools using the following command:
 
 ```
 mvn package -Pbuild-jdbc-driver
@@ -92,7 +92,7 @@ mvn package -Pbuild-jdbc-driver
 
 ## Java Versions
 
-Java 7 or above is required for using this JDBC driver.
+Java 7 or above is required for using this JDBC Driver.
 
 ## Versioning
 
