@@ -19,6 +19,7 @@ package com.google.cloud.spanner.jdbc;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
+import static org.junit.Assert.fail;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -157,15 +158,27 @@ public class ReplaceableForwardingResultSetTest {
     for (Method method : ReplaceableForwardingResultSet.class.getDeclaredMethods()) {
       if (Modifier.isPublic(method.getModifiers()) && !excludedMethods.contains(method.getName())) {
         boolean exception = false;
+        int numberOfParameters = method.getParameterTypes().length;
+        Class<?> firstParameterType = null;
+        if (numberOfParameters == 1) {
+          firstParameterType = method.getParameterTypes()[0];
+        }
         try {
-          if (method.getParameterTypes().length == 0) {
-            method.invoke(subject);
-          } else if (method.getParameterTypes().length == 1
-              && method.getParameterTypes()[0].equals(String.class)) {
-            method.invoke(subject, "test");
-          } else if (method.getParameterTypes().length == 1
-              && method.getParameterTypes()[0].equals(int.class)) {
-            method.invoke(subject, 0);
+          switch (numberOfParameters) {
+            case 0:
+              method.invoke(subject);
+              break;
+            case 1:
+              if (firstParameterType == String.class) {
+                method.invoke(subject, "test");
+              } else if (firstParameterType == int.class) {
+                method.invoke(subject, 0);
+              } else {
+                fail("unknown parameter type");
+              }
+              break;
+            default:
+              fail("method with more than 1 parameter is unknown");
           }
         } catch (InvocationTargetException e) {
           if (e.getCause().getClass().equals(expectedException)) {
@@ -189,6 +202,9 @@ public class ReplaceableForwardingResultSetTest {
     try (ReplaceableForwardingResultSet subject = new ReplaceableForwardingResultSet(delegate)) {
       subject.next();
 
+      // Cloud Spanner result sets use zero-based column indices, as opposed to the one-based column
+      // indices used by JDBC. The subject.getBoolean(0) and further zero-based calls below should
+      // therefore not cause any exceptions.
       subject.getBoolean(0);
       verify(delegate).getBoolean(0);
       subject.getBoolean("test0");
