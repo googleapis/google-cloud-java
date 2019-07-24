@@ -557,7 +557,7 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
           .setInitialCallSettings(
               UnaryCallSettings
                   .<BatchUpdateEntityTypesRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
                   .build())
           .setResponseTransformer(
@@ -604,7 +604,7 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
           .setInitialCallSettings(
               UnaryCallSettings
                   .<BatchCreateEntitiesRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
                   .build())
           .setResponseTransformer(
@@ -627,7 +627,7 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
           .setInitialCallSettings(
               UnaryCallSettings
                   .<BatchUpdateEntitiesRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
                   .build())
           .setResponseTransformer(
