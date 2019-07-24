@@ -949,4 +949,7 @@
  * </code>
  * </pre>
  */
+@Generated("by gapic-generator")
 package com.google.cloud.compute.v1;
+
+import javax.annotation.Generated;
