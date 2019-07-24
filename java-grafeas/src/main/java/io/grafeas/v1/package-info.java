@@ -45,4 +45,7 @@
  * </code>
  * </pre>
  */
+@Generated("by gapic-generator")
 package io.grafeas.v1;
+
+import javax.annotation.Generated;
