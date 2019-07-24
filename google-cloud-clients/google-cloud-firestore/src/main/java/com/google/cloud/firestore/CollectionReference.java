@@ -27,10 +27,11 @@ import com.google.common.util.concurrent.MoreExecutors;
 import com.google.firestore.v1.Document;
 import com.google.firestore.v1.DocumentMask;
 import com.google.firestore.v1.ListDocumentsRequest;
-import java.util.Iterator;
-import java.util.Map;
+
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
+import java.util.Iterator;
+import java.util.Map;
 
 /**
  * A CollectionReference can be used for adding documents, getting document references, and querying
@@ -165,6 +166,22 @@ public class CollectionReference extends Query {
         };
       }
     };
+  }
+
+  @Nonnull
+  public ApiFuture<?> futureListDocuments() {
+    ListDocumentsRequest.Builder request = ListDocumentsRequest.newBuilder();
+    request.setParent(options.getParentPath().toString());
+    request.setCollectionId(options.getCollectionId());
+    request.setMask(DocumentMask.getDefaultInstance());
+    request.setShowMissing(true);
+
+    try {
+      return firestore.sendRequest(
+          request.build(), firestore.getClient().listDocumentsPagedCallable());
+    } catch (ApiException exception) {
+      throw FirestoreException.apiException(exception);
+    }
   }
 
   /**
