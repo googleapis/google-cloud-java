@@ -66,4 +66,7 @@
  * </code>
  * </pre>
  */
+@Generated("by gapic-generator")
 package com.google.cloud.errorreporting.v1beta1;
+
+import javax.annotation.Generated;
