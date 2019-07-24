@@ -513,7 +513,7 @@ public class CloudRedisStubSettings extends StubSettings<CloudRedisStubSettings>
           .setInitialCallSettings(
               UnaryCallSettings
                   .<CreateInstanceRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
                   .build())
           .setResponseTransformer(
@@ -536,7 +536,7 @@ public class CloudRedisStubSettings extends StubSettings<CloudRedisStubSettings>
           .setInitialCallSettings(
               UnaryCallSettings
                   .<UpdateInstanceRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
                   .build())
           .setResponseTransformer(
@@ -559,7 +559,7 @@ public class CloudRedisStubSettings extends StubSettings<CloudRedisStubSettings>
           .setInitialCallSettings(
               UnaryCallSettings
                   .<ImportInstanceRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
                   .build())
           .setResponseTransformer(
@@ -582,7 +582,7 @@ public class CloudRedisStubSettings extends StubSettings<CloudRedisStubSettings>
           .setInitialCallSettings(
               UnaryCallSettings
                   .<ExportInstanceRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
                   .build())
           .setResponseTransformer(
@@ -605,7 +605,7 @@ public class CloudRedisStubSettings extends StubSettings<CloudRedisStubSettings>
           .setInitialCallSettings(
               UnaryCallSettings
                   .<FailoverInstanceRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
                   .build())
           .setResponseTransformer(
@@ -628,7 +628,7 @@ public class CloudRedisStubSettings extends StubSettings<CloudRedisStubSettings>
           .setInitialCallSettings(
               UnaryCallSettings
                   .<DeleteInstanceRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
                   .build())
           .setResponseTransformer(
