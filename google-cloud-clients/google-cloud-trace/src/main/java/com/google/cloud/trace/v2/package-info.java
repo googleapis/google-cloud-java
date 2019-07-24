@@ -38,4 +38,7 @@
  * </code>
  * </pre>
  */
+@Generated("by gapic-generator")
 package com.google.cloud.trace.v2;
+
+import javax.annotation.Generated;
