@@ -407,7 +407,7 @@ public class RealmsServiceStubSettings extends StubSettings<RealmsServiceStubSet
           .createRealmOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings.<CreateRealmRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
                   .build())
           .setResponseTransformer(
@@ -451,7 +451,7 @@ public class RealmsServiceStubSettings extends StubSettings<RealmsServiceStubSet
           .updateRealmOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings.<UpdateRealmRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
                   .build())
           .setResponseTransformer(
