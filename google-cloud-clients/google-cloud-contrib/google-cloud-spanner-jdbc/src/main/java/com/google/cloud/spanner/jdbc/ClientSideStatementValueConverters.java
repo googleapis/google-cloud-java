@@ -20,13 +20,53 @@ import com.google.cloud.spanner.ErrorCode;
 import com.google.cloud.spanner.SpannerExceptionFactory;
 import com.google.cloud.spanner.TimestampBound;
 import com.google.cloud.spanner.TimestampBound.Mode;
+import com.google.common.base.Function;
+import com.google.common.base.Preconditions;
 import com.google.protobuf.Duration;
 import com.google.protobuf.util.Durations;
+import java.util.EnumSet;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /** Contains all {@link ClientSideStatementValueConverter} implementations. */
 class ClientSideStatementValueConverters {
+  /** Map for mapping case-insensitive strings to enums. */
+  private static final class CaseInsensitiveEnumMap<E extends Enum<E>> {
+    private final Map<String, E> map = new HashMap<>();
+
+    /** Create an map using the name of the enum elements as keys. */
+    private CaseInsensitiveEnumMap(Class<E> elementType) {
+      this(
+          elementType,
+          new Function<E, String>() {
+            @Override
+            public String apply(E input) {
+              return input.name();
+            }
+          });
+    }
+
+    /** Create a map using the specific function to get the key per enum value. */
+    private CaseInsensitiveEnumMap(Class<E> elementType, Function<E, String> keyFunction) {
+      Preconditions.checkNotNull(elementType);
+      Preconditions.checkNotNull(keyFunction);
+      EnumSet<E> set = EnumSet.allOf(elementType);
+      for (E e : set) {
+        if (map.put(keyFunction.apply(e).toUpperCase(), e) != null) {
+          throw new IllegalArgumentException(
+              "Enum contains multiple elements with the same case-insensitive key");
+        }
+      }
+    }
+
+    private E get(String value) {
+      Preconditions.checkNotNull(value);
+      return map.get(value.toUpperCase());
+    }
+  }
+
   /** Converter from string to {@link Boolean} */
   static class BooleanConverter implements ClientSideStatementValueConverter<Boolean> {
 
@@ -90,6 +130,7 @@ class ClientSideStatementValueConverters {
   static class ReadOnlyStalenessConverter
       implements ClientSideStatementValueConverter<TimestampBound> {
     private final Pattern allowedValues;
+    private final CaseInsensitiveEnumMap<Mode> values = new CaseInsensitiveEnumMap<>(Mode.class);
 
     public ReadOnlyStalenessConverter(String allowedValues) {
       // Remove the single quotes at the beginning and end.
@@ -111,7 +152,7 @@ class ClientSideStatementValueConverters {
         int groupIndex = 0;
         for (int group = 1; group <= matcher.groupCount(); group++) {
           if (matcher.group(group) != null) {
-            mode = parseMode(matcher.group(group));
+            mode = values.get(matcher.group(group));
             if (mode != null) {
               groupIndex = group;
               break;
@@ -151,20 +192,13 @@ class ClientSideStatementValueConverters {
       }
       return null;
     }
-
-    private Mode parseMode(String name) {
-      for (Mode mode : Mode.values()) {
-        if (mode.name().equalsIgnoreCase(name)) {
-          return mode;
-        }
-      }
-      return null;
-    }
   }
 
   /** Converter for converting strings to {@link AutocommitDmlMode} values. */
   static class AutocommitDmlModeConverter
       implements ClientSideStatementValueConverter<AutocommitDmlMode> {
+    private final CaseInsensitiveEnumMap<AutocommitDmlMode> values =
+        new CaseInsensitiveEnumMap<>(AutocommitDmlMode.class);
 
     public AutocommitDmlModeConverter(String allowedValues) {}
 
@@ -175,18 +209,22 @@ class ClientSideStatementValueConverters {
 
     @Override
     public AutocommitDmlMode convert(String value) {
-      for (AutocommitDmlMode mode : AutocommitDmlMode.values()) {
-        if (mode.statementString().equalsIgnoreCase(value)) {
-          return mode;
-        }
-      }
-      return null;
+      return values.get(value);
     }
   }
 
   /** Converter for converting string values to {@link TransactionMode} values. */
   static class TransactionModeConverter
       implements ClientSideStatementValueConverter<TransactionMode> {
+    private final CaseInsensitiveEnumMap<TransactionMode> values =
+        new CaseInsensitiveEnumMap<>(
+            TransactionMode.class,
+            new Function<TransactionMode, String>() {
+              @Override
+              public String apply(TransactionMode input) {
+                return input.getStatementString();
+              }
+            });
 
     public TransactionModeConverter(String allowedValues) {}
 
@@ -197,14 +235,9 @@ class ClientSideStatementValueConverters {
 
     @Override
     public TransactionMode convert(String value) {
-      // Transaction mode may contain spaces.
+      // Transaction mode may contain multiple spaces.
       String valueWithSingleSpaces = value.replaceAll("\\s+", " ");
-      for (TransactionMode mode : TransactionMode.values()) {
-        if (mode.statementString().equalsIgnoreCase(valueWithSingleSpaces)) {
-          return mode;
-        }
-      }
-      return null;
+      return values.get(valueWithSingleSpaces);
     }
   }
 }
