@@ -27,6 +27,10 @@ import java.util.Iterator;
 /**
  * JDBC connection with a number of additional Cloud Spanner specific methods. JDBC connections that
  * are returned by the Cloud Spanner {@link JdbcDriver} will implement this interface.
+ *
+ * <p>Calling {@link Connection#unwrap(Class)} with {@link CloudSpannerJdbcConnection#getClass()} as
+ * input on a {@link Connection} returned by the Cloud Spanner JDBC Driver will return a {@link
+ * CloudSpannerJdbcConnection} instance.
  */
 public interface CloudSpannerJdbcConnection extends Connection {
 
