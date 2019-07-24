@@ -43,4 +43,7 @@
  * </code>
  * </pre>
  */
+@Generated("by gapic-generator")
 package com.google.cloud.kms.v1;
+
+import javax.annotation.Generated;
