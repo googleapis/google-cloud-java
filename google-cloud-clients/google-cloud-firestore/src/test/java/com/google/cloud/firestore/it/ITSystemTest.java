@@ -54,10 +54,12 @@ import com.google.cloud.firestore.Transaction;
 import com.google.cloud.firestore.Transaction.Function;
 import com.google.cloud.firestore.WriteBatch;
 import com.google.cloud.firestore.WriteResult;
+import com.google.cloud.firestore.v1.FirestoreClient;
 import com.google.common.base.Optional;
 import com.google.common.base.Predicate;
 import com.google.common.collect.FluentIterable;
 import com.google.common.collect.ImmutableList;
+import com.google.firestore.v1.Document;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -662,6 +664,35 @@ public class ITSystemTest {
     int count = 0;
     for (DocumentReference documentRef : collectionRefs) {
       assertEquals(documents[count++], documentRef.getId());
+    }
+    assertEquals(documents.length, count);
+  }
+
+  @Test
+  public void listDocumentsAsync() throws Exception {
+    // We test with 21 documents since 20 documents are by default returned in a single paged
+    // response.
+    String[] documents =
+        new String[] {
+          "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16",
+          "17", "18", "19", "20", "21"
+        };
+    Arrays.sort(documents); // Sort in alphabetical (non-numeric) order.
+
+    WriteBatch batch = firestore.batch();
+    for (String document : documents) {
+      batch.create(randomColl.document(document), SINGLE_FIELD_OBJECT);
+    }
+    batch.commit().get();
+
+    ApiFuture<FirestoreClient.ListDocumentsPagedResponse> collectionRefs =
+        (ApiFuture<FirestoreClient.ListDocumentsPagedResponse>) randomColl.listDocumentAsync();
+    Iterator<Document> iterator = collectionRefs.get().iterateAll().iterator();
+
+    int count = 0;
+    for (Iterator<Document> documentIterator = iterator; documentIterator.hasNext(); ) {
+      DocumentReference docRef = randomColl.document(documentIterator.next().getName());
+      assertEquals(documents[count++], docRef.getId());
     }
     assertEquals(documents.length, count);
   }

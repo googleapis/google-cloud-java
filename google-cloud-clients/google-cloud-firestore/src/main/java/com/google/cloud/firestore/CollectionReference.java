@@ -167,8 +167,13 @@ public class CollectionReference extends Query {
     };
   }
 
+  /**
+   * Retrieves the list of documents in this collection
+   *
+   * @return An ApiFuture
+   */
   @Nonnull
-  public ApiFuture<?> futureListDocuments() {
+  public ApiFuture<?> listDocumentAsync() {
     ListDocumentsRequest.Builder request = ListDocumentsRequest.newBuilder();
     request.setParent(options.getParentPath().toString());
     request.setCollectionId(options.getCollectionId());
