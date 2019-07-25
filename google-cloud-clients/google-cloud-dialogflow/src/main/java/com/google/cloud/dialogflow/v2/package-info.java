@@ -209,4 +209,7 @@
  * </code>
  * </pre>
  */
+@Generated("by gapic-generator")
 package com.google.cloud.dialogflow.v2;
+
+import javax.annotation.Generated;
