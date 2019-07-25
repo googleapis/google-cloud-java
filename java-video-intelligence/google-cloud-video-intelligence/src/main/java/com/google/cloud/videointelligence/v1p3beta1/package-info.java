@@ -52,4 +52,7 @@
  * </code>
  * </pre>
  */
+@Generated("by gapic-generator")
 package com.google.cloud.videointelligence.v1p3beta1;
+
+import javax.annotation.Generated;
