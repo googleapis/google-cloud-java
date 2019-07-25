@@ -52,7 +52,7 @@ enum JdbcDataType {
     }
 
     @Override
-    public Type getGoogleType() {
+    public Type getSpannerType() {
       return Type.bool();
     }
   },
@@ -78,7 +78,7 @@ enum JdbcDataType {
     }
 
     @Override
-    public Type getGoogleType() {
+    public Type getSpannerType() {
       return Type.bytes();
     }
   },
@@ -104,7 +104,7 @@ enum JdbcDataType {
     }
 
     @Override
-    public Type getGoogleType() {
+    public Type getSpannerType() {
       return Type.date();
     }
   },
@@ -137,7 +137,7 @@ enum JdbcDataType {
     }
 
     @Override
-    public Type getGoogleType() {
+    public Type getSpannerType() {
       return Type.float64();
     }
   },
@@ -171,7 +171,7 @@ enum JdbcDataType {
     }
 
     @Override
-    public Type getGoogleType() {
+    public Type getSpannerType() {
       return Type.int64();
     }
   },
@@ -197,7 +197,7 @@ enum JdbcDataType {
     }
 
     @Override
-    public Type getGoogleType() {
+    public Type getSpannerType() {
       return Type.string();
     }
   },
@@ -223,7 +223,7 @@ enum JdbcDataType {
     }
 
     @Override
-    public Type getGoogleType() {
+    public Type getSpannerType() {
       return Type.timestamp();
     }
   };
@@ -232,7 +232,7 @@ enum JdbcDataType {
 
   public abstract Code getCode();
 
-  public abstract Type getGoogleType();
+  public abstract Type getSpannerType();
 
   /**
    * @param rs the result set to look up the elements
