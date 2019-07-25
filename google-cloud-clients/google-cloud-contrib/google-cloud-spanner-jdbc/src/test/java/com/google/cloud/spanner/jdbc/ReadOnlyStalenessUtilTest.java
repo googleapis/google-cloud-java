@@ -178,42 +178,42 @@ public class ReadOnlyStalenessUtilTest {
   public void testStalenessToString() {
     assertThat(
         durationToString(
-            new ReadOnlyStalenessUtil.GetMaxStaleness(
+            new ReadOnlyStalenessUtil.MaxStalenessGetter(
                 TimestampBound.ofMaxStaleness(10L, TimeUnit.NANOSECONDS))),
         is(equalTo("10ns")));
     assertThat(
         durationToString(
-            new ReadOnlyStalenessUtil.GetMaxStaleness(
+            new ReadOnlyStalenessUtil.MaxStalenessGetter(
                 TimestampBound.ofMaxStaleness(1000L, TimeUnit.NANOSECONDS))),
         is(equalTo("1us")));
     assertThat(
         durationToString(
-            new ReadOnlyStalenessUtil.GetMaxStaleness(
+            new ReadOnlyStalenessUtil.MaxStalenessGetter(
                 TimestampBound.ofMaxStaleness(100000L, TimeUnit.NANOSECONDS))),
         is(equalTo("100us")));
     assertThat(
         durationToString(
-            new ReadOnlyStalenessUtil.GetMaxStaleness(
+            new ReadOnlyStalenessUtil.MaxStalenessGetter(
                 TimestampBound.ofMaxStaleness(999999L, TimeUnit.NANOSECONDS))),
         is(equalTo("999999ns")));
     assertThat(
         durationToString(
-            new ReadOnlyStalenessUtil.GetMaxStaleness(
+            new ReadOnlyStalenessUtil.MaxStalenessGetter(
                 TimestampBound.ofMaxStaleness(1L, TimeUnit.SECONDS))),
         is(equalTo("1s")));
     assertThat(
         durationToString(
-            new ReadOnlyStalenessUtil.GetMaxStaleness(
+            new ReadOnlyStalenessUtil.MaxStalenessGetter(
                 TimestampBound.ofMaxStaleness(1000L, TimeUnit.MILLISECONDS))),
         is(equalTo("1s")));
     assertThat(
         durationToString(
-            new ReadOnlyStalenessUtil.GetMaxStaleness(
+            new ReadOnlyStalenessUtil.MaxStalenessGetter(
                 TimestampBound.ofMaxStaleness(1001L, TimeUnit.MILLISECONDS))),
         is(equalTo("1001ms")));
     assertThat(
         durationToString(
-            new ReadOnlyStalenessUtil.GetMaxStaleness(
+            new ReadOnlyStalenessUtil.MaxStalenessGetter(
                 TimestampBound.ofMaxStaleness(1000000000L, TimeUnit.NANOSECONDS))),
         is(equalTo("1s")));
   }

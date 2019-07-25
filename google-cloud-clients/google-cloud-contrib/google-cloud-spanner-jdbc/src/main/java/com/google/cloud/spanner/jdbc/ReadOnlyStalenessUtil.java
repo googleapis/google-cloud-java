@@ -35,8 +35,9 @@ import java.util.concurrent.TimeUnit;
 class ReadOnlyStalenessUtil {
   /**
    * Parses an RFC3339 date/time value with millisecond precision and returns this as a {@link
-   * Timestamp}. Although {@link Timestamp} has nanosecond precision, this method is only used for
-   * parsing read-only staleness values, and more than millisecond precision is not needed for that.
+   * Timestamp}.
+   *
+   * @TODO: add support for nanosecond precision.
    */
   static Timestamp parseRfc3339(String str) throws SpannerException {
     try {
@@ -118,10 +119,10 @@ class ReadOnlyStalenessUtil {
     }
   }
 
-  static final class GetMaxStaleness implements DurationValueGetter {
+  static final class MaxStalenessGetter implements DurationValueGetter {
     private final TimestampBound staleness;
 
-    public GetMaxStaleness(TimestampBound staleness) {
+    public MaxStalenessGetter(TimestampBound staleness) {
       this.staleness = staleness;
     }
 
@@ -171,7 +172,7 @@ class ReadOnlyStalenessUtil {
       case EXACT_STALENESS:
         return "EXACT_STALENESS " + durationToString(new GetExactStaleness(staleness));
       case MAX_STALENESS:
-        return "MAX_STALENESS " + durationToString(new GetMaxStaleness(staleness));
+        return "MAX_STALENESS " + durationToString(new MaxStalenessGetter(staleness));
       default:
         throw new IllegalStateException("Unknown mode: " + staleness.getMode());
     }
