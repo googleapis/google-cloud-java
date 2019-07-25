@@ -414,10 +414,9 @@ public class HttpStorageRpc implements StorageRpc {
 
   private Storage.Objects.Get getCall(StorageObject object, Map<Option, ?> options)
       throws IOException {
-    return storage
-        .objects()
-        .get(object.getBucket(), object.getName())
-        .setGeneration(object.getGeneration())
+    Storage.Objects.Get get = storage.objects().get(object.getBucket(), object.getName());
+    setEncryptionHeaders(get.getRequestHeaders(), ENCRYPTION_KEY_PREFIX, options);
+    return get.setGeneration(object.getGeneration())
         .setProjection(DEFAULT_PROJECTION)
         .setIfMetagenerationMatch(Option.IF_METAGENERATION_MATCH.getLong(options))
         .setIfMetagenerationNotMatch(Option.IF_METAGENERATION_NOT_MATCH.getLong(options))

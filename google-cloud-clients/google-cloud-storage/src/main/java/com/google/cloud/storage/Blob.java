@@ -119,6 +119,8 @@ public class Blob extends BlobInfo {
           return Storage.BlobGetOption.metagenerationNotMatch(blobInfo.getMetageneration());
         case USER_PROJECT:
           return Storage.BlobGetOption.userProject((String) getValue());
+        case CUSTOMER_SUPPLIED_KEY:
+          return Storage.BlobGetOption.decryptionKey((String) getValue());
         default:
           throw new AssertionError("Unexpected enum value");
       }
