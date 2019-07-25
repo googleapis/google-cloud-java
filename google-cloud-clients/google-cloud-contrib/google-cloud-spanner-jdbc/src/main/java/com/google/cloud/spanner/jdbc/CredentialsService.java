@@ -34,17 +34,11 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.nio.channels.Channels;
 
-/**
- * Internal class for the Spanner Connection API. This class and its methods have public visibility
- * only for allowing integration tests to access it. This may change in future releases.
- *
- * <p>Service class for getting credentials from key files stored locally or on cloud storage.
- */
-@VisibleForTesting
-public class CredentialsService {
+/** Service class for getting credentials from key files stored locally or on cloud storage. */
+class CredentialsService {
   private static final String GOOGLE_CLOUD_STORAGE_PREFIX = "gs://";
 
-  @VisibleForTesting public static final CredentialsService INSTANCE = new CredentialsService();
+  static final CredentialsService INSTANCE = new CredentialsService();
 
   /** Util for creating a default http transport */
   static class CloudSpannerOAuthUtil {
@@ -75,8 +69,7 @@ public class CredentialsService {
    * @throws SpannerException If the URL does not point to a valid credentials file, or if the file
    *     cannot be accessed.
    */
-  @VisibleForTesting
-  public GoogleCredentials createCredentials(String credentialsUrl) {
+  GoogleCredentials createCredentials(String credentialsUrl) {
     try {
       if (credentialsUrl == null) {
         return GoogleCredentials.getApplicationDefault();
