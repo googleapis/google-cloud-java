@@ -55,6 +55,7 @@ google-cloud-redis:0.102.0-alpha:0.102.1-alpha-SNAPSHOT
 google-cloud-resourcemanager:0.102.0-alpha:0.102.1-alpha-SNAPSHOT
 google-cloud-scheduler:1.7.0:1.7.1-SNAPSHOT
 google-cloud-securitycenter:0.102.0:0.102.1-SNAPSHOT
+google-cloud-shared-config:0.0.0:0.0.1-SNAPSHOT
 google-cloud-spanner:1.29.0:1.29.1-SNAPSHOT
 google-cloud-speech:1.14.0:1.14.1-SNAPSHOT
 google-cloud-storage:1.84.0:1.84.1-SNAPSHOT
