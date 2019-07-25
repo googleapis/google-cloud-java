@@ -99,10 +99,19 @@ class CustomClassMapper {
     return deserializeToClass(object, clazz, new DeserializeContext(ErrorPath.EMPTY, docRef));
   }
 
+  /**
+   * @param o The representation of type parameter object to serialize
+   * @return <T> The Type Parameter object
+   */
   public static <T> Object serialize(T o) {
     return serialize(o, ErrorPath.EMPTY);
   }
 
+  /**
+   * @param o The representation of type parameter object to serialize
+   * @param path The representation of path to a specific field in an object
+   * @return <T> The Type Parameter object
+   */
   @SuppressWarnings("unchecked")
   public static <T> Object serialize(T o, ErrorPath path) {
     if (path.getLength() > MAX_DEPTH) {
@@ -179,6 +188,12 @@ class CustomClassMapper {
     }
   }
 
+  /**
+   * @param o The representation of object to deserialize
+   * @param type The representation type for deserialize object
+   * @param context Holds information a deserialization operation
+   * @return <T> The Type Parameter object
+   */
   @SuppressWarnings({"unchecked", "TypeParameterUnusedInFormals"})
   public static <T> T deserializeToType(Object o, Type type, DeserializeContext context) {
     if (o == null) {
@@ -215,6 +230,12 @@ class CustomClassMapper {
     }
   }
 
+  /**
+   * @param o The representation of object to deserialize
+   * @param clazz The class of the object to convert to
+   * @param context Holds information a deserialization operation
+   * @return <T> The Type Parameter object
+   */
   @SuppressWarnings("unchecked")
   public static <T> T deserializeToClass(Object o, Class<T> clazz, DeserializeContext context) {
     if (o == null) {
@@ -254,6 +275,12 @@ class CustomClassMapper {
     }
   }
 
+  /**
+   * @param o The representation of object to deserialize
+   * @param type of the object to convert to
+   * @param context Holds information a deserialization operation
+   * @return <T> The Type Parameter object
+   */
   @SuppressWarnings({"unchecked", "TypeParameterUnusedInFormals"})
   public static <T> T deserializeToParameterizedType(
       Object o, ParameterizedType type, DeserializeContext context) {
@@ -313,6 +340,12 @@ class CustomClassMapper {
     }
   }
 
+  /**
+   * @param o The representation of object to deserialize
+   * @param clazz The class of the object to convert to
+   * @param context Holds information a deserialization operation
+   * @return <T> The Type Parameter object
+   */
   @SuppressWarnings("unchecked")
   public static <T> T deserializeToPrimitive(Object o, Class<T> clazz, DeserializeContext context) {
     if (Integer.class.isAssignableFrom(clazz) || int.class.isAssignableFrom(clazz)) {
@@ -332,6 +365,12 @@ class CustomClassMapper {
     }
   }
 
+  /**
+   * @param object The representation of object to deserialize
+   * @param clazz The class of the object to convert to
+   * @param context Holds information a deserialization operation
+   * @return <T> The Type Parameter object
+   */
   @SuppressWarnings("unchecked")
   public static <T> T deserializeToEnum(Object object, Class<T> clazz, DeserializeContext context) {
     if (object instanceof String) {
@@ -545,6 +584,11 @@ class CustomClassMapper {
     }
   }
 
+  /**
+   * @param path The representation of path to a specific field in an object
+   * @param reason represents reason of error
+   * @return IllegalArgumentException with detail message
+   */
   public static IllegalArgumentException serializeError(ErrorPath path, String reason) {
     reason = "Could not serialize object. " + reason;
     if (path.getLength() > 0) {
@@ -553,6 +597,11 @@ class CustomClassMapper {
     return new IllegalArgumentException(reason);
   }
 
+  /**
+   * @param path The representation of path to a specific field in an object
+   * @param reason represents reason of error
+   * @return RuntimeException with detail message
+   */
   public static RuntimeException deserializeError(ErrorPath path, String reason) {
     reason = "Could not deserialize object. " + reason;
     if (path.getLength() > 0) {
