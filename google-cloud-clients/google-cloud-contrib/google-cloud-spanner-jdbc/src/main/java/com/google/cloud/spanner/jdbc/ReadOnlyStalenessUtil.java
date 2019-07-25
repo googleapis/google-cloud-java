@@ -23,15 +23,9 @@ import com.google.cloud.spanner.SpannerException;
 import com.google.cloud.spanner.SpannerExceptionFactory;
 import com.google.cloud.spanner.TimestampBound;
 import com.google.cloud.spanner.TimestampBound.Mode;
-import com.google.common.base.Strings;
 import com.google.protobuf.Duration;
 import com.google.protobuf.util.Durations;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
-import java.util.TimeZone;
 import java.util.concurrent.TimeUnit;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 /**
  * Util class for parsing and converting ReadOnlyStaleness values to/from strings. This util is used
@@ -39,77 +33,19 @@ import java.util.regex.Pattern;
  * Cloud Spanner.
  */
 class ReadOnlyStalenessUtil {
-  private static final TimeZone GMT = TimeZone.getTimeZone("GMT");
-  /** Regular expression for parsing RFC3339 times with nanosecond precision. */
-  private static final String RFC3339_REGEX =
-      "(\\d{4})-(\\d{2})-(\\d{2})" // yyyy-MM-dd
-          + "([Tt](\\d{2}):(\\d{2}):(\\d{2})(\\.\\d{1,9})?)" // 'T'HH:mm:ss.nanoseconds
-          + "([Zz]|([+-])(\\d{2}):(\\d{2}))"; // 'Z' or time zone shift HH:mm following '+' or '-'
-
-  private static final Pattern RFC3339_PATTERN = Pattern.compile(RFC3339_REGEX);
-
   /**
-   * Parses an RFC3339 date/time value. This method is largely based on the method {@link
-   * DateTime#parseRfc3339(String)}, but with some alterations as Spanner requires nanoseconds
-   * precision.
-   *
-   * @param str Date/time string in RFC3339 format.
-   * @throws SpannerException with code {@link ErrorCode#INVALID_ARGUMENT} if {@code str} doesn't
-   *     match the RFC3339 standard format; an exception is thrown if {@code str} doesn't match
-   *     {@code RFC3339_REGEX} or if it contains a time zone shift but no time.
+   * Parses an RFC3339 date/time value with millisecond precision and returns this as a {@link
+   * Timestamp}. Although {@link Timestamp} has nanosecond precision, this method is only used for
+   * parsing read-only staleness values, and more than millisecond precision is not needed for that.
    */
-  static Timestamp parseRfc3339(String str) throws NumberFormatException {
-    Matcher matcher = RFC3339_PATTERN.matcher(str);
-    if (!matcher.matches()) {
+  static Timestamp parseRfc3339(String str) throws SpannerException {
+    try {
+      DateTime dateTime = DateTime.parseRfc3339(str);
+      return Timestamp.ofTimeMicroseconds(dateTime.getValue() * 1000L);
+    } catch (NumberFormatException e) {
       throw SpannerExceptionFactory.newSpannerException(
-          ErrorCode.INVALID_ARGUMENT, "Invalid date/time format: " + str);
+          ErrorCode.INVALID_ARGUMENT, String.format("Invalid timestamp: %s", str), e);
     }
-
-    int year = Integer.parseInt(matcher.group(1)); // yyyy
-    int month = Integer.parseInt(matcher.group(2)) - 1; // MM
-    int day = Integer.parseInt(matcher.group(3)); // dd
-    boolean isTimeGiven = matcher.group(4) != null; // 'T'HH:mm:ss.milliseconds
-    String tzShiftRegexGroup = matcher.group(9); // 'Z', or time zone shift HH:mm following '+'/'-'
-    boolean isTzShiftGiven = tzShiftRegexGroup != null;
-    int hourOfDay = 0;
-    int minute = 0;
-    int second = 0;
-    int nanoseconds = 0;
-
-    if (isTzShiftGiven && !isTimeGiven) {
-      throw SpannerExceptionFactory.newSpannerException(
-          ErrorCode.INVALID_ARGUMENT,
-          "Invalid date/time format, cannot specify time zone shift without specifying time: "
-              + str);
-    }
-
-    if (isTimeGiven) {
-      hourOfDay = Integer.parseInt(matcher.group(5)); // HH
-      minute = Integer.parseInt(matcher.group(6)); // mm
-      second = Integer.parseInt(matcher.group(7)); // ss
-      if (matcher.group(8) != null) { // contains .nanoseconds?
-        String fraction = Strings.padEnd(matcher.group(8).substring(1), 9, '0');
-        nanoseconds = Integer.parseInt(fraction);
-      }
-    }
-    Calendar dateTime = new GregorianCalendar(GMT);
-    dateTime.set(year, month, day, hourOfDay, minute, second);
-    long value = dateTime.getTimeInMillis();
-
-    if (isTimeGiven && isTzShiftGiven) {
-      if (Character.toUpperCase(tzShiftRegexGroup.charAt(0)) != 'Z') {
-        int tzShift =
-            Integer.parseInt(matcher.group(11)) * 60 // time zone shift HH
-                + Integer.parseInt(matcher.group(12)); // time zone shift mm
-        if (matcher.group(10).charAt(0) == '-') { // time zone shift + or -
-          tzShift = -tzShift;
-        }
-        value -= tzShift * 60000L; // e.g. if 1 hour ahead of UTC, subtract an hour to get UTC time
-      }
-    }
-    // convert to seconds and nanoseconds
-    long secondsSinceEpoch = value / 1000L;
-    return Timestamp.ofTimeSecondsAndNanos(secondsSinceEpoch, nanoseconds);
   }
 
   /** The abbreviations for time units that may be used for client side statements. */
