@@ -99,12 +99,12 @@ class CustomClassMapper {
     return deserializeToClass(object, clazz, new DeserializeContext(ErrorPath.EMPTY, docRef));
   }
 
-  static <T> Object serialize(T o) {
+  public static <T> Object serialize(T o) {
     return serialize(o, ErrorPath.EMPTY);
   }
 
   @SuppressWarnings("unchecked")
-  private static <T> Object serialize(T o, ErrorPath path) {
+  public static <T> Object serialize(T o, ErrorPath path) {
     if (path.getLength() > MAX_DEPTH) {
       throw serializeError(
           path,
@@ -180,7 +180,7 @@ class CustomClassMapper {
   }
 
   @SuppressWarnings({"unchecked", "TypeParameterUnusedInFormals"})
-  private static <T> T deserializeToType(Object o, Type type, DeserializeContext context) {
+  public static <T> T deserializeToType(Object o, Type type, DeserializeContext context) {
     if (o == null) {
       return null;
     } else if (type instanceof ParameterizedType) {
@@ -216,7 +216,7 @@ class CustomClassMapper {
   }
 
   @SuppressWarnings("unchecked")
-  private static <T> T deserializeToClass(Object o, Class<T> clazz, DeserializeContext context) {
+  public static <T> T deserializeToClass(Object o, Class<T> clazz, DeserializeContext context) {
     if (o == null) {
       return null;
     } else if (clazz.isPrimitive()
@@ -255,7 +255,7 @@ class CustomClassMapper {
   }
 
   @SuppressWarnings({"unchecked", "TypeParameterUnusedInFormals"})
-  private static <T> T deserializeToParameterizedType(
+  public static <T> T deserializeToParameterizedType(
       Object o, ParameterizedType type, DeserializeContext context) {
     // getRawType should always return a Class<?>
     Class<?> rawType = (Class<?>) type.getRawType();
@@ -314,8 +314,7 @@ class CustomClassMapper {
   }
 
   @SuppressWarnings("unchecked")
-  private static <T> T deserializeToPrimitive(
-      Object o, Class<T> clazz, DeserializeContext context) {
+  public static <T> T deserializeToPrimitive(Object o, Class<T> clazz, DeserializeContext context) {
     if (Integer.class.isAssignableFrom(clazz) || int.class.isAssignableFrom(clazz)) {
       return (T) convertInteger(o, context);
     } else if (Boolean.class.isAssignableFrom(clazz) || boolean.class.isAssignableFrom(clazz)) {
@@ -334,8 +333,7 @@ class CustomClassMapper {
   }
 
   @SuppressWarnings("unchecked")
-  private static <T> T deserializeToEnum(
-      Object object, Class<T> clazz, DeserializeContext context) {
+  public static <T> T deserializeToEnum(Object object, Class<T> clazz, DeserializeContext context) {
     if (object instanceof String) {
       String value = (String) object;
       // We cast to Class without generics here since we can't prove the bound
@@ -547,7 +545,7 @@ class CustomClassMapper {
     }
   }
 
-  private static IllegalArgumentException serializeError(ErrorPath path, String reason) {
+  public static IllegalArgumentException serializeError(ErrorPath path, String reason) {
     reason = "Could not serialize object. " + reason;
     if (path.getLength() > 0) {
       reason = reason + " (found in field '" + path.toString() + "')";
@@ -555,7 +553,7 @@ class CustomClassMapper {
     return new IllegalArgumentException(reason);
   }
 
-  private static RuntimeException deserializeError(ErrorPath path, String reason) {
+  public static RuntimeException deserializeError(ErrorPath path, String reason) {
     reason = "Could not deserialize object. " + reason;
     if (path.getLength() > 0) {
       reason = reason + " (found in field '" + path.toString() + "')";
