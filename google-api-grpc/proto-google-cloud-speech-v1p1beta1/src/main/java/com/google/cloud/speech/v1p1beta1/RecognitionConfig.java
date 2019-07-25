@@ -170,6 +170,23 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
               alternativeLanguageCodes_.add(s);
               break;
             }
+          case 154:
+            {
+              com.google.cloud.speech.v1p1beta1.SpeakerDiarizationConfig.Builder subBuilder = null;
+              if (diarizationConfig_ != null) {
+                subBuilder = diarizationConfig_.toBuilder();
+              }
+              diarizationConfig_ =
+                  input.readMessage(
+                      com.google.cloud.speech.v1p1beta1.SpeakerDiarizationConfig.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(diarizationConfig_);
+                diarizationConfig_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -981,16 +998,12 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    * *Optional* If 'true', enables speaker detection for each recognized word in
    * the top alternative of the recognition result using a speaker_tag provided
    * in the WordInfo.
-   * Note: When this is true, we send all the words from the beginning of the
-   * audio for the top alternative in every consecutive STREAMING responses.
-   * This is done in order to improve our speaker tags as our models learn to
-   * identify the speakers in the conversation over time.
-   * For non-streaming requests, the diarization results will be provided only
-   * in the top alternative of the FINAL SpeechRecognitionResult.
+   * Note: Use diarization_config instead.
    * </pre>
    *
-   * <code>bool enable_speaker_diarization = 16;</code>
+   * <code>bool enable_speaker_diarization = 16 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   public boolean getEnableSpeakerDiarization() {
     return enableSpeakerDiarization_;
   }
@@ -1003,14 +1016,78 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    * <pre>
    * *Optional*
    * If set, specifies the estimated number of speakers in the conversation.
-   * If not set, defaults to '2'.
-   * Ignored unless enable_speaker_diarization is set to true."
+   * Defaults to '2'. Ignored unless enable_speaker_diarization is set to true.
+   * Note: Use diarization_config instead.
    * </pre>
    *
-   * <code>int32 diarization_speaker_count = 17;</code>
+   * <code>int32 diarization_speaker_count = 17 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   public int getDiarizationSpeakerCount() {
     return diarizationSpeakerCount_;
+  }
+
+  public static final int DIARIZATION_CONFIG_FIELD_NUMBER = 19;
+  private com.google.cloud.speech.v1p1beta1.SpeakerDiarizationConfig diarizationConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * *Optional* Config to enable speaker diarization and set additional
+   * parameters to make diarization better suited for your application.
+   * Note: When this is enabled, we send all the words from the beginning of the
+   * audio for the top alternative in every consecutive STREAMING responses.
+   * This is done in order to improve our speaker tags as our models learn to
+   * identify the speakers in the conversation over time.
+   * For non-streaming requests, the diarization results will be provided only
+   * in the top alternative of the FINAL SpeechRecognitionResult.
+   * </pre>
+   *
+   * <code>.google.cloud.speech.v1p1beta1.SpeakerDiarizationConfig diarization_config = 19;</code>
+   */
+  public boolean hasDiarizationConfig() {
+    return diarizationConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * *Optional* Config to enable speaker diarization and set additional
+   * parameters to make diarization better suited for your application.
+   * Note: When this is enabled, we send all the words from the beginning of the
+   * audio for the top alternative in every consecutive STREAMING responses.
+   * This is done in order to improve our speaker tags as our models learn to
+   * identify the speakers in the conversation over time.
+   * For non-streaming requests, the diarization results will be provided only
+   * in the top alternative of the FINAL SpeechRecognitionResult.
+   * </pre>
+   *
+   * <code>.google.cloud.speech.v1p1beta1.SpeakerDiarizationConfig diarization_config = 19;</code>
+   */
+  public com.google.cloud.speech.v1p1beta1.SpeakerDiarizationConfig getDiarizationConfig() {
+    return diarizationConfig_ == null
+        ? com.google.cloud.speech.v1p1beta1.SpeakerDiarizationConfig.getDefaultInstance()
+        : diarizationConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * *Optional* Config to enable speaker diarization and set additional
+   * parameters to make diarization better suited for your application.
+   * Note: When this is enabled, we send all the words from the beginning of the
+   * audio for the top alternative in every consecutive STREAMING responses.
+   * This is done in order to improve our speaker tags as our models learn to
+   * identify the speakers in the conversation over time.
+   * For non-streaming requests, the diarization results will be provided only
+   * in the top alternative of the FINAL SpeechRecognitionResult.
+   * </pre>
+   *
+   * <code>.google.cloud.speech.v1p1beta1.SpeakerDiarizationConfig diarization_config = 19;</code>
+   */
+  public com.google.cloud.speech.v1p1beta1.SpeakerDiarizationConfigOrBuilder
+      getDiarizationConfigOrBuilder() {
+    return getDiarizationConfig();
   }
 
   public static final int METADATA_FIELD_NUMBER = 9;
@@ -1248,6 +1325,9 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 18, alternativeLanguageCodes_.getRaw(i));
     }
+    if (diarizationConfig_ != null) {
+      output.writeMessage(19, getDiarizationConfig());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -1318,6 +1398,9 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       size += dataSize;
       size += 2 * getAlternativeLanguageCodesList().size();
     }
+    if (diarizationConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(19, getDiarizationConfig());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1350,6 +1433,10 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
     if (getEnableAutomaticPunctuation() != other.getEnableAutomaticPunctuation()) return false;
     if (getEnableSpeakerDiarization() != other.getEnableSpeakerDiarization()) return false;
     if (getDiarizationSpeakerCount() != other.getDiarizationSpeakerCount()) return false;
+    if (hasDiarizationConfig() != other.hasDiarizationConfig()) return false;
+    if (hasDiarizationConfig()) {
+      if (!getDiarizationConfig().equals(other.getDiarizationConfig())) return false;
+    }
     if (hasMetadata() != other.hasMetadata()) return false;
     if (hasMetadata()) {
       if (!getMetadata().equals(other.getMetadata())) return false;
@@ -1401,6 +1488,10 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableSpeakerDiarization());
     hash = (37 * hash) + DIARIZATION_SPEAKER_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + getDiarizationSpeakerCount();
+    if (hasDiarizationConfig()) {
+      hash = (37 * hash) + DIARIZATION_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getDiarizationConfig().hashCode();
+    }
     if (hasMetadata()) {
       hash = (37 * hash) + METADATA_FIELD_NUMBER;
       hash = (53 * hash) + getMetadata().hashCode();
@@ -1589,6 +1680,12 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
 
       diarizationSpeakerCount_ = 0;
 
+      if (diarizationConfigBuilder_ == null) {
+        diarizationConfig_ = null;
+      } else {
+        diarizationConfig_ = null;
+        diarizationConfigBuilder_ = null;
+      }
       if (metadataBuilder_ == null) {
         metadata_ = null;
       } else {
@@ -1654,6 +1751,11 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       result.enableAutomaticPunctuation_ = enableAutomaticPunctuation_;
       result.enableSpeakerDiarization_ = enableSpeakerDiarization_;
       result.diarizationSpeakerCount_ = diarizationSpeakerCount_;
+      if (diarizationConfigBuilder_ == null) {
+        result.diarizationConfig_ = diarizationConfig_;
+      } else {
+        result.diarizationConfig_ = diarizationConfigBuilder_.build();
+      }
       if (metadataBuilder_ == null) {
         result.metadata_ = metadata_;
       } else {
@@ -1785,6 +1887,9 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       }
       if (other.getDiarizationSpeakerCount() != 0) {
         setDiarizationSpeakerCount(other.getDiarizationSpeakerCount());
+      }
+      if (other.hasDiarizationConfig()) {
+        mergeDiarizationConfig(other.getDiarizationConfig());
       }
       if (other.hasMetadata()) {
         mergeMetadata(other.getMetadata());
@@ -3170,16 +3275,12 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * *Optional* If 'true', enables speaker detection for each recognized word in
      * the top alternative of the recognition result using a speaker_tag provided
      * in the WordInfo.
-     * Note: When this is true, we send all the words from the beginning of the
-     * audio for the top alternative in every consecutive STREAMING responses.
-     * This is done in order to improve our speaker tags as our models learn to
-     * identify the speakers in the conversation over time.
-     * For non-streaming requests, the diarization results will be provided only
-     * in the top alternative of the FINAL SpeechRecognitionResult.
+     * Note: Use diarization_config instead.
      * </pre>
      *
-     * <code>bool enable_speaker_diarization = 16;</code>
+     * <code>bool enable_speaker_diarization = 16 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public boolean getEnableSpeakerDiarization() {
       return enableSpeakerDiarization_;
     }
@@ -3190,16 +3291,12 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * *Optional* If 'true', enables speaker detection for each recognized word in
      * the top alternative of the recognition result using a speaker_tag provided
      * in the WordInfo.
-     * Note: When this is true, we send all the words from the beginning of the
-     * audio for the top alternative in every consecutive STREAMING responses.
-     * This is done in order to improve our speaker tags as our models learn to
-     * identify the speakers in the conversation over time.
-     * For non-streaming requests, the diarization results will be provided only
-     * in the top alternative of the FINAL SpeechRecognitionResult.
+     * Note: Use diarization_config instead.
      * </pre>
      *
-     * <code>bool enable_speaker_diarization = 16;</code>
+     * <code>bool enable_speaker_diarization = 16 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder setEnableSpeakerDiarization(boolean value) {
 
       enableSpeakerDiarization_ = value;
@@ -3213,16 +3310,12 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * *Optional* If 'true', enables speaker detection for each recognized word in
      * the top alternative of the recognition result using a speaker_tag provided
      * in the WordInfo.
-     * Note: When this is true, we send all the words from the beginning of the
-     * audio for the top alternative in every consecutive STREAMING responses.
-     * This is done in order to improve our speaker tags as our models learn to
-     * identify the speakers in the conversation over time.
-     * For non-streaming requests, the diarization results will be provided only
-     * in the top alternative of the FINAL SpeechRecognitionResult.
+     * Note: Use diarization_config instead.
      * </pre>
      *
-     * <code>bool enable_speaker_diarization = 16;</code>
+     * <code>bool enable_speaker_diarization = 16 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder clearEnableSpeakerDiarization() {
 
       enableSpeakerDiarization_ = false;
@@ -3237,12 +3330,13 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * <pre>
      * *Optional*
      * If set, specifies the estimated number of speakers in the conversation.
-     * If not set, defaults to '2'.
-     * Ignored unless enable_speaker_diarization is set to true."
+     * Defaults to '2'. Ignored unless enable_speaker_diarization is set to true.
+     * Note: Use diarization_config instead.
      * </pre>
      *
-     * <code>int32 diarization_speaker_count = 17;</code>
+     * <code>int32 diarization_speaker_count = 17 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public int getDiarizationSpeakerCount() {
       return diarizationSpeakerCount_;
     }
@@ -3252,12 +3346,13 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * <pre>
      * *Optional*
      * If set, specifies the estimated number of speakers in the conversation.
-     * If not set, defaults to '2'.
-     * Ignored unless enable_speaker_diarization is set to true."
+     * Defaults to '2'. Ignored unless enable_speaker_diarization is set to true.
+     * Note: Use diarization_config instead.
      * </pre>
      *
-     * <code>int32 diarization_speaker_count = 17;</code>
+     * <code>int32 diarization_speaker_count = 17 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder setDiarizationSpeakerCount(int value) {
 
       diarizationSpeakerCount_ = value;
@@ -3270,17 +3365,268 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * <pre>
      * *Optional*
      * If set, specifies the estimated number of speakers in the conversation.
-     * If not set, defaults to '2'.
-     * Ignored unless enable_speaker_diarization is set to true."
+     * Defaults to '2'. Ignored unless enable_speaker_diarization is set to true.
+     * Note: Use diarization_config instead.
      * </pre>
      *
-     * <code>int32 diarization_speaker_count = 17;</code>
+     * <code>int32 diarization_speaker_count = 17 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder clearDiarizationSpeakerCount() {
 
       diarizationSpeakerCount_ = 0;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.speech.v1p1beta1.SpeakerDiarizationConfig diarizationConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.speech.v1p1beta1.SpeakerDiarizationConfig,
+            com.google.cloud.speech.v1p1beta1.SpeakerDiarizationConfig.Builder,
+            com.google.cloud.speech.v1p1beta1.SpeakerDiarizationConfigOrBuilder>
+        diarizationConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * *Optional* Config to enable speaker diarization and set additional
+     * parameters to make diarization better suited for your application.
+     * Note: When this is enabled, we send all the words from the beginning of the
+     * audio for the top alternative in every consecutive STREAMING responses.
+     * This is done in order to improve our speaker tags as our models learn to
+     * identify the speakers in the conversation over time.
+     * For non-streaming requests, the diarization results will be provided only
+     * in the top alternative of the FINAL SpeechRecognitionResult.
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v1p1beta1.SpeakerDiarizationConfig diarization_config = 19;</code>
+     */
+    public boolean hasDiarizationConfig() {
+      return diarizationConfigBuilder_ != null || diarizationConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * *Optional* Config to enable speaker diarization and set additional
+     * parameters to make diarization better suited for your application.
+     * Note: When this is enabled, we send all the words from the beginning of the
+     * audio for the top alternative in every consecutive STREAMING responses.
+     * This is done in order to improve our speaker tags as our models learn to
+     * identify the speakers in the conversation over time.
+     * For non-streaming requests, the diarization results will be provided only
+     * in the top alternative of the FINAL SpeechRecognitionResult.
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v1p1beta1.SpeakerDiarizationConfig diarization_config = 19;</code>
+     */
+    public com.google.cloud.speech.v1p1beta1.SpeakerDiarizationConfig getDiarizationConfig() {
+      if (diarizationConfigBuilder_ == null) {
+        return diarizationConfig_ == null
+            ? com.google.cloud.speech.v1p1beta1.SpeakerDiarizationConfig.getDefaultInstance()
+            : diarizationConfig_;
+      } else {
+        return diarizationConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * *Optional* Config to enable speaker diarization and set additional
+     * parameters to make diarization better suited for your application.
+     * Note: When this is enabled, we send all the words from the beginning of the
+     * audio for the top alternative in every consecutive STREAMING responses.
+     * This is done in order to improve our speaker tags as our models learn to
+     * identify the speakers in the conversation over time.
+     * For non-streaming requests, the diarization results will be provided only
+     * in the top alternative of the FINAL SpeechRecognitionResult.
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v1p1beta1.SpeakerDiarizationConfig diarization_config = 19;</code>
+     */
+    public Builder setDiarizationConfig(
+        com.google.cloud.speech.v1p1beta1.SpeakerDiarizationConfig value) {
+      if (diarizationConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        diarizationConfig_ = value;
+        onChanged();
+      } else {
+        diarizationConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * *Optional* Config to enable speaker diarization and set additional
+     * parameters to make diarization better suited for your application.
+     * Note: When this is enabled, we send all the words from the beginning of the
+     * audio for the top alternative in every consecutive STREAMING responses.
+     * This is done in order to improve our speaker tags as our models learn to
+     * identify the speakers in the conversation over time.
+     * For non-streaming requests, the diarization results will be provided only
+     * in the top alternative of the FINAL SpeechRecognitionResult.
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v1p1beta1.SpeakerDiarizationConfig diarization_config = 19;</code>
+     */
+    public Builder setDiarizationConfig(
+        com.google.cloud.speech.v1p1beta1.SpeakerDiarizationConfig.Builder builderForValue) {
+      if (diarizationConfigBuilder_ == null) {
+        diarizationConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        diarizationConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * *Optional* Config to enable speaker diarization and set additional
+     * parameters to make diarization better suited for your application.
+     * Note: When this is enabled, we send all the words from the beginning of the
+     * audio for the top alternative in every consecutive STREAMING responses.
+     * This is done in order to improve our speaker tags as our models learn to
+     * identify the speakers in the conversation over time.
+     * For non-streaming requests, the diarization results will be provided only
+     * in the top alternative of the FINAL SpeechRecognitionResult.
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v1p1beta1.SpeakerDiarizationConfig diarization_config = 19;</code>
+     */
+    public Builder mergeDiarizationConfig(
+        com.google.cloud.speech.v1p1beta1.SpeakerDiarizationConfig value) {
+      if (diarizationConfigBuilder_ == null) {
+        if (diarizationConfig_ != null) {
+          diarizationConfig_ =
+              com.google.cloud.speech.v1p1beta1.SpeakerDiarizationConfig.newBuilder(
+                      diarizationConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          diarizationConfig_ = value;
+        }
+        onChanged();
+      } else {
+        diarizationConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * *Optional* Config to enable speaker diarization and set additional
+     * parameters to make diarization better suited for your application.
+     * Note: When this is enabled, we send all the words from the beginning of the
+     * audio for the top alternative in every consecutive STREAMING responses.
+     * This is done in order to improve our speaker tags as our models learn to
+     * identify the speakers in the conversation over time.
+     * For non-streaming requests, the diarization results will be provided only
+     * in the top alternative of the FINAL SpeechRecognitionResult.
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v1p1beta1.SpeakerDiarizationConfig diarization_config = 19;</code>
+     */
+    public Builder clearDiarizationConfig() {
+      if (diarizationConfigBuilder_ == null) {
+        diarizationConfig_ = null;
+        onChanged();
+      } else {
+        diarizationConfig_ = null;
+        diarizationConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * *Optional* Config to enable speaker diarization and set additional
+     * parameters to make diarization better suited for your application.
+     * Note: When this is enabled, we send all the words from the beginning of the
+     * audio for the top alternative in every consecutive STREAMING responses.
+     * This is done in order to improve our speaker tags as our models learn to
+     * identify the speakers in the conversation over time.
+     * For non-streaming requests, the diarization results will be provided only
+     * in the top alternative of the FINAL SpeechRecognitionResult.
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v1p1beta1.SpeakerDiarizationConfig diarization_config = 19;</code>
+     */
+    public com.google.cloud.speech.v1p1beta1.SpeakerDiarizationConfig.Builder
+        getDiarizationConfigBuilder() {
+
+      onChanged();
+      return getDiarizationConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * *Optional* Config to enable speaker diarization and set additional
+     * parameters to make diarization better suited for your application.
+     * Note: When this is enabled, we send all the words from the beginning of the
+     * audio for the top alternative in every consecutive STREAMING responses.
+     * This is done in order to improve our speaker tags as our models learn to
+     * identify the speakers in the conversation over time.
+     * For non-streaming requests, the diarization results will be provided only
+     * in the top alternative of the FINAL SpeechRecognitionResult.
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v1p1beta1.SpeakerDiarizationConfig diarization_config = 19;</code>
+     */
+    public com.google.cloud.speech.v1p1beta1.SpeakerDiarizationConfigOrBuilder
+        getDiarizationConfigOrBuilder() {
+      if (diarizationConfigBuilder_ != null) {
+        return diarizationConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return diarizationConfig_ == null
+            ? com.google.cloud.speech.v1p1beta1.SpeakerDiarizationConfig.getDefaultInstance()
+            : diarizationConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * *Optional* Config to enable speaker diarization and set additional
+     * parameters to make diarization better suited for your application.
+     * Note: When this is enabled, we send all the words from the beginning of the
+     * audio for the top alternative in every consecutive STREAMING responses.
+     * This is done in order to improve our speaker tags as our models learn to
+     * identify the speakers in the conversation over time.
+     * For non-streaming requests, the diarization results will be provided only
+     * in the top alternative of the FINAL SpeechRecognitionResult.
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v1p1beta1.SpeakerDiarizationConfig diarization_config = 19;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.speech.v1p1beta1.SpeakerDiarizationConfig,
+            com.google.cloud.speech.v1p1beta1.SpeakerDiarizationConfig.Builder,
+            com.google.cloud.speech.v1p1beta1.SpeakerDiarizationConfigOrBuilder>
+        getDiarizationConfigFieldBuilder() {
+      if (diarizationConfigBuilder_ == null) {
+        diarizationConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.speech.v1p1beta1.SpeakerDiarizationConfig,
+                com.google.cloud.speech.v1p1beta1.SpeakerDiarizationConfig.Builder,
+                com.google.cloud.speech.v1p1beta1.SpeakerDiarizationConfigOrBuilder>(
+                getDiarizationConfig(), getParentForChildren(), isClean());
+        diarizationConfig_ = null;
+      }
+      return diarizationConfigBuilder_;
     }
 
     private com.google.cloud.speech.v1p1beta1.RecognitionMetadata metadata_;
