@@ -54,7 +54,7 @@ interface UnitOfWork {
   /** Cancel the currently running statement (if any and the statement may be cancelled). */
   void cancel();
 
-  /** @return */
+  /** @return the type of unit of work. */
   Type getType();
 
   /** @return the current state of this unit of work. */
