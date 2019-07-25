@@ -29,6 +29,7 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.junit.Test;
@@ -551,7 +552,7 @@ public class StatementParserTest {
     }
   }
 
-  private List<ClientSideStatementImpl> getAllStatements() throws CompileException {
+  private Set<ClientSideStatementImpl> getAllStatements() throws CompileException {
     return ClientSideStatements.INSTANCE.getCompiledStatements();
   }
 

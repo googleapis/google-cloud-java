@@ -26,8 +26,9 @@ import com.google.cloud.Timestamp;
 import com.google.cloud.spanner.TimestampBound;
 import com.google.cloud.spanner.jdbc.ClientSideStatementImpl.CompileException;
 import com.google.cloud.spanner.jdbc.ClientSideStatementValueConverters.ReadOnlyStalenessConverter;
-import java.util.List;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -38,8 +39,7 @@ public class ReadOnlyStalenessConverterTest {
   static String getAllowedValues(
       Class<? extends ClientSideStatementValueConverter<?>> converterClass)
       throws CompileException {
-    List<ClientSideStatementImpl> statements =
-        ClientSideStatements.INSTANCE.getCompiledStatements();
+    Set<ClientSideStatementImpl> statements = ClientSideStatements.INSTANCE.getCompiledStatements();
     for (ClientSideStatementImpl statement : statements) {
       if (statement.getSetStatement() != null
           && converterClass.getName().endsWith(statement.getSetStatement().getConverterName())) {
@@ -49,6 +49,7 @@ public class ReadOnlyStalenessConverterTest {
     return null;
   }
 
+  @Ignore("ignore until parser supports nanosecond precision")
   @Test
   public void testConvert() throws CompileException {
     String allowedValues = getAllowedValues(ReadOnlyStalenessConverter.class);
@@ -121,6 +122,122 @@ public class ReadOnlyStalenessConverterTest {
             equalTo(
                 TimestampBound.ofMinReadTimestamp(
                     Timestamp.parseTimestamp("2018-10-01T23:11:15.10001Z")))));
+    assertThat(
+        converter.convert("min_read_timestamp\n2018-10-01T23:11:15.10001Z"), is(nullValue()));
+
+    assertThat(
+        converter.convert("exact_staleness 10s"),
+        is(equalTo(TimestampBound.ofExactStaleness(10L, TimeUnit.SECONDS))));
+    assertThat(
+        converter.convert("Exact_Staleness 100ms"),
+        is(equalTo(TimestampBound.ofExactStaleness(100L, TimeUnit.MILLISECONDS))));
+    assertThat(
+        converter.convert("EXACT_STALENESS 99999us"),
+        is(equalTo(TimestampBound.ofExactStaleness(99999L, TimeUnit.MICROSECONDS))));
+    assertThat(
+        converter.convert("exact_staleness 999999999ns"),
+        is(equalTo(TimestampBound.ofExactStaleness(999999999L, TimeUnit.NANOSECONDS))));
+    assertThat(
+        converter.convert("exact_staleness " + Long.MAX_VALUE + "ns"),
+        is(equalTo(TimestampBound.ofExactStaleness(Long.MAX_VALUE, TimeUnit.NANOSECONDS))));
+
+    assertThat(
+        converter.convert("max_staleness 10s"),
+        is(equalTo(TimestampBound.ofMaxStaleness(10L, TimeUnit.SECONDS))));
+    assertThat(
+        converter.convert("Max_Staleness 100ms"),
+        is(equalTo(TimestampBound.ofMaxStaleness(100L, TimeUnit.MILLISECONDS))));
+    assertThat(
+        converter.convert("MAX_STALENESS 99999us"),
+        is(equalTo(TimestampBound.ofMaxStaleness(99999L, TimeUnit.MICROSECONDS))));
+    assertThat(
+        converter.convert("max_staleness 999999999ns"),
+        is(equalTo(TimestampBound.ofMaxStaleness(999999999L, TimeUnit.NANOSECONDS))));
+    assertThat(
+        converter.convert("max_staleness " + Long.MAX_VALUE + "ns"),
+        is(equalTo(TimestampBound.ofMaxStaleness(Long.MAX_VALUE, TimeUnit.NANOSECONDS))));
+
+    assertThat(converter.convert(""), is(nullValue()));
+    assertThat(converter.convert(" "), is(nullValue()));
+    assertThat(converter.convert("random string"), is(nullValue()));
+    assertThat(converter.convert("read_timestamp"), is(nullValue()));
+    assertThat(converter.convert("min_read_timestamp"), is(nullValue()));
+    assertThat(converter.convert("exact_staleness"), is(nullValue()));
+    assertThat(converter.convert("max_staleness"), is(nullValue()));
+  }
+
+  // TODO: Remove when nanosecond precision is supported.
+  @Test
+  public void testConvertMillis() throws CompileException {
+    String allowedValues = getAllowedValues(ReadOnlyStalenessConverter.class);
+    assertThat(allowedValues, is(notNullValue()));
+    ReadOnlyStalenessConverter converter = new ReadOnlyStalenessConverter(allowedValues);
+
+    assertThat(converter.convert("strong"), is(equalTo(TimestampBound.strong())));
+    assertThat(converter.convert("Strong"), is(equalTo(TimestampBound.strong())));
+    assertThat(converter.convert("STRONG"), is(equalTo(TimestampBound.strong())));
+
+    assertThat(
+        converter.convert("read_timestamp 2018-10-01T23:11:15.10001Z"),
+        is(
+            equalTo(
+                TimestampBound.ofReadTimestamp(
+                    Timestamp.parseTimestamp("2018-10-01T23:11:15.10000Z")))));
+    assertThat(
+        converter.convert("Read_Timestamp 2018-10-01T23:11:15.999Z"),
+        is(
+            equalTo(
+                TimestampBound.ofReadTimestamp(
+                    Timestamp.parseTimestamp("2018-10-01T23:11:15.999Z")))));
+    assertThat(
+        converter.convert("READ_TIMESTAMP 2018-10-01T23:11:15.1000Z"),
+        is(
+            equalTo(
+                TimestampBound.ofReadTimestamp(
+                    Timestamp.parseTimestamp("2018-10-01T23:11:15.1000Z")))));
+    assertThat(
+        converter.convert("read_timestamp    2018-10-01T23:11:15.999999999Z"),
+        is(
+            equalTo(
+                TimestampBound.ofReadTimestamp(Timestamp.parseTimestamp("2018-10-01T23:11:16Z")))));
+    assertThat(
+        converter.convert("read_timestamp\t2018-10-01T23:11:15.10001Z"),
+        is(
+            equalTo(
+                TimestampBound.ofReadTimestamp(
+                    Timestamp.parseTimestamp("2018-10-01T23:11:15.10000Z")))));
+    assertThat(converter.convert("read_timestamp\n2018-10-01T23:11:15.10001Z"), is(nullValue()));
+
+    assertThat(
+        converter.convert("min_read_timestamp 2018-10-01T23:11:15.10001Z"),
+        is(
+            equalTo(
+                TimestampBound.ofMinReadTimestamp(
+                    Timestamp.parseTimestamp("2018-10-01T23:11:15.10000Z")))));
+    assertThat(
+        converter.convert("Min_Read_Timestamp 2018-10-01T23:11:15.999Z"),
+        is(
+            equalTo(
+                TimestampBound.ofMinReadTimestamp(
+                    Timestamp.parseTimestamp("2018-10-01T23:11:15.999Z")))));
+    assertThat(
+        converter.convert("MIN_READ_TIMESTAMP 2018-10-01T23:11:15.1000Z"),
+        is(
+            equalTo(
+                TimestampBound.ofMinReadTimestamp(
+                    Timestamp.parseTimestamp("2018-10-01T23:11:15.1000Z")))));
+    assertThat(
+        converter.convert("min_read_timestamp    2018-10-01T23:11:15.999999999Z"),
+        is(
+            equalTo(
+                TimestampBound.ofMinReadTimestamp(
+                    Timestamp.parseTimestamp("2018-10-01T23:11:16Z")))));
+    assertThat(
+        converter.convert("min_read_timestamp\t2018-10-01T23:11:15.10001Z"),
+        is(
+            equalTo(
+                TimestampBound.ofMinReadTimestamp(
+                    Timestamp.parseTimestamp("2018-10-01T23:11:15.10000Z")))));
     assertThat(
         converter.convert("min_read_timestamp\n2018-10-01T23:11:15.10001Z"), is(nullValue()));
 

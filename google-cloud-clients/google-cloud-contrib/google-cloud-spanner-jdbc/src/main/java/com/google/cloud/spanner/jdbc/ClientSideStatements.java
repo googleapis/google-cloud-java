@@ -19,7 +19,7 @@ package com.google.cloud.spanner.jdbc;
 import com.google.cloud.spanner.jdbc.ClientSideStatementImpl.CompileException;
 import com.google.gson.Gson;
 import java.io.InputStreamReader;
-import java.util.List;
+import java.util.Set;
 
 /** This class reads and parses the {@link ClientSideStatement}s from the json file. */
 class ClientSideStatements {
@@ -37,12 +37,12 @@ class ClientSideStatements {
         ClientSideStatements.class);
   }
 
-  private List<ClientSideStatementImpl> statements;
+  private Set<ClientSideStatementImpl> statements;
 
   private ClientSideStatements() {}
 
   /** Compiles and returns all statements from the resource file. */
-  List<ClientSideStatementImpl> getCompiledStatements() throws CompileException {
+  Set<ClientSideStatementImpl> getCompiledStatements() throws CompileException {
     for (ClientSideStatementImpl statement : statements) {
       statement.compile();
     }

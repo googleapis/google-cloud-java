@@ -22,8 +22,9 @@ import com.google.cloud.spanner.Statement;
 import com.google.cloud.spanner.jdbc.ClientSideStatementImpl.CompileException;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
-import java.util.Arrays;
-import java.util.List;
+import com.google.common.collect.ImmutableSet;
+import java.util.Collections;
+import java.util.Set;
 
 /**
  * Internal class for the Spanner Connection API.
@@ -159,15 +160,16 @@ class StatementParser {
     }
   }
 
-  private final List<String> ddlStatements = Arrays.asList("CREATE", "DROP", "ALTER");
-  private final List<String> selectStatements = Arrays.asList("SELECT");
-  private final List<String> dmlStatements = Arrays.asList("INSERT", "UPDATE", "DELETE");
-  private final List<ClientSideStatementImpl> statements;
+  private final Set<String> ddlStatements = ImmutableSet.of("CREATE", "DROP", "ALTER");
+  private final Set<String> selectStatements = ImmutableSet.of("SELECT");
+  private final Set<String> dmlStatements = ImmutableSet.of("INSERT", "UPDATE", "DELETE");
+  private final Set<ClientSideStatementImpl> statements;
 
   /** Private constructor for singleton instance. */
   private StatementParser() {
     try {
-      statements = ClientSideStatements.INSTANCE.getCompiledStatements();
+      statements =
+          Collections.unmodifiableSet(ClientSideStatements.INSTANCE.getCompiledStatements());
     } catch (CompileException e) {
       throw new RuntimeException(e);
     }
@@ -253,7 +255,7 @@ class StatementParser {
     return statementStartsWith(sql, dmlStatements);
   }
 
-  private boolean statementStartsWith(String sql, List<String> checkStatements) {
+  private boolean statementStartsWith(String sql, Iterable<String> checkStatements) {
     Preconditions.checkNotNull(sql);
     String[] tokens = sql.split("\\s+", 2);
     if (tokens.length > 0) {
