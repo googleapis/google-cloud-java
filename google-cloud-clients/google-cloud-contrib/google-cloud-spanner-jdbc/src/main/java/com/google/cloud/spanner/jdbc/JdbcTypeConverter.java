@@ -51,65 +51,50 @@ class JdbcTypeConverter {
     if (targetType.equals(String.class)) return value.toString();
 
     try {
-      if (targetType.equals(Boolean.class) && type.getCode() == Code.BOOL) return value;
-      if (targetType.equals(Boolean.class) && type.getCode() == Code.INT64)
-        return Boolean.valueOf((Long) value != 0);
-      if (targetType.equals(Boolean.class) && type.getCode() == Code.FLOAT64)
-        return Boolean.valueOf((Double) value != 0d);
-      if (targetType.equals(Boolean.class) && type.getCode() == Code.STRING)
-        return Boolean.valueOf((String) value);
-
-      if (targetType.equals(BigDecimal.class) && type.getCode() == Code.BOOL)
-        return (Boolean) value ? BigDecimal.ONE : BigDecimal.ZERO;
-      if (targetType.equals(BigDecimal.class) && type.getCode() == Code.INT64)
-        return BigDecimal.valueOf((Long) value);
-      if (targetType.equals(BigDecimal.class) && type.getCode() == Code.FLOAT64)
-        return BigDecimal.valueOf((Double) value);
-      if (targetType.equals(BigDecimal.class) && type.getCode() == Code.STRING)
-        return new BigDecimal((String) value);
-
-      if (targetType.equals(Long.class) && type.getCode() == Code.BOOL)
-        return (Boolean) value ? 1L : 0L;
-      if (targetType.equals(Long.class) && type.getCode() == Code.INT64) return value;
-      if (targetType.equals(Long.class) && type.getCode() == Code.FLOAT64)
-        return ((Double) value).longValue();
-      if (targetType.equals(Long.class) && type.getCode() == Code.STRING)
-        return Long.valueOf((String) value);
-
-      if (targetType.equals(Integer.class) && type.getCode() == Code.BOOL)
-        return (Boolean) value ? 1 : 0;
-      if (targetType.equals(Integer.class) && type.getCode() == Code.INT64)
-        return ((Long) value).intValue();
-      if (targetType.equals(Integer.class) && type.getCode() == Code.FLOAT64)
-        return ((Double) value).intValue();
-      if (targetType.equals(Integer.class) && type.getCode() == Code.STRING)
-        return Integer.valueOf((String) value);
-
-      if (targetType.equals(BigInteger.class) && type.getCode() == Code.BOOL)
-        return (Boolean) value ? BigInteger.ONE : BigInteger.ZERO;
-      if (targetType.equals(BigInteger.class) && type.getCode() == Code.INT64)
-        return BigInteger.valueOf((Long) value);
-      if (targetType.equals(BigInteger.class) && type.getCode() == Code.FLOAT64)
-        return BigInteger.valueOf(((Double) value).longValue());
-      if (targetType.equals(BigInteger.class) && type.getCode() == Code.STRING)
-        return new BigInteger((String) value);
-
-      if (targetType.equals(Float.class) && type.getCode() == Code.BOOL)
-        return (Boolean) value ? Float.valueOf(1f) : Float.valueOf(0f);
-      if (targetType.equals(Float.class) && type.getCode() == Code.INT64)
-        return ((Long) value).floatValue();
-      if (targetType.equals(Float.class) && type.getCode() == Code.FLOAT64)
-        return ((Double) value).floatValue();
-      if (targetType.equals(Float.class) && type.getCode() == Code.STRING)
-        return Float.valueOf((String) value);
-
-      if (targetType.equals(Double.class) && type.getCode() == Code.BOOL)
-        return (Boolean) value ? Double.valueOf(1d) : Double.valueOf(0d);
-      if (targetType.equals(Double.class) && type.getCode() == Code.INT64)
-        return ((Long) value).doubleValue();
-      if (targetType.equals(Double.class) && type.getCode() == Code.FLOAT64) return value;
-      if (targetType.equals(Double.class) && type.getCode() == Code.STRING)
-        return Double.valueOf((String) value);
+      if (targetType.equals(Boolean.class)) {
+        if (type.getCode() == Code.BOOL) return value;
+        if (type.getCode() == Code.INT64) return Boolean.valueOf((Long) value != 0);
+        if (type.getCode() == Code.FLOAT64) return Boolean.valueOf((Double) value != 0d);
+        if (type.getCode() == Code.STRING) return Boolean.valueOf((String) value);
+      }
+      if (targetType.equals(BigDecimal.class)) {
+        if (type.getCode() == Code.BOOL) return (Boolean) value ? BigDecimal.ONE : BigDecimal.ZERO;
+        if (type.getCode() == Code.INT64) return BigDecimal.valueOf((Long) value);
+        if (type.getCode() == Code.FLOAT64) return BigDecimal.valueOf((Double) value);
+        if (type.getCode() == Code.STRING) return new BigDecimal((String) value);
+      }
+      if (targetType.equals(Long.class)) {
+        if (type.getCode() == Code.BOOL) return (Boolean) value ? 1L : 0L;
+        if (type.getCode() == Code.INT64) return value;
+        if (type.getCode() == Code.FLOAT64) return ((Double) value).longValue();
+        if (type.getCode() == Code.STRING) return Long.valueOf((String) value);
+      }
+      if (targetType.equals(Integer.class)) {
+        if (type.getCode() == Code.BOOL) return (Boolean) value ? 1 : 0;
+        if (type.getCode() == Code.INT64) return ((Long) value).intValue();
+        if (type.getCode() == Code.FLOAT64) return ((Double) value).intValue();
+        if (type.getCode() == Code.STRING) return Integer.valueOf((String) value);
+      }
+      if (targetType.equals(BigInteger.class)) {
+        if (type.getCode() == Code.BOOL) return (Boolean) value ? BigInteger.ONE : BigInteger.ZERO;
+        if (type.getCode() == Code.INT64) return BigInteger.valueOf((Long) value);
+        if (type.getCode() == Code.FLOAT64) return BigInteger.valueOf(((Double) value).longValue());
+        if (type.getCode() == Code.STRING) return new BigInteger((String) value);
+      }
+      if (targetType.equals(Float.class)) {
+        if (type.getCode() == Code.BOOL)
+          return (Boolean) value ? Float.valueOf(1f) : Float.valueOf(0f);
+        if (type.getCode() == Code.INT64) return ((Long) value).floatValue();
+        if (type.getCode() == Code.FLOAT64) return ((Double) value).floatValue();
+        if (type.getCode() == Code.STRING) return Float.valueOf((String) value);
+      }
+      if (targetType.equals(Double.class)) {
+        if (type.getCode() == Code.BOOL)
+          return (Boolean) value ? Double.valueOf(1d) : Double.valueOf(0d);
+        if (type.getCode() == Code.INT64) return ((Long) value).doubleValue();
+        if (type.getCode() == Code.FLOAT64) return value;
+        if (type.getCode() == Code.STRING) return Double.valueOf((String) value);
+      }
     } catch (Exception e) {
       throw JdbcSqlExceptionFactory.of(
           "Cannot convert " + value + " to " + targetType.getName(),
@@ -211,7 +196,9 @@ class JdbcTypeConverter {
 
   static List<java.sql.Timestamp> toSqlTimestamps(List<Timestamp> timestamps) {
     List<java.sql.Timestamp> res = new ArrayList<>(timestamps.size());
-    for (Timestamp timestamp : timestamps) res.add(toSqlTimestamp(timestamp));
+    for (Timestamp timestamp : timestamps) {
+      res.add(toSqlTimestamp(timestamp));
+    }
     return res;
   }
 
@@ -247,8 +234,9 @@ class JdbcTypeConverter {
 
   static List<Timestamp> toGoogleTimestamps(java.sql.Timestamp[] timestamps) {
     List<com.google.cloud.Timestamp> res = new ArrayList<>(timestamps.length);
-    for (int index = 0; index < timestamps.length; index++)
+    for (int index = 0; index < timestamps.length; index++) {
       res.add(toGoogleTimestamp(timestamps[index]));
+    }
     return res;
   }
 
@@ -270,14 +258,17 @@ class JdbcTypeConverter {
 
   static List<ByteArray> toGoogleBytes(byte[][] bytes) {
     List<ByteArray> res = new ArrayList<>(bytes.length);
-    for (int index = 0; index < bytes.length; index++)
+    for (int index = 0; index < bytes.length; index++) {
       res.add(bytes[index] == null ? null : ByteArray.copyFrom(bytes[index]));
+    }
     return res;
   }
 
   static List<byte[]> toJavaByteArrays(List<ByteArray> bytes) {
     List<byte[]> res = new ArrayList<>(bytes.size());
-    for (ByteArray ba : bytes) res.add(ba == null ? null : ba.toByteArray());
+    for (ByteArray ba : bytes) {
+      res.add(ba == null ? null : ba.toByteArray());
+    }
     return res;
   }
 }
