@@ -139,7 +139,7 @@
 	    "propertyName": "AUTOCOMMIT",
 	    "separator": "=",
 	    "allowedValues": "(TRUE|FALSE)",
-	    "converterName": "ClientSideStatementValueConverter$BooleanConverter"
+	    "converterName": "ClientSideStatementValueConverters$BooleanConverter"
 	  }
 	},
 	{
@@ -153,7 +153,7 @@
 	    "propertyName": "READONLY",
 	    "separator": "=",
 	    "allowedValues": "(TRUE|FALSE)",
-	    "converterName": "ClientSideStatementValueConverter$BooleanConverter"
+	    "converterName": "ClientSideStatementValueConverters$BooleanConverter"
 	  }
 	},
 	{
@@ -168,7 +168,7 @@
 	    "propertyName": "RETRY_ABORTS_INTERNALLY",
 	    "separator": "=",
 	    "allowedValues": "(TRUE|FALSE)",
-	    "converterName": "ClientSideStatementValueConverter$BooleanConverter"
+	    "converterName": "ClientSideStatementValueConverters$BooleanConverter"
 	  }
 	},
 	{
@@ -182,7 +182,7 @@
 	    "propertyName": "AUTOCOMMIT_DML_MODE",
 	    "separator": "=",
 	    "allowedValues": "'(PARTITIONED_NON_ATOMIC|TRANSACTIONAL)'",
-	    "converterName": "ClientSideStatementValueConverter$AutocommitDmlModeConverter"
+	    "converterName": "ClientSideStatementValueConverters$AutocommitDmlModeConverter"
 	  }
 	},
 	{
@@ -196,7 +196,7 @@
 	    "propertyName": "STATEMENT_TIMEOUT",
 	    "separator": "=",
 	    "allowedValues": "('(\\d{1,19})(s|ms|us|ns)'|NULL)",
-	    "converterName": "ClientSideStatementValueConverter$DurationConverter"
+	    "converterName": "ClientSideStatementValueConverters$DurationConverter"
 	  }
 	},
 	{
@@ -211,7 +211,7 @@
 	    "propertyName": "TRANSACTION",
 	    "separator": "\\s+",
 	    "allowedValues": "(READ\\s+ONLY|READ\\s+WRITE)",
-	    "converterName": "ClientSideStatementValueConverter$TransactionModeConverter"
+	    "converterName": "ClientSideStatementValueConverters$TransactionModeConverter"
 	  }
 	},
 	{
@@ -239,7 +239,7 @@
 	    "propertyName": "READ_ONLY_STALENESS",
 	    "separator": "=",
 	    "allowedValues": "'((STRONG)|(MIN_READ_TIMESTAMP)[\\t ]+((\\d{4})-(\\d{2})-(\\d{2})([Tt](\\d{2}):(\\d{2}):(\\d{2})(\\.\\d{1,9})?)([Zz]|([+-])(\\d{2}):(\\d{2})))|(READ_TIMESTAMP)[\\t ]+((\\d{4})-(\\d{2})-(\\d{2})([Tt](\\d{2}):(\\d{2}):(\\d{2})(\\.\\d{1,9})?)([Zz]|([+-])(\\d{2}):(\\d{2})))|(MAX_STALENESS)[\\t ]+((\\d{1,19})(s|ms|us|ns))|(EXACT_STALENESS)[\\t ]+((\\d{1,19})(s|ms|us|ns)))'",
-	    "converterName": "ClientSideStatementValueConverter$ReadOnlyStalenessConverter"
+	    "converterName": "ClientSideStatementValueConverters$ReadOnlyStalenessConverter"
 	  }
 	}
 	]

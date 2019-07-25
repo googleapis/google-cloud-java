@@ -35,7 +35,7 @@ enum TransactionMode {
    * @return a string representation of this {@link TransactionMode} that can be used in a SQL
    *     statement to set the transaction mode.
    */
-  public String statementString() {
+  public String getStatementString() {
     return statementString;
   }
 
