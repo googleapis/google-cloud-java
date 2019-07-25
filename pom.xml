@@ -78,6 +78,7 @@
     </license>
   </licenses>
   <modules>
+    <module>google-cloud-shared-config</module>
     <module>google-api-grpc</module>
     <module>google-cloud-clients</module>
     <module>google-cloud-examples</module>
