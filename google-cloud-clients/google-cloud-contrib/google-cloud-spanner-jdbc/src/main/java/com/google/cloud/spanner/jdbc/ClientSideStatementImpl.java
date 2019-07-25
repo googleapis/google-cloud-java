@@ -95,26 +95,33 @@ class ClientSideStatementImpl implements ClientSideStatement {
 
   /** The name of this statement. Used in error and info messages. */
   private String name;
+
   /**
    * The class name of the {@link ClientSideStatementExecutor} that should be used for this
    * statement.
    */
   private String executorName;
 
+  /** The result type of this statement. */
   private ResultType resultType;
+
   /** The regular expression that should be used to recognize this class of statements. */
   private String regex;
+
   /**
    * The method name of the {@link ConnectionStatementExecutor} that should be called when this
    * statement is executed, for example 'statementSetAutocommit'.
    */
   private String method;
+
   /** A list of example statements that is used for testing. */
   private List<String> exampleStatements;
+
   /**
    * A list of statements that need to be executed before the example statements may be executed.
    */
   private List<String> examplePrerequisiteStatements;
+
   /**
    * If this statement sets a value, the statement definition should also contain a {@link
    * ClientSideSetStatementImpl} definition that defines how the value that is to be set should be
@@ -124,6 +131,7 @@ class ClientSideStatementImpl implements ClientSideStatement {
 
   /** The compiled regex pattern for recognizing this statement. */
   private Pattern pattern;
+
   /** A reference to the executor that should be used. */
   private ClientSideStatementExecutor executor;
 
