@@ -45,18 +45,6 @@
     </dependency>
   </dependencies>
 
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-dependency-plugin</artifactId>
-        <configuration>
-          <ignoredUnusedDeclaredDependencies>javax.annotation:javax.annotation-api</ignoredUnusedDeclaredDependencies>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
-
   <reporting>
     <plugins>
       <plugin>
