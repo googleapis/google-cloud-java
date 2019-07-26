@@ -37,6 +37,7 @@ import java.nio.channels.Channels;
 /** Service class for getting credentials from key files stored locally or on cloud storage. */
 class CredentialsService {
   private static final String GOOGLE_CLOUD_STORAGE_PREFIX = "gs://";
+  private static final String INVALID_GCS_PREFIX_MSG = String.format("Storage URL must start with %s", GOOGLE_CLOUD_STORAGE_PREFIX);
 
   static final CredentialsService INSTANCE = new CredentialsService();
 
@@ -145,7 +146,7 @@ class CredentialsService {
   String internalGetBucket(String storageUrl) {
     Preconditions.checkArgument(
         storageUrl.startsWith(GOOGLE_CLOUD_STORAGE_PREFIX),
-        String.format("Storage URL must start with %s", GOOGLE_CLOUD_STORAGE_PREFIX));
+        INVALID_GCS_PREFIX_MSG);
     Preconditions.checkArgument(
         storageUrl.substring(5).contains("/"), "Storage URL must contain a blob name");
     return storageUrl.substring(5, storageUrl.indexOf('/', 5));
