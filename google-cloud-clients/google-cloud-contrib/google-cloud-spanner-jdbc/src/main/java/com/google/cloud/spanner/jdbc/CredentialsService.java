@@ -16,9 +16,6 @@
 
 package com.google.cloud.spanner.jdbc;
 
-import com.google.api.client.http.HttpTransport;
-import com.google.api.client.http.javanet.NetHttpTransport;
-import com.google.auth.http.HttpTransportFactory;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.spanner.ErrorCode;
 import com.google.cloud.spanner.SpannerException;
@@ -37,24 +34,10 @@ import java.nio.channels.Channels;
 /** Service class for getting credentials from key files stored locally or on cloud storage. */
 class CredentialsService {
   private static final String GOOGLE_CLOUD_STORAGE_PREFIX = "gs://";
-  private static final String INVALID_GCS_PREFIX_MSG = String.format("Storage URL must start with %s", GOOGLE_CLOUD_STORAGE_PREFIX);
+  private static final String INVALID_GCS_PREFIX_MSG =
+      String.format("Storage URL must start with %s", GOOGLE_CLOUD_STORAGE_PREFIX);
 
   static final CredentialsService INSTANCE = new CredentialsService();
-
-  /** Util for creating a default http transport */
-  static class CloudSpannerOAuthUtil {
-    static final HttpTransport HTTP_TRANSPORT = new NetHttpTransport();
-    static final HttpTransportFactory HTTP_TRANSPORT_FACTORY = new DefaultHttpTransportFactory();
-
-    static class DefaultHttpTransportFactory implements HttpTransportFactory {
-      @Override
-      public HttpTransport create() {
-        return HTTP_TRANSPORT;
-      }
-    }
-
-    private CloudSpannerOAuthUtil() {}
-  }
 
   CredentialsService() {}
 
@@ -106,8 +89,7 @@ class CredentialsService {
           String.format("Error reading credential file %s: File does not exist", filePath));
     }
     try (InputStream credentialsStream = new FileInputStream(credentialsFile)) {
-      return GoogleCredentials.fromStream(
-          credentialsStream, CloudSpannerOAuthUtil.HTTP_TRANSPORT_FACTORY);
+      return GoogleCredentials.fromStream(credentialsStream);
     }
   }
 
@@ -119,8 +101,7 @@ class CredentialsService {
       String bucketName = internalGetBucket(credentialsUrl);
       String blobName = internalGetBlob(credentialsUrl);
       Blob blob = storage.get(bucketName, blobName);
-      return GoogleCredentials.fromStream(
-          internalCreateInputStream(blob), CloudSpannerOAuthUtil.HTTP_TRANSPORT_FACTORY);
+      return GoogleCredentials.fromStream(internalCreateInputStream(blob));
     } catch (Exception e) {
       throw new IOException(
           String.format(
@@ -145,8 +126,7 @@ class CredentialsService {
   @VisibleForTesting
   String internalGetBucket(String storageUrl) {
     Preconditions.checkArgument(
-        storageUrl.startsWith(GOOGLE_CLOUD_STORAGE_PREFIX),
-        INVALID_GCS_PREFIX_MSG);
+        storageUrl.startsWith(GOOGLE_CLOUD_STORAGE_PREFIX), INVALID_GCS_PREFIX_MSG);
     Preconditions.checkArgument(
         storageUrl.substring(5).contains("/"), "Storage URL must contain a blob name");
     return storageUrl.substring(5, storageUrl.indexOf('/', 5));
