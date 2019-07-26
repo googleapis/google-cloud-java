@@ -72,9 +72,9 @@ class CredentialsService {
   GoogleCredentials createCredentials(String credentialsUrl) {
     try {
       if (credentialsUrl == null) {
-        return GoogleCredentials.getApplicationDefault();
+        return internalGetApplicationDefault();
       } else {
-        return internalGetCredentialsFromUrl(credentialsUrl);
+        return getCredentialsFromUrl(credentialsUrl);
       }
     } catch (IOException e) {
       throw SpannerExceptionFactory.newSpannerException(
@@ -83,19 +83,22 @@ class CredentialsService {
   }
 
   @VisibleForTesting
-  GoogleCredentials internalGetCredentialsFromUrl(String credentialsUrl) throws IOException {
+  GoogleCredentials internalGetApplicationDefault() throws IOException {
+    return GoogleCredentials.getApplicationDefault();
+  }
+
+  private GoogleCredentials getCredentialsFromUrl(String credentialsUrl) throws IOException {
     Preconditions.checkNotNull(credentialsUrl);
     Preconditions.checkArgument(
         credentialsUrl.length() > 0, "credentialsUrl may not be an empty string");
     if (credentialsUrl.startsWith(GOOGLE_CLOUD_STORAGE_PREFIX)) {
       return internalGetCredentialsFromCloudStorage(credentialsUrl);
     } else {
-      return internalGetCredentialsFromLocalFile(credentialsUrl);
+      return getCredentialsFromLocalFile(credentialsUrl);
     }
   }
 
-  @VisibleForTesting
-  GoogleCredentials internalGetCredentialsFromLocalFile(String filePath) throws IOException {
+  private GoogleCredentials getCredentialsFromLocalFile(String filePath) throws IOException {
     File credentialsFile = new File(filePath);
     if (!credentialsFile.isFile()) {
       throw new IOException(
@@ -107,8 +110,7 @@ class CredentialsService {
     }
   }
 
-  @VisibleForTesting
-  GoogleCredentials internalGetCredentialsFromCloudStorage(String credentialsUrl)
+  private GoogleCredentials internalGetCredentialsFromCloudStorage(String credentialsUrl)
       throws IOException {
     Preconditions.checkArgument(credentialsUrl.startsWith(GOOGLE_CLOUD_STORAGE_PREFIX));
     try {
