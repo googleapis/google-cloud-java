@@ -19,7 +19,7 @@ package com.google.cloud.spanner.jdbc;
 import com.google.cloud.spanner.ReadContext.QueryAnalyzeMode;
 
 /**
- * {@link AnalyzeMode} indicates whether a query should be executed as a normal query, whether only
+ * {@link AnalyzeMode} indicates whether a query should be executed as a normal query (NONE), whether only
  * a query plan should be returned, or whether the query should be profiled while executed.
  */
 enum AnalyzeMode {

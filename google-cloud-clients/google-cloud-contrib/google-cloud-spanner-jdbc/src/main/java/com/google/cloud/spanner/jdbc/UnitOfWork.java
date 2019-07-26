@@ -113,7 +113,7 @@ interface UnitOfWork {
       ParsedStatement statement, AnalyzeMode analyzeMode, QueryOption... options);
 
   /**
-   * @return the read timestamp of this transaction. Will throw an {@link SpannerException} if there
+   * @return the read timestamp of this transaction. Will throw a {@link SpannerException} if there
    *     is no read timestamp.
    */
   Timestamp getReadTimestamp();
@@ -122,7 +122,7 @@ interface UnitOfWork {
   Timestamp getReadTimestampOrNull();
 
   /**
-   * @return the commit timestamp of this transaction. Will throw an {@link SpannerException} if
+   * @return the commit timestamp of this transaction. Will throw a {@link SpannerException} if
    *     there is no commit timestamp.
    */
   Timestamp getCommitTimestamp();
