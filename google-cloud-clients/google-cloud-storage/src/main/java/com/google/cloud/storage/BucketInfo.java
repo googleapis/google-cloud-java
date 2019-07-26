@@ -101,7 +101,7 @@ public class BucketInfo implements Serializable {
   /**
    * The Bucket's IAM Configuration.
    *
-   * @see <a href="https://cloud.google.com/storage/docs/uniform-bucket-level-access">Uniform Bucket Level Access</a>
+   * @see <a href="https://cloud.google.com/storage/docs/uniform-bucket-level-access">uniform bucket-level access</a>
    */
   public static class IamConfiguration implements Serializable {
     private static final long serialVersionUID = -8671736104909424616L;
@@ -213,7 +213,7 @@ public class BucketInfo implements Serializable {
       }
 
       /**
-       * Sets whether Uniform Bucket Level Access is enabled for this bucket. When this is enabled, access to
+       * Sets whether uiform bucket-level access is enabled for this bucket. When this is enabled, access to
        * the bucket will be configured through IAM, and legacy ACL policies will not work. When this
        * is first enabled, {@code uniformBucketLevelAccess.lockedTime} will be set by the API automatically.
        * This field can then be disabled until the time specified, after which it will become
