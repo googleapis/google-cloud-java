@@ -1631,11 +1631,14 @@ public interface Storage extends Service<StorageOptions> {
    * Blob blob = storage.get(blobId, BlobGetOption.metagenerationMatch(blobMetageneration));
    * }</pre>
    *
-   * <p>Example of getting information on a blob encrypted using Customer Supplied Encryption Keys, only if supplied
-   *  Decrpytion Key decrypts the blob successfully, otherwise a {@link StorageException} is thrown.
-   *  For more information review ttps://cloud.google.com/storage/docs/encryption#customer-supplied_encryption_keys
+   * <p>Example of getting information on a blob encrypted using Customer Supplied Encryption Keys,
+   * only if supplied Decrpytion Key decrypts the blob successfully, otherwise a {@link
+   * StorageException} is thrown. For more information review
    *
-   * <pre>{@code
+   * @see <a
+   *     href="https://cloud.google.com/storage/docs/encryption/customer-supplied-keys#encrypted-elements">Encrypted
+   *     Elements</a>
+   *     <pre>{@code
    * String bucketName = "my_unique_bucket";
    * String blobName = "my_blob_name";
    * String blobEncryptionKey = "";

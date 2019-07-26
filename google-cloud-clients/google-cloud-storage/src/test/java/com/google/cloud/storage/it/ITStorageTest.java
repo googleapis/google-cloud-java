@@ -492,7 +492,10 @@ public class ITStorageTest {
     byte[] readBytes =
         storage.readAllBytes(BUCKET, blobName, Storage.BlobSourceOption.decryptionKey(BASE64_KEY));
     assertArrayEquals(BLOB_BYTE_CONTENT, readBytes);
-    remoteBlob = storage.get(blob.getBlobId(), Storage.BlobGetOption.decryptionKey(BASE64_KEY),
+    remoteBlob =
+        storage.get(
+            blob.getBlobId(),
+            Storage.BlobGetOption.decryptionKey(BASE64_KEY),
             Storage.BlobGetOption.fields(BlobField.CRC32C, BlobField.MD5HASH));
     assertNotNull(remoteBlob.getCrc32c());
     assertNotNull(remoteBlob.getMd5());
