@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -194,9 +194,11 @@ class ConnectionOptions {
    *     in the environment.
    * @return the default project-id.
    */
-  public static String getDefaultProjectId(GoogleCredentials credentials) {
+  public static String getDefaultProjectId(Credentials credentials) {
     String projectId = SpannerOptions.getDefaultProjectId();
-    if (projectId == null && credentials instanceof ServiceAccountCredentials) {
+    if (projectId == null
+        && credentials != null
+        && credentials instanceof ServiceAccountCredentials) {
       projectId = ((ServiceAccountCredentials) credentials).getProjectId();
     }
     return projectId;
@@ -387,9 +389,8 @@ class ConnectionOptions {
     }
 
     String projectId = matcher.group(Builder.PROJECT_GROUP);
-    if (Builder.DEFAULT_PROJECT_ID_PLACEHOLDER.equalsIgnoreCase(projectId)
-        && credentials instanceof GoogleCredentials) {
-      projectId = getDefaultProjectId((GoogleCredentials) this.credentials);
+    if (Builder.DEFAULT_PROJECT_ID_PLACEHOLDER.equalsIgnoreCase(projectId)) {
+      projectId = getDefaultProjectId(this.credentials);
     }
     this.projectId = projectId;
 

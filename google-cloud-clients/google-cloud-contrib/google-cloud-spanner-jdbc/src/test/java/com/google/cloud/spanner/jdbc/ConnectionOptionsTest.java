@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,18 +20,19 @@ import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.nullValue;
 import static org.junit.Assert.assertThat;
+
+import com.google.auth.oauth2.GoogleCredentials;
+import com.google.auth.oauth2.ServiceAccountCredentials;
+import com.google.cloud.spanner.SpannerOptions;
 import java.util.Arrays;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-import com.google.auth.oauth2.GoogleCredentials;
-import com.google.auth.oauth2.ServiceAccountCredentials;
-import com.google.cloud.spanner.SpannerOptions;
-import com.google.cloud.spanner.jdbc.ConnectionOptions;
-import com.google.cloud.spanner.jdbc.CredentialsService;
 
 @RunWith(JUnit4.class)
 public class ConnectionOptionsTest {
+  private static final String FILE_TEST_PATH =
+      ConnectionOptionsTest.class.getResource("test-key.json").getFile();
   private static final String DEFAULT_HOST = "https://spanner.googleapis.com";
 
   @Test
@@ -39,14 +40,15 @@ public class ConnectionOptionsTest {
     ConnectionOptions.Builder builder = ConnectionOptions.newBuilder();
     builder.setUri(
         "cloudspanner:/projects/test-project-123/instances/test-instance-123/databases/test-database-123");
-    builder.setCredentialsUrl(CredentialsServiceTest.FILE_TEST_PATH);
+    builder.setCredentialsUrl(FILE_TEST_PATH);
     ConnectionOptions options = builder.build();
     assertThat(options.getHost(), is(equalTo(DEFAULT_HOST)));
     assertThat(options.getProjectId(), is(equalTo("test-project-123")));
     assertThat(options.getInstanceId(), is(equalTo("test-instance-123")));
     assertThat(options.getDatabaseName(), is(equalTo("test-database-123")));
-    assertThat((GoogleCredentials) options.getCredentials(), is(equalTo(
-        new CredentialsService().createCredentials(CredentialsServiceTest.FILE_TEST_PATH))));
+    assertThat(
+        (GoogleCredentials) options.getCredentials(),
+        is(equalTo(new CredentialsService().createCredentials(FILE_TEST_PATH))));
     assertThat(options.isAutocommit(), is(equalTo(ConnectionOptions.DEFAULT_AUTOCOMMIT)));
     assertThat(options.isReadOnly(), is(equalTo(ConnectionOptions.DEFAULT_READONLY)));
   }
@@ -56,14 +58,15 @@ public class ConnectionOptionsTest {
     ConnectionOptions.Builder builder = ConnectionOptions.newBuilder();
     builder.setUri(
         "cloudspanner:/projects/test-project-123/instances/test-instance-123/databases/test-database-123?autocommit=false;readonly=true");
-    builder.setCredentialsUrl(CredentialsServiceTest.FILE_TEST_PATH);
+    builder.setCredentialsUrl(FILE_TEST_PATH);
     ConnectionOptions options = builder.build();
     assertThat(options.getHost(), is(equalTo(DEFAULT_HOST)));
     assertThat(options.getProjectId(), is(equalTo("test-project-123")));
     assertThat(options.getInstanceId(), is(equalTo("test-instance-123")));
     assertThat(options.getDatabaseName(), is(equalTo("test-database-123")));
-    assertThat((GoogleCredentials) options.getCredentials(), is(equalTo(
-        new CredentialsService().createCredentials(CredentialsServiceTest.FILE_TEST_PATH))));
+    assertThat(
+        (GoogleCredentials) options.getCredentials(),
+        is(equalTo(new CredentialsService().createCredentials(FILE_TEST_PATH))));
     assertThat(options.isAutocommit(), is(equalTo(false)));
     assertThat(options.isReadOnly(), is(equalTo(true)));
   }
@@ -73,14 +76,15 @@ public class ConnectionOptionsTest {
     ConnectionOptions.Builder builder = ConnectionOptions.newBuilder();
     builder.setUri(
         "cloudspanner://test-spanner.googleapis.com/projects/test-project-123/instances/test-instance-123/databases/test-database-123");
-    builder.setCredentialsUrl(CredentialsServiceTest.FILE_TEST_PATH);
+    builder.setCredentialsUrl(FILE_TEST_PATH);
     ConnectionOptions options = builder.build();
     assertThat(options.getHost(), is(equalTo("https://test-spanner.googleapis.com")));
     assertThat(options.getProjectId(), is(equalTo("test-project-123")));
     assertThat(options.getInstanceId(), is(equalTo("test-instance-123")));
     assertThat(options.getDatabaseName(), is(equalTo("test-database-123")));
-    assertThat((GoogleCredentials) options.getCredentials(), is(equalTo(
-        new CredentialsService().createCredentials(CredentialsServiceTest.FILE_TEST_PATH))));
+    assertThat(
+        (GoogleCredentials) options.getCredentials(),
+        is(equalTo(new CredentialsService().createCredentials(FILE_TEST_PATH))));
     assertThat(options.isAutocommit(), is(equalTo(ConnectionOptions.DEFAULT_AUTOCOMMIT)));
     assertThat(options.isReadOnly(), is(equalTo(ConnectionOptions.DEFAULT_READONLY)));
   }
@@ -90,14 +94,15 @@ public class ConnectionOptionsTest {
     ConnectionOptions.Builder builder = ConnectionOptions.newBuilder();
     builder.setUri(
         "cloudspanner://localhost:8443/projects/test-project-123/instances/test-instance-123/databases/test-database-123");
-    builder.setCredentialsUrl(CredentialsServiceTest.FILE_TEST_PATH);
+    builder.setCredentialsUrl(FILE_TEST_PATH);
     ConnectionOptions options = builder.build();
     assertThat(options.getHost(), is(equalTo("https://localhost:8443")));
     assertThat(options.getProjectId(), is(equalTo("test-project-123")));
     assertThat(options.getInstanceId(), is(equalTo("test-instance-123")));
     assertThat(options.getDatabaseName(), is(equalTo("test-database-123")));
-    assertThat((GoogleCredentials) options.getCredentials(), is(equalTo(
-        new CredentialsService().createCredentials(CredentialsServiceTest.FILE_TEST_PATH))));
+    assertThat(
+        (GoogleCredentials) options.getCredentials(),
+        is(equalTo(new CredentialsService().createCredentials(FILE_TEST_PATH))));
     assertThat(options.isAutocommit(), is(equalTo(ConnectionOptions.DEFAULT_AUTOCOMMIT)));
     assertThat(options.isReadOnly(), is(equalTo(ConnectionOptions.DEFAULT_READONLY)));
   }
@@ -107,19 +112,21 @@ public class ConnectionOptionsTest {
     ConnectionOptions.Builder builder = ConnectionOptions.newBuilder();
     builder.setUri(
         "cloudspanner:/projects/default_project_id/instances/test-instance-123/databases/test-database-123");
-    builder.setCredentialsUrl(CredentialsServiceTest.FILE_TEST_PATH);
+    builder.setCredentialsUrl(FILE_TEST_PATH);
     ConnectionOptions options = builder.build();
     assertThat(options.getHost(), is(equalTo(DEFAULT_HOST)));
     String projectId = SpannerOptions.getDefaultProjectId();
     if (projectId == null) {
-      projectId = ((ServiceAccountCredentials) new CredentialsService()
-          .createCredentials(CredentialsServiceTest.FILE_TEST_PATH)).getProjectId();
+      projectId =
+          ((ServiceAccountCredentials) new CredentialsService().createCredentials(FILE_TEST_PATH))
+              .getProjectId();
     }
     assertThat(options.getProjectId(), is(equalTo(projectId)));
     assertThat(options.getInstanceId(), is(equalTo("test-instance-123")));
     assertThat(options.getDatabaseName(), is(equalTo("test-database-123")));
-    assertThat((GoogleCredentials) options.getCredentials(), is(equalTo(
-        new CredentialsService().createCredentials(CredentialsServiceTest.FILE_TEST_PATH))));
+    assertThat(
+        (GoogleCredentials) options.getCredentials(),
+        is(equalTo(new CredentialsService().createCredentials(FILE_TEST_PATH))));
     assertThat(options.isAutocommit(), is(equalTo(ConnectionOptions.DEFAULT_AUTOCOMMIT)));
     assertThat(options.isReadOnly(), is(equalTo(ConnectionOptions.DEFAULT_READONLY)));
   }
@@ -141,15 +148,15 @@ public class ConnectionOptionsTest {
 
     builder.setUri(
         "cloudspanner:/projects/test-project-123/instances/test-instance/databases/test-database?autocommit=true");
-    builder
-        .setUri("cloudspanner:/projects/test-project-123/instances/test-instance?autocommit=true");
+    builder.setUri(
+        "cloudspanner:/projects/test-project-123/instances/test-instance?autocommit=true");
     builder.setUri("cloudspanner:/projects/test-project-123?autocommit=true");
     builder.setUri(
         "cloudspanner://spanner.googleapis.com/projects/test-project-123/instances/test-instance/databases/test-database?autocommit=true");
     builder.setUri(
         "cloudspanner://spanner.googleapis.com/projects/test-project-123/instances/test-instance?autocommit=true");
-    builder
-        .setUri("cloudspanner://spanner.googleapis.com/projects/test-project-123?autocommit=true");
+    builder.setUri(
+        "cloudspanner://spanner.googleapis.com/projects/test-project-123?autocommit=true");
 
     builder.setUri(
         "cloudspanner:/projects/test-project-123/instances/test-instance/databases/test-database?autocommit=true;readonly=false");
@@ -164,26 +171,33 @@ public class ConnectionOptionsTest {
         "cloudspanner://spanner.googleapis.com/projects/test-project-123?autocommit=true;readonly=false");
 
     // set invalid uri's
-    setInvalidUri(builder,
-        "/projects/test-project-123/instances/test-instance/databases/test-database");
+    setInvalidUri(
+        builder, "/projects/test-project-123/instances/test-instance/databases/test-database");
     setInvalidUri(builder, "cloudspanner:/test-project-123/test-instance/test-database");
-    setInvalidUri(builder,
+    setInvalidUri(
+        builder,
         "cloudspanner:spanner.googleapis.com/projects/test-project-123/instances/test-instance/databases/test-database");
-    setInvalidUri(builder,
+    setInvalidUri(
+        builder,
         "cloudspanner://spanner.googleapis.com/projects/test-project-$$$/instances/test-instance/databases/test-database");
-    setInvalidUri(builder,
+    setInvalidUri(
+        builder,
         "cloudspanner://spanner.googleapis.com/projects/test-project-123/databases/test-database");
-    setInvalidUri(builder,
+    setInvalidUri(
+        builder,
         "cloudspanner:/projects/test_project_123/instances/test-instance/databases/test-database");
 
     // Set URI's that are valid, but that contain unknown properties.
-    setInvalidProperty(builder,
+    setInvalidProperty(
+        builder,
         "cloudspanner:/projects/test-project-123/instances/test-instance/databases/test-database?read=false",
         "read");
-    setInvalidProperty(builder,
+    setInvalidProperty(
+        builder,
         "cloudspanner:/projects/test-project-123/instances/test-instance/databases/test-database?read=false;autocommit=true",
         "read");
-    setInvalidProperty(builder,
+    setInvalidProperty(
+        builder,
         "cloudspanner:/projects/test-project-123/instances/test-instance/databases/test-database?read=false;auto=true",
         "read, auto");
   }
@@ -198,8 +212,8 @@ public class ConnectionOptionsTest {
     assertThat(uri + " should be considered an invalid uri", invalid, is(true));
   }
 
-  private void setInvalidProperty(ConnectionOptions.Builder builder, String uri,
-      String expectedInvalidProperties) {
+  private void setInvalidProperty(
+      ConnectionOptions.Builder builder, String uri, String expectedInvalidProperties) {
     boolean invalid = false;
     try {
       builder.setUri(uri);
@@ -215,42 +229,63 @@ public class ConnectionOptionsTest {
         "cloudspanner:/projects/test-project-123/instances/test-instance/databases/test-database";
 
     assertThat(ConnectionOptions.parseUriProperty(baseUri, "autocommit"), is(nullValue()));
-    assertThat(ConnectionOptions.parseUriProperty(baseUri + "?autocommit=true", "autocommit"),
+    assertThat(
+        ConnectionOptions.parseUriProperty(baseUri + "?autocommit=true", "autocommit"),
         is(equalTo("true")));
-    assertThat(ConnectionOptions.parseUriProperty(baseUri + "?autocommit=false", "autocommit"),
+    assertThat(
+        ConnectionOptions.parseUriProperty(baseUri + "?autocommit=false", "autocommit"),
         is(equalTo("false")));
-    assertThat(ConnectionOptions.parseUriProperty(baseUri + "?autocommit=true;", "autocommit"),
+    assertThat(
+        ConnectionOptions.parseUriProperty(baseUri + "?autocommit=true;", "autocommit"),
         is(equalTo("true")));
-    assertThat(ConnectionOptions.parseUriProperty(baseUri + "?autocommit=false;", "autocommit"),
+    assertThat(
+        ConnectionOptions.parseUriProperty(baseUri + "?autocommit=false;", "autocommit"),
         is(equalTo("false")));
-    assertThat(ConnectionOptions.parseUriProperty(baseUri + "?autocommit=true;readOnly=false",
-        "autocommit"), is(equalTo("true")));
-    assertThat(ConnectionOptions.parseUriProperty(baseUri + "?autocommit=false;readOnly=false",
-        "autocommit"), is(equalTo("false")));
-    assertThat(ConnectionOptions.parseUriProperty(baseUri + "?readOnly=false;autocommit=true",
-        "autocommit"), is(equalTo("true")));
-    assertThat(ConnectionOptions.parseUriProperty(baseUri + "?readOnly=false;autocommit=false",
-        "autocommit"), is(equalTo("false")));
-    assertThat(ConnectionOptions.parseUriProperty(
-        baseUri + "?readOnly=false;autocommit=true;foo=bar", "autocommit"), is(equalTo("true")));
-    assertThat(ConnectionOptions.parseUriProperty(
-        baseUri + "?readOnly=false;autocommit=false;foo=bar", "autocommit"), is(equalTo("false")));
+    assertThat(
+        ConnectionOptions.parseUriProperty(
+            baseUri + "?autocommit=true;readOnly=false", "autocommit"),
+        is(equalTo("true")));
+    assertThat(
+        ConnectionOptions.parseUriProperty(
+            baseUri + "?autocommit=false;readOnly=false", "autocommit"),
+        is(equalTo("false")));
+    assertThat(
+        ConnectionOptions.parseUriProperty(
+            baseUri + "?readOnly=false;autocommit=true", "autocommit"),
+        is(equalTo("true")));
+    assertThat(
+        ConnectionOptions.parseUriProperty(
+            baseUri + "?readOnly=false;autocommit=false", "autocommit"),
+        is(equalTo("false")));
+    assertThat(
+        ConnectionOptions.parseUriProperty(
+            baseUri + "?readOnly=false;autocommit=true;foo=bar", "autocommit"),
+        is(equalTo("true")));
+    assertThat(
+        ConnectionOptions.parseUriProperty(
+            baseUri + "?readOnly=false;autocommit=false;foo=bar", "autocommit"),
+        is(equalTo("false")));
 
     // case insensitive
-    assertThat(ConnectionOptions.parseUriProperty(baseUri + "?AutoCommit=true", "autocommit"),
+    assertThat(
+        ConnectionOptions.parseUriProperty(baseUri + "?AutoCommit=true", "autocommit"),
         is(equalTo("true")));
-    assertThat(ConnectionOptions.parseUriProperty(baseUri + "?AutoCommit=false", "autocommit"),
+    assertThat(
+        ConnectionOptions.parseUriProperty(baseUri + "?AutoCommit=false", "autocommit"),
         is(equalTo("false")));
 
     // ; instead of ? before the properties is ok
-    assertThat(ConnectionOptions.parseUriProperty(baseUri + ";autocommit=true", "autocommit"),
+    assertThat(
+        ConnectionOptions.parseUriProperty(baseUri + ";autocommit=true", "autocommit"),
         is(equalTo("true")));
 
     // forgot the ? or ; before the properties
-    assertThat(ConnectionOptions.parseUriProperty(baseUri + "autocommit=true", "autocommit"),
+    assertThat(
+        ConnectionOptions.parseUriProperty(baseUri + "autocommit=true", "autocommit"),
         is(nullValue()));
     // substring is not ok
-    assertThat(ConnectionOptions.parseUriProperty(baseUri + "?isautocommit=true", "autocommit"),
+    assertThat(
+        ConnectionOptions.parseUriProperty(baseUri + "?isautocommit=true", "autocommit"),
         is(nullValue()));
   }
 
@@ -258,15 +293,20 @@ public class ConnectionOptionsTest {
   public void testParseProperties() {
     final String baseUri =
         "cloudspanner:/projects/test-project-123/instances/test-instance/databases/test-database";
-    assertThat(ConnectionOptions.parseProperties(baseUri + "?autocommit=true"),
+    assertThat(
+        ConnectionOptions.parseProperties(baseUri + "?autocommit=true"),
         is(equalTo(Arrays.asList("autocommit"))));
-    assertThat(ConnectionOptions.parseProperties(baseUri + "?autocommit=true;readonly=false"),
+    assertThat(
+        ConnectionOptions.parseProperties(baseUri + "?autocommit=true;readonly=false"),
         is(equalTo(Arrays.asList("autocommit", "readonly"))));
-    assertThat(ConnectionOptions.parseProperties(baseUri + "?autocommit=true;READONLY=false"),
+    assertThat(
+        ConnectionOptions.parseProperties(baseUri + "?autocommit=true;READONLY=false"),
         is(equalTo(Arrays.asList("autocommit", "READONLY"))));
-    assertThat(ConnectionOptions.parseProperties(baseUri + ";autocommit=true;readonly=false"),
+    assertThat(
+        ConnectionOptions.parseProperties(baseUri + ";autocommit=true;readonly=false"),
         is(equalTo(Arrays.asList("autocommit", "readonly"))));
-    assertThat(ConnectionOptions.parseProperties(baseUri + ";autocommit=true;readonly=false;"),
+    assertThat(
+        ConnectionOptions.parseProperties(baseUri + ";autocommit=true;readonly=false;"),
         is(equalTo(Arrays.asList("autocommit", "readonly"))));
   }
 
@@ -274,16 +314,21 @@ public class ConnectionOptionsTest {
   public void testParsePropertiesSpecifiedMultipleTimes() {
     final String baseUri =
         "cloudspanner:/projects/test-project-123/instances/test-instance/databases/test-database";
-    assertThat(ConnectionOptions.parseUriProperty(baseUri + "?autocommit=true;autocommit=false",
-        "autocommit"), is(equalTo("true")));
-    assertThat(ConnectionOptions.parseUriProperty(baseUri + "?autocommit=false;autocommit=true",
-        "autocommit"), is(equalTo("false")));
+    assertThat(
+        ConnectionOptions.parseUriProperty(
+            baseUri + "?autocommit=true;autocommit=false", "autocommit"),
+        is(equalTo("true")));
+    assertThat(
+        ConnectionOptions.parseUriProperty(
+            baseUri + "?autocommit=false;autocommit=true", "autocommit"),
+        is(equalTo("false")));
     assertThat(
         ConnectionOptions.parseUriProperty(
             baseUri + ";autocommit=false;readonly=false;autocommit=true", "autocommit"),
         is(equalTo("false")));
-    ConnectionOptions.newBuilder().setUri(
-        "cloudspanner:/projects/test-project-123/instances/test-instance/databases/test-database"
-            + ";autocommit=false;readonly=false;autocommit=true");
+    ConnectionOptions.newBuilder()
+        .setUri(
+            "cloudspanner:/projects/test-project-123/instances/test-instance/databases/test-database"
+                + ";autocommit=false;readonly=false;autocommit=true");
   }
 }
