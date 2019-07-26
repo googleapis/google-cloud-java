@@ -18,6 +18,7 @@
   </description>
 
   <properties>
+    <checkstyle.excludes>com/google/**/v*/**</checkstyle.excludes>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <project.javadoc.protobufBaseURL>https://googleapis.github.io/google-cloud-java/google-api-grpc/apidocs</project.javadoc.protobufBaseURL>
@@ -976,20 +977,6 @@
     <module>proto-google-cloud-websecurityscanner-v1alpha</module>
     <module>proto-google-cloud-websecurityscanner-v1beta</module>
   </modules>
-
-  <build>
-    <pluginManagement>
-      <plugins>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-checkstyle-plugin</artifactId>
-          <configuration>
-            <excludes>com/google/**/v*/**,io/grafeas/v*/**,com/google/cloud/datacatalog/*</excludes>
-          </configuration>
-        </plugin>
-      </plugins>
-    </pluginManagement>
-  </build>
 
   <reporting>
     <plugins>

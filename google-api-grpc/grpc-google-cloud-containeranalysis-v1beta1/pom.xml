@@ -11,6 +11,11 @@
     <artifactId>google-api-grpc</artifactId>
     <version>0.67.1-SNAPSHOT</version><!-- {x-version-update:google-api-grpc:current} -->
   </parent>
+
+  <properties>
+    <checkstyle.excludes>com/google/**/v*/**,io/grafeas/v*/**</checkstyle.excludes>
+  </properties>
+
   <dependencies>
     <dependency>
       <groupId>io.grpc</groupId>
