@@ -784,7 +784,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The intent that matched the conversational query. Some, not
    * all fields are filled in this message, including but not limited to:
-   * `name`, `display_name` and `webhook_state`.
+   * `name`, `display_name`, `end_interaction` and `is_fallback`.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.Intent intent = 11;</code>
@@ -798,7 +798,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The intent that matched the conversational query. Some, not
    * all fields are filled in this message, including but not limited to:
-   * `name`, `display_name` and `webhook_state`.
+   * `name`, `display_name`, `end_interaction` and `is_fallback`.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.Intent intent = 11;</code>
@@ -814,7 +814,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The intent that matched the conversational query. Some, not
    * all fields are filled in this message, including but not limited to:
-   * `name`, `display_name` and `webhook_state`.
+   * `name`, `display_name`, `end_interaction` and `is_fallback`.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.Intent intent = 11;</code>
@@ -3519,7 +3519,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The intent that matched the conversational query. Some, not
      * all fields are filled in this message, including but not limited to:
-     * `name`, `display_name` and `webhook_state`.
+     * `name`, `display_name`, `end_interaction` and `is_fallback`.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.Intent intent = 11;</code>
@@ -3533,7 +3533,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The intent that matched the conversational query. Some, not
      * all fields are filled in this message, including but not limited to:
-     * `name`, `display_name` and `webhook_state`.
+     * `name`, `display_name`, `end_interaction` and `is_fallback`.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.Intent intent = 11;</code>
@@ -3553,7 +3553,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The intent that matched the conversational query. Some, not
      * all fields are filled in this message, including but not limited to:
-     * `name`, `display_name` and `webhook_state`.
+     * `name`, `display_name`, `end_interaction` and `is_fallback`.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.Intent intent = 11;</code>
@@ -3577,7 +3577,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The intent that matched the conversational query. Some, not
      * all fields are filled in this message, including but not limited to:
-     * `name`, `display_name` and `webhook_state`.
+     * `name`, `display_name`, `end_interaction` and `is_fallback`.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.Intent intent = 11;</code>
@@ -3598,7 +3598,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The intent that matched the conversational query. Some, not
      * all fields are filled in this message, including but not limited to:
-     * `name`, `display_name` and `webhook_state`.
+     * `name`, `display_name`, `end_interaction` and `is_fallback`.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.Intent intent = 11;</code>
@@ -3626,7 +3626,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The intent that matched the conversational query. Some, not
      * all fields are filled in this message, including but not limited to:
-     * `name`, `display_name` and `webhook_state`.
+     * `name`, `display_name`, `end_interaction` and `is_fallback`.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.Intent intent = 11;</code>
@@ -3648,7 +3648,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The intent that matched the conversational query. Some, not
      * all fields are filled in this message, including but not limited to:
-     * `name`, `display_name` and `webhook_state`.
+     * `name`, `display_name`, `end_interaction` and `is_fallback`.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.Intent intent = 11;</code>
@@ -3664,7 +3664,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The intent that matched the conversational query. Some, not
      * all fields are filled in this message, including but not limited to:
-     * `name`, `display_name` and `webhook_state`.
+     * `name`, `display_name`, `end_interaction` and `is_fallback`.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.Intent intent = 11;</code>
@@ -3684,7 +3684,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The intent that matched the conversational query. Some, not
      * all fields are filled in this message, including but not limited to:
-     * `name`, `display_name` and `webhook_state`.
+     * `name`, `display_name`, `end_interaction` and `is_fallback`.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.Intent intent = 11;</code>
