@@ -49,7 +49,7 @@ import java.util.concurrent.ConcurrentMap;
 import java.util.logging.Logger;
 
 /** Helper class to convert to/from custom POJO classes and plain Java types. */
-class CustomClassMapper {
+public class CustomClassMapper {
   private static final Logger LOGGER = Logger.getLogger(CustomClassMapper.class.getName());
 
   /** Maximum depth before we give up and assume it's a recursive object graph. */
