@@ -36,4 +36,7 @@
  * </code>
  * </pre>
  */
+@Generated("by gapic-generator")
 package com.google.cloud.language.v1;
+
+import javax.annotation.Generated;

@@ -104,4 +104,7 @@
  * </code>
  * </pre>
  */
+@Generated("by gapic-generator")
 package com.google.cloud.gaming.v1alpha;
+
+import javax.annotation.Generated;

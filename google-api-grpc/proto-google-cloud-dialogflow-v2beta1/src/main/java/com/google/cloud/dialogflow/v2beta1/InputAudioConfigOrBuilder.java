@@ -148,6 +148,73 @@ public interface InputAudioConfigOrBuilder
    *
    *
    * <pre>
+   * Optional. Context information to assist speech recognition.
+   * See [the Cloud Speech
+   * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
+   * for more details.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dialogflow.v2beta1.SpeechContext speech_contexts = 11;</code>
+   */
+  java.util.List<com.google.cloud.dialogflow.v2beta1.SpeechContext> getSpeechContextsList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Context information to assist speech recognition.
+   * See [the Cloud Speech
+   * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
+   * for more details.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dialogflow.v2beta1.SpeechContext speech_contexts = 11;</code>
+   */
+  com.google.cloud.dialogflow.v2beta1.SpeechContext getSpeechContexts(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Context information to assist speech recognition.
+   * See [the Cloud Speech
+   * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
+   * for more details.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dialogflow.v2beta1.SpeechContext speech_contexts = 11;</code>
+   */
+  int getSpeechContextsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Context information to assist speech recognition.
+   * See [the Cloud Speech
+   * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
+   * for more details.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dialogflow.v2beta1.SpeechContext speech_contexts = 11;</code>
+   */
+  java.util.List<? extends com.google.cloud.dialogflow.v2beta1.SpeechContextOrBuilder>
+      getSpeechContextsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Context information to assist speech recognition.
+   * See [the Cloud Speech
+   * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
+   * for more details.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dialogflow.v2beta1.SpeechContext speech_contexts = 11;</code>
+   */
+  com.google.cloud.dialogflow.v2beta1.SpeechContextOrBuilder getSpeechContextsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Which Speech model to select for the given request. Select the
    * model best suited to your domain to get best results. If a model is not
    * explicitly specified, then we auto-select a model based on the parameters

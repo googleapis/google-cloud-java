@@ -26,6 +26,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     audioEncoding_ = 0;
     languageCode_ = "";
     phraseHints_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    speechContexts_ = java.util.Collections.emptyList();
     model_ = "";
     modelVariant_ = 0;
   }
@@ -102,6 +103,19 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
               modelVariant_ = rawValue;
               break;
             }
+          case 90:
+            {
+              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+                speechContexts_ =
+                    new java.util.ArrayList<com.google.cloud.dialogflow.v2beta1.SpeechContext>();
+                mutable_bitField0_ |= 0x00000020;
+              }
+              speechContexts_.add(
+                  input.readMessage(
+                      com.google.cloud.dialogflow.v2beta1.SpeechContext.parser(),
+                      extensionRegistry));
+              break;
+            }
           case 104:
             {
               enableWordInfo_ = input.readBool();
@@ -123,6 +137,9 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     } finally {
       if (((mutable_bitField0_ & 0x00000010) != 0)) {
         phraseHints_ = phraseHints_.getUnmodifiableView();
+      }
+      if (((mutable_bitField0_ & 0x00000020) != 0)) {
+        speechContexts_ = java.util.Collections.unmodifiableList(speechContexts_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -330,6 +347,86 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     return phraseHints_.getByteString(index);
   }
 
+  public static final int SPEECH_CONTEXTS_FIELD_NUMBER = 11;
+  private java.util.List<com.google.cloud.dialogflow.v2beta1.SpeechContext> speechContexts_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Context information to assist speech recognition.
+   * See [the Cloud Speech
+   * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
+   * for more details.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dialogflow.v2beta1.SpeechContext speech_contexts = 11;</code>
+   */
+  public java.util.List<com.google.cloud.dialogflow.v2beta1.SpeechContext> getSpeechContextsList() {
+    return speechContexts_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Context information to assist speech recognition.
+   * See [the Cloud Speech
+   * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
+   * for more details.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dialogflow.v2beta1.SpeechContext speech_contexts = 11;</code>
+   */
+  public java.util.List<? extends com.google.cloud.dialogflow.v2beta1.SpeechContextOrBuilder>
+      getSpeechContextsOrBuilderList() {
+    return speechContexts_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Context information to assist speech recognition.
+   * See [the Cloud Speech
+   * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
+   * for more details.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dialogflow.v2beta1.SpeechContext speech_contexts = 11;</code>
+   */
+  public int getSpeechContextsCount() {
+    return speechContexts_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Context information to assist speech recognition.
+   * See [the Cloud Speech
+   * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
+   * for more details.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dialogflow.v2beta1.SpeechContext speech_contexts = 11;</code>
+   */
+  public com.google.cloud.dialogflow.v2beta1.SpeechContext getSpeechContexts(int index) {
+    return speechContexts_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Context information to assist speech recognition.
+   * See [the Cloud Speech
+   * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
+   * for more details.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dialogflow.v2beta1.SpeechContext speech_contexts = 11;</code>
+   */
+  public com.google.cloud.dialogflow.v2beta1.SpeechContextOrBuilder getSpeechContextsOrBuilder(
+      int index) {
+    return speechContexts_.get(index);
+  }
+
   public static final int MODEL_FIELD_NUMBER = 7;
   private volatile java.lang.Object model_;
   /**
@@ -488,6 +585,9 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
             .getNumber()) {
       output.writeEnum(10, modelVariant_);
     }
+    for (int i = 0; i < speechContexts_.size(); i++) {
+      output.writeMessage(11, speechContexts_.get(i));
+    }
     if (enableWordInfo_ != false) {
       output.writeBool(13, enableWordInfo_);
     }
@@ -530,6 +630,9 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(10, modelVariant_);
     }
+    for (int i = 0; i < speechContexts_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, speechContexts_.get(i));
+    }
     if (enableWordInfo_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(13, enableWordInfo_);
     }
@@ -554,6 +657,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     if (!getLanguageCode().equals(other.getLanguageCode())) return false;
     if (getEnableWordInfo() != other.getEnableWordInfo()) return false;
     if (!getPhraseHintsList().equals(other.getPhraseHintsList())) return false;
+    if (!getSpeechContextsList().equals(other.getSpeechContextsList())) return false;
     if (!getModel().equals(other.getModel())) return false;
     if (modelVariant_ != other.modelVariant_) return false;
     if (getSingleUtterance() != other.getSingleUtterance()) return false;
@@ -579,6 +683,10 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     if (getPhraseHintsCount() > 0) {
       hash = (37 * hash) + PHRASE_HINTS_FIELD_NUMBER;
       hash = (53 * hash) + getPhraseHintsList().hashCode();
+    }
+    if (getSpeechContextsCount() > 0) {
+      hash = (37 * hash) + SPEECH_CONTEXTS_FIELD_NUMBER;
+      hash = (53 * hash) + getSpeechContextsList().hashCode();
     }
     hash = (37 * hash) + MODEL_FIELD_NUMBER;
     hash = (53 * hash) + getModel().hashCode();
@@ -725,7 +833,9 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     }
 
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getSpeechContextsFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -741,6 +851,12 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
 
       phraseHints_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000010);
+      if (speechContextsBuilder_ == null) {
+        speechContexts_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000020);
+      } else {
+        speechContextsBuilder_.clear();
+      }
       model_ = "";
 
       modelVariant_ = 0;
@@ -785,6 +901,15 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
         bitField0_ = (bitField0_ & ~0x00000010);
       }
       result.phraseHints_ = phraseHints_;
+      if (speechContextsBuilder_ == null) {
+        if (((bitField0_ & 0x00000020) != 0)) {
+          speechContexts_ = java.util.Collections.unmodifiableList(speechContexts_);
+          bitField0_ = (bitField0_ & ~0x00000020);
+        }
+        result.speechContexts_ = speechContexts_;
+      } else {
+        result.speechContexts_ = speechContextsBuilder_.build();
+      }
       result.model_ = model_;
       result.modelVariant_ = modelVariant_;
       result.singleUtterance_ = singleUtterance_;
@@ -861,6 +986,33 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
           phraseHints_.addAll(other.phraseHints_);
         }
         onChanged();
+      }
+      if (speechContextsBuilder_ == null) {
+        if (!other.speechContexts_.isEmpty()) {
+          if (speechContexts_.isEmpty()) {
+            speechContexts_ = other.speechContexts_;
+            bitField0_ = (bitField0_ & ~0x00000020);
+          } else {
+            ensureSpeechContextsIsMutable();
+            speechContexts_.addAll(other.speechContexts_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.speechContexts_.isEmpty()) {
+          if (speechContextsBuilder_.isEmpty()) {
+            speechContextsBuilder_.dispose();
+            speechContextsBuilder_ = null;
+            speechContexts_ = other.speechContexts_;
+            bitField0_ = (bitField0_ & ~0x00000020);
+            speechContextsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getSpeechContextsFieldBuilder()
+                    : null;
+          } else {
+            speechContextsBuilder_.addAllMessages(other.speechContexts_);
+          }
+        }
       }
       if (!other.getModel().isEmpty()) {
         model_ = other.model_;
@@ -1382,6 +1534,422 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
       phraseHints_.add(value);
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.google.cloud.dialogflow.v2beta1.SpeechContext> speechContexts_ =
+        java.util.Collections.emptyList();
+
+    private void ensureSpeechContextsIsMutable() {
+      if (!((bitField0_ & 0x00000020) != 0)) {
+        speechContexts_ =
+            new java.util.ArrayList<com.google.cloud.dialogflow.v2beta1.SpeechContext>(
+                speechContexts_);
+        bitField0_ |= 0x00000020;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.dialogflow.v2beta1.SpeechContext,
+            com.google.cloud.dialogflow.v2beta1.SpeechContext.Builder,
+            com.google.cloud.dialogflow.v2beta1.SpeechContextOrBuilder>
+        speechContextsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Context information to assist speech recognition.
+     * See [the Cloud Speech
+     * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
+     * for more details.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2beta1.SpeechContext speech_contexts = 11;</code>
+     */
+    public java.util.List<com.google.cloud.dialogflow.v2beta1.SpeechContext>
+        getSpeechContextsList() {
+      if (speechContextsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(speechContexts_);
+      } else {
+        return speechContextsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Context information to assist speech recognition.
+     * See [the Cloud Speech
+     * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
+     * for more details.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2beta1.SpeechContext speech_contexts = 11;</code>
+     */
+    public int getSpeechContextsCount() {
+      if (speechContextsBuilder_ == null) {
+        return speechContexts_.size();
+      } else {
+        return speechContextsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Context information to assist speech recognition.
+     * See [the Cloud Speech
+     * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
+     * for more details.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2beta1.SpeechContext speech_contexts = 11;</code>
+     */
+    public com.google.cloud.dialogflow.v2beta1.SpeechContext getSpeechContexts(int index) {
+      if (speechContextsBuilder_ == null) {
+        return speechContexts_.get(index);
+      } else {
+        return speechContextsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Context information to assist speech recognition.
+     * See [the Cloud Speech
+     * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
+     * for more details.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2beta1.SpeechContext speech_contexts = 11;</code>
+     */
+    public Builder setSpeechContexts(
+        int index, com.google.cloud.dialogflow.v2beta1.SpeechContext value) {
+      if (speechContextsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSpeechContextsIsMutable();
+        speechContexts_.set(index, value);
+        onChanged();
+      } else {
+        speechContextsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Context information to assist speech recognition.
+     * See [the Cloud Speech
+     * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
+     * for more details.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2beta1.SpeechContext speech_contexts = 11;</code>
+     */
+    public Builder setSpeechContexts(
+        int index, com.google.cloud.dialogflow.v2beta1.SpeechContext.Builder builderForValue) {
+      if (speechContextsBuilder_ == null) {
+        ensureSpeechContextsIsMutable();
+        speechContexts_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        speechContextsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Context information to assist speech recognition.
+     * See [the Cloud Speech
+     * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
+     * for more details.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2beta1.SpeechContext speech_contexts = 11;</code>
+     */
+    public Builder addSpeechContexts(com.google.cloud.dialogflow.v2beta1.SpeechContext value) {
+      if (speechContextsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSpeechContextsIsMutable();
+        speechContexts_.add(value);
+        onChanged();
+      } else {
+        speechContextsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Context information to assist speech recognition.
+     * See [the Cloud Speech
+     * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
+     * for more details.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2beta1.SpeechContext speech_contexts = 11;</code>
+     */
+    public Builder addSpeechContexts(
+        int index, com.google.cloud.dialogflow.v2beta1.SpeechContext value) {
+      if (speechContextsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSpeechContextsIsMutable();
+        speechContexts_.add(index, value);
+        onChanged();
+      } else {
+        speechContextsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Context information to assist speech recognition.
+     * See [the Cloud Speech
+     * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
+     * for more details.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2beta1.SpeechContext speech_contexts = 11;</code>
+     */
+    public Builder addSpeechContexts(
+        com.google.cloud.dialogflow.v2beta1.SpeechContext.Builder builderForValue) {
+      if (speechContextsBuilder_ == null) {
+        ensureSpeechContextsIsMutable();
+        speechContexts_.add(builderForValue.build());
+        onChanged();
+      } else {
+        speechContextsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Context information to assist speech recognition.
+     * See [the Cloud Speech
+     * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
+     * for more details.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2beta1.SpeechContext speech_contexts = 11;</code>
+     */
+    public Builder addSpeechContexts(
+        int index, com.google.cloud.dialogflow.v2beta1.SpeechContext.Builder builderForValue) {
+      if (speechContextsBuilder_ == null) {
+        ensureSpeechContextsIsMutable();
+        speechContexts_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        speechContextsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Context information to assist speech recognition.
+     * See [the Cloud Speech
+     * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
+     * for more details.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2beta1.SpeechContext speech_contexts = 11;</code>
+     */
+    public Builder addAllSpeechContexts(
+        java.lang.Iterable<? extends com.google.cloud.dialogflow.v2beta1.SpeechContext> values) {
+      if (speechContextsBuilder_ == null) {
+        ensureSpeechContextsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, speechContexts_);
+        onChanged();
+      } else {
+        speechContextsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Context information to assist speech recognition.
+     * See [the Cloud Speech
+     * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
+     * for more details.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2beta1.SpeechContext speech_contexts = 11;</code>
+     */
+    public Builder clearSpeechContexts() {
+      if (speechContextsBuilder_ == null) {
+        speechContexts_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000020);
+        onChanged();
+      } else {
+        speechContextsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Context information to assist speech recognition.
+     * See [the Cloud Speech
+     * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
+     * for more details.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2beta1.SpeechContext speech_contexts = 11;</code>
+     */
+    public Builder removeSpeechContexts(int index) {
+      if (speechContextsBuilder_ == null) {
+        ensureSpeechContextsIsMutable();
+        speechContexts_.remove(index);
+        onChanged();
+      } else {
+        speechContextsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Context information to assist speech recognition.
+     * See [the Cloud Speech
+     * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
+     * for more details.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2beta1.SpeechContext speech_contexts = 11;</code>
+     */
+    public com.google.cloud.dialogflow.v2beta1.SpeechContext.Builder getSpeechContextsBuilder(
+        int index) {
+      return getSpeechContextsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Context information to assist speech recognition.
+     * See [the Cloud Speech
+     * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
+     * for more details.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2beta1.SpeechContext speech_contexts = 11;</code>
+     */
+    public com.google.cloud.dialogflow.v2beta1.SpeechContextOrBuilder getSpeechContextsOrBuilder(
+        int index) {
+      if (speechContextsBuilder_ == null) {
+        return speechContexts_.get(index);
+      } else {
+        return speechContextsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Context information to assist speech recognition.
+     * See [the Cloud Speech
+     * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
+     * for more details.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2beta1.SpeechContext speech_contexts = 11;</code>
+     */
+    public java.util.List<? extends com.google.cloud.dialogflow.v2beta1.SpeechContextOrBuilder>
+        getSpeechContextsOrBuilderList() {
+      if (speechContextsBuilder_ != null) {
+        return speechContextsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(speechContexts_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Context information to assist speech recognition.
+     * See [the Cloud Speech
+     * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
+     * for more details.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2beta1.SpeechContext speech_contexts = 11;</code>
+     */
+    public com.google.cloud.dialogflow.v2beta1.SpeechContext.Builder addSpeechContextsBuilder() {
+      return getSpeechContextsFieldBuilder()
+          .addBuilder(com.google.cloud.dialogflow.v2beta1.SpeechContext.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Context information to assist speech recognition.
+     * See [the Cloud Speech
+     * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
+     * for more details.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2beta1.SpeechContext speech_contexts = 11;</code>
+     */
+    public com.google.cloud.dialogflow.v2beta1.SpeechContext.Builder addSpeechContextsBuilder(
+        int index) {
+      return getSpeechContextsFieldBuilder()
+          .addBuilder(
+              index, com.google.cloud.dialogflow.v2beta1.SpeechContext.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Context information to assist speech recognition.
+     * See [the Cloud Speech
+     * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
+     * for more details.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2beta1.SpeechContext speech_contexts = 11;</code>
+     */
+    public java.util.List<com.google.cloud.dialogflow.v2beta1.SpeechContext.Builder>
+        getSpeechContextsBuilderList() {
+      return getSpeechContextsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.dialogflow.v2beta1.SpeechContext,
+            com.google.cloud.dialogflow.v2beta1.SpeechContext.Builder,
+            com.google.cloud.dialogflow.v2beta1.SpeechContextOrBuilder>
+        getSpeechContextsFieldBuilder() {
+      if (speechContextsBuilder_ == null) {
+        speechContextsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.dialogflow.v2beta1.SpeechContext,
+                com.google.cloud.dialogflow.v2beta1.SpeechContext.Builder,
+                com.google.cloud.dialogflow.v2beta1.SpeechContextOrBuilder>(
+                speechContexts_,
+                ((bitField0_ & 0x00000020) != 0),
+                getParentForChildren(),
+                isClean());
+        speechContexts_ = null;
+      }
+      return speechContextsBuilder_;
     }
 
     private java.lang.Object model_ = "";
