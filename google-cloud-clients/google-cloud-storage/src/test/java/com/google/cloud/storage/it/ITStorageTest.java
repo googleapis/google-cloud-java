@@ -2485,20 +2485,57 @@ public class ITStorageTest {
 
   @Test
   public void testBucketWithBucketPolicyOnlyEnabled() throws Exception {
-    String bpoBucket = RemoteStorageHelper.generateBucketName();
+    String bucket = RemoteStorageHelper.generateBucketName();
     try {
       storage.create(
-          Bucket.newBuilder(bpoBucket)
-              .setIamConfiguration(
-                  BucketInfo.IamConfiguration.newBuilder()
-                      .setIsBucketPolicyOnlyEnabled(true)
-                      .build())
-              .build());
+              Bucket.newBuilder(bucket)
+                      .setIamConfiguration(
+                              BucketInfo.IamConfiguration.newBuilder()
+                                      .setIsBucketPolicyOnlyEnabled(true)
+                                      .build())
+                      .build());
 
       Bucket remoteBucket =
-          storage.get(bpoBucket, Storage.BucketGetOption.fields(BucketField.IAMCONFIGURATION));
+              storage.get(bucket, Storage.BucketGetOption.fields(BucketField.IAMCONFIGURATION));
 
       assertTrue(remoteBucket.getIamConfiguration().isBucketPolicyOnlyEnabled());
+      assertNotNull(remoteBucket.getIamConfiguration().getBucketPolicyOnlyLockedTime());
+
+      try {
+        //remoteBucket.listAcls();
+        fail("StorageException was expected.");
+      } catch (StorageException e) {
+        // Expected: Listing legacy ACLs should fail on a BPO enabled bucket
+      }
+      try {
+        remoteBucket.listDefaultAcls();
+        fail("StorageException was expected");
+      } catch (StorageException e) {
+        // Expected: Listing legacy ACLs should fail on a BPO enabled bucket
+      }
+    } catch (Exception e) {
+      fail(e.getMessage());
+    } finally {
+      RemoteStorageHelper.forceDelete(storage, bucket, 1, TimeUnit.MINUTES);
+    }
+  }
+
+  @Test
+  public void testBucketWithUniformBucketLevelAccessEnabled() throws Exception {
+    String bucket = RemoteStorageHelper.generateBucketName();
+    try {
+      storage.create(
+              Bucket.newBuilder(bucket)
+                      .setIamConfiguration(
+                              BucketInfo.IamConfiguration.newBuilder()
+                                      .setIsUniformBucketLevelAccessEnabled(true)
+                                      .build())
+                      .build());
+
+      Bucket remoteBucket =
+              storage.get(bucket, Storage.BucketGetOption.fields(BucketField.IAMCONFIGURATION));
+
+      assertTrue(remoteBucket.getIamConfiguration().isUniformBucketLevelAccessEnabled());
       assertNotNull(remoteBucket.getIamConfiguration().getBucketPolicyOnlyLockedTime());
       try {
         remoteBucket.listAcls();
@@ -2513,7 +2550,7 @@ public class ITStorageTest {
         // Expected: Listing legacy ACLs should fail on a BPO enabled bucket
       }
     } finally {
-      RemoteStorageHelper.forceDelete(storage, bpoBucket, 1, TimeUnit.MINUTES);
+      RemoteStorageHelper.forceDelete(storage, bucket, 1, TimeUnit.MINUTES);
     }
   }
 
@@ -2554,6 +2591,52 @@ public class ITStorageTest {
                   BucketField.IAMCONFIGURATION, BucketField.ACL, BucketField.DEFAULT_OBJECT_ACL));
 
       assertFalse(remoteBucket.getIamConfiguration().isBucketPolicyOnlyEnabled());
+      assertEquals(User.ofAllAuthenticatedUsers(), remoteBucket.getDefaultAcl().get(0).getEntity());
+      assertEquals(Role.READER, remoteBucket.getDefaultAcl().get(0).getRole());
+      assertEquals(User.ofAllAuthenticatedUsers(), remoteBucket.getAcl().get(0).getEntity());
+      assertEquals(Role.READER, remoteBucket.getAcl().get(0).getRole());
+    } finally {
+      RemoteStorageHelper.forceDelete(storage, bpoBucket, 1, TimeUnit.MINUTES);
+    }
+  }
+
+  @Test
+  public void testEnableAndDisableUniformBucketLevelAccessOnExistingBucket() throws Exception {
+    String bpoBucket = RemoteStorageHelper.generateBucketName();
+    try {
+      BucketInfo.IamConfiguration ublaDisabledIamConfiguration =
+              BucketInfo.IamConfiguration.newBuilder().setIsUniformBucketLevelAccessEnabled(false).build();
+      Bucket bucket =
+              storage.create(
+                      Bucket.newBuilder(bpoBucket)
+                              .setIamConfiguration(ublaDisabledIamConfiguration)
+                              .setAcl(ImmutableList.of(Acl.of(User.ofAllAuthenticatedUsers(), Role.READER)))
+                              .setDefaultAcl(
+                                      ImmutableList.of(Acl.of(User.ofAllAuthenticatedUsers(), Role.READER)))
+                              .build());
+
+      bucket
+              .toBuilder()
+              .setIamConfiguration(
+                      ublaDisabledIamConfiguration.toBuilder().setIsUniformBucketLevelAccessEnabled(true).build())
+              .build()
+              .update();
+
+      Bucket remoteBucket =
+              storage.get(bpoBucket, Storage.BucketGetOption.fields(BucketField.IAMCONFIGURATION));
+
+      assertTrue(remoteBucket.getIamConfiguration().isUniformBucketLevelAccessEnabled());
+      assertNotNull(remoteBucket.getIamConfiguration().getUniformBucketLevelAccessLockedTime());
+
+      bucket.toBuilder().setIamConfiguration(ublaDisabledIamConfiguration).build().update();
+
+      remoteBucket =
+              storage.get(
+                      bpoBucket,
+                      Storage.BucketGetOption.fields(
+                              BucketField.IAMCONFIGURATION, BucketField.ACL, BucketField.DEFAULT_OBJECT_ACL));
+
+      assertFalse(remoteBucket.getIamConfiguration().isUniformBucketLevelAccessEnabled());
       assertEquals(User.ofAllAuthenticatedUsers(), remoteBucket.getDefaultAcl().get(0).getEntity());
       assertEquals(Role.READER, remoteBucket.getDefaultAcl().get(0).getRole());
       assertEquals(User.ofAllAuthenticatedUsers(), remoteBucket.getAcl().get(0).getEntity());
