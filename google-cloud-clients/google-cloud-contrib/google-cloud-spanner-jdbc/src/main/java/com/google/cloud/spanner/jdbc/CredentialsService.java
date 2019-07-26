@@ -92,7 +92,7 @@ class CredentialsService {
     Preconditions.checkArgument(
         credentialsUrl.length() > 0, "credentialsUrl may not be an empty string");
     if (credentialsUrl.startsWith(GOOGLE_CLOUD_STORAGE_PREFIX)) {
-      return internalGetCredentialsFromCloudStorage(credentialsUrl);
+      return getCredentialsFromCloudStorage(credentialsUrl);
     } else {
       return getCredentialsFromLocalFile(credentialsUrl);
     }
@@ -110,7 +110,7 @@ class CredentialsService {
     }
   }
 
-  private GoogleCredentials internalGetCredentialsFromCloudStorage(String credentialsUrl)
+  private GoogleCredentials getCredentialsFromCloudStorage(String credentialsUrl)
       throws IOException {
     Preconditions.checkArgument(credentialsUrl.startsWith(GOOGLE_CLOUD_STORAGE_PREFIX));
     try {
