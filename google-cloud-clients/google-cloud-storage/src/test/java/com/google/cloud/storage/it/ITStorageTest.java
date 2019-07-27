@@ -2502,7 +2502,7 @@ public class ITStorageTest {
       assertNotNull(remoteBucket.getIamConfiguration().getBucketPolicyOnlyLockedTime());
 
       try {
-        //remoteBucket.listAcls();
+        remoteBucket.listAcls();
         fail("StorageException was expected.");
       } catch (StorageException e) {
         // Expected: Listing legacy ACLs should fail on a BPO enabled bucket
@@ -2513,8 +2513,6 @@ public class ITStorageTest {
       } catch (StorageException e) {
         // Expected: Listing legacy ACLs should fail on a BPO enabled bucket
       }
-    } catch (Exception e) {
-      fail(e.getMessage());
     } finally {
       RemoteStorageHelper.forceDelete(storage, bucket, 1, TimeUnit.MINUTES);
     }

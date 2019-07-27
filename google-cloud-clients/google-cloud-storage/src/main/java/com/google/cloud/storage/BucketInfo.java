@@ -171,7 +171,14 @@ public class BucketInfo implements Serializable {
           new Bucket.IamConfiguration.UniformBucketLevelAccess();
       uniformBucketLevelAccess.setEnabled(isUniformBucketLevelAccessEnabled);
       uniformBucketLevelAccess.setLockedTime(
-          uniformBucketLevelAccess == null ? null : new DateTime(uniformBucketLevelAccessLockedTime));
+          uniformBucketLevelAccessLockedTime == null ? null : new DateTime(uniformBucketLevelAccessLockedTime));
+
+      /** WORK AROUND */
+      Bucket.IamConfiguration.BucketPolicyOnly bucketPolicyOnly = new Bucket.IamConfiguration.BucketPolicyOnly();
+      bucketPolicyOnly.setEnabled(isUniformBucketLevelAccessEnabled);
+      bucketPolicyOnly.setLockedTime(uniformBucketLevelAccessLockedTime == null ? null : new DateTime(uniformBucketLevelAccessLockedTime));
+      iamConfiguration.setBucketPolicyOnly(bucketPolicyOnly);
+      /** END OF WORKAROUND */
 
       iamConfiguration.setUniformBucketLevelAccess(uniformBucketLevelAccess);
 
