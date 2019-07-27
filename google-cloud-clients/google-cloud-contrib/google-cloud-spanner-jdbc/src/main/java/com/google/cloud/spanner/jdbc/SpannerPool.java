@@ -211,7 +211,7 @@ public class SpannerPool {
       if (!initialized) {
         initialize();
       }
-      if (spanners.containsKey(key)) {
+      if (spanners.get(key) == null) {
         spanner = spanners.get(key);
       } else {
         spanner = createSpanner(key);
