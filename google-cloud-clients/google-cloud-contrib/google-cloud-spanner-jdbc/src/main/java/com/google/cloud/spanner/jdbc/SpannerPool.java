@@ -163,7 +163,13 @@ public class SpannerPool {
    */
   private Thread shutdownThread = null;
 
+  /**
+   * Keep unused {@link Spanner} instances open and in the pool for this duration after all its
+   * {@link Connection}s have been closed. This prevents unnecessary opening and closing of {@link
+   * Spanner} instances.
+   */
   private final long closeSpannerAfterMillisecondsUnused;
+
   /**
    * This scheduled task will close all {@link Spanner} objects that have not been used for an open
    * connection for at least {@link SpannerPool#DEFAULT_CLOSE_SPANNER_AFTER_MILLISECONDS_UNUSED}
@@ -177,6 +183,19 @@ public class SpannerPool {
   @GuardedBy("this")
   private final Map<SpannerPoolKey, List<ConnectionImpl>> connections = new HashMap<>();
 
+  /**
+   * Keep track of the moment that the last connection for a specific {@link SpannerPoolKey} was
+   * closed, so that we can use this to determine whether a {@link Spanner} instance should be
+   * closed and removed from the pool. As {@link Spanner} instances are expensive to create and
+   * close, we do not want to do that unnecessarily. By adding a delay between the moment the last
+   * {@link Connection} for a {@link Spanner} was closed and the moment we close the {@link Spanner}
+   * instance, we prevent applications that open one or more connections for a process and close all
+   * these connections at the end of the process from getting a severe performance penalty from
+   * opening and closing {@link Spanner} instances all the time.
+   *
+   * <p>{@link Spanner} instances are closed and removed from the pool when the last connection was
+   * closed more than {@link #closeSpannerAfterMillisecondsUnused} milliseconds ago.
+   */
   @GuardedBy("this")
   private final Map<SpannerPoolKey, Long> lastConnectionClosedAt = new HashMap<>();
 
@@ -343,6 +362,8 @@ public class SpannerPool {
                   + " connection(s) still open."
                   + " Close all connections before stopping the application");
         }
+        // Force close all Spanner instances by passing in a value that will always be less than the
+        // difference between the current time and the close time of a connection.
         closeUnusedSpanners(Long.MIN_VALUE);
       } else {
         logLeakedConnections(keysStillInUse);
