@@ -101,7 +101,8 @@ public class BucketInfo implements Serializable {
   /**
    * The Bucket's IAM Configuration.
    *
-   * @see <a href="https://cloud.google.com/storage/docs/uniform-bucket-level-access">uniform bucket-level access</a>
+   * @see <a href="https://cloud.google.com/storage/docs/uniform-bucket-level-access">uniform
+   *     bucket-level access</a>
    */
   public static class IamConfiguration implements Serializable {
     private static final long serialVersionUID = -8671736104909424616L;
@@ -140,17 +141,13 @@ public class BucketInfo implements Serializable {
       return builder;
     }
 
-    /**
-     * Deprecated in favor of isUniformBucketLevelAccessEnabled().
-     */
+    /** Deprecated in favor of isUniformBucketLevelAccessEnabled(). */
     @Deprecated
     public Boolean isBucketPolicyOnlyEnabled() {
       return isUniformBucketLevelAccessEnabled;
     }
 
-    /**
-     * Deprecated in favor of uniformBucketLevelAccessLockedTime().
-     */
+    /** Deprecated in favor of uniformBucketLevelAccessLockedTime(). */
     @Deprecated
     public Long getBucketPolicyOnlyLockedTime() {
       return uniformBucketLevelAccessLockedTime;
@@ -171,15 +168,20 @@ public class BucketInfo implements Serializable {
           new Bucket.IamConfiguration.UniformBucketLevelAccess();
       uniformBucketLevelAccess.setEnabled(isUniformBucketLevelAccessEnabled);
       uniformBucketLevelAccess.setLockedTime(
-          uniformBucketLevelAccessLockedTime == null ? null : new DateTime(uniformBucketLevelAccessLockedTime));
+          uniformBucketLevelAccessLockedTime == null
+              ? null
+              : new DateTime(uniformBucketLevelAccessLockedTime));
 
       /** WORK AROUND */
-      Bucket.IamConfiguration.BucketPolicyOnly bucketPolicyOnly = new Bucket.IamConfiguration.BucketPolicyOnly();
+      Bucket.IamConfiguration.BucketPolicyOnly bucketPolicyOnly =
+          new Bucket.IamConfiguration.BucketPolicyOnly();
       bucketPolicyOnly.setEnabled(isUniformBucketLevelAccessEnabled);
-      bucketPolicyOnly.setLockedTime(uniformBucketLevelAccessLockedTime == null ? null : new DateTime(uniformBucketLevelAccessLockedTime));
+      bucketPolicyOnly.setLockedTime(
+          uniformBucketLevelAccessLockedTime == null
+              ? null
+              : new DateTime(uniformBucketLevelAccessLockedTime));
       iamConfiguration.setBucketPolicyOnly(bucketPolicyOnly);
       /** END OF WORKAROUND */
-
       iamConfiguration.setUniformBucketLevelAccess(uniformBucketLevelAccess);
 
       return iamConfiguration;
@@ -201,18 +203,14 @@ public class BucketInfo implements Serializable {
       private Boolean isUniformBucketLevelAccessEnabled;
       private Long uniformBucketLevelAccessLockedTime;
 
-      /**
-       * Deprecated in favor of setIsUniformBucketLevelAccessEnabled().
-       */
+      /** Deprecated in favor of setIsUniformBucketLevelAccessEnabled(). */
       @Deprecated
       public Builder setIsBucketPolicyOnlyEnabled(Boolean isBucketPolicyOnlyEnabled) {
         this.isUniformBucketLevelAccessEnabled = isBucketPolicyOnlyEnabled;
         return this;
       }
 
-      /**
-       * Deprecated in favor of setUniformBucketLevelAccessLockedTime().
-       */
+      /** Deprecated in favor of setUniformBucketLevelAccessLockedTime(). */
       @Deprecated
       Builder setBucketPolicyOnlyLockedTime(Long bucketPolicyOnlyLockedTime) {
         this.uniformBucketLevelAccessLockedTime = bucketPolicyOnlyLockedTime;
@@ -220,23 +218,24 @@ public class BucketInfo implements Serializable {
       }
 
       /**
-       * Sets whether uiform bucket-level access is enabled for this bucket. When this is enabled, access to
-       * the bucket will be configured through IAM, and legacy ACL policies will not work. When this
-       * is first enabled, {@code uniformBucketLevelAccess.lockedTime} will be set by the API automatically.
-       * This field can then be disabled until the time specified, after which it will become
-       * immutable and calls to change it will fail. If this is enabled, calls to access legacy ACL
-       * information will fail.
+       * Sets whether uiform bucket-level access is enabled for this bucket. When this is enabled,
+       * access to the bucket will be configured through IAM, and legacy ACL policies will not work.
+       * When this is first enabled, {@code uniformBucketLevelAccess.lockedTime} will be set by the
+       * API automatically. This field can then be disabled until the time specified, after which it
+       * will become immutable and calls to change it will fail. If this is enabled, calls to access
+       * legacy ACL information will fail.
        */
-      public Builder setIsUniformBucketLevelAccessEnabled(Boolean isUniformBucketLevelAccessEnabled) {
+      public Builder setIsUniformBucketLevelAccessEnabled(
+          Boolean isUniformBucketLevelAccessEnabled) {
         this.isUniformBucketLevelAccessEnabled = isUniformBucketLevelAccessEnabled;
         return this;
       }
 
       /**
-       * Sets the deadline for switching {@code uniformBucketLevelAccess.enabled} back to false. After this
-       * time passes, calls to do so will fail. This is package-private, since in general this field
-       * should never be set by a user--it's automatically set by the backend when {@code enabled}
-       * is set to true.
+       * Sets the deadline for switching {@code uniformBucketLevelAccess.enabled} back to false.
+       * After this time passes, calls to do so will fail. This is package-private, since in general
+       * this field should never be set by a user--it's automatically set by the backend when {@code
+       * enabled} is set to true.
        */
       Builder setUniformBucketLevelAccessLockedTime(Long uniformBucketLevelAccessLockedTime) {
         this.uniformBucketLevelAccessLockedTime = uniformBucketLevelAccessLockedTime;

@@ -2488,15 +2488,15 @@ public class ITStorageTest {
     String bucket = RemoteStorageHelper.generateBucketName();
     try {
       storage.create(
-              Bucket.newBuilder(bucket)
-                      .setIamConfiguration(
-                              BucketInfo.IamConfiguration.newBuilder()
-                                      .setIsBucketPolicyOnlyEnabled(true)
-                                      .build())
-                      .build());
+          Bucket.newBuilder(bucket)
+              .setIamConfiguration(
+                  BucketInfo.IamConfiguration.newBuilder()
+                      .setIsBucketPolicyOnlyEnabled(true)
+                      .build())
+              .build());
 
       Bucket remoteBucket =
-              storage.get(bucket, Storage.BucketGetOption.fields(BucketField.IAMCONFIGURATION));
+          storage.get(bucket, Storage.BucketGetOption.fields(BucketField.IAMCONFIGURATION));
 
       assertTrue(remoteBucket.getIamConfiguration().isBucketPolicyOnlyEnabled());
       assertNotNull(remoteBucket.getIamConfiguration().getBucketPolicyOnlyLockedTime());
@@ -2523,15 +2523,15 @@ public class ITStorageTest {
     String bucket = RemoteStorageHelper.generateBucketName();
     try {
       storage.create(
-              Bucket.newBuilder(bucket)
-                      .setIamConfiguration(
-                              BucketInfo.IamConfiguration.newBuilder()
-                                      .setIsUniformBucketLevelAccessEnabled(true)
-                                      .build())
-                      .build());
+          Bucket.newBuilder(bucket)
+              .setIamConfiguration(
+                  BucketInfo.IamConfiguration.newBuilder()
+                      .setIsUniformBucketLevelAccessEnabled(true)
+                      .build())
+              .build());
 
       Bucket remoteBucket =
-              storage.get(bucket, Storage.BucketGetOption.fields(BucketField.IAMCONFIGURATION));
+          storage.get(bucket, Storage.BucketGetOption.fields(BucketField.IAMCONFIGURATION));
 
       assertTrue(remoteBucket.getIamConfiguration().isUniformBucketLevelAccessEnabled());
       assertNotNull(remoteBucket.getIamConfiguration().getBucketPolicyOnlyLockedTime());
@@ -2603,25 +2603,30 @@ public class ITStorageTest {
     String bpoBucket = RemoteStorageHelper.generateBucketName();
     try {
       BucketInfo.IamConfiguration ublaDisabledIamConfiguration =
-              BucketInfo.IamConfiguration.newBuilder().setIsUniformBucketLevelAccessEnabled(false).build();
+          BucketInfo.IamConfiguration.newBuilder()
+              .setIsUniformBucketLevelAccessEnabled(false)
+              .build();
       Bucket bucket =
-              storage.create(
-                      Bucket.newBuilder(bpoBucket)
-                              .setIamConfiguration(ublaDisabledIamConfiguration)
-                              .setAcl(ImmutableList.of(Acl.of(User.ofAllAuthenticatedUsers(), Role.READER)))
-                              .setDefaultAcl(
-                                      ImmutableList.of(Acl.of(User.ofAllAuthenticatedUsers(), Role.READER)))
-                              .build());
+          storage.create(
+              Bucket.newBuilder(bpoBucket)
+                  .setIamConfiguration(ublaDisabledIamConfiguration)
+                  .setAcl(ImmutableList.of(Acl.of(User.ofAllAuthenticatedUsers(), Role.READER)))
+                  .setDefaultAcl(
+                      ImmutableList.of(Acl.of(User.ofAllAuthenticatedUsers(), Role.READER)))
+                  .build());
 
       bucket
-              .toBuilder()
-              .setIamConfiguration(
-                      ublaDisabledIamConfiguration.toBuilder().setIsUniformBucketLevelAccessEnabled(true).build())
-              .build()
-              .update();
+          .toBuilder()
+          .setIamConfiguration(
+              ublaDisabledIamConfiguration
+                  .toBuilder()
+                  .setIsUniformBucketLevelAccessEnabled(true)
+                  .build())
+          .build()
+          .update();
 
       Bucket remoteBucket =
-              storage.get(bpoBucket, Storage.BucketGetOption.fields(BucketField.IAMCONFIGURATION));
+          storage.get(bpoBucket, Storage.BucketGetOption.fields(BucketField.IAMCONFIGURATION));
 
       assertTrue(remoteBucket.getIamConfiguration().isUniformBucketLevelAccessEnabled());
       assertNotNull(remoteBucket.getIamConfiguration().getUniformBucketLevelAccessLockedTime());
@@ -2629,10 +2634,10 @@ public class ITStorageTest {
       bucket.toBuilder().setIamConfiguration(ublaDisabledIamConfiguration).build().update();
 
       remoteBucket =
-              storage.get(
-                      bpoBucket,
-                      Storage.BucketGetOption.fields(
-                              BucketField.IAMCONFIGURATION, BucketField.ACL, BucketField.DEFAULT_OBJECT_ACL));
+          storage.get(
+              bpoBucket,
+              Storage.BucketGetOption.fields(
+                  BucketField.IAMCONFIGURATION, BucketField.ACL, BucketField.DEFAULT_OBJECT_ACL));
 
       assertFalse(remoteBucket.getIamConfiguration().isUniformBucketLevelAccessEnabled());
       assertEquals(User.ofAllAuthenticatedUsers(), remoteBucket.getDefaultAcl().get(0).getEntity());
