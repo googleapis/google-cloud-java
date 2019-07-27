@@ -16,117 +16,94 @@
 
 package com.google.cloud.spanner.jdbc;
 
+import com.google.cloud.spanner.Type;
+import com.google.cloud.spanner.Type.Code;
+import com.google.common.base.Preconditions;
 import java.sql.Date;
 import java.sql.SQLException;
 import java.sql.SQLFeatureNotSupportedException;
 import java.sql.Timestamp;
 import java.sql.Types;
 import java.sql.Wrapper;
-import com.google.cloud.spanner.Type;
-import com.google.cloud.spanner.Type.Code;
 
 /** Base class for all Cloud Spanner JDBC classes that implement the {@link Wrapper} interface. */
 abstract class AbstractJdbcWrapper implements Wrapper {
   static final String OTHER_NAME = "OTHER";
 
-  /** Extract {@link java.sql.Types} code from Spanner {@link Type}. */
+  /**
+   * Extract {@link java.sql.Types} code from Spanner {@link Type}.
+   *
+   * @param type The Cloud Spanner type to convert. May not be <code>null</code>.
+   */
   static int extractColumnType(Type type) {
-    if (type.equals(Type.bool()))
-      return Types.BOOLEAN;
-    if (type.equals(Type.bytes()))
-      return Types.BINARY;
-    if (type.equals(Type.date()))
-      return Types.DATE;
-    if (type.equals(Type.float64()))
-      return Types.DOUBLE;
-    if (type.equals(Type.int64()))
-      return Types.BIGINT;
-    if (type.equals(Type.string()))
-      return Types.NVARCHAR;
-    if (type.equals(Type.timestamp()))
-      return Types.TIMESTAMP;
-    if (type.getCode() == Code.ARRAY)
-      return Types.ARRAY;
+    Preconditions.checkNotNull(type);
+    if (type.equals(Type.bool())) return Types.BOOLEAN;
+    if (type.equals(Type.bytes())) return Types.BINARY;
+    if (type.equals(Type.date())) return Types.DATE;
+    if (type.equals(Type.float64())) return Types.DOUBLE;
+    if (type.equals(Type.int64())) return Types.BIGINT;
+    if (type.equals(Type.string())) return Types.NVARCHAR;
+    if (type.equals(Type.timestamp())) return Types.TIMESTAMP;
+    if (type.getCode() == Code.ARRAY) return Types.ARRAY;
     return Types.OTHER;
   }
 
   /** Extract Spanner type name from {@link java.sql.Types} code. */
   static String getSpannerTypeName(int sqlType) {
-    if (sqlType == Types.BOOLEAN)
-      return Type.bool().getCode().name();
-    if (sqlType == Types.BINARY)
-      return Type.bytes().getCode().name();
-    if (sqlType == Types.DATE)
-      return Type.date().getCode().name();
-    if (sqlType == Types.DOUBLE || sqlType == Types.FLOAT)
-      return Type.float64().getCode().name();
-    if (sqlType == Types.BIGINT || sqlType == Types.INTEGER || sqlType == Types.SMALLINT
-        || sqlType == Types.TINYINT)
-      return Type.int64().getCode().name();
-    if (sqlType == Types.NVARCHAR)
-      return Type.string().getCode().name();
-    if (sqlType == Types.TIMESTAMP)
-      return Type.timestamp().getCode().name();
-    if (sqlType == Types.ARRAY)
-      return Code.ARRAY.name();
+    if (sqlType == Types.BOOLEAN) return Type.bool().getCode().name();
+    if (sqlType == Types.BINARY) return Type.bytes().getCode().name();
+    if (sqlType == Types.DATE) return Type.date().getCode().name();
+    if (sqlType == Types.DOUBLE || sqlType == Types.FLOAT) return Type.float64().getCode().name();
+    if (sqlType == Types.BIGINT
+        || sqlType == Types.INTEGER
+        || sqlType == Types.SMALLINT
+        || sqlType == Types.TINYINT) return Type.int64().getCode().name();
+    if (sqlType == Types.NVARCHAR) return Type.string().getCode().name();
+    if (sqlType == Types.TIMESTAMP) return Type.timestamp().getCode().name();
+    if (sqlType == Types.ARRAY) return Code.ARRAY.name();
 
     return OTHER_NAME;
   }
 
   /** Get corresponding Java class name from {@link java.sql.Types} code. */
   static String getClassName(int sqlType) {
-    if (sqlType == Types.BOOLEAN)
-      return Boolean.class.getName();
-    if (sqlType == Types.BINARY)
-      return Byte[].class.getName();
-    if (sqlType == Types.DATE)
-      return Date.class.getName();
-    if (sqlType == Types.DOUBLE || sqlType == Types.FLOAT)
-      return Double.class.getName();
-    if (sqlType == Types.BIGINT || sqlType == Types.INTEGER || sqlType == Types.SMALLINT
-        || sqlType == Types.TINYINT)
-      return Long.class.getName();
-    if (sqlType == Types.NVARCHAR)
-      return String.class.getName();
-    if (sqlType == Types.TIMESTAMP)
-      return Timestamp.class.getName();
-    if (sqlType == Types.ARRAY)
-      return Object.class.getName();
+    if (sqlType == Types.BOOLEAN) return Boolean.class.getName();
+    if (sqlType == Types.BINARY) return Byte[].class.getName();
+    if (sqlType == Types.DATE) return Date.class.getName();
+    if (sqlType == Types.DOUBLE || sqlType == Types.FLOAT) return Double.class.getName();
+    if (sqlType == Types.BIGINT
+        || sqlType == Types.INTEGER
+        || sqlType == Types.SMALLINT
+        || sqlType == Types.TINYINT) return Long.class.getName();
+    if (sqlType == Types.NVARCHAR) return String.class.getName();
+    if (sqlType == Types.TIMESTAMP) return Timestamp.class.getName();
+    if (sqlType == Types.ARRAY) return Object.class.getName();
 
     return null;
   }
 
-  /** Get corresponding Java class name from Spanner {@link Type}. */
+  /**
+   * Get corresponding Java class name from Spanner {@link Type}.
+   *
+   * @param type The Cloud Spanner type to convert. May not be <code>null</code>.
+   */
   static String getClassName(Type type) {
-    if (type == Type.bool())
-      return Boolean.class.getName();
-    if (type == Type.bytes())
-      return byte[].class.getName();
-    if (type == Type.date())
-      return Date.class.getName();
-    if (type == Type.float64())
-      return Double.class.getName();
-    if (type == Type.int64())
-      return Long.class.getName();
-    if (type == Type.string())
-      return String.class.getName();
-    if (type == Type.timestamp())
-      return Timestamp.class.getName();
+    Preconditions.checkNotNull(type);
+    if (type == Type.bool()) return Boolean.class.getName();
+    if (type == Type.bytes()) return byte[].class.getName();
+    if (type == Type.date()) return Date.class.getName();
+    if (type == Type.float64()) return Double.class.getName();
+    if (type == Type.int64()) return Long.class.getName();
+    if (type == Type.string()) return String.class.getName();
+    if (type == Type.timestamp()) return Timestamp.class.getName();
     if (type.getCode() == Code.ARRAY) {
-      if (type.getArrayElementType() == Type.bool())
-        return Boolean[].class.getName();
-      if (type.getArrayElementType() == Type.bytes())
-        return byte[][].class.getName();
-      if (type.getArrayElementType() == Type.date())
-        return Date[].class.getName();
-      if (type.getArrayElementType() == Type.float64())
-        return Double[].class.getName();
-      if (type.getArrayElementType() == Type.int64())
-        return Long[].class.getName();
-      if (type.getArrayElementType() == Type.string())
-        return String[].class.getName();
-      if (type.getArrayElementType() == Type.timestamp())
-        return Timestamp[].class.getName();
+      if (type.getArrayElementType() == Type.bool()) return Boolean[].class.getName();
+      if (type.getArrayElementType() == Type.bytes()) return byte[][].class.getName();
+      if (type.getArrayElementType() == Type.date()) return Date[].class.getName();
+      if (type.getArrayElementType() == Type.float64()) return Double[].class.getName();
+      if (type.getArrayElementType() == Type.int64()) return Long[].class.getName();
+      if (type.getArrayElementType() == Type.string()) return String[].class.getName();
+      if (type.getArrayElementType() == Type.timestamp()) return Timestamp[].class.getName();
     }
     return null;
   }
@@ -137,8 +114,8 @@ abstract class AbstractJdbcWrapper implements Wrapper {
   /** Cast value and throw {@link SQLException} if out-of-range. */
   byte checkedCastToByte(long val) throws SQLException {
     if (val > Byte.MAX_VALUE) {
-      throw JdbcSqlExceptionFactory.of(String.format(OUT_OF_RANGE_MSG, "byte", val),
-          com.google.rpc.Code.OUT_OF_RANGE);
+      throw JdbcSqlExceptionFactory.of(
+          String.format(OUT_OF_RANGE_MSG, "byte", val), com.google.rpc.Code.OUT_OF_RANGE);
     }
     return (byte) val;
   }
@@ -146,8 +123,8 @@ abstract class AbstractJdbcWrapper implements Wrapper {
   /** Cast value and throw {@link SQLException} if out-of-range. */
   short checkedCastToShort(long val) throws SQLException {
     if (val > Short.MAX_VALUE) {
-      throw JdbcSqlExceptionFactory.of(String.format(OUT_OF_RANGE_MSG, "short", val),
-          com.google.rpc.Code.OUT_OF_RANGE);
+      throw JdbcSqlExceptionFactory.of(
+          String.format(OUT_OF_RANGE_MSG, "short", val), com.google.rpc.Code.OUT_OF_RANGE);
     }
     return (short) val;
   }
@@ -155,8 +132,8 @@ abstract class AbstractJdbcWrapper implements Wrapper {
   /** Cast value and throw {@link SQLException} if out-of-range. */
   int checkedCastToInt(long val) throws SQLException {
     if (val > Integer.MAX_VALUE) {
-      throw JdbcSqlExceptionFactory.of(String.format(OUT_OF_RANGE_MSG, "int", val),
-          com.google.rpc.Code.OUT_OF_RANGE);
+      throw JdbcSqlExceptionFactory.of(
+          String.format(OUT_OF_RANGE_MSG, "int", val), com.google.rpc.Code.OUT_OF_RANGE);
     }
     return (int) val;
   }
@@ -164,8 +141,8 @@ abstract class AbstractJdbcWrapper implements Wrapper {
   /** Cast value and throw {@link SQLException} if out-of-range. */
   float checkedCastToFloat(double val) throws SQLException {
     if (val > Float.MAX_VALUE) {
-      throw JdbcSqlExceptionFactory.of(String.format(OUT_OF_RANGE_MSG, "float", val),
-          com.google.rpc.Code.OUT_OF_RANGE);
+      throw JdbcSqlExceptionFactory.of(
+          String.format(OUT_OF_RANGE_MSG, "float", val), com.google.rpc.Code.OUT_OF_RANGE);
     }
     return (float) val;
   }
@@ -176,14 +153,15 @@ abstract class AbstractJdbcWrapper implements Wrapper {
   /** Throws a {@link SQLException} if this object is closed */
   void checkClosed() throws SQLException {
     if (isClosed()) {
-      throw JdbcSqlExceptionFactory.of("This " + getClass().getName() + " has been closed",
+      throw JdbcSqlExceptionFactory.of(
+          "This " + getClass().getName() + " has been closed",
           com.google.rpc.Code.FAILED_PRECONDITION);
     }
   }
 
   /**
-   * Throws a {@link SQLException} if this object is closed and otherwise a
-   * {@link SQLFeatureNotSupportedException} with the given message
+   * Throws a {@link SQLException} if this object is closed and otherwise a {@link
+   * SQLFeatureNotSupportedException} with the given message
    */
   <T> T checkClosedAndThrowUnsupported(String message) throws SQLException {
     checkClosed();
@@ -192,16 +170,15 @@ abstract class AbstractJdbcWrapper implements Wrapper {
 
   @Override
   public boolean isWrapperFor(Class<?> iface) throws SQLException {
-    return iface.isAssignableFrom(getClass());
+    return iface != null && iface.isAssignableFrom(getClass());
   }
 
   @Override
   public <T> T unwrap(Class<T> iface) throws SQLException {
-    if (isWrapperFor(getClass())) {
+    if (isWrapperFor(iface)) {
       return iface.cast(this);
     }
-    throw JdbcSqlExceptionFactory.of("Cannot unwrap to " + iface.getName(),
-        com.google.rpc.Code.INVALID_ARGUMENT);
+    throw JdbcSqlExceptionFactory.of(
+        "Cannot unwrap to " + iface.getName(), com.google.rpc.Code.INVALID_ARGUMENT);
   }
-
 }
