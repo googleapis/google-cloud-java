@@ -1441,7 +1441,9 @@ public class StorageSnippets {
     // String bucketName = "my-bucket";
 
     BucketInfo.IamConfiguration iamConfiguration =
-        BucketInfo.IamConfiguration.newBuilder().setIsUniformBucketLevelAccessEnabled(false).build();
+        BucketInfo.IamConfiguration.newBuilder()
+            .setIsUniformBucketLevelAccessEnabled(false)
+            .build();
     Bucket bucket =
         storage.update(
             BucketInfo.newBuilder(bucketName).setIamConfiguration(iamConfiguration).build());
