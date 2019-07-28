@@ -109,11 +109,11 @@ abstract class AbstractJdbcWrapper implements Wrapper {
   }
 
   /** Standard error message for out-of-range values. */
-  private static final String OUT_OF_RANGE_MSG = "Value out of range for %s: %d";
+  private static final String OUT_OF_RANGE_MSG = "Value out of range for %s: %s";
 
   /** Cast value and throw {@link SQLException} if out-of-range. */
-  byte checkedCastToByte(long val) throws SQLException {
-    if (val > Byte.MAX_VALUE) {
+  static byte checkedCastToByte(long val) throws SQLException {
+    if (val > Byte.MAX_VALUE || val < Byte.MIN_VALUE) {
       throw JdbcSqlExceptionFactory.of(
           String.format(OUT_OF_RANGE_MSG, "byte", val), com.google.rpc.Code.OUT_OF_RANGE);
     }
@@ -121,8 +121,8 @@ abstract class AbstractJdbcWrapper implements Wrapper {
   }
 
   /** Cast value and throw {@link SQLException} if out-of-range. */
-  short checkedCastToShort(long val) throws SQLException {
-    if (val > Short.MAX_VALUE) {
+  static short checkedCastToShort(long val) throws SQLException {
+    if (val > Short.MAX_VALUE || val < Short.MIN_VALUE) {
       throw JdbcSqlExceptionFactory.of(
           String.format(OUT_OF_RANGE_MSG, "short", val), com.google.rpc.Code.OUT_OF_RANGE);
     }
@@ -130,8 +130,8 @@ abstract class AbstractJdbcWrapper implements Wrapper {
   }
 
   /** Cast value and throw {@link SQLException} if out-of-range. */
-  int checkedCastToInt(long val) throws SQLException {
-    if (val > Integer.MAX_VALUE) {
+  static int checkedCastToInt(long val) throws SQLException {
+    if (val > Integer.MAX_VALUE || val < Integer.MIN_VALUE) {
       throw JdbcSqlExceptionFactory.of(
           String.format(OUT_OF_RANGE_MSG, "int", val), com.google.rpc.Code.OUT_OF_RANGE);
     }
@@ -139,8 +139,8 @@ abstract class AbstractJdbcWrapper implements Wrapper {
   }
 
   /** Cast value and throw {@link SQLException} if out-of-range. */
-  float checkedCastToFloat(double val) throws SQLException {
-    if (val > Float.MAX_VALUE) {
+  static float checkedCastToFloat(double val) throws SQLException {
+    if (val > Float.MAX_VALUE || val < -Float.MAX_VALUE) {
       throw JdbcSqlExceptionFactory.of(
           String.format(OUT_OF_RANGE_MSG, "float", val), com.google.rpc.Code.OUT_OF_RANGE);
     }
