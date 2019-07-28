@@ -25,7 +25,11 @@ import com.google.common.base.Preconditions;
 
 /** Implementation of {@link ResultSetMetaData} for Cloud Spanner */
 class JdbcResultSetMetaData extends AbstractJdbcWrapper implements ResultSetMetaData {
-
+  /**
+   * The default column display size for columns with a data type of variable size that is used
+   * when the actual column size is not known.
+   */
+  private static final int DEFAULT_COL_DISPLAY_SIZE_FOR_VARIABLE_LENGTH_COLS = 50;
   private final ResultSet spannerResultSet;
   private final Statement statement;
 
@@ -82,12 +86,12 @@ class JdbcResultSetMetaData extends AbstractJdbcWrapper implements ResultSetMeta
     int colType = getColumnType(column);
     switch (colType) {
       case Types.ARRAY:
-        return 50;
+        return DEFAULT_COL_DISPLAY_SIZE_FOR_VARIABLE_LENGTH_COLS;
       case Types.BOOLEAN:
         return 5;
       case Types.BINARY:
         int binaryLength = getPrecision(column);
-        return binaryLength == 0 ? 50 : binaryLength;
+        return binaryLength == 0 ? DEFAULT_COL_DISPLAY_SIZE_FOR_VARIABLE_LENGTH_COLS : binaryLength;
       case Types.DATE:
         return 10;
       case Types.DOUBLE:
@@ -96,7 +100,7 @@ class JdbcResultSetMetaData extends AbstractJdbcWrapper implements ResultSetMeta
         return 10;
       case Types.NVARCHAR:
         int length = getPrecision(column);
-        return length == 0 ? 50 : length;
+        return length == 0 ? DEFAULT_COL_DISPLAY_SIZE_FOR_VARIABLE_LENGTH_COLS : length;
       case Types.TIMESTAMP:
         return 16;
       default:
@@ -134,8 +138,11 @@ class JdbcResultSetMetaData extends AbstractJdbcWrapper implements ResultSetMeta
       case Types.TIMESTAMP:
         return 24;
       default:
-        // Not fixed size, we could try to get it from INFORMATION_SCHEMA
-        return 50;
+        // For column types with variable size, such as text columns, we should return the length
+        // in characters. We could try to fetch it from INFORMATION_SCHEMA, but that would mean
+        // parsing the SQL statement client side in order to figure out which column it actually
+        // is. For now we just return the default column display size.
+        return DEFAULT_COL_DISPLAY_SIZE_FOR_VARIABLE_LENGTH_COLS;
     }
   }
 
