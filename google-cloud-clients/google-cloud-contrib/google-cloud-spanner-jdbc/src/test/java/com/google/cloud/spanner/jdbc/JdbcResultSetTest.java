@@ -117,7 +117,6 @@ public class JdbcResultSetTest {
   private JdbcResultSet subject;
 
   static ResultSet getMockResultSet() {
-    //@formatter:off
     ResultSet res = ResultSets.forRows(
       Type.struct(
         StructField.of(STRING_COL_NULL, Type.string()),
@@ -164,7 +163,6 @@ public class JdbcResultSetTest {
           .set(URL_COL_NOT_NULL).to(URL_VALUE)
         .build()
       ));
-    //@formatter:on
 
     return res;
   }
