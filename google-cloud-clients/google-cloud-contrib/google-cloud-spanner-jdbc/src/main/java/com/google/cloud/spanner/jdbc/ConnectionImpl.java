@@ -78,6 +78,7 @@ class ConnectionImpl implements Connection {
     @Override
     public Thread newThread(Runnable r) {
       Thread t = new Thread(r);
+      t.setName("connection-rollback-executor");
       t.setDaemon(true);
       return t;
     }
@@ -181,12 +182,11 @@ class ConnectionImpl implements Connection {
     this.spannerPool = SpannerPool.INSTANCE;
     this.options = options;
     this.spanner = spannerPool.getSpanner(options, this);
-    this.ddlClient = DdlClient.newBuilder().setDatabaseAdminClient(spanner.getDatabaseAdminClient())
-        .setInstanceId(options.getInstanceId()).setDatabaseName(options.getDatabaseName()).build();
     this.dbClient = spanner.getDatabaseClient(options.getDatabaseId());
     this.retryAbortsInternally = options.isRetryAbortsInternally();
     this.readOnly = options.isReadOnly();
     this.autocommit = options.isAutocommit();
+    this.ddlClient = createDdlClient();
     setDefaultTransactionOptions();
   }
 
@@ -208,6 +208,11 @@ class ConnectionImpl implements Connection {
     setReadOnly(options.isReadOnly());
     setAutocommit(options.isAutocommit());
     setDefaultTransactionOptions();
+  }
+
+  private DdlClient createDdlClient() {
+    return DdlClient.newBuilder().setDatabaseAdminClient(spanner.getDatabaseAdminClient())
+        .setInstanceId(options.getInstanceId()).setDatabaseName(options.getDatabaseName()).build();
   }
 
   @Override
