@@ -18,10 +18,19 @@ package com.google.cloud.spanner.jdbc;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
+
+import com.google.cloud.ByteArray;
+import com.google.cloud.spanner.ResultSet;
+import com.google.cloud.spanner.ResultSets;
+import com.google.cloud.spanner.Struct;
+import com.google.cloud.spanner.Type;
+import com.google.cloud.spanner.Type.Code;
+import com.google.cloud.spanner.Type.StructField;
+import com.google.cloud.spanner.Value;
+import com.google.common.base.Preconditions;
 import java.sql.Date;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
@@ -36,15 +45,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.mockito.internal.stubbing.answers.Returns;
-import com.google.cloud.ByteArray;
-import com.google.cloud.spanner.ResultSet;
-import com.google.cloud.spanner.ResultSets;
-import com.google.cloud.spanner.Struct;
-import com.google.cloud.spanner.Type;
-import com.google.cloud.spanner.Type.Code;
-import com.google.cloud.spanner.Type.StructField;
-import com.google.cloud.spanner.Value;
-import com.google.common.base.Preconditions;
 
 @RunWith(JUnit4.class)
 public class JdbcResultSetMetaDataTest {
@@ -68,20 +68,13 @@ public class JdbcResultSetMetaDataTest {
     }
 
     private static int getDefaultSize(Type type) {
-      if (type == Type.bool())
-        return 1;
-      if (type == Type.date())
-        return 10;
-      if (type == Type.float64())
-        return 14;
-      if (type == Type.int64())
-        return 10;
-      if (type == Type.timestamp())
-        return 24;
-      if (type == Type.string())
-        return 50;
-      if (type == Type.bytes())
-        return 50;
+      if (type == Type.bool()) return 1;
+      if (type == Type.date()) return 10;
+      if (type == Type.float64()) return 14;
+      if (type == Type.int64()) return 10;
+      if (type == Type.timestamp()) return 24;
+      if (type == Type.string()) return 50;
+      if (type == Type.bytes()) return 50;
       return 50;
     }
 
@@ -161,24 +154,23 @@ public class JdbcResultSetMetaDataTest {
     for (Type type : getAllTypes()) {
       TestColumn.Builder builder = TestColumn.Builder.getBuilder();
       builder.withName("COL" + index).withType(type).withSize(getDefaultSize(type));
-      if (index % 2 == 1)
-        builder.withNotNull();
-      else
-        builder.withNullable();
+      if (index % 2 == 1) builder.withNotNull();
+      else builder.withNullable();
       res.add(builder.build());
       index++;
     }
     TestColumn.Builder builder = TestColumn.Builder.getBuilder();
-    builder.withName("CALCULATED").withType(Type.int64()).withNullableUnknown()
+    builder
+        .withName("CALCULATED")
+        .withType(Type.int64())
+        .withNullableUnknown()
         .withCalculated(true);
     res.add(builder.build());
     return res;
   }
 
-
   private static int getDefaultSize(Type type) {
-    if (type == Type.string())
-      return 100;
+    if (type == Type.string()) return 100;
     return 0;
   }
 
@@ -221,38 +213,37 @@ public class JdbcResultSetMetaDataTest {
   }
 
   private Value getDefaultValue(Type type, int row) {
-    if (type == Type.bool())
-      return Value.bool(Boolean.TRUE);
-    if (type == Type.bytes())
-      return Value.bytes(ByteArray.copyFrom("test byte array " + row));
-    if (type == Type.date())
-      return Value.date(com.google.cloud.Date.fromYearMonthDay(2018, 4, 1));
-    if (type == Type.float64())
-      return Value.float64(123.45D);
-    if (type == Type.int64())
-      return Value.int64(12345L);
-    if (type == Type.string())
-      return Value.string("test value " + row);
-    if (type == Type.timestamp())
-      return Value.timestamp(com.google.cloud.Timestamp.now());
+    if (type == Type.bool()) return Value.bool(Boolean.TRUE);
+    if (type == Type.bytes()) return Value.bytes(ByteArray.copyFrom("test byte array " + row));
+    if (type == Type.date()) return Value.date(com.google.cloud.Date.fromYearMonthDay(2018, 4, 1));
+    if (type == Type.float64()) return Value.float64(123.45D);
+    if (type == Type.int64()) return Value.int64(12345L);
+    if (type == Type.string()) return Value.string("test value " + row);
+    if (type == Type.timestamp()) return Value.timestamp(com.google.cloud.Timestamp.now());
 
-    if (type.getCode() == Code.ARRAY && type.getArrayElementType() == Type.bool())
-      return Value.boolArray(Arrays.asList(Boolean.TRUE, Boolean.FALSE));
-    if (type.getCode() == Code.ARRAY && type.getArrayElementType() == Type.bytes())
-      return Value.bytesArray(Arrays.asList(ByteArray.copyFrom("test byte array " + row),
-          ByteArray.copyFrom("test byte array " + row)));
-    if (type.getCode() == Code.ARRAY && type.getArrayElementType() == Type.date())
-      return Value.dateArray(Arrays.asList(com.google.cloud.Date.fromYearMonthDay(2018, 4, 1),
-          com.google.cloud.Date.fromYearMonthDay(2018, 4, 2)));
-    if (type.getCode() == Code.ARRAY && type.getArrayElementType() == Type.float64())
-      return Value.float64Array(Arrays.asList(123.45D, 543.21D));
-    if (type.getCode() == Code.ARRAY && type.getArrayElementType() == Type.int64())
-      return Value.int64Array(Arrays.asList(12345L, 54321L));
-    if (type.getCode() == Code.ARRAY && type.getArrayElementType() == Type.string())
-      return Value.stringArray(Arrays.asList("test value " + row, "test value " + row));
-    if (type.getCode() == Code.ARRAY && type.getArrayElementType() == Type.timestamp())
-      return Value.timestampArray(
-          Arrays.asList(com.google.cloud.Timestamp.now(), com.google.cloud.Timestamp.now()));
+    if (type.getCode() == Code.ARRAY) {
+      if (type.getArrayElementType() == Type.bool())
+        return Value.boolArray(Arrays.asList(Boolean.TRUE, Boolean.FALSE));
+      if (type.getArrayElementType() == Type.bytes())
+        return Value.bytesArray(
+            Arrays.asList(
+                ByteArray.copyFrom("test byte array " + row),
+                ByteArray.copyFrom("test byte array " + row)));
+      if (type.getArrayElementType() == Type.date())
+        return Value.dateArray(
+            Arrays.asList(
+                com.google.cloud.Date.fromYearMonthDay(2018, 4, 1),
+                com.google.cloud.Date.fromYearMonthDay(2018, 4, 2)));
+      if (type.getArrayElementType() == Type.float64())
+        return Value.float64Array(Arrays.asList(123.45D, 543.21D));
+      if (type.getArrayElementType() == Type.int64())
+        return Value.int64Array(Arrays.asList(12345L, 54321L));
+      if (type.getArrayElementType() == Type.string())
+        return Value.stringArray(Arrays.asList("test value " + row, "test value " + row));
+      if (type.getArrayElementType() == Type.timestamp())
+        return Value.timestampArray(
+            Arrays.asList(com.google.cloud.Timestamp.now(), com.google.cloud.Timestamp.now()));
+    }
     return null;
   }
 
@@ -312,30 +303,23 @@ public class JdbcResultSetMetaDataTest {
   @Test
   public void testGetColumnDisplaySize() throws SQLException {
     for (int i = 1; i <= TEST_COLUMNS.size(); i++) {
-      assertEquals(getDefaultDisplaySize(TEST_COLUMNS.get(i - 1).type, i),
-          subject.getColumnDisplaySize(i));
+      assertEquals(
+          getDefaultDisplaySize(TEST_COLUMNS.get(i - 1).type, i), subject.getColumnDisplaySize(i));
     }
   }
 
   private int getDefaultDisplaySize(Type type, int column) throws SQLException {
-    if (type.getCode() == Code.ARRAY)
-      return 50;
-    if (type == Type.bool())
-      return 5;
-    if (type == Type.bytes())
-      return 50;
-    if (type == Type.date())
-      return 10;
-    if (type == Type.float64())
-      return 14;
-    if (type == Type.int64())
-      return 10;
+    if (type.getCode() == Code.ARRAY) return 50;
+    if (type == Type.bool()) return 5;
+    if (type == Type.bytes()) return 50;
+    if (type == Type.date()) return 10;
+    if (type == Type.float64()) return 14;
+    if (type == Type.int64()) return 10;
     if (type == Type.string()) {
       int length = subject.getPrecision(column);
       return length == 0 ? 50 : length;
     }
-    if (type == Type.timestamp())
-      return 16;
+    if (type == Type.timestamp()) return 16;
     return 10;
   }
 
@@ -366,18 +350,12 @@ public class JdbcResultSetMetaDataTest {
   }
 
   private int getPrecision(TestColumn col) {
-    if (col.type == Type.bool())
-      return 1;
-    if (col.type == Type.date())
-      return 10;
-    if (col.type == Type.float64())
-      return 14;
-    if (col.type == Type.int64())
-      return 10;
-    if (col.type == Type.timestamp())
-      return 24;
-    if (col.isTableColumn())
-      return col.defaultSize;
+    if (col.type == Type.bool()) return 1;
+    if (col.type == Type.date()) return 10;
+    if (col.type == Type.float64()) return 14;
+    if (col.type == Type.int64()) return 10;
+    if (col.type == Type.timestamp()) return 24;
+    if (col.isTableColumn()) return col.defaultSize;
     return 50;
   }
 
@@ -389,8 +367,7 @@ public class JdbcResultSetMetaDataTest {
   }
 
   private int getScale(TestColumn col) {
-    if (col.type == Type.float64())
-      return 15;
+    if (col.type == Type.float64()) return 15;
     return 0;
   }
 
@@ -414,22 +391,14 @@ public class JdbcResultSetMetaDataTest {
   }
 
   private int getSqlType(Type type) {
-    if (type == Type.bool())
-      return Types.BOOLEAN;
-    if (type == Type.bytes())
-      return Types.BINARY;
-    if (type == Type.date())
-      return Types.DATE;
-    if (type == Type.float64())
-      return Types.DOUBLE;
-    if (type == Type.int64())
-      return Types.BIGINT;
-    if (type == Type.string())
-      return Types.NVARCHAR;
-    if (type == Type.timestamp())
-      return Types.TIMESTAMP;
-    if (type.getCode() == Code.ARRAY)
-      return Types.ARRAY;
+    if (type == Type.bool()) return Types.BOOLEAN;
+    if (type == Type.bytes()) return Types.BINARY;
+    if (type == Type.date()) return Types.DATE;
+    if (type == Type.float64()) return Types.DOUBLE;
+    if (type == Type.int64()) return Types.BIGINT;
+    if (type == Type.string()) return Types.NVARCHAR;
+    if (type == Type.timestamp()) return Types.TIMESTAMP;
+    if (type.getCode() == Code.ARRAY) return Types.ARRAY;
     return Types.OTHER;
   }
 
@@ -471,42 +440,44 @@ public class JdbcResultSetMetaDataTest {
   }
 
   private String getTypeClassName(Type type) {
-    if (type == Type.bool())
-      return Boolean.class.getName();
-    if (type == Type.bytes())
-      return byte[].class.getName();
-    if (type == Type.date())
-      return Date.class.getName();
-    if (type == Type.float64())
-      return Double.class.getName();
-    if (type == Type.int64())
-      return Long.class.getName();
-    if (type == Type.string())
-      return String.class.getName();
-    if (type == Type.timestamp())
-      return Timestamp.class.getName();
+    if (type == Type.bool()) return Boolean.class.getName();
+    if (type == Type.bytes()) return byte[].class.getName();
+    if (type == Type.date()) return Date.class.getName();
+    if (type == Type.float64()) return Double.class.getName();
+    if (type == Type.int64()) return Long.class.getName();
+    if (type == Type.string()) return String.class.getName();
+    if (type == Type.timestamp()) return Timestamp.class.getName();
     if (type.getCode() == Code.ARRAY) {
-      if (type.getArrayElementType() == Type.bool())
-        return Boolean[].class.getName();
-      if (type.getArrayElementType() == Type.bytes())
-        return byte[][].class.getName();
-      if (type.getArrayElementType() == Type.date())
-        return Date[].class.getName();
-      if (type.getArrayElementType() == Type.float64())
-        return Double[].class.getName();
-      if (type.getArrayElementType() == Type.int64())
-        return Long[].class.getName();
-      if (type.getArrayElementType() == Type.string())
-        return String[].class.getName();
-      if (type.getArrayElementType() == Type.timestamp())
-        return Timestamp[].class.getName();
+      if (type.getArrayElementType() == Type.bool()) return Boolean[].class.getName();
+      if (type.getArrayElementType() == Type.bytes()) return byte[][].class.getName();
+      if (type.getArrayElementType() == Type.date()) return Date[].class.getName();
+      if (type.getArrayElementType() == Type.float64()) return Double[].class.getName();
+      if (type.getArrayElementType() == Type.int64()) return Long[].class.getName();
+      if (type.getArrayElementType() == Type.string()) return String[].class.getName();
+      if (type.getArrayElementType() == Type.timestamp()) return Timestamp[].class.getName();
     }
     return null;
   }
 
+  private static final String EXPECTED_TO_STRING =
+      "Col 1: COL1 BOOL\n"
+          + "Col 2: COL2 BYTES\n"
+          + "Col 3: COL3 DATE\n"
+          + "Col 4: COL4 FLOAT64\n"
+          + "Col 5: COL5 INT64\n"
+          + "Col 6: COL6 STRING\n"
+          + "Col 7: COL7 TIMESTAMP\n"
+          + "Col 8: COL8 ARRAY\n"
+          + "Col 9: COL9 ARRAY\n"
+          + "Col 10: COL10 ARRAY\n"
+          + "Col 11: COL11 ARRAY\n"
+          + "Col 12: COL12 ARRAY\n"
+          + "Col 13: COL13 ARRAY\n"
+          + "Col 14: COL14 ARRAY\n"
+          + "Col 15: CALCULATED INT64\n";
+
   @Test
   public void testToString() {
-    assertNotNull(subject.toString());
+    assertEquals(subject.toString(), EXPECTED_TO_STRING);
   }
-
 }
