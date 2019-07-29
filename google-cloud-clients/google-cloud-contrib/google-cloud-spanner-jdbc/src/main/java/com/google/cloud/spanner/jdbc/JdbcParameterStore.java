@@ -85,7 +85,7 @@ class JdbcParameterStore {
   /** Get parameter value. Index is 1-based. */
   Object getParameter(int parameterIndex) {
     int arrayIndex = parameterIndex - 1;
-    if (arrayIndex >= parametersList.size())
+    if (arrayIndex >= parametersList.size() || parametersList.get(arrayIndex) == null)
       return null;
     return parametersList.get(arrayIndex).value;
   }
@@ -93,28 +93,28 @@ class JdbcParameterStore {
   /** Get parameter type code according to the values in {@link Types}. Index is 1-based. */
   Integer getType(int parameterIndex) {
     int arrayIndex = parameterIndex - 1;
-    if (arrayIndex >= parametersList.size())
+    if (arrayIndex >= parametersList.size() || parametersList.get(arrayIndex) == null)
       return null;
     return parametersList.get(arrayIndex).type;
   }
 
   Integer getNullable(int parameterIndex) {
     int arrayIndex = parameterIndex - 1;
-    if (arrayIndex >= parametersList.size())
+    if (arrayIndex >= parametersList.size() || parametersList.get(arrayIndex) == null)
       return null;
     return parametersList.get(arrayIndex).nullable;
   }
 
   Integer getScaleOrLength(int parameterIndex) {
     int arrayIndex = parameterIndex - 1;
-    if (arrayIndex >= parametersList.size())
+    if (arrayIndex >= parametersList.size() || parametersList.get(arrayIndex) == null)
       return null;
     return parametersList.get(arrayIndex).scaleOrLength;
   }
 
   String getColumn(int parameterIndex) {
     int arrayIndex = parameterIndex - 1;
-    if (arrayIndex >= parametersList.size())
+    if (arrayIndex >= parametersList.size() || parametersList.get(arrayIndex) == null)
       return null;
     return parametersList.get(arrayIndex).column;
   }
