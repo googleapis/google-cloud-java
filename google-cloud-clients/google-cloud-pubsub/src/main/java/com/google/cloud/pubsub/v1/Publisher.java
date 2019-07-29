@@ -155,7 +155,8 @@ public class Publisher {
         PublisherStubSettings.newBuilder()
             .setCredentialsProvider(builder.credentialsProvider)
             .setExecutorProvider(FixedExecutorProvider.create(executor))
-            .setTransportChannelProvider(builder.channelProvider);
+            .setTransportChannelProvider(builder.channelProvider)
+            .setEndpoint(builder.endpoint);
     stubSettings
         .publishSettings()
         .setRetryableCodes(
@@ -588,6 +589,7 @@ public class Publisher {
             .build();
 
     String topicName;
+    private String endpoint = PublisherStubSettings.getDefaultEndpoint();
 
     // Batching options
     BatchingSettings batchingSettings = DEFAULT_BATCHING_SETTINGS;
@@ -711,6 +713,12 @@ public class Publisher {
     public Builder setTransform(ApiFunction<PubsubMessage, PubsubMessage> messageTransform) {
       this.messageTransform =
           Preconditions.checkNotNull(messageTransform, "The messageTransform cannnot be null.");
+      return this;
+    }
+
+    /** Gives the ability to override the gRPC endpoint. */
+    public Builder setEndpoint(String endpoint) {
+      this.endpoint = endpoint;
       return this;
     }
 
