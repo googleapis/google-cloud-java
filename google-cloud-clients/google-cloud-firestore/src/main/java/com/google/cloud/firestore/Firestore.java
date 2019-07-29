@@ -59,6 +59,7 @@ public interface Firestore extends Service<FirestoreOptions>, AutoCloseable {
    * @throws FirestoreException if the Iterable could not be initialized.
    * @return An Iterable that can be used to fetch all collections.
    */
+  @Deprecated
   @Nonnull
   Iterable<CollectionReference> getCollections();
 
