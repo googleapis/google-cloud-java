@@ -907,7 +907,7 @@ public class ITSystemTest {
     //      series of events and will then be asserted on.
     //
     // The mechanics of how the test is executed are as follows
-    //   A. All events delivered to the listener in 1 are added to a list of event we receive.
+    //   A. All events delivered to the listener in 1 are added to a list of events we receive.
     //   B. A separate ExecutorService is created and has tasks submitted to it to perform the
     //      series of document updates mentioned in 2. (Each document gets its own task).
     //      * Each of these update tasks will wait for the snapshot listener to be active before
@@ -965,7 +965,7 @@ public class ITSystemTest {
                 snapshotListerActive.await(5, TimeUnit.SECONDS);
                 // create the first document
                 doc1.set(map("baz", "foo")).get();
-                // update a field in the document
+                // update the document
                 doc1.set(map("foo", "bar")).get();
                 // add a field to the document
                 doc1.set(map("foo", "bar", "bar", "foo")).get();
@@ -989,7 +989,7 @@ public class ITSystemTest {
                 snapshotListerActive.await(5, TimeUnit.SECONDS);
                 // create a second document
                 doc2.set(map("foo", "bar")).get();
-                // update a field in the document
+                // update the document
                 doc2.set(map("foo", "foo")).get();
               } catch (InterruptedException | ExecutionException e) {
                 fail(String.format("Error while processing doc2: %s", e.getMessage()));
