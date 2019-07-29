@@ -748,6 +748,25 @@ public interface Storage extends Service<StorageOptions> {
     public static BlobGetOption userProject(String userProject) {
       return new BlobGetOption(StorageRpc.Option.USER_PROJECT, userProject);
     }
+
+    /**
+     * Returns an option to set a customer-supplied AES256 key for server-side decryption of the
+     * blob.
+     */
+    public static BlobGetOption decryptionKey(Key key) {
+      String base64Key = BaseEncoding.base64().encode(key.getEncoded());
+      return new BlobGetOption(StorageRpc.Option.CUSTOMER_SUPPLIED_KEY, base64Key);
+    }
+
+    /**
+     * Returns an option to set a customer-supplied AES256 key for server-side decryption of the
+     * blob.
+     *
+     * @param key the AES256 encoded in base64
+     */
+    public static BlobGetOption decryptionKey(String key) {
+      return new BlobGetOption(StorageRpc.Option.CUSTOMER_SUPPLIED_KEY, key);
+    }
   }
 
   /** Class for specifying bucket list options. */
@@ -1610,6 +1629,21 @@ public interface Storage extends Service<StorageOptions> {
    * long blobMetageneration = 42;
    * BlobId blobId = BlobId.of(bucketName, blobName);
    * Blob blob = storage.get(blobId, BlobGetOption.metagenerationMatch(blobMetageneration));
+   * }</pre>
+   *
+   * <p>Example of getting information on a blob encrypted using Customer Supplied Encryption Keys,
+   * only if supplied Decrpytion Key decrypts the blob successfully, otherwise a {@link
+   * StorageException} is thrown. For more information review
+   *
+   * @see <a
+   *     href="https://cloud.google.com/storage/docs/encryption/customer-supplied-keys#encrypted-elements">Encrypted
+   *     Elements</a>
+   *     <pre>{@code
+   * String bucketName = "my_unique_bucket";
+   * String blobName = "my_blob_name";
+   * String blobEncryptionKey = "";
+   * BlobId blobId = BlobId.of(bucketName, blobName);
+   * Blob blob = storage.get(blobId, BlobGetOption.decryptionKey(blobEncryptionKey));
    * }</pre>
    *
    * @throws StorageException upon failure
