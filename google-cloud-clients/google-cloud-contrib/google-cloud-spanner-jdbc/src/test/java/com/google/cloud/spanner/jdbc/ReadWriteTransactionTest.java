@@ -43,7 +43,6 @@ import com.google.cloud.spanner.TransactionManager;
 import com.google.cloud.spanner.TransactionManager.TransactionState;
 import com.google.cloud.spanner.Type;
 import com.google.cloud.spanner.Type.StructField;
-import com.google.cloud.spanner.jdbc.ReadWriteTransaction.ChecksumResultSet;
 import com.google.cloud.spanner.jdbc.StatementParser.ParsedStatement;
 import com.google.cloud.spanner.jdbc.StatementParser.StatementType;
 import com.google.spanner.v1.ResultSetStats;
