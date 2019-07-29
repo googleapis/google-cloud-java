@@ -333,6 +333,17 @@ class ReadWriteTransaction extends AbstractMultiUseTransaction {
     }
   }
 
+  /**
+   * Create a RUN BATCH statement to use with the {@link #executeBatchUpdate(Iterable)} method to
+   * allow it to be cancelled, time out or retried.
+   *
+   * {@link ReadWriteTransaction} uses the generic methods
+   * {@link #executeAsync(ParsedStatement, Callable)} and {@link #runWithRetry(Callable)} to
+   * allow statements to be cancelled, to timeout and to be retried. These methods require a
+   * {@link ParsedStatement} as input. When the {@link #executeBatchUpdate(Iterable)} method is
+   * called, we do not have one {@link ParsedStatement}, and the method uses this statement instead
+   * in order to use the same logic as the other statements.
+   */
   static final ParsedStatement EXECUTE_BATCH_UPDATE_STATEMENT =
       StatementParser.INSTANCE.parse(Statement.of("RUN BATCH"));
 
@@ -412,7 +423,17 @@ class ReadWriteTransaction extends AbstractMultiUseTransaction {
     }
   }
 
-  /** Create a pseudo COMMIT statement to allow it to be cancelled or time out. */
+  /**
+   * Create a COMMIT statement to use with the {@link #commit()} method to allow it to be
+   * cancelled, time out or retried.
+   *
+   * {@link ReadWriteTransaction} uses the generic methods
+   * {@link #executeAsync(ParsedStatement, Callable)} and {@link #runWithRetry(Callable)} to
+   * allow statements to be cancelled, to timeout and to be retried. These methods require a
+   * {@link ParsedStatement} as input. When the {@link #commit()} method is called directly, we do
+   * not have a {@link ParsedStatement}, and the method uses this statement instead in order to use
+   * the same logic as the other statements.
+   */
   private static final ParsedStatement COMMIT_STATEMENT =
       StatementParser.INSTANCE.parse(Statement.of("COMMIT"));
 
