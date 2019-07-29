@@ -157,7 +157,12 @@ class ReadWriteTransaction extends AbstractMultiUseTransaction {
   @Override
   void checkValidTransaction() {
     ConnectionPreconditions.checkState(
-        state == UnitOfWorkState.STARTED, "This transaction has status " + state.name());
+        state == UnitOfWorkState.STARTED,
+        "This transaction has status "
+        + state.name()
+        + ", only "
+        + UnitOfWorkState.STARTED
+        + " is allowed.");
     ConnectionPreconditions.checkState(
         !timedOutOrCancelled,
         "The last statement of this transaction timed out or was cancelled. "
