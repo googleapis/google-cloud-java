@@ -84,99 +84,99 @@ abstract class AbstractJdbcPreparedStatement extends JdbcStatement implements Pr
   }
 
   @Override
-  public void setBoolean(int parameterIndex, boolean x) throws SQLException {
+  public void setBoolean(int parameterIndex, boolean value) throws SQLException {
     checkClosed();
-    parameters.setParameter(parameterIndex, x, Types.BOOLEAN);
+    parameters.setParameter(parameterIndex, value, Types.BOOLEAN);
   }
 
   @Override
-  public void setByte(int parameterIndex, byte x) throws SQLException {
+  public void setByte(int parameterIndex, byte value) throws SQLException {
     checkClosed();
-    parameters.setParameter(parameterIndex, x, Types.TINYINT);
+    parameters.setParameter(parameterIndex, value, Types.TINYINT);
   }
 
   @Override
-  public void setShort(int parameterIndex, short x) throws SQLException {
+  public void setShort(int parameterIndex, short value) throws SQLException {
     checkClosed();
-    parameters.setParameter(parameterIndex, x, Types.SMALLINT);
+    parameters.setParameter(parameterIndex, value, Types.SMALLINT);
   }
 
   @Override
-  public void setInt(int parameterIndex, int x) throws SQLException {
+  public void setInt(int parameterIndex, int value) throws SQLException {
     checkClosed();
-    parameters.setParameter(parameterIndex, x, Types.INTEGER);
+    parameters.setParameter(parameterIndex, value, Types.INTEGER);
   }
 
   @Override
-  public void setLong(int parameterIndex, long x) throws SQLException {
+  public void setLong(int parameterIndex, long value) throws SQLException {
     checkClosed();
-    parameters.setParameter(parameterIndex, x, Types.BIGINT);
+    parameters.setParameter(parameterIndex, value, Types.BIGINT);
   }
 
   @Override
-  public void setFloat(int parameterIndex, float x) throws SQLException {
+  public void setFloat(int parameterIndex, float value) throws SQLException {
     checkClosed();
-    parameters.setParameter(parameterIndex, x, Types.FLOAT);
+    parameters.setParameter(parameterIndex, value, Types.FLOAT);
   }
 
   @Override
-  public void setDouble(int parameterIndex, double x) throws SQLException {
+  public void setDouble(int parameterIndex, double value) throws SQLException {
     checkClosed();
-    parameters.setParameter(parameterIndex, x, Types.DOUBLE);
+    parameters.setParameter(parameterIndex, value, Types.DOUBLE);
   }
 
   @Override
-  public void setBigDecimal(int parameterIndex, BigDecimal x) throws SQLException {
+  public void setBigDecimal(int parameterIndex, BigDecimal value) throws SQLException {
     checkClosed();
-    parameters.setParameter(parameterIndex, x, Types.DECIMAL);
+    parameters.setParameter(parameterIndex, value, Types.DECIMAL);
   }
 
   @Override
-  public void setString(int parameterIndex, String x) throws SQLException {
+  public void setString(int parameterIndex, String value) throws SQLException {
     checkClosed();
-    parameters.setParameter(parameterIndex, x, Types.NVARCHAR);
+    parameters.setParameter(parameterIndex, value, Types.NVARCHAR);
   }
 
   @Override
-  public void setBytes(int parameterIndex, byte[] x) throws SQLException {
+  public void setBytes(int parameterIndex, byte[] value) throws SQLException {
     checkClosed();
-    parameters.setParameter(parameterIndex, x, Types.BINARY);
+    parameters.setParameter(parameterIndex, value, Types.BINARY);
   }
 
   @Override
-  public void setDate(int parameterIndex, Date x) throws SQLException {
+  public void setDate(int parameterIndex, Date value) throws SQLException {
     checkClosed();
-    parameters.setParameter(parameterIndex, x, Types.DATE);
+    parameters.setParameter(parameterIndex, value, Types.DATE);
   }
 
   @Override
-  public void setTime(int parameterIndex, Time x) throws SQLException {
+  public void setTime(int parameterIndex, Time value) throws SQLException {
     checkClosed();
-    parameters.setParameter(parameterIndex, x, Types.TIME);
+    parameters.setParameter(parameterIndex, value, Types.TIME);
   }
 
   @Override
-  public void setTimestamp(int parameterIndex, Timestamp x) throws SQLException {
+  public void setTimestamp(int parameterIndex, Timestamp value) throws SQLException {
     checkClosed();
-    parameters.setParameter(parameterIndex, x, Types.TIMESTAMP);
+    parameters.setParameter(parameterIndex, value, Types.TIMESTAMP);
   }
 
   @Override
-  public void setAsciiStream(int parameterIndex, InputStream x, int length) throws SQLException {
+  public void setAsciiStream(int parameterIndex, InputStream value, int length) throws SQLException {
     checkClosed();
-    parameters.setParameter(parameterIndex, x, Types.VARCHAR, length);
+    parameters.setParameter(parameterIndex, value, Types.VARCHAR, length);
   }
 
   @Override
-  public void setUnicodeStream(int parameterIndex, InputStream x, int length) throws SQLException {
+  public void setUnicodeStream(int parameterIndex, InputStream value, int length) throws SQLException {
     checkClosed();
-    parameters.setParameter(parameterIndex, x, Types.NVARCHAR, length);
+    parameters.setParameter(parameterIndex, value, Types.NVARCHAR, length);
   }
 
   @Override
-  public void setBinaryStream(int parameterIndex, InputStream x, int length) throws SQLException {
+  public void setBinaryStream(int parameterIndex, InputStream value, int length) throws SQLException {
     checkClosed();
-    parameters.setParameter(parameterIndex, x, Types.BINARY, length);
+    parameters.setParameter(parameterIndex, value, Types.BINARY, length);
   }
 
   @Override
@@ -186,15 +186,15 @@ abstract class AbstractJdbcPreparedStatement extends JdbcStatement implements Pr
   }
 
   @Override
-  public void setObject(int parameterIndex, Object x, int targetSqlType) throws SQLException {
+  public void setObject(int parameterIndex, Object value, int targetSqlType) throws SQLException {
     checkClosed();
-    parameters.setParameter(parameterIndex, x, targetSqlType, null);
+    parameters.setParameter(parameterIndex, value, targetSqlType, null);
   }
 
   @Override
-  public void setObject(int parameterIndex, Object x) throws SQLException {
+  public void setObject(int parameterIndex, Object value) throws SQLException {
     checkClosed();
-    parameters.setParameter(parameterIndex, x, null);
+    parameters.setParameter(parameterIndex, value, null);
   }
 
   @Override
@@ -205,27 +205,27 @@ abstract class AbstractJdbcPreparedStatement extends JdbcStatement implements Pr
   }
 
   @Override
-  public void setRef(int parameterIndex, Ref x) throws SQLException {
+  public void setRef(int parameterIndex, Ref value) throws SQLException {
     checkClosed();
-    parameters.setParameter(parameterIndex, x, Types.REF);
+    parameters.setParameter(parameterIndex, value, Types.REF);
   }
 
   @Override
-  public void setBlob(int parameterIndex, Blob x) throws SQLException {
+  public void setBlob(int parameterIndex, Blob value) throws SQLException {
     checkClosed();
-    parameters.setParameter(parameterIndex, x, Types.BLOB);
+    parameters.setParameter(parameterIndex, value, Types.BLOB);
   }
 
   @Override
-  public void setClob(int parameterIndex, Clob x) throws SQLException {
+  public void setClob(int parameterIndex, Clob value) throws SQLException {
     checkClosed();
-    parameters.setParameter(parameterIndex, x, Types.CLOB);
+    parameters.setParameter(parameterIndex, value, Types.CLOB);
   }
 
   @Override
-  public void setArray(int parameterIndex, Array x) throws SQLException {
+  public void setArray(int parameterIndex, Array value) throws SQLException {
     checkClosed();
-    parameters.setParameter(parameterIndex, x, Types.ARRAY);
+    parameters.setParameter(parameterIndex, value, Types.ARRAY);
   }
 
   @Override
@@ -237,22 +237,22 @@ abstract class AbstractJdbcPreparedStatement extends JdbcStatement implements Pr
   }
 
   @Override
-  public void setDate(int parameterIndex, Date x, Calendar cal) throws SQLException {
+  public void setDate(int parameterIndex, Date value, Calendar cal) throws SQLException {
     checkClosed();
-    parameters.setParameter(parameterIndex, x, Types.DATE);
+    parameters.setParameter(parameterIndex, value, Types.DATE);
   }
 
   @Override
-  public void setTime(int parameterIndex, Time x, Calendar cal) throws SQLException {
+  public void setTime(int parameterIndex, Time value, Calendar cal) throws SQLException {
     checkClosed();
-    parameters.setParameter(parameterIndex, x, Types.TIME);
+    parameters.setParameter(parameterIndex, value, Types.TIME);
   }
 
   @Override
-  public void setTimestamp(int parameterIndex, Timestamp x, Calendar cal) throws SQLException {
+  public void setTimestamp(int parameterIndex, Timestamp value, Calendar cal) throws SQLException {
     checkClosed();
     parameters.setParameter(parameterIndex,
-        cal == null ? x : JdbcTypeConverter.setTimestampInCalendar(x, cal), Types.TIMESTAMP);
+        cal == null ? value : JdbcTypeConverter.setTimestampInCalendar(value, cal), Types.TIMESTAMP);
   }
 
   @Override
@@ -262,15 +262,15 @@ abstract class AbstractJdbcPreparedStatement extends JdbcStatement implements Pr
   }
 
   @Override
-  public void setURL(int parameterIndex, URL x) throws SQLException {
+  public void setURL(int parameterIndex, URL value) throws SQLException {
     checkClosed();
-    parameters.setParameter(parameterIndex, x, Types.NVARCHAR);
+    parameters.setParameter(parameterIndex, value, Types.NVARCHAR);
   }
 
   @Override
-  public void setRowId(int parameterIndex, RowId x) throws SQLException {
+  public void setRowId(int parameterIndex, RowId value) throws SQLException {
     checkClosed();
-    parameters.setParameter(parameterIndex, x, Types.ROWID);
+    parameters.setParameter(parameterIndex, value, Types.ROWID);
   }
 
   @Override
@@ -318,22 +318,22 @@ abstract class AbstractJdbcPreparedStatement extends JdbcStatement implements Pr
   }
 
   @Override
-  public void setObject(int parameterIndex, Object x, int targetSqlType, int scaleOrLength)
+  public void setObject(int parameterIndex, Object value, int targetSqlType, int scaleOrLength)
       throws SQLException {
     checkClosed();
-    parameters.setParameter(parameterIndex, x, targetSqlType, scaleOrLength);
+    parameters.setParameter(parameterIndex, value, targetSqlType, scaleOrLength);
   }
 
   @Override
-  public void setAsciiStream(int parameterIndex, InputStream x, long length) throws SQLException {
+  public void setAsciiStream(int parameterIndex, InputStream value, long length) throws SQLException {
     checkClosed();
-    parameters.setParameter(parameterIndex, x, Types.VARCHAR);
+    parameters.setParameter(parameterIndex, value, Types.VARCHAR);
   }
 
   @Override
-  public void setBinaryStream(int parameterIndex, InputStream x, long length) throws SQLException {
+  public void setBinaryStream(int parameterIndex, InputStream value, long length) throws SQLException {
     checkClosed();
-    parameters.setParameter(parameterIndex, x, Types.BINARY);
+    parameters.setParameter(parameterIndex, value, Types.BINARY);
   }
 
   @Override
@@ -344,15 +344,15 @@ abstract class AbstractJdbcPreparedStatement extends JdbcStatement implements Pr
   }
 
   @Override
-  public void setAsciiStream(int parameterIndex, InputStream x) throws SQLException {
+  public void setAsciiStream(int parameterIndex, InputStream value) throws SQLException {
     checkClosed();
-    parameters.setParameter(parameterIndex, x, Types.VARCHAR);
+    parameters.setParameter(parameterIndex, value, Types.VARCHAR);
   }
 
   @Override
-  public void setBinaryStream(int parameterIndex, InputStream x) throws SQLException {
+  public void setBinaryStream(int parameterIndex, InputStream value) throws SQLException {
     checkClosed();
-    parameters.setParameter(parameterIndex, x, Types.BINARY);
+    parameters.setParameter(parameterIndex, value, Types.BINARY);
   }
 
   @Override
