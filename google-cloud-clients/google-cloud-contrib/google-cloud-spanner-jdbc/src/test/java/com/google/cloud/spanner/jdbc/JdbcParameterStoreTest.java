@@ -352,16 +352,45 @@ public class JdbcParameterStoreTest {
         is(equalTo(JdbcArray.createArray("BOOL", new Boolean[] {true, false, true}))));
     verifyParameter(params, Value.boolArray(new boolean[] {true, false, true}));
 
+    params.setParameter(1, JdbcArray.createArray("BOOL", new Boolean[] {true, false, null}),
+        Types.ARRAY);
+    assertThat((JdbcArray) params.getParameter(1),
+        is(equalTo(JdbcArray.createArray("BOOL", new Boolean[] {true, false, null}))));
+    verifyParameter(params, Value.boolArray(Arrays.asList(true, false, null)));
+
+    params.setParameter(1, JdbcArray.createArray("BOOL", null), Types.ARRAY);
+    assertThat((JdbcArray) params.getParameter(1), is(equalTo(JdbcArray.createArray("BOOL", null))));
+    verifyParameter(params, Value.boolArray((boolean[]) null));
+
     params.setParameter(1, JdbcArray.createArray("INT64", new Long[] {1L, 2L, 3L}), Types.ARRAY);
     assertThat((JdbcArray) params.getParameter(1),
         is(equalTo(JdbcArray.createArray("INT64", new Long[] {1L, 2L, 3L}))));
     verifyParameter(params, Value.int64Array(new long[] {1, 2, 3}));
+
+    params.setParameter(1, JdbcArray.createArray("INT64", new Long[] {1L, 2L, null}), Types.ARRAY);
+    assertThat((JdbcArray) params.getParameter(1),
+        is(equalTo(JdbcArray.createArray("INT64", new Long[] {1L, 2L, null}))));
+    verifyParameter(params, Value.int64Array(Arrays.asList(1L, 2L, null)));
+
+    params.setParameter(1, JdbcArray.createArray("INT64", null), Types.ARRAY);
+    assertThat((JdbcArray) params.getParameter(1), is(equalTo(JdbcArray.createArray("INT64", null))));
+    verifyParameter(params, Value.int64Array((long[]) null));
 
     params.setParameter(1, JdbcArray.createArray("FLOAT64", new Double[] {1D, 2D, 3D}),
         Types.ARRAY);
     assertThat((JdbcArray) params.getParameter(1),
         is(equalTo(JdbcArray.createArray("FLOAT64", new Double[] {1D, 2D, 3D}))));
     verifyParameter(params, Value.float64Array(new double[] {1, 2, 3}));
+
+    params.setParameter(1, JdbcArray.createArray("FLOAT64", new Double[] {1D, 2D, null}),
+        Types.ARRAY);
+    assertThat((JdbcArray) params.getParameter(1),
+        is(equalTo(JdbcArray.createArray("FLOAT64", new Double[] {1D, 2D, null}))));
+    verifyParameter(params, Value.float64Array(Arrays.asList(1D, 2D, null)));
+
+    params.setParameter(1, JdbcArray.createArray("FLOAT64", null), Types.ARRAY);
+    assertThat((JdbcArray) params.getParameter(1), is(equalTo(JdbcArray.createArray("FLOAT64", null))));
+    verifyParameter(params, Value.float64Array((double[]) null));
 
     @SuppressWarnings("deprecation")
     Date sqlDate = new Date(2018 - 1900, 12 - 1, 14);
@@ -371,6 +400,16 @@ public class JdbcParameterStoreTest {
     verifyParameter(params,
         Value.dateArray(Arrays.asList(com.google.cloud.Date.fromYearMonthDay(2018, 12, 14))));
 
+    params.setParameter(1, JdbcArray.createArray("DATE", new Date[] {sqlDate, null}), Types.ARRAY);
+    assertThat((JdbcArray) params.getParameter(1),
+        is(equalTo(JdbcArray.createArray("DATE", new Date[] {sqlDate, null}))));
+    verifyParameter(params,
+        Value.dateArray(Arrays.asList(com.google.cloud.Date.fromYearMonthDay(2018, 12, 14), null)));
+
+    params.setParameter(1, JdbcArray.createArray("DATE", null), Types.ARRAY);
+    assertThat((JdbcArray) params.getParameter(1), is(equalTo(JdbcArray.createArray("DATE", null))));
+    verifyParameter(params, Value.dateArray(null));
+
     Timestamp sqlTimestamp = new Timestamp(System.currentTimeMillis());
     params.setParameter(1, JdbcArray.createArray("TIMESTAMP", new Timestamp[] {sqlTimestamp}),
         Types.ARRAY);
@@ -379,6 +418,17 @@ public class JdbcParameterStoreTest {
     verifyParameter(params,
         Value.timestampArray(Arrays.asList(com.google.cloud.Timestamp.of(sqlTimestamp))));
 
+    params.setParameter(1, JdbcArray.createArray("TIMESTAMP", new Timestamp[] {sqlTimestamp, null}),
+        Types.ARRAY);
+    assertThat((JdbcArray) params.getParameter(1),
+        is(equalTo(JdbcArray.createArray("TIMESTAMP", new Timestamp[] {sqlTimestamp, null}))));
+    verifyParameter(params,
+        Value.timestampArray(Arrays.asList(com.google.cloud.Timestamp.of(sqlTimestamp), null)));
+
+    params.setParameter(1, JdbcArray.createArray("TIMESTAMP", null), Types.ARRAY);
+    assertThat((JdbcArray) params.getParameter(1), is(equalTo(JdbcArray.createArray("TIMESTAMP", null))));
+    verifyParameter(params, Value.timestampArray(null));
+
     params.setParameter(1, JdbcArray.createArray("BYTES", new byte[][] {{1, 2, 3}, {4, 5, 6}}),
         Types.ARRAY);
     assertThat((JdbcArray) params.getParameter(1),
@@ -386,11 +436,32 @@ public class JdbcParameterStoreTest {
     verifyParameter(params, Value.bytesArray(Arrays.asList(ByteArray.copyFrom(new byte[] {1, 2, 3}),
         ByteArray.copyFrom(new byte[] {4, 5, 6}))));
 
+    params.setParameter(1, JdbcArray.createArray("BYTES", new byte[][] {{1, 2, 3}, {4, 5, 6}, null}),
+        Types.ARRAY);
+    assertThat((JdbcArray) params.getParameter(1),
+        is(equalTo(JdbcArray.createArray("BYTES", new byte[][] {{1, 2, 3}, {4, 5, 6}, null}))));
+    verifyParameter(params, Value.bytesArray(Arrays.asList(ByteArray.copyFrom(new byte[] {1, 2, 3}),
+        ByteArray.copyFrom(new byte[] {4, 5, 6}), null)));
+
+    params.setParameter(1, JdbcArray.createArray("BYTES", null), Types.ARRAY);
+    assertThat((JdbcArray) params.getParameter(1), is(equalTo(JdbcArray.createArray("BYTES", null))));
+    verifyParameter(params, Value.bytesArray(null));
+
     params.setParameter(1,
         JdbcArray.createArray("STRING", new String[] {"test1", "test2", "test3"}), Types.ARRAY);
     assertThat((JdbcArray) params.getParameter(1),
         is(equalTo(JdbcArray.createArray("STRING", new String[] {"test1", "test2", "test3"}))));
     verifyParameter(params, Value.stringArray(Arrays.asList("test1", "test2", "test3")));
+
+    params.setParameter(1,
+        JdbcArray.createArray("STRING", new String[] {"test1", null, "test2", "test3"}), Types.ARRAY);
+    assertThat((JdbcArray) params.getParameter(1),
+        is(equalTo(JdbcArray.createArray("STRING", new String[] {"test1", null, "test2", "test3"}))));
+    verifyParameter(params, Value.stringArray(Arrays.asList("test1", null, "test2", "test3")));
+
+    params.setParameter(1, JdbcArray.createArray("STRING", null), Types.ARRAY);
+    assertThat((JdbcArray) params.getParameter(1), is(equalTo(JdbcArray.createArray("STRING", null))));
+    verifyParameter(params, Value.stringArray(null));
   }
 
   private void verifyParameter(JdbcParameterStore params, Value value) throws SQLException {
