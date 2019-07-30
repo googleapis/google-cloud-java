@@ -189,10 +189,7 @@ public class BigtableTableAdminClientTest {
   public void testGetTable() {
     // Setup
     GetTableRequest expectedRequest =
-        GetTableRequest.newBuilder()
-            .setName(TABLE_NAME)
-            .setView(View.SCHEMA_VIEW)
-            .build();
+        GetTableRequest.newBuilder().setName(TABLE_NAME).setView(View.SCHEMA_VIEW).build();
 
     com.google.bigtable.admin.v2.Table expectedResponse =
         com.google.bigtable.admin.v2.Table.newBuilder().setName(TABLE_NAME).build();
