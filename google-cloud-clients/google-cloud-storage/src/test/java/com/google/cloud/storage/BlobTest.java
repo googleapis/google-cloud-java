@@ -137,13 +137,7 @@ public class BlobTest {
       new SecretKeySpec(BaseEncoding.base64().decode(BASE64_KEY), "AES256");
   private static final RetrySettings RETRY_SETTINGS =
       RetrySettings.newBuilder()
-          .setInitialRetryDelay(Duration.ofMillis(100L))
-          .setRetryDelayMultiplier(1.3)
-          .setMaxRetryDelay(Duration.ofMillis(60000L))
-          .setInitialRpcTimeout(Duration.ofMillis(20000L))
-          .setRpcTimeoutMultiplier(1.0)
-          .setMaxRpcTimeout(Duration.ofMillis(20000L))
-          .setTotalTimeout(Duration.ofMillis(600000L))
+          .setMaxAttempts(2)
           .build();
   private static final ApiClock API_CLOCK =
       new ApiClock() {
