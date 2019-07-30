@@ -610,21 +610,7 @@ class ReadWriteTransaction extends AbstractMultiUseTransaction {
               ErrorCode.CANCELLED, "The statement was cancelled");
         }
         try {
-          try {
-            txContext = txManager.resetForRetry();
-          } catch (IllegalStateException e) {
-            if (txManager.getState()
-                == com.google.cloud.spanner.TransactionManager.TransactionState.STARTED) {
-              // In case the transaction manager didn't pick up the abort correctly, we'll rollback
-              // manually and do another try. This seems to be the case if the transaction was
-              // aborted and txContext.executeUpdate(Statement) is called.
-              // TODO: Check whether TransactionContextImpl.executeUpdate(Statement) handles
-              // AbortedException correctly.
-              txManager.rollback();
-              txManager = dbClient.transactionManager();
-              txContext = txManager.begin();
-            }
-          }
+          txContext = txManager.resetForRetry();
           // Inform listeners about the transaction retry that is about to start.
           invokeTransactionRetryListenersOnStart();
           // Then retry all transaction statements.
