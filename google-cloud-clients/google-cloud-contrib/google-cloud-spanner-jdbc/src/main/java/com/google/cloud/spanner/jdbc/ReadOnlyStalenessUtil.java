@@ -35,9 +35,7 @@ import java.util.concurrent.TimeUnit;
 class ReadOnlyStalenessUtil {
   /**
    * Parses an RFC3339 date/time value with millisecond precision and returns this as a {@link
-   * Timestamp}.
-   *
-   * @TODO: add support for nanosecond precision.
+   * Timestamp}. @TODO: add support for nanosecond precision.
    */
   static Timestamp parseRfc3339(String str) throws SpannerException {
     try {

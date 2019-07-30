@@ -17,6 +17,7 @@
 package com.google.cloud.spanner;
 
 import com.google.api.core.ApiFunction;
+import com.google.api.core.InternalApi;
 import com.google.api.gax.grpc.GrpcInterceptorProvider;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
@@ -49,6 +50,8 @@ import org.threeten.bp.Duration;
 public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   private static final long serialVersionUID = 2789571558532701170L;
 
+  private static final String JDBC_API_CLIENT_LIB_TOKEN = "sp-jdbc";
+  private static final String HIBERNATE_API_CLIENT_LIB_TOKEN = "sp-hib";
   private static final String API_SHORT_NAME = "Spanner";
   private static final String DEFAULT_HOST = "https://spanner.googleapis.com";
   private static final ImmutableSet<String> SCOPES =
@@ -65,6 +68,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   private final SessionPoolOptions sessionPoolOptions;
   private final int prefetchChunks;
   private final int numChannels;
+  private final String clientLibToken;
   private final ImmutableMap<String, String> sessionLabels;
   private final SpannerStubSettings spannerStubSettings;
   private final InstanceAdminStubSettings instanceAdminStubSettings;
@@ -108,6 +112,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
             ? builder.sessionPoolOptions
             : SessionPoolOptions.newBuilder().build();
     prefetchChunks = builder.prefetchChunks;
+    clientLibToken = builder.clientLibToken;
     sessionLabels = builder.sessionLabels;
     try {
       spannerStubSettings = builder.spannerStubSettingsBuilder.build();
@@ -122,6 +127,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   /** Builder for {@link SpannerOptions} instances. */
   public static class Builder
       extends ServiceOptions.Builder<Spanner, SpannerOptions, SpannerOptions.Builder> {
+	    private static final ImmutableSet<String> ALLOWED_CLIENT_LIB_TOKENS = ImmutableSet.of(ServiceOptions.getGoogApiClientLibName(), JDBC_API_CLIENT_LIB_TOKEN, HIBERNATE_API_CLIENT_LIB_TOKEN);
     private static final int DEFAULT_PREFETCH_CHUNKS = 4;
     private TransportChannelProvider channelProvider;
 
@@ -135,6 +141,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
 
     private int prefetchChunks = DEFAULT_PREFETCH_CHUNKS;
     private SessionPoolOptions sessionPoolOptions;
+    private String clientLibToken = ServiceOptions.getGoogApiClientLibName();
     private ImmutableMap<String, String> sessionLabels;
     private SpannerStubSettings.Builder spannerStubSettingsBuilder =
         SpannerStubSettings.newBuilder();
@@ -151,6 +158,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
       this.numChannels = options.numChannels;
       this.sessionPoolOptions = options.sessionPoolOptions;
       this.prefetchChunks = options.prefetchChunks;
+      this.clientLibToken = options.clientLibToken;
       this.sessionLabels = options.sessionLabels;
       this.spannerStubSettingsBuilder = options.spannerStubSettings.toBuilder();
       this.instanceAdminStubSettingsBuilder = options.instanceAdminStubSettings.toBuilder();
@@ -214,6 +222,14 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
      */
     public Builder setSessionPoolOption(SessionPoolOptions sessionPoolOptions) {
       this.sessionPoolOptions = sessionPoolOptions;
+      return this;
+    }
+
+    /** DO NOT USE. Only for internal Google client libraries. */
+    @InternalApi
+    public Builder setClientLibToken(String clientLibToken) {
+      Preconditions.checkArgument(ALLOWED_CLIENT_LIB_TOKENS.contains(clientLibToken), "Illegal client lib token");
+      this.clientLibToken = clientLibToken;
       return this;
     }
 
