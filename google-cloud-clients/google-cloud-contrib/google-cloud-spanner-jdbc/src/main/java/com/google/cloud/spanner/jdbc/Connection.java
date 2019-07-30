@@ -543,8 +543,9 @@ interface Connection extends AutoCloseable {
    *
    * <p>This method may only be called when a (possibly empty) batch is active.
    *
-   * @return the update counts of the executed DML statements in case it was a DML batch, or an
-   *     empty array in case of a DDL batch.
+   * @return the update counts in case of a DML batch. Returns an array containing 1 for each
+   * successful statement and 0 for each failed statement or statement that was not executed DDL
+   * in case of a DDL batch.
    */
   long[] runBatch();
 
