@@ -33,7 +33,6 @@ import com.google.cloud.firestore.v1.FirestoreSettings;
 import com.google.cloud.grpc.GrpcTransportOptions;
 import com.google.common.collect.ImmutableSet;
 import io.grpc.ManagedChannelBuilder;
-
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URI;
@@ -217,24 +216,29 @@ public final class FirestoreOptions extends ServiceOptions<Firestore, FirestoreO
     @Override
     @Nonnull
     public FirestoreOptions build() {
-      if (System.getProperty(FIRESTORE_EMULATOR_SYSTEM_PROPERTY)!= null) {
+      if (System.getProperty(FIRESTORE_EMULATOR_SYSTEM_PROPERTY) != null) {
         String emulatorHost = System.getProperty(FIRESTORE_EMULATOR_SYSTEM_PROPERTY);
         String hostUrlString = "http://" + emulatorHost;
         // Try creating a host in order to validate that the host name is valid.
         try {
           new URL(hostUrlString);
           setHost(emulatorHost);
-          setChannelProvider(InstantiatingGrpcChannelProvider.newBuilder().setEndpoint(emulatorHost)
-                  .setChannelConfigurator(new ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder>() {
-                    @Override
-                    public ManagedChannelBuilder apply(ManagedChannelBuilder input) {
-                      input.usePlaintext();
-                      return input;
-                    }
-                  }).build());
+          setChannelProvider(
+              InstantiatingGrpcChannelProvider.newBuilder()
+                  .setEndpoint(emulatorHost)
+                  .setChannelConfigurator(
+                      new ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder>() {
+                        @Override
+                        public ManagedChannelBuilder apply(ManagedChannelBuilder input) {
+                          input.usePlaintext();
+                          return input;
+                        }
+                      })
+                  .build());
           setCredentialsProvider(FixedCredentialsProvider.create(new FakeCredentials()));
         } catch (MalformedURLException e) {
-          throw new IllegalArgumentException("Value for property FIRESTORE_EMULATOR_HOST is not a valid host", e);
+          throw new IllegalArgumentException(
+              "Value for property FIRESTORE_EMULATOR_HOST is not a valid host", e);
         }
       }
 
@@ -250,11 +254,12 @@ public final class FirestoreOptions extends ServiceOptions<Firestore, FirestoreO
     }
 
     private class FakeCredentials extends Credentials {
-      private final Map<String, List<String>> HEADERS = new HashMap<String, List<String>>(){
-        {
-          put("Authorization", Arrays.asList("Bearer owner"));
-        }
-      };
+      private Map<String, List<String>> headers;
+
+      public FakeCredentials() {
+        headers = new HashMap<>();
+        headers.put("Authorization", Arrays.asList("Bearer owner"));
+      }
 
       @Override
       public String getAuthenticationType() {
@@ -263,7 +268,7 @@ public final class FirestoreOptions extends ServiceOptions<Firestore, FirestoreO
 
       @Override
       public Map<String, List<String>> getRequestMetadata(URI uri) {
-        return HEADERS;
+        return headers;
       }
 
       @Override
