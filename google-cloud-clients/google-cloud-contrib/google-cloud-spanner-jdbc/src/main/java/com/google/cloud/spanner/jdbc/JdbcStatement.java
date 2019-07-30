@@ -30,6 +30,7 @@ import com.google.cloud.spanner.Statement;
 import com.google.cloud.spanner.Struct;
 import com.google.cloud.spanner.Type;
 import com.google.cloud.spanner.Type.StructField;
+import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
 import com.google.rpc.Code;
 
@@ -276,7 +277,8 @@ class JdbcStatement extends AbstractJdbcStatement {
     }
   }
 
-  private int[] convertUpdateCounts(long[] updateCounts) throws SQLException {
+  @VisibleForTesting
+  int[] convertUpdateCounts(long[] updateCounts) throws SQLException {
     int[] res = new int[updateCounts.length];
     for (int index = 0; index < updateCounts.length; index++) {
       if (updateCounts[index] > Integer.MAX_VALUE) {
@@ -289,7 +291,8 @@ class JdbcStatement extends AbstractJdbcStatement {
     return res;
   }
 
-  private void convertUpdateCountsToSuccessNoInfo(long[] updateCounts, int[] res) throws SQLException {
+  @VisibleForTesting
+  void convertUpdateCountsToSuccessNoInfo(long[] updateCounts, int[] res) throws SQLException {
     Preconditions.checkNotNull(updateCounts);
     Preconditions.checkNotNull(res);
     Preconditions.checkArgument(res.length >= updateCounts.length);

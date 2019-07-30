@@ -262,4 +262,47 @@ public class JdbcStatementTest {
     }
   }
 
+  @Test
+  public void testConvertUpdateCounts() throws SQLException {
+    try(JdbcStatement statement = new JdbcStatement(mock(JdbcConnection.class))) {
+      int[] updateCounts = statement.convertUpdateCounts(new long[] {1L, 2L, 3L});
+      assertThat(updateCounts, is(equalTo(new int[] {1, 2, 3})));
+      updateCounts = statement.convertUpdateCounts(new long[] {0L, 0L, 0L});
+      assertThat(updateCounts, is(equalTo(new int[] {0, 0, 0})));
+
+      expected.expect(JdbcExceptionMatcher.matchCode(Code.OUT_OF_RANGE));
+      statement.convertUpdateCounts(new long[] {1L, Integer.MAX_VALUE + 1L});
+    }
+  }
+
+  @Test
+  public void testConvertUpdateCountsToSuccessNoInfo() throws SQLException {
+    try(JdbcStatement statement = new JdbcStatement(mock(JdbcConnection.class))) {
+      int[] updateCounts = new int[3];
+      statement.convertUpdateCountsToSuccessNoInfo(new long[] {1L, 2L, 3L}, updateCounts);
+      assertThat(updateCounts, is(equalTo(new int[] {
+          Statement.SUCCESS_NO_INFO,
+          Statement.SUCCESS_NO_INFO,
+          Statement.SUCCESS_NO_INFO
+        })));
+
+      statement.convertUpdateCountsToSuccessNoInfo(new long[] {0L, 0L, 0L}, updateCounts);
+      assertThat(updateCounts, is(equalTo(new int[] {
+          Statement.EXECUTE_FAILED,
+          Statement.EXECUTE_FAILED,
+          Statement.EXECUTE_FAILED
+        })));
+
+      statement.convertUpdateCountsToSuccessNoInfo(new long[] {1L, 0L, 2L}, updateCounts);
+      assertThat(updateCounts, is(equalTo(new int[] {
+          Statement.SUCCESS_NO_INFO,
+          Statement.EXECUTE_FAILED,
+          Statement.SUCCESS_NO_INFO
+        })));
+
+      expected.expect(JdbcExceptionMatcher.matchCode(Code.OUT_OF_RANGE));
+      statement.convertUpdateCountsToSuccessNoInfo(new long[] {1L, Integer.MAX_VALUE + 1L}, updateCounts);
+    }
+  }
+
 }

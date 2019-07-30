@@ -16,6 +16,7 @@
 
 package com.google.cloud.spanner.jdbc;
 
+import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 import static org.mockito.Matchers.any;
@@ -30,12 +31,14 @@ import java.net.URL;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.Ref;
+import java.sql.ResultSetMetaData;
 import java.sql.RowId;
 import java.sql.SQLException;
 import java.sql.SQLXML;
 import java.sql.Time;
 import java.sql.Timestamp;
 import java.sql.Types;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.TimeZone;
 import org.junit.Assert;
@@ -44,6 +47,12 @@ import org.junit.Test;
 import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
+import com.google.cloud.spanner.ResultSet;
+import com.google.cloud.spanner.ResultSets;
+import com.google.cloud.spanner.Statement;
+import com.google.cloud.spanner.Struct;
+import com.google.cloud.spanner.Type;
+import com.google.cloud.spanner.Type.StructField;
 import com.google.rpc.Code;
 
 @RunWith(JUnit4.class)
@@ -77,7 +86,10 @@ public class JdbcPreparedStatementTest {
   }
 
   private JdbcConnection createMockConnection() throws SQLException {
-    Connection spanner = mock(Connection.class);
+    return createMockConnection(mock(Connection.class));
+  }
+
+  private JdbcConnection createMockConnection(Connection spanner) throws SQLException {
     JdbcConnection connection = mock(JdbcConnection.class);
     when(connection.getSpannerConnection()).thenReturn(spanner);
     when(connection.createBlob()).thenCallRealMethod();
@@ -278,4 +290,32 @@ public class JdbcPreparedStatementTest {
     }
   }
 
+  @Test
+  public void testGetResultSetMetadata() throws SQLException {
+    final String sql = "SELECT * FROM FOO";
+    Connection connection = mock(Connection.class);
+    ResultSet rs = ResultSets.forRows(
+        Type.struct(
+            StructField.of("ID", Type.int64()),
+            StructField.of("NAME", Type.string()),
+            StructField.of("AMOUNT", Type.float64())
+          ),
+        Arrays.asList(
+            Struct.newBuilder()
+              .set("ID").to(1L)
+              .set("NAME").to("foo")
+              .set("AMOUNT").to(Math.PI)
+            .build()));
+    when(connection.executeQuery(Statement.of(sql))).thenReturn(rs);
+    try (JdbcPreparedStatement ps = new JdbcPreparedStatement(createMockConnection(connection), sql)) {
+      ResultSetMetaData metadata = ps.getMetaData();
+      assertThat(metadata.getColumnCount(), is(equalTo(3)));
+      assertThat(metadata.getColumnLabel(1), is(equalTo("ID")));
+      assertThat(metadata.getColumnLabel(2), is(equalTo("NAME")));
+      assertThat(metadata.getColumnLabel(3), is(equalTo("AMOUNT")));
+      assertThat(metadata.getColumnType(1), is(equalTo(Types.BIGINT)));
+      assertThat(metadata.getColumnType(2), is(equalTo(Types.NVARCHAR)));
+      assertThat(metadata.getColumnType(3), is(equalTo(Types.DOUBLE)));
+    }
+  }
 }
