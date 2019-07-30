@@ -38,6 +38,7 @@ import com.google.cloud.spanner.SpannerExceptionFactory;
 import com.google.cloud.spanner.Statement;
 import com.google.cloud.spanner.TimestampBound;
 import com.google.cloud.spanner.TimestampBound.Mode;
+import com.google.cloud.spanner.jdbc.StatementExecutor.StatementTimeout;
 import com.google.cloud.spanner.jdbc.StatementParser.ParsedStatement;
 import com.google.cloud.spanner.jdbc.StatementParser.StatementType;
 import com.google.cloud.spanner.jdbc.UnitOfWork.UnitOfWorkState;
@@ -362,7 +363,7 @@ class ConnectionImpl implements Connection {
   @Override
   public void setStatementTimeout(long timeout, TimeUnit unit) {
     Preconditions.checkArgument(timeout > 0L, "Zero or negative timeout values are not allowed");
-    Preconditions.checkArgument(StatementExecutor.isValidTimeoutUnit(unit),
+    Preconditions.checkArgument(StatementTimeout.isValidTimeoutUnit(unit),
         "Time unit must be one of NANOSECONDS, MICROSECONDS, MILLISECONDS or SECONDS");
     ConnectionPreconditions.checkState(!isClosed(), CLOSED_ERROR_MSG);
     this.statementTimeout.setTimeoutValue(timeout, unit);
@@ -377,7 +378,7 @@ class ConnectionImpl implements Connection {
   @Override
   public long getStatementTimeout(TimeUnit unit) {
     ConnectionPreconditions.checkState(!isClosed(), CLOSED_ERROR_MSG);
-    Preconditions.checkArgument(StatementExecutor.isValidTimeoutUnit(unit),
+    Preconditions.checkArgument(StatementTimeout.isValidTimeoutUnit(unit),
         "Time unit must be one of NANOSECONDS, MICROSECONDS, MILLISECONDS or SECONDS");
     return this.statementTimeout.getTimeoutValue(unit);
   }
