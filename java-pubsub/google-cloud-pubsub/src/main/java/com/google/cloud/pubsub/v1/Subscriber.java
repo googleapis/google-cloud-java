@@ -160,6 +160,7 @@ public class Subscriber extends AbstractApiService {
               .setCredentialsProvider(builder.credentialsProvider)
               .setTransportChannelProvider(channelProvider)
               .setHeaderProvider(builder.headerProvider)
+              .setEndpoint(builder.endpoint)
               .applyToAllUnaryMethods(
                   new ApiFunction<UnaryCallSettings.Builder<?, ?>, Void>() {
                     @Override
@@ -414,6 +415,7 @@ public class Subscriber extends AbstractApiService {
         SubscriptionAdminSettings.defaultCredentialsProviderBuilder().build();
     private Optional<ApiClock> clock = Optional.absent();
     private int parallelPullCount = 1;
+    private String endpoint = SubscriberStubSettings.getDefaultEndpoint();
 
     Builder(String subscriptionName, MessageReceiver receiver) {
       this.subscriptionName = subscriptionName;
@@ -521,6 +523,12 @@ public class Subscriber extends AbstractApiService {
     /** Sets the number of pullers used to pull messages from the subscription. Defaults to one. */
     public Builder setParallelPullCount(int parallelPullCount) {
       this.parallelPullCount = parallelPullCount;
+      return this;
+    }
+
+    /** Gives the ability to override the gRPC endpoint. */
+    public Builder setEndpoint(String endpoint) {
+      this.endpoint = endpoint;
       return this;
     }
 
