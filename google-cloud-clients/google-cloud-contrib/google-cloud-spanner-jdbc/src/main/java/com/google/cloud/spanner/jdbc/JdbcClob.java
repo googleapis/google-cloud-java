@@ -102,11 +102,11 @@ class JdbcClob implements NClob {
   }
 
   @Override
-  public long position(String searchstr, long start) throws SQLException {
+  public long position(String searchStr, long start) throws SQLException {
     JdbcPreconditions.checkArgument(start >= 1, "Start position must be >= 1");
-    JdbcPreconditions.checkArgument(searchstr != null, "searchstr may not be null");
+    JdbcPreconditions.checkArgument(searchStr != null, "searchStr may not be null");
     checkPosition(start);
-    int res = value.indexOf(searchstr, (int) start - 1);
+    int res = value.indexOf(searchStr, (int) start - 1);
     if (res == -1) {
       return res;
     }
@@ -114,12 +114,12 @@ class JdbcClob implements NClob {
   }
 
   @Override
-  public long position(Clob searchstr, long start) throws SQLException {
+  public long position(Clob searchStr, long start) throws SQLException {
     JdbcPreconditions.checkArgument(start >= 1, "Start position must be >= 1");
-    JdbcPreconditions.checkArgument(searchstr != null, "searchstr may not be null");
+    JdbcPreconditions.checkArgument(searchStr != null, "searchStr may not be null");
     checkPosition(start);
-    checkPositionPlusLength(start, searchstr.length());
-    int res = value.indexOf(searchstr.getSubString(1L, (int) searchstr.length()), (int) start - 1);
+    checkPositionPlusLength(start, searchStr.length());
+    int res = value.indexOf(searchStr.getSubString(1L, (int) searchStr.length()), (int) start - 1);
     if (res == -1) {
       return res;
     }
