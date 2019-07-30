@@ -33,9 +33,7 @@ import com.google.cloud.grpc.GrpcTransportOptions;
 import com.google.common.collect.ImmutableSet;
 import io.grpc.ManagedChannelBuilder;
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.net.URI;
-import java.net.URL;
 import java.util.*;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -224,22 +222,24 @@ public final class FirestoreOptions extends ServiceOptions<Firestore, FirestoreO
       }
 
       // Override credentials and channel provider if we are using the emulator.
-      String emulatorHost = System.getProperty(FIRESTORE_EMULATOR_SYSTEM_PROPERTY);
+      String emulatorHost = System.getenv(FIRESTORE_EMULATOR_SYSTEM_PROPERTY);
       if (emulatorHost != null) {
         String hostUrlString = "http://" + emulatorHost;
 
         // Try creating a host in order to validate that the host name is valid.
         try {
-          new URL(hostUrlString);
-        } catch (MalformedURLException e) {
+          URI.create(hostUrlString);
+        } catch (Exception e) {
           throw new IllegalArgumentException(
               "Value: '"
                   + emulatorHost
-                  + "' for property FIRESTORE_EMULATOR_HOST is not a valid host",
+                  + "' for property "
+                  + FIRESTORE_EMULATOR_SYSTEM_PROPERTY
+                  + " is not a valid host",
               e);
         }
 
-        // Setting the channel provider to use plaintext turn off SSL.
+        // Setting the channel provider to use plaintext turns off SSL.
         this.setChannelProvider(
             InstantiatingGrpcChannelProvider.newBuilder()
                 .setEndpoint(emulatorHost)
@@ -414,7 +414,6 @@ public final class FirestoreOptions extends ServiceOptions<Firestore, FirestoreO
 
   @Nonnull
   public static Builder newBuilder() {
-
     return new Builder();
   }
 }
