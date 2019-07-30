@@ -31,6 +31,7 @@ import com.google.cloud.spanner.SpannerExceptionFactory;
 import com.google.cloud.spanner.Statement;
 import com.google.cloud.spanner.jdbc.StatementParser.ParsedStatement;
 import com.google.cloud.spanner.jdbc.StatementParser.StatementType;
+import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
 import com.google.spanner.admin.database.v1.UpdateDatabaseDdlMetadata;
 
@@ -184,15 +185,7 @@ class DdlBatch extends AbstractBaseUnitOfWork {
               // Return metadata.
               return operation.getMetadata().get();
             } catch (Exception e) {
-              UpdateDatabaseDdlMetadata metadata = operation.getMetadata().get();
-              long[] updateCounts = new long[metadata.getStatementsCount()];
-              for(int i = 0; i < updateCounts.length; i++) {
-                if(metadata.getCommitTimestampsCount() > i && metadata.getCommitTimestamps(i) != null) {
-                  updateCounts[i] = 1L;
-                } else {
-                  updateCounts[i] = 0L;
-                }
-              }
+              long[] updateCounts = extractUpdateCounts(operation.getMetadata().get());
               throw SpannerExceptionFactory.newSpannerBatchUpdateException(
                   ErrorCode.INVALID_ARGUMENT,
                   e.getMessage(),
@@ -210,6 +203,19 @@ class DdlBatch extends AbstractBaseUnitOfWork {
       this.state = UnitOfWorkState.RUN_FAILED;
       throw e;
     }
+  }
+
+  @VisibleForTesting
+  long[] extractUpdateCounts(UpdateDatabaseDdlMetadata metadata) {
+    long[] updateCounts = new long[metadata.getStatementsCount()];
+    for(int i = 0; i < updateCounts.length; i++) {
+      if(metadata.getCommitTimestampsCount() > i && metadata.getCommitTimestamps(i) != null) {
+        updateCounts[i] = 1L;
+      } else {
+        updateCounts[i] = 0L;
+      }
+    }
+    return updateCounts;
   }
 
   @Override

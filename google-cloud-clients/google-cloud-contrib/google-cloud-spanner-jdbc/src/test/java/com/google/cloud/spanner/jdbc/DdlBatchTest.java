@@ -435,4 +435,53 @@ public class DdlBatchTest {
     exception.expect(SpannerExceptionMatcher.matchCode(ErrorCode.FAILED_PRECONDITION));
     batch.rollback();
   }
+
+  @Test
+  public void testExtractUpdateCounts() {
+    DdlBatch batch = createSubject();
+    UpdateDatabaseDdlMetadata metadata = UpdateDatabaseDdlMetadata.newBuilder()
+        .addCommitTimestamps(Timestamp.newBuilder().setSeconds(1000L).build())
+        .addCommitTimestamps(Timestamp.newBuilder().setSeconds(2000L).build())
+        .addStatements("CREATE TABLE FOO")
+        .addStatements("CREATE TABLE BAR")
+        .addStatements("CREATE TABLE BAZ")
+        .build();
+    long[] updateCounts = batch.extractUpdateCounts(metadata);
+    assertThat(updateCounts, is(equalTo(new long[] {1L, 1L, 0L})));
+
+    metadata = UpdateDatabaseDdlMetadata.newBuilder()
+        .addCommitTimestamps(Timestamp.newBuilder().setSeconds(1000L).build())
+        .addCommitTimestamps(Timestamp.newBuilder().setSeconds(2000L).build())
+        .addCommitTimestamps(Timestamp.newBuilder().setSeconds(3000L).build())
+        .addStatements("CREATE TABLE FOO")
+        .addStatements("CREATE TABLE BAR")
+        .addStatements("CREATE TABLE BAZ")
+        .build();
+    updateCounts = batch.extractUpdateCounts(metadata);
+    assertThat(updateCounts, is(equalTo(new long[] {1L, 1L, 1L})));
+
+    metadata = UpdateDatabaseDdlMetadata.newBuilder()
+        .addCommitTimestamps(Timestamp.newBuilder().setSeconds(1000L).build())
+        .addCommitTimestamps(Timestamp.newBuilder().setSeconds(2000L).build())
+        .addCommitTimestamps(Timestamp.newBuilder().setSeconds(3000L).build())
+        .addStatements("CREATE TABLE FOO")
+        .addStatements("CREATE TABLE BAR")
+        .addStatements("CREATE TABLE BAZ")
+        .build();
+    updateCounts = batch.extractUpdateCounts(metadata);
+    assertThat(updateCounts, is(equalTo(new long[] {1L, 1L, 1L})));
+
+    // This is not something Cloud Spanner should return, but the method can handle it.
+    metadata = UpdateDatabaseDdlMetadata.newBuilder()
+        .addCommitTimestamps(Timestamp.newBuilder().setSeconds(1000L).build())
+        .addCommitTimestamps(Timestamp.newBuilder().setSeconds(2000L).build())
+        .addCommitTimestamps(Timestamp.newBuilder().setSeconds(3000L).build())
+        .addCommitTimestamps(Timestamp.newBuilder().setSeconds(4000L).build())
+        .addStatements("CREATE TABLE FOO")
+        .addStatements("CREATE TABLE BAR")
+        .addStatements("CREATE TABLE BAZ")
+        .build();
+    updateCounts = batch.extractUpdateCounts(metadata);
+    assertThat(updateCounts, is(equalTo(new long[] {1L, 1L, 1L})));
+  }
 }
