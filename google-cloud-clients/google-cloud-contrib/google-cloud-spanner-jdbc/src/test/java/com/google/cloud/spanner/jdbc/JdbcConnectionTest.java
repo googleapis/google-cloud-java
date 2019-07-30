@@ -28,6 +28,7 @@ import java.lang.reflect.Method;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.SQLWarning;
 import java.sql.Savepoint;
 import java.util.Collections;
 import java.util.Map;
@@ -305,6 +306,51 @@ public class JdbcConnectionTest {
         }
         assertThat(exception, is(true));
       }
+    }
+  }
+
+  @Test
+  public void testWarnings() throws SQLException {
+    ConnectionOptions options = mock(ConnectionOptions.class);
+    try (JdbcConnection connection = createConnection(options)) {
+      assertThat(connection.getWarnings(), is(nullValue()));
+
+      // Push one warning and get it twice.
+      connection.pushWarning(new SQLWarning("test"));
+      assertThat(connection.getWarnings().getMessage(), is(equalTo("test")));
+      assertThat(connection.getWarnings().getMessage(), is(equalTo("test")));
+
+      // Clear warnings and push two warnings and get them both.
+      connection.clearWarnings();
+      connection.pushWarning(new SQLWarning("test 1"));
+      connection.pushWarning(new SQLWarning("test 2"));
+      assertThat(connection.getWarnings().getMessage(), is(equalTo("test 1")));
+      assertThat(connection.getWarnings().getMessage(), is(equalTo("test 1")));
+      assertThat(connection.getWarnings().getNextWarning().getMessage(), is(equalTo("test 2")));
+
+      // Clear warnings.
+      connection.clearWarnings();
+      assertThat(connection.getWarnings(), is(nullValue()));
+    }
+  }
+
+  @Test
+  public void testSetClientInfo() throws SQLException {
+    ConnectionOptions options = mock(ConnectionOptions.class);
+    try (JdbcConnection connection = createConnection(options)) {
+      assertThat(connection.getWarnings(), is(nullValue()));
+      connection.setClientInfo("test", "foo");
+      assertThat(connection.getWarnings(), is(notNullValue()));
+      assertThat(connection.getWarnings().getMessage(), is(equalTo(AbstractJdbcConnection.CLIENT_INFO_NOT_SUPPORTED)));
+
+      connection.clearWarnings();
+      assertThat(connection.getWarnings(), is(nullValue()));
+
+      Properties props = new Properties();
+      props.setProperty("test", "foo");
+      connection.setClientInfo(props);
+      assertThat(connection.getWarnings(), is(notNullValue()));
+      assertThat(connection.getWarnings().getMessage(), is(equalTo(AbstractJdbcConnection.CLIENT_INFO_NOT_SUPPORTED)));
     }
   }
 

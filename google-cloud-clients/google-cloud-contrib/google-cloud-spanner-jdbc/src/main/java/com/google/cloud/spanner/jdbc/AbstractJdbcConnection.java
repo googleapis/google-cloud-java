@@ -26,6 +26,7 @@ import java.sql.Savepoint;
 import java.sql.Struct;
 import java.util.Properties;
 import java.util.concurrent.Executor;
+import com.google.common.annotations.VisibleForTesting;
 import com.google.rpc.Code;
 
 /** Base class for Cloud Spanner JDBC connections. */
@@ -42,10 +43,14 @@ abstract class AbstractJdbcConnection extends AbstractJdbcWrapper
   private static final String STRUCTS_UNSUPPORTED = "Structs are not supported";
   private static final String ABORT_UNSUPPORTED = "Abort is not supported";
   private static final String NETWORK_TIMEOUT_UNSUPPORTED = "Network timeout is not supported";
+  static final String CLIENT_INFO_NOT_SUPPORTED = "Cloud Spanner does not support any ClientInfo properties";
 
   private final String connectionUrl;
   private final ConnectionOptions options;
   private final com.google.cloud.spanner.jdbc.Connection spanner;
+
+  private SQLWarning firstWarning = null;
+  private SQLWarning lastWarning = null;
 
   AbstractJdbcConnection(String connectionUrl, ConnectionOptions options) {
     this.connectionUrl = connectionUrl;
@@ -119,12 +124,14 @@ abstract class AbstractJdbcConnection extends AbstractJdbcWrapper
   @Override
   public SQLWarning getWarnings() throws SQLException {
     checkClosed();
-    return null;
+    return firstWarning;
   }
 
   @Override
   public void clearWarnings() throws SQLException {
     checkClosed();
+    firstWarning = null;
+    lastWarning = null;
   }
 
   @Override
@@ -164,8 +171,7 @@ abstract class AbstractJdbcConnection extends AbstractJdbcWrapper
         throw JdbcSqlExceptionFactory.clientInfoException(e.getMessage(), Code.UNKNOWN);
       }
     }
-    // Cloud Spanner does not support any ClientInfo settings, so we just ignore the request.
-    // TODO: According to the specification, we should generate a warning in such a case.
+    pushWarning(new SQLWarning(CLIENT_INFO_NOT_SUPPORTED));
   }
 
   @Override
@@ -180,8 +186,7 @@ abstract class AbstractJdbcConnection extends AbstractJdbcWrapper
         throw JdbcSqlExceptionFactory.clientInfoException(e.getMessage(), Code.UNKNOWN);
       }
     }
-    // Cloud Spanner does not support any ClientInfo settings, so we just ignore the request.
-    // TODO: According to the specification, we should generate a warning in such a case.
+    pushWarning(new SQLWarning(CLIENT_INFO_NOT_SUPPORTED));
   }
 
   @Override
@@ -214,5 +219,16 @@ abstract class AbstractJdbcConnection extends AbstractJdbcWrapper
   @Override
   public int getNetworkTimeout() throws SQLException {
     return checkClosedAndThrowUnsupported(NETWORK_TIMEOUT_UNSUPPORTED);
+  }
+
+  @VisibleForTesting
+  void pushWarning(SQLWarning warning) {
+    if(lastWarning == null) {
+      firstWarning = warning;
+      lastWarning = warning;
+    } else {
+      lastWarning.setNextWarning(warning);
+      lastWarning = warning;
+    }
   }
 }
