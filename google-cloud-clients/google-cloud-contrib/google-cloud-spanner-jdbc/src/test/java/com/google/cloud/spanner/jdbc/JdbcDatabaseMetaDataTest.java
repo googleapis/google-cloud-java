@@ -21,6 +21,8 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
 import java.sql.ResultSet;
@@ -30,6 +32,7 @@ import java.sql.SQLException;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
+import com.google.auth.oauth2.GoogleCredentials;
 
 @RunWith(JUnit4.class)
 public class JdbcDatabaseMetaDataTest {
@@ -395,4 +398,14 @@ public class JdbcDatabaseMetaDataTest {
     }
   }
 
+  @Test
+  public void testGetUserName() throws SQLException, IOException {
+    GoogleCredentials credentials = GoogleCredentials.fromStream(ConnectionOptionsTest.class.getResource("test-key.json").openStream());
+    JdbcConnection connection = mock(JdbcConnection.class);
+    ConnectionOptions options = mock(ConnectionOptions.class);
+    when(options.getCredentials()).thenReturn(credentials);
+    when(connection.getConnectionOptions()).thenReturn(options);
+    DatabaseMetaData meta = new JdbcDatabaseMetaData(connection);
+    assertThat(meta.getUserName(), is(equalTo("test@test-project.iam.gserviceaccount.com")));
+  }
 }

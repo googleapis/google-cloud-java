@@ -29,6 +29,9 @@ import java.sql.Types;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Scanner;
+import com.google.auth.Credentials;
+import com.google.auth.ServiceAccountSigner;
+import com.google.auth.oauth2.UserCredentials;
 import com.google.cloud.spanner.ResultSets;
 import com.google.cloud.spanner.Struct;
 import com.google.cloud.spanner.Type;
@@ -84,7 +87,14 @@ class JdbcDatabaseMetaData extends AbstractJdbcWrapper implements DatabaseMetaDa
 
   @Override
   public String getUserName() throws SQLException {
-    // TODO: extract from credentials
+    Credentials credentials = connection.getConnectionOptions().getCredentials();
+    if (credentials != null) {
+      if (credentials instanceof ServiceAccountSigner) {
+        return ((ServiceAccountSigner) credentials).getAccount();
+      } else if (credentials instanceof UserCredentials) {
+        return ((UserCredentials) credentials).getClientId();
+      }
+    }
     return "";
   }
 
