@@ -30,6 +30,7 @@ import com.google.cloud.spanner.Statement;
 import com.google.cloud.spanner.Struct;
 import com.google.cloud.spanner.Type;
 import com.google.cloud.spanner.Type.StructField;
+import com.google.common.base.Preconditions;
 import com.google.rpc.Code;
 
 /** Implementation of {@link java.sql.Statement} for Google Cloud Spanner. */
@@ -254,6 +255,11 @@ class JdbcStatement extends AbstractJdbcStatement {
             int[] res = new int[batchedStatements.size()];
             Arrays.fill(res, java.sql.Statement.SUCCESS_NO_INFO);
             return res;
+          } catch (SpannerBatchUpdateException e) {
+            int[] res = new int[batchedStatements.size()];
+            Arrays.fill(res, java.sql.Statement.EXECUTE_FAILED);
+            convertUpdateCountsToSuccessNoInfo(e.getUpdateCounts(), res);
+            throw JdbcSqlExceptionFactory.batchException(res, e);
           } catch (SpannerException e) {
             throw JdbcSqlExceptionFactory.of(e);
           }
@@ -281,6 +287,24 @@ class JdbcStatement extends AbstractJdbcStatement {
       res[index] = (int) updateCounts[index];
     }
     return res;
+  }
+
+  private void convertUpdateCountsToSuccessNoInfo(long[] updateCounts, int[] res) throws SQLException {
+    Preconditions.checkNotNull(updateCounts);
+    Preconditions.checkNotNull(res);
+    Preconditions.checkArgument(res.length >= updateCounts.length);
+    for (int index = 0; index < updateCounts.length; index++) {
+      if (updateCounts[index] > Integer.MAX_VALUE) {
+        throw JdbcSqlExceptionFactory.of(
+            String.format("Update count too large for int: %d", updateCounts[index]),
+            Code.OUT_OF_RANGE);
+      }
+      if(updateCounts[index] > 0L) {
+        res[index] = java.sql.Statement.SUCCESS_NO_INFO;
+      } else {
+        res[index] = java.sql.Statement.EXECUTE_FAILED;
+      }
+    }
   }
 
   @Override
