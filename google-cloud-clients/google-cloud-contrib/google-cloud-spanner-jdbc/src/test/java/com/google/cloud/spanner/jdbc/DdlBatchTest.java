@@ -16,8 +16,10 @@
 
 package com.google.cloud.spanner.jdbc;
 
+import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
+import static org.junit.Assert.fail;
 import static org.mockito.Matchers.anyListOf;
 import static org.mockito.Matchers.anyString;
 import static org.mockito.Matchers.argThat;
@@ -28,6 +30,7 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 import org.junit.Rule;
@@ -38,18 +41,21 @@ import org.junit.runners.JUnit4;
 import org.mockito.ArgumentMatcher;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
+import com.google.api.core.ApiFuture;
+import com.google.api.core.ApiFutures;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.spanner.ErrorCode;
 import com.google.cloud.spanner.Mutation;
+import com.google.cloud.spanner.SpannerBatchUpdateException;
 import com.google.cloud.spanner.SpannerException;
 import com.google.cloud.spanner.SpannerExceptionFactory;
 import com.google.cloud.spanner.Statement;
-import com.google.cloud.spanner.jdbc.DdlBatch;
-import com.google.cloud.spanner.jdbc.DdlClient;
 import com.google.cloud.spanner.jdbc.StatementParser.ParsedStatement;
 import com.google.cloud.spanner.jdbc.StatementParser.StatementType;
 import com.google.cloud.spanner.jdbc.UnitOfWork.UnitOfWorkState;
+import com.google.protobuf.Timestamp;
 import com.google.spanner.admin.database.v1.UpdateDatabaseDdlMetadata;
+import io.grpc.Status;
 
 @RunWith(JUnit4.class)
 public class DdlBatchTest {
@@ -90,6 +96,12 @@ public class DdlBatchTest {
       } else {
         when(operation.get()).thenReturn(null);
       }
+      UpdateDatabaseDdlMetadata.Builder metadataBuilder = UpdateDatabaseDdlMetadata.newBuilder();
+      if(!exceptionOnGetResult) {
+        metadataBuilder.addCommitTimestamps(Timestamp.newBuilder().setSeconds(System.currentTimeMillis() * 1000L));
+      }
+      ApiFuture<UpdateDatabaseDdlMetadata> metadataFuture = ApiFutures.immediateFuture(metadataBuilder.build());
+      when(operation.getMetadata()).thenReturn(metadataFuture);
       when(ddlClient.executeDdl(anyString())).thenReturn(operation);
       when(ddlClient.executeDdl(anyListOf(String.class))).thenReturn(operation);
       return ddlClient;
@@ -288,6 +300,60 @@ public class DdlBatchTest {
     assertThat(exception, is(true));
     assertThat(batch.getState(), is(UnitOfWorkState.RUN_FAILED));
     verify(client).executeDdl(argThat(isListOfStringsWithSize(2)));
+  }
+
+  @Test
+  public void testUpdateCount() throws InterruptedException, ExecutionException {
+    DdlClient client = mock(DdlClient.class);
+    UpdateDatabaseDdlMetadata metadata = UpdateDatabaseDdlMetadata
+        .newBuilder()
+        .addCommitTimestamps(Timestamp.newBuilder().setSeconds(System.currentTimeMillis() * 1000L - 1L))
+        .addCommitTimestamps(Timestamp.newBuilder().setSeconds(System.currentTimeMillis() * 1000L))
+        .addAllStatements(Arrays.asList("CREATE TABLE FOO", "CREATE TABLE BAR"))
+        .build();
+    ApiFuture<UpdateDatabaseDdlMetadata> metadataFuture = ApiFutures.immediateFuture(metadata);
+    @SuppressWarnings("unchecked")
+    OperationFuture<Void, UpdateDatabaseDdlMetadata> operationFuture = mock(OperationFuture.class);
+    when(operationFuture.get()).thenReturn(null);
+    when(operationFuture.getMetadata()).thenReturn(metadataFuture);
+    when(client.executeDdl(argThat(isListOfStringsWithSize(2)))).thenReturn(operationFuture);
+    DdlBatch batch = DdlBatch.newBuilder()
+        .withStatementExecutor(new StatementExecutor()).setDdlClient(client).build();
+    batch.executeDdl(StatementParser.INSTANCE.parse(Statement.of("CREATE TABLE FOO")));
+    batch.executeDdl(StatementParser.INSTANCE.parse(Statement.of("CREATE TABLE BAR")));
+    long[] updateCounts = batch.runBatch();
+    assertThat(updateCounts.length, is(equalTo(2)));
+    assertThat(updateCounts[0], is(equalTo(1L)));
+    assertThat(updateCounts[1], is(equalTo(1L)));
+  }
+
+  @Test
+  public void testFailedUpdateCount() throws InterruptedException, ExecutionException {
+    DdlClient client = mock(DdlClient.class);
+    UpdateDatabaseDdlMetadata metadata = UpdateDatabaseDdlMetadata
+        .newBuilder()
+        .addCommitTimestamps(Timestamp.newBuilder().setSeconds(System.currentTimeMillis() * 1000L - 1L))
+        .addAllStatements(Arrays.asList("CREATE TABLE FOO", "CREATE TABLE INVALID_TABLE"))
+        .build();
+    ApiFuture<UpdateDatabaseDdlMetadata> metadataFuture = ApiFutures.immediateFuture(metadata);
+    @SuppressWarnings("unchecked")
+    OperationFuture<Void, UpdateDatabaseDdlMetadata> operationFuture = mock(OperationFuture.class);
+    when(operationFuture.get()).thenThrow(
+        new ExecutionException("ddl statement failed", Status.INVALID_ARGUMENT.asRuntimeException()));
+    when(operationFuture.getMetadata()).thenReturn(metadataFuture);
+    when(client.executeDdl(argThat(isListOfStringsWithSize(2)))).thenReturn(operationFuture);
+    DdlBatch batch = DdlBatch.newBuilder()
+        .withStatementExecutor(new StatementExecutor()).setDdlClient(client).build();
+    batch.executeDdl(StatementParser.INSTANCE.parse(Statement.of("CREATE TABLE FOO")));
+    batch.executeDdl(StatementParser.INSTANCE.parse(Statement.of("CREATE TABLE INVALID_TABLE")));
+    try {
+      batch.runBatch();
+      fail("missing expected exception");
+    } catch (SpannerBatchUpdateException e) {
+      assertThat(e.getUpdateCounts().length, is(equalTo(2)));
+      assertThat(e.getUpdateCounts()[0], is(equalTo(1L)));
+      assertThat(e.getUpdateCounts()[1], is(equalTo(0L)));
+    }
   }
 
   @Test

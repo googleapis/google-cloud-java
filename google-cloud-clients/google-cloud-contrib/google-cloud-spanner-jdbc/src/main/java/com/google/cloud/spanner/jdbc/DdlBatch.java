@@ -17,6 +17,7 @@
 package com.google.cloud.spanner.jdbc;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.Callable;
 import com.google.api.gax.longrunning.OperationFuture;
@@ -172,18 +173,39 @@ class DdlBatch extends AbstractBaseUnitOfWork {
     try {
       if (!statements.isEmpty()) {
         // create a statement that can be passed in to the execute method
-        Callable<Void> callable = new Callable<Void>() {
+        Callable<UpdateDatabaseDdlMetadata> callable = new Callable<UpdateDatabaseDdlMetadata>() {
           @Override
-          public Void call() throws Exception {
+          public UpdateDatabaseDdlMetadata call() throws Exception {
             OperationFuture<Void, UpdateDatabaseDdlMetadata> operation =
                 ddlClient.executeDdl(statements);
-            return operation.get();
+            try {
+              // Wait until the operation has finished.
+              operation.get();
+              // Return metadata.
+              return operation.getMetadata().get();
+            } catch (Exception e) {
+              UpdateDatabaseDdlMetadata metadata = operation.getMetadata().get();
+              long[] updateCounts = new long[metadata.getStatementsCount()];
+              for(int i = 0; i < updateCounts.length; i++) {
+                if(metadata.getCommitTimestampsCount() > i && metadata.getCommitTimestamps(i) != null) {
+                  updateCounts[i] = 1L;
+                } else {
+                  updateCounts[i] = 0L;
+                }
+              }
+              throw SpannerExceptionFactory.newSpannerBatchUpdateException(
+                  ErrorCode.INVALID_ARGUMENT,
+                  e.getMessage(),
+                  updateCounts);
+            }
           }
         };
         asyncExecuteStatement(RUN_BATCH, callable);
       }
       this.state = UnitOfWorkState.RAN;
-      return new long[0];
+      long[] updateCounts = new long[statements.size()];
+      Arrays.fill(updateCounts, 1L);
+      return updateCounts;
     } catch (SpannerException e) {
       this.state = UnitOfWorkState.RUN_FAILED;
       throw e;
