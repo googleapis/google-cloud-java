@@ -51,7 +51,7 @@ public final class FirestoreOptions extends ServiceOptions<Firestore, FirestoreO
 
   private static final long serialVersionUID = -5853552236134770090L;
 
-  private static final String FIRESTORE_EMULATOR_SYSTEM_PROPERTY = "FIRESTORE_EMULATOR_HOST";
+  private static final String FIRESTORE_EMULATOR_SYSTEM_VARIABLE = "FIRESTORE_EMULATOR_HOST";
 
   private final String databaseId;
   private final boolean timestampsInSnapshotsEnabled;
@@ -222,7 +222,7 @@ public final class FirestoreOptions extends ServiceOptions<Firestore, FirestoreO
       }
 
       // Override credentials and channel provider if we are using the emulator.
-      String emulatorHost = System.getenv(FIRESTORE_EMULATOR_SYSTEM_PROPERTY);
+      String emulatorHost = System.getenv(FIRESTORE_EMULATOR_SYSTEM_VARIABLE);
       if (emulatorHost != null) {
         String hostUrlString = "http://" + emulatorHost;
 
@@ -234,7 +234,7 @@ public final class FirestoreOptions extends ServiceOptions<Firestore, FirestoreO
               "Value: '"
                   + emulatorHost
                   + "' for property "
-                  + FIRESTORE_EMULATOR_SYSTEM_PROPERTY
+                  + FIRESTORE_EMULATOR_SYSTEM_VARIABLE
                   + " is not a valid host",
               e);
         }
@@ -247,8 +247,7 @@ public final class FirestoreOptions extends ServiceOptions<Firestore, FirestoreO
                     new ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder>() {
                       @Override
                       public ManagedChannelBuilder apply(ManagedChannelBuilder input) {
-                        input.usePlaintext();
-                        return input;
+                        return input.usePlaintext();
                       }
                     })
                 .build());
@@ -268,7 +267,7 @@ public final class FirestoreOptions extends ServiceOptions<Firestore, FirestoreO
 
       @Override
       public String getAuthenticationType() {
-        return "";
+        throw new IllegalArgumentException("Not supported");
       }
 
       @Override
