@@ -921,9 +921,9 @@ public class ITSystemTest {
     //   D. After all updates have been performed and the expected number of events have been
     //      received, assertions on the events will be performed.
     //
-    // Note: There is a potential that this test fails if the Firestore backend does not send us
+    // Note: There is a potential that this test fails if the Firestore backend chooses not send us
     // individual changes for every document update, but rather merges two or more changes into a
-	  // single event. We have, however, not seen any failures during thousands of test runs.
+    // single event. We have, however, not seen any failures during thousands of test runs.
     ListenerRegistration registration = null;
     final ExecutorService updatesExecutor = Executors.newCachedThreadPool();
 
