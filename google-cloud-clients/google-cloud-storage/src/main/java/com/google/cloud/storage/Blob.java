@@ -246,15 +246,6 @@ public class Blob extends BlobInfo {
   }
 
   /**
-   * Downloads this blob to the given output stream.
-   *
-   * @param outputStream
-   */
-  public void downloadTo(OutputStream outputStream) {
-    downloadTo(outputStream, new BlobSourceOption[0]);
-  }
-
-  /**
    * Downloads this blob to the given file path.
    *
    * <p>This method is replaced with {@link #downloadTo(Path, BlobSourceOption...)}, but is kept
