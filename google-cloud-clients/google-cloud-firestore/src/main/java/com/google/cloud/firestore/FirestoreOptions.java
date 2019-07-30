@@ -215,7 +215,6 @@ public final class FirestoreOptions extends ServiceOptions<Firestore, FirestoreO
     @Override
     @Nonnull
     public FirestoreOptions build() {
-
       if (this.credentials == null && this.credentialsProvider != null) {
         try {
           this.setCredentials(credentialsProvider.getCredentials());
@@ -225,30 +224,35 @@ public final class FirestoreOptions extends ServiceOptions<Firestore, FirestoreO
       }
 
       // Override credentials and channel provider if we are using the emulator.
-      if (System.getProperty(FIRESTORE_EMULATOR_SYSTEM_PROPERTY) != null) {
-        String emulatorHost = System.getProperty(FIRESTORE_EMULATOR_SYSTEM_PROPERTY);
+      String emulatorHost = System.getProperty(FIRESTORE_EMULATOR_SYSTEM_PROPERTY);
+      if (emulatorHost != null) {
         String hostUrlString = "http://" + emulatorHost;
 
         // Try creating a host in order to validate that the host name is valid.
         try {
           new URL(hostUrlString);
-          this.setChannelProvider(
-              InstantiatingGrpcChannelProvider.newBuilder()
-                  .setEndpoint(emulatorHost)
-                  .setChannelConfigurator(
-                      new ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder>() {
-                        @Override
-                        public ManagedChannelBuilder apply(ManagedChannelBuilder input) {
-                          input.usePlaintext();
-                          return input;
-                        }
-                      })
-                  .build());
-          this.setCredentials(new FakeCredentials());
         } catch (MalformedURLException e) {
           throw new IllegalArgumentException(
-              "Value for property FIRESTORE_EMULATOR_HOST is not a valid host", e);
+              "Value: '"
+                  + emulatorHost
+                  + "' for property FIRESTORE_EMULATOR_HOST is not a valid host",
+              e);
         }
+
+        // Setting the channel provider to use plaintext turn off SSL.
+        this.setChannelProvider(
+            InstantiatingGrpcChannelProvider.newBuilder()
+                .setEndpoint(emulatorHost)
+                .setChannelConfigurator(
+                    new ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder>() {
+                      @Override
+                      public ManagedChannelBuilder apply(ManagedChannelBuilder input) {
+                        input.usePlaintext();
+                        return input;
+                      }
+                    })
+                .build());
+        this.setCredentials(new FakeCredentials());
       }
 
       return new FirestoreOptions(this);
