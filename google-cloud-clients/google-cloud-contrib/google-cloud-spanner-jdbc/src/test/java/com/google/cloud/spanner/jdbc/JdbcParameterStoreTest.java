@@ -441,6 +441,57 @@ public class JdbcParameterStoreTest {
         "select 1, ?, 'test?test', \"test?test\", foo.* from `foo` where col1=? and col2='test' and col3=? and col4='?' and col5=\"?\" and col6='?''?''?'").sqlWithNamedParameters,
         is(equalTo(
             "select 1, @p1, 'test?test', \"test?test\", foo.* from `foo` where col1=@p2 and col2='test' and col3=@p3 and col4='?' and col5=\"?\" and col6='?''?''?'")));
+
+    assertThat(
+        convertPositionalParametersToNamedParameters(
+            "select * "
+            + "from foo "
+            + "where name=? "
+            + "and col2 like ? "
+            + "and col3 > ?").sqlWithNamedParameters,
+        is(equalTo("select * "
+            + "from foo "
+            + "where name=@p1 "
+            + "and col2 like @p2 "
+            + "and col3 > @p3")));
+    assertThat(
+        convertPositionalParametersToNamedParameters(
+            "select * "
+            + "from foo "
+            + "where id between ? and ?").sqlWithNamedParameters,
+        is(equalTo("select * "
+            + "from foo "
+            + "where id between @p1 and @p2")));
+    assertThat(
+        convertPositionalParametersToNamedParameters(
+            "select * "
+            + "from foo "
+            + "limit ? offset ?").sqlWithNamedParameters,
+        is(equalTo("select * "
+            + "from foo "
+            + "limit @p1 offset @p2")));
+    assertThat(
+        convertPositionalParametersToNamedParameters(
+            "select * "
+            + "from foo "
+            + "where col1=? "
+            + "and col2 like ? "
+            + "and col3 > ? "
+            + "and col4 < ? "
+            + "and col5 != ? "
+            + "and col6 not in (?, ?, ?) "
+            + "and col7 in (?, ?, ?) "
+            + "and col8 between ? and ?").sqlWithNamedParameters,
+        is(equalTo("select * "
+            + "from foo "
+            + "where col1=@p1 "
+            + "and col2 like @p2 "
+            + "and col3 > @p3 "
+            + "and col4 < @p4 "
+            + "and col5 != @p5 "
+            + "and col6 not in (@p6, @p7, @p8) "
+            + "and col7 in (@p9, @p10, @p11) "
+            + "and col8 between @p12 and @p13")));
   }
 
   private void assertUnclosedLiteral(String sql) {
