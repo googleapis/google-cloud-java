@@ -138,7 +138,7 @@ class JdbcArray implements Array {
   }
 
   private static final String RESULTSET_NOT_SUPPORTED =
-      "Getting a resultset from an array is not supported";
+      "Getting a ResultSet from an array is not supported";
 
   @Override
   public ResultSet getResultSet() throws SQLException {
