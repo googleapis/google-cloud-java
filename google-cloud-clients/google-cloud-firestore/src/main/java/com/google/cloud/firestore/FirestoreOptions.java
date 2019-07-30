@@ -19,7 +19,6 @@ package com.google.cloud.firestore;
 import com.google.api.core.ApiFunction;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.CredentialsProvider;
-import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.rpc.TransportChannelProvider;
@@ -216,14 +215,24 @@ public final class FirestoreOptions extends ServiceOptions<Firestore, FirestoreO
     @Override
     @Nonnull
     public FirestoreOptions build() {
+
+      if (this.credentials == null && this.credentialsProvider != null) {
+        try {
+          this.setCredentials(credentialsProvider.getCredentials());
+        } catch (IOException e) {
+          throw new RuntimeException("Failed to obtain credentials", e);
+        }
+      }
+
+      // Override credentials and channel provider if we are using the emulator.
       if (System.getProperty(FIRESTORE_EMULATOR_SYSTEM_PROPERTY) != null) {
         String emulatorHost = System.getProperty(FIRESTORE_EMULATOR_SYSTEM_PROPERTY);
         String hostUrlString = "http://" + emulatorHost;
+
         // Try creating a host in order to validate that the host name is valid.
         try {
           new URL(hostUrlString);
-          setHost(emulatorHost);
-          setChannelProvider(
+          this.setChannelProvider(
               InstantiatingGrpcChannelProvider.newBuilder()
                   .setEndpoint(emulatorHost)
                   .setChannelConfigurator(
@@ -235,25 +244,17 @@ public final class FirestoreOptions extends ServiceOptions<Firestore, FirestoreO
                         }
                       })
                   .build());
-          setCredentialsProvider(FixedCredentialsProvider.create(new FakeCredentials()));
+          this.setCredentials(new FakeCredentials());
         } catch (MalformedURLException e) {
           throw new IllegalArgumentException(
               "Value for property FIRESTORE_EMULATOR_HOST is not a valid host", e);
         }
       }
 
-      if (this.credentials == null && this.credentialsProvider != null) {
-        try {
-          this.setCredentials(credentialsProvider.getCredentials());
-        } catch (IOException e) {
-          throw new RuntimeException("Failed to obtain credentials", e);
-        }
-      }
-
       return new FirestoreOptions(this);
     }
 
-    private class FakeCredentials extends Credentials {
+    public class FakeCredentials extends Credentials {
       private Map<String, List<String>> headers;
 
       public FakeCredentials() {
@@ -409,6 +410,7 @@ public final class FirestoreOptions extends ServiceOptions<Firestore, FirestoreO
 
   @Nonnull
   public static Builder newBuilder() {
+
     return new Builder();
   }
 }
