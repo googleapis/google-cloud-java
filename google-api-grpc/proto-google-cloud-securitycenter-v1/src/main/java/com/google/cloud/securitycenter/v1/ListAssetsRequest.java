@@ -237,7 +237,16 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
    * * boolean literals `true` and `false` without quotes.
    * The following are the allowed field and operator combinations:
    * name | `=`
-   * update_time | `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+   * update_time | `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+   *   Usage: This should be milliseconds since epoch or an RFC3339 string.
+   *   Examples:
+   *     "update_time = &#92;"2019-06-10T16:07:18-07:00&#92;""
+   *     "update_time = 1560208038000"
+   * create_time | `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+   *   Usage: This should be milliseconds since epoch or an RFC3339 string.
+   *   Examples:
+   *     "create_time = &#92;"2019-06-10T16:07:18-07:00&#92;""
+   *     "create_time = 1560208038000"
    * iam_policy.policy_blob | '=', ':'
    * resource_properties | '=', ':', `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
    * security_marks | '=', ':'
@@ -287,7 +296,16 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
    * * boolean literals `true` and `false` without quotes.
    * The following are the allowed field and operator combinations:
    * name | `=`
-   * update_time | `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+   * update_time | `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+   *   Usage: This should be milliseconds since epoch or an RFC3339 string.
+   *   Examples:
+   *     "update_time = &#92;"2019-06-10T16:07:18-07:00&#92;""
+   *     "update_time = 1560208038000"
+   * create_time | `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+   *   Usage: This should be milliseconds since epoch or an RFC3339 string.
+   *   Examples:
+   *     "create_time = &#92;"2019-06-10T16:07:18-07:00&#92;""
+   *     "create_time = 1560208038000"
    * iam_policy.policy_blob | '=', ':'
    * resource_properties | '=', ':', `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
    * security_marks | '=', ':'
@@ -1235,7 +1253,16 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      * * boolean literals `true` and `false` without quotes.
      * The following are the allowed field and operator combinations:
      * name | `=`
-     * update_time | `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+     * update_time | `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+     *   Usage: This should be milliseconds since epoch or an RFC3339 string.
+     *   Examples:
+     *     "update_time = &#92;"2019-06-10T16:07:18-07:00&#92;""
+     *     "update_time = 1560208038000"
+     * create_time | `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+     *   Usage: This should be milliseconds since epoch or an RFC3339 string.
+     *   Examples:
+     *     "create_time = &#92;"2019-06-10T16:07:18-07:00&#92;""
+     *     "create_time = 1560208038000"
      * iam_policy.policy_blob | '=', ':'
      * resource_properties | '=', ':', `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
      * security_marks | '=', ':'
@@ -1285,7 +1312,16 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      * * boolean literals `true` and `false` without quotes.
      * The following are the allowed field and operator combinations:
      * name | `=`
-     * update_time | `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+     * update_time | `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+     *   Usage: This should be milliseconds since epoch or an RFC3339 string.
+     *   Examples:
+     *     "update_time = &#92;"2019-06-10T16:07:18-07:00&#92;""
+     *     "update_time = 1560208038000"
+     * create_time | `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+     *   Usage: This should be milliseconds since epoch or an RFC3339 string.
+     *   Examples:
+     *     "create_time = &#92;"2019-06-10T16:07:18-07:00&#92;""
+     *     "create_time = 1560208038000"
      * iam_policy.policy_blob | '=', ':'
      * resource_properties | '=', ':', `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
      * security_marks | '=', ':'
@@ -1335,7 +1371,16 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      * * boolean literals `true` and `false` without quotes.
      * The following are the allowed field and operator combinations:
      * name | `=`
-     * update_time | `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+     * update_time | `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+     *   Usage: This should be milliseconds since epoch or an RFC3339 string.
+     *   Examples:
+     *     "update_time = &#92;"2019-06-10T16:07:18-07:00&#92;""
+     *     "update_time = 1560208038000"
+     * create_time | `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+     *   Usage: This should be milliseconds since epoch or an RFC3339 string.
+     *   Examples:
+     *     "create_time = &#92;"2019-06-10T16:07:18-07:00&#92;""
+     *     "create_time = 1560208038000"
      * iam_policy.policy_blob | '=', ':'
      * resource_properties | '=', ':', `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
      * security_marks | '=', ':'
@@ -1383,7 +1428,16 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      * * boolean literals `true` and `false` without quotes.
      * The following are the allowed field and operator combinations:
      * name | `=`
-     * update_time | `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+     * update_time | `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+     *   Usage: This should be milliseconds since epoch or an RFC3339 string.
+     *   Examples:
+     *     "update_time = &#92;"2019-06-10T16:07:18-07:00&#92;""
+     *     "update_time = 1560208038000"
+     * create_time | `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+     *   Usage: This should be milliseconds since epoch or an RFC3339 string.
+     *   Examples:
+     *     "create_time = &#92;"2019-06-10T16:07:18-07:00&#92;""
+     *     "create_time = 1560208038000"
      * iam_policy.policy_blob | '=', ':'
      * resource_properties | '=', ':', `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
      * security_marks | '=', ':'
@@ -1428,7 +1482,16 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      * * boolean literals `true` and `false` without quotes.
      * The following are the allowed field and operator combinations:
      * name | `=`
-     * update_time | `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+     * update_time | `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+     *   Usage: This should be milliseconds since epoch or an RFC3339 string.
+     *   Examples:
+     *     "update_time = &#92;"2019-06-10T16:07:18-07:00&#92;""
+     *     "update_time = 1560208038000"
+     * create_time | `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+     *   Usage: This should be milliseconds since epoch or an RFC3339 string.
+     *   Examples:
+     *     "create_time = &#92;"2019-06-10T16:07:18-07:00&#92;""
+     *     "create_time = 1560208038000"
      * iam_policy.policy_blob | '=', ':'
      * resource_properties | '=', ':', `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
      * security_marks | '=', ':'

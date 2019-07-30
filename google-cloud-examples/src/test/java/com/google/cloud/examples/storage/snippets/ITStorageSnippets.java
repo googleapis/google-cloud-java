@@ -460,7 +460,7 @@ public class ITStorageSnippets {
   @Test
   public void testGetBucketMetadata() {
     Bucket bucket =
-            storage.get(BUCKET, Storage.BucketGetOption.fields(Storage.BucketField.values()));
+        storage.get(BUCKET, Storage.BucketGetOption.fields(Storage.BucketField.values()));
     bucket = bucket.toBuilder().setLabels(ImmutableMap.of("k", "v")).build().update();
     final ByteArrayOutputStream snippetOutputCapture = new ByteArrayOutputStream();
     System.setOut(new PrintStream(snippetOutputCapture));

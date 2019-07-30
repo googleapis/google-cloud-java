@@ -55,10 +55,11 @@ public interface Firestore extends Service<FirestoreOptions>, AutoCloseable {
   /**
    * Fetches the root collections that are associated with this Firestore database.
    *
-   * @deprecated Use `listCollections()`.
+   * @deprecated Use {@link #listCollections()}.
    * @throws FirestoreException if the Iterable could not be initialized.
    * @return An Iterable that can be used to fetch all collections.
    */
+  @Deprecated
   @Nonnull
   Iterable<CollectionReference> getCollections();
 

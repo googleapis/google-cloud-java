@@ -71,4 +71,7 @@
  * </code>
  * </pre>
  */
+@Generated("by gapic-generator")
 package com.google.cloud.devtools.containeranalysis.v1beta1;
+
+import javax.annotation.Generated;

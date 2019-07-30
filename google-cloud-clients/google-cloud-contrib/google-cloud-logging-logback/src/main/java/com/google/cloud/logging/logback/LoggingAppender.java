@@ -239,7 +239,7 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
   }
 
   /** Gets the {@link LoggingOptions} to use for this {@link LoggingAppender}. */
-  LoggingOptions getLoggingOptions() {
+  protected LoggingOptions getLoggingOptions() {
     if (loggingOptions == null) {
       if (Strings.isNullOrEmpty(credentialsFile)) {
         loggingOptions = LoggingOptions.getDefaultInstance();

@@ -1152,10 +1152,10 @@ public class StorageSnippets {
     System.out.println("StorageClass: " + bucket.getStorageClass().name());
     System.out.println("TimeCreated: " + bucket.getCreateTime());
     System.out.println("VersioningEnabled: " + bucket.versioningEnabled());
-    if(bucket.getLabels() != null) {
+    if (bucket.getLabels() != null) {
       System.out.println("\n\n\nLabels:");
-      for(Map.Entry<String, String> label : bucket.getLabels().entrySet()) {
-        System.out.println(label.getKey() + "="  + label.getValue());
+      for (Map.Entry<String, String> label : bucket.getLabels().entrySet()) {
+        System.out.println(label.getKey() + "=" + label.getValue());
       }
     }
     // [END storage_get_bucket_metadata]

@@ -45,18 +45,7 @@ import javax.annotation.Generated;
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
- * build() is called, the tree of builders is called to create the complete settings object. For
- * example, to set the total timeout of streamingAnnotateVideoCallable to 30 seconds:
- *
- * <pre>
- * <code>
- * StreamingVideoIntelligenceServiceSettings.Builder streamingVideoIntelligenceServiceSettingsBuilder =
- *     StreamingVideoIntelligenceServiceSettings.newBuilder();
- * streamingVideoIntelligenceServiceSettingsBuilder.streamingAnnotateVideoSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
- * StreamingVideoIntelligenceServiceSettings streamingVideoIntelligenceServiceSettings = streamingVideoIntelligenceServiceSettingsBuilder.build();
- * </code>
- * </pre>
+ * build() is called, the tree of builders is called to create the complete settings object.
  */
 @Generated("by gapic-generator")
 @BetaApi

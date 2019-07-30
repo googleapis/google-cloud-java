@@ -38,4 +38,7 @@
  * </code>
  * </pre>
  */
+@Generated("by gapic-generator")
 package com.google.cloud.bigquery.storage.v1beta1;
+
+import javax.annotation.Generated;
