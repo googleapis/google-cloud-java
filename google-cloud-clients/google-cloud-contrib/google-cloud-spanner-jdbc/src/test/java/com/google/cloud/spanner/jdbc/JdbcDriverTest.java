@@ -43,7 +43,7 @@ public class JdbcDriverTest {
   @Test
   public void testConnect() throws SQLException {
     try (Connection connection = DriverManager.getConnection(
-        "jdbc:cloudspanner://localhost:8443/projects/test-project/instances/static-test-instance/databases/test-database;credentials=/home/loite/CloudSpannerKeys/cloudspanner-emulator-key.json")) {
+        "jdbc:cloudspanner:/projects/test-project/instances/static-test-instance/databases/test-database;credentials=/path/to/key.json")) {
       assertThat(connection.isClosed(), is(false));
     }
   }
@@ -51,7 +51,7 @@ public class JdbcDriverTest {
   @Test(expected = SQLException.class)
   public void testInvalidConnect() throws SQLException {
     try (Connection connection = DriverManager.getConnection(
-        "jdbc:cloudspanner://localhost:8443/projects/test-project/instances/static-test-instance/databases/test-database;credentialsUrl=/home/loite/CloudSpannerKeys/cloudspanner-emulator-key.json")) {
+        "jdbc:cloudspanner:/projects/test-project/instances/static-test-instance/databases/test-database;credentialsUrl=/path/to/key.json")) {
       assertThat(connection.isClosed(), is(false));
     }
   }
