@@ -141,4 +141,7 @@
  * </code>
  * </pre>
  */
+@Generated("by gapic-generator")
 package com.google.cloud.talent.v4beta1;
+
+import javax.annotation.Generated;

@@ -43,7 +43,6 @@ import org.junit.AfterClass;
 import org.junit.AssumptionViolatedException;
 import org.junit.Before;
 import org.junit.BeforeClass;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.threeten.bp.Duration;
 
@@ -236,7 +235,6 @@ public class BigtableTableAdminClientIT {
     }
   }
 
-  @Ignore
   @Test
   public void dropRowRange() {
     String tableId = getTableId("adminDropRowrangeTest");

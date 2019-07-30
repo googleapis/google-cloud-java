@@ -35,4 +35,7 @@
  * </code>
  * </pre>
  */
+@Generated("by gapic-generator")
 package com.google.cloud.scheduler.v1beta1;
+
+import javax.annotation.Generated;

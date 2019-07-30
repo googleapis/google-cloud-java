@@ -483,7 +483,7 @@ public class ITStorageTest {
   }
 
   @Test
-  public void testCreateBlobWithEncryptionKey() {
+  public void testCreateGetBlobWithEncryptionKey() {
     String blobName = "test-create-with-customer-key-blob";
     BlobInfo blob = BlobInfo.newBuilder(BUCKET, blobName).build();
     Blob remoteBlob =
@@ -494,6 +494,13 @@ public class ITStorageTest {
     byte[] readBytes =
         storage.readAllBytes(BUCKET, blobName, Storage.BlobSourceOption.decryptionKey(BASE64_KEY));
     assertArrayEquals(BLOB_BYTE_CONTENT, readBytes);
+    remoteBlob =
+        storage.get(
+            blob.getBlobId(),
+            Storage.BlobGetOption.decryptionKey(BASE64_KEY),
+            Storage.BlobGetOption.fields(BlobField.CRC32C, BlobField.MD5HASH));
+    assertNotNull(remoteBlob.getCrc32c());
+    assertNotNull(remoteBlob.getMd5());
   }
 
   @Test

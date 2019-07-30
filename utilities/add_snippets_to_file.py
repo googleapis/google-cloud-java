@@ -210,7 +210,7 @@ class Snippet(object):
                 index = new_index
             else:
                 index -= 1
-        raise ValueError('Could not parse javadoc snippets for method {}'.format(signautre))
+        raise ValueError('Could not parse javadoc snippets for method {}'.format(signature))
 
     @classmethod
     def parse_snippets(cls, snippets_filename):

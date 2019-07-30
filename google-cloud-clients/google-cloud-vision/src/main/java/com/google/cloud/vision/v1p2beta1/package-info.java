@@ -36,4 +36,7 @@
  * </code>
  * </pre>
  */
+@Generated("by gapic-generator")
 package com.google.cloud.vision.v1p2beta1;
+
+import javax.annotation.Generated;
