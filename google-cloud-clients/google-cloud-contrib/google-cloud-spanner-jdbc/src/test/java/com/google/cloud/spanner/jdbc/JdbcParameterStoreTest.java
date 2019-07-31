@@ -21,6 +21,12 @@ import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.startsWith;
 import static org.junit.Assert.assertThat;
+
+import com.google.cloud.ByteArray;
+import com.google.cloud.spanner.Statement;
+import com.google.cloud.spanner.Value;
+import com.google.common.io.CharStreams;
+import com.google.rpc.Code;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -38,18 +44,11 @@ import java.util.Arrays;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-import com.google.cloud.ByteArray;
-import com.google.cloud.spanner.Statement;
-import com.google.cloud.spanner.Value;
-import com.google.common.io.CharStreams;
-import com.google.rpc.Code;
 
 @RunWith(JUnit4.class)
 public class JdbcParameterStoreTest {
 
-  /**
-   * Tests setting a parameter value together with a sql type
-   */
+  /** Tests setting a parameter value together with a sql type */
   @Test
   public void testSetParameterWithType() throws SQLException, IOException {
     JdbcParameterStore params = new JdbcParameterStore();
@@ -80,12 +79,12 @@ public class JdbcParameterStoreTest {
     verifyParameter(params, Value.date(com.google.cloud.Date.fromYearMonthDay(1970, 1, 1)));
     params.setParameter(1, new Time(0L), Types.TIME);
     assertThat((Time) params.getParameter(1), is(equalTo(new Time(0L))));
-    verifyParameter(params,
-        Value.timestamp(com.google.cloud.Timestamp.ofTimeSecondsAndNanos(0L, 0)));
+    verifyParameter(
+        params, Value.timestamp(com.google.cloud.Timestamp.ofTimeSecondsAndNanos(0L, 0)));
     params.setParameter(1, new Timestamp(0L), Types.TIMESTAMP);
     assertThat((Timestamp) params.getParameter(1), is(equalTo(new Timestamp(0L))));
-    verifyParameter(params,
-        Value.timestamp(com.google.cloud.Timestamp.ofTimeSecondsAndNanos(0L, 0)));
+    verifyParameter(
+        params, Value.timestamp(com.google.cloud.Timestamp.ofTimeSecondsAndNanos(0L, 0)));
     params.setParameter(1, new byte[] {1, 2, 3}, Types.BINARY);
     assertThat((byte[]) params.getParameter(1), is(equalTo(new byte[] {1, 2, 3})));
     verifyParameter(params, Value.bytes(ByteArray.copyFrom(new byte[] {1, 2, 3})));
@@ -103,7 +102,8 @@ public class JdbcParameterStoreTest {
     assertThat((JdbcClob) params.getParameter(1), is(equalTo(new JdbcClob("test"))));
     verifyParameter(params, Value.string("test"));
     params.setParameter(1, new StringReader("test"), Types.CLOB);
-    assertThat(stringReadersEqual((StringReader) params.getParameter(1), new StringReader("test")),
+    assertThat(
+        stringReadersEqual((StringReader) params.getParameter(1), new StringReader("test")),
         is(true));
     verifyParameter(params, Value.string("test"));
 
@@ -111,7 +111,8 @@ public class JdbcParameterStoreTest {
     assertThat((JdbcClob) params.getParameter(1), is(equalTo(new JdbcClob("test"))));
     verifyParameter(params, Value.string("test"));
     params.setParameter(1, new StringReader("test"), Types.NCLOB);
-    assertThat(stringReadersEqual((StringReader) params.getParameter(1), new StringReader("test")),
+    assertThat(
+        stringReadersEqual((StringReader) params.getParameter(1), new StringReader("test")),
         is(true));
     verifyParameter(params, Value.string("test"));
 
@@ -193,16 +194,16 @@ public class JdbcParameterStoreTest {
     for (int type : new int[] {Types.TIME, Types.TIMESTAMP}) {
       params.setParameter(1, new Date(0L), type);
       assertThat((Date) params.getParameter(1), is(equalTo(new Date(0L))));
-      verifyParameter(params,
-          Value.timestamp(com.google.cloud.Timestamp.ofTimeSecondsAndNanos(0L, 0)));
+      verifyParameter(
+          params, Value.timestamp(com.google.cloud.Timestamp.ofTimeSecondsAndNanos(0L, 0)));
       params.setParameter(1, new Time(0L), type);
       assertThat((Time) params.getParameter(1), is(equalTo(new Time(0L))));
-      verifyParameter(params,
-          Value.timestamp(com.google.cloud.Timestamp.ofTimeSecondsAndNanos(0L, 0)));
+      verifyParameter(
+          params, Value.timestamp(com.google.cloud.Timestamp.ofTimeSecondsAndNanos(0L, 0)));
       params.setParameter(1, new Timestamp(0L), type);
       assertThat((Timestamp) params.getParameter(1), is(equalTo(new Timestamp(0L))));
-      verifyParameter(params,
-          Value.timestamp(com.google.cloud.Timestamp.ofTimeSecondsAndNanos(0L, 0)));
+      verifyParameter(
+          params, Value.timestamp(com.google.cloud.Timestamp.ofTimeSecondsAndNanos(0L, 0)));
     }
 
     // types that should lead to bytes (except BLOB which is handled separately)
@@ -213,8 +214,15 @@ public class JdbcParameterStoreTest {
     }
 
     // types that should lead to string
-    for (int type : new int[] {Types.CHAR, Types.VARCHAR, Types.LONGVARCHAR, Types.NCHAR,
-        Types.NVARCHAR, Types.LONGNVARCHAR}) {
+    for (int type :
+        new int[] {
+          Types.CHAR,
+          Types.VARCHAR,
+          Types.LONGVARCHAR,
+          Types.NCHAR,
+          Types.NVARCHAR,
+          Types.LONGNVARCHAR
+        }) {
       params.setParameter(1, "test", type);
       assertThat((String) params.getParameter(1), is(equalTo("test")));
       verifyParameter(params, Value.string("test"));
@@ -225,17 +233,18 @@ public class JdbcParameterStoreTest {
           is(true));
       verifyParameter(params, Value.string("test"));
 
-      params.setParameter(1,
-          new ByteArrayInputStream(StandardCharsets.US_ASCII.encode("test").array()), type);
+      params.setParameter(
+          1, new ByteArrayInputStream(StandardCharsets.US_ASCII.encode("test").array()), type);
       assertThat(
-          asciiStreamsEqual((ByteArrayInputStream) params.getParameter(1),
+          asciiStreamsEqual(
+              (ByteArrayInputStream) params.getParameter(1),
               new ByteArrayInputStream(StandardCharsets.US_ASCII.encode("test").array())),
           is(true));
       verifyParameter(params, Value.string("test"));
 
       params.setParameter(1, new URL("https://cloud.google.com/spanner"), type);
-      assertThat((URL) params.getParameter(1),
-          is(equalTo(new URL("https://cloud.google.com/spanner"))));
+      assertThat(
+          (URL) params.getParameter(1), is(equalTo(new URL("https://cloud.google.com/spanner"))));
       verifyParameter(params, Value.string("https://cloud.google.com/spanner"));
     }
 
@@ -298,12 +307,12 @@ public class JdbcParameterStoreTest {
     verifyParameter(params, Value.date(com.google.cloud.Date.fromYearMonthDay(1970, 1, 1)));
     params.setParameter(1, new Time(0L), null);
     assertThat((Time) params.getParameter(1), is(equalTo(new Time(0L))));
-    verifyParameter(params,
-        Value.timestamp(com.google.cloud.Timestamp.ofTimeSecondsAndNanos(0L, 0)));
+    verifyParameter(
+        params, Value.timestamp(com.google.cloud.Timestamp.ofTimeSecondsAndNanos(0L, 0)));
     params.setParameter(1, new Timestamp(0L), null);
     assertThat((Timestamp) params.getParameter(1), is(equalTo(new Timestamp(0L))));
-    verifyParameter(params,
-        Value.timestamp(com.google.cloud.Timestamp.ofTimeSecondsAndNanos(0L, 0)));
+    verifyParameter(
+        params, Value.timestamp(com.google.cloud.Timestamp.ofTimeSecondsAndNanos(0L, 0)));
     params.setParameter(1, new byte[] {1, 2, 3}, null);
     assertThat((byte[]) params.getParameter(1), is(equalTo(new byte[] {1, 2, 3})));
     verifyParameter(params, Value.bytes(ByteArray.copyFrom(new byte[] {1, 2, 3})));
@@ -346,121 +355,158 @@ public class JdbcParameterStoreTest {
   @Test
   public void testSetArrayParameter() throws SQLException {
     JdbcParameterStore params = new JdbcParameterStore();
-    params.setParameter(1, JdbcArray.createArray("BOOL", new Boolean[] {true, false, true}),
-        Types.ARRAY);
-    assertThat((JdbcArray) params.getParameter(1),
+    params.setParameter(
+        1, JdbcArray.createArray("BOOL", new Boolean[] {true, false, true}), Types.ARRAY);
+    assertThat(
+        (JdbcArray) params.getParameter(1),
         is(equalTo(JdbcArray.createArray("BOOL", new Boolean[] {true, false, true}))));
     verifyParameter(params, Value.boolArray(new boolean[] {true, false, true}));
 
-    params.setParameter(1, JdbcArray.createArray("BOOL", new Boolean[] {true, false, null}),
-        Types.ARRAY);
-    assertThat((JdbcArray) params.getParameter(1),
+    params.setParameter(
+        1, JdbcArray.createArray("BOOL", new Boolean[] {true, false, null}), Types.ARRAY);
+    assertThat(
+        (JdbcArray) params.getParameter(1),
         is(equalTo(JdbcArray.createArray("BOOL", new Boolean[] {true, false, null}))));
     verifyParameter(params, Value.boolArray(Arrays.asList(true, false, null)));
 
     params.setParameter(1, JdbcArray.createArray("BOOL", null), Types.ARRAY);
-    assertThat((JdbcArray) params.getParameter(1), is(equalTo(JdbcArray.createArray("BOOL", null))));
+    assertThat(
+        (JdbcArray) params.getParameter(1), is(equalTo(JdbcArray.createArray("BOOL", null))));
     verifyParameter(params, Value.boolArray((boolean[]) null));
 
     params.setParameter(1, JdbcArray.createArray("INT64", new Long[] {1L, 2L, 3L}), Types.ARRAY);
-    assertThat((JdbcArray) params.getParameter(1),
+    assertThat(
+        (JdbcArray) params.getParameter(1),
         is(equalTo(JdbcArray.createArray("INT64", new Long[] {1L, 2L, 3L}))));
     verifyParameter(params, Value.int64Array(new long[] {1, 2, 3}));
 
     params.setParameter(1, JdbcArray.createArray("INT64", new Long[] {1L, 2L, null}), Types.ARRAY);
-    assertThat((JdbcArray) params.getParameter(1),
+    assertThat(
+        (JdbcArray) params.getParameter(1),
         is(equalTo(JdbcArray.createArray("INT64", new Long[] {1L, 2L, null}))));
     verifyParameter(params, Value.int64Array(Arrays.asList(1L, 2L, null)));
 
     params.setParameter(1, JdbcArray.createArray("INT64", null), Types.ARRAY);
-    assertThat((JdbcArray) params.getParameter(1), is(equalTo(JdbcArray.createArray("INT64", null))));
+    assertThat(
+        (JdbcArray) params.getParameter(1), is(equalTo(JdbcArray.createArray("INT64", null))));
     verifyParameter(params, Value.int64Array((long[]) null));
 
-    params.setParameter(1, JdbcArray.createArray("FLOAT64", new Double[] {1D, 2D, 3D}),
-        Types.ARRAY);
-    assertThat((JdbcArray) params.getParameter(1),
+    params.setParameter(
+        1, JdbcArray.createArray("FLOAT64", new Double[] {1D, 2D, 3D}), Types.ARRAY);
+    assertThat(
+        (JdbcArray) params.getParameter(1),
         is(equalTo(JdbcArray.createArray("FLOAT64", new Double[] {1D, 2D, 3D}))));
     verifyParameter(params, Value.float64Array(new double[] {1, 2, 3}));
 
-    params.setParameter(1, JdbcArray.createArray("FLOAT64", new Double[] {1D, 2D, null}),
-        Types.ARRAY);
-    assertThat((JdbcArray) params.getParameter(1),
+    params.setParameter(
+        1, JdbcArray.createArray("FLOAT64", new Double[] {1D, 2D, null}), Types.ARRAY);
+    assertThat(
+        (JdbcArray) params.getParameter(1),
         is(equalTo(JdbcArray.createArray("FLOAT64", new Double[] {1D, 2D, null}))));
     verifyParameter(params, Value.float64Array(Arrays.asList(1D, 2D, null)));
 
     params.setParameter(1, JdbcArray.createArray("FLOAT64", null), Types.ARRAY);
-    assertThat((JdbcArray) params.getParameter(1), is(equalTo(JdbcArray.createArray("FLOAT64", null))));
+    assertThat(
+        (JdbcArray) params.getParameter(1), is(equalTo(JdbcArray.createArray("FLOAT64", null))));
     verifyParameter(params, Value.float64Array((double[]) null));
 
     @SuppressWarnings("deprecation")
     Date sqlDate = new Date(2018 - 1900, 12 - 1, 14);
     params.setParameter(1, JdbcArray.createArray("DATE", new Date[] {sqlDate}), Types.ARRAY);
-    assertThat((JdbcArray) params.getParameter(1),
+    assertThat(
+        (JdbcArray) params.getParameter(1),
         is(equalTo(JdbcArray.createArray("DATE", new Date[] {sqlDate}))));
-    verifyParameter(params,
+    verifyParameter(
+        params,
         Value.dateArray(Arrays.asList(com.google.cloud.Date.fromYearMonthDay(2018, 12, 14))));
 
     params.setParameter(1, JdbcArray.createArray("DATE", new Date[] {sqlDate, null}), Types.ARRAY);
-    assertThat((JdbcArray) params.getParameter(1),
+    assertThat(
+        (JdbcArray) params.getParameter(1),
         is(equalTo(JdbcArray.createArray("DATE", new Date[] {sqlDate, null}))));
-    verifyParameter(params,
+    verifyParameter(
+        params,
         Value.dateArray(Arrays.asList(com.google.cloud.Date.fromYearMonthDay(2018, 12, 14), null)));
 
     params.setParameter(1, JdbcArray.createArray("DATE", null), Types.ARRAY);
-    assertThat((JdbcArray) params.getParameter(1), is(equalTo(JdbcArray.createArray("DATE", null))));
+    assertThat(
+        (JdbcArray) params.getParameter(1), is(equalTo(JdbcArray.createArray("DATE", null))));
     verifyParameter(params, Value.dateArray(null));
 
     Timestamp sqlTimestamp = new Timestamp(System.currentTimeMillis());
-    params.setParameter(1, JdbcArray.createArray("TIMESTAMP", new Timestamp[] {sqlTimestamp}),
-        Types.ARRAY);
-    assertThat((JdbcArray) params.getParameter(1),
+    params.setParameter(
+        1, JdbcArray.createArray("TIMESTAMP", new Timestamp[] {sqlTimestamp}), Types.ARRAY);
+    assertThat(
+        (JdbcArray) params.getParameter(1),
         is(equalTo(JdbcArray.createArray("TIMESTAMP", new Timestamp[] {sqlTimestamp}))));
-    verifyParameter(params,
-        Value.timestampArray(Arrays.asList(com.google.cloud.Timestamp.of(sqlTimestamp))));
+    verifyParameter(
+        params, Value.timestampArray(Arrays.asList(com.google.cloud.Timestamp.of(sqlTimestamp))));
 
-    params.setParameter(1, JdbcArray.createArray("TIMESTAMP", new Timestamp[] {sqlTimestamp, null}),
-        Types.ARRAY);
-    assertThat((JdbcArray) params.getParameter(1),
+    params.setParameter(
+        1, JdbcArray.createArray("TIMESTAMP", new Timestamp[] {sqlTimestamp, null}), Types.ARRAY);
+    assertThat(
+        (JdbcArray) params.getParameter(1),
         is(equalTo(JdbcArray.createArray("TIMESTAMP", new Timestamp[] {sqlTimestamp, null}))));
-    verifyParameter(params,
+    verifyParameter(
+        params,
         Value.timestampArray(Arrays.asList(com.google.cloud.Timestamp.of(sqlTimestamp), null)));
 
     params.setParameter(1, JdbcArray.createArray("TIMESTAMP", null), Types.ARRAY);
-    assertThat((JdbcArray) params.getParameter(1), is(equalTo(JdbcArray.createArray("TIMESTAMP", null))));
+    assertThat(
+        (JdbcArray) params.getParameter(1), is(equalTo(JdbcArray.createArray("TIMESTAMP", null))));
     verifyParameter(params, Value.timestampArray(null));
 
-    params.setParameter(1, JdbcArray.createArray("BYTES", new byte[][] {{1, 2, 3}, {4, 5, 6}}),
-        Types.ARRAY);
-    assertThat((JdbcArray) params.getParameter(1),
+    params.setParameter(
+        1, JdbcArray.createArray("BYTES", new byte[][] {{1, 2, 3}, {4, 5, 6}}), Types.ARRAY);
+    assertThat(
+        (JdbcArray) params.getParameter(1),
         is(equalTo(JdbcArray.createArray("BYTES", new byte[][] {{1, 2, 3}, {4, 5, 6}}))));
-    verifyParameter(params, Value.bytesArray(Arrays.asList(ByteArray.copyFrom(new byte[] {1, 2, 3}),
-        ByteArray.copyFrom(new byte[] {4, 5, 6}))));
+    verifyParameter(
+        params,
+        Value.bytesArray(
+            Arrays.asList(
+                ByteArray.copyFrom(new byte[] {1, 2, 3}),
+                ByteArray.copyFrom(new byte[] {4, 5, 6}))));
 
-    params.setParameter(1, JdbcArray.createArray("BYTES", new byte[][] {{1, 2, 3}, {4, 5, 6}, null}),
-        Types.ARRAY);
-    assertThat((JdbcArray) params.getParameter(1),
+    params.setParameter(
+        1, JdbcArray.createArray("BYTES", new byte[][] {{1, 2, 3}, {4, 5, 6}, null}), Types.ARRAY);
+    assertThat(
+        (JdbcArray) params.getParameter(1),
         is(equalTo(JdbcArray.createArray("BYTES", new byte[][] {{1, 2, 3}, {4, 5, 6}, null}))));
-    verifyParameter(params, Value.bytesArray(Arrays.asList(ByteArray.copyFrom(new byte[] {1, 2, 3}),
-        ByteArray.copyFrom(new byte[] {4, 5, 6}), null)));
+    verifyParameter(
+        params,
+        Value.bytesArray(
+            Arrays.asList(
+                ByteArray.copyFrom(new byte[] {1, 2, 3}),
+                ByteArray.copyFrom(new byte[] {4, 5, 6}),
+                null)));
 
     params.setParameter(1, JdbcArray.createArray("BYTES", null), Types.ARRAY);
-    assertThat((JdbcArray) params.getParameter(1), is(equalTo(JdbcArray.createArray("BYTES", null))));
+    assertThat(
+        (JdbcArray) params.getParameter(1), is(equalTo(JdbcArray.createArray("BYTES", null))));
     verifyParameter(params, Value.bytesArray(null));
 
-    params.setParameter(1,
-        JdbcArray.createArray("STRING", new String[] {"test1", "test2", "test3"}), Types.ARRAY);
-    assertThat((JdbcArray) params.getParameter(1),
+    params.setParameter(
+        1, JdbcArray.createArray("STRING", new String[] {"test1", "test2", "test3"}), Types.ARRAY);
+    assertThat(
+        (JdbcArray) params.getParameter(1),
         is(equalTo(JdbcArray.createArray("STRING", new String[] {"test1", "test2", "test3"}))));
     verifyParameter(params, Value.stringArray(Arrays.asList("test1", "test2", "test3")));
 
-    params.setParameter(1,
-        JdbcArray.createArray("STRING", new String[] {"test1", null, "test2", "test3"}), Types.ARRAY);
-    assertThat((JdbcArray) params.getParameter(1),
-        is(equalTo(JdbcArray.createArray("STRING", new String[] {"test1", null, "test2", "test3"}))));
+    params.setParameter(
+        1,
+        JdbcArray.createArray("STRING", new String[] {"test1", null, "test2", "test3"}),
+        Types.ARRAY);
+    assertThat(
+        (JdbcArray) params.getParameter(1),
+        is(
+            equalTo(
+                JdbcArray.createArray("STRING", new String[] {"test1", null, "test2", "test3"}))));
     verifyParameter(params, Value.stringArray(Arrays.asList("test1", null, "test2", "test3")));
 
     params.setParameter(1, JdbcArray.createArray("STRING", null), Types.ARRAY);
-    assertThat((JdbcArray) params.getParameter(1), is(equalTo(JdbcArray.createArray("STRING", null))));
+    assertThat(
+        (JdbcArray) params.getParameter(1), is(equalTo(JdbcArray.createArray("STRING", null))));
     verifyParameter(params, Value.stringArray(null));
   }
 
@@ -473,96 +519,97 @@ public class JdbcParameterStoreTest {
   @Test
   public void testConvertPositionalParametersToNamedParameters() throws SQLException {
     assertThat(
-        convertPositionalParametersToNamedParameters(
-            "select * from foo where name=?").sqlWithNamedParameters,
+        convertPositionalParametersToNamedParameters("select * from foo where name=?")
+            .sqlWithNamedParameters,
         is(equalTo("select * from foo where name=@p1")));
     assertThat(
-        convertPositionalParametersToNamedParameters(
-            "?'?test?\"?test?\"?'?").sqlWithNamedParameters,
+        convertPositionalParametersToNamedParameters("?'?test?\"?test?\"?'?")
+            .sqlWithNamedParameters,
         is(equalTo("@p1'?test?\"?test?\"?'@p2")));
-    assertThat(convertPositionalParametersToNamedParameters("?'?it\\'?s'?").sqlWithNamedParameters,
+    assertThat(
+        convertPositionalParametersToNamedParameters("?'?it\\'?s'?").sqlWithNamedParameters,
         is(equalTo("@p1'?it\\'?s'@p2")));
-    assertThat(convertPositionalParametersToNamedParameters("?'?it\\\"?s'?").sqlWithNamedParameters,
+    assertThat(
+        convertPositionalParametersToNamedParameters("?'?it\\\"?s'?").sqlWithNamedParameters,
         is(equalTo("@p1'?it\\\"?s'@p2")));
     assertThat(
         convertPositionalParametersToNamedParameters("?\"?it\\\"?s\"?").sqlWithNamedParameters,
         is(equalTo("@p1\"?it\\\"?s\"@p2")));
-    assertThat(convertPositionalParametersToNamedParameters("?`?it\\`?s`?").sqlWithNamedParameters,
+    assertThat(
+        convertPositionalParametersToNamedParameters("?`?it\\`?s`?").sqlWithNamedParameters,
         is(equalTo("@p1`?it\\`?s`@p2")));
     assertThat(
         convertPositionalParametersToNamedParameters("?'''?it\\'?s'''?").sqlWithNamedParameters,
         is(equalTo("@p1'''?it\\'?s'''@p2")));
     assertThat(
-        convertPositionalParametersToNamedParameters(
-            "?\"\"\"?it\\\"?s\"\"\"?").sqlWithNamedParameters,
+        convertPositionalParametersToNamedParameters("?\"\"\"?it\\\"?s\"\"\"?")
+            .sqlWithNamedParameters,
         is(equalTo("@p1\"\"\"?it\\\"?s\"\"\"@p2")));
     assertThat(
         convertPositionalParametersToNamedParameters("?```?it\\`?s```?").sqlWithNamedParameters,
         is(equalTo("@p1```?it\\`?s```@p2")));
     assertThat(
-        convertPositionalParametersToNamedParameters(
-            "?'''?it\\'?s \n ?it\\'?s'''?").sqlWithNamedParameters,
+        convertPositionalParametersToNamedParameters("?'''?it\\'?s \n ?it\\'?s'''?")
+            .sqlWithNamedParameters,
         is(equalTo("@p1'''?it\\'?s \n ?it\\'?s'''@p2")));
 
     assertUnclosedLiteral("?'?it\\'?s \n ?it\\'?s'?");
     assertUnclosedLiteral("?'?it\\'?s \n ?it\\'?s?");
     assertUnclosedLiteral("?'''?it\\'?s \n ?it\\'?s'?");
 
-    assertThat(convertPositionalParametersToNamedParameters(
-        "select 1, ?, 'test?test', \"test?test\", foo.* from `foo` where col1=? and col2='test' and col3=? and col4='?' and col5=\"?\" and col6='?''?''?'").sqlWithNamedParameters,
-        is(equalTo(
-            "select 1, @p1, 'test?test', \"test?test\", foo.* from `foo` where col1=@p2 and col2='test' and col3=@p3 and col4='?' and col5=\"?\" and col6='?''?''?'")));
+    assertThat(
+        convertPositionalParametersToNamedParameters(
+                "select 1, ?, 'test?test', \"test?test\", foo.* from `foo` where col1=? and col2='test' and col3=? and col4='?' and col5=\"?\" and col6='?''?''?'")
+            .sqlWithNamedParameters,
+        is(
+            equalTo(
+                "select 1, @p1, 'test?test', \"test?test\", foo.* from `foo` where col1=@p2 and col2='test' and col3=@p3 and col4='?' and col5=\"?\" and col6='?''?''?'")));
 
     assertThat(
         convertPositionalParametersToNamedParameters(
-            "select * "
-            + "from foo "
-            + "where name=? "
-            + "and col2 like ? "
-            + "and col3 > ?").sqlWithNamedParameters,
-        is(equalTo("select * "
-            + "from foo "
-            + "where name=@p1 "
-            + "and col2 like @p2 "
-            + "and col3 > @p3")));
+                "select * " + "from foo " + "where name=? " + "and col2 like ? " + "and col3 > ?")
+            .sqlWithNamedParameters,
+        is(
+            equalTo(
+                "select * "
+                    + "from foo "
+                    + "where name=@p1 "
+                    + "and col2 like @p2 "
+                    + "and col3 > @p3")));
     assertThat(
         convertPositionalParametersToNamedParameters(
-            "select * "
-            + "from foo "
-            + "where id between ? and ?").sqlWithNamedParameters,
-        is(equalTo("select * "
-            + "from foo "
-            + "where id between @p1 and @p2")));
+                "select * " + "from foo " + "where id between ? and ?")
+            .sqlWithNamedParameters,
+        is(equalTo("select * " + "from foo " + "where id between @p1 and @p2")));
+    assertThat(
+        convertPositionalParametersToNamedParameters("select * " + "from foo " + "limit ? offset ?")
+            .sqlWithNamedParameters,
+        is(equalTo("select * " + "from foo " + "limit @p1 offset @p2")));
     assertThat(
         convertPositionalParametersToNamedParameters(
-            "select * "
-            + "from foo "
-            + "limit ? offset ?").sqlWithNamedParameters,
-        is(equalTo("select * "
-            + "from foo "
-            + "limit @p1 offset @p2")));
-    assertThat(
-        convertPositionalParametersToNamedParameters(
-            "select * "
-            + "from foo "
-            + "where col1=? "
-            + "and col2 like ? "
-            + "and col3 > ? "
-            + "and col4 < ? "
-            + "and col5 != ? "
-            + "and col6 not in (?, ?, ?) "
-            + "and col7 in (?, ?, ?) "
-            + "and col8 between ? and ?").sqlWithNamedParameters,
-        is(equalTo("select * "
-            + "from foo "
-            + "where col1=@p1 "
-            + "and col2 like @p2 "
-            + "and col3 > @p3 "
-            + "and col4 < @p4 "
-            + "and col5 != @p5 "
-            + "and col6 not in (@p6, @p7, @p8) "
-            + "and col7 in (@p9, @p10, @p11) "
-            + "and col8 between @p12 and @p13")));
+                "select * "
+                    + "from foo "
+                    + "where col1=? "
+                    + "and col2 like ? "
+                    + "and col3 > ? "
+                    + "and col4 < ? "
+                    + "and col5 != ? "
+                    + "and col6 not in (?, ?, ?) "
+                    + "and col7 in (?, ?, ?) "
+                    + "and col8 between ? and ?")
+            .sqlWithNamedParameters,
+        is(
+            equalTo(
+                "select * "
+                    + "from foo "
+                    + "where col1=@p1 "
+                    + "and col2 like @p2 "
+                    + "and col3 > @p3 "
+                    + "and col4 < @p4 "
+                    + "and col5 != @p5 "
+                    + "and col6 not in (@p6, @p7, @p8) "
+                    + "and col7 in (@p9, @p10, @p11) "
+                    + "and col8 between @p12 and @p13")));
   }
 
   private void assertUnclosedLiteral(String sql) {
@@ -573,11 +620,14 @@ public class JdbcParameterStoreTest {
       assertThat(t instanceof JdbcSqlException, is(true));
       JdbcSqlException e = (JdbcSqlException) t;
       assertThat(e.getCode(), is(Code.INVALID_ARGUMENT));
-      assertThat(e.getMessage(), startsWith(
-          Code.INVALID_ARGUMENT.name() + ": SQL statement contains an unclosed literal: " + sql));
+      assertThat(
+          e.getMessage(),
+          startsWith(
+              Code.INVALID_ARGUMENT.name()
+                  + ": SQL statement contains an unclosed literal: "
+                  + sql));
       exception = true;
     }
     assertThat(exception, is(true));
   }
-
 }

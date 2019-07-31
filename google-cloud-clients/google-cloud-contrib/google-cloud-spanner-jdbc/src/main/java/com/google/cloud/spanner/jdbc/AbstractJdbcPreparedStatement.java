@@ -16,6 +16,7 @@
 
 package com.google.cloud.spanner.jdbc;
 
+import com.google.rpc.Code;
 import java.io.InputStream;
 import java.io.Reader;
 import java.math.BigDecimal;
@@ -36,7 +37,6 @@ import java.sql.Time;
 import java.sql.Timestamp;
 import java.sql.Types;
 import java.util.Calendar;
-import com.google.rpc.Code;
 
 /** Base class for Cloud Spanner {@link PreparedStatement}s. */
 abstract class AbstractJdbcPreparedStatement extends JdbcStatement implements PreparedStatement {
@@ -162,19 +162,22 @@ abstract class AbstractJdbcPreparedStatement extends JdbcStatement implements Pr
   }
 
   @Override
-  public void setAsciiStream(int parameterIndex, InputStream value, int length) throws SQLException {
+  public void setAsciiStream(int parameterIndex, InputStream value, int length)
+      throws SQLException {
     checkClosed();
     parameters.setParameter(parameterIndex, value, Types.VARCHAR, length);
   }
 
   @Override
-  public void setUnicodeStream(int parameterIndex, InputStream value, int length) throws SQLException {
+  public void setUnicodeStream(int parameterIndex, InputStream value, int length)
+      throws SQLException {
     checkClosed();
     parameters.setParameter(parameterIndex, value, Types.NVARCHAR, length);
   }
 
   @Override
-  public void setBinaryStream(int parameterIndex, InputStream value, int length) throws SQLException {
+  public void setBinaryStream(int parameterIndex, InputStream value, int length)
+      throws SQLException {
     checkClosed();
     parameters.setParameter(parameterIndex, value, Types.BINARY, length);
   }
@@ -251,8 +254,10 @@ abstract class AbstractJdbcPreparedStatement extends JdbcStatement implements Pr
   @Override
   public void setTimestamp(int parameterIndex, Timestamp value, Calendar cal) throws SQLException {
     checkClosed();
-    parameters.setParameter(parameterIndex,
-        cal == null ? value : JdbcTypeConverter.setTimestampInCalendar(value, cal), Types.TIMESTAMP);
+    parameters.setParameter(
+        parameterIndex,
+        cal == null ? value : JdbcTypeConverter.setTimestampInCalendar(value, cal),
+        Types.TIMESTAMP);
   }
 
   @Override
@@ -325,13 +330,15 @@ abstract class AbstractJdbcPreparedStatement extends JdbcStatement implements Pr
   }
 
   @Override
-  public void setAsciiStream(int parameterIndex, InputStream value, long length) throws SQLException {
+  public void setAsciiStream(int parameterIndex, InputStream value, long length)
+      throws SQLException {
     checkClosed();
     parameters.setParameter(parameterIndex, value, Types.VARCHAR);
   }
 
   @Override
-  public void setBinaryStream(int parameterIndex, InputStream value, long length) throws SQLException {
+  public void setBinaryStream(int parameterIndex, InputStream value, long length)
+      throws SQLException {
     checkClosed();
     parameters.setParameter(parameterIndex, value, Types.BINARY);
   }
@@ -384,5 +391,4 @@ abstract class AbstractJdbcPreparedStatement extends JdbcStatement implements Pr
     checkClosed();
     parameters.setParameter(parameterIndex, reader, Types.NVARCHAR);
   }
-
 }

@@ -137,7 +137,10 @@ class StatementExecutor {
 
   private ExecutorService executor = createExecutorService();
 
-  /** Interceptors that should be invoked before or after a statement is executed can be registered for a connection. This are added to this list. The interceptors are intended for test usage. */
+  /**
+   * Interceptors that should be invoked before or after a statement is executed can be registered
+   * for a connection. This are added to this list. The interceptors are intended for test usage.
+   */
   private final List<StatementExecutionInterceptor> interceptors;
 
   @VisibleForTesting
@@ -149,13 +152,21 @@ class StatementExecutor {
     this.interceptors = Collections.unmodifiableList(interceptors);
   }
 
-  /** Recreates this {@link StatementExecutor} and its {@link ExecutorService}. This can be necessary if a statement times out or is cancelled, and it cannot be guaranteed that the statement execution can be terminated. In order to prevent the single threaded {@link ExecutorService} to continue to block on the timed out/cancelled statement, a new {@link ExecutorService} is created. */
+  /**
+   * Recreates this {@link StatementExecutor} and its {@link ExecutorService}. This can be necessary
+   * if a statement times out or is cancelled, and it cannot be guaranteed that the statement
+   * execution can be terminated. In order to prevent the single threaded {@link ExecutorService} to
+   * continue to block on the timed out/cancelled statement, a new {@link ExecutorService} is
+   * created.
+   */
   void recreate() {
     executor.shutdown();
     executor = createExecutorService();
   }
 
-  /** Shutdown this executor now and do not wait for any statement that is being executed to finish. */
+  /**
+   * Shutdown this executor now and do not wait for any statement that is being executed to finish.
+   */
   List<Runnable> shutdownNow() {
     return executor.shutdownNow();
   }
@@ -165,7 +176,10 @@ class StatementExecutor {
     return executor.submit(callable);
   }
 
-  /** Invoke the interceptors that have been registered for this {@link StatementExecutor} for the given step. */
+  /**
+   * Invoke the interceptors that have been registered for this {@link StatementExecutor} for the
+   * given step.
+   */
   void invokeInterceptors(
       ParsedStatement statement, StatementExecutionStep step, UnitOfWork transaction) {
     for (StatementExecutionInterceptor interceptor : interceptors) {

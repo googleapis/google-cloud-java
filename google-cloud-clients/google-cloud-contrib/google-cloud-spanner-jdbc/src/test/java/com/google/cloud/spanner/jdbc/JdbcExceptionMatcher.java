@@ -16,10 +16,10 @@
 
 package com.google.cloud.spanner.jdbc;
 
-import org.hamcrest.BaseMatcher;
-import org.hamcrest.Description;
 import com.google.common.base.Preconditions;
 import com.google.rpc.Code;
+import org.hamcrest.BaseMatcher;
+import org.hamcrest.Description;
 
 public final class JdbcExceptionMatcher extends BaseMatcher<JdbcSqlException> {
   private final Code errorCode;
@@ -58,9 +58,7 @@ public final class JdbcExceptionMatcher extends BaseMatcher<JdbcSqlException> {
   public void describeTo(Description description) {
     description.appendText(JdbcSqlException.class.getName() + " with code " + errorCode.name());
     if (message != null) {
-      description
-          .appendText(" - " + JdbcSqlException.class.getName() + " with message " + message);
+      description.appendText(" - " + JdbcSqlException.class.getName() + " with message " + message);
     }
   }
-
 }

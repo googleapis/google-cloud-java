@@ -16,6 +16,11 @@
 
 package com.google.cloud.spanner.jdbc;
 
+import com.google.api.core.InternalApi;
+import com.google.auth.oauth2.GoogleCredentials;
+import com.google.cloud.spanner.SpannerException;
+import com.google.cloud.spanner.jdbc.ConnectionOptions.ConnectionProperty;
+import com.google.rpc.Code;
 import java.sql.Connection;
 import java.sql.Driver;
 import java.sql.DriverManager;
@@ -27,16 +32,11 @@ import java.util.Properties;
 import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import com.google.api.core.InternalApi;
-import com.google.auth.oauth2.GoogleCredentials;
-import com.google.cloud.spanner.SpannerException;
-import com.google.cloud.spanner.jdbc.ConnectionOptions.ConnectionProperty;
-import com.google.rpc.Code;
 
 /**
  * JDBC {@link Driver} for Google Cloud Spanner.
  *
- * Usage:
+ * <p>Usage:
  *
  * <pre>
  * <!--SNIPPET {@link JdbcDriver} usage-->
@@ -64,22 +64,22 @@ import com.google.rpc.Code;
  *
  * The property-value strings should be url-encoded.
  *
- * The project-id part of the URI may be filled with the placeholder DEFAULT_PROJECT_ID. This
+ * <p>The project-id part of the URI may be filled with the placeholder DEFAULT_PROJECT_ID. This
  * placeholder will be replaced by the default project id of the environment that is requesting a
  * connection.
  *
- * The supported properties are:
+ * <p>The supported properties are:
+ *
  * <ul>
- * <li>credentials (String): URL for the credentials file to use for the connection. If you do not
- * specify any credentials at all, the default credentials of the environment as returned by
- * {@link GoogleCredentials#getApplicationDefault()} will be used.</li>
- * <li>autocommit (boolean): Sets the initial autocommit mode for the connection. Default is
- * true.</li>
- * <li>readonly (boolean): Sets the initial readonly mode for the connection. Default is false.</li>
- * <li>retryAbortsInternally (boolean): Sets the initial retryAbortsInternally mode for the
- * connection. Default is true. @see
- * {@link com.google.cloud.spanner.jdbc.CloudSpannerJdbcConnection#setRetryAbortsInternally(boolean)}
- * for more information.</li>
+ *   <li>credentials (String): URL for the credentials file to use for the connection. If you do not
+ *       specify any credentials at all, the default credentials of the environment as returned by
+ *       {@link GoogleCredentials#getApplicationDefault()} will be used.
+ *   <li>autocommit (boolean): Sets the initial autocommit mode for the connection. Default is true.
+ *   <li>readonly (boolean): Sets the initial readonly mode for the connection. Default is false.
+ *   <li>retryAbortsInternally (boolean): Sets the initial retryAbortsInternally mode for the
+ *       connection. Default is true. @see {@link
+ *       com.google.cloud.spanner.jdbc.CloudSpannerJdbcConnection#setRetryAbortsInternally(boolean)}
+ *       for more information.
  * </ul>
  */
 public class JdbcDriver implements Driver {
@@ -102,6 +102,7 @@ public class JdbcDriver implements Driver {
       java.sql.DriverManager.println("Registering driver failed: " + e.getMessage());
     }
   }
+
   private static JdbcDriver registeredDriver;
 
   static void register() throws SQLException {
@@ -132,15 +133,12 @@ public class JdbcDriver implements Driver {
     registeredDriver = null;
   }
 
-  /**
-   * @return {@code true} if the driver is registered against {@link DriverManager}
-   */
+  /** @return {@code true} if the driver is registered against {@link DriverManager} */
   static boolean isRegistered() {
     return registeredDriver != null;
   }
 
   /**
-   *
    * @return the registered JDBC driver for Cloud Spanner.
    * @throws SQLException if the driver has not been registered.
    */
@@ -148,8 +146,8 @@ public class JdbcDriver implements Driver {
     if (isRegistered()) {
       return registeredDriver;
     }
-    throw JdbcSqlExceptionFactory.of("The driver has not been registered",
-        Code.FAILED_PRECONDITION);
+    throw JdbcSqlExceptionFactory.of(
+        "The driver has not been registered", Code.FAILED_PRECONDITION);
   }
 
   public JdbcDriver() {}
@@ -199,8 +197,10 @@ public class JdbcDriver implements Driver {
     DriverPropertyInfo[] res = new DriverPropertyInfo[ConnectionOptions.VALID_PROPERTIES.size()];
     int i = 0;
     for (ConnectionProperty prop : ConnectionOptions.VALID_PROPERTIES) {
-      res[i] = new DriverPropertyInfo(prop.getName(),
-          parseUriProperty(connectionUri, prop.getName(), prop.getDefaultValue()));
+      res[i] =
+          new DriverPropertyInfo(
+              prop.getName(),
+              parseUriProperty(connectionUri, prop.getName(), prop.getDefaultValue()));
       res[i].description = prop.getDescription();
       res[i].choices = prop.getValidValues();
       i++;
@@ -236,5 +236,4 @@ public class JdbcDriver implements Driver {
   public Logger getParentLogger() throws SQLFeatureNotSupportedException {
     throw new SQLFeatureNotSupportedException();
   }
-
 }

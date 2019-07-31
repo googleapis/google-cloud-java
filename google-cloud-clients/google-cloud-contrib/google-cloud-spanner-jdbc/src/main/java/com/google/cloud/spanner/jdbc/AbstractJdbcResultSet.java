@@ -623,5 +623,4 @@ abstract class AbstractJdbcResultSet extends AbstractJdbcWrapper implements Resu
   public void updateNClob(String columnLabel, Reader reader) throws SQLException {
     throw new SQLFeatureNotSupportedException();
   }
-
 }

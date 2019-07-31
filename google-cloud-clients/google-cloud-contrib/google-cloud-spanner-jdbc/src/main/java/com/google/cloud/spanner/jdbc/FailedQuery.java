@@ -16,20 +16,20 @@
 
 package com.google.cloud.spanner.jdbc;
 
-import java.util.Objects;
 import com.google.cloud.spanner.AbortedException;
+import com.google.cloud.spanner.Options.QueryOption;
 import com.google.cloud.spanner.ResultSet;
 import com.google.cloud.spanner.SpannerException;
 import com.google.cloud.spanner.SpannerExceptionFactory;
-import com.google.cloud.spanner.Options.QueryOption;
 import com.google.cloud.spanner.jdbc.ReadWriteTransaction.RetriableStatement;
 import com.google.cloud.spanner.jdbc.StatementParser.ParsedStatement;
 import com.google.common.base.Preconditions;
+import java.util.Objects;
 
 /**
- * A query that failed with a {@link SpannerException} on a {@link ReadWriteTransaction}. The
- * query can be retried if the transaction is aborted, and should throw the same exception
- * during retry as during the original transaction.
+ * A query that failed with a {@link SpannerException} on a {@link ReadWriteTransaction}. The query
+ * can be retried if the transaction is aborted, and should throw the same exception during retry as
+ * during the original transaction.
  */
 final class FailedQuery implements RetriableStatement {
   private final ReadWriteTransaction transaction;
@@ -58,13 +58,11 @@ final class FailedQuery implements RetriableStatement {
   public void retry(AbortedException aborted) throws AbortedException {
     transaction
         .getStatementExecutor()
-        .invokeInterceptors(
-            statement, StatementExecutionStep.RETRY_STATEMENT, transaction);
+        .invokeInterceptors(statement, StatementExecutionStep.RETRY_STATEMENT, transaction);
     try {
       transaction
           .getStatementExecutor()
-          .invokeInterceptors(
-              statement, StatementExecutionStep.RETRY_STATEMENT, transaction);
+          .invokeInterceptors(statement, StatementExecutionStep.RETRY_STATEMENT, transaction);
       try (ResultSet rs =
           DirectExecuteResultSet.ofResultSet(
               transaction.internalExecuteQuery(statement, analyzeMode, options))) {
