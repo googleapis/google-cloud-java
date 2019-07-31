@@ -85,7 +85,7 @@ public final class LocalFirestoreHelper {
   public static final SingleField SINGLE_FIELD_OBJECT;
   public static final Map<String, Value> SINGLE_FIELD_PROTO;
   public static final DocumentSnapshot SINGLE_FIELD_SNAPSHOT;
-
+  public static final Value SINGLE_FIELD_VALUE;
   public static final Map<String, Object> UPDATED_FIELD_MAP;
   public static final Map<String, Value> UPDATED_FIELD_PROTO;
 
@@ -724,6 +724,10 @@ public final class LocalFirestoreHelper {
             Timestamp.ofTimeSecondsAndNanos(5, 6),
             Timestamp.ofTimeSecondsAndNanos(3, 4),
             Timestamp.ofTimeSecondsAndNanos(1, 2));
+
+    Value.Builder singleFieldValueBuilder = Value.newBuilder();
+    singleFieldValueBuilder.getMapValueBuilder().putAllFields(SINGLE_FIELD_PROTO);
+    SINGLE_FIELD_VALUE = singleFieldValueBuilder.build();
 
     UPDATED_FIELD_MAP = map("foo", (Object) "foobar");
     UPDATED_FIELD_PROTO = map("foo", Value.newBuilder().setStringValue("foobar").build());

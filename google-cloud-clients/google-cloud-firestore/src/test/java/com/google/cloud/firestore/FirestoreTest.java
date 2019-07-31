@@ -18,8 +18,14 @@ package com.google.cloud.firestore;
 
 import static com.google.cloud.firestore.LocalFirestoreHelper.SINGLE_FIELD_OBJECT;
 import static com.google.cloud.firestore.LocalFirestoreHelper.SINGLE_FIELD_PROTO;
+import static com.google.cloud.firestore.LocalFirestoreHelper.SINGLE_FIELD_VALUE;
+import static com.google.cloud.firestore.LocalFirestoreHelper.UPDATE_PRECONDITION;
+import static com.google.cloud.firestore.LocalFirestoreHelper.arrayRemove;
+import static com.google.cloud.firestore.LocalFirestoreHelper.arrayUnion;
+import static com.google.cloud.firestore.LocalFirestoreHelper.commit;
 import static com.google.cloud.firestore.LocalFirestoreHelper.commitResponse;
 import static com.google.cloud.firestore.LocalFirestoreHelper.getAllResponse;
+import static com.google.cloud.firestore.LocalFirestoreHelper.transform;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.fail;
@@ -33,10 +39,9 @@ import com.google.cloud.firestore.spi.v1.FirestoreRpc;
 import com.google.firestore.v1.BatchGetDocumentsRequest;
 import com.google.firestore.v1.CommitRequest;
 import com.google.firestore.v1.CommitResponse;
-import com.google.firestore.v1.DocumentTransform;
 import com.google.firestore.v1.ListCollectionIdsRequest;
-import com.google.firestore.v1.Value;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.ArgumentCaptor;
@@ -181,28 +186,34 @@ public class FirestoreTest {
   }
 
   @Test
-  public void arrayUnionWithPojo() {
+  public void arrayUnionWithPojo() throws ExecutionException, InterruptedException {
     doReturn(commitResponse(1, 0))
         .when(firestoreMock)
         .sendRequest(
             commitCapture.capture(), Matchers.<UnaryCallable<CommitRequest, CommitResponse>>any());
-    DocumentReference doc = firestoreMock.document("coll/doc1");
-    FieldValue fieldValue = FieldValue.arrayUnion(SINGLE_FIELD_OBJECT);
-    DocumentTransform.FieldTransform transform = fieldValue.toProto(FieldPath.of("foo"));
-    Value value = transform.getAppendMissingElements().getValues(0);
-    assertEquals("bar", value.getMapValue().getFieldsMap().get("foo").getStringValue());
+
+    DocumentReference doc = firestoreMock.document("coll/doc");
+    doc.update("array", FieldValue.arrayUnion(SINGLE_FIELD_OBJECT)).get();
+
+    CommitRequest expectedRequest =
+        commit(transform(UPDATE_PRECONDITION, "array", arrayUnion(SINGLE_FIELD_VALUE)));
+    CommitRequest actualRequest = commitCapture.getValue();
+    assertEquals(expectedRequest, actualRequest);
   }
 
   @Test
-  public void arrayRemoveWithPojo() {
-    doReturn(commitResponse(0, 1))
+  public void arrayRemoveWithPojo() throws ExecutionException, InterruptedException {
+    doReturn(commitResponse(1, 0))
         .when(firestoreMock)
         .sendRequest(
             commitCapture.capture(), Matchers.<UnaryCallable<CommitRequest, CommitResponse>>any());
-    DocumentReference doc = firestoreMock.document("coll/doc1");
-    FieldValue fieldValue = FieldValue.arrayRemove(SINGLE_FIELD_OBJECT);
-    DocumentTransform.FieldTransform transform = fieldValue.toProto(FieldPath.of("foo"));
-    Value value = transform.getRemoveAllFromArray().getValues(0);
-    assertEquals("bar", value.getMapValue().getFieldsMap().get("foo").getStringValue());
+
+    DocumentReference doc = firestoreMock.document("coll/doc");
+    doc.update("array", FieldValue.arrayRemove(SINGLE_FIELD_OBJECT)).get();
+
+    CommitRequest expectedRequest =
+        commit(transform(UPDATE_PRECONDITION, "array", arrayRemove(SINGLE_FIELD_VALUE)));
+    CommitRequest actualRequest = commitCapture.getValue();
+    assertEquals(expectedRequest, actualRequest);
   }
 }
