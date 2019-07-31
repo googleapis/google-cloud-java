@@ -30,19 +30,6 @@ import static org.mockito.Matchers.anyString;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.concurrent.TimeUnit;
-
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
-import org.mockito.Matchers;
-import org.mockito.invocation.InvocationOnMock;
-import org.mockito.stubbing.Answer;
-
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.NoCredentials;
 import com.google.cloud.Timestamp;
@@ -69,6 +56,17 @@ import com.google.cloud.spanner.jdbc.ReadOnlyStalenessUtil.GetExactStaleness;
 import com.google.cloud.spanner.jdbc.StatementResult.ResultType;
 import com.google.spanner.admin.database.v1.UpdateDatabaseDdlMetadata;
 import com.google.spanner.v1.ResultSetStats;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.TimeUnit;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
+import org.mockito.Matchers;
+import org.mockito.invocation.InvocationOnMock;
+import org.mockito.stubbing.Answer;
 
 @RunWith(JUnit4.class)
 public class ConnectionImplTest {
@@ -122,7 +120,6 @@ public class ConnectionImplTest {
         state = TransactionState.ROLLED_BACK;
       }
     }
-
   }
 
   private static class SimpleResultSet extends ForwardingResultSet {
@@ -159,8 +156,8 @@ public class ConnectionImplTest {
       if (onValidRow) {
         return super.getLong(columnIndex);
       }
-      throw SpannerExceptionFactory.newSpannerException(ErrorCode.FAILED_PRECONDITION,
-          "ResultSet is not positioned on a valid row");
+      throw SpannerExceptionFactory.newSpannerException(
+          ErrorCode.FAILED_PRECONDITION, "ResultSet is not positioned on a valid row");
     }
   }
 
@@ -204,62 +201,8 @@ public class ConnectionImplTest {
     final SimpleResultSet select1ResultSet = new SimpleResultSet(createSelect1MockResultSet());
     final SimpleResultSet select1ResultSetWithStats = new SimpleResultSet(mockResultSetWithStats);
     when(singleUseReadOnlyTx.executeQuery(Statement.of(SELECT)))
-        .thenAnswer(new Answer<ResultSet>() {
-          @Override
-          public ResultSet answer(InvocationOnMock invocation) throws Throwable {
-            if (select1ResultSet.nextCalled) {
-              // create a new mock
-              return new SimpleResultSet(createSelect1MockResultSet());
-            }
-            return select1ResultSet;
-          }
-        });
-    when(singleUseReadOnlyTx.analyzeQuery(Statement.of(SELECT), QueryAnalyzeMode.PLAN))
-        .thenReturn(select1ResultSetWithStats);
-    when(singleUseReadOnlyTx.analyzeQuery(Statement.of(SELECT), QueryAnalyzeMode.PROFILE))
-        .thenReturn(select1ResultSetWithStats);
-    when(singleUseReadOnlyTx.getReadTimestamp()).then(new Answer<Timestamp>() {
-      @Override
-      public Timestamp answer(InvocationOnMock invocation) throws Throwable {
-        if (select1ResultSet.isNextCalled() || select1ResultSetWithStats.isNextCalled()) {
-          return Timestamp.now();
-        }
-        throw SpannerExceptionFactory.newSpannerException(ErrorCode.FAILED_PRECONDITION,
-            "No query has returned with any data yet");
-      }
-    });
-    when(dbClient.singleUseReadOnlyTransaction(Matchers.any(TimestampBound.class)))
-        .thenReturn(singleUseReadOnlyTx);
-
-    when(dbClient.transactionManager()).thenAnswer(new Answer<TransactionManager>() {
-      @Override
-      public TransactionManager answer(InvocationOnMock invocation) throws Throwable {
-        TransactionContext txContext = mock(TransactionContext.class);
-        when(txContext.executeQuery(Statement.of(SELECT))).thenAnswer(new Answer<ResultSet>() {
-          @Override
-          public ResultSet answer(InvocationOnMock invocation) throws Throwable {
-            if (select1ResultSet.nextCalled) {
-              // create a new mock
-              return new SimpleResultSet(createSelect1MockResultSet());
-            }
-            return select1ResultSet;
-          }
-        });
-        when(txContext.analyzeQuery(Statement.of(SELECT), QueryAnalyzeMode.PLAN))
-            .thenReturn(select1ResultSetWithStats);
-        when(txContext.analyzeQuery(Statement.of(SELECT), QueryAnalyzeMode.PROFILE))
-            .thenReturn(select1ResultSetWithStats);
-        when(txContext.executeUpdate(Statement.of(UPDATE))).thenReturn(1L);
-        return new SimpleTransactionManager(txContext);
-      }
-    });
-
-    when(dbClient.readOnlyTransaction(Matchers.any(TimestampBound.class)))
-        .thenAnswer(new Answer<ReadOnlyTransaction>() {
-          @Override
-          public ReadOnlyTransaction answer(InvocationOnMock invocation) throws Throwable {
-            ReadOnlyTransaction tx = mock(ReadOnlyTransaction.class);
-            when(tx.executeQuery(Statement.of(SELECT))).thenAnswer(new Answer<ResultSet>() {
+        .thenAnswer(
+            new Answer<ResultSet>() {
               @Override
               public ResultSet answer(InvocationOnMock invocation) throws Throwable {
                 if (select1ResultSet.nextCalled) {
@@ -269,57 +212,132 @@ public class ConnectionImplTest {
                 return select1ResultSet;
               }
             });
-            when(tx.analyzeQuery(Statement.of(SELECT), QueryAnalyzeMode.PLAN))
-                .thenReturn(select1ResultSetWithStats);
-            when(tx.analyzeQuery(Statement.of(SELECT), QueryAnalyzeMode.PROFILE))
-                .thenReturn(select1ResultSetWithStats);
-            when(tx.getReadTimestamp()).then(new Answer<Timestamp>() {
+    when(singleUseReadOnlyTx.analyzeQuery(Statement.of(SELECT), QueryAnalyzeMode.PLAN))
+        .thenReturn(select1ResultSetWithStats);
+    when(singleUseReadOnlyTx.analyzeQuery(Statement.of(SELECT), QueryAnalyzeMode.PROFILE))
+        .thenReturn(select1ResultSetWithStats);
+    when(singleUseReadOnlyTx.getReadTimestamp())
+        .then(
+            new Answer<Timestamp>() {
               @Override
               public Timestamp answer(InvocationOnMock invocation) throws Throwable {
                 if (select1ResultSet.isNextCalled() || select1ResultSetWithStats.isNextCalled()) {
                   return Timestamp.now();
                 }
-                throw SpannerExceptionFactory.newSpannerException(ErrorCode.FAILED_PRECONDITION,
-                    "No query has returned with any data yet");
+                throw SpannerExceptionFactory.newSpannerException(
+                    ErrorCode.FAILED_PRECONDITION, "No query has returned with any data yet");
               }
             });
-            return tx;
-          }
-        });
+    when(dbClient.singleUseReadOnlyTransaction(Matchers.any(TimestampBound.class)))
+        .thenReturn(singleUseReadOnlyTx);
 
-    when(dbClient.readWriteTransaction()).thenAnswer(new Answer<TransactionRunner>() {
-      @Override
-      public TransactionRunner answer(InvocationOnMock invocation) throws Throwable {
-        TransactionRunner runner = new TransactionRunner() {
-          private Timestamp commitTimestamp;
+    when(dbClient.transactionManager())
+        .thenAnswer(
+            new Answer<TransactionManager>() {
+              @Override
+              public TransactionManager answer(InvocationOnMock invocation) throws Throwable {
+                TransactionContext txContext = mock(TransactionContext.class);
+                when(txContext.executeQuery(Statement.of(SELECT)))
+                    .thenAnswer(
+                        new Answer<ResultSet>() {
+                          @Override
+                          public ResultSet answer(InvocationOnMock invocation) throws Throwable {
+                            if (select1ResultSet.nextCalled) {
+                              // create a new mock
+                              return new SimpleResultSet(createSelect1MockResultSet());
+                            }
+                            return select1ResultSet;
+                          }
+                        });
+                when(txContext.analyzeQuery(Statement.of(SELECT), QueryAnalyzeMode.PLAN))
+                    .thenReturn(select1ResultSetWithStats);
+                when(txContext.analyzeQuery(Statement.of(SELECT), QueryAnalyzeMode.PROFILE))
+                    .thenReturn(select1ResultSetWithStats);
+                when(txContext.executeUpdate(Statement.of(UPDATE))).thenReturn(1L);
+                return new SimpleTransactionManager(txContext);
+              }
+            });
 
-          @SuppressWarnings("unchecked")
-          @Override
-          public <T> T run(TransactionCallable<T> callable) {
-            this.commitTimestamp = Timestamp.now();
-            return (T) Long.valueOf(1L);
-          }
+    when(dbClient.readOnlyTransaction(Matchers.any(TimestampBound.class)))
+        .thenAnswer(
+            new Answer<ReadOnlyTransaction>() {
+              @Override
+              public ReadOnlyTransaction answer(InvocationOnMock invocation) throws Throwable {
+                ReadOnlyTransaction tx = mock(ReadOnlyTransaction.class);
+                when(tx.executeQuery(Statement.of(SELECT)))
+                    .thenAnswer(
+                        new Answer<ResultSet>() {
+                          @Override
+                          public ResultSet answer(InvocationOnMock invocation) throws Throwable {
+                            if (select1ResultSet.nextCalled) {
+                              // create a new mock
+                              return new SimpleResultSet(createSelect1MockResultSet());
+                            }
+                            return select1ResultSet;
+                          }
+                        });
+                when(tx.analyzeQuery(Statement.of(SELECT), QueryAnalyzeMode.PLAN))
+                    .thenReturn(select1ResultSetWithStats);
+                when(tx.analyzeQuery(Statement.of(SELECT), QueryAnalyzeMode.PROFILE))
+                    .thenReturn(select1ResultSetWithStats);
+                when(tx.getReadTimestamp())
+                    .then(
+                        new Answer<Timestamp>() {
+                          @Override
+                          public Timestamp answer(InvocationOnMock invocation) throws Throwable {
+                            if (select1ResultSet.isNextCalled()
+                                || select1ResultSetWithStats.isNextCalled()) {
+                              return Timestamp.now();
+                            }
+                            throw SpannerExceptionFactory.newSpannerException(
+                                ErrorCode.FAILED_PRECONDITION,
+                                "No query has returned with any data yet");
+                          }
+                        });
+                return tx;
+              }
+            });
 
-          @Override
-          public Timestamp getCommitTimestamp() {
-            return commitTimestamp;
-          }
+    when(dbClient.readWriteTransaction())
+        .thenAnswer(
+            new Answer<TransactionRunner>() {
+              @Override
+              public TransactionRunner answer(InvocationOnMock invocation) throws Throwable {
+                TransactionRunner runner =
+                    new TransactionRunner() {
+                      private Timestamp commitTimestamp;
 
-          @Override
-          public TransactionRunner allowNestedTransaction() {
-            return this;
-          }
-        };
-        return runner;
-      }
-    });
+                      @SuppressWarnings("unchecked")
+                      @Override
+                      public <T> T run(TransactionCallable<T> callable) {
+                        this.commitTimestamp = Timestamp.now();
+                        return (T) Long.valueOf(1L);
+                      }
+
+                      @Override
+                      public Timestamp getCommitTimestamp() {
+                        return commitTimestamp;
+                      }
+
+                      @Override
+                      public TransactionRunner allowNestedTransaction() {
+                        return this;
+                      }
+                    };
+                return runner;
+              }
+            });
     return new ConnectionImpl(options, spannerPool, ddlClient, dbClient);
   }
 
   @Test
   public void testExecuteSetAutocommitOn() {
-    try (ConnectionImpl subject = createConnection(ConnectionOptions.newBuilder()
-        .setCredentials(NoCredentials.getInstance()).setUri(URI + ";autocommit=false").build())) {
+    try (ConnectionImpl subject =
+        createConnection(
+            ConnectionOptions.newBuilder()
+                .setCredentials(NoCredentials.getInstance())
+                .setUri(URI + ";autocommit=false")
+                .build())) {
       assertThat(subject.isAutocommit(), is(false));
 
       StatementResult res = subject.execute(Statement.of("set autocommit = true"));
@@ -330,8 +348,12 @@ public class ConnectionImplTest {
 
   @Test
   public void testExecuteSetAutocommitOff() {
-    try (ConnectionImpl subject = createConnection(ConnectionOptions.newBuilder()
-        .setCredentials(NoCredentials.getInstance()).setUri(URI).build())) {
+    try (ConnectionImpl subject =
+        createConnection(
+            ConnectionOptions.newBuilder()
+                .setCredentials(NoCredentials.getInstance())
+                .setUri(URI)
+                .build())) {
       assertThat(subject.isAutocommit(), is(true));
 
       StatementResult res = subject.execute(Statement.of("set autocommit = false"));
@@ -342,8 +364,12 @@ public class ConnectionImplTest {
 
   @Test
   public void testExecuteGetAutocommit() {
-    try (ConnectionImpl subject = createConnection(ConnectionOptions.newBuilder()
-        .setCredentials(NoCredentials.getInstance()).setUri(URI).build())) {
+    try (ConnectionImpl subject =
+        createConnection(
+            ConnectionOptions.newBuilder()
+                .setCredentials(NoCredentials.getInstance())
+                .setUri(URI)
+                .build())) {
 
       // assert that autocommit is true (default)
       assertThat(subject.isAutocommit(), is(true));
@@ -364,8 +390,12 @@ public class ConnectionImplTest {
 
   @Test
   public void testExecuteSetReadOnlyOn() {
-    try (ConnectionImpl subject = createConnection(ConnectionOptions.newBuilder()
-        .setCredentials(NoCredentials.getInstance()).setUri(URI).build())) {
+    try (ConnectionImpl subject =
+        createConnection(
+            ConnectionOptions.newBuilder()
+                .setCredentials(NoCredentials.getInstance())
+                .setUri(URI)
+                .build())) {
       assertThat(subject.isReadOnly(), is(false));
 
       StatementResult res = subject.execute(Statement.of("set readonly = true"));
@@ -376,8 +406,12 @@ public class ConnectionImplTest {
 
   @Test
   public void testExecuteSetReadOnlyOff() {
-    try (ConnectionImpl subject = createConnection(ConnectionOptions.newBuilder()
-        .setCredentials(NoCredentials.getInstance()).setUri(URI + ";readonly=true").build())) {
+    try (ConnectionImpl subject =
+        createConnection(
+            ConnectionOptions.newBuilder()
+                .setCredentials(NoCredentials.getInstance())
+                .setUri(URI + ";readonly=true")
+                .build())) {
       assertThat(subject.isReadOnly(), is(true));
 
       StatementResult res = subject.execute(Statement.of("set readonly = false"));
@@ -388,8 +422,12 @@ public class ConnectionImplTest {
 
   @Test
   public void testExecuteGetReadOnly() {
-    try (ConnectionImpl subject = createConnection(ConnectionOptions.newBuilder()
-        .setCredentials(NoCredentials.getInstance()).setUri(URI).build())) {
+    try (ConnectionImpl subject =
+        createConnection(
+            ConnectionOptions.newBuilder()
+                .setCredentials(NoCredentials.getInstance())
+                .setUri(URI)
+                .build())) {
 
       // assert that read only is false (default)
       assertThat(subject.isReadOnly(), is(false));
@@ -410,16 +448,20 @@ public class ConnectionImplTest {
 
   @Test
   public void testExecuteSetAutocommitDmlMode() {
-    try (ConnectionImpl subject = createConnection(ConnectionOptions.newBuilder()
-        .setCredentials(NoCredentials.getInstance()).setUri(URI).build())) {
+    try (ConnectionImpl subject =
+        createConnection(
+            ConnectionOptions.newBuilder()
+                .setCredentials(NoCredentials.getInstance())
+                .setUri(URI)
+                .build())) {
       assertThat(subject.isAutocommit(), is(true));
       assertThat(subject.getAutocommitDmlMode(), is(equalTo(AutocommitDmlMode.TRANSACTIONAL)));
 
       StatementResult res =
           subject.execute(Statement.of("set autocommit_dml_mode='PARTITIONED_NON_ATOMIC'"));
       assertThat(res.getResultType(), is(equalTo(ResultType.NO_RESULT)));
-      assertThat(subject.getAutocommitDmlMode(),
-          is(equalTo(AutocommitDmlMode.PARTITIONED_NON_ATOMIC)));
+      assertThat(
+          subject.getAutocommitDmlMode(), is(equalTo(AutocommitDmlMode.PARTITIONED_NON_ATOMIC)));
 
       res = subject.execute(Statement.of("set autocommit_dml_mode='TRANSACTIONAL'"));
       assertThat(res.getResultType(), is(equalTo(ResultType.NO_RESULT)));
@@ -429,8 +471,12 @@ public class ConnectionImplTest {
 
   @Test
   public void testExecuteSetAutocommitDmlModeInvalidValue() {
-    try (ConnectionImpl subject = createConnection(ConnectionOptions.newBuilder()
-        .setCredentials(NoCredentials.getInstance()).setUri(URI).build())) {
+    try (ConnectionImpl subject =
+        createConnection(
+            ConnectionOptions.newBuilder()
+                .setCredentials(NoCredentials.getInstance())
+                .setUri(URI)
+                .build())) {
       assertThat(subject.isAutocommit(), is(true));
       assertThat(subject.getAutocommitDmlMode(), is(equalTo(AutocommitDmlMode.TRANSACTIONAL)));
 
@@ -446,37 +492,50 @@ public class ConnectionImplTest {
 
   @Test
   public void testExecuteGetAutocommitDmlMode() {
-    try (ConnectionImpl subject = createConnection(ConnectionOptions.newBuilder()
-        .setCredentials(NoCredentials.getInstance()).setUri(URI).build())) {
+    try (ConnectionImpl subject =
+        createConnection(
+            ConnectionOptions.newBuilder()
+                .setCredentials(NoCredentials.getInstance())
+                .setUri(URI)
+                .build())) {
       assertThat(subject.isAutocommit(), is(true));
       assertThat(subject.getAutocommitDmlMode(), is(equalTo(AutocommitDmlMode.TRANSACTIONAL)));
 
       StatementResult res = subject.execute(Statement.of("show variable autocommit_dml_mode"));
       assertThat(res.getResultType(), is(equalTo(ResultType.RESULT_SET)));
       assertThat(res.getResultSet().next(), is(true));
-      assertThat(res.getResultSet().getString("AUTOCOMMIT_DML_MODE"),
+      assertThat(
+          res.getResultSet().getString("AUTOCOMMIT_DML_MODE"),
           is(equalTo(AutocommitDmlMode.TRANSACTIONAL.toString())));
 
       subject.execute(Statement.of("set autocommit_dml_mode='PARTITIONED_NON_ATOMIC'"));
       res = subject.execute(Statement.of("show variable autocommit_dml_mode"));
       assertThat(res.getResultType(), is(equalTo(ResultType.RESULT_SET)));
       assertThat(res.getResultSet().next(), is(true));
-      assertThat(res.getResultSet().getString("AUTOCOMMIT_DML_MODE"),
+      assertThat(
+          res.getResultSet().getString("AUTOCOMMIT_DML_MODE"),
           is(equalTo(AutocommitDmlMode.PARTITIONED_NON_ATOMIC.toString())));
     }
   }
 
   @Test
   public void testExecuteSetStatementTimeout() {
-    try (ConnectionImpl subject = createConnection(ConnectionOptions.newBuilder()
-        .setCredentials(NoCredentials.getInstance()).setUri(URI).build())) {
+    try (ConnectionImpl subject =
+        createConnection(
+            ConnectionOptions.newBuilder()
+                .setCredentials(NoCredentials.getInstance())
+                .setUri(URI)
+                .build())) {
       assertThat(subject.getStatementTimeout(TimeUnit.MILLISECONDS), is(equalTo(0L)));
 
       for (TimeUnit unit : ReadOnlyStalenessUtil.SUPPORTED_UNITS) {
         for (Long timeout : new Long[] {1L, 100L, 10000L, 315576000000L}) {
           StatementResult res =
-              subject.execute(Statement.of(String.format("set statement_timeout='%d%s'", timeout,
-                  ReadOnlyStalenessUtil.getTimeUnitAbbreviation(unit))));
+              subject.execute(
+                  Statement.of(
+                      String.format(
+                          "set statement_timeout='%d%s'",
+                          timeout, ReadOnlyStalenessUtil.getTimeUnitAbbreviation(unit))));
           assertThat(res.getResultType(), is(equalTo(ResultType.NO_RESULT)));
           assertThat(subject.getStatementTimeout(unit), is(equalTo(timeout)));
           assertThat(subject.hasStatementTimeout(), is(true));
@@ -493,8 +552,12 @@ public class ConnectionImplTest {
 
   @Test
   public void testExecuteSetStatementTimeoutInvalidValue() {
-    try (ConnectionImpl subject = createConnection(ConnectionOptions.newBuilder()
-        .setCredentials(NoCredentials.getInstance()).setUri(URI).build())) {
+    try (ConnectionImpl subject =
+        createConnection(
+            ConnectionOptions.newBuilder()
+                .setCredentials(NoCredentials.getInstance())
+                .setUri(URI)
+                .build())) {
       assertThat(subject.getStatementTimeout(TimeUnit.MILLISECONDS), is(equalTo(0L)));
 
       ErrorCode expected = null;
@@ -509,22 +572,32 @@ public class ConnectionImplTest {
 
   @Test
   public void testExecuteGetStatementTimeout() {
-    try (ConnectionImpl subject = createConnection(ConnectionOptions.newBuilder()
-        .setCredentials(NoCredentials.getInstance()).setUri(URI).build())) {
+    try (ConnectionImpl subject =
+        createConnection(
+            ConnectionOptions.newBuilder()
+                .setCredentials(NoCredentials.getInstance())
+                .setUri(URI)
+                .build())) {
       assertThat(subject.getStatementTimeout(TimeUnit.MILLISECONDS), is(equalTo(0L)));
 
       for (TimeUnit unit : ReadOnlyStalenessUtil.SUPPORTED_UNITS) {
         for (Long timeout : new Long[] {1L, 100L, 10000L, 315576000000L}) {
-          subject.execute(Statement.of(String.format("set statement_timeout='%d%s'", timeout,
-              ReadOnlyStalenessUtil.getTimeUnitAbbreviation(unit))));
+          subject.execute(
+              Statement.of(
+                  String.format(
+                      "set statement_timeout='%d%s'",
+                      timeout, ReadOnlyStalenessUtil.getTimeUnitAbbreviation(unit))));
           StatementResult res = subject.execute(Statement.of("show variable statement_timeout"));
           assertThat(res.getResultType(), is(equalTo(ResultType.RESULT_SET)));
           assertThat(res.getResultSet().next(), is(true));
-          TimeUnit appropriateUnit = ReadOnlyStalenessUtil
-              .getAppropriateTimeUnit(new StatementTimeoutGetter(subject));
-          assertThat(res.getResultSet().getString("STATEMENT_TIMEOUT"),
-              is(equalTo(subject.getStatementTimeout(appropriateUnit)
-                  + ReadOnlyStalenessUtil.getTimeUnitAbbreviation(appropriateUnit))));
+          TimeUnit appropriateUnit =
+              ReadOnlyStalenessUtil.getAppropriateTimeUnit(new StatementTimeoutGetter(subject));
+          assertThat(
+              res.getResultSet().getString("STATEMENT_TIMEOUT"),
+              is(
+                  equalTo(
+                      subject.getStatementTimeout(appropriateUnit)
+                          + ReadOnlyStalenessUtil.getTimeUnitAbbreviation(appropriateUnit))));
 
           subject.execute(Statement.of("set statement_timeout=null"));
           StatementResult resNoTimeout =
@@ -539,8 +612,12 @@ public class ConnectionImplTest {
 
   @Test
   public void testExecuteGetReadTimestamp() {
-    try (ConnectionImpl subject = createConnection(ConnectionOptions.newBuilder()
-        .setCredentials(NoCredentials.getInstance()).setUri(URI).build())) {
+    try (ConnectionImpl subject =
+        createConnection(
+            ConnectionOptions.newBuilder()
+                .setCredentials(NoCredentials.getInstance())
+                .setUri(URI)
+                .build())) {
       subject.beginTransaction();
       subject.setTransactionMode(TransactionMode.READ_ONLY_TRANSACTION);
       subject.executeQuery(Statement.of(AbstractConnectionImplTest.SELECT));
@@ -554,8 +631,12 @@ public class ConnectionImplTest {
 
   @Test
   public void testExecuteGetCommitTimestamp() {
-    try (ConnectionImpl subject = createConnection(ConnectionOptions.newBuilder()
-        .setCredentials(NoCredentials.getInstance()).setUri(URI).build())) {
+    try (ConnectionImpl subject =
+        createConnection(
+            ConnectionOptions.newBuilder()
+                .setCredentials(NoCredentials.getInstance())
+                .setUri(URI)
+                .build())) {
       subject.beginTransaction();
       subject.executeQuery(Statement.of(AbstractConnectionImplTest.SELECT)).next();
       subject.commit();
@@ -587,26 +668,35 @@ public class ConnectionImplTest {
   public void testExecuteGetReadOnlyStaleness() {
     Map<TimestampBound.Mode, Timestamp> timestamps = new HashMap<>();
     timestamps.put(Mode.READ_TIMESTAMP, ReadOnlyStalenessUtil.parseRfc3339("2018-10-08T14:05:10Z"));
-    timestamps.put(Mode.MIN_READ_TIMESTAMP,
-        ReadOnlyStalenessUtil.parseRfc3339("2018-10-08T14:05:10.12345Z"));
+    timestamps.put(
+        Mode.MIN_READ_TIMESTAMP, ReadOnlyStalenessUtil.parseRfc3339("2018-10-08T14:05:10.12345Z"));
     Map<TimestampBound.Mode, StalenessDuration> durations = new HashMap<>();
     durations.put(Mode.EXACT_STALENESS, new StalenessDuration(1000L, TimeUnit.MILLISECONDS));
     durations.put(Mode.MAX_STALENESS, new StalenessDuration(1234567L, TimeUnit.MICROSECONDS));
-    List<TimestampBound> stalenesses = Arrays.asList(TimestampBound.strong(),
-        TimestampBound.ofReadTimestamp(timestamps.get(Mode.READ_TIMESTAMP)),
-        TimestampBound.ofMinReadTimestamp(timestamps.get(Mode.MIN_READ_TIMESTAMP)),
-        TimestampBound.ofExactStaleness(durations.get(Mode.EXACT_STALENESS).duration,
-            durations.get(Mode.EXACT_STALENESS).unit),
-        TimestampBound.ofMaxStaleness(durations.get(Mode.MAX_STALENESS).duration,
-            durations.get(Mode.MAX_STALENESS).unit));
-    try (ConnectionImpl subject = createConnection(ConnectionOptions.newBuilder()
-        .setCredentials(NoCredentials.getInstance()).setUri(URI).build())) {
+    List<TimestampBound> stalenesses =
+        Arrays.asList(
+            TimestampBound.strong(),
+            TimestampBound.ofReadTimestamp(timestamps.get(Mode.READ_TIMESTAMP)),
+            TimestampBound.ofMinReadTimestamp(timestamps.get(Mode.MIN_READ_TIMESTAMP)),
+            TimestampBound.ofExactStaleness(
+                durations.get(Mode.EXACT_STALENESS).duration,
+                durations.get(Mode.EXACT_STALENESS).unit),
+            TimestampBound.ofMaxStaleness(
+                durations.get(Mode.MAX_STALENESS).duration,
+                durations.get(Mode.MAX_STALENESS).unit));
+    try (ConnectionImpl subject =
+        createConnection(
+            ConnectionOptions.newBuilder()
+                .setCredentials(NoCredentials.getInstance())
+                .setUri(URI)
+                .build())) {
       for (TimestampBound staleness : stalenesses) {
         subject.setReadOnlyStaleness(staleness);
         StatementResult res = subject.execute(Statement.of("show variable read_only_staleness"));
         assertThat(res.getResultType(), is(equalTo(ResultType.RESULT_SET)));
         assertThat(res.getResultSet().next(), is(true));
-        assertThat(res.getResultSet().getString("READ_ONLY_STALENESS"),
+        assertThat(
+            res.getResultSet().getString("READ_ONLY_STALENESS"),
             is(equalTo(ReadOnlyStalenessUtil.timestampBoundToString(staleness))));
       }
     }
@@ -616,24 +706,36 @@ public class ConnectionImplTest {
   public void testExecuteSetReadOnlyStaleness() {
     Map<TimestampBound.Mode, Timestamp> timestamps = new HashMap<>();
     timestamps.put(Mode.READ_TIMESTAMP, ReadOnlyStalenessUtil.parseRfc3339("2018-10-08T12:13:14Z"));
-    timestamps.put(Mode.MIN_READ_TIMESTAMP,
+    timestamps.put(
+        Mode.MIN_READ_TIMESTAMP,
         ReadOnlyStalenessUtil.parseRfc3339("2018-10-08T14:13:14.1234+02:00"));
     Map<TimestampBound.Mode, StalenessDuration> durations = new HashMap<>();
     durations.put(Mode.EXACT_STALENESS, new StalenessDuration(1000L, TimeUnit.MILLISECONDS));
     durations.put(Mode.MAX_STALENESS, new StalenessDuration(1234567L, TimeUnit.MICROSECONDS));
-    List<TimestampBound> stalenesses = Arrays.asList(TimestampBound.strong(),
-        TimestampBound.ofReadTimestamp(timestamps.get(Mode.READ_TIMESTAMP)),
-        TimestampBound.ofMinReadTimestamp(timestamps.get(Mode.MIN_READ_TIMESTAMP)),
-        TimestampBound.ofExactStaleness(durations.get(Mode.EXACT_STALENESS).duration,
-            durations.get(Mode.EXACT_STALENESS).unit),
-        TimestampBound.ofMaxStaleness(durations.get(Mode.MAX_STALENESS).duration,
-            durations.get(Mode.MAX_STALENESS).unit));
-    try (ConnectionImpl subject = createConnection(ConnectionOptions.newBuilder()
-        .setCredentials(NoCredentials.getInstance()).setUri(URI).build())) {
+    List<TimestampBound> stalenesses =
+        Arrays.asList(
+            TimestampBound.strong(),
+            TimestampBound.ofReadTimestamp(timestamps.get(Mode.READ_TIMESTAMP)),
+            TimestampBound.ofMinReadTimestamp(timestamps.get(Mode.MIN_READ_TIMESTAMP)),
+            TimestampBound.ofExactStaleness(
+                durations.get(Mode.EXACT_STALENESS).duration,
+                durations.get(Mode.EXACT_STALENESS).unit),
+            TimestampBound.ofMaxStaleness(
+                durations.get(Mode.MAX_STALENESS).duration,
+                durations.get(Mode.MAX_STALENESS).unit));
+    try (ConnectionImpl subject =
+        createConnection(
+            ConnectionOptions.newBuilder()
+                .setCredentials(NoCredentials.getInstance())
+                .setUri(URI)
+                .build())) {
       for (TimestampBound staleness : stalenesses) {
         StatementResult res =
-            subject.execute(Statement.of(String.format("set read_only_staleness='%s'",
-                ReadOnlyStalenessUtil.timestampBoundToString(staleness))));
+            subject.execute(
+                Statement.of(
+                    String.format(
+                        "set read_only_staleness='%s'",
+                        ReadOnlyStalenessUtil.timestampBoundToString(staleness))));
         assertThat(res.getResultType(), is(equalTo(ResultType.NO_RESULT)));
         assertThat(subject.getReadOnlyStaleness(), is(equalTo(staleness)));
       }
@@ -642,8 +744,12 @@ public class ConnectionImplTest {
 
   @Test
   public void testExecuteBeginTransaction() {
-    try (ConnectionImpl subject = createConnection(ConnectionOptions.newBuilder()
-        .setCredentials(NoCredentials.getInstance()).setUri(URI).build())) {
+    try (ConnectionImpl subject =
+        createConnection(
+            ConnectionOptions.newBuilder()
+                .setCredentials(NoCredentials.getInstance())
+                .setUri(URI)
+                .build())) {
       assertThat(subject.isInTransaction(), is(false));
 
       StatementResult res = subject.execute(Statement.of("begin transaction"));
@@ -654,8 +760,12 @@ public class ConnectionImplTest {
 
   @Test
   public void testExecuteCommitTransaction() {
-    try (ConnectionImpl subject = createConnection(ConnectionOptions.newBuilder()
-        .setCredentials(NoCredentials.getInstance()).setUri(URI).build())) {
+    try (ConnectionImpl subject =
+        createConnection(
+            ConnectionOptions.newBuilder()
+                .setCredentials(NoCredentials.getInstance())
+                .setUri(URI)
+                .build())) {
       subject.execute(Statement.of("begin transaction"));
       assertThat(subject.isInTransaction(), is(true));
 
@@ -667,8 +777,12 @@ public class ConnectionImplTest {
 
   @Test
   public void testExecuteRollbackTransaction() {
-    try (ConnectionImpl subject = createConnection(ConnectionOptions.newBuilder()
-        .setCredentials(NoCredentials.getInstance()).setUri(URI).build())) {
+    try (ConnectionImpl subject =
+        createConnection(
+            ConnectionOptions.newBuilder()
+                .setCredentials(NoCredentials.getInstance())
+                .setUri(URI)
+                .build())) {
       subject.execute(Statement.of("begin"));
       assertThat(subject.isInTransaction(), is(true));
 
@@ -680,8 +794,12 @@ public class ConnectionImplTest {
 
   @Test
   public void testExecuteSetTransactionReadOnly() {
-    try (ConnectionImpl subject = createConnection(ConnectionOptions.newBuilder()
-        .setCredentials(NoCredentials.getInstance()).setUri(URI).build())) {
+    try (ConnectionImpl subject =
+        createConnection(
+            ConnectionOptions.newBuilder()
+                .setCredentials(NoCredentials.getInstance())
+                .setUri(URI)
+                .build())) {
       subject.execute(Statement.of("begin"));
       assertThat(subject.getTransactionMode(), is(equalTo(TransactionMode.READ_WRITE_TRANSACTION)));
       assertThat(subject.isInTransaction(), is(true));
@@ -694,8 +812,12 @@ public class ConnectionImplTest {
 
   @Test
   public void testExecuteSetTransactionReadWrite() {
-    try (ConnectionImpl subject = createConnection(ConnectionOptions.newBuilder()
-        .setCredentials(NoCredentials.getInstance()).setUri(URI + ";readonly=true").build())) {
+    try (ConnectionImpl subject =
+        createConnection(
+            ConnectionOptions.newBuilder()
+                .setCredentials(NoCredentials.getInstance())
+                .setUri(URI + ";readonly=true")
+                .build())) {
       subject.execute(Statement.of("begin"));
       assertThat(subject.getTransactionMode(), is(equalTo(TransactionMode.READ_ONLY_TRANSACTION)));
       assertThat(subject.isInTransaction(), is(true));
@@ -716,8 +838,12 @@ public class ConnectionImplTest {
 
   @Test
   public void testExecuteStartDdlBatch() {
-    try (ConnectionImpl subject = createConnection(ConnectionOptions.newBuilder()
-        .setCredentials(NoCredentials.getInstance()).setUri(URI).build())) {
+    try (ConnectionImpl subject =
+        createConnection(
+            ConnectionOptions.newBuilder()
+                .setCredentials(NoCredentials.getInstance())
+                .setUri(URI)
+                .build())) {
       StatementResult res = subject.execute(Statement.of("start batch ddl"));
       assertThat(res.getResultType(), is(equalTo(ResultType.NO_RESULT)));
       assertThat(subject.getUnitOfWorkType(), is(equalTo(UnitOfWorkType.DDL_BATCH)));
@@ -727,8 +853,12 @@ public class ConnectionImplTest {
 
   @Test
   public void testDefaultIsAutocommit() {
-    try (ConnectionImpl subject = createConnection(ConnectionOptions.newBuilder()
-        .setCredentials(NoCredentials.getInstance()).setUri(URI).build())) {
+    try (ConnectionImpl subject =
+        createConnection(
+            ConnectionOptions.newBuilder()
+                .setCredentials(NoCredentials.getInstance())
+                .setUri(URI)
+                .build())) {
       assertThat(subject.isAutocommit(), is(true));
       assertThat(subject.isInTransaction(), is(false));
     }
@@ -736,32 +866,40 @@ public class ConnectionImplTest {
 
   @Test
   public void testDefaultIsReadWrite() {
-    try (ConnectionImpl subject = createConnection(ConnectionOptions.newBuilder()
-        .setCredentials(NoCredentials.getInstance()).setUri(URI).build())) {
+    try (ConnectionImpl subject =
+        createConnection(
+            ConnectionOptions.newBuilder()
+                .setCredentials(NoCredentials.getInstance())
+                .setUri(URI)
+                .build())) {
       assertThat(subject.isReadOnly(), is(false));
     }
   }
 
   @Test
   public void testDefaultTransactionIsReadWrite() {
-    try (ConnectionImpl subject = createConnection(ConnectionOptions.newBuilder()
-        .setCredentials(NoCredentials.getInstance()).setUri(URI).build())) {
+    try (ConnectionImpl subject =
+        createConnection(
+            ConnectionOptions.newBuilder()
+                .setCredentials(NoCredentials.getInstance())
+                .setUri(URI)
+                .build())) {
       for (boolean autocommit : new Boolean[] {true, false}) {
         subject.setAutocommit(autocommit);
         subject.execute(Statement.of("begin"));
-        assertThat(subject.getTransactionMode(),
-            is(equalTo(TransactionMode.READ_WRITE_TRANSACTION)));
+        assertThat(
+            subject.getTransactionMode(), is(equalTo(TransactionMode.READ_WRITE_TRANSACTION)));
         subject.commit();
 
         subject.execute(Statement.of("begin"));
         subject.execute(Statement.of("set transaction read only"));
-        assertThat(subject.getTransactionMode(),
-            is(equalTo(TransactionMode.READ_ONLY_TRANSACTION)));
+        assertThat(
+            subject.getTransactionMode(), is(equalTo(TransactionMode.READ_ONLY_TRANSACTION)));
         subject.commit();
 
         subject.execute(Statement.of("begin"));
-        assertThat(subject.getTransactionMode(),
-            is(equalTo(TransactionMode.READ_WRITE_TRANSACTION)));
+        assertThat(
+            subject.getTransactionMode(), is(equalTo(TransactionMode.READ_WRITE_TRANSACTION)));
         subject.commit();
 
         subject.execute(Statement.of("start batch ddl"));
@@ -769,8 +907,8 @@ public class ConnectionImplTest {
         subject.runBatch();
 
         subject.execute(Statement.of("begin"));
-        assertThat(subject.getTransactionMode(),
-            is(equalTo(TransactionMode.READ_WRITE_TRANSACTION)));
+        assertThat(
+            subject.getTransactionMode(), is(equalTo(TransactionMode.READ_WRITE_TRANSACTION)));
         subject.commit();
       }
     }
@@ -778,13 +916,17 @@ public class ConnectionImplTest {
 
   @Test
   public void testDefaultTransactionIsReadOnly() {
-    try (ConnectionImpl subject = createConnection(ConnectionOptions.newBuilder()
-        .setCredentials(NoCredentials.getInstance()).setUri(URI + ";readOnly=true").build())) {
+    try (ConnectionImpl subject =
+        createConnection(
+            ConnectionOptions.newBuilder()
+                .setCredentials(NoCredentials.getInstance())
+                .setUri(URI + ";readOnly=true")
+                .build())) {
       for (boolean autocommit : new Boolean[] {true, false}) {
         subject.setAutocommit(autocommit);
         subject.execute(Statement.of("begin"));
-        assertThat(subject.getTransactionMode(),
-            is(equalTo(TransactionMode.READ_ONLY_TRANSACTION)));
+        assertThat(
+            subject.getTransactionMode(), is(equalTo(TransactionMode.READ_ONLY_TRANSACTION)));
         subject.commit();
       }
     }
@@ -798,8 +940,12 @@ public class ConnectionImplTest {
    */
   @Test
   public void testResetReadOnlyStaleness() {
-    try (ConnectionImpl subject = createConnection(ConnectionOptions.newBuilder()
-        .setCredentials(NoCredentials.getInstance()).setUri(URI).build())) {
+    try (ConnectionImpl subject =
+        createConnection(
+            ConnectionOptions.newBuilder()
+                .setCredentials(NoCredentials.getInstance())
+                .setUri(URI)
+                .build())) {
       assertThat(subject.isAutocommit(), is(true));
       assertThat(subject.getReadOnlyStaleness().getMode(), is(equalTo(TimestampBound.Mode.STRONG)));
 
@@ -813,24 +959,29 @@ public class ConnectionImplTest {
 
       subject.setReadOnlyStaleness(TimestampBound.ofReadTimestamp(Timestamp.MAX_VALUE));
       subject.setAutocommit(false);
-      assertThat(subject.getReadOnlyStaleness(),
+      assertThat(
+          subject.getReadOnlyStaleness(),
           is(equalTo(TimestampBound.ofReadTimestamp(Timestamp.MAX_VALUE))));
       subject.setAutocommit(true);
-      assertThat(subject.getReadOnlyStaleness(),
+      assertThat(
+          subject.getReadOnlyStaleness(),
           is(equalTo(TimestampBound.ofReadTimestamp(Timestamp.MAX_VALUE))));
 
       subject.setReadOnlyStaleness(TimestampBound.ofExactStaleness(10L, TimeUnit.SECONDS));
       subject.setAutocommit(false);
-      assertThat(subject.getReadOnlyStaleness(),
+      assertThat(
+          subject.getReadOnlyStaleness(),
           is(equalTo(TimestampBound.ofExactStaleness(10L, TimeUnit.SECONDS))));
       subject.setAutocommit(true);
-      assertThat(subject.getReadOnlyStaleness(),
+      assertThat(
+          subject.getReadOnlyStaleness(),
           is(equalTo(TimestampBound.ofExactStaleness(10L, TimeUnit.SECONDS))));
 
       // the following values are only allowed in autocommit mode. Turning off autocommit will
       // return the setting to its default
       subject.setReadOnlyStaleness(TimestampBound.ofMinReadTimestamp(Timestamp.MAX_VALUE));
-      assertThat(subject.getReadOnlyStaleness(),
+      assertThat(
+          subject.getReadOnlyStaleness(),
           is(equalTo(TimestampBound.ofMinReadTimestamp(Timestamp.MAX_VALUE))));
       subject.setAutocommit(false);
       assertThat(subject.getReadOnlyStaleness().getMode(), is(equalTo(TimestampBound.Mode.STRONG)));
@@ -838,7 +989,8 @@ public class ConnectionImplTest {
       assertThat(subject.getReadOnlyStaleness().getMode(), is(equalTo(TimestampBound.Mode.STRONG)));
 
       subject.setReadOnlyStaleness(TimestampBound.ofMaxStaleness(10L, TimeUnit.SECONDS));
-      assertThat(subject.getReadOnlyStaleness(),
+      assertThat(
+          subject.getReadOnlyStaleness(),
           is(equalTo(TimestampBound.ofMaxStaleness(10L, TimeUnit.SECONDS))));
       subject.setAutocommit(false);
       assertThat(subject.getReadOnlyStaleness().getMode(), is(equalTo(TimestampBound.Mode.STRONG)));
@@ -849,20 +1001,26 @@ public class ConnectionImplTest {
 
   @Test
   public void testChangeReadOnlyModeInAutocommit() {
-    try (ConnectionImpl subject = createConnection(ConnectionOptions.newBuilder()
-        .setCredentials(NoCredentials.getInstance()).setUri(URI).build())) {
+    try (ConnectionImpl subject =
+        createConnection(
+            ConnectionOptions.newBuilder()
+                .setCredentials(NoCredentials.getInstance())
+                .setUri(URI)
+                .build())) {
       subject.execute(Statement.of(UPDATE));
       assertThat(subject.getCommitTimestamp(), is(notNullValue()));
 
       // change to read-only
       subject.setReadOnly(true);
-      expectSpannerException("Updates should not be allowed in read-only mode",
+      expectSpannerException(
+          "Updates should not be allowed in read-only mode",
           new ConnectionConsumer() {
             @Override
             public void accept(Connection t) {
               t.execute(Statement.of(UPDATE));
             }
-          }, subject);
+          },
+          subject);
       assertThat(subject.executeQuery(Statement.of(SELECT)), is(notNullValue()));
 
       // change back to read-write
@@ -872,21 +1030,27 @@ public class ConnectionImplTest {
 
       // and back to read-only
       subject.setReadOnly(true);
-      expectSpannerException("DDL should not be allowed in read-only mode",
+      expectSpannerException(
+          "DDL should not be allowed in read-only mode",
           new ConnectionConsumer() {
             @Override
             public void accept(Connection t) {
               t.execute(Statement.of(DDL));
             }
-          }, subject);
+          },
+          subject);
       assertThat(subject.executeQuery(Statement.of(SELECT)), is(notNullValue()));
     }
   }
 
   @Test
   public void testChangeReadOnlyModeInTransactionalMode() {
-    try (ConnectionImpl subject = createConnection(ConnectionOptions.newBuilder()
-        .setCredentials(NoCredentials.getInstance()).setUri(URI).build())) {
+    try (ConnectionImpl subject =
+        createConnection(
+            ConnectionOptions.newBuilder()
+                .setCredentials(NoCredentials.getInstance())
+                .setUri(URI)
+                .build())) {
       subject.setAutocommit(false);
 
       subject.execute(Statement.of(UPDATE));
@@ -895,13 +1059,15 @@ public class ConnectionImplTest {
 
       // change to read-only
       subject.setReadOnly(true);
-      expectSpannerException("Updates should not be allowed in read-only mode",
+      expectSpannerException(
+          "Updates should not be allowed in read-only mode",
           new ConnectionConsumer() {
             @Override
             public void accept(Connection t) {
               t.execute(Statement.of(UPDATE));
             }
-          }, subject);
+          },
+          subject);
       assertThat(subject.executeQuery(Statement.of(SELECT)), is(notNullValue()));
       subject.commit();
 
@@ -913,21 +1079,27 @@ public class ConnectionImplTest {
 
       // and back to read-only
       subject.setReadOnly(true);
-      expectSpannerException("DDL should not be allowed in read-only mode",
+      expectSpannerException(
+          "DDL should not be allowed in read-only mode",
           new ConnectionConsumer() {
             @Override
             public void accept(Connection t) {
               t.execute(Statement.of(DDL));
             }
-          }, subject);
+          },
+          subject);
       assertThat(subject.executeQuery(Statement.of(SELECT)), is(notNullValue()));
     }
   }
 
   @Test
   public void testAddRemoveTransactionRetryListener() {
-    try (ConnectionImpl subject = createConnection(ConnectionOptions.newBuilder()
-        .setCredentials(NoCredentials.getInstance()).setUri(URI).build())) {
+    try (ConnectionImpl subject =
+        createConnection(
+            ConnectionOptions.newBuilder()
+                .setCredentials(NoCredentials.getInstance())
+                .setUri(URI)
+                .build())) {
       assertThat(subject.getTransactionRetryListeners().hasNext(), is(false));
       TransactionRetryListener listener = mock(TransactionRetryListener.class);
       subject.addTransactionRetryListener(listener);
@@ -937,5 +1109,4 @@ public class ConnectionImplTest {
       assertThat(subject.removeTransactionRetryListener(listener), is(false));
     }
   }
-
 }

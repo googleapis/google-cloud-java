@@ -16,12 +16,6 @@
 
 package com.google.cloud.spanner.jdbc;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
 import com.google.cloud.spanner.Options;
 import com.google.cloud.spanner.ResultSets;
 import com.google.cloud.spanner.SpannerBatchUpdateException;
@@ -33,11 +27,19 @@ import com.google.cloud.spanner.Type.StructField;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
 import com.google.rpc.Code;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 /** Implementation of {@link java.sql.Statement} for Google Cloud Spanner. */
 class JdbcStatement extends AbstractJdbcStatement {
   enum BatchType {
-    NONE, DML, DDL;
+    NONE,
+    DML,
+    DDL;
   }
 
   private ResultSet currentResultSet;
@@ -58,10 +60,9 @@ class JdbcStatement extends AbstractJdbcStatement {
 
   /**
    * @see java.sql.Statement#executeUpdate(String)
-   *
-   *      This method allows both DML and DDL statements to be executed. It assumes that the user
-   *      knows what kind of statement is being executed, and the method will therefore return 0 for
-   *      both DML statements that changed 0 rows as well as for all DDL statements.
+   *     <p>This method allows both DML and DDL statements to be executed. It assumes that the user
+   *     knows what kind of statement is being executed, and the method will therefore return 0 for
+   *     both DML statements that changed 0 rows as well as for all DDL statements.
    */
   @Override
   public int executeUpdate(String sql) throws SQLException {
@@ -70,19 +71,19 @@ class JdbcStatement extends AbstractJdbcStatement {
     StatementResult result = execute(statement);
     switch (result.getResultType()) {
       case RESULT_SET:
-        throw JdbcSqlExceptionFactory.of("The statement is not an update or DDL statement",
-            Code.INVALID_ARGUMENT);
+        throw JdbcSqlExceptionFactory.of(
+            "The statement is not an update or DDL statement", Code.INVALID_ARGUMENT);
       case UPDATE_COUNT:
         if (result.getUpdateCount() > Integer.MAX_VALUE) {
-          throw JdbcSqlExceptionFactory.of("update count too large: " + result.getUpdateCount(),
-              Code.OUT_OF_RANGE);
+          throw JdbcSqlExceptionFactory.of(
+              "update count too large: " + result.getUpdateCount(), Code.OUT_OF_RANGE);
         }
         return result.getUpdateCount().intValue();
       case NO_RESULT:
         return 0;
       default:
-        throw JdbcSqlExceptionFactory.of("unknown result: " + result.getResultType(),
-            Code.FAILED_PRECONDITION);
+        throw JdbcSqlExceptionFactory.of(
+            "unknown result: " + result.getResultType(), Code.FAILED_PRECONDITION);
     }
   }
 
@@ -108,8 +109,8 @@ class JdbcStatement extends AbstractJdbcStatement {
         currentUpdateCount = JdbcConstants.STATEMENT_NO_RESULT;
         return false;
       default:
-        throw JdbcSqlExceptionFactory.of("unknown result: " + result.getResultType(),
-            Code.FAILED_PRECONDITION);
+        throw JdbcSqlExceptionFactory.of(
+            "unknown result: " + result.getResultType(), Code.FAILED_PRECONDITION);
     }
   }
 
@@ -120,17 +121,17 @@ class JdbcStatement extends AbstractJdbcStatement {
   }
 
   /**
-   * Returns the update count of the last update statement. Will return
-   * {@link JdbcConstants#STATEMENT_RESULT_SET} if the last statement returned a {@link ResultSet}
-   * and will return {@link JdbcConstants#STATEMENT_NO_RESULT} if the last statement did not have
-   * any return value, such as for example DDL statements.
+   * Returns the update count of the last update statement. Will return {@link
+   * JdbcConstants#STATEMENT_RESULT_SET} if the last statement returned a {@link ResultSet} and will
+   * return {@link JdbcConstants#STATEMENT_NO_RESULT} if the last statement did not have any return
+   * value, such as for example DDL statements.
    */
   @Override
   public int getUpdateCount() throws SQLException {
     checkClosed();
     if (currentUpdateCount > Integer.MAX_VALUE) {
-      throw JdbcSqlExceptionFactory.of("update count too large: " + currentUpdateCount,
-          Code.OUT_OF_RANGE);
+      throw JdbcSqlExceptionFactory.of(
+          "update count too large: " + currentUpdateCount, Code.OUT_OF_RANGE);
     }
     return (int) currentUpdateCount;
   }
@@ -144,7 +145,8 @@ class JdbcStatement extends AbstractJdbcStatement {
   @Override
   public boolean getMoreResults(int current) throws SQLException {
     checkClosed();
-    if (currentResultSet != null && !currentResultSet.isClosed()
+    if (currentResultSet != null
+        && !currentResultSet.isClosed()
         && (current == CLOSE_CURRENT_RESULT || current == CLOSE_ALL_RESULTS)) {
       currentResultSet.close();
     }
@@ -190,8 +192,8 @@ class JdbcStatement extends AbstractJdbcStatement {
    * determined from the sql statement (DML/DDL).
    *
    * @throws SQLException if the sql statement is of a different type than the already active batch
-   *         on this statement, if the statement is not allowed for batching (i.e. it is a query or
-   *         a client side statement) or if the connection of this statement has an active batch.
+   *     on this statement, if the statement is not allowed for batching (i.e. it is a query or a
+   *     client side statement) or if the connection of this statement has an active batch.
    */
   void checkAndSetBatchType(String sql) throws SQLException {
     checkConnectionHasNoActiveBatch();
@@ -199,8 +201,8 @@ class JdbcStatement extends AbstractJdbcStatement {
     if (this.currentBatchType == BatchType.NONE) {
       this.currentBatchType = type;
     } else if (this.currentBatchType != type) {
-      throw JdbcSqlExceptionFactory.of("Mixing DML and DDL statements in a batch is not allowed.",
-          Code.INVALID_ARGUMENT);
+      throw JdbcSqlExceptionFactory.of(
+          "Mixing DML and DDL statements in a batch is not allowed.", Code.INVALID_ARGUMENT);
     }
   }
 
@@ -268,8 +270,8 @@ class JdbcStatement extends AbstractJdbcStatement {
           // There is no batch on this statement, this is a no-op.
           return new int[0];
         default:
-          throw JdbcSqlExceptionFactory
-              .unsupported(String.format("Unknown batch type: %s", this.currentBatchType.name()));
+          throw JdbcSqlExceptionFactory.unsupported(
+              String.format("Unknown batch type: %s", this.currentBatchType.name()));
       }
     } finally {
       batchedStatements.clear();
@@ -302,7 +304,7 @@ class JdbcStatement extends AbstractJdbcStatement {
             String.format("Update count too large for int: %d", updateCounts[index]),
             Code.OUT_OF_RANGE);
       }
-      if(updateCounts[index] > 0L) {
+      if (updateCounts[index] > 0L) {
         res[index] = java.sql.Statement.SUCCESS_NO_INFO;
       } else {
         res[index] = java.sql.Statement.EXECUTE_FAILED;
@@ -316,8 +318,11 @@ class JdbcStatement extends AbstractJdbcStatement {
     // Return an empty result set instead of throwing an exception, to facilitate any application
     // that might not check on beforehand whether the driver supports any generated keys.
     com.google.cloud.spanner.ResultSet rs =
-        ResultSets.forRows(Type.struct(StructField.of("COLUMN_NAME", Type.string()),
-            StructField.of("VALUE", Type.int64())), Collections.<Struct>emptyList());
+        ResultSets.forRows(
+            Type.struct(
+                StructField.of("COLUMN_NAME", Type.string()),
+                StructField.of("VALUE", Type.int64())),
+            Collections.<Struct>emptyList());
     return JdbcResultSet.of(rs);
   }
 
@@ -356,5 +361,4 @@ class JdbcStatement extends AbstractJdbcStatement {
     checkClosed();
     return execute(sql);
   }
-
 }

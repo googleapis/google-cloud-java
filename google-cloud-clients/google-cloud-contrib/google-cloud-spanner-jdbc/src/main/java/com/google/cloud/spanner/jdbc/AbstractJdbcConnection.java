@@ -16,6 +16,8 @@
 
 package com.google.cloud.spanner.jdbc;
 
+import com.google.common.annotations.VisibleForTesting;
+import com.google.rpc.Code;
 import java.sql.CallableStatement;
 import java.sql.ResultSet;
 import java.sql.SQLClientInfoException;
@@ -26,8 +28,6 @@ import java.sql.Savepoint;
 import java.sql.Struct;
 import java.util.Properties;
 import java.util.concurrent.Executor;
-import com.google.common.annotations.VisibleForTesting;
-import com.google.rpc.Code;
 
 /** Base class for Cloud Spanner JDBC connections. */
 abstract class AbstractJdbcConnection extends AbstractJdbcWrapper
@@ -43,7 +43,8 @@ abstract class AbstractJdbcConnection extends AbstractJdbcWrapper
   private static final String STRUCTS_UNSUPPORTED = "Structs are not supported";
   private static final String ABORT_UNSUPPORTED = "Abort is not supported";
   private static final String NETWORK_TIMEOUT_UNSUPPORTED = "Network timeout is not supported";
-  static final String CLIENT_INFO_NOT_SUPPORTED = "Cloud Spanner does not support any ClientInfo properties";
+  static final String CLIENT_INFO_NOT_SUPPORTED =
+      "Cloud Spanner does not support any ClientInfo properties";
 
   private final String connectionUrl;
   private final ConnectionOptions options;
@@ -84,8 +85,9 @@ abstract class AbstractJdbcConnection extends AbstractJdbcWrapper
   }
 
   @Override
-  public CallableStatement prepareCall(String sql, int resultSetType, int resultSetConcurrency,
-      int resultSetHoldability) throws SQLException {
+  public CallableStatement prepareCall(
+      String sql, int resultSetType, int resultSetConcurrency, int resultSetHoldability)
+      throws SQLException {
     return checkClosedAndThrowUnsupported(CALLABLE_STATEMENTS_UNSUPPORTED);
   }
 
@@ -93,11 +95,13 @@ abstract class AbstractJdbcConnection extends AbstractJdbcWrapper
   public void setTransactionIsolation(int level) throws SQLException {
     checkClosed();
     JdbcPreconditions.checkArgument(
-        level == TRANSACTION_SERIALIZABLE || level == TRANSACTION_REPEATABLE_READ
-            || level == TRANSACTION_READ_UNCOMMITTED || level == TRANSACTION_READ_COMMITTED,
+        level == TRANSACTION_SERIALIZABLE
+            || level == TRANSACTION_REPEATABLE_READ
+            || level == TRANSACTION_READ_UNCOMMITTED
+            || level == TRANSACTION_READ_COMMITTED,
         "Not a transaction isolation level");
-    JdbcPreconditions.checkSqlFeatureSupported(level == TRANSACTION_SERIALIZABLE,
-        ONLY_SERIALIZABLE);
+    JdbcPreconditions.checkSqlFeatureSupported(
+        level == TRANSACTION_SERIALIZABLE, ONLY_SERIALIZABLE);
   }
 
   @Override
@@ -109,10 +113,12 @@ abstract class AbstractJdbcConnection extends AbstractJdbcWrapper
   @Override
   public void setHoldability(int holdability) throws SQLException {
     checkClosed();
-    JdbcPreconditions.checkArgument(holdability == ResultSet.HOLD_CURSORS_OVER_COMMIT
-        || holdability == ResultSet.CLOSE_CURSORS_AT_COMMIT, "Not a holdability value");
-    JdbcPreconditions.checkSqlFeatureSupported(holdability == ResultSet.CLOSE_CURSORS_AT_COMMIT,
-        ONLY_CLOSE_ALLOWED);
+    JdbcPreconditions.checkArgument(
+        holdability == ResultSet.HOLD_CURSORS_OVER_COMMIT
+            || holdability == ResultSet.CLOSE_CURSORS_AT_COMMIT,
+        "Not a holdability value");
+    JdbcPreconditions.checkSqlFeatureSupported(
+        holdability == ResultSet.CLOSE_CURSORS_AT_COMMIT, ONLY_CLOSE_ALLOWED);
   }
 
   @Override
@@ -165,8 +171,8 @@ abstract class AbstractJdbcConnection extends AbstractJdbcWrapper
       checkClosed();
     } catch (SQLException e) {
       if (e instanceof JdbcSqlException) {
-        throw JdbcSqlExceptionFactory.clientInfoException(e.getMessage(),
-            ((JdbcSqlException) e).getCode());
+        throw JdbcSqlExceptionFactory.clientInfoException(
+            e.getMessage(), ((JdbcSqlException) e).getCode());
       } else {
         throw JdbcSqlExceptionFactory.clientInfoException(e.getMessage(), Code.UNKNOWN);
       }
@@ -180,8 +186,8 @@ abstract class AbstractJdbcConnection extends AbstractJdbcWrapper
       checkClosed();
     } catch (SQLException e) {
       if (e instanceof JdbcSqlException) {
-        throw JdbcSqlExceptionFactory.clientInfoException(e.getMessage(),
-            ((JdbcSqlException) e).getCode());
+        throw JdbcSqlExceptionFactory.clientInfoException(
+            e.getMessage(), ((JdbcSqlException) e).getCode());
       } else {
         throw JdbcSqlExceptionFactory.clientInfoException(e.getMessage(), Code.UNKNOWN);
       }
@@ -223,7 +229,7 @@ abstract class AbstractJdbcConnection extends AbstractJdbcWrapper
 
   @VisibleForTesting
   void pushWarning(SQLWarning warning) {
-    if(lastWarning == null) {
+    if (lastWarning == null) {
       firstWarning = warning;
       lastWarning = warning;
     } else {

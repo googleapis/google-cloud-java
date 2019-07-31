@@ -16,20 +16,21 @@
 
 package com.google.cloud.spanner.jdbc;
 
+import com.google.cloud.spanner.ResultSet;
+import com.google.common.base.Preconditions;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Types;
-import com.google.cloud.spanner.ResultSet;
-import com.google.common.base.Preconditions;
 
 /** Implementation of {@link ResultSetMetaData} for Cloud Spanner */
 class JdbcResultSetMetaData extends AbstractJdbcWrapper implements ResultSetMetaData {
   /**
-   * The default column display size for columns with a data type of variable size that is used
-   * when the actual column size is not known.
+   * The default column display size for columns with a data type of variable size that is used when
+   * the actual column size is not known.
    */
   private static final int DEFAULT_COL_DISPLAY_SIZE_FOR_VARIABLE_LENGTH_COLS = 50;
+
   private final ResultSet spannerResultSet;
   private final Statement statement;
 
@@ -149,8 +150,7 @@ class JdbcResultSetMetaData extends AbstractJdbcWrapper implements ResultSetMeta
   @Override
   public int getScale(int column) throws SQLException {
     int colType = getColumnType(column);
-    if (colType == Types.DOUBLE)
-      return 15;
+    if (colType == Types.DOUBLE) return 15;
     return 0;
   }
 
@@ -208,5 +208,4 @@ class JdbcResultSetMetaData extends AbstractJdbcWrapper implements ResultSetMeta
     }
     return res.toString();
   }
-
 }

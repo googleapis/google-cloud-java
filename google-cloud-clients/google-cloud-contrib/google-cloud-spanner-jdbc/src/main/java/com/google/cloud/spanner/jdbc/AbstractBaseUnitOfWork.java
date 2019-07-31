@@ -37,7 +37,10 @@ abstract class AbstractBaseUnitOfWork implements UnitOfWork {
   private final StatementExecutor statementExecutor;
   private final StatementTimeout statementTimeout;
 
-  /** The {@link Future} that monitors the result of the statement currently being executed for this unit of work. */
+  /**
+   * The {@link Future} that monitors the result of the statement currently being executed for this
+   * unit of work.
+   */
   @GuardedBy("this")
   private Future<?> currentlyRunningStatementFuture = null;
 

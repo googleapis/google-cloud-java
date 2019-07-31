@@ -23,6 +23,8 @@ import static org.hamcrest.CoreMatchers.nullValue;
 import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
+
+import com.google.rpc.Code;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.sql.Connection;
@@ -39,12 +41,10 @@ import org.junit.Test;
 import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-import com.google.rpc.Code;
 
 @RunWith(JUnit4.class)
 public class JdbcConnectionTest {
-  @Rule
-  public final ExpectedException exception = ExpectedException.none();
+  @Rule public final ExpectedException exception = ExpectedException.none();
 
   private JdbcConnection createConnection(ConnectionOptions options) {
     com.google.cloud.spanner.jdbc.Connection spannerConnection =
@@ -131,12 +131,14 @@ public class JdbcConnectionTest {
   }
 
   @Test
-  public void testClosedAbstractJdbcConnection() throws SQLException, NoSuchMethodException,
-      SecurityException, IllegalAccessException, IllegalArgumentException {}
+  public void testClosedAbstractJdbcConnection()
+      throws SQLException, NoSuchMethodException, SecurityException, IllegalAccessException,
+          IllegalArgumentException {}
 
   @Test
-  public void testClosedJdbcConnection() throws SQLException, NoSuchMethodException,
-      SecurityException, IllegalAccessException, IllegalArgumentException {
+  public void testClosedJdbcConnection()
+      throws SQLException, NoSuchMethodException, SecurityException, IllegalAccessException,
+          IllegalArgumentException {
     testClosed(Connection.class, "getCatalog");
     testClosed(Connection.class, "getWarnings");
     testClosed(Connection.class, "clearWarnings");
@@ -150,23 +152,37 @@ public class JdbcConnectionTest {
     testClosed(Connection.class, "getSchema");
     testClosed(Connection.class, "getNetworkTimeout");
 
-    testClosed(Connection.class, "setCatalog", new Class<?>[] {String.class},
-        new Object[] {"TEST"});
-    testClosed(Connection.class, "prepareCall", new Class<?>[] {String.class, int.class, int.class},
+    testClosed(
+        Connection.class, "setCatalog", new Class<?>[] {String.class}, new Object[] {"TEST"});
+    testClosed(
+        Connection.class,
+        "prepareCall",
+        new Class<?>[] {String.class, int.class, int.class},
         new Object[] {"TEST", 0, 0});
-    testClosed(Connection.class, "prepareCall",
+    testClosed(
+        Connection.class,
+        "prepareCall",
         new Class<?>[] {String.class, int.class, int.class, int.class},
         new Object[] {"TEST", 0, 0, 0});
-    testClosed(Connection.class, "setClientInfo", new Class<?>[] {String.class, String.class},
+    testClosed(
+        Connection.class,
+        "setClientInfo",
+        new Class<?>[] {String.class, String.class},
         new Object[] {"TEST", "TEST"});
-    testClosed(Connection.class, "setClientInfo", new Class<?>[] {Properties.class},
-        new Object[] {null});
-    testClosed(Connection.class, "getClientInfo", new Class<?>[] {String.class},
-        new Object[] {"TEST"});
-    testClosed(Connection.class, "createStruct", new Class<?>[] {String.class, Object[].class},
+    testClosed(
+        Connection.class, "setClientInfo", new Class<?>[] {Properties.class}, new Object[] {null});
+    testClosed(
+        Connection.class, "getClientInfo", new Class<?>[] {String.class}, new Object[] {"TEST"});
+    testClosed(
+        Connection.class,
+        "createStruct",
+        new Class<?>[] {String.class, Object[].class},
         new Object[] {"TEST", new Object[] {}});
     testClosed(Connection.class, "setSchema", new Class<?>[] {String.class}, new Object[] {"TEST"});
-    testClosed(Connection.class, "setNetworkTimeout", new Class<?>[] {Executor.class, int.class},
+    testClosed(
+        Connection.class,
+        "setNetworkTimeout",
+        new Class<?>[] {Executor.class, int.class},
         new Object[] {null, 0});
 
     testClosed(Connection.class, "getTypeMap");
@@ -179,55 +195,85 @@ public class JdbcConnectionTest {
     testClosed(Connection.class, "getTransactionIsolation");
     testClosed(Connection.class, "setSavepoint");
 
-    testClosed(Connection.class, "setTypeMap", new Class<?>[] {Map.class},
+    testClosed(
+        Connection.class,
+        "setTypeMap",
+        new Class<?>[] {Map.class},
         new Object[] {Collections.EMPTY_MAP});
-    testClosed(Connection.class, "prepareStatement", new Class<?>[] {String.class},
-        new Object[] {"TEST"});
-    testClosed(Connection.class, "prepareCall", new Class<?>[] {String.class},
-        new Object[] {"TEST"});
+    testClosed(
+        Connection.class, "prepareStatement", new Class<?>[] {String.class}, new Object[] {"TEST"});
+    testClosed(
+        Connection.class, "prepareCall", new Class<?>[] {String.class}, new Object[] {"TEST"});
     testClosed(Connection.class, "nativeSQL", new Class<?>[] {String.class}, new Object[] {"TEST"});
-    testClosed(Connection.class, "prepareStatement", new Class<?>[] {String.class},
-        new Object[] {"TEST"});
-    testClosed(Connection.class, "setAutoCommit", new Class<?>[] {boolean.class},
-        new Object[] {true});
-    testClosed(Connection.class, "setReadOnly", new Class<?>[] {boolean.class},
-        new Object[] {true});
-    testClosed(Connection.class, "setTransactionIsolation", new Class<?>[] {int.class},
-        new Object[] {0});
-    testClosed(Connection.class, "createStatement", new Class<?>[] {int.class, int.class},
+    testClosed(
+        Connection.class, "prepareStatement", new Class<?>[] {String.class}, new Object[] {"TEST"});
+    testClosed(
+        Connection.class, "setAutoCommit", new Class<?>[] {boolean.class}, new Object[] {true});
+    testClosed(
+        Connection.class, "setReadOnly", new Class<?>[] {boolean.class}, new Object[] {true});
+    testClosed(
+        Connection.class, "setTransactionIsolation", new Class<?>[] {int.class}, new Object[] {0});
+    testClosed(
+        Connection.class,
+        "createStatement",
+        new Class<?>[] {int.class, int.class},
         new Object[] {0, 0});
-    testClosed(Connection.class, "prepareStatement",
-        new Class<?>[] {String.class, int.class, int.class}, new Object[] {"TEST", 0, 0});
-    testClosed(Connection.class, "createStatement",
-        new Class<?>[] {int.class, int.class, int.class}, new Object[] {0, 0, 0});
-    testClosed(Connection.class, "prepareStatement",
+    testClosed(
+        Connection.class,
+        "prepareStatement",
+        new Class<?>[] {String.class, int.class, int.class},
+        new Object[] {"TEST", 0, 0});
+    testClosed(
+        Connection.class,
+        "createStatement",
+        new Class<?>[] {int.class, int.class, int.class},
+        new Object[] {0, 0, 0});
+    testClosed(
+        Connection.class,
+        "prepareStatement",
         new Class<?>[] {String.class, int.class, int.class, int.class},
         new Object[] {"TEST", 0, 0, 0});
-    testClosed(Connection.class, "prepareStatement", new Class<?>[] {String.class, int.class},
+    testClosed(
+        Connection.class,
+        "prepareStatement",
+        new Class<?>[] {String.class, int.class},
         new Object[] {"TEST", 0});
-    testClosed(Connection.class, "prepareStatement", new Class<?>[] {String.class, int[].class},
+    testClosed(
+        Connection.class,
+        "prepareStatement",
+        new Class<?>[] {String.class, int[].class},
         new Object[] {"TEST", new int[] {0}});
-    testClosed(Connection.class, "prepareStatement", new Class<?>[] {String.class, String[].class},
+    testClosed(
+        Connection.class,
+        "prepareStatement",
+        new Class<?>[] {String.class, String[].class},
         new Object[] {"TEST", new String[] {"COL1"}});
-    testClosed(Connection.class, "createArrayOf", new Class<?>[] {String.class, Object[].class},
+    testClosed(
+        Connection.class,
+        "createArrayOf",
+        new Class<?>[] {String.class, Object[].class},
         new Object[] {"TEST", new Object[] {"COL1"}});
 
-    testClosed(Connection.class, "setSavepoint", new Class<?>[] {String.class},
-        new Object[] {"TEST"});
+    testClosed(
+        Connection.class, "setSavepoint", new Class<?>[] {String.class}, new Object[] {"TEST"});
     testClosed(Connection.class, "rollback", new Class<?>[] {Savepoint.class}, new Object[] {null});
-    testClosed(Connection.class, "releaseSavepoint", new Class<?>[] {Savepoint.class},
+    testClosed(
+        Connection.class,
+        "releaseSavepoint",
+        new Class<?>[] {Savepoint.class},
         new Object[] {null});
   }
 
   private void testClosed(Class<? extends Connection> clazz, String name)
       throws NoSuchMethodException, SecurityException, SQLException, IllegalAccessException,
-      IllegalArgumentException {
+          IllegalArgumentException {
     testClosed(clazz, name, null, null);
   }
 
-  private void testClosed(Class<? extends Connection> clazz, String name, Class<?>[] paramTypes,
-      Object[] args) throws NoSuchMethodException, SecurityException, SQLException,
-      IllegalAccessException, IllegalArgumentException {
+  private void testClosed(
+      Class<? extends Connection> clazz, String name, Class<?>[] paramTypes, Object[] args)
+      throws NoSuchMethodException, SecurityException, SQLException, IllegalAccessException,
+          IllegalArgumentException {
     Method method = clazz.getDeclaredMethod(name, paramTypes);
     testInvokeMethodOnClosedConnection(method, args);
   }
@@ -243,13 +289,14 @@ public class JdbcConnectionTest {
     } catch (InvocationTargetException e) {
       if (e.getTargetException() instanceof JdbcSqlException
           && ((JdbcSqlException) e.getTargetException()).getCode() == Code.FAILED_PRECONDITION
-          && ((JdbcSqlException) e.getTargetException()).getMessage()
-              .endsWith("has been closed")) {
+          && ((JdbcSqlException) e.getTargetException()).getMessage().endsWith("has been closed")) {
         // this is the expected exception
         valid = true;
       }
     }
-    assertThat("Method did not throw exception on closed connection: " + method.getName(), valid,
+    assertThat(
+        "Method did not throw exception on closed connection: " + method.getName(),
+        valid,
         is(true));
   }
 
@@ -257,24 +304,31 @@ public class JdbcConnectionTest {
   public void testTransactionIsolation() throws SQLException {
     ConnectionOptions options = mock(ConnectionOptions.class);
     try (JdbcConnection connection = createConnection(options)) {
-      assertThat(connection.getTransactionIsolation(),
-          is(equalTo(Connection.TRANSACTION_SERIALIZABLE)));
+      assertThat(
+          connection.getTransactionIsolation(), is(equalTo(Connection.TRANSACTION_SERIALIZABLE)));
       // assert that setting it to this value is ok.
       connection.setTransactionIsolation(Connection.TRANSACTION_SERIALIZABLE);
       // assert that setting it to something else is not ok.
-      int[] settings = new int[] {Connection.TRANSACTION_READ_COMMITTED,
-          Connection.TRANSACTION_READ_UNCOMMITTED, Connection.TRANSACTION_REPEATABLE_READ, -100};
+      int[] settings =
+          new int[] {
+            Connection.TRANSACTION_READ_COMMITTED,
+            Connection.TRANSACTION_READ_UNCOMMITTED,
+            Connection.TRANSACTION_REPEATABLE_READ,
+            -100
+          };
       for (int setting : settings) {
         boolean exception = false;
         try {
           connection.setTransactionIsolation(setting);
         } catch (SQLException e) {
           if (setting == -100) {
-            exception = (e instanceof JdbcSqlException
-                && ((JdbcSqlException) e).getCode() == Code.INVALID_ARGUMENT);
+            exception =
+                (e instanceof JdbcSqlException
+                    && ((JdbcSqlException) e).getCode() == Code.INVALID_ARGUMENT);
           } else {
-            exception = (e instanceof JdbcSqlException
-                && ((JdbcSqlException) e).getCode() == Code.UNIMPLEMENTED);
+            exception =
+                (e instanceof JdbcSqlException
+                    && ((JdbcSqlException) e).getCode() == Code.UNIMPLEMENTED);
           }
         }
         assertThat(exception, is(true));
@@ -297,11 +351,13 @@ public class JdbcConnectionTest {
           connection.setHoldability(setting);
         } catch (SQLException e) {
           if (setting == -100) {
-            exception = (e instanceof JdbcSqlException
-                && ((JdbcSqlException) e).getCode() == Code.INVALID_ARGUMENT);
+            exception =
+                (e instanceof JdbcSqlException
+                    && ((JdbcSqlException) e).getCode() == Code.INVALID_ARGUMENT);
           } else {
-            exception = (e instanceof JdbcSqlException
-                && ((JdbcSqlException) e).getCode() == Code.UNIMPLEMENTED);
+            exception =
+                (e instanceof JdbcSqlException
+                    && ((JdbcSqlException) e).getCode() == Code.UNIMPLEMENTED);
           }
         }
         assertThat(exception, is(true));
@@ -341,7 +397,9 @@ public class JdbcConnectionTest {
       assertThat(connection.getWarnings(), is(nullValue()));
       connection.setClientInfo("test", "foo");
       assertThat(connection.getWarnings(), is(notNullValue()));
-      assertThat(connection.getWarnings().getMessage(), is(equalTo(AbstractJdbcConnection.CLIENT_INFO_NOT_SUPPORTED)));
+      assertThat(
+          connection.getWarnings().getMessage(),
+          is(equalTo(AbstractJdbcConnection.CLIENT_INFO_NOT_SUPPORTED)));
 
       connection.clearWarnings();
       assertThat(connection.getWarnings(), is(nullValue()));
@@ -350,8 +408,9 @@ public class JdbcConnectionTest {
       props.setProperty("test", "foo");
       connection.setClientInfo(props);
       assertThat(connection.getWarnings(), is(notNullValue()));
-      assertThat(connection.getWarnings().getMessage(), is(equalTo(AbstractJdbcConnection.CLIENT_INFO_NOT_SUPPORTED)));
+      assertThat(
+          connection.getWarnings().getMessage(),
+          is(equalTo(AbstractJdbcConnection.CLIENT_INFO_NOT_SUPPORTED)));
     }
   }
-
 }

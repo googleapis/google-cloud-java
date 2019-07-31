@@ -24,18 +24,15 @@ import com.google.cloud.spanner.jdbc.StatementParser.ParsedStatement;
 import com.google.common.base.Preconditions;
 
 /**
- * Retriable DML statement. The check whether the statement had the same effect during retry is
- * done by comparing the number of records affected.
+ * Retriable DML statement. The check whether the statement had the same effect during retry is done
+ * by comparing the number of records affected.
  */
 final class RetriableUpdate implements RetriableStatement {
   private final ReadWriteTransaction transaction;
   private final ParsedStatement statement;
   private final long updateCount;
 
-  RetriableUpdate(
-      ReadWriteTransaction transaction,
-      ParsedStatement statement,
-      long updateCount) {
+  RetriableUpdate(ReadWriteTransaction transaction, ParsedStatement statement, long updateCount) {
     Preconditions.checkNotNull(transaction);
     Preconditions.checkNotNull(statement);
     this.transaction = transaction;
@@ -49,8 +46,7 @@ final class RetriableUpdate implements RetriableStatement {
     try {
       transaction
           .getStatementExecutor()
-          .invokeInterceptors(
-              statement, StatementExecutionStep.RETRY_STATEMENT, transaction);
+          .invokeInterceptors(statement, StatementExecutionStep.RETRY_STATEMENT, transaction);
       newCount = transaction.getReadContext().executeUpdate(statement.getStatement());
     } catch (AbortedException e) {
       // Just re-throw the AbortedException and let the retry logic determine whether another try

@@ -16,13 +16,13 @@
 
 package com.google.cloud.spanner.jdbc;
 
-import java.util.Arrays;
 import com.google.cloud.spanner.AbortedException;
 import com.google.cloud.spanner.SpannerException;
 import com.google.cloud.spanner.SpannerExceptionFactory;
 import com.google.cloud.spanner.Statement;
 import com.google.cloud.spanner.jdbc.ReadWriteTransaction.RetriableStatement;
 import com.google.common.base.Preconditions;
+import java.util.Arrays;
 
 /**
  * Retriable batch of DML statements. The check whether the statements had the same effect during
@@ -34,9 +34,7 @@ final class RetriableBatchUpdate implements RetriableStatement {
   private final long[] updateCounts;
 
   RetriableBatchUpdate(
-      ReadWriteTransaction transaction,
-      Iterable<Statement> statements,
-      long[] updateCounts) {
+      ReadWriteTransaction transaction, Iterable<Statement> statements, long[] updateCounts) {
     Preconditions.checkNotNull(transaction);
     Preconditions.checkNotNull(statements);
     this.transaction = transaction;

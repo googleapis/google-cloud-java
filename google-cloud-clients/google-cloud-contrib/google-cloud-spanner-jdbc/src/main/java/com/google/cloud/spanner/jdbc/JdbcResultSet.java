@@ -16,6 +16,9 @@
 
 package com.google.cloud.spanner.jdbc;
 
+import com.google.cloud.spanner.Type;
+import com.google.cloud.spanner.Type.Code;
+import com.google.common.base.Preconditions;
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.io.Reader;
@@ -39,9 +42,6 @@ import java.sql.Timestamp;
 import java.util.Calendar;
 import java.util.List;
 import java.util.Map;
-import com.google.cloud.spanner.Type;
-import com.google.cloud.spanner.Type.Code;
-import com.google.common.base.Preconditions;
 
 /** Implementation of {@link ResultSet} for Cloud Spanner */
 class JdbcResultSet extends AbstractJdbcResultSet {
@@ -73,7 +73,8 @@ class JdbcResultSet extends AbstractJdbcResultSet {
   void checkClosedAndValidRow() throws SQLException {
     checkClosed();
     if (currentRow == 0L) {
-      throw JdbcSqlExceptionFactory.of("ResultSet is before first row. Call next() first.",
+      throw JdbcSqlExceptionFactory.of(
+          "ResultSet is before first row. Call next() first.",
           com.google.rpc.Code.FAILED_PRECONDITION);
     }
     if (nextReturnedFalse) {
@@ -180,27 +181,29 @@ class JdbcResultSet extends AbstractJdbcResultSet {
   @Override
   public Date getDate(int columnIndex) throws SQLException {
     checkClosedAndValidRow();
-    return isNull(columnIndex) ? null
+    return isNull(columnIndex)
+        ? null
         : JdbcTypeConverter.toSqlDate(spanner.getDate(columnIndex - 1));
   }
 
   @Override
   public Time getTime(int columnIndex) throws SQLException {
     checkClosedAndValidRow();
-    return isNull(columnIndex) ? null
+    return isNull(columnIndex)
+        ? null
         : JdbcTypeConverter.toSqlTime(spanner.getTimestamp(columnIndex - 1));
   }
 
   @Override
   public Timestamp getTimestamp(int columnIndex) throws SQLException {
     checkClosedAndValidRow();
-    return isNull(columnIndex) ? null
+    return isNull(columnIndex)
+        ? null
         : JdbcTypeConverter.toSqlTimestamp(spanner.getTimestamp(columnIndex - 1));
   }
 
   private InputStream getInputStream(String val, Charset charset) {
-    if (val == null)
-      return null;
+    if (val == null) return null;
     byte[] b = val.getBytes(charset);
     return new ByteArrayInputStream(b);
   }
@@ -291,14 +294,16 @@ class JdbcResultSet extends AbstractJdbcResultSet {
   @Override
   public Time getTime(String columnLabel) throws SQLException {
     checkClosedAndValidRow();
-    return isNull(columnLabel) ? null
+    return isNull(columnLabel)
+        ? null
         : JdbcTypeConverter.toSqlTime(spanner.getTimestamp(columnLabel));
   }
 
   @Override
   public Timestamp getTimestamp(String columnLabel) throws SQLException {
     checkClosedAndValidRow();
-    return isNull(columnLabel) ? null
+    return isNull(columnLabel)
+        ? null
         : JdbcTypeConverter.toSqlTimestamp(spanner.getTimestamp(columnLabel));
   }
 
@@ -351,24 +356,16 @@ class JdbcResultSet extends AbstractJdbcResultSet {
   }
 
   private Object getObject(Type type, int columnIndex) throws SQLException {
-    if (type == Type.bool())
-      return getBoolean(columnIndex);
-    if (type == Type.bytes())
-      return getBytes(columnIndex);
-    if (type == Type.date())
-      return getDate(columnIndex);
-    if (type == Type.float64())
-      return getDouble(columnIndex);
-    if (type == Type.int64())
-      return getLong(columnIndex);
-    if (type == Type.string())
-      return getString(columnIndex);
-    if (type == Type.timestamp())
-      return getTimestamp(columnIndex);
-    if (type.getCode() == Code.ARRAY)
-      return getArray(columnIndex);
-    throw JdbcSqlExceptionFactory.of("Unknown type: " + type.toString(),
-        com.google.rpc.Code.INVALID_ARGUMENT);
+    if (type == Type.bool()) return getBoolean(columnIndex);
+    if (type == Type.bytes()) return getBytes(columnIndex);
+    if (type == Type.date()) return getDate(columnIndex);
+    if (type == Type.float64()) return getDouble(columnIndex);
+    if (type == Type.int64()) return getLong(columnIndex);
+    if (type == Type.string()) return getString(columnIndex);
+    if (type == Type.timestamp()) return getTimestamp(columnIndex);
+    if (type.getCode() == Code.ARRAY) return getArray(columnIndex);
+    throw JdbcSqlExceptionFactory.of(
+        "Unknown type: " + type.toString(), com.google.rpc.Code.INVALID_ARGUMENT);
   }
 
   @Override
@@ -377,8 +374,8 @@ class JdbcResultSet extends AbstractJdbcResultSet {
     try {
       return spanner.getColumnIndex(columnLabel) + 1;
     } catch (IllegalArgumentException e) {
-      throw JdbcSqlExceptionFactory.of("no column with label " + columnLabel + " found",
-          com.google.rpc.Code.INVALID_ARGUMENT);
+      throw JdbcSqlExceptionFactory.of(
+          "no column with label " + columnLabel + " found", com.google.rpc.Code.INVALID_ARGUMENT);
     }
   }
 
@@ -431,16 +428,18 @@ class JdbcResultSet extends AbstractJdbcResultSet {
         try {
           res = new BigDecimal(spanner.getString(columnIndex - 1));
         } catch (NumberFormatException e) {
-          throw JdbcSqlExceptionFactory.of("The column does not contain a valid BigDecimal",
-              com.google.rpc.Code.INVALID_ARGUMENT, e);
+          throw JdbcSqlExceptionFactory.of(
+              "The column does not contain a valid BigDecimal",
+              com.google.rpc.Code.INVALID_ARGUMENT,
+              e);
         }
       } else if (type.getCode() == Code.INT64) {
         res = BigDecimal.valueOf(spanner.getLong(columnIndex - 1));
       } else if (type.getCode() == Code.FLOAT64) {
         res = BigDecimal.valueOf(spanner.getDouble(columnIndex - 1));
       } else {
-        throw JdbcSqlExceptionFactory.of("The column does not contain a valid BigDecimal",
-            com.google.rpc.Code.INVALID_ARGUMENT);
+        throw JdbcSqlExceptionFactory.of(
+            "The column does not contain a valid BigDecimal", com.google.rpc.Code.INVALID_ARGUMENT);
       }
       if (fixedScale) {
         res = res.setScale(scale, RoundingMode.HALF_UP);
@@ -488,8 +487,7 @@ class JdbcResultSet extends AbstractJdbcResultSet {
   @Override
   public Array getArray(int columnIndex) throws SQLException {
     checkClosedAndValidRow();
-    if (isNull(columnIndex))
-      return null;
+    if (isNull(columnIndex)) return null;
     Type type = spanner.getColumnType(columnIndex - 1);
     if (type.getCode() != Code.ARRAY)
       throw JdbcSqlExceptionFactory.of(
@@ -504,42 +502,48 @@ class JdbcResultSet extends AbstractJdbcResultSet {
   @Override
   public Date getDate(int columnIndex, Calendar cal) throws SQLException {
     checkClosedAndValidRow();
-    return isNull(columnIndex) ? null
+    return isNull(columnIndex)
+        ? null
         : JdbcTypeConverter.toSqlDate(spanner.getDate(columnIndex - 1), cal);
   }
 
   @Override
   public Date getDate(String columnLabel, Calendar cal) throws SQLException {
     checkClosedAndValidRow();
-    return isNull(columnLabel) ? null
+    return isNull(columnLabel)
+        ? null
         : JdbcTypeConverter.toSqlDate(spanner.getDate(columnLabel), cal);
   }
 
   @Override
   public Time getTime(int columnIndex, Calendar cal) throws SQLException {
     checkClosedAndValidRow();
-    return isNull(columnIndex) ? null
+    return isNull(columnIndex)
+        ? null
         : JdbcTypeConverter.toSqlTime(spanner.getTimestamp(columnIndex - 1), cal);
   }
 
   @Override
   public Time getTime(String columnLabel, Calendar cal) throws SQLException {
     checkClosedAndValidRow();
-    return isNull(columnLabel) ? null
+    return isNull(columnLabel)
+        ? null
         : JdbcTypeConverter.toSqlTime(spanner.getTimestamp(columnLabel), cal);
   }
 
   @Override
   public Timestamp getTimestamp(int columnIndex, Calendar cal) throws SQLException {
     checkClosedAndValidRow();
-    return isNull(columnIndex) ? null
+    return isNull(columnIndex)
+        ? null
         : JdbcTypeConverter.getAsSqlTimestamp(spanner.getTimestamp(columnIndex - 1), cal);
   }
 
   @Override
   public Timestamp getTimestamp(String columnLabel, Calendar cal) throws SQLException {
     checkClosedAndValidRow();
-    return isNull(columnLabel) ? null
+    return isNull(columnLabel)
+        ? null
         : JdbcTypeConverter.getAsSqlTimestamp(spanner.getTimestamp(columnLabel), cal);
   }
 
@@ -549,7 +553,8 @@ class JdbcResultSet extends AbstractJdbcResultSet {
     try {
       return isNull(columnIndex) ? null : new URL(spanner.getString(columnIndex - 1));
     } catch (MalformedURLException e) {
-      throw JdbcSqlExceptionFactory.of("Invalid URL: " + spanner.getString(columnIndex - 1),
+      throw JdbcSqlExceptionFactory.of(
+          "Invalid URL: " + spanner.getString(columnIndex - 1),
           com.google.rpc.Code.INVALID_ARGUMENT);
     }
   }
@@ -669,11 +674,9 @@ class JdbcResultSet extends AbstractJdbcResultSet {
   private Object convertObject(Object o, Map<String, Class<?>> map, Type type) throws SQLException {
     if (map == null)
       throw JdbcSqlExceptionFactory.of("Map may not be null", com.google.rpc.Code.INVALID_ARGUMENT);
-    if (o == null)
-      return null;
+    if (o == null) return null;
     Class<?> javaType = map.get(type.getCode().name());
-    if (javaType == null)
-      return o;
+    if (javaType == null) return o;
     return JdbcTypeConverter.convert(o, type, javaType);
   }
 }

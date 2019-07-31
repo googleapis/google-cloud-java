@@ -23,6 +23,16 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.hamcrest.CoreMatchers.nullValue;
 import static org.junit.Assert.assertThat;
+
+import com.google.cloud.Timestamp;
+import com.google.cloud.spanner.ErrorCode;
+import com.google.cloud.spanner.Mutation;
+import com.google.cloud.spanner.ReadContext.QueryAnalyzeMode;
+import com.google.cloud.spanner.ResultSet;
+import com.google.cloud.spanner.SpannerException;
+import com.google.cloud.spanner.Statement;
+import com.google.cloud.spanner.TimestampBound;
+import com.google.cloud.spanner.jdbc.StatementParser.StatementType;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
@@ -37,15 +47,6 @@ import org.junit.Test;
 import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-import com.google.cloud.Timestamp;
-import com.google.cloud.spanner.ErrorCode;
-import com.google.cloud.spanner.Mutation;
-import com.google.cloud.spanner.ReadContext.QueryAnalyzeMode;
-import com.google.cloud.spanner.ResultSet;
-import com.google.cloud.spanner.SpannerException;
-import com.google.cloud.spanner.Statement;
-import com.google.cloud.spanner.TimestampBound;
-import com.google.cloud.spanner.jdbc.StatementParser.StatementType;
 
 /**
  * This test class and all its subclasses are used to generate the file
@@ -64,8 +65,7 @@ public abstract class AbstractConnectionImplTest {
     void accept(Connection connection);
   }
 
-  @Rule
-  public ExpectedException exception = ExpectedException.none();
+  @Rule public ExpectedException exception = ExpectedException.none();
 
   /**
    * This test class can generate a large sql file that represents all the statements and
@@ -75,19 +75,20 @@ public abstract class AbstractConnectionImplTest {
    */
   private static final String LOG_FILE =
       "src/test/resources/com/google/cloud/spanner/jdbc/ConnectionImplGeneratedSqlScriptTest.sql";
+
   private static final String DO_LOG_PROPERTY = "do_log_statements";
   private static boolean doLog;
   private static PrintWriter writer;
 
   abstract Connection getConnection();
 
-  static void expectSpannerException(String reason, ConnectionConsumer consumer,
-      Connection connection) {
+  static void expectSpannerException(
+      String reason, ConnectionConsumer consumer, Connection connection) {
     expectSpannerException(reason, consumer, connection, ErrorCode.FAILED_PRECONDITION);
   }
 
-  static void expectSpannerException(String reason, ConnectionConsumer consumer,
-      Connection connection, ErrorCode errorCode) {
+  static void expectSpannerException(
+      String reason, ConnectionConsumer consumer, Connection connection, ErrorCode errorCode) {
     SpannerException exception = null;
     try {
       consumer.accept(connection);
@@ -124,8 +125,9 @@ public abstract class AbstractConnectionImplTest {
 
   private static void openLog(boolean append) {
     try {
-      writer = new PrintWriter(
-          new OutputStreamWriter(new FileOutputStream(LOG_FILE, append), "UTF8"), true);
+      writer =
+          new PrintWriter(
+              new OutputStreamWriter(new FileOutputStream(LOG_FILE, append), "UTF8"), true);
     } catch (IOException e) {
       throw new RuntimeException(e);
     }
@@ -214,8 +216,9 @@ public abstract class AbstractConnectionImplTest {
         log(String.format("SET STATEMENT_TIMEOUT='1%s';", getTimeUnitAbbreviation(unit)));
         connection.setStatementTimeout(1L, unit);
 
-        log(String.format("@EXPECT RESULT_SET 'STATEMENT_TIMEOUT','1%s'",
-            getTimeUnitAbbreviation(unit)));
+        log(
+            String.format(
+                "@EXPECT RESULT_SET 'STATEMENT_TIMEOUT','1%s'", getTimeUnitAbbreviation(unit)));
         log("SHOW VARIABLE STATEMENT_TIMEOUT;");
         assertThat(connection.getStatementTimeout(unit), is(equalTo(1L)));
 
@@ -256,7 +259,8 @@ public abstract class AbstractConnectionImplTest {
         connection.startBatchDml();
         assertThat(connection.isDmlBatchActive(), is(true));
 
-        expectSpannerException("Select should not be allowed after startBatchDml()",
+        expectSpannerException(
+            "Select should not be allowed after startBatchDml()",
             new ConnectionConsumer() {
               @Override
               public void accept(Connection t) {
@@ -264,8 +268,10 @@ public abstract class AbstractConnectionImplTest {
                 log(SELECT + ";");
                 t.execute(Statement.of(SELECT));
               }
-            }, connection);
-        expectSpannerException("DDL should not be allowed after startBatchDml()",
+            },
+            connection);
+        expectSpannerException(
+            "DDL should not be allowed after startBatchDml()",
             new ConnectionConsumer() {
               @Override
               public void accept(Connection t) {
@@ -273,7 +279,8 @@ public abstract class AbstractConnectionImplTest {
                 log(DDL + ";");
                 t.execute(Statement.of(DDL));
               }
-            }, connection);
+            },
+            connection);
         log(UPDATE + ";");
         connection.execute(Statement.of(UPDATE));
         assertThat(connection.isDmlBatchActive(), is(true));
@@ -302,7 +309,8 @@ public abstract class AbstractConnectionImplTest {
         assertThat(connection.isInTransaction(), is(false));
         assertThat(connection.isDdlBatchActive(), is(true));
 
-        expectSpannerException("Select should not be allowed after startBatchDdl()",
+        expectSpannerException(
+            "Select should not be allowed after startBatchDdl()",
             new ConnectionConsumer() {
               @Override
               public void accept(Connection t) {
@@ -310,8 +318,10 @@ public abstract class AbstractConnectionImplTest {
                 log(SELECT + ";");
                 t.execute(Statement.of(SELECT));
               }
-            }, connection);
-        expectSpannerException("Update should not be allowed after startBatchDdl()",
+            },
+            connection);
+        expectSpannerException(
+            "Update should not be allowed after startBatchDdl()",
             new ConnectionConsumer() {
               @Override
               public void accept(Connection t) {
@@ -319,7 +329,8 @@ public abstract class AbstractConnectionImplTest {
                 log(UPDATE + ";");
                 t.execute(Statement.of(UPDATE));
               }
-            }, connection);
+            },
+            connection);
         log(DDL + ";");
         connection.execute(Statement.of(DDL));
         assertThat(connection.isTransactionStarted(), is(false));
@@ -385,7 +396,8 @@ public abstract class AbstractConnectionImplTest {
           log(SELECT + ";");
           connection.execute(Statement.of(SELECT));
         } else {
-          expectSpannerException("Select should not be allowed after beginTransaction",
+          expectSpannerException(
+              "Select should not be allowed after beginTransaction",
               new ConnectionConsumer() {
                 @Override
                 public void accept(Connection t) {
@@ -393,13 +405,15 @@ public abstract class AbstractConnectionImplTest {
                   log(SELECT + ";");
                   t.execute(Statement.of(SELECT));
                 }
-              }, connection);
+              },
+              connection);
         }
         if (isDmlAllowedAfterBeginTransaction()) {
           log(UPDATE + ";");
           connection.execute(Statement.of(UPDATE));
         } else {
-          expectSpannerException("Update should not be allowed after beginTransaction",
+          expectSpannerException(
+              "Update should not be allowed after beginTransaction",
               new ConnectionConsumer() {
                 @Override
                 public void accept(Connection t) {
@@ -407,13 +421,15 @@ public abstract class AbstractConnectionImplTest {
                   log(UPDATE + ";");
                   t.execute(Statement.of(UPDATE));
                 }
-              }, connection);
+              },
+              connection);
         }
         if (isDdlAllowedAfterBeginTransaction()) {
           log(DDL + ";");
           connection.execute(Statement.of(DDL));
         } else {
-          expectSpannerException("DDL should not be allowed after beginTransaction",
+          expectSpannerException(
+              "DDL should not be allowed after beginTransaction",
               new ConnectionConsumer() {
                 @Override
                 public void accept(Connection t) {
@@ -421,7 +437,8 @@ public abstract class AbstractConnectionImplTest {
                   log(DDL + ";");
                   t.execute(Statement.of(DDL));
                 }
-              }, connection);
+              },
+              connection);
         }
         assertThat(connection.isTransactionStarted(), is(true));
       }
@@ -449,14 +466,17 @@ public abstract class AbstractConnectionImplTest {
         connection.setTransactionMode(mode);
         assertThat(connection.getTransactionMode(), is(equalTo(mode)));
       } else {
-        expectSpannerException(mode + " should not be allowed", new ConnectionConsumer() {
-          @Override
-          public void accept(Connection t) {
-            log("@EXPECT EXCEPTION FAILED_PRECONDITION");
-            log("SET TRANSACTION " + mode.getStatementString() + ";");
-            t.setTransactionMode(mode);
-          }
-        }, connection);
+        expectSpannerException(
+            mode + " should not be allowed",
+            new ConnectionConsumer() {
+              @Override
+              public void accept(Connection t) {
+                log("@EXPECT EXCEPTION FAILED_PRECONDITION");
+                log("SET TRANSACTION " + mode.getStatementString() + ";");
+                t.setTransactionMode(mode);
+              }
+            },
+            connection);
       }
     }
   }
@@ -491,8 +511,10 @@ public abstract class AbstractConnectionImplTest {
         }
       } else {
         log("@EXPECT EXCEPTION FAILED_PRECONDITION");
-        log("SET AUTOCOMMIT_DML_MODE='" + AutocommitDmlMode.PARTITIONED_NON_ATOMIC.toString()
-            + "';");
+        log(
+            "SET AUTOCOMMIT_DML_MODE='"
+                + AutocommitDmlMode.PARTITIONED_NON_ATOMIC.toString()
+                + "';");
         exception.expect(matchCode(ErrorCode.FAILED_PRECONDITION));
         connection.setAutocommitDmlMode(AutocommitDmlMode.PARTITIONED_NON_ATOMIC);
       }
@@ -527,7 +549,9 @@ public abstract class AbstractConnectionImplTest {
   }
 
   private List<TimestampBound> getTestTimestampBounds() {
-    return Arrays.asList(TimestampBound.strong(), TimestampBound.ofReadTimestamp(Timestamp.now()),
+    return Arrays.asList(
+        TimestampBound.strong(),
+        TimestampBound.ofReadTimestamp(Timestamp.now()),
         TimestampBound.ofMinReadTimestamp(Timestamp.now()),
         TimestampBound.ofExactStaleness(1L, TimeUnit.SECONDS),
         TimestampBound.ofMaxStaleness(100L, TimeUnit.MILLISECONDS),
@@ -537,25 +561,33 @@ public abstract class AbstractConnectionImplTest {
   private void testSetReadOnlyStaleness(final TimestampBound staleness) {
     try (Connection connection = getConnection()) {
       if (isSetReadOnlyStalenessAllowed(staleness.getMode())) {
-        log("SET READ_ONLY_STALENESS='" + ReadOnlyStalenessUtil.timestampBoundToString(staleness)
-            + "';");
+        log(
+            "SET READ_ONLY_STALENESS='"
+                + ReadOnlyStalenessUtil.timestampBoundToString(staleness)
+                + "';");
         connection.setReadOnlyStaleness(staleness);
 
-        log("@EXPECT RESULT_SET 'READ_ONLY_STALENESS','"
-            + ReadOnlyStalenessUtil.timestampBoundToString(staleness) + "'");
+        log(
+            "@EXPECT RESULT_SET 'READ_ONLY_STALENESS','"
+                + ReadOnlyStalenessUtil.timestampBoundToString(staleness)
+                + "'");
         log("SHOW VARIABLE READ_ONLY_STALENESS;");
         assertThat(connection.getReadOnlyStaleness(), is(equalTo(staleness)));
       } else {
-        expectSpannerException(staleness.getMode() + " should not be allowed",
+        expectSpannerException(
+            staleness.getMode() + " should not be allowed",
             new ConnectionConsumer() {
               @Override
               public void accept(Connection t) {
                 log("@EXPECT EXCEPTION FAILED_PRECONDITION");
-                log("SET READ_ONLY_STALENESS='"
-                    + ReadOnlyStalenessUtil.timestampBoundToString(staleness) + "';");
+                log(
+                    "SET READ_ONLY_STALENESS='"
+                        + ReadOnlyStalenessUtil.timestampBoundToString(staleness)
+                        + "';");
                 t.setReadOnlyStaleness(staleness);
               }
-            }, connection);
+            },
+            connection);
       }
     }
   }
@@ -664,8 +696,8 @@ public abstract class AbstractConnectionImplTest {
 
   @Test
   public void testExecute() {
-    for (StatementType type : new StatementType[] {StatementType.QUERY, StatementType.UPDATE,
-        StatementType.DDL}) {
+    for (StatementType type :
+        new StatementType[] {StatementType.QUERY, StatementType.UPDATE, StatementType.DDL}) {
       testExecute(type);
     }
   }
@@ -676,14 +708,17 @@ public abstract class AbstractConnectionImplTest {
         log(getTestStatement(type).getSql() + ";");
         assertThat(connection.execute(getTestStatement(type)), is(notNullValue()));
       } else {
-        expectSpannerException(type + " should not be allowed", new ConnectionConsumer() {
-          @Override
-          public void accept(Connection t) {
-            log("@EXPECT EXCEPTION FAILED_PRECONDITION");
-            log(getTestStatement(type).getSql() + ";");
-            t.execute(getTestStatement(type));
-          }
-        }, connection);
+        expectSpannerException(
+            type + " should not be allowed",
+            new ConnectionConsumer() {
+              @Override
+              public void accept(Connection t) {
+                log("@EXPECT EXCEPTION FAILED_PRECONDITION");
+                log(getTestStatement(type).getSql() + ";");
+                t.execute(getTestStatement(type));
+              }
+            },
+            connection);
       }
     }
   }
@@ -705,8 +740,8 @@ public abstract class AbstractConnectionImplTest {
 
   @Test
   public void testExecuteQuery() {
-    for (StatementType type : new StatementType[] {StatementType.QUERY, StatementType.UPDATE,
-        StatementType.DDL}) {
+    for (StatementType type :
+        new StatementType[] {StatementType.QUERY, StatementType.UPDATE, StatementType.DDL}) {
       testExecuteQuery(type);
     }
   }
@@ -721,29 +756,37 @@ public abstract class AbstractConnectionImplTest {
         assertThat(rs.getStats(), is(nullValue()));
       } else if (type == StatementType.QUERY) {
         // it is a query, but queries are not allowed for this connection state
-        expectSpannerException(type + " should not be allowed", new ConnectionConsumer() {
-          @Override
-          public void accept(Connection t) {
-            log("@EXPECT EXCEPTION FAILED_PRECONDITION");
-            log(getTestStatement(type).getSql() + ";");
-            t.executeQuery(getTestStatement(type));
-          }
-        }, connection, ErrorCode.FAILED_PRECONDITION);
+        expectSpannerException(
+            type + " should not be allowed",
+            new ConnectionConsumer() {
+              @Override
+              public void accept(Connection t) {
+                log("@EXPECT EXCEPTION FAILED_PRECONDITION");
+                log(getTestStatement(type).getSql() + ";");
+                t.executeQuery(getTestStatement(type));
+              }
+            },
+            connection,
+            ErrorCode.FAILED_PRECONDITION);
       } else {
-        expectSpannerException(type + " should be an invalid argument", new ConnectionConsumer() {
-          @Override
-          public void accept(Connection t) {
-            t.executeQuery(getTestStatement(type));
-          }
-        }, connection, ErrorCode.INVALID_ARGUMENT);
+        expectSpannerException(
+            type + " should be an invalid argument",
+            new ConnectionConsumer() {
+              @Override
+              public void accept(Connection t) {
+                t.executeQuery(getTestStatement(type));
+              }
+            },
+            connection,
+            ErrorCode.INVALID_ARGUMENT);
       }
     }
   }
 
   @Test
   public void testAnalyzeQuery() {
-    for (StatementType type : new StatementType[] {StatementType.QUERY, StatementType.UPDATE,
-        StatementType.DDL}) {
+    for (StatementType type :
+        new StatementType[] {StatementType.QUERY, StatementType.UPDATE, StatementType.DDL}) {
       testAnalyzeQuery(type);
     }
   }
@@ -756,24 +799,31 @@ public abstract class AbstractConnectionImplTest {
         if (type == StatementType.QUERY && isExecuteAllowed(StatementType.QUERY)) {
           ResultSet rs = connection.analyzeQuery(getTestStatement(type), currentMode);
           assertThat(rs, is(notNullValue()));
-          while (rs.next()) {
-          }
+          while (rs.next()) {}
           assertThat(rs.getStats(), is(notNullValue()));
         } else if (type == StatementType.QUERY) {
           // it is a query, but queries are not allowed for this connection state
-          expectSpannerException(type + " should not be allowed", new ConnectionConsumer() {
-            @Override
-            public void accept(Connection t) {
-              t.analyzeQuery(getTestStatement(type), currentMode);
-            }
-          }, connection, ErrorCode.FAILED_PRECONDITION);
+          expectSpannerException(
+              type + " should not be allowed",
+              new ConnectionConsumer() {
+                @Override
+                public void accept(Connection t) {
+                  t.analyzeQuery(getTestStatement(type), currentMode);
+                }
+              },
+              connection,
+              ErrorCode.FAILED_PRECONDITION);
         } else {
-          expectSpannerException(type + " should be an invalid argument", new ConnectionConsumer() {
-            @Override
-            public void accept(Connection t) {
-              t.analyzeQuery(getTestStatement(type), currentMode);
-            }
-          }, connection, ErrorCode.INVALID_ARGUMENT);
+          expectSpannerException(
+              type + " should be an invalid argument",
+              new ConnectionConsumer() {
+                @Override
+                public void accept(Connection t) {
+                  t.analyzeQuery(getTestStatement(type), currentMode);
+                }
+              },
+              connection,
+              ErrorCode.INVALID_ARGUMENT);
         }
       }
     }
@@ -781,8 +831,8 @@ public abstract class AbstractConnectionImplTest {
 
   @Test
   public void testExecuteUpdate() {
-    for (StatementType type : new StatementType[] {StatementType.QUERY, StatementType.UPDATE,
-        StatementType.DDL}) {
+    for (StatementType type :
+        new StatementType[] {StatementType.QUERY, StatementType.UPDATE, StatementType.DDL}) {
       testExecuteUpdate(type);
     }
   }
@@ -795,21 +845,29 @@ public abstract class AbstractConnectionImplTest {
         assertThat(connection.executeUpdate(getTestStatement(type)), is(notNullValue()));
       } else if (type == StatementType.UPDATE) {
         // it is an update statement, but updates are not allowed for this connection state
-        expectSpannerException(type + "should not be allowed", new ConnectionConsumer() {
-          @Override
-          public void accept(Connection t) {
-            log("@EXPECT EXCEPTION FAILED_PRECONDITION");
-            log(getTestStatement(type).getSql() + ";");
-            t.executeUpdate(getTestStatement(type));
-          }
-        }, connection, ErrorCode.FAILED_PRECONDITION);
+        expectSpannerException(
+            type + "should not be allowed",
+            new ConnectionConsumer() {
+              @Override
+              public void accept(Connection t) {
+                log("@EXPECT EXCEPTION FAILED_PRECONDITION");
+                log(getTestStatement(type).getSql() + ";");
+                t.executeUpdate(getTestStatement(type));
+              }
+            },
+            connection,
+            ErrorCode.FAILED_PRECONDITION);
       } else {
-        expectSpannerException(type + " should be an invalid argument", new ConnectionConsumer() {
-          @Override
-          public void accept(Connection t) {
-            t.executeUpdate(getTestStatement(type));
-          }
-        }, connection, ErrorCode.INVALID_ARGUMENT);
+        expectSpannerException(
+            type + " should be an invalid argument",
+            new ConnectionConsumer() {
+              @Override
+              public void accept(Connection t) {
+                t.executeUpdate(getTestStatement(type));
+              }
+            },
+            connection,
+            ErrorCode.INVALID_ARGUMENT);
       }
     }
   }

@@ -16,13 +16,13 @@
 
 package com.google.cloud.spanner.jdbc;
 
-import java.util.Arrays;
-import java.util.List;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.spanner.DatabaseAdminClient;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Strings;
 import com.google.spanner.admin.database.v1.UpdateDatabaseDdlMetadata;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * Convenience class for executing Data Definition Language statements on transactions that support
@@ -47,15 +47,15 @@ class DdlClient {
     }
 
     Builder setInstanceId(String instanceId) {
-      Preconditions.checkArgument(!Strings.isNullOrEmpty(instanceId),
-          "Empty instanceId is not allowed");
+      Preconditions.checkArgument(
+          !Strings.isNullOrEmpty(instanceId), "Empty instanceId is not allowed");
       this.instanceId = instanceId;
       return this;
     }
 
     Builder setDatabaseName(String name) {
-      Preconditions.checkArgument(!Strings.isNullOrEmpty(name),
-          "Empty database name is not allowed");
+      Preconditions.checkArgument(
+          !Strings.isNullOrEmpty(name), "Empty database name is not allowed");
       this.databaseName = name;
       return this;
     }
@@ -63,8 +63,8 @@ class DdlClient {
     DdlClient build() {
       Preconditions.checkState(dbAdminClient != null, "No DatabaseAdminClient specified");
       Preconditions.checkState(!Strings.isNullOrEmpty(instanceId), "No InstanceId specified");
-      Preconditions.checkArgument(!Strings.isNullOrEmpty(databaseName),
-          "No database name specified");
+      Preconditions.checkArgument(
+          !Strings.isNullOrEmpty(databaseName), "No database name specified");
       return new DdlClient(this);
     }
   }
@@ -88,5 +88,4 @@ class DdlClient {
   OperationFuture<Void, UpdateDatabaseDdlMetadata> executeDdl(List<String> statements) {
     return dbAdminClient.updateDatabaseDdl(instanceId, databaseName, statements, null);
   }
-
 }

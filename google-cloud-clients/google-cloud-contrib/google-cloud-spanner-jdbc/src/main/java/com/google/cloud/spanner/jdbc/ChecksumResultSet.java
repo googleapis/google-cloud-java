@@ -16,18 +16,15 @@
 
 package com.google.cloud.spanner.jdbc;
 
-import java.util.Objects;
-import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutionException;
 import com.google.cloud.ByteArray;
 import com.google.cloud.Date;
 import com.google.cloud.Timestamp;
 import com.google.cloud.spanner.AbortedException;
+import com.google.cloud.spanner.Options.QueryOption;
 import com.google.cloud.spanner.ResultSet;
 import com.google.cloud.spanner.SpannerException;
 import com.google.cloud.spanner.SpannerExceptionFactory;
 import com.google.cloud.spanner.Struct;
-import com.google.cloud.spanner.Options.QueryOption;
 import com.google.cloud.spanner.Type.Code;
 import com.google.cloud.spanner.jdbc.ReadWriteTransaction.RetriableStatement;
 import com.google.cloud.spanner.jdbc.StatementParser.ParsedStatement;
@@ -39,6 +36,9 @@ import com.google.common.hash.HashFunction;
 import com.google.common.hash.Hasher;
 import com.google.common.hash.Hashing;
 import com.google.common.hash.PrimitiveSink;
+import java.util.Objects;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
 
 /**
  * {@link ResultSet} implementation that keeps a running checksum that can be used to determine
@@ -47,9 +47,9 @@ import com.google.common.hash.PrimitiveSink;
  * (i.e. never called next()), the checksum will be <code>null</code> and retry will always be
  * allowed.
  *
- * <p>If all the rows in the result set have been consumed, the checksum will be based on the
- * values of all those rows, and a retry will only be possible if the query returns the exact same
- * results during the retry as during the original transaction.
+ * <p>If all the rows in the result set have been consumed, the checksum will be based on the values
+ * of all those rows, and a retry will only be possible if the query returns the exact same results
+ * during the retry as during the original transaction.
  *
  * <p>If some of the rows in the result set have been consumed, the checksum will be based on the
  * values of the rows that have been consumed. A retry will succeed if the query returns the same
@@ -57,14 +57,14 @@ import com.google.common.hash.PrimitiveSink;
  *
  * <p>The checksum of a {@link ResultSet} is the SHA256 checksum of the current row together with
  * the previous checksum value of the result set. The calculation of the checksum is executed in a
- * separate {@link Thread} to allow the checksum calculation to lag behind the actual consumption
- * of rows, and catch up again if the client slows down the consumption of rows, for example while
+ * separate {@link Thread} to allow the checksum calculation to lag behind the actual consumption of
+ * rows, and catch up again if the client slows down the consumption of rows, for example while
  * waiting for more data from Cloud Spanner. If the checksum calculation queue contains more than
- * {@link ChecksumExecutor#MAX_IN_CHECKSUM_QUEUE} items that have not yet been calculated, calls
- * to {@link ResultSet#next()} will slow down in order to allow the calculation to catch up.
+ * {@link ChecksumExecutor#MAX_IN_CHECKSUM_QUEUE} items that have not yet been calculated, calls to
+ * {@link ResultSet#next()} will slow down in order to allow the calculation to catch up.
  */
-@VisibleForTesting class ChecksumResultSet extends ReplaceableForwardingResultSet
-    implements RetriableStatement {
+@VisibleForTesting
+class ChecksumResultSet extends ReplaceableForwardingResultSet implements RetriableStatement {
   private final ReadWriteTransaction transaction;
   private long numberOfNextCalls;
   private final ParsedStatement statement;
@@ -123,10 +123,10 @@ import com.google.common.hash.PrimitiveSink;
   }
 
   /**
-   * Execute the same query as in the original transaction and consume the {@link ResultSet} to
-   * the same point as the original {@link ResultSet}. The {@link HashCode} of the new {@link
-   * ResultSet} is compared with the {@link HashCode} of the original {@link ResultSet} at the
-   * point where the consumption of the {@link ResultSet} stopped.
+   * Execute the same query as in the original transaction and consume the {@link ResultSet} to the
+   * same point as the original {@link ResultSet}. The {@link HashCode} of the new {@link ResultSet}
+   * is compared with the {@link HashCode} of the original {@link ResultSet} at the point where the
+   * consumption of the {@link ResultSet} stopped.
    */
   @Override
   public void retry(AbortedException aborted) throws AbortedException {

@@ -16,11 +16,11 @@
 
 package com.google.cloud.spanner.jdbc;
 
+import com.google.cloud.spanner.Statement;
+import com.google.cloud.spanner.jdbc.JdbcParameterStore.ParametersInfo;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import com.google.cloud.spanner.Statement;
-import com.google.cloud.spanner.jdbc.JdbcParameterStore.ParametersInfo;
 
 /** Implementation of {@link PreparedStatement} for Cloud Spanner. */
 class JdbcPreparedStatement extends AbstractJdbcPreparedStatement {
@@ -32,7 +32,8 @@ class JdbcPreparedStatement extends AbstractJdbcPreparedStatement {
     super(connection);
     this.sql = sql;
     this.sqlWithoutComments = StatementParser.removeCommentsAndTrim(this.sql);
-    this.parameters = JdbcParameterStore.convertPositionalParametersToNamedParameters(sqlWithoutComments);
+    this.parameters =
+        JdbcParameterStore.convertPositionalParametersToNamedParameters(sqlWithoutComments);
   }
 
   ParametersInfo getParametersInfo() throws SQLException {
@@ -78,5 +79,4 @@ class JdbcPreparedStatement extends AbstractJdbcPreparedStatement {
     checkClosed();
     return new JdbcParameterMetaData(this);
   }
-
 }
