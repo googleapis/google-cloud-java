@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.cloud.spanner.jdbc;
+package com.google.cloud.spanner.jdbc.statement;
 
 import com.google.cloud.spanner.Options;
 import com.google.cloud.spanner.ResultSets;
@@ -24,6 +24,12 @@ import com.google.cloud.spanner.Statement;
 import com.google.cloud.spanner.Struct;
 import com.google.cloud.spanner.Type;
 import com.google.cloud.spanner.Type.StructField;
+import com.google.cloud.spanner.jdbc.CloudSpannerJdbcConnection;
+import com.google.cloud.spanner.jdbc.JdbcConstants;
+import com.google.cloud.spanner.jdbc.JdbcResultSet;
+import com.google.cloud.spanner.jdbc.JdbcSqlExceptionFactory;
+import com.google.cloud.spanner.jdbc.StatementParser;
+import com.google.cloud.spanner.jdbc.StatementResult;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
 import com.google.rpc.Code;
@@ -35,7 +41,7 @@ import java.util.Collections;
 import java.util.List;
 
 /** Implementation of {@link java.sql.Statement} for Google Cloud Spanner. */
-class JdbcStatement extends AbstractJdbcStatement {
+public class JdbcStatement extends AbstractJdbcStatement {
   enum BatchType {
     NONE,
     DML,
@@ -48,7 +54,7 @@ class JdbcStatement extends AbstractJdbcStatement {
   private BatchType currentBatchType = BatchType.NONE;
   final List<Statement> batchedStatements = new ArrayList<>();
 
-  JdbcStatement(JdbcConnection connection) {
+  public JdbcStatement(CloudSpannerJdbcConnection connection) {
     super(connection);
   }
 
@@ -207,8 +213,8 @@ class JdbcStatement extends AbstractJdbcStatement {
   }
 
   private void checkConnectionHasNoActiveBatch() throws SQLException {
-    if (getConnection().getSpannerConnection().isDdlBatchActive()
-        || getConnection().getSpannerConnection().isDmlBatchActive()) {
+    if (getConnection().isDdlBatchActive()
+        || getConnection().isDmlBatchActive()) {
       throw JdbcSqlExceptionFactory.of(
           "Calling addBatch() is not allowed when a DML or DDL batch has been started on the connection.",
           Code.FAILED_PRECONDITION);
@@ -239,7 +245,7 @@ class JdbcStatement extends AbstractJdbcStatement {
         case DML:
           try {
             long[] updateCounts =
-                getConnection().getSpannerConnection().executeBatchUpdate(batchedStatements);
+                getConnection().executeBatchUpdate(batchedStatements);
             int[] res = convertUpdateCounts(updateCounts);
             return res;
           } catch (SpannerBatchUpdateException e) {
@@ -250,11 +256,11 @@ class JdbcStatement extends AbstractJdbcStatement {
           }
         case DDL:
           try {
-            getConnection().getSpannerConnection().startBatchDdl();
+            getConnection().startBatchDdl();
             for (Statement statement : batchedStatements) {
               execute(statement);
             }
-            getConnection().getSpannerConnection().runBatch();
+            getConnection().runBatch();
             int[] res = new int[batchedStatements.size()];
             Arrays.fill(res, java.sql.Statement.SUCCESS_NO_INFO);
             return res;

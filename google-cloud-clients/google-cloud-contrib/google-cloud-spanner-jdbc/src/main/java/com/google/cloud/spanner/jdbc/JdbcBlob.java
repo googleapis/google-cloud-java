@@ -33,14 +33,14 @@ import java.util.List;
  * in memory. The {@link Blob} data type can be used in combination with the BYTES Cloud Spanner
  * data type.
  */
-class JdbcBlob implements Blob {
+public class JdbcBlob implements Blob {
   private byte[] value = new byte[0];
 
   /** Creates an empty blob. */
   JdbcBlob() {}
 
   /** Creates a blob with the specified bytes as its value. */
-  JdbcBlob(byte[] value) {
+  public JdbcBlob(byte[] value) {
     this.value = value;
   }
 

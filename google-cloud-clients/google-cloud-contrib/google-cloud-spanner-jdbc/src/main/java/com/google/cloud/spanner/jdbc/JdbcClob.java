@@ -34,12 +34,12 @@ import java.sql.SQLException;
  * mapped to a {@link StringBuilder} in memory. {@link Clob} and {@link NClob} can be used with the
  * STRING data type of Cloud Spanner.
  */
-class JdbcClob implements NClob {
+public class JdbcClob implements NClob {
   private StringBuilder value = new StringBuilder();
 
   JdbcClob() {}
 
-  JdbcClob(String value) {
+  public JdbcClob(String value) {
     this.value.append(value);
   }
 

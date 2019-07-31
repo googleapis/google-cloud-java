@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-package com.google.cloud.spanner.jdbc;
+package com.google.cloud.spanner.jdbc.statement;
 
-import static com.google.cloud.spanner.jdbc.JdbcParameterStore.convertPositionalParametersToNamedParameters;
+import static com.google.cloud.spanner.jdbc.statement.JdbcParameterStore.convertPositionalParametersToNamedParameters;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.startsWith;
@@ -25,6 +25,11 @@ import static org.junit.Assert.assertThat;
 import com.google.cloud.ByteArray;
 import com.google.cloud.spanner.Statement;
 import com.google.cloud.spanner.Value;
+import com.google.cloud.spanner.jdbc.JdbcArray;
+import com.google.cloud.spanner.jdbc.JdbcBlob;
+import com.google.cloud.spanner.jdbc.JdbcClob;
+import com.google.cloud.spanner.jdbc.JdbcSqlException;
+import com.google.cloud.spanner.jdbc.statement.JdbcParameterStore;
 import com.google.common.io.CharStreams;
 import com.google.rpc.Code;
 import java.io.ByteArrayInputStream;

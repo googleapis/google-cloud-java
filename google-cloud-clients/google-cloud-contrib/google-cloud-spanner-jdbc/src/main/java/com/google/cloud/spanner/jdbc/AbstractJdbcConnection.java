@@ -16,6 +16,8 @@
 
 package com.google.cloud.spanner.jdbc;
 
+import com.google.cloud.spanner.Options.QueryOption;
+import com.google.cloud.spanner.Statement;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.rpc.Code;
 import java.sql.CallableStatement;
@@ -28,6 +30,7 @@ import java.sql.Savepoint;
 import java.sql.Struct;
 import java.util.Properties;
 import java.util.concurrent.Executor;
+import java.util.concurrent.TimeUnit;
 
 /** Base class for Cloud Spanner JDBC connections. */
 abstract class AbstractJdbcConnection extends AbstractJdbcWrapper
@@ -236,5 +239,80 @@ abstract class AbstractJdbcConnection extends AbstractJdbcWrapper
       lastWarning.setNextWarning(warning);
       lastWarning = warning;
     }
+  }
+
+  @Override
+  public void clearStatementTimeout() {
+    spanner.clearStatementTimeout();
+  }
+
+  @Override
+  public boolean hasStatementTimeout() {
+    return spanner.hasStatementTimeout();
+  }
+
+  @Override
+  public long getStatementTimeout(TimeUnit unit) {
+    return spanner.getStatementTimeout(unit);
+  }
+
+  @Override
+  public void setStatementTimeout(long timeout, TimeUnit unit) {
+    spanner.setStatementTimeout(timeout, unit);
+  }
+
+  @Override
+  public void cancel() {
+    spanner.cancel();
+  }
+
+  @Override
+  public void startBatchDdl() {
+    spanner.startBatchDdl();
+  }
+
+  @Override
+  public void startBatchDml() {
+    spanner.startBatchDml();
+  }
+
+  @Override
+  public long[] runBatch() {
+    return spanner.runBatch();
+  }
+
+  @Override
+  public void abortBatch() {
+    spanner.abortBatch();
+  }
+
+  @Override
+  public boolean isDdlBatchActive() {
+    return spanner.isDdlBatchActive();
+  }
+
+  @Override
+  public boolean isDmlBatchActive() {
+    return spanner.isDmlBatchActive();
+  }
+
+  @Override
+  public StatementResult execute(Statement statement) {
+    return spanner.execute(statement);
+  }
+
+  @Override
+  public com.google.cloud.spanner.ResultSet executeQuery(Statement query, QueryOption... options) {
+    return spanner.executeQuery(query, options);
+  }
+
+  @Override
+  public long executeUpdate(Statement update) {
+    return spanner.executeUpdate(update);
+  }
+
+  @Override
+  public long[] executeBatchUpdate(Iterable<Statement> updates) {
+    return spanner.executeBatchUpdate(updates);
   }
 }

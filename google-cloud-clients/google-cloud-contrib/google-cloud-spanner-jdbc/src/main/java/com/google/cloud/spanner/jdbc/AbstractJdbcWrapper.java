@@ -27,7 +27,7 @@ import java.sql.Types;
 import java.sql.Wrapper;
 
 /** Base class for all Cloud Spanner JDBC classes that implement the {@link Wrapper} interface. */
-abstract class AbstractJdbcWrapper implements Wrapper {
+public abstract class AbstractJdbcWrapper implements Wrapper {
   static final String OTHER_NAME = "OTHER";
 
   /**
@@ -49,7 +49,7 @@ abstract class AbstractJdbcWrapper implements Wrapper {
   }
 
   /** Extract Spanner type name from {@link java.sql.Types} code. */
-  static String getSpannerTypeName(int sqlType) {
+  protected static String getSpannerTypeName(int sqlType) {
     if (sqlType == Types.BOOLEAN) return Type.bool().getCode().name();
     if (sqlType == Types.BINARY) return Type.bytes().getCode().name();
     if (sqlType == Types.DATE) return Type.date().getCode().name();
@@ -66,7 +66,7 @@ abstract class AbstractJdbcWrapper implements Wrapper {
   }
 
   /** Get corresponding Java class name from {@link java.sql.Types} code. */
-  static String getClassName(int sqlType) {
+  protected static String getClassName(int sqlType) {
     if (sqlType == Types.BOOLEAN) return Boolean.class.getName();
     if (sqlType == Types.BINARY) return Byte[].class.getName();
     if (sqlType == Types.DATE) return Date.class.getName();
@@ -151,7 +151,7 @@ abstract class AbstractJdbcWrapper implements Wrapper {
   public abstract boolean isClosed() throws SQLException;
 
   /** Throws a {@link SQLException} if this object is closed */
-  void checkClosed() throws SQLException {
+  protected void checkClosed() throws SQLException {
     if (isClosed()) {
       throw JdbcSqlExceptionFactory.of(
           "This " + getClass().getName() + " has been closed",

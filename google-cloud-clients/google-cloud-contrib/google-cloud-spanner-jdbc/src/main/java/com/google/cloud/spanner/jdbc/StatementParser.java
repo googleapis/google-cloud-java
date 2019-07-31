@@ -35,7 +35,7 @@ import java.util.Set;
  * ClientSideStatement}s. This means that an invalid DML statement could be accepted by the {@link
  * StatementParser} and sent to Spanner, and Spanner will then reject it with some error message.
  */
-class StatementParser {
+public class StatementParser {
   /** Singleton instance of {@link StatementParser}. */
   public static final StatementParser INSTANCE = new StatementParser();
 
@@ -226,7 +226,7 @@ class StatementParser {
    * @return <code>true</code> if the statement is a DDL statement (i.e. starts with 'CREATE',
    *     'ALTER' or 'DROP').
    */
-  boolean isDdlStatement(String sql) {
+  public boolean isDdlStatement(String sql) {
     return statementStartsWith(sql, ddlStatements);
   }
 
@@ -238,7 +238,7 @@ class StatementParser {
    * @param sql The statement to check (without any comments).
    * @return <code>true</code> if the statement is a SELECT statement (i.e. starts with 'SELECT').
    */
-  boolean isQuery(String sql) {
+  public boolean isQuery(String sql) {
     return statementStartsWith(sql, selectStatements);
   }
 
@@ -251,7 +251,7 @@ class StatementParser {
    * @return <code>true</code> if the statement is a DML update statement (i.e. starts with
    *     'INSERT', 'UPDATE' or 'DELETE').
    */
-  boolean isUpdateStatement(String sql) {
+  public boolean isUpdateStatement(String sql) {
     return statementStartsWith(sql, dmlStatements);
   }
 
@@ -283,7 +283,7 @@ class StatementParser {
    * @param sql The sql statement to remove comments from and to trim.
    * @return the sql statement without the comments and leading and trailing spaces.
    */
-  static String removeCommentsAndTrim(String sql) {
+  public static String removeCommentsAndTrim(String sql) {
     Preconditions.checkNotNull(sql);
     final char SINGLE_QUOTE = '\'';
     final char DOUBLE_QUOTE = '"';

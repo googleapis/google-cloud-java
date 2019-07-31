@@ -32,7 +32,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 /** Convenience class for converting values between Java, JDBC and Cloud Spanner. */
-class JdbcTypeConverter {
+public class JdbcTypeConverter {
 
   /**
    * Converts the given value from the Google {@link Type} to the Java {@link Class} type.
@@ -108,24 +108,24 @@ class JdbcTypeConverter {
   }
 
   @SuppressWarnings("deprecation")
-  static Date toGoogleDate(java.sql.Date date) {
+  public static Date toGoogleDate(java.sql.Date date) {
     return date == null
         ? null
         : Date.fromYearMonthDay(date.getYear() + 1900, date.getMonth() + 1, date.getDate());
   }
 
-  static Date toGoogleDate(java.sql.Time date) {
+  public static Date toGoogleDate(java.sql.Time date) {
     return Date.fromYearMonthDay(1970, 1, 1);
   }
 
   @SuppressWarnings("deprecation")
-  static Date toGoogleDate(java.sql.Timestamp date) {
+  public static Date toGoogleDate(java.sql.Timestamp date) {
     return date == null
         ? null
         : Date.fromYearMonthDay(date.getYear() + 1900, date.getMonth() + 1, date.getDate());
   }
 
-  static List<Date> toGoogleDates(java.sql.Date[] dates) {
+  public static List<Date> toGoogleDates(java.sql.Date[] dates) {
     List<com.google.cloud.Date> res = new ArrayList<>(dates.length);
     for (int index = 0; index < dates.length; index++) res.add(toGoogleDate(dates[index]));
     return res;
@@ -162,7 +162,7 @@ class JdbcTypeConverter {
     return getOrSetTimestampInCalendar(sqlTs, cal, GetOrSetTimestampInCalendar.GET);
   }
 
-  static java.sql.Timestamp setTimestampInCalendar(java.sql.Timestamp sqlTs, Calendar cal) {
+  public static java.sql.Timestamp setTimestampInCalendar(java.sql.Timestamp sqlTs, Calendar cal) {
     return getOrSetTimestampInCalendar(sqlTs, cal, GetOrSetTimestampInCalendar.SET);
   }
 
@@ -202,7 +202,7 @@ class JdbcTypeConverter {
     return res;
   }
 
-  static Timestamp toGoogleTimestamp(java.sql.Date ts) {
+  public static Timestamp toGoogleTimestamp(java.sql.Date ts) {
     if (ts != null) {
       long milliseconds = ts.getTime();
       long seconds = milliseconds / 1000l;
@@ -212,7 +212,7 @@ class JdbcTypeConverter {
     return null;
   }
 
-  static Timestamp toGoogleTimestamp(java.sql.Time ts) {
+  public static Timestamp toGoogleTimestamp(java.sql.Time ts) {
     if (ts != null) {
       long milliseconds = ts.getTime();
       long seconds = milliseconds / 1000l;
@@ -222,7 +222,7 @@ class JdbcTypeConverter {
     return null;
   }
 
-  static Timestamp toGoogleTimestamp(java.sql.Timestamp ts) {
+  public static Timestamp toGoogleTimestamp(java.sql.Timestamp ts) {
     if (ts != null) {
       long milliseconds = ts.getTime();
       long seconds = milliseconds / 1000l;
@@ -232,7 +232,7 @@ class JdbcTypeConverter {
     return null;
   }
 
-  static List<Timestamp> toGoogleTimestamps(java.sql.Timestamp[] timestamps) {
+  public static List<Timestamp> toGoogleTimestamps(java.sql.Timestamp[] timestamps) {
     List<com.google.cloud.Timestamp> res = new ArrayList<>(timestamps.length);
     for (int index = 0; index < timestamps.length; index++) {
       res.add(toGoogleTimestamp(timestamps[index]));
@@ -256,7 +256,7 @@ class JdbcTypeConverter {
     return null;
   }
 
-  static List<ByteArray> toGoogleBytes(byte[][] bytes) {
+  public static List<ByteArray> toGoogleBytes(byte[][] bytes) {
     List<ByteArray> res = new ArrayList<>(bytes.length);
     for (int index = 0; index < bytes.length; index++) {
       res.add(bytes[index] == null ? null : ByteArray.copyFrom(bytes[index]));

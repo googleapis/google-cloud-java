@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.cloud.spanner.jdbc;
+package com.google.cloud.spanner.jdbc.statement;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
@@ -28,7 +28,13 @@ import static org.mockito.Mockito.when;
 
 import com.google.cloud.spanner.ErrorCode;
 import com.google.cloud.spanner.SpannerExceptionFactory;
+import com.google.cloud.spanner.jdbc.CloudSpannerJdbcConnection;
+import com.google.cloud.spanner.jdbc.JdbcConstants;
+import com.google.cloud.spanner.jdbc.JdbcExceptionMatcher;
+import com.google.cloud.spanner.jdbc.StatementParser;
+import com.google.cloud.spanner.jdbc.StatementResult;
 import com.google.cloud.spanner.jdbc.StatementResult.ResultType;
+import com.google.cloud.spanner.jdbc.statement.JdbcStatement;
 import com.google.rpc.Code;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -55,7 +61,7 @@ public class JdbcStatementTest {
   @Rule public final ExpectedException expected = ExpectedException.none();
 
   private JdbcStatement createStatement() {
-    Connection spanner = mock(Connection.class);
+    CloudSpannerJdbcConnection connection = mock(CloudSpannerJdbcConnection.class);
 
     com.google.cloud.spanner.ResultSet resultSet = mock(com.google.cloud.spanner.ResultSet.class);
     when(resultSet.next()).thenReturn(true, false);
@@ -64,36 +70,36 @@ public class JdbcStatementTest {
     StatementResult selectResult = mock(StatementResult.class);
     when(selectResult.getResultType()).thenReturn(ResultType.RESULT_SET);
     when(selectResult.getResultSet()).thenReturn(resultSet);
-    when(spanner.execute(com.google.cloud.spanner.Statement.of(SELECT))).thenReturn(selectResult);
+    when(connection.execute(com.google.cloud.spanner.Statement.of(SELECT))).thenReturn(selectResult);
 
     StatementResult updateResult = mock(StatementResult.class);
     when(updateResult.getResultType()).thenReturn(ResultType.UPDATE_COUNT);
     when(updateResult.getUpdateCount()).thenReturn(1L);
-    when(spanner.execute(com.google.cloud.spanner.Statement.of(UPDATE))).thenReturn(updateResult);
+    when(connection.execute(com.google.cloud.spanner.Statement.of(UPDATE))).thenReturn(updateResult);
 
     StatementResult ddlResult = mock(StatementResult.class);
     when(ddlResult.getResultType()).thenReturn(ResultType.NO_RESULT);
-    when(spanner.execute(com.google.cloud.spanner.Statement.of(DDL))).thenReturn(ddlResult);
+    when(connection.execute(com.google.cloud.spanner.Statement.of(DDL))).thenReturn(ddlResult);
 
-    when(spanner.executeQuery(com.google.cloud.spanner.Statement.of(SELECT))).thenReturn(resultSet);
-    when(spanner.executeQuery(com.google.cloud.spanner.Statement.of(UPDATE)))
+    when(connection.executeQuery(com.google.cloud.spanner.Statement.of(SELECT))).thenReturn(resultSet);
+    when(connection.executeQuery(com.google.cloud.spanner.Statement.of(UPDATE)))
         .thenThrow(
             SpannerExceptionFactory.newSpannerException(ErrorCode.INVALID_ARGUMENT, "not a query"));
-    when(spanner.executeQuery(com.google.cloud.spanner.Statement.of(DDL)))
+    when(connection.executeQuery(com.google.cloud.spanner.Statement.of(DDL)))
         .thenThrow(
             SpannerExceptionFactory.newSpannerException(ErrorCode.INVALID_ARGUMENT, "not a query"));
 
-    when(spanner.executeUpdate(com.google.cloud.spanner.Statement.of(UPDATE))).thenReturn(1L);
-    when(spanner.executeUpdate(com.google.cloud.spanner.Statement.of(SELECT)))
+    when(connection.executeUpdate(com.google.cloud.spanner.Statement.of(UPDATE))).thenReturn(1L);
+    when(connection.executeUpdate(com.google.cloud.spanner.Statement.of(SELECT)))
         .thenThrow(
             SpannerExceptionFactory.newSpannerException(
                 ErrorCode.INVALID_ARGUMENT, "not an update"));
-    when(spanner.executeUpdate(com.google.cloud.spanner.Statement.of(DDL)))
+    when(connection.executeUpdate(com.google.cloud.spanner.Statement.of(DDL)))
         .thenThrow(
             SpannerExceptionFactory.newSpannerException(
                 ErrorCode.INVALID_ARGUMENT, "not an update"));
 
-    when(spanner.executeBatchUpdate(Matchers.anyListOf(com.google.cloud.spanner.Statement.class)))
+    when(connection.executeBatchUpdate(Matchers.anyListOf(com.google.cloud.spanner.Statement.class)))
         .thenAnswer(
             new Answer<long[]>() {
               @SuppressWarnings("unchecked")
@@ -114,21 +120,17 @@ public class JdbcStatementTest {
               }
             });
 
-    JdbcConnection connection = mock(JdbcConnection.class);
-    when(connection.getSpannerConnection()).thenReturn(spanner);
     return new JdbcStatement(connection);
   }
 
   @Test
   public void testQueryTimeout() throws SQLException {
     final String select = "SELECT 1";
-    JdbcConnection connection = mock(JdbcConnection.class);
-    Connection spanner = mock(Connection.class);
-    when(connection.getSpannerConnection()).thenReturn(spanner);
+    CloudSpannerJdbcConnection connection = mock(CloudSpannerJdbcConnection.class);
     StatementResult result = mock(StatementResult.class);
     when(result.getResultType()).thenReturn(ResultType.RESULT_SET);
     when(result.getResultSet()).thenReturn(mock(com.google.cloud.spanner.ResultSet.class));
-    when(spanner.execute(com.google.cloud.spanner.Statement.of(select))).thenReturn(result);
+    when(connection.execute(com.google.cloud.spanner.Statement.of(select))).thenReturn(result);
     try (Statement statement = new JdbcStatement(connection)) {
       assertThat(statement.getQueryTimeout(), is(equalTo(0)));
       statement.setQueryTimeout(1);
@@ -139,16 +141,16 @@ public class JdbcStatementTest {
       assertThat(statement.getQueryTimeout(), is(equalTo(0)));
     }
 
-    when(spanner.getStatementTimeout(TimeUnit.SECONDS)).thenReturn(1L);
-    when(spanner.getStatementTimeout(TimeUnit.MILLISECONDS)).thenReturn(1000L);
-    when(spanner.getStatementTimeout(TimeUnit.MICROSECONDS)).thenReturn(1000000L);
-    when(spanner.getStatementTimeout(TimeUnit.NANOSECONDS)).thenReturn(1000000000L);
-    when(spanner.hasStatementTimeout()).thenReturn(true);
+    when(connection.getStatementTimeout(TimeUnit.SECONDS)).thenReturn(1L);
+    when(connection.getStatementTimeout(TimeUnit.MILLISECONDS)).thenReturn(1000L);
+    when(connection.getStatementTimeout(TimeUnit.MICROSECONDS)).thenReturn(1000000L);
+    when(connection.getStatementTimeout(TimeUnit.NANOSECONDS)).thenReturn(1000000000L);
+    when(connection.hasStatementTimeout()).thenReturn(true);
     try (Statement statement = new JdbcStatement(connection)) {
       assertThat(statement.getQueryTimeout(), is(equalTo(0)));
       statement.execute(select);
       // statement has no timeout, so it should also not be set on the connection
-      verify(spanner, never()).setStatementTimeout(1L, TimeUnit.SECONDS);
+      verify(connection, never()).setStatementTimeout(1L, TimeUnit.SECONDS);
     }
     try (Statement statement = new JdbcStatement(connection)) {
       // now set a query timeout that should temporarily applied to the connection
@@ -156,8 +158,8 @@ public class JdbcStatementTest {
       statement.execute(select);
       // assert that it is temporarily set to 2 seconds, and then back to the original 1 second
       // value
-      verify(spanner).setStatementTimeout(2L, TimeUnit.SECONDS);
-      verify(spanner).setStatementTimeout(1L, TimeUnit.SECONDS);
+      verify(connection).setStatementTimeout(2L, TimeUnit.SECONDS);
+      verify(connection).setStatementTimeout(1L, TimeUnit.SECONDS);
     }
   }
 
@@ -272,7 +274,7 @@ public class JdbcStatementTest {
 
   @Test
   public void testConvertUpdateCounts() throws SQLException {
-    try (JdbcStatement statement = new JdbcStatement(mock(JdbcConnection.class))) {
+    try (JdbcStatement statement = new JdbcStatement(mock(CloudSpannerJdbcConnection.class))) {
       int[] updateCounts = statement.convertUpdateCounts(new long[] {1L, 2L, 3L});
       assertThat(updateCounts, is(equalTo(new int[] {1, 2, 3})));
       updateCounts = statement.convertUpdateCounts(new long[] {0L, 0L, 0L});
@@ -285,7 +287,7 @@ public class JdbcStatementTest {
 
   @Test
   public void testConvertUpdateCountsToSuccessNoInfo() throws SQLException {
-    try (JdbcStatement statement = new JdbcStatement(mock(JdbcConnection.class))) {
+    try (JdbcStatement statement = new JdbcStatement(mock(CloudSpannerJdbcConnection.class))) {
       int[] updateCounts = new int[3];
       statement.convertUpdateCountsToSuccessNoInfo(new long[] {1L, 2L, 3L}, updateCounts);
       assertThat(

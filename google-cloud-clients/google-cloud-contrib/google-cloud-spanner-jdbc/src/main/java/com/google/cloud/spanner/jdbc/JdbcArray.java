@@ -26,7 +26,7 @@ import java.util.List;
 import java.util.Map;
 
 /** Implementation of java.sql.Array for Google Cloud Spanner */
-class JdbcArray implements Array {
+public class JdbcArray implements Array {
   private static final String FREE_EXCEPTION =
       "free() has been called, array is no longer available";
 
@@ -43,7 +43,7 @@ class JdbcArray implements Array {
    * @throws SQLException if the type name is not a valid Cloud Spanner type or if the contents of
    *     the elements array is not compatible with the base type of the array.
    */
-  static JdbcArray createArray(String typeName, Object[] elements) throws SQLException {
+  public static JdbcArray createArray(String typeName, Object[] elements) throws SQLException {
     for (JdbcDataType type : JdbcDataType.values()) {
       if (type.getTypeName().equalsIgnoreCase(typeName)) {
         return new JdbcArray(type, elements);

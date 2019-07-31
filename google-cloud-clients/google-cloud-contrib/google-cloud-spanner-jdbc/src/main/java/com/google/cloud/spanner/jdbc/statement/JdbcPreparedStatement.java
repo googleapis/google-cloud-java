@@ -14,21 +14,23 @@
  * limitations under the License.
  */
 
-package com.google.cloud.spanner.jdbc;
+package com.google.cloud.spanner.jdbc.statement;
 
 import com.google.cloud.spanner.Statement;
-import com.google.cloud.spanner.jdbc.JdbcParameterStore.ParametersInfo;
+import com.google.cloud.spanner.jdbc.CloudSpannerJdbcConnection;
+import com.google.cloud.spanner.jdbc.StatementParser;
+import com.google.cloud.spanner.jdbc.statement.JdbcParameterStore.ParametersInfo;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 /** Implementation of {@link PreparedStatement} for Cloud Spanner. */
-class JdbcPreparedStatement extends AbstractJdbcPreparedStatement {
+public class JdbcPreparedStatement extends AbstractJdbcPreparedStatement {
   private final String sql;
   private final String sqlWithoutComments;
   private final ParametersInfo parameters;
 
-  JdbcPreparedStatement(JdbcConnection connection, String sql) throws SQLException {
+  public JdbcPreparedStatement(CloudSpannerJdbcConnection connection, String sql) throws SQLException {
     super(connection);
     this.sql = sql;
     this.sqlWithoutComments = StatementParser.removeCommentsAndTrim(this.sql);

@@ -14,8 +14,11 @@
  * limitations under the License.
  */
 
-package com.google.cloud.spanner.jdbc;
+package com.google.cloud.spanner.jdbc.statement;
 
+import com.google.cloud.spanner.jdbc.CloudSpannerJdbcConnection;
+import com.google.cloud.spanner.jdbc.JdbcSqlExceptionFactory;
+import com.google.cloud.spanner.jdbc.JdbcTypeConverter;
 import com.google.rpc.Code;
 import java.io.InputStream;
 import java.io.Reader;
@@ -44,7 +47,7 @@ abstract class AbstractJdbcPreparedStatement extends JdbcStatement implements Pr
       "This method may not be called on a PreparedStatement";
   private final JdbcParameterStore parameters = new JdbcParameterStore();
 
-  AbstractJdbcPreparedStatement(JdbcConnection connection) {
+  AbstractJdbcPreparedStatement(CloudSpannerJdbcConnection connection) {
     super(connection);
   }
 

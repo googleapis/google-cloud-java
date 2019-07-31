@@ -44,14 +44,14 @@ import java.util.List;
 import java.util.Map;
 
 /** Implementation of {@link ResultSet} for Cloud Spanner */
-class JdbcResultSet extends AbstractJdbcResultSet {
+public class JdbcResultSet extends AbstractJdbcResultSet {
 
-  static JdbcResultSet of(com.google.cloud.spanner.ResultSet resultSet) {
+  public static JdbcResultSet of(com.google.cloud.spanner.ResultSet resultSet) {
     Preconditions.checkNotNull(resultSet);
     return new JdbcResultSet(null, resultSet);
   }
 
-  static JdbcResultSet of(Statement statement, com.google.cloud.spanner.ResultSet resultSet) {
+  public static JdbcResultSet of(Statement statement, com.google.cloud.spanner.ResultSet resultSet) {
     Preconditions.checkNotNull(statement);
     Preconditions.checkNotNull(resultSet);
     return new JdbcResultSet(statement, resultSet);

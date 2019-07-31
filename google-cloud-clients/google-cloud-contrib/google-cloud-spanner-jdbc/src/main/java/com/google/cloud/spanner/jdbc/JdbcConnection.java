@@ -18,6 +18,9 @@ package com.google.cloud.spanner.jdbc;
 
 import com.google.cloud.spanner.Mutation;
 import com.google.cloud.spanner.SpannerException;
+import com.google.cloud.spanner.jdbc.statement.JdbcParameterStore;
+import com.google.cloud.spanner.jdbc.statement.JdbcPreparedStatement;
+import com.google.cloud.spanner.jdbc.statement.JdbcStatement;
 import java.sql.Array;
 import java.sql.Blob;
 import java.sql.Clob;
@@ -64,7 +67,7 @@ class JdbcConnection extends AbstractJdbcConnection {
     checkClosed();
     return JdbcParameterStore.convertPositionalParametersToNamedParameters(
             StatementParser.removeCommentsAndTrim(sql))
-        .sqlWithNamedParameters;
+        .getSqlWithNamedParameters();
   }
 
   @Override

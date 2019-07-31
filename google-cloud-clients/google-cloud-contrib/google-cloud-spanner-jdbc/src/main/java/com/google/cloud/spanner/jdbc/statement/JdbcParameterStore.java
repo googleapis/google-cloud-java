@@ -14,12 +14,14 @@
  * limitations under the License.
  */
 
-package com.google.cloud.spanner.jdbc;
+package com.google.cloud.spanner.jdbc.statement;
 
 import com.google.cloud.ByteArray;
 import com.google.cloud.spanner.Statement;
 import com.google.cloud.spanner.Statement.Builder;
 import com.google.cloud.spanner.ValueBinder;
+import com.google.cloud.spanner.jdbc.JdbcSqlExceptionFactory;
+import com.google.cloud.spanner.jdbc.JdbcTypeConverter;
 import com.google.cloud.spanner.jdbc.JdbcSqlExceptionFactory.JdbcSqlExceptionImpl;
 import com.google.common.io.CharStreams;
 import com.google.rpc.Code;
@@ -47,7 +49,7 @@ import java.util.Arrays;
 import java.util.List;
 
 /** This class handles the parameters of a {@link PreparedStatement}. */
-class JdbcParameterStore {
+public class JdbcParameterStore {
   /**
    * The initial size of the arrays that hold the parameter values. The array will automatically be
    * extended when needed.
@@ -310,13 +312,17 @@ class JdbcParameterStore {
   }
 
   /** Parameter information with positional parameters translated to named parameters. */
-  static class ParametersInfo {
+  public static class ParametersInfo {
     final int numberOfParameters;
     final String sqlWithNamedParameters;
 
     private ParametersInfo(int numberOfParameters, String sqlWithNamedParameters) {
       this.numberOfParameters = numberOfParameters;
       this.sqlWithNamedParameters = sqlWithNamedParameters;
+    }
+
+    public String getSqlWithNamedParameters() {
+      return sqlWithNamedParameters;
     }
   }
 
@@ -331,7 +337,7 @@ class JdbcParameterStore {
    *     positional parameters and the number of parameters.
    * @throws JdbcSqlExceptionImpl If the input sql string contains an unclosed string/byte literal.
    */
-  static ParametersInfo convertPositionalParametersToNamedParameters(String sql)
+  public static ParametersInfo convertPositionalParametersToNamedParameters(String sql)
       throws SQLException {
     final char POS_PARAM = '?';
     final char SINGLE_QUOTE = '\'';

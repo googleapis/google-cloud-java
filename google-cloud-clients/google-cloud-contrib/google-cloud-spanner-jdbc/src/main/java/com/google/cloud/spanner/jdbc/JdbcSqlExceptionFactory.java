@@ -178,7 +178,7 @@ public final class JdbcSqlExceptionFactory {
   }
 
   /** Creates a {@link JdbcSqlException} from the given {@link SpannerException}. */
-  static SQLException of(SpannerException e) {
+  public static SQLException of(SpannerException e) {
     switch (e.getErrorCode()) {
       case ABORTED:
         if (e instanceof AbortedDueToConcurrentModificationException) {
@@ -209,7 +209,7 @@ public final class JdbcSqlExceptionFactory {
   }
 
   /** Creates a {@link JdbcSqlException} with the given message and error code. */
-  static SQLException of(String message, Code code) {
+  public static SQLException of(String message, Code code) {
     switch (code) {
       case ABORTED:
         return new JdbcAbortedException(code.name() + ": " + message);
@@ -266,7 +266,7 @@ public final class JdbcSqlExceptionFactory {
   }
 
   /** Creates a {@link JdbcSqlException} with the given message, error code and cause. */
-  static SQLException of(String message, Code code, Throwable cause) {
+  public static SQLException of(String message, Code code, Throwable cause) {
     switch (code) {
       case ABORTED:
         if (cause instanceof AbortedDueToConcurrentModificationException) {
@@ -297,7 +297,7 @@ public final class JdbcSqlExceptionFactory {
   }
 
   /** Creates a {@link JdbcSqlException} for unsupported methods/values. */
-  static SQLFeatureNotSupportedException unsupported(String message) {
+  public static SQLFeatureNotSupportedException unsupported(String message) {
     return new JdbcSqlFeatureNotSupportedException(message);
   }
 
@@ -307,7 +307,7 @@ public final class JdbcSqlExceptionFactory {
   }
 
   /** Creates a {@link JdbcSqlException} for batch update exceptions. */
-  static BatchUpdateException batchException(
+  public static BatchUpdateException batchException(
       int[] updateCounts, SpannerBatchUpdateException cause) {
     return new JdbcSqlBatchUpdateException(updateCounts, cause);
   }

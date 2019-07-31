@@ -14,13 +14,11 @@
  * limitations under the License.
  */
 
-package com.google.cloud.spanner.jdbc;
+package com.google.cloud.spanner.jdbc.statement;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
-import static org.mockito.Matchers.any;
-import static org.mockito.Matchers.anyString;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -30,6 +28,13 @@ import com.google.cloud.spanner.Statement;
 import com.google.cloud.spanner.Struct;
 import com.google.cloud.spanner.Type;
 import com.google.cloud.spanner.Type.StructField;
+import com.google.cloud.spanner.jdbc.CloudSpannerJdbcConnection;
+import com.google.cloud.spanner.jdbc.JdbcArray;
+import com.google.cloud.spanner.jdbc.JdbcBlob;
+import com.google.cloud.spanner.jdbc.JdbcClob;
+import com.google.cloud.spanner.jdbc.JdbcSqlException;
+import com.google.cloud.spanner.jdbc.statement.JdbcParameterMetaData;
+import com.google.cloud.spanner.jdbc.statement.JdbcPreparedStatement;
 import com.google.rpc.Code;
 import java.io.ByteArrayInputStream;
 import java.io.StringReader;
@@ -85,36 +90,22 @@ public class JdbcPreparedStatementTest {
     return sql.toString();
   }
 
-  private JdbcConnection createMockConnection() throws SQLException {
-    return createMockConnection(mock(Connection.class));
-  }
-
-  private JdbcConnection createMockConnection(Connection spanner) throws SQLException {
-    JdbcConnection connection = mock(JdbcConnection.class);
-    when(connection.getSpannerConnection()).thenReturn(spanner);
-    when(connection.createBlob()).thenCallRealMethod();
-    when(connection.createClob()).thenCallRealMethod();
-    when(connection.createNClob()).thenCallRealMethod();
-    when(connection.createArrayOf(anyString(), any(Object[].class))).thenCallRealMethod();
-
-    return connection;
-  }
-
   @Test
   public void testParameters() throws SQLException, MalformedURLException {
     final int numberOfParams = 48;
     String sql = generateSqlWithParameters(numberOfParams);
 
-    JdbcConnection connection = createMockConnection();
+    CloudSpannerJdbcConnection connection = mock(CloudSpannerJdbcConnection.class);
     try (JdbcPreparedStatement ps = new JdbcPreparedStatement(connection, sql)) {
-      ps.setArray(1, connection.createArrayOf("INT64", new Long[] {1L, 2L, 3L}));
+
+      ps.setArray(1, JdbcArray.createArray("INT64", new Long[] {1L, 2L, 3L}));
       ps.setAsciiStream(2, new ByteArrayInputStream("TEST".getBytes()));
       ps.setAsciiStream(3, new ByteArrayInputStream("TEST".getBytes()), 4);
       ps.setAsciiStream(4, new ByteArrayInputStream("TEST".getBytes()), 4l);
       ps.setBinaryStream(6, new ByteArrayInputStream("TEST".getBytes()));
       ps.setBinaryStream(7, new ByteArrayInputStream("TEST".getBytes()), 4);
       ps.setBinaryStream(8, new ByteArrayInputStream("TEST".getBytes()), 4l);
-      ps.setBlob(9, connection.createBlob());
+      ps.setBlob(9, new JdbcBlob(new byte[] {1,2,3}));
       ps.setBlob(10, new ByteArrayInputStream("TEST".getBytes()));
       ps.setBlob(11, new ByteArrayInputStream("TEST".getBytes()), 4l);
       ps.setBoolean(12, Boolean.TRUE);
@@ -123,7 +114,7 @@ public class JdbcPreparedStatementTest {
       ps.setCharacterStream(15, new StringReader("TEST"));
       ps.setCharacterStream(16, new StringReader("TEST"), 4);
       ps.setCharacterStream(17, new StringReader("TEST"), 4l);
-      ps.setClob(18, connection.createClob());
+      ps.setClob(18, new JdbcClob("TEST"));
       ps.setClob(19, new StringReader("TEST"));
       ps.setClob(20, new StringReader("TEST"), 4l);
       ps.setDate(21, new Date(1000l));
@@ -134,7 +125,7 @@ public class JdbcPreparedStatementTest {
       ps.setLong(26, 1l);
       ps.setNCharacterStream(27, new StringReader("TEST"));
       ps.setNCharacterStream(28, new StringReader("TEST"), 4l);
-      ps.setNClob(29, connection.createNClob());
+      ps.setNClob(29, new JdbcClob("TEST"));
       ps.setNClob(30, new StringReader("TEST"));
       ps.setNClob(31, new StringReader("TEST"), 4l);
       ps.setNString(32, "TEST");
@@ -253,7 +244,7 @@ public class JdbcPreparedStatementTest {
   @Test
   public void testSetNullValues() throws SQLException {
     String sql = generateSqlWithParameters(27);
-    try (JdbcPreparedStatement ps = new JdbcPreparedStatement(createMockConnection(), sql)) {
+    try (JdbcPreparedStatement ps = new JdbcPreparedStatement(mock(CloudSpannerJdbcConnection.class), sql)) {
       ps.setNull(1, Types.BLOB);
       ps.setNull(2, Types.NVARCHAR);
       ps.setNull(4, Types.BINARY);
@@ -293,7 +284,7 @@ public class JdbcPreparedStatementTest {
   @Test
   public void testGetResultSetMetadata() throws SQLException {
     final String sql = "SELECT * FROM FOO";
-    Connection connection = mock(Connection.class);
+    CloudSpannerJdbcConnection connection = mock(CloudSpannerJdbcConnection.class);
     ResultSet rs =
         ResultSets.forRows(
             Type.struct(
@@ -311,7 +302,7 @@ public class JdbcPreparedStatementTest {
                     .build()));
     when(connection.executeQuery(Statement.of(sql))).thenReturn(rs);
     try (JdbcPreparedStatement ps =
-        new JdbcPreparedStatement(createMockConnection(connection), sql)) {
+        new JdbcPreparedStatement(connection, sql)) {
       ResultSetMetaData metadata = ps.getMetaData();
       assertThat(metadata.getColumnCount(), is(equalTo(3)));
       assertThat(metadata.getColumnLabel(1), is(equalTo("ID")));

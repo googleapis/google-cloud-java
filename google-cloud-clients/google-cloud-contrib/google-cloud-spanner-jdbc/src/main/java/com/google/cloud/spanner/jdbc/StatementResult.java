@@ -23,7 +23,7 @@ import com.google.cloud.spanner.ResultSet;
  * Connection#execute(com.google.cloud.spanner.Statement)} method could have different types of
  * return values. These are wrapped in a {@link StatementResult}.
  */
-interface StatementResult {
+public interface StatementResult {
 
   /**
    * Enum indicating the type of result that was returned by {@link

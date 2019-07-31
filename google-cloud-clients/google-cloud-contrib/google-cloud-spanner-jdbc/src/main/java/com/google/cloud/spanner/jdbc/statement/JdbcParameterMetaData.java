@@ -14,9 +14,10 @@
  * limitations under the License.
  */
 
-package com.google.cloud.spanner.jdbc;
+package com.google.cloud.spanner.jdbc.statement;
 
-import com.google.cloud.spanner.jdbc.JdbcParameterStore.ParametersInfo;
+import com.google.cloud.spanner.jdbc.AbstractJdbcWrapper;
+import com.google.cloud.spanner.jdbc.statement.JdbcParameterStore.ParametersInfo;
 import java.math.BigDecimal;
 import java.sql.Date;
 import java.sql.ParameterMetaData;
