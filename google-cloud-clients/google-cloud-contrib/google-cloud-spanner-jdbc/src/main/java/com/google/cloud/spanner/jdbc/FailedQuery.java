@@ -67,7 +67,7 @@ final class FailedQuery implements RetriableStatement {
               statement, StatementExecutionStep.RETRY_STATEMENT, transaction);
       try (ResultSet rs =
           DirectExecuteResultSet.ofResultSet(
-              internalExecuteQuery(statement, analyzeMode, options))) {
+              transaction.internalExecuteQuery(statement, analyzeMode, options))) {
         // Do nothing with the results, we are only interested in whether the statement throws the
         // same exception as in the original transaction.
       }
