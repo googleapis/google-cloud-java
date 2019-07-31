@@ -30,6 +30,7 @@ import com.google.cloud.firestore.spi.v1.FirestoreRpc;
 import com.google.cloud.firestore.spi.v1.GrpcFirestoreRpc;
 import com.google.cloud.firestore.v1.FirestoreSettings;
 import com.google.cloud.grpc.GrpcTransportOptions;
+import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import io.grpc.ManagedChannelBuilder;
 import java.io.IOException;
@@ -258,12 +259,8 @@ public final class FirestoreOptions extends ServiceOptions<Firestore, FirestoreO
     }
 
     public class FakeCredentials extends Credentials {
-      private Map<String, List<String>> headers;
-
-      public FakeCredentials() {
-        headers = new HashMap<>();
-        headers.put("Authorization", Arrays.asList("Bearer owner"));
-      }
+      private final Map<String, List<String>> HEADERS =
+          ImmutableMap.of("Authorization", Arrays.asList("Bearer owner"));
 
       @Override
       public String getAuthenticationType() {
@@ -272,7 +269,7 @@ public final class FirestoreOptions extends ServiceOptions<Firestore, FirestoreO
 
       @Override
       public Map<String, List<String>> getRequestMetadata(URI uri) {
-        return headers;
+        return HEADERS;
       }
 
       @Override
