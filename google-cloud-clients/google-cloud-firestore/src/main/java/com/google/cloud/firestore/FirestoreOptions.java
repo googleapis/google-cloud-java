@@ -35,7 +35,11 @@ import com.google.common.collect.ImmutableSet;
 import io.grpc.ManagedChannelBuilder;
 import java.io.IOException;
 import java.net.URI;
-import java.util.*;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+import java.util.Set;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
@@ -225,10 +229,9 @@ public final class FirestoreOptions extends ServiceOptions<Firestore, FirestoreO
       // Override credentials and channel provider if we are using the emulator.
       String emulatorHost = System.getenv(FIRESTORE_EMULATOR_SYSTEM_VARIABLE);
       if (emulatorHost != null) {
-        String hostUrlString = "http://" + emulatorHost;
-
         // Try creating a host in order to validate that the host name is valid.
         try {
+          String hostUrlString = "http://" + emulatorHost;
           URI.create(hostUrlString);
         } catch (Exception e) {
           throw new IllegalArgumentException(
