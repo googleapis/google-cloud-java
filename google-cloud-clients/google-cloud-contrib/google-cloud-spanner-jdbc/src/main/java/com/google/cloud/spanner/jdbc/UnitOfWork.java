@@ -83,8 +83,8 @@ interface UnitOfWork {
    * Type#TRANSACTION}.
    *
    * @return the update counts in case of a DML batch. Returns an array containing 1 for each
-   * successful statement and 0 for each failed statement or statement that was not executed DDL
-   * in case of a DDL batch.
+   *     successful statement and 0 for each failed statement or statement that was not executed DDL
+   *     in case of a DDL batch.
    */
   long[] runBatch();
 

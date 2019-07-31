@@ -16,6 +16,7 @@
 
 package com.google.cloud.spanner.jdbc;
 
+import com.google.rpc.Code;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -24,7 +25,6 @@ import java.sql.SQLFeatureNotSupportedException;
 import java.util.Properties;
 import java.util.logging.Logger;
 import javax.sql.DataSource;
-import com.google.rpc.Code;
 
 /** {@link DataSource} implementation for Google Cloud Spanner. */
 public class JdbcDataSource extends AbstractJdbcWrapper implements DataSource {
@@ -72,8 +72,8 @@ public class JdbcDataSource extends AbstractJdbcWrapper implements DataSource {
   @Override
   public Connection getConnection() throws SQLException {
     if (getUrl() == null) {
-      throw JdbcSqlExceptionFactory.of("There is no URL specified for this data source",
-          Code.FAILED_PRECONDITION);
+      throw JdbcSqlExceptionFactory.of(
+          "There is no URL specified for this data source", Code.FAILED_PRECONDITION);
     }
     if (!JdbcDriver.getRegisteredDriver().acceptsURL(getUrl())) {
       throw JdbcSqlExceptionFactory.of(
@@ -94,14 +94,15 @@ public class JdbcDataSource extends AbstractJdbcWrapper implements DataSource {
       props.setProperty(ConnectionOptions.CREDENTIALS_PROPERTY_NAME, this.credentials);
     }
     if (this.autocommit != null) {
-      props.setProperty(ConnectionOptions.AUTOCOMMIT_PROPERTY_NAME,
-          String.valueOf(this.autocommit));
+      props.setProperty(
+          ConnectionOptions.AUTOCOMMIT_PROPERTY_NAME, String.valueOf(this.autocommit));
     }
     if (this.readonly != null) {
       props.setProperty(ConnectionOptions.READONLY_PROPERTY_NAME, String.valueOf(this.readonly));
     }
     if (this.retryAbortsInternally != null) {
-      props.setProperty(ConnectionOptions.RETRY_ABORTS_INTERNALLY_PROPERTY_NAME,
+      props.setProperty(
+          ConnectionOptions.RETRY_ABORTS_INTERNALLY_PROPERTY_NAME,
           String.valueOf(this.retryAbortsInternally));
     }
     return props;
@@ -112,24 +113,20 @@ public class JdbcDataSource extends AbstractJdbcWrapper implements DataSource {
     return false;
   }
 
-  /**
-   * @return the JDBC URL to use for this {@link DataSource}.
-   */
+  /** @return the JDBC URL to use for this {@link DataSource}. */
   public String getUrl() {
     return url;
   }
 
-  /**
-   * @param url The JDBC URL to use for this {@link DataSource}.
-   */
+  /** @param url The JDBC URL to use for this {@link DataSource}. */
   public void setUrl(String url) {
     this.url = url;
   }
 
   /**
    * @return the credentials URL to use for this {@link DataSource}. If a credentials URL is
-   *         specified in both the connection URL and using this property, the value in the
-   *         connection URL will be used.
+   *     specified in both the connection URL and using this property, the value in the connection
+   *     URL will be used.
    */
   public String getCredentials() {
     return credentials;
@@ -137,8 +134,8 @@ public class JdbcDataSource extends AbstractJdbcWrapper implements DataSource {
 
   /**
    * @param credentials The credentials URL to use for this {@link DataSource}. If a credentials URL
-   *        is specified in both the connection URL and using this property, the value in the
-   *        connection URL will be used.
+   *     is specified in both the connection URL and using this property, the value in the
+   *     connection URL will be used.
    */
   public void setCredentials(String credentials) {
     this.credentials = credentials;
@@ -146,8 +143,8 @@ public class JdbcDataSource extends AbstractJdbcWrapper implements DataSource {
 
   /**
    * @return the initial autocommit setting to use for this {@link DataSource}. If autocommit is
-   *         specified in both the connection URL and using this property, the value in the
-   *         connection URL will be used.
+   *     specified in both the connection URL and using this property, the value in the connection
+   *     URL will be used.
    */
   public Boolean getAutocommit() {
     return autocommit;
@@ -155,8 +152,8 @@ public class JdbcDataSource extends AbstractJdbcWrapper implements DataSource {
 
   /**
    * @param autocommit The initial autocommit setting to use for this {@link DataSource}. If
-   *        autocommit is specified in both the connection URL and using this property, the value in
-   *        the connection URL will be used.
+   *     autocommit is specified in both the connection URL and using this property, the value in
+   *     the connection URL will be used.
    */
   public void setAutocommit(Boolean autocommit) {
     this.autocommit = autocommit;
@@ -164,8 +161,8 @@ public class JdbcDataSource extends AbstractJdbcWrapper implements DataSource {
 
   /**
    * @return the initial readonly setting to use for this {@link DataSource}. If readonly is
-   *         specified in both the connection URL and using this property, the value in the
-   *         connection URL will be used.
+   *     specified in both the connection URL and using this property, the value in the connection
+   *     URL will be used.
    */
   public Boolean getReadonly() {
     return readonly;
@@ -173,8 +170,8 @@ public class JdbcDataSource extends AbstractJdbcWrapper implements DataSource {
 
   /**
    * @param readonly The initial readonly setting to use for this {@link DataSource}. If readonly is
-   *        specified in both the connection URL and using this property, the value in the
-   *        connection URL will be used.
+   *     specified in both the connection URL and using this property, the value in the connection
+   *     URL will be used.
    */
   public void setReadonly(Boolean readonly) {
     this.readonly = readonly;
@@ -182,17 +179,17 @@ public class JdbcDataSource extends AbstractJdbcWrapper implements DataSource {
 
   /**
    * @return the initial retryAbortsInternally setting to use for this {@link DataSource}. If
-   *         retryAbortsInternally is specified in both the connection URL and using this property,
-   *         the value in the connection URL will be used.
+   *     retryAbortsInternally is specified in both the connection URL and using this property, the
+   *     value in the connection URL will be used.
    */
   public Boolean getRetryAbortsInternally() {
     return retryAbortsInternally;
   }
 
   /**
-   * @param retryAbortsInternally The initial retryAbortsInternally setting to use for this
-   *        {@link DataSource}. If retryAbortsInternally is specified in both the connection URL and
-   *        using this property, the value in the connection URL will be used.
+   * @param retryAbortsInternally The initial retryAbortsInternally setting to use for this {@link
+   *     DataSource}. If retryAbortsInternally is specified in both the connection URL and using
+   *     this property, the value in the connection URL will be used.
    */
   public void setRetryAbortsInternally(Boolean retryAbortsInternally) {
     this.retryAbortsInternally = retryAbortsInternally;

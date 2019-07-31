@@ -16,6 +16,13 @@
 
 package com.google.cloud.spanner.jdbc;
 
+import com.google.cloud.ByteArray;
+import com.google.cloud.spanner.Statement;
+import com.google.cloud.spanner.Statement.Builder;
+import com.google.cloud.spanner.ValueBinder;
+import com.google.cloud.spanner.jdbc.JdbcSqlExceptionFactory.JdbcSqlExceptionImpl;
+import com.google.common.io.CharStreams;
+import com.google.rpc.Code;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -38,13 +45,6 @@ import java.sql.Types;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import com.google.cloud.ByteArray;
-import com.google.cloud.spanner.Statement;
-import com.google.cloud.spanner.Statement.Builder;
-import com.google.cloud.spanner.ValueBinder;
-import com.google.cloud.spanner.jdbc.JdbcSqlExceptionFactory.JdbcSqlExceptionImpl;
-import com.google.common.io.CharStreams;
-import com.google.rpc.Code;
 
 /** This class handles the parameters of a {@link PreparedStatement}. */
 class JdbcParameterStore {
@@ -85,37 +85,32 @@ class JdbcParameterStore {
   /** Get parameter value. Index is 1-based. */
   Object getParameter(int parameterIndex) {
     int arrayIndex = parameterIndex - 1;
-    if (arrayIndex >= parametersList.size() || parametersList.get(arrayIndex) == null)
-      return null;
+    if (arrayIndex >= parametersList.size() || parametersList.get(arrayIndex) == null) return null;
     return parametersList.get(arrayIndex).value;
   }
 
   /** Get parameter type code according to the values in {@link Types}. Index is 1-based. */
   Integer getType(int parameterIndex) {
     int arrayIndex = parameterIndex - 1;
-    if (arrayIndex >= parametersList.size() || parametersList.get(arrayIndex) == null)
-      return null;
+    if (arrayIndex >= parametersList.size() || parametersList.get(arrayIndex) == null) return null;
     return parametersList.get(arrayIndex).type;
   }
 
   Integer getNullable(int parameterIndex) {
     int arrayIndex = parameterIndex - 1;
-    if (arrayIndex >= parametersList.size() || parametersList.get(arrayIndex) == null)
-      return null;
+    if (arrayIndex >= parametersList.size() || parametersList.get(arrayIndex) == null) return null;
     return parametersList.get(arrayIndex).nullable;
   }
 
   Integer getScaleOrLength(int parameterIndex) {
     int arrayIndex = parameterIndex - 1;
-    if (arrayIndex >= parametersList.size() || parametersList.get(arrayIndex) == null)
-      return null;
+    if (arrayIndex >= parametersList.size() || parametersList.get(arrayIndex) == null) return null;
     return parametersList.get(arrayIndex).scaleOrLength;
   }
 
   String getColumn(int parameterIndex) {
     int arrayIndex = parameterIndex - 1;
-    if (arrayIndex >= parametersList.size() || parametersList.get(arrayIndex) == null)
-      return null;
+    if (arrayIndex >= parametersList.size() || parametersList.get(arrayIndex) == null) return null;
     return parametersList.get(arrayIndex).column;
   }
 
@@ -128,13 +123,21 @@ class JdbcParameterStore {
   }
 
   void setColumn(int parameterIndex, String column) throws SQLException {
-    setParameter(parameterIndex, getParameter(parameterIndex), getType(parameterIndex),
-        getScaleOrLength(parameterIndex), column);
+    setParameter(
+        parameterIndex,
+        getParameter(parameterIndex),
+        getType(parameterIndex),
+        getScaleOrLength(parameterIndex),
+        column);
   }
 
   void setType(int parameterIndex, Integer type) throws SQLException {
-    setParameter(parameterIndex, getParameter(parameterIndex), type,
-        getScaleOrLength(parameterIndex), getColumn(parameterIndex));
+    setParameter(
+        parameterIndex,
+        getParameter(parameterIndex),
+        type,
+        getScaleOrLength(parameterIndex),
+        getColumn(parameterIndex));
   }
 
   void setParameter(int parameterIndex, Object value, Integer sqlType) throws SQLException {
@@ -146,8 +149,9 @@ class JdbcParameterStore {
     setParameter(parameterIndex, value, sqlType, scaleOrLength, null);
   }
 
-  void setParameter(int parameterIndex, Object value, Integer sqlType, Integer scaleOrLength,
-      String column) throws SQLException {
+  void setParameter(
+      int parameterIndex, Object value, Integer sqlType, Integer scaleOrLength, String column)
+      throws SQLException {
     // check that only valid type/value combinations are entered
     if (sqlType != null) {
       checkTypeAndValueSupported(value, sqlType);
@@ -157,7 +161,7 @@ class JdbcParameterStore {
     int arrayIndex = parameterIndex - 1;
     if (arrayIndex >= parametersList.size() || parametersList.get(arrayIndex) == null) {
       parametersList.ensureCapacity(parameterIndex);
-      while(parametersList.size() < parameterIndex) {
+      while (parametersList.size() < parameterIndex) {
         parametersList.add(null);
       }
       parametersList.set(arrayIndex, new JdbcParameter());
@@ -171,12 +175,12 @@ class JdbcParameterStore {
 
   private void checkTypeAndValueSupported(Object value, int sqlType) throws SQLException {
     if (!isTypeSupported(sqlType)) {
-      throw JdbcSqlExceptionFactory.of("Type " + sqlType + " is not supported",
-          Code.INVALID_ARGUMENT);
+      throw JdbcSqlExceptionFactory.of(
+          "Type " + sqlType + " is not supported", Code.INVALID_ARGUMENT);
     }
     if (!isValidTypeAndValue(value, sqlType)) {
-      throw JdbcSqlExceptionFactory.of(value + " is not a valid value for type " + sqlType,
-          Code.INVALID_ARGUMENT);
+      throw JdbcSqlExceptionFactory.of(
+          value + " is not a valid value for type " + sqlType, Code.INVALID_ARGUMENT);
     }
   }
 
@@ -242,7 +246,9 @@ class JdbcParameterStore {
       case Types.NCHAR:
       case Types.NVARCHAR:
       case Types.LONGNVARCHAR:
-        return value instanceof String || value instanceof InputStream || value instanceof Reader
+        return value instanceof String
+            || value instanceof InputStream
+            || value instanceof Reader
             || value instanceof URL;
       case Types.DATE:
       case Types.TIME:
@@ -278,7 +284,7 @@ class JdbcParameterStore {
           int arrayIndex = getParameterArrayIndex(col);
           if (arrayIndex > -1) {
             JdbcParameter param = parametersList.get(arrayIndex);
-            if(param != null) {
+            if (param != null) {
               param.scaleOrLength = rsCols.getInt("COLUMN_SIZE");
               param.type = rsCols.getInt("DATA_TYPE");
               param.nullable = rsCols.getInt("NULLABLE");
@@ -290,11 +296,11 @@ class JdbcParameterStore {
   }
 
   private int getParameterArrayIndex(String columnName) {
-    if(columnName != null) {
+    if (columnName != null) {
       for (int index = 0; index < highestIndex; index++) {
         JdbcParameter param = parametersList.get(index);
-        if(param != null && param.column != null) {
-          if(columnName.equalsIgnoreCase(param.column)) {
+        if (param != null && param.column != null) {
+          if (columnName.equalsIgnoreCase(param.column)) {
             return index;
           }
         }
@@ -322,7 +328,7 @@ class JdbcParameterStore {
    *
    * @param sql The sql string without comments that should be converted
    * @return A {@link ParametersInfo} object containing a string with named parameters instead of
-   *         positional parameters and the number of parameters.
+   *     positional parameters and the number of parameters.
    * @throws JdbcSqlExceptionImpl If the input sql string contains an unclosed string/byte literal.
    */
   static ParametersInfo convertPositionalParametersToNamedParameters(String sql)
@@ -341,13 +347,14 @@ class JdbcParameterStore {
       char c = sql.charAt(index);
       if (isInQuoted) {
         if ((c == '\n' || c == '\r') && !isTripleQuoted) {
-          throw JdbcSqlExceptionFactory.of("SQL statement contains an unclosed literal: " + sql,
-              Code.INVALID_ARGUMENT);
+          throw JdbcSqlExceptionFactory.of(
+              "SQL statement contains an unclosed literal: " + sql, Code.INVALID_ARGUMENT);
         } else if (c == startQuote) {
           if (lastCharWasEscapeChar) {
             lastCharWasEscapeChar = false;
           } else if (isTripleQuoted) {
-            if (sql.length() > index + 2 && sql.charAt(index + 1) == startQuote
+            if (sql.length() > index + 2
+                && sql.charAt(index + 1) == startQuote
                 && sql.charAt(index + 2) == startQuote) {
               isInQuoted = false;
               startQuote = 0;
@@ -372,7 +379,8 @@ class JdbcParameterStore {
             isInQuoted = true;
             startQuote = c;
             // check whether it is a triple-quote
-            if (sql.length() > index + 2 && sql.charAt(index + 1) == startQuote
+            if (sql.length() > index + 2
+                && sql.charAt(index + 1) == startQuote
                 && sql.charAt(index + 2) == startQuote) {
               isTripleQuoted = true;
             }
@@ -382,14 +390,14 @@ class JdbcParameterStore {
       }
     }
     if (isInQuoted) {
-      throw JdbcSqlExceptionFactory.of("SQL statement contains an unclosed literal: " + sql,
-          Code.INVALID_ARGUMENT);
+      throw JdbcSqlExceptionFactory.of(
+          "SQL statement contains an unclosed literal: " + sql, Code.INVALID_ARGUMENT);
     }
     return new ParametersInfo(paramIndex - 1, named.toString());
   }
 
   /** Convenience method that is used to estimate the number of parameters in a SQL statement. */
-  static private int countOccurrencesOf(char c, String string) {
+  private static int countOccurrencesOf(char c, String string) {
     int res = 0;
     for (int i = 0; i < string.length(); i++) {
       if (string.charAt(i) == c) {
@@ -466,8 +474,8 @@ class JdbcParameterStore {
       case Types.NUMERIC:
       case Types.DECIMAL:
         // currently not supported as Cloud Spanner does not have any decimal data type.
-        throw JdbcSqlExceptionFactory.of("DECIMAL/NUMERIC values are not supported",
-            Code.INVALID_ARGUMENT);
+        throw JdbcSqlExceptionFactory.of(
+            "DECIMAL/NUMERIC values are not supported", Code.INVALID_ARGUMENT);
       case Types.CHAR:
       case Types.VARCHAR:
       case Types.LONGVARCHAR:
@@ -482,15 +490,15 @@ class JdbcParameterStore {
           try {
             return binder.to(CharStreams.toString(reader));
           } catch (IOException e) {
-            throw JdbcSqlExceptionFactory.of("could not set string from input stream",
-                Code.INVALID_ARGUMENT, e);
+            throw JdbcSqlExceptionFactory.of(
+                "could not set string from input stream", Code.INVALID_ARGUMENT, e);
           }
         } else if (value instanceof Reader) {
           try {
             return binder.to(CharStreams.toString((Reader) value));
           } catch (IOException e) {
-            throw JdbcSqlExceptionFactory.of("could not set string from reader",
-                Code.INVALID_ARGUMENT, e);
+            throw JdbcSqlExceptionFactory.of(
+                "could not set string from reader", Code.INVALID_ARGUMENT, e);
           }
         } else if (value instanceof URL) {
           return binder.to(((URL) value).toString());
@@ -514,8 +522,8 @@ class JdbcParameterStore {
         } else if (value instanceof Timestamp) {
           return binder.to(JdbcTypeConverter.toGoogleTimestamp((Timestamp) value));
         }
-        throw JdbcSqlExceptionFactory.of(value + " is not a valid timestamp",
-            Code.INVALID_ARGUMENT);
+        throw JdbcSqlExceptionFactory.of(
+            value + " is not a valid timestamp", Code.INVALID_ARGUMENT);
       case Types.BINARY:
       case Types.VARBINARY:
       case Types.LONGVARBINARY:
@@ -526,12 +534,13 @@ class JdbcParameterStore {
             return binder.to(ByteArray.copyFrom((InputStream) value));
           } catch (IOException e) {
             throw JdbcSqlExceptionFactory.of(
-                "Could not copy bytes from input stream: " + e.getMessage(), Code.INVALID_ARGUMENT,
+                "Could not copy bytes from input stream: " + e.getMessage(),
+                Code.INVALID_ARGUMENT,
                 e);
           }
         }
-        throw JdbcSqlExceptionFactory.of(value + " is not a valid byte array",
-            Code.INVALID_ARGUMENT);
+        throw JdbcSqlExceptionFactory.of(
+            value + " is not a valid byte array", Code.INVALID_ARGUMENT);
       case Types.ARRAY:
         if (value instanceof Array) {
           Array jdbcArray = (Array) value;
@@ -543,15 +552,15 @@ class JdbcParameterStore {
           try {
             return binder.to(ByteArray.copyFrom(((Blob) value).getBinaryStream()));
           } catch (IOException e) {
-            throw JdbcSqlExceptionFactory.of("could not set bytes from blob", Code.INVALID_ARGUMENT,
-                e);
+            throw JdbcSqlExceptionFactory.of(
+                "could not set bytes from blob", Code.INVALID_ARGUMENT, e);
           }
         } else if (value instanceof InputStream) {
           try {
             return binder.to(ByteArray.copyFrom((InputStream) value));
           } catch (IOException e) {
-            throw JdbcSqlExceptionFactory.of("could not set bytes from input stream",
-                Code.INVALID_ARGUMENT, e);
+            throw JdbcSqlExceptionFactory.of(
+                "could not set bytes from input stream", Code.INVALID_ARGUMENT, e);
           }
         }
         throw JdbcSqlExceptionFactory.of(value + " is not a valid blob", Code.INVALID_ARGUMENT);
@@ -561,15 +570,15 @@ class JdbcParameterStore {
           try {
             return binder.to(CharStreams.toString(((Clob) value).getCharacterStream()));
           } catch (IOException e) {
-            throw JdbcSqlExceptionFactory.of("could not set string from clob",
-                Code.INVALID_ARGUMENT, e);
+            throw JdbcSqlExceptionFactory.of(
+                "could not set string from clob", Code.INVALID_ARGUMENT, e);
           }
         } else if (value instanceof Reader) {
           try {
             return binder.to(CharStreams.toString((Reader) value));
           } catch (IOException e) {
-            throw JdbcSqlExceptionFactory.of("could not set string from reader",
-                Code.INVALID_ARGUMENT, e);
+            throw JdbcSqlExceptionFactory.of(
+                "could not set string from reader", Code.INVALID_ARGUMENT, e);
           }
         }
         throw JdbcSqlExceptionFactory.of(value + " is not a valid clob", Code.INVALID_ARGUMENT);
@@ -684,8 +693,8 @@ class JdbcParameterStore {
           return binder.toFloat64Array((double[]) null);
         case Types.NUMERIC:
         case Types.DECIMAL:
-          throw JdbcSqlExceptionFactory.of("DECIMAL/NUMERIC values are not supported",
-              Code.INVALID_ARGUMENT);
+          throw JdbcSqlExceptionFactory.of(
+              "DECIMAL/NUMERIC values are not supported", Code.INVALID_ARGUMENT);
         case Types.CHAR:
         case Types.VARCHAR:
         case Types.LONGVARCHAR:
@@ -802,8 +811,8 @@ class JdbcParameterStore {
       case Types.NUMERIC:
       case Types.DECIMAL:
         // currently not supported
-        throw JdbcSqlExceptionFactory.of("DECIMAL/NUMERIC values are not supported",
-            Code.INVALID_ARGUMENT);
+        throw JdbcSqlExceptionFactory.of(
+            "DECIMAL/NUMERIC values are not supported", Code.INVALID_ARGUMENT);
       case Types.DOUBLE:
         return binder.to((Double) null);
       case Types.FLOAT:
@@ -842,5 +851,4 @@ class JdbcParameterStore {
         throw new IllegalArgumentException("Unsupported sql type for setting to null: " + sqlType);
     }
   }
-
 }

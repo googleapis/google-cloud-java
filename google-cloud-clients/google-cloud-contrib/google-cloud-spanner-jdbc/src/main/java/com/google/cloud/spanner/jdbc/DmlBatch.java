@@ -16,8 +16,6 @@
 
 package com.google.cloud.spanner.jdbc;
 
-import java.util.ArrayList;
-import java.util.List;
 import com.google.cloud.Timestamp;
 import com.google.cloud.spanner.ErrorCode;
 import com.google.cloud.spanner.Mutation;
@@ -28,6 +26,8 @@ import com.google.cloud.spanner.SpannerExceptionFactory;
 import com.google.cloud.spanner.jdbc.StatementParser.ParsedStatement;
 import com.google.cloud.spanner.jdbc.StatementParser.StatementType;
 import com.google.common.base.Preconditions;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * {@link UnitOfWork} that is used when a DML batch is started. These batches only accept DML
@@ -87,16 +87,16 @@ class DmlBatch extends AbstractBaseUnitOfWork {
   }
 
   @Override
-  public ResultSet executeQuery(ParsedStatement statement, AnalyzeMode analyzeMode,
-      QueryOption... options) {
-    throw SpannerExceptionFactory.newSpannerException(ErrorCode.FAILED_PRECONDITION,
-        "Executing queries is not allowed for DML batches.");
+  public ResultSet executeQuery(
+      ParsedStatement statement, AnalyzeMode analyzeMode, QueryOption... options) {
+    throw SpannerExceptionFactory.newSpannerException(
+        ErrorCode.FAILED_PRECONDITION, "Executing queries is not allowed for DML batches.");
   }
 
   @Override
   public Timestamp getReadTimestamp() {
-    throw SpannerExceptionFactory.newSpannerException(ErrorCode.FAILED_PRECONDITION,
-        "There is no read timestamp available for DML batches.");
+    throw SpannerExceptionFactory.newSpannerException(
+        ErrorCode.FAILED_PRECONDITION, "There is no read timestamp available for DML batches.");
   }
 
   @Override
@@ -106,8 +106,8 @@ class DmlBatch extends AbstractBaseUnitOfWork {
 
   @Override
   public Timestamp getCommitTimestamp() {
-    throw SpannerExceptionFactory.newSpannerException(ErrorCode.FAILED_PRECONDITION,
-        "There is no commit timestamp available for DML batches.");
+    throw SpannerExceptionFactory.newSpannerException(
+        ErrorCode.FAILED_PRECONDITION, "There is no commit timestamp available for DML batches.");
   }
 
   @Override
@@ -117,16 +117,19 @@ class DmlBatch extends AbstractBaseUnitOfWork {
 
   @Override
   public void executeDdl(ParsedStatement ddl) {
-    throw SpannerExceptionFactory.newSpannerException(ErrorCode.FAILED_PRECONDITION,
-        "Executing DDL statements is not allowed for DML batches.");
+    throw SpannerExceptionFactory.newSpannerException(
+        ErrorCode.FAILED_PRECONDITION, "Executing DDL statements is not allowed for DML batches.");
   }
 
   @Override
   public long executeUpdate(ParsedStatement update) {
-    ConnectionPreconditions.checkState(state == UnitOfWorkState.STARTED,
+    ConnectionPreconditions.checkState(
+        state == UnitOfWorkState.STARTED,
         "The batch is no longer active and cannot be used for further statements");
-    Preconditions.checkArgument(update.getType() == StatementType.UPDATE,
-        "Only DML statements are allowed. \"" + update.getSqlWithoutComments()
+    Preconditions.checkArgument(
+        update.getType() == StatementType.UPDATE,
+        "Only DML statements are allowed. \""
+            + update.getSqlWithoutComments()
             + "\" is not a DML-statement.");
     statements.add(update);
     return -1L;
@@ -134,26 +137,26 @@ class DmlBatch extends AbstractBaseUnitOfWork {
 
   @Override
   public long[] executeBatchUpdate(Iterable<ParsedStatement> updates) {
-    throw SpannerExceptionFactory.newSpannerException(ErrorCode.FAILED_PRECONDITION,
-        "Executing batch updates is not allowed for DML batches.");
+    throw SpannerExceptionFactory.newSpannerException(
+        ErrorCode.FAILED_PRECONDITION, "Executing batch updates is not allowed for DML batches.");
   }
 
   @Override
   public void write(Mutation mutation) {
-    throw SpannerExceptionFactory.newSpannerException(ErrorCode.FAILED_PRECONDITION,
-        "Writing mutations is not allowed for DML batches.");
+    throw SpannerExceptionFactory.newSpannerException(
+        ErrorCode.FAILED_PRECONDITION, "Writing mutations is not allowed for DML batches.");
   }
 
   @Override
   public void write(Iterable<Mutation> mutations) {
-    throw SpannerExceptionFactory.newSpannerException(ErrorCode.FAILED_PRECONDITION,
-        "Writing mutations is not allowed for DML batches.");
+    throw SpannerExceptionFactory.newSpannerException(
+        ErrorCode.FAILED_PRECONDITION, "Writing mutations is not allowed for DML batches.");
   }
 
   @Override
   public long[] runBatch() {
-    ConnectionPreconditions.checkState(state == UnitOfWorkState.STARTED,
-        "The batch is no longer active and cannot be ran");
+    ConnectionPreconditions.checkState(
+        state == UnitOfWorkState.STARTED, "The batch is no longer active and cannot be ran");
     try {
       long[] res;
       if (statements.isEmpty()) {
@@ -171,20 +174,20 @@ class DmlBatch extends AbstractBaseUnitOfWork {
 
   @Override
   public void abortBatch() {
-    ConnectionPreconditions.checkState(state == UnitOfWorkState.STARTED,
-        "The batch is no longer active and cannot be aborted.");
+    ConnectionPreconditions.checkState(
+        state == UnitOfWorkState.STARTED, "The batch is no longer active and cannot be aborted.");
     this.state = UnitOfWorkState.ABORTED;
   }
 
   @Override
   public void commit() {
-    throw SpannerExceptionFactory.newSpannerException(ErrorCode.FAILED_PRECONDITION,
-        "Commit is not allowed for DML batches.");
+    throw SpannerExceptionFactory.newSpannerException(
+        ErrorCode.FAILED_PRECONDITION, "Commit is not allowed for DML batches.");
   }
 
   @Override
   public void rollback() {
-    throw SpannerExceptionFactory.newSpannerException(ErrorCode.FAILED_PRECONDITION,
-        "Rollback is not allowed for DML batches.");
+    throw SpannerExceptionFactory.newSpannerException(
+        ErrorCode.FAILED_PRECONDITION, "Rollback is not allowed for DML batches.");
   }
 }

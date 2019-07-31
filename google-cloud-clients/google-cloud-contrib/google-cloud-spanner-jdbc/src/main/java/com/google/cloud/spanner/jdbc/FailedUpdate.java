@@ -16,18 +16,18 @@
 
 package com.google.cloud.spanner.jdbc;
 
-import java.util.Objects;
 import com.google.cloud.spanner.AbortedException;
 import com.google.cloud.spanner.SpannerException;
 import com.google.cloud.spanner.SpannerExceptionFactory;
 import com.google.cloud.spanner.jdbc.ReadWriteTransaction.RetriableStatement;
 import com.google.cloud.spanner.jdbc.StatementParser.ParsedStatement;
 import com.google.common.base.Preconditions;
+import java.util.Objects;
 
 /**
  * An update that failed with a {@link SpannerException} on a {@link ReadWriteTransaction}. The
- * update can be retried if the transaction is aborted, and should throw the same exception
- * during retry as during the original transaction.
+ * update can be retried if the transaction is aborted, and should throw the same exception during
+ * retry as during the original transaction.
  */
 final class FailedUpdate implements RetriableStatement {
   private final ReadWriteTransaction transaction;
@@ -35,9 +35,7 @@ final class FailedUpdate implements RetriableStatement {
   private final ParsedStatement statement;
 
   FailedUpdate(
-      ReadWriteTransaction transaction,
-      SpannerException exception,
-      ParsedStatement statement) {
+      ReadWriteTransaction transaction, SpannerException exception, ParsedStatement statement) {
     Preconditions.checkNotNull(transaction);
     Preconditions.checkNotNull(exception);
     Preconditions.checkNotNull(statement);
@@ -50,13 +48,11 @@ final class FailedUpdate implements RetriableStatement {
   public void retry(AbortedException aborted) throws AbortedException {
     transaction
         .getStatementExecutor()
-        .invokeInterceptors(
-            statement, StatementExecutionStep.RETRY_STATEMENT, transaction);
+        .invokeInterceptors(statement, StatementExecutionStep.RETRY_STATEMENT, transaction);
     try {
       transaction
           .getStatementExecutor()
-          .invokeInterceptors(
-              statement, StatementExecutionStep.RETRY_STATEMENT, transaction);
+          .invokeInterceptors(statement, StatementExecutionStep.RETRY_STATEMENT, transaction);
       transaction.getReadContext().executeUpdate(statement.getStatement());
     } catch (SpannerException e) {
       // Check that we got the same exception as in the original transaction.

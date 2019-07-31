@@ -16,6 +16,8 @@
 
 package com.google.cloud.spanner.jdbc;
 
+import com.google.cloud.spanner.Mutation;
+import com.google.cloud.spanner.SpannerException;
 import java.sql.Array;
 import java.sql.Blob;
 import java.sql.Clob;
@@ -29,14 +31,15 @@ import java.sql.Timestamp;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
-import com.google.cloud.spanner.Mutation;
-import com.google.cloud.spanner.SpannerException;
 
 /** Jdbc Connection class for Google Cloud Spanner */
 class JdbcConnection extends AbstractJdbcConnection {
-  private static final String ONLY_RS_FORWARD_ONLY = "Only result sets of type TYPE_FORWARD_ONLY are supported";
-  private static final String ONLY_CONCUR_READ_ONLY = "Only result sets with concurrency CONCUR_READ_ONLY are supported";
-  private static final String ONLY_CLOSE_CURSORS_AT_COMMIT = "Only result sets with holdability CLOSE_CURSORS_AT_COMMIT are supported";
+  private static final String ONLY_RS_FORWARD_ONLY =
+      "Only result sets of type TYPE_FORWARD_ONLY are supported";
+  private static final String ONLY_CONCUR_READ_ONLY =
+      "Only result sets with concurrency CONCUR_READ_ONLY are supported";
+  private static final String ONLY_CLOSE_CURSORS_AT_COMMIT =
+      "Only result sets with holdability CLOSE_CURSORS_AT_COMMIT are supported";
   private static final String ONLY_NO_GENERATED_KEYS = "Only NO_GENERATED_KEYS are supported";
   private Map<String, Class<?>> typeMap = new HashMap<>();
 
@@ -60,7 +63,8 @@ class JdbcConnection extends AbstractJdbcConnection {
   public String nativeSQL(String sql) throws SQLException {
     checkClosed();
     return JdbcParameterStore.convertPositionalParametersToNamedParameters(
-        StatementParser.removeCommentsAndTrim(sql)).sqlWithNamedParameters;
+            StatementParser.removeCommentsAndTrim(sql))
+        .sqlWithNamedParameters;
   }
 
   @Override
@@ -145,24 +149,23 @@ class JdbcConnection extends AbstractJdbcConnection {
   public Statement createStatement(int resultSetType, int resultSetConcurrency)
       throws SQLException {
     checkClosed();
-    JdbcPreconditions.checkSqlFeatureSupported(resultSetType == ResultSet.TYPE_FORWARD_ONLY,
-        ONLY_RS_FORWARD_ONLY);
-    JdbcPreconditions.checkSqlFeatureSupported(resultSetConcurrency == ResultSet.CONCUR_READ_ONLY,
-        ONLY_CONCUR_READ_ONLY);
+    JdbcPreconditions.checkSqlFeatureSupported(
+        resultSetType == ResultSet.TYPE_FORWARD_ONLY, ONLY_RS_FORWARD_ONLY);
+    JdbcPreconditions.checkSqlFeatureSupported(
+        resultSetConcurrency == ResultSet.CONCUR_READ_ONLY, ONLY_CONCUR_READ_ONLY);
     return createStatement();
   }
 
   @Override
-  public Statement createStatement(int resultSetType, int resultSetConcurrency,
-      int resultSetHoldability) throws SQLException {
+  public Statement createStatement(
+      int resultSetType, int resultSetConcurrency, int resultSetHoldability) throws SQLException {
     checkClosed();
-    JdbcPreconditions.checkSqlFeatureSupported(resultSetType == ResultSet.TYPE_FORWARD_ONLY,
-        ONLY_RS_FORWARD_ONLY);
-    JdbcPreconditions.checkSqlFeatureSupported(resultSetConcurrency == ResultSet.CONCUR_READ_ONLY,
-        ONLY_CONCUR_READ_ONLY);
     JdbcPreconditions.checkSqlFeatureSupported(
-        resultSetHoldability == ResultSet.CLOSE_CURSORS_AT_COMMIT,
-        ONLY_CLOSE_CURSORS_AT_COMMIT);
+        resultSetType == ResultSet.TYPE_FORWARD_ONLY, ONLY_RS_FORWARD_ONLY);
+    JdbcPreconditions.checkSqlFeatureSupported(
+        resultSetConcurrency == ResultSet.CONCUR_READ_ONLY, ONLY_CONCUR_READ_ONLY);
+    JdbcPreconditions.checkSqlFeatureSupported(
+        resultSetHoldability == ResultSet.CLOSE_CURSORS_AT_COMMIT, ONLY_CLOSE_CURSORS_AT_COMMIT);
     return createStatement();
   }
 
@@ -170,32 +173,32 @@ class JdbcConnection extends AbstractJdbcConnection {
   public PreparedStatement prepareStatement(String sql, int resultSetType, int resultSetConcurrency)
       throws SQLException {
     checkClosed();
-    JdbcPreconditions.checkSqlFeatureSupported(resultSetType == ResultSet.TYPE_FORWARD_ONLY,
-        ONLY_RS_FORWARD_ONLY);
-    JdbcPreconditions.checkSqlFeatureSupported(resultSetConcurrency == ResultSet.CONCUR_READ_ONLY,
-        ONLY_CONCUR_READ_ONLY);
+    JdbcPreconditions.checkSqlFeatureSupported(
+        resultSetType == ResultSet.TYPE_FORWARD_ONLY, ONLY_RS_FORWARD_ONLY);
+    JdbcPreconditions.checkSqlFeatureSupported(
+        resultSetConcurrency == ResultSet.CONCUR_READ_ONLY, ONLY_CONCUR_READ_ONLY);
     return prepareStatement(sql);
   }
 
   @Override
-  public PreparedStatement prepareStatement(String sql, int resultSetType, int resultSetConcurrency,
-      int resultSetHoldability) throws SQLException {
+  public PreparedStatement prepareStatement(
+      String sql, int resultSetType, int resultSetConcurrency, int resultSetHoldability)
+      throws SQLException {
     checkClosed();
-    JdbcPreconditions.checkSqlFeatureSupported(resultSetType == ResultSet.TYPE_FORWARD_ONLY,
-        ONLY_RS_FORWARD_ONLY);
-    JdbcPreconditions.checkSqlFeatureSupported(resultSetConcurrency == ResultSet.CONCUR_READ_ONLY,
-        ONLY_CONCUR_READ_ONLY);
     JdbcPreconditions.checkSqlFeatureSupported(
-        resultSetHoldability == ResultSet.CLOSE_CURSORS_AT_COMMIT,
-        ONLY_CLOSE_CURSORS_AT_COMMIT);
+        resultSetType == ResultSet.TYPE_FORWARD_ONLY, ONLY_RS_FORWARD_ONLY);
+    JdbcPreconditions.checkSqlFeatureSupported(
+        resultSetConcurrency == ResultSet.CONCUR_READ_ONLY, ONLY_CONCUR_READ_ONLY);
+    JdbcPreconditions.checkSqlFeatureSupported(
+        resultSetHoldability == ResultSet.CLOSE_CURSORS_AT_COMMIT, ONLY_CLOSE_CURSORS_AT_COMMIT);
     return prepareStatement(sql);
   }
 
   @Override
   public PreparedStatement prepareStatement(String sql, int autoGeneratedKeys) throws SQLException {
     checkClosed();
-    JdbcPreconditions.checkSqlFeatureSupported(autoGeneratedKeys == Statement.NO_GENERATED_KEYS,
-        ONLY_NO_GENERATED_KEYS);
+    JdbcPreconditions.checkSqlFeatureSupported(
+        autoGeneratedKeys == Statement.NO_GENERATED_KEYS, ONLY_NO_GENERATED_KEYS);
     return prepareStatement(sql);
   }
 

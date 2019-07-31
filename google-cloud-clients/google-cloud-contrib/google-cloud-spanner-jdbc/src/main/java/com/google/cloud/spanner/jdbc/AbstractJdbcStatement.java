@@ -16,16 +16,16 @@
 
 package com.google.cloud.spanner.jdbc;
 
+import com.google.cloud.spanner.Options;
+import com.google.cloud.spanner.Options.QueryOption;
+import com.google.cloud.spanner.SpannerException;
+import com.google.cloud.spanner.jdbc.StatementResult.ClientSideStatementType;
+import com.google.rpc.Code;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.SQLWarning;
 import java.sql.Statement;
 import java.util.concurrent.TimeUnit;
-import com.google.cloud.spanner.Options;
-import com.google.cloud.spanner.Options.QueryOption;
-import com.google.cloud.spanner.jdbc.StatementResult.ClientSideStatementType;
-import com.google.cloud.spanner.SpannerException;
-import com.google.rpc.Code;
 
 /** Base class for Cloud Spanner JDBC {@link Statement}s */
 abstract class AbstractJdbcStatement extends AbstractJdbcWrapper implements Statement {
@@ -54,12 +54,14 @@ abstract class AbstractJdbcStatement extends AbstractJdbcWrapper implements Stat
   }
 
   /** The {@link TimeUnit}s that are supported for timeout and staleness durations */
-  private static final TimeUnit[] SUPPORTED_UNITS = new TimeUnit[] {TimeUnit.SECONDS,
-      TimeUnit.MILLISECONDS, TimeUnit.MICROSECONDS, TimeUnit.NANOSECONDS};
+  private static final TimeUnit[] SUPPORTED_UNITS =
+      new TimeUnit[] {
+        TimeUnit.SECONDS, TimeUnit.MILLISECONDS, TimeUnit.MICROSECONDS, TimeUnit.NANOSECONDS
+      };
 
   /**
-   * Get the {@link TimeUnit} with the least precision that is able to represent the timeout
-   * of this statement.
+   * Get the {@link TimeUnit} with the least precision that is able to represent the timeout of this
+   * statement.
    */
   private TimeUnit getAppropriateTimeUnit() {
     int index = 0;
@@ -67,8 +69,11 @@ abstract class AbstractJdbcStatement extends AbstractJdbcWrapper implements Stat
       for (TimeUnit unit : SUPPORTED_UNITS) {
         long duration = connection.getSpannerConnection().getStatementTimeout(unit);
         if (index + 1 < SUPPORTED_UNITS.length) {
-          if (duration > 0L && duration * 1000 == connection.getSpannerConnection()
-              .getStatementTimeout(SUPPORTED_UNITS[index + 1])) {
+          if (duration > 0L
+              && duration * 1000
+                  == connection
+                      .getSpannerConnection()
+                      .getStatementTimeout(SUPPORTED_UNITS[index + 1])) {
             return unit;
           }
         } else {
@@ -84,11 +89,11 @@ abstract class AbstractJdbcStatement extends AbstractJdbcWrapper implements Stat
 
   /**
    * Local class to temporarily hold the statement timeout of the Spanner {@link Connection}. The
-   * Spanner connection API sets the timeout on the connection and applies it to all statements
-   * that are executed on the {@link Connection}. JDBC specifies a timeout per statement, so we
-   * need to temporarily hold on to the timeout specified for the connection while using the
-   * timeout specified for a JDBC statement, and then after executing the JDBC statement setting
-   * the timeout on the Spanner {@link Connection} again.
+   * Spanner connection API sets the timeout on the connection and applies it to all statements that
+   * are executed on the {@link Connection}. JDBC specifies a timeout per statement, so we need to
+   * temporarily hold on to the timeout specified for the connection while using the timeout
+   * specified for a JDBC statement, and then after executing the JDBC statement setting the timeout
+   * on the Spanner {@link Connection} again.
    */
   private static class StatementTimeout {
     private final long timeout;
@@ -131,8 +136,9 @@ abstract class AbstractJdbcStatement extends AbstractJdbcWrapper implements Stat
       if (originalTimeout == null) {
         connection.getSpannerConnection().clearStatementTimeout();
       } else {
-        connection.getSpannerConnection().setStatementTimeout(originalTimeout.timeout,
-            originalTimeout.unit);
+        connection
+            .getSpannerConnection()
+            .setStatementTimeout(originalTimeout.timeout, originalTimeout.unit);
       }
     }
   }
@@ -147,8 +153,8 @@ abstract class AbstractJdbcStatement extends AbstractJdbcWrapper implements Stat
   ResultSet executeQuery(com.google.cloud.spanner.Statement statement) throws SQLException {
     StatementTimeout originalTimeout = setTemporaryStatementTimeout();
     try {
-      return JdbcResultSet.of(this,
-          connection.getSpannerConnection().executeQuery(statement, getQueryOptions()));
+      return JdbcResultSet.of(
+          this, connection.getSpannerConnection().executeQuery(statement, getQueryOptions()));
     } catch (SpannerException e) {
       throw JdbcSqlExceptionFactory.of(e);
     } finally {
@@ -163,15 +169,15 @@ abstract class AbstractJdbcStatement extends AbstractJdbcWrapper implements Stat
    * @param statement The SQL statement to execute.
    * @return the number of rows that was inserted/updated/deleted.
    * @throws SQLException if a database error occurs, or if the number of rows affected is larger
-   *         than {@link Integer#MAX_VALUE}.
+   *     than {@link Integer#MAX_VALUE}.
    */
   int executeUpdate(com.google.cloud.spanner.Statement statement) throws SQLException {
     StatementTimeout originalTimeout = setTemporaryStatementTimeout();
     try {
       long count = connection.getSpannerConnection().executeUpdate(statement);
       if (count > Integer.MAX_VALUE) {
-        throw JdbcSqlExceptionFactory.of("update count too large for executeUpdate: " + count,
-            Code.OUT_OF_RANGE);
+        throw JdbcSqlExceptionFactory.of(
+            "update count too large for executeUpdate: " + count, Code.OUT_OF_RANGE);
       }
       return (int) count;
     } catch (SpannerException e) {
@@ -187,7 +193,7 @@ abstract class AbstractJdbcStatement extends AbstractJdbcWrapper implements Stat
    *
    * @param statement The SQL statement to execute.
    * @return a {@link StatementResult} containing either a {@link ResultSet}, an update count or
-   *         nothing depending on the type of SQL statement.
+   *     nothing depending on the type of SQL statement.
    * @throws SQLException if a database error occurs.
    */
   StatementResult execute(com.google.cloud.spanner.Statement statement) throws SQLException {
@@ -218,16 +224,17 @@ abstract class AbstractJdbcStatement extends AbstractJdbcWrapper implements Stat
    * {@link Connection}, then execute the actual statement, and then reset the timeout on the
    * Spanner connection. But if the executed statement was a SHOW STATEMENT_TIMEOUT or SET
    * STATEMENT_TIMEOUT, then we need to handle it differently:
+   *
    * <ul>
-   * <li>SHOW STATEMENT_TIMEOUT: Reset the statement timeout on the {@link Connection} to the
-   * original value and re-run the statement</li>
-   * <li>SET STATEMENT_TIMEOUT: Do not reset the statement timeout on the {@link Connection} after
-   * the execution</li>
+   *   <li>SHOW STATEMENT_TIMEOUT: Reset the statement timeout on the {@link Connection} to the
+   *       original value and re-run the statement
+   *   <li>SET STATEMENT_TIMEOUT: Do not reset the statement timeout on the {@link Connection} after
+   *       the execution
    * </ul>
    *
    * @param result The result of a statement that was executed.
    * @return <code>true</code> if the {@link StatementResult} indicates that the statement that was
-   *         executed was a SET STATEMENT_TIMEOUT statement.
+   *     executed was a SET STATEMENT_TIMEOUT statement.
    */
   private boolean resultIsSetStatementTimeout(StatementResult result) {
     return result.getClientSideStatementType() == ClientSideStatementType.SET_STATEMENT_TIMEOUT;
@@ -237,8 +244,11 @@ abstract class AbstractJdbcStatement extends AbstractJdbcWrapper implements Stat
     return result.getClientSideStatementType() == ClientSideStatementType.SHOW_STATEMENT_TIMEOUT;
   }
 
-  private StatementResult rerunShowStatementTimeout(com.google.cloud.spanner.Statement statement,
-      StatementResult result, StatementTimeout originalTimeout) throws SQLException {
+  private StatementResult rerunShowStatementTimeout(
+      com.google.cloud.spanner.Statement statement,
+      StatementResult result,
+      StatementTimeout originalTimeout)
+      throws SQLException {
     resetStatementTimeout(originalTimeout);
     return connection.getSpannerConnection().execute(statement);
   }
@@ -364,5 +374,4 @@ abstract class AbstractJdbcStatement extends AbstractJdbcWrapper implements Stat
   public int getResultSetHoldability() throws SQLException {
     return ResultSet.CLOSE_CURSORS_AT_COMMIT;
   }
-
 }

@@ -22,12 +22,7 @@ import static org.mockito.Matchers.anyListOf;
 import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
-import java.util.Arrays;
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.rules.ExpectedException;
-import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
+
 import com.google.cloud.spanner.ErrorCode;
 import com.google.cloud.spanner.Mutation;
 import com.google.cloud.spanner.SpannerException;
@@ -35,24 +30,34 @@ import com.google.cloud.spanner.Statement;
 import com.google.cloud.spanner.jdbc.StatementParser.ParsedStatement;
 import com.google.cloud.spanner.jdbc.StatementParser.StatementType;
 import com.google.cloud.spanner.jdbc.UnitOfWork.UnitOfWorkState;
+import java.util.Arrays;
+import org.junit.Rule;
+import org.junit.Test;
+import org.junit.rules.ExpectedException;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
 
 @RunWith(JUnit4.class)
 public class DmlBatchTest {
-  private final ParsedStatement statement1 = StatementParser.INSTANCE.parse(Statement.of("UPDATE FOO SET BAR=1 WHERE BAZ=2"));
-  private final ParsedStatement statement2 = StatementParser.INSTANCE.parse(Statement.of("UPDATE FOO SET BAR=2 WHERE BAZ=3"));
+  private final ParsedStatement statement1 =
+      StatementParser.INSTANCE.parse(Statement.of("UPDATE FOO SET BAR=1 WHERE BAZ=2"));
+  private final ParsedStatement statement2 =
+      StatementParser.INSTANCE.parse(Statement.of("UPDATE FOO SET BAR=2 WHERE BAZ=3"));
 
-  @Rule
-  public ExpectedException exception = ExpectedException.none();
+  @Rule public ExpectedException exception = ExpectedException.none();
 
   private DmlBatch createSubject() {
     UnitOfWork transaction = mock(UnitOfWork.class);
-    when(transaction.executeBatchUpdate(Arrays.asList(statement1, statement2))).thenReturn(new long[] {3L, 5L});
+    when(transaction.executeBatchUpdate(Arrays.asList(statement1, statement2)))
+        .thenReturn(new long[] {3L, 5L});
     return createSubject(transaction);
   }
 
   private DmlBatch createSubject(UnitOfWork transaction) {
-    return DmlBatch.newBuilder().setTransaction(transaction)
-        .withStatementExecutor(new StatementExecutor()).build();
+    return DmlBatch.newBuilder()
+        .setTransaction(transaction)
+        .withStatementExecutor(new StatementExecutor())
+        .build();
   }
 
   @Test

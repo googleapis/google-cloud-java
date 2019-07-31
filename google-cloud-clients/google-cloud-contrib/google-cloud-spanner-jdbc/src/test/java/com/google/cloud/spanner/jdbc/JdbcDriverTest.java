@@ -18,6 +18,7 @@ package com.google.cloud.spanner.jdbc;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -44,18 +45,23 @@ public class JdbcDriverTest {
 
   @Test
   public void testConnect() throws SQLException {
-    try (Connection connection = DriverManager.getConnection(
-        String.format("jdbc:cloudspanner:/projects/test-project/instances/static-test-instance/databases/test-database;credentials=%s", TEST_KEY_PATH))) {
+    try (Connection connection =
+        DriverManager.getConnection(
+            String.format(
+                "jdbc:cloudspanner:/projects/test-project/instances/static-test-instance/databases/test-database;credentials=%s",
+                TEST_KEY_PATH))) {
       assertThat(connection.isClosed(), is(false));
     }
   }
 
   @Test(expected = SQLException.class)
   public void testInvalidConnect() throws SQLException {
-    try (Connection connection = DriverManager.getConnection(
-        String.format("jdbc:cloudspanner:/projects/test-project/instances/static-test-instance/databases/test-database;credentialsUrl=%s", TEST_KEY_PATH))) {
+    try (Connection connection =
+        DriverManager.getConnection(
+            String.format(
+                "jdbc:cloudspanner:/projects/test-project/instances/static-test-instance/databases/test-database;credentialsUrl=%s",
+                TEST_KEY_PATH))) {
       assertThat(connection.isClosed(), is(false));
     }
   }
-
 }

@@ -16,6 +16,7 @@
 
 package com.google.cloud.spanner.jdbc;
 
+import com.google.cloud.spanner.jdbc.JdbcParameterStore.ParametersInfo;
 import java.math.BigDecimal;
 import java.sql.Date;
 import java.sql.ParameterMetaData;
@@ -23,7 +24,6 @@ import java.sql.SQLException;
 import java.sql.Time;
 import java.sql.Timestamp;
 import java.sql.Types;
-import com.google.cloud.spanner.jdbc.JdbcParameterStore.ParametersInfo;
 
 /** {@link ParameterMetaData} implementation for Cloud Spanner */
 class JdbcParameterMetaData extends AbstractJdbcWrapper implements ParameterMetaData {
@@ -54,9 +54,14 @@ class JdbcParameterMetaData extends AbstractJdbcWrapper implements ParameterMeta
   @Override
   public boolean isSigned(int param) throws SQLException {
     int type = getParameterType(param);
-    return type == Types.DOUBLE || type == Types.FLOAT || type == Types.BIGINT
-        || type == Types.INTEGER || type == Types.SMALLINT || type == Types.TINYINT
-        || type == Types.DECIMAL || type == Types.NUMERIC;
+    return type == Types.DOUBLE
+        || type == Types.FLOAT
+        || type == Types.BIGINT
+        || type == Types.INTEGER
+        || type == Types.SMALLINT
+        || type == Types.TINYINT
+        || type == Types.DECIMAL
+        || type == Types.NUMERIC;
   }
 
   @Override
@@ -73,8 +78,7 @@ class JdbcParameterMetaData extends AbstractJdbcWrapper implements ParameterMeta
   @Override
   public int getParameterType(int param) throws SQLException {
     Integer type = statement.getParameters().getType(param);
-    if (type != null)
-      return type.intValue();
+    if (type != null) return type.intValue();
 
     Object value = statement.getParameters().getParameter(param);
     if (value == null) {
@@ -118,11 +122,9 @@ class JdbcParameterMetaData extends AbstractJdbcWrapper implements ParameterMeta
   @Override
   public String getParameterClassName(int param) throws SQLException {
     Object value = statement.getParameters().getParameter(param);
-    if (value != null)
-      return value.getClass().getName();
+    if (value != null) return value.getClass().getName();
     Integer type = statement.getParameters().getType(param);
-    if (type != null)
-      return getClassName(type.intValue());
+    if (type != null) return getClassName(type.intValue());
     return null;
   }
 
@@ -138,7 +140,9 @@ class JdbcParameterMetaData extends AbstractJdbcWrapper implements ParameterMeta
       res.append("CloudSpannerPreparedStatementParameterMetaData, parameter count: ")
           .append(getParameterCount());
       for (int param = 1; param <= getParameterCount(); param++) {
-        res.append("\nParameter ").append(param).append(":\n\t Class name: ")
+        res.append("\nParameter ")
+            .append(param)
+            .append(":\n\t Class name: ")
             .append(getParameterClassName(param));
         res.append(",\n\t Parameter type name: ").append(getParameterTypeName(param));
         res.append(",\n\t Parameter type: ").append(getParameterType(param));
@@ -153,5 +157,4 @@ class JdbcParameterMetaData extends AbstractJdbcWrapper implements ParameterMeta
     }
     return res.toString();
   }
-
 }

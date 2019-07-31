@@ -16,8 +16,6 @@
 
 package com.google.cloud.spanner.jdbc;
 
-import java.util.Arrays;
-import java.util.Objects;
 import com.google.cloud.spanner.AbortedException;
 import com.google.cloud.spanner.SpannerBatchUpdateException;
 import com.google.cloud.spanner.SpannerException;
@@ -25,6 +23,8 @@ import com.google.cloud.spanner.SpannerExceptionFactory;
 import com.google.cloud.spanner.Statement;
 import com.google.cloud.spanner.jdbc.ReadWriteTransaction.RetriableStatement;
 import com.google.common.base.Preconditions;
+import java.util.Arrays;
+import java.util.Objects;
 
 /**
  * A batch update that failed with a {@link SpannerException} on a {@link ReadWriteTransaction}. The
