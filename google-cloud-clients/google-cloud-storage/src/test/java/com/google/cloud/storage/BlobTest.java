@@ -62,7 +62,6 @@ import org.easymock.IAnswer;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.threeten.bp.Duration;
 
 public class BlobTest {
 
@@ -135,6 +134,10 @@ public class BlobTest {
   private static final String BASE64_KEY = "JVzfVl8NLD9FjedFuStegjRfES5ll5zc59CIXw572OA=";
   private static final Key KEY =
       new SecretKeySpec(BaseEncoding.base64().decode(BASE64_KEY), "AES256");
+
+  // This retrying setting is used by test testDownloadWithRetries. This unit test is setup
+  // to write one byte and then throw retryable exception, it then writes another bytes on
+  // second call succeeds.
   private static final RetrySettings RETRY_SETTINGS =
       RetrySettings.newBuilder()
           .setMaxAttempts(2)
