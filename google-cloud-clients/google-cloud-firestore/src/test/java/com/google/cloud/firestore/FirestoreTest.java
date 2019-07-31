@@ -16,6 +16,7 @@
 
 package com.google.cloud.firestore;
 
+import static com.google.cloud.firestore.LocalFirestoreHelper.SINGLE_FIELD_OBJECT;
 import static com.google.cloud.firestore.LocalFirestoreHelper.SINGLE_FIELD_PROTO;
 import static com.google.cloud.firestore.LocalFirestoreHelper.commitResponse;
 import static com.google.cloud.firestore.LocalFirestoreHelper.getAllResponse;
@@ -28,17 +29,14 @@ import static org.mockito.Mockito.doReturn;
 import com.google.api.gax.rpc.ApiStreamObserver;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.cloud.Timestamp;
 import com.google.cloud.firestore.spi.v1.FirestoreRpc;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import com.google.firestore.v1.BatchGetDocumentsRequest;
 import com.google.firestore.v1.CommitRequest;
 import com.google.firestore.v1.CommitResponse;
+import com.google.firestore.v1.DocumentTransform;
 import com.google.firestore.v1.ListCollectionIdsRequest;
+import com.google.firestore.v1.Value;
 import java.util.List;
-import java.util.Map;
-import java.util.concurrent.ExecutionException;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.ArgumentCaptor;
@@ -183,84 +181,28 @@ public class FirestoreTest {
   }
 
   @Test
-  public void arrayUnionWithPojo() throws ExecutionException, InterruptedException {
+  public void arrayUnionWithPojo() {
     doReturn(commitResponse(1, 0))
         .when(firestoreMock)
         .sendRequest(
             commitCapture.capture(), Matchers.<UnaryCallable<CommitRequest, CommitResponse>>any());
     DocumentReference doc = firestoreMock.document("coll/doc1");
-    FieldValue fieldValue =
-        FieldValue.arrayUnion(
-            new TestPoJo(
-                1,
-                "name,",
-                ImmutableList.<List<String>>of(ImmutableList.<String>of("test-1", "test-2")),
-                ImmutableMap.<String, Map<String, String>>of(
-                    "test-1", ImmutableMap.of("test-value1", "test-value2")),
-                ImmutableList.<Map<String, String>>of(
-                    ImmutableMap.<String, String>of("test", "test-value"))));
-    WriteResult writeResult = doc.update("foo", fieldValue).get();
-    assertEquals(Timestamp.ofTimeSecondsAndNanos(0, 0), writeResult.getUpdateTime());
+    FieldValue fieldValue = FieldValue.arrayUnion(SINGLE_FIELD_OBJECT);
+    DocumentTransform.FieldTransform transform = fieldValue.toProto(FieldPath.of("foo"));
+    Value value = transform.getAppendMissingElements().getValues(0);
+    assertEquals("bar", value.getMapValue().getFieldsMap().get("foo").getStringValue());
   }
 
-  private static class TestPoJo {
-    private Integer id;
-    private String name;
-    private List<List<String>> hobbies;
-    private Map<String, Map<String, String>> keys;
-    private List<Map<String, String>> map;
-
-    public TestPoJo(
-        Integer id,
-        String name,
-        List<List<String>> hobbies,
-        Map<String, Map<String, String>> keys,
-        List<Map<String, String>> map) {
-      this.id = id;
-      this.name = name;
-      this.hobbies = hobbies;
-      this.keys = keys;
-      this.map = map;
-    }
-
-    public Integer getId() {
-      return id;
-    }
-
-    public void setId(Integer id) {
-      this.id = id;
-    }
-
-    public String getName() {
-      return name;
-    }
-
-    public void setName(String name) {
-      this.name = name;
-    }
-
-    public List<List<String>> getHobbies() {
-      return hobbies;
-    }
-
-    public void setHobbies(List<List<String>> hobbies) {
-      this.hobbies = hobbies;
-    }
-
-    public Map<String, Map<String, String>> getKeys() {
-      return keys;
-    }
-
-    public void setKeys(Map<String, Map<String, String>> keys) {
-      this.keys = keys;
-    }
-
-    public List<Map<String, String>> getMap() {
-      return map;
-    }
-
-    public void setMap(List<Map<String, String>> map) {
-      this.map = map;
-    }
+  @Test
+  public void arrayRemoveWithPojo() {
+    doReturn(commitResponse(0, 1))
+        .when(firestoreMock)
+        .sendRequest(
+            commitCapture.capture(), Matchers.<UnaryCallable<CommitRequest, CommitResponse>>any());
+    DocumentReference doc = firestoreMock.document("coll/doc1");
+    FieldValue fieldValue = FieldValue.arrayRemove(SINGLE_FIELD_OBJECT);
+    DocumentTransform.FieldTransform transform = fieldValue.toProto(FieldPath.of("foo"));
+    Value value = transform.getRemoveAllFromArray().getValues(0);
+    assertEquals("bar", value.getMapValue().getFieldsMap().get("foo").getStringValue());
   }
 }
