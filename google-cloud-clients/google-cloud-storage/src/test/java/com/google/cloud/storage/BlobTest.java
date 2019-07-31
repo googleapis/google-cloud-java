@@ -139,9 +139,7 @@ public class BlobTest {
   // to write one byte and then throw retryable exception, it then writes another bytes on
   // second call succeeds.
   private static final RetrySettings RETRY_SETTINGS =
-      RetrySettings.newBuilder()
-          .setMaxAttempts(2)
-          .build();
+      RetrySettings.newBuilder().setMaxAttempts(2).build();
   private static final ApiClock API_CLOCK =
       new ApiClock() {
         @Override
