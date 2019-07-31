@@ -27,6 +27,8 @@ import org.junit.runners.JUnit4;
 
 @RunWith(JUnit4.class)
 public class JdbcDriverTest {
+  private static final String TEST_KEY_PATH =
+      ConnectionOptionsTest.class.getResource("test-key.json").getFile();
 
   /**
    * Make sure the JDBC driver class is loaded. This is needed when running the test using Maven.
@@ -43,7 +45,7 @@ public class JdbcDriverTest {
   @Test
   public void testConnect() throws SQLException {
     try (Connection connection = DriverManager.getConnection(
-        "jdbc:cloudspanner:/projects/test-project/instances/static-test-instance/databases/test-database;credentials=/path/to/key.json")) {
+        String.format("jdbc:cloudspanner:/projects/test-project/instances/static-test-instance/databases/test-database;credentials=%s", TEST_KEY_PATH))) {
       assertThat(connection.isClosed(), is(false));
     }
   }
@@ -51,7 +53,7 @@ public class JdbcDriverTest {
   @Test(expected = SQLException.class)
   public void testInvalidConnect() throws SQLException {
     try (Connection connection = DriverManager.getConnection(
-        "jdbc:cloudspanner:/projects/test-project/instances/static-test-instance/databases/test-database;credentialsUrl=/path/to/key.json")) {
+        String.format("jdbc:cloudspanner:/projects/test-project/instances/static-test-instance/databases/test-database;credentialsUrl=%s", TEST_KEY_PATH))) {
       assertThat(connection.isClosed(), is(false));
     }
   }
