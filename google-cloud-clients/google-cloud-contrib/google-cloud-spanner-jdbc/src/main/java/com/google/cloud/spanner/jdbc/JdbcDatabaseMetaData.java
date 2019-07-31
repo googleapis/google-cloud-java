@@ -16,6 +16,13 @@
 
 package com.google.cloud.spanner.jdbc;
 
+import com.google.auth.Credentials;
+import com.google.auth.ServiceAccountSigner;
+import com.google.auth.oauth2.UserCredentials;
+import com.google.cloud.spanner.ResultSets;
+import com.google.cloud.spanner.Struct;
+import com.google.cloud.spanner.Type;
+import com.google.cloud.spanner.Type.StructField;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -29,13 +36,6 @@ import java.sql.Types;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Scanner;
-import com.google.auth.Credentials;
-import com.google.auth.ServiceAccountSigner;
-import com.google.auth.oauth2.UserCredentials;
-import com.google.cloud.spanner.ResultSets;
-import com.google.cloud.spanner.Struct;
-import com.google.cloud.spanner.Type;
-import com.google.cloud.spanner.Type.StructField;
 
 /** {@link DatabaseMetaData} implementation for Cloud Spanner */
 class JdbcDatabaseMetaData extends AbstractJdbcWrapper implements DatabaseMetaData {
@@ -674,48 +674,49 @@ class JdbcDatabaseMetaData extends AbstractJdbcWrapper implements DatabaseMetaDa
   @Override
   public ResultSet getProcedures(String catalog, String schemaPattern, String procedureNamePattern)
       throws SQLException {
-    return JdbcResultSet.of(ResultSets.forRows(
-        Type.struct(
-            StructField.of("PROCEDURE_CAT", Type.string()),
-            StructField.of("PROCEDURE_SCHEM", Type.string()),
-            StructField.of("PROCEDURE_NAME", Type.string()),
-            StructField.of("reserved1", Type.string()),
-            StructField.of("reserved2", Type.string()),
-            StructField.of("reserved3", Type.string()),
-            StructField.of("REMARKS", Type.string()),
-            StructField.of("PROCEDURE_TYPE", Type.int64()),
-            StructField.of("SPECIFIC_NAME", Type.string())
-        ),
-        Collections.<Struct>emptyList()));
+    return JdbcResultSet.of(
+        ResultSets.forRows(
+            Type.struct(
+                StructField.of("PROCEDURE_CAT", Type.string()),
+                StructField.of("PROCEDURE_SCHEM", Type.string()),
+                StructField.of("PROCEDURE_NAME", Type.string()),
+                StructField.of("reserved1", Type.string()),
+                StructField.of("reserved2", Type.string()),
+                StructField.of("reserved3", Type.string()),
+                StructField.of("REMARKS", Type.string()),
+                StructField.of("PROCEDURE_TYPE", Type.int64()),
+                StructField.of("SPECIFIC_NAME", Type.string())),
+            Collections.<Struct>emptyList()));
   }
 
   @Override
-  public ResultSet getProcedureColumns(String catalog, String schemaPattern,
-      String procedureNamePattern, String columnNamePattern) throws SQLException {
-    return JdbcResultSet.of(ResultSets.forRows(
-        Type.struct(
-            StructField.of("PROCEDURE_CAT", Type.string()),
-            StructField.of("PROCEDURE_SCHEM", Type.string()),
-            StructField.of("PROCEDURE_NAME", Type.string()),
-            StructField.of("COLUMN_NAME", Type.string()),
-            StructField.of("COLUMN_TYPE", Type.int64()),
-            StructField.of("DATA_TYPE", Type.int64()),
-            StructField.of("TYPE_NAME", Type.string()),
-            StructField.of("PRECISION", Type.string()),
-            StructField.of("LENGTH", Type.int64()),
-            StructField.of("SCALE", Type.int64()),
-            StructField.of("RADIX", Type.int64()),
-            StructField.of("NULLABLE", Type.int64()),
-            StructField.of("REMARKS", Type.string()),
-            StructField.of("COLUMN_DEF", Type.string()),
-            StructField.of("SQL_DATA_TYPE", Type.int64()),
-            StructField.of("SQL_DATETIME_SUB", Type.int64()),
-            StructField.of("CHAR_OCTET_LENGTH", Type.int64()),
-            StructField.of("ORDINAL_POSITION", Type.int64()),
-            StructField.of("IS_NULLABLE", Type.string()),
-            StructField.of("SPECIFIC_NAME", Type.string())
-        ),
-        Collections.<Struct>emptyList()));
+  public ResultSet getProcedureColumns(
+      String catalog, String schemaPattern, String procedureNamePattern, String columnNamePattern)
+      throws SQLException {
+    return JdbcResultSet.of(
+        ResultSets.forRows(
+            Type.struct(
+                StructField.of("PROCEDURE_CAT", Type.string()),
+                StructField.of("PROCEDURE_SCHEM", Type.string()),
+                StructField.of("PROCEDURE_NAME", Type.string()),
+                StructField.of("COLUMN_NAME", Type.string()),
+                StructField.of("COLUMN_TYPE", Type.int64()),
+                StructField.of("DATA_TYPE", Type.int64()),
+                StructField.of("TYPE_NAME", Type.string()),
+                StructField.of("PRECISION", Type.string()),
+                StructField.of("LENGTH", Type.int64()),
+                StructField.of("SCALE", Type.int64()),
+                StructField.of("RADIX", Type.int64()),
+                StructField.of("NULLABLE", Type.int64()),
+                StructField.of("REMARKS", Type.string()),
+                StructField.of("COLUMN_DEF", Type.string()),
+                StructField.of("SQL_DATA_TYPE", Type.int64()),
+                StructField.of("SQL_DATETIME_SUB", Type.int64()),
+                StructField.of("CHAR_OCTET_LENGTH", Type.int64()),
+                StructField.of("ORDINAL_POSITION", Type.int64()),
+                StructField.of("IS_NULLABLE", Type.string()),
+                StructField.of("SPECIFIC_NAME", Type.string())),
+            Collections.<Struct>emptyList()));
   }
 
   private PreparedStatement prepareStatementReplaceNullWithAnyString(String sql, String... params)
@@ -734,8 +735,9 @@ class JdbcDatabaseMetaData extends AbstractJdbcWrapper implements DatabaseMetaDa
   }
 
   @Override
-  public ResultSet getTables(String catalog, String schemaPattern, String tableNamePattern,
-      String[] types) throws SQLException {
+  public ResultSet getTables(
+      String catalog, String schemaPattern, String tableNamePattern, String[] types)
+      throws SQLException {
     String sql = readSqlFromFile("DatabaseMetaData_GetTables.sql");
     String type1;
     String type2;
@@ -749,8 +751,9 @@ class JdbcDatabaseMetaData extends AbstractJdbcWrapper implements DatabaseMetaDa
       type1 = types[0];
       type2 = types[1];
     }
-    PreparedStatement statement = prepareStatementReplaceNullWithAnyString(sql, catalog,
-        schemaPattern, tableNamePattern, type1, type2);
+    PreparedStatement statement =
+        prepareStatementReplaceNullWithAnyString(
+            sql, catalog, schemaPattern, tableNamePattern, type1, type2);
     return statement.executeQuery();
   }
 
@@ -761,101 +764,99 @@ class JdbcDatabaseMetaData extends AbstractJdbcWrapper implements DatabaseMetaDa
 
   @Override
   public ResultSet getCatalogs() throws SQLException {
-    return JdbcResultSet.of(ResultSets.forRows(
-        Type.struct(
-            StructField.of("TABLE_CAT", Type.string())
-        ),
-        Arrays.asList(Struct.newBuilder()
-            .set("TABLE_CAT").to("")
-            .build())));
+    return JdbcResultSet.of(
+        ResultSets.forRows(
+            Type.struct(StructField.of("TABLE_CAT", Type.string())),
+            Arrays.asList(Struct.newBuilder().set("TABLE_CAT").to("").build())));
   }
 
   @Override
   public ResultSet getTableTypes() throws SQLException {
-    return JdbcResultSet.of(ResultSets.forRows(
-        Type.struct(
-            StructField.of("TABLE_TYPE", Type.string())
-        ),
-        Arrays.asList(
-            Struct.newBuilder().set("TABLE_TYPE").to("TABLE").build(),
-            Struct.newBuilder().set("TABLE_TYPE").to("VIEW").build()
-        )));
+    return JdbcResultSet.of(
+        ResultSets.forRows(
+            Type.struct(StructField.of("TABLE_TYPE", Type.string())),
+            Arrays.asList(
+                Struct.newBuilder().set("TABLE_TYPE").to("TABLE").build(),
+                Struct.newBuilder().set("TABLE_TYPE").to("VIEW").build())));
   }
 
   @Override
-  public ResultSet getColumns(String catalog, String schemaPattern, String tableNamePattern,
-      String columnNamePattern) throws SQLException {
+  public ResultSet getColumns(
+      String catalog, String schemaPattern, String tableNamePattern, String columnNamePattern)
+      throws SQLException {
     String sql = readSqlFromFile("DatabaseMetaData_GetColumns.sql");
-    PreparedStatement statement = prepareStatementReplaceNullWithAnyString(sql, catalog,
-        schemaPattern, tableNamePattern, columnNamePattern);
+    PreparedStatement statement =
+        prepareStatementReplaceNullWithAnyString(
+            sql, catalog, schemaPattern, tableNamePattern, columnNamePattern);
     return statement.executeQuery();
   }
 
   @Override
-  public ResultSet getColumnPrivileges(String catalog, String schema, String table,
-      String columnNamePattern) throws SQLException {
-    return JdbcResultSet.of(ResultSets.forRows(
-        Type.struct(
-            StructField.of("TABLE_CAT", Type.string()),
-            StructField.of("TABLE_SCHEM", Type.string()),
-            StructField.of("TABLE_NAME", Type.string()),
-            StructField.of("COLUMN_NAME", Type.string()),
-            StructField.of("GRANTOR", Type.string()),
-            StructField.of("GRANTEE", Type.string()),
-            StructField.of("PRIVILEGE", Type.string()),
-            StructField.of("IS_GRANTABLE", Type.string())
-        ),
-        Collections.<Struct>emptyList()));
+  public ResultSet getColumnPrivileges(
+      String catalog, String schema, String table, String columnNamePattern) throws SQLException {
+    return JdbcResultSet.of(
+        ResultSets.forRows(
+            Type.struct(
+                StructField.of("TABLE_CAT", Type.string()),
+                StructField.of("TABLE_SCHEM", Type.string()),
+                StructField.of("TABLE_NAME", Type.string()),
+                StructField.of("COLUMN_NAME", Type.string()),
+                StructField.of("GRANTOR", Type.string()),
+                StructField.of("GRANTEE", Type.string()),
+                StructField.of("PRIVILEGE", Type.string()),
+                StructField.of("IS_GRANTABLE", Type.string())),
+            Collections.<Struct>emptyList()));
   }
 
   @Override
   public ResultSet getTablePrivileges(String catalog, String schemaPattern, String tableNamePattern)
       throws SQLException {
-    return JdbcResultSet.of(ResultSets.forRows(
-        Type.struct(
-            StructField.of("TABLE_CAT", Type.string()),
-            StructField.of("TABLE_SCHEM", Type.string()),
-            StructField.of("TABLE_NAME", Type.string()),
-            StructField.of("GRANTOR", Type.string()),
-            StructField.of("GRANTEE", Type.string()),
-            StructField.of("PRIVILEGE", Type.string()),
-            StructField.of("IS_GRANTABLE", Type.string())
-        ),
-        Collections.<Struct>emptyList()));
+    return JdbcResultSet.of(
+        ResultSets.forRows(
+            Type.struct(
+                StructField.of("TABLE_CAT", Type.string()),
+                StructField.of("TABLE_SCHEM", Type.string()),
+                StructField.of("TABLE_NAME", Type.string()),
+                StructField.of("GRANTOR", Type.string()),
+                StructField.of("GRANTEE", Type.string()),
+                StructField.of("PRIVILEGE", Type.string()),
+                StructField.of("IS_GRANTABLE", Type.string())),
+            Collections.<Struct>emptyList()));
   }
 
   @Override
-  public ResultSet getBestRowIdentifier(String catalog, String schema, String table, int scope,
-      boolean nullable) throws SQLException {
-    return JdbcResultSet.of(ResultSets.forRows(
-        Type.struct(
-            StructField.of("SCOPE", Type.int64()),
-            StructField.of("COLUMN_NAME", Type.string()),
-            StructField.of("DATA_TYPE", Type.int64()),
-            StructField.of("TYPE_NAME", Type.string()),
-            StructField.of("COLUMN_SIZE", Type.int64()),
-            StructField.of("BUFFER_LENGTH", Type.int64()),
-            StructField.of("DECIMAL_DIGITS", Type.int64()),
-            StructField.of("PSEUDO_COLUMN", Type.int64())
-        ),
-        Collections.<Struct>emptyList()));
+  public ResultSet getBestRowIdentifier(
+      String catalog, String schema, String table, int scope, boolean nullable)
+      throws SQLException {
+    return JdbcResultSet.of(
+        ResultSets.forRows(
+            Type.struct(
+                StructField.of("SCOPE", Type.int64()),
+                StructField.of("COLUMN_NAME", Type.string()),
+                StructField.of("DATA_TYPE", Type.int64()),
+                StructField.of("TYPE_NAME", Type.string()),
+                StructField.of("COLUMN_SIZE", Type.int64()),
+                StructField.of("BUFFER_LENGTH", Type.int64()),
+                StructField.of("DECIMAL_DIGITS", Type.int64()),
+                StructField.of("PSEUDO_COLUMN", Type.int64())),
+            Collections.<Struct>emptyList()));
   }
 
   @Override
   public ResultSet getVersionColumns(String catalog, String schema, String table)
       throws SQLException {
-    return JdbcResultSet.of(ResultSets.forRows(
-        Type.struct(
-            StructField.of("SCOPE", Type.int64()),
-            StructField.of("COLUMN_NAME", Type.string()),
-            StructField.of("DATA_TYPE", Type.int64()),
-            StructField.of("TYPE_NAME", Type.string()),
-            StructField.of("COLUMN_SIZE", Type.int64()),
-            StructField.of("BUFFER_LENGTH", Type.int64()),
-            StructField.of("DECIMAL_DIGITS", Type.int64()),
-            StructField.of("PSEUDO_COLUMN", Type.int64())
-        ),
-        Collections.<Struct>emptyList()));
+    return JdbcResultSet.of(
+        ResultSets.forRows(
+            Type.struct(
+                StructField.of("SCOPE", Type.int64()),
+                StructField.of("COLUMN_NAME", Type.string()),
+                StructField.of("DATA_TYPE", Type.int64()),
+                StructField.of("TYPE_NAME", Type.string()),
+                StructField.of("COLUMN_SIZE", Type.int64()),
+                StructField.of("BUFFER_LENGTH", Type.int64()),
+                StructField.of("DECIMAL_DIGITS", Type.int64()),
+                StructField.of("PSEUDO_COLUMN", Type.int64())),
+            Collections.<Struct>emptyList()));
   }
 
   @Override
@@ -888,190 +889,323 @@ class JdbcDatabaseMetaData extends AbstractJdbcWrapper implements DatabaseMetaDa
   }
 
   @Override
-  public ResultSet getCrossReference(String parentCatalog, String parentSchema, String parentTable,
-      String foreignCatalog, String foreignSchema, String foreignTable) throws SQLException {
+  public ResultSet getCrossReference(
+      String parentCatalog,
+      String parentSchema,
+      String parentTable,
+      String foreignCatalog,
+      String foreignSchema,
+      String foreignTable)
+      throws SQLException {
     String sql = readSqlFromFile("DatabaseMetaData_GetCrossReferences.sql");
-    PreparedStatement statement = prepareStatementReplaceNullWithAnyString(sql, parentCatalog,
-        parentSchema, parentTable, foreignCatalog, foreignSchema, foreignTable);
+    PreparedStatement statement =
+        prepareStatementReplaceNullWithAnyString(
+            sql,
+            parentCatalog,
+            parentSchema,
+            parentTable,
+            foreignCatalog,
+            foreignSchema,
+            foreignTable);
     return statement.executeQuery();
   }
 
   @Override
   public ResultSet getTypeInfo() throws SQLException {
-    return JdbcResultSet.of(ResultSets.forRows(
-        Type.struct(
-            StructField.of("TYPE_NAME", Type.string()),
-            StructField.of("DATA_TYPE", Type.int64()),
-            StructField.of("PRECISION", Type.int64()),
-            StructField.of("LITERAL_PREFIX", Type.string()),
-            StructField.of("LITERAL_SUFFIX", Type.string()),
-            StructField.of("CREATE_PARAMS", Type.string()),
-            StructField.of("NULLABLE", Type.int64()),
-            StructField.of("CASE_SENSITIVE", Type.bool()),
-            StructField.of("SEARCHABLE", Type.int64()),
-            StructField.of("UNSIGNED_ATTRIBUTE", Type.bool()),
-            StructField.of("FIXED_PREC_SCALE", Type.bool()),
-            StructField.of("AUTO_INCREMENT", Type.bool()),
-            StructField.of("LOCAL_TYPE_NAME", Type.string()),
-            StructField.of("MINIMUM_SCALE", Type.int64()),
-            StructField.of("MAXIMUM_SCALE", Type.int64()),
-            StructField.of("SQL_DATA_TYPE", Type.int64()),
-            StructField.of("SQL_DATETIME_SUB", Type.int64()),
-            StructField.of("NUM_PREC_RADIX", Type.int64())
-        ),
-        Arrays.asList(
-            Struct.newBuilder()
-            .set("TYPE_NAME").to("STRING")
-            .set("DATA_TYPE").to(Types.NVARCHAR) // -9
-            .set("PRECISION").to(2621440L)
-            .set("LITERAL_PREFIX").to((String) null)
-            .set("LITERAL_SUFFIX").to((String) null)
-            .set("CREATE_PARAMS").to("(length)")
-            .set("NULLABLE").to(DatabaseMetaData.typeNullable)
-            .set("CASE_SENSITIVE").to(true)
-            .set("SEARCHABLE").to(DatabaseMetaData.typeSearchable)
-            .set("UNSIGNED_ATTRIBUTE").to(true)
-            .set("FIXED_PREC_SCALE").to(false)
-            .set("AUTO_INCREMENT").to(false)
-            .set("LOCAL_TYPE_NAME").to("STRING")
-            .set("MINIMUM_SCALE").to(0)
-            .set("MAXIMUM_SCALE").to(0)
-            .set("SQL_DATA_TYPE").to((Long) null)
-            .set("SQL_DATETIME_SUB").to((Long) null)
-            .set("NUM_PREC_RADIX").to((Long) null)
-            .build(),
-
-            Struct.newBuilder()
-            .set("TYPE_NAME").to("INT64")
-            .set("DATA_TYPE").to(Types.BIGINT) // -5
-            .set("PRECISION").to(19L)
-            .set("LITERAL_PREFIX").to((String) null)
-            .set("LITERAL_SUFFIX").to((String) null)
-            .set("CREATE_PARAMS").to((String) null)
-            .set("NULLABLE").to(DatabaseMetaData.typeNullable)
-            .set("CASE_SENSITIVE").to(false)
-            .set("SEARCHABLE").to(DatabaseMetaData.typePredBasic)
-            .set("UNSIGNED_ATTRIBUTE").to(false)
-            .set("FIXED_PREC_SCALE").to(false)
-            .set("AUTO_INCREMENT").to(false)
-            .set("LOCAL_TYPE_NAME").to("INT64")
-            .set("MINIMUM_SCALE").to(0)
-            .set("MAXIMUM_SCALE").to(0)
-            .set("SQL_DATA_TYPE").to((Long) null)
-            .set("SQL_DATETIME_SUB").to((Long) null)
-            .set("NUM_PREC_RADIX").to(10)
-            .build(),
-
-            Struct.newBuilder()
-            .set("TYPE_NAME").to("BYTES")
-            .set("DATA_TYPE").to(Types.BINARY) // -2
-            .set("PRECISION").to(10485760L)
-            .set("LITERAL_PREFIX").to((String) null)
-            .set("LITERAL_SUFFIX").to((String) null)
-            .set("CREATE_PARAMS").to("(length)")
-            .set("NULLABLE").to(DatabaseMetaData.typeNullable)
-            .set("CASE_SENSITIVE").to(false)
-            .set("SEARCHABLE").to(DatabaseMetaData.typePredBasic)
-            .set("UNSIGNED_ATTRIBUTE").to(true)
-            .set("FIXED_PREC_SCALE").to(false)
-            .set("AUTO_INCREMENT").to(false)
-            .set("LOCAL_TYPE_NAME").to("BYTES")
-            .set("MINIMUM_SCALE").to(0)
-            .set("MAXIMUM_SCALE").to(0)
-            .set("SQL_DATA_TYPE").to((Long) null)
-            .set("SQL_DATETIME_SUB").to((Long) null)
-            .set("NUM_PREC_RADIX").to((Long) null)
-            .build(),
-
-            Struct.newBuilder()
-            .set("TYPE_NAME").to("FLOAT64")
-            .set("DATA_TYPE").to(Types.DOUBLE) // 8
-            .set("PRECISION").to(15L)
-            .set("LITERAL_PREFIX").to((String) null)
-            .set("LITERAL_SUFFIX").to((String) null)
-            .set("CREATE_PARAMS").to((String) null)
-            .set("NULLABLE").to(DatabaseMetaData.typeNullable)
-            .set("CASE_SENSITIVE").to(false)
-            .set("SEARCHABLE").to(DatabaseMetaData.typePredBasic)
-            .set("UNSIGNED_ATTRIBUTE").to(false)
-            .set("FIXED_PREC_SCALE").to(false)
-            .set("AUTO_INCREMENT").to(false)
-            .set("LOCAL_TYPE_NAME").to("FLOAT64")
-            .set("MINIMUM_SCALE").to(0)
-            .set("MAXIMUM_SCALE").to(0)
-            .set("SQL_DATA_TYPE").to((Long) null)
-            .set("SQL_DATETIME_SUB").to((Long) null)
-            .set("NUM_PREC_RADIX").to(2)
-            .build(),
-
-            Struct.newBuilder()
-            .set("TYPE_NAME").to("BOOL")
-            .set("DATA_TYPE").to(Types.BOOLEAN) // 16
-            .set("PRECISION").to((Long) null)
-            .set("LITERAL_PREFIX").to((String) null)
-            .set("LITERAL_SUFFIX").to((String) null)
-            .set("CREATE_PARAMS").to((String) null)
-            .set("NULLABLE").to(DatabaseMetaData.typeNullable)
-            .set("CASE_SENSITIVE").to(false)
-            .set("SEARCHABLE").to(DatabaseMetaData.typePredBasic)
-            .set("UNSIGNED_ATTRIBUTE").to(true)
-            .set("FIXED_PREC_SCALE").to(false)
-            .set("AUTO_INCREMENT").to(false)
-            .set("LOCAL_TYPE_NAME").to("BOOL")
-            .set("MINIMUM_SCALE").to(0)
-            .set("MAXIMUM_SCALE").to(0)
-            .set("SQL_DATA_TYPE").to((Long) null)
-            .set("SQL_DATETIME_SUB").to((Long) null)
-            .set("NUM_PREC_RADIX").to((Long) null)
-            .build(),
-
-            Struct.newBuilder()
-            .set("TYPE_NAME").to("DATE")
-            .set("DATA_TYPE").to(Types.DATE) // 91
-            .set("PRECISION").to(10L)
-            .set("LITERAL_PREFIX").to("DATE ")
-            .set("LITERAL_SUFFIX").to((String) null)
-            .set("CREATE_PARAMS").to((String) null)
-            .set("NULLABLE").to(DatabaseMetaData.typeNullable)
-            .set("CASE_SENSITIVE").to(false)
-            .set("SEARCHABLE").to(DatabaseMetaData.typePredBasic)
-            .set("UNSIGNED_ATTRIBUTE").to(true)
-            .set("FIXED_PREC_SCALE").to(false)
-            .set("AUTO_INCREMENT").to(false)
-            .set("LOCAL_TYPE_NAME").to("DATE")
-            .set("MINIMUM_SCALE").to(0)
-            .set("MAXIMUM_SCALE").to(0)
-            .set("SQL_DATA_TYPE").to((Long) null)
-            .set("SQL_DATETIME_SUB").to((Long) null)
-            .set("NUM_PREC_RADIX").to((Long) null)
-            .build(),
-
-            Struct.newBuilder()
-            .set("TYPE_NAME").to("TIMESTAMP")
-            .set("DATA_TYPE").to(Types.TIMESTAMP) // 93
-            .set("PRECISION").to(35L)
-            .set("LITERAL_PREFIX").to("TIMESTAMP ")
-            .set("LITERAL_SUFFIX").to((String) null)
-            .set("CREATE_PARAMS").to((String) null)
-            .set("NULLABLE").to(DatabaseMetaData.typeNullable)
-            .set("CASE_SENSITIVE").to(false)
-            .set("SEARCHABLE").to(DatabaseMetaData.typePredBasic)
-            .set("UNSIGNED_ATTRIBUTE").to(true)
-            .set("FIXED_PREC_SCALE").to(false)
-            .set("AUTO_INCREMENT").to(false)
-            .set("LOCAL_TYPE_NAME").to("TIMESTAMP")
-            .set("MINIMUM_SCALE").to(0)
-            .set("MAXIMUM_SCALE").to(0)
-            .set("SQL_DATA_TYPE").to((Long) null)
-            .set("SQL_DATETIME_SUB").to((Long) null)
-            .set("NUM_PREC_RADIX").to((Long) null)
-            .build()
-            )));
+    return JdbcResultSet.of(
+        ResultSets.forRows(
+            Type.struct(
+                StructField.of("TYPE_NAME", Type.string()),
+                StructField.of("DATA_TYPE", Type.int64()),
+                StructField.of("PRECISION", Type.int64()),
+                StructField.of("LITERAL_PREFIX", Type.string()),
+                StructField.of("LITERAL_SUFFIX", Type.string()),
+                StructField.of("CREATE_PARAMS", Type.string()),
+                StructField.of("NULLABLE", Type.int64()),
+                StructField.of("CASE_SENSITIVE", Type.bool()),
+                StructField.of("SEARCHABLE", Type.int64()),
+                StructField.of("UNSIGNED_ATTRIBUTE", Type.bool()),
+                StructField.of("FIXED_PREC_SCALE", Type.bool()),
+                StructField.of("AUTO_INCREMENT", Type.bool()),
+                StructField.of("LOCAL_TYPE_NAME", Type.string()),
+                StructField.of("MINIMUM_SCALE", Type.int64()),
+                StructField.of("MAXIMUM_SCALE", Type.int64()),
+                StructField.of("SQL_DATA_TYPE", Type.int64()),
+                StructField.of("SQL_DATETIME_SUB", Type.int64()),
+                StructField.of("NUM_PREC_RADIX", Type.int64())),
+            Arrays.asList(
+                Struct.newBuilder()
+                    .set("TYPE_NAME")
+                    .to("STRING")
+                    .set("DATA_TYPE")
+                    .to(Types.NVARCHAR) // -9
+                    .set("PRECISION")
+                    .to(2621440L)
+                    .set("LITERAL_PREFIX")
+                    .to((String) null)
+                    .set("LITERAL_SUFFIX")
+                    .to((String) null)
+                    .set("CREATE_PARAMS")
+                    .to("(length)")
+                    .set("NULLABLE")
+                    .to(DatabaseMetaData.typeNullable)
+                    .set("CASE_SENSITIVE")
+                    .to(true)
+                    .set("SEARCHABLE")
+                    .to(DatabaseMetaData.typeSearchable)
+                    .set("UNSIGNED_ATTRIBUTE")
+                    .to(true)
+                    .set("FIXED_PREC_SCALE")
+                    .to(false)
+                    .set("AUTO_INCREMENT")
+                    .to(false)
+                    .set("LOCAL_TYPE_NAME")
+                    .to("STRING")
+                    .set("MINIMUM_SCALE")
+                    .to(0)
+                    .set("MAXIMUM_SCALE")
+                    .to(0)
+                    .set("SQL_DATA_TYPE")
+                    .to((Long) null)
+                    .set("SQL_DATETIME_SUB")
+                    .to((Long) null)
+                    .set("NUM_PREC_RADIX")
+                    .to((Long) null)
+                    .build(),
+                Struct.newBuilder()
+                    .set("TYPE_NAME")
+                    .to("INT64")
+                    .set("DATA_TYPE")
+                    .to(Types.BIGINT) // -5
+                    .set("PRECISION")
+                    .to(19L)
+                    .set("LITERAL_PREFIX")
+                    .to((String) null)
+                    .set("LITERAL_SUFFIX")
+                    .to((String) null)
+                    .set("CREATE_PARAMS")
+                    .to((String) null)
+                    .set("NULLABLE")
+                    .to(DatabaseMetaData.typeNullable)
+                    .set("CASE_SENSITIVE")
+                    .to(false)
+                    .set("SEARCHABLE")
+                    .to(DatabaseMetaData.typePredBasic)
+                    .set("UNSIGNED_ATTRIBUTE")
+                    .to(false)
+                    .set("FIXED_PREC_SCALE")
+                    .to(false)
+                    .set("AUTO_INCREMENT")
+                    .to(false)
+                    .set("LOCAL_TYPE_NAME")
+                    .to("INT64")
+                    .set("MINIMUM_SCALE")
+                    .to(0)
+                    .set("MAXIMUM_SCALE")
+                    .to(0)
+                    .set("SQL_DATA_TYPE")
+                    .to((Long) null)
+                    .set("SQL_DATETIME_SUB")
+                    .to((Long) null)
+                    .set("NUM_PREC_RADIX")
+                    .to(10)
+                    .build(),
+                Struct.newBuilder()
+                    .set("TYPE_NAME")
+                    .to("BYTES")
+                    .set("DATA_TYPE")
+                    .to(Types.BINARY) // -2
+                    .set("PRECISION")
+                    .to(10485760L)
+                    .set("LITERAL_PREFIX")
+                    .to((String) null)
+                    .set("LITERAL_SUFFIX")
+                    .to((String) null)
+                    .set("CREATE_PARAMS")
+                    .to("(length)")
+                    .set("NULLABLE")
+                    .to(DatabaseMetaData.typeNullable)
+                    .set("CASE_SENSITIVE")
+                    .to(false)
+                    .set("SEARCHABLE")
+                    .to(DatabaseMetaData.typePredBasic)
+                    .set("UNSIGNED_ATTRIBUTE")
+                    .to(true)
+                    .set("FIXED_PREC_SCALE")
+                    .to(false)
+                    .set("AUTO_INCREMENT")
+                    .to(false)
+                    .set("LOCAL_TYPE_NAME")
+                    .to("BYTES")
+                    .set("MINIMUM_SCALE")
+                    .to(0)
+                    .set("MAXIMUM_SCALE")
+                    .to(0)
+                    .set("SQL_DATA_TYPE")
+                    .to((Long) null)
+                    .set("SQL_DATETIME_SUB")
+                    .to((Long) null)
+                    .set("NUM_PREC_RADIX")
+                    .to((Long) null)
+                    .build(),
+                Struct.newBuilder()
+                    .set("TYPE_NAME")
+                    .to("FLOAT64")
+                    .set("DATA_TYPE")
+                    .to(Types.DOUBLE) // 8
+                    .set("PRECISION")
+                    .to(15L)
+                    .set("LITERAL_PREFIX")
+                    .to((String) null)
+                    .set("LITERAL_SUFFIX")
+                    .to((String) null)
+                    .set("CREATE_PARAMS")
+                    .to((String) null)
+                    .set("NULLABLE")
+                    .to(DatabaseMetaData.typeNullable)
+                    .set("CASE_SENSITIVE")
+                    .to(false)
+                    .set("SEARCHABLE")
+                    .to(DatabaseMetaData.typePredBasic)
+                    .set("UNSIGNED_ATTRIBUTE")
+                    .to(false)
+                    .set("FIXED_PREC_SCALE")
+                    .to(false)
+                    .set("AUTO_INCREMENT")
+                    .to(false)
+                    .set("LOCAL_TYPE_NAME")
+                    .to("FLOAT64")
+                    .set("MINIMUM_SCALE")
+                    .to(0)
+                    .set("MAXIMUM_SCALE")
+                    .to(0)
+                    .set("SQL_DATA_TYPE")
+                    .to((Long) null)
+                    .set("SQL_DATETIME_SUB")
+                    .to((Long) null)
+                    .set("NUM_PREC_RADIX")
+                    .to(2)
+                    .build(),
+                Struct.newBuilder()
+                    .set("TYPE_NAME")
+                    .to("BOOL")
+                    .set("DATA_TYPE")
+                    .to(Types.BOOLEAN) // 16
+                    .set("PRECISION")
+                    .to((Long) null)
+                    .set("LITERAL_PREFIX")
+                    .to((String) null)
+                    .set("LITERAL_SUFFIX")
+                    .to((String) null)
+                    .set("CREATE_PARAMS")
+                    .to((String) null)
+                    .set("NULLABLE")
+                    .to(DatabaseMetaData.typeNullable)
+                    .set("CASE_SENSITIVE")
+                    .to(false)
+                    .set("SEARCHABLE")
+                    .to(DatabaseMetaData.typePredBasic)
+                    .set("UNSIGNED_ATTRIBUTE")
+                    .to(true)
+                    .set("FIXED_PREC_SCALE")
+                    .to(false)
+                    .set("AUTO_INCREMENT")
+                    .to(false)
+                    .set("LOCAL_TYPE_NAME")
+                    .to("BOOL")
+                    .set("MINIMUM_SCALE")
+                    .to(0)
+                    .set("MAXIMUM_SCALE")
+                    .to(0)
+                    .set("SQL_DATA_TYPE")
+                    .to((Long) null)
+                    .set("SQL_DATETIME_SUB")
+                    .to((Long) null)
+                    .set("NUM_PREC_RADIX")
+                    .to((Long) null)
+                    .build(),
+                Struct.newBuilder()
+                    .set("TYPE_NAME")
+                    .to("DATE")
+                    .set("DATA_TYPE")
+                    .to(Types.DATE) // 91
+                    .set("PRECISION")
+                    .to(10L)
+                    .set("LITERAL_PREFIX")
+                    .to("DATE ")
+                    .set("LITERAL_SUFFIX")
+                    .to((String) null)
+                    .set("CREATE_PARAMS")
+                    .to((String) null)
+                    .set("NULLABLE")
+                    .to(DatabaseMetaData.typeNullable)
+                    .set("CASE_SENSITIVE")
+                    .to(false)
+                    .set("SEARCHABLE")
+                    .to(DatabaseMetaData.typePredBasic)
+                    .set("UNSIGNED_ATTRIBUTE")
+                    .to(true)
+                    .set("FIXED_PREC_SCALE")
+                    .to(false)
+                    .set("AUTO_INCREMENT")
+                    .to(false)
+                    .set("LOCAL_TYPE_NAME")
+                    .to("DATE")
+                    .set("MINIMUM_SCALE")
+                    .to(0)
+                    .set("MAXIMUM_SCALE")
+                    .to(0)
+                    .set("SQL_DATA_TYPE")
+                    .to((Long) null)
+                    .set("SQL_DATETIME_SUB")
+                    .to((Long) null)
+                    .set("NUM_PREC_RADIX")
+                    .to((Long) null)
+                    .build(),
+                Struct.newBuilder()
+                    .set("TYPE_NAME")
+                    .to("TIMESTAMP")
+                    .set("DATA_TYPE")
+                    .to(Types.TIMESTAMP) // 93
+                    .set("PRECISION")
+                    .to(35L)
+                    .set("LITERAL_PREFIX")
+                    .to("TIMESTAMP ")
+                    .set("LITERAL_SUFFIX")
+                    .to((String) null)
+                    .set("CREATE_PARAMS")
+                    .to((String) null)
+                    .set("NULLABLE")
+                    .to(DatabaseMetaData.typeNullable)
+                    .set("CASE_SENSITIVE")
+                    .to(false)
+                    .set("SEARCHABLE")
+                    .to(DatabaseMetaData.typePredBasic)
+                    .set("UNSIGNED_ATTRIBUTE")
+                    .to(true)
+                    .set("FIXED_PREC_SCALE")
+                    .to(false)
+                    .set("AUTO_INCREMENT")
+                    .to(false)
+                    .set("LOCAL_TYPE_NAME")
+                    .to("TIMESTAMP")
+                    .set("MINIMUM_SCALE")
+                    .to(0)
+                    .set("MAXIMUM_SCALE")
+                    .to(0)
+                    .set("SQL_DATA_TYPE")
+                    .to((Long) null)
+                    .set("SQL_DATETIME_SUB")
+                    .to((Long) null)
+                    .set("NUM_PREC_RADIX")
+                    .to((Long) null)
+                    .build())));
   }
 
   @Override
-  public ResultSet getIndexInfo(String catalog, String schema, String table, boolean unique,
-      boolean approximate) throws SQLException {
+  public ResultSet getIndexInfo(
+      String catalog, String schema, String table, boolean unique, boolean approximate)
+      throws SQLException {
     return getIndexInfo(catalog, schema, table, null, unique);
   }
 
@@ -1080,11 +1214,13 @@ class JdbcDatabaseMetaData extends AbstractJdbcWrapper implements DatabaseMetaDa
     return getIndexInfo(catalog, schema, null, indexName, false);
   }
 
-  private ResultSet getIndexInfo(String catalog, String schema, String table, String indexName,
-      boolean unique) throws SQLException {
+  private ResultSet getIndexInfo(
+      String catalog, String schema, String table, String indexName, boolean unique)
+      throws SQLException {
     String sql = readSqlFromFile("DatabaseMetaData_GetIndexInfo.sql");
-    PreparedStatement statement = prepareStatementReplaceNullWithAnyString(sql, catalog, schema,
-        table, indexName, unique ? "YES" : "%");
+    PreparedStatement statement =
+        prepareStatementReplaceNullWithAnyString(
+            sql, catalog, schema, table, indexName, unique ? "YES" : "%");
     return statement.executeQuery();
   }
 
@@ -1149,19 +1285,20 @@ class JdbcDatabaseMetaData extends AbstractJdbcWrapper implements DatabaseMetaDa
   }
 
   @Override
-  public ResultSet getUDTs(String catalog, String schemaPattern, String typeNamePattern,
-      int[] types) throws SQLException {
-    return JdbcResultSet.of(ResultSets.forRows(
-        Type.struct(
-            StructField.of("TYPE_CAT", Type.string()),
-            StructField.of("TYPE_SCHEM", Type.string()),
-            StructField.of("TYPE_NAME", Type.string()),
-            StructField.of("CLASS_NAME", Type.string()),
-            StructField.of("DATA_TYPE", Type.int64()),
-            StructField.of("REMARKS", Type.string()),
-            StructField.of("BASE_TYPE", Type.int64())
-        ),
-        Collections.<Struct>emptyList()));
+  public ResultSet getUDTs(
+      String catalog, String schemaPattern, String typeNamePattern, int[] types)
+      throws SQLException {
+    return JdbcResultSet.of(
+        ResultSets.forRows(
+            Type.struct(
+                StructField.of("TYPE_CAT", Type.string()),
+                StructField.of("TYPE_SCHEM", Type.string()),
+                StructField.of("TYPE_NAME", Type.string()),
+                StructField.of("CLASS_NAME", Type.string()),
+                StructField.of("DATA_TYPE", Type.int64()),
+                StructField.of("REMARKS", Type.string()),
+                StructField.of("BASE_TYPE", Type.int64())),
+            Collections.<Struct>emptyList()));
   }
 
   @Override
@@ -1192,60 +1329,60 @@ class JdbcDatabaseMetaData extends AbstractJdbcWrapper implements DatabaseMetaDa
   @Override
   public ResultSet getSuperTypes(String catalog, String schemaPattern, String typeNamePattern)
       throws SQLException {
-    return JdbcResultSet.of(ResultSets.forRows(
-        Type.struct(
-            StructField.of("TYPE_CAT", Type.string()),
-            StructField.of("TYPE_SCHEM", Type.string()),
-            StructField.of("TYPE_NAME", Type.string()),
-            StructField.of("SUPERTYPE_CAT", Type.string()),
-            StructField.of("SUPERTYPE_SCHEM", Type.string()),
-            StructField.of("SUPERTYPE_NAME", Type.string())
-        ),
-        Collections.<Struct>emptyList()));
+    return JdbcResultSet.of(
+        ResultSets.forRows(
+            Type.struct(
+                StructField.of("TYPE_CAT", Type.string()),
+                StructField.of("TYPE_SCHEM", Type.string()),
+                StructField.of("TYPE_NAME", Type.string()),
+                StructField.of("SUPERTYPE_CAT", Type.string()),
+                StructField.of("SUPERTYPE_SCHEM", Type.string()),
+                StructField.of("SUPERTYPE_NAME", Type.string())),
+            Collections.<Struct>emptyList()));
   }
 
   @Override
   public ResultSet getSuperTables(String catalog, String schemaPattern, String tableNamePattern)
       throws SQLException {
-    return JdbcResultSet.of(ResultSets.forRows(
-        Type.struct(
-            StructField.of("TABLE_CAT", Type.string()),
-            StructField.of("TABLE_SCHEM", Type.string()),
-            StructField.of("TABLE_NAME", Type.string()),
-            StructField.of("SUPERTABLE_NAME", Type.string())
-        ),
-        Collections.<Struct>emptyList()));
+    return JdbcResultSet.of(
+        ResultSets.forRows(
+            Type.struct(
+                StructField.of("TABLE_CAT", Type.string()),
+                StructField.of("TABLE_SCHEM", Type.string()),
+                StructField.of("TABLE_NAME", Type.string()),
+                StructField.of("SUPERTABLE_NAME", Type.string())),
+            Collections.<Struct>emptyList()));
   }
 
-
   @Override
-  public ResultSet getAttributes(String catalog, String schemaPattern, String typeNamePattern,
-      String attributeNamePattern) throws SQLException {
-    return JdbcResultSet.of(ResultSets.forRows(
-        Type.struct(
-            StructField.of("TYPE_CAT", Type.string()),
-            StructField.of("TYPE_SCHEM", Type.string()),
-            StructField.of("TYPE_NAME", Type.string()),
-            StructField.of("ATTR_NAME", Type.string()),
-            StructField.of("DATA_TYPE", Type.int64()),
-            StructField.of("ATTR_TYPE_NAME", Type.string()),
-            StructField.of("ATTR_SIZE", Type.int64()),
-            StructField.of("DECIMAL_DIGITS", Type.int64()),
-            StructField.of("NUM_PREC_RADIX", Type.int64()),
-            StructField.of("NULLABLE", Type.int64()),
-            StructField.of("REMARKS", Type.string()),
-            StructField.of("ATTR_DEF", Type.string()),
-            StructField.of("SQL_DATA_TYPE", Type.int64()),
-            StructField.of("SQL_DATETIME_SUB", Type.int64()),
-            StructField.of("CHAR_OCTET_LENGTH", Type.int64()),
-            StructField.of("ORDINAL_POSITION", Type.int64()),
-            StructField.of("IS_NULLABLE", Type.string()),
-            StructField.of("SCOPE_CATALOG", Type.string()),
-            StructField.of("SCOPE_SCHEMA", Type.string()),
-            StructField.of("SCOPE_TABLE", Type.string()),
-            StructField.of("SOURCE_DATA_TYPE", Type.int64())
-        ),
-        Collections.<Struct>emptyList()));
+  public ResultSet getAttributes(
+      String catalog, String schemaPattern, String typeNamePattern, String attributeNamePattern)
+      throws SQLException {
+    return JdbcResultSet.of(
+        ResultSets.forRows(
+            Type.struct(
+                StructField.of("TYPE_CAT", Type.string()),
+                StructField.of("TYPE_SCHEM", Type.string()),
+                StructField.of("TYPE_NAME", Type.string()),
+                StructField.of("ATTR_NAME", Type.string()),
+                StructField.of("DATA_TYPE", Type.int64()),
+                StructField.of("ATTR_TYPE_NAME", Type.string()),
+                StructField.of("ATTR_SIZE", Type.int64()),
+                StructField.of("DECIMAL_DIGITS", Type.int64()),
+                StructField.of("NUM_PREC_RADIX", Type.int64()),
+                StructField.of("NULLABLE", Type.int64()),
+                StructField.of("REMARKS", Type.string()),
+                StructField.of("ATTR_DEF", Type.string()),
+                StructField.of("SQL_DATA_TYPE", Type.int64()),
+                StructField.of("SQL_DATETIME_SUB", Type.int64()),
+                StructField.of("CHAR_OCTET_LENGTH", Type.int64()),
+                StructField.of("ORDINAL_POSITION", Type.int64()),
+                StructField.of("IS_NULLABLE", Type.string()),
+                StructField.of("SCOPE_CATALOG", Type.string()),
+                StructField.of("SCOPE_SCHEMA", Type.string()),
+                StructField.of("SCOPE_TABLE", Type.string()),
+                StructField.of("SOURCE_DATA_TYPE", Type.int64())),
+            Collections.<Struct>emptyList()));
   }
 
   @Override
@@ -1318,83 +1455,84 @@ class JdbcDatabaseMetaData extends AbstractJdbcWrapper implements DatabaseMetaDa
 
   @Override
   public ResultSet getClientInfoProperties() throws SQLException {
-    return JdbcResultSet.of(ResultSets.forRows(
-        Type.struct(
-            StructField.of("NAME", Type.string()),
-            StructField.of("MAX_LEN", Type.string()),
-            StructField.of("DEFAULT_VALUE", Type.string()),
-            StructField.of("DESCRIPTION", Type.string())
-        ),
-        Collections.<Struct>emptyList()));
+    return JdbcResultSet.of(
+        ResultSets.forRows(
+            Type.struct(
+                StructField.of("NAME", Type.string()),
+                StructField.of("MAX_LEN", Type.string()),
+                StructField.of("DEFAULT_VALUE", Type.string()),
+                StructField.of("DESCRIPTION", Type.string())),
+            Collections.<Struct>emptyList()));
   }
 
   @Override
   public ResultSet getFunctions(String catalog, String schemaPattern, String functionNamePattern)
       throws SQLException {
     // TODO: return system functions
-    return JdbcResultSet.of(ResultSets.forRows(
-        Type.struct(
-            StructField.of("FUNCTION_CAT", Type.string()),
-            StructField.of("FUNCTION_SCHEM", Type.string()),
-            StructField.of("FUNCTION_NAME", Type.string()),
-            StructField.of("REMARKS", Type.string()),
-            StructField.of("FUNCTION_TYPE", Type.int64()),
-            StructField.of("SPECIFIC_NAME", Type.string())
-        ),
-        Collections.<Struct>emptyList()));
+    return JdbcResultSet.of(
+        ResultSets.forRows(
+            Type.struct(
+                StructField.of("FUNCTION_CAT", Type.string()),
+                StructField.of("FUNCTION_SCHEM", Type.string()),
+                StructField.of("FUNCTION_NAME", Type.string()),
+                StructField.of("REMARKS", Type.string()),
+                StructField.of("FUNCTION_TYPE", Type.int64()),
+                StructField.of("SPECIFIC_NAME", Type.string())),
+            Collections.<Struct>emptyList()));
   }
 
   @Override
-  public ResultSet getFunctionColumns(String catalog, String schemaPattern,
-      String functionNamePattern, String columnNamePattern) throws SQLException {
+  public ResultSet getFunctionColumns(
+      String catalog, String schemaPattern, String functionNamePattern, String columnNamePattern)
+      throws SQLException {
     // TODO: return system functions
-    return JdbcResultSet.of(ResultSets.forRows(
-        Type.struct(
-            StructField.of("FUNCTION_CAT", Type.string()),
-            StructField.of("FUNCTION_SCHEM", Type.string()),
-            StructField.of("FUNCTION_NAME", Type.string()),
-            StructField.of("COLUMN_NAME", Type.string()),
-            StructField.of("COLUMN_TYPE", Type.int64()),
-            StructField.of("DATA_TYPE", Type.int64()),
-            StructField.of("TYPE_NAME", Type.string()),
-            StructField.of("PRECISION", Type.int64()),
-            StructField.of("LENGTH", Type.int64()),
-            StructField.of("SCALE", Type.int64()),
-            StructField.of("RADIX", Type.int64()),
-            StructField.of("NULLABLE", Type.int64()),
-            StructField.of("REMARKS", Type.string()),
-            StructField.of("CHAR_OCTET_LENGTH", Type.int64()),
-            StructField.of("ORDINAL_POSITION", Type.int64()),
-            StructField.of("IS_NULLABLE", Type.string()),
-            StructField.of("SPECIFIC_NAME", Type.string())
-        ),
-        Collections.<Struct>emptyList()));
+    return JdbcResultSet.of(
+        ResultSets.forRows(
+            Type.struct(
+                StructField.of("FUNCTION_CAT", Type.string()),
+                StructField.of("FUNCTION_SCHEM", Type.string()),
+                StructField.of("FUNCTION_NAME", Type.string()),
+                StructField.of("COLUMN_NAME", Type.string()),
+                StructField.of("COLUMN_TYPE", Type.int64()),
+                StructField.of("DATA_TYPE", Type.int64()),
+                StructField.of("TYPE_NAME", Type.string()),
+                StructField.of("PRECISION", Type.int64()),
+                StructField.of("LENGTH", Type.int64()),
+                StructField.of("SCALE", Type.int64()),
+                StructField.of("RADIX", Type.int64()),
+                StructField.of("NULLABLE", Type.int64()),
+                StructField.of("REMARKS", Type.string()),
+                StructField.of("CHAR_OCTET_LENGTH", Type.int64()),
+                StructField.of("ORDINAL_POSITION", Type.int64()),
+                StructField.of("IS_NULLABLE", Type.string()),
+                StructField.of("SPECIFIC_NAME", Type.string())),
+            Collections.<Struct>emptyList()));
   }
 
   @Override
-  public ResultSet getPseudoColumns(String catalog, String schemaPattern, String tableNamePattern,
-      String columnNamePattern) throws SQLException {
-    return JdbcResultSet.of(ResultSets.forRows(
-        Type.struct(
-            StructField.of("TABLE_CAT", Type.string()),
-            StructField.of("TABLE_SCHEM", Type.string()),
-            StructField.of("TABLE_NAME", Type.string()),
-            StructField.of("COLUMN_NAME", Type.string()),
-            StructField.of("DATA_TYPE", Type.int64()),
-            StructField.of("COLUMN_SIZE", Type.int64()),
-            StructField.of("DECIMAL_DIGITS", Type.int64()),
-            StructField.of("NUM_PREC_RADIX", Type.int64()),
-            StructField.of("COLUMN_USAGE", Type.string()),
-            StructField.of("REMARKS", Type.string()),
-            StructField.of("CHAR_OCTET_LENGTH", Type.int64()),
-            StructField.of("IS_NULLABLE", Type.string())
-        ),
-        Collections.<Struct>emptyList()));
+  public ResultSet getPseudoColumns(
+      String catalog, String schemaPattern, String tableNamePattern, String columnNamePattern)
+      throws SQLException {
+    return JdbcResultSet.of(
+        ResultSets.forRows(
+            Type.struct(
+                StructField.of("TABLE_CAT", Type.string()),
+                StructField.of("TABLE_SCHEM", Type.string()),
+                StructField.of("TABLE_NAME", Type.string()),
+                StructField.of("COLUMN_NAME", Type.string()),
+                StructField.of("DATA_TYPE", Type.int64()),
+                StructField.of("COLUMN_SIZE", Type.int64()),
+                StructField.of("DECIMAL_DIGITS", Type.int64()),
+                StructField.of("NUM_PREC_RADIX", Type.int64()),
+                StructField.of("COLUMN_USAGE", Type.string()),
+                StructField.of("REMARKS", Type.string()),
+                StructField.of("CHAR_OCTET_LENGTH", Type.int64()),
+                StructField.of("IS_NULLABLE", Type.string())),
+            Collections.<Struct>emptyList()));
   }
 
   @Override
   public boolean generatedKeyAlwaysReturned() throws SQLException {
     return false;
   }
-
 }

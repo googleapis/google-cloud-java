@@ -25,6 +25,11 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
+
+import com.google.cloud.spanner.ErrorCode;
+import com.google.cloud.spanner.SpannerExceptionFactory;
+import com.google.cloud.spanner.jdbc.StatementResult.ResultType;
+import com.google.rpc.Code;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -39,21 +44,15 @@ import org.junit.runners.JUnit4;
 import org.mockito.Matchers;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
-import com.google.cloud.spanner.ErrorCode;
-import com.google.cloud.spanner.SpannerExceptionFactory;
-import com.google.cloud.spanner.jdbc.StatementResult.ResultType;
-import com.google.rpc.Code;
 
 @RunWith(JUnit4.class)
 public class JdbcStatementTest {
-  @Rule
-  public final ExpectedException thrown = ExpectedException.none();
+  @Rule public final ExpectedException thrown = ExpectedException.none();
   private static final String SELECT = "SELECT 1";
   private static final String UPDATE = "UPDATE FOO SET BAR=1 WHERE BAZ=2";
   private static final String DDL = "CREATE INDEX FOO ON BAR(ID)";
 
-  @Rule
-  public final ExpectedException expected = ExpectedException.none();
+  @Rule public final ExpectedException expected = ExpectedException.none();
 
   private JdbcStatement createStatement() {
     Connection spanner = mock(Connection.class);
@@ -77,35 +76,43 @@ public class JdbcStatementTest {
     when(spanner.execute(com.google.cloud.spanner.Statement.of(DDL))).thenReturn(ddlResult);
 
     when(spanner.executeQuery(com.google.cloud.spanner.Statement.of(SELECT))).thenReturn(resultSet);
-    when(spanner.executeQuery(com.google.cloud.spanner.Statement.of(UPDATE))).thenThrow(
-        SpannerExceptionFactory.newSpannerException(ErrorCode.INVALID_ARGUMENT, "not a query"));
-    when(spanner.executeQuery(com.google.cloud.spanner.Statement.of(DDL))).thenThrow(
-        SpannerExceptionFactory.newSpannerException(ErrorCode.INVALID_ARGUMENT, "not a query"));
+    when(spanner.executeQuery(com.google.cloud.spanner.Statement.of(UPDATE)))
+        .thenThrow(
+            SpannerExceptionFactory.newSpannerException(ErrorCode.INVALID_ARGUMENT, "not a query"));
+    when(spanner.executeQuery(com.google.cloud.spanner.Statement.of(DDL)))
+        .thenThrow(
+            SpannerExceptionFactory.newSpannerException(ErrorCode.INVALID_ARGUMENT, "not a query"));
 
     when(spanner.executeUpdate(com.google.cloud.spanner.Statement.of(UPDATE))).thenReturn(1L);
-    when(spanner.executeUpdate(com.google.cloud.spanner.Statement.of(SELECT))).thenThrow(
-        SpannerExceptionFactory.newSpannerException(ErrorCode.INVALID_ARGUMENT, "not an update"));
-    when(spanner.executeUpdate(com.google.cloud.spanner.Statement.of(DDL))).thenThrow(
-        SpannerExceptionFactory.newSpannerException(ErrorCode.INVALID_ARGUMENT, "not an update"));
+    when(spanner.executeUpdate(com.google.cloud.spanner.Statement.of(SELECT)))
+        .thenThrow(
+            SpannerExceptionFactory.newSpannerException(
+                ErrorCode.INVALID_ARGUMENT, "not an update"));
+    when(spanner.executeUpdate(com.google.cloud.spanner.Statement.of(DDL)))
+        .thenThrow(
+            SpannerExceptionFactory.newSpannerException(
+                ErrorCode.INVALID_ARGUMENT, "not an update"));
 
     when(spanner.executeBatchUpdate(Matchers.anyListOf(com.google.cloud.spanner.Statement.class)))
-        .thenAnswer(new Answer<long[]>() {
-          @SuppressWarnings("unchecked")
-          @Override
-          public long[] answer(InvocationOnMock invocation) throws Throwable {
-            List<com.google.cloud.spanner.Statement> statements =
-                (List<com.google.cloud.spanner.Statement>) invocation.getArguments()[0];
-            if (statements.isEmpty()
-                || StatementParser.INSTANCE.isDdlStatement(statements.get(0).getSql())) {
-              return new long[0];
-            }
-            long[] res =
-                new long[((List<com.google.cloud.spanner.Statement>) invocation.getArguments()[0])
-                    .size()];
-            Arrays.fill(res, 1L);
-            return res;
-          }
-        });
+        .thenAnswer(
+            new Answer<long[]>() {
+              @SuppressWarnings("unchecked")
+              @Override
+              public long[] answer(InvocationOnMock invocation) throws Throwable {
+                List<com.google.cloud.spanner.Statement> statements =
+                    (List<com.google.cloud.spanner.Statement>) invocation.getArguments()[0];
+                if (statements.isEmpty()
+                    || StatementParser.INSTANCE.isDdlStatement(statements.get(0).getSql())) {
+                  return new long[0];
+                }
+                long[] res =
+                    new long
+                        [((List<com.google.cloud.spanner.Statement>) invocation.getArguments()[0])
+                            .size()];
+                Arrays.fill(res, 1L);
+                return res;
+              }
+            });
 
     JdbcConnection connection = mock(JdbcConnection.class);
     when(connection.getSpannerConnection()).thenReturn(spanner);
@@ -218,8 +225,9 @@ public class JdbcStatementTest {
   @Test
   public void testExecuteUpdateWithSelectStatement() throws SQLException {
     Statement statement = createStatement();
-    expected.expect(JdbcExceptionMatcher.matchCodeAndMessage(Code.INVALID_ARGUMENT,
-        "The statement is not an update or DDL statement"));
+    expected.expect(
+        JdbcExceptionMatcher.matchCodeAndMessage(
+            Code.INVALID_ARGUMENT, "The statement is not an update or DDL statement"));
     statement.executeUpdate(SELECT);
   }
 
@@ -264,7 +272,7 @@ public class JdbcStatementTest {
 
   @Test
   public void testConvertUpdateCounts() throws SQLException {
-    try(JdbcStatement statement = new JdbcStatement(mock(JdbcConnection.class))) {
+    try (JdbcStatement statement = new JdbcStatement(mock(JdbcConnection.class))) {
       int[] updateCounts = statement.convertUpdateCounts(new long[] {1L, 2L, 3L});
       assertThat(updateCounts, is(equalTo(new int[] {1, 2, 3})));
       updateCounts = statement.convertUpdateCounts(new long[] {0L, 0L, 0L});
@@ -277,32 +285,38 @@ public class JdbcStatementTest {
 
   @Test
   public void testConvertUpdateCountsToSuccessNoInfo() throws SQLException {
-    try(JdbcStatement statement = new JdbcStatement(mock(JdbcConnection.class))) {
+    try (JdbcStatement statement = new JdbcStatement(mock(JdbcConnection.class))) {
       int[] updateCounts = new int[3];
       statement.convertUpdateCountsToSuccessNoInfo(new long[] {1L, 2L, 3L}, updateCounts);
-      assertThat(updateCounts, is(equalTo(new int[] {
-          Statement.SUCCESS_NO_INFO,
-          Statement.SUCCESS_NO_INFO,
-          Statement.SUCCESS_NO_INFO
-        })));
+      assertThat(
+          updateCounts,
+          is(
+              equalTo(
+                  new int[] {
+                    Statement.SUCCESS_NO_INFO, Statement.SUCCESS_NO_INFO, Statement.SUCCESS_NO_INFO
+                  })));
 
       statement.convertUpdateCountsToSuccessNoInfo(new long[] {0L, 0L, 0L}, updateCounts);
-      assertThat(updateCounts, is(equalTo(new int[] {
-          Statement.EXECUTE_FAILED,
-          Statement.EXECUTE_FAILED,
-          Statement.EXECUTE_FAILED
-        })));
+      assertThat(
+          updateCounts,
+          is(
+              equalTo(
+                  new int[] {
+                    Statement.EXECUTE_FAILED, Statement.EXECUTE_FAILED, Statement.EXECUTE_FAILED
+                  })));
 
       statement.convertUpdateCountsToSuccessNoInfo(new long[] {1L, 0L, 2L}, updateCounts);
-      assertThat(updateCounts, is(equalTo(new int[] {
-          Statement.SUCCESS_NO_INFO,
-          Statement.EXECUTE_FAILED,
-          Statement.SUCCESS_NO_INFO
-        })));
+      assertThat(
+          updateCounts,
+          is(
+              equalTo(
+                  new int[] {
+                    Statement.SUCCESS_NO_INFO, Statement.EXECUTE_FAILED, Statement.SUCCESS_NO_INFO
+                  })));
 
       expected.expect(JdbcExceptionMatcher.matchCode(Code.OUT_OF_RANGE));
-      statement.convertUpdateCountsToSuccessNoInfo(new long[] {1L, Integer.MAX_VALUE + 1L}, updateCounts);
+      statement.convertUpdateCountsToSuccessNoInfo(
+          new long[] {1L, Integer.MAX_VALUE + 1L}, updateCounts);
     }
   }
-
 }

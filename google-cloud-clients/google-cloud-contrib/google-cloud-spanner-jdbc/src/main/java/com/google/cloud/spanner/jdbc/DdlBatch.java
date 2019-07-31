@@ -16,10 +16,6 @@
 
 package com.google.cloud.spanner.jdbc;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.concurrent.Callable;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.Timestamp;
 import com.google.cloud.spanner.ErrorCode;
@@ -34,6 +30,10 @@ import com.google.cloud.spanner.jdbc.StatementParser.StatementType;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
 import com.google.spanner.admin.database.v1.UpdateDatabaseDdlMetadata;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.concurrent.Callable;
 
 /**
  * {@link UnitOfWork} that is used when a DDL batch is started. These batches only accept DDL
@@ -96,16 +96,16 @@ class DdlBatch extends AbstractBaseUnitOfWork {
   }
 
   @Override
-  public ResultSet executeQuery(ParsedStatement statement, AnalyzeMode analyzeMode,
-      QueryOption... options) {
-    throw SpannerExceptionFactory.newSpannerException(ErrorCode.FAILED_PRECONDITION,
-        "Executing queries is not allowed for DDL batches.");
+  public ResultSet executeQuery(
+      ParsedStatement statement, AnalyzeMode analyzeMode, QueryOption... options) {
+    throw SpannerExceptionFactory.newSpannerException(
+        ErrorCode.FAILED_PRECONDITION, "Executing queries is not allowed for DDL batches.");
   }
 
   @Override
   public Timestamp getReadTimestamp() {
-    throw SpannerExceptionFactory.newSpannerException(ErrorCode.FAILED_PRECONDITION,
-        "There is no read timestamp available for DDL batches.");
+    throw SpannerExceptionFactory.newSpannerException(
+        ErrorCode.FAILED_PRECONDITION, "There is no read timestamp available for DDL batches.");
   }
 
   @Override
@@ -115,8 +115,8 @@ class DdlBatch extends AbstractBaseUnitOfWork {
 
   @Override
   public Timestamp getCommitTimestamp() {
-    throw SpannerExceptionFactory.newSpannerException(ErrorCode.FAILED_PRECONDITION,
-        "There is no commit timestamp available for DDL batches.");
+    throw SpannerExceptionFactory.newSpannerException(
+        ErrorCode.FAILED_PRECONDITION, "There is no commit timestamp available for DDL batches.");
   }
 
   @Override
@@ -126,73 +126,75 @@ class DdlBatch extends AbstractBaseUnitOfWork {
 
   @Override
   public void executeDdl(ParsedStatement ddl) {
-    ConnectionPreconditions.checkState(state == UnitOfWorkState.STARTED,
+    ConnectionPreconditions.checkState(
+        state == UnitOfWorkState.STARTED,
         "The batch is no longer active and cannot be used for further statements");
-    Preconditions.checkArgument(ddl.getType() == StatementType.DDL,
-        "Only DDL statements are allowed. \"" + ddl.getSqlWithoutComments()
+    Preconditions.checkArgument(
+        ddl.getType() == StatementType.DDL,
+        "Only DDL statements are allowed. \""
+            + ddl.getSqlWithoutComments()
             + "\" is not a DDL-statement.");
     statements.add(ddl.getSqlWithoutComments());
   }
 
   @Override
   public long executeUpdate(ParsedStatement update) {
-    throw SpannerExceptionFactory.newSpannerException(ErrorCode.FAILED_PRECONDITION,
-        "Executing updates is not allowed for DDL batches.");
+    throw SpannerExceptionFactory.newSpannerException(
+        ErrorCode.FAILED_PRECONDITION, "Executing updates is not allowed for DDL batches.");
   }
 
   @Override
   public long[] executeBatchUpdate(Iterable<ParsedStatement> updates) {
-    throw SpannerExceptionFactory.newSpannerException(ErrorCode.FAILED_PRECONDITION,
-        "Executing batch updates is not allowed for DDL batches.");
+    throw SpannerExceptionFactory.newSpannerException(
+        ErrorCode.FAILED_PRECONDITION, "Executing batch updates is not allowed for DDL batches.");
   }
 
   @Override
   public void write(Mutation mutation) {
-    throw SpannerExceptionFactory.newSpannerException(ErrorCode.FAILED_PRECONDITION,
-        "Writing mutations is not allowed for DDL batches.");
+    throw SpannerExceptionFactory.newSpannerException(
+        ErrorCode.FAILED_PRECONDITION, "Writing mutations is not allowed for DDL batches.");
   }
 
   @Override
   public void write(Iterable<Mutation> mutations) {
-    throw SpannerExceptionFactory.newSpannerException(ErrorCode.FAILED_PRECONDITION,
-        "Writing mutations is not allowed for DDL batches.");
+    throw SpannerExceptionFactory.newSpannerException(
+        ErrorCode.FAILED_PRECONDITION, "Writing mutations is not allowed for DDL batches.");
   }
 
   /**
-   * Create a {@link ParsedStatement} that we can use as input for the generic execute method
-   * when the {@link #runBatch()} method is executed. This method uses the generic execute
-   * method that allows statements to be cancelled and to timeout, which requires the input to be
-   * a {@link ParsedStatement}.
+   * Create a {@link ParsedStatement} that we can use as input for the generic execute method when
+   * the {@link #runBatch()} method is executed. This method uses the generic execute method that
+   * allows statements to be cancelled and to timeout, which requires the input to be a {@link
+   * ParsedStatement}.
    */
   private static final ParsedStatement RUN_BATCH =
       StatementParser.INSTANCE.parse(Statement.of("RUN BATCH"));
 
   @Override
   public long[] runBatch() {
-    ConnectionPreconditions.checkState(state == UnitOfWorkState.STARTED,
-        "The batch is no longer active and cannot be ran");
+    ConnectionPreconditions.checkState(
+        state == UnitOfWorkState.STARTED, "The batch is no longer active and cannot be ran");
     try {
       if (!statements.isEmpty()) {
         // create a statement that can be passed in to the execute method
-        Callable<UpdateDatabaseDdlMetadata> callable = new Callable<UpdateDatabaseDdlMetadata>() {
-          @Override
-          public UpdateDatabaseDdlMetadata call() throws Exception {
-            OperationFuture<Void, UpdateDatabaseDdlMetadata> operation =
-                ddlClient.executeDdl(statements);
-            try {
-              // Wait until the operation has finished.
-              operation.get();
-              // Return metadata.
-              return operation.getMetadata().get();
-            } catch (Exception e) {
-              long[] updateCounts = extractUpdateCounts(operation.getMetadata().get());
-              throw SpannerExceptionFactory.newSpannerBatchUpdateException(
-                  ErrorCode.INVALID_ARGUMENT,
-                  e.getMessage(),
-                  updateCounts);
-            }
-          }
-        };
+        Callable<UpdateDatabaseDdlMetadata> callable =
+            new Callable<UpdateDatabaseDdlMetadata>() {
+              @Override
+              public UpdateDatabaseDdlMetadata call() throws Exception {
+                OperationFuture<Void, UpdateDatabaseDdlMetadata> operation =
+                    ddlClient.executeDdl(statements);
+                try {
+                  // Wait until the operation has finished.
+                  operation.get();
+                  // Return metadata.
+                  return operation.getMetadata().get();
+                } catch (Exception e) {
+                  long[] updateCounts = extractUpdateCounts(operation.getMetadata().get());
+                  throw SpannerExceptionFactory.newSpannerBatchUpdateException(
+                      ErrorCode.INVALID_ARGUMENT, e.getMessage(), updateCounts);
+                }
+              }
+            };
         asyncExecuteStatement(RUN_BATCH, callable);
       }
       this.state = UnitOfWorkState.RAN;
@@ -208,8 +210,8 @@ class DdlBatch extends AbstractBaseUnitOfWork {
   @VisibleForTesting
   long[] extractUpdateCounts(UpdateDatabaseDdlMetadata metadata) {
     long[] updateCounts = new long[metadata.getStatementsCount()];
-    for(int i = 0; i < updateCounts.length; i++) {
-      if(metadata.getCommitTimestampsCount() > i && metadata.getCommitTimestamps(i) != null) {
+    for (int i = 0; i < updateCounts.length; i++) {
+      if (metadata.getCommitTimestampsCount() > i && metadata.getCommitTimestamps(i) != null) {
         updateCounts[i] = 1L;
       } else {
         updateCounts[i] = 0L;
@@ -220,20 +222,20 @@ class DdlBatch extends AbstractBaseUnitOfWork {
 
   @Override
   public void abortBatch() {
-    ConnectionPreconditions.checkState(state == UnitOfWorkState.STARTED,
-        "The batch is no longer active and cannot be aborted.");
+    ConnectionPreconditions.checkState(
+        state == UnitOfWorkState.STARTED, "The batch is no longer active and cannot be aborted.");
     this.state = UnitOfWorkState.ABORTED;
   }
 
   @Override
   public void commit() {
-    throw SpannerExceptionFactory.newSpannerException(ErrorCode.FAILED_PRECONDITION,
-        "Commit is not allowed for DDL batches.");
+    throw SpannerExceptionFactory.newSpannerException(
+        ErrorCode.FAILED_PRECONDITION, "Commit is not allowed for DDL batches.");
   }
 
   @Override
   public void rollback() {
-    throw SpannerExceptionFactory.newSpannerException(ErrorCode.FAILED_PRECONDITION,
-        "Rollback is not allowed for DDL batches.");
+    throw SpannerExceptionFactory.newSpannerException(
+        ErrorCode.FAILED_PRECONDITION, "Rollback is not allowed for DDL batches.");
   }
 }

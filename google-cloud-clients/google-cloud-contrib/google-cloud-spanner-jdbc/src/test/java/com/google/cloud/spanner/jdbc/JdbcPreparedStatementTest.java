@@ -23,6 +23,14 @@ import static org.mockito.Matchers.any;
 import static org.mockito.Matchers.anyString;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
+
+import com.google.cloud.spanner.ResultSet;
+import com.google.cloud.spanner.ResultSets;
+import com.google.cloud.spanner.Statement;
+import com.google.cloud.spanner.Struct;
+import com.google.cloud.spanner.Type;
+import com.google.cloud.spanner.Type.StructField;
+import com.google.rpc.Code;
 import java.io.ByteArrayInputStream;
 import java.io.StringReader;
 import java.math.BigDecimal;
@@ -47,18 +55,10 @@ import org.junit.Test;
 import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-import com.google.cloud.spanner.ResultSet;
-import com.google.cloud.spanner.ResultSets;
-import com.google.cloud.spanner.Statement;
-import com.google.cloud.spanner.Struct;
-import com.google.cloud.spanner.Type;
-import com.google.cloud.spanner.Type.StructField;
-import com.google.rpc.Code;
 
 @RunWith(JUnit4.class)
 public class JdbcPreparedStatementTest {
-  @Rule
-  public final ExpectedException thrown = ExpectedException.none();
+  @Rule public final ExpectedException thrown = ExpectedException.none();
 
   private String generateSqlWithParameters(int numberOfParams) {
     StringBuilder sql = new StringBuilder("INSERT INTO FOO (");
@@ -294,20 +294,24 @@ public class JdbcPreparedStatementTest {
   public void testGetResultSetMetadata() throws SQLException {
     final String sql = "SELECT * FROM FOO";
     Connection connection = mock(Connection.class);
-    ResultSet rs = ResultSets.forRows(
-        Type.struct(
-            StructField.of("ID", Type.int64()),
-            StructField.of("NAME", Type.string()),
-            StructField.of("AMOUNT", Type.float64())
-          ),
-        Arrays.asList(
-            Struct.newBuilder()
-              .set("ID").to(1L)
-              .set("NAME").to("foo")
-              .set("AMOUNT").to(Math.PI)
-            .build()));
+    ResultSet rs =
+        ResultSets.forRows(
+            Type.struct(
+                StructField.of("ID", Type.int64()),
+                StructField.of("NAME", Type.string()),
+                StructField.of("AMOUNT", Type.float64())),
+            Arrays.asList(
+                Struct.newBuilder()
+                    .set("ID")
+                    .to(1L)
+                    .set("NAME")
+                    .to("foo")
+                    .set("AMOUNT")
+                    .to(Math.PI)
+                    .build()));
     when(connection.executeQuery(Statement.of(sql))).thenReturn(rs);
-    try (JdbcPreparedStatement ps = new JdbcPreparedStatement(createMockConnection(connection), sql)) {
+    try (JdbcPreparedStatement ps =
+        new JdbcPreparedStatement(createMockConnection(connection), sql)) {
       ResultSetMetaData metadata = ps.getMetaData();
       assertThat(metadata.getColumnCount(), is(equalTo(3)));
       assertThat(metadata.getColumnLabel(1), is(equalTo("ID")));

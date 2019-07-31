@@ -22,6 +22,8 @@ import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
+
+import com.google.auth.oauth2.GoogleCredentials;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
@@ -32,7 +34,6 @@ import java.sql.SQLException;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-import com.google.auth.oauth2.GoogleCredentials;
 
 @RunWith(JUnit4.class)
 public class JdbcDatabaseMetaDataTest {
@@ -52,8 +53,12 @@ public class JdbcDatabaseMetaDataTest {
     assertThat(meta.autoCommitFailureClosesAllResultSets(), is(false));
     assertThat(meta.dataDefinitionCausesTransactionCommit(), is(false));
     assertThat(meta.dataDefinitionIgnoredInTransactions(), is(false));
-    for (int type : new int[] {ResultSet.TYPE_FORWARD_ONLY, ResultSet.TYPE_SCROLL_INSENSITIVE,
-        ResultSet.TYPE_SCROLL_SENSITIVE}) {
+    for (int type :
+        new int[] {
+          ResultSet.TYPE_FORWARD_ONLY,
+          ResultSet.TYPE_SCROLL_INSENSITIVE,
+          ResultSet.TYPE_SCROLL_SENSITIVE
+        }) {
       assertThat(meta.deletesAreDetected(type), is(false));
       assertThat(meta.insertsAreDetected(type), is(false));
     }
@@ -64,7 +69,8 @@ public class JdbcDatabaseMetaDataTest {
     assertThat(meta.getDatabaseMajorVersion(), is(equalTo(DATABASE_MAJOR_VERSION)));
     assertThat(meta.getDatabaseMinorVersion(), is(equalTo(DATABASE_MINOR_VERSION)));
     assertThat(meta.getDatabaseProductName(), is(equalTo(DATABASE_PRODUCT_NAME)));
-    assertThat(meta.getDatabaseProductVersion(),
+    assertThat(
+        meta.getDatabaseProductVersion(),
         is(equalTo(DATABASE_MAJOR_VERSION + "." + DATABASE_MINOR_VERSION)));
     assertThat(meta.getDriverName(), is(equalTo("com.google.cloud.spanner.jdbc.JdbcDriver")));
     assertThat(meta.getExtraNameCharacters(), is(equalTo("")));
@@ -81,7 +87,7 @@ public class JdbcDatabaseMetaDataTest {
     assertThat(meta.getMaxColumnsInSelect(), is(equalTo(0)));
     assertThat(meta.getMaxColumnsInTable(), is(equalTo(1024)));
     assertThat(meta.getMaxConnections(), is(equalTo(0))); // there is a max number of sessions, but
-                                                          // that is not the same as connections
+    // that is not the same as connections
     assertThat(meta.getMaxCursorNameLength(), is(equalTo(0)));
     assertThat(meta.getMaxIndexLength(), is(equalTo(8000)));
     assertThat(meta.getMaxProcedureNameLength(), is(equalTo(0)));
@@ -150,11 +156,16 @@ public class JdbcDatabaseMetaDataTest {
     assertThat(meta.supportsOuterJoins(), is(true));
     assertThat(meta.supportsPositionedDelete(), is(false));
     assertThat(meta.supportsPositionedUpdate(), is(false));
-    for (int type : new int[] {ResultSet.TYPE_FORWARD_ONLY, ResultSet.TYPE_SCROLL_INSENSITIVE,
-        ResultSet.TYPE_SCROLL_SENSITIVE}) {
+    for (int type :
+        new int[] {
+          ResultSet.TYPE_FORWARD_ONLY,
+          ResultSet.TYPE_SCROLL_INSENSITIVE,
+          ResultSet.TYPE_SCROLL_SENSITIVE
+        }) {
       assertThat(meta.supportsResultSetType(type), is(type == ResultSet.TYPE_FORWARD_ONLY));
       for (int concur : new int[] {ResultSet.CONCUR_READ_ONLY, ResultSet.CONCUR_UPDATABLE}) {
-        assertThat(meta.supportsResultSetConcurrency(type, concur),
+        assertThat(
+            meta.supportsResultSetConcurrency(type, concur),
             is(type == ResultSet.TYPE_FORWARD_ONLY && concur == ResultSet.CONCUR_READ_ONLY));
       }
     }
@@ -175,10 +186,15 @@ public class JdbcDatabaseMetaDataTest {
     assertThat(meta.supportsSubqueriesInIns(), is(true));
     assertThat(meta.supportsSubqueriesInQuantifieds(), is(true));
     assertThat(meta.supportsTableCorrelationNames(), is(true));
-    assertThat(meta.supportsTransactionIsolationLevel(Connection.TRANSACTION_SERIALIZABLE),
-        is(true));
-    for (int level : new int[] {Connection.TRANSACTION_NONE, Connection.TRANSACTION_READ_COMMITTED,
-        Connection.TRANSACTION_READ_UNCOMMITTED, Connection.TRANSACTION_REPEATABLE_READ}) {
+    assertThat(
+        meta.supportsTransactionIsolationLevel(Connection.TRANSACTION_SERIALIZABLE), is(true));
+    for (int level :
+        new int[] {
+          Connection.TRANSACTION_NONE,
+          Connection.TRANSACTION_READ_COMMITTED,
+          Connection.TRANSACTION_READ_UNCOMMITTED,
+          Connection.TRANSACTION_REPEATABLE_READ
+        }) {
       assertThat(meta.supportsTransactionIsolationLevel(level), is(false));
     }
 
@@ -205,8 +221,13 @@ public class JdbcDatabaseMetaDataTest {
   public void testGetBestRowIdentifier() throws SQLException {
     JdbcConnection connection = mock(JdbcConnection.class);
     DatabaseMetaData meta = new JdbcDatabaseMetaData(connection);
-    try (ResultSet rs = meta.getBestRowIdentifier(DEFAULT_CATALOG, DEFAULT_SCHEMA, TEST_TABLE,
-        DatabaseMetaData.bestRowTransaction, false)) {
+    try (ResultSet rs =
+        meta.getBestRowIdentifier(
+            DEFAULT_CATALOG,
+            DEFAULT_SCHEMA,
+            TEST_TABLE,
+            DatabaseMetaData.bestRowTransaction,
+            false)) {
       assertThat(rs.next(), is(false));
       ResultSetMetaData rsmd = rs.getMetaData();
       assertThat(rsmd.getColumnCount(), is(equalTo(8)));
@@ -400,7 +421,9 @@ public class JdbcDatabaseMetaDataTest {
 
   @Test
   public void testGetUserName() throws SQLException, IOException {
-    GoogleCredentials credentials = GoogleCredentials.fromStream(ConnectionOptionsTest.class.getResource("test-key.json").openStream());
+    GoogleCredentials credentials =
+        GoogleCredentials.fromStream(
+            ConnectionOptionsTest.class.getResource("test-key.json").openStream());
     JdbcConnection connection = mock(JdbcConnection.class);
     ConnectionOptions options = mock(ConnectionOptions.class);
     when(options.getCredentials()).thenReturn(credentials);

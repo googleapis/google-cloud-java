@@ -16,15 +16,6 @@
 
 package com.google.cloud.spanner.jdbc;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Stack;
-import java.util.concurrent.ThreadFactory;
-import java.util.concurrent.TimeUnit;
-import org.threeten.bp.Instant;
 import com.google.cloud.Timestamp;
 import com.google.cloud.spanner.DatabaseClient;
 import com.google.cloud.spanner.ErrorCode;
@@ -44,6 +35,15 @@ import com.google.cloud.spanner.jdbc.StatementParser.StatementType;
 import com.google.cloud.spanner.jdbc.UnitOfWork.UnitOfWorkState;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Stack;
+import java.util.concurrent.ThreadFactory;
+import java.util.concurrent.TimeUnit;
+import org.threeten.bp.Instant;
 
 /** Implementation for {@link Connection}, the generic Spanner connection API (not JDBC). */
 class ConnectionImpl implements Connection {
@@ -53,7 +53,10 @@ class ConnectionImpl implements Connection {
   private static final String NOT_ALLOWED_IN_AUTOCOMMIT =
       "This method may not be called while in autocommit mode";
 
-  /** Exception that is used to register the stacktrace of the code that opened a {@link Connection}. This exception is logged if the application closes without first closing the connection. */
+  /**
+   * Exception that is used to register the stacktrace of the code that opened a {@link Connection}.
+   * This exception is logged if the application closes without first closing the connection.
+   */
   static class LeakedConnectionException extends RuntimeException {
     private static final long serialVersionUID = 7119433786832158700L;
 
@@ -66,10 +69,10 @@ class ConnectionImpl implements Connection {
   private final SpannerPool spannerPool;
   private final StatementParser parser = StatementParser.INSTANCE;
   /**
-   * The {@link ConnectionStatementExecutor} is responsible for translating parsed
-   * {@link ClientSideStatement}s into actual method calls on this {@link ConnectionImpl}. I.e. the
-   * {@link ClientSideStatement} 'SET AUTOCOMMIT ON' will be translated into the method call
-   * {@link ConnectionImpl#setAutocommit(boolean)} with value <code>true</code>.
+   * The {@link ConnectionStatementExecutor} is responsible for translating parsed {@link
+   * ClientSideStatement}s into actual method calls on this {@link ConnectionImpl}. I.e. the {@link
+   * ClientSideStatement} 'SET AUTOCOMMIT ON' will be translated into the method call {@link
+   * ConnectionImpl#setAutocommit(boolean)} with value <code>true</code>.
    */
   private final ConnectionStatementExecutor connectionStatementExecutor =
       new ConnectionStatementExecutorImpl(this);
@@ -102,7 +105,9 @@ class ConnectionImpl implements Connection {
 
   /** The supported batch modes. */
   enum BatchMode {
-    NONE, DDL, DML;
+    NONE,
+    DDL,
+    DML;
   }
 
   /** The combination of all transaction modes and batch modes. */
@@ -141,13 +146,14 @@ class ConnectionImpl implements Connection {
         case READ_WRITE_TRANSACTION:
           return UnitOfWorkType.READ_WRITE_TRANSACTION;
         default:
-          throw SpannerExceptionFactory.newSpannerException(ErrorCode.INVALID_ARGUMENT,
-              "Unknown transaction mode: " + transactionMode);
+          throw SpannerExceptionFactory.newSpannerException(
+              ErrorCode.INVALID_ARGUMENT, "Unknown transaction mode: " + transactionMode);
       }
     }
   }
 
-  private StatementExecutor.StatementTimeout statementTimeout = new StatementExecutor.StatementTimeout();
+  private StatementExecutor.StatementTimeout statementTimeout =
+      new StatementExecutor.StatementTimeout();
   private boolean closed = false;
 
   private final Spanner spanner;
@@ -193,7 +199,10 @@ class ConnectionImpl implements Connection {
 
   /** Constructor only for test purposes. */
   @VisibleForTesting
-  ConnectionImpl(ConnectionOptions options, SpannerPool spannerPool, DdlClient ddlClient,
+  ConnectionImpl(
+      ConnectionOptions options,
+      SpannerPool spannerPool,
+      DdlClient ddlClient,
       DatabaseClient dbClient) {
     Preconditions.checkNotNull(options);
     Preconditions.checkNotNull(spannerPool);
@@ -212,8 +221,11 @@ class ConnectionImpl implements Connection {
   }
 
   private DdlClient createDdlClient() {
-    return DdlClient.newBuilder().setDatabaseAdminClient(spanner.getDatabaseAdminClient())
-        .setInstanceId(options.getInstanceId()).setDatabaseName(options.getDatabaseName()).build();
+    return DdlClient.newBuilder()
+        .setDatabaseAdminClient(spanner.getDatabaseAdminClient())
+        .setInstanceId(options.getInstanceId())
+        .setDatabaseName(options.getDatabaseName())
+        .build();
   }
 
   @Override
@@ -265,18 +277,20 @@ class ConnectionImpl implements Connection {
   public void setAutocommit(boolean autocommit) {
     ConnectionPreconditions.checkState(!isClosed(), CLOSED_ERROR_MSG);
     ConnectionPreconditions.checkState(!isBatchActive(), "Cannot set autocommit while in a batch");
-    ConnectionPreconditions.checkState(!isTransactionStarted(),
-        "Cannot set autocommit while a transaction is active");
-    ConnectionPreconditions.checkState(!(isAutocommit() && isInTransaction()),
+    ConnectionPreconditions.checkState(
+        !isTransactionStarted(), "Cannot set autocommit while a transaction is active");
+    ConnectionPreconditions.checkState(
+        !(isAutocommit() && isInTransaction()),
         "Cannot set autocommit while in a temporary transaction");
-    ConnectionPreconditions.checkState(!transactionBeginMarked,
-        "Cannot set autocommit when a transaction has begun");
+    ConnectionPreconditions.checkState(
+        !transactionBeginMarked, "Cannot set autocommit when a transaction has begun");
     this.autocommit = autocommit;
     clearLastTransactionAndSetDefaultTransactionOptions();
     // Reset the readOnlyStaleness value if it is no longer compatible with the new autocommit
     // value.
-    if (!autocommit && (readOnlyStaleness.getMode() == Mode.MAX_STALENESS
-        || readOnlyStaleness.getMode() == Mode.MIN_READ_TIMESTAMP)) {
+    if (!autocommit
+        && (readOnlyStaleness.getMode() == Mode.MAX_STALENESS
+            || readOnlyStaleness.getMode() == Mode.MIN_READ_TIMESTAMP)) {
       readOnlyStaleness = TimestampBound.strong();
     }
   }
@@ -295,12 +309,13 @@ class ConnectionImpl implements Connection {
   public void setReadOnly(boolean readOnly) {
     ConnectionPreconditions.checkState(!isClosed(), CLOSED_ERROR_MSG);
     ConnectionPreconditions.checkState(!isBatchActive(), "Cannot set read-only while in a batch");
-    ConnectionPreconditions.checkState(!isTransactionStarted(),
-        "Cannot set read-only while a transaction is active");
-    ConnectionPreconditions.checkState(!(isAutocommit() && isInTransaction()),
+    ConnectionPreconditions.checkState(
+        !isTransactionStarted(), "Cannot set read-only while a transaction is active");
+    ConnectionPreconditions.checkState(
+        !(isAutocommit() && isInTransaction()),
         "Cannot set read-only while in a temporary transaction");
-    ConnectionPreconditions.checkState(!transactionBeginMarked,
-        "Cannot set read-only when a transaction has begun");
+    ConnectionPreconditions.checkState(
+        !transactionBeginMarked, "Cannot set read-only when a transaction has begun");
     this.readOnly = readOnly;
     clearLastTransactionAndSetDefaultTransactionOptions();
   }
@@ -320,20 +335,21 @@ class ConnectionImpl implements Connection {
   public void setAutocommitDmlMode(AutocommitDmlMode mode) {
     Preconditions.checkNotNull(mode);
     ConnectionPreconditions.checkState(!isClosed(), CLOSED_ERROR_MSG);
-    ConnectionPreconditions.checkState(!isBatchActive(),
-        "Cannot set autocommit DML mode while in a batch");
-    ConnectionPreconditions.checkState(!isInTransaction() && isAutocommit(),
+    ConnectionPreconditions.checkState(
+        !isBatchActive(), "Cannot set autocommit DML mode while in a batch");
+    ConnectionPreconditions.checkState(
+        !isInTransaction() && isAutocommit(),
         "Cannot set autocommit DML mode while not in autocommit mode or while a transaction is active");
-    ConnectionPreconditions.checkState(!isReadOnly(),
-        "Cannot set autocommit DML mode for a read-only connection");
+    ConnectionPreconditions.checkState(
+        !isReadOnly(), "Cannot set autocommit DML mode for a read-only connection");
     this.autocommitDmlMode = mode;
   }
 
   @Override
   public AutocommitDmlMode getAutocommitDmlMode() {
     ConnectionPreconditions.checkState(!isClosed(), CLOSED_ERROR_MSG);
-    ConnectionPreconditions.checkState(!isBatchActive(),
-        "Cannot get autocommit DML mode while in a batch");
+    ConnectionPreconditions.checkState(
+        !isBatchActive(), "Cannot get autocommit DML mode while in a batch");
     return this.autocommitDmlMode;
   }
 
@@ -342,12 +358,14 @@ class ConnectionImpl implements Connection {
     Preconditions.checkNotNull(staleness);
     ConnectionPreconditions.checkState(!isClosed(), CLOSED_ERROR_MSG);
     ConnectionPreconditions.checkState(!isBatchActive(), "Cannot set read-only while in a batch");
-    ConnectionPreconditions.checkState(!isTransactionStarted(),
+    ConnectionPreconditions.checkState(
+        !isTransactionStarted(),
         "Cannot set read-only staleness when a transaction has been started");
     if (staleness.getMode() == Mode.MAX_STALENESS
         || staleness.getMode() == Mode.MIN_READ_TIMESTAMP) {
       // These values are only allowed in autocommit mode.
-      ConnectionPreconditions.checkState(isAutocommit() && !inTransaction,
+      ConnectionPreconditions.checkState(
+          isAutocommit() && !inTransaction,
           "MAX_STALENESS and MIN_READ_TIMESTAMP are only allowed in autocommit mode");
     }
     this.readOnlyStaleness = staleness;
@@ -363,7 +381,8 @@ class ConnectionImpl implements Connection {
   @Override
   public void setStatementTimeout(long timeout, TimeUnit unit) {
     Preconditions.checkArgument(timeout > 0L, "Zero or negative timeout values are not allowed");
-    Preconditions.checkArgument(StatementTimeout.isValidTimeoutUnit(unit),
+    Preconditions.checkArgument(
+        StatementTimeout.isValidTimeoutUnit(unit),
         "Time unit must be one of NANOSECONDS, MICROSECONDS, MILLISECONDS or SECONDS");
     ConnectionPreconditions.checkState(!isClosed(), CLOSED_ERROR_MSG);
     this.statementTimeout.setTimeoutValue(timeout, unit);
@@ -378,7 +397,8 @@ class ConnectionImpl implements Connection {
   @Override
   public long getStatementTimeout(TimeUnit unit) {
     ConnectionPreconditions.checkState(!isClosed(), CLOSED_ERROR_MSG);
-    Preconditions.checkArgument(StatementTimeout.isValidTimeoutUnit(unit),
+    Preconditions.checkArgument(
+        StatementTimeout.isValidTimeoutUnit(unit),
         "Time unit must be one of NANOSECONDS, MICROSECONDS, MILLISECONDS or SECONDS");
     return this.statementTimeout.getTimeoutValue(unit);
   }
@@ -409,10 +429,11 @@ class ConnectionImpl implements Connection {
   public void setTransactionMode(TransactionMode transactionMode) {
     Preconditions.checkNotNull(transactionMode);
     ConnectionPreconditions.checkState(!isClosed(), CLOSED_ERROR_MSG);
-    ConnectionPreconditions.checkState(!isBatchActive(),
-        "Cannot set transaction mode while in a batch");
+    ConnectionPreconditions.checkState(
+        !isBatchActive(), "Cannot set transaction mode while in a batch");
     ConnectionPreconditions.checkState(isInTransaction(), "This connection has no transaction");
-    ConnectionPreconditions.checkState(!isTransactionStarted(),
+    ConnectionPreconditions.checkState(
+        !isTransactionStarted(),
         "The transaction mode cannot be set after the transaction has started");
     ConnectionPreconditions.checkState(
         !isReadOnly() || transactionMode == TransactionMode.READ_ONLY_TRANSACTION,
@@ -422,14 +443,18 @@ class ConnectionImpl implements Connection {
     this.unitOfWorkType = UnitOfWorkType.of(transactionMode);
   }
 
-  /** Throws an {@link SpannerException} with code {@link ErrorCode#FAILED_PRECONDITION} if the current state of this connection does not allow changing the setting for retryAbortsInternally. */
+  /**
+   * Throws an {@link SpannerException} with code {@link ErrorCode#FAILED_PRECONDITION} if the
+   * current state of this connection does not allow changing the setting for retryAbortsInternally.
+   */
   private void checkSetRetryAbortsInternallyAvailable() {
     ConnectionPreconditions.checkState(!isClosed(), CLOSED_ERROR_MSG);
     ConnectionPreconditions.checkState(isInTransaction(), "This connection has no transaction");
     ConnectionPreconditions.checkState(
         getTransactionMode() == TransactionMode.READ_WRITE_TRANSACTION,
         "RetryAbortsInternally is only available for read-write transactions");
-    ConnectionPreconditions.checkState(!isTransactionStarted(),
+    ConnectionPreconditions.checkState(
+        !isTransactionStarted(),
         "RetryAbortsInternally cannot be set after the transaction has started");
   }
 
@@ -483,15 +508,16 @@ class ConnectionImpl implements Connection {
     if (internalIsAutocommit() && !inTransaction) {
       return false;
     }
-    return internalIsInTransaction() && this.currentUnitOfWork != null
+    return internalIsInTransaction()
+        && this.currentUnitOfWork != null
         && this.currentUnitOfWork.getState() == UnitOfWorkState.STARTED;
   }
 
   @Override
   public Timestamp getReadTimestamp() {
     ConnectionPreconditions.checkState(!isClosed(), CLOSED_ERROR_MSG);
-    ConnectionPreconditions.checkState(this.currentUnitOfWork != null,
-        "There is no transaction on this connection");
+    ConnectionPreconditions.checkState(
+        this.currentUnitOfWork != null, "There is no transaction on this connection");
     return this.currentUnitOfWork.getReadTimestamp();
   }
 
@@ -503,22 +529,25 @@ class ConnectionImpl implements Connection {
   @Override
   public Timestamp getCommitTimestamp() {
     ConnectionPreconditions.checkState(!isClosed(), CLOSED_ERROR_MSG);
-    ConnectionPreconditions.checkState(this.currentUnitOfWork != null,
-        "There is no transaction on this connection");
+    ConnectionPreconditions.checkState(
+        this.currentUnitOfWork != null, "There is no transaction on this connection");
     return this.currentUnitOfWork.getCommitTimestamp();
   }
 
   Timestamp getCommitTimestampOrNull() {
     ConnectionPreconditions.checkState(!isClosed(), CLOSED_ERROR_MSG);
-    return this.currentUnitOfWork == null ? null
+    return this.currentUnitOfWork == null
+        ? null
         : this.currentUnitOfWork.getCommitTimestampOrNull();
   }
 
   /** Resets this connection to its default transaction options. */
   private void setDefaultTransactionOptions() {
     if (transactionStack.isEmpty()) {
-      unitOfWorkType = isReadOnly() ? UnitOfWorkType.READ_ONLY_TRANSACTION
-          : UnitOfWorkType.READ_WRITE_TRANSACTION;
+      unitOfWorkType =
+          isReadOnly()
+              ? UnitOfWorkType.READ_ONLY_TRANSACTION
+              : UnitOfWorkType.READ_WRITE_TRANSACTION;
       batchMode = BatchMode.NONE;
     } else {
       popUnitOfWorkFromTransactionStack();
@@ -528,9 +557,10 @@ class ConnectionImpl implements Connection {
   @Override
   public void beginTransaction() {
     ConnectionPreconditions.checkState(!isClosed(), CLOSED_ERROR_MSG);
-    ConnectionPreconditions.checkState(!isBatchActive(),
-        "This connection has an active batch and cannot begin a transaction");
-    ConnectionPreconditions.checkState(!isTransactionStarted(),
+    ConnectionPreconditions.checkState(
+        !isBatchActive(), "This connection has an active batch and cannot begin a transaction");
+    ConnectionPreconditions.checkState(
+        !isTransactionStarted(),
         "Beginning a new transaction is not allowed when a transaction is already running");
     ConnectionPreconditions.checkState(!transactionBeginMarked, "A transaction has already begun");
 
@@ -601,8 +631,9 @@ class ConnectionImpl implements Connection {
     ParsedStatement parsedStatement = parser.parse(statement);
     switch (parsedStatement.getType()) {
       case CLIENT_SIDE:
-        return parsedStatement.getClientSideStatement().execute(connectionStatementExecutor,
-            parsedStatement.getSqlWithoutComments());
+        return parsedStatement
+            .getClientSideStatement()
+            .execute(connectionStatementExecutor, parsedStatement.getSqlWithoutComments());
       case QUERY:
         return StatementResultImpl.of(internalExecuteQuery(parsedStatement, AnalyzeMode.NONE));
       case UPDATE:
@@ -613,7 +644,8 @@ class ConnectionImpl implements Connection {
       case UNKNOWN:
       default:
     }
-    throw SpannerExceptionFactory.newSpannerException(ErrorCode.INVALID_ARGUMENT,
+    throw SpannerExceptionFactory.newSpannerException(
+        ErrorCode.INVALID_ARGUMENT,
         "Unknown statement: " + parsedStatement.getSqlWithoutComments());
   }
 
@@ -628,9 +660,12 @@ class ConnectionImpl implements Connection {
     return parseAndExecuteQuery(query, AnalyzeMode.of(queryMode));
   }
 
-  /** Parses the given statement as a query and executes it. Throws a {@link SpannerException} if the statement is not a query. */
-  private ResultSet parseAndExecuteQuery(Statement query, AnalyzeMode analyzeMode,
-      QueryOption... options) {
+  /**
+   * Parses the given statement as a query and executes it. Throws a {@link SpannerException} if the
+   * statement is not a query.
+   */
+  private ResultSet parseAndExecuteQuery(
+      Statement query, AnalyzeMode analyzeMode, QueryOption... options) {
     Preconditions.checkNotNull(query);
     Preconditions.checkNotNull(analyzeMode);
     ConnectionPreconditions.checkState(!isClosed(), CLOSED_ERROR_MSG);
@@ -638,7 +673,8 @@ class ConnectionImpl implements Connection {
     if (parsedStatement.isQuery()) {
       switch (parsedStatement.getType()) {
         case CLIENT_SIDE:
-          return parsedStatement.getClientSideStatement()
+          return parsedStatement
+              .getClientSideStatement()
               .execute(connectionStatementExecutor, parsedStatement.getSqlWithoutComments())
               .getResultSet();
         case QUERY:
@@ -649,7 +685,8 @@ class ConnectionImpl implements Connection {
         default:
       }
     }
-    throw SpannerExceptionFactory.newSpannerException(ErrorCode.INVALID_ARGUMENT,
+    throw SpannerExceptionFactory.newSpannerException(
+        ErrorCode.INVALID_ARGUMENT,
         "Statement is not a query: " + parsedStatement.getSqlWithoutComments());
   }
 
@@ -669,7 +706,8 @@ class ConnectionImpl implements Connection {
         default:
       }
     }
-    throw SpannerExceptionFactory.newSpannerException(ErrorCode.INVALID_ARGUMENT,
+    throw SpannerExceptionFactory.newSpannerException(
+        ErrorCode.INVALID_ARGUMENT,
         "Statement is not an update statement: " + parsedStatement.getSqlWithoutComments());
   }
 
@@ -691,7 +729,8 @@ class ConnectionImpl implements Connection {
           case DDL:
           case UNKNOWN:
           default:
-            throw SpannerExceptionFactory.newSpannerException(ErrorCode.INVALID_ARGUMENT,
+            throw SpannerExceptionFactory.newSpannerException(
+                ErrorCode.INVALID_ARGUMENT,
                 "The batch update list contains a statement that is not an update statement: "
                     + parsedStatement.getSqlWithoutComments());
         }
@@ -700,10 +739,12 @@ class ConnectionImpl implements Connection {
     return internalExecuteBatchUpdate(parsedStatements);
   }
 
-  private ResultSet internalExecuteQuery(final ParsedStatement statement,
-      final AnalyzeMode analyzeMode, final QueryOption... options) {
-    Preconditions.checkArgument(statement.getType() == StatementType.QUERY,
-        "Statement must be a query");
+  private ResultSet internalExecuteQuery(
+      final ParsedStatement statement,
+      final AnalyzeMode analyzeMode,
+      final QueryOption... options) {
+    Preconditions.checkArgument(
+        statement.getType() == StatementType.QUERY, "Statement must be a query");
     UnitOfWork transaction = getCurrentUnitOfWorkOrStartNewUnitOfWork();
     try {
       return transaction.executeQuery(statement, analyzeMode, options);
@@ -720,8 +761,8 @@ class ConnectionImpl implements Connection {
   }
 
   private long internalExecuteUpdate(final ParsedStatement update) {
-    Preconditions.checkArgument(update.getType() == StatementType.UPDATE,
-        "Statement must be an update");
+    Preconditions.checkArgument(
+        update.getType() == StatementType.UPDATE, "Statement must be an update");
     UnitOfWork transaction = getCurrentUnitOfWorkOrStartNewUnitOfWork();
     try {
       return transaction.executeUpdate(update);
@@ -753,7 +794,10 @@ class ConnectionImpl implements Connection {
     }
   }
 
-  /** Returns the current {@link UnitOfWork} of this connection, or creates a new one based on the current transaction settings of the connection and returns that. */
+  /**
+   * Returns the current {@link UnitOfWork} of this connection, or creates a new one based on the
+   * current transaction settings of the connection and returns that.
+   */
   private UnitOfWork getCurrentUnitOfWorkOrStartNewUnitOfWork() {
     if (this.currentUnitOfWork == null || !this.currentUnitOfWork.isActive()) {
       this.currentUnitOfWork = createNewUnitOfWork();
@@ -763,36 +807,52 @@ class ConnectionImpl implements Connection {
 
   private UnitOfWork createNewUnitOfWork() {
     if (isAutocommit() && !isInTransaction() && !isInBatch()) {
-      return SingleUseTransaction.newBuilder().setDdlClient(ddlClient).setDatabaseClient(dbClient)
-          .setReadOnly(isReadOnly()).setReadOnlyStaleness(readOnlyStaleness)
-          .setAutocommitDmlMode(autocommitDmlMode).setStatementTimeout(statementTimeout)
-          .withStatementExecutor(statementExecutor).build();
+      return SingleUseTransaction.newBuilder()
+          .setDdlClient(ddlClient)
+          .setDatabaseClient(dbClient)
+          .setReadOnly(isReadOnly())
+          .setReadOnlyStaleness(readOnlyStaleness)
+          .setAutocommitDmlMode(autocommitDmlMode)
+          .setStatementTimeout(statementTimeout)
+          .withStatementExecutor(statementExecutor)
+          .build();
     } else {
       switch (getUnitOfWorkType()) {
         case READ_ONLY_TRANSACTION:
-          return ReadOnlyTransaction.newBuilder().setDatabaseClient(dbClient)
-              .setReadOnlyStaleness(readOnlyStaleness).setStatementTimeout(statementTimeout)
-              .withStatementExecutor(statementExecutor).build();
+          return ReadOnlyTransaction.newBuilder()
+              .setDatabaseClient(dbClient)
+              .setReadOnlyStaleness(readOnlyStaleness)
+              .setStatementTimeout(statementTimeout)
+              .withStatementExecutor(statementExecutor)
+              .build();
         case READ_WRITE_TRANSACTION:
-          return ReadWriteTransaction.newBuilder().setDatabaseClient(dbClient)
+          return ReadWriteTransaction.newBuilder()
+              .setDatabaseClient(dbClient)
               .setRetryAbortsInternally(retryAbortsInternally)
               .setTransactionRetryListeners(transactionRetryListeners)
-              .setStatementTimeout(statementTimeout).withStatementExecutor(statementExecutor)
+              .setStatementTimeout(statementTimeout)
+              .withStatementExecutor(statementExecutor)
               .build();
         case DML_BATCH:
           // A DML batch can run inside the current transaction. It should therefore only
           // temporarily replace the current transaction.
           pushCurrentUnitOfWorkToTransactionStack();
-          return DmlBatch.newBuilder().setTransaction(currentUnitOfWork)
-              .setStatementTimeout(statementTimeout).withStatementExecutor(statementExecutor)
+          return DmlBatch.newBuilder()
+              .setTransaction(currentUnitOfWork)
+              .setStatementTimeout(statementTimeout)
+              .withStatementExecutor(statementExecutor)
               .build();
         case DDL_BATCH:
-          return DdlBatch.newBuilder().setDdlClient(ddlClient).setStatementTimeout(statementTimeout)
-              .withStatementExecutor(statementExecutor).build();
+          return DdlBatch.newBuilder()
+              .setDdlClient(ddlClient)
+              .setStatementTimeout(statementTimeout)
+              .withStatementExecutor(statementExecutor)
+              .build();
         default:
       }
     }
-    throw SpannerExceptionFactory.newSpannerException(ErrorCode.FAILED_PRECONDITION,
+    throw SpannerExceptionFactory.newSpannerException(
+        ErrorCode.FAILED_PRECONDITION,
         "This connection does not have an active transaction and the state of this connection does not allow any new transactions to be started");
   }
 
@@ -804,8 +864,8 @@ class ConnectionImpl implements Connection {
 
   /** Set the {@link UnitOfWork} of this connection back to the previous {@link UnitOfWork}. */
   private void popUnitOfWorkFromTransactionStack() {
-    Preconditions.checkState(!transactionStack.isEmpty(),
-        "There is no unit of work in the transaction stack");
+    Preconditions.checkState(
+        !transactionStack.isEmpty(), "There is no unit of work in the transaction stack");
     this.currentUnitOfWork = transactionStack.pop();
   }
 
@@ -848,16 +908,17 @@ class ConnectionImpl implements Connection {
   @Override
   public void startBatchDdl() {
     ConnectionPreconditions.checkState(!isClosed(), CLOSED_ERROR_MSG);
-    ConnectionPreconditions.checkState(!isBatchActive(),
-        "Cannot start a DDL batch when a batch is already active");
-    ConnectionPreconditions.checkState(!isReadOnly(),
-        "Cannot start a DDL batch when the connection is in read-only mode");
-    ConnectionPreconditions.checkState(!isTransactionStarted(),
-        "Cannot start a DDL batch while a transaction is active");
-    ConnectionPreconditions.checkState(!(isAutocommit() && isInTransaction()),
+    ConnectionPreconditions.checkState(
+        !isBatchActive(), "Cannot start a DDL batch when a batch is already active");
+    ConnectionPreconditions.checkState(
+        !isReadOnly(), "Cannot start a DDL batch when the connection is in read-only mode");
+    ConnectionPreconditions.checkState(
+        !isTransactionStarted(), "Cannot start a DDL batch while a transaction is active");
+    ConnectionPreconditions.checkState(
+        !(isAutocommit() && isInTransaction()),
         "Cannot start a DDL batch while in a temporary transaction");
-    ConnectionPreconditions.checkState(!transactionBeginMarked,
-        "Cannot start a DDL batch when a transaction has begun");
+    ConnectionPreconditions.checkState(
+        !transactionBeginMarked, "Cannot start a DDL batch when a transaction has begun");
     this.batchMode = BatchMode.DDL;
     this.unitOfWorkType = UnitOfWorkType.DDL_BATCH;
     this.currentUnitOfWork = createNewUnitOfWork();
@@ -866,10 +927,10 @@ class ConnectionImpl implements Connection {
   @Override
   public void startBatchDml() {
     ConnectionPreconditions.checkState(!isClosed(), CLOSED_ERROR_MSG);
-    ConnectionPreconditions.checkState(!isBatchActive(),
-        "Cannot start a DML batch when a batch is already active");
-    ConnectionPreconditions.checkState(!isReadOnly(),
-        "Cannot start a DML batch when the connection is in read-only mode");
+    ConnectionPreconditions.checkState(
+        !isBatchActive(), "Cannot start a DML batch when a batch is already active");
+    ConnectionPreconditions.checkState(
+        !isReadOnly(), "Cannot start a DML batch when the connection is in read-only mode");
     ConnectionPreconditions.checkState(
         !(isInTransaction() && getTransactionMode() == TransactionMode.READ_ONLY_TRANSACTION),
         "Cannot start a DML batch when a read-only transaction is in progress");

@@ -16,9 +16,9 @@
 
 package com.google.cloud.spanner.jdbc;
 
+import com.google.cloud.spanner.jdbc.StatementResult.ResultType;
 import java.sql.ResultSet;
 import java.sql.Statement;
-import com.google.cloud.spanner.jdbc.StatementResult.ResultType;
 
 /** Constants for special values used by the Cloud Spanner JDBC driver. */
 public final class JdbcConstants {
@@ -29,10 +29,10 @@ public final class JdbcConstants {
    */
   public static final int STATEMENT_RESULT_SET = -1;
   /**
-   * Special value that is used to indicate that a statement had no result. The method
-   * {@link Statement#getUpdateCount()} will return this value if the previous statement that was
-   * executed with {@link Statement#execute(String)} returned {@link ResultType#NO_RESULT}, such as
-   * DDL statements {@link ResultType}.
+   * Special value that is used to indicate that a statement had no result. The method {@link
+   * Statement#getUpdateCount()} will return this value if the previous statement that was executed
+   * with {@link Statement#execute(String)} returned {@link ResultType#NO_RESULT}, such as DDL
+   * statements {@link ResultType}.
    */
   public static final int STATEMENT_NO_RESULT = -2;
 

@@ -40,11 +40,12 @@ import static com.google.cloud.spanner.jdbc.StatementResult.ClientSideStatementT
 import static com.google.cloud.spanner.jdbc.StatementResult.ClientSideStatementType.START_BATCH_DML;
 import static com.google.cloud.spanner.jdbc.StatementResultImpl.noResult;
 import static com.google.cloud.spanner.jdbc.StatementResultImpl.resultSet;
-import java.util.concurrent.TimeUnit;
+
 import com.google.cloud.spanner.TimestampBound;
 import com.google.cloud.spanner.jdbc.ReadOnlyStalenessUtil.DurationValueGetter;
 import com.google.common.base.Preconditions;
 import com.google.protobuf.Duration;
+import java.util.concurrent.TimeUnit;
 
 /**
  * The methods in this class are called by the different {@link ClientSideStatement}s. These method
@@ -113,8 +114,10 @@ class ConnectionStatementExecutorImpl implements ConnectionStatementExecutor {
 
   @Override
   public StatementResult statementShowRetryAbortsInternally() {
-    return StatementResultImpl.resultSet("RETRY_ABORTS_INTERNALLY",
-        getConnection().isRetryAbortsInternally(), SHOW_RETRY_ABORTS_INTERNALLY);
+    return StatementResultImpl.resultSet(
+        "RETRY_ABORTS_INTERNALLY",
+        getConnection().isRetryAbortsInternally(),
+        SHOW_RETRY_ABORTS_INTERNALLY);
   }
 
   @Override
@@ -125,8 +128,8 @@ class ConnectionStatementExecutorImpl implements ConnectionStatementExecutor {
 
   @Override
   public StatementResult statementShowAutocommitDmlMode() {
-    return resultSet("AUTOCOMMIT_DML_MODE", getConnection().getAutocommitDmlMode(),
-        SHOW_AUTOCOMMIT_DML_MODE);
+    return resultSet(
+        "AUTOCOMMIT_DML_MODE", getConnection().getAutocommitDmlMode(), SHOW_AUTOCOMMIT_DML_MODE);
   }
 
   @Override
@@ -134,34 +137,35 @@ class ConnectionStatementExecutorImpl implements ConnectionStatementExecutor {
     if (duration.getSeconds() == 0L && duration.getNanos() == 0) {
       getConnection().clearStatementTimeout();
     } else {
-      TimeUnit unit = ReadOnlyStalenessUtil
-          .getAppropriateTimeUnit(new ReadOnlyStalenessUtil.DurationGetter(duration));
-      getConnection().setStatementTimeout(ReadOnlyStalenessUtil.durationToUnits(duration, unit),
-          unit);
+      TimeUnit unit =
+          ReadOnlyStalenessUtil.getAppropriateTimeUnit(
+              new ReadOnlyStalenessUtil.DurationGetter(duration));
+      getConnection()
+          .setStatementTimeout(ReadOnlyStalenessUtil.durationToUnits(duration, unit), unit);
     }
     return noResult(SET_STATEMENT_TIMEOUT);
   }
 
   @Override
   public StatementResult statementShowStatementTimeout() {
-    return resultSet("STATEMENT_TIMEOUT",
+    return resultSet(
+        "STATEMENT_TIMEOUT",
         getConnection().hasStatementTimeout()
-            ? ReadOnlyStalenessUtil
-                .durationToString(new StatementTimeoutGetter(getConnection()))
+            ? ReadOnlyStalenessUtil.durationToString(new StatementTimeoutGetter(getConnection()))
             : null,
         SHOW_STATEMENT_TIMEOUT);
   }
 
   @Override
   public StatementResult statementShowReadTimestamp() {
-    return resultSet("READ_TIMESTAMP", getConnection().getReadTimestampOrNull(),
-        SHOW_READ_TIMESTAMP);
+    return resultSet(
+        "READ_TIMESTAMP", getConnection().getReadTimestampOrNull(), SHOW_READ_TIMESTAMP);
   }
 
   @Override
   public StatementResult statementShowCommitTimestamp() {
-    return resultSet("COMMIT_TIMESTAMP", getConnection().getCommitTimestampOrNull(),
-        SHOW_COMMIT_TIMESTAMP);
+    return resultSet(
+        "COMMIT_TIMESTAMP", getConnection().getCommitTimestampOrNull(), SHOW_COMMIT_TIMESTAMP);
   }
 
   @Override
@@ -173,7 +177,9 @@ class ConnectionStatementExecutorImpl implements ConnectionStatementExecutor {
   @Override
   public StatementResult statementShowReadOnlyStaleness() {
     TimestampBound staleness = getConnection().getReadOnlyStaleness();
-    return resultSet("READ_ONLY_STALENESS", ReadOnlyStalenessUtil.timestampBoundToString(staleness),
+    return resultSet(
+        "READ_ONLY_STALENESS",
+        ReadOnlyStalenessUtil.timestampBoundToString(staleness),
         SHOW_READ_ONLY_STALENESS);
   }
 
