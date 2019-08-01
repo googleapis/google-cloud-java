@@ -64,11 +64,7 @@ import java.io.InputStream;
 import java.net.URL;
 import java.nio.ByteBuffer;
 import java.nio.file.Path;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.TimeUnit;
 
 /** This class contains a number of snippets for the {@link Storage} interface. */
@@ -1126,6 +1122,44 @@ public class StorageSnippets {
     return bucket;
   }
 
+  /** Example of displaying Bucket metadata */
+  public void getBucketMetadata(String bucketName) throws StorageException {
+    // [START storage_get_bucket_metadata]
+    Storage storage = StorageOptions.getDefaultInstance().getService();
+
+    // The name of a bucket, e.g. "my-bucket"
+    // String bucketName = "my-bucket";
+
+    // Select all fields
+    // Fields can be selected individually e.g. Storage.BucketField.NAME
+    Bucket bucket = storage.get(bucketName, BucketGetOption.fields(Storage.BucketField.values()));
+
+    // Print bucket metadata
+    System.out.println("BucketName: " + bucket.getName());
+    System.out.println("DefaultEventBasedHold: " + bucket.getDefaultEventBasedHold());
+    System.out.println("DefaultKmsKeyName: " + bucket.getDefaultKmsKeyName());
+    System.out.println("Id: " + bucket.getGeneratedId());
+    System.out.println("IndexPage: " + bucket.getIndexPage());
+    System.out.println("Location: " + bucket.getLocation());
+    System.out.println("LocationType: " + bucket.getLocationType());
+    System.out.println("Metageneration: " + bucket.getMetageneration());
+    System.out.println("NotFoundPage: " + bucket.getNotFoundPage());
+    System.out.println("RetentionEffectiveTime: " + bucket.getRetentionEffectiveTime());
+    System.out.println("RetentionPeriod: " + bucket.getRetentionPeriod());
+    System.out.println("RetentionPolicyIsLocked: " + bucket.retentionPolicyIsLocked());
+    System.out.println("RequesterPays: " + bucket.requesterPays());
+    System.out.println("SelfLink: " + bucket.getSelfLink());
+    System.out.println("StorageClass: " + bucket.getStorageClass().name());
+    System.out.println("TimeCreated: " + bucket.getCreateTime());
+    System.out.println("VersioningEnabled: " + bucket.versioningEnabled());
+    if (bucket.getLabels() != null) {
+      System.out.println("\n\n\nLabels:");
+      for (Map.Entry<String, String> label : bucket.getLabels().entrySet()) {
+        System.out.println(label.getKey() + "=" + label.getValue());
+      }
+    }
+    // [END storage_get_bucket_metadata]
+  }
   /** Example of displaying Blob metadata */
   public void getBlobMetadata(String bucketName, String blobName) throws StorageException {
     // [START storage_get_metadata]
