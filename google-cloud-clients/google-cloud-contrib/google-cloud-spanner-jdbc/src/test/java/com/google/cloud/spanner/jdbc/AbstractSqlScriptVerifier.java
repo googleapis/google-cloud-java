@@ -82,7 +82,6 @@ import com.google.cloud.spanner.jdbc.StatementResult;
  *
  */
 public abstract class AbstractSqlScriptVerifier {
-  //@formatter:off
   private static final Pattern VERIFY_PATTERN = Pattern.compile(
       "(?is)\\s*(?:@EXPECT)\\s+"
       + "(?<type>NO_RESULT"
@@ -92,16 +91,13 @@ public abstract class AbstractSqlScriptVerifier {
       + "|EQUAL\\s+(?<variable1>'.+?')\\s*,\\s*(?<variable2>'.+?')"
       + ")"
       + "(\\n(?<statement>.*))?");
-  //@formatter:on
 
   private static final String PUT_CONDITION =
       "@PUT can only be used in combination with a statement that returns a"
           + " result set containing exactly one row and one column";
-  //@formatter:off
   private static final Pattern PUT_PATTERN = Pattern.compile(
       "(?is)\\s*(?:@PUT)\\s+(?<variable>'.*?')"
       + "\\n(?<statement>.*)");
-  //@formatter:on
 
   protected enum ExpectedResultType {
     RESULT_SET, UPDATE_COUNT, NO_RESULT, EXCEPTION, EQUAL;

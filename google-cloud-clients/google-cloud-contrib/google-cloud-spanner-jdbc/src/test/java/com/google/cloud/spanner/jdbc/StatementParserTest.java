@@ -119,7 +119,6 @@ public class StatementParserTest {
 
   @Test
   public void testStatementWithCommentContainingSlash() {
-    // @formatter:off
     String sql =
         "/*\n"
             + " * Script for testing invalid/unrecognized statements\n"
@@ -143,14 +142,12 @@ public class StatementParserTest {
             + "  INSERT VALUES(v.column1, v.column2)\n"
             + "WHEN MATCHED\n"
             + "  UPDATE SET stock = stock + v.column2;";
-    // @formatter:on
     ParsedStatement statement = parser.parse(Statement.of(sql));
     assertThat(statement.getSqlWithoutComments(), is(equalTo(sqlWithoutComments)));
   }
 
   @Test
   public void testStatementWithCommentContainingSlashAndNoAsteriskOnNewLine() {
-    // @formatter:off
     String sql =
         "/*\n"
             + " * Script for testing invalid/unrecognized statements\n"
@@ -175,7 +172,6 @@ public class StatementParserTest {
             + "  INSERT VALUES(v.column1, v.column2)\n"
             + "WHEN MATCHED\n"
             + "  UPDATE SET stock = stock + v.column2;";
-    // @formatter:on
     ParsedStatement statement = parser.parse(Statement.of(sql));
     assertThat(statement.getSqlWithoutComments(), is(equalTo(sqlWithoutComments)));
   }
