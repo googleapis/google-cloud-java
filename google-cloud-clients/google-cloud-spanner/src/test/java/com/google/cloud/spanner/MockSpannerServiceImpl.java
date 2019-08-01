@@ -528,6 +528,13 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
     abortNextTransaction.set(true);
   }
 
+  /** Instruct the mock server to abort all transactions currently active on the server. */
+  public void abortAllTransactions() {
+    for (ByteString id : transactions.keySet()) {
+      markAbortedTransaction(id);
+    }
+  }
+
   @Override
   public void createSession(
       CreateSessionRequest request, StreamObserver<Session> responseObserver) {
@@ -735,6 +742,7 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
       List<StatementResult> results = new ArrayList<>();
       com.google.rpc.Status status =
           com.google.rpc.Status.newBuilder().setCode(Code.OK_VALUE).build();
+      resultLoop:
       for (com.google.spanner.v1.ExecuteBatchDmlRequest.Statement statement :
           request.getStatementsList()) {
         try {
@@ -744,7 +752,11 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
           StatementResult res = getResult(spannerStatement);
           switch (res.getType()) {
             case EXCEPTION:
-              throw res.getException();
+              status =
+                  com.google.rpc.Status.newBuilder()
+                      .setCode(res.getException().getStatus().getCode().value())
+                      .build();
+              break resultLoop;
             case RESULT_SET:
               throw Status.INVALID_ARGUMENT
                   .withDescription("Not a DML statement: " + statement.getSql())
