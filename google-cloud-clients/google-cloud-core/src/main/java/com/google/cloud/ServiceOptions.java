@@ -45,7 +45,9 @@ import com.google.auth.Credentials;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.auth.oauth2.ServiceAccountCredentials;
 import com.google.cloud.spi.ServiceRpcFactory;
+import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Iterables;
 import com.google.common.io.Files;
 import java.io.BufferedReader;
@@ -89,6 +91,7 @@ public abstract class ServiceOptions<
       getDefaultRetrySettingsBuilder().setMaxAttempts(1).build();
 
   private static final long serialVersionUID = 9198896031667942014L;
+  protected final String clientLibToken;
 
   private final String projectId;
   private final String host;
@@ -126,6 +129,7 @@ public abstract class ServiceOptions<
     private ApiClock clock;
     private TransportOptions transportOptions;
     private HeaderProvider headerProvider;
+    private String clientLibToken = ServiceOptions.getGoogApiClientLibName();
 
     @InternalApi("This class should only be extended within google-cloud-java")
     protected Builder() {}
@@ -140,6 +144,7 @@ public abstract class ServiceOptions<
       serviceRpcFactory = options.serviceRpcFactory;
       clock = options.clock;
       transportOptions = options.transportOptions;
+      clientLibToken = options.clientLibToken;
     }
 
     protected abstract ServiceOptions<ServiceT, OptionsT> build();
@@ -253,6 +258,18 @@ public abstract class ServiceOptions<
       this.headerProvider = headerProvider;
       return self();
     }
+
+    @InternalApi
+    public B setClientLibToken(String clientLibToken) {
+      Preconditions.checkArgument(
+          getAllowedClientLibTokens().contains(clientLibToken), "Illegal client lib token");
+      this.clientLibToken = clientLibToken;
+      return self();
+    }
+
+    protected Set<String> getAllowedClientLibTokens() {
+      return ImmutableSet.of(ServiceOptions.getGoogApiClientLibName());
+    }
   }
 
   @InternalApi("This class should only be extended within google-cloud-java")
@@ -285,6 +302,7 @@ public abstract class ServiceOptions<
     transportOptions =
         firstNonNull(builder.transportOptions, serviceDefaults.getDefaultTransportOptions());
     headerProvider = firstNonNull(builder.headerProvider, new NoHeaderProvider());
+    clientLibToken = builder.clientLibToken;
   }
 
   /**
@@ -709,5 +727,9 @@ public abstract class ServiceOptions<
   @InternalApi
   public static <T> T getFromServiceLoader(Class<? extends T> clazz, T defaultInstance) {
     return Iterables.getFirst(ServiceLoader.load(clazz), defaultInstance);
+  }
+
+  public String getClientLibToken() {
+    return clientLibToken;
   }
 }
