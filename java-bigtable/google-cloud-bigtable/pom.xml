@@ -188,8 +188,6 @@
           <perCoreThreadCount>true</perCoreThreadCount>
           <threadCount>2</threadCount>
           <trimStackTrace>false</trimStackTrace>
-          <test>com.google.cloud.bigtable.data.v2.it.**</test>
-          <test>com.google.cloud.bigtable.admin.v2.it.**</test>
         </configuration>
         <dependencies>
           <dependency>
