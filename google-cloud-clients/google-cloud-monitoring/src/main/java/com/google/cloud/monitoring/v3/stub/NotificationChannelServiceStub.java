@@ -25,13 +25,17 @@ import com.google.monitoring.v3.CreateNotificationChannelRequest;
 import com.google.monitoring.v3.DeleteNotificationChannelRequest;
 import com.google.monitoring.v3.GetNotificationChannelDescriptorRequest;
 import com.google.monitoring.v3.GetNotificationChannelRequest;
+import com.google.monitoring.v3.GetNotificationChannelVerificationCodeRequest;
+import com.google.monitoring.v3.GetNotificationChannelVerificationCodeResponse;
 import com.google.monitoring.v3.ListNotificationChannelDescriptorsRequest;
 import com.google.monitoring.v3.ListNotificationChannelDescriptorsResponse;
 import com.google.monitoring.v3.ListNotificationChannelsRequest;
 import com.google.monitoring.v3.ListNotificationChannelsResponse;
 import com.google.monitoring.v3.NotificationChannel;
 import com.google.monitoring.v3.NotificationChannelDescriptor;
+import com.google.monitoring.v3.SendNotificationChannelVerificationCodeRequest;
 import com.google.monitoring.v3.UpdateNotificationChannelRequest;
+import com.google.monitoring.v3.VerifyNotificationChannelRequest;
 import com.google.protobuf.Empty;
 import javax.annotation.Generated;
 
@@ -95,6 +99,25 @@ public abstract class NotificationChannelServiceStub implements BackgroundResour
   public UnaryCallable<DeleteNotificationChannelRequest, Empty>
       deleteNotificationChannelCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteNotificationChannelCallable()");
+  }
+
+  public UnaryCallable<SendNotificationChannelVerificationCodeRequest, Empty>
+      sendNotificationChannelVerificationCodeCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: sendNotificationChannelVerificationCodeCallable()");
+  }
+
+  public UnaryCallable<
+          GetNotificationChannelVerificationCodeRequest,
+          GetNotificationChannelVerificationCodeResponse>
+      getNotificationChannelVerificationCodeCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: getNotificationChannelVerificationCodeCallable()");
+  }
+
+  public UnaryCallable<VerifyNotificationChannelRequest, NotificationChannel>
+      verifyNotificationChannelCallable() {
+    throw new UnsupportedOperationException("Not implemented: verifyNotificationChannelCallable()");
   }
 
   @Override
