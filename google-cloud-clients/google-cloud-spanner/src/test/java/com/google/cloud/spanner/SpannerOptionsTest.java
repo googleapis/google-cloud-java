@@ -24,6 +24,7 @@ import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ServerStreamingCallSettings;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.NoCredentials;
+import com.google.cloud.ServiceOptions;
 import com.google.cloud.TransportOptions;
 import com.google.cloud.spanner.admin.database.v1.stub.DatabaseAdminStubSettings;
 import com.google.cloud.spanner.admin.instance.v1.stub.InstanceAdminStubSettings;
@@ -381,5 +382,28 @@ public class SpannerOptionsTest {
     assertThat(service3 == service4, is(true));
     assertThat(service3.isClosed()).isFalse();
     service3.close();
+  }
+
+  @Test
+  public void testSetClientLibToken() {
+    final String jdbcToken = "sp-jdbc";
+    final String hibernateToken = "sp-hib";
+    SpannerOptions options = SpannerOptions.newBuilder()
+        .setClientLibToken(jdbcToken)
+        .build();
+    assertThat(options.getClientLibToken()).isEqualTo(jdbcToken);
+
+    options = SpannerOptions.newBuilder()
+        .setClientLibToken(hibernateToken)
+        .build();
+    assertThat(options.getClientLibToken()).isEqualTo(hibernateToken);
+
+    options = SpannerOptions.newBuilder().build();
+    assertThat(options.getClientLibToken()).isEqualTo(ServiceOptions.getGoogApiClientLibName());
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testSetInvalidClientLibToken() {
+    SpannerOptions.newBuilder().setClientLibToken("foo");
   }
 }

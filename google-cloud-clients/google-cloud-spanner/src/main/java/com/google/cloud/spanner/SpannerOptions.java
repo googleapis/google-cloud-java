@@ -410,6 +410,10 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     return sessionPoolOptions;
   }
 
+  public String getClientLibToken() {
+    return clientLibToken;
+  }
+
   public Map<String, String> getSessionLabels() {
     return sessionLabels;
   }
