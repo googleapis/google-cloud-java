@@ -362,10 +362,8 @@ public abstract class AbstractSqlScriptVerifier {
   private static final Pattern ARRAY_INT64_PATTERN =
       Pattern.compile("\\[\\s*\\d{1,19}(\\s*,\\s*\\d{1,19})*\\s*\\]");
   private static final Pattern FLOAT64_PATTERN = Pattern.compile("\\d{1,19}.\\d{1,19}");
-  private static final String RFC3339_REGEX = "ts'(\\d{4})-(\\d{2})-(\\d{2})" // yyyy-MM-dd
-      + "([Tt](\\d{2}):(\\d{2}):(\\d{2})(\\.\\d+)?)" // 'T'HH:mm:ss.milliseconds
-      + "([Zz]|([+-])(\\d{2}):(\\d{2}))'"; // 'Z' or time zone shift HH:mm following '+' or '-'
-  private static final Pattern RFC3339_PATTERN = Pattern.compile(RFC3339_REGEX);
+  private static final String TS_PREFIX = "ts'";
+  private static final String TS_SUFFIX = "'";
   private static final Pattern BOOLEAN_PATTERN = Pattern.compile("(?is)true|false");
 
   private Object parseValue(String valueString) {
@@ -389,8 +387,12 @@ public abstract class AbstractSqlScriptVerifier {
     if (FLOAT64_PATTERN.matcher(valueString).matches()) {
       return Double.valueOf(valueString);
     }
-    if (RFC3339_PATTERN.matcher(valueString).matches()) {
-      return ReadOnlyStalenessUtil.parseRfc3339(valueString.substring(3, valueString.length() - 1));
+    if (valueString.startsWith(TS_PREFIX) && valueString.endsWith(TS_SUFFIX)) {
+      try {
+        return ReadOnlyStalenessUtil.parseRfc3339(valueString.substring(TS_PREFIX.length(), valueString.length() - TS_SUFFIX.length()));
+      } catch (IllegalArgumentException e) {
+        // ignore, apparently not a valid a timestamp after all.
+      }
     }
     if (BOOLEAN_PATTERN.matcher(valueString).matches()) {
       return Boolean.valueOf(valueString);
