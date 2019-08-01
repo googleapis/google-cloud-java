@@ -191,7 +191,7 @@ public class GapicSpannerRpc implements SpannerRpc {
     ApiClientHeaderProvider internalHeaderProvider =
         internalHeaderProviderBuilder
             .setClientLibToken(
-                ServiceOptions.getGoogApiClientLibName(),
+                options.getClientLibToken(),
                 GaxProperties.getLibraryVersion(options.getClass()))
             .setTransportToken(
                 GaxGrpcProperties.getGrpcTokenName(), GaxGrpcProperties.getGrpcVersion())
