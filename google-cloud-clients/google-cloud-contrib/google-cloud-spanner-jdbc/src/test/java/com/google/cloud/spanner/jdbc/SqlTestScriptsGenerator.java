@@ -24,5 +24,4 @@ public class SqlTestScriptsGenerator {
     ClientSideStatementsTest.generateTestScript();
     ConnectionImplGeneratedSqlScriptTest.generateTestScript();
   }
-
 }
