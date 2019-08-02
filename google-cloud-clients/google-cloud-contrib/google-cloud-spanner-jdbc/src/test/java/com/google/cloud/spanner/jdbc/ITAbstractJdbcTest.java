@@ -16,8 +16,6 @@
 
 package com.google.cloud.spanner.jdbc;
 
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -26,9 +24,6 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
 import java.util.concurrent.ExecutionException;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -177,28 +172,5 @@ public class ITAbstractJdbcTest {
         return rs.next();
       }
     }
-  }
-
-  List<String> readStatementsFromFile(String filename) {
-    File file = new File(getClass().getResource(filename).getFile());
-    StringBuilder builder = new StringBuilder();
-    try (Scanner scanner = new Scanner(file)) {
-      while (scanner.hasNextLine()) {
-        String line = scanner.nextLine();
-        builder.append(line).append("\n");
-      }
-      scanner.close();
-    } catch (FileNotFoundException e) {
-      throw new RuntimeException(e);
-    }
-    String script = builder.toString().replaceAll(StatementParserTest.COPYRIGHT_PATTERN, "");
-    String[] array = script.split(";");
-    List<String> res = new ArrayList<>(array.length);
-    for (String statement : array) {
-      if (statement != null && statement.trim().length() > 0) {
-        res.add(statement);
-      }
-    }
-    return res;
   }
 }
