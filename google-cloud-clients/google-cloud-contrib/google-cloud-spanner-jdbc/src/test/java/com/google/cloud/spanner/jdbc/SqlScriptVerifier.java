@@ -173,7 +173,7 @@ public class SqlScriptVerifier extends AbstractSqlScriptVerifier {
       String messagePrefix) {
     assertThat(e instanceof SpannerException, is(true));
     SpannerException spannerException = (SpannerException) e;
-    assertThat(statement, spannerException.getErrorCode(), is(equalTo(ErrorCode.valueOf(code))));
+    assertThat(statement + " resulted in " + spannerException.toString(), spannerException.getErrorCode(), is(equalTo(ErrorCode.valueOf(code))));
     if (messagePrefix != null) {
       assertThat(statement, e.getMessage(),
           startsWith(messagePrefix.substring(1, messagePrefix.length() - 1)));
