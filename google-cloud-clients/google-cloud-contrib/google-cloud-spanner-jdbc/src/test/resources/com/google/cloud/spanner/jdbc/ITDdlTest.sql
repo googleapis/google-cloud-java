@@ -150,7 +150,7 @@ WHERE TABLE_NAME='TEST1' OR TABLE_NAME='TEST2';
 INSERT INTO TEST2 (ID, NAME) VALUES (1, 'TEST');
 INSERT INTO TEST2 (ID, NAME) VALUES (2, 'TEST');
 
--- Ensure the indices that we are to create to not exist
+-- Ensure the indices that we are to create do not exist
 @EXPECT RESULT_SET
 SELECT COUNT(*) AS ACTUAL, 0 AS EXPECTED
 FROM INFORMATION_SCHEMA.INDEXES
