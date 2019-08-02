@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.cloud.spanner.stresstest;
+package com.google.cloud.spanner.jdbc;
 
 import com.google.api.client.util.Base64;
 import com.google.cloud.Date;

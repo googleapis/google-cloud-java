@@ -49,7 +49,6 @@ import com.google.cloud.spanner.admin.database.v1.MockDatabaseAdminImpl;
 import com.google.cloud.spanner.admin.instance.v1.MockInstanceAdminImpl;
 import com.google.cloud.spanner.jdbc.JdbcSqlExceptionFactory.JdbcAbortedDueToConcurrentModificationException;
 import com.google.cloud.spanner.jdbc.JdbcSqlExceptionFactory.JdbcAbortedException;
-import com.google.cloud.spanner.stresstest.RandomResultSetGenerator;
 import com.google.protobuf.ListValue;
 import com.google.protobuf.Value;
 import com.google.spanner.v1.ResultSetMetadata;
