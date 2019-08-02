@@ -156,6 +156,30 @@ public abstract class AbstractSqlScriptVerifier {
     public GenericConnection getConnection();
   }
 
+  /** Reads SQL statements from a file. Any copyright header in the file will be stripped away. */
+  public static List<String> readStatementsFromFile(String filename, Class<?> resourceClass) {
+    File file = new File(resourceClass.getResource(filename).getFile());
+    StringBuilder builder = new StringBuilder();
+    try (Scanner scanner = new Scanner(file)) {
+      while (scanner.hasNextLine()) {
+        String line = scanner.nextLine();
+        builder.append(line).append("\n");
+      }
+      scanner.close();
+    } catch (FileNotFoundException e) {
+      throw new RuntimeException(e);
+    }
+    String script = builder.toString().replaceAll(StatementParserTest.COPYRIGHT_PATTERN, "");
+    String[] array = script.split(";");
+    List<String> res = new ArrayList<>(array.length);
+    for (String statement : array) {
+      if (statement != null && statement.trim().length() > 0) {
+        res.add(statement);
+      }
+    }
+    return res;
+  }
+
   private final GenericConnectionProvider connectionProvider;
 
   private final Map<String, Object> variables = new HashMap<>();
@@ -232,29 +256,6 @@ public abstract class AbstractSqlScriptVerifier {
         connection.close();
       }
     }
-  }
-
-  private List<String> readStatementsFromFile(String filename, Class<?> resourceClass) {
-    File file = new File(resourceClass.getResource(filename).getFile());
-    StringBuilder builder = new StringBuilder();
-    try (Scanner scanner = new Scanner(file)) {
-      while (scanner.hasNextLine()) {
-        String line = scanner.nextLine();
-        builder.append(line).append("\n");
-      }
-      scanner.close();
-    } catch (FileNotFoundException e) {
-      throw new RuntimeException(e);
-    }
-    String script = builder.toString().replaceAll(StatementParserTest.COPYRIGHT_PATTERN, "");
-    String[] array = script.split(";");
-    List<String> res = new ArrayList<>(array.length);
-    for (String statement : array) {
-      if (statement != null && statement.trim().length() > 0) {
-        res.add(statement);
-      }
-    }
-    return res;
   }
 
   private void verifyStatement(GenericConnection connection, String statement) throws Exception {
