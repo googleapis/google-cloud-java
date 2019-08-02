@@ -32,11 +32,9 @@ import com.google.cloud.spanner.jdbc.JdbcConnectionGeneratedSqlScriptTest.TestCo
  */
 @RunWith(JUnit4.class)
 public class JdbcTimeoutSqlTest {
-
   @Test
   public void testTimeoutScript() throws Exception {
     JdbcSqlScriptVerifier verifier = new JdbcSqlScriptVerifier(new TestConnectionProvider());
     verifier.verifyStatementsInFile("TimeoutSqlScriptTest.sql", getClass(), false);
   }
-
 }

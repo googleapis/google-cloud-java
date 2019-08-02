@@ -50,9 +50,7 @@ import org.junit.runners.JUnit4;
 
 /**
  * This test class and all its subclasses are used to generate the file
- * ConnectionImplGeneratedSqlScriptTest.sql. The SQL file is the actual test, and client libraries
- * in other programming languages only need to verify the correct working of the SQL file, and does
- * not need to implement this test and all its subclasses, as they are all covered by the SQL file.
+ * ConnectionImplGeneratedSqlScriptTest.sql.
  */
 @RunWith(JUnit4.class)
 public abstract class AbstractConnectionImplTest {
