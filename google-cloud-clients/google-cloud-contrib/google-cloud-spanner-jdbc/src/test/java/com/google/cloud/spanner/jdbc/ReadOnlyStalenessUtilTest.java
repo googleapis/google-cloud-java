@@ -35,7 +35,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.concurrent.TimeUnit;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -43,7 +42,6 @@ import org.junit.runners.JUnit4;
 @RunWith(JUnit4.class)
 public class ReadOnlyStalenessUtilTest {
 
-  @Ignore("ignored until nanosecond precision is added to the parse method")
   @Test
   public void testParseRfc3339() {
     Map<String, Timestamp> timestamps = new HashMap<>();
@@ -75,54 +73,6 @@ public class ReadOnlyStalenessUtilTest {
     timestamps.put("2018-10-28T02:30:00+02:00", Timestamp.ofTimeSecondsAndNanos(1540686600L, 0));
     timestamps.put(
         "2018-03-01T10:11:12.123456789Z", Timestamp.ofTimeSecondsAndNanos(1519899072L, 123456789));
-    timestamps.put(
-        "2018-03-01T10:11:12.1000Z", Timestamp.ofTimeSecondsAndNanos(1519899072L, 100000000));
-
-    for (Entry<String, Timestamp> ts : timestamps.entrySet()) {
-      Timestamp gTimestamp = parseRfc3339(ts.getKey());
-      assertThat(
-          "Seconds for timestamp " + ts + " do not match",
-          gTimestamp.getSeconds(),
-          is(equalTo(ts.getValue().getSeconds())));
-      assertThat(
-          "Nanos for timestamp " + ts + " do not match",
-          gTimestamp.getNanos(),
-          is(equalTo(ts.getValue().getNanos())));
-    }
-  }
-
-  /** TODO: Replace with above test case when nanosecond precision is supported. */
-  @Test
-  public void testParseRfc3339Millis() {
-    Map<String, Timestamp> timestamps = new HashMap<>();
-    timestamps.put(
-        "2018-03-01T10:11:12.999Z", Timestamp.ofTimeSecondsAndNanos(1519899072L, 999000000));
-    timestamps.put("2018-10-28T02:00:00+02:00", Timestamp.ofTimeSecondsAndNanos(1540684800L, 0));
-    timestamps.put("2018-10-28T03:00:00+01:00", Timestamp.ofTimeSecondsAndNanos(1540692000L, 0));
-    timestamps.put(
-        "2018-01-01T00:00:00.000000001Z", Timestamp.ofTimeSecondsAndNanos(1514764800L, 0));
-    timestamps.put("2018-10-28T02:00:00Z", Timestamp.ofTimeSecondsAndNanos(1540692000L, 0));
-    timestamps.put(
-        "2018-12-31T23:59:59.999999999Z", Timestamp.ofTimeSecondsAndNanos(1546300800L, 0));
-    timestamps.put(
-        "2018-03-01T10:11:12.9999Z", Timestamp.ofTimeSecondsAndNanos(1519899072L, 999000000));
-    timestamps.put(
-        "2018-03-01T10:11:12.000000001Z", Timestamp.ofTimeSecondsAndNanos(1519899072L, 0));
-    timestamps.put(
-        "2018-03-01T10:11:12.100000000Z", Timestamp.ofTimeSecondsAndNanos(1519899072L, 100000000));
-    timestamps.put(
-        "2018-03-01T10:11:12.100000001Z", Timestamp.ofTimeSecondsAndNanos(1519899072L, 100000000));
-    timestamps.put("2018-03-01T10:11:12-10:00", Timestamp.ofTimeSecondsAndNanos(1519935072L, 0));
-    timestamps.put(
-        "2018-03-01T10:11:12.999999999Z", Timestamp.ofTimeSecondsAndNanos(1519899073L, 0));
-    timestamps.put("2018-03-01T10:11:12-12:00", Timestamp.ofTimeSecondsAndNanos(1519942272L, 0));
-    timestamps.put("2018-10-28T03:00:00Z", Timestamp.ofTimeSecondsAndNanos(1540695600L, 0));
-    timestamps.put("2018-10-28T02:30:00Z", Timestamp.ofTimeSecondsAndNanos(1540693800L, 0));
-    timestamps.put(
-        "2018-03-01T10:11:12.123Z", Timestamp.ofTimeSecondsAndNanos(1519899072L, 123000000));
-    timestamps.put("2018-10-28T02:30:00+02:00", Timestamp.ofTimeSecondsAndNanos(1540686600L, 0));
-    timestamps.put(
-        "2018-03-01T10:11:12.123456789Z", Timestamp.ofTimeSecondsAndNanos(1519899072L, 123000000));
     timestamps.put(
         "2018-03-01T10:11:12.1000Z", Timestamp.ofTimeSecondsAndNanos(1519899072L, 100000000));
 
