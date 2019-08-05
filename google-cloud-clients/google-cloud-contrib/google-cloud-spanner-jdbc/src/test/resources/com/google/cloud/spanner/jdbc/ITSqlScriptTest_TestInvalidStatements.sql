@@ -17,23 +17,12 @@
 /*
  * Script for testing invalid/unrecognized statements
  */
-
--- PostgreSQL MERGE statement
-@EXPECT EXCEPTION INVALID_ARGUMENT 'INVALID_ARGUMENT: Unknown statement: MERGE'
-MERGE INTO wines w
-USING (VALUES('Chateau Lafite 2003', '24')) v
-ON v.column1 = w.winename
-WHEN NOT MATCHED 
-  INSERT VALUES(v.column1, v.column2)
-WHEN MATCHED
-  UPDATE SET stock = stock + v.column2;
-
--- EXPAIN statement
+-- EXPLAIN statement
 @EXPECT EXCEPTION INVALID_ARGUMENT 'INVALID_ARGUMENT: Unknown statement: EXPLAIN'
 EXPLAIN SELECT *
 FROM Singers;
 
--- EXPAIN ANALYZE statement
+-- EXPLAIN ANALYZE statement
 @EXPECT EXCEPTION INVALID_ARGUMENT 'INVALID_ARGUMENT: Unknown statement: EXPLAIN ANALYZE'
 EXPLAIN ANALYZE SELECT *
 FROM Singers;
