@@ -105,6 +105,18 @@ public class DocumentSnapshot {
         Timestamp.fromProto(document.getCreateTime()));
   }
 
+  public static DocumentSnapshot fromDocument(Document document, Timestamp readTime) {
+    return new DocumentSnapshot(
+        (FirestoreImpl) DocumentReference.getFirestore(),
+        new DocumentReference(
+            (FirestoreImpl) DocumentReference.getFirestore(),
+            ResourcePath.create(document.getName())),
+        document.getFieldsMap(),
+        readTime,
+        Timestamp.fromProto(document.getUpdateTime()),
+        Timestamp.fromProto(document.getCreateTime()));
+  }
+
   static DocumentSnapshot fromMissing(
       FirestoreImpl firestore, DocumentReference documentReference, Timestamp readTime) {
     return new DocumentSnapshot(firestore, documentReference, null, readTime, null, null);

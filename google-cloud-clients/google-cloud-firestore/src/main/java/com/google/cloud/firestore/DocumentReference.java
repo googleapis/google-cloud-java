@@ -45,7 +45,7 @@ import javax.annotation.Nullable;
 public class DocumentReference {
 
   private final ResourcePath path;
-  private final FirestoreImpl firestore;
+  private static FirestoreImpl firestore;
 
   protected DocumentReference(
       FirestoreImpl firestore, ResourcePath path) { // Elevated access level for mocking.
@@ -59,7 +59,7 @@ public class DocumentReference {
    * @return The Firestore instance.
    */
   @Nonnull
-  public Firestore getFirestore() {
+  public static Firestore getFirestore() {
     return firestore;
   }
 
