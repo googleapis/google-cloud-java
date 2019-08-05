@@ -36,7 +36,6 @@ import com.google.api.gax.rpc.StreamController;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.WatchdogProvider;
 import com.google.api.pathtemplate.PathTemplate;
-import com.google.cloud.ServiceOptions;
 import com.google.cloud.grpc.GrpcTransportOptions;
 import com.google.cloud.spanner.SpannerException;
 import com.google.cloud.spanner.SpannerExceptionFactory;
@@ -191,8 +190,7 @@ public class GapicSpannerRpc implements SpannerRpc {
     ApiClientHeaderProvider internalHeaderProvider =
         internalHeaderProviderBuilder
             .setClientLibToken(
-                ServiceOptions.getGoogApiClientLibName(),
-                GaxProperties.getLibraryVersion(options.getClass()))
+                options.getClientLibToken(), GaxProperties.getLibraryVersion(options.getClass()))
             .setTransportToken(
                 GaxGrpcProperties.getGrpcTokenName(), GaxGrpcProperties.getGrpcVersion())
             .build();
