@@ -37,4 +37,7 @@
  * </code>
  * </pre>
  */
+@Generated("by gapic-generator")
 package com.google.cloud.websecurityscanner.v1beta;
+
+import javax.annotation.Generated;

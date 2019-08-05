@@ -45,4 +45,7 @@
  * </code>
  * </pre>
  */
+@Generated("by gapic-generator")
 package com.google.cloud.speech.v1p1beta1;
+
+import javax.annotation.Generated;

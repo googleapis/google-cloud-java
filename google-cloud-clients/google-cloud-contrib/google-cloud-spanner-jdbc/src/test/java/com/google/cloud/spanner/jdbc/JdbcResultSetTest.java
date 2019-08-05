@@ -60,131 +60,130 @@ import org.mockito.internal.stubbing.answers.Returns;
 
 @RunWith(JUnit4.class)
 public class JdbcResultSetTest {
-  static final String UNKNOWN_COLUMN = "UNKNOWN_COLUMN";
-  static final String STRING_COL_NULL = "STRING_COL_NULL";
-  static final String STRING_COL_NOT_NULL = "STRING_COL_NOT_NULL";
-  static final String STRING_VALUE = "FOO";
-  static final int STRING_COLINDEX_NULL = 1;
-  static final int STRING_COLINDEX_NOTNULL = 2;
-  static final String BOOLEAN_COL_NULL = "BOOLEAN_COL_NULL";
-  static final String BOOLEAN_COL_NOT_NULL = "BOOLEAN_COL_NOT_NULL";
-  static final boolean BOOLEAN_VALUE = true;
-  static final int BOOLEAN_COLINDEX_NULL = 3;
-  static final int BOOLEAN_COLINDEX_NOTNULL = 4;
-  static final String DOUBLE_COL_NULL = "DOUBLE_COL_NULL";
-  static final String DOUBLE_COL_NOT_NULL = "DOUBLE_COL_NOT_NULL";
-  static final double DOUBLE_VALUE = 3.14159265359D;
-  static final int DOUBLE_COLINDEX_NULL = 5;
-  static final int DOUBLE_COLINDEX_NOTNULL = 6;
-  static final String BYTES_COL_NULL = "BYTES_COL_NULL";
-  static final String BYTES_COL_NOT_NULL = "BYTES_COL_NOT_NULL";
-  static final ByteArray BYTES_VALUE = ByteArray.copyFrom("FOO");
-  static final int BYTES_COLINDEX_NULL = 7;
-  static final int BYTES_COLINDEX_NOTNULL = 8;
-  static final String LONG_COL_NULL = "LONG_COL_NULL";
-  static final String LONG_COL_NOT_NULL = "LONG_COL_NOT_NULL";
-  static final long LONG_VALUE = 1L;
-  static final int LONG_COLINDEX_NULL = 9;
-  static final int LONG_COLINDEX_NOTNULL = 10;
-  static final String DATE_COL_NULL = "DATE_COL_NULL";
-  static final String DATE_COL_NOT_NULL = "DATE_COL_NOT_NULL";
-  static final Date DATE_VALUE = Date.fromYearMonthDay(2019, 1, 18);
-  static final int DATE_COLINDEX_NULL = 11;
-  static final int DATE_COLINDEX_NOTNULL = 12;
-  static final String TIMESTAMP_COL_NULL = "TIMESTAMP_COL_NULL";
-  static final String TIMESTAMP_COL_NOT_NULL = "TIMESTAMP_COL_NOT_NULL";
-  static final Timestamp TIMESTAMP_VALUE = Timestamp.parseTimestamp("2019-01-18T10:00:01.1213Z");
-  static final int TIMESTAMP_COLINDEX_NULL = 13;
-  static final int TIMESTAMP_COLINDEX_NOTNULL = 14;
-  static final String TIME_COL_NULL = "TIME_COL_NULL";
-  static final String TIME_COL_NOT_NULL = "TIME_COL_NOT_NULL";
-  static final Timestamp TIME_VALUE = Timestamp.parseTimestamp("1970-01-01T10:01:02.995Z");
-  static final int TIME_COLINDEX_NULL = 15;
-  static final int TIME_COLINDEX_NOTNULL = 16;
-  static final String ARRAY_COL_NULL = "ARRAY_COL_NULL";
-  static final String ARRAY_COL_NOT_NULL = "ARRAY_COL_NOT_NULL";
-  static final long[] ARRAY_VALUE = new long[] {1L, 2L, 3L};
-  static final int ARRAY_COLINDEX_NULL = 17;
-  static final int ARRAY_COLINDEX_NOTNULL = 18;
-  static final String URL_COL_NULL = "URL_COL_NULL";
-  static final String URL_COL_NOT_NULL = "URL_COL_NOT_NULL";
-  static final String URL_VALUE = "https://cloud.google.com/spanner/docs/apis";
-  static final int URL_COLINDEX_NULL = 19;
-  static final int URL_COLINDEX_NOTNULL = 20;
+  private static final String UNKNOWN_COLUMN = "UNKNOWN_COLUMN";
+  private static final String STRING_COL_NULL = "STRING_COL_NULL";
+  private static final String STRING_COL_NOT_NULL = "STRING_COL_NOT_NULL";
+  private static final String STRING_VALUE = "FOO";
+  private static final int STRING_COLINDEX_NULL = 1;
+  private static final int STRING_COLINDEX_NOTNULL = 2;
+  private static final String BOOLEAN_COL_NULL = "BOOLEAN_COL_NULL";
+  private static final String BOOLEAN_COL_NOT_NULL = "BOOLEAN_COL_NOT_NULL";
+  private static final boolean BOOLEAN_VALUE = true;
+  private static final int BOOLEAN_COLINDEX_NULL = 3;
+  private static final int BOOLEAN_COLINDEX_NOTNULL = 4;
+  private static final String DOUBLE_COL_NULL = "DOUBLE_COL_NULL";
+  private static final String DOUBLE_COL_NOT_NULL = "DOUBLE_COL_NOT_NULL";
+  private static final double DOUBLE_VALUE = 3.14159265359D;
+  private static final int DOUBLE_COLINDEX_NULL = 5;
+  private static final int DOUBLE_COLINDEX_NOTNULL = 6;
+  private static final String BYTES_COL_NULL = "BYTES_COL_NULL";
+  private static final String BYTES_COL_NOT_NULL = "BYTES_COL_NOT_NULL";
+  private static final ByteArray BYTES_VALUE = ByteArray.copyFrom("FOO");
+  private static final int BYTES_COLINDEX_NULL = 7;
+  private static final int BYTES_COLINDEX_NOTNULL = 8;
+  private static final String LONG_COL_NULL = "LONG_COL_NULL";
+  private static final String LONG_COL_NOT_NULL = "LONG_COL_NOT_NULL";
+  private static final long LONG_VALUE = 1L;
+  private static final int LONG_COLINDEX_NULL = 9;
+  private static final int LONG_COLINDEX_NOTNULL = 10;
+  private static final String DATE_COL_NULL = "DATE_COL_NULL";
+  private static final String DATE_COL_NOT_NULL = "DATE_COL_NOT_NULL";
+  private static final Date DATE_VALUE = Date.fromYearMonthDay(2019, 1, 18);
+  private static final int DATE_COLINDEX_NULL = 11;
+  private static final int DATE_COLINDEX_NOTNULL = 12;
+  private static final String TIMESTAMP_COL_NULL = "TIMESTAMP_COL_NULL";
+  private static final String TIMESTAMP_COL_NOT_NULL = "TIMESTAMP_COL_NOT_NULL";
+  private static final Timestamp TIMESTAMP_VALUE =
+      Timestamp.parseTimestamp("2019-01-18T10:00:01.1213Z");
+  private static final int TIMESTAMP_COLINDEX_NULL = 13;
+  private static final int TIMESTAMP_COLINDEX_NOTNULL = 14;
+  private static final String TIME_COL_NULL = "TIME_COL_NULL";
+  private static final String TIME_COL_NOT_NULL = "TIME_COL_NOT_NULL";
+  private static final Timestamp TIME_VALUE = Timestamp.parseTimestamp("1970-01-01T10:01:02.995Z");
+  private static final int TIME_COLINDEX_NULL = 15;
+  private static final int TIME_COLINDEX_NOTNULL = 16;
+  private static final String ARRAY_COL_NULL = "ARRAY_COL_NULL";
+  private static final String ARRAY_COL_NOT_NULL = "ARRAY_COL_NOT_NULL";
+  private static final long[] ARRAY_VALUE = new long[] {1L, 2L, 3L};
+  private static final int ARRAY_COLINDEX_NULL = 17;
+  private static final int ARRAY_COLINDEX_NOTNULL = 18;
+  private static final String URL_COL_NULL = "URL_COL_NULL";
+  private static final String URL_COL_NOT_NULL = "URL_COL_NOT_NULL";
+  private static final String URL_VALUE = "https://cloud.google.com/spanner/docs/apis";
+  private static final int URL_COLINDEX_NULL = 19;
+  private static final int URL_COLINDEX_NOTNULL = 20;
 
   @Rule public ExpectedException thrown = ExpectedException.none();
 
   private JdbcResultSet subject;
 
-  static ResultSet getMockResultSet() {
-    ResultSet res =
-        ResultSets.forRows(
-            Type.struct(
-                StructField.of(STRING_COL_NULL, Type.string()),
-                StructField.of(STRING_COL_NOT_NULL, Type.string()),
-                StructField.of(BOOLEAN_COL_NULL, Type.bool()),
-                StructField.of(BOOLEAN_COL_NOT_NULL, Type.bool()),
-                StructField.of(DOUBLE_COL_NULL, Type.float64()),
-                StructField.of(DOUBLE_COL_NOT_NULL, Type.float64()),
-                StructField.of(BYTES_COL_NULL, Type.bytes()),
-                StructField.of(BYTES_COL_NOT_NULL, Type.bytes()),
-                StructField.of(LONG_COL_NULL, Type.int64()),
-                StructField.of(LONG_COL_NOT_NULL, Type.int64()),
-                StructField.of(DATE_COL_NULL, Type.date()),
-                StructField.of(DATE_COL_NOT_NULL, Type.date()),
-                StructField.of(TIMESTAMP_COL_NULL, Type.timestamp()),
-                StructField.of(TIMESTAMP_COL_NOT_NULL, Type.timestamp()),
-                StructField.of(TIME_COL_NULL, Type.timestamp()),
-                StructField.of(TIME_COL_NOT_NULL, Type.timestamp()),
-                StructField.of(ARRAY_COL_NULL, Type.array(Type.int64())),
-                StructField.of(ARRAY_COL_NOT_NULL, Type.array(Type.int64())),
-                StructField.of(URL_COL_NULL, Type.string()),
-                StructField.of(URL_COL_NOT_NULL, Type.string())),
-            Arrays.asList(
-                Struct.newBuilder()
-                    .set(STRING_COL_NULL)
-                    .to((String) null)
-                    .set(STRING_COL_NOT_NULL)
-                    .to(STRING_VALUE)
-                    .set(BOOLEAN_COL_NULL)
-                    .to((Boolean) null)
-                    .set(BOOLEAN_COL_NOT_NULL)
-                    .to(BOOLEAN_VALUE)
-                    .set(DOUBLE_COL_NULL)
-                    .to((Double) null)
-                    .set(DOUBLE_COL_NOT_NULL)
-                    .to(DOUBLE_VALUE)
-                    .set(BYTES_COL_NULL)
-                    .to((ByteArray) null)
-                    .set(BYTES_COL_NOT_NULL)
-                    .to(BYTES_VALUE)
-                    .set(LONG_COL_NULL)
-                    .to((Long) null)
-                    .set(LONG_COL_NOT_NULL)
-                    .to(LONG_VALUE)
-                    .set(DATE_COL_NULL)
-                    .to((Date) null)
-                    .set(DATE_COL_NOT_NULL)
-                    .to(DATE_VALUE)
-                    .set(TIMESTAMP_COL_NULL)
-                    .to((Timestamp) null)
-                    .set(TIMESTAMP_COL_NOT_NULL)
-                    .to(TIMESTAMP_VALUE)
-                    .set(TIME_COL_NULL)
-                    .to((Timestamp) null)
-                    .set(TIME_COL_NOT_NULL)
-                    .to(TIME_VALUE)
-                    .set(ARRAY_COL_NULL)
-                    .toInt64Array((long[]) null)
-                    .set(ARRAY_COL_NOT_NULL)
-                    .toInt64Array(ARRAY_VALUE)
-                    .set(URL_COL_NULL)
-                    .to((String) null)
-                    .set(URL_COL_NOT_NULL)
-                    .to(URL_VALUE)
-                    .build()));
+  private static ResultSet getMockResultSet() {
 
-    return res;
+    return ResultSets.forRows(
+        Type.struct(
+            StructField.of(STRING_COL_NULL, Type.string()),
+            StructField.of(STRING_COL_NOT_NULL, Type.string()),
+            StructField.of(BOOLEAN_COL_NULL, Type.bool()),
+            StructField.of(BOOLEAN_COL_NOT_NULL, Type.bool()),
+            StructField.of(DOUBLE_COL_NULL, Type.float64()),
+            StructField.of(DOUBLE_COL_NOT_NULL, Type.float64()),
+            StructField.of(BYTES_COL_NULL, Type.bytes()),
+            StructField.of(BYTES_COL_NOT_NULL, Type.bytes()),
+            StructField.of(LONG_COL_NULL, Type.int64()),
+            StructField.of(LONG_COL_NOT_NULL, Type.int64()),
+            StructField.of(DATE_COL_NULL, Type.date()),
+            StructField.of(DATE_COL_NOT_NULL, Type.date()),
+            StructField.of(TIMESTAMP_COL_NULL, Type.timestamp()),
+            StructField.of(TIMESTAMP_COL_NOT_NULL, Type.timestamp()),
+            StructField.of(TIME_COL_NULL, Type.timestamp()),
+            StructField.of(TIME_COL_NOT_NULL, Type.timestamp()),
+            StructField.of(ARRAY_COL_NULL, Type.array(Type.int64())),
+            StructField.of(ARRAY_COL_NOT_NULL, Type.array(Type.int64())),
+            StructField.of(URL_COL_NULL, Type.string()),
+            StructField.of(URL_COL_NOT_NULL, Type.string())),
+        Arrays.asList(
+            Struct.newBuilder()
+                .set(STRING_COL_NULL)
+                .to((String) null)
+                .set(STRING_COL_NOT_NULL)
+                .to(STRING_VALUE)
+                .set(BOOLEAN_COL_NULL)
+                .to((Boolean) null)
+                .set(BOOLEAN_COL_NOT_NULL)
+                .to(BOOLEAN_VALUE)
+                .set(DOUBLE_COL_NULL)
+                .to((Double) null)
+                .set(DOUBLE_COL_NOT_NULL)
+                .to(DOUBLE_VALUE)
+                .set(BYTES_COL_NULL)
+                .to((ByteArray) null)
+                .set(BYTES_COL_NOT_NULL)
+                .to(BYTES_VALUE)
+                .set(LONG_COL_NULL)
+                .to((Long) null)
+                .set(LONG_COL_NOT_NULL)
+                .to(LONG_VALUE)
+                .set(DATE_COL_NULL)
+                .to((Date) null)
+                .set(DATE_COL_NOT_NULL)
+                .to(DATE_VALUE)
+                .set(TIMESTAMP_COL_NULL)
+                .to((Timestamp) null)
+                .set(TIMESTAMP_COL_NOT_NULL)
+                .to(TIMESTAMP_VALUE)
+                .set(TIME_COL_NULL)
+                .to((Timestamp) null)
+                .set(TIME_COL_NOT_NULL)
+                .to(TIME_VALUE)
+                .set(ARRAY_COL_NULL)
+                .toInt64Array((long[]) null)
+                .set(ARRAY_COL_NOT_NULL)
+                .toInt64Array(ARRAY_VALUE)
+                .set(URL_COL_NULL)
+                .to((String) null)
+                .set(URL_COL_NOT_NULL)
+                .to(URL_VALUE)
+                .build()));
   }
 
   static ResultSet getMockResultSet_old() {
@@ -204,11 +203,11 @@ public class JdbcResultSetTest {
 
     when(res.getString(URL_COL_NULL)).thenReturn(null);
     when(res.isNull(URL_COL_NULL)).thenReturn(true);
-    when(res.getString(URL_COL_NOT_NULL)).thenReturn("https://github.com/olavloite/spanner-jdbc");
+    when(res.getString(URL_COL_NOT_NULL)).thenReturn("https://github.com/");
     when(res.isNull(URL_COL_NOT_NULL)).thenReturn(false);
     when(res.getString(URL_COLINDEX_NULL - 1)).thenReturn(null);
     when(res.isNull(URL_COLINDEX_NULL - 1)).thenReturn(true);
-    when(res.getString(URL_COLINDEX_NOTNULL - 1)).thenReturn("https://github.com/olavloite");
+    when(res.getString(URL_COLINDEX_NOTNULL - 1)).thenReturn("https://github.com/");
     when(res.isNull(URL_COLINDEX_NOTNULL - 1)).thenReturn(false);
     when(res.getColumnType(URL_COL_NULL)).thenReturn(Type.string());
     when(res.getColumnType(URL_COL_NOT_NULL)).thenReturn(Type.string());
@@ -384,7 +383,7 @@ public class JdbcResultSetTest {
     assertNull(value);
     String valueNotNull = subject.getString(STRING_COL_NOT_NULL);
     boolean wasNotNull = subject.wasNull();
-    assertEquals(false, wasNotNull);
+    assertFalse(wasNotNull);
     assertNotNull(valueNotNull);
   }
 
@@ -392,13 +391,13 @@ public class JdbcResultSetTest {
   public void testNext() throws SQLException {
     try (JdbcResultSet rs = JdbcResultSet.of(mock(Statement.class), getMockResultSet())) {
       assertTrue(rs.isBeforeFirst());
-      assertEquals(false, rs.isAfterLast());
+      assertFalse(rs.isAfterLast());
       int num = 0;
       while (rs.next()) {
         num++;
       }
       assertTrue(num > 0);
-      assertEquals(false, rs.isBeforeFirst());
+      assertFalse(rs.isBeforeFirst());
       assertTrue(rs.isAfterLast());
     }
   }
@@ -406,7 +405,7 @@ public class JdbcResultSetTest {
   @Test
   public void testClose() throws SQLException {
     try (JdbcResultSet rs = JdbcResultSet.of(mock(Statement.class), getMockResultSet())) {
-      assertEquals(false, rs.isClosed());
+      assertFalse(rs.isClosed());
       rs.next();
       assertNotNull(rs.getString(STRING_COL_NOT_NULL));
       rs.close();
@@ -426,7 +425,7 @@ public class JdbcResultSetTest {
   public void testGetStringIndex() throws SQLException {
     assertNotNull(subject.getString(STRING_COLINDEX_NOTNULL));
     assertEquals(STRING_VALUE, subject.getString(STRING_COLINDEX_NOTNULL));
-    assertEquals(false, subject.wasNull());
+    assertFalse(subject.wasNull());
     assertNull(subject.getString(STRING_COLINDEX_NULL));
     assertTrue(subject.wasNull());
   }
@@ -435,7 +434,7 @@ public class JdbcResultSetTest {
   public void testGetNStringIndex() throws SQLException {
     assertNotNull(subject.getNString(STRING_COLINDEX_NOTNULL));
     assertEquals(STRING_VALUE, subject.getNString(STRING_COLINDEX_NOTNULL));
-    assertEquals(false, subject.wasNull());
+    assertFalse(subject.wasNull());
     assertNull(subject.getNString(STRING_COLINDEX_NULL));
     assertTrue(subject.wasNull());
   }
@@ -444,7 +443,7 @@ public class JdbcResultSetTest {
   public void testGetURLIndex() throws SQLException, MalformedURLException {
     assertNotNull(subject.getURL(URL_COLINDEX_NOTNULL));
     assertEquals(new URL(URL_VALUE), subject.getURL(URL_COLINDEX_NOTNULL));
-    assertEquals(false, subject.wasNull());
+    assertFalse(subject.wasNull());
     assertNull(subject.getURL(URL_COLINDEX_NULL));
     assertTrue(subject.wasNull());
   }
@@ -459,8 +458,8 @@ public class JdbcResultSetTest {
   @Test
   public void testGetBooleanIndex() throws SQLException {
     assertNotNull(subject.getBoolean(BOOLEAN_COLINDEX_NOTNULL));
-    assertEquals(false, subject.wasNull());
-    assertEquals(false, subject.getBoolean(BOOLEAN_COLINDEX_NULL));
+    assertFalse(subject.wasNull());
+    assertFalse(subject.getBoolean(BOOLEAN_COLINDEX_NULL));
     assertTrue(subject.wasNull());
   }
 
@@ -468,7 +467,7 @@ public class JdbcResultSetTest {
   public void testGetLongIndex() throws SQLException {
     assertNotNull(subject.getLong(LONG_COLINDEX_NOTNULL));
     assertEquals(LONG_VALUE, subject.getLong(LONG_COLINDEX_NOTNULL));
-    assertEquals(false, subject.wasNull());
+    assertFalse(subject.wasNull());
     assertEquals(0l, subject.getLong(LONG_COLINDEX_NULL));
     assertTrue(subject.wasNull());
   }
@@ -477,7 +476,7 @@ public class JdbcResultSetTest {
   public void testGetDoubleIndex() throws SQLException {
     assertNotNull(subject.getDouble(DOUBLE_COLINDEX_NOTNULL));
     assertEquals(DOUBLE_VALUE, subject.getDouble(DOUBLE_COLINDEX_NOTNULL), 0d);
-    assertEquals(false, subject.wasNull());
+    assertFalse(subject.wasNull());
     assertEquals(0d, subject.getDouble(DOUBLE_COLINDEX_NULL), 0d);
     assertTrue(subject.wasNull());
   }
@@ -488,7 +487,7 @@ public class JdbcResultSetTest {
     assertEquals(
         BigDecimal.valueOf(DOUBLE_VALUE).setScale(2, RoundingMode.HALF_UP),
         subject.getBigDecimal(DOUBLE_COLINDEX_NOTNULL, 2));
-    assertEquals(false, subject.wasNull());
+    assertFalse(subject.wasNull());
     assertNull(subject.getBigDecimal(DOUBLE_COLINDEX_NULL, 2));
     assertTrue(subject.wasNull());
   }
@@ -497,7 +496,7 @@ public class JdbcResultSetTest {
   public void testGetBytesIndex() throws SQLException {
     assertNotNull(subject.getBytes(BYTES_COLINDEX_NOTNULL));
     assertArrayEquals(BYTES_VALUE.toByteArray(), subject.getBytes(BYTES_COLINDEX_NOTNULL));
-    assertEquals(false, subject.wasNull());
+    assertFalse(subject.wasNull());
     assertNull(subject.getBytes(BYTES_COLINDEX_NULL));
     assertTrue(subject.wasNull());
   }
@@ -510,7 +509,7 @@ public class JdbcResultSetTest {
         new java.sql.Date(
             DATE_VALUE.getYear() - 1900, DATE_VALUE.getMonth() - 1, DATE_VALUE.getDayOfMonth()),
         subject.getDate(DATE_COLINDEX_NOTNULL));
-    assertEquals(false, subject.wasNull());
+    assertFalse(subject.wasNull());
     assertNull(subject.getDate(DATE_COLINDEX_NULL));
     assertTrue(subject.wasNull());
   }
@@ -520,7 +519,7 @@ public class JdbcResultSetTest {
     assertNotNull(subject.getTime(TIME_COLINDEX_NOTNULL));
     assertEquals(
         new Time(TIME_VALUE.toSqlTimestamp().getTime()), subject.getTime(TIME_COLINDEX_NOTNULL));
-    assertEquals(false, subject.wasNull());
+    assertFalse(subject.wasNull());
     assertNull(subject.getTime(TIME_COLINDEX_NULL));
     assertTrue(subject.wasNull());
   }
@@ -530,7 +529,7 @@ public class JdbcResultSetTest {
     assertNotNull(subject.getTimestamp(TIMESTAMP_COLINDEX_NOTNULL));
     assertEquals(
         TIMESTAMP_VALUE.toSqlTimestamp(), subject.getTimestamp(TIMESTAMP_COLINDEX_NOTNULL));
-    assertEquals(false, subject.wasNull());
+    assertFalse(subject.wasNull());
     assertNull(subject.getTimestamp(TIMESTAMP_COLINDEX_NULL));
     assertTrue(subject.wasNull());
   }
@@ -539,7 +538,7 @@ public class JdbcResultSetTest {
   public void testGetStringLabel() throws SQLException {
     assertNotNull(subject.getString(STRING_COL_NOT_NULL));
     assertEquals("FOO", subject.getString(STRING_COL_NOT_NULL));
-    assertEquals(false, subject.wasNull());
+    assertFalse(subject.wasNull());
     assertNull(subject.getString(STRING_COL_NULL));
     assertTrue(subject.wasNull());
   }
@@ -548,7 +547,7 @@ public class JdbcResultSetTest {
   public void testGetNStringLabel() throws SQLException {
     assertNotNull(subject.getNString(STRING_COL_NOT_NULL));
     assertEquals("FOO", subject.getNString(STRING_COL_NOT_NULL));
-    assertEquals(false, subject.wasNull());
+    assertFalse(subject.wasNull());
     assertNull(subject.getNString(STRING_COL_NULL));
     assertTrue(subject.wasNull());
   }
@@ -557,7 +556,7 @@ public class JdbcResultSetTest {
   public void testGetURLLabel() throws SQLException {
     assertNotNull(subject.getString(URL_COL_NOT_NULL));
     assertEquals(URL_VALUE, subject.getString(URL_COL_NOT_NULL));
-    assertEquals(false, subject.wasNull());
+    assertFalse(subject.wasNull());
     assertNull(subject.getString(URL_COL_NULL));
     assertTrue(subject.wasNull());
   }
@@ -572,8 +571,8 @@ public class JdbcResultSetTest {
   @Test
   public void testGetBooleanLabel() throws SQLException {
     assertNotNull(subject.getBoolean(BOOLEAN_COL_NOT_NULL));
-    assertEquals(false, subject.wasNull());
-    assertEquals(false, subject.getBoolean(BOOLEAN_COL_NULL));
+    assertFalse(subject.wasNull());
+    assertFalse(subject.getBoolean(BOOLEAN_COL_NULL));
     assertTrue(subject.wasNull());
   }
 
@@ -581,7 +580,7 @@ public class JdbcResultSetTest {
   public void testGetLongLabel() throws SQLException {
     assertNotNull(subject.getLong(LONG_COL_NOT_NULL));
     assertEquals(1l, subject.getLong(LONG_COL_NOT_NULL));
-    assertEquals(false, subject.wasNull());
+    assertFalse(subject.wasNull());
     assertEquals(0l, subject.getLong(LONG_COL_NULL));
     assertTrue(subject.wasNull());
   }
@@ -590,7 +589,7 @@ public class JdbcResultSetTest {
   public void testGetDoubleLabel() throws SQLException {
     assertNotNull(subject.getDouble(DOUBLE_COL_NOT_NULL));
     assertEquals(DOUBLE_VALUE, subject.getDouble(DOUBLE_COL_NOT_NULL), 0d);
-    assertEquals(false, subject.wasNull());
+    assertFalse(subject.wasNull());
     assertEquals(0d, subject.getDouble(DOUBLE_COL_NULL), 0d);
     assertTrue(subject.wasNull());
   }
@@ -599,7 +598,7 @@ public class JdbcResultSetTest {
   public void testGetBigDecimalLabelAndScale() throws SQLException {
     assertNotNull(subject.getBigDecimal(DOUBLE_COL_NOT_NULL, 2));
     assertEquals(BigDecimal.valueOf(3.14d), subject.getBigDecimal(DOUBLE_COL_NOT_NULL, 2));
-    assertEquals(false, subject.wasNull());
+    assertFalse(subject.wasNull());
     assertNull(subject.getBigDecimal(DOUBLE_COL_NULL, 2));
     assertTrue(subject.wasNull());
   }
@@ -609,7 +608,7 @@ public class JdbcResultSetTest {
     assertNotNull(subject.getBytes(BYTES_COL_NOT_NULL));
     assertArrayEquals(
         ByteArray.copyFrom("FOO").toByteArray(), subject.getBytes(BYTES_COL_NOT_NULL));
-    assertEquals(false, subject.wasNull());
+    assertFalse(subject.wasNull());
     assertNull(subject.getBytes(BYTES_COL_NULL));
     assertTrue(subject.wasNull());
   }
@@ -622,7 +621,7 @@ public class JdbcResultSetTest {
         new java.sql.Date(
             DATE_VALUE.getYear() - 1900, DATE_VALUE.getMonth() - 1, DATE_VALUE.getDayOfMonth()),
         subject.getDate(DATE_COL_NOT_NULL));
-    assertEquals(false, subject.wasNull());
+    assertFalse(subject.wasNull());
     assertNull(subject.getDate(DATE_COL_NULL));
     assertTrue(subject.wasNull());
   }
@@ -632,7 +631,7 @@ public class JdbcResultSetTest {
     assertNotNull(subject.getTime(TIME_COL_NOT_NULL));
     assertEquals(
         new Time(TIME_VALUE.toSqlTimestamp().getTime()), subject.getTime(TIME_COL_NOT_NULL));
-    assertEquals(false, subject.wasNull());
+    assertFalse(subject.wasNull());
     assertNull(subject.getTime(TIME_COL_NULL));
     assertTrue(subject.wasNull());
   }
@@ -641,7 +640,7 @@ public class JdbcResultSetTest {
   public void testGetTimestampLabel() throws SQLException {
     assertNotNull(subject.getTime(TIMESTAMP_COL_NOT_NULL));
     assertEquals(TIMESTAMP_VALUE.toSqlTimestamp(), subject.getTimestamp(TIMESTAMP_COL_NOT_NULL));
-    assertEquals(false, subject.wasNull());
+    assertFalse(subject.wasNull());
     assertNull(subject.getTimestamp(TIMESTAMP_COL_NULL));
     assertTrue(subject.wasNull());
   }
@@ -661,7 +660,7 @@ public class JdbcResultSetTest {
   public void testGetBigDecimalIndex() throws SQLException {
     assertNotNull(subject.getBigDecimal(DOUBLE_COLINDEX_NOTNULL));
     assertEquals(BigDecimal.valueOf(DOUBLE_VALUE), subject.getBigDecimal(DOUBLE_COLINDEX_NOTNULL));
-    assertEquals(false, subject.wasNull());
+    assertFalse(subject.wasNull());
     assertNull(subject.getBigDecimal(DOUBLE_COLINDEX_NULL));
     assertTrue(subject.wasNull());
   }
@@ -670,7 +669,7 @@ public class JdbcResultSetTest {
   public void testGetBigDecimalLabel() throws SQLException {
     assertNotNull(subject.getBigDecimal(DOUBLE_COL_NOT_NULL));
     assertEquals(BigDecimal.valueOf(DOUBLE_VALUE), subject.getBigDecimal(DOUBLE_COL_NOT_NULL));
-    assertEquals(false, subject.wasNull());
+    assertFalse(subject.wasNull());
     assertNull(subject.getBigDecimal(DOUBLE_COL_NULL));
     assertTrue(subject.wasNull());
   }
@@ -689,7 +688,7 @@ public class JdbcResultSetTest {
         new java.sql.Date(
             DATE_VALUE.getYear() - 1900, DATE_VALUE.getMonth() - 1, DATE_VALUE.getDayOfMonth()),
         subject.getDate(DATE_COLINDEX_NOTNULL, cal));
-    assertEquals(false, subject.wasNull());
+    assertFalse(subject.wasNull());
     assertNull(subject.getDate(DATE_COLINDEX_NULL, cal));
     assertTrue(subject.wasNull());
 
@@ -710,7 +709,7 @@ public class JdbcResultSetTest {
         new java.sql.Date(
             DATE_VALUE.getYear() - 1900, DATE_VALUE.getMonth() - 1, DATE_VALUE.getDayOfMonth()),
         subject.getDate(DATE_COL_NOT_NULL, cal));
-    assertEquals(false, subject.wasNull());
+    assertFalse(subject.wasNull());
     assertNull(subject.getDate(DATE_COL_NULL, cal));
     assertTrue(subject.wasNull());
 
@@ -731,7 +730,7 @@ public class JdbcResultSetTest {
     assertEquals(
         new Time(TIME_VALUE.toSqlTimestamp().getTime()),
         subject.getTime(TIME_COLINDEX_NOTNULL, cal));
-    assertEquals(false, subject.wasNull());
+    assertFalse(subject.wasNull());
     assertNull(subject.getTime(TIME_COLINDEX_NULL, cal));
     assertTrue(subject.wasNull());
   }
@@ -743,7 +742,7 @@ public class JdbcResultSetTest {
     assertNotNull(subject.getTime(TIME_COL_NOT_NULL, cal));
     assertEquals(
         new Time(TIME_VALUE.toSqlTimestamp().getTime()), subject.getTime(TIME_COL_NOT_NULL, cal));
-    assertEquals(false, subject.wasNull());
+    assertFalse(subject.wasNull());
     assertNull(subject.getTime(TIME_COL_NULL, cal));
     assertTrue(subject.wasNull());
   }
@@ -755,7 +754,7 @@ public class JdbcResultSetTest {
     assertNotNull(subject.getTimestamp(TIMESTAMP_COLINDEX_NOTNULL, cal));
     assertEquals(
         TIMESTAMP_VALUE.toSqlTimestamp(), subject.getTimestamp(TIMESTAMP_COLINDEX_NOTNULL, cal));
-    assertEquals(false, subject.wasNull());
+    assertFalse(subject.wasNull());
     assertNull(subject.getTimestamp(TIMESTAMP_COLINDEX_NULL, cal));
     assertTrue(subject.wasNull());
   }
@@ -767,7 +766,7 @@ public class JdbcResultSetTest {
     assertNotNull(subject.getTimestamp(TIMESTAMP_COL_NOT_NULL, cal));
     assertEquals(
         TIMESTAMP_VALUE.toSqlTimestamp(), subject.getTimestamp(TIMESTAMP_COL_NOT_NULL, cal));
-    assertEquals(false, subject.wasNull());
+    assertFalse(subject.wasNull());
     assertNull(subject.getTimestamp(TIMESTAMP_COL_NULL, cal));
     assertTrue(subject.wasNull());
   }
@@ -785,7 +784,7 @@ public class JdbcResultSetTest {
   public void testGetByteIndex() throws SQLException {
     assertNotNull(subject.getByte(LONG_COLINDEX_NOTNULL));
     assertEquals(LONG_VALUE, subject.getByte(LONG_COLINDEX_NOTNULL));
-    assertEquals(false, subject.wasNull());
+    assertFalse(subject.wasNull());
     assertEquals(0, subject.getByte(LONG_COLINDEX_NULL));
     assertTrue(subject.wasNull());
   }
@@ -794,7 +793,7 @@ public class JdbcResultSetTest {
   public void testGetShortIndex() throws SQLException {
     assertNotNull(subject.getShort(LONG_COLINDEX_NOTNULL));
     assertEquals(LONG_VALUE, subject.getShort(LONG_COLINDEX_NOTNULL));
-    assertEquals(false, subject.wasNull());
+    assertFalse(subject.wasNull());
     assertEquals(0, subject.getShort(LONG_COLINDEX_NULL));
     assertTrue(subject.wasNull());
   }
@@ -804,7 +803,7 @@ public class JdbcResultSetTest {
     assertNotNull(subject.getInt(LONG_COLINDEX_NOTNULL));
     int expected = (int) LONG_VALUE;
     assertEquals(expected, subject.getInt(LONG_COLINDEX_NOTNULL));
-    assertEquals(false, subject.wasNull());
+    assertFalse(subject.wasNull());
     assertEquals(0, subject.getInt(LONG_COLINDEX_NULL));
     assertTrue(subject.wasNull());
   }
@@ -814,7 +813,7 @@ public class JdbcResultSetTest {
     assertNotNull(subject.getFloat(DOUBLE_COLINDEX_NOTNULL));
     float expected = (float) DOUBLE_VALUE;
     assertEquals(expected, subject.getFloat(DOUBLE_COLINDEX_NOTNULL), 0f);
-    assertEquals(false, subject.wasNull());
+    assertFalse(subject.wasNull());
     assertEquals(0d, subject.getFloat(DOUBLE_COLINDEX_NULL), 0f);
     assertTrue(subject.wasNull());
   }
@@ -823,7 +822,7 @@ public class JdbcResultSetTest {
   public void testGetByteLabel() throws SQLException {
     assertNotNull(subject.getByte(LONG_COL_NOT_NULL));
     assertEquals(1, subject.getByte(LONG_COL_NOT_NULL));
-    assertEquals(false, subject.wasNull());
+    assertFalse(subject.wasNull());
     assertEquals(0, subject.getByte(LONG_COL_NULL));
     assertTrue(subject.wasNull());
   }
@@ -832,7 +831,7 @@ public class JdbcResultSetTest {
   public void testGetShortLabel() throws SQLException {
     assertNotNull(subject.getShort(LONG_COL_NOT_NULL));
     assertEquals(1, subject.getShort(LONG_COL_NOT_NULL));
-    assertEquals(false, subject.wasNull());
+    assertFalse(subject.wasNull());
     assertEquals(0, subject.getShort(LONG_COL_NULL));
     assertTrue(subject.wasNull());
   }
@@ -841,7 +840,7 @@ public class JdbcResultSetTest {
   public void testGetIntLabel() throws SQLException {
     assertNotNull(subject.getInt(LONG_COL_NOT_NULL));
     assertEquals(1, subject.getInt(LONG_COL_NOT_NULL));
-    assertEquals(false, subject.wasNull());
+    assertFalse(subject.wasNull());
     assertEquals(0, subject.getInt(LONG_COL_NULL));
     assertTrue(subject.wasNull());
   }
@@ -851,7 +850,7 @@ public class JdbcResultSetTest {
     assertNotNull(subject.getFloat(DOUBLE_COL_NOT_NULL));
     float expected = (float) DOUBLE_VALUE;
     assertEquals(expected, subject.getFloat(DOUBLE_COL_NOT_NULL), 0f);
-    assertEquals(false, subject.wasNull());
+    assertFalse(subject.wasNull());
     assertEquals(0f, subject.getFloat(DOUBLE_COL_NULL), 0f);
     assertTrue(subject.wasNull());
   }
@@ -864,7 +863,7 @@ public class JdbcResultSetTest {
         new java.sql.Date(
             DATE_VALUE.getYear() - 1900, DATE_VALUE.getMonth() - 1, DATE_VALUE.getDayOfMonth()),
         subject.getObject(DATE_COL_NOT_NULL));
-    assertEquals(false, subject.wasNull());
+    assertFalse(subject.wasNull());
     assertNull(subject.getObject(DATE_COL_NULL));
     assertTrue(subject.wasNull());
   }
@@ -877,7 +876,7 @@ public class JdbcResultSetTest {
         new java.sql.Date(
             DATE_VALUE.getYear() - 1900, DATE_VALUE.getMonth() - 1, DATE_VALUE.getDayOfMonth()),
         subject.getObject(DATE_COLINDEX_NOTNULL));
-    assertEquals(false, subject.wasNull());
+    assertFalse(subject.wasNull());
     assertNull(subject.getObject(DATE_COLINDEX_NULL));
     assertTrue(subject.wasNull());
   }
@@ -891,7 +890,7 @@ public class JdbcResultSetTest {
         new java.sql.Date(
             DATE_VALUE.getYear() - 1900, DATE_VALUE.getMonth() - 1, DATE_VALUE.getDayOfMonth()),
         subject.getObject(DATE_COL_NOT_NULL, map));
-    assertEquals(false, subject.wasNull());
+    assertFalse(subject.wasNull());
     assertNull(subject.getObject(DATE_COL_NULL, map));
     assertTrue(subject.wasNull());
   }
@@ -905,7 +904,7 @@ public class JdbcResultSetTest {
         new java.sql.Date(
             DATE_VALUE.getYear() - 1900, DATE_VALUE.getMonth() - 1, DATE_VALUE.getDayOfMonth()),
         subject.getObject(DATE_COLINDEX_NOTNULL, map));
-    assertEquals(false, subject.wasNull());
+    assertFalse(subject.wasNull());
     assertNull(subject.getObject(DATE_COLINDEX_NULL, map));
     assertTrue(subject.wasNull());
   }
@@ -916,7 +915,7 @@ public class JdbcResultSetTest {
     assertEquals(
         JdbcArray.createArray(JdbcDataType.INT64, Arrays.asList(1L, 2L, 3L)),
         subject.getArray(ARRAY_COL_NOT_NULL));
-    assertEquals(false, subject.wasNull());
+    assertFalse(subject.wasNull());
     assertNull(subject.getArray(ARRAY_COL_NULL));
     assertTrue(subject.wasNull());
   }
@@ -927,7 +926,7 @@ public class JdbcResultSetTest {
     assertEquals(
         JdbcArray.createArray(JdbcDataType.INT64, Arrays.asList(1L, 2L, 3L)),
         subject.getArray(ARRAY_COLINDEX_NOTNULL));
-    assertEquals(false, subject.wasNull());
+    assertFalse(subject.wasNull());
     assertNull(subject.getArray(ARRAY_COLINDEX_NULL));
     assertTrue(subject.wasNull());
   }
@@ -970,7 +969,7 @@ public class JdbcResultSetTest {
     int len = actual.read(cbuf, 0, cbuf.length);
     assertEquals(STRING_VALUE, new String(cbuf, 0, len));
     assertEquals(3, len);
-    assertEquals(false, subject.wasNull());
+    assertFalse(subject.wasNull());
     assertNull(subject.getCharacterStream(STRING_COLINDEX_NULL));
     assertTrue(subject.wasNull());
   }
@@ -983,7 +982,7 @@ public class JdbcResultSetTest {
     int len = actual.read(cbuf, 0, cbuf.length);
     assertEquals("FOO", new String(cbuf, 0, len));
     assertEquals(3, len);
-    assertEquals(false, subject.wasNull());
+    assertFalse(subject.wasNull());
     assertNull(subject.getCharacterStream(STRING_COL_NULL));
     assertTrue(subject.wasNull());
   }
@@ -996,7 +995,7 @@ public class JdbcResultSetTest {
     int len = actual.read(cbuf, 0, cbuf.length);
     assertEquals(STRING_VALUE, new String(cbuf, 0, len));
     assertEquals(3, len);
-    assertEquals(false, subject.wasNull());
+    assertFalse(subject.wasNull());
     assertNull(subject.getNCharacterStream(STRING_COLINDEX_NULL));
     assertTrue(subject.wasNull());
   }
@@ -1009,7 +1008,7 @@ public class JdbcResultSetTest {
     int len = actual.read(cbuf, 0, cbuf.length);
     assertEquals("FOO", new String(cbuf, 0, len));
     assertEquals(3, len);
-    assertEquals(false, subject.wasNull());
+    assertFalse(subject.wasNull());
     assertNull(subject.getNCharacterStream(STRING_COL_NULL));
     assertTrue(subject.wasNull());
   }
@@ -1022,7 +1021,7 @@ public class JdbcResultSetTest {
     int len = actual.read(cbuf, 0, cbuf.length);
     assertEquals(STRING_VALUE, new String(cbuf, 0, len, StandardCharsets.US_ASCII));
     assertEquals(3, len);
-    assertEquals(false, subject.wasNull());
+    assertFalse(subject.wasNull());
     assertNull(subject.getAsciiStream(STRING_COLINDEX_NULL));
     assertTrue(subject.wasNull());
   }
@@ -1035,7 +1034,7 @@ public class JdbcResultSetTest {
     int len = actual.read(cbuf, 0, cbuf.length);
     assertEquals(STRING_VALUE, new String(cbuf, 0, len, StandardCharsets.UTF_16LE));
     assertEquals(6, len);
-    assertEquals(false, subject.wasNull());
+    assertFalse(subject.wasNull());
     assertNull(subject.getUnicodeStream(STRING_COLINDEX_NULL));
     assertTrue(subject.wasNull());
   }
@@ -1048,7 +1047,7 @@ public class JdbcResultSetTest {
     int len = actual.read(cbuf, 0, cbuf.length);
     assertArrayEquals(BYTES_VALUE.toByteArray(), cbuf);
     assertEquals(3, len);
-    assertEquals(false, subject.wasNull());
+    assertFalse(subject.wasNull());
     assertNull(subject.getUnicodeStream(BYTES_COLINDEX_NULL));
     assertTrue(subject.wasNull());
   }
@@ -1061,7 +1060,7 @@ public class JdbcResultSetTest {
     int len = actual.read(cbuf, 0, cbuf.length);
     assertEquals("FOO", new String(cbuf, 0, len, StandardCharsets.US_ASCII));
     assertEquals(3, len);
-    assertEquals(false, subject.wasNull());
+    assertFalse(subject.wasNull());
     assertNull(subject.getAsciiStream(STRING_COL_NULL));
     assertTrue(subject.wasNull());
   }
@@ -1074,7 +1073,7 @@ public class JdbcResultSetTest {
     int len = actual.read(cbuf, 0, cbuf.length);
     assertEquals("FOO", new String(cbuf, 0, len, StandardCharsets.UTF_16LE));
     assertEquals(6, len);
-    assertEquals(false, subject.wasNull());
+    assertFalse(subject.wasNull());
     assertNull(subject.getUnicodeStream(STRING_COL_NULL));
     assertTrue(subject.wasNull());
   }
@@ -1087,7 +1086,7 @@ public class JdbcResultSetTest {
     int len = actual.read(cbuf, 0, cbuf.length);
     assertArrayEquals(ByteArray.copyFrom("FOO").toByteArray(), cbuf);
     assertEquals(3, len);
-    assertEquals(false, subject.wasNull());
+    assertFalse(subject.wasNull());
     assertNull(subject.getUnicodeStream(BYTES_COL_NULL));
     assertTrue(subject.wasNull());
   }

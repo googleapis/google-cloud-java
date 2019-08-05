@@ -36,12 +36,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-/**
- * Tests for reading and parsing key files and getting service accounts. The key files that are used
- * for this test class contain random private keys generated with the following command: <code>
- * openssl genpkey -out rsakey.pem -algorithm RSA -pkeyopt rsa_keygen_bits:2048</code> These keys
- * are not in use for anything else except these test classes.
- */
+/** Tests for reading and parsing test key files and getting service accounts. */
 @RunWith(JUnit4.class)
 public class CredentialsServiceTest {
   private static final String FILE_TEST_PATH =

@@ -32,8 +32,11 @@ import com.google.common.base.Preconditions;
 import com.google.spanner.admin.database.v1.UpdateDatabaseDdlMetadata;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
 
 /**
  * {@link UnitOfWork} that is used when a DDL batch is started. These batches only accept DDL
@@ -188,10 +191,19 @@ class DdlBatch extends AbstractBaseUnitOfWork {
                   operation.get();
                   // Return metadata.
                   return operation.getMetadata().get();
-                } catch (Exception e) {
+                } catch (ExecutionException e) {
+                  SpannerException spannerException = extractSpannerCause(e);
                   long[] updateCounts = extractUpdateCounts(operation.getMetadata().get());
                   throw SpannerExceptionFactory.newSpannerBatchUpdateException(
-                      ErrorCode.INVALID_ARGUMENT, e.getMessage(), updateCounts);
+                      spannerException == null
+                          ? ErrorCode.UNKNOWN
+                          : spannerException.getErrorCode(),
+                      e.getMessage(),
+                      updateCounts);
+                } catch (InterruptedException e) {
+                  long[] updateCounts = extractUpdateCounts(operation.getMetadata().get());
+                  throw SpannerExceptionFactory.newSpannerBatchUpdateException(
+                      ErrorCode.CANCELLED, e.getMessage(), updateCounts);
                 }
               }
             };
@@ -205,6 +217,19 @@ class DdlBatch extends AbstractBaseUnitOfWork {
       this.state = UnitOfWorkState.RUN_FAILED;
       throw e;
     }
+  }
+
+  private SpannerException extractSpannerCause(ExecutionException e) {
+    Throwable cause = e.getCause();
+    Set<Throwable> causes = new HashSet<>();
+    while (cause != null && !causes.contains(cause)) {
+      if (cause instanceof SpannerException) {
+        return (SpannerException) cause;
+      }
+      causes.add(cause);
+      cause = cause.getCause();
+    }
+    return null;
   }
 
   @VisibleForTesting

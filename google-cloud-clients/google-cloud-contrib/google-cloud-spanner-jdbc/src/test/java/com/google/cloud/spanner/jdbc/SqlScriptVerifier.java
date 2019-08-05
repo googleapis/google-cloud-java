@@ -20,17 +20,16 @@ import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.startsWith;
 import static org.junit.Assert.assertThat;
+
 import com.google.cloud.spanner.ErrorCode;
 import com.google.cloud.spanner.ResultSet;
 import com.google.cloud.spanner.SpannerException;
 import com.google.cloud.spanner.Statement;
 import com.google.cloud.spanner.Type;
-import com.google.cloud.spanner.jdbc.Connection;
-import com.google.cloud.spanner.jdbc.StatementResult;
 import com.google.cloud.spanner.jdbc.StatementResult.ResultType;
 
 /**
- * SQL script verifier implementation for Spanner {@link Connection}
+ * SQL script verifier implementation for Spanner {@link com.google.cloud.spanner.jdbc.Connection}
  *
  * @see AbstractSqlScriptVerifier for more information
  */
@@ -57,7 +56,6 @@ public class SqlScriptVerifier extends AbstractSqlScriptVerifier {
     protected long getUpdateCount() {
       return result.getUpdateCount();
     }
-
   }
 
   static class ConnectionGenericResultSet extends GenericResultSet {
@@ -169,13 +167,18 @@ public class SqlScriptVerifier extends AbstractSqlScriptVerifier {
   }
 
   @Override
-  protected void verifyExpectedException(String statement, Exception e, String code,
-      String messagePrefix) {
+  protected void verifyExpectedException(
+      String statement, Exception e, String code, String messagePrefix) {
     assertThat(e instanceof SpannerException, is(true));
     SpannerException spannerException = (SpannerException) e;
-    assertThat(statement, spannerException.getErrorCode(), is(equalTo(ErrorCode.valueOf(code))));
+    assertThat(
+        statement + " resulted in " + spannerException.toString(),
+        spannerException.getErrorCode(),
+        is(equalTo(ErrorCode.valueOf(code))));
     if (messagePrefix != null) {
-      assertThat(statement, e.getMessage(),
+      assertThat(
+          statement,
+          e.getMessage(),
           startsWith(messagePrefix.substring(1, messagePrefix.length() - 1)));
     }
   }

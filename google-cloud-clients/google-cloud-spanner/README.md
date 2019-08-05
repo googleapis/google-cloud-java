@@ -17,16 +17,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-spanner</artifactId>
-  <version>1.28.0</version>
+  <version>1.30.0</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-spanner:1.28.0'
+compile 'com.google.cloud:google-cloud-spanner:1.30.0'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-spanner" % "1.28.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-spanner" % "1.30.0"
 ```
 [//]: # ({x-version-update-end})
 

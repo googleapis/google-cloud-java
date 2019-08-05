@@ -49,6 +49,7 @@ import org.junit.runners.JUnit4;
 public class JdbcParameterStoreTest {
 
   /** Tests setting a parameter value together with a sql type */
+  @SuppressWarnings("deprecation")
   @Test
   public void testSetParameterWithType() throws SQLException, IOException {
     JdbcParameterStore params = new JdbcParameterStore();
@@ -74,8 +75,8 @@ public class JdbcParameterStoreTest {
     params.setParameter(1, (double) 1, Types.DOUBLE);
     assertThat((Double) params.getParameter(1), is(equalTo((double) 1)));
     verifyParameter(params, Value.float64(1));
-    params.setParameter(1, new Date(0L), Types.DATE);
-    assertThat((Date) params.getParameter(1), is(equalTo(new Date(0L))));
+    params.setParameter(1, new Date(1970 - 1900, 0, 1), Types.DATE);
+    assertThat((Date) params.getParameter(1), is(equalTo(new Date(1970 - 1900, 0, 1))));
     verifyParameter(params, Value.date(com.google.cloud.Date.fromYearMonthDay(1970, 1, 1)));
     params.setParameter(1, new Time(0L), Types.TIME);
     assertThat((Time) params.getParameter(1), is(equalTo(new Time(0L))));
@@ -179,14 +180,16 @@ public class JdbcParameterStoreTest {
 
     // types that should lead to date
     for (int type : new int[] {Types.DATE}) {
-      params.setParameter(1, new Date(0L), type);
-      assertThat((Date) params.getParameter(1), is(equalTo(new Date(0L))));
+      params.setParameter(1, new Date(1970 - 1900, 0, 1), type);
+      assertThat((Date) params.getParameter(1), is(equalTo(new Date(1970 - 1900, 0, 1))));
       verifyParameter(params, Value.date(com.google.cloud.Date.fromYearMonthDay(1970, 1, 1)));
       params.setParameter(1, new Time(0L), type);
       assertThat((Time) params.getParameter(1), is(equalTo(new Time(0L))));
       verifyParameter(params, Value.date(com.google.cloud.Date.fromYearMonthDay(1970, 1, 1)));
-      params.setParameter(1, new Timestamp(0L), type);
-      assertThat((Timestamp) params.getParameter(1), is(equalTo(new Timestamp(0L))));
+      params.setParameter(1, new Timestamp(1970 - 1900, 0, 1, 0, 0, 0, 0), type);
+      assertThat(
+          (Timestamp) params.getParameter(1),
+          is(equalTo(new Timestamp(1970 - 1900, 0, 1, 0, 0, 0, 0))));
       verifyParameter(params, Value.date(com.google.cloud.Date.fromYearMonthDay(1970, 1, 1)));
     }
 
@@ -281,6 +284,7 @@ public class JdbcParameterStoreTest {
    * Tests setting a parameter value without knowing the sql type. The type must be deferred from
    * the type of the parameter value
    */
+  @SuppressWarnings("deprecation")
   @Test
   public void testSetParameterWithoutType() throws SQLException {
     JdbcParameterStore params = new JdbcParameterStore();
@@ -302,8 +306,8 @@ public class JdbcParameterStoreTest {
     params.setParameter(1, (double) 1, null);
     assertThat((Double) params.getParameter(1), is(equalTo((double) 1)));
     verifyParameter(params, Value.float64(1));
-    params.setParameter(1, new Date(0L), null);
-    assertThat((Date) params.getParameter(1), is(equalTo(new Date(0L))));
+    params.setParameter(1, new Date(1970 - 1900, 0, 1), null);
+    assertThat((Date) params.getParameter(1), is(equalTo(new Date(1970 - 1900, 0, 1))));
     verifyParameter(params, Value.date(com.google.cloud.Date.fromYearMonthDay(1970, 1, 1)));
     params.setParameter(1, new Time(0L), null);
     assertThat((Time) params.getParameter(1), is(equalTo(new Time(0L))));
