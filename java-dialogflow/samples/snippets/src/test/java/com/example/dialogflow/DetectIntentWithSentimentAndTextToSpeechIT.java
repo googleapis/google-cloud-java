@@ -26,6 +26,7 @@ import java.io.PrintStream;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
 import org.junit.After;
 import org.junit.Before;
@@ -41,7 +42,7 @@ import org.junit.runners.JUnit4;
 public class DetectIntentWithSentimentAndTextToSpeechIT {
 
   private static String PROJECT_ID = System.getenv().get("GOOGLE_CLOUD_PROJECT");
-  private static String SESSION_ID = "fake_session_for_testing";
+  private static String SESSION_ID = UUID.randomUUID().toString();
   private static String LANGUAGE_CODE = "en-US";
   private static List<String> TEXTS = Arrays.asList(
       "hello",

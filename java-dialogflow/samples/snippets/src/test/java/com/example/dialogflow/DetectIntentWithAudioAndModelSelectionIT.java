@@ -29,6 +29,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
 import org.junit.After;
 import org.junit.Before;
@@ -43,7 +44,7 @@ import org.junit.runners.JUnit4;
 @SuppressWarnings("checkstyle:abbreviationaswordinname")
 public class DetectIntentWithAudioAndModelSelectionIT {
   protected static String PROJECT_ID = System.getenv().get("GOOGLE_CLOUD_PROJECT");
-  protected static String SESSION_ID = "fake_session_for_testing";
+  protected static String SESSION_ID = UUID.randomUUID().toString();
   protected static String LANGUAGE_CODE = "en-US";
   protected static List<String> QUESTIONS = ImmutableList.of(
       "What date?",

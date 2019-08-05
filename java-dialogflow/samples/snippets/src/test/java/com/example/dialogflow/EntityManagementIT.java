@@ -28,6 +28,7 @@ import java.io.PrintStream;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.UUID;
 
 import org.junit.After;
 import org.junit.Before;
@@ -45,9 +46,10 @@ import org.junit.runners.MethodSorters;
 @SuppressWarnings("checkstyle:abbreviationaswordinname")
 public class EntityManagementIT {
   private static String PROJECT_ID = System.getenv().get("GOOGLE_CLOUD_PROJECT");
-  private static String ENTITY_TYPE_DISPLAY_NAME = "fake_entity_type_for_testing";
-  private static String ENTITY_VALUE_1 = "fake_entity_for_testing_1";
-  private static String ENTITY_VALUE_2 = "fake_entity_for_testing_2";
+  private static String ENTITY_TYPE_DISPLAY_NAME =
+          "entity_" + UUID.randomUUID().toString().substring(0, 23);
+  private static String ENTITY_VALUE_1 = UUID.randomUUID().toString();
+  private static String ENTITY_VALUE_2 = UUID.randomUUID().toString();
   private static List<String> SYNONYMS = Arrays.asList("fake_synonym_for_testing_1",
       "fake_synonym_for_testing_2");
 

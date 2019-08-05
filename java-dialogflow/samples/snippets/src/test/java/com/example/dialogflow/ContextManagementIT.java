@@ -27,6 +27,7 @@ import com.google.cloud.dialogflow.v2.ContextsClient;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.List;
+import java.util.UUID;
 
 import org.junit.After;
 import org.junit.Before;
@@ -41,8 +42,8 @@ import org.junit.runners.JUnit4;
 @SuppressWarnings("checkstyle:abbreviationaswordinname")
 public class ContextManagementIT {
   private static String PROJECT_ID = System.getenv().get("GOOGLE_CLOUD_PROJECT");
-  private static String SESSION_ID = "fake_session_for_testing";
-  private static String CONTEXT_ID = "fake_context_for_testing";
+  private static String SESSION_ID = UUID.randomUUID().toString();
+  private static String CONTEXT_ID = UUID.randomUUID().toString();
 
   @Before
   public void setUp() {

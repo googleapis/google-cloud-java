@@ -29,6 +29,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.Arrays;
 import java.util.List;
+import java.util.UUID;
 
 import org.junit.After;
 import org.junit.Before;
@@ -42,7 +43,7 @@ import org.junit.runners.JUnit4;
 @RunWith(JUnit4.class)
 @SuppressWarnings("checkstyle:abbreviationaswordinname")
 public class IntentManagementIT {
-  private static String INTENT_DISPLAY_NAME = "fake_display_name_for_testing";
+  private static String INTENT_DISPLAY_NAME = UUID.randomUUID().toString();
   private static List<String> MESSAGE_TEXTS = Arrays.asList(
       "fake_message_text_for_testing_1",
       "fake_message_text_for_testing_2");

@@ -30,6 +30,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.Arrays;
 import java.util.List;
+import java.util.UUID;
 
 import org.junit.After;
 import org.junit.Before;
@@ -44,7 +45,8 @@ import org.junit.runners.JUnit4;
 @SuppressWarnings("checkstyle:abbreviationaswordinname")
 public class SessionEntityTypeManagementIT {
   private static String SESSION_ID = "fake_session_for_testing";
-  private static String ENTITY_TYPE_DISPLAY_NAME = "fake_display_name_for_testing";
+  private static String ENTITY_TYPE_DISPLAY_NAME =
+          "entity_" + UUID.randomUUID().toString().substring(0, 23);
   private static List<String> ENTITY_VALUES = Arrays.asList("fake_entity_value_1",
       "fake_entity_value_2");
   private static String PROJECT_ID = System.getenv().get("GOOGLE_CLOUD_PROJECT");

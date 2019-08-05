@@ -21,6 +21,8 @@ import static org.junit.Assert.assertThat;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
+import java.util.UUID;
+
 import org.hamcrest.CoreMatchers;
 import org.junit.After;
 import org.junit.Before;
@@ -39,7 +41,7 @@ public class DetectIntentStreamIT {
 
   private static String audioFilePath = "resources/book_a_room.wav";
   private static String PROJECT_ID = System.getenv().get("GOOGLE_CLOUD_PROJECT");
-  private static String SESSION_ID = "fake_session_for_testing";
+  private static String SESSION_ID = UUID.randomUUID().toString();
 
   @Before
   public void setUp() {
