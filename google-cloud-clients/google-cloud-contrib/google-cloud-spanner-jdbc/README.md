@@ -70,18 +70,6 @@ See the
 [Authentication](https://github.com/googleapis/google-cloud-java#authentication)
 section in the base directory's README for more information.
 
-## Examples
-
-The google-cloud-spanner-jdbc-examples project contains a number of examples on how to use the JDBC Driver. These include:
-
-* JdbcConnectExamples: Contains examples on how to obtain a JDBC connection for Cloud Spanner.
-* JdbcAutocommitExamples: Contains examples on how to use a JDBC connection in autocommit mode.
-* JdbcTransactionExamples: Contains examples on how to use the JDBC connection with read/write and read-only transactions.
-* JdbcBatchExamples: Shows the batching capabilities of the Cloud Spanner JDBC Driver.
-* JdbcVariablesExamples: Shows how to use custom SQL statements to read and write variables from a JDBC connection.
-* JdbcCustomMethodsExample: Shows how to use the custom methods that are exposed by the `com.google.cloud.spanner.jdbc.CloudSpannerJdbcConnection` interface.
-
-
 ## Shaded JAR
 
 You can build a shaded JAR of the JDBC Driver to use with third-party tools using the following command:
