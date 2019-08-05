@@ -16,6 +16,7 @@
 
 package com.google.cloud.spanner.jdbc.it;
 
+import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 import java.util.Arrays;
@@ -29,6 +30,7 @@ import com.google.cloud.spanner.ErrorCode;
 import com.google.cloud.spanner.IntegrationTest;
 import com.google.cloud.spanner.Key;
 import com.google.cloud.spanner.Mutation;
+import com.google.cloud.spanner.ResultSet;
 import com.google.cloud.spanner.Statement;
 import com.google.cloud.spanner.jdbc.ITAbstractSpannerTest;
 import com.google.cloud.spanner.jdbc.SpannerExceptionMatcher;
@@ -63,11 +65,24 @@ public class ITTransactionModeTest extends ITAbstractSpannerTest {
       connection.bufferedWrite(
           Mutation.newInsertBuilder("TEST").set("ID").to(1L).set("NAME").to("TEST").build());
       connection.commit();
+      try(ResultSet rs = connection.executeQuery(Statement.of("SELECT NAME FROM TEST WHERE ID=1"))) {
+        assertThat(rs.next(), is(true));
+        assertThat(rs.getString("NAME"), is(equalTo("TEST")));
+        assertThat(rs.next(), is(false));
+      }
       connection.bufferedWrite(
           Mutation.newUpdateBuilder("TEST").set("ID").to(1L).set("NAME").to("TEST2").build());
       connection.commit();
+      try(ResultSet rs = connection.executeQuery(Statement.of("SELECT NAME FROM TEST WHERE ID=1"))) {
+        assertThat(rs.next(), is(true));
+        assertThat(rs.getString("NAME"), is(equalTo("TEST2")));
+        assertThat(rs.next(), is(false));
+      }
       connection.bufferedWrite(Mutation.delete("TEST", Key.of(1L)));
       connection.commit();
+      try(ResultSet rs = connection.executeQuery(Statement.of("SELECT NAME FROM TEST WHERE ID=1"))) {
+        assertThat(rs.next(), is(false));
+      }
     }
   }
 
@@ -79,13 +94,30 @@ public class ITTransactionModeTest extends ITAbstractSpannerTest {
           Mutation.newInsertBuilder("TEST").set("ID").to(1L).set("NAME").to("TEST-1").build(),
           Mutation.newInsertBuilder("TEST").set("ID").to(2L).set("NAME").to("TEST-2").build()));
       connection.commit();
+      try(ResultSet rs = connection.executeQuery(Statement.of("SELECT NAME FROM TEST WHERE ID IN (1,2) ORDER BY ID"))) {
+        assertThat(rs.next(), is(true));
+        assertThat(rs.getString("NAME"), is(equalTo("TEST-1")));
+        assertThat(rs.next(), is(true));
+        assertThat(rs.getString("NAME"), is(equalTo("TEST-2")));
+        assertThat(rs.next(), is(false));
+      }
       connection.bufferedWrite(Arrays.asList(
           Mutation.newUpdateBuilder("TEST").set("ID").to(1L).set("NAME").to("TEST-1-2").build(),
           Mutation.newUpdateBuilder("TEST").set("ID").to(2L).set("NAME").to("TEST-2-2").build()));
       connection.commit();
+      try(ResultSet rs = connection.executeQuery(Statement.of("SELECT NAME FROM TEST WHERE ID IN (1,2) ORDER BY ID"))) {
+        assertThat(rs.next(), is(true));
+        assertThat(rs.getString("NAME"), is(equalTo("TEST-1-2")));
+        assertThat(rs.next(), is(true));
+        assertThat(rs.getString("NAME"), is(equalTo("TEST-2-2")));
+        assertThat(rs.next(), is(false));
+      }
       connection.bufferedWrite(
           Arrays.asList(Mutation.delete("TEST", Key.of(1L)), Mutation.delete("TEST", Key.of(2L))));
       connection.commit();
+      try(ResultSet rs = connection.executeQuery(Statement.of("SELECT NAME FROM TEST WHERE ID IN (1,2) ORDER BY ID"))) {
+        assertThat(rs.next(), is(false));
+      }
     }
   }
 
