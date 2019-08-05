@@ -14,7 +14,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-contrib</artifactId>
-    <version>0.101.0-alpha</version><!-- {x-version-update:google-cloud-contrib:current} -->
+    <version>0.103.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-contrib:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-spanner-jdbc</site.installationModule>
@@ -31,7 +31,7 @@
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>google-cloud-spanner</artifactId>
-      <version>1.28.0</version><!-- {x-version-update:google-cloud-spanner:current} -->
+      <version>1.30.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-spanner:current} -->
       <type>test-jar</type>
       <scope>test</scope>
     </dependency>
