@@ -562,7 +562,7 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
 
   /** Instruct the mock server to abort all transactions currently active on the server. */
   public void abortAllTransactions() {
-    for(ByteString id : transactions.keySet()) {
+    for (ByteString id : transactions.keySet()) {
       markAbortedTransaction(id);
     }
   }

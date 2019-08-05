@@ -10,7 +10,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-testing</artifactId>
-    <version>0.101.0-alpha</version><!-- {x-version-update:google-cloud-testing:current} -->
+    <version>0.103.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-testing:current} -->
   </parent>
 
   <properties>
@@ -30,6 +30,10 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-firestore-v1</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>proto-google-cloud-bigtable-v2</artifactId>
     </dependency>
   </dependencies>
 

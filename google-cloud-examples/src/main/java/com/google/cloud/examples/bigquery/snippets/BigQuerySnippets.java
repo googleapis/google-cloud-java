@@ -391,8 +391,9 @@ public class BigQuerySnippets {
     InsertAllResponse response =
         bigquery.insertAll(
             InsertAllRequest.newBuilder(tableId)
-                .addRow("rowId", rowContent)
-                // More rows can be added in the same RPC by invoking .addRow() on the builder
+                .addRow(rowContent)
+                // More rows can be added in the same RPC by invoking .addRow() on the builder.
+                // You can also supply optional unique row keys to support de-duplication scenarios.
                 .build());
     if (response.hasErrors()) {
       // If any of the insertions failed, this lets you inspect the errors

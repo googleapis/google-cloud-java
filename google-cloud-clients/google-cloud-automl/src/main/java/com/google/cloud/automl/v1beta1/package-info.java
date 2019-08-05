@@ -67,4 +67,7 @@
  * </code>
  * </pre>
  */
+@Generated("by gapic-generator")
 package com.google.cloud.automl.v1beta1;
+
+import javax.annotation.Generated;

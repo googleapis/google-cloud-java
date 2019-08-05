@@ -71,4 +71,7 @@
  * </code>
  * </pre>
  */
+@Generated("by gapic-generator")
 package com.google.cloud.dataproc.v1;
+
+import javax.annotation.Generated;
