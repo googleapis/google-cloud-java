@@ -282,24 +282,18 @@ public class SpannerPool {
     if (key.numChannels != null) {
       builder.setNumChannels(key.numChannels);
     }
-    if (key.host != null && (key.host.equals("https://localhost") || key.host.startsWith("https://localhost:"))) {
-      // No credentials needed for localhost.
-      builder.setCredentials(NoCredentials.getInstance());
-    }
     if (key.usePlainText) {
       // Credentials may not be sent over a plain text channel.
       builder.setCredentials(NoCredentials.getInstance());
       // Set a custom channel configurator to allow http instead of https.
-      if(key.usePlainText) {
-        builder.setChannelConfigurator(
-            new ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder>() {
-              @Override
-              public ManagedChannelBuilder apply(ManagedChannelBuilder input) {
-                input.usePlaintext();
-                return input;
-              }
-            });
-      }
+      builder.setChannelConfigurator(
+          new ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder>() {
+            @Override
+            public ManagedChannelBuilder apply(ManagedChannelBuilder input) {
+              input.usePlaintext();
+              return input;
+            }
+          });
     }
     return builder.build().getService();
   }
