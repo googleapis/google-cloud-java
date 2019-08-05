@@ -17,6 +17,7 @@
 package com.google.cloud.spanner.jdbc;
 
 import com.google.api.client.util.DateTime;
+import com.google.api.client.util.DateTime.SecondsAndNanos;
 import com.google.cloud.Timestamp;
 import com.google.cloud.spanner.ErrorCode;
 import com.google.cloud.spanner.SpannerException;
@@ -34,13 +35,13 @@ import java.util.concurrent.TimeUnit;
  */
 class ReadOnlyStalenessUtil {
   /**
-   * Parses an RFC3339 date/time value with millisecond precision and returns this as a {@link
-   * Timestamp}. @TODO: add support for nanosecond precision.
+   * Parses an RFC3339 date/time value with nanosecond precision and returns this as a {@link
+   * Timestamp}.
    */
   static Timestamp parseRfc3339(String str) throws SpannerException {
     try {
-      DateTime dateTime = DateTime.parseRfc3339(str);
-      return Timestamp.ofTimeMicroseconds(dateTime.getValue() * 1000L);
+      SecondsAndNanos secondsAndNanos = DateTime.parseRfc3339ToSecondsAndNanos(str);
+      return Timestamp.ofTimeSecondsAndNanos(secondsAndNanos.getSeconds(), secondsAndNanos.getNanos());
     } catch (NumberFormatException e) {
       throw SpannerExceptionFactory.newSpannerException(
           ErrorCode.INVALID_ARGUMENT, String.format("Invalid timestamp: %s", str), e);
