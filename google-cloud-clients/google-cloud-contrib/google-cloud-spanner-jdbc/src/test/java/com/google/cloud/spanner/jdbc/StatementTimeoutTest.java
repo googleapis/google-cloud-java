@@ -25,21 +25,7 @@ import static org.mockito.Matchers.anyListOf;
 import static org.mockito.Mockito.doAnswer;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
-import java.util.Arrays;
-import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
-import java.util.concurrent.TimeUnit;
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.rules.ExpectedException;
-import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
-import org.mockito.Matchers;
-import org.mockito.invocation.InvocationOnMock;
-import org.mockito.stubbing.Answer;
+
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.gax.longrunning.OperationFuture;
@@ -56,14 +42,23 @@ import com.google.cloud.spanner.TimestampBound;
 import com.google.cloud.spanner.TransactionContext;
 import com.google.cloud.spanner.TransactionManager;
 import com.google.cloud.spanner.TransactionManager.TransactionState;
-import com.google.cloud.spanner.jdbc.Connection;
-import com.google.cloud.spanner.jdbc.ConnectionImpl;
-import com.google.cloud.spanner.jdbc.ConnectionOptions;
-import com.google.cloud.spanner.jdbc.DdlClient;
-import com.google.cloud.spanner.jdbc.ReadOnlyStalenessUtil;
-import com.google.cloud.spanner.jdbc.SpannerPool;
 import com.google.cloud.spanner.jdbc.AbstractConnectionImplTest.ConnectionConsumer;
 import com.google.spanner.admin.database.v1.UpdateDatabaseDdlMetadata;
+import java.util.Arrays;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+import java.util.concurrent.TimeUnit;
+import org.junit.Rule;
+import org.junit.Test;
+import org.junit.rules.ExpectedException;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
+import org.mockito.Matchers;
+import org.mockito.invocation.InvocationOnMock;
+import org.mockito.stubbing.Answer;
 
 @RunWith(JUnit4.class)
 public class StatementTimeoutTest {
@@ -78,12 +73,12 @@ public class StatementTimeoutTest {
   private static final String FAST_UPDATE = "UPDATE fast_table SET foo=1 WHERE bar=2";
 
   private enum CommitRollbackBehavior {
-    FAST, SLOW_COMMIT, SLOW_ROLLBACK;
+    FAST,
+    SLOW_COMMIT,
+    SLOW_ROLLBACK;
   }
 
-  @Rule
-  public ExpectedException expected = ExpectedException.none();
-
+  @Rule public ExpectedException expected = ExpectedException.none();
 
   private static final class DelayedQueryExecution implements Answer<ResultSet> {
     @Override
@@ -102,13 +97,15 @@ public class StatementTimeoutTest {
       final OperationFuture<Void, UpdateDatabaseDdlMetadata> operation =
           mock(OperationFuture.class);
       if (waitForMillis > 0L) {
-        when(operation.get()).thenAnswer(new Answer<Void>() {
-          @Override
-          public Void answer(InvocationOnMock invocation) throws Throwable {
-            Thread.sleep(waitForMillis);
-            return null;
-          }
-        });
+        when(operation.get())
+            .thenAnswer(
+                new Answer<Void>() {
+                  @Override
+                  public Void answer(InvocationOnMock invocation) throws Throwable {
+                    Thread.sleep(waitForMillis);
+                    return null;
+                  }
+                });
       } else {
         when(operation.get()).thenReturn(null);
       }
@@ -138,8 +135,8 @@ public class StatementTimeoutTest {
    * Creates a connection on which the statements {@link StatementTimeoutTest#SLOW_SELECT} and
    * {@link StatementTimeoutTest#SLOW_DDL} will take at least 10,000 milliseconds
    */
-  private ConnectionImpl createConnection(ConnectionOptions options,
-      final CommitRollbackBehavior commitRollbackBehavior) {
+  private ConnectionImpl createConnection(
+      ConnectionOptions options, final CommitRollbackBehavior commitRollbackBehavior) {
     DatabaseClient dbClient = mock(DatabaseClient.class);
     Spanner spanner = mock(Spanner.class);
     SpannerPool spannerPool = mock(SpannerPool.class);
@@ -147,8 +144,10 @@ public class StatementTimeoutTest {
         .thenReturn(spanner);
     DdlClient ddlClient = createDefaultMockDdlClient(10000L);
     final ResultSet invalidResultSet = mock(ResultSet.class);
-    when(invalidResultSet.next()).thenThrow(
-        SpannerExceptionFactory.newSpannerException(ErrorCode.INVALID_ARGUMENT, "invalid query"));
+    when(invalidResultSet.next())
+        .thenThrow(
+            SpannerExceptionFactory.newSpannerException(
+                ErrorCode.INVALID_ARGUMENT, "invalid query"));
 
     ReadOnlyTransaction singleUseReadOnlyTx = mock(ReadOnlyTransaction.class);
     when(singleUseReadOnlyTx.executeQuery(Statement.of(SLOW_SELECT)))
@@ -167,69 +166,89 @@ public class StatementTimeoutTest {
     when(readOnlyTx.executeQuery(Statement.of(INVALID_SELECT))).thenReturn(invalidResultSet);
     when(dbClient.readOnlyTransaction(Matchers.any(TimestampBound.class))).thenReturn(readOnlyTx);
 
-    when(dbClient.transactionManager()).thenAnswer(new Answer<TransactionManager>() {
-      @Override
-      public TransactionManager answer(InvocationOnMock invocation) throws Throwable {
-        TransactionManager txManager = mock(TransactionManager.class);
-        when(txManager.getState()).thenReturn(null, TransactionState.STARTED);
-        when(txManager.begin()).thenAnswer(new Answer<TransactionContext>() {
-          @Override
-          public TransactionContext answer(InvocationOnMock invocation) throws Throwable {
-            TransactionContext txContext = mock(TransactionContext.class);
-            when(txContext.executeQuery(Statement.of(SLOW_SELECT)))
-                .thenAnswer(new DelayedQueryExecution());
-            when(txContext.executeQuery(Statement.of(FAST_SELECT)))
-                .thenReturn(mock(ResultSet.class));
-            when(txContext.executeQuery(Statement.of(INVALID_SELECT))).thenReturn(invalidResultSet);
-            when(txContext.executeUpdate(Statement.of(SLOW_UPDATE))).thenAnswer(new Answer<Long>() {
+    when(dbClient.transactionManager())
+        .thenAnswer(
+            new Answer<TransactionManager>() {
+              @Override
+              public TransactionManager answer(InvocationOnMock invocation) throws Throwable {
+                TransactionManager txManager = mock(TransactionManager.class);
+                when(txManager.getState()).thenReturn(null, TransactionState.STARTED);
+                when(txManager.begin())
+                    .thenAnswer(
+                        new Answer<TransactionContext>() {
+                          @Override
+                          public TransactionContext answer(InvocationOnMock invocation)
+                              throws Throwable {
+                            TransactionContext txContext = mock(TransactionContext.class);
+                            when(txContext.executeQuery(Statement.of(SLOW_SELECT)))
+                                .thenAnswer(new DelayedQueryExecution());
+                            when(txContext.executeQuery(Statement.of(FAST_SELECT)))
+                                .thenReturn(mock(ResultSet.class));
+                            when(txContext.executeQuery(Statement.of(INVALID_SELECT)))
+                                .thenReturn(invalidResultSet);
+                            when(txContext.executeUpdate(Statement.of(SLOW_UPDATE)))
+                                .thenAnswer(
+                                    new Answer<Long>() {
+                                      @Override
+                                      public Long answer(InvocationOnMock invocation)
+                                          throws Throwable {
+                                        Thread.sleep(10000L);
+                                        return 1L;
+                                      }
+                                    });
+                            when(txContext.executeUpdate(Statement.of(FAST_UPDATE))).thenReturn(1L);
+                            return txContext;
+                          }
+                        });
+                if (commitRollbackBehavior == CommitRollbackBehavior.SLOW_COMMIT) {
+                  doAnswer(
+                          new Answer<Void>() {
+                            @Override
+                            public Void answer(InvocationOnMock invocation) throws Throwable {
+                              Thread.sleep(10000L);
+                              return null;
+                            }
+                          })
+                      .when(txManager)
+                      .commit();
+                }
+                if (commitRollbackBehavior == CommitRollbackBehavior.SLOW_ROLLBACK) {
+                  doAnswer(
+                          new Answer<Void>() {
+                            @Override
+                            public Void answer(InvocationOnMock invocation) throws Throwable {
+                              Thread.sleep(10000L);
+                              return null;
+                            }
+                          })
+                      .when(txManager)
+                      .rollback();
+                }
+
+                return txManager;
+              }
+            });
+    when(dbClient.executePartitionedUpdate(Statement.of(FAST_UPDATE))).thenReturn(1L);
+    when(dbClient.executePartitionedUpdate(Statement.of(SLOW_UPDATE)))
+        .thenAnswer(
+            new Answer<Long>() {
               @Override
               public Long answer(InvocationOnMock invocation) throws Throwable {
                 Thread.sleep(10000L);
                 return 1L;
               }
             });
-            when(txContext.executeUpdate(Statement.of(FAST_UPDATE))).thenReturn(1L);
-            return txContext;
-          }
-        });
-        if (commitRollbackBehavior == CommitRollbackBehavior.SLOW_COMMIT) {
-          doAnswer(new Answer<Void>() {
-            @Override
-            public Void answer(InvocationOnMock invocation) throws Throwable {
-              Thread.sleep(10000L);
-              return null;
-            }
-          }).when(txManager).commit();
-        }
-        if (commitRollbackBehavior == CommitRollbackBehavior.SLOW_ROLLBACK) {
-          doAnswer(new Answer<Void>() {
-            @Override
-            public Void answer(InvocationOnMock invocation) throws Throwable {
-              Thread.sleep(10000L);
-              return null;
-            }
-          }).when(txManager).rollback();
-        }
-
-        return txManager;
-      }
-    });
-    when(dbClient.executePartitionedUpdate(Statement.of(FAST_UPDATE))).thenReturn(1L);
-    when(dbClient.executePartitionedUpdate(Statement.of(SLOW_UPDATE)))
-        .thenAnswer(new Answer<Long>() {
-          @Override
-          public Long answer(InvocationOnMock invocation) throws Throwable {
-            Thread.sleep(10000L);
-            return 1L;
-          }
-        });
     return new ConnectionImpl(options, spannerPool, ddlClient, dbClient);
   }
 
   @Test
   public void testTimeoutExceptionReadOnlyAutocommit() {
-    try (Connection connection = createConnection(ConnectionOptions.newBuilder()
-        .setCredentials(NoCredentials.getInstance()).setUri(URI).build())) {
+    try (Connection connection =
+        createConnection(
+            ConnectionOptions.newBuilder()
+                .setCredentials(NoCredentials.getInstance())
+                .setUri(URI)
+                .build())) {
       connection.setReadOnly(true);
       connection.setStatementTimeout(20L, TimeUnit.MILLISECONDS);
 
@@ -240,8 +259,12 @@ public class StatementTimeoutTest {
 
   @Test
   public void testTimeoutExceptionReadOnlyAutocommitMultipleStatements() {
-    try (Connection connection = createConnection(ConnectionOptions.newBuilder()
-        .setCredentials(NoCredentials.getInstance()).setUri(URI).build())) {
+    try (Connection connection =
+        createConnection(
+            ConnectionOptions.newBuilder()
+                .setCredentials(NoCredentials.getInstance())
+                .setUri(URI)
+                .build())) {
       connection.setReadOnly(true);
       connection.setStatementTimeout(20L, TimeUnit.MILLISECONDS);
 
@@ -263,8 +286,12 @@ public class StatementTimeoutTest {
 
   @Test
   public void testTimeoutExceptionReadOnlyTransactional() {
-    try (Connection connection = createConnection(ConnectionOptions.newBuilder()
-        .setCredentials(NoCredentials.getInstance()).setUri(URI).build())) {
+    try (Connection connection =
+        createConnection(
+            ConnectionOptions.newBuilder()
+                .setCredentials(NoCredentials.getInstance())
+                .setUri(URI)
+                .build())) {
       connection.setReadOnly(true);
       connection.setAutocommit(false);
       connection.setStatementTimeout(20L, TimeUnit.MILLISECONDS);
@@ -276,8 +303,12 @@ public class StatementTimeoutTest {
 
   @Test
   public void testTimeoutExceptionReadOnlyTransactionMultipleStatements() {
-    try (Connection connection = createConnection(ConnectionOptions.newBuilder()
-        .setCredentials(NoCredentials.getInstance()).setUri(URI).build())) {
+    try (Connection connection =
+        createConnection(
+            ConnectionOptions.newBuilder()
+                .setCredentials(NoCredentials.getInstance())
+                .setUri(URI)
+                .build())) {
       connection.setReadOnly(true);
       connection.setAutocommit(false);
       connection.setStatementTimeout(20L, TimeUnit.MILLISECONDS);
@@ -303,8 +334,12 @@ public class StatementTimeoutTest {
 
   @Test
   public void testTimeoutExceptionReadWriteAutocommit() {
-    try (Connection connection = createConnection(ConnectionOptions.newBuilder()
-        .setCredentials(NoCredentials.getInstance()).setUri(URI).build())) {
+    try (Connection connection =
+        createConnection(
+            ConnectionOptions.newBuilder()
+                .setCredentials(NoCredentials.getInstance())
+                .setUri(URI)
+                .build())) {
       connection.setStatementTimeout(20L, TimeUnit.MILLISECONDS);
 
       expected.expect(SpannerExceptionMatcher.matchCode(ErrorCode.DEADLINE_EXCEEDED));
@@ -314,8 +349,12 @@ public class StatementTimeoutTest {
 
   @Test
   public void testTimeoutExceptionReadWriteAutocommitMultipleStatements() {
-    try (Connection connection = createConnection(ConnectionOptions.newBuilder()
-        .setCredentials(NoCredentials.getInstance()).setUri(URI).build())) {
+    try (Connection connection =
+        createConnection(
+            ConnectionOptions.newBuilder()
+                .setCredentials(NoCredentials.getInstance())
+                .setUri(URI)
+                .build())) {
       connection.setStatementTimeout(20L, TimeUnit.MILLISECONDS);
 
       // assert that multiple statements after each other also time out
@@ -336,8 +375,12 @@ public class StatementTimeoutTest {
 
   @Test
   public void testTimeoutExceptionReadWriteAutocommitSlowUpdate() {
-    try (Connection connection = createConnection(ConnectionOptions.newBuilder()
-        .setCredentials(NoCredentials.getInstance()).setUri(URI).build())) {
+    try (Connection connection =
+        createConnection(
+            ConnectionOptions.newBuilder()
+                .setCredentials(NoCredentials.getInstance())
+                .setUri(URI)
+                .build())) {
       connection.setStatementTimeout(20L, TimeUnit.MILLISECONDS);
       expected.expect(SpannerExceptionMatcher.matchCode(ErrorCode.DEADLINE_EXCEEDED));
       connection.execute(Statement.of(SLOW_UPDATE));
@@ -346,8 +389,12 @@ public class StatementTimeoutTest {
 
   @Test
   public void testTimeoutExceptionReadWriteAutocommitSlowUpdateMultipleStatements() {
-    try (Connection connection = createConnection(ConnectionOptions.newBuilder()
-        .setCredentials(NoCredentials.getInstance()).setUri(URI).build())) {
+    try (Connection connection =
+        createConnection(
+            ConnectionOptions.newBuilder()
+                .setCredentials(NoCredentials.getInstance())
+                .setUri(URI)
+                .build())) {
       connection.setStatementTimeout(20L, TimeUnit.MILLISECONDS);
 
       // assert that multiple statements after each other also time out
@@ -369,8 +416,12 @@ public class StatementTimeoutTest {
   @Test
   public void testTimeoutExceptionReadWriteAutocommitSlowCommit() {
     try (Connection connection =
-        createConnection(ConnectionOptions.newBuilder().setCredentials(NoCredentials.getInstance())
-            .setUri(URI).build(), CommitRollbackBehavior.SLOW_COMMIT)) {
+        createConnection(
+            ConnectionOptions.newBuilder()
+                .setCredentials(NoCredentials.getInstance())
+                .setUri(URI)
+                .build(),
+            CommitRollbackBehavior.SLOW_COMMIT)) {
       connection.setStatementTimeout(20L, TimeUnit.MILLISECONDS);
       // first verify that the fast update does not timeout when in transactional mode (as it is the
       // commit that is slow)
@@ -387,8 +438,12 @@ public class StatementTimeoutTest {
   @Test
   public void testTimeoutExceptionReadWriteAutocommitSlowCommitMultipleStatements() {
     try (Connection connection =
-        createConnection(ConnectionOptions.newBuilder().setCredentials(NoCredentials.getInstance())
-            .setUri(URI).build(), CommitRollbackBehavior.SLOW_COMMIT)) {
+        createConnection(
+            ConnectionOptions.newBuilder()
+                .setCredentials(NoCredentials.getInstance())
+                .setUri(URI)
+                .build(),
+            CommitRollbackBehavior.SLOW_COMMIT)) {
       connection.setStatementTimeout(20L, TimeUnit.MILLISECONDS);
 
       // assert that multiple statements after each other also time out
@@ -409,8 +464,12 @@ public class StatementTimeoutTest {
 
   @Test
   public void testTimeoutExceptionReadWriteAutocommitPartitioned() {
-    try (Connection connection = createConnection(ConnectionOptions.newBuilder()
-        .setCredentials(NoCredentials.getInstance()).setUri(URI).build())) {
+    try (Connection connection =
+        createConnection(
+            ConnectionOptions.newBuilder()
+                .setCredentials(NoCredentials.getInstance())
+                .setUri(URI)
+                .build())) {
       connection.setStatementTimeout(20L, TimeUnit.MILLISECONDS);
       connection.setAutocommitDmlMode(AutocommitDmlMode.PARTITIONED_NON_ATOMIC);
       // first verify that the fast update does not timeout
@@ -423,8 +482,12 @@ public class StatementTimeoutTest {
 
   @Test
   public void testTimeoutExceptionReadWriteTransactional() {
-    try (Connection connection = createConnection(ConnectionOptions.newBuilder()
-        .setCredentials(NoCredentials.getInstance()).setUri(URI).build())) {
+    try (Connection connection =
+        createConnection(
+            ConnectionOptions.newBuilder()
+                .setCredentials(NoCredentials.getInstance())
+                .setUri(URI)
+                .build())) {
       connection.setAutocommit(false);
       connection.setStatementTimeout(20L, TimeUnit.MILLISECONDS);
 
@@ -435,8 +498,12 @@ public class StatementTimeoutTest {
 
   @Test
   public void testTimeoutExceptionReadWriteTransactionMultipleStatements() {
-    try (Connection connection = createConnection(ConnectionOptions.newBuilder()
-        .setCredentials(NoCredentials.getInstance()).setUri(URI).build())) {
+    try (Connection connection =
+        createConnection(
+            ConnectionOptions.newBuilder()
+                .setCredentials(NoCredentials.getInstance())
+                .setUri(URI)
+                .build())) {
       connection.setAutocommit(false);
       connection.setStatementTimeout(20L, TimeUnit.MILLISECONDS);
 
@@ -468,8 +535,12 @@ public class StatementTimeoutTest {
   @Test
   public void testTimeoutExceptionReadWriteTransactionalSlowCommit() {
     try (Connection connection =
-        createConnection(ConnectionOptions.newBuilder().setCredentials(NoCredentials.getInstance())
-            .setUri(URI).build(), CommitRollbackBehavior.SLOW_COMMIT)) {
+        createConnection(
+            ConnectionOptions.newBuilder()
+                .setCredentials(NoCredentials.getInstance())
+                .setUri(URI)
+                .build(),
+            CommitRollbackBehavior.SLOW_COMMIT)) {
       connection.setAutocommit(false);
       connection.setStatementTimeout(20L, TimeUnit.MILLISECONDS);
 
@@ -482,8 +553,12 @@ public class StatementTimeoutTest {
   @Test
   public void testTimeoutExceptionReadWriteTransactionalSlowRollback() {
     try (Connection connection =
-        createConnection(ConnectionOptions.newBuilder().setCredentials(NoCredentials.getInstance())
-            .setUri(URI).build(), CommitRollbackBehavior.SLOW_ROLLBACK)) {
+        createConnection(
+            ConnectionOptions.newBuilder()
+                .setCredentials(NoCredentials.getInstance())
+                .setUri(URI)
+                .build(),
+            CommitRollbackBehavior.SLOW_ROLLBACK)) {
       connection.setAutocommit(false);
       connection.setStatementTimeout(20L, TimeUnit.MILLISECONDS);
 
@@ -547,25 +622,31 @@ public class StatementTimeoutTest {
   private void testInterruptedException(final ConnectionConsumer consumer)
       throws InterruptedException, ExecutionException {
     ExecutorService executor = Executors.newSingleThreadExecutor();
-    Future<Boolean> future = executor.submit(new Callable<Boolean>() {
-      @Override
-      public Boolean call() throws Exception {
-        try (Connection connection = createConnection(ConnectionOptions.newBuilder()
-            .setCredentials(NoCredentials.getInstance()).setUri(URI).build())) {
-          consumer.accept(connection);
-          connection.setStatementTimeout(10000L, TimeUnit.MILLISECONDS);
+    Future<Boolean> future =
+        executor.submit(
+            new Callable<Boolean>() {
+              @Override
+              public Boolean call() throws Exception {
+                try (Connection connection =
+                    createConnection(
+                        ConnectionOptions.newBuilder()
+                            .setCredentials(NoCredentials.getInstance())
+                            .setUri(URI)
+                            .build())) {
+                  consumer.accept(connection);
+                  connection.setStatementTimeout(10000L, TimeUnit.MILLISECONDS);
 
-          connection.executeQuery(Statement.of(SLOW_SELECT));
-        } catch (SpannerException e) {
-          if (e.getErrorCode() == ErrorCode.CANCELLED) {
-            return Boolean.TRUE;
-          } else {
-            return Boolean.FALSE;
-          }
-        }
-        return Boolean.FALSE;
-      }
-    });
+                  connection.executeQuery(Statement.of(SLOW_SELECT));
+                } catch (SpannerException e) {
+                  if (e.getErrorCode() == ErrorCode.CANCELLED) {
+                    return Boolean.TRUE;
+                  } else {
+                    return Boolean.FALSE;
+                  }
+                }
+                return Boolean.FALSE;
+              }
+            });
     // wait a little bit to ensure that the task has started
     Thread.sleep(10L);
     executor.shutdownNow();
@@ -574,8 +655,12 @@ public class StatementTimeoutTest {
 
   @Test
   public void testInvalidQueryReadOnlyAutocommit() {
-    try (Connection connection = createConnection(ConnectionOptions.newBuilder().setUri(URI)
-        .setCredentials(NoCredentials.getInstance()).build())) {
+    try (Connection connection =
+        createConnection(
+            ConnectionOptions.newBuilder()
+                .setUri(URI)
+                .setCredentials(NoCredentials.getInstance())
+                .build())) {
       connection.setReadOnly(true);
       connection.setStatementTimeout(100L, TimeUnit.MILLISECONDS);
 
@@ -586,8 +671,12 @@ public class StatementTimeoutTest {
 
   @Test
   public void testInvalidQueryReadOnlyTransactional() {
-    try (Connection connection = createConnection(ConnectionOptions.newBuilder()
-        .setCredentials(NoCredentials.getInstance()).setUri(URI).build())) {
+    try (Connection connection =
+        createConnection(
+            ConnectionOptions.newBuilder()
+                .setCredentials(NoCredentials.getInstance())
+                .setUri(URI)
+                .build())) {
       connection.setReadOnly(true);
       connection.setAutocommit(false);
       connection.setStatementTimeout(100L, TimeUnit.MILLISECONDS);
@@ -599,8 +688,12 @@ public class StatementTimeoutTest {
 
   @Test
   public void testInvalidQueryReadWriteAutocommit() {
-    try (Connection connection = createConnection(ConnectionOptions.newBuilder()
-        .setCredentials(NoCredentials.getInstance()).setUri(URI).build())) {
+    try (Connection connection =
+        createConnection(
+            ConnectionOptions.newBuilder()
+                .setCredentials(NoCredentials.getInstance())
+                .setUri(URI)
+                .build())) {
       connection.setStatementTimeout(100L, TimeUnit.MILLISECONDS);
 
       expected.expect(SpannerExceptionMatcher.matchCode(ErrorCode.INVALID_ARGUMENT));
@@ -610,8 +703,12 @@ public class StatementTimeoutTest {
 
   @Test
   public void testInvalidQueryReadWriteTransactional() {
-    try (Connection connection = createConnection(ConnectionOptions.newBuilder()
-        .setCredentials(NoCredentials.getInstance()).setUri(URI).build())) {
+    try (Connection connection =
+        createConnection(
+            ConnectionOptions.newBuilder()
+                .setCredentials(NoCredentials.getInstance())
+                .setUri(URI)
+                .build())) {
       connection.setAutocommit(false);
       connection.setStatementTimeout(100L, TimeUnit.MILLISECONDS);
 
@@ -622,15 +719,23 @@ public class StatementTimeoutTest {
 
   @Test
   public void testCancelReadOnlyAutocommit() {
-    try (Connection connection = createConnection(ConnectionOptions.newBuilder()
-        .setCredentials(NoCredentials.getInstance()).setUri(URI).build())) {
+    try (Connection connection =
+        createConnection(
+            ConnectionOptions.newBuilder()
+                .setCredentials(NoCredentials.getInstance())
+                .setUri(URI)
+                .build())) {
       connection.setReadOnly(true);
-      Executors.newSingleThreadScheduledExecutor().schedule(new Runnable() {
-        @Override
-        public void run() {
-          connection.cancel();
-        }
-      }, 100, TimeUnit.MILLISECONDS);
+      Executors.newSingleThreadScheduledExecutor()
+          .schedule(
+              new Runnable() {
+                @Override
+                public void run() {
+                  connection.cancel();
+                }
+              },
+              100,
+              TimeUnit.MILLISECONDS);
 
       expected.expect(SpannerExceptionMatcher.matchCode(ErrorCode.CANCELLED));
       connection.executeQuery(Statement.of(SLOW_SELECT));
@@ -639,15 +744,23 @@ public class StatementTimeoutTest {
 
   @Test
   public void testCancelReadOnlyAutocommitMultipleStatements() {
-    try (Connection connection = createConnection(ConnectionOptions.newBuilder()
-        .setCredentials(NoCredentials.getInstance()).setUri(URI).build())) {
+    try (Connection connection =
+        createConnection(
+            ConnectionOptions.newBuilder()
+                .setCredentials(NoCredentials.getInstance())
+                .setUri(URI)
+                .build())) {
       connection.setReadOnly(true);
-      Executors.newSingleThreadScheduledExecutor().schedule(new Runnable() {
-        @Override
-        public void run() {
-          connection.cancel();
-        }
-      }, 100, TimeUnit.MILLISECONDS);
+      Executors.newSingleThreadScheduledExecutor()
+          .schedule(
+              new Runnable() {
+                @Override
+                public void run() {
+                  connection.cancel();
+                }
+              },
+              100,
+              TimeUnit.MILLISECONDS);
 
       boolean cancelled = false;
       try {
@@ -665,16 +778,24 @@ public class StatementTimeoutTest {
 
   @Test
   public void testCancelReadOnlyTransactional() {
-    try (Connection connection = createConnection(ConnectionOptions.newBuilder()
-        .setCredentials(NoCredentials.getInstance()).setUri(URI).build())) {
+    try (Connection connection =
+        createConnection(
+            ConnectionOptions.newBuilder()
+                .setCredentials(NoCredentials.getInstance())
+                .setUri(URI)
+                .build())) {
       connection.setReadOnly(true);
       connection.setAutocommit(false);
-      Executors.newSingleThreadScheduledExecutor().schedule(new Runnable() {
-        @Override
-        public void run() {
-          connection.cancel();
-        }
-      }, 100, TimeUnit.MILLISECONDS);
+      Executors.newSingleThreadScheduledExecutor()
+          .schedule(
+              new Runnable() {
+                @Override
+                public void run() {
+                  connection.cancel();
+                }
+              },
+              100,
+              TimeUnit.MILLISECONDS);
 
       expected.expect(SpannerExceptionMatcher.matchCode(ErrorCode.CANCELLED));
       connection.executeQuery(Statement.of(SLOW_SELECT));
@@ -683,16 +804,24 @@ public class StatementTimeoutTest {
 
   @Test
   public void testCancelReadOnlyTransactionalMultipleStatements() {
-    try (Connection connection = createConnection(ConnectionOptions.newBuilder()
-        .setCredentials(NoCredentials.getInstance()).setUri(URI).build())) {
+    try (Connection connection =
+        createConnection(
+            ConnectionOptions.newBuilder()
+                .setCredentials(NoCredentials.getInstance())
+                .setUri(URI)
+                .build())) {
       connection.setReadOnly(true);
       connection.setAutocommit(false);
-      Executors.newSingleThreadScheduledExecutor().schedule(new Runnable() {
-        @Override
-        public void run() {
-          connection.cancel();
-        }
-      }, 100, TimeUnit.MILLISECONDS);
+      Executors.newSingleThreadScheduledExecutor()
+          .schedule(
+              new Runnable() {
+                @Override
+                public void run() {
+                  connection.cancel();
+                }
+              },
+              100,
+              TimeUnit.MILLISECONDS);
 
       boolean cancelled = false;
       try {
@@ -713,14 +842,22 @@ public class StatementTimeoutTest {
 
   @Test
   public void testCancelReadWriteAutocommit() {
-    try (Connection connection = createConnection(ConnectionOptions.newBuilder()
-        .setCredentials(NoCredentials.getInstance()).setUri(URI).build())) {
-      Executors.newSingleThreadScheduledExecutor().schedule(new Runnable() {
-        @Override
-        public void run() {
-          connection.cancel();
-        }
-      }, 100, TimeUnit.MILLISECONDS);
+    try (Connection connection =
+        createConnection(
+            ConnectionOptions.newBuilder()
+                .setCredentials(NoCredentials.getInstance())
+                .setUri(URI)
+                .build())) {
+      Executors.newSingleThreadScheduledExecutor()
+          .schedule(
+              new Runnable() {
+                @Override
+                public void run() {
+                  connection.cancel();
+                }
+              },
+              100,
+              TimeUnit.MILLISECONDS);
 
       expected.expect(SpannerExceptionMatcher.matchCode(ErrorCode.CANCELLED));
       connection.executeQuery(Statement.of(SLOW_SELECT));
@@ -729,14 +866,22 @@ public class StatementTimeoutTest {
 
   @Test
   public void testCancelReadWriteAutocommitMultipleStatements() {
-    try (Connection connection = createConnection(ConnectionOptions.newBuilder()
-        .setCredentials(NoCredentials.getInstance()).setUri(URI).build())) {
-      Executors.newSingleThreadScheduledExecutor().schedule(new Runnable() {
-        @Override
-        public void run() {
-          connection.cancel();
-        }
-      }, 100, TimeUnit.MILLISECONDS);
+    try (Connection connection =
+        createConnection(
+            ConnectionOptions.newBuilder()
+                .setCredentials(NoCredentials.getInstance())
+                .setUri(URI)
+                .build())) {
+      Executors.newSingleThreadScheduledExecutor()
+          .schedule(
+              new Runnable() {
+                @Override
+                public void run() {
+                  connection.cancel();
+                }
+              },
+              100,
+              TimeUnit.MILLISECONDS);
 
       boolean cancelled = false;
       try {
@@ -754,14 +899,22 @@ public class StatementTimeoutTest {
 
   @Test
   public void testCancelReadWriteAutocommitSlowUpdate() {
-    try (Connection connection = createConnection(ConnectionOptions.newBuilder()
-        .setCredentials(NoCredentials.getInstance()).setUri(URI).build())) {
-      Executors.newSingleThreadScheduledExecutor().schedule(new Runnable() {
-        @Override
-        public void run() {
-          connection.cancel();
-        }
-      }, 100, TimeUnit.MILLISECONDS);
+    try (Connection connection =
+        createConnection(
+            ConnectionOptions.newBuilder()
+                .setCredentials(NoCredentials.getInstance())
+                .setUri(URI)
+                .build())) {
+      Executors.newSingleThreadScheduledExecutor()
+          .schedule(
+              new Runnable() {
+                @Override
+                public void run() {
+                  connection.cancel();
+                }
+              },
+              100,
+              TimeUnit.MILLISECONDS);
 
       expected.expect(SpannerExceptionMatcher.matchCode(ErrorCode.CANCELLED));
       connection.execute(Statement.of(SLOW_UPDATE));
@@ -771,14 +924,22 @@ public class StatementTimeoutTest {
   @Test
   public void testCancelReadWriteAutocommitSlowCommit() {
     try (Connection connection =
-        createConnection(ConnectionOptions.newBuilder().setCredentials(NoCredentials.getInstance())
-            .setUri(URI).build(), CommitRollbackBehavior.SLOW_COMMIT)) {
-      Executors.newSingleThreadScheduledExecutor().schedule(new Runnable() {
-        @Override
-        public void run() {
-          connection.cancel();
-        }
-      }, 100, TimeUnit.MILLISECONDS);
+        createConnection(
+            ConnectionOptions.newBuilder()
+                .setCredentials(NoCredentials.getInstance())
+                .setUri(URI)
+                .build(),
+            CommitRollbackBehavior.SLOW_COMMIT)) {
+      Executors.newSingleThreadScheduledExecutor()
+          .schedule(
+              new Runnable() {
+                @Override
+                public void run() {
+                  connection.cancel();
+                }
+              },
+              100,
+              TimeUnit.MILLISECONDS);
 
       expected.expect(SpannerExceptionMatcher.matchCode(ErrorCode.CANCELLED));
       connection.execute(Statement.of(FAST_UPDATE));
@@ -787,15 +948,23 @@ public class StatementTimeoutTest {
 
   @Test
   public void testCancelReadWriteTransactional() {
-    try (Connection connection = createConnection(ConnectionOptions.newBuilder()
-        .setCredentials(NoCredentials.getInstance()).setUri(URI).build())) {
+    try (Connection connection =
+        createConnection(
+            ConnectionOptions.newBuilder()
+                .setCredentials(NoCredentials.getInstance())
+                .setUri(URI)
+                .build())) {
       connection.setAutocommit(false);
-      Executors.newSingleThreadScheduledExecutor().schedule(new Runnable() {
-        @Override
-        public void run() {
-          connection.cancel();
-        }
-      }, 100, TimeUnit.MILLISECONDS);
+      Executors.newSingleThreadScheduledExecutor()
+          .schedule(
+              new Runnable() {
+                @Override
+                public void run() {
+                  connection.cancel();
+                }
+              },
+              100,
+              TimeUnit.MILLISECONDS);
 
       expected.expect(SpannerExceptionMatcher.matchCode(ErrorCode.CANCELLED));
       connection.executeQuery(Statement.of(SLOW_SELECT));
@@ -804,15 +973,23 @@ public class StatementTimeoutTest {
 
   @Test
   public void testCancelReadWriteTransactionalMultipleStatements() {
-    try (Connection connection = createConnection(ConnectionOptions.newBuilder()
-        .setCredentials(NoCredentials.getInstance()).setUri(URI).build())) {
+    try (Connection connection =
+        createConnection(
+            ConnectionOptions.newBuilder()
+                .setCredentials(NoCredentials.getInstance())
+                .setUri(URI)
+                .build())) {
       connection.setAutocommit(false);
-      Executors.newSingleThreadScheduledExecutor().schedule(new Runnable() {
-        @Override
-        public void run() {
-          connection.cancel();
-        }
-      }, 100, TimeUnit.MILLISECONDS);
+      Executors.newSingleThreadScheduledExecutor()
+          .schedule(
+              new Runnable() {
+                @Override
+                public void run() {
+                  connection.cancel();
+                }
+              },
+              100,
+              TimeUnit.MILLISECONDS);
 
       boolean cancelled = false;
       try {
@@ -832,17 +1009,25 @@ public class StatementTimeoutTest {
 
   @Test
   public void testCancelDdlBatch() {
-    try (Connection connection = createConnection(ConnectionOptions.newBuilder()
-        .setCredentials(NoCredentials.getInstance()).setUri(URI).build())) {
+    try (Connection connection =
+        createConnection(
+            ConnectionOptions.newBuilder()
+                .setCredentials(NoCredentials.getInstance())
+                .setUri(URI)
+                .build())) {
       connection.setAutocommit(false);
       connection.startBatchDdl();
       connection.execute(Statement.of(SLOW_DDL));
-      Executors.newSingleThreadScheduledExecutor().schedule(new Runnable() {
-        @Override
-        public void run() {
-          connection.cancel();
-        }
-      }, 100, TimeUnit.MILLISECONDS);
+      Executors.newSingleThreadScheduledExecutor()
+          .schedule(
+              new Runnable() {
+                @Override
+                public void run() {
+                  connection.cancel();
+                }
+              },
+              100,
+              TimeUnit.MILLISECONDS);
 
       expected.expect(SpannerExceptionMatcher.matchCode(ErrorCode.CANCELLED));
       connection.runBatch();
@@ -851,14 +1036,22 @@ public class StatementTimeoutTest {
 
   @Test
   public void testCancelDdlAutocommit() {
-    try (Connection connection = createConnection(ConnectionOptions.newBuilder()
-        .setCredentials(NoCredentials.getInstance()).setUri(URI).build())) {
-      Executors.newSingleThreadScheduledExecutor().schedule(new Runnable() {
-        @Override
-        public void run() {
-          connection.cancel();
-        }
-      }, 100, TimeUnit.MILLISECONDS);
+    try (Connection connection =
+        createConnection(
+            ConnectionOptions.newBuilder()
+                .setCredentials(NoCredentials.getInstance())
+                .setUri(URI)
+                .build())) {
+      Executors.newSingleThreadScheduledExecutor()
+          .schedule(
+              new Runnable() {
+                @Override
+                public void run() {
+                  connection.cancel();
+                }
+              },
+              100,
+              TimeUnit.MILLISECONDS);
 
       expected.expect(SpannerExceptionMatcher.matchCode(ErrorCode.CANCELLED));
       connection.execute(Statement.of(SLOW_DDL));
@@ -867,8 +1060,12 @@ public class StatementTimeoutTest {
 
   @Test
   public void testTimeoutExceptionDdlAutocommit() {
-    try (Connection connection = createConnection(ConnectionOptions.newBuilder()
-        .setCredentials(NoCredentials.getInstance()).setUri(URI).build())) {
+    try (Connection connection =
+        createConnection(
+            ConnectionOptions.newBuilder()
+                .setCredentials(NoCredentials.getInstance())
+                .setUri(URI)
+                .build())) {
       connection.setStatementTimeout(20L, TimeUnit.MILLISECONDS);
 
       expected.expect(SpannerExceptionMatcher.matchCode(ErrorCode.DEADLINE_EXCEEDED));
@@ -878,8 +1075,12 @@ public class StatementTimeoutTest {
 
   @Test
   public void testTimeoutExceptionDdlAutocommitMultipleStatements() {
-    try (Connection connection = createConnection(ConnectionOptions.newBuilder()
-        .setCredentials(NoCredentials.getInstance()).setUri(URI).build())) {
+    try (Connection connection =
+        createConnection(
+            ConnectionOptions.newBuilder()
+                .setCredentials(NoCredentials.getInstance())
+                .setUri(URI)
+                .build())) {
       connection.setStatementTimeout(20L, TimeUnit.MILLISECONDS);
 
       // assert that multiple statements after each other also time out
@@ -900,8 +1101,12 @@ public class StatementTimeoutTest {
 
   @Test
   public void testTimeoutExceptionDdlBatch() {
-    try (Connection connection = createConnection(ConnectionOptions.newBuilder()
-        .setCredentials(NoCredentials.getInstance()).setUri(URI).build())) {
+    try (Connection connection =
+        createConnection(
+            ConnectionOptions.newBuilder()
+                .setCredentials(NoCredentials.getInstance())
+                .setUri(URI)
+                .build())) {
       connection.setAutocommit(false);
       connection.startBatchDdl();
       connection.setStatementTimeout(20L, TimeUnit.MILLISECONDS);
@@ -916,8 +1121,12 @@ public class StatementTimeoutTest {
 
   @Test
   public void testTimeoutExceptionDdlBatchMultipleStatements() {
-    try (Connection connection = createConnection(ConnectionOptions.newBuilder()
-        .setCredentials(NoCredentials.getInstance()).setUri(URI).build())) {
+    try (Connection connection =
+        createConnection(
+            ConnectionOptions.newBuilder()
+                .setCredentials(NoCredentials.getInstance())
+                .setUri(URI)
+                .build())) {
       connection.setAutocommit(false);
       connection.setStatementTimeout(20L, TimeUnit.MILLISECONDS);
 
@@ -943,8 +1152,12 @@ public class StatementTimeoutTest {
 
   @Test
   public void testTimeoutDifferentTimeUnits() {
-    try (Connection connection = createConnection(ConnectionOptions.newBuilder()
-        .setCredentials(NoCredentials.getInstance()).setUri(URI).build())) {
+    try (Connection connection =
+        createConnection(
+            ConnectionOptions.newBuilder()
+                .setCredentials(NoCredentials.getInstance())
+                .setUri(URI)
+                .build())) {
       for (TimeUnit unit : ReadOnlyStalenessUtil.SUPPORTED_UNITS) {
         connection.setStatementTimeout(1L, unit);
         boolean timedOut = false;
@@ -957,5 +1170,4 @@ public class StatementTimeoutTest {
       }
     }
   }
-
 }

@@ -19,13 +19,7 @@ package com.google.cloud.spanner.jdbc.it;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
-import java.util.Arrays;
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.experimental.categories.Category;
-import org.junit.rules.ExpectedException;
-import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
+
 import com.google.cloud.spanner.ErrorCode;
 import com.google.cloud.spanner.IntegrationTest;
 import com.google.cloud.spanner.Key;
@@ -35,12 +29,18 @@ import com.google.cloud.spanner.Statement;
 import com.google.cloud.spanner.jdbc.ITAbstractSpannerTest;
 import com.google.cloud.spanner.jdbc.SpannerExceptionMatcher;
 import com.google.cloud.spanner.jdbc.SqlScriptVerifier;
+import java.util.Arrays;
+import org.junit.Rule;
+import org.junit.Test;
+import org.junit.experimental.categories.Category;
+import org.junit.rules.ExpectedException;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
 
 @Category(IntegrationTest.class)
 @RunWith(JUnit4.class)
 public class ITTransactionModeTest extends ITAbstractSpannerTest {
-  @Rule
-  public ExpectedException exception = ExpectedException.none();
+  @Rule public ExpectedException exception = ExpectedException.none();
 
   @Override
   public void appendConnectionUri(StringBuilder uri) {
@@ -65,7 +65,8 @@ public class ITTransactionModeTest extends ITAbstractSpannerTest {
       connection.bufferedWrite(
           Mutation.newInsertBuilder("TEST").set("ID").to(1L).set("NAME").to("TEST").build());
       connection.commit();
-      try(ResultSet rs = connection.executeQuery(Statement.of("SELECT NAME FROM TEST WHERE ID=1"))) {
+      try (ResultSet rs =
+          connection.executeQuery(Statement.of("SELECT NAME FROM TEST WHERE ID=1"))) {
         assertThat(rs.next(), is(true));
         assertThat(rs.getString("NAME"), is(equalTo("TEST")));
         assertThat(rs.next(), is(false));
@@ -73,14 +74,16 @@ public class ITTransactionModeTest extends ITAbstractSpannerTest {
       connection.bufferedWrite(
           Mutation.newUpdateBuilder("TEST").set("ID").to(1L).set("NAME").to("TEST2").build());
       connection.commit();
-      try(ResultSet rs = connection.executeQuery(Statement.of("SELECT NAME FROM TEST WHERE ID=1"))) {
+      try (ResultSet rs =
+          connection.executeQuery(Statement.of("SELECT NAME FROM TEST WHERE ID=1"))) {
         assertThat(rs.next(), is(true));
         assertThat(rs.getString("NAME"), is(equalTo("TEST2")));
         assertThat(rs.next(), is(false));
       }
       connection.bufferedWrite(Mutation.delete("TEST", Key.of(1L)));
       connection.commit();
-      try(ResultSet rs = connection.executeQuery(Statement.of("SELECT NAME FROM TEST WHERE ID=1"))) {
+      try (ResultSet rs =
+          connection.executeQuery(Statement.of("SELECT NAME FROM TEST WHERE ID=1"))) {
         assertThat(rs.next(), is(false));
       }
     }
@@ -90,22 +93,33 @@ public class ITTransactionModeTest extends ITAbstractSpannerTest {
   public void testDoAllowBufferedWriteIterableInReadWriteTransaction() {
     try (ITConnection connection = createConnection()) {
       assertThat(connection.isAutocommit(), is(false));
-      connection.bufferedWrite(Arrays.asList(
-          Mutation.newInsertBuilder("TEST").set("ID").to(1L).set("NAME").to("TEST-1").build(),
-          Mutation.newInsertBuilder("TEST").set("ID").to(2L).set("NAME").to("TEST-2").build()));
+      connection.bufferedWrite(
+          Arrays.asList(
+              Mutation.newInsertBuilder("TEST").set("ID").to(1L).set("NAME").to("TEST-1").build(),
+              Mutation.newInsertBuilder("TEST").set("ID").to(2L).set("NAME").to("TEST-2").build()));
       connection.commit();
-      try(ResultSet rs = connection.executeQuery(Statement.of("SELECT NAME FROM TEST WHERE ID IN (1,2) ORDER BY ID"))) {
+      try (ResultSet rs =
+          connection.executeQuery(
+              Statement.of("SELECT NAME FROM TEST WHERE ID IN (1,2) ORDER BY ID"))) {
         assertThat(rs.next(), is(true));
         assertThat(rs.getString("NAME"), is(equalTo("TEST-1")));
         assertThat(rs.next(), is(true));
         assertThat(rs.getString("NAME"), is(equalTo("TEST-2")));
         assertThat(rs.next(), is(false));
       }
-      connection.bufferedWrite(Arrays.asList(
-          Mutation.newUpdateBuilder("TEST").set("ID").to(1L).set("NAME").to("TEST-1-2").build(),
-          Mutation.newUpdateBuilder("TEST").set("ID").to(2L).set("NAME").to("TEST-2-2").build()));
+      connection.bufferedWrite(
+          Arrays.asList(
+              Mutation.newUpdateBuilder("TEST").set("ID").to(1L).set("NAME").to("TEST-1-2").build(),
+              Mutation.newUpdateBuilder("TEST")
+                  .set("ID")
+                  .to(2L)
+                  .set("NAME")
+                  .to("TEST-2-2")
+                  .build()));
       connection.commit();
-      try(ResultSet rs = connection.executeQuery(Statement.of("SELECT NAME FROM TEST WHERE ID IN (1,2) ORDER BY ID"))) {
+      try (ResultSet rs =
+          connection.executeQuery(
+              Statement.of("SELECT NAME FROM TEST WHERE ID IN (1,2) ORDER BY ID"))) {
         assertThat(rs.next(), is(true));
         assertThat(rs.getString("NAME"), is(equalTo("TEST-1-2")));
         assertThat(rs.next(), is(true));
@@ -115,7 +129,9 @@ public class ITTransactionModeTest extends ITAbstractSpannerTest {
       connection.bufferedWrite(
           Arrays.asList(Mutation.delete("TEST", Key.of(1L)), Mutation.delete("TEST", Key.of(2L))));
       connection.commit();
-      try(ResultSet rs = connection.executeQuery(Statement.of("SELECT NAME FROM TEST WHERE ID IN (1,2) ORDER BY ID"))) {
+      try (ResultSet rs =
+          connection.executeQuery(
+              Statement.of("SELECT NAME FROM TEST WHERE ID IN (1,2) ORDER BY ID"))) {
         assertThat(rs.next(), is(false));
       }
     }
@@ -137,8 +153,9 @@ public class ITTransactionModeTest extends ITAbstractSpannerTest {
       connection.execute(Statement.of("SET TRANSACTION READ ONLY"));
       assertThat(connection.isAutocommit(), is(false));
       exception.expect(SpannerExceptionMatcher.matchCode(ErrorCode.FAILED_PRECONDITION));
-      connection
-          .bufferedWrite(Arrays.asList(Mutation.newInsertBuilder("FOO").set("ID").to(1L).build(),
+      connection.bufferedWrite(
+          Arrays.asList(
+              Mutation.newInsertBuilder("FOO").set("ID").to(1L).build(),
               Mutation.newInsertBuilder("FOO").set("ID").to(2L).build()));
     }
   }
@@ -161,8 +178,9 @@ public class ITTransactionModeTest extends ITAbstractSpannerTest {
       assertThat(connection.isAutocommit(), is(false));
       assertThat(connection.isDdlBatchActive(), is(true));
       exception.expect(SpannerExceptionMatcher.matchCode(ErrorCode.FAILED_PRECONDITION));
-      connection
-          .bufferedWrite(Arrays.asList(Mutation.newInsertBuilder("FOO").set("ID").to(1L).build(),
+      connection.bufferedWrite(
+          Arrays.asList(
+              Mutation.newInsertBuilder("FOO").set("ID").to(1L).build(),
               Mutation.newInsertBuilder("FOO").set("ID").to(2L).build()));
     }
   }

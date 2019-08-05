@@ -22,16 +22,16 @@ import static org.mockito.Matchers.isNull;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
+
+import com.google.api.gax.longrunning.OperationFuture;
+import com.google.cloud.spanner.DatabaseAdminClient;
+import com.google.spanner.admin.database.v1.UpdateDatabaseDdlMetadata;
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-import com.google.api.gax.longrunning.OperationFuture;
-import com.google.cloud.spanner.DatabaseAdminClient;
-import com.google.cloud.spanner.jdbc.DdlClient;
-import com.google.spanner.admin.database.v1.UpdateDatabaseDdlMetadata;
 
 @RunWith(JUnit4.class)
 public class DdlClientTest {
@@ -40,8 +40,11 @@ public class DdlClientTest {
   private final String databaseId = "test-database";
 
   private DdlClient createSubject(DatabaseAdminClient client) {
-    return DdlClient.newBuilder().setInstanceId(instanceId).setDatabaseName(databaseId)
-        .setDatabaseAdminClient(client).build();
+    return DdlClient.newBuilder()
+        .setInstanceId(instanceId)
+        .setDatabaseName(databaseId)
+        .setDatabaseAdminClient(client)
+        .build();
   }
 
   @Test
@@ -50,8 +53,9 @@ public class DdlClientTest {
     @SuppressWarnings("unchecked")
     OperationFuture<Void, UpdateDatabaseDdlMetadata> operation = mock(OperationFuture.class);
     when(operation.get()).thenReturn(null);
-    when(client.updateDatabaseDdl(eq(instanceId), eq(databaseId), anyListOf(String.class),
-        isNull(String.class))).thenReturn(operation);
+    when(client.updateDatabaseDdl(
+            eq(instanceId), eq(databaseId), anyListOf(String.class), isNull(String.class)))
+        .thenReturn(operation);
     DdlClient subject = createSubject(client);
     String ddl = "CREATE TABLE FOO";
     subject.executeDdl(ddl);
@@ -62,5 +66,4 @@ public class DdlClientTest {
     subject.executeDdl(ddlList);
     verify(client).updateDatabaseDdl(instanceId, databaseId, ddlList, null);
   }
-
 }

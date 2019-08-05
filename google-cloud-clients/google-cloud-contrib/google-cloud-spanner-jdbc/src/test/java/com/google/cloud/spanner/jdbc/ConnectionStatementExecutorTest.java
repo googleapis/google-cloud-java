@@ -24,16 +24,15 @@ import static org.mockito.Mockito.atLeastOnce;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
+
+import com.google.cloud.Timestamp;
+import com.google.cloud.spanner.TimestampBound;
+import com.google.protobuf.Duration;
 import java.util.concurrent.TimeUnit;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-import com.google.cloud.Timestamp;
-import com.google.cloud.spanner.TimestampBound;
-import com.google.cloud.spanner.jdbc.ConnectionImpl;
-import com.google.cloud.spanner.jdbc.ConnectionStatementExecutorImpl;
-import com.google.protobuf.Duration;
 
 @RunWith(JUnit4.class)
 public class ConnectionStatementExecutorTest {
@@ -149,19 +148,21 @@ public class ConnectionStatementExecutorTest {
 
     subject.statementSetReadOnlyStaleness(
         TimestampBound.ofReadTimestamp(Timestamp.parseTimestamp("2018-10-31T10:11:12.123Z")));
-    verify(connection).setReadOnlyStaleness(
-        TimestampBound.ofReadTimestamp(Timestamp.parseTimestamp("2018-10-31T10:11:12.123Z")));
+    verify(connection)
+        .setReadOnlyStaleness(
+            TimestampBound.ofReadTimestamp(Timestamp.parseTimestamp("2018-10-31T10:11:12.123Z")));
 
     subject.statementSetReadOnlyStaleness(
         TimestampBound.ofMinReadTimestamp(Timestamp.parseTimestamp("2018-10-31T10:11:12.123Z")));
-    verify(connection).setReadOnlyStaleness(
-        TimestampBound.ofReadTimestamp(Timestamp.parseTimestamp("2018-10-31T10:11:12.123Z")));
+    verify(connection)
+        .setReadOnlyStaleness(
+            TimestampBound.ofReadTimestamp(Timestamp.parseTimestamp("2018-10-31T10:11:12.123Z")));
 
     subject.statementSetReadOnlyStaleness(TimestampBound.ofExactStaleness(10L, TimeUnit.SECONDS));
     verify(connection).setReadOnlyStaleness(TimestampBound.ofExactStaleness(10L, TimeUnit.SECONDS));
 
-    subject
-        .statementSetReadOnlyStaleness(TimestampBound.ofMaxStaleness(20L, TimeUnit.MILLISECONDS));
+    subject.statementSetReadOnlyStaleness(
+        TimestampBound.ofMaxStaleness(20L, TimeUnit.MILLISECONDS));
     verify(connection)
         .setReadOnlyStaleness(TimestampBound.ofMaxStaleness(20L, TimeUnit.MILLISECONDS));
   }
@@ -179,5 +180,4 @@ public class ConnectionStatementExecutorTest {
     subject.statementSetTransactionMode(TransactionMode.READ_WRITE_TRANSACTION);
     verify(connection).setTransactionMode(TransactionMode.READ_WRITE_TRANSACTION);
   }
-
 }

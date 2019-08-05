@@ -23,11 +23,7 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
-import java.util.concurrent.TimeUnit;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
-import org.mockito.Matchers;
+
 import com.google.cloud.NoCredentials;
 import com.google.cloud.Timestamp;
 import com.google.cloud.spanner.DatabaseClient;
@@ -36,11 +32,11 @@ import com.google.cloud.spanner.ResultSet;
 import com.google.cloud.spanner.Spanner;
 import com.google.cloud.spanner.Statement;
 import com.google.cloud.spanner.TimestampBound;
-import com.google.cloud.spanner.jdbc.Connection;
-import com.google.cloud.spanner.jdbc.ConnectionImpl;
-import com.google.cloud.spanner.jdbc.ConnectionOptions;
-import com.google.cloud.spanner.jdbc.DdlClient;
-import com.google.cloud.spanner.jdbc.SpannerPool;
+import java.util.concurrent.TimeUnit;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
+import org.mockito.Matchers;
 
 @RunWith(JUnit4.class)
 public class ReadOnlyStalenessTest {
@@ -69,8 +65,12 @@ public class ReadOnlyStalenessTest {
 
   @Test
   public void testDefaultReadOnlyStalenessAutocommitOnce() {
-    try (Connection connection = createConnection(ConnectionOptions.newBuilder()
-        .setCredentials(NoCredentials.getInstance()).setUri(URI).build())) {
+    try (Connection connection =
+        createConnection(
+            ConnectionOptions.newBuilder()
+                .setCredentials(NoCredentials.getInstance())
+                .setUri(URI)
+                .build())) {
       assertThat(connection.isAutocommit(), is(true));
       assertThat(connection.isReadOnly(), is(true));
       connection.execute(Statement.of(SELECT));
@@ -80,8 +80,12 @@ public class ReadOnlyStalenessTest {
 
   @Test
   public void testDefaultReadOnlyStalenessAutocommitTwice() {
-    try (Connection connection = createConnection(ConnectionOptions.newBuilder()
-        .setCredentials(NoCredentials.getInstance()).setUri(URI).build())) {
+    try (Connection connection =
+        createConnection(
+            ConnectionOptions.newBuilder()
+                .setCredentials(NoCredentials.getInstance())
+                .setUri(URI)
+                .build())) {
       assertThat(connection.isAutocommit(), is(true));
       assertThat(connection.isReadOnly(), is(true));
       connection.execute(Statement.of(SELECT));
@@ -92,8 +96,12 @@ public class ReadOnlyStalenessTest {
 
   @Test
   public void testDefaultReadOnlyStalenessAutocommitChanging() {
-    try (Connection connection = createConnection(ConnectionOptions.newBuilder()
-        .setCredentials(NoCredentials.getInstance()).setUri(URI).build())) {
+    try (Connection connection =
+        createConnection(
+            ConnectionOptions.newBuilder()
+                .setCredentials(NoCredentials.getInstance())
+                .setUri(URI)
+                .build())) {
       assertThat(connection.isAutocommit(), is(true));
       assertThat(connection.isReadOnly(), is(true));
       connection.execute(Statement.of(SELECT));
@@ -123,8 +131,12 @@ public class ReadOnlyStalenessTest {
 
   @Test
   public void testDefaultReadOnlyStalenessTransactionalOnce() {
-    try (Connection connection = createConnection(ConnectionOptions.newBuilder()
-        .setCredentials(NoCredentials.getInstance()).setUri(URI).build())) {
+    try (Connection connection =
+        createConnection(
+            ConnectionOptions.newBuilder()
+                .setCredentials(NoCredentials.getInstance())
+                .setUri(URI)
+                .build())) {
       connection.setAutocommit(false);
       assertThat(connection.isAutocommit(), is(false));
       assertThat(connection.isReadOnly(), is(true));
@@ -135,8 +147,12 @@ public class ReadOnlyStalenessTest {
 
   @Test
   public void testDefaultReadOnlyStalenessTransactionalTwice() {
-    try (Connection connection = createConnection(ConnectionOptions.newBuilder()
-        .setCredentials(NoCredentials.getInstance()).setUri(URI).build())) {
+    try (Connection connection =
+        createConnection(
+            ConnectionOptions.newBuilder()
+                .setCredentials(NoCredentials.getInstance())
+                .setUri(URI)
+                .build())) {
       connection.setAutocommit(false);
       assertThat(connection.isAutocommit(), is(false));
       assertThat(connection.isReadOnly(), is(true));
@@ -156,8 +172,12 @@ public class ReadOnlyStalenessTest {
 
   @Test
   public void testDefaultReadOnlyStalenessTransactionalChanging() {
-    try (Connection connection = createConnection(ConnectionOptions.newBuilder()
-        .setCredentials(NoCredentials.getInstance()).setUri(URI).build())) {
+    try (Connection connection =
+        createConnection(
+            ConnectionOptions.newBuilder()
+                .setCredentials(NoCredentials.getInstance())
+                .setUri(URI)
+                .build())) {
       connection.setAutocommit(false);
       assertThat(connection.isAutocommit(), is(false));
       assertThat(connection.isReadOnly(), is(true));
@@ -176,5 +196,4 @@ public class ReadOnlyStalenessTest {
       connection.commit();
     }
   }
-
 }

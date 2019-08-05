@@ -36,9 +36,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-/**
- * Tests for reading and parsing test key files and getting service accounts.
- */
+/** Tests for reading and parsing test key files and getting service accounts. */
 @RunWith(JUnit4.class)
 public class CredentialsServiceTest {
   private static final String FILE_TEST_PATH =

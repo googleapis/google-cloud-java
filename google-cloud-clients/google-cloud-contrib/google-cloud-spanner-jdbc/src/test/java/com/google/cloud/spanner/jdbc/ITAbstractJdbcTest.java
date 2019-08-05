@@ -16,6 +16,14 @@
 
 package com.google.cloud.spanner.jdbc;
 
+import com.google.cloud.spanner.Database;
+import com.google.cloud.spanner.GceTestEnvConfig;
+import com.google.cloud.spanner.IntegrationTest;
+import com.google.cloud.spanner.IntegrationTestEnv;
+import com.google.cloud.spanner.jdbc.AbstractSqlScriptVerifier.GenericConnectionProvider;
+import com.google.cloud.spanner.jdbc.JdbcSqlScriptVerifier.JdbcGenericConnection;
+import com.google.common.base.Preconditions;
+import com.google.common.base.Strings;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -29,14 +37,6 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.ClassRule;
 import org.junit.experimental.categories.Category;
-import com.google.cloud.spanner.Database;
-import com.google.cloud.spanner.GceTestEnvConfig;
-import com.google.cloud.spanner.IntegrationTest;
-import com.google.cloud.spanner.IntegrationTestEnv;
-import com.google.cloud.spanner.jdbc.AbstractSqlScriptVerifier.GenericConnectionProvider;
-import com.google.cloud.spanner.jdbc.JdbcSqlScriptVerifier.JdbcGenericConnection;
-import com.google.common.base.Preconditions;
-import com.google.common.base.Strings;
 
 /** Base class for all JDBC integration tests. */
 @Category(IntegrationTest.class)
@@ -80,15 +80,16 @@ public class ITAbstractJdbcTest {
   }
 
   /**
-   * Creates a new default JDBC connection to a test database. Use the method
-   * {@link ITAbstractJdbcTest#appendConnectionUri(StringBuilder)} to append additional connection
-   * options to the connection URI.
+   * Creates a new default JDBC connection to a test database. Use the method {@link
+   * ITAbstractJdbcTest#appendConnectionUri(StringBuilder)} to append additional connection options
+   * to the connection URI.
    *
    * @return The newly opened JDBC connection.
    */
   public CloudSpannerJdbcConnection createConnection() throws SQLException {
-    StringBuilder url = new StringBuilder("jdbc:cloudspanner:/").append(getDatabase().getId().getName());
-    if(hasValidKeyFile()) {
+    StringBuilder url =
+        new StringBuilder("jdbc:cloudspanner:/").append(getDatabase().getId().getName());
+    if (hasValidKeyFile()) {
       url.append(";credentials=").append(getKeyFile());
     }
     appendConnectionUri(url);
@@ -128,8 +129,10 @@ public class ITAbstractJdbcTest {
         if (!tableExists(connection, "TEST")) {
           connection.setAutoCommit(false);
           connection.createStatement().execute("START BATCH DDL");
-          connection.createStatement().execute(
-              "CREATE TABLE TEST (ID INT64 NOT NULL, NAME STRING(100) NOT NULL) PRIMARY KEY (ID)");
+          connection
+              .createStatement()
+              .execute(
+                  "CREATE TABLE TEST (ID INT64 NOT NULL, NAME STRING(100) NOT NULL) PRIMARY KEY (ID)");
           connection.createStatement().execute("RUN BATCH");
         }
       }
@@ -142,7 +145,9 @@ public class ITAbstractJdbcTest {
       try (Connection connection = createConnection()) {
         connection.setAutoCommit(true);
         if (!tableExists(connection, "Singers")) {
-          for (String statement : AbstractSqlScriptVerifier.readStatementsFromFile("CreateMusicTables.sql", getClass())) {
+          for (String statement :
+              AbstractSqlScriptVerifier.readStatementsFromFile(
+                  "CreateMusicTables.sql", getClass())) {
             connection.createStatement().execute(statement);
           }
         }
@@ -164,8 +169,9 @@ public class ITAbstractJdbcTest {
   protected boolean indexExists(Connection connection, String table, String index)
       throws SQLException {
     Preconditions.checkArgument(!Strings.isNullOrEmpty(index));
-    try (PreparedStatement ps = connection.prepareStatement(
-        "SELECT INDEX_NAME FROM INFORMATION_SCHEMA.INDEXES WHERE UPPER(TABLE_NAME)=? AND UPPER(INDEX_NAME)=?")) {
+    try (PreparedStatement ps =
+        connection.prepareStatement(
+            "SELECT INDEX_NAME FROM INFORMATION_SCHEMA.INDEXES WHERE UPPER(TABLE_NAME)=? AND UPPER(INDEX_NAME)=?")) {
       ps.setString(1, table);
       ps.setString(2, index);
       try (ResultSet rs = ps.executeQuery()) {

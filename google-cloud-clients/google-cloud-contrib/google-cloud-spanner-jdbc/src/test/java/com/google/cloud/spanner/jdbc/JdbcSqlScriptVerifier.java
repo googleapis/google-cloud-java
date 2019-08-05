@@ -20,6 +20,9 @@ import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.startsWith;
 import static org.junit.Assert.assertThat;
+
+import com.google.cloud.spanner.jdbc.StatementResult.ResultType;
+import com.google.rpc.Code;
 import java.sql.Array;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -29,8 +32,6 @@ import java.sql.Timestamp;
 import java.sql.Types;
 import java.util.ArrayList;
 import java.util.List;
-import com.google.cloud.spanner.jdbc.StatementResult.ResultType;
-import com.google.rpc.Code;
 
 /** SQL Script verifier for JDBC connections */
 public class JdbcSqlScriptVerifier extends AbstractSqlScriptVerifier {
@@ -71,7 +72,6 @@ public class JdbcSqlScriptVerifier extends AbstractSqlScriptVerifier {
     protected long getUpdateCount() {
       return updateCount;
     }
-
   }
 
   static class JdbcGenericResultSet extends GenericResultSet {
@@ -119,7 +119,6 @@ public class JdbcSqlScriptVerifier extends AbstractSqlScriptVerifier {
       String col = resultSet.getMetaData().getColumnName(1);
       return getValue(col);
     }
-
   }
 
   public static class JdbcGenericConnection extends GenericConnection {
@@ -171,15 +170,16 @@ public class JdbcSqlScriptVerifier extends AbstractSqlScriptVerifier {
   }
 
   @Override
-  protected void verifyExpectedException(String statement, Exception e, String code,
-      String messagePrefix) {
+  protected void verifyExpectedException(
+      String statement, Exception e, String code, String messagePrefix) {
     assertThat(e instanceof JdbcSqlException, is(true));
     JdbcSqlException jdbcException = (JdbcSqlException) e;
     assertThat(statement, jdbcException.getCode(), is(equalTo(Code.valueOf(code))));
     if (messagePrefix != null) {
-      assertThat(statement, e.getMessage(),
+      assertThat(
+          statement,
+          e.getMessage(),
           startsWith(messagePrefix.substring(1, messagePrefix.length() - 1)));
     }
   }
-
 }

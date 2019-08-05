@@ -19,16 +19,7 @@ package com.google.cloud.spanner.jdbc.it;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
-import java.sql.Connection;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.rules.TestName;
-import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
+
 import com.google.cloud.Timestamp;
 import com.google.cloud.spanner.AbortedDueToConcurrentModificationException;
 import com.google.cloud.spanner.AbortedException;
@@ -39,6 +30,16 @@ import com.google.cloud.spanner.SpannerException;
 import com.google.cloud.spanner.Statement;
 import com.google.cloud.spanner.jdbc.ITAbstractSpannerTest;
 import com.google.cloud.spanner.jdbc.TransactionRetryListener;
+import java.sql.Connection;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Rule;
+import org.junit.Test;
+import org.junit.rules.TestName;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
 
 /**
  * This integration test tests the different scenarios for automatically retrying read/write
@@ -49,8 +50,7 @@ import com.google.cloud.spanner.jdbc.TransactionRetryListener;
 public class ITTransactionRetryTest extends ITAbstractSpannerTest {
   private static final Logger logger = Logger.getLogger(ITTransactionRetryTest.class.getName());
 
-  @Rule
-  public TestName testName = new TestName();
+  @Rule public TestName testName = new TestName();
 
   @Override
   protected void appendConnectionUri(StringBuilder uri) {
@@ -78,14 +78,18 @@ public class ITTransactionRetryTest extends ITAbstractSpannerTest {
 
   @Before
   public void logStart() {
-    logger.fine("--------------------------------------------------------------\n"
-        + testName.getMethodName() + " started");
+    logger.fine(
+        "--------------------------------------------------------------\n"
+            + testName.getMethodName()
+            + " started");
   }
 
   @After
   public void logFinished() {
-    logger.fine("--------------------------------------------------------------\n"
-        + testName.getMethodName() + " finished");
+    logger.fine(
+        "--------------------------------------------------------------\n"
+            + testName.getMethodName()
+            + " finished");
   }
 
   /** Simple data structure to keep track of retry statistics */
@@ -117,9 +121,9 @@ public class ITTransactionRetryTest extends ITAbstractSpannerTest {
 
   /**
    * Simple {@link TransactionRetryListener} that keeps track of the total count of the different
-   * transaction retry events of a {@link Connection}. Note that as
-   * {@link TransactionRetryListener}s are instantiated once per connection, the listener keeps
-   * track of the total statistics of a connection and not only of the last transaction.
+   * transaction retry events of a {@link Connection}. Note that as {@link
+   * TransactionRetryListener}s are instantiated once per connection, the listener keeps track of
+   * the total statistics of a connection and not only of the last transaction.
    */
   public static class CountTransactionRetryListener implements TransactionRetryListener {
 
@@ -129,8 +133,8 @@ public class ITTransactionRetryTest extends ITAbstractSpannerTest {
     }
 
     @Override
-    public void retryFinished(Timestamp transactionStarted, long transactionId, int retryAttempt,
-        RetryResult result) {
+    public void retryFinished(
+        Timestamp transactionStarted, long transactionId, int retryAttempt, RetryResult result) {
       RETRY_STATISTICS.totalRetryAttemptsFinished++;
       switch (result) {
         case RETRY_ABORTED_AND_MAX_ATTEMPTS_EXCEEDED:
@@ -168,8 +172,8 @@ public class ITTransactionRetryTest extends ITAbstractSpannerTest {
         assertThat(rs.next(), is(false));
       }
       // do an insert
-      connection
-          .executeUpdate(Statement.of("INSERT INTO TEST (ID, NAME) VALUES (1, 'test aborted')"));
+      connection.executeUpdate(
+          Statement.of("INSERT INTO TEST (ID, NAME) VALUES (1, 'test aborted')"));
       // indicate that the next statement should abort
       interceptor.setProbability(1.0);
       interceptor.setOnlyInjectOnce(true);
@@ -209,8 +213,8 @@ public class ITTransactionRetryTest extends ITAbstractSpannerTest {
       interceptor.setProbability(1.0);
       interceptor.setOnlyInjectOnce(true);
       // do an insert that will abort
-      connection
-          .executeUpdate(Statement.of("INSERT INTO TEST (ID, NAME) VALUES (1, 'test aborted')"));
+      connection.executeUpdate(
+          Statement.of("INSERT INTO TEST (ID, NAME) VALUES (1, 'test aborted')"));
       // do a commit
       connection.commit();
       assertThat(RETRY_STATISTICS.totalSuccessfulRetries, is(equalTo(1)));
@@ -238,8 +242,8 @@ public class ITTransactionRetryTest extends ITAbstractSpannerTest {
         assertThat(rs.next(), is(false));
       }
       // insert a test record
-      connection
-          .executeUpdate(Statement.of("INSERT INTO TEST (ID, NAME) VALUES (1, 'test aborted')"));
+      connection.executeUpdate(
+          Statement.of("INSERT INTO TEST (ID, NAME) VALUES (1, 'test aborted')"));
       // indicate that the next statement should abort
       interceptor.setProbability(1.0);
       interceptor.setOnlyInjectOnce(true);
@@ -249,8 +253,10 @@ public class ITTransactionRetryTest extends ITAbstractSpannerTest {
       connection.commit();
       assertThat(RETRY_STATISTICS.totalSuccessfulRetries, is(equalTo(1)));
       // verify that the update succeeded
-      try (ResultSet rs = connection.executeQuery(
-          Statement.of("SELECT COUNT(*) AS C FROM TEST WHERE ID=1 AND NAME='update aborted'"))) {
+      try (ResultSet rs =
+          connection.executeQuery(
+              Statement.of(
+                  "SELECT COUNT(*) AS C FROM TEST WHERE ID=1 AND NAME='update aborted'"))) {
         assertThat(rs.next(), is(true));
         assertThat(rs.getLong("C"), is(equalTo(1L)));
         assertThat(rs.next(), is(false));
@@ -272,8 +278,8 @@ public class ITTransactionRetryTest extends ITAbstractSpannerTest {
         assertThat(rs.next(), is(false));
       }
       // insert a test record
-      connection
-          .executeUpdate(Statement.of("INSERT INTO TEST (ID, NAME) VALUES (1, 'test aborted')"));
+      connection.executeUpdate(
+          Statement.of("INSERT INTO TEST (ID, NAME) VALUES (1, 'test aborted')"));
       // indicate that the next statement should abort
       interceptor.setProbability(1.0);
       interceptor.setOnlyInjectOnce(true);
@@ -411,9 +417,9 @@ public class ITTransactionRetryTest extends ITAbstractSpannerTest {
   }
 
   /**
-   * Test a successful retry when a {@link ResultSet} has been consumed half way. The
-   * {@link ResultSet} should still be at the same position and still behave as if the original
-   * transaction did not abort.
+   * Test a successful retry when a {@link ResultSet} has been consumed half way. The {@link
+   * ResultSet} should still be at the same position and still behave as if the original transaction
+   * did not abort.
    */
   @Test
   public void testAbortWithResultSetHalfway() {
@@ -642,10 +648,10 @@ public class ITTransactionRetryTest extends ITAbstractSpannerTest {
 
   /**
    * This test shows what happens when an abort occurs on a call to {@link ResultSet#next()} on a
-   * {@link ResultSet} that has an concurrent insert. As long as the user hasn't consumed the
-   * {@link ResultSet} so far that the concurrent insert has been seen, the retry will succeed. When
-   * the user has consumed the {@link ResultSet} to the point where the concurrent insert is
-   * visible, the retry will fail.
+   * {@link ResultSet} that has an concurrent insert. As long as the user hasn't consumed the {@link
+   * ResultSet} so far that the concurrent insert has been seen, the retry will succeed. When the
+   * user has consumed the {@link ResultSet} to the point where the concurrent insert is visible,
+   * the retry will fail.
    */
   @Test
   public void testAbortWithUnseenConcurrentInsertAbortOnNext() {
@@ -772,31 +778,33 @@ public class ITTransactionRetryTest extends ITAbstractSpannerTest {
 
   /**
    * Test that shows the following:
+   *
    * <ol>
-   * <li>The transaction aborts at commit</li>
-   * <li>A retry starts and succeeds</li>
-   * <li>The commit is applied again and aborts again</li>
-   * <li>The retry is started again and then succeeds</li>
+   *   <li>The transaction aborts at commit
+   *   <li>A retry starts and succeeds
+   *   <li>The commit is applied again and aborts again
+   *   <li>The retry is started again and then succeeds
    * </ol>
    */
   @Test
   public void testAbortTwiceOnCommit() {
-    AbortInterceptor interceptor = new AbortInterceptor(0) {
-      private int commitCount = 0;
+    AbortInterceptor interceptor =
+        new AbortInterceptor(0) {
+          private int commitCount = 0;
 
-      @Override
-      protected boolean shouldAbort(String statement, ExecutionStep step) {
-        if ("COMMIT".equalsIgnoreCase(statement)) {
-          commitCount++;
-          return commitCount <= 2;
-        }
-        return false;
-      }
-    };
+          @Override
+          protected boolean shouldAbort(String statement, ExecutionStep step) {
+            if ("COMMIT".equalsIgnoreCase(statement)) {
+              commitCount++;
+              return commitCount <= 2;
+            }
+            return false;
+          }
+        };
     try (ITConnection connection =
         createConnection(interceptor, new CountTransactionRetryListener())) {
-      connection
-          .executeUpdate(Statement.of("INSERT INTO TEST (ID, NAME) VALUES (1, 'test aborted')"));
+      connection.executeUpdate(
+          Statement.of("INSERT INTO TEST (ID, NAME) VALUES (1, 'test aborted')"));
       connection.commit();
       // Assert that the transaction was retried twice.
       assertThat(RETRY_STATISTICS.totalRetryAttemptsStarted, is(equalTo(2)));
@@ -814,34 +822,36 @@ public class ITTransactionRetryTest extends ITAbstractSpannerTest {
 
   /**
    * Test that shows the following:
+   *
    * <ol>
-   * <li>The transaction aborts at commit</li>
-   * <li>A retry starts and then aborts at the insert statement</li>
-   * <li>The retry is restarted and then succeeds</li>
+   *   <li>The transaction aborts at commit
+   *   <li>A retry starts and then aborts at the insert statement
+   *   <li>The retry is restarted and then succeeds
    * </ol>
    */
   @Test
   public void testNestedAbortOnInsert() {
-    AbortInterceptor interceptor = new AbortInterceptor(0) {
-      private int commitCount = 0;
-      private int insertCount = 0;
+    AbortInterceptor interceptor =
+        new AbortInterceptor(0) {
+          private int commitCount = 0;
+          private int insertCount = 0;
 
-      @Override
-      protected boolean shouldAbort(String statement, ExecutionStep step) {
-        if ("COMMIT".equalsIgnoreCase(statement)) {
-          commitCount++;
-          return commitCount == 1;
-        } else if (statement.startsWith("INSERT INTO TEST")) {
-          insertCount++;
-          return insertCount == 2;
-        }
-        return false;
-      }
-    };
+          @Override
+          protected boolean shouldAbort(String statement, ExecutionStep step) {
+            if ("COMMIT".equalsIgnoreCase(statement)) {
+              commitCount++;
+              return commitCount == 1;
+            } else if (statement.startsWith("INSERT INTO TEST")) {
+              insertCount++;
+              return insertCount == 2;
+            }
+            return false;
+          }
+        };
     try (ITConnection connection =
         createConnection(interceptor, new CountTransactionRetryListener())) {
-      connection
-          .executeUpdate(Statement.of("INSERT INTO TEST (ID, NAME) VALUES (1, 'test aborted')"));
+      connection.executeUpdate(
+          Statement.of("INSERT INTO TEST (ID, NAME) VALUES (1, 'test aborted')"));
       connection.commit();
       // Assert that the transaction was retried (a restarted retry is counted as one successful
       // retry).
@@ -860,35 +870,39 @@ public class ITTransactionRetryTest extends ITAbstractSpannerTest {
 
   /**
    * Test that shows the following:
+   *
    * <ol>
-   * <li>The transaction aborts at commit</li>
-   * <li>A retry starts and then aborts at a next call in a result set</li>
-   * <li>The retry is restarted and then succeeds</li>
+   *   <li>The transaction aborts at commit
+   *   <li>A retry starts and then aborts at a next call in a result set
+   *   <li>The retry is restarted and then succeeds
    * </ol>
    */
   @Test
   public void testNestedAbortOnNextCall() {
-    AbortInterceptor interceptor = new AbortInterceptor(0) {
-      private int nextCallsDuringRetry = 0;
-      private int commitCount = 0;
+    AbortInterceptor interceptor =
+        new AbortInterceptor(0) {
+          private int nextCallsDuringRetry = 0;
+          private int commitCount = 0;
 
-      @Override
-      protected boolean shouldAbort(String statement, ExecutionStep step) {
-        if ("COMMIT".equalsIgnoreCase(statement)) {
-          // Note that commit always has ExecutionStep == EXECUTE_STATEMENT, as a commit can never
-          // really be retried (it is always the last statement in a transaction, and if it fails
-          // because of an aborted exception, the entire transaction is retried, and the commit
-          // statement is then applied again).
-          commitCount++;
-          return commitCount == 1;
-        } else if (statement.equals("SELECT * FROM TEST ORDER BY ID")
-            && step == ExecutionStep.RETRY_NEXT_ON_RESULT_SET) {
-          nextCallsDuringRetry++;
-          return nextCallsDuringRetry == 1;
-        }
-        return false;
-      }
-    };
+          @Override
+          protected boolean shouldAbort(String statement, ExecutionStep step) {
+            if ("COMMIT".equalsIgnoreCase(statement)) {
+              // Note that commit always has ExecutionStep == EXECUTE_STATEMENT, as a commit can
+              // never
+              // really be retried (it is always the last statement in a transaction, and if it
+              // fails
+              // because of an aborted exception, the entire transaction is retried, and the commit
+              // statement is then applied again).
+              commitCount++;
+              return commitCount == 1;
+            } else if (statement.equals("SELECT * FROM TEST ORDER BY ID")
+                && step == ExecutionStep.RETRY_NEXT_ON_RESULT_SET) {
+              nextCallsDuringRetry++;
+              return nextCallsDuringRetry == 1;
+            }
+            return false;
+          }
+        };
     try (ITConnection connection =
         createConnection(interceptor, new CountTransactionRetryListener())) {
       // Insert two test records.
@@ -923,33 +937,36 @@ public class ITTransactionRetryTest extends ITAbstractSpannerTest {
 
   /**
    * Test that shows the following:
+   *
    * <ol>
-   * <li>Transaction 1 does two inserts in table TEST</li>
-   * <li>Transaction 1 selects all records from table TEST</li>
-   * <li>Transaction 2 inserts a record into TEST</li>
-   * <li>Transaction 1 does another insert into TEST that aborts</li>
-   * <li>Transaction 1 starts a retry that aborts at the SELECT statement (i.e. before the
-   * concurrent modification has been seen)</li>
-   * <li>Transaction 1 restarts the retry that now aborts due to a concurrent modification
-   * exception</li>
+   *   <li>Transaction 1 does two inserts in table TEST
+   *   <li>Transaction 1 selects all records from table TEST
+   *   <li>Transaction 2 inserts a record into TEST
+   *   <li>Transaction 1 does another insert into TEST that aborts
+   *   <li>Transaction 1 starts a retry that aborts at the SELECT statement (i.e. before the
+   *       concurrent modification has been seen)
+   *   <li>Transaction 1 restarts the retry that now aborts due to a concurrent modification
+   *       exception
    * </ol>
    */
   @Test
   public void testNestedAbortWithConcurrentInsert() {
-    AbortInterceptor interceptor = new AbortInterceptor(0) {
-      private boolean alreadyAborted = false;
+    AbortInterceptor interceptor =
+        new AbortInterceptor(0) {
+          private boolean alreadyAborted = false;
 
-      @Override
-      protected boolean shouldAbort(String statement, ExecutionStep step) {
-        // Abort during retry on the select statement.
-        if (!alreadyAborted && statement.equals("SELECT * FROM TEST ORDER BY ID")
-            && step == ExecutionStep.RETRY_STATEMENT) {
-          alreadyAborted = true;
-          return true;
-        }
-        return super.shouldAbort(statement, step);
-      }
-    };
+          @Override
+          protected boolean shouldAbort(String statement, ExecutionStep step) {
+            // Abort during retry on the select statement.
+            if (!alreadyAborted
+                && statement.equals("SELECT * FROM TEST ORDER BY ID")
+                && step == ExecutionStep.RETRY_STATEMENT) {
+              alreadyAborted = true;
+              return true;
+            }
+            return super.shouldAbort(statement, step);
+          }
+        };
     try (ITConnection connection =
         createConnection(interceptor, new CountTransactionRetryListener())) {
       // insert two test records
@@ -986,13 +1003,14 @@ public class ITTransactionRetryTest extends ITAbstractSpannerTest {
 
   /**
    * Test that shows the following:
+   *
    * <ol>
-   * <li>Insert two records into table TEST and commit</li>
-   * <li>Transaction 1 updates the names of all records in the TEST table</li>
-   * <li>Transaction 2 inserts a record in the TEST table and commits</li>
-   * <li>Transaction 1 does another insert into TEST that aborts</li>
-   * <li>Transaction 1 starts a retry that aborts due to a concurrent modification exception as the
-   * number of updated records will be different</li>
+   *   <li>Insert two records into table TEST and commit
+   *   <li>Transaction 1 updates the names of all records in the TEST table
+   *   <li>Transaction 2 inserts a record in the TEST table and commits
+   *   <li>Transaction 1 does another insert into TEST that aborts
+   *   <li>Transaction 1 starts a retry that aborts due to a concurrent modification exception as
+   *       the number of updated records will be different
    * </ol>
    */
   @Test
@@ -1032,12 +1050,13 @@ public class ITTransactionRetryTest extends ITAbstractSpannerTest {
 
   /**
    * Test that shows the following:
+   *
    * <ol>
-   * <li>Insert two records into table TEST and commit</li>
-   * <li>Try to query a non-existing table. This will lead to an exception.</li>
-   * <li>Query all the records from the TEST table and consume the result set</li>
-   * <li>Insert another record into TEST that aborts</li>
-   * <li>The transaction successfully retries</li>
+   *   <li>Insert two records into table TEST and commit
+   *   <li>Try to query a non-existing table. This will lead to an exception.
+   *   <li>Query all the records from the TEST table and consume the result set
+   *   <li>Insert another record into TEST that aborts
+   *   <li>The transaction successfully retries
    * </ol>
    */
   @Test
@@ -1079,14 +1098,15 @@ public class ITTransactionRetryTest extends ITAbstractSpannerTest {
 
   /**
    * Test that shows the following:
+   *
    * <ol>
-   * <li>Insert two records into table TEST and commit.</li>
-   * <li>Try to query the non-existing table FOO. This will lead to an exception.</li>
-   * <li>Query all the records from the TEST table and consume the result set.</li>
-   * <li>Open another connection and create the table FOO.</li>
-   * <li>Insert another record into TEST that aborts.</li>
-   * <li>The transaction is internally retried. The retry fails as the SELECT statement on FOO will
-   * now succeed.</li>
+   *   <li>Insert two records into table TEST and commit.
+   *   <li>Try to query the non-existing table FOO. This will lead to an exception.
+   *   <li>Query all the records from the TEST table and consume the result set.
+   *   <li>Open another connection and create the table FOO.
+   *   <li>Insert another record into TEST that aborts.
+   *   <li>The transaction is internally retried. The retry fails as the SELECT statement on FOO
+   *       will now succeed.
    * </ol>
    */
   @Test
@@ -1147,14 +1167,15 @@ public class ITTransactionRetryTest extends ITAbstractSpannerTest {
 
   /**
    * Test that shows the following:
+   *
    * <ol>
-   * <li>Insert two records into table TEST and commit.</li>
-   * <li>Try to insert a record in the non-existing table FOO. This will lead to an exception.</li>
-   * <li>Query all the records from the TEST table and consume the result set.</li>
-   * <li>Open another connection and create the table FOO.</li>
-   * <li>Insert another record into TEST that aborts.</li>
-   * <li>The transaction is internally retried. The retry fails as the insert statement on FOO will
-   * now succeed.</li>
+   *   <li>Insert two records into table TEST and commit.
+   *   <li>Try to insert a record in the non-existing table FOO. This will lead to an exception.
+   *   <li>Query all the records from the TEST table and consume the result set.
+   *   <li>Open another connection and create the table FOO.
+   *   <li>Insert another record into TEST that aborts.
+   *   <li>The transaction is internally retried. The retry fails as the insert statement on FOO
+   *       will now succeed.
    * </ol>
    */
   @Test
@@ -1213,15 +1234,16 @@ public class ITTransactionRetryTest extends ITAbstractSpannerTest {
 
   /**
    * Test that shows the following:
+   *
    * <ol>
-   * <li>Insert two records into table TEST and commit.</li>
-   * <li>Create the table FOO and insert a test record.</li>
-   * <li>Query the table FOO.</li>
-   * <li>Query all the records from the TEST table and consume the result set.</li>
-   * <li>Open another connection and drop the table FOO.</li>
-   * <li>Insert another record into TEST that aborts.</li>
-   * <li>The transaction is internally retried. The retry fails as the SELECT statement on FOO will
-   * now fail.</li>
+   *   <li>Insert two records into table TEST and commit.
+   *   <li>Create the table FOO and insert a test record.
+   *   <li>Query the table FOO.
+   *   <li>Query all the records from the TEST table and consume the result set.
+   *   <li>Open another connection and drop the table FOO.
+   *   <li>Insert another record into TEST that aborts.
+   *   <li>The transaction is internally retried. The retry fails as the SELECT statement on FOO
+   *       will now fail.
    * </ol>
    */
   @Test
@@ -1237,8 +1259,8 @@ public class ITTransactionRetryTest extends ITAbstractSpannerTest {
     // CREATE FOO
     try (ITConnection connection2 = createConnection()) {
       connection2.setAutocommit(true);
-      connection2
-          .execute(Statement.of("CREATE TABLE FOO (ID INT64, NAME STRING(100)) PRIMARY KEY (ID)"));
+      connection2.execute(
+          Statement.of("CREATE TABLE FOO (ID INT64, NAME STRING(100)) PRIMARY KEY (ID)"));
       connection2.executeUpdate(Statement.of("INSERT INTO FOO (ID, NAME) VALUES (1, 'test 1')"));
     }
     try (ITConnection connection =
@@ -1276,15 +1298,16 @@ public class ITTransactionRetryTest extends ITAbstractSpannerTest {
 
   /**
    * Test that shows the following:
+   *
    * <ol>
-   * <li>Insert two records into table TEST and commit.</li>
-   * <li>Create the table FOO and insert a test record and commit.</li>
-   * <li>Insert another record into the table FOO.</li>
-   * <li>Query all the records from the TEST table and consume the result set.</li>
-   * <li>Open another connection and drop the table FOO.</li>
-   * <li>Insert another record into TEST that aborts.</li>
-   * <li>The transaction is internally retried. The retry fails as the INSERT statement on FOO will
-   * now fail.</li>
+   *   <li>Insert two records into table TEST and commit.
+   *   <li>Create the table FOO and insert a test record and commit.
+   *   <li>Insert another record into the table FOO.
+   *   <li>Query all the records from the TEST table and consume the result set.
+   *   <li>Open another connection and drop the table FOO.
+   *   <li>Insert another record into TEST that aborts.
+   *   <li>The transaction is internally retried. The retry fails as the INSERT statement on FOO
+   *       will now fail.
    * </ol>
    */
   @Test
@@ -1300,8 +1323,8 @@ public class ITTransactionRetryTest extends ITAbstractSpannerTest {
     // CREATE FOO
     try (ITConnection connection2 = createConnection()) {
       connection2.setAutocommit(true);
-      connection2
-          .execute(Statement.of("CREATE TABLE FOO (ID INT64, NAME STRING(100)) PRIMARY KEY (ID)"));
+      connection2.execute(
+          Statement.of("CREATE TABLE FOO (ID INT64, NAME STRING(100)) PRIMARY KEY (ID)"));
       connection2.executeUpdate(Statement.of("INSERT INTO FOO (ID, NAME) VALUES (1, 'test 1')"));
     }
     try (ITConnection connection =
@@ -1336,15 +1359,16 @@ public class ITTransactionRetryTest extends ITAbstractSpannerTest {
 
   /**
    * Test that shows the following:
+   *
    * <ol>
-   * <li>Insert two records into table TEST and commit.</li>
-   * <li>Create the table FOO and insert two test records and commit.</li>
-   * <li>Query all the records from the TEST table and consume the result set.</li>
-   * <li>Query all the records from the FOO table and consume only part of the result set.</li>
-   * <li>Open another connection and drop the table FOO.</li>
-   * <li>Try to consume the rest of the FOO result set. This aborts.</li>
-   * <li>The transaction is internally retried. The retry fails as the SELECT statement on FOO will
-   * now fail.</li>
+   *   <li>Insert two records into table TEST and commit.
+   *   <li>Create the table FOO and insert two test records and commit.
+   *   <li>Query all the records from the TEST table and consume the result set.
+   *   <li>Query all the records from the FOO table and consume only part of the result set.
+   *   <li>Open another connection and drop the table FOO.
+   *   <li>Try to consume the rest of the FOO result set. This aborts.
+   *   <li>The transaction is internally retried. The retry fails as the SELECT statement on FOO
+   *       will now fail.
    * </ol>
    */
   @Test
@@ -1360,8 +1384,8 @@ public class ITTransactionRetryTest extends ITAbstractSpannerTest {
     // CREATE FOO
     try (ITConnection connection2 = createConnection()) {
       connection2.setAutocommit(true);
-      connection2
-          .execute(Statement.of("CREATE TABLE FOO (ID INT64, NAME STRING(100)) PRIMARY KEY (ID)"));
+      connection2.execute(
+          Statement.of("CREATE TABLE FOO (ID INT64, NAME STRING(100)) PRIMARY KEY (ID)"));
       connection2.executeUpdate(Statement.of("INSERT INTO FOO (ID, NAME) VALUES (1, 'test 1')"));
       connection2.executeUpdate(Statement.of("INSERT INTO FOO (ID, NAME) VALUES (2, 'test 2')"));
     }
@@ -1426,13 +1450,16 @@ public class ITTransactionRetryTest extends ITAbstractSpannerTest {
       // Do an update that will abort and retry.
       interceptor.setProbability(1.0);
       interceptor.setOnlyInjectOnce(true);
-      connection
-          .executeUpdate(Statement.newBuilder("UPDATE TEST SET NAME='updated' WHERE ID<@max_id")
-              .bind("max_id").to(UPDATED_RECORDS).build());
+      connection.executeUpdate(
+          Statement.newBuilder("UPDATE TEST SET NAME='updated' WHERE ID<@max_id")
+              .bind("max_id")
+              .to(UPDATED_RECORDS)
+              .build());
       connection.commit();
       // verify that the update succeeded
-      try (ResultSet rs = connection
-          .executeQuery(Statement.of("SELECT COUNT(*) AS C FROM TEST WHERE NAME='updated'"))) {
+      try (ResultSet rs =
+          connection.executeQuery(
+              Statement.of("SELECT COUNT(*) AS C FROM TEST WHERE NAME='updated'"))) {
         assertThat(rs.next(), is(true));
         assertThat(rs.getLong("C"), is(equalTo(UPDATED_RECORDS)));
         assertThat(rs.next(), is(false));
@@ -1471,13 +1498,16 @@ public class ITTransactionRetryTest extends ITAbstractSpannerTest {
       }
       // increase the abort rate to 50%
       interceptor.setProbability(0.50D);
-      connection
-          .executeUpdate(Statement.newBuilder("UPDATE TEST SET NAME='updated' WHERE ID<@max_id")
-              .bind("max_id").to(UPDATED_RECORDS).build());
+      connection.executeUpdate(
+          Statement.newBuilder("UPDATE TEST SET NAME='updated' WHERE ID<@max_id")
+              .bind("max_id")
+              .to(UPDATED_RECORDS)
+              .build());
       connection.commit();
       // verify that the update succeeded
-      try (ResultSet rs = connection
-          .executeQuery(Statement.of("SELECT COUNT(*) AS C FROM TEST WHERE NAME='updated'"))) {
+      try (ResultSet rs =
+          connection.executeQuery(
+              Statement.of("SELECT COUNT(*) AS C FROM TEST WHERE NAME='updated'"))) {
         assertThat(rs.next(), is(true));
         assertThat(rs.getLong("C"), is(equalTo(UPDATED_RECORDS)));
         assertThat(rs.next(), is(false));
@@ -1491,8 +1521,9 @@ public class ITTransactionRetryTest extends ITAbstractSpannerTest {
     logger.fine("Total number of retries finished: " + RETRY_STATISTICS.totalRetryAttemptsFinished);
     logger.fine("Total number of retries successful: " + RETRY_STATISTICS.totalSuccessfulRetries);
     logger.fine("Total number of retries aborted: " + RETRY_STATISTICS.totalNestedAborts);
-    logger.fine("Total number of times the max retry count was exceeded: "
-        + RETRY_STATISTICS.totalMaxAttemptsExceeded);
+    logger.fine(
+        "Total number of times the max retry count was exceeded: "
+            + RETRY_STATISTICS.totalMaxAttemptsExceeded);
   }
 
   @Test
@@ -1506,8 +1537,8 @@ public class ITTransactionRetryTest extends ITAbstractSpannerTest {
         // included in a retry of the above query, but this has not yet been 'seen' by the user,
         // hence is not a problem for retrying the transaction.
         try (ITConnection connection2 = createConnection()) {
-          connection2
-              .executeUpdate(Statement.of("INSERT INTO TEST (ID, NAME) VALUES (1, 'test 1')"));
+          connection2.executeUpdate(
+              Statement.of("INSERT INTO TEST (ID, NAME) VALUES (1, 'test 1')"));
           connection2.commit();
         }
         // Now try to consume the result set, but the call to next() will throw an AbortedException.
@@ -1530,8 +1561,8 @@ public class ITTransactionRetryTest extends ITAbstractSpannerTest {
         // Open a new connection and transaction and do an insert. This insert will be
         // included in a retry of the above query, and this time it will cause the retry to fail.
         try (ITConnection connection2 = createConnection()) {
-          connection2
-              .executeUpdate(Statement.of("INSERT INTO TEST (ID, NAME) VALUES (1, 'test 1')"));
+          connection2.executeUpdate(
+              Statement.of("INSERT INTO TEST (ID, NAME) VALUES (1, 'test 1')"));
           connection2.commit();
         }
         // this time the abort will occur on the call to commit()

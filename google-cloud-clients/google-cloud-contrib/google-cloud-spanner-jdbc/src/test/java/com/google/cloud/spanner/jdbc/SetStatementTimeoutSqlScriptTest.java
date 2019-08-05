@@ -16,13 +16,12 @@
 
 package com.google.cloud.spanner.jdbc;
 
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
-import com.google.cloud.spanner.jdbc.ConnectionOptions;
 import com.google.cloud.spanner.jdbc.AbstractSqlScriptVerifier.GenericConnection;
 import com.google.cloud.spanner.jdbc.AbstractSqlScriptVerifier.GenericConnectionProvider;
 import com.google.cloud.spanner.jdbc.SqlScriptVerifier.SpannerGenericConnection;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
 
 @RunWith(JUnit4.class)
 public class SetStatementTimeoutSqlScriptTest {
@@ -30,8 +29,9 @@ public class SetStatementTimeoutSqlScriptTest {
   static class TestConnectionProvider implements GenericConnectionProvider {
     @Override
     public GenericConnection getConnection() {
-      return SpannerGenericConnection.of(ConnectionImplTest
-          .createConnection(ConnectionOptions.newBuilder().setUri(ConnectionImplTest.URI).build()));
+      return SpannerGenericConnection.of(
+          ConnectionImplTest.createConnection(
+              ConnectionOptions.newBuilder().setUri(ConnectionImplTest.URI).build()));
     }
   }
 
@@ -40,5 +40,4 @@ public class SetStatementTimeoutSqlScriptTest {
     SqlScriptVerifier verifier = new SqlScriptVerifier(new TestConnectionProvider());
     verifier.verifyStatementsInFile("SetStatementTimeoutTest.sql", getClass(), false);
   }
-
 }

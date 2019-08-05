@@ -41,7 +41,8 @@ class ReadOnlyStalenessUtil {
   static Timestamp parseRfc3339(String str) throws SpannerException {
     try {
       SecondsAndNanos secondsAndNanos = DateTime.parseRfc3339ToSecondsAndNanos(str);
-      return Timestamp.ofTimeSecondsAndNanos(secondsAndNanos.getSeconds(), secondsAndNanos.getNanos());
+      return Timestamp.ofTimeSecondsAndNanos(
+          secondsAndNanos.getSeconds(), secondsAndNanos.getNanos());
     } catch (NumberFormatException e) {
       throw SpannerExceptionFactory.newSpannerException(
           ErrorCode.INVALID_ARGUMENT, String.format("Invalid timestamp: %s", str), e);

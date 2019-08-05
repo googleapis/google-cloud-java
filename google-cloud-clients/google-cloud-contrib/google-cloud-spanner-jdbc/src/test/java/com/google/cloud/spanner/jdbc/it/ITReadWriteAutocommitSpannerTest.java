@@ -21,6 +21,16 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.fail;
+
+import com.google.cloud.spanner.ErrorCode;
+import com.google.cloud.spanner.IntegrationTest;
+import com.google.cloud.spanner.Mutation;
+import com.google.cloud.spanner.ResultSet;
+import com.google.cloud.spanner.SpannerBatchUpdateException;
+import com.google.cloud.spanner.SpannerException;
+import com.google.cloud.spanner.Statement;
+import com.google.cloud.spanner.jdbc.ITAbstractSpannerTest;
+import com.google.cloud.spanner.jdbc.SqlScriptVerifier;
 import java.util.Arrays;
 import java.util.concurrent.TimeUnit;
 import org.junit.FixMethodOrder;
@@ -31,23 +41,13 @@ import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.junit.runners.MethodSorters;
-import com.google.cloud.spanner.ErrorCode;
-import com.google.cloud.spanner.IntegrationTest;
-import com.google.cloud.spanner.Mutation;
-import com.google.cloud.spanner.ResultSet;
-import com.google.cloud.spanner.SpannerBatchUpdateException;
-import com.google.cloud.spanner.SpannerException;
-import com.google.cloud.spanner.Statement;
-import com.google.cloud.spanner.jdbc.ITAbstractSpannerTest;
-import com.google.cloud.spanner.jdbc.SqlScriptVerifier;
 
 @Category(IntegrationTest.class)
 @RunWith(JUnit4.class)
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class ITReadWriteAutocommitSpannerTest extends ITAbstractSpannerTest {
 
-  @Rule
-  public ExpectedException exception = ExpectedException.none();
+  @Rule public ExpectedException exception = ExpectedException.none();
 
   @Override
   protected void appendConnectionUri(StringBuilder uri) {
@@ -62,8 +62,8 @@ public class ITReadWriteAutocommitSpannerTest extends ITAbstractSpannerTest {
   @Test
   public void test01_SqlScript() throws Exception {
     SqlScriptVerifier verifier = new SqlScriptVerifier(new ITConnectionProvider());
-    verifier.verifyStatementsInFile("ITReadWriteAutocommitSpannerTest.sql", SqlScriptVerifier.class,
-        true);
+    verifier.verifyStatementsInFile(
+        "ITReadWriteAutocommitSpannerTest.sql", SqlScriptVerifier.class, true);
   }
 
   @Test
@@ -79,8 +79,10 @@ public class ITReadWriteAutocommitSpannerTest extends ITAbstractSpannerTest {
   public void test03_MultipleStatements_WithTimeouts() throws InterruptedException {
     try (ITConnection connection = createConnection()) {
       // do an insert that should succeed
-      assertThat(connection.executeUpdate(
-          Statement.of("INSERT INTO TEST (ID, NAME) VALUES (1000, 'test')")), is(equalTo(1L)));
+      assertThat(
+          connection.executeUpdate(
+              Statement.of("INSERT INTO TEST (ID, NAME) VALUES (1000, 'test')")),
+          is(equalTo(1L)));
       // check that the insert succeeded
       try (ResultSet rs =
           connection.executeQuery(Statement.of("SELECT * FROM TEST WHERE ID=1000"))) {
@@ -114,22 +116,25 @@ public class ITReadWriteAutocommitSpannerTest extends ITAbstractSpannerTest {
   @Test
   public void test04_BatchUpdate() {
     try (ITConnection connection = createConnection()) {
-      long[] updateCounts = connection.executeBatchUpdate(
-          Arrays.asList(Statement.of("INSERT INTO TEST (ID, NAME) VALUES (10, 'Batch value 1')"),
-              Statement.of("INSERT INTO TEST (ID, NAME) VALUES (11, 'Batch value 2')"),
-              Statement.of("INSERT INTO TEST (ID, NAME) VALUES (12, 'Batch value 3')"),
-              Statement.of("INSERT INTO TEST (ID, NAME) VALUES (13, 'Batch value 4')"),
-              Statement.of("INSERT INTO TEST (ID, NAME) VALUES (14, 'Batch value 5')"),
-              Statement.of("INSERT INTO TEST (ID, NAME) VALUES (15, 'Batch value 6')"),
-              Statement.of("INSERT INTO TEST (ID, NAME) VALUES (16, 'Batch value 7')"),
-              Statement.of("INSERT INTO TEST (ID, NAME) VALUES (17, 'Batch value 8')"),
-              Statement.of("INSERT INTO TEST (ID, NAME) VALUES (18, 'Batch value 9')"),
-              Statement.of("INSERT INTO TEST (ID, NAME) VALUES (19, 'Batch value 10')"),
-              Statement.of("INSERT INTO TEST (ID, NAME) VALUES (20, 'Batch value 11')")));
-      assertThat(updateCounts,
-          is(equalTo(new long[] {1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L})));
-      try (ResultSet rs = connection
-          .executeQuery(Statement.of("SELECT COUNT(*) FROM TEST WHERE ID>=10 AND ID<=20"))) {
+      long[] updateCounts =
+          connection.executeBatchUpdate(
+              Arrays.asList(
+                  Statement.of("INSERT INTO TEST (ID, NAME) VALUES (10, 'Batch value 1')"),
+                  Statement.of("INSERT INTO TEST (ID, NAME) VALUES (11, 'Batch value 2')"),
+                  Statement.of("INSERT INTO TEST (ID, NAME) VALUES (12, 'Batch value 3')"),
+                  Statement.of("INSERT INTO TEST (ID, NAME) VALUES (13, 'Batch value 4')"),
+                  Statement.of("INSERT INTO TEST (ID, NAME) VALUES (14, 'Batch value 5')"),
+                  Statement.of("INSERT INTO TEST (ID, NAME) VALUES (15, 'Batch value 6')"),
+                  Statement.of("INSERT INTO TEST (ID, NAME) VALUES (16, 'Batch value 7')"),
+                  Statement.of("INSERT INTO TEST (ID, NAME) VALUES (17, 'Batch value 8')"),
+                  Statement.of("INSERT INTO TEST (ID, NAME) VALUES (18, 'Batch value 9')"),
+                  Statement.of("INSERT INTO TEST (ID, NAME) VALUES (19, 'Batch value 10')"),
+                  Statement.of("INSERT INTO TEST (ID, NAME) VALUES (20, 'Batch value 11')")));
+      assertThat(
+          updateCounts, is(equalTo(new long[] {1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L})));
+      try (ResultSet rs =
+          connection.executeQuery(
+              Statement.of("SELECT COUNT(*) FROM TEST WHERE ID>=10 AND ID<=20"))) {
         assertThat(rs.next(), is(true));
         assertThat(rs.getLong(0), is(equalTo(11L)));
       }
@@ -138,10 +143,12 @@ public class ITReadWriteAutocommitSpannerTest extends ITAbstractSpannerTest {
 
   @Test
   public void test05_BatchUpdateWithException() {
-    try (ITConnection con1 = createConnection(); ITConnection con2 = createConnection()) {
+    try (ITConnection con1 = createConnection();
+        ITConnection con2 = createConnection()) {
       try {
         con1.executeBatchUpdate(
-            Arrays.asList(Statement.of("INSERT INTO TEST (ID, NAME) VALUES (21, 'Batch value 1')"),
+            Arrays.asList(
+                Statement.of("INSERT INTO TEST (ID, NAME) VALUES (21, 'Batch value 1')"),
                 Statement.of("INSERT INTO TEST (ID, NAME) VALUES (22, 'Batch value 2')"),
                 Statement.of("INSERT INTO TEST (ID, NAME) VALUES (23, 'Batch value 3')"),
                 Statement.of("INSERT INTO TEST (ID, NAME) VALUES (24, 'Batch value 4')"),

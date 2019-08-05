@@ -22,24 +22,7 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.nullValue;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.fail;
-import java.io.IOException;
-import java.net.InetSocketAddress;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.rules.ExpectedException;
-import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized;
-import org.junit.runners.Parameterized.Parameter;
-import org.junit.runners.Parameterized.Parameters;
+
 import com.google.cloud.Timestamp;
 import com.google.cloud.spanner.ErrorCode;
 import com.google.cloud.spanner.MockSpannerServiceImpl;
@@ -59,6 +42,24 @@ import com.google.spanner.v1.TypeCode;
 import io.grpc.Server;
 import io.grpc.Status;
 import io.grpc.netty.shaded.io.grpc.netty.NettyServerBuilder;
+import java.io.IOException;
+import java.net.InetSocketAddress;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
+import org.junit.Rule;
+import org.junit.Test;
+import org.junit.rules.ExpectedException;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
+import org.junit.runners.Parameterized.Parameter;
+import org.junit.runners.Parameterized.Parameters;
 
 @RunWith(Parameterized.class)
 public class JdbcAbortedTransactionTest {
@@ -69,8 +70,8 @@ public class JdbcAbortedTransactionTest {
     public void retryStarting(Timestamp transactionStarted, long transactionId, int retryAttempt) {}
 
     @Override
-    public void retryFinished(Timestamp transactionStarted, long transactionId, int retryAttempt,
-        RetryResult result) {
+    public void retryFinished(
+        Timestamp transactionStarted, long transactionId, int retryAttempt, RetryResult result) {
       retriesFinished++;
     }
   }
@@ -78,16 +79,23 @@ public class JdbcAbortedTransactionTest {
   private static final Statement SELECT1 = Statement.of("SELECT 1 AS COL1");
   private static final ResultSetMetadata SELECT1_METADATA =
       ResultSetMetadata.newBuilder()
-          .setRowType(StructType.newBuilder()
-              .addFields(Field.newBuilder().setName("COL1")
-                  .setType(Type.newBuilder().setCode(TypeCode.INT64).build()).build())
-              .build())
+          .setRowType(
+              StructType.newBuilder()
+                  .addFields(
+                      Field.newBuilder()
+                          .setName("COL1")
+                          .setType(Type.newBuilder().setCode(TypeCode.INT64).build())
+                          .build())
+                  .build())
           .build();
   private static final com.google.spanner.v1.ResultSet SELECT1_RESULTSET =
-      com.google.spanner.v1.ResultSet
-          .newBuilder().addRows(ListValue.newBuilder()
-              .addValues(Value.newBuilder().setStringValue("1").build()).build())
-          .setMetadata(SELECT1_METADATA).build();
+      com.google.spanner.v1.ResultSet.newBuilder()
+          .addRows(
+              ListValue.newBuilder()
+                  .addValues(Value.newBuilder().setStringValue("1").build())
+                  .build())
+          .setMetadata(SELECT1_METADATA)
+          .build();
   private static final Statement SELECT_RANDOM = Statement.of("SELECT * FROM RANDOM");
   private static final Statement UPDATE_STATEMENT =
       Statement.of("UPDATE FOO SET BAR=1 WHERE BAZ=2");
@@ -101,8 +109,8 @@ public class JdbcAbortedTransactionTest {
 
   @Parameter(0)
   public boolean retryAbortsInternally;
-  @Rule
-  public ExpectedException expected = ExpectedException.none();
+
+  @Rule public ExpectedException expected = ExpectedException.none();
 
   @Parameters(name = "retryAbortsInternally = {0}")
   public static Collection<Object[]> data() {
@@ -121,8 +129,13 @@ public class JdbcAbortedTransactionTest {
     mockInstanceAdmin = new MockInstanceAdminImpl();
     mockDatabaseAdmin = new MockDatabaseAdminImpl();
     address = new InetSocketAddress("localhost", 0);
-    server = NettyServerBuilder.forAddress(address).addService(mockSpanner)
-        .addService(mockInstanceAdmin).addService(mockDatabaseAdmin).build().start();
+    server =
+        NettyServerBuilder.forAddress(address)
+            .addService(mockSpanner)
+            .addService(mockInstanceAdmin)
+            .addService(mockDatabaseAdmin)
+            .build()
+            .start();
   }
 
   @AfterClass
@@ -146,8 +159,12 @@ public class JdbcAbortedTransactionTest {
   }
 
   private int getRetryCount(Connection connection) throws SQLException {
-    return ((TransactionRetryCounter) connection.unwrap(CloudSpannerJdbcConnection.class)
-        .getTransactionRetryListeners().next()).retriesFinished;
+    return ((TransactionRetryCounter)
+            connection
+                .unwrap(CloudSpannerJdbcConnection.class)
+                .getTransactionRetryListeners()
+                .next())
+        .retriesFinished;
   }
 
   @Test
@@ -254,8 +271,7 @@ public class JdbcAbortedTransactionTest {
       mockSpanner.putStatementResult(
           StatementResult.query(SELECT_RANDOM, new RandomResultSetGenerator(25).generate()));
       try (ResultSet rs = connection.createStatement().executeQuery(SELECT_RANDOM.getSql())) {
-        while (rs.next()) {
-        }
+        while (rs.next()) {}
       }
       // Set a new random answer that will be returned during the retry.
       mockSpanner.putStatementResult(
@@ -274,8 +290,10 @@ public class JdbcAbortedTransactionTest {
       expected.expect(JdbcAbortedException.class);
     }
     final String sql = "UPDATE SOMETHING SET OTHER=1";
-    mockSpanner.putStatementResult(StatementResult.exception(Statement.of(sql),
-        Status.INVALID_ARGUMENT.withDescription("test").asRuntimeException()));
+    mockSpanner.putStatementResult(
+        StatementResult.exception(
+            Statement.of(sql),
+            Status.INVALID_ARGUMENT.withDescription("test").asRuntimeException()));
     try (java.sql.Connection connection = createConnection()) {
       connection.setAutoCommit(false);
       try (ResultSet rs = connection.createStatement().executeQuery(SELECT1.getSql())) {
@@ -309,13 +327,16 @@ public class JdbcAbortedTransactionTest {
       connection.createStatement().executeUpdate(sql);
       // Set an error as response for the same update statement that will be used during the retry.
       // This will cause the retry to fail.
-      mockSpanner.putStatementResult(StatementResult.exception(Statement.of(sql),
-          Status.INVALID_ARGUMENT.withDescription("test").asRuntimeException()));
+      mockSpanner.putStatementResult(
+          StatementResult.exception(
+              Statement.of(sql),
+              Status.INVALID_ARGUMENT.withDescription("test").asRuntimeException()));
       mockSpanner.abortAllTransactions();
       connection.commit();
       fail("missing expected aborted exception");
     } catch (JdbcAbortedDueToConcurrentModificationException e) {
-      assertThat(e.getDatabaseErrorDuringRetry().getErrorCode(), is(equalTo(ErrorCode.INVALID_ARGUMENT)));
+      assertThat(
+          e.getDatabaseErrorDuringRetry().getErrorCode(), is(equalTo(ErrorCode.INVALID_ARGUMENT)));
       assertThat(e.getDatabaseErrorDuringRetry().getMessage(), endsWith("test"));
       throw e;
     }
@@ -329,8 +350,10 @@ public class JdbcAbortedTransactionTest {
       expected.expect(JdbcAbortedException.class);
     }
     final String sql = "UPDATE SOMETHING SET OTHER=1";
-    mockSpanner.putStatementResult(StatementResult.exception(Statement.of(sql),
-        Status.INVALID_ARGUMENT.withDescription("test").asRuntimeException()));
+    mockSpanner.putStatementResult(
+        StatementResult.exception(
+            Statement.of(sql),
+            Status.INVALID_ARGUMENT.withDescription("test").asRuntimeException()));
     try (java.sql.Connection connection = createConnection()) {
       connection.setAutoCommit(false);
       try (ResultSet rs = connection.createStatement().executeQuery(SELECT1.getSql())) {
@@ -354,5 +377,4 @@ public class JdbcAbortedTransactionTest {
       throw e;
     }
   }
-
 }

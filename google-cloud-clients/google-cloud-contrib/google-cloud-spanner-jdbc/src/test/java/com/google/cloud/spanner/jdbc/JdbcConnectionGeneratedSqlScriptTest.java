@@ -18,12 +18,13 @@ package com.google.cloud.spanner.jdbc;
 
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
+
 import com.google.cloud.spanner.jdbc.AbstractSqlScriptVerifier.GenericConnection;
 import com.google.cloud.spanner.jdbc.AbstractSqlScriptVerifier.GenericConnectionProvider;
 import com.google.cloud.spanner.jdbc.JdbcSqlScriptVerifier.JdbcGenericConnection;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
 
 /**
  * This test executes a SQL script that has been generated from the log of all the subclasses of
@@ -42,9 +43,10 @@ public class JdbcConnectionGeneratedSqlScriptTest {
       com.google.cloud.spanner.jdbc.Connection spannerConnection =
           ConnectionImplTest.createConnection(options);
       when(options.getConnection()).thenReturn(spannerConnection);
-      JdbcConnection connection = new JdbcConnection(
-          "jdbc:cloudspanner://localhost/projects/project/instances/instance/databases/database;credentialsUrl=url",
-          options);
+      JdbcConnection connection =
+          new JdbcConnection(
+              "jdbc:cloudspanner://localhost/projects/project/instances/instance/databases/database;credentialsUrl=url",
+              options);
       JdbcGenericConnection res = JdbcGenericConnection.of(connection);
       res.setStripCommentsBeforeExecute(true);
       return res;
@@ -54,8 +56,7 @@ public class JdbcConnectionGeneratedSqlScriptTest {
   @Test
   public void testGeneratedScript() throws Exception {
     JdbcSqlScriptVerifier verifier = new JdbcSqlScriptVerifier(new TestConnectionProvider());
-    verifier.verifyStatementsInFile("ConnectionImplGeneratedSqlScriptTest.sql",
-        SqlScriptVerifier.class, false);
+    verifier.verifyStatementsInFile(
+        "ConnectionImplGeneratedSqlScriptTest.sql", SqlScriptVerifier.class, false);
   }
-
 }

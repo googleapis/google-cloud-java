@@ -23,11 +23,7 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
-import org.mockito.invocation.InvocationOnMock;
-import org.mockito.stubbing.Answer;
+
 import com.google.cloud.NoCredentials;
 import com.google.cloud.spanner.DatabaseClient;
 import com.google.cloud.spanner.Spanner;
@@ -36,11 +32,11 @@ import com.google.cloud.spanner.TransactionContext;
 import com.google.cloud.spanner.TransactionManager;
 import com.google.cloud.spanner.TransactionRunner;
 import com.google.cloud.spanner.TransactionRunner.TransactionCallable;
-import com.google.cloud.spanner.jdbc.Connection;
-import com.google.cloud.spanner.jdbc.ConnectionImpl;
-import com.google.cloud.spanner.jdbc.ConnectionOptions;
-import com.google.cloud.spanner.jdbc.DdlClient;
-import com.google.cloud.spanner.jdbc.SpannerPool;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
+import org.mockito.invocation.InvocationOnMock;
+import org.mockito.stubbing.Answer;
 
 @RunWith(JUnit4.class)
 public class AutocommitDmlModeTest {
@@ -62,14 +58,16 @@ public class AutocommitDmlModeTest {
     DdlClient ddlClient = mock(DdlClient.class);
     TransactionRunner txRunner = mock(TransactionRunner.class);
     when(dbClient.readWriteTransaction()).thenReturn(txRunner);
-    when(txRunner.run(any(TransactionCallable.class))).thenAnswer(new Answer<Long>() {
-      @Override
-      public Long answer(InvocationOnMock invocation) throws Throwable {
-        TransactionCallable<Long> callable =
-            (TransactionCallable<Long>) invocation.getArguments()[0];
-        return callable.run(txContext);
-      }
-    });
+    when(txRunner.run(any(TransactionCallable.class)))
+        .thenAnswer(
+            new Answer<Long>() {
+              @Override
+              public Long answer(InvocationOnMock invocation) throws Throwable {
+                TransactionCallable<Long> callable =
+                    (TransactionCallable<Long>) invocation.getArguments()[0];
+                return callable.run(txContext);
+              }
+            });
 
     TransactionManager txManager = mock(TransactionManager.class);
     when(txManager.begin()).thenReturn(txContext);
@@ -80,8 +78,12 @@ public class AutocommitDmlModeTest {
 
   @Test
   public void testAutocommitDmlModeTransactional() {
-    try (Connection connection = createConnection(ConnectionOptions.newBuilder()
-        .setCredentials(NoCredentials.getInstance()).setUri(URI).build())) {
+    try (Connection connection =
+        createConnection(
+            ConnectionOptions.newBuilder()
+                .setCredentials(NoCredentials.getInstance())
+                .setUri(URI)
+                .build())) {
       assertThat(connection.isAutocommit(), is(true));
       assertThat(connection.isReadOnly(), is(false));
       assertThat(connection.getAutocommitDmlMode(), is(AutocommitDmlMode.TRANSACTIONAL));
@@ -94,8 +96,12 @@ public class AutocommitDmlModeTest {
 
   @Test
   public void testAutocommitDmlModePartitioned() {
-    try (Connection connection = createConnection(ConnectionOptions.newBuilder()
-        .setCredentials(NoCredentials.getInstance()).setUri(URI).build())) {
+    try (Connection connection =
+        createConnection(
+            ConnectionOptions.newBuilder()
+                .setCredentials(NoCredentials.getInstance())
+                .setUri(URI)
+                .build())) {
       assertThat(connection.isAutocommit(), is(true));
       assertThat(connection.isReadOnly(), is(false));
       connection.setAutocommitDmlMode(AutocommitDmlMode.PARTITIONED_NON_ATOMIC);
@@ -106,5 +112,4 @@ public class AutocommitDmlModeTest {
       verify(dbClient).executePartitionedUpdate(Statement.of(UPDATE));
     }
   }
-
 }

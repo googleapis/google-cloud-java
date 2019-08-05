@@ -195,8 +195,11 @@ class DdlBatch extends AbstractBaseUnitOfWork {
                   SpannerException spannerException = extractSpannerCause(e);
                   long[] updateCounts = extractUpdateCounts(operation.getMetadata().get());
                   throw SpannerExceptionFactory.newSpannerBatchUpdateException(
-                      spannerException == null ? ErrorCode.UNKNOWN : spannerException.getErrorCode(),
-                      e.getMessage(), updateCounts);
+                      spannerException == null
+                          ? ErrorCode.UNKNOWN
+                          : spannerException.getErrorCode(),
+                      e.getMessage(),
+                      updateCounts);
                 } catch (InterruptedException e) {
                   long[] updateCounts = extractUpdateCounts(operation.getMetadata().get());
                   throw SpannerExceptionFactory.newSpannerBatchUpdateException(
