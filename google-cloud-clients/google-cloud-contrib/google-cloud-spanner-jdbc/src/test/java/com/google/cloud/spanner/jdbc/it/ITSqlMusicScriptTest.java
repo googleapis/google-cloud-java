@@ -59,32 +59,63 @@ public class ITSqlMusicScriptTest extends ITAbstractSpannerTest {
   public void test02_RunAbortedTest() {
     final long SINGER_ID = 2L;
     final long VENUE_ID = 68L;
+    final long NUMBER_OF_SINGERS = 30L;
+    final long NUMBER_OF_ALBUMS = 60L;
+    final long NUMBER_OF_SONGS = 149L;
+    final long NUMBER_OF_CONCERTS = 100L;
     long numberOfSongs = 0L;
     AbortInterceptor interceptor = new AbortInterceptor(0.0D);
     try (ITConnection connection = createConnection(interceptor)) {
       connection.setAutocommit(false);
       connection.setRetryAbortsInternally(true);
-      // read all data from the different music tables in the transaction
-      try (ResultSet rs = connection.executeQuery(Statement.of("SELECT * FROM Singers"))) {
+      // Read all data from the different music tables in the transaction
+      // The previous test deleted the first two Singers records.
+      long expectedId = 3L;
+      try (ResultSet rs = connection.executeQuery(Statement.of("SELECT * FROM Singers ORDER BY SingerId"))) {
         while (rs.next()) {
-          // do nothing
+          assertThat(rs.getLong("SingerId"), is(equalTo(expectedId)));
+          expectedId++;
         }
       }
-      try (ResultSet rs = connection.executeQuery(Statement.of("SELECT * FROM Albums"))) {
+      assertThat(expectedId, is(equalTo(NUMBER_OF_SINGERS + 1L)));
+      expectedId = 3L;
+      try (ResultSet rs = connection.executeQuery(Statement.of("SELECT * FROM Albums ORDER BY AlbumId"))) {
         while (rs.next()) {
-          // do nothing
+          assertThat(rs.getLong("AlbumId"), is(equalTo(expectedId)));
+          expectedId++;
+          // 31 and 32 were deleted by the first test script.
+          if(expectedId == 31L || expectedId == 32L) {
+            expectedId = 33L;
+          }
         }
       }
-      try (ResultSet rs = connection.executeQuery(Statement.of("SELECT * FROM Songs"))) {
+      assertThat(expectedId, is(equalTo(NUMBER_OF_ALBUMS + 1L)));
+      expectedId = 1L;
+      try (ResultSet rs = connection.executeQuery(Statement.of("SELECT * FROM Songs ORDER BY TrackId"))) {
         while (rs.next()) {
+          assertThat(rs.getLong("TrackId"), is(equalTo(expectedId)));
+          expectedId++;
           numberOfSongs++;
+          // 40, 64, 76, 86 and 96 were deleted by the first test script.
+          if(expectedId == 40L
+              || expectedId == 64L
+              || expectedId == 76L
+              || expectedId == 86L
+              || expectedId == 96L) {
+            expectedId++;
+          }
         }
       }
-      try (ResultSet rs = connection.executeQuery(Statement.of("SELECT * FROM Concerts"))) {
+      assertThat(expectedId, is(equalTo(NUMBER_OF_SONGS + 1L)));
+      // Concerts are not in the table hierarchy, so no records have been deleted.
+      expectedId = 1L;
+      try (ResultSet rs = connection.executeQuery(Statement.of("SELECT * FROM Concerts ORDER BY VenueId"))) {
         while (rs.next()) {
-          // do nothing
+          assertThat(rs.getLong("VenueId"), is(equalTo(expectedId)));
+          expectedId++;
         }
       }
+      assertThat(expectedId, is(equalTo(NUMBER_OF_CONCERTS + 1L)));
 
       // make one small concurrent change in a different transaction
       List<Long> originalPrices;
