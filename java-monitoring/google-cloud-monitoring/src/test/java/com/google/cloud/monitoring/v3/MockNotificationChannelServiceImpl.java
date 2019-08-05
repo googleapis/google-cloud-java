@@ -20,6 +20,8 @@ import com.google.monitoring.v3.CreateNotificationChannelRequest;
 import com.google.monitoring.v3.DeleteNotificationChannelRequest;
 import com.google.monitoring.v3.GetNotificationChannelDescriptorRequest;
 import com.google.monitoring.v3.GetNotificationChannelRequest;
+import com.google.monitoring.v3.GetNotificationChannelVerificationCodeRequest;
+import com.google.monitoring.v3.GetNotificationChannelVerificationCodeResponse;
 import com.google.monitoring.v3.ListNotificationChannelDescriptorsRequest;
 import com.google.monitoring.v3.ListNotificationChannelDescriptorsResponse;
 import com.google.monitoring.v3.ListNotificationChannelsRequest;
@@ -27,7 +29,9 @@ import com.google.monitoring.v3.ListNotificationChannelsResponse;
 import com.google.monitoring.v3.NotificationChannel;
 import com.google.monitoring.v3.NotificationChannelDescriptor;
 import com.google.monitoring.v3.NotificationChannelServiceGrpc.NotificationChannelServiceImplBase;
+import com.google.monitoring.v3.SendNotificationChannelVerificationCodeRequest;
 import com.google.monitoring.v3.UpdateNotificationChannelRequest;
+import com.google.monitoring.v3.VerifyNotificationChannelRequest;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Empty;
 import io.grpc.stub.StreamObserver;
@@ -170,6 +174,54 @@ public class MockNotificationChannelServiceImpl extends NotificationChannelServi
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext((Empty) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void sendNotificationChannelVerificationCode(
+      SendNotificationChannelVerificationCodeRequest request,
+      StreamObserver<Empty> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext((Empty) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void getNotificationChannelVerificationCode(
+      GetNotificationChannelVerificationCodeRequest request,
+      StreamObserver<GetNotificationChannelVerificationCodeResponse> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof GetNotificationChannelVerificationCodeResponse) {
+      requests.add(request);
+      responseObserver.onNext((GetNotificationChannelVerificationCodeResponse) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void verifyNotificationChannel(
+      VerifyNotificationChannelRequest request,
+      StreamObserver<NotificationChannel> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof NotificationChannel) {
+      requests.add(request);
+      responseObserver.onNext((NotificationChannel) response);
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
       responseObserver.onError((Exception) response);

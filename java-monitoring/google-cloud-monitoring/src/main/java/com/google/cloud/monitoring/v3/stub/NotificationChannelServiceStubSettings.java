@@ -48,13 +48,17 @@ import com.google.monitoring.v3.CreateNotificationChannelRequest;
 import com.google.monitoring.v3.DeleteNotificationChannelRequest;
 import com.google.monitoring.v3.GetNotificationChannelDescriptorRequest;
 import com.google.monitoring.v3.GetNotificationChannelRequest;
+import com.google.monitoring.v3.GetNotificationChannelVerificationCodeRequest;
+import com.google.monitoring.v3.GetNotificationChannelVerificationCodeResponse;
 import com.google.monitoring.v3.ListNotificationChannelDescriptorsRequest;
 import com.google.monitoring.v3.ListNotificationChannelDescriptorsResponse;
 import com.google.monitoring.v3.ListNotificationChannelsRequest;
 import com.google.monitoring.v3.ListNotificationChannelsResponse;
 import com.google.monitoring.v3.NotificationChannel;
 import com.google.monitoring.v3.NotificationChannelDescriptor;
+import com.google.monitoring.v3.SendNotificationChannelVerificationCodeRequest;
 import com.google.monitoring.v3.UpdateNotificationChannelRequest;
+import com.google.monitoring.v3.VerifyNotificationChannelRequest;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
@@ -121,6 +125,14 @@ public class NotificationChannelServiceStubSettings
       updateNotificationChannelSettings;
   private final UnaryCallSettings<DeleteNotificationChannelRequest, Empty>
       deleteNotificationChannelSettings;
+  private final UnaryCallSettings<SendNotificationChannelVerificationCodeRequest, Empty>
+      sendNotificationChannelVerificationCodeSettings;
+  private final UnaryCallSettings<
+          GetNotificationChannelVerificationCodeRequest,
+          GetNotificationChannelVerificationCodeResponse>
+      getNotificationChannelVerificationCodeSettings;
+  private final UnaryCallSettings<VerifyNotificationChannelRequest, NotificationChannel>
+      verifyNotificationChannelSettings;
 
   /** Returns the object with the settings used for calls to listNotificationChannelDescriptors. */
   public PagedCallSettings<
@@ -168,6 +180,30 @@ public class NotificationChannelServiceStubSettings
   public UnaryCallSettings<DeleteNotificationChannelRequest, Empty>
       deleteNotificationChannelSettings() {
     return deleteNotificationChannelSettings;
+  }
+
+  /**
+   * Returns the object with the settings used for calls to sendNotificationChannelVerificationCode.
+   */
+  public UnaryCallSettings<SendNotificationChannelVerificationCodeRequest, Empty>
+      sendNotificationChannelVerificationCodeSettings() {
+    return sendNotificationChannelVerificationCodeSettings;
+  }
+
+  /**
+   * Returns the object with the settings used for calls to getNotificationChannelVerificationCode.
+   */
+  public UnaryCallSettings<
+          GetNotificationChannelVerificationCodeRequest,
+          GetNotificationChannelVerificationCodeResponse>
+      getNotificationChannelVerificationCodeSettings() {
+    return getNotificationChannelVerificationCodeSettings;
+  }
+
+  /** Returns the object with the settings used for calls to verifyNotificationChannel. */
+  public UnaryCallSettings<VerifyNotificationChannelRequest, NotificationChannel>
+      verifyNotificationChannelSettings() {
+    return verifyNotificationChannelSettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -247,6 +283,11 @@ public class NotificationChannelServiceStubSettings
     createNotificationChannelSettings = settingsBuilder.createNotificationChannelSettings().build();
     updateNotificationChannelSettings = settingsBuilder.updateNotificationChannelSettings().build();
     deleteNotificationChannelSettings = settingsBuilder.deleteNotificationChannelSettings().build();
+    sendNotificationChannelVerificationCodeSettings =
+        settingsBuilder.sendNotificationChannelVerificationCodeSettings().build();
+    getNotificationChannelVerificationCodeSettings =
+        settingsBuilder.getNotificationChannelVerificationCodeSettings().build();
+    verifyNotificationChannelSettings = settingsBuilder.verifyNotificationChannelSettings().build();
   }
 
   private static final PagedListDescriptor<
@@ -432,6 +473,14 @@ public class NotificationChannelServiceStubSettings
         updateNotificationChannelSettings;
     private final UnaryCallSettings.Builder<DeleteNotificationChannelRequest, Empty>
         deleteNotificationChannelSettings;
+    private final UnaryCallSettings.Builder<SendNotificationChannelVerificationCodeRequest, Empty>
+        sendNotificationChannelVerificationCodeSettings;
+    private final UnaryCallSettings.Builder<
+            GetNotificationChannelVerificationCodeRequest,
+            GetNotificationChannelVerificationCodeResponse>
+        getNotificationChannelVerificationCodeSettings;
+    private final UnaryCallSettings.Builder<VerifyNotificationChannelRequest, NotificationChannel>
+        verifyNotificationChannelSettings;
 
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
@@ -490,6 +539,14 @@ public class NotificationChannelServiceStubSettings
 
       deleteNotificationChannelSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
+      sendNotificationChannelVerificationCodeSettings =
+          UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      getNotificationChannelVerificationCodeSettings =
+          UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      verifyNotificationChannelSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               listNotificationChannelDescriptorsSettings,
@@ -498,7 +555,10 @@ public class NotificationChannelServiceStubSettings
               getNotificationChannelSettings,
               createNotificationChannelSettings,
               updateNotificationChannelSettings,
-              deleteNotificationChannelSettings);
+              deleteNotificationChannelSettings,
+              sendNotificationChannelVerificationCodeSettings,
+              getNotificationChannelVerificationCodeSettings,
+              verifyNotificationChannelSettings);
 
       initDefaults(this);
     }
@@ -549,6 +609,21 @@ public class NotificationChannelServiceStubSettings
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
+      builder
+          .sendNotificationChannelVerificationCodeSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .getNotificationChannelVerificationCodeSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .verifyNotificationChannelSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
       return builder;
     }
 
@@ -564,6 +639,11 @@ public class NotificationChannelServiceStubSettings
       createNotificationChannelSettings = settings.createNotificationChannelSettings.toBuilder();
       updateNotificationChannelSettings = settings.updateNotificationChannelSettings.toBuilder();
       deleteNotificationChannelSettings = settings.deleteNotificationChannelSettings.toBuilder();
+      sendNotificationChannelVerificationCodeSettings =
+          settings.sendNotificationChannelVerificationCodeSettings.toBuilder();
+      getNotificationChannelVerificationCodeSettings =
+          settings.getNotificationChannelVerificationCodeSettings.toBuilder();
+      verifyNotificationChannelSettings = settings.verifyNotificationChannelSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -573,7 +653,10 @@ public class NotificationChannelServiceStubSettings
               getNotificationChannelSettings,
               createNotificationChannelSettings,
               updateNotificationChannelSettings,
-              deleteNotificationChannelSettings);
+              deleteNotificationChannelSettings,
+              sendNotificationChannelVerificationCodeSettings,
+              getNotificationChannelVerificationCodeSettings,
+              verifyNotificationChannelSettings);
     }
 
     // NEXT_MAJOR_VER: remove 'throws Exception'
@@ -641,6 +724,32 @@ public class NotificationChannelServiceStubSettings
     public UnaryCallSettings.Builder<DeleteNotificationChannelRequest, Empty>
         deleteNotificationChannelSettings() {
       return deleteNotificationChannelSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * sendNotificationChannelVerificationCode.
+     */
+    public UnaryCallSettings.Builder<SendNotificationChannelVerificationCodeRequest, Empty>
+        sendNotificationChannelVerificationCodeSettings() {
+      return sendNotificationChannelVerificationCodeSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * getNotificationChannelVerificationCode.
+     */
+    public UnaryCallSettings.Builder<
+            GetNotificationChannelVerificationCodeRequest,
+            GetNotificationChannelVerificationCodeResponse>
+        getNotificationChannelVerificationCodeSettings() {
+      return getNotificationChannelVerificationCodeSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to verifyNotificationChannel. */
+    public UnaryCallSettings.Builder<VerifyNotificationChannelRequest, NotificationChannel>
+        verifyNotificationChannelSettings() {
+      return verifyNotificationChannelSettings;
     }
 
     @Override

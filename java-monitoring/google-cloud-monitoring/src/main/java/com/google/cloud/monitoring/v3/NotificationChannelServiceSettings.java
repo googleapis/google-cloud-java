@@ -34,13 +34,17 @@ import com.google.monitoring.v3.CreateNotificationChannelRequest;
 import com.google.monitoring.v3.DeleteNotificationChannelRequest;
 import com.google.monitoring.v3.GetNotificationChannelDescriptorRequest;
 import com.google.monitoring.v3.GetNotificationChannelRequest;
+import com.google.monitoring.v3.GetNotificationChannelVerificationCodeRequest;
+import com.google.monitoring.v3.GetNotificationChannelVerificationCodeResponse;
 import com.google.monitoring.v3.ListNotificationChannelDescriptorsRequest;
 import com.google.monitoring.v3.ListNotificationChannelDescriptorsResponse;
 import com.google.monitoring.v3.ListNotificationChannelsRequest;
 import com.google.monitoring.v3.ListNotificationChannelsResponse;
 import com.google.monitoring.v3.NotificationChannel;
 import com.google.monitoring.v3.NotificationChannelDescriptor;
+import com.google.monitoring.v3.SendNotificationChannelVerificationCodeRequest;
 import com.google.monitoring.v3.UpdateNotificationChannelRequest;
+import com.google.monitoring.v3.VerifyNotificationChannelRequest;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
@@ -129,6 +133,33 @@ public class NotificationChannelServiceSettings
       deleteNotificationChannelSettings() {
     return ((NotificationChannelServiceStubSettings) getStubSettings())
         .deleteNotificationChannelSettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to sendNotificationChannelVerificationCode.
+   */
+  public UnaryCallSettings<SendNotificationChannelVerificationCodeRequest, Empty>
+      sendNotificationChannelVerificationCodeSettings() {
+    return ((NotificationChannelServiceStubSettings) getStubSettings())
+        .sendNotificationChannelVerificationCodeSettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to getNotificationChannelVerificationCode.
+   */
+  public UnaryCallSettings<
+          GetNotificationChannelVerificationCodeRequest,
+          GetNotificationChannelVerificationCodeResponse>
+      getNotificationChannelVerificationCodeSettings() {
+    return ((NotificationChannelServiceStubSettings) getStubSettings())
+        .getNotificationChannelVerificationCodeSettings();
+  }
+
+  /** Returns the object with the settings used for calls to verifyNotificationChannel. */
+  public UnaryCallSettings<VerifyNotificationChannelRequest, NotificationChannel>
+      verifyNotificationChannelSettings() {
+    return ((NotificationChannelServiceStubSettings) getStubSettings())
+        .verifyNotificationChannelSettings();
   }
 
   public static final NotificationChannelServiceSettings create(
@@ -278,6 +309,32 @@ public class NotificationChannelServiceSettings
     public UnaryCallSettings.Builder<DeleteNotificationChannelRequest, Empty>
         deleteNotificationChannelSettings() {
       return getStubSettingsBuilder().deleteNotificationChannelSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * sendNotificationChannelVerificationCode.
+     */
+    public UnaryCallSettings.Builder<SendNotificationChannelVerificationCodeRequest, Empty>
+        sendNotificationChannelVerificationCodeSettings() {
+      return getStubSettingsBuilder().sendNotificationChannelVerificationCodeSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * getNotificationChannelVerificationCode.
+     */
+    public UnaryCallSettings.Builder<
+            GetNotificationChannelVerificationCodeRequest,
+            GetNotificationChannelVerificationCodeResponse>
+        getNotificationChannelVerificationCodeSettings() {
+      return getStubSettingsBuilder().getNotificationChannelVerificationCodeSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to verifyNotificationChannel. */
+    public UnaryCallSettings.Builder<VerifyNotificationChannelRequest, NotificationChannel>
+        verifyNotificationChannelSettings() {
+      return getStubSettingsBuilder().verifyNotificationChannelSettings();
     }
 
     @Override
