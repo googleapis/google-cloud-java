@@ -125,7 +125,8 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   public static class Builder
       extends ServiceOptions.Builder<Spanner, SpannerOptions, SpannerOptions.Builder> {
     private static final int DEFAULT_PREFETCH_CHUNKS = 4;
-    private final ImmutableSet<String> allowedClientLibTokens = ImmutableSet.of(
+    private final ImmutableSet<String> allowedClientLibTokens =
+        ImmutableSet.of(
             ServiceOptions.getGoogApiClientLibName(),
             JDBC_API_CLIENT_LIB_TOKEN,
             HIBERNATE_API_CLIENT_LIB_TOKEN);
