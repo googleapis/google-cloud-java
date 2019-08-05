@@ -127,7 +127,11 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   /** Builder for {@link SpannerOptions} instances. */
   public static class Builder
       extends ServiceOptions.Builder<Spanner, SpannerOptions, SpannerOptions.Builder> {
-	    private static final ImmutableSet<String> ALLOWED_CLIENT_LIB_TOKENS = ImmutableSet.of(ServiceOptions.getGoogApiClientLibName(), JDBC_API_CLIENT_LIB_TOKEN, HIBERNATE_API_CLIENT_LIB_TOKEN);
+    private static final ImmutableSet<String> ALLOWED_CLIENT_LIB_TOKENS =
+        ImmutableSet.of(
+            ServiceOptions.getGoogApiClientLibName(),
+            JDBC_API_CLIENT_LIB_TOKEN,
+            HIBERNATE_API_CLIENT_LIB_TOKEN);
     private static final int DEFAULT_PREFETCH_CHUNKS = 4;
     private TransportChannelProvider channelProvider;
 
@@ -228,7 +232,8 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     /** DO NOT USE. Only for internal Google client libraries. */
     @InternalApi
     public Builder setClientLibToken(String clientLibToken) {
-      Preconditions.checkArgument(ALLOWED_CLIENT_LIB_TOKENS.contains(clientLibToken), "Illegal client lib token");
+      Preconditions.checkArgument(
+          ALLOWED_CLIENT_LIB_TOKENS.contains(clientLibToken), "Illegal client lib token");
       this.clientLibToken = clientLibToken;
       return this;
     }

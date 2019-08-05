@@ -714,7 +714,8 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
         case EXCEPTION:
           throw result.getException();
         case RESULT_SET:
-          returnResultSet(result.getResultSet(), transactionId, request.getTransaction(), responseObserver);
+          returnResultSet(
+              result.getResultSet(), transactionId, request.getTransaction(), responseObserver);
           break;
         case UPDATE_COUNT:
           if (isPartitionedDmlTransaction(transactionId)) {
@@ -895,7 +896,8 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
         case EXCEPTION:
           throw res.getException();
         case RESULT_SET:
-          returnPartialResultSet(res.getResultSet(), transactionId, request.getTransaction(), responseObserver);
+          returnPartialResultSet(
+              res.getResultSet(), transactionId, request.getTransaction(), responseObserver);
           break;
         case UPDATE_COUNT:
           boolean isPartitioned = isPartitionedDmlTransaction(transactionId);
@@ -1049,7 +1051,8 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
                   request.getTable(),
                   request.getKeySet().getAll() ? KeySet.all() : KeySet.singleKey(Key.of()),
                   cols));
-      returnResultSet(res.getResultSet(), transactionId, request.getTransaction(), responseObserver);
+      returnResultSet(
+          res.getResultSet(), transactionId, request.getTransaction(), responseObserver);
       responseObserver.onCompleted();
     } catch (StatusRuntimeException e) {
       responseObserver.onError(e);
@@ -1096,7 +1099,8 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
                   request.getTable(),
                   request.getKeySet().getAll() ? KeySet.all() : KeySet.singleKey(Key.of()),
                   cols));
-      returnPartialResultSet(res.getResultSet(), transactionId, request.getTransaction(), responseObserver);
+      returnPartialResultSet(
+          res.getResultSet(), transactionId, request.getTransaction(), responseObserver);
     } catch (StatusRuntimeException e) {
       responseObserver.onError(e);
     } catch (Throwable t) {
