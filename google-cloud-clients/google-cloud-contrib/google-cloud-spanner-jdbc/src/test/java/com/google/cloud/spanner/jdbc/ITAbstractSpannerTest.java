@@ -16,19 +16,6 @@
 
 package com.google.cloud.spanner.jdbc;
 
-import java.io.IOException;
-import java.lang.reflect.Field;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import java.util.Random;
-import java.util.concurrent.ExecutionException;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.ClassRule;
-import org.junit.experimental.categories.Category;
 import com.google.cloud.spanner.Database;
 import com.google.cloud.spanner.ErrorCode;
 import com.google.cloud.spanner.GceTestEnvConfig;
@@ -45,6 +32,19 @@ import com.google.cloud.spanner.jdbc.SqlScriptVerifier.SpannerGenericConnection;
 import com.google.cloud.spanner.jdbc.StatementParser.ParsedStatement;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Strings;
+import java.io.IOException;
+import java.lang.reflect.Field;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+import java.util.Random;
+import java.util.concurrent.ExecutionException;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.ClassRule;
+import org.junit.experimental.categories.Category;
 
 /**
  * Base class for integration tests. This class is located in this package to be able to access
@@ -61,8 +61,7 @@ public abstract class ITAbstractSpannerTest {
     }
   }
 
-  protected interface ITConnection extends Connection {
-  }
+  protected interface ITConnection extends Connection {}
 
   private ITConnection createITConnection(ConnectionOptions options) {
     return new ITConnectionImpl(options);
@@ -113,8 +112,8 @@ public abstract class ITAbstractSpannerTest {
     }
 
     @Override
-    public void intercept(ParsedStatement statement, StatementExecutionStep step,
-        UnitOfWork transaction) {
+    public void intercept(
+        ParsedStatement statement, StatementExecutionStep step, UnitOfWork transaction) {
       if (shouldAbort(statement.getSqlWithoutComments(), ExecutionStep.of(step))) {
         // ugly hack warning: inject the aborted state into the transaction manager to simulate an
         // abort
@@ -141,8 +140,8 @@ public abstract class ITAbstractSpannerTest {
           if (onlyInjectOnce) {
             probability = 0;
           }
-          throw SpannerExceptionFactory.newSpannerException(ErrorCode.ABORTED,
-              "Transaction was aborted by interceptor");
+          throw SpannerExceptionFactory.newSpannerException(
+              ErrorCode.ABORTED, "Transaction was aborted by interceptor");
         }
       }
     }
@@ -174,45 +173,50 @@ public abstract class ITAbstractSpannerTest {
   }
 
   /**
-   * Creates a new default connection to a test database. Use the method
-   * {@link ITAbstractSpannerTest#appendConnectionUri(StringBuilder)} to append additional
-   * connection options to the connection URI.
+   * Creates a new default connection to a test database. Use the method {@link
+   * ITAbstractSpannerTest#appendConnectionUri(StringBuilder)} to append additional connection
+   * options to the connection URI.
    *
    * @return the newly opened connection.
    */
   public ITConnection createConnection() {
-    return createConnection(Collections.<StatementExecutionInterceptor>emptyList(),
+    return createConnection(
+        Collections.<StatementExecutionInterceptor>emptyList(),
         Collections.<TransactionRetryListener>emptyList());
   }
 
   public ITConnection createConnection(AbortInterceptor interceptor) {
-    return createConnection(Arrays.<StatementExecutionInterceptor>asList(interceptor),
+    return createConnection(
+        Arrays.<StatementExecutionInterceptor>asList(interceptor),
         Collections.<TransactionRetryListener>emptyList());
   }
 
-  public ITConnection createConnection(AbortInterceptor interceptor,
-      TransactionRetryListener transactionRetryListener) {
-    return createConnection(Arrays.<StatementExecutionInterceptor>asList(interceptor),
+  public ITConnection createConnection(
+      AbortInterceptor interceptor, TransactionRetryListener transactionRetryListener) {
+    return createConnection(
+        Arrays.<StatementExecutionInterceptor>asList(interceptor),
         Arrays.<TransactionRetryListener>asList(transactionRetryListener));
   }
 
   /**
-   * Creates a new default connection to a test database. Use the method
-   * {@link ITAbstractSpannerTest#appendConnectionUri(StringBuilder)} to append additional
-   * connection options to the connection URI.
+   * Creates a new default connection to a test database. Use the method {@link
+   * ITAbstractSpannerTest#appendConnectionUri(StringBuilder)} to append additional connection
+   * options to the connection URI.
    *
    * @param interceptors Interceptors that should be executed after each statement
-   * @param transactionRetryListeners Transaction retry listeners that should be added to the
-   *        {@link Connection}
-   *
+   * @param transactionRetryListeners Transaction retry listeners that should be added to the {@link
+   *     Connection}
    * @return the newly opened connection.
    */
-  public ITConnection createConnection(List<StatementExecutionInterceptor> interceptors,
+  public ITConnection createConnection(
+      List<StatementExecutionInterceptor> interceptors,
       List<TransactionRetryListener> transactionRetryListeners) {
     StringBuilder url = new StringBuilder("cloudspanner:/").append(getDatabase().getId().getName());
     appendConnectionUri(url);
-    ConnectionOptions.Builder builder = ConnectionOptions.newBuilder().setUri(url.toString())
-        .setStatementExecutionInterceptors(interceptors);
+    ConnectionOptions.Builder builder =
+        ConnectionOptions.newBuilder()
+            .setUri(url.toString())
+            .setStatementExecutionInterceptors(interceptors);
     if (hasValidKeyFile()) {
       builder.setCredentialsUrl(getKeyFile());
     }
@@ -252,8 +256,9 @@ public abstract class ITAbstractSpannerTest {
         if (!tableExists(connection, "TEST")) {
           connection.setAutocommit(false);
           connection.startBatchDdl();
-          connection.execute(Statement.of(
-              "CREATE TABLE TEST (ID INT64 NOT NULL, NAME STRING(100) NOT NULL) PRIMARY KEY (ID)"));
+          connection.execute(
+              Statement.of(
+                  "CREATE TABLE TEST (ID INT64 NOT NULL, NAME STRING(100) NOT NULL) PRIMARY KEY (ID)"));
           connection.runBatch();
         }
       }
@@ -262,10 +267,13 @@ public abstract class ITAbstractSpannerTest {
 
   protected boolean tableExists(Connection connection, String table) {
     Preconditions.checkArgument(!Strings.isNullOrEmpty(table));
-    try (ResultSet rs = connection.executeQuery(Statement
-        .newBuilder(
-            "SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE UPPER(TABLE_NAME)=@table_name")
-        .bind("table_name").to(table.toUpperCase()).build())) {
+    try (ResultSet rs =
+        connection.executeQuery(
+            Statement.newBuilder(
+                    "SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE UPPER(TABLE_NAME)=@table_name")
+                .bind("table_name")
+                .to(table.toUpperCase())
+                .build())) {
       while (rs.next()) {
         return true;
       }
@@ -275,14 +283,19 @@ public abstract class ITAbstractSpannerTest {
 
   protected boolean indexExists(Connection connection, String table, String index) {
     Preconditions.checkArgument(!Strings.isNullOrEmpty(index));
-    try (ResultSet rs = connection.executeQuery(Statement.newBuilder(
-        "SELECT INDEX_NAME FROM INFORMATION_SCHEMA.INDEXES WHERE UPPER(TABLE_NAME)=@table_name AND UPPER(INDEX_NAME)=@index_name")
-        .bind("table_name").to(table).bind("index_name").to(index.toUpperCase()).build())) {
+    try (ResultSet rs =
+        connection.executeQuery(
+            Statement.newBuilder(
+                    "SELECT INDEX_NAME FROM INFORMATION_SCHEMA.INDEXES WHERE UPPER(TABLE_NAME)=@table_name AND UPPER(INDEX_NAME)=@index_name")
+                .bind("table_name")
+                .to(table)
+                .bind("index_name")
+                .to(index.toUpperCase())
+                .build())) {
       while (rs.next()) {
         return true;
       }
     }
     return false;
   }
-
 }

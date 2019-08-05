@@ -16,12 +16,12 @@
 
 package com.google.cloud.spanner.jdbc;
 
+import com.google.cloud.spanner.jdbc.JdbcConnectionGeneratedSqlScriptTest.TestConnectionProvider;
 import java.sql.Connection;
 import java.sql.Statement;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-import com.google.cloud.spanner.jdbc.JdbcConnectionGeneratedSqlScriptTest.TestConnectionProvider;
 
 /**
  * As JDBC connections store the statement timeout on {@link Statement} objects instead of on the

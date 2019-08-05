@@ -16,6 +16,12 @@
 
 package com.google.cloud.spanner.jdbc.it;
 
+import com.google.cloud.spanner.IntegrationTest;
+import com.google.cloud.spanner.Mutation;
+import com.google.cloud.spanner.jdbc.CloudSpannerJdbcConnection;
+import com.google.cloud.spanner.jdbc.ITAbstractJdbcTest;
+import com.google.cloud.spanner.jdbc.JdbcSqlScriptVerifier;
+import com.google.cloud.spanner.jdbc.SqlScriptVerifier;
 import java.math.BigInteger;
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -29,23 +35,14 @@ import org.junit.experimental.categories.Category;
 import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-import com.google.cloud.spanner.IntegrationTest;
-import com.google.cloud.spanner.Mutation;
-import com.google.cloud.spanner.jdbc.CloudSpannerJdbcConnection;
-import com.google.cloud.spanner.jdbc.ITAbstractJdbcTest;
-import com.google.cloud.spanner.jdbc.JdbcSqlScriptVerifier;
-import com.google.cloud.spanner.jdbc.SqlScriptVerifier;
 
-/**
- * This test class runs a SQL script for testing a connection in read-only mode.
- */
+/** This test class runs a SQL script for testing a connection in read-only mode. */
 @Category(IntegrationTest.class)
 @RunWith(JUnit4.class)
 public class ITJdbcReadOnlyTest extends ITAbstractJdbcTest {
   private static final long TEST_ROWS_COUNT = 1000L;
 
-  @Rule
-  public ExpectedException exception = ExpectedException.none();
+  @Rule public ExpectedException exception = ExpectedException.none();
 
   @Override
   protected void appendConnectionUri(StringBuilder url) {
@@ -58,20 +55,30 @@ public class ITJdbcReadOnlyTest extends ITAbstractJdbcTest {
       if (!(tableExists(connection, "NUMBERS") && tableExists(connection, "PRIME_NUMBERS"))) {
         // create tables
         JdbcSqlScriptVerifier verifier = new JdbcSqlScriptVerifier(new ITJdbcConnectionProvider());
-        verifier.verifyStatementsInFile("ITReadOnlySpannerTest_CreateTables.sql",
-            SqlScriptVerifier.class, true);
+        verifier.verifyStatementsInFile(
+            "ITReadOnlySpannerTest_CreateTables.sql", SqlScriptVerifier.class, true);
 
         // fill tables with data
         connection.setAutoCommit(false);
         connection.setReadOnly(false);
         for (long number = 1L; number <= TEST_ROWS_COUNT; number++) {
-          connection.bufferedWrite(Mutation.newInsertBuilder("NUMBERS").set("number").to(number)
-              .set("name").to(Long.toBinaryString(number)).build());
+          connection.bufferedWrite(
+              Mutation.newInsertBuilder("NUMBERS")
+                  .set("number")
+                  .to(number)
+                  .set("name")
+                  .to(Long.toBinaryString(number))
+                  .build());
         }
         for (long number = 1L; number <= TEST_ROWS_COUNT; number++) {
           if (BigInteger.valueOf(number).isProbablePrime(Integer.MAX_VALUE)) {
-            connection.bufferedWrite(Mutation.newInsertBuilder("PRIME_NUMBERS").set("prime_number")
-                .to(number).set("binary_representation").to(Long.toBinaryString(number)).build());
+            connection.bufferedWrite(
+                Mutation.newInsertBuilder("PRIME_NUMBERS")
+                    .set("prime_number")
+                    .to(number)
+                    .set("binary_representation")
+                    .to(Long.toBinaryString(number))
+                    .build());
           }
         }
         connection.commit();
@@ -93,33 +100,32 @@ public class ITJdbcReadOnlyTest extends ITAbstractJdbcTest {
       final java.sql.ResultSet rs2 =
           connection.createStatement().executeQuery("SELECT * FROM NUMBERS");
       ExecutorService exec = Executors.newFixedThreadPool(2);
-      exec.submit(new Runnable() {
-        @Override
-        public void run() {
-          try {
-            while (rs1.next()) {
+      exec.submit(
+          new Runnable() {
+            @Override
+            public void run() {
+              try {
+                while (rs1.next()) {}
+              } catch (SQLException e) {
+                throw new RuntimeException(e);
+              }
             }
-          } catch (SQLException e) {
-            throw new RuntimeException(e);
-          }
-        }
-      });
-      exec.submit(new Runnable() {
-        @Override
-        public void run() {
-          try {
-            while (rs2.next()) {
+          });
+      exec.submit(
+          new Runnable() {
+            @Override
+            public void run() {
+              try {
+                while (rs2.next()) {}
+              } catch (SQLException e) {
+                throw new RuntimeException(e);
+              }
             }
-          } catch (SQLException e) {
-            throw new RuntimeException(e);
-          }
-        }
-      });
+          });
       exec.shutdown();
       exec.awaitTermination(1000L, TimeUnit.SECONDS);
       rs1.close();
       rs2.close();
     }
   }
-
 }

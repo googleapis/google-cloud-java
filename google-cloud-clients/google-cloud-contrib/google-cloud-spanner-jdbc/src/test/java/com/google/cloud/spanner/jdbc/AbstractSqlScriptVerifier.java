@@ -24,6 +24,10 @@ import static org.hamcrest.CoreMatchers.nullValue;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.fail;
+
+import com.google.cloud.Timestamp;
+import com.google.cloud.spanner.ResultSet;
+import com.google.cloud.spanner.SpannerException;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -34,73 +38,67 @@ import java.util.Map;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import com.google.cloud.Timestamp;
-import com.google.cloud.spanner.ResultSet;
-import com.google.cloud.spanner.SpannerException;
-import com.google.cloud.spanner.jdbc.Connection;
-import com.google.cloud.spanner.jdbc.ReadOnlyStalenessUtil;
-import com.google.cloud.spanner.jdbc.StatementParser;
-import com.google.cloud.spanner.jdbc.StatementResult;
 
 /**
  * Base class for SQL Script verifiers for both the generic Connection API and JDBC connections
  *
- * Simple parser/verifier for sql statements. This verifier is able to parse additional @EXPECT
+ * <p>Simple parser/verifier for sql statements. This verifier is able to parse additional @EXPECT
  * statements that defines the expected behavior of a sql statement. Possible uses are:
+ *
  * <ul>
- * <li>@EXPECT NO_RESULT: The following statement should not return a result (no {@link ResultSet}
- * and no update count)</li>
- * <li>@EXPECT UPDATE_COUNT <i>count</i>: The following statement should return the specified update
- * count</li>
- * <li>@EXPECT RESULT_SET: The following statement should return a {@link ResultSet} with two
- * columns with the names ACTUAL and EXPECTED and containing at least one row. For each row, the
- * values of ACTUAL and EXPECTED must be equal</li>
- * <li>@EXPECT RESULT_SET 'columnName': The following statement should return a {@link ResultSet}
- * with a column with the specified name and containing at least one row (additional columns in the
- * {@link ResultSet} are allowed). For each row, the value of the column must be not null</li>
- * <li>@EXPECT RESULT_SET 'columnName',value: The following statement should return a
- * {@link ResultSet} with a column with the specified name and containing at least one row
- * (additional columns in the {@link ResultSet} are allowed). For each row, the value of the column
- * must be equal to the specified value</li>
- * <li>@EXPECT EXCEPTION code ['messagePrefix']: The following statement should throw a
- * {@link SpannerException} with the specified code and starting with the (optional) message
- * prefix</li>
- * <li>@EXPECT EQUAL 'variable1','variable2': The values of the two given variables should be equal.
- * The value of a variable can be set using a @PUT statement.</li>
+ *   <li>@EXPECT NO_RESULT: The following statement should not return a result (no {@link ResultSet}
+ *       and no update count)
+ *   <li>@EXPECT UPDATE_COUNT <i>count</i>: The following statement should return the specified
+ *       update count
+ *   <li>@EXPECT RESULT_SET: The following statement should return a {@link ResultSet} with two
+ *       columns with the names ACTUAL and EXPECTED and containing at least one row. For each row,
+ *       the values of ACTUAL and EXPECTED must be equal
+ *   <li>@EXPECT RESULT_SET 'columnName': The following statement should return a {@link ResultSet}
+ *       with a column with the specified name and containing at least one row (additional columns
+ *       in the {@link ResultSet} are allowed). For each row, the value of the column must be not
+ *       null
+ *   <li>@EXPECT RESULT_SET 'columnName',value: The following statement should return a {@link
+ *       ResultSet} with a column with the specified name and containing at least one row
+ *       (additional columns in the {@link ResultSet} are allowed). For each row, the value of the
+ *       column must be equal to the specified value
+ *   <li>@EXPECT EXCEPTION code ['messagePrefix']: The following statement should throw a {@link
+ *       SpannerException} with the specified code and starting with the (optional) message prefix
+ *   <li>@EXPECT EQUAL 'variable1','variable2': The values of the two given variables should be
+ *       equal. The value of a variable can be set using a @PUT statement.
  * </ul>
  *
- * The parser can set a temporary variable value using a @PUT statement:
+ * The parser can set a temporary variable value using a @PUT statement: <code>
+ * @PUT 'variable_name'\nSQL statement</code> The SQL statement must be a statement that returns a
+ * {@link ResultSet} containing exactly one row and one column.
  *
- * <code>@PUT 'variable_name'\nSQL statement</code>
- *
- * The SQL statement must be a statement that returns a {@link ResultSet} containing exactly one row
- * and one column.
- *
- * In addition the verifier can create new connections if the script contains NEW_CONNECTION;
- * statements and the verifier has been created with a {@link GenericConnectionProvider}. See
- * {@link ConnectionImplGeneratedSqlScriptTest} for an example for this.
- *
+ * <p>In addition the verifier can create new connections if the script contains NEW_CONNECTION;
+ * statements and the verifier has been created with a {@link GenericConnectionProvider}. See {@link
+ * ConnectionImplGeneratedSqlScriptTest} for an example for this.
  */
 public abstract class AbstractSqlScriptVerifier {
-  private static final Pattern VERIFY_PATTERN = Pattern.compile(
-      "(?is)\\s*(?:@EXPECT)\\s+"
-      + "(?<type>NO_RESULT"
-      + "|RESULT_SET\\s*(?<column>'.*?'(?<value>,.*?)?)?"
-      + "|UPDATE_COUNT\\s*(?<count>-?\\d{1,19})"
-      + "|EXCEPTION\\s*(?<exception>(?<code>CANCELLED|UNKNOWN|INVALID_ARGUMENT|DEADLINE_EXCEEDED|NOT_FOUND|ALREADY_EXISTS|PERMISSION_DENIED|UNAUTHENTICATED|RESOURCE_EXHAUSTED|FAILED_PRECONDITION|ABORTED|OUT_OF_RANGE|UNIMPLEMENTED|INTERNAL|UNAVAILABLE|DATA_LOSS)(?:\\s*)(?<messagePrefix>'.*?')?)"
-      + "|EQUAL\\s+(?<variable1>'.+?')\\s*,\\s*(?<variable2>'.+?')"
-      + ")"
-      + "(\\n(?<statement>.*))?");
+  private static final Pattern VERIFY_PATTERN =
+      Pattern.compile(
+          "(?is)\\s*(?:@EXPECT)\\s+"
+              + "(?<type>NO_RESULT"
+              + "|RESULT_SET\\s*(?<column>'.*?'(?<value>,.*?)?)?"
+              + "|UPDATE_COUNT\\s*(?<count>-?\\d{1,19})"
+              + "|EXCEPTION\\s*(?<exception>(?<code>CANCELLED|UNKNOWN|INVALID_ARGUMENT|DEADLINE_EXCEEDED|NOT_FOUND|ALREADY_EXISTS|PERMISSION_DENIED|UNAUTHENTICATED|RESOURCE_EXHAUSTED|FAILED_PRECONDITION|ABORTED|OUT_OF_RANGE|UNIMPLEMENTED|INTERNAL|UNAVAILABLE|DATA_LOSS)(?:\\s*)(?<messagePrefix>'.*?')?)"
+              + "|EQUAL\\s+(?<variable1>'.+?')\\s*,\\s*(?<variable2>'.+?')"
+              + ")"
+              + "(\\n(?<statement>.*))?");
 
   private static final String PUT_CONDITION =
       "@PUT can only be used in combination with a statement that returns a"
           + " result set containing exactly one row and one column";
-  private static final Pattern PUT_PATTERN = Pattern.compile(
-      "(?is)\\s*(?:@PUT)\\s+(?<variable>'.*?')"
-      + "\\n(?<statement>.*)");
+  private static final Pattern PUT_PATTERN =
+      Pattern.compile("(?is)\\s*(?:@PUT)\\s+(?<variable>'.*?')" + "\\n(?<statement>.*)");
 
   protected enum ExpectedResultType {
-    RESULT_SET, UPDATE_COUNT, NO_RESULT, EXCEPTION, EQUAL;
+    RESULT_SET,
+    UPDATE_COUNT,
+    NO_RESULT,
+    EXCEPTION,
+    EQUAL;
 
     StatementResult.ResultType getStatementResultType() {
       switch (this) {
@@ -129,7 +127,7 @@ public abstract class AbstractSqlScriptVerifier {
 
   /**
    * Generic wrapper around a connection to a database. The underlying connection could be a Spanner
-   * {@link Connection} or a JDBC {@link java.sql.Connection}
+   * {@link com.google.cloud.spanner.jdbc.Connection} or a JDBC {@link java.sql.Connection}
    */
   public abstract static class GenericConnection implements AutoCloseable {
     protected abstract GenericStatementResult execute(String sql) throws Exception;
@@ -139,8 +137,8 @@ public abstract class AbstractSqlScriptVerifier {
   }
 
   /**
-   * Generic wrapper around a result set. The underlying result set could be a Spanner
-   * {@link ResultSet} or a JDBC {@link java.sql.ResultSet}
+   * Generic wrapper around a result set. The underlying result set could be a Spanner {@link
+   * ResultSet} or a JDBC {@link java.sql.ResultSet}
    */
   protected abstract static class GenericResultSet {
     protected abstract boolean next() throws Exception;
@@ -186,7 +184,8 @@ public abstract class AbstractSqlScriptVerifier {
 
   /**
    * Constructor for a verifier that will take a {@link GenericConnection} as a parameter to the
-   * {@link AbstractSqlScriptVerifier#verifyStatementsInFile(GenericConnection, String, Class, boolean)}
+   * {@link AbstractSqlScriptVerifier#verifyStatementsInFile(GenericConnection, String, Class,
+   * boolean)}
    */
   public AbstractSqlScriptVerifier() {
     this(null);
@@ -203,21 +202,21 @@ public abstract class AbstractSqlScriptVerifier {
    * Statements without an @EXPECT statement will be executed and its result will be ignored, unless
    * the statement throws an exception, which will fail the test case.
    *
-   * The {@link Connection}s that the statements are executed on must be created by a
-   * {@link GenericConnectionProvider}
+   * <p>The {@link com.google.cloud.spanner.jdbc.Connection}s that the statements are executed on
+   * must be created by a {@link GenericConnectionProvider}
    *
    * @param filename The file name containing the statements. Statements must be separated by a
-   *        semicolon (;)
+   *     semicolon (;)
    * @param resourceClass The class that should be used to locate the resource specified by the file
-   *        name
+   *     name
    * @param logStatements Should the verifier log each statement that is executed and verified to
-   *        standard out
+   *     standard out
    * @throws Exception
    */
   public void verifyStatementsInFile(String filename, Class<?> resourceClass, boolean logStatements)
       throws Exception {
-    verifyStatementsInFile(connectionProvider.getConnection(), filename, resourceClass,
-        logStatements);
+    verifyStatementsInFile(
+        connectionProvider.getConnection(), filename, resourceClass, logStatements);
   }
 
   /**
@@ -226,21 +225,25 @@ public abstract class AbstractSqlScriptVerifier {
    * Statements without an @EXPECT statement will be executed and its result will be ignored, unless
    * the statement throws an exception, which will fail the test case.
    *
-   * @param connection The {@link Connection} to execute the statements against
+   * @param connection The {@link com.google.cloud.spanner.jdbc.Connection} to execute the
+   *     statements against
    * @param filename The file name containing the statements. Statements must be separated by a
-   *        semicolon (;)
+   *     semicolon (;)
    * @param resourceClass The class that defines the package where to find the input file
    * @param logStatements Should all statements be logged to standard out?
    */
-  public void verifyStatementsInFile(GenericConnection connection, String filename,
-      Class<?> resourceClass, boolean logStatements) throws Exception {
+  public void verifyStatementsInFile(
+      GenericConnection connection, String filename, Class<?> resourceClass, boolean logStatements)
+      throws Exception {
     try {
       List<String> statements = readStatementsFromFile(filename, resourceClass);
       for (String statement : statements) {
         String sql = statement.trim();
         if (logStatements) {
-          System.out.println("\n------------------------------------------------------\n"
-              + new Date() + " ---- verifying statement:");
+          System.out.println(
+              "\n------------------------------------------------------\n"
+                  + new Date()
+                  + " ---- verifying statement:");
           System.out.println(sql);
         }
         if (sql.equalsIgnoreCase("NEW_CONNECTION")) {
@@ -283,10 +286,10 @@ public abstract class AbstractSqlScriptVerifier {
         // get rid of the single quotes
         variable1 = variable1.substring(1, variable1.length() - 1);
         variable2 = variable2.substring(1, variable2.length() - 1);
-        assertThat("No variable with name " + variable1, variables.containsKey(variable1),
-            is(true));
-        assertThat("No variable with name " + variable2, variables.containsKey(variable2),
-            is(true));
+        assertThat(
+            "No variable with name " + variable1, variables.containsKey(variable1), is(true));
+        assertThat(
+            "No variable with name " + variable2, variables.containsKey(variable2), is(true));
         Object value1 = variables.get(variable1);
         Object value2 = variables.get(variable2);
         if ((value1 instanceof Timestamp) && (value2 instanceof Timestamp)) {
@@ -336,7 +339,9 @@ public abstract class AbstractSqlScriptVerifier {
       // get rid of the single quotes
       variable = variable.substring(1, variable.length() - 1);
       GenericStatementResult result = connection.execute(sql);
-      assertThat(PUT_CONDITION, result.getResultType(),
+      assertThat(
+          PUT_CONDITION,
+          result.getResultType(),
           is(equalTo(com.google.cloud.spanner.jdbc.StatementResult.ResultType.RESULT_SET)));
       GenericResultSet rs = result.getResultSet();
       assertThat(PUT_CONDITION, rs.next(), is(true));
@@ -356,8 +361,8 @@ public abstract class AbstractSqlScriptVerifier {
     return sql;
   }
 
-  protected abstract void verifyExpectedException(String statement, Exception e, String code,
-      String messagePrefix);
+  protected abstract void verifyExpectedException(
+      String statement, Exception e, String code, String messagePrefix);
 
   private static final Pattern INT64_PATTERN = Pattern.compile("\\d{1,19}");
   private static final Pattern ARRAY_INT64_PATTERN =
@@ -390,7 +395,8 @@ public abstract class AbstractSqlScriptVerifier {
     }
     if (valueString.startsWith(TS_PREFIX) && valueString.endsWith(TS_SUFFIX)) {
       try {
-        return ReadOnlyStalenessUtil.parseRfc3339(valueString.substring(TS_PREFIX.length(), valueString.length() - TS_SUFFIX.length()));
+        return ReadOnlyStalenessUtil.parseRfc3339(
+            valueString.substring(TS_PREFIX.length(), valueString.length() - TS_SUFFIX.length()));
       } catch (IllegalArgumentException e) {
         // ignore, apparently not a valid a timestamp after all.
       }
@@ -420,8 +426,8 @@ public abstract class AbstractSqlScriptVerifier {
     assertThat(count, is(not(equalTo(0))));
   }
 
-  private void verifyResultSetValue(String statement, GenericResultSet rs, String column,
-      Object value) throws Exception {
+  private void verifyResultSetValue(
+      String statement, GenericResultSet rs, String column, Object value) throws Exception {
     int count = 0;
     while (rs.next()) {
       if (value == null) {
@@ -447,5 +453,4 @@ public abstract class AbstractSqlScriptVerifier {
   private Object getValue(GenericResultSet rs, String col) throws Exception {
     return rs.getValue(col);
   }
-
 }

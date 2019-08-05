@@ -16,16 +16,16 @@
 
 package com.google.cloud.spanner.jdbc.it;
 
+import com.google.cloud.spanner.IntegrationTest;
+import com.google.cloud.spanner.jdbc.ITAbstractSpannerTest;
+import com.google.cloud.spanner.jdbc.SqlScriptVerifier;
+import com.google.cloud.spanner.jdbc.SqlScriptVerifier.SpannerGenericConnection;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.junit.runners.MethodSorters;
-import com.google.cloud.spanner.IntegrationTest;
-import com.google.cloud.spanner.jdbc.ITAbstractSpannerTest;
-import com.google.cloud.spanner.jdbc.SqlScriptVerifier;
-import com.google.cloud.spanner.jdbc.SqlScriptVerifier.SpannerGenericConnection;
 
 /**
  * Integration test that creates and fills a test database entirely using only sql scripts, and then
@@ -61,105 +61,143 @@ public class ITSqlScriptTest extends ITAbstractSpannerTest {
   @Test
   public void test01_CreateTables() throws Exception {
     try (ITConnection connection = createConnection()) {
-      verifier.verifyStatementsInFile(SpannerGenericConnection.of(connection), CREATE_TABLES_FILE,
-          SqlScriptVerifier.class, true);
+      verifier.verifyStatementsInFile(
+          SpannerGenericConnection.of(connection),
+          CREATE_TABLES_FILE,
+          SqlScriptVerifier.class,
+          true);
     }
   }
 
   @Test
   public void test02_InsertTestData() throws Exception {
     try (ITConnection connection = createConnection()) {
-      verifier.verifyStatementsInFile(SpannerGenericConnection.of(connection),
-          INSERT_AND_VERIFY_TEST_DATA, SqlScriptVerifier.class, true);
+      verifier.verifyStatementsInFile(
+          SpannerGenericConnection.of(connection),
+          INSERT_AND_VERIFY_TEST_DATA,
+          SqlScriptVerifier.class,
+          true);
     }
   }
 
   @Test
   public void test03_TestGetReadTimestamp() throws Exception {
     try (ITConnection connection = createConnection()) {
-      verifier.verifyStatementsInFile(SpannerGenericConnection.of(connection),
-          TEST_GET_READ_TIMESTAMP, SqlScriptVerifier.class, true);
+      verifier.verifyStatementsInFile(
+          SpannerGenericConnection.of(connection),
+          TEST_GET_READ_TIMESTAMP,
+          SqlScriptVerifier.class,
+          true);
     }
   }
 
   @Test
   public void test04_TestGetCommitTimestamp() throws Exception {
     try (ITConnection connection = createConnection()) {
-      verifier.verifyStatementsInFile(SpannerGenericConnection.of(connection),
-          TEST_GET_COMMIT_TIMESTAMP, SqlScriptVerifier.class, true);
+      verifier.verifyStatementsInFile(
+          SpannerGenericConnection.of(connection),
+          TEST_GET_COMMIT_TIMESTAMP,
+          SqlScriptVerifier.class,
+          true);
     }
   }
 
   @Test
   public void test05_TestTemporaryTransactions() throws Exception {
     try (ITConnection connection = createConnection()) {
-      verifier.verifyStatementsInFile(SpannerGenericConnection.of(connection),
-          TEST_TEMPORARY_TRANSACTIONS, SqlScriptVerifier.class, true);
+      verifier.verifyStatementsInFile(
+          SpannerGenericConnection.of(connection),
+          TEST_TEMPORARY_TRANSACTIONS,
+          SqlScriptVerifier.class,
+          true);
     }
   }
 
   @Test
   public void test06_TestTransactionMode() throws Exception {
     try (ITConnection connection = createConnection()) {
-      verifier.verifyStatementsInFile(SpannerGenericConnection.of(connection),
-          TEST_TRANSACTION_MODE, SqlScriptVerifier.class, true);
+      verifier.verifyStatementsInFile(
+          SpannerGenericConnection.of(connection),
+          TEST_TRANSACTION_MODE,
+          SqlScriptVerifier.class,
+          true);
     }
   }
 
   @Test
   public void test07_TestTransactionModeReadOnly() throws Exception {
     try (ITConnection connection = createConnection()) {
-      verifier.verifyStatementsInFile(SpannerGenericConnection.of(connection),
-          TEST_TRANSACTION_MODE_READ_ONLY, SqlScriptVerifier.class, true);
+      verifier.verifyStatementsInFile(
+          SpannerGenericConnection.of(connection),
+          TEST_TRANSACTION_MODE_READ_ONLY,
+          SqlScriptVerifier.class,
+          true);
     }
   }
 
   @Test
   public void test08_TestReadOnlyStaleness() throws Exception {
     try (ITConnection connection = createConnection()) {
-      verifier.verifyStatementsInFile(SpannerGenericConnection.of(connection),
-          TEST_READ_ONLY_STALENESS, SqlScriptVerifier.class, true);
+      verifier.verifyStatementsInFile(
+          SpannerGenericConnection.of(connection),
+          TEST_READ_ONLY_STALENESS,
+          SqlScriptVerifier.class,
+          true);
     }
   }
 
   @Test
   public void test09_TestAutocommitDmlMode() throws Exception {
     try (ITConnection connection = createConnection()) {
-      verifier.verifyStatementsInFile(SpannerGenericConnection.of(connection),
-          TEST_AUTOCOMMIT_DML_MODE, SqlScriptVerifier.class, true);
+      verifier.verifyStatementsInFile(
+          SpannerGenericConnection.of(connection),
+          TEST_AUTOCOMMIT_DML_MODE,
+          SqlScriptVerifier.class,
+          true);
     }
   }
 
   @Test
   public void test10_TestAutocommitReadOnly() throws Exception {
     try (ITConnection connection = createConnection()) {
-      verifier.verifyStatementsInFile(SpannerGenericConnection.of(connection),
-          TEST_AUTOCOMMIT_READ_ONLY, SqlScriptVerifier.class, true);
+      verifier.verifyStatementsInFile(
+          SpannerGenericConnection.of(connection),
+          TEST_AUTOCOMMIT_READ_ONLY,
+          SqlScriptVerifier.class,
+          true);
     }
   }
 
   @Test
   public void test11_TestStatementTimeout() throws Exception {
     try (ITConnection connection = createConnection()) {
-      verifier.verifyStatementsInFile(SpannerGenericConnection.of(connection),
-          TEST_STATEMENT_TIMEOUT, SqlScriptVerifier.class, true);
+      verifier.verifyStatementsInFile(
+          SpannerGenericConnection.of(connection),
+          TEST_STATEMENT_TIMEOUT,
+          SqlScriptVerifier.class,
+          true);
     }
   }
 
   @Test
   public void test12_TestSetStatements() throws Exception {
     try (ITConnection connection = createConnection()) {
-      verifier.verifyStatementsInFile(SpannerGenericConnection.of(connection), TEST_SET_STATEMENTS,
-          SqlScriptVerifier.class, true);
+      verifier.verifyStatementsInFile(
+          SpannerGenericConnection.of(connection),
+          TEST_SET_STATEMENTS,
+          SqlScriptVerifier.class,
+          true);
     }
   }
 
   @Test
   public void test13_TestInvalidStatements() throws Exception {
     try (ITConnection connection = createConnection()) {
-      verifier.verifyStatementsInFile(SpannerGenericConnection.of(connection),
-          TEST_INVALID_STATEMENTS, SqlScriptVerifier.class, true);
+      verifier.verifyStatementsInFile(
+          SpannerGenericConnection.of(connection),
+          TEST_INVALID_STATEMENTS,
+          SqlScriptVerifier.class,
+          true);
     }
   }
-
 }

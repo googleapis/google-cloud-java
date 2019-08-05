@@ -19,6 +19,11 @@ package com.google.cloud.spanner.jdbc.it;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.junit.Assert.assertThat;
+
+import com.google.cloud.spanner.IntegrationTest;
+import com.google.cloud.spanner.ResultSet;
+import com.google.cloud.spanner.Statement;
+import com.google.cloud.spanner.jdbc.ITAbstractSpannerTest;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Callable;
@@ -29,10 +34,6 @@ import org.junit.Test;
 import org.junit.experimental.categories.Category;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-import com.google.cloud.spanner.IntegrationTest;
-import com.google.cloud.spanner.ResultSet;
-import com.google.cloud.spanner.Statement;
-import com.google.cloud.spanner.jdbc.ITAbstractSpannerTest;
 
 /** Test opening multiple generic (not JDBC) Spanner connections. */
 @Category(IntegrationTest.class)
@@ -64,18 +65,19 @@ public class ITBulkConnectionTest extends ITAbstractSpannerTest {
   public void testBulkCreateConnectionsMultiThreaded() throws InterruptedException {
     ExecutorService executor = Executors.newFixedThreadPool(50);
     for (int i = 0; i < NUMBER_OF_TEST_CONNECTIONS; i++) {
-      executor.submit(new Callable<Void>() {
-        @Override
-        public Void call() throws Exception {
-          try (ITConnection connection = createConnection()) {
-            try (ResultSet rs = connection.executeQuery(Statement.of("select 1"))) {
-              assertThat(rs.next(), is(true));
-              assertThat(connection.getReadTimestamp(), is(notNullValue()));
+      executor.submit(
+          new Callable<Void>() {
+            @Override
+            public Void call() throws Exception {
+              try (ITConnection connection = createConnection()) {
+                try (ResultSet rs = connection.executeQuery(Statement.of("select 1"))) {
+                  assertThat(rs.next(), is(true));
+                  assertThat(connection.getReadTimestamp(), is(notNullValue()));
+                }
+              }
+              return null;
             }
-          }
-          return null;
-        }
-      });
+          });
     }
     executor.shutdown();
     executor.awaitTermination(10L, TimeUnit.SECONDS);
@@ -83,5 +85,4 @@ public class ITBulkConnectionTest extends ITAbstractSpannerTest {
     // connections still open in the pool
     closeSpanner();
   }
-
 }

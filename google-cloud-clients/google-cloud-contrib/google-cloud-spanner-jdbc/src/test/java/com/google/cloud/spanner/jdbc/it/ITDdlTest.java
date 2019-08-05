@@ -16,13 +16,13 @@
 
 package com.google.cloud.spanner.jdbc.it;
 
+import com.google.cloud.spanner.IntegrationTest;
+import com.google.cloud.spanner.jdbc.ITAbstractSpannerTest;
+import com.google.cloud.spanner.jdbc.SqlScriptVerifier;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-import com.google.cloud.spanner.IntegrationTest;
-import com.google.cloud.spanner.jdbc.ITAbstractSpannerTest;
-import com.google.cloud.spanner.jdbc.SqlScriptVerifier;
 
 /** Execute DDL statements using the generic connection API. */
 @Category(IntegrationTest.class)
@@ -34,5 +34,4 @@ public class ITDdlTest extends ITAbstractSpannerTest {
     SqlScriptVerifier verifier = new SqlScriptVerifier(new ITConnectionProvider());
     verifier.verifyStatementsInFile("ITDdlTest.sql", SqlScriptVerifier.class, true);
   }
-
 }

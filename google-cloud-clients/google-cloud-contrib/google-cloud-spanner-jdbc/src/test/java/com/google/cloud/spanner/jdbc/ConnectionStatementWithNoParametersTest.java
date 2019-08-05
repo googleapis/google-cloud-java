@@ -20,12 +20,13 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
-import java.util.concurrent.TimeUnit;
-import org.junit.Test;
+
 import com.google.cloud.Timestamp;
 import com.google.cloud.spanner.Statement;
 import com.google.cloud.spanner.TimestampBound;
 import com.google.cloud.spanner.jdbc.StatementParser.ParsedStatement;
+import java.util.concurrent.TimeUnit;
+import org.junit.Test;
 
 public class ConnectionStatementWithNoParametersTest {
   private final StatementParser parser = StatementParser.INSTANCE;
@@ -151,5 +152,4 @@ public class ConnectionStatementWithNoParametersTest {
       verify(connection, times(1)).rollback();
     }
   }
-
 }

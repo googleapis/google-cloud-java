@@ -19,6 +19,13 @@ package com.google.cloud.spanner.jdbc.it;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.junit.Assert.assertThat;
+
+import com.google.cloud.spanner.IntegrationTest;
+import com.google.cloud.spanner.Mutation;
+import com.google.cloud.spanner.jdbc.CloudSpannerJdbcConnection;
+import com.google.cloud.spanner.jdbc.ITAbstractJdbcTest;
+import com.google.cloud.spanner.jdbc.JdbcSqlScriptVerifier;
+import com.google.cloud.spanner.jdbc.SqlScriptVerifier;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;
@@ -27,20 +34,13 @@ import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.junit.runners.MethodSorters;
-import com.google.cloud.spanner.IntegrationTest;
-import com.google.cloud.spanner.Mutation;
-import com.google.cloud.spanner.jdbc.CloudSpannerJdbcConnection;
-import com.google.cloud.spanner.jdbc.ITAbstractJdbcTest;
-import com.google.cloud.spanner.jdbc.JdbcSqlScriptVerifier;
-import com.google.cloud.spanner.jdbc.SqlScriptVerifier;
 
 @Category(IntegrationTest.class)
 @RunWith(JUnit4.class)
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class ITJdbcReadWriteAutocommitTest extends ITAbstractJdbcTest {
 
-  @Rule
-  public ExpectedException exception = ExpectedException.none();
+  @Rule public ExpectedException exception = ExpectedException.none();
 
   @Override
   protected void appendConnectionUri(StringBuilder uri) {
@@ -55,8 +55,8 @@ public class ITJdbcReadWriteAutocommitTest extends ITAbstractJdbcTest {
   @Test
   public void test01_SqlScript() throws Exception {
     JdbcSqlScriptVerifier verifier = new JdbcSqlScriptVerifier(new ITJdbcConnectionProvider());
-    verifier.verifyStatementsInFile("ITReadWriteAutocommitSpannerTest.sql", SqlScriptVerifier.class,
-        true);
+    verifier.verifyStatementsInFile(
+        "ITReadWriteAutocommitSpannerTest.sql", SqlScriptVerifier.class, true);
   }
 
   @Test

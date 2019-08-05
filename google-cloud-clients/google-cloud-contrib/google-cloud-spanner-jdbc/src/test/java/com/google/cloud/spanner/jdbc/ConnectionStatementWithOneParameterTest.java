@@ -21,17 +21,14 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
-import java.util.concurrent.TimeUnit;
-import org.junit.Test;
+
 import com.google.cloud.Timestamp;
 import com.google.cloud.spanner.Statement;
 import com.google.cloud.spanner.TimestampBound;
-import com.google.cloud.spanner.jdbc.ConnectionImpl;
-import com.google.cloud.spanner.jdbc.ConnectionStatementExecutorImpl;
-import com.google.cloud.spanner.jdbc.ReadOnlyStalenessUtil;
-import com.google.cloud.spanner.jdbc.StatementParser;
 import com.google.cloud.spanner.jdbc.StatementParser.ParsedStatement;
 import com.google.protobuf.Duration;
+import java.util.concurrent.TimeUnit;
+import org.junit.Test;
 
 public class ConnectionStatementWithOneParameterTest {
   private final StatementParser parser = StatementParser.INSTANCE;
@@ -44,8 +41,9 @@ public class ConnectionStatementWithOneParameterTest {
     when(executor.getConnection()).thenReturn(connection);
     when(executor.statementSetAutocommit(any(Boolean.class))).thenCallRealMethod();
     for (Boolean mode : new Boolean[] {Boolean.FALSE, Boolean.TRUE}) {
-      subject.getClientSideStatement().execute(executor,
-          String.format("set autocommit = %s", mode));
+      subject
+          .getClientSideStatement()
+          .execute(executor, String.format("set autocommit = %s", mode));
       verify(connection, times(1)).setAutocommit(mode);
     }
   }
@@ -58,8 +56,9 @@ public class ConnectionStatementWithOneParameterTest {
     when(executor.getConnection()).thenReturn(connection);
     when(executor.statementSetReadOnly(any(Boolean.class))).thenCallRealMethod();
     for (Boolean mode : new Boolean[] {Boolean.FALSE, Boolean.TRUE}) {
-      subject.getClientSideStatement().execute(executor,
-          String.format("set readonly = %s", Boolean.toString(mode)));
+      subject
+          .getClientSideStatement()
+          .execute(executor, String.format("set readonly = %s", Boolean.toString(mode)));
       verify(connection, times(1)).setReadOnly(mode);
     }
   }
@@ -72,8 +71,9 @@ public class ConnectionStatementWithOneParameterTest {
     when(executor.getConnection()).thenReturn(connection);
     when(executor.statementSetAutocommitDmlMode(any(AutocommitDmlMode.class))).thenCallRealMethod();
     for (AutocommitDmlMode mode : AutocommitDmlMode.values()) {
-      subject.getClientSideStatement().execute(executor,
-          String.format("set autocommit_dml_mode='%s'", mode.name()));
+      subject
+          .getClientSideStatement()
+          .execute(executor, String.format("set autocommit_dml_mode='%s'", mode.name()));
       verify(connection, times(1)).setAutocommitDmlMode(mode);
     }
   }
@@ -87,11 +87,18 @@ public class ConnectionStatementWithOneParameterTest {
     for (TimeUnit unit : ReadOnlyStalenessUtil.SUPPORTED_UNITS) {
       for (Long val : new Long[] {1L, 100L, 999L}) {
         ParsedStatement subject =
-            parser.parse(Statement.of(String.format("set statement_timeout='%d%s'", val,
-                ReadOnlyStalenessUtil.getTimeUnitAbbreviation(unit))));
-        subject.getClientSideStatement().execute(executor,
-            String.format("set statement_timeout='%d%s'", val,
-                ReadOnlyStalenessUtil.getTimeUnitAbbreviation(unit)));
+            parser.parse(
+                Statement.of(
+                    String.format(
+                        "set statement_timeout='%d%s'",
+                        val, ReadOnlyStalenessUtil.getTimeUnitAbbreviation(unit))));
+        subject
+            .getClientSideStatement()
+            .execute(
+                executor,
+                String.format(
+                    "set statement_timeout='%d%s'",
+                    val, ReadOnlyStalenessUtil.getTimeUnitAbbreviation(unit)));
         verify(connection, times(1)).setStatementTimeout(val, unit);
       }
     }
@@ -108,13 +115,18 @@ public class ConnectionStatementWithOneParameterTest {
     ConnectionStatementExecutorImpl executor = mock(ConnectionStatementExecutorImpl.class);
     when(executor.getConnection()).thenReturn(connection);
     when(executor.statementSetReadOnlyStaleness(any(TimestampBound.class))).thenCallRealMethod();
-    for (TimestampBound val : new TimestampBound[] {TimestampBound.strong(),
-        TimestampBound.ofReadTimestamp(Timestamp.now()),
-        TimestampBound.ofMinReadTimestamp(Timestamp.now()),
-        TimestampBound.ofExactStaleness(1000L, TimeUnit.SECONDS),
-        TimestampBound.ofMaxStaleness(2000L, TimeUnit.MICROSECONDS)}) {
-      subject.getClientSideStatement().execute(executor,
-          String.format("set read_only_staleness='%s'", timestampBoundToString(val)));
+    for (TimestampBound val :
+        new TimestampBound[] {
+          TimestampBound.strong(),
+          TimestampBound.ofReadTimestamp(Timestamp.now()),
+          TimestampBound.ofMinReadTimestamp(Timestamp.now()),
+          TimestampBound.ofExactStaleness(1000L, TimeUnit.SECONDS),
+          TimestampBound.ofMaxStaleness(2000L, TimeUnit.MICROSECONDS)
+        }) {
+      subject
+          .getClientSideStatement()
+          .execute(
+              executor, String.format("set read_only_staleness='%s'", timestampBoundToString(val)));
       verify(connection, times(1)).setReadOnlyStaleness(val);
     }
   }
@@ -144,10 +156,10 @@ public class ConnectionStatementWithOneParameterTest {
     when(executor.getConnection()).thenReturn(connection);
     when(executor.statementSetTransactionMode(any(TransactionMode.class))).thenCallRealMethod();
     for (TransactionMode mode : TransactionMode.values()) {
-      subject.getClientSideStatement().execute(executor,
-          String.format("set transaction %s", mode.getStatementString()));
+      subject
+          .getClientSideStatement()
+          .execute(executor, String.format("set transaction %s", mode.getStatementString()));
       verify(connection, times(1)).setTransactionMode(mode);
     }
   }
-
 }

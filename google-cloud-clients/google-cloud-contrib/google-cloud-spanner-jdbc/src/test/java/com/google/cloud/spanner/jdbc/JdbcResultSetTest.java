@@ -93,7 +93,8 @@ public class JdbcResultSetTest {
   private static final int DATE_COLINDEX_NOTNULL = 12;
   private static final String TIMESTAMP_COL_NULL = "TIMESTAMP_COL_NULL";
   private static final String TIMESTAMP_COL_NOT_NULL = "TIMESTAMP_COL_NOT_NULL";
-  private static final Timestamp TIMESTAMP_VALUE = Timestamp.parseTimestamp("2019-01-18T10:00:01.1213Z");
+  private static final Timestamp TIMESTAMP_VALUE =
+      Timestamp.parseTimestamp("2019-01-18T10:00:01.1213Z");
   private static final int TIMESTAMP_COLINDEX_NULL = 13;
   private static final int TIMESTAMP_COLINDEX_NOTNULL = 14;
   private static final String TIME_COL_NULL = "TIME_COL_NULL";

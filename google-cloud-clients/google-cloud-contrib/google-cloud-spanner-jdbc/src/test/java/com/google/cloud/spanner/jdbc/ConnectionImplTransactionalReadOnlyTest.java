@@ -16,14 +16,14 @@
 
 package com.google.cloud.spanner.jdbc;
 
-import java.util.concurrent.TimeUnit;
-import org.junit.experimental.runners.Enclosed;
-import org.junit.runner.RunWith;
 import com.google.cloud.NoCredentials;
 import com.google.cloud.spanner.Statement;
 import com.google.cloud.spanner.TimestampBound;
 import com.google.cloud.spanner.TimestampBound.Mode;
 import com.google.cloud.spanner.jdbc.StatementParser.StatementType;
+import java.util.concurrent.TimeUnit;
+import org.junit.experimental.runners.Enclosed;
+import org.junit.runner.RunWith;
 
 /**
  * The tests in this class do not need to be implemented for client libraries in other programming
@@ -37,8 +37,12 @@ public class ConnectionImplTransactionalReadOnlyTest {
     @Override
     Connection getConnection() {
       log("NEW_CONNECTION;");
-      Connection connection = ConnectionImplTest.createConnection(ConnectionOptions.newBuilder()
-          .setCredentials(NoCredentials.getInstance()).setUri(ConnectionImplTest.URI).build());
+      Connection connection =
+          ConnectionImplTest.createConnection(
+              ConnectionOptions.newBuilder()
+                  .setCredentials(NoCredentials.getInstance())
+                  .setUri(ConnectionImplTest.URI)
+                  .build());
       log("SET READONLY=TRUE;");
       connection.setReadOnly(true);
       log("SET AUTOCOMMIT=FALSE;");
@@ -175,8 +179,12 @@ public class ConnectionImplTransactionalReadOnlyTest {
     @Override
     Connection getConnection() {
       log("NEW_CONNECTION;");
-      Connection connection = ConnectionImplTest.createConnection(ConnectionOptions.newBuilder()
-          .setCredentials(NoCredentials.getInstance()).setUri(ConnectionImplTest.URI).build());
+      Connection connection =
+          ConnectionImplTest.createConnection(
+              ConnectionOptions.newBuilder()
+                  .setCredentials(NoCredentials.getInstance())
+                  .setUri(ConnectionImplTest.URI)
+                  .build());
       log("SET READONLY=TRUE;");
       connection.setReadOnly(true);
       log("SET AUTOCOMMIT=FALSE;");
@@ -318,8 +326,12 @@ public class ConnectionImplTransactionalReadOnlyTest {
     @Override
     Connection getConnection() {
       log("NEW_CONNECTION;");
-      Connection connection = ConnectionImplTest.createConnection(ConnectionOptions.newBuilder()
-          .setCredentials(NoCredentials.getInstance()).setUri(ConnectionImplTest.URI).build());
+      Connection connection =
+          ConnectionImplTest.createConnection(
+              ConnectionOptions.newBuilder()
+                  .setCredentials(NoCredentials.getInstance())
+                  .setUri(ConnectionImplTest.URI)
+                  .build());
       log("SET READONLY=TRUE;");
       connection.setReadOnly(true);
       log("SET AUTOCOMMIT=FALSE;");
@@ -461,8 +473,12 @@ public class ConnectionImplTransactionalReadOnlyTest {
     @Override
     Connection getConnection() {
       log("NEW_CONNECTION;");
-      Connection connection = ConnectionImplTest.createConnection(ConnectionOptions.newBuilder()
-          .setCredentials(NoCredentials.getInstance()).setUri(ConnectionImplTest.URI).build());
+      Connection connection =
+          ConnectionImplTest.createConnection(
+              ConnectionOptions.newBuilder()
+                  .setCredentials(NoCredentials.getInstance())
+                  .setUri(ConnectionImplTest.URI)
+                  .build());
       log("SET READONLY=TRUE;");
       connection.setReadOnly(true);
       log("SET AUTOCOMMIT=FALSE;");
@@ -603,8 +619,12 @@ public class ConnectionImplTransactionalReadOnlyTest {
     @Override
     Connection getConnection() {
       log("NEW_CONNECTION;");
-      Connection connection = ConnectionImplTest.createConnection(ConnectionOptions.newBuilder()
-          .setCredentials(NoCredentials.getInstance()).setUri(ConnectionImplTest.URI).build());
+      Connection connection =
+          ConnectionImplTest.createConnection(
+              ConnectionOptions.newBuilder()
+                  .setCredentials(NoCredentials.getInstance())
+                  .setUri(ConnectionImplTest.URI)
+                  .build());
       log("SET READONLY=TRUE;");
       connection.setReadOnly(true);
       log("SET AUTOCOMMIT=FALSE;");
@@ -748,8 +768,12 @@ public class ConnectionImplTransactionalReadOnlyTest {
     @Override
     Connection getConnection() {
       log("NEW_CONNECTION;");
-      Connection connection = ConnectionImplTest.createConnection(ConnectionOptions.newBuilder()
-          .setCredentials(NoCredentials.getInstance()).setUri(ConnectionImplTest.URI).build());
+      Connection connection =
+          ConnectionImplTest.createConnection(
+              ConnectionOptions.newBuilder()
+                  .setCredentials(NoCredentials.getInstance())
+                  .setUri(ConnectionImplTest.URI)
+                  .build());
       log("SET READONLY=TRUE;");
       connection.setReadOnly(true);
       log("SET AUTOCOMMIT=FALSE;");
@@ -893,15 +917,21 @@ public class ConnectionImplTransactionalReadOnlyTest {
     @Override
     Connection getConnection() {
       log("NEW_CONNECTION;");
-      Connection connection = ConnectionImplTest.createConnection(ConnectionOptions.newBuilder()
-          .setCredentials(NoCredentials.getInstance()).setUri(ConnectionImplTest.URI).build());
+      Connection connection =
+          ConnectionImplTest.createConnection(
+              ConnectionOptions.newBuilder()
+                  .setCredentials(NoCredentials.getInstance())
+                  .setUri(ConnectionImplTest.URI)
+                  .build());
       log("SET READONLY=TRUE;");
       connection.setReadOnly(true);
       log("SET AUTOCOMMIT=FALSE;");
       connection.setAutocommit(false);
       TimestampBound staleness = TimestampBound.ofExactStaleness(10L, TimeUnit.SECONDS);
-      log("SET READ_ONLY_STALENESS='" + ReadOnlyStalenessUtil.timestampBoundToString(staleness)
-          + "';");
+      log(
+          "SET READ_ONLY_STALENESS='"
+              + ReadOnlyStalenessUtil.timestampBoundToString(staleness)
+              + "';");
       connection.setReadOnlyStaleness(staleness);
       return connection;
     }
@@ -1034,8 +1064,12 @@ public class ConnectionImplTransactionalReadOnlyTest {
     @Override
     Connection getConnection() {
       log("NEW_CONNECTION;");
-      Connection connection = ConnectionImplTest.createConnection(ConnectionOptions.newBuilder()
-          .setCredentials(NoCredentials.getInstance()).setUri(ConnectionImplTest.URI).build());
+      Connection connection =
+          ConnectionImplTest.createConnection(
+              ConnectionOptions.newBuilder()
+                  .setCredentials(NoCredentials.getInstance())
+                  .setUri(ConnectionImplTest.URI)
+                  .build());
       log("SET READONLY=TRUE;");
       connection.setReadOnly(true);
       log("SET AUTOCOMMIT=FALSE;");
@@ -1167,5 +1201,4 @@ public class ConnectionImplTransactionalReadOnlyTest {
       return false;
     }
   }
-
 }

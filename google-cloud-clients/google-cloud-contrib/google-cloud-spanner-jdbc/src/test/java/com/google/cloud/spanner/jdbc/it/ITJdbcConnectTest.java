@@ -19,6 +19,11 @@ package com.google.cloud.spanner.jdbc.it;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
+
+import com.google.cloud.spanner.IntegrationTest;
+import com.google.cloud.spanner.jdbc.CloudSpannerJdbcConnection;
+import com.google.cloud.spanner.jdbc.ITAbstractJdbcTest;
+import com.google.cloud.spanner.jdbc.JdbcDataSource;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -29,18 +34,16 @@ import org.junit.Test;
 import org.junit.experimental.categories.Category;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-import com.google.cloud.spanner.IntegrationTest;
-import com.google.cloud.spanner.jdbc.CloudSpannerJdbcConnection;
-import com.google.cloud.spanner.jdbc.ITAbstractJdbcTest;
-import com.google.cloud.spanner.jdbc.JdbcDataSource;
 
 /**
  * There are three different possibilities to specify the properties of a jdbc connection:
+ *
  * <ol>
- * <li>Specify properties in the connection URL</li>
- * <li>Pass a {@link Properties} object to the {@link DriverManager}</li>
- * <li>Set the properties on a {@link DataSource}</li>
+ *   <li>Specify properties in the connection URL
+ *   <li>Pass a {@link Properties} object to the {@link DriverManager}
+ *   <li>Set the properties on a {@link DataSource}
  * </ol>
+ *
  * This class tests all three possibilities.
  */
 @Category(IntegrationTest.class)
@@ -48,7 +51,8 @@ import com.google.cloud.spanner.jdbc.JdbcDataSource;
 public class ITJdbcConnectTest extends ITAbstractJdbcTest {
 
   private String createBaseUrl() {
-    StringBuilder url = new StringBuilder("jdbc:cloudspanner:/").append(getDatabase().getId().getName());
+    StringBuilder url =
+        new StringBuilder("jdbc:cloudspanner:/").append(getDatabase().getId().getName());
     return url.toString();
   }
 
@@ -190,5 +194,4 @@ public class ITJdbcConnectTest extends ITAbstractJdbcTest {
       testNonDefaultConnection(connection);
     }
   }
-
 }

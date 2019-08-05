@@ -16,23 +16,25 @@
 
 package com.google.cloud.spanner.jdbc;
 
-import org.hamcrest.BaseMatcher;
-import org.hamcrest.Description;
 import com.google.common.base.Preconditions;
 import io.grpc.Status.Code;
+import org.hamcrest.BaseMatcher;
+import org.hamcrest.Description;
 
 public final class SpannerJdbcExceptionMatcher<T extends JdbcSqlException> extends BaseMatcher<T> {
   private final Class<T> exceptionClass;
   private final Code errorCode;
   private final String message;
 
-  public static <T extends JdbcSqlException> SpannerJdbcExceptionMatcher<T> matchCode(Class<T> exceptionClass, Code errorCode) {
+  public static <T extends JdbcSqlException> SpannerJdbcExceptionMatcher<T> matchCode(
+      Class<T> exceptionClass, Code errorCode) {
     Preconditions.checkNotNull(exceptionClass);
     Preconditions.checkNotNull(errorCode);
     return new SpannerJdbcExceptionMatcher<T>(exceptionClass, errorCode, null);
   }
 
-  public static <T extends JdbcSqlException> SpannerJdbcExceptionMatcher<T> matchCodeAndMessage(Class<T> exceptionClass, Code errorCode, String message) {
+  public static <T extends JdbcSqlException> SpannerJdbcExceptionMatcher<T> matchCodeAndMessage(
+      Class<T> exceptionClass, Code errorCode, String message) {
     Preconditions.checkNotNull(exceptionClass);
     Preconditions.checkNotNull(errorCode);
     Preconditions.checkNotNull(message);
@@ -65,5 +67,4 @@ public final class SpannerJdbcExceptionMatcher<T extends JdbcSqlException> exten
       description.appendText(" - " + JdbcSqlException.class.getName() + " with message " + message);
     }
   }
-
 }

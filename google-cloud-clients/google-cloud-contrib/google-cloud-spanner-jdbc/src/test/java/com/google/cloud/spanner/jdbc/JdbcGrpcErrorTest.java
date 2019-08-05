@@ -16,19 +16,6 @@
 
 package com.google.cloud.spanner.jdbc;
 
-import java.io.IOException;
-import java.net.InetSocketAddress;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.rules.ExpectedException;
-import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
 import com.google.cloud.spanner.MockSpannerServiceImpl;
 import com.google.cloud.spanner.MockSpannerServiceImpl.SimulatedExecutionTime;
 import com.google.cloud.spanner.MockSpannerServiceImpl.StatementResult;
@@ -47,6 +34,19 @@ import io.grpc.Server;
 import io.grpc.Status;
 import io.grpc.Status.Code;
 import io.grpc.netty.shaded.io.grpc.netty.NettyServerBuilder;
+import java.io.IOException;
+import java.net.InetSocketAddress;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Rule;
+import org.junit.Test;
+import org.junit.rules.ExpectedException;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
 
 /** Test that the JDBC driver propagates {@link SQLException}s when a gRPC error occurs. */
 @RunWith(JUnit4.class)
@@ -54,16 +54,23 @@ public class JdbcGrpcErrorTest {
   private static final Statement SELECT1 = Statement.of("SELECT 1 AS COL1");
   private static final ResultSetMetadata SELECT1_METADATA =
       ResultSetMetadata.newBuilder()
-          .setRowType(StructType.newBuilder()
-              .addFields(Field.newBuilder().setName("COL1")
-                  .setType(Type.newBuilder().setCode(TypeCode.INT64).build()).build())
-              .build())
+          .setRowType(
+              StructType.newBuilder()
+                  .addFields(
+                      Field.newBuilder()
+                          .setName("COL1")
+                          .setType(Type.newBuilder().setCode(TypeCode.INT64).build())
+                          .build())
+                  .build())
           .build();
   private static final com.google.spanner.v1.ResultSet SELECT1_RESULTSET =
-      com.google.spanner.v1.ResultSet
-          .newBuilder().addRows(ListValue.newBuilder()
-              .addValues(Value.newBuilder().setStringValue("1").build()).build())
-          .setMetadata(SELECT1_METADATA).build();
+      com.google.spanner.v1.ResultSet.newBuilder()
+          .addRows(
+              ListValue.newBuilder()
+                  .addValues(Value.newBuilder().setStringValue("1").build())
+                  .build())
+          .setMetadata(SELECT1_METADATA)
+          .build();
   private static final Statement UPDATE_STATEMENT =
       Statement.of("UPDATE FOO SET BAR=1 WHERE BAZ=2");
   private static final int UPDATE_COUNT = 1;
@@ -76,14 +83,13 @@ public class JdbcGrpcErrorTest {
   private static Server server;
   private static InetSocketAddress address;
 
-  @Rule
-  public ExpectedException expected = ExpectedException.none();
+  @Rule public ExpectedException expected = ExpectedException.none();
   // FAILED_PRECONDITION is chosen as the test error code as it should never be retryable.
   private final Exception serverException =
       Status.FAILED_PRECONDITION.withDescription("test exception").asRuntimeException();
   private final SpannerJdbcExceptionMatcher<JdbcSqlExceptionImpl> testExceptionMatcher =
-      SpannerJdbcExceptionMatcher.matchCodeAndMessage(JdbcSqlExceptionImpl.class,
-          Code.FAILED_PRECONDITION, "test exception");
+      SpannerJdbcExceptionMatcher.matchCodeAndMessage(
+          JdbcSqlExceptionImpl.class, Code.FAILED_PRECONDITION, "test exception");
 
   @BeforeClass
   public static void startStaticServer() throws IOException {
@@ -91,13 +97,20 @@ public class JdbcGrpcErrorTest {
     mockSpanner.setAbortProbability(0.0D); // We don't want any unpredictable aborted transactions.
     mockSpanner.putStatementResult(StatementResult.query(SELECT1, SELECT1_RESULTSET));
     mockSpanner.putStatementResult(StatementResult.update(UPDATE_STATEMENT, UPDATE_COUNT));
-    mockSpanner.putStatementResult(StatementResult.exception(INVALID_UPDATE_STATEMENT,
-        Status.NOT_FOUND.withDescription("Unknown table name").asRuntimeException()));
+    mockSpanner.putStatementResult(
+        StatementResult.exception(
+            INVALID_UPDATE_STATEMENT,
+            Status.NOT_FOUND.withDescription("Unknown table name").asRuntimeException()));
     mockInstanceAdmin = new MockInstanceAdminImpl();
     mockDatabaseAdmin = new MockDatabaseAdminImpl();
     address = new InetSocketAddress("localhost", 0);
-    server = NettyServerBuilder.forAddress(address).addService(mockSpanner)
-        .addService(mockInstanceAdmin).addService(mockDatabaseAdmin).build().start();
+    server =
+        NettyServerBuilder.forAddress(address)
+            .addService(mockSpanner)
+            .addService(mockInstanceAdmin)
+            .addService(mockDatabaseAdmin)
+            .build()
+            .start();
   }
 
   @AfterClass
@@ -129,8 +142,8 @@ public class JdbcGrpcErrorTest {
   @Test
   public void autocommitBeginTransaction() throws SQLException {
     expected.expect(testExceptionMatcher);
-    mockSpanner
-        .setBeginTransactionExecutionTime(SimulatedExecutionTime.ofException(serverException));
+    mockSpanner.setBeginTransactionExecutionTime(
+        SimulatedExecutionTime.ofException(serverException));
     try (java.sql.Connection connection = createConnection()) {
       connection.createStatement().executeUpdate(UPDATE_STATEMENT.getSql());
     }
@@ -139,8 +152,8 @@ public class JdbcGrpcErrorTest {
   @Test
   public void autocommitBeginPDMLTransaction() throws SQLException {
     expected.expect(testExceptionMatcher);
-    mockSpanner
-        .setBeginTransactionExecutionTime(SimulatedExecutionTime.ofException(serverException));
+    mockSpanner.setBeginTransactionExecutionTime(
+        SimulatedExecutionTime.ofException(serverException));
     try (java.sql.Connection connection = createConnection()) {
       connection.createStatement().execute("SET AUTOCOMMIT_DML_MODE='PARTITIONED_NON_ATOMIC'");
       connection.createStatement().executeUpdate(UPDATE_STATEMENT.getSql());
@@ -150,8 +163,8 @@ public class JdbcGrpcErrorTest {
   @Test
   public void transactionalBeginTransaction() throws SQLException {
     expected.expect(testExceptionMatcher);
-    mockSpanner
-        .setBeginTransactionExecutionTime(SimulatedExecutionTime.ofException(serverException));
+    mockSpanner.setBeginTransactionExecutionTime(
+        SimulatedExecutionTime.ofException(serverException));
     try (java.sql.Connection connection = createConnection()) {
       connection.setAutoCommit(false);
       connection.createStatement().executeUpdate(UPDATE_STATEMENT.getSql());
@@ -161,8 +174,8 @@ public class JdbcGrpcErrorTest {
   @Test
   public void readOnlyBeginTransaction() throws SQLException {
     expected.expect(testExceptionMatcher);
-    mockSpanner
-        .setBeginTransactionExecutionTime(SimulatedExecutionTime.ofException(serverException));
+    mockSpanner.setBeginTransactionExecutionTime(
+        SimulatedExecutionTime.ofException(serverException));
     try (java.sql.Connection connection = createConnection()) {
       connection.setAutoCommit(false);
       connection.setReadOnly(true);
@@ -202,8 +215,8 @@ public class JdbcGrpcErrorTest {
   @Test
   public void autocommitExecuteBatchDml() throws SQLException {
     expected.expect(testExceptionMatcher);
-    mockSpanner
-        .setExecuteBatchDmlExecutionTime(SimulatedExecutionTime.ofException(serverException));
+    mockSpanner.setExecuteBatchDmlExecutionTime(
+        SimulatedExecutionTime.ofException(serverException));
     try (java.sql.Connection connection = createConnection()) {
       try (java.sql.Statement statement = connection.createStatement()) {
         statement.addBatch(UPDATE_STATEMENT.getSql());
@@ -216,8 +229,8 @@ public class JdbcGrpcErrorTest {
   @Test
   public void transactionalExecuteBatchDml() throws SQLException {
     expected.expect(testExceptionMatcher);
-    mockSpanner
-        .setExecuteBatchDmlExecutionTime(SimulatedExecutionTime.ofException(serverException));
+    mockSpanner.setExecuteBatchDmlExecutionTime(
+        SimulatedExecutionTime.ofException(serverException));
     try (java.sql.Connection connection = createConnection()) {
       connection.setAutoCommit(false);
       try (java.sql.Statement statement = connection.createStatement()) {
@@ -252,8 +265,9 @@ public class JdbcGrpcErrorTest {
   public void autocommitRollback() throws SQLException {
     // The JDBC driver should throw the exception of the SQL statement and ignore any errors from
     // the rollback() method.
-    expected.expect(SpannerJdbcExceptionMatcher.matchCodeAndMessage(JdbcSqlExceptionImpl.class,
-        Code.NOT_FOUND, "Unknown table name"));
+    expected.expect(
+        SpannerJdbcExceptionMatcher.matchCodeAndMessage(
+            JdbcSqlExceptionImpl.class, Code.NOT_FOUND, "Unknown table name"));
     mockSpanner.setRollbackExecutionTime(SimulatedExecutionTime.ofException(serverException));
     try (java.sql.Connection connection = createConnection()) {
       connection.createStatement().executeUpdate(INVALID_UPDATE_STATEMENT.getSql());
@@ -275,8 +289,8 @@ public class JdbcGrpcErrorTest {
   @Test
   public void autocommitExecuteStreamingSql() throws SQLException {
     expected.expect(testExceptionMatcher);
-    mockSpanner
-        .setExecuteStreamingSqlExecutionTime(SimulatedExecutionTime.ofException(serverException));
+    mockSpanner.setExecuteStreamingSqlExecutionTime(
+        SimulatedExecutionTime.ofException(serverException));
     try (java.sql.Connection connection = createConnection()) {
       connection.createStatement().executeQuery(SELECT1.getSql());
     }
@@ -285,8 +299,8 @@ public class JdbcGrpcErrorTest {
   @Test
   public void transactionalExecuteStreamingSql() throws SQLException {
     expected.expect(testExceptionMatcher);
-    mockSpanner
-        .setExecuteStreamingSqlExecutionTime(SimulatedExecutionTime.ofException(serverException));
+    mockSpanner.setExecuteStreamingSqlExecutionTime(
+        SimulatedExecutionTime.ofException(serverException));
     try (java.sql.Connection connection = createConnection()) {
       connection.setAutoCommit(false);
       connection.createStatement().executeQuery(SELECT1.getSql());
@@ -296,8 +310,8 @@ public class JdbcGrpcErrorTest {
   @Test
   public void readOnlyExecuteStreamingSql() throws SQLException {
     expected.expect(testExceptionMatcher);
-    mockSpanner
-        .setExecuteStreamingSqlExecutionTime(SimulatedExecutionTime.ofException(serverException));
+    mockSpanner.setExecuteStreamingSqlExecutionTime(
+        SimulatedExecutionTime.ofException(serverException));
     try (java.sql.Connection connection = createConnection()) {
       connection.setAutoCommit(false);
       connection.setReadOnly(true);
