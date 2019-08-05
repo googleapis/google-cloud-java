@@ -120,7 +120,8 @@ public abstract class ServiceOptions<
       OptionsT extends ServiceOptions<ServiceT, OptionsT>,
       B extends Builder<ServiceT, OptionsT, B>> {
 
-    private final ImmutableSet<String> allowedClientLibTokens = ImmutableSet.of(ServiceOptions.getGoogApiClientLibName());
+    private final ImmutableSet<String> allowedClientLibTokens =
+        ImmutableSet.of(ServiceOptions.getGoogApiClientLibName());
     private String projectId;
     private String host;
     protected Credentials credentials;
