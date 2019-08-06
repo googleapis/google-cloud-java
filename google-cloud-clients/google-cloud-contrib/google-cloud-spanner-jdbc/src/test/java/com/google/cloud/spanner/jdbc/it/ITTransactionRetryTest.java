@@ -1558,7 +1558,7 @@ public class ITTransactionRetryTest extends ITAbstractSpannerTest {
       int minAttemptsStartedExpected,
       int concurrentModificationsExpected,
       int successfulRetriesExpected) {
-    assertThat(RETRY_STATISTICS.totalRetryAttemptsStarted > minAttemptsStartedExpected, is(true));
+    assertThat(RETRY_STATISTICS.totalRetryAttemptsStarted >= minAttemptsStartedExpected, is(true));
     assertThat(
         RETRY_STATISTICS.totalConcurrentModifications,
         is(equalTo(concurrentModificationsExpected)));
