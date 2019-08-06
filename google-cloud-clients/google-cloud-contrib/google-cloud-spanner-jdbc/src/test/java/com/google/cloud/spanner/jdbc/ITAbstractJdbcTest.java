@@ -87,8 +87,12 @@ public class ITAbstractJdbcTest {
    * @return The newly opened JDBC connection.
    */
   public CloudSpannerJdbcConnection createConnection() throws SQLException {
-    StringBuilder url =
-        new StringBuilder("jdbc:cloudspanner:/").append(getDatabase().getId().getName());
+    StringBuilder url = new StringBuilder("jdbc:cloudspanner:");
+    String host = env.getTestHelper().getOptions().getHost();
+    if (host != null) {
+      url.append(host.substring(host.indexOf(':') + 1));
+    }
+    url.append("/").append(getDatabase().getId().getName());
     if (hasValidKeyFile()) {
       url.append(";credentials=").append(getKeyFile());
     }
