@@ -76,7 +76,7 @@ public interface EmploymentRecordOrBuilder
    * <pre>
    * Optional. The name of the employer company/organization.
    * For example, "Google", "Alphabet", and so on.
-   * Number of characters allowed is 100.
+   * Number of characters allowed is 250.
    * </pre>
    *
    * <code>string employer_name = 3;</code>
@@ -88,7 +88,7 @@ public interface EmploymentRecordOrBuilder
    * <pre>
    * Optional. The name of the employer company/organization.
    * For example, "Google", "Alphabet", and so on.
-   * Number of characters allowed is 100.
+   * Number of characters allowed is 250.
    * </pre>
    *
    * <code>string employer_name = 3;</code>
@@ -157,7 +157,7 @@ public interface EmploymentRecordOrBuilder
    * <pre>
    * Optional. The job title of the employment.
    * For example, "Software Engineer", "Data Scientist", and so on.
-   * Number of characters allowed is 100.
+   * Number of characters allowed is 250.
    * </pre>
    *
    * <code>string job_title = 6;</code>
@@ -169,7 +169,7 @@ public interface EmploymentRecordOrBuilder
    * <pre>
    * Optional. The job title of the employment.
    * For example, "Software Engineer", "Data Scientist", and so on.
-   * Number of characters allowed is 100.
+   * Number of characters allowed is 250.
    * </pre>
    *
    * <code>string job_title = 6;</code>

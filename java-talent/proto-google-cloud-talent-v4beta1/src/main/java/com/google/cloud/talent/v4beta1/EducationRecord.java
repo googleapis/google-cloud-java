@@ -379,7 +379,7 @@ public final class EducationRecord extends com.google.protobuf.GeneratedMessageV
    * <pre>
    * Optional. The name of the school or institution.
    * For example, "Stanford University", "UC Berkeley", and so on.
-   * Number of characters allowed is 100.
+   * Number of characters allowed is 250.
    * </pre>
    *
    * <code>string school_name = 4;</code>
@@ -401,7 +401,7 @@ public final class EducationRecord extends com.google.protobuf.GeneratedMessageV
    * <pre>
    * Optional. The name of the school or institution.
    * For example, "Stanford University", "UC Berkeley", and so on.
-   * Number of characters allowed is 100.
+   * Number of characters allowed is 250.
    * </pre>
    *
    * <code>string school_name = 4;</code>
@@ -1851,7 +1851,7 @@ public final class EducationRecord extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Optional. The name of the school or institution.
      * For example, "Stanford University", "UC Berkeley", and so on.
-     * Number of characters allowed is 100.
+     * Number of characters allowed is 250.
      * </pre>
      *
      * <code>string school_name = 4;</code>
@@ -1873,7 +1873,7 @@ public final class EducationRecord extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Optional. The name of the school or institution.
      * For example, "Stanford University", "UC Berkeley", and so on.
-     * Number of characters allowed is 100.
+     * Number of characters allowed is 250.
      * </pre>
      *
      * <code>string school_name = 4;</code>
@@ -1895,7 +1895,7 @@ public final class EducationRecord extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Optional. The name of the school or institution.
      * For example, "Stanford University", "UC Berkeley", and so on.
-     * Number of characters allowed is 100.
+     * Number of characters allowed is 250.
      * </pre>
      *
      * <code>string school_name = 4;</code>
@@ -1915,7 +1915,7 @@ public final class EducationRecord extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Optional. The name of the school or institution.
      * For example, "Stanford University", "UC Berkeley", and so on.
-     * Number of characters allowed is 100.
+     * Number of characters allowed is 250.
      * </pre>
      *
      * <code>string school_name = 4;</code>
@@ -1932,7 +1932,7 @@ public final class EducationRecord extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Optional. The name of the school or institution.
      * For example, "Stanford University", "UC Berkeley", and so on.
-     * Number of characters allowed is 100.
+     * Number of characters allowed is 250.
      * </pre>
      *
      * <code>string school_name = 4;</code>
