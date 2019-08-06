@@ -73,6 +73,7 @@ google-cloud-websecurityscanner:0.103.0:0.103.1-SNAPSHOT
 grafeas:0.6.0:0.6.1-SNAPSHOT
 grpc-google-cloud-asset-v1:0.68.0:0.68.1-SNAPSHOT
 grpc-google-cloud-asset-v1beta1:0.68.0:0.68.1-SNAPSHOT
+grpc-google-cloud-asset-v1p2beta1:0.68.0:0.68.1-SNAPSHOT
 grpc-google-cloud-automl-v1beta1:0.68.0:0.68.1-SNAPSHOT
 grpc-google-cloud-bigquerydatatransfer-v1:0.68.0:0.68.1-SNAPSHOT
 grpc-google-cloud-bigquerystorage-v1beta1:0.68.0:0.68.1-SNAPSHOT
@@ -141,6 +142,7 @@ grpc-google-cloud-websecurityscanner-v1alpha:0.68.0:0.68.1-SNAPSHOT
 grpc-google-cloud-websecurityscanner-v1beta:0.68.0:0.68.1-SNAPSHOT
 proto-google-cloud-asset-v1:0.68.0:0.68.1-SNAPSHOT
 proto-google-cloud-asset-v1beta1:0.68.0:0.68.1-SNAPSHOT
+proto-google-cloud-asset-v1p2beta1:0.68.0:0.68.1-SNAPSHOT
 proto-google-cloud-automl-v1beta1:0.68.0:0.68.1-SNAPSHOT
 proto-google-cloud-bigquerydatatransfer-v1:0.68.0:0.68.1-SNAPSHOT
 proto-google-cloud-bigquerystorage-v1beta1:0.68.0:0.68.1-SNAPSHOT

@@ -831,6 +831,7 @@
   <modules>
     <module>grpc-google-cloud-asset-v1</module>
     <module>grpc-google-cloud-asset-v1beta1</module>
+    <module>grpc-google-cloud-asset-v1p2beta1</module>
     <module>grpc-google-cloud-automl-v1beta1</module>
     <module>grpc-google-cloud-bigquerydatatransfer-v1</module>
     <module>grpc-google-cloud-bigquerystorage-v1beta1</module>
@@ -900,6 +901,7 @@
 
     <module>proto-google-cloud-asset-v1</module>
     <module>proto-google-cloud-asset-v1beta1</module>
+    <module>proto-google-cloud-asset-v1p2beta1</module>
     <module>proto-google-cloud-automl-v1beta1</module>
     <module>proto-google-cloud-bigquerydatatransfer-v1</module>
     <module>proto-google-cloud-bigquerystorage-v1beta1</module>
