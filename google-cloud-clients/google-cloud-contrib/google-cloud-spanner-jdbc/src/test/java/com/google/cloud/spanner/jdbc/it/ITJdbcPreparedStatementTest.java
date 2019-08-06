@@ -73,7 +73,7 @@ public class ITJdbcPreparedStatementTest extends ITAbstractJdbcTest {
           Long.valueOf(array[0]), // singer id
           array[1].substring(1, array[1].length() - 1), // first name
           array[2].substring(1, array[2].length() - 1), // last name
-          parseBytes(array[3].substring(13, array[3].length() - 1)), // singer info
+          parseBytes(array[3].substring(13, array[3].length() - 2)), // singer info
           parseDate(array[4].substring(6, array[4].length() - 1)) // birth date
           );
     }
