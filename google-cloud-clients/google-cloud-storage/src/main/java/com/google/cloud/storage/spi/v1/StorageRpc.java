@@ -469,11 +469,11 @@ public interface StorageRpc extends ServiceRpc {
   HmacKeyMetadata getHmacKey(String accessId, Map<Option, ?> options);
 
   /**
-   * Deletes the HMAC key associated with the provided access id.
+   * Deletes the HMAC key associated with the provided metadata object.
    *
    * @throws StorageException upon failure
    */
-  void deleteHmacKey(String accessId, Map<Option, ?> options);
+  void deleteHmacKey(HmacKeyMetadata hmacKeyMetadata, Map<Option, ?> options);
 
   /**
    * Returns the IAM policy for the specified bucket.

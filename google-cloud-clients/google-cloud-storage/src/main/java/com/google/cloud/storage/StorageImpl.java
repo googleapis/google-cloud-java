@@ -1258,13 +1258,13 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
   }
 
   @Override
-  public void deleteHmacKey(final String accessId, final DeleteHmacKeyOption... options) {
+  public void deleteHmacKey(final HmacKeyMetadata metadata, final DeleteHmacKeyOption... options) {
     try {
       runWithRetries(
           new Callable<Void>() {
             @Override
             public Void call() {
-              storageRpc.deleteHmacKey(accessId, optionMap(options));
+              storageRpc.deleteHmacKey(metadata.toPb(), optionMap(options));
               return null;
             }
           },

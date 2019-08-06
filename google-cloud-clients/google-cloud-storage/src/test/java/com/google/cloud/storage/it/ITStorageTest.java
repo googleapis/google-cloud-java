@@ -2148,7 +2148,7 @@ public class ITStorageTest {
 
       storage.updateHmacKeyState(metadata, HmacKey.HmacKeyState.INACTIVE);
 
-      storage.deleteHmacKey(accessId);
+      storage.deleteHmacKey(metadata);
 
       metadatas = storage.listHmacKeys(Storage.ListHmacKeysOption.serviceAccount(serviceAccount));
       createdHmacKeyIsInList = false;
@@ -2189,7 +2189,7 @@ public class ITStorageTest {
           storage.listHmacKeys(Storage.ListHmacKeysOption.serviceAccount(serviceAccount));
       for (HmacKey.HmacKeyMetadata hmacKeyMetadata : metadatas.iterateAll()) {
         storage.updateHmacKeyState(hmacKeyMetadata, HmacKey.HmacKeyState.INACTIVE);
-        storage.deleteHmacKey(hmacKeyMetadata.getAccessId());
+        storage.deleteHmacKey(hmacKeyMetadata);
       }
     }
   }

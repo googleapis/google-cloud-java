@@ -153,6 +153,11 @@ public class HmacKey implements Serializable {
       return new Builder(this);
     }
 
+    public static HmacKeyMetadata of(
+        ServiceAccount serviceAccount, String accessId, String projectId) {
+      return newBuilder(serviceAccount).setAccessId(accessId).setProjectId(projectId).build();
+    }
+
     @Override
     public int hashCode() {
       return Objects.hash(accessId, projectId);

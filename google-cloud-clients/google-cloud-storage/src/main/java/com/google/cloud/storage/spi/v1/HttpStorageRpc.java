@@ -1316,7 +1316,7 @@ public class HttpStorageRpc implements StorageRpc {
   public HmacKeyMetadata updateHmacKey(HmacKeyMetadata hmacKeyMetadata, Map<Option, ?> options) {
     Span span = startSpan(HttpStorageRpcSpans.SPAN_NAME_UPDATE_HMAC_KEY);
     Scope scope = tracer.withSpan(span);
-    String projectId = Option.PROJECT_ID.getString(options);
+    String projectId = hmacKeyMetadata.getProjectId();
     if (projectId == null) {
       projectId = this.options.getProjectId();
     }
@@ -1337,10 +1337,10 @@ public class HttpStorageRpc implements StorageRpc {
   }
 
   @Override
-  public void deleteHmacKey(String accessId, Map<Option, ?> options) {
+  public void deleteHmacKey(HmacKeyMetadata hmacKeyMetadata, Map<Option, ?> options) {
     Span span = startSpan(HttpStorageRpcSpans.SPAN_NAME_DELETE_HMAC_KEY);
     Scope scope = tracer.withSpan(span);
-    String projectId = Option.PROJECT_ID.getString(options);
+    String projectId = hmacKeyMetadata.getProjectId();
     if (projectId == null) {
       projectId = this.options.getProjectId();
     }
@@ -1348,7 +1348,7 @@ public class HttpStorageRpc implements StorageRpc {
       storage
           .projects()
           .hmacKeys()
-          .delete(projectId, accessId)
+          .delete(projectId, hmacKeyMetadata.getAccessId())
           .setUserProject(Option.USER_PROJECT.getString(options))
           .execute();
     } catch (IOException ex) {

@@ -295,8 +295,9 @@ public interface Storage extends Service<StorageOptions> {
       return new ListHmacKeysOption(StorageRpc.Option.USER_PROJECT, userProject);
     }
 
-    /** Returns an option to specify the Project ID for this request. If not specified,
-     * defaults to Application Default Credentials.
+    /**
+     * Returns an option to specify the Project ID for this request. If not specified, defaults to
+     * Application Default Credentials.
      */
     public static ListHmacKeysOption projectId(String projectId) {
       return new ListHmacKeysOption(StorageRpc.Option.PROJECT_ID, projectId);
@@ -317,8 +318,9 @@ public interface Storage extends Service<StorageOptions> {
       return new CreateHmacKeyOption(StorageRpc.Option.USER_PROJECT, userProject);
     }
 
-    /** Returns an option to specify the Project ID for this request. If not specified,
-     * defaults to Application Default Credentials.
+    /**
+     * Returns an option to specify the Project ID for this request. If not specified, defaults to
+     * Application Default Credentials.
      */
     public static CreateHmacKeyOption projectId(String projectId) {
       return new CreateHmacKeyOption(StorageRpc.Option.PROJECT_ID, projectId);
@@ -339,8 +341,9 @@ public interface Storage extends Service<StorageOptions> {
       return new GetHmacKeyOption(StorageRpc.Option.USER_PROJECT, userProject);
     }
 
-    /** Returns an option to specify the Project ID for this request. If not specified,
-     * defaults to Application Default Credentials.
+    /**
+     * Returns an option to specify the Project ID for this request. If not specified, defaults to
+     * Application Default Credentials.
      */
     public static GetHmacKeyOption projectId(String projectId) {
       return new GetHmacKeyOption(StorageRpc.Option.PROJECT_ID, projectId);
@@ -360,13 +363,6 @@ public interface Storage extends Service<StorageOptions> {
     public static DeleteHmacKeyOption userProject(String userProject) {
       return new DeleteHmacKeyOption(StorageRpc.Option.USER_PROJECT, userProject);
     }
-
-    /** Returns an option to specify the Project ID for this request. If not specified,
-     * defaults to Application Default Credentials.
-     */
-    public static DeleteHmacKeyOption projectId(String projectId) {
-      return new DeleteHmacKeyOption(StorageRpc.Option.PROJECT_ID, projectId);
-    }
   }
 
   /** Class for specifying updateHmacKey options */
@@ -381,13 +377,6 @@ public interface Storage extends Service<StorageOptions> {
      */
     public static UpdateHmacKeyOption userProject(String userProject) {
       return new UpdateHmacKeyOption(StorageRpc.Option.USER_PROJECT, userProject);
-    }
-
-    /** Returns an option to specify the Project ID for this request. If not specified,
-     * defaults to Application Default Credentials.
-     */
-    public static UpdateHmacKeyOption projectId(String projectId) {
-      return new UpdateHmacKeyOption(StorageRpc.Option.PROJECT_ID, projectId);
     }
   }
 
@@ -2904,9 +2893,9 @@ public interface Storage extends Service<StorageOptions> {
   HmacKeyMetadata getHmacKey(String accessId, GetHmacKeyOption... options);
 
   /**
-   * Deletes an HMAC key given its access ID. Note that only an {@code INACTIVE} key can be deleted.
-   * Attempting to delete a key whose {@code HmacKey.HmacKeyState} is anything other than {@code
-   * INACTIVE} will fail.
+   * Deletes an HMAC key. Note that only an {@code INACTIVE} key can be deleted. Attempting to
+   * delete a key whose {@code HmacKey.HmacKeyState} is anything other than {@code INACTIVE} will
+   * fail.
    *
    * <p>Example of updating an HMAC key's state to INACTIVE and then deleting it.
    *
@@ -2915,12 +2904,12 @@ public interface Storage extends Service<StorageOptions> {
    * HmacKey.HmacKeyMetadata hmacKeyMetadata = storage.getHmacKey(hmacKeyAccessId);
    *
    * storage.updateHmacKeyState(hmacKeyMetadata, HmacKey.HmacKeyState.INACTIVE);
-   * storage.deleteHmacKey(hmacKeyMetadata.getAccessId());
+   * storage.deleteHmacKey(hmacKeyMetadata);
    * }</pre>
    *
    * @throws StorageException upon failure
    */
-  void deleteHmacKey(String accessId, DeleteHmacKeyOption... options);
+  void deleteHmacKey(HmacKeyMetadata hmacKeyMetadata, DeleteHmacKeyOption... options);
 
   /**
    * Updates the state of an HMAC key and returns the updated metadata.

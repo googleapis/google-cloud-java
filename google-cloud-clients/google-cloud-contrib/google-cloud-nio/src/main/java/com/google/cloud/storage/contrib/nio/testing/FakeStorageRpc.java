@@ -444,7 +444,7 @@ class FakeStorageRpc implements StorageRpc {
   }
 
   @Override
-  public void deleteHmacKey(String accessId, Map<Option, ?> options) {
+  public void deleteHmacKey(HmacKeyMetadata hmacKeyMetadata, Map<Option, ?> options) {
     throw new UnsupportedOperationException();
   }
 
