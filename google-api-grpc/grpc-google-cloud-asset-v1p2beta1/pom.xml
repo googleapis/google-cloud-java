@@ -3,9 +3,9 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <artifactId>grpc-google-cloud-asset-v1p2beta1</artifactId>
-  <version>0.68.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-asset-v1beta1:current} -->
+  <version>0.68.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-asset-v1p2beta1:current} -->
   <name>grpc-google-cloud-asset-v1p2beta1</name>
-  <description>GRPC library for grpc-google-cloud-asset-v1beta1</description>
+  <description>GRPC library for grpc-google-cloud-asset-v1p2beta1</description>
   <parent>
     <groupId>com.google.api.grpc</groupId>
     <artifactId>google-api-grpc</artifactId>
@@ -24,7 +24,7 @@
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
-      <artifactId>proto-google-cloud-asset-v1beta1</artifactId>
+      <artifactId>proto-google-cloud-asset-v1p2beta1</artifactId>
       <scope>compile</scope>
     </dependency>
   </dependencies>
@@ -42,7 +42,7 @@
           <offlineLinks>
             <offlineLink>
               <url>${project.javadoc.protobufBaseURL}</url>
-              <location>../../../../proto-google-cloud-asset-v1beta1/target/site/apidocs/</location>
+              <location>../../../../proto-google-cloud-asset-v1p2beta1/target/site/apidocs/</location>
             </offlineLink>
           </offlineLinks>
         </configuration>
