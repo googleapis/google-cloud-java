@@ -368,7 +368,25 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. The location filter specifies geo-regions containing the profiles
-   * to search against.
+   * to search against. It filters against all of a profile's
+   * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] where
+   * [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and
+   * [Address.current][google.cloud.talent.v4beta1.Address.current] is true. If
+   * no such address exists, a fallback logic is applied in an attempt to
+   * determine the profile's primary address.
+   * The fallback logic selects an address from a profile's
+   * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
+   * following order of priority:
+   * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
+   * and [Address.current][google.cloud.talent.v4beta1.Address.current] is false
+   * or not set.
+   * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+   * CONTACT_INFO_USAGE_UNSPECIFIED and
+   * [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
+   * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+   * CONTACT_INFO_USAGE_UNSPECIFIED and
+   * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or
+   * not set.
    * If a location filter isn't specified, profiles fitting the other search
    * criteria are retrieved regardless of where they're located.
    * If
@@ -387,7 +405,25 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. The location filter specifies geo-regions containing the profiles
-   * to search against.
+   * to search against. It filters against all of a profile's
+   * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] where
+   * [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and
+   * [Address.current][google.cloud.talent.v4beta1.Address.current] is true. If
+   * no such address exists, a fallback logic is applied in an attempt to
+   * determine the profile's primary address.
+   * The fallback logic selects an address from a profile's
+   * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
+   * following order of priority:
+   * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
+   * and [Address.current][google.cloud.talent.v4beta1.Address.current] is false
+   * or not set.
+   * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+   * CONTACT_INFO_USAGE_UNSPECIFIED and
+   * [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
+   * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+   * CONTACT_INFO_USAGE_UNSPECIFIED and
+   * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or
+   * not set.
    * If a location filter isn't specified, profiles fitting the other search
    * criteria are retrieved regardless of where they're located.
    * If
@@ -407,7 +443,25 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. The location filter specifies geo-regions containing the profiles
-   * to search against.
+   * to search against. It filters against all of a profile's
+   * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] where
+   * [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and
+   * [Address.current][google.cloud.talent.v4beta1.Address.current] is true. If
+   * no such address exists, a fallback logic is applied in an attempt to
+   * determine the profile's primary address.
+   * The fallback logic selects an address from a profile's
+   * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
+   * following order of priority:
+   * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
+   * and [Address.current][google.cloud.talent.v4beta1.Address.current] is false
+   * or not set.
+   * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+   * CONTACT_INFO_USAGE_UNSPECIFIED and
+   * [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
+   * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+   * CONTACT_INFO_USAGE_UNSPECIFIED and
+   * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or
+   * not set.
    * If a location filter isn't specified, profiles fitting the other search
    * criteria are retrieved regardless of where they're located.
    * If
@@ -426,7 +480,25 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. The location filter specifies geo-regions containing the profiles
-   * to search against.
+   * to search against. It filters against all of a profile's
+   * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] where
+   * [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and
+   * [Address.current][google.cloud.talent.v4beta1.Address.current] is true. If
+   * no such address exists, a fallback logic is applied in an attempt to
+   * determine the profile's primary address.
+   * The fallback logic selects an address from a profile's
+   * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
+   * following order of priority:
+   * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
+   * and [Address.current][google.cloud.talent.v4beta1.Address.current] is false
+   * or not set.
+   * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+   * CONTACT_INFO_USAGE_UNSPECIFIED and
+   * [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
+   * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+   * CONTACT_INFO_USAGE_UNSPECIFIED and
+   * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or
+   * not set.
    * If a location filter isn't specified, profiles fitting the other search
    * criteria are retrieved regardless of where they're located.
    * If
@@ -445,7 +517,25 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. The location filter specifies geo-regions containing the profiles
-   * to search against.
+   * to search against. It filters against all of a profile's
+   * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] where
+   * [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and
+   * [Address.current][google.cloud.talent.v4beta1.Address.current] is true. If
+   * no such address exists, a fallback logic is applied in an attempt to
+   * determine the profile's primary address.
+   * The fallback logic selects an address from a profile's
+   * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
+   * following order of priority:
+   * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
+   * and [Address.current][google.cloud.talent.v4beta1.Address.current] is false
+   * or not set.
+   * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+   * CONTACT_INFO_USAGE_UNSPECIFIED and
+   * [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
+   * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+   * CONTACT_INFO_USAGE_UNSPECIFIED and
+   * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or
+   * not set.
    * If a location filter isn't specified, profiles fitting the other search
    * criteria are retrieved regardless of where they're located.
    * If
@@ -2709,7 +2799,25 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The location filter specifies geo-regions containing the profiles
-     * to search against.
+     * to search against. It filters against all of a profile's
+     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] where
+     * [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is true. If
+     * no such address exists, a fallback logic is applied in an attempt to
+     * determine the profile's primary address.
+     * The fallback logic selects an address from a profile's
+     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
+     * following order of priority:
+     * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
+     * and [Address.current][google.cloud.talent.v4beta1.Address.current] is false
+     * or not set.
+     * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+     * CONTACT_INFO_USAGE_UNSPECIFIED and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
+     * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+     * CONTACT_INFO_USAGE_UNSPECIFIED and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or
+     * not set.
      * If a location filter isn't specified, profiles fitting the other search
      * criteria are retrieved regardless of where they're located.
      * If
@@ -2732,7 +2840,25 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The location filter specifies geo-regions containing the profiles
-     * to search against.
+     * to search against. It filters against all of a profile's
+     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] where
+     * [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is true. If
+     * no such address exists, a fallback logic is applied in an attempt to
+     * determine the profile's primary address.
+     * The fallback logic selects an address from a profile's
+     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
+     * following order of priority:
+     * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
+     * and [Address.current][google.cloud.talent.v4beta1.Address.current] is false
+     * or not set.
+     * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+     * CONTACT_INFO_USAGE_UNSPECIFIED and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
+     * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+     * CONTACT_INFO_USAGE_UNSPECIFIED and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or
+     * not set.
      * If a location filter isn't specified, profiles fitting the other search
      * criteria are retrieved regardless of where they're located.
      * If
@@ -2755,7 +2881,25 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The location filter specifies geo-regions containing the profiles
-     * to search against.
+     * to search against. It filters against all of a profile's
+     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] where
+     * [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is true. If
+     * no such address exists, a fallback logic is applied in an attempt to
+     * determine the profile's primary address.
+     * The fallback logic selects an address from a profile's
+     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
+     * following order of priority:
+     * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
+     * and [Address.current][google.cloud.talent.v4beta1.Address.current] is false
+     * or not set.
+     * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+     * CONTACT_INFO_USAGE_UNSPECIFIED and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
+     * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+     * CONTACT_INFO_USAGE_UNSPECIFIED and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or
+     * not set.
      * If a location filter isn't specified, profiles fitting the other search
      * criteria are retrieved regardless of where they're located.
      * If
@@ -2778,7 +2922,25 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The location filter specifies geo-regions containing the profiles
-     * to search against.
+     * to search against. It filters against all of a profile's
+     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] where
+     * [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is true. If
+     * no such address exists, a fallback logic is applied in an attempt to
+     * determine the profile's primary address.
+     * The fallback logic selects an address from a profile's
+     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
+     * following order of priority:
+     * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
+     * and [Address.current][google.cloud.talent.v4beta1.Address.current] is false
+     * or not set.
+     * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+     * CONTACT_INFO_USAGE_UNSPECIFIED and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
+     * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+     * CONTACT_INFO_USAGE_UNSPECIFIED and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or
+     * not set.
      * If a location filter isn't specified, profiles fitting the other search
      * criteria are retrieved regardless of where they're located.
      * If
@@ -2808,7 +2970,25 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The location filter specifies geo-regions containing the profiles
-     * to search against.
+     * to search against. It filters against all of a profile's
+     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] where
+     * [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is true. If
+     * no such address exists, a fallback logic is applied in an attempt to
+     * determine the profile's primary address.
+     * The fallback logic selects an address from a profile's
+     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
+     * following order of priority:
+     * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
+     * and [Address.current][google.cloud.talent.v4beta1.Address.current] is false
+     * or not set.
+     * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+     * CONTACT_INFO_USAGE_UNSPECIFIED and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
+     * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+     * CONTACT_INFO_USAGE_UNSPECIFIED and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or
+     * not set.
      * If a location filter isn't specified, profiles fitting the other search
      * criteria are retrieved regardless of where they're located.
      * If
@@ -2835,7 +3015,25 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The location filter specifies geo-regions containing the profiles
-     * to search against.
+     * to search against. It filters against all of a profile's
+     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] where
+     * [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is true. If
+     * no such address exists, a fallback logic is applied in an attempt to
+     * determine the profile's primary address.
+     * The fallback logic selects an address from a profile's
+     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
+     * following order of priority:
+     * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
+     * and [Address.current][google.cloud.talent.v4beta1.Address.current] is false
+     * or not set.
+     * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+     * CONTACT_INFO_USAGE_UNSPECIFIED and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
+     * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+     * CONTACT_INFO_USAGE_UNSPECIFIED and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or
+     * not set.
      * If a location filter isn't specified, profiles fitting the other search
      * criteria are retrieved regardless of where they're located.
      * If
@@ -2864,7 +3062,25 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The location filter specifies geo-regions containing the profiles
-     * to search against.
+     * to search against. It filters against all of a profile's
+     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] where
+     * [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is true. If
+     * no such address exists, a fallback logic is applied in an attempt to
+     * determine the profile's primary address.
+     * The fallback logic selects an address from a profile's
+     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
+     * following order of priority:
+     * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
+     * and [Address.current][google.cloud.talent.v4beta1.Address.current] is false
+     * or not set.
+     * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+     * CONTACT_INFO_USAGE_UNSPECIFIED and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
+     * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+     * CONTACT_INFO_USAGE_UNSPECIFIED and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or
+     * not set.
      * If a location filter isn't specified, profiles fitting the other search
      * criteria are retrieved regardless of where they're located.
      * If
@@ -2894,7 +3110,25 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The location filter specifies geo-regions containing the profiles
-     * to search against.
+     * to search against. It filters against all of a profile's
+     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] where
+     * [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is true. If
+     * no such address exists, a fallback logic is applied in an attempt to
+     * determine the profile's primary address.
+     * The fallback logic selects an address from a profile's
+     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
+     * following order of priority:
+     * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
+     * and [Address.current][google.cloud.talent.v4beta1.Address.current] is false
+     * or not set.
+     * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+     * CONTACT_INFO_USAGE_UNSPECIFIED and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
+     * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+     * CONTACT_INFO_USAGE_UNSPECIFIED and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or
+     * not set.
      * If a location filter isn't specified, profiles fitting the other search
      * criteria are retrieved regardless of where they're located.
      * If
@@ -2921,7 +3155,25 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The location filter specifies geo-regions containing the profiles
-     * to search against.
+     * to search against. It filters against all of a profile's
+     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] where
+     * [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is true. If
+     * no such address exists, a fallback logic is applied in an attempt to
+     * determine the profile's primary address.
+     * The fallback logic selects an address from a profile's
+     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
+     * following order of priority:
+     * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
+     * and [Address.current][google.cloud.talent.v4beta1.Address.current] is false
+     * or not set.
+     * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+     * CONTACT_INFO_USAGE_UNSPECIFIED and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
+     * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+     * CONTACT_INFO_USAGE_UNSPECIFIED and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or
+     * not set.
      * If a location filter isn't specified, profiles fitting the other search
      * criteria are retrieved regardless of where they're located.
      * If
@@ -2948,7 +3200,25 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The location filter specifies geo-regions containing the profiles
-     * to search against.
+     * to search against. It filters against all of a profile's
+     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] where
+     * [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is true. If
+     * no such address exists, a fallback logic is applied in an attempt to
+     * determine the profile's primary address.
+     * The fallback logic selects an address from a profile's
+     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
+     * following order of priority:
+     * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
+     * and [Address.current][google.cloud.talent.v4beta1.Address.current] is false
+     * or not set.
+     * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+     * CONTACT_INFO_USAGE_UNSPECIFIED and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
+     * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+     * CONTACT_INFO_USAGE_UNSPECIFIED and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or
+     * not set.
      * If a location filter isn't specified, profiles fitting the other search
      * criteria are retrieved regardless of where they're located.
      * If
@@ -2975,7 +3245,25 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The location filter specifies geo-regions containing the profiles
-     * to search against.
+     * to search against. It filters against all of a profile's
+     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] where
+     * [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is true. If
+     * no such address exists, a fallback logic is applied in an attempt to
+     * determine the profile's primary address.
+     * The fallback logic selects an address from a profile's
+     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
+     * following order of priority:
+     * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
+     * and [Address.current][google.cloud.talent.v4beta1.Address.current] is false
+     * or not set.
+     * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+     * CONTACT_INFO_USAGE_UNSPECIFIED and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
+     * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+     * CONTACT_INFO_USAGE_UNSPECIFIED and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or
+     * not set.
      * If a location filter isn't specified, profiles fitting the other search
      * criteria are retrieved regardless of where they're located.
      * If
@@ -3001,7 +3289,25 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The location filter specifies geo-regions containing the profiles
-     * to search against.
+     * to search against. It filters against all of a profile's
+     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] where
+     * [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is true. If
+     * no such address exists, a fallback logic is applied in an attempt to
+     * determine the profile's primary address.
+     * The fallback logic selects an address from a profile's
+     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
+     * following order of priority:
+     * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
+     * and [Address.current][google.cloud.talent.v4beta1.Address.current] is false
+     * or not set.
+     * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+     * CONTACT_INFO_USAGE_UNSPECIFIED and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
+     * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+     * CONTACT_INFO_USAGE_UNSPECIFIED and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or
+     * not set.
      * If a location filter isn't specified, profiles fitting the other search
      * criteria are retrieved regardless of where they're located.
      * If
@@ -3027,7 +3333,25 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The location filter specifies geo-regions containing the profiles
-     * to search against.
+     * to search against. It filters against all of a profile's
+     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] where
+     * [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is true. If
+     * no such address exists, a fallback logic is applied in an attempt to
+     * determine the profile's primary address.
+     * The fallback logic selects an address from a profile's
+     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
+     * following order of priority:
+     * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
+     * and [Address.current][google.cloud.talent.v4beta1.Address.current] is false
+     * or not set.
+     * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+     * CONTACT_INFO_USAGE_UNSPECIFIED and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
+     * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+     * CONTACT_INFO_USAGE_UNSPECIFIED and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or
+     * not set.
      * If a location filter isn't specified, profiles fitting the other search
      * criteria are retrieved regardless of where they're located.
      * If
@@ -3047,7 +3371,25 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The location filter specifies geo-regions containing the profiles
-     * to search against.
+     * to search against. It filters against all of a profile's
+     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] where
+     * [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is true. If
+     * no such address exists, a fallback logic is applied in an attempt to
+     * determine the profile's primary address.
+     * The fallback logic selects an address from a profile's
+     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
+     * following order of priority:
+     * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
+     * and [Address.current][google.cloud.talent.v4beta1.Address.current] is false
+     * or not set.
+     * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+     * CONTACT_INFO_USAGE_UNSPECIFIED and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
+     * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+     * CONTACT_INFO_USAGE_UNSPECIFIED and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or
+     * not set.
      * If a location filter isn't specified, profiles fitting the other search
      * criteria are retrieved regardless of where they're located.
      * If
@@ -3071,7 +3413,25 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The location filter specifies geo-regions containing the profiles
-     * to search against.
+     * to search against. It filters against all of a profile's
+     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] where
+     * [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is true. If
+     * no such address exists, a fallback logic is applied in an attempt to
+     * determine the profile's primary address.
+     * The fallback logic selects an address from a profile's
+     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
+     * following order of priority:
+     * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
+     * and [Address.current][google.cloud.talent.v4beta1.Address.current] is false
+     * or not set.
+     * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+     * CONTACT_INFO_USAGE_UNSPECIFIED and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
+     * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+     * CONTACT_INFO_USAGE_UNSPECIFIED and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or
+     * not set.
      * If a location filter isn't specified, profiles fitting the other search
      * criteria are retrieved regardless of where they're located.
      * If
@@ -3095,7 +3455,25 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The location filter specifies geo-regions containing the profiles
-     * to search against.
+     * to search against. It filters against all of a profile's
+     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] where
+     * [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is true. If
+     * no such address exists, a fallback logic is applied in an attempt to
+     * determine the profile's primary address.
+     * The fallback logic selects an address from a profile's
+     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
+     * following order of priority:
+     * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
+     * and [Address.current][google.cloud.talent.v4beta1.Address.current] is false
+     * or not set.
+     * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+     * CONTACT_INFO_USAGE_UNSPECIFIED and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
+     * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+     * CONTACT_INFO_USAGE_UNSPECIFIED and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or
+     * not set.
      * If a location filter isn't specified, profiles fitting the other search
      * criteria are retrieved regardless of where they're located.
      * If
@@ -3115,7 +3493,25 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The location filter specifies geo-regions containing the profiles
-     * to search against.
+     * to search against. It filters against all of a profile's
+     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] where
+     * [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is true. If
+     * no such address exists, a fallback logic is applied in an attempt to
+     * determine the profile's primary address.
+     * The fallback logic selects an address from a profile's
+     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
+     * following order of priority:
+     * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
+     * and [Address.current][google.cloud.talent.v4beta1.Address.current] is false
+     * or not set.
+     * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+     * CONTACT_INFO_USAGE_UNSPECIFIED and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
+     * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+     * CONTACT_INFO_USAGE_UNSPECIFIED and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or
+     * not set.
      * If a location filter isn't specified, profiles fitting the other search
      * criteria are retrieved regardless of where they're located.
      * If
@@ -3136,7 +3532,25 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The location filter specifies geo-regions containing the profiles
-     * to search against.
+     * to search against. It filters against all of a profile's
+     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] where
+     * [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is true. If
+     * no such address exists, a fallback logic is applied in an attempt to
+     * determine the profile's primary address.
+     * The fallback logic selects an address from a profile's
+     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
+     * following order of priority:
+     * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
+     * and [Address.current][google.cloud.talent.v4beta1.Address.current] is false
+     * or not set.
+     * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+     * CONTACT_INFO_USAGE_UNSPECIFIED and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
+     * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+     * CONTACT_INFO_USAGE_UNSPECIFIED and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or
+     * not set.
      * If a location filter isn't specified, profiles fitting the other search
      * criteria are retrieved regardless of where they're located.
      * If
