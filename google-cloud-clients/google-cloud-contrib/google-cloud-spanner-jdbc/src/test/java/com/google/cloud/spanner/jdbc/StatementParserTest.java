@@ -103,23 +103,25 @@ public class StatementParserTest {
             + "\n"
             + "-- MERGE into test comment MERGE -- \n"
             + "@EXPECT EXCEPTION INVALID_ARGUMENT 'INVALID_ARGUMENT: Unknown statement'\n"
-            + "MERGE INTO wines w\n"
+            + "MERGE INTO Singers s\n"
             + "/*** test ****/"
-            + "USING (VALUES('Chateau Lafite 2003', '24')) v\n"
-            + "ON v.column1 = w.winename\n"
+            + "USING (VALUES (1, 'John', 'Doe')) v\n"
+            + "ON v.column1 = s.SingerId\n"
             + "WHEN NOT MATCHED \n"
-            + "  INSERT VALUES(v.column1, v.column2)\n"
+            + "  INSERT VALUES (v.column1, v.column2, v.column3)\n"
             + "WHEN MATCHED\n"
-            + "  UPDATE SET stock = stock + v.column2;\n";
+            + "  UPDATE SET FirstName = v.column2,\n"
+            + "             LastName = v.column3;";
     String sqlWithoutComments =
         "@EXPECT EXCEPTION INVALID_ARGUMENT 'INVALID_ARGUMENT: Unknown statement'\n"
-            + "MERGE INTO wines w\n"
-            + "USING (VALUES('Chateau Lafite 2003', '24')) v\n"
-            + "ON v.column1 = w.winename\n"
+            + "MERGE INTO Singers s\n"
+            + "USING (VALUES (1, 'John', 'Doe')) v\n"
+            + "ON v.column1 = s.SingerId\n"
             + "WHEN NOT MATCHED \n"
-            + "  INSERT VALUES(v.column1, v.column2)\n"
+            + "  INSERT VALUES (v.column1, v.column2, v.column3)\n"
             + "WHEN MATCHED\n"
-            + "  UPDATE SET stock = stock + v.column2;";
+            + "  UPDATE SET FirstName = v.column2,\n"
+            + "             LastName = v.column3";
     ParsedStatement statement = parser.parse(Statement.of(sql));
     assertThat(statement.getSqlWithoutComments(), is(equalTo(sqlWithoutComments)));
   }
@@ -134,23 +136,25 @@ public class StatementParserTest {
             + "\n"
             + "-- MERGE INTO test comment MERGE\n"
             + "@EXPECT EXCEPTION INVALID_ARGUMENT 'INVALID_ARGUMENT: Unknown statement'\n"
-            + "MERGE INTO wines w\n"
-            + "USING (VALUES('Chateau Lafite 2003', '24')) v\n"
-            + "ON v.column1 = w.winename\n"
+            + "MERGE INTO Singers s\n"
+            + "USING (VALUES (1, 'John', 'Doe')) v\n"
+            + "ON v.column1 = s.SingerId\n"
             + "-- test again --\n"
             + "WHEN NOT MATCHED \n"
-            + "  INSERT VALUES(v.column1, v.column2)\n"
+            + "  INSERT VALUES (v.column1, v.column2, v.column3)\n"
             + "WHEN MATCHED\n"
-            + "  UPDATE SET stock = stock + v.column2;\n";
+            + "  UPDATE SET FirstName = v.column2,\n"
+            + "             LastName = v.column3;";
     String sqlWithoutComments =
         "@EXPECT EXCEPTION INVALID_ARGUMENT 'INVALID_ARGUMENT: Unknown statement'\n"
-            + "MERGE INTO wines w\n"
-            + "USING (VALUES('Chateau Lafite 2003', '24')) v\n"
-            + "ON v.column1 = w.winename\n"
+            + "MERGE INTO Singers s\n"
+            + "USING (VALUES (1, 'John', 'Doe')) v\n"
+            + "ON v.column1 = s.SingerId\n"
             + "\nWHEN NOT MATCHED \n"
-            + "  INSERT VALUES(v.column1, v.column2)\n"
+            + "  INSERT VALUES (v.column1, v.column2, v.column3)\n"
             + "WHEN MATCHED\n"
-            + "  UPDATE SET stock = stock + v.column2;";
+            + "  UPDATE SET FirstName = v.column2,\n"
+            + "             LastName = v.column3";
     ParsedStatement statement = parser.parse(Statement.of(sql));
     assertThat(statement.getSqlWithoutComments(), is(equalTo(sqlWithoutComments)));
   }
