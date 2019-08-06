@@ -20,6 +20,9 @@ import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.nullValue;
 import static org.junit.Assert.assertThat;
+
+import com.google.cloud.spanner.IntegrationTest;
+import com.google.cloud.spanner.jdbc.ITAbstractJdbcTest;
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
 import java.sql.ResultSet;
@@ -31,8 +34,6 @@ import org.junit.Test;
 import org.junit.experimental.categories.Category;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-import com.google.cloud.spanner.IntegrationTest;
-import com.google.cloud.spanner.jdbc.ITAbstractJdbcTest;
 
 /** Integration tests for {@link DatabaseMetaData} implementation for Spanner. */
 @Category(IntegrationTest.class)
@@ -60,8 +61,15 @@ public class ITJdbcDatabaseMetaDataTest extends ITAbstractJdbcTest {
     private final boolean nullable;
     private final Integer charOctetLength;
 
-    private Column(String name, int type, String typeName, Integer colSize, Integer decimalDigits,
-        Integer radix, boolean nullable, Integer charOctetLength) {
+    private Column(
+        String name,
+        int type,
+        String typeName,
+        Integer colSize,
+        Integer decimalDigits,
+        Integer radix,
+        boolean nullable,
+        Integer charOctetLength) {
       this.name = name;
       this.type = type;
       this.typeName = typeName;
@@ -73,34 +81,55 @@ public class ITJdbcDatabaseMetaDataTest extends ITAbstractJdbcTest {
     }
   }
 
-  private static final List<Column> EXPECTED_COLUMNS = Arrays.asList(
-      new Column("ColInt64", Types.BIGINT, "INT64", 19, null, 10, false, null),
-      new Column("ColFloat64", Types.DOUBLE, "FLOAT64", 15, 16, 2, false, null),
-      new Column("ColBool", Types.BOOLEAN, "BOOL", null, null, null, false, null),
-      new Column("ColString", Types.NVARCHAR, "STRING(100)", 100, null, null, false, 100),
-      new Column("ColStringMax", Types.NVARCHAR, "STRING(MAX)", 2621440, null, null, false, 2621440),
-      new Column("ColBytes", Types.BINARY, "BYTES(100)", 100, null, null, false, null),
-      new Column("ColBytesMax", Types.BINARY, "BYTES(MAX)", 10485760, null, null, false, null),
-      new Column("ColDate", Types.DATE, "DATE", 10, null, null, false, null),
-      new Column("ColTimestamp", Types.TIMESTAMP, "TIMESTAMP", 35, null, null, false, null),
-      new Column("ColCommitTS", Types.TIMESTAMP, "TIMESTAMP", 35, null, null, false, null),
-
-      new Column("ColInt64Array", Types.ARRAY, "ARRAY<INT64>", 19, null, 10, true, null),
-      new Column("ColFloat64Array", Types.ARRAY, "ARRAY<FLOAT64>", 15, 16, 2, true, null),
-      new Column("ColBoolArray", Types.ARRAY, "ARRAY<BOOL>", null, null, null, true, null),
-      new Column("ColStringArray", Types.ARRAY, "ARRAY<STRING(100)>", 100, null, null, true, 100),
-      new Column("ColStringMaxArray", Types.ARRAY, "ARRAY<STRING(MAX)>", 2621440, null, null, true, 2621440),
-      new Column("ColBytesArray", Types.ARRAY, "ARRAY<BYTES(100)>", 100, null, null, true, null),
-      new Column("ColBytesMaxArray", Types.ARRAY, "ARRAY<BYTES(MAX)>", 10485760, null, null, true, null),
-      new Column("ColDateArray", Types.ARRAY, "ARRAY<DATE>", 10, null, null, true, null),
-      new Column("ColTimestampArray", Types.ARRAY, "ARRAY<TIMESTAMP>", 35, null, null, true, null)
-    );
+  private static final List<Column> EXPECTED_COLUMNS =
+      Arrays.asList(
+          new Column("ColInt64", Types.BIGINT, "INT64", 19, null, 10, false, null),
+          new Column("ColFloat64", Types.DOUBLE, "FLOAT64", 15, 16, 2, false, null),
+          new Column("ColBool", Types.BOOLEAN, "BOOL", null, null, null, false, null),
+          new Column("ColString", Types.NVARCHAR, "STRING(100)", 100, null, null, false, 100),
+          new Column(
+              "ColStringMax", Types.NVARCHAR, "STRING(MAX)", 2621440, null, null, false, 2621440),
+          new Column("ColBytes", Types.BINARY, "BYTES(100)", 100, null, null, false, null),
+          new Column("ColBytesMax", Types.BINARY, "BYTES(MAX)", 10485760, null, null, false, null),
+          new Column("ColDate", Types.DATE, "DATE", 10, null, null, false, null),
+          new Column("ColTimestamp", Types.TIMESTAMP, "TIMESTAMP", 35, null, null, false, null),
+          new Column("ColCommitTS", Types.TIMESTAMP, "TIMESTAMP", 35, null, null, false, null),
+          new Column("ColInt64Array", Types.ARRAY, "ARRAY<INT64>", 19, null, 10, true, null),
+          new Column("ColFloat64Array", Types.ARRAY, "ARRAY<FLOAT64>", 15, 16, 2, true, null),
+          new Column("ColBoolArray", Types.ARRAY, "ARRAY<BOOL>", null, null, null, true, null),
+          new Column(
+              "ColStringArray", Types.ARRAY, "ARRAY<STRING(100)>", 100, null, null, true, 100),
+          new Column(
+              "ColStringMaxArray",
+              Types.ARRAY,
+              "ARRAY<STRING(MAX)>",
+              2621440,
+              null,
+              null,
+              true,
+              2621440),
+          new Column(
+              "ColBytesArray", Types.ARRAY, "ARRAY<BYTES(100)>", 100, null, null, true, null),
+          new Column(
+              "ColBytesMaxArray",
+              Types.ARRAY,
+              "ARRAY<BYTES(MAX)>",
+              10485760,
+              null,
+              null,
+              true,
+              null),
+          new Column("ColDateArray", Types.ARRAY, "ARRAY<DATE>", 10, null, null, true, null),
+          new Column(
+              "ColTimestampArray", Types.ARRAY, "ARRAY<TIMESTAMP>", 35, null, null, true, null));
 
   @Test
   public void testGetColumns() throws SQLException {
     try (Connection connection = createConnection()) {
-      try (ResultSet rs = connection.getMetaData().getColumns(DEFAULT_CATALOG, DEFAULT_SCHEMA,
-          TABLE_WITH_ALL_COLS, null)) {
+      try (ResultSet rs =
+          connection
+              .getMetaData()
+              .getColumns(DEFAULT_CATALOG, DEFAULT_SCHEMA, TABLE_WITH_ALL_COLS, null)) {
         int pos = 1;
         for (Column col : EXPECTED_COLUMNS) {
           assertThat(rs.next(), is(true));
@@ -129,8 +158,13 @@ public class ITJdbcDatabaseMetaDataTest extends ITAbstractJdbcTest {
           } else {
             assertThat(rs.getInt("NUM_PREC_RADIX"), is(equalTo(col.radix)));
           }
-          assertThat(rs.getInt("NULLABLE"), is(equalTo(
-              col.nullable ? DatabaseMetaData.columnNullable : DatabaseMetaData.columnNoNulls)));
+          assertThat(
+              rs.getInt("NULLABLE"),
+              is(
+                  equalTo(
+                      col.nullable
+                          ? DatabaseMetaData.columnNullable
+                          : DatabaseMetaData.columnNoNulls)));
           assertThat(rs.getString("REMARKS"), is(nullValue()));
           assertThat(rs.getString("COLUMN_DEF"), is(nullValue()));
           assertThat(rs.getInt("SQL_DATA_TYPE"), is(equalTo(0)));
@@ -162,8 +196,16 @@ public class ITJdbcDatabaseMetaDataTest extends ITAbstractJdbcTest {
   @Test
   public void testGetCrossReferences() throws SQLException {
     try (Connection connection = createConnection()) {
-      try (ResultSet rs = connection.getMetaData().getCrossReference(DEFAULT_CATALOG,
-          DEFAULT_SCHEMA, SINGERS_TABLE, DEFAULT_CATALOG, DEFAULT_SCHEMA, ALBUMS_TABLE)) {
+      try (ResultSet rs =
+          connection
+              .getMetaData()
+              .getCrossReference(
+                  DEFAULT_CATALOG,
+                  DEFAULT_SCHEMA,
+                  SINGERS_TABLE,
+                  DEFAULT_CATALOG,
+                  DEFAULT_SCHEMA,
+                  ALBUMS_TABLE)) {
         assertThat(rs.next(), is(true));
         assertThat(rs.getString("PKTABLE_CAT"), is(equalTo("")));
         assertThat(rs.getString("PKTABLE_SCHEM"), is(equalTo("")));
@@ -174,17 +216,26 @@ public class ITJdbcDatabaseMetaDataTest extends ITAbstractJdbcTest {
         assertThat(rs.getString("FKTABLE_NAME"), is(equalTo("Albums")));
         assertThat(rs.getString("FKCOLUMN_NAME"), is(equalTo("SingerId")));
         assertThat(rs.getShort("KEY_SEQ"), is(equalTo((short) 1)));
-        assertThat(rs.getShort("UPDATE_RULE"),
-            is(equalTo((short) DatabaseMetaData.importedKeyNoAction)));
-        assertThat(rs.getShort("DELETE_RULE"),
-            is(equalTo((short) DatabaseMetaData.importedKeyCascade)));
+        assertThat(
+            rs.getShort("UPDATE_RULE"), is(equalTo((short) DatabaseMetaData.importedKeyNoAction)));
+        assertThat(
+            rs.getShort("DELETE_RULE"), is(equalTo((short) DatabaseMetaData.importedKeyCascade)));
         assertThat(rs.getString("FK_NAME"), is(nullValue()));
         assertThat(rs.getString("PK_NAME"), is(equalTo("PRIMARY_KEY")));
-        assertThat(rs.getShort("DEFERRABILITY"),
+        assertThat(
+            rs.getShort("DEFERRABILITY"),
             is(equalTo((short) DatabaseMetaData.importedKeyNotDeferrable)));
       }
-      try (ResultSet rs = connection.getMetaData().getCrossReference(DEFAULT_CATALOG,
-          DEFAULT_SCHEMA, ALBUMS_TABLE, DEFAULT_CATALOG, DEFAULT_SCHEMA, SONGS_TABLE)) {
+      try (ResultSet rs =
+          connection
+              .getMetaData()
+              .getCrossReference(
+                  DEFAULT_CATALOG,
+                  DEFAULT_SCHEMA,
+                  ALBUMS_TABLE,
+                  DEFAULT_CATALOG,
+                  DEFAULT_SCHEMA,
+                  SONGS_TABLE)) {
         assertThat(rs.next(), is(true));
         assertThat(rs.getString("PKTABLE_CAT"), is(equalTo("")));
         assertThat(rs.getString("PKTABLE_SCHEM"), is(equalTo("")));
@@ -195,13 +246,14 @@ public class ITJdbcDatabaseMetaDataTest extends ITAbstractJdbcTest {
         assertThat(rs.getString("FKTABLE_NAME"), is(equalTo("Songs")));
         assertThat(rs.getString("FKCOLUMN_NAME"), is(equalTo("SingerId")));
         assertThat(rs.getShort("KEY_SEQ"), is(equalTo((short) 1)));
-        assertThat(rs.getShort("UPDATE_RULE"),
-            is(equalTo((short) DatabaseMetaData.importedKeyNoAction)));
-        assertThat(rs.getShort("DELETE_RULE"),
-            is(equalTo((short) DatabaseMetaData.importedKeyCascade)));
+        assertThat(
+            rs.getShort("UPDATE_RULE"), is(equalTo((short) DatabaseMetaData.importedKeyNoAction)));
+        assertThat(
+            rs.getShort("DELETE_RULE"), is(equalTo((short) DatabaseMetaData.importedKeyCascade)));
         assertThat(rs.getString("FK_NAME"), is(nullValue()));
         assertThat(rs.getString("PK_NAME"), is(equalTo("PRIMARY_KEY")));
-        assertThat(rs.getShort("DEFERRABILITY"),
+        assertThat(
+            rs.getShort("DEFERRABILITY"),
             is(equalTo((short) DatabaseMetaData.importedKeyNotDeferrable)));
 
         assertThat(rs.next(), is(true));
@@ -214,18 +266,27 @@ public class ITJdbcDatabaseMetaDataTest extends ITAbstractJdbcTest {
         assertThat(rs.getString("FKTABLE_NAME"), is(equalTo("Songs")));
         assertThat(rs.getString("FKCOLUMN_NAME"), is(equalTo("AlbumId")));
         assertThat(rs.getShort("KEY_SEQ"), is(equalTo((short) 2)));
-        assertThat(rs.getShort("UPDATE_RULE"),
-            is(equalTo((short) DatabaseMetaData.importedKeyNoAction)));
-        assertThat(rs.getShort("DELETE_RULE"),
-            is(equalTo((short) DatabaseMetaData.importedKeyCascade)));
+        assertThat(
+            rs.getShort("UPDATE_RULE"), is(equalTo((short) DatabaseMetaData.importedKeyNoAction)));
+        assertThat(
+            rs.getShort("DELETE_RULE"), is(equalTo((short) DatabaseMetaData.importedKeyCascade)));
         assertThat(rs.getString("FK_NAME"), is(nullValue()));
         assertThat(rs.getString("PK_NAME"), is(equalTo("PRIMARY_KEY")));
-        assertThat(rs.getShort("DEFERRABILITY"),
+        assertThat(
+            rs.getShort("DEFERRABILITY"),
             is(equalTo((short) DatabaseMetaData.importedKeyNotDeferrable)));
       }
       // try getting self-references
-      try (ResultSet rs = connection.getMetaData().getCrossReference(DEFAULT_CATALOG,
-          DEFAULT_SCHEMA, ALBUMS_TABLE, DEFAULT_CATALOG, DEFAULT_SCHEMA, ALBUMS_TABLE)) {
+      try (ResultSet rs =
+          connection
+              .getMetaData()
+              .getCrossReference(
+                  DEFAULT_CATALOG,
+                  DEFAULT_SCHEMA,
+                  ALBUMS_TABLE,
+                  DEFAULT_CATALOG,
+                  DEFAULT_SCHEMA,
+                  ALBUMS_TABLE)) {
         assertThat(rs.next(), is(false));
       }
       // try getting all cross-references in the database
@@ -247,8 +308,13 @@ public class ITJdbcDatabaseMetaDataTest extends ITAbstractJdbcTest {
     private final String columnName;
     private final String ascDesc;
 
-    private IndexInfo(String tableName, boolean nonUnique, String indexName, int ordinalPosition,
-        String columnName, String ascDesc) {
+    private IndexInfo(
+        String tableName,
+        boolean nonUnique,
+        String indexName,
+        int ordinalPosition,
+        String columnName,
+        String ascDesc) {
       this.tableName = tableName;
       this.nonUnique = nonUnique;
       this.indexName = indexName;
@@ -258,37 +324,35 @@ public class ITJdbcDatabaseMetaDataTest extends ITAbstractJdbcTest {
     }
   }
 
-  private static final List<IndexInfo> EXPECTED_INDICES = Arrays.asList(
-      new IndexInfo("Albums", false, "PRIMARY_KEY", 1, "SingerId", "A"),
-      new IndexInfo("Albums", false, "PRIMARY_KEY", 2, "AlbumId", "A"),
-      new IndexInfo("Albums", true, "AlbumsByAlbumTitle", 1, "AlbumTitle", "A"),
-      new IndexInfo("Albums", true, "AlbumsByAlbumTitle2", 0, "MarketingBudget", null),
-      new IndexInfo("Albums", true, "AlbumsByAlbumTitle2", 1, "AlbumTitle", "A"),
-
-      new IndexInfo("Concerts", false, "PRIMARY_KEY", 1, "VenueId", "A"),
-      new IndexInfo("Concerts", false, "PRIMARY_KEY", 2, "SingerId", "A"),
-      new IndexInfo("Concerts", false, "PRIMARY_KEY", 3, "ConcertDate", "A"),
-
-      new IndexInfo("Singers", false, "PRIMARY_KEY", 1, "SingerId", "A"),
-      new IndexInfo("Singers", true, "SingersByFirstLastName", 1, "FirstName", "A"),
-      new IndexInfo("Singers", true, "SingersByFirstLastName", 2, "LastName", "A"),
-
-      new IndexInfo("Songs", false, "PRIMARY_KEY", 1, "SingerId", "A"),
-      new IndexInfo("Songs", false, "PRIMARY_KEY", 2, "AlbumId", "A"),
-      new IndexInfo("Songs", false, "PRIMARY_KEY", 3, "TrackId", "A"),
-      new IndexInfo("Songs", false, "SongsBySingerAlbumSongNameDesc", 1, "SingerId", "A"),
-      new IndexInfo("Songs", false, "SongsBySingerAlbumSongNameDesc", 2, "AlbumId", "A"),
-      new IndexInfo("Songs", false, "SongsBySingerAlbumSongNameDesc", 3, "SongName", "D"),
-      new IndexInfo("Songs", true, "SongsBySongName", 1, "SongName", "A"),
-
-      new IndexInfo("TableWithAllColumnTypes", false, "PRIMARY_KEY", 1, "ColInt64", "A")
-    );
+  private static final List<IndexInfo> EXPECTED_INDICES =
+      Arrays.asList(
+          new IndexInfo("Albums", false, "PRIMARY_KEY", 1, "SingerId", "A"),
+          new IndexInfo("Albums", false, "PRIMARY_KEY", 2, "AlbumId", "A"),
+          new IndexInfo("Albums", true, "AlbumsByAlbumTitle", 1, "AlbumTitle", "A"),
+          new IndexInfo("Albums", true, "AlbumsByAlbumTitle2", 0, "MarketingBudget", null),
+          new IndexInfo("Albums", true, "AlbumsByAlbumTitle2", 1, "AlbumTitle", "A"),
+          new IndexInfo("Concerts", false, "PRIMARY_KEY", 1, "VenueId", "A"),
+          new IndexInfo("Concerts", false, "PRIMARY_KEY", 2, "SingerId", "A"),
+          new IndexInfo("Concerts", false, "PRIMARY_KEY", 3, "ConcertDate", "A"),
+          new IndexInfo("Singers", false, "PRIMARY_KEY", 1, "SingerId", "A"),
+          new IndexInfo("Singers", true, "SingersByFirstLastName", 1, "FirstName", "A"),
+          new IndexInfo("Singers", true, "SingersByFirstLastName", 2, "LastName", "A"),
+          new IndexInfo("Songs", false, "PRIMARY_KEY", 1, "SingerId", "A"),
+          new IndexInfo("Songs", false, "PRIMARY_KEY", 2, "AlbumId", "A"),
+          new IndexInfo("Songs", false, "PRIMARY_KEY", 3, "TrackId", "A"),
+          new IndexInfo("Songs", false, "SongsBySingerAlbumSongNameDesc", 1, "SingerId", "A"),
+          new IndexInfo("Songs", false, "SongsBySingerAlbumSongNameDesc", 2, "AlbumId", "A"),
+          new IndexInfo("Songs", false, "SongsBySingerAlbumSongNameDesc", 3, "SongName", "D"),
+          new IndexInfo("Songs", true, "SongsBySongName", 1, "SongName", "A"),
+          new IndexInfo("TableWithAllColumnTypes", false, "PRIMARY_KEY", 1, "ColInt64", "A"));
 
   @Test
   public void testGetIndexInfo() throws SQLException {
     try (Connection connection = createConnection()) {
-      try (ResultSet rs = connection.getMetaData().getIndexInfo(DEFAULT_CATALOG, DEFAULT_SCHEMA,
-          null, false, false)) {
+      try (ResultSet rs =
+          connection
+              .getMetaData()
+              .getIndexInfo(DEFAULT_CATALOG, DEFAULT_SCHEMA, null, false, false)) {
 
         for (IndexInfo index : EXPECTED_INDICES) {
           assertThat(rs.next(), is(true));
@@ -322,8 +386,10 @@ public class ITJdbcDatabaseMetaDataTest extends ITAbstractJdbcTest {
   @Test
   public void testGetExportedKeys() throws SQLException {
     try (Connection connection = createConnection()) {
-      try (ResultSet rs = connection.getMetaData().getExportedKeys(DEFAULT_CATALOG, DEFAULT_SCHEMA,
-          SINGERS_TABLE)) {
+      try (ResultSet rs =
+          connection
+              .getMetaData()
+              .getExportedKeys(DEFAULT_CATALOG, DEFAULT_SCHEMA, SINGERS_TABLE)) {
         assertKeysSingersAlbums(rs);
       }
       try (ResultSet rs =
@@ -461,13 +527,13 @@ public class ITJdbcDatabaseMetaDataTest extends ITAbstractJdbcTest {
     }
   }
 
-  private static final List<Table> EXPECTED_TABLES = Arrays.asList(
-      new Table("Albums"),
-      new Table("Concerts"),
-      new Table("Singers"),
-      new Table("Songs"),
-      new Table("TableWithAllColumnTypes")
-    );
+  private static final List<Table> EXPECTED_TABLES =
+      Arrays.asList(
+          new Table("Albums"),
+          new Table("Concerts"),
+          new Table("Singers"),
+          new Table("Songs"),
+          new Table("TableWithAllColumnTypes"));
 
   @Test
   public void testGetTables() throws SQLException {
@@ -491,5 +557,4 @@ public class ITJdbcDatabaseMetaDataTest extends ITAbstractJdbcTest {
       }
     }
   }
-
 }
