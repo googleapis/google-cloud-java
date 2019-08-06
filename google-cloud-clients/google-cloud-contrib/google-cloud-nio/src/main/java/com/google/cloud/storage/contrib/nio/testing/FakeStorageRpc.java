@@ -424,7 +424,7 @@ class FakeStorageRpc implements StorageRpc {
   }
 
   @Override
-  public HmacKey createHmacKey(String serviceAccountEmail) {
+  public HmacKey createHmacKey(String serviceAccountEmail, Map<Option, ?> options) {
     throw new UnsupportedOperationException();
   }
 
@@ -434,17 +434,17 @@ class FakeStorageRpc implements StorageRpc {
   }
 
   @Override
-  public HmacKeyMetadata updateHmacKey(HmacKeyMetadata hmacKeyMetadata) {
+  public HmacKeyMetadata updateHmacKey(HmacKeyMetadata hmacKeyMetadata, Map<Option, ?> options) {
     throw new UnsupportedOperationException();
   }
 
   @Override
-  public HmacKeyMetadata getHmacKey(String accessId) {
+  public HmacKeyMetadata getHmacKey(String accessId, Map<Option, ?> options) {
     throw new UnsupportedOperationException();
   }
 
   @Override
-  public void deleteHmacKey(String accessId) {
+  public void deleteHmacKey(String accessId, Map<Option, ?> options) {
     throw new UnsupportedOperationException();
   }
 

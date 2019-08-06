@@ -294,6 +294,13 @@ public interface Storage extends Service<StorageOptions> {
     public static ListHmacKeysOption userProject(String userProject) {
       return new ListHmacKeysOption(StorageRpc.Option.USER_PROJECT, userProject);
     }
+
+    /** Returns an option to specify the Project ID for this request. If not specified,
+     * defaults to Application Default Credentials.
+     */
+    public static ListHmacKeysOption projectId(String projectId) {
+      return new ListHmacKeysOption(StorageRpc.Option.PROJECT_ID, projectId);
+    }
   }
 
   /** Class for specifying createHmacKey options */
@@ -308,6 +315,13 @@ public interface Storage extends Service<StorageOptions> {
      */
     public static CreateHmacKeyOption userProject(String userProject) {
       return new CreateHmacKeyOption(StorageRpc.Option.USER_PROJECT, userProject);
+    }
+
+    /** Returns an option to specify the Project ID for this request. If not specified,
+     * defaults to Application Default Credentials.
+     */
+    public static CreateHmacKeyOption projectId(String projectId) {
+      return new CreateHmacKeyOption(StorageRpc.Option.PROJECT_ID, projectId);
     }
   }
 
@@ -324,6 +338,13 @@ public interface Storage extends Service<StorageOptions> {
     public static GetHmacKeyOption userProject(String userProject) {
       return new GetHmacKeyOption(StorageRpc.Option.USER_PROJECT, userProject);
     }
+
+    /** Returns an option to specify the Project ID for this request. If not specified,
+     * defaults to Application Default Credentials.
+     */
+    public static GetHmacKeyOption projectId(String projectId) {
+      return new GetHmacKeyOption(StorageRpc.Option.PROJECT_ID, projectId);
+    }
   }
 
   /** Class for specifying deleteHmacKey options */
@@ -339,6 +360,13 @@ public interface Storage extends Service<StorageOptions> {
     public static DeleteHmacKeyOption userProject(String userProject) {
       return new DeleteHmacKeyOption(StorageRpc.Option.USER_PROJECT, userProject);
     }
+
+    /** Returns an option to specify the Project ID for this request. If not specified,
+     * defaults to Application Default Credentials.
+     */
+    public static DeleteHmacKeyOption projectId(String projectId) {
+      return new DeleteHmacKeyOption(StorageRpc.Option.PROJECT_ID, projectId);
+    }
   }
 
   /** Class for specifying updateHmacKey options */
@@ -353,6 +381,13 @@ public interface Storage extends Service<StorageOptions> {
      */
     public static UpdateHmacKeyOption userProject(String userProject) {
       return new UpdateHmacKeyOption(StorageRpc.Option.USER_PROJECT, userProject);
+    }
+
+    /** Returns an option to specify the Project ID for this request. If not specified,
+     * defaults to Application Default Credentials.
+     */
+    public static UpdateHmacKeyOption projectId(String projectId) {
+      return new UpdateHmacKeyOption(StorageRpc.Option.PROJECT_ID, projectId);
     }
   }
 

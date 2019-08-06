@@ -1238,11 +1238,15 @@ public class HttpStorageRpc implements StorageRpc {
   public HmacKey createHmacKey(String serviceAccountEmail, Map<Option, ?> options) {
     Span span = startSpan(HttpStorageRpcSpans.SPAN_NAME_CREATE_HMAC_KEY);
     Scope scope = tracer.withSpan(span);
+    String projectId = Option.PROJECT_ID.getString(options);
+    if (projectId == null) {
+      projectId = this.options.getProjectId();
+    }
     try {
       return storage
           .projects()
           .hmacKeys()
-          .create(this.options.getProjectId(), serviceAccountEmail)
+          .create(projectId, serviceAccountEmail)
           .setUserProject(Option.USER_PROJECT.getString(options))
           .execute();
     } catch (IOException ex) {
@@ -1258,12 +1262,16 @@ public class HttpStorageRpc implements StorageRpc {
   public Tuple<String, Iterable<HmacKeyMetadata>> listHmacKeys(Map<Option, ?> options) {
     Span span = startSpan(HttpStorageRpcSpans.SPAN_NAME_LIST_HMAC_KEYS);
     Scope scope = tracer.withSpan(span);
+    String projectId = Option.PROJECT_ID.getString(options);
+    if (projectId == null) {
+      projectId = this.options.getProjectId();
+    }
     try {
       HmacKeysMetadata hmacKeysMetadata =
           storage
               .projects()
               .hmacKeys()
-              .list(this.options.getProjectId())
+              .list(projectId)
               .setServiceAccountEmail(Option.SERVICE_ACCOUNT_EMAIL.getString(options))
               .setPageToken(Option.PAGE_TOKEN.getString(options))
               .setMaxResults(Option.MAX_RESULTS.getLong(options))
@@ -1284,11 +1292,15 @@ public class HttpStorageRpc implements StorageRpc {
   public HmacKeyMetadata getHmacKey(String accessId, Map<Option, ?> options) {
     Span span = startSpan(HttpStorageRpcSpans.SPAN_NAME_GET_HMAC_KEY);
     Scope scope = tracer.withSpan(span);
+    String projectId = Option.PROJECT_ID.getString(options);
+    if (projectId == null) {
+      projectId = this.options.getProjectId();
+    }
     try {
       return storage
           .projects()
           .hmacKeys()
-          .get(this.options.getProjectId(), accessId)
+          .get(projectId, accessId)
           .setUserProject(Option.USER_PROJECT.getString(options))
           .execute();
     } catch (IOException ex) {
@@ -1304,11 +1316,15 @@ public class HttpStorageRpc implements StorageRpc {
   public HmacKeyMetadata updateHmacKey(HmacKeyMetadata hmacKeyMetadata, Map<Option, ?> options) {
     Span span = startSpan(HttpStorageRpcSpans.SPAN_NAME_UPDATE_HMAC_KEY);
     Scope scope = tracer.withSpan(span);
+    String projectId = Option.PROJECT_ID.getString(options);
+    if (projectId == null) {
+      projectId = this.options.getProjectId();
+    }
     try {
       return storage
           .projects()
           .hmacKeys()
-          .update(this.options.getProjectId(), hmacKeyMetadata.getAccessId(), hmacKeyMetadata)
+          .update(projectId, hmacKeyMetadata.getAccessId(), hmacKeyMetadata)
           .setUserProject(Option.USER_PROJECT.getString(options))
           .execute();
     } catch (IOException ex) {
@@ -1324,11 +1340,15 @@ public class HttpStorageRpc implements StorageRpc {
   public void deleteHmacKey(String accessId, Map<Option, ?> options) {
     Span span = startSpan(HttpStorageRpcSpans.SPAN_NAME_DELETE_HMAC_KEY);
     Scope scope = tracer.withSpan(span);
+    String projectId = Option.PROJECT_ID.getString(options);
+    if (projectId == null) {
+      projectId = this.options.getProjectId();
+    }
     try {
       storage
           .projects()
           .hmacKeys()
-          .delete(this.options.getProjectId(), accessId)
+          .delete(projectId, accessId)
           .setUserProject(Option.USER_PROJECT.getString(options))
           .execute();
     } catch (IOException ex) {
