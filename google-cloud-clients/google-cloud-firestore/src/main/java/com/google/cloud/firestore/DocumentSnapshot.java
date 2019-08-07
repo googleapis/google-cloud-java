@@ -66,7 +66,6 @@ public class DocumentSnapshot {
     this.readTime = readTime;
     this.updateTime = updateTime;
     this.createTime = createTime;
-    this.docRef.getFirestore();
   }
 
   /**
