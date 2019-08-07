@@ -3,6 +3,9 @@
 JDBC Driver for
 [Google Cloud Spanner](https://cloud.google.com/spanner/).
 
+> Note: This client is a work-in-progress, and may occasionally
+> make backwards-incompatible changes.
+
 ## Quickstart
 
 [//]: # ({x-version-update-start:google-cloud-spanner-jdbc:released})
