@@ -61,16 +61,20 @@ import javax.annotation.Nonnull;
  * <p>See the individual methods for example code.
  *
  * <pre>{@code
- * try(BigtableInstanceAdminClient client =  BigtableInstanceAdminClient.create("my-project")) {
- *   CreateInstanceRequest request = CreateInstanceRequest.of("my-instance")
- *     .addCluster("my-cluster", "us-east1-c", 3, StorageType.SSD);
+ * // One instance per application.
+ * BigtableInstanceAdminClient client =  BigtableInstanceAdminClient.create("my-project");
+ * CreateInstanceRequest request = CreateInstanceRequest.of("my-instance")
+ *   .addCluster("my-cluster", "us-east1-c", 3, StorageType.SSD);
  *
- *   Instance instance = client.createInstance(request);
- * }
+ * Instance instance = client.createInstance(request);
+ *
+ * // Cleanup during application shutdown.
+ * client.close();
  * }</pre>
  *
- * <p>Note: close() needs to be called on the client object to clean up resources such as threads.
- * In the example above, try-with-resources is used, which automatically calls close().
+ * <p>Creating a new client is a very expensive operation and should only be done once and shared in
+ * an application. However, close() needs to be called on the client object to clean up resources
+ * such as threads during application shutdown.
  *
  * <p>This class can be customized by passing in a custom instance of BigtableInstanceAdminSettings
  * to create(). For example:
