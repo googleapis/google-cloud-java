@@ -25,7 +25,9 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
   private VideoAnnotationResults() {
     inputUri_ = "";
     segmentLabelAnnotations_ = java.util.Collections.emptyList();
+    segmentPresenceLabelAnnotations_ = java.util.Collections.emptyList();
     shotLabelAnnotations_ = java.util.Collections.emptyList();
+    shotPresenceLabelAnnotations_ = java.util.Collections.emptyList();
     frameLabelAnnotations_ = java.util.Collections.emptyList();
     faceAnnotations_ = java.util.Collections.emptyList();
     shotAnnotations_ = java.util.Collections.emptyList();
@@ -81,11 +83,11 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
             }
           case 26:
             {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
                 shotLabelAnnotations_ =
                     new java.util.ArrayList<
                         com.google.cloud.videointelligence.v1.LabelAnnotation>();
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000010;
               }
               shotLabelAnnotations_.add(
                   input.readMessage(
@@ -95,11 +97,11 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
             }
           case 34:
             {
-              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
                 frameLabelAnnotations_ =
                     new java.util.ArrayList<
                         com.google.cloud.videointelligence.v1.LabelAnnotation>();
-                mutable_bitField0_ |= 0x00000010;
+                mutable_bitField0_ |= 0x00000040;
               }
               frameLabelAnnotations_.add(
                   input.readMessage(
@@ -109,10 +111,10 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
             }
           case 42:
             {
-              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000080) != 0)) {
                 faceAnnotations_ =
                     new java.util.ArrayList<com.google.cloud.videointelligence.v1.FaceAnnotation>();
-                mutable_bitField0_ |= 0x00000020;
+                mutable_bitField0_ |= 0x00000080;
               }
               faceAnnotations_.add(
                   input.readMessage(
@@ -122,10 +124,10 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
             }
           case 50:
             {
-              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000100) != 0)) {
                 shotAnnotations_ =
                     new java.util.ArrayList<com.google.cloud.videointelligence.v1.VideoSegment>();
-                mutable_bitField0_ |= 0x00000040;
+                mutable_bitField0_ |= 0x00000100;
               }
               shotAnnotations_.add(
                   input.readMessage(
@@ -184,11 +186,11 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
             }
           case 90:
             {
-              if (!((mutable_bitField0_ & 0x00000100) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000400) != 0)) {
                 speechTranscriptions_ =
                     new java.util.ArrayList<
                         com.google.cloud.videointelligence.v1.SpeechTranscription>();
-                mutable_bitField0_ |= 0x00000100;
+                mutable_bitField0_ |= 0x00000400;
               }
               speechTranscriptions_.add(
                   input.readMessage(
@@ -198,10 +200,10 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
             }
           case 98:
             {
-              if (!((mutable_bitField0_ & 0x00000200) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000800) != 0)) {
                 textAnnotations_ =
                     new java.util.ArrayList<com.google.cloud.videointelligence.v1.TextAnnotation>();
-                mutable_bitField0_ |= 0x00000200;
+                mutable_bitField0_ |= 0x00000800;
               }
               textAnnotations_.add(
                   input.readMessage(
@@ -211,15 +213,43 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
             }
           case 114:
             {
-              if (!((mutable_bitField0_ & 0x00000400) != 0)) {
+              if (!((mutable_bitField0_ & 0x00001000) != 0)) {
                 objectAnnotations_ =
                     new java.util.ArrayList<
                         com.google.cloud.videointelligence.v1.ObjectTrackingAnnotation>();
-                mutable_bitField0_ |= 0x00000400;
+                mutable_bitField0_ |= 0x00001000;
               }
               objectAnnotations_.add(
                   input.readMessage(
                       com.google.cloud.videointelligence.v1.ObjectTrackingAnnotation.parser(),
+                      extensionRegistry));
+              break;
+            }
+          case 186:
+            {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                segmentPresenceLabelAnnotations_ =
+                    new java.util.ArrayList<
+                        com.google.cloud.videointelligence.v1.LabelAnnotation>();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              segmentPresenceLabelAnnotations_.add(
+                  input.readMessage(
+                      com.google.cloud.videointelligence.v1.LabelAnnotation.parser(),
+                      extensionRegistry));
+              break;
+            }
+          case 194:
+            {
+              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+                shotPresenceLabelAnnotations_ =
+                    new java.util.ArrayList<
+                        com.google.cloud.videointelligence.v1.LabelAnnotation>();
+                mutable_bitField0_ |= 0x00000020;
+              }
+              shotPresenceLabelAnnotations_.add(
+                  input.readMessage(
+                      com.google.cloud.videointelligence.v1.LabelAnnotation.parser(),
                       extensionRegistry));
               break;
             }
@@ -240,26 +270,34 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
       if (((mutable_bitField0_ & 0x00000004) != 0)) {
         segmentLabelAnnotations_ = java.util.Collections.unmodifiableList(segmentLabelAnnotations_);
       }
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+      if (((mutable_bitField0_ & 0x00000010) != 0)) {
         shotLabelAnnotations_ = java.util.Collections.unmodifiableList(shotLabelAnnotations_);
       }
-      if (((mutable_bitField0_ & 0x00000010) != 0)) {
+      if (((mutable_bitField0_ & 0x00000040) != 0)) {
         frameLabelAnnotations_ = java.util.Collections.unmodifiableList(frameLabelAnnotations_);
       }
-      if (((mutable_bitField0_ & 0x00000020) != 0)) {
+      if (((mutable_bitField0_ & 0x00000080) != 0)) {
         faceAnnotations_ = java.util.Collections.unmodifiableList(faceAnnotations_);
       }
-      if (((mutable_bitField0_ & 0x00000040) != 0)) {
+      if (((mutable_bitField0_ & 0x00000100) != 0)) {
         shotAnnotations_ = java.util.Collections.unmodifiableList(shotAnnotations_);
       }
-      if (((mutable_bitField0_ & 0x00000100) != 0)) {
+      if (((mutable_bitField0_ & 0x00000400) != 0)) {
         speechTranscriptions_ = java.util.Collections.unmodifiableList(speechTranscriptions_);
       }
-      if (((mutable_bitField0_ & 0x00000200) != 0)) {
+      if (((mutable_bitField0_ & 0x00000800) != 0)) {
         textAnnotations_ = java.util.Collections.unmodifiableList(textAnnotations_);
       }
-      if (((mutable_bitField0_ & 0x00000400) != 0)) {
+      if (((mutable_bitField0_ & 0x00001000) != 0)) {
         objectAnnotations_ = java.util.Collections.unmodifiableList(objectAnnotations_);
+      }
+      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+        segmentPresenceLabelAnnotations_ =
+            java.util.Collections.unmodifiableList(segmentPresenceLabelAnnotations_);
+      }
+      if (((mutable_bitField0_ & 0x00000020) != 0)) {
+        shotPresenceLabelAnnotations_ =
+            java.util.Collections.unmodifiableList(shotPresenceLabelAnnotations_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -451,6 +489,94 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
     return segmentLabelAnnotations_.get(index);
   }
 
+  public static final int SEGMENT_PRESENCE_LABEL_ANNOTATIONS_FIELD_NUMBER = 23;
+  private java.util.List<com.google.cloud.videointelligence.v1.LabelAnnotation>
+      segmentPresenceLabelAnnotations_;
+  /**
+   *
+   *
+   * <pre>
+   * Presence label annotations on video level or user specified segment level.
+   * There is exactly one element for each unique label. This will eventually
+   * get publicly exposed and the restriction will be removed.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.videointelligence.v1.LabelAnnotation segment_presence_label_annotations = 23;
+   * </code>
+   */
+  public java.util.List<com.google.cloud.videointelligence.v1.LabelAnnotation>
+      getSegmentPresenceLabelAnnotationsList() {
+    return segmentPresenceLabelAnnotations_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Presence label annotations on video level or user specified segment level.
+   * There is exactly one element for each unique label. This will eventually
+   * get publicly exposed and the restriction will be removed.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.videointelligence.v1.LabelAnnotation segment_presence_label_annotations = 23;
+   * </code>
+   */
+  public java.util.List<? extends com.google.cloud.videointelligence.v1.LabelAnnotationOrBuilder>
+      getSegmentPresenceLabelAnnotationsOrBuilderList() {
+    return segmentPresenceLabelAnnotations_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Presence label annotations on video level or user specified segment level.
+   * There is exactly one element for each unique label. This will eventually
+   * get publicly exposed and the restriction will be removed.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.videointelligence.v1.LabelAnnotation segment_presence_label_annotations = 23;
+   * </code>
+   */
+  public int getSegmentPresenceLabelAnnotationsCount() {
+    return segmentPresenceLabelAnnotations_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Presence label annotations on video level or user specified segment level.
+   * There is exactly one element for each unique label. This will eventually
+   * get publicly exposed and the restriction will be removed.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.videointelligence.v1.LabelAnnotation segment_presence_label_annotations = 23;
+   * </code>
+   */
+  public com.google.cloud.videointelligence.v1.LabelAnnotation getSegmentPresenceLabelAnnotations(
+      int index) {
+    return segmentPresenceLabelAnnotations_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Presence label annotations on video level or user specified segment level.
+   * There is exactly one element for each unique label. This will eventually
+   * get publicly exposed and the restriction will be removed.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.videointelligence.v1.LabelAnnotation segment_presence_label_annotations = 23;
+   * </code>
+   */
+  public com.google.cloud.videointelligence.v1.LabelAnnotationOrBuilder
+      getSegmentPresenceLabelAnnotationsOrBuilder(int index) {
+    return segmentPresenceLabelAnnotations_.get(index);
+  }
+
   public static final int SHOT_LABEL_ANNOTATIONS_FIELD_NUMBER = 3;
   private java.util.List<com.google.cloud.videointelligence.v1.LabelAnnotation>
       shotLabelAnnotations_;
@@ -526,6 +652,94 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
   public com.google.cloud.videointelligence.v1.LabelAnnotationOrBuilder
       getShotLabelAnnotationsOrBuilder(int index) {
     return shotLabelAnnotations_.get(index);
+  }
+
+  public static final int SHOT_PRESENCE_LABEL_ANNOTATIONS_FIELD_NUMBER = 24;
+  private java.util.List<com.google.cloud.videointelligence.v1.LabelAnnotation>
+      shotPresenceLabelAnnotations_;
+  /**
+   *
+   *
+   * <pre>
+   * Presence label annotations on shot level. There is exactly one element for
+   * each unique label. This will eventually get publicly exposed and the
+   * restriction will be removed.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.videointelligence.v1.LabelAnnotation shot_presence_label_annotations = 24;
+   * </code>
+   */
+  public java.util.List<com.google.cloud.videointelligence.v1.LabelAnnotation>
+      getShotPresenceLabelAnnotationsList() {
+    return shotPresenceLabelAnnotations_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Presence label annotations on shot level. There is exactly one element for
+   * each unique label. This will eventually get publicly exposed and the
+   * restriction will be removed.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.videointelligence.v1.LabelAnnotation shot_presence_label_annotations = 24;
+   * </code>
+   */
+  public java.util.List<? extends com.google.cloud.videointelligence.v1.LabelAnnotationOrBuilder>
+      getShotPresenceLabelAnnotationsOrBuilderList() {
+    return shotPresenceLabelAnnotations_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Presence label annotations on shot level. There is exactly one element for
+   * each unique label. This will eventually get publicly exposed and the
+   * restriction will be removed.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.videointelligence.v1.LabelAnnotation shot_presence_label_annotations = 24;
+   * </code>
+   */
+  public int getShotPresenceLabelAnnotationsCount() {
+    return shotPresenceLabelAnnotations_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Presence label annotations on shot level. There is exactly one element for
+   * each unique label. This will eventually get publicly exposed and the
+   * restriction will be removed.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.videointelligence.v1.LabelAnnotation shot_presence_label_annotations = 24;
+   * </code>
+   */
+  public com.google.cloud.videointelligence.v1.LabelAnnotation getShotPresenceLabelAnnotations(
+      int index) {
+    return shotPresenceLabelAnnotations_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Presence label annotations on shot level. There is exactly one element for
+   * each unique label. This will eventually get publicly exposed and the
+   * restriction will be removed.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.videointelligence.v1.LabelAnnotation shot_presence_label_annotations = 24;
+   * </code>
+   */
+  public com.google.cloud.videointelligence.v1.LabelAnnotationOrBuilder
+      getShotPresenceLabelAnnotationsOrBuilder(int index) {
+    return shotPresenceLabelAnnotations_.get(index);
   }
 
   public static final int FRAME_LABEL_ANNOTATIONS_FIELD_NUMBER = 4;
@@ -1108,6 +1322,12 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
     for (int i = 0; i < objectAnnotations_.size(); i++) {
       output.writeMessage(14, objectAnnotations_.get(i));
     }
+    for (int i = 0; i < segmentPresenceLabelAnnotations_.size(); i++) {
+      output.writeMessage(23, segmentPresenceLabelAnnotations_.get(i));
+    }
+    for (int i = 0; i < shotPresenceLabelAnnotations_.size(); i++) {
+      output.writeMessage(24, shotPresenceLabelAnnotations_.get(i));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -1161,6 +1381,16 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(14, objectAnnotations_.get(i));
     }
+    for (int i = 0; i < segmentPresenceLabelAnnotations_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              23, segmentPresenceLabelAnnotations_.get(i));
+    }
+    for (int i = 0; i < shotPresenceLabelAnnotations_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              24, shotPresenceLabelAnnotations_.get(i));
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1184,7 +1414,11 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
     }
     if (!getSegmentLabelAnnotationsList().equals(other.getSegmentLabelAnnotationsList()))
       return false;
+    if (!getSegmentPresenceLabelAnnotationsList()
+        .equals(other.getSegmentPresenceLabelAnnotationsList())) return false;
     if (!getShotLabelAnnotationsList().equals(other.getShotLabelAnnotationsList())) return false;
+    if (!getShotPresenceLabelAnnotationsList().equals(other.getShotPresenceLabelAnnotationsList()))
+      return false;
     if (!getFrameLabelAnnotationsList().equals(other.getFrameLabelAnnotationsList())) return false;
     if (!getFaceAnnotationsList().equals(other.getFaceAnnotationsList())) return false;
     if (!getShotAnnotationsList().equals(other.getShotAnnotationsList())) return false;
@@ -1220,9 +1454,17 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
       hash = (37 * hash) + SEGMENT_LABEL_ANNOTATIONS_FIELD_NUMBER;
       hash = (53 * hash) + getSegmentLabelAnnotationsList().hashCode();
     }
+    if (getSegmentPresenceLabelAnnotationsCount() > 0) {
+      hash = (37 * hash) + SEGMENT_PRESENCE_LABEL_ANNOTATIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getSegmentPresenceLabelAnnotationsList().hashCode();
+    }
     if (getShotLabelAnnotationsCount() > 0) {
       hash = (37 * hash) + SHOT_LABEL_ANNOTATIONS_FIELD_NUMBER;
       hash = (53 * hash) + getShotLabelAnnotationsList().hashCode();
+    }
+    if (getShotPresenceLabelAnnotationsCount() > 0) {
+      hash = (37 * hash) + SHOT_PRESENCE_LABEL_ANNOTATIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getShotPresenceLabelAnnotationsList().hashCode();
     }
     if (getFrameLabelAnnotationsCount() > 0) {
       hash = (37 * hash) + FRAME_LABEL_ANNOTATIONS_FIELD_NUMBER;
@@ -1398,7 +1640,9 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getSegmentLabelAnnotationsFieldBuilder();
+        getSegmentPresenceLabelAnnotationsFieldBuilder();
         getShotLabelAnnotationsFieldBuilder();
+        getShotPresenceLabelAnnotationsFieldBuilder();
         getFrameLabelAnnotationsFieldBuilder();
         getFaceAnnotationsFieldBuilder();
         getShotAnnotationsFieldBuilder();
@@ -1425,27 +1669,39 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
       } else {
         segmentLabelAnnotationsBuilder_.clear();
       }
+      if (segmentPresenceLabelAnnotationsBuilder_ == null) {
+        segmentPresenceLabelAnnotations_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000008);
+      } else {
+        segmentPresenceLabelAnnotationsBuilder_.clear();
+      }
       if (shotLabelAnnotationsBuilder_ == null) {
         shotLabelAnnotations_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000010);
       } else {
         shotLabelAnnotationsBuilder_.clear();
       }
+      if (shotPresenceLabelAnnotationsBuilder_ == null) {
+        shotPresenceLabelAnnotations_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000020);
+      } else {
+        shotPresenceLabelAnnotationsBuilder_.clear();
+      }
       if (frameLabelAnnotationsBuilder_ == null) {
         frameLabelAnnotations_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000040);
       } else {
         frameLabelAnnotationsBuilder_.clear();
       }
       if (faceAnnotationsBuilder_ == null) {
         faceAnnotations_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000080);
       } else {
         faceAnnotationsBuilder_.clear();
       }
       if (shotAnnotationsBuilder_ == null) {
         shotAnnotations_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000100);
       } else {
         shotAnnotationsBuilder_.clear();
       }
@@ -1457,19 +1713,19 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
       }
       if (speechTranscriptionsBuilder_ == null) {
         speechTranscriptions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000400);
       } else {
         speechTranscriptionsBuilder_.clear();
       }
       if (textAnnotationsBuilder_ == null) {
         textAnnotations_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000800);
       } else {
         textAnnotationsBuilder_.clear();
       }
       if (objectAnnotationsBuilder_ == null) {
         objectAnnotations_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00001000);
       } else {
         objectAnnotationsBuilder_.clear();
       }
@@ -1525,37 +1781,57 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
       } else {
         result.segmentLabelAnnotations_ = segmentLabelAnnotationsBuilder_.build();
       }
-      if (shotLabelAnnotationsBuilder_ == null) {
+      if (segmentPresenceLabelAnnotationsBuilder_ == null) {
         if (((bitField0_ & 0x00000008) != 0)) {
-          shotLabelAnnotations_ = java.util.Collections.unmodifiableList(shotLabelAnnotations_);
+          segmentPresenceLabelAnnotations_ =
+              java.util.Collections.unmodifiableList(segmentPresenceLabelAnnotations_);
           bitField0_ = (bitField0_ & ~0x00000008);
+        }
+        result.segmentPresenceLabelAnnotations_ = segmentPresenceLabelAnnotations_;
+      } else {
+        result.segmentPresenceLabelAnnotations_ = segmentPresenceLabelAnnotationsBuilder_.build();
+      }
+      if (shotLabelAnnotationsBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)) {
+          shotLabelAnnotations_ = java.util.Collections.unmodifiableList(shotLabelAnnotations_);
+          bitField0_ = (bitField0_ & ~0x00000010);
         }
         result.shotLabelAnnotations_ = shotLabelAnnotations_;
       } else {
         result.shotLabelAnnotations_ = shotLabelAnnotationsBuilder_.build();
       }
+      if (shotPresenceLabelAnnotationsBuilder_ == null) {
+        if (((bitField0_ & 0x00000020) != 0)) {
+          shotPresenceLabelAnnotations_ =
+              java.util.Collections.unmodifiableList(shotPresenceLabelAnnotations_);
+          bitField0_ = (bitField0_ & ~0x00000020);
+        }
+        result.shotPresenceLabelAnnotations_ = shotPresenceLabelAnnotations_;
+      } else {
+        result.shotPresenceLabelAnnotations_ = shotPresenceLabelAnnotationsBuilder_.build();
+      }
       if (frameLabelAnnotationsBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)) {
+        if (((bitField0_ & 0x00000040) != 0)) {
           frameLabelAnnotations_ = java.util.Collections.unmodifiableList(frameLabelAnnotations_);
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000040);
         }
         result.frameLabelAnnotations_ = frameLabelAnnotations_;
       } else {
         result.frameLabelAnnotations_ = frameLabelAnnotationsBuilder_.build();
       }
       if (faceAnnotationsBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)) {
+        if (((bitField0_ & 0x00000080) != 0)) {
           faceAnnotations_ = java.util.Collections.unmodifiableList(faceAnnotations_);
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000080);
         }
         result.faceAnnotations_ = faceAnnotations_;
       } else {
         result.faceAnnotations_ = faceAnnotationsBuilder_.build();
       }
       if (shotAnnotationsBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)) {
+        if (((bitField0_ & 0x00000100) != 0)) {
           shotAnnotations_ = java.util.Collections.unmodifiableList(shotAnnotations_);
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ = (bitField0_ & ~0x00000100);
         }
         result.shotAnnotations_ = shotAnnotations_;
       } else {
@@ -1567,27 +1843,27 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
         result.explicitAnnotation_ = explicitAnnotationBuilder_.build();
       }
       if (speechTranscriptionsBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)) {
+        if (((bitField0_ & 0x00000400) != 0)) {
           speechTranscriptions_ = java.util.Collections.unmodifiableList(speechTranscriptions_);
-          bitField0_ = (bitField0_ & ~0x00000100);
+          bitField0_ = (bitField0_ & ~0x00000400);
         }
         result.speechTranscriptions_ = speechTranscriptions_;
       } else {
         result.speechTranscriptions_ = speechTranscriptionsBuilder_.build();
       }
       if (textAnnotationsBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) != 0)) {
+        if (((bitField0_ & 0x00000800) != 0)) {
           textAnnotations_ = java.util.Collections.unmodifiableList(textAnnotations_);
-          bitField0_ = (bitField0_ & ~0x00000200);
+          bitField0_ = (bitField0_ & ~0x00000800);
         }
         result.textAnnotations_ = textAnnotations_;
       } else {
         result.textAnnotations_ = textAnnotationsBuilder_.build();
       }
       if (objectAnnotationsBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) != 0)) {
+        if (((bitField0_ & 0x00001000) != 0)) {
           objectAnnotations_ = java.util.Collections.unmodifiableList(objectAnnotations_);
-          bitField0_ = (bitField0_ & ~0x00000400);
+          bitField0_ = (bitField0_ & ~0x00001000);
         }
         result.objectAnnotations_ = objectAnnotations_;
       } else {
@@ -1684,11 +1960,39 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
           }
         }
       }
+      if (segmentPresenceLabelAnnotationsBuilder_ == null) {
+        if (!other.segmentPresenceLabelAnnotations_.isEmpty()) {
+          if (segmentPresenceLabelAnnotations_.isEmpty()) {
+            segmentPresenceLabelAnnotations_ = other.segmentPresenceLabelAnnotations_;
+            bitField0_ = (bitField0_ & ~0x00000008);
+          } else {
+            ensureSegmentPresenceLabelAnnotationsIsMutable();
+            segmentPresenceLabelAnnotations_.addAll(other.segmentPresenceLabelAnnotations_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.segmentPresenceLabelAnnotations_.isEmpty()) {
+          if (segmentPresenceLabelAnnotationsBuilder_.isEmpty()) {
+            segmentPresenceLabelAnnotationsBuilder_.dispose();
+            segmentPresenceLabelAnnotationsBuilder_ = null;
+            segmentPresenceLabelAnnotations_ = other.segmentPresenceLabelAnnotations_;
+            bitField0_ = (bitField0_ & ~0x00000008);
+            segmentPresenceLabelAnnotationsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getSegmentPresenceLabelAnnotationsFieldBuilder()
+                    : null;
+          } else {
+            segmentPresenceLabelAnnotationsBuilder_.addAllMessages(
+                other.segmentPresenceLabelAnnotations_);
+          }
+        }
+      }
       if (shotLabelAnnotationsBuilder_ == null) {
         if (!other.shotLabelAnnotations_.isEmpty()) {
           if (shotLabelAnnotations_.isEmpty()) {
             shotLabelAnnotations_ = other.shotLabelAnnotations_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000010);
           } else {
             ensureShotLabelAnnotationsIsMutable();
             shotLabelAnnotations_.addAll(other.shotLabelAnnotations_);
@@ -1701,7 +2005,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
             shotLabelAnnotationsBuilder_.dispose();
             shotLabelAnnotationsBuilder_ = null;
             shotLabelAnnotations_ = other.shotLabelAnnotations_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000010);
             shotLabelAnnotationsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getShotLabelAnnotationsFieldBuilder()
@@ -1711,11 +2015,39 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
           }
         }
       }
+      if (shotPresenceLabelAnnotationsBuilder_ == null) {
+        if (!other.shotPresenceLabelAnnotations_.isEmpty()) {
+          if (shotPresenceLabelAnnotations_.isEmpty()) {
+            shotPresenceLabelAnnotations_ = other.shotPresenceLabelAnnotations_;
+            bitField0_ = (bitField0_ & ~0x00000020);
+          } else {
+            ensureShotPresenceLabelAnnotationsIsMutable();
+            shotPresenceLabelAnnotations_.addAll(other.shotPresenceLabelAnnotations_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.shotPresenceLabelAnnotations_.isEmpty()) {
+          if (shotPresenceLabelAnnotationsBuilder_.isEmpty()) {
+            shotPresenceLabelAnnotationsBuilder_.dispose();
+            shotPresenceLabelAnnotationsBuilder_ = null;
+            shotPresenceLabelAnnotations_ = other.shotPresenceLabelAnnotations_;
+            bitField0_ = (bitField0_ & ~0x00000020);
+            shotPresenceLabelAnnotationsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getShotPresenceLabelAnnotationsFieldBuilder()
+                    : null;
+          } else {
+            shotPresenceLabelAnnotationsBuilder_.addAllMessages(
+                other.shotPresenceLabelAnnotations_);
+          }
+        }
+      }
       if (frameLabelAnnotationsBuilder_ == null) {
         if (!other.frameLabelAnnotations_.isEmpty()) {
           if (frameLabelAnnotations_.isEmpty()) {
             frameLabelAnnotations_ = other.frameLabelAnnotations_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000040);
           } else {
             ensureFrameLabelAnnotationsIsMutable();
             frameLabelAnnotations_.addAll(other.frameLabelAnnotations_);
@@ -1728,7 +2060,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
             frameLabelAnnotationsBuilder_.dispose();
             frameLabelAnnotationsBuilder_ = null;
             frameLabelAnnotations_ = other.frameLabelAnnotations_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000040);
             frameLabelAnnotationsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getFrameLabelAnnotationsFieldBuilder()
@@ -1742,7 +2074,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
         if (!other.faceAnnotations_.isEmpty()) {
           if (faceAnnotations_.isEmpty()) {
             faceAnnotations_ = other.faceAnnotations_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000080);
           } else {
             ensureFaceAnnotationsIsMutable();
             faceAnnotations_.addAll(other.faceAnnotations_);
@@ -1755,7 +2087,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
             faceAnnotationsBuilder_.dispose();
             faceAnnotationsBuilder_ = null;
             faceAnnotations_ = other.faceAnnotations_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000080);
             faceAnnotationsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getFaceAnnotationsFieldBuilder()
@@ -1769,7 +2101,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
         if (!other.shotAnnotations_.isEmpty()) {
           if (shotAnnotations_.isEmpty()) {
             shotAnnotations_ = other.shotAnnotations_;
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000100);
           } else {
             ensureShotAnnotationsIsMutable();
             shotAnnotations_.addAll(other.shotAnnotations_);
@@ -1782,7 +2114,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
             shotAnnotationsBuilder_.dispose();
             shotAnnotationsBuilder_ = null;
             shotAnnotations_ = other.shotAnnotations_;
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000100);
             shotAnnotationsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getShotAnnotationsFieldBuilder()
@@ -1799,7 +2131,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
         if (!other.speechTranscriptions_.isEmpty()) {
           if (speechTranscriptions_.isEmpty()) {
             speechTranscriptions_ = other.speechTranscriptions_;
-            bitField0_ = (bitField0_ & ~0x00000100);
+            bitField0_ = (bitField0_ & ~0x00000400);
           } else {
             ensureSpeechTranscriptionsIsMutable();
             speechTranscriptions_.addAll(other.speechTranscriptions_);
@@ -1812,7 +2144,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
             speechTranscriptionsBuilder_.dispose();
             speechTranscriptionsBuilder_ = null;
             speechTranscriptions_ = other.speechTranscriptions_;
-            bitField0_ = (bitField0_ & ~0x00000100);
+            bitField0_ = (bitField0_ & ~0x00000400);
             speechTranscriptionsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getSpeechTranscriptionsFieldBuilder()
@@ -1826,7 +2158,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
         if (!other.textAnnotations_.isEmpty()) {
           if (textAnnotations_.isEmpty()) {
             textAnnotations_ = other.textAnnotations_;
-            bitField0_ = (bitField0_ & ~0x00000200);
+            bitField0_ = (bitField0_ & ~0x00000800);
           } else {
             ensureTextAnnotationsIsMutable();
             textAnnotations_.addAll(other.textAnnotations_);
@@ -1839,7 +2171,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
             textAnnotationsBuilder_.dispose();
             textAnnotationsBuilder_ = null;
             textAnnotations_ = other.textAnnotations_;
-            bitField0_ = (bitField0_ & ~0x00000200);
+            bitField0_ = (bitField0_ & ~0x00000800);
             textAnnotationsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getTextAnnotationsFieldBuilder()
@@ -1853,7 +2185,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
         if (!other.objectAnnotations_.isEmpty()) {
           if (objectAnnotations_.isEmpty()) {
             objectAnnotations_ = other.objectAnnotations_;
-            bitField0_ = (bitField0_ & ~0x00000400);
+            bitField0_ = (bitField0_ & ~0x00001000);
           } else {
             ensureObjectAnnotationsIsMutable();
             objectAnnotations_.addAll(other.objectAnnotations_);
@@ -1866,7 +2198,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
             objectAnnotationsBuilder_.dispose();
             objectAnnotationsBuilder_ = null;
             objectAnnotations_ = other.objectAnnotations_;
-            bitField0_ = (bitField0_ & ~0x00000400);
+            bitField0_ = (bitField0_ & ~0x00001000);
             objectAnnotationsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getObjectAnnotationsFieldBuilder()
@@ -2613,14 +2945,453 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
     }
 
     private java.util.List<com.google.cloud.videointelligence.v1.LabelAnnotation>
+        segmentPresenceLabelAnnotations_ = java.util.Collections.emptyList();
+
+    private void ensureSegmentPresenceLabelAnnotationsIsMutable() {
+      if (!((bitField0_ & 0x00000008) != 0)) {
+        segmentPresenceLabelAnnotations_ =
+            new java.util.ArrayList<com.google.cloud.videointelligence.v1.LabelAnnotation>(
+                segmentPresenceLabelAnnotations_);
+        bitField0_ |= 0x00000008;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.videointelligence.v1.LabelAnnotation,
+            com.google.cloud.videointelligence.v1.LabelAnnotation.Builder,
+            com.google.cloud.videointelligence.v1.LabelAnnotationOrBuilder>
+        segmentPresenceLabelAnnotationsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Presence label annotations on video level or user specified segment level.
+     * There is exactly one element for each unique label. This will eventually
+     * get publicly exposed and the restriction will be removed.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1.LabelAnnotation segment_presence_label_annotations = 23;
+     * </code>
+     */
+    public java.util.List<com.google.cloud.videointelligence.v1.LabelAnnotation>
+        getSegmentPresenceLabelAnnotationsList() {
+      if (segmentPresenceLabelAnnotationsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(segmentPresenceLabelAnnotations_);
+      } else {
+        return segmentPresenceLabelAnnotationsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Presence label annotations on video level or user specified segment level.
+     * There is exactly one element for each unique label. This will eventually
+     * get publicly exposed and the restriction will be removed.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1.LabelAnnotation segment_presence_label_annotations = 23;
+     * </code>
+     */
+    public int getSegmentPresenceLabelAnnotationsCount() {
+      if (segmentPresenceLabelAnnotationsBuilder_ == null) {
+        return segmentPresenceLabelAnnotations_.size();
+      } else {
+        return segmentPresenceLabelAnnotationsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Presence label annotations on video level or user specified segment level.
+     * There is exactly one element for each unique label. This will eventually
+     * get publicly exposed and the restriction will be removed.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1.LabelAnnotation segment_presence_label_annotations = 23;
+     * </code>
+     */
+    public com.google.cloud.videointelligence.v1.LabelAnnotation getSegmentPresenceLabelAnnotations(
+        int index) {
+      if (segmentPresenceLabelAnnotationsBuilder_ == null) {
+        return segmentPresenceLabelAnnotations_.get(index);
+      } else {
+        return segmentPresenceLabelAnnotationsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Presence label annotations on video level or user specified segment level.
+     * There is exactly one element for each unique label. This will eventually
+     * get publicly exposed and the restriction will be removed.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1.LabelAnnotation segment_presence_label_annotations = 23;
+     * </code>
+     */
+    public Builder setSegmentPresenceLabelAnnotations(
+        int index, com.google.cloud.videointelligence.v1.LabelAnnotation value) {
+      if (segmentPresenceLabelAnnotationsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSegmentPresenceLabelAnnotationsIsMutable();
+        segmentPresenceLabelAnnotations_.set(index, value);
+        onChanged();
+      } else {
+        segmentPresenceLabelAnnotationsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Presence label annotations on video level or user specified segment level.
+     * There is exactly one element for each unique label. This will eventually
+     * get publicly exposed and the restriction will be removed.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1.LabelAnnotation segment_presence_label_annotations = 23;
+     * </code>
+     */
+    public Builder setSegmentPresenceLabelAnnotations(
+        int index, com.google.cloud.videointelligence.v1.LabelAnnotation.Builder builderForValue) {
+      if (segmentPresenceLabelAnnotationsBuilder_ == null) {
+        ensureSegmentPresenceLabelAnnotationsIsMutable();
+        segmentPresenceLabelAnnotations_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        segmentPresenceLabelAnnotationsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Presence label annotations on video level or user specified segment level.
+     * There is exactly one element for each unique label. This will eventually
+     * get publicly exposed and the restriction will be removed.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1.LabelAnnotation segment_presence_label_annotations = 23;
+     * </code>
+     */
+    public Builder addSegmentPresenceLabelAnnotations(
+        com.google.cloud.videointelligence.v1.LabelAnnotation value) {
+      if (segmentPresenceLabelAnnotationsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSegmentPresenceLabelAnnotationsIsMutable();
+        segmentPresenceLabelAnnotations_.add(value);
+        onChanged();
+      } else {
+        segmentPresenceLabelAnnotationsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Presence label annotations on video level or user specified segment level.
+     * There is exactly one element for each unique label. This will eventually
+     * get publicly exposed and the restriction will be removed.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1.LabelAnnotation segment_presence_label_annotations = 23;
+     * </code>
+     */
+    public Builder addSegmentPresenceLabelAnnotations(
+        int index, com.google.cloud.videointelligence.v1.LabelAnnotation value) {
+      if (segmentPresenceLabelAnnotationsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSegmentPresenceLabelAnnotationsIsMutable();
+        segmentPresenceLabelAnnotations_.add(index, value);
+        onChanged();
+      } else {
+        segmentPresenceLabelAnnotationsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Presence label annotations on video level or user specified segment level.
+     * There is exactly one element for each unique label. This will eventually
+     * get publicly exposed and the restriction will be removed.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1.LabelAnnotation segment_presence_label_annotations = 23;
+     * </code>
+     */
+    public Builder addSegmentPresenceLabelAnnotations(
+        com.google.cloud.videointelligence.v1.LabelAnnotation.Builder builderForValue) {
+      if (segmentPresenceLabelAnnotationsBuilder_ == null) {
+        ensureSegmentPresenceLabelAnnotationsIsMutable();
+        segmentPresenceLabelAnnotations_.add(builderForValue.build());
+        onChanged();
+      } else {
+        segmentPresenceLabelAnnotationsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Presence label annotations on video level or user specified segment level.
+     * There is exactly one element for each unique label. This will eventually
+     * get publicly exposed and the restriction will be removed.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1.LabelAnnotation segment_presence_label_annotations = 23;
+     * </code>
+     */
+    public Builder addSegmentPresenceLabelAnnotations(
+        int index, com.google.cloud.videointelligence.v1.LabelAnnotation.Builder builderForValue) {
+      if (segmentPresenceLabelAnnotationsBuilder_ == null) {
+        ensureSegmentPresenceLabelAnnotationsIsMutable();
+        segmentPresenceLabelAnnotations_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        segmentPresenceLabelAnnotationsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Presence label annotations on video level or user specified segment level.
+     * There is exactly one element for each unique label. This will eventually
+     * get publicly exposed and the restriction will be removed.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1.LabelAnnotation segment_presence_label_annotations = 23;
+     * </code>
+     */
+    public Builder addAllSegmentPresenceLabelAnnotations(
+        java.lang.Iterable<? extends com.google.cloud.videointelligence.v1.LabelAnnotation>
+            values) {
+      if (segmentPresenceLabelAnnotationsBuilder_ == null) {
+        ensureSegmentPresenceLabelAnnotationsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, segmentPresenceLabelAnnotations_);
+        onChanged();
+      } else {
+        segmentPresenceLabelAnnotationsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Presence label annotations on video level or user specified segment level.
+     * There is exactly one element for each unique label. This will eventually
+     * get publicly exposed and the restriction will be removed.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1.LabelAnnotation segment_presence_label_annotations = 23;
+     * </code>
+     */
+    public Builder clearSegmentPresenceLabelAnnotations() {
+      if (segmentPresenceLabelAnnotationsBuilder_ == null) {
+        segmentPresenceLabelAnnotations_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+      } else {
+        segmentPresenceLabelAnnotationsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Presence label annotations on video level or user specified segment level.
+     * There is exactly one element for each unique label. This will eventually
+     * get publicly exposed and the restriction will be removed.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1.LabelAnnotation segment_presence_label_annotations = 23;
+     * </code>
+     */
+    public Builder removeSegmentPresenceLabelAnnotations(int index) {
+      if (segmentPresenceLabelAnnotationsBuilder_ == null) {
+        ensureSegmentPresenceLabelAnnotationsIsMutable();
+        segmentPresenceLabelAnnotations_.remove(index);
+        onChanged();
+      } else {
+        segmentPresenceLabelAnnotationsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Presence label annotations on video level or user specified segment level.
+     * There is exactly one element for each unique label. This will eventually
+     * get publicly exposed and the restriction will be removed.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1.LabelAnnotation segment_presence_label_annotations = 23;
+     * </code>
+     */
+    public com.google.cloud.videointelligence.v1.LabelAnnotation.Builder
+        getSegmentPresenceLabelAnnotationsBuilder(int index) {
+      return getSegmentPresenceLabelAnnotationsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Presence label annotations on video level or user specified segment level.
+     * There is exactly one element for each unique label. This will eventually
+     * get publicly exposed and the restriction will be removed.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1.LabelAnnotation segment_presence_label_annotations = 23;
+     * </code>
+     */
+    public com.google.cloud.videointelligence.v1.LabelAnnotationOrBuilder
+        getSegmentPresenceLabelAnnotationsOrBuilder(int index) {
+      if (segmentPresenceLabelAnnotationsBuilder_ == null) {
+        return segmentPresenceLabelAnnotations_.get(index);
+      } else {
+        return segmentPresenceLabelAnnotationsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Presence label annotations on video level or user specified segment level.
+     * There is exactly one element for each unique label. This will eventually
+     * get publicly exposed and the restriction will be removed.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1.LabelAnnotation segment_presence_label_annotations = 23;
+     * </code>
+     */
+    public java.util.List<? extends com.google.cloud.videointelligence.v1.LabelAnnotationOrBuilder>
+        getSegmentPresenceLabelAnnotationsOrBuilderList() {
+      if (segmentPresenceLabelAnnotationsBuilder_ != null) {
+        return segmentPresenceLabelAnnotationsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(segmentPresenceLabelAnnotations_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Presence label annotations on video level or user specified segment level.
+     * There is exactly one element for each unique label. This will eventually
+     * get publicly exposed and the restriction will be removed.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1.LabelAnnotation segment_presence_label_annotations = 23;
+     * </code>
+     */
+    public com.google.cloud.videointelligence.v1.LabelAnnotation.Builder
+        addSegmentPresenceLabelAnnotationsBuilder() {
+      return getSegmentPresenceLabelAnnotationsFieldBuilder()
+          .addBuilder(com.google.cloud.videointelligence.v1.LabelAnnotation.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Presence label annotations on video level or user specified segment level.
+     * There is exactly one element for each unique label. This will eventually
+     * get publicly exposed and the restriction will be removed.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1.LabelAnnotation segment_presence_label_annotations = 23;
+     * </code>
+     */
+    public com.google.cloud.videointelligence.v1.LabelAnnotation.Builder
+        addSegmentPresenceLabelAnnotationsBuilder(int index) {
+      return getSegmentPresenceLabelAnnotationsFieldBuilder()
+          .addBuilder(
+              index, com.google.cloud.videointelligence.v1.LabelAnnotation.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Presence label annotations on video level or user specified segment level.
+     * There is exactly one element for each unique label. This will eventually
+     * get publicly exposed and the restriction will be removed.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1.LabelAnnotation segment_presence_label_annotations = 23;
+     * </code>
+     */
+    public java.util.List<com.google.cloud.videointelligence.v1.LabelAnnotation.Builder>
+        getSegmentPresenceLabelAnnotationsBuilderList() {
+      return getSegmentPresenceLabelAnnotationsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.videointelligence.v1.LabelAnnotation,
+            com.google.cloud.videointelligence.v1.LabelAnnotation.Builder,
+            com.google.cloud.videointelligence.v1.LabelAnnotationOrBuilder>
+        getSegmentPresenceLabelAnnotationsFieldBuilder() {
+      if (segmentPresenceLabelAnnotationsBuilder_ == null) {
+        segmentPresenceLabelAnnotationsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.videointelligence.v1.LabelAnnotation,
+                com.google.cloud.videointelligence.v1.LabelAnnotation.Builder,
+                com.google.cloud.videointelligence.v1.LabelAnnotationOrBuilder>(
+                segmentPresenceLabelAnnotations_,
+                ((bitField0_ & 0x00000008) != 0),
+                getParentForChildren(),
+                isClean());
+        segmentPresenceLabelAnnotations_ = null;
+      }
+      return segmentPresenceLabelAnnotationsBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.videointelligence.v1.LabelAnnotation>
         shotLabelAnnotations_ = java.util.Collections.emptyList();
 
     private void ensureShotLabelAnnotationsIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         shotLabelAnnotations_ =
             new java.util.ArrayList<com.google.cloud.videointelligence.v1.LabelAnnotation>(
                 shotLabelAnnotations_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
       }
     }
 
@@ -2864,7 +3635,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
     public Builder clearShotLabelAnnotations() {
       if (shotLabelAnnotationsBuilder_ == null) {
         shotLabelAnnotations_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
       } else {
         shotLabelAnnotationsBuilder_.clear();
@@ -3006,7 +3777,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
                 com.google.cloud.videointelligence.v1.LabelAnnotation.Builder,
                 com.google.cloud.videointelligence.v1.LabelAnnotationOrBuilder>(
                 shotLabelAnnotations_,
-                ((bitField0_ & 0x00000008) != 0),
+                ((bitField0_ & 0x00000010) != 0),
                 getParentForChildren(),
                 isClean());
         shotLabelAnnotations_ = null;
@@ -3015,14 +3786,453 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
     }
 
     private java.util.List<com.google.cloud.videointelligence.v1.LabelAnnotation>
+        shotPresenceLabelAnnotations_ = java.util.Collections.emptyList();
+
+    private void ensureShotPresenceLabelAnnotationsIsMutable() {
+      if (!((bitField0_ & 0x00000020) != 0)) {
+        shotPresenceLabelAnnotations_ =
+            new java.util.ArrayList<com.google.cloud.videointelligence.v1.LabelAnnotation>(
+                shotPresenceLabelAnnotations_);
+        bitField0_ |= 0x00000020;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.videointelligence.v1.LabelAnnotation,
+            com.google.cloud.videointelligence.v1.LabelAnnotation.Builder,
+            com.google.cloud.videointelligence.v1.LabelAnnotationOrBuilder>
+        shotPresenceLabelAnnotationsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Presence label annotations on shot level. There is exactly one element for
+     * each unique label. This will eventually get publicly exposed and the
+     * restriction will be removed.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1.LabelAnnotation shot_presence_label_annotations = 24;
+     * </code>
+     */
+    public java.util.List<com.google.cloud.videointelligence.v1.LabelAnnotation>
+        getShotPresenceLabelAnnotationsList() {
+      if (shotPresenceLabelAnnotationsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(shotPresenceLabelAnnotations_);
+      } else {
+        return shotPresenceLabelAnnotationsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Presence label annotations on shot level. There is exactly one element for
+     * each unique label. This will eventually get publicly exposed and the
+     * restriction will be removed.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1.LabelAnnotation shot_presence_label_annotations = 24;
+     * </code>
+     */
+    public int getShotPresenceLabelAnnotationsCount() {
+      if (shotPresenceLabelAnnotationsBuilder_ == null) {
+        return shotPresenceLabelAnnotations_.size();
+      } else {
+        return shotPresenceLabelAnnotationsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Presence label annotations on shot level. There is exactly one element for
+     * each unique label. This will eventually get publicly exposed and the
+     * restriction will be removed.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1.LabelAnnotation shot_presence_label_annotations = 24;
+     * </code>
+     */
+    public com.google.cloud.videointelligence.v1.LabelAnnotation getShotPresenceLabelAnnotations(
+        int index) {
+      if (shotPresenceLabelAnnotationsBuilder_ == null) {
+        return shotPresenceLabelAnnotations_.get(index);
+      } else {
+        return shotPresenceLabelAnnotationsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Presence label annotations on shot level. There is exactly one element for
+     * each unique label. This will eventually get publicly exposed and the
+     * restriction will be removed.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1.LabelAnnotation shot_presence_label_annotations = 24;
+     * </code>
+     */
+    public Builder setShotPresenceLabelAnnotations(
+        int index, com.google.cloud.videointelligence.v1.LabelAnnotation value) {
+      if (shotPresenceLabelAnnotationsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureShotPresenceLabelAnnotationsIsMutable();
+        shotPresenceLabelAnnotations_.set(index, value);
+        onChanged();
+      } else {
+        shotPresenceLabelAnnotationsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Presence label annotations on shot level. There is exactly one element for
+     * each unique label. This will eventually get publicly exposed and the
+     * restriction will be removed.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1.LabelAnnotation shot_presence_label_annotations = 24;
+     * </code>
+     */
+    public Builder setShotPresenceLabelAnnotations(
+        int index, com.google.cloud.videointelligence.v1.LabelAnnotation.Builder builderForValue) {
+      if (shotPresenceLabelAnnotationsBuilder_ == null) {
+        ensureShotPresenceLabelAnnotationsIsMutable();
+        shotPresenceLabelAnnotations_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        shotPresenceLabelAnnotationsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Presence label annotations on shot level. There is exactly one element for
+     * each unique label. This will eventually get publicly exposed and the
+     * restriction will be removed.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1.LabelAnnotation shot_presence_label_annotations = 24;
+     * </code>
+     */
+    public Builder addShotPresenceLabelAnnotations(
+        com.google.cloud.videointelligence.v1.LabelAnnotation value) {
+      if (shotPresenceLabelAnnotationsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureShotPresenceLabelAnnotationsIsMutable();
+        shotPresenceLabelAnnotations_.add(value);
+        onChanged();
+      } else {
+        shotPresenceLabelAnnotationsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Presence label annotations on shot level. There is exactly one element for
+     * each unique label. This will eventually get publicly exposed and the
+     * restriction will be removed.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1.LabelAnnotation shot_presence_label_annotations = 24;
+     * </code>
+     */
+    public Builder addShotPresenceLabelAnnotations(
+        int index, com.google.cloud.videointelligence.v1.LabelAnnotation value) {
+      if (shotPresenceLabelAnnotationsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureShotPresenceLabelAnnotationsIsMutable();
+        shotPresenceLabelAnnotations_.add(index, value);
+        onChanged();
+      } else {
+        shotPresenceLabelAnnotationsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Presence label annotations on shot level. There is exactly one element for
+     * each unique label. This will eventually get publicly exposed and the
+     * restriction will be removed.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1.LabelAnnotation shot_presence_label_annotations = 24;
+     * </code>
+     */
+    public Builder addShotPresenceLabelAnnotations(
+        com.google.cloud.videointelligence.v1.LabelAnnotation.Builder builderForValue) {
+      if (shotPresenceLabelAnnotationsBuilder_ == null) {
+        ensureShotPresenceLabelAnnotationsIsMutable();
+        shotPresenceLabelAnnotations_.add(builderForValue.build());
+        onChanged();
+      } else {
+        shotPresenceLabelAnnotationsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Presence label annotations on shot level. There is exactly one element for
+     * each unique label. This will eventually get publicly exposed and the
+     * restriction will be removed.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1.LabelAnnotation shot_presence_label_annotations = 24;
+     * </code>
+     */
+    public Builder addShotPresenceLabelAnnotations(
+        int index, com.google.cloud.videointelligence.v1.LabelAnnotation.Builder builderForValue) {
+      if (shotPresenceLabelAnnotationsBuilder_ == null) {
+        ensureShotPresenceLabelAnnotationsIsMutable();
+        shotPresenceLabelAnnotations_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        shotPresenceLabelAnnotationsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Presence label annotations on shot level. There is exactly one element for
+     * each unique label. This will eventually get publicly exposed and the
+     * restriction will be removed.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1.LabelAnnotation shot_presence_label_annotations = 24;
+     * </code>
+     */
+    public Builder addAllShotPresenceLabelAnnotations(
+        java.lang.Iterable<? extends com.google.cloud.videointelligence.v1.LabelAnnotation>
+            values) {
+      if (shotPresenceLabelAnnotationsBuilder_ == null) {
+        ensureShotPresenceLabelAnnotationsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, shotPresenceLabelAnnotations_);
+        onChanged();
+      } else {
+        shotPresenceLabelAnnotationsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Presence label annotations on shot level. There is exactly one element for
+     * each unique label. This will eventually get publicly exposed and the
+     * restriction will be removed.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1.LabelAnnotation shot_presence_label_annotations = 24;
+     * </code>
+     */
+    public Builder clearShotPresenceLabelAnnotations() {
+      if (shotPresenceLabelAnnotationsBuilder_ == null) {
+        shotPresenceLabelAnnotations_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000020);
+        onChanged();
+      } else {
+        shotPresenceLabelAnnotationsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Presence label annotations on shot level. There is exactly one element for
+     * each unique label. This will eventually get publicly exposed and the
+     * restriction will be removed.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1.LabelAnnotation shot_presence_label_annotations = 24;
+     * </code>
+     */
+    public Builder removeShotPresenceLabelAnnotations(int index) {
+      if (shotPresenceLabelAnnotationsBuilder_ == null) {
+        ensureShotPresenceLabelAnnotationsIsMutable();
+        shotPresenceLabelAnnotations_.remove(index);
+        onChanged();
+      } else {
+        shotPresenceLabelAnnotationsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Presence label annotations on shot level. There is exactly one element for
+     * each unique label. This will eventually get publicly exposed and the
+     * restriction will be removed.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1.LabelAnnotation shot_presence_label_annotations = 24;
+     * </code>
+     */
+    public com.google.cloud.videointelligence.v1.LabelAnnotation.Builder
+        getShotPresenceLabelAnnotationsBuilder(int index) {
+      return getShotPresenceLabelAnnotationsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Presence label annotations on shot level. There is exactly one element for
+     * each unique label. This will eventually get publicly exposed and the
+     * restriction will be removed.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1.LabelAnnotation shot_presence_label_annotations = 24;
+     * </code>
+     */
+    public com.google.cloud.videointelligence.v1.LabelAnnotationOrBuilder
+        getShotPresenceLabelAnnotationsOrBuilder(int index) {
+      if (shotPresenceLabelAnnotationsBuilder_ == null) {
+        return shotPresenceLabelAnnotations_.get(index);
+      } else {
+        return shotPresenceLabelAnnotationsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Presence label annotations on shot level. There is exactly one element for
+     * each unique label. This will eventually get publicly exposed and the
+     * restriction will be removed.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1.LabelAnnotation shot_presence_label_annotations = 24;
+     * </code>
+     */
+    public java.util.List<? extends com.google.cloud.videointelligence.v1.LabelAnnotationOrBuilder>
+        getShotPresenceLabelAnnotationsOrBuilderList() {
+      if (shotPresenceLabelAnnotationsBuilder_ != null) {
+        return shotPresenceLabelAnnotationsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(shotPresenceLabelAnnotations_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Presence label annotations on shot level. There is exactly one element for
+     * each unique label. This will eventually get publicly exposed and the
+     * restriction will be removed.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1.LabelAnnotation shot_presence_label_annotations = 24;
+     * </code>
+     */
+    public com.google.cloud.videointelligence.v1.LabelAnnotation.Builder
+        addShotPresenceLabelAnnotationsBuilder() {
+      return getShotPresenceLabelAnnotationsFieldBuilder()
+          .addBuilder(com.google.cloud.videointelligence.v1.LabelAnnotation.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Presence label annotations on shot level. There is exactly one element for
+     * each unique label. This will eventually get publicly exposed and the
+     * restriction will be removed.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1.LabelAnnotation shot_presence_label_annotations = 24;
+     * </code>
+     */
+    public com.google.cloud.videointelligence.v1.LabelAnnotation.Builder
+        addShotPresenceLabelAnnotationsBuilder(int index) {
+      return getShotPresenceLabelAnnotationsFieldBuilder()
+          .addBuilder(
+              index, com.google.cloud.videointelligence.v1.LabelAnnotation.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Presence label annotations on shot level. There is exactly one element for
+     * each unique label. This will eventually get publicly exposed and the
+     * restriction will be removed.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1.LabelAnnotation shot_presence_label_annotations = 24;
+     * </code>
+     */
+    public java.util.List<com.google.cloud.videointelligence.v1.LabelAnnotation.Builder>
+        getShotPresenceLabelAnnotationsBuilderList() {
+      return getShotPresenceLabelAnnotationsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.videointelligence.v1.LabelAnnotation,
+            com.google.cloud.videointelligence.v1.LabelAnnotation.Builder,
+            com.google.cloud.videointelligence.v1.LabelAnnotationOrBuilder>
+        getShotPresenceLabelAnnotationsFieldBuilder() {
+      if (shotPresenceLabelAnnotationsBuilder_ == null) {
+        shotPresenceLabelAnnotationsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.videointelligence.v1.LabelAnnotation,
+                com.google.cloud.videointelligence.v1.LabelAnnotation.Builder,
+                com.google.cloud.videointelligence.v1.LabelAnnotationOrBuilder>(
+                shotPresenceLabelAnnotations_,
+                ((bitField0_ & 0x00000020) != 0),
+                getParentForChildren(),
+                isClean());
+        shotPresenceLabelAnnotations_ = null;
+      }
+      return shotPresenceLabelAnnotationsBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.videointelligence.v1.LabelAnnotation>
         frameLabelAnnotations_ = java.util.Collections.emptyList();
 
     private void ensureFrameLabelAnnotationsIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!((bitField0_ & 0x00000040) != 0)) {
         frameLabelAnnotations_ =
             new java.util.ArrayList<com.google.cloud.videointelligence.v1.LabelAnnotation>(
                 frameLabelAnnotations_);
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000040;
       }
     }
 
@@ -3277,7 +4487,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
     public Builder clearFrameLabelAnnotations() {
       if (frameLabelAnnotationsBuilder_ == null) {
         frameLabelAnnotations_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000040);
         onChanged();
       } else {
         frameLabelAnnotationsBuilder_.clear();
@@ -3426,7 +4636,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
                 com.google.cloud.videointelligence.v1.LabelAnnotation.Builder,
                 com.google.cloud.videointelligence.v1.LabelAnnotationOrBuilder>(
                 frameLabelAnnotations_,
-                ((bitField0_ & 0x00000010) != 0),
+                ((bitField0_ & 0x00000040) != 0),
                 getParentForChildren(),
                 isClean());
         frameLabelAnnotations_ = null;
@@ -3438,11 +4648,11 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
         java.util.Collections.emptyList();
 
     private void ensureFaceAnnotationsIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
+      if (!((bitField0_ & 0x00000080) != 0)) {
         faceAnnotations_ =
             new java.util.ArrayList<com.google.cloud.videointelligence.v1.FaceAnnotation>(
                 faceAnnotations_);
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000080;
       }
     }
 
@@ -3661,7 +4871,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
     public Builder clearFaceAnnotations() {
       if (faceAnnotationsBuilder_ == null) {
         faceAnnotations_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000080);
         onChanged();
       } else {
         faceAnnotationsBuilder_.clear();
@@ -3789,7 +4999,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
                 com.google.cloud.videointelligence.v1.FaceAnnotation.Builder,
                 com.google.cloud.videointelligence.v1.FaceAnnotationOrBuilder>(
                 faceAnnotations_,
-                ((bitField0_ & 0x00000020) != 0),
+                ((bitField0_ & 0x00000080) != 0),
                 getParentForChildren(),
                 isClean());
         faceAnnotations_ = null;
@@ -3801,11 +5011,11 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
         java.util.Collections.emptyList();
 
     private void ensureShotAnnotationsIsMutable() {
-      if (!((bitField0_ & 0x00000040) != 0)) {
+      if (!((bitField0_ & 0x00000100) != 0)) {
         shotAnnotations_ =
             new java.util.ArrayList<com.google.cloud.videointelligence.v1.VideoSegment>(
                 shotAnnotations_);
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000100;
       }
     }
 
@@ -4024,7 +5234,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
     public Builder clearShotAnnotations() {
       if (shotAnnotationsBuilder_ == null) {
         shotAnnotations_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000100);
         onChanged();
       } else {
         shotAnnotationsBuilder_.clear();
@@ -4151,7 +5361,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
                 com.google.cloud.videointelligence.v1.VideoSegment.Builder,
                 com.google.cloud.videointelligence.v1.VideoSegmentOrBuilder>(
                 shotAnnotations_,
-                ((bitField0_ & 0x00000040) != 0),
+                ((bitField0_ & 0x00000100) != 0),
                 getParentForChildren(),
                 isClean());
         shotAnnotations_ = null;
@@ -4359,11 +5569,11 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
         speechTranscriptions_ = java.util.Collections.emptyList();
 
     private void ensureSpeechTranscriptionsIsMutable() {
-      if (!((bitField0_ & 0x00000100) != 0)) {
+      if (!((bitField0_ & 0x00000400) != 0)) {
         speechTranscriptions_ =
             new java.util.ArrayList<com.google.cloud.videointelligence.v1.SpeechTranscription>(
                 speechTranscriptions_);
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000400;
       }
     }
 
@@ -4609,7 +5819,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
     public Builder clearSpeechTranscriptions() {
       if (speechTranscriptionsBuilder_ == null) {
         speechTranscriptions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000400);
         onChanged();
       } else {
         speechTranscriptionsBuilder_.clear();
@@ -4754,7 +5964,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
                 com.google.cloud.videointelligence.v1.SpeechTranscription.Builder,
                 com.google.cloud.videointelligence.v1.SpeechTranscriptionOrBuilder>(
                 speechTranscriptions_,
-                ((bitField0_ & 0x00000100) != 0),
+                ((bitField0_ & 0x00000400) != 0),
                 getParentForChildren(),
                 isClean());
         speechTranscriptions_ = null;
@@ -4766,11 +5976,11 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
         java.util.Collections.emptyList();
 
     private void ensureTextAnnotationsIsMutable() {
-      if (!((bitField0_ & 0x00000200) != 0)) {
+      if (!((bitField0_ & 0x00000800) != 0)) {
         textAnnotations_ =
             new java.util.ArrayList<com.google.cloud.videointelligence.v1.TextAnnotation>(
                 textAnnotations_);
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000800;
       }
     }
 
@@ -5022,7 +6232,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
     public Builder clearTextAnnotations() {
       if (textAnnotationsBuilder_ == null) {
         textAnnotations_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000800);
         onChanged();
       } else {
         textAnnotationsBuilder_.clear();
@@ -5171,7 +6381,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
                 com.google.cloud.videointelligence.v1.TextAnnotation.Builder,
                 com.google.cloud.videointelligence.v1.TextAnnotationOrBuilder>(
                 textAnnotations_,
-                ((bitField0_ & 0x00000200) != 0),
+                ((bitField0_ & 0x00000800) != 0),
                 getParentForChildren(),
                 isClean());
         textAnnotations_ = null;
@@ -5183,11 +6393,11 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
         objectAnnotations_ = java.util.Collections.emptyList();
 
     private void ensureObjectAnnotationsIsMutable() {
-      if (!((bitField0_ & 0x00000400) != 0)) {
+      if (!((bitField0_ & 0x00001000) != 0)) {
         objectAnnotations_ =
             new java.util.ArrayList<com.google.cloud.videointelligence.v1.ObjectTrackingAnnotation>(
                 objectAnnotations_);
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00001000;
       }
     }
 
@@ -5433,7 +6643,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
     public Builder clearObjectAnnotations() {
       if (objectAnnotationsBuilder_ == null) {
         objectAnnotations_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00001000);
         onChanged();
       } else {
         objectAnnotationsBuilder_.clear();
@@ -5578,7 +6788,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
                 com.google.cloud.videointelligence.v1.ObjectTrackingAnnotation.Builder,
                 com.google.cloud.videointelligence.v1.ObjectTrackingAnnotationOrBuilder>(
                 objectAnnotations_,
-                ((bitField0_ & 0x00000400) != 0),
+                ((bitField0_ & 0x00001000) != 0),
                 getParentForChildren(),
                 isClean());
         objectAnnotations_ = null;
