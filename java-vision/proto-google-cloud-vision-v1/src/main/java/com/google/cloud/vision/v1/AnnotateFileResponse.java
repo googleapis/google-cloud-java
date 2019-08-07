@@ -85,6 +85,20 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
               totalPages_ = input.readInt32();
               break;
             }
+          case 34:
+            {
+              com.google.rpc.Status.Builder subBuilder = null;
+              if (error_ != null) {
+                subBuilder = error_.toBuilder();
+              }
+              error_ = input.readMessage(com.google.rpc.Status.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(error_);
+                error_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -170,7 +184,8 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Individual responses to images found within the file.
+   * Individual responses to images found within the file. This field will be
+   * empty if the `error` field is set.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1.AnnotateImageResponse responses = 2;</code>
@@ -182,7 +197,8 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Individual responses to images found within the file.
+   * Individual responses to images found within the file. This field will be
+   * empty if the `error` field is set.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1.AnnotateImageResponse responses = 2;</code>
@@ -195,7 +211,8 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Individual responses to images found within the file.
+   * Individual responses to images found within the file. This field will be
+   * empty if the `error` field is set.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1.AnnotateImageResponse responses = 2;</code>
@@ -207,7 +224,8 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Individual responses to images found within the file.
+   * Individual responses to images found within the file. This field will be
+   * empty if the `error` field is set.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1.AnnotateImageResponse responses = 2;</code>
@@ -219,7 +237,8 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Individual responses to images found within the file.
+   * Individual responses to images found within the file. This field will be
+   * empty if the `error` field is set.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1.AnnotateImageResponse responses = 2;</code>
@@ -242,6 +261,48 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
    */
   public int getTotalPages() {
     return totalPages_;
+  }
+
+  public static final int ERROR_FIELD_NUMBER = 4;
+  private com.google.rpc.Status error_;
+  /**
+   *
+   *
+   * <pre>
+   * If set, represents the error message for the failed request. The
+   * `responses` field will not be set in this case.
+   * </pre>
+   *
+   * <code>.google.rpc.Status error = 4;</code>
+   */
+  public boolean hasError() {
+    return error_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * If set, represents the error message for the failed request. The
+   * `responses` field will not be set in this case.
+   * </pre>
+   *
+   * <code>.google.rpc.Status error = 4;</code>
+   */
+  public com.google.rpc.Status getError() {
+    return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * If set, represents the error message for the failed request. The
+   * `responses` field will not be set in this case.
+   * </pre>
+   *
+   * <code>.google.rpc.Status error = 4;</code>
+   */
+  public com.google.rpc.StatusOrBuilder getErrorOrBuilder() {
+    return getError();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -267,6 +328,9 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
     if (totalPages_ != 0) {
       output.writeInt32(3, totalPages_);
     }
+    if (error_ != null) {
+      output.writeMessage(4, getError());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -284,6 +348,9 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
     }
     if (totalPages_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(3, totalPages_);
+    }
+    if (error_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getError());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -307,6 +374,10 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
     }
     if (!getResponsesList().equals(other.getResponsesList())) return false;
     if (getTotalPages() != other.getTotalPages()) return false;
+    if (hasError() != other.hasError()) return false;
+    if (hasError()) {
+      if (!getError().equals(other.getError())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -328,6 +399,10 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
     }
     hash = (37 * hash) + TOTAL_PAGES_FIELD_NUMBER;
     hash = (53 * hash) + getTotalPages();
+    if (hasError()) {
+      hash = (37 * hash) + ERROR_FIELD_NUMBER;
+      hash = (53 * hash) + getError().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -490,6 +565,12 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
       }
       totalPages_ = 0;
 
+      if (errorBuilder_ == null) {
+        error_ = null;
+      } else {
+        error_ = null;
+        errorBuilder_ = null;
+      }
       return this;
     }
 
@@ -534,6 +615,11 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
         result.responses_ = responsesBuilder_.build();
       }
       result.totalPages_ = totalPages_;
+      if (errorBuilder_ == null) {
+        result.error_ = error_;
+      } else {
+        result.error_ = errorBuilder_.build();
+      }
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -617,6 +703,9 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
       }
       if (other.getTotalPages() != 0) {
         setTotalPages(other.getTotalPages());
+      }
+      if (other.hasError()) {
+        mergeError(other.getError());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -851,7 +940,8 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Individual responses to images found within the file.
+     * Individual responses to images found within the file. This field will be
+     * empty if the `error` field is set.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1.AnnotateImageResponse responses = 2;</code>
@@ -867,7 +957,8 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Individual responses to images found within the file.
+     * Individual responses to images found within the file. This field will be
+     * empty if the `error` field is set.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1.AnnotateImageResponse responses = 2;</code>
@@ -883,7 +974,8 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Individual responses to images found within the file.
+     * Individual responses to images found within the file. This field will be
+     * empty if the `error` field is set.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1.AnnotateImageResponse responses = 2;</code>
@@ -899,7 +991,8 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Individual responses to images found within the file.
+     * Individual responses to images found within the file. This field will be
+     * empty if the `error` field is set.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1.AnnotateImageResponse responses = 2;</code>
@@ -921,7 +1014,8 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Individual responses to images found within the file.
+     * Individual responses to images found within the file. This field will be
+     * empty if the `error` field is set.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1.AnnotateImageResponse responses = 2;</code>
@@ -941,7 +1035,8 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Individual responses to images found within the file.
+     * Individual responses to images found within the file. This field will be
+     * empty if the `error` field is set.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1.AnnotateImageResponse responses = 2;</code>
@@ -963,7 +1058,8 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Individual responses to images found within the file.
+     * Individual responses to images found within the file. This field will be
+     * empty if the `error` field is set.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1.AnnotateImageResponse responses = 2;</code>
@@ -985,7 +1081,8 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Individual responses to images found within the file.
+     * Individual responses to images found within the file. This field will be
+     * empty if the `error` field is set.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1.AnnotateImageResponse responses = 2;</code>
@@ -1005,7 +1102,8 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Individual responses to images found within the file.
+     * Individual responses to images found within the file. This field will be
+     * empty if the `error` field is set.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1.AnnotateImageResponse responses = 2;</code>
@@ -1025,7 +1123,8 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Individual responses to images found within the file.
+     * Individual responses to images found within the file. This field will be
+     * empty if the `error` field is set.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1.AnnotateImageResponse responses = 2;</code>
@@ -1045,7 +1144,8 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Individual responses to images found within the file.
+     * Individual responses to images found within the file. This field will be
+     * empty if the `error` field is set.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1.AnnotateImageResponse responses = 2;</code>
@@ -1064,7 +1164,8 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Individual responses to images found within the file.
+     * Individual responses to images found within the file. This field will be
+     * empty if the `error` field is set.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1.AnnotateImageResponse responses = 2;</code>
@@ -1083,7 +1184,8 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Individual responses to images found within the file.
+     * Individual responses to images found within the file. This field will be
+     * empty if the `error` field is set.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1.AnnotateImageResponse responses = 2;</code>
@@ -1095,7 +1197,8 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Individual responses to images found within the file.
+     * Individual responses to images found within the file. This field will be
+     * empty if the `error` field is set.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1.AnnotateImageResponse responses = 2;</code>
@@ -1112,7 +1215,8 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Individual responses to images found within the file.
+     * Individual responses to images found within the file. This field will be
+     * empty if the `error` field is set.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1.AnnotateImageResponse responses = 2;</code>
@@ -1129,7 +1233,8 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Individual responses to images found within the file.
+     * Individual responses to images found within the file. This field will be
+     * empty if the `error` field is set.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1.AnnotateImageResponse responses = 2;</code>
@@ -1142,7 +1247,8 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Individual responses to images found within the file.
+     * Individual responses to images found within the file. This field will be
+     * empty if the `error` field is set.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1.AnnotateImageResponse responses = 2;</code>
@@ -1155,7 +1261,8 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Individual responses to images found within the file.
+     * Individual responses to images found within the file. This field will be
+     * empty if the `error` field is set.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1.AnnotateImageResponse responses = 2;</code>
@@ -1224,6 +1331,184 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
       totalPages_ = 0;
       onChanged();
       return this;
+    }
+
+    private com.google.rpc.Status error_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
+        errorBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * If set, represents the error message for the failed request. The
+     * `responses` field will not be set in this case.
+     * </pre>
+     *
+     * <code>.google.rpc.Status error = 4;</code>
+     */
+    public boolean hasError() {
+      return errorBuilder_ != null || error_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If set, represents the error message for the failed request. The
+     * `responses` field will not be set in this case.
+     * </pre>
+     *
+     * <code>.google.rpc.Status error = 4;</code>
+     */
+    public com.google.rpc.Status getError() {
+      if (errorBuilder_ == null) {
+        return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
+      } else {
+        return errorBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If set, represents the error message for the failed request. The
+     * `responses` field will not be set in this case.
+     * </pre>
+     *
+     * <code>.google.rpc.Status error = 4;</code>
+     */
+    public Builder setError(com.google.rpc.Status value) {
+      if (errorBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        error_ = value;
+        onChanged();
+      } else {
+        errorBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If set, represents the error message for the failed request. The
+     * `responses` field will not be set in this case.
+     * </pre>
+     *
+     * <code>.google.rpc.Status error = 4;</code>
+     */
+    public Builder setError(com.google.rpc.Status.Builder builderForValue) {
+      if (errorBuilder_ == null) {
+        error_ = builderForValue.build();
+        onChanged();
+      } else {
+        errorBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If set, represents the error message for the failed request. The
+     * `responses` field will not be set in this case.
+     * </pre>
+     *
+     * <code>.google.rpc.Status error = 4;</code>
+     */
+    public Builder mergeError(com.google.rpc.Status value) {
+      if (errorBuilder_ == null) {
+        if (error_ != null) {
+          error_ = com.google.rpc.Status.newBuilder(error_).mergeFrom(value).buildPartial();
+        } else {
+          error_ = value;
+        }
+        onChanged();
+      } else {
+        errorBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If set, represents the error message for the failed request. The
+     * `responses` field will not be set in this case.
+     * </pre>
+     *
+     * <code>.google.rpc.Status error = 4;</code>
+     */
+    public Builder clearError() {
+      if (errorBuilder_ == null) {
+        error_ = null;
+        onChanged();
+      } else {
+        error_ = null;
+        errorBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If set, represents the error message for the failed request. The
+     * `responses` field will not be set in this case.
+     * </pre>
+     *
+     * <code>.google.rpc.Status error = 4;</code>
+     */
+    public com.google.rpc.Status.Builder getErrorBuilder() {
+
+      onChanged();
+      return getErrorFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If set, represents the error message for the failed request. The
+     * `responses` field will not be set in this case.
+     * </pre>
+     *
+     * <code>.google.rpc.Status error = 4;</code>
+     */
+    public com.google.rpc.StatusOrBuilder getErrorOrBuilder() {
+      if (errorBuilder_ != null) {
+        return errorBuilder_.getMessageOrBuilder();
+      } else {
+        return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If set, represents the error message for the failed request. The
+     * `responses` field will not be set in this case.
+     * </pre>
+     *
+     * <code>.google.rpc.Status error = 4;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
+        getErrorFieldBuilder() {
+      if (errorBuilder_ == null) {
+        errorBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.rpc.Status,
+                com.google.rpc.Status.Builder,
+                com.google.rpc.StatusOrBuilder>(getError(), getParentForChildren(), isClean());
+        error_ = null;
+      }
+      return errorBuilder_;
     }
 
     @java.lang.Override

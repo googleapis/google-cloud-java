@@ -2771,6 +2771,237 @@ public class ProductSearchClient implements BackgroundResource {
     return stub.importProductSetsCallable();
   }
 
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Asynchronous API to delete all Products in a ProductSet or all Products that are in no
+   * ProductSet.
+   *
+   * <p>If a Product is a member of the specified ProductSet in addition to other ProductSets, the
+   * Product will still be deleted.
+   *
+   * <p>It is recommended to not delete the specified ProductSet until after this operation has
+   * completed. It is also recommended to not add any of the Products involved in the batch delete
+   * to a new ProductSet while this operation is running because those Products may still end up
+   * deleted.
+   *
+   * <p>It's not possible to undo the PurgeProducts operation. Therefore, it is recommended to keep
+   * the csv files used in ImportProductSets (if that was how you originally built the Product Set)
+   * before starting PurgeProducts, in case you need to re-import the data after deletion.
+   *
+   * <p>If the plan is to purge all of the Products from a ProductSet and then re-use the empty
+   * ProductSet to re-import new Products into the empty ProductSet, you must wait until the
+   * PurgeProducts operation has finished for that ProductSet.
+   *
+   * <p>The [google.longrunning.Operation][google.longrunning.Operation] API can be used to keep
+   * track of the progress and results of the request. `Operation.metadata` contains
+   * `BatchOperationMetadata`. (progress)
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   productSearchClient.purgeProductsAsync(parent).get();
+   * }
+   * </code></pre>
+   *
+   * @param parent The project and location in which the Products should be deleted.
+   *     <p>Format is `projects/PROJECT_ID/locations/LOC_ID`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Empty, BatchOperationMetadata> purgeProductsAsync(
+      LocationName parent) {
+
+    PurgeProductsRequest request =
+        PurgeProductsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return purgeProductsAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Asynchronous API to delete all Products in a ProductSet or all Products that are in no
+   * ProductSet.
+   *
+   * <p>If a Product is a member of the specified ProductSet in addition to other ProductSets, the
+   * Product will still be deleted.
+   *
+   * <p>It is recommended to not delete the specified ProductSet until after this operation has
+   * completed. It is also recommended to not add any of the Products involved in the batch delete
+   * to a new ProductSet while this operation is running because those Products may still end up
+   * deleted.
+   *
+   * <p>It's not possible to undo the PurgeProducts operation. Therefore, it is recommended to keep
+   * the csv files used in ImportProductSets (if that was how you originally built the Product Set)
+   * before starting PurgeProducts, in case you need to re-import the data after deletion.
+   *
+   * <p>If the plan is to purge all of the Products from a ProductSet and then re-use the empty
+   * ProductSet to re-import new Products into the empty ProductSet, you must wait until the
+   * PurgeProducts operation has finished for that ProductSet.
+   *
+   * <p>The [google.longrunning.Operation][google.longrunning.Operation] API can be used to keep
+   * track of the progress and results of the request. `Operation.metadata` contains
+   * `BatchOperationMetadata`. (progress)
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   productSearchClient.purgeProductsAsync(parent.toString()).get();
+   * }
+   * </code></pre>
+   *
+   * @param parent The project and location in which the Products should be deleted.
+   *     <p>Format is `projects/PROJECT_ID/locations/LOC_ID`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Empty, BatchOperationMetadata> purgeProductsAsync(String parent) {
+
+    PurgeProductsRequest request = PurgeProductsRequest.newBuilder().setParent(parent).build();
+    return purgeProductsAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Asynchronous API to delete all Products in a ProductSet or all Products that are in no
+   * ProductSet.
+   *
+   * <p>If a Product is a member of the specified ProductSet in addition to other ProductSets, the
+   * Product will still be deleted.
+   *
+   * <p>It is recommended to not delete the specified ProductSet until after this operation has
+   * completed. It is also recommended to not add any of the Products involved in the batch delete
+   * to a new ProductSet while this operation is running because those Products may still end up
+   * deleted.
+   *
+   * <p>It's not possible to undo the PurgeProducts operation. Therefore, it is recommended to keep
+   * the csv files used in ImportProductSets (if that was how you originally built the Product Set)
+   * before starting PurgeProducts, in case you need to re-import the data after deletion.
+   *
+   * <p>If the plan is to purge all of the Products from a ProductSet and then re-use the empty
+   * ProductSet to re-import new Products into the empty ProductSet, you must wait until the
+   * PurgeProducts operation has finished for that ProductSet.
+   *
+   * <p>The [google.longrunning.Operation][google.longrunning.Operation] API can be used to keep
+   * track of the progress and results of the request. `Operation.metadata` contains
+   * `BatchOperationMetadata`. (progress)
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   PurgeProductsRequest request = PurgeProductsRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .build();
+   *   productSearchClient.purgeProductsAsync(request).get();
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Empty, BatchOperationMetadata> purgeProductsAsync(
+      PurgeProductsRequest request) {
+    return purgeProductsOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Asynchronous API to delete all Products in a ProductSet or all Products that are in no
+   * ProductSet.
+   *
+   * <p>If a Product is a member of the specified ProductSet in addition to other ProductSets, the
+   * Product will still be deleted.
+   *
+   * <p>It is recommended to not delete the specified ProductSet until after this operation has
+   * completed. It is also recommended to not add any of the Products involved in the batch delete
+   * to a new ProductSet while this operation is running because those Products may still end up
+   * deleted.
+   *
+   * <p>It's not possible to undo the PurgeProducts operation. Therefore, it is recommended to keep
+   * the csv files used in ImportProductSets (if that was how you originally built the Product Set)
+   * before starting PurgeProducts, in case you need to re-import the data after deletion.
+   *
+   * <p>If the plan is to purge all of the Products from a ProductSet and then re-use the empty
+   * ProductSet to re-import new Products into the empty ProductSet, you must wait until the
+   * PurgeProducts operation has finished for that ProductSet.
+   *
+   * <p>The [google.longrunning.Operation][google.longrunning.Operation] API can be used to keep
+   * track of the progress and results of the request. `Operation.metadata` contains
+   * `BatchOperationMetadata`. (progress)
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   PurgeProductsRequest request = PurgeProductsRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .build();
+   *   OperationFuture&lt;Empty, BatchOperationMetadata&gt; future = productSearchClient.purgeProductsOperationCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public final OperationCallable<PurgeProductsRequest, Empty, BatchOperationMetadata>
+      purgeProductsOperationCallable() {
+    return stub.purgeProductsOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Asynchronous API to delete all Products in a ProductSet or all Products that are in no
+   * ProductSet.
+   *
+   * <p>If a Product is a member of the specified ProductSet in addition to other ProductSets, the
+   * Product will still be deleted.
+   *
+   * <p>It is recommended to not delete the specified ProductSet until after this operation has
+   * completed. It is also recommended to not add any of the Products involved in the batch delete
+   * to a new ProductSet while this operation is running because those Products may still end up
+   * deleted.
+   *
+   * <p>It's not possible to undo the PurgeProducts operation. Therefore, it is recommended to keep
+   * the csv files used in ImportProductSets (if that was how you originally built the Product Set)
+   * before starting PurgeProducts, in case you need to re-import the data after deletion.
+   *
+   * <p>If the plan is to purge all of the Products from a ProductSet and then re-use the empty
+   * ProductSet to re-import new Products into the empty ProductSet, you must wait until the
+   * PurgeProducts operation has finished for that ProductSet.
+   *
+   * <p>The [google.longrunning.Operation][google.longrunning.Operation] API can be used to keep
+   * track of the progress and results of the request. `Operation.metadata` contains
+   * `BatchOperationMetadata`. (progress)
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   PurgeProductsRequest request = PurgeProductsRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .build();
+   *   ApiFuture&lt;Operation&gt; future = productSearchClient.purgeProductsCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<PurgeProductsRequest, Operation> purgeProductsCallable() {
+    return stub.purgeProductsCallable();
+  }
+
   @Override
   public final void close() {
     stub.close();

@@ -24,6 +24,7 @@ public final class BatchAnnotateImagesRequest extends com.google.protobuf.Genera
 
   private BatchAnnotateImagesRequest() {
     requests_ = java.util.Collections.emptyList();
+    parent_ = "";
   }
 
   @java.lang.Override
@@ -60,6 +61,13 @@ public final class BatchAnnotateImagesRequest extends com.google.protobuf.Genera
               requests_.add(
                   input.readMessage(
                       com.google.cloud.vision.v1.AnnotateImageRequest.parser(), extensionRegistry));
+              break;
+            }
+          case 34:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              parent_ = s;
               break;
             }
           default:
@@ -99,6 +107,7 @@ public final class BatchAnnotateImagesRequest extends com.google.protobuf.Genera
             com.google.cloud.vision.v1.BatchAnnotateImagesRequest.Builder.class);
   }
 
+  private int bitField0_;
   public static final int REQUESTS_FIELD_NUMBER = 1;
   private java.util.List<com.google.cloud.vision.v1.AnnotateImageRequest> requests_;
   /**
@@ -163,6 +172,63 @@ public final class BatchAnnotateImagesRequest extends com.google.protobuf.Genera
     return requests_.get(index);
   }
 
+  public static final int PARENT_FIELD_NUMBER = 4;
+  private volatile java.lang.Object parent_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Target project and location to make a call.
+   * Format: `projects/{project-id}/locations/{location-id}`.
+   * If no parent is specified, a region will be chosen automatically.
+   * Supported location-ids:
+   *     `us`: USA country only,
+   *     `asia`: East asia areas, like Japan, Taiwan,
+   *     `eu`: The European Union.
+   * Example: `projects/project-A/locations/eu`.
+   * </pre>
+   *
+   * <code>string parent = 4;</code>
+   */
+  public java.lang.String getParent() {
+    java.lang.Object ref = parent_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      parent_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Target project and location to make a call.
+   * Format: `projects/{project-id}/locations/{location-id}`.
+   * If no parent is specified, a region will be chosen automatically.
+   * Supported location-ids:
+   *     `us`: USA country only,
+   *     `asia`: East asia areas, like Japan, Taiwan,
+   *     `eu`: The European Union.
+   * Example: `projects/project-A/locations/eu`.
+   * </pre>
+   *
+   * <code>string parent = 4;</code>
+   */
+  public com.google.protobuf.ByteString getParentBytes() {
+    java.lang.Object ref = parent_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      parent_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -180,6 +246,9 @@ public final class BatchAnnotateImagesRequest extends com.google.protobuf.Genera
     for (int i = 0; i < requests_.size(); i++) {
       output.writeMessage(1, requests_.get(i));
     }
+    if (!getParentBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, parent_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -191,6 +260,9 @@ public final class BatchAnnotateImagesRequest extends com.google.protobuf.Genera
     size = 0;
     for (int i = 0; i < requests_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, requests_.get(i));
+    }
+    if (!getParentBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, parent_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -209,6 +281,7 @@ public final class BatchAnnotateImagesRequest extends com.google.protobuf.Genera
         (com.google.cloud.vision.v1.BatchAnnotateImagesRequest) obj;
 
     if (!getRequestsList().equals(other.getRequestsList())) return false;
+    if (!getParent().equals(other.getParent())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -224,6 +297,8 @@ public final class BatchAnnotateImagesRequest extends com.google.protobuf.Genera
       hash = (37 * hash) + REQUESTS_FIELD_NUMBER;
       hash = (53 * hash) + getRequestsList().hashCode();
     }
+    hash = (37 * hash) + PARENT_FIELD_NUMBER;
+    hash = (53 * hash) + getParent().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -378,6 +453,8 @@ public final class BatchAnnotateImagesRequest extends com.google.protobuf.Genera
       } else {
         requestsBuilder_.clear();
       }
+      parent_ = "";
+
       return this;
     }
 
@@ -406,6 +483,7 @@ public final class BatchAnnotateImagesRequest extends com.google.protobuf.Genera
       com.google.cloud.vision.v1.BatchAnnotateImagesRequest result =
           new com.google.cloud.vision.v1.BatchAnnotateImagesRequest(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (requestsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           requests_ = java.util.Collections.unmodifiableList(requests_);
@@ -415,6 +493,8 @@ public final class BatchAnnotateImagesRequest extends com.google.protobuf.Genera
       } else {
         result.requests_ = requestsBuilder_.build();
       }
+      result.parent_ = parent_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -491,6 +571,10 @@ public final class BatchAnnotateImagesRequest extends com.google.protobuf.Genera
             requestsBuilder_.addAllMessages(other.requests_);
           }
         }
+      }
+      if (!other.getParent().isEmpty()) {
+        parent_ = other.parent_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -874,6 +958,135 @@ public final class BatchAnnotateImagesRequest extends com.google.protobuf.Genera
         requests_ = null;
       }
       return requestsBuilder_;
+    }
+
+    private java.lang.Object parent_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Target project and location to make a call.
+     * Format: `projects/{project-id}/locations/{location-id}`.
+     * If no parent is specified, a region will be chosen automatically.
+     * Supported location-ids:
+     *     `us`: USA country only,
+     *     `asia`: East asia areas, like Japan, Taiwan,
+     *     `eu`: The European Union.
+     * Example: `projects/project-A/locations/eu`.
+     * </pre>
+     *
+     * <code>string parent = 4;</code>
+     */
+    public java.lang.String getParent() {
+      java.lang.Object ref = parent_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        parent_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Target project and location to make a call.
+     * Format: `projects/{project-id}/locations/{location-id}`.
+     * If no parent is specified, a region will be chosen automatically.
+     * Supported location-ids:
+     *     `us`: USA country only,
+     *     `asia`: East asia areas, like Japan, Taiwan,
+     *     `eu`: The European Union.
+     * Example: `projects/project-A/locations/eu`.
+     * </pre>
+     *
+     * <code>string parent = 4;</code>
+     */
+    public com.google.protobuf.ByteString getParentBytes() {
+      java.lang.Object ref = parent_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        parent_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Target project and location to make a call.
+     * Format: `projects/{project-id}/locations/{location-id}`.
+     * If no parent is specified, a region will be chosen automatically.
+     * Supported location-ids:
+     *     `us`: USA country only,
+     *     `asia`: East asia areas, like Japan, Taiwan,
+     *     `eu`: The European Union.
+     * Example: `projects/project-A/locations/eu`.
+     * </pre>
+     *
+     * <code>string parent = 4;</code>
+     */
+    public Builder setParent(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      parent_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Target project and location to make a call.
+     * Format: `projects/{project-id}/locations/{location-id}`.
+     * If no parent is specified, a region will be chosen automatically.
+     * Supported location-ids:
+     *     `us`: USA country only,
+     *     `asia`: East asia areas, like Japan, Taiwan,
+     *     `eu`: The European Union.
+     * Example: `projects/project-A/locations/eu`.
+     * </pre>
+     *
+     * <code>string parent = 4;</code>
+     */
+    public Builder clearParent() {
+
+      parent_ = getDefaultInstance().getParent();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Target project and location to make a call.
+     * Format: `projects/{project-id}/locations/{location-id}`.
+     * If no parent is specified, a region will be chosen automatically.
+     * Supported location-ids:
+     *     `us`: USA country only,
+     *     `asia`: East asia areas, like Japan, Taiwan,
+     *     `eu`: The European Union.
+     * Example: `projects/project-A/locations/eu`.
+     * </pre>
+     *
+     * <code>string parent = 4;</code>
+     */
+    public Builder setParentBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      parent_ = value;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

@@ -25,6 +25,10 @@ public final class ProductSearchProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_vision_v1_ProductSearchResults_Result_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_vision_v1_ProductSearchResults_ObjectAnnotation_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_vision_v1_ProductSearchResults_ObjectAnnotation_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_vision_v1_ProductSearchResults_GroupedResult_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_vision_v1_ProductSearchResults_GroupedResult_fieldAccessorTable;
@@ -46,7 +50,7 @@ public final class ProductSearchProto {
           + "chParams\022;\n\rbounding_poly\030\t \001(\0132$.google"
           + ".cloud.vision.v1.BoundingPoly\022\023\n\013product"
           + "_set\030\006 \001(\t\022\032\n\022product_categories\030\007 \003(\t\022\016"
-          + "\n\006filter\030\010 \001(\t\"\330\003\n\024ProductSearchResults\022"
+          + "\n\006filter\030\010 \001(\t\"\210\005\n\024ProductSearchResults\022"
           + ".\n\nindex_time\030\002 \001(\0132\032.google.protobuf.Ti"
           + "mestamp\022D\n\007results\030\005 \003(\01323.google.cloud."
           + "vision.v1.ProductSearchResults.Result\022[\n"
@@ -54,14 +58,18 @@ public final class ProductSearchProto {
           + "cloud.vision.v1.ProductSearchResults.Gro"
           + "upedResult\032X\n\006Result\0220\n\007product\030\001 \001(\0132\037."
           + "google.cloud.vision.v1.Product\022\r\n\005score\030"
-          + "\002 \001(\002\022\r\n\005image\030\003 \001(\t\032\222\001\n\rGroupedResult\022;"
-          + "\n\rbounding_poly\030\001 \001(\0132$.google.cloud.vis"
-          + "ion.v1.BoundingPoly\022D\n\007results\030\002 \003(\01323.g"
-          + "oogle.cloud.vision.v1.ProductSearchResul"
-          + "ts.ResultBz\n\032com.google.cloud.vision.v1B"
-          + "\022ProductSearchProtoP\001Z<google.golang.org"
-          + "/genproto/googleapis/cloud/vision/v1;vis"
-          + "ion\370\001\001\242\002\004GCVNb\006proto3"
+          + "\002 \001(\002\022\r\n\005image\030\003 \001(\t\032S\n\020ObjectAnnotation"
+          + "\022\013\n\003mid\030\001 \001(\t\022\025\n\rlanguage_code\030\002 \001(\t\022\014\n\004"
+          + "name\030\003 \001(\t\022\r\n\005score\030\004 \001(\002\032\355\001\n\rGroupedRes"
+          + "ult\022;\n\rbounding_poly\030\001 \001(\0132$.google.clou"
+          + "d.vision.v1.BoundingPoly\022D\n\007results\030\002 \003("
+          + "\01323.google.cloud.vision.v1.ProductSearch"
+          + "Results.Result\022Y\n\022object_annotations\030\003 \003"
+          + "(\0132=.google.cloud.vision.v1.ProductSearc"
+          + "hResults.ObjectAnnotationBz\n\032com.google."
+          + "cloud.vision.v1B\022ProductSearchProtoP\001Z<g"
+          + "oogle.golang.org/genproto/googleapis/clo"
+          + "ud/vision/v1;vision\370\001\001\242\002\004GCVNb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -106,15 +114,25 @@ public final class ProductSearchProto {
             new java.lang.String[] {
               "Product", "Score", "Image",
             });
-    internal_static_google_cloud_vision_v1_ProductSearchResults_GroupedResult_descriptor =
+    internal_static_google_cloud_vision_v1_ProductSearchResults_ObjectAnnotation_descriptor =
         internal_static_google_cloud_vision_v1_ProductSearchResults_descriptor
             .getNestedTypes()
             .get(1);
+    internal_static_google_cloud_vision_v1_ProductSearchResults_ObjectAnnotation_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_vision_v1_ProductSearchResults_ObjectAnnotation_descriptor,
+            new java.lang.String[] {
+              "Mid", "LanguageCode", "Name", "Score",
+            });
+    internal_static_google_cloud_vision_v1_ProductSearchResults_GroupedResult_descriptor =
+        internal_static_google_cloud_vision_v1_ProductSearchResults_descriptor
+            .getNestedTypes()
+            .get(2);
     internal_static_google_cloud_vision_v1_ProductSearchResults_GroupedResult_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vision_v1_ProductSearchResults_GroupedResult_descriptor,
             new java.lang.String[] {
-              "BoundingPoly", "Results",
+              "BoundingPoly", "Results", "ObjectAnnotations",
             });
     com.google.api.AnnotationsProto.getDescriptor();
     com.google.cloud.vision.v1.GeometryProto.getDescriptor();
