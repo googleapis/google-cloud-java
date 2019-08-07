@@ -179,13 +179,12 @@ public class ITTransactionRetryTest extends ITAbstractSpannerTest {
       interceptor.setOnlyInjectOnce(true);
       // do a commit that will first abort, and then on retry will succeed
       connection.commit();
-      assertThat(RETRY_STATISTICS.totalRetryAttemptsStarted, is(equalTo(1)));
-      assertThat(RETRY_STATISTICS.totalRetryAttemptsFinished, is(equalTo(1)));
-      assertThat(RETRY_STATISTICS.totalSuccessfulRetries, is(equalTo(1)));
+      assertThat(RETRY_STATISTICS.totalRetryAttemptsStarted >= 1, is(true));
+      assertThat(RETRY_STATISTICS.totalRetryAttemptsFinished >= 1, is(true));
+      assertThat(RETRY_STATISTICS.totalSuccessfulRetries >= 1, is(true));
       assertThat(RETRY_STATISTICS.totalErroredRetries, is(equalTo(0)));
       assertThat(RETRY_STATISTICS.totalConcurrentModifications, is(equalTo(0)));
       assertThat(RETRY_STATISTICS.totalMaxAttemptsExceeded, is(equalTo(0)));
-      assertThat(RETRY_STATISTICS.totalNestedAborts, is(equalTo(0)));
       // verify that the insert succeeded
       try (ResultSet rs =
           connection.executeQuery(Statement.of("SELECT COUNT(*) AS C FROM TEST WHERE ID=1"))) {
@@ -217,7 +216,7 @@ public class ITTransactionRetryTest extends ITAbstractSpannerTest {
           Statement.of("INSERT INTO TEST (ID, NAME) VALUES (1, 'test aborted')"));
       // do a commit
       connection.commit();
-      assertThat(RETRY_STATISTICS.totalSuccessfulRetries, is(equalTo(1)));
+      assertThat(RETRY_STATISTICS.totalSuccessfulRetries >= 1, is(true));
       // verify that the insert succeeded
       try (ResultSet rs =
           connection.executeQuery(Statement.of("SELECT COUNT(*) AS C FROM TEST WHERE ID=1"))) {
@@ -251,7 +250,7 @@ public class ITTransactionRetryTest extends ITAbstractSpannerTest {
       connection.executeUpdate(Statement.of("UPDATE TEST SET NAME='update aborted' WHERE ID=1"));
       // do a commit
       connection.commit();
-      assertThat(RETRY_STATISTICS.totalSuccessfulRetries, is(equalTo(1)));
+      assertThat(RETRY_STATISTICS.totalSuccessfulRetries >= 1, is(true));
       // verify that the update succeeded
       try (ResultSet rs =
           connection.executeQuery(
@@ -292,7 +291,7 @@ public class ITTransactionRetryTest extends ITAbstractSpannerTest {
       }
       // do a commit
       connection.commit();
-      assertThat(RETRY_STATISTICS.totalSuccessfulRetries, is(equalTo(1)));
+      assertThat(RETRY_STATISTICS.totalSuccessfulRetries >= 1, is(true));
       // verify that the update succeeded
       try (ResultSet rs =
           connection.executeQuery(Statement.of("SELECT COUNT(*) AS C FROM TEST WHERE ID=1"))) {
@@ -317,19 +316,18 @@ public class ITTransactionRetryTest extends ITAbstractSpannerTest {
         // the first record should be accessible without any problems
         assertThat(rs.next(), is(true));
         assertThat(rs.getLong("ID"), is(equalTo(1L)));
-        assertThat(RETRY_STATISTICS.totalRetryAttemptsStarted, is(equalTo(0)));
 
         // indicate that the next statement should abort
         interceptor.setProbability(1.0);
         interceptor.setOnlyInjectOnce(true);
         assertThat(rs.next(), is(true));
         assertThat(rs.getLong("ID"), is(equalTo(2L)));
-        assertThat(RETRY_STATISTICS.totalSuccessfulRetries, is(equalTo(1)));
+        assertThat(RETRY_STATISTICS.totalSuccessfulRetries >= 1, is(true));
         // there should be only two records
         assertThat(rs.next(), is(false));
       }
       connection.commit();
-      assertThat(RETRY_STATISTICS.totalSuccessfulRetries, is(equalTo(1)));
+      assertThat(RETRY_STATISTICS.totalSuccessfulRetries >= 1, is(true));
       // verify that the transaction succeeded
       try (ResultSet rs = connection.executeQuery(Statement.of("SELECT COUNT(*) AS C FROM TEST"))) {
         assertThat(rs.next(), is(true));
@@ -364,8 +362,10 @@ public class ITTransactionRetryTest extends ITAbstractSpannerTest {
       connection.executeUpdate(Statement.of("INSERT INTO TEST (ID, NAME) VALUES (3, 'test 3')"));
 
       connection.commit();
-      assertThat(RETRY_STATISTICS.totalSuccessfulRetries, is(equalTo(3)));
-      assertThat(RETRY_STATISTICS.totalNestedAborts, is(equalTo(0)));
+      assertThat(RETRY_STATISTICS.totalSuccessfulRetries >= 3, is(true));
+      assertThat(
+          RETRY_STATISTICS.totalNestedAborts,
+          is(equalTo(RETRY_STATISTICS.totalSuccessfulRetries - 3)));
       // verify that the insert succeeded
       try (ResultSet rs = connection.executeQuery(Statement.of("SELECT COUNT(*) AS C FROM TEST"))) {
         assertThat(rs.next(), is(true));
@@ -412,7 +412,7 @@ public class ITTransactionRetryTest extends ITAbstractSpannerTest {
         assertThat(rs.next(), is(false));
       }
       connection.commit();
-      assertThat(RETRY_STATISTICS.totalSuccessfulRetries, is(equalTo(1)));
+      assertThat(RETRY_STATISTICS.totalSuccessfulRetries >= 1, is(true));
     }
   }
 
@@ -445,7 +445,7 @@ public class ITTransactionRetryTest extends ITAbstractSpannerTest {
         assertThat(rs.next(), is(false));
       }
       connection.commit();
-      assertThat(RETRY_STATISTICS.totalSuccessfulRetries, is(equalTo(1)));
+      assertThat(RETRY_STATISTICS.totalSuccessfulRetries >= 1, is(true));
       // verify that all the inserts succeeded
       try (ResultSet rs = connection.executeQuery(Statement.of("SELECT COUNT(*) AS C FROM TEST"))) {
         assertThat(rs.next(), is(true));
@@ -475,7 +475,7 @@ public class ITTransactionRetryTest extends ITAbstractSpannerTest {
       interceptor.setOnlyInjectOnce(true);
       connection.executeUpdate(Statement.of("INSERT INTO TEST (ID, NAME) VALUES (3, 'test 3')"));
       connection.commit();
-      assertThat(RETRY_STATISTICS.totalSuccessfulRetries, is(equalTo(1)));
+      assertThat(RETRY_STATISTICS.totalSuccessfulRetries >= 1, is(true));
       // verify that all the inserts succeeded
       try (ResultSet rs = connection.executeQuery(Statement.of("SELECT COUNT(*) AS C FROM TEST"))) {
         assertThat(rs.next(), is(true));
@@ -515,9 +515,7 @@ public class ITTransactionRetryTest extends ITAbstractSpannerTest {
         expectedException = true;
       }
       assertThat(expectedException, is(true));
-      assertThat(RETRY_STATISTICS.totalRetryAttemptsStarted, is(equalTo(1)));
-      assertThat(RETRY_STATISTICS.totalSuccessfulRetries, is(equalTo(0)));
-      assertThat(RETRY_STATISTICS.totalConcurrentModifications, is(equalTo(1)));
+      assertRetryStatistics(1, 1, 0);
     }
   }
 
@@ -555,9 +553,7 @@ public class ITTransactionRetryTest extends ITAbstractSpannerTest {
         expectedException = true;
       }
       assertThat(expectedException, is(true));
-      assertThat(RETRY_STATISTICS.totalRetryAttemptsStarted, is(equalTo(1)));
-      assertThat(RETRY_STATISTICS.totalSuccessfulRetries, is(equalTo(0)));
-      assertThat(RETRY_STATISTICS.totalConcurrentModifications, is(equalTo(1)));
+      assertRetryStatistics(1, 1, 0);
     }
   }
 
@@ -595,9 +591,7 @@ public class ITTransactionRetryTest extends ITAbstractSpannerTest {
         expectedException = true;
       }
       assertThat(expectedException, is(true));
-      assertThat(RETRY_STATISTICS.totalRetryAttemptsStarted, is(equalTo(1)));
-      assertThat(RETRY_STATISTICS.totalSuccessfulRetries, is(equalTo(0)));
-      assertThat(RETRY_STATISTICS.totalConcurrentModifications, is(equalTo(1)));
+      assertRetryStatistics(1, 1, 0);
     }
   }
 
@@ -628,9 +622,9 @@ public class ITTransactionRetryTest extends ITAbstractSpannerTest {
       // now try to do an insert that will abort. The retry should still succeed.
       interceptor.setProbability(1.0);
       interceptor.setOnlyInjectOnce(true);
-      assertThat(RETRY_STATISTICS.totalRetryAttemptsStarted, is(equalTo(0)));
+      int currentRetryCount = RETRY_STATISTICS.totalRetryAttemptsStarted;
       connection.executeUpdate(Statement.of("INSERT INTO TEST (ID, NAME) VALUES (4, 'test 4')"));
-      assertThat(RETRY_STATISTICS.totalRetryAttemptsStarted, is(equalTo(1)));
+      assertThat(RETRY_STATISTICS.totalRetryAttemptsStarted, is(equalTo(currentRetryCount + 1)));
       // Consume the rest of the result set. The insert by the other transaction should now be
       // included in the result set as the transaction retried. Although this means that the result
       // is different after a retry, it is not different as seen by the user, as the user didn't
@@ -642,7 +636,7 @@ public class ITTransactionRetryTest extends ITAbstractSpannerTest {
       assertThat(rs.next(), is(false));
       rs.close();
       connection.commit();
-      assertThat(RETRY_STATISTICS.totalSuccessfulRetries, is(equalTo(1)));
+      assertThat(RETRY_STATISTICS.totalSuccessfulRetries >= 1, is(true));
     }
   }
 
@@ -656,13 +650,13 @@ public class ITTransactionRetryTest extends ITAbstractSpannerTest {
   @Test
   public void testAbortWithUnseenConcurrentInsertAbortOnNext() {
     // no calls to next(), this should succeed
-    assertThat(testAbortWithUnseenConcurrentInsertAbortOnNext(0), is(equalTo(1)));
+    assertThat(testAbortWithUnseenConcurrentInsertAbortOnNext(0) >= 1, is(true));
     // 1 call to next() should also succeed, as there were 2 records in the original result set
-    assertThat(testAbortWithUnseenConcurrentInsertAbortOnNext(1), is(equalTo(1)));
+    assertThat(testAbortWithUnseenConcurrentInsertAbortOnNext(1) >= 1, is(true));
     // 2 calls to next() should also succeed, as there were 2 records in the original result set and
     // the user doesn't know yet that the next call to next() will return true instead of false
     // after the concurrent insert
-    assertThat(testAbortWithUnseenConcurrentInsertAbortOnNext(2), is(equalTo(1)));
+    assertThat(testAbortWithUnseenConcurrentInsertAbortOnNext(2) >= 1, is(true));
 
     boolean expectedException = false;
     try {
@@ -708,7 +702,7 @@ public class ITTransactionRetryTest extends ITAbstractSpannerTest {
       // been a record with ID 3 or not.
 
       // First verify that the transaction has not yet retried.
-      assertThat(RETRY_STATISTICS.totalRetryAttemptsStarted, is(equalTo(0)));
+      int currentRetryCount = RETRY_STATISTICS.totalRetryAttemptsStarted;
       interceptor.setProbability(1.0);
       interceptor.setOnlyInjectOnce(true);
 
@@ -721,7 +715,7 @@ public class ITTransactionRetryTest extends ITAbstractSpannerTest {
         }
       }
       // Verify that the transaction retried.
-      assertThat(RETRY_STATISTICS.totalSuccessfulRetries, is(equalTo(1)));
+      assertThat(RETRY_STATISTICS.totalSuccessfulRetries > currentRetryCount, is(true));
       rs.close();
       connection.commit();
       retries = RETRY_STATISTICS.totalSuccessfulRetries;
@@ -763,10 +757,7 @@ public class ITTransactionRetryTest extends ITAbstractSpannerTest {
         expectedException = true;
       }
       assertThat(expectedException, is(true));
-      assertThat(RETRY_STATISTICS.totalRetryAttemptsStarted, is(equalTo(1)));
-      assertThat(RETRY_STATISTICS.totalSuccessfulRetries, is(equalTo(0)));
-      assertThat(RETRY_STATISTICS.totalConcurrentModifications, is(equalTo(1)));
-
+      assertRetryStatistics(1, 1, 0);
       // the next statement should be in a new transaction as the previous transaction rolled back
       try (ResultSet rs = connection.executeQuery(Statement.of("SELECT * FROM TEST"))) {
         // there should be one record from the transaction on connection2
@@ -807,9 +798,7 @@ public class ITTransactionRetryTest extends ITAbstractSpannerTest {
           Statement.of("INSERT INTO TEST (ID, NAME) VALUES (1, 'test aborted')"));
       connection.commit();
       // Assert that the transaction was retried twice.
-      assertThat(RETRY_STATISTICS.totalRetryAttemptsStarted, is(equalTo(2)));
-      assertThat(RETRY_STATISTICS.totalSuccessfulRetries, is(equalTo(2)));
-      assertThat(RETRY_STATISTICS.totalNestedAborts, is(equalTo(0)));
+      assertRetryStatistics(2, 0, 2);
       // Verify that the insert succeeded.
       try (ResultSet rs =
           connection.executeQuery(Statement.of("SELECT COUNT(*) AS C FROM TEST WHERE ID=1"))) {
@@ -855,9 +844,8 @@ public class ITTransactionRetryTest extends ITAbstractSpannerTest {
       connection.commit();
       // Assert that the transaction was retried (a restarted retry is counted as one successful
       // retry).
-      assertThat(RETRY_STATISTICS.totalRetryAttemptsStarted, is(equalTo(2)));
-      assertThat(RETRY_STATISTICS.totalSuccessfulRetries, is(equalTo(1)));
-      assertThat(RETRY_STATISTICS.totalNestedAborts, is(equalTo(1)));
+      assertRetryStatistics(2, 0, 1);
+      assertThat(RETRY_STATISTICS.totalNestedAborts > 0, is(true));
       // Verify that the insert succeeded.
       try (ResultSet rs =
           connection.executeQuery(Statement.of("SELECT COUNT(*) AS C FROM TEST WHERE ID=1"))) {
@@ -923,9 +911,8 @@ public class ITTransactionRetryTest extends ITAbstractSpannerTest {
       }
       connection.commit();
       // Verify that the transaction retried.
-      assertThat(RETRY_STATISTICS.totalRetryAttemptsStarted, is(equalTo(2)));
-      assertThat(RETRY_STATISTICS.totalSuccessfulRetries, is(equalTo(1)));
-      assertThat(RETRY_STATISTICS.totalNestedAborts, is(equalTo(1)));
+      assertRetryStatistics(2, 0, 1);
+      assertThat(RETRY_STATISTICS.totalNestedAborts > 0, is(true));
       // Verify that all the inserts succeeded.
       try (ResultSet rs = connection.executeQuery(Statement.of("SELECT COUNT(*) AS C FROM TEST"))) {
         assertThat(rs.next(), is(true));
@@ -994,10 +981,8 @@ public class ITTransactionRetryTest extends ITAbstractSpannerTest {
         expectedException = true;
       }
       assertThat(expectedException, is(true));
-      assertThat(RETRY_STATISTICS.totalRetryAttemptsStarted, is(equalTo(2)));
-      assertThat(RETRY_STATISTICS.totalSuccessfulRetries, is(equalTo(0)));
-      assertThat(RETRY_STATISTICS.totalNestedAborts, is(equalTo(1)));
-      assertThat(RETRY_STATISTICS.totalConcurrentModifications, is(equalTo(1)));
+      assertRetryStatistics(2, 1, 0);
+      assertThat(RETRY_STATISTICS.totalNestedAborts > 0, is(true));
     }
   }
 
@@ -1042,8 +1027,7 @@ public class ITTransactionRetryTest extends ITAbstractSpannerTest {
       } catch (AbortedDueToConcurrentModificationException e) {
         expectedException = true;
       }
-      assertThat(RETRY_STATISTICS.totalRetryAttemptsStarted, is(equalTo(1)));
-      assertThat(RETRY_STATISTICS.totalConcurrentModifications, is(equalTo(1)));
+      assertRetryStatistics(1, 1, 0);
       assertThat(expectedException, is(true));
     }
   }
@@ -1091,8 +1075,7 @@ public class ITTransactionRetryTest extends ITAbstractSpannerTest {
       interceptor.setProbability(1.0);
       interceptor.setOnlyInjectOnce(true);
       connection.executeUpdate(Statement.of("INSERT INTO TEST (ID, NAME) VALUES (3, 'test 3')"));
-      assertThat(RETRY_STATISTICS.totalRetryAttemptsStarted, is(equalTo(1)));
-      assertThat(RETRY_STATISTICS.totalSuccessfulRetries, is(equalTo(1)));
+      assertRetryStatistics(1, 0, 1);
     }
   }
 
@@ -1160,9 +1143,7 @@ public class ITTransactionRetryTest extends ITAbstractSpannerTest {
       connection2.execute(Statement.of("DROP TABLE FOO"));
     }
     assertThat(abortedDueToConcurrentModification, is(true));
-    assertThat(RETRY_STATISTICS.totalRetryAttemptsStarted, is(equalTo(1)));
-    assertThat(RETRY_STATISTICS.totalSuccessfulRetries, is(equalTo(0)));
-    assertThat(RETRY_STATISTICS.totalConcurrentModifications, is(equalTo(1)));
+    assertRetryStatistics(1, 1, 0);
   }
 
   /**
@@ -1227,9 +1208,7 @@ public class ITTransactionRetryTest extends ITAbstractSpannerTest {
       connection2.execute(Statement.of("DROP TABLE FOO"));
     }
     assertThat(abortedDueToConcurrentModification, is(true));
-    assertThat(RETRY_STATISTICS.totalRetryAttemptsStarted, is(equalTo(1)));
-    assertThat(RETRY_STATISTICS.totalSuccessfulRetries, is(equalTo(0)));
-    assertThat(RETRY_STATISTICS.totalConcurrentModifications, is(equalTo(1)));
+    assertRetryStatistics(1, 1, 0);
   }
 
   /**
@@ -1291,9 +1270,7 @@ public class ITTransactionRetryTest extends ITAbstractSpannerTest {
       }
     }
     assertThat(abortedDueToConcurrentModification, is(true));
-    assertThat(RETRY_STATISTICS.totalRetryAttemptsStarted, is(equalTo(1)));
-    assertThat(RETRY_STATISTICS.totalSuccessfulRetries, is(equalTo(0)));
-    assertThat(RETRY_STATISTICS.totalConcurrentModifications, is(equalTo(1)));
+    assertRetryStatistics(1, 1, 0);
   }
 
   /**
@@ -1352,9 +1329,7 @@ public class ITTransactionRetryTest extends ITAbstractSpannerTest {
       }
     }
     assertThat(abortedDueToConcurrentModification, is(true));
-    assertThat(RETRY_STATISTICS.totalRetryAttemptsStarted, is(equalTo(1)));
-    assertThat(RETRY_STATISTICS.totalSuccessfulRetries, is(equalTo(0)));
-    assertThat(RETRY_STATISTICS.totalConcurrentModifications, is(equalTo(1)));
+    assertRetryStatistics(1, 1, 0);
   }
 
   /**
@@ -1417,9 +1392,7 @@ public class ITTransactionRetryTest extends ITAbstractSpannerTest {
       }
     }
     assertThat(abortedDueToConcurrentModification, is(true));
-    assertThat(RETRY_STATISTICS.totalRetryAttemptsStarted, is(equalTo(1)));
-    assertThat(RETRY_STATISTICS.totalSuccessfulRetries, is(equalTo(0)));
-    assertThat(RETRY_STATISTICS.totalConcurrentModifications, is(equalTo(1)));
+    assertRetryStatistics(1, 1, 0);
   }
 
   /** Test the successful retry of a transaction with a large {@link ResultSet} */
@@ -1465,8 +1438,7 @@ public class ITTransactionRetryTest extends ITAbstractSpannerTest {
         assertThat(rs.next(), is(false));
       }
       // Verify that the transaction retried.
-      assertThat(RETRY_STATISTICS.totalRetryAttemptsStarted, is(equalTo(1)));
-      assertThat(RETRY_STATISTICS.totalSuccessfulRetries, is(equalTo(1)));
+      assertRetryStatistics(1, 0, 1);
     }
   }
 
@@ -1545,9 +1517,10 @@ public class ITTransactionRetryTest extends ITAbstractSpannerTest {
         // The retry should still succeed.
         interceptor.setProbability(1.0);
         interceptor.setOnlyInjectOnce(true);
-        assertThat(RETRY_STATISTICS.totalRetryAttemptsStarted, is(equalTo(0)));
+        int currentSuccessfulRetryCount = RETRY_STATISTICS.totalSuccessfulRetries;
         assertThat(rs.next(), is(true));
-        assertThat(RETRY_STATISTICS.totalSuccessfulRetries, is(equalTo(1)));
+        assertThat(
+            RETRY_STATISTICS.totalSuccessfulRetries, is(equalTo(currentSuccessfulRetryCount + 1)));
         assertThat(rs.next(), is(false));
       }
       connection.commit();
@@ -1568,7 +1541,6 @@ public class ITTransactionRetryTest extends ITAbstractSpannerTest {
         // this time the abort will occur on the call to commit()
         interceptor.setProbability(1.0);
         interceptor.setOnlyInjectOnce(true);
-        assertThat(RETRY_STATISTICS.totalRetryAttemptsStarted, is(equalTo(0)));
         boolean expectedException = false;
         try {
           connection.commit();
@@ -1576,11 +1548,28 @@ public class ITTransactionRetryTest extends ITAbstractSpannerTest {
           expectedException = true;
         }
         // No successful retries.
-        assertThat(RETRY_STATISTICS.totalRetryAttemptsStarted, is(equalTo(1)));
-        assertThat(RETRY_STATISTICS.totalConcurrentModifications, is(equalTo(1)));
-        assertThat(RETRY_STATISTICS.totalSuccessfulRetries, is(equalTo(0)));
+        assertRetryStatistics(1, 1, 0);
         assertThat(expectedException, is(true));
       }
     }
+  }
+
+  private void assertRetryStatistics(
+      int minAttemptsStartedExpected,
+      int concurrentModificationsExpected,
+      int successfulRetriesExpected) {
+    assertThat(RETRY_STATISTICS.totalRetryAttemptsStarted >= minAttemptsStartedExpected, is(true));
+    assertThat(
+        RETRY_STATISTICS.totalConcurrentModifications,
+        is(equalTo(concurrentModificationsExpected)));
+    // There might be more retry attempts than expected. The number of successful retries should be
+    // equal to the actual difference between started and successful.
+    assertThat(
+        RETRY_STATISTICS.totalSuccessfulRetries,
+        is(
+            equalTo(
+                RETRY_STATISTICS.totalRetryAttemptsStarted
+                    - minAttemptsStartedExpected
+                    + successfulRetriesExpected)));
   }
 }
