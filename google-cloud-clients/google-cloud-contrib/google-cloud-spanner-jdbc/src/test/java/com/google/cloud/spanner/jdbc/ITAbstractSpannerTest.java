@@ -211,7 +211,11 @@ public abstract class ITAbstractSpannerTest {
   public ITConnection createConnection(
       List<StatementExecutionInterceptor> interceptors,
       List<TransactionRetryListener> transactionRetryListeners) {
-    StringBuilder url = new StringBuilder("cloudspanner:/").append(getDatabase().getId().getName());
+    StringBuilder url = new StringBuilder("cloudspanner:");
+    if(getTestEnv().getTestHelper().getOptions().getHost() != null) {
+      url.append(getTestEnv().getTestHelper().getOptions().getHost().replace("https:", ""));
+    }
+    url.append("/").append(getDatabase().getId().getName());
     appendConnectionUri(url);
     ConnectionOptions.Builder builder =
         ConnectionOptions.newBuilder()
