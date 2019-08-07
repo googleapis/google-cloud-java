@@ -35,8 +35,10 @@ public class DocumentSnapshotTest {
   public void fromDocument() {
     Document document = Document.newBuilder().setName(DOCUMENT_NAME).build();
     com.google.protobuf.Timestamp timestamp = com.google.protobuf.Timestamp.getDefaultInstance();
+    FirestoreOptions firestoreOptions = FirestoreOptions.newBuilder().build();
+    Firestore firestore = firestoreOptions.getService();
     DocumentSnapshot documentSnapshot =
-        DocumentSnapshot.fromDocument(document, Timestamp.fromProto(timestamp));
+        DocumentSnapshot.fromDocument(document, firestore, Timestamp.fromProto(timestamp));
     assertEquals(SINGLE_FIELD_OBJECT, documentSnapshot.toObject(SingleField.class));
     assertEquals("doc", documentSnapshot.getId());
     assertNotEquals("doc1", documentSnapshot.getId());
