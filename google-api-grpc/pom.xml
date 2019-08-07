@@ -162,6 +162,16 @@
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-asset-v1p2beta1</artifactId>
+        <version>0.68.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-asset-v1p2beta1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-asset-v1p2beta1</artifactId>
+        <version>0.68.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-asset-v1p2beta1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-automl-v1beta1</artifactId>
         <version>0.68.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-automl-v1beta1:current} -->
       </dependency>
@@ -831,6 +841,7 @@
   <modules>
     <module>grpc-google-cloud-asset-v1</module>
     <module>grpc-google-cloud-asset-v1beta1</module>
+    <module>grpc-google-cloud-asset-v1p2beta1</module>
     <module>grpc-google-cloud-automl-v1beta1</module>
     <module>grpc-google-cloud-bigquerydatatransfer-v1</module>
     <module>grpc-google-cloud-bigquerystorage-v1beta1</module>
@@ -900,6 +911,7 @@
 
     <module>proto-google-cloud-asset-v1</module>
     <module>proto-google-cloud-asset-v1beta1</module>
+    <module>proto-google-cloud-asset-v1p2beta1</module>
     <module>proto-google-cloud-automl-v1beta1</module>
     <module>proto-google-cloud-bigquerydatatransfer-v1</module>
     <module>proto-google-cloud-bigquerystorage-v1beta1</module>
