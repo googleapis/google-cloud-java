@@ -47,6 +47,7 @@ import com.google.cloud.vision.v1.ListReferenceImagesRequest;
 import com.google.cloud.vision.v1.ListReferenceImagesResponse;
 import com.google.cloud.vision.v1.Product;
 import com.google.cloud.vision.v1.ProductSet;
+import com.google.cloud.vision.v1.PurgeProductsRequest;
 import com.google.cloud.vision.v1.ReferenceImage;
 import com.google.cloud.vision.v1.RemoveProductFromProductSetRequest;
 import com.google.cloud.vision.v1.UpdateProductRequest;
@@ -173,6 +174,16 @@ public abstract class ProductSearchStub implements BackgroundResource {
 
   public UnaryCallable<ImportProductSetsRequest, Operation> importProductSetsCallable() {
     throw new UnsupportedOperationException("Not implemented: importProductSetsCallable()");
+  }
+
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public OperationCallable<PurgeProductsRequest, Empty, BatchOperationMetadata>
+      purgeProductsOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: purgeProductsOperationCallable()");
+  }
+
+  public UnaryCallable<PurgeProductsRequest, Operation> purgeProductsCallable() {
+    throw new UnsupportedOperationException("Not implemented: purgeProductsCallable()");
   }
 
   @Override
