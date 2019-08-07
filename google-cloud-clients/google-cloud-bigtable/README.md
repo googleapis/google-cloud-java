@@ -116,7 +116,9 @@ String projectId = "my-project";
 String instanceId = "my-instance";
 String tableId = "my-table";
 
-// Create the client
+// Create the client.
+// Please note that creating the client is a very expensive operation
+// and should only be done once and shared in an application.
 BigtableDataClient dataClient = BigtableDataClient.create(projectId, instanceId);
 
 try {
