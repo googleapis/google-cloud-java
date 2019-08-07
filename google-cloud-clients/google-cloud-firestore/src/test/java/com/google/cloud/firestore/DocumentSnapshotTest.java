@@ -23,7 +23,6 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
 import com.google.cloud.Timestamp;
-import com.google.firestore.v1.BatchGetDocumentsResponse;
 import com.google.firestore.v1.Document;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -33,13 +32,11 @@ import org.mockito.runners.MockitoJUnitRunner;
 public class DocumentSnapshotTest {
 
   @Test
-  public void fronDocument() {
+  public void fromDocument() {
     Document document = Document.newBuilder().setName(DOCUMENT_NAME).build();
     com.google.protobuf.Timestamp timestamp = com.google.protobuf.Timestamp.getDefaultInstance();
-    BatchGetDocumentsResponse response =
-        BatchGetDocumentsResponse.newBuilder().setReadTime(timestamp).build();
     DocumentSnapshot documentSnapshot =
-        DocumentSnapshot.fromDocument(document, Timestamp.fromProto(response.getReadTime()));
+        DocumentSnapshot.fromDocument(document, Timestamp.fromProto(timestamp));
     assertEquals(SINGLE_FIELD_OBJECT, documentSnapshot.toObject(SingleField.class));
     assertEquals("doc", documentSnapshot.getId());
     assertNotEquals("doc1", documentSnapshot.getId());

@@ -96,6 +96,7 @@ public class DocumentSnapshot {
 
   static DocumentSnapshot fromDocument(
       FirestoreImpl firestore, Timestamp readTime, Document document) {
+
     return new DocumentSnapshot(
         firestore,
         new DocumentReference(firestore, ResourcePath.create(document.getName())),
@@ -107,14 +108,25 @@ public class DocumentSnapshot {
 
   public static DocumentSnapshot fromDocument(Document document, Timestamp readTime) {
     return new DocumentSnapshot(
-        (FirestoreImpl) DocumentReference.getFirestore(),
-        new DocumentReference(
-            (FirestoreImpl) DocumentReference.getFirestore(),
-            ResourcePath.create(document.getName())),
+        null,
+        createDocRef(document),
         document.getFieldsMap(),
         readTime,
         Timestamp.fromProto(document.getUpdateTime()),
         Timestamp.fromProto(document.getCreateTime()));
+  }
+
+  /**
+   * Create the reference to the document
+   *
+   * @param document
+   * @return The reference to the document.
+   */
+  static DocumentReference createDocRef(Document document) {
+    FirestoreOptions firestoreOptions = FirestoreOptions.newBuilder().build();
+    CollectionReference collectionReference =
+        firestoreOptions.getService().collection(document.getName());
+    return collectionReference.document(collectionReference.getPath());
   }
 
   static DocumentSnapshot fromMissing(
