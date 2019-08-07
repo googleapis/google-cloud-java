@@ -332,8 +332,9 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
    * Optional. CLDR region code of the country/region of the address. This is
    * used to address ambiguity of the user-input location, for example,
    * "Liverpool" against "Liverpool, NY, US" or "Liverpool, UK".
-   * Set this field if all the jobs to search against are from a same region,
-   * or jobs are world-wide, but the job seeker is from a specific region.
+   * Set this field to bias location resolution toward a specific country
+   * or territory. If this field is not set, application behavior is biased
+   * toward the United States by default.
    * See http://cldr.unicode.org/ and
    * http://www.unicode.org/cldr/charts/30/supplemental/territory_information.html
    * for details. Example: "CH" for Switzerland.
@@ -360,8 +361,9 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
    * Optional. CLDR region code of the country/region of the address. This is
    * used to address ambiguity of the user-input location, for example,
    * "Liverpool" against "Liverpool, NY, US" or "Liverpool, UK".
-   * Set this field if all the jobs to search against are from a same region,
-   * or jobs are world-wide, but the job seeker is from a specific region.
+   * Set this field to bias location resolution toward a specific country
+   * or territory. If this field is not set, application behavior is biased
+   * toward the United States by default.
    * See http://cldr.unicode.org/ and
    * http://www.unicode.org/cldr/charts/30/supplemental/territory_information.html
    * for details. Example: "CH" for Switzerland.
@@ -1048,8 +1050,9 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
      * Optional. CLDR region code of the country/region of the address. This is
      * used to address ambiguity of the user-input location, for example,
      * "Liverpool" against "Liverpool, NY, US" or "Liverpool, UK".
-     * Set this field if all the jobs to search against are from a same region,
-     * or jobs are world-wide, but the job seeker is from a specific region.
+     * Set this field to bias location resolution toward a specific country
+     * or territory. If this field is not set, application behavior is biased
+     * toward the United States by default.
      * See http://cldr.unicode.org/ and
      * http://www.unicode.org/cldr/charts/30/supplemental/territory_information.html
      * for details. Example: "CH" for Switzerland.
@@ -1076,8 +1079,9 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
      * Optional. CLDR region code of the country/region of the address. This is
      * used to address ambiguity of the user-input location, for example,
      * "Liverpool" against "Liverpool, NY, US" or "Liverpool, UK".
-     * Set this field if all the jobs to search against are from a same region,
-     * or jobs are world-wide, but the job seeker is from a specific region.
+     * Set this field to bias location resolution toward a specific country
+     * or territory. If this field is not set, application behavior is biased
+     * toward the United States by default.
      * See http://cldr.unicode.org/ and
      * http://www.unicode.org/cldr/charts/30/supplemental/territory_information.html
      * for details. Example: "CH" for Switzerland.
@@ -1104,8 +1108,9 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
      * Optional. CLDR region code of the country/region of the address. This is
      * used to address ambiguity of the user-input location, for example,
      * "Liverpool" against "Liverpool, NY, US" or "Liverpool, UK".
-     * Set this field if all the jobs to search against are from a same region,
-     * or jobs are world-wide, but the job seeker is from a specific region.
+     * Set this field to bias location resolution toward a specific country
+     * or territory. If this field is not set, application behavior is biased
+     * toward the United States by default.
      * See http://cldr.unicode.org/ and
      * http://www.unicode.org/cldr/charts/30/supplemental/territory_information.html
      * for details. Example: "CH" for Switzerland.
@@ -1130,8 +1135,9 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
      * Optional. CLDR region code of the country/region of the address. This is
      * used to address ambiguity of the user-input location, for example,
      * "Liverpool" against "Liverpool, NY, US" or "Liverpool, UK".
-     * Set this field if all the jobs to search against are from a same region,
-     * or jobs are world-wide, but the job seeker is from a specific region.
+     * Set this field to bias location resolution toward a specific country
+     * or territory. If this field is not set, application behavior is biased
+     * toward the United States by default.
      * See http://cldr.unicode.org/ and
      * http://www.unicode.org/cldr/charts/30/supplemental/territory_information.html
      * for details. Example: "CH" for Switzerland.
@@ -1153,8 +1159,9 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
      * Optional. CLDR region code of the country/region of the address. This is
      * used to address ambiguity of the user-input location, for example,
      * "Liverpool" against "Liverpool, NY, US" or "Liverpool, UK".
-     * Set this field if all the jobs to search against are from a same region,
-     * or jobs are world-wide, but the job seeker is from a specific region.
+     * Set this field to bias location resolution toward a specific country
+     * or territory. If this field is not set, application behavior is biased
+     * toward the United States by default.
      * See http://cldr.unicode.org/ and
      * http://www.unicode.org/cldr/charts/30/supplemental/territory_information.html
      * for details. Example: "CH" for Switzerland.
