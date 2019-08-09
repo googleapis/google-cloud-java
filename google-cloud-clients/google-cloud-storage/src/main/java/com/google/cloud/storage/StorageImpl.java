@@ -88,7 +88,9 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
   private static final String EMPTY_BYTE_ARRAY_CRC32C = "AAAAAA==";
   private static final String PATH_DELIMITER = "/";
   /** Signed URLs are only supported through the GCS XML API endpoint. */
-  private static final String STORAGE_XML_HOST_NAME = "https://storage.googleapis.com";
+  private static final String STORAGE_XML_URI_SCHEME = "https";
+
+  private static final String STORAGE_XML_URI_HOST_NAME = "storage.googleapis.com";
 
   private static final Function<Tuple<Storage, Boolean>, Boolean> DELETE_FUNCTION =
       new Function<Tuple<Storage, Boolean>, Boolean>() {
@@ -635,6 +637,9 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
       optionMap.put(option.getOption(), option.getValue());
     }
 
+    boolean isV2 =
+        SignUrlOption.SignatureVersion.V2.equals(
+            optionMap.get(SignUrlOption.Option.SIGNATURE_VERSION));
     boolean isV4 =
         SignUrlOption.SignatureVersion.V4.equals(
             optionMap.get(SignUrlOption.Option.SIGNATURE_VERSION));
@@ -655,14 +660,12 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
                 getOptions().getClock().millisTime() + unit.toMillis(duration),
                 TimeUnit.MILLISECONDS);
 
-    String storageXmlHostName =
-        optionMap.get(SignUrlOption.Option.HOST_NAME) != null
-            ? (String) optionMap.get(SignUrlOption.Option.HOST_NAME)
-            : STORAGE_XML_HOST_NAME;
+    checkArgument(
+        !(optionMap.get(SignUrlOption.Option.VIRTUAL_HOST_NAME) != null
+            && optionMap.get(SignUrlOption.Option.HOST_NAME) != null),
+        "Cannot specify both the VIRTUAL_HOST_NAME and HOST_NAME SignUrlOptions together.");
 
-    // The bucket name itself should never contain a forward slash. However, parts already existed
-    // in the code to check for this, so we remove the forward slashes to be safe here.
-    String bucketName = CharMatcher.anyOf(PATH_DELIMITER).trimFrom(blobInfo.getBucket());
+    String bucketName = slashlessBucketNameFromBlobInfo(blobInfo);
     String escapedBlobName = "";
     if (!Strings.isNullOrEmpty(blobInfo.getName())) {
       escapedBlobName =
@@ -672,12 +675,35 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
               .replace(";", "%3B");
     }
 
-    String stPath = constructResourceUriPath(bucketName, escapedBlobName);
+    String storageXmlHostName;
+    boolean useBucketInPath = true;
+    if (optionMap.get(SignUrlOption.Option.VIRTUAL_HOST_NAME) != null) {
+      // In virtual hosted-style endpoints, the bucket is included in the host portion of the URI
+      // instead of in the path.
+      useBucketInPath = false;
+      storageXmlHostName =
+          virtualHostFromOptionValue(
+              (String) optionMap.get(SignUrlOption.Option.VIRTUAL_HOST_NAME), bucketName);
+    } else if (optionMap.get(SignUrlOption.Option.HOST_NAME) != null) {
+      storageXmlHostName = (String) optionMap.get(SignUrlOption.Option.HOST_NAME);
+    } else {
+      storageXmlHostName = STORAGE_XML_URI_SCHEME + "://" + STORAGE_XML_URI_HOST_NAME;
+    }
+
+    String stPath =
+        useBucketInPath
+            ? constructResourceUriPath(bucketName, escapedBlobName, optionMap)
+            : constructResourceUriPath("", escapedBlobName, optionMap);
     URI path = URI.create(stPath);
+    // For V2 signing, even if we don't specify the bucket in the URI path, we still need the
+    // canonical resource string that we'll sign to include the bucket.
+    URI pathForSigning =
+        isV2 ? URI.create(constructResourceUriPath(bucketName, escapedBlobName, optionMap)) : path;
 
     try {
       SignatureInfo signatureInfo =
-          buildSignatureInfo(optionMap, blobInfo, expiration, path, credentials.getAccount());
+          buildSignatureInfo(
+              optionMap, blobInfo, expiration, pathForSigning, credentials.getAccount());
       String unsignedPayload = signatureInfo.constructUnsignedPayload();
       byte[] signatureBytes = credentials.sign(unsignedPayload.getBytes(UTF_8));
       StringBuilder stBuilder = new StringBuilder();
@@ -705,10 +731,31 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
     }
   }
 
-  private String constructResourceUriPath(String slashlessBucketName, String escapedBlobName) {
+  private String constructResourceUriPath(
+      String slashlessBucketName,
+      String escapedBlobName,
+      EnumMap<SignUrlOption.Option, Object> optionMap) {
+    if (Strings.isNullOrEmpty(slashlessBucketName)) {
+      if (Strings.isNullOrEmpty(escapedBlobName)) {
+        return PATH_DELIMITER;
+      }
+      if (escapedBlobName.startsWith(PATH_DELIMITER)) {
+        return escapedBlobName;
+      }
+      return PATH_DELIMITER + escapedBlobName;
+    }
+
     StringBuilder pathBuilder = new StringBuilder();
     pathBuilder.append(PATH_DELIMITER).append(slashlessBucketName);
     if (Strings.isNullOrEmpty(escapedBlobName)) {
+      boolean isV2 =
+          SignUrlOption.SignatureVersion.V2.equals(
+              optionMap.get(SignUrlOption.Option.SIGNATURE_VERSION));
+      // If using virtual-hosted style URLs with V2 signing, the path string for a bucket resource
+      // must end with a forward slash.
+      if (optionMap.get(SignUrlOption.Option.VIRTUAL_HOST_NAME) != null && isV2) {
+        pathBuilder.append(PATH_DELIMITER);
+      }
       return pathBuilder.toString();
     }
     if (!escapedBlobName.startsWith(PATH_DELIMITER)) {
@@ -760,14 +807,45 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
 
     signatureInfoBuilder.setTimestamp(getOptions().getClock().millisTime());
 
-    @SuppressWarnings("unchecked")
-    Map<String, String> extHeaders =
-        (Map<String, String>)
-            (optionMap.containsKey(SignUrlOption.Option.EXT_HEADERS)
-                ? (Map<String, String>) optionMap.get(SignUrlOption.Option.EXT_HEADERS)
-                : Collections.emptyMap());
+    ImmutableMap.Builder<String, String> extHeaders = new ImmutableMap.Builder<String, String>();
 
-    return signatureInfoBuilder.setCanonicalizedExtensionHeaders(extHeaders).build();
+    boolean isV4 =
+        SignUrlOption.SignatureVersion.V4.equals(
+            optionMap.get(SignUrlOption.Option.SIGNATURE_VERSION));
+    // V2 signing requires that the header not include the bucket, but V4 signing requires that
+    // the host name used in the URI must match the "host" header.
+    boolean setHostHeaderToVirtualHost =
+        optionMap.containsKey(SignUrlOption.Option.VIRTUAL_HOST_NAME) && isV4;
+    // Add this host first if needed, allowing it to be overridden in the EXT_HEADERS option below.
+    if (setHostHeaderToVirtualHost) {
+      String vhost =
+          virtualHostFromOptionValue(
+              (String) optionMap.get(SignUrlOption.Option.VIRTUAL_HOST_NAME),
+              slashlessBucketNameFromBlobInfo(blobInfo));
+      vhost = vhost.replaceFirst("http(s)?://", "");
+      extHeaders.put("host", vhost);
+    }
+
+    if (optionMap.containsKey(SignUrlOption.Option.EXT_HEADERS)) {
+      extHeaders.putAll((Map<String, String>) optionMap.get(SignUrlOption.Option.EXT_HEADERS));
+    }
+
+    return signatureInfoBuilder
+        .setCanonicalizedExtensionHeaders((Map<String, String>) extHeaders.build())
+        .build();
+  }
+
+  private String slashlessBucketNameFromBlobInfo(BlobInfo blobInfo) {
+    // The bucket name itself should never contain a forward slash. However, parts already existed
+    // in the code to check for this, so we remove the forward slashes to be safe here.
+    return CharMatcher.anyOf(PATH_DELIMITER).trimFrom(blobInfo.getBucket());
+  }
+
+  private String virtualHostFromOptionValue(String vhostOptionValue, String bucketName) {
+    if (Strings.isNullOrEmpty(vhostOptionValue)) {
+      return STORAGE_XML_URI_SCHEME + "://" + bucketName + "." + STORAGE_XML_URI_HOST_NAME;
+    }
+    return vhostOptionValue;
   }
 
   @Override
