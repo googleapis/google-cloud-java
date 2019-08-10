@@ -135,12 +135,7 @@ public interface ColumnSpecOrBuilder
    *
    *
    * <pre>
-   * Output only. Top 10 most correlated with this column columns of the table,
-   * ordered by
-   * [cramers_v][google.cloud.automl.v1beta1.CorrelationStats.cramers_v] metric.
-   * This field may be stale, see the ancestor's
-   * Dataset.tables_dataset_metadata.stats_update_time field
-   * for the timestamp at which these stats were last updated.
+   * Deprecated.
    * </pre>
    *
    * <code>
@@ -153,12 +148,7 @@ public interface ColumnSpecOrBuilder
    *
    *
    * <pre>
-   * Output only. Top 10 most correlated with this column columns of the table,
-   * ordered by
-   * [cramers_v][google.cloud.automl.v1beta1.CorrelationStats.cramers_v] metric.
-   * This field may be stale, see the ancestor's
-   * Dataset.tables_dataset_metadata.stats_update_time field
-   * for the timestamp at which these stats were last updated.
+   * Deprecated.
    * </pre>
    *
    * <code>
@@ -170,12 +160,7 @@ public interface ColumnSpecOrBuilder
    *
    *
    * <pre>
-   * Output only. Top 10 most correlated with this column columns of the table,
-   * ordered by
-   * [cramers_v][google.cloud.automl.v1beta1.CorrelationStats.cramers_v] metric.
-   * This field may be stale, see the ancestor's
-   * Dataset.tables_dataset_metadata.stats_update_time field
-   * for the timestamp at which these stats were last updated.
+   * Deprecated.
    * </pre>
    *
    * <code>
@@ -187,12 +172,7 @@ public interface ColumnSpecOrBuilder
    *
    *
    * <pre>
-   * Output only. Top 10 most correlated with this column columns of the table,
-   * ordered by
-   * [cramers_v][google.cloud.automl.v1beta1.CorrelationStats.cramers_v] metric.
-   * This field may be stale, see the ancestor's
-   * Dataset.tables_dataset_metadata.stats_update_time field
-   * for the timestamp at which these stats were last updated.
+   * Deprecated.
    * </pre>
    *
    * <code>
@@ -205,12 +185,7 @@ public interface ColumnSpecOrBuilder
    *
    *
    * <pre>
-   * Output only. Top 10 most correlated with this column columns of the table,
-   * ordered by
-   * [cramers_v][google.cloud.automl.v1beta1.CorrelationStats.cramers_v] metric.
-   * This field may be stale, see the ancestor's
-   * Dataset.tables_dataset_metadata.stats_update_time field
-   * for the timestamp at which these stats were last updated.
+   * Deprecated.
    * </pre>
    *
    * <code>
