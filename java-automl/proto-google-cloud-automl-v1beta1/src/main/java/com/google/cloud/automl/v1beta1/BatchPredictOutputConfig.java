@@ -11,11 +11,51 @@ package com.google.cloud.automl.v1beta1;
  * As destination the
  * [gcs_destination][google.cloud.automl.v1beta1.BatchPredictOutputConfig.gcs_destination]
  * must be set unless specified otherwise for a domain. If gcs_destination is
- * set then in the given directory a new directory will be created. Its name
+ * set then in the given directory a new directory is created. Its name
  * will be
  * "prediction-&lt;model-display-name&gt;-&lt;timestamp-of-prediction-call&gt;",
  * where timestamp is in YYYY-MM-DDThh:mm:ss.sssZ ISO-8601 format. The contents
  * of it depends on the ML problem the predictions are made for.
+ *  *  For Image Classification:
+ *         In the created directory files `image_classification_1.jsonl`,
+ *         `image_classification_2.jsonl`,...,`image_classification_N.jsonl`
+ *         will be created, where N may be 1, and depends on the
+ *         total number of the successfully predicted images and annotations.
+ *         A single image will be listed only once with all its annotations,
+ *         and its annotations will never be split across files.
+ *         Each .JSONL file will contain, per line, a JSON representation of a
+ *         proto that wraps image's "ID" : "&lt;id_value&gt;" followed by a list of
+ *         zero or more AnnotationPayload protos (called annotations), which
+ *         have classification detail populated.
+ *         If prediction for any image failed (partially or completely), then an
+ *         additional `errors_1.jsonl`, `errors_2.jsonl`,..., `errors_N.jsonl`
+ *         files will be created (N depends on total number of failed
+ *         predictions). These files will have a JSON representation of a proto
+ *         that wraps the same "ID" : "&lt;id_value&gt;" but here followed by
+ *         exactly one
+ * [`google.rpc.Status`](https:
+ * //github.com/googleapis/googleapis/blob/master/google/rpc/status.proto)
+ *         containing only `code` and `message`fields.
+ *  *  For Image Object Detection:
+ *         In the created directory files `image_object_detection_1.jsonl`,
+ *         `image_object_detection_2.jsonl`,...,`image_object_detection_N.jsonl`
+ *         will be created, where N may be 1, and depends on the
+ *         total number of the successfully predicted images and annotations.
+ *         Each .JSONL file will contain, per line, a JSON representation of a
+ *         proto that wraps image's "ID" : "&lt;id_value&gt;" followed by a list of
+ *         zero or more AnnotationPayload protos (called annotations), which
+ *         have image_object_detection detail populated. A single image will
+ *         be listed only once with all its annotations, and its annotations
+ *         will never be split across files.
+ *         If prediction for any image failed (partially or completely), then
+ *         additional `errors_1.jsonl`, `errors_2.jsonl`,..., `errors_N.jsonl`
+ *         files will be created (N depends on total number of failed
+ *         predictions). These files will have a JSON representation of a proto
+ *         that wraps the same "ID" : "&lt;id_value&gt;" but here followed by
+ *         exactly one
+ * [`google.rpc.Status`](https:
+ * //github.com/googleapis/googleapis/blob/master/google/rpc/status.proto)
+ *         containing only `code` and `message`fields.
  *  *  For Video Classification:
  *         In the created directory a video_classification.csv file, and a .JSON
  *         file per each video classification requested in the input (i.e. each
@@ -61,6 +101,46 @@ package com.google.cloud.automl.v1beta1;
  *         for each frame of the video time segment the file is assigned to in
  *         video_object_tracking.csv. All AnnotationPayload protos will have
  *         video_object_tracking field set.
+ *  *  For Text Classification:
+ *         In the created directory files `text_classification_1.jsonl`,
+ *         `text_classification_2.jsonl`,...,`text_classification_N.jsonl`
+ *         will be created, where N may be 1, and depends on the
+ *         total number of inputs and annotations found.
+ *         Each .JSONL file will contain, per line, a JSON representation of a
+ *         proto that wraps input text snippet or input text file and a list of
+ *         zero or more AnnotationPayload protos (called annotations), which
+ *         have classification detail populated. A single text snippet or file
+ *         will be listed only once with all its annotations, and its
+ *         annotations will never be split across files.
+ *         If prediction for any text snippet or file failed (partially or
+ *         completely), then additional `errors_1.jsonl`, `errors_2.jsonl`,...,
+ *         `errors_N.jsonl` files will be created (N depends on total number of
+ *         failed predictions). These files will have a JSON representation of a
+ *         proto that wraps input text snippet or input text file followed by
+ *         exactly one
+ * [`google.rpc.Status`](https:
+ * //github.com/googleapis/googleapis/blob/master/google/rpc/status.proto)
+ *         containing only `code` and `message`.
+ *  *  For Text Sentiment:
+ *         In the created directory files `text_sentiment_1.jsonl`,
+ *         `text_sentiment_2.jsonl`,...,`text_sentiment_N.jsonl`
+ *         will be created, where N may be 1, and depends on the
+ *         total number of inputs and annotations found.
+ *         Each .JSONL file will contain, per line, a JSON representation of a
+ *         proto that wraps input text snippet or input text file and a list of
+ *         zero or more AnnotationPayload protos (called annotations), which
+ *         have text_sentiment detail populated. A single text snippet or file
+ *         will be listed only once with all its annotations, and its
+ *         annotations will never be split across files.
+ *         If prediction for any text snippet or file failed (partially or
+ *         completely), then additional `errors_1.jsonl`, `errors_2.jsonl`,...,
+ *         `errors_N.jsonl` files will be created (N depends on total number of
+ *         failed predictions). These files will have a JSON representation of a
+ *         proto that wraps input text snippet or input text file followed by
+ *         exactly one
+ * [`google.rpc.Status`](https:
+ * //github.com/googleapis/googleapis/blob/master/google/rpc/status.proto)
+ *         containing only `code` and `message`.
  *   *  For Text Extraction:
  *         In the created directory files `text_extraction_1.jsonl`,
  *         `text_extraction_2.jsonl`,...,`text_extraction_N.jsonl`
@@ -70,7 +150,8 @@ package com.google.cloud.automl.v1beta1;
  *         used inline text, or documents.
  *         If input was inline, then each .JSONL file will contain, per line,
  *           a JSON representation of a proto that wraps given in request text
- *           snippet's "id" : "&lt;id_value&gt;" followed by a list of zero or more
+ *           snippet's "id" (if specified), followed by input text snippet,
+ *           and a list of zero or more
  *           AnnotationPayload protos (called annotations), which have
  *           text_extraction detail populated. A single text snippet will be
  *           listed only once with all its annotations, and its annotations will
@@ -608,11 +689,51 @@ public final class BatchPredictOutputConfig extends com.google.protobuf.Generate
    * As destination the
    * [gcs_destination][google.cloud.automl.v1beta1.BatchPredictOutputConfig.gcs_destination]
    * must be set unless specified otherwise for a domain. If gcs_destination is
-   * set then in the given directory a new directory will be created. Its name
+   * set then in the given directory a new directory is created. Its name
    * will be
    * "prediction-&lt;model-display-name&gt;-&lt;timestamp-of-prediction-call&gt;",
    * where timestamp is in YYYY-MM-DDThh:mm:ss.sssZ ISO-8601 format. The contents
    * of it depends on the ML problem the predictions are made for.
+   *  *  For Image Classification:
+   *         In the created directory files `image_classification_1.jsonl`,
+   *         `image_classification_2.jsonl`,...,`image_classification_N.jsonl`
+   *         will be created, where N may be 1, and depends on the
+   *         total number of the successfully predicted images and annotations.
+   *         A single image will be listed only once with all its annotations,
+   *         and its annotations will never be split across files.
+   *         Each .JSONL file will contain, per line, a JSON representation of a
+   *         proto that wraps image's "ID" : "&lt;id_value&gt;" followed by a list of
+   *         zero or more AnnotationPayload protos (called annotations), which
+   *         have classification detail populated.
+   *         If prediction for any image failed (partially or completely), then an
+   *         additional `errors_1.jsonl`, `errors_2.jsonl`,..., `errors_N.jsonl`
+   *         files will be created (N depends on total number of failed
+   *         predictions). These files will have a JSON representation of a proto
+   *         that wraps the same "ID" : "&lt;id_value&gt;" but here followed by
+   *         exactly one
+   * [`google.rpc.Status`](https:
+   * //github.com/googleapis/googleapis/blob/master/google/rpc/status.proto)
+   *         containing only `code` and `message`fields.
+   *  *  For Image Object Detection:
+   *         In the created directory files `image_object_detection_1.jsonl`,
+   *         `image_object_detection_2.jsonl`,...,`image_object_detection_N.jsonl`
+   *         will be created, where N may be 1, and depends on the
+   *         total number of the successfully predicted images and annotations.
+   *         Each .JSONL file will contain, per line, a JSON representation of a
+   *         proto that wraps image's "ID" : "&lt;id_value&gt;" followed by a list of
+   *         zero or more AnnotationPayload protos (called annotations), which
+   *         have image_object_detection detail populated. A single image will
+   *         be listed only once with all its annotations, and its annotations
+   *         will never be split across files.
+   *         If prediction for any image failed (partially or completely), then
+   *         additional `errors_1.jsonl`, `errors_2.jsonl`,..., `errors_N.jsonl`
+   *         files will be created (N depends on total number of failed
+   *         predictions). These files will have a JSON representation of a proto
+   *         that wraps the same "ID" : "&lt;id_value&gt;" but here followed by
+   *         exactly one
+   * [`google.rpc.Status`](https:
+   * //github.com/googleapis/googleapis/blob/master/google/rpc/status.proto)
+   *         containing only `code` and `message`fields.
    *  *  For Video Classification:
    *         In the created directory a video_classification.csv file, and a .JSON
    *         file per each video classification requested in the input (i.e. each
@@ -658,6 +779,46 @@ public final class BatchPredictOutputConfig extends com.google.protobuf.Generate
    *         for each frame of the video time segment the file is assigned to in
    *         video_object_tracking.csv. All AnnotationPayload protos will have
    *         video_object_tracking field set.
+   *  *  For Text Classification:
+   *         In the created directory files `text_classification_1.jsonl`,
+   *         `text_classification_2.jsonl`,...,`text_classification_N.jsonl`
+   *         will be created, where N may be 1, and depends on the
+   *         total number of inputs and annotations found.
+   *         Each .JSONL file will contain, per line, a JSON representation of a
+   *         proto that wraps input text snippet or input text file and a list of
+   *         zero or more AnnotationPayload protos (called annotations), which
+   *         have classification detail populated. A single text snippet or file
+   *         will be listed only once with all its annotations, and its
+   *         annotations will never be split across files.
+   *         If prediction for any text snippet or file failed (partially or
+   *         completely), then additional `errors_1.jsonl`, `errors_2.jsonl`,...,
+   *         `errors_N.jsonl` files will be created (N depends on total number of
+   *         failed predictions). These files will have a JSON representation of a
+   *         proto that wraps input text snippet or input text file followed by
+   *         exactly one
+   * [`google.rpc.Status`](https:
+   * //github.com/googleapis/googleapis/blob/master/google/rpc/status.proto)
+   *         containing only `code` and `message`.
+   *  *  For Text Sentiment:
+   *         In the created directory files `text_sentiment_1.jsonl`,
+   *         `text_sentiment_2.jsonl`,...,`text_sentiment_N.jsonl`
+   *         will be created, where N may be 1, and depends on the
+   *         total number of inputs and annotations found.
+   *         Each .JSONL file will contain, per line, a JSON representation of a
+   *         proto that wraps input text snippet or input text file and a list of
+   *         zero or more AnnotationPayload protos (called annotations), which
+   *         have text_sentiment detail populated. A single text snippet or file
+   *         will be listed only once with all its annotations, and its
+   *         annotations will never be split across files.
+   *         If prediction for any text snippet or file failed (partially or
+   *         completely), then additional `errors_1.jsonl`, `errors_2.jsonl`,...,
+   *         `errors_N.jsonl` files will be created (N depends on total number of
+   *         failed predictions). These files will have a JSON representation of a
+   *         proto that wraps input text snippet or input text file followed by
+   *         exactly one
+   * [`google.rpc.Status`](https:
+   * //github.com/googleapis/googleapis/blob/master/google/rpc/status.proto)
+   *         containing only `code` and `message`.
    *   *  For Text Extraction:
    *         In the created directory files `text_extraction_1.jsonl`,
    *         `text_extraction_2.jsonl`,...,`text_extraction_N.jsonl`
@@ -667,7 +828,8 @@ public final class BatchPredictOutputConfig extends com.google.protobuf.Generate
    *         used inline text, or documents.
    *         If input was inline, then each .JSONL file will contain, per line,
    *           a JSON representation of a proto that wraps given in request text
-   *           snippet's "id" : "&lt;id_value&gt;" followed by a list of zero or more
+   *           snippet's "id" (if specified), followed by input text snippet,
+   *           and a list of zero or more
    *           AnnotationPayload protos (called annotations), which have
    *           text_extraction detail populated. A single text snippet will be
    *           listed only once with all its annotations, and its annotations will

@@ -870,6 +870,7 @@ public class AutoMlClientTest {
     String name2 = "name2-1052831874";
     String timeColumnSpecId = "timeColumnSpecId1558734824";
     long rowCount = 1340416618L;
+    long validRowCount = 406068761L;
     long columnCount = 122671386L;
     String etag = "etag3123477";
     TableSpec expectedResponse =
@@ -877,6 +878,7 @@ public class AutoMlClientTest {
             .setName(name2)
             .setTimeColumnSpecId(timeColumnSpecId)
             .setRowCount(rowCount)
+            .setValidRowCount(validRowCount)
             .setColumnCount(columnCount)
             .setEtag(etag)
             .build();
@@ -968,6 +970,7 @@ public class AutoMlClientTest {
     String name = "name3373707";
     String timeColumnSpecId = "timeColumnSpecId1558734824";
     long rowCount = 1340416618L;
+    long validRowCount = 406068761L;
     long columnCount = 122671386L;
     String etag = "etag3123477";
     TableSpec expectedResponse =
@@ -975,6 +978,7 @@ public class AutoMlClientTest {
             .setName(name)
             .setTimeColumnSpecId(timeColumnSpecId)
             .setRowCount(rowCount)
+            .setValidRowCount(validRowCount)
             .setColumnCount(columnCount)
             .setEtag(etag)
             .build();

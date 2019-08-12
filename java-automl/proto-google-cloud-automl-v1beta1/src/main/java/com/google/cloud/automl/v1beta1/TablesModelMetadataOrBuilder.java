@@ -77,11 +77,11 @@ public interface TablesModelMetadataOrBuilder
    * [ml_use_column][google.cloud.automl.v1beta1.TablesDatasetMetadata.ml_use_column_spec_id]
    * must never be included here.
    * Only 3 fields are used:
-   * name - May be set on CreateModel, if set only the columns specified are
-   *        used, otherwise all primary table's columns (except the ones listed
-   *        above) are used for the training and prediction input.
-   * display_name - Output only.
-   * data_type - Output only.
+   * * name - May be set on CreateModel, if set only the columns specified are
+   *   used, otherwise all primary table's columns (except the ones listed
+   *   above) are used for the training and prediction input.
+   * * display_name - Output only.
+   * * data_type - Output only.
    * </pre>
    *
    * <code>repeated .google.cloud.automl.v1beta1.ColumnSpec input_feature_column_specs = 3;</code>
@@ -101,11 +101,11 @@ public interface TablesModelMetadataOrBuilder
    * [ml_use_column][google.cloud.automl.v1beta1.TablesDatasetMetadata.ml_use_column_spec_id]
    * must never be included here.
    * Only 3 fields are used:
-   * name - May be set on CreateModel, if set only the columns specified are
-   *        used, otherwise all primary table's columns (except the ones listed
-   *        above) are used for the training and prediction input.
-   * display_name - Output only.
-   * data_type - Output only.
+   * * name - May be set on CreateModel, if set only the columns specified are
+   *   used, otherwise all primary table's columns (except the ones listed
+   *   above) are used for the training and prediction input.
+   * * display_name - Output only.
+   * * data_type - Output only.
    * </pre>
    *
    * <code>repeated .google.cloud.automl.v1beta1.ColumnSpec input_feature_column_specs = 3;</code>
@@ -125,11 +125,11 @@ public interface TablesModelMetadataOrBuilder
    * [ml_use_column][google.cloud.automl.v1beta1.TablesDatasetMetadata.ml_use_column_spec_id]
    * must never be included here.
    * Only 3 fields are used:
-   * name - May be set on CreateModel, if set only the columns specified are
-   *        used, otherwise all primary table's columns (except the ones listed
-   *        above) are used for the training and prediction input.
-   * display_name - Output only.
-   * data_type - Output only.
+   * * name - May be set on CreateModel, if set only the columns specified are
+   *   used, otherwise all primary table's columns (except the ones listed
+   *   above) are used for the training and prediction input.
+   * * display_name - Output only.
+   * * data_type - Output only.
    * </pre>
    *
    * <code>repeated .google.cloud.automl.v1beta1.ColumnSpec input_feature_column_specs = 3;</code>
@@ -149,11 +149,11 @@ public interface TablesModelMetadataOrBuilder
    * [ml_use_column][google.cloud.automl.v1beta1.TablesDatasetMetadata.ml_use_column_spec_id]
    * must never be included here.
    * Only 3 fields are used:
-   * name - May be set on CreateModel, if set only the columns specified are
-   *        used, otherwise all primary table's columns (except the ones listed
-   *        above) are used for the training and prediction input.
-   * display_name - Output only.
-   * data_type - Output only.
+   * * name - May be set on CreateModel, if set only the columns specified are
+   *   used, otherwise all primary table's columns (except the ones listed
+   *   above) are used for the training and prediction input.
+   * * display_name - Output only.
+   * * data_type - Output only.
    * </pre>
    *
    * <code>repeated .google.cloud.automl.v1beta1.ColumnSpec input_feature_column_specs = 3;</code>
@@ -174,11 +174,11 @@ public interface TablesModelMetadataOrBuilder
    * [ml_use_column][google.cloud.automl.v1beta1.TablesDatasetMetadata.ml_use_column_spec_id]
    * must never be included here.
    * Only 3 fields are used:
-   * name - May be set on CreateModel, if set only the columns specified are
-   *        used, otherwise all primary table's columns (except the ones listed
-   *        above) are used for the training and prediction input.
-   * display_name - Output only.
-   * data_type - Output only.
+   * * name - May be set on CreateModel, if set only the columns specified are
+   *   used, otherwise all primary table's columns (except the ones listed
+   *   above) are used for the training and prediction input.
+   * * display_name - Output only.
+   * * data_type - Output only.
    * </pre>
    *
    * <code>repeated .google.cloud.automl.v1beta1.ColumnSpec input_feature_column_specs = 3;</code>
@@ -210,9 +210,6 @@ public interface TablesModelMetadataOrBuilder
    *   "MINIMIZE_RMSE" (default) - Minimize root-mean-squared error (RMSE).
    *   "MINIMIZE_MAE" - Minimize mean-absolute error (MAE).
    *   "MINIMIZE_RMSLE" - Minimize root-mean-squared log error (RMSLE).
-   * FORECASTING:
-   *   "MINIMIZE_RMSE" (default) - Minimize root-mean-squared error (RMSE).
-   *   "MINIMIZE_MAE" - Minimize mean-absolute error (MAE).
    * </pre>
    *
    * <code>string optimization_objective = 4;</code>
@@ -242,38 +239,11 @@ public interface TablesModelMetadataOrBuilder
    *   "MINIMIZE_RMSE" (default) - Minimize root-mean-squared error (RMSE).
    *   "MINIMIZE_MAE" - Minimize mean-absolute error (MAE).
    *   "MINIMIZE_RMSLE" - Minimize root-mean-squared log error (RMSLE).
-   * FORECASTING:
-   *   "MINIMIZE_RMSE" (default) - Minimize root-mean-squared error (RMSE).
-   *   "MINIMIZE_MAE" - Minimize mean-absolute error (MAE).
    * </pre>
    *
    * <code>string optimization_objective = 4;</code>
    */
   com.google.protobuf.ByteString getOptimizationObjectiveBytes();
-
-  /**
-   *
-   *
-   * <pre>
-   * Required when optimization_objective is "MAXIMIZE_PRECISION_AT_RECALL".
-   * Must be between 0 and 1, inclusive.
-   * </pre>
-   *
-   * <code>float optimization_objective_recall_value = 17;</code>
-   */
-  float getOptimizationObjectiveRecallValue();
-
-  /**
-   *
-   *
-   * <pre>
-   * Required when optimization_objective is "MAXIMIZE_RECALL_AT_PRECISION".
-   * Must be between 0 and 1, inclusive.
-   * </pre>
-   *
-   * <code>float optimization_objective_precision_value = 18;</code>
-   */
-  float getOptimizationObjectivePrecisionValue();
 
   /**
    *
@@ -385,8 +355,4 @@ public interface TablesModelMetadataOrBuilder
    * <code>bool disable_early_stopping = 12;</code>
    */
   boolean getDisableEarlyStopping();
-
-  public com.google.cloud.automl.v1beta1.TablesModelMetadata
-          .AdditionalOptimizationObjectiveConfigCase
-      getAdditionalOptimizationObjectiveConfigCase();
 }

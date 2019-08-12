@@ -39,6 +39,7 @@ public final class BatchPredictResult extends com.google.protobuf.GeneratedMessa
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -49,6 +50,21 @@ public final class BatchPredictResult extends com.google.protobuf.GeneratedMessa
           case 0:
             done = true;
             break;
+          case 10:
+            {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                metadata_ =
+                    com.google.protobuf.MapField.newMapField(
+                        MetadataDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000001;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> metadata__ =
+                  input.readMessage(
+                      MetadataDefaultEntryHolder.defaultEntry.getParserForType(),
+                      extensionRegistry);
+              metadata_.getMutableMap().put(metadata__.getKey(), metadata__.getValue());
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -73,6 +89,17 @@ public final class BatchPredictResult extends com.google.protobuf.GeneratedMessa
         .internal_static_google_cloud_automl_v1beta1_BatchPredictResult_descriptor;
   }
 
+  @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
+  protected com.google.protobuf.MapField internalGetMapField(int number) {
+    switch (number) {
+      case 1:
+        return internalGetMetadata();
+      default:
+        throw new RuntimeException("Invalid map field number: " + number);
+    }
+  }
+
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
@@ -81,6 +108,124 @@ public final class BatchPredictResult extends com.google.protobuf.GeneratedMessa
         .ensureFieldAccessorsInitialized(
             com.google.cloud.automl.v1beta1.BatchPredictResult.class,
             com.google.cloud.automl.v1beta1.BatchPredictResult.Builder.class);
+  }
+
+  public static final int METADATA_FIELD_NUMBER = 1;
+
+  private static final class MetadataDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.cloud.automl.v1beta1.PredictionServiceProto
+                .internal_static_google_cloud_automl_v1beta1_BatchPredictResult_MetadataEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
+  }
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> metadata_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetMetadata() {
+    if (metadata_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(MetadataDefaultEntryHolder.defaultEntry);
+    }
+    return metadata_;
+  }
+
+  public int getMetadataCount() {
+    return internalGetMetadata().getMap().size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Additional domain-specific prediction response metadata.
+   * *  For Image Object Detection:
+   *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
+   *      image could have been returned.
+   * *  For Video Object Tracking:
+   *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
+   *      frame could have been returned.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; metadata = 1;</code>
+   */
+  public boolean containsMetadata(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    return internalGetMetadata().getMap().containsKey(key);
+  }
+  /** Use {@link #getMetadataMap()} instead. */
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getMetadata() {
+    return getMetadataMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Additional domain-specific prediction response metadata.
+   * *  For Image Object Detection:
+   *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
+   *      image could have been returned.
+   * *  For Video Object Tracking:
+   *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
+   *      frame could have been returned.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; metadata = 1;</code>
+   */
+  public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
+    return internalGetMetadata().getMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Additional domain-specific prediction response metadata.
+   * *  For Image Object Detection:
+   *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
+   *      image could have been returned.
+   * *  For Video Object Tracking:
+   *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
+   *      frame could have been returned.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; metadata = 1;</code>
+   */
+  public java.lang.String getMetadataOrDefault(
+      java.lang.String key, java.lang.String defaultValue) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetMetadata().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Additional domain-specific prediction response metadata.
+   * *  For Image Object Detection:
+   *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
+   *      image could have been returned.
+   * *  For Video Object Tracking:
+   *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
+   *      frame could have been returned.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; metadata = 1;</code>
+   */
+  public java.lang.String getMetadataOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetMetadata().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -97,6 +242,8 @@ public final class BatchPredictResult extends com.google.protobuf.GeneratedMessa
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetMetadata(), MetadataDefaultEntryHolder.defaultEntry, 1);
     unknownFields.writeTo(output);
   }
 
@@ -106,6 +253,16 @@ public final class BatchPredictResult extends com.google.protobuf.GeneratedMessa
     if (size != -1) return size;
 
     size = 0;
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetMetadata().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> metadata__ =
+          MetadataDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, metadata__);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -122,6 +279,7 @@ public final class BatchPredictResult extends com.google.protobuf.GeneratedMessa
     com.google.cloud.automl.v1beta1.BatchPredictResult other =
         (com.google.cloud.automl.v1beta1.BatchPredictResult) obj;
 
+    if (!internalGetMetadata().equals(other.internalGetMetadata())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -133,6 +291,10 @@ public final class BatchPredictResult extends com.google.protobuf.GeneratedMessa
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    if (!internalGetMetadata().getMap().isEmpty()) {
+      hash = (37 * hash) + METADATA_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetMetadata().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -253,6 +415,26 @@ public final class BatchPredictResult extends com.google.protobuf.GeneratedMessa
           .internal_static_google_cloud_automl_v1beta1_BatchPredictResult_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMapField(int number) {
+      switch (number) {
+        case 1:
+          return internalGetMetadata();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
+      switch (number) {
+        case 1:
+          return internalGetMutableMetadata();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -280,6 +462,7 @@ public final class BatchPredictResult extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      internalGetMutableMetadata().clear();
       return this;
     }
 
@@ -307,6 +490,9 @@ public final class BatchPredictResult extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.automl.v1beta1.BatchPredictResult buildPartial() {
       com.google.cloud.automl.v1beta1.BatchPredictResult result =
           new com.google.cloud.automl.v1beta1.BatchPredictResult(this);
+      int from_bitField0_ = bitField0_;
+      result.metadata_ = internalGetMetadata();
+      result.metadata_.makeImmutable();
       onBuilt();
       return result;
     }
@@ -357,6 +543,7 @@ public final class BatchPredictResult extends com.google.protobuf.GeneratedMessa
     public Builder mergeFrom(com.google.cloud.automl.v1beta1.BatchPredictResult other) {
       if (other == com.google.cloud.automl.v1beta1.BatchPredictResult.getDefaultInstance())
         return this;
+      internalGetMutableMetadata().mergeFrom(other.internalGetMetadata());
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -384,6 +571,203 @@ public final class BatchPredictResult extends com.google.protobuf.GeneratedMessa
           mergeFrom(parsedMessage);
         }
       }
+      return this;
+    }
+
+    private int bitField0_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> metadata_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetMetadata() {
+      if (metadata_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(MetadataDefaultEntryHolder.defaultEntry);
+      }
+      return metadata_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableMetadata() {
+      onChanged();
+      ;
+      if (metadata_ == null) {
+        metadata_ =
+            com.google.protobuf.MapField.newMapField(MetadataDefaultEntryHolder.defaultEntry);
+      }
+      if (!metadata_.isMutable()) {
+        metadata_ = metadata_.copy();
+      }
+      return metadata_;
+    }
+
+    public int getMetadataCount() {
+      return internalGetMetadata().getMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Additional domain-specific prediction response metadata.
+     * *  For Image Object Detection:
+     *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
+     *      image could have been returned.
+     * *  For Video Object Tracking:
+     *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
+     *      frame could have been returned.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; metadata = 1;</code>
+     */
+    public boolean containsMetadata(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      return internalGetMetadata().getMap().containsKey(key);
+    }
+    /** Use {@link #getMetadataMap()} instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMetadata() {
+      return getMetadataMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Additional domain-specific prediction response metadata.
+     * *  For Image Object Detection:
+     *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
+     *      image could have been returned.
+     * *  For Video Object Tracking:
+     *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
+     *      frame could have been returned.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; metadata = 1;</code>
+     */
+    public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
+      return internalGetMetadata().getMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Additional domain-specific prediction response metadata.
+     * *  For Image Object Detection:
+     *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
+     *      image could have been returned.
+     * *  For Video Object Tracking:
+     *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
+     *      frame could have been returned.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; metadata = 1;</code>
+     */
+    public java.lang.String getMetadataOrDefault(
+        java.lang.String key, java.lang.String defaultValue) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetMetadata().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Additional domain-specific prediction response metadata.
+     * *  For Image Object Detection:
+     *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
+     *      image could have been returned.
+     * *  For Video Object Tracking:
+     *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
+     *      frame could have been returned.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; metadata = 1;</code>
+     */
+    public java.lang.String getMetadataOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetMetadata().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearMetadata() {
+      internalGetMutableMetadata().getMutableMap().clear();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Additional domain-specific prediction response metadata.
+     * *  For Image Object Detection:
+     *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
+     *      image could have been returned.
+     * *  For Video Object Tracking:
+     *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
+     *      frame could have been returned.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; metadata = 1;</code>
+     */
+    public Builder removeMetadata(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableMetadata().getMutableMap().remove(key);
+      return this;
+    }
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMutableMetadata() {
+      return internalGetMutableMetadata().getMutableMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Additional domain-specific prediction response metadata.
+     * *  For Image Object Detection:
+     *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
+     *      image could have been returned.
+     * *  For Video Object Tracking:
+     *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
+     *      frame could have been returned.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; metadata = 1;</code>
+     */
+    public Builder putMetadata(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      if (value == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableMetadata().getMutableMap().put(key, value);
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Additional domain-specific prediction response metadata.
+     * *  For Image Object Detection:
+     *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
+     *      image could have been returned.
+     * *  For Video Object Tracking:
+     *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
+     *      frame could have been returned.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; metadata = 1;</code>
+     */
+    public Builder putAllMetadata(java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableMetadata().getMutableMap().putAll(values);
       return this;
     }
 
