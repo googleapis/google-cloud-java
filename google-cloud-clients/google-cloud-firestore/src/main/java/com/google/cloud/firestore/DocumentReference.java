@@ -359,7 +359,7 @@ public class DocumentReference {
   @Nonnull
   public void get(
       @Nullable FieldMask fieldMask,
-      ApiStreamObserver responseObserver,
+      ApiStreamObserver<DocumentSnapshot> responseObserver,
       DocumentReference documentReference) {
     firestore.getAll(fieldMask, responseObserver, documentReference);
   }
