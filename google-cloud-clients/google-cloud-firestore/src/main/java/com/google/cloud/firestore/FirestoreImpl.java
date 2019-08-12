@@ -248,6 +248,98 @@ class FirestoreImpl implements Firestore {
     return futureList;
   }
 
+  void getAll(
+      final DocumentReference[] documentReferences,
+      @Nullable FieldMask fieldMask,
+      @Nullable ByteString transactionId,
+      final ApiStreamObserver apiStreamObserver) {
+    ApiStreamObserver<BatchGetDocumentsResponse> responseObserver =
+        new ApiStreamObserver<BatchGetDocumentsResponse>() {
+          int numResponses;
+
+          @Override
+          public void onNext(BatchGetDocumentsResponse response) {
+            DocumentReference documentReference;
+            DocumentSnapshot documentSnapshot;
+
+            numResponses++;
+            if (numResponses == 1) {
+              tracer.getCurrentSpan().addAnnotation("Firestore.BatchGet: First response");
+            } else if (numResponses % 100 == 0) {
+              tracer.getCurrentSpan().addAnnotation("Firestore.BatchGet: Received 100 responses");
+            }
+
+            switch (response.getResultCase()) {
+              case FOUND:
+                documentSnapshot =
+                    DocumentSnapshot.fromDocument(
+                        FirestoreImpl.this,
+                        Timestamp.fromProto(response.getReadTime()),
+                        response.getFound());
+                break;
+              case MISSING:
+                documentReference =
+                    new DocumentReference(
+                        FirestoreImpl.this, ResourcePath.create(response.getMissing()));
+                documentSnapshot =
+                    DocumentSnapshot.fromMissing(
+                        FirestoreImpl.this,
+                        documentReference,
+                        Timestamp.fromProto(response.getReadTime()));
+                break;
+              default:
+                return;
+            }
+            apiStreamObserver.onNext(documentSnapshot);
+          }
+
+          @Override
+          public void onError(Throwable throwable) {
+            tracer.getCurrentSpan().addAnnotation("Firestore.BatchGet: Error");
+            apiStreamObserver.onError(throwable.getCause());
+          }
+
+          @Override
+          public void onCompleted() {
+            tracer.getCurrentSpan().addAnnotation("Firestore.BatchGet: Complete");
+            apiStreamObserver.onCompleted();
+          }
+        };
+
+    BatchGetDocumentsRequest.Builder request = BatchGetDocumentsRequest.newBuilder();
+    request.setDatabase(getDatabaseName());
+
+    if (fieldMask != null) {
+      request.setMask(fieldMask.toPb());
+    }
+
+    if (transactionId != null) {
+      request.setTransaction(transactionId);
+    }
+
+    for (DocumentReference docRef : documentReferences) {
+      request.addDocuments(docRef.getName());
+    }
+
+    tracer
+        .getCurrentSpan()
+        .addAnnotation(
+            "Firestore.BatchGet: Start",
+            ImmutableMap.of(
+                "numDocuments", AttributeValue.longAttributeValue(documentReferences.length)));
+
+    streamRequest(request.build(), responseObserver, firestoreClient.batchGetDocumentsCallable());
+  }
+
+  @Nonnull
+  @Override
+  public void getAll(
+      @Nullable FieldMask fieldMask,
+      final ApiStreamObserver<DocumentSnapshot> responseObserver,
+      DocumentReference... documentReferences) {
+    this.getAll(documentReferences, fieldMask, null, responseObserver);
+  }
+
   @Nonnull
   @Override
   public Query collectionGroup(@Nonnull final String collectionId) {

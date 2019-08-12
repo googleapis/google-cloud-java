@@ -29,6 +29,7 @@ import static org.junit.Assert.fail;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
+import com.google.api.gax.rpc.ApiStreamObserver;
 import com.google.cloud.Timestamp;
 import com.google.cloud.firestore.CollectionReference;
 import com.google.cloud.firestore.DocumentChange;
@@ -1326,5 +1327,56 @@ public class ITSystemTest {
       this.value = value;
       this.error = error;
     }
+  }
+
+  @Test
+  public void getAllWithObserver() throws Exception {
+    DocumentReference ref = randomColl.document("doc1");
+    ref.set(ALL_SUPPORTED_TYPES_MAP).get();
+
+    final List<DocumentSnapshot> documentSnapshots = new ArrayList<>();
+    final DocumentReference[] documentReferences = {ref};
+    firestore.getAll(
+        FieldMask.of("foo"),
+        new ApiStreamObserver<DocumentSnapshot>() {
+
+          @Override
+          public void onNext(DocumentSnapshot documentSnapshot) {
+            documentSnapshots.add(documentSnapshot);
+          }
+
+          @Override
+          public void onError(Throwable throwable) {}
+
+          @Override
+          public void onCompleted() {}
+        },
+        documentReferences);
+    Thread.sleep(1000);
+    assertEquals(map("foo", "bar"), documentSnapshots.get(0).getData());
+  }
+
+  @Test
+  public void getWithObserver() throws Exception {
+    final DocumentReference ref = randomColl.document("doc1");
+    final List<DocumentSnapshot> documentSnapshots = new ArrayList<>();
+    ref.set(ALL_SUPPORTED_TYPES_MAP).get();
+    ApiStreamObserver responseObserver =
+        new ApiStreamObserver<DocumentSnapshot>() {
+
+          @Override
+          public void onNext(DocumentSnapshot documentSnapshot) {
+            documentSnapshots.add(documentSnapshot);
+          }
+
+          @Override
+          public void onError(Throwable throwable) {}
+
+          @Override
+          public void onCompleted() {}
+        };
+    ref.get(FieldMask.of("foo"), responseObserver, ref);
+    Thread.sleep(1000);
+    assertEquals(map("foo", "bar"), documentSnapshots.get(0).getData());
   }
 }
