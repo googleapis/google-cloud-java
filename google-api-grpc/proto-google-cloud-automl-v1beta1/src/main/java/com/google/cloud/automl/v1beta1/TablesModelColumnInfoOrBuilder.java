@@ -58,8 +58,7 @@ public interface TablesModelColumnInfoOrBuilder
    *
    *
    * <pre>
-   * Output only.
-   * When given as part of a Model (always populated):
+   * Output only. When given as part of a Model (always populated):
    * Measurement of how much model predictions correctness on the TEST data
    * depend on values in this column. A value between 0 and 1, higher means
    * higher influence. These values are normalized - for all input feature

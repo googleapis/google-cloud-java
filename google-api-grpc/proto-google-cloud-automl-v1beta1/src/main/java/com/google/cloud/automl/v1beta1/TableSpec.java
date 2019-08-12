@@ -80,12 +80,17 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
               rowCount_ = input.readInt64();
               break;
             }
+          case 32:
+            {
+              validRowCount_ = input.readInt64();
+              break;
+            }
           case 42:
             {
-              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
                 inputConfigs_ =
                     new java.util.ArrayList<com.google.cloud.automl.v1beta1.InputConfig>();
-                mutable_bitField0_ |= 0x00000010;
+                mutable_bitField0_ |= 0x00000020;
               }
               inputConfigs_.add(
                   input.readMessage(
@@ -118,7 +123,7 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000010) != 0)) {
+      if (((mutable_bitField0_ & 0x00000020) != 0)) {
         inputConfigs_ = java.util.Collections.unmodifiableList(inputConfigs_);
       }
       this.unknownFields = unknownFields.build();
@@ -259,6 +264,22 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
    */
   public long getRowCount() {
     return rowCount_;
+  }
+
+  public static final int VALID_ROW_COUNT_FIELD_NUMBER = 4;
+  private long validRowCount_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The number of valid rows (i.e. without values that don't match
+   * DataType-s of their columns).
+   * </pre>
+   *
+   * <code>int64 valid_row_count = 4;</code>
+   */
+  public long getValidRowCount() {
+    return validRowCount_;
   }
 
   public static final int COLUMN_COUNT_FIELD_NUMBER = 7;
@@ -414,6 +435,9 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
     if (rowCount_ != 0L) {
       output.writeInt64(3, rowCount_);
     }
+    if (validRowCount_ != 0L) {
+      output.writeInt64(4, validRowCount_);
+    }
     for (int i = 0; i < inputConfigs_.size(); i++) {
       output.writeMessage(5, inputConfigs_.get(i));
     }
@@ -440,6 +464,9 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
     }
     if (rowCount_ != 0L) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(3, rowCount_);
+    }
+    if (validRowCount_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(4, validRowCount_);
     }
     for (int i = 0; i < inputConfigs_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, inputConfigs_.get(i));
@@ -469,6 +496,7 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
     if (!getName().equals(other.getName())) return false;
     if (!getTimeColumnSpecId().equals(other.getTimeColumnSpecId())) return false;
     if (getRowCount() != other.getRowCount()) return false;
+    if (getValidRowCount() != other.getValidRowCount()) return false;
     if (getColumnCount() != other.getColumnCount()) return false;
     if (!getInputConfigsList().equals(other.getInputConfigsList())) return false;
     if (!getEtag().equals(other.getEtag())) return false;
@@ -489,6 +517,8 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getTimeColumnSpecId().hashCode();
     hash = (37 * hash) + ROW_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getRowCount());
+    hash = (37 * hash) + VALID_ROW_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getValidRowCount());
     hash = (37 * hash) + COLUMN_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getColumnCount());
     if (getInputConfigsCount() > 0) {
@@ -658,11 +688,13 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
 
       rowCount_ = 0L;
 
+      validRowCount_ = 0L;
+
       columnCount_ = 0L;
 
       if (inputConfigsBuilder_ == null) {
         inputConfigs_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000020);
       } else {
         inputConfigsBuilder_.clear();
       }
@@ -700,11 +732,12 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
       result.name_ = name_;
       result.timeColumnSpecId_ = timeColumnSpecId_;
       result.rowCount_ = rowCount_;
+      result.validRowCount_ = validRowCount_;
       result.columnCount_ = columnCount_;
       if (inputConfigsBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)) {
+        if (((bitField0_ & 0x00000020) != 0)) {
           inputConfigs_ = java.util.Collections.unmodifiableList(inputConfigs_);
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000020);
         }
         result.inputConfigs_ = inputConfigs_;
       } else {
@@ -772,6 +805,9 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
       if (other.getRowCount() != 0L) {
         setRowCount(other.getRowCount());
       }
+      if (other.getValidRowCount() != 0L) {
+        setValidRowCount(other.getValidRowCount());
+      }
       if (other.getColumnCount() != 0L) {
         setColumnCount(other.getColumnCount());
       }
@@ -779,7 +815,7 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
         if (!other.inputConfigs_.isEmpty()) {
           if (inputConfigs_.isEmpty()) {
             inputConfigs_ = other.inputConfigs_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000020);
           } else {
             ensureInputConfigsIsMutable();
             inputConfigs_.addAll(other.inputConfigs_);
@@ -792,7 +828,7 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
             inputConfigsBuilder_.dispose();
             inputConfigsBuilder_ = null;
             inputConfigs_ = other.inputConfigs_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000020);
             inputConfigsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getInputConfigsFieldBuilder()
@@ -1114,6 +1150,53 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private long validRowCount_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The number of valid rows (i.e. without values that don't match
+     * DataType-s of their columns).
+     * </pre>
+     *
+     * <code>int64 valid_row_count = 4;</code>
+     */
+    public long getValidRowCount() {
+      return validRowCount_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The number of valid rows (i.e. without values that don't match
+     * DataType-s of their columns).
+     * </pre>
+     *
+     * <code>int64 valid_row_count = 4;</code>
+     */
+    public Builder setValidRowCount(long value) {
+
+      validRowCount_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The number of valid rows (i.e. without values that don't match
+     * DataType-s of their columns).
+     * </pre>
+     *
+     * <code>int64 valid_row_count = 4;</code>
+     */
+    public Builder clearValidRowCount() {
+
+      validRowCount_ = 0L;
+      onChanged();
+      return this;
+    }
+
     private long columnCount_;
     /**
      *
@@ -1165,10 +1248,10 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureInputConfigsIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         inputConfigs_ =
             new java.util.ArrayList<com.google.cloud.automl.v1beta1.InputConfig>(inputConfigs_);
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
       }
     }
 
@@ -1395,7 +1478,7 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
     public Builder clearInputConfigs() {
       if (inputConfigsBuilder_ == null) {
         inputConfigs_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
       } else {
         inputConfigsBuilder_.clear();
@@ -1525,7 +1608,7 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.automl.v1beta1.InputConfig,
                 com.google.cloud.automl.v1beta1.InputConfig.Builder,
                 com.google.cloud.automl.v1beta1.InputConfigOrBuilder>(
-                inputConfigs_, ((bitField0_ & 0x00000010) != 0), getParentForChildren(), isClean());
+                inputConfigs_, ((bitField0_ & 0x00000020) != 0), getParentForChildren(), isClean());
         inputConfigs_ = null;
       }
       return inputConfigsBuilder_;

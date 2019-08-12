@@ -217,7 +217,7 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
    * (otherwise model creation will error):
    * * CATEGORY
    * * FLOAT64
-   * Furthermore, if the type is CATEGORY , then only up to
+   * If the type is CATEGORY , only up to
    * 100 unique values may exist in that column across all rows.
    * NOTE: Updates of this field will instantly affect any other users
    * concurrently working with the dataset.
@@ -246,7 +246,7 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
    * (otherwise model creation will error):
    * * CATEGORY
    * * FLOAT64
-   * Furthermore, if the type is CATEGORY , then only up to
+   * If the type is CATEGORY , only up to
    * 100 unique values may exist in that column across all rows.
    * NOTE: Updates of this field will instantly affect any other users
    * concurrently working with the dataset.
@@ -542,11 +542,12 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The most recent timestamp when target_column_correlations field and all
-   * descendant ColumnSpec.data_stats and ColumnSpec.top_correlated_columns
-   * fields were last (re-)generated. Any changes that happened to the dataset
-   * afterwards are not reflected in these fields values. The regeneration
-   * happens in the background on a best effort basis.
+   * Output only. The most recent timestamp when target_column_correlations
+   * field and all descendant ColumnSpec.data_stats and
+   * ColumnSpec.top_correlated_columns fields were last (re-)generated. Any
+   * changes that happened to the dataset afterwards are not reflected in these
+   * fields values. The regeneration happens in the background on a best effort
+   * basis.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp stats_update_time = 7;</code>
@@ -558,11 +559,12 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The most recent timestamp when target_column_correlations field and all
-   * descendant ColumnSpec.data_stats and ColumnSpec.top_correlated_columns
-   * fields were last (re-)generated. Any changes that happened to the dataset
-   * afterwards are not reflected in these fields values. The regeneration
-   * happens in the background on a best effort basis.
+   * Output only. The most recent timestamp when target_column_correlations
+   * field and all descendant ColumnSpec.data_stats and
+   * ColumnSpec.top_correlated_columns fields were last (re-)generated. Any
+   * changes that happened to the dataset afterwards are not reflected in these
+   * fields values. The regeneration happens in the background on a best effort
+   * basis.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp stats_update_time = 7;</code>
@@ -576,11 +578,12 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The most recent timestamp when target_column_correlations field and all
-   * descendant ColumnSpec.data_stats and ColumnSpec.top_correlated_columns
-   * fields were last (re-)generated. Any changes that happened to the dataset
-   * afterwards are not reflected in these fields values. The regeneration
-   * happens in the background on a best effort basis.
+   * Output only. The most recent timestamp when target_column_correlations
+   * field and all descendant ColumnSpec.data_stats and
+   * ColumnSpec.top_correlated_columns fields were last (re-)generated. Any
+   * changes that happened to the dataset afterwards are not reflected in these
+   * fields values. The regeneration happens in the background on a best effort
+   * basis.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp stats_update_time = 7;</code>
@@ -1143,7 +1146,7 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
      * (otherwise model creation will error):
      * * CATEGORY
      * * FLOAT64
-     * Furthermore, if the type is CATEGORY , then only up to
+     * If the type is CATEGORY , only up to
      * 100 unique values may exist in that column across all rows.
      * NOTE: Updates of this field will instantly affect any other users
      * concurrently working with the dataset.
@@ -1172,7 +1175,7 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
      * (otherwise model creation will error):
      * * CATEGORY
      * * FLOAT64
-     * Furthermore, if the type is CATEGORY , then only up to
+     * If the type is CATEGORY , only up to
      * 100 unique values may exist in that column across all rows.
      * NOTE: Updates of this field will instantly affect any other users
      * concurrently working with the dataset.
@@ -1201,7 +1204,7 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
      * (otherwise model creation will error):
      * * CATEGORY
      * * FLOAT64
-     * Furthermore, if the type is CATEGORY , then only up to
+     * If the type is CATEGORY , only up to
      * 100 unique values may exist in that column across all rows.
      * NOTE: Updates of this field will instantly affect any other users
      * concurrently working with the dataset.
@@ -1228,7 +1231,7 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
      * (otherwise model creation will error):
      * * CATEGORY
      * * FLOAT64
-     * Furthermore, if the type is CATEGORY , then only up to
+     * If the type is CATEGORY , only up to
      * 100 unique values may exist in that column across all rows.
      * NOTE: Updates of this field will instantly affect any other users
      * concurrently working with the dataset.
@@ -1252,7 +1255,7 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
      * (otherwise model creation will error):
      * * CATEGORY
      * * FLOAT64
-     * Furthermore, if the type is CATEGORY , then only up to
+     * If the type is CATEGORY , only up to
      * 100 unique values may exist in that column across all rows.
      * NOTE: Updates of this field will instantly affect any other users
      * concurrently working with the dataset.
@@ -1800,11 +1803,12 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The most recent timestamp when target_column_correlations field and all
-     * descendant ColumnSpec.data_stats and ColumnSpec.top_correlated_columns
-     * fields were last (re-)generated. Any changes that happened to the dataset
-     * afterwards are not reflected in these fields values. The regeneration
-     * happens in the background on a best effort basis.
+     * Output only. The most recent timestamp when target_column_correlations
+     * field and all descendant ColumnSpec.data_stats and
+     * ColumnSpec.top_correlated_columns fields were last (re-)generated. Any
+     * changes that happened to the dataset afterwards are not reflected in these
+     * fields values. The regeneration happens in the background on a best effort
+     * basis.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp stats_update_time = 7;</code>
@@ -1816,11 +1820,12 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The most recent timestamp when target_column_correlations field and all
-     * descendant ColumnSpec.data_stats and ColumnSpec.top_correlated_columns
-     * fields were last (re-)generated. Any changes that happened to the dataset
-     * afterwards are not reflected in these fields values. The regeneration
-     * happens in the background on a best effort basis.
+     * Output only. The most recent timestamp when target_column_correlations
+     * field and all descendant ColumnSpec.data_stats and
+     * ColumnSpec.top_correlated_columns fields were last (re-)generated. Any
+     * changes that happened to the dataset afterwards are not reflected in these
+     * fields values. The regeneration happens in the background on a best effort
+     * basis.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp stats_update_time = 7;</code>
@@ -1838,11 +1843,12 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The most recent timestamp when target_column_correlations field and all
-     * descendant ColumnSpec.data_stats and ColumnSpec.top_correlated_columns
-     * fields were last (re-)generated. Any changes that happened to the dataset
-     * afterwards are not reflected in these fields values. The regeneration
-     * happens in the background on a best effort basis.
+     * Output only. The most recent timestamp when target_column_correlations
+     * field and all descendant ColumnSpec.data_stats and
+     * ColumnSpec.top_correlated_columns fields were last (re-)generated. Any
+     * changes that happened to the dataset afterwards are not reflected in these
+     * fields values. The regeneration happens in the background on a best effort
+     * basis.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp stats_update_time = 7;</code>
@@ -1864,11 +1870,12 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The most recent timestamp when target_column_correlations field and all
-     * descendant ColumnSpec.data_stats and ColumnSpec.top_correlated_columns
-     * fields were last (re-)generated. Any changes that happened to the dataset
-     * afterwards are not reflected in these fields values. The regeneration
-     * happens in the background on a best effort basis.
+     * Output only. The most recent timestamp when target_column_correlations
+     * field and all descendant ColumnSpec.data_stats and
+     * ColumnSpec.top_correlated_columns fields were last (re-)generated. Any
+     * changes that happened to the dataset afterwards are not reflected in these
+     * fields values. The regeneration happens in the background on a best effort
+     * basis.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp stats_update_time = 7;</code>
@@ -1887,11 +1894,12 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The most recent timestamp when target_column_correlations field and all
-     * descendant ColumnSpec.data_stats and ColumnSpec.top_correlated_columns
-     * fields were last (re-)generated. Any changes that happened to the dataset
-     * afterwards are not reflected in these fields values. The regeneration
-     * happens in the background on a best effort basis.
+     * Output only. The most recent timestamp when target_column_correlations
+     * field and all descendant ColumnSpec.data_stats and
+     * ColumnSpec.top_correlated_columns fields were last (re-)generated. Any
+     * changes that happened to the dataset afterwards are not reflected in these
+     * fields values. The regeneration happens in the background on a best effort
+     * basis.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp stats_update_time = 7;</code>
@@ -1917,11 +1925,12 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The most recent timestamp when target_column_correlations field and all
-     * descendant ColumnSpec.data_stats and ColumnSpec.top_correlated_columns
-     * fields were last (re-)generated. Any changes that happened to the dataset
-     * afterwards are not reflected in these fields values. The regeneration
-     * happens in the background on a best effort basis.
+     * Output only. The most recent timestamp when target_column_correlations
+     * field and all descendant ColumnSpec.data_stats and
+     * ColumnSpec.top_correlated_columns fields were last (re-)generated. Any
+     * changes that happened to the dataset afterwards are not reflected in these
+     * fields values. The regeneration happens in the background on a best effort
+     * basis.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp stats_update_time = 7;</code>
@@ -1941,11 +1950,12 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The most recent timestamp when target_column_correlations field and all
-     * descendant ColumnSpec.data_stats and ColumnSpec.top_correlated_columns
-     * fields were last (re-)generated. Any changes that happened to the dataset
-     * afterwards are not reflected in these fields values. The regeneration
-     * happens in the background on a best effort basis.
+     * Output only. The most recent timestamp when target_column_correlations
+     * field and all descendant ColumnSpec.data_stats and
+     * ColumnSpec.top_correlated_columns fields were last (re-)generated. Any
+     * changes that happened to the dataset afterwards are not reflected in these
+     * fields values. The regeneration happens in the background on a best effort
+     * basis.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp stats_update_time = 7;</code>
@@ -1959,11 +1969,12 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The most recent timestamp when target_column_correlations field and all
-     * descendant ColumnSpec.data_stats and ColumnSpec.top_correlated_columns
-     * fields were last (re-)generated. Any changes that happened to the dataset
-     * afterwards are not reflected in these fields values. The regeneration
-     * happens in the background on a best effort basis.
+     * Output only. The most recent timestamp when target_column_correlations
+     * field and all descendant ColumnSpec.data_stats and
+     * ColumnSpec.top_correlated_columns fields were last (re-)generated. Any
+     * changes that happened to the dataset afterwards are not reflected in these
+     * fields values. The regeneration happens in the background on a best effort
+     * basis.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp stats_update_time = 7;</code>
@@ -1981,11 +1992,12 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The most recent timestamp when target_column_correlations field and all
-     * descendant ColumnSpec.data_stats and ColumnSpec.top_correlated_columns
-     * fields were last (re-)generated. Any changes that happened to the dataset
-     * afterwards are not reflected in these fields values. The regeneration
-     * happens in the background on a best effort basis.
+     * Output only. The most recent timestamp when target_column_correlations
+     * field and all descendant ColumnSpec.data_stats and
+     * ColumnSpec.top_correlated_columns fields were last (re-)generated. Any
+     * changes that happened to the dataset afterwards are not reflected in these
+     * fields values. The regeneration happens in the background on a best effort
+     * basis.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp stats_update_time = 7;</code>

@@ -1011,8 +1011,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only.
-   * Resource name of the model.
+   * Output only. Resource name of the model.
    * Format: `projects/{project_id}/locations/{location_id}/models/{model_id}`
    * </pre>
    *
@@ -1033,8 +1032,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only.
-   * Resource name of the model.
+   * Output only. Resource name of the model.
    * Format: `projects/{project_id}/locations/{location_id}/models/{model_id}`
    * </pre>
    *
@@ -1107,8 +1105,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required.
-   * The resource ID of the dataset used to create the model. The dataset must
+   * Required. The resource ID of the dataset used to create the model. The dataset must
    * come from the same ancestor project and location.
    * </pre>
    *
@@ -1129,8 +1126,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required.
-   * The resource ID of the dataset used to create the model. The dataset must
+   * Required. The resource ID of the dataset used to create the model. The dataset must
    * come from the same ancestor project and location.
    * </pre>
    *
@@ -1154,8 +1150,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only.
-   * Timestamp when the model training finished  and can be used for prediction.
+   * Output only. Timestamp when the model training finished  and can be used for prediction.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 7;</code>
@@ -1167,8 +1162,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only.
-   * Timestamp when the model training finished  and can be used for prediction.
+   * Output only. Timestamp when the model training finished  and can be used for prediction.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 7;</code>
@@ -1180,8 +1174,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only.
-   * Timestamp when the model training finished  and can be used for prediction.
+   * Output only. Timestamp when the model training finished  and can be used for prediction.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 7;</code>
@@ -1196,8 +1189,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only.
-   * Timestamp when this model was last updated.
+   * Output only. Timestamp when this model was last updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 11;</code>
@@ -1209,8 +1201,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only.
-   * Timestamp when this model was last updated.
+   * Output only. Timestamp when this model was last updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 11;</code>
@@ -1222,8 +1213,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only.
-   * Timestamp when this model was last updated.
+   * Output only. Timestamp when this model was last updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 11;</code>
@@ -4025,8 +4015,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only.
-     * Resource name of the model.
+     * Output only. Resource name of the model.
      * Format: `projects/{project_id}/locations/{location_id}/models/{model_id}`
      * </pre>
      *
@@ -4047,8 +4036,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only.
-     * Resource name of the model.
+     * Output only. Resource name of the model.
      * Format: `projects/{project_id}/locations/{location_id}/models/{model_id}`
      * </pre>
      *
@@ -4069,8 +4057,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only.
-     * Resource name of the model.
+     * Output only. Resource name of the model.
      * Format: `projects/{project_id}/locations/{location_id}/models/{model_id}`
      * </pre>
      *
@@ -4089,8 +4076,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only.
-     * Resource name of the model.
+     * Output only. Resource name of the model.
      * Format: `projects/{project_id}/locations/{location_id}/models/{model_id}`
      * </pre>
      *
@@ -4106,8 +4092,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only.
-     * Resource name of the model.
+     * Output only. Resource name of the model.
      * Format: `projects/{project_id}/locations/{location_id}/models/{model_id}`
      * </pre>
      *
@@ -4238,8 +4223,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required.
-     * The resource ID of the dataset used to create the model. The dataset must
+     * Required. The resource ID of the dataset used to create the model. The dataset must
      * come from the same ancestor project and location.
      * </pre>
      *
@@ -4260,8 +4244,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required.
-     * The resource ID of the dataset used to create the model. The dataset must
+     * Required. The resource ID of the dataset used to create the model. The dataset must
      * come from the same ancestor project and location.
      * </pre>
      *
@@ -4282,8 +4265,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required.
-     * The resource ID of the dataset used to create the model. The dataset must
+     * Required. The resource ID of the dataset used to create the model. The dataset must
      * come from the same ancestor project and location.
      * </pre>
      *
@@ -4302,8 +4284,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required.
-     * The resource ID of the dataset used to create the model. The dataset must
+     * Required. The resource ID of the dataset used to create the model. The dataset must
      * come from the same ancestor project and location.
      * </pre>
      *
@@ -4319,8 +4300,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required.
-     * The resource ID of the dataset used to create the model. The dataset must
+     * Required. The resource ID of the dataset used to create the model. The dataset must
      * come from the same ancestor project and location.
      * </pre>
      *
@@ -4347,8 +4327,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only.
-     * Timestamp when the model training finished  and can be used for prediction.
+     * Output only. Timestamp when the model training finished  and can be used for prediction.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 7;</code>
@@ -4360,8 +4339,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only.
-     * Timestamp when the model training finished  and can be used for prediction.
+     * Output only. Timestamp when the model training finished  and can be used for prediction.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 7;</code>
@@ -4379,8 +4357,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only.
-     * Timestamp when the model training finished  and can be used for prediction.
+     * Output only. Timestamp when the model training finished  and can be used for prediction.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 7;</code>
@@ -4402,8 +4379,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only.
-     * Timestamp when the model training finished  and can be used for prediction.
+     * Output only. Timestamp when the model training finished  and can be used for prediction.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 7;</code>
@@ -4422,8 +4398,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only.
-     * Timestamp when the model training finished  and can be used for prediction.
+     * Output only. Timestamp when the model training finished  and can be used for prediction.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 7;</code>
@@ -4447,8 +4422,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only.
-     * Timestamp when the model training finished  and can be used for prediction.
+     * Output only. Timestamp when the model training finished  and can be used for prediction.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 7;</code>
@@ -4468,8 +4442,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only.
-     * Timestamp when the model training finished  and can be used for prediction.
+     * Output only. Timestamp when the model training finished  and can be used for prediction.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 7;</code>
@@ -4483,8 +4456,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only.
-     * Timestamp when the model training finished  and can be used for prediction.
+     * Output only. Timestamp when the model training finished  and can be used for prediction.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 7;</code>
@@ -4502,8 +4474,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only.
-     * Timestamp when the model training finished  and can be used for prediction.
+     * Output only. Timestamp when the model training finished  and can be used for prediction.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 7;</code>
@@ -4535,8 +4506,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only.
-     * Timestamp when this model was last updated.
+     * Output only. Timestamp when this model was last updated.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 11;</code>
@@ -4548,8 +4518,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only.
-     * Timestamp when this model was last updated.
+     * Output only. Timestamp when this model was last updated.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 11;</code>
@@ -4567,8 +4536,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only.
-     * Timestamp when this model was last updated.
+     * Output only. Timestamp when this model was last updated.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 11;</code>
@@ -4590,8 +4558,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only.
-     * Timestamp when this model was last updated.
+     * Output only. Timestamp when this model was last updated.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 11;</code>
@@ -4610,8 +4577,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only.
-     * Timestamp when this model was last updated.
+     * Output only. Timestamp when this model was last updated.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 11;</code>
@@ -4635,8 +4601,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only.
-     * Timestamp when this model was last updated.
+     * Output only. Timestamp when this model was last updated.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 11;</code>
@@ -4656,8 +4621,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only.
-     * Timestamp when this model was last updated.
+     * Output only. Timestamp when this model was last updated.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 11;</code>
@@ -4671,8 +4635,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only.
-     * Timestamp when this model was last updated.
+     * Output only. Timestamp when this model was last updated.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 11;</code>
@@ -4690,8 +4653,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only.
-     * Timestamp when this model was last updated.
+     * Output only. Timestamp when this model was last updated.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 11;</code>

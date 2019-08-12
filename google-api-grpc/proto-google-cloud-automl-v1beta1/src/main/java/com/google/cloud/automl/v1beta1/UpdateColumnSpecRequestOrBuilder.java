@@ -43,11 +43,7 @@ public interface UpdateColumnSpecRequestOrBuilder
    *
    *
    * <pre>
-   * The update mask applies to the resource. For the `FieldMask` definition,
-   * see
-   * https:
-   * //developers.google.com/protocol-buffers
-   * // /docs/reference/google.protobuf#fieldmask
+   * The update mask applies to the resource.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -57,11 +53,7 @@ public interface UpdateColumnSpecRequestOrBuilder
    *
    *
    * <pre>
-   * The update mask applies to the resource. For the `FieldMask` definition,
-   * see
-   * https:
-   * //developers.google.com/protocol-buffers
-   * // /docs/reference/google.protobuf#fieldmask
+   * The update mask applies to the resource.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -71,11 +63,7 @@ public interface UpdateColumnSpecRequestOrBuilder
    *
    *
    * <pre>
-   * The update mask applies to the resource. For the `FieldMask` definition,
-   * see
-   * https:
-   * //developers.google.com/protocol-buffers
-   * // /docs/reference/google.protobuf#fieldmask
+   * The update mask applies to the resource.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>

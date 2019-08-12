@@ -13,10 +13,10 @@ package com.google.cloud.automl.v1beta1;
  * [gcs_source][google.cloud.automl.v1beta1.InputConfig.gcs_source]
  * is expected, unless specified otherwise. Additionally any input .CSV file
  * by itself must be 100MB or smaller, unless specified otherwise.
- * If an "example" file (i.e. image, video etc.) with identical content
+ * If an "example" file (that is, image, video etc.) with identical content
  * (even if it had different GCS_FILE_PATH) is mentioned multiple times, then
  * its label, bounding boxes etc. are appended. The same file should be always
- * provided with the same ML_USE and GCS_FILE_PATH, if it is not then
+ * provided with the same ML_USE and GCS_FILE_PATH, if it is not, then
  * these values are nondeterministically selected from the given ones.
  * The formats are represented in EBNF with commas being literal and with
  * non-terminal symbols defined near the end of this comment. The formats are:
@@ -43,12 +43,16 @@ package com.google.cloud.automl.v1beta1;
  *           BOUNDING_BOX-es per image are allowed (one BOUNDING_BOX is defined
  *           per line). If an image has not yet been labeled, then it should be
  *           mentioned just once with no LABEL and the ",,,,,,," in place of the
+ *           BOUNDING_BOX. For images which are known to not contain any
+ *           bounding boxes, they should be labelled explictly as
+ *           "NEGATIVE_IMAGE", followed by ",,,,,,," in place of the
  *           BOUNDING_BOX.
- *         Four sample rows:
+ *         Sample rows:
  *           TRAIN,gs://folder/image1.png,car,0.1,0.1,,,0.3,0.3,,
  *           TRAIN,gs://folder/image1.png,bike,.7,.6,,,.8,.9,,
  *           UNASSIGNED,gs://folder/im2.png,car,0.1,0.1,0.2,0.1,0.2,0.3,0.1,0.3
  *           TEST,gs://folder/im3.png,,,,,,,,,
+ *           TRAIN,gs://folder/im4.png,NEGATIVE_IMAGE,,,,,,,,,
  *  *  For Video Classification:
  *         CSV file(s) with each line in format:
  *           ML_USE,GCS_FILE_PATH
@@ -111,21 +115,21 @@ package com.google.cloud.automl.v1beta1;
  *  *  For Text Extraction:
  *         CSV file(s) with each line in format:
  *           ML_USE,GCS_FILE_PATH
- *           GCS_FILE_PATH leads to a .JSONL (i.e. JSON Lines) file which either
- *           imports text in-line or as documents.
+ *           GCS_FILE_PATH leads to a .JSONL (that is, JSON Lines) file which
+ *           either imports text in-line or as documents.
  *           The in-line .JSONL file contains, per line, a proto that wraps a
- *             TextSnippet proto (in json representation) followed by one or
- *             more AnnotationPayload protos (called annotations), which have
- *             display_name and text_extraction detail populated.
- *             The given text is expected to be annotated exhaustively, e.g. if
- *             you look for animals and text contains "dolphin" that is not
- *             labeled, then "dolphin" will be assumed to not be an animal. Any
- *             given text snippet content must have 30,000 characters or less,
- *             and also be UTF-8 NFC encoded (ASCII already is).           The document .JSONL file contains, per line, a proto that wraps a
- *             Document proto with input_config set. Only PDF documents are
- *             supported now, and each document may be up to 2MB large.
- *             Currently annotations on documents cannot be specified at import.
- *           Any given .JSONL file must be 100MB or smaller.
+ *           TextSnippet proto (in json representation) followed by one or more
+ *           AnnotationPayload protos (called annotations), which have
+ *           display_name and text_extraction detail populated. The given text
+ *           is expected to be annotated exhaustively, for example, if you look
+ *           for animals and text contains "dolphin" that is not labeled, then
+ *           "dolphin" is assumed to not be an animal. Any given text snippet
+ *           content must have 30,000 characters or less,  and also be UTF-8 NFC
+ *           encoded (ASCII already is).           The document .JSONL file contains, per line, a proto that wraps a
+ *           Document proto with input_config set. Only PDF documents are
+ *           supported now, and each document may be up to 2MB large. Currently
+ *           annotations on documents cannot be specified at import. Any given
+ *           .JSONL file must be 100MB or smaller.
  *         Three sample CSV rows:
  *           TRAIN,gs://folder/file1.jsonl
  *           VALIDATE,gs://folder/file2.jsonl
@@ -194,41 +198,41 @@ package com.google.cloud.automl.v1beta1;
  *           TEXT_SNIPPET and GCS_FILE_PATH are distinguished by a pattern. If
  *           the column content is a valid gcs file path, i.e. prefixed by
  *           "gs://", it will be treated as a GCS_FILE_PATH, else if the content
- *           is enclosed within double quotes (""), it will
- *           be treated as a TEXT_SNIPPET. In the GCS_FILE_PATH case, the path
- *           must lead to a .txt file with UTF-8 encoding, e.g.
- *           "gs://folder/content.txt", and the content in it will be extracted
+ *           is enclosed within double quotes (""), it is
+ *           treated as a TEXT_SNIPPET. In the GCS_FILE_PATH case, the path
+ *           must lead to a .txt file with UTF-8 encoding, for example,
+ *           "gs://folder/content.txt", and the content in it is extracted
  *           as a text snippet. In TEXT_SNIPPET case, the column content
- *           excluding quotes will be treated as to be imported text snippet. In
+ *           excluding quotes is treated as to be imported text snippet. In
  *           both cases, the text snippet/file size must be within 128kB.
  *           Maximum 100 unique labels are allowed per CSV row.
- *         Four sample rows:
- *         TRAIN,"They have bad food and very rude",RudeService,BadFood
- *         TRAIN,gs://folder/content.txt,SlowService
- *         TEST,"Typically always bad service there.",RudeService
- *         VALIDATE,"Stomach ache to go.",BadFood
+ *         Sample rows:
+ *           TRAIN,"They have bad food and very rude",RudeService,BadFood
+ *           TRAIN,gs://folder/content.txt,SlowService
+ *           TEST,"Typically always bad service there.",RudeService
+ *           VALIDATE,"Stomach ache to go.",BadFood
  *  *  For Text Sentiment:
  *         CSV file(s) with each line in format:
  *           ML_USE,(TEXT_SNIPPET | GCS_FILE_PATH),SENTIMENT
  *           TEXT_SNIPPET and GCS_FILE_PATH are distinguished by a pattern. If
- *           the column content is a valid gcs file path, i.e. prefixed by
- *           "gs://", it will be treated as a GCS_FILE_PATH, otherwise it will
- *           be treated as a TEXT_SNIPPET. In the GCS_FILE_PATH case, the path
- *           must lead to a .txt file with UTF-8 encoding, e.g.
- *           "gs://folder/content.txt", and the content in it will be extracted
+ *           the column content is a valid gcs file path, that is, prefixed by
+ *           "gs://", it is treated as a GCS_FILE_PATH, otherwise it is treated
+ *           as a TEXT_SNIPPET. In the GCS_FILE_PATH case, the path
+ *           must lead to a .txt file with UTF-8 encoding, for example,
+ *           "gs://folder/content.txt", and the content in it is extracted
  *           as a text snippet. In TEXT_SNIPPET case, the column content itself
- *           will be treated as to be imported text snippet. In both cases, the
+ *           is treated as to be imported text snippet. In both cases, the
  *           text snippet must be up to 500 characters long.
- *         Four sample rows:
- *         TRAIN,"&#64;freewrytin God is way too good for Claritin",2
- *         TRAIN,"I need Claritin so bad",3
- *         TEST,"Thank god for Claritin.",4
- *         VALIDATE,gs://folder/content.txt,2
+ *         Sample rows:
+ *           TRAIN,"&#64;freewrytin this is way too good for your product",2
+ *           TRAIN,"I need this product so bad",3
+ *           TEST,"Thank you for this product.",4
+ *           VALIDATE,gs://folder/content.txt,2
  *   *  For Tables:
  *         Either
  *         [gcs_source][google.cloud.automl.v1beta1.InputConfig.gcs_source] or
  * [bigquery_source][google.cloud.automl.v1beta1.InputConfig.bigquery_source]
- *         can be used. All inputs will be concatenated into a single
+ *         can be used. All inputs is concatenated into a single
  * [primary_table][google.cloud.automl.v1beta1.TablesDatasetMetadata.primary_table_name]
  *         For gcs_source:
  *           CSV file(s), where the first row of the first file is the header,
@@ -305,7 +309,7 @@ package com.google.cloud.automl.v1beta1;
  *  If any of the provided CSV files can't be parsed or if more than certain
  *  percent of CSV rows cannot be processed then the operation fails and
  *  nothing is imported. Regardless of overall success or failure the per-row
- *  failures, up to a certain count cap, will be listed in
+ *  failures, up to a certain count cap, is listed in
  *  Operation.metadata.partial_failures.
  * </pre>
  *
@@ -909,10 +913,10 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    * [gcs_source][google.cloud.automl.v1beta1.InputConfig.gcs_source]
    * is expected, unless specified otherwise. Additionally any input .CSV file
    * by itself must be 100MB or smaller, unless specified otherwise.
-   * If an "example" file (i.e. image, video etc.) with identical content
+   * If an "example" file (that is, image, video etc.) with identical content
    * (even if it had different GCS_FILE_PATH) is mentioned multiple times, then
    * its label, bounding boxes etc. are appended. The same file should be always
-   * provided with the same ML_USE and GCS_FILE_PATH, if it is not then
+   * provided with the same ML_USE and GCS_FILE_PATH, if it is not, then
    * these values are nondeterministically selected from the given ones.
    * The formats are represented in EBNF with commas being literal and with
    * non-terminal symbols defined near the end of this comment. The formats are:
@@ -939,12 +943,16 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *           BOUNDING_BOX-es per image are allowed (one BOUNDING_BOX is defined
    *           per line). If an image has not yet been labeled, then it should be
    *           mentioned just once with no LABEL and the ",,,,,,," in place of the
+   *           BOUNDING_BOX. For images which are known to not contain any
+   *           bounding boxes, they should be labelled explictly as
+   *           "NEGATIVE_IMAGE", followed by ",,,,,,," in place of the
    *           BOUNDING_BOX.
-   *         Four sample rows:
+   *         Sample rows:
    *           TRAIN,gs://folder/image1.png,car,0.1,0.1,,,0.3,0.3,,
    *           TRAIN,gs://folder/image1.png,bike,.7,.6,,,.8,.9,,
    *           UNASSIGNED,gs://folder/im2.png,car,0.1,0.1,0.2,0.1,0.2,0.3,0.1,0.3
    *           TEST,gs://folder/im3.png,,,,,,,,,
+   *           TRAIN,gs://folder/im4.png,NEGATIVE_IMAGE,,,,,,,,,
    *  *  For Video Classification:
    *         CSV file(s) with each line in format:
    *           ML_USE,GCS_FILE_PATH
@@ -1007,21 +1015,21 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *  *  For Text Extraction:
    *         CSV file(s) with each line in format:
    *           ML_USE,GCS_FILE_PATH
-   *           GCS_FILE_PATH leads to a .JSONL (i.e. JSON Lines) file which either
-   *           imports text in-line or as documents.
+   *           GCS_FILE_PATH leads to a .JSONL (that is, JSON Lines) file which
+   *           either imports text in-line or as documents.
    *           The in-line .JSONL file contains, per line, a proto that wraps a
-   *             TextSnippet proto (in json representation) followed by one or
-   *             more AnnotationPayload protos (called annotations), which have
-   *             display_name and text_extraction detail populated.
-   *             The given text is expected to be annotated exhaustively, e.g. if
-   *             you look for animals and text contains "dolphin" that is not
-   *             labeled, then "dolphin" will be assumed to not be an animal. Any
-   *             given text snippet content must have 30,000 characters or less,
-   *             and also be UTF-8 NFC encoded (ASCII already is).           The document .JSONL file contains, per line, a proto that wraps a
-   *             Document proto with input_config set. Only PDF documents are
-   *             supported now, and each document may be up to 2MB large.
-   *             Currently annotations on documents cannot be specified at import.
-   *           Any given .JSONL file must be 100MB or smaller.
+   *           TextSnippet proto (in json representation) followed by one or more
+   *           AnnotationPayload protos (called annotations), which have
+   *           display_name and text_extraction detail populated. The given text
+   *           is expected to be annotated exhaustively, for example, if you look
+   *           for animals and text contains "dolphin" that is not labeled, then
+   *           "dolphin" is assumed to not be an animal. Any given text snippet
+   *           content must have 30,000 characters or less,  and also be UTF-8 NFC
+   *           encoded (ASCII already is).           The document .JSONL file contains, per line, a proto that wraps a
+   *           Document proto with input_config set. Only PDF documents are
+   *           supported now, and each document may be up to 2MB large. Currently
+   *           annotations on documents cannot be specified at import. Any given
+   *           .JSONL file must be 100MB or smaller.
    *         Three sample CSV rows:
    *           TRAIN,gs://folder/file1.jsonl
    *           VALIDATE,gs://folder/file2.jsonl
@@ -1090,41 +1098,41 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *           TEXT_SNIPPET and GCS_FILE_PATH are distinguished by a pattern. If
    *           the column content is a valid gcs file path, i.e. prefixed by
    *           "gs://", it will be treated as a GCS_FILE_PATH, else if the content
-   *           is enclosed within double quotes (""), it will
-   *           be treated as a TEXT_SNIPPET. In the GCS_FILE_PATH case, the path
-   *           must lead to a .txt file with UTF-8 encoding, e.g.
-   *           "gs://folder/content.txt", and the content in it will be extracted
+   *           is enclosed within double quotes (""), it is
+   *           treated as a TEXT_SNIPPET. In the GCS_FILE_PATH case, the path
+   *           must lead to a .txt file with UTF-8 encoding, for example,
+   *           "gs://folder/content.txt", and the content in it is extracted
    *           as a text snippet. In TEXT_SNIPPET case, the column content
-   *           excluding quotes will be treated as to be imported text snippet. In
+   *           excluding quotes is treated as to be imported text snippet. In
    *           both cases, the text snippet/file size must be within 128kB.
    *           Maximum 100 unique labels are allowed per CSV row.
-   *         Four sample rows:
-   *         TRAIN,"They have bad food and very rude",RudeService,BadFood
-   *         TRAIN,gs://folder/content.txt,SlowService
-   *         TEST,"Typically always bad service there.",RudeService
-   *         VALIDATE,"Stomach ache to go.",BadFood
+   *         Sample rows:
+   *           TRAIN,"They have bad food and very rude",RudeService,BadFood
+   *           TRAIN,gs://folder/content.txt,SlowService
+   *           TEST,"Typically always bad service there.",RudeService
+   *           VALIDATE,"Stomach ache to go.",BadFood
    *  *  For Text Sentiment:
    *         CSV file(s) with each line in format:
    *           ML_USE,(TEXT_SNIPPET | GCS_FILE_PATH),SENTIMENT
    *           TEXT_SNIPPET and GCS_FILE_PATH are distinguished by a pattern. If
-   *           the column content is a valid gcs file path, i.e. prefixed by
-   *           "gs://", it will be treated as a GCS_FILE_PATH, otherwise it will
-   *           be treated as a TEXT_SNIPPET. In the GCS_FILE_PATH case, the path
-   *           must lead to a .txt file with UTF-8 encoding, e.g.
-   *           "gs://folder/content.txt", and the content in it will be extracted
+   *           the column content is a valid gcs file path, that is, prefixed by
+   *           "gs://", it is treated as a GCS_FILE_PATH, otherwise it is treated
+   *           as a TEXT_SNIPPET. In the GCS_FILE_PATH case, the path
+   *           must lead to a .txt file with UTF-8 encoding, for example,
+   *           "gs://folder/content.txt", and the content in it is extracted
    *           as a text snippet. In TEXT_SNIPPET case, the column content itself
-   *           will be treated as to be imported text snippet. In both cases, the
+   *           is treated as to be imported text snippet. In both cases, the
    *           text snippet must be up to 500 characters long.
-   *         Four sample rows:
-   *         TRAIN,"&#64;freewrytin God is way too good for Claritin",2
-   *         TRAIN,"I need Claritin so bad",3
-   *         TEST,"Thank god for Claritin.",4
-   *         VALIDATE,gs://folder/content.txt,2
+   *         Sample rows:
+   *           TRAIN,"&#64;freewrytin this is way too good for your product",2
+   *           TRAIN,"I need this product so bad",3
+   *           TEST,"Thank you for this product.",4
+   *           VALIDATE,gs://folder/content.txt,2
    *   *  For Tables:
    *         Either
    *         [gcs_source][google.cloud.automl.v1beta1.InputConfig.gcs_source] or
    * [bigquery_source][google.cloud.automl.v1beta1.InputConfig.bigquery_source]
-   *         can be used. All inputs will be concatenated into a single
+   *         can be used. All inputs is concatenated into a single
    * [primary_table][google.cloud.automl.v1beta1.TablesDatasetMetadata.primary_table_name]
    *         For gcs_source:
    *           CSV file(s), where the first row of the first file is the header,
@@ -1201,7 +1209,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *  If any of the provided CSV files can't be parsed or if more than certain
    *  percent of CSV rows cannot be processed then the operation fails and
    *  nothing is imported. Regardless of overall success or failure the per-row
-   *  failures, up to a certain count cap, will be listed in
+   *  failures, up to a certain count cap, is listed in
    *  Operation.metadata.partial_failures.
    * </pre>
    *
