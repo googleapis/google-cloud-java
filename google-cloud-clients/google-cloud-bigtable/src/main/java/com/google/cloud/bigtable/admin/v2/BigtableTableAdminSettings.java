@@ -48,6 +48,9 @@ import javax.annotation.Nullable;
  * }</pre>
  */
 public final class BigtableTableAdminSettings {
+
+  private static final String BIGTABLE_EMULATOR_HOST_ENV_VAR = "BIGTABLE_EMULATOR_HOST";
+
   private final String projectId;
   private final String instanceId;
   private final BigtableTableAdminStubSettings stubSettings;
@@ -89,14 +92,53 @@ public final class BigtableTableAdminSettings {
     return new Builder();
   }
 
-  /** Create a new builder preconfigured to connect to the Bigtable emulator. */
+  /**
+   * Create a new builder preconfigured to connect to Bigtable emulator when hostname and port
+   * number are provided through BIGTABLE_EMULATOR_HOST environment variable.
+   */
+  public static Builder newBuilderForEmulator() {
+    String emulatorHostAndPort = System.getProperty(BIGTABLE_EMULATOR_HOST_ENV_VAR);
+    Preconditions.checkState(
+        emulatorHostAndPort != null,
+        "BIGTABLE_EMULATOR_HOST not found in environment variable. Please use "
+            + "newBuilderForEmulator(hostname, port)");
+
+    String[] hostPort = emulatorHostAndPort.split(":");
+    Preconditions.checkArgument(
+        hostPort.length == 2,
+        "Malformed "
+            + BIGTABLE_EMULATOR_HOST_ENV_VAR
+            + " environment variable: "
+            + emulatorHostAndPort
+            + ". Expecting host:port.");
+    int port;
+    try {
+      port = Integer.parseInt(hostPort[1]);
+    } catch (NumberFormatException e) {
+      throw new RuntimeException(
+          "Invalid port in "
+              + BIGTABLE_EMULATOR_HOST_ENV_VAR
+              + " environment variable: "
+              + emulatorHostAndPort);
+    }
+    return newBuilderForEmulator(hostPort[0], port);
+  }
+
+  /** Create a new builder preconfigured to connect to the Bigtable emulator with port number. */
   public static Builder newBuilderForEmulator(int port) {
+    return newBuilderForEmulator("localhost", port);
+  }
+
+  /**
+   * Create a new builder preconfigured to connect to the Bigtable emulator with host & port number.
+   */
+  public static Builder newBuilderForEmulator(String hostname, int port) {
     Builder builder = newBuilder().setProjectId("fake-project").setInstanceId("fake-instance");
 
     builder
         .stubSettings()
         .setCredentialsProvider(NoCredentialsProvider.create())
-        .setEndpoint("localhost:" + port)
+        .setEndpoint(hostname + ":" + port)
         .setTransportChannelProvider(
             InstantiatingGrpcChannelProvider.newBuilder()
                 .setPoolSize(1)

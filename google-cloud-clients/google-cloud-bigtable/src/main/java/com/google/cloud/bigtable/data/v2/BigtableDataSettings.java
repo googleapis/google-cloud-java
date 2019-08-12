@@ -23,6 +23,7 @@ import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStubSettings;
+import com.google.common.base.Preconditions;
 import io.grpc.ManagedChannelBuilder;
 import javax.annotation.Nonnull;
 
@@ -55,6 +56,9 @@ import javax.annotation.Nonnull;
  * EnhancedBigtableStubSettings}, which is exposed as {@link Builder#stubSettings()}.
  */
 public final class BigtableDataSettings {
+
+  private static final String BIGTABLE_EMULATOR_HOST_ENV_VAR = "BIGTABLE_EMULATOR_HOST";
+
   private final EnhancedBigtableStubSettings stubSettings;
 
   private BigtableDataSettings(Builder builder) {
@@ -66,8 +70,47 @@ public final class BigtableDataSettings {
     return new Builder();
   }
 
-  /** Create a new builder preconfigured to connect to the Bigtable emulator. */
+  /**
+   * Create a new builder preconfigured to connect to Bigtable emulator when hostname and port
+   * number are provided through BIGTABLE_EMULATOR_HOST environment variable.
+   */
+  public static Builder newBuilderForEmulator() {
+    String emulatorHostAndPort = System.getProperty(BIGTABLE_EMULATOR_HOST_ENV_VAR);
+    Preconditions.checkState(
+        emulatorHostAndPort != null,
+        "BIGTABLE_EMULATOR_HOST environment variable not found, Please use "
+            + "newBuilderForEmulator(hostname, port)");
+
+    String[] hostPort = emulatorHostAndPort.split(":");
+    Preconditions.checkArgument(
+        hostPort.length == 2,
+        "Malformed "
+            + BIGTABLE_EMULATOR_HOST_ENV_VAR
+            + " environment variable: "
+            + emulatorHostAndPort
+            + ". Expecting host:port.");
+    int port;
+    try {
+      port = Integer.parseInt(hostPort[1]);
+    } catch (NumberFormatException e) {
+      throw new RuntimeException(
+          "Invalid port in "
+              + BIGTABLE_EMULATOR_HOST_ENV_VAR
+              + " environment variable: "
+              + emulatorHostAndPort);
+    }
+    return newBuilderForEmulator(hostPort[0], port);
+  }
+
+  /** Create a new builder preconfigured to connect to the Bigtable emulator with port number. */
   public static Builder newBuilderForEmulator(int port) {
+    return newBuilderForEmulator("localhost", port);
+  }
+
+  /**
+   * Create a new builder preconfigured to connect to the Bigtable emulator with o host & port name.
+   */
+  public static Builder newBuilderForEmulator(String hostname, int port) {
     Builder builder = newBuilder();
 
     builder
@@ -75,7 +118,7 @@ public final class BigtableDataSettings {
         .setProjectId("fake-project")
         .setInstanceId("fake-instance")
         .setCredentialsProvider(NoCredentialsProvider.create())
-        .setEndpoint("localhost:" + port)
+        .setEndpoint(hostname + ":" + port)
         .setTransportChannelProvider(
             InstantiatingGrpcChannelProvider.newBuilder()
                 .setMaxInboundMessageSize(256 * 1024 * 1024)
