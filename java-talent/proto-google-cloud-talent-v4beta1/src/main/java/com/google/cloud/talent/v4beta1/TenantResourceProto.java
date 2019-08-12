@@ -26,17 +26,19 @@ public final class TenantResourceProto {
   static {
     java.lang.String[] descriptorData = {
       "\n(google/cloud/talent/v4beta1/tenant.pro"
-          + "to\022\033google.cloud.talent.v4beta1\"\370\001\n\006Tena"
-          + "nt\022\014\n\004name\030\001 \001(\t\022\023\n\013external_id\030\002 \001(\t\022E\n"
-          + "\nusage_type\030\003 \001(\01621.google.cloud.talent."
-          + "v4beta1.Tenant.DataUsageType\0224\n,keyword_"
-          + "searchable_profile_custom_attributes\030\004 \003"
-          + "(\t\"N\n\rDataUsageType\022\037\n\033DATA_USAGE_TYPE_U"
-          + "NSPECIFIED\020\000\022\016\n\nAGGREGATED\020\001\022\014\n\010ISOLATED"
-          + "\020\002B\201\001\n\037com.google.cloud.talent.v4beta1B\023"
-          + "TenantResourceProtoP\001ZAgoogle.golang.org"
-          + "/genproto/googleapis/cloud/talent/v4beta"
-          + "1;talent\242\002\003CTSb\006proto3"
+          + "to\022\033google.cloud.talent.v4beta1\032\034google/"
+          + "api/annotations.proto\032\037google/protobuf/t"
+          + "imestamp.proto\"\370\001\n\006Tenant\022\014\n\004name\030\001 \001(\t\022"
+          + "\023\n\013external_id\030\002 \001(\t\022E\n\nusage_type\030\003 \001(\016"
+          + "21.google.cloud.talent.v4beta1.Tenant.Da"
+          + "taUsageType\0224\n,keyword_searchable_profil"
+          + "e_custom_attributes\030\004 \003(\t\"N\n\rDataUsageTy"
+          + "pe\022\037\n\033DATA_USAGE_TYPE_UNSPECIFIED\020\000\022\016\n\nA"
+          + "GGREGATED\020\001\022\014\n\010ISOLATED\020\002B\201\001\n\037com.google"
+          + ".cloud.talent.v4beta1B\023TenantResourcePro"
+          + "toP\001ZAgoogle.golang.org/genproto/googlea"
+          + "pis/cloud/talent/v4beta1;talent\242\002\003CTSb\006p"
+          + "roto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -47,7 +49,12 @@ public final class TenantResourceProto {
           }
         };
     com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-        descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {}, assigner);
+        descriptorData,
+        new com.google.protobuf.Descriptors.FileDescriptor[] {
+          com.google.api.AnnotationsProto.getDescriptor(),
+          com.google.protobuf.TimestampProto.getDescriptor(),
+        },
+        assigner);
     internal_static_google_cloud_talent_v4beta1_Tenant_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_talent_v4beta1_Tenant_fieldAccessorTable =
@@ -56,6 +63,8 @@ public final class TenantResourceProto {
             new java.lang.String[] {
               "Name", "ExternalId", "UsageType", "KeywordSearchableProfileCustomAttributes",
             });
+    com.google.api.AnnotationsProto.getDescriptor();
+    com.google.protobuf.TimestampProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)
