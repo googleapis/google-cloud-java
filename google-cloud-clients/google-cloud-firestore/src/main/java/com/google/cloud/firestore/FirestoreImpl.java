@@ -288,6 +288,7 @@ class FirestoreImpl implements Firestore {
                         Timestamp.fromProto(response.getReadTime()));
                 break;
               default:
+                tracer.getCurrentSpan().addAnnotation("Unknown ResultCase received");
                 return;
             }
             apiStreamObserver.onNext(documentSnapshot);
