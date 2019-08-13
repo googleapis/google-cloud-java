@@ -2861,7 +2861,6 @@ public interface Storage extends Service<StorageOptions> {
    * <p>Example of listing HMAC keys, specifying project id.
    *
    * <pre>{@code
-   *
    * Page<HmacKey.HmacKeyMetadata> metadataPage = storage.listHmacKeys(
    *     Storage.ListHmacKeysOption.projectId("my-project-id"));
    * for (HmacKey.HmacKeyMetadata hmacKeyMetadata : metadataPage.getValues()) {
