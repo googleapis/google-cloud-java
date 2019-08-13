@@ -97,4 +97,4 @@ Apache 2.0 - See [LICENSE] for more information.
 [cloud-platform]: https://cloud.google.com/
 [stackdriver-trace]: https://cloud.google.com/trace/
 [trace-product-docs]: https://cloud.google.com/trace/docs/
-[trace-client-lib-docs]: https://googleapis.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/trace/v1/package-summary.html
+[trace-client-lib-docs]: https://googleapis.dev/java/google-cloud-clients/latest/index.html?com/google/cloud/trace/v1/package-summary.html

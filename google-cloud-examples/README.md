@@ -9,8 +9,7 @@ Examples for google-cloud (Java idiomatic client for [Google Cloud Platform][clo
 [![Codacy Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/google-cloud-java)
 [![Dependency Status](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772/badge.svg?style=flat)](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772)
 
--  [Homepage](https://googleapis.github.io/google-cloud-java/)
--  [Examples](https://googleapis.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/examples/package-summary.html)
+-  [Examples](https://googleapis.dev/java/google-cloud-clients/latest/index.html?com/google/cloud/examples/package-summary.html)
 
 Quickstart
 ----------

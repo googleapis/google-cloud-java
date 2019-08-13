@@ -97,4 +97,4 @@ Apache 2.0 - See [LICENSE] for more information.
 [cloud-platform]: https://cloud.google.com/
 [cloud-websecurityscanner]: https://cloud.google.com/security-scanner
 [websecurityscanner-product-docs]: https://cloud.google.com/security-scanner/docs
-[websecurityscanner-client-lib-docs]: https://googleapis.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/websecurityscanner/v1alpha/package-summary.html
+[websecurityscanner-client-lib-docs]: https://googleapis.dev/java/google-cloud-clients/latest/index.html?com/google/cloud/websecurityscanner/v1alpha/package-summary.html

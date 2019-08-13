@@ -37,7 +37,7 @@ libraryDependencies += "com.google.cloud" % "google-cloud-resourcemanager" % "0.
 
 Example Application
 --------------------
-[`ResourceManagerExample`](../../google-cloud-examples/src/main/java/com/google/cloud/examples/resourcemanager/ResourceManagerExample.java) is a simple command line interface for the Cloud Resource Manager.  Read more about using the application on the [`ResourceManagerExample` docs page](https://googleapis.github.io/google-cloud-java/apidocs/?com/google/cloud/examples/resourcemanager/ResourceManagerExample.html).
+[`ResourceManagerExample`](../../google-cloud-examples/src/main/java/com/google/cloud/examples/resourcemanager/ResourceManagerExample.java) is a simple command line interface for the Cloud Resource Manager.  Read more about using the application on the [`ResourceManagerExample` docs page](https://googleapis.dev/java/google-cloud-clients/latest/index.html?com/google/cloud/examples/resourcemanager/ResourceManagerExample.html).
 
 Authentication
 --------------
@@ -255,4 +255,4 @@ Apache 2.0 - See [LICENSE] for more information.
 [cloud-platform]: https://cloud.google.com/
 [cloud-resourcemanager]: https://cloud.google.com/resource-manager/
 [resourcemanager-product-docs]: https://cloud.google.com/resource-manager/docs/
-[resourcemanager-client-lib-docs]: https://googleapis.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/resourcemanager/package-summary.html
+[resourcemanager-client-lib-docs]: https://googleapis.dev/java/google-cloud-clients/latest/index.html?com/google/cloud/resourcemanager/package-summary.html

@@ -106,5 +106,5 @@ Apache 2.0 - See [LICENSE] for more information.
 [TESTING]: https://github.com/googleapis/google-cloud-java/blob/master/TESTING.md
 
 [cloud-os-login]: https://cloud.google.com/compute/docs/oslogin/rest/
-[os-login-client-lib-docs]: https://googleapis.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/oslogin/v1/package-summary.html
+[os-login-client-lib-docs]: https://googleapis.dev/java/google-cloud-clients/latest/index.html?com/google/cloud/oslogin/v1/package-summary.html
 [auth]: https://cloud.google.com/docs/authentication/getting-started

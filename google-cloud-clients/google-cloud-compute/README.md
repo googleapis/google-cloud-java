@@ -41,7 +41,7 @@ Example Application
 [`ComputeExample`](../../google-cloud-examples/src/main/java/com/google/cloud/examples/compute/ComputeExample.java)
 is a simple command line interface that provides some of Google Cloud Compute Engine's
 functionality. Read more about using the application on the
-[`ComputeExample` docs page](https://googleapis.github.io/google-cloud-java/apidocs/?com/google/cloud/examples/compute/ComputeExample.html).
+[`ComputeExample` docs page](https://googleapis.dev/java/google-cloud-clients/latest/index.html?com/google/cloud/examples/compute/ComputeExample.html).
 
 Authentication
 --------------
@@ -240,4 +240,4 @@ Apache 2.0 - See [LICENSE] for more information.
 
 [cloud-compute]: https://cloud.google.com/compute/
 [compute-product-docs]: https://cloud.google.com/compute/docs/
-[compute-client-lib-docs]: https://googleapis.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/compute/v1/package-summary.html
+[compute-client-lib-docs]: https://googleapis.dev/java/google-cloud-clients/latest/index.html?com/google/cloud/compute/v1/package-summary.html

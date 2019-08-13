@@ -97,4 +97,4 @@ Apache 2.0 - See [LICENSE] for more information.
 [cloud-platform]: https://cloud.google.com/
 [cloud-kms]: https://cloud.google.com/kms
 [kms-product-docs]: https://cloud.google.com/kms/docs
-[kms-client-lib-docs]: https://googleapis.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/kms/v1/package-summary.html
+[kms-client-lib-docs]: https://googleapis.dev/java/google-cloud-clients/latest/index.html?com/google/cloud/kms/v1/package-summary.html

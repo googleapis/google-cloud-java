@@ -97,4 +97,4 @@ Apache 2.0 - See [LICENSE] for more information.
 [cloud-platform]: https://cloud.google.com/
 [product-overview]: https://cloud.google.com/iam/credentials/reference/rest/
 [product-docs]: https://cloud.google.com/iam/credentials/reference/rest/
-[lib-docs]: https://googleapis.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/iamcredentials/v1/package-summary.html
+[lib-docs]: https://googleapis.dev/java/google-cloud-clients/latest/index.html?com/google/cloud/iamcredentials/v1/package-summary.html

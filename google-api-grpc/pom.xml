@@ -13,7 +13,7 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    <project.javadoc.protobufBaseURL>https://googleapis.github.io/google-cloud-java/google-api-grpc/apidocs</project.javadoc.protobufBaseURL>
+    <project.javadoc.protobufBaseURL>https://googleapis.dev/java/google-api-grpc/latest</project.javadoc.protobufBaseURL>
   </properties>
   <developers>
     <developer>

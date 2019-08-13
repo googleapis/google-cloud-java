@@ -97,4 +97,4 @@ Apache 2.0 - See [LICENSE] for more information.
 [cloud-platform]: https://cloud.google.com/
 [cloud-asset]: https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/overview
 [asset-product-docs]: https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/overview
-[asset-lib-docs]: https://googleapis.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/asset/v1beta1/package-summary.html
+[asset-lib-docs]: https://googleapis.dev/java/google-cloud-clients/latest/index.html?com/google/cloud/asset/v1beta1/package-summary.html

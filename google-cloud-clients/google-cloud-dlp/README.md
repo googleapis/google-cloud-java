@@ -101,4 +101,4 @@ Apache 2.0 - See [LICENSE] for more information.
 [cloud-platform]: https://cloud.google.com/
 [cloud-dlp]: https://cloud.google.com/dlp/
 [dlp-product-docs]: https://cloud.google.com/dlp/docs/
-[dlp-client-lib-docs]: https://googleapis.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/dlp/v2/package-summary.html
+[dlp-client-lib-docs]: https://googleapis.dev/java/google-cloud-clients/latest/index.html?com/google/cloud/dlp/v2/package-summary.html

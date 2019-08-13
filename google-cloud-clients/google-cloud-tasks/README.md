@@ -97,4 +97,4 @@ Apache 2.0 - See [LICENSE] for more information.
 [cloud-platform]: https://cloud.google.com/
 [cloud-tasks]: https://cloud.google.com/tasks
 [tasks]: https://cloud.google.com/tasks/docs
-[tasks-client-lib-docs]: https://googleapis.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/tasks/v2/package-summary.html
+[tasks-client-lib-docs]: https://googleapis.dev/java/google-cloud-clients/latest/index.html?com/google/cloud/tasks/v2/package-summary.html

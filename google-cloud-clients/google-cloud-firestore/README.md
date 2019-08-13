@@ -6,7 +6,7 @@ Google Cloud Java Client for Firestore
 [![Codacy Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/google-cloud-java)
 
 -  [Product Documentation](https://cloud.google.com/firestore/docs/)
--  [Client Library Documentation](https://googleapis.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/firestore/package-summary.html)
+-  [Client Library Documentation](https://googleapis.dev/java/google-cloud-clients/latest/index.html?com/google/cloud/firestore/package-summary.html)
 
 Quickstart
 ----------
