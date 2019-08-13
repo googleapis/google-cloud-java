@@ -2858,7 +2858,20 @@ public interface Storage extends Service<StorageOptions> {
    * Lists HMAC keys for a given service account. Note this returns {@code HmacKeyMetadata} objects,
    * which do not contain secret keys.
    *
-   * <p>Example of listing HMAC keys, specifying max results and showDeletedKeys.
+   * <p>Example of listing HMAC keys, specifying project id.
+   *
+   * <pre>{@code
+   * ServiceAccount serviceAccount = ServiceAccount.of("my-service-account@google.com");
+   *
+   * Page<HmacKey.HmacKeyMetadata> metadataPage = storage.listHmacKeys(
+   *     Storage.ListHmacKeysOption.projectId("my-project-id"));
+   * for (HmacKey.HmacKeyMetadata hmacKeyMetadata : metadataPage.getValues()) {
+   *     //do something with the metadata
+   * }
+   * }</pre>
+   *
+   * <p>Example of listing HMAC keys, specifying max results and showDeletedKeys. Since projectId is
+   * not specified, the same project ID as the storage client instance will be used
    *
    * <pre>{@code
    * ServiceAccount serviceAccount = ServiceAccount.of("my-service-account@google.com");
@@ -2881,7 +2894,8 @@ public interface Storage extends Service<StorageOptions> {
    * Gets an HMAC key given its access id. Note that this returns a {@code HmacKeyMetadata} object,
    * which does not contain the secret key.
    *
-   * <p>Example of getting an HMAC key.
+   * <p>Example of getting an HMAC key. Since projectId isn't specified, the same project ID as the
+   * storage client instance will be used.
    *
    * <pre>{@code
    * String hmacKeyAccessId = "my-access-id";
@@ -2914,13 +2928,13 @@ public interface Storage extends Service<StorageOptions> {
   /**
    * Updates the state of an HMAC key and returns the updated metadata.
    *
-   * <p>Example of updating the state of a newly created HMAC key.
+   * <p>Example of updating the state of an HMAC key.
    *
    * <pre>{@code
-   * ServiceAccount serviceAccount = ServiceAccount.of("my-service-account@google.com");
-   * HmacKey key = storage.createHmacKey(serviceAccount);
+   * String hmacKeyAccessId = "my-access-id";
+   * HmacKey.HmacKeyMetadata hmacKeyMetadata = storage.getHmacKey(hmacKeyAccessId);
    *
-   * storage.updateHmacKeyState(hmacKey.getMetadata(), HmacKey.HmacKeyState.INACTIVE);
+   * storage.updateHmacKeyState(hmacKeyMetadata, HmacKey.HmacKeyState.INACTIVE);
    * }</pre>
    *
    * @throws StorageException upon failure
