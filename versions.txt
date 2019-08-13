@@ -26,7 +26,7 @@ google-cloud-core-grpc:1.86.0:1.86.1-SNAPSHOT
 google-cloud-core-http:1.86.0:1.86.1-SNAPSHOT
 google-cloud-datacatalog:0.17.0-alpha:0.17.1-alpha-SNAPSHOT
 google-cloud-datalabeling:0.104.0-alpha:0.104.1-alpha-SNAPSHOT
-google-cloud-dataproc:0.104.0-alpha:0.104.1-alpha-SNAPSHOT
+google-cloud-dataproc:0.104.0:0.104.1-SNAPSHOT
 google-cloud-datastore:1.86.0:1.86.1-SNAPSHOT
 google-cloud-dialogflow:0.104.0-alpha:0.104.1-alpha-SNAPSHOT
 google-cloud-dlp:0.104.0-beta:0.104.1-beta-SNAPSHOT
