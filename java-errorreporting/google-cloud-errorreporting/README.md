@@ -100,4 +100,4 @@ Apache 2.0 - See [LICENSE] for more information.
 [cloud-platform]: https://cloud.google.com/
 [stackdriver-error-reporting]: https://cloud.google.com/error-reporting/
 [error-reporting-product-docs]: https://cloud.google.com/error-reporting/docs/
-[error-reporting-client-lib-docs]: https://googleapis.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/errorreporting/v1beta1/package-summary.html
+[error-reporting-client-lib-docs]: https://googleapis.dev/java/google-cloud-clients/latest/index.html?com/google/cloud/errorreporting/v1beta1/package-summary.html
