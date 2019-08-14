@@ -7,8 +7,7 @@ This module provides common functionality required by service-specific modules o
 [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-core.svg)](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-core.svg)
 [![Codacy Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/google-cloud-java)
 
--  [Homepage](https://googleapis.github.io/google-cloud-java/)
--  [API Documentation](https://googleapis.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/package-summary.html)
+-  [API Documentation](https://googleapis.dev/java/google-cloud-clients/latest/index.html?com/google/cloud/package-summary.html)
 
 Quickstart
 ----------
