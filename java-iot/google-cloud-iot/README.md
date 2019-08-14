@@ -97,4 +97,4 @@ Apache 2.0 - See [LICENSE] for more information.
 [cloud-platform]: https://cloud.google.com/
 [cloud-iot]: https://cloud.google.com/iot-core
 [iot-product-docs]: https://cloud.google.com/iot-core/docs
-[iot-client-lib-docs]: https://googleapis.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/iot/v1/package-summary.html
+[iot-client-lib-docs]: https://googleapis.dev/java/google-cloud-clients/latest/index.html?com/google/cloud/iot/v1/package-summary.html
