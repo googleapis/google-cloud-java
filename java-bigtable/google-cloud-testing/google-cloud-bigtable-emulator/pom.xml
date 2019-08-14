@@ -214,7 +214,7 @@
             </executions>
             <configuration>
               <links>
-                <link>http://google.github.io/google-auth-library-java/releases/latest/apidocs/</link>
+                <link>https://googleapis.dev/java/google-auth-library/latest/</link>
               </links>
               <doclint>none</doclint>
             </configuration>
