@@ -96,7 +96,7 @@
                 <include>com.fasterxml.**</include>
               </includes>
               <excludes>
-                <exclude>com.google.cloud.**</exclude>
+                <exclude>com.google.cloud.storage.**</exclude>
                 <exclude>com.google.auto.**</exclude>
               </excludes>
             </relocation>
