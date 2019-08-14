@@ -256,7 +256,13 @@ public class Publisher {
     if (!batchesToSend.isEmpty() && orderingKey.isEmpty()) {
       for (final OutstandingBatch batch : batchesToSend) {
         logger.log(Level.FINER, "Scheduling a batch for immediate sending.");
-        publishOutstandingBatch(batch);
+        executor.execute(
+            new Runnable() {
+              @Override
+              public void run() {
+                publishOutstandingBatch(batch);
+              }
+            });
       }
     }
 
