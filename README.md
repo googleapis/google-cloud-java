@@ -169,10 +169,10 @@ Authentication
 --------------
 
 `google-cloud-java` uses
-[https://github.com/google/google-auth-library-java](https://github.com/google/google-auth-library-java)
+[https://github.com/googleapis/google-auth-library-java](https://github.com/googleapis/google-auth-library-java)
 to authenticate requests. `google-auth-library-java` supports a wide range of authentication types;
 see the project's [README](https://github.com/google/google-auth-library-java/blob/master/README.md)
-and [javadoc](http://google.github.io/google-auth-library-java/releases/0.6.0/apidocs/) for more
+and [javadoc](http://googleapis.dev/java/google-auth-library/latest/) for more
 details.
 
 To access Google Cloud services, you first need to ensure that the necessary Google Cloud APIs are
@@ -351,5 +351,5 @@ Apache 2.0 - See [LICENSE] for more information.
 
 [cloud-platform]: https://cloud.google.com/
 [cloud-platform-docs]: https://cloud.google.com/docs/
-[client-lib-docs]: https://googleapis.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html
+[client-lib-docs]: https://googleapis.dev/java/google-cloud-clients/latest/index.html
 

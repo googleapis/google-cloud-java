@@ -221,4 +221,4 @@ Apache 2.0 - See [LICENSE] for more information.
 [cloud-storage-create-bucket]: https://cloud.google.com/storage/docs/cloud-console#_creatingbuckets
 [cloud-storage-activation]:https://cloud.google.com/storage/docs/signup?hl=en
 [storage-product-docs]: https://cloud.google.com/storage/docs/
-[storage-client-lib-docs]: https://googleapis.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/storage/package-summary.html
+[storage-client-lib-docs]: https://googleapis.dev/java/google-cloud-clients/latest/index.html?com/google/cloud/storage/package-summary.html

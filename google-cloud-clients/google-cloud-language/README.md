@@ -127,4 +127,4 @@ Apache 2.0 - See [LICENSE] for more information.
 [cloud-platform]: https://cloud.google.com/
 [cloud-language]: https://cloud.google.com/natural-language/
 [language-product-docs]: https://cloud.google.com/natural-language/docs/
-[language-client-lib-docs]: https://googleapis.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/language/v1beta2/package-summary.html
+[language-client-lib-docs]: https://googleapis.dev/java/google-cloud-clients/latest/index.html?com/google/cloud/language/v1beta2/package-summary.html

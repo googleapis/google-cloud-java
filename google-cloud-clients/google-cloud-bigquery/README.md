@@ -34,7 +34,7 @@ libraryDependencies += "com.google.cloud" % "google-cloud-bigquery" % "1.86.0"
 Example Application
 -------------------
 - [`BigQueryExample`](../../google-cloud-examples/src/main/java/com/google/cloud/examples/bigquery/BigQueryExample.java) - A simple command line interface providing some of Cloud BigQuery's functionality.
-Read more about using this application on the [`BigQueryExample` docs page](https://googleapis.github.io/google-cloud-java/apidocs/?com/google/cloud/examples/bigquery/BigQueryExample.html).
+Read more about using this application on the [`BigQueryExample` docs page](https://googleapis.dev/java/google-cloud-clients/latest/index.html?com/google/cloud/examples/bigquery/BigQueryExample.html).
 
 Authentication
 --------------
@@ -241,4 +241,4 @@ Apache 2.0 - See [LICENSE] for more information.
 [cloud-bigquery]: https://cloud.google.com/bigquery/
 [cloud-storage]: https://cloud.google.com/storage/
 [bigquery-product-docs]: https://cloud.google.com/bigquery/docs/
-[bigquery-client-lib-docs]: https://googleapis.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/bigquery/package-summary.html
+[bigquery-client-lib-docs]: https://googleapis.dev/java/google-cloud-clients/latest/index.html?com/google/cloud/bigquery/package-summary.html

@@ -111,4 +111,4 @@ Apache 2.0 - See [LICENSE] for more information.
 
 [cloud-scheduler]: https://cloud.google.com/scheduler/
 [scheduler-product-docs]: https://cloud.google.com/scheduler/docs/quickstart
-[scheduler-client-lib-docs]: https://googleapis.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/scheduler/v1/package-summary.html
+[scheduler-client-lib-docs]: https://googleapis.dev/java/google-cloud-clients/latest/index.html?com/google/cloud/scheduler/v1/package-summary.html

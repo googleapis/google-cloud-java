@@ -11,8 +11,7 @@ for interacting with Google Cloud Storage.
 [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-nio.svg)]( https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-nio.svg)
 [![Codacy Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/google-cloud-java)
 
--  [Homepage](https://googleapis.github.io/google-cloud-java/)
--  [API Documentation](https://googleapis.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/storage/package-summary.html)
+-  [API Documentation](https://googleapis.dev/java/google-cloud-clients/latest/index.html?com/google/cloud/storage/contrib/nio/package-summary.html)
 
 > Note: This client is a work-in-progress, and may occasionally
 > make backwards-incompatible changes.
@@ -206,7 +205,7 @@ Apache 2.0 - See [LICENSE] for more information.
 [cloud-storage]: https://cloud.google.com/storage/
 [cloud-storage-docs]: https://cloud.google.com/storage/docs/overview
 [cloud-storage-create-bucket]: https://cloud.google.com/storage/docs/cloud-console#_creatingbuckets
-[storage-api]: https://googleapis.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/storage/package-summary.html
+[storage-api]: https://googleapis.dev/java/google-cloud-clients/latest/index.html?com/google/cloud/storage/package-summary.html
 [cloud-storage-activation]:https://cloud.google.com/storage/docs/signup?hl=en
 
 [java-file-api]: https://docs.oracle.com/javase/7/docs/api/java/nio/file/Files.html

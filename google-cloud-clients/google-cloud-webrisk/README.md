@@ -101,5 +101,5 @@ Apache 2.0 - See [LICENSE] for more information.
 [cloud-platform]: https://cloud.google.com/
 [product-overview]: https://cloud.google.com/web-risk/
 [product-docs]: https://cloud.google.com/web-risk/docs/
-[lib-docs]: https://googleapis.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/webrisk/v1beta1/package-summary.html
+[lib-docs]: https://googleapis.dev/java/google-cloud-clients/latest/index.html?com/google/cloud/webrisk/v1beta1/package-summary.html
 [product-docs-quickstart]:https://cloud.google.com/web-risk/docs/quickstart

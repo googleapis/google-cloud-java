@@ -97,4 +97,4 @@ Apache 2.0 - See [LICENSE] for more information.
 [cloud-platform]: https://cloud.google.com/
 [product-overview]: https://developers.google.com/games/services/
 [product-docs]: https://developers.google.com/games/services/
-[lib-docs]: https://googleapis.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/gameservices/v1alpha/package-summary.html
+[lib-docs]: https://googleapis.dev/java/google-cloud-clients/latest/index.html?com/google/cloud/gameservices/v1alpha/package-summary.html

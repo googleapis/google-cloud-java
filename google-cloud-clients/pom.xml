@@ -150,7 +150,7 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    <project.javadoc.protobufBaseURL>https://googleapis.github.io/google-cloud-java/google-api-grpc/apidocs</project.javadoc.protobufBaseURL>
+    <project.javadoc.protobufBaseURL>https://googleapis.dev/java/google-api-grpc/latest</project.javadoc.protobufBaseURL>
     <github.global.server>github</github.global.server>
     <site.installationModule>google-cloud-clients</site.installationModule>
     <bom.version>0.104.1-alpha-SNAPSHOT</bom.version><!-- {x-version-update:google-cloud-bom:current} -->
