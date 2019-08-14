@@ -958,7 +958,8 @@ public interface Storage extends Service<StorageOptions> {
      * Use it if signature should include the blob's canonicalized extended headers. When used,
      * users of the signed URL should include the canonicalized extended headers with their request.
      *
-     * @see <a href="https://cloud.google.com/storage/docs/xml-api/reference-headers"></a>
+     * @see <a href="https://cloud.google.com/storage/docs/xml-api/reference-headers">Request
+     *     Headers</a>
      */
     public static SignUrlOption withExtHeaders(Map<String, String> extHeaders) {
       return new SignUrlOption(Option.EXT_HEADERS, extHeaders);
@@ -986,13 +987,16 @@ public interface Storage extends Service<StorageOptions> {
      * get it from the environment.
      *
      * @see <a href="https://cloud.google.com/storage/docs/authentication#service_accounts">Service
-     *     account</a>
+     *     Accounts</a>
      */
     public static SignUrlOption signWith(ServiceAccountSigner signer) {
       return new SignUrlOption(Option.SERVICE_ACCOUNT_CRED, signer);
     }
 
-    /** Use a different host name than the default host name 'storage.googleapis.com' */
+    /**
+     * Use a different host name than the default host name 'https://storage.googleapis.com'. This
+     * must also include the scheme component of the URI.
+     */
     public static SignUrlOption withHostName(String hostName) {
       return new SignUrlOption(Option.HOST_NAME, hostName);
     }
