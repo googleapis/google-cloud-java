@@ -612,7 +612,7 @@ public class SessionPoolTest extends BaseSessionPoolTest {
         SessionPoolOptions.newBuilder()
             .setMinSessions(minSessions)
             .setMaxSessions(1)
-            .setInitialWaitForSessionTimeoutMillis(20L)
+            .setInitialWaitForSessionTimeoutMillis(40L)
             .build();
     SessionImpl mockSession = mockSession();
     when(client.createSession(db)).thenReturn(mockSession);
@@ -642,7 +642,7 @@ public class SessionPoolTest extends BaseSessionPoolTest {
                 }
               });
       try {
-        fut.get(40L, TimeUnit.MILLISECONDS);
+        fut.get(80L, TimeUnit.MILLISECONDS);
         fail("missing expected timeout exception");
       } catch (TimeoutException e) {
         // This is the expected exception, just ignore it.
