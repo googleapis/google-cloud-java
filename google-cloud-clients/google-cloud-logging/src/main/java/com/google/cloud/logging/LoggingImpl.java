@@ -630,9 +630,20 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
   }
 
   static ListLogEntriesRequest listLogEntriesRequest(
-      String projectId, Map<Option.OptionType, ?> options) {
+      LoggingOptions resourceNames, Map<Option.OptionType, ?> options) {
     ListLogEntriesRequest.Builder builder = ListLogEntriesRequest.newBuilder();
-    builder.addResourceNames("projects/" + projectId);
+    if (resourceNames.getProjectId() != null) {
+      builder.addResourceNames("projects/" + resourceNames.getProjectId());
+    }
+    if (resourceNames.getOrganization() != null) {
+      builder.addResourceNames("organizations/" + resourceNames.getOrganization());
+    }
+    if (resourceNames.getBillingAccount() != null) {
+      builder.addResourceNames("billingAccounts/" + resourceNames.getBillingAccount());
+    }
+    if (resourceNames.getFolder() != null) {
+      builder.addResourceNames("folders/" + resourceNames.getFolder());
+    }
     Integer pageSize = PAGE_SIZE.get(options);
     if (pageSize != null) {
       builder.setPageSize(pageSize);
@@ -654,8 +665,7 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
 
   private static ApiFuture<AsyncPage<LogEntry>> listLogEntriesAsync(
       final LoggingOptions serviceOptions, final Map<Option.OptionType, ?> options) {
-    final ListLogEntriesRequest request =
-        listLogEntriesRequest(serviceOptions.getProjectId(), options);
+    final ListLogEntriesRequest request = listLogEntriesRequest(serviceOptions, options);
     ApiFuture<ListLogEntriesResponse> list = serviceOptions.getLoggingRpcV2().list(request);
     return transform(
         list,

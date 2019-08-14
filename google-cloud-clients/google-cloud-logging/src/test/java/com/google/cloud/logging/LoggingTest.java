@@ -75,7 +75,12 @@ public class LoggingTest {
 
     ListLogEntriesRequest request =
         LoggingImpl.listLogEntriesRequest(
-            "some-project-id",
+            LoggingOptions.newBuilder()
+                .setProjectId("some-project-id")
+                .setBillingAccount("test-account")
+                .setOrganization("test-org")
+                .setFolder("test-folder")
+                .build(),
             LoggingImpl.optionMap(
                 EntryListOption.pageToken(PAGE_TOKEN), EntryListOption.pageSize(PAGE_SIZE)));
     assertThat(request.getPageToken()).isEqualTo(PAGE_TOKEN);
