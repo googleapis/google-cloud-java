@@ -662,7 +662,13 @@ public class SessionPoolTest extends BaseSessionPoolTest {
     // Verify that we got a DEADLINE_EXCEEDED span for both read and read/write session.
     // There might be more than 1 for each request, depending on the execution speed of
     // the environment.
-    assertThat(deadlineExceededCount.get()).isAtLeast(2);
+    if (!isNoopExportComponent()) {
+      assertThat(deadlineExceededCount.get()).isAtLeast(2);
+    }
+  }
+
+  private boolean isNoopExportComponent() {
+    return Tracing.getExportComponent().getClass().getName().contains("Noop");
   }
 
   @Test
