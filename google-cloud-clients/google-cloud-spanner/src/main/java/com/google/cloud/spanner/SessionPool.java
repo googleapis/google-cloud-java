@@ -36,7 +36,6 @@ import com.google.common.util.concurrent.Uninterruptibles;
 import io.opencensus.common.Scope;
 import io.opencensus.trace.Annotation;
 import io.opencensus.trace.AttributeValue;
-import io.opencensus.trace.EndSpanOptions;
 import io.opencensus.trace.Span;
 import io.opencensus.trace.Status;
 import io.opencensus.trace.Tracer;
@@ -66,6 +65,7 @@ import org.threeten.bp.Instant;
 final class SessionPool {
 
   private static final Logger logger = Logger.getLogger(SessionPool.class.getName());
+  private static final Tracer tracer = Tracing.getTracer();
   static final String WAIT_FOR_SESSION = "SessionPool.WaitForSession";
 
   static {
@@ -834,28 +834,21 @@ final class SessionPool {
     private PooledSession take() throws SpannerException {
       long currentTimeout = options.getInitialWaitForSessionTimeoutMillis();
       while (true) {
-        Tracer tracer = Tracing.getTracer();
-        Scope waitScope = tracer.spanBuilder(WAIT_FOR_SESSION).startScopedSpan();
-        try {
+        try (Scope waitScope = tracer.spanBuilder(WAIT_FOR_SESSION).startScopedSpan()) {
           SessionOrError s = pollUninterruptiblyWithTimeout(currentTimeout);
           if (s == null) {
-            // End the span with status DEADLINE_EXCEEDED and retry.
-            tracer
-                .getCurrentSpan()
-                .end(EndSpanOptions.builder().setStatus(Status.DEADLINE_EXCEEDED).build());
+            // Set the status to DEADLINE_EXCEEDED and retry.
+            tracer.getCurrentSpan().setStatus(Status.DEADLINE_EXCEEDED);
             currentTimeout = Math.min(currentTimeout * 2, MAX_SESSION_WAIT_TIMEOUT);
           } else {
             if (s.e != null) {
               throw newSpannerException(s.e);
             }
-            tracer.getCurrentSpan().end();
             return s.session;
           }
         } catch (Exception e) {
           TraceUtil.endSpanWithFailure(tracer.getCurrentSpan(), e);
           throw e;
-        } finally {
-          waitScope.close();
         }
       }
     }

@@ -149,7 +149,7 @@
       <groupId>io.opencensus</groupId>
       <artifactId>opencensus-impl</artifactId>
       <version>${opencensus.version}</version>
-      <scope>test</scope>
+      <scope>runtime</scope>
     </dependency>
     <dependency>
       <groupId>io.opencensus</groupId>

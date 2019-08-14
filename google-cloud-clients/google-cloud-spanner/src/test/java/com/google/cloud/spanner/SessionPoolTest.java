@@ -593,7 +593,8 @@ public class SessionPoolTest extends BaseSessionPoolTest {
           @Override
           public void export(Collection<SpanData> spanDataList) {
             for (SpanData sd : spanDataList) {
-              if (sd.getStatus() == Status.DEADLINE_EXCEEDED) {
+              if (sd.getStatus() == Status.DEADLINE_EXCEEDED
+                  && sd.getName().equals(SessionPool.WAIT_FOR_SESSION)) {
                 deadlineExceededCount.incrementAndGet();
               }
             }
@@ -644,6 +645,8 @@ public class SessionPoolTest extends BaseSessionPoolTest {
         fut.get(40L, TimeUnit.MILLISECONDS);
         fail("missing expected timeout exception");
       } catch (TimeoutException e) {
+        // This is the expected exception, just ignore it.
+      } finally {
         // Return the checked out session to the pool so the async request will get a session and
         // finish.
         checkedOutSession.close();
