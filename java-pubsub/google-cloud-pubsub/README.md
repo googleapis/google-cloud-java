@@ -240,4 +240,4 @@ Apache 2.0 - See [LICENSE] for more information.
 [cloud-pubsub]: https://cloud.google.com/pubsub/
 [cloud-pubsub-quickstart]: https://cloud.google.com/pubsub/quickstart-console#before-you-begin
 [pubsub-product-docs]: https://cloud.google.com/pubsub/docs/
-[pubsub-client-lib-docs]: https://googleapis.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/pubsub/v1/package-summary.html
+[pubsub-client-lib-docs]: https://googleapis.dev/java/google-cloud-clients/latest/index.html?com/google/cloud/pubsub/v1/package-summary.html
