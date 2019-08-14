@@ -34,7 +34,7 @@ import javax.annotation.Nonnull;
  * <p>This class is meant for manual batching, while {@link BulkMutationBatcher} is meant for
  * automatic batching with flow control.
  */
-public final class BulkMutation implements Serializable {
+public final class BulkMutation implements Serializable, Cloneable {
   private static final long serialVersionUID = 3522061250439399088L;
 
   private final String tableId;
@@ -89,6 +89,16 @@ public final class BulkMutation implements Serializable {
     return this;
   }
 
+  /**
+   * Add {@link RowMutationEntry} which logically represent a row. The changes in mutation will be
+   * applied atomically and ordering is not guaranteed between rows.
+   */
+  public BulkMutation add(RowMutationEntry entry) {
+    Preconditions.checkNotNull(entry);
+    builder.addEntries(entry.toProto());
+    return this;
+  }
+
   @InternalApi
   public MutateRowsRequest toProto(RequestContext requestContext) {
     String tableName =
@@ -99,5 +109,13 @@ public final class BulkMutation implements Serializable {
         .setTableName(tableName)
         .setAppProfileId(requestContext.getAppProfileId())
         .build();
+  }
+
+  /** Creates a copy of {@link BulkMutation}. */
+  @Override
+  public BulkMutation clone() {
+    BulkMutation bulkMutation = BulkMutation.create(tableId);
+    bulkMutation.builder = this.builder.build().toBuilder();
+    return bulkMutation;
   }
 }
