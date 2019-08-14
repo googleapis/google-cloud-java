@@ -94,4 +94,4 @@ Apache 2.0 - See [LICENSE] for more information.
 [cloud-platform]: https://cloud.google.com/
 [stackdriver-monitoring]: https://cloud.google.com/monitoring/
 [monitoring-product-docs]: https://cloud.google.com/monitoring/docs/
-[monitoring-client-lib-docs]: https://googleapis.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/monitoring/v3/package-summary.html
+[monitoring-client-lib-docs]: https://googleapis.dev/java/google-cloud-clients/latest/index.html?com/google/cloud/monitoring/v3/package-summary.html
