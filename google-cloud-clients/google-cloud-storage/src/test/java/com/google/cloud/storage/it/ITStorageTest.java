@@ -64,6 +64,7 @@ import com.google.cloud.storage.BucketInfo.LifecycleRule;
 import com.google.cloud.storage.BucketInfo.LifecycleRule.LifecycleAction;
 import com.google.cloud.storage.BucketInfo.LifecycleRule.LifecycleCondition;
 import com.google.cloud.storage.CopyWriter;
+import com.google.cloud.storage.HmacKey;
 import com.google.cloud.storage.HttpMethod;
 import com.google.cloud.storage.ServiceAccount;
 import com.google.cloud.storage.Storage;
@@ -2114,6 +2115,91 @@ public class ITStorageTest {
       fail("Expected StorageException");
     } catch (StorageException ex) {
       // expected
+    }
+  }
+
+  @Test
+  public void testHmacKey() {
+    ServiceAccount serviceAccount = ServiceAccount.of(System.getenv("IT_SERVICE_ACCOUNT_EMAIL"));
+    try {
+
+      HmacKey hmacKey = storage.createHmacKey(serviceAccount);
+      String secretKey = hmacKey.getSecretKey();
+      assertNotNull(secretKey);
+      HmacKey.HmacKeyMetadata metadata = hmacKey.getMetadata();
+      String accessId = metadata.getAccessId();
+
+      assertNotNull(accessId);
+      assertNotNull(metadata.getEtag());
+      assertNotNull(metadata.getId());
+      assertEquals(remoteStorageHelper.getOptions().getProjectId(), metadata.getProjectId());
+      assertEquals(serviceAccount.getEmail(), metadata.getServiceAccount().getEmail());
+      assertEquals(HmacKey.HmacKeyState.ACTIVE, metadata.getState());
+      assertNotNull(metadata.getCreateTime());
+      assertNotNull(metadata.getUpdateTime());
+
+      Page<HmacKey.HmacKeyMetadata> metadatas =
+          storage.listHmacKeys(Storage.ListHmacKeysOption.serviceAccount(serviceAccount));
+      boolean createdHmacKeyIsInList = false;
+      for (HmacKey.HmacKeyMetadata hmacKeyMetadata : metadatas.iterateAll()) {
+        if (accessId.equals(hmacKeyMetadata.getAccessId())) {
+          createdHmacKeyIsInList = true;
+          break;
+        }
+      }
+
+      if (!createdHmacKeyIsInList) {
+        fail("Created an HMAC key but it didn't show up in list()");
+      }
+
+      HmacKey.HmacKeyMetadata getResult = storage.getHmacKey(accessId);
+      assertEquals(metadata, getResult);
+
+      storage.updateHmacKeyState(metadata, HmacKey.HmacKeyState.INACTIVE);
+
+      storage.deleteHmacKey(metadata);
+
+      metadatas = storage.listHmacKeys(Storage.ListHmacKeysOption.serviceAccount(serviceAccount));
+      createdHmacKeyIsInList = false;
+      for (HmacKey.HmacKeyMetadata hmacKeyMetadata : metadatas.iterateAll()) {
+        if (accessId.equals(hmacKeyMetadata.getAccessId())) {
+          createdHmacKeyIsInList = true;
+          break;
+        }
+      }
+
+      if (createdHmacKeyIsInList) {
+        fail("Deleted an HMAC key but it showed up in list()");
+      }
+
+      storage.createHmacKey(serviceAccount);
+      storage.createHmacKey(serviceAccount);
+      storage.createHmacKey(serviceAccount);
+      storage.createHmacKey(serviceAccount);
+
+      metadatas =
+          storage.listHmacKeys(
+              Storage.ListHmacKeysOption.serviceAccount(serviceAccount),
+              Storage.ListHmacKeysOption.maxResults(2L));
+
+      String nextPageToken = metadatas.getNextPageToken();
+
+      assertEquals(2, Iterators.size(metadatas.getValues().iterator()));
+
+      metadatas =
+          storage.listHmacKeys(
+              Storage.ListHmacKeysOption.serviceAccount(serviceAccount),
+              Storage.ListHmacKeysOption.maxResults(2L),
+              Storage.ListHmacKeysOption.pageToken(nextPageToken));
+
+      assertEquals(2, Iterators.size(metadatas.getValues().iterator()));
+    } finally {
+      Page<HmacKey.HmacKeyMetadata> metadatas =
+          storage.listHmacKeys(Storage.ListHmacKeysOption.serviceAccount(serviceAccount));
+      for (HmacKey.HmacKeyMetadata hmacKeyMetadata : metadatas.iterateAll()) {
+        storage.updateHmacKeyState(hmacKeyMetadata, HmacKey.HmacKeyState.INACTIVE);
+        storage.deleteHmacKey(hmacKeyMetadata);
+      }
     }
   }
 
