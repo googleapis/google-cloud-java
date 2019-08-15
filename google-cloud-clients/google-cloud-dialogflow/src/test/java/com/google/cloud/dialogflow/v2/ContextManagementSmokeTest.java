@@ -18,14 +18,13 @@ package com.google.cloud.dialogflow.v2;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.Lists;
 import com.google.protobuf.Value;
-import org.junit.Test;
-
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.junit.Test;
 
 public class ContextManagementSmokeTest {
   private static final String PROJECT_ENV_NAME = "GOOGLE_CLOUD_PROJECT";
