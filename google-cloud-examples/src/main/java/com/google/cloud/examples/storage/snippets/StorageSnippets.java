@@ -39,7 +39,11 @@ import com.google.cloud.storage.BlobInfo;
 import com.google.cloud.storage.Bucket;
 import com.google.cloud.storage.BucketInfo;
 import com.google.cloud.storage.CopyWriter;
+import com.google.cloud.storage.HmacKey;
+import com.google.cloud.storage.HmacKey.HmacKeyMetadata;
+import com.google.cloud.storage.HmacKey.HmacKeyState;
 import com.google.cloud.storage.HttpMethod;
+import com.google.cloud.storage.ServiceAccount;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.Storage.BlobGetOption;
 import com.google.cloud.storage.Storage.BlobListOption;
@@ -51,6 +55,7 @@ import com.google.cloud.storage.Storage.BucketListOption;
 import com.google.cloud.storage.Storage.BucketSourceOption;
 import com.google.cloud.storage.Storage.ComposeRequest;
 import com.google.cloud.storage.Storage.CopyRequest;
+import com.google.cloud.storage.Storage.ListHmacKeysOption;
 import com.google.cloud.storage.Storage.SignUrlOption;
 import com.google.cloud.storage.StorageBatch;
 import com.google.cloud.storage.StorageBatchResult;
@@ -1576,5 +1581,141 @@ public class StorageSnippets {
             + "'");
     // [END storage_generate_upload_signed_url_v4]
     return url;
+  }
+
+  /** Example of creating an HMAC key for a service account * */
+  public HmacKey createHmacKey(String serviceAccountEmail) throws StorageException {
+    // [START storage_create_hmac_key]
+    // Instantiate a Google Cloud Storage client
+    Storage storage = StorageOptions.getDefaultInstance().getService();
+
+    // The service account email for which the new HMAC key will be created.
+    // String serviceAccountEmail = "service-account@iam.gserviceaccount.com";
+    ServiceAccount account = ServiceAccount.of(serviceAccountEmail);
+    HmacKey hmacKey = storage.createHmacKey(account);
+
+    String secret = hmacKey.getSecretKey();
+    HmacKeyMetadata metadata = hmacKey.getMetadata();
+
+    System.out.println("The base64 encoded secret is: " + secret);
+    System.out.println("Do not miss that secret, there is no API to recover it.");
+    System.out.println("The HMAC key metadata is:");
+    System.out.println("Id: " + metadata.getId());
+    System.out.println("AccessId: " + metadata.getAccessId());
+    System.out.println("ProjectId: " + metadata.getProjectId());
+    System.out.println("ServiceAccountEmail: " + metadata.getServiceAccount().getEmail());
+    System.out.println("State: " + metadata.getState().toString());
+    System.out.println("TimeCreated: " + new Date(metadata.getCreateTime()).toString());
+    System.out.println("Updated: " + new Date(metadata.getUpdateTime()).toString());
+    System.out.println("Etag: " + metadata.getEtag());
+    // [END storage_create_hmac_key]
+    return hmacKey;
+  }
+
+  /** Example of retrieving the metadata of an existing HMAC key. * */
+  public HmacKeyMetadata getHmacKey(String accessId) throws StorageException {
+    // [START storage_get_hmac_key]
+    // Instantiate a Google Cloud Storage client
+    Storage storage = StorageOptions.getDefaultInstance().getService();
+
+    // The access ID of the HMAC key, e.g. "GOOG0234230X00"
+    // String accessId = "GOOG0234230X00";
+    HmacKeyMetadata metadata = storage.getHmacKey(accessId);
+
+    System.out.println("The HMAC key metadata is:");
+    System.out.println("Id: " + metadata.getId());
+    System.out.println("AccessId: " + metadata.getAccessId());
+    System.out.println("ProjectId: " + metadata.getProjectId());
+    System.out.println("ServiceAccountEmail: " + metadata.getServiceAccount().getEmail());
+    System.out.println("State: " + metadata.getState().toString());
+    System.out.println("TimeCreated: " + new Date(metadata.getCreateTime()).toString());
+    System.out.println("Updated: " + new Date(metadata.getUpdateTime()).toString());
+    System.out.println("Etag: " + metadata.getEtag());
+    // [END storage_get_hmac_key]
+    return metadata;
+  }
+
+  /** Example of deleting an existing inactive HMAC key. * */
+  public void deleteHmacKey(String accessId) throws StorageException {
+    // [START storage_delete_hmac_key]
+    // Instantiate a Google Cloud Storage client
+    Storage storage = StorageOptions.getDefaultInstance().getService();
+
+    // The access ID of the HMAC key, e.g. "GOOG0234230X00"
+    // String accessId = "GOOG0234230X00";
+    HmacKeyMetadata metadata = storage.getHmacKey(accessId);
+    storage.deleteHmacKey(metadata);
+
+    System.out.println("The key is deleted, though it may still appear in getHmacKeys() results.");
+    // [END storage_delete_hmac_key]
+  }
+
+  /** Example of activating a previously deactivated HMAC key. * */
+  public HmacKeyMetadata activateHmacKey(String accessId) throws StorageException {
+    // [START storage_activate_hmac_key]
+    // Instantiate a Google Cloud Storage client
+    Storage storage = StorageOptions.getDefaultInstance().getService();
+
+    // The access ID of the HMAC key, e.g. "GOOG0234230X00"
+    // String accessId = "GOOG0234230X00";
+    HmacKeyMetadata metadata = storage.getHmacKey(accessId);
+    HmacKeyMetadata newMetadata = storage.updateHmacKeyState(metadata, HmacKeyState.ACTIVE);
+
+    System.out.println("The HMAC key is now active.");
+    System.out.println("The HMAC key metadata is:");
+    System.out.println("Id: " + newMetadata.getId());
+    System.out.println("AccessId: " + newMetadata.getAccessId());
+    System.out.println("ProjectId: " + newMetadata.getProjectId());
+    System.out.println("ServiceAccountEmail: " + newMetadata.getServiceAccount().getEmail());
+    System.out.println("State: " + newMetadata.getState().toString());
+    System.out.println("TimeCreated: " + new Date(newMetadata.getCreateTime()).toString());
+    System.out.println("Updated: " + new Date(newMetadata.getUpdateTime()).toString());
+    System.out.println("Etag: " + newMetadata.getEtag());
+    // [END storage_activate_hmac_key]
+    return newMetadata;
+  }
+
+  /** Example of deactivating an HMAC key. * */
+  public HmacKeyMetadata deactivateHmacKey(String accessId) throws StorageException {
+    // [START storage_deactivate_hmac_key]
+    // Instantiate a Google Cloud Storage client
+    Storage storage = StorageOptions.getDefaultInstance().getService();
+
+    // The access ID of the HMAC key, e.g. "GOOG0234230X00"
+    // String accessId = "GOOG0234230X00";
+    HmacKeyMetadata metadata = storage.getHmacKey(accessId);
+    HmacKeyMetadata newMetadata = storage.updateHmacKeyState(metadata, HmacKeyState.INACTIVE);
+
+    System.out.println("The HMAC key is now inactive.");
+    System.out.println("The HMAC key metadata is:");
+    System.out.println("Id: " + newMetadata.getId());
+    System.out.println("AccessId: " + newMetadata.getAccessId());
+    System.out.println("ProjectId: " + newMetadata.getProjectId());
+    System.out.println("ServiceAccountEmail: " + newMetadata.getServiceAccount().getEmail());
+    System.out.println("State: " + newMetadata.getState().toString());
+    System.out.println("TimeCreated: " + new Date(newMetadata.getCreateTime()).toString());
+    System.out.println("Updated: " + new Date(newMetadata.getUpdateTime()).toString());
+    System.out.println("Etag: " + newMetadata.getEtag());
+    // [END storage_deactivate_hmac_key]
+    return newMetadata;
+  }
+
+  public Page<HmacKeyMetadata> listHmacKeys(String serviceAccountEmail) throws StorageException {
+    // [START storage_list_hmac_keys]
+    // Instantiate a Google Cloud Storage client
+    Storage storage = StorageOptions.getDefaultInstance().getService();
+
+    // The service account to list HMAC keys for.
+    // String serviceAccountEmail = "service-account@iam.gserviceaccount.com";
+    ServiceAccount serviceAccount = ServiceAccount.of(serviceAccountEmail);
+    Page<HmacKeyMetadata> page =
+        storage.listHmacKeys(ListHmacKeysOption.serviceAccount(serviceAccount));
+
+    for (HmacKeyMetadata metadata : page.iterateAll()) {
+      System.out.println("Service Account Email: " + metadata.getServiceAccount().getEmail());
+      System.out.println("Access Id: " + metadata.getAccessId());
+    }
+    // [END storage_list_hmac_keys]
+    return page;
   }
 }
