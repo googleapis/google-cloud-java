@@ -109,13 +109,13 @@
       <dependency>
         <groupId>io.grpc</groupId>
         <artifactId>grpc-stub</artifactId>
-        <version>1.21.0</version>
+        <version>1.23.0</version>
         <scope>compile</scope>
       </dependency>
       <dependency>
         <groupId>io.grpc</groupId>
         <artifactId>grpc-protobuf</artifactId>
-        <version>1.21.0</version>
+        <version>1.23.0</version>
         <scope>compile</scope>
       </dependency>
       <dependency>
