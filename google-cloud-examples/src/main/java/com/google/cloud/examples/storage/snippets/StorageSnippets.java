@@ -1602,12 +1602,12 @@ public class StorageSnippets {
     System.out.println("Do not miss that secret, there is no API to recover it.");
     System.out.println("The HMAC key metadata is:");
     System.out.println("ID: " + metadata.getId());
-    System.out.println("AccessId: " + metadata.getAccessId());
-    System.out.println("ProjectId: " + metadata.getProjectId());
-    System.out.println("ServiceAccountEmail: " + metadata.getServiceAccount().getEmail());
+    System.out.println("Access ID: " + metadata.getAccessId());
+    System.out.println("Project ID: " + metadata.getProjectId());
+    System.out.println("Service Account Email: " + metadata.getServiceAccount().getEmail());
     System.out.println("State: " + metadata.getState().toString());
-    System.out.println("TimeCreated: " + new Date(metadata.getCreateTime()).toString());
-    System.out.println("Updated: " + new Date(metadata.getUpdateTime()).toString());
+    System.out.println("Time Created: " + new Date(metadata.getCreateTime()).toString());
+    System.out.println("Time Updated: " + new Date(metadata.getUpdateTime()).toString());
     System.out.println("ETag: " + metadata.getEtag());
     // [END storage_create_hmac_key]
     return hmacKey;
@@ -1625,12 +1625,12 @@ public class StorageSnippets {
 
     System.out.println("The HMAC key metadata is:");
     System.out.println("ID: " + metadata.getId());
-    System.out.println("AccessId: " + metadata.getAccessId());
-    System.out.println("ProjectId: " + metadata.getProjectId());
-    System.out.println("ServiceAccountEmail: " + metadata.getServiceAccount().getEmail());
+    System.out.println("Access ID: " + metadata.getAccessId());
+    System.out.println("Project ID: " + metadata.getProjectId());
+    System.out.println("Service Account Email: " + metadata.getServiceAccount().getEmail());
     System.out.println("State: " + metadata.getState().toString());
-    System.out.println("TimeCreated: " + new Date(metadata.getCreateTime()).toString());
-    System.out.println("Updated: " + new Date(metadata.getUpdateTime()).toString());
+    System.out.println("Time Created: " + new Date(metadata.getCreateTime()).toString());
+    System.out.println("Time Updated: " + new Date(metadata.getUpdateTime()).toString());
     System.out.println("ETag: " + metadata.getEtag());
     // [END storage_get_hmac_key]
     return metadata;
@@ -1665,12 +1665,12 @@ public class StorageSnippets {
     System.out.println("The HMAC key is now active.");
     System.out.println("The HMAC key metadata is:");
     System.out.println("ID: " + newMetadata.getId());
-    System.out.println("AccessId: " + newMetadata.getAccessId());
-    System.out.println("ProjectId: " + newMetadata.getProjectId());
-    System.out.println("ServiceAccountEmail: " + newMetadata.getServiceAccount().getEmail());
+    System.out.println("Access ID: " + newMetadata.getAccessId());
+    System.out.println("Project ID: " + newMetadata.getProjectId());
+    System.out.println("Service Account Email: " + newMetadata.getServiceAccount().getEmail());
     System.out.println("State: " + newMetadata.getState().toString());
-    System.out.println("TimeCreated: " + new Date(newMetadata.getCreateTime()).toString());
-    System.out.println("Updated: " + new Date(newMetadata.getUpdateTime()).toString());
+    System.out.println("Time Created: " + new Date(newMetadata.getCreateTime()).toString());
+    System.out.println("Time Updated: " + new Date(newMetadata.getUpdateTime()).toString());
     System.out.println("ETag: " + newMetadata.getEtag());
     // [END storage_activate_hmac_key]
     return newMetadata;
@@ -1690,12 +1690,12 @@ public class StorageSnippets {
     System.out.println("The HMAC key is now inactive.");
     System.out.println("The HMAC key metadata is:");
     System.out.println("ID: " + newMetadata.getId());
-    System.out.println("AccessId: " + newMetadata.getAccessId());
-    System.out.println("ProjectId: " + newMetadata.getProjectId());
-    System.out.println("ServiceAccountEmail: " + newMetadata.getServiceAccount().getEmail());
+    System.out.println("Access ID: " + newMetadata.getAccessId());
+    System.out.println("Project ID: " + newMetadata.getProjectId());
+    System.out.println("Service Account Email: " + newMetadata.getServiceAccount().getEmail());
     System.out.println("State: " + newMetadata.getState().toString());
-    System.out.println("TimeCreated: " + new Date(newMetadata.getCreateTime()).toString());
-    System.out.println("Updated: " + new Date(newMetadata.getUpdateTime()).toString());
+    System.out.println("Time Created: " + new Date(newMetadata.getCreateTime()).toString());
+    System.out.println("Time Updated: " + new Date(newMetadata.getUpdateTime()).toString());
     System.out.println("ETag: " + newMetadata.getEtag());
     // [END storage_deactivate_hmac_key]
     return newMetadata;
