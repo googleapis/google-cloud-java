@@ -138,14 +138,14 @@
     <dependency>
       <groupId>io.grpc</groupId>
       <artifactId>grpc-core</artifactId>
-      <version>1.21.0</version>
+      <version>1.23.0</version>
       <scope>provided</scope>
     </dependency>
 
     <dependency>
       <groupId>io.grpc</groupId>
       <artifactId>grpc-netty-shaded</artifactId>
-      <version>1.21.0</version>
+      <version>1.23.0</version>
       <scope>provided</scope>
     </dependency>
 
