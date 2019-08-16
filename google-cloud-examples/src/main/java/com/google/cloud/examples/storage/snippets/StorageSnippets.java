@@ -1598,7 +1598,7 @@ public class StorageSnippets {
     String secret = hmacKey.getSecretKey();
     HmacKeyMetadata metadata = hmacKey.getMetadata();
 
-    System.out.println("The base64 encoded secret is: " + secret);
+    System.out.println("The Base64 encoded secret is: " + secret);
     System.out.println("Do not miss that secret, there is no API to recover it.");
     System.out.println("The HMAC key metadata is:");
     System.out.println("ID: " + metadata.getId());
