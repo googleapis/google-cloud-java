@@ -7,7 +7,8 @@ package com.google.cloud.automl.v1beta1;
  *
  *
  * <pre>
- * Request message for [PredictionService.Predict][google.cloud.automl.v1beta1.PredictionService.Predict].
+ * Request message for
+ * [PredictionService.Predict][google.cloud.automl.v1beta1.PredictionService.Predict].
  * </pre>
  *
  * Protobuf type {@code google.cloud.automl.v1beta1.PredictRequest}
@@ -578,7 +579,8 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Request message for [PredictionService.Predict][google.cloud.automl.v1beta1.PredictionService.Predict].
+   * Request message for
+   * [PredictionService.Predict][google.cloud.automl.v1beta1.PredictionService.Predict].
    * </pre>
    *
    * Protobuf type {@code google.cloud.automl.v1beta1.PredictRequest}

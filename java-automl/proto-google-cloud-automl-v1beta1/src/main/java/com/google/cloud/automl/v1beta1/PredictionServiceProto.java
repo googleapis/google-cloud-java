@@ -55,52 +55,54 @@ public final class PredictionServiceProto {
     java.lang.String[] descriptorData = {
       "\n4google/cloud/automl/v1beta1/prediction"
           + "_service.proto\022\033google.cloud.automl.v1be"
-          + "ta1\032\034google/api/annotations.proto\0324googl"
-          + "e/cloud/automl/v1beta1/annotation_payloa"
-          + "d.proto\032,google/cloud/automl/v1beta1/dat"
-          + "a_items.proto\032$google/cloud/automl/v1bet"
-          + "a1/io.proto\032,google/cloud/automl/v1beta1"
-          + "/operations.proto\032#google/longrunning/op"
-          + "erations.proto\032\027google/api/client.proto\""
+          + "ta1\032\034google/api/annotations.proto\032\027googl"
+          + "e/api/client.proto\0324google/cloud/automl/"
+          + "v1beta1/annotation_payload.proto\032,google"
+          + "/cloud/automl/v1beta1/data_items.proto\032$"
+          + "google/cloud/automl/v1beta1/io.proto\032,go"
+          + "ogle/cloud/automl/v1beta1/operations.pro"
+          + "to\032#google/longrunning/operations.proto\""
           + "\324\001\n\016PredictRequest\022\014\n\004name\030\001 \001(\t\022<\n\007payl"
           + "oad\030\002 \001(\0132+.google.cloud.automl.v1beta1."
           + "ExamplePayload\022G\n\006params\030\003 \003(\01327.google."
           + "cloud.automl.v1beta1.PredictRequest.Para"
           + "msEntry\032-\n\013ParamsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005v"
-          + "alue\030\002 \001(\t:\0028\001\"\321\001\n\017PredictResponse\022?\n\007pa"
+          + "alue\030\002 \001(\t:\0028\001\"\232\002\n\017PredictResponse\022?\n\007pa"
           + "yload\030\001 \003(\0132..google.cloud.automl.v1beta"
-          + "1.AnnotationPayload\022L\n\010metadata\030\002 \003(\0132:."
-          + "google.cloud.automl.v1beta1.PredictRespo"
-          + "nse.MetadataEntry\032/\n\rMetadataEntry\022\013\n\003ke"
-          + "y\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\272\002\n\023BatchPred"
-          + "ictRequest\022\014\n\004name\030\001 \001(\t\022J\n\014input_config"
-          + "\030\003 \001(\01324.google.cloud.automl.v1beta1.Bat"
-          + "chPredictInputConfig\022L\n\routput_config\030\004 "
-          + "\001(\01325.google.cloud.automl.v1beta1.BatchP"
-          + "redictOutputConfig\022L\n\006params\030\005 \003(\0132<.goo"
-          + "gle.cloud.automl.v1beta1.BatchPredictReq"
-          + "uest.ParamsEntry\032-\n\013ParamsEntry\022\013\n\003key\030\001"
-          + " \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\226\001\n\022BatchPredict"
-          + "Result\022O\n\010metadata\030\001 \003(\0132=.google.cloud."
-          + "automl.v1beta1.BatchPredictResult.Metada"
-          + "taEntry\032/\n\rMetadataEntry\022\013\n\003key\030\001 \001(\t\022\r\n"
-          + "\005value\030\002 \001(\t:\0028\0012\264\003\n\021PredictionService\022\250"
-          + "\001\n\007Predict\022+.google.cloud.automl.v1beta1"
-          + ".PredictRequest\032,.google.cloud.automl.v1"
-          + "beta1.PredictResponse\"B\202\323\344\223\002<\"7/v1beta1/"
-          + "{name=projects/*/locations/*/models/*}:p"
-          + "redict:\001*\022\250\001\n\014BatchPredict\0220.google.clou"
-          + "d.automl.v1beta1.BatchPredictRequest\032\035.g"
-          + "oogle.longrunning.Operation\"G\202\323\344\223\002A\"</v1"
-          + "beta1/{name=projects/*/locations/*/model"
-          + "s/*}:batchPredict:\001*\032I\312A\025automl.googleap"
-          + "is.com\322A.https://www.googleapis.com/auth"
-          + "/cloud-platformB\275\001\n\037com.google.cloud.aut"
-          + "oml.v1beta1B\026PredictionServiceProtoP\001ZAg"
-          + "oogle.golang.org/genproto/googleapis/clo"
-          + "ud/automl/v1beta1;automl\312\002\033Google\\Cloud\\"
-          + "AutoMl\\V1beta1\352\002\036Google::Cloud::AutoML::"
-          + "V1beta1b\006proto3"
+          + "1.AnnotationPayload\022G\n\022preprocessed_inpu"
+          + "t\030\003 \001(\0132+.google.cloud.automl.v1beta1.Ex"
+          + "amplePayload\022L\n\010metadata\030\002 \003(\0132:.google."
+          + "cloud.automl.v1beta1.PredictResponse.Met"
+          + "adataEntry\032/\n\rMetadataEntry\022\013\n\003key\030\001 \001(\t"
+          + "\022\r\n\005value\030\002 \001(\t:\0028\001\"\272\002\n\023BatchPredictRequ"
+          + "est\022\014\n\004name\030\001 \001(\t\022J\n\014input_config\030\003 \001(\0132"
+          + "4.google.cloud.automl.v1beta1.BatchPredi"
+          + "ctInputConfig\022L\n\routput_config\030\004 \001(\01325.g"
+          + "oogle.cloud.automl.v1beta1.BatchPredictO"
+          + "utputConfig\022L\n\006params\030\005 \003(\0132<.google.clo"
+          + "ud.automl.v1beta1.BatchPredictRequest.Pa"
+          + "ramsEntry\032-\n\013ParamsEntry\022\013\n\003key\030\001 \001(\t\022\r\n"
+          + "\005value\030\002 \001(\t:\0028\001\"\226\001\n\022BatchPredictResult\022"
+          + "O\n\010metadata\030\001 \003(\0132=.google.cloud.automl."
+          + "v1beta1.BatchPredictResult.MetadataEntry"
+          + "\032/\n\rMetadataEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030"
+          + "\002 \001(\t:\0028\0012\264\003\n\021PredictionService\022\250\001\n\007Pred"
+          + "ict\022+.google.cloud.automl.v1beta1.Predic"
+          + "tRequest\032,.google.cloud.automl.v1beta1.P"
+          + "redictResponse\"B\202\323\344\223\002<\"7/v1beta1/{name=p"
+          + "rojects/*/locations/*/models/*}:predict:"
+          + "\001*\022\250\001\n\014BatchPredict\0220.google.cloud.autom"
+          + "l.v1beta1.BatchPredictRequest\032\035.google.l"
+          + "ongrunning.Operation\"G\202\323\344\223\002A\"</v1beta1/{"
+          + "name=projects/*/locations/*/models/*}:ba"
+          + "tchPredict:\001*\032I\312A\025automl.googleapis.com\322"
+          + "A.https://www.googleapis.com/auth/cloud-"
+          + "platformB\275\001\n\037com.google.cloud.automl.v1b"
+          + "eta1B\026PredictionServiceProtoP\001ZAgoogle.g"
+          + "olang.org/genproto/googleapis/cloud/auto"
+          + "ml/v1beta1;automl\312\002\033Google\\Cloud\\AutoMl\\"
+          + "V1beta1\352\002\036Google::Cloud::AutoML::V1beta1"
+          + "b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -114,12 +116,12 @@ public final class PredictionServiceProto {
         descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.api.AnnotationsProto.getDescriptor(),
+          com.google.api.ClientProto.getDescriptor(),
           com.google.cloud.automl.v1beta1.AnnotationPayloadOuterClass.getDescriptor(),
           com.google.cloud.automl.v1beta1.DataItems.getDescriptor(),
           com.google.cloud.automl.v1beta1.Io.getDescriptor(),
           com.google.cloud.automl.v1beta1.Operations.getDescriptor(),
           com.google.longrunning.OperationsProto.getDescriptor(),
-          com.google.api.ClientProto.getDescriptor(),
         },
         assigner);
     internal_static_google_cloud_automl_v1beta1_PredictRequest_descriptor =
@@ -146,7 +148,7 @@ public final class PredictionServiceProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_automl_v1beta1_PredictResponse_descriptor,
             new java.lang.String[] {
-              "Payload", "Metadata",
+              "Payload", "PreprocessedInput", "Metadata",
             });
     internal_static_google_cloud_automl_v1beta1_PredictResponse_MetadataEntry_descriptor =
         internal_static_google_cloud_automl_v1beta1_PredictResponse_descriptor
@@ -202,12 +204,12 @@ public final class PredictionServiceProto {
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.AnnotationsProto.getDescriptor();
+    com.google.api.ClientProto.getDescriptor();
     com.google.cloud.automl.v1beta1.AnnotationPayloadOuterClass.getDescriptor();
     com.google.cloud.automl.v1beta1.DataItems.getDescriptor();
     com.google.cloud.automl.v1beta1.Io.getDescriptor();
     com.google.cloud.automl.v1beta1.Operations.getDescriptor();
     com.google.longrunning.OperationsProto.getDescriptor();
-    com.google.api.ClientProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

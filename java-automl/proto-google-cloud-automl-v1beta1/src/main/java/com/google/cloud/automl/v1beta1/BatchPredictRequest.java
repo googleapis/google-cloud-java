@@ -7,7 +7,8 @@ package com.google.cloud.automl.v1beta1;
  *
  *
  * <pre>
- * Request message for [PredictionService.BatchPredict][google.cloud.automl.v1beta1.PredictionService.BatchPredict].
+ * Request message for
+ * [PredictionService.BatchPredict][google.cloud.automl.v1beta1.PredictionService.BatchPredict].
  * </pre>
  *
  * Protobuf type {@code google.cloud.automl.v1beta1.BatchPredictRequest}
@@ -793,7 +794,8 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Request message for [PredictionService.BatchPredict][google.cloud.automl.v1beta1.PredictionService.BatchPredict].
+   * Request message for
+   * [PredictionService.BatchPredict][google.cloud.automl.v1beta1.PredictionService.BatchPredict].
    * </pre>
    *
    * Protobuf type {@code google.cloud.automl.v1beta1.BatchPredictRequest}
