@@ -55,8 +55,7 @@ public class ITStorageHmacKeySnippets {
   }
 
   private static void cleanUpHmacKeys(ServiceAccount serviceAccount) {
-    Page<HmacKeyMetadata> page =
-        storage.listHmacKeys(Storage.ListHmacKeysOption.serviceAccount(serviceAccount));
+    Page<HmacKeyMetadata> page = storage.listHmacKeys(Storage.ListHmacKeysOption.serviceAccount(serviceAccount));
     for (HmacKeyMetadata metadata : page.iterateAll()) {
       if (metadata.getState() == HmacKeyState.ACTIVE) {
         storage.updateHmacKeyState(metadata, HmacKeyState.INACTIVE);
