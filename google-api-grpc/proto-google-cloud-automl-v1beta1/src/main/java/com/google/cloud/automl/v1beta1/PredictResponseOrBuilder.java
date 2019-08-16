@@ -69,6 +69,49 @@ public interface PredictResponseOrBuilder
    *
    *
    * <pre>
+   * The preprocessed example that AutoML actually makes prediction on.
+   * Empty if AutoML does not preprocess the input example.
+   * * For Text Extraction:
+   *   If the input is a .pdf file, the OCR'ed text will be provided in
+   *   [document_text][google.cloud.automl.v1beta1.Document.document_text].
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.ExamplePayload preprocessed_input = 3;</code>
+   */
+  boolean hasPreprocessedInput();
+  /**
+   *
+   *
+   * <pre>
+   * The preprocessed example that AutoML actually makes prediction on.
+   * Empty if AutoML does not preprocess the input example.
+   * * For Text Extraction:
+   *   If the input is a .pdf file, the OCR'ed text will be provided in
+   *   [document_text][google.cloud.automl.v1beta1.Document.document_text].
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.ExamplePayload preprocessed_input = 3;</code>
+   */
+  com.google.cloud.automl.v1beta1.ExamplePayload getPreprocessedInput();
+  /**
+   *
+   *
+   * <pre>
+   * The preprocessed example that AutoML actually makes prediction on.
+   * Empty if AutoML does not preprocess the input example.
+   * * For Text Extraction:
+   *   If the input is a .pdf file, the OCR'ed text will be provided in
+   *   [document_text][google.cloud.automl.v1beta1.Document.document_text].
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.ExamplePayload preprocessed_input = 3;</code>
+   */
+  com.google.cloud.automl.v1beta1.ExamplePayloadOrBuilder getPreprocessedInputOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Additional domain-specific prediction response metadata.
    * * For Image Object Detection:
    *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
