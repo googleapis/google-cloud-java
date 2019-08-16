@@ -36,11 +36,11 @@ SHOW VARIABLE AUTOCOMMIT_DML_MODE;
 
 -- Verify that executing an update statement is possible
 @EXPECT UPDATE_COUNT 1
-UPDATE Singers SET LastName='Anderson' /* It used to be 'Richards' */
+UPDATE Singers SET LastName='Some Other Last Name' /* It used to be 'Last 1' */
 WHERE SingerId=1;
 
 @EXPECT RESULT_SET
-SELECT LastName AS ACTUAL, 'Anderson' AS EXPECTED
+SELECT LastName AS ACTUAL, 'Some Other Last Name' AS EXPECTED
 FROM Singers
 WHERE SingerId=1;
 
@@ -52,11 +52,11 @@ SET AUTOCOMMIT_DML_MODE = 'partitioned_non_atomic';
 SHOW VARIABLE AUTOCOMMIT_DML_MODE;
 
 @EXPECT UPDATE_COUNT 1
-UPDATE Singers SET LastName='Richards'
+UPDATE Singers SET LastName='Last 1'
 WHERE SingerId=1;
 
 @EXPECT RESULT_SET
-SELECT LastName AS ACTUAL, 'Richards' AS EXPECTED
+SELECT LastName AS ACTUAL, 'Last 1' AS EXPECTED
 FROM Singers
 WHERE SingerId=1;
 

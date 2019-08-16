@@ -25,16 +25,16 @@ SET READONLY = FALSE;
 BEGIN;
 @EXPECT UPDATE_COUNT 1
 INSERT INTO Singers (SingerId, FirstName, LastName)
-VALUES (9999, 'Vegard', 'Ylvisåker');
+VALUES (9999, 'First 9999', 'Last 9999');
 COMMIT;
 
 -- Verify that the record is there
 @EXPECT RESULT_SET
-SELECT FirstName AS ACTUAL, 'Vegard' AS EXPECTED
+SELECT FirstName AS ACTUAL, 'First 9999' AS EXPECTED
 FROM Singers
 WHERE SingerId=9999
 UNION ALL
-SELECT LastName AS ACTUAL, 'Ylvisåker' AS EXPECTED
+SELECT LastName AS ACTUAL, 'Last 9999' AS EXPECTED
 FROM Singers
 WHERE SingerId=9999;
 
@@ -42,7 +42,7 @@ WHERE SingerId=9999;
 BEGIN;
 @EXPECT UPDATE_COUNT 1
 INSERT INTO Singers (SingerId, FirstName, LastName)
-VALUES (9998, 'Bård', 'Ylvisåker');
+VALUES (9998, 'First 9998', 'Last 9998');
 ROLLBACK;
 
 -- Verify that the record is not there
