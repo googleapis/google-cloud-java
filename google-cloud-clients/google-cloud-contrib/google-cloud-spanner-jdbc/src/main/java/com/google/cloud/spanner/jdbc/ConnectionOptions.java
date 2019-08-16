@@ -370,10 +370,23 @@ class ConnectionOptions {
                 + matcher.group(Builder.HOST_GROUP);
     this.instanceId = matcher.group(Builder.INSTANCE_GROUP);
     this.databaseName = matcher.group(Builder.DATABASE_GROUP);
-    this.credentials =
-        builder.credentials == null
-            ? getCredentialsService().createCredentials(this.credentialsUrl)
-            : builder.credentials;
+    Credentials credentials = null;
+    if (builder.credentials == null) {
+      try {
+        credentials = getCredentialsService().createCredentials(this.credentialsUrl);
+      } catch (Exception e) {
+        // Ignore the error if the user did not set a credentials URL.
+        // The error is then caused by an invalid environment configuration
+        // and should not be thrown here.
+        if (this.credentialsUrl != null) {
+          throw e;
+        }
+        credentials = null;
+      }
+    } else {
+      credentials = builder.credentials;
+    }
+    this.credentials = credentials;
     String numChannelsValue = parseNumChannels(builder.uri);
     if (numChannelsValue != null) {
       try {

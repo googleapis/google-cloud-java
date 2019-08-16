@@ -277,8 +277,10 @@ public class SpannerPool {
     builder
         .setClientLibToken(MoreObjects.firstNonNull(key.userAgent, JdbcDriver.getClientLibToken()))
         .setHost(key.host)
-        .setProjectId(key.projectId)
-        .setCredentials(key.credentials);
+        .setProjectId(key.projectId);
+    if (key.credentials != null) {
+      builder.setCredentials(key.credentials);
+    }
     if (key.numChannels != null) {
       builder.setNumChannels(key.numChannels);
     }
