@@ -22,8 +22,6 @@
 
 package com.google.cloud.examples.storage.snippets;
 
-import static java.nio.charset.StandardCharsets.UTF_8;
-
 import com.google.api.gax.paging.Page;
 import com.google.auth.ServiceAccountSigner;
 import com.google.auth.oauth2.ServiceAccountCredentials;
@@ -62,6 +60,7 @@ import com.google.cloud.storage.StorageBatchResult;
 import com.google.cloud.storage.StorageClass;
 import com.google.cloud.storage.StorageException;
 import com.google.cloud.storage.StorageOptions;
+
 import java.io.ByteArrayInputStream;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -71,6 +70,8 @@ import java.nio.ByteBuffer;
 import java.nio.file.Path;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
+
+import static java.nio.charset.StandardCharsets.UTF_8;
 
 /** This class contains a number of snippets for the {@link Storage} interface. */
 public class StorageSnippets {
@@ -1600,14 +1601,14 @@ public class StorageSnippets {
     System.out.println("The base64 encoded secret is: " + secret);
     System.out.println("Do not miss that secret, there is no API to recover it.");
     System.out.println("The HMAC key metadata is:");
-    System.out.println("Id: " + metadata.getId());
+    System.out.println("ID: " + metadata.getId());
     System.out.println("AccessId: " + metadata.getAccessId());
     System.out.println("ProjectId: " + metadata.getProjectId());
     System.out.println("ServiceAccountEmail: " + metadata.getServiceAccount().getEmail());
     System.out.println("State: " + metadata.getState().toString());
     System.out.println("TimeCreated: " + new Date(metadata.getCreateTime()).toString());
     System.out.println("Updated: " + new Date(metadata.getUpdateTime()).toString());
-    System.out.println("Etag: " + metadata.getEtag());
+    System.out.println("ETag: " + metadata.getEtag());
     // [END storage_create_hmac_key]
     return hmacKey;
   }
@@ -1623,14 +1624,14 @@ public class StorageSnippets {
     HmacKeyMetadata metadata = storage.getHmacKey(accessId);
 
     System.out.println("The HMAC key metadata is:");
-    System.out.println("Id: " + metadata.getId());
+    System.out.println("ID: " + metadata.getId());
     System.out.println("AccessId: " + metadata.getAccessId());
     System.out.println("ProjectId: " + metadata.getProjectId());
     System.out.println("ServiceAccountEmail: " + metadata.getServiceAccount().getEmail());
     System.out.println("State: " + metadata.getState().toString());
     System.out.println("TimeCreated: " + new Date(metadata.getCreateTime()).toString());
     System.out.println("Updated: " + new Date(metadata.getUpdateTime()).toString());
-    System.out.println("Etag: " + metadata.getEtag());
+    System.out.println("ETag: " + metadata.getEtag());
     // [END storage_get_hmac_key]
     return metadata;
   }
@@ -1663,14 +1664,14 @@ public class StorageSnippets {
 
     System.out.println("The HMAC key is now active.");
     System.out.println("The HMAC key metadata is:");
-    System.out.println("Id: " + newMetadata.getId());
+    System.out.println("ID: " + newMetadata.getId());
     System.out.println("AccessId: " + newMetadata.getAccessId());
     System.out.println("ProjectId: " + newMetadata.getProjectId());
     System.out.println("ServiceAccountEmail: " + newMetadata.getServiceAccount().getEmail());
     System.out.println("State: " + newMetadata.getState().toString());
     System.out.println("TimeCreated: " + new Date(newMetadata.getCreateTime()).toString());
     System.out.println("Updated: " + new Date(newMetadata.getUpdateTime()).toString());
-    System.out.println("Etag: " + newMetadata.getEtag());
+    System.out.println("ETag: " + newMetadata.getEtag());
     // [END storage_activate_hmac_key]
     return newMetadata;
   }
@@ -1688,14 +1689,14 @@ public class StorageSnippets {
 
     System.out.println("The HMAC key is now inactive.");
     System.out.println("The HMAC key metadata is:");
-    System.out.println("Id: " + newMetadata.getId());
+    System.out.println("ID: " + newMetadata.getId());
     System.out.println("AccessId: " + newMetadata.getAccessId());
     System.out.println("ProjectId: " + newMetadata.getProjectId());
     System.out.println("ServiceAccountEmail: " + newMetadata.getServiceAccount().getEmail());
     System.out.println("State: " + newMetadata.getState().toString());
     System.out.println("TimeCreated: " + new Date(newMetadata.getCreateTime()).toString());
     System.out.println("Updated: " + new Date(newMetadata.getUpdateTime()).toString());
-    System.out.println("Etag: " + newMetadata.getEtag());
+    System.out.println("ETag: " + newMetadata.getEtag());
     // [END storage_deactivate_hmac_key]
     return newMetadata;
   }
@@ -1713,7 +1714,7 @@ public class StorageSnippets {
 
     for (HmacKeyMetadata metadata : page.iterateAll()) {
       System.out.println("Service Account Email: " + metadata.getServiceAccount().getEmail());
-      System.out.println("Access Id: " + metadata.getAccessId());
+      System.out.println("Access ID: " + metadata.getAccessId());
     }
     // [END storage_list_hmac_keys]
     return page;
