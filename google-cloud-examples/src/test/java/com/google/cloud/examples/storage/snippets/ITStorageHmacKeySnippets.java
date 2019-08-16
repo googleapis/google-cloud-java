@@ -70,7 +70,7 @@ public class ITStorageHmacKeySnippets {
         storage.updateHmacKeyState(hmacKey.getMetadata(), HmacKeyState.INACTIVE);
 
     HmacKeyMetadata newMetadata = storageSnippets.activateHmacKey(metadata.getAccessId());
-    assertEquals(newMetadata.getState(), HmacKeyState.ACTIVE);
+    assertEquals(HmacKeyState.ACTIVE, newMetadata.getState());
   }
 
   @Test
@@ -79,7 +79,7 @@ public class ITStorageHmacKeySnippets {
 
     HmacKeyMetadata metadata =
         storageSnippets.deactivateHmacKey(hmacKey.getMetadata().getAccessId());
-    assertEquals(metadata.getState(), HmacKeyState.INACTIVE);
+    assertEquals(HmacKeyState.INACTIVE, metadata.getState());
   }
 
   @Test
@@ -100,7 +100,9 @@ public class ITStorageHmacKeySnippets {
     Page<HmacKeyMetadata> page = storageSnippets.listHmacKeys(HMAC_KEY_TEST_SERVICE_ACCOUNT);
     List<HmacKeyMetadata> items = new ArrayList<HmacKeyMetadata>();
 
-    for (HmacKeyMetadata metadata : page.iterateAll()) items.add(metadata);
+    for (HmacKeyMetadata metadata : page.iterateAll()) {
+      items.add(metadata);
+    }
 
     assertEquals(2, items.size());
   }
