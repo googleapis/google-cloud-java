@@ -412,8 +412,10 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
         checkException(globalExceptions);
         checkException(this.exceptions);
         if (minimumExecutionTime > 0 || randomExecutionTime > 0) {
-          Uninterruptibles.sleepUninterruptibly((randomExecutionTime == 0 ? 0 : RANDOM.nextInt(randomExecutionTime))
-                  + minimumExecutionTime, TimeUnit.MILLISECONDS);
+          Uninterruptibles.sleepUninterruptibly(
+              (randomExecutionTime == 0 ? 0 : RANDOM.nextInt(randomExecutionTime))
+                  + minimumExecutionTime,
+              TimeUnit.MILLISECONDS);
         }
       } finally {
         freezeLock.readLock().unlock();
