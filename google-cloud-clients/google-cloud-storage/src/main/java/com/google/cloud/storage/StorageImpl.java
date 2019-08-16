@@ -648,7 +648,8 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
     String escapedBlobName = "";
     if (!Strings.isNullOrEmpty(blobInfo.getName())) {
       escapedBlobName =
-          UrlEscapers.urlFragmentEscaper().escape(blobInfo.getName())
+          UrlEscapers.urlFragmentEscaper()
+              .escape(blobInfo.getName())
               .replace("?", "%3F")
               .replace(";", "%3B");
     }
