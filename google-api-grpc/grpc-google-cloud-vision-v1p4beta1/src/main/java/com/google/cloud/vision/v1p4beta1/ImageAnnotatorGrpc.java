@@ -318,9 +318,10 @@ public final class ImageAnnotatorGrpc {
      * <pre>
      * Service that performs image detection and annotation for a batch of files.
      * Now only "application/pdf", "image/tiff" and "image/gif" are supported.
-     * This service will extract at most the first 10 frames (gif) or pages
-     * (pdf or tiff) from each file provided and perform detection and annotation
-     * for each image extracted.
+     * This service will extract at most 5 (customers can specify which 5 in
+     * AnnotateFileRequest.pages) frames (gif) or pages (pdf or tiff) from each
+     * file provided and perform detection and annotation for each image
+     * extracted.
      * </pre>
      */
     public void batchAnnotateFiles(
@@ -448,9 +449,10 @@ public final class ImageAnnotatorGrpc {
      * <pre>
      * Service that performs image detection and annotation for a batch of files.
      * Now only "application/pdf", "image/tiff" and "image/gif" are supported.
-     * This service will extract at most the first 10 frames (gif) or pages
-     * (pdf or tiff) from each file provided and perform detection and annotation
-     * for each image extracted.
+     * This service will extract at most 5 (customers can specify which 5 in
+     * AnnotateFileRequest.pages) frames (gif) or pages (pdf or tiff) from each
+     * file provided and perform detection and annotation for each image
+     * extracted.
      * </pre>
      */
     public void batchAnnotateFiles(
@@ -551,9 +553,10 @@ public final class ImageAnnotatorGrpc {
      * <pre>
      * Service that performs image detection and annotation for a batch of files.
      * Now only "application/pdf", "image/tiff" and "image/gif" are supported.
-     * This service will extract at most the first 10 frames (gif) or pages
-     * (pdf or tiff) from each file provided and perform detection and annotation
-     * for each image extracted.
+     * This service will extract at most 5 (customers can specify which 5 in
+     * AnnotateFileRequest.pages) frames (gif) or pages (pdf or tiff) from each
+     * file provided and perform detection and annotation for each image
+     * extracted.
      * </pre>
      */
     public com.google.cloud.vision.v1p4beta1.BatchAnnotateFilesResponse batchAnnotateFiles(
@@ -645,9 +648,10 @@ public final class ImageAnnotatorGrpc {
      * <pre>
      * Service that performs image detection and annotation for a batch of files.
      * Now only "application/pdf", "image/tiff" and "image/gif" are supported.
-     * This service will extract at most the first 10 frames (gif) or pages
-     * (pdf or tiff) from each file provided and perform detection and annotation
-     * for each image extracted.
+     * This service will extract at most 5 (customers can specify which 5 in
+     * AnnotateFileRequest.pages) frames (gif) or pages (pdf or tiff) from each
+     * file provided and perform detection and annotation for each image
+     * extracted.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
