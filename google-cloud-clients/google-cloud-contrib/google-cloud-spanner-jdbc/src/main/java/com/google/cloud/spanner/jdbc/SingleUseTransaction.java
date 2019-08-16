@@ -444,13 +444,9 @@ class SingleUseTransaction extends AbstractBaseUnitOfWork {
         }
       } catch (Exception e) {
         if (txManager != null) {
-          try {
-            if (txManager.getState()
-                == com.google.cloud.spanner.TransactionManager.TransactionState.STARTED) {
-              fireAndForgetRollbackAndCloseTxManager(txManager);
-            }
-          } finally {
-            txManager.close();
+          if (txManager.getState()
+              == com.google.cloud.spanner.TransactionManager.TransactionState.STARTED) {
+            fireAndForgetRollbackAndCloseTxManager(txManager);
           }
         }
         throw e;
