@@ -72,6 +72,28 @@ public class StatementTimeoutTest {
   private static final String SLOW_UPDATE = "UPDATE foo SET col1=1 WHERE id=2";
   private static final String FAST_UPDATE = "UPDATE fast_table SET foo=1 WHERE bar=2";
 
+  /** Execution time for statements that have been defined as slow. */
+  private static final long EXECUTION_TIME_SLOW_STATEMENT = 10_000L;
+  /**
+   * This timeout should be high enough that it will never be exceeded, even on a slow build
+   * environment, but still significantly lower than the expected execution time of the slow
+   * statements.
+   */
+  private static final long TIMEOUT_FOR_FAST_STATEMENTS = 1000L;
+
+  /**
+   * This timeout should be low enough that it will not make the test case unnecessarily slow, but
+   * still high enough that it would normally not be exceeded for a statement that is executed
+   * directly.
+   */
+  private static final long TIMEOUT_FOR_SLOW_STATEMENTS = 20L;
+  /**
+   * The number of milliseconds to wait before cancelling a query should be high enough to not cause
+   * flakiness on a slow environment, but at the same time low enough that it does not slow down the
+   * test case unnecessarily.
+   */
+  private static final int WAIT_BEFORE_CANCEL = 100;
+
   private enum CommitRollbackBehavior {
     FAST,
     SLOW_COMMIT,
@@ -83,7 +105,7 @@ public class StatementTimeoutTest {
   private static final class DelayedQueryExecution implements Answer<ResultSet> {
     @Override
     public ResultSet answer(InvocationOnMock invocation) throws Throwable {
-      Thread.sleep(10000L);
+      Thread.sleep(EXECUTION_TIME_SLOW_STATEMENT);
       return mock(ResultSet.class);
     }
   }
@@ -142,7 +164,7 @@ public class StatementTimeoutTest {
     SpannerPool spannerPool = mock(SpannerPool.class);
     when(spannerPool.getSpanner(any(ConnectionOptions.class), any(ConnectionImpl.class)))
         .thenReturn(spanner);
-    DdlClient ddlClient = createDefaultMockDdlClient(10000L);
+    DdlClient ddlClient = createDefaultMockDdlClient(EXECUTION_TIME_SLOW_STATEMENT);
     final ResultSet invalidResultSet = mock(ResultSet.class);
     when(invalidResultSet.next())
         .thenThrow(
@@ -192,7 +214,7 @@ public class StatementTimeoutTest {
                                       @Override
                                       public Long answer(InvocationOnMock invocation)
                                           throws Throwable {
-                                        Thread.sleep(10000L);
+                                        Thread.sleep(EXECUTION_TIME_SLOW_STATEMENT);
                                         return 1L;
                                       }
                                     });
@@ -205,7 +227,7 @@ public class StatementTimeoutTest {
                           new Answer<Void>() {
                             @Override
                             public Void answer(InvocationOnMock invocation) throws Throwable {
-                              Thread.sleep(10000L);
+                              Thread.sleep(EXECUTION_TIME_SLOW_STATEMENT);
                               return null;
                             }
                           })
@@ -217,7 +239,7 @@ public class StatementTimeoutTest {
                           new Answer<Void>() {
                             @Override
                             public Void answer(InvocationOnMock invocation) throws Throwable {
-                              Thread.sleep(10000L);
+                              Thread.sleep(EXECUTION_TIME_SLOW_STATEMENT);
                               return null;
                             }
                           })
@@ -234,7 +256,7 @@ public class StatementTimeoutTest {
             new Answer<Long>() {
               @Override
               public Long answer(InvocationOnMock invocation) throws Throwable {
-                Thread.sleep(10000L);
+                Thread.sleep(EXECUTION_TIME_SLOW_STATEMENT);
                 return 1L;
               }
             });
@@ -250,8 +272,7 @@ public class StatementTimeoutTest {
                 .setUri(URI)
                 .build())) {
       connection.setReadOnly(true);
-      connection.setStatementTimeout(20L, TimeUnit.MILLISECONDS);
-
+      connection.setStatementTimeout(TIMEOUT_FOR_SLOW_STATEMENTS, TimeUnit.MILLISECONDS);
       expected.expect(SpannerExceptionMatcher.matchCode(ErrorCode.DEADLINE_EXCEEDED));
       connection.executeQuery(Statement.of(SLOW_SELECT));
     }
@@ -266,8 +287,7 @@ public class StatementTimeoutTest {
                 .setUri(URI)
                 .build())) {
       connection.setReadOnly(true);
-      connection.setStatementTimeout(20L, TimeUnit.MILLISECONDS);
-
+      connection.setStatementTimeout(TIMEOUT_FOR_SLOW_STATEMENTS, TimeUnit.MILLISECONDS);
       // assert that multiple statements after each other also time out
       for (int i = 0; i < 2; i++) {
         boolean timedOut = false;
@@ -279,7 +299,7 @@ public class StatementTimeoutTest {
         assertThat(timedOut, is(true));
       }
       // try to do a new query that is fast.
-      connection.setStatementTimeout(1000L, TimeUnit.MILLISECONDS);
+      connection.setStatementTimeout(TIMEOUT_FOR_FAST_STATEMENTS, TimeUnit.MILLISECONDS);
       assertThat(connection.executeQuery(Statement.of(FAST_SELECT)), is(notNullValue()));
     }
   }
@@ -294,8 +314,7 @@ public class StatementTimeoutTest {
                 .build())) {
       connection.setReadOnly(true);
       connection.setAutocommit(false);
-      connection.setStatementTimeout(20L, TimeUnit.MILLISECONDS);
-
+      connection.setStatementTimeout(TIMEOUT_FOR_SLOW_STATEMENTS, TimeUnit.MILLISECONDS);
       expected.expect(SpannerExceptionMatcher.matchCode(ErrorCode.DEADLINE_EXCEEDED));
       connection.executeQuery(Statement.of(SLOW_SELECT));
     }
@@ -311,8 +330,7 @@ public class StatementTimeoutTest {
                 .build())) {
       connection.setReadOnly(true);
       connection.setAutocommit(false);
-      connection.setStatementTimeout(20L, TimeUnit.MILLISECONDS);
-
+      connection.setStatementTimeout(TIMEOUT_FOR_SLOW_STATEMENTS, TimeUnit.MILLISECONDS);
       // assert that multiple statements after each other also time out
       for (int i = 0; i < 2; i++) {
         boolean timedOut = false;
@@ -327,7 +345,7 @@ public class StatementTimeoutTest {
       connection.clearStatementTimeout();
       connection.rollback();
       // try to do a new query that is fast.
-      connection.setStatementTimeout(1000L, TimeUnit.MILLISECONDS);
+      connection.setStatementTimeout(TIMEOUT_FOR_FAST_STATEMENTS, TimeUnit.MILLISECONDS);
       assertThat(connection.executeQuery(Statement.of(FAST_SELECT)), is(notNullValue()));
     }
   }
@@ -340,8 +358,7 @@ public class StatementTimeoutTest {
                 .setCredentials(NoCredentials.getInstance())
                 .setUri(URI)
                 .build())) {
-      connection.setStatementTimeout(20L, TimeUnit.MILLISECONDS);
-
+      connection.setStatementTimeout(TIMEOUT_FOR_SLOW_STATEMENTS, TimeUnit.MILLISECONDS);
       expected.expect(SpannerExceptionMatcher.matchCode(ErrorCode.DEADLINE_EXCEEDED));
       connection.executeQuery(Statement.of(SLOW_SELECT));
     }
@@ -355,8 +372,7 @@ public class StatementTimeoutTest {
                 .setCredentials(NoCredentials.getInstance())
                 .setUri(URI)
                 .build())) {
-      connection.setStatementTimeout(20L, TimeUnit.MILLISECONDS);
-
+      connection.setStatementTimeout(TIMEOUT_FOR_SLOW_STATEMENTS, TimeUnit.MILLISECONDS);
       // assert that multiple statements after each other also time out
       for (int i = 0; i < 2; i++) {
         boolean timedOut = false;
@@ -368,7 +384,7 @@ public class StatementTimeoutTest {
         assertThat(timedOut, is(true));
       }
       // try to do a new query that is fast.
-      connection.setStatementTimeout(1000L, TimeUnit.MILLISECONDS);
+      connection.setStatementTimeout(TIMEOUT_FOR_FAST_STATEMENTS, TimeUnit.MILLISECONDS);
       assertThat(connection.executeQuery(Statement.of(FAST_SELECT)), is(notNullValue()));
     }
   }
@@ -381,7 +397,7 @@ public class StatementTimeoutTest {
                 .setCredentials(NoCredentials.getInstance())
                 .setUri(URI)
                 .build())) {
-      connection.setStatementTimeout(20L, TimeUnit.MILLISECONDS);
+      connection.setStatementTimeout(TIMEOUT_FOR_SLOW_STATEMENTS, TimeUnit.MILLISECONDS);
       expected.expect(SpannerExceptionMatcher.matchCode(ErrorCode.DEADLINE_EXCEEDED));
       connection.execute(Statement.of(SLOW_UPDATE));
     }
@@ -395,7 +411,7 @@ public class StatementTimeoutTest {
                 .setCredentials(NoCredentials.getInstance())
                 .setUri(URI)
                 .build())) {
-      connection.setStatementTimeout(20L, TimeUnit.MILLISECONDS);
+      connection.setStatementTimeout(TIMEOUT_FOR_SLOW_STATEMENTS, TimeUnit.MILLISECONDS);
 
       // assert that multiple statements after each other also time out
       for (int i = 0; i < 2; i++) {
@@ -408,7 +424,7 @@ public class StatementTimeoutTest {
         assertThat(timedOut, is(true));
       }
       // try to do a new update that is fast.
-      connection.setStatementTimeout(1000L, TimeUnit.MILLISECONDS);
+      connection.setStatementTimeout(TIMEOUT_FOR_FAST_STATEMENTS, TimeUnit.MILLISECONDS);
       assertThat(connection.execute(Statement.of(FAST_UPDATE)).getUpdateCount(), is(equalTo(1L)));
     }
   }
@@ -422,13 +438,16 @@ public class StatementTimeoutTest {
                 .setUri(URI)
                 .build(),
             CommitRollbackBehavior.SLOW_COMMIT)) {
-      connection.setStatementTimeout(20L, TimeUnit.MILLISECONDS);
-      // first verify that the fast update does not timeout when in transactional mode (as it is the
-      // commit that is slow)
+      connection.setStatementTimeout(TIMEOUT_FOR_FAST_STATEMENTS, TimeUnit.MILLISECONDS);
+      // First verify that the fast update does not timeout when in transactional mode (as it is the
+      // commit that is slow).
       connection.setAutocommit(false);
       connection.execute(Statement.of(FAST_UPDATE));
       connection.rollback();
 
+      // Then verify that the update does timeout when executed in autocommit mode, as the commit
+      // gRPC call will be slow.
+      connection.setStatementTimeout(TIMEOUT_FOR_SLOW_STATEMENTS, TimeUnit.MILLISECONDS);
       connection.setAutocommit(true);
       expected.expect(SpannerExceptionMatcher.matchCode(ErrorCode.DEADLINE_EXCEEDED));
       connection.execute(Statement.of(FAST_UPDATE));
@@ -444,8 +463,7 @@ public class StatementTimeoutTest {
                 .setUri(URI)
                 .build(),
             CommitRollbackBehavior.SLOW_COMMIT)) {
-      connection.setStatementTimeout(20L, TimeUnit.MILLISECONDS);
-
+      connection.setStatementTimeout(TIMEOUT_FOR_SLOW_STATEMENTS, TimeUnit.MILLISECONDS);
       // assert that multiple statements after each other also time out
       for (int i = 0; i < 2; i++) {
         boolean timedOut = false;
@@ -457,7 +475,7 @@ public class StatementTimeoutTest {
         assertThat(timedOut, is(true));
       }
       // try to do a new query that is fast.
-      connection.setStatementTimeout(1000L, TimeUnit.MILLISECONDS);
+      connection.setStatementTimeout(TIMEOUT_FOR_FAST_STATEMENTS, TimeUnit.MILLISECONDS);
       assertThat(connection.executeQuery(Statement.of(FAST_SELECT)), is(notNullValue()));
     }
   }
@@ -470,11 +488,12 @@ public class StatementTimeoutTest {
                 .setCredentials(NoCredentials.getInstance())
                 .setUri(URI)
                 .build())) {
-      connection.setStatementTimeout(20L, TimeUnit.MILLISECONDS);
       connection.setAutocommitDmlMode(AutocommitDmlMode.PARTITIONED_NON_ATOMIC);
       // first verify that the fast update does not timeout
+      connection.setStatementTimeout(TIMEOUT_FOR_FAST_STATEMENTS, TimeUnit.MILLISECONDS);
       connection.execute(Statement.of(FAST_UPDATE));
 
+      connection.setStatementTimeout(TIMEOUT_FOR_SLOW_STATEMENTS, TimeUnit.MILLISECONDS);
       expected.expect(SpannerExceptionMatcher.matchCode(ErrorCode.DEADLINE_EXCEEDED));
       connection.execute(Statement.of(SLOW_UPDATE));
     }
@@ -489,8 +508,7 @@ public class StatementTimeoutTest {
                 .setUri(URI)
                 .build())) {
       connection.setAutocommit(false);
-      connection.setStatementTimeout(20L, TimeUnit.MILLISECONDS);
-
+      connection.setStatementTimeout(TIMEOUT_FOR_SLOW_STATEMENTS, TimeUnit.MILLISECONDS);
       expected.expect(SpannerExceptionMatcher.matchCode(ErrorCode.DEADLINE_EXCEEDED));
       connection.executeQuery(Statement.of(SLOW_SELECT));
     }
@@ -505,8 +523,7 @@ public class StatementTimeoutTest {
                 .setUri(URI)
                 .build())) {
       connection.setAutocommit(false);
-      connection.setStatementTimeout(20L, TimeUnit.MILLISECONDS);
-
+      connection.setStatementTimeout(TIMEOUT_FOR_SLOW_STATEMENTS, TimeUnit.MILLISECONDS);
       // Assert that multiple statements after each other will timeout the first time, and then
       // throw a SpannerException with code FAILED_PRECONDITION.
       boolean timedOut = false;
@@ -527,7 +544,7 @@ public class StatementTimeoutTest {
       connection.clearStatementTimeout();
       connection.rollback();
       // try to do a new query that is fast.
-      connection.setStatementTimeout(1000L, TimeUnit.MILLISECONDS);
+      connection.setStatementTimeout(TIMEOUT_FOR_FAST_STATEMENTS, TimeUnit.MILLISECONDS);
       assertThat(connection.executeQuery(Statement.of(FAST_SELECT)), is(notNullValue()));
     }
   }
@@ -542,9 +559,11 @@ public class StatementTimeoutTest {
                 .build(),
             CommitRollbackBehavior.SLOW_COMMIT)) {
       connection.setAutocommit(false);
-      connection.setStatementTimeout(20L, TimeUnit.MILLISECONDS);
 
+      connection.setStatementTimeout(TIMEOUT_FOR_FAST_STATEMENTS, TimeUnit.MILLISECONDS);
       connection.executeQuery(Statement.of(FAST_SELECT));
+
+      connection.setStatementTimeout(TIMEOUT_FOR_SLOW_STATEMENTS, TimeUnit.MILLISECONDS);
       expected.expect(SpannerExceptionMatcher.matchCode(ErrorCode.DEADLINE_EXCEEDED));
       connection.commit();
     }
@@ -560,9 +579,10 @@ public class StatementTimeoutTest {
                 .build(),
             CommitRollbackBehavior.SLOW_ROLLBACK)) {
       connection.setAutocommit(false);
-      connection.setStatementTimeout(20L, TimeUnit.MILLISECONDS);
 
+      connection.setStatementTimeout(TIMEOUT_FOR_FAST_STATEMENTS, TimeUnit.MILLISECONDS);
       connection.executeQuery(Statement.of(FAST_SELECT));
+      connection.setStatementTimeout(TIMEOUT_FOR_SLOW_STATEMENTS, TimeUnit.MILLISECONDS);
       expected.expect(SpannerExceptionMatcher.matchCode(ErrorCode.DEADLINE_EXCEEDED));
       connection.rollback();
     }
@@ -662,7 +682,7 @@ public class StatementTimeoutTest {
                 .setCredentials(NoCredentials.getInstance())
                 .build())) {
       connection.setReadOnly(true);
-      connection.setStatementTimeout(100L, TimeUnit.MILLISECONDS);
+      connection.setStatementTimeout(TIMEOUT_FOR_FAST_STATEMENTS, TimeUnit.MILLISECONDS);
 
       expected.expect(SpannerExceptionMatcher.matchCode(ErrorCode.INVALID_ARGUMENT));
       connection.executeQuery(Statement.of(INVALID_SELECT));
@@ -679,7 +699,7 @@ public class StatementTimeoutTest {
                 .build())) {
       connection.setReadOnly(true);
       connection.setAutocommit(false);
-      connection.setStatementTimeout(100L, TimeUnit.MILLISECONDS);
+      connection.setStatementTimeout(TIMEOUT_FOR_FAST_STATEMENTS, TimeUnit.MILLISECONDS);
 
       expected.expect(SpannerExceptionMatcher.matchCode(ErrorCode.INVALID_ARGUMENT));
       connection.executeQuery(Statement.of(INVALID_SELECT));
@@ -694,7 +714,7 @@ public class StatementTimeoutTest {
                 .setCredentials(NoCredentials.getInstance())
                 .setUri(URI)
                 .build())) {
-      connection.setStatementTimeout(100L, TimeUnit.MILLISECONDS);
+      connection.setStatementTimeout(TIMEOUT_FOR_FAST_STATEMENTS, TimeUnit.MILLISECONDS);
 
       expected.expect(SpannerExceptionMatcher.matchCode(ErrorCode.INVALID_ARGUMENT));
       connection.executeQuery(Statement.of(INVALID_SELECT));
@@ -710,7 +730,7 @@ public class StatementTimeoutTest {
                 .setUri(URI)
                 .build())) {
       connection.setAutocommit(false);
-      connection.setStatementTimeout(100L, TimeUnit.MILLISECONDS);
+      connection.setStatementTimeout(TIMEOUT_FOR_FAST_STATEMENTS, TimeUnit.MILLISECONDS);
 
       expected.expect(SpannerExceptionMatcher.matchCode(ErrorCode.INVALID_ARGUMENT));
       connection.executeQuery(Statement.of(INVALID_SELECT));
@@ -734,7 +754,7 @@ public class StatementTimeoutTest {
                   connection.cancel();
                 }
               },
-              100,
+              WAIT_BEFORE_CANCEL,
               TimeUnit.MILLISECONDS);
 
       expected.expect(SpannerExceptionMatcher.matchCode(ErrorCode.CANCELLED));
@@ -759,7 +779,7 @@ public class StatementTimeoutTest {
                   connection.cancel();
                 }
               },
-              100,
+              WAIT_BEFORE_CANCEL,
               TimeUnit.MILLISECONDS);
 
       boolean cancelled = false;
@@ -771,7 +791,7 @@ public class StatementTimeoutTest {
       assertThat(cancelled, is(true));
 
       // try to do a new query that is fast.
-      connection.setStatementTimeout(1000L, TimeUnit.MILLISECONDS);
+      connection.setStatementTimeout(TIMEOUT_FOR_FAST_STATEMENTS, TimeUnit.MILLISECONDS);
       assertThat(connection.executeQuery(Statement.of(FAST_SELECT)), is(notNullValue()));
     }
   }
@@ -794,7 +814,7 @@ public class StatementTimeoutTest {
                   connection.cancel();
                 }
               },
-              100,
+              WAIT_BEFORE_CANCEL,
               TimeUnit.MILLISECONDS);
 
       expected.expect(SpannerExceptionMatcher.matchCode(ErrorCode.CANCELLED));
@@ -820,7 +840,7 @@ public class StatementTimeoutTest {
                   connection.cancel();
                 }
               },
-              100,
+              WAIT_BEFORE_CANCEL,
               TimeUnit.MILLISECONDS);
 
       boolean cancelled = false;
@@ -832,7 +852,7 @@ public class StatementTimeoutTest {
       assertThat(cancelled, is(true));
 
       // try to do a new query that is fast.
-      connection.setStatementTimeout(1000L, TimeUnit.MILLISECONDS);
+      connection.setStatementTimeout(TIMEOUT_FOR_FAST_STATEMENTS, TimeUnit.MILLISECONDS);
       assertThat(connection.executeQuery(Statement.of(FAST_SELECT)), is(notNullValue()));
       // rollback and do another fast query
       connection.rollback();
@@ -856,7 +876,7 @@ public class StatementTimeoutTest {
                   connection.cancel();
                 }
               },
-              100,
+              WAIT_BEFORE_CANCEL,
               TimeUnit.MILLISECONDS);
 
       expected.expect(SpannerExceptionMatcher.matchCode(ErrorCode.CANCELLED));
@@ -880,7 +900,7 @@ public class StatementTimeoutTest {
                   connection.cancel();
                 }
               },
-              100,
+              WAIT_BEFORE_CANCEL,
               TimeUnit.MILLISECONDS);
 
       boolean cancelled = false;
@@ -892,7 +912,7 @@ public class StatementTimeoutTest {
       assertThat(cancelled, is(true));
 
       // try to do a new query that is fast.
-      connection.setStatementTimeout(1000L, TimeUnit.MILLISECONDS);
+      connection.setStatementTimeout(TIMEOUT_FOR_FAST_STATEMENTS, TimeUnit.MILLISECONDS);
       assertThat(connection.executeQuery(Statement.of(FAST_SELECT)), is(notNullValue()));
     }
   }
@@ -913,7 +933,7 @@ public class StatementTimeoutTest {
                   connection.cancel();
                 }
               },
-              100,
+              WAIT_BEFORE_CANCEL,
               TimeUnit.MILLISECONDS);
 
       expected.expect(SpannerExceptionMatcher.matchCode(ErrorCode.CANCELLED));
@@ -938,7 +958,7 @@ public class StatementTimeoutTest {
                   connection.cancel();
                 }
               },
-              100,
+              WAIT_BEFORE_CANCEL,
               TimeUnit.MILLISECONDS);
 
       expected.expect(SpannerExceptionMatcher.matchCode(ErrorCode.CANCELLED));
@@ -963,7 +983,7 @@ public class StatementTimeoutTest {
                   connection.cancel();
                 }
               },
-              100,
+              WAIT_BEFORE_CANCEL,
               TimeUnit.MILLISECONDS);
 
       expected.expect(SpannerExceptionMatcher.matchCode(ErrorCode.CANCELLED));
@@ -988,7 +1008,7 @@ public class StatementTimeoutTest {
                   connection.cancel();
                 }
               },
-              100,
+              WAIT_BEFORE_CANCEL,
               TimeUnit.MILLISECONDS);
 
       boolean cancelled = false;
@@ -1002,7 +1022,7 @@ public class StatementTimeoutTest {
       connection.rollback();
 
       // Try to do a new query that is fast.
-      connection.setStatementTimeout(1000L, TimeUnit.MILLISECONDS);
+      connection.setStatementTimeout(TIMEOUT_FOR_FAST_STATEMENTS, TimeUnit.MILLISECONDS);
       assertThat(connection.executeQuery(Statement.of(FAST_SELECT)), is(notNullValue()));
     }
   }
@@ -1026,7 +1046,7 @@ public class StatementTimeoutTest {
                   connection.cancel();
                 }
               },
-              100,
+              WAIT_BEFORE_CANCEL,
               TimeUnit.MILLISECONDS);
 
       expected.expect(SpannerExceptionMatcher.matchCode(ErrorCode.CANCELLED));
@@ -1050,7 +1070,7 @@ public class StatementTimeoutTest {
                   connection.cancel();
                 }
               },
-              100,
+              WAIT_BEFORE_CANCEL,
               TimeUnit.MILLISECONDS);
 
       expected.expect(SpannerExceptionMatcher.matchCode(ErrorCode.CANCELLED));
@@ -1066,8 +1086,7 @@ public class StatementTimeoutTest {
                 .setCredentials(NoCredentials.getInstance())
                 .setUri(URI)
                 .build())) {
-      connection.setStatementTimeout(20L, TimeUnit.MILLISECONDS);
-
+      connection.setStatementTimeout(TIMEOUT_FOR_SLOW_STATEMENTS, TimeUnit.MILLISECONDS);
       expected.expect(SpannerExceptionMatcher.matchCode(ErrorCode.DEADLINE_EXCEEDED));
       connection.execute(Statement.of(SLOW_DDL));
     }
@@ -1081,7 +1100,7 @@ public class StatementTimeoutTest {
                 .setCredentials(NoCredentials.getInstance())
                 .setUri(URI)
                 .build())) {
-      connection.setStatementTimeout(20L, TimeUnit.MILLISECONDS);
+      connection.setStatementTimeout(TIMEOUT_FOR_SLOW_STATEMENTS, TimeUnit.MILLISECONDS);
 
       // assert that multiple statements after each other also time out
       for (int i = 0; i < 2; i++) {
@@ -1094,7 +1113,7 @@ public class StatementTimeoutTest {
         assertThat(timedOut, is(true));
       }
       // try to do a new DDL statement that is fast.
-      connection.setStatementTimeout(1000L, TimeUnit.MILLISECONDS);
+      connection.setStatementTimeout(TIMEOUT_FOR_FAST_STATEMENTS, TimeUnit.MILLISECONDS);
       assertThat(connection.execute(Statement.of(FAST_DDL)), is(notNullValue()));
     }
   }
@@ -1109,7 +1128,7 @@ public class StatementTimeoutTest {
                 .build())) {
       connection.setAutocommit(false);
       connection.startBatchDdl();
-      connection.setStatementTimeout(20L, TimeUnit.MILLISECONDS);
+      connection.setStatementTimeout(TIMEOUT_FOR_SLOW_STATEMENTS, TimeUnit.MILLISECONDS);
 
       // the following statement will NOT timeout as the statement is only buffered locally
       connection.execute(Statement.of(SLOW_DDL));
@@ -1128,7 +1147,7 @@ public class StatementTimeoutTest {
                 .setUri(URI)
                 .build())) {
       connection.setAutocommit(false);
-      connection.setStatementTimeout(20L, TimeUnit.MILLISECONDS);
+      connection.setStatementTimeout(TIMEOUT_FOR_SLOW_STATEMENTS, TimeUnit.MILLISECONDS);
 
       // assert that multiple statements after each other also time out
       for (int i = 0; i < 2; i++) {
@@ -1143,7 +1162,7 @@ public class StatementTimeoutTest {
         assertThat(timedOut, is(true));
       }
       // try to do a new DDL statement that is fast.
-      connection.setStatementTimeout(1000L, TimeUnit.MILLISECONDS);
+      connection.setStatementTimeout(TIMEOUT_FOR_FAST_STATEMENTS, TimeUnit.MILLISECONDS);
       connection.startBatchDdl();
       assertThat(connection.execute(Statement.of(FAST_DDL)), is(notNullValue()));
       connection.runBatch();
