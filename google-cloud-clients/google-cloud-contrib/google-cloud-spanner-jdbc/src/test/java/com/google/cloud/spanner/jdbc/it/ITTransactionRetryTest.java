@@ -1565,7 +1565,7 @@ public class ITTransactionRetryTest extends ITAbstractSpannerTest {
     // There might be more retry attempts than expected. The number of successful retries should be
     // equal to the actual difference between started and successful.
     assertThat(
-        RETRY_STATISTICS.totalSuccessfulRetries,
+        RETRY_STATISTICS.totalSuccessfulRetries + RETRY_STATISTICS.totalNestedAborts,
         is(
             equalTo(
                 RETRY_STATISTICS.totalRetryAttemptsStarted
