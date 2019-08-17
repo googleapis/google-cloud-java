@@ -20,20 +20,28 @@ import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.nullValue;
 import static org.junit.Assert.assertThat;
+import static org.mockito.Mockito.mock;
 
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.auth.oauth2.ServiceAccountCredentials;
+import com.google.cloud.spanner.ErrorCode;
+import com.google.cloud.spanner.SpannerExceptionFactory;
 import com.google.cloud.spanner.SpannerOptions;
 import java.util.Arrays;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
+import org.mockito.Mockito;
 
 @RunWith(JUnit4.class)
 public class ConnectionOptionsTest {
   private static final String FILE_TEST_PATH =
       ConnectionOptionsTest.class.getResource("test-key.json").getFile();
   private static final String DEFAULT_HOST = "https://spanner.googleapis.com";
+
+  @Rule public ExpectedException expected = ExpectedException.none();
 
   @Test
   public void testBuildWithValidURIAndCredentialsFileURL() {
@@ -51,6 +59,65 @@ public class ConnectionOptionsTest {
         is(equalTo(new CredentialsService().createCredentials(FILE_TEST_PATH))));
     assertThat(options.isAutocommit(), is(equalTo(ConnectionOptions.DEFAULT_AUTOCOMMIT)));
     assertThat(options.isReadOnly(), is(equalTo(ConnectionOptions.DEFAULT_READONLY)));
+  }
+
+  @Test
+  public void testBuildWithValidEnvCredentials() throws Exception {
+    // Simulate that this is the credentials that have been set for the environment.
+    GoogleCredentials envCredentials = new CredentialsService().createCredentials(FILE_TEST_PATH);
+
+    CredentialsService service = mock(CredentialsService.class);
+    // Call with null means that the JDBC driver should get the credentials from the environment.
+    Mockito.when(service.createCredentials((String) Mockito.isNull())).thenReturn(envCredentials);
+    ConnectionOptions.Builder builder = ConnectionOptions.newBuilder();
+    builder.setCredentialsService(service);
+    builder.setUri(
+        "cloudspanner:/projects/test-project-123/instances/test-instance-123/databases/test-database-123");
+    ConnectionOptions options = builder.build();
+    assertThat(
+        (GoogleCredentials) options.getCredentials(),
+        is(equalTo(new CredentialsService().createCredentials(FILE_TEST_PATH))));
+  }
+
+  @Test
+  public void testBuildWithInvalidEnvCredentials() throws Exception {
+    CredentialsService service = mock(CredentialsService.class);
+    // Call with null means that the JDBC driver should get the credentials from the environment.
+    Mockito.when(service.createCredentials((String) Mockito.isNull()))
+        .thenThrow(
+            SpannerExceptionFactory.newSpannerException(
+                ErrorCode.INVALID_ARGUMENT, "file not found"));
+    ConnectionOptions.Builder builder = ConnectionOptions.newBuilder();
+    builder.setCredentialsService(service);
+    builder.setUri(
+        "cloudspanner:/projects/test-project-123/instances/test-instance-123/databases/test-database-123");
+    ConnectionOptions options = builder.build();
+    assertThat((GoogleCredentials) options.getCredentials(), is(nullValue()));
+  }
+
+  @Test
+  public void testBuildWithInvalidBuilderCredentials() throws Exception {
+    ConnectionOptions.Builder builder = ConnectionOptions.newBuilder();
+    // Setting an invalid credentials URL should cause an exception when creating the
+    // ConnectionOptions.
+    builder.setCredentialsUrl("/path/to/non-existing-key.json");
+    builder.setUri(
+        "cloudspanner:/projects/test-project-123/instances/test-instance-123/databases/test-database-123");
+    expected.expect(
+        SpannerExceptionMatcher.matchCodeAndMessage(
+            ErrorCode.INVALID_ARGUMENT, "Invalid credentials path specified"));
+    builder.build();
+  }
+
+  @Test
+  public void testBuildWithInvalidConnectionURLCredentials() throws Exception {
+    ConnectionOptions.Builder builder = ConnectionOptions.newBuilder();
+    builder.setUri(
+        "cloudspanner:/projects/test-project-123/instances/test-instance-123/databases/test-database-123?credentials=/path/to/non-existing-key.json");
+    expected.expect(
+        SpannerExceptionMatcher.matchCodeAndMessage(
+            ErrorCode.INVALID_ARGUMENT, "Invalid credentials path specified"));
+    builder.build();
   }
 
   @Test

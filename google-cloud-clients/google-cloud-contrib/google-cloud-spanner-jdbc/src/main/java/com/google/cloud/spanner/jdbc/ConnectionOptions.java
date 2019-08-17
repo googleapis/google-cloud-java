@@ -225,6 +225,7 @@ class ConnectionOptions {
     private Credentials credentials;
     private List<StatementExecutionInterceptor> statementExecutionInterceptors =
         Collections.emptyList();
+    private CredentialsService credentialsService = CredentialsService.INSTANCE;
 
     private Builder() {}
 
@@ -317,6 +318,11 @@ class ConnectionOptions {
       return this;
     }
 
+    @VisibleForTesting
+    void setCredentialsService(CredentialsService credentialsService) {
+      this.credentialsService = credentialsService;
+    }
+
     /** @return the {@link ConnectionOptions} */
     public ConnectionOptions build() {
       Preconditions.checkState(this.uri != null, "Connection URI is required");
@@ -373,7 +379,7 @@ class ConnectionOptions {
     Credentials credentials = null;
     if (builder.credentials == null) {
       try {
-        credentials = getCredentialsService().createCredentials(this.credentialsUrl);
+        credentials = builder.credentialsService.createCredentials(this.credentialsUrl);
       } catch (Exception e) {
         // Ignore the error if the user did not set a credentials URL.
         // The error is then caused by an invalid environment configuration
@@ -412,11 +418,6 @@ class ConnectionOptions {
     this.retryAbortsInternally = parseRetryAbortsInternally(this.uri);
     this.statementExecutionInterceptors =
         Collections.unmodifiableList(builder.statementExecutionInterceptors);
-  }
-
-  @VisibleForTesting
-  CredentialsService getCredentialsService() {
-    return CredentialsService.INSTANCE;
   }
 
   @VisibleForTesting
