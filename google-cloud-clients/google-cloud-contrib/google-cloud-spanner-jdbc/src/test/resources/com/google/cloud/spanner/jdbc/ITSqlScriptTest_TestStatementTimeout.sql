@@ -98,7 +98,7 @@ FROM (
 
 -- Try to execute an update that should also timeout
 @EXPECT EXCEPTION DEADLINE_EXCEEDED 'DEADLINE_EXCEEDED: Statement execution timeout occurred'
-UPDATE Singers SET LastName='Anderson' /* It used to be 'Richards' */
+UPDATE Singers SET LastName='Some Other Last Name' /* It used to be 'Last 1' */
 WHERE SingerId=1
 OR LastName IN (
 	SELECT LastName
@@ -127,7 +127,7 @@ OR LastName IN (
 -- Verify that the record was not updated
 SET STATEMENT_TIMEOUT=null;
 @EXPECT RESULT_SET
-SELECT LastName AS ACTUAL, 'Richards' AS EXPECTED
+SELECT LastName AS ACTUAL, 'Last 1' AS EXPECTED
 FROM Singers
 WHERE SingerId=1;
 
@@ -207,7 +207,7 @@ ROLLBACK;
 
 -- Try to execute an update that should also timeout
 @EXPECT EXCEPTION DEADLINE_EXCEEDED 'DEADLINE_EXCEEDED: Statement execution timeout occurred'
-UPDATE Singers SET LastName='Anderson' /* It used to be 'Richards' */
+UPDATE Singers SET LastName='Some Other Last Name' /* It used to be 'Last 1' */
 WHERE SingerId=1
 OR LastName IN (
 	SELECT LastName
@@ -250,6 +250,6 @@ SET STATEMENT_TIMEOUT=null;
 ROLLBACK;
 
 @EXPECT RESULT_SET
-SELECT LastName AS ACTUAL, 'Richards' AS EXPECTED
+SELECT LastName AS ACTUAL, 'Last 1' AS EXPECTED
 FROM Singers
 WHERE SingerId=1;

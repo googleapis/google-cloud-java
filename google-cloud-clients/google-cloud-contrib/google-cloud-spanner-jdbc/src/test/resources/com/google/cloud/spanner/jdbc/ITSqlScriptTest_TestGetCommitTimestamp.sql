@@ -25,7 +25,7 @@ SET AUTOCOMMIT = TRUE;
 SET READONLY = TRUE;
 
 @EXPECT RESULT_SET
-SELECT LastName AS ACTUAL, 'Richards' AS EXPECTED
+SELECT LastName AS ACTUAL, 'Last 1' AS EXPECTED
 FROM Singers
 WHERE SingerId=1;
 
@@ -37,7 +37,7 @@ SHOW VARIABLE COMMIT_TIMESTAMP;
 SET READONLY = FALSE;
 
 @EXPECT RESULT_SET
-SELECT LastName AS ACTUAL, 'Richards' AS EXPECTED
+SELECT LastName AS ACTUAL, 'Last 1' AS EXPECTED
 FROM Singers
 WHERE SingerId=1;
 
@@ -51,7 +51,7 @@ SET AUTOCOMMIT = FALSE;
 SET READONLY = TRUE;
 
 @EXPECT RESULT_SET
-SELECT LastName AS ACTUAL, 'Richards' AS EXPECTED
+SELECT LastName AS ACTUAL, 'Last 1' AS EXPECTED
 FROM Singers
 WHERE SingerId=1;
 
@@ -66,7 +66,7 @@ SHOW VARIABLE COMMIT_TIMESTAMP;
 SET READONLY = FALSE;
 
 @EXPECT RESULT_SET
-SELECT LastName AS ACTUAL, 'Richards' AS EXPECTED
+SELECT LastName AS ACTUAL, 'Last 1' AS EXPECTED
 FROM Singers
 WHERE SingerId=1;
 
@@ -81,7 +81,7 @@ SHOW VARIABLE COMMIT_TIMESTAMP;
 SET AUTOCOMMIT = FALSE;
 
 @EXPECT UPDATE_COUNT 1
-UPDATE Singers SET LastName='Perry'
+UPDATE Singers SET LastName='New Last 1'
 WHERE SingerId=1;
 
 @EXPECT NO_RESULT
@@ -92,7 +92,7 @@ SHOW VARIABLE COMMIT_TIMESTAMP;
 
 -- Reset the value to its original value
 @EXPECT UPDATE_COUNT 1
-UPDATE Singers SET LastName='Richards'
+UPDATE Singers SET LastName='Last 1'
 WHERE SingerId=1;
 
 @EXPECT NO_RESULT
@@ -100,7 +100,7 @@ COMMIT;
 
 -- Select query in transactional and read-write mode that rollbacks should not yield a commit timestamp
 @EXPECT RESULT_SET
-SELECT LastName AS ACTUAL, 'Richards' AS EXPECTED
+SELECT LastName AS ACTUAL, 'Last 1' AS EXPECTED
 FROM Singers
 WHERE SingerId=1;
 
@@ -112,7 +112,7 @@ SHOW VARIABLE COMMIT_TIMESTAMP;
 
 -- Update statement in transactional and read-write mode that rollbacks should not yield a commit timestamp
 @EXPECT UPDATE_COUNT 1
-UPDATE Singers SET LastName='Perry'
+UPDATE Singers SET LastName='New Last 1'
 WHERE SingerId=1;
 
 @EXPECT NO_RESULT
@@ -127,7 +127,7 @@ SET AUTOCOMMIT = FALSE;
 SET READONLY = FALSE;
 
 @EXPECT EXCEPTION INVALID_ARGUMENT
-SELECT LastName AS ACTUAL, 'Richards' AS EXPECTED
+SELECT LastName AS ACTUAL, 'Last 1' AS EXPECTED
 FROM NonExistentTable
 WHERE SingerId=1;
 

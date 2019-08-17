@@ -27,17 +27,17 @@ SET AUTOCOMMIT_DML_MODE = 'PARTITIONED_NON_ATOMIC';
 
 -- Verify that executing an update statement fails
 @EXPECT EXCEPTION FAILED_PRECONDITION 'FAILED_PRECONDITION: Update statements are not allowed in read-only mode'
-UPDATE Singers SET LastName='Anderson' /* It used to be 'Richards' */
+UPDATE Singers SET LastName='Some Other Last Name' /* It used to be 'Last 1' */
 WHERE SingerId=1;
 
 @EXPECT RESULT_SET
-SELECT LastName AS ACTUAL, 'Richards' AS EXPECTED
+SELECT LastName AS ACTUAL, 'Last 1' AS EXPECTED
 FROM Singers
 WHERE SingerId=1;
 
 -- Verify the same for INSERT and DELETE statements
 @EXPECT EXCEPTION FAILED_PRECONDITION 'FAILED_PRECONDITION: Update statements are not allowed in read-only mode'
-INSERT INTO Singers (SingerId, FirstName, LastName) VALUES (9999, 'Morten', 'Harket');
+INSERT INTO Singers (SingerId, FirstName, LastName) VALUES (9999, 'First 9999', 'Last 9999');
 
 @EXPECT EXCEPTION FAILED_PRECONDITION 'FAILED_PRECONDITION: Update statements are not allowed in read-only mode'
 DELETE FROM Singers;
@@ -45,7 +45,7 @@ DELETE FROM Singers;
 -- Verify that the same error message is given even if the update statements references a non-existent table
 @EXPECT EXCEPTION FAILED_PRECONDITION 'FAILED_PRECONDITION: Update statements are not allowed in read-only mode'
 /* The referenced table does not exist */
-update Artists set LastName='Anderson'
+update Artists set LastName='Some Last Name'
 where ArtistId=1;
 
 -- Verify that DDL statements will also cause an exception

@@ -25,33 +25,33 @@ SET READONLY = FALSE;
 
 @EXPECT UPDATE_COUNT 3
 INSERT INTO Singers (SingerId, FirstName, LastName)
-VALUES(1, 'Marc', 'Richards'),
-      (2, 'Catalina', 'Smith'),
-      (3, 'Alice', 'Trentor');
+VALUES(1, 'First 1', 'Last 1'),
+      (2, 'First 2', 'Last 2'),
+      (3, 'First 3', 'Last 3');
 
 @EXPECT UPDATE_COUNT 3
 INSERT INTO Singers (SingerId, FirstName, LastName)
-SELECT 4, 'Lea', 'Martin'
+SELECT 4, 'First 4', 'Last 4'
 UNION ALL
-SELECT 5, 'David', 'Lomond'
+SELECT 5, 'First 5', 'Last 5'
 UNION ALL
-SELECT 6, 'Elena', 'Campbell';
+SELECT 6, 'First 6', 'Last 6';
 
 @EXPECT UPDATE_COUNT 1
 INSERT INTO Singers (SingerId, FirstName, LastName)
-VALUES (10, 'Virginia', 'Watson');
+VALUES (10, 'First 10', 'Last 10');
 @EXPECT UPDATE_COUNT 1
 INSERT INTO Singers (SingerId, FirstName, LastName)
-VALUES (11, 'Timothy', 'Campbell');
+VALUES (11, 'First 11', 'Last 11');
 
 @EXPECT UPDATE_COUNT 5
 INSERT INTO Albums (SingerId, AlbumId, AlbumTitle)
 VALUES
-    (1, 1, 'Total Junk'),
-    (1, 2, 'Go, Go, Go'),
-    (2, 1, 'Green'),
-    (2, 2, 'Forever Hold Your Peace'),
-    (2, 3, 'Terrified');
+    (1, 1, 'Album 1 1'),
+    (1, 2, 'Album 1 2'),
+    (2, 1, 'Album 2 1'),
+    (2, 2, 'Album 2 2'),
+    (2, 3, 'Album 2 3');
 
 @EXPECT NO_RESULT
 COMMIT;
@@ -59,12 +59,12 @@ COMMIT;
 -- Try to insert a record that already exists
 @EXPECT EXCEPTION ALREADY_EXISTS
 INSERT INTO Singers (SingerId, FirstName, LastName)
-VALUES (10, 'Virginia', 'Watson');
+VALUES (10, 'First 10', 'Last 10');
 
 @EXPECT RESULT_SET
 SELECT COUNT(*) AS ACTUAL, 1 AS EXPECTED
 FROM Singers
-WHERE FirstName='Virginia' AND LastName='Watson';
+WHERE FirstName='First 10' AND LastName='Last 10';
 
 @EXPECT NO_RESULT
 ROLLBACK;

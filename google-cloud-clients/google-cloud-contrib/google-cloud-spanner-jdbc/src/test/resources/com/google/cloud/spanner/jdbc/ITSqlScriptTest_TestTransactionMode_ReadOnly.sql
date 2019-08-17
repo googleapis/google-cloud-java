@@ -24,7 +24,7 @@ SET READONLY = TRUE;
 -- Verify that trying to insert a test record will fail
 @EXPECT EXCEPTION FAILED_PRECONDITION 'FAILED_PRECONDITION: Update statements are not allowed for read-only transactions'
 INSERT INTO Singers (SingerId, FirstName, LastName)
-VALUES (9999, 'Vegard', 'Ylvisåker');
+VALUES (9999, 'First 9999', 'Last 9999');
 COMMIT;
 
 ---------------------------------------- Test read only transactions ---------------------------------------------
@@ -37,7 +37,7 @@ WHERE SingerId=1;
 
 @EXPECT EXCEPTION FAILED_PRECONDITION 'FAILED_PRECONDITION: Update statements are not allowed for read-only transactions'
 -- try to update a record in a read-only transaction
-UPDATE Singers SET FirstName='Peter' WHERE SingerId=9999;
+UPDATE Singers SET FirstName='New First Name' WHERE SingerId=9999;
 
 -- We are in a read-only transaction that has returned a query, so there should be a read-timestamp
 @EXPECT RESULT_SET 'READ_TIMESTAMP'
