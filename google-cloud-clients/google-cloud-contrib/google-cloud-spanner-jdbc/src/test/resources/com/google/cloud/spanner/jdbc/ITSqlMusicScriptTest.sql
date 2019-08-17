@@ -521,7 +521,7 @@ SHOW VARIABLE COMMIT_TIMESTAMP;
 UPDATE Singers SET FirstName='FirstName' WHERE SingerId=1;
 
 -- Verify that it was not changed
-@EXPECT RESULT_SET 'FirstName','Marilyn'
+@EXPECT RESULT_SET 'FirstName','First 1'
 SELECT FirstName
 FROM Singers
 WHERE SingerId=1;
