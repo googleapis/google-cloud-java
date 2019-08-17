@@ -23,6 +23,7 @@ import com.google.cloud.spanner.TransactionRunnerImpl.TransactionContextImpl;
 import com.google.common.base.Optional;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Throwables;
+import com.google.common.util.concurrent.Uninterruptibles;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Duration;
@@ -411,13 +412,10 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
         checkException(globalExceptions);
         checkException(this.exceptions);
         if (minimumExecutionTime > 0 || randomExecutionTime > 0) {
-          try {
-            Thread.sleep(
-                (randomExecutionTime == 0 ? 0 : RANDOM.nextInt(randomExecutionTime))
-                    + minimumExecutionTime);
-          } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
-          }
+          Uninterruptibles.sleepUninterruptibly(
+              (randomExecutionTime == 0 ? 0 : RANDOM.nextInt(randomExecutionTime))
+                  + minimumExecutionTime,
+              TimeUnit.MILLISECONDS);
         }
       } finally {
         freezeLock.readLock().unlock();
