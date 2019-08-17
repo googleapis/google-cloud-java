@@ -5392,14 +5392,16 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The visibility of the job.
+   * Deprecated. The job is only visible to the owner.
+   * The visibility of the job.
    * Defaults to
    * [Visibility.ACCOUNT_ONLY][google.cloud.talent.v4beta1.Visibility.ACCOUNT_ONLY]
    * if not specified.
    * </pre>
    *
-   * <code>.google.cloud.talent.v4beta1.Visibility visibility = 21;</code>
+   * <code>.google.cloud.talent.v4beta1.Visibility visibility = 21 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   public int getVisibilityValue() {
     return visibility_;
   }
@@ -5407,14 +5409,16 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The visibility of the job.
+   * Deprecated. The job is only visible to the owner.
+   * The visibility of the job.
    * Defaults to
    * [Visibility.ACCOUNT_ONLY][google.cloud.talent.v4beta1.Visibility.ACCOUNT_ONLY]
    * if not specified.
    * </pre>
    *
-   * <code>.google.cloud.talent.v4beta1.Visibility visibility = 21;</code>
+   * <code>.google.cloud.talent.v4beta1.Visibility visibility = 21 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   public com.google.cloud.talent.v4beta1.Visibility getVisibility() {
     @SuppressWarnings("deprecation")
     com.google.cloud.talent.v4beta1.Visibility result =
@@ -9946,14 +9950,16 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The visibility of the job.
+     * Deprecated. The job is only visible to the owner.
+     * The visibility of the job.
      * Defaults to
      * [Visibility.ACCOUNT_ONLY][google.cloud.talent.v4beta1.Visibility.ACCOUNT_ONLY]
      * if not specified.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.Visibility visibility = 21;</code>
+     * <code>.google.cloud.talent.v4beta1.Visibility visibility = 21 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public int getVisibilityValue() {
       return visibility_;
     }
@@ -9961,14 +9967,16 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The visibility of the job.
+     * Deprecated. The job is only visible to the owner.
+     * The visibility of the job.
      * Defaults to
      * [Visibility.ACCOUNT_ONLY][google.cloud.talent.v4beta1.Visibility.ACCOUNT_ONLY]
      * if not specified.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.Visibility visibility = 21;</code>
+     * <code>.google.cloud.talent.v4beta1.Visibility visibility = 21 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder setVisibilityValue(int value) {
       visibility_ = value;
       onChanged();
@@ -9978,14 +9986,16 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The visibility of the job.
+     * Deprecated. The job is only visible to the owner.
+     * The visibility of the job.
      * Defaults to
      * [Visibility.ACCOUNT_ONLY][google.cloud.talent.v4beta1.Visibility.ACCOUNT_ONLY]
      * if not specified.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.Visibility visibility = 21;</code>
+     * <code>.google.cloud.talent.v4beta1.Visibility visibility = 21 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.talent.v4beta1.Visibility getVisibility() {
       @SuppressWarnings("deprecation")
       com.google.cloud.talent.v4beta1.Visibility result =
@@ -9996,14 +10006,16 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The visibility of the job.
+     * Deprecated. The job is only visible to the owner.
+     * The visibility of the job.
      * Defaults to
      * [Visibility.ACCOUNT_ONLY][google.cloud.talent.v4beta1.Visibility.ACCOUNT_ONLY]
      * if not specified.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.Visibility visibility = 21;</code>
+     * <code>.google.cloud.talent.v4beta1.Visibility visibility = 21 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder setVisibility(com.google.cloud.talent.v4beta1.Visibility value) {
       if (value == null) {
         throw new NullPointerException();
@@ -10017,14 +10029,16 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The visibility of the job.
+     * Deprecated. The job is only visible to the owner.
+     * The visibility of the job.
      * Defaults to
      * [Visibility.ACCOUNT_ONLY][google.cloud.talent.v4beta1.Visibility.ACCOUNT_ONLY]
      * if not specified.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.Visibility visibility = 21;</code>
+     * <code>.google.cloud.talent.v4beta1.Visibility visibility = 21 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder clearVisibility() {
 
       visibility_ = 0;
