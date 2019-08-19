@@ -17,6 +17,7 @@ package com.google.cloud.bigtable.data.v2.it.env;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.junit.Assume;
 import org.junit.rules.ExternalResource;
 
 /**
@@ -38,6 +39,7 @@ import org.junit.rules.ExternalResource;
  */
 public class TestEnvRule extends ExternalResource {
   private static final Logger LOGGER = Logger.getLogger(TestEnvRule.class.getName());
+  private static final String BIGTABLE_EMULATOR_HOST_ENV_VAR = "BIGTABLE_EMULATOR_HOST";
 
   private static final String ENV_PROPERTY = "bigtable.env";
 
@@ -45,6 +47,7 @@ public class TestEnvRule extends ExternalResource {
 
   @Override
   protected void before() throws Throwable {
+    Assume.assumeTrue(System.getenv(BIGTABLE_EMULATOR_HOST_ENV_VAR) == null);
     String env = System.getProperty(ENV_PROPERTY, "emulator");
 
     switch (env) {
