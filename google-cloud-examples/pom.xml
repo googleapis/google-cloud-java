@@ -139,10 +139,6 @@
               <name>BigQueryExample</name>
             </program>
             <program>
-              <mainClass>com.google.cloud.examples.compute.deprecated.ComputeExample</mainClass>
-              <name>ComputeExample</name>
-            </program>
-            <program>
               <mainClass>com.google.cloud.examples.compute.v1.ComputeExample</mainClass>
               <name>ComputeExample</name>
             </program>
