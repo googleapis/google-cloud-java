@@ -39,10 +39,16 @@ public class EmulatorEnv implements TestEnv {
 
     tableAdminClient =
         BigtableTableAdminClient.create(
-            BigtableTableAdminSettings.newBuilderForEmulator(emulator.getPort()).build());
+            BigtableTableAdminSettings.newBuilderForEmulator(emulator.getPort())
+                .setProjectId("fake-project")
+                .setInstanceId("fake-instance")
+                .build());
     dataClient =
         BigtableDataClient.create(
-            BigtableDataSettings.newBuilderForEmulator(emulator.getPort()).build());
+            BigtableDataSettings.newBuilderForEmulator(emulator.getPort())
+                .setProjectId("fake-project")
+                .setInstanceId("fake-instance")
+                .build());
 
     tableAdminClient.createTable(CreateTableRequest.of(TABLE_ID).addFamily(FAMILY_ID));
   }
