@@ -23,6 +23,7 @@ import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStubSettings;
+import com.google.common.base.Strings;
 import io.grpc.ManagedChannelBuilder;
 import java.util.logging.Logger;
 import javax.annotation.Nonnull;
@@ -74,14 +75,14 @@ public final class BigtableDataSettings {
    */
   public static Builder newBuilder() {
     String hostAndPort = System.getenv(BIGTABLE_EMULATOR_HOST_ENV_VAR);
-    if (hostAndPort != null && !hostAndPort.isEmpty()) {
+    if (!Strings.isNullOrEmpty(hostAndPort)) {
       try {
         int lastIndexOfCol = hostAndPort.lastIndexOf(":");
         int port = Integer.parseInt(hostAndPort.substring(lastIndexOfCol + 1));
         return newBuilderForEmulator(hostAndPort.substring(0, lastIndexOfCol), port);
-      } catch (NumberFormatException ex) {
+      } catch (NumberFormatException | IndexOutOfBoundsException ex) {
         throw new RuntimeException(
-            "Invalid port in "
+            "Invalid host/port in "
                 + BIGTABLE_EMULATOR_HOST_ENV_VAR
                 + " environment variable: "
                 + hostAndPort);
@@ -96,15 +97,14 @@ public final class BigtableDataSettings {
   }
 
   /**
-   * Create a new builder preconfigured to connect to the Bigtable emulator with o host & port name.
+   * Creates a new builder preconfigured to connect to the Bigtable emulator with a host name and
+   * port number.
    */
   public static Builder newBuilderForEmulator(String hostname, int port) {
-    Builder builder = new Builder();
+    Builder builder = new Builder().setProjectId("fake-project").setInstanceId("fake-instance");
 
     builder
         .stubSettings()
-        .setProjectId("fake-project")
-        .setInstanceId("fake-instance")
         .setCredentialsProvider(NoCredentialsProvider.create())
         .setEndpoint(hostname + ":" + port)
         .setTransportChannelProvider(

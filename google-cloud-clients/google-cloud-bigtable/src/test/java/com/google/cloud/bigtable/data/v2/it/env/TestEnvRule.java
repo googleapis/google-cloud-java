@@ -15,9 +15,9 @@
  */
 package com.google.cloud.bigtable.data.v2.it.env;
 
+import com.google.common.truth.TruthJUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.junit.Assume;
 import org.junit.rules.ExternalResource;
 
 /**
@@ -47,7 +47,11 @@ public class TestEnvRule extends ExternalResource {
 
   @Override
   protected void before() throws Throwable {
-    Assume.assumeTrue(System.getenv(BIGTABLE_EMULATOR_HOST_ENV_VAR) == null);
+    TruthJUnit.assume()
+        .withMessage(
+            "Integration tests can't run with the BIGTABLE_EMULATOR_HOST_ENV_VAR environment variable set. Please use the emulator-it maven profile instead")
+        .that(System.getenv())
+        .doesNotContainKey(BIGTABLE_EMULATOR_HOST_ENV_VAR);
     String env = System.getProperty(ENV_PROPERTY, "emulator");
 
     switch (env) {

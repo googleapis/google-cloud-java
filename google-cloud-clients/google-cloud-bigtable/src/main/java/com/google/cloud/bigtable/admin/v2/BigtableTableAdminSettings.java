@@ -21,6 +21,7 @@ import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.cloud.bigtable.admin.v2.stub.BigtableTableAdminStubSettings;
 import com.google.common.base.Preconditions;
+import com.google.common.base.Strings;
 import com.google.common.base.Verify;
 import io.grpc.ManagedChannelBuilder;
 import java.io.IOException;
@@ -97,14 +98,14 @@ public final class BigtableTableAdminSettings {
    */
   public static Builder newBuilder() {
     String hostAndPort = System.getenv(BIGTABLE_EMULATOR_HOST_ENV_VAR);
-    if (hostAndPort != null && !hostAndPort.isEmpty()) {
+    if (!Strings.isNullOrEmpty(hostAndPort)) {
       int port;
       try {
         port = Integer.parseInt(hostAndPort.substring(hostAndPort.lastIndexOf(":") + 1));
         return newBuilderForEmulator(hostAndPort.substring(0, hostAndPort.lastIndexOf(":")), port);
-      } catch (NumberFormatException ex) {
+      } catch (NumberFormatException | IndexOutOfBoundsException ex) {
         throw new RuntimeException(
-            "Invalid port in "
+            "Invalid host/port in "
                 + BIGTABLE_EMULATOR_HOST_ENV_VAR
                 + " environment variable: "
                 + hostAndPort);
@@ -119,7 +120,8 @@ public final class BigtableTableAdminSettings {
   }
 
   /**
-   * Create a new builder preconfigured to connect to the Bigtable emulator with host & port number.
+   * Creates a new builder preconfigured to connect to the Bigtable emulator with host name and port
+   * number.
    */
   public static Builder newBuilderForEmulator(String hostname, int port) {
     Builder builder = new Builder().setProjectId("fake-project").setInstanceId("fake-instance");
