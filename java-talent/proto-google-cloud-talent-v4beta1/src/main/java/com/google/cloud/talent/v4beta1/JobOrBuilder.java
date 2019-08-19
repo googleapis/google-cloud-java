@@ -857,27 +857,31 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * Optional. The visibility of the job.
+   * Deprecated. The job is only visible to the owner.
+   * The visibility of the job.
    * Defaults to
    * [Visibility.ACCOUNT_ONLY][google.cloud.talent.v4beta1.Visibility.ACCOUNT_ONLY]
    * if not specified.
    * </pre>
    *
-   * <code>.google.cloud.talent.v4beta1.Visibility visibility = 21;</code>
+   * <code>.google.cloud.talent.v4beta1.Visibility visibility = 21 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   int getVisibilityValue();
   /**
    *
    *
    * <pre>
-   * Optional. The visibility of the job.
+   * Deprecated. The job is only visible to the owner.
+   * The visibility of the job.
    * Defaults to
    * [Visibility.ACCOUNT_ONLY][google.cloud.talent.v4beta1.Visibility.ACCOUNT_ONLY]
    * if not specified.
    * </pre>
    *
-   * <code>.google.cloud.talent.v4beta1.Visibility visibility = 21;</code>
+   * <code>.google.cloud.talent.v4beta1.Visibility visibility = 21 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   com.google.cloud.talent.v4beta1.Visibility getVisibility();
 
   /**
