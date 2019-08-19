@@ -124,7 +124,7 @@ public final class BigtableTableAdminSettings {
    * number.
    */
   public static Builder newBuilderForEmulator(String hostname, int port) {
-    Builder builder = new Builder().setProjectId("fake-project").setInstanceId("fake-instance");
+    Builder builder = new Builder();
 
     builder
         .stubSettings()
