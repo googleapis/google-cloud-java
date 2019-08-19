@@ -86,7 +86,7 @@ public class LoggingAppenderTest {
                 new ImmutableMap.Builder<String, String>()
                     .put("levelName", "WARN")
                     .put("levelValue", String.valueOf(30000L))
-                    .put("loggerName", LoggingAppenderTest.class.getName())
+                    .put("loggerName", this.getClass().getName())
                     .build())
             .build();
     logging.setFlushSeverity(Severity.WARNING);
@@ -114,7 +114,7 @@ public class LoggingAppenderTest {
                 new ImmutableMap.Builder<String, String>()
                     .put("levelName", "ERROR")
                     .put("levelValue", String.valueOf(40000L))
-                    .put("loggerName", LoggingAppenderTest.class.getName())
+                    .put("loggerName", this.getClass().getName())
                     .build())
             .build();
     logging.setFlushSeverity(Severity.ERROR);
@@ -149,7 +149,7 @@ public class LoggingAppenderTest {
                 new ImmutableMap.Builder<String, String>()
                     .put("levelName", "WARN")
                     .put("levelValue", String.valueOf(30000L))
-                    .put("loggerName", LoggingAppenderTest.class.getName())
+                    .put("loggerName", this.getClass().getName())
                     .put("test-label-1", "test-value-1")
                     .put("test-label-2", "test-value-2")
                     .build())
@@ -198,7 +198,7 @@ public class LoggingAppenderTest {
                 new ImmutableMap.Builder<String, String>()
                     .put("levelName", "INFO")
                     .put("levelValue", String.valueOf(20000L))
-                    .put("loggerName", LoggingAppenderTest.class.getName())
+                    .put("loggerName", this.getClass().getName())
                     .put("mdc1", "value1")
                     .put("mdc2", "value2")
                     .build())
@@ -250,7 +250,7 @@ public class LoggingAppenderTest {
     loggingEvent.setMessage("this is a test");
     loggingEvent.setLevel(level);
     loggingEvent.setTimeStamp(timestamp);
-    loggingEvent.setLoggerName(LoggingAppenderTest.class.getName());
+    loggingEvent.setLoggerName(this.getClass().getName());
     return loggingEvent;
   }
 
