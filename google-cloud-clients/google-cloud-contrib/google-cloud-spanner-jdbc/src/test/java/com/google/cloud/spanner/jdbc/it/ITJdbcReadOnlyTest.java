@@ -56,7 +56,7 @@ public class ITJdbcReadOnlyTest extends ITAbstractJdbcTest {
         // create tables
         JdbcSqlScriptVerifier verifier = new JdbcSqlScriptVerifier(new ITJdbcConnectionProvider());
         verifier.verifyStatementsInFile(
-            "ITReadOnlySpannerTest_CreateTables.sql", SqlScriptVerifier.class, true);
+            "ITReadOnlySpannerTest_CreateTables.sql", SqlScriptVerifier.class);
 
         // fill tables with data
         connection.setAutoCommit(false);
@@ -89,7 +89,7 @@ public class ITJdbcReadOnlyTest extends ITAbstractJdbcTest {
   @Test
   public void testSqlScript() throws Exception {
     JdbcSqlScriptVerifier verifier = new JdbcSqlScriptVerifier(new ITJdbcConnectionProvider());
-    verifier.verifyStatementsInFile("ITReadOnlySpannerTest.sql", SqlScriptVerifier.class, true);
+    verifier.verifyStatementsInFile("ITReadOnlySpannerTest.sql", SqlScriptVerifier.class);
   }
 
   @Test

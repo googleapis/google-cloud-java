@@ -69,7 +69,7 @@ public class ITReadOnlySpannerTest extends ITAbstractSpannerTest {
         // create tables
         SqlScriptVerifier verifier = new SqlScriptVerifier(new ITConnectionProvider());
         verifier.verifyStatementsInFile(
-            "ITReadOnlySpannerTest_CreateTables.sql", SqlScriptVerifier.class, true);
+            "ITReadOnlySpannerTest_CreateTables.sql", SqlScriptVerifier.class);
 
         // fill tables with data
         connection.setAutocommit(false);
@@ -102,7 +102,7 @@ public class ITReadOnlySpannerTest extends ITAbstractSpannerTest {
   @Test
   public void testSqlScript() throws Exception {
     SqlScriptVerifier verifier = new SqlScriptVerifier(new ITConnectionProvider());
-    verifier.verifyStatementsInFile("ITReadOnlySpannerTest.sql", SqlScriptVerifier.class, true);
+    verifier.verifyStatementsInFile("ITReadOnlySpannerTest.sql", SqlScriptVerifier.class);
   }
 
   @Test

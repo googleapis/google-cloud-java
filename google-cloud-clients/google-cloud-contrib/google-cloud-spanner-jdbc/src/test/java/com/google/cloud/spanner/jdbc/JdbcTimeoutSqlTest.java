@@ -35,6 +35,6 @@ public class JdbcTimeoutSqlTest {
   @Test
   public void testTimeoutScript() throws Exception {
     JdbcSqlScriptVerifier verifier = new JdbcSqlScriptVerifier(new TestConnectionProvider());
-    verifier.verifyStatementsInFile("TimeoutSqlScriptTest.sql", getClass(), false);
+    verifier.verifyStatementsInFile("TimeoutSqlScriptTest.sql", getClass());
   }
 }

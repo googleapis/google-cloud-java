@@ -42,6 +42,6 @@ public class SetReadOnlyStalenessSqlScriptTest {
   @Test
   public void testSetReadOnlyStalenessScript() throws Exception {
     SqlScriptVerifier verifier = new SqlScriptVerifier(new TestConnectionProvider());
-    verifier.verifyStatementsInFile("SetReadOnlyStalenessTest.sql", getClass(), false);
+    verifier.verifyStatementsInFile("SetReadOnlyStalenessTest.sql", getClass());
   }
 }

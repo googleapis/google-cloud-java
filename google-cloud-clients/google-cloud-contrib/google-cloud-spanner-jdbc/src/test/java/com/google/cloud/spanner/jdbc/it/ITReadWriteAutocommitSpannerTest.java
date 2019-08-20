@@ -63,7 +63,7 @@ public class ITReadWriteAutocommitSpannerTest extends ITAbstractSpannerTest {
   public void test01_SqlScript() throws Exception {
     SqlScriptVerifier verifier = new SqlScriptVerifier(new ITConnectionProvider());
     verifier.verifyStatementsInFile(
-        "ITReadWriteAutocommitSpannerTest.sql", SqlScriptVerifier.class, true);
+        "ITReadWriteAutocommitSpannerTest.sql", SqlScriptVerifier.class);
   }
 
   @Test

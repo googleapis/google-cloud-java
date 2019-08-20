@@ -182,6 +182,8 @@ public abstract class AbstractSqlScriptVerifier {
 
   private final Map<String, Object> variables = new HashMap<>();
 
+  private final boolean logStatements;
+
   /**
    * Constructor for a verifier that will take a {@link GenericConnection} as a parameter to the
    * {@link AbstractSqlScriptVerifier#verifyStatementsInFile(GenericConnection, String, Class,
@@ -194,6 +196,7 @@ public abstract class AbstractSqlScriptVerifier {
   /** Constructor for a verifier that will use a connection provider for connections */
   public AbstractSqlScriptVerifier(GenericConnectionProvider provider) {
     this.connectionProvider = provider;
+    this.logStatements = Boolean.parseBoolean(System.getProperty("log_sql_statements", "false"));
   }
 
   /**
@@ -209,14 +212,10 @@ public abstract class AbstractSqlScriptVerifier {
    *     semicolon (;)
    * @param resourceClass The class that should be used to locate the resource specified by the file
    *     name
-   * @param logStatements Should the verifier log each statement that is executed and verified to
-   *     standard out
    * @throws Exception
    */
-  public void verifyStatementsInFile(String filename, Class<?> resourceClass, boolean logStatements)
-      throws Exception {
-    verifyStatementsInFile(
-        connectionProvider.getConnection(), filename, resourceClass, logStatements);
+  public void verifyStatementsInFile(String filename, Class<?> resourceClass) throws Exception {
+    verifyStatementsInFile(connectionProvider.getConnection(), filename, resourceClass);
   }
 
   /**
@@ -230,11 +229,9 @@ public abstract class AbstractSqlScriptVerifier {
    * @param filename The file name containing the statements. Statements must be separated by a
    *     semicolon (;)
    * @param resourceClass The class that defines the package where to find the input file
-   * @param logStatements Should all statements be logged to standard out?
    */
   public void verifyStatementsInFile(
-      GenericConnection connection, String filename, Class<?> resourceClass, boolean logStatements)
-      throws Exception {
+      GenericConnection connection, String filename, Class<?> resourceClass) throws Exception {
     try {
       List<String> statements = readStatementsFromFile(filename, resourceClass);
       for (String statement : statements) {

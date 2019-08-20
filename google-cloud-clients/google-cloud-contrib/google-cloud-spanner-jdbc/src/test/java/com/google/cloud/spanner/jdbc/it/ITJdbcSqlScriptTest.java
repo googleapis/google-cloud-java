@@ -72,7 +72,7 @@ public class ITJdbcSqlScriptTest extends ITAbstractJdbcTest {
   public void test01_CreateTables() throws Exception {
     try (Connection connection = createConnection()) {
       verifier.verifyStatementsInFile(
-          JdbcGenericConnection.of(connection), CREATE_TABLES_FILE, SqlScriptVerifier.class, true);
+          JdbcGenericConnection.of(connection), CREATE_TABLES_FILE, SqlScriptVerifier.class);
     }
   }
 
@@ -83,8 +83,7 @@ public class ITJdbcSqlScriptTest extends ITAbstractJdbcTest {
       verifier.verifyStatementsInFile(
           JdbcGenericConnection.of(connection),
           INSERT_AND_VERIFY_TEST_DATA,
-          SqlScriptVerifier.class,
-          true);
+          SqlScriptVerifier.class);
     }
   }
 
@@ -92,10 +91,7 @@ public class ITJdbcSqlScriptTest extends ITAbstractJdbcTest {
   public void test03_TestGetReadTimestamp() throws Exception {
     try (Connection connection = createConnection()) {
       verifier.verifyStatementsInFile(
-          JdbcGenericConnection.of(connection),
-          TEST_GET_READ_TIMESTAMP,
-          SqlScriptVerifier.class,
-          true);
+          JdbcGenericConnection.of(connection), TEST_GET_READ_TIMESTAMP, SqlScriptVerifier.class);
     }
   }
 
@@ -103,10 +99,7 @@ public class ITJdbcSqlScriptTest extends ITAbstractJdbcTest {
   public void test04_TestGetCommitTimestamp() throws Exception {
     try (Connection connection = createConnection()) {
       verifier.verifyStatementsInFile(
-          JdbcGenericConnection.of(connection),
-          TEST_GET_COMMIT_TIMESTAMP,
-          SqlScriptVerifier.class,
-          true);
+          JdbcGenericConnection.of(connection), TEST_GET_COMMIT_TIMESTAMP, SqlScriptVerifier.class);
     }
   }
 
@@ -116,8 +109,7 @@ public class ITJdbcSqlScriptTest extends ITAbstractJdbcTest {
       verifier.verifyStatementsInFile(
           JdbcGenericConnection.of(connection),
           TEST_TEMPORARY_TRANSACTIONS,
-          SqlScriptVerifier.class,
-          true);
+          SqlScriptVerifier.class);
     }
   }
 
@@ -125,10 +117,7 @@ public class ITJdbcSqlScriptTest extends ITAbstractJdbcTest {
   public void test06_TestTransactionMode() throws Exception {
     try (Connection connection = createConnection()) {
       verifier.verifyStatementsInFile(
-          JdbcGenericConnection.of(connection),
-          TEST_TRANSACTION_MODE,
-          SqlScriptVerifier.class,
-          true);
+          JdbcGenericConnection.of(connection), TEST_TRANSACTION_MODE, SqlScriptVerifier.class);
     }
   }
 
@@ -138,8 +127,7 @@ public class ITJdbcSqlScriptTest extends ITAbstractJdbcTest {
       verifier.verifyStatementsInFile(
           JdbcGenericConnection.of(connection),
           TEST_TRANSACTION_MODE_READ_ONLY,
-          SqlScriptVerifier.class,
-          true);
+          SqlScriptVerifier.class);
     }
   }
 
@@ -147,10 +135,7 @@ public class ITJdbcSqlScriptTest extends ITAbstractJdbcTest {
   public void test08_TestReadOnlyStaleness() throws Exception {
     try (Connection connection = createConnection()) {
       verifier.verifyStatementsInFile(
-          JdbcGenericConnection.of(connection),
-          TEST_READ_ONLY_STALENESS,
-          SqlScriptVerifier.class,
-          true);
+          JdbcGenericConnection.of(connection), TEST_READ_ONLY_STALENESS, SqlScriptVerifier.class);
     }
   }
 
@@ -158,10 +143,7 @@ public class ITJdbcSqlScriptTest extends ITAbstractJdbcTest {
   public void test09_TestAutocommitDmlMode() throws Exception {
     try (Connection connection = createConnection()) {
       verifier.verifyStatementsInFile(
-          JdbcGenericConnection.of(connection),
-          TEST_AUTOCOMMIT_DML_MODE,
-          SqlScriptVerifier.class,
-          true);
+          JdbcGenericConnection.of(connection), TEST_AUTOCOMMIT_DML_MODE, SqlScriptVerifier.class);
     }
   }
 
@@ -169,10 +151,7 @@ public class ITJdbcSqlScriptTest extends ITAbstractJdbcTest {
   public void test10_TestAutocommitReadOnly() throws Exception {
     try (Connection connection = createConnection()) {
       verifier.verifyStatementsInFile(
-          JdbcGenericConnection.of(connection),
-          TEST_AUTOCOMMIT_READ_ONLY,
-          SqlScriptVerifier.class,
-          true);
+          JdbcGenericConnection.of(connection), TEST_AUTOCOMMIT_READ_ONLY, SqlScriptVerifier.class);
     }
   }
 
@@ -180,10 +159,7 @@ public class ITJdbcSqlScriptTest extends ITAbstractJdbcTest {
   public void test11_TestStatementTimeout() throws Exception {
     try (Connection connection = createConnection()) {
       verifier.verifyStatementsInFile(
-          JdbcGenericConnection.of(connection),
-          TEST_STATEMENT_TIMEOUT,
-          SqlScriptVerifier.class,
-          true);
+          JdbcGenericConnection.of(connection), TEST_STATEMENT_TIMEOUT, SqlScriptVerifier.class);
     }
     try (Connection connection = createConnection()) {
       // Create a statement with a query timeout, but do not set a statement timeout on the
@@ -221,7 +197,7 @@ public class ITJdbcSqlScriptTest extends ITAbstractJdbcTest {
   public void test12_TestSetStatements() throws Exception {
     try (Connection connection = createConnection()) {
       verifier.verifyStatementsInFile(
-          JdbcGenericConnection.of(connection), TEST_SET_STATEMENTS, SqlScriptVerifier.class, true);
+          JdbcGenericConnection.of(connection), TEST_SET_STATEMENTS, SqlScriptVerifier.class);
     }
   }
 
@@ -229,10 +205,7 @@ public class ITJdbcSqlScriptTest extends ITAbstractJdbcTest {
   public void test13_TestInvalidStatements() throws Exception {
     try (Connection connection = createConnection()) {
       verifier.verifyStatementsInFile(
-          JdbcGenericConnection.of(connection),
-          TEST_INVALID_STATEMENTS,
-          SqlScriptVerifier.class,
-          true);
+          JdbcGenericConnection.of(connection), TEST_INVALID_STATEMENTS, SqlScriptVerifier.class);
     }
   }
 }

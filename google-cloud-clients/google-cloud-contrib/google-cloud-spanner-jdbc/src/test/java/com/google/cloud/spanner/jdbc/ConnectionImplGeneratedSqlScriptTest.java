@@ -59,7 +59,7 @@ public class ConnectionImplGeneratedSqlScriptTest {
   @Test
   public void testGeneratedScript() throws Exception {
     SqlScriptVerifier verifier = new SqlScriptVerifier(new TestConnectionProvider());
-    verifier.verifyStatementsInFile("ConnectionImplGeneratedSqlScriptTest.sql", getClass(), false);
+    verifier.verifyStatementsInFile("ConnectionImplGeneratedSqlScriptTest.sql", getClass());
   }
 
   /**
