@@ -24,6 +24,7 @@ import com.google.cloud.Identity;
 import com.google.cloud.Policy;
 import com.google.cloud.storage.testing.ApiPolicyMatcher;
 import com.google.common.collect.ImmutableList;
+import java.util.List;
 import org.junit.Test;
 
 public class PolicyHelperTest {
@@ -60,5 +61,13 @@ public class PolicyHelperTest {
 
     assertEquals(libPolicy, actualLibPolicy);
     assertTrue(new ApiPolicyMatcher(apiPolicy).matches(actualApiPolicy));
+  }
+
+  @Test(expected = IllegalStateException.class)
+  public void testApiPolicyWithoutBinding() {
+    List<Bindings> bindings = null;
+    com.google.api.services.storage.model.Policy apiPolicy =
+        new com.google.api.services.storage.model.Policy().setBindings(bindings).setEtag(ETAG);
+    PolicyHelper.convertFromApiPolicy(apiPolicy);
   }
 }

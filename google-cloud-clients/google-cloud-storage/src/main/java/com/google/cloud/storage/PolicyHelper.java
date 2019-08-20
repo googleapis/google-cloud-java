@@ -34,13 +34,14 @@ class PolicyHelper {
   static Policy convertFromApiPolicy(com.google.api.services.storage.model.Policy apiPolicy) {
     Policy.Builder policyBuilder = Policy.newBuilder();
     List<Bindings> bindings = apiPolicy.getBindings();
-    if (bindings == null) {
-      throw new IllegalStateException("Missing required bindings.");
-    }
-    for (Bindings binding : bindings) {
-      for (String member : binding.getMembers()) {
-        policyBuilder.addIdentity(Role.of(binding.getRole()), Identity.valueOf(member));
+    if (null != bindings && bindings.size() > 0) {
+      for (Bindings binding : bindings) {
+        for (String member : binding.getMembers()) {
+          policyBuilder.addIdentity(Role.of(binding.getRole()), Identity.valueOf(member));
+        }
       }
+    } else {
+      throw new IllegalStateException("Missing required bindings.");
     }
     return policyBuilder.setEtag(apiPolicy.getEtag()).build();
   }
