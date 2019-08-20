@@ -23,6 +23,7 @@ import com.google.cloud.spanner.IntegrationTest;
 import com.google.cloud.spanner.IntegrationTestEnv;
 import com.google.cloud.spanner.ResultSet;
 import com.google.cloud.spanner.SpannerExceptionFactory;
+import com.google.cloud.spanner.SpannerOptions;
 import com.google.cloud.spanner.Statement;
 import com.google.cloud.spanner.TransactionManager;
 import com.google.cloud.spanner.TransactionManager.TransactionState;
@@ -167,6 +168,20 @@ public abstract class ITAbstractSpannerTest {
     return database;
   }
 
+  /**
+   * Returns a connection URL that is extracted from the given {@link SpannerOptions} and database
+   * in the form
+   * cloudspanner:[//host]/projects/PROJECT_ID/instances/INSTANCE_ID/databases/DATABASE_ID
+   */
+  static StringBuilder extractConnectionUrl(SpannerOptions options, Database database) {
+    StringBuilder url = new StringBuilder("cloudspanner:");
+    if (options.getHost() != null) {
+      url.append(options.getHost().substring(options.getHost().indexOf(':') + 1));
+    }
+    url.append("/").append(database.getId().getName());
+    return url;
+  }
+
   @BeforeClass
   public static void setup() throws IOException, InterruptedException, ExecutionException {
     database = env.getTestHelper().createTestDatabase();
@@ -211,7 +226,8 @@ public abstract class ITAbstractSpannerTest {
   public ITConnection createConnection(
       List<StatementExecutionInterceptor> interceptors,
       List<TransactionRetryListener> transactionRetryListeners) {
-    StringBuilder url = new StringBuilder("cloudspanner:/").append(getDatabase().getId().getName());
+    StringBuilder url =
+        extractConnectionUrl(getTestEnv().getTestHelper().getOptions(), getDatabase());
     appendConnectionUri(url);
     ConnectionOptions.Builder builder =
         ConnectionOptions.newBuilder()

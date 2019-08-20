@@ -1562,14 +1562,6 @@ public class ITTransactionRetryTest extends ITAbstractSpannerTest {
     assertThat(
         RETRY_STATISTICS.totalConcurrentModifications,
         is(equalTo(concurrentModificationsExpected)));
-    // There might be more retry attempts than expected. The number of successful retries should be
-    // equal to the actual difference between started and successful.
-    assertThat(
-        RETRY_STATISTICS.totalSuccessfulRetries,
-        is(
-            equalTo(
-                RETRY_STATISTICS.totalRetryAttemptsStarted
-                    - minAttemptsStartedExpected
-                    + successfulRetriesExpected)));
+    assertThat(RETRY_STATISTICS.totalSuccessfulRetries >= successfulRetriesExpected, is(true));
   }
 }
