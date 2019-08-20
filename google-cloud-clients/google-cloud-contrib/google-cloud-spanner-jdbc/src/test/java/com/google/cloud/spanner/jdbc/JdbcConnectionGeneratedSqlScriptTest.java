@@ -57,6 +57,6 @@ public class JdbcConnectionGeneratedSqlScriptTest {
   public void testGeneratedScript() throws Exception {
     JdbcSqlScriptVerifier verifier = new JdbcSqlScriptVerifier(new TestConnectionProvider());
     verifier.verifyStatementsInFile(
-        "ConnectionImplGeneratedSqlScriptTest.sql", SqlScriptVerifier.class, false);
+        "ConnectionImplGeneratedSqlScriptTest.sql", SqlScriptVerifier.class);
   }
 }

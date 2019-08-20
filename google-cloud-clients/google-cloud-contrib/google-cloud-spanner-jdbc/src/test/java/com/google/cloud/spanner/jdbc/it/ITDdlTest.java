@@ -32,6 +32,6 @@ public class ITDdlTest extends ITAbstractSpannerTest {
   @Test
   public void testSqlScript() throws Exception {
     SqlScriptVerifier verifier = new SqlScriptVerifier(new ITConnectionProvider());
-    verifier.verifyStatementsInFile("ITDdlTest.sql", SqlScriptVerifier.class, true);
+    verifier.verifyStatementsInFile("ITDdlTest.sql", SqlScriptVerifier.class);
   }
 }

@@ -33,6 +33,6 @@ public class ITJdbcDdlTest extends ITAbstractJdbcTest {
   @Test
   public void testSqlScript() throws Exception {
     JdbcSqlScriptVerifier verifier = new JdbcSqlScriptVerifier(new ITJdbcConnectionProvider());
-    verifier.verifyStatementsInFile("ITDdlTest.sql", SqlScriptVerifier.class, true);
+    verifier.verifyStatementsInFile("ITDdlTest.sql", SqlScriptVerifier.class);
   }
 }

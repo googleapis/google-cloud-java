@@ -38,6 +38,6 @@ public class SetStatementTimeoutSqlScriptTest {
   @Test
   public void testSetStatementTimeoutScript() throws Exception {
     SqlScriptVerifier verifier = new SqlScriptVerifier(new TestConnectionProvider());
-    verifier.verifyStatementsInFile("SetStatementTimeoutTest.sql", getClass(), false);
+    verifier.verifyStatementsInFile("SetStatementTimeoutTest.sql", getClass());
   }
 }
