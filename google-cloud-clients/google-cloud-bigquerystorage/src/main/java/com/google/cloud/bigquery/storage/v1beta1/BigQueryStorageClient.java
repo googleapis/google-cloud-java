@@ -491,17 +491,21 @@ public class BigQueryStorageClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BigQueryStorageClient bigQueryStorageClient = BigQueryStorageClient.create()) {
-   *   Stream originalStream = Stream.newBuilder().build();
+   *   Stream originalStream = getStream();
    *   SplitReadStreamResponse response = bigQueryStorageClient.splitReadStream(originalStream);
    * }
    * </code></pre>
    *
    * @param originalStream Stream to split.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated Use {@link BigQueryStorageClient#splitReadStream(SplitReadStreamRequest)}.
    */
   public final SplitReadStreamResponse splitReadStream(Stream originalStream) {
     SplitReadStreamRequest request =
-        SplitReadStreamRequest.newBuilder().setOriginalStream(originalStream).build();
+        SplitReadStreamRequest.newBuilder()
+            .setOriginalStream(originalStream)
+            .setFraction(0.5f)
+            .build();
     return splitReadStream(request);
   }
 
@@ -522,9 +526,10 @@ public class BigQueryStorageClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BigQueryStorageClient bigQueryStorageClient = BigQueryStorageClient.create()) {
-   *   Stream originalStream = Stream.newBuilder().build();
+   *   Stream originalStream = getStream()
    *   SplitReadStreamRequest request = SplitReadStreamRequest.newBuilder()
    *     .setOriginalStream(originalStream)
+   *     .setFraction(0.5f)
    *     .build();
    *   SplitReadStreamResponse response = bigQueryStorageClient.splitReadStream(request);
    * }
