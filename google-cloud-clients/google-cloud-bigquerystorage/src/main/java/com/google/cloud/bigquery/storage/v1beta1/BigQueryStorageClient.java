@@ -203,7 +203,6 @@ public class BigQueryStorageClient implements BackgroundResource {
     return createReadSession(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a new read session. A read session divides the contents of a BigQuery table into one or
    * more streams, which can then be used to read data from the table. The read session also
@@ -237,7 +236,6 @@ public class BigQueryStorageClient implements BackgroundResource {
     return createReadSessionCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a new read session. A read session divides the contents of a BigQuery table into one or
    * more streams, which can then be used to read data from the table. The read session also
@@ -270,7 +268,6 @@ public class BigQueryStorageClient implements BackgroundResource {
     return stub.createReadSessionCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Reads rows from the table in the format prescribed by the read session. Each response contains
    * one or more table rows, up to a maximum of 10 MiB per response; read requests which attempt to
@@ -301,7 +298,6 @@ public class BigQueryStorageClient implements BackgroundResource {
     return stub.readRowsCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates additional streams for a ReadSession. This API can be used to dynamically adjust the
    * parallelism of a batch processing task upwards by adding additional workers.
@@ -333,7 +329,6 @@ public class BigQueryStorageClient implements BackgroundResource {
     return batchCreateReadSessionStreams(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates additional streams for a ReadSession. This API can be used to dynamically adjust the
    * parallelism of a batch processing task upwards by adding additional workers.
@@ -360,7 +355,6 @@ public class BigQueryStorageClient implements BackgroundResource {
     return batchCreateReadSessionStreamsCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates additional streams for a ReadSession. This API can be used to dynamically adjust the
    * parallelism of a batch processing task upwards by adding additional workers.
@@ -387,7 +381,6 @@ public class BigQueryStorageClient implements BackgroundResource {
     return stub.batchCreateReadSessionStreamsCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Triggers the graceful termination of a single stream in a ReadSession. This API can be used to
    * dynamically adjust the parallelism of a batch processing task downwards without losing data.
@@ -418,7 +411,6 @@ public class BigQueryStorageClient implements BackgroundResource {
     finalizeStream(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Triggers the graceful termination of a single stream in a ReadSession. This API can be used to
    * dynamically adjust the parallelism of a batch processing task downwards without losing data.
@@ -451,7 +443,6 @@ public class BigQueryStorageClient implements BackgroundResource {
     finalizeStreamCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Triggers the graceful termination of a single stream in a ReadSession. This API can be used to
    * dynamically adjust the parallelism of a batch processing task downwards without losing data.
@@ -483,7 +474,6 @@ public class BigQueryStorageClient implements BackgroundResource {
     return stub.finalizeStreamCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Splits a given read stream into two Streams. These streams are referred to as the primary and
    * the residual of the split. The original stream can still be read from in the same manner as
@@ -515,7 +505,6 @@ public class BigQueryStorageClient implements BackgroundResource {
     return splitReadStream(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Splits a given read stream into two Streams. These streams are referred to as the primary and
    * the residual of the split. The original stream can still be read from in the same manner as
@@ -548,7 +537,6 @@ public class BigQueryStorageClient implements BackgroundResource {
     return splitReadStreamCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Splits a given read stream into two Streams. These streams are referred to as the primary and
    * the residual of the split. The original stream can still be read from in the same manner as
