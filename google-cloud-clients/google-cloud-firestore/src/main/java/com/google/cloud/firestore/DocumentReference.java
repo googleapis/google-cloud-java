@@ -355,7 +355,7 @@ public class DocumentReference {
     return extractFirst(firestore.getAll(this));
   }
 
-  /** fetches the document reference in the form of the stream inside apiStreamObserver */
+  /** Fetches the document reference in the form of the stream inside apiStreamObserver */
   @Nonnull
   public void get(
       @Nullable FieldMask fieldMask,
