@@ -75,16 +75,21 @@ public class LoggingTest {
 
     ListLogEntriesRequest request =
         LoggingImpl.listLogEntriesRequest(
-            LoggingOptions.newBuilder()
-                .setProjectId("some-project-id")
-                .setBillingAccount("test-account")
-                .setOrganization("test-org")
-                .setFolder("test-folder")
-                .build(),
+            "some-project-id",
             LoggingImpl.optionMap(
-                EntryListOption.pageToken(PAGE_TOKEN), EntryListOption.pageSize(PAGE_SIZE)));
+                EntryListOption.pageToken(PAGE_TOKEN),
+                EntryListOption.pageSize(PAGE_SIZE),
+                EntryListOption.organization("test-org"),
+                EntryListOption.billingAccount("test-account"),
+                EntryListOption.folder("test-folder")));
     assertThat(request.getPageToken()).isEqualTo(PAGE_TOKEN);
     assertThat(request.getPageSize()).isEqualTo(PAGE_SIZE);
+    assertThat(request.getResourceNamesList())
+        .containsExactly(
+            "projects/some-project-id",
+            "organizations/test-org",
+            "billingAccounts/test-account",
+            "folders/test-folder");
   }
 
   @Test

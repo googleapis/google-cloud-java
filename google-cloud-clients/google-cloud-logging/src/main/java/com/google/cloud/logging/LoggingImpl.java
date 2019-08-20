@@ -17,8 +17,11 @@
 package com.google.cloud.logging;
 
 import static com.google.api.client.util.Preconditions.checkArgument;
+import static com.google.cloud.logging.Logging.EntryListOption.OptionType.BILLINGACCOUNT;
 import static com.google.cloud.logging.Logging.EntryListOption.OptionType.FILTER;
+import static com.google.cloud.logging.Logging.EntryListOption.OptionType.FOLDER;
 import static com.google.cloud.logging.Logging.EntryListOption.OptionType.ORDER_BY;
+import static com.google.cloud.logging.Logging.EntryListOption.OptionType.ORGANIZATION;
 import static com.google.cloud.logging.Logging.ListOption.OptionType.PAGE_SIZE;
 import static com.google.cloud.logging.Logging.ListOption.OptionType.PAGE_TOKEN;
 import static com.google.cloud.logging.Logging.WriteOption.OptionType.LABELS;
@@ -630,19 +633,20 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
   }
 
   static ListLogEntriesRequest listLogEntriesRequest(
-      LoggingOptions resourceNames, Map<Option.OptionType, ?> options) {
+      String projectId, Map<Option.OptionType, ?> options) {
     ListLogEntriesRequest.Builder builder = ListLogEntriesRequest.newBuilder();
-    if (resourceNames.getProjectId() != null) {
-      builder.addResourceNames("projects/" + resourceNames.getProjectId());
+    builder.addResourceNames("projects/" + projectId);
+    String organization = ORGANIZATION.get(options);
+    if (organization != null) {
+      builder.addResourceNames("organizations/" + organization);
     }
-    if (resourceNames.getOrganization() != null) {
-      builder.addResourceNames("organizations/" + resourceNames.getOrganization());
+    String billingAccount = BILLINGACCOUNT.get(options);
+    if (billingAccount != null) {
+      builder.addResourceNames("billingAccounts/" + billingAccount);
     }
-    if (resourceNames.getBillingAccount() != null) {
-      builder.addResourceNames("billingAccounts/" + resourceNames.getBillingAccount());
-    }
-    if (resourceNames.getFolder() != null) {
-      builder.addResourceNames("folders/" + resourceNames.getFolder());
+    String folder = FOLDER.get(options);
+    if (folder != null) {
+      builder.addResourceNames("folders/" + folder);
     }
     Integer pageSize = PAGE_SIZE.get(options);
     if (pageSize != null) {
@@ -665,7 +669,8 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
 
   private static ApiFuture<AsyncPage<LogEntry>> listLogEntriesAsync(
       final LoggingOptions serviceOptions, final Map<Option.OptionType, ?> options) {
-    final ListLogEntriesRequest request = listLogEntriesRequest(serviceOptions, options);
+    final ListLogEntriesRequest request =
+        listLogEntriesRequest(serviceOptions.getProjectId(), options);
     ApiFuture<ListLogEntriesResponse> list = serviceOptions.getLoggingRpcV2().list(request);
     return transform(
         list,
