@@ -87,12 +87,11 @@ public class ITAbstractJdbcTest {
    * @return The newly opened JDBC connection.
    */
   public CloudSpannerJdbcConnection createConnection() throws SQLException {
-    StringBuilder url = new StringBuilder("jdbc:cloudspanner:");
-    String host = env.getTestHelper().getOptions().getHost();
-    if (host != null) {
-      url.append(host.substring(host.indexOf(':') + 1));
-    }
-    url.append("/").append(getDatabase().getId().getName());
+    // Create a connection URL for the generic connection API.
+    StringBuilder url =
+        ITAbstractSpannerTest.extractConnectionUrl(env.getTestHelper().getOptions(), getDatabase());
+    // Prepend it with 'jdbc:' to make it a valid JDBC connection URL.
+    url.insert(0, "jdbc:");
     if (hasValidKeyFile()) {
       url.append(";credentials=").append(getKeyFile());
     }
