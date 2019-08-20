@@ -33,7 +33,11 @@ class PolicyHelper {
 
   static Policy convertFromApiPolicy(com.google.api.services.storage.model.Policy apiPolicy) {
     Policy.Builder policyBuilder = Policy.newBuilder();
-    for (Bindings binding : apiPolicy.getBindings()) {
+    List<Bindings> bindings = apiPolicy.getBindings();
+    if (bindings == null) {
+      throw new IllegalStateException("Missing required bindings.");
+    }
+    for (Bindings binding : bindings) {
       for (String member : binding.getMembers()) {
         policyBuilder.addIdentity(Role.of(binding.getRole()), Identity.valueOf(member));
       }
