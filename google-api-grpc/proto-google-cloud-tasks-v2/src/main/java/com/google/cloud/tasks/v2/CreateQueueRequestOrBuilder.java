@@ -12,30 +12,32 @@ public interface CreateQueueRequestOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * The location name in which the queue will be created.
+   * Required. The location name in which the queue will be created.
    * For example: `projects/PROJECT_ID/locations/LOCATION_ID`
    * The list of allowed locations can be obtained by calling Cloud
    * Tasks' implementation of
    * [ListLocations][google.cloud.location.Locations.ListLocations].
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   java.lang.String getParent();
   /**
    *
    *
    * <pre>
-   * Required.
-   * The location name in which the queue will be created.
+   * Required. The location name in which the queue will be created.
    * For example: `projects/PROJECT_ID/locations/LOCATION_ID`
    * The list of allowed locations can be obtained by calling Cloud
    * Tasks' implementation of
    * [ListLocations][google.cloud.location.Locations.ListLocations].
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -43,36 +45,33 @@ public interface CreateQueueRequestOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * The queue to create.
+   * Required. The queue to create.
    * [Queue's name][google.cloud.tasks.v2.Queue.name] cannot be the same as an existing queue.
    * </pre>
    *
-   * <code>.google.cloud.tasks.v2.Queue queue = 2;</code>
+   * <code>.google.cloud.tasks.v2.Queue queue = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   boolean hasQueue();
   /**
    *
    *
    * <pre>
-   * Required.
-   * The queue to create.
+   * Required. The queue to create.
    * [Queue's name][google.cloud.tasks.v2.Queue.name] cannot be the same as an existing queue.
    * </pre>
    *
-   * <code>.google.cloud.tasks.v2.Queue queue = 2;</code>
+   * <code>.google.cloud.tasks.v2.Queue queue = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.cloud.tasks.v2.Queue getQueue();
   /**
    *
    *
    * <pre>
-   * Required.
-   * The queue to create.
+   * Required. The queue to create.
    * [Queue's name][google.cloud.tasks.v2.Queue.name] cannot be the same as an existing queue.
    * </pre>
    *
-   * <code>.google.cloud.tasks.v2.Queue queue = 2;</code>
+   * <code>.google.cloud.tasks.v2.Queue queue = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.cloud.tasks.v2.QueueOrBuilder getQueueOrBuilder();
 }
