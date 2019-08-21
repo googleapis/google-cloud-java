@@ -7,8 +7,7 @@ package com.google.cloud.tasks.v2beta2;
  *
  *
  * <pre>
- * Request message for
- * [PauseQueue][google.cloud.tasks.v2beta2.CloudTasks.PauseQueue].
+ * Request message for [PauseQueue][google.cloud.tasks.v2beta2.CloudTasks.PauseQueue].
  * </pre>
  *
  * Protobuf type {@code google.cloud.tasks.v2beta2.PauseQueueRequest}
@@ -98,12 +97,13 @@ public final class PauseQueueRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required.
-   * The queue name. For example:
+   * Required. The queue name. For example:
    * `projects/PROJECT_ID/location/LOCATION_ID/queues/QUEUE_ID`
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -120,12 +120,13 @@ public final class PauseQueueRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required.
-   * The queue name. For example:
+   * Required. The queue name. For example:
    * `projects/PROJECT_ID/location/LOCATION_ID/queues/QUEUE_ID`
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -302,8 +303,7 @@ public final class PauseQueueRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Request message for
-   * [PauseQueue][google.cloud.tasks.v2beta2.CloudTasks.PauseQueue].
+   * Request message for [PauseQueue][google.cloud.tasks.v2beta2.CloudTasks.PauseQueue].
    * </pre>
    *
    * Protobuf type {@code google.cloud.tasks.v2beta2.PauseQueueRequest}
@@ -462,12 +462,13 @@ public final class PauseQueueRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required.
-     * The queue name. For example:
+     * Required. The queue name. For example:
      * `projects/PROJECT_ID/location/LOCATION_ID/queues/QUEUE_ID`
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -484,12 +485,13 @@ public final class PauseQueueRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required.
-     * The queue name. For example:
+     * Required. The queue name. For example:
      * `projects/PROJECT_ID/location/LOCATION_ID/queues/QUEUE_ID`
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -506,12 +508,13 @@ public final class PauseQueueRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required.
-     * The queue name. For example:
+     * Required. The queue name. For example:
      * `projects/PROJECT_ID/location/LOCATION_ID/queues/QUEUE_ID`
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -526,12 +529,13 @@ public final class PauseQueueRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required.
-     * The queue name. For example:
+     * Required. The queue name. For example:
      * `projects/PROJECT_ID/location/LOCATION_ID/queues/QUEUE_ID`
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder clearName() {
 
@@ -543,12 +547,13 @@ public final class PauseQueueRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required.
-     * The queue name. For example:
+     * Required. The queue name. For example:
      * `projects/PROJECT_ID/location/LOCATION_ID/queues/QUEUE_ID`
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

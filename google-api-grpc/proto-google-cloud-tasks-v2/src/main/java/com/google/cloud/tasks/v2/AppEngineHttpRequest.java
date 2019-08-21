@@ -29,11 +29,10 @@ package com.google.cloud.tasks.v2;
  * protocol.
  * The [AppEngineRouting][google.cloud.tasks.v2.AppEngineRouting] used to construct the URL that the task is
  * delivered to can be set at the queue-level or task-level:
- * * If set,
- *    [app_engine_routing_override][google.cloud.tasks.v2.AppEngineHttpQueue.app_engine_routing_override]
- *    is used for all tasks in the queue, no matter what the setting
- *    is for the
- *    [task-level app_engine_routing][google.cloud.tasks.v2.AppEngineHttpRequest.app_engine_routing].
+ * * If [app_engine_routing_override is set on the
+ *    queue][Queue.app_engine_routing_override], this value is used for all
+ *    tasks in the queue, no matter what the setting is for the [task-level
+ *    app_engine_routing][AppEngineHttpRequest.app_engine_routing].
  * The `url` that the task will be sent to is:
  * * `url =` [host][google.cloud.tasks.v2.AppEngineRouting.host] `+`
  *   [relative_uri][google.cloud.tasks.v2.AppEngineHttpRequest.relative_uri]
@@ -51,7 +50,7 @@ package com.google.cloud.tasks.v2;
  * the app's handler returns a non-2xx response code or Cloud Tasks does
  * not receive response before the [deadline][google.cloud.tasks.v2.Task.dispatch_deadline]. Failed
  * tasks will be retried according to the
- * [retry configuration][Queue.RetryConfig]. `503` (Service Unavailable) is
+ * [retry configuration][google.cloud.tasks.v2.Queue.retry_config]. `503` (Service Unavailable) is
  * considered an App Engine system error instead of an application error and
  * will cause Cloud Tasks' traffic congestion control to temporarily throttle
  * the queue's dispatches. Unlike other types of task targets, a `429` (Too Many
@@ -251,10 +250,10 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Task-level setting for App Engine routing.
-   * If set,
-   * [app_engine_routing_override][google.cloud.tasks.v2.AppEngineHttpQueue.app_engine_routing_override]
-   * is used for all tasks in the queue, no matter what the setting is for the
-   * [task-level app_engine_routing][google.cloud.tasks.v2.AppEngineHttpRequest.app_engine_routing].
+   * * If [app_engine_routing_override is set on the
+   *    queue][Queue.app_engine_routing_override], this value is used for all
+   *    tasks in the queue, no matter what the setting is for the [task-level
+   *    app_engine_routing][AppEngineHttpRequest.app_engine_routing].
    * </pre>
    *
    * <code>.google.cloud.tasks.v2.AppEngineRouting app_engine_routing = 2;</code>
@@ -267,10 +266,10 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Task-level setting for App Engine routing.
-   * If set,
-   * [app_engine_routing_override][google.cloud.tasks.v2.AppEngineHttpQueue.app_engine_routing_override]
-   * is used for all tasks in the queue, no matter what the setting is for the
-   * [task-level app_engine_routing][google.cloud.tasks.v2.AppEngineHttpRequest.app_engine_routing].
+   * * If [app_engine_routing_override is set on the
+   *    queue][Queue.app_engine_routing_override], this value is used for all
+   *    tasks in the queue, no matter what the setting is for the [task-level
+   *    app_engine_routing][AppEngineHttpRequest.app_engine_routing].
    * </pre>
    *
    * <code>.google.cloud.tasks.v2.AppEngineRouting app_engine_routing = 2;</code>
@@ -285,10 +284,10 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Task-level setting for App Engine routing.
-   * If set,
-   * [app_engine_routing_override][google.cloud.tasks.v2.AppEngineHttpQueue.app_engine_routing_override]
-   * is used for all tasks in the queue, no matter what the setting is for the
-   * [task-level app_engine_routing][google.cloud.tasks.v2.AppEngineHttpRequest.app_engine_routing].
+   * * If [app_engine_routing_override is set on the
+   *    queue][Queue.app_engine_routing_override], this value is used for all
+   *    tasks in the queue, no matter what the setting is for the [task-level
+   *    app_engine_routing][AppEngineHttpRequest.app_engine_routing].
    * </pre>
    *
    * <code>.google.cloud.tasks.v2.AppEngineRouting app_engine_routing = 2;</code>
@@ -820,11 +819,10 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
    * protocol.
    * The [AppEngineRouting][google.cloud.tasks.v2.AppEngineRouting] used to construct the URL that the task is
    * delivered to can be set at the queue-level or task-level:
-   * * If set,
-   *    [app_engine_routing_override][google.cloud.tasks.v2.AppEngineHttpQueue.app_engine_routing_override]
-   *    is used for all tasks in the queue, no matter what the setting
-   *    is for the
-   *    [task-level app_engine_routing][google.cloud.tasks.v2.AppEngineHttpRequest.app_engine_routing].
+   * * If [app_engine_routing_override is set on the
+   *    queue][Queue.app_engine_routing_override], this value is used for all
+   *    tasks in the queue, no matter what the setting is for the [task-level
+   *    app_engine_routing][AppEngineHttpRequest.app_engine_routing].
    * The `url` that the task will be sent to is:
    * * `url =` [host][google.cloud.tasks.v2.AppEngineRouting.host] `+`
    *   [relative_uri][google.cloud.tasks.v2.AppEngineHttpRequest.relative_uri]
@@ -842,7 +840,7 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
    * the app's handler returns a non-2xx response code or Cloud Tasks does
    * not receive response before the [deadline][google.cloud.tasks.v2.Task.dispatch_deadline]. Failed
    * tasks will be retried according to the
-   * [retry configuration][Queue.RetryConfig]. `503` (Service Unavailable) is
+   * [retry configuration][google.cloud.tasks.v2.Queue.retry_config]. `503` (Service Unavailable) is
    * considered an App Engine system error instead of an application error and
    * will cause Cloud Tasks' traffic congestion control to temporarily throttle
    * the queue's dispatches. Unlike other types of task targets, a `429` (Too Many
@@ -1187,10 +1185,10 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Task-level setting for App Engine routing.
-     * If set,
-     * [app_engine_routing_override][google.cloud.tasks.v2.AppEngineHttpQueue.app_engine_routing_override]
-     * is used for all tasks in the queue, no matter what the setting is for the
-     * [task-level app_engine_routing][google.cloud.tasks.v2.AppEngineHttpRequest.app_engine_routing].
+     * * If [app_engine_routing_override is set on the
+     *    queue][Queue.app_engine_routing_override], this value is used for all
+     *    tasks in the queue, no matter what the setting is for the [task-level
+     *    app_engine_routing][AppEngineHttpRequest.app_engine_routing].
      * </pre>
      *
      * <code>.google.cloud.tasks.v2.AppEngineRouting app_engine_routing = 2;</code>
@@ -1203,10 +1201,10 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Task-level setting for App Engine routing.
-     * If set,
-     * [app_engine_routing_override][google.cloud.tasks.v2.AppEngineHttpQueue.app_engine_routing_override]
-     * is used for all tasks in the queue, no matter what the setting is for the
-     * [task-level app_engine_routing][google.cloud.tasks.v2.AppEngineHttpRequest.app_engine_routing].
+     * * If [app_engine_routing_override is set on the
+     *    queue][Queue.app_engine_routing_override], this value is used for all
+     *    tasks in the queue, no matter what the setting is for the [task-level
+     *    app_engine_routing][AppEngineHttpRequest.app_engine_routing].
      * </pre>
      *
      * <code>.google.cloud.tasks.v2.AppEngineRouting app_engine_routing = 2;</code>
@@ -1225,10 +1223,10 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Task-level setting for App Engine routing.
-     * If set,
-     * [app_engine_routing_override][google.cloud.tasks.v2.AppEngineHttpQueue.app_engine_routing_override]
-     * is used for all tasks in the queue, no matter what the setting is for the
-     * [task-level app_engine_routing][google.cloud.tasks.v2.AppEngineHttpRequest.app_engine_routing].
+     * * If [app_engine_routing_override is set on the
+     *    queue][Queue.app_engine_routing_override], this value is used for all
+     *    tasks in the queue, no matter what the setting is for the [task-level
+     *    app_engine_routing][AppEngineHttpRequest.app_engine_routing].
      * </pre>
      *
      * <code>.google.cloud.tasks.v2.AppEngineRouting app_engine_routing = 2;</code>
@@ -1251,10 +1249,10 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Task-level setting for App Engine routing.
-     * If set,
-     * [app_engine_routing_override][google.cloud.tasks.v2.AppEngineHttpQueue.app_engine_routing_override]
-     * is used for all tasks in the queue, no matter what the setting is for the
-     * [task-level app_engine_routing][google.cloud.tasks.v2.AppEngineHttpRequest.app_engine_routing].
+     * * If [app_engine_routing_override is set on the
+     *    queue][Queue.app_engine_routing_override], this value is used for all
+     *    tasks in the queue, no matter what the setting is for the [task-level
+     *    app_engine_routing][AppEngineHttpRequest.app_engine_routing].
      * </pre>
      *
      * <code>.google.cloud.tasks.v2.AppEngineRouting app_engine_routing = 2;</code>
@@ -1275,10 +1273,10 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Task-level setting for App Engine routing.
-     * If set,
-     * [app_engine_routing_override][google.cloud.tasks.v2.AppEngineHttpQueue.app_engine_routing_override]
-     * is used for all tasks in the queue, no matter what the setting is for the
-     * [task-level app_engine_routing][google.cloud.tasks.v2.AppEngineHttpRequest.app_engine_routing].
+     * * If [app_engine_routing_override is set on the
+     *    queue][Queue.app_engine_routing_override], this value is used for all
+     *    tasks in the queue, no matter what the setting is for the [task-level
+     *    app_engine_routing][AppEngineHttpRequest.app_engine_routing].
      * </pre>
      *
      * <code>.google.cloud.tasks.v2.AppEngineRouting app_engine_routing = 2;</code>
@@ -1305,10 +1303,10 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Task-level setting for App Engine routing.
-     * If set,
-     * [app_engine_routing_override][google.cloud.tasks.v2.AppEngineHttpQueue.app_engine_routing_override]
-     * is used for all tasks in the queue, no matter what the setting is for the
-     * [task-level app_engine_routing][google.cloud.tasks.v2.AppEngineHttpRequest.app_engine_routing].
+     * * If [app_engine_routing_override is set on the
+     *    queue][Queue.app_engine_routing_override], this value is used for all
+     *    tasks in the queue, no matter what the setting is for the [task-level
+     *    app_engine_routing][AppEngineHttpRequest.app_engine_routing].
      * </pre>
      *
      * <code>.google.cloud.tasks.v2.AppEngineRouting app_engine_routing = 2;</code>
@@ -1329,10 +1327,10 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Task-level setting for App Engine routing.
-     * If set,
-     * [app_engine_routing_override][google.cloud.tasks.v2.AppEngineHttpQueue.app_engine_routing_override]
-     * is used for all tasks in the queue, no matter what the setting is for the
-     * [task-level app_engine_routing][google.cloud.tasks.v2.AppEngineHttpRequest.app_engine_routing].
+     * * If [app_engine_routing_override is set on the
+     *    queue][Queue.app_engine_routing_override], this value is used for all
+     *    tasks in the queue, no matter what the setting is for the [task-level
+     *    app_engine_routing][AppEngineHttpRequest.app_engine_routing].
      * </pre>
      *
      * <code>.google.cloud.tasks.v2.AppEngineRouting app_engine_routing = 2;</code>
@@ -1347,10 +1345,10 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Task-level setting for App Engine routing.
-     * If set,
-     * [app_engine_routing_override][google.cloud.tasks.v2.AppEngineHttpQueue.app_engine_routing_override]
-     * is used for all tasks in the queue, no matter what the setting is for the
-     * [task-level app_engine_routing][google.cloud.tasks.v2.AppEngineHttpRequest.app_engine_routing].
+     * * If [app_engine_routing_override is set on the
+     *    queue][Queue.app_engine_routing_override], this value is used for all
+     *    tasks in the queue, no matter what the setting is for the [task-level
+     *    app_engine_routing][AppEngineHttpRequest.app_engine_routing].
      * </pre>
      *
      * <code>.google.cloud.tasks.v2.AppEngineRouting app_engine_routing = 2;</code>
@@ -1369,10 +1367,10 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Task-level setting for App Engine routing.
-     * If set,
-     * [app_engine_routing_override][google.cloud.tasks.v2.AppEngineHttpQueue.app_engine_routing_override]
-     * is used for all tasks in the queue, no matter what the setting is for the
-     * [task-level app_engine_routing][google.cloud.tasks.v2.AppEngineHttpRequest.app_engine_routing].
+     * * If [app_engine_routing_override is set on the
+     *    queue][Queue.app_engine_routing_override], this value is used for all
+     *    tasks in the queue, no matter what the setting is for the [task-level
+     *    app_engine_routing][AppEngineHttpRequest.app_engine_routing].
      * </pre>
      *
      * <code>.google.cloud.tasks.v2.AppEngineRouting app_engine_routing = 2;</code>

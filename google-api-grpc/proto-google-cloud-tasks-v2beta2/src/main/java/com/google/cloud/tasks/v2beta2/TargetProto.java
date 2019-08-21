@@ -47,28 +47,27 @@ public final class TargetProto {
     java.lang.String[] descriptorData = {
       "\n\'google/cloud/tasks/v2beta2/target.prot"
           + "o\022\032google.cloud.tasks.v2beta2\032\034google/ap"
-          + "i/annotations.proto\032\036google/protobuf/dur"
-          + "ation.proto\"\014\n\nPullTarget\"+\n\013PullMessage"
-          + "\022\017\n\007payload\030\001 \001(\014\022\013\n\003tag\030\002 \001(\t\"h\n\023AppEng"
-          + "ineHttpTarget\022Q\n\033app_engine_routing_over"
-          + "ride\030\001 \001(\0132,.google.cloud.tasks.v2beta2."
-          + "AppEngineRouting\"\304\002\n\024AppEngineHttpReques"
-          + "t\022;\n\013http_method\030\001 \001(\0162&.google.cloud.ta"
-          + "sks.v2beta2.HttpMethod\022H\n\022app_engine_rou"
-          + "ting\030\002 \001(\0132,.google.cloud.tasks.v2beta2."
-          + "AppEngineRouting\022\024\n\014relative_url\030\003 \001(\t\022N"
-          + "\n\007headers\030\004 \003(\0132=.google.cloud.tasks.v2b"
-          + "eta2.AppEngineHttpRequest.HeadersEntry\022\017"
-          + "\n\007payload\030\005 \001(\014\032.\n\014HeadersEntry\022\013\n\003key\030\001"
-          + " \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"T\n\020AppEngineRout"
-          + "ing\022\017\n\007service\030\001 \001(\t\022\017\n\007version\030\002 \001(\t\022\020\n"
-          + "\010instance\030\003 \001(\t\022\014\n\004host\030\004 \001(\t*[\n\nHttpMet"
-          + "hod\022\033\n\027HTTP_METHOD_UNSPECIFIED\020\000\022\010\n\004POST"
-          + "\020\001\022\007\n\003GET\020\002\022\010\n\004HEAD\020\003\022\007\n\003PUT\020\004\022\n\n\006DELETE"
-          + "\020\005Bp\n\036com.google.cloud.tasks.v2beta2B\013Ta"
-          + "rgetProtoP\001Z?google.golang.org/genproto/"
-          + "googleapis/cloud/tasks/v2beta2;tasksb\006pr"
-          + "oto3"
+          + "i/annotations.proto\"\014\n\nPullTarget\"+\n\013Pul"
+          + "lMessage\022\017\n\007payload\030\001 \001(\014\022\013\n\003tag\030\002 \001(\t\"h"
+          + "\n\023AppEngineHttpTarget\022Q\n\033app_engine_rout"
+          + "ing_override\030\001 \001(\0132,.google.cloud.tasks."
+          + "v2beta2.AppEngineRouting\"\304\002\n\024AppEngineHt"
+          + "tpRequest\022;\n\013http_method\030\001 \001(\0162&.google."
+          + "cloud.tasks.v2beta2.HttpMethod\022H\n\022app_en"
+          + "gine_routing\030\002 \001(\0132,.google.cloud.tasks."
+          + "v2beta2.AppEngineRouting\022\024\n\014relative_url"
+          + "\030\003 \001(\t\022N\n\007headers\030\004 \003(\0132=.google.cloud.t"
+          + "asks.v2beta2.AppEngineHttpRequest.Header"
+          + "sEntry\022\017\n\007payload\030\005 \001(\014\032.\n\014HeadersEntry\022"
+          + "\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"T\n\020AppEn"
+          + "gineRouting\022\017\n\007service\030\001 \001(\t\022\017\n\007version\030"
+          + "\002 \001(\t\022\020\n\010instance\030\003 \001(\t\022\014\n\004host\030\004 \001(\t*[\n"
+          + "\nHttpMethod\022\033\n\027HTTP_METHOD_UNSPECIFIED\020\000"
+          + "\022\010\n\004POST\020\001\022\007\n\003GET\020\002\022\010\n\004HEAD\020\003\022\007\n\003PUT\020\004\022\n"
+          + "\n\006DELETE\020\005Bp\n\036com.google.cloud.tasks.v2b"
+          + "eta2B\013TargetProtoP\001Z?google.golang.org/g"
+          + "enproto/googleapis/cloud/tasks/v2beta2;t"
+          + "asksb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -82,7 +81,6 @@ public final class TargetProto {
         descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.api.AnnotationsProto.getDescriptor(),
-          com.google.protobuf.DurationProto.getDescriptor(),
         },
         assigner);
     internal_static_google_cloud_tasks_v2beta2_PullTarget_descriptor =
@@ -134,7 +132,6 @@ public final class TargetProto {
               "Service", "Version", "Instance", "Host",
             });
     com.google.api.AnnotationsProto.getDescriptor();
-    com.google.protobuf.DurationProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)
