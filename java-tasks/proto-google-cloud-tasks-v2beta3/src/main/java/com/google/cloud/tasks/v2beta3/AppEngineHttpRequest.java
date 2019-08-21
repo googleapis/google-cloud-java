@@ -51,7 +51,7 @@ package com.google.cloud.tasks.v2beta3;
  * the app's handler returns a non-2xx response code or Cloud Tasks does
  * not receive response before the [deadline][google.cloud.tasks.v2beta3.Task.dispatch_deadline]. Failed
  * tasks will be retried according to the
- * [retry configuration][Queue.RetryConfig]. `503` (Service Unavailable) is
+ * [retry configuration][google.cloud.tasks.v2beta3.Queue.retry_config]. `503` (Service Unavailable) is
  * considered an App Engine system error instead of an application error and
  * will cause Cloud Tasks' traffic congestion control to temporarily throttle
  * the queue's dispatches. Unlike other types of task targets, a `429` (Too Many
@@ -844,7 +844,7 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
    * the app's handler returns a non-2xx response code or Cloud Tasks does
    * not receive response before the [deadline][google.cloud.tasks.v2beta3.Task.dispatch_deadline]. Failed
    * tasks will be retried according to the
-   * [retry configuration][Queue.RetryConfig]. `503` (Service Unavailable) is
+   * [retry configuration][google.cloud.tasks.v2beta3.Queue.retry_config]. `503` (Service Unavailable) is
    * considered an App Engine system error instead of an application error and
    * will cause Cloud Tasks' traffic congestion control to temporarily throttle
    * the queue's dispatches. Unlike other types of task targets, a `429` (Too Many

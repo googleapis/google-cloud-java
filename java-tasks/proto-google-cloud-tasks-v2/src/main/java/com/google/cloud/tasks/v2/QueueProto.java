@@ -34,11 +34,11 @@ public final class QueueProto {
   static {
     java.lang.String[] descriptorData = {
       "\n!google/cloud/tasks/v2/queue.proto\022\025goo"
-          + "gle.cloud.tasks.v2\032\034google/api/annotatio"
-          + "ns.proto\032\031google/api/resource.proto\032\"goo"
-          + "gle/cloud/tasks/v2/target.proto\032\036google/"
-          + "protobuf/duration.proto\032\037google/protobuf"
-          + "/timestamp.proto\"\377\002\n\005Queue\022\014\n\004name\030\001 \001(\t"
+          + "gle.cloud.tasks.v2\032\031google/api/resource."
+          + "proto\032\"google/cloud/tasks/v2/target.prot"
+          + "o\032\036google/protobuf/duration.proto\032\037googl"
+          + "e/protobuf/timestamp.proto\032\034google/api/a"
+          + "nnotations.proto\"\335\003\n\005Queue\022\014\n\004name\030\001 \001(\t"
           + "\022L\n\033app_engine_routing_override\030\002 \001(\0132\'."
           + "google.cloud.tasks.v2.AppEngineRouting\0226"
           + "\n\013rate_limits\030\003 \001(\0132!.google.cloud.tasks"
@@ -48,17 +48,20 @@ public final class QueueProto {
           + "ate\022.\n\npurge_time\030\006 \001(\0132\032.google.protobu"
           + "f.Timestamp\"E\n\005State\022\025\n\021STATE_UNSPECIFIE"
           + "D\020\000\022\013\n\007RUNNING\020\001\022\n\n\006PAUSED\020\002\022\014\n\010DISABLED"
-          + "\020\003\"j\n\nRateLimits\022!\n\031max_dispatches_per_s"
-          + "econd\030\001 \001(\001\022\026\n\016max_burst_size\030\002 \001(\005\022!\n\031m"
-          + "ax_concurrent_dispatches\030\003 \001(\005\"\321\001\n\013Retry"
-          + "Config\022\024\n\014max_attempts\030\001 \001(\005\0225\n\022max_retr"
-          + "y_duration\030\002 \001(\0132\031.google.protobuf.Durat"
-          + "ion\022.\n\013min_backoff\030\003 \001(\0132\031.google.protob"
-          + "uf.Duration\022.\n\013max_backoff\030\004 \001(\0132\031.googl"
-          + "e.protobuf.Duration\022\025\n\rmax_doublings\030\005 \001"
-          + "(\005Be\n\031com.google.cloud.tasks.v2B\nQueuePr"
-          + "otoP\001Z:google.golang.org/genproto/google"
-          + "apis/cloud/tasks/v2;tasksb\006proto3"
+          + "\020\003:\\\352AY\n\037cloudtasks.googleapis.com/Queue"
+          + "\0226projects/{project}/locations/{location"
+          + "}/queues/{queue}\"j\n\nRateLimits\022!\n\031max_di"
+          + "spatches_per_second\030\001 \001(\001\022\026\n\016max_burst_s"
+          + "ize\030\002 \001(\005\022!\n\031max_concurrent_dispatches\030\003"
+          + " \001(\005\"\321\001\n\013RetryConfig\022\024\n\014max_attempts\030\001 \001"
+          + "(\005\0225\n\022max_retry_duration\030\002 \001(\0132\031.google."
+          + "protobuf.Duration\022.\n\013min_backoff\030\003 \001(\0132\031"
+          + ".google.protobuf.Duration\022.\n\013max_backoff"
+          + "\030\004 \001(\0132\031.google.protobuf.Duration\022\025\n\rmax"
+          + "_doublings\030\005 \001(\005Be\n\031com.google.cloud.tas"
+          + "ks.v2B\nQueueProtoP\001Z:google.golang.org/g"
+          + "enproto/googleapis/cloud/tasks/v2;tasksb"
+          + "\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -71,11 +74,11 @@ public final class QueueProto {
     com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
         descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.api.AnnotationsProto.getDescriptor(),
           com.google.api.ResourceProto.getDescriptor(),
           com.google.cloud.tasks.v2.TargetProto.getDescriptor(),
           com.google.protobuf.DurationProto.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
+          com.google.api.AnnotationsProto.getDescriptor(),
         },
         assigner);
     internal_static_google_cloud_tasks_v2_Queue_descriptor =
@@ -102,11 +105,16 @@ public final class QueueProto {
             new java.lang.String[] {
               "MaxAttempts", "MaxRetryDuration", "MinBackoff", "MaxBackoff", "MaxDoublings",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
+    com.google.protobuf.ExtensionRegistry registry =
+        com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.ResourceProto.resource);
+    com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
+        descriptor, registry);
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.tasks.v2.TargetProto.getDescriptor();
     com.google.protobuf.DurationProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
+    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)
