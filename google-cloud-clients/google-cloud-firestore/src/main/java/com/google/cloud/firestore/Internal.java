@@ -6,6 +6,7 @@ import com.google.api.core.InternalApi;
 import com.google.cloud.Timestamp;
 import com.google.common.base.Preconditions;
 import com.google.firestore.v1.Document;
+import com.google.firestore.v1.Value;
 import java.util.Map;
 
 @InternalApi
@@ -36,5 +37,10 @@ public class Internal {
   @InternalApi
   public DocumentSnapshot snapshotFromProto(Timestamp readTime, Document document) {
     return DocumentSnapshot.fromDocument(firestore, readTime, document);
+  }
+
+  @InternalApi
+  public Map<String, Value> protoFromSnapshot(DocumentSnapshot snapshot) {
+    return snapshot.getProtoFields();
   }
 }
