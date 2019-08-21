@@ -339,11 +339,11 @@ public abstract class ServiceOptions<
    *
    * <ol>
    *   <li>The project ID specified by the GOOGLE_CLOUD_PROJECT environment variable
-   *   <li>The App Engine project ID
    *   <li>The project ID specified in the JSON credentials file pointed by the {@code
    *       GOOGLE_APPLICATION_CREDENTIALS} environment variable
    *   <li>The Google Cloud SDK project ID
    *   <li>The Compute Engine project ID
+   *   <li>The App Engine project ID
    * </ol>
    */
   public static String getDefaultProjectId() {
@@ -353,12 +353,12 @@ public abstract class ServiceOptions<
           System.getProperty(LEGACY_PROJECT_ENV_NAME, System.getenv(LEGACY_PROJECT_ENV_NAME));
     }
     if (projectId == null) {
-      projectId = getAppEngineProjectId();
-    }
-    if (projectId == null) {
       projectId = getServiceAccountProjectId();
     }
-    return projectId != null ? projectId : getGoogleCloudProjectId();
+    if (projectId == null) {
+      projectId = getGoogleCloudProjectId();
+    }
+    return projectId != null ? projectId : getAppEngineProjectId();
   }
 
   public static String getAppEngineAppId() {
