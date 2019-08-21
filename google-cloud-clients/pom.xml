@@ -172,7 +172,7 @@
     <!-- test dependency versions -->
     <easymock.version>3.6</easymock.version>
     <objenesis.version>2.6</objenesis.version>
-    <autovalue.version>1.6.5</autovalue.version>
+    <autovalue.version>1.6.6</autovalue.version>
   </properties>
   <!-- All non-test dependency versions should be added to google-cloud-bom/pom.xml -->
   <dependencyManagement>
