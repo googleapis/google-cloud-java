@@ -12,8 +12,7 @@ public interface TaskOrBuilder
    *
    *
    * <pre>
-   * Optionally caller-specified in
-   * [CreateTask][google.cloud.tasks.v2beta2.CloudTasks.CreateTask].
+   * Optionally caller-specified in [CreateTask][google.cloud.tasks.v2beta2.CloudTasks.CreateTask].
    * The task name.
    * The task name must have the following format:
    * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`
@@ -39,8 +38,7 @@ public interface TaskOrBuilder
    *
    *
    * <pre>
-   * Optionally caller-specified in
-   * [CreateTask][google.cloud.tasks.v2beta2.CloudTasks.CreateTask].
+   * Optionally caller-specified in [CreateTask][google.cloud.tasks.v2beta2.CloudTasks.CreateTask].
    * The task name.
    * The task name must have the following format:
    * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`
@@ -69,11 +67,9 @@ public interface TaskOrBuilder
    * <pre>
    * App Engine HTTP request that is sent to the task's target. Can
    * be set only if
-   * [app_engine_http_target][google.cloud.tasks.v2beta2.Queue.app_engine_http_target]
-   * is set on the queue.
-   * An App Engine task is a task that has
-   * [AppEngineHttpRequest][google.cloud.tasks.v2beta2.AppEngineHttpRequest]
-   * set.
+   * [app_engine_http_target][google.cloud.tasks.v2beta2.Queue.app_engine_http_target] is set
+   * on the queue.
+   * An App Engine task is a task that has [AppEngineHttpRequest][google.cloud.tasks.v2beta2.AppEngineHttpRequest] set.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta2.AppEngineHttpRequest app_engine_http_request = 3;</code>
@@ -85,11 +81,9 @@ public interface TaskOrBuilder
    * <pre>
    * App Engine HTTP request that is sent to the task's target. Can
    * be set only if
-   * [app_engine_http_target][google.cloud.tasks.v2beta2.Queue.app_engine_http_target]
-   * is set on the queue.
-   * An App Engine task is a task that has
-   * [AppEngineHttpRequest][google.cloud.tasks.v2beta2.AppEngineHttpRequest]
-   * set.
+   * [app_engine_http_target][google.cloud.tasks.v2beta2.Queue.app_engine_http_target] is set
+   * on the queue.
+   * An App Engine task is a task that has [AppEngineHttpRequest][google.cloud.tasks.v2beta2.AppEngineHttpRequest] set.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta2.AppEngineHttpRequest app_engine_http_request = 3;</code>
@@ -101,11 +95,9 @@ public interface TaskOrBuilder
    * <pre>
    * App Engine HTTP request that is sent to the task's target. Can
    * be set only if
-   * [app_engine_http_target][google.cloud.tasks.v2beta2.Queue.app_engine_http_target]
-   * is set on the queue.
-   * An App Engine task is a task that has
-   * [AppEngineHttpRequest][google.cloud.tasks.v2beta2.AppEngineHttpRequest]
-   * set.
+   * [app_engine_http_target][google.cloud.tasks.v2beta2.Queue.app_engine_http_target] is set
+   * on the queue.
+   * An App Engine task is a task that has [AppEngineHttpRequest][google.cloud.tasks.v2beta2.AppEngineHttpRequest] set.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta2.AppEngineHttpRequest app_engine_http_request = 3;</code>
@@ -116,12 +108,9 @@ public interface TaskOrBuilder
    *
    *
    * <pre>
-   * [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] to process
-   * the task. Can be set only if
-   * [pull_target][google.cloud.tasks.v2beta2.Queue.pull_target] is set on the
-   * queue.
-   * A pull task is a task that has
-   * [PullMessage][google.cloud.tasks.v2beta2.PullMessage] set.
+   * [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] to process the task. Can be
+   * set only if [pull_target][google.cloud.tasks.v2beta2.Queue.pull_target] is set on the queue.
+   * A pull task is a task that has [PullMessage][google.cloud.tasks.v2beta2.PullMessage] set.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta2.PullMessage pull_message = 4;</code>
@@ -131,12 +120,9 @@ public interface TaskOrBuilder
    *
    *
    * <pre>
-   * [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] to process
-   * the task. Can be set only if
-   * [pull_target][google.cloud.tasks.v2beta2.Queue.pull_target] is set on the
-   * queue.
-   * A pull task is a task that has
-   * [PullMessage][google.cloud.tasks.v2beta2.PullMessage] set.
+   * [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] to process the task. Can be
+   * set only if [pull_target][google.cloud.tasks.v2beta2.Queue.pull_target] is set on the queue.
+   * A pull task is a task that has [PullMessage][google.cloud.tasks.v2beta2.PullMessage] set.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta2.PullMessage pull_message = 4;</code>
@@ -146,12 +132,9 @@ public interface TaskOrBuilder
    *
    *
    * <pre>
-   * [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] to process
-   * the task. Can be set only if
-   * [pull_target][google.cloud.tasks.v2beta2.Queue.pull_target] is set on the
-   * queue.
-   * A pull task is a task that has
-   * [PullMessage][google.cloud.tasks.v2beta2.PullMessage] set.
+   * [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] to process the task. Can be
+   * set only if [pull_target][google.cloud.tasks.v2beta2.Queue.pull_target] is set on the queue.
+   * A pull task is a task that has [PullMessage][google.cloud.tasks.v2beta2.PullMessage] set.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta2.PullMessage pull_message = 4;</code>
@@ -167,8 +150,7 @@ public interface TaskOrBuilder
    * For pull queues, this is the time when the task is available to
    * be leased; if a task is currently leased, this is the time when
    * the current lease expires, that is, the time that the task was
-   * leased plus the
-   * [lease_duration][google.cloud.tasks.v2beta2.LeaseTasksRequest.lease_duration].
+   * leased plus the [lease_duration][google.cloud.tasks.v2beta2.LeaseTasksRequest.lease_duration].
    * `schedule_time` will be truncated to the nearest microsecond.
    * </pre>
    *
@@ -184,8 +166,7 @@ public interface TaskOrBuilder
    * For pull queues, this is the time when the task is available to
    * be leased; if a task is currently leased, this is the time when
    * the current lease expires, that is, the time that the task was
-   * leased plus the
-   * [lease_duration][google.cloud.tasks.v2beta2.LeaseTasksRequest.lease_duration].
+   * leased plus the [lease_duration][google.cloud.tasks.v2beta2.LeaseTasksRequest.lease_duration].
    * `schedule_time` will be truncated to the nearest microsecond.
    * </pre>
    *
@@ -201,8 +182,7 @@ public interface TaskOrBuilder
    * For pull queues, this is the time when the task is available to
    * be leased; if a task is currently leased, this is the time when
    * the current lease expires, that is, the time that the task was
-   * leased plus the
-   * [lease_duration][google.cloud.tasks.v2beta2.LeaseTasksRequest.lease_duration].
+   * leased plus the [lease_duration][google.cloud.tasks.v2beta2.LeaseTasksRequest.lease_duration].
    * `schedule_time` will be truncated to the nearest microsecond.
    * </pre>
    *
@@ -279,8 +259,8 @@ public interface TaskOrBuilder
    *
    *
    * <pre>
-   * Output only. The view specifies which subset of the
-   * [Task][google.cloud.tasks.v2beta2.Task] has been returned.
+   * Output only. The view specifies which subset of the [Task][google.cloud.tasks.v2beta2.Task] has
+   * been returned.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta2.Task.View view = 8;</code>
@@ -290,8 +270,8 @@ public interface TaskOrBuilder
    *
    *
    * <pre>
-   * Output only. The view specifies which subset of the
-   * [Task][google.cloud.tasks.v2beta2.Task] has been returned.
+   * Output only. The view specifies which subset of the [Task][google.cloud.tasks.v2beta2.Task] has
+   * been returned.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta2.Task.View view = 8;</code>
