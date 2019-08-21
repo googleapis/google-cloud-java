@@ -71,6 +71,7 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
 
   private static final String LEVEL_NAME_KEY = "levelName";
   private static final String LEVEL_VALUE_KEY = "levelValue";
+  private static final String LOGGER_NAME_KEY = "loggerName";
 
   private volatile Logging logging;
   private LoggingOptions loggingOptions;
@@ -274,7 +275,8 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
 
     builder
         .addLabel(LEVEL_NAME_KEY, level.toString())
-        .addLabel(LEVEL_VALUE_KEY, String.valueOf(level.toInt()));
+        .addLabel(LEVEL_VALUE_KEY, String.valueOf(level.toInt()))
+        .addLabel(LOGGER_NAME_KEY, e.getLoggerName());
 
     for (Map.Entry<String, String> entry : e.getMDCPropertyMap().entrySet()) {
       if (null != entry.getKey() && null != entry.getValue()) {
