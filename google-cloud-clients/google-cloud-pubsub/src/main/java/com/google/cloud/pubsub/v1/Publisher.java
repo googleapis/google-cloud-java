@@ -205,7 +205,7 @@ public class Publisher {
    *   public void onFailure(Throwable t) {
    *     System.out.println("failed to publish: " + t);
    *   }
-   * });
+   * }, MoreExecutors.directExecutor());
    * }</pre>
    *
    * @param message the message to publish.
