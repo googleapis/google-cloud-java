@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.cloud.bigtable.data.v2.it.env;
+package com.google.cloud.bigtable.test_helpers.env;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -41,7 +41,7 @@ public class TestEnvRule extends ExternalResource {
 
   private static final String ENV_PROPERTY = "bigtable.env";
 
-  private TestEnv testEnv;
+  private AbstractTestEnv testEnv;
 
   @Override
   protected void before() throws Throwable {
@@ -69,6 +69,12 @@ public class TestEnvRule extends ExternalResource {
   @Override
   protected void after() {
     try {
+      env().cleanUpStale();
+    } catch (Exception e) {
+      LOGGER.log(Level.WARNING, "Failed to cleanup environment", e);
+    }
+
+    try {
       testEnv.stop();
     } catch (Exception e) {
       LOGGER.log(Level.WARNING, "Failed to stop the environment", e);
@@ -76,7 +82,7 @@ public class TestEnvRule extends ExternalResource {
     testEnv = null;
   }
 
-  public TestEnv env() {
+  public AbstractTestEnv env() {
     return testEnv;
   }
 }
