@@ -172,6 +172,7 @@
     <!-- test dependency versions -->
     <easymock.version>3.6</easymock.version>
     <objenesis.version>2.6</objenesis.version>
+    <autovalue.version>1.6.5</autovalue.version>
   </properties>
   <!-- All non-test dependency versions should be added to google-cloud-bom/pom.xml -->
   <dependencyManagement>
@@ -314,7 +315,12 @@
       <dependency>
         <groupId>com.google.auto.value</groupId>
         <artifactId>auto-value</artifactId>
-        <version>1.4</version>
+        <version>${autovalue.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.auto.value</groupId>
+        <artifactId>auto-value-annotations</artifactId>
+        <version>${autovalue.version}</version>
       </dependency>
       <dependency>
         <groupId>io.opencensus</groupId>
