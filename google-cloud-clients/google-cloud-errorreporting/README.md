@@ -22,16 +22,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-errorreporting</artifactId>
-  <version>0.101.0-beta</version>
+  <version>0.105.0-beta</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-errorreporting:0.101.0-beta'
+compile 'com.google.cloud:google-cloud-errorreporting:0.105.0-beta'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-errorreporting" % "0.101.0-beta"
+libraryDependencies += "com.google.cloud" % "google-cloud-errorreporting" % "0.105.0-beta"
 ```
 [//]: # ({x-version-update-end})
 
@@ -100,4 +100,4 @@ Apache 2.0 - See [LICENSE] for more information.
 [cloud-platform]: https://cloud.google.com/
 [stackdriver-error-reporting]: https://cloud.google.com/error-reporting/
 [error-reporting-product-docs]: https://cloud.google.com/error-reporting/docs/
-[error-reporting-client-lib-docs]: https://googleapis.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/errorreporting/v1beta1/package-summary.html
+[error-reporting-client-lib-docs]: https://googleapis.dev/java/google-cloud-clients/latest/index.html?com/google/cloud/errorreporting/v1beta1/package-summary.html

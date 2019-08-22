@@ -35,6 +35,13 @@ for version in versions:
     s.copy(library / f'grpc-google-cloud-{service}-{version}/src', f'../../google-api-grpc/grpc-google-cloud-{service}-{version}/src')
     s.copy(library / f'proto-google-cloud-{service}-{version}/src', f'../../google-api-grpc/proto-google-cloud-{service}-{version}/src')
 
+    # TODO: remove this after https://github.com/googleapis/gapic-generator/issues/2895 is fixed.
+    s.replace(
+        '**/stub/TextToSpeechStubSettings.java',
+        r'return InstantiatingGrpcChannelProvider\.newBuilder\(\);',
+        'return InstantiatingGrpcChannelProvider.newBuilder().setMaxInboundMessageSize(Integer.MAX_VALUE);'
+    )
+
     java.format_code('./src')
     java.format_code(f'../../google-api-grpc/grpc-google-cloud-{service}-{version}/src')
     java.format_code(f'../../google-api-grpc/proto-google-cloud-{service}-{version}/src')

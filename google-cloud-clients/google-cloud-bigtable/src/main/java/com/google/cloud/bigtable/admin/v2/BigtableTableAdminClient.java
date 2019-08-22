@@ -52,19 +52,24 @@ import javax.annotation.Nonnull;
  * <p>Sample code to get started:
  *
  * <pre>{@code
- * try(BigtableTableAdminClient client =  BigtableTableAdminClient.create("[PROJECT]", "[INSTANCE]")) {
- *   CreateTable request =
- *     CreateTableRequest.of("my-table")
- *       .addFamily("cf1")
- *       .addFamily("cf2", GCRULES.maxVersions(10))
- *       .addSplit(ByteString.copyFromUtf8("b"))
- *       .addSplit(ByteString.copyFromUtf8("q"));
- *   client.createTable(request);
- * }
+ * // One instance per application.
+ * BigtableTableAdminClient client =  BigtableTableAdminClient.create("[PROJECT]", "[INSTANCE]");
+ *
+ * CreateTable request =
+ *   CreateTableRequest.of("my-table")
+ *     .addFamily("cf1")
+ *     .addFamily("cf2", GCRULES.maxVersions(10))
+ *     .addSplit(ByteString.copyFromUtf8("b"))
+ *     .addSplit(ByteString.copyFromUtf8("q"));
+ * client.createTable(request);
+ *
+ * // Cleanup during application shutdown.
+ * client.close();
  * }</pre>
  *
- * <p>Note: close() needs to be called on the client object to clean up resources such as threads.
- * In the example above, try-with-resources is used, which automatically calls close().
+ * <p>Creating a new client is a very expensive operation and should only be done once and shared in
+ * an application. However, close() needs to be called on the client object to clean up resources
+ * such as threads during application shutdown.
  *
  * <p>This class can be customized by passing in a custom instance of BigtableTableAdminSettings to
  * create(). For example:
@@ -72,27 +77,26 @@ import javax.annotation.Nonnull;
  * <p>To customize credentials:
  *
  * <pre>{@code
- * BigtableTableAdminSettings tableAdminSettings = BigtableTableAdminSettings.newBuilder()
+ * BigtableTableAdminSettings settings = BigtableTableAdminSettings.newBuilder()
  *   .setProjectId("[PROJECT]")
  *   .setInstanceId("[INSTANCE]")
  *   .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *   .build();
  *
- * BigtableTableAdminClient client =
- *   BigtableTableAdminClient.create(tableAdminSettings);
+ * BigtableTableAdminClient client = BigtableTableAdminClient.create(settings);
  * }</pre>
  *
  * To customize the endpoint:
  *
  * <pre>{@code
- * BigtableTableAdminSettings.Builder tableAdminSettingsBuilder = BigtableTableAdminSettings.newBuilder()
+ * BigtableTableAdminSettings.Builder settingsBuilder = BigtableTableAdminSettings.newBuilder()
  *   .setProjectId("[PROJECT]")
  *   .setInstanceId("[INSTANCE]");
  *
- * tableAdminSettingsBuilder.stubSettings()
+ * settingsBuilder.stubSettings()
  *   .setEndpoint(myEndpoint).build();
  *
- * BigtableTableAdminClient client = BigtableTableAdminClient.create(tableAdminSettingsBuilder.build());
+ * BigtableTableAdminClient client = BigtableTableAdminClient.create(settingsBuilder.build());
  * }</pre>
  */
 public final class BigtableTableAdminClient implements AutoCloseable {

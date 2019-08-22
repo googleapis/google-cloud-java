@@ -12,26 +12,28 @@ public interface CreateTaskRequestOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * The queue name. For example:
+   * Required. The queue name. For example:
    * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID`
    * The queue must already exist.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   java.lang.String getParent();
   /**
    *
    *
    * <pre>
-   * Required.
-   * The queue name. For example:
+   * Required. The queue name. For example:
    * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID`
    * The queue must already exist.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -39,8 +41,7 @@ public interface CreateTaskRequestOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * The task to add.
+   * Required. The task to add.
    * Task names have the following format:
    * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`.
    * The user can optionally specify a task [name][google.cloud.tasks.v2beta3.Task.name]. If a
@@ -70,15 +71,15 @@ public interface CreateTaskRequestOrBuilder
    * efficiently.
    * </pre>
    *
-   * <code>.google.cloud.tasks.v2beta3.Task task = 2;</code>
+   * <code>.google.cloud.tasks.v2beta3.Task task = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   boolean hasTask();
   /**
    *
    *
    * <pre>
-   * Required.
-   * The task to add.
+   * Required. The task to add.
    * Task names have the following format:
    * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`.
    * The user can optionally specify a task [name][google.cloud.tasks.v2beta3.Task.name]. If a
@@ -108,15 +109,15 @@ public interface CreateTaskRequestOrBuilder
    * efficiently.
    * </pre>
    *
-   * <code>.google.cloud.tasks.v2beta3.Task task = 2;</code>
+   * <code>.google.cloud.tasks.v2beta3.Task task = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.tasks.v2beta3.Task getTask();
   /**
    *
    *
    * <pre>
-   * Required.
-   * The task to add.
+   * Required. The task to add.
    * Task names have the following format:
    * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`.
    * The user can optionally specify a task [name][google.cloud.tasks.v2beta3.Task.name]. If a
@@ -146,7 +147,8 @@ public interface CreateTaskRequestOrBuilder
    * efficiently.
    * </pre>
    *
-   * <code>.google.cloud.tasks.v2beta3.Task task = 2;</code>
+   * <code>.google.cloud.tasks.v2beta3.Task task = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.tasks.v2beta3.TaskOrBuilder getTaskOrBuilder();
 

@@ -15,6 +15,26 @@ package com.google.cloud.automl.v1beta1;
  * The formats are represented in EBNF with commas being literal and with
  * non-terminal symbols defined near the end of this comment. The formats
  * are:
+ *  *  For Image Classification:
+ *         CSV file(s) with each line having just a single column:
+ *           GCS_FILE_PATH
+ *           which leads to image of up to 30MB in size. Supported
+ *           extensions: .JPEG, .GIF, .PNG. This path is treated as the ID in
+ *           the Batch predict output.
+ *         Three sample rows:
+ *           gs://folder/image1.jpeg
+ *           gs://folder/image2.gif
+ *           gs://folder/image3.png
+ *  *  For Image Object Detection:
+ *         CSV file(s) with each line having just a single column:
+ *           GCS_FILE_PATH
+ *           which leads to image of up to 30MB in size. Supported
+ *           extensions: .JPEG, .GIF, .PNG. This path is treated as the ID in
+ *           the Batch predict output.
+ *         Three sample rows:
+ *           gs://folder/image1.jpeg
+ *           gs://folder/image2.gif
+ *           gs://folder/image3.png
  *  *  For Video Classification:
  *         CSV file(s) with each line in format:
  *           GCS_FILE_PATH,TIME_SEGMENT_START,TIME_SEGMENT_END
@@ -37,6 +57,26 @@ package com.google.cloud.automl.v1beta1;
  *           gs://folder/video1.mp4,10,240
  *           gs://folder/video1.mp4,300,360
  *           gs://folder/vid2.mov,0,inf
+ *  *  For Text Classification:
+ *         CSV file(s) with each line having just a single column:
+ *           GCS_FILE_PATH | TEXT_SNIPPET
+ *         Any given text file can have size upto 128kB.
+ *         Any given text snippet content must have 60,000 characters or less.
+ *         Three sample rows:
+ *           gs://folder/text1.txt
+ *           "Some text content to predict"
+ *           gs://folder/text3.pdf
+ *         Supported file extensions: .txt, .pdf
+ *  *  For Text Sentiment:
+ *         CSV file(s) with each line having just a single column:
+ *           GCS_FILE_PATH | TEXT_SNIPPET
+ *         Any given text file can have size upto 128kB.
+ *         Any given text snippet content must have 500 characters or less.
+ *         Three sample rows:
+ *           gs://folder/text1.txt
+ *           "Some text content to predict"
+ *           gs://folder/text3.pdf
+ *         Supported file extensions: .txt, .pdf
  *  * For Text Extraction
  *         .JSONL (i.e. JSON Lines) file(s) which either provide text in-line or
  *         as documents (for a single BatchPredict call only one of the these
@@ -107,79 +147,40 @@ package com.google.cloud.automl.v1beta1;
  *           100GB or smaller, where first file must have a header containing
  *           column names. If the first row of a subsequent file is the same as
  *           the header, then it is also treated as a header. All other rows
- *           contain values for the corresponding columns. For all
- *           CLASSIFICATION and REGRESSION
- * [prediction_type-s][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type]:
- *             The column names must contain the model's
+ *           contain values for the corresponding columns.
+ *           The column names must contain the model's
  * [input_feature_column_specs'][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
  * [display_name-s][google.cloud.automl.v1beta1.ColumnSpec.display_name]
- *             (order doesn't matter). The columns corresponding to the model's
- *             input feature column specs must contain values compatible with
- *             the column spec's data types. Prediction on all the rows, i.e.
- *             the CSV lines, will be attempted. First three sample rows of a
- *             CSV file:
+ *           (order doesn't matter). The columns corresponding to the model's
+ *           input feature column specs must contain values compatible with the
+ *           column spec's data types. Prediction on all the rows, i.e. the CSV
+ *           lines, will be attempted. For FORECASTING
+ * [prediction_type][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type]:
+ *           all columns having
+ * [TIME_SERIES_AVAILABLE_PAST_ONLY][google.cloud.automl.v1beta1.ColumnSpec.ForecastingMetadata.ColumnType]
+ *           type will be ignored.
+ *           First three sample rows of a CSV file:
  *             "First Name","Last Name","Dob","Addresses"
  * "John","Doe","1968-01-22","[{"status":"current","address":"123_First_Avenue","city":"Seattle","state":"WA","zip":"11111","numberOfYears":"1"},{"status":"previous","address":"456_Main_Street","city":"Portland","state":"OR","zip":"22222","numberOfYears":"5"}]"
  * "Jane","Doe","1980-10-16","[{"status":"current","address":"789_Any_Avenue","city":"Albany","state":"NY","zip":"33333","numberOfYears":"2"},{"status":"previous","address":"321_Main_Street","city":"Hoboken","state":"NJ","zip":"44444","numberOfYears":"3"}]}
- *           For FORECASTING
- * [prediction_type][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type]:
- *             The column names must contain the union of the model's
- * [input_feature_column_specs'][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
- * [display_name-s][google.cloud.automl.v1beta1.ColumnSpec.display_name]
- *             and
- * [target_column_specs'][google.cloud.automl.v1beta1.TablesModelMetadata.target_column_spec]
- * [display_name][google.cloud.automl.v1beta1.ColumnSpec.display_name]
- *             (order doesn't matter), with values compatible with these column
- *             specs data types, except as specified below.
- *             The input rows must contain not only the to-be-predicted rows
- *             but also the historical data rows, even if they would be
- *             identical as the ones on which the model has been trained.
- *             The historical rows must have non-NULL target column
- *             values. The to-be-predicted rows must have NULL values in the
- *             target column and all columns having
- * [TIME_SERIES_AVAILABLE_PAST_ONLY][google.cloud.automl.v1beta1.ColumnSpec.ForecastingMetadata.ColumnType.KEY]
- *             type, regardless if these columns are
- *             [nullable][google.cloud.automl.v1beta1.DataType.nullable].
- *             Prediction only on the to-be-predicted rows will be attempted.
- *             First four sample rows of a CSV file:
- * "Year","City","OlympicsThatYear","Population","WaterUsedGigaGallons"
- *             "2000","NYC","true","8008278","452.7"
- *             "2001","NYC","false","8024963","432.2"
- *             "2002","NYC","true","",""
  *         BigQuery case:
  *           An URI of a BigQuery table. The user data size of the BigQuery
  *           table must be 100GB or smaller.
- *           For all CLASSIFICATION and REGRESSION
- * [prediction_type-s][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type]:
- *             The column names must contain the model's
+ *           The column names must contain the model's
  * [input_feature_column_specs'][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
  * [display_name-s][google.cloud.automl.v1beta1.ColumnSpec.display_name]
- *             (order doesn't matter). The columns corresponding to the model's
- *             input feature column specs must contain values compatible with
- *             the column spec's data types. Prediction on all the rows of the
- *             table will be attempted.
- *           For FORECASTING
+ *           (order doesn't matter). The columns corresponding to the model's
+ *           input feature column specs must contain values compatible with the
+ *           column spec's data types. Prediction on all the rows of the table
+ *           will be attempted. For FORECASTING
  * [prediction_type][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type]:
- *             The column names must contain the union of the model's
- * [input_feature_column_specs'][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
- * [display_name-s][google.cloud.automl.v1beta1.ColumnSpec.display_name]
- *             and
- * [target_column_specs'][google.cloud.automl.v1beta1.TablesModelMetadata.target_column_spec]
- * [display_name][google.cloud.automl.v1beta1.ColumnSpec.display_name]
- *             (order doesn't matter), with values compatible with these column
- *             specs data types, except as specified below.
- *             The table's rows must contain not only the to-be-predicted rows
- *             but also the historical data rows, even if they would be
- *             identical as the ones on which the model has been trained.
- *             The historical rows must have non-NULL target column values.
- *             The to-be-predicted rows must have NULL values in the
- *             target column and all columns having
- * [TIME_SERIES_AVAILABLE_PAST_ONLY][google.cloud.automl.v1beta1.ColumnSpec.ForecastingMetadata.ColumnType.KEY]
- *             type, regardless if these columns are
- *             [nullable][google.cloud.automl.v1beta1.DataType.nullable].
- *             Prediction only on the to-be-predicted rows will be attempted.
+ *           all columns having
+ * [TIME_SERIES_AVAILABLE_PAST_ONLY][google.cloud.automl.v1beta1.ColumnSpec.ForecastingMetadata.ColumnType]
+ *           type will be ignored.
  *  Definitions:
  *  GCS_FILE_PATH = A path to file on GCS, e.g. "gs://folder/video.avi".
+ *  TEXT_SNIPPET = A content of a text snippet, UTF-8 encoded, enclosed within
+ *                 double quotes ("")
  *  TIME_SEGMENT_START = TIME_OFFSET
  *                       Expresses a beginning, inclusive, of a time segment
  *                       within an
@@ -633,6 +634,26 @@ public final class BatchPredictInputConfig extends com.google.protobuf.Generated
    * The formats are represented in EBNF with commas being literal and with
    * non-terminal symbols defined near the end of this comment. The formats
    * are:
+   *  *  For Image Classification:
+   *         CSV file(s) with each line having just a single column:
+   *           GCS_FILE_PATH
+   *           which leads to image of up to 30MB in size. Supported
+   *           extensions: .JPEG, .GIF, .PNG. This path is treated as the ID in
+   *           the Batch predict output.
+   *         Three sample rows:
+   *           gs://folder/image1.jpeg
+   *           gs://folder/image2.gif
+   *           gs://folder/image3.png
+   *  *  For Image Object Detection:
+   *         CSV file(s) with each line having just a single column:
+   *           GCS_FILE_PATH
+   *           which leads to image of up to 30MB in size. Supported
+   *           extensions: .JPEG, .GIF, .PNG. This path is treated as the ID in
+   *           the Batch predict output.
+   *         Three sample rows:
+   *           gs://folder/image1.jpeg
+   *           gs://folder/image2.gif
+   *           gs://folder/image3.png
    *  *  For Video Classification:
    *         CSV file(s) with each line in format:
    *           GCS_FILE_PATH,TIME_SEGMENT_START,TIME_SEGMENT_END
@@ -655,6 +676,26 @@ public final class BatchPredictInputConfig extends com.google.protobuf.Generated
    *           gs://folder/video1.mp4,10,240
    *           gs://folder/video1.mp4,300,360
    *           gs://folder/vid2.mov,0,inf
+   *  *  For Text Classification:
+   *         CSV file(s) with each line having just a single column:
+   *           GCS_FILE_PATH | TEXT_SNIPPET
+   *         Any given text file can have size upto 128kB.
+   *         Any given text snippet content must have 60,000 characters or less.
+   *         Three sample rows:
+   *           gs://folder/text1.txt
+   *           "Some text content to predict"
+   *           gs://folder/text3.pdf
+   *         Supported file extensions: .txt, .pdf
+   *  *  For Text Sentiment:
+   *         CSV file(s) with each line having just a single column:
+   *           GCS_FILE_PATH | TEXT_SNIPPET
+   *         Any given text file can have size upto 128kB.
+   *         Any given text snippet content must have 500 characters or less.
+   *         Three sample rows:
+   *           gs://folder/text1.txt
+   *           "Some text content to predict"
+   *           gs://folder/text3.pdf
+   *         Supported file extensions: .txt, .pdf
    *  * For Text Extraction
    *         .JSONL (i.e. JSON Lines) file(s) which either provide text in-line or
    *         as documents (for a single BatchPredict call only one of the these
@@ -725,79 +766,40 @@ public final class BatchPredictInputConfig extends com.google.protobuf.Generated
    *           100GB or smaller, where first file must have a header containing
    *           column names. If the first row of a subsequent file is the same as
    *           the header, then it is also treated as a header. All other rows
-   *           contain values for the corresponding columns. For all
-   *           CLASSIFICATION and REGRESSION
-   * [prediction_type-s][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type]:
-   *             The column names must contain the model's
+   *           contain values for the corresponding columns.
+   *           The column names must contain the model's
    * [input_feature_column_specs'][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
    * [display_name-s][google.cloud.automl.v1beta1.ColumnSpec.display_name]
-   *             (order doesn't matter). The columns corresponding to the model's
-   *             input feature column specs must contain values compatible with
-   *             the column spec's data types. Prediction on all the rows, i.e.
-   *             the CSV lines, will be attempted. First three sample rows of a
-   *             CSV file:
+   *           (order doesn't matter). The columns corresponding to the model's
+   *           input feature column specs must contain values compatible with the
+   *           column spec's data types. Prediction on all the rows, i.e. the CSV
+   *           lines, will be attempted. For FORECASTING
+   * [prediction_type][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type]:
+   *           all columns having
+   * [TIME_SERIES_AVAILABLE_PAST_ONLY][google.cloud.automl.v1beta1.ColumnSpec.ForecastingMetadata.ColumnType]
+   *           type will be ignored.
+   *           First three sample rows of a CSV file:
    *             "First Name","Last Name","Dob","Addresses"
    * "John","Doe","1968-01-22","[{"status":"current","address":"123_First_Avenue","city":"Seattle","state":"WA","zip":"11111","numberOfYears":"1"},{"status":"previous","address":"456_Main_Street","city":"Portland","state":"OR","zip":"22222","numberOfYears":"5"}]"
    * "Jane","Doe","1980-10-16","[{"status":"current","address":"789_Any_Avenue","city":"Albany","state":"NY","zip":"33333","numberOfYears":"2"},{"status":"previous","address":"321_Main_Street","city":"Hoboken","state":"NJ","zip":"44444","numberOfYears":"3"}]}
-   *           For FORECASTING
-   * [prediction_type][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type]:
-   *             The column names must contain the union of the model's
-   * [input_feature_column_specs'][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
-   * [display_name-s][google.cloud.automl.v1beta1.ColumnSpec.display_name]
-   *             and
-   * [target_column_specs'][google.cloud.automl.v1beta1.TablesModelMetadata.target_column_spec]
-   * [display_name][google.cloud.automl.v1beta1.ColumnSpec.display_name]
-   *             (order doesn't matter), with values compatible with these column
-   *             specs data types, except as specified below.
-   *             The input rows must contain not only the to-be-predicted rows
-   *             but also the historical data rows, even if they would be
-   *             identical as the ones on which the model has been trained.
-   *             The historical rows must have non-NULL target column
-   *             values. The to-be-predicted rows must have NULL values in the
-   *             target column and all columns having
-   * [TIME_SERIES_AVAILABLE_PAST_ONLY][google.cloud.automl.v1beta1.ColumnSpec.ForecastingMetadata.ColumnType.KEY]
-   *             type, regardless if these columns are
-   *             [nullable][google.cloud.automl.v1beta1.DataType.nullable].
-   *             Prediction only on the to-be-predicted rows will be attempted.
-   *             First four sample rows of a CSV file:
-   * "Year","City","OlympicsThatYear","Population","WaterUsedGigaGallons"
-   *             "2000","NYC","true","8008278","452.7"
-   *             "2001","NYC","false","8024963","432.2"
-   *             "2002","NYC","true","",""
    *         BigQuery case:
    *           An URI of a BigQuery table. The user data size of the BigQuery
    *           table must be 100GB or smaller.
-   *           For all CLASSIFICATION and REGRESSION
-   * [prediction_type-s][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type]:
-   *             The column names must contain the model's
+   *           The column names must contain the model's
    * [input_feature_column_specs'][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
    * [display_name-s][google.cloud.automl.v1beta1.ColumnSpec.display_name]
-   *             (order doesn't matter). The columns corresponding to the model's
-   *             input feature column specs must contain values compatible with
-   *             the column spec's data types. Prediction on all the rows of the
-   *             table will be attempted.
-   *           For FORECASTING
+   *           (order doesn't matter). The columns corresponding to the model's
+   *           input feature column specs must contain values compatible with the
+   *           column spec's data types. Prediction on all the rows of the table
+   *           will be attempted. For FORECASTING
    * [prediction_type][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type]:
-   *             The column names must contain the union of the model's
-   * [input_feature_column_specs'][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
-   * [display_name-s][google.cloud.automl.v1beta1.ColumnSpec.display_name]
-   *             and
-   * [target_column_specs'][google.cloud.automl.v1beta1.TablesModelMetadata.target_column_spec]
-   * [display_name][google.cloud.automl.v1beta1.ColumnSpec.display_name]
-   *             (order doesn't matter), with values compatible with these column
-   *             specs data types, except as specified below.
-   *             The table's rows must contain not only the to-be-predicted rows
-   *             but also the historical data rows, even if they would be
-   *             identical as the ones on which the model has been trained.
-   *             The historical rows must have non-NULL target column values.
-   *             The to-be-predicted rows must have NULL values in the
-   *             target column and all columns having
-   * [TIME_SERIES_AVAILABLE_PAST_ONLY][google.cloud.automl.v1beta1.ColumnSpec.ForecastingMetadata.ColumnType.KEY]
-   *             type, regardless if these columns are
-   *             [nullable][google.cloud.automl.v1beta1.DataType.nullable].
-   *             Prediction only on the to-be-predicted rows will be attempted.
+   *           all columns having
+   * [TIME_SERIES_AVAILABLE_PAST_ONLY][google.cloud.automl.v1beta1.ColumnSpec.ForecastingMetadata.ColumnType]
+   *           type will be ignored.
    *  Definitions:
    *  GCS_FILE_PATH = A path to file on GCS, e.g. "gs://folder/video.avi".
+   *  TEXT_SNIPPET = A content of a text snippet, UTF-8 encoded, enclosed within
+   *                 double quotes ("")
    *  TIME_SEGMENT_START = TIME_OFFSET
    *                       Expresses a beginning, inclusive, of a time segment
    *                       within an

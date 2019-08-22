@@ -183,6 +183,8 @@ public final class PredictionServiceGrpc {
      * * Tables - Row, with column values matching the columns of the model,
      *            up to 5MB. Not available for FORECASTING
      * [prediction_type][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type].
+     * * Text Sentiment - TextSnippet, content up 500 characters, UTF-8
+     *                     encoded.
      * </pre>
      */
     public void predict(
@@ -196,16 +198,19 @@ public final class PredictionServiceGrpc {
      *
      *
      * <pre>
-     * Perform a batch prediction. Unlike the online [Predict][google.cloud.automl.v1beta1.PredictionService.Predict], batch
+     * Perform a batch prediction. Unlike the online
+     * [Predict][google.cloud.automl.v1beta1.PredictionService.Predict], batch
      * prediction result won't be immediately available in the response. Instead,
      * a long running operation object is returned. User can poll the operation
      * result via [GetOperation][google.longrunning.Operations.GetOperation]
-     * method. Once the operation is done, [BatchPredictResult][google.cloud.automl.v1beta1.BatchPredictResult] is returned in
-     * the [response][google.longrunning.Operation.response] field.
+     * method. Once the operation is done,
+     * [BatchPredictResult][google.cloud.automl.v1beta1.BatchPredictResult] is
+     * returned in the [response][google.longrunning.Operation.response] field.
      * Available for following ML problems:
+     * * Image Classification
+     * * Image Object Detection
      * * Video Classification
-     * * Video Object Tracking
-     * * Text Extraction
+     * * Video Object Tracking * Text Extraction
      * * Tables
      * </pre>
      */
@@ -279,6 +284,8 @@ public final class PredictionServiceGrpc {
      * * Tables - Row, with column values matching the columns of the model,
      *            up to 5MB. Not available for FORECASTING
      * [prediction_type][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type].
+     * * Text Sentiment - TextSnippet, content up 500 characters, UTF-8
+     *                     encoded.
      * </pre>
      */
     public void predict(
@@ -295,16 +302,19 @@ public final class PredictionServiceGrpc {
      *
      *
      * <pre>
-     * Perform a batch prediction. Unlike the online [Predict][google.cloud.automl.v1beta1.PredictionService.Predict], batch
+     * Perform a batch prediction. Unlike the online
+     * [Predict][google.cloud.automl.v1beta1.PredictionService.Predict], batch
      * prediction result won't be immediately available in the response. Instead,
      * a long running operation object is returned. User can poll the operation
      * result via [GetOperation][google.longrunning.Operations.GetOperation]
-     * method. Once the operation is done, [BatchPredictResult][google.cloud.automl.v1beta1.BatchPredictResult] is returned in
-     * the [response][google.longrunning.Operation.response] field.
+     * method. Once the operation is done,
+     * [BatchPredictResult][google.cloud.automl.v1beta1.BatchPredictResult] is
+     * returned in the [response][google.longrunning.Operation.response] field.
      * Available for following ML problems:
+     * * Image Classification
+     * * Image Object Detection
      * * Video Classification
-     * * Video Object Tracking
-     * * Text Extraction
+     * * Video Object Tracking * Text Extraction
      * * Tables
      * </pre>
      */
@@ -364,6 +374,8 @@ public final class PredictionServiceGrpc {
      * * Tables - Row, with column values matching the columns of the model,
      *            up to 5MB. Not available for FORECASTING
      * [prediction_type][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type].
+     * * Text Sentiment - TextSnippet, content up 500 characters, UTF-8
+     *                     encoded.
      * </pre>
      */
     public com.google.cloud.automl.v1beta1.PredictResponse predict(
@@ -375,16 +387,19 @@ public final class PredictionServiceGrpc {
      *
      *
      * <pre>
-     * Perform a batch prediction. Unlike the online [Predict][google.cloud.automl.v1beta1.PredictionService.Predict], batch
+     * Perform a batch prediction. Unlike the online
+     * [Predict][google.cloud.automl.v1beta1.PredictionService.Predict], batch
      * prediction result won't be immediately available in the response. Instead,
      * a long running operation object is returned. User can poll the operation
      * result via [GetOperation][google.longrunning.Operations.GetOperation]
-     * method. Once the operation is done, [BatchPredictResult][google.cloud.automl.v1beta1.BatchPredictResult] is returned in
-     * the [response][google.longrunning.Operation.response] field.
+     * method. Once the operation is done,
+     * [BatchPredictResult][google.cloud.automl.v1beta1.BatchPredictResult] is
+     * returned in the [response][google.longrunning.Operation.response] field.
      * Available for following ML problems:
+     * * Image Classification
+     * * Image Object Detection
      * * Video Classification
-     * * Video Object Tracking
-     * * Text Extraction
+     * * Video Object Tracking * Text Extraction
      * * Tables
      * </pre>
      */
@@ -440,6 +455,8 @@ public final class PredictionServiceGrpc {
      * * Tables - Row, with column values matching the columns of the model,
      *            up to 5MB. Not available for FORECASTING
      * [prediction_type][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type].
+     * * Text Sentiment - TextSnippet, content up 500 characters, UTF-8
+     *                     encoded.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -453,16 +470,19 @@ public final class PredictionServiceGrpc {
      *
      *
      * <pre>
-     * Perform a batch prediction. Unlike the online [Predict][google.cloud.automl.v1beta1.PredictionService.Predict], batch
+     * Perform a batch prediction. Unlike the online
+     * [Predict][google.cloud.automl.v1beta1.PredictionService.Predict], batch
      * prediction result won't be immediately available in the response. Instead,
      * a long running operation object is returned. User can poll the operation
      * result via [GetOperation][google.longrunning.Operations.GetOperation]
-     * method. Once the operation is done, [BatchPredictResult][google.cloud.automl.v1beta1.BatchPredictResult] is returned in
-     * the [response][google.longrunning.Operation.response] field.
+     * method. Once the operation is done,
+     * [BatchPredictResult][google.cloud.automl.v1beta1.BatchPredictResult] is
+     * returned in the [response][google.longrunning.Operation.response] field.
      * Available for following ML problems:
+     * * Image Classification
+     * * Image Object Detection
      * * Video Classification
-     * * Video Object Tracking
-     * * Text Extraction
+     * * Video Object Tracking * Text Extraction
      * * Tables
      * </pre>
      */

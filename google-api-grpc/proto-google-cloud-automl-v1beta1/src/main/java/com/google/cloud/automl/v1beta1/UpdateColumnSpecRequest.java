@@ -160,11 +160,7 @@ public final class UpdateColumnSpecRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The update mask applies to the resource. For the `FieldMask` definition,
-   * see
-   * https:
-   * //developers.google.com/protocol-buffers
-   * // /docs/reference/google.protobuf#fieldmask
+   * The update mask applies to the resource.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -176,11 +172,7 @@ public final class UpdateColumnSpecRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The update mask applies to the resource. For the `FieldMask` definition,
-   * see
-   * https:
-   * //developers.google.com/protocol-buffers
-   * // /docs/reference/google.protobuf#fieldmask
+   * The update mask applies to the resource.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -192,11 +184,7 @@ public final class UpdateColumnSpecRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The update mask applies to the resource. For the `FieldMask` definition,
-   * see
-   * https:
-   * //developers.google.com/protocol-buffers
-   * // /docs/reference/google.protobuf#fieldmask
+   * The update mask applies to the resource.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -756,11 +744,7 @@ public final class UpdateColumnSpecRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The update mask applies to the resource. For the `FieldMask` definition,
-     * see
-     * https:
-     * //developers.google.com/protocol-buffers
-     * // /docs/reference/google.protobuf#fieldmask
+     * The update mask applies to the resource.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -772,11 +756,7 @@ public final class UpdateColumnSpecRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The update mask applies to the resource. For the `FieldMask` definition,
-     * see
-     * https:
-     * //developers.google.com/protocol-buffers
-     * // /docs/reference/google.protobuf#fieldmask
+     * The update mask applies to the resource.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -794,11 +774,7 @@ public final class UpdateColumnSpecRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The update mask applies to the resource. For the `FieldMask` definition,
-     * see
-     * https:
-     * //developers.google.com/protocol-buffers
-     * // /docs/reference/google.protobuf#fieldmask
+     * The update mask applies to the resource.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -820,11 +796,7 @@ public final class UpdateColumnSpecRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The update mask applies to the resource. For the `FieldMask` definition,
-     * see
-     * https:
-     * //developers.google.com/protocol-buffers
-     * // /docs/reference/google.protobuf#fieldmask
+     * The update mask applies to the resource.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -843,11 +815,7 @@ public final class UpdateColumnSpecRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The update mask applies to the resource. For the `FieldMask` definition,
-     * see
-     * https:
-     * //developers.google.com/protocol-buffers
-     * // /docs/reference/google.protobuf#fieldmask
+     * The update mask applies to the resource.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -871,11 +839,7 @@ public final class UpdateColumnSpecRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The update mask applies to the resource. For the `FieldMask` definition,
-     * see
-     * https:
-     * //developers.google.com/protocol-buffers
-     * // /docs/reference/google.protobuf#fieldmask
+     * The update mask applies to the resource.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -895,11 +859,7 @@ public final class UpdateColumnSpecRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The update mask applies to the resource. For the `FieldMask` definition,
-     * see
-     * https:
-     * //developers.google.com/protocol-buffers
-     * // /docs/reference/google.protobuf#fieldmask
+     * The update mask applies to the resource.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -913,11 +873,7 @@ public final class UpdateColumnSpecRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The update mask applies to the resource. For the `FieldMask` definition,
-     * see
-     * https:
-     * //developers.google.com/protocol-buffers
-     * // /docs/reference/google.protobuf#fieldmask
+     * The update mask applies to the resource.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -935,11 +891,7 @@ public final class UpdateColumnSpecRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The update mask applies to the resource. For the `FieldMask` definition,
-     * see
-     * https:
-     * //developers.google.com/protocol-buffers
-     * // /docs/reference/google.protobuf#fieldmask
+     * The update mask applies to the resource.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>

@@ -48,7 +48,7 @@ public class CollectionReference extends Query {
    * @param firestore The Firestore client.
    * @param collectionPath The Path of this collection.
    */
-  CollectionReference(FirestoreImpl firestore, ResourcePath collectionPath) {
+  protected CollectionReference(FirestoreImpl firestore, ResourcePath collectionPath) {
     super(firestore, collectionPath);
   }
 

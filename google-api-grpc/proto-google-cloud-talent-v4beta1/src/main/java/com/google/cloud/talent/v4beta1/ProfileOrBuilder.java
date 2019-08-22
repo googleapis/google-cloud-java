@@ -41,7 +41,9 @@ public interface ProfileOrBuilder
    *
    *
    * <pre>
-   * Optional. Profile's id in client system if available.
+   * Optional. Profile's id in client system if available. This value is not
+   * required to be unique to each profile. However, providing unique values
+   * makes it easier to specify individual profiles when filing support tickets.
    * The maximum number of bytes allowed is 100.
    * </pre>
    *
@@ -52,7 +54,9 @@ public interface ProfileOrBuilder
    *
    *
    * <pre>
-   * Optional. Profile's id in client system if available.
+   * Optional. Profile's id in client system if available. This value is not
+   * required to be unique to each profile. However, providing unique values
+   * makes it easier to specify individual profiles when filing support tickets.
    * The maximum number of bytes allowed is 100.
    * </pre>
    *
@@ -338,7 +342,32 @@ public interface ProfileOrBuilder
    *
    *
    * <pre>
-   * Optional. The candidate's postal addresses.
+   * Optional. The candidate's postal addresses. It's highly recommended to
+   * input this information as accurately as possible to help improve search
+   * quality. Here are some recommendations:
+   * * Provide [Address.usage][google.cloud.talent.v4beta1.Address.usage] if
+   * possible, especially if the address is PERSONAL. During a search only
+   * personal addresses are considered. If there is no such address, all
+   * addresses with unspecified usage are assumed to be personal.
+   * * Provide [Address.current][google.cloud.talent.v4beta1.Address.current]
+   * for the current address if possible. During a search, only current
+   * addresses are considered. If there is no such address, all addresses are
+   * assumed to be current.
+   * When displaying a candidate's addresses, it is sometimes desirable to limit
+   * the number of addresses shown. In these cases we recommend that you display
+   * the addresses in the following order of priority:
+   * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
+   * and [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
+   * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
+   * and [Address.current][google.cloud.talent.v4beta1.Address.current] is false
+   * or not set.
+   * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+   * CONTACT_INFO_USAGE_UNSPECIFIED and
+   * [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
+   * 4. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+   * CONTACT_INFO_USAGE_UNSPECIFIED and
+   * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or
+   * not set.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.Address addresses = 12;</code>
@@ -348,7 +377,32 @@ public interface ProfileOrBuilder
    *
    *
    * <pre>
-   * Optional. The candidate's postal addresses.
+   * Optional. The candidate's postal addresses. It's highly recommended to
+   * input this information as accurately as possible to help improve search
+   * quality. Here are some recommendations:
+   * * Provide [Address.usage][google.cloud.talent.v4beta1.Address.usage] if
+   * possible, especially if the address is PERSONAL. During a search only
+   * personal addresses are considered. If there is no such address, all
+   * addresses with unspecified usage are assumed to be personal.
+   * * Provide [Address.current][google.cloud.talent.v4beta1.Address.current]
+   * for the current address if possible. During a search, only current
+   * addresses are considered. If there is no such address, all addresses are
+   * assumed to be current.
+   * When displaying a candidate's addresses, it is sometimes desirable to limit
+   * the number of addresses shown. In these cases we recommend that you display
+   * the addresses in the following order of priority:
+   * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
+   * and [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
+   * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
+   * and [Address.current][google.cloud.talent.v4beta1.Address.current] is false
+   * or not set.
+   * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+   * CONTACT_INFO_USAGE_UNSPECIFIED and
+   * [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
+   * 4. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+   * CONTACT_INFO_USAGE_UNSPECIFIED and
+   * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or
+   * not set.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.Address addresses = 12;</code>
@@ -358,7 +412,32 @@ public interface ProfileOrBuilder
    *
    *
    * <pre>
-   * Optional. The candidate's postal addresses.
+   * Optional. The candidate's postal addresses. It's highly recommended to
+   * input this information as accurately as possible to help improve search
+   * quality. Here are some recommendations:
+   * * Provide [Address.usage][google.cloud.talent.v4beta1.Address.usage] if
+   * possible, especially if the address is PERSONAL. During a search only
+   * personal addresses are considered. If there is no such address, all
+   * addresses with unspecified usage are assumed to be personal.
+   * * Provide [Address.current][google.cloud.talent.v4beta1.Address.current]
+   * for the current address if possible. During a search, only current
+   * addresses are considered. If there is no such address, all addresses are
+   * assumed to be current.
+   * When displaying a candidate's addresses, it is sometimes desirable to limit
+   * the number of addresses shown. In these cases we recommend that you display
+   * the addresses in the following order of priority:
+   * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
+   * and [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
+   * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
+   * and [Address.current][google.cloud.talent.v4beta1.Address.current] is false
+   * or not set.
+   * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+   * CONTACT_INFO_USAGE_UNSPECIFIED and
+   * [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
+   * 4. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+   * CONTACT_INFO_USAGE_UNSPECIFIED and
+   * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or
+   * not set.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.Address addresses = 12;</code>
@@ -368,7 +447,32 @@ public interface ProfileOrBuilder
    *
    *
    * <pre>
-   * Optional. The candidate's postal addresses.
+   * Optional. The candidate's postal addresses. It's highly recommended to
+   * input this information as accurately as possible to help improve search
+   * quality. Here are some recommendations:
+   * * Provide [Address.usage][google.cloud.talent.v4beta1.Address.usage] if
+   * possible, especially if the address is PERSONAL. During a search only
+   * personal addresses are considered. If there is no such address, all
+   * addresses with unspecified usage are assumed to be personal.
+   * * Provide [Address.current][google.cloud.talent.v4beta1.Address.current]
+   * for the current address if possible. During a search, only current
+   * addresses are considered. If there is no such address, all addresses are
+   * assumed to be current.
+   * When displaying a candidate's addresses, it is sometimes desirable to limit
+   * the number of addresses shown. In these cases we recommend that you display
+   * the addresses in the following order of priority:
+   * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
+   * and [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
+   * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
+   * and [Address.current][google.cloud.talent.v4beta1.Address.current] is false
+   * or not set.
+   * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+   * CONTACT_INFO_USAGE_UNSPECIFIED and
+   * [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
+   * 4. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+   * CONTACT_INFO_USAGE_UNSPECIFIED and
+   * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or
+   * not set.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.Address addresses = 12;</code>
@@ -379,7 +483,32 @@ public interface ProfileOrBuilder
    *
    *
    * <pre>
-   * Optional. The candidate's postal addresses.
+   * Optional. The candidate's postal addresses. It's highly recommended to
+   * input this information as accurately as possible to help improve search
+   * quality. Here are some recommendations:
+   * * Provide [Address.usage][google.cloud.talent.v4beta1.Address.usage] if
+   * possible, especially if the address is PERSONAL. During a search only
+   * personal addresses are considered. If there is no such address, all
+   * addresses with unspecified usage are assumed to be personal.
+   * * Provide [Address.current][google.cloud.talent.v4beta1.Address.current]
+   * for the current address if possible. During a search, only current
+   * addresses are considered. If there is no such address, all addresses are
+   * assumed to be current.
+   * When displaying a candidate's addresses, it is sometimes desirable to limit
+   * the number of addresses shown. In these cases we recommend that you display
+   * the addresses in the following order of priority:
+   * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
+   * and [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
+   * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
+   * and [Address.current][google.cloud.talent.v4beta1.Address.current] is false
+   * or not set.
+   * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+   * CONTACT_INFO_USAGE_UNSPECIFIED and
+   * [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
+   * 4. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+   * CONTACT_INFO_USAGE_UNSPECIFIED and
+   * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or
+   * not set.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.Address addresses = 12;</code>
@@ -642,7 +771,7 @@ public interface ProfileOrBuilder
    * [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current]
    * for the current employment if possible. If not, it's inferred from user
    * inputs.
-   * The limitation for max number of employment records is 50.
+   * The limitation for max number of employment records is 100.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.EmploymentRecord employment_records = 17;</code>
@@ -664,7 +793,7 @@ public interface ProfileOrBuilder
    * [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current]
    * for the current employment if possible. If not, it's inferred from user
    * inputs.
-   * The limitation for max number of employment records is 50.
+   * The limitation for max number of employment records is 100.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.EmploymentRecord employment_records = 17;</code>
@@ -686,7 +815,7 @@ public interface ProfileOrBuilder
    * [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current]
    * for the current employment if possible. If not, it's inferred from user
    * inputs.
-   * The limitation for max number of employment records is 50.
+   * The limitation for max number of employment records is 100.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.EmploymentRecord employment_records = 17;</code>
@@ -708,7 +837,7 @@ public interface ProfileOrBuilder
    * [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current]
    * for the current employment if possible. If not, it's inferred from user
    * inputs.
-   * The limitation for max number of employment records is 50.
+   * The limitation for max number of employment records is 100.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.EmploymentRecord employment_records = 17;</code>
@@ -731,7 +860,7 @@ public interface ProfileOrBuilder
    * [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current]
    * for the current employment if possible. If not, it's inferred from user
    * inputs.
-   * The limitation for max number of employment records is 50.
+   * The limitation for max number of employment records is 100.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.EmploymentRecord employment_records = 17;</code>
@@ -754,7 +883,7 @@ public interface ProfileOrBuilder
    * [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current]
    * for the current education if possible. If not, it's inferred from user
    * inputs.
-   * The limitation for max number of education records is 10.
+   * The limitation for max number of education records is 100.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.EducationRecord education_records = 18;</code>
@@ -775,7 +904,7 @@ public interface ProfileOrBuilder
    * [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current]
    * for the current education if possible. If not, it's inferred from user
    * inputs.
-   * The limitation for max number of education records is 10.
+   * The limitation for max number of education records is 100.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.EducationRecord education_records = 18;</code>
@@ -796,7 +925,7 @@ public interface ProfileOrBuilder
    * [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current]
    * for the current education if possible. If not, it's inferred from user
    * inputs.
-   * The limitation for max number of education records is 10.
+   * The limitation for max number of education records is 100.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.EducationRecord education_records = 18;</code>
@@ -817,7 +946,7 @@ public interface ProfileOrBuilder
    * [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current]
    * for the current education if possible. If not, it's inferred from user
    * inputs.
-   * The limitation for max number of education records is 10.
+   * The limitation for max number of education records is 100.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.EducationRecord education_records = 18;</code>
@@ -839,7 +968,7 @@ public interface ProfileOrBuilder
    * [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current]
    * for the current education if possible. If not, it's inferred from user
    * inputs.
-   * The limitation for max number of education records is 10.
+   * The limitation for max number of education records is 100.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.EducationRecord education_records = 18;</code>
@@ -852,7 +981,7 @@ public interface ProfileOrBuilder
    * <pre>
    * Optional. The skill set of the candidate. It's highly recommended to
    * provide as much information as possible to help improve the search quality.
-   * The limitation for max number of skills is 100.
+   * The limitation for max number of skills is 500.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.Skill skills = 19;</code>
@@ -864,7 +993,7 @@ public interface ProfileOrBuilder
    * <pre>
    * Optional. The skill set of the candidate. It's highly recommended to
    * provide as much information as possible to help improve the search quality.
-   * The limitation for max number of skills is 100.
+   * The limitation for max number of skills is 500.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.Skill skills = 19;</code>
@@ -876,7 +1005,7 @@ public interface ProfileOrBuilder
    * <pre>
    * Optional. The skill set of the candidate. It's highly recommended to
    * provide as much information as possible to help improve the search quality.
-   * The limitation for max number of skills is 100.
+   * The limitation for max number of skills is 500.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.Skill skills = 19;</code>
@@ -888,7 +1017,7 @@ public interface ProfileOrBuilder
    * <pre>
    * Optional. The skill set of the candidate. It's highly recommended to
    * provide as much information as possible to help improve the search quality.
-   * The limitation for max number of skills is 100.
+   * The limitation for max number of skills is 500.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.Skill skills = 19;</code>
@@ -900,7 +1029,7 @@ public interface ProfileOrBuilder
    * <pre>
    * Optional. The skill set of the candidate. It's highly recommended to
    * provide as much information as possible to help improve the search quality.
-   * The limitation for max number of skills is 100.
+   * The limitation for max number of skills is 500.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.Skill skills = 19;</code>
@@ -1396,4 +1525,91 @@ public interface ProfileOrBuilder
    * <code>string keyword_snippet = 28;</code>
    */
   com.google.protobuf.ByteString getKeywordSnippetBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Derived locations of the profile, resolved from
+   * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses].
+   * [derived_addresses][google.cloud.talent.v4beta1.Profile.derived_addresses]
+   * are exactly matched to
+   * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
+   * same order.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.talent.v4beta1.Location derived_addresses = 64 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<com.google.cloud.talent.v4beta1.Location> getDerivedAddressesList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Derived locations of the profile, resolved from
+   * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses].
+   * [derived_addresses][google.cloud.talent.v4beta1.Profile.derived_addresses]
+   * are exactly matched to
+   * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
+   * same order.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.talent.v4beta1.Location derived_addresses = 64 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.talent.v4beta1.Location getDerivedAddresses(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Derived locations of the profile, resolved from
+   * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses].
+   * [derived_addresses][google.cloud.talent.v4beta1.Profile.derived_addresses]
+   * are exactly matched to
+   * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
+   * same order.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.talent.v4beta1.Location derived_addresses = 64 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  int getDerivedAddressesCount();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Derived locations of the profile, resolved from
+   * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses].
+   * [derived_addresses][google.cloud.talent.v4beta1.Profile.derived_addresses]
+   * are exactly matched to
+   * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
+   * same order.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.talent.v4beta1.Location derived_addresses = 64 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.talent.v4beta1.LocationOrBuilder>
+      getDerivedAddressesOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Derived locations of the profile, resolved from
+   * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses].
+   * [derived_addresses][google.cloud.talent.v4beta1.Profile.derived_addresses]
+   * are exactly matched to
+   * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
+   * same order.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.talent.v4beta1.Location derived_addresses = 64 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.talent.v4beta1.LocationOrBuilder getDerivedAddressesOrBuilder(int index);
 }

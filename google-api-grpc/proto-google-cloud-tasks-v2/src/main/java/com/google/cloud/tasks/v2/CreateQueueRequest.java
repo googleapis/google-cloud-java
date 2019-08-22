@@ -112,15 +112,16 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required.
-   * The location name in which the queue will be created.
+   * Required. The location name in which the queue will be created.
    * For example: `projects/PROJECT_ID/locations/LOCATION_ID`
    * The list of allowed locations can be obtained by calling Cloud
    * Tasks' implementation of
    * [ListLocations][google.cloud.location.Locations.ListLocations].
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -137,15 +138,16 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required.
-   * The location name in which the queue will be created.
+   * Required. The location name in which the queue will be created.
    * For example: `projects/PROJECT_ID/locations/LOCATION_ID`
    * The list of allowed locations can be obtained by calling Cloud
    * Tasks' implementation of
    * [ListLocations][google.cloud.location.Locations.ListLocations].
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -165,12 +167,11 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required.
-   * The queue to create.
+   * Required. The queue to create.
    * [Queue's name][google.cloud.tasks.v2.Queue.name] cannot be the same as an existing queue.
    * </pre>
    *
-   * <code>.google.cloud.tasks.v2.Queue queue = 2;</code>
+   * <code>.google.cloud.tasks.v2.Queue queue = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public boolean hasQueue() {
     return queue_ != null;
@@ -179,12 +180,11 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required.
-   * The queue to create.
+   * Required. The queue to create.
    * [Queue's name][google.cloud.tasks.v2.Queue.name] cannot be the same as an existing queue.
    * </pre>
    *
-   * <code>.google.cloud.tasks.v2.Queue queue = 2;</code>
+   * <code>.google.cloud.tasks.v2.Queue queue = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.cloud.tasks.v2.Queue getQueue() {
     return queue_ == null ? com.google.cloud.tasks.v2.Queue.getDefaultInstance() : queue_;
@@ -193,12 +193,11 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required.
-   * The queue to create.
+   * Required. The queue to create.
    * [Queue's name][google.cloud.tasks.v2.Queue.name] cannot be the same as an existing queue.
    * </pre>
    *
-   * <code>.google.cloud.tasks.v2.Queue queue = 2;</code>
+   * <code>.google.cloud.tasks.v2.Queue queue = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.cloud.tasks.v2.QueueOrBuilder getQueueOrBuilder() {
     return getQueue();
@@ -553,15 +552,16 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required.
-     * The location name in which the queue will be created.
+     * Required. The location name in which the queue will be created.
      * For example: `projects/PROJECT_ID/locations/LOCATION_ID`
      * The list of allowed locations can be obtained by calling Cloud
      * Tasks' implementation of
      * [ListLocations][google.cloud.location.Locations.ListLocations].
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -578,15 +578,16 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required.
-     * The location name in which the queue will be created.
+     * Required. The location name in which the queue will be created.
      * For example: `projects/PROJECT_ID/locations/LOCATION_ID`
      * The list of allowed locations can be obtained by calling Cloud
      * Tasks' implementation of
      * [ListLocations][google.cloud.location.Locations.ListLocations].
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -603,15 +604,16 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required.
-     * The location name in which the queue will be created.
+     * Required. The location name in which the queue will be created.
      * For example: `projects/PROJECT_ID/locations/LOCATION_ID`
      * The list of allowed locations can be obtained by calling Cloud
      * Tasks' implementation of
      * [ListLocations][google.cloud.location.Locations.ListLocations].
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -626,15 +628,16 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required.
-     * The location name in which the queue will be created.
+     * Required. The location name in which the queue will be created.
      * For example: `projects/PROJECT_ID/locations/LOCATION_ID`
      * The list of allowed locations can be obtained by calling Cloud
      * Tasks' implementation of
      * [ListLocations][google.cloud.location.Locations.ListLocations].
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder clearParent() {
 
@@ -646,15 +649,16 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required.
-     * The location name in which the queue will be created.
+     * Required. The location name in which the queue will be created.
      * For example: `projects/PROJECT_ID/locations/LOCATION_ID`
      * The list of allowed locations can be obtained by calling Cloud
      * Tasks' implementation of
      * [ListLocations][google.cloud.location.Locations.ListLocations].
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -677,12 +681,12 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required.
-     * The queue to create.
+     * Required. The queue to create.
      * [Queue's name][google.cloud.tasks.v2.Queue.name] cannot be the same as an existing queue.
      * </pre>
      *
-     * <code>.google.cloud.tasks.v2.Queue queue = 2;</code>
+     * <code>.google.cloud.tasks.v2.Queue queue = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public boolean hasQueue() {
       return queueBuilder_ != null || queue_ != null;
@@ -691,12 +695,12 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required.
-     * The queue to create.
+     * Required. The queue to create.
      * [Queue's name][google.cloud.tasks.v2.Queue.name] cannot be the same as an existing queue.
      * </pre>
      *
-     * <code>.google.cloud.tasks.v2.Queue queue = 2;</code>
+     * <code>.google.cloud.tasks.v2.Queue queue = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.tasks.v2.Queue getQueue() {
       if (queueBuilder_ == null) {
@@ -709,12 +713,12 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required.
-     * The queue to create.
+     * Required. The queue to create.
      * [Queue's name][google.cloud.tasks.v2.Queue.name] cannot be the same as an existing queue.
      * </pre>
      *
-     * <code>.google.cloud.tasks.v2.Queue queue = 2;</code>
+     * <code>.google.cloud.tasks.v2.Queue queue = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setQueue(com.google.cloud.tasks.v2.Queue value) {
       if (queueBuilder_ == null) {
@@ -733,12 +737,12 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required.
-     * The queue to create.
+     * Required. The queue to create.
      * [Queue's name][google.cloud.tasks.v2.Queue.name] cannot be the same as an existing queue.
      * </pre>
      *
-     * <code>.google.cloud.tasks.v2.Queue queue = 2;</code>
+     * <code>.google.cloud.tasks.v2.Queue queue = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setQueue(com.google.cloud.tasks.v2.Queue.Builder builderForValue) {
       if (queueBuilder_ == null) {
@@ -754,12 +758,12 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required.
-     * The queue to create.
+     * Required. The queue to create.
      * [Queue's name][google.cloud.tasks.v2.Queue.name] cannot be the same as an existing queue.
      * </pre>
      *
-     * <code>.google.cloud.tasks.v2.Queue queue = 2;</code>
+     * <code>.google.cloud.tasks.v2.Queue queue = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeQueue(com.google.cloud.tasks.v2.Queue value) {
       if (queueBuilder_ == null) {
@@ -780,12 +784,12 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required.
-     * The queue to create.
+     * Required. The queue to create.
      * [Queue's name][google.cloud.tasks.v2.Queue.name] cannot be the same as an existing queue.
      * </pre>
      *
-     * <code>.google.cloud.tasks.v2.Queue queue = 2;</code>
+     * <code>.google.cloud.tasks.v2.Queue queue = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearQueue() {
       if (queueBuilder_ == null) {
@@ -802,12 +806,12 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required.
-     * The queue to create.
+     * Required. The queue to create.
      * [Queue's name][google.cloud.tasks.v2.Queue.name] cannot be the same as an existing queue.
      * </pre>
      *
-     * <code>.google.cloud.tasks.v2.Queue queue = 2;</code>
+     * <code>.google.cloud.tasks.v2.Queue queue = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.tasks.v2.Queue.Builder getQueueBuilder() {
 
@@ -818,12 +822,12 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required.
-     * The queue to create.
+     * Required. The queue to create.
      * [Queue's name][google.cloud.tasks.v2.Queue.name] cannot be the same as an existing queue.
      * </pre>
      *
-     * <code>.google.cloud.tasks.v2.Queue queue = 2;</code>
+     * <code>.google.cloud.tasks.v2.Queue queue = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.tasks.v2.QueueOrBuilder getQueueOrBuilder() {
       if (queueBuilder_ != null) {
@@ -836,12 +840,12 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required.
-     * The queue to create.
+     * Required. The queue to create.
      * [Queue's name][google.cloud.tasks.v2.Queue.name] cannot be the same as an existing queue.
      * </pre>
      *
-     * <code>.google.cloud.tasks.v2.Queue queue = 2;</code>
+     * <code>.google.cloud.tasks.v2.Queue queue = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.tasks.v2.Queue,

@@ -44,10 +44,16 @@ public class EmulatorEnv extends AbstractTestEnv {
 
     tableAdminClient =
         BigtableTableAdminClient.create(
-            BigtableTableAdminSettings.newBuilderForEmulator(emulator.getPort()).build());
+            BigtableTableAdminSettings.newBuilderForEmulator(emulator.getPort())
+                .setProjectId("fake-project")
+                .setInstanceId("fake-instance")
+                .build());
     dataClient =
         BigtableDataClient.create(
-            BigtableDataSettings.newBuilderForEmulator(emulator.getPort()).build());
+            BigtableDataSettings.newBuilderForEmulator(emulator.getPort())
+                .setProjectId("fake-project")
+                .setInstanceId("fake-instance")
+                .build());
 
     tableAdminClient.createTable(CreateTableRequest.of(TABLE_ID).addFamily(getFamilyId()));
   }

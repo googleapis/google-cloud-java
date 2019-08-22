@@ -64,4 +64,39 @@ public interface BatchAnnotateFilesRequestOrBuilder
    * <code>repeated .google.cloud.vision.v1.AnnotateFileRequest requests = 1;</code>
    */
   com.google.cloud.vision.v1.AnnotateFileRequestOrBuilder getRequestsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Target project and location to make a call.
+   * Format: `projects/{project-id}/locations/{location-id}`.
+   * If no parent is specified, a region will be chosen automatically.
+   * Supported location-ids:
+   *     `us`: USA country only,
+   *     `asia`: East asia areas, like Japan, Taiwan,
+   *     `eu`: The European Union.
+   * Example: `projects/project-A/locations/eu`.
+   * </pre>
+   *
+   * <code>string parent = 3;</code>
+   */
+  java.lang.String getParent();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Target project and location to make a call.
+   * Format: `projects/{project-id}/locations/{location-id}`.
+   * If no parent is specified, a region will be chosen automatically.
+   * Supported location-ids:
+   *     `us`: USA country only,
+   *     `asia`: East asia areas, like Japan, Taiwan,
+   *     `eu`: The European Union.
+   * Example: `projects/project-A/locations/eu`.
+   * </pre>
+   *
+   * <code>string parent = 3;</code>
+   */
+  com.google.protobuf.ByteString getParentBytes();
 }

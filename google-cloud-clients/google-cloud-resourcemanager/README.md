@@ -22,22 +22,22 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-resourcemanager</artifactId>
-  <version>0.101.0-alpha</version>
+  <version>0.105.0-alpha</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-resourcemanager:0.101.0-alpha'
+compile 'com.google.cloud:google-cloud-resourcemanager:0.105.0-alpha'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-resourcemanager" % "0.101.0-alpha"
+libraryDependencies += "com.google.cloud" % "google-cloud-resourcemanager" % "0.105.0-alpha"
 ```
 [//]: # ({x-version-update-end})
 
 Example Application
 --------------------
-[`ResourceManagerExample`](../../google-cloud-examples/src/main/java/com/google/cloud/examples/resourcemanager/ResourceManagerExample.java) is a simple command line interface for the Cloud Resource Manager.  Read more about using the application on the [`ResourceManagerExample` docs page](https://googleapis.github.io/google-cloud-java/apidocs/?com/google/cloud/examples/resourcemanager/ResourceManagerExample.html).
+[`ResourceManagerExample`](../../google-cloud-examples/src/main/java/com/google/cloud/examples/resourcemanager/ResourceManagerExample.java) is a simple command line interface for the Cloud Resource Manager.  Read more about using the application on the [`ResourceManagerExample` docs page](https://googleapis.dev/java/google-cloud-clients/latest/index.html?com/google/cloud/examples/resourcemanager/ResourceManagerExample.html).
 
 Authentication
 --------------
@@ -255,4 +255,4 @@ Apache 2.0 - See [LICENSE] for more information.
 [cloud-platform]: https://cloud.google.com/
 [cloud-resourcemanager]: https://cloud.google.com/resource-manager/
 [resourcemanager-product-docs]: https://cloud.google.com/resource-manager/docs/
-[resourcemanager-client-lib-docs]: https://googleapis.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/resourcemanager/package-summary.html
+[resourcemanager-client-lib-docs]: https://googleapis.dev/java/google-cloud-clients/latest/index.html?com/google/cloud/resourcemanager/package-summary.html

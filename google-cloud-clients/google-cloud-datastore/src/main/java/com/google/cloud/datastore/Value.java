@@ -211,7 +211,7 @@ public abstract class Value<V> implements Serializable {
     return getType().getMarshaller().toProto(this);
   }
 
-  static Value<?> fromPb(com.google.datastore.v1.Value proto) {
+  public static Value<?> fromPb(com.google.datastore.v1.Value proto) {
     ValueTypeCase descriptorId = proto.getValueTypeCase();
     ValueType valueType = ValueType.getByDescriptorId(descriptorId.getNumber());
     return valueType == null

@@ -155,7 +155,8 @@ public class Publisher {
         PublisherStubSettings.newBuilder()
             .setCredentialsProvider(builder.credentialsProvider)
             .setExecutorProvider(FixedExecutorProvider.create(executor))
-            .setTransportChannelProvider(builder.channelProvider);
+            .setTransportChannelProvider(builder.channelProvider)
+            .setEndpoint(builder.endpoint);
     stubSettings
         .publishSettings()
         .setRetryableCodes(
@@ -204,7 +205,7 @@ public class Publisher {
    *   public void onFailure(Throwable t) {
    *     System.out.println("failed to publish: " + t);
    *   }
-   * });
+   * }, MoreExecutors.directExecutor());
    * }</pre>
    *
    * @param message the message to publish.
@@ -255,7 +256,13 @@ public class Publisher {
     if (!batchesToSend.isEmpty() && orderingKey.isEmpty()) {
       for (final OutstandingBatch batch : batchesToSend) {
         logger.log(Level.FINER, "Scheduling a batch for immediate sending.");
-        publishOutstandingBatch(batch);
+        executor.execute(
+            new Runnable() {
+              @Override
+              public void run() {
+                publishOutstandingBatch(batch);
+              }
+            });
       }
     }
 
@@ -588,6 +595,7 @@ public class Publisher {
             .build();
 
     String topicName;
+    private String endpoint = PublisherStubSettings.getDefaultEndpoint();
 
     // Batching options
     BatchingSettings batchingSettings = DEFAULT_BATCHING_SETTINGS;
@@ -711,6 +719,12 @@ public class Publisher {
     public Builder setTransform(ApiFunction<PubsubMessage, PubsubMessage> messageTransform) {
       this.messageTransform =
           Preconditions.checkNotNull(messageTransform, "The messageTransform cannnot be null.");
+      return this;
+    }
+
+    /** Gives the ability to override the gRPC endpoint. */
+    public Builder setEndpoint(String endpoint) {
+      this.endpoint = endpoint;
       return this;
     }
 

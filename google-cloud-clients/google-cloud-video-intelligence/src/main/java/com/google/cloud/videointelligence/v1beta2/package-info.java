@@ -36,4 +36,7 @@
  * </code>
  * </pre>
  */
+@Generated("by gapic-generator")
 package com.google.cloud.videointelligence.v1beta2;
+
+import javax.annotation.Generated;

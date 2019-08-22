@@ -70,9 +70,9 @@ public interface TablesAnnotationOrBuilder
    * The predicted value of the row's
    * [target_column][google.cloud.automl.v1beta1.TablesModelMetadata.target_column_spec].
    * The value depends on the column's DataType:
-   * CATEGORY - the predicted (with the above confidence `score`) CATEGORY
-   *            value.
-   * FLOAT64 - the predicted (with above `prediction_interval`) FLOAT64 value.
+   * * CATEGORY - the predicted (with the above confidence `score`) CATEGORY
+   *   value.
+   * * FLOAT64 - the predicted (with above `prediction_interval`) FLOAT64 value.
    * </pre>
    *
    * <code>.google.protobuf.Value value = 2;</code>
@@ -85,9 +85,9 @@ public interface TablesAnnotationOrBuilder
    * The predicted value of the row's
    * [target_column][google.cloud.automl.v1beta1.TablesModelMetadata.target_column_spec].
    * The value depends on the column's DataType:
-   * CATEGORY - the predicted (with the above confidence `score`) CATEGORY
-   *            value.
-   * FLOAT64 - the predicted (with above `prediction_interval`) FLOAT64 value.
+   * * CATEGORY - the predicted (with the above confidence `score`) CATEGORY
+   *   value.
+   * * FLOAT64 - the predicted (with above `prediction_interval`) FLOAT64 value.
    * </pre>
    *
    * <code>.google.protobuf.Value value = 2;</code>
@@ -100,9 +100,9 @@ public interface TablesAnnotationOrBuilder
    * The predicted value of the row's
    * [target_column][google.cloud.automl.v1beta1.TablesModelMetadata.target_column_spec].
    * The value depends on the column's DataType:
-   * CATEGORY - the predicted (with the above confidence `score`) CATEGORY
-   *            value.
-   * FLOAT64 - the predicted (with above `prediction_interval`) FLOAT64 value.
+   * * CATEGORY - the predicted (with the above confidence `score`) CATEGORY
+   *   value.
+   * * FLOAT64 - the predicted (with above `prediction_interval`) FLOAT64 value.
    * </pre>
    *
    * <code>.google.protobuf.Value value = 2;</code>

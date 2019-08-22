@@ -28,16 +28,17 @@ public final class TableSpecOuterClass {
       "\n,google/cloud/automl/v1beta1/table_spec"
           + ".proto\022\033google.cloud.automl.v1beta1\032$goo"
           + "gle/cloud/automl/v1beta1/io.proto\032\034googl"
-          + "e/api/annotations.proto\"\256\001\n\tTableSpec\022\014\n"
+          + "e/api/annotations.proto\"\307\001\n\tTableSpec\022\014\n"
           + "\004name\030\001 \001(\t\022\033\n\023time_column_spec_id\030\002 \001(\t"
-          + "\022\021\n\trow_count\030\003 \001(\003\022\024\n\014column_count\030\007 \001("
-          + "\003\022?\n\rinput_configs\030\005 \003(\0132(.google.cloud."
-          + "automl.v1beta1.InputConfig\022\014\n\004etag\030\006 \001(\t"
-          + "B\245\001\n\037com.google.cloud.automl.v1beta1P\001ZA"
-          + "google.golang.org/genproto/googleapis/cl"
-          + "oud/automl/v1beta1;automl\312\002\033Google\\Cloud"
-          + "\\AutoMl\\V1beta1\352\002\036Google::Cloud::AutoML:"
-          + ":V1beta1b\006proto3"
+          + "\022\021\n\trow_count\030\003 \001(\003\022\027\n\017valid_row_count\030\004"
+          + " \001(\003\022\024\n\014column_count\030\007 \001(\003\022?\n\rinput_conf"
+          + "igs\030\005 \003(\0132(.google.cloud.automl.v1beta1."
+          + "InputConfig\022\014\n\004etag\030\006 \001(\tB\245\001\n\037com.google"
+          + ".cloud.automl.v1beta1P\001ZAgoogle.golang.o"
+          + "rg/genproto/googleapis/cloud/automl/v1be"
+          + "ta1;automl\312\002\033Google\\Cloud\\AutoMl\\V1beta1"
+          + "\352\002\036Google::Cloud::AutoML::V1beta1b\006proto"
+          + "3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -60,7 +61,13 @@ public final class TableSpecOuterClass {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_automl_v1beta1_TableSpec_descriptor,
             new java.lang.String[] {
-              "Name", "TimeColumnSpecId", "RowCount", "ColumnCount", "InputConfigs", "Etag",
+              "Name",
+              "TimeColumnSpecId",
+              "RowCount",
+              "ValidRowCount",
+              "ColumnCount",
+              "InputConfigs",
+              "Etag",
             });
     com.google.cloud.automl.v1beta1.Io.getDescriptor();
     com.google.api.AnnotationsProto.getDescriptor();

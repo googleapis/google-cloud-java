@@ -113,12 +113,13 @@ public final class AcknowledgeTaskRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required.
-   * The task name. For example:
+   * Required. The task name. For example:
    * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -135,12 +136,13 @@ public final class AcknowledgeTaskRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required.
-   * The task name. For example:
+   * Required. The task name. For example:
    * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -160,15 +162,15 @@ public final class AcknowledgeTaskRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required.
-   * The task's current schedule time, available in the
+   * Required. The task's current schedule time, available in the
    * [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time] returned by
    * [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] response or
-   * [RenewLease][google.cloud.tasks.v2beta2.CloudTasks.RenewLease] response.
-   * This restriction is to ensure that your worker currently holds the lease.
+   * [RenewLease][google.cloud.tasks.v2beta2.CloudTasks.RenewLease] response. This restriction is
+   * to ensure that your worker currently holds the lease.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp schedule_time = 2;</code>
+   * <code>.google.protobuf.Timestamp schedule_time = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public boolean hasScheduleTime() {
     return scheduleTime_ != null;
@@ -177,15 +179,15 @@ public final class AcknowledgeTaskRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required.
-   * The task's current schedule time, available in the
+   * Required. The task's current schedule time, available in the
    * [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time] returned by
    * [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] response or
-   * [RenewLease][google.cloud.tasks.v2beta2.CloudTasks.RenewLease] response.
-   * This restriction is to ensure that your worker currently holds the lease.
+   * [RenewLease][google.cloud.tasks.v2beta2.CloudTasks.RenewLease] response. This restriction is
+   * to ensure that your worker currently holds the lease.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp schedule_time = 2;</code>
+   * <code>.google.protobuf.Timestamp schedule_time = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.protobuf.Timestamp getScheduleTime() {
     return scheduleTime_ == null
@@ -196,15 +198,15 @@ public final class AcknowledgeTaskRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required.
-   * The task's current schedule time, available in the
+   * Required. The task's current schedule time, available in the
    * [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time] returned by
    * [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] response or
-   * [RenewLease][google.cloud.tasks.v2beta2.CloudTasks.RenewLease] response.
-   * This restriction is to ensure that your worker currently holds the lease.
+   * [RenewLease][google.cloud.tasks.v2beta2.CloudTasks.RenewLease] response. This restriction is
+   * to ensure that your worker currently holds the lease.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp schedule_time = 2;</code>
+   * <code>.google.protobuf.Timestamp schedule_time = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.protobuf.TimestampOrBuilder getScheduleTimeOrBuilder() {
     return getScheduleTime();
@@ -563,12 +565,13 @@ public final class AcknowledgeTaskRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required.
-     * The task name. For example:
+     * Required. The task name. For example:
      * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -585,12 +588,13 @@ public final class AcknowledgeTaskRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required.
-     * The task name. For example:
+     * Required. The task name. For example:
      * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -607,12 +611,13 @@ public final class AcknowledgeTaskRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required.
-     * The task name. For example:
+     * Required. The task name. For example:
      * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -627,12 +632,13 @@ public final class AcknowledgeTaskRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required.
-     * The task name. For example:
+     * Required. The task name. For example:
      * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder clearName() {
 
@@ -644,12 +650,13 @@ public final class AcknowledgeTaskRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required.
-     * The task name. For example:
+     * Required. The task name. For example:
      * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -672,15 +679,15 @@ public final class AcknowledgeTaskRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required.
-     * The task's current schedule time, available in the
+     * Required. The task's current schedule time, available in the
      * [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time] returned by
      * [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] response or
-     * [RenewLease][google.cloud.tasks.v2beta2.CloudTasks.RenewLease] response.
-     * This restriction is to ensure that your worker currently holds the lease.
+     * [RenewLease][google.cloud.tasks.v2beta2.CloudTasks.RenewLease] response. This restriction is
+     * to ensure that your worker currently holds the lease.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp schedule_time = 2;</code>
+     * <code>.google.protobuf.Timestamp schedule_time = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public boolean hasScheduleTime() {
       return scheduleTimeBuilder_ != null || scheduleTime_ != null;
@@ -689,15 +696,15 @@ public final class AcknowledgeTaskRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required.
-     * The task's current schedule time, available in the
+     * Required. The task's current schedule time, available in the
      * [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time] returned by
      * [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] response or
-     * [RenewLease][google.cloud.tasks.v2beta2.CloudTasks.RenewLease] response.
-     * This restriction is to ensure that your worker currently holds the lease.
+     * [RenewLease][google.cloud.tasks.v2beta2.CloudTasks.RenewLease] response. This restriction is
+     * to ensure that your worker currently holds the lease.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp schedule_time = 2;</code>
+     * <code>.google.protobuf.Timestamp schedule_time = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.protobuf.Timestamp getScheduleTime() {
       if (scheduleTimeBuilder_ == null) {
@@ -712,15 +719,15 @@ public final class AcknowledgeTaskRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required.
-     * The task's current schedule time, available in the
+     * Required. The task's current schedule time, available in the
      * [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time] returned by
      * [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] response or
-     * [RenewLease][google.cloud.tasks.v2beta2.CloudTasks.RenewLease] response.
-     * This restriction is to ensure that your worker currently holds the lease.
+     * [RenewLease][google.cloud.tasks.v2beta2.CloudTasks.RenewLease] response. This restriction is
+     * to ensure that your worker currently holds the lease.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp schedule_time = 2;</code>
+     * <code>.google.protobuf.Timestamp schedule_time = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setScheduleTime(com.google.protobuf.Timestamp value) {
       if (scheduleTimeBuilder_ == null) {
@@ -739,15 +746,15 @@ public final class AcknowledgeTaskRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required.
-     * The task's current schedule time, available in the
+     * Required. The task's current schedule time, available in the
      * [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time] returned by
      * [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] response or
-     * [RenewLease][google.cloud.tasks.v2beta2.CloudTasks.RenewLease] response.
-     * This restriction is to ensure that your worker currently holds the lease.
+     * [RenewLease][google.cloud.tasks.v2beta2.CloudTasks.RenewLease] response. This restriction is
+     * to ensure that your worker currently holds the lease.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp schedule_time = 2;</code>
+     * <code>.google.protobuf.Timestamp schedule_time = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setScheduleTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (scheduleTimeBuilder_ == null) {
@@ -763,15 +770,15 @@ public final class AcknowledgeTaskRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required.
-     * The task's current schedule time, available in the
+     * Required. The task's current schedule time, available in the
      * [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time] returned by
      * [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] response or
-     * [RenewLease][google.cloud.tasks.v2beta2.CloudTasks.RenewLease] response.
-     * This restriction is to ensure that your worker currently holds the lease.
+     * [RenewLease][google.cloud.tasks.v2beta2.CloudTasks.RenewLease] response. This restriction is
+     * to ensure that your worker currently holds the lease.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp schedule_time = 2;</code>
+     * <code>.google.protobuf.Timestamp schedule_time = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeScheduleTime(com.google.protobuf.Timestamp value) {
       if (scheduleTimeBuilder_ == null) {
@@ -794,15 +801,15 @@ public final class AcknowledgeTaskRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required.
-     * The task's current schedule time, available in the
+     * Required. The task's current schedule time, available in the
      * [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time] returned by
      * [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] response or
-     * [RenewLease][google.cloud.tasks.v2beta2.CloudTasks.RenewLease] response.
-     * This restriction is to ensure that your worker currently holds the lease.
+     * [RenewLease][google.cloud.tasks.v2beta2.CloudTasks.RenewLease] response. This restriction is
+     * to ensure that your worker currently holds the lease.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp schedule_time = 2;</code>
+     * <code>.google.protobuf.Timestamp schedule_time = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearScheduleTime() {
       if (scheduleTimeBuilder_ == null) {
@@ -819,15 +826,15 @@ public final class AcknowledgeTaskRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required.
-     * The task's current schedule time, available in the
+     * Required. The task's current schedule time, available in the
      * [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time] returned by
      * [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] response or
-     * [RenewLease][google.cloud.tasks.v2beta2.CloudTasks.RenewLease] response.
-     * This restriction is to ensure that your worker currently holds the lease.
+     * [RenewLease][google.cloud.tasks.v2beta2.CloudTasks.RenewLease] response. This restriction is
+     * to ensure that your worker currently holds the lease.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp schedule_time = 2;</code>
+     * <code>.google.protobuf.Timestamp schedule_time = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.protobuf.Timestamp.Builder getScheduleTimeBuilder() {
 
@@ -838,15 +845,15 @@ public final class AcknowledgeTaskRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required.
-     * The task's current schedule time, available in the
+     * Required. The task's current schedule time, available in the
      * [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time] returned by
      * [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] response or
-     * [RenewLease][google.cloud.tasks.v2beta2.CloudTasks.RenewLease] response.
-     * This restriction is to ensure that your worker currently holds the lease.
+     * [RenewLease][google.cloud.tasks.v2beta2.CloudTasks.RenewLease] response. This restriction is
+     * to ensure that your worker currently holds the lease.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp schedule_time = 2;</code>
+     * <code>.google.protobuf.Timestamp schedule_time = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.protobuf.TimestampOrBuilder getScheduleTimeOrBuilder() {
       if (scheduleTimeBuilder_ != null) {
@@ -861,15 +868,15 @@ public final class AcknowledgeTaskRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required.
-     * The task's current schedule time, available in the
+     * Required. The task's current schedule time, available in the
      * [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time] returned by
      * [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] response or
-     * [RenewLease][google.cloud.tasks.v2beta2.CloudTasks.RenewLease] response.
-     * This restriction is to ensure that your worker currently holds the lease.
+     * [RenewLease][google.cloud.tasks.v2beta2.CloudTasks.RenewLease] response. This restriction is
+     * to ensure that your worker currently holds the lease.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp schedule_time = 2;</code>
+     * <code>.google.protobuf.Timestamp schedule_time = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,

@@ -24,16 +24,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-datacatalog</artifactId>
-  <version>0.14.0-alpha</version>
+  <version>0.18.0-alpha</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-datacatalog:0.14.0-alpha'
+compile 'com.google.cloud:google-cloud-datacatalog:0.18.0-alpha'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-datacatalog" % "0.14.0-alpha"
+libraryDependencies += "com.google.cloud" % "google-cloud-datacatalog" % "0.18.0-alpha"
 ```
 [//]: # ({x-version-update-end})
 
@@ -99,4 +99,4 @@ Apache 2.0 - See [LICENSE] for more information.
 [cloud-platform]: https://cloud.google.com/
 [product-overview]: https://cloud.google.com/data-catalog/
 [product-docs]: https://cloud.google.com/data-catalog/
-[lib-docs]: https://googleapis.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/datacatalog/v1beta1/package-summary.html
+[lib-docs]: https://googleapis.dev/java/google-cloud-clients/latest/index.html?com/google/cloud/datacatalog/v1beta1/package-summary.html

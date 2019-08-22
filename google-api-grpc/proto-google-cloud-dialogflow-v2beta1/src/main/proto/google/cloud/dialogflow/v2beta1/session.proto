@@ -18,6 +18,7 @@ syntax = "proto3";
 package google.cloud.dialogflow.v2beta1;
 
 import "google/api/annotations.proto";
+import "google/api/field_behavior.proto";
 import "google/cloud/dialogflow/v2beta1/agent.proto";
 import "google/cloud/dialogflow/v2beta1/audio_config.proto";
 import "google/cloud/dialogflow/v2beta1/context.proto";
@@ -57,6 +58,14 @@ service Sessions {
       body: "*"
       additional_bindings {
         post: "/v2beta1/{session=projects/*/agent/environments/*/users/*/sessions/*}:detectIntent"
+        body: "*"
+      }
+      additional_bindings {
+        post: "/v2beta1/{session=projects/*/locations/*/agent/sessions/*}:detectIntent"
+        body: "*"
+      }
+      additional_bindings {
+        post: "/v2beta1/{session=projects/*/locations/*/agent/environments/*/users/*/sessions/*}:detectIntent"
         body: "*"
       }
     };
@@ -270,7 +279,7 @@ message QueryResult {
 
   // The intent that matched the conversational query. Some, not
   // all fields are filled in this message, including but not limited to:
-  // `name`, `display_name` and `webhook_state`.
+  // `name`, `display_name`, `end_interaction` and `is_fallback`.
   Intent intent = 11;
 
   // The intent detection confidence. Values range from 0.0

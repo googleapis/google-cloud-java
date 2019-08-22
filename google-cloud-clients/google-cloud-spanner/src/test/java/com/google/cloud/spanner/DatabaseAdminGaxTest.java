@@ -16,6 +16,8 @@
 
 package com.google.cloud.spanner;
 
+import static org.junit.Assert.fail;
+
 import com.google.api.core.ApiFunction;
 import com.google.api.gax.grpc.testing.LocalChannelProvider;
 import com.google.api.gax.longrunning.OperationFuture;
@@ -243,28 +245,43 @@ public class DatabaseAdminGaxTest {
                 return null;
               }
             });
-    builder
+
+    if (!builder
         .getDatabaseAdminStubSettingsBuilder()
         .createDatabaseOperationSettings()
-        .setInitialCallSettings(
-            builder
-                .getDatabaseAdminStubSettingsBuilder()
-                .createDatabaseOperationSettings()
-                .getInitialCallSettings()
-                .toBuilder()
-                .setRetrySettings(retrySettings)
-                .build());
-    builder
+        .getInitialCallSettings()
+        .getRetryableCodes()
+        .isEmpty()) {
+      builder
+          .getDatabaseAdminStubSettingsBuilder()
+          .createDatabaseOperationSettings()
+          .setInitialCallSettings(
+              builder
+                  .getDatabaseAdminStubSettingsBuilder()
+                  .createDatabaseOperationSettings()
+                  .getInitialCallSettings()
+                  .toBuilder()
+                  .setRetrySettings(retrySettings)
+                  .build());
+    }
+    if (!builder
         .getDatabaseAdminStubSettingsBuilder()
         .updateDatabaseDdlOperationSettings()
-        .setInitialCallSettings(
-            builder
-                .getDatabaseAdminStubSettingsBuilder()
-                .updateDatabaseDdlOperationSettings()
-                .getInitialCallSettings()
-                .toBuilder()
-                .setRetrySettings(retrySettings)
-                .build());
+        .getInitialCallSettings()
+        .getRetryableCodes()
+        .isEmpty()) {
+      builder
+          .getDatabaseAdminStubSettingsBuilder()
+          .updateDatabaseDdlOperationSettings()
+          .setInitialCallSettings(
+              builder
+                  .getDatabaseAdminStubSettingsBuilder()
+                  .updateDatabaseDdlOperationSettings()
+                  .getInitialCallSettings()
+                  .toBuilder()
+                  .setRetrySettings(retrySettings)
+                  .build());
+    }
     spanner = builder.build().getService();
     client = spanner.getDatabaseAdminClient();
   }
@@ -369,19 +386,36 @@ public class DatabaseAdminGaxTest {
     }
     mockDatabaseAdmin.addResponse(resultOperation);
 
+    boolean methodIsIdempotent =
+        !spanner
+            .getOptions()
+            .getDatabaseAdminStubSettings()
+            .createDatabaseOperationSettings()
+            .getInitialCallSettings()
+            .getRetryableCodes()
+            .isEmpty();
     for (int i = 0; i < 2; i++) {
       OperationFuture<Database, CreateDatabaseMetadata> actualResponse =
           client.createDatabase(INSTANCE, "DATABASE", Arrays.<String>asList());
       try {
         Database returnedInstance = actualResponse.get();
+        if (!methodIsIdempotent && i == exceptionAtCall) {
+          fail("missing expected exception");
+        }
         Assert.assertEquals(name.toString(), returnedInstance.getId().getName());
       } catch (ExecutionException e) {
-        Throwables.throwIfUnchecked(e.getCause());
-        throw e;
+        if (!exceptionType.isRetryable() || methodIsIdempotent || i != exceptionAtCall) {
+          Throwables.throwIfUnchecked(e.getCause());
+          throw e;
+        }
       }
     }
     List<AbstractMessage> actualRequests = mockDatabaseAdmin.getRequests();
-    Assert.assertEquals(2, actualRequests.size());
+    if (methodIsIdempotent) {
+      Assert.assertEquals(2, actualRequests.size());
+    } else {
+      Assert.assertEquals(1, actualRequests.size());
+    }
   }
 
   @Test

@@ -22,16 +22,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-iamcredentials</artifactId>
-  <version>0.28.0-alpha</version>
+  <version>0.32.0-alpha</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-iamcredentials:0.28.0-alpha'
+compile 'com.google.cloud:google-cloud-iamcredentials:0.32.0-alpha'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-iamcredentials" % "0.28.0-alpha"
+libraryDependencies += "com.google.cloud" % "google-cloud-iamcredentials" % "0.32.0-alpha"
 ```
 [//]: # ({x-version-update-end})
 
@@ -97,4 +97,4 @@ Apache 2.0 - See [LICENSE] for more information.
 [cloud-platform]: https://cloud.google.com/
 [product-overview]: https://cloud.google.com/iam/credentials/reference/rest/
 [product-docs]: https://cloud.google.com/iam/credentials/reference/rest/
-[lib-docs]: https://googleapis.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/iamcredentials/v1/package-summary.html
+[lib-docs]: https://googleapis.dev/java/google-cloud-clients/latest/index.html?com/google/cloud/iamcredentials/v1/package-summary.html
