@@ -74,6 +74,12 @@ public final class TestDefinition {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new TestFile();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -966,6 +972,12 @@ public final class TestDefinition {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ReadRowsTest();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -998,10 +1010,10 @@ public final class TestDefinition {
               }
             case 18:
               {
-                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                   chunks_ =
                       new java.util.ArrayList<com.google.bigtable.v2.ReadRowsResponse.CellChunk>();
-                  mutable_bitField0_ |= 0x00000002;
+                  mutable_bitField0_ |= 0x00000001;
                 }
                 chunks_.add(
                     input.readMessage(
@@ -1011,12 +1023,12 @@ public final class TestDefinition {
               }
             case 26:
               {
-                if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                   results_ =
                       new java.util.ArrayList<
                           com.google.cloud.conformance.bigtable.v2.TestDefinition.ReadRowsTest
                               .Result>();
-                  mutable_bitField0_ |= 0x00000004;
+                  mutable_bitField0_ |= 0x00000002;
                 }
                 results_.add(
                     input.readMessage(
@@ -1039,10 +1051,10 @@ public final class TestDefinition {
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           chunks_ = java.util.Collections.unmodifiableList(chunks_);
         }
-        if (((mutable_bitField0_ & 0x00000004) != 0)) {
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
           results_ = java.util.Collections.unmodifiableList(results_);
         }
         this.unknownFields = unknownFields.build();
@@ -1130,6 +1142,12 @@ public final class TestDefinition {
       }
 
       @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new Result();
+      }
+
+      @java.lang.Override
       public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
       }
@@ -1142,7 +1160,6 @@ public final class TestDefinition {
         if (extensionRegistry == null) {
           throw new java.lang.NullPointerException();
         }
-        int mutable_bitField0_ = 0;
         com.google.protobuf.UnknownFieldSet.Builder unknownFields =
             com.google.protobuf.UnknownFieldSet.newBuilder();
         try {
@@ -2192,7 +2209,6 @@ public final class TestDefinition {
       }
     }
 
-    private int bitField0_;
     public static final int DESCRIPTION_FIELD_NUMBER = 1;
     private volatile java.lang.Object description_;
     /** <code>string description = 1;</code> */
@@ -2518,13 +2534,13 @@ public final class TestDefinition {
 
         if (chunksBuilder_ == null) {
           chunks_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           chunksBuilder_.clear();
         }
         if (resultsBuilder_ == null) {
           results_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           resultsBuilder_.clear();
         }
@@ -2559,27 +2575,25 @@ public final class TestDefinition {
         com.google.cloud.conformance.bigtable.v2.TestDefinition.ReadRowsTest result =
             new com.google.cloud.conformance.bigtable.v2.TestDefinition.ReadRowsTest(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         result.description_ = description_;
         if (chunksBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             chunks_ = java.util.Collections.unmodifiableList(chunks_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.chunks_ = chunks_;
         } else {
           result.chunks_ = chunksBuilder_.build();
         }
         if (resultsBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             results_ = java.util.Collections.unmodifiableList(results_);
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000002);
           }
           result.results_ = results_;
         } else {
           result.results_ = resultsBuilder_.build();
         }
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -2643,7 +2657,7 @@ public final class TestDefinition {
           if (!other.chunks_.isEmpty()) {
             if (chunks_.isEmpty()) {
               chunks_ = other.chunks_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureChunksIsMutable();
               chunks_.addAll(other.chunks_);
@@ -2656,7 +2670,7 @@ public final class TestDefinition {
               chunksBuilder_.dispose();
               chunksBuilder_ = null;
               chunks_ = other.chunks_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
               chunksBuilder_ =
                   com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                       ? getChunksFieldBuilder()
@@ -2670,7 +2684,7 @@ public final class TestDefinition {
           if (!other.results_.isEmpty()) {
             if (results_.isEmpty()) {
               results_ = other.results_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000002);
             } else {
               ensureResultsIsMutable();
               results_.addAll(other.results_);
@@ -2683,7 +2697,7 @@ public final class TestDefinition {
               resultsBuilder_.dispose();
               resultsBuilder_ = null;
               results_ = other.results_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000002);
               resultsBuilder_ =
                   com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                       ? getResultsFieldBuilder()
@@ -2784,10 +2798,10 @@ public final class TestDefinition {
           java.util.Collections.emptyList();
 
       private void ensureChunksIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           chunks_ =
               new java.util.ArrayList<com.google.bigtable.v2.ReadRowsResponse.CellChunk>(chunks_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000001;
         }
       }
 
@@ -2915,7 +2929,7 @@ public final class TestDefinition {
       public Builder clearChunks() {
         if (chunksBuilder_ == null) {
           chunks_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           chunksBuilder_.clear();
@@ -2983,7 +2997,7 @@ public final class TestDefinition {
                   com.google.bigtable.v2.ReadRowsResponse.CellChunk,
                   com.google.bigtable.v2.ReadRowsResponse.CellChunk.Builder,
                   com.google.bigtable.v2.ReadRowsResponse.CellChunkOrBuilder>(
-                  chunks_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+                  chunks_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
           chunks_ = null;
         }
         return chunksBuilder_;
@@ -2994,12 +3008,12 @@ public final class TestDefinition {
           results_ = java.util.Collections.emptyList();
 
       private void ensureResultsIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           results_ =
               new java.util.ArrayList<
                   com.google.cloud.conformance.bigtable.v2.TestDefinition.ReadRowsTest.Result>(
                   results_);
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000002;
         }
       }
 
@@ -3176,7 +3190,7 @@ public final class TestDefinition {
       public Builder clearResults() {
         if (resultsBuilder_ == null) {
           results_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
           resultsBuilder_.clear();
@@ -3278,7 +3292,7 @@ public final class TestDefinition {
                       .Builder,
                   com.google.cloud.conformance.bigtable.v2.TestDefinition.ReadRowsTest
                       .ResultOrBuilder>(
-                  results_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
+                  results_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
           results_ = null;
         }
         return resultsBuilder_;
@@ -3378,20 +3392,12 @@ public final class TestDefinition {
           + "loud.Bigtable.V2.Tests.Conformanceb\006prot"
           + "o3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-        descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.bigtable.v2.BigtableProto.getDescriptor(),
-        },
-        assigner);
+    descriptor =
+        com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
+            descriptorData,
+            new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.bigtable.v2.BigtableProto.getDescriptor(),
+            });
     internal_static_google_cloud_conformance_bigtable_v2_TestFile_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_conformance_bigtable_v2_TestFile_fieldAccessorTable =
