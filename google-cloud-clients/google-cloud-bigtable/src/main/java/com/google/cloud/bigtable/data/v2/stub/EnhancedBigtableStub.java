@@ -44,6 +44,9 @@ import com.google.cloud.bigtable.data.v2.models.ReadModifyWriteRow;
 import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowAdapter;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
+import com.google.cloud.bigtable.data.v2.stub.metrics.MeasuredMutateRowsCallable;
+import com.google.cloud.bigtable.data.v2.stub.metrics.MeasuredReadRowsCallable;
+import com.google.cloud.bigtable.data.v2.stub.metrics.MeasuredUnaryCallable;
 import com.google.cloud.bigtable.data.v2.stub.mutaterows.BulkMutateRowsUserFacingCallable;
 import com.google.cloud.bigtable.data.v2.stub.mutaterows.MutateRowsBatchingDescriptor;
 import com.google.cloud.bigtable.data.v2.stub.mutaterows.MutateRowsRetryingCallable;
@@ -55,6 +58,10 @@ import com.google.cloud.bigtable.data.v2.stub.readrows.ReadRowsUserCallable;
 import com.google.cloud.bigtable.data.v2.stub.readrows.RowMergingCallable;
 import com.google.cloud.bigtable.gaxx.retrying.ApiResultRetryAlgorithm;
 import com.google.cloud.bigtable.gaxx.tracing.WrappedTracerFactory;
+import io.opencensus.stats.Stats;
+import io.opencensus.stats.StatsRecorder;
+import io.opencensus.tags.Tagger;
+import io.opencensus.tags.Tags;
 import java.io.IOException;
 import java.util.List;
 import org.threeten.bp.Duration;
@@ -80,6 +87,10 @@ public class EnhancedBigtableStub implements AutoCloseable {
   private final GrpcBigtableStub stub;
   private final ClientContext clientContext;
   private final RequestContext requestContext;
+
+  // TODO: This should probably move to ClientContext
+  private final Tagger tagger;
+  private final StatsRecorder statsRecorder;
 
   private final ServerStreamingCallable<Query, Row> readRowsCallable;
   private final UnaryCallable<Query, Row> readRowCallable;
@@ -154,14 +165,16 @@ public class EnhancedBigtableStub implements AutoCloseable {
     // Make sure to keep the original tracer factory for the outer client.
     clientContext = clientContext.toBuilder().setTracerFactory(settings.getTracerFactory()).build();
 
-    return new EnhancedBigtableStub(settings, clientContext, stub);
+    return new EnhancedBigtableStub(settings, clientContext, Tags.getTagger(), Stats.getStatsRecorder(), stub);
   }
 
   @InternalApi("Visible for testing")
   EnhancedBigtableStub(
-      EnhancedBigtableStubSettings settings, ClientContext clientContext, GrpcBigtableStub stub) {
+      EnhancedBigtableStubSettings settings, ClientContext clientContext, Tagger tagger, StatsRecorder statsRecorder, GrpcBigtableStub stub) {
     this.settings = settings;
     this.clientContext = clientContext;
+    this.tagger = tagger;
+    this.statsRecorder = statsRecorder;
     this.stub = stub;
     this.requestContext =
         RequestContext.create(
@@ -190,11 +203,27 @@ public class EnhancedBigtableStub implements AutoCloseable {
    *       implementation can be configured in by the {@code rowAdapter} parameter.
    *   <li>Retry/resume on failure.
    *   <li>Filter out marker rows.
+   *   <li>Add tracing & metrics.
    * </ul>
    */
   public <RowT> ServerStreamingCallable<Query, RowT> createReadRowsCallable(
       RowAdapter<RowT> rowAdapter) {
-    return createReadRowsCallable(settings.readRowsSettings(), rowAdapter);
+    ServerStreamingCallable<Query, RowT> readRowsCallable = createReadRowsBaseCallable(
+        settings.readRowsSettings(), rowAdapter);
+
+    ServerStreamingCallable<Query, RowT> traced =
+        new TracedServerStreamingCallable<>(
+            readRowsCallable,
+            clientContext.getTracerFactory(),
+            SpanName.of(TRACING_OUTER_CLIENT_NAME, "ReadRows"));
+
+    ServerStreamingCallable<Query, RowT> measured = new MeasuredReadRowsCallable<>(
+        traced, TRACING_OUTER_CLIENT_NAME + ".ReadRows", tagger, statsRecorder, clientContext.getClock()
+
+    );
+
+    return measured.withDefaultCallContext(clientContext.getDefaultCallContext());
+
   }
 
   /**
@@ -208,10 +237,12 @@ public class EnhancedBigtableStub implements AutoCloseable {
    *       implementation can be configured in by the {@code rowAdapter} parameter.
    *   <li>Retry/resume on failure.
    *   <li>Filter out marker rows.
+   *   <li>Add tracing & metrics.
    * </ul>
    */
   public <RowT> UnaryCallable<Query, RowT> createReadRowCallable(RowAdapter<RowT> rowAdapter) {
-    return createReadRowsCallable(
+    UnaryCallable<Query, RowT> readRowCallable =
+        createReadRowsBaseCallable(
             ServerStreamingCallSettings.<Query, Row>newBuilder()
                 .setRetryableCodes(settings.readRowSettings().getRetryableCodes())
                 .setRetrySettings(settings.readRowSettings().getRetrySettings())
@@ -219,6 +250,19 @@ public class EnhancedBigtableStub implements AutoCloseable {
                 .build(),
             rowAdapter)
         .first();
+
+    UnaryCallable<Query, RowT> traced =
+        new TracedUnaryCallable<>(
+            readRowCallable,
+            clientContext.getTracerFactory(),
+            SpanName.of(TRACING_OUTER_CLIENT_NAME, "ReadRows"));
+
+    UnaryCallable<Query, RowT> measured = new MeasuredUnaryCallable<>(
+        traced, TRACING_OUTER_CLIENT_NAME + ".ReadRows", tagger, statsRecorder, clientContext.getClock()
+
+    );
+
+    return measured.withDefaultCallContext(clientContext.getDefaultCallContext());
   }
 
   /**
@@ -233,8 +277,10 @@ public class EnhancedBigtableStub implements AutoCloseable {
    *   <li>Retry/resume on failure.
    *   <li>Filter out marker rows.
    * </ul>
+   *
+   * <p>NOTE: the caller is responsible for adding tracing & metrics.
    */
-  private <RowT> ServerStreamingCallable<Query, RowT> createReadRowsCallable(
+  private <RowT> ServerStreamingCallable<Query, RowT> createReadRowsBaseCallable(
       ServerStreamingCallSettings<Query, Row> readRowsSettings, RowAdapter<RowT> rowAdapter) {
 
     ServerStreamingCallable<ReadRowsRequest, RowT> merging =
@@ -261,8 +307,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
     FilterMarkerRowsCallable<RowT> filtering =
         new FilterMarkerRowsCallable<>(retrying2, rowAdapter);
 
-    return createUserFacingServerStreamingCallable(
-        "ReadRows", new ReadRowsUserCallable<>(filtering, requestContext));
+    return new ReadRowsUserCallable<>(filtering, requestContext);
   }
 
   /**
@@ -274,6 +319,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
    *   <li>Spool responses into a list.
    *   <li>Retry on failure.
    *   <li>Convert the responses into {@link KeyOffset}s.
+   *   <li>Add tracing & metrics.
    * </ul>
    */
   private UnaryCallable<String, List<KeyOffset>> createSampleRowKeysCallable() {
@@ -292,6 +338,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
    *
    * <ul>
    *   <li>Convert a {@link RowMutation} into a {@link com.google.bigtable.v2.MutateRowRequest}.
+   *   <li>Add tracing & metrics.
    * </ul>
    */
   private UnaryCallable<RowMutation, Void> createMutateRowCallable() {
@@ -311,13 +358,29 @@ public class EnhancedBigtableStub implements AutoCloseable {
    *       are no more entries or there are no more retry attempts left.
    *   <li>Wrap batch failures in a {@link
    *       com.google.cloud.bigtable.data.v2.models.MutateRowsException}.
+   *   <li>Add tracing & metrics.
    * </ul>
    */
   private UnaryCallable<BulkMutation, Void> createBulkMutateRowsCallable() {
     UnaryCallable<MutateRowsRequest, Void> baseCallable = createMutateRowsBaseCallable();
 
-    return createUserFacingUnaryCallable(
-        "BulkMutateRows", new BulkMutateRowsUserFacingCallable(baseCallable, requestContext));
+    // TODO(igorbernstein): Move tracing & stats after proto creation.
+    // When migrating to v2 batching api, the new Batcher should wrap the BulkMutation api,
+    // which will allow the tracing metrics callable to be pulled up.
+    UnaryCallable<MutateRowsRequest, Void> traced =
+        new TracedUnaryCallable<>(
+            baseCallable,
+            clientContext.getTracerFactory(),
+            SpanName.of(TRACING_OUTER_CLIENT_NAME, "MutateRows"));
+
+    UnaryCallable<MutateRowsRequest, Void> measured = new MeasuredMutateRowsCallable(traced,
+        TRACING_OUTER_CLIENT_NAME + ".MutateRows", tagger, statsRecorder, clientContext.getClock());
+
+
+    UnaryCallable<BulkMutation, Void> userFacing = new BulkMutateRowsUserFacingCallable(
+        measured, requestContext);
+
+    return userFacing.withDefaultCallContext(clientContext.getDefaultCallContext());
   }
 
   /**
@@ -335,6 +398,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
    *   <li>Wrap batch failures in a {@link
    *       com.google.cloud.bigtable.data.v2.models.MutateRowsException}.
    *   <li>Split the responses using {@link MutateRowsBatchingDescriptor}.
+   *   <li>Add tracing & metrics.
    * </ul>
    */
   private UnaryCallable<RowMutation, Void> createBulkMutateRowsBatchingCallable() {
@@ -344,6 +408,9 @@ public class EnhancedBigtableStub implements AutoCloseable {
         BatchingCallSettings.newBuilder(new MutateRowsBatchingDescriptor())
             .setBatchingSettings(settings.bulkMutateRowsSettings().getBatchingSettings());
 
+    // TODO(igorbernstein): Move tracing & stats after proto creation.
+    // When migrating to v2 batching api, the new Batcher should wrap the BulkMutation api,
+    // which will allow the tracing metrics callable to be pulled up.
     // This is a special case, the tracing starts after the batching, so we can't use
     // createUserFacingUnaryCallable
     TracedBatchingCallable<MutateRowsRequest, Void> traced =
@@ -353,8 +420,12 @@ public class EnhancedBigtableStub implements AutoCloseable {
             SpanName.of(TRACING_OUTER_CLIENT_NAME, "BulkMutateRows"),
             batchingCallSettings.getBatchingDescriptor());
 
+    UnaryCallable<MutateRowsRequest, Void> measured = new MeasuredMutateRowsCallable(
+        traced,TRACING_OUTER_CLIENT_NAME + ".MutateRows", tagger, statsRecorder, clientContext.getClock()
+    );
+
     UnaryCallable<MutateRowsRequest, Void> batching =
-        Callables.batching(traced, batchingCallSettings.build(), clientContext);
+        Callables.batching(measured, batchingCallSettings.build(), clientContext);
 
     MutateRowsUserFacingCallable userFacing =
         new MutateRowsUserFacingCallable(batching, requestContext);
@@ -365,6 +436,8 @@ public class EnhancedBigtableStub implements AutoCloseable {
   /**
    * Internal helper to create the base MutateRows callable chain. The chain is responsible for
    * retrying individual entry in case of error.
+   *
+   * <p>NOTE: the caller is responsible for adding tracing & metrics.
    *
    * @see MutateRowsRetryingCallable for more details
    */
@@ -390,6 +463,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
    * <ul>
    *   <li>Convert {@link ConditionalRowMutation}s into {@link
    *       com.google.bigtable.v2.CheckAndMutateRowRequest}s.
+   *   <li>Add tracing & metrics.
    * </ul>
    */
   private UnaryCallable<ConditionalRowMutation, Boolean> createCheckAndMutateRowCallable() {
@@ -405,6 +479,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
    *   <li>Convert {@link ReadModifyWriteRow}s into {@link
    *       com.google.bigtable.v2.ReadModifyWriteRowRequest}s.
    *   <li>Convert the responses into {@link Row}.
+   *   <li>Add tracing & metrics.
    * </ul>
    */
   private UnaryCallable<ReadModifyWriteRow, Row> createReadModifyWriteRowCallable() {
@@ -426,24 +501,9 @@ public class EnhancedBigtableStub implements AutoCloseable {
             clientContext.getTracerFactory(),
             SpanName.of(TRACING_OUTER_CLIENT_NAME, methodName));
 
-    return traced.withDefaultCallContext(clientContext.getDefaultCallContext());
-  }
+    UnaryCallable<RequestT, ResponseT> measured = new MeasuredUnaryCallable<>(traced, methodName, tagger, statsRecorder, clientContext.getClock());
 
-  /**
-   * Wraps a callable chain in a user presentable callable that will inject the default call context
-   * and trace the call.
-   */
-  private <RequestT, ResponseT>
-      ServerStreamingCallable<RequestT, ResponseT> createUserFacingServerStreamingCallable(
-          String methodName, ServerStreamingCallable<RequestT, ResponseT> inner) {
-
-    ServerStreamingCallable<RequestT, ResponseT> traced =
-        new TracedServerStreamingCallable<>(
-            inner,
-            clientContext.getTracerFactory(),
-            SpanName.of(TRACING_OUTER_CLIENT_NAME, methodName));
-
-    return traced.withDefaultCallContext(clientContext.getDefaultCallContext());
+    return measured.withDefaultCallContext(clientContext.getDefaultCallContext());
   }
   // </editor-fold>
 
