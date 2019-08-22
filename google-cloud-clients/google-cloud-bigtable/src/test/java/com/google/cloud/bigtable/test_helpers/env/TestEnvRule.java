@@ -49,7 +49,7 @@ public class TestEnvRule extends ExternalResource {
 
     switch (env) {
       case "emulator":
-        testEnv = new EmulatorEnv();
+        testEnv = EmulatorEnv.createBundled();
         break;
       case "prod":
         testEnv = ProdEnv.fromSystemProperties();

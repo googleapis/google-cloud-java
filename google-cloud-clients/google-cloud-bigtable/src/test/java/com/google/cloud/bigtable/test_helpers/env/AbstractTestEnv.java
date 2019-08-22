@@ -28,9 +28,9 @@ import org.threeten.bp.temporal.ChronoUnit;
 public abstract class AbstractTestEnv {
   private static final String PREFIX = "temp-";
 
-  public abstract void start() throws Exception;
+  abstract void start() throws Exception;
 
-  public abstract void stop() throws Exception;
+  abstract void stop() throws Exception;
 
   public abstract BigtableDataClient getDataClient();
 

@@ -48,20 +48,20 @@ class ProdEnv extends AbstractTestEnv {
         getRequiredProperty(TABLE_PROPERTY_NAME));
   }
 
-  public ProdEnv(String projectId, String instanceId, String tableId) {
+  private ProdEnv(String projectId, String instanceId, String tableId) {
     this.projectId = projectId;
     this.instanceId = instanceId;
     this.tableId = tableId;
   }
 
   @Override
-  public void start() throws IOException {
+  void start() throws IOException {
     dataClient = BigtableDataClient.create(projectId, instanceId);
     tableAdminClient = BigtableTableAdminClient.create(projectId, instanceId);
   }
 
   @Override
-  public void stop() throws Exception {
+  void stop() throws Exception {
     dataClient.close();
     tableAdminClient.close();
   }

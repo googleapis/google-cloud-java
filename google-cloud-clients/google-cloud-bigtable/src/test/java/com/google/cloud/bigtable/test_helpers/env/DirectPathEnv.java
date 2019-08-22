@@ -37,7 +37,7 @@ import java.io.IOException;
  *   <li>{@code bigtable.table}
  * </ul>
  */
-class DirectPathEnv extends AbstractTestEnv {
+public class DirectPathEnv extends AbstractTestEnv {
   // TODO(igorbernstein): move direct path conditional logic to gax
   private static final String DIRECT_PATH_ENV_VAR = "GOOGLE_CLOUD_ENABLE_DIRECT_PATH";
   private static final String DIRECT_PATH_END_POINT =
@@ -63,7 +63,7 @@ class DirectPathEnv extends AbstractTestEnv {
         getRequiredProperty(TABLE_PROPERTY_NAME));
   }
 
-  public DirectPathEnv(
+  private DirectPathEnv(
       boolean directPathEnabled, String projectId, String instanceId, String tableId) {
     this.directPathEnabled = directPathEnabled;
     this.projectId = projectId;
@@ -72,7 +72,7 @@ class DirectPathEnv extends AbstractTestEnv {
   }
 
   @Override
-  public void start() throws IOException {
+  void start() throws IOException {
     BigtableDataSettings.Builder settingsBuilder =
         BigtableDataSettings.newBuilder().setProjectId(projectId).setInstanceId(instanceId);
 
@@ -96,7 +96,7 @@ class DirectPathEnv extends AbstractTestEnv {
   }
 
   @Override
-  public void stop() throws Exception {
+  void stop() throws Exception {
     dataClient.close();
     tableAdminClient.close();
   }
