@@ -17,7 +17,6 @@ package com.google.cloud.bigtable.data.v2.stub;
 
 import static com.google.common.truth.Truth.assertThat;
 
-import com.google.api.gax.batching.BatchingCallSettings;
 import com.google.api.gax.batching.BatchingSettings;
 import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
@@ -440,7 +439,7 @@ public class EnhancedBigtableStubSettingsTest {
 
   @Test
   public void mutateRowsHasSaneDefaultsTest() {
-    BatchingCallSettings.Builder<RowMutationEntry, Void, BulkMutation, Void> builder =
+    BigtableBatchingCallSettings.Builder<RowMutationEntry, Void, BulkMutation, Void> builder =
         EnhancedBigtableStubSettings.newBuilder().bulkMutateRowsSettings();
 
     verifyRetrySettingAreSane(builder.getRetryableCodes(), builder.getRetrySettings());

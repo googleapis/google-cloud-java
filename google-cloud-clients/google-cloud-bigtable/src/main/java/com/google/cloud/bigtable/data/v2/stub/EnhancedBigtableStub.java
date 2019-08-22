@@ -61,6 +61,7 @@ import com.google.cloud.bigtable.gaxx.retrying.ApiResultRetryAlgorithm;
 import com.google.cloud.bigtable.gaxx.tracing.WrappedTracerFactory;
 import java.io.IOException;
 import java.util.List;
+import javax.annotation.Nonnull;
 import org.threeten.bp.Duration;
 
 /**
@@ -367,8 +368,9 @@ public class EnhancedBigtableStub implements AutoCloseable {
   }
 
   /**
-   * Creates a {@link BatcherImpl} to handle {@link MutateRowsRequest.Entry} mutations. This is
-   * meant to be used for automatic batching with flow control.
+   * Creates a {@link com.google.api.gax.batching.BatcherImpl} to handle {@link
+   * MutateRowsRequest.Entry} mutations. This is meant to be used for automatic batching with flow
+   * control.
    *
    * <ul>
    *   <li>Uses {@link MutateRowsBatchingDescriptorV2} to spool the {@link RowMutationEntry}
@@ -385,7 +387,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
    *   <li>Split the responses using {@link MutateRowsBatchingDescriptorV2}.
    * </ul>
    */
-  public Batcher<RowMutationEntry, Void> newMutateRowsBatcher(String tableId) {
+  public Batcher<RowMutationEntry, Void> newMutateRowsBatcher(@Nonnull String tableId) {
     return new BatcherImpl<>(
         settings.bulkMutateRowsSettings().getBatchingDescriptor(),
         bulkMutateRowsCallable,

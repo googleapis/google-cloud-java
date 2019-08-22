@@ -39,6 +39,7 @@ import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStub;
 import com.google.protobuf.ByteString;
 import java.io.IOException;
 import java.util.List;
+import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 /**
@@ -912,10 +913,10 @@ public class BigtableDataClient implements AutoCloseable {
    * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create("[PROJECT]", "[INSTANCE]")) {
    *   try (Batcher<RowMutationEntry, Void> batcher = bigtableDataClient.newBulkMutationBatcher("[TABLE]")) {
    *     for (String someValue : someCollection) {
-   *       RowMutationEntry mutation =
-   *           RowMutationEntry.create("[ROW KEY]")
-   *               .setCell("[FAMILY NAME]", "[QUALIFIER]", "[VALUE]");
-   *       ApiFuture<Void> entryFuture = batcher.add(mutation);
+   *       ApiFuture<Void> entryFuture =
+   *           batcher.add(
+   *               RowMutationEntry.create("[ROW KEY]")
+   *                   .setCell("[FAMILY NAME]", "[QUALIFIER]", "[VALUE]"));
    *     }
    *
    *     // Blocks until mutations are applied on all submitted row entries.
@@ -926,7 +927,7 @@ public class BigtableDataClient implements AutoCloseable {
    * }</pre>
    */
   @BetaApi("This surface is likely to change as the batching surface evolves.")
-  public Batcher<RowMutationEntry, Void> newBulkMutationBatcher(String tableId) {
+  public Batcher<RowMutationEntry, Void> newBulkMutationBatcher(@Nonnull String tableId) {
     return stub.newMutateRowsBatcher(tableId);
   }
 

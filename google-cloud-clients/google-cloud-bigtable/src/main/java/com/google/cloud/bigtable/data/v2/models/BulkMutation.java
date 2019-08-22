@@ -93,7 +93,7 @@ public final class BulkMutation implements Serializable, Cloneable {
    * Add {@link RowMutationEntry} which logically represent a row. The changes in mutation will be
    * applied atomically and ordering is not guaranteed between rows.
    */
-  public BulkMutation add(RowMutationEntry entry) {
+  public BulkMutation add(@Nonnull RowMutationEntry entry) {
     Preconditions.checkNotNull(entry);
     builder.addEntries(entry.toProto());
     return this;
@@ -115,7 +115,7 @@ public final class BulkMutation implements Serializable, Cloneable {
   @Override
   public BulkMutation clone() {
     BulkMutation bulkMutation = BulkMutation.create(tableId);
-    bulkMutation.builder = this.builder.build().toBuilder();
+    bulkMutation.builder = this.builder.clone();
     return bulkMutation;
   }
 }

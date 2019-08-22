@@ -19,13 +19,13 @@ import static com.google.common.truth.Truth.assertThat;
 
 import com.google.bigtable.v2.MutateRowsRequest;
 import com.google.bigtable.v2.Mutation;
+import com.google.common.collect.ImmutableList;
 import com.google.protobuf.ByteString;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.util.Arrays;
 import java.util.List;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -83,7 +83,7 @@ public class RowMutationEntryTest {
             .deleteFamily("family-3");
 
     List<Mutation> mutationList =
-        Arrays.asList(
+        ImmutableList.of(
             Mutation.newBuilder()
                 .setSetCell(
                     Mutation.SetCell.newBuilder()

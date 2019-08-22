@@ -28,8 +28,8 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * A custom implementation of a {@link BatchingDescriptor} to split batching response into
- * individual row response and in a {@link MutateRowsException}.
+ * A custom implementation of a {@link com.google.api.gax.batching.BatchingDescriptor} to split
+ * batching response into individual row response and in a {@link MutateRowsException}.
  *
  * <p>This class is considered an internal implementation detail and not meant to be used by
  * applications directly.
@@ -91,8 +91,8 @@ public class MutateRowsBatchingDescriptorV2
   }
 
   /**
-   * A {@link BatchingRequestBuilder} that will spool mutations and send them out as a {@link
-   * BulkMutation}.
+   * A {@link com.google.api.gax.batching.BatchingRequestBuilder} that will spool mutations and send
+   * them out as a {@link BulkMutation}.
    */
   static class RequestBuilder implements BatchingRequestBuilder<RowMutationEntry, BulkMutation> {
     private BulkMutation bulkMutation;

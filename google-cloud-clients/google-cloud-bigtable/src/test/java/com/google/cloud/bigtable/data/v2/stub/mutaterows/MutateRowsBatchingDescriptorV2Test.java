@@ -27,7 +27,7 @@ import com.google.cloud.bigtable.data.v2.models.BulkMutation;
 import com.google.cloud.bigtable.data.v2.models.MutateRowsException;
 import com.google.cloud.bigtable.data.v2.models.Mutation;
 import com.google.cloud.bigtable.data.v2.models.RowMutationEntry;
-import com.google.common.collect.Lists;
+import com.google.common.collect.ImmutableList;
 import io.grpc.Status;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
@@ -78,7 +78,7 @@ public class MutateRowsBatchingDescriptorV2Test {
   @Test
   public void splitResponseTest() {
     List<SettableApiFuture<Void>> batchResponse =
-        Lists.newArrayList(SettableApiFuture.<Void>create(), SettableApiFuture.<Void>create());
+        ImmutableList.of(SettableApiFuture.<Void>create(), SettableApiFuture.<Void>create());
     assertThat(batchResponse.get(0).isDone()).isFalse();
     assertThat(batchResponse.get(1).isDone()).isFalse();
 
@@ -93,7 +93,7 @@ public class MutateRowsBatchingDescriptorV2Test {
     MutateRowsBatchingDescriptorV2 underTest = new MutateRowsBatchingDescriptorV2();
     final RuntimeException expectedEx = new RuntimeException("Caused while batching");
     List<SettableApiFuture<Void>> batchResponses =
-        Lists.newArrayList(SettableApiFuture.<Void>create(), SettableApiFuture.<Void>create());
+        ImmutableList.of(SettableApiFuture.<Void>create(), SettableApiFuture.<Void>create());
 
     underTest.splitException(expectedEx, batchResponses);
 
@@ -118,7 +118,7 @@ public class MutateRowsBatchingDescriptorV2Test {
     MutateRowsException serverError =
         new MutateRowsException(
             null,
-            Lists.newArrayList(
+            ImmutableList.of(
                 MutateRowsException.FailedMutation.create(
                     0,
                     new UnavailableException(
@@ -128,7 +128,7 @@ public class MutateRowsBatchingDescriptorV2Test {
                     new DeadlineExceededException(
                         null, GrpcStatusCode.of(Status.Code.DEADLINE_EXCEEDED), true))),
             true);
-    underTest.splitException(serverError, Lists.newArrayList(response1, response2, response3));
+    underTest.splitException(serverError, ImmutableList.of(response1, response2, response3));
 
     try {
       response1.get();

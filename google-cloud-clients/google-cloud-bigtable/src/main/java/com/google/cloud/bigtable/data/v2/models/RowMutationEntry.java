@@ -17,6 +17,7 @@ package com.google.cloud.bigtable.data.v2.models;
 
 import com.google.api.core.InternalApi;
 import com.google.bigtable.v2.MutateRowsRequest;
+import com.google.common.base.Preconditions;
 import com.google.protobuf.ByteString;
 import java.io.Serializable;
 import javax.annotation.Nonnull;
@@ -34,7 +35,10 @@ public class RowMutationEntry implements MutationApi<RowMutationEntry>, Serializ
   private final ByteString key;
   private final Mutation mutation;
 
-  private RowMutationEntry(ByteString key, Mutation mutation) {
+  private RowMutationEntry(@Nonnull ByteString key, @Nonnull Mutation mutation) {
+    Preconditions.checkNotNull(key, "Row key cannot be null");
+    Preconditions.checkNotNull(mutation, "Row mutation cannot be null");
+
     this.key = key;
     this.mutation = mutation;
   }

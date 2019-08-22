@@ -15,7 +15,6 @@
  */
 package com.google.cloud.bigtable.data.v2.stub;
 
-import com.google.api.gax.batching.BatchingCallSettings;
 import com.google.api.gax.batching.BatchingSettings;
 import com.google.api.gax.batching.FlowControlSettings;
 import com.google.api.gax.batching.FlowController.LimitExceededBehavior;
@@ -129,7 +128,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
   private final UnaryCallSettings<Query, Row> readRowSettings;
   private final UnaryCallSettings<String, List<KeyOffset>> sampleRowKeysSettings;
   private final UnaryCallSettings<RowMutation, Void> mutateRowSettings;
-  private final BatchingCallSettings<RowMutationEntry, Void, BulkMutation, Void>
+  private final BigtableBatchingCallSettings<RowMutationEntry, Void, BulkMutation, Void>
       bulkMutateRowsSettings;
   private final UnaryCallSettings<ConditionalRowMutation, Boolean> checkAndMutateRowSettings;
   private final UnaryCallSettings<ReadModifyWriteRow, Row> readModifyWriteRowSettings;
@@ -307,8 +306,9 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
    * <p>Default retry and timeout settings:
    *
    * <ul>
-   *   <li>Retry {@link UnaryCallSettings.Builder#setRetryableCodes error codes} are: {@link
-   *       Code#DEADLINE_EXCEEDED}, {@link Code#UNAVAILABLE} and {@link Code#ABORTED}.
+   *   <li>Retry {@link com.google.api.gax.batching.BatchingCallSettings.Builder#setRetryableCodes
+   *       error codes} are: {@link Code#DEADLINE_EXCEEDED}, {@link Code#UNAVAILABLE} and {@link
+   *       Code#ABORTED}.
    *   <li>RetryDelay between failed attempts {@link RetrySettings.Builder#setInitialRetryDelay
    *       starts} at 10ms and {@link RetrySettings.Builder#setRetryDelayMultiplier increases
    *       exponentially} by a factor of 2 until a {@link RetrySettings.Builder#setMaxRetryDelay
@@ -340,7 +340,8 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
    * @see RetrySettings for more explanation.
    * @see BatchingSettings for batch related configuration explanation.
    */
-  public BatchingCallSettings<RowMutationEntry, Void, BulkMutation, Void> bulkMutateRowsSettings() {
+  public BigtableBatchingCallSettings<RowMutationEntry, Void, BulkMutation, Void>
+      bulkMutateRowsSettings() {
     return bulkMutateRowsSettings;
   }
 
@@ -388,7 +389,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
     private final UnaryCallSettings.Builder<Query, Row> readRowSettings;
     private final UnaryCallSettings.Builder<String, List<KeyOffset>> sampleRowKeysSettings;
     private final UnaryCallSettings.Builder<RowMutation, Void> mutateRowSettings;
-    private final BatchingCallSettings.Builder<RowMutationEntry, Void, BulkMutation, Void>
+    private final BigtableBatchingCallSettings.Builder<RowMutationEntry, Void, BulkMutation, Void>
         bulkMutateRowsSettings;
     private final UnaryCallSettings.Builder<ConditionalRowMutation, Boolean>
         checkAndMutateRowSettings;
@@ -449,7 +450,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
       copyRetrySettings(baseDefaults.mutateRowSettings(), mutateRowSettings);
 
       bulkMutateRowsSettings =
-          BatchingCallSettings.newBuilder(new MutateRowsBatchingDescriptorV2())
+          BigtableBatchingCallSettings.newBuilder(new MutateRowsBatchingDescriptorV2())
               .setRetryableCodes(IDEMPOTENT_RETRY_CODES)
               .setRetrySettings(MUTATE_ROWS_RETRY_SETTINGS)
               .setBatchingSettings(
@@ -570,7 +571,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
     }
 
     /** Returns the builder for the settings used for calls to MutateRows. */
-    public BatchingCallSettings.Builder<RowMutationEntry, Void, BulkMutation, Void>
+    public BigtableBatchingCallSettings.Builder<RowMutationEntry, Void, BulkMutation, Void>
         bulkMutateRowsSettings() {
       return bulkMutateRowsSettings;
     }
