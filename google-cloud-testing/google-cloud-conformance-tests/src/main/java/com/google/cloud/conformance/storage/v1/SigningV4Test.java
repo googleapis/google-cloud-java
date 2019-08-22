@@ -39,6 +39,12 @@ public final class SigningV4Test extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new SigningV4Test();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -126,11 +132,11 @@ public final class SigningV4Test extends com.google.protobuf.GeneratedMessageV3
             }
           case 74:
             {
-              if (!((mutable_bitField0_ & 0x00000100) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 headers_ =
                     com.google.protobuf.MapField.newMapField(
                         HeadersDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000100;
+                mutable_bitField0_ |= 0x00000001;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> headers__ =
                   input.readMessage(
@@ -183,7 +189,6 @@ public final class SigningV4Test extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.conformance.storage.v1.SigningV4Test.Builder.class);
   }
 
-  private int bitField0_;
   public static final int FILENAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object fileName_;
   /** <code>string fileName = 1;</code> */
@@ -780,7 +785,6 @@ public final class SigningV4Test extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.conformance.storage.v1.SigningV4Test result =
           new com.google.cloud.conformance.storage.v1.SigningV4Test(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.fileName_ = fileName_;
       result.description_ = description_;
       result.bucket_ = bucket_;
@@ -795,7 +799,6 @@ public final class SigningV4Test extends com.google.protobuf.GeneratedMessageV3
       result.expectedUrl_ = expectedUrl_;
       result.headers_ = internalGetHeaders();
       result.headers_.makeImmutable();
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }

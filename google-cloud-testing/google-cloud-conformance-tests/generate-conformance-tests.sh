@@ -15,9 +15,13 @@
 
 set -o errexit -o errtrace -o nounset -o pipefail
 
+MODULE_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+LOG_FILE_NAME="generate.log"
+LOG_FILE=${MODULE_DIR}/${LOG_FILE_NAME}
+
 function errNotify() {
     echo "Error while generating conformance tests" >&2;
-    echo "See generate.log for details" >&2;
+    echo "See ${LOG_FILE_NAME} for details" >&2;
     return 1
 }
 trap errNotify ERR
@@ -28,7 +32,7 @@ function cpDir() {
 }
 
 function main() {
-  rm generate.log 2> /dev/null || true
+  rm ${LOG_FILE} 2> /dev/null || true
 
   local javaBasePackage="com/google/cloud/conformance"
   local firestorePackage="${javaBasePackage}/firestore/v1"
@@ -58,17 +62,16 @@ function main() {
   cpDir "src/main/resources/${bigtablePackage}/" conformance-tests/bigtable/v2/*.json
 
   msg "Generating protos"
-  mvn -Pgen-conformance-protos clean verify > generate.log 2>&1
+  mvn -Pgen-conformance-protos clean verify >> ${LOG_FILE} 2>&1
 
   msg "Adding copyright header to generated sources"
   ## java classes generated from protoc do not include the copyright header
   ## prepend it to the generated files
-  local moduleDir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
   pushd target/generated-sources/protobuf/java/ > /dev/null 2>&1
   for f in $(find ./ -type f -name '*.java' | sort); do
     msg "Processing $f"
     mv ${f} ${f}.tmp
-    cat ${moduleDir}/copyright-header.txt > ${f}
+    cat ${MODULE_DIR}/copyright-header.txt > ${f}
     cat ${f}.tmp >> ${f}
     rm ${f}.tmp
   done
@@ -78,16 +81,16 @@ function main() {
   cpDir src/main/java/ target/generated-sources/protobuf/java/*
 
   ## cleanup any generated files that may have not been moved over
-  mvn clean > /dev/null 2>&1
+  mvn clean >> ${LOG_FILE} 2>&1
 
   msg "Building module..."
   ## ensure building of the module still works
-  mvn clean package
+  mvn clean package | tee -a ${LOG_FILE}
   msg "Complete"
 }
 
 function now { date +"%Y-%m-%d %H:%M:%S" | tr -d '\n' ;}
-function msg { println "$*" >&2 ;}
+function msg { println "$*" | tee -a ${LOG_FILE} >&2 ;}
 function println { printf '%s\n' "$(now) $*" ;}
 
 main
