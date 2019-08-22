@@ -1162,7 +1162,7 @@ public class BigtableDataClient implements AutoCloseable {
 
   /** Close the clients and releases all associated resources. */
   @Override
-  public void close() throws Exception {
+  public void close() {
     stub.close();
   }
 }
