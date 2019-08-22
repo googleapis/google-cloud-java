@@ -22,6 +22,7 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
+import com.google.api.gax.rpc.NotFoundException;
 import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient;
 import com.google.cloud.bigtable.admin.v2.models.ColumnFamily;
 import com.google.cloud.bigtable.admin.v2.models.CreateTableRequest;
@@ -51,7 +52,6 @@ public class BigtableTableAdminClientIT {
 
   private BigtableTableAdminClient tableAdmin;
   private String tableId;
-  private boolean skipTableDelete;
 
   @Before
   public void setUp() {
@@ -61,8 +61,10 @@ public class BigtableTableAdminClientIT {
 
   @After
   public void tearDown() {
-    if (!skipTableDelete) {
+    try {
       testEnvRule.env().getTableAdminClient().deleteTable(tableId);
+    } catch (NotFoundException e) {
+      // table was deleted in test or was never created. Carry on
     }
   }
 
@@ -145,7 +147,6 @@ public class BigtableTableAdminClientIT {
   public void deleteTable() {
     tableAdmin.createTable(CreateTableRequest.of(tableId));
     tableAdmin.deleteTable(tableId);
-    skipTableDelete = true;
   }
 
   @Test
