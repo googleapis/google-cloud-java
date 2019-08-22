@@ -42,6 +42,7 @@ This library supports the following Google Cloud Platform services with clients 
 -  [Cloud Talent Solution](google-cloud-clients/google-cloud-talent) (Beta)
 -  [Cloud Text-to-Speech](google-cloud-clients/google-cloud-texttospeech) (Beta)
 -  [Cloud Video Intelligence](google-cloud-clients/google-cloud-video-intelligence) (Beta)
+-  [JDBC Driver for Google Cloud Spanner](google-cloud-clients/google-cloud-contrib/google-cloud-spanner-jdbc) (Beta)
 -  [Kubernetes Engine](google-cloud-clients/google-cloud-container) (Beta)
 -  [reCAPTCHA Enterprise](google-cloud-clients/google-cloud-recaptchaenterprise) (Beta)
 -  [Stackdriver Error Reporting](google-cloud-clients/google-cloud-errorreporting) (Beta)
