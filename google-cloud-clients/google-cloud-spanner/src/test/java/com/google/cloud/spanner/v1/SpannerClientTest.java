@@ -31,6 +31,8 @@ import com.google.common.collect.Lists;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
+import com.google.spanner.v1.BatchCreateSessionsRequest;
+import com.google.spanner.v1.BatchCreateSessionsResponse;
 import com.google.spanner.v1.BeginTransactionRequest;
 import com.google.spanner.v1.CommitRequest;
 import com.google.spanner.v1.CommitResponse;
@@ -134,6 +136,44 @@ public class SpannerClientTest {
       DatabaseName database = DatabaseName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]");
 
       client.createSession(database);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void batchCreateSessionsTest() {
+    BatchCreateSessionsResponse expectedResponse = BatchCreateSessionsResponse.newBuilder().build();
+    mockSpanner.addResponse(expectedResponse);
+
+    DatabaseName database = DatabaseName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]");
+
+    BatchCreateSessionsResponse actualResponse = client.batchCreateSessions(database);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockSpanner.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    BatchCreateSessionsRequest actualRequest = (BatchCreateSessionsRequest) actualRequests.get(0);
+
+    Assert.assertEquals(database, DatabaseName.parse(actualRequest.getDatabase()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void batchCreateSessionsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockSpanner.addException(exception);
+
+    try {
+      DatabaseName database = DatabaseName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]");
+
+      client.batchCreateSessions(database);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

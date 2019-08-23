@@ -45,6 +45,8 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import com.google.protobuf.Empty;
+import com.google.spanner.v1.BatchCreateSessionsRequest;
+import com.google.spanner.v1.BatchCreateSessionsResponse;
 import com.google.spanner.v1.BeginTransactionRequest;
 import com.google.spanner.v1.CommitRequest;
 import com.google.spanner.v1.CommitResponse;
@@ -107,6 +109,8 @@ public class SpannerStubSettings extends StubSettings<SpannerStubSettings> {
           .build();
 
   private final UnaryCallSettings<CreateSessionRequest, Session> createSessionSettings;
+  private final UnaryCallSettings<BatchCreateSessionsRequest, BatchCreateSessionsResponse>
+      batchCreateSessionsSettings;
   private final UnaryCallSettings<GetSessionRequest, Session> getSessionSettings;
   private final PagedCallSettings<
           ListSessionsRequest, ListSessionsResponse, ListSessionsPagedResponse>
@@ -128,6 +132,12 @@ public class SpannerStubSettings extends StubSettings<SpannerStubSettings> {
   /** Returns the object with the settings used for calls to createSession. */
   public UnaryCallSettings<CreateSessionRequest, Session> createSessionSettings() {
     return createSessionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchCreateSessions. */
+  public UnaryCallSettings<BatchCreateSessionsRequest, BatchCreateSessionsResponse>
+      batchCreateSessionsSettings() {
+    return batchCreateSessionsSettings;
   }
 
   /** Returns the object with the settings used for calls to getSession. */
@@ -267,6 +277,7 @@ public class SpannerStubSettings extends StubSettings<SpannerStubSettings> {
     super(settingsBuilder);
 
     createSessionSettings = settingsBuilder.createSessionSettings().build();
+    batchCreateSessionsSettings = settingsBuilder.batchCreateSessionsSettings().build();
     getSessionSettings = settingsBuilder.getSessionSettings().build();
     listSessionsSettings = settingsBuilder.listSessionsSettings().build();
     deleteSessionSettings = settingsBuilder.deleteSessionSettings().build();
@@ -340,6 +351,8 @@ public class SpannerStubSettings extends StubSettings<SpannerStubSettings> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
     private final UnaryCallSettings.Builder<CreateSessionRequest, Session> createSessionSettings;
+    private final UnaryCallSettings.Builder<BatchCreateSessionsRequest, BatchCreateSessionsResponse>
+        batchCreateSessionsSettings;
     private final UnaryCallSettings.Builder<GetSessionRequest, Session> getSessionSettings;
     private final PagedCallSettings.Builder<
             ListSessionsRequest, ListSessionsResponse, ListSessionsPagedResponse>
@@ -428,6 +441,8 @@ public class SpannerStubSettings extends StubSettings<SpannerStubSettings> {
 
       createSessionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
+      batchCreateSessionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       getSessionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       listSessionsSettings = PagedCallSettings.newBuilder(LIST_SESSIONS_PAGE_STR_FACT);
@@ -457,6 +472,7 @@ public class SpannerStubSettings extends StubSettings<SpannerStubSettings> {
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               createSessionSettings,
+              batchCreateSessionsSettings,
               getSessionSettings,
               listSessionsSettings,
               deleteSessionSettings,
@@ -485,6 +501,11 @@ public class SpannerStubSettings extends StubSettings<SpannerStubSettings> {
 
       builder
           .createSessionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .batchCreateSessionsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
@@ -560,6 +581,7 @@ public class SpannerStubSettings extends StubSettings<SpannerStubSettings> {
       super(settings);
 
       createSessionSettings = settings.createSessionSettings.toBuilder();
+      batchCreateSessionsSettings = settings.batchCreateSessionsSettings.toBuilder();
       getSessionSettings = settings.getSessionSettings.toBuilder();
       listSessionsSettings = settings.listSessionsSettings.toBuilder();
       deleteSessionSettings = settings.deleteSessionSettings.toBuilder();
@@ -577,6 +599,7 @@ public class SpannerStubSettings extends StubSettings<SpannerStubSettings> {
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               createSessionSettings,
+              batchCreateSessionsSettings,
               getSessionSettings,
               listSessionsSettings,
               deleteSessionSettings,
@@ -609,6 +632,12 @@ public class SpannerStubSettings extends StubSettings<SpannerStubSettings> {
     /** Returns the builder for the settings used for calls to createSession. */
     public UnaryCallSettings.Builder<CreateSessionRequest, Session> createSessionSettings() {
       return createSessionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchCreateSessions. */
+    public UnaryCallSettings.Builder<BatchCreateSessionsRequest, BatchCreateSessionsResponse>
+        batchCreateSessionsSettings() {
+      return batchCreateSessionsSettings;
     }
 
     /** Returns the builder for the settings used for calls to getSession. */

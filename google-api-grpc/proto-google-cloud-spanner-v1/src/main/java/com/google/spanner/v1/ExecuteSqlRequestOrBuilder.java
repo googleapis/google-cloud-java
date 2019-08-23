@@ -33,8 +33,6 @@ public interface ExecuteSqlRequestOrBuilder
    *
    *
    * <pre>
-   * The transaction to use. If none is provided, the default is a
-   * temporary read-only transaction with strong concurrency.
    * The transaction to use.
    * For queries, if none is provided, the default is a temporary read-only
    * transaction with strong concurrency.
@@ -51,8 +49,6 @@ public interface ExecuteSqlRequestOrBuilder
    *
    *
    * <pre>
-   * The transaction to use. If none is provided, the default is a
-   * temporary read-only transaction with strong concurrency.
    * The transaction to use.
    * For queries, if none is provided, the default is a temporary read-only
    * transaction with strong concurrency.
@@ -69,8 +65,6 @@ public interface ExecuteSqlRequestOrBuilder
    *
    *
    * <pre>
-   * The transaction to use. If none is provided, the default is a
-   * temporary read-only transaction with strong concurrency.
    * The transaction to use.
    * For queries, if none is provided, the default is a temporary read-only
    * transaction with strong concurrency.
