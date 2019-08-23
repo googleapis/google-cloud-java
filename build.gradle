@@ -1,7 +1,7 @@
 plugins {
     id 'java'
     id 'maven'
-    id 'com.google.protobuf' version '0.8.5'
+    id 'com.google.protobuf' version '0.8.10'
 }
 
 repositories {
@@ -11,24 +11,9 @@ repositories {
     mavenLocal()
 }
 
-task btTest(type: JavaExec) {
-  classpath = sourceSets.main.runtimeClasspath
-  main = 'com.google.grpc.gcp.testing.BigtableLargeTests'
-}
 
-task spannerTest(type: JavaExec) {
-  classpath = sourceSets.main.runtimeClasspath
-  main = 'com.google.grpc.gcp.testing.SpannerLargeTests'
-}
-
-task spannerBenchmark(type: JavaExec) {
-  classpath = sourceSets.main.runtimeClasspath
-  main = 'com.google.grpc.gcp.testing.SpannerBenchmark'
-}
-
-
-def grpcVersion = '1.16.1' 
-def protobufVersion = '3.5.1'
+def grpcVersion = '1.21.1' 
+def protobufVersion = '3.8.0'
 def protocVersion = '3.5.1-1'
 
 dependencies {
@@ -61,6 +46,36 @@ protobuf {
     generateProtoTasks {
         all()*.plugins { grpc {} }
     }
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs 'build/generated/source/proto/main/grpc'
+            srcDirs 'build/generated/source/proto/main/java'
+        }
+    }
+    benchmarkTest {
+        java.srcDir file('src/benchmarkTest/java')
+        resources.srcDir file('src/benchmarkTest/resources')
+        compileClasspath += sourceSets.main.output + configurations.testRuntimeClasspath
+        runtimeClasspath += output + compileClasspath
+    }
+}
+
+task bigtableLoadTest(type: JavaExec) {
+    classpath = sourceSets.benchmarkTest.runtimeClasspath
+    main = 'BigtableLoadTest'
+}
+
+task spannerLoadTest(type: JavaExec) {
+    classpath = sourceSets.benchmarkTest.runtimeClasspath
+    main = 'SpannerLoadTest'
+}
+
+task spannerBenchmark(type: JavaExec) {
+    classpath = sourceSets.benchmarkTest.runtimeClasspath
+    main = 'SpannerBenchmark'
 }
 
 group = 'com.google.cloud'

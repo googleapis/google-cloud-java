@@ -38,11 +38,11 @@ import org.junit.runners.JUnit4;
 public final class GcpManagedChannelTest {
 
   private static final String TARGET = "www.jenny.com";
-  private static final String API_FILE = "src/test/resources/apiconfigtests/apiconfig.json";
+  private static final String API_FILE = "src/test/resources/apiconfig.json";
   private static final String EMPTY_METHOD_FILE =
-      "src/test/resources/apiconfigtests/empty_method.json";
+      "src/test/resources/empty_method.json";
   private static final String EMPTY_CHANNEL_FILE =
-      "src/test/resources/apiconfigtests/empty_channel.json";
+      "src/test/resources/empty_channel.json";
 
   private static final int MAX_CHANNEL = 10;
   private static final int MAX_STREAM = 100;

@@ -36,6 +36,7 @@ import com.google.protobuf.ByteString;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.auth.MoreCallCredentials;
 import io.grpc.stub.StreamObserver;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -61,7 +62,7 @@ public class BigtableIntegrationTest {
   private static final int MAX_MSG_SIZE = 8 * 1024 * 1024;
 
   private static final String TEST_APICONFIG_FILE =
-      "src/test/resources/apiconfigtests/empty_method.json";
+      "empty_method.json";
   private static final String BIGTABLE_TARGET = "bigtable.googleapis.com";
   private static final String FAMILY_NAME = "test-family";
   private static final String TABLE_NAME =
@@ -166,7 +167,8 @@ public class BigtableIntegrationTest {
   public void testConcurrentStreamsAndChannels() throws Exception {
     // For our current channel pool, the max_stream is 5 and the max_size is 5.
     gcpChannel.shutdownNow();
-    gcpChannel = new GcpManagedChannel(builder, TEST_APICONFIG_FILE);
+    File configFile = new File(BigtableIntegrationTest.class.getClassLoader().getResource(TEST_APICONFIG_FILE).getFile());
+    gcpChannel = new GcpManagedChannel(builder, configFile);
     BigtableStub stub = getBigtableStub();
     List<AsyncResponseObserver<MutateRowResponse>> clearObservers = new ArrayList<>();
 

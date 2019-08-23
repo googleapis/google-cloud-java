@@ -14,8 +14,6 @@
  * limitations under the License.
  */
 
-package com.google.grpc.gcp.testing;
-
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.bigtable.v2.BigtableGrpc;
 import com.google.bigtable.v2.BigtableGrpc.BigtableBlockingStub;
@@ -46,15 +44,14 @@ import java.util.logging.Logger;
  *
  * <p>On the other hand, our GcpManagedChannel is able to manage 101 streams concurrently.
  */
-public final class BigtableLargeTests {
+public final class BigtableLoadTest {
 
-  private static final Logger logger = Logger.getLogger(BigtableLargeTests.class.getName());
+  private static final Logger logger = Logger.getLogger(BigtableLoadTest.class.getName());
 
   private static final int DEFAULT_MAX_STREAM = 100;
   private static final int MAX_MSG_SIZE = 8 * 1024 * 1024;
 
   private static final String BIGTABLE_TARGET = "bigtable.googleapis.com";
-  private static final String FAMILY_NAME = "test-family";
   // The test-table must be big enough so that the rpc will be blocked.
   private static final String LARGE_TABLE_NAME =
       "projects/cloudprober-test/instances/test-instance/tables/test-large-table";
@@ -142,3 +139,4 @@ public final class BigtableLargeTests {
     channel.shutdownNow();
   }
 }
+

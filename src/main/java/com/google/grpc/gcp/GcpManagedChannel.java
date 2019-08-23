@@ -29,6 +29,7 @@ import io.grpc.ConnectivityState;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.MethodDescriptor;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -87,7 +88,19 @@ public class GcpManagedChannel extends ManagedChannel {
    * @param jsonPath optional, the path of the .json file that defines the ApiConfig.
    */
   public GcpManagedChannel(ManagedChannelBuilder builder, String jsonPath) {
-    loadApiConfig(jsonPath);
+    loadApiConfig(parseJson(jsonPath));
+    this.builder = builder;
+    getChannelRef(null);
+  }
+
+  /**
+   * Constructor for GcpManagedChannel.
+   *
+   * @param builder the normal ManagedChannelBuilder
+   * @param jsonFile optional, the path of the .json file that defines the ApiConfig.
+   */
+  public GcpManagedChannel(ManagedChannelBuilder builder, File jsonFile) {
+    loadApiConfig(parseConfigFromJsonFile(jsonFile));
     this.builder = builder;
     getChannelRef(null);
   }
@@ -305,9 +318,19 @@ public class GcpManagedChannel extends ManagedChannel {
     try {
       FileReader reader = new FileReader(filePath);
       parser.merge(reader, apiConfig);
-    } catch (FileNotFoundException e) {
+    } catch (IOException e) {
       logger.severe(e.getMessage());
       return null;
+    }
+    return apiConfig.build();
+  }
+
+  static ApiConfig parseConfigFromJsonFile(File file) {
+    JsonFormat.Parser parser = JsonFormat.parser();
+    ApiConfig.Builder apiConfig = ApiConfig.newBuilder();
+    try {
+      FileReader reader = new FileReader(file);
+      parser.merge(reader, apiConfig);
     } catch (IOException e) {
       logger.severe(e.getMessage());
       return null;
@@ -316,8 +339,7 @@ public class GcpManagedChannel extends ManagedChannel {
   }
 
   /** Load parameters from ApiConfig. */
-  private void loadApiConfig(String jsonPath) {
-    ApiConfig apiConfig = parseJson(jsonPath);
+  private void loadApiConfig(ApiConfig apiConfig) {
     if (apiConfig == null) {
       return;
     }

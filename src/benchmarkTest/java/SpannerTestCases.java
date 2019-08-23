@@ -14,8 +14,6 @@
  * limitations under the License.
  */
 
-package com.google.grpc.gcp.testing;
-
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.common.collect.ImmutableList;
 import com.google.grpc.gcp.GcpManagedChannel;
@@ -47,6 +45,7 @@ import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.auth.MoreCallCredentials;
 import io.grpc.stub.StreamObserver;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -61,9 +60,9 @@ import java.util.logging.Logger;
  * Record the performance of both GcpManagedChannel and ManagedChannel when doing SpannerGrpc
  * operations.
  */
-final class SpannerProbers {
+final class SpannerTestCases {
 
-  private static final Logger logger = Logger.getLogger(SpannerProbers.class.getName());
+  private static final Logger logger = Logger.getLogger(SpannerTestCases.class.getName());
 
   private static final String SPANNER_TARGET = "spanner.googleapis.com";
   private static final String DATABASE =
@@ -71,14 +70,14 @@ final class SpannerProbers {
   private static final String LARGE_TABLE = "large_table";
   private static final String TABLE = "jenny";
   private static final String OAUTH_SCOPE = "https://www.googleapis.com/auth/cloud-platform";
-  private static final String API_FILE = "src/main/resources/spannertest.json";
+  private static final String API_FILE = "spannertest.json";
   private static final int MAX_SIZE_PER_COLUMN = 2621440;
   private static final int NUM_WARMUP = 10;
 
   private static final ManagedChannelBuilder builder =
       ManagedChannelBuilder.forAddress(SPANNER_TARGET, 443);
 
-  private SpannerProbers() {}
+  private SpannerTestCases() {}
 
   private static GoogleCredentials getCreds() {
     GoogleCredentials creds;
@@ -94,7 +93,8 @@ final class SpannerProbers {
 
   private static ManagedChannel getChannel(boolean isGrpcGcp) {
     if (isGrpcGcp) {
-      return new GcpManagedChannel(builder, API_FILE);
+      File configFile = new File(SpannerTestCases.class.getClassLoader().getResource(API_FILE).getFile());
+      return new GcpManagedChannel(builder, configFile);
     }
     return builder.build();
   }

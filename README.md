@@ -69,7 +69,7 @@ git clone https://github.com/GoogleCloudPlatform/grpc-gcp-java.git && cd grpc-gc
 Build project without tests.
 
 ```sh
-gradle build -x test
+./gradlew build -x test
 ```
 
 ## Test
@@ -80,20 +80,26 @@ Setup credentials. See [Getting Started With Authentication](https://cloud.googl
 export GOOGLE_APPLICATION_CREDENTIALS=path/to/key.json
 ```
 
-Run Bigtable integration tests:
+Run unit tests and integration tests:
 
 ```sh
-gradle btTest
+./gradlew test
 ```
 
-Run Spanner integration tests:
+Run Bigtable load test:
 
 ```sh
-gradle spannerTest
+./gradlew bigtableLoadTest
+```
+
+Run Spanner load test:
+
+```sh
+./gradlew spannerLoadTest
 ```
 
 Run Spanner benchmark tests:
 
 ```sh
-gradle spannerBenchmark --args="--gcp=true --thread=3 --rpc=100"
+./gradlew spannerBenchmark --args="--gcp=true --thread=3 --rpc=100"
 ```

@@ -14,8 +14,6 @@
  * limitations under the License.
  */
 
-package com.google.grpc.gcp.testing;
-
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.common.collect.ImmutableList;
 import com.google.common.util.concurrent.ListenableFuture;
@@ -33,6 +31,7 @@ import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.auth.MoreCallCredentials;
 import io.grpc.stub.StreamObserver;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -43,17 +42,17 @@ import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
 
 /** Integration tests for GcpManagedChannel with Spanner. */
-public final class SpannerLargeTests {
+public final class SpannerLoadTest {
   private static final String OAUTH_SCOPE = "https://www.googleapis.com/auth/cloud-platform";
   private static final String SPANNER_TARGET = "spanner.googleapis.com";
   private static final String DATABASE =
       "projects/cloudprober-test/instances/test-instance/databases/test-db";
-  private static final String API_FILE = "src/main/resources/spannertest.json";
+  private static final String API_FILE = "spannertest.json";
 
   private static final int MAX_CHANNEL = 10;
   private static final int MAX_STREAM = 10;
 
-  private static final Logger logger = Logger.getLogger(SpannerLargeTests.class.getName());
+  private static final Logger logger = Logger.getLogger(SpannerLoadTest.class.getName());
 
   private static final ManagedChannelBuilder builder =
       ManagedChannelBuilder.forAddress(SPANNER_TARGET, 443);
@@ -140,7 +139,8 @@ public final class SpannerLargeTests {
 
   public static void testListSessionsFuture() throws InterruptedException, ExecutionException {
     logger.info("Start testing ListSessions Future..");
-    ManagedChannel channel = new GcpManagedChannel(builder, API_FILE);
+    File configFile = new File(SpannerLoadTest.class.getClassLoader().getResource(API_FILE).getFile());
+    ManagedChannel channel = new GcpManagedChannel(builder, configFile);
     SpannerFutureStub stub = getSpannerFutureStub(channel);
     List<String> futureNames = createFutureSessions(stub);
     ListSessionsResponse responseList =
@@ -159,7 +159,8 @@ public final class SpannerLargeTests {
 
   public static void testListSessionsAsync() throws InterruptedException {
     logger.info("Start testing ListSessions StreamObserver..");
-    ManagedChannel channel = new GcpManagedChannel(builder, API_FILE);
+    File configFile = new File(SpannerLoadTest.class.getClassLoader().getResource(API_FILE).getFile());
+    ManagedChannel channel = new GcpManagedChannel(builder, configFile);
     SpannerStub stub = getSpannerStub(channel);
     List<String> respNames = createAsyncSessions(stub);
     AsyncResponseObserver<ListSessionsResponse> respList = new AsyncResponseObserver<>();

@@ -35,7 +35,7 @@
         "google.spanner.v1.Spanner/Commit",
         "google.spanner.v1.Spanner/PartitionRead",
         "google.spanner.v1.Spanner/PartitionQuery",
-        "google.spanner.v1.Spanner/Rollback",
+        "google.spanner.v1.Spanner/Rollback"
       ],
       "affinity": {
         "command": "BOUND",

@@ -20,6 +20,7 @@ import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertEquals;
 
 import com.google.auth.oauth2.GoogleCredentials;
+import com.google.cloud.spanner.Spanner;
 import com.google.common.collect.ImmutableList;
 import com.google.common.util.concurrent.ListenableFuture;
 import com.google.protobuf.Empty;
@@ -42,6 +43,7 @@ import io.grpc.ManagedChannelBuilder;
 import io.grpc.StatusRuntimeException;
 import io.grpc.auth.MoreCallCredentials;
 import io.grpc.stub.StreamObserver;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -67,7 +69,7 @@ public final class SpannerIntegrationTest {
   private static final String USERNAME = "test_username";
   private static final String DATABASE =
       "projects/cloudprober-test/instances/test-instance/databases/test-db";
-  private static final String API_FILE = "src/test/resources/apiconfigtests/spannertest.json";
+  private static final String API_FILE = "spannertest.json";
 
   private static final int MAX_CHANNEL = 3;
   private static final int MAX_STREAM = 2;
@@ -201,7 +203,8 @@ public final class SpannerIntegrationTest {
 
   @Before
   public void setupChannel() throws InterruptedException {
-    gcpChannel = new GcpManagedChannel(builder, API_FILE);
+    File configFile = new File(SpannerIntegrationTest.class.getClassLoader().getResource(API_FILE).getFile());
+    gcpChannel = new GcpManagedChannel(builder, configFile);
   }
 
   @After

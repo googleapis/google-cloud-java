@@ -14,8 +14,6 @@
  * limitations under the License.
  */
 
-package com.google.grpc.gcp.testing;
-
 import java.util.logging.Logger;
 
 /** SpannerBenchmark. */
@@ -88,15 +86,15 @@ public final class SpannerBenchmark {
                 + "Payload bytes:%d\n"
                 + "GcpManagedChannel:%b",
             vars[0], vars[1], vars[2], vars[3] == 1));
-    SpannerProbers.prepareTestData(vars[3] == 1, vars[2]);
-    SpannerProbers.testListSessions(vars[3] == 1, vars[0], vars[1]);
-    SpannerProbers.testListSessionsAsync(vars[3] == 1, vars[0], vars[1]);
-    SpannerProbers.testExecuteSql(vars[3] == 1, vars[0], vars[1]);
-    SpannerProbers.testExecuteSqlAsync(vars[3] == 1, vars[0], vars[1]);
-    SpannerProbers.testPartitionQuery(vars[3] == 1, vars[0], vars[1]);
-    SpannerProbers.testPartitionQueryAsync(vars[3] == 1, vars[0], vars[1]);
-    SpannerProbers.testRead(vars[3] == 1, vars[0], vars[1]);
-    SpannerProbers.testReadAsync(vars[3] == 1, vars[0], vars[1]);
-    SpannerProbers.testMaxConcurrentStream(vars[3] == 1, vars[0]);
+    SpannerTestCases.prepareTestData(vars[3] == 1, vars[2]);
+    SpannerTestCases.testListSessions(vars[3] == 1, vars[0], vars[1]);
+    SpannerTestCases.testListSessionsAsync(vars[3] == 1, vars[0], vars[1]);
+    SpannerTestCases.testExecuteSql(vars[3] == 1, vars[0], vars[1]);
+    SpannerTestCases.testExecuteSqlAsync(vars[3] == 1, vars[0], vars[1]);
+    SpannerTestCases.testPartitionQuery(vars[3] == 1, vars[0], vars[1]);
+    SpannerTestCases.testPartitionQueryAsync(vars[3] == 1, vars[0], vars[1]);
+    SpannerTestCases.testRead(vars[3] == 1, vars[0], vars[1]);
+    SpannerTestCases.testReadAsync(vars[3] == 1, vars[0], vars[1]);
+    SpannerTestCases.testMaxConcurrentStream(vars[3] == 1, vars[0]);
   }
 }
