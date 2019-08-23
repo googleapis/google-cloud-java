@@ -500,7 +500,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
   // </editor-fold>
 
   @Override
-  public void close() throws Exception {
+  public void close() {
     stub.close();
   }
 }
