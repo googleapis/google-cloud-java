@@ -19,6 +19,7 @@ package com.google.cloud.spanner.jdbc;
 import com.google.auth.Credentials;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.auth.oauth2.ServiceAccountCredentials;
+import com.google.cloud.NoCredentials;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.spanner.DatabaseId;
 import com.google.cloud.spanner.ErrorCode;
@@ -370,10 +371,17 @@ class ConnectionOptions {
                 + matcher.group(Builder.HOST_GROUP);
     this.instanceId = matcher.group(Builder.INSTANCE_GROUP);
     this.databaseName = matcher.group(Builder.DATABASE_GROUP);
-    this.credentials =
-        builder.credentials == null
-            ? getCredentialsService().createCredentials(this.credentialsUrl)
-            : builder.credentials;
+    // Using credentials on a plain text connection is not allowed, so if the user has not specified
+    // any credentials and is using a plain text connection, we should not try to get the
+    // credentials from the environment, but default to NoCredentials.
+    if (builder.credentials == null && this.credentialsUrl == null && this.usePlainText) {
+      this.credentials = NoCredentials.getInstance();
+    } else {
+      this.credentials =
+          builder.credentials == null
+              ? getCredentialsService().createCredentials(this.credentialsUrl)
+              : builder.credentials;
+    }
     String numChannelsValue = parseNumChannels(builder.uri);
     if (numChannelsValue != null) {
       try {
