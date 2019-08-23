@@ -18,6 +18,8 @@ package com.google.cloud.spanner.v1;
 import com.google.api.core.BetaApi;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Empty;
+import com.google.spanner.v1.BatchCreateSessionsRequest;
+import com.google.spanner.v1.BatchCreateSessionsResponse;
 import com.google.spanner.v1.BeginTransactionRequest;
 import com.google.spanner.v1.CommitRequest;
 import com.google.spanner.v1.CommitResponse;
@@ -84,6 +86,22 @@ public class MockSpannerImpl extends SpannerImplBase {
     if (response instanceof Session) {
       requests.add(request);
       responseObserver.onNext((Session) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void batchCreateSessions(
+      BatchCreateSessionsRequest request,
+      StreamObserver<BatchCreateSessionsResponse> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof BatchCreateSessionsResponse) {
+      requests.add(request);
+      responseObserver.onNext((BatchCreateSessionsResponse) response);
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
       responseObserver.onError((Exception) response);
