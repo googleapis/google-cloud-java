@@ -18,6 +18,7 @@ import com.google.auth.oauth2.GoogleCredentials;
 import com.google.common.collect.ImmutableList;
 import com.google.common.util.concurrent.ListenableFuture;
 import com.google.grpc.gcp.GcpManagedChannel;
+import com.google.grpc.gcp.GcpManagedChannelBuilder;
 import com.google.protobuf.Empty;
 import com.google.spanner.v1.CreateSessionRequest;
 import com.google.spanner.v1.DeleteSessionRequest;
@@ -140,7 +141,7 @@ public final class SpannerLoadTest {
   public static void testListSessionsFuture() throws InterruptedException, ExecutionException {
     logger.info("Start testing ListSessions Future..");
     File configFile = new File(SpannerLoadTest.class.getClassLoader().getResource(API_FILE).getFile());
-    ManagedChannel channel = new GcpManagedChannel(builder, configFile);
+    ManagedChannel channel = GcpManagedChannelBuilder.forDelegateBuilder(builder).withApiConfigJsonFile(configFile).build();
     SpannerFutureStub stub = getSpannerFutureStub(channel);
     List<String> futureNames = createFutureSessions(stub);
     ListSessionsResponse responseList =
@@ -160,7 +161,7 @@ public final class SpannerLoadTest {
   public static void testListSessionsAsync() throws InterruptedException {
     logger.info("Start testing ListSessions StreamObserver..");
     File configFile = new File(SpannerLoadTest.class.getClassLoader().getResource(API_FILE).getFile());
-    ManagedChannel channel = new GcpManagedChannel(builder, configFile);
+    ManagedChannel channel = GcpManagedChannelBuilder.forDelegateBuilder(builder).withApiConfigJsonFile(configFile).build();
     SpannerStub stub = getSpannerStub(channel);
     List<String> respNames = createAsyncSessions(stub);
     AsyncResponseObserver<ListSessionsResponse> respList = new AsyncResponseObserver<>();

@@ -17,6 +17,7 @@
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.common.collect.ImmutableList;
 import com.google.grpc.gcp.GcpManagedChannel;
+import com.google.grpc.gcp.GcpManagedChannelBuilder;
 import com.google.protobuf.Empty;
 import com.google.protobuf.ListValue;
 import com.google.protobuf.Value;
@@ -74,9 +75,6 @@ final class SpannerTestCases {
   private static final int MAX_SIZE_PER_COLUMN = 2621440;
   private static final int NUM_WARMUP = 10;
 
-  private static final ManagedChannelBuilder builder =
-      ManagedChannelBuilder.forAddress(SPANNER_TARGET, 443);
-
   private SpannerTestCases() {}
 
   private static GoogleCredentials getCreds() {
@@ -92,9 +90,10 @@ final class SpannerTestCases {
   }
 
   private static ManagedChannel getChannel(boolean isGrpcGcp) {
+    ManagedChannelBuilder builder = ManagedChannelBuilder.forAddress(SPANNER_TARGET, 443);
     if (isGrpcGcp) {
       File configFile = new File(SpannerTestCases.class.getClassLoader().getResource(API_FILE).getFile());
-      return new GcpManagedChannel(builder, configFile);
+      builder = GcpManagedChannelBuilder.forDelegateBuilder(builder).withApiConfigJsonFile(configFile);
     }
     return builder.build();
   }

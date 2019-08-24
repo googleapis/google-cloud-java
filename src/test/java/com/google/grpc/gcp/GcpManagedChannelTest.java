@@ -27,22 +27,23 @@ import com.google.spanner.v1.TransactionSelector;
 import io.grpc.ConnectivityState;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
+import java.io.File;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-/** Unit tests for GcpManagedChannel. */
+/**
+ * Unit tests for GcpManagedChannel.
+ */
 @RunWith(JUnit4.class)
 public final class GcpManagedChannelTest {
 
-  private static final String TARGET = "www.jenny.com";
-  private static final String API_FILE = "src/test/resources/apiconfig.json";
-  private static final String EMPTY_METHOD_FILE =
-      "src/test/resources/empty_method.json";
-  private static final String EMPTY_CHANNEL_FILE =
-      "src/test/resources/empty_channel.json";
+  private static final String TARGET = "localhost";
+  private static final String API_FILE = "apiconfig.json";
+  private static final String EMPTY_METHOD_FILE = "empty_method.json";
+  private static final String EMPTY_CHANNEL_FILE = "empty_channel.json";
 
   private static final int MAX_CHANNEL = 10;
   private static final int MAX_STREAM = 100;
@@ -50,7 +51,9 @@ public final class GcpManagedChannelTest {
   private GcpManagedChannel gcpChannel;
   private ManagedChannelBuilder builder;
 
-  /** Close and delete all the channelRefs inside a gcpchannel. */
+  /**
+   * Close and delete all the channelRefs inside a gcpchannel.
+   */
   private void resetGcpChannel() {
     gcpChannel.shutdownNow();
     gcpChannel.channelRefs.clear();
@@ -59,7 +62,7 @@ public final class GcpManagedChannelTest {
   @Before
   public void setUpChannel() {
     builder = ManagedChannelBuilder.forAddress(TARGET, 443);
-    gcpChannel = new GcpManagedChannel(builder);
+    gcpChannel = (GcpManagedChannel) GcpManagedChannelBuilder.forDelegateBuilder(builder).build();
   }
 
   @After
@@ -70,7 +73,10 @@ public final class GcpManagedChannelTest {
   @Test
   public void testLoadApiConfig() throws Exception {
     resetGcpChannel();
-    gcpChannel = new GcpManagedChannel(builder, API_FILE);
+    File configFile = new File(
+        GcpManagedChannelTest.class.getClassLoader().getResource(API_FILE).getFile());
+    gcpChannel = (GcpManagedChannel) GcpManagedChannelBuilder.forDelegateBuilder(builder)
+        .withApiConfigJsonFile(configFile).build();
     assertEquals(1, gcpChannel.channelRefs.size());
     assertEquals(3, gcpChannel.getMaxSize());
     assertEquals(2, gcpChannel.getStreamsLowWatermark());
@@ -100,7 +106,7 @@ public final class GcpManagedChannelTest {
     assertEquals(6, gcpChannel.channelRefs.size());
 
     // Add more channels, the smallest stream value is -1 with idx 6.
-    int[] streams = new int[] {-1, 5, 7, 1};
+    int[] streams = new int[]{-1, 5, 7, 1};
     for (int i = 6; i < 10; i++) {
       ManagedChannel channel = builder.build();
       gcpChannel.channelRefs.add(gcpChannel.new ChannelRef(channel, i, i, streams[i - 6]));
@@ -164,7 +170,11 @@ public final class GcpManagedChannelTest {
 
   @Test
   public void testParseGoodJsonFile() throws Exception {
-    ApiConfig apiconfig = GcpManagedChannel.parseJson(API_FILE);
+    File configFile = new File(
+        GcpManagedChannelTest.class.getClassLoader().getResource(API_FILE).getFile());
+    ApiConfig apiconfig =
+        GcpManagedChannelBuilder.forDelegateBuilder(builder)
+            .withApiConfigJsonFile(configFile).apiConfig;
     ChannelPoolConfig expectedChannel =
         ChannelPoolConfig.newBuilder().setMaxSize(3).setMaxConcurrentStreamsLowWatermark(2).build();
     assertEquals(expectedChannel, apiconfig.getChannelPool());
@@ -197,8 +207,12 @@ public final class GcpManagedChannelTest {
   }
 
   @Test
-  public void testParseEmptyMethodJsonFile() throws Exception {
-    ApiConfig apiconfig = GcpManagedChannel.parseJson(EMPTY_METHOD_FILE);
+  public void testParseEmptyMethodJsonFile() {
+    File configFile = new File(
+        GcpManagedChannelTest.class.getClassLoader().getResource(EMPTY_METHOD_FILE).getFile());
+    ApiConfig apiconfig =
+        GcpManagedChannelBuilder.forDelegateBuilder(builder)
+            .withApiConfigJsonFile(configFile).apiConfig;
     ChannelPoolConfig expectedChannel =
         ChannelPoolConfig.newBuilder()
             .setMaxSize(5)
@@ -211,8 +225,12 @@ public final class GcpManagedChannelTest {
   }
 
   @Test
-  public void testParseEmptyChannelJsonFile() throws Exception {
-    ApiConfig apiconfig = GcpManagedChannel.parseJson(EMPTY_CHANNEL_FILE);
+  public void testParseEmptyChannelJsonFile() {
+    File configFile = new File(
+        GcpManagedChannelTest.class.getClassLoader().getResource(EMPTY_CHANNEL_FILE).getFile());
+    ApiConfig apiconfig =
+        GcpManagedChannelBuilder.forDelegateBuilder(builder)
+            .withApiConfigJsonFile(configFile).apiConfig;
     assertEquals(ChannelPoolConfig.getDefaultInstance(), apiconfig.getChannelPool());
 
     assertEquals(3, apiconfig.getMethodCount());

@@ -30,30 +30,29 @@ import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.MethodDescriptor;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
-import java.util.logging.Logger;
 import javax.annotation.Nullable;
 import javax.annotation.concurrent.GuardedBy;
 
-/** A channel management factory that implements grpc.Channel APIs. */
+/**
+ * A channel management factory that implements grpc.Channel APIs.
+ */
 public class GcpManagedChannel extends ManagedChannel {
 
-  private static final Logger logger = Logger.getLogger(GcpManagedChannel.class.getName());
 
   private static final int DEFAULT_MAX_CHANNEL = 10;
   private static final int DEFAULT_MAX_STREAM = 100;
 
-  private final ManagedChannelBuilder builder;
-  private ApiConfig apiConfig;
+  private final ManagedChannelBuilder delegateChannelBuilder;
   private int maxSize = DEFAULT_MAX_CHANNEL;
   private int maxConcurrentStreamsLowWatermark = DEFAULT_MAX_STREAM;
 
@@ -73,35 +72,13 @@ public class GcpManagedChannel extends ManagedChannel {
   /**
    * Constructor for GcpManagedChannel.
    *
-   * @param builder the normal ManagedChannelBuilder
+   * @param delegateChannelBuilder the underlying delegate ManagedChannelBuilder.
+   * @param apiConfig the ApiConfig object for configuring GcpManagedChannel.
    */
-  public GcpManagedChannel(ManagedChannelBuilder builder) {
-    apiConfig = null;
-    this.builder = builder;
-    getChannelRef(null);
-  }
-
-  /**
-   * Constructor for GcpManagedChannel.
-   *
-   * @param builder the normal ManagedChannelBuilder
-   * @param jsonPath optional, the path of the .json file that defines the ApiConfig.
-   */
-  public GcpManagedChannel(ManagedChannelBuilder builder, String jsonPath) {
-    loadApiConfig(parseJson(jsonPath));
-    this.builder = builder;
-    getChannelRef(null);
-  }
-
-  /**
-   * Constructor for GcpManagedChannel.
-   *
-   * @param builder the normal ManagedChannelBuilder
-   * @param jsonFile optional, the path of the .json file that defines the ApiConfig.
-   */
-  public GcpManagedChannel(ManagedChannelBuilder builder, File jsonFile) {
-    loadApiConfig(parseConfigFromJsonFile(jsonFile));
-    this.builder = builder;
+  public GcpManagedChannel(ManagedChannelBuilder delegateChannelBuilder, ApiConfig apiConfig) {
+    loadApiConfig(apiConfig);
+    this.delegateChannelBuilder = delegateChannelBuilder;
+    // Initialize the first delegate channel.
     getChannelRef(null);
   }
 
@@ -121,7 +98,7 @@ public class GcpManagedChannel extends ManagedChannel {
    * Pick a channelRef (and create a new one if necessary).
    *
    * @param key affinity key. If it is specified, pick the ChannelRef bound with the the affinity
-   *     key. Otherwise pick the one with the smallest number of streams.
+   * key. Otherwise pick the one with the smallest number of streams.
    */
   protected ChannelRef getChannelRef(@Nullable String key) {
 
@@ -131,7 +108,7 @@ public class GcpManagedChannel extends ManagedChannel {
       }
     }
     synchronized (this) {
-      channelRefs.sort((r1, r2) -> r1.getActiveStreamsCount() - r2.getActiveStreamsCount());
+      channelRefs.sort(Comparator.comparingInt(ChannelRef::getActiveStreamsCount));
 
       int size = channelRefs.size();
       // Choose the channelRef that has the least busy channel.
@@ -142,7 +119,7 @@ public class GcpManagedChannel extends ManagedChannel {
       // If all existing channels are busy, and channel pool still has capacity, create a new
       // channel.
       if (size < maxSize) {
-        ChannelRef channelRef = new ChannelRef(builder.build(), size);
+        ChannelRef channelRef = new ChannelRef(delegateChannelBuilder.build(), size);
         channelRefs.add(channelRef);
         return channelRef;
       }
@@ -229,7 +206,9 @@ public class GcpManagedChannel extends ManagedChannel {
     return true;
   }
 
-  /** Get the current connectivity state of the channel pool. */
+  /**
+   * Get the current connectivity state of the channel pool.
+   */
   @Override
   public synchronized ConnectivityState getState(boolean requestConnection) {
     int ready = 0;
@@ -283,7 +262,9 @@ public class GcpManagedChannel extends ManagedChannel {
     }
   }
 
-  /** Unbind channel with affinity key, and delete the affinitykey if necassary */
+  /**
+   * Unbind channel with affinity key, and delete the affinitykey if necassary
+   */
   protected void unbind(String affinityKey) {
     synchronized (bindLock) {
       if (affinityKey != null
@@ -310,35 +291,10 @@ public class GcpManagedChannel extends ManagedChannel {
     }
   }
 
-  /** Parse .JSON file into ApiConfig. */
-  @VisibleForTesting
-  static ApiConfig parseJson(String filePath) {
-    JsonFormat.Parser parser = JsonFormat.parser();
-    ApiConfig.Builder apiConfig = ApiConfig.newBuilder();
-    try {
-      FileReader reader = new FileReader(filePath);
-      parser.merge(reader, apiConfig);
-    } catch (IOException e) {
-      logger.severe(e.getMessage());
-      return null;
-    }
-    return apiConfig.build();
-  }
 
-  static ApiConfig parseConfigFromJsonFile(File file) {
-    JsonFormat.Parser parser = JsonFormat.parser();
-    ApiConfig.Builder apiConfig = ApiConfig.newBuilder();
-    try {
-      FileReader reader = new FileReader(file);
-      parser.merge(reader, apiConfig);
-    } catch (IOException e) {
-      logger.severe(e.getMessage());
-      return null;
-    }
-    return apiConfig.build();
-  }
-
-  /** Load parameters from ApiConfig. */
+  /**
+   * Load parameters from ApiConfig.
+   */
   private void loadApiConfig(ApiConfig apiConfig) {
     if (apiConfig == null) {
       return;

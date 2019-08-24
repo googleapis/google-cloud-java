@@ -61,8 +61,7 @@ public class BigtableIntegrationTest {
   private static final int NEW_MAX_STREAM = 5;
   private static final int MAX_MSG_SIZE = 8 * 1024 * 1024;
 
-  private static final String TEST_APICONFIG_FILE =
-      "empty_method.json";
+  private static final String TEST_APICONFIG_FILE = "empty_method.json";
   private static final String BIGTABLE_TARGET = "bigtable.googleapis.com";
   private static final String FAMILY_NAME = "test-family";
   private static final String TABLE_NAME =
@@ -113,7 +112,7 @@ public class BigtableIntegrationTest {
   public void setupChannel() throws InterruptedException {
     builder =
         ManagedChannelBuilder.forAddress(BIGTABLE_TARGET, 443).maxInboundMessageSize(MAX_MSG_SIZE);
-    gcpChannel = new GcpManagedChannel(builder);
+    gcpChannel = (GcpManagedChannel) GcpManagedChannelBuilder.forDelegateBuilder(builder).build();
   }
 
   @After
@@ -168,7 +167,7 @@ public class BigtableIntegrationTest {
     // For our current channel pool, the max_stream is 5 and the max_size is 5.
     gcpChannel.shutdownNow();
     File configFile = new File(BigtableIntegrationTest.class.getClassLoader().getResource(TEST_APICONFIG_FILE).getFile());
-    gcpChannel = new GcpManagedChannel(builder, configFile);
+    gcpChannel = (GcpManagedChannel) GcpManagedChannelBuilder.forDelegateBuilder(builder).withApiConfigJsonFile(configFile).build();
     BigtableStub stub = getBigtableStub();
     List<AsyncResponseObserver<MutateRowResponse>> clearObservers = new ArrayList<>();
 

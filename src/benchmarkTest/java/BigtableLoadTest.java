@@ -21,6 +21,7 @@ import com.google.bigtable.v2.ReadRowsRequest;
 import com.google.bigtable.v2.ReadRowsResponse;
 import com.google.common.collect.ImmutableList;
 import com.google.grpc.gcp.GcpManagedChannel;
+import com.google.grpc.gcp.GcpManagedChannelBuilder;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.auth.MoreCallCredentials;
@@ -119,7 +120,7 @@ public final class BigtableLoadTest {
         ManagedChannelBuilder.forAddress(BIGTABLE_TARGET, 443).maxInboundMessageSize(MAX_MSG_SIZE);
 
     // Running 105 streams using GcpManagedChannel.
-    GcpManagedChannel gcpChannel = new GcpManagedChannel(builder);
+    ManagedChannel gcpChannel = GcpManagedChannelBuilder.forDelegateBuilder(builder).build();
     logger.info("Start running 105 concurrent streams using GcpManagedChannel.");
     if (runManyManyStreams(gcpChannel)) {
       logger.info("Finish running 105 concurrent streams using GcpManagedChannel.");

@@ -61,9 +61,12 @@ import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-/** Integration tests for GcpManagedChannel with Spanner. */
+/**
+ * Integration tests for GcpManagedChannel with Spanner.
+ */
 @RunWith(JUnit4.class)
 public final class SpannerIntegrationTest {
+
   private static final String OAUTH_SCOPE = "https://www.googleapis.com/auth/cloud-platform";
   private static final String SPANNER_TARGET = "spanner.googleapis.com";
   private static final String USERNAME = "test_username";
@@ -90,7 +93,9 @@ public final class SpannerIntegrationTest {
     return creds;
   }
 
-  /** Helper functions for BlockingStub. */
+  /**
+   * Helper functions for BlockingStub.
+   */
   private SpannerBlockingStub getSpannerBlockingStub() {
     GoogleCredentials creds = getCreds();
     SpannerBlockingStub stub =
@@ -105,7 +110,9 @@ public final class SpannerIntegrationTest {
     }
   }
 
-  /** Helper functions for Stub(async calls). */
+  /**
+   * Helper functions for Stub(async calls).
+   */
   private SpannerStub getSpannerStub() {
     GoogleCredentials creds = getCreds();
     SpannerStub stub =
@@ -148,7 +155,9 @@ public final class SpannerIntegrationTest {
     assertEquals(0, gcpChannel.affinityKeyToChannelRef.size());
   }
 
-  /** Helper Functions for FutureStub. */
+  /**
+   * Helper Functions for FutureStub.
+   */
   private SpannerFutureStub getSpannerFutureStub() {
     GoogleCredentials creds = getCreds();
     SpannerFutureStub stub =
@@ -190,7 +199,9 @@ public final class SpannerIntegrationTest {
     assertEquals(0, gcpChannel.affinityKeyToChannelRef.size());
   }
 
-  /** A wrapper of checking the status of each channelRef in the gcpChannel. */
+  /**
+   * A wrapper of checking the status of each channelRef in the gcpChannel.
+   */
   private void checkChannelRefs(int channels, int streams, int affinities) {
     assertEquals(channels, gcpChannel.channelRefs.size());
     for (int i = 0; i < channels; i++) {
@@ -199,12 +210,15 @@ public final class SpannerIntegrationTest {
     }
   }
 
-  @Rule public ExpectedException expectedEx = ExpectedException.none();
+  @Rule
+  public ExpectedException expectedEx = ExpectedException.none();
 
   @Before
   public void setupChannel() throws InterruptedException {
-    File configFile = new File(SpannerIntegrationTest.class.getClassLoader().getResource(API_FILE).getFile());
-    gcpChannel = new GcpManagedChannel(builder, configFile);
+    File configFile = new File(
+        SpannerIntegrationTest.class.getClassLoader().getResource(API_FILE).getFile());
+    gcpChannel = (GcpManagedChannel) GcpManagedChannelBuilder.forDelegateBuilder(builder)
+        .withApiConfigJsonFile(configFile).build();
   }
 
   @After
@@ -276,10 +290,10 @@ public final class SpannerIntegrationTest {
     for (String futureName : futureNames) {
       ResultSet response =
           stub.executeSql(
-                  ExecuteSqlRequest.newBuilder()
-                      .setSession(futureName)
-                      .setSql("select * FROM jenny")
-                      .build())
+              ExecuteSqlRequest.newBuilder()
+                  .setSession(futureName)
+                  .setSql("select * FROM jenny")
+                  .build())
               .get();
       assertEquals(1, response.getRowsCount());
       assertEquals(USERNAME, response.getRows(0).getValuesList().get(0).getStringValue());
@@ -335,10 +349,12 @@ public final class SpannerIntegrationTest {
   }
 
   private static class AsyncResponseObserver<RespT> implements StreamObserver<RespT> {
+
     private final CountDownLatch finishLatch = new CountDownLatch(1);
     private RespT response = null;
 
-    private AsyncResponseObserver() {}
+    private AsyncResponseObserver() {
+    }
 
     public RespT get() throws InterruptedException, ExecutionException, TimeoutException {
       finishLatch.await(1, TimeUnit.MINUTES);
