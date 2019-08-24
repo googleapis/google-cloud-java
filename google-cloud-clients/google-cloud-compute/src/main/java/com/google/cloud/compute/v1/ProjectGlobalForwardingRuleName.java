@@ -33,7 +33,8 @@ public final class ProjectGlobalForwardingRuleName implements ResourceName {
   private static final PathTemplate PATH_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding("{project}/global/forwardingRules/{forwardingRule}");
 
-  public static final String SERVICE_ADDRESS = "https://www.googleapis.com/compute/v1/projects/";
+  public static final String SERVICE_ADDRESS =
+      "https://compute.googleapis.com/compute/v1/projects/";
 
   private volatile Map<String, String> fieldValuesMap;
 
