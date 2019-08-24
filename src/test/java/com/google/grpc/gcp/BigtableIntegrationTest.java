@@ -166,8 +166,17 @@ public class BigtableIntegrationTest {
   public void testConcurrentStreamsAndChannels() throws Exception {
     // For our current channel pool, the max_stream is 5 and the max_size is 5.
     gcpChannel.shutdownNow();
-    File configFile = new File(BigtableIntegrationTest.class.getClassLoader().getResource(TEST_APICONFIG_FILE).getFile());
-    gcpChannel = (GcpManagedChannel) GcpManagedChannelBuilder.forDelegateBuilder(builder).withApiConfigJsonFile(configFile).build();
+    File configFile =
+        new File(
+            BigtableIntegrationTest.class
+                .getClassLoader()
+                .getResource(TEST_APICONFIG_FILE)
+                .getFile());
+    gcpChannel =
+        (GcpManagedChannel)
+            GcpManagedChannelBuilder.forDelegateBuilder(builder)
+                .withApiConfigJsonFile(configFile)
+                .build();
     BigtableStub stub = getBigtableStub();
     List<AsyncResponseObserver<MutateRowResponse>> clearObservers = new ArrayList<>();
 

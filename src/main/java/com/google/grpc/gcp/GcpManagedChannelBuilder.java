@@ -33,8 +33,7 @@ public class GcpManagedChannelBuilder extends ForwardingChannelBuilder<GcpManage
 
   private final ManagedChannelBuilder delegate;
 
-  @VisibleForTesting
-  ApiConfig apiConfig;
+  @VisibleForTesting ApiConfig apiConfig;
 
   private GcpManagedChannelBuilder(ManagedChannelBuilder delegate) {
     this.delegate = delegate;
@@ -67,9 +66,7 @@ public class GcpManagedChannelBuilder extends ForwardingChannelBuilder<GcpManage
     return this;
   }
 
-  /**
-   * Returns the delegated {@code ManagedChannelBuilder}.
-   */
+  /** Returns the delegated {@code ManagedChannelBuilder}. */
   @Override
   protected ManagedChannelBuilder<?> delegate() {
     return delegate;
@@ -83,5 +80,4 @@ public class GcpManagedChannelBuilder extends ForwardingChannelBuilder<GcpManage
   public ManagedChannel build() {
     return new GcpManagedChannel(delegate, apiConfig);
   }
-
 }

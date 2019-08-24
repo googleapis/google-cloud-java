@@ -20,7 +20,6 @@ import com.google.bigtable.v2.BigtableGrpc.BigtableBlockingStub;
 import com.google.bigtable.v2.ReadRowsRequest;
 import com.google.bigtable.v2.ReadRowsResponse;
 import com.google.common.collect.ImmutableList;
-import com.google.grpc.gcp.GcpManagedChannel;
 import com.google.grpc.gcp.GcpManagedChannelBuilder;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
@@ -140,4 +139,3 @@ public final class BigtableLoadTest {
     channel.shutdownNow();
   }
 }
-

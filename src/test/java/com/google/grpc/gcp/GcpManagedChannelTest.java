@@ -34,9 +34,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-/**
- * Unit tests for GcpManagedChannel.
- */
+/** Unit tests for GcpManagedChannel. */
 @RunWith(JUnit4.class)
 public final class GcpManagedChannelTest {
 
@@ -51,9 +49,7 @@ public final class GcpManagedChannelTest {
   private GcpManagedChannel gcpChannel;
   private ManagedChannelBuilder builder;
 
-  /**
-   * Close and delete all the channelRefs inside a gcpchannel.
-   */
+  /** Close and delete all the channelRefs inside a gcpchannel. */
   private void resetGcpChannel() {
     gcpChannel.shutdownNow();
     gcpChannel.channelRefs.clear();
@@ -73,10 +69,13 @@ public final class GcpManagedChannelTest {
   @Test
   public void testLoadApiConfig() throws Exception {
     resetGcpChannel();
-    File configFile = new File(
-        GcpManagedChannelTest.class.getClassLoader().getResource(API_FILE).getFile());
-    gcpChannel = (GcpManagedChannel) GcpManagedChannelBuilder.forDelegateBuilder(builder)
-        .withApiConfigJsonFile(configFile).build();
+    File configFile =
+        new File(GcpManagedChannelTest.class.getClassLoader().getResource(API_FILE).getFile());
+    gcpChannel =
+        (GcpManagedChannel)
+            GcpManagedChannelBuilder.forDelegateBuilder(builder)
+                .withApiConfigJsonFile(configFile)
+                .build();
     assertEquals(1, gcpChannel.channelRefs.size());
     assertEquals(3, gcpChannel.getMaxSize());
     assertEquals(2, gcpChannel.getStreamsLowWatermark());
@@ -106,7 +105,7 @@ public final class GcpManagedChannelTest {
     assertEquals(6, gcpChannel.channelRefs.size());
 
     // Add more channels, the smallest stream value is -1 with idx 6.
-    int[] streams = new int[]{-1, 5, 7, 1};
+    int[] streams = new int[] {-1, 5, 7, 1};
     for (int i = 6; i < 10; i++) {
       ManagedChannel channel = builder.build();
       gcpChannel.channelRefs.add(gcpChannel.new ChannelRef(channel, i, i, streams[i - 6]));
@@ -170,11 +169,12 @@ public final class GcpManagedChannelTest {
 
   @Test
   public void testParseGoodJsonFile() throws Exception {
-    File configFile = new File(
-        GcpManagedChannelTest.class.getClassLoader().getResource(API_FILE).getFile());
+    File configFile =
+        new File(GcpManagedChannelTest.class.getClassLoader().getResource(API_FILE).getFile());
     ApiConfig apiconfig =
         GcpManagedChannelBuilder.forDelegateBuilder(builder)
-            .withApiConfigJsonFile(configFile).apiConfig;
+            .withApiConfigJsonFile(configFile)
+            .apiConfig;
     ChannelPoolConfig expectedChannel =
         ChannelPoolConfig.newBuilder().setMaxSize(3).setMaxConcurrentStreamsLowWatermark(2).build();
     assertEquals(expectedChannel, apiconfig.getChannelPool());
@@ -208,11 +208,13 @@ public final class GcpManagedChannelTest {
 
   @Test
   public void testParseEmptyMethodJsonFile() {
-    File configFile = new File(
-        GcpManagedChannelTest.class.getClassLoader().getResource(EMPTY_METHOD_FILE).getFile());
+    File configFile =
+        new File(
+            GcpManagedChannelTest.class.getClassLoader().getResource(EMPTY_METHOD_FILE).getFile());
     ApiConfig apiconfig =
         GcpManagedChannelBuilder.forDelegateBuilder(builder)
-            .withApiConfigJsonFile(configFile).apiConfig;
+            .withApiConfigJsonFile(configFile)
+            .apiConfig;
     ChannelPoolConfig expectedChannel =
         ChannelPoolConfig.newBuilder()
             .setMaxSize(5)
@@ -226,11 +228,13 @@ public final class GcpManagedChannelTest {
 
   @Test
   public void testParseEmptyChannelJsonFile() {
-    File configFile = new File(
-        GcpManagedChannelTest.class.getClassLoader().getResource(EMPTY_CHANNEL_FILE).getFile());
+    File configFile =
+        new File(
+            GcpManagedChannelTest.class.getClassLoader().getResource(EMPTY_CHANNEL_FILE).getFile());
     ApiConfig apiconfig =
         GcpManagedChannelBuilder.forDelegateBuilder(builder)
-            .withApiConfigJsonFile(configFile).apiConfig;
+            .withApiConfigJsonFile(configFile)
+            .apiConfig;
     assertEquals(ChannelPoolConfig.getDefaultInstance(), apiconfig.getChannelPool());
 
     assertEquals(3, apiconfig.getMethodCount());

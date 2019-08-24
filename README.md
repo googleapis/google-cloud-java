@@ -103,3 +103,11 @@ Run Spanner benchmark tests:
 ```sh
 ./gradlew spannerBenchmark --args="--gcp=true --thread=3 --rpc=100"
 ```
+
+## Code Format
+
+Run google-java-format
+
+```sh
+./gradlew goJF
+```

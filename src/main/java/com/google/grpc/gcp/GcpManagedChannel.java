@@ -22,16 +22,12 @@ import com.google.grpc.gcp.proto.ApiConfig;
 import com.google.grpc.gcp.proto.MethodConfig;
 import com.google.protobuf.Descriptors.FieldDescriptor;
 import com.google.protobuf.MessageOrBuilder;
-import com.google.protobuf.util.JsonFormat;
 import io.grpc.CallOptions;
 import io.grpc.ClientCall;
 import io.grpc.ConnectivityState;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.MethodDescriptor;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -43,11 +39,8 @@ import java.util.concurrent.TimeUnit;
 import javax.annotation.Nullable;
 import javax.annotation.concurrent.GuardedBy;
 
-/**
- * A channel management factory that implements grpc.Channel APIs.
- */
+/** A channel management factory that implements grpc.Channel APIs. */
 public class GcpManagedChannel extends ManagedChannel {
-
 
   private static final int DEFAULT_MAX_CHANNEL = 10;
   private static final int DEFAULT_MAX_STREAM = 100;
@@ -98,7 +91,7 @@ public class GcpManagedChannel extends ManagedChannel {
    * Pick a channelRef (and create a new one if necessary).
    *
    * @param key affinity key. If it is specified, pick the ChannelRef bound with the the affinity
-   * key. Otherwise pick the one with the smallest number of streams.
+   *     key. Otherwise pick the one with the smallest number of streams.
    */
   protected ChannelRef getChannelRef(@Nullable String key) {
 
@@ -206,9 +199,7 @@ public class GcpManagedChannel extends ManagedChannel {
     return true;
   }
 
-  /**
-   * Get the current connectivity state of the channel pool.
-   */
+  /** Get the current connectivity state of the channel pool. */
   @Override
   public synchronized ConnectivityState getState(boolean requestConnection) {
     int ready = 0;
@@ -262,9 +253,7 @@ public class GcpManagedChannel extends ManagedChannel {
     }
   }
 
-  /**
-   * Unbind channel with affinity key, and delete the affinitykey if necassary
-   */
+  /** Unbind channel with affinity key, and delete the affinitykey if necassary */
   protected void unbind(String affinityKey) {
     synchronized (bindLock) {
       if (affinityKey != null
@@ -291,10 +280,7 @@ public class GcpManagedChannel extends ManagedChannel {
     }
   }
 
-
-  /**
-   * Load parameters from ApiConfig.
-   */
+  /** Load parameters from ApiConfig. */
   private void loadApiConfig(ApiConfig apiConfig) {
     if (apiConfig == null) {
       return;

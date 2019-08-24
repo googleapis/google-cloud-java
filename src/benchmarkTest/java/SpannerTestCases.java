@@ -92,8 +92,10 @@ final class SpannerTestCases {
   private static ManagedChannel getChannel(boolean isGrpcGcp) {
     ManagedChannelBuilder builder = ManagedChannelBuilder.forAddress(SPANNER_TARGET, 443);
     if (isGrpcGcp) {
-      File configFile = new File(SpannerTestCases.class.getClassLoader().getResource(API_FILE).getFile());
-      builder = GcpManagedChannelBuilder.forDelegateBuilder(builder).withApiConfigJsonFile(configFile);
+      File configFile =
+          new File(SpannerTestCases.class.getClassLoader().getResource(API_FILE).getFile());
+      builder =
+          GcpManagedChannelBuilder.forDelegateBuilder(builder).withApiConfigJsonFile(configFile);
     }
     return builder.build();
   }
