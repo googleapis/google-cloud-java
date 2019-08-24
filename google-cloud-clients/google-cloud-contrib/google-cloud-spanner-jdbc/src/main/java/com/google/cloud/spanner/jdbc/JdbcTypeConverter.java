@@ -310,18 +310,26 @@ class JdbcTypeConverter {
     return res;
   }
 
+  @SuppressWarnings("deprecation")
   static Time toSqlTime(Timestamp ts) {
-    return toSqlTime(ts, Calendar.getInstance());
+    if (ts != null) {
+      java.sql.Timestamp sqlTs = toSqlTimestamp(ts);
+      Time time = new Time(sqlTs.getHours(), sqlTs.getMinutes(), sqlTs.getSeconds());
+      time.setTime(
+          time.getTime() + TimeUnit.MILLISECONDS.convert(sqlTs.getNanos(), TimeUnit.NANOSECONDS));
+      return time;
+    }
+    return null;
   }
 
+  @SuppressWarnings("deprecation")
   static Time toSqlTime(Timestamp ts, Calendar cal) {
     if (ts != null) {
-      cal.set(1970, 0, 1, 0, 0, 0);
-      cal.clear(Calendar.MILLISECOND);
-      cal.setTimeInMillis(
-          ts.getSeconds() * 1000
-              + TimeUnit.MILLISECONDS.convert(ts.getNanos(), TimeUnit.NANOSECONDS));
-      return new Time(cal.getTimeInMillis());
+      java.sql.Timestamp sqlTs = getAsSqlTimestamp(ts, cal);
+      Time time = new Time(sqlTs.getHours(), sqlTs.getMinutes(), sqlTs.getSeconds());
+      time.setTime(
+          time.getTime() + TimeUnit.MILLISECONDS.convert(sqlTs.getNanos(), TimeUnit.NANOSECONDS));
+      return time;
     }
     return null;
   }

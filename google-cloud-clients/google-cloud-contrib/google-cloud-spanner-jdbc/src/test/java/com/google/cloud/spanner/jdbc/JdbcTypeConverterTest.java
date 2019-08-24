@@ -16,10 +16,11 @@
 
 package com.google.cloud.spanner.jdbc;
 
-import static com.google.cloud.spanner.jdbc.JdbcTypeConverter.convert;
+import static com.google.cloud.spanner.jdbc.JdbcTypeConverter.*;
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.fail;
 
+import com.google.cloud.ByteArray;
 import com.google.cloud.spanner.Type;
 import com.google.cloud.spanner.jdbc.JdbcSqlExceptionFactory.JdbcSqlExceptionImpl;
 import com.google.rpc.Code;
@@ -29,8 +30,13 @@ import java.nio.charset.Charset;
 import java.sql.Array;
 import java.sql.Date;
 import java.sql.SQLException;
+import java.sql.Time;
 import java.sql.Timestamp;
 import java.text.DecimalFormat;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Calendar;
+import java.util.List;
 import java.util.TimeZone;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -106,20 +112,22 @@ public class JdbcTypeConverterTest {
     assertThat(convert(testValues, Type.bytes(), String.class)).isEqualTo("test");
   }
 
+  private TimeZone[] getTestTimeZones() {
+    return new TimeZone[] {
+      TimeZone.getTimeZone("GMT-12:00"),
+      TimeZone.getTimeZone("GMT-9:00"),
+      TimeZone.getTimeZone("GMT-1:00"),
+      TimeZone.getTimeZone("GMT"),
+      TimeZone.getTimeZone("GMT+1:00"),
+      TimeZone.getTimeZone("GMT+12:00")
+    };
+  }
+
   @Test
   public void testConvertDate() throws SQLException {
     TimeZone initialDefault = TimeZone.getDefault();
     try {
-      TimeZone[] zones =
-          new TimeZone[] {
-            TimeZone.getTimeZone("GMT-12:00"),
-            TimeZone.getTimeZone("GMT-9:00"),
-            TimeZone.getTimeZone("GMT-1:00"),
-            TimeZone.getTimeZone("GMT"),
-            TimeZone.getTimeZone("GMT+1:00"),
-            TimeZone.getTimeZone("GMT+12:00")
-          };
-      for (TimeZone zone : zones) {
+      for (TimeZone zone : getTestTimeZones()) {
         TimeZone.setDefault(zone);
         @SuppressWarnings("deprecation")
         Date testValue = new Date(2019 - 1900, 7, 24);
@@ -145,16 +153,7 @@ public class JdbcTypeConverterTest {
   public void testConvertTimestamp() throws SQLException {
     TimeZone initialDefault = TimeZone.getDefault();
     try {
-      TimeZone[] zones =
-          new TimeZone[] {
-            TimeZone.getTimeZone("GMT-12:00"),
-            TimeZone.getTimeZone("GMT-9:00"),
-            TimeZone.getTimeZone("GMT-1:00"),
-            TimeZone.getTimeZone("GMT"),
-            TimeZone.getTimeZone("GMT+1:00"),
-            TimeZone.getTimeZone("GMT+12:00")
-          };
-      for (TimeZone zone : zones) {
+      for (TimeZone zone : getTestTimeZones()) {
         TimeZone.setDefault(zone);
         @SuppressWarnings("deprecation")
         Timestamp testValue = new Timestamp(2019 - 1900, 7, 24, 7, 20, 19, 123456789);
@@ -287,5 +286,463 @@ public class JdbcTypeConverterTest {
     } catch (JdbcSqlExceptionImpl e) {
       assertThat(e.getCode()).isEqualTo(code);
     }
+  }
+
+  @SuppressWarnings("deprecation")
+  @Test
+  public void testToGoogleDate() {
+    TimeZone initialDefault = TimeZone.getDefault();
+    try {
+      for (TimeZone zone : getTestTimeZones()) {
+        TimeZone.setDefault(zone);
+        assertThat(toGoogleDate(new Date(2019 - 1900, 7, 24)))
+            .isEqualTo(com.google.cloud.Date.fromYearMonthDay(2019, 8, 24));
+        assertThat(toGoogleDate(new Date(2019 - 1900, 0, 1)))
+            .isEqualTo(com.google.cloud.Date.fromYearMonthDay(2019, 1, 1));
+        assertThat(toGoogleDate(new Date(2019 - 1900, 11, 31)))
+            .isEqualTo(com.google.cloud.Date.fromYearMonthDay(2019, 12, 31));
+        assertThat(toGoogleDate(new Date(2016 - 1900, 1, 29)))
+            .isEqualTo(com.google.cloud.Date.fromYearMonthDay(2016, 2, 29));
+        assertThat(toGoogleDate(new Date(2000 - 1900, 1, 29)))
+            .isEqualTo(com.google.cloud.Date.fromYearMonthDay(2000, 2, 29));
+
+        assertThat(toGoogleDate(new Time(12, 0, 0)))
+            .isEqualTo(com.google.cloud.Date.fromYearMonthDay(1970, 1, 1));
+        assertThat(toGoogleDate(new Time(0, 0, 0)))
+            .isEqualTo(com.google.cloud.Date.fromYearMonthDay(1970, 1, 1));
+        assertThat(toGoogleDate(new Time(23, 59, 59)))
+            .isEqualTo(com.google.cloud.Date.fromYearMonthDay(1970, 1, 1));
+
+        assertThat(toGoogleDate(new Timestamp(2019 - 1900, 7, 24, 8, 51, 21, 987)))
+            .isEqualTo(com.google.cloud.Date.fromYearMonthDay(2019, 8, 24));
+        assertThat(toGoogleDate(new Timestamp(2019 - 1900, 0, 1, 0, 0, 0, 0)))
+            .isEqualTo(com.google.cloud.Date.fromYearMonthDay(2019, 1, 1));
+        assertThat(toGoogleDate(new Timestamp(2019 - 1900, 11, 31, 23, 59, 59, 100)))
+            .isEqualTo(com.google.cloud.Date.fromYearMonthDay(2019, 12, 31));
+        assertThat(toGoogleDate(new Timestamp(2016 - 1900, 1, 29, 23, 59, 59, 0)))
+            .isEqualTo(com.google.cloud.Date.fromYearMonthDay(2016, 2, 29));
+        assertThat(toGoogleDate(new Timestamp(2000 - 1900, 1, 29, 0, 0, 0, 0)))
+            .isEqualTo(com.google.cloud.Date.fromYearMonthDay(2000, 2, 29));
+      }
+    } finally {
+      TimeZone.setDefault(initialDefault);
+    }
+  }
+
+  @Test
+  public void testToGoogleDates() {
+    @SuppressWarnings("deprecation")
+    Date[] dates =
+        new Date[] {
+          new Date(2019 - 1900, 7, 24),
+          new Date(2019 - 1900, 0, 1),
+          new Date(2019 - 1900, 11, 31),
+          new Date(2016 - 1900, 1, 29),
+          new Date(2000 - 1900, 1, 29)
+        };
+    List<com.google.cloud.Date> expected =
+        Arrays.asList(
+            com.google.cloud.Date.fromYearMonthDay(2019, 8, 24),
+            com.google.cloud.Date.fromYearMonthDay(2019, 1, 1),
+            com.google.cloud.Date.fromYearMonthDay(2019, 12, 31),
+            com.google.cloud.Date.fromYearMonthDay(2016, 2, 29),
+            com.google.cloud.Date.fromYearMonthDay(2000, 2, 29));
+    assertThat(toGoogleDates(dates)).isEqualTo(expected);
+  }
+
+  @SuppressWarnings("deprecation")
+  @Test
+  public void testToSqlDate() {
+    TimeZone initialDefault = TimeZone.getDefault();
+    try {
+      for (TimeZone zone : getTestTimeZones()) {
+        TimeZone.setDefault(zone);
+        assertThat(toSqlDate(com.google.cloud.Date.fromYearMonthDay(2019, 8, 24)))
+            .isEqualTo(new Date(2019 - 1900, 7, 24));
+        assertThat(toSqlDate(com.google.cloud.Date.fromYearMonthDay(2019, 1, 1)))
+            .isEqualTo(new Date(2019 - 1900, 0, 1));
+        assertThat(toSqlDate(com.google.cloud.Date.fromYearMonthDay(2019, 12, 31)))
+            .isEqualTo(new Date(2019 - 1900, 11, 31));
+        assertThat(toSqlDate(com.google.cloud.Date.fromYearMonthDay(2016, 2, 29)))
+            .isEqualTo(new Date(2016 - 1900, 1, 29));
+        assertThat(toSqlDate(com.google.cloud.Date.fromYearMonthDay(2000, 2, 29)))
+            .isEqualTo(new Date(2000 - 1900, 1, 29));
+      }
+    } finally {
+      TimeZone.setDefault(initialDefault);
+    }
+  }
+
+  @Test
+  public void testToSqlDateWithCalendar() {
+    for (TimeZone zone : getTestTimeZones()) {
+      Calendar cal = Calendar.getInstance(zone);
+      cal.set(2019, 7, 24, 0, 0, 0);
+      cal.set(Calendar.MILLISECOND, 0);
+      assertThat(
+              toSqlDate(
+                  com.google.cloud.Date.fromYearMonthDay(2019, 8, 24), Calendar.getInstance(zone)))
+          .isEqualTo(new Date(cal.getTimeInMillis()));
+
+      cal.set(2019, 0, 1, 0, 0, 0);
+      cal.set(Calendar.MILLISECOND, 0);
+      assertThat(
+              toSqlDate(
+                  com.google.cloud.Date.fromYearMonthDay(2019, 1, 1), Calendar.getInstance(zone)))
+          .isEqualTo(new Date(cal.getTimeInMillis()));
+
+      cal.set(2019, 11, 31, 0, 0, 0);
+      cal.set(Calendar.MILLISECOND, 0);
+      assertThat(
+              toSqlDate(
+                  com.google.cloud.Date.fromYearMonthDay(2019, 12, 31), Calendar.getInstance(zone)))
+          .isEqualTo(new Date(cal.getTimeInMillis()));
+
+      cal.set(2016, 1, 29, 0, 0, 0);
+      cal.set(Calendar.MILLISECOND, 0);
+      assertThat(
+              toSqlDate(
+                  com.google.cloud.Date.fromYearMonthDay(2016, 2, 29), Calendar.getInstance(zone)))
+          .isEqualTo(new Date(cal.getTimeInMillis()));
+
+      cal.set(2000, 1, 29, 0, 0, 0);
+      cal.set(Calendar.MILLISECOND, 0);
+      assertThat(
+              toSqlDate(
+                  com.google.cloud.Date.fromYearMonthDay(2000, 2, 29), Calendar.getInstance(zone)))
+          .isEqualTo(new Date(cal.getTimeInMillis()));
+    }
+  }
+
+  @Test
+  public void testToSqlDates() {
+    TimeZone initialDefault = TimeZone.getDefault();
+    try {
+      for (TimeZone zone : getTestTimeZones()) {
+        TimeZone.setDefault(zone);
+        List<com.google.cloud.Date> input =
+            Arrays.asList(
+                com.google.cloud.Date.fromYearMonthDay(2019, 8, 24),
+                com.google.cloud.Date.fromYearMonthDay(2019, 1, 1),
+                com.google.cloud.Date.fromYearMonthDay(2019, 12, 31),
+                com.google.cloud.Date.fromYearMonthDay(2016, 2, 29),
+                com.google.cloud.Date.fromYearMonthDay(2000, 2, 29));
+        @SuppressWarnings("deprecation")
+        List<Date> expected =
+            Arrays.asList(
+                new Date(2019 - 1900, 7, 24),
+                new Date(2019 - 1900, 0, 1),
+                new Date(2019 - 1900, 11, 31),
+                new Date(2016 - 1900, 1, 29),
+                new Date(2000 - 1900, 1, 29));
+        assertThat(toSqlDates(input)).isEqualTo(expected);
+      }
+    } finally {
+      TimeZone.setDefault(initialDefault);
+    }
+  }
+
+  @SuppressWarnings("deprecation")
+  @Test
+  public void testToSqlTimestamp() throws SQLException {
+    TimeZone initialDefault = TimeZone.getDefault();
+    try {
+      for (TimeZone zone : getTestTimeZones()) {
+        List<Timestamp> sqlTimestamps = new ArrayList<>();
+        List<com.google.cloud.Timestamp> gTimestamps = new ArrayList<>();
+        TimeZone.setDefault(zone);
+
+        // Create a timestamp in the current default timezone, but do not set the nanosecond value
+        // yet, as it would be lost by the ts.getTime() call on the next line.
+        Timestamp ts = new Timestamp(2019 - 1900, 7, 24, 11 - 2, 23, 1, 0);
+        ts.setTime(ts.getTime() + zone.getRawOffset());
+        ts.setNanos(199800000);
+        com.google.cloud.Timestamp gts =
+            ReadOnlyStalenessUtil.parseRfc3339("2019-08-24T11:23:01.1998+02:00");
+        assertThat(toSqlTimestamp(gts)).isEqualTo(ts);
+        sqlTimestamps.add(ts);
+        gTimestamps.add(gts);
+
+        ts = new Timestamp(2019 - 1900, 11, 31, 23, 59, 59, 0);
+        ts.setTime(ts.getTime() + zone.getRawOffset());
+        ts.setNanos(999999999);
+        gts = ReadOnlyStalenessUtil.parseRfc3339("2019-12-31T23:59:59.999999999Z");
+        assertThat(toSqlTimestamp(gts)).isEqualTo(ts);
+        sqlTimestamps.add(ts);
+        gTimestamps.add(gts);
+
+        ts = new Timestamp(2016 - 1900, 1, 29, 12 + 2, 0, 1, 0);
+        ts.setTime(ts.getTime() + zone.getRawOffset());
+        ts.setNanos(1000);
+        gts = ReadOnlyStalenessUtil.parseRfc3339("2016-02-29T12:00:01.000001000-02:00");
+        assertThat(toSqlTimestamp(gts)).isEqualTo(ts);
+        sqlTimestamps.add(ts);
+        gTimestamps.add(gts);
+
+        ts = new Timestamp(2000 - 1900, 1, 29, 0, 0, 0, 0);
+        ts.setTime(ts.getTime() + zone.getRawOffset());
+        ts.setNanos(100000000);
+        gts = ReadOnlyStalenessUtil.parseRfc3339("2000-02-29T00:00:00.100000000Z");
+        assertThat(toSqlTimestamp(gts)).isEqualTo(ts);
+        sqlTimestamps.add(ts);
+        gTimestamps.add(gts);
+
+        assertThat(toSqlTimestamps(gTimestamps)).isEqualTo(sqlTimestamps);
+      }
+    } finally {
+      TimeZone.setDefault(initialDefault);
+    }
+  }
+
+  @Test
+  public void testGetAsSqlTimestamp() throws SQLException {
+    for (TimeZone zone : getTestTimeZones()) {
+      com.google.cloud.Timestamp gts =
+          ReadOnlyStalenessUtil.parseRfc3339("2019-08-24T11:23:01.1998+03:00");
+      Calendar cal = Calendar.getInstance(TimeZone.getTimeZone("GMT+03:00"));
+      cal.set(2019, 7, 24, 11, 23, 1);
+      cal.set(Calendar.MILLISECOND, 0);
+      Timestamp ts = new Timestamp(cal.getTimeInMillis() + zone.getRawOffset());
+      ts.setNanos(199800000);
+      assertThat(getAsSqlTimestamp(gts, Calendar.getInstance(zone))).isEqualTo(ts);
+
+      gts = ReadOnlyStalenessUtil.parseRfc3339("2019-12-31T23:59:59.999999999-03:00");
+      cal = Calendar.getInstance(TimeZone.getTimeZone("GMT-03:00"));
+      cal.set(2019, 11, 31, 23, 59, 59);
+      cal.set(Calendar.MILLISECOND, 0);
+      ts = new Timestamp(cal.getTimeInMillis() + zone.getRawOffset());
+      ts.setNanos(999999999);
+      assertThat(getAsSqlTimestamp(gts, Calendar.getInstance(zone))).isEqualTo(ts);
+
+      gts = ReadOnlyStalenessUtil.parseRfc3339("2016-02-29T12:00:00Z");
+      cal = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
+      cal.set(2016, 1, 29, 12, 0, 0);
+      cal.set(Calendar.MILLISECOND, 0);
+      ts = new Timestamp(cal.getTimeInMillis() + zone.getRawOffset());
+      assertThat(getAsSqlTimestamp(gts, Calendar.getInstance(zone))).isEqualTo(ts);
+
+      gts = ReadOnlyStalenessUtil.parseRfc3339("2000-02-29T00:00:00.000000000-10:00");
+      cal = Calendar.getInstance(TimeZone.getTimeZone("GMT-10:00"));
+      cal.set(2000, 1, 29, 0, 0, 0);
+      cal.set(Calendar.MILLISECOND, 0);
+      ts = new Timestamp(cal.getTimeInMillis() + zone.getRawOffset());
+      assertThat(getAsSqlTimestamp(gts, Calendar.getInstance(zone))).isEqualTo(ts);
+    }
+  }
+
+  @SuppressWarnings("deprecation")
+  @Test
+  public void testSetTimestampInCalendar() throws SQLException {
+    for (TimeZone zone : getTestTimeZones()) {
+      Calendar cal = Calendar.getInstance(zone);
+      cal.set(2019, 7, 24, 11, 23, 1);
+      cal.set(Calendar.MILLISECOND, 0);
+      Timestamp ts = new Timestamp(2019 - 1900, 7, 24, 11, 23, 1, 0);
+      Timestamp tsInCal = setTimestampInCalendar(ts, Calendar.getInstance(zone));
+      assertThat(tsInCal.getTime())
+          .isEqualTo(cal.getTimeInMillis() - TimeZone.getDefault().getOffset(ts.getTime()));
+
+      cal = Calendar.getInstance(zone);
+      cal.set(2019, 11, 31, 23, 59, 59);
+      cal.set(Calendar.MILLISECOND, 999);
+      ts = new Timestamp(2019 - 1900, 11, 31, 23, 59, 59, 999000000);
+      tsInCal = setTimestampInCalendar(ts, Calendar.getInstance(zone));
+      assertThat(tsInCal.getTime())
+          .isEqualTo(cal.getTimeInMillis() - TimeZone.getDefault().getOffset(ts.getTime()));
+
+      cal = Calendar.getInstance(zone);
+      cal.set(2016, 1, 29, 12, 0, 0);
+      cal.set(Calendar.MILLISECOND, 0);
+      ts = new Timestamp(2016 - 1900, 1, 29, 12, 0, 0, 0);
+      tsInCal = setTimestampInCalendar(ts, Calendar.getInstance(zone));
+      assertThat(tsInCal.getTime())
+          .isEqualTo(cal.getTimeInMillis() - TimeZone.getDefault().getOffset(ts.getTime()));
+
+      cal = Calendar.getInstance(zone);
+      cal.set(2000, 1, 29, 0, 0, 0);
+      cal.set(Calendar.MILLISECOND, 0);
+      ts = new Timestamp(2000 - 1900, 1, 29, 0, 0, 0, 0);
+      tsInCal = setTimestampInCalendar(ts, Calendar.getInstance(zone));
+      assertThat(tsInCal.getTime())
+          .isEqualTo(cal.getTimeInMillis() - TimeZone.getDefault().getOffset(ts.getTime()));
+    }
+  }
+
+  @SuppressWarnings("deprecation")
+  @Test
+  public void testToGoogleTimestamp() {
+    TimeZone initialDefault = TimeZone.getDefault();
+    try {
+      for (TimeZone zone : getTestTimeZones()) {
+        TimeZone.setDefault(zone);
+        assertThat(toGoogleTimestamp(new Date(2019 - 1900, 7, 24)))
+            .isEqualTo(
+                com.google.cloud.Timestamp.of(new Timestamp(2019 - 1900, 7, 24, 0, 0, 0, 0)));
+        assertThat(toGoogleTimestamp(new Date(2019 - 1900, 0, 1)))
+            .isEqualTo(com.google.cloud.Timestamp.of(new Timestamp(2019 - 1900, 0, 1, 0, 0, 0, 0)));
+        assertThat(toGoogleTimestamp(new Date(2019 - 1900, 11, 31)))
+            .isEqualTo(
+                com.google.cloud.Timestamp.of(new Timestamp(2019 - 1900, 11, 31, 0, 0, 0, 0)));
+        assertThat(toGoogleTimestamp(new Date(2016 - 1900, 1, 29)))
+            .isEqualTo(
+                com.google.cloud.Timestamp.of(new Timestamp(2016 - 1900, 1, 29, 0, 0, 0, 0)));
+        assertThat(toGoogleTimestamp(new Date(2000 - 1900, 1, 29)))
+            .isEqualTo(
+                com.google.cloud.Timestamp.of(new Timestamp(2000 - 1900, 1, 29, 0, 0, 0, 0)));
+
+        assertThat(toGoogleTimestamp(new Time(12, 0, 0)))
+            .isEqualTo(
+                com.google.cloud.Timestamp.of(new Timestamp(1970 - 1900, 0, 1, 12, 0, 0, 0)));
+        assertThat(toGoogleTimestamp(new Time(0, 0, 0)))
+            .isEqualTo(com.google.cloud.Timestamp.of(new Timestamp(1970 - 1900, 0, 1, 0, 0, 0, 0)));
+        assertThat(toGoogleTimestamp(new Time(23, 59, 59)))
+            .isEqualTo(
+                com.google.cloud.Timestamp.of(new Timestamp(1970 - 1900, 0, 1, 23, 59, 59, 0)));
+
+        assertThat(toGoogleTimestamp(new Timestamp(2019 - 1900, 7, 24, 8, 51, 21, 987)))
+            .isEqualTo(
+                com.google.cloud.Timestamp.of(new Timestamp(2019 - 1900, 7, 24, 8, 51, 21, 987)));
+        assertThat(toGoogleTimestamp(new Timestamp(2019 - 1900, 0, 1, 0, 0, 0, 0)))
+            .isEqualTo(com.google.cloud.Timestamp.of(new Timestamp(2019 - 1900, 0, 1, 0, 0, 0, 0)));
+        assertThat(toGoogleTimestamp(new Timestamp(2019 - 1900, 11, 31, 23, 59, 59, 100)))
+            .isEqualTo(
+                com.google.cloud.Timestamp.of(new Timestamp(2019 - 1900, 11, 31, 23, 59, 59, 100)));
+        assertThat(toGoogleTimestamp(new Timestamp(2016 - 1900, 1, 29, 23, 59, 59, 0)))
+            .isEqualTo(
+                com.google.cloud.Timestamp.of(new Timestamp(2016 - 1900, 1, 29, 23, 59, 59, 0)));
+        assertThat(toGoogleTimestamp(new Timestamp(2000 - 1900, 1, 29, 0, 0, 0, 0)))
+            .isEqualTo(
+                com.google.cloud.Timestamp.of(new Timestamp(2000 - 1900, 1, 29, 0, 0, 0, 0)));
+      }
+    } finally {
+      TimeZone.setDefault(initialDefault);
+    }
+  }
+
+  @SuppressWarnings("deprecation")
+  @Test
+  public void testToSqlTime() {
+    TimeZone initialDefault = TimeZone.getDefault();
+    try {
+      for (TimeZone zone : getTestTimeZones()) {
+        TimeZone.setDefault(zone);
+
+        com.google.cloud.Timestamp gts =
+            ReadOnlyStalenessUtil.parseRfc3339("2019-08-24T11:23:01.1998+03:00");
+        // Subtract 3 hours to compensate for +03 timezone.
+        Time time = new Time(11 - 3, 23, 1);
+        time.setTime(time.getTime() + zone.getRawOffset());
+        Time convertedTime = toSqlTime(gts);
+        assertThat(convertedTime.getHours()).isEqualTo(time.getHours());
+        assertThat(convertedTime.getMinutes()).isEqualTo(time.getMinutes());
+        assertThat(convertedTime.getSeconds()).isEqualTo(time.getSeconds());
+
+        gts = ReadOnlyStalenessUtil.parseRfc3339("2019-12-31T23:59:59.999999999Z");
+        time = new Time(23, 59, 59);
+        time.setTime(time.getTime() + zone.getRawOffset());
+        convertedTime = toSqlTime(gts);
+        assertThat(convertedTime.getHours()).isEqualTo(time.getHours());
+        assertThat(convertedTime.getMinutes()).isEqualTo(time.getMinutes());
+        assertThat(convertedTime.getSeconds()).isEqualTo(time.getSeconds());
+
+        gts = ReadOnlyStalenessUtil.parseRfc3339("2016-02-29T12:00:01.000001000-02:00");
+        time = new Time(12 + 2, 0, 1);
+        time.setTime(time.getTime() + zone.getRawOffset());
+        convertedTime = toSqlTime(gts);
+        assertThat(convertedTime.getHours()).isEqualTo(time.getHours());
+        assertThat(convertedTime.getMinutes()).isEqualTo(time.getMinutes());
+        assertThat(convertedTime.getSeconds()).isEqualTo(time.getSeconds());
+
+        gts = ReadOnlyStalenessUtil.parseRfc3339("2000-02-29T00:00:00.100000000Z");
+        time = new Time(0, 0, 0);
+        time.setTime(time.getTime() + zone.getRawOffset());
+        convertedTime = toSqlTime(gts);
+        assertThat(convertedTime.getHours()).isEqualTo(time.getHours());
+        assertThat(convertedTime.getMinutes()).isEqualTo(time.getMinutes());
+        assertThat(convertedTime.getSeconds()).isEqualTo(time.getSeconds());
+      }
+    } finally {
+      TimeZone.setDefault(initialDefault);
+    }
+  }
+
+  @SuppressWarnings("deprecation")
+  @Test
+  public void testToSqlTimeWithCalendar() {
+    for (TimeZone zone : getTestTimeZones()) {
+      com.google.cloud.Timestamp gts =
+          ReadOnlyStalenessUtil.parseRfc3339("2019-08-24T11:23:01.1998+03:00");
+      // Compensate for +03
+      Time time = new Time(11 - 3, 23, 1);
+      // Compensate for the test timezone.
+      time.setHours(time.getHours() + ((int) (zone.getRawOffset() / 60_000L / 60)));
+      // Compensate for the timezone of the environment on the parsed date.
+      time.setHours(
+          time.getHours()
+              + ((int)
+                  (TimeZone.getDefault().getOffset(gts.toSqlTimestamp().getTime())
+                      / 60_000L
+                      / 60)));
+      Time convertedTime = toSqlTime(gts, Calendar.getInstance(zone));
+      assertThat(convertedTime.getHours()).isEqualTo(time.getHours());
+      assertThat(convertedTime.getMinutes()).isEqualTo(time.getMinutes());
+      assertThat(convertedTime.getSeconds()).isEqualTo(time.getSeconds());
+
+      gts = ReadOnlyStalenessUtil.parseRfc3339("2019-12-31T23:59:59.999999999Z");
+      time = new Time(23, 59, 59);
+      time.setHours(time.getHours() + ((int) (zone.getRawOffset() / 60_000L / 60)));
+      time.setHours(
+          time.getHours()
+              + ((int)
+                  (TimeZone.getDefault().getOffset(gts.toSqlTimestamp().getTime())
+                      / 60_000L
+                      / 60)));
+      convertedTime = toSqlTime(gts, Calendar.getInstance(zone));
+      assertThat(convertedTime.getHours()).isEqualTo(time.getHours());
+      assertThat(convertedTime.getMinutes()).isEqualTo(time.getMinutes());
+      assertThat(convertedTime.getSeconds()).isEqualTo(time.getSeconds());
+
+      gts = ReadOnlyStalenessUtil.parseRfc3339("2016-02-29T12:00:01.000001000-02:00");
+      time = new Time(12 + 2, 0, 1);
+      time.setHours(time.getHours() + ((int) (zone.getRawOffset() / 60_000L / 60)));
+      time.setHours(
+          time.getHours()
+              + ((int)
+                  (TimeZone.getDefault().getOffset(gts.toSqlTimestamp().getTime())
+                      / 60_000L
+                      / 60)));
+      convertedTime = toSqlTime(gts, Calendar.getInstance(zone));
+      assertThat(convertedTime.getHours()).isEqualTo(time.getHours());
+      assertThat(convertedTime.getMinutes()).isEqualTo(time.getMinutes());
+      assertThat(convertedTime.getSeconds()).isEqualTo(time.getSeconds());
+
+      gts = ReadOnlyStalenessUtil.parseRfc3339("2000-02-29T00:00:00.100000000Z");
+      time = new Time(0, 0, 0);
+      time.setHours(time.getHours() + ((int) (zone.getRawOffset() / 60_000L / 60)));
+      time.setHours(
+          time.getHours()
+              + ((int)
+                  (TimeZone.getDefault().getOffset(gts.toSqlTimestamp().getTime())
+                      / 60_000L
+                      / 60)));
+      convertedTime = toSqlTime(gts, Calendar.getInstance(zone));
+      assertThat(convertedTime.getHours()).isEqualTo(time.getHours());
+      assertThat(convertedTime.getMinutes()).isEqualTo(time.getMinutes());
+      assertThat(convertedTime.getSeconds()).isEqualTo(time.getSeconds());
+    }
+  }
+
+  @Test
+  public void testToGoogleBytes() {
+    assertThat(toGoogleBytes(new byte[][] {"test1".getBytes(UTF8), "test2".getBytes(UTF8)}))
+        .isEqualTo(Arrays.asList(ByteArray.copyFrom("test1"), ByteArray.copyFrom("test2")));
+  }
+
+  @Test
+  public void testToJavaByteArrays() {
+    List<ByteArray> input = Arrays.asList(ByteArray.copyFrom("test3"), ByteArray.copyFrom("test4"));
+    List<byte[]> expected = Arrays.asList("test3".getBytes(UTF8), "test4".getBytes(UTF8));
+    List<byte[]> output = toJavaByteArrays(input);
+    assertThat(Arrays.deepEquals(expected.toArray(), output.toArray())).isTrue();
   }
 }
