@@ -23,7 +23,6 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
 
 import com.google.cloud.ByteArray;
 import com.google.cloud.Date;
@@ -56,7 +55,6 @@ import org.junit.Test;
 import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-import org.mockito.internal.stubbing.answers.Returns;
 
 @RunWith(JUnit4.class)
 public class JdbcResultSetTest {
@@ -117,8 +115,7 @@ public class JdbcResultSetTest {
 
   private JdbcResultSet subject;
 
-  private static ResultSet getMockResultSet() {
-
+  static ResultSet getMockResultSet() {
     return ResultSets.forRows(
         Type.struct(
             StructField.of(STRING_COL_NULL, Type.string()),
@@ -184,190 +181,6 @@ public class JdbcResultSetTest {
                 .set(URL_COL_NOT_NULL)
                 .to(URL_VALUE)
                 .build()));
-  }
-
-  static ResultSet getMockResultSet_old() {
-    ResultSet res = mock(ResultSet.class);
-    when(res.getString(STRING_COL_NULL)).thenReturn(null);
-    when(res.isNull(STRING_COL_NULL)).thenReturn(true);
-    when(res.getString(STRING_COL_NOT_NULL)).thenReturn("FOO");
-    when(res.isNull(STRING_COL_NOT_NULL)).thenReturn(false);
-    when(res.getString(STRING_COLINDEX_NULL - 1)).thenReturn(null);
-    when(res.isNull(STRING_COLINDEX_NULL - 1)).thenReturn(true);
-    when(res.getString(STRING_COLINDEX_NOTNULL - 1)).thenReturn("BAR");
-    when(res.isNull(STRING_COLINDEX_NOTNULL - 1)).thenReturn(false);
-    when(res.getColumnType(STRING_COL_NULL)).thenReturn(Type.string());
-    when(res.getColumnType(STRING_COL_NOT_NULL)).thenReturn(Type.string());
-    when(res.getColumnType(STRING_COLINDEX_NULL - 1)).thenReturn(Type.string());
-    when(res.getColumnType(STRING_COLINDEX_NOTNULL - 1)).thenReturn(Type.string());
-
-    when(res.getString(URL_COL_NULL)).thenReturn(null);
-    when(res.isNull(URL_COL_NULL)).thenReturn(true);
-    when(res.getString(URL_COL_NOT_NULL)).thenReturn("https://github.com/");
-    when(res.isNull(URL_COL_NOT_NULL)).thenReturn(false);
-    when(res.getString(URL_COLINDEX_NULL - 1)).thenReturn(null);
-    when(res.isNull(URL_COLINDEX_NULL - 1)).thenReturn(true);
-    when(res.getString(URL_COLINDEX_NOTNULL - 1)).thenReturn("https://github.com/");
-    when(res.isNull(URL_COLINDEX_NOTNULL - 1)).thenReturn(false);
-    when(res.getColumnType(URL_COL_NULL)).thenReturn(Type.string());
-    when(res.getColumnType(URL_COL_NOT_NULL)).thenReturn(Type.string());
-    when(res.getColumnType(URL_COLINDEX_NULL - 1)).thenReturn(Type.string());
-    when(res.getColumnType(URL_COLINDEX_NOTNULL - 1)).thenReturn(Type.string());
-
-    when(res.getBoolean(BOOLEAN_COL_NULL)).thenReturn(false);
-    when(res.isNull(BOOLEAN_COL_NULL)).thenReturn(true);
-    when(res.getBoolean(BOOLEAN_COL_NOT_NULL)).thenReturn(true);
-    when(res.isNull(BOOLEAN_COL_NOT_NULL)).thenReturn(false);
-    when(res.getBoolean(BOOLEAN_COLINDEX_NULL - 1)).thenReturn(false);
-    when(res.isNull(BOOLEAN_COLINDEX_NULL - 1)).thenReturn(true);
-    when(res.getBoolean(BOOLEAN_COLINDEX_NOTNULL - 1)).thenReturn(false);
-    when(res.isNull(BOOLEAN_COLINDEX_NOTNULL - 1)).thenReturn(false);
-    when(res.getColumnType(BOOLEAN_COL_NULL)).thenReturn(Type.bool());
-    when(res.getColumnType(BOOLEAN_COL_NOT_NULL)).thenReturn(Type.bool());
-    when(res.getColumnType(BOOLEAN_COLINDEX_NULL - 1)).thenReturn(Type.bool());
-    when(res.getColumnType(BOOLEAN_COLINDEX_NOTNULL - 1)).thenReturn(Type.bool());
-
-    when(res.getDouble(DOUBLE_COL_NULL)).thenReturn(0d);
-    when(res.isNull(DOUBLE_COL_NULL)).thenReturn(true);
-    when(res.getDouble(DOUBLE_COL_NOT_NULL)).thenReturn(1.123456789d);
-    when(res.isNull(DOUBLE_COL_NOT_NULL)).thenReturn(false);
-    when(res.getDouble(DOUBLE_COLINDEX_NULL - 1)).thenReturn(0d);
-    when(res.isNull(DOUBLE_COLINDEX_NULL - 1)).thenReturn(true);
-    when(res.getDouble(DOUBLE_COLINDEX_NOTNULL - 1)).thenReturn(2.123456789d);
-    when(res.isNull(DOUBLE_COLINDEX_NOTNULL - 1)).thenReturn(false);
-    when(res.getColumnType(DOUBLE_COL_NULL)).thenReturn(Type.float64());
-    when(res.getColumnType(DOUBLE_COL_NOT_NULL)).thenReturn(Type.float64());
-    when(res.getColumnType(DOUBLE_COLINDEX_NULL - 1)).thenReturn(Type.float64());
-    when(res.getColumnType(DOUBLE_COLINDEX_NOTNULL - 1)).thenReturn(Type.float64());
-
-    when(res.getString(BYTES_COL_NULL)).thenReturn(null);
-    when(res.isNull(BYTES_COL_NULL)).thenReturn(true);
-    when(res.getBytes(BYTES_COL_NOT_NULL)).thenReturn(ByteArray.copyFrom("FOO"));
-    when(res.isNull(BYTES_COL_NOT_NULL)).thenReturn(false);
-    when(res.getBytes(BYTES_COLINDEX_NULL - 1)).thenReturn(null);
-    when(res.isNull(BYTES_COLINDEX_NULL - 1)).thenReturn(true);
-    when(res.getBytes(BYTES_COLINDEX_NOTNULL - 1)).thenReturn(ByteArray.copyFrom("BAR"));
-    when(res.isNull(BYTES_COLINDEX_NOTNULL - 1)).thenReturn(false);
-    when(res.getColumnType(BYTES_COL_NULL)).thenReturn(Type.bytes());
-    when(res.getColumnType(BYTES_COL_NOT_NULL)).thenReturn(Type.bytes());
-    when(res.getColumnType(BYTES_COLINDEX_NULL - 1)).thenReturn(Type.bytes());
-    when(res.getColumnType(BYTES_COLINDEX_NOTNULL - 1)).thenReturn(Type.bytes());
-
-    when(res.getLong(LONG_COL_NULL)).thenReturn(0l);
-    when(res.isNull(LONG_COL_NULL)).thenReturn(true);
-    when(res.getLong(LONG_COL_NOT_NULL)).thenReturn(1l);
-    when(res.isNull(LONG_COL_NOT_NULL)).thenReturn(false);
-    when(res.getLong(LONG_COLINDEX_NULL - 1)).thenReturn(0l);
-    when(res.isNull(LONG_COLINDEX_NULL - 1)).thenReturn(true);
-    when(res.getLong(LONG_COLINDEX_NOTNULL - 1)).thenReturn(2l);
-    when(res.isNull(LONG_COLINDEX_NOTNULL - 1)).thenReturn(false);
-    when(res.getColumnType(LONG_COL_NULL)).thenReturn(Type.int64());
-    when(res.getColumnType(LONG_COL_NOT_NULL)).thenReturn(Type.int64());
-    when(res.getColumnType(LONG_COLINDEX_NULL - 1)).thenReturn(Type.int64());
-    when(res.getColumnType(LONG_COLINDEX_NOTNULL - 1)).thenReturn(Type.int64());
-
-    when(res.getDate(DATE_COL_NULL)).thenAnswer(new Returns(null));
-    when(res.isNull(DATE_COL_NULL)).thenAnswer(new Returns(true));
-    when(res.getDate(DATE_COL_NOT_NULL))
-        .thenAnswer(new Returns(Date.fromYearMonthDay(2017, 9, 10)));
-    when(res.isNull(DATE_COL_NOT_NULL)).thenAnswer(new Returns(false));
-    when(res.getDate(DATE_COLINDEX_NULL - 1)).thenAnswer(new Returns(null));
-    when(res.isNull(DATE_COLINDEX_NULL - 1)).thenAnswer(new Returns(true));
-    when(res.getDate(DATE_COLINDEX_NOTNULL - 1))
-        .thenAnswer(new Returns(Date.fromYearMonthDay(2017, 9, 10)));
-    when(res.isNull(DATE_COLINDEX_NOTNULL - 1)).thenAnswer(new Returns(false));
-    when(res.getColumnType(DATE_COL_NULL)).thenAnswer(new Returns(Type.date()));
-    when(res.getColumnType(DATE_COL_NOT_NULL)).thenAnswer(new Returns(Type.date()));
-    when(res.getColumnType(DATE_COLINDEX_NULL - 1)).thenAnswer(new Returns(Type.date()));
-    when(res.getColumnType(DATE_COLINDEX_NOTNULL - 1)).thenAnswer(new Returns(Type.date()));
-
-    Calendar cal1 = Calendar.getInstance(TimeZone.getTimeZone("GMT"));
-    cal1.clear();
-    cal1.set(2017, 8, 10, 8, 15, 59);
-    Calendar cal2 = Calendar.getInstance(TimeZone.getTimeZone("GMT"));
-    cal2.clear();
-    cal2.set(2017, 8, 11, 8, 15, 59);
-    when(res.getTimestamp(TIMESTAMP_COL_NULL)).thenReturn(null);
-    when(res.isNull(TIMESTAMP_COL_NULL)).thenReturn(true);
-    when(res.getTimestamp(TIMESTAMP_COL_NOT_NULL)).thenReturn(Timestamp.of(cal1.getTime()));
-    when(res.isNull(TIMESTAMP_COL_NOT_NULL)).thenReturn(false);
-    when(res.getTimestamp(TIMESTAMP_COLINDEX_NULL - 1)).thenReturn(null);
-    when(res.isNull(TIMESTAMP_COLINDEX_NULL - 1)).thenReturn(true);
-    when(res.getTimestamp(TIMESTAMP_COLINDEX_NOTNULL - 1)).thenReturn(Timestamp.of(cal2.getTime()));
-    when(res.isNull(TIMESTAMP_COLINDEX_NOTNULL - 1)).thenReturn(false);
-    when(res.getColumnType(TIMESTAMP_COL_NULL)).thenReturn(Type.timestamp());
-    when(res.getColumnType(TIMESTAMP_COL_NOT_NULL)).thenReturn(Type.timestamp());
-    when(res.getColumnType(TIMESTAMP_COLINDEX_NULL - 1)).thenReturn(Type.timestamp());
-    when(res.getColumnType(TIMESTAMP_COLINDEX_NOTNULL - 1)).thenReturn(Type.timestamp());
-
-    Calendar cal3 = Calendar.getInstance(TimeZone.getTimeZone("GMT"));
-    cal3.clear();
-    cal3.set(1970, 0, 1, 14, 6, 15);
-    Calendar cal4 = Calendar.getInstance(TimeZone.getTimeZone("GMT"));
-    cal4.clear();
-    cal4.set(1970, 0, 1, 14, 6, 15);
-    when(res.getTimestamp(TIME_COL_NULL)).thenReturn(null);
-    when(res.isNull(TIME_COL_NULL)).thenReturn(true);
-    when(res.getTimestamp(TIME_COL_NOT_NULL)).thenReturn(Timestamp.of(cal3.getTime()));
-    when(res.isNull(TIME_COL_NOT_NULL)).thenReturn(false);
-    when(res.getTimestamp(TIME_COLINDEX_NULL - 1)).thenReturn(null);
-    when(res.isNull(TIME_COLINDEX_NULL - 1)).thenReturn(true);
-    when(res.getTimestamp(TIME_COLINDEX_NOTNULL - 1)).thenReturn(Timestamp.of(cal4.getTime()));
-    when(res.isNull(TIME_COLINDEX_NOTNULL - 1)).thenReturn(false);
-    when(res.getColumnType(TIME_COL_NULL)).thenReturn(Type.timestamp());
-    when(res.getColumnType(TIME_COL_NOT_NULL)).thenReturn(Type.timestamp());
-    when(res.getColumnType(TIME_COLINDEX_NULL - 1)).thenReturn(Type.timestamp());
-    when(res.getColumnType(TIME_COLINDEX_NOTNULL - 1)).thenReturn(Type.timestamp());
-
-    when(res.getLongList(ARRAY_COL_NULL)).thenAnswer(new Returns(null));
-    when(res.isNull(ARRAY_COL_NULL)).thenAnswer(new Returns(true));
-    when(res.getLongList(ARRAY_COL_NOT_NULL)).thenAnswer(new Returns(Arrays.asList(1L, 2L, 3L)));
-    when(res.isNull(ARRAY_COL_NOT_NULL)).thenAnswer(new Returns(false));
-    when(res.getLongList(ARRAY_COLINDEX_NULL - 1)).thenAnswer(new Returns(null));
-    when(res.isNull(ARRAY_COLINDEX_NULL - 1)).thenAnswer(new Returns(true));
-    when(res.getLongList(ARRAY_COLINDEX_NOTNULL - 1))
-        .thenAnswer(new Returns(Arrays.asList(1L, 2L, 3L)));
-    when(res.isNull(ARRAY_COLINDEX_NOTNULL - 1)).thenAnswer(new Returns(false));
-    when(res.getColumnType(ARRAY_COL_NULL)).thenAnswer(new Returns(Type.array(Type.int64())));
-    when(res.getColumnType(ARRAY_COL_NOT_NULL)).thenAnswer(new Returns(Type.array(Type.int64())));
-    when(res.getColumnType(ARRAY_COLINDEX_NULL - 1))
-        .thenAnswer(new Returns(Type.array(Type.int64())));
-    when(res.getColumnType(ARRAY_COLINDEX_NOTNULL - 1))
-        .thenAnswer(new Returns(Type.array(Type.int64())));
-
-    when(res.getColumnIndex(STRING_COL_NOT_NULL)).thenAnswer(new Returns(1));
-    when(res.getColumnIndex(UNKNOWN_COLUMN)).thenThrow(new IllegalArgumentException());
-    when(res.getColumnIndex(DATE_COL_NOT_NULL)).thenAnswer(new Returns(DATE_COLINDEX_NOTNULL - 1));
-    when(res.getColumnIndex(ARRAY_COL_NOT_NULL))
-        .thenAnswer(new Returns(ARRAY_COLINDEX_NOTNULL - 1));
-    when(res.getColumnIndex(ARRAY_COL_NULL)).thenAnswer(new Returns(ARRAY_COLINDEX_NULL - 1));
-
-    when(res.getType())
-        .thenReturn(
-            Type.struct(
-                StructField.of(STRING_COL_NULL, Type.string()),
-                StructField.of(STRING_COL_NOT_NULL, Type.string()),
-                StructField.of(BOOLEAN_COL_NULL, Type.bool()),
-                StructField.of(BOOLEAN_COL_NOT_NULL, Type.bool()),
-                StructField.of(DOUBLE_COL_NULL, Type.float64()),
-                StructField.of(DOUBLE_COL_NOT_NULL, Type.float64()),
-                StructField.of(BYTES_COL_NULL, Type.bytes()),
-                StructField.of(BYTES_COL_NOT_NULL, Type.bytes()),
-                StructField.of(LONG_COL_NULL, Type.int64()),
-                StructField.of(LONG_COL_NOT_NULL, Type.int64()),
-                StructField.of(DATE_COL_NULL, Type.date()),
-                StructField.of(DATE_COL_NOT_NULL, Type.date()),
-                StructField.of(TIMESTAMP_COL_NULL, Type.timestamp()),
-                StructField.of(TIMESTAMP_COL_NOT_NULL, Type.timestamp()),
-                StructField.of(TIME_COL_NULL, Type.timestamp()),
-                StructField.of(TIME_COL_NOT_NULL, Type.timestamp()),
-                StructField.of(URL_COL_NULL, Type.string()),
-                StructField.of(URL_COL_NOT_NULL, Type.string())));
-
-    // Next behaviour.
-    when(res.next()).thenReturn(true, true, true, true, false);
-
-    return res;
   }
 
   public JdbcResultSetTest() throws SQLException {
