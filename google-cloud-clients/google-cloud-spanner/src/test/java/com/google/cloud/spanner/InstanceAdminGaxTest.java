@@ -229,9 +229,9 @@ public class InstanceAdminGaxTest {
     final RetrySettings retrySettings =
         RetrySettings.newBuilder()
             .setInitialRpcTimeout(Duration.ofMillis(200L))
-            .setMaxRpcTimeout(Duration.ofMillis(200L))
+            .setMaxRpcTimeout(Duration.ofMillis(1000L))
             .setMaxAttempts(3)
-            .setTotalTimeout(Duration.ofMillis(1500L))
+            .setTotalTimeout(Duration.ofMillis(5000L))
             .build();
     SpannerOptions.Builder builder =
         SpannerOptions.newBuilder()
