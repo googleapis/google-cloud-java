@@ -115,7 +115,7 @@ class JdbcDatabaseMetaData extends AbstractJdbcWrapper implements DatabaseMetaDa
 
   @Override
   public boolean nullsAreSortedAtStart() throws SQLException {
-    return true;
+    return false;
   }
 
   @Override
