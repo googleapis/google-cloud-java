@@ -21,17 +21,29 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.hamcrest.CoreMatchers.nullValue;
 import static org.junit.Assert.assertThat;
+import static org.junit.Assert.fail;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
+import com.google.cloud.spanner.ErrorCode;
+import com.google.cloud.spanner.ResultSets;
+import com.google.cloud.spanner.SpannerExceptionFactory;
+import com.google.cloud.spanner.Statement;
+import com.google.cloud.spanner.Struct;
+import com.google.cloud.spanner.Type;
+import com.google.cloud.spanner.Type.StructField;
+import com.google.cloud.spanner.jdbc.JdbcSqlExceptionFactory.JdbcSqlExceptionImpl;
 import com.google.rpc.Code;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.SQLFeatureNotSupportedException;
 import java.sql.SQLWarning;
 import java.sql.Savepoint;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Map;
 import java.util.Properties;
@@ -45,6 +57,10 @@ import org.junit.runners.JUnit4;
 @RunWith(JUnit4.class)
 public class JdbcConnectionTest {
   @Rule public final ExpectedException exception = ExpectedException.none();
+  private static final com.google.cloud.spanner.ResultSet SELECT1_RESULTSET =
+      ResultSets.forRows(
+          Type.struct(StructField.of("", Type.int64())),
+          Arrays.asList(Struct.newBuilder().set("").to(1L).build()));
 
   private JdbcConnection createConnection(ConnectionOptions options) {
     com.google.cloud.spanner.jdbc.Connection spannerConnection =
@@ -411,6 +427,243 @@ public class JdbcConnectionTest {
       assertThat(
           connection.getWarnings().getMessage(),
           is(equalTo(AbstractJdbcConnection.CLIENT_INFO_NOT_SUPPORTED)));
+    }
+  }
+
+  @Test
+  public void testIsValid() throws SQLException {
+    // Setup.
+    ConnectionOptions options = mock(ConnectionOptions.class);
+    com.google.cloud.spanner.jdbc.Connection spannerConnection =
+        mock(com.google.cloud.spanner.jdbc.Connection.class);
+    when(options.getConnection()).thenReturn(spannerConnection);
+    Statement statement = Statement.of(JdbcConnection.IS_VALID_QUERY);
+
+    // Verify that an opened connection that returns a result set is valid.
+    try (JdbcConnection connection = new JdbcConnection("url", options)) {
+      when(spannerConnection.executeQuery(statement)).thenReturn(SELECT1_RESULTSET);
+      assertThat(connection.isValid(1), is(true));
+      try {
+        // Invalid timeout value.
+        connection.isValid(-1);
+        fail("missing expected exception");
+      } catch (JdbcSqlExceptionImpl e) {
+        assertThat(e.getCode(), is(equalTo(Code.INVALID_ARGUMENT)));
+      }
+
+      // Now let the query return an error. isValid should now return false.
+      when(spannerConnection.executeQuery(statement))
+          .thenThrow(
+              SpannerExceptionFactory.newSpannerException(
+                  ErrorCode.ABORTED, "the current transaction has been aborted"));
+      assertThat(connection.isValid(1), is(false));
+    }
+  }
+
+  @Test
+  public void testIsValidOnClosedConnection() throws SQLException {
+    Connection connection = createConnection(mock(ConnectionOptions.class));
+    connection.close();
+    assertThat(connection.isValid(1), is(false));
+  }
+
+  @Test
+  public void testCreateStatement() throws SQLException {
+    try (JdbcConnection connection = createConnection(mock(ConnectionOptions.class))) {
+      for (int resultSetType :
+          new int[] {
+            ResultSet.TYPE_FORWARD_ONLY,
+            ResultSet.TYPE_SCROLL_INSENSITIVE,
+            ResultSet.TYPE_SCROLL_SENSITIVE
+          }) {
+        for (int resultSetConcurrency :
+            new int[] {ResultSet.CONCUR_READ_ONLY, ResultSet.CONCUR_UPDATABLE}) {
+          if (resultSetType == ResultSet.TYPE_FORWARD_ONLY // Only FORWARD_ONLY is supported
+              && resultSetConcurrency == ResultSet.CONCUR_READ_ONLY) // Only READ_ONLY is supported
+          {
+            java.sql.Statement statement =
+                connection.createStatement(resultSetType, resultSetConcurrency);
+            assertThat(statement.getResultSetType(), is(equalTo(resultSetType)));
+            assertThat(statement.getResultSetConcurrency(), is(equalTo(resultSetConcurrency)));
+          } else {
+            assertCreateStatementFails(connection, resultSetType, resultSetConcurrency);
+          }
+          for (int resultSetHoldability :
+              new int[] {ResultSet.CLOSE_CURSORS_AT_COMMIT, ResultSet.HOLD_CURSORS_OVER_COMMIT}) {
+            if (resultSetType == ResultSet.TYPE_FORWARD_ONLY // Only FORWARD_ONLY is supported
+                && resultSetConcurrency == ResultSet.CONCUR_READ_ONLY // Only READ_ONLY is supported
+                && resultSetHoldability
+                    == ResultSet
+                        .CLOSE_CURSORS_AT_COMMIT) // Only CLOSE_CURSORS_AT_COMMIT is supported
+            {
+              java.sql.Statement statement =
+                  connection.createStatement(
+                      resultSetType, resultSetConcurrency, resultSetHoldability);
+              assertThat(statement.getResultSetType(), is(equalTo(resultSetType)));
+              assertThat(statement.getResultSetConcurrency(), is(equalTo(resultSetConcurrency)));
+              assertThat(statement.getResultSetHoldability(), is(equalTo(resultSetHoldability)));
+            } else {
+              assertCreateStatementFails(
+                  connection, resultSetType, resultSetConcurrency, resultSetHoldability);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  private void assertCreateStatementFails(
+      JdbcConnection connection,
+      int resultSetType,
+      int resultSetConcurrency,
+      int resultSetHoldability)
+      throws SQLException {
+    try {
+      connection.createStatement(resultSetType, resultSetConcurrency, resultSetHoldability);
+      fail(
+          String.format(
+              "missing expected exception for %d %d %d",
+              resultSetType, resultSetConcurrency, resultSetHoldability));
+    } catch (SQLFeatureNotSupportedException e) {
+      // ignore, this is the expected exception.
+    }
+  }
+
+  private void assertCreateStatementFails(
+      JdbcConnection connection, int resultSetType, int resultSetConcurrency) throws SQLException {
+    try {
+      connection.createStatement(resultSetType, resultSetConcurrency);
+      fail(
+          String.format(
+              "missing expected exception for %d %d", resultSetType, resultSetConcurrency));
+    } catch (SQLFeatureNotSupportedException e) {
+      // ignore, this is the expected exception.
+    }
+  }
+
+  @Test
+  public void testPrepareStatement() throws SQLException {
+    try (JdbcConnection connection = createConnection(mock(ConnectionOptions.class))) {
+      for (int resultSetType :
+          new int[] {
+            ResultSet.TYPE_FORWARD_ONLY,
+            ResultSet.TYPE_SCROLL_INSENSITIVE,
+            ResultSet.TYPE_SCROLL_SENSITIVE
+          }) {
+        for (int resultSetConcurrency :
+            new int[] {ResultSet.CONCUR_READ_ONLY, ResultSet.CONCUR_UPDATABLE}) {
+          if (resultSetType == ResultSet.TYPE_FORWARD_ONLY // Only FORWARD_ONLY is supported
+              && resultSetConcurrency == ResultSet.CONCUR_READ_ONLY) // Only READ_ONLY is supported
+          {
+            PreparedStatement ps =
+                connection.prepareStatement("SELECT 1", resultSetType, resultSetConcurrency);
+            assertThat(ps.getResultSetType(), is(equalTo(resultSetType)));
+            assertThat(ps.getResultSetConcurrency(), is(equalTo(resultSetConcurrency)));
+          } else {
+            assertPrepareStatementFails(connection, resultSetType, resultSetConcurrency);
+          }
+          for (int resultSetHoldability :
+              new int[] {ResultSet.CLOSE_CURSORS_AT_COMMIT, ResultSet.HOLD_CURSORS_OVER_COMMIT}) {
+            if (resultSetType == ResultSet.TYPE_FORWARD_ONLY // Only FORWARD_ONLY is supported
+                && resultSetConcurrency == ResultSet.CONCUR_READ_ONLY // Only READ_ONLY is supported
+                && resultSetHoldability
+                    == ResultSet
+                        .CLOSE_CURSORS_AT_COMMIT) // Only CLOSE_CURSORS_AT_COMMIT is supported
+            {
+              PreparedStatement ps =
+                  connection.prepareStatement(
+                      "SELECT 1", resultSetType, resultSetConcurrency, resultSetHoldability);
+              assertThat(ps.getResultSetType(), is(equalTo(resultSetType)));
+              assertThat(ps.getResultSetConcurrency(), is(equalTo(resultSetConcurrency)));
+              assertThat(ps.getResultSetHoldability(), is(equalTo(resultSetHoldability)));
+            } else {
+              assertPrepareStatementFails(
+                  connection, resultSetType, resultSetConcurrency, resultSetHoldability);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  private void assertPrepareStatementFails(
+      JdbcConnection connection,
+      int resultSetType,
+      int resultSetConcurrency,
+      int resultSetHoldability)
+      throws SQLException {
+    try {
+      connection.prepareStatement(
+          "SELECT 1", resultSetType, resultSetConcurrency, resultSetHoldability);
+      fail(
+          String.format(
+              "missing expected exception for %d %d %d",
+              resultSetType, resultSetConcurrency, resultSetHoldability));
+    } catch (SQLFeatureNotSupportedException e) {
+      // ignore, this is the expected exception.
+    }
+  }
+
+  private void assertPrepareStatementFails(
+      JdbcConnection connection, int resultSetType, int resultSetConcurrency) throws SQLException {
+    try {
+      connection.prepareStatement("SELECT 1", resultSetType, resultSetConcurrency);
+      fail(
+          String.format(
+              "missing expected exception for %d %d", resultSetType, resultSetConcurrency));
+    } catch (SQLFeatureNotSupportedException e) {
+      // ignore, this is the expected exception.
+    }
+  }
+
+  @Test
+  public void testPrepareStatementWithAutoGeneratedKeys() throws SQLException {
+    String sql = "INSERT INTO FOO (COL1) VALUES (?)";
+    try (JdbcConnection connection = createConnection(mock(ConnectionOptions.class))) {
+      PreparedStatement statement =
+          connection.prepareStatement(sql, java.sql.Statement.NO_GENERATED_KEYS);
+      ResultSet rs = statement.getGeneratedKeys();
+      assertThat(rs.next(), is(false));
+      try {
+        statement = connection.prepareStatement(sql, java.sql.Statement.RETURN_GENERATED_KEYS);
+        fail("missing expected SQLFeatureNotSupportedException");
+      } catch (SQLFeatureNotSupportedException e) {
+        // ignore, this is the expected exception.
+      }
+    }
+  }
+
+  @Test
+  public void testCatalog() throws SQLException {
+    ConnectionOptions options = mock(ConnectionOptions.class);
+    when(options.getDatabaseName()).thenReturn("test");
+    try (JdbcConnection connection = createConnection(options)) {
+      assertThat(connection.getCatalog(), is(equalTo("test")));
+      // This should be allowed.
+      connection.setCatalog("");
+      try {
+        // This should cause an exception.
+        connection.setCatalog("other");
+        fail("missing expected exception");
+      } catch (JdbcSqlExceptionImpl e) {
+        assertThat(e.getCode(), is(equalTo(Code.INVALID_ARGUMENT)));
+      }
+    }
+  }
+
+  @Test
+  public void testSchema() throws SQLException {
+    try (JdbcConnection connection = createConnection(mock(ConnectionOptions.class))) {
+      assertThat(connection.getSchema(), is(equalTo("")));
+      // This should be allowed.
+      connection.setSchema("");
+      try {
+        // This should cause an exception.
+        connection.setSchema("other");
+        fail("missing expected exception");
+      } catch (JdbcSqlExceptionImpl e) {
+        assertThat(e.getCode(), is(equalTo(Code.INVALID_ARGUMENT)));
+      }
     }
   }
 }
