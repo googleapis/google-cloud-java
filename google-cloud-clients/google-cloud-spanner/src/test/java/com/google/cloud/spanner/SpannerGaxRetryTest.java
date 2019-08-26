@@ -19,9 +19,9 @@ package com.google.cloud.spanner;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
+import static org.junit.Assert.fail;
 
 import com.google.api.core.ApiFunction;
-import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.testing.LocalChannelProvider;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.UnaryCallSettings;
@@ -30,8 +30,6 @@ import com.google.cloud.NoCredentials;
 import com.google.cloud.spanner.MockSpannerServiceImpl.SimulatedExecutionTime;
 import com.google.cloud.spanner.MockSpannerServiceImpl.StatementResult;
 import com.google.cloud.spanner.TransactionRunner.TransactionCallable;
-import com.google.cloud.spanner.v1.SpannerClient;
-import com.google.cloud.spanner.v1.SpannerSettings;
 import com.google.protobuf.ListValue;
 import com.google.spanner.v1.ResultSetMetadata;
 import com.google.spanner.v1.StructType;
@@ -41,7 +39,6 @@ import io.grpc.Server;
 import io.grpc.StatusRuntimeException;
 import io.grpc.inprocess.InProcessServerBuilder;
 import java.io.IOException;
-import java.util.Arrays;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.junit.After;
@@ -57,40 +54,6 @@ import org.threeten.bp.Duration;
 
 @RunWith(JUnit4.class)
 public class SpannerGaxRetryTest {
-  private static final ResultSetMetadata READ_METADATA =
-      ResultSetMetadata.newBuilder()
-          .setRowType(
-              StructType.newBuilder()
-                  .addFields(
-                      Field.newBuilder()
-                          .setName("BAR")
-                          .setType(
-                              com.google.spanner.v1.Type.newBuilder()
-                                  .setCode(TypeCode.INT64)
-                                  .build())
-                          .build())
-                  .build())
-          .build();
-  private static final com.google.spanner.v1.ResultSet READ_RESULTSET =
-      com.google.spanner.v1.ResultSet.newBuilder()
-          .addRows(
-              ListValue.newBuilder()
-                  .addValues(com.google.protobuf.Value.newBuilder().setStringValue("1").build())
-                  .build())
-          .addRows(
-              ListValue.newBuilder()
-                  .addValues(com.google.protobuf.Value.newBuilder().setStringValue("2").build())
-                  .build())
-          .setMetadata(READ_METADATA)
-          .build();
-  private static final com.google.spanner.v1.ResultSet READ_ROW_RESULTSET =
-      com.google.spanner.v1.ResultSet.newBuilder()
-          .addRows(
-              ListValue.newBuilder()
-                  .addValues(com.google.protobuf.Value.newBuilder().setStringValue("1").build())
-                  .build())
-          .setMetadata(READ_METADATA)
-          .build();
   private static final Statement SELECT1AND2 =
       Statement.of("SELECT 1 AS COL1 UNION ALL SELECT 2 AS COL1");
   private static final ResultSetMetadata SELECT1AND2_METADATA =
@@ -122,8 +85,8 @@ public class SpannerGaxRetryTest {
   private static final Statement UPDATE_STATEMENT =
       Statement.of("UPDATE FOO SET BAR=1 WHERE BAZ=2");
   private static final long UPDATE_COUNT = 1L;
-  private static final SimulatedExecutionTime ONE_SECOND =
-      SimulatedExecutionTime.ofMinimumAndRandomTime(1000, 0);
+  private static final SimulatedExecutionTime HUNDRED_MS =
+      SimulatedExecutionTime.ofMinimumAndRandomTime(100, 0);
   private static final StatusRuntimeException UNAVAILABLE =
       io.grpc.Status.UNAVAILABLE.withDescription("Retryable test exception.").asRuntimeException();
   private static final StatusRuntimeException FAILED_PRECONDITION =
@@ -133,9 +96,8 @@ public class SpannerGaxRetryTest {
   private static MockSpannerServiceImpl mockSpanner;
   private static Server server;
   private static LocalChannelProvider channelProvider;
-  private static SpannerClient spannerClient;
-  private static Spanner spanner;
-  private static DatabaseClient client;
+  private Spanner spanner;
+  private DatabaseClient client;
 
   @Rule public ExpectedException expectedException = ExpectedException.none();
 
@@ -143,11 +105,6 @@ public class SpannerGaxRetryTest {
   public static void startStaticServer() throws IOException {
     mockSpanner = new MockSpannerServiceImpl();
     mockSpanner.setAbortProbability(0.0D); // We don't want any unpredictable aborted transactions.
-    mockSpanner.putStatementResult(
-        StatementResult.read("FOO", KeySet.all(), Arrays.asList("BAR"), READ_RESULTSET));
-    mockSpanner.putStatementResult(
-        StatementResult.read(
-            "FOO", KeySet.singleKey(Key.of()), Arrays.asList("BAR"), READ_ROW_RESULTSET));
     mockSpanner.putStatementResult(StatementResult.query(SELECT1AND2, SELECT1_RESULTSET));
     mockSpanner.putStatementResult(StatementResult.update(UPDATE_STATEMENT, UPDATE_COUNT));
 
@@ -160,18 +117,10 @@ public class SpannerGaxRetryTest {
             .build()
             .start();
     channelProvider = LocalChannelProvider.create(uniqueName);
-
-    SpannerSettings settings =
-        SpannerSettings.newBuilder()
-            .setTransportChannelProvider(channelProvider)
-            .setCredentialsProvider(NoCredentialsProvider.create())
-            .build();
-    spannerClient = SpannerClient.create(settings);
   }
 
   @AfterClass
   public static void stopServer() {
-    spannerClient.close();
     server.shutdown();
   }
 
@@ -181,10 +130,12 @@ public class SpannerGaxRetryTest {
     mockSpanner.removeAllExecutionTimes();
     final RetrySettings retrySettings =
         RetrySettings.newBuilder()
-            .setInitialRpcTimeout(Duration.ofMillis(500L))
-            .setMaxRpcTimeout(Duration.ofMillis(500L))
+            .setInitialRetryDelay(Duration.ofMillis(10L))
+            .setMaxRetryDelay(Duration.ofMillis(10L))
+            .setInitialRpcTimeout(Duration.ofMillis(75L))
+            .setMaxRpcTimeout(Duration.ofMillis(75L))
             .setMaxAttempts(3)
-            .setTotalTimeout(Duration.ofMillis(1500L))
+            .setTotalTimeout(Duration.ofMillis(90L))
             .build();
     RetrySettings commitRetrySettings =
         RetrySettings.newBuilder()
@@ -214,6 +165,9 @@ public class SpannerGaxRetryTest {
         .executeStreamingSqlSettings()
         .setRetrySettings(retrySettings);
     builder.getSpannerStubSettingsBuilder().streamingReadSettings().setRetrySettings(retrySettings);
+    // Make sure the session pool is empty by default.
+    builder.setSessionPoolOption(
+        SessionPoolOptions.newBuilder().setMinSessions(0).setWriteSessionsFraction(0.0f).build());
     spanner = builder.build().getService();
     client = spanner.getDatabaseClient(DatabaseId.of("[PROJECT]", "[INSTANCE]", "[DATABASE]"));
   }
@@ -249,17 +203,12 @@ public class SpannerGaxRetryTest {
         }
       }
     }
-    // Wait a little to allow the session pool to prepare read/write sessions.
-    try {
-      Thread.sleep(500L);
-    } catch (InterruptedException e) {
-    }
   }
 
   @Test
   public void singleUseTimeout() {
     expectedException.expect(SpannerMatchers.isSpannerException(ErrorCode.DEADLINE_EXCEEDED));
-    mockSpanner.setCreateSessionExecutionTime(ONE_SECOND);
+    mockSpanner.setCreateSessionExecutionTime(HUNDRED_MS);
     try (ResultSet rs = client.singleUse().executeQuery(SELECT1AND2)) {
       while (rs.next()) {}
     }
@@ -303,7 +252,7 @@ public class SpannerGaxRetryTest {
   @Test
   public void singleUseReadOnlyTransactionTimeout() {
     expectedException.expect(SpannerMatchers.isSpannerException(ErrorCode.DEADLINE_EXCEEDED));
-    mockSpanner.setCreateSessionExecutionTime(ONE_SECOND);
+    mockSpanner.setCreateSessionExecutionTime(HUNDRED_MS);
     try (ResultSet rs = client.singleUseReadOnlyTransaction().executeQuery(SELECT1AND2)) {
       while (rs.next()) {}
     }
@@ -321,7 +270,7 @@ public class SpannerGaxRetryTest {
   public void singleUseExecuteStreamingSqlTimeout() {
     expectedException.expect(SpannerMatchers.isSpannerException(ErrorCode.DEADLINE_EXCEEDED));
     try (ResultSet rs = client.singleUse().executeQuery(SELECT1AND2)) {
-      mockSpanner.setExecuteStreamingSqlExecutionTime(ONE_SECOND);
+      mockSpanner.setExecuteStreamingSqlExecutionTime(HUNDRED_MS);
       while (rs.next()) {}
     }
   }
@@ -336,9 +285,8 @@ public class SpannerGaxRetryTest {
 
   @Test
   public void readWriteTransactionTimeout() {
-    warmUpSessionPool();
     expectedException.expect(SpannerMatchers.isSpannerException(ErrorCode.DEADLINE_EXCEEDED));
-    mockSpanner.setBeginTransactionExecutionTime(ONE_SECOND);
+    mockSpanner.setBeginTransactionExecutionTime(HUNDRED_MS);
     TransactionRunner runner = client.readWriteTransaction();
     long updateCount =
         runner.run(
@@ -435,9 +383,7 @@ public class SpannerGaxRetryTest {
   @SuppressWarnings("resource")
   @Test
   public void transactionManagerTimeout() {
-    warmUpSessionPool();
-    expectedException.expect(SpannerMatchers.isSpannerException(ErrorCode.DEADLINE_EXCEEDED));
-    mockSpanner.setBeginTransactionExecutionTime(ONE_SECOND);
+    mockSpanner.setBeginTransactionExecutionTime(HUNDRED_MS);
     try (TransactionManager txManager = client.transactionManager()) {
       TransactionContext tx = txManager.begin();
       while (true) {
@@ -449,6 +395,9 @@ public class SpannerGaxRetryTest {
           tx = txManager.resetForRetry();
         }
       }
+      fail("missing DEADLINE_EXCEEDED exception");
+    } catch (SpannerException e) {
+      assertThat(e.getErrorCode(), is(equalTo(ErrorCode.DEADLINE_EXCEEDED)));
     }
   }
 
