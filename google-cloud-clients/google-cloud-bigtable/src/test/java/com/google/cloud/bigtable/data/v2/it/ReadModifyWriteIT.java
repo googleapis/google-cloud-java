@@ -17,10 +17,11 @@ package com.google.cloud.bigtable.data.v2.it;
 
 import static com.google.common.truth.Truth.assertThat;
 
-import com.google.cloud.bigtable.data.v2.it.env.TestEnvRule;
 import com.google.cloud.bigtable.data.v2.models.ReadModifyWriteRow;
 import com.google.cloud.bigtable.data.v2.models.Row;
+import com.google.cloud.bigtable.test_helpers.env.TestEnvRule;
 import com.google.protobuf.ByteString;
+import java.util.UUID;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
@@ -37,7 +38,7 @@ public class ReadModifyWriteIT {
   public void test() throws InterruptedException, ExecutionException, TimeoutException {
     String tableId = testEnvRule.env().getTableId();
     String family = testEnvRule.env().getFamilyId();
-    String rowKey = testEnvRule.env().getRowPrefix();
+    String rowKey = UUID.randomUUID().toString();
 
     Row row =
         testEnvRule

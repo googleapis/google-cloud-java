@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.cloud.bigtable.data.v2.it.env;
+package com.google.cloud.bigtable.test_helpers.env;
 
 import static com.google.common.truth.TruthJUnit.assume;
 
@@ -44,7 +44,7 @@ public class TestEnvRule extends ExternalResource {
   private static final String BIGTABLE_EMULATOR_HOST_ENV_VAR = "BIGTABLE_EMULATOR_HOST";
   private static final String ENV_PROPERTY = "bigtable.env";
 
-  private TestEnv testEnv;
+  private AbstractTestEnv testEnv;
 
   @Override
   protected void before() throws Throwable {
@@ -58,7 +58,7 @@ public class TestEnvRule extends ExternalResource {
 
     switch (env) {
       case "emulator":
-        testEnv = new EmulatorEnv();
+        testEnv = EmulatorEnv.createBundled();
         break;
       case "prod":
         testEnv = ProdEnv.fromSystemProperties();
@@ -78,6 +78,12 @@ public class TestEnvRule extends ExternalResource {
   @Override
   protected void after() {
     try {
+      env().cleanUpStale();
+    } catch (Exception e) {
+      LOGGER.log(Level.WARNING, "Failed to cleanup environment", e);
+    }
+
+    try {
       testEnv.stop();
     } catch (Exception e) {
       LOGGER.log(Level.WARNING, "Failed to stop the environment", e);
@@ -85,7 +91,7 @@ public class TestEnvRule extends ExternalResource {
     testEnv = null;
   }
 
-  public TestEnv env() {
+  public AbstractTestEnv env() {
     return testEnv;
   }
 }

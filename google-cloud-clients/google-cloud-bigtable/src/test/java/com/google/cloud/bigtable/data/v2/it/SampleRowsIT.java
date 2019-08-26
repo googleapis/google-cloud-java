@@ -20,11 +20,12 @@ import static com.google.common.truth.Truth.assertThat;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
-import com.google.cloud.bigtable.data.v2.it.env.TestEnvRule;
 import com.google.cloud.bigtable.data.v2.models.KeyOffset;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
+import com.google.cloud.bigtable.test_helpers.env.TestEnvRule;
 import com.google.common.collect.Lists;
 import java.util.List;
+import java.util.UUID;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
@@ -40,14 +41,14 @@ public class SampleRowsIT {
   @Test
   public void test() throws InterruptedException, ExecutionException, TimeoutException {
     BigtableDataClient client = testEnvRule.env().getDataClient();
+    String rowPrefix = UUID.randomUUID().toString();
 
     // Create some data so that sample row keys has something to show
     List<ApiFuture<?>> futures = Lists.newArrayList();
     for (int i = 0; i < 10; i++) {
       ApiFuture<Void> future =
           client.mutateRowAsync(
-              RowMutation.create(
-                      testEnvRule.env().getTableId(), testEnvRule.env().getRowPrefix() + "-" + i)
+              RowMutation.create(testEnvRule.env().getTableId(), rowPrefix + "-" + i)
                   .setCell(testEnvRule.env().getFamilyId(), "", "value"));
       futures.add(future);
     }
