@@ -18,104 +18,101 @@ package com.google.cloud;
 
 import com.google.api.core.InternalApi;
 import com.google.common.base.MoreObjects;
-
 import java.util.Objects;
 
 public class Condition {
+  private String title;
+  private String description;
+  private String expression;
+
+  public static class Builder {
     private String title;
     private String description;
     private String expression;
 
-    public static class Builder {
-        private String title;
-        private String description;
-        private String expression;
+    @InternalApi("This class should only be extended within google-cloud-java")
+    protected Builder() {}
 
-
-        @InternalApi("This class should only be extended within google-cloud-java")
-        protected Builder() {}
-
-        @InternalApi("This class should only be extended within google-cloud-java")
-        protected Builder(Condition condition) {
-            this.title = condition.title;
-            this.description = condition.description;
-            this.expression = condition.expression;
-        }
-
-        public final Condition.Builder setTitle(String title) {
-            this.title = title;
-            return this;
-        }
-
-        public final Condition.Builder setDescription(String description) {
-            this.description = description;
-            return this;
-        }
-
-        public final Condition.Builder setExpression(String expression) {
-            this.expression = expression;
-            return this;
-        }
-
-
-        /** Creates a {@code Condition} object. */
-        public final Condition build() {
-            return new Condition(this);
-        }
+    @InternalApi("This class should only be extended within google-cloud-java")
+    protected Builder(Condition condition) {
+      this.title = condition.title;
+      this.description = condition.description;
+      this.expression = condition.expression;
     }
 
-    private Condition(Condition.Builder builder) {
-        this.title = builder.title;
-        this.description = builder.description;
-        this.expression = builder.expression;
+    public final Condition.Builder setTitle(String title) {
+      this.title = title;
+      return this;
     }
 
-    public Condition.Builder toBuilder() {
-        return new Condition.Builder(this);
+    public final Condition.Builder setDescription(String description) {
+      this.description = description;
+      return this;
     }
 
-    public String getTitle() {
-        return title;
+    public final Condition.Builder setExpression(String expression) {
+      this.expression = expression;
+      return this;
     }
 
-    public String getDescription() {
-        return description;
+    /** Creates a {@code Condition} object. */
+    public final Condition build() {
+      return new Condition(this);
     }
+  }
 
-    public String getExpression() {
-        return expression;
-    }
+  private Condition(Condition.Builder builder) {
+    this.title = builder.title;
+    this.description = builder.description;
+    this.expression = builder.expression;
+  }
 
-    @Override
-    public String toString() {
-        return MoreObjects.toStringHelper(this)
-                .add("title", title)
-                .add("description", description)
-                .add("expression", expression)
-                .toString();
-    }
+  public Condition.Builder toBuilder() {
+    return new Condition.Builder(this);
+  }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(getClass(), title, description, expression);
-    }
+  public String getTitle() {
+    return title;
+  }
 
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
-        }
-        if (!(obj instanceof Condition)) {
-            return false;
-        }
-        Condition other = (Condition) obj;
-        return Objects.equals(title, other.getTitle())
-                && Objects.equals(description, other.getDescription())
-                && Objects.equals(expression, other.getExpression());
-    }
+  public String getDescription() {
+    return description;
+  }
 
-    /** Returns a builder for {@code Policy} objects. */
-    public static Condition.Builder newBuilder() {
-        return new Condition.Builder();
+  public String getExpression() {
+    return expression;
+  }
+
+  @Override
+  public String toString() {
+    return MoreObjects.toStringHelper(this)
+        .add("title", title)
+        .add("description", description)
+        .add("expression", expression)
+        .toString();
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(getClass(), title, description, expression);
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (obj == this) {
+      return true;
     }
+    if (!(obj instanceof Condition)) {
+      return false;
+    }
+    Condition other = (Condition) obj;
+    return Objects.equals(title, other.getTitle())
+        && Objects.equals(description, other.getDescription())
+        && Objects.equals(expression, other.getExpression());
+  }
+
+  /** Returns a builder for {@code Policy} objects. */
+  public static Condition.Builder newBuilder() {
+    return new Condition.Builder();
+  }
 }

@@ -51,7 +51,6 @@ import com.google.api.services.storage.model.Policy;
 import com.google.api.services.storage.model.ServiceAccount;
 import com.google.api.services.storage.model.StorageObject;
 import com.google.api.services.storage.model.TestIamPermissionsResponse;
-import com.google.cloud.PolicyV3;
 import com.google.cloud.Tuple;
 import com.google.cloud.http.CensusHttpModule;
 import com.google.cloud.http.HttpTransportOptions;
@@ -1268,10 +1267,10 @@ public class HttpStorageRpc implements StorageRpc {
     Scope scope = tracer.withSpan(span);
     try {
       return storage
-              .buckets()
-              .getIamPolicy(bucket)
-              .setUserProject(Option.USER_PROJECT.getString(options))
-              .execute();
+          .buckets()
+          .getIamPolicy(bucket)
+          .setUserProject(Option.USER_PROJECT.getString(options))
+          .execute();
     } catch (IOException ex) {
       span.setStatus(Status.UNKNOWN.withDescription(ex.getMessage()));
       throw translate(ex);
@@ -1305,10 +1304,10 @@ public class HttpStorageRpc implements StorageRpc {
     // TODO: (frankyn) Fix SPAN support
     try {
       return storage
-              .buckets()
-              .setIamPolicy(bucket, policy)
-              .setUserProject(Option.USER_PROJECT.getString(options))
-              .execute();
+          .buckets()
+          .setIamPolicy(bucket, policy)
+          .setUserProject(Option.USER_PROJECT.getString(options))
+          .execute();
     } catch (IOException ex) {
       throw translate(ex);
     }

@@ -16,6 +16,9 @@
 
 package com.google.cloud;
 
+import static com.google.common.base.Preconditions.checkArgument;
+import static com.google.common.base.Preconditions.checkNotNull;
+
 import com.google.api.core.ApiFunction;
 import com.google.api.core.InternalApi;
 import com.google.common.base.Function;
@@ -25,19 +28,14 @@ import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import com.google.common.io.BaseEncoding;
 import com.google.protobuf.ByteString;
-
 import java.io.Serializable;
 import java.util.*;
-
-import static com.google.common.base.Preconditions.checkArgument;
-import static com.google.common.base.Preconditions.checkNotNull;
 
 /**
  * Class for Identity and Access Management (IAM) v3 policies supported.
  *
  * @see <a href="https://cloud.google.com/iam/reference/rest/v1/Policy">Policy</a>
  */
-
 public final class PolicyV3 implements Serializable {
 
   // TODO(frankyn): Update serial because it's a copy of Policy.java
@@ -79,17 +77,20 @@ public final class PolicyV3 implements Serializable {
       // TODO (frankyn): Update to support conditions.
       List<Binding> bindings = new ArrayList<>();
       for (com.google.iam.v1.Binding bindingPb : policyPb.getBindingsList()) {
-        bindings.add(Binding.newBuilder()
+        bindings.add(
+            Binding.newBuilder()
                 .setRole(Role.of(bindingPb.getRole()))
-                .setIdentities(ImmutableSet.copyOf(
-                            Lists.transform(
-                                bindingPb.getMembersList(),
-                                new Function<String, Identity>() {
-                                  @Override
-                                  public Identity apply(String s) {
-                                    return IDENTITY_VALUE_OF_FUNCTION.apply(s);
-                                  }
-                                }))).build());
+                .setIdentities(
+                    ImmutableSet.copyOf(
+                        Lists.transform(
+                            bindingPb.getMembersList(),
+                            new Function<String, Identity>() {
+                              @Override
+                              public Identity apply(String s) {
+                                return IDENTITY_VALUE_OF_FUNCTION.apply(s);
+                              }
+                            })))
+                .build());
       }
       return newBuilder()
           .setBindings(bindings)
@@ -167,10 +168,12 @@ public final class PolicyV3 implements Serializable {
           bindingBuilder.addIdentity(identity);
         }
         if (binding.getCondition() != null) {
-          bindingBuilder.setCondition(Condition.newBuilder()
+          bindingBuilder.setCondition(
+              Condition.newBuilder()
                   .setTitle(binding.getCondition().getTitle())
                   .setDescription(binding.getCondition().getDescription())
-                  .setExpression(binding.getCondition().getExpression()).build());
+                  .setExpression(binding.getCondition().getExpression())
+                  .build());
         }
         this.bindings.add(bindingBuilder.build());
       }

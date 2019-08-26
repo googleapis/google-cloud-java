@@ -20,7 +20,6 @@ import com.google.api.services.storage.model.Expr;
 import com.google.api.services.storage.model.Policy.Bindings;
 import com.google.cloud.*;
 import com.google.common.collect.ImmutableList;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -53,14 +52,18 @@ class PolicyHelper {
       }
       if (binding.getCondition() != null) {
         Condition.Builder conditionBuilder = Condition.newBuilder();
-        conditionBuilder.setTitle(binding.getCondition().getTitle())
-                .setDescription(binding.getCondition().getDescription())
-                .setExpression(binding.getCondition().getExpression());
+        conditionBuilder
+            .setTitle(binding.getCondition().getTitle())
+            .setDescription(binding.getCondition().getDescription())
+            .setExpression(binding.getCondition().getExpression());
         bindingBuilder.setCondition(conditionBuilder.build());
       }
       policyBindingsBuilder.add(bindingBuilder.build());
     }
-    return policyBuilder.setBindings(policyBindingsBuilder.build()).setEtag(apiPolicy.getEtag()).build();
+    return policyBuilder
+        .setBindings(policyBindingsBuilder.build())
+        .setEtag(apiPolicy.getEtag())
+        .build();
   }
 
   static com.google.api.services.storage.model.Policy convertToApiPolicy(Policy policy) {
@@ -88,17 +91,18 @@ class PolicyHelper {
       }
       if (binding.getCondition() != null) {
         Expr expression = new Expr();
-        expression.setTitle(binding.getCondition().getTitle())
-                .setDescription(binding.getCondition().getDescription())
-                .setExpression(binding.getCondition().getExpression());
+        expression
+            .setTitle(binding.getCondition().getTitle())
+            .setDescription(binding.getCondition().getDescription())
+            .setExpression(binding.getCondition().getExpression());
         apiBinding.setCondition(expression);
       }
       bindings.add(apiBinding.setMembers(members).setRole(binding.getRole().getValue()));
     }
     System.out.println(bindings);
     return new com.google.api.services.storage.model.Policy()
-            .setBindings(bindings)
-            .setEtag(policy.getEtag());
+        .setBindings(bindings)
+        .setEtag(policy.getEtag());
   }
 
   private PolicyHelper() {

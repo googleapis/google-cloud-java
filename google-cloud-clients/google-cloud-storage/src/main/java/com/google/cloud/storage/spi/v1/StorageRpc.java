@@ -453,7 +453,6 @@ public interface StorageRpc extends ServiceRpc {
 
   Policy getIamPolicyV3(String bucket, Map<Option, ?> options);
 
-
   /**
    * Updates the IAM policy for the specified bucket.
    *

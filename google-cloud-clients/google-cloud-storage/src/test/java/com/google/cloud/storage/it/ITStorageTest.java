@@ -2217,31 +2217,43 @@ public class ITStorageTest {
   @Test
   public void testIamV1() {
     String bucketName = RemoteStorageHelper.generateBucketName();
-    Bucket remoteBucket =
-            storage.create(
-                    BucketInfo.newBuilder(bucketName).build());
+    Bucket remoteBucket = storage.create(BucketInfo.newBuilder(bucketName).build());
     Policy policy = storage.getIamPolicy(bucketName);
     Policy updatedPolicy = storage.setIamPolicy(bucketName, policy);
     assertEquals(policy.getBindings().size(), updatedPolicy.getBindings().size());
   }
 
-
   @Test
   public void testIamV3() {
     String bucketName = RemoteStorageHelper.generateBucketName();
     Bucket remoteBucket =
-            storage.create(
-                    BucketInfo.newBuilder(bucketName).setIamConfiguration(BucketInfo.IamConfiguration.newBuilder().setIsBucketPolicyOnlyEnabled(true).build()).build());
+        storage.create(
+            BucketInfo.newBuilder(bucketName)
+                .setIamConfiguration(
+                    BucketInfo.IamConfiguration.newBuilder()
+                        .setIsBucketPolicyOnlyEnabled(true)
+                        .build())
+                .build());
     PolicyV3 policy = storage.getIamPolicyV3(bucketName);
     List<com.google.cloud.Binding> bindings = policy.getBindings();
-    com.google.cloud.Binding iamConditionBinding = com.google.cloud.Binding.newBuilder()
+    com.google.cloud.Binding iamConditionBinding =
+        com.google.cloud.Binding.newBuilder()
             .setRole(StorageRoles.legacyBucketReader())
             .addIdentity(Identity.user("franknatividad@google.com"))
-            .setCondition(Condition.newBuilder().setTitle("test-condition").setExpression("((resource.type==\"google.cloud.storage.Object\") && (resource.name.startsWith(\"projects/_/buckets/"+ bucketName +"/objects/dev-path\")))").build()).build();
+            .setCondition(
+                Condition.newBuilder()
+                    .setTitle("test-condition")
+                    .setExpression(
+                        "((resource.type==\"google.cloud.storage.Object\") && (resource.name.startsWith(\"projects/_/buckets/"
+                            + bucketName
+                            + "/objects/dev-path\")))")
+                    .build())
+            .build();
     // Make it easier to add a binding.
     ImmutableList.Builder<com.google.cloud.Binding> bindingsBuilder = ImmutableList.builder();
     bindings = bindingsBuilder.addAll(bindings).add(iamConditionBinding).build();
-    PolicyV3 updatedPolicy = storage.setIamPolicyV3(bucketName, policy.newBuilder().setBindings(bindings).build());
+    PolicyV3 updatedPolicy =
+        storage.setIamPolicyV3(bucketName, policy.newBuilder().setBindings(bindings).build());
     assertEquals(bindings.size(), updatedPolicy.getBindings().size());
   }
 
