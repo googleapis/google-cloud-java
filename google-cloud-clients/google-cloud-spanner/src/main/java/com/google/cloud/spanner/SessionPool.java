@@ -1123,6 +1123,11 @@ final class SessionPool {
     return writePreparedSessions.size();
   }
 
+  @VisibleForTesting
+  int getNumberOfAvailableReadSessions() {
+    return readSessions.size();
+  }
+
   private void initPool() {
     synchronized (lock) {
       poolMaintainer.init();
@@ -1387,6 +1392,7 @@ final class SessionPool {
         invalidateSession(session);
       } else if (readWriteWaiters.size() > 0) {
         readWriteWaiters.poll().put(e);
+        releaseSession(session);
       } else {
         releaseSession(session);
       }
