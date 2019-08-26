@@ -21,16 +21,19 @@ import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.startsWith;
 import static org.junit.Assert.assertThat;
+import static org.junit.Assert.fail;
 
 import com.google.cloud.ByteArray;
 import com.google.cloud.spanner.Statement;
 import com.google.cloud.spanner.Value;
+import com.google.cloud.spanner.jdbc.JdbcSqlExceptionFactory.JdbcSqlExceptionImpl;
 import com.google.common.io.CharStreams;
 import com.google.rpc.Code;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.Reader;
 import java.io.StringReader;
 import java.math.BigDecimal;
 import java.net.URL;
@@ -259,9 +262,9 @@ public class JdbcParameterStoreTest {
       params.setParameter(1, (byte) 1, type);
       assertThat((Byte) params.getParameter(1), is(equalTo((byte) 1)));
       verifyParameter(params, Value.bool(true));
-      params.setParameter(1, (short) 1, type);
-      assertThat((Short) params.getParameter(1), is(equalTo((short) 1)));
-      verifyParameter(params, Value.bool(true));
+      params.setParameter(1, (short) 0, type);
+      assertThat((Short) params.getParameter(1), is(equalTo((short) 0)));
+      verifyParameter(params, Value.bool(false));
       params.setParameter(1, 1, type);
       assertThat((Integer) params.getParameter(1), is(equalTo(1)));
       verifyParameter(params, Value.bool(true));
@@ -274,9 +277,119 @@ public class JdbcParameterStoreTest {
       params.setParameter(1, (double) 1, type);
       assertThat((Double) params.getParameter(1), is(equalTo((double) 1)));
       verifyParameter(params, Value.bool(true));
-      params.setParameter(1, BigDecimal.ONE, type);
-      assertThat((BigDecimal) params.getParameter(1), is(equalTo(BigDecimal.ONE)));
-      verifyParameter(params, Value.bool(true));
+      params.setParameter(1, BigDecimal.ZERO, type);
+      assertThat((BigDecimal) params.getParameter(1), is(equalTo(BigDecimal.ZERO)));
+      verifyParameter(params, Value.bool(false));
+    }
+  }
+
+  @Test
+  public void testSetInvalidParameterWithType() throws SQLException, IOException {
+    JdbcParameterStore params = new JdbcParameterStore();
+
+    // types that should lead to int64, but with invalid values.
+    for (int type : new int[] {Types.TINYINT, Types.SMALLINT, Types.INTEGER, Types.BIGINT}) {
+      assertInvalidParameter(params, "1", type);
+      assertInvalidParameter(params, new Object(), type);
+      assertInvalidParameter(params, Boolean.TRUE, type);
+    }
+
+    // types that should lead to float64
+    for (int type : new int[] {Types.FLOAT, Types.REAL, Types.DOUBLE}) {
+      assertInvalidParameter(params, "1", type);
+      assertInvalidParameter(params, new Object(), type);
+      assertInvalidParameter(params, Boolean.TRUE, type);
+    }
+
+    // types that should lead to date
+    for (int type : new int[] {Types.DATE}) {
+      assertInvalidParameter(params, "1", type);
+      assertInvalidParameter(params, new Object(), type);
+      assertInvalidParameter(params, Boolean.TRUE, type);
+      assertInvalidParameter(params, 1, type);
+      assertInvalidParameter(params, 1L, type);
+    }
+
+    // types that should lead to timestamp
+    for (int type : new int[] {Types.TIME, Types.TIMESTAMP}) {
+      assertInvalidParameter(params, "1", type);
+      assertInvalidParameter(params, new Object(), type);
+      assertInvalidParameter(params, Boolean.TRUE, type);
+      assertInvalidParameter(params, 1, type);
+      assertInvalidParameter(params, 1L, type);
+    }
+
+    // types that should lead to bytes (except BLOB which is handled separately)
+    for (int type : new int[] {Types.BINARY, Types.VARBINARY, Types.LONGVARBINARY}) {
+      assertInvalidParameter(params, "1", type);
+      assertInvalidParameter(params, new Object(), type);
+      assertInvalidParameter(params, Boolean.TRUE, type);
+      assertInvalidParameter(params, 1, type);
+      assertInvalidParameter(params, 1L, type);
+      assertInvalidParameter(params, new JdbcBlob(), type);
+    }
+
+    for (int type :
+        new int[] {
+          Types.CHAR,
+          Types.VARCHAR,
+          Types.LONGVARCHAR,
+          Types.NCHAR,
+          Types.NVARCHAR,
+          Types.LONGNVARCHAR
+        }) {
+      assertInvalidParameter(params, new Object(), type);
+      assertInvalidParameter(params, Boolean.TRUE, type);
+      assertInvalidParameter(params, 1, type);
+      assertInvalidParameter(params, 1L, type);
+      assertInvalidParameter(params, new JdbcBlob(), type);
+      assertInvalidParameter(params, new JdbcClob(), type);
+    }
+
+    // types that should lead to bool
+    for (int type : new int[] {Types.BOOLEAN, Types.BIT}) {
+      assertInvalidParameter(params, "1", type);
+      assertInvalidParameter(params, "true", type);
+      assertInvalidParameter(params, new Object(), type);
+    }
+
+    assertInvalidParameter(params, BigDecimal.ONE, Types.DECIMAL);
+    assertInvalidParameter(params, BigDecimal.ZERO, Types.NUMERIC);
+
+    // test setting closed readers and streams.
+    for (int type :
+        new int[] {
+          Types.CHAR,
+          Types.VARCHAR,
+          Types.LONGVARCHAR,
+          Types.NCHAR,
+          Types.NVARCHAR,
+          Types.LONGNVARCHAR
+        }) {
+      Reader reader = new StringReader("test");
+      reader.close();
+      params.setParameter(1, reader, type);
+      verifyParameterBindFails(params);
+
+      InputStream stream =
+          new InputStream() {
+            @Override
+            public int read() throws IOException {
+              throw new IOException();
+            }
+          };
+      params.setParameter(1, stream, type);
+      verifyParameterBindFails(params);
+    }
+  }
+
+  private void assertInvalidParameter(JdbcParameterStore params, Object value, int type)
+      throws SQLException {
+    try {
+      params.setParameter(1, value, type);
+      fail("missing expected exception");
+    } catch (JdbcSqlExceptionImpl e) {
+      assertThat(e.getCode(), is(equalTo(Code.INVALID_ARGUMENT)));
     }
   }
 
@@ -518,6 +631,16 @@ public class JdbcParameterStoreTest {
     Statement.Builder builder = Statement.newBuilder("SELECT * FROM FOO WHERE BAR=:p1");
     params.bindParameterValue(builder.bind("p1"), 1);
     assertThat(builder.build().getParameters().get("p1"), is(equalTo(value)));
+  }
+
+  private void verifyParameterBindFails(JdbcParameterStore params) throws SQLException {
+    Statement.Builder builder = Statement.newBuilder("SELECT * FROM FOO WHERE BAR=:p1");
+    try {
+      params.bindParameterValue(builder.bind("p1"), 1);
+      fail("missing expected exception");
+    } catch (JdbcSqlExceptionImpl e) {
+      assertThat(e.getCode(), is(equalTo(Code.INVALID_ARGUMENT)));
+    }
   }
 
   @Test
