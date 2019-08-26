@@ -67,7 +67,8 @@ public class ReadRowsMergingAcceptanceTest {
     ClassLoader cl = Thread.currentThread().getContextClassLoader();
     InputStream dataJson = cl.getResourceAsStream(TEST_DATA_JSON_RESOURCE);
     assertWithMessage("Unable to load test definition: %s", TEST_DATA_JSON_RESOURCE)
-        .that(dataJson).isNotNull();
+        .that(dataJson)
+        .isNotNull();
 
     InputStreamReader reader = new InputStreamReader(dataJson);
     TestFile.Builder testBuilder = TestFile.newBuilder();
