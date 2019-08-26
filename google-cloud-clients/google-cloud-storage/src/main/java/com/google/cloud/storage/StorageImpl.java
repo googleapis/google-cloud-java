@@ -1220,7 +1220,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
 
     @Override
     public PolicyV3 setIamPolicyV3(
-            final String bucket, final Policy policy, BucketSourceOption... options) {
+            final String bucket, final PolicyV3 policy, BucketSourceOption... options) {
         try {
             final Map<StorageRpc.Option, ?> optionsMap = optionMap(options);
             return convertFromApiPolicyV3(
@@ -1228,7 +1228,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
                             new Callable<com.google.api.services.storage.model.Policy>() {
                                 @Override
                                 public com.google.api.services.storage.model.Policy call() {
-                                    return storageRpc.setIamPolicyV3(bucket, convertToApiPolicy(policy), optionsMap);
+                                    return storageRpc.setIamPolicyV3(bucket, convertToApiPolicyV3(policy), optionsMap);
                                 }
                             },
                             getOptions().getRetrySettings(),

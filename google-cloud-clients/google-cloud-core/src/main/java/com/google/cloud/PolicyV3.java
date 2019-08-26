@@ -76,12 +76,12 @@ public final class PolicyV3 implements Serializable {
 
     @Override
     protected PolicyV3 fromPb(com.google.iam.v1.Policy policyPb) {
-
+      // TODO (frankyn): Update to support conditions.
       List<Binding> bindings = new ArrayList<>();
       for (com.google.iam.v1.Binding bindingPb : policyPb.getBindingsList()) {
         bindings.add(Binding.newBuilder()
                 .setRole(Role.of(bindingPb.getRole()))
-                .setMembers(ImmutableSet.copyOf(
+                .setIdentities(ImmutableSet.copyOf(
                             Lists.transform(
                                 bindingPb.getMembersList(),
                                 new Function<String, Identity>() {
@@ -110,7 +110,7 @@ public final class PolicyV3 implements Serializable {
         bindingBuilder.setRole(binding.getRole().getValue());
         bindingBuilder.addAllMembers(
             Lists.transform(
-                new ArrayList<>(binding.getMembers()),
+                new ArrayList<>(binding.getIdentities()),
                 new Function<Identity, String>() {
                   @Override
                   public String apply(Identity identity) {
@@ -155,14 +155,24 @@ public final class PolicyV3 implements Serializable {
       checkNotNull(bindings, "The provided list of bindings cannot be null.");
       for (Binding binding : bindings) {
         checkNotNull(binding.getRole().getValue(), "The role cannot be null.");
-        Set<Identity> identities = binding.getMembers();
+        Set<Identity> identities = binding.getIdentities();
         checkNotNull(identities, "A role cannot be assigned to a null set of identities.");
         checkArgument(!identities.contains(null), "Null identities are not permitted.");
       }
       this.bindings.clear();
       for (Binding binding : bindings) {
-        // TODO(frankyn): This might not a deeper copy.
-        this.bindings.add(binding);
+        Binding.Builder bindingBuilder = Binding.newBuilder();
+        bindingBuilder.setRole(binding.getRole());
+        for (Identity identity : binding.getIdentities()) {
+          bindingBuilder.addIdentity(identity);
+        }
+        if (binding.getCondition() != null) {
+          bindingBuilder.setCondition(Condition.newBuilder()
+                  .setTitle(binding.getCondition().getTitle())
+                  .setDescription(binding.getCondition().getDescription())
+                  .setExpression(binding.getCondition().getExpression()).build());
+        }
+        this.bindings.add(bindingBuilder.build());
       }
       return this;
     }

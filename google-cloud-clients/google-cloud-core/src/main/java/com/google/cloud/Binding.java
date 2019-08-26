@@ -18,7 +18,6 @@ package com.google.cloud;
 
 import com.google.api.core.InternalApi;
 import com.google.common.base.MoreObjects;
-import com.google.common.collect.ImmutableSet;
 
 import java.util.*;
 
@@ -27,13 +26,13 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 public class Binding {
     private Role role;
-    private Set<Identity> members;
+    private Set<Identity> identities;
     private Condition condition;
 
 
     public static class Builder {
         private Role role;
-        private Set<Identity> members;
+        private Set<Identity> identities;
         private Condition condition;
 
         @InternalApi("This class should only be extended within google-cloud-java")
@@ -42,7 +41,7 @@ public class Binding {
         @InternalApi("This class should only be extended within google-cloud-java")
         protected Builder(Binding binding) {
             setRole(binding.role);
-            setMembers(binding.members);
+            setIdentities(binding.identities);
             setCondition(binding.condition);
         }
 
@@ -51,8 +50,8 @@ public class Binding {
             return this;
         }
 
-        public final Binding.Builder setMembers(Set<Identity> members) {
-            this.members = members;
+        public final Binding.Builder setIdentities(Set<Identity> identities) {
+            this.identities = identities;
             return this;
         }
 
@@ -76,10 +75,10 @@ public class Binding {
             Set<Identity> toAdd = new LinkedHashSet<>();
             toAdd.add(first);
             toAdd.addAll(Arrays.asList(others));
-            if (members == null) {
-                members = new HashSet<>();
+            if (identities == null) {
+                identities = new HashSet<>();
             }
-            members.addAll(toAdd);
+            identities.addAll(toAdd);
             return this;
         }
 
@@ -88,9 +87,9 @@ public class Binding {
          * associated with the provided role doesn't exist.
          */
         public final Builder removeIdentity(Identity first, Identity... others) {
-            if (members != null) {
-                members.remove(first);
-                members.removeAll(Arrays.asList(others));
+            if (identities != null) {
+                identities.remove(first);
+                identities.removeAll(Arrays.asList(others));
             }
             return this;
         }
@@ -104,7 +103,7 @@ public class Binding {
 
     private Binding(Binding.Builder builder) {
         this.role = builder.role;
-        this.members = builder.members;
+        this.identities = builder.identities;
         this.condition = builder.condition;
     }
 
@@ -116,8 +115,8 @@ public class Binding {
         return this.role;
     }
 
-    public Set<Identity> getMembers() {
-        return this.members;
+    public Set<Identity> getIdentities() {
+        return this.identities;
     }
 
     public Condition getCondition() {
@@ -128,14 +127,14 @@ public class Binding {
     public String toString() {
         return MoreObjects.toStringHelper(this)
                 .add("role",role)
-                .add("members", members)
+                .add("identities", identities)
                 .add("condition", condition)
                 .toString();
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getClass(), role, members, condition);
+        return Objects.hash(getClass(), role, identities, condition);
     }
 
     @Override
@@ -148,7 +147,7 @@ public class Binding {
         }
         Binding other = (Binding) obj;
         return Objects.equals(role, other.getRole())
-                && Objects.equals(members, other.getMembers())
+                && Objects.equals(identities, other.getIdentities())
                 && Objects.equals(condition, other.getCondition());
     }
 

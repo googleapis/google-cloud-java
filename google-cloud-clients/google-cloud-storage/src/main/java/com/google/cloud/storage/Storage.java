@@ -2782,7 +2782,7 @@ public interface Storage extends Service<StorageOptions> {
    */
   Policy setIamPolicy(String bucket, Policy policy, BucketSourceOption... options);
 
-  PolicyV3 setIamPolicyV3(String bucket, Policy policy, BucketSourceOption... options);
+  PolicyV3 setIamPolicyV3(String bucket, PolicyV3 policy, BucketSourceOption... options);
 
 
   /**

@@ -35,12 +35,7 @@ import com.google.api.gax.paging.Page;
 import com.google.auth.ServiceAccountSigner;
 import com.google.auth.http.HttpTransportFactory;
 import com.google.auth.oauth2.GoogleCredentials;
-import com.google.cloud.Identity;
-import com.google.cloud.Policy;
-import com.google.cloud.ReadChannel;
-import com.google.cloud.RestorableState;
-import com.google.cloud.TransportOptions;
-import com.google.cloud.WriteChannel;
+import com.google.cloud.*;
 import com.google.cloud.http.HttpTransportOptions;
 import com.google.cloud.kms.v1.CreateCryptoKeyRequest;
 import com.google.cloud.kms.v1.CreateKeyRingRequest;
@@ -2217,6 +2212,37 @@ public class ITStorageTest {
             BUCKET,
             ImmutableList.of("storage.buckets.getIamPolicy", "storage.buckets.setIamPolicy"),
             bucketOptions));
+  }
+
+  @Test
+  public void testIamV1() {
+    String bucketName = RemoteStorageHelper.generateBucketName();
+    Bucket remoteBucket =
+            storage.create(
+                    BucketInfo.newBuilder(bucketName).build());
+    Policy policy = storage.getIamPolicy(bucketName);
+    Policy updatedPolicy = storage.setIamPolicy(bucketName, policy);
+    assertEquals(policy.getBindings().size(), updatedPolicy.getBindings().size());
+  }
+
+
+  @Test
+  public void testIamV3() {
+    String bucketName = RemoteStorageHelper.generateBucketName();
+    Bucket remoteBucket =
+            storage.create(
+                    BucketInfo.newBuilder(bucketName).setIamConfiguration(BucketInfo.IamConfiguration.newBuilder().setIsBucketPolicyOnlyEnabled(true).build()).build());
+    PolicyV3 policy = storage.getIamPolicyV3(bucketName);
+    List<com.google.cloud.Binding> bindings = policy.getBindings();
+    com.google.cloud.Binding iamConditionBinding = com.google.cloud.Binding.newBuilder()
+            .setRole(StorageRoles.legacyBucketReader())
+            .addIdentity(Identity.user("franknatividad@google.com"))
+            .setCondition(Condition.newBuilder().setTitle("test-condition").setExpression("((resource.type==\"google.cloud.storage.Object\") && (resource.name.startsWith(\"projects/_/buckets/"+ bucketName +"/objects/dev-path\")))").build()).build();
+    // Make it easier to add a binding.
+    ImmutableList.Builder<com.google.cloud.Binding> bindingsBuilder = ImmutableList.builder();
+    bindings = bindingsBuilder.addAll(bindings).add(iamConditionBinding).build();
+    PolicyV3 updatedPolicy = storage.setIamPolicyV3(bucketName, policy.newBuilder().setBindings(bindings).build());
+    assertEquals(bindings.size(), updatedPolicy.getBindings().size());
   }
 
   @Test
