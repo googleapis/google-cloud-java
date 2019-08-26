@@ -21,6 +21,7 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.hamcrest.CoreMatchers.nullValue;
 import static org.junit.Assert.assertThat;
+import static org.junit.Assert.fail;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.verify;
@@ -28,10 +29,12 @@ import static org.mockito.Mockito.when;
 
 import com.google.cloud.spanner.ErrorCode;
 import com.google.cloud.spanner.SpannerExceptionFactory;
+import com.google.cloud.spanner.jdbc.JdbcSqlExceptionFactory.JdbcSqlExceptionImpl;
 import com.google.cloud.spanner.jdbc.StatementResult.ResultType;
 import com.google.rpc.Code;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.SQLFeatureNotSupportedException;
 import java.sql.Statement;
 import java.util.Arrays;
 import java.util.List;
@@ -50,6 +53,7 @@ public class JdbcStatementTest {
   @Rule public final ExpectedException thrown = ExpectedException.none();
   private static final String SELECT = "SELECT 1";
   private static final String UPDATE = "UPDATE FOO SET BAR=1 WHERE BAZ=2";
+  private static final String LARGE_UPDATE = "UPDATE FOO SET BAR=1 WHERE 1=1";
   private static final String DDL = "CREATE INDEX FOO ON BAR(ID)";
 
   @Rule public final ExpectedException expected = ExpectedException.none();
@@ -70,6 +74,12 @@ public class JdbcStatementTest {
     when(updateResult.getResultType()).thenReturn(ResultType.UPDATE_COUNT);
     when(updateResult.getUpdateCount()).thenReturn(1L);
     when(spanner.execute(com.google.cloud.spanner.Statement.of(UPDATE))).thenReturn(updateResult);
+
+    StatementResult largeUpdateResult = mock(StatementResult.class);
+    when(largeUpdateResult.getResultType()).thenReturn(ResultType.UPDATE_COUNT);
+    when(largeUpdateResult.getUpdateCount()).thenReturn(Integer.MAX_VALUE + 1L);
+    when(spanner.execute(com.google.cloud.spanner.Statement.of(LARGE_UPDATE)))
+        .thenReturn(largeUpdateResult);
 
     StatementResult ddlResult = mock(StatementResult.class);
     when(ddlResult.getResultType()).thenReturn(ResultType.NO_RESULT);
@@ -181,6 +191,14 @@ public class JdbcStatementTest {
     assertThat(res, is(false));
     assertThat(statement.getResultSet(), is(nullValue()));
     assertThat(statement.getUpdateCount(), is(equalTo(1)));
+    try {
+      assertThat(statement.execute(LARGE_UPDATE), is(false));
+      assertThat(statement.getResultSet(), is(nullValue()));
+      statement.getUpdateCount();
+      fail("missing expected exception");
+    } catch (JdbcSqlExceptionImpl e) {
+      assertThat(e.getCode(), is(equalTo(Code.OUT_OF_RANGE)));
+    }
   }
 
   @Test
@@ -190,6 +208,20 @@ public class JdbcStatementTest {
     assertThat(res, is(false));
     assertThat(statement.getResultSet(), is(nullValue()));
     assertThat(statement.getUpdateCount(), is(equalTo(JdbcConstants.STATEMENT_NO_RESULT)));
+  }
+
+  @Test
+  public void testExecuteWithGeneratedKeys() throws SQLException {
+    Statement statement = createStatement();
+    assertThat(statement.execute(UPDATE, Statement.NO_GENERATED_KEYS), is(false));
+    ResultSet keys = statement.getGeneratedKeys();
+    assertThat(keys.next(), is(false));
+    try {
+      statement.execute(UPDATE, Statement.RETURN_GENERATED_KEYS);
+      fail("missing expected exception");
+    } catch (SQLFeatureNotSupportedException e) {
+      // Ignore, this is the expected exception.
+    }
   }
 
   @Test
@@ -220,6 +252,12 @@ public class JdbcStatementTest {
   public void testExecuteUpdate() throws SQLException {
     Statement statement = createStatement();
     assertThat(statement.executeUpdate(UPDATE), is(equalTo(1)));
+    try {
+      statement.executeUpdate(LARGE_UPDATE);
+      fail("missing expected exception");
+    } catch (JdbcSqlExceptionImpl e) {
+      assertThat(e.getCode(), is(equalTo(Code.OUT_OF_RANGE)));
+    }
   }
 
   @Test
@@ -235,6 +273,36 @@ public class JdbcStatementTest {
   public void testExecuteUpdateWithDdlStatement() throws SQLException {
     Statement statement = createStatement();
     assertThat(statement.executeUpdate(DDL), is(equalTo(0)));
+  }
+
+  @Test
+  public void testExecuteUpdateWithGeneratedKeys() throws SQLException {
+    Statement statement = createStatement();
+    assertThat(statement.executeUpdate(UPDATE, Statement.NO_GENERATED_KEYS), is(equalTo(1)));
+    ResultSet keys = statement.getGeneratedKeys();
+    assertThat(keys.next(), is(false));
+    try {
+      statement.executeUpdate(UPDATE, Statement.RETURN_GENERATED_KEYS);
+      fail("missing expected exception");
+    } catch (SQLFeatureNotSupportedException e) {
+      // Ignore, this is the expected exception.
+    }
+  }
+
+  @Test
+  public void testMoreResults() throws SQLException {
+    Statement statement = createStatement();
+    assertThat(statement.execute(SELECT), is(true));
+    ResultSet rs = statement.getResultSet();
+    assertThat(statement.getMoreResults(), is(false));
+    assertThat(statement.getResultSet(), is(nullValue()));
+    assertThat(rs.isClosed(), is(true));
+
+    assertThat(statement.execute(SELECT), is(true));
+    rs = statement.getResultSet();
+    assertThat(statement.getMoreResults(Statement.KEEP_CURRENT_RESULT), is(false));
+    assertThat(statement.getResultSet(), is(nullValue()));
+    assertThat(rs.isClosed(), is(false));
   }
 
   @Test

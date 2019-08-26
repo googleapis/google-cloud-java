@@ -40,7 +40,7 @@ class JdbcConnection extends AbstractJdbcConnection {
       "Only result sets with concurrency CONCUR_READ_ONLY are supported";
   private static final String ONLY_CLOSE_CURSORS_AT_COMMIT =
       "Only result sets with holdability CLOSE_CURSORS_AT_COMMIT are supported";
-  private static final String ONLY_NO_GENERATED_KEYS = "Only NO_GENERATED_KEYS are supported";
+  static final String ONLY_NO_GENERATED_KEYS = "Only NO_GENERATED_KEYS are supported";
   private Map<String, Class<?>> typeMap = new HashMap<>();
 
   JdbcConnection(String connectionUrl, ConnectionOptions options) {
