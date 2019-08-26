@@ -51,6 +51,7 @@ import com.google.cloud.storage.Acl.Entity;
 import com.google.cloud.storage.HmacKey.HmacKeyMetadata;
 import com.google.cloud.storage.spi.v1.StorageRpc;
 import com.google.cloud.storage.spi.v1.StorageRpc.RewriteResponse;
+import com.google.common.base.CharMatcher;
 import com.google.common.base.Function;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Strings;
@@ -654,23 +655,25 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
                 getOptions().getClock().millisTime() + unit.toMillis(duration),
                 TimeUnit.MILLISECONDS);
 
-    StringBuilder stPath = new StringBuilder();
-    if (!blobInfo.getBucket().startsWith(PATH_DELIMITER)) {
-      stPath.append(PATH_DELIMITER);
-    }
-    stPath.append(blobInfo.getBucket());
-    if (!blobInfo.getBucket().endsWith(PATH_DELIMITER)
-        && !Strings.isNullOrEmpty(blobInfo.getName())) {
-      stPath.append(PATH_DELIMITER);
-    }
-    if (blobInfo.getName().startsWith(PATH_DELIMITER)) {
-      stPath.setLength(stPath.length() - 1);
+    String storageXmlHostName =
+        optionMap.get(SignUrlOption.Option.HOST_NAME) != null
+            ? (String) optionMap.get(SignUrlOption.Option.HOST_NAME)
+            : STORAGE_XML_HOST_NAME;
+
+    // The bucket name itself should never contain a forward slash. However, parts already existed
+    // in the code to check for this, so we remove the forward slashes to be safe here.
+    String bucketName = CharMatcher.anyOf(PATH_DELIMITER).trimFrom(blobInfo.getBucket());
+    String escapedBlobName = "";
+    if (!Strings.isNullOrEmpty(blobInfo.getName())) {
+      escapedBlobName =
+          UrlEscapers.urlFragmentEscaper()
+              .escape(blobInfo.getName())
+              .replace("?", "%3F")
+              .replace(";", "%3B");
     }
 
-    String escapedName = UrlEscapers.urlFragmentEscaper().escape(blobInfo.getName());
-    stPath.append(escapedName.replace("?", "%3F").replace(";", "%3B"));
-
-    URI path = URI.create(stPath.toString());
+    String stPath = constructResourceUriPath(bucketName, escapedBlobName);
+    URI path = URI.create(stPath);
 
     try {
       SignatureInfo signatureInfo =
@@ -678,11 +681,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
       String unsignedPayload = signatureInfo.constructUnsignedPayload();
       byte[] signatureBytes = credentials.sign(unsignedPayload.getBytes(UTF_8));
       StringBuilder stBuilder = new StringBuilder();
-      if (optionMap.get(SignUrlOption.Option.HOST_NAME) == null) {
-        stBuilder.append(STORAGE_XML_HOST_NAME).append(path);
-      } else {
-        stBuilder.append(optionMap.get(SignUrlOption.Option.HOST_NAME)).append(path);
-      }
+      stBuilder.append(storageXmlHostName).append(path);
 
       if (isV4) {
         BaseEncoding encoding = BaseEncoding.base16().lowerCase();
@@ -704,6 +703,19 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
     } catch (MalformedURLException | UnsupportedEncodingException ex) {
       throw new IllegalStateException(ex);
     }
+  }
+
+  private String constructResourceUriPath(String slashlessBucketName, String escapedBlobName) {
+    StringBuilder pathBuilder = new StringBuilder();
+    pathBuilder.append(PATH_DELIMITER).append(slashlessBucketName);
+    if (Strings.isNullOrEmpty(escapedBlobName)) {
+      return pathBuilder.toString();
+    }
+    if (!escapedBlobName.startsWith(PATH_DELIMITER)) {
+      pathBuilder.append(PATH_DELIMITER);
+    }
+    pathBuilder.append(escapedBlobName);
+    return pathBuilder.toString();
   }
 
   /**
