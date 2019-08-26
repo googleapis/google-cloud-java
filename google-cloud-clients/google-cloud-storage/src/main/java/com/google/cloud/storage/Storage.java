@@ -22,13 +22,8 @@ import static com.google.common.base.Preconditions.checkNotNull;
 import com.google.api.gax.paging.Page;
 import com.google.auth.ServiceAccountSigner;
 import com.google.auth.ServiceAccountSigner.SigningException;
-import com.google.cloud.FieldSelector;
+import com.google.cloud.*;
 import com.google.cloud.FieldSelector.Helper;
-import com.google.cloud.Policy;
-import com.google.cloud.ReadChannel;
-import com.google.cloud.Service;
-import com.google.cloud.Tuple;
-import com.google.cloud.WriteChannel;
 import com.google.cloud.storage.Acl.Entity;
 import com.google.cloud.storage.spi.v1.StorageRpc;
 import com.google.common.collect.ImmutableList;
@@ -2760,6 +2755,9 @@ public interface Storage extends Service<StorageOptions> {
    */
   Policy getIamPolicy(String bucket, BucketSourceOption... options);
 
+  PolicyV3 getIamPolicyV3(String bucket, BucketSourceOption... options);
+
+
   /**
    * Updates the IAM policy on the specified bucket.
    *
@@ -2783,6 +2781,9 @@ public interface Storage extends Service<StorageOptions> {
    * @throws StorageException upon failure
    */
   Policy setIamPolicy(String bucket, Policy policy, BucketSourceOption... options);
+
+  PolicyV3 setIamPolicyV3(String bucket, Policy policy, BucketSourceOption... options);
+
 
   /**
    * Tests whether the caller holds the permissions on the specified bucket. Returns a list of

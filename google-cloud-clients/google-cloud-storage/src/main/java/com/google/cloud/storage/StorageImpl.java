@@ -17,8 +17,7 @@
 package com.google.cloud.storage;
 
 import static com.google.cloud.RetryHelper.runWithRetries;
-import static com.google.cloud.storage.PolicyHelper.convertFromApiPolicy;
-import static com.google.cloud.storage.PolicyHelper.convertToApiPolicy;
+import static com.google.cloud.storage.PolicyHelper.*;
 import static com.google.cloud.storage.spi.v1.StorageRpc.Option.DELIMITER;
 import static com.google.cloud.storage.spi.v1.StorageRpc.Option.IF_GENERATION_MATCH;
 import static com.google.cloud.storage.spi.v1.StorageRpc.Option.IF_GENERATION_NOT_MATCH;
@@ -39,14 +38,9 @@ import com.google.api.services.storage.model.ObjectAccessControl;
 import com.google.api.services.storage.model.StorageObject;
 import com.google.api.services.storage.model.TestIamPermissionsResponse;
 import com.google.auth.ServiceAccountSigner;
-import com.google.cloud.BaseService;
-import com.google.cloud.BatchResult;
-import com.google.cloud.PageImpl;
+import com.google.cloud.*;
 import com.google.cloud.PageImpl.NextPageFetcher;
-import com.google.cloud.Policy;
-import com.google.cloud.ReadChannel;
 import com.google.cloud.RetryHelper.RetryHelperException;
-import com.google.cloud.Tuple;
 import com.google.cloud.storage.Acl.Entity;
 import com.google.cloud.storage.spi.v1.StorageRpc;
 import com.google.cloud.storage.spi.v1.StorageRpc.RewriteResponse;
@@ -1183,26 +1177,67 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
     }
   }
 
-  @Override
-  public Policy setIamPolicy(
-      final String bucket, final Policy policy, BucketSourceOption... options) {
-    try {
-      final Map<StorageRpc.Option, ?> optionsMap = optionMap(options);
-      return convertFromApiPolicy(
-          runWithRetries(
-              new Callable<com.google.api.services.storage.model.Policy>() {
-                @Override
-                public com.google.api.services.storage.model.Policy call() {
-                  return storageRpc.setIamPolicy(bucket, convertToApiPolicy(policy), optionsMap);
-                }
-              },
-              getOptions().getRetrySettings(),
-              EXCEPTION_HANDLER,
-              getOptions().getClock()));
-    } catch (RetryHelperException e) {
-      throw StorageException.translateAndThrow(e);
+   @Override
+   public PolicyV3 getIamPolicyV3(final String bucket, BucketSourceOption... options) {
+        try {
+            final Map<StorageRpc.Option, ?> optionsMap = optionMap(options);
+            return convertFromApiPolicyV3(
+                    runWithRetries(
+                            new Callable<com.google.api.services.storage.model.Policy>() {
+                                @Override
+                                public com.google.api.services.storage.model.Policy call() {
+                                    return storageRpc.getIamPolicyV3(bucket, optionsMap);
+                                }
+                            },
+                            getOptions().getRetrySettings(),
+                            EXCEPTION_HANDLER,
+                            getOptions().getClock()));
+        } catch (RetryHelperException e) {
+            throw StorageException.translateAndThrow(e);
+        }
     }
-  }
+
+    @Override
+    public Policy setIamPolicy(
+      final String bucket, final Policy policy, BucketSourceOption... options) {
+        try {
+          final Map<StorageRpc.Option, ?> optionsMap = optionMap(options);
+          return convertFromApiPolicy(
+              runWithRetries(
+                  new Callable<com.google.api.services.storage.model.Policy>() {
+                    @Override
+                    public com.google.api.services.storage.model.Policy call() {
+                      return storageRpc.setIamPolicy(bucket, convertToApiPolicy(policy), optionsMap);
+                    }
+                  },
+                  getOptions().getRetrySettings(),
+                  EXCEPTION_HANDLER,
+                  getOptions().getClock()));
+        } catch (RetryHelperException e) {
+          throw StorageException.translateAndThrow(e);
+        }
+    }
+
+    @Override
+    public PolicyV3 setIamPolicyV3(
+            final String bucket, final Policy policy, BucketSourceOption... options) {
+        try {
+            final Map<StorageRpc.Option, ?> optionsMap = optionMap(options);
+            return convertFromApiPolicyV3(
+                    runWithRetries(
+                            new Callable<com.google.api.services.storage.model.Policy>() {
+                                @Override
+                                public com.google.api.services.storage.model.Policy call() {
+                                    return storageRpc.setIamPolicyV3(bucket, convertToApiPolicy(policy), optionsMap);
+                                }
+                            },
+                            getOptions().getRetrySettings(),
+                            EXCEPTION_HANDLER,
+                            getOptions().getClock()));
+        } catch (RetryHelperException e) {
+            throw StorageException.translateAndThrow(e);
+        }
+    }
 
   @Override
   public List<Boolean> testIamPermissions(
