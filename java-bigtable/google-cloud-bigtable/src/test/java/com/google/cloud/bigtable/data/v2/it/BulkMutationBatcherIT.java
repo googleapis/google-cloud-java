@@ -17,16 +17,17 @@ package com.google.cloud.bigtable.data.v2.it;
 
 import com.google.api.gax.rpc.ServerStream;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
-import com.google.cloud.bigtable.data.v2.it.env.TestEnvRule;
 import com.google.cloud.bigtable.data.v2.models.BulkMutationBatcher;
 import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowCell;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
+import com.google.cloud.bigtable.test_helpers.env.TestEnvRule;
 import com.google.common.collect.Lists;
 import com.google.common.truth.Truth;
 import com.google.protobuf.ByteString;
 import java.util.List;
+import java.util.UUID;
 import org.junit.ClassRule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -41,12 +42,14 @@ public class BulkMutationBatcherIT {
     BigtableDataClient client = testEnvRule.env().getDataClient();
     String tableId = testEnvRule.env().getTableId();
     String family = testEnvRule.env().getFamilyId();
-    String rowPrefix = testEnvRule.env().getRowPrefix();
+    String rowPrefix = UUID.randomUUID() + "-";
+    long timestamp = System.currentTimeMillis() * 1_000;
 
     try (BulkMutationBatcher batcher = client.newBulkMutationBatcher()) {
       for (int i = 0; i < 10; i++) {
         batcher.add(
-            RowMutation.create(tableId, rowPrefix + "-" + i).setCell(family, "q", 10_000, "value"));
+            RowMutation.create(tableId, rowPrefix + "-" + i)
+                .setCell(family, "q", timestamp, "value"));
       }
     }
 
@@ -59,7 +62,7 @@ public class BulkMutationBatcherIT {
                   RowCell.create(
                       family,
                       ByteString.copyFromUtf8("q"),
-                      10_000,
+                      timestamp,
                       Lists.<String>newArrayList(),
                       ByteString.copyFromUtf8("value")))));
     }

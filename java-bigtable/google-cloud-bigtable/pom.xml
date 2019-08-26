@@ -105,6 +105,7 @@
                     <bigtable.env>emulator</bigtable.env>
                   </systemPropertyVariables>
                   <test>com.google.cloud.bigtable.data.v2.it.**</test>
+                  <test>com.google.cloud.bigtable.admin.v2.it.**</test>
                   <summaryFile>target/failsafe-reports/failsafe-summary-emulator-it.xml</summaryFile>
                 </configuration>
               </execution>

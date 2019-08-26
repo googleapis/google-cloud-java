@@ -13,24 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.cloud.bigtable.data.v2.it.env;
+package com.google.cloud.bigtable.test_helpers.env;
 
-import com.google.api.core.ApiFuture;
-import com.google.api.core.ApiFutures;
-import com.google.api.gax.rpc.ServerStream;
+import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
 import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
-import com.google.cloud.bigtable.data.v2.models.Query;
-import com.google.cloud.bigtable.data.v2.models.Row;
-import com.google.cloud.bigtable.data.v2.models.RowMutation;
 import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStubSettings;
-import com.google.common.collect.Lists;
 import java.io.IOException;
-import java.util.List;
-import java.util.UUID;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
 
 /**
  * Test environment that uses an existing bigtable table in the directpath environment.
@@ -48,7 +37,7 @@ import java.util.concurrent.TimeoutException;
  *   <li>{@code bigtable.table}
  * </ul>
  */
-public class DirectPathEnv implements TestEnv {
+public class DirectPathEnv extends AbstractTestEnv {
   // TODO(igorbernstein): move direct path conditional logic to gax
   private static final String DIRECT_PATH_ENV_VAR = "GOOGLE_CLOUD_ENABLE_DIRECT_PATH";
   private static final String DIRECT_PATH_END_POINT =
@@ -62,10 +51,9 @@ public class DirectPathEnv implements TestEnv {
   private final String projectId;
   private final String instanceId;
   private final String tableId;
-  private static final String FAMILY_ID = "cf";
-  private String rowPrefix;
 
   private BigtableDataClient dataClient;
+  private BigtableTableAdminClient tableAdminClient;
 
   static DirectPathEnv create() {
     return new DirectPathEnv(
@@ -75,17 +63,16 @@ public class DirectPathEnv implements TestEnv {
         getRequiredProperty(TABLE_PROPERTY_NAME));
   }
 
-  public DirectPathEnv(
+  private DirectPathEnv(
       boolean directPathEnabled, String projectId, String instanceId, String tableId) {
     this.directPathEnabled = directPathEnabled;
     this.projectId = projectId;
     this.instanceId = instanceId;
     this.tableId = tableId;
-    this.rowPrefix = UUID.randomUUID() + "-";
   }
 
   @Override
-  public void start() throws IOException {
+  void start() throws IOException {
     BigtableDataSettings.Builder settingsBuilder =
         BigtableDataSettings.newBuilder().setProjectId(projectId).setInstanceId(instanceId);
 
@@ -105,17 +92,23 @@ public class DirectPathEnv implements TestEnv {
     }
 
     dataClient = BigtableDataClient.create(settingsBuilder.build());
+    tableAdminClient = BigtableTableAdminClient.create(projectId, instanceId);
   }
 
   @Override
-  public void stop() throws Exception {
-    deleteRows();
+  void stop() throws Exception {
     dataClient.close();
+    tableAdminClient.close();
   }
 
   @Override
   public BigtableDataClient getDataClient() {
     return dataClient;
+  }
+
+  @Override
+  public BigtableTableAdminClient getTableAdminClient() {
+    return tableAdminClient;
   }
 
   @Override
@@ -131,30 +124,6 @@ public class DirectPathEnv implements TestEnv {
   @Override
   public String getTableId() {
     return tableId;
-  }
-
-  @Override
-  public String getFamilyId() {
-    return FAMILY_ID;
-  }
-
-  @Override
-  public String getRowPrefix() {
-    return rowPrefix;
-  }
-
-  private void deleteRows() throws InterruptedException, ExecutionException, TimeoutException {
-    Query query = Query.create(tableId).prefix(rowPrefix);
-
-    List<ApiFuture<Void>> futures = Lists.newArrayList();
-    ServerStream<Row> rows = dataClient.readRows(query);
-    for (Row row : rows) {
-      ApiFuture<Void> future =
-          dataClient.mutateRowAsync(RowMutation.create(tableId, row.getKey()).deleteRow());
-      futures.add(future);
-    }
-
-    ApiFutures.allAsList(futures).get(10, TimeUnit.MINUTES);
   }
 
   private static String getRequiredProperty(String prop) {
