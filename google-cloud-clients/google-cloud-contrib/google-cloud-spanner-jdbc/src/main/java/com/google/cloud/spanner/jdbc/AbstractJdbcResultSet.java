@@ -38,6 +38,8 @@ import java.sql.Timestamp;
 abstract class AbstractJdbcResultSet extends AbstractJdbcWrapper implements ResultSet {
   /** The underlying Cloud Spanner {@link com.google.cloud.spanner.ResultSet}. */
   final com.google.cloud.spanner.ResultSet spanner;
+  /** Current fetch size hint for this result set. */
+  private int fetchSize;
 
   AbstractJdbcResultSet(com.google.cloud.spanner.ResultSet spanner) {
     this.spanner = spanner;
@@ -108,12 +110,12 @@ abstract class AbstractJdbcResultSet extends AbstractJdbcWrapper implements Resu
 
   @Override
   public void setFetchSize(int rows) throws SQLException {
-    // no-op
+    this.fetchSize = rows;
   }
 
   @Override
   public int getFetchSize() throws SQLException {
-    return 0;
+    return fetchSize;
   }
 
   @Override
