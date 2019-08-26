@@ -9,3 +9,7 @@ target/
 # Intellij
 *.iml
 .idea/
+
+# python utilities
+*.pyc
+__pycache__

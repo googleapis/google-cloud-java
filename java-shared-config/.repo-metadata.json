@@ -1,0 +1,9 @@
+{
+  "name": "google-cloud-shared-config",
+  "name_pretty": "Google Cloud Shared Build Configs",
+  "release_level": "beta",
+  "language": "java",
+  "repo": "googleapis/java-shared-config",
+  "repo_short": "java-shared-config",
+  "distribution_name": "google-cloud-shared-config"
+}
