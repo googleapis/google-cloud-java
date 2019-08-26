@@ -130,9 +130,8 @@ class StatementExecutor {
 
   /** Creates an {@link ExecutorService} for a {@link StatementExecutor}. */
   private static ExecutorService createExecutorService() {
-    return MoreExecutors.getExitingExecutorService(
-        new ThreadPoolExecutor(
-            1, 1, 0L, TimeUnit.MILLISECONDS, new LinkedBlockingQueue<Runnable>(), THREAD_FACTORY));
+    return new ThreadPoolExecutor(
+        1, 1, 0L, TimeUnit.MILLISECONDS, new LinkedBlockingQueue<Runnable>(), THREAD_FACTORY);
   }
 
   private ExecutorService executor = createExecutorService();
