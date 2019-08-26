@@ -33,9 +33,12 @@ import com.google.common.util.concurrent.ListenableFuture;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.common.util.concurrent.SettableFuture;
 import com.google.common.util.concurrent.Uninterruptibles;
+import io.opencensus.common.Scope;
 import io.opencensus.trace.Annotation;
 import io.opencensus.trace.AttributeValue;
 import io.opencensus.trace.Span;
+import io.opencensus.trace.Status;
+import io.opencensus.trace.Tracer;
 import io.opencensus.trace.Tracing;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -62,6 +65,12 @@ import org.threeten.bp.Instant;
 final class SessionPool {
 
   private static final Logger logger = Logger.getLogger(SessionPool.class.getName());
+  private static final Tracer tracer = Tracing.getTracer();
+  static final String WAIT_FOR_SESSION = "SessionPool.WaitForSession";
+
+  static {
+    TraceUtil.exportSpans(WAIT_FOR_SESSION);
+  }
 
   /**
    * Wrapper around current time so that we can fake it in tests. TODO(user): Replace with Java 8
@@ -810,7 +819,8 @@ final class SessionPool {
     }
   }
 
-  private static final class Waiter {
+  private final class Waiter {
+    private static final long MAX_SESSION_WAIT_TIMEOUT = 240_000L;
     private final SynchronousQueue<SessionOrError> waiter = new SynchronousQueue<>();
 
     private void put(PooledSession session) {
@@ -822,11 +832,42 @@ final class SessionPool {
     }
 
     private PooledSession take() throws SpannerException {
-      SessionOrError s = Uninterruptibles.takeUninterruptibly(waiter);
-      if (s.e != null) {
-        throw newSpannerException(s.e);
+      long currentTimeout = options.getInitialWaitForSessionTimeoutMillis();
+      while (true) {
+        try (Scope waitScope = tracer.spanBuilder(WAIT_FOR_SESSION).startScopedSpan()) {
+          SessionOrError s = pollUninterruptiblyWithTimeout(currentTimeout);
+          if (s == null) {
+            // Set the status to DEADLINE_EXCEEDED and retry.
+            tracer.getCurrentSpan().setStatus(Status.DEADLINE_EXCEEDED);
+            currentTimeout = Math.min(currentTimeout * 2, MAX_SESSION_WAIT_TIMEOUT);
+          } else {
+            if (s.e != null) {
+              throw newSpannerException(s.e);
+            }
+            return s.session;
+          }
+        } catch (Exception e) {
+          TraceUtil.endSpanWithFailure(tracer.getCurrentSpan(), e);
+          throw e;
+        }
       }
-      return s.session;
+    }
+
+    private SessionOrError pollUninterruptiblyWithTimeout(long timeoutMillis) {
+      boolean interrupted = false;
+      try {
+        while (true) {
+          try {
+            return waiter.poll(timeoutMillis, TimeUnit.MILLISECONDS);
+          } catch (InterruptedException e) {
+            interrupted = true;
+          }
+        }
+      } finally {
+        if (interrupted) {
+          Thread.currentThread().interrupt();
+        }
+      }
     }
   }
 
