@@ -115,7 +115,7 @@ class JdbcDatabaseMetaData extends AbstractJdbcWrapper implements DatabaseMetaDa
 
   @Override
   public boolean nullsAreSortedAtStart() throws SQLException {
-    return true;
+    return false;
   }
 
   @Override
@@ -502,6 +502,8 @@ class JdbcDatabaseMetaData extends AbstractJdbcWrapper implements DatabaseMetaDa
 
   @Override
   public boolean supportsUnion() throws SQLException {
+    // Note that Cloud Spanner requires the user to specify 'UNION DISTINCT' or 'UNION ALL' in a
+    // query. 'UNION DISTINCT' is equal to the SQL operation 'UNION'.
     return true;
   }
 

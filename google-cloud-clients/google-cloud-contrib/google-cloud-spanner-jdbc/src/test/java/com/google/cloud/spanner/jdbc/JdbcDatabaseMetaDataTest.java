@@ -31,6 +31,7 @@ import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.RowIdLifetime;
 import java.sql.SQLException;
+import java.sql.Types;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -61,6 +62,13 @@ public class JdbcDatabaseMetaDataTest {
         }) {
       assertThat(meta.deletesAreDetected(type), is(false));
       assertThat(meta.insertsAreDetected(type), is(false));
+      assertThat(meta.updatesAreDetected(type), is(false));
+      assertThat(meta.ownDeletesAreVisible(type), is(false));
+      assertThat(meta.ownInsertsAreVisible(type), is(false));
+      assertThat(meta.ownUpdatesAreVisible(type), is(false));
+      assertThat(meta.othersDeletesAreVisible(type), is(false));
+      assertThat(meta.othersInsertsAreVisible(type), is(false));
+      assertThat(meta.othersUpdatesAreVisible(type), is(false));
     }
     assertThat(meta.doesMaxRowSizeIncludeBlobs(), is(true));
     assertThat(meta.generatedKeyAlwaysReturned(), is(false));
@@ -72,6 +80,8 @@ public class JdbcDatabaseMetaDataTest {
     assertThat(
         meta.getDatabaseProductVersion(),
         is(equalTo(DATABASE_MAJOR_VERSION + "." + DATABASE_MINOR_VERSION)));
+    assertThat(
+        meta.getDefaultTransactionIsolation(), is(equalTo(Connection.TRANSACTION_SERIALIZABLE)));
     assertThat(meta.getDriverName(), is(equalTo("com.google.cloud.spanner.jdbc.JdbcDriver")));
     assertThat(meta.getExtraNameCharacters(), is(equalTo("")));
     assertThat(meta.getIdentifierQuoteString(), is(equalTo("`")));
@@ -104,6 +114,12 @@ public class JdbcDatabaseMetaDataTest {
     assertThat(meta.getSchemaTerm(), is(equalTo("SCHEMA")));
     assertThat(meta.getSearchStringEscape(), is(equalTo("\\")));
     assertThat(meta.getSQLStateType(), is(equalTo(DatabaseMetaData.sqlStateSQL)));
+    assertThat(meta.locatorsUpdateCopy(), is(true));
+    assertThat(meta.nullsAreSortedHigh(), is(false));
+    assertThat(meta.nullsAreSortedLow(), is(true));
+    assertThat(meta.nullsAreSortedAtStart(), is(false));
+    assertThat(meta.nullsAreSortedAtEnd(), is(false));
+    assertThat(meta.nullPlusNonNullIsNull(), is(true));
     assertThat(meta.isCatalogAtStart(), is(false));
     assertThat(meta.isReadOnly(), is(equalTo(connection.isReadOnly())));
     assertThat(meta.storesLowerCaseIdentifiers(), is(false));
@@ -124,7 +140,54 @@ public class JdbcDatabaseMetaDataTest {
     assertThat(meta.supportsCatalogsInProcedureCalls(), is(false));
     assertThat(meta.supportsCatalogsInTableDefinitions(), is(false));
     assertThat(meta.supportsColumnAliasing(), is(true));
+    // Note that the supportsConvert() method indicates whether the server side function CONVERT is
+    // supported, not what the JDBC driver might be able to convert on the client side.
     assertThat(meta.supportsConvert(), is(false));
+    int[] types =
+        new int[] {
+          Types.ARRAY,
+          Types.BIGINT,
+          Types.BINARY,
+          Types.BIT,
+          Types.BLOB,
+          Types.BOOLEAN,
+          Types.CHAR,
+          Types.CLOB,
+          Types.DATALINK,
+          Types.DATE,
+          Types.DECIMAL,
+          Types.DISTINCT,
+          Types.DOUBLE,
+          Types.FLOAT,
+          Types.INTEGER,
+          Types.JAVA_OBJECT,
+          Types.LONGNVARCHAR,
+          Types.LONGVARCHAR,
+          Types.LONGVARBINARY,
+          Types.LONGVARCHAR,
+          Types.NCHAR,
+          Types.NCLOB,
+          Types.NULL,
+          Types.NUMERIC,
+          Types.NVARCHAR,
+          Types.OTHER,
+          Types.REAL,
+          Types.REF,
+          Types.ROWID,
+          Types.SMALLINT,
+          Types.SQLXML,
+          Types.STRUCT,
+          Types.TIME,
+          Types.TIMESTAMP,
+          Types.TINYINT,
+          Types.VARBINARY,
+          Types.VARCHAR
+        };
+    for (int from : types) {
+      for (int to : types) {
+        assertThat(meta.supportsConvert(from, to), is(false));
+      }
+    }
     assertThat(meta.supportsCoreSQLGrammar(), is(false));
     assertThat(meta.supportsCorrelatedSubqueries(), is(true));
     assertThat(meta.supportsDataDefinitionAndDataManipulationTransactions(), is(false));
@@ -186,6 +249,11 @@ public class JdbcDatabaseMetaDataTest {
     assertThat(meta.supportsSubqueriesInIns(), is(true));
     assertThat(meta.supportsSubqueriesInQuantifieds(), is(true));
     assertThat(meta.supportsTableCorrelationNames(), is(true));
+    assertThat(meta.supportsTransactions(), is(true));
+    assertThat(meta.supportsUnion(), is(true));
+    assertThat(meta.supportsUnionAll(), is(true));
+    assertThat(meta.usesLocalFiles(), is(false));
+    assertThat(meta.usesLocalFilePerTable(), is(false));
     assertThat(
         meta.supportsTransactionIsolationLevel(Connection.TRANSACTION_SERIALIZABLE), is(true));
     for (int level :
