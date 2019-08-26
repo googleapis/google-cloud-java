@@ -165,12 +165,17 @@ public class EnhancedBigtableStub implements AutoCloseable {
     // Make sure to keep the original tracer factory for the outer client.
     clientContext = clientContext.toBuilder().setTracerFactory(settings.getTracerFactory()).build();
 
-    return new EnhancedBigtableStub(settings, clientContext, Tags.getTagger(), Stats.getStatsRecorder(), stub);
+    return new EnhancedBigtableStub(
+        settings, clientContext, Tags.getTagger(), Stats.getStatsRecorder(), stub);
   }
 
   @InternalApi("Visible for testing")
   EnhancedBigtableStub(
-      EnhancedBigtableStubSettings settings, ClientContext clientContext, Tagger tagger, StatsRecorder statsRecorder, GrpcBigtableStub stub) {
+      EnhancedBigtableStubSettings settings,
+      ClientContext clientContext,
+      Tagger tagger,
+      StatsRecorder statsRecorder,
+      GrpcBigtableStub stub) {
     this.settings = settings;
     this.clientContext = clientContext;
     this.tagger = tagger;
@@ -208,8 +213,8 @@ public class EnhancedBigtableStub implements AutoCloseable {
    */
   public <RowT> ServerStreamingCallable<Query, RowT> createReadRowsCallable(
       RowAdapter<RowT> rowAdapter) {
-    ServerStreamingCallable<Query, RowT> readRowsCallable = createReadRowsBaseCallable(
-        settings.readRowsSettings(), rowAdapter);
+    ServerStreamingCallable<Query, RowT> readRowsCallable =
+        createReadRowsBaseCallable(settings.readRowsSettings(), rowAdapter);
 
     ServerStreamingCallable<Query, RowT> traced =
         new TracedServerStreamingCallable<>(
@@ -217,13 +222,15 @@ public class EnhancedBigtableStub implements AutoCloseable {
             clientContext.getTracerFactory(),
             SpanName.of(TRACING_OUTER_CLIENT_NAME, "ReadRows"));
 
-    ServerStreamingCallable<Query, RowT> measured = new MeasuredReadRowsCallable<>(
-        traced, TRACING_OUTER_CLIENT_NAME + ".ReadRows", tagger, statsRecorder, clientContext.getClock()
-
-    );
+    ServerStreamingCallable<Query, RowT> measured =
+        new MeasuredReadRowsCallable<>(
+            traced,
+            TRACING_OUTER_CLIENT_NAME + ".ReadRows",
+            tagger,
+            statsRecorder,
+            clientContext.getClock());
 
     return measured.withDefaultCallContext(clientContext.getDefaultCallContext());
-
   }
 
   /**
@@ -243,13 +250,13 @@ public class EnhancedBigtableStub implements AutoCloseable {
   public <RowT> UnaryCallable<Query, RowT> createReadRowCallable(RowAdapter<RowT> rowAdapter) {
     UnaryCallable<Query, RowT> readRowCallable =
         createReadRowsBaseCallable(
-            ServerStreamingCallSettings.<Query, Row>newBuilder()
-                .setRetryableCodes(settings.readRowSettings().getRetryableCodes())
-                .setRetrySettings(settings.readRowSettings().getRetrySettings())
-                .setIdleTimeout(settings.readRowSettings().getRetrySettings().getTotalTimeout())
-                .build(),
-            rowAdapter)
-        .first();
+                ServerStreamingCallSettings.<Query, Row>newBuilder()
+                    .setRetryableCodes(settings.readRowSettings().getRetryableCodes())
+                    .setRetrySettings(settings.readRowSettings().getRetrySettings())
+                    .setIdleTimeout(settings.readRowSettings().getRetrySettings().getTotalTimeout())
+                    .build(),
+                rowAdapter)
+            .first();
 
     UnaryCallable<Query, RowT> traced =
         new TracedUnaryCallable<>(
@@ -257,10 +264,13 @@ public class EnhancedBigtableStub implements AutoCloseable {
             clientContext.getTracerFactory(),
             SpanName.of(TRACING_OUTER_CLIENT_NAME, "ReadRows"));
 
-    UnaryCallable<Query, RowT> measured = new MeasuredUnaryCallable<>(
-        traced, TRACING_OUTER_CLIENT_NAME + ".ReadRows", tagger, statsRecorder, clientContext.getClock()
-
-    );
+    UnaryCallable<Query, RowT> measured =
+        new MeasuredUnaryCallable<>(
+            traced,
+            TRACING_OUTER_CLIENT_NAME + ".ReadRows",
+            tagger,
+            statsRecorder,
+            clientContext.getClock());
 
     return measured.withDefaultCallContext(clientContext.getDefaultCallContext());
   }
@@ -373,12 +383,16 @@ public class EnhancedBigtableStub implements AutoCloseable {
             clientContext.getTracerFactory(),
             SpanName.of(TRACING_OUTER_CLIENT_NAME, "MutateRows"));
 
-    UnaryCallable<MutateRowsRequest, Void> measured = new MeasuredMutateRowsCallable(traced,
-        TRACING_OUTER_CLIENT_NAME + ".MutateRows", tagger, statsRecorder, clientContext.getClock());
+    UnaryCallable<MutateRowsRequest, Void> measured =
+        new MeasuredMutateRowsCallable(
+            traced,
+            TRACING_OUTER_CLIENT_NAME + ".MutateRows",
+            tagger,
+            statsRecorder,
+            clientContext.getClock());
 
-
-    UnaryCallable<BulkMutation, Void> userFacing = new BulkMutateRowsUserFacingCallable(
-        measured, requestContext);
+    UnaryCallable<BulkMutation, Void> userFacing =
+        new BulkMutateRowsUserFacingCallable(measured, requestContext);
 
     return userFacing.withDefaultCallContext(clientContext.getDefaultCallContext());
   }
@@ -420,9 +434,13 @@ public class EnhancedBigtableStub implements AutoCloseable {
             SpanName.of(TRACING_OUTER_CLIENT_NAME, "BulkMutateRows"),
             batchingCallSettings.getBatchingDescriptor());
 
-    UnaryCallable<MutateRowsRequest, Void> measured = new MeasuredMutateRowsCallable(
-        traced,TRACING_OUTER_CLIENT_NAME + ".MutateRows", tagger, statsRecorder, clientContext.getClock()
-    );
+    UnaryCallable<MutateRowsRequest, Void> measured =
+        new MeasuredMutateRowsCallable(
+            traced,
+            TRACING_OUTER_CLIENT_NAME + ".MutateRows",
+            tagger,
+            statsRecorder,
+            clientContext.getClock());
 
     UnaryCallable<MutateRowsRequest, Void> batching =
         Callables.batching(measured, batchingCallSettings.build(), clientContext);
@@ -501,7 +519,9 @@ public class EnhancedBigtableStub implements AutoCloseable {
             clientContext.getTracerFactory(),
             SpanName.of(TRACING_OUTER_CLIENT_NAME, methodName));
 
-    UnaryCallable<RequestT, ResponseT> measured = new MeasuredUnaryCallable<>(traced, methodName, tagger, statsRecorder, clientContext.getClock());
+    UnaryCallable<RequestT, ResponseT> measured =
+        new MeasuredUnaryCallable<>(
+            traced, methodName, tagger, statsRecorder, clientContext.getClock());
 
     return measured.withDefaultCallContext(clientContext.getDefaultCallContext());
   }

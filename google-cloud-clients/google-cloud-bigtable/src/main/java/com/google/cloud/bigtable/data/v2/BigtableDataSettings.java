@@ -132,7 +132,7 @@ public final class BigtableDataSettings {
     com.google.cloud.bigtable.data.v2.stub.metrics.RpcViews.registerBigtableClientViews();
     // TODO(igorbernstein): Enable grpc views once we upgrade to grpc-java 1.24.0
     // Required change: https://github.com/grpc/grpc-java/pull/5996
-    //io.opencensus.contrib.grpc.metrics.RpcViews.registerClientGrpcBasicViews();
+    // io.opencensus.contrib.grpc.metrics.RpcViews.registerClientGrpcBasicViews();
   }
 
   /** Returns the target project id. */

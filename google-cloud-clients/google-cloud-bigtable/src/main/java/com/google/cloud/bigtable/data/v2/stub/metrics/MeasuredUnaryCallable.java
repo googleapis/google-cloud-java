@@ -20,6 +20,7 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.common.base.Preconditions;
 import com.google.common.util.concurrent.MoreExecutors;
 import io.opencensus.stats.StatsRecorder;
 import io.opencensus.tags.TagContext;
@@ -27,7 +28,20 @@ import io.opencensus.tags.TagValue;
 import io.opencensus.tags.Tagger;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
+import javax.annotation.Nonnull;
 
+/**
+ * This callable will instrument callable invocations using Opencensus stats.
+ *
+ * <p>Recorded stats:
+ *
+ * <dl>
+ *   <dt>{@link RpcMeasureConstants#BIGTABLE_OP_ROUNDTRIP_LATENCY}
+ *   <dd>the total time it took the operation across all of its retry attempts to complete
+ * </dl>
+ *
+ * <p>For internal use only.
+ */
 @InternalApi
 public class MeasuredUnaryCallable<RequestT, ResponseT> extends UnaryCallable<RequestT, ResponseT> {
   private final UnaryCallable<RequestT, ResponseT> innerCallable;
@@ -40,20 +54,25 @@ public class MeasuredUnaryCallable<RequestT, ResponseT> extends UnaryCallable<Re
   private final ApiClock clock;
 
   public MeasuredUnaryCallable(
-      UnaryCallable<RequestT, ResponseT> innerCallable, String methodName,
-      Tagger tagger, StatsRecorder stats, ApiClock clock) {
-    this.innerCallable = innerCallable;
-    this.methodName = TagValue.create(methodName);
+      @Nonnull UnaryCallable<RequestT, ResponseT> innerCallable,
+      @Nonnull String methodName,
+      @Nonnull Tagger tagger,
+      @Nonnull StatsRecorder stats,
+      @Nonnull ApiClock clock) {
+    this.innerCallable = Preconditions.checkNotNull(innerCallable, "innerCallable");
+    this.methodName = TagValue.create(Preconditions.checkNotNull(methodName, "methodName"));
+    this.tagger = Preconditions.checkNotNull(tagger, "tagger");
     this.parentCtx = tagger.getCurrentTagContext();
-    this.tagger = tagger;
-    this.stats = stats;
-    this.clock = clock;
+    this.stats = Preconditions.checkNotNull(stats, "stats");
+    this.clock = Preconditions.checkNotNull(clock, "clock");
   }
 
   @Override
   public ApiFuture<ResponseT> futureCall(RequestT request, ApiCallContext context) {
+    long startTime = clock.nanoTime();
     ApiFuture<ResponseT> future = innerCallable.futureCall(request, context);
-    future.addListener(new StatsRecordingRunnable(future), MoreExecutors.directExecutor());
+    future.addListener(
+        new StatsRecordingRunnable(future, startTime), MoreExecutors.directExecutor());
     return future;
   }
 
@@ -61,23 +80,25 @@ public class MeasuredUnaryCallable<RequestT, ResponseT> extends UnaryCallable<Re
     private final Future<?> operationFuture;
     private final long operationStart;
 
-    private StatsRecordingRunnable(Future<?> operationFuture) {
-      this.operationFuture = operationFuture;
-      this.operationStart = clock.nanoTime();
+    private StatsRecordingRunnable(@Nonnull Future<?> operationFuture, long startTime) {
+      this.operationFuture = Preconditions.checkNotNull(operationFuture, "operationFuture");
+      this.operationStart = startTime;
     }
 
     @Override
     public void run() {
       long elapsed = TimeUnit.NANOSECONDS.toMillis(clock.nanoTime() - operationStart);
 
-      stats.newMeasureMap()
+      stats
+          .newMeasureMap()
           .put(RpcMeasureConstants.BIGTABLE_OP_ROUNDTRIP_LATENCY, elapsed)
           .record(
-              tagger.toBuilder(parentCtx)
+              tagger
+                  .toBuilder(parentCtx)
                   .putLocal(RpcMeasureConstants.BIGTABLE_OP, methodName)
-                  .putLocal(RpcMeasureConstants.BIGTABLE_STATUS, Util.extractStatus(operationFuture))
-                .build()
-          );
+                  .putLocal(
+                      RpcMeasureConstants.BIGTABLE_STATUS, Util.extractStatus(operationFuture))
+                  .build());
     }
   }
 }

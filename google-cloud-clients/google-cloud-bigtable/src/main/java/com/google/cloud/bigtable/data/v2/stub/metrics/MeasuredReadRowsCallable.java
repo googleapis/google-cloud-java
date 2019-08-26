@@ -21,17 +21,36 @@ import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ResponseObserver;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.StreamController;
+import com.google.cloud.bigtable.data.v2.models.Query;
+import com.google.common.base.Preconditions;
 import io.opencensus.stats.MeasureMap;
 import io.opencensus.stats.StatsRecorder;
 import io.opencensus.tags.TagContext;
 import io.opencensus.tags.TagValue;
 import io.opencensus.tags.Tagger;
 import java.util.concurrent.TimeUnit;
+import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
+/**
+ * This callable will instrument ReadRows invocations using Opencensus stats.
+ *
+ * <p>Recorded stats:
+ *
+ * <dl>
+ *   <dt>{@link RpcMeasureConstants#BIGTABLE_OP_ROUNDTRIP_LATENCY}
+ *   <dd>the total time it took the operation across all of its retry attempts to complete.
+ *   <dt>{@link RpcMeasureConstants#BIGTABLE_ROWS_READ_PER_OP}
+ *   <dd>the number of rows received across all of the retries for each invocation.
+ *   <dt>{@link RpcMeasureConstants#BIGTABLE_READ_ROWS_FIRST_ROW_LATENCY}
+ *   <dd>the amount of time it took the caller to receive the first row.
+ * </dl>
+ *
+ * <p>For internal use only.
+ */
 @InternalApi
-public class MeasuredReadRowsCallable<RequestT, RowT> extends ServerStreamingCallable<RequestT, RowT> {
-  private final ServerStreamingCallable<RequestT, RowT> innerCallable;
+public class MeasuredReadRowsCallable<RowT> extends ServerStreamingCallable<Query, RowT> {
+  private final ServerStreamingCallable<Query, RowT> innerCallable;
 
   private final TagValue methodName;
   private final TagContext parentCtx;
@@ -41,18 +60,21 @@ public class MeasuredReadRowsCallable<RequestT, RowT> extends ServerStreamingCal
   private final ApiClock clock;
 
   public MeasuredReadRowsCallable(
-      ServerStreamingCallable<RequestT, RowT> innerCallable, String methodName,
-      Tagger tagger, StatsRecorder stats, ApiClock clock) {
-    this.innerCallable = innerCallable;
-    this.methodName = TagValue.create(methodName);
+      @Nonnull ServerStreamingCallable<Query, RowT> innerCallable,
+      @Nonnull String methodName,
+      @Nonnull Tagger tagger,
+      @Nonnull StatsRecorder stats,
+      @Nonnull ApiClock clock) {
+    this.innerCallable = Preconditions.checkNotNull(innerCallable, "innerCallable");
+    this.methodName = TagValue.create(Preconditions.checkNotNull(methodName, "methodName"));
+    this.tagger = Preconditions.checkNotNull(tagger, "tagger");
     this.parentCtx = tagger.getCurrentTagContext();
-    this.tagger = tagger;
-    this.stats = stats;
-    this.clock = clock;
+    this.stats = Preconditions.checkNotNull(stats, "stats");
+    this.clock = Preconditions.checkNotNull(clock, "clock");
   }
 
   @Override
-  public void call(RequestT request, ResponseObserver<RowT> outerObserver, ApiCallContext context) {
+  public void call(Query request, ResponseObserver<RowT> outerObserver, ApiCallContext context) {
     innerCallable.call(request, new MeasuredResponseObserver(outerObserver), context);
   }
 
@@ -63,9 +85,9 @@ public class MeasuredReadRowsCallable<RequestT, RowT> extends ServerStreamingCal
     private Long firstRowReceivedAt = null;
     private long rowsRead = 0;
 
-    private MeasuredResponseObserver(
-        ResponseObserver<RowT> outerResponseObserver) {
-      this.outerResponseObserver = outerResponseObserver;
+    private MeasuredResponseObserver(@Nonnull ResponseObserver<RowT> outerResponseObserver) {
+      this.outerResponseObserver =
+          Preconditions.checkNotNull(outerResponseObserver, "outerResponseObserver");
       this.operationStart = clock.nanoTime();
     }
 
@@ -99,21 +121,23 @@ public class MeasuredReadRowsCallable<RequestT, RowT> extends ServerStreamingCal
       long now = clock.nanoTime();
       long elapsed = TimeUnit.NANOSECONDS.toMillis(now - operationStart);
 
-      MeasureMap measures = stats.newMeasureMap()
-          .put(RpcMeasureConstants.BIGTABLE_OP_ROUNDTRIP_LATENCY, elapsed)
-          .put(RpcMeasureConstants.BIGTABLE_ROWS_READ_PER_OP, rowsRead);
+      MeasureMap measures =
+          stats
+              .newMeasureMap()
+              .put(RpcMeasureConstants.BIGTABLE_OP_ROUNDTRIP_LATENCY, elapsed)
+              .put(RpcMeasureConstants.BIGTABLE_ROWS_READ_PER_OP, rowsRead);
 
       if (firstRowReceivedAt != null) {
-        long firstRowLatency = TimeUnit.NANOSECONDS.toMillis(now - firstRowReceivedAt);
+        long firstRowLatency = TimeUnit.NANOSECONDS.toMillis(firstRowReceivedAt - operationStart);
         measures.put(RpcMeasureConstants.BIGTABLE_READ_ROWS_FIRST_ROW_LATENCY, firstRowLatency);
       }
 
       measures.record(
-          tagger.toBuilder(parentCtx)
+          tagger
+              .toBuilder(parentCtx)
               .putLocal(RpcMeasureConstants.BIGTABLE_OP, methodName)
               .putLocal(RpcMeasureConstants.BIGTABLE_STATUS, Util.extractStatus(error))
-              .build()
-      );
+              .build());
     }
   }
 }

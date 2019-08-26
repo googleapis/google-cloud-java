@@ -18,26 +18,27 @@ package com.google.cloud.bigtable.data.v2.stub.metrics;
 import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.StatusCode.Code;
+import io.grpc.Status;
 import io.grpc.StatusException;
 import io.grpc.StatusRuntimeException;
 import io.opencensus.tags.TagValue;
+import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
+import javax.annotation.Nullable;
 
-/**
- * Utilities to help integrating with opencensus.
- */
+/** Utilities to help integrating with opencensus. */
 class Util {
   private static final TagValue OK_STATUS = TagValue.create(StatusCode.Code.OK.toString());
 
-  /**
-   * Convert an exception into a value that can be used as an Opencensus tag value.
-   */
-  static TagValue extractStatus(Throwable error) {
+  /** Convert an exception into a value that can be used as an Opencensus tag value. */
+  static TagValue extractStatus(@Nullable Throwable error) {
     final String statusString;
 
     if (error == null) {
       return OK_STATUS;
+    } else if (error instanceof CancellationException) {
+      statusString = Status.Code.CANCELLED.toString();
     } else if (error instanceof ApiException) {
       statusString = ((ApiException) error).getStatusCode().getCode().toString();
     } else if (error instanceof StatusRuntimeException) {
