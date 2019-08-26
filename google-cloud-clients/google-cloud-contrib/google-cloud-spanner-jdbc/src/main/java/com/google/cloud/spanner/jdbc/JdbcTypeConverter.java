@@ -21,90 +21,160 @@ import com.google.cloud.Date;
 import com.google.cloud.Timestamp;
 import com.google.cloud.spanner.Type;
 import com.google.cloud.spanner.Type.Code;
-import com.google.common.base.Preconditions;
 import java.math.BigDecimal;
 import java.math.BigInteger;
+import java.nio.charset.Charset;
+import java.sql.Array;
 import java.sql.SQLException;
 import java.sql.Time;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
+import org.threeten.bp.Instant;
+import org.threeten.bp.ZoneId;
+import org.threeten.bp.ZonedDateTime;
+import org.threeten.bp.format.DateTimeFormatter;
 
 /** Convenience class for converting values between Java, JDBC and Cloud Spanner. */
 class JdbcTypeConverter {
+  private static final DateTimeFormatter TIMESTAMP_FORMAT = DateTimeFormatter.ISO_OFFSET_DATE_TIME;
+  private static final Charset UTF8 = Charset.forName("UTF8");
 
   /**
-   * Converts the given value from the Google {@link Type} to the Java {@link Class} type.
+   * Converts the given value from the Google {@link Type} to the Java {@link Class} type. The input
+   * value and the {@link Type} must be consistent with each other.
    *
-   * @param value The value to convert
-   * @param type The type in the database
-   * @param targetType The java class target type to convert to
-   * @return The converted value
-   * @throws CloudSpannerSQLException Thrown if the given value cannot be converted to the specified
-   *     type
+   * @param value The value to convert. This value must be in the default type used for a Cloud
+   *     Spanner database type. I.e. if the type argument is {@link Type#string()}, then the input
+   *     value must be an instance of {@link java.lang.String}.
+   * @param type The type in the database.
+   * @param targetType The java class target type to convert to.
+   * @return The converted value.
+   * @throws SQLException if the given value cannot be converted to the specified type, or if the
+   *     input value and input type are not consistent with each other.
    */
   static Object convert(Object value, Type type, Class<?> targetType) throws SQLException {
-    Preconditions.checkNotNull(type, "type may not be null");
-    Preconditions.checkNotNull(targetType, "targetType may not be null");
-    if (value == null) return null;
-    if (targetType.equals(String.class)) return value.toString();
+    JdbcPreconditions.checkArgument(type != null, "type may not be null");
+    JdbcPreconditions.checkArgument(targetType != null, "targetType may not be null");
+    checkValidTypeAndValueForConvert(type, value);
 
+    if (value == null) return null;
     try {
+      if (targetType.equals(String.class)) {
+        if (type.getCode() == Code.BYTES) return new String((byte[]) value, UTF8);
+        if (type.getCode() == Code.TIMESTAMP) {
+          Timestamp timestamp = Timestamp.of((java.sql.Timestamp) value);
+          return TIMESTAMP_FORMAT.format(
+              ZonedDateTime.ofInstant(
+                  Instant.ofEpochSecond(timestamp.getSeconds(), timestamp.getNanos()),
+                  ZoneId.systemDefault()));
+        }
+        return value.toString();
+      }
+      if (targetType.equals(byte[].class)) {
+        if (type.getCode() == Code.BYTES) return value;
+        if (type.getCode() == Code.STRING) return ((String) value).getBytes(UTF8);
+      }
       if (targetType.equals(Boolean.class)) {
         if (type.getCode() == Code.BOOL) return value;
         if (type.getCode() == Code.INT64) return Boolean.valueOf((Long) value != 0);
         if (type.getCode() == Code.FLOAT64) return Boolean.valueOf((Double) value != 0d);
-        if (type.getCode() == Code.STRING) return Boolean.valueOf((String) value);
       }
       if (targetType.equals(BigDecimal.class)) {
         if (type.getCode() == Code.BOOL) return (Boolean) value ? BigDecimal.ONE : BigDecimal.ZERO;
         if (type.getCode() == Code.INT64) return BigDecimal.valueOf((Long) value);
-        if (type.getCode() == Code.FLOAT64) return BigDecimal.valueOf((Double) value);
-        if (type.getCode() == Code.STRING) return new BigDecimal((String) value);
       }
       if (targetType.equals(Long.class)) {
         if (type.getCode() == Code.BOOL) return (Boolean) value ? 1L : 0L;
         if (type.getCode() == Code.INT64) return value;
-        if (type.getCode() == Code.FLOAT64) return ((Double) value).longValue();
-        if (type.getCode() == Code.STRING) return Long.valueOf((String) value);
       }
       if (targetType.equals(Integer.class)) {
         if (type.getCode() == Code.BOOL) return (Boolean) value ? 1 : 0;
-        if (type.getCode() == Code.INT64) return ((Long) value).intValue();
-        if (type.getCode() == Code.FLOAT64) return ((Double) value).intValue();
-        if (type.getCode() == Code.STRING) return Integer.valueOf((String) value);
+        if (type.getCode() == Code.INT64) return AbstractJdbcWrapper.checkedCastToInt((Long) value);
+      }
+      if (targetType.equals(Short.class)) {
+        if (type.getCode() == Code.BOOL) return (Boolean) value ? 1 : 0;
+        if (type.getCode() == Code.INT64)
+          return AbstractJdbcWrapper.checkedCastToShort((Long) value);
+      }
+      if (targetType.equals(Byte.class)) {
+        if (type.getCode() == Code.BOOL) return (Boolean) value ? 1 : 0;
+        if (type.getCode() == Code.INT64)
+          return AbstractJdbcWrapper.checkedCastToByte((Long) value);
       }
       if (targetType.equals(BigInteger.class)) {
         if (type.getCode() == Code.BOOL) return (Boolean) value ? BigInteger.ONE : BigInteger.ZERO;
         if (type.getCode() == Code.INT64) return BigInteger.valueOf((Long) value);
-        if (type.getCode() == Code.FLOAT64) return BigInteger.valueOf(((Double) value).longValue());
-        if (type.getCode() == Code.STRING) return new BigInteger((String) value);
       }
       if (targetType.equals(Float.class)) {
         if (type.getCode() == Code.BOOL)
           return (Boolean) value ? Float.valueOf(1f) : Float.valueOf(0f);
-        if (type.getCode() == Code.INT64) return ((Long) value).floatValue();
-        if (type.getCode() == Code.FLOAT64) return ((Double) value).floatValue();
-        if (type.getCode() == Code.STRING) return Float.valueOf((String) value);
+        if (type.getCode() == Code.FLOAT64)
+          return AbstractJdbcWrapper.checkedCastToFloat((Double) value);
       }
       if (targetType.equals(Double.class)) {
         if (type.getCode() == Code.BOOL)
           return (Boolean) value ? Double.valueOf(1d) : Double.valueOf(0d);
-        if (type.getCode() == Code.INT64) return ((Long) value).doubleValue();
         if (type.getCode() == Code.FLOAT64) return value;
-        if (type.getCode() == Code.STRING) return Double.valueOf((String) value);
       }
+      if (targetType.equals(java.sql.Date.class)) {
+        if (type.getCode() == Code.DATE) return value;
+      }
+      if (targetType.equals(java.sql.Timestamp.class)) {
+        if (type.getCode() == Code.TIMESTAMP) return value;
+      }
+      if (targetType.equals(java.sql.Array.class)) {
+        if (type.getCode() == Code.ARRAY) return value;
+      }
+    } catch (SQLException e) {
+      throw e;
     } catch (Exception e) {
       throw JdbcSqlExceptionFactory.of(
           "Cannot convert " + value + " to " + targetType.getName(),
           com.google.rpc.Code.INVALID_ARGUMENT,
           e);
     }
-
     throw JdbcSqlExceptionFactory.of(
         "Cannot convert " + type.getCode().name() + " to " + targetType.getName(),
         com.google.rpc.Code.INVALID_ARGUMENT);
+  }
+
+  private static void checkValidTypeAndValueForConvert(Type type, Object value)
+      throws SQLException {
+    if (value == null) return;
+    JdbcPreconditions.checkArgument(
+        (type.getCode() == Code.ARRAY && Array.class.isAssignableFrom(value.getClass()))
+            || type.getCode() != Code.ARRAY,
+        "input type is array, but input value is not an instance of java.sql.Array");
+    JdbcPreconditions.checkArgument(
+        (type.getCode() == Code.BOOL && value.getClass().equals(Boolean.class))
+            || type.getCode() != Code.BOOL,
+        "input type is bool, but input value is not an instance of Boolean");
+    JdbcPreconditions.checkArgument(
+        (type.getCode() == Code.BYTES && value.getClass().equals(byte[].class))
+            || type.getCode() != Code.BYTES,
+        "input type is bytes, but input value is not an instance of byte[]");
+    JdbcPreconditions.checkArgument(
+        (type.getCode() == Code.DATE && value.getClass().equals(java.sql.Date.class))
+            || type.getCode() != Code.DATE,
+        "input type is date, but input value is not an instance of java.sql.Date");
+    JdbcPreconditions.checkArgument(
+        (type.getCode() == Code.FLOAT64 && value.getClass().equals(Double.class))
+            || type.getCode() != Code.FLOAT64,
+        "input type is float64, but input value is not an instance of Double");
+    JdbcPreconditions.checkArgument(
+        (type.getCode() == Code.INT64 && value.getClass().equals(Long.class))
+            || type.getCode() != Code.INT64,
+        "input type is int64, but input value is not an instance of Long");
+    JdbcPreconditions.checkArgument(
+        (type.getCode() == Code.STRING && value.getClass().equals(String.class))
+            || type.getCode() != Code.STRING,
+        "input type is string, but input value is not an instance of String");
+    JdbcPreconditions.checkArgument(
+        (type.getCode() == Code.TIMESTAMP && value.getClass().equals(java.sql.Timestamp.class))
+            || type.getCode() != Code.TIMESTAMP,
+        "input type is timestamp, but input value is not an instance of java.sql.Timestamp");
   }
 
   @SuppressWarnings("deprecation")
@@ -240,18 +310,26 @@ class JdbcTypeConverter {
     return res;
   }
 
+  @SuppressWarnings("deprecation")
   static Time toSqlTime(Timestamp ts) {
-    return toSqlTime(ts, Calendar.getInstance());
+    if (ts != null) {
+      java.sql.Timestamp sqlTs = toSqlTimestamp(ts);
+      Time time = new Time(sqlTs.getHours(), sqlTs.getMinutes(), sqlTs.getSeconds());
+      time.setTime(
+          time.getTime() + TimeUnit.MILLISECONDS.convert(sqlTs.getNanos(), TimeUnit.NANOSECONDS));
+      return time;
+    }
+    return null;
   }
 
+  @SuppressWarnings("deprecation")
   static Time toSqlTime(Timestamp ts, Calendar cal) {
     if (ts != null) {
-      cal.set(1970, 0, 1, 0, 0, 0);
-      cal.clear(Calendar.MILLISECOND);
-      cal.setTimeInMillis(
-          ts.getSeconds() * 1000
-              + TimeUnit.MILLISECONDS.convert(ts.getNanos(), TimeUnit.NANOSECONDS));
-      return new Time(cal.getTimeInMillis());
+      java.sql.Timestamp sqlTs = getAsSqlTimestamp(ts, cal);
+      Time time = new Time(sqlTs.getHours(), sqlTs.getMinutes(), sqlTs.getSeconds());
+      time.setTime(
+          time.getTime() + TimeUnit.MILLISECONDS.convert(sqlTs.getNanos(), TimeUnit.NANOSECONDS));
+      return time;
     }
     return null;
   }
