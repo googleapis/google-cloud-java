@@ -80,6 +80,11 @@
       <artifactId>grpc-testing</artifactId>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-conformance-tests</artifactId>
+      <scope>test</scope>
+    </dependency>
   </dependencies>
 
   <profiles>
