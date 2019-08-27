@@ -98,6 +98,8 @@ public class SpannerGaxRetryTest {
   private static LocalChannelProvider channelProvider;
   private Spanner spanner;
   private DatabaseClient client;
+  private Spanner spannerWithTimeout;
+  private DatabaseClient clientWithTimeout;
 
   @Rule public ExpectedException expectedException = ExpectedException.none();
 
@@ -128,6 +130,19 @@ public class SpannerGaxRetryTest {
   public void setUp() throws Exception {
     mockSpanner.reset();
     mockSpanner.removeAllExecutionTimes();
+    SpannerOptions.Builder builder =
+        SpannerOptions.newBuilder()
+            .setProjectId("[PROJECT]")
+            .setChannelProvider(channelProvider)
+            .setCredentials(NoCredentials.getInstance());
+    // Make sure the session pool is empty by default.
+    builder.setSessionPoolOption(
+        SessionPoolOptions.newBuilder().setMinSessions(0).setWriteSessionsFraction(0.0f).build());
+    // Create one client with default timeout values and one with short timeout values specifically
+    // for the test cases that expect a DEADLINE_EXCEEDED.
+    spanner = builder.build().getService();
+    client = spanner.getDatabaseClient(DatabaseId.of("[PROJECT]", "[INSTANCE]", "[DATABASE]"));
+
     final RetrySettings retrySettings =
         RetrySettings.newBuilder()
             .setInitialRetryDelay(Duration.ofMillis(10L))
@@ -144,11 +159,6 @@ public class SpannerGaxRetryTest {
             .setMaxAttempts(1)
             .setTotalTimeout(Duration.ofMillis(20000L))
             .build();
-    SpannerOptions.Builder builder =
-        SpannerOptions.newBuilder()
-            .setProjectId("[PROJECT]")
-            .setChannelProvider(channelProvider)
-            .setCredentials(NoCredentials.getInstance());
     builder
         .getSpannerStubSettingsBuilder()
         .applyToAllUnaryMethods(
@@ -165,19 +175,19 @@ public class SpannerGaxRetryTest {
         .executeStreamingSqlSettings()
         .setRetrySettings(retrySettings);
     builder.getSpannerStubSettingsBuilder().streamingReadSettings().setRetrySettings(retrySettings);
-    // Make sure the session pool is empty by default.
-    builder.setSessionPoolOption(
-        SessionPoolOptions.newBuilder().setMinSessions(0).setWriteSessionsFraction(0.0f).build());
-    spanner = builder.build().getService();
-    client = spanner.getDatabaseClient(DatabaseId.of("[PROJECT]", "[INSTANCE]", "[DATABASE]"));
+    spannerWithTimeout = builder.build().getService();
+    clientWithTimeout =
+        spannerWithTimeout.getDatabaseClient(
+            DatabaseId.of("[PROJECT]", "[INSTANCE]", "[DATABASE]"));
   }
 
   @After
   public void tearDown() throws Exception {
+    spannerWithTimeout.close();
     spanner.close();
   }
 
-  private void warmUpSessionPool() {
+  private void warmUpSessionPool(DatabaseClient client) {
     for (int i = 0; i < 10; i++) {
       int retryCount = 0;
       while (true) {
@@ -209,7 +219,7 @@ public class SpannerGaxRetryTest {
   public void singleUseTimeout() {
     expectedException.expect(SpannerMatchers.isSpannerException(ErrorCode.DEADLINE_EXCEEDED));
     mockSpanner.setCreateSessionExecutionTime(HUNDRED_MS);
-    try (ResultSet rs = client.singleUse().executeQuery(SELECT1AND2)) {
+    try (ResultSet rs = clientWithTimeout.singleUse().executeQuery(SELECT1AND2)) {
       while (rs.next()) {}
     }
   }
@@ -253,7 +263,8 @@ public class SpannerGaxRetryTest {
   public void singleUseReadOnlyTransactionTimeout() {
     expectedException.expect(SpannerMatchers.isSpannerException(ErrorCode.DEADLINE_EXCEEDED));
     mockSpanner.setCreateSessionExecutionTime(HUNDRED_MS);
-    try (ResultSet rs = client.singleUseReadOnlyTransaction().executeQuery(SELECT1AND2)) {
+    try (ResultSet rs =
+        clientWithTimeout.singleUseReadOnlyTransaction().executeQuery(SELECT1AND2)) {
       while (rs.next()) {}
     }
   }
@@ -269,7 +280,7 @@ public class SpannerGaxRetryTest {
   @Test
   public void singleUseExecuteStreamingSqlTimeout() {
     expectedException.expect(SpannerMatchers.isSpannerException(ErrorCode.DEADLINE_EXCEEDED));
-    try (ResultSet rs = client.singleUse().executeQuery(SELECT1AND2)) {
+    try (ResultSet rs = clientWithTimeout.singleUse().executeQuery(SELECT1AND2)) {
       mockSpanner.setExecuteStreamingSqlExecutionTime(HUNDRED_MS);
       while (rs.next()) {}
     }
@@ -287,7 +298,7 @@ public class SpannerGaxRetryTest {
   public void readWriteTransactionTimeout() {
     expectedException.expect(SpannerMatchers.isSpannerException(ErrorCode.DEADLINE_EXCEEDED));
     mockSpanner.setBeginTransactionExecutionTime(HUNDRED_MS);
-    TransactionRunner runner = client.readWriteTransaction();
+    TransactionRunner runner = clientWithTimeout.readWriteTransaction();
     long updateCount =
         runner.run(
             new TransactionCallable<Long>() {
@@ -301,7 +312,7 @@ public class SpannerGaxRetryTest {
 
   @Test
   public void readWriteTransactionUnavailable() {
-    warmUpSessionPool();
+    warmUpSessionPool(client);
     mockSpanner.addException(UNAVAILABLE);
     TransactionRunner runner = client.readWriteTransaction();
     long updateCount =
@@ -384,7 +395,7 @@ public class SpannerGaxRetryTest {
   @Test
   public void transactionManagerTimeout() {
     mockSpanner.setBeginTransactionExecutionTime(HUNDRED_MS);
-    try (TransactionManager txManager = client.transactionManager()) {
+    try (TransactionManager txManager = clientWithTimeout.transactionManager()) {
       TransactionContext tx = txManager.begin();
       while (true) {
         try {
@@ -404,7 +415,7 @@ public class SpannerGaxRetryTest {
   @SuppressWarnings("resource")
   @Test
   public void transactionManagerUnavailable() {
-    warmUpSessionPool();
+    warmUpSessionPool(client);
     mockSpanner.addException(UNAVAILABLE);
     try (TransactionManager txManager = client.transactionManager()) {
       TransactionContext tx = txManager.begin();
