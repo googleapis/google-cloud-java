@@ -58,7 +58,7 @@ class RpcViewConstants {
    */
   static final View BIGTABLE_OP_ROUNDTRIP_LATENCY_VIEW =
       View.create(
-          View.Name.create("cloud.google.com/java/bigtable/roundtrip_latency"),
+          View.Name.create("cloud.google.com/java/bigtable/operation_latency"),
           "Latency in msecs",
           BIGTABLE_OP_ROUNDTRIP_LATENCY,
           AGGREGATION_WITH_MILLIS_HISTOGRAM,
