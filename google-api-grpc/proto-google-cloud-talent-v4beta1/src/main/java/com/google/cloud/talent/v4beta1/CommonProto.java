@@ -68,6 +68,10 @@ public final class CommonProto {
       internal_static_google_cloud_talent_v4beta1_Rating_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_talent_v4beta1_Rating_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_talent_v4beta1_BatchOperationMetadata_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_talent_v4beta1_BatchOperationMetadata_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -156,74 +160,86 @@ public final class CommonProto {
           + "5\n\007outcome\030\007 \001(\0162$.google.cloud.talent.v"
           + "4beta1.Outcome\"E\n\006Rating\022\017\n\007overall\030\001 \001("
           + "\001\022\013\n\003min\030\002 \001(\001\022\013\n\003max\030\003 \001(\001\022\020\n\010interval\030"
-          + "\004 \001(\001*y\n\013CompanySize\022\034\n\030COMPANY_SIZE_UNS"
-          + "PECIFIED\020\000\022\010\n\004MINI\020\001\022\t\n\005SMALL\020\002\022\013\n\007SMEDI"
-          + "UM\020\003\022\n\n\006MEDIUM\020\004\022\007\n\003BIG\020\005\022\n\n\006BIGGER\020\006\022\t\n"
-          + "\005GIANT\020\007*\342\001\n\nJobBenefit\022\033\n\027JOB_BENEFIT_U"
-          + "NSPECIFIED\020\000\022\016\n\nCHILD_CARE\020\001\022\n\n\006DENTAL\020\002"
-          + "\022\024\n\020DOMESTIC_PARTNER\020\003\022\022\n\016FLEXIBLE_HOURS"
-          + "\020\004\022\013\n\007MEDICAL\020\005\022\022\n\016LIFE_INSURANCE\020\006\022\022\n\016P"
-          + "ARENTAL_LEAVE\020\007\022\023\n\017RETIREMENT_PLAN\020\010\022\r\n\t"
-          + "SICK_DAYS\020\t\022\014\n\010VACATION\020\n\022\n\n\006VISION\020\013*\216\002"
-          + "\n\nDegreeType\022\033\n\027DEGREE_TYPE_UNSPECIFIED\020"
-          + "\000\022\025\n\021PRIMARY_EDUCATION\020\001\022\035\n\031LOWER_SECOND"
-          + "ARY_EDUCATION\020\002\022\035\n\031UPPER_SECONDARY_EDUCA"
-          + "TION\020\003\022\034\n\030ADULT_REMEDIAL_EDUCATION\020\004\022\034\n\030"
-          + "ASSOCIATES_OR_EQUIVALENT\020\005\022\033\n\027BACHELORS_"
-          + "OR_EQUIVALENT\020\006\022\031\n\025MASTERS_OR_EQUIVALENT"
-          + "\020\007\022\032\n\026DOCTORAL_OR_EQUIVALENT\020\010*\334\001\n\016Emplo"
-          + "ymentType\022\037\n\033EMPLOYMENT_TYPE_UNSPECIFIED"
-          + "\020\000\022\r\n\tFULL_TIME\020\001\022\r\n\tPART_TIME\020\002\022\016\n\nCONT"
-          + "RACTOR\020\003\022\024\n\020CONTRACT_TO_HIRE\020\004\022\r\n\tTEMPOR"
-          + "ARY\020\005\022\n\n\006INTERN\020\006\022\r\n\tVOLUNTEER\020\007\022\014\n\010PER_"
-          + "DIEM\020\010\022\022\n\016FLY_IN_FLY_OUT\020\t\022\031\n\025OTHER_EMPL"
-          + "OYMENT_TYPE\020\n*q\n\010JobLevel\022\031\n\025JOB_LEVEL_U"
-          + "NSPECIFIED\020\000\022\017\n\013ENTRY_LEVEL\020\001\022\017\n\013EXPERIE"
-          + "NCED\020\002\022\013\n\007MANAGER\020\003\022\014\n\010DIRECTOR\020\004\022\r\n\tEXE"
-          + "CUTIVE\020\005*\272\006\n\013JobCategory\022\034\n\030JOB_CATEGORY"
-          + "_UNSPECIFIED\020\000\022\032\n\026ACCOUNTING_AND_FINANCE"
-          + "\020\001\022\035\n\031ADMINISTRATIVE_AND_OFFICE\020\002\022\035\n\031ADV"
-          + "ERTISING_AND_MARKETING\020\003\022\017\n\013ANIMAL_CARE\020"
-          + "\004\022\032\n\026ART_FASHION_AND_DESIGN\020\005\022\027\n\023BUSINES"
-          + "S_OPERATIONS\020\006\022\033\n\027CLEANING_AND_FACILITIE"
-          + "S\020\007\022\023\n\017COMPUTER_AND_IT\020\010\022\020\n\014CONSTRUCTION"
-          + "\020\t\022\024\n\020CUSTOMER_SERVICE\020\n\022\r\n\tEDUCATION\020\013\022"
-          + "\034\n\030ENTERTAINMENT_AND_TRAVEL\020\014\022\030\n\024FARMING"
-          + "_AND_OUTDOORS\020\r\022\016\n\nHEALTHCARE\020\016\022\023\n\017HUMAN"
-          + "_RESOURCES\020\017\022\'\n#INSTALLATION_MAINTENANCE"
-          + "_AND_REPAIR\020\020\022\t\n\005LEGAL\020\021\022\016\n\nMANAGEMENT\020\022"
-          + "\022\037\n\033MANUFACTURING_AND_WAREHOUSE\020\023\022$\n MED"
-          + "IA_COMMUNICATIONS_AND_WRITING\020\024\022\026\n\022OIL_G"
-          + "AS_AND_MINING\020\025\022\036\n\032PERSONAL_CARE_AND_SER"
-          + "VICES\020\026\022\027\n\023PROTECTIVE_SERVICES\020\027\022\017\n\013REAL"
-          + "_ESTATE\020\030\022\036\n\032RESTAURANT_AND_HOSPITALITY\020"
-          + "\031\022\024\n\020SALES_AND_RETAIL\020\032\022\033\n\027SCIENCE_AND_E"
-          + "NGINEERING\020\033\022\"\n\036SOCIAL_SERVICES_AND_NON_"
-          + "PROFIT\020\034\022!\n\035SPORTS_FITNESS_AND_RECREATIO"
-          + "N\020\035\022 \n\034TRANSPORTATION_AND_LOGISTICS\020\036*e\n"
-          + "\rPostingRegion\022\036\n\032POSTING_REGION_UNSPECI"
-          + "FIED\020\000\022\027\n\023ADMINISTRATIVE_AREA\020\001\022\n\n\006NATIO"
-          + "N\020\002\022\017\n\013TELECOMMUTE\020\003*n\n\nVisibility\022\032\n\026VI"
-          + "SIBILITY_UNSPECIFIED\020\000\022\020\n\014ACCOUNT_ONLY\020\001"
-          + "\022\026\n\022SHARED_WITH_GOOGLE\020\002\022\026\n\022SHARED_WITH_"
-          + "PUBLIC\020\003\032\002\030\001*Z\n\020ContactInfoUsage\022\"\n\036CONT"
-          + "ACT_INFO_USAGE_UNSPECIFIED\020\000\022\014\n\010PERSONAL"
-          + "\020\001\022\010\n\004WORK\020\002\022\n\n\006SCHOOL\020\003*q\n\020HtmlSanitiza"
-          + "tion\022!\n\035HTML_SANITIZATION_UNSPECIFIED\020\000\022"
-          + "\036\n\032HTML_SANITIZATION_DISABLED\020\001\022\032\n\026SIMPL"
-          + "E_FORMATTING_ONLY\020\002*c\n\rCommuteMethod\022\036\n\032"
-          + "COMMUTE_METHOD_UNSPECIFIED\020\000\022\013\n\007DRIVING\020"
-          + "\001\022\013\n\007TRANSIT\020\002\022\013\n\007WALKING\020\003\022\013\n\007CYCLING\020\004"
-          + "*\242\001\n\025SkillProficiencyLevel\022\'\n#SKILL_PROF"
-          + "ICIENCY_LEVEL_UNSPECIFIED\020\000\022\r\n\tUNSKILLED"
-          + "\020\006\022\031\n\025FUNDAMENTAL_AWARENESS\020\001\022\n\n\006NOVICE\020"
-          + "\002\022\020\n\014INTERMEDIATE\020\003\022\014\n\010ADVANCED\020\004\022\n\n\006EXP"
-          + "ERT\020\005*f\n\007Outcome\022\027\n\023OUTCOME_UNSPECIFIED\020"
-          + "\000\022\014\n\010POSITIVE\020\001\022\013\n\007NEUTRAL\020\002\022\014\n\010NEGATIVE"
-          + "\020\003\022\031\n\025OUTCOME_NOT_AVAILABLE\020\004By\n\037com.goo"
-          + "gle.cloud.talent.v4beta1B\013CommonProtoP\001Z"
-          + "Agoogle.golang.org/genproto/googleapis/c"
-          + "loud/talent/v4beta1;talent\242\002\003CTSb\006proto3"
+          + "\004 \001(\001\"\314\003\n\026BatchOperationMetadata\022H\n\005stat"
+          + "e\030\001 \001(\01629.google.cloud.talent.v4beta1.Ba"
+          + "tchOperationMetadata.State\022\031\n\021state_desc"
+          + "ription\030\002 \001(\t\022\025\n\rsuccess_count\030\003 \001(\005\022\025\n\r"
+          + "failure_count\030\004 \001(\005\022\023\n\013total_count\030\005 \001(\005"
+          + "\022/\n\013create_time\030\006 \001(\0132\032.google.protobuf."
+          + "Timestamp\022/\n\013update_time\030\007 \001(\0132\032.google."
+          + "protobuf.Timestamp\022,\n\010end_time\030\010 \001(\0132\032.g"
+          + "oogle.protobuf.Timestamp\"z\n\005State\022\025\n\021STA"
+          + "TE_UNSPECIFIED\020\000\022\020\n\014INITIALIZING\020\001\022\016\n\nPR"
+          + "OCESSING\020\002\022\r\n\tSUCCEEDED\020\003\022\n\n\006FAILED\020\004\022\016\n"
+          + "\nCANCELLING\020\005\022\r\n\tCANCELLED\020\006*y\n\013CompanyS"
+          + "ize\022\034\n\030COMPANY_SIZE_UNSPECIFIED\020\000\022\010\n\004MIN"
+          + "I\020\001\022\t\n\005SMALL\020\002\022\013\n\007SMEDIUM\020\003\022\n\n\006MEDIUM\020\004\022"
+          + "\007\n\003BIG\020\005\022\n\n\006BIGGER\020\006\022\t\n\005GIANT\020\007*\342\001\n\nJobB"
+          + "enefit\022\033\n\027JOB_BENEFIT_UNSPECIFIED\020\000\022\016\n\nC"
+          + "HILD_CARE\020\001\022\n\n\006DENTAL\020\002\022\024\n\020DOMESTIC_PART"
+          + "NER\020\003\022\022\n\016FLEXIBLE_HOURS\020\004\022\013\n\007MEDICAL\020\005\022\022"
+          + "\n\016LIFE_INSURANCE\020\006\022\022\n\016PARENTAL_LEAVE\020\007\022\023"
+          + "\n\017RETIREMENT_PLAN\020\010\022\r\n\tSICK_DAYS\020\t\022\014\n\010VA"
+          + "CATION\020\n\022\n\n\006VISION\020\013*\216\002\n\nDegreeType\022\033\n\027D"
+          + "EGREE_TYPE_UNSPECIFIED\020\000\022\025\n\021PRIMARY_EDUC"
+          + "ATION\020\001\022\035\n\031LOWER_SECONDARY_EDUCATION\020\002\022\035"
+          + "\n\031UPPER_SECONDARY_EDUCATION\020\003\022\034\n\030ADULT_R"
+          + "EMEDIAL_EDUCATION\020\004\022\034\n\030ASSOCIATES_OR_EQU"
+          + "IVALENT\020\005\022\033\n\027BACHELORS_OR_EQUIVALENT\020\006\022\031"
+          + "\n\025MASTERS_OR_EQUIVALENT\020\007\022\032\n\026DOCTORAL_OR"
+          + "_EQUIVALENT\020\010*\334\001\n\016EmploymentType\022\037\n\033EMPL"
+          + "OYMENT_TYPE_UNSPECIFIED\020\000\022\r\n\tFULL_TIME\020\001"
+          + "\022\r\n\tPART_TIME\020\002\022\016\n\nCONTRACTOR\020\003\022\024\n\020CONTR"
+          + "ACT_TO_HIRE\020\004\022\r\n\tTEMPORARY\020\005\022\n\n\006INTERN\020\006"
+          + "\022\r\n\tVOLUNTEER\020\007\022\014\n\010PER_DIEM\020\010\022\022\n\016FLY_IN_"
+          + "FLY_OUT\020\t\022\031\n\025OTHER_EMPLOYMENT_TYPE\020\n*q\n\010"
+          + "JobLevel\022\031\n\025JOB_LEVEL_UNSPECIFIED\020\000\022\017\n\013E"
+          + "NTRY_LEVEL\020\001\022\017\n\013EXPERIENCED\020\002\022\013\n\007MANAGER"
+          + "\020\003\022\014\n\010DIRECTOR\020\004\022\r\n\tEXECUTIVE\020\005*\272\006\n\013JobC"
+          + "ategory\022\034\n\030JOB_CATEGORY_UNSPECIFIED\020\000\022\032\n"
+          + "\026ACCOUNTING_AND_FINANCE\020\001\022\035\n\031ADMINISTRAT"
+          + "IVE_AND_OFFICE\020\002\022\035\n\031ADVERTISING_AND_MARK"
+          + "ETING\020\003\022\017\n\013ANIMAL_CARE\020\004\022\032\n\026ART_FASHION_"
+          + "AND_DESIGN\020\005\022\027\n\023BUSINESS_OPERATIONS\020\006\022\033\n"
+          + "\027CLEANING_AND_FACILITIES\020\007\022\023\n\017COMPUTER_A"
+          + "ND_IT\020\010\022\020\n\014CONSTRUCTION\020\t\022\024\n\020CUSTOMER_SE"
+          + "RVICE\020\n\022\r\n\tEDUCATION\020\013\022\034\n\030ENTERTAINMENT_"
+          + "AND_TRAVEL\020\014\022\030\n\024FARMING_AND_OUTDOORS\020\r\022\016"
+          + "\n\nHEALTHCARE\020\016\022\023\n\017HUMAN_RESOURCES\020\017\022\'\n#I"
+          + "NSTALLATION_MAINTENANCE_AND_REPAIR\020\020\022\t\n\005"
+          + "LEGAL\020\021\022\016\n\nMANAGEMENT\020\022\022\037\n\033MANUFACTURING"
+          + "_AND_WAREHOUSE\020\023\022$\n MEDIA_COMMUNICATIONS"
+          + "_AND_WRITING\020\024\022\026\n\022OIL_GAS_AND_MINING\020\025\022\036"
+          + "\n\032PERSONAL_CARE_AND_SERVICES\020\026\022\027\n\023PROTEC"
+          + "TIVE_SERVICES\020\027\022\017\n\013REAL_ESTATE\020\030\022\036\n\032REST"
+          + "AURANT_AND_HOSPITALITY\020\031\022\024\n\020SALES_AND_RE"
+          + "TAIL\020\032\022\033\n\027SCIENCE_AND_ENGINEERING\020\033\022\"\n\036S"
+          + "OCIAL_SERVICES_AND_NON_PROFIT\020\034\022!\n\035SPORT"
+          + "S_FITNESS_AND_RECREATION\020\035\022 \n\034TRANSPORTA"
+          + "TION_AND_LOGISTICS\020\036*e\n\rPostingRegion\022\036\n"
+          + "\032POSTING_REGION_UNSPECIFIED\020\000\022\027\n\023ADMINIS"
+          + "TRATIVE_AREA\020\001\022\n\n\006NATION\020\002\022\017\n\013TELECOMMUT"
+          + "E\020\003*n\n\nVisibility\022\032\n\026VISIBILITY_UNSPECIF"
+          + "IED\020\000\022\020\n\014ACCOUNT_ONLY\020\001\022\026\n\022SHARED_WITH_G"
+          + "OOGLE\020\002\022\026\n\022SHARED_WITH_PUBLIC\020\003\032\002\030\001*Z\n\020C"
+          + "ontactInfoUsage\022\"\n\036CONTACT_INFO_USAGE_UN"
+          + "SPECIFIED\020\000\022\014\n\010PERSONAL\020\001\022\010\n\004WORK\020\002\022\n\n\006S"
+          + "CHOOL\020\003*q\n\020HtmlSanitization\022!\n\035HTML_SANI"
+          + "TIZATION_UNSPECIFIED\020\000\022\036\n\032HTML_SANITIZAT"
+          + "ION_DISABLED\020\001\022\032\n\026SIMPLE_FORMATTING_ONLY"
+          + "\020\002*c\n\rCommuteMethod\022\036\n\032COMMUTE_METHOD_UN"
+          + "SPECIFIED\020\000\022\013\n\007DRIVING\020\001\022\013\n\007TRANSIT\020\002\022\013\n"
+          + "\007WALKING\020\003\022\013\n\007CYCLING\020\004*\242\001\n\025SkillProfici"
+          + "encyLevel\022\'\n#SKILL_PROFICIENCY_LEVEL_UNS"
+          + "PECIFIED\020\000\022\r\n\tUNSKILLED\020\006\022\031\n\025FUNDAMENTAL"
+          + "_AWARENESS\020\001\022\n\n\006NOVICE\020\002\022\020\n\014INTERMEDIATE"
+          + "\020\003\022\014\n\010ADVANCED\020\004\022\n\n\006EXPERT\020\005*f\n\007Outcome\022"
+          + "\027\n\023OUTCOME_UNSPECIFIED\020\000\022\014\n\010POSITIVE\020\001\022\013"
+          + "\n\007NEUTRAL\020\002\022\014\n\010NEGATIVE\020\003\022\031\n\025OUTCOME_NOT"
+          + "_AVAILABLE\020\004By\n\037com.google.cloud.talent."
+          + "v4beta1B\013CommonProtoP\001ZAgoogle.golang.or"
+          + "g/genproto/googleapis/cloud/talent/v4bet"
+          + "a1;talent\242\002\003CTSb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -367,6 +383,21 @@ public final class CommonProto {
             internal_static_google_cloud_talent_v4beta1_Rating_descriptor,
             new java.lang.String[] {
               "Overall", "Min", "Max", "Interval",
+            });
+    internal_static_google_cloud_talent_v4beta1_BatchOperationMetadata_descriptor =
+        getDescriptor().getMessageTypes().get(12);
+    internal_static_google_cloud_talent_v4beta1_BatchOperationMetadata_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_talent_v4beta1_BatchOperationMetadata_descriptor,
+            new java.lang.String[] {
+              "State",
+              "StateDescription",
+              "SuccessCount",
+              "FailureCount",
+              "TotalCount",
+              "CreateTime",
+              "UpdateTime",
+              "EndTime",
             });
     com.google.api.AnnotationsProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
