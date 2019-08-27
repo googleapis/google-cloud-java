@@ -43,6 +43,7 @@ public class TestEnvRule extends ExternalResource {
   private static final Logger LOGGER = Logger.getLogger(TestEnvRule.class.getName());
   private static final String BIGTABLE_EMULATOR_HOST_ENV_VAR = "BIGTABLE_EMULATOR_HOST";
   private static final String ENV_PROPERTY = "bigtable.env";
+  private static final String env = System.getProperty(ENV_PROPERTY, "emulator");
 
   private AbstractTestEnv testEnv;
 
@@ -54,7 +55,6 @@ public class TestEnvRule extends ExternalResource {
                 + ". Please use the emulator-it maven profile instead")
         .that(System.getenv())
         .doesNotContainKey(BIGTABLE_EMULATOR_HOST_ENV_VAR);
-    String env = System.getProperty(ENV_PROPERTY, "emulator");
 
     switch (env) {
       case "emulator":
@@ -79,6 +79,9 @@ public class TestEnvRule extends ExternalResource {
   protected void after() {
     try {
       env().cleanUpStale();
+      if ("prod".equals(env) || "direct_path".equals(env)) {
+        env().cleanUpInstances();
+      }
     } catch (Exception e) {
       LOGGER.log(Level.WARNING, "Failed to cleanup environment", e);
     }
