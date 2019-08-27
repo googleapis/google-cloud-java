@@ -25,5 +25,5 @@ if [ -f ${KOKORO_KEYSTORE_DIR}/73713_github-magic-proxy-url-release-please ]; th
     --package-name="google-cloud-shared-config" \
     --api-url=${KOKORO_KEYSTORE_DIR}/73713_github-magic-proxy-url-release-please \
     --proxy-key=${KOKORO_KEYSTORE_DIR}/73713_github-magic-proxy-key-release-please \
-    --release-type=java-auth-yoshi
+    --release-type=java-yoshi
 fi
