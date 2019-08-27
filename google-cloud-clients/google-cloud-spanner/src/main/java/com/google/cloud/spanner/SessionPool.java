@@ -1395,8 +1395,8 @@ final class SessionPool {
       if (isSessionNotFound(e)) {
         invalidateSession(session);
       } else if (readWriteWaiters.size() > 0) {
-        readWriteWaiters.poll().put(e);
         releaseSession(session);
+        readWriteWaiters.poll().put(e);
       } else {
         releaseSession(session);
       }
