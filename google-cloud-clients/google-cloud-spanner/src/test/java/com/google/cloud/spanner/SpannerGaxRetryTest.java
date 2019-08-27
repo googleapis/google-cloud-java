@@ -85,8 +85,8 @@ public class SpannerGaxRetryTest {
   private static final Statement UPDATE_STATEMENT =
       Statement.of("UPDATE FOO SET BAR=1 WHERE BAZ=2");
   private static final long UPDATE_COUNT = 1L;
-  private static final SimulatedExecutionTime HUNDRED_MS =
-      SimulatedExecutionTime.ofMinimumAndRandomTime(100, 0);
+  private static final SimulatedExecutionTime ONE_SECOND =
+      SimulatedExecutionTime.ofMinimumAndRandomTime(1000, 0);
   private static final StatusRuntimeException UNAVAILABLE =
       io.grpc.Status.UNAVAILABLE.withDescription("Retryable test exception.").asRuntimeException();
   private static final StatusRuntimeException FAILED_PRECONDITION =
@@ -218,7 +218,7 @@ public class SpannerGaxRetryTest {
   @Test
   public void singleUseTimeout() {
     expectedException.expect(SpannerMatchers.isSpannerException(ErrorCode.DEADLINE_EXCEEDED));
-    mockSpanner.setCreateSessionExecutionTime(HUNDRED_MS);
+    mockSpanner.setCreateSessionExecutionTime(ONE_SECOND);
     try (ResultSet rs = clientWithTimeout.singleUse().executeQuery(SELECT1AND2)) {
       while (rs.next()) {}
     }
@@ -262,7 +262,7 @@ public class SpannerGaxRetryTest {
   @Test
   public void singleUseReadOnlyTransactionTimeout() {
     expectedException.expect(SpannerMatchers.isSpannerException(ErrorCode.DEADLINE_EXCEEDED));
-    mockSpanner.setCreateSessionExecutionTime(HUNDRED_MS);
+    mockSpanner.setCreateSessionExecutionTime(ONE_SECOND);
     try (ResultSet rs =
         clientWithTimeout.singleUseReadOnlyTransaction().executeQuery(SELECT1AND2)) {
       while (rs.next()) {}
@@ -281,7 +281,7 @@ public class SpannerGaxRetryTest {
   public void singleUseExecuteStreamingSqlTimeout() {
     expectedException.expect(SpannerMatchers.isSpannerException(ErrorCode.DEADLINE_EXCEEDED));
     try (ResultSet rs = clientWithTimeout.singleUse().executeQuery(SELECT1AND2)) {
-      mockSpanner.setExecuteStreamingSqlExecutionTime(HUNDRED_MS);
+      mockSpanner.setExecuteStreamingSqlExecutionTime(ONE_SECOND);
       while (rs.next()) {}
     }
   }
@@ -297,7 +297,7 @@ public class SpannerGaxRetryTest {
   @Test
   public void readWriteTransactionTimeout() {
     expectedException.expect(SpannerMatchers.isSpannerException(ErrorCode.DEADLINE_EXCEEDED));
-    mockSpanner.setBeginTransactionExecutionTime(HUNDRED_MS);
+    mockSpanner.setBeginTransactionExecutionTime(ONE_SECOND);
     TransactionRunner runner = clientWithTimeout.readWriteTransaction();
     long updateCount =
         runner.run(
@@ -394,7 +394,7 @@ public class SpannerGaxRetryTest {
   @SuppressWarnings("resource")
   @Test
   public void transactionManagerTimeout() {
-    mockSpanner.setBeginTransactionExecutionTime(HUNDRED_MS);
+    mockSpanner.setBeginTransactionExecutionTime(ONE_SECOND);
     try (TransactionManager txManager = clientWithTimeout.transactionManager()) {
       TransactionContext tx = txManager.begin();
       while (true) {
