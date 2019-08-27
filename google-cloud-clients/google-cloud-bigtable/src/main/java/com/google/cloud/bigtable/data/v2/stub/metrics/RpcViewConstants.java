@@ -56,7 +56,7 @@ class RpcViewConstants {
    * {@link View} for Bigtable client roundtrip latency in milliseconds including all retry
    * attempts.
    */
-  static final View BIGTABLE_OP_ROUNDTRIP_LATENCY_VIEW =
+  public static final View BIGTABLE_OP_LATENCY_VIEW =
       View.create(
           View.Name.create("cloud.google.com/java/bigtable/operation_latency"),
           "Latency in msecs",
