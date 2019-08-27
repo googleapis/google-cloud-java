@@ -33,13 +33,11 @@ import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
-import org.junit.Rule;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
+import org.junit.runners.Parameterized;
 
-@RunWith(JUnit4.class)
+@RunWith(Parameterized.class)
 public class SessionPoolLeakTest {
   private static final StatusRuntimeException FAILED_PRECONDITION =
       io.grpc.Status.FAILED_PRECONDITION
@@ -51,8 +49,6 @@ public class SessionPoolLeakTest {
   private Spanner spanner;
   private DatabaseClient client;
   private SessionPool pool;
-
-  @Rule public ExpectedException expectedException = ExpectedException.none();
 
   @BeforeClass
   public static void startStaticServer() throws IOException {
@@ -124,26 +120,23 @@ public class SessionPoolLeakTest {
   private void readWriteTransactionTest(
       Runnable setup, int expectedNumberOfSessionsAfterExecution) {
     assertThat(pool.getNumberOfSessionsInPool(), is(equalTo(0)));
-    for (int i = 0; i < 5; i++) {
-      assertThat(pool.getNumberOfAvailableWritePreparedSessions(), is(equalTo(0)));
-      setup.run();
-      try {
-        client
-            .readWriteTransaction()
-            .run(
-                new TransactionCallable<Void>() {
-                  @Override
-                  public Void run(TransactionContext transaction) throws Exception {
-                    return null;
-                  }
-                });
-        fail("missing FAILED_PRECONDITION exception");
-      } catch (SpannerException e) {
-        assertThat(e.getErrorCode(), is(equalTo(ErrorCode.FAILED_PRECONDITION)));
-      }
-      assertThat(
-          pool.getNumberOfSessionsInPool(), is(equalTo(expectedNumberOfSessionsAfterExecution)));
+    setup.run();
+    try {
+      client
+          .readWriteTransaction()
+          .run(
+              new TransactionCallable<Void>() {
+                @Override
+                public Void run(TransactionContext transaction) throws Exception {
+                  return null;
+                }
+              });
+      fail("missing FAILED_PRECONDITION exception");
+    } catch (SpannerException e) {
+      assertThat(e.getErrorCode(), is(equalTo(ErrorCode.FAILED_PRECONDITION)));
     }
+    assertThat(
+        pool.getNumberOfSessionsInPool(), is(equalTo(expectedNumberOfSessionsAfterExecution)));
   }
 
   @Test
@@ -174,17 +167,14 @@ public class SessionPoolLeakTest {
 
   private void transactionManagerTest(Runnable setup, int expectedNumberOfSessionsAfterExecution) {
     assertThat(pool.getNumberOfSessionsInPool(), is(equalTo(0)));
-    for (int i = 0; i < 5; i++) {
-      assertThat(pool.getNumberOfAvailableWritePreparedSessions(), is(equalTo(0)));
-      setup.run();
-      try (TransactionManager txManager = client.transactionManager()) {
-        txManager.begin();
-        fail("missing FAILED_PRECONDITION exception");
-      } catch (SpannerException e) {
-        assertThat(e.getErrorCode(), is(equalTo(ErrorCode.FAILED_PRECONDITION)));
-      }
-      assertThat(
-          pool.getNumberOfSessionsInPool(), is(equalTo(expectedNumberOfSessionsAfterExecution)));
+    setup.run();
+    try (TransactionManager txManager = client.transactionManager()) {
+      txManager.begin();
+      fail("missing FAILED_PRECONDITION exception");
+    } catch (SpannerException e) {
+      assertThat(e.getErrorCode(), is(equalTo(ErrorCode.FAILED_PRECONDITION)));
     }
+    assertThat(
+        pool.getNumberOfSessionsInPool(), is(equalTo(expectedNumberOfSessionsAfterExecution)));
   }
 }
