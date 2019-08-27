@@ -53,6 +53,14 @@ public abstract class AgentsStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: getOperationsStub()");
   }
 
+  public UnaryCallable<SetAgentRequest, Agent> setAgentCallable() {
+    throw new UnsupportedOperationException("Not implemented: setAgentCallable()");
+  }
+
+  public UnaryCallable<DeleteAgentRequest, Empty> deleteAgentCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteAgentCallable()");
+  }
+
   public UnaryCallable<GetAgentRequest, Agent> getAgentCallable() {
     throw new UnsupportedOperationException("Not implemented: getAgentCallable()");
   }
@@ -100,14 +108,6 @@ public abstract class AgentsStub implements BackgroundResource {
 
   public UnaryCallable<RestoreAgentRequest, Operation> restoreAgentCallable() {
     throw new UnsupportedOperationException("Not implemented: restoreAgentCallable()");
-  }
-
-  public UnaryCallable<SetAgentRequest, Agent> setAgentCallable() {
-    throw new UnsupportedOperationException("Not implemented: setAgentCallable()");
-  }
-
-  public UnaryCallable<DeleteAgentRequest, Empty> deleteAgentCallable() {
-    throw new UnsupportedOperationException("Not implemented: deleteAgentCallable()");
   }
 
   @Override

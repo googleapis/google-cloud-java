@@ -25,8 +25,13 @@ import javax.annotation.Nullable;
 @Generated("by GAPIC")
 @BetaApi
 /**
- * An HealthCheck resource. This resource defines a template for how individual virtual machines
- * should be checked for health, via one of the supported protocols.
+ * Represents a Health Check resource.
+ *
+ * <p>Health checks are used for most GCP load balancers and managed instance group auto-healing.
+ * For more information, read Health Check Concepts.
+ *
+ * <p>To perform health checks on network load balancers, you must use either httpHealthChecks or
+ * httpsHealthChecks.
  */
 public final class HealthCheck implements ApiMessage {
   private final Integer checkIntervalSec;

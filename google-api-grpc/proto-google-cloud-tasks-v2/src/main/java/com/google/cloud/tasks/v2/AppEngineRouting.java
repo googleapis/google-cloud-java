@@ -19,6 +19,11 @@ package com.google.cloud.tasks.v2;
  * routing](https://cloud.google.com/appengine/docs/standard/python/how-requests-are-routed),
  * and [App Engine Flex request
  * routing](https://cloud.google.com/appengine/docs/flexible/python/how-requests-are-routed).
+ * Using [AppEngineRouting][google.cloud.tasks.v2.AppEngineRouting] requires
+ * [`appengine.applications.get`](https://cloud.google.com/appengine/docs/admin-api/access-control)
+ * Google IAM permission for the project
+ * and the following scope:
+ * `https://www.googleapis.com/auth/cloud-platform`
  * </pre>
  *
  * Protobuf type {@code google.cloud.tasks.v2.AppEngineRouting}
@@ -588,6 +593,11 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
    * routing](https://cloud.google.com/appengine/docs/standard/python/how-requests-are-routed),
    * and [App Engine Flex request
    * routing](https://cloud.google.com/appengine/docs/flexible/python/how-requests-are-routed).
+   * Using [AppEngineRouting][google.cloud.tasks.v2.AppEngineRouting] requires
+   * [`appengine.applications.get`](https://cloud.google.com/appengine/docs/admin-api/access-control)
+   * Google IAM permission for the project
+   * and the following scope:
+   * `https://www.googleapis.com/auth/cloud-platform`
    * </pre>
    *
    * Protobuf type {@code google.cloud.tasks.v2.AppEngineRouting}

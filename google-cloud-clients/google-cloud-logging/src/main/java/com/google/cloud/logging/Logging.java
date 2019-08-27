@@ -324,7 +324,7 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    *
    * <pre>{@code
    * Page<Sink> sinks = logging.listSinks(ListOption.pageSize(100));
-   * Iterator<Sink> sinkIterator = sinks.iterateAll();
+   * Iterator<Sink> sinkIterator = sinks.iterateAll().iterator();
    * while (sinkIterator.hasNext()) {
    *   Sink sink = sinkIterator.next();
    *   // do something with the sink
@@ -347,7 +347,7 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    * ApiFuture<AsyncPage<Sink>> future = logging.listSinksAsync(ListOption.pageSize(100));
    * // ...
    * AsyncPage<Sink> sinks = future.get();
-   * Iterator<Sink> sinkIterator = sinks.iterateAll();
+   * Iterator<Sink> sinkIterator = sinks.iterateAll().iterator();
    * while (sinkIterator.hasNext()) {
    *   Sink sink = sinkIterator.next();
    *   // do something with the sink
@@ -446,7 +446,7 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    * <pre>{@code
    * Page<MonitoredResourceDescriptor> descriptors =
    *     logging.listMonitoredResourceDescriptors(ListOption.pageSize(100));
-   * Iterator<MonitoredResourceDescriptor> descriptorIterator = descriptors.iterateAll();
+   * Iterator<MonitoredResourceDescriptor> descriptorIterator = descriptors.iterateAll().iterator();
    * while (descriptorIterator.hasNext()) {
    *   MonitoredResourceDescriptor descriptor = descriptorIterator.next();
    *   // do something with the descriptor
@@ -471,7 +471,7 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    *     logging.listMonitoredResourceDescriptorsAsync(ListOption.pageSize(100));
    * // ...
    * AsyncPage<MonitoredResourceDescriptor> descriptors = future.get();
-   * Iterator<MonitoredResourceDescriptor> descriptorIterator = descriptors.iterateAll();
+   * Iterator<MonitoredResourceDescriptor> descriptorIterator = descriptors.iterateAll().iterator();
    * while (descriptorIterator.hasNext()) {
    *   MonitoredResourceDescriptor descriptor = descriptorIterator.next();
    *   // do something with the descriptor
@@ -596,7 +596,7 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    *
    * <pre>{@code
    * Page<Metric> metrics = logging.listMetrics(ListOption.pageSize(100));
-   * Iterator<Metric> metricIterator = metrics.iterateAll();
+   * Iterator<Metric> metricIterator = metrics.iterateAll().iterator();
    * while (metricIterator.hasNext()) {
    *   Metric metric = metricIterator.next();
    *   // do something with the metric
@@ -619,7 +619,7 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    * ApiFuture<AsyncPage<Metric>> future = logging.listMetricsAsync(ListOption.pageSize(100));
    * // ...
    * AsyncPage<Metric> metrics = future.get();
-   * Iterator<Metric> metricIterator = metrics.iterateAll();
+   * Iterator<Metric> metricIterator = metrics.iterateAll().iterator();
    * while (metricIterator.hasNext()) {
    *   Metric metric = metricIterator.next();
    *   // do something with the metric
@@ -714,7 +714,7 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    * <pre>{@code
    * String filter = "logName=projects/my_project_id/logs/my_log_name";
    * Page<LogEntry> entries = logging.listLogEntries(EntryListOption.filter(filter));
-   * Iterator<LogEntry> entryIterator = entries.iterateAll();
+   * Iterator<LogEntry> entryIterator = entries.iterateAll().iterator();
    * while (entryIterator.hasNext()) {
    *   LogEntry entry = entryIterator.next();
    *   // do something with the entry
@@ -742,7 +742,7 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    *     logging.listLogEntriesAsync(EntryListOption.filter(filter));
    * // ...
    * AsyncPage<LogEntry> entries = future.get();
-   * Iterator<LogEntry> entryIterator = entries.iterateAll();
+   * Iterator<LogEntry> entryIterator = entries.iterateAll().iterator();
    * while (entryIterator.hasNext()) {
    *   LogEntry entry = entryIterator.next();
    *   // do something with the entry

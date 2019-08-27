@@ -23,21 +23,23 @@ import com.google.api.core.ApiFutures;
 import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.rpc.ResponseObserver;
 import com.google.api.gax.rpc.StreamController;
-import com.google.cloud.bigtable.data.v2.it.env.TestEnvRule;
 import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowCell;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
+import com.google.cloud.bigtable.test_helpers.env.TestEnvRule;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.protobuf.ByteString;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicReference;
 import org.junit.Before;
 import org.junit.ClassRule;
 import org.junit.Test;
@@ -52,7 +54,7 @@ public class ReadIT {
 
   @Before
   public void setUp() {
-    prefix = testEnvRule.env().getRowPrefix();
+    prefix = UUID.randomUUID().toString();
   }
 
   @Test
@@ -135,6 +137,7 @@ public class ReadIT {
             .getDataClient()
             .readRowAsync(testEnvRule.env().getTableId(), "somenonexistentkey");
 
+    final AtomicReference<Throwable> unexpectedError = new AtomicReference<>();
     final AtomicBoolean found = new AtomicBoolean();
     final CountDownLatch latch = new CountDownLatch(1);
 
@@ -143,6 +146,7 @@ public class ReadIT {
         new ApiFutureCallback<Row>() {
           @Override
           public void onFailure(Throwable t) {
+            unexpectedError.set(t);
             latch.countDown();
           }
 
@@ -155,6 +159,10 @@ public class ReadIT {
         MoreExecutors.directExecutor());
 
     latch.await(1, TimeUnit.MINUTES);
+
+    if (unexpectedError.get() != null) {
+      throw new RuntimeException("Unexpected async error", unexpectedError.get());
+    }
     assertThat(found.get()).isTrue();
   }
 

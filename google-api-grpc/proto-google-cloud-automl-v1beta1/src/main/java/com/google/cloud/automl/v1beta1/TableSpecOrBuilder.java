@@ -83,6 +83,18 @@ public interface TableSpecOrBuilder
    *
    *
    * <pre>
+   * Output only. The number of valid rows (i.e. without values that don't match
+   * DataType-s of their columns).
+   * </pre>
+   *
+   * <code>int64 valid_row_count = 4;</code>
+   */
+  long getValidRowCount();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. The number of columns of the table. That is, the number of
    * child ColumnSpec-s.
    * </pre>

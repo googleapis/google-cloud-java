@@ -22,16 +22,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-asset</artifactId>
-  <version>0.99.0-beta</version>
+  <version>0.106.0-beta</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-asset:0.99.0-beta'
+compile 'com.google.cloud:google-cloud-asset:0.106.0-beta'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-asset" % "0.99.0-beta"
+libraryDependencies += "com.google.cloud" % "google-cloud-asset" % "0.106.0-beta"
 ```
 [//]: # ({x-version-update-end})
 
@@ -97,4 +97,4 @@ Apache 2.0 - See [LICENSE] for more information.
 [cloud-platform]: https://cloud.google.com/
 [cloud-asset]: https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/overview
 [asset-product-docs]: https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/overview
-[asset-lib-docs]: https://googleapis.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/asset/v1beta1/package-summary.html
+[asset-lib-docs]: https://googleapis.dev/java/google-cloud-clients/latest/index.html?com/google/cloud/asset/v1beta1/package-summary.html

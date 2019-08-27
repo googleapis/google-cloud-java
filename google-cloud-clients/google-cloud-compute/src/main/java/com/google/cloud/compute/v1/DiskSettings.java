@@ -41,21 +41,22 @@ import javax.annotation.Generated;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (https://www.googleapis.com/compute/v1/projects/) and default
- *       port (443) are used.
+ *   <li>The default service address (https://compute.googleapis.com/compute/v1/projects/) and
+ *       default port (443) are used.
  *   <li>Credentials are acquired automatically through Application Default Credentials.
  *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
- * build() is called, the tree of builders is called to create the complete settings object. For
- * example, to set the total timeout of createSnapshotDisk to 30 seconds:
+ * build() is called, the tree of builders is called to create the complete settings object.
+ *
+ * <p>For example, to set the total timeout of addResourcePoliciesDisk to 30 seconds:
  *
  * <pre>
  * <code>
  * DiskSettings.Builder diskSettingsBuilder =
  *     DiskSettings.newBuilder();
- * diskSettingsBuilder.createSnapshotDiskSettings().getRetrySettings().toBuilder()
+ * diskSettingsBuilder.addResourcePoliciesDiskSettings().getRetrySettings().toBuilder()
  *     .setTotalTimeout(Duration.ofSeconds(30));
  * DiskSettings diskSettings = diskSettingsBuilder.build();
  * </code>
@@ -64,6 +65,12 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator")
 @BetaApi
 public class DiskSettings extends ClientSettings<DiskSettings> {
+  /** Returns the object with the settings used for calls to addResourcePoliciesDisk. */
+  public UnaryCallSettings<AddResourcePoliciesDiskHttpRequest, Operation>
+      addResourcePoliciesDiskSettings() {
+    return ((DiskStubSettings) getStubSettings()).addResourcePoliciesDiskSettings();
+  }
+
   /** Returns the object with the settings used for calls to aggregatedListDisks. */
   public PagedCallSettings<
           AggregatedListDisksHttpRequest, DiskAggregatedList, AggregatedListDisksPagedResponse>
@@ -100,6 +107,12 @@ public class DiskSettings extends ClientSettings<DiskSettings> {
   public PagedCallSettings<ListDisksHttpRequest, DiskList, ListDisksPagedResponse>
       listDisksSettings() {
     return ((DiskStubSettings) getStubSettings()).listDisksSettings();
+  }
+
+  /** Returns the object with the settings used for calls to removeResourcePoliciesDisk. */
+  public UnaryCallSettings<RemoveResourcePoliciesDiskHttpRequest, Operation>
+      removeResourcePoliciesDiskSettings() {
+    return ((DiskStubSettings) getStubSettings()).removeResourcePoliciesDiskSettings();
   }
 
   /** Returns the object with the settings used for calls to resizeDisk. */
@@ -224,6 +237,12 @@ public class DiskSettings extends ClientSettings<DiskSettings> {
       return this;
     }
 
+    /** Returns the builder for the settings used for calls to addResourcePoliciesDisk. */
+    public UnaryCallSettings.Builder<AddResourcePoliciesDiskHttpRequest, Operation>
+        addResourcePoliciesDiskSettings() {
+      return getStubSettingsBuilder().addResourcePoliciesDiskSettings();
+    }
+
     /** Returns the builder for the settings used for calls to aggregatedListDisks. */
     public PagedCallSettings.Builder<
             AggregatedListDisksHttpRequest, DiskAggregatedList, AggregatedListDisksPagedResponse>
@@ -262,6 +281,12 @@ public class DiskSettings extends ClientSettings<DiskSettings> {
     public PagedCallSettings.Builder<ListDisksHttpRequest, DiskList, ListDisksPagedResponse>
         listDisksSettings() {
       return getStubSettingsBuilder().listDisksSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to removeResourcePoliciesDisk. */
+    public UnaryCallSettings.Builder<RemoveResourcePoliciesDiskHttpRequest, Operation>
+        removeResourcePoliciesDiskSettings() {
+      return getStubSettingsBuilder().removeResourcePoliciesDiskSettings();
     }
 
     /** Returns the builder for the settings used for calls to resizeDisk. */

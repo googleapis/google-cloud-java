@@ -18,6 +18,8 @@ package com.google.cloud.firestore;
 
 import static org.junit.Assert.assertEquals;
 
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.gax.rpc.ApiStreamObserver;
@@ -53,6 +55,7 @@ import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
 import com.google.protobuf.NullValue;
 import com.google.type.LatLng;
+import java.io.IOException;
 import java.math.BigInteger;
 import java.nio.charset.Charset;
 import java.text.ParseException;
@@ -85,9 +88,12 @@ public final class LocalFirestoreHelper {
   public static final SingleField SINGLE_FIELD_OBJECT;
   public static final Map<String, Value> SINGLE_FIELD_PROTO;
   public static final DocumentSnapshot SINGLE_FIELD_SNAPSHOT;
-
+  public static final Value SINGLE_FIELD_VALUE;
   public static final Map<String, Object> UPDATED_FIELD_MAP;
   public static final Map<String, Value> UPDATED_FIELD_PROTO;
+
+  public static final Map<String, Float> SINGLE_FLOAT_MAP;
+  public static final Map<String, Value> SINGLE_FLOAT_PROTO;
 
   public static final NestedClass NESTED_CLASS_OBJECT;
 
@@ -695,6 +701,8 @@ public final class LocalFirestoreHelper {
             123000); // Firestore truncates to microsecond precision.
     GEO_POINT = new GeoPoint(50.1430847, -122.9477780);
     BLOB = Blob.fromBytes(new byte[] {1, 2, 3});
+    SINGLE_FLOAT_MAP = map("float", 0.1F);
+    SINGLE_FLOAT_PROTO = map("float", Value.newBuilder().setDoubleValue((Float) 0.1F).build());
 
     DATABASE_NAME = "projects/test-project/databases/(default)";
     COLLECTION_ID = "coll";
@@ -719,6 +727,10 @@ public final class LocalFirestoreHelper {
             Timestamp.ofTimeSecondsAndNanos(5, 6),
             Timestamp.ofTimeSecondsAndNanos(3, 4),
             Timestamp.ofTimeSecondsAndNanos(1, 2));
+
+    Value.Builder singleFieldValueBuilder = Value.newBuilder();
+    singleFieldValueBuilder.getMapValueBuilder().putAllFields(SINGLE_FIELD_PROTO);
+    SINGLE_FIELD_VALUE = singleFieldValueBuilder.build();
 
     UPDATED_FIELD_MAP = map("foo", (Object) "foobar");
     UPDATED_FIELD_PROTO = map("foo", Value.newBuilder().setStringValue("foobar").build());
@@ -816,5 +828,27 @@ public final class LocalFirestoreHelper {
 
   public static String autoId() {
     return FirestoreImpl.autoId();
+  }
+
+  @SuppressWarnings("unchecked")
+  public static <T> Map<String, T> mapAnyType(Object... entries) {
+    Map<String, T> res = new HashMap<>();
+    for (int i = 0; i < entries.length; i += 2) {
+      res.put((String) entries[i], (T) entries[i + 1]);
+    }
+    return res;
+  }
+
+  private static Map<String, Object> fromJsonString(String json) {
+    try {
+      ObjectMapper mapper = new ObjectMapper();
+      return mapper.readValue(json, new TypeReference<Map<String, Object>>() {});
+    } catch (IOException e) {
+      throw new RuntimeException(e);
+    }
+  }
+
+  public static Map<String, Object> fromSingleQuotedString(String json) {
+    return fromJsonString(json.replace("'", "\""));
   }
 }

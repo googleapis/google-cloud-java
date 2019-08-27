@@ -48,7 +48,6 @@ import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
-import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
@@ -319,7 +318,6 @@ public class SpannerGaxRetryTest {
   }
 
   @Test
-  @Ignore("enable once gax 1.47 is released")
   public void singleUseExecuteStreamingSqlTimeout() {
     expectedException.expect(SpannerMatchers.isSpannerException(ErrorCode.DEADLINE_EXCEEDED));
     try (ResultSet rs = client.singleUse().executeQuery(SELECT1AND2)) {

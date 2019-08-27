@@ -167,9 +167,17 @@ public final class PatchInstanceGroupManagerHttpRequest implements ApiMessage {
   }
 
   /**
-   * An Instance Group Manager resource. (== resource_for beta.instanceGroupManagers ==) (==
-   * resource_for v1.instanceGroupManagers ==) (== resource_for beta.regionInstanceGroupManagers ==)
-   * (== resource_for v1.regionInstanceGroupManagers ==)
+   * Represents a Managed Instance Group resource.
+   *
+   * <p>An instance group is a collection of VM instances that you can manage as a single entity.
+   * For more information, read Instance groups.
+   *
+   * <p>For zonal Managed Instance Group, use the instanceGroupManagers resource.
+   *
+   * <p>For regional Managed Instance Group, use the regionInstanceGroupManagers resource. (==
+   * resource_for beta.instanceGroupManagers ==) (== resource_for v1.instanceGroupManagers ==) (==
+   * resource_for beta.regionInstanceGroupManagers ==) (== resource_for
+   * v1.regionInstanceGroupManagers ==)
    */
   public InstanceGroupManager getInstanceGroupManagerResource() {
     return instanceGroupManagerResource;
@@ -398,18 +406,34 @@ public final class PatchInstanceGroupManagerHttpRequest implements ApiMessage {
     }
 
     /**
-     * An Instance Group Manager resource. (== resource_for beta.instanceGroupManagers ==) (==
-     * resource_for v1.instanceGroupManagers ==) (== resource_for beta.regionInstanceGroupManagers
-     * ==) (== resource_for v1.regionInstanceGroupManagers ==)
+     * Represents a Managed Instance Group resource.
+     *
+     * <p>An instance group is a collection of VM instances that you can manage as a single entity.
+     * For more information, read Instance groups.
+     *
+     * <p>For zonal Managed Instance Group, use the instanceGroupManagers resource.
+     *
+     * <p>For regional Managed Instance Group, use the regionInstanceGroupManagers resource. (==
+     * resource_for beta.instanceGroupManagers ==) (== resource_for v1.instanceGroupManagers ==) (==
+     * resource_for beta.regionInstanceGroupManagers ==) (== resource_for
+     * v1.regionInstanceGroupManagers ==)
      */
     public InstanceGroupManager getInstanceGroupManagerResource() {
       return instanceGroupManagerResource;
     }
 
     /**
-     * An Instance Group Manager resource. (== resource_for beta.instanceGroupManagers ==) (==
-     * resource_for v1.instanceGroupManagers ==) (== resource_for beta.regionInstanceGroupManagers
-     * ==) (== resource_for v1.regionInstanceGroupManagers ==)
+     * Represents a Managed Instance Group resource.
+     *
+     * <p>An instance group is a collection of VM instances that you can manage as a single entity.
+     * For more information, read Instance groups.
+     *
+     * <p>For zonal Managed Instance Group, use the instanceGroupManagers resource.
+     *
+     * <p>For regional Managed Instance Group, use the regionInstanceGroupManagers resource. (==
+     * resource_for beta.instanceGroupManagers ==) (== resource_for v1.instanceGroupManagers ==) (==
+     * resource_for beta.regionInstanceGroupManagers ==) (== resource_for
+     * v1.regionInstanceGroupManagers ==)
      */
     public Builder setInstanceGroupManagerResource(
         InstanceGroupManager instanceGroupManagerResource) {

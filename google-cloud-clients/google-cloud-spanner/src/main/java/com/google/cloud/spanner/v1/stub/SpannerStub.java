@@ -22,6 +22,8 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.protobuf.Empty;
+import com.google.spanner.v1.BatchCreateSessionsRequest;
+import com.google.spanner.v1.BatchCreateSessionsResponse;
 import com.google.spanner.v1.BeginTransactionRequest;
 import com.google.spanner.v1.CommitRequest;
 import com.google.spanner.v1.CommitResponse;
@@ -56,6 +58,11 @@ public abstract class SpannerStub implements BackgroundResource {
 
   public UnaryCallable<CreateSessionRequest, Session> createSessionCallable() {
     throw new UnsupportedOperationException("Not implemented: createSessionCallable()");
+  }
+
+  public UnaryCallable<BatchCreateSessionsRequest, BatchCreateSessionsResponse>
+      batchCreateSessionsCallable() {
+    throw new UnsupportedOperationException("Not implemented: batchCreateSessionsCallable()");
   }
 
   public UnaryCallable<GetSessionRequest, Session> getSessionCallable() {

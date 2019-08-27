@@ -153,8 +153,9 @@ public abstract class FieldValue {
       ArrayValue.Builder encodedElements = ArrayValue.newBuilder();
 
       for (Object element : elements) {
+        Object data = CustomClassMapper.convertToPlainJavaTypes(element);
         encodedElements.addValues(
-            UserDataConverter.encodeValue(path, element, UserDataConverter.ARGUMENT));
+            UserDataConverter.encodeValue(path, data, UserDataConverter.ARGUMENT));
       }
 
       FieldTransform.Builder fieldTransform = FieldTransform.newBuilder();
@@ -208,8 +209,9 @@ public abstract class FieldValue {
       ArrayValue.Builder encodedElements = ArrayValue.newBuilder();
 
       for (Object element : elements) {
+        Object data = CustomClassMapper.convertToPlainJavaTypes(element);
         encodedElements.addValues(
-            UserDataConverter.encodeValue(path, element, UserDataConverter.ARGUMENT));
+            UserDataConverter.encodeValue(path, data, UserDataConverter.ARGUMENT));
       }
 
       FieldTransform.Builder fieldTransform = FieldTransform.newBuilder();

@@ -193,7 +193,10 @@ public final class InsertVpnTunnelHttpRequest implements ApiMessage {
   }
 
   /**
-   * VPN tunnel resource. (== resource_for beta.vpnTunnels ==) (== resource_for v1.vpnTunnels ==)
+   * Represents a Cloud VPN Tunnel resource.
+   *
+   * <p>For more information about VPN, read the the Cloud VPN Overview. (== resource_for
+   * beta.vpnTunnels ==) (== resource_for v1.vpnTunnels ==)
    */
   public VpnTunnel getVpnTunnelResource() {
     return vpnTunnelResource;
@@ -419,14 +422,20 @@ public final class InsertVpnTunnelHttpRequest implements ApiMessage {
     }
 
     /**
-     * VPN tunnel resource. (== resource_for beta.vpnTunnels ==) (== resource_for v1.vpnTunnels ==)
+     * Represents a Cloud VPN Tunnel resource.
+     *
+     * <p>For more information about VPN, read the the Cloud VPN Overview. (== resource_for
+     * beta.vpnTunnels ==) (== resource_for v1.vpnTunnels ==)
      */
     public VpnTunnel getVpnTunnelResource() {
       return vpnTunnelResource;
     }
 
     /**
-     * VPN tunnel resource. (== resource_for beta.vpnTunnels ==) (== resource_for v1.vpnTunnels ==)
+     * Represents a Cloud VPN Tunnel resource.
+     *
+     * <p>For more information about VPN, read the the Cloud VPN Overview. (== resource_for
+     * beta.vpnTunnels ==) (== resource_for v1.vpnTunnels ==)
      */
     public Builder setVpnTunnelResource(VpnTunnel vpnTunnelResource) {
       this.vpnTunnelResource = vpnTunnelResource;

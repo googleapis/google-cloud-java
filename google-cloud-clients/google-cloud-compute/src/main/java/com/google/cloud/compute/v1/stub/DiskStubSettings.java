@@ -40,6 +40,7 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.compute.v1.AddResourcePoliciesDiskHttpRequest;
 import com.google.cloud.compute.v1.AggregatedListDisksHttpRequest;
 import com.google.cloud.compute.v1.CreateSnapshotDiskHttpRequest;
 import com.google.cloud.compute.v1.DeleteDiskHttpRequest;
@@ -53,6 +54,7 @@ import com.google.cloud.compute.v1.InsertDiskHttpRequest;
 import com.google.cloud.compute.v1.ListDisksHttpRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.Policy;
+import com.google.cloud.compute.v1.RemoveResourcePoliciesDiskHttpRequest;
 import com.google.cloud.compute.v1.ResizeDiskHttpRequest;
 import com.google.cloud.compute.v1.SetIamPolicyDiskHttpRequest;
 import com.google.cloud.compute.v1.SetLabelsDiskHttpRequest;
@@ -74,21 +76,22 @@ import org.threeten.bp.Duration;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (https://www.googleapis.com/compute/v1/projects/) and default
- *       port (443) are used.
+ *   <li>The default service address (https://compute.googleapis.com/compute/v1/projects/) and
+ *       default port (443) are used.
  *   <li>Credentials are acquired automatically through Application Default Credentials.
  *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
- * build() is called, the tree of builders is called to create the complete settings object. For
- * example, to set the total timeout of createSnapshotDisk to 30 seconds:
+ * build() is called, the tree of builders is called to create the complete settings object.
+ *
+ * <p>For example, to set the total timeout of addResourcePoliciesDisk to 30 seconds:
  *
  * <pre>
  * <code>
  * DiskStubSettings.Builder diskSettingsBuilder =
  *     DiskStubSettings.newBuilder();
- * diskSettingsBuilder.createSnapshotDiskSettings().getRetrySettings().toBuilder()
+ * diskSettingsBuilder.addResourcePoliciesDiskSettings().getRetrySettings().toBuilder()
  *     .setTotalTimeout(Duration.ofSeconds(30));
  * DiskStubSettings diskSettings = diskSettingsBuilder.build();
  * </code>
@@ -108,6 +111,8 @@ public class DiskStubSettings extends StubSettings<DiskStubSettings> {
           .add("https://www.googleapis.com/auth/devstorage.read_write")
           .build();
 
+  private final UnaryCallSettings<AddResourcePoliciesDiskHttpRequest, Operation>
+      addResourcePoliciesDiskSettings;
   private final PagedCallSettings<
           AggregatedListDisksHttpRequest, DiskAggregatedList, AggregatedListDisksPagedResponse>
       aggregatedListDisksSettings;
@@ -119,11 +124,19 @@ public class DiskStubSettings extends StubSettings<DiskStubSettings> {
   private final UnaryCallSettings<InsertDiskHttpRequest, Operation> insertDiskSettings;
   private final PagedCallSettings<ListDisksHttpRequest, DiskList, ListDisksPagedResponse>
       listDisksSettings;
+  private final UnaryCallSettings<RemoveResourcePoliciesDiskHttpRequest, Operation>
+      removeResourcePoliciesDiskSettings;
   private final UnaryCallSettings<ResizeDiskHttpRequest, Operation> resizeDiskSettings;
   private final UnaryCallSettings<SetIamPolicyDiskHttpRequest, Policy> setIamPolicyDiskSettings;
   private final UnaryCallSettings<SetLabelsDiskHttpRequest, Operation> setLabelsDiskSettings;
   private final UnaryCallSettings<TestIamPermissionsDiskHttpRequest, TestPermissionsResponse>
       testIamPermissionsDiskSettings;
+
+  /** Returns the object with the settings used for calls to addResourcePoliciesDisk. */
+  public UnaryCallSettings<AddResourcePoliciesDiskHttpRequest, Operation>
+      addResourcePoliciesDiskSettings() {
+    return addResourcePoliciesDiskSettings;
+  }
 
   /** Returns the object with the settings used for calls to aggregatedListDisks. */
   public PagedCallSettings<
@@ -161,6 +174,12 @@ public class DiskStubSettings extends StubSettings<DiskStubSettings> {
   public PagedCallSettings<ListDisksHttpRequest, DiskList, ListDisksPagedResponse>
       listDisksSettings() {
     return listDisksSettings;
+  }
+
+  /** Returns the object with the settings used for calls to removeResourcePoliciesDisk. */
+  public UnaryCallSettings<RemoveResourcePoliciesDiskHttpRequest, Operation>
+      removeResourcePoliciesDiskSettings() {
+    return removeResourcePoliciesDiskSettings;
   }
 
   /** Returns the object with the settings used for calls to resizeDisk. */
@@ -203,7 +222,7 @@ public class DiskStubSettings extends StubSettings<DiskStubSettings> {
 
   /** Returns the default service endpoint. */
   public static String getDefaultEndpoint() {
-    return "https://www.googleapis.com/compute/v1/projects/";
+    return "https://compute.googleapis.com/compute/v1/projects/";
   }
 
   /** Returns the default service port. */
@@ -258,6 +277,7 @@ public class DiskStubSettings extends StubSettings<DiskStubSettings> {
   protected DiskStubSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
+    addResourcePoliciesDiskSettings = settingsBuilder.addResourcePoliciesDiskSettings().build();
     aggregatedListDisksSettings = settingsBuilder.aggregatedListDisksSettings().build();
     createSnapshotDiskSettings = settingsBuilder.createSnapshotDiskSettings().build();
     deleteDiskSettings = settingsBuilder.deleteDiskSettings().build();
@@ -265,6 +285,8 @@ public class DiskStubSettings extends StubSettings<DiskStubSettings> {
     getIamPolicyDiskSettings = settingsBuilder.getIamPolicyDiskSettings().build();
     insertDiskSettings = settingsBuilder.insertDiskSettings().build();
     listDisksSettings = settingsBuilder.listDisksSettings().build();
+    removeResourcePoliciesDiskSettings =
+        settingsBuilder.removeResourcePoliciesDiskSettings().build();
     resizeDiskSettings = settingsBuilder.resizeDiskSettings().build();
     setIamPolicyDiskSettings = settingsBuilder.setIamPolicyDiskSettings().build();
     setLabelsDiskSettings = settingsBuilder.setLabelsDiskSettings().build();
@@ -390,6 +412,8 @@ public class DiskStubSettings extends StubSettings<DiskStubSettings> {
   public static class Builder extends StubSettings.Builder<DiskStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
+    private final UnaryCallSettings.Builder<AddResourcePoliciesDiskHttpRequest, Operation>
+        addResourcePoliciesDiskSettings;
     private final PagedCallSettings.Builder<
             AggregatedListDisksHttpRequest, DiskAggregatedList, AggregatedListDisksPagedResponse>
         aggregatedListDisksSettings;
@@ -402,6 +426,8 @@ public class DiskStubSettings extends StubSettings<DiskStubSettings> {
     private final UnaryCallSettings.Builder<InsertDiskHttpRequest, Operation> insertDiskSettings;
     private final PagedCallSettings.Builder<ListDisksHttpRequest, DiskList, ListDisksPagedResponse>
         listDisksSettings;
+    private final UnaryCallSettings.Builder<RemoveResourcePoliciesDiskHttpRequest, Operation>
+        removeResourcePoliciesDiskSettings;
     private final UnaryCallSettings.Builder<ResizeDiskHttpRequest, Operation> resizeDiskSettings;
     private final UnaryCallSettings.Builder<SetIamPolicyDiskHttpRequest, Policy>
         setIamPolicyDiskSettings;
@@ -452,6 +478,8 @@ public class DiskStubSettings extends StubSettings<DiskStubSettings> {
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
+      addResourcePoliciesDiskSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       aggregatedListDisksSettings =
           PagedCallSettings.newBuilder(AGGREGATED_LIST_DISKS_PAGE_STR_FACT);
 
@@ -467,6 +495,8 @@ public class DiskStubSettings extends StubSettings<DiskStubSettings> {
 
       listDisksSettings = PagedCallSettings.newBuilder(LIST_DISKS_PAGE_STR_FACT);
 
+      removeResourcePoliciesDiskSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       resizeDiskSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       setIamPolicyDiskSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -477,6 +507,7 @@ public class DiskStubSettings extends StubSettings<DiskStubSettings> {
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              addResourcePoliciesDiskSettings,
               aggregatedListDisksSettings,
               createSnapshotDiskSettings,
               deleteDiskSettings,
@@ -484,6 +515,7 @@ public class DiskStubSettings extends StubSettings<DiskStubSettings> {
               getIamPolicyDiskSettings,
               insertDiskSettings,
               listDisksSettings,
+              removeResourcePoliciesDiskSettings,
               resizeDiskSettings,
               setIamPolicyDiskSettings,
               setLabelsDiskSettings,
@@ -502,6 +534,11 @@ public class DiskStubSettings extends StubSettings<DiskStubSettings> {
     }
 
     private static Builder initDefaults(Builder builder) {
+
+      builder
+          .addResourcePoliciesDiskSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
           .aggregatedListDisksSettings()
@@ -539,6 +576,11 @@ public class DiskStubSettings extends StubSettings<DiskStubSettings> {
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
+          .removeResourcePoliciesDiskSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
           .resizeDiskSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
@@ -564,6 +606,7 @@ public class DiskStubSettings extends StubSettings<DiskStubSettings> {
     protected Builder(DiskStubSettings settings) {
       super(settings);
 
+      addResourcePoliciesDiskSettings = settings.addResourcePoliciesDiskSettings.toBuilder();
       aggregatedListDisksSettings = settings.aggregatedListDisksSettings.toBuilder();
       createSnapshotDiskSettings = settings.createSnapshotDiskSettings.toBuilder();
       deleteDiskSettings = settings.deleteDiskSettings.toBuilder();
@@ -571,6 +614,7 @@ public class DiskStubSettings extends StubSettings<DiskStubSettings> {
       getIamPolicyDiskSettings = settings.getIamPolicyDiskSettings.toBuilder();
       insertDiskSettings = settings.insertDiskSettings.toBuilder();
       listDisksSettings = settings.listDisksSettings.toBuilder();
+      removeResourcePoliciesDiskSettings = settings.removeResourcePoliciesDiskSettings.toBuilder();
       resizeDiskSettings = settings.resizeDiskSettings.toBuilder();
       setIamPolicyDiskSettings = settings.setIamPolicyDiskSettings.toBuilder();
       setLabelsDiskSettings = settings.setLabelsDiskSettings.toBuilder();
@@ -578,6 +622,7 @@ public class DiskStubSettings extends StubSettings<DiskStubSettings> {
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              addResourcePoliciesDiskSettings,
               aggregatedListDisksSettings,
               createSnapshotDiskSettings,
               deleteDiskSettings,
@@ -585,6 +630,7 @@ public class DiskStubSettings extends StubSettings<DiskStubSettings> {
               getIamPolicyDiskSettings,
               insertDiskSettings,
               listDisksSettings,
+              removeResourcePoliciesDiskSettings,
               resizeDiskSettings,
               setIamPolicyDiskSettings,
               setLabelsDiskSettings,
@@ -605,6 +651,12 @@ public class DiskStubSettings extends StubSettings<DiskStubSettings> {
 
     public ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders() {
       return unaryMethodSettingsBuilders;
+    }
+
+    /** Returns the builder for the settings used for calls to addResourcePoliciesDisk. */
+    public UnaryCallSettings.Builder<AddResourcePoliciesDiskHttpRequest, Operation>
+        addResourcePoliciesDiskSettings() {
+      return addResourcePoliciesDiskSettings;
     }
 
     /** Returns the builder for the settings used for calls to aggregatedListDisks. */
@@ -645,6 +697,12 @@ public class DiskStubSettings extends StubSettings<DiskStubSettings> {
     public PagedCallSettings.Builder<ListDisksHttpRequest, DiskList, ListDisksPagedResponse>
         listDisksSettings() {
       return listDisksSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to removeResourcePoliciesDisk. */
+    public UnaryCallSettings.Builder<RemoveResourcePoliciesDiskHttpRequest, Operation>
+        removeResourcePoliciesDiskSettings() {
+      return removeResourcePoliciesDiskSettings;
     }
 
     /** Returns the builder for the settings used for calls to resizeDisk. */

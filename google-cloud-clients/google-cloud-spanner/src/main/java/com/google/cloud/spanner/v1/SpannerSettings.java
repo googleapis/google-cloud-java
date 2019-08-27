@@ -31,6 +31,8 @@ import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.spanner.v1.stub.SpannerStubSettings;
 import com.google.protobuf.Empty;
+import com.google.spanner.v1.BatchCreateSessionsRequest;
+import com.google.spanner.v1.BatchCreateSessionsResponse;
 import com.google.spanner.v1.BeginTransactionRequest;
 import com.google.spanner.v1.CommitRequest;
 import com.google.spanner.v1.CommitResponse;
@@ -68,8 +70,9 @@ import javax.annotation.Generated;
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
- * build() is called, the tree of builders is called to create the complete settings object. For
- * example, to set the total timeout of createSession to 30 seconds:
+ * build() is called, the tree of builders is called to create the complete settings object.
+ *
+ * <p>For example, to set the total timeout of createSession to 30 seconds:
  *
  * <pre>
  * <code>
@@ -86,6 +89,12 @@ public class SpannerSettings extends ClientSettings<SpannerSettings> {
   /** Returns the object with the settings used for calls to createSession. */
   public UnaryCallSettings<CreateSessionRequest, Session> createSessionSettings() {
     return ((SpannerStubSettings) getStubSettings()).createSessionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchCreateSessions. */
+  public UnaryCallSettings<BatchCreateSessionsRequest, BatchCreateSessionsResponse>
+      batchCreateSessionsSettings() {
+    return ((SpannerStubSettings) getStubSettings()).batchCreateSessionsSettings();
   }
 
   /** Returns the object with the settings used for calls to getSession. */
@@ -255,6 +264,12 @@ public class SpannerSettings extends ClientSettings<SpannerSettings> {
     /** Returns the builder for the settings used for calls to createSession. */
     public UnaryCallSettings.Builder<CreateSessionRequest, Session> createSessionSettings() {
       return getStubSettingsBuilder().createSessionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchCreateSessions. */
+    public UnaryCallSettings.Builder<BatchCreateSessionsRequest, BatchCreateSessionsResponse>
+        batchCreateSessionsSettings() {
+      return getStubSettingsBuilder().batchCreateSessionsSettings();
     }
 
     /** Returns the builder for the settings used for calls to getSession. */

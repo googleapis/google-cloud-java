@@ -612,9 +612,8 @@ public class TargetPoolClientTest {
     mockService.addResponse(expectedResponse);
 
     ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
-    TargetPool targetPoolResource = TargetPool.newBuilder().build();
 
-    Operation actualResponse = client.insertTargetPool(region, targetPoolResource);
+    Operation actualResponse = client.insertTargetPool(region);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -642,9 +641,8 @@ public class TargetPoolClientTest {
 
     try {
       ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
-      TargetPool targetPoolResource = TargetPool.newBuilder().build();
 
-      client.insertTargetPool(region, targetPoolResource);
+      client.insertTargetPool(region);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

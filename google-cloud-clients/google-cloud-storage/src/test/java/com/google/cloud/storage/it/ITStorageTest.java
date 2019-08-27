@@ -64,6 +64,7 @@ import com.google.cloud.storage.BucketInfo.LifecycleRule;
 import com.google.cloud.storage.BucketInfo.LifecycleRule.LifecycleAction;
 import com.google.cloud.storage.BucketInfo.LifecycleRule.LifecycleCondition;
 import com.google.cloud.storage.CopyWriter;
+import com.google.cloud.storage.HmacKey;
 import com.google.cloud.storage.HttpMethod;
 import com.google.cloud.storage.ServiceAccount;
 import com.google.cloud.storage.Storage;
@@ -156,6 +157,8 @@ public class ITStorageTest {
   private static final boolean IS_VPC_TEST =
       System.getenv("GOOGLE_CLOUD_TESTS_IN_VPCSC") != null
           && System.getenv("GOOGLE_CLOUD_TESTS_IN_VPCSC").equalsIgnoreCase("true");
+  private static final List<String> LOCATION_TYPES =
+      ImmutableList.of("multi-region", "region", "dual-region");
 
   @BeforeClass
   public static void beforeClass() throws IOException {
@@ -481,7 +484,7 @@ public class ITStorageTest {
   }
 
   @Test
-  public void testCreateBlobWithEncryptionKey() {
+  public void testCreateGetBlobWithEncryptionKey() {
     String blobName = "test-create-with-customer-key-blob";
     BlobInfo blob = BlobInfo.newBuilder(BUCKET, blobName).build();
     Blob remoteBlob =
@@ -492,6 +495,13 @@ public class ITStorageTest {
     byte[] readBytes =
         storage.readAllBytes(BUCKET, blobName, Storage.BlobSourceOption.decryptionKey(BASE64_KEY));
     assertArrayEquals(BLOB_BYTE_CONTENT, readBytes);
+    remoteBlob =
+        storage.get(
+            blob.getBlobId(),
+            Storage.BlobGetOption.decryptionKey(BASE64_KEY),
+            Storage.BlobGetOption.fields(BlobField.CRC32C, BlobField.MD5HASH));
+    assertNotNull(remoteBlob.getCrc32c());
+    assertNotNull(remoteBlob.getMd5());
   }
 
   @Test
@@ -2109,6 +2119,91 @@ public class ITStorageTest {
   }
 
   @Test
+  public void testHmacKey() {
+    ServiceAccount serviceAccount = ServiceAccount.of(System.getenv("IT_SERVICE_ACCOUNT_EMAIL"));
+    try {
+
+      HmacKey hmacKey = storage.createHmacKey(serviceAccount);
+      String secretKey = hmacKey.getSecretKey();
+      assertNotNull(secretKey);
+      HmacKey.HmacKeyMetadata metadata = hmacKey.getMetadata();
+      String accessId = metadata.getAccessId();
+
+      assertNotNull(accessId);
+      assertNotNull(metadata.getEtag());
+      assertNotNull(metadata.getId());
+      assertEquals(remoteStorageHelper.getOptions().getProjectId(), metadata.getProjectId());
+      assertEquals(serviceAccount.getEmail(), metadata.getServiceAccount().getEmail());
+      assertEquals(HmacKey.HmacKeyState.ACTIVE, metadata.getState());
+      assertNotNull(metadata.getCreateTime());
+      assertNotNull(metadata.getUpdateTime());
+
+      Page<HmacKey.HmacKeyMetadata> metadatas =
+          storage.listHmacKeys(Storage.ListHmacKeysOption.serviceAccount(serviceAccount));
+      boolean createdHmacKeyIsInList = false;
+      for (HmacKey.HmacKeyMetadata hmacKeyMetadata : metadatas.iterateAll()) {
+        if (accessId.equals(hmacKeyMetadata.getAccessId())) {
+          createdHmacKeyIsInList = true;
+          break;
+        }
+      }
+
+      if (!createdHmacKeyIsInList) {
+        fail("Created an HMAC key but it didn't show up in list()");
+      }
+
+      HmacKey.HmacKeyMetadata getResult = storage.getHmacKey(accessId);
+      assertEquals(metadata, getResult);
+
+      storage.updateHmacKeyState(metadata, HmacKey.HmacKeyState.INACTIVE);
+
+      storage.deleteHmacKey(metadata);
+
+      metadatas = storage.listHmacKeys(Storage.ListHmacKeysOption.serviceAccount(serviceAccount));
+      createdHmacKeyIsInList = false;
+      for (HmacKey.HmacKeyMetadata hmacKeyMetadata : metadatas.iterateAll()) {
+        if (accessId.equals(hmacKeyMetadata.getAccessId())) {
+          createdHmacKeyIsInList = true;
+          break;
+        }
+      }
+
+      if (createdHmacKeyIsInList) {
+        fail("Deleted an HMAC key but it showed up in list()");
+      }
+
+      storage.createHmacKey(serviceAccount);
+      storage.createHmacKey(serviceAccount);
+      storage.createHmacKey(serviceAccount);
+      storage.createHmacKey(serviceAccount);
+
+      metadatas =
+          storage.listHmacKeys(
+              Storage.ListHmacKeysOption.serviceAccount(serviceAccount),
+              Storage.ListHmacKeysOption.maxResults(2L));
+
+      String nextPageToken = metadatas.getNextPageToken();
+
+      assertEquals(2, Iterators.size(metadatas.getValues().iterator()));
+
+      metadatas =
+          storage.listHmacKeys(
+              Storage.ListHmacKeysOption.serviceAccount(serviceAccount),
+              Storage.ListHmacKeysOption.maxResults(2L),
+              Storage.ListHmacKeysOption.pageToken(nextPageToken));
+
+      assertEquals(2, Iterators.size(metadatas.getValues().iterator()));
+    } finally {
+      Page<HmacKey.HmacKeyMetadata> metadatas =
+          storage.listHmacKeys(Storage.ListHmacKeysOption.serviceAccount(serviceAccount));
+      for (HmacKey.HmacKeyMetadata hmacKeyMetadata : metadatas.iterateAll()) {
+        storage.updateHmacKeyState(hmacKeyMetadata, HmacKey.HmacKeyState.INACTIVE);
+        storage.deleteHmacKey(hmacKeyMetadata);
+      }
+    }
+  }
+
+  @Test
   public void testReadCompressedBlob() throws IOException {
     String blobName = "test-read-compressed-blob";
     BlobInfo blobInfo =
@@ -2583,5 +2678,40 @@ public class ITStorageTest {
 
     assertEquals(bytesArrayToUpload.length, lengthOfDownLoadBytes);
     assertTrue(storage.delete(BUCKET, blobName));
+  }
+
+  @Test
+  public void testBucketLocationType() throws ExecutionException, InterruptedException {
+    String bucketName = RemoteStorageHelper.generateBucketName();
+    long bucketMetageneration = 42;
+    storage.create(
+        BucketInfo.newBuilder(bucketName)
+            .setLocation("us")
+            .setRetentionPeriod(RETENTION_PERIOD)
+            .build());
+    Bucket bucket =
+        storage.get(
+            bucketName, Storage.BucketGetOption.metagenerationNotMatch(bucketMetageneration));
+    assertTrue(LOCATION_TYPES.contains(bucket.getLocationType()));
+
+    Bucket bucket1 =
+        storage.lockRetentionPolicy(bucket, Storage.BucketTargetOption.metagenerationMatch());
+    assertTrue(LOCATION_TYPES.contains(bucket1.getLocationType()));
+
+    Bucket updatedBucket =
+        storage.update(
+            BucketInfo.newBuilder(bucketName)
+                .setLocation("asia")
+                .setRetentionPeriod(RETENTION_PERIOD)
+                .build());
+    assertTrue(LOCATION_TYPES.contains(updatedBucket.getLocationType()));
+
+    Iterator<Bucket> bucketIterator =
+        storage.list(Storage.BucketListOption.prefix(bucketName)).iterateAll().iterator();
+    while (bucketIterator.hasNext()) {
+      Bucket remoteBucket = bucketIterator.next();
+      assertTrue(LOCATION_TYPES.contains(remoteBucket.getLocationType()));
+    }
+    RemoteStorageHelper.forceDelete(storage, bucketName, 5, TimeUnit.SECONDS);
   }
 }

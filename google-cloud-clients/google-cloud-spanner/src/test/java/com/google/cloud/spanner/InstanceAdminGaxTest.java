@@ -16,6 +16,8 @@
 
 package com.google.cloud.spanner;
 
+import static org.junit.Assert.fail;
+
 import com.google.api.core.ApiFunction;
 import com.google.api.gax.grpc.testing.LocalChannelProvider;
 import com.google.api.gax.longrunning.OperationFuture;
@@ -227,9 +229,9 @@ public class InstanceAdminGaxTest {
     final RetrySettings retrySettings =
         RetrySettings.newBuilder()
             .setInitialRpcTimeout(Duration.ofMillis(200L))
-            .setMaxRpcTimeout(Duration.ofMillis(200L))
+            .setMaxRpcTimeout(Duration.ofMillis(1000L))
             .setMaxAttempts(3)
-            .setTotalTimeout(Duration.ofMillis(1500L))
+            .setTotalTimeout(Duration.ofMillis(5000L))
             .build();
     SpannerOptions.Builder builder =
         SpannerOptions.newBuilder()
@@ -246,28 +248,42 @@ public class InstanceAdminGaxTest {
                 return null;
               }
             });
-    builder
+    if (!builder
         .getInstanceAdminStubSettingsBuilder()
         .createInstanceOperationSettings()
-        .setInitialCallSettings(
-            builder
-                .getInstanceAdminStubSettingsBuilder()
-                .createInstanceOperationSettings()
-                .getInitialCallSettings()
-                .toBuilder()
-                .setRetrySettings(retrySettings)
-                .build());
-    builder
+        .getInitialCallSettings()
+        .getRetryableCodes()
+        .isEmpty()) {
+      builder
+          .getInstanceAdminStubSettingsBuilder()
+          .createInstanceOperationSettings()
+          .setInitialCallSettings(
+              builder
+                  .getInstanceAdminStubSettingsBuilder()
+                  .createInstanceOperationSettings()
+                  .getInitialCallSettings()
+                  .toBuilder()
+                  .setRetrySettings(retrySettings)
+                  .build());
+    }
+    if (!builder
         .getInstanceAdminStubSettingsBuilder()
         .updateInstanceOperationSettings()
-        .setInitialCallSettings(
-            builder
-                .getInstanceAdminStubSettingsBuilder()
-                .updateInstanceOperationSettings()
-                .getInitialCallSettings()
-                .toBuilder()
-                .setRetrySettings(retrySettings)
-                .build());
+        .getInitialCallSettings()
+        .getRetryableCodes()
+        .isEmpty()) {
+      builder
+          .getInstanceAdminStubSettingsBuilder()
+          .updateInstanceOperationSettings()
+          .setInitialCallSettings(
+              builder
+                  .getInstanceAdminStubSettingsBuilder()
+                  .updateInstanceOperationSettings()
+                  .getInitialCallSettings()
+                  .toBuilder()
+                  .setRetrySettings(retrySettings)
+                  .build());
+    }
     spanner = builder.build().getService();
     client = spanner.getInstanceAdminClient();
   }
@@ -453,6 +469,14 @@ public class InstanceAdminGaxTest {
     }
     mockInstanceAdmin.addResponse(resultOperation);
 
+    boolean methodIsIdempotent =
+        !spanner
+            .getOptions()
+            .getInstanceAdminStubSettings()
+            .createInstanceOperationSettings()
+            .getInitialCallSettings()
+            .getRetryableCodes()
+            .isEmpty();
     for (int i = 0; i < 2; i++) {
       OperationFuture<Instance, CreateInstanceMetadata> actualResponse =
           client.createInstance(
@@ -462,14 +486,23 @@ public class InstanceAdminGaxTest {
                   .build());
       try {
         Instance returnedInstance = actualResponse.get();
+        if (!methodIsIdempotent && i == exceptionAtCall) {
+          fail("missing expected exception");
+        }
         Assert.assertEquals(displayName, returnedInstance.getDisplayName());
       } catch (ExecutionException e) {
-        Throwables.throwIfUnchecked(e.getCause());
-        throw e;
+        if (!exceptionType.isRetryable() || methodIsIdempotent || i != exceptionAtCall) {
+          Throwables.throwIfUnchecked(e.getCause());
+          throw e;
+        }
       }
     }
     List<AbstractMessage> actualRequests = mockInstanceAdmin.getRequests();
-    Assert.assertEquals(2, actualRequests.size());
+    if (methodIsIdempotent) {
+      Assert.assertEquals(2, actualRequests.size());
+    } else {
+      Assert.assertEquals(1, actualRequests.size());
+    }
   }
 
   @Test
@@ -501,6 +534,14 @@ public class InstanceAdminGaxTest {
     }
     mockInstanceAdmin.addResponse(resultOperation);
 
+    boolean methodIsIdempotent =
+        !spanner
+            .getOptions()
+            .getInstanceAdminStubSettings()
+            .updateInstanceOperationSettings()
+            .getInitialCallSettings()
+            .getRetryableCodes()
+            .isEmpty();
     for (int i = 0; i < 2; i++) {
       OperationFuture<Instance, UpdateInstanceMetadata> actualResponse =
           client.updateInstance(
@@ -510,15 +551,23 @@ public class InstanceAdminGaxTest {
                   .build());
       try {
         Instance returnedInstance = actualResponse.get();
+        if (!methodIsIdempotent && i == exceptionAtCall) {
+          fail("missing expected exception");
+        }
         Assert.assertEquals(displayName, returnedInstance.getDisplayName());
       } catch (ExecutionException e) {
-        Throwables.throwIfUnchecked(e.getCause());
-        throw e;
+        if (!exceptionType.isRetryable() || methodIsIdempotent || i != exceptionAtCall) {
+          Throwables.throwIfUnchecked(e.getCause());
+          throw e;
+        }
       }
     }
-
     List<AbstractMessage> actualRequests = mockInstanceAdmin.getRequests();
-    Assert.assertEquals(2, actualRequests.size());
+    if (methodIsIdempotent) {
+      Assert.assertEquals(2, actualRequests.size());
+    } else {
+      Assert.assertEquals(1, actualRequests.size());
+    }
   }
 
   @Test

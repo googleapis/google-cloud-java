@@ -18,6 +18,8 @@ package com.google.cloud.storage.contrib.nio.testing;
 
 import com.google.api.services.storage.model.Bucket;
 import com.google.api.services.storage.model.BucketAccessControl;
+import com.google.api.services.storage.model.HmacKey;
+import com.google.api.services.storage.model.HmacKeyMetadata;
 import com.google.api.services.storage.model.Notification;
 import com.google.api.services.storage.model.ObjectAccessControl;
 import com.google.api.services.storage.model.Policy;
@@ -31,6 +33,7 @@ import com.google.cloud.storage.spi.v1.RpcBatch;
 import com.google.cloud.storage.spi.v1.StorageRpc;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
 import java.math.BigInteger;
 import java.nio.file.FileAlreadyExistsException;
 import java.util.ArrayList;
@@ -67,6 +70,7 @@ import javax.annotation.concurrent.NotThreadSafe;
  *         <li>checksums, etags
  *         <li>IAM operations
  *         <li>BucketLock operations
+ *         <li>HMAC key operations
  *       </ul>
  * </ul>
  */
@@ -298,6 +302,37 @@ class FakeStorageRpc implements StorageRpc {
   }
 
   @Override
+  public long read(
+      StorageObject from, Map<Option, ?> options, long position, OutputStream outputStream) {
+    // if non-null, then we check the file's at that generation.
+    Long generationMatch = null;
+    for (Option op : options.keySet()) {
+      if (op.equals(StorageRpc.Option.IF_GENERATION_MATCH)) {
+        generationMatch = (Long) options.get(op);
+      } else {
+        throw new UnsupportedOperationException("Unknown option: " + op);
+      }
+    }
+    String key = fullname(from);
+    if (!contents.containsKey(key)) {
+      throw new StorageException(404, "File not found: " + key);
+    }
+    checkGeneration(key, generationMatch);
+    if (position < 0) {
+      position = 0;
+    }
+    byte[] full = contents.get(key);
+    int bytes = (int) (full.length - position);
+    if (bytes <= 0) {
+      // special case: you're trying to read past the end
+      return 0;
+    }
+    byte[] ret = new byte[bytes];
+    System.arraycopy(full, (int) position, ret, 0, bytes);
+    return bytes;
+  }
+
+  @Override
   public String open(StorageObject object, Map<Option, ?> options) throws StorageException {
     String key = fullname(object);
     // if non-null, then we check the file's at that generation.
@@ -374,11 +409,21 @@ class FakeStorageRpc implements StorageRpc {
 
     String destKey = fullname(rewriteRequest.target);
 
+    // if this is a new file, set generation to 1, else increment the existing generation
+    long generation = 1;
+    if (metadata.containsKey(destKey)) {
+      generation = metadata.get(destKey).getGeneration() + 1;
+    }
+
     checkGeneration(destKey, generationMatch);
+
+    byte[] data = contents.get(sourceKey);
+
+    rewriteRequest.target.setGeneration(generation);
+    rewriteRequest.target.setSize(BigInteger.valueOf(data.length));
 
     metadata.put(destKey, rewriteRequest.target);
 
-    byte[] data = contents.get(sourceKey);
     contents.put(destKey, Arrays.copyOf(data, data.length));
     return new RewriteResponse(
         rewriteRequest,
@@ -416,6 +461,31 @@ class FakeStorageRpc implements StorageRpc {
 
   @Override
   public List<BucketAccessControl> listAcls(String bucket, Map<Option, ?> options) {
+    throw new UnsupportedOperationException();
+  }
+
+  @Override
+  public HmacKey createHmacKey(String serviceAccountEmail, Map<Option, ?> options) {
+    throw new UnsupportedOperationException();
+  }
+
+  @Override
+  public Tuple<String, Iterable<HmacKeyMetadata>> listHmacKeys(Map<Option, ?> options) {
+    throw new UnsupportedOperationException();
+  }
+
+  @Override
+  public HmacKeyMetadata updateHmacKey(HmacKeyMetadata hmacKeyMetadata, Map<Option, ?> options) {
+    throw new UnsupportedOperationException();
+  }
+
+  @Override
+  public HmacKeyMetadata getHmacKey(String accessId, Map<Option, ?> options) {
+    throw new UnsupportedOperationException();
+  }
+
+  @Override
+  public void deleteHmacKey(HmacKeyMetadata hmacKeyMetadata, Map<Option, ?> options) {
     throw new UnsupportedOperationException();
   }
 

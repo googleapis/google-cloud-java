@@ -741,7 +741,8 @@ public class RouterClient implements BackgroundResource {
    * </code></pre>
    *
    * @param region Name of the region for this request.
-   * @param routerResource Router resource.
+   * @param routerResource Represents a Cloud Router resource.
+   *     <p>For more information about Cloud Router, read the the Cloud Router overview.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -771,7 +772,8 @@ public class RouterClient implements BackgroundResource {
    * </code></pre>
    *
    * @param region Name of the region for this request.
-   * @param routerResource Router resource.
+   * @param routerResource Represents a Cloud Router resource.
+   *     <p>For more information about Cloud Router, read the the Cloud Router overview.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -990,7 +992,8 @@ public class RouterClient implements BackgroundResource {
    * </code></pre>
    *
    * @param router Name of the Router resource to patch.
-   * @param routerResource Router resource.
+   * @param routerResource Represents a Cloud Router resource.
+   *     <p>For more information about Cloud Router, read the the Cloud Router overview.
    * @param fieldMask The fields that should be serialized (even if they have empty values). If the
    *     containing message object has a non-null fieldmask, then all the fields in the field mask
    *     (and only those fields in the field mask) will be serialized. If the containing object does
@@ -1027,7 +1030,8 @@ public class RouterClient implements BackgroundResource {
    * </code></pre>
    *
    * @param router Name of the Router resource to patch.
-   * @param routerResource Router resource.
+   * @param routerResource Represents a Cloud Router resource.
+   *     <p>For more information about Cloud Router, read the the Cloud Router overview.
    * @param fieldMask The fields that should be serialized (even if they have empty values). If the
    *     containing message object has a non-null fieldmask, then all the fields in the field mask
    *     (and only those fields in the field mask) will be serialized. If the containing object does
@@ -1119,7 +1123,8 @@ public class RouterClient implements BackgroundResource {
    * </code></pre>
    *
    * @param router Name of the Router resource to query.
-   * @param routerResource Router resource.
+   * @param routerResource Represents a Cloud Router resource.
+   *     <p>For more information about Cloud Router, read the the Cloud Router overview.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -1150,7 +1155,8 @@ public class RouterClient implements BackgroundResource {
    * </code></pre>
    *
    * @param router Name of the Router resource to query.
-   * @param routerResource Router resource.
+   * @param routerResource Represents a Cloud Router resource.
+   *     <p>For more information about Cloud Router, read the the Cloud Router overview.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -1220,7 +1226,9 @@ public class RouterClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates the specified Router resource with the data included in the request.
+   * Updates the specified Router resource with the data included in the request. This method
+   * conforms to PUT semantics, which requests that the state of the target resource be created or
+   * replaced with the state defined by the representation enclosed in the request message payload.
    *
    * <p>Sample code:
    *
@@ -1234,7 +1242,8 @@ public class RouterClient implements BackgroundResource {
    * </code></pre>
    *
    * @param router Name of the Router resource to update.
-   * @param routerResource Router resource.
+   * @param routerResource Represents a Cloud Router resource.
+   *     <p>For more information about Cloud Router, read the the Cloud Router overview.
    * @param fieldMask The fields that should be serialized (even if they have empty values). If the
    *     containing message object has a non-null fieldmask, then all the fields in the field mask
    *     (and only those fields in the field mask) will be serialized. If the containing object does
@@ -1256,7 +1265,9 @@ public class RouterClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates the specified Router resource with the data included in the request.
+   * Updates the specified Router resource with the data included in the request. This method
+   * conforms to PUT semantics, which requests that the state of the target resource be created or
+   * replaced with the state defined by the representation enclosed in the request message payload.
    *
    * <p>Sample code:
    *
@@ -1270,7 +1281,8 @@ public class RouterClient implements BackgroundResource {
    * </code></pre>
    *
    * @param router Name of the Router resource to update.
-   * @param routerResource Router resource.
+   * @param routerResource Represents a Cloud Router resource.
+   *     <p>For more information about Cloud Router, read the the Cloud Router overview.
    * @param fieldMask The fields that should be serialized (even if they have empty values). If the
    *     containing message object has a non-null fieldmask, then all the fields in the field mask
    *     (and only those fields in the field mask) will be serialized. If the containing object does
@@ -1292,7 +1304,9 @@ public class RouterClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates the specified Router resource with the data included in the request.
+   * Updates the specified Router resource with the data included in the request. This method
+   * conforms to PUT semantics, which requests that the state of the target resource be created or
+   * replaced with the state defined by the representation enclosed in the request message payload.
    *
    * <p>Sample code:
    *
@@ -1320,7 +1334,9 @@ public class RouterClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates the specified Router resource with the data included in the request.
+   * Updates the specified Router resource with the data included in the request. This method
+   * conforms to PUT semantics, which requests that the state of the target resource be created or
+   * replaced with the state defined by the representation enclosed in the request message payload.
    *
    * <p>Sample code:
    *

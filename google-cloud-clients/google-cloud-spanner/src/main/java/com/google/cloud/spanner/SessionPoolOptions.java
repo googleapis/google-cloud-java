@@ -31,6 +31,7 @@ public class SessionPoolOptions {
   private final ActionOnExhaustion actionOnExhaustion;
   private final int keepAliveIntervalMinutes;
   private final ActionOnSessionNotFound actionOnSessionNotFound;
+  private final long initialWaitForSessionTimeoutMillis;
 
   private SessionPoolOptions(Builder builder) {
     this.minSessions = builder.minSessions;
@@ -39,6 +40,7 @@ public class SessionPoolOptions {
     this.writeSessionsFraction = builder.writeSessionsFraction;
     this.actionOnExhaustion = builder.actionOnExhaustion;
     this.actionOnSessionNotFound = builder.actionOnSessionNotFound;
+    this.initialWaitForSessionTimeoutMillis = builder.initialWaitForSessionTimeoutMillis;
     this.keepAliveIntervalMinutes = builder.keepAliveIntervalMinutes;
   }
 
@@ -71,6 +73,11 @@ public class SessionPoolOptions {
   }
 
   @VisibleForTesting
+  long getInitialWaitForSessionTimeoutMillis() {
+    return initialWaitForSessionTimeoutMillis;
+  }
+
+  @VisibleForTesting
   boolean isFailIfSessionNotFound() {
     return actionOnSessionNotFound == ActionOnSessionNotFound.FAIL;
   }
@@ -96,6 +103,7 @@ public class SessionPoolOptions {
     private int maxIdleSessions;
     private float writeSessionsFraction = 0.2f;
     private ActionOnExhaustion actionOnExhaustion = DEFAULT_ACTION;
+    private long initialWaitForSessionTimeoutMillis = 30_000L;
     private ActionOnSessionNotFound actionOnSessionNotFound = ActionOnSessionNotFound.RETRY;
     private int keepAliveIntervalMinutes = 30;
 
@@ -157,6 +165,17 @@ public class SessionPoolOptions {
      */
     public Builder setBlockIfPoolExhausted() {
       this.actionOnExhaustion = ActionOnExhaustion.BLOCK;
+      return this;
+    }
+
+    /**
+     * The initial number of milliseconds to wait for a session to become available when one is
+     * requested. The session pool will keep retrying to get a session, and the timeout will be
+     * doubled for each new attempt. The default is 30 seconds.
+     */
+    @VisibleForTesting
+    Builder setInitialWaitForSessionTimeoutMillis(long timeout) {
+      this.initialWaitForSessionTimeoutMillis = timeout;
       return this;
     }
 

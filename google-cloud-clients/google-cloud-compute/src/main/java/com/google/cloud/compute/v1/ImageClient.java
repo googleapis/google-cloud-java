@@ -674,8 +674,9 @@ public class ImageClient implements BackgroundResource {
    *
    * @param forceCreate Force image creation if true.
    * @param project Project ID for this request.
-   * @param imageResource An Image resource. (== resource_for beta.images ==) (== resource_for
-   *     v1.images ==)
+   * @param imageResource Represents an Image resource.
+   *     <p>You can use images to create boot disks for your VM instances. For more information,
+   *     read Images. (== resource_for beta.images ==) (== resource_for v1.images ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -708,8 +709,9 @@ public class ImageClient implements BackgroundResource {
    *
    * @param forceCreate Force image creation if true.
    * @param project Project ID for this request.
-   * @param imageResource An Image resource. (== resource_for beta.images ==) (== resource_for
-   *     v1.images ==)
+   * @param imageResource Represents an Image resource.
+   *     <p>You can use images to create boot disks for your VM instances. For more information,
+   *     read Images. (== resource_for beta.images ==) (== resource_for v1.images ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi

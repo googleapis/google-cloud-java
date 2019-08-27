@@ -44,6 +44,9 @@ import com.google.api.services.storage.model.BucketAccessControl;
 import com.google.api.services.storage.model.Buckets;
 import com.google.api.services.storage.model.ComposeRequest;
 import com.google.api.services.storage.model.ComposeRequest.SourceObjects.ObjectPreconditions;
+import com.google.api.services.storage.model.HmacKey;
+import com.google.api.services.storage.model.HmacKeyMetadata;
+import com.google.api.services.storage.model.HmacKeysMetadata;
 import com.google.api.services.storage.model.Notification;
 import com.google.api.services.storage.model.ObjectAccessControl;
 import com.google.api.services.storage.model.Objects;
@@ -72,6 +75,7 @@ import io.opencensus.trace.Tracing;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -412,10 +416,9 @@ public class HttpStorageRpc implements StorageRpc {
 
   private Storage.Objects.Get getCall(StorageObject object, Map<Option, ?> options)
       throws IOException {
-    return storage
-        .objects()
-        .get(object.getBucket(), object.getName())
-        .setGeneration(object.getGeneration())
+    Storage.Objects.Get get = storage.objects().get(object.getBucket(), object.getName());
+    setEncryptionHeaders(get.getRequestHeaders(), ENCRYPTION_KEY_PREFIX, options);
+    return get.setGeneration(object.getGeneration())
         .setProjection(DEFAULT_PROJECTION)
         .setIfMetagenerationMatch(Option.IF_METAGENERATION_MATCH.getLong(options))
         .setIfMetagenerationNotMatch(Option.IF_METAGENERATION_NOT_MATCH.getLong(options))
@@ -640,30 +643,59 @@ public class HttpStorageRpc implements StorageRpc {
     return new DefaultRpcBatch(storage);
   }
 
+  private Get createReadRequest(StorageObject from, Map<Option, ?> options) throws IOException {
+    Get req =
+        storage
+            .objects()
+            .get(from.getBucket(), from.getName())
+            .setGeneration(from.getGeneration())
+            .setIfMetagenerationMatch(Option.IF_METAGENERATION_MATCH.getLong(options))
+            .setIfMetagenerationNotMatch(Option.IF_METAGENERATION_NOT_MATCH.getLong(options))
+            .setIfGenerationMatch(Option.IF_GENERATION_MATCH.getLong(options))
+            .setIfGenerationNotMatch(Option.IF_GENERATION_NOT_MATCH.getLong(options))
+            .setUserProject(Option.USER_PROJECT.getString(options));
+    setEncryptionHeaders(req.getRequestHeaders(), ENCRYPTION_KEY_PREFIX, options);
+    req.setReturnRawInputStream(true);
+    return req;
+  }
+
+  @Override
+  public long read(
+      StorageObject from, Map<Option, ?> options, long position, OutputStream outputStream) {
+    Span span = startSpan(HttpStorageRpcSpans.SPAN_NAME_READ);
+    Scope scope = tracer.withSpan(span);
+    try {
+      Get req = createReadRequest(from, options);
+      req.getMediaHttpDownloader().setBytesDownloaded(position);
+      req.getMediaHttpDownloader().setDirectDownloadEnabled(true);
+      req.executeMediaAndDownloadTo(outputStream);
+      return req.getMediaHttpDownloader().getNumBytesDownloaded();
+    } catch (IOException ex) {
+      span.setStatus(Status.UNKNOWN.withDescription(ex.getMessage()));
+      StorageException serviceException = translate(ex);
+      if (serviceException.getCode() == SC_REQUESTED_RANGE_NOT_SATISFIABLE) {
+        return 0;
+      }
+      throw serviceException;
+    } finally {
+      scope.close();
+      span.end();
+    }
+  }
+
   @Override
   public Tuple<String, byte[]> read(
       StorageObject from, Map<Option, ?> options, long position, int bytes) {
     Span span = startSpan(HttpStorageRpcSpans.SPAN_NAME_READ);
     Scope scope = tracer.withSpan(span);
     try {
-      Get req =
-          storage
-              .objects()
-              .get(from.getBucket(), from.getName())
-              .setGeneration(from.getGeneration())
-              .setIfMetagenerationMatch(Option.IF_METAGENERATION_MATCH.getLong(options))
-              .setIfMetagenerationNotMatch(Option.IF_METAGENERATION_NOT_MATCH.getLong(options))
-              .setIfGenerationMatch(Option.IF_GENERATION_MATCH.getLong(options))
-              .setIfGenerationNotMatch(Option.IF_GENERATION_NOT_MATCH.getLong(options))
-              .setUserProject(Option.USER_PROJECT.getString(options));
       checkArgument(position >= 0, "Position should be non-negative, is %d", position);
+      Get req = createReadRequest(from, options);
       StringBuilder range = new StringBuilder();
       range.append("bytes=").append(position).append("-").append(position + bytes - 1);
       HttpHeaders requestHeaders = req.getRequestHeaders();
       requestHeaders.setRange(range.toString());
-      setEncryptionHeaders(requestHeaders, ENCRYPTION_KEY_PREFIX, options);
       ByteArrayOutputStream output = new ByteArrayOutputStream(bytes);
-      req.setReturnRawInputStream(true);
       req.executeMedia().download(output);
       String etag = req.getLastResponseHeaders().getETag();
       return Tuple.of(etag, output.toByteArray());
@@ -1204,6 +1236,132 @@ public class HttpStorageRpc implements StorageRpc {
           .setGeneration(generation)
           .execute()
           .getItems();
+    } catch (IOException ex) {
+      span.setStatus(Status.UNKNOWN.withDescription(ex.getMessage()));
+      throw translate(ex);
+    } finally {
+      scope.close();
+      span.end();
+    }
+  }
+
+  @Override
+  public HmacKey createHmacKey(String serviceAccountEmail, Map<Option, ?> options) {
+    Span span = startSpan(HttpStorageRpcSpans.SPAN_NAME_CREATE_HMAC_KEY);
+    Scope scope = tracer.withSpan(span);
+    String projectId = Option.PROJECT_ID.getString(options);
+    if (projectId == null) {
+      projectId = this.options.getProjectId();
+    }
+    try {
+      return storage
+          .projects()
+          .hmacKeys()
+          .create(projectId, serviceAccountEmail)
+          .setUserProject(Option.USER_PROJECT.getString(options))
+          .execute();
+    } catch (IOException ex) {
+      span.setStatus(Status.UNKNOWN.withDescription(ex.getMessage()));
+      throw translate(ex);
+    } finally {
+      scope.close();
+      span.end();
+    }
+  }
+
+  @Override
+  public Tuple<String, Iterable<HmacKeyMetadata>> listHmacKeys(Map<Option, ?> options) {
+    Span span = startSpan(HttpStorageRpcSpans.SPAN_NAME_LIST_HMAC_KEYS);
+    Scope scope = tracer.withSpan(span);
+    String projectId = Option.PROJECT_ID.getString(options);
+    if (projectId == null) {
+      projectId = this.options.getProjectId();
+    }
+    try {
+      HmacKeysMetadata hmacKeysMetadata =
+          storage
+              .projects()
+              .hmacKeys()
+              .list(projectId)
+              .setServiceAccountEmail(Option.SERVICE_ACCOUNT_EMAIL.getString(options))
+              .setPageToken(Option.PAGE_TOKEN.getString(options))
+              .setMaxResults(Option.MAX_RESULTS.getLong(options))
+              .setShowDeletedKeys(Option.SHOW_DELETED_KEYS.getBoolean(options))
+              .execute();
+      return Tuple.<String, Iterable<HmacKeyMetadata>>of(
+          hmacKeysMetadata.getNextPageToken(), hmacKeysMetadata.getItems());
+    } catch (IOException ex) {
+      span.setStatus(Status.UNKNOWN.withDescription(ex.getMessage()));
+      throw translate(ex);
+    } finally {
+      scope.close();
+      span.end();
+    }
+  }
+
+  @Override
+  public HmacKeyMetadata getHmacKey(String accessId, Map<Option, ?> options) {
+    Span span = startSpan(HttpStorageRpcSpans.SPAN_NAME_GET_HMAC_KEY);
+    Scope scope = tracer.withSpan(span);
+    String projectId = Option.PROJECT_ID.getString(options);
+    if (projectId == null) {
+      projectId = this.options.getProjectId();
+    }
+    try {
+      return storage
+          .projects()
+          .hmacKeys()
+          .get(projectId, accessId)
+          .setUserProject(Option.USER_PROJECT.getString(options))
+          .execute();
+    } catch (IOException ex) {
+      span.setStatus(Status.UNKNOWN.withDescription(ex.getMessage()));
+      throw translate(ex);
+    } finally {
+      scope.close();
+      span.end();
+    }
+  }
+
+  @Override
+  public HmacKeyMetadata updateHmacKey(HmacKeyMetadata hmacKeyMetadata, Map<Option, ?> options) {
+    Span span = startSpan(HttpStorageRpcSpans.SPAN_NAME_UPDATE_HMAC_KEY);
+    Scope scope = tracer.withSpan(span);
+    String projectId = hmacKeyMetadata.getProjectId();
+    if (projectId == null) {
+      projectId = this.options.getProjectId();
+    }
+    try {
+      return storage
+          .projects()
+          .hmacKeys()
+          .update(projectId, hmacKeyMetadata.getAccessId(), hmacKeyMetadata)
+          .setUserProject(Option.USER_PROJECT.getString(options))
+          .execute();
+    } catch (IOException ex) {
+      span.setStatus(Status.UNKNOWN.withDescription(ex.getMessage()));
+      throw translate(ex);
+    } finally {
+      scope.close();
+      span.end();
+    }
+  }
+
+  @Override
+  public void deleteHmacKey(HmacKeyMetadata hmacKeyMetadata, Map<Option, ?> options) {
+    Span span = startSpan(HttpStorageRpcSpans.SPAN_NAME_DELETE_HMAC_KEY);
+    Scope scope = tracer.withSpan(span);
+    String projectId = hmacKeyMetadata.getProjectId();
+    if (projectId == null) {
+      projectId = this.options.getProjectId();
+    }
+    try {
+      storage
+          .projects()
+          .hmacKeys()
+          .delete(projectId, hmacKeyMetadata.getAccessId())
+          .setUserProject(Option.USER_PROJECT.getString(options))
+          .execute();
     } catch (IOException ex) {
       span.setStatus(Status.UNKNOWN.withDescription(ex.getMessage()));
       throw translate(ex);

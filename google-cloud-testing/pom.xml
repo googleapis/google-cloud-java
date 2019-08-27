@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-testing</artifactId>
-  <version>0.99.0-alpha</version><!-- {x-version-update:google-cloud-testing:current} -->
+  <version>0.106.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-testing:current} -->
   <packaging>pom</packaging>
 
   <name>Google Cloud Testing</name>
@@ -33,14 +33,14 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-bom</artifactId>
-        <version>0.99.0-alpha</version><!-- {x-version-update:google-cloud-bom:current} -->
+        <version>0.106.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-bom:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-core</artifactId>
-        <version>1.81.0</version><!-- {x-version-update:google-cloud-core:current} -->
+        <version>1.88.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-core:current} -->
         <type>test-jar</type>
       </dependency>
       <dependency>
@@ -59,7 +59,7 @@
         <groupId>com.google.guava</groupId>
         <artifactId>guava-testlib</artifactId>
         <!-- We are currently using the *-android version to support JDK7. -->
-        <version>26.0-android</version>
+        <version>28.0-android</version>
       </dependency>
       <dependency>
         <groupId>junit</groupId>
@@ -74,7 +74,7 @@
       <dependency>
         <groupId>com.google.truth</groupId>
         <artifactId>truth</artifactId>
-        <version>0.46</version>
+        <version>1.0</version>
       </dependency>
       <dependency>
         <groupId>org.easymock</groupId>
@@ -106,7 +106,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-site-plugin</artifactId>
-        <version>3.7.1</version>
+        <version>3.8.2</version>
         <configuration>
           <skip>true</skip>
         </configuration>

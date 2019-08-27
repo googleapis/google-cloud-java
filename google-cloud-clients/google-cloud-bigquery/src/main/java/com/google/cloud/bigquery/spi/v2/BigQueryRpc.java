@@ -21,6 +21,7 @@ import com.google.api.services.bigquery.model.Dataset;
 import com.google.api.services.bigquery.model.GetQueryResultsResponse;
 import com.google.api.services.bigquery.model.Job;
 import com.google.api.services.bigquery.model.Model;
+import com.google.api.services.bigquery.model.Routine;
 import com.google.api.services.bigquery.model.Table;
 import com.google.api.services.bigquery.model.TableDataInsertAllRequest;
 import com.google.api.services.bigquery.model.TableDataInsertAllResponse;
@@ -39,6 +40,9 @@ public interface BigQueryRpc extends ServiceRpc {
     DELETE_CONTENTS("deleteContents"),
     ALL_DATASETS("all"),
     ALL_USERS("allUsers"),
+    LABEL_FILTER("filter"),
+    MIN_CREATION_TIME("minCreationTime"),
+    MAX_CREATION_TIME("maxCreationTime"),
     MAX_RESULTS("maxResults"),
     PAGE_TOKEN("pageToken"),
     START_INDEX("startIndex"),
@@ -158,7 +162,7 @@ public interface BigQueryRpc extends ServiceRpc {
   boolean deleteTable(String projectId, String datasetId, String tableId);
 
   /**
-   * Updates table information.
+   * Updates model information.
    *
    * @throws BigQueryException upon failure
    */
@@ -186,6 +190,37 @@ public interface BigQueryRpc extends ServiceRpc {
    * @throws BigQueryException upon failure
    */
   boolean deleteModel(String projectId, String datasetId, String modelId);
+
+  /**
+   * Creates the requested routine.
+   *
+   * @throws BigQueryException upon failure
+   */
+  Routine create(Routine routine, Map<Option, ?> options);
+
+  /**
+   * Updates the requested routine.
+   *
+   * @throws BigQueryException upon failure
+   */
+  Routine update(Routine routine, Map<Option, ?> options);
+
+  /**
+   * Returns the requested routine or {@code null} if not found.
+   *
+   * @throws BigQueryException upon failure
+   */
+  Routine getRoutine(String projectId, String datasetId, String routineId, Map<Option, ?> options);
+
+  Tuple<String, Iterable<Routine>> listRoutines(
+      String projectId, String datasetId, Map<Option, ?> options);
+  /**
+   * Deletes the requested routine.
+   *
+   * @return {@code true} if routine was deleted, {@code false} if it was not found
+   * @throws BigQueryException upon failure
+   */
+  boolean deleteRoutine(String projectId, String datasetId, String routineId);
 
   /**
    * Sends an insert all request.

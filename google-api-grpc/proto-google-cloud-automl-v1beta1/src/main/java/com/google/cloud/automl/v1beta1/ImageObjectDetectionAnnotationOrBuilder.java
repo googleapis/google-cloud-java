@@ -12,8 +12,7 @@ public interface ImageObjectDetectionAnnotationOrBuilder
    *
    *
    * <pre>
-   * Output only.
-   * The rectangle representing the object location.
+   * Output only. The rectangle representing the object location.
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.BoundingPoly bounding_box = 1;</code>
@@ -23,8 +22,7 @@ public interface ImageObjectDetectionAnnotationOrBuilder
    *
    *
    * <pre>
-   * Output only.
-   * The rectangle representing the object location.
+   * Output only. The rectangle representing the object location.
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.BoundingPoly bounding_box = 1;</code>
@@ -34,8 +32,7 @@ public interface ImageObjectDetectionAnnotationOrBuilder
    *
    *
    * <pre>
-   * Output only.
-   * The rectangle representing the object location.
+   * Output only. The rectangle representing the object location.
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.BoundingPoly bounding_box = 1;</code>
@@ -46,8 +43,7 @@ public interface ImageObjectDetectionAnnotationOrBuilder
    *
    *
    * <pre>
-   * Output only.
-   * The confidence that this annotation is positive for the parent example,
+   * Output only. The confidence that this annotation is positive for the parent example,
    * value in [0, 1], higher means higher positivity confidence.
    * </pre>
    *

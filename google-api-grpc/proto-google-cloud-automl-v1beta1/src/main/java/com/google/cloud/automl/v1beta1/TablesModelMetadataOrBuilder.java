@@ -77,11 +77,11 @@ public interface TablesModelMetadataOrBuilder
    * [ml_use_column][google.cloud.automl.v1beta1.TablesDatasetMetadata.ml_use_column_spec_id]
    * must never be included here.
    * Only 3 fields are used:
-   * name - May be set on CreateModel, if set only the columns specified are
-   *        used, otherwise all primary table's columns (except the ones listed
-   *        above) are used for the training and prediction input.
-   * display_name - Output only.
-   * data_type - Output only.
+   * * name - May be set on CreateModel, if set only the columns specified are
+   *   used, otherwise all primary table's columns (except the ones listed
+   *   above) are used for the training and prediction input.
+   * * display_name - Output only.
+   * * data_type - Output only.
    * </pre>
    *
    * <code>repeated .google.cloud.automl.v1beta1.ColumnSpec input_feature_column_specs = 3;</code>
@@ -101,11 +101,11 @@ public interface TablesModelMetadataOrBuilder
    * [ml_use_column][google.cloud.automl.v1beta1.TablesDatasetMetadata.ml_use_column_spec_id]
    * must never be included here.
    * Only 3 fields are used:
-   * name - May be set on CreateModel, if set only the columns specified are
-   *        used, otherwise all primary table's columns (except the ones listed
-   *        above) are used for the training and prediction input.
-   * display_name - Output only.
-   * data_type - Output only.
+   * * name - May be set on CreateModel, if set only the columns specified are
+   *   used, otherwise all primary table's columns (except the ones listed
+   *   above) are used for the training and prediction input.
+   * * display_name - Output only.
+   * * data_type - Output only.
    * </pre>
    *
    * <code>repeated .google.cloud.automl.v1beta1.ColumnSpec input_feature_column_specs = 3;</code>
@@ -125,11 +125,11 @@ public interface TablesModelMetadataOrBuilder
    * [ml_use_column][google.cloud.automl.v1beta1.TablesDatasetMetadata.ml_use_column_spec_id]
    * must never be included here.
    * Only 3 fields are used:
-   * name - May be set on CreateModel, if set only the columns specified are
-   *        used, otherwise all primary table's columns (except the ones listed
-   *        above) are used for the training and prediction input.
-   * display_name - Output only.
-   * data_type - Output only.
+   * * name - May be set on CreateModel, if set only the columns specified are
+   *   used, otherwise all primary table's columns (except the ones listed
+   *   above) are used for the training and prediction input.
+   * * display_name - Output only.
+   * * data_type - Output only.
    * </pre>
    *
    * <code>repeated .google.cloud.automl.v1beta1.ColumnSpec input_feature_column_specs = 3;</code>
@@ -149,11 +149,11 @@ public interface TablesModelMetadataOrBuilder
    * [ml_use_column][google.cloud.automl.v1beta1.TablesDatasetMetadata.ml_use_column_spec_id]
    * must never be included here.
    * Only 3 fields are used:
-   * name - May be set on CreateModel, if set only the columns specified are
-   *        used, otherwise all primary table's columns (except the ones listed
-   *        above) are used for the training and prediction input.
-   * display_name - Output only.
-   * data_type - Output only.
+   * * name - May be set on CreateModel, if set only the columns specified are
+   *   used, otherwise all primary table's columns (except the ones listed
+   *   above) are used for the training and prediction input.
+   * * display_name - Output only.
+   * * data_type - Output only.
    * </pre>
    *
    * <code>repeated .google.cloud.automl.v1beta1.ColumnSpec input_feature_column_specs = 3;</code>
@@ -174,11 +174,11 @@ public interface TablesModelMetadataOrBuilder
    * [ml_use_column][google.cloud.automl.v1beta1.TablesDatasetMetadata.ml_use_column_spec_id]
    * must never be included here.
    * Only 3 fields are used:
-   * name - May be set on CreateModel, if set only the columns specified are
-   *        used, otherwise all primary table's columns (except the ones listed
-   *        above) are used for the training and prediction input.
-   * display_name - Output only.
-   * data_type - Output only.
+   * * name - May be set on CreateModel, if set only the columns specified are
+   *   used, otherwise all primary table's columns (except the ones listed
+   *   above) are used for the training and prediction input.
+   * * display_name - Output only.
+   * * data_type - Output only.
    * </pre>
    *
    * <code>repeated .google.cloud.automl.v1beta1.ColumnSpec input_feature_column_specs = 3;</code>
@@ -200,15 +200,16 @@ public interface TablesModelMetadataOrBuilder
    *                                 operating characteristic (ROC) curve.
    *   "MINIMIZE_LOG_LOSS" - Minimize log loss.
    *   "MAXIMIZE_AU_PRC" - Maximize the area under the precision-recall curve.
+   *   "MAXIMIZE_PRECISION_AT_RECALL" - Maximize precision for a specified
+   *                                   recall value.
+   *   "MAXIMIZE_RECALL_AT_PRECISION" - Maximize recall for a specified
+   *                                    precision value.
    * CLASSIFICATION_MULTI_CLASS :
    *   "MINIMIZE_LOG_LOSS" (default) - Minimize log loss.
    * REGRESSION:
    *   "MINIMIZE_RMSE" (default) - Minimize root-mean-squared error (RMSE).
    *   "MINIMIZE_MAE" - Minimize mean-absolute error (MAE).
    *   "MINIMIZE_RMSLE" - Minimize root-mean-squared log error (RMSLE).
-   * FORECASTING:
-   *   "MINIMIZE_RMSE" (default) - Minimize root-mean-squared error (RMSE).
-   *   "MINIMIZE_MAE" - Minimize mean-absolute error (MAE).
    * </pre>
    *
    * <code>string optimization_objective = 4;</code>
@@ -228,15 +229,16 @@ public interface TablesModelMetadataOrBuilder
    *                                 operating characteristic (ROC) curve.
    *   "MINIMIZE_LOG_LOSS" - Minimize log loss.
    *   "MAXIMIZE_AU_PRC" - Maximize the area under the precision-recall curve.
+   *   "MAXIMIZE_PRECISION_AT_RECALL" - Maximize precision for a specified
+   *                                   recall value.
+   *   "MAXIMIZE_RECALL_AT_PRECISION" - Maximize recall for a specified
+   *                                    precision value.
    * CLASSIFICATION_MULTI_CLASS :
    *   "MINIMIZE_LOG_LOSS" (default) - Minimize log loss.
    * REGRESSION:
    *   "MINIMIZE_RMSE" (default) - Minimize root-mean-squared error (RMSE).
    *   "MINIMIZE_MAE" - Minimize mean-absolute error (MAE).
    *   "MINIMIZE_RMSLE" - Minimize root-mean-squared log error (RMSLE).
-   * FORECASTING:
-   *   "MINIMIZE_RMSE" (default) - Minimize root-mean-squared error (RMSE).
-   *   "MINIMIZE_MAE" - Minimize mean-absolute error (MAE).
    * </pre>
    *
    * <code>string optimization_objective = 4;</code>

@@ -26,15 +26,12 @@ import javax.annotation.Nullable;
 @Generated("by GAPIC")
 @BetaApi
 /**
- * Represents a Commitment resource. Creating a Commitment resource means that you are purchasing a
- * committed use contract with an explicit start and end time. You can create commitments based on
- * vCPUs and memory usage and receive discounted rates. For full details, read Signing Up for
- * Committed Use Discounts.
+ * Represents a regional Commitment resource.
  *
- * <p>Committed use discounts are subject to Google Cloud Platform's Service Specific Terms. By
- * purchasing a committed use discount, you agree to these terms. Committed use discounts will not
- * renew, so you must purchase a new commitment to continue receiving discounts. (== resource_for
- * beta.commitments ==) (== resource_for v1.commitments ==)
+ * <p>Creating a commitment resource means that you are purchasing a committed use contract with an
+ * explicit start and end time. You can create commitments based on vCPUs and memory usage and
+ * receive discounted rates. For full details, read Signing Up for Committed Use Discounts. (==
+ * resource_for beta.regionCommitments ==) (== resource_for v1.regionCommitments ==)
  */
 public final class Commitment implements ApiMessage {
   private final String creationTimestamp;
@@ -45,6 +42,7 @@ public final class Commitment implements ApiMessage {
   private final String name;
   private final String plan;
   private final String region;
+  private final List<Reservation> reservations;
   private final List<ResourceCommitment> resources;
   private final String selfLink;
   private final String startTimestamp;
@@ -60,6 +58,7 @@ public final class Commitment implements ApiMessage {
     this.name = null;
     this.plan = null;
     this.region = null;
+    this.reservations = null;
     this.resources = null;
     this.selfLink = null;
     this.startTimestamp = null;
@@ -76,6 +75,7 @@ public final class Commitment implements ApiMessage {
       String name,
       String plan,
       String region,
+      List<Reservation> reservations,
       List<ResourceCommitment> resources,
       String selfLink,
       String startTimestamp,
@@ -89,6 +89,7 @@ public final class Commitment implements ApiMessage {
     this.name = name;
     this.plan = plan;
     this.region = region;
+    this.reservations = reservations;
     this.resources = resources;
     this.selfLink = selfLink;
     this.startTimestamp = startTimestamp;
@@ -121,6 +122,9 @@ public final class Commitment implements ApiMessage {
     }
     if ("region".equals(fieldName)) {
       return region;
+    }
+    if ("reservations".equals(fieldName)) {
+      return reservations;
     }
     if ("resources".equals(fieldName)) {
       return resources;
@@ -211,6 +215,11 @@ public final class Commitment implements ApiMessage {
     return region;
   }
 
+  /** List of reservations for this commitment. */
+  public List<Reservation> getReservationsList() {
+    return reservations;
+  }
+
   /**
    * A list of commitment amounts for particular resources. Note that VCPU and MEMORY resource
    * commitments must occur together.
@@ -273,6 +282,7 @@ public final class Commitment implements ApiMessage {
     private String name;
     private String plan;
     private String region;
+    private List<Reservation> reservations;
     private List<ResourceCommitment> resources;
     private String selfLink;
     private String startTimestamp;
@@ -307,6 +317,9 @@ public final class Commitment implements ApiMessage {
       if (other.getRegion() != null) {
         this.region = other.region;
       }
+      if (other.getReservationsList() != null) {
+        this.reservations = other.reservations;
+      }
       if (other.getResourcesList() != null) {
         this.resources = other.resources;
       }
@@ -334,6 +347,7 @@ public final class Commitment implements ApiMessage {
       this.name = source.name;
       this.plan = source.plan;
       this.region = source.region;
+      this.reservations = source.reservations;
       this.resources = source.resources;
       this.selfLink = source.selfLink;
       this.startTimestamp = source.startTimestamp;
@@ -457,6 +471,29 @@ public final class Commitment implements ApiMessage {
       return this;
     }
 
+    /** List of reservations for this commitment. */
+    public List<Reservation> getReservationsList() {
+      return reservations;
+    }
+
+    /** List of reservations for this commitment. */
+    public Builder addAllReservations(List<Reservation> reservations) {
+      if (this.reservations == null) {
+        this.reservations = new LinkedList<>();
+      }
+      this.reservations.addAll(reservations);
+      return this;
+    }
+
+    /** List of reservations for this commitment. */
+    public Builder addReservations(Reservation reservations) {
+      if (this.reservations == null) {
+        this.reservations = new LinkedList<>();
+      }
+      this.reservations.add(reservations);
+      return this;
+    }
+
     /**
      * A list of commitment amounts for particular resources. Note that VCPU and MEMORY resource
      * commitments must occur together.
@@ -550,6 +587,7 @@ public final class Commitment implements ApiMessage {
           name,
           plan,
           region,
+          reservations,
           resources,
           selfLink,
           startTimestamp,
@@ -567,6 +605,7 @@ public final class Commitment implements ApiMessage {
       newBuilder.setName(this.name);
       newBuilder.setPlan(this.plan);
       newBuilder.setRegion(this.region);
+      newBuilder.addAllReservations(this.reservations);
       newBuilder.addAllResources(this.resources);
       newBuilder.setSelfLink(this.selfLink);
       newBuilder.setStartTimestamp(this.startTimestamp);
@@ -603,6 +642,9 @@ public final class Commitment implements ApiMessage {
         + "region="
         + region
         + ", "
+        + "reservations="
+        + reservations
+        + ", "
         + "resources="
         + resources
         + ", "
@@ -635,6 +677,7 @@ public final class Commitment implements ApiMessage {
           && Objects.equals(this.name, that.getName())
           && Objects.equals(this.plan, that.getPlan())
           && Objects.equals(this.region, that.getRegion())
+          && Objects.equals(this.reservations, that.getReservationsList())
           && Objects.equals(this.resources, that.getResourcesList())
           && Objects.equals(this.selfLink, that.getSelfLink())
           && Objects.equals(this.startTimestamp, that.getStartTimestamp())
@@ -655,6 +698,7 @@ public final class Commitment implements ApiMessage {
         name,
         plan,
         region,
+        reservations,
         resources,
         selfLink,
         startTimestamp,

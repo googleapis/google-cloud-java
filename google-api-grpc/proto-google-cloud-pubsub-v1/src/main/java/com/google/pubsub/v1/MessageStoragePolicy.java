@@ -95,12 +95,11 @@ public final class MessageStoragePolicy extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The list of GCP region IDs where messages that are published to the topic
+   * A list of IDs of GCP regions where messages that are published to the topic
    * may be persisted in storage. Messages published by publishers running in
    * non-allowed GCP regions (or running outside of GCP altogether) will be
-   * routed for storage in one of the allowed regions. An empty list indicates a
-   * misconfiguration at the project or organization level, which will result in
-   * all Publish operations failing.
+   * routed for storage in one of the allowed regions. An empty list means that
+   * no regions are allowed, and is not a valid configuration.
    * </pre>
    *
    * <code>repeated string allowed_persistence_regions = 1;</code>
@@ -112,12 +111,11 @@ public final class MessageStoragePolicy extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The list of GCP region IDs where messages that are published to the topic
+   * A list of IDs of GCP regions where messages that are published to the topic
    * may be persisted in storage. Messages published by publishers running in
    * non-allowed GCP regions (or running outside of GCP altogether) will be
-   * routed for storage in one of the allowed regions. An empty list indicates a
-   * misconfiguration at the project or organization level, which will result in
-   * all Publish operations failing.
+   * routed for storage in one of the allowed regions. An empty list means that
+   * no regions are allowed, and is not a valid configuration.
    * </pre>
    *
    * <code>repeated string allowed_persistence_regions = 1;</code>
@@ -129,12 +127,11 @@ public final class MessageStoragePolicy extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The list of GCP region IDs where messages that are published to the topic
+   * A list of IDs of GCP regions where messages that are published to the topic
    * may be persisted in storage. Messages published by publishers running in
    * non-allowed GCP regions (or running outside of GCP altogether) will be
-   * routed for storage in one of the allowed regions. An empty list indicates a
-   * misconfiguration at the project or organization level, which will result in
-   * all Publish operations failing.
+   * routed for storage in one of the allowed regions. An empty list means that
+   * no regions are allowed, and is not a valid configuration.
    * </pre>
    *
    * <code>repeated string allowed_persistence_regions = 1;</code>
@@ -146,12 +143,11 @@ public final class MessageStoragePolicy extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The list of GCP region IDs where messages that are published to the topic
+   * A list of IDs of GCP regions where messages that are published to the topic
    * may be persisted in storage. Messages published by publishers running in
    * non-allowed GCP regions (or running outside of GCP altogether) will be
-   * routed for storage in one of the allowed regions. An empty list indicates a
-   * misconfiguration at the project or organization level, which will result in
-   * all Publish operations failing.
+   * routed for storage in one of the allowed regions. An empty list means that
+   * no regions are allowed, and is not a valid configuration.
    * </pre>
    *
    * <code>repeated string allowed_persistence_regions = 1;</code>
@@ -504,12 +500,11 @@ public final class MessageStoragePolicy extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The list of GCP region IDs where messages that are published to the topic
+     * A list of IDs of GCP regions where messages that are published to the topic
      * may be persisted in storage. Messages published by publishers running in
      * non-allowed GCP regions (or running outside of GCP altogether) will be
-     * routed for storage in one of the allowed regions. An empty list indicates a
-     * misconfiguration at the project or organization level, which will result in
-     * all Publish operations failing.
+     * routed for storage in one of the allowed regions. An empty list means that
+     * no regions are allowed, and is not a valid configuration.
      * </pre>
      *
      * <code>repeated string allowed_persistence_regions = 1;</code>
@@ -521,12 +516,11 @@ public final class MessageStoragePolicy extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The list of GCP region IDs where messages that are published to the topic
+     * A list of IDs of GCP regions where messages that are published to the topic
      * may be persisted in storage. Messages published by publishers running in
      * non-allowed GCP regions (or running outside of GCP altogether) will be
-     * routed for storage in one of the allowed regions. An empty list indicates a
-     * misconfiguration at the project or organization level, which will result in
-     * all Publish operations failing.
+     * routed for storage in one of the allowed regions. An empty list means that
+     * no regions are allowed, and is not a valid configuration.
      * </pre>
      *
      * <code>repeated string allowed_persistence_regions = 1;</code>
@@ -538,12 +532,11 @@ public final class MessageStoragePolicy extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The list of GCP region IDs where messages that are published to the topic
+     * A list of IDs of GCP regions where messages that are published to the topic
      * may be persisted in storage. Messages published by publishers running in
      * non-allowed GCP regions (or running outside of GCP altogether) will be
-     * routed for storage in one of the allowed regions. An empty list indicates a
-     * misconfiguration at the project or organization level, which will result in
-     * all Publish operations failing.
+     * routed for storage in one of the allowed regions. An empty list means that
+     * no regions are allowed, and is not a valid configuration.
      * </pre>
      *
      * <code>repeated string allowed_persistence_regions = 1;</code>
@@ -555,12 +548,11 @@ public final class MessageStoragePolicy extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The list of GCP region IDs where messages that are published to the topic
+     * A list of IDs of GCP regions where messages that are published to the topic
      * may be persisted in storage. Messages published by publishers running in
      * non-allowed GCP regions (or running outside of GCP altogether) will be
-     * routed for storage in one of the allowed regions. An empty list indicates a
-     * misconfiguration at the project or organization level, which will result in
-     * all Publish operations failing.
+     * routed for storage in one of the allowed regions. An empty list means that
+     * no regions are allowed, and is not a valid configuration.
      * </pre>
      *
      * <code>repeated string allowed_persistence_regions = 1;</code>
@@ -572,12 +564,11 @@ public final class MessageStoragePolicy extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The list of GCP region IDs where messages that are published to the topic
+     * A list of IDs of GCP regions where messages that are published to the topic
      * may be persisted in storage. Messages published by publishers running in
      * non-allowed GCP regions (or running outside of GCP altogether) will be
-     * routed for storage in one of the allowed regions. An empty list indicates a
-     * misconfiguration at the project or organization level, which will result in
-     * all Publish operations failing.
+     * routed for storage in one of the allowed regions. An empty list means that
+     * no regions are allowed, and is not a valid configuration.
      * </pre>
      *
      * <code>repeated string allowed_persistence_regions = 1;</code>
@@ -595,12 +586,11 @@ public final class MessageStoragePolicy extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The list of GCP region IDs where messages that are published to the topic
+     * A list of IDs of GCP regions where messages that are published to the topic
      * may be persisted in storage. Messages published by publishers running in
      * non-allowed GCP regions (or running outside of GCP altogether) will be
-     * routed for storage in one of the allowed regions. An empty list indicates a
-     * misconfiguration at the project or organization level, which will result in
-     * all Publish operations failing.
+     * routed for storage in one of the allowed regions. An empty list means that
+     * no regions are allowed, and is not a valid configuration.
      * </pre>
      *
      * <code>repeated string allowed_persistence_regions = 1;</code>
@@ -618,12 +608,11 @@ public final class MessageStoragePolicy extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The list of GCP region IDs where messages that are published to the topic
+     * A list of IDs of GCP regions where messages that are published to the topic
      * may be persisted in storage. Messages published by publishers running in
      * non-allowed GCP regions (or running outside of GCP altogether) will be
-     * routed for storage in one of the allowed regions. An empty list indicates a
-     * misconfiguration at the project or organization level, which will result in
-     * all Publish operations failing.
+     * routed for storage in one of the allowed regions. An empty list means that
+     * no regions are allowed, and is not a valid configuration.
      * </pre>
      *
      * <code>repeated string allowed_persistence_regions = 1;</code>
@@ -638,12 +627,11 @@ public final class MessageStoragePolicy extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The list of GCP region IDs where messages that are published to the topic
+     * A list of IDs of GCP regions where messages that are published to the topic
      * may be persisted in storage. Messages published by publishers running in
      * non-allowed GCP regions (or running outside of GCP altogether) will be
-     * routed for storage in one of the allowed regions. An empty list indicates a
-     * misconfiguration at the project or organization level, which will result in
-     * all Publish operations failing.
+     * routed for storage in one of the allowed regions. An empty list means that
+     * no regions are allowed, and is not a valid configuration.
      * </pre>
      *
      * <code>repeated string allowed_persistence_regions = 1;</code>
@@ -658,12 +646,11 @@ public final class MessageStoragePolicy extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The list of GCP region IDs where messages that are published to the topic
+     * A list of IDs of GCP regions where messages that are published to the topic
      * may be persisted in storage. Messages published by publishers running in
      * non-allowed GCP regions (or running outside of GCP altogether) will be
-     * routed for storage in one of the allowed regions. An empty list indicates a
-     * misconfiguration at the project or organization level, which will result in
-     * all Publish operations failing.
+     * routed for storage in one of the allowed regions. An empty list means that
+     * no regions are allowed, and is not a valid configuration.
      * </pre>
      *
      * <code>repeated string allowed_persistence_regions = 1;</code>

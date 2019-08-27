@@ -19,7 +19,7 @@ public interface StreamingDetectIntentRequestOrBuilder
    * ID&gt;/sessions/&lt;Session ID&gt;`. If `Environment ID` is not specified, we assume
    * default 'draft' environment. If `User ID` is not specified, we are using
    * "-". It's up to the API caller to choose an appropriate `Session ID` and
-   * `User Id`. They can be a random numbers or some type of user and session
+   * `User Id`. They can be a random number or some type of user and session
    * identifiers (preferably hashed). The length of the `Session ID` and
    * `User ID` must not exceed 36 characters.
    * </pre>
@@ -38,7 +38,7 @@ public interface StreamingDetectIntentRequestOrBuilder
    * ID&gt;/sessions/&lt;Session ID&gt;`. If `Environment ID` is not specified, we assume
    * default 'draft' environment. If `User ID` is not specified, we are using
    * "-". It's up to the API caller to choose an appropriate `Session ID` and
-   * `User Id`. They can be a random numbers or some type of user and session
+   * `User Id`. They can be a random number or some type of user and session
    * identifiers (preferably hashed). The length of the `Session ID` and
    * `User ID` must not exceed 36 characters.
    * </pre>
@@ -125,6 +125,7 @@ public interface StreamingDetectIntentRequestOrBuilder
    *
    *
    * <pre>
+   * DEPRECATED. Please use [InputAudioConfig.single_utterance][google.cloud.dialogflow.v2beta1.InputAudioConfig.single_utterance] instead.
    * Optional. If `false` (default), recognition does not cease until the
    * client closes the stream.
    * If `true`, the recognizer will detect a single spoken utterance in input

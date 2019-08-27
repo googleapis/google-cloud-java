@@ -46,15 +46,20 @@ import javax.annotation.Nullable;
  * get started:
  *
  * <pre>{@code
- * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create("[PROJECT]", "[INSTANCE]")) {
- *   for(Row row : bigtableDataClient.readRows(Query.create("[TABLE]")) {
- *     // Do something with row
- *   }
+ * // One instance per application.
+ * BigtableDataClient client = BigtableDataClient.create("[PROJECT]", "[INSTANCE]")
+ *
+ * for(Row row : client.readRows(Query.create("[TABLE]")) {
+ *   // Do something with row
  * }
+ *
+ * // Cleanup during application shutdown.
+ * client.close();
  * }</pre>
  *
- * <p>Note: close() needs to be called on the bigtableDataClient object to clean up resources such
- * as threads. In the example above, try-with-resources is used, which automatically calls close().
+ * <p>Creating a new client is a very expensive operation and should only be done once and shared in
+ * an application. However, close() needs to be called on the client object to clean up resources
+ * such as threads during application shutdown.
  *
  * <p>The surface of this class includes several types of Java methods for each of the API's
  * methods:
@@ -85,28 +90,27 @@ import javax.annotation.Nullable;
  * <p>To customize credentials:
  *
  * <pre>{@code
- * BigtableDataSettings bigtableDataSettings =
+ * BigtableDataSettings settings =
  *     BigtableDataSettings.newBuilder()
  *         .setProjectId("[PROJECT]")
  *         .setInstanceId("[INSTANCE]")
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
- * try(BigtableDataClient bigtableDataClient = BigtableDataClient.create(bigtableDataSettings)) {
- *   // ..
- * }
+ * BigtableDataClient client = BigtableDataClient.create(settings);
  * }</pre>
  *
  * To customize the endpoint:
  *
  * <pre>{@code
- * BigtableDataSettings bigtableDataSettings =
+ * BigtableDataSettings.Builder settingsBuilder =
  *     BigtableDataSettings.newBuilder()
  *       .setProjectId("[PROJECT]")
- *       .setInstanceId("[INSTANCE]")
- *       .setEndpoint(myEndpoint).build();
- * try(BigtableDataClient bigtableDataClient = BigtableDataClient.create(bigtableDataSettings)) {
- *   // ..
- * }
+ *       .setInstanceId("[INSTANCE]");
+ *
+ * settingsBuilder.stubSettings()
+ *     .setEndpoint(myEndpoint).build();
+ *
+ * BigtableDataClient client = BigtableDataClient.create(settings.build());
  * }</pre>
  */
 public class BigtableDataClient implements AutoCloseable {
@@ -148,17 +152,17 @@ public class BigtableDataClient implements AutoCloseable {
    *
    * <pre>{code
    * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create("[PROJECT]", "[INSTANCE]")) {
-   *   String tableId = "[TABLE]";
+   * String tableId = "[TABLE]";
    *
-   *   Row row = bigtableDataClient.readRow(tableId, ByteString.copyFromUtf8("key"));
-   *   // Do something with row, for example, display all cells
-   *   if(row != null) {
-   *     System.out.println(row.getKey().toStringUtf8());
-   *     for(RowCell cell : row.getCells()) {
-   *        System.out.printf("Family: %s   Qualifier: %s   Value: %s", cell.getFamily(),
-   *           cell.getQualifier().toStringUtf8(), cell.getValue().toStringUtf8());
-   *     }
+   * Row row = bigtableDataClient.readRow(tableId, ByteString.copyFromUtf8("key"));
+   * // Do something with row, for example, display all cells
+   * if(row != null) {
+   *   System.out.println(row.getKey().toStringUtf8());
+   *   for(RowCell cell : row.getCells()) {
+   *      System.out.printf("Family: %s   Qualifier: %s   Value: %s", cell.getFamily(),
+   *         cell.getQualifier().toStringUtf8(), cell.getValue().toStringUtf8());
    *   }
+   * }
    * } catch(ApiException e) {
    *   e.printStackTrace();
    * }
@@ -1158,7 +1162,7 @@ public class BigtableDataClient implements AutoCloseable {
 
   /** Close the clients and releases all associated resources. */
   @Override
-  public void close() throws Exception {
+  public void close() {
     stub.close();
   }
 }

@@ -125,6 +125,30 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     }
   }
 
+  private static class RoutinePageFetcher implements NextPageFetcher<Routine> {
+
+    private static final long serialVersionUID = 8611242311504201187L;
+    private final Map<BigQueryRpc.Option, ?> requestOptions;
+    private final BigQueryOptions serviceOptions;
+    private final DatasetId datasetId;
+
+    RoutinePageFetcher(
+        DatasetId datasetId,
+        BigQueryOptions serviceOptions,
+        String cursor,
+        Map<BigQueryRpc.Option, ?> optionMap) {
+      this.requestOptions =
+          PageImpl.nextRequestOptions(BigQueryRpc.Option.PAGE_TOKEN, cursor, optionMap);
+      this.serviceOptions = serviceOptions;
+      this.datasetId = datasetId;
+    }
+
+    @Override
+    public Page<Routine> getNextPage() {
+      return listRoutines(datasetId, serviceOptions, requestOptions);
+    }
+  }
+
   private static class JobPageFetcher implements NextPageFetcher<Job> {
 
     private static final long serialVersionUID = 8536533282558245472L;
@@ -216,6 +240,34 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
                 @Override
                 public com.google.api.services.bigquery.model.Table call() {
                   return bigQueryRpc.create(tablePb, optionsMap);
+                }
+              },
+              getOptions().getRetrySettings(),
+              EXCEPTION_HANDLER,
+              getOptions().getClock()));
+    } catch (RetryHelper.RetryHelperException e) {
+      throw BigQueryException.translateAndThrow(e);
+    }
+  }
+
+  @Override
+  public Routine create(RoutineInfo routineInfo, RoutineOption... options) {
+    final com.google.api.services.bigquery.model.Routine routinePb =
+        routineInfo
+            .setProjectId(
+                Strings.isNullOrEmpty(routineInfo.getRoutineId().getProject())
+                    ? getOptions().getProjectId()
+                    : routineInfo.getRoutineId().getProject())
+            .toPb();
+    final Map<BigQueryRpc.Option, ?> optionsMap = optionMap(options);
+    try {
+      return Routine.fromPb(
+          this,
+          runWithRetries(
+              new Callable<com.google.api.services.bigquery.model.Routine>() {
+                @Override
+                public com.google.api.services.bigquery.model.Routine call() {
+                  return bigQueryRpc.create(routinePb, optionsMap);
                 }
               },
               getOptions().getRetrySettings(),
@@ -457,6 +509,32 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   }
 
   @Override
+  public boolean delete(RoutineId routineId) {
+    final RoutineId completeRoutineId =
+        routineId.setProjectId(
+            Strings.isNullOrEmpty(routineId.getProject())
+                ? getOptions().getProjectId()
+                : routineId.getProject());
+    try {
+      return runWithRetries(
+          new Callable<Boolean>() {
+            @Override
+            public Boolean call() {
+              return bigQueryRpc.deleteRoutine(
+                  completeRoutineId.getProject(),
+                  completeRoutineId.getDataset(),
+                  completeRoutineId.getRoutine());
+            }
+          },
+          getOptions().getRetrySettings(),
+          EXCEPTION_HANDLER,
+          getOptions().getClock());
+    } catch (RetryHelper.RetryHelperException e) {
+      throw BigQueryException.translateAndThrow(e);
+    }
+  }
+
+  @Override
   public Dataset update(DatasetInfo datasetInfo, DatasetOption... options) {
     final com.google.api.services.bigquery.model.Dataset datasetPb =
         datasetInfo.setProjectId(getOptions().getProjectId()).toPb();
@@ -525,6 +603,34 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
                 @Override
                 public com.google.api.services.bigquery.model.Model call() {
                   return bigQueryRpc.patch(modelPb, optionsMap);
+                }
+              },
+              getOptions().getRetrySettings(),
+              EXCEPTION_HANDLER,
+              getOptions().getClock()));
+    } catch (RetryHelper.RetryHelperException e) {
+      throw BigQueryException.translateAndThrow(e);
+    }
+  }
+
+  @Override
+  public Routine update(RoutineInfo routineInfo, RoutineOption... options) {
+    final com.google.api.services.bigquery.model.Routine routinePb =
+        routineInfo
+            .setProjectId(
+                Strings.isNullOrEmpty(routineInfo.getRoutineId().getProject())
+                    ? getOptions().getProjectId()
+                    : routineInfo.getRoutineId().getProject())
+            .toPb();
+    final Map<BigQueryRpc.Option, ?> optionsMap = optionMap(options);
+    try {
+      return Routine.fromPb(
+          this,
+          runWithRetries(
+              new Callable<com.google.api.services.bigquery.model.Routine>() {
+                @Override
+                public com.google.api.services.bigquery.model.Routine call() {
+                  return bigQueryRpc.update(routinePb, optionsMap);
                 }
               },
               getOptions().getRetrySettings(),
@@ -613,6 +719,44 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   }
 
   @Override
+  public Routine getRoutine(String datasetId, String routineId, RoutineOption... options) {
+    return getRoutine(RoutineId.of(datasetId, routineId), options);
+  }
+
+  @Override
+  public Routine getRoutine(RoutineId routineId, RoutineOption... options) {
+    final RoutineId completeRoutineId =
+        routineId.setProjectId(
+            Strings.isNullOrEmpty(routineId.getProject())
+                ? getOptions().getProjectId()
+                : routineId.getProject());
+    final Map<BigQueryRpc.Option, ?> optionsMap = optionMap(options);
+    try {
+      com.google.api.services.bigquery.model.Routine answer =
+          runWithRetries(
+              new Callable<com.google.api.services.bigquery.model.Routine>() {
+                @Override
+                public com.google.api.services.bigquery.model.Routine call() {
+                  return bigQueryRpc.getRoutine(
+                      completeRoutineId.getProject(),
+                      completeRoutineId.getDataset(),
+                      completeRoutineId.getRoutine(),
+                      optionsMap);
+                }
+              },
+              getOptions().getRetrySettings(),
+              EXCEPTION_HANDLER,
+              getOptions().getClock());
+      if (getOptions().getThrowNotFound() && answer == null) {
+        throw new BigQueryException(HTTP_NOT_FOUND, "Model not found");
+      }
+      return answer == null ? null : Routine.fromPb(this, answer);
+    } catch (RetryHelper.RetryHelperException e) {
+      throw BigQueryException.translateAndThrow(e);
+    }
+  }
+
+  @Override
   public Page<Table> listTables(String datasetId, TableListOption... options) {
     return listTables(
         DatasetId.of(getOptions().getProjectId(), datasetId), getOptions(), optionMap(options));
@@ -634,6 +778,18 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   public Page<Model> listModels(DatasetId datasetId, ModelListOption... options) {
     DatasetId completeDatasetId = datasetId.setProjectId(getOptions().getProjectId());
     return listModels(completeDatasetId, getOptions(), optionMap(options));
+  }
+
+  @Override
+  public Page<Routine> listRoutines(String datasetId, RoutineListOption... options) {
+    return listRoutines(
+        DatasetId.of(getOptions().getProjectId(), datasetId), getOptions(), optionMap(options));
+  }
+
+  @Override
+  public Page<Routine> listRoutines(DatasetId datasetId, RoutineListOption... options) {
+    DatasetId completeDatasetId = datasetId.setProjectId(getOptions().getProjectId());
+    return listRoutines(completeDatasetId, getOptions(), optionMap(options));
   }
 
   @Override
@@ -725,6 +881,43 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
               });
       return new PageImpl<>(
           new ModelPageFetcher(datasetId, serviceOptions, cursor, optionsMap), cursor, models);
+    } catch (RetryHelper.RetryHelperException e) {
+      throw BigQueryException.translateAndThrow(e);
+    }
+  }
+
+  private static Page<Routine> listRoutines(
+      final DatasetId datasetId,
+      final BigQueryOptions serviceOptions,
+      final Map<BigQueryRpc.Option, ?> optionsMap) {
+    try {
+      Tuple<String, Iterable<com.google.api.services.bigquery.model.Routine>> result =
+          runWithRetries(
+              new Callable<
+                  Tuple<String, Iterable<com.google.api.services.bigquery.model.Routine>>>() {
+                @Override
+                public Tuple<String, Iterable<com.google.api.services.bigquery.model.Routine>>
+                    call() {
+                  return serviceOptions
+                      .getBigQueryRpcV2()
+                      .listRoutines(datasetId.getProject(), datasetId.getDataset(), optionsMap);
+                }
+              },
+              serviceOptions.getRetrySettings(),
+              EXCEPTION_HANDLER,
+              serviceOptions.getClock());
+      String cursor = result.x();
+      Iterable<Routine> routines =
+          Iterables.transform(
+              result.y(),
+              new Function<com.google.api.services.bigquery.model.Routine, Routine>() {
+                @Override
+                public Routine apply(com.google.api.services.bigquery.model.Routine routinePb) {
+                  return Routine.fromPb(serviceOptions.getService(), routinePb);
+                }
+              });
+      return new PageImpl<>(
+          new RoutinePageFetcher(datasetId, serviceOptions, cursor, optionsMap), cursor, routines);
     } catch (RetryHelper.RetryHelperException e) {
       throw BigQueryException.translateAndThrow(e);
     }

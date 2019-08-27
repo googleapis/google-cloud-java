@@ -35,6 +35,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
     applicationOutcomeNotesFilters_ = java.util.Collections.emptyList();
     applicationJobFilters_ = java.util.Collections.emptyList();
     customAttributeFilter_ = "";
+    personNameFilters_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -233,6 +234,19 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
+          case 138:
+            {
+              if (!((mutable_bitField0_ & 0x00004000) != 0)) {
+                personNameFilters_ =
+                    new java.util.ArrayList<com.google.cloud.talent.v4beta1.PersonNameFilter>();
+                mutable_bitField0_ |= 0x00004000;
+              }
+              personNameFilters_.add(
+                  input.readMessage(
+                      com.google.cloud.talent.v4beta1.PersonNameFilter.parser(),
+                      extensionRegistry));
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -277,6 +291,9 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
       }
       if (((mutable_bitField0_ & 0x00000800) != 0)) {
         applicationJobFilters_ = java.util.Collections.unmodifiableList(applicationJobFilters_);
+      }
+      if (((mutable_bitField0_ & 0x00004000) != 0)) {
+        personNameFilters_ = java.util.Collections.unmodifiableList(personNameFilters_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -351,13 +368,66 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. The location filter specifies geo-regions containing the profiles
-   * to search against.
+   * to search against. It filters against all of a profile's
+   * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] where
+   * [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and
+   * [Address.current][google.cloud.talent.v4beta1.Address.current] is true. If
+   * no such address exists, a fallback logic is applied in an attempt to
+   * determine the profile's primary address.
+   * The fallback logic selects an address from a profile's
+   * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
+   * following order of priority:
+   * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
+   * and [Address.current][google.cloud.talent.v4beta1.Address.current] is false
+   * or not set.
+   * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+   * CONTACT_INFO_USAGE_UNSPECIFIED and
+   * [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
+   * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+   * CONTACT_INFO_USAGE_UNSPECIFIED and
+   * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or
+   * not set.
    * If a location filter isn't specified, profiles fitting the other search
    * criteria are retrieved regardless of where they're located.
    * If
    * [LocationFilter.negated][google.cloud.talent.v4beta1.LocationFilter.negated]
    * is specified, the result doesn't contain profiles from that location.
-   * For example, search for profiles with addresses in "New York City".
+   * If
+   * [LocationFilter.address][google.cloud.talent.v4beta1.LocationFilter.address]
+   * is provided, the
+   * [LocationType][google.cloud.talent.v4beta1.Location.LocationType], center
+   * point (latitude and longitude), and radius are automatically detected by
+   * the Google Maps Geocoding API and included as well. If
+   * [LocationFilter.address][google.cloud.talent.v4beta1.LocationFilter.address]
+   * is not recognized as a location, the filter falls back to keyword search.
+   * If the detected
+   * [LocationType][google.cloud.talent.v4beta1.Location.LocationType] is
+   * [LocationType.SUB_ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.Location.LocationType.SUB_ADMINISTRATIVE_AREA],
+   * [LocationType.ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.Location.LocationType.ADMINISTRATIVE_AREA],
+   * or
+   * [LocationType.COUNTRY][google.cloud.talent.v4beta1.Location.LocationType.COUNTRY],
+   * or location is recognized but a radius can not be determined by the
+   * geo-coder, the filter is performed against the detected location name
+   * (using exact text matching). Otherwise, the filter is performed against the
+   * detected center point and a radius. The largest value from among the
+   * following options is automatically set as the radius value:
+   * 1. 10 miles.
+   * 2. Detected location radius +
+   * [LocationFilter.distance_in_miles][google.cloud.talent.v4beta1.LocationFilter.distance_in_miles].
+   * 3. If the detected
+   * [LocationType][google.cloud.talent.v4beta1.Location.LocationType] is one of
+   * [LocationType.SUB_LOCALITY][google.cloud.talent.v4beta1.Location.LocationType.SUB_LOCALITY],
+   * [LocationType.SUB_LOCALITY_2][google.cloud.talent.v4beta1.Location.LocationType.SUB_LOCALITY_2],
+   * [LocationType.NEIGHBORHOOD][google.cloud.talent.v4beta1.Location.LocationType.NEIGHBORHOOD],
+   * [LocationType.POSTAL_CODE][google.cloud.talent.v4beta1.Location.LocationType.POSTAL_CODE],
+   * or
+   * [LocationType.STREET_ADDRESS][google.cloud.talent.v4beta1.Location.LocationType.STREET_ADDRESS],
+   * the following two values are calculated and the larger of the two is
+   * compared to #1 and #2, above:
+   *   - Calculated radius of the city (from the city center) that contains the
+   *   geo-coded location.
+   *   - Distance from the city center (of the city containing the geo-coded
+   *   location) to the detected location center + 0.5 miles.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.LocationFilter location_filters = 2;</code>
@@ -370,13 +440,66 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. The location filter specifies geo-regions containing the profiles
-   * to search against.
+   * to search against. It filters against all of a profile's
+   * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] where
+   * [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and
+   * [Address.current][google.cloud.talent.v4beta1.Address.current] is true. If
+   * no such address exists, a fallback logic is applied in an attempt to
+   * determine the profile's primary address.
+   * The fallback logic selects an address from a profile's
+   * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
+   * following order of priority:
+   * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
+   * and [Address.current][google.cloud.talent.v4beta1.Address.current] is false
+   * or not set.
+   * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+   * CONTACT_INFO_USAGE_UNSPECIFIED and
+   * [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
+   * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+   * CONTACT_INFO_USAGE_UNSPECIFIED and
+   * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or
+   * not set.
    * If a location filter isn't specified, profiles fitting the other search
    * criteria are retrieved regardless of where they're located.
    * If
    * [LocationFilter.negated][google.cloud.talent.v4beta1.LocationFilter.negated]
    * is specified, the result doesn't contain profiles from that location.
-   * For example, search for profiles with addresses in "New York City".
+   * If
+   * [LocationFilter.address][google.cloud.talent.v4beta1.LocationFilter.address]
+   * is provided, the
+   * [LocationType][google.cloud.talent.v4beta1.Location.LocationType], center
+   * point (latitude and longitude), and radius are automatically detected by
+   * the Google Maps Geocoding API and included as well. If
+   * [LocationFilter.address][google.cloud.talent.v4beta1.LocationFilter.address]
+   * is not recognized as a location, the filter falls back to keyword search.
+   * If the detected
+   * [LocationType][google.cloud.talent.v4beta1.Location.LocationType] is
+   * [LocationType.SUB_ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.Location.LocationType.SUB_ADMINISTRATIVE_AREA],
+   * [LocationType.ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.Location.LocationType.ADMINISTRATIVE_AREA],
+   * or
+   * [LocationType.COUNTRY][google.cloud.talent.v4beta1.Location.LocationType.COUNTRY],
+   * or location is recognized but a radius can not be determined by the
+   * geo-coder, the filter is performed against the detected location name
+   * (using exact text matching). Otherwise, the filter is performed against the
+   * detected center point and a radius. The largest value from among the
+   * following options is automatically set as the radius value:
+   * 1. 10 miles.
+   * 2. Detected location radius +
+   * [LocationFilter.distance_in_miles][google.cloud.talent.v4beta1.LocationFilter.distance_in_miles].
+   * 3. If the detected
+   * [LocationType][google.cloud.talent.v4beta1.Location.LocationType] is one of
+   * [LocationType.SUB_LOCALITY][google.cloud.talent.v4beta1.Location.LocationType.SUB_LOCALITY],
+   * [LocationType.SUB_LOCALITY_2][google.cloud.talent.v4beta1.Location.LocationType.SUB_LOCALITY_2],
+   * [LocationType.NEIGHBORHOOD][google.cloud.talent.v4beta1.Location.LocationType.NEIGHBORHOOD],
+   * [LocationType.POSTAL_CODE][google.cloud.talent.v4beta1.Location.LocationType.POSTAL_CODE],
+   * or
+   * [LocationType.STREET_ADDRESS][google.cloud.talent.v4beta1.Location.LocationType.STREET_ADDRESS],
+   * the following two values are calculated and the larger of the two is
+   * compared to #1 and #2, above:
+   *   - Calculated radius of the city (from the city center) that contains the
+   *   geo-coded location.
+   *   - Distance from the city center (of the city containing the geo-coded
+   *   location) to the detected location center + 0.5 miles.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.LocationFilter location_filters = 2;</code>
@@ -390,13 +513,66 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. The location filter specifies geo-regions containing the profiles
-   * to search against.
+   * to search against. It filters against all of a profile's
+   * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] where
+   * [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and
+   * [Address.current][google.cloud.talent.v4beta1.Address.current] is true. If
+   * no such address exists, a fallback logic is applied in an attempt to
+   * determine the profile's primary address.
+   * The fallback logic selects an address from a profile's
+   * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
+   * following order of priority:
+   * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
+   * and [Address.current][google.cloud.talent.v4beta1.Address.current] is false
+   * or not set.
+   * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+   * CONTACT_INFO_USAGE_UNSPECIFIED and
+   * [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
+   * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+   * CONTACT_INFO_USAGE_UNSPECIFIED and
+   * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or
+   * not set.
    * If a location filter isn't specified, profiles fitting the other search
    * criteria are retrieved regardless of where they're located.
    * If
    * [LocationFilter.negated][google.cloud.talent.v4beta1.LocationFilter.negated]
    * is specified, the result doesn't contain profiles from that location.
-   * For example, search for profiles with addresses in "New York City".
+   * If
+   * [LocationFilter.address][google.cloud.talent.v4beta1.LocationFilter.address]
+   * is provided, the
+   * [LocationType][google.cloud.talent.v4beta1.Location.LocationType], center
+   * point (latitude and longitude), and radius are automatically detected by
+   * the Google Maps Geocoding API and included as well. If
+   * [LocationFilter.address][google.cloud.talent.v4beta1.LocationFilter.address]
+   * is not recognized as a location, the filter falls back to keyword search.
+   * If the detected
+   * [LocationType][google.cloud.talent.v4beta1.Location.LocationType] is
+   * [LocationType.SUB_ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.Location.LocationType.SUB_ADMINISTRATIVE_AREA],
+   * [LocationType.ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.Location.LocationType.ADMINISTRATIVE_AREA],
+   * or
+   * [LocationType.COUNTRY][google.cloud.talent.v4beta1.Location.LocationType.COUNTRY],
+   * or location is recognized but a radius can not be determined by the
+   * geo-coder, the filter is performed against the detected location name
+   * (using exact text matching). Otherwise, the filter is performed against the
+   * detected center point and a radius. The largest value from among the
+   * following options is automatically set as the radius value:
+   * 1. 10 miles.
+   * 2. Detected location radius +
+   * [LocationFilter.distance_in_miles][google.cloud.talent.v4beta1.LocationFilter.distance_in_miles].
+   * 3. If the detected
+   * [LocationType][google.cloud.talent.v4beta1.Location.LocationType] is one of
+   * [LocationType.SUB_LOCALITY][google.cloud.talent.v4beta1.Location.LocationType.SUB_LOCALITY],
+   * [LocationType.SUB_LOCALITY_2][google.cloud.talent.v4beta1.Location.LocationType.SUB_LOCALITY_2],
+   * [LocationType.NEIGHBORHOOD][google.cloud.talent.v4beta1.Location.LocationType.NEIGHBORHOOD],
+   * [LocationType.POSTAL_CODE][google.cloud.talent.v4beta1.Location.LocationType.POSTAL_CODE],
+   * or
+   * [LocationType.STREET_ADDRESS][google.cloud.talent.v4beta1.Location.LocationType.STREET_ADDRESS],
+   * the following two values are calculated and the larger of the two is
+   * compared to #1 and #2, above:
+   *   - Calculated radius of the city (from the city center) that contains the
+   *   geo-coded location.
+   *   - Distance from the city center (of the city containing the geo-coded
+   *   location) to the detected location center + 0.5 miles.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.LocationFilter location_filters = 2;</code>
@@ -409,13 +585,66 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. The location filter specifies geo-regions containing the profiles
-   * to search against.
+   * to search against. It filters against all of a profile's
+   * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] where
+   * [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and
+   * [Address.current][google.cloud.talent.v4beta1.Address.current] is true. If
+   * no such address exists, a fallback logic is applied in an attempt to
+   * determine the profile's primary address.
+   * The fallback logic selects an address from a profile's
+   * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
+   * following order of priority:
+   * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
+   * and [Address.current][google.cloud.talent.v4beta1.Address.current] is false
+   * or not set.
+   * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+   * CONTACT_INFO_USAGE_UNSPECIFIED and
+   * [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
+   * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+   * CONTACT_INFO_USAGE_UNSPECIFIED and
+   * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or
+   * not set.
    * If a location filter isn't specified, profiles fitting the other search
    * criteria are retrieved regardless of where they're located.
    * If
    * [LocationFilter.negated][google.cloud.talent.v4beta1.LocationFilter.negated]
    * is specified, the result doesn't contain profiles from that location.
-   * For example, search for profiles with addresses in "New York City".
+   * If
+   * [LocationFilter.address][google.cloud.talent.v4beta1.LocationFilter.address]
+   * is provided, the
+   * [LocationType][google.cloud.talent.v4beta1.Location.LocationType], center
+   * point (latitude and longitude), and radius are automatically detected by
+   * the Google Maps Geocoding API and included as well. If
+   * [LocationFilter.address][google.cloud.talent.v4beta1.LocationFilter.address]
+   * is not recognized as a location, the filter falls back to keyword search.
+   * If the detected
+   * [LocationType][google.cloud.talent.v4beta1.Location.LocationType] is
+   * [LocationType.SUB_ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.Location.LocationType.SUB_ADMINISTRATIVE_AREA],
+   * [LocationType.ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.Location.LocationType.ADMINISTRATIVE_AREA],
+   * or
+   * [LocationType.COUNTRY][google.cloud.talent.v4beta1.Location.LocationType.COUNTRY],
+   * or location is recognized but a radius can not be determined by the
+   * geo-coder, the filter is performed against the detected location name
+   * (using exact text matching). Otherwise, the filter is performed against the
+   * detected center point and a radius. The largest value from among the
+   * following options is automatically set as the radius value:
+   * 1. 10 miles.
+   * 2. Detected location radius +
+   * [LocationFilter.distance_in_miles][google.cloud.talent.v4beta1.LocationFilter.distance_in_miles].
+   * 3. If the detected
+   * [LocationType][google.cloud.talent.v4beta1.Location.LocationType] is one of
+   * [LocationType.SUB_LOCALITY][google.cloud.talent.v4beta1.Location.LocationType.SUB_LOCALITY],
+   * [LocationType.SUB_LOCALITY_2][google.cloud.talent.v4beta1.Location.LocationType.SUB_LOCALITY_2],
+   * [LocationType.NEIGHBORHOOD][google.cloud.talent.v4beta1.Location.LocationType.NEIGHBORHOOD],
+   * [LocationType.POSTAL_CODE][google.cloud.talent.v4beta1.Location.LocationType.POSTAL_CODE],
+   * or
+   * [LocationType.STREET_ADDRESS][google.cloud.talent.v4beta1.Location.LocationType.STREET_ADDRESS],
+   * the following two values are calculated and the larger of the two is
+   * compared to #1 and #2, above:
+   *   - Calculated radius of the city (from the city center) that contains the
+   *   geo-coded location.
+   *   - Distance from the city center (of the city containing the geo-coded
+   *   location) to the detected location center + 0.5 miles.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.LocationFilter location_filters = 2;</code>
@@ -428,13 +657,66 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. The location filter specifies geo-regions containing the profiles
-   * to search against.
+   * to search against. It filters against all of a profile's
+   * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] where
+   * [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and
+   * [Address.current][google.cloud.talent.v4beta1.Address.current] is true. If
+   * no such address exists, a fallback logic is applied in an attempt to
+   * determine the profile's primary address.
+   * The fallback logic selects an address from a profile's
+   * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
+   * following order of priority:
+   * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
+   * and [Address.current][google.cloud.talent.v4beta1.Address.current] is false
+   * or not set.
+   * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+   * CONTACT_INFO_USAGE_UNSPECIFIED and
+   * [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
+   * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+   * CONTACT_INFO_USAGE_UNSPECIFIED and
+   * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or
+   * not set.
    * If a location filter isn't specified, profiles fitting the other search
    * criteria are retrieved regardless of where they're located.
    * If
    * [LocationFilter.negated][google.cloud.talent.v4beta1.LocationFilter.negated]
    * is specified, the result doesn't contain profiles from that location.
-   * For example, search for profiles with addresses in "New York City".
+   * If
+   * [LocationFilter.address][google.cloud.talent.v4beta1.LocationFilter.address]
+   * is provided, the
+   * [LocationType][google.cloud.talent.v4beta1.Location.LocationType], center
+   * point (latitude and longitude), and radius are automatically detected by
+   * the Google Maps Geocoding API and included as well. If
+   * [LocationFilter.address][google.cloud.talent.v4beta1.LocationFilter.address]
+   * is not recognized as a location, the filter falls back to keyword search.
+   * If the detected
+   * [LocationType][google.cloud.talent.v4beta1.Location.LocationType] is
+   * [LocationType.SUB_ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.Location.LocationType.SUB_ADMINISTRATIVE_AREA],
+   * [LocationType.ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.Location.LocationType.ADMINISTRATIVE_AREA],
+   * or
+   * [LocationType.COUNTRY][google.cloud.talent.v4beta1.Location.LocationType.COUNTRY],
+   * or location is recognized but a radius can not be determined by the
+   * geo-coder, the filter is performed against the detected location name
+   * (using exact text matching). Otherwise, the filter is performed against the
+   * detected center point and a radius. The largest value from among the
+   * following options is automatically set as the radius value:
+   * 1. 10 miles.
+   * 2. Detected location radius +
+   * [LocationFilter.distance_in_miles][google.cloud.talent.v4beta1.LocationFilter.distance_in_miles].
+   * 3. If the detected
+   * [LocationType][google.cloud.talent.v4beta1.Location.LocationType] is one of
+   * [LocationType.SUB_LOCALITY][google.cloud.talent.v4beta1.Location.LocationType.SUB_LOCALITY],
+   * [LocationType.SUB_LOCALITY_2][google.cloud.talent.v4beta1.Location.LocationType.SUB_LOCALITY_2],
+   * [LocationType.NEIGHBORHOOD][google.cloud.talent.v4beta1.Location.LocationType.NEIGHBORHOOD],
+   * [LocationType.POSTAL_CODE][google.cloud.talent.v4beta1.Location.LocationType.POSTAL_CODE],
+   * or
+   * [LocationType.STREET_ADDRESS][google.cloud.talent.v4beta1.Location.LocationType.STREET_ADDRESS],
+   * the following two values are calculated and the larger of the two is
+   * compared to #1 and #2, above:
+   *   - Calculated radius of the city (from the city center) that contains the
+   *   geo-coded location.
+   *   - Distance from the city center (of the city containing the geo-coded
+   *   location) to the detected location center + 0.5 miles.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.LocationFilter location_filters = 2;</code>
@@ -1486,6 +1768,87 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
     return getCandidateAvailabilityFilter();
   }
 
+  public static final int PERSON_NAME_FILTERS_FIELD_NUMBER = 17;
+  private java.util.List<com.google.cloud.talent.v4beta1.PersonNameFilter> personNameFilters_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Person name filter specifies person name of profiles to match on.
+   * If multiple person name filters are specified, profiles that match any
+   * person name filters are retrieved.
+   * For example, search for profiles of candidates with name "John Smith".
+   * </pre>
+   *
+   * <code>repeated .google.cloud.talent.v4beta1.PersonNameFilter person_name_filters = 17;</code>
+   */
+  public java.util.List<com.google.cloud.talent.v4beta1.PersonNameFilter>
+      getPersonNameFiltersList() {
+    return personNameFilters_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Person name filter specifies person name of profiles to match on.
+   * If multiple person name filters are specified, profiles that match any
+   * person name filters are retrieved.
+   * For example, search for profiles of candidates with name "John Smith".
+   * </pre>
+   *
+   * <code>repeated .google.cloud.talent.v4beta1.PersonNameFilter person_name_filters = 17;</code>
+   */
+  public java.util.List<? extends com.google.cloud.talent.v4beta1.PersonNameFilterOrBuilder>
+      getPersonNameFiltersOrBuilderList() {
+    return personNameFilters_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Person name filter specifies person name of profiles to match on.
+   * If multiple person name filters are specified, profiles that match any
+   * person name filters are retrieved.
+   * For example, search for profiles of candidates with name "John Smith".
+   * </pre>
+   *
+   * <code>repeated .google.cloud.talent.v4beta1.PersonNameFilter person_name_filters = 17;</code>
+   */
+  public int getPersonNameFiltersCount() {
+    return personNameFilters_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Person name filter specifies person name of profiles to match on.
+   * If multiple person name filters are specified, profiles that match any
+   * person name filters are retrieved.
+   * For example, search for profiles of candidates with name "John Smith".
+   * </pre>
+   *
+   * <code>repeated .google.cloud.talent.v4beta1.PersonNameFilter person_name_filters = 17;</code>
+   */
+  public com.google.cloud.talent.v4beta1.PersonNameFilter getPersonNameFilters(int index) {
+    return personNameFilters_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Person name filter specifies person name of profiles to match on.
+   * If multiple person name filters are specified, profiles that match any
+   * person name filters are retrieved.
+   * For example, search for profiles of candidates with name "John Smith".
+   * </pre>
+   *
+   * <code>repeated .google.cloud.talent.v4beta1.PersonNameFilter person_name_filters = 17;</code>
+   */
+  public com.google.cloud.talent.v4beta1.PersonNameFilterOrBuilder getPersonNameFiltersOrBuilder(
+      int index) {
+    return personNameFilters_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1541,6 +1904,9 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
     }
     if (candidateAvailabilityFilter_ != null) {
       output.writeMessage(16, getCandidateAvailabilityFilter());
+    }
+    for (int i = 0; i < personNameFilters_.size(); i++) {
+      output.writeMessage(17, personNameFilters_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -1602,6 +1968,10 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               16, getCandidateAvailabilityFilter());
     }
+    for (int i = 0; i < personNameFilters_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(17, personNameFilters_.get(i));
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1641,6 +2011,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
       if (!getCandidateAvailabilityFilter().equals(other.getCandidateAvailabilityFilter()))
         return false;
     }
+    if (!getPersonNameFiltersList().equals(other.getPersonNameFiltersList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1703,6 +2074,10 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
     if (hasCandidateAvailabilityFilter()) {
       hash = (37 * hash) + CANDIDATE_AVAILABILITY_FILTER_FIELD_NUMBER;
       hash = (53 * hash) + getCandidateAvailabilityFilter().hashCode();
+    }
+    if (getPersonNameFiltersCount() > 0) {
+      hash = (37 * hash) + PERSON_NAME_FILTERS_FIELD_NUMBER;
+      hash = (53 * hash) + getPersonNameFiltersList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -1854,6 +2229,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
         getApplicationDateFiltersFieldBuilder();
         getApplicationOutcomeNotesFiltersFieldBuilder();
         getApplicationJobFiltersFieldBuilder();
+        getPersonNameFiltersFieldBuilder();
       }
     }
 
@@ -1935,6 +2311,12 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
       } else {
         candidateAvailabilityFilter_ = null;
         candidateAvailabilityFilterBuilder_ = null;
+      }
+      if (personNameFiltersBuilder_ == null) {
+        personNameFilters_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00004000);
+      } else {
+        personNameFiltersBuilder_.clear();
       }
       return this;
     }
@@ -2067,6 +2449,15 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
         result.candidateAvailabilityFilter_ = candidateAvailabilityFilter_;
       } else {
         result.candidateAvailabilityFilter_ = candidateAvailabilityFilterBuilder_.build();
+      }
+      if (personNameFiltersBuilder_ == null) {
+        if (((bitField0_ & 0x00004000) != 0)) {
+          personNameFilters_ = java.util.Collections.unmodifiableList(personNameFilters_);
+          bitField0_ = (bitField0_ & ~0x00004000);
+        }
+        result.personNameFilters_ = personNameFilters_;
+      } else {
+        result.personNameFilters_ = personNameFiltersBuilder_.build();
       }
       result.bitField0_ = to_bitField0_;
       onBuilt();
@@ -2403,6 +2794,33 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
       if (other.hasCandidateAvailabilityFilter()) {
         mergeCandidateAvailabilityFilter(other.getCandidateAvailabilityFilter());
       }
+      if (personNameFiltersBuilder_ == null) {
+        if (!other.personNameFilters_.isEmpty()) {
+          if (personNameFilters_.isEmpty()) {
+            personNameFilters_ = other.personNameFilters_;
+            bitField0_ = (bitField0_ & ~0x00004000);
+          } else {
+            ensurePersonNameFiltersIsMutable();
+            personNameFilters_.addAll(other.personNameFilters_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.personNameFilters_.isEmpty()) {
+          if (personNameFiltersBuilder_.isEmpty()) {
+            personNameFiltersBuilder_.dispose();
+            personNameFiltersBuilder_ = null;
+            personNameFilters_ = other.personNameFilters_;
+            bitField0_ = (bitField0_ & ~0x00004000);
+            personNameFiltersBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getPersonNameFiltersFieldBuilder()
+                    : null;
+          } else {
+            personNameFiltersBuilder_.addAllMessages(other.personNameFilters_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -2556,13 +2974,66 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The location filter specifies geo-regions containing the profiles
-     * to search against.
+     * to search against. It filters against all of a profile's
+     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] where
+     * [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is true. If
+     * no such address exists, a fallback logic is applied in an attempt to
+     * determine the profile's primary address.
+     * The fallback logic selects an address from a profile's
+     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
+     * following order of priority:
+     * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
+     * and [Address.current][google.cloud.talent.v4beta1.Address.current] is false
+     * or not set.
+     * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+     * CONTACT_INFO_USAGE_UNSPECIFIED and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
+     * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+     * CONTACT_INFO_USAGE_UNSPECIFIED and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or
+     * not set.
      * If a location filter isn't specified, profiles fitting the other search
      * criteria are retrieved regardless of where they're located.
      * If
      * [LocationFilter.negated][google.cloud.talent.v4beta1.LocationFilter.negated]
      * is specified, the result doesn't contain profiles from that location.
-     * For example, search for profiles with addresses in "New York City".
+     * If
+     * [LocationFilter.address][google.cloud.talent.v4beta1.LocationFilter.address]
+     * is provided, the
+     * [LocationType][google.cloud.talent.v4beta1.Location.LocationType], center
+     * point (latitude and longitude), and radius are automatically detected by
+     * the Google Maps Geocoding API and included as well. If
+     * [LocationFilter.address][google.cloud.talent.v4beta1.LocationFilter.address]
+     * is not recognized as a location, the filter falls back to keyword search.
+     * If the detected
+     * [LocationType][google.cloud.talent.v4beta1.Location.LocationType] is
+     * [LocationType.SUB_ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.Location.LocationType.SUB_ADMINISTRATIVE_AREA],
+     * [LocationType.ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.Location.LocationType.ADMINISTRATIVE_AREA],
+     * or
+     * [LocationType.COUNTRY][google.cloud.talent.v4beta1.Location.LocationType.COUNTRY],
+     * or location is recognized but a radius can not be determined by the
+     * geo-coder, the filter is performed against the detected location name
+     * (using exact text matching). Otherwise, the filter is performed against the
+     * detected center point and a radius. The largest value from among the
+     * following options is automatically set as the radius value:
+     * 1. 10 miles.
+     * 2. Detected location radius +
+     * [LocationFilter.distance_in_miles][google.cloud.talent.v4beta1.LocationFilter.distance_in_miles].
+     * 3. If the detected
+     * [LocationType][google.cloud.talent.v4beta1.Location.LocationType] is one of
+     * [LocationType.SUB_LOCALITY][google.cloud.talent.v4beta1.Location.LocationType.SUB_LOCALITY],
+     * [LocationType.SUB_LOCALITY_2][google.cloud.talent.v4beta1.Location.LocationType.SUB_LOCALITY_2],
+     * [LocationType.NEIGHBORHOOD][google.cloud.talent.v4beta1.Location.LocationType.NEIGHBORHOOD],
+     * [LocationType.POSTAL_CODE][google.cloud.talent.v4beta1.Location.LocationType.POSTAL_CODE],
+     * or
+     * [LocationType.STREET_ADDRESS][google.cloud.talent.v4beta1.Location.LocationType.STREET_ADDRESS],
+     * the following two values are calculated and the larger of the two is
+     * compared to #1 and #2, above:
+     *   - Calculated radius of the city (from the city center) that contains the
+     *   geo-coded location.
+     *   - Distance from the city center (of the city containing the geo-coded
+     *   location) to the detected location center + 0.5 miles.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.LocationFilter location_filters = 2;</code>
@@ -2579,13 +3050,66 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The location filter specifies geo-regions containing the profiles
-     * to search against.
+     * to search against. It filters against all of a profile's
+     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] where
+     * [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is true. If
+     * no such address exists, a fallback logic is applied in an attempt to
+     * determine the profile's primary address.
+     * The fallback logic selects an address from a profile's
+     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
+     * following order of priority:
+     * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
+     * and [Address.current][google.cloud.talent.v4beta1.Address.current] is false
+     * or not set.
+     * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+     * CONTACT_INFO_USAGE_UNSPECIFIED and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
+     * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+     * CONTACT_INFO_USAGE_UNSPECIFIED and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or
+     * not set.
      * If a location filter isn't specified, profiles fitting the other search
      * criteria are retrieved regardless of where they're located.
      * If
      * [LocationFilter.negated][google.cloud.talent.v4beta1.LocationFilter.negated]
      * is specified, the result doesn't contain profiles from that location.
-     * For example, search for profiles with addresses in "New York City".
+     * If
+     * [LocationFilter.address][google.cloud.talent.v4beta1.LocationFilter.address]
+     * is provided, the
+     * [LocationType][google.cloud.talent.v4beta1.Location.LocationType], center
+     * point (latitude and longitude), and radius are automatically detected by
+     * the Google Maps Geocoding API and included as well. If
+     * [LocationFilter.address][google.cloud.talent.v4beta1.LocationFilter.address]
+     * is not recognized as a location, the filter falls back to keyword search.
+     * If the detected
+     * [LocationType][google.cloud.talent.v4beta1.Location.LocationType] is
+     * [LocationType.SUB_ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.Location.LocationType.SUB_ADMINISTRATIVE_AREA],
+     * [LocationType.ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.Location.LocationType.ADMINISTRATIVE_AREA],
+     * or
+     * [LocationType.COUNTRY][google.cloud.talent.v4beta1.Location.LocationType.COUNTRY],
+     * or location is recognized but a radius can not be determined by the
+     * geo-coder, the filter is performed against the detected location name
+     * (using exact text matching). Otherwise, the filter is performed against the
+     * detected center point and a radius. The largest value from among the
+     * following options is automatically set as the radius value:
+     * 1. 10 miles.
+     * 2. Detected location radius +
+     * [LocationFilter.distance_in_miles][google.cloud.talent.v4beta1.LocationFilter.distance_in_miles].
+     * 3. If the detected
+     * [LocationType][google.cloud.talent.v4beta1.Location.LocationType] is one of
+     * [LocationType.SUB_LOCALITY][google.cloud.talent.v4beta1.Location.LocationType.SUB_LOCALITY],
+     * [LocationType.SUB_LOCALITY_2][google.cloud.talent.v4beta1.Location.LocationType.SUB_LOCALITY_2],
+     * [LocationType.NEIGHBORHOOD][google.cloud.talent.v4beta1.Location.LocationType.NEIGHBORHOOD],
+     * [LocationType.POSTAL_CODE][google.cloud.talent.v4beta1.Location.LocationType.POSTAL_CODE],
+     * or
+     * [LocationType.STREET_ADDRESS][google.cloud.talent.v4beta1.Location.LocationType.STREET_ADDRESS],
+     * the following two values are calculated and the larger of the two is
+     * compared to #1 and #2, above:
+     *   - Calculated radius of the city (from the city center) that contains the
+     *   geo-coded location.
+     *   - Distance from the city center (of the city containing the geo-coded
+     *   location) to the detected location center + 0.5 miles.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.LocationFilter location_filters = 2;</code>
@@ -2602,13 +3126,66 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The location filter specifies geo-regions containing the profiles
-     * to search against.
+     * to search against. It filters against all of a profile's
+     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] where
+     * [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is true. If
+     * no such address exists, a fallback logic is applied in an attempt to
+     * determine the profile's primary address.
+     * The fallback logic selects an address from a profile's
+     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
+     * following order of priority:
+     * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
+     * and [Address.current][google.cloud.talent.v4beta1.Address.current] is false
+     * or not set.
+     * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+     * CONTACT_INFO_USAGE_UNSPECIFIED and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
+     * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+     * CONTACT_INFO_USAGE_UNSPECIFIED and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or
+     * not set.
      * If a location filter isn't specified, profiles fitting the other search
      * criteria are retrieved regardless of where they're located.
      * If
      * [LocationFilter.negated][google.cloud.talent.v4beta1.LocationFilter.negated]
      * is specified, the result doesn't contain profiles from that location.
-     * For example, search for profiles with addresses in "New York City".
+     * If
+     * [LocationFilter.address][google.cloud.talent.v4beta1.LocationFilter.address]
+     * is provided, the
+     * [LocationType][google.cloud.talent.v4beta1.Location.LocationType], center
+     * point (latitude and longitude), and radius are automatically detected by
+     * the Google Maps Geocoding API and included as well. If
+     * [LocationFilter.address][google.cloud.talent.v4beta1.LocationFilter.address]
+     * is not recognized as a location, the filter falls back to keyword search.
+     * If the detected
+     * [LocationType][google.cloud.talent.v4beta1.Location.LocationType] is
+     * [LocationType.SUB_ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.Location.LocationType.SUB_ADMINISTRATIVE_AREA],
+     * [LocationType.ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.Location.LocationType.ADMINISTRATIVE_AREA],
+     * or
+     * [LocationType.COUNTRY][google.cloud.talent.v4beta1.Location.LocationType.COUNTRY],
+     * or location is recognized but a radius can not be determined by the
+     * geo-coder, the filter is performed against the detected location name
+     * (using exact text matching). Otherwise, the filter is performed against the
+     * detected center point and a radius. The largest value from among the
+     * following options is automatically set as the radius value:
+     * 1. 10 miles.
+     * 2. Detected location radius +
+     * [LocationFilter.distance_in_miles][google.cloud.talent.v4beta1.LocationFilter.distance_in_miles].
+     * 3. If the detected
+     * [LocationType][google.cloud.talent.v4beta1.Location.LocationType] is one of
+     * [LocationType.SUB_LOCALITY][google.cloud.talent.v4beta1.Location.LocationType.SUB_LOCALITY],
+     * [LocationType.SUB_LOCALITY_2][google.cloud.talent.v4beta1.Location.LocationType.SUB_LOCALITY_2],
+     * [LocationType.NEIGHBORHOOD][google.cloud.talent.v4beta1.Location.LocationType.NEIGHBORHOOD],
+     * [LocationType.POSTAL_CODE][google.cloud.talent.v4beta1.Location.LocationType.POSTAL_CODE],
+     * or
+     * [LocationType.STREET_ADDRESS][google.cloud.talent.v4beta1.Location.LocationType.STREET_ADDRESS],
+     * the following two values are calculated and the larger of the two is
+     * compared to #1 and #2, above:
+     *   - Calculated radius of the city (from the city center) that contains the
+     *   geo-coded location.
+     *   - Distance from the city center (of the city containing the geo-coded
+     *   location) to the detected location center + 0.5 miles.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.LocationFilter location_filters = 2;</code>
@@ -2625,13 +3202,66 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The location filter specifies geo-regions containing the profiles
-     * to search against.
+     * to search against. It filters against all of a profile's
+     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] where
+     * [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is true. If
+     * no such address exists, a fallback logic is applied in an attempt to
+     * determine the profile's primary address.
+     * The fallback logic selects an address from a profile's
+     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
+     * following order of priority:
+     * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
+     * and [Address.current][google.cloud.talent.v4beta1.Address.current] is false
+     * or not set.
+     * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+     * CONTACT_INFO_USAGE_UNSPECIFIED and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
+     * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+     * CONTACT_INFO_USAGE_UNSPECIFIED and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or
+     * not set.
      * If a location filter isn't specified, profiles fitting the other search
      * criteria are retrieved regardless of where they're located.
      * If
      * [LocationFilter.negated][google.cloud.talent.v4beta1.LocationFilter.negated]
      * is specified, the result doesn't contain profiles from that location.
-     * For example, search for profiles with addresses in "New York City".
+     * If
+     * [LocationFilter.address][google.cloud.talent.v4beta1.LocationFilter.address]
+     * is provided, the
+     * [LocationType][google.cloud.talent.v4beta1.Location.LocationType], center
+     * point (latitude and longitude), and radius are automatically detected by
+     * the Google Maps Geocoding API and included as well. If
+     * [LocationFilter.address][google.cloud.talent.v4beta1.LocationFilter.address]
+     * is not recognized as a location, the filter falls back to keyword search.
+     * If the detected
+     * [LocationType][google.cloud.talent.v4beta1.Location.LocationType] is
+     * [LocationType.SUB_ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.Location.LocationType.SUB_ADMINISTRATIVE_AREA],
+     * [LocationType.ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.Location.LocationType.ADMINISTRATIVE_AREA],
+     * or
+     * [LocationType.COUNTRY][google.cloud.talent.v4beta1.Location.LocationType.COUNTRY],
+     * or location is recognized but a radius can not be determined by the
+     * geo-coder, the filter is performed against the detected location name
+     * (using exact text matching). Otherwise, the filter is performed against the
+     * detected center point and a radius. The largest value from among the
+     * following options is automatically set as the radius value:
+     * 1. 10 miles.
+     * 2. Detected location radius +
+     * [LocationFilter.distance_in_miles][google.cloud.talent.v4beta1.LocationFilter.distance_in_miles].
+     * 3. If the detected
+     * [LocationType][google.cloud.talent.v4beta1.Location.LocationType] is one of
+     * [LocationType.SUB_LOCALITY][google.cloud.talent.v4beta1.Location.LocationType.SUB_LOCALITY],
+     * [LocationType.SUB_LOCALITY_2][google.cloud.talent.v4beta1.Location.LocationType.SUB_LOCALITY_2],
+     * [LocationType.NEIGHBORHOOD][google.cloud.talent.v4beta1.Location.LocationType.NEIGHBORHOOD],
+     * [LocationType.POSTAL_CODE][google.cloud.talent.v4beta1.Location.LocationType.POSTAL_CODE],
+     * or
+     * [LocationType.STREET_ADDRESS][google.cloud.talent.v4beta1.Location.LocationType.STREET_ADDRESS],
+     * the following two values are calculated and the larger of the two is
+     * compared to #1 and #2, above:
+     *   - Calculated radius of the city (from the city center) that contains the
+     *   geo-coded location.
+     *   - Distance from the city center (of the city containing the geo-coded
+     *   location) to the detected location center + 0.5 miles.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.LocationFilter location_filters = 2;</code>
@@ -2655,13 +3285,66 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The location filter specifies geo-regions containing the profiles
-     * to search against.
+     * to search against. It filters against all of a profile's
+     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] where
+     * [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is true. If
+     * no such address exists, a fallback logic is applied in an attempt to
+     * determine the profile's primary address.
+     * The fallback logic selects an address from a profile's
+     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
+     * following order of priority:
+     * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
+     * and [Address.current][google.cloud.talent.v4beta1.Address.current] is false
+     * or not set.
+     * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+     * CONTACT_INFO_USAGE_UNSPECIFIED and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
+     * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+     * CONTACT_INFO_USAGE_UNSPECIFIED and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or
+     * not set.
      * If a location filter isn't specified, profiles fitting the other search
      * criteria are retrieved regardless of where they're located.
      * If
      * [LocationFilter.negated][google.cloud.talent.v4beta1.LocationFilter.negated]
      * is specified, the result doesn't contain profiles from that location.
-     * For example, search for profiles with addresses in "New York City".
+     * If
+     * [LocationFilter.address][google.cloud.talent.v4beta1.LocationFilter.address]
+     * is provided, the
+     * [LocationType][google.cloud.talent.v4beta1.Location.LocationType], center
+     * point (latitude and longitude), and radius are automatically detected by
+     * the Google Maps Geocoding API and included as well. If
+     * [LocationFilter.address][google.cloud.talent.v4beta1.LocationFilter.address]
+     * is not recognized as a location, the filter falls back to keyword search.
+     * If the detected
+     * [LocationType][google.cloud.talent.v4beta1.Location.LocationType] is
+     * [LocationType.SUB_ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.Location.LocationType.SUB_ADMINISTRATIVE_AREA],
+     * [LocationType.ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.Location.LocationType.ADMINISTRATIVE_AREA],
+     * or
+     * [LocationType.COUNTRY][google.cloud.talent.v4beta1.Location.LocationType.COUNTRY],
+     * or location is recognized but a radius can not be determined by the
+     * geo-coder, the filter is performed against the detected location name
+     * (using exact text matching). Otherwise, the filter is performed against the
+     * detected center point and a radius. The largest value from among the
+     * following options is automatically set as the radius value:
+     * 1. 10 miles.
+     * 2. Detected location radius +
+     * [LocationFilter.distance_in_miles][google.cloud.talent.v4beta1.LocationFilter.distance_in_miles].
+     * 3. If the detected
+     * [LocationType][google.cloud.talent.v4beta1.Location.LocationType] is one of
+     * [LocationType.SUB_LOCALITY][google.cloud.talent.v4beta1.Location.LocationType.SUB_LOCALITY],
+     * [LocationType.SUB_LOCALITY_2][google.cloud.talent.v4beta1.Location.LocationType.SUB_LOCALITY_2],
+     * [LocationType.NEIGHBORHOOD][google.cloud.talent.v4beta1.Location.LocationType.NEIGHBORHOOD],
+     * [LocationType.POSTAL_CODE][google.cloud.talent.v4beta1.Location.LocationType.POSTAL_CODE],
+     * or
+     * [LocationType.STREET_ADDRESS][google.cloud.talent.v4beta1.Location.LocationType.STREET_ADDRESS],
+     * the following two values are calculated and the larger of the two is
+     * compared to #1 and #2, above:
+     *   - Calculated radius of the city (from the city center) that contains the
+     *   geo-coded location.
+     *   - Distance from the city center (of the city containing the geo-coded
+     *   location) to the detected location center + 0.5 miles.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.LocationFilter location_filters = 2;</code>
@@ -2682,13 +3365,66 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The location filter specifies geo-regions containing the profiles
-     * to search against.
+     * to search against. It filters against all of a profile's
+     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] where
+     * [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is true. If
+     * no such address exists, a fallback logic is applied in an attempt to
+     * determine the profile's primary address.
+     * The fallback logic selects an address from a profile's
+     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
+     * following order of priority:
+     * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
+     * and [Address.current][google.cloud.talent.v4beta1.Address.current] is false
+     * or not set.
+     * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+     * CONTACT_INFO_USAGE_UNSPECIFIED and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
+     * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+     * CONTACT_INFO_USAGE_UNSPECIFIED and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or
+     * not set.
      * If a location filter isn't specified, profiles fitting the other search
      * criteria are retrieved regardless of where they're located.
      * If
      * [LocationFilter.negated][google.cloud.talent.v4beta1.LocationFilter.negated]
      * is specified, the result doesn't contain profiles from that location.
-     * For example, search for profiles with addresses in "New York City".
+     * If
+     * [LocationFilter.address][google.cloud.talent.v4beta1.LocationFilter.address]
+     * is provided, the
+     * [LocationType][google.cloud.talent.v4beta1.Location.LocationType], center
+     * point (latitude and longitude), and radius are automatically detected by
+     * the Google Maps Geocoding API and included as well. If
+     * [LocationFilter.address][google.cloud.talent.v4beta1.LocationFilter.address]
+     * is not recognized as a location, the filter falls back to keyword search.
+     * If the detected
+     * [LocationType][google.cloud.talent.v4beta1.Location.LocationType] is
+     * [LocationType.SUB_ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.Location.LocationType.SUB_ADMINISTRATIVE_AREA],
+     * [LocationType.ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.Location.LocationType.ADMINISTRATIVE_AREA],
+     * or
+     * [LocationType.COUNTRY][google.cloud.talent.v4beta1.Location.LocationType.COUNTRY],
+     * or location is recognized but a radius can not be determined by the
+     * geo-coder, the filter is performed against the detected location name
+     * (using exact text matching). Otherwise, the filter is performed against the
+     * detected center point and a radius. The largest value from among the
+     * following options is automatically set as the radius value:
+     * 1. 10 miles.
+     * 2. Detected location radius +
+     * [LocationFilter.distance_in_miles][google.cloud.talent.v4beta1.LocationFilter.distance_in_miles].
+     * 3. If the detected
+     * [LocationType][google.cloud.talent.v4beta1.Location.LocationType] is one of
+     * [LocationType.SUB_LOCALITY][google.cloud.talent.v4beta1.Location.LocationType.SUB_LOCALITY],
+     * [LocationType.SUB_LOCALITY_2][google.cloud.talent.v4beta1.Location.LocationType.SUB_LOCALITY_2],
+     * [LocationType.NEIGHBORHOOD][google.cloud.talent.v4beta1.Location.LocationType.NEIGHBORHOOD],
+     * [LocationType.POSTAL_CODE][google.cloud.talent.v4beta1.Location.LocationType.POSTAL_CODE],
+     * or
+     * [LocationType.STREET_ADDRESS][google.cloud.talent.v4beta1.Location.LocationType.STREET_ADDRESS],
+     * the following two values are calculated and the larger of the two is
+     * compared to #1 and #2, above:
+     *   - Calculated radius of the city (from the city center) that contains the
+     *   geo-coded location.
+     *   - Distance from the city center (of the city containing the geo-coded
+     *   location) to the detected location center + 0.5 miles.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.LocationFilter location_filters = 2;</code>
@@ -2711,13 +3447,66 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The location filter specifies geo-regions containing the profiles
-     * to search against.
+     * to search against. It filters against all of a profile's
+     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] where
+     * [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is true. If
+     * no such address exists, a fallback logic is applied in an attempt to
+     * determine the profile's primary address.
+     * The fallback logic selects an address from a profile's
+     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
+     * following order of priority:
+     * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
+     * and [Address.current][google.cloud.talent.v4beta1.Address.current] is false
+     * or not set.
+     * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+     * CONTACT_INFO_USAGE_UNSPECIFIED and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
+     * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+     * CONTACT_INFO_USAGE_UNSPECIFIED and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or
+     * not set.
      * If a location filter isn't specified, profiles fitting the other search
      * criteria are retrieved regardless of where they're located.
      * If
      * [LocationFilter.negated][google.cloud.talent.v4beta1.LocationFilter.negated]
      * is specified, the result doesn't contain profiles from that location.
-     * For example, search for profiles with addresses in "New York City".
+     * If
+     * [LocationFilter.address][google.cloud.talent.v4beta1.LocationFilter.address]
+     * is provided, the
+     * [LocationType][google.cloud.talent.v4beta1.Location.LocationType], center
+     * point (latitude and longitude), and radius are automatically detected by
+     * the Google Maps Geocoding API and included as well. If
+     * [LocationFilter.address][google.cloud.talent.v4beta1.LocationFilter.address]
+     * is not recognized as a location, the filter falls back to keyword search.
+     * If the detected
+     * [LocationType][google.cloud.talent.v4beta1.Location.LocationType] is
+     * [LocationType.SUB_ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.Location.LocationType.SUB_ADMINISTRATIVE_AREA],
+     * [LocationType.ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.Location.LocationType.ADMINISTRATIVE_AREA],
+     * or
+     * [LocationType.COUNTRY][google.cloud.talent.v4beta1.Location.LocationType.COUNTRY],
+     * or location is recognized but a radius can not be determined by the
+     * geo-coder, the filter is performed against the detected location name
+     * (using exact text matching). Otherwise, the filter is performed against the
+     * detected center point and a radius. The largest value from among the
+     * following options is automatically set as the radius value:
+     * 1. 10 miles.
+     * 2. Detected location radius +
+     * [LocationFilter.distance_in_miles][google.cloud.talent.v4beta1.LocationFilter.distance_in_miles].
+     * 3. If the detected
+     * [LocationType][google.cloud.talent.v4beta1.Location.LocationType] is one of
+     * [LocationType.SUB_LOCALITY][google.cloud.talent.v4beta1.Location.LocationType.SUB_LOCALITY],
+     * [LocationType.SUB_LOCALITY_2][google.cloud.talent.v4beta1.Location.LocationType.SUB_LOCALITY_2],
+     * [LocationType.NEIGHBORHOOD][google.cloud.talent.v4beta1.Location.LocationType.NEIGHBORHOOD],
+     * [LocationType.POSTAL_CODE][google.cloud.talent.v4beta1.Location.LocationType.POSTAL_CODE],
+     * or
+     * [LocationType.STREET_ADDRESS][google.cloud.talent.v4beta1.Location.LocationType.STREET_ADDRESS],
+     * the following two values are calculated and the larger of the two is
+     * compared to #1 and #2, above:
+     *   - Calculated radius of the city (from the city center) that contains the
+     *   geo-coded location.
+     *   - Distance from the city center (of the city containing the geo-coded
+     *   location) to the detected location center + 0.5 miles.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.LocationFilter location_filters = 2;</code>
@@ -2741,13 +3530,66 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The location filter specifies geo-regions containing the profiles
-     * to search against.
+     * to search against. It filters against all of a profile's
+     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] where
+     * [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is true. If
+     * no such address exists, a fallback logic is applied in an attempt to
+     * determine the profile's primary address.
+     * The fallback logic selects an address from a profile's
+     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
+     * following order of priority:
+     * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
+     * and [Address.current][google.cloud.talent.v4beta1.Address.current] is false
+     * or not set.
+     * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+     * CONTACT_INFO_USAGE_UNSPECIFIED and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
+     * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+     * CONTACT_INFO_USAGE_UNSPECIFIED and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or
+     * not set.
      * If a location filter isn't specified, profiles fitting the other search
      * criteria are retrieved regardless of where they're located.
      * If
      * [LocationFilter.negated][google.cloud.talent.v4beta1.LocationFilter.negated]
      * is specified, the result doesn't contain profiles from that location.
-     * For example, search for profiles with addresses in "New York City".
+     * If
+     * [LocationFilter.address][google.cloud.talent.v4beta1.LocationFilter.address]
+     * is provided, the
+     * [LocationType][google.cloud.talent.v4beta1.Location.LocationType], center
+     * point (latitude and longitude), and radius are automatically detected by
+     * the Google Maps Geocoding API and included as well. If
+     * [LocationFilter.address][google.cloud.talent.v4beta1.LocationFilter.address]
+     * is not recognized as a location, the filter falls back to keyword search.
+     * If the detected
+     * [LocationType][google.cloud.talent.v4beta1.Location.LocationType] is
+     * [LocationType.SUB_ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.Location.LocationType.SUB_ADMINISTRATIVE_AREA],
+     * [LocationType.ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.Location.LocationType.ADMINISTRATIVE_AREA],
+     * or
+     * [LocationType.COUNTRY][google.cloud.talent.v4beta1.Location.LocationType.COUNTRY],
+     * or location is recognized but a radius can not be determined by the
+     * geo-coder, the filter is performed against the detected location name
+     * (using exact text matching). Otherwise, the filter is performed against the
+     * detected center point and a radius. The largest value from among the
+     * following options is automatically set as the radius value:
+     * 1. 10 miles.
+     * 2. Detected location radius +
+     * [LocationFilter.distance_in_miles][google.cloud.talent.v4beta1.LocationFilter.distance_in_miles].
+     * 3. If the detected
+     * [LocationType][google.cloud.talent.v4beta1.Location.LocationType] is one of
+     * [LocationType.SUB_LOCALITY][google.cloud.talent.v4beta1.Location.LocationType.SUB_LOCALITY],
+     * [LocationType.SUB_LOCALITY_2][google.cloud.talent.v4beta1.Location.LocationType.SUB_LOCALITY_2],
+     * [LocationType.NEIGHBORHOOD][google.cloud.talent.v4beta1.Location.LocationType.NEIGHBORHOOD],
+     * [LocationType.POSTAL_CODE][google.cloud.talent.v4beta1.Location.LocationType.POSTAL_CODE],
+     * or
+     * [LocationType.STREET_ADDRESS][google.cloud.talent.v4beta1.Location.LocationType.STREET_ADDRESS],
+     * the following two values are calculated and the larger of the two is
+     * compared to #1 and #2, above:
+     *   - Calculated radius of the city (from the city center) that contains the
+     *   geo-coded location.
+     *   - Distance from the city center (of the city containing the geo-coded
+     *   location) to the detected location center + 0.5 miles.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.LocationFilter location_filters = 2;</code>
@@ -2768,13 +3610,66 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The location filter specifies geo-regions containing the profiles
-     * to search against.
+     * to search against. It filters against all of a profile's
+     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] where
+     * [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is true. If
+     * no such address exists, a fallback logic is applied in an attempt to
+     * determine the profile's primary address.
+     * The fallback logic selects an address from a profile's
+     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
+     * following order of priority:
+     * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
+     * and [Address.current][google.cloud.talent.v4beta1.Address.current] is false
+     * or not set.
+     * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+     * CONTACT_INFO_USAGE_UNSPECIFIED and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
+     * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+     * CONTACT_INFO_USAGE_UNSPECIFIED and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or
+     * not set.
      * If a location filter isn't specified, profiles fitting the other search
      * criteria are retrieved regardless of where they're located.
      * If
      * [LocationFilter.negated][google.cloud.talent.v4beta1.LocationFilter.negated]
      * is specified, the result doesn't contain profiles from that location.
-     * For example, search for profiles with addresses in "New York City".
+     * If
+     * [LocationFilter.address][google.cloud.talent.v4beta1.LocationFilter.address]
+     * is provided, the
+     * [LocationType][google.cloud.talent.v4beta1.Location.LocationType], center
+     * point (latitude and longitude), and radius are automatically detected by
+     * the Google Maps Geocoding API and included as well. If
+     * [LocationFilter.address][google.cloud.talent.v4beta1.LocationFilter.address]
+     * is not recognized as a location, the filter falls back to keyword search.
+     * If the detected
+     * [LocationType][google.cloud.talent.v4beta1.Location.LocationType] is
+     * [LocationType.SUB_ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.Location.LocationType.SUB_ADMINISTRATIVE_AREA],
+     * [LocationType.ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.Location.LocationType.ADMINISTRATIVE_AREA],
+     * or
+     * [LocationType.COUNTRY][google.cloud.talent.v4beta1.Location.LocationType.COUNTRY],
+     * or location is recognized but a radius can not be determined by the
+     * geo-coder, the filter is performed against the detected location name
+     * (using exact text matching). Otherwise, the filter is performed against the
+     * detected center point and a radius. The largest value from among the
+     * following options is automatically set as the radius value:
+     * 1. 10 miles.
+     * 2. Detected location radius +
+     * [LocationFilter.distance_in_miles][google.cloud.talent.v4beta1.LocationFilter.distance_in_miles].
+     * 3. If the detected
+     * [LocationType][google.cloud.talent.v4beta1.Location.LocationType] is one of
+     * [LocationType.SUB_LOCALITY][google.cloud.talent.v4beta1.Location.LocationType.SUB_LOCALITY],
+     * [LocationType.SUB_LOCALITY_2][google.cloud.talent.v4beta1.Location.LocationType.SUB_LOCALITY_2],
+     * [LocationType.NEIGHBORHOOD][google.cloud.talent.v4beta1.Location.LocationType.NEIGHBORHOOD],
+     * [LocationType.POSTAL_CODE][google.cloud.talent.v4beta1.Location.LocationType.POSTAL_CODE],
+     * or
+     * [LocationType.STREET_ADDRESS][google.cloud.talent.v4beta1.Location.LocationType.STREET_ADDRESS],
+     * the following two values are calculated and the larger of the two is
+     * compared to #1 and #2, above:
+     *   - Calculated radius of the city (from the city center) that contains the
+     *   geo-coded location.
+     *   - Distance from the city center (of the city containing the geo-coded
+     *   location) to the detected location center + 0.5 miles.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.LocationFilter location_filters = 2;</code>
@@ -2795,13 +3690,66 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The location filter specifies geo-regions containing the profiles
-     * to search against.
+     * to search against. It filters against all of a profile's
+     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] where
+     * [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is true. If
+     * no such address exists, a fallback logic is applied in an attempt to
+     * determine the profile's primary address.
+     * The fallback logic selects an address from a profile's
+     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
+     * following order of priority:
+     * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
+     * and [Address.current][google.cloud.talent.v4beta1.Address.current] is false
+     * or not set.
+     * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+     * CONTACT_INFO_USAGE_UNSPECIFIED and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
+     * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+     * CONTACT_INFO_USAGE_UNSPECIFIED and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or
+     * not set.
      * If a location filter isn't specified, profiles fitting the other search
      * criteria are retrieved regardless of where they're located.
      * If
      * [LocationFilter.negated][google.cloud.talent.v4beta1.LocationFilter.negated]
      * is specified, the result doesn't contain profiles from that location.
-     * For example, search for profiles with addresses in "New York City".
+     * If
+     * [LocationFilter.address][google.cloud.talent.v4beta1.LocationFilter.address]
+     * is provided, the
+     * [LocationType][google.cloud.talent.v4beta1.Location.LocationType], center
+     * point (latitude and longitude), and radius are automatically detected by
+     * the Google Maps Geocoding API and included as well. If
+     * [LocationFilter.address][google.cloud.talent.v4beta1.LocationFilter.address]
+     * is not recognized as a location, the filter falls back to keyword search.
+     * If the detected
+     * [LocationType][google.cloud.talent.v4beta1.Location.LocationType] is
+     * [LocationType.SUB_ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.Location.LocationType.SUB_ADMINISTRATIVE_AREA],
+     * [LocationType.ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.Location.LocationType.ADMINISTRATIVE_AREA],
+     * or
+     * [LocationType.COUNTRY][google.cloud.talent.v4beta1.Location.LocationType.COUNTRY],
+     * or location is recognized but a radius can not be determined by the
+     * geo-coder, the filter is performed against the detected location name
+     * (using exact text matching). Otherwise, the filter is performed against the
+     * detected center point and a radius. The largest value from among the
+     * following options is automatically set as the radius value:
+     * 1. 10 miles.
+     * 2. Detected location radius +
+     * [LocationFilter.distance_in_miles][google.cloud.talent.v4beta1.LocationFilter.distance_in_miles].
+     * 3. If the detected
+     * [LocationType][google.cloud.talent.v4beta1.Location.LocationType] is one of
+     * [LocationType.SUB_LOCALITY][google.cloud.talent.v4beta1.Location.LocationType.SUB_LOCALITY],
+     * [LocationType.SUB_LOCALITY_2][google.cloud.talent.v4beta1.Location.LocationType.SUB_LOCALITY_2],
+     * [LocationType.NEIGHBORHOOD][google.cloud.talent.v4beta1.Location.LocationType.NEIGHBORHOOD],
+     * [LocationType.POSTAL_CODE][google.cloud.talent.v4beta1.Location.LocationType.POSTAL_CODE],
+     * or
+     * [LocationType.STREET_ADDRESS][google.cloud.talent.v4beta1.Location.LocationType.STREET_ADDRESS],
+     * the following two values are calculated and the larger of the two is
+     * compared to #1 and #2, above:
+     *   - Calculated radius of the city (from the city center) that contains the
+     *   geo-coded location.
+     *   - Distance from the city center (of the city containing the geo-coded
+     *   location) to the detected location center + 0.5 miles.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.LocationFilter location_filters = 2;</code>
@@ -2822,13 +3770,66 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The location filter specifies geo-regions containing the profiles
-     * to search against.
+     * to search against. It filters against all of a profile's
+     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] where
+     * [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is true. If
+     * no such address exists, a fallback logic is applied in an attempt to
+     * determine the profile's primary address.
+     * The fallback logic selects an address from a profile's
+     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
+     * following order of priority:
+     * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
+     * and [Address.current][google.cloud.talent.v4beta1.Address.current] is false
+     * or not set.
+     * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+     * CONTACT_INFO_USAGE_UNSPECIFIED and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
+     * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+     * CONTACT_INFO_USAGE_UNSPECIFIED and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or
+     * not set.
      * If a location filter isn't specified, profiles fitting the other search
      * criteria are retrieved regardless of where they're located.
      * If
      * [LocationFilter.negated][google.cloud.talent.v4beta1.LocationFilter.negated]
      * is specified, the result doesn't contain profiles from that location.
-     * For example, search for profiles with addresses in "New York City".
+     * If
+     * [LocationFilter.address][google.cloud.talent.v4beta1.LocationFilter.address]
+     * is provided, the
+     * [LocationType][google.cloud.talent.v4beta1.Location.LocationType], center
+     * point (latitude and longitude), and radius are automatically detected by
+     * the Google Maps Geocoding API and included as well. If
+     * [LocationFilter.address][google.cloud.talent.v4beta1.LocationFilter.address]
+     * is not recognized as a location, the filter falls back to keyword search.
+     * If the detected
+     * [LocationType][google.cloud.talent.v4beta1.Location.LocationType] is
+     * [LocationType.SUB_ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.Location.LocationType.SUB_ADMINISTRATIVE_AREA],
+     * [LocationType.ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.Location.LocationType.ADMINISTRATIVE_AREA],
+     * or
+     * [LocationType.COUNTRY][google.cloud.talent.v4beta1.Location.LocationType.COUNTRY],
+     * or location is recognized but a radius can not be determined by the
+     * geo-coder, the filter is performed against the detected location name
+     * (using exact text matching). Otherwise, the filter is performed against the
+     * detected center point and a radius. The largest value from among the
+     * following options is automatically set as the radius value:
+     * 1. 10 miles.
+     * 2. Detected location radius +
+     * [LocationFilter.distance_in_miles][google.cloud.talent.v4beta1.LocationFilter.distance_in_miles].
+     * 3. If the detected
+     * [LocationType][google.cloud.talent.v4beta1.Location.LocationType] is one of
+     * [LocationType.SUB_LOCALITY][google.cloud.talent.v4beta1.Location.LocationType.SUB_LOCALITY],
+     * [LocationType.SUB_LOCALITY_2][google.cloud.talent.v4beta1.Location.LocationType.SUB_LOCALITY_2],
+     * [LocationType.NEIGHBORHOOD][google.cloud.talent.v4beta1.Location.LocationType.NEIGHBORHOOD],
+     * [LocationType.POSTAL_CODE][google.cloud.talent.v4beta1.Location.LocationType.POSTAL_CODE],
+     * or
+     * [LocationType.STREET_ADDRESS][google.cloud.talent.v4beta1.Location.LocationType.STREET_ADDRESS],
+     * the following two values are calculated and the larger of the two is
+     * compared to #1 and #2, above:
+     *   - Calculated radius of the city (from the city center) that contains the
+     *   geo-coded location.
+     *   - Distance from the city center (of the city containing the geo-coded
+     *   location) to the detected location center + 0.5 miles.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.LocationFilter location_filters = 2;</code>
@@ -2848,13 +3849,66 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The location filter specifies geo-regions containing the profiles
-     * to search against.
+     * to search against. It filters against all of a profile's
+     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] where
+     * [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is true. If
+     * no such address exists, a fallback logic is applied in an attempt to
+     * determine the profile's primary address.
+     * The fallback logic selects an address from a profile's
+     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
+     * following order of priority:
+     * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
+     * and [Address.current][google.cloud.talent.v4beta1.Address.current] is false
+     * or not set.
+     * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+     * CONTACT_INFO_USAGE_UNSPECIFIED and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
+     * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+     * CONTACT_INFO_USAGE_UNSPECIFIED and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or
+     * not set.
      * If a location filter isn't specified, profiles fitting the other search
      * criteria are retrieved regardless of where they're located.
      * If
      * [LocationFilter.negated][google.cloud.talent.v4beta1.LocationFilter.negated]
      * is specified, the result doesn't contain profiles from that location.
-     * For example, search for profiles with addresses in "New York City".
+     * If
+     * [LocationFilter.address][google.cloud.talent.v4beta1.LocationFilter.address]
+     * is provided, the
+     * [LocationType][google.cloud.talent.v4beta1.Location.LocationType], center
+     * point (latitude and longitude), and radius are automatically detected by
+     * the Google Maps Geocoding API and included as well. If
+     * [LocationFilter.address][google.cloud.talent.v4beta1.LocationFilter.address]
+     * is not recognized as a location, the filter falls back to keyword search.
+     * If the detected
+     * [LocationType][google.cloud.talent.v4beta1.Location.LocationType] is
+     * [LocationType.SUB_ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.Location.LocationType.SUB_ADMINISTRATIVE_AREA],
+     * [LocationType.ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.Location.LocationType.ADMINISTRATIVE_AREA],
+     * or
+     * [LocationType.COUNTRY][google.cloud.talent.v4beta1.Location.LocationType.COUNTRY],
+     * or location is recognized but a radius can not be determined by the
+     * geo-coder, the filter is performed against the detected location name
+     * (using exact text matching). Otherwise, the filter is performed against the
+     * detected center point and a radius. The largest value from among the
+     * following options is automatically set as the radius value:
+     * 1. 10 miles.
+     * 2. Detected location radius +
+     * [LocationFilter.distance_in_miles][google.cloud.talent.v4beta1.LocationFilter.distance_in_miles].
+     * 3. If the detected
+     * [LocationType][google.cloud.talent.v4beta1.Location.LocationType] is one of
+     * [LocationType.SUB_LOCALITY][google.cloud.talent.v4beta1.Location.LocationType.SUB_LOCALITY],
+     * [LocationType.SUB_LOCALITY_2][google.cloud.talent.v4beta1.Location.LocationType.SUB_LOCALITY_2],
+     * [LocationType.NEIGHBORHOOD][google.cloud.talent.v4beta1.Location.LocationType.NEIGHBORHOOD],
+     * [LocationType.POSTAL_CODE][google.cloud.talent.v4beta1.Location.LocationType.POSTAL_CODE],
+     * or
+     * [LocationType.STREET_ADDRESS][google.cloud.talent.v4beta1.Location.LocationType.STREET_ADDRESS],
+     * the following two values are calculated and the larger of the two is
+     * compared to #1 and #2, above:
+     *   - Calculated radius of the city (from the city center) that contains the
+     *   geo-coded location.
+     *   - Distance from the city center (of the city containing the geo-coded
+     *   location) to the detected location center + 0.5 miles.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.LocationFilter location_filters = 2;</code>
@@ -2874,13 +3928,66 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The location filter specifies geo-regions containing the profiles
-     * to search against.
+     * to search against. It filters against all of a profile's
+     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] where
+     * [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is true. If
+     * no such address exists, a fallback logic is applied in an attempt to
+     * determine the profile's primary address.
+     * The fallback logic selects an address from a profile's
+     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
+     * following order of priority:
+     * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
+     * and [Address.current][google.cloud.talent.v4beta1.Address.current] is false
+     * or not set.
+     * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+     * CONTACT_INFO_USAGE_UNSPECIFIED and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
+     * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+     * CONTACT_INFO_USAGE_UNSPECIFIED and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or
+     * not set.
      * If a location filter isn't specified, profiles fitting the other search
      * criteria are retrieved regardless of where they're located.
      * If
      * [LocationFilter.negated][google.cloud.talent.v4beta1.LocationFilter.negated]
      * is specified, the result doesn't contain profiles from that location.
-     * For example, search for profiles with addresses in "New York City".
+     * If
+     * [LocationFilter.address][google.cloud.talent.v4beta1.LocationFilter.address]
+     * is provided, the
+     * [LocationType][google.cloud.talent.v4beta1.Location.LocationType], center
+     * point (latitude and longitude), and radius are automatically detected by
+     * the Google Maps Geocoding API and included as well. If
+     * [LocationFilter.address][google.cloud.talent.v4beta1.LocationFilter.address]
+     * is not recognized as a location, the filter falls back to keyword search.
+     * If the detected
+     * [LocationType][google.cloud.talent.v4beta1.Location.LocationType] is
+     * [LocationType.SUB_ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.Location.LocationType.SUB_ADMINISTRATIVE_AREA],
+     * [LocationType.ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.Location.LocationType.ADMINISTRATIVE_AREA],
+     * or
+     * [LocationType.COUNTRY][google.cloud.talent.v4beta1.Location.LocationType.COUNTRY],
+     * or location is recognized but a radius can not be determined by the
+     * geo-coder, the filter is performed against the detected location name
+     * (using exact text matching). Otherwise, the filter is performed against the
+     * detected center point and a radius. The largest value from among the
+     * following options is automatically set as the radius value:
+     * 1. 10 miles.
+     * 2. Detected location radius +
+     * [LocationFilter.distance_in_miles][google.cloud.talent.v4beta1.LocationFilter.distance_in_miles].
+     * 3. If the detected
+     * [LocationType][google.cloud.talent.v4beta1.Location.LocationType] is one of
+     * [LocationType.SUB_LOCALITY][google.cloud.talent.v4beta1.Location.LocationType.SUB_LOCALITY],
+     * [LocationType.SUB_LOCALITY_2][google.cloud.talent.v4beta1.Location.LocationType.SUB_LOCALITY_2],
+     * [LocationType.NEIGHBORHOOD][google.cloud.talent.v4beta1.Location.LocationType.NEIGHBORHOOD],
+     * [LocationType.POSTAL_CODE][google.cloud.talent.v4beta1.Location.LocationType.POSTAL_CODE],
+     * or
+     * [LocationType.STREET_ADDRESS][google.cloud.talent.v4beta1.Location.LocationType.STREET_ADDRESS],
+     * the following two values are calculated and the larger of the two is
+     * compared to #1 and #2, above:
+     *   - Calculated radius of the city (from the city center) that contains the
+     *   geo-coded location.
+     *   - Distance from the city center (of the city containing the geo-coded
+     *   location) to the detected location center + 0.5 miles.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.LocationFilter location_filters = 2;</code>
@@ -2894,13 +4001,66 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The location filter specifies geo-regions containing the profiles
-     * to search against.
+     * to search against. It filters against all of a profile's
+     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] where
+     * [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is true. If
+     * no such address exists, a fallback logic is applied in an attempt to
+     * determine the profile's primary address.
+     * The fallback logic selects an address from a profile's
+     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
+     * following order of priority:
+     * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
+     * and [Address.current][google.cloud.talent.v4beta1.Address.current] is false
+     * or not set.
+     * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+     * CONTACT_INFO_USAGE_UNSPECIFIED and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
+     * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+     * CONTACT_INFO_USAGE_UNSPECIFIED and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or
+     * not set.
      * If a location filter isn't specified, profiles fitting the other search
      * criteria are retrieved regardless of where they're located.
      * If
      * [LocationFilter.negated][google.cloud.talent.v4beta1.LocationFilter.negated]
      * is specified, the result doesn't contain profiles from that location.
-     * For example, search for profiles with addresses in "New York City".
+     * If
+     * [LocationFilter.address][google.cloud.talent.v4beta1.LocationFilter.address]
+     * is provided, the
+     * [LocationType][google.cloud.talent.v4beta1.Location.LocationType], center
+     * point (latitude and longitude), and radius are automatically detected by
+     * the Google Maps Geocoding API and included as well. If
+     * [LocationFilter.address][google.cloud.talent.v4beta1.LocationFilter.address]
+     * is not recognized as a location, the filter falls back to keyword search.
+     * If the detected
+     * [LocationType][google.cloud.talent.v4beta1.Location.LocationType] is
+     * [LocationType.SUB_ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.Location.LocationType.SUB_ADMINISTRATIVE_AREA],
+     * [LocationType.ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.Location.LocationType.ADMINISTRATIVE_AREA],
+     * or
+     * [LocationType.COUNTRY][google.cloud.talent.v4beta1.Location.LocationType.COUNTRY],
+     * or location is recognized but a radius can not be determined by the
+     * geo-coder, the filter is performed against the detected location name
+     * (using exact text matching). Otherwise, the filter is performed against the
+     * detected center point and a radius. The largest value from among the
+     * following options is automatically set as the radius value:
+     * 1. 10 miles.
+     * 2. Detected location radius +
+     * [LocationFilter.distance_in_miles][google.cloud.talent.v4beta1.LocationFilter.distance_in_miles].
+     * 3. If the detected
+     * [LocationType][google.cloud.talent.v4beta1.Location.LocationType] is one of
+     * [LocationType.SUB_LOCALITY][google.cloud.talent.v4beta1.Location.LocationType.SUB_LOCALITY],
+     * [LocationType.SUB_LOCALITY_2][google.cloud.talent.v4beta1.Location.LocationType.SUB_LOCALITY_2],
+     * [LocationType.NEIGHBORHOOD][google.cloud.talent.v4beta1.Location.LocationType.NEIGHBORHOOD],
+     * [LocationType.POSTAL_CODE][google.cloud.talent.v4beta1.Location.LocationType.POSTAL_CODE],
+     * or
+     * [LocationType.STREET_ADDRESS][google.cloud.talent.v4beta1.Location.LocationType.STREET_ADDRESS],
+     * the following two values are calculated and the larger of the two is
+     * compared to #1 and #2, above:
+     *   - Calculated radius of the city (from the city center) that contains the
+     *   geo-coded location.
+     *   - Distance from the city center (of the city containing the geo-coded
+     *   location) to the detected location center + 0.5 miles.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.LocationFilter location_filters = 2;</code>
@@ -2918,13 +4078,66 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The location filter specifies geo-regions containing the profiles
-     * to search against.
+     * to search against. It filters against all of a profile's
+     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] where
+     * [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is true. If
+     * no such address exists, a fallback logic is applied in an attempt to
+     * determine the profile's primary address.
+     * The fallback logic selects an address from a profile's
+     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
+     * following order of priority:
+     * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
+     * and [Address.current][google.cloud.talent.v4beta1.Address.current] is false
+     * or not set.
+     * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+     * CONTACT_INFO_USAGE_UNSPECIFIED and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
+     * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+     * CONTACT_INFO_USAGE_UNSPECIFIED and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or
+     * not set.
      * If a location filter isn't specified, profiles fitting the other search
      * criteria are retrieved regardless of where they're located.
      * If
      * [LocationFilter.negated][google.cloud.talent.v4beta1.LocationFilter.negated]
      * is specified, the result doesn't contain profiles from that location.
-     * For example, search for profiles with addresses in "New York City".
+     * If
+     * [LocationFilter.address][google.cloud.talent.v4beta1.LocationFilter.address]
+     * is provided, the
+     * [LocationType][google.cloud.talent.v4beta1.Location.LocationType], center
+     * point (latitude and longitude), and radius are automatically detected by
+     * the Google Maps Geocoding API and included as well. If
+     * [LocationFilter.address][google.cloud.talent.v4beta1.LocationFilter.address]
+     * is not recognized as a location, the filter falls back to keyword search.
+     * If the detected
+     * [LocationType][google.cloud.talent.v4beta1.Location.LocationType] is
+     * [LocationType.SUB_ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.Location.LocationType.SUB_ADMINISTRATIVE_AREA],
+     * [LocationType.ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.Location.LocationType.ADMINISTRATIVE_AREA],
+     * or
+     * [LocationType.COUNTRY][google.cloud.talent.v4beta1.Location.LocationType.COUNTRY],
+     * or location is recognized but a radius can not be determined by the
+     * geo-coder, the filter is performed against the detected location name
+     * (using exact text matching). Otherwise, the filter is performed against the
+     * detected center point and a radius. The largest value from among the
+     * following options is automatically set as the radius value:
+     * 1. 10 miles.
+     * 2. Detected location radius +
+     * [LocationFilter.distance_in_miles][google.cloud.talent.v4beta1.LocationFilter.distance_in_miles].
+     * 3. If the detected
+     * [LocationType][google.cloud.talent.v4beta1.Location.LocationType] is one of
+     * [LocationType.SUB_LOCALITY][google.cloud.talent.v4beta1.Location.LocationType.SUB_LOCALITY],
+     * [LocationType.SUB_LOCALITY_2][google.cloud.talent.v4beta1.Location.LocationType.SUB_LOCALITY_2],
+     * [LocationType.NEIGHBORHOOD][google.cloud.talent.v4beta1.Location.LocationType.NEIGHBORHOOD],
+     * [LocationType.POSTAL_CODE][google.cloud.talent.v4beta1.Location.LocationType.POSTAL_CODE],
+     * or
+     * [LocationType.STREET_ADDRESS][google.cloud.talent.v4beta1.Location.LocationType.STREET_ADDRESS],
+     * the following two values are calculated and the larger of the two is
+     * compared to #1 and #2, above:
+     *   - Calculated radius of the city (from the city center) that contains the
+     *   geo-coded location.
+     *   - Distance from the city center (of the city containing the geo-coded
+     *   location) to the detected location center + 0.5 miles.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.LocationFilter location_filters = 2;</code>
@@ -2942,13 +4155,66 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The location filter specifies geo-regions containing the profiles
-     * to search against.
+     * to search against. It filters against all of a profile's
+     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] where
+     * [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is true. If
+     * no such address exists, a fallback logic is applied in an attempt to
+     * determine the profile's primary address.
+     * The fallback logic selects an address from a profile's
+     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
+     * following order of priority:
+     * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
+     * and [Address.current][google.cloud.talent.v4beta1.Address.current] is false
+     * or not set.
+     * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+     * CONTACT_INFO_USAGE_UNSPECIFIED and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
+     * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+     * CONTACT_INFO_USAGE_UNSPECIFIED and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or
+     * not set.
      * If a location filter isn't specified, profiles fitting the other search
      * criteria are retrieved regardless of where they're located.
      * If
      * [LocationFilter.negated][google.cloud.talent.v4beta1.LocationFilter.negated]
      * is specified, the result doesn't contain profiles from that location.
-     * For example, search for profiles with addresses in "New York City".
+     * If
+     * [LocationFilter.address][google.cloud.talent.v4beta1.LocationFilter.address]
+     * is provided, the
+     * [LocationType][google.cloud.talent.v4beta1.Location.LocationType], center
+     * point (latitude and longitude), and radius are automatically detected by
+     * the Google Maps Geocoding API and included as well. If
+     * [LocationFilter.address][google.cloud.talent.v4beta1.LocationFilter.address]
+     * is not recognized as a location, the filter falls back to keyword search.
+     * If the detected
+     * [LocationType][google.cloud.talent.v4beta1.Location.LocationType] is
+     * [LocationType.SUB_ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.Location.LocationType.SUB_ADMINISTRATIVE_AREA],
+     * [LocationType.ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.Location.LocationType.ADMINISTRATIVE_AREA],
+     * or
+     * [LocationType.COUNTRY][google.cloud.talent.v4beta1.Location.LocationType.COUNTRY],
+     * or location is recognized but a radius can not be determined by the
+     * geo-coder, the filter is performed against the detected location name
+     * (using exact text matching). Otherwise, the filter is performed against the
+     * detected center point and a radius. The largest value from among the
+     * following options is automatically set as the radius value:
+     * 1. 10 miles.
+     * 2. Detected location radius +
+     * [LocationFilter.distance_in_miles][google.cloud.talent.v4beta1.LocationFilter.distance_in_miles].
+     * 3. If the detected
+     * [LocationType][google.cloud.talent.v4beta1.Location.LocationType] is one of
+     * [LocationType.SUB_LOCALITY][google.cloud.talent.v4beta1.Location.LocationType.SUB_LOCALITY],
+     * [LocationType.SUB_LOCALITY_2][google.cloud.talent.v4beta1.Location.LocationType.SUB_LOCALITY_2],
+     * [LocationType.NEIGHBORHOOD][google.cloud.talent.v4beta1.Location.LocationType.NEIGHBORHOOD],
+     * [LocationType.POSTAL_CODE][google.cloud.talent.v4beta1.Location.LocationType.POSTAL_CODE],
+     * or
+     * [LocationType.STREET_ADDRESS][google.cloud.talent.v4beta1.Location.LocationType.STREET_ADDRESS],
+     * the following two values are calculated and the larger of the two is
+     * compared to #1 and #2, above:
+     *   - Calculated radius of the city (from the city center) that contains the
+     *   geo-coded location.
+     *   - Distance from the city center (of the city containing the geo-coded
+     *   location) to the detected location center + 0.5 miles.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.LocationFilter location_filters = 2;</code>
@@ -2962,13 +4228,66 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The location filter specifies geo-regions containing the profiles
-     * to search against.
+     * to search against. It filters against all of a profile's
+     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] where
+     * [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is true. If
+     * no such address exists, a fallback logic is applied in an attempt to
+     * determine the profile's primary address.
+     * The fallback logic selects an address from a profile's
+     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
+     * following order of priority:
+     * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
+     * and [Address.current][google.cloud.talent.v4beta1.Address.current] is false
+     * or not set.
+     * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+     * CONTACT_INFO_USAGE_UNSPECIFIED and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
+     * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+     * CONTACT_INFO_USAGE_UNSPECIFIED and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or
+     * not set.
      * If a location filter isn't specified, profiles fitting the other search
      * criteria are retrieved regardless of where they're located.
      * If
      * [LocationFilter.negated][google.cloud.talent.v4beta1.LocationFilter.negated]
      * is specified, the result doesn't contain profiles from that location.
-     * For example, search for profiles with addresses in "New York City".
+     * If
+     * [LocationFilter.address][google.cloud.talent.v4beta1.LocationFilter.address]
+     * is provided, the
+     * [LocationType][google.cloud.talent.v4beta1.Location.LocationType], center
+     * point (latitude and longitude), and radius are automatically detected by
+     * the Google Maps Geocoding API and included as well. If
+     * [LocationFilter.address][google.cloud.talent.v4beta1.LocationFilter.address]
+     * is not recognized as a location, the filter falls back to keyword search.
+     * If the detected
+     * [LocationType][google.cloud.talent.v4beta1.Location.LocationType] is
+     * [LocationType.SUB_ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.Location.LocationType.SUB_ADMINISTRATIVE_AREA],
+     * [LocationType.ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.Location.LocationType.ADMINISTRATIVE_AREA],
+     * or
+     * [LocationType.COUNTRY][google.cloud.talent.v4beta1.Location.LocationType.COUNTRY],
+     * or location is recognized but a radius can not be determined by the
+     * geo-coder, the filter is performed against the detected location name
+     * (using exact text matching). Otherwise, the filter is performed against the
+     * detected center point and a radius. The largest value from among the
+     * following options is automatically set as the radius value:
+     * 1. 10 miles.
+     * 2. Detected location radius +
+     * [LocationFilter.distance_in_miles][google.cloud.talent.v4beta1.LocationFilter.distance_in_miles].
+     * 3. If the detected
+     * [LocationType][google.cloud.talent.v4beta1.Location.LocationType] is one of
+     * [LocationType.SUB_LOCALITY][google.cloud.talent.v4beta1.Location.LocationType.SUB_LOCALITY],
+     * [LocationType.SUB_LOCALITY_2][google.cloud.talent.v4beta1.Location.LocationType.SUB_LOCALITY_2],
+     * [LocationType.NEIGHBORHOOD][google.cloud.talent.v4beta1.Location.LocationType.NEIGHBORHOOD],
+     * [LocationType.POSTAL_CODE][google.cloud.talent.v4beta1.Location.LocationType.POSTAL_CODE],
+     * or
+     * [LocationType.STREET_ADDRESS][google.cloud.talent.v4beta1.Location.LocationType.STREET_ADDRESS],
+     * the following two values are calculated and the larger of the two is
+     * compared to #1 and #2, above:
+     *   - Calculated radius of the city (from the city center) that contains the
+     *   geo-coded location.
+     *   - Distance from the city center (of the city containing the geo-coded
+     *   location) to the detected location center + 0.5 miles.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.LocationFilter location_filters = 2;</code>
@@ -2983,13 +4302,66 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The location filter specifies geo-regions containing the profiles
-     * to search against.
+     * to search against. It filters against all of a profile's
+     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] where
+     * [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is true. If
+     * no such address exists, a fallback logic is applied in an attempt to
+     * determine the profile's primary address.
+     * The fallback logic selects an address from a profile's
+     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
+     * following order of priority:
+     * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
+     * and [Address.current][google.cloud.talent.v4beta1.Address.current] is false
+     * or not set.
+     * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+     * CONTACT_INFO_USAGE_UNSPECIFIED and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
+     * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
+     * CONTACT_INFO_USAGE_UNSPECIFIED and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or
+     * not set.
      * If a location filter isn't specified, profiles fitting the other search
      * criteria are retrieved regardless of where they're located.
      * If
      * [LocationFilter.negated][google.cloud.talent.v4beta1.LocationFilter.negated]
      * is specified, the result doesn't contain profiles from that location.
-     * For example, search for profiles with addresses in "New York City".
+     * If
+     * [LocationFilter.address][google.cloud.talent.v4beta1.LocationFilter.address]
+     * is provided, the
+     * [LocationType][google.cloud.talent.v4beta1.Location.LocationType], center
+     * point (latitude and longitude), and radius are automatically detected by
+     * the Google Maps Geocoding API and included as well. If
+     * [LocationFilter.address][google.cloud.talent.v4beta1.LocationFilter.address]
+     * is not recognized as a location, the filter falls back to keyword search.
+     * If the detected
+     * [LocationType][google.cloud.talent.v4beta1.Location.LocationType] is
+     * [LocationType.SUB_ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.Location.LocationType.SUB_ADMINISTRATIVE_AREA],
+     * [LocationType.ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.Location.LocationType.ADMINISTRATIVE_AREA],
+     * or
+     * [LocationType.COUNTRY][google.cloud.talent.v4beta1.Location.LocationType.COUNTRY],
+     * or location is recognized but a radius can not be determined by the
+     * geo-coder, the filter is performed against the detected location name
+     * (using exact text matching). Otherwise, the filter is performed against the
+     * detected center point and a radius. The largest value from among the
+     * following options is automatically set as the radius value:
+     * 1. 10 miles.
+     * 2. Detected location radius +
+     * [LocationFilter.distance_in_miles][google.cloud.talent.v4beta1.LocationFilter.distance_in_miles].
+     * 3. If the detected
+     * [LocationType][google.cloud.talent.v4beta1.Location.LocationType] is one of
+     * [LocationType.SUB_LOCALITY][google.cloud.talent.v4beta1.Location.LocationType.SUB_LOCALITY],
+     * [LocationType.SUB_LOCALITY_2][google.cloud.talent.v4beta1.Location.LocationType.SUB_LOCALITY_2],
+     * [LocationType.NEIGHBORHOOD][google.cloud.talent.v4beta1.Location.LocationType.NEIGHBORHOOD],
+     * [LocationType.POSTAL_CODE][google.cloud.talent.v4beta1.Location.LocationType.POSTAL_CODE],
+     * or
+     * [LocationType.STREET_ADDRESS][google.cloud.talent.v4beta1.Location.LocationType.STREET_ADDRESS],
+     * the following two values are calculated and the larger of the two is
+     * compared to #1 and #2, above:
+     *   - Calculated radius of the city (from the city center) that contains the
+     *   geo-coded location.
+     *   - Distance from the city center (of the city containing the geo-coded
+     *   location) to the detected location center + 0.5 miles.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.LocationFilter location_filters = 2;</code>
@@ -7839,6 +9211,421 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
         candidateAvailabilityFilter_ = null;
       }
       return candidateAvailabilityFilterBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.talent.v4beta1.PersonNameFilter> personNameFilters_ =
+        java.util.Collections.emptyList();
+
+    private void ensurePersonNameFiltersIsMutable() {
+      if (!((bitField0_ & 0x00004000) != 0)) {
+        personNameFilters_ =
+            new java.util.ArrayList<com.google.cloud.talent.v4beta1.PersonNameFilter>(
+                personNameFilters_);
+        bitField0_ |= 0x00004000;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.talent.v4beta1.PersonNameFilter,
+            com.google.cloud.talent.v4beta1.PersonNameFilter.Builder,
+            com.google.cloud.talent.v4beta1.PersonNameFilterOrBuilder>
+        personNameFiltersBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Person name filter specifies person name of profiles to match on.
+     * If multiple person name filters are specified, profiles that match any
+     * person name filters are retrieved.
+     * For example, search for profiles of candidates with name "John Smith".
+     * </pre>
+     *
+     * <code>repeated .google.cloud.talent.v4beta1.PersonNameFilter person_name_filters = 17;</code>
+     */
+    public java.util.List<com.google.cloud.talent.v4beta1.PersonNameFilter>
+        getPersonNameFiltersList() {
+      if (personNameFiltersBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(personNameFilters_);
+      } else {
+        return personNameFiltersBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Person name filter specifies person name of profiles to match on.
+     * If multiple person name filters are specified, profiles that match any
+     * person name filters are retrieved.
+     * For example, search for profiles of candidates with name "John Smith".
+     * </pre>
+     *
+     * <code>repeated .google.cloud.talent.v4beta1.PersonNameFilter person_name_filters = 17;</code>
+     */
+    public int getPersonNameFiltersCount() {
+      if (personNameFiltersBuilder_ == null) {
+        return personNameFilters_.size();
+      } else {
+        return personNameFiltersBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Person name filter specifies person name of profiles to match on.
+     * If multiple person name filters are specified, profiles that match any
+     * person name filters are retrieved.
+     * For example, search for profiles of candidates with name "John Smith".
+     * </pre>
+     *
+     * <code>repeated .google.cloud.talent.v4beta1.PersonNameFilter person_name_filters = 17;</code>
+     */
+    public com.google.cloud.talent.v4beta1.PersonNameFilter getPersonNameFilters(int index) {
+      if (personNameFiltersBuilder_ == null) {
+        return personNameFilters_.get(index);
+      } else {
+        return personNameFiltersBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Person name filter specifies person name of profiles to match on.
+     * If multiple person name filters are specified, profiles that match any
+     * person name filters are retrieved.
+     * For example, search for profiles of candidates with name "John Smith".
+     * </pre>
+     *
+     * <code>repeated .google.cloud.talent.v4beta1.PersonNameFilter person_name_filters = 17;</code>
+     */
+    public Builder setPersonNameFilters(
+        int index, com.google.cloud.talent.v4beta1.PersonNameFilter value) {
+      if (personNameFiltersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePersonNameFiltersIsMutable();
+        personNameFilters_.set(index, value);
+        onChanged();
+      } else {
+        personNameFiltersBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Person name filter specifies person name of profiles to match on.
+     * If multiple person name filters are specified, profiles that match any
+     * person name filters are retrieved.
+     * For example, search for profiles of candidates with name "John Smith".
+     * </pre>
+     *
+     * <code>repeated .google.cloud.talent.v4beta1.PersonNameFilter person_name_filters = 17;</code>
+     */
+    public Builder setPersonNameFilters(
+        int index, com.google.cloud.talent.v4beta1.PersonNameFilter.Builder builderForValue) {
+      if (personNameFiltersBuilder_ == null) {
+        ensurePersonNameFiltersIsMutable();
+        personNameFilters_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        personNameFiltersBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Person name filter specifies person name of profiles to match on.
+     * If multiple person name filters are specified, profiles that match any
+     * person name filters are retrieved.
+     * For example, search for profiles of candidates with name "John Smith".
+     * </pre>
+     *
+     * <code>repeated .google.cloud.talent.v4beta1.PersonNameFilter person_name_filters = 17;</code>
+     */
+    public Builder addPersonNameFilters(com.google.cloud.talent.v4beta1.PersonNameFilter value) {
+      if (personNameFiltersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePersonNameFiltersIsMutable();
+        personNameFilters_.add(value);
+        onChanged();
+      } else {
+        personNameFiltersBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Person name filter specifies person name of profiles to match on.
+     * If multiple person name filters are specified, profiles that match any
+     * person name filters are retrieved.
+     * For example, search for profiles of candidates with name "John Smith".
+     * </pre>
+     *
+     * <code>repeated .google.cloud.talent.v4beta1.PersonNameFilter person_name_filters = 17;</code>
+     */
+    public Builder addPersonNameFilters(
+        int index, com.google.cloud.talent.v4beta1.PersonNameFilter value) {
+      if (personNameFiltersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePersonNameFiltersIsMutable();
+        personNameFilters_.add(index, value);
+        onChanged();
+      } else {
+        personNameFiltersBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Person name filter specifies person name of profiles to match on.
+     * If multiple person name filters are specified, profiles that match any
+     * person name filters are retrieved.
+     * For example, search for profiles of candidates with name "John Smith".
+     * </pre>
+     *
+     * <code>repeated .google.cloud.talent.v4beta1.PersonNameFilter person_name_filters = 17;</code>
+     */
+    public Builder addPersonNameFilters(
+        com.google.cloud.talent.v4beta1.PersonNameFilter.Builder builderForValue) {
+      if (personNameFiltersBuilder_ == null) {
+        ensurePersonNameFiltersIsMutable();
+        personNameFilters_.add(builderForValue.build());
+        onChanged();
+      } else {
+        personNameFiltersBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Person name filter specifies person name of profiles to match on.
+     * If multiple person name filters are specified, profiles that match any
+     * person name filters are retrieved.
+     * For example, search for profiles of candidates with name "John Smith".
+     * </pre>
+     *
+     * <code>repeated .google.cloud.talent.v4beta1.PersonNameFilter person_name_filters = 17;</code>
+     */
+    public Builder addPersonNameFilters(
+        int index, com.google.cloud.talent.v4beta1.PersonNameFilter.Builder builderForValue) {
+      if (personNameFiltersBuilder_ == null) {
+        ensurePersonNameFiltersIsMutable();
+        personNameFilters_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        personNameFiltersBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Person name filter specifies person name of profiles to match on.
+     * If multiple person name filters are specified, profiles that match any
+     * person name filters are retrieved.
+     * For example, search for profiles of candidates with name "John Smith".
+     * </pre>
+     *
+     * <code>repeated .google.cloud.talent.v4beta1.PersonNameFilter person_name_filters = 17;</code>
+     */
+    public Builder addAllPersonNameFilters(
+        java.lang.Iterable<? extends com.google.cloud.talent.v4beta1.PersonNameFilter> values) {
+      if (personNameFiltersBuilder_ == null) {
+        ensurePersonNameFiltersIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, personNameFilters_);
+        onChanged();
+      } else {
+        personNameFiltersBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Person name filter specifies person name of profiles to match on.
+     * If multiple person name filters are specified, profiles that match any
+     * person name filters are retrieved.
+     * For example, search for profiles of candidates with name "John Smith".
+     * </pre>
+     *
+     * <code>repeated .google.cloud.talent.v4beta1.PersonNameFilter person_name_filters = 17;</code>
+     */
+    public Builder clearPersonNameFilters() {
+      if (personNameFiltersBuilder_ == null) {
+        personNameFilters_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00004000);
+        onChanged();
+      } else {
+        personNameFiltersBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Person name filter specifies person name of profiles to match on.
+     * If multiple person name filters are specified, profiles that match any
+     * person name filters are retrieved.
+     * For example, search for profiles of candidates with name "John Smith".
+     * </pre>
+     *
+     * <code>repeated .google.cloud.talent.v4beta1.PersonNameFilter person_name_filters = 17;</code>
+     */
+    public Builder removePersonNameFilters(int index) {
+      if (personNameFiltersBuilder_ == null) {
+        ensurePersonNameFiltersIsMutable();
+        personNameFilters_.remove(index);
+        onChanged();
+      } else {
+        personNameFiltersBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Person name filter specifies person name of profiles to match on.
+     * If multiple person name filters are specified, profiles that match any
+     * person name filters are retrieved.
+     * For example, search for profiles of candidates with name "John Smith".
+     * </pre>
+     *
+     * <code>repeated .google.cloud.talent.v4beta1.PersonNameFilter person_name_filters = 17;</code>
+     */
+    public com.google.cloud.talent.v4beta1.PersonNameFilter.Builder getPersonNameFiltersBuilder(
+        int index) {
+      return getPersonNameFiltersFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Person name filter specifies person name of profiles to match on.
+     * If multiple person name filters are specified, profiles that match any
+     * person name filters are retrieved.
+     * For example, search for profiles of candidates with name "John Smith".
+     * </pre>
+     *
+     * <code>repeated .google.cloud.talent.v4beta1.PersonNameFilter person_name_filters = 17;</code>
+     */
+    public com.google.cloud.talent.v4beta1.PersonNameFilterOrBuilder getPersonNameFiltersOrBuilder(
+        int index) {
+      if (personNameFiltersBuilder_ == null) {
+        return personNameFilters_.get(index);
+      } else {
+        return personNameFiltersBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Person name filter specifies person name of profiles to match on.
+     * If multiple person name filters are specified, profiles that match any
+     * person name filters are retrieved.
+     * For example, search for profiles of candidates with name "John Smith".
+     * </pre>
+     *
+     * <code>repeated .google.cloud.talent.v4beta1.PersonNameFilter person_name_filters = 17;</code>
+     */
+    public java.util.List<? extends com.google.cloud.talent.v4beta1.PersonNameFilterOrBuilder>
+        getPersonNameFiltersOrBuilderList() {
+      if (personNameFiltersBuilder_ != null) {
+        return personNameFiltersBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(personNameFilters_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Person name filter specifies person name of profiles to match on.
+     * If multiple person name filters are specified, profiles that match any
+     * person name filters are retrieved.
+     * For example, search for profiles of candidates with name "John Smith".
+     * </pre>
+     *
+     * <code>repeated .google.cloud.talent.v4beta1.PersonNameFilter person_name_filters = 17;</code>
+     */
+    public com.google.cloud.talent.v4beta1.PersonNameFilter.Builder addPersonNameFiltersBuilder() {
+      return getPersonNameFiltersFieldBuilder()
+          .addBuilder(com.google.cloud.talent.v4beta1.PersonNameFilter.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Person name filter specifies person name of profiles to match on.
+     * If multiple person name filters are specified, profiles that match any
+     * person name filters are retrieved.
+     * For example, search for profiles of candidates with name "John Smith".
+     * </pre>
+     *
+     * <code>repeated .google.cloud.talent.v4beta1.PersonNameFilter person_name_filters = 17;</code>
+     */
+    public com.google.cloud.talent.v4beta1.PersonNameFilter.Builder addPersonNameFiltersBuilder(
+        int index) {
+      return getPersonNameFiltersFieldBuilder()
+          .addBuilder(index, com.google.cloud.talent.v4beta1.PersonNameFilter.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Person name filter specifies person name of profiles to match on.
+     * If multiple person name filters are specified, profiles that match any
+     * person name filters are retrieved.
+     * For example, search for profiles of candidates with name "John Smith".
+     * </pre>
+     *
+     * <code>repeated .google.cloud.talent.v4beta1.PersonNameFilter person_name_filters = 17;</code>
+     */
+    public java.util.List<com.google.cloud.talent.v4beta1.PersonNameFilter.Builder>
+        getPersonNameFiltersBuilderList() {
+      return getPersonNameFiltersFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.talent.v4beta1.PersonNameFilter,
+            com.google.cloud.talent.v4beta1.PersonNameFilter.Builder,
+            com.google.cloud.talent.v4beta1.PersonNameFilterOrBuilder>
+        getPersonNameFiltersFieldBuilder() {
+      if (personNameFiltersBuilder_ == null) {
+        personNameFiltersBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.talent.v4beta1.PersonNameFilter,
+                com.google.cloud.talent.v4beta1.PersonNameFilter.Builder,
+                com.google.cloud.talent.v4beta1.PersonNameFilterOrBuilder>(
+                personNameFilters_,
+                ((bitField0_ & 0x00004000) != 0),
+                getParentForChildren(),
+                isClean());
+        personNameFilters_ = null;
+      }
+      return personNameFiltersBuilder_;
     }
 
     @java.lang.Override

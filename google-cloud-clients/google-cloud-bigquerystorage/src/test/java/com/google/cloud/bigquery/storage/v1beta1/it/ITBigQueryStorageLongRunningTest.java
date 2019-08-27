@@ -17,7 +17,6 @@
 package com.google.cloud.bigquery.storage.v1beta1.it;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 
 import com.google.api.gax.rpc.ServerStream;
 import com.google.cloud.ServiceOptions;
@@ -121,12 +120,12 @@ public class ITBigQueryStorageLongRunningTest {
     ExecutorService executor = Executors.newFixedThreadPool(tasks.size());
     List<Future<Long>> results = executor.invokeAll(tasks);
 
-    long avroRowCount = 0;
+    long rowCount = 0;
     for (Future<Long> result : results) {
-      avroRowCount += result.get();
+      rowCount += result.get();
     }
 
-    assertEquals(313_797_035, avroRowCount);
+    assertEquals(313_797_035, rowCount);
   }
 
   private long readAllRowsFromStream(Stream stream) {
@@ -135,19 +134,13 @@ public class ITBigQueryStorageLongRunningTest {
     ReadRowsRequest readRowsRequest =
         ReadRowsRequest.newBuilder().setReadPosition(readPosition).build();
 
-    long avroRowCount = 0;
+    long rowCount = 0;
     ServerStream<ReadRowsResponse> serverStream = client.readRowsCallable().call(readRowsRequest);
     for (ReadRowsResponse response : serverStream) {
-      assertTrue(
-          String.format(
-              "Response is missing 'avro_rows'. Read %d rows so far from stream '%s'. ReadRows response:%n%s",
-              avroRowCount, stream.getName(), response.toString()),
-          response.hasAvroRows());
-      avroRowCount += response.getAvroRows().getRowCount();
+      rowCount += response.getRowCount();
     }
 
-    LOG.info(
-        String.format("Read total of %d rows from stream '%s'.", avroRowCount, stream.getName()));
-    return avroRowCount;
+    LOG.info(String.format("Read total of %d rows from stream '%s'.", rowCount, stream.getName()));
+    return rowCount;
   }
 }

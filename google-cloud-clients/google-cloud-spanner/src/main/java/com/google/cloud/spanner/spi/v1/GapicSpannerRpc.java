@@ -36,7 +36,6 @@ import com.google.api.gax.rpc.StreamController;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.WatchdogProvider;
 import com.google.api.pathtemplate.PathTemplate;
-import com.google.cloud.ServiceOptions;
 import com.google.cloud.grpc.GrpcTransportOptions;
 import com.google.cloud.spanner.SpannerException;
 import com.google.cloud.spanner.SpannerExceptionFactory;
@@ -191,8 +190,7 @@ public class GapicSpannerRpc implements SpannerRpc {
     ApiClientHeaderProvider internalHeaderProvider =
         internalHeaderProviderBuilder
             .setClientLibToken(
-                ServiceOptions.getGoogApiClientLibName(),
-                GaxProperties.getLibraryVersion(options.getClass()))
+                options.getClientLibToken(), GaxProperties.getLibraryVersion(options.getClass()))
             .setTransportToken(
                 GaxGrpcProperties.getGrpcTokenName(), GaxGrpcProperties.getGrpcVersion())
             .build();
@@ -512,6 +510,13 @@ public class GapicSpannerRpc implements SpannerRpc {
   }
 
   @Override
+  public ResultSet executePartitionedDml(
+      ExecuteSqlRequest request, @Nullable Map<Option, ?> options, Duration timeout) {
+    GrpcCallContext context = newCallContext(options, request.getSession(), timeout);
+    return get(spannerStub.executeSqlCallable().futureCall(request, context));
+  }
+
+  @Override
   public StreamingCall executeQuery(
       ExecuteSqlRequest request, ResultStreamConsumer consumer, @Nullable Map<Option, ?> options) {
     GrpcCallContext context = newCallContext(options, request.getSession());
@@ -591,11 +596,19 @@ public class GapicSpannerRpc implements SpannerRpc {
   }
 
   private GrpcCallContext newCallContext(@Nullable Map<Option, ?> options, String resource) {
+    return newCallContext(options, resource, null);
+  }
+
+  private GrpcCallContext newCallContext(
+      @Nullable Map<Option, ?> options, String resource, Duration timeout) {
     GrpcCallContext context = GrpcCallContext.createDefault();
     if (options != null) {
       context = context.withChannelAffinity(Option.CHANNEL_HINT.getLong(options).intValue());
     }
     context = context.withExtraHeaders(metadataProvider.newExtraHeaders(resource, projectName));
+    if (timeout != null) {
+      context = context.withTimeout(timeout);
+    }
     return context.withStreamWaitTimeout(waitTimeout).withStreamIdleTimeout(idleTimeout);
   }
 

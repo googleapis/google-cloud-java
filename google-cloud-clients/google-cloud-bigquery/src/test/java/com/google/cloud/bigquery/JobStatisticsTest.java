@@ -34,6 +34,7 @@ public class JobStatisticsTest {
   private static final Boolean CACHE_HIT = true;
   private static final String DDL_OPERATION_PERFORMED = "SKIP";
   private static final TableId DDL_TARGET_TABLE = TableId.of("foo", "bar", "baz");
+  private static final RoutineId DDL_TARGET_ROUTINE = RoutineId.of("alpha", "beta", "gamma");
   private static final Long ESTIMATE_BYTES_PROCESSED = 101L;
   private static final Long NUM_DML_AFFECTED_ROWS = 88L;
   private static final QueryStatistics.StatementType STATEMENT_TYPE =
@@ -136,6 +137,7 @@ public class JobStatisticsTest {
           .setCacheHit(CACHE_HIT)
           .setDDLOperationPerformed(DDL_OPERATION_PERFORMED)
           .setDDLTargetTable(DDL_TARGET_TABLE)
+          .setDDLTargetRoutine(DDL_TARGET_ROUTINE)
           .setEstimatedBytesProcessed(ESTIMATE_BYTES_PROCESSED)
           .setNumDmlAffectedRows(NUM_DML_AFFECTED_ROWS)
           .setReferenceTables(REFERENCED_TABLES)
@@ -180,6 +182,7 @@ public class JobStatisticsTest {
     assertEquals(CACHE_HIT, QUERY_STATISTICS.getCacheHit());
     assertEquals(DDL_OPERATION_PERFORMED, QUERY_STATISTICS.getDdlOperationPerformed());
     assertEquals(DDL_TARGET_TABLE, QUERY_STATISTICS.getDdlTargetTable());
+    assertEquals(DDL_TARGET_ROUTINE, QUERY_STATISTICS.getDdlTargetRoutine());
     assertEquals(ESTIMATE_BYTES_PROCESSED, QUERY_STATISTICS.getEstimatedBytesProcessed());
     assertEquals(NUM_DML_AFFECTED_ROWS, QUERY_STATISTICS.getNumDmlAffectedRows());
     assertEquals(REFERENCED_TABLES, QUERY_STATISTICS.getReferencedTables());
@@ -207,6 +210,7 @@ public class JobStatisticsTest {
     assertEquals(CACHE_HIT, QUERY_STATISTICS_INCOMPLETE.getCacheHit());
     assertEquals(null, QUERY_STATISTICS_INCOMPLETE.getDdlOperationPerformed());
     assertEquals(null, QUERY_STATISTICS_INCOMPLETE.getDdlTargetTable());
+    assertEquals(null, QUERY_STATISTICS_INCOMPLETE.getDdlTargetRoutine());
     assertEquals(null, QUERY_STATISTICS_INCOMPLETE.getEstimatedBytesProcessed());
     assertEquals(null, QUERY_STATISTICS_INCOMPLETE.getNumDmlAffectedRows());
     assertEquals(null, QUERY_STATISTICS_INCOMPLETE.getTotalBytesBilled());
@@ -284,6 +288,7 @@ public class JobStatisticsTest {
     assertEquals(expected.getCacheHit(), value.getCacheHit());
     assertEquals(expected.getDdlOperationPerformed(), value.getDdlOperationPerformed());
     assertEquals(expected.getDdlTargetTable(), value.getDdlTargetTable());
+    assertEquals(expected.getDdlTargetRoutine(), value.getDdlTargetRoutine());
     assertEquals(expected.getEstimatedBytesProcessed(), value.getEstimatedBytesProcessed());
     assertEquals(expected.getTotalBytesBilled(), value.getTotalBytesBilled());
     assertEquals(expected.getTotalBytesProcessed(), value.getTotalBytesProcessed());

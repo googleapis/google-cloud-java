@@ -100,7 +100,7 @@ class SessionImpl implements Session {
   public long executePartitionedUpdate(Statement stmt) {
     setActive(null);
     PartitionedDMLTransaction txn = new PartitionedDMLTransaction(this, spanner.getRpc());
-    return txn.executePartitionedUpdate(stmt);
+    return txn.executePartitionedUpdate(stmt, spanner.getOptions().getPartitionedDmlTimeout());
   }
 
   @Override

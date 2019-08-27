@@ -6013,6 +6013,119 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Rich Business Messaging (RBM) text response.
+     * RBM allows businesses to send enriched and branded versions of SMS. See
+     * https://jibe.google.com/business-messaging.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.RbmText rbm_text = 18;</code>
+     */
+    boolean hasRbmText();
+    /**
+     *
+     *
+     * <pre>
+     * Rich Business Messaging (RBM) text response.
+     * RBM allows businesses to send enriched and branded versions of SMS. See
+     * https://jibe.google.com/business-messaging.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.RbmText rbm_text = 18;</code>
+     */
+    com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmText getRbmText();
+    /**
+     *
+     *
+     * <pre>
+     * Rich Business Messaging (RBM) text response.
+     * RBM allows businesses to send enriched and branded versions of SMS. See
+     * https://jibe.google.com/business-messaging.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.RbmText rbm_text = 18;</code>
+     */
+    com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmTextOrBuilder getRbmTextOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Standalone Rich Business Messaging (RBM) rich card response.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard rbm_standalone_rich_card = 19;
+     * </code>
+     */
+    boolean hasRbmStandaloneRichCard();
+    /**
+     *
+     *
+     * <pre>
+     * Standalone Rich Business Messaging (RBM) rich card response.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard rbm_standalone_rich_card = 19;
+     * </code>
+     */
+    com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard getRbmStandaloneRichCard();
+    /**
+     *
+     *
+     * <pre>
+     * Standalone Rich Business Messaging (RBM) rich card response.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard rbm_standalone_rich_card = 19;
+     * </code>
+     */
+    com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCardOrBuilder
+        getRbmStandaloneRichCardOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Rich Business Messaging (RBM) carousel rich card response.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard rbm_carousel_rich_card = 20;
+     * </code>
+     */
+    boolean hasRbmCarouselRichCard();
+    /**
+     *
+     *
+     * <pre>
+     * Rich Business Messaging (RBM) carousel rich card response.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard rbm_carousel_rich_card = 20;
+     * </code>
+     */
+    com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard getRbmCarouselRichCard();
+    /**
+     *
+     *
+     * <pre>
+     * Rich Business Messaging (RBM) carousel rich card response.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard rbm_carousel_rich_card = 20;
+     * </code>
+     */
+    com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCardOrBuilder
+        getRbmCarouselRichCardOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
      * Optional. The platform that this message is intended for.
      * </pre>
      *
@@ -6384,6 +6497,74 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                   message_ = subBuilder.buildPartial();
                 }
                 messageCase_ = 15;
+                break;
+              }
+            case 146:
+              {
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmText.Builder subBuilder =
+                    null;
+                if (messageCase_ == 18) {
+                  subBuilder =
+                      ((com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmText) message_)
+                          .toBuilder();
+                }
+                message_ =
+                    input.readMessage(
+                        com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmText.parser(),
+                        extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(
+                      (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmText) message_);
+                  message_ = subBuilder.buildPartial();
+                }
+                messageCase_ = 18;
+                break;
+              }
+            case 154:
+              {
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard.Builder
+                    subBuilder = null;
+                if (messageCase_ == 19) {
+                  subBuilder =
+                      ((com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard)
+                              message_)
+                          .toBuilder();
+                }
+                message_ =
+                    input.readMessage(
+                        com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard
+                            .parser(),
+                        extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(
+                      (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard)
+                          message_);
+                  message_ = subBuilder.buildPartial();
+                }
+                messageCase_ = 19;
+                break;
+              }
+            case 162:
+              {
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard.Builder
+                    subBuilder = null;
+                if (messageCase_ == 20) {
+                  subBuilder =
+                      ((com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard)
+                              message_)
+                          .toBuilder();
+                }
+                message_ =
+                    input.readMessage(
+                        com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard.parser(),
+                        extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(
+                      (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard)
+                          message_);
+                  message_ = subBuilder.buildPartial();
+                }
+                messageCase_ = 20;
                 break;
               }
             default:
@@ -28686,6 +28867,13639 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       }
     }
 
+    public interface RbmTextOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.v2beta1.Intent.Message.RbmText)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Text sent and displayed to the user.
+       * </pre>
+       *
+       * <code>string text = 1;</code>
+       */
+      java.lang.String getText();
+      /**
+       *
+       *
+       * <pre>
+       * Required. Text sent and displayed to the user.
+       * </pre>
+       *
+       * <code>string text = 1;</code>
+       */
+      com.google.protobuf.ByteString getTextBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. One or more suggestions to show to the user.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion rbm_suggestion = 2;
+       * </code>
+       */
+      java.util.List<com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion>
+          getRbmSuggestionList();
+      /**
+       *
+       *
+       * <pre>
+       * Optional. One or more suggestions to show to the user.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion rbm_suggestion = 2;
+       * </code>
+       */
+      com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion getRbmSuggestion(int index);
+      /**
+       *
+       *
+       * <pre>
+       * Optional. One or more suggestions to show to the user.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion rbm_suggestion = 2;
+       * </code>
+       */
+      int getRbmSuggestionCount();
+      /**
+       *
+       *
+       * <pre>
+       * Optional. One or more suggestions to show to the user.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion rbm_suggestion = 2;
+       * </code>
+       */
+      java.util.List<
+              ? extends com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestionOrBuilder>
+          getRbmSuggestionOrBuilderList();
+      /**
+       *
+       *
+       * <pre>
+       * Optional. One or more suggestions to show to the user.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion rbm_suggestion = 2;
+       * </code>
+       */
+      com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestionOrBuilder
+          getRbmSuggestionOrBuilder(int index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Rich Business Messaging (RBM) text response with suggestions.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.dialogflow.v2beta1.Intent.Message.RbmText}
+     */
+    public static final class RbmText extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.Intent.Message.RbmText)
+        RbmTextOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use RbmText.newBuilder() to construct.
+      private RbmText(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private RbmText() {
+        text_ = "";
+        rbmSuggestion_ = java.util.Collections.emptyList();
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+        return this.unknownFields;
+      }
+
+      private RbmText(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        int mutable_bitField0_ = 0;
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+
+                  text_ = s;
+                  break;
+                }
+              case 18:
+                {
+                  if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                    rbmSuggestion_ =
+                        new java.util.ArrayList<
+                            com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion>();
+                    mutable_bitField0_ |= 0x00000002;
+                  }
+                  rbmSuggestion_.add(
+                      input.readMessage(
+                          com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion.parser(),
+                          extensionRegistry));
+                  break;
+                }
+              default:
+                {
+                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                    done = true;
+                  }
+                  break;
+                }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(this);
+        } finally {
+          if (((mutable_bitField0_ & 0x00000002) != 0)) {
+            rbmSuggestion_ = java.util.Collections.unmodifiableList(rbmSuggestion_);
+          }
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dialogflow.v2beta1.IntentProto
+            .internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_RbmText_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dialogflow.v2beta1.IntentProto
+            .internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_RbmText_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmText.class,
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmText.Builder.class);
+      }
+
+      private int bitField0_;
+      public static final int TEXT_FIELD_NUMBER = 1;
+      private volatile java.lang.Object text_;
+      /**
+       *
+       *
+       * <pre>
+       * Required. Text sent and displayed to the user.
+       * </pre>
+       *
+       * <code>string text = 1;</code>
+       */
+      public java.lang.String getText() {
+        java.lang.Object ref = text_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          text_ = s;
+          return s;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Text sent and displayed to the user.
+       * </pre>
+       *
+       * <code>string text = 1;</code>
+       */
+      public com.google.protobuf.ByteString getTextBytes() {
+        java.lang.Object ref = text_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          text_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int RBM_SUGGESTION_FIELD_NUMBER = 2;
+      private java.util.List<com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion>
+          rbmSuggestion_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. One or more suggestions to show to the user.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion rbm_suggestion = 2;
+       * </code>
+       */
+      public java.util.List<com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion>
+          getRbmSuggestionList() {
+        return rbmSuggestion_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. One or more suggestions to show to the user.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion rbm_suggestion = 2;
+       * </code>
+       */
+      public java.util.List<
+              ? extends com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestionOrBuilder>
+          getRbmSuggestionOrBuilderList() {
+        return rbmSuggestion_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. One or more suggestions to show to the user.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion rbm_suggestion = 2;
+       * </code>
+       */
+      public int getRbmSuggestionCount() {
+        return rbmSuggestion_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. One or more suggestions to show to the user.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion rbm_suggestion = 2;
+       * </code>
+       */
+      public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion getRbmSuggestion(
+          int index) {
+        return rbmSuggestion_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. One or more suggestions to show to the user.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion rbm_suggestion = 2;
+       * </code>
+       */
+      public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestionOrBuilder
+          getRbmSuggestionOrBuilder(int index) {
+        return rbmSuggestion_.get(index);
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (!getTextBytes().isEmpty()) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, text_);
+        }
+        for (int i = 0; i < rbmSuggestion_.size(); i++) {
+          output.writeMessage(2, rbmSuggestion_.get(i));
+        }
+        unknownFields.writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!getTextBytes().isEmpty()) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, text_);
+        }
+        for (int i = 0; i < rbmSuggestion_.size(); i++) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeMessageSize(2, rbmSuggestion_.get(i));
+        }
+        size += unknownFields.getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj instanceof com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmText)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmText other =
+            (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmText) obj;
+
+        if (!getText().equals(other.getText())) return false;
+        if (!getRbmSuggestionList().equals(other.getRbmSuggestionList())) return false;
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + TEXT_FIELD_NUMBER;
+        hash = (53 * hash) + getText().hashCode();
+        if (getRbmSuggestionCount() > 0) {
+          hash = (37 * hash) + RBM_SUGGESTION_FIELD_NUMBER;
+          hash = (53 * hash) + getRbmSuggestionList().hashCode();
+        }
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmText parseFrom(
+          java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmText parseFrom(
+          java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmText parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmText parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmText parseFrom(
+          byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmText parseFrom(
+          byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmText parseFrom(
+          java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmText parseFrom(
+          java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmText parseDelimitedFrom(
+          java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmText parseDelimitedFrom(
+          java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmText parseFrom(
+          com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmText parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmText prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Rich Business Messaging (RBM) text response with suggestions.
+       * </pre>
+       *
+       * Protobuf type {@code google.cloud.dialogflow.v2beta1.Intent.Message.RbmText}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.v2beta1.Intent.Message.RbmText)
+          com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmTextOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.dialogflow.v2beta1.IntentProto
+              .internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_RbmText_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.dialogflow.v2beta1.IntentProto
+              .internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_RbmText_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmText.class,
+                  com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmText.Builder.class);
+        }
+
+        // Construct using com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmText.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+            getRbmSuggestionFieldBuilder();
+          }
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          text_ = "";
+
+          if (rbmSuggestionBuilder_ == null) {
+            rbmSuggestion_ = java.util.Collections.emptyList();
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            rbmSuggestionBuilder_.clear();
+          }
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.dialogflow.v2beta1.IntentProto
+              .internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_RbmText_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmText
+            getDefaultInstanceForType() {
+          return com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmText.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmText build() {
+          com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmText result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmText buildPartial() {
+          com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmText result =
+              new com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmText(this);
+          int from_bitField0_ = bitField0_;
+          int to_bitField0_ = 0;
+          result.text_ = text_;
+          if (rbmSuggestionBuilder_ == null) {
+            if (((bitField0_ & 0x00000002) != 0)) {
+              rbmSuggestion_ = java.util.Collections.unmodifiableList(rbmSuggestion_);
+              bitField0_ = (bitField0_ & ~0x00000002);
+            }
+            result.rbmSuggestion_ = rbmSuggestion_;
+          } else {
+            result.rbmSuggestion_ = rbmSuggestionBuilder_.build();
+          }
+          result.bitField0_ = to_bitField0_;
+          onBuilt();
+          return result;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmText) {
+            return mergeFrom((com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmText) other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmText other) {
+          if (other
+              == com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmText.getDefaultInstance())
+            return this;
+          if (!other.getText().isEmpty()) {
+            text_ = other.text_;
+            onChanged();
+          }
+          if (rbmSuggestionBuilder_ == null) {
+            if (!other.rbmSuggestion_.isEmpty()) {
+              if (rbmSuggestion_.isEmpty()) {
+                rbmSuggestion_ = other.rbmSuggestion_;
+                bitField0_ = (bitField0_ & ~0x00000002);
+              } else {
+                ensureRbmSuggestionIsMutable();
+                rbmSuggestion_.addAll(other.rbmSuggestion_);
+              }
+              onChanged();
+            }
+          } else {
+            if (!other.rbmSuggestion_.isEmpty()) {
+              if (rbmSuggestionBuilder_.isEmpty()) {
+                rbmSuggestionBuilder_.dispose();
+                rbmSuggestionBuilder_ = null;
+                rbmSuggestion_ = other.rbmSuggestion_;
+                bitField0_ = (bitField0_ & ~0x00000002);
+                rbmSuggestionBuilder_ =
+                    com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                        ? getRbmSuggestionFieldBuilder()
+                        : null;
+              } else {
+                rbmSuggestionBuilder_.addAllMessages(other.rbmSuggestion_);
+              }
+            }
+          }
+          this.mergeUnknownFields(other.unknownFields);
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmText parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage =
+                (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmText)
+                    e.getUnfinishedMessage();
+            throw e.unwrapIOException();
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+
+        private int bitField0_;
+
+        private java.lang.Object text_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * Required. Text sent and displayed to the user.
+         * </pre>
+         *
+         * <code>string text = 1;</code>
+         */
+        public java.lang.String getText() {
+          java.lang.Object ref = text_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            text_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. Text sent and displayed to the user.
+         * </pre>
+         *
+         * <code>string text = 1;</code>
+         */
+        public com.google.protobuf.ByteString getTextBytes() {
+          java.lang.Object ref = text_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            text_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. Text sent and displayed to the user.
+         * </pre>
+         *
+         * <code>string text = 1;</code>
+         */
+        public Builder setText(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+
+          text_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. Text sent and displayed to the user.
+         * </pre>
+         *
+         * <code>string text = 1;</code>
+         */
+        public Builder clearText() {
+
+          text_ = getDefaultInstance().getText();
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. Text sent and displayed to the user.
+         * </pre>
+         *
+         * <code>string text = 1;</code>
+         */
+        public Builder setTextBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+
+          text_ = value;
+          onChanged();
+          return this;
+        }
+
+        private java.util.List<com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion>
+            rbmSuggestion_ = java.util.Collections.emptyList();
+
+        private void ensureRbmSuggestionIsMutable() {
+          if (!((bitField0_ & 0x00000002) != 0)) {
+            rbmSuggestion_ =
+                new java.util.ArrayList<
+                    com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion>(
+                    rbmSuggestion_);
+            bitField0_ |= 0x00000002;
+          }
+        }
+
+        private com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion,
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion.Builder,
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestionOrBuilder>
+            rbmSuggestionBuilder_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. One or more suggestions to show to the user.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion rbm_suggestion = 2;
+         * </code>
+         */
+        public java.util.List<com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion>
+            getRbmSuggestionList() {
+          if (rbmSuggestionBuilder_ == null) {
+            return java.util.Collections.unmodifiableList(rbmSuggestion_);
+          } else {
+            return rbmSuggestionBuilder_.getMessageList();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. One or more suggestions to show to the user.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion rbm_suggestion = 2;
+         * </code>
+         */
+        public int getRbmSuggestionCount() {
+          if (rbmSuggestionBuilder_ == null) {
+            return rbmSuggestion_.size();
+          } else {
+            return rbmSuggestionBuilder_.getCount();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. One or more suggestions to show to the user.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion rbm_suggestion = 2;
+         * </code>
+         */
+        public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion getRbmSuggestion(
+            int index) {
+          if (rbmSuggestionBuilder_ == null) {
+            return rbmSuggestion_.get(index);
+          } else {
+            return rbmSuggestionBuilder_.getMessage(index);
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. One or more suggestions to show to the user.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion rbm_suggestion = 2;
+         * </code>
+         */
+        public Builder setRbmSuggestion(
+            int index, com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion value) {
+          if (rbmSuggestionBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureRbmSuggestionIsMutable();
+            rbmSuggestion_.set(index, value);
+            onChanged();
+          } else {
+            rbmSuggestionBuilder_.setMessage(index, value);
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. One or more suggestions to show to the user.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion rbm_suggestion = 2;
+         * </code>
+         */
+        public Builder setRbmSuggestion(
+            int index,
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion.Builder
+                builderForValue) {
+          if (rbmSuggestionBuilder_ == null) {
+            ensureRbmSuggestionIsMutable();
+            rbmSuggestion_.set(index, builderForValue.build());
+            onChanged();
+          } else {
+            rbmSuggestionBuilder_.setMessage(index, builderForValue.build());
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. One or more suggestions to show to the user.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion rbm_suggestion = 2;
+         * </code>
+         */
+        public Builder addRbmSuggestion(
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion value) {
+          if (rbmSuggestionBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureRbmSuggestionIsMutable();
+            rbmSuggestion_.add(value);
+            onChanged();
+          } else {
+            rbmSuggestionBuilder_.addMessage(value);
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. One or more suggestions to show to the user.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion rbm_suggestion = 2;
+         * </code>
+         */
+        public Builder addRbmSuggestion(
+            int index, com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion value) {
+          if (rbmSuggestionBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureRbmSuggestionIsMutable();
+            rbmSuggestion_.add(index, value);
+            onChanged();
+          } else {
+            rbmSuggestionBuilder_.addMessage(index, value);
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. One or more suggestions to show to the user.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion rbm_suggestion = 2;
+         * </code>
+         */
+        public Builder addRbmSuggestion(
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion.Builder
+                builderForValue) {
+          if (rbmSuggestionBuilder_ == null) {
+            ensureRbmSuggestionIsMutable();
+            rbmSuggestion_.add(builderForValue.build());
+            onChanged();
+          } else {
+            rbmSuggestionBuilder_.addMessage(builderForValue.build());
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. One or more suggestions to show to the user.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion rbm_suggestion = 2;
+         * </code>
+         */
+        public Builder addRbmSuggestion(
+            int index,
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion.Builder
+                builderForValue) {
+          if (rbmSuggestionBuilder_ == null) {
+            ensureRbmSuggestionIsMutable();
+            rbmSuggestion_.add(index, builderForValue.build());
+            onChanged();
+          } else {
+            rbmSuggestionBuilder_.addMessage(index, builderForValue.build());
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. One or more suggestions to show to the user.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion rbm_suggestion = 2;
+         * </code>
+         */
+        public Builder addAllRbmSuggestion(
+            java.lang.Iterable<
+                    ? extends com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion>
+                values) {
+          if (rbmSuggestionBuilder_ == null) {
+            ensureRbmSuggestionIsMutable();
+            com.google.protobuf.AbstractMessageLite.Builder.addAll(values, rbmSuggestion_);
+            onChanged();
+          } else {
+            rbmSuggestionBuilder_.addAllMessages(values);
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. One or more suggestions to show to the user.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion rbm_suggestion = 2;
+         * </code>
+         */
+        public Builder clearRbmSuggestion() {
+          if (rbmSuggestionBuilder_ == null) {
+            rbmSuggestion_ = java.util.Collections.emptyList();
+            bitField0_ = (bitField0_ & ~0x00000002);
+            onChanged();
+          } else {
+            rbmSuggestionBuilder_.clear();
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. One or more suggestions to show to the user.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion rbm_suggestion = 2;
+         * </code>
+         */
+        public Builder removeRbmSuggestion(int index) {
+          if (rbmSuggestionBuilder_ == null) {
+            ensureRbmSuggestionIsMutable();
+            rbmSuggestion_.remove(index);
+            onChanged();
+          } else {
+            rbmSuggestionBuilder_.remove(index);
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. One or more suggestions to show to the user.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion rbm_suggestion = 2;
+         * </code>
+         */
+        public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion.Builder
+            getRbmSuggestionBuilder(int index) {
+          return getRbmSuggestionFieldBuilder().getBuilder(index);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. One or more suggestions to show to the user.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion rbm_suggestion = 2;
+         * </code>
+         */
+        public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestionOrBuilder
+            getRbmSuggestionOrBuilder(int index) {
+          if (rbmSuggestionBuilder_ == null) {
+            return rbmSuggestion_.get(index);
+          } else {
+            return rbmSuggestionBuilder_.getMessageOrBuilder(index);
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. One or more suggestions to show to the user.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion rbm_suggestion = 2;
+         * </code>
+         */
+        public java.util.List<
+                ? extends com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestionOrBuilder>
+            getRbmSuggestionOrBuilderList() {
+          if (rbmSuggestionBuilder_ != null) {
+            return rbmSuggestionBuilder_.getMessageOrBuilderList();
+          } else {
+            return java.util.Collections.unmodifiableList(rbmSuggestion_);
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. One or more suggestions to show to the user.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion rbm_suggestion = 2;
+         * </code>
+         */
+        public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion.Builder
+            addRbmSuggestionBuilder() {
+          return getRbmSuggestionFieldBuilder()
+              .addBuilder(
+                  com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion
+                      .getDefaultInstance());
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. One or more suggestions to show to the user.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion rbm_suggestion = 2;
+         * </code>
+         */
+        public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion.Builder
+            addRbmSuggestionBuilder(int index) {
+          return getRbmSuggestionFieldBuilder()
+              .addBuilder(
+                  index,
+                  com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion
+                      .getDefaultInstance());
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. One or more suggestions to show to the user.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion rbm_suggestion = 2;
+         * </code>
+         */
+        public java.util.List<
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion.Builder>
+            getRbmSuggestionBuilderList() {
+          return getRbmSuggestionFieldBuilder().getBuilderList();
+        }
+
+        private com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion,
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion.Builder,
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestionOrBuilder>
+            getRbmSuggestionFieldBuilder() {
+          if (rbmSuggestionBuilder_ == null) {
+            rbmSuggestionBuilder_ =
+                new com.google.protobuf.RepeatedFieldBuilderV3<
+                    com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion,
+                    com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion.Builder,
+                    com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestionOrBuilder>(
+                    rbmSuggestion_,
+                    ((bitField0_ & 0x00000002) != 0),
+                    getParentForChildren(),
+                    isClean());
+            rbmSuggestion_ = null;
+          }
+          return rbmSuggestionBuilder_;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.v2beta1.Intent.Message.RbmText)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.v2beta1.Intent.Message.RbmText)
+      private static final com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmText
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE = new com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmText();
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmText
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<RbmText> PARSER =
+          new com.google.protobuf.AbstractParser<RbmText>() {
+            @java.lang.Override
+            public RbmText parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              return new RbmText(input, extensionRegistry);
+            }
+          };
+
+      public static com.google.protobuf.Parser<RbmText> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<RbmText> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmText
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    public interface RbmCarouselCardOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The width of the cards in the carousel.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard.CardWidth card_width = 1;
+       * </code>
+       */
+      int getCardWidthValue();
+      /**
+       *
+       *
+       * <pre>
+       * Required. The width of the cards in the carousel.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard.CardWidth card_width = 1;
+       * </code>
+       */
+      com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard.CardWidth getCardWidth();
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The cards in the carousel. A carousel must have at least
+       * 2 cards and at most 10.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent card_contents = 2;
+       * </code>
+       */
+      java.util.List<com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent>
+          getCardContentsList();
+      /**
+       *
+       *
+       * <pre>
+       * Required. The cards in the carousel. A carousel must have at least
+       * 2 cards and at most 10.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent card_contents = 2;
+       * </code>
+       */
+      com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent getCardContents(int index);
+      /**
+       *
+       *
+       * <pre>
+       * Required. The cards in the carousel. A carousel must have at least
+       * 2 cards and at most 10.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent card_contents = 2;
+       * </code>
+       */
+      int getCardContentsCount();
+      /**
+       *
+       *
+       * <pre>
+       * Required. The cards in the carousel. A carousel must have at least
+       * 2 cards and at most 10.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent card_contents = 2;
+       * </code>
+       */
+      java.util.List<
+              ? extends com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContentOrBuilder>
+          getCardContentsOrBuilderList();
+      /**
+       *
+       *
+       * <pre>
+       * Required. The cards in the carousel. A carousel must have at least
+       * 2 cards and at most 10.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent card_contents = 2;
+       * </code>
+       */
+      com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContentOrBuilder
+          getCardContentsOrBuilder(int index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Carousel Rich Business Messaging (RBM) rich card.
+     * Rich cards allow you to respond to users with more vivid content, e.g.
+     * with media and suggestions.
+     * For more details about RBM rich cards, please see:
+     * https://developers.google.com/rcs-business-messaging/rbm/guides/build/send-messages#rich-cards.
+     * If you want to show a single card with more control over the layout,
+     * please use [RbmStandaloneCard][google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard] instead.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard}
+     */
+    public static final class RbmCarouselCard extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard)
+        RbmCarouselCardOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use RbmCarouselCard.newBuilder() to construct.
+      private RbmCarouselCard(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private RbmCarouselCard() {
+        cardWidth_ = 0;
+        cardContents_ = java.util.Collections.emptyList();
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+        return this.unknownFields;
+      }
+
+      private RbmCarouselCard(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        int mutable_bitField0_ = 0;
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  int rawValue = input.readEnum();
+
+                  cardWidth_ = rawValue;
+                  break;
+                }
+              case 18:
+                {
+                  if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                    cardContents_ =
+                        new java.util.ArrayList<
+                            com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent>();
+                    mutable_bitField0_ |= 0x00000002;
+                  }
+                  cardContents_.add(
+                      input.readMessage(
+                          com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent
+                              .parser(),
+                          extensionRegistry));
+                  break;
+                }
+              default:
+                {
+                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                    done = true;
+                  }
+                  break;
+                }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(this);
+        } finally {
+          if (((mutable_bitField0_ & 0x00000002) != 0)) {
+            cardContents_ = java.util.Collections.unmodifiableList(cardContents_);
+          }
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dialogflow.v2beta1.IntentProto
+            .internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_RbmCarouselCard_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dialogflow.v2beta1.IntentProto
+            .internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_RbmCarouselCard_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard.class,
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard.Builder.class);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The width of the cards in the carousel.
+       * </pre>
+       *
+       * Protobuf enum {@code
+       * google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard.CardWidth}
+       */
+      public enum CardWidth implements com.google.protobuf.ProtocolMessageEnum {
+        /**
+         *
+         *
+         * <pre>
+         * Not specified.
+         * </pre>
+         *
+         * <code>CARD_WIDTH_UNSPECIFIED = 0;</code>
+         */
+        CARD_WIDTH_UNSPECIFIED(0),
+        /**
+         *
+         *
+         * <pre>
+         * 120 DP. Note that tall media cannot be used.
+         * </pre>
+         *
+         * <code>SMALL = 1;</code>
+         */
+        SMALL(1),
+        /**
+         *
+         *
+         * <pre>
+         * 232 DP.
+         * </pre>
+         *
+         * <code>MEDIUM = 2;</code>
+         */
+        MEDIUM(2),
+        UNRECOGNIZED(-1),
+        ;
+
+        /**
+         *
+         *
+         * <pre>
+         * Not specified.
+         * </pre>
+         *
+         * <code>CARD_WIDTH_UNSPECIFIED = 0;</code>
+         */
+        public static final int CARD_WIDTH_UNSPECIFIED_VALUE = 0;
+        /**
+         *
+         *
+         * <pre>
+         * 120 DP. Note that tall media cannot be used.
+         * </pre>
+         *
+         * <code>SMALL = 1;</code>
+         */
+        public static final int SMALL_VALUE = 1;
+        /**
+         *
+         *
+         * <pre>
+         * 232 DP.
+         * </pre>
+         *
+         * <code>MEDIUM = 2;</code>
+         */
+        public static final int MEDIUM_VALUE = 2;
+
+        public final int getNumber() {
+          if (this == UNRECOGNIZED) {
+            throw new java.lang.IllegalArgumentException(
+                "Can't get the number of an unknown enum value.");
+          }
+          return value;
+        }
+
+        /** @deprecated Use {@link #forNumber(int)} instead. */
+        @java.lang.Deprecated
+        public static CardWidth valueOf(int value) {
+          return forNumber(value);
+        }
+
+        public static CardWidth forNumber(int value) {
+          switch (value) {
+            case 0:
+              return CARD_WIDTH_UNSPECIFIED;
+            case 1:
+              return SMALL;
+            case 2:
+              return MEDIUM;
+            default:
+              return null;
+          }
+        }
+
+        public static com.google.protobuf.Internal.EnumLiteMap<CardWidth> internalGetValueMap() {
+          return internalValueMap;
+        }
+
+        private static final com.google.protobuf.Internal.EnumLiteMap<CardWidth> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<CardWidth>() {
+              public CardWidth findValueByNumber(int number) {
+                return CardWidth.forNumber(number);
+              }
+            };
+
+        public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+          return getDescriptor().getValues().get(ordinal());
+        }
+
+        public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+          return getDescriptor();
+        }
+
+        public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+          return com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard.getDescriptor()
+              .getEnumTypes()
+              .get(0);
+        }
+
+        private static final CardWidth[] VALUES = values();
+
+        public static CardWidth valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+          if (desc.getType() != getDescriptor()) {
+            throw new java.lang.IllegalArgumentException(
+                "EnumValueDescriptor is not for this type.");
+          }
+          if (desc.getIndex() == -1) {
+            return UNRECOGNIZED;
+          }
+          return VALUES[desc.getIndex()];
+        }
+
+        private final int value;
+
+        private CardWidth(int value) {
+          this.value = value;
+        }
+
+        // @@protoc_insertion_point(enum_scope:google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard.CardWidth)
+      }
+
+      private int bitField0_;
+      public static final int CARD_WIDTH_FIELD_NUMBER = 1;
+      private int cardWidth_;
+      /**
+       *
+       *
+       * <pre>
+       * Required. The width of the cards in the carousel.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard.CardWidth card_width = 1;
+       * </code>
+       */
+      public int getCardWidthValue() {
+        return cardWidth_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The width of the cards in the carousel.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard.CardWidth card_width = 1;
+       * </code>
+       */
+      public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard.CardWidth
+          getCardWidth() {
+        @SuppressWarnings("deprecation")
+        com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard.CardWidth result =
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard.CardWidth.valueOf(
+                cardWidth_);
+        return result == null
+            ? com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard.CardWidth
+                .UNRECOGNIZED
+            : result;
+      }
+
+      public static final int CARD_CONTENTS_FIELD_NUMBER = 2;
+      private java.util.List<com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent>
+          cardContents_;
+      /**
+       *
+       *
+       * <pre>
+       * Required. The cards in the carousel. A carousel must have at least
+       * 2 cards and at most 10.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent card_contents = 2;
+       * </code>
+       */
+      public java.util.List<com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent>
+          getCardContentsList() {
+        return cardContents_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The cards in the carousel. A carousel must have at least
+       * 2 cards and at most 10.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent card_contents = 2;
+       * </code>
+       */
+      public java.util.List<
+              ? extends com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContentOrBuilder>
+          getCardContentsOrBuilderList() {
+        return cardContents_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The cards in the carousel. A carousel must have at least
+       * 2 cards and at most 10.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent card_contents = 2;
+       * </code>
+       */
+      public int getCardContentsCount() {
+        return cardContents_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The cards in the carousel. A carousel must have at least
+       * 2 cards and at most 10.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent card_contents = 2;
+       * </code>
+       */
+      public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent getCardContents(
+          int index) {
+        return cardContents_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The cards in the carousel. A carousel must have at least
+       * 2 cards and at most 10.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent card_contents = 2;
+       * </code>
+       */
+      public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContentOrBuilder
+          getCardContentsOrBuilder(int index) {
+        return cardContents_.get(index);
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (cardWidth_
+            != com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard.CardWidth
+                .CARD_WIDTH_UNSPECIFIED
+                .getNumber()) {
+          output.writeEnum(1, cardWidth_);
+        }
+        for (int i = 0; i < cardContents_.size(); i++) {
+          output.writeMessage(2, cardContents_.get(i));
+        }
+        unknownFields.writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (cardWidth_
+            != com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard.CardWidth
+                .CARD_WIDTH_UNSPECIFIED
+                .getNumber()) {
+          size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, cardWidth_);
+        }
+        for (int i = 0; i < cardContents_.size(); i++) {
+          size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, cardContents_.get(i));
+        }
+        size += unknownFields.getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj instanceof com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard other =
+            (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard) obj;
+
+        if (cardWidth_ != other.cardWidth_) return false;
+        if (!getCardContentsList().equals(other.getCardContentsList())) return false;
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + CARD_WIDTH_FIELD_NUMBER;
+        hash = (53 * hash) + cardWidth_;
+        if (getCardContentsCount() > 0) {
+          hash = (37 * hash) + CARD_CONTENTS_FIELD_NUMBER;
+          hash = (53 * hash) + getCardContentsList().hashCode();
+        }
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard parseFrom(
+          java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard parseFrom(
+          java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard parseFrom(
+          byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard parseFrom(
+          byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard parseFrom(
+          java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard parseFrom(
+          java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard parseFrom(
+          com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Carousel Rich Business Messaging (RBM) rich card.
+       * Rich cards allow you to respond to users with more vivid content, e.g.
+       * with media and suggestions.
+       * For more details about RBM rich cards, please see:
+       * https://developers.google.com/rcs-business-messaging/rbm/guides/build/send-messages#rich-cards.
+       * If you want to show a single card with more control over the layout,
+       * please use [RbmStandaloneCard][google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard] instead.
+       * </pre>
+       *
+       * Protobuf type {@code google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard)
+          com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCardOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.dialogflow.v2beta1.IntentProto
+              .internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_RbmCarouselCard_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.dialogflow.v2beta1.IntentProto
+              .internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_RbmCarouselCard_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard.class,
+                  com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard.Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+            getCardContentsFieldBuilder();
+          }
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          cardWidth_ = 0;
+
+          if (cardContentsBuilder_ == null) {
+            cardContents_ = java.util.Collections.emptyList();
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            cardContentsBuilder_.clear();
+          }
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.dialogflow.v2beta1.IntentProto
+              .internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_RbmCarouselCard_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard
+            getDefaultInstanceForType() {
+          return com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard build() {
+          com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard buildPartial() {
+          com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard result =
+              new com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard(this);
+          int from_bitField0_ = bitField0_;
+          int to_bitField0_ = 0;
+          result.cardWidth_ = cardWidth_;
+          if (cardContentsBuilder_ == null) {
+            if (((bitField0_ & 0x00000002) != 0)) {
+              cardContents_ = java.util.Collections.unmodifiableList(cardContents_);
+              bitField0_ = (bitField0_ & ~0x00000002);
+            }
+            result.cardContents_ = cardContents_;
+          } else {
+            result.cardContents_ = cardContentsBuilder_.build();
+          }
+          result.bitField0_ = to_bitField0_;
+          onBuilt();
+          return result;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard) {
+            return mergeFrom(
+                (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard) other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard other) {
+          if (other
+              == com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard
+                  .getDefaultInstance()) return this;
+          if (other.cardWidth_ != 0) {
+            setCardWidthValue(other.getCardWidthValue());
+          }
+          if (cardContentsBuilder_ == null) {
+            if (!other.cardContents_.isEmpty()) {
+              if (cardContents_.isEmpty()) {
+                cardContents_ = other.cardContents_;
+                bitField0_ = (bitField0_ & ~0x00000002);
+              } else {
+                ensureCardContentsIsMutable();
+                cardContents_.addAll(other.cardContents_);
+              }
+              onChanged();
+            }
+          } else {
+            if (!other.cardContents_.isEmpty()) {
+              if (cardContentsBuilder_.isEmpty()) {
+                cardContentsBuilder_.dispose();
+                cardContentsBuilder_ = null;
+                cardContents_ = other.cardContents_;
+                bitField0_ = (bitField0_ & ~0x00000002);
+                cardContentsBuilder_ =
+                    com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                        ? getCardContentsFieldBuilder()
+                        : null;
+              } else {
+                cardContentsBuilder_.addAllMessages(other.cardContents_);
+              }
+            }
+          }
+          this.mergeUnknownFields(other.unknownFields);
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage =
+                (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard)
+                    e.getUnfinishedMessage();
+            throw e.unwrapIOException();
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+
+        private int bitField0_;
+
+        private int cardWidth_ = 0;
+        /**
+         *
+         *
+         * <pre>
+         * Required. The width of the cards in the carousel.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard.CardWidth card_width = 1;
+         * </code>
+         */
+        public int getCardWidthValue() {
+          return cardWidth_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. The width of the cards in the carousel.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard.CardWidth card_width = 1;
+         * </code>
+         */
+        public Builder setCardWidthValue(int value) {
+          cardWidth_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. The width of the cards in the carousel.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard.CardWidth card_width = 1;
+         * </code>
+         */
+        public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard.CardWidth
+            getCardWidth() {
+          @SuppressWarnings("deprecation")
+          com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard.CardWidth result =
+              com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard.CardWidth.valueOf(
+                  cardWidth_);
+          return result == null
+              ? com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard.CardWidth
+                  .UNRECOGNIZED
+              : result;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. The width of the cards in the carousel.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard.CardWidth card_width = 1;
+         * </code>
+         */
+        public Builder setCardWidth(
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard.CardWidth value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+
+          cardWidth_ = value.getNumber();
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. The width of the cards in the carousel.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard.CardWidth card_width = 1;
+         * </code>
+         */
+        public Builder clearCardWidth() {
+
+          cardWidth_ = 0;
+          onChanged();
+          return this;
+        }
+
+        private java.util.List<com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent>
+            cardContents_ = java.util.Collections.emptyList();
+
+        private void ensureCardContentsIsMutable() {
+          if (!((bitField0_ & 0x00000002) != 0)) {
+            cardContents_ =
+                new java.util.ArrayList<
+                    com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent>(
+                    cardContents_);
+            bitField0_ |= 0x00000002;
+          }
+        }
+
+        private com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent,
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.Builder,
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContentOrBuilder>
+            cardContentsBuilder_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The cards in the carousel. A carousel must have at least
+         * 2 cards and at most 10.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent card_contents = 2;
+         * </code>
+         */
+        public java.util.List<com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent>
+            getCardContentsList() {
+          if (cardContentsBuilder_ == null) {
+            return java.util.Collections.unmodifiableList(cardContents_);
+          } else {
+            return cardContentsBuilder_.getMessageList();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. The cards in the carousel. A carousel must have at least
+         * 2 cards and at most 10.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent card_contents = 2;
+         * </code>
+         */
+        public int getCardContentsCount() {
+          if (cardContentsBuilder_ == null) {
+            return cardContents_.size();
+          } else {
+            return cardContentsBuilder_.getCount();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. The cards in the carousel. A carousel must have at least
+         * 2 cards and at most 10.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent card_contents = 2;
+         * </code>
+         */
+        public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent getCardContents(
+            int index) {
+          if (cardContentsBuilder_ == null) {
+            return cardContents_.get(index);
+          } else {
+            return cardContentsBuilder_.getMessage(index);
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. The cards in the carousel. A carousel must have at least
+         * 2 cards and at most 10.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent card_contents = 2;
+         * </code>
+         */
+        public Builder setCardContents(
+            int index, com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent value) {
+          if (cardContentsBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureCardContentsIsMutable();
+            cardContents_.set(index, value);
+            onChanged();
+          } else {
+            cardContentsBuilder_.setMessage(index, value);
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. The cards in the carousel. A carousel must have at least
+         * 2 cards and at most 10.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent card_contents = 2;
+         * </code>
+         */
+        public Builder setCardContents(
+            int index,
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.Builder
+                builderForValue) {
+          if (cardContentsBuilder_ == null) {
+            ensureCardContentsIsMutable();
+            cardContents_.set(index, builderForValue.build());
+            onChanged();
+          } else {
+            cardContentsBuilder_.setMessage(index, builderForValue.build());
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. The cards in the carousel. A carousel must have at least
+         * 2 cards and at most 10.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent card_contents = 2;
+         * </code>
+         */
+        public Builder addCardContents(
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent value) {
+          if (cardContentsBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureCardContentsIsMutable();
+            cardContents_.add(value);
+            onChanged();
+          } else {
+            cardContentsBuilder_.addMessage(value);
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. The cards in the carousel. A carousel must have at least
+         * 2 cards and at most 10.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent card_contents = 2;
+         * </code>
+         */
+        public Builder addCardContents(
+            int index, com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent value) {
+          if (cardContentsBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureCardContentsIsMutable();
+            cardContents_.add(index, value);
+            onChanged();
+          } else {
+            cardContentsBuilder_.addMessage(index, value);
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. The cards in the carousel. A carousel must have at least
+         * 2 cards and at most 10.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent card_contents = 2;
+         * </code>
+         */
+        public Builder addCardContents(
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.Builder
+                builderForValue) {
+          if (cardContentsBuilder_ == null) {
+            ensureCardContentsIsMutable();
+            cardContents_.add(builderForValue.build());
+            onChanged();
+          } else {
+            cardContentsBuilder_.addMessage(builderForValue.build());
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. The cards in the carousel. A carousel must have at least
+         * 2 cards and at most 10.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent card_contents = 2;
+         * </code>
+         */
+        public Builder addCardContents(
+            int index,
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.Builder
+                builderForValue) {
+          if (cardContentsBuilder_ == null) {
+            ensureCardContentsIsMutable();
+            cardContents_.add(index, builderForValue.build());
+            onChanged();
+          } else {
+            cardContentsBuilder_.addMessage(index, builderForValue.build());
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. The cards in the carousel. A carousel must have at least
+         * 2 cards and at most 10.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent card_contents = 2;
+         * </code>
+         */
+        public Builder addAllCardContents(
+            java.lang.Iterable<
+                    ? extends com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent>
+                values) {
+          if (cardContentsBuilder_ == null) {
+            ensureCardContentsIsMutable();
+            com.google.protobuf.AbstractMessageLite.Builder.addAll(values, cardContents_);
+            onChanged();
+          } else {
+            cardContentsBuilder_.addAllMessages(values);
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. The cards in the carousel. A carousel must have at least
+         * 2 cards and at most 10.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent card_contents = 2;
+         * </code>
+         */
+        public Builder clearCardContents() {
+          if (cardContentsBuilder_ == null) {
+            cardContents_ = java.util.Collections.emptyList();
+            bitField0_ = (bitField0_ & ~0x00000002);
+            onChanged();
+          } else {
+            cardContentsBuilder_.clear();
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. The cards in the carousel. A carousel must have at least
+         * 2 cards and at most 10.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent card_contents = 2;
+         * </code>
+         */
+        public Builder removeCardContents(int index) {
+          if (cardContentsBuilder_ == null) {
+            ensureCardContentsIsMutable();
+            cardContents_.remove(index);
+            onChanged();
+          } else {
+            cardContentsBuilder_.remove(index);
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. The cards in the carousel. A carousel must have at least
+         * 2 cards and at most 10.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent card_contents = 2;
+         * </code>
+         */
+        public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.Builder
+            getCardContentsBuilder(int index) {
+          return getCardContentsFieldBuilder().getBuilder(index);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. The cards in the carousel. A carousel must have at least
+         * 2 cards and at most 10.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent card_contents = 2;
+         * </code>
+         */
+        public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContentOrBuilder
+            getCardContentsOrBuilder(int index) {
+          if (cardContentsBuilder_ == null) {
+            return cardContents_.get(index);
+          } else {
+            return cardContentsBuilder_.getMessageOrBuilder(index);
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. The cards in the carousel. A carousel must have at least
+         * 2 cards and at most 10.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent card_contents = 2;
+         * </code>
+         */
+        public java.util.List<
+                ? extends
+                    com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContentOrBuilder>
+            getCardContentsOrBuilderList() {
+          if (cardContentsBuilder_ != null) {
+            return cardContentsBuilder_.getMessageOrBuilderList();
+          } else {
+            return java.util.Collections.unmodifiableList(cardContents_);
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. The cards in the carousel. A carousel must have at least
+         * 2 cards and at most 10.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent card_contents = 2;
+         * </code>
+         */
+        public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.Builder
+            addCardContentsBuilder() {
+          return getCardContentsFieldBuilder()
+              .addBuilder(
+                  com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent
+                      .getDefaultInstance());
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. The cards in the carousel. A carousel must have at least
+         * 2 cards and at most 10.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent card_contents = 2;
+         * </code>
+         */
+        public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.Builder
+            addCardContentsBuilder(int index) {
+          return getCardContentsFieldBuilder()
+              .addBuilder(
+                  index,
+                  com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent
+                      .getDefaultInstance());
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. The cards in the carousel. A carousel must have at least
+         * 2 cards and at most 10.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent card_contents = 2;
+         * </code>
+         */
+        public java.util.List<
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.Builder>
+            getCardContentsBuilderList() {
+          return getCardContentsFieldBuilder().getBuilderList();
+        }
+
+        private com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent,
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.Builder,
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContentOrBuilder>
+            getCardContentsFieldBuilder() {
+          if (cardContentsBuilder_ == null) {
+            cardContentsBuilder_ =
+                new com.google.protobuf.RepeatedFieldBuilderV3<
+                    com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent,
+                    com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.Builder,
+                    com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContentOrBuilder>(
+                    cardContents_,
+                    ((bitField0_ & 0x00000002) != 0),
+                    getParentForChildren(),
+                    isClean());
+            cardContents_ = null;
+          }
+          return cardContentsBuilder_;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard)
+      private static final com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE = new com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard();
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<RbmCarouselCard> PARSER =
+          new com.google.protobuf.AbstractParser<RbmCarouselCard>() {
+            @java.lang.Override
+            public RbmCarouselCard parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              return new RbmCarouselCard(input, extensionRegistry);
+            }
+          };
+
+      public static com.google.protobuf.Parser<RbmCarouselCard> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<RbmCarouselCard> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    public interface RbmStandaloneCardOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Orientation of the card.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard.CardOrientation card_orientation = 1;
+       * </code>
+       */
+      int getCardOrientationValue();
+      /**
+       *
+       *
+       * <pre>
+       * Required. Orientation of the card.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard.CardOrientation card_orientation = 1;
+       * </code>
+       */
+      com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard.CardOrientation
+          getCardOrientation();
+
+      /**
+       *
+       *
+       * <pre>
+       * Required if orientation is horizontal.
+       * Image preview alignment for standalone cards with horizontal layout.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard.ThumbnailImageAlignment thumbnail_image_alignment = 2;
+       * </code>
+       */
+      int getThumbnailImageAlignmentValue();
+      /**
+       *
+       *
+       * <pre>
+       * Required if orientation is horizontal.
+       * Image preview alignment for standalone cards with horizontal layout.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard.ThumbnailImageAlignment thumbnail_image_alignment = 2;
+       * </code>
+       */
+      com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard.ThumbnailImageAlignment
+          getThumbnailImageAlignment();
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Card content.
+       * </pre>
+       *
+       * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent card_content = 3;
+       * </code>
+       */
+      boolean hasCardContent();
+      /**
+       *
+       *
+       * <pre>
+       * Required. Card content.
+       * </pre>
+       *
+       * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent card_content = 3;
+       * </code>
+       */
+      com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent getCardContent();
+      /**
+       *
+       *
+       * <pre>
+       * Required. Card content.
+       * </pre>
+       *
+       * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent card_content = 3;
+       * </code>
+       */
+      com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContentOrBuilder
+          getCardContentOrBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Standalone Rich Business Messaging (RBM) rich card.
+     * Rich cards allow you to respond to users with more vivid content, e.g.
+     * with media and suggestions.
+     * For more details about RBM rich cards, please see:
+     * https://developers.google.com/rcs-business-messaging/rbm/guides/build/send-messages#rich-cards.
+     * You can group multiple rich cards into one using [RbmCarouselCard][google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard] but
+     * carousel cards will give you less control over the card layout.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard}
+     */
+    public static final class RbmStandaloneCard extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard)
+        RbmStandaloneCardOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use RbmStandaloneCard.newBuilder() to construct.
+      private RbmStandaloneCard(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private RbmStandaloneCard() {
+        cardOrientation_ = 0;
+        thumbnailImageAlignment_ = 0;
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+        return this.unknownFields;
+      }
+
+      private RbmStandaloneCard(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        int mutable_bitField0_ = 0;
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  int rawValue = input.readEnum();
+
+                  cardOrientation_ = rawValue;
+                  break;
+                }
+              case 16:
+                {
+                  int rawValue = input.readEnum();
+
+                  thumbnailImageAlignment_ = rawValue;
+                  break;
+                }
+              case 26:
+                {
+                  com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.Builder
+                      subBuilder = null;
+                  if (cardContent_ != null) {
+                    subBuilder = cardContent_.toBuilder();
+                  }
+                  cardContent_ =
+                      input.readMessage(
+                          com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent
+                              .parser(),
+                          extensionRegistry);
+                  if (subBuilder != null) {
+                    subBuilder.mergeFrom(cardContent_);
+                    cardContent_ = subBuilder.buildPartial();
+                  }
+
+                  break;
+                }
+              default:
+                {
+                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                    done = true;
+                  }
+                  break;
+                }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(this);
+        } finally {
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dialogflow.v2beta1.IntentProto
+            .internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_RbmStandaloneCard_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dialogflow.v2beta1.IntentProto
+            .internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_RbmStandaloneCard_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard.class,
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard.Builder.class);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Orientation of the card.
+       * </pre>
+       *
+       * Protobuf enum {@code
+       * google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard.CardOrientation}
+       */
+      public enum CardOrientation implements com.google.protobuf.ProtocolMessageEnum {
+        /**
+         *
+         *
+         * <pre>
+         * Not specified.
+         * </pre>
+         *
+         * <code>CARD_ORIENTATION_UNSPECIFIED = 0;</code>
+         */
+        CARD_ORIENTATION_UNSPECIFIED(0),
+        /**
+         *
+         *
+         * <pre>
+         * Horizontal layout.
+         * </pre>
+         *
+         * <code>HORIZONTAL = 1;</code>
+         */
+        HORIZONTAL(1),
+        /**
+         *
+         *
+         * <pre>
+         * Vertical layout.
+         * </pre>
+         *
+         * <code>VERTICAL = 2;</code>
+         */
+        VERTICAL(2),
+        UNRECOGNIZED(-1),
+        ;
+
+        /**
+         *
+         *
+         * <pre>
+         * Not specified.
+         * </pre>
+         *
+         * <code>CARD_ORIENTATION_UNSPECIFIED = 0;</code>
+         */
+        public static final int CARD_ORIENTATION_UNSPECIFIED_VALUE = 0;
+        /**
+         *
+         *
+         * <pre>
+         * Horizontal layout.
+         * </pre>
+         *
+         * <code>HORIZONTAL = 1;</code>
+         */
+        public static final int HORIZONTAL_VALUE = 1;
+        /**
+         *
+         *
+         * <pre>
+         * Vertical layout.
+         * </pre>
+         *
+         * <code>VERTICAL = 2;</code>
+         */
+        public static final int VERTICAL_VALUE = 2;
+
+        public final int getNumber() {
+          if (this == UNRECOGNIZED) {
+            throw new java.lang.IllegalArgumentException(
+                "Can't get the number of an unknown enum value.");
+          }
+          return value;
+        }
+
+        /** @deprecated Use {@link #forNumber(int)} instead. */
+        @java.lang.Deprecated
+        public static CardOrientation valueOf(int value) {
+          return forNumber(value);
+        }
+
+        public static CardOrientation forNumber(int value) {
+          switch (value) {
+            case 0:
+              return CARD_ORIENTATION_UNSPECIFIED;
+            case 1:
+              return HORIZONTAL;
+            case 2:
+              return VERTICAL;
+            default:
+              return null;
+          }
+        }
+
+        public static com.google.protobuf.Internal.EnumLiteMap<CardOrientation>
+            internalGetValueMap() {
+          return internalValueMap;
+        }
+
+        private static final com.google.protobuf.Internal.EnumLiteMap<CardOrientation>
+            internalValueMap =
+                new com.google.protobuf.Internal.EnumLiteMap<CardOrientation>() {
+                  public CardOrientation findValueByNumber(int number) {
+                    return CardOrientation.forNumber(number);
+                  }
+                };
+
+        public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+          return getDescriptor().getValues().get(ordinal());
+        }
+
+        public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+          return getDescriptor();
+        }
+
+        public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+          return com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard
+              .getDescriptor()
+              .getEnumTypes()
+              .get(0);
+        }
+
+        private static final CardOrientation[] VALUES = values();
+
+        public static CardOrientation valueOf(
+            com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+          if (desc.getType() != getDescriptor()) {
+            throw new java.lang.IllegalArgumentException(
+                "EnumValueDescriptor is not for this type.");
+          }
+          if (desc.getIndex() == -1) {
+            return UNRECOGNIZED;
+          }
+          return VALUES[desc.getIndex()];
+        }
+
+        private final int value;
+
+        private CardOrientation(int value) {
+          this.value = value;
+        }
+
+        // @@protoc_insertion_point(enum_scope:google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard.CardOrientation)
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Thumbnail preview alignment for standalone cards with horizontal
+       * layout.
+       * </pre>
+       *
+       * Protobuf enum {@code
+       * google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard.ThumbnailImageAlignment}
+       */
+      public enum ThumbnailImageAlignment implements com.google.protobuf.ProtocolMessageEnum {
+        /**
+         *
+         *
+         * <pre>
+         * Not specified.
+         * </pre>
+         *
+         * <code>THUMBNAIL_IMAGE_ALIGNMENT_UNSPECIFIED = 0;</code>
+         */
+        THUMBNAIL_IMAGE_ALIGNMENT_UNSPECIFIED(0),
+        /**
+         *
+         *
+         * <pre>
+         * Thumbnail preview is left-aligned.
+         * </pre>
+         *
+         * <code>LEFT = 1;</code>
+         */
+        LEFT(1),
+        /**
+         *
+         *
+         * <pre>
+         * Thumbnail preview is right-aligned.
+         * </pre>
+         *
+         * <code>RIGHT = 2;</code>
+         */
+        RIGHT(2),
+        UNRECOGNIZED(-1),
+        ;
+
+        /**
+         *
+         *
+         * <pre>
+         * Not specified.
+         * </pre>
+         *
+         * <code>THUMBNAIL_IMAGE_ALIGNMENT_UNSPECIFIED = 0;</code>
+         */
+        public static final int THUMBNAIL_IMAGE_ALIGNMENT_UNSPECIFIED_VALUE = 0;
+        /**
+         *
+         *
+         * <pre>
+         * Thumbnail preview is left-aligned.
+         * </pre>
+         *
+         * <code>LEFT = 1;</code>
+         */
+        public static final int LEFT_VALUE = 1;
+        /**
+         *
+         *
+         * <pre>
+         * Thumbnail preview is right-aligned.
+         * </pre>
+         *
+         * <code>RIGHT = 2;</code>
+         */
+        public static final int RIGHT_VALUE = 2;
+
+        public final int getNumber() {
+          if (this == UNRECOGNIZED) {
+            throw new java.lang.IllegalArgumentException(
+                "Can't get the number of an unknown enum value.");
+          }
+          return value;
+        }
+
+        /** @deprecated Use {@link #forNumber(int)} instead. */
+        @java.lang.Deprecated
+        public static ThumbnailImageAlignment valueOf(int value) {
+          return forNumber(value);
+        }
+
+        public static ThumbnailImageAlignment forNumber(int value) {
+          switch (value) {
+            case 0:
+              return THUMBNAIL_IMAGE_ALIGNMENT_UNSPECIFIED;
+            case 1:
+              return LEFT;
+            case 2:
+              return RIGHT;
+            default:
+              return null;
+          }
+        }
+
+        public static com.google.protobuf.Internal.EnumLiteMap<ThumbnailImageAlignment>
+            internalGetValueMap() {
+          return internalValueMap;
+        }
+
+        private static final com.google.protobuf.Internal.EnumLiteMap<ThumbnailImageAlignment>
+            internalValueMap =
+                new com.google.protobuf.Internal.EnumLiteMap<ThumbnailImageAlignment>() {
+                  public ThumbnailImageAlignment findValueByNumber(int number) {
+                    return ThumbnailImageAlignment.forNumber(number);
+                  }
+                };
+
+        public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+          return getDescriptor().getValues().get(ordinal());
+        }
+
+        public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+          return getDescriptor();
+        }
+
+        public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+          return com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard
+              .getDescriptor()
+              .getEnumTypes()
+              .get(1);
+        }
+
+        private static final ThumbnailImageAlignment[] VALUES = values();
+
+        public static ThumbnailImageAlignment valueOf(
+            com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+          if (desc.getType() != getDescriptor()) {
+            throw new java.lang.IllegalArgumentException(
+                "EnumValueDescriptor is not for this type.");
+          }
+          if (desc.getIndex() == -1) {
+            return UNRECOGNIZED;
+          }
+          return VALUES[desc.getIndex()];
+        }
+
+        private final int value;
+
+        private ThumbnailImageAlignment(int value) {
+          this.value = value;
+        }
+
+        // @@protoc_insertion_point(enum_scope:google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard.ThumbnailImageAlignment)
+      }
+
+      public static final int CARD_ORIENTATION_FIELD_NUMBER = 1;
+      private int cardOrientation_;
+      /**
+       *
+       *
+       * <pre>
+       * Required. Orientation of the card.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard.CardOrientation card_orientation = 1;
+       * </code>
+       */
+      public int getCardOrientationValue() {
+        return cardOrientation_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Orientation of the card.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard.CardOrientation card_orientation = 1;
+       * </code>
+       */
+      public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard.CardOrientation
+          getCardOrientation() {
+        @SuppressWarnings("deprecation")
+        com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard.CardOrientation
+            result =
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard.CardOrientation
+                    .valueOf(cardOrientation_);
+        return result == null
+            ? com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard.CardOrientation
+                .UNRECOGNIZED
+            : result;
+      }
+
+      public static final int THUMBNAIL_IMAGE_ALIGNMENT_FIELD_NUMBER = 2;
+      private int thumbnailImageAlignment_;
+      /**
+       *
+       *
+       * <pre>
+       * Required if orientation is horizontal.
+       * Image preview alignment for standalone cards with horizontal layout.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard.ThumbnailImageAlignment thumbnail_image_alignment = 2;
+       * </code>
+       */
+      public int getThumbnailImageAlignmentValue() {
+        return thumbnailImageAlignment_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required if orientation is horizontal.
+       * Image preview alignment for standalone cards with horizontal layout.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard.ThumbnailImageAlignment thumbnail_image_alignment = 2;
+       * </code>
+       */
+      public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard
+              .ThumbnailImageAlignment
+          getThumbnailImageAlignment() {
+        @SuppressWarnings("deprecation")
+        com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard.ThumbnailImageAlignment
+            result =
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard
+                    .ThumbnailImageAlignment.valueOf(thumbnailImageAlignment_);
+        return result == null
+            ? com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard
+                .ThumbnailImageAlignment.UNRECOGNIZED
+            : result;
+      }
+
+      public static final int CARD_CONTENT_FIELD_NUMBER = 3;
+      private com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent cardContent_;
+      /**
+       *
+       *
+       * <pre>
+       * Required. Card content.
+       * </pre>
+       *
+       * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent card_content = 3;
+       * </code>
+       */
+      public boolean hasCardContent() {
+        return cardContent_ != null;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Card content.
+       * </pre>
+       *
+       * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent card_content = 3;
+       * </code>
+       */
+      public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent getCardContent() {
+        return cardContent_ == null
+            ? com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.getDefaultInstance()
+            : cardContent_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Card content.
+       * </pre>
+       *
+       * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent card_content = 3;
+       * </code>
+       */
+      public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContentOrBuilder
+          getCardContentOrBuilder() {
+        return getCardContent();
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (cardOrientation_
+            != com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard.CardOrientation
+                .CARD_ORIENTATION_UNSPECIFIED
+                .getNumber()) {
+          output.writeEnum(1, cardOrientation_);
+        }
+        if (thumbnailImageAlignment_
+            != com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard
+                .ThumbnailImageAlignment.THUMBNAIL_IMAGE_ALIGNMENT_UNSPECIFIED
+                .getNumber()) {
+          output.writeEnum(2, thumbnailImageAlignment_);
+        }
+        if (cardContent_ != null) {
+          output.writeMessage(3, getCardContent());
+        }
+        unknownFields.writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (cardOrientation_
+            != com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard.CardOrientation
+                .CARD_ORIENTATION_UNSPECIFIED
+                .getNumber()) {
+          size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, cardOrientation_);
+        }
+        if (thumbnailImageAlignment_
+            != com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard
+                .ThumbnailImageAlignment.THUMBNAIL_IMAGE_ALIGNMENT_UNSPECIFIED
+                .getNumber()) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeEnumSize(2, thumbnailImageAlignment_);
+        }
+        if (cardContent_ != null) {
+          size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getCardContent());
+        }
+        size += unknownFields.getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard other =
+            (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard) obj;
+
+        if (cardOrientation_ != other.cardOrientation_) return false;
+        if (thumbnailImageAlignment_ != other.thumbnailImageAlignment_) return false;
+        if (hasCardContent() != other.hasCardContent()) return false;
+        if (hasCardContent()) {
+          if (!getCardContent().equals(other.getCardContent())) return false;
+        }
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + CARD_ORIENTATION_FIELD_NUMBER;
+        hash = (53 * hash) + cardOrientation_;
+        hash = (37 * hash) + THUMBNAIL_IMAGE_ALIGNMENT_FIELD_NUMBER;
+        hash = (53 * hash) + thumbnailImageAlignment_;
+        if (hasCardContent()) {
+          hash = (37 * hash) + CARD_CONTENT_FIELD_NUMBER;
+          hash = (53 * hash) + getCardContent().hashCode();
+        }
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard parseFrom(
+          java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard parseFrom(
+          java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard parseFrom(
+          byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard parseFrom(
+          byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard parseFrom(
+          java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard parseFrom(
+          java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard parseFrom(
+          com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Standalone Rich Business Messaging (RBM) rich card.
+       * Rich cards allow you to respond to users with more vivid content, e.g.
+       * with media and suggestions.
+       * For more details about RBM rich cards, please see:
+       * https://developers.google.com/rcs-business-messaging/rbm/guides/build/send-messages#rich-cards.
+       * You can group multiple rich cards into one using [RbmCarouselCard][google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard] but
+       * carousel cards will give you less control over the card layout.
+       * </pre>
+       *
+       * Protobuf type {@code google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard)
+          com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCardOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.dialogflow.v2beta1.IntentProto
+              .internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_RbmStandaloneCard_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.dialogflow.v2beta1.IntentProto
+              .internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_RbmStandaloneCard_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard.class,
+                  com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard.Builder
+                      .class);
+        }
+
+        // Construct using
+        // com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          cardOrientation_ = 0;
+
+          thumbnailImageAlignment_ = 0;
+
+          if (cardContentBuilder_ == null) {
+            cardContent_ = null;
+          } else {
+            cardContent_ = null;
+            cardContentBuilder_ = null;
+          }
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.dialogflow.v2beta1.IntentProto
+              .internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_RbmStandaloneCard_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard
+            getDefaultInstanceForType() {
+          return com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard build() {
+          com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard buildPartial() {
+          com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard result =
+              new com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard(this);
+          result.cardOrientation_ = cardOrientation_;
+          result.thumbnailImageAlignment_ = thumbnailImageAlignment_;
+          if (cardContentBuilder_ == null) {
+            result.cardContent_ = cardContent_;
+          } else {
+            result.cardContent_ = cardContentBuilder_.build();
+          }
+          onBuilt();
+          return result;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard) {
+            return mergeFrom(
+                (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard) other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard other) {
+          if (other
+              == com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard
+                  .getDefaultInstance()) return this;
+          if (other.cardOrientation_ != 0) {
+            setCardOrientationValue(other.getCardOrientationValue());
+          }
+          if (other.thumbnailImageAlignment_ != 0) {
+            setThumbnailImageAlignmentValue(other.getThumbnailImageAlignmentValue());
+          }
+          if (other.hasCardContent()) {
+            mergeCardContent(other.getCardContent());
+          }
+          this.mergeUnknownFields(other.unknownFields);
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage =
+                (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard)
+                    e.getUnfinishedMessage();
+            throw e.unwrapIOException();
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+
+        private int cardOrientation_ = 0;
+        /**
+         *
+         *
+         * <pre>
+         * Required. Orientation of the card.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard.CardOrientation card_orientation = 1;
+         * </code>
+         */
+        public int getCardOrientationValue() {
+          return cardOrientation_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. Orientation of the card.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard.CardOrientation card_orientation = 1;
+         * </code>
+         */
+        public Builder setCardOrientationValue(int value) {
+          cardOrientation_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. Orientation of the card.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard.CardOrientation card_orientation = 1;
+         * </code>
+         */
+        public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard.CardOrientation
+            getCardOrientation() {
+          @SuppressWarnings("deprecation")
+          com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard.CardOrientation
+              result =
+                  com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard
+                      .CardOrientation.valueOf(cardOrientation_);
+          return result == null
+              ? com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard.CardOrientation
+                  .UNRECOGNIZED
+              : result;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. Orientation of the card.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard.CardOrientation card_orientation = 1;
+         * </code>
+         */
+        public Builder setCardOrientation(
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard.CardOrientation
+                value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+
+          cardOrientation_ = value.getNumber();
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. Orientation of the card.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard.CardOrientation card_orientation = 1;
+         * </code>
+         */
+        public Builder clearCardOrientation() {
+
+          cardOrientation_ = 0;
+          onChanged();
+          return this;
+        }
+
+        private int thumbnailImageAlignment_ = 0;
+        /**
+         *
+         *
+         * <pre>
+         * Required if orientation is horizontal.
+         * Image preview alignment for standalone cards with horizontal layout.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard.ThumbnailImageAlignment thumbnail_image_alignment = 2;
+         * </code>
+         */
+        public int getThumbnailImageAlignmentValue() {
+          return thumbnailImageAlignment_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required if orientation is horizontal.
+         * Image preview alignment for standalone cards with horizontal layout.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard.ThumbnailImageAlignment thumbnail_image_alignment = 2;
+         * </code>
+         */
+        public Builder setThumbnailImageAlignmentValue(int value) {
+          thumbnailImageAlignment_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required if orientation is horizontal.
+         * Image preview alignment for standalone cards with horizontal layout.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard.ThumbnailImageAlignment thumbnail_image_alignment = 2;
+         * </code>
+         */
+        public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard
+                .ThumbnailImageAlignment
+            getThumbnailImageAlignment() {
+          @SuppressWarnings("deprecation")
+          com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard
+                  .ThumbnailImageAlignment
+              result =
+                  com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard
+                      .ThumbnailImageAlignment.valueOf(thumbnailImageAlignment_);
+          return result == null
+              ? com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard
+                  .ThumbnailImageAlignment.UNRECOGNIZED
+              : result;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required if orientation is horizontal.
+         * Image preview alignment for standalone cards with horizontal layout.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard.ThumbnailImageAlignment thumbnail_image_alignment = 2;
+         * </code>
+         */
+        public Builder setThumbnailImageAlignment(
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard
+                    .ThumbnailImageAlignment
+                value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+
+          thumbnailImageAlignment_ = value.getNumber();
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required if orientation is horizontal.
+         * Image preview alignment for standalone cards with horizontal layout.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard.ThumbnailImageAlignment thumbnail_image_alignment = 2;
+         * </code>
+         */
+        public Builder clearThumbnailImageAlignment() {
+
+          thumbnailImageAlignment_ = 0;
+          onChanged();
+          return this;
+        }
+
+        private com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent cardContent_;
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent,
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.Builder,
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContentOrBuilder>
+            cardContentBuilder_;
+        /**
+         *
+         *
+         * <pre>
+         * Required. Card content.
+         * </pre>
+         *
+         * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent card_content = 3;
+         * </code>
+         */
+        public boolean hasCardContent() {
+          return cardContentBuilder_ != null || cardContent_ != null;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. Card content.
+         * </pre>
+         *
+         * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent card_content = 3;
+         * </code>
+         */
+        public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent getCardContent() {
+          if (cardContentBuilder_ == null) {
+            return cardContent_ == null
+                ? com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent
+                    .getDefaultInstance()
+                : cardContent_;
+          } else {
+            return cardContentBuilder_.getMessage();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. Card content.
+         * </pre>
+         *
+         * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent card_content = 3;
+         * </code>
+         */
+        public Builder setCardContent(
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent value) {
+          if (cardContentBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            cardContent_ = value;
+            onChanged();
+          } else {
+            cardContentBuilder_.setMessage(value);
+          }
+
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. Card content.
+         * </pre>
+         *
+         * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent card_content = 3;
+         * </code>
+         */
+        public Builder setCardContent(
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.Builder
+                builderForValue) {
+          if (cardContentBuilder_ == null) {
+            cardContent_ = builderForValue.build();
+            onChanged();
+          } else {
+            cardContentBuilder_.setMessage(builderForValue.build());
+          }
+
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. Card content.
+         * </pre>
+         *
+         * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent card_content = 3;
+         * </code>
+         */
+        public Builder mergeCardContent(
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent value) {
+          if (cardContentBuilder_ == null) {
+            if (cardContent_ != null) {
+              cardContent_ =
+                  com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.newBuilder(
+                          cardContent_)
+                      .mergeFrom(value)
+                      .buildPartial();
+            } else {
+              cardContent_ = value;
+            }
+            onChanged();
+          } else {
+            cardContentBuilder_.mergeFrom(value);
+          }
+
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. Card content.
+         * </pre>
+         *
+         * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent card_content = 3;
+         * </code>
+         */
+        public Builder clearCardContent() {
+          if (cardContentBuilder_ == null) {
+            cardContent_ = null;
+            onChanged();
+          } else {
+            cardContent_ = null;
+            cardContentBuilder_ = null;
+          }
+
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. Card content.
+         * </pre>
+         *
+         * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent card_content = 3;
+         * </code>
+         */
+        public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.Builder
+            getCardContentBuilder() {
+
+          onChanged();
+          return getCardContentFieldBuilder().getBuilder();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. Card content.
+         * </pre>
+         *
+         * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent card_content = 3;
+         * </code>
+         */
+        public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContentOrBuilder
+            getCardContentOrBuilder() {
+          if (cardContentBuilder_ != null) {
+            return cardContentBuilder_.getMessageOrBuilder();
+          } else {
+            return cardContent_ == null
+                ? com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent
+                    .getDefaultInstance()
+                : cardContent_;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. Card content.
+         * </pre>
+         *
+         * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent card_content = 3;
+         * </code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent,
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.Builder,
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContentOrBuilder>
+            getCardContentFieldBuilder() {
+          if (cardContentBuilder_ == null) {
+            cardContentBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent,
+                    com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.Builder,
+                    com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContentOrBuilder>(
+                    getCardContent(), getParentForChildren(), isClean());
+            cardContent_ = null;
+          }
+          return cardContentBuilder_;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard)
+      private static final com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard();
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<RbmStandaloneCard> PARSER =
+          new com.google.protobuf.AbstractParser<RbmStandaloneCard>() {
+            @java.lang.Override
+            public RbmStandaloneCard parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              return new RbmStandaloneCard(input, extensionRegistry);
+            }
+          };
+
+      public static com.google.protobuf.Parser<RbmStandaloneCard> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<RbmStandaloneCard> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    public interface RbmCardContentOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Title of the card (at most 200 bytes).
+       * At least one of the title, description or media must be set.
+       * </pre>
+       *
+       * <code>string title = 1;</code>
+       */
+      java.lang.String getTitle();
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Title of the card (at most 200 bytes).
+       * At least one of the title, description or media must be set.
+       * </pre>
+       *
+       * <code>string title = 1;</code>
+       */
+      com.google.protobuf.ByteString getTitleBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Description of the card (at most 2000 bytes).
+       * At least one of the title, description or media must be set.
+       * </pre>
+       *
+       * <code>string description = 2;</code>
+       */
+      java.lang.String getDescription();
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Description of the card (at most 2000 bytes).
+       * At least one of the title, description or media must be set.
+       * </pre>
+       *
+       * <code>string description = 2;</code>
+       */
+      com.google.protobuf.ByteString getDescriptionBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. However at least one of the title, description or media must
+       * be set. Media (image, GIF or a video) to include in the card.
+       * </pre>
+       *
+       * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia media = 3;
+       * </code>
+       */
+      boolean hasMedia();
+      /**
+       *
+       *
+       * <pre>
+       * Optional. However at least one of the title, description or media must
+       * be set. Media (image, GIF or a video) to include in the card.
+       * </pre>
+       *
+       * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia media = 3;
+       * </code>
+       */
+      com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia getMedia();
+      /**
+       *
+       *
+       * <pre>
+       * Optional. However at least one of the title, description or media must
+       * be set. Media (image, GIF or a video) to include in the card.
+       * </pre>
+       *
+       * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia media = 3;
+       * </code>
+       */
+      com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMediaOrBuilder
+          getMediaOrBuilder();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of suggestions to include in the card.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion suggestions = 4;
+       * </code>
+       */
+      java.util.List<com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion>
+          getSuggestionsList();
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of suggestions to include in the card.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion suggestions = 4;
+       * </code>
+       */
+      com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion getSuggestions(int index);
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of suggestions to include in the card.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion suggestions = 4;
+       * </code>
+       */
+      int getSuggestionsCount();
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of suggestions to include in the card.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion suggestions = 4;
+       * </code>
+       */
+      java.util.List<
+              ? extends com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestionOrBuilder>
+          getSuggestionsOrBuilderList();
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of suggestions to include in the card.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion suggestions = 4;
+       * </code>
+       */
+      com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestionOrBuilder
+          getSuggestionsOrBuilder(int index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Rich Business Messaging (RBM) Card content
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent}
+     */
+    public static final class RbmCardContent extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent)
+        RbmCardContentOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use RbmCardContent.newBuilder() to construct.
+      private RbmCardContent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private RbmCardContent() {
+        title_ = "";
+        description_ = "";
+        suggestions_ = java.util.Collections.emptyList();
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+        return this.unknownFields;
+      }
+
+      private RbmCardContent(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        int mutable_bitField0_ = 0;
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+
+                  title_ = s;
+                  break;
+                }
+              case 18:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+
+                  description_ = s;
+                  break;
+                }
+              case 26:
+                {
+                  com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia.Builder
+                      subBuilder = null;
+                  if (media_ != null) {
+                    subBuilder = media_.toBuilder();
+                  }
+                  media_ =
+                      input.readMessage(
+                          com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia
+                              .parser(),
+                          extensionRegistry);
+                  if (subBuilder != null) {
+                    subBuilder.mergeFrom(media_);
+                    media_ = subBuilder.buildPartial();
+                  }
+
+                  break;
+                }
+              case 34:
+                {
+                  if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                    suggestions_ =
+                        new java.util.ArrayList<
+                            com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion>();
+                    mutable_bitField0_ |= 0x00000008;
+                  }
+                  suggestions_.add(
+                      input.readMessage(
+                          com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion.parser(),
+                          extensionRegistry));
+                  break;
+                }
+              default:
+                {
+                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                    done = true;
+                  }
+                  break;
+                }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(this);
+        } finally {
+          if (((mutable_bitField0_ & 0x00000008) != 0)) {
+            suggestions_ = java.util.Collections.unmodifiableList(suggestions_);
+          }
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dialogflow.v2beta1.IntentProto
+            .internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_RbmCardContent_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dialogflow.v2beta1.IntentProto
+            .internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_RbmCardContent_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.class,
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.Builder.class);
+      }
+
+      public interface RbmMediaOrBuilder
+          extends
+          // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia)
+          com.google.protobuf.MessageOrBuilder {
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. Publicly reachable URI of the file. The RBM platform
+         * determines the MIME type of the file from the content-type field in
+         * the HTTP headers when the platform fetches the file. The content-type
+         * field must be present and accurate in the HTTP response from the URL.
+         * </pre>
+         *
+         * <code>string file_uri = 1;</code>
+         */
+        java.lang.String getFileUri();
+        /**
+         *
+         *
+         * <pre>
+         * Required. Publicly reachable URI of the file. The RBM platform
+         * determines the MIME type of the file from the content-type field in
+         * the HTTP headers when the platform fetches the file. The content-type
+         * field must be present and accurate in the HTTP response from the URL.
+         * </pre>
+         *
+         * <code>string file_uri = 1;</code>
+         */
+        com.google.protobuf.ByteString getFileUriBytes();
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Publicly reachable URI of the thumbnail.If you don't
+         * provide a thumbnail URI, the RBM platform displays a blank
+         * placeholder thumbnail until the user's device downloads the file.
+         * Depending on the user's setting, the file may not download
+         * automatically and may require the user to tap a download button.
+         * </pre>
+         *
+         * <code>string thumbnail_uri = 2;</code>
+         */
+        java.lang.String getThumbnailUri();
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Publicly reachable URI of the thumbnail.If you don't
+         * provide a thumbnail URI, the RBM platform displays a blank
+         * placeholder thumbnail until the user's device downloads the file.
+         * Depending on the user's setting, the file may not download
+         * automatically and may require the user to tap a download button.
+         * </pre>
+         *
+         * <code>string thumbnail_uri = 2;</code>
+         */
+        com.google.protobuf.ByteString getThumbnailUriBytes();
+
+        /**
+         *
+         *
+         * <pre>
+         * Required for cards with vertical orientation. The height of the media
+         * within a rich card with a vertical layout. (https://goo.gl/NeFCjz).
+         * For a standalone card with horizontal layout, height is not
+         * customizable, and this field is ignored.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia.Height height = 3;
+         * </code>
+         */
+        int getHeightValue();
+        /**
+         *
+         *
+         * <pre>
+         * Required for cards with vertical orientation. The height of the media
+         * within a rich card with a vertical layout. (https://goo.gl/NeFCjz).
+         * For a standalone card with horizontal layout, height is not
+         * customizable, and this field is ignored.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia.Height height = 3;
+         * </code>
+         */
+        com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia.Height
+            getHeight();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Rich Business Messaging (RBM) Media displayed in Cards
+       * The following media-types are currently supported:
+       * ## Image Types
+       *  image/jpeg
+       *  image/jpg'
+       *  image/gif
+       *  image/png
+       * ## Video Types
+       *  video/h263
+       *  video/m4v
+       *  video/mp4
+       *  video/mpeg
+       *  video/mpeg4
+       *  video/webm
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia}
+       */
+      public static final class RbmMedia extends com.google.protobuf.GeneratedMessageV3
+          implements
+          // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia)
+          RbmMediaOrBuilder {
+        private static final long serialVersionUID = 0L;
+        // Use RbmMedia.newBuilder() to construct.
+        private RbmMedia(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+          super(builder);
+        }
+
+        private RbmMedia() {
+          fileUri_ = "";
+          thumbnailUri_ = "";
+          height_ = 0;
+        }
+
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+          return this.unknownFields;
+        }
+
+        private RbmMedia(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          this();
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          int mutable_bitField0_ = 0;
+          com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+              com.google.protobuf.UnknownFieldSet.newBuilder();
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    java.lang.String s = input.readStringRequireUtf8();
+
+                    fileUri_ = s;
+                    break;
+                  }
+                case 18:
+                  {
+                    java.lang.String s = input.readStringRequireUtf8();
+
+                    thumbnailUri_ = s;
+                    break;
+                  }
+                case 24:
+                  {
+                    int rawValue = input.readEnum();
+
+                    height_ = rawValue;
+                    break;
+                  }
+                default:
+                  {
+                    if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                      done = true;
+                    }
+                    break;
+                  }
+              }
+            }
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(this);
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(this);
+          } finally {
+            this.unknownFields = unknownFields.build();
+            makeExtensionsImmutable();
+          }
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.dialogflow.v2beta1.IntentProto
+              .internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_RbmCardContent_RbmMedia_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.dialogflow.v2beta1.IntentProto
+              .internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_RbmCardContent_RbmMedia_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia.class,
+                  com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia.Builder
+                      .class);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Media height
+         * </pre>
+         *
+         * Protobuf enum {@code
+         * google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia.Height}
+         */
+        public enum Height implements com.google.protobuf.ProtocolMessageEnum {
+          /**
+           *
+           *
+           * <pre>
+           * Not specified.
+           * </pre>
+           *
+           * <code>HEIGHT_UNSPECIFIED = 0;</code>
+           */
+          HEIGHT_UNSPECIFIED(0),
+          /**
+           *
+           *
+           * <pre>
+           * 112 DP.
+           * </pre>
+           *
+           * <code>SHORT = 1;</code>
+           */
+          SHORT(1),
+          /**
+           *
+           *
+           * <pre>
+           * 168 DP.
+           * </pre>
+           *
+           * <code>MEDIUM = 2;</code>
+           */
+          MEDIUM(2),
+          /**
+           *
+           *
+           * <pre>
+           * 264 DP. Not available for rich card carousels when the card width
+           * is set to small.
+           * </pre>
+           *
+           * <code>TALL = 3;</code>
+           */
+          TALL(3),
+          UNRECOGNIZED(-1),
+          ;
+
+          /**
+           *
+           *
+           * <pre>
+           * Not specified.
+           * </pre>
+           *
+           * <code>HEIGHT_UNSPECIFIED = 0;</code>
+           */
+          public static final int HEIGHT_UNSPECIFIED_VALUE = 0;
+          /**
+           *
+           *
+           * <pre>
+           * 112 DP.
+           * </pre>
+           *
+           * <code>SHORT = 1;</code>
+           */
+          public static final int SHORT_VALUE = 1;
+          /**
+           *
+           *
+           * <pre>
+           * 168 DP.
+           * </pre>
+           *
+           * <code>MEDIUM = 2;</code>
+           */
+          public static final int MEDIUM_VALUE = 2;
+          /**
+           *
+           *
+           * <pre>
+           * 264 DP. Not available for rich card carousels when the card width
+           * is set to small.
+           * </pre>
+           *
+           * <code>TALL = 3;</code>
+           */
+          public static final int TALL_VALUE = 3;
+
+          public final int getNumber() {
+            if (this == UNRECOGNIZED) {
+              throw new java.lang.IllegalArgumentException(
+                  "Can't get the number of an unknown enum value.");
+            }
+            return value;
+          }
+
+          /** @deprecated Use {@link #forNumber(int)} instead. */
+          @java.lang.Deprecated
+          public static Height valueOf(int value) {
+            return forNumber(value);
+          }
+
+          public static Height forNumber(int value) {
+            switch (value) {
+              case 0:
+                return HEIGHT_UNSPECIFIED;
+              case 1:
+                return SHORT;
+              case 2:
+                return MEDIUM;
+              case 3:
+                return TALL;
+              default:
+                return null;
+            }
+          }
+
+          public static com.google.protobuf.Internal.EnumLiteMap<Height> internalGetValueMap() {
+            return internalValueMap;
+          }
+
+          private static final com.google.protobuf.Internal.EnumLiteMap<Height> internalValueMap =
+              new com.google.protobuf.Internal.EnumLiteMap<Height>() {
+                public Height findValueByNumber(int number) {
+                  return Height.forNumber(number);
+                }
+              };
+
+          public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+            return getDescriptor().getValues().get(ordinal());
+          }
+
+          public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+            return getDescriptor();
+          }
+
+          public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+            return com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia
+                .getDescriptor()
+                .getEnumTypes()
+                .get(0);
+          }
+
+          private static final Height[] VALUES = values();
+
+          public static Height valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+            if (desc.getType() != getDescriptor()) {
+              throw new java.lang.IllegalArgumentException(
+                  "EnumValueDescriptor is not for this type.");
+            }
+            if (desc.getIndex() == -1) {
+              return UNRECOGNIZED;
+            }
+            return VALUES[desc.getIndex()];
+          }
+
+          private final int value;
+
+          private Height(int value) {
+            this.value = value;
+          }
+
+          // @@protoc_insertion_point(enum_scope:google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia.Height)
+        }
+
+        public static final int FILE_URI_FIELD_NUMBER = 1;
+        private volatile java.lang.Object fileUri_;
+        /**
+         *
+         *
+         * <pre>
+         * Required. Publicly reachable URI of the file. The RBM platform
+         * determines the MIME type of the file from the content-type field in
+         * the HTTP headers when the platform fetches the file. The content-type
+         * field must be present and accurate in the HTTP response from the URL.
+         * </pre>
+         *
+         * <code>string file_uri = 1;</code>
+         */
+        public java.lang.String getFileUri() {
+          java.lang.Object ref = fileUri_;
+          if (ref instanceof java.lang.String) {
+            return (java.lang.String) ref;
+          } else {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            fileUri_ = s;
+            return s;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. Publicly reachable URI of the file. The RBM platform
+         * determines the MIME type of the file from the content-type field in
+         * the HTTP headers when the platform fetches the file. The content-type
+         * field must be present and accurate in the HTTP response from the URL.
+         * </pre>
+         *
+         * <code>string file_uri = 1;</code>
+         */
+        public com.google.protobuf.ByteString getFileUriBytes() {
+          java.lang.Object ref = fileUri_;
+          if (ref instanceof java.lang.String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            fileUri_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        public static final int THUMBNAIL_URI_FIELD_NUMBER = 2;
+        private volatile java.lang.Object thumbnailUri_;
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Publicly reachable URI of the thumbnail.If you don't
+         * provide a thumbnail URI, the RBM platform displays a blank
+         * placeholder thumbnail until the user's device downloads the file.
+         * Depending on the user's setting, the file may not download
+         * automatically and may require the user to tap a download button.
+         * </pre>
+         *
+         * <code>string thumbnail_uri = 2;</code>
+         */
+        public java.lang.String getThumbnailUri() {
+          java.lang.Object ref = thumbnailUri_;
+          if (ref instanceof java.lang.String) {
+            return (java.lang.String) ref;
+          } else {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            thumbnailUri_ = s;
+            return s;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Publicly reachable URI of the thumbnail.If you don't
+         * provide a thumbnail URI, the RBM platform displays a blank
+         * placeholder thumbnail until the user's device downloads the file.
+         * Depending on the user's setting, the file may not download
+         * automatically and may require the user to tap a download button.
+         * </pre>
+         *
+         * <code>string thumbnail_uri = 2;</code>
+         */
+        public com.google.protobuf.ByteString getThumbnailUriBytes() {
+          java.lang.Object ref = thumbnailUri_;
+          if (ref instanceof java.lang.String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            thumbnailUri_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        public static final int HEIGHT_FIELD_NUMBER = 3;
+        private int height_;
+        /**
+         *
+         *
+         * <pre>
+         * Required for cards with vertical orientation. The height of the media
+         * within a rich card with a vertical layout. (https://goo.gl/NeFCjz).
+         * For a standalone card with horizontal layout, height is not
+         * customizable, and this field is ignored.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia.Height height = 3;
+         * </code>
+         */
+        public int getHeightValue() {
+          return height_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required for cards with vertical orientation. The height of the media
+         * within a rich card with a vertical layout. (https://goo.gl/NeFCjz).
+         * For a standalone card with horizontal layout, height is not
+         * customizable, and this field is ignored.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia.Height height = 3;
+         * </code>
+         */
+        public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia.Height
+            getHeight() {
+          @SuppressWarnings("deprecation")
+          com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia.Height result =
+              com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia.Height
+                  .valueOf(height_);
+          return result == null
+              ? com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia.Height
+                  .UNRECOGNIZED
+              : result;
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          byte isInitialized = memoizedIsInitialized;
+          if (isInitialized == 1) return true;
+          if (isInitialized == 0) return false;
+
+          memoizedIsInitialized = 1;
+          return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+            throws java.io.IOException {
+          if (!getFileUriBytes().isEmpty()) {
+            com.google.protobuf.GeneratedMessageV3.writeString(output, 1, fileUri_);
+          }
+          if (!getThumbnailUriBytes().isEmpty()) {
+            com.google.protobuf.GeneratedMessageV3.writeString(output, 2, thumbnailUri_);
+          }
+          if (height_
+              != com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia.Height
+                  .HEIGHT_UNSPECIFIED
+                  .getNumber()) {
+            output.writeEnum(3, height_);
+          }
+          unknownFields.writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+          int size = memoizedSize;
+          if (size != -1) return size;
+
+          size = 0;
+          if (!getFileUriBytes().isEmpty()) {
+            size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, fileUri_);
+          }
+          if (!getThumbnailUriBytes().isEmpty()) {
+            size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, thumbnailUri_);
+          }
+          if (height_
+              != com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia.Height
+                  .HEIGHT_UNSPECIFIED
+                  .getNumber()) {
+            size += com.google.protobuf.CodedOutputStream.computeEnumSize(3, height_);
+          }
+          size += unknownFields.getSerializedSize();
+          memoizedSize = size;
+          return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+          if (obj == this) {
+            return true;
+          }
+          if (!(obj
+              instanceof
+              com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia)) {
+            return super.equals(obj);
+          }
+          com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia other =
+              (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia) obj;
+
+          if (!getFileUri().equals(other.getFileUri())) return false;
+          if (!getThumbnailUri().equals(other.getThumbnailUri())) return false;
+          if (height_ != other.height_) return false;
+          if (!unknownFields.equals(other.unknownFields)) return false;
+          return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+          if (memoizedHashCode != 0) {
+            return memoizedHashCode;
+          }
+          int hash = 41;
+          hash = (19 * hash) + getDescriptor().hashCode();
+          hash = (37 * hash) + FILE_URI_FIELD_NUMBER;
+          hash = (53 * hash) + getFileUri().hashCode();
+          hash = (37 * hash) + THUMBNAIL_URI_FIELD_NUMBER;
+          hash = (53 * hash) + getThumbnailUri().hashCode();
+          hash = (37 * hash) + HEIGHT_FIELD_NUMBER;
+          hash = (53 * hash) + height_;
+          hash = (29 * hash) + unknownFields.hashCode();
+          memoizedHashCode = hash;
+          return hash;
+        }
+
+        public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia
+            parseFrom(java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia
+            parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia
+            parseFrom(com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia
+            parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia
+            parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia
+            parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia
+            parseFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia
+            parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia
+            parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input);
+        }
+
+        public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia
+            parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia
+            parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia
+            parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+          return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+          return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia prototype) {
+          return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+          return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          Builder builder = new Builder(parent);
+          return builder;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Rich Business Messaging (RBM) Media displayed in Cards
+         * The following media-types are currently supported:
+         * ## Image Types
+         *  image/jpeg
+         *  image/jpg'
+         *  image/gif
+         *  image/png
+         * ## Video Types
+         *  video/h263
+         *  video/m4v
+         *  video/mp4
+         *  video/mpeg
+         *  video/mpeg4
+         *  video/webm
+         * </pre>
+         *
+         * Protobuf type {@code
+         * google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia}
+         */
+        public static final class Builder
+            extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+            implements
+            // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia)
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMediaOrBuilder {
+          public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return com.google.cloud.dialogflow.v2beta1.IntentProto
+                .internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_RbmCardContent_RbmMedia_descriptor;
+          }
+
+          @java.lang.Override
+          protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+              internalGetFieldAccessorTable() {
+            return com.google.cloud.dialogflow.v2beta1.IntentProto
+                .internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_RbmCardContent_RbmMedia_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                    com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia
+                        .class,
+                    com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia
+                        .Builder.class);
+          }
+
+          // Construct using
+          // com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia.newBuilder()
+          private Builder() {
+            maybeForceBuilderInitialization();
+          }
+
+          private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            super(parent);
+            maybeForceBuilderInitialization();
+          }
+
+          private void maybeForceBuilderInitialization() {
+            if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+          }
+
+          @java.lang.Override
+          public Builder clear() {
+            super.clear();
+            fileUri_ = "";
+
+            thumbnailUri_ = "";
+
+            height_ = 0;
+
+            return this;
+          }
+
+          @java.lang.Override
+          public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+            return com.google.cloud.dialogflow.v2beta1.IntentProto
+                .internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_RbmCardContent_RbmMedia_descriptor;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia
+              getDefaultInstanceForType() {
+            return com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia
+                .getDefaultInstance();
+          }
+
+          @java.lang.Override
+          public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia
+              build() {
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia result =
+                buildPartial();
+            if (!result.isInitialized()) {
+              throw newUninitializedMessageException(result);
+            }
+            return result;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia
+              buildPartial() {
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia result =
+                new com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia(
+                    this);
+            result.fileUri_ = fileUri_;
+            result.thumbnailUri_ = thumbnailUri_;
+            result.height_ = height_;
+            onBuilt();
+            return result;
+          }
+
+          @java.lang.Override
+          public Builder clone() {
+            return super.clone();
+          }
+
+          @java.lang.Override
+          public Builder setField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.setField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+            return super.clearField(field);
+          }
+
+          @java.lang.Override
+          public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+            return super.clearOneof(oneof);
+          }
+
+          @java.lang.Override
+          public Builder setRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              int index,
+              java.lang.Object value) {
+            return super.setRepeatedField(field, index, value);
+          }
+
+          @java.lang.Override
+          public Builder addRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.addRepeatedField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(com.google.protobuf.Message other) {
+            if (other
+                instanceof
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia) {
+              return mergeFrom(
+                  (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia)
+                      other);
+            } else {
+              super.mergeFrom(other);
+              return this;
+            }
+          }
+
+          public Builder mergeFrom(
+              com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia other) {
+            if (other
+                == com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia
+                    .getDefaultInstance()) return this;
+            if (!other.getFileUri().isEmpty()) {
+              fileUri_ = other.fileUri_;
+              onChanged();
+            }
+            if (!other.getThumbnailUri().isEmpty()) {
+              thumbnailUri_ = other.thumbnailUri_;
+              onChanged();
+            }
+            if (other.height_ != 0) {
+              setHeightValue(other.getHeightValue());
+            }
+            this.mergeUnknownFields(other.unknownFields);
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final boolean isInitialized() {
+            return true;
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia
+                parsedMessage = null;
+            try {
+              parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              parsedMessage =
+                  (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia)
+                      e.getUnfinishedMessage();
+              throw e.unwrapIOException();
+            } finally {
+              if (parsedMessage != null) {
+                mergeFrom(parsedMessage);
+              }
+            }
+            return this;
+          }
+
+          private java.lang.Object fileUri_ = "";
+          /**
+           *
+           *
+           * <pre>
+           * Required. Publicly reachable URI of the file. The RBM platform
+           * determines the MIME type of the file from the content-type field in
+           * the HTTP headers when the platform fetches the file. The content-type
+           * field must be present and accurate in the HTTP response from the URL.
+           * </pre>
+           *
+           * <code>string file_uri = 1;</code>
+           */
+          public java.lang.String getFileUri() {
+            java.lang.Object ref = fileUri_;
+            if (!(ref instanceof java.lang.String)) {
+              com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+              java.lang.String s = bs.toStringUtf8();
+              fileUri_ = s;
+              return s;
+            } else {
+              return (java.lang.String) ref;
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Required. Publicly reachable URI of the file. The RBM platform
+           * determines the MIME type of the file from the content-type field in
+           * the HTTP headers when the platform fetches the file. The content-type
+           * field must be present and accurate in the HTTP response from the URL.
+           * </pre>
+           *
+           * <code>string file_uri = 1;</code>
+           */
+          public com.google.protobuf.ByteString getFileUriBytes() {
+            java.lang.Object ref = fileUri_;
+            if (ref instanceof String) {
+              com.google.protobuf.ByteString b =
+                  com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+              fileUri_ = b;
+              return b;
+            } else {
+              return (com.google.protobuf.ByteString) ref;
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Required. Publicly reachable URI of the file. The RBM platform
+           * determines the MIME type of the file from the content-type field in
+           * the HTTP headers when the platform fetches the file. The content-type
+           * field must be present and accurate in the HTTP response from the URL.
+           * </pre>
+           *
+           * <code>string file_uri = 1;</code>
+           */
+          public Builder setFileUri(java.lang.String value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+
+            fileUri_ = value;
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Required. Publicly reachable URI of the file. The RBM platform
+           * determines the MIME type of the file from the content-type field in
+           * the HTTP headers when the platform fetches the file. The content-type
+           * field must be present and accurate in the HTTP response from the URL.
+           * </pre>
+           *
+           * <code>string file_uri = 1;</code>
+           */
+          public Builder clearFileUri() {
+
+            fileUri_ = getDefaultInstance().getFileUri();
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Required. Publicly reachable URI of the file. The RBM platform
+           * determines the MIME type of the file from the content-type field in
+           * the HTTP headers when the platform fetches the file. The content-type
+           * field must be present and accurate in the HTTP response from the URL.
+           * </pre>
+           *
+           * <code>string file_uri = 1;</code>
+           */
+          public Builder setFileUriBytes(com.google.protobuf.ByteString value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            checkByteStringIsUtf8(value);
+
+            fileUri_ = value;
+            onChanged();
+            return this;
+          }
+
+          private java.lang.Object thumbnailUri_ = "";
+          /**
+           *
+           *
+           * <pre>
+           * Optional. Publicly reachable URI of the thumbnail.If you don't
+           * provide a thumbnail URI, the RBM platform displays a blank
+           * placeholder thumbnail until the user's device downloads the file.
+           * Depending on the user's setting, the file may not download
+           * automatically and may require the user to tap a download button.
+           * </pre>
+           *
+           * <code>string thumbnail_uri = 2;</code>
+           */
+          public java.lang.String getThumbnailUri() {
+            java.lang.Object ref = thumbnailUri_;
+            if (!(ref instanceof java.lang.String)) {
+              com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+              java.lang.String s = bs.toStringUtf8();
+              thumbnailUri_ = s;
+              return s;
+            } else {
+              return (java.lang.String) ref;
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Optional. Publicly reachable URI of the thumbnail.If you don't
+           * provide a thumbnail URI, the RBM platform displays a blank
+           * placeholder thumbnail until the user's device downloads the file.
+           * Depending on the user's setting, the file may not download
+           * automatically and may require the user to tap a download button.
+           * </pre>
+           *
+           * <code>string thumbnail_uri = 2;</code>
+           */
+          public com.google.protobuf.ByteString getThumbnailUriBytes() {
+            java.lang.Object ref = thumbnailUri_;
+            if (ref instanceof String) {
+              com.google.protobuf.ByteString b =
+                  com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+              thumbnailUri_ = b;
+              return b;
+            } else {
+              return (com.google.protobuf.ByteString) ref;
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Optional. Publicly reachable URI of the thumbnail.If you don't
+           * provide a thumbnail URI, the RBM platform displays a blank
+           * placeholder thumbnail until the user's device downloads the file.
+           * Depending on the user's setting, the file may not download
+           * automatically and may require the user to tap a download button.
+           * </pre>
+           *
+           * <code>string thumbnail_uri = 2;</code>
+           */
+          public Builder setThumbnailUri(java.lang.String value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+
+            thumbnailUri_ = value;
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Optional. Publicly reachable URI of the thumbnail.If you don't
+           * provide a thumbnail URI, the RBM platform displays a blank
+           * placeholder thumbnail until the user's device downloads the file.
+           * Depending on the user's setting, the file may not download
+           * automatically and may require the user to tap a download button.
+           * </pre>
+           *
+           * <code>string thumbnail_uri = 2;</code>
+           */
+          public Builder clearThumbnailUri() {
+
+            thumbnailUri_ = getDefaultInstance().getThumbnailUri();
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Optional. Publicly reachable URI of the thumbnail.If you don't
+           * provide a thumbnail URI, the RBM platform displays a blank
+           * placeholder thumbnail until the user's device downloads the file.
+           * Depending on the user's setting, the file may not download
+           * automatically and may require the user to tap a download button.
+           * </pre>
+           *
+           * <code>string thumbnail_uri = 2;</code>
+           */
+          public Builder setThumbnailUriBytes(com.google.protobuf.ByteString value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            checkByteStringIsUtf8(value);
+
+            thumbnailUri_ = value;
+            onChanged();
+            return this;
+          }
+
+          private int height_ = 0;
+          /**
+           *
+           *
+           * <pre>
+           * Required for cards with vertical orientation. The height of the media
+           * within a rich card with a vertical layout. (https://goo.gl/NeFCjz).
+           * For a standalone card with horizontal layout, height is not
+           * customizable, and this field is ignored.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia.Height height = 3;
+           * </code>
+           */
+          public int getHeightValue() {
+            return height_;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Required for cards with vertical orientation. The height of the media
+           * within a rich card with a vertical layout. (https://goo.gl/NeFCjz).
+           * For a standalone card with horizontal layout, height is not
+           * customizable, and this field is ignored.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia.Height height = 3;
+           * </code>
+           */
+          public Builder setHeightValue(int value) {
+            height_ = value;
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Required for cards with vertical orientation. The height of the media
+           * within a rich card with a vertical layout. (https://goo.gl/NeFCjz).
+           * For a standalone card with horizontal layout, height is not
+           * customizable, and this field is ignored.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia.Height height = 3;
+           * </code>
+           */
+          public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia.Height
+              getHeight() {
+            @SuppressWarnings("deprecation")
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia.Height
+                result =
+                    com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia
+                        .Height.valueOf(height_);
+            return result == null
+                ? com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia.Height
+                    .UNRECOGNIZED
+                : result;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Required for cards with vertical orientation. The height of the media
+           * within a rich card with a vertical layout. (https://goo.gl/NeFCjz).
+           * For a standalone card with horizontal layout, height is not
+           * customizable, and this field is ignored.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia.Height height = 3;
+           * </code>
+           */
+          public Builder setHeight(
+              com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia.Height
+                  value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+
+            height_ = value.getNumber();
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Required for cards with vertical orientation. The height of the media
+           * within a rich card with a vertical layout. (https://goo.gl/NeFCjz).
+           * For a standalone card with horizontal layout, height is not
+           * customizable, and this field is ignored.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia.Height height = 3;
+           * </code>
+           */
+          public Builder clearHeight() {
+
+            height_ = 0;
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final Builder setUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.setUnknownFields(unknownFields);
+          }
+
+          @java.lang.Override
+          public final Builder mergeUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.mergeUnknownFields(unknownFields);
+          }
+
+          // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia)
+        }
+
+        // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia)
+        private static final com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent
+                .RbmMedia
+            DEFAULT_INSTANCE;
+
+        static {
+          DEFAULT_INSTANCE =
+              new com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia();
+        }
+
+        public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia
+            getDefaultInstance() {
+          return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<RbmMedia> PARSER =
+            new com.google.protobuf.AbstractParser<RbmMedia>() {
+              @java.lang.Override
+              public RbmMedia parsePartialFrom(
+                  com.google.protobuf.CodedInputStream input,
+                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws com.google.protobuf.InvalidProtocolBufferException {
+                return new RbmMedia(input, extensionRegistry);
+              }
+            };
+
+        public static com.google.protobuf.Parser<RbmMedia> parser() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<RbmMedia> getParserForType() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia
+            getDefaultInstanceForType() {
+          return DEFAULT_INSTANCE;
+        }
+      }
+
+      private int bitField0_;
+      public static final int TITLE_FIELD_NUMBER = 1;
+      private volatile java.lang.Object title_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Title of the card (at most 200 bytes).
+       * At least one of the title, description or media must be set.
+       * </pre>
+       *
+       * <code>string title = 1;</code>
+       */
+      public java.lang.String getTitle() {
+        java.lang.Object ref = title_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          title_ = s;
+          return s;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Title of the card (at most 200 bytes).
+       * At least one of the title, description or media must be set.
+       * </pre>
+       *
+       * <code>string title = 1;</code>
+       */
+      public com.google.protobuf.ByteString getTitleBytes() {
+        java.lang.Object ref = title_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          title_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int DESCRIPTION_FIELD_NUMBER = 2;
+      private volatile java.lang.Object description_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Description of the card (at most 2000 bytes).
+       * At least one of the title, description or media must be set.
+       * </pre>
+       *
+       * <code>string description = 2;</code>
+       */
+      public java.lang.String getDescription() {
+        java.lang.Object ref = description_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          description_ = s;
+          return s;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Description of the card (at most 2000 bytes).
+       * At least one of the title, description or media must be set.
+       * </pre>
+       *
+       * <code>string description = 2;</code>
+       */
+      public com.google.protobuf.ByteString getDescriptionBytes() {
+        java.lang.Object ref = description_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          description_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int MEDIA_FIELD_NUMBER = 3;
+      private com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia media_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. However at least one of the title, description or media must
+       * be set. Media (image, GIF or a video) to include in the card.
+       * </pre>
+       *
+       * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia media = 3;
+       * </code>
+       */
+      public boolean hasMedia() {
+        return media_ != null;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. However at least one of the title, description or media must
+       * be set. Media (image, GIF or a video) to include in the card.
+       * </pre>
+       *
+       * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia media = 3;
+       * </code>
+       */
+      public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia getMedia() {
+        return media_ == null
+            ? com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia
+                .getDefaultInstance()
+            : media_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. However at least one of the title, description or media must
+       * be set. Media (image, GIF or a video) to include in the card.
+       * </pre>
+       *
+       * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia media = 3;
+       * </code>
+       */
+      public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMediaOrBuilder
+          getMediaOrBuilder() {
+        return getMedia();
+      }
+
+      public static final int SUGGESTIONS_FIELD_NUMBER = 4;
+      private java.util.List<com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion>
+          suggestions_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of suggestions to include in the card.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion suggestions = 4;
+       * </code>
+       */
+      public java.util.List<com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion>
+          getSuggestionsList() {
+        return suggestions_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of suggestions to include in the card.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion suggestions = 4;
+       * </code>
+       */
+      public java.util.List<
+              ? extends com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestionOrBuilder>
+          getSuggestionsOrBuilderList() {
+        return suggestions_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of suggestions to include in the card.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion suggestions = 4;
+       * </code>
+       */
+      public int getSuggestionsCount() {
+        return suggestions_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of suggestions to include in the card.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion suggestions = 4;
+       * </code>
+       */
+      public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion getSuggestions(
+          int index) {
+        return suggestions_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of suggestions to include in the card.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion suggestions = 4;
+       * </code>
+       */
+      public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestionOrBuilder
+          getSuggestionsOrBuilder(int index) {
+        return suggestions_.get(index);
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (!getTitleBytes().isEmpty()) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, title_);
+        }
+        if (!getDescriptionBytes().isEmpty()) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 2, description_);
+        }
+        if (media_ != null) {
+          output.writeMessage(3, getMedia());
+        }
+        for (int i = 0; i < suggestions_.size(); i++) {
+          output.writeMessage(4, suggestions_.get(i));
+        }
+        unknownFields.writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!getTitleBytes().isEmpty()) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, title_);
+        }
+        if (!getDescriptionBytes().isEmpty()) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, description_);
+        }
+        if (media_ != null) {
+          size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getMedia());
+        }
+        for (int i = 0; i < suggestions_.size(); i++) {
+          size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, suggestions_.get(i));
+        }
+        size += unknownFields.getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj instanceof com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent other =
+            (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent) obj;
+
+        if (!getTitle().equals(other.getTitle())) return false;
+        if (!getDescription().equals(other.getDescription())) return false;
+        if (hasMedia() != other.hasMedia()) return false;
+        if (hasMedia()) {
+          if (!getMedia().equals(other.getMedia())) return false;
+        }
+        if (!getSuggestionsList().equals(other.getSuggestionsList())) return false;
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + TITLE_FIELD_NUMBER;
+        hash = (53 * hash) + getTitle().hashCode();
+        hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+        hash = (53 * hash) + getDescription().hashCode();
+        if (hasMedia()) {
+          hash = (37 * hash) + MEDIA_FIELD_NUMBER;
+          hash = (53 * hash) + getMedia().hashCode();
+        }
+        if (getSuggestionsCount() > 0) {
+          hash = (37 * hash) + SUGGESTIONS_FIELD_NUMBER;
+          hash = (53 * hash) + getSuggestionsList().hashCode();
+        }
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent parseFrom(
+          java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent parseFrom(
+          java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent parseFrom(
+          byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent parseFrom(
+          byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent parseFrom(
+          java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent parseFrom(
+          java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent parseFrom(
+          com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Rich Business Messaging (RBM) Card content
+       * </pre>
+       *
+       * Protobuf type {@code google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent)
+          com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContentOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.dialogflow.v2beta1.IntentProto
+              .internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_RbmCardContent_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.dialogflow.v2beta1.IntentProto
+              .internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_RbmCardContent_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.class,
+                  com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+            getSuggestionsFieldBuilder();
+          }
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          title_ = "";
+
+          description_ = "";
+
+          if (mediaBuilder_ == null) {
+            media_ = null;
+          } else {
+            media_ = null;
+            mediaBuilder_ = null;
+          }
+          if (suggestionsBuilder_ == null) {
+            suggestions_ = java.util.Collections.emptyList();
+            bitField0_ = (bitField0_ & ~0x00000008);
+          } else {
+            suggestionsBuilder_.clear();
+          }
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.dialogflow.v2beta1.IntentProto
+              .internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_RbmCardContent_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent
+            getDefaultInstanceForType() {
+          return com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent build() {
+          com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent buildPartial() {
+          com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent result =
+              new com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent(this);
+          int from_bitField0_ = bitField0_;
+          int to_bitField0_ = 0;
+          result.title_ = title_;
+          result.description_ = description_;
+          if (mediaBuilder_ == null) {
+            result.media_ = media_;
+          } else {
+            result.media_ = mediaBuilder_.build();
+          }
+          if (suggestionsBuilder_ == null) {
+            if (((bitField0_ & 0x00000008) != 0)) {
+              suggestions_ = java.util.Collections.unmodifiableList(suggestions_);
+              bitField0_ = (bitField0_ & ~0x00000008);
+            }
+            result.suggestions_ = suggestions_;
+          } else {
+            result.suggestions_ = suggestionsBuilder_.build();
+          }
+          result.bitField0_ = to_bitField0_;
+          onBuilt();
+          return result;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent) {
+            return mergeFrom(
+                (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent) other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent other) {
+          if (other
+              == com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent
+                  .getDefaultInstance()) return this;
+          if (!other.getTitle().isEmpty()) {
+            title_ = other.title_;
+            onChanged();
+          }
+          if (!other.getDescription().isEmpty()) {
+            description_ = other.description_;
+            onChanged();
+          }
+          if (other.hasMedia()) {
+            mergeMedia(other.getMedia());
+          }
+          if (suggestionsBuilder_ == null) {
+            if (!other.suggestions_.isEmpty()) {
+              if (suggestions_.isEmpty()) {
+                suggestions_ = other.suggestions_;
+                bitField0_ = (bitField0_ & ~0x00000008);
+              } else {
+                ensureSuggestionsIsMutable();
+                suggestions_.addAll(other.suggestions_);
+              }
+              onChanged();
+            }
+          } else {
+            if (!other.suggestions_.isEmpty()) {
+              if (suggestionsBuilder_.isEmpty()) {
+                suggestionsBuilder_.dispose();
+                suggestionsBuilder_ = null;
+                suggestions_ = other.suggestions_;
+                bitField0_ = (bitField0_ & ~0x00000008);
+                suggestionsBuilder_ =
+                    com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                        ? getSuggestionsFieldBuilder()
+                        : null;
+              } else {
+                suggestionsBuilder_.addAllMessages(other.suggestions_);
+              }
+            }
+          }
+          this.mergeUnknownFields(other.unknownFields);
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage =
+                (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent)
+                    e.getUnfinishedMessage();
+            throw e.unwrapIOException();
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+
+        private int bitField0_;
+
+        private java.lang.Object title_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Title of the card (at most 200 bytes).
+         * At least one of the title, description or media must be set.
+         * </pre>
+         *
+         * <code>string title = 1;</code>
+         */
+        public java.lang.String getTitle() {
+          java.lang.Object ref = title_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            title_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Title of the card (at most 200 bytes).
+         * At least one of the title, description or media must be set.
+         * </pre>
+         *
+         * <code>string title = 1;</code>
+         */
+        public com.google.protobuf.ByteString getTitleBytes() {
+          java.lang.Object ref = title_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            title_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Title of the card (at most 200 bytes).
+         * At least one of the title, description or media must be set.
+         * </pre>
+         *
+         * <code>string title = 1;</code>
+         */
+        public Builder setTitle(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+
+          title_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Title of the card (at most 200 bytes).
+         * At least one of the title, description or media must be set.
+         * </pre>
+         *
+         * <code>string title = 1;</code>
+         */
+        public Builder clearTitle() {
+
+          title_ = getDefaultInstance().getTitle();
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Title of the card (at most 200 bytes).
+         * At least one of the title, description or media must be set.
+         * </pre>
+         *
+         * <code>string title = 1;</code>
+         */
+        public Builder setTitleBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+
+          title_ = value;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object description_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Description of the card (at most 2000 bytes).
+         * At least one of the title, description or media must be set.
+         * </pre>
+         *
+         * <code>string description = 2;</code>
+         */
+        public java.lang.String getDescription() {
+          java.lang.Object ref = description_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            description_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Description of the card (at most 2000 bytes).
+         * At least one of the title, description or media must be set.
+         * </pre>
+         *
+         * <code>string description = 2;</code>
+         */
+        public com.google.protobuf.ByteString getDescriptionBytes() {
+          java.lang.Object ref = description_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            description_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Description of the card (at most 2000 bytes).
+         * At least one of the title, description or media must be set.
+         * </pre>
+         *
+         * <code>string description = 2;</code>
+         */
+        public Builder setDescription(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+
+          description_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Description of the card (at most 2000 bytes).
+         * At least one of the title, description or media must be set.
+         * </pre>
+         *
+         * <code>string description = 2;</code>
+         */
+        public Builder clearDescription() {
+
+          description_ = getDefaultInstance().getDescription();
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Description of the card (at most 2000 bytes).
+         * At least one of the title, description or media must be set.
+         * </pre>
+         *
+         * <code>string description = 2;</code>
+         */
+        public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+
+          description_ = value;
+          onChanged();
+          return this;
+        }
+
+        private com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia media_;
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia,
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia.Builder,
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMediaOrBuilder>
+            mediaBuilder_;
+        /**
+         *
+         *
+         * <pre>
+         * Optional. However at least one of the title, description or media must
+         * be set. Media (image, GIF or a video) to include in the card.
+         * </pre>
+         *
+         * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia media = 3;
+         * </code>
+         */
+        public boolean hasMedia() {
+          return mediaBuilder_ != null || media_ != null;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. However at least one of the title, description or media must
+         * be set. Media (image, GIF or a video) to include in the card.
+         * </pre>
+         *
+         * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia media = 3;
+         * </code>
+         */
+        public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia
+            getMedia() {
+          if (mediaBuilder_ == null) {
+            return media_ == null
+                ? com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia
+                    .getDefaultInstance()
+                : media_;
+          } else {
+            return mediaBuilder_.getMessage();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. However at least one of the title, description or media must
+         * be set. Media (image, GIF or a video) to include in the card.
+         * </pre>
+         *
+         * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia media = 3;
+         * </code>
+         */
+        public Builder setMedia(
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia value) {
+          if (mediaBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            media_ = value;
+            onChanged();
+          } else {
+            mediaBuilder_.setMessage(value);
+          }
+
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. However at least one of the title, description or media must
+         * be set. Media (image, GIF or a video) to include in the card.
+         * </pre>
+         *
+         * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia media = 3;
+         * </code>
+         */
+        public Builder setMedia(
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia.Builder
+                builderForValue) {
+          if (mediaBuilder_ == null) {
+            media_ = builderForValue.build();
+            onChanged();
+          } else {
+            mediaBuilder_.setMessage(builderForValue.build());
+          }
+
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. However at least one of the title, description or media must
+         * be set. Media (image, GIF or a video) to include in the card.
+         * </pre>
+         *
+         * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia media = 3;
+         * </code>
+         */
+        public Builder mergeMedia(
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia value) {
+          if (mediaBuilder_ == null) {
+            if (media_ != null) {
+              media_ =
+                  com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia
+                      .newBuilder(media_)
+                      .mergeFrom(value)
+                      .buildPartial();
+            } else {
+              media_ = value;
+            }
+            onChanged();
+          } else {
+            mediaBuilder_.mergeFrom(value);
+          }
+
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. However at least one of the title, description or media must
+         * be set. Media (image, GIF or a video) to include in the card.
+         * </pre>
+         *
+         * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia media = 3;
+         * </code>
+         */
+        public Builder clearMedia() {
+          if (mediaBuilder_ == null) {
+            media_ = null;
+            onChanged();
+          } else {
+            media_ = null;
+            mediaBuilder_ = null;
+          }
+
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. However at least one of the title, description or media must
+         * be set. Media (image, GIF or a video) to include in the card.
+         * </pre>
+         *
+         * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia media = 3;
+         * </code>
+         */
+        public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia.Builder
+            getMediaBuilder() {
+
+          onChanged();
+          return getMediaFieldBuilder().getBuilder();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. However at least one of the title, description or media must
+         * be set. Media (image, GIF or a video) to include in the card.
+         * </pre>
+         *
+         * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia media = 3;
+         * </code>
+         */
+        public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMediaOrBuilder
+            getMediaOrBuilder() {
+          if (mediaBuilder_ != null) {
+            return mediaBuilder_.getMessageOrBuilder();
+          } else {
+            return media_ == null
+                ? com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia
+                    .getDefaultInstance()
+                : media_;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. However at least one of the title, description or media must
+         * be set. Media (image, GIF or a video) to include in the card.
+         * </pre>
+         *
+         * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia media = 3;
+         * </code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia,
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia.Builder,
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMediaOrBuilder>
+            getMediaFieldBuilder() {
+          if (mediaBuilder_ == null) {
+            mediaBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia,
+                    com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia
+                        .Builder,
+                    com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent
+                        .RbmMediaOrBuilder>(getMedia(), getParentForChildren(), isClean());
+            media_ = null;
+          }
+          return mediaBuilder_;
+        }
+
+        private java.util.List<com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion>
+            suggestions_ = java.util.Collections.emptyList();
+
+        private void ensureSuggestionsIsMutable() {
+          if (!((bitField0_ & 0x00000008) != 0)) {
+            suggestions_ =
+                new java.util.ArrayList<
+                    com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion>(suggestions_);
+            bitField0_ |= 0x00000008;
+          }
+        }
+
+        private com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion,
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion.Builder,
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestionOrBuilder>
+            suggestionsBuilder_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. List of suggestions to include in the card.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion suggestions = 4;
+         * </code>
+         */
+        public java.util.List<com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion>
+            getSuggestionsList() {
+          if (suggestionsBuilder_ == null) {
+            return java.util.Collections.unmodifiableList(suggestions_);
+          } else {
+            return suggestionsBuilder_.getMessageList();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. List of suggestions to include in the card.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion suggestions = 4;
+         * </code>
+         */
+        public int getSuggestionsCount() {
+          if (suggestionsBuilder_ == null) {
+            return suggestions_.size();
+          } else {
+            return suggestionsBuilder_.getCount();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. List of suggestions to include in the card.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion suggestions = 4;
+         * </code>
+         */
+        public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion getSuggestions(
+            int index) {
+          if (suggestionsBuilder_ == null) {
+            return suggestions_.get(index);
+          } else {
+            return suggestionsBuilder_.getMessage(index);
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. List of suggestions to include in the card.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion suggestions = 4;
+         * </code>
+         */
+        public Builder setSuggestions(
+            int index, com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion value) {
+          if (suggestionsBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureSuggestionsIsMutable();
+            suggestions_.set(index, value);
+            onChanged();
+          } else {
+            suggestionsBuilder_.setMessage(index, value);
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. List of suggestions to include in the card.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion suggestions = 4;
+         * </code>
+         */
+        public Builder setSuggestions(
+            int index,
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion.Builder
+                builderForValue) {
+          if (suggestionsBuilder_ == null) {
+            ensureSuggestionsIsMutable();
+            suggestions_.set(index, builderForValue.build());
+            onChanged();
+          } else {
+            suggestionsBuilder_.setMessage(index, builderForValue.build());
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. List of suggestions to include in the card.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion suggestions = 4;
+         * </code>
+         */
+        public Builder addSuggestions(
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion value) {
+          if (suggestionsBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureSuggestionsIsMutable();
+            suggestions_.add(value);
+            onChanged();
+          } else {
+            suggestionsBuilder_.addMessage(value);
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. List of suggestions to include in the card.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion suggestions = 4;
+         * </code>
+         */
+        public Builder addSuggestions(
+            int index, com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion value) {
+          if (suggestionsBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureSuggestionsIsMutable();
+            suggestions_.add(index, value);
+            onChanged();
+          } else {
+            suggestionsBuilder_.addMessage(index, value);
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. List of suggestions to include in the card.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion suggestions = 4;
+         * </code>
+         */
+        public Builder addSuggestions(
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion.Builder
+                builderForValue) {
+          if (suggestionsBuilder_ == null) {
+            ensureSuggestionsIsMutable();
+            suggestions_.add(builderForValue.build());
+            onChanged();
+          } else {
+            suggestionsBuilder_.addMessage(builderForValue.build());
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. List of suggestions to include in the card.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion suggestions = 4;
+         * </code>
+         */
+        public Builder addSuggestions(
+            int index,
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion.Builder
+                builderForValue) {
+          if (suggestionsBuilder_ == null) {
+            ensureSuggestionsIsMutable();
+            suggestions_.add(index, builderForValue.build());
+            onChanged();
+          } else {
+            suggestionsBuilder_.addMessage(index, builderForValue.build());
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. List of suggestions to include in the card.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion suggestions = 4;
+         * </code>
+         */
+        public Builder addAllSuggestions(
+            java.lang.Iterable<
+                    ? extends com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion>
+                values) {
+          if (suggestionsBuilder_ == null) {
+            ensureSuggestionsIsMutable();
+            com.google.protobuf.AbstractMessageLite.Builder.addAll(values, suggestions_);
+            onChanged();
+          } else {
+            suggestionsBuilder_.addAllMessages(values);
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. List of suggestions to include in the card.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion suggestions = 4;
+         * </code>
+         */
+        public Builder clearSuggestions() {
+          if (suggestionsBuilder_ == null) {
+            suggestions_ = java.util.Collections.emptyList();
+            bitField0_ = (bitField0_ & ~0x00000008);
+            onChanged();
+          } else {
+            suggestionsBuilder_.clear();
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. List of suggestions to include in the card.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion suggestions = 4;
+         * </code>
+         */
+        public Builder removeSuggestions(int index) {
+          if (suggestionsBuilder_ == null) {
+            ensureSuggestionsIsMutable();
+            suggestions_.remove(index);
+            onChanged();
+          } else {
+            suggestionsBuilder_.remove(index);
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. List of suggestions to include in the card.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion suggestions = 4;
+         * </code>
+         */
+        public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion.Builder
+            getSuggestionsBuilder(int index) {
+          return getSuggestionsFieldBuilder().getBuilder(index);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. List of suggestions to include in the card.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion suggestions = 4;
+         * </code>
+         */
+        public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestionOrBuilder
+            getSuggestionsOrBuilder(int index) {
+          if (suggestionsBuilder_ == null) {
+            return suggestions_.get(index);
+          } else {
+            return suggestionsBuilder_.getMessageOrBuilder(index);
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. List of suggestions to include in the card.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion suggestions = 4;
+         * </code>
+         */
+        public java.util.List<
+                ? extends com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestionOrBuilder>
+            getSuggestionsOrBuilderList() {
+          if (suggestionsBuilder_ != null) {
+            return suggestionsBuilder_.getMessageOrBuilderList();
+          } else {
+            return java.util.Collections.unmodifiableList(suggestions_);
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. List of suggestions to include in the card.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion suggestions = 4;
+         * </code>
+         */
+        public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion.Builder
+            addSuggestionsBuilder() {
+          return getSuggestionsFieldBuilder()
+              .addBuilder(
+                  com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion
+                      .getDefaultInstance());
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. List of suggestions to include in the card.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion suggestions = 4;
+         * </code>
+         */
+        public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion.Builder
+            addSuggestionsBuilder(int index) {
+          return getSuggestionsFieldBuilder()
+              .addBuilder(
+                  index,
+                  com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion
+                      .getDefaultInstance());
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. List of suggestions to include in the card.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion suggestions = 4;
+         * </code>
+         */
+        public java.util.List<
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion.Builder>
+            getSuggestionsBuilderList() {
+          return getSuggestionsFieldBuilder().getBuilderList();
+        }
+
+        private com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion,
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion.Builder,
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestionOrBuilder>
+            getSuggestionsFieldBuilder() {
+          if (suggestionsBuilder_ == null) {
+            suggestionsBuilder_ =
+                new com.google.protobuf.RepeatedFieldBuilderV3<
+                    com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion,
+                    com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion.Builder,
+                    com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestionOrBuilder>(
+                    suggestions_,
+                    ((bitField0_ & 0x00000008) != 0),
+                    getParentForChildren(),
+                    isClean());
+            suggestions_ = null;
+          }
+          return suggestionsBuilder_;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent)
+      private static final com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE = new com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent();
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<RbmCardContent> PARSER =
+          new com.google.protobuf.AbstractParser<RbmCardContent>() {
+            @java.lang.Override
+            public RbmCardContent parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              return new RbmCardContent(input, extensionRegistry);
+            }
+          };
+
+      public static com.google.protobuf.Parser<RbmCardContent> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<RbmCardContent> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    public interface RbmSuggestionOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Predefined replies for user to select instead of typing
+       * </pre>
+       *
+       * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply reply = 1;</code>
+       */
+      boolean hasReply();
+      /**
+       *
+       *
+       * <pre>
+       * Predefined replies for user to select instead of typing
+       * </pre>
+       *
+       * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply reply = 1;</code>
+       */
+      com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply getReply();
+      /**
+       *
+       *
+       * <pre>
+       * Predefined replies for user to select instead of typing
+       * </pre>
+       *
+       * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply reply = 1;</code>
+       */
+      com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReplyOrBuilder
+          getReplyOrBuilder();
+
+      /**
+       *
+       *
+       * <pre>
+       * Predefined client side actions that user can choose
+       * </pre>
+       *
+       * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction action = 2;</code>
+       */
+      boolean hasAction();
+      /**
+       *
+       *
+       * <pre>
+       * Predefined client side actions that user can choose
+       * </pre>
+       *
+       * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction action = 2;</code>
+       */
+      com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction getAction();
+      /**
+       *
+       *
+       * <pre>
+       * Predefined client side actions that user can choose
+       * </pre>
+       *
+       * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction action = 2;</code>
+       */
+      com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedActionOrBuilder
+          getActionOrBuilder();
+
+      public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion.SuggestionCase
+          getSuggestionCase();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Rich Business Messaging (RBM) suggestion. Suggestions allow user to
+     * easily select/click a predefined response or perform an action (like
+     * opening a web uri).
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion}
+     */
+    public static final class RbmSuggestion extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion)
+        RbmSuggestionOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use RbmSuggestion.newBuilder() to construct.
+      private RbmSuggestion(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private RbmSuggestion() {}
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+        return this.unknownFields;
+      }
+
+      private RbmSuggestion(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        int mutable_bitField0_ = 0;
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply.Builder
+                      subBuilder = null;
+                  if (suggestionCase_ == 1) {
+                    subBuilder =
+                        ((com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply)
+                                suggestion_)
+                            .toBuilder();
+                  }
+                  suggestion_ =
+                      input.readMessage(
+                          com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply
+                              .parser(),
+                          extensionRegistry);
+                  if (subBuilder != null) {
+                    subBuilder.mergeFrom(
+                        (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply)
+                            suggestion_);
+                    suggestion_ = subBuilder.buildPartial();
+                  }
+                  suggestionCase_ = 1;
+                  break;
+                }
+              case 18:
+                {
+                  com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction.Builder
+                      subBuilder = null;
+                  if (suggestionCase_ == 2) {
+                    subBuilder =
+                        ((com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction)
+                                suggestion_)
+                            .toBuilder();
+                  }
+                  suggestion_ =
+                      input.readMessage(
+                          com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                              .parser(),
+                          extensionRegistry);
+                  if (subBuilder != null) {
+                    subBuilder.mergeFrom(
+                        (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction)
+                            suggestion_);
+                    suggestion_ = subBuilder.buildPartial();
+                  }
+                  suggestionCase_ = 2;
+                  break;
+                }
+              default:
+                {
+                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                    done = true;
+                  }
+                  break;
+                }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(this);
+        } finally {
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dialogflow.v2beta1.IntentProto
+            .internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_RbmSuggestion_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dialogflow.v2beta1.IntentProto
+            .internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_RbmSuggestion_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion.class,
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion.Builder.class);
+      }
+
+      private int suggestionCase_ = 0;
+      private java.lang.Object suggestion_;
+
+      public enum SuggestionCase implements com.google.protobuf.Internal.EnumLite {
+        REPLY(1),
+        ACTION(2),
+        SUGGESTION_NOT_SET(0);
+        private final int value;
+
+        private SuggestionCase(int value) {
+          this.value = value;
+        }
+        /** @deprecated Use {@link #forNumber(int)} instead. */
+        @java.lang.Deprecated
+        public static SuggestionCase valueOf(int value) {
+          return forNumber(value);
+        }
+
+        public static SuggestionCase forNumber(int value) {
+          switch (value) {
+            case 1:
+              return REPLY;
+            case 2:
+              return ACTION;
+            case 0:
+              return SUGGESTION_NOT_SET;
+            default:
+              return null;
+          }
+        }
+
+        public int getNumber() {
+          return this.value;
+        }
+      };
+
+      public SuggestionCase getSuggestionCase() {
+        return SuggestionCase.forNumber(suggestionCase_);
+      }
+
+      public static final int REPLY_FIELD_NUMBER = 1;
+      /**
+       *
+       *
+       * <pre>
+       * Predefined replies for user to select instead of typing
+       * </pre>
+       *
+       * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply reply = 1;</code>
+       */
+      public boolean hasReply() {
+        return suggestionCase_ == 1;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Predefined replies for user to select instead of typing
+       * </pre>
+       *
+       * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply reply = 1;</code>
+       */
+      public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply getReply() {
+        if (suggestionCase_ == 1) {
+          return (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply) suggestion_;
+        }
+        return com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply
+            .getDefaultInstance();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Predefined replies for user to select instead of typing
+       * </pre>
+       *
+       * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply reply = 1;</code>
+       */
+      public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReplyOrBuilder
+          getReplyOrBuilder() {
+        if (suggestionCase_ == 1) {
+          return (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply) suggestion_;
+        }
+        return com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply
+            .getDefaultInstance();
+      }
+
+      public static final int ACTION_FIELD_NUMBER = 2;
+      /**
+       *
+       *
+       * <pre>
+       * Predefined client side actions that user can choose
+       * </pre>
+       *
+       * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction action = 2;</code>
+       */
+      public boolean hasAction() {
+        return suggestionCase_ == 2;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Predefined client side actions that user can choose
+       * </pre>
+       *
+       * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction action = 2;</code>
+       */
+      public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction getAction() {
+        if (suggestionCase_ == 2) {
+          return (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction)
+              suggestion_;
+        }
+        return com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+            .getDefaultInstance();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Predefined client side actions that user can choose
+       * </pre>
+       *
+       * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction action = 2;</code>
+       */
+      public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedActionOrBuilder
+          getActionOrBuilder() {
+        if (suggestionCase_ == 2) {
+          return (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction)
+              suggestion_;
+        }
+        return com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+            .getDefaultInstance();
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (suggestionCase_ == 1) {
+          output.writeMessage(
+              1,
+              (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply) suggestion_);
+        }
+        if (suggestionCase_ == 2) {
+          output.writeMessage(
+              2,
+              (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction) suggestion_);
+        }
+        unknownFields.writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (suggestionCase_ == 1) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeMessageSize(
+                  1,
+                  (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply)
+                      suggestion_);
+        }
+        if (suggestionCase_ == 2) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeMessageSize(
+                  2,
+                  (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction)
+                      suggestion_);
+        }
+        size += unknownFields.getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj instanceof com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion other =
+            (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion) obj;
+
+        if (!getSuggestionCase().equals(other.getSuggestionCase())) return false;
+        switch (suggestionCase_) {
+          case 1:
+            if (!getReply().equals(other.getReply())) return false;
+            break;
+          case 2:
+            if (!getAction().equals(other.getAction())) return false;
+            break;
+          case 0:
+          default:
+        }
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        switch (suggestionCase_) {
+          case 1:
+            hash = (37 * hash) + REPLY_FIELD_NUMBER;
+            hash = (53 * hash) + getReply().hashCode();
+            break;
+          case 2:
+            hash = (37 * hash) + ACTION_FIELD_NUMBER;
+            hash = (53 * hash) + getAction().hashCode();
+            break;
+          case 0:
+          default:
+        }
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion parseFrom(
+          java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion parseFrom(
+          java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion parseFrom(
+          byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion parseFrom(
+          byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion parseFrom(
+          java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion parseFrom(
+          java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion parseFrom(
+          com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Rich Business Messaging (RBM) suggestion. Suggestions allow user to
+       * easily select/click a predefined response or perform an action (like
+       * opening a web uri).
+       * </pre>
+       *
+       * Protobuf type {@code google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion)
+          com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestionOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.dialogflow.v2beta1.IntentProto
+              .internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_RbmSuggestion_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.dialogflow.v2beta1.IntentProto
+              .internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_RbmSuggestion_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion.class,
+                  com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion.Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          suggestionCase_ = 0;
+          suggestion_ = null;
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.dialogflow.v2beta1.IntentProto
+              .internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_RbmSuggestion_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion
+            getDefaultInstanceForType() {
+          return com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion build() {
+          com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion buildPartial() {
+          com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion result =
+              new com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion(this);
+          if (suggestionCase_ == 1) {
+            if (replyBuilder_ == null) {
+              result.suggestion_ = suggestion_;
+            } else {
+              result.suggestion_ = replyBuilder_.build();
+            }
+          }
+          if (suggestionCase_ == 2) {
+            if (actionBuilder_ == null) {
+              result.suggestion_ = suggestion_;
+            } else {
+              result.suggestion_ = actionBuilder_.build();
+            }
+          }
+          result.suggestionCase_ = suggestionCase_;
+          onBuilt();
+          return result;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion) {
+            return mergeFrom(
+                (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion) other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion other) {
+          if (other
+              == com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion
+                  .getDefaultInstance()) return this;
+          switch (other.getSuggestionCase()) {
+            case REPLY:
+              {
+                mergeReply(other.getReply());
+                break;
+              }
+            case ACTION:
+              {
+                mergeAction(other.getAction());
+                break;
+              }
+            case SUGGESTION_NOT_SET:
+              {
+                break;
+              }
+          }
+          this.mergeUnknownFields(other.unknownFields);
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage =
+                (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion)
+                    e.getUnfinishedMessage();
+            throw e.unwrapIOException();
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+
+        private int suggestionCase_ = 0;
+        private java.lang.Object suggestion_;
+
+        public SuggestionCase getSuggestionCase() {
+          return SuggestionCase.forNumber(suggestionCase_);
+        }
+
+        public Builder clearSuggestion() {
+          suggestionCase_ = 0;
+          suggestion_ = null;
+          onChanged();
+          return this;
+        }
+
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply,
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply.Builder,
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReplyOrBuilder>
+            replyBuilder_;
+        /**
+         *
+         *
+         * <pre>
+         * Predefined replies for user to select instead of typing
+         * </pre>
+         *
+         * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply reply = 1;</code>
+         */
+        public boolean hasReply() {
+          return suggestionCase_ == 1;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Predefined replies for user to select instead of typing
+         * </pre>
+         *
+         * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply reply = 1;</code>
+         */
+        public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply getReply() {
+          if (replyBuilder_ == null) {
+            if (suggestionCase_ == 1) {
+              return (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply)
+                  suggestion_;
+            }
+            return com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply
+                .getDefaultInstance();
+          } else {
+            if (suggestionCase_ == 1) {
+              return replyBuilder_.getMessage();
+            }
+            return com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply
+                .getDefaultInstance();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Predefined replies for user to select instead of typing
+         * </pre>
+         *
+         * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply reply = 1;</code>
+         */
+        public Builder setReply(
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply value) {
+          if (replyBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            suggestion_ = value;
+            onChanged();
+          } else {
+            replyBuilder_.setMessage(value);
+          }
+          suggestionCase_ = 1;
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Predefined replies for user to select instead of typing
+         * </pre>
+         *
+         * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply reply = 1;</code>
+         */
+        public Builder setReply(
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply.Builder
+                builderForValue) {
+          if (replyBuilder_ == null) {
+            suggestion_ = builderForValue.build();
+            onChanged();
+          } else {
+            replyBuilder_.setMessage(builderForValue.build());
+          }
+          suggestionCase_ = 1;
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Predefined replies for user to select instead of typing
+         * </pre>
+         *
+         * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply reply = 1;</code>
+         */
+        public Builder mergeReply(
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply value) {
+          if (replyBuilder_ == null) {
+            if (suggestionCase_ == 1
+                && suggestion_
+                    != com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply
+                        .getDefaultInstance()) {
+              suggestion_ =
+                  com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply.newBuilder(
+                          (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply)
+                              suggestion_)
+                      .mergeFrom(value)
+                      .buildPartial();
+            } else {
+              suggestion_ = value;
+            }
+            onChanged();
+          } else {
+            if (suggestionCase_ == 1) {
+              replyBuilder_.mergeFrom(value);
+            }
+            replyBuilder_.setMessage(value);
+          }
+          suggestionCase_ = 1;
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Predefined replies for user to select instead of typing
+         * </pre>
+         *
+         * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply reply = 1;</code>
+         */
+        public Builder clearReply() {
+          if (replyBuilder_ == null) {
+            if (suggestionCase_ == 1) {
+              suggestionCase_ = 0;
+              suggestion_ = null;
+              onChanged();
+            }
+          } else {
+            if (suggestionCase_ == 1) {
+              suggestionCase_ = 0;
+              suggestion_ = null;
+            }
+            replyBuilder_.clear();
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Predefined replies for user to select instead of typing
+         * </pre>
+         *
+         * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply reply = 1;</code>
+         */
+        public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply.Builder
+            getReplyBuilder() {
+          return getReplyFieldBuilder().getBuilder();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Predefined replies for user to select instead of typing
+         * </pre>
+         *
+         * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply reply = 1;</code>
+         */
+        public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReplyOrBuilder
+            getReplyOrBuilder() {
+          if ((suggestionCase_ == 1) && (replyBuilder_ != null)) {
+            return replyBuilder_.getMessageOrBuilder();
+          } else {
+            if (suggestionCase_ == 1) {
+              return (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply)
+                  suggestion_;
+            }
+            return com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply
+                .getDefaultInstance();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Predefined replies for user to select instead of typing
+         * </pre>
+         *
+         * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply reply = 1;</code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply,
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply.Builder,
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReplyOrBuilder>
+            getReplyFieldBuilder() {
+          if (replyBuilder_ == null) {
+            if (!(suggestionCase_ == 1)) {
+              suggestion_ =
+                  com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply
+                      .getDefaultInstance();
+            }
+            replyBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply,
+                    com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply.Builder,
+                    com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReplyOrBuilder>(
+                    (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply)
+                        suggestion_,
+                    getParentForChildren(),
+                    isClean());
+            suggestion_ = null;
+          }
+          suggestionCase_ = 1;
+          onChanged();
+          ;
+          return replyBuilder_;
+        }
+
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction,
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction.Builder,
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedActionOrBuilder>
+            actionBuilder_;
+        /**
+         *
+         *
+         * <pre>
+         * Predefined client side actions that user can choose
+         * </pre>
+         *
+         * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction action = 2;
+         * </code>
+         */
+        public boolean hasAction() {
+          return suggestionCase_ == 2;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Predefined client side actions that user can choose
+         * </pre>
+         *
+         * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction action = 2;
+         * </code>
+         */
+        public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction getAction() {
+          if (actionBuilder_ == null) {
+            if (suggestionCase_ == 2) {
+              return (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction)
+                  suggestion_;
+            }
+            return com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                .getDefaultInstance();
+          } else {
+            if (suggestionCase_ == 2) {
+              return actionBuilder_.getMessage();
+            }
+            return com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                .getDefaultInstance();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Predefined client side actions that user can choose
+         * </pre>
+         *
+         * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction action = 2;
+         * </code>
+         */
+        public Builder setAction(
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction value) {
+          if (actionBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            suggestion_ = value;
+            onChanged();
+          } else {
+            actionBuilder_.setMessage(value);
+          }
+          suggestionCase_ = 2;
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Predefined client side actions that user can choose
+         * </pre>
+         *
+         * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction action = 2;
+         * </code>
+         */
+        public Builder setAction(
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction.Builder
+                builderForValue) {
+          if (actionBuilder_ == null) {
+            suggestion_ = builderForValue.build();
+            onChanged();
+          } else {
+            actionBuilder_.setMessage(builderForValue.build());
+          }
+          suggestionCase_ = 2;
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Predefined client side actions that user can choose
+         * </pre>
+         *
+         * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction action = 2;
+         * </code>
+         */
+        public Builder mergeAction(
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction value) {
+          if (actionBuilder_ == null) {
+            if (suggestionCase_ == 2
+                && suggestion_
+                    != com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                        .getDefaultInstance()) {
+              suggestion_ =
+                  com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction.newBuilder(
+                          (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction)
+                              suggestion_)
+                      .mergeFrom(value)
+                      .buildPartial();
+            } else {
+              suggestion_ = value;
+            }
+            onChanged();
+          } else {
+            if (suggestionCase_ == 2) {
+              actionBuilder_.mergeFrom(value);
+            }
+            actionBuilder_.setMessage(value);
+          }
+          suggestionCase_ = 2;
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Predefined client side actions that user can choose
+         * </pre>
+         *
+         * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction action = 2;
+         * </code>
+         */
+        public Builder clearAction() {
+          if (actionBuilder_ == null) {
+            if (suggestionCase_ == 2) {
+              suggestionCase_ = 0;
+              suggestion_ = null;
+              onChanged();
+            }
+          } else {
+            if (suggestionCase_ == 2) {
+              suggestionCase_ = 0;
+              suggestion_ = null;
+            }
+            actionBuilder_.clear();
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Predefined client side actions that user can choose
+         * </pre>
+         *
+         * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction action = 2;
+         * </code>
+         */
+        public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction.Builder
+            getActionBuilder() {
+          return getActionFieldBuilder().getBuilder();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Predefined client side actions that user can choose
+         * </pre>
+         *
+         * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction action = 2;
+         * </code>
+         */
+        public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedActionOrBuilder
+            getActionOrBuilder() {
+          if ((suggestionCase_ == 2) && (actionBuilder_ != null)) {
+            return actionBuilder_.getMessageOrBuilder();
+          } else {
+            if (suggestionCase_ == 2) {
+              return (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction)
+                  suggestion_;
+            }
+            return com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                .getDefaultInstance();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Predefined client side actions that user can choose
+         * </pre>
+         *
+         * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction action = 2;
+         * </code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction,
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction.Builder,
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedActionOrBuilder>
+            getActionFieldBuilder() {
+          if (actionBuilder_ == null) {
+            if (!(suggestionCase_ == 2)) {
+              suggestion_ =
+                  com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                      .getDefaultInstance();
+            }
+            actionBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction,
+                    com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction.Builder,
+                    com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedActionOrBuilder>(
+                    (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction)
+                        suggestion_,
+                    getParentForChildren(),
+                    isClean());
+            suggestion_ = null;
+          }
+          suggestionCase_ = 2;
+          onChanged();
+          ;
+          return actionBuilder_;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion)
+      private static final com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE = new com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion();
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<RbmSuggestion> PARSER =
+          new com.google.protobuf.AbstractParser<RbmSuggestion>() {
+            @java.lang.Override
+            public RbmSuggestion parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              return new RbmSuggestion(input, extensionRegistry);
+            }
+          };
+
+      public static com.google.protobuf.Parser<RbmSuggestion> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<RbmSuggestion> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    public interface RbmSuggestedReplyOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Suggested reply text.
+       * </pre>
+       *
+       * <code>string text = 1;</code>
+       */
+      java.lang.String getText();
+      /**
+       *
+       *
+       * <pre>
+       * Suggested reply text.
+       * </pre>
+       *
+       * <code>string text = 1;</code>
+       */
+      com.google.protobuf.ByteString getTextBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * Opaque payload that the Dialogflow receives in a user event
+       * when the user taps the suggested reply. This data will be also
+       * forwarded to webhook to allow performing custom business logic.
+       * </pre>
+       *
+       * <code>string postback_data = 2;</code>
+       */
+      java.lang.String getPostbackData();
+      /**
+       *
+       *
+       * <pre>
+       * Opaque payload that the Dialogflow receives in a user event
+       * when the user taps the suggested reply. This data will be also
+       * forwarded to webhook to allow performing custom business logic.
+       * </pre>
+       *
+       * <code>string postback_data = 2;</code>
+       */
+      com.google.protobuf.ByteString getPostbackDataBytes();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Rich Business Messaging (RBM) suggested reply that the user can click
+     * instead of typing in their own response.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply}
+     */
+    public static final class RbmSuggestedReply extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply)
+        RbmSuggestedReplyOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use RbmSuggestedReply.newBuilder() to construct.
+      private RbmSuggestedReply(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private RbmSuggestedReply() {
+        text_ = "";
+        postbackData_ = "";
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+        return this.unknownFields;
+      }
+
+      private RbmSuggestedReply(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        int mutable_bitField0_ = 0;
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+
+                  text_ = s;
+                  break;
+                }
+              case 18:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+
+                  postbackData_ = s;
+                  break;
+                }
+              default:
+                {
+                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                    done = true;
+                  }
+                  break;
+                }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(this);
+        } finally {
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dialogflow.v2beta1.IntentProto
+            .internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_RbmSuggestedReply_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dialogflow.v2beta1.IntentProto
+            .internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_RbmSuggestedReply_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply.class,
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply.Builder.class);
+      }
+
+      public static final int TEXT_FIELD_NUMBER = 1;
+      private volatile java.lang.Object text_;
+      /**
+       *
+       *
+       * <pre>
+       * Suggested reply text.
+       * </pre>
+       *
+       * <code>string text = 1;</code>
+       */
+      public java.lang.String getText() {
+        java.lang.Object ref = text_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          text_ = s;
+          return s;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Suggested reply text.
+       * </pre>
+       *
+       * <code>string text = 1;</code>
+       */
+      public com.google.protobuf.ByteString getTextBytes() {
+        java.lang.Object ref = text_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          text_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int POSTBACK_DATA_FIELD_NUMBER = 2;
+      private volatile java.lang.Object postbackData_;
+      /**
+       *
+       *
+       * <pre>
+       * Opaque payload that the Dialogflow receives in a user event
+       * when the user taps the suggested reply. This data will be also
+       * forwarded to webhook to allow performing custom business logic.
+       * </pre>
+       *
+       * <code>string postback_data = 2;</code>
+       */
+      public java.lang.String getPostbackData() {
+        java.lang.Object ref = postbackData_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          postbackData_ = s;
+          return s;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Opaque payload that the Dialogflow receives in a user event
+       * when the user taps the suggested reply. This data will be also
+       * forwarded to webhook to allow performing custom business logic.
+       * </pre>
+       *
+       * <code>string postback_data = 2;</code>
+       */
+      public com.google.protobuf.ByteString getPostbackDataBytes() {
+        java.lang.Object ref = postbackData_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          postbackData_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (!getTextBytes().isEmpty()) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, text_);
+        }
+        if (!getPostbackDataBytes().isEmpty()) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 2, postbackData_);
+        }
+        unknownFields.writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!getTextBytes().isEmpty()) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, text_);
+        }
+        if (!getPostbackDataBytes().isEmpty()) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, postbackData_);
+        }
+        size += unknownFields.getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply other =
+            (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply) obj;
+
+        if (!getText().equals(other.getText())) return false;
+        if (!getPostbackData().equals(other.getPostbackData())) return false;
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + TEXT_FIELD_NUMBER;
+        hash = (53 * hash) + getText().hashCode();
+        hash = (37 * hash) + POSTBACK_DATA_FIELD_NUMBER;
+        hash = (53 * hash) + getPostbackData().hashCode();
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply parseFrom(
+          java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply parseFrom(
+          java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply parseFrom(
+          byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply parseFrom(
+          byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply parseFrom(
+          java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply parseFrom(
+          java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply parseFrom(
+          com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Rich Business Messaging (RBM) suggested reply that the user can click
+       * instead of typing in their own response.
+       * </pre>
+       *
+       * Protobuf type {@code google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply)
+          com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReplyOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.dialogflow.v2beta1.IntentProto
+              .internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_RbmSuggestedReply_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.dialogflow.v2beta1.IntentProto
+              .internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_RbmSuggestedReply_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply.class,
+                  com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply.Builder
+                      .class);
+        }
+
+        // Construct using
+        // com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          text_ = "";
+
+          postbackData_ = "";
+
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.dialogflow.v2beta1.IntentProto
+              .internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_RbmSuggestedReply_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply
+            getDefaultInstanceForType() {
+          return com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply build() {
+          com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply buildPartial() {
+          com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply result =
+              new com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply(this);
+          result.text_ = text_;
+          result.postbackData_ = postbackData_;
+          onBuilt();
+          return result;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply) {
+            return mergeFrom(
+                (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply) other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply other) {
+          if (other
+              == com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply
+                  .getDefaultInstance()) return this;
+          if (!other.getText().isEmpty()) {
+            text_ = other.text_;
+            onChanged();
+          }
+          if (!other.getPostbackData().isEmpty()) {
+            postbackData_ = other.postbackData_;
+            onChanged();
+          }
+          this.mergeUnknownFields(other.unknownFields);
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage =
+                (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply)
+                    e.getUnfinishedMessage();
+            throw e.unwrapIOException();
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+
+        private java.lang.Object text_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * Suggested reply text.
+         * </pre>
+         *
+         * <code>string text = 1;</code>
+         */
+        public java.lang.String getText() {
+          java.lang.Object ref = text_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            text_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Suggested reply text.
+         * </pre>
+         *
+         * <code>string text = 1;</code>
+         */
+        public com.google.protobuf.ByteString getTextBytes() {
+          java.lang.Object ref = text_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            text_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Suggested reply text.
+         * </pre>
+         *
+         * <code>string text = 1;</code>
+         */
+        public Builder setText(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+
+          text_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Suggested reply text.
+         * </pre>
+         *
+         * <code>string text = 1;</code>
+         */
+        public Builder clearText() {
+
+          text_ = getDefaultInstance().getText();
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Suggested reply text.
+         * </pre>
+         *
+         * <code>string text = 1;</code>
+         */
+        public Builder setTextBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+
+          text_ = value;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object postbackData_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * Opaque payload that the Dialogflow receives in a user event
+         * when the user taps the suggested reply. This data will be also
+         * forwarded to webhook to allow performing custom business logic.
+         * </pre>
+         *
+         * <code>string postback_data = 2;</code>
+         */
+        public java.lang.String getPostbackData() {
+          java.lang.Object ref = postbackData_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            postbackData_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Opaque payload that the Dialogflow receives in a user event
+         * when the user taps the suggested reply. This data will be also
+         * forwarded to webhook to allow performing custom business logic.
+         * </pre>
+         *
+         * <code>string postback_data = 2;</code>
+         */
+        public com.google.protobuf.ByteString getPostbackDataBytes() {
+          java.lang.Object ref = postbackData_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            postbackData_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Opaque payload that the Dialogflow receives in a user event
+         * when the user taps the suggested reply. This data will be also
+         * forwarded to webhook to allow performing custom business logic.
+         * </pre>
+         *
+         * <code>string postback_data = 2;</code>
+         */
+        public Builder setPostbackData(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+
+          postbackData_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Opaque payload that the Dialogflow receives in a user event
+         * when the user taps the suggested reply. This data will be also
+         * forwarded to webhook to allow performing custom business logic.
+         * </pre>
+         *
+         * <code>string postback_data = 2;</code>
+         */
+        public Builder clearPostbackData() {
+
+          postbackData_ = getDefaultInstance().getPostbackData();
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Opaque payload that the Dialogflow receives in a user event
+         * when the user taps the suggested reply. This data will be also
+         * forwarded to webhook to allow performing custom business logic.
+         * </pre>
+         *
+         * <code>string postback_data = 2;</code>
+         */
+        public Builder setPostbackDataBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+
+          postbackData_ = value;
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply)
+      private static final com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply();
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<RbmSuggestedReply> PARSER =
+          new com.google.protobuf.AbstractParser<RbmSuggestedReply>() {
+            @java.lang.Override
+            public RbmSuggestedReply parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              return new RbmSuggestedReply(input, extensionRegistry);
+            }
+          };
+
+      public static com.google.protobuf.Parser<RbmSuggestedReply> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<RbmSuggestedReply> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    public interface RbmSuggestedActionOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Text to display alongside the action.
+       * </pre>
+       *
+       * <code>string text = 1;</code>
+       */
+      java.lang.String getText();
+      /**
+       *
+       *
+       * <pre>
+       * Text to display alongside the action.
+       * </pre>
+       *
+       * <code>string text = 1;</code>
+       */
+      com.google.protobuf.ByteString getTextBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * Opaque payload that the Dialogflow receives in a user event
+       * when the user taps the suggested action. This data will be also
+       * forwarded to webhook to allow performing custom business logic.
+       * </pre>
+       *
+       * <code>string postback_data = 2;</code>
+       */
+      java.lang.String getPostbackData();
+      /**
+       *
+       *
+       * <pre>
+       * Opaque payload that the Dialogflow receives in a user event
+       * when the user taps the suggested action. This data will be also
+       * forwarded to webhook to allow performing custom business logic.
+       * </pre>
+       *
+       * <code>string postback_data = 2;</code>
+       */
+      com.google.protobuf.ByteString getPostbackDataBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * Suggested client side action: Dial a phone number
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction.RbmSuggestedActionDial dial = 3;
+       * </code>
+       */
+      boolean hasDial();
+      /**
+       *
+       *
+       * <pre>
+       * Suggested client side action: Dial a phone number
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction.RbmSuggestedActionDial dial = 3;
+       * </code>
+       */
+      com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction.RbmSuggestedActionDial
+          getDial();
+      /**
+       *
+       *
+       * <pre>
+       * Suggested client side action: Dial a phone number
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction.RbmSuggestedActionDial dial = 3;
+       * </code>
+       */
+      com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+              .RbmSuggestedActionDialOrBuilder
+          getDialOrBuilder();
+
+      /**
+       *
+       *
+       * <pre>
+       * Suggested client side action: Open a URI on device
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction.RbmSuggestedActionOpenUri open_url = 4;
+       * </code>
+       */
+      boolean hasOpenUrl();
+      /**
+       *
+       *
+       * <pre>
+       * Suggested client side action: Open a URI on device
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction.RbmSuggestedActionOpenUri open_url = 4;
+       * </code>
+       */
+      com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+              .RbmSuggestedActionOpenUri
+          getOpenUrl();
+      /**
+       *
+       *
+       * <pre>
+       * Suggested client side action: Open a URI on device
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction.RbmSuggestedActionOpenUri open_url = 4;
+       * </code>
+       */
+      com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+              .RbmSuggestedActionOpenUriOrBuilder
+          getOpenUrlOrBuilder();
+
+      /**
+       *
+       *
+       * <pre>
+       * Suggested client side action: Share user location
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction.RbmSuggestedActionShareLocation share_location = 5;
+       * </code>
+       */
+      boolean hasShareLocation();
+      /**
+       *
+       *
+       * <pre>
+       * Suggested client side action: Share user location
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction.RbmSuggestedActionShareLocation share_location = 5;
+       * </code>
+       */
+      com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+              .RbmSuggestedActionShareLocation
+          getShareLocation();
+      /**
+       *
+       *
+       * <pre>
+       * Suggested client side action: Share user location
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction.RbmSuggestedActionShareLocation share_location = 5;
+       * </code>
+       */
+      com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+              .RbmSuggestedActionShareLocationOrBuilder
+          getShareLocationOrBuilder();
+
+      public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction.ActionCase
+          getActionCase();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Rich Business Messaging (RBM) suggested client-side action that the user
+     * can choose from the card.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction}
+     */
+    public static final class RbmSuggestedAction extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction)
+        RbmSuggestedActionOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use RbmSuggestedAction.newBuilder() to construct.
+      private RbmSuggestedAction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private RbmSuggestedAction() {
+        text_ = "";
+        postbackData_ = "";
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+        return this.unknownFields;
+      }
+
+      private RbmSuggestedAction(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        int mutable_bitField0_ = 0;
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+
+                  text_ = s;
+                  break;
+                }
+              case 18:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+
+                  postbackData_ = s;
+                  break;
+                }
+              case 26:
+                {
+                  com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                          .RbmSuggestedActionDial.Builder
+                      subBuilder = null;
+                  if (actionCase_ == 3) {
+                    subBuilder =
+                        ((com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                                    .RbmSuggestedActionDial)
+                                action_)
+                            .toBuilder();
+                  }
+                  action_ =
+                      input.readMessage(
+                          com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                              .RbmSuggestedActionDial.parser(),
+                          extensionRegistry);
+                  if (subBuilder != null) {
+                    subBuilder.mergeFrom(
+                        (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                                .RbmSuggestedActionDial)
+                            action_);
+                    action_ = subBuilder.buildPartial();
+                  }
+                  actionCase_ = 3;
+                  break;
+                }
+              case 34:
+                {
+                  com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                          .RbmSuggestedActionOpenUri.Builder
+                      subBuilder = null;
+                  if (actionCase_ == 4) {
+                    subBuilder =
+                        ((com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                                    .RbmSuggestedActionOpenUri)
+                                action_)
+                            .toBuilder();
+                  }
+                  action_ =
+                      input.readMessage(
+                          com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                              .RbmSuggestedActionOpenUri.parser(),
+                          extensionRegistry);
+                  if (subBuilder != null) {
+                    subBuilder.mergeFrom(
+                        (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                                .RbmSuggestedActionOpenUri)
+                            action_);
+                    action_ = subBuilder.buildPartial();
+                  }
+                  actionCase_ = 4;
+                  break;
+                }
+              case 42:
+                {
+                  com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                          .RbmSuggestedActionShareLocation.Builder
+                      subBuilder = null;
+                  if (actionCase_ == 5) {
+                    subBuilder =
+                        ((com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                                    .RbmSuggestedActionShareLocation)
+                                action_)
+                            .toBuilder();
+                  }
+                  action_ =
+                      input.readMessage(
+                          com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                              .RbmSuggestedActionShareLocation.parser(),
+                          extensionRegistry);
+                  if (subBuilder != null) {
+                    subBuilder.mergeFrom(
+                        (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                                .RbmSuggestedActionShareLocation)
+                            action_);
+                    action_ = subBuilder.buildPartial();
+                  }
+                  actionCase_ = 5;
+                  break;
+                }
+              default:
+                {
+                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                    done = true;
+                  }
+                  break;
+                }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(this);
+        } finally {
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dialogflow.v2beta1.IntentProto
+            .internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_RbmSuggestedAction_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dialogflow.v2beta1.IntentProto
+            .internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_RbmSuggestedAction_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction.class,
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction.Builder
+                    .class);
+      }
+
+      public interface RbmSuggestedActionDialOrBuilder
+          extends
+          // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction.RbmSuggestedActionDial)
+          com.google.protobuf.MessageOrBuilder {
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The phone number to fill in the default dialer app.
+         * This field should be in [E.164](https://en.wikipedia.org/wiki/E.164)
+         * format. An example of a correctly formatted phone number:
+         * +15556767888.
+         * </pre>
+         *
+         * <code>string phone_number = 1;</code>
+         */
+        java.lang.String getPhoneNumber();
+        /**
+         *
+         *
+         * <pre>
+         * Required. The phone number to fill in the default dialer app.
+         * This field should be in [E.164](https://en.wikipedia.org/wiki/E.164)
+         * format. An example of a correctly formatted phone number:
+         * +15556767888.
+         * </pre>
+         *
+         * <code>string phone_number = 1;</code>
+         */
+        com.google.protobuf.ByteString getPhoneNumberBytes();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Opens the user's default dialer app with the specified phone number
+       * but does not dial automatically (https://goo.gl/ergbB2).
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction.RbmSuggestedActionDial}
+       */
+      public static final class RbmSuggestedActionDial
+          extends com.google.protobuf.GeneratedMessageV3
+          implements
+          // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction.RbmSuggestedActionDial)
+          RbmSuggestedActionDialOrBuilder {
+        private static final long serialVersionUID = 0L;
+        // Use RbmSuggestedActionDial.newBuilder() to construct.
+        private RbmSuggestedActionDial(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+          super(builder);
+        }
+
+        private RbmSuggestedActionDial() {
+          phoneNumber_ = "";
+        }
+
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+          return this.unknownFields;
+        }
+
+        private RbmSuggestedActionDial(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          this();
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          int mutable_bitField0_ = 0;
+          com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+              com.google.protobuf.UnknownFieldSet.newBuilder();
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    java.lang.String s = input.readStringRequireUtf8();
+
+                    phoneNumber_ = s;
+                    break;
+                  }
+                default:
+                  {
+                    if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                      done = true;
+                    }
+                    break;
+                  }
+              }
+            }
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(this);
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(this);
+          } finally {
+            this.unknownFields = unknownFields.build();
+            makeExtensionsImmutable();
+          }
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.dialogflow.v2beta1.IntentProto
+              .internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_RbmSuggestedAction_RbmSuggestedActionDial_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.dialogflow.v2beta1.IntentProto
+              .internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_RbmSuggestedAction_RbmSuggestedActionDial_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                      .RbmSuggestedActionDial.class,
+                  com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                      .RbmSuggestedActionDial.Builder.class);
+        }
+
+        public static final int PHONE_NUMBER_FIELD_NUMBER = 1;
+        private volatile java.lang.Object phoneNumber_;
+        /**
+         *
+         *
+         * <pre>
+         * Required. The phone number to fill in the default dialer app.
+         * This field should be in [E.164](https://en.wikipedia.org/wiki/E.164)
+         * format. An example of a correctly formatted phone number:
+         * +15556767888.
+         * </pre>
+         *
+         * <code>string phone_number = 1;</code>
+         */
+        public java.lang.String getPhoneNumber() {
+          java.lang.Object ref = phoneNumber_;
+          if (ref instanceof java.lang.String) {
+            return (java.lang.String) ref;
+          } else {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            phoneNumber_ = s;
+            return s;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. The phone number to fill in the default dialer app.
+         * This field should be in [E.164](https://en.wikipedia.org/wiki/E.164)
+         * format. An example of a correctly formatted phone number:
+         * +15556767888.
+         * </pre>
+         *
+         * <code>string phone_number = 1;</code>
+         */
+        public com.google.protobuf.ByteString getPhoneNumberBytes() {
+          java.lang.Object ref = phoneNumber_;
+          if (ref instanceof java.lang.String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            phoneNumber_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          byte isInitialized = memoizedIsInitialized;
+          if (isInitialized == 1) return true;
+          if (isInitialized == 0) return false;
+
+          memoizedIsInitialized = 1;
+          return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+            throws java.io.IOException {
+          if (!getPhoneNumberBytes().isEmpty()) {
+            com.google.protobuf.GeneratedMessageV3.writeString(output, 1, phoneNumber_);
+          }
+          unknownFields.writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+          int size = memoizedSize;
+          if (size != -1) return size;
+
+          size = 0;
+          if (!getPhoneNumberBytes().isEmpty()) {
+            size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, phoneNumber_);
+          }
+          size += unknownFields.getSerializedSize();
+          memoizedSize = size;
+          return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+          if (obj == this) {
+            return true;
+          }
+          if (!(obj
+              instanceof
+              com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                  .RbmSuggestedActionDial)) {
+            return super.equals(obj);
+          }
+          com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                  .RbmSuggestedActionDial
+              other =
+                  (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                          .RbmSuggestedActionDial)
+                      obj;
+
+          if (!getPhoneNumber().equals(other.getPhoneNumber())) return false;
+          if (!unknownFields.equals(other.unknownFields)) return false;
+          return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+          if (memoizedHashCode != 0) {
+            return memoizedHashCode;
+          }
+          int hash = 41;
+          hash = (19 * hash) + getDescriptor().hashCode();
+          hash = (37 * hash) + PHONE_NUMBER_FIELD_NUMBER;
+          hash = (53 * hash) + getPhoneNumber().hashCode();
+          hash = (29 * hash) + unknownFields.hashCode();
+          memoizedHashCode = hash;
+          return hash;
+        }
+
+        public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                .RbmSuggestedActionDial
+            parseFrom(java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                .RbmSuggestedActionDial
+            parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                .RbmSuggestedActionDial
+            parseFrom(com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                .RbmSuggestedActionDial
+            parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                .RbmSuggestedActionDial
+            parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                .RbmSuggestedActionDial
+            parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                .RbmSuggestedActionDial
+            parseFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                .RbmSuggestedActionDial
+            parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                .RbmSuggestedActionDial
+            parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input);
+        }
+
+        public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                .RbmSuggestedActionDial
+            parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                .RbmSuggestedActionDial
+            parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                .RbmSuggestedActionDial
+            parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+          return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+          return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                    .RbmSuggestedActionDial
+                prototype) {
+          return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+          return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          Builder builder = new Builder(parent);
+          return builder;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Opens the user's default dialer app with the specified phone number
+         * but does not dial automatically (https://goo.gl/ergbB2).
+         * </pre>
+         *
+         * Protobuf type {@code
+         * google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction.RbmSuggestedActionDial}
+         */
+        public static final class Builder
+            extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+            implements
+            // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction.RbmSuggestedActionDial)
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                .RbmSuggestedActionDialOrBuilder {
+          public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return com.google.cloud.dialogflow.v2beta1.IntentProto
+                .internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_RbmSuggestedAction_RbmSuggestedActionDial_descriptor;
+          }
+
+          @java.lang.Override
+          protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+              internalGetFieldAccessorTable() {
+            return com.google.cloud.dialogflow.v2beta1.IntentProto
+                .internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_RbmSuggestedAction_RbmSuggestedActionDial_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                    com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                        .RbmSuggestedActionDial.class,
+                    com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                        .RbmSuggestedActionDial.Builder.class);
+          }
+
+          // Construct using
+          // com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction.RbmSuggestedActionDial.newBuilder()
+          private Builder() {
+            maybeForceBuilderInitialization();
+          }
+
+          private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            super(parent);
+            maybeForceBuilderInitialization();
+          }
+
+          private void maybeForceBuilderInitialization() {
+            if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+          }
+
+          @java.lang.Override
+          public Builder clear() {
+            super.clear();
+            phoneNumber_ = "";
+
+            return this;
+          }
+
+          @java.lang.Override
+          public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+            return com.google.cloud.dialogflow.v2beta1.IntentProto
+                .internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_RbmSuggestedAction_RbmSuggestedActionDial_descriptor;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                  .RbmSuggestedActionDial
+              getDefaultInstanceForType() {
+            return com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                .RbmSuggestedActionDial.getDefaultInstance();
+          }
+
+          @java.lang.Override
+          public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                  .RbmSuggestedActionDial
+              build() {
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                    .RbmSuggestedActionDial
+                result = buildPartial();
+            if (!result.isInitialized()) {
+              throw newUninitializedMessageException(result);
+            }
+            return result;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                  .RbmSuggestedActionDial
+              buildPartial() {
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                    .RbmSuggestedActionDial
+                result =
+                    new com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                        .RbmSuggestedActionDial(this);
+            result.phoneNumber_ = phoneNumber_;
+            onBuilt();
+            return result;
+          }
+
+          @java.lang.Override
+          public Builder clone() {
+            return super.clone();
+          }
+
+          @java.lang.Override
+          public Builder setField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.setField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+            return super.clearField(field);
+          }
+
+          @java.lang.Override
+          public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+            return super.clearOneof(oneof);
+          }
+
+          @java.lang.Override
+          public Builder setRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              int index,
+              java.lang.Object value) {
+            return super.setRepeatedField(field, index, value);
+          }
+
+          @java.lang.Override
+          public Builder addRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.addRepeatedField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(com.google.protobuf.Message other) {
+            if (other
+                instanceof
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                    .RbmSuggestedActionDial) {
+              return mergeFrom(
+                  (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                          .RbmSuggestedActionDial)
+                      other);
+            } else {
+              super.mergeFrom(other);
+              return this;
+            }
+          }
+
+          public Builder mergeFrom(
+              com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                      .RbmSuggestedActionDial
+                  other) {
+            if (other
+                == com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                    .RbmSuggestedActionDial.getDefaultInstance()) return this;
+            if (!other.getPhoneNumber().isEmpty()) {
+              phoneNumber_ = other.phoneNumber_;
+              onChanged();
+            }
+            this.mergeUnknownFields(other.unknownFields);
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final boolean isInitialized() {
+            return true;
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                    .RbmSuggestedActionDial
+                parsedMessage = null;
+            try {
+              parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              parsedMessage =
+                  (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                          .RbmSuggestedActionDial)
+                      e.getUnfinishedMessage();
+              throw e.unwrapIOException();
+            } finally {
+              if (parsedMessage != null) {
+                mergeFrom(parsedMessage);
+              }
+            }
+            return this;
+          }
+
+          private java.lang.Object phoneNumber_ = "";
+          /**
+           *
+           *
+           * <pre>
+           * Required. The phone number to fill in the default dialer app.
+           * This field should be in [E.164](https://en.wikipedia.org/wiki/E.164)
+           * format. An example of a correctly formatted phone number:
+           * +15556767888.
+           * </pre>
+           *
+           * <code>string phone_number = 1;</code>
+           */
+          public java.lang.String getPhoneNumber() {
+            java.lang.Object ref = phoneNumber_;
+            if (!(ref instanceof java.lang.String)) {
+              com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+              java.lang.String s = bs.toStringUtf8();
+              phoneNumber_ = s;
+              return s;
+            } else {
+              return (java.lang.String) ref;
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Required. The phone number to fill in the default dialer app.
+           * This field should be in [E.164](https://en.wikipedia.org/wiki/E.164)
+           * format. An example of a correctly formatted phone number:
+           * +15556767888.
+           * </pre>
+           *
+           * <code>string phone_number = 1;</code>
+           */
+          public com.google.protobuf.ByteString getPhoneNumberBytes() {
+            java.lang.Object ref = phoneNumber_;
+            if (ref instanceof String) {
+              com.google.protobuf.ByteString b =
+                  com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+              phoneNumber_ = b;
+              return b;
+            } else {
+              return (com.google.protobuf.ByteString) ref;
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Required. The phone number to fill in the default dialer app.
+           * This field should be in [E.164](https://en.wikipedia.org/wiki/E.164)
+           * format. An example of a correctly formatted phone number:
+           * +15556767888.
+           * </pre>
+           *
+           * <code>string phone_number = 1;</code>
+           */
+          public Builder setPhoneNumber(java.lang.String value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+
+            phoneNumber_ = value;
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Required. The phone number to fill in the default dialer app.
+           * This field should be in [E.164](https://en.wikipedia.org/wiki/E.164)
+           * format. An example of a correctly formatted phone number:
+           * +15556767888.
+           * </pre>
+           *
+           * <code>string phone_number = 1;</code>
+           */
+          public Builder clearPhoneNumber() {
+
+            phoneNumber_ = getDefaultInstance().getPhoneNumber();
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Required. The phone number to fill in the default dialer app.
+           * This field should be in [E.164](https://en.wikipedia.org/wiki/E.164)
+           * format. An example of a correctly formatted phone number:
+           * +15556767888.
+           * </pre>
+           *
+           * <code>string phone_number = 1;</code>
+           */
+          public Builder setPhoneNumberBytes(com.google.protobuf.ByteString value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            checkByteStringIsUtf8(value);
+
+            phoneNumber_ = value;
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final Builder setUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.setUnknownFields(unknownFields);
+          }
+
+          @java.lang.Override
+          public final Builder mergeUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.mergeUnknownFields(unknownFields);
+          }
+
+          // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction.RbmSuggestedActionDial)
+        }
+
+        // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction.RbmSuggestedActionDial)
+        private static final com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                .RbmSuggestedActionDial
+            DEFAULT_INSTANCE;
+
+        static {
+          DEFAULT_INSTANCE =
+              new com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                  .RbmSuggestedActionDial();
+        }
+
+        public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                .RbmSuggestedActionDial
+            getDefaultInstance() {
+          return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<RbmSuggestedActionDial> PARSER =
+            new com.google.protobuf.AbstractParser<RbmSuggestedActionDial>() {
+              @java.lang.Override
+              public RbmSuggestedActionDial parsePartialFrom(
+                  com.google.protobuf.CodedInputStream input,
+                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws com.google.protobuf.InvalidProtocolBufferException {
+                return new RbmSuggestedActionDial(input, extensionRegistry);
+              }
+            };
+
+        public static com.google.protobuf.Parser<RbmSuggestedActionDial> parser() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<RbmSuggestedActionDial> getParserForType() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                .RbmSuggestedActionDial
+            getDefaultInstanceForType() {
+          return DEFAULT_INSTANCE;
+        }
+      }
+
+      public interface RbmSuggestedActionOpenUriOrBuilder
+          extends
+          // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction.RbmSuggestedActionOpenUri)
+          com.google.protobuf.MessageOrBuilder {
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The uri to open on the user device
+         * </pre>
+         *
+         * <code>string uri = 1;</code>
+         */
+        java.lang.String getUri();
+        /**
+         *
+         *
+         * <pre>
+         * Required. The uri to open on the user device
+         * </pre>
+         *
+         * <code>string uri = 1;</code>
+         */
+        com.google.protobuf.ByteString getUriBytes();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Opens the user's default web browser app to the specified uri
+       * (https://goo.gl/6GLJD2). If the user has an app installed that is
+       * registered as the default handler for the URL, then this app will be
+       * opened instead, and its icon will be used in the suggested action UI.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction.RbmSuggestedActionOpenUri}
+       */
+      public static final class RbmSuggestedActionOpenUri
+          extends com.google.protobuf.GeneratedMessageV3
+          implements
+          // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction.RbmSuggestedActionOpenUri)
+          RbmSuggestedActionOpenUriOrBuilder {
+        private static final long serialVersionUID = 0L;
+        // Use RbmSuggestedActionOpenUri.newBuilder() to construct.
+        private RbmSuggestedActionOpenUri(
+            com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+          super(builder);
+        }
+
+        private RbmSuggestedActionOpenUri() {
+          uri_ = "";
+        }
+
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+          return this.unknownFields;
+        }
+
+        private RbmSuggestedActionOpenUri(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          this();
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          int mutable_bitField0_ = 0;
+          com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+              com.google.protobuf.UnknownFieldSet.newBuilder();
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    java.lang.String s = input.readStringRequireUtf8();
+
+                    uri_ = s;
+                    break;
+                  }
+                default:
+                  {
+                    if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                      done = true;
+                    }
+                    break;
+                  }
+              }
+            }
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(this);
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(this);
+          } finally {
+            this.unknownFields = unknownFields.build();
+            makeExtensionsImmutable();
+          }
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.dialogflow.v2beta1.IntentProto
+              .internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_RbmSuggestedAction_RbmSuggestedActionOpenUri_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.dialogflow.v2beta1.IntentProto
+              .internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_RbmSuggestedAction_RbmSuggestedActionOpenUri_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                      .RbmSuggestedActionOpenUri.class,
+                  com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                      .RbmSuggestedActionOpenUri.Builder.class);
+        }
+
+        public static final int URI_FIELD_NUMBER = 1;
+        private volatile java.lang.Object uri_;
+        /**
+         *
+         *
+         * <pre>
+         * Required. The uri to open on the user device
+         * </pre>
+         *
+         * <code>string uri = 1;</code>
+         */
+        public java.lang.String getUri() {
+          java.lang.Object ref = uri_;
+          if (ref instanceof java.lang.String) {
+            return (java.lang.String) ref;
+          } else {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            uri_ = s;
+            return s;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. The uri to open on the user device
+         * </pre>
+         *
+         * <code>string uri = 1;</code>
+         */
+        public com.google.protobuf.ByteString getUriBytes() {
+          java.lang.Object ref = uri_;
+          if (ref instanceof java.lang.String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            uri_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          byte isInitialized = memoizedIsInitialized;
+          if (isInitialized == 1) return true;
+          if (isInitialized == 0) return false;
+
+          memoizedIsInitialized = 1;
+          return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+            throws java.io.IOException {
+          if (!getUriBytes().isEmpty()) {
+            com.google.protobuf.GeneratedMessageV3.writeString(output, 1, uri_);
+          }
+          unknownFields.writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+          int size = memoizedSize;
+          if (size != -1) return size;
+
+          size = 0;
+          if (!getUriBytes().isEmpty()) {
+            size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, uri_);
+          }
+          size += unknownFields.getSerializedSize();
+          memoizedSize = size;
+          return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+          if (obj == this) {
+            return true;
+          }
+          if (!(obj
+              instanceof
+              com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                  .RbmSuggestedActionOpenUri)) {
+            return super.equals(obj);
+          }
+          com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                  .RbmSuggestedActionOpenUri
+              other =
+                  (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                          .RbmSuggestedActionOpenUri)
+                      obj;
+
+          if (!getUri().equals(other.getUri())) return false;
+          if (!unknownFields.equals(other.unknownFields)) return false;
+          return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+          if (memoizedHashCode != 0) {
+            return memoizedHashCode;
+          }
+          int hash = 41;
+          hash = (19 * hash) + getDescriptor().hashCode();
+          hash = (37 * hash) + URI_FIELD_NUMBER;
+          hash = (53 * hash) + getUri().hashCode();
+          hash = (29 * hash) + unknownFields.hashCode();
+          memoizedHashCode = hash;
+          return hash;
+        }
+
+        public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                .RbmSuggestedActionOpenUri
+            parseFrom(java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                .RbmSuggestedActionOpenUri
+            parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                .RbmSuggestedActionOpenUri
+            parseFrom(com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                .RbmSuggestedActionOpenUri
+            parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                .RbmSuggestedActionOpenUri
+            parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                .RbmSuggestedActionOpenUri
+            parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                .RbmSuggestedActionOpenUri
+            parseFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                .RbmSuggestedActionOpenUri
+            parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                .RbmSuggestedActionOpenUri
+            parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input);
+        }
+
+        public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                .RbmSuggestedActionOpenUri
+            parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                .RbmSuggestedActionOpenUri
+            parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                .RbmSuggestedActionOpenUri
+            parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+          return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+          return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                    .RbmSuggestedActionOpenUri
+                prototype) {
+          return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+          return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          Builder builder = new Builder(parent);
+          return builder;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Opens the user's default web browser app to the specified uri
+         * (https://goo.gl/6GLJD2). If the user has an app installed that is
+         * registered as the default handler for the URL, then this app will be
+         * opened instead, and its icon will be used in the suggested action UI.
+         * </pre>
+         *
+         * Protobuf type {@code
+         * google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction.RbmSuggestedActionOpenUri}
+         */
+        public static final class Builder
+            extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+            implements
+            // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction.RbmSuggestedActionOpenUri)
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                .RbmSuggestedActionOpenUriOrBuilder {
+          public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return com.google.cloud.dialogflow.v2beta1.IntentProto
+                .internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_RbmSuggestedAction_RbmSuggestedActionOpenUri_descriptor;
+          }
+
+          @java.lang.Override
+          protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+              internalGetFieldAccessorTable() {
+            return com.google.cloud.dialogflow.v2beta1.IntentProto
+                .internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_RbmSuggestedAction_RbmSuggestedActionOpenUri_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                    com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                        .RbmSuggestedActionOpenUri.class,
+                    com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                        .RbmSuggestedActionOpenUri.Builder.class);
+          }
+
+          // Construct using
+          // com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction.RbmSuggestedActionOpenUri.newBuilder()
+          private Builder() {
+            maybeForceBuilderInitialization();
+          }
+
+          private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            super(parent);
+            maybeForceBuilderInitialization();
+          }
+
+          private void maybeForceBuilderInitialization() {
+            if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+          }
+
+          @java.lang.Override
+          public Builder clear() {
+            super.clear();
+            uri_ = "";
+
+            return this;
+          }
+
+          @java.lang.Override
+          public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+            return com.google.cloud.dialogflow.v2beta1.IntentProto
+                .internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_RbmSuggestedAction_RbmSuggestedActionOpenUri_descriptor;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                  .RbmSuggestedActionOpenUri
+              getDefaultInstanceForType() {
+            return com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                .RbmSuggestedActionOpenUri.getDefaultInstance();
+          }
+
+          @java.lang.Override
+          public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                  .RbmSuggestedActionOpenUri
+              build() {
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                    .RbmSuggestedActionOpenUri
+                result = buildPartial();
+            if (!result.isInitialized()) {
+              throw newUninitializedMessageException(result);
+            }
+            return result;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                  .RbmSuggestedActionOpenUri
+              buildPartial() {
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                    .RbmSuggestedActionOpenUri
+                result =
+                    new com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                        .RbmSuggestedActionOpenUri(this);
+            result.uri_ = uri_;
+            onBuilt();
+            return result;
+          }
+
+          @java.lang.Override
+          public Builder clone() {
+            return super.clone();
+          }
+
+          @java.lang.Override
+          public Builder setField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.setField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+            return super.clearField(field);
+          }
+
+          @java.lang.Override
+          public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+            return super.clearOneof(oneof);
+          }
+
+          @java.lang.Override
+          public Builder setRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              int index,
+              java.lang.Object value) {
+            return super.setRepeatedField(field, index, value);
+          }
+
+          @java.lang.Override
+          public Builder addRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.addRepeatedField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(com.google.protobuf.Message other) {
+            if (other
+                instanceof
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                    .RbmSuggestedActionOpenUri) {
+              return mergeFrom(
+                  (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                          .RbmSuggestedActionOpenUri)
+                      other);
+            } else {
+              super.mergeFrom(other);
+              return this;
+            }
+          }
+
+          public Builder mergeFrom(
+              com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                      .RbmSuggestedActionOpenUri
+                  other) {
+            if (other
+                == com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                    .RbmSuggestedActionOpenUri.getDefaultInstance()) return this;
+            if (!other.getUri().isEmpty()) {
+              uri_ = other.uri_;
+              onChanged();
+            }
+            this.mergeUnknownFields(other.unknownFields);
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final boolean isInitialized() {
+            return true;
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                    .RbmSuggestedActionOpenUri
+                parsedMessage = null;
+            try {
+              parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              parsedMessage =
+                  (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                          .RbmSuggestedActionOpenUri)
+                      e.getUnfinishedMessage();
+              throw e.unwrapIOException();
+            } finally {
+              if (parsedMessage != null) {
+                mergeFrom(parsedMessage);
+              }
+            }
+            return this;
+          }
+
+          private java.lang.Object uri_ = "";
+          /**
+           *
+           *
+           * <pre>
+           * Required. The uri to open on the user device
+           * </pre>
+           *
+           * <code>string uri = 1;</code>
+           */
+          public java.lang.String getUri() {
+            java.lang.Object ref = uri_;
+            if (!(ref instanceof java.lang.String)) {
+              com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+              java.lang.String s = bs.toStringUtf8();
+              uri_ = s;
+              return s;
+            } else {
+              return (java.lang.String) ref;
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Required. The uri to open on the user device
+           * </pre>
+           *
+           * <code>string uri = 1;</code>
+           */
+          public com.google.protobuf.ByteString getUriBytes() {
+            java.lang.Object ref = uri_;
+            if (ref instanceof String) {
+              com.google.protobuf.ByteString b =
+                  com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+              uri_ = b;
+              return b;
+            } else {
+              return (com.google.protobuf.ByteString) ref;
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Required. The uri to open on the user device
+           * </pre>
+           *
+           * <code>string uri = 1;</code>
+           */
+          public Builder setUri(java.lang.String value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+
+            uri_ = value;
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Required. The uri to open on the user device
+           * </pre>
+           *
+           * <code>string uri = 1;</code>
+           */
+          public Builder clearUri() {
+
+            uri_ = getDefaultInstance().getUri();
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Required. The uri to open on the user device
+           * </pre>
+           *
+           * <code>string uri = 1;</code>
+           */
+          public Builder setUriBytes(com.google.protobuf.ByteString value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            checkByteStringIsUtf8(value);
+
+            uri_ = value;
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final Builder setUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.setUnknownFields(unknownFields);
+          }
+
+          @java.lang.Override
+          public final Builder mergeUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.mergeUnknownFields(unknownFields);
+          }
+
+          // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction.RbmSuggestedActionOpenUri)
+        }
+
+        // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction.RbmSuggestedActionOpenUri)
+        private static final com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                .RbmSuggestedActionOpenUri
+            DEFAULT_INSTANCE;
+
+        static {
+          DEFAULT_INSTANCE =
+              new com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                  .RbmSuggestedActionOpenUri();
+        }
+
+        public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                .RbmSuggestedActionOpenUri
+            getDefaultInstance() {
+          return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<RbmSuggestedActionOpenUri> PARSER =
+            new com.google.protobuf.AbstractParser<RbmSuggestedActionOpenUri>() {
+              @java.lang.Override
+              public RbmSuggestedActionOpenUri parsePartialFrom(
+                  com.google.protobuf.CodedInputStream input,
+                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws com.google.protobuf.InvalidProtocolBufferException {
+                return new RbmSuggestedActionOpenUri(input, extensionRegistry);
+              }
+            };
+
+        public static com.google.protobuf.Parser<RbmSuggestedActionOpenUri> parser() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<RbmSuggestedActionOpenUri> getParserForType() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                .RbmSuggestedActionOpenUri
+            getDefaultInstanceForType() {
+          return DEFAULT_INSTANCE;
+        }
+      }
+
+      public interface RbmSuggestedActionShareLocationOrBuilder
+          extends
+          // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction.RbmSuggestedActionShareLocation)
+          com.google.protobuf.MessageOrBuilder {}
+      /**
+       *
+       *
+       * <pre>
+       * Opens the device's location chooser so the user can pick a location
+       * to send back to the agent (https://goo.gl/GXotJW).
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction.RbmSuggestedActionShareLocation}
+       */
+      public static final class RbmSuggestedActionShareLocation
+          extends com.google.protobuf.GeneratedMessageV3
+          implements
+          // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction.RbmSuggestedActionShareLocation)
+          RbmSuggestedActionShareLocationOrBuilder {
+        private static final long serialVersionUID = 0L;
+        // Use RbmSuggestedActionShareLocation.newBuilder() to construct.
+        private RbmSuggestedActionShareLocation(
+            com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+          super(builder);
+        }
+
+        private RbmSuggestedActionShareLocation() {}
+
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+          return this.unknownFields;
+        }
+
+        private RbmSuggestedActionShareLocation(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          this();
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+              com.google.protobuf.UnknownFieldSet.newBuilder();
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                default:
+                  {
+                    if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                      done = true;
+                    }
+                    break;
+                  }
+              }
+            }
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(this);
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(this);
+          } finally {
+            this.unknownFields = unknownFields.build();
+            makeExtensionsImmutable();
+          }
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.dialogflow.v2beta1.IntentProto
+              .internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_RbmSuggestedAction_RbmSuggestedActionShareLocation_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.dialogflow.v2beta1.IntentProto
+              .internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_RbmSuggestedAction_RbmSuggestedActionShareLocation_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                      .RbmSuggestedActionShareLocation.class,
+                  com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                      .RbmSuggestedActionShareLocation.Builder.class);
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          byte isInitialized = memoizedIsInitialized;
+          if (isInitialized == 1) return true;
+          if (isInitialized == 0) return false;
+
+          memoizedIsInitialized = 1;
+          return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+            throws java.io.IOException {
+          unknownFields.writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+          int size = memoizedSize;
+          if (size != -1) return size;
+
+          size = 0;
+          size += unknownFields.getSerializedSize();
+          memoizedSize = size;
+          return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+          if (obj == this) {
+            return true;
+          }
+          if (!(obj
+              instanceof
+              com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                  .RbmSuggestedActionShareLocation)) {
+            return super.equals(obj);
+          }
+          com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                  .RbmSuggestedActionShareLocation
+              other =
+                  (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                          .RbmSuggestedActionShareLocation)
+                      obj;
+
+          if (!unknownFields.equals(other.unknownFields)) return false;
+          return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+          if (memoizedHashCode != 0) {
+            return memoizedHashCode;
+          }
+          int hash = 41;
+          hash = (19 * hash) + getDescriptor().hashCode();
+          hash = (29 * hash) + unknownFields.hashCode();
+          memoizedHashCode = hash;
+          return hash;
+        }
+
+        public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                .RbmSuggestedActionShareLocation
+            parseFrom(java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                .RbmSuggestedActionShareLocation
+            parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                .RbmSuggestedActionShareLocation
+            parseFrom(com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                .RbmSuggestedActionShareLocation
+            parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                .RbmSuggestedActionShareLocation
+            parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                .RbmSuggestedActionShareLocation
+            parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                .RbmSuggestedActionShareLocation
+            parseFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                .RbmSuggestedActionShareLocation
+            parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                .RbmSuggestedActionShareLocation
+            parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input);
+        }
+
+        public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                .RbmSuggestedActionShareLocation
+            parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                .RbmSuggestedActionShareLocation
+            parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                .RbmSuggestedActionShareLocation
+            parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+          return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+          return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                    .RbmSuggestedActionShareLocation
+                prototype) {
+          return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+          return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          Builder builder = new Builder(parent);
+          return builder;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Opens the device's location chooser so the user can pick a location
+         * to send back to the agent (https://goo.gl/GXotJW).
+         * </pre>
+         *
+         * Protobuf type {@code
+         * google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction.RbmSuggestedActionShareLocation}
+         */
+        public static final class Builder
+            extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+            implements
+            // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction.RbmSuggestedActionShareLocation)
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                .RbmSuggestedActionShareLocationOrBuilder {
+          public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return com.google.cloud.dialogflow.v2beta1.IntentProto
+                .internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_RbmSuggestedAction_RbmSuggestedActionShareLocation_descriptor;
+          }
+
+          @java.lang.Override
+          protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+              internalGetFieldAccessorTable() {
+            return com.google.cloud.dialogflow.v2beta1.IntentProto
+                .internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_RbmSuggestedAction_RbmSuggestedActionShareLocation_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                    com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                        .RbmSuggestedActionShareLocation.class,
+                    com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                        .RbmSuggestedActionShareLocation.Builder.class);
+          }
+
+          // Construct using
+          // com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction.RbmSuggestedActionShareLocation.newBuilder()
+          private Builder() {
+            maybeForceBuilderInitialization();
+          }
+
+          private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            super(parent);
+            maybeForceBuilderInitialization();
+          }
+
+          private void maybeForceBuilderInitialization() {
+            if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+          }
+
+          @java.lang.Override
+          public Builder clear() {
+            super.clear();
+            return this;
+          }
+
+          @java.lang.Override
+          public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+            return com.google.cloud.dialogflow.v2beta1.IntentProto
+                .internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_RbmSuggestedAction_RbmSuggestedActionShareLocation_descriptor;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                  .RbmSuggestedActionShareLocation
+              getDefaultInstanceForType() {
+            return com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                .RbmSuggestedActionShareLocation.getDefaultInstance();
+          }
+
+          @java.lang.Override
+          public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                  .RbmSuggestedActionShareLocation
+              build() {
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                    .RbmSuggestedActionShareLocation
+                result = buildPartial();
+            if (!result.isInitialized()) {
+              throw newUninitializedMessageException(result);
+            }
+            return result;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                  .RbmSuggestedActionShareLocation
+              buildPartial() {
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                    .RbmSuggestedActionShareLocation
+                result =
+                    new com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                        .RbmSuggestedActionShareLocation(this);
+            onBuilt();
+            return result;
+          }
+
+          @java.lang.Override
+          public Builder clone() {
+            return super.clone();
+          }
+
+          @java.lang.Override
+          public Builder setField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.setField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+            return super.clearField(field);
+          }
+
+          @java.lang.Override
+          public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+            return super.clearOneof(oneof);
+          }
+
+          @java.lang.Override
+          public Builder setRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              int index,
+              java.lang.Object value) {
+            return super.setRepeatedField(field, index, value);
+          }
+
+          @java.lang.Override
+          public Builder addRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.addRepeatedField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(com.google.protobuf.Message other) {
+            if (other
+                instanceof
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                    .RbmSuggestedActionShareLocation) {
+              return mergeFrom(
+                  (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                          .RbmSuggestedActionShareLocation)
+                      other);
+            } else {
+              super.mergeFrom(other);
+              return this;
+            }
+          }
+
+          public Builder mergeFrom(
+              com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                      .RbmSuggestedActionShareLocation
+                  other) {
+            if (other
+                == com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                    .RbmSuggestedActionShareLocation.getDefaultInstance()) return this;
+            this.mergeUnknownFields(other.unknownFields);
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final boolean isInitialized() {
+            return true;
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                    .RbmSuggestedActionShareLocation
+                parsedMessage = null;
+            try {
+              parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              parsedMessage =
+                  (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                          .RbmSuggestedActionShareLocation)
+                      e.getUnfinishedMessage();
+              throw e.unwrapIOException();
+            } finally {
+              if (parsedMessage != null) {
+                mergeFrom(parsedMessage);
+              }
+            }
+            return this;
+          }
+
+          @java.lang.Override
+          public final Builder setUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.setUnknownFields(unknownFields);
+          }
+
+          @java.lang.Override
+          public final Builder mergeUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.mergeUnknownFields(unknownFields);
+          }
+
+          // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction.RbmSuggestedActionShareLocation)
+        }
+
+        // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction.RbmSuggestedActionShareLocation)
+        private static final com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                .RbmSuggestedActionShareLocation
+            DEFAULT_INSTANCE;
+
+        static {
+          DEFAULT_INSTANCE =
+              new com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                  .RbmSuggestedActionShareLocation();
+        }
+
+        public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                .RbmSuggestedActionShareLocation
+            getDefaultInstance() {
+          return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<RbmSuggestedActionShareLocation> PARSER =
+            new com.google.protobuf.AbstractParser<RbmSuggestedActionShareLocation>() {
+              @java.lang.Override
+              public RbmSuggestedActionShareLocation parsePartialFrom(
+                  com.google.protobuf.CodedInputStream input,
+                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws com.google.protobuf.InvalidProtocolBufferException {
+                return new RbmSuggestedActionShareLocation(input, extensionRegistry);
+              }
+            };
+
+        public static com.google.protobuf.Parser<RbmSuggestedActionShareLocation> parser() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<RbmSuggestedActionShareLocation> getParserForType() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                .RbmSuggestedActionShareLocation
+            getDefaultInstanceForType() {
+          return DEFAULT_INSTANCE;
+        }
+      }
+
+      private int actionCase_ = 0;
+      private java.lang.Object action_;
+
+      public enum ActionCase implements com.google.protobuf.Internal.EnumLite {
+        DIAL(3),
+        OPEN_URL(4),
+        SHARE_LOCATION(5),
+        ACTION_NOT_SET(0);
+        private final int value;
+
+        private ActionCase(int value) {
+          this.value = value;
+        }
+        /** @deprecated Use {@link #forNumber(int)} instead. */
+        @java.lang.Deprecated
+        public static ActionCase valueOf(int value) {
+          return forNumber(value);
+        }
+
+        public static ActionCase forNumber(int value) {
+          switch (value) {
+            case 3:
+              return DIAL;
+            case 4:
+              return OPEN_URL;
+            case 5:
+              return SHARE_LOCATION;
+            case 0:
+              return ACTION_NOT_SET;
+            default:
+              return null;
+          }
+        }
+
+        public int getNumber() {
+          return this.value;
+        }
+      };
+
+      public ActionCase getActionCase() {
+        return ActionCase.forNumber(actionCase_);
+      }
+
+      public static final int TEXT_FIELD_NUMBER = 1;
+      private volatile java.lang.Object text_;
+      /**
+       *
+       *
+       * <pre>
+       * Text to display alongside the action.
+       * </pre>
+       *
+       * <code>string text = 1;</code>
+       */
+      public java.lang.String getText() {
+        java.lang.Object ref = text_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          text_ = s;
+          return s;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Text to display alongside the action.
+       * </pre>
+       *
+       * <code>string text = 1;</code>
+       */
+      public com.google.protobuf.ByteString getTextBytes() {
+        java.lang.Object ref = text_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          text_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int POSTBACK_DATA_FIELD_NUMBER = 2;
+      private volatile java.lang.Object postbackData_;
+      /**
+       *
+       *
+       * <pre>
+       * Opaque payload that the Dialogflow receives in a user event
+       * when the user taps the suggested action. This data will be also
+       * forwarded to webhook to allow performing custom business logic.
+       * </pre>
+       *
+       * <code>string postback_data = 2;</code>
+       */
+      public java.lang.String getPostbackData() {
+        java.lang.Object ref = postbackData_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          postbackData_ = s;
+          return s;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Opaque payload that the Dialogflow receives in a user event
+       * when the user taps the suggested action. This data will be also
+       * forwarded to webhook to allow performing custom business logic.
+       * </pre>
+       *
+       * <code>string postback_data = 2;</code>
+       */
+      public com.google.protobuf.ByteString getPostbackDataBytes() {
+        java.lang.Object ref = postbackData_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          postbackData_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int DIAL_FIELD_NUMBER = 3;
+      /**
+       *
+       *
+       * <pre>
+       * Suggested client side action: Dial a phone number
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction.RbmSuggestedActionDial dial = 3;
+       * </code>
+       */
+      public boolean hasDial() {
+        return actionCase_ == 3;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Suggested client side action: Dial a phone number
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction.RbmSuggestedActionDial dial = 3;
+       * </code>
+       */
+      public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+              .RbmSuggestedActionDial
+          getDial() {
+        if (actionCase_ == 3) {
+          return (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                  .RbmSuggestedActionDial)
+              action_;
+        }
+        return com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+            .RbmSuggestedActionDial.getDefaultInstance();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Suggested client side action: Dial a phone number
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction.RbmSuggestedActionDial dial = 3;
+       * </code>
+       */
+      public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+              .RbmSuggestedActionDialOrBuilder
+          getDialOrBuilder() {
+        if (actionCase_ == 3) {
+          return (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                  .RbmSuggestedActionDial)
+              action_;
+        }
+        return com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+            .RbmSuggestedActionDial.getDefaultInstance();
+      }
+
+      public static final int OPEN_URL_FIELD_NUMBER = 4;
+      /**
+       *
+       *
+       * <pre>
+       * Suggested client side action: Open a URI on device
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction.RbmSuggestedActionOpenUri open_url = 4;
+       * </code>
+       */
+      public boolean hasOpenUrl() {
+        return actionCase_ == 4;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Suggested client side action: Open a URI on device
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction.RbmSuggestedActionOpenUri open_url = 4;
+       * </code>
+       */
+      public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+              .RbmSuggestedActionOpenUri
+          getOpenUrl() {
+        if (actionCase_ == 4) {
+          return (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                  .RbmSuggestedActionOpenUri)
+              action_;
+        }
+        return com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+            .RbmSuggestedActionOpenUri.getDefaultInstance();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Suggested client side action: Open a URI on device
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction.RbmSuggestedActionOpenUri open_url = 4;
+       * </code>
+       */
+      public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+              .RbmSuggestedActionOpenUriOrBuilder
+          getOpenUrlOrBuilder() {
+        if (actionCase_ == 4) {
+          return (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                  .RbmSuggestedActionOpenUri)
+              action_;
+        }
+        return com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+            .RbmSuggestedActionOpenUri.getDefaultInstance();
+      }
+
+      public static final int SHARE_LOCATION_FIELD_NUMBER = 5;
+      /**
+       *
+       *
+       * <pre>
+       * Suggested client side action: Share user location
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction.RbmSuggestedActionShareLocation share_location = 5;
+       * </code>
+       */
+      public boolean hasShareLocation() {
+        return actionCase_ == 5;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Suggested client side action: Share user location
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction.RbmSuggestedActionShareLocation share_location = 5;
+       * </code>
+       */
+      public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+              .RbmSuggestedActionShareLocation
+          getShareLocation() {
+        if (actionCase_ == 5) {
+          return (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                  .RbmSuggestedActionShareLocation)
+              action_;
+        }
+        return com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+            .RbmSuggestedActionShareLocation.getDefaultInstance();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Suggested client side action: Share user location
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction.RbmSuggestedActionShareLocation share_location = 5;
+       * </code>
+       */
+      public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+              .RbmSuggestedActionShareLocationOrBuilder
+          getShareLocationOrBuilder() {
+        if (actionCase_ == 5) {
+          return (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                  .RbmSuggestedActionShareLocation)
+              action_;
+        }
+        return com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+            .RbmSuggestedActionShareLocation.getDefaultInstance();
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (!getTextBytes().isEmpty()) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, text_);
+        }
+        if (!getPostbackDataBytes().isEmpty()) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 2, postbackData_);
+        }
+        if (actionCase_ == 3) {
+          output.writeMessage(
+              3,
+              (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                      .RbmSuggestedActionDial)
+                  action_);
+        }
+        if (actionCase_ == 4) {
+          output.writeMessage(
+              4,
+              (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                      .RbmSuggestedActionOpenUri)
+                  action_);
+        }
+        if (actionCase_ == 5) {
+          output.writeMessage(
+              5,
+              (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                      .RbmSuggestedActionShareLocation)
+                  action_);
+        }
+        unknownFields.writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!getTextBytes().isEmpty()) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, text_);
+        }
+        if (!getPostbackDataBytes().isEmpty()) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, postbackData_);
+        }
+        if (actionCase_ == 3) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeMessageSize(
+                  3,
+                  (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                          .RbmSuggestedActionDial)
+                      action_);
+        }
+        if (actionCase_ == 4) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeMessageSize(
+                  4,
+                  (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                          .RbmSuggestedActionOpenUri)
+                      action_);
+        }
+        if (actionCase_ == 5) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeMessageSize(
+                  5,
+                  (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                          .RbmSuggestedActionShareLocation)
+                      action_);
+        }
+        size += unknownFields.getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction other =
+            (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction) obj;
+
+        if (!getText().equals(other.getText())) return false;
+        if (!getPostbackData().equals(other.getPostbackData())) return false;
+        if (!getActionCase().equals(other.getActionCase())) return false;
+        switch (actionCase_) {
+          case 3:
+            if (!getDial().equals(other.getDial())) return false;
+            break;
+          case 4:
+            if (!getOpenUrl().equals(other.getOpenUrl())) return false;
+            break;
+          case 5:
+            if (!getShareLocation().equals(other.getShareLocation())) return false;
+            break;
+          case 0:
+          default:
+        }
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + TEXT_FIELD_NUMBER;
+        hash = (53 * hash) + getText().hashCode();
+        hash = (37 * hash) + POSTBACK_DATA_FIELD_NUMBER;
+        hash = (53 * hash) + getPostbackData().hashCode();
+        switch (actionCase_) {
+          case 3:
+            hash = (37 * hash) + DIAL_FIELD_NUMBER;
+            hash = (53 * hash) + getDial().hashCode();
+            break;
+          case 4:
+            hash = (37 * hash) + OPEN_URL_FIELD_NUMBER;
+            hash = (53 * hash) + getOpenUrl().hashCode();
+            break;
+          case 5:
+            hash = (37 * hash) + SHARE_LOCATION_FIELD_NUMBER;
+            hash = (53 * hash) + getShareLocation().hashCode();
+            break;
+          case 0:
+          default:
+        }
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction parseFrom(
+          java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction parseFrom(
+          java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction parseFrom(
+          byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction parseFrom(
+          byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction parseFrom(
+          java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction parseFrom(
+          java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction parseFrom(
+          com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Rich Business Messaging (RBM) suggested client-side action that the user
+       * can choose from the card.
+       * </pre>
+       *
+       * Protobuf type {@code google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction)
+          com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedActionOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.dialogflow.v2beta1.IntentProto
+              .internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_RbmSuggestedAction_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.dialogflow.v2beta1.IntentProto
+              .internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_RbmSuggestedAction_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction.class,
+                  com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction.Builder
+                      .class);
+        }
+
+        // Construct using
+        // com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          text_ = "";
+
+          postbackData_ = "";
+
+          actionCase_ = 0;
+          action_ = null;
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.dialogflow.v2beta1.IntentProto
+              .internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_RbmSuggestedAction_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+            getDefaultInstanceForType() {
+          return com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction build() {
+          com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+            buildPartial() {
+          com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction result =
+              new com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction(this);
+          result.text_ = text_;
+          result.postbackData_ = postbackData_;
+          if (actionCase_ == 3) {
+            if (dialBuilder_ == null) {
+              result.action_ = action_;
+            } else {
+              result.action_ = dialBuilder_.build();
+            }
+          }
+          if (actionCase_ == 4) {
+            if (openUrlBuilder_ == null) {
+              result.action_ = action_;
+            } else {
+              result.action_ = openUrlBuilder_.build();
+            }
+          }
+          if (actionCase_ == 5) {
+            if (shareLocationBuilder_ == null) {
+              result.action_ = action_;
+            } else {
+              result.action_ = shareLocationBuilder_.build();
+            }
+          }
+          result.actionCase_ = actionCase_;
+          onBuilt();
+          return result;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction) {
+            return mergeFrom(
+                (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction) other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction other) {
+          if (other
+              == com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                  .getDefaultInstance()) return this;
+          if (!other.getText().isEmpty()) {
+            text_ = other.text_;
+            onChanged();
+          }
+          if (!other.getPostbackData().isEmpty()) {
+            postbackData_ = other.postbackData_;
+            onChanged();
+          }
+          switch (other.getActionCase()) {
+            case DIAL:
+              {
+                mergeDial(other.getDial());
+                break;
+              }
+            case OPEN_URL:
+              {
+                mergeOpenUrl(other.getOpenUrl());
+                break;
+              }
+            case SHARE_LOCATION:
+              {
+                mergeShareLocation(other.getShareLocation());
+                break;
+              }
+            case ACTION_NOT_SET:
+              {
+                break;
+              }
+          }
+          this.mergeUnknownFields(other.unknownFields);
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction parsedMessage =
+              null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage =
+                (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction)
+                    e.getUnfinishedMessage();
+            throw e.unwrapIOException();
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+
+        private int actionCase_ = 0;
+        private java.lang.Object action_;
+
+        public ActionCase getActionCase() {
+          return ActionCase.forNumber(actionCase_);
+        }
+
+        public Builder clearAction() {
+          actionCase_ = 0;
+          action_ = null;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object text_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * Text to display alongside the action.
+         * </pre>
+         *
+         * <code>string text = 1;</code>
+         */
+        public java.lang.String getText() {
+          java.lang.Object ref = text_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            text_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Text to display alongside the action.
+         * </pre>
+         *
+         * <code>string text = 1;</code>
+         */
+        public com.google.protobuf.ByteString getTextBytes() {
+          java.lang.Object ref = text_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            text_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Text to display alongside the action.
+         * </pre>
+         *
+         * <code>string text = 1;</code>
+         */
+        public Builder setText(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+
+          text_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Text to display alongside the action.
+         * </pre>
+         *
+         * <code>string text = 1;</code>
+         */
+        public Builder clearText() {
+
+          text_ = getDefaultInstance().getText();
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Text to display alongside the action.
+         * </pre>
+         *
+         * <code>string text = 1;</code>
+         */
+        public Builder setTextBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+
+          text_ = value;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object postbackData_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * Opaque payload that the Dialogflow receives in a user event
+         * when the user taps the suggested action. This data will be also
+         * forwarded to webhook to allow performing custom business logic.
+         * </pre>
+         *
+         * <code>string postback_data = 2;</code>
+         */
+        public java.lang.String getPostbackData() {
+          java.lang.Object ref = postbackData_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            postbackData_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Opaque payload that the Dialogflow receives in a user event
+         * when the user taps the suggested action. This data will be also
+         * forwarded to webhook to allow performing custom business logic.
+         * </pre>
+         *
+         * <code>string postback_data = 2;</code>
+         */
+        public com.google.protobuf.ByteString getPostbackDataBytes() {
+          java.lang.Object ref = postbackData_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            postbackData_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Opaque payload that the Dialogflow receives in a user event
+         * when the user taps the suggested action. This data will be also
+         * forwarded to webhook to allow performing custom business logic.
+         * </pre>
+         *
+         * <code>string postback_data = 2;</code>
+         */
+        public Builder setPostbackData(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+
+          postbackData_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Opaque payload that the Dialogflow receives in a user event
+         * when the user taps the suggested action. This data will be also
+         * forwarded to webhook to allow performing custom business logic.
+         * </pre>
+         *
+         * <code>string postback_data = 2;</code>
+         */
+        public Builder clearPostbackData() {
+
+          postbackData_ = getDefaultInstance().getPostbackData();
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Opaque payload that the Dialogflow receives in a user event
+         * when the user taps the suggested action. This data will be also
+         * forwarded to webhook to allow performing custom business logic.
+         * </pre>
+         *
+         * <code>string postback_data = 2;</code>
+         */
+        public Builder setPostbackDataBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+
+          postbackData_ = value;
+          onChanged();
+          return this;
+        }
+
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                    .RbmSuggestedActionDial,
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                    .RbmSuggestedActionDial.Builder,
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                    .RbmSuggestedActionDialOrBuilder>
+            dialBuilder_;
+        /**
+         *
+         *
+         * <pre>
+         * Suggested client side action: Dial a phone number
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction.RbmSuggestedActionDial dial = 3;
+         * </code>
+         */
+        public boolean hasDial() {
+          return actionCase_ == 3;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Suggested client side action: Dial a phone number
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction.RbmSuggestedActionDial dial = 3;
+         * </code>
+         */
+        public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                .RbmSuggestedActionDial
+            getDial() {
+          if (dialBuilder_ == null) {
+            if (actionCase_ == 3) {
+              return (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                      .RbmSuggestedActionDial)
+                  action_;
+            }
+            return com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                .RbmSuggestedActionDial.getDefaultInstance();
+          } else {
+            if (actionCase_ == 3) {
+              return dialBuilder_.getMessage();
+            }
+            return com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                .RbmSuggestedActionDial.getDefaultInstance();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Suggested client side action: Dial a phone number
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction.RbmSuggestedActionDial dial = 3;
+         * </code>
+         */
+        public Builder setDial(
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                    .RbmSuggestedActionDial
+                value) {
+          if (dialBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            action_ = value;
+            onChanged();
+          } else {
+            dialBuilder_.setMessage(value);
+          }
+          actionCase_ = 3;
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Suggested client side action: Dial a phone number
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction.RbmSuggestedActionDial dial = 3;
+         * </code>
+         */
+        public Builder setDial(
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                    .RbmSuggestedActionDial.Builder
+                builderForValue) {
+          if (dialBuilder_ == null) {
+            action_ = builderForValue.build();
+            onChanged();
+          } else {
+            dialBuilder_.setMessage(builderForValue.build());
+          }
+          actionCase_ = 3;
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Suggested client side action: Dial a phone number
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction.RbmSuggestedActionDial dial = 3;
+         * </code>
+         */
+        public Builder mergeDial(
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                    .RbmSuggestedActionDial
+                value) {
+          if (dialBuilder_ == null) {
+            if (actionCase_ == 3
+                && action_
+                    != com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                        .RbmSuggestedActionDial.getDefaultInstance()) {
+              action_ =
+                  com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                      .RbmSuggestedActionDial.newBuilder(
+                          (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                                  .RbmSuggestedActionDial)
+                              action_)
+                      .mergeFrom(value)
+                      .buildPartial();
+            } else {
+              action_ = value;
+            }
+            onChanged();
+          } else {
+            if (actionCase_ == 3) {
+              dialBuilder_.mergeFrom(value);
+            }
+            dialBuilder_.setMessage(value);
+          }
+          actionCase_ = 3;
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Suggested client side action: Dial a phone number
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction.RbmSuggestedActionDial dial = 3;
+         * </code>
+         */
+        public Builder clearDial() {
+          if (dialBuilder_ == null) {
+            if (actionCase_ == 3) {
+              actionCase_ = 0;
+              action_ = null;
+              onChanged();
+            }
+          } else {
+            if (actionCase_ == 3) {
+              actionCase_ = 0;
+              action_ = null;
+            }
+            dialBuilder_.clear();
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Suggested client side action: Dial a phone number
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction.RbmSuggestedActionDial dial = 3;
+         * </code>
+         */
+        public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                .RbmSuggestedActionDial.Builder
+            getDialBuilder() {
+          return getDialFieldBuilder().getBuilder();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Suggested client side action: Dial a phone number
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction.RbmSuggestedActionDial dial = 3;
+         * </code>
+         */
+        public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                .RbmSuggestedActionDialOrBuilder
+            getDialOrBuilder() {
+          if ((actionCase_ == 3) && (dialBuilder_ != null)) {
+            return dialBuilder_.getMessageOrBuilder();
+          } else {
+            if (actionCase_ == 3) {
+              return (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                      .RbmSuggestedActionDial)
+                  action_;
+            }
+            return com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                .RbmSuggestedActionDial.getDefaultInstance();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Suggested client side action: Dial a phone number
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction.RbmSuggestedActionDial dial = 3;
+         * </code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                    .RbmSuggestedActionDial,
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                    .RbmSuggestedActionDial.Builder,
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                    .RbmSuggestedActionDialOrBuilder>
+            getDialFieldBuilder() {
+          if (dialBuilder_ == null) {
+            if (!(actionCase_ == 3)) {
+              action_ =
+                  com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                      .RbmSuggestedActionDial.getDefaultInstance();
+            }
+            dialBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                        .RbmSuggestedActionDial,
+                    com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                        .RbmSuggestedActionDial.Builder,
+                    com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                        .RbmSuggestedActionDialOrBuilder>(
+                    (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                            .RbmSuggestedActionDial)
+                        action_,
+                    getParentForChildren(),
+                    isClean());
+            action_ = null;
+          }
+          actionCase_ = 3;
+          onChanged();
+          ;
+          return dialBuilder_;
+        }
+
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                    .RbmSuggestedActionOpenUri,
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                    .RbmSuggestedActionOpenUri.Builder,
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                    .RbmSuggestedActionOpenUriOrBuilder>
+            openUrlBuilder_;
+        /**
+         *
+         *
+         * <pre>
+         * Suggested client side action: Open a URI on device
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction.RbmSuggestedActionOpenUri open_url = 4;
+         * </code>
+         */
+        public boolean hasOpenUrl() {
+          return actionCase_ == 4;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Suggested client side action: Open a URI on device
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction.RbmSuggestedActionOpenUri open_url = 4;
+         * </code>
+         */
+        public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                .RbmSuggestedActionOpenUri
+            getOpenUrl() {
+          if (openUrlBuilder_ == null) {
+            if (actionCase_ == 4) {
+              return (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                      .RbmSuggestedActionOpenUri)
+                  action_;
+            }
+            return com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                .RbmSuggestedActionOpenUri.getDefaultInstance();
+          } else {
+            if (actionCase_ == 4) {
+              return openUrlBuilder_.getMessage();
+            }
+            return com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                .RbmSuggestedActionOpenUri.getDefaultInstance();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Suggested client side action: Open a URI on device
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction.RbmSuggestedActionOpenUri open_url = 4;
+         * </code>
+         */
+        public Builder setOpenUrl(
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                    .RbmSuggestedActionOpenUri
+                value) {
+          if (openUrlBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            action_ = value;
+            onChanged();
+          } else {
+            openUrlBuilder_.setMessage(value);
+          }
+          actionCase_ = 4;
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Suggested client side action: Open a URI on device
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction.RbmSuggestedActionOpenUri open_url = 4;
+         * </code>
+         */
+        public Builder setOpenUrl(
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                    .RbmSuggestedActionOpenUri.Builder
+                builderForValue) {
+          if (openUrlBuilder_ == null) {
+            action_ = builderForValue.build();
+            onChanged();
+          } else {
+            openUrlBuilder_.setMessage(builderForValue.build());
+          }
+          actionCase_ = 4;
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Suggested client side action: Open a URI on device
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction.RbmSuggestedActionOpenUri open_url = 4;
+         * </code>
+         */
+        public Builder mergeOpenUrl(
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                    .RbmSuggestedActionOpenUri
+                value) {
+          if (openUrlBuilder_ == null) {
+            if (actionCase_ == 4
+                && action_
+                    != com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                        .RbmSuggestedActionOpenUri.getDefaultInstance()) {
+              action_ =
+                  com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                      .RbmSuggestedActionOpenUri.newBuilder(
+                          (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                                  .RbmSuggestedActionOpenUri)
+                              action_)
+                      .mergeFrom(value)
+                      .buildPartial();
+            } else {
+              action_ = value;
+            }
+            onChanged();
+          } else {
+            if (actionCase_ == 4) {
+              openUrlBuilder_.mergeFrom(value);
+            }
+            openUrlBuilder_.setMessage(value);
+          }
+          actionCase_ = 4;
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Suggested client side action: Open a URI on device
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction.RbmSuggestedActionOpenUri open_url = 4;
+         * </code>
+         */
+        public Builder clearOpenUrl() {
+          if (openUrlBuilder_ == null) {
+            if (actionCase_ == 4) {
+              actionCase_ = 0;
+              action_ = null;
+              onChanged();
+            }
+          } else {
+            if (actionCase_ == 4) {
+              actionCase_ = 0;
+              action_ = null;
+            }
+            openUrlBuilder_.clear();
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Suggested client side action: Open a URI on device
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction.RbmSuggestedActionOpenUri open_url = 4;
+         * </code>
+         */
+        public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                .RbmSuggestedActionOpenUri.Builder
+            getOpenUrlBuilder() {
+          return getOpenUrlFieldBuilder().getBuilder();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Suggested client side action: Open a URI on device
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction.RbmSuggestedActionOpenUri open_url = 4;
+         * </code>
+         */
+        public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                .RbmSuggestedActionOpenUriOrBuilder
+            getOpenUrlOrBuilder() {
+          if ((actionCase_ == 4) && (openUrlBuilder_ != null)) {
+            return openUrlBuilder_.getMessageOrBuilder();
+          } else {
+            if (actionCase_ == 4) {
+              return (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                      .RbmSuggestedActionOpenUri)
+                  action_;
+            }
+            return com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                .RbmSuggestedActionOpenUri.getDefaultInstance();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Suggested client side action: Open a URI on device
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction.RbmSuggestedActionOpenUri open_url = 4;
+         * </code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                    .RbmSuggestedActionOpenUri,
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                    .RbmSuggestedActionOpenUri.Builder,
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                    .RbmSuggestedActionOpenUriOrBuilder>
+            getOpenUrlFieldBuilder() {
+          if (openUrlBuilder_ == null) {
+            if (!(actionCase_ == 4)) {
+              action_ =
+                  com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                      .RbmSuggestedActionOpenUri.getDefaultInstance();
+            }
+            openUrlBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                        .RbmSuggestedActionOpenUri,
+                    com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                        .RbmSuggestedActionOpenUri.Builder,
+                    com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                        .RbmSuggestedActionOpenUriOrBuilder>(
+                    (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                            .RbmSuggestedActionOpenUri)
+                        action_,
+                    getParentForChildren(),
+                    isClean());
+            action_ = null;
+          }
+          actionCase_ = 4;
+          onChanged();
+          ;
+          return openUrlBuilder_;
+        }
+
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                    .RbmSuggestedActionShareLocation,
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                    .RbmSuggestedActionShareLocation.Builder,
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                    .RbmSuggestedActionShareLocationOrBuilder>
+            shareLocationBuilder_;
+        /**
+         *
+         *
+         * <pre>
+         * Suggested client side action: Share user location
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction.RbmSuggestedActionShareLocation share_location = 5;
+         * </code>
+         */
+        public boolean hasShareLocation() {
+          return actionCase_ == 5;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Suggested client side action: Share user location
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction.RbmSuggestedActionShareLocation share_location = 5;
+         * </code>
+         */
+        public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                .RbmSuggestedActionShareLocation
+            getShareLocation() {
+          if (shareLocationBuilder_ == null) {
+            if (actionCase_ == 5) {
+              return (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                      .RbmSuggestedActionShareLocation)
+                  action_;
+            }
+            return com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                .RbmSuggestedActionShareLocation.getDefaultInstance();
+          } else {
+            if (actionCase_ == 5) {
+              return shareLocationBuilder_.getMessage();
+            }
+            return com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                .RbmSuggestedActionShareLocation.getDefaultInstance();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Suggested client side action: Share user location
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction.RbmSuggestedActionShareLocation share_location = 5;
+         * </code>
+         */
+        public Builder setShareLocation(
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                    .RbmSuggestedActionShareLocation
+                value) {
+          if (shareLocationBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            action_ = value;
+            onChanged();
+          } else {
+            shareLocationBuilder_.setMessage(value);
+          }
+          actionCase_ = 5;
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Suggested client side action: Share user location
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction.RbmSuggestedActionShareLocation share_location = 5;
+         * </code>
+         */
+        public Builder setShareLocation(
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                    .RbmSuggestedActionShareLocation.Builder
+                builderForValue) {
+          if (shareLocationBuilder_ == null) {
+            action_ = builderForValue.build();
+            onChanged();
+          } else {
+            shareLocationBuilder_.setMessage(builderForValue.build());
+          }
+          actionCase_ = 5;
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Suggested client side action: Share user location
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction.RbmSuggestedActionShareLocation share_location = 5;
+         * </code>
+         */
+        public Builder mergeShareLocation(
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                    .RbmSuggestedActionShareLocation
+                value) {
+          if (shareLocationBuilder_ == null) {
+            if (actionCase_ == 5
+                && action_
+                    != com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                        .RbmSuggestedActionShareLocation.getDefaultInstance()) {
+              action_ =
+                  com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                      .RbmSuggestedActionShareLocation.newBuilder(
+                          (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                                  .RbmSuggestedActionShareLocation)
+                              action_)
+                      .mergeFrom(value)
+                      .buildPartial();
+            } else {
+              action_ = value;
+            }
+            onChanged();
+          } else {
+            if (actionCase_ == 5) {
+              shareLocationBuilder_.mergeFrom(value);
+            }
+            shareLocationBuilder_.setMessage(value);
+          }
+          actionCase_ = 5;
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Suggested client side action: Share user location
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction.RbmSuggestedActionShareLocation share_location = 5;
+         * </code>
+         */
+        public Builder clearShareLocation() {
+          if (shareLocationBuilder_ == null) {
+            if (actionCase_ == 5) {
+              actionCase_ = 0;
+              action_ = null;
+              onChanged();
+            }
+          } else {
+            if (actionCase_ == 5) {
+              actionCase_ = 0;
+              action_ = null;
+            }
+            shareLocationBuilder_.clear();
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Suggested client side action: Share user location
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction.RbmSuggestedActionShareLocation share_location = 5;
+         * </code>
+         */
+        public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                .RbmSuggestedActionShareLocation.Builder
+            getShareLocationBuilder() {
+          return getShareLocationFieldBuilder().getBuilder();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Suggested client side action: Share user location
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction.RbmSuggestedActionShareLocation share_location = 5;
+         * </code>
+         */
+        public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                .RbmSuggestedActionShareLocationOrBuilder
+            getShareLocationOrBuilder() {
+          if ((actionCase_ == 5) && (shareLocationBuilder_ != null)) {
+            return shareLocationBuilder_.getMessageOrBuilder();
+          } else {
+            if (actionCase_ == 5) {
+              return (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                      .RbmSuggestedActionShareLocation)
+                  action_;
+            }
+            return com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                .RbmSuggestedActionShareLocation.getDefaultInstance();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Suggested client side action: Share user location
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction.RbmSuggestedActionShareLocation share_location = 5;
+         * </code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                    .RbmSuggestedActionShareLocation,
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                    .RbmSuggestedActionShareLocation.Builder,
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                    .RbmSuggestedActionShareLocationOrBuilder>
+            getShareLocationFieldBuilder() {
+          if (shareLocationBuilder_ == null) {
+            if (!(actionCase_ == 5)) {
+              action_ =
+                  com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                      .RbmSuggestedActionShareLocation.getDefaultInstance();
+            }
+            shareLocationBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                        .RbmSuggestedActionShareLocation,
+                    com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                        .RbmSuggestedActionShareLocation.Builder,
+                    com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                        .RbmSuggestedActionShareLocationOrBuilder>(
+                    (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+                            .RbmSuggestedActionShareLocation)
+                        action_,
+                    getParentForChildren(),
+                    isClean());
+            action_ = null;
+          }
+          actionCase_ = 5;
+          onChanged();
+          ;
+          return shareLocationBuilder_;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction)
+      private static final com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction();
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<RbmSuggestedAction> PARSER =
+          new com.google.protobuf.AbstractParser<RbmSuggestedAction>() {
+            @java.lang.Override
+            public RbmSuggestedAction parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              return new RbmSuggestedAction(input, extensionRegistry);
+            }
+          };
+
+      public static com.google.protobuf.Parser<RbmSuggestedAction> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<RbmSuggestedAction> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
     private int messageCase_ = 0;
     private java.lang.Object message_;
 
@@ -28704,6 +42518,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       TELEPHONY_PLAY_AUDIO(13),
       TELEPHONY_SYNTHESIZE_SPEECH(14),
       TELEPHONY_TRANSFER_CALL(15),
+      RBM_TEXT(18),
+      RBM_STANDALONE_RICH_CARD(19),
+      RBM_CAROUSEL_RICH_CARD(20),
       MESSAGE_NOT_SET(0);
       private final int value;
 
@@ -28746,6 +42563,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             return TELEPHONY_SYNTHESIZE_SPEECH;
           case 15:
             return TELEPHONY_TRANSFER_CALL;
+          case 18:
+            return RBM_TEXT;
+          case 19:
+            return RBM_STANDALONE_RICH_CARD;
+          case 20:
+            return RBM_CAROUSEL_RICH_CARD;
           case 0:
             return MESSAGE_NOT_SET;
           default:
@@ -29440,6 +43263,165 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           .getDefaultInstance();
     }
 
+    public static final int RBM_TEXT_FIELD_NUMBER = 18;
+    /**
+     *
+     *
+     * <pre>
+     * Rich Business Messaging (RBM) text response.
+     * RBM allows businesses to send enriched and branded versions of SMS. See
+     * https://jibe.google.com/business-messaging.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.RbmText rbm_text = 18;</code>
+     */
+    public boolean hasRbmText() {
+      return messageCase_ == 18;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Rich Business Messaging (RBM) text response.
+     * RBM allows businesses to send enriched and branded versions of SMS. See
+     * https://jibe.google.com/business-messaging.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.RbmText rbm_text = 18;</code>
+     */
+    public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmText getRbmText() {
+      if (messageCase_ == 18) {
+        return (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmText) message_;
+      }
+      return com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmText.getDefaultInstance();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Rich Business Messaging (RBM) text response.
+     * RBM allows businesses to send enriched and branded versions of SMS. See
+     * https://jibe.google.com/business-messaging.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.RbmText rbm_text = 18;</code>
+     */
+    public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmTextOrBuilder
+        getRbmTextOrBuilder() {
+      if (messageCase_ == 18) {
+        return (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmText) message_;
+      }
+      return com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmText.getDefaultInstance();
+    }
+
+    public static final int RBM_STANDALONE_RICH_CARD_FIELD_NUMBER = 19;
+    /**
+     *
+     *
+     * <pre>
+     * Standalone Rich Business Messaging (RBM) rich card response.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard rbm_standalone_rich_card = 19;
+     * </code>
+     */
+    public boolean hasRbmStandaloneRichCard() {
+      return messageCase_ == 19;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Standalone Rich Business Messaging (RBM) rich card response.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard rbm_standalone_rich_card = 19;
+     * </code>
+     */
+    public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard
+        getRbmStandaloneRichCard() {
+      if (messageCase_ == 19) {
+        return (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard) message_;
+      }
+      return com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard
+          .getDefaultInstance();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Standalone Rich Business Messaging (RBM) rich card response.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard rbm_standalone_rich_card = 19;
+     * </code>
+     */
+    public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCardOrBuilder
+        getRbmStandaloneRichCardOrBuilder() {
+      if (messageCase_ == 19) {
+        return (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard) message_;
+      }
+      return com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard
+          .getDefaultInstance();
+    }
+
+    public static final int RBM_CAROUSEL_RICH_CARD_FIELD_NUMBER = 20;
+    /**
+     *
+     *
+     * <pre>
+     * Rich Business Messaging (RBM) carousel rich card response.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard rbm_carousel_rich_card = 20;
+     * </code>
+     */
+    public boolean hasRbmCarouselRichCard() {
+      return messageCase_ == 20;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Rich Business Messaging (RBM) carousel rich card response.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard rbm_carousel_rich_card = 20;
+     * </code>
+     */
+    public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard
+        getRbmCarouselRichCard() {
+      if (messageCase_ == 20) {
+        return (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard) message_;
+      }
+      return com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard
+          .getDefaultInstance();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Rich Business Messaging (RBM) carousel rich card response.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard rbm_carousel_rich_card = 20;
+     * </code>
+     */
+    public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCardOrBuilder
+        getRbmCarouselRichCardOrBuilder() {
+      if (messageCase_ == 20) {
+        return (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard) message_;
+      }
+      return com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard
+          .getDefaultInstance();
+    }
+
     public static final int PLATFORM_FIELD_NUMBER = 6;
     private int platform_;
     /**
@@ -29546,6 +43528,18 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             15,
             (com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall) message_);
       }
+      if (messageCase_ == 18) {
+        output.writeMessage(
+            18, (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmText) message_);
+      }
+      if (messageCase_ == 19) {
+        output.writeMessage(
+            19, (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard) message_);
+      }
+      if (messageCase_ == 20) {
+        output.writeMessage(
+            20, (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard) message_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -29636,6 +43630,22 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 (com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall)
                     message_);
       }
+      if (messageCase_ == 18) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                18, (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmText) message_);
+      }
+      if (messageCase_ == 19) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                19,
+                (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard) message_);
+      }
+      if (messageCase_ == 20) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                20, (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard) message_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -29697,6 +43707,15 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           break;
         case 15:
           if (!getTelephonyTransferCall().equals(other.getTelephonyTransferCall())) return false;
+          break;
+        case 18:
+          if (!getRbmText().equals(other.getRbmText())) return false;
+          break;
+        case 19:
+          if (!getRbmStandaloneRichCard().equals(other.getRbmStandaloneRichCard())) return false;
+          break;
+        case 20:
+          if (!getRbmCarouselRichCard().equals(other.getRbmCarouselRichCard())) return false;
           break;
         case 0:
         default:
@@ -29770,6 +43789,18 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         case 15:
           hash = (37 * hash) + TELEPHONY_TRANSFER_CALL_FIELD_NUMBER;
           hash = (53 * hash) + getTelephonyTransferCall().hashCode();
+          break;
+        case 18:
+          hash = (37 * hash) + RBM_TEXT_FIELD_NUMBER;
+          hash = (53 * hash) + getRbmText().hashCode();
+          break;
+        case 19:
+          hash = (37 * hash) + RBM_STANDALONE_RICH_CARD_FIELD_NUMBER;
+          hash = (53 * hash) + getRbmStandaloneRichCard().hashCode();
+          break;
+        case 20:
+          hash = (37 * hash) + RBM_CAROUSEL_RICH_CARD_FIELD_NUMBER;
+          hash = (53 * hash) + getRbmCarouselRichCard().hashCode();
           break;
         case 0:
         default:
@@ -30050,6 +44081,27 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             result.message_ = telephonyTransferCallBuilder_.build();
           }
         }
+        if (messageCase_ == 18) {
+          if (rbmTextBuilder_ == null) {
+            result.message_ = message_;
+          } else {
+            result.message_ = rbmTextBuilder_.build();
+          }
+        }
+        if (messageCase_ == 19) {
+          if (rbmStandaloneRichCardBuilder_ == null) {
+            result.message_ = message_;
+          } else {
+            result.message_ = rbmStandaloneRichCardBuilder_.build();
+          }
+        }
+        if (messageCase_ == 20) {
+          if (rbmCarouselRichCardBuilder_ == null) {
+            result.message_ = message_;
+          } else {
+            result.message_ = rbmCarouselRichCardBuilder_.build();
+          }
+        }
         result.platform_ = platform_;
         result.messageCase_ = messageCase_;
         onBuilt();
@@ -30176,6 +44228,21 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           case TELEPHONY_TRANSFER_CALL:
             {
               mergeTelephonyTransferCall(other.getTelephonyTransferCall());
+              break;
+            }
+          case RBM_TEXT:
+            {
+              mergeRbmText(other.getRbmText());
+              break;
+            }
+          case RBM_STANDALONE_RICH_CARD:
+            {
+              mergeRbmStandaloneRichCard(other.getRbmStandaloneRichCard());
+              break;
+            }
+          case RBM_CAROUSEL_RICH_CARD:
+            {
+              mergeRbmCarouselRichCard(other.getRbmCarouselRichCard());
               break;
             }
           case MESSAGE_NOT_SET:
@@ -33299,6 +47366,700 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         ;
         return telephonyTransferCallBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmText,
+              com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmText.Builder,
+              com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmTextOrBuilder>
+          rbmTextBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Rich Business Messaging (RBM) text response.
+       * RBM allows businesses to send enriched and branded versions of SMS. See
+       * https://jibe.google.com/business-messaging.
+       * </pre>
+       *
+       * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.RbmText rbm_text = 18;</code>
+       */
+      public boolean hasRbmText() {
+        return messageCase_ == 18;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Rich Business Messaging (RBM) text response.
+       * RBM allows businesses to send enriched and branded versions of SMS. See
+       * https://jibe.google.com/business-messaging.
+       * </pre>
+       *
+       * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.RbmText rbm_text = 18;</code>
+       */
+      public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmText getRbmText() {
+        if (rbmTextBuilder_ == null) {
+          if (messageCase_ == 18) {
+            return (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmText) message_;
+          }
+          return com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmText.getDefaultInstance();
+        } else {
+          if (messageCase_ == 18) {
+            return rbmTextBuilder_.getMessage();
+          }
+          return com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmText.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Rich Business Messaging (RBM) text response.
+       * RBM allows businesses to send enriched and branded versions of SMS. See
+       * https://jibe.google.com/business-messaging.
+       * </pre>
+       *
+       * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.RbmText rbm_text = 18;</code>
+       */
+      public Builder setRbmText(com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmText value) {
+        if (rbmTextBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          message_ = value;
+          onChanged();
+        } else {
+          rbmTextBuilder_.setMessage(value);
+        }
+        messageCase_ = 18;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Rich Business Messaging (RBM) text response.
+       * RBM allows businesses to send enriched and branded versions of SMS. See
+       * https://jibe.google.com/business-messaging.
+       * </pre>
+       *
+       * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.RbmText rbm_text = 18;</code>
+       */
+      public Builder setRbmText(
+          com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmText.Builder builderForValue) {
+        if (rbmTextBuilder_ == null) {
+          message_ = builderForValue.build();
+          onChanged();
+        } else {
+          rbmTextBuilder_.setMessage(builderForValue.build());
+        }
+        messageCase_ = 18;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Rich Business Messaging (RBM) text response.
+       * RBM allows businesses to send enriched and branded versions of SMS. See
+       * https://jibe.google.com/business-messaging.
+       * </pre>
+       *
+       * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.RbmText rbm_text = 18;</code>
+       */
+      public Builder mergeRbmText(
+          com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmText value) {
+        if (rbmTextBuilder_ == null) {
+          if (messageCase_ == 18
+              && message_
+                  != com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmText
+                      .getDefaultInstance()) {
+            message_ =
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmText.newBuilder(
+                        (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmText) message_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            message_ = value;
+          }
+          onChanged();
+        } else {
+          if (messageCase_ == 18) {
+            rbmTextBuilder_.mergeFrom(value);
+          }
+          rbmTextBuilder_.setMessage(value);
+        }
+        messageCase_ = 18;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Rich Business Messaging (RBM) text response.
+       * RBM allows businesses to send enriched and branded versions of SMS. See
+       * https://jibe.google.com/business-messaging.
+       * </pre>
+       *
+       * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.RbmText rbm_text = 18;</code>
+       */
+      public Builder clearRbmText() {
+        if (rbmTextBuilder_ == null) {
+          if (messageCase_ == 18) {
+            messageCase_ = 0;
+            message_ = null;
+            onChanged();
+          }
+        } else {
+          if (messageCase_ == 18) {
+            messageCase_ = 0;
+            message_ = null;
+          }
+          rbmTextBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Rich Business Messaging (RBM) text response.
+       * RBM allows businesses to send enriched and branded versions of SMS. See
+       * https://jibe.google.com/business-messaging.
+       * </pre>
+       *
+       * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.RbmText rbm_text = 18;</code>
+       */
+      public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmText.Builder
+          getRbmTextBuilder() {
+        return getRbmTextFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Rich Business Messaging (RBM) text response.
+       * RBM allows businesses to send enriched and branded versions of SMS. See
+       * https://jibe.google.com/business-messaging.
+       * </pre>
+       *
+       * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.RbmText rbm_text = 18;</code>
+       */
+      public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmTextOrBuilder
+          getRbmTextOrBuilder() {
+        if ((messageCase_ == 18) && (rbmTextBuilder_ != null)) {
+          return rbmTextBuilder_.getMessageOrBuilder();
+        } else {
+          if (messageCase_ == 18) {
+            return (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmText) message_;
+          }
+          return com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmText.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Rich Business Messaging (RBM) text response.
+       * RBM allows businesses to send enriched and branded versions of SMS. See
+       * https://jibe.google.com/business-messaging.
+       * </pre>
+       *
+       * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.RbmText rbm_text = 18;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmText,
+              com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmText.Builder,
+              com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmTextOrBuilder>
+          getRbmTextFieldBuilder() {
+        if (rbmTextBuilder_ == null) {
+          if (!(messageCase_ == 18)) {
+            message_ =
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmText.getDefaultInstance();
+          }
+          rbmTextBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmText,
+                  com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmText.Builder,
+                  com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmTextOrBuilder>(
+                  (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmText) message_,
+                  getParentForChildren(),
+                  isClean());
+          message_ = null;
+        }
+        messageCase_ = 18;
+        onChanged();
+        ;
+        return rbmTextBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard,
+              com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard.Builder,
+              com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCardOrBuilder>
+          rbmStandaloneRichCardBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Standalone Rich Business Messaging (RBM) rich card response.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard rbm_standalone_rich_card = 19;
+       * </code>
+       */
+      public boolean hasRbmStandaloneRichCard() {
+        return messageCase_ == 19;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Standalone Rich Business Messaging (RBM) rich card response.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard rbm_standalone_rich_card = 19;
+       * </code>
+       */
+      public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard
+          getRbmStandaloneRichCard() {
+        if (rbmStandaloneRichCardBuilder_ == null) {
+          if (messageCase_ == 19) {
+            return (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard) message_;
+          }
+          return com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard
+              .getDefaultInstance();
+        } else {
+          if (messageCase_ == 19) {
+            return rbmStandaloneRichCardBuilder_.getMessage();
+          }
+          return com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard
+              .getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Standalone Rich Business Messaging (RBM) rich card response.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard rbm_standalone_rich_card = 19;
+       * </code>
+       */
+      public Builder setRbmStandaloneRichCard(
+          com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard value) {
+        if (rbmStandaloneRichCardBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          message_ = value;
+          onChanged();
+        } else {
+          rbmStandaloneRichCardBuilder_.setMessage(value);
+        }
+        messageCase_ = 19;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Standalone Rich Business Messaging (RBM) rich card response.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard rbm_standalone_rich_card = 19;
+       * </code>
+       */
+      public Builder setRbmStandaloneRichCard(
+          com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard.Builder
+              builderForValue) {
+        if (rbmStandaloneRichCardBuilder_ == null) {
+          message_ = builderForValue.build();
+          onChanged();
+        } else {
+          rbmStandaloneRichCardBuilder_.setMessage(builderForValue.build());
+        }
+        messageCase_ = 19;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Standalone Rich Business Messaging (RBM) rich card response.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard rbm_standalone_rich_card = 19;
+       * </code>
+       */
+      public Builder mergeRbmStandaloneRichCard(
+          com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard value) {
+        if (rbmStandaloneRichCardBuilder_ == null) {
+          if (messageCase_ == 19
+              && message_
+                  != com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard
+                      .getDefaultInstance()) {
+            message_ =
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard.newBuilder(
+                        (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard)
+                            message_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            message_ = value;
+          }
+          onChanged();
+        } else {
+          if (messageCase_ == 19) {
+            rbmStandaloneRichCardBuilder_.mergeFrom(value);
+          }
+          rbmStandaloneRichCardBuilder_.setMessage(value);
+        }
+        messageCase_ = 19;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Standalone Rich Business Messaging (RBM) rich card response.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard rbm_standalone_rich_card = 19;
+       * </code>
+       */
+      public Builder clearRbmStandaloneRichCard() {
+        if (rbmStandaloneRichCardBuilder_ == null) {
+          if (messageCase_ == 19) {
+            messageCase_ = 0;
+            message_ = null;
+            onChanged();
+          }
+        } else {
+          if (messageCase_ == 19) {
+            messageCase_ = 0;
+            message_ = null;
+          }
+          rbmStandaloneRichCardBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Standalone Rich Business Messaging (RBM) rich card response.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard rbm_standalone_rich_card = 19;
+       * </code>
+       */
+      public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard.Builder
+          getRbmStandaloneRichCardBuilder() {
+        return getRbmStandaloneRichCardFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Standalone Rich Business Messaging (RBM) rich card response.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard rbm_standalone_rich_card = 19;
+       * </code>
+       */
+      public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCardOrBuilder
+          getRbmStandaloneRichCardOrBuilder() {
+        if ((messageCase_ == 19) && (rbmStandaloneRichCardBuilder_ != null)) {
+          return rbmStandaloneRichCardBuilder_.getMessageOrBuilder();
+        } else {
+          if (messageCase_ == 19) {
+            return (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard) message_;
+          }
+          return com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard
+              .getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Standalone Rich Business Messaging (RBM) rich card response.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard rbm_standalone_rich_card = 19;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard,
+              com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard.Builder,
+              com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCardOrBuilder>
+          getRbmStandaloneRichCardFieldBuilder() {
+        if (rbmStandaloneRichCardBuilder_ == null) {
+          if (!(messageCase_ == 19)) {
+            message_ =
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard
+                    .getDefaultInstance();
+          }
+          rbmStandaloneRichCardBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard,
+                  com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard.Builder,
+                  com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCardOrBuilder>(
+                  (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard) message_,
+                  getParentForChildren(),
+                  isClean());
+          message_ = null;
+        }
+        messageCase_ = 19;
+        onChanged();
+        ;
+        return rbmStandaloneRichCardBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard,
+              com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard.Builder,
+              com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCardOrBuilder>
+          rbmCarouselRichCardBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Rich Business Messaging (RBM) carousel rich card response.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard rbm_carousel_rich_card = 20;
+       * </code>
+       */
+      public boolean hasRbmCarouselRichCard() {
+        return messageCase_ == 20;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Rich Business Messaging (RBM) carousel rich card response.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard rbm_carousel_rich_card = 20;
+       * </code>
+       */
+      public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard
+          getRbmCarouselRichCard() {
+        if (rbmCarouselRichCardBuilder_ == null) {
+          if (messageCase_ == 20) {
+            return (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard) message_;
+          }
+          return com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard
+              .getDefaultInstance();
+        } else {
+          if (messageCase_ == 20) {
+            return rbmCarouselRichCardBuilder_.getMessage();
+          }
+          return com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard
+              .getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Rich Business Messaging (RBM) carousel rich card response.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard rbm_carousel_rich_card = 20;
+       * </code>
+       */
+      public Builder setRbmCarouselRichCard(
+          com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard value) {
+        if (rbmCarouselRichCardBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          message_ = value;
+          onChanged();
+        } else {
+          rbmCarouselRichCardBuilder_.setMessage(value);
+        }
+        messageCase_ = 20;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Rich Business Messaging (RBM) carousel rich card response.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard rbm_carousel_rich_card = 20;
+       * </code>
+       */
+      public Builder setRbmCarouselRichCard(
+          com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard.Builder
+              builderForValue) {
+        if (rbmCarouselRichCardBuilder_ == null) {
+          message_ = builderForValue.build();
+          onChanged();
+        } else {
+          rbmCarouselRichCardBuilder_.setMessage(builderForValue.build());
+        }
+        messageCase_ = 20;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Rich Business Messaging (RBM) carousel rich card response.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard rbm_carousel_rich_card = 20;
+       * </code>
+       */
+      public Builder mergeRbmCarouselRichCard(
+          com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard value) {
+        if (rbmCarouselRichCardBuilder_ == null) {
+          if (messageCase_ == 20
+              && message_
+                  != com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard
+                      .getDefaultInstance()) {
+            message_ =
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard.newBuilder(
+                        (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard)
+                            message_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            message_ = value;
+          }
+          onChanged();
+        } else {
+          if (messageCase_ == 20) {
+            rbmCarouselRichCardBuilder_.mergeFrom(value);
+          }
+          rbmCarouselRichCardBuilder_.setMessage(value);
+        }
+        messageCase_ = 20;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Rich Business Messaging (RBM) carousel rich card response.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard rbm_carousel_rich_card = 20;
+       * </code>
+       */
+      public Builder clearRbmCarouselRichCard() {
+        if (rbmCarouselRichCardBuilder_ == null) {
+          if (messageCase_ == 20) {
+            messageCase_ = 0;
+            message_ = null;
+            onChanged();
+          }
+        } else {
+          if (messageCase_ == 20) {
+            messageCase_ = 0;
+            message_ = null;
+          }
+          rbmCarouselRichCardBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Rich Business Messaging (RBM) carousel rich card response.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard rbm_carousel_rich_card = 20;
+       * </code>
+       */
+      public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard.Builder
+          getRbmCarouselRichCardBuilder() {
+        return getRbmCarouselRichCardFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Rich Business Messaging (RBM) carousel rich card response.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard rbm_carousel_rich_card = 20;
+       * </code>
+       */
+      public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCardOrBuilder
+          getRbmCarouselRichCardOrBuilder() {
+        if ((messageCase_ == 20) && (rbmCarouselRichCardBuilder_ != null)) {
+          return rbmCarouselRichCardBuilder_.getMessageOrBuilder();
+        } else {
+          if (messageCase_ == 20) {
+            return (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard) message_;
+          }
+          return com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard
+              .getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Rich Business Messaging (RBM) carousel rich card response.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard rbm_carousel_rich_card = 20;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard,
+              com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard.Builder,
+              com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCardOrBuilder>
+          getRbmCarouselRichCardFieldBuilder() {
+        if (rbmCarouselRichCardBuilder_ == null) {
+          if (!(messageCase_ == 20)) {
+            message_ =
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard
+                    .getDefaultInstance();
+          }
+          rbmCarouselRichCardBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard,
+                  com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard.Builder,
+                  com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCardOrBuilder>(
+                  (com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard) message_,
+                  getParentForChildren(),
+                  isClean());
+          message_ = null;
+        }
+        messageCase_ = 20;
+        onChanged();
+        ;
+        return rbmCarouselRichCardBuilder_;
       }
 
       private int platform_ = 0;

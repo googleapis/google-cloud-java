@@ -51,8 +51,8 @@
  * <pre>
  * <code>
  * try (AgentsClient agentsClient = AgentsClient.create()) {
- *   ProjectName parent = ProjectName.of("[PROJECT]");
- *   Agent response = agentsClient.getAgent(parent);
+ *   Agent agent = Agent.newBuilder().build();
+ *   Agent response = agentsClient.setAgent(agent);
  * }
  * </code>
  * </pre>
@@ -176,6 +176,9 @@
  * that are built for an individual user such as favorites, preferences, playlists, and so on. You
  * can redefine a session entity type at the session level.
  *
+ * <p>Session entity methods do not work with Google Assistant integration. Contact Dialogflow
+ * support if you need to use session entities with Google Assistant integration.
+ *
  * <p>For more information about entity types, see the [Dialogflow
  * documentation](https://cloud.google.com/dialogflow/docs/entities-overview).
  *
@@ -209,4 +212,7 @@
  * </code>
  * </pre>
  */
+@Generated("by gapic-generator")
 package com.google.cloud.dialogflow.v2;
+
+import javax.annotation.Generated;

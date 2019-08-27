@@ -22,16 +22,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-websecurityscanner</artifactId>
-  <version>0.99.0</version>
+  <version>0.106.0</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-websecurityscanner:0.99.0'
+compile 'com.google.cloud:google-cloud-websecurityscanner:0.106.0'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-websecurityscanner" % "0.99.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-websecurityscanner" % "0.106.0"
 ```
 [//]: # ({x-version-update-end})
 
@@ -97,4 +97,4 @@ Apache 2.0 - See [LICENSE] for more information.
 [cloud-platform]: https://cloud.google.com/
 [cloud-websecurityscanner]: https://cloud.google.com/security-scanner
 [websecurityscanner-product-docs]: https://cloud.google.com/security-scanner/docs
-[websecurityscanner-client-lib-docs]: https://googleapis.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/websecurityscanner/v1alpha/package-summary.html
+[websecurityscanner-client-lib-docs]: https://googleapis.dev/java/google-cloud-clients/latest/index.html?com/google/cloud/websecurityscanner/v1alpha/package-summary.html

@@ -369,8 +369,11 @@ public class TargetSslProxyClient implements BackgroundResource {
    * </code></pre>
    *
    * @param project Project ID for this request.
-   * @param targetSslProxyResource A TargetSslProxy resource. This resource defines an SSL proxy.
-   *     (== resource_for beta.targetSslProxies ==) (== resource_for v1.targetSslProxies ==)
+   * @param targetSslProxyResource Represents a Target SSL Proxy resource.
+   *     <p>A target SSL proxy is a component of a SSL Proxy load balancer. Global forwarding rules
+   *     reference a target SSL proxy, and the target proxy then references an external backend
+   *     service. For more information, read Using Target Proxies. (== resource_for
+   *     beta.targetSslProxies ==) (== resource_for v1.targetSslProxies ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -401,8 +404,11 @@ public class TargetSslProxyClient implements BackgroundResource {
    * </code></pre>
    *
    * @param project Project ID for this request.
-   * @param targetSslProxyResource A TargetSslProxy resource. This resource defines an SSL proxy.
-   *     (== resource_for beta.targetSslProxies ==) (== resource_for v1.targetSslProxies ==)
+   * @param targetSslProxyResource Represents a Target SSL Proxy resource.
+   *     <p>A target SSL proxy is a component of a SSL Proxy load balancer. Global forwarding rules
+   *     reference a target SSL proxy, and the target proxy then references an external backend
+   *     service. For more information, read Using Target Proxies. (== resource_for
+   *     beta.targetSslProxies ==) (== resource_for v1.targetSslProxies ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi

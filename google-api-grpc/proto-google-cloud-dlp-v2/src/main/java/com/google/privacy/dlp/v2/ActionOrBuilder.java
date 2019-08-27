@@ -105,6 +105,45 @@ public interface ActionOrBuilder
    *
    *
    * <pre>
+   * Publish findings to Cloud Datahub.
+   * </pre>
+   *
+   * <code>
+   * .google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog publish_findings_to_cloud_data_catalog = 5;
+   * </code>
+   */
+  boolean hasPublishFindingsToCloudDataCatalog();
+  /**
+   *
+   *
+   * <pre>
+   * Publish findings to Cloud Datahub.
+   * </pre>
+   *
+   * <code>
+   * .google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog publish_findings_to_cloud_data_catalog = 5;
+   * </code>
+   */
+  com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog
+      getPublishFindingsToCloudDataCatalog();
+  /**
+   *
+   *
+   * <pre>
+   * Publish findings to Cloud Datahub.
+   * </pre>
+   *
+   * <code>
+   * .google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog publish_findings_to_cloud_data_catalog = 5;
+   * </code>
+   */
+  com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalogOrBuilder
+      getPublishFindingsToCloudDataCatalogOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Enable email notification to project owners and editors on job's
    * completion/failure.
    * </pre>

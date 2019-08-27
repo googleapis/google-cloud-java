@@ -150,4 +150,24 @@ public interface InputAudioConfigOrBuilder
    * <code>.google.cloud.dialogflow.v2.SpeechModelVariant model_variant = 10;</code>
    */
   com.google.cloud.dialogflow.v2.SpeechModelVariant getModelVariant();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If `false` (default), recognition does not cease until the
+   * client closes the stream.
+   * If `true`, the recognizer will detect a single spoken utterance in input
+   * audio. Recognition ceases when it detects the audio's voice has
+   * stopped or paused. In this case, once a detected intent is received, the
+   * client should close the stream and start a new request with a new stream as
+   * needed.
+   * Note: This setting is relevant only for streaming methods.
+   * Note: When specified, InputAudioConfig.single_utterance takes precedence
+   * over StreamingDetectIntentRequest.single_utterance.
+   * </pre>
+   *
+   * <code>bool single_utterance = 8;</code>
+   */
+  boolean getSingleUtterance();
 }

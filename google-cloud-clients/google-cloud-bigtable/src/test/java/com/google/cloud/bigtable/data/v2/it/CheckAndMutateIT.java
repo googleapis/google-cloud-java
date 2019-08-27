@@ -18,13 +18,14 @@ package com.google.cloud.bigtable.data.v2.it;
 import static com.google.cloud.bigtable.data.v2.models.Filters.FILTERS;
 import static com.google.common.truth.Truth.assertThat;
 
-import com.google.cloud.bigtable.data.v2.it.env.TestEnvRule;
 import com.google.cloud.bigtable.data.v2.models.ConditionalRowMutation;
 import com.google.cloud.bigtable.data.v2.models.Mutation;
 import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
+import com.google.cloud.bigtable.test_helpers.env.TestEnvRule;
 import com.google.protobuf.ByteString;
+import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 import org.junit.ClassRule;
 import org.junit.Test;
@@ -38,8 +39,8 @@ public class CheckAndMutateIT {
   @Test
   public void test() throws Exception {
     String tableId = testEnvRule.env().getTableId();
-    String rowKey = testEnvRule.env().getRowPrefix();
     String familyId = testEnvRule.env().getFamilyId();
+    String rowKey = UUID.randomUUID().toString();
 
     testEnvRule
         .env()

@@ -19,6 +19,7 @@ import com.google.api.core.InternalApi;
 import com.google.api.gax.retrying.StreamResumptionStrategy;
 import com.google.cloud.bigquery.storage.v1beta1.Storage.ReadRowsRequest;
 import com.google.cloud.bigquery.storage.v1beta1.Storage.ReadRowsResponse;
+import javax.annotation.Nonnull;
 
 /**
  * An implementation of a {@link StreamResumptionStrategy} for the ReadRows API. This class tracks
@@ -36,13 +37,15 @@ public class ReadRowsResumptionStrategy
   private long rowsProcessed = 0;
 
   @Override
+  @Nonnull
   public StreamResumptionStrategy<ReadRowsRequest, ReadRowsResponse> createNew() {
     return new ReadRowsResumptionStrategy();
   }
 
   @Override
+  @Nonnull
   public ReadRowsResponse processResponse(ReadRowsResponse response) {
-    rowsProcessed += response.getAvroRows().getRowCount();
+    rowsProcessed += response.getRowCount();
     return response;
   }
 

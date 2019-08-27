@@ -101,6 +101,27 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
               actionCase_ = 3;
               break;
             }
+          case 42:
+            {
+              com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog.Builder
+                  subBuilder = null;
+              if (actionCase_ == 5) {
+                subBuilder =
+                    ((com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog) action_)
+                        .toBuilder();
+              }
+              action_ =
+                  input.readMessage(
+                      com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog) action_);
+                action_ = subBuilder.buildPartial();
+              }
+              actionCase_ = 5;
+              break;
+            }
           case 66:
             {
               com.google.privacy.dlp.v2.Action.JobNotificationEmails.Builder subBuilder = null;
@@ -1897,6 +1918,478 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public interface PublishFindingsToCloudDataCatalogOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog)
+      com.google.protobuf.MessageOrBuilder {}
+  /**
+   *
+   *
+   * <pre>
+   * Publish findings of a DlpJob to Cloud Data Catalog. Labels summarizing the
+   * results of the DlpJob will be applied to the entry for the resource scanned
+   * in Cloud Data Catalog. Any labels previously written by another DlpJob will
+   * be deleted. InfoType naming patterns are strictly enforced when using this
+   * feature. Note that the findings will be persisted in Cloud Data Catalog
+   * storage and are governed by Data Catalog service-specific policy, see
+   * https://cloud.google.com/terms/service-terms
+   * Only a single instance of this action can be specified and only allowed if
+   * all resources being scanned are BigQuery tables.
+   * Compatible with: Inspect
+   * </pre>
+   *
+   * Protobuf type {@code google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog}
+   */
+  public static final class PublishFindingsToCloudDataCatalog
+      extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog)
+      PublishFindingsToCloudDataCatalogOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use PublishFindingsToCloudDataCatalog.newBuilder() to construct.
+    private PublishFindingsToCloudDataCatalog(
+        com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private PublishFindingsToCloudDataCatalog() {}
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    private PublishFindingsToCloudDataCatalog(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default:
+              {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_Action_PublishFindingsToCloudDataCatalog_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_Action_PublishFindingsToCloudDataCatalog_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog.class,
+              com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog.Builder.class);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog)) {
+        return super.equals(obj);
+      }
+      com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog other =
+          (com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog) obj;
+
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Publish findings of a DlpJob to Cloud Data Catalog. Labels summarizing the
+     * results of the DlpJob will be applied to the entry for the resource scanned
+     * in Cloud Data Catalog. Any labels previously written by another DlpJob will
+     * be deleted. InfoType naming patterns are strictly enforced when using this
+     * feature. Note that the findings will be persisted in Cloud Data Catalog
+     * storage and are governed by Data Catalog service-specific policy, see
+     * https://cloud.google.com/terms/service-terms
+     * Only a single instance of this action can be specified and only allowed if
+     * all resources being scanned are BigQuery tables.
+     * Compatible with: Inspect
+     * </pre>
+     *
+     * Protobuf type {@code google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog)
+        com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalogOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.privacy.dlp.v2.DlpProto
+            .internal_static_google_privacy_dlp_v2_Action_PublishFindingsToCloudDataCatalog_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.privacy.dlp.v2.DlpProto
+            .internal_static_google_privacy_dlp_v2_Action_PublishFindingsToCloudDataCatalog_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog.class,
+                com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog.Builder.class);
+      }
+
+      // Construct using
+      // com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.privacy.dlp.v2.DlpProto
+            .internal_static_google_privacy_dlp_v2_Action_PublishFindingsToCloudDataCatalog_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog
+          getDefaultInstanceForType() {
+        return com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog build() {
+        com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog buildPartial() {
+        com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog result =
+            new com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog(this);
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog) {
+          return mergeFrom(
+              (com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog other) {
+        if (other
+            == com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog
+                .getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage =
+              (com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog)
+                  e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog)
+    private static final com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog();
+    }
+
+    public static com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<PublishFindingsToCloudDataCatalog> PARSER =
+        new com.google.protobuf.AbstractParser<PublishFindingsToCloudDataCatalog>() {
+          @java.lang.Override
+          public PublishFindingsToCloudDataCatalog parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new PublishFindingsToCloudDataCatalog(input, extensionRegistry);
+          }
+        };
+
+    public static com.google.protobuf.Parser<PublishFindingsToCloudDataCatalog> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PublishFindingsToCloudDataCatalog> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public interface JobNotificationEmailsOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.Action.JobNotificationEmails)
@@ -2347,6 +2840,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     SAVE_FINDINGS(1),
     PUB_SUB(2),
     PUBLISH_SUMMARY_TO_CSCC(3),
+    PUBLISH_FINDINGS_TO_CLOUD_DATA_CATALOG(5),
     JOB_NOTIFICATION_EMAILS(8),
     ACTION_NOT_SET(0);
     private final int value;
@@ -2368,6 +2862,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
           return PUB_SUB;
         case 3:
           return PUBLISH_SUMMARY_TO_CSCC;
+        case 5:
+          return PUBLISH_FINDINGS_TO_CLOUD_DATA_CATALOG;
         case 8:
           return JOB_NOTIFICATION_EMAILS;
         case 0:
@@ -2519,6 +3015,58 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     return com.google.privacy.dlp.v2.Action.PublishSummaryToCscc.getDefaultInstance();
   }
 
+  public static final int PUBLISH_FINDINGS_TO_CLOUD_DATA_CATALOG_FIELD_NUMBER = 5;
+  /**
+   *
+   *
+   * <pre>
+   * Publish findings to Cloud Datahub.
+   * </pre>
+   *
+   * <code>
+   * .google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog publish_findings_to_cloud_data_catalog = 5;
+   * </code>
+   */
+  public boolean hasPublishFindingsToCloudDataCatalog() {
+    return actionCase_ == 5;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Publish findings to Cloud Datahub.
+   * </pre>
+   *
+   * <code>
+   * .google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog publish_findings_to_cloud_data_catalog = 5;
+   * </code>
+   */
+  public com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog
+      getPublishFindingsToCloudDataCatalog() {
+    if (actionCase_ == 5) {
+      return (com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog) action_;
+    }
+    return com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Publish findings to Cloud Datahub.
+   * </pre>
+   *
+   * <code>
+   * .google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog publish_findings_to_cloud_data_catalog = 5;
+   * </code>
+   */
+  public com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalogOrBuilder
+      getPublishFindingsToCloudDataCatalogOrBuilder() {
+    if (actionCase_ == 5) {
+      return (com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog) action_;
+    }
+    return com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog.getDefaultInstance();
+  }
+
   public static final int JOB_NOTIFICATION_EMAILS_FIELD_NUMBER = 8;
   /**
    *
@@ -2590,6 +3138,10 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     if (actionCase_ == 3) {
       output.writeMessage(3, (com.google.privacy.dlp.v2.Action.PublishSummaryToCscc) action_);
     }
+    if (actionCase_ == 5) {
+      output.writeMessage(
+          5, (com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog) action_);
+    }
     if (actionCase_ == 8) {
       output.writeMessage(8, (com.google.privacy.dlp.v2.Action.JobNotificationEmails) action_);
     }
@@ -2616,6 +3168,11 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               3, (com.google.privacy.dlp.v2.Action.PublishSummaryToCscc) action_);
+    }
+    if (actionCase_ == 5) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              5, (com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog) action_);
     }
     if (actionCase_ == 8) {
       size +=
@@ -2648,6 +3205,10 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       case 3:
         if (!getPublishSummaryToCscc().equals(other.getPublishSummaryToCscc())) return false;
         break;
+      case 5:
+        if (!getPublishFindingsToCloudDataCatalog()
+            .equals(other.getPublishFindingsToCloudDataCatalog())) return false;
+        break;
       case 8:
         if (!getJobNotificationEmails().equals(other.getJobNotificationEmails())) return false;
         break;
@@ -2677,6 +3238,10 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       case 3:
         hash = (37 * hash) + PUBLISH_SUMMARY_TO_CSCC_FIELD_NUMBER;
         hash = (53 * hash) + getPublishSummaryToCscc().hashCode();
+        break;
+      case 5:
+        hash = (37 * hash) + PUBLISH_FINDINGS_TO_CLOUD_DATA_CATALOG_FIELD_NUMBER;
+        hash = (53 * hash) + getPublishFindingsToCloudDataCatalog().hashCode();
         break;
       case 8:
         hash = (37 * hash) + JOB_NOTIFICATION_EMAILS_FIELD_NUMBER;
@@ -2879,6 +3444,13 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
           result.action_ = publishSummaryToCsccBuilder_.build();
         }
       }
+      if (actionCase_ == 5) {
+        if (publishFindingsToCloudDataCatalogBuilder_ == null) {
+          result.action_ = action_;
+        } else {
+          result.action_ = publishFindingsToCloudDataCatalogBuilder_.build();
+        }
+      }
       if (actionCase_ == 8) {
         if (jobNotificationEmailsBuilder_ == null) {
           result.action_ = action_;
@@ -2950,6 +3522,11 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         case PUBLISH_SUMMARY_TO_CSCC:
           {
             mergePublishSummaryToCscc(other.getPublishSummaryToCscc());
+            break;
+          }
+        case PUBLISH_FINDINGS_TO_CLOUD_DATA_CATALOG:
+          {
+            mergePublishFindingsToCloudDataCatalog(other.getPublishFindingsToCloudDataCatalog());
             break;
           }
         case JOB_NOTIFICATION_EMAILS:
@@ -3614,6 +4191,239 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       ;
       return publishSummaryToCsccBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog,
+            com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog.Builder,
+            com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalogOrBuilder>
+        publishFindingsToCloudDataCatalogBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Publish findings to Cloud Datahub.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog publish_findings_to_cloud_data_catalog = 5;
+     * </code>
+     */
+    public boolean hasPublishFindingsToCloudDataCatalog() {
+      return actionCase_ == 5;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Publish findings to Cloud Datahub.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog publish_findings_to_cloud_data_catalog = 5;
+     * </code>
+     */
+    public com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog
+        getPublishFindingsToCloudDataCatalog() {
+      if (publishFindingsToCloudDataCatalogBuilder_ == null) {
+        if (actionCase_ == 5) {
+          return (com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog) action_;
+        }
+        return com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog
+            .getDefaultInstance();
+      } else {
+        if (actionCase_ == 5) {
+          return publishFindingsToCloudDataCatalogBuilder_.getMessage();
+        }
+        return com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Publish findings to Cloud Datahub.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog publish_findings_to_cloud_data_catalog = 5;
+     * </code>
+     */
+    public Builder setPublishFindingsToCloudDataCatalog(
+        com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog value) {
+      if (publishFindingsToCloudDataCatalogBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        action_ = value;
+        onChanged();
+      } else {
+        publishFindingsToCloudDataCatalogBuilder_.setMessage(value);
+      }
+      actionCase_ = 5;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Publish findings to Cloud Datahub.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog publish_findings_to_cloud_data_catalog = 5;
+     * </code>
+     */
+    public Builder setPublishFindingsToCloudDataCatalog(
+        com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog.Builder
+            builderForValue) {
+      if (publishFindingsToCloudDataCatalogBuilder_ == null) {
+        action_ = builderForValue.build();
+        onChanged();
+      } else {
+        publishFindingsToCloudDataCatalogBuilder_.setMessage(builderForValue.build());
+      }
+      actionCase_ = 5;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Publish findings to Cloud Datahub.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog publish_findings_to_cloud_data_catalog = 5;
+     * </code>
+     */
+    public Builder mergePublishFindingsToCloudDataCatalog(
+        com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog value) {
+      if (publishFindingsToCloudDataCatalogBuilder_ == null) {
+        if (actionCase_ == 5
+            && action_
+                != com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog
+                    .getDefaultInstance()) {
+          action_ =
+              com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog.newBuilder(
+                      (com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog) action_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          action_ = value;
+        }
+        onChanged();
+      } else {
+        if (actionCase_ == 5) {
+          publishFindingsToCloudDataCatalogBuilder_.mergeFrom(value);
+        }
+        publishFindingsToCloudDataCatalogBuilder_.setMessage(value);
+      }
+      actionCase_ = 5;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Publish findings to Cloud Datahub.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog publish_findings_to_cloud_data_catalog = 5;
+     * </code>
+     */
+    public Builder clearPublishFindingsToCloudDataCatalog() {
+      if (publishFindingsToCloudDataCatalogBuilder_ == null) {
+        if (actionCase_ == 5) {
+          actionCase_ = 0;
+          action_ = null;
+          onChanged();
+        }
+      } else {
+        if (actionCase_ == 5) {
+          actionCase_ = 0;
+          action_ = null;
+        }
+        publishFindingsToCloudDataCatalogBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Publish findings to Cloud Datahub.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog publish_findings_to_cloud_data_catalog = 5;
+     * </code>
+     */
+    public com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog.Builder
+        getPublishFindingsToCloudDataCatalogBuilder() {
+      return getPublishFindingsToCloudDataCatalogFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Publish findings to Cloud Datahub.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog publish_findings_to_cloud_data_catalog = 5;
+     * </code>
+     */
+    public com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalogOrBuilder
+        getPublishFindingsToCloudDataCatalogOrBuilder() {
+      if ((actionCase_ == 5) && (publishFindingsToCloudDataCatalogBuilder_ != null)) {
+        return publishFindingsToCloudDataCatalogBuilder_.getMessageOrBuilder();
+      } else {
+        if (actionCase_ == 5) {
+          return (com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog) action_;
+        }
+        return com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Publish findings to Cloud Datahub.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog publish_findings_to_cloud_data_catalog = 5;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog,
+            com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog.Builder,
+            com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalogOrBuilder>
+        getPublishFindingsToCloudDataCatalogFieldBuilder() {
+      if (publishFindingsToCloudDataCatalogBuilder_ == null) {
+        if (!(actionCase_ == 5)) {
+          action_ =
+              com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog
+                  .getDefaultInstance();
+        }
+        publishFindingsToCloudDataCatalogBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog,
+                com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog.Builder,
+                com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalogOrBuilder>(
+                (com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog) action_,
+                getParentForChildren(),
+                isClean());
+        action_ = null;
+      }
+      actionCase_ = 5;
+      onChanged();
+      ;
+      return publishFindingsToCloudDataCatalogBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<

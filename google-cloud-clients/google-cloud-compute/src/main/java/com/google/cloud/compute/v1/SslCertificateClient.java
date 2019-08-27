@@ -369,9 +369,11 @@ public class SslCertificateClient implements BackgroundResource {
    * </code></pre>
    *
    * @param project Project ID for this request.
-   * @param sslCertificateResource An SslCertificate resource. This resource provides a mechanism to
-   *     upload an SSL key and certificate to the load balancer to serve secure connections from the
-   *     user. (== resource_for beta.sslCertificates ==) (== resource_for v1.sslCertificates ==)
+   * @param sslCertificateResource Represents an SSL Certificate resource.
+   *     <p>This SSL certificate resource also contains a private key. You can use SSL keys and
+   *     certificates to secure connections to a load balancer. For more information, read Creating
+   *     and Using SSL Certificates. (== resource_for beta.sslCertificates ==) (== resource_for
+   *     v1.sslCertificates ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -402,9 +404,11 @@ public class SslCertificateClient implements BackgroundResource {
    * </code></pre>
    *
    * @param project Project ID for this request.
-   * @param sslCertificateResource An SslCertificate resource. This resource provides a mechanism to
-   *     upload an SSL key and certificate to the load balancer to serve secure connections from the
-   *     user. (== resource_for beta.sslCertificates ==) (== resource_for v1.sslCertificates ==)
+   * @param sslCertificateResource Represents an SSL Certificate resource.
+   *     <p>This SSL certificate resource also contains a private key. You can use SSL keys and
+   *     certificates to secure connections to a load balancer. For more information, read Creating
+   *     and Using SSL Certificates. (== resource_for beta.sslCertificates ==) (== resource_for
+   *     v1.sslCertificates ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi

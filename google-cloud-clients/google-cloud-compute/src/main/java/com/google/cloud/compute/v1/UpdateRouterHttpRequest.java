@@ -27,7 +27,9 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.routers.update. Updates the specified Router resource with the
- * data included in the request.
+ * data included in the request. This method conforms to PUT semantics, which requests that the
+ * state of the target resource be created or replaced with the state defined by the representation
+ * enclosed in the request message payload.
  */
 public final class UpdateRouterHttpRequest implements ApiMessage {
   private final String access_token;
@@ -193,7 +195,11 @@ public final class UpdateRouterHttpRequest implements ApiMessage {
     return router;
   }
 
-  /** Router resource. */
+  /**
+   * Represents a Cloud Router resource.
+   *
+   * <p>For more information about Cloud Router, read the the Cloud Router overview.
+   */
   public Router getRouterResource() {
     return routerResource;
   }
@@ -454,12 +460,20 @@ public final class UpdateRouterHttpRequest implements ApiMessage {
       return this;
     }
 
-    /** Router resource. */
+    /**
+     * Represents a Cloud Router resource.
+     *
+     * <p>For more information about Cloud Router, read the the Cloud Router overview.
+     */
     public Router getRouterResource() {
       return routerResource;
     }
 
-    /** Router resource. */
+    /**
+     * Represents a Cloud Router resource.
+     *
+     * <p>For more information about Cloud Router, read the the Cloud Router overview.
+     */
     public Builder setRouterResource(Router routerResource) {
       this.routerResource = routerResource;
       return this;

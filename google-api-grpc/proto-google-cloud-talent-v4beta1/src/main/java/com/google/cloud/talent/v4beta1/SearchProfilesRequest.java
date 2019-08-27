@@ -146,6 +146,11 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
               resultSetId_ = s;
               break;
             }
+          case 104:
+            {
+              strictKeywordsSearch_ = input.readBool();
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -444,11 +449,11 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
    * Supported options are:
    * * "relevance desc": By descending relevance, as determined by the API
    *    algorithms.
-   * * "update_time desc": Sort by
+   * * "update_date desc": Sort by
    * [Profile.update_time][google.cloud.talent.v4beta1.Profile.update_time] in
    * descending order
    *   (recently updated profiles first).
-   * * "create_time desc": Sort by
+   * * "create_date desc": Sort by
    * [Profile.create_time][google.cloud.talent.v4beta1.Profile.create_time] in
    * descending order
    *   (recently created profiles first).
@@ -490,11 +495,11 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
    * Supported options are:
    * * "relevance desc": By descending relevance, as determined by the API
    *    algorithms.
-   * * "update_time desc": Sort by
+   * * "update_date desc": Sort by
    * [Profile.update_time][google.cloud.talent.v4beta1.Profile.update_time] in
    * descending order
    *   (recently updated profiles first).
-   * * "create_time desc": Sort by
+   * * "create_date desc": Sort by
    * [Profile.create_time][google.cloud.talent.v4beta1.Profile.create_time] in
    * descending order
    *   (recently created profiles first).
@@ -962,9 +967,11 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Optional. An id that uniquely identifies the result set of a
-   * [SearchProfiles][] call.  The id should be retrieved from the
+   * [SearchProfiles][google.cloud.talent.v4beta1.ProfileService.SearchProfiles]
+   * call. The id should be retrieved from the
    * [SearchProfilesResponse][google.cloud.talent.v4beta1.SearchProfilesResponse]
-   * message returned from a previous invocation of [SearchProfiles][].
+   * message returned from a previous invocation of
+   * [SearchProfiles][google.cloud.talent.v4beta1.ProfileService.SearchProfiles].
    * A result set is an ordered list of search results.
    * If this field is not set, a new result set is computed based on the
    * [profile_query][google.cloud.talent.v4beta1.SearchProfilesRequest.profile_query].
@@ -974,8 +981,10 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
    * If this field is set, the service will ignore the resource and
    * [profile_query][google.cloud.talent.v4beta1.SearchProfilesRequest.profile_query]
    * values, and simply retrieve a page of results from the corresponding result
-   * set.  In this case, one and only one of [page_token] or [offset] must be
-   * set.
+   * set.  In this case, one and only one of
+   * [page_token][google.cloud.talent.v4beta1.SearchProfilesRequest.page_token]
+   * or [offset][google.cloud.talent.v4beta1.SearchProfilesRequest.offset] must
+   * be set.
    * A typical use case is to invoke
    * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest]
    * without this field, then use the resulting
@@ -1003,9 +1012,11 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Optional. An id that uniquely identifies the result set of a
-   * [SearchProfiles][] call.  The id should be retrieved from the
+   * [SearchProfiles][google.cloud.talent.v4beta1.ProfileService.SearchProfiles]
+   * call. The id should be retrieved from the
    * [SearchProfilesResponse][google.cloud.talent.v4beta1.SearchProfilesResponse]
-   * message returned from a previous invocation of [SearchProfiles][].
+   * message returned from a previous invocation of
+   * [SearchProfiles][google.cloud.talent.v4beta1.ProfileService.SearchProfiles].
    * A result set is an ordered list of search results.
    * If this field is not set, a new result set is computed based on the
    * [profile_query][google.cloud.talent.v4beta1.SearchProfilesRequest.profile_query].
@@ -1015,8 +1026,10 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
    * If this field is set, the service will ignore the resource and
    * [profile_query][google.cloud.talent.v4beta1.SearchProfilesRequest.profile_query]
    * values, and simply retrieve a page of results from the corresponding result
-   * set.  In this case, one and only one of [page_token] or [offset] must be
-   * set.
+   * set.  In this case, one and only one of
+   * [page_token][google.cloud.talent.v4beta1.SearchProfilesRequest.page_token]
+   * or [offset][google.cloud.talent.v4beta1.SearchProfilesRequest.offset] must
+   * be set.
    * A typical use case is to invoke
    * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest]
    * without this field, then use the resulting
@@ -1038,6 +1051,32 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int STRICT_KEYWORDS_SEARCH_FIELD_NUMBER = 13;
+  private boolean strictKeywordsSearch_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This flag is used to indicate whether the service will attempt to
+   * understand synonyms and terms related to the search query or treat the
+   * query "as is" when it generates a set of results. By default this flag is
+   * set to false, thus allowing expanded results to also be returned. For
+   * example a search for "software engineer" might also return candidates who
+   * have experience in jobs similar to software engineer positions. By setting
+   * this flag to true, the service will only attempt to deliver candidates has
+   * software engineer in his/her global fields by treating "software engineer"
+   * as a keyword.
+   * It is recommended to provide a feature in the UI (such as a checkbox) to
+   * allow recruiters to set this flag to true if they intend to search for
+   * longer boolean strings.
+   * </pre>
+   *
+   * <code>bool strict_keywords_search = 13;</code>
+   */
+  public boolean getStrictKeywordsSearch() {
+    return strictKeywordsSearch_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1087,6 +1126,9 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
     if (!getResultSetIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 12, resultSetId_);
     }
+    if (strictKeywordsSearch_ != false) {
+      output.writeBool(13, strictKeywordsSearch_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -1130,6 +1172,9 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
     if (!getResultSetIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, resultSetId_);
     }
+    if (strictKeywordsSearch_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(13, strictKeywordsSearch_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1163,6 +1208,7 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
     if (getCaseSensitiveSort() != other.getCaseSensitiveSort()) return false;
     if (!getHistogramQueriesList().equals(other.getHistogramQueriesList())) return false;
     if (!getResultSetId().equals(other.getResultSetId())) return false;
+    if (getStrictKeywordsSearch() != other.getStrictKeywordsSearch()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1202,6 +1248,8 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
     }
     hash = (37 * hash) + RESULT_SET_ID_FIELD_NUMBER;
     hash = (53 * hash) + getResultSetId().hashCode();
+    hash = (37 * hash) + STRICT_KEYWORDS_SEARCH_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getStrictKeywordsSearch());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1384,6 +1432,8 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
       }
       resultSetId_ = "";
 
+      strictKeywordsSearch_ = false;
+
       return this;
     }
 
@@ -1440,6 +1490,7 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
         result.histogramQueries_ = histogramQueriesBuilder_.build();
       }
       result.resultSetId_ = resultSetId_;
+      result.strictKeywordsSearch_ = strictKeywordsSearch_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -1551,6 +1602,9 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
       if (!other.getResultSetId().isEmpty()) {
         resultSetId_ = other.resultSetId_;
         onChanged();
+      }
+      if (other.getStrictKeywordsSearch() != false) {
+        setStrictKeywordsSearch(other.getStrictKeywordsSearch());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2378,11 +2432,11 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      * Supported options are:
      * * "relevance desc": By descending relevance, as determined by the API
      *    algorithms.
-     * * "update_time desc": Sort by
+     * * "update_date desc": Sort by
      * [Profile.update_time][google.cloud.talent.v4beta1.Profile.update_time] in
      * descending order
      *   (recently updated profiles first).
-     * * "create_time desc": Sort by
+     * * "create_date desc": Sort by
      * [Profile.create_time][google.cloud.talent.v4beta1.Profile.create_time] in
      * descending order
      *   (recently created profiles first).
@@ -2424,11 +2478,11 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      * Supported options are:
      * * "relevance desc": By descending relevance, as determined by the API
      *    algorithms.
-     * * "update_time desc": Sort by
+     * * "update_date desc": Sort by
      * [Profile.update_time][google.cloud.talent.v4beta1.Profile.update_time] in
      * descending order
      *   (recently updated profiles first).
-     * * "create_time desc": Sort by
+     * * "create_date desc": Sort by
      * [Profile.create_time][google.cloud.talent.v4beta1.Profile.create_time] in
      * descending order
      *   (recently created profiles first).
@@ -2470,11 +2524,11 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      * Supported options are:
      * * "relevance desc": By descending relevance, as determined by the API
      *    algorithms.
-     * * "update_time desc": Sort by
+     * * "update_date desc": Sort by
      * [Profile.update_time][google.cloud.talent.v4beta1.Profile.update_time] in
      * descending order
      *   (recently updated profiles first).
-     * * "create_time desc": Sort by
+     * * "create_date desc": Sort by
      * [Profile.create_time][google.cloud.talent.v4beta1.Profile.create_time] in
      * descending order
      *   (recently created profiles first).
@@ -2514,11 +2568,11 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      * Supported options are:
      * * "relevance desc": By descending relevance, as determined by the API
      *    algorithms.
-     * * "update_time desc": Sort by
+     * * "update_date desc": Sort by
      * [Profile.update_time][google.cloud.talent.v4beta1.Profile.update_time] in
      * descending order
      *   (recently updated profiles first).
-     * * "create_time desc": Sort by
+     * * "create_date desc": Sort by
      * [Profile.create_time][google.cloud.talent.v4beta1.Profile.create_time] in
      * descending order
      *   (recently created profiles first).
@@ -2555,11 +2609,11 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      * Supported options are:
      * * "relevance desc": By descending relevance, as determined by the API
      *    algorithms.
-     * * "update_time desc": Sort by
+     * * "update_date desc": Sort by
      * [Profile.update_time][google.cloud.talent.v4beta1.Profile.update_time] in
      * descending order
      *   (recently updated profiles first).
-     * * "create_time desc": Sort by
+     * * "create_date desc": Sort by
      * [Profile.create_time][google.cloud.talent.v4beta1.Profile.create_time] in
      * descending order
      *   (recently created profiles first).
@@ -4251,9 +4305,11 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Optional. An id that uniquely identifies the result set of a
-     * [SearchProfiles][] call.  The id should be retrieved from the
+     * [SearchProfiles][google.cloud.talent.v4beta1.ProfileService.SearchProfiles]
+     * call. The id should be retrieved from the
      * [SearchProfilesResponse][google.cloud.talent.v4beta1.SearchProfilesResponse]
-     * message returned from a previous invocation of [SearchProfiles][].
+     * message returned from a previous invocation of
+     * [SearchProfiles][google.cloud.talent.v4beta1.ProfileService.SearchProfiles].
      * A result set is an ordered list of search results.
      * If this field is not set, a new result set is computed based on the
      * [profile_query][google.cloud.talent.v4beta1.SearchProfilesRequest.profile_query].
@@ -4263,8 +4319,10 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      * If this field is set, the service will ignore the resource and
      * [profile_query][google.cloud.talent.v4beta1.SearchProfilesRequest.profile_query]
      * values, and simply retrieve a page of results from the corresponding result
-     * set.  In this case, one and only one of [page_token] or [offset] must be
-     * set.
+     * set.  In this case, one and only one of
+     * [page_token][google.cloud.talent.v4beta1.SearchProfilesRequest.page_token]
+     * or [offset][google.cloud.talent.v4beta1.SearchProfilesRequest.offset] must
+     * be set.
      * A typical use case is to invoke
      * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest]
      * without this field, then use the resulting
@@ -4292,9 +4350,11 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Optional. An id that uniquely identifies the result set of a
-     * [SearchProfiles][] call.  The id should be retrieved from the
+     * [SearchProfiles][google.cloud.talent.v4beta1.ProfileService.SearchProfiles]
+     * call. The id should be retrieved from the
      * [SearchProfilesResponse][google.cloud.talent.v4beta1.SearchProfilesResponse]
-     * message returned from a previous invocation of [SearchProfiles][].
+     * message returned from a previous invocation of
+     * [SearchProfiles][google.cloud.talent.v4beta1.ProfileService.SearchProfiles].
      * A result set is an ordered list of search results.
      * If this field is not set, a new result set is computed based on the
      * [profile_query][google.cloud.talent.v4beta1.SearchProfilesRequest.profile_query].
@@ -4304,8 +4364,10 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      * If this field is set, the service will ignore the resource and
      * [profile_query][google.cloud.talent.v4beta1.SearchProfilesRequest.profile_query]
      * values, and simply retrieve a page of results from the corresponding result
-     * set.  In this case, one and only one of [page_token] or [offset] must be
-     * set.
+     * set.  In this case, one and only one of
+     * [page_token][google.cloud.talent.v4beta1.SearchProfilesRequest.page_token]
+     * or [offset][google.cloud.talent.v4beta1.SearchProfilesRequest.offset] must
+     * be set.
      * A typical use case is to invoke
      * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest]
      * without this field, then use the resulting
@@ -4333,9 +4395,11 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Optional. An id that uniquely identifies the result set of a
-     * [SearchProfiles][] call.  The id should be retrieved from the
+     * [SearchProfiles][google.cloud.talent.v4beta1.ProfileService.SearchProfiles]
+     * call. The id should be retrieved from the
      * [SearchProfilesResponse][google.cloud.talent.v4beta1.SearchProfilesResponse]
-     * message returned from a previous invocation of [SearchProfiles][].
+     * message returned from a previous invocation of
+     * [SearchProfiles][google.cloud.talent.v4beta1.ProfileService.SearchProfiles].
      * A result set is an ordered list of search results.
      * If this field is not set, a new result set is computed based on the
      * [profile_query][google.cloud.talent.v4beta1.SearchProfilesRequest.profile_query].
@@ -4345,8 +4409,10 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      * If this field is set, the service will ignore the resource and
      * [profile_query][google.cloud.talent.v4beta1.SearchProfilesRequest.profile_query]
      * values, and simply retrieve a page of results from the corresponding result
-     * set.  In this case, one and only one of [page_token] or [offset] must be
-     * set.
+     * set.  In this case, one and only one of
+     * [page_token][google.cloud.talent.v4beta1.SearchProfilesRequest.page_token]
+     * or [offset][google.cloud.talent.v4beta1.SearchProfilesRequest.offset] must
+     * be set.
      * A typical use case is to invoke
      * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest]
      * without this field, then use the resulting
@@ -4372,9 +4438,11 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Optional. An id that uniquely identifies the result set of a
-     * [SearchProfiles][] call.  The id should be retrieved from the
+     * [SearchProfiles][google.cloud.talent.v4beta1.ProfileService.SearchProfiles]
+     * call. The id should be retrieved from the
      * [SearchProfilesResponse][google.cloud.talent.v4beta1.SearchProfilesResponse]
-     * message returned from a previous invocation of [SearchProfiles][].
+     * message returned from a previous invocation of
+     * [SearchProfiles][google.cloud.talent.v4beta1.ProfileService.SearchProfiles].
      * A result set is an ordered list of search results.
      * If this field is not set, a new result set is computed based on the
      * [profile_query][google.cloud.talent.v4beta1.SearchProfilesRequest.profile_query].
@@ -4384,8 +4452,10 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      * If this field is set, the service will ignore the resource and
      * [profile_query][google.cloud.talent.v4beta1.SearchProfilesRequest.profile_query]
      * values, and simply retrieve a page of results from the corresponding result
-     * set.  In this case, one and only one of [page_token] or [offset] must be
-     * set.
+     * set.  In this case, one and only one of
+     * [page_token][google.cloud.talent.v4beta1.SearchProfilesRequest.page_token]
+     * or [offset][google.cloud.talent.v4beta1.SearchProfilesRequest.offset] must
+     * be set.
      * A typical use case is to invoke
      * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest]
      * without this field, then use the resulting
@@ -4408,9 +4478,11 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Optional. An id that uniquely identifies the result set of a
-     * [SearchProfiles][] call.  The id should be retrieved from the
+     * [SearchProfiles][google.cloud.talent.v4beta1.ProfileService.SearchProfiles]
+     * call. The id should be retrieved from the
      * [SearchProfilesResponse][google.cloud.talent.v4beta1.SearchProfilesResponse]
-     * message returned from a previous invocation of [SearchProfiles][].
+     * message returned from a previous invocation of
+     * [SearchProfiles][google.cloud.talent.v4beta1.ProfileService.SearchProfiles].
      * A result set is an ordered list of search results.
      * If this field is not set, a new result set is computed based on the
      * [profile_query][google.cloud.talent.v4beta1.SearchProfilesRequest.profile_query].
@@ -4420,8 +4492,10 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      * If this field is set, the service will ignore the resource and
      * [profile_query][google.cloud.talent.v4beta1.SearchProfilesRequest.profile_query]
      * values, and simply retrieve a page of results from the corresponding result
-     * set.  In this case, one and only one of [page_token] or [offset] must be
-     * set.
+     * set.  In this case, one and only one of
+     * [page_token][google.cloud.talent.v4beta1.SearchProfilesRequest.page_token]
+     * or [offset][google.cloud.talent.v4beta1.SearchProfilesRequest.offset] must
+     * be set.
      * A typical use case is to invoke
      * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest]
      * without this field, then use the resulting
@@ -4440,6 +4514,83 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
       checkByteStringIsUtf8(value);
 
       resultSetId_ = value;
+      onChanged();
+      return this;
+    }
+
+    private boolean strictKeywordsSearch_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This flag is used to indicate whether the service will attempt to
+     * understand synonyms and terms related to the search query or treat the
+     * query "as is" when it generates a set of results. By default this flag is
+     * set to false, thus allowing expanded results to also be returned. For
+     * example a search for "software engineer" might also return candidates who
+     * have experience in jobs similar to software engineer positions. By setting
+     * this flag to true, the service will only attempt to deliver candidates has
+     * software engineer in his/her global fields by treating "software engineer"
+     * as a keyword.
+     * It is recommended to provide a feature in the UI (such as a checkbox) to
+     * allow recruiters to set this flag to true if they intend to search for
+     * longer boolean strings.
+     * </pre>
+     *
+     * <code>bool strict_keywords_search = 13;</code>
+     */
+    public boolean getStrictKeywordsSearch() {
+      return strictKeywordsSearch_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This flag is used to indicate whether the service will attempt to
+     * understand synonyms and terms related to the search query or treat the
+     * query "as is" when it generates a set of results. By default this flag is
+     * set to false, thus allowing expanded results to also be returned. For
+     * example a search for "software engineer" might also return candidates who
+     * have experience in jobs similar to software engineer positions. By setting
+     * this flag to true, the service will only attempt to deliver candidates has
+     * software engineer in his/her global fields by treating "software engineer"
+     * as a keyword.
+     * It is recommended to provide a feature in the UI (such as a checkbox) to
+     * allow recruiters to set this flag to true if they intend to search for
+     * longer boolean strings.
+     * </pre>
+     *
+     * <code>bool strict_keywords_search = 13;</code>
+     */
+    public Builder setStrictKeywordsSearch(boolean value) {
+
+      strictKeywordsSearch_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This flag is used to indicate whether the service will attempt to
+     * understand synonyms and terms related to the search query or treat the
+     * query "as is" when it generates a set of results. By default this flag is
+     * set to false, thus allowing expanded results to also be returned. For
+     * example a search for "software engineer" might also return candidates who
+     * have experience in jobs similar to software engineer positions. By setting
+     * this flag to true, the service will only attempt to deliver candidates has
+     * software engineer in his/her global fields by treating "software engineer"
+     * as a keyword.
+     * It is recommended to provide a feature in the UI (such as a checkbox) to
+     * allow recruiters to set this flag to true if they intend to search for
+     * longer boolean strings.
+     * </pre>
+     *
+     * <code>bool strict_keywords_search = 13;</code>
+     */
+    public Builder clearStrictKeywordsSearch() {
+
+      strictKeywordsSearch_ = false;
       onChanged();
       return this;
     }

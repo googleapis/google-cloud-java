@@ -19,7 +19,6 @@ import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GrpcTransportChannel;
 import com.google.api.gax.rpc.FixedTransportChannelProvider;
 import com.google.api.gax.rpc.ServerStream;
-import com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroRows;
 import com.google.cloud.bigquery.storage.v1beta1.BigQueryStorageClient;
 import com.google.cloud.bigquery.storage.v1beta1.BigQueryStorageGrpc.BigQueryStorageImplBase;
 import com.google.cloud.bigquery.storage.v1beta1.BigQueryStorageSettings;
@@ -167,7 +166,7 @@ public class ReadRowsRetryTest {
     ServerStream<ReadRowsResponse> serverStream = client.readRowsCallable().call(request);
     int rowCount = 0;
     for (ReadRowsResponse readRowsResponse : serverStream) {
-      rowCount += readRowsResponse.getAvroRows().getRowCount();
+      rowCount += readRowsResponse.getRowCount();
     }
     return rowCount;
   }
@@ -232,9 +231,7 @@ public class ReadRowsRetryTest {
     }
 
     static ReadRowsResponse createResponse(int numberOfRows) {
-      return ReadRowsResponse.newBuilder()
-          .setAvroRows(AvroRows.newBuilder().setRowCount(numberOfRows))
-          .build();
+      return ReadRowsResponse.newBuilder().setRowCount(numberOfRows).build();
     }
 
     RpcExpectation expectRequest(String streamName, long offset) {

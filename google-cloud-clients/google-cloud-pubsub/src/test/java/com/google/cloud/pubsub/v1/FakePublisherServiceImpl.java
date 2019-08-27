@@ -24,6 +24,7 @@ import io.grpc.stub.StreamObserver;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * A fake implementation of {@link PublisherImplBase}, that can be used to test clients of a Cloud
@@ -33,6 +34,8 @@ class FakePublisherServiceImpl extends PublisherImplBase {
 
   private final LinkedBlockingQueue<PublishRequest> requests = new LinkedBlockingQueue<>();
   private final LinkedBlockingQueue<Response> publishResponses = new LinkedBlockingQueue<>();
+  private final AtomicInteger nextMessageId = new AtomicInteger(1);
+  private boolean autoPublishResponse;
 
   /** Class used to save the state of a possible response. */
   private static class Response {
@@ -75,7 +78,15 @@ class FakePublisherServiceImpl extends PublisherImplBase {
     requests.add(request);
     Response response;
     try {
-      response = publishResponses.take();
+      if (autoPublishResponse) {
+        PublishResponse.Builder builder = PublishResponse.newBuilder();
+        for (int i = 0; i < request.getMessagesCount(); i++) {
+          builder.addMessageIds(Integer.toString(nextMessageId.getAndIncrement()));
+        }
+        response = new Response(builder.build());
+      } else {
+        response = publishResponses.take();
+      }
     } catch (InterruptedException e) {
       throw new IllegalArgumentException(e);
     }
@@ -85,6 +96,15 @@ class FakePublisherServiceImpl extends PublisherImplBase {
       responseObserver.onNext(response.getPublishResponse());
       responseObserver.onCompleted();
     }
+  }
+
+  /**
+   * If enabled, PublishResponse is generated with a unique message id automatically when publish()
+   * is called.
+   */
+  public FakePublisherServiceImpl setAutoPublishResponse(boolean autoPublishResponse) {
+    this.autoPublishResponse = autoPublishResponse;
+    return this;
   }
 
   public FakePublisherServiceImpl addPublishResponse(PublishResponse publishResponse) {

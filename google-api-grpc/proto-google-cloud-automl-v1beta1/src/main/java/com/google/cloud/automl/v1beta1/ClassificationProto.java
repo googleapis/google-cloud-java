@@ -4547,6 +4547,67 @@ public final class ClassificationProto {
        *
        *
        * <pre>
+       * Output only. Display name of the annotation specs used in the confusion
+       * matrix, as they were at the moment of the evaluation. For Tables
+       * CLASSIFICATION
+       * [prediction_type-s][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type],
+       * distinct values of the target column at the moment of the model
+       * evaluation are populated here.
+       * </pre>
+       *
+       * <code>repeated string display_name = 3;</code>
+       */
+      java.util.List<java.lang.String> getDisplayNameList();
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Display name of the annotation specs used in the confusion
+       * matrix, as they were at the moment of the evaluation. For Tables
+       * CLASSIFICATION
+       * [prediction_type-s][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type],
+       * distinct values of the target column at the moment of the model
+       * evaluation are populated here.
+       * </pre>
+       *
+       * <code>repeated string display_name = 3;</code>
+       */
+      int getDisplayNameCount();
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Display name of the annotation specs used in the confusion
+       * matrix, as they were at the moment of the evaluation. For Tables
+       * CLASSIFICATION
+       * [prediction_type-s][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type],
+       * distinct values of the target column at the moment of the model
+       * evaluation are populated here.
+       * </pre>
+       *
+       * <code>repeated string display_name = 3;</code>
+       */
+      java.lang.String getDisplayName(int index);
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Display name of the annotation specs used in the confusion
+       * matrix, as they were at the moment of the evaluation. For Tables
+       * CLASSIFICATION
+       * [prediction_type-s][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type],
+       * distinct values of the target column at the moment of the model
+       * evaluation are populated here.
+       * </pre>
+       *
+       * <code>repeated string display_name = 3;</code>
+       */
+      com.google.protobuf.ByteString getDisplayNameBytes(int index);
+
+      /**
+       *
+       *
+       * <pre>
        * Output only. Rows in the confusion matrix. The number of rows is equal to
        * the size of `annotation_spec_id`.
        * `row[i].value[j]` is the number of examples that have ground truth of the
@@ -4657,6 +4718,7 @@ public final class ClassificationProto {
 
       private ConfusionMatrix() {
         annotationSpecId_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        displayName_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         row_ = java.util.Collections.emptyList();
       }
 
@@ -4696,18 +4758,28 @@ public final class ClassificationProto {
                 }
               case 18:
                 {
-                  if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                  if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                     row_ =
                         new java.util.ArrayList<
                             com.google.cloud.automl.v1beta1.ClassificationProto
                                 .ClassificationEvaluationMetrics.ConfusionMatrix.Row>();
-                    mutable_bitField0_ |= 0x00000002;
+                    mutable_bitField0_ |= 0x00000004;
                   }
                   row_.add(
                       input.readMessage(
                           com.google.cloud.automl.v1beta1.ClassificationProto
                               .ClassificationEvaluationMetrics.ConfusionMatrix.Row.parser(),
                           extensionRegistry));
+                  break;
+                }
+              case 26:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                    displayName_ = new com.google.protobuf.LazyStringArrayList();
+                    mutable_bitField0_ |= 0x00000002;
+                  }
+                  displayName_.add(s);
                   break;
                 }
               default:
@@ -4728,8 +4800,11 @@ public final class ClassificationProto {
           if (((mutable_bitField0_ & 0x00000001) != 0)) {
             annotationSpecId_ = annotationSpecId_.getUnmodifiableView();
           }
-          if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          if (((mutable_bitField0_ & 0x00000004) != 0)) {
             row_ = java.util.Collections.unmodifiableList(row_);
+          }
+          if (((mutable_bitField0_ & 0x00000002) != 0)) {
+            displayName_ = displayName_.getUnmodifiableView();
           }
           this.unknownFields = unknownFields.build();
           makeExtensionsImmutable();
@@ -5630,6 +5705,77 @@ public final class ClassificationProto {
         return annotationSpecId_.getByteString(index);
       }
 
+      public static final int DISPLAY_NAME_FIELD_NUMBER = 3;
+      private com.google.protobuf.LazyStringList displayName_;
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Display name of the annotation specs used in the confusion
+       * matrix, as they were at the moment of the evaluation. For Tables
+       * CLASSIFICATION
+       * [prediction_type-s][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type],
+       * distinct values of the target column at the moment of the model
+       * evaluation are populated here.
+       * </pre>
+       *
+       * <code>repeated string display_name = 3;</code>
+       */
+      public com.google.protobuf.ProtocolStringList getDisplayNameList() {
+        return displayName_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Display name of the annotation specs used in the confusion
+       * matrix, as they were at the moment of the evaluation. For Tables
+       * CLASSIFICATION
+       * [prediction_type-s][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type],
+       * distinct values of the target column at the moment of the model
+       * evaluation are populated here.
+       * </pre>
+       *
+       * <code>repeated string display_name = 3;</code>
+       */
+      public int getDisplayNameCount() {
+        return displayName_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Display name of the annotation specs used in the confusion
+       * matrix, as they were at the moment of the evaluation. For Tables
+       * CLASSIFICATION
+       * [prediction_type-s][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type],
+       * distinct values of the target column at the moment of the model
+       * evaluation are populated here.
+       * </pre>
+       *
+       * <code>repeated string display_name = 3;</code>
+       */
+      public java.lang.String getDisplayName(int index) {
+        return displayName_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Display name of the annotation specs used in the confusion
+       * matrix, as they were at the moment of the evaluation. For Tables
+       * CLASSIFICATION
+       * [prediction_type-s][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type],
+       * distinct values of the target column at the moment of the model
+       * evaluation are populated here.
+       * </pre>
+       *
+       * <code>repeated string display_name = 3;</code>
+       */
+      public com.google.protobuf.ByteString getDisplayNameBytes(int index) {
+        return displayName_.getByteString(index);
+      }
+
       public static final int ROW_FIELD_NUMBER = 2;
       private java.util.List<
               com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
@@ -5758,6 +5904,9 @@ public final class ClassificationProto {
         for (int i = 0; i < row_.size(); i++) {
           output.writeMessage(2, row_.get(i));
         }
+        for (int i = 0; i < displayName_.size(); i++) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 3, displayName_.getRaw(i));
+        }
         unknownFields.writeTo(output);
       }
 
@@ -5777,6 +5926,14 @@ public final class ClassificationProto {
         }
         for (int i = 0; i < row_.size(); i++) {
           size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, row_.get(i));
+        }
+        {
+          int dataSize = 0;
+          for (int i = 0; i < displayName_.size(); i++) {
+            dataSize += computeStringSizeNoTag(displayName_.getRaw(i));
+          }
+          size += dataSize;
+          size += 1 * getDisplayNameList().size();
         }
         size += unknownFields.getSerializedSize();
         memoizedSize = size;
@@ -5802,6 +5959,7 @@ public final class ClassificationProto {
                     obj;
 
         if (!getAnnotationSpecIdList().equals(other.getAnnotationSpecIdList())) return false;
+        if (!getDisplayNameList().equals(other.getDisplayNameList())) return false;
         if (!getRowList().equals(other.getRowList())) return false;
         if (!unknownFields.equals(other.unknownFields)) return false;
         return true;
@@ -5817,6 +5975,10 @@ public final class ClassificationProto {
         if (getAnnotationSpecIdCount() > 0) {
           hash = (37 * hash) + ANNOTATION_SPEC_ID_FIELD_NUMBER;
           hash = (53 * hash) + getAnnotationSpecIdList().hashCode();
+        }
+        if (getDisplayNameCount() > 0) {
+          hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
+          hash = (53 * hash) + getDisplayNameList().hashCode();
         }
         if (getRowCount() > 0) {
           hash = (37 * hash) + ROW_FIELD_NUMBER;
@@ -6001,9 +6163,11 @@ public final class ClassificationProto {
           super.clear();
           annotationSpecId_ = com.google.protobuf.LazyStringArrayList.EMPTY;
           bitField0_ = (bitField0_ & ~0x00000001);
+          displayName_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+          bitField0_ = (bitField0_ & ~0x00000002);
           if (rowBuilder_ == null) {
             row_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             rowBuilder_.clear();
           }
@@ -6052,10 +6216,15 @@ public final class ClassificationProto {
             bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.annotationSpecId_ = annotationSpecId_;
+          if (((bitField0_ & 0x00000002) != 0)) {
+            displayName_ = displayName_.getUnmodifiableView();
+            bitField0_ = (bitField0_ & ~0x00000002);
+          }
+          result.displayName_ = displayName_;
           if (rowBuilder_ == null) {
-            if (((bitField0_ & 0x00000002) != 0)) {
+            if (((bitField0_ & 0x00000004) != 0)) {
               row_ = java.util.Collections.unmodifiableList(row_);
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000004);
             }
             result.row_ = row_;
           } else {
@@ -6133,11 +6302,21 @@ public final class ClassificationProto {
             }
             onChanged();
           }
+          if (!other.displayName_.isEmpty()) {
+            if (displayName_.isEmpty()) {
+              displayName_ = other.displayName_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+            } else {
+              ensureDisplayNameIsMutable();
+              displayName_.addAll(other.displayName_);
+            }
+            onChanged();
+          }
           if (rowBuilder_ == null) {
             if (!other.row_.isEmpty()) {
               if (row_.isEmpty()) {
                 row_ = other.row_;
-                bitField0_ = (bitField0_ & ~0x00000002);
+                bitField0_ = (bitField0_ & ~0x00000004);
               } else {
                 ensureRowIsMutable();
                 row_.addAll(other.row_);
@@ -6150,7 +6329,7 @@ public final class ClassificationProto {
                 rowBuilder_.dispose();
                 rowBuilder_ = null;
                 row_ = other.row_;
-                bitField0_ = (bitField0_ & ~0x00000002);
+                bitField0_ = (bitField0_ & ~0x00000004);
                 rowBuilder_ =
                     com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                         ? getRowFieldBuilder()
@@ -6366,18 +6545,206 @@ public final class ClassificationProto {
           return this;
         }
 
+        private com.google.protobuf.LazyStringList displayName_ =
+            com.google.protobuf.LazyStringArrayList.EMPTY;
+
+        private void ensureDisplayNameIsMutable() {
+          if (!((bitField0_ & 0x00000002) != 0)) {
+            displayName_ = new com.google.protobuf.LazyStringArrayList(displayName_);
+            bitField0_ |= 0x00000002;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Display name of the annotation specs used in the confusion
+         * matrix, as they were at the moment of the evaluation. For Tables
+         * CLASSIFICATION
+         * [prediction_type-s][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type],
+         * distinct values of the target column at the moment of the model
+         * evaluation are populated here.
+         * </pre>
+         *
+         * <code>repeated string display_name = 3;</code>
+         */
+        public com.google.protobuf.ProtocolStringList getDisplayNameList() {
+          return displayName_.getUnmodifiableView();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Display name of the annotation specs used in the confusion
+         * matrix, as they were at the moment of the evaluation. For Tables
+         * CLASSIFICATION
+         * [prediction_type-s][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type],
+         * distinct values of the target column at the moment of the model
+         * evaluation are populated here.
+         * </pre>
+         *
+         * <code>repeated string display_name = 3;</code>
+         */
+        public int getDisplayNameCount() {
+          return displayName_.size();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Display name of the annotation specs used in the confusion
+         * matrix, as they were at the moment of the evaluation. For Tables
+         * CLASSIFICATION
+         * [prediction_type-s][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type],
+         * distinct values of the target column at the moment of the model
+         * evaluation are populated here.
+         * </pre>
+         *
+         * <code>repeated string display_name = 3;</code>
+         */
+        public java.lang.String getDisplayName(int index) {
+          return displayName_.get(index);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Display name of the annotation specs used in the confusion
+         * matrix, as they were at the moment of the evaluation. For Tables
+         * CLASSIFICATION
+         * [prediction_type-s][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type],
+         * distinct values of the target column at the moment of the model
+         * evaluation are populated here.
+         * </pre>
+         *
+         * <code>repeated string display_name = 3;</code>
+         */
+        public com.google.protobuf.ByteString getDisplayNameBytes(int index) {
+          return displayName_.getByteString(index);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Display name of the annotation specs used in the confusion
+         * matrix, as they were at the moment of the evaluation. For Tables
+         * CLASSIFICATION
+         * [prediction_type-s][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type],
+         * distinct values of the target column at the moment of the model
+         * evaluation are populated here.
+         * </pre>
+         *
+         * <code>repeated string display_name = 3;</code>
+         */
+        public Builder setDisplayName(int index, java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDisplayNameIsMutable();
+          displayName_.set(index, value);
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Display name of the annotation specs used in the confusion
+         * matrix, as they were at the moment of the evaluation. For Tables
+         * CLASSIFICATION
+         * [prediction_type-s][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type],
+         * distinct values of the target column at the moment of the model
+         * evaluation are populated here.
+         * </pre>
+         *
+         * <code>repeated string display_name = 3;</code>
+         */
+        public Builder addDisplayName(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDisplayNameIsMutable();
+          displayName_.add(value);
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Display name of the annotation specs used in the confusion
+         * matrix, as they were at the moment of the evaluation. For Tables
+         * CLASSIFICATION
+         * [prediction_type-s][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type],
+         * distinct values of the target column at the moment of the model
+         * evaluation are populated here.
+         * </pre>
+         *
+         * <code>repeated string display_name = 3;</code>
+         */
+        public Builder addAllDisplayName(java.lang.Iterable<java.lang.String> values) {
+          ensureDisplayNameIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, displayName_);
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Display name of the annotation specs used in the confusion
+         * matrix, as they were at the moment of the evaluation. For Tables
+         * CLASSIFICATION
+         * [prediction_type-s][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type],
+         * distinct values of the target column at the moment of the model
+         * evaluation are populated here.
+         * </pre>
+         *
+         * <code>repeated string display_name = 3;</code>
+         */
+        public Builder clearDisplayName() {
+          displayName_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Display name of the annotation specs used in the confusion
+         * matrix, as they were at the moment of the evaluation. For Tables
+         * CLASSIFICATION
+         * [prediction_type-s][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type],
+         * distinct values of the target column at the moment of the model
+         * evaluation are populated here.
+         * </pre>
+         *
+         * <code>repeated string display_name = 3;</code>
+         */
+        public Builder addDisplayNameBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          ensureDisplayNameIsMutable();
+          displayName_.add(value);
+          onChanged();
+          return this;
+        }
+
         private java.util.List<
                 com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
                     .ConfusionMatrix.Row>
             row_ = java.util.Collections.emptyList();
 
         private void ensureRowIsMutable() {
-          if (!((bitField0_ & 0x00000002) != 0)) {
+          if (!((bitField0_ & 0x00000004) != 0)) {
             row_ =
                 new java.util.ArrayList<
                     com.google.cloud.automl.v1beta1.ClassificationProto
                         .ClassificationEvaluationMetrics.ConfusionMatrix.Row>(row_);
-            bitField0_ |= 0x00000002;
+            bitField0_ |= 0x00000004;
           }
         }
 
@@ -6690,7 +7057,7 @@ public final class ClassificationProto {
         public Builder clearRow() {
           if (rowBuilder_ == null) {
             row_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
             onChanged();
           } else {
             rowBuilder_.clear();
@@ -6878,7 +7245,7 @@ public final class ClassificationProto {
                         .ClassificationEvaluationMetrics.ConfusionMatrix.Row.Builder,
                     com.google.cloud.automl.v1beta1.ClassificationProto
                         .ClassificationEvaluationMetrics.ConfusionMatrix.RowOrBuilder>(
-                    row_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+                    row_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
             row_ = null;
           }
           return rowBuilder_;
@@ -9026,7 +9393,7 @@ public final class ClassificationProto {
           + " \001(\t\022X\n\031classification_annotation\030\002 \001(\0132"
           + "5.google.cloud.automl.v1beta1.Classifica"
           + "tionAnnotation\022>\n\014time_segment\030\003 \001(\0132(.g"
-          + "oogle.cloud.automl.v1beta1.TimeSegment\"\223"
+          + "oogle.cloud.automl.v1beta1.TimeSegment\"\251"
           + "\007\n\037ClassificationEvaluationMetrics\022\016\n\006au"
           + "_prc\030\001 \001(\002\022\027\n\013base_au_prc\030\002 \001(\002B\002\030\001\022\016\n\006a"
           + "u_roc\030\006 \001(\002\022\020\n\010log_loss\030\007 \001(\002\022u\n\030confide"
@@ -9045,19 +9412,19 @@ public final class ClassificationProto {
           + "\001(\002\022\024\n\014f1_score_at1\030\007 \001(\002\022\033\n\023true_positi"
           + "ve_count\030\n \001(\003\022\034\n\024false_positive_count\030\013"
           + " \001(\003\022\034\n\024false_negative_count\030\014 \001(\003\022\033\n\023tr"
-          + "ue_negative_count\030\r \001(\003\032\252\001\n\017ConfusionMat"
-          + "rix\022\032\n\022annotation_spec_id\030\001 \003(\t\022]\n\003row\030\002"
-          + " \003(\0132P.google.cloud.automl.v1beta1.Class"
-          + "ificationEvaluationMetrics.ConfusionMatr"
-          + "ix.Row\032\034\n\003Row\022\025\n\rexample_count\030\001 \003(\005*Y\n\022"
-          + "ClassificationType\022#\n\037CLASSIFICATION_TYP"
-          + "E_UNSPECIFIED\020\000\022\016\n\nMULTICLASS\020\001\022\016\n\nMULTI"
-          + "LABEL\020\002B\270\001\n\037com.google.cloud.automl.v1be"
-          + "ta1B\023ClassificationProtoZAgoogle.golang."
-          + "org/genproto/googleapis/cloud/automl/v1b"
-          + "eta1;automl\312\002\033Google\\Cloud\\AutoMl\\V1beta"
-          + "1\352\002\036Google::Cloud::AutoML::V1beta1b\006prot"
-          + "o3"
+          + "ue_negative_count\030\r \001(\003\032\300\001\n\017ConfusionMat"
+          + "rix\022\032\n\022annotation_spec_id\030\001 \003(\t\022\024\n\014displ"
+          + "ay_name\030\003 \003(\t\022]\n\003row\030\002 \003(\0132P.google.clou"
+          + "d.automl.v1beta1.ClassificationEvaluatio"
+          + "nMetrics.ConfusionMatrix.Row\032\034\n\003Row\022\025\n\re"
+          + "xample_count\030\001 \003(\005*Y\n\022ClassificationType"
+          + "\022#\n\037CLASSIFICATION_TYPE_UNSPECIFIED\020\000\022\016\n"
+          + "\nMULTICLASS\020\001\022\016\n\nMULTILABEL\020\002B\270\001\n\037com.go"
+          + "ogle.cloud.automl.v1beta1B\023Classificatio"
+          + "nProtoZAgoogle.golang.org/genproto/googl"
+          + "eapis/cloud/automl/v1beta1;automl\312\002\033Goog"
+          + "le\\Cloud\\AutoMl\\V1beta1\352\002\036Google::Cloud:"
+          + ":AutoML::V1beta1b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -9135,7 +9502,7 @@ public final class ClassificationProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_ConfusionMatrix_descriptor,
             new java.lang.String[] {
-              "AnnotationSpecId", "Row",
+              "AnnotationSpecId", "DisplayName", "Row",
             });
     internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_ConfusionMatrix_Row_descriptor =
         internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_ConfusionMatrix_descriptor

@@ -764,7 +764,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The intent that matched the conversational query. Some, not
    * all fields are filled in this message, including but not limited to:
-   * `name`, `display_name` and `webhook_state`.
+   * `name`, `display_name`, `end_interaction` and `is_fallback`.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.Intent intent = 11;</code>
@@ -778,7 +778,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The intent that matched the conversational query. Some, not
    * all fields are filled in this message, including but not limited to:
-   * `name`, `display_name` and `webhook_state`.
+   * `name`, `display_name`, `end_interaction` and `is_fallback`.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.Intent intent = 11;</code>
@@ -792,7 +792,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The intent that matched the conversational query. Some, not
    * all fields are filled in this message, including but not limited to:
-   * `name`, `display_name` and `webhook_state`.
+   * `name`, `display_name`, `end_interaction` and `is_fallback`.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.Intent intent = 11;</code>
@@ -809,6 +809,10 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The intent detection confidence. Values range from 0.0
    * (completely uncertain) to 1.0 (completely certain).
+   * This value is for informational purpose only and is only used to
+   * help match the best intent within the classification threshold.
+   * This value may change for the same end-user expression at any time due to a
+   * model retraining or change in implementation.
    * If there are `multiple knowledge_answers` messages, this value is set to
    * the greatest `knowledgeAnswers.match_confidence` value in the list.
    * </pre>
@@ -3397,7 +3401,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The intent that matched the conversational query. Some, not
      * all fields are filled in this message, including but not limited to:
-     * `name`, `display_name` and `webhook_state`.
+     * `name`, `display_name`, `end_interaction` and `is_fallback`.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.Intent intent = 11;</code>
@@ -3411,7 +3415,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The intent that matched the conversational query. Some, not
      * all fields are filled in this message, including but not limited to:
-     * `name`, `display_name` and `webhook_state`.
+     * `name`, `display_name`, `end_interaction` and `is_fallback`.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.Intent intent = 11;</code>
@@ -3431,7 +3435,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The intent that matched the conversational query. Some, not
      * all fields are filled in this message, including but not limited to:
-     * `name`, `display_name` and `webhook_state`.
+     * `name`, `display_name`, `end_interaction` and `is_fallback`.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.Intent intent = 11;</code>
@@ -3455,7 +3459,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The intent that matched the conversational query. Some, not
      * all fields are filled in this message, including but not limited to:
-     * `name`, `display_name` and `webhook_state`.
+     * `name`, `display_name`, `end_interaction` and `is_fallback`.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.Intent intent = 11;</code>
@@ -3476,7 +3480,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The intent that matched the conversational query. Some, not
      * all fields are filled in this message, including but not limited to:
-     * `name`, `display_name` and `webhook_state`.
+     * `name`, `display_name`, `end_interaction` and `is_fallback`.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.Intent intent = 11;</code>
@@ -3504,7 +3508,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The intent that matched the conversational query. Some, not
      * all fields are filled in this message, including but not limited to:
-     * `name`, `display_name` and `webhook_state`.
+     * `name`, `display_name`, `end_interaction` and `is_fallback`.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.Intent intent = 11;</code>
@@ -3526,7 +3530,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The intent that matched the conversational query. Some, not
      * all fields are filled in this message, including but not limited to:
-     * `name`, `display_name` and `webhook_state`.
+     * `name`, `display_name`, `end_interaction` and `is_fallback`.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.Intent intent = 11;</code>
@@ -3542,7 +3546,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The intent that matched the conversational query. Some, not
      * all fields are filled in this message, including but not limited to:
-     * `name`, `display_name` and `webhook_state`.
+     * `name`, `display_name`, `end_interaction` and `is_fallback`.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.Intent intent = 11;</code>
@@ -3562,7 +3566,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The intent that matched the conversational query. Some, not
      * all fields are filled in this message, including but not limited to:
-     * `name`, `display_name` and `webhook_state`.
+     * `name`, `display_name`, `end_interaction` and `is_fallback`.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.Intent intent = 11;</code>
@@ -3591,6 +3595,10 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The intent detection confidence. Values range from 0.0
      * (completely uncertain) to 1.0 (completely certain).
+     * This value is for informational purpose only and is only used to
+     * help match the best intent within the classification threshold.
+     * This value may change for the same end-user expression at any time due to a
+     * model retraining or change in implementation.
      * If there are `multiple knowledge_answers` messages, this value is set to
      * the greatest `knowledgeAnswers.match_confidence` value in the list.
      * </pre>
@@ -3606,6 +3614,10 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The intent detection confidence. Values range from 0.0
      * (completely uncertain) to 1.0 (completely certain).
+     * This value is for informational purpose only and is only used to
+     * help match the best intent within the classification threshold.
+     * This value may change for the same end-user expression at any time due to a
+     * model retraining or change in implementation.
      * If there are `multiple knowledge_answers` messages, this value is set to
      * the greatest `knowledgeAnswers.match_confidence` value in the list.
      * </pre>
@@ -3624,6 +3636,10 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The intent detection confidence. Values range from 0.0
      * (completely uncertain) to 1.0 (completely certain).
+     * This value is for informational purpose only and is only used to
+     * help match the best intent within the classification threshold.
+     * This value may change for the same end-user expression at any time due to a
+     * model retraining or change in implementation.
      * If there are `multiple knowledge_answers` messages, this value is set to
      * the greatest `knowledgeAnswers.match_confidence` value in the list.
      * </pre>

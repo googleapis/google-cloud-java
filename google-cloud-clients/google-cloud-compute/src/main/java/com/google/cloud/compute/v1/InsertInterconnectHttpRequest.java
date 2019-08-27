@@ -145,9 +145,11 @@ public final class InsertInterconnectHttpRequest implements ApiMessage {
   }
 
   /**
-   * Represents an Interconnects resource. The Interconnects resource is a dedicated connection
-   * between Google's network and your on-premises network. For more information, see the Dedicated
-   * overview page. (== resource_for v1.interconnects ==) (== resource_for beta.interconnects ==)
+   * Represents an Interconnect resource.
+   *
+   * <p>An Interconnect resource is a dedicated connection between the GCP network and your
+   * on-premises network. For more information, read the Dedicated Interconnect Overview. (==
+   * resource_for v1.interconnects ==) (== resource_for beta.interconnects ==)
    */
   public Interconnect getInterconnectResource() {
     return interconnectResource;
@@ -319,20 +321,22 @@ public final class InsertInterconnectHttpRequest implements ApiMessage {
     }
 
     /**
-     * Represents an Interconnects resource. The Interconnects resource is a dedicated connection
-     * between Google's network and your on-premises network. For more information, see the
-     * Dedicated overview page. (== resource_for v1.interconnects ==) (== resource_for
-     * beta.interconnects ==)
+     * Represents an Interconnect resource.
+     *
+     * <p>An Interconnect resource is a dedicated connection between the GCP network and your
+     * on-premises network. For more information, read the Dedicated Interconnect Overview. (==
+     * resource_for v1.interconnects ==) (== resource_for beta.interconnects ==)
      */
     public Interconnect getInterconnectResource() {
       return interconnectResource;
     }
 
     /**
-     * Represents an Interconnects resource. The Interconnects resource is a dedicated connection
-     * between Google's network and your on-premises network. For more information, see the
-     * Dedicated overview page. (== resource_for v1.interconnects ==) (== resource_for
-     * beta.interconnects ==)
+     * Represents an Interconnect resource.
+     *
+     * <p>An Interconnect resource is a dedicated connection between the GCP network and your
+     * on-premises network. For more information, read the Dedicated Interconnect Overview. (==
+     * resource_for v1.interconnects ==) (== resource_for beta.interconnects ==)
      */
     public Builder setInterconnectResource(Interconnect interconnectResource) {
       this.interconnectResource = interconnectResource;

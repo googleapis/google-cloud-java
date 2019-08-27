@@ -418,6 +418,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. A list of team members involved in this activity.
    * Number of characters allowed is 100.
+   * The limitation for max number of team members is 50.
    * </pre>
    *
    * <code>repeated string team_members = 6;</code>
@@ -431,6 +432,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. A list of team members involved in this activity.
    * Number of characters allowed is 100.
+   * The limitation for max number of team members is 50.
    * </pre>
    *
    * <code>repeated string team_members = 6;</code>
@@ -444,6 +446,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. A list of team members involved in this activity.
    * Number of characters allowed is 100.
+   * The limitation for max number of team members is 50.
    * </pre>
    *
    * <code>repeated string team_members = 6;</code>
@@ -457,6 +460,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. A list of team members involved in this activity.
    * Number of characters allowed is 100.
+   * The limitation for max number of team members is 50.
    * </pre>
    *
    * <code>repeated string team_members = 6;</code>
@@ -472,6 +476,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. A list of skills used in this activity.
+   * The limitation for max number of skills used is 50.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.Skill skills_used = 7;</code>
@@ -484,6 +489,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. A list of skills used in this activity.
+   * The limitation for max number of skills used is 50.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.Skill skills_used = 7;</code>
@@ -497,6 +503,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. A list of skills used in this activity.
+   * The limitation for max number of skills used is 50.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.Skill skills_used = 7;</code>
@@ -509,6 +516,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. A list of skills used in this activity.
+   * The limitation for max number of skills used is 50.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.Skill skills_used = 7;</code>
@@ -521,6 +529,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. A list of skills used in this activity.
+   * The limitation for max number of skills used is 50.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.Skill skills_used = 7;</code>
@@ -1913,6 +1922,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. A list of team members involved in this activity.
      * Number of characters allowed is 100.
+     * The limitation for max number of team members is 50.
      * </pre>
      *
      * <code>repeated string team_members = 6;</code>
@@ -1926,6 +1936,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. A list of team members involved in this activity.
      * Number of characters allowed is 100.
+     * The limitation for max number of team members is 50.
      * </pre>
      *
      * <code>repeated string team_members = 6;</code>
@@ -1939,6 +1950,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. A list of team members involved in this activity.
      * Number of characters allowed is 100.
+     * The limitation for max number of team members is 50.
      * </pre>
      *
      * <code>repeated string team_members = 6;</code>
@@ -1952,6 +1964,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. A list of team members involved in this activity.
      * Number of characters allowed is 100.
+     * The limitation for max number of team members is 50.
      * </pre>
      *
      * <code>repeated string team_members = 6;</code>
@@ -1965,6 +1978,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. A list of team members involved in this activity.
      * Number of characters allowed is 100.
+     * The limitation for max number of team members is 50.
      * </pre>
      *
      * <code>repeated string team_members = 6;</code>
@@ -1984,6 +1998,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. A list of team members involved in this activity.
      * Number of characters allowed is 100.
+     * The limitation for max number of team members is 50.
      * </pre>
      *
      * <code>repeated string team_members = 6;</code>
@@ -2003,6 +2018,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. A list of team members involved in this activity.
      * Number of characters allowed is 100.
+     * The limitation for max number of team members is 50.
      * </pre>
      *
      * <code>repeated string team_members = 6;</code>
@@ -2019,6 +2035,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. A list of team members involved in this activity.
      * Number of characters allowed is 100.
+     * The limitation for max number of team members is 50.
      * </pre>
      *
      * <code>repeated string team_members = 6;</code>
@@ -2035,6 +2052,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. A list of team members involved in this activity.
      * Number of characters allowed is 100.
+     * The limitation for max number of team members is 50.
      * </pre>
      *
      * <code>repeated string team_members = 6;</code>
@@ -2071,6 +2089,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A list of skills used in this activity.
+     * The limitation for max number of skills used is 50.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Skill skills_used = 7;</code>
@@ -2087,6 +2106,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A list of skills used in this activity.
+     * The limitation for max number of skills used is 50.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Skill skills_used = 7;</code>
@@ -2103,6 +2123,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A list of skills used in this activity.
+     * The limitation for max number of skills used is 50.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Skill skills_used = 7;</code>
@@ -2119,6 +2140,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A list of skills used in this activity.
+     * The limitation for max number of skills used is 50.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Skill skills_used = 7;</code>
@@ -2141,6 +2163,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A list of skills used in this activity.
+     * The limitation for max number of skills used is 50.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Skill skills_used = 7;</code>
@@ -2161,6 +2184,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A list of skills used in this activity.
+     * The limitation for max number of skills used is 50.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Skill skills_used = 7;</code>
@@ -2183,6 +2207,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A list of skills used in this activity.
+     * The limitation for max number of skills used is 50.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Skill skills_used = 7;</code>
@@ -2205,6 +2230,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A list of skills used in this activity.
+     * The limitation for max number of skills used is 50.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Skill skills_used = 7;</code>
@@ -2224,6 +2250,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A list of skills used in this activity.
+     * The limitation for max number of skills used is 50.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Skill skills_used = 7;</code>
@@ -2244,6 +2271,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A list of skills used in this activity.
+     * The limitation for max number of skills used is 50.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Skill skills_used = 7;</code>
@@ -2264,6 +2292,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A list of skills used in this activity.
+     * The limitation for max number of skills used is 50.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Skill skills_used = 7;</code>
@@ -2283,6 +2312,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A list of skills used in this activity.
+     * The limitation for max number of skills used is 50.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Skill skills_used = 7;</code>
@@ -2302,6 +2332,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A list of skills used in this activity.
+     * The limitation for max number of skills used is 50.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Skill skills_used = 7;</code>
@@ -2314,6 +2345,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A list of skills used in this activity.
+     * The limitation for max number of skills used is 50.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Skill skills_used = 7;</code>
@@ -2330,6 +2362,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A list of skills used in this activity.
+     * The limitation for max number of skills used is 50.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Skill skills_used = 7;</code>
@@ -2347,6 +2380,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A list of skills used in this activity.
+     * The limitation for max number of skills used is 50.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Skill skills_used = 7;</code>
@@ -2360,6 +2394,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A list of skills used in this activity.
+     * The limitation for max number of skills used is 50.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Skill skills_used = 7;</code>
@@ -2373,6 +2408,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A list of skills used in this activity.
+     * The limitation for max number of skills used is 50.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Skill skills_used = 7;</code>

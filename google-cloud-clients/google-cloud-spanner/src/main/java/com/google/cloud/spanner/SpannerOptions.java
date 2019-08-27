@@ -43,11 +43,14 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Map;
 import java.util.Set;
+import org.threeten.bp.Duration;
 
 /** Options for the Cloud Spanner service. */
 public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   private static final long serialVersionUID = 2789571558532701170L;
 
+  private static final String JDBC_API_CLIENT_LIB_TOKEN = "sp-jdbc";
+  private static final String HIBERNATE_API_CLIENT_LIB_TOKEN = "sp-hib";
   private static final String API_SHORT_NAME = "Spanner";
   private static final String DEFAULT_HOST = "https://spanner.googleapis.com";
   private static final ImmutableSet<String> SCOPES =
@@ -68,6 +71,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   private final SpannerStubSettings spannerStubSettings;
   private final InstanceAdminStubSettings instanceAdminStubSettings;
   private final DatabaseAdminStubSettings databaseAdminStubSettings;
+  private final Duration partitionedDmlTimeout;
 
   /** Default implementation of {@code SpannerFactory}. */
   private static class DefaultSpannerFactory implements SpannerFactory {
@@ -114,12 +118,18 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     } catch (IOException e) {
       throw SpannerExceptionFactory.newSpannerException(e);
     }
+    partitionedDmlTimeout = builder.partitionedDmlTimeout;
   }
 
   /** Builder for {@link SpannerOptions} instances. */
   public static class Builder
       extends ServiceOptions.Builder<Spanner, SpannerOptions, SpannerOptions.Builder> {
     private static final int DEFAULT_PREFETCH_CHUNKS = 4;
+    private final ImmutableSet<String> allowedClientLibTokens =
+        ImmutableSet.of(
+            ServiceOptions.getGoogApiClientLibName(),
+            JDBC_API_CLIENT_LIB_TOKEN,
+            HIBERNATE_API_CLIENT_LIB_TOKEN);
     private TransportChannelProvider channelProvider;
 
     @SuppressWarnings("rawtypes")
@@ -139,6 +149,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
         InstanceAdminStubSettings.newBuilder();
     private DatabaseAdminStubSettings.Builder databaseAdminStubSettingsBuilder =
         DatabaseAdminStubSettings.newBuilder();
+    private Duration partitionedDmlTimeout = Duration.ofHours(2L);
 
     private Builder() {}
 
@@ -151,6 +162,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
       this.spannerStubSettingsBuilder = options.spannerStubSettings.toBuilder();
       this.instanceAdminStubSettingsBuilder = options.instanceAdminStubSettings.toBuilder();
       this.databaseAdminStubSettingsBuilder = options.databaseAdminStubSettings.toBuilder();
+      this.partitionedDmlTimeout = options.partitionedDmlTimeout;
       this.channelProvider = options.channelProvider;
       this.channelConfigurator = options.channelConfigurator;
       this.interceptorProvider = options.interceptorProvider;
@@ -163,6 +175,11 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
             "Only grpc transport is allowed for " + API_SHORT_NAME + ".");
       }
       return super.setTransportOptions(transportOptions);
+    }
+
+    @Override
+    protected Set<String> getAllowedClientLibTokens() {
+      return allowedClientLibTokens;
     }
 
     /**
@@ -329,6 +346,15 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     }
 
     /**
+     * Sets a timeout specifically for Partitioned DML statements executed through {@link
+     * DatabaseClient#executePartitionedUpdate(Statement)}. The default is 2 hours.
+     */
+    public Builder setPartitionedDmlTimeout(Duration timeout) {
+      this.partitionedDmlTimeout = timeout;
+      return this;
+    }
+
+    /**
      * Specifying this will allow the client to prefetch up to {@code prefetchChunks} {@code
      * PartialResultSet} chunks for each read and query. The data size of each chunk depends on the
      * server implementation but a good rule of thumb is that each chunk will be up to 1 MiB. Larger
@@ -394,6 +420,10 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
 
   public DatabaseAdminStubSettings getDatabaseAdminStubSettings() {
     return databaseAdminStubSettings;
+  }
+
+  public Duration getPartitionedDmlTimeout() {
+    return partitionedDmlTimeout;
   }
 
   public int getPrefetchChunks() {

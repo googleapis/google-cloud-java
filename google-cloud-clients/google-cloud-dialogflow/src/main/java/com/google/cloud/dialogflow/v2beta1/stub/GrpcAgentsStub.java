@@ -59,6 +59,20 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class GrpcAgentsStub extends AgentsStub {
 
+  private static final MethodDescriptor<SetAgentRequest, Agent> setAgentMethodDescriptor =
+      MethodDescriptor.<SetAgentRequest, Agent>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.dialogflow.v2beta1.Agents/SetAgent")
+          .setRequestMarshaller(ProtoUtils.marshaller(SetAgentRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Agent.getDefaultInstance()))
+          .build();
+  private static final MethodDescriptor<DeleteAgentRequest, Empty> deleteAgentMethodDescriptor =
+      MethodDescriptor.<DeleteAgentRequest, Empty>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.dialogflow.v2beta1.Agents/DeleteAgent")
+          .setRequestMarshaller(ProtoUtils.marshaller(DeleteAgentRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .build();
   private static final MethodDescriptor<GetAgentRequest, Agent> getAgentMethodDescriptor =
       MethodDescriptor.<GetAgentRequest, Agent>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -104,24 +118,12 @@ public class GrpcAgentsStub extends AgentsStub {
               .setRequestMarshaller(ProtoUtils.marshaller(RestoreAgentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
-  private static final MethodDescriptor<SetAgentRequest, Agent> setAgentMethodDescriptor =
-      MethodDescriptor.<SetAgentRequest, Agent>newBuilder()
-          .setType(MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName("google.cloud.dialogflow.v2beta1.Agents/SetAgent")
-          .setRequestMarshaller(ProtoUtils.marshaller(SetAgentRequest.getDefaultInstance()))
-          .setResponseMarshaller(ProtoUtils.marshaller(Agent.getDefaultInstance()))
-          .build();
-  private static final MethodDescriptor<DeleteAgentRequest, Empty> deleteAgentMethodDescriptor =
-      MethodDescriptor.<DeleteAgentRequest, Empty>newBuilder()
-          .setType(MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName("google.cloud.dialogflow.v2beta1.Agents/DeleteAgent")
-          .setRequestMarshaller(ProtoUtils.marshaller(DeleteAgentRequest.getDefaultInstance()))
-          .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
-          .build();
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
 
+  private final UnaryCallable<SetAgentRequest, Agent> setAgentCallable;
+  private final UnaryCallable<DeleteAgentRequest, Empty> deleteAgentCallable;
   private final UnaryCallable<GetAgentRequest, Agent> getAgentCallable;
   private final UnaryCallable<SearchAgentsRequest, SearchAgentsResponse> searchAgentsCallable;
   private final UnaryCallable<SearchAgentsRequest, SearchAgentsPagedResponse>
@@ -135,8 +137,6 @@ public class GrpcAgentsStub extends AgentsStub {
   private final OperationCallable<ImportAgentRequest, Empty, Struct> importAgentOperationCallable;
   private final UnaryCallable<RestoreAgentRequest, Operation> restoreAgentCallable;
   private final OperationCallable<RestoreAgentRequest, Empty, Struct> restoreAgentOperationCallable;
-  private final UnaryCallable<SetAgentRequest, Agent> setAgentCallable;
-  private final UnaryCallable<DeleteAgentRequest, Empty> deleteAgentCallable;
 
   private final GrpcStubCallableFactory callableFactory;
 
@@ -175,6 +175,32 @@ public class GrpcAgentsStub extends AgentsStub {
     this.callableFactory = callableFactory;
     this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
+    GrpcCallSettings<SetAgentRequest, Agent> setAgentTransportSettings =
+        GrpcCallSettings.<SetAgentRequest, Agent>newBuilder()
+            .setMethodDescriptor(setAgentMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<SetAgentRequest>() {
+                  @Override
+                  public Map<String, String> extract(SetAgentRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("agent.parent", String.valueOf(request.getAgent().getParent()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<DeleteAgentRequest, Empty> deleteAgentTransportSettings =
+        GrpcCallSettings.<DeleteAgentRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteAgentMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<DeleteAgentRequest>() {
+                  @Override
+                  public Map<String, String> extract(DeleteAgentRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("parent", String.valueOf(request.getParent()));
+                    return params.build();
+                  }
+                })
+            .build();
     GrpcCallSettings<GetAgentRequest, Agent> getAgentTransportSettings =
         GrpcCallSettings.<GetAgentRequest, Agent>newBuilder()
             .setMethodDescriptor(getAgentMethodDescriptor)
@@ -253,33 +279,13 @@ public class GrpcAgentsStub extends AgentsStub {
                   }
                 })
             .build();
-    GrpcCallSettings<SetAgentRequest, Agent> setAgentTransportSettings =
-        GrpcCallSettings.<SetAgentRequest, Agent>newBuilder()
-            .setMethodDescriptor(setAgentMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<SetAgentRequest>() {
-                  @Override
-                  public Map<String, String> extract(SetAgentRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("agent.parent", String.valueOf(request.getAgent().getParent()));
-                    return params.build();
-                  }
-                })
-            .build();
-    GrpcCallSettings<DeleteAgentRequest, Empty> deleteAgentTransportSettings =
-        GrpcCallSettings.<DeleteAgentRequest, Empty>newBuilder()
-            .setMethodDescriptor(deleteAgentMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<DeleteAgentRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteAgentRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
-                })
-            .build();
 
+    this.setAgentCallable =
+        callableFactory.createUnaryCallable(
+            setAgentTransportSettings, settings.setAgentSettings(), clientContext);
+    this.deleteAgentCallable =
+        callableFactory.createUnaryCallable(
+            deleteAgentTransportSettings, settings.deleteAgentSettings(), clientContext);
     this.getAgentCallable =
         callableFactory.createUnaryCallable(
             getAgentTransportSettings, settings.getAgentSettings(), clientContext);
@@ -325,12 +331,6 @@ public class GrpcAgentsStub extends AgentsStub {
             settings.restoreAgentOperationSettings(),
             clientContext,
             this.operationsStub);
-    this.setAgentCallable =
-        callableFactory.createUnaryCallable(
-            setAgentTransportSettings, settings.setAgentSettings(), clientContext);
-    this.deleteAgentCallable =
-        callableFactory.createUnaryCallable(
-            deleteAgentTransportSettings, settings.deleteAgentSettings(), clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
@@ -338,6 +338,14 @@ public class GrpcAgentsStub extends AgentsStub {
   @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public GrpcOperationsStub getOperationsStub() {
     return operationsStub;
+  }
+
+  public UnaryCallable<SetAgentRequest, Agent> setAgentCallable() {
+    return setAgentCallable;
+  }
+
+  public UnaryCallable<DeleteAgentRequest, Empty> deleteAgentCallable() {
+    return deleteAgentCallable;
   }
 
   public UnaryCallable<GetAgentRequest, Agent> getAgentCallable() {
@@ -387,14 +395,6 @@ public class GrpcAgentsStub extends AgentsStub {
 
   public UnaryCallable<RestoreAgentRequest, Operation> restoreAgentCallable() {
     return restoreAgentCallable;
-  }
-
-  public UnaryCallable<SetAgentRequest, Agent> setAgentCallable() {
-    return setAgentCallable;
-  }
-
-  public UnaryCallable<DeleteAgentRequest, Empty> deleteAgentCallable() {
-    return deleteAgentCallable;
   }
 
   @Override

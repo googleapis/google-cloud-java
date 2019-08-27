@@ -52,6 +52,7 @@ import com.google.cloud.vision.v1.ListReferenceImagesRequest;
 import com.google.cloud.vision.v1.ListReferenceImagesResponse;
 import com.google.cloud.vision.v1.Product;
 import com.google.cloud.vision.v1.ProductSet;
+import com.google.cloud.vision.v1.PurgeProductsRequest;
 import com.google.cloud.vision.v1.ReferenceImage;
 import com.google.cloud.vision.v1.RemoveProductFromProductSetRequest;
 import com.google.cloud.vision.v1.UpdateProductRequest;
@@ -240,6 +241,15 @@ public class GrpcProductSearchStub extends ProductSearchStub {
                   ProtoUtils.marshaller(ImportProductSetsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
+  private static final MethodDescriptor<PurgeProductsRequest, Operation>
+      purgeProductsMethodDescriptor =
+          MethodDescriptor.<PurgeProductsRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.vision.v1.ProductSearch/PurgeProducts")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(PurgeProductsRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -279,6 +289,9 @@ public class GrpcProductSearchStub extends ProductSearchStub {
   private final OperationCallable<
           ImportProductSetsRequest, ImportProductSetsResponse, BatchOperationMetadata>
       importProductSetsOperationCallable;
+  private final UnaryCallable<PurgeProductsRequest, Operation> purgeProductsCallable;
+  private final OperationCallable<PurgeProductsRequest, Empty, BatchOperationMetadata>
+      purgeProductsOperationCallable;
 
   private final GrpcStubCallableFactory callableFactory;
 
@@ -562,6 +575,19 @@ public class GrpcProductSearchStub extends ProductSearchStub {
                   }
                 })
             .build();
+    GrpcCallSettings<PurgeProductsRequest, Operation> purgeProductsTransportSettings =
+        GrpcCallSettings.<PurgeProductsRequest, Operation>newBuilder()
+            .setMethodDescriptor(purgeProductsMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<PurgeProductsRequest>() {
+                  @Override
+                  public Map<String, String> extract(PurgeProductsRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("parent", String.valueOf(request.getParent()));
+                    return params.build();
+                  }
+                })
+            .build();
 
     this.createProductSetCallable =
         callableFactory.createUnaryCallable(
@@ -653,6 +679,15 @@ public class GrpcProductSearchStub extends ProductSearchStub {
         callableFactory.createOperationCallable(
             importProductSetsTransportSettings,
             settings.importProductSetsOperationSettings(),
+            clientContext,
+            this.operationsStub);
+    this.purgeProductsCallable =
+        callableFactory.createUnaryCallable(
+            purgeProductsTransportSettings, settings.purgeProductsSettings(), clientContext);
+    this.purgeProductsOperationCallable =
+        callableFactory.createOperationCallable(
+            purgeProductsTransportSettings,
+            settings.purgeProductsOperationSettings(),
             clientContext,
             this.operationsStub);
 
@@ -763,6 +798,16 @@ public class GrpcProductSearchStub extends ProductSearchStub {
 
   public UnaryCallable<ImportProductSetsRequest, Operation> importProductSetsCallable() {
     return importProductSetsCallable;
+  }
+
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public OperationCallable<PurgeProductsRequest, Empty, BatchOperationMetadata>
+      purgeProductsOperationCallable() {
+    return purgeProductsOperationCallable;
+  }
+
+  public UnaryCallable<PurgeProductsRequest, Operation> purgeProductsCallable() {
+    return purgeProductsCallable;
   }
 
   @Override

@@ -30,12 +30,12 @@ public final class TaskProto {
   static {
     java.lang.String[] descriptorData = {
       "\n google/cloud/tasks/v2/task.proto\022\025goog"
-          + "le.cloud.tasks.v2\032\034google/api/annotation"
-          + "s.proto\032\031google/api/resource.proto\032\"goog"
-          + "le/cloud/tasks/v2/target.proto\032\036google/p"
-          + "rotobuf/duration.proto\032\037google/protobuf/"
-          + "timestamp.proto\032\027google/rpc/status.proto"
-          + "\"\216\004\n\004Task\022\014\n\004name\030\001 \001(\t\022N\n\027app_engine_ht"
+          + "le.cloud.tasks.v2\032\031google/api/resource.p"
+          + "roto\032\"google/cloud/tasks/v2/target.proto"
+          + "\032\036google/protobuf/duration.proto\032\037google"
+          + "/protobuf/timestamp.proto\032\027google/rpc/st"
+          + "atus.proto\032\034google/api/annotations.proto"
+          + "\"\370\004\n\004Task\022\014\n\004name\030\001 \001(\t\022N\n\027app_engine_ht"
           + "tp_request\030\002 \001(\0132+.google.cloud.tasks.v2"
           + ".AppEngineHttpRequestH\000\0221\n\rschedule_time"
           + "\030\004 \001(\0132\032.google.protobuf.Timestamp\022/\n\013cr"
@@ -47,16 +47,18 @@ public final class TaskProto {
           + "\0224\n\014last_attempt\030\n \001(\0132\036.google.cloud.ta"
           + "sks.v2.Attempt\022.\n\004view\030\013 \001(\0162 .google.cl"
           + "oud.tasks.v2.Task.View\"1\n\004View\022\024\n\020VIEW_U"
-          + "NSPECIFIED\020\000\022\t\n\005BASIC\020\001\022\010\n\004FULL\020\002B\016\n\014mes"
-          + "sage_type\"\317\001\n\007Attempt\0221\n\rschedule_time\030\001"
-          + " \001(\0132\032.google.protobuf.Timestamp\0221\n\rdisp"
-          + "atch_time\030\002 \001(\0132\032.google.protobuf.Timest"
-          + "amp\0221\n\rresponse_time\030\003 \001(\0132\032.google.prot"
-          + "obuf.Timestamp\022+\n\017response_status\030\004 \001(\0132"
-          + "\022.google.rpc.StatusBd\n\031com.google.cloud."
-          + "tasks.v2B\tTaskProtoP\001Z:google.golang.org"
-          + "/genproto/googleapis/cloud/tasks/v2;task"
-          + "sb\006proto3"
+          + "NSPECIFIED\020\000\022\t\n\005BASIC\020\001\022\010\n\004FULL\020\002:h\352Ae\n\036"
+          + "cloudtasks.googleapis.com/Task\022Cprojects"
+          + "/{project}/locations/{location}/queues/{"
+          + "queue}/tasks/{task}B\016\n\014message_type\"\317\001\n\007"
+          + "Attempt\0221\n\rschedule_time\030\001 \001(\0132\032.google."
+          + "protobuf.Timestamp\0221\n\rdispatch_time\030\002 \001("
+          + "\0132\032.google.protobuf.Timestamp\0221\n\rrespons"
+          + "e_time\030\003 \001(\0132\032.google.protobuf.Timestamp"
+          + "\022+\n\017response_status\030\004 \001(\0132\022.google.rpc.S"
+          + "tatusBd\n\031com.google.cloud.tasks.v2B\tTask"
+          + "ProtoP\001Z:google.golang.org/genproto/goog"
+          + "leapis/cloud/tasks/v2;tasksb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -69,12 +71,12 @@ public final class TaskProto {
     com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
         descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.api.AnnotationsProto.getDescriptor(),
           com.google.api.ResourceProto.getDescriptor(),
           com.google.cloud.tasks.v2.TargetProto.getDescriptor(),
           com.google.protobuf.DurationProto.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
           com.google.rpc.StatusProto.getDescriptor(),
+          com.google.api.AnnotationsProto.getDescriptor(),
         },
         assigner);
     internal_static_google_cloud_tasks_v2_Task_descriptor =
@@ -103,12 +105,17 @@ public final class TaskProto {
             new java.lang.String[] {
               "ScheduleTime", "DispatchTime", "ResponseTime", "ResponseStatus",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
+    com.google.protobuf.ExtensionRegistry registry =
+        com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.ResourceProto.resource);
+    com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
+        descriptor, registry);
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.tasks.v2.TargetProto.getDescriptor();
     com.google.protobuf.DurationProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.rpc.StatusProto.getDescriptor();
+    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

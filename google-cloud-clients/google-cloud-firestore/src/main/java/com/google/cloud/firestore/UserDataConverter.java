@@ -118,6 +118,8 @@ class UserDataConverter {
       return Value.newBuilder().setIntegerValue((Long) sanitizedObject).build();
     } else if (sanitizedObject instanceof Double) {
       return Value.newBuilder().setDoubleValue((Double) sanitizedObject).build();
+    } else if (sanitizedObject instanceof Float) {
+      return Value.newBuilder().setDoubleValue((Float) sanitizedObject).build();
     } else if (sanitizedObject instanceof Boolean) {
       return Value.newBuilder().setBooleanValue((Boolean) sanitizedObject).build();
     } else if (sanitizedObject instanceof Date) {

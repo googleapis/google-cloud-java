@@ -6,7 +6,7 @@ Google Cloud Java Client for Firestore
 [![Codacy Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/google-cloud-java)
 
 -  [Product Documentation](https://cloud.google.com/firestore/docs/)
--  [Client Library Documentation](https://googleapis.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/firestore/package-summary.html)
+-  [Client Library Documentation](https://googleapis.dev/java/google-cloud-clients/latest/index.html?com/google/cloud/firestore/package-summary.html)
 
 Quickstart
 ----------
@@ -17,16 +17,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-firestore</artifactId>
-  <version>1.11.0</version>
+  <version>1.18.0</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-firestore:1.11.0'
+compile 'com.google.cloud:google-cloud-firestore:1.18.0'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-firestore" % "1.11.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-firestore" % "1.18.0"
 ```
 [//]: # ({x-version-update-end})
 

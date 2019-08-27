@@ -36,8 +36,9 @@ public interface LocationFilterOrBuilder
    * Optional. CLDR region code of the country/region of the address. This is
    * used to address ambiguity of the user-input location, for example,
    * "Liverpool" against "Liverpool, NY, US" or "Liverpool, UK".
-   * Set this field if all the jobs to search against are from a same region,
-   * or jobs are world-wide, but the job seeker is from a specific region.
+   * Set this field to bias location resolution toward a specific country
+   * or territory. If this field is not set, application behavior is biased
+   * toward the United States by default.
    * See http://cldr.unicode.org/ and
    * http://www.unicode.org/cldr/charts/30/supplemental/territory_information.html
    * for details. Example: "CH" for Switzerland.
@@ -54,8 +55,9 @@ public interface LocationFilterOrBuilder
    * Optional. CLDR region code of the country/region of the address. This is
    * used to address ambiguity of the user-input location, for example,
    * "Liverpool" against "Liverpool, NY, US" or "Liverpool, UK".
-   * Set this field if all the jobs to search against are from a same region,
-   * or jobs are world-wide, but the job seeker is from a specific region.
+   * Set this field to bias location resolution toward a specific country
+   * or territory. If this field is not set, application behavior is biased
+   * toward the United States by default.
    * See http://cldr.unicode.org/ and
    * http://www.unicode.org/cldr/charts/30/supplemental/territory_information.html
    * for details. Example: "CH" for Switzerland.
@@ -70,8 +72,8 @@ public interface LocationFilterOrBuilder
    *
    *
    * <pre>
-   * Optional. The latitude and longitude of the geographic center from which to
-   * search. This field's ignored if `address` is provided.
+   * Optional. The latitude and longitude of the geographic center to search
+   * from. This field is ignored if `address` is provided.
    * </pre>
    *
    * <code>.google.type.LatLng lat_lng = 3;</code>
@@ -81,8 +83,8 @@ public interface LocationFilterOrBuilder
    *
    *
    * <pre>
-   * Optional. The latitude and longitude of the geographic center from which to
-   * search. This field's ignored if `address` is provided.
+   * Optional. The latitude and longitude of the geographic center to search
+   * from. This field is ignored if `address` is provided.
    * </pre>
    *
    * <code>.google.type.LatLng lat_lng = 3;</code>
@@ -92,8 +94,8 @@ public interface LocationFilterOrBuilder
    *
    *
    * <pre>
-   * Optional. The latitude and longitude of the geographic center from which to
-   * search. This field's ignored if `address` is provided.
+   * Optional. The latitude and longitude of the geographic center to search
+   * from. This field is ignored if `address` is provided.
    * </pre>
    *
    * <code>.google.type.LatLng lat_lng = 3;</code>
@@ -105,8 +107,8 @@ public interface LocationFilterOrBuilder
    *
    * <pre>
    * Optional. The distance_in_miles is applied when the location being searched
-   * for is identified as a city or smaller. When the location being searched
-   * for is a state or larger, this field is ignored.
+   * for is identified as a city or smaller. This field is ignored if the
+   * location being searched for is a state or larger.
    * </pre>
    *
    * <code>double distance_in_miles = 4;</code>
@@ -135,6 +137,7 @@ public interface LocationFilterOrBuilder
    * such as "Mountain View" or "telecommuting" jobs. However, when used in
    * combination with other location filters, telecommuting jobs can be
    * treated as less relevant than other jobs in the search response.
+   * This field is only used for job search requests.
    * </pre>
    *
    * <code>
@@ -164,6 +167,7 @@ public interface LocationFilterOrBuilder
    * such as "Mountain View" or "telecommuting" jobs. However, when used in
    * combination with other location filters, telecommuting jobs can be
    * treated as less relevant than other jobs in the search response.
+   * This field is only used for job search requests.
    * </pre>
    *
    * <code>

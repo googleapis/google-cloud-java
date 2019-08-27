@@ -38,4 +38,134 @@ public interface DocumentOrBuilder
    * <code>.google.cloud.automl.v1beta1.DocumentInputConfig input_config = 1;</code>
    */
   com.google.cloud.automl.v1beta1.DocumentInputConfigOrBuilder getInputConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The plain text version of this document.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.TextSnippet document_text = 2;</code>
+   */
+  boolean hasDocumentText();
+  /**
+   *
+   *
+   * <pre>
+   * The plain text version of this document.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.TextSnippet document_text = 2;</code>
+   */
+  com.google.cloud.automl.v1beta1.TextSnippet getDocumentText();
+  /**
+   *
+   *
+   * <pre>
+   * The plain text version of this document.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.TextSnippet document_text = 2;</code>
+   */
+  com.google.cloud.automl.v1beta1.TextSnippetOrBuilder getDocumentTextOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Describes the layout of the document.
+   * Sorted by [page_number][].
+   * </pre>
+   *
+   * <code>repeated .google.cloud.automl.v1beta1.Document.Layout layout = 3;</code>
+   */
+  java.util.List<com.google.cloud.automl.v1beta1.Document.Layout> getLayoutList();
+  /**
+   *
+   *
+   * <pre>
+   * Describes the layout of the document.
+   * Sorted by [page_number][].
+   * </pre>
+   *
+   * <code>repeated .google.cloud.automl.v1beta1.Document.Layout layout = 3;</code>
+   */
+  com.google.cloud.automl.v1beta1.Document.Layout getLayout(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Describes the layout of the document.
+   * Sorted by [page_number][].
+   * </pre>
+   *
+   * <code>repeated .google.cloud.automl.v1beta1.Document.Layout layout = 3;</code>
+   */
+  int getLayoutCount();
+  /**
+   *
+   *
+   * <pre>
+   * Describes the layout of the document.
+   * Sorted by [page_number][].
+   * </pre>
+   *
+   * <code>repeated .google.cloud.automl.v1beta1.Document.Layout layout = 3;</code>
+   */
+  java.util.List<? extends com.google.cloud.automl.v1beta1.Document.LayoutOrBuilder>
+      getLayoutOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Describes the layout of the document.
+   * Sorted by [page_number][].
+   * </pre>
+   *
+   * <code>repeated .google.cloud.automl.v1beta1.Document.Layout layout = 3;</code>
+   */
+  com.google.cloud.automl.v1beta1.Document.LayoutOrBuilder getLayoutOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * The dimensions of the page in the document.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.DocumentDimensions document_dimensions = 4;</code>
+   */
+  boolean hasDocumentDimensions();
+  /**
+   *
+   *
+   * <pre>
+   * The dimensions of the page in the document.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.DocumentDimensions document_dimensions = 4;</code>
+   */
+  com.google.cloud.automl.v1beta1.DocumentDimensions getDocumentDimensions();
+  /**
+   *
+   *
+   * <pre>
+   * The dimensions of the page in the document.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.DocumentDimensions document_dimensions = 4;</code>
+   */
+  com.google.cloud.automl.v1beta1.DocumentDimensionsOrBuilder getDocumentDimensionsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Number of pages in the document.
+   * </pre>
+   *
+   * <code>int32 page_count = 5;</code>
+   */
+  int getPageCount();
 }

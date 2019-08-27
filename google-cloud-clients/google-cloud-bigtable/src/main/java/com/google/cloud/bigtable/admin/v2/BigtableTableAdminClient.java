@@ -52,19 +52,24 @@ import javax.annotation.Nonnull;
  * <p>Sample code to get started:
  *
  * <pre>{@code
- * try(BigtableTableAdminClient client =  BigtableTableAdminClient.create("[PROJECT]", "[INSTANCE]")) {
- *   CreateTable request =
- *     CreateTableRequest.of("my-table")
- *       .addFamily("cf1")
- *       .addFamily("cf2", GCRULES.maxVersions(10))
- *       .addSplit(ByteString.copyFromUtf8("b"))
- *       .addSplit(ByteString.copyFromUtf8("q"));
- *   client.createTable(request);
- * }
+ * // One instance per application.
+ * BigtableTableAdminClient client =  BigtableTableAdminClient.create("[PROJECT]", "[INSTANCE]");
+ *
+ * CreateTable request =
+ *   CreateTableRequest.of("my-table")
+ *     .addFamily("cf1")
+ *     .addFamily("cf2", GCRULES.maxVersions(10))
+ *     .addSplit(ByteString.copyFromUtf8("b"))
+ *     .addSplit(ByteString.copyFromUtf8("q"));
+ * client.createTable(request);
+ *
+ * // Cleanup during application shutdown.
+ * client.close();
  * }</pre>
  *
- * <p>Note: close() needs to be called on the client object to clean up resources such as threads.
- * In the example above, try-with-resources is used, which automatically calls close().
+ * <p>Creating a new client is a very expensive operation and should only be done once and shared in
+ * an application. However, close() needs to be called on the client object to clean up resources
+ * such as threads during application shutdown.
  *
  * <p>This class can be customized by passing in a custom instance of BigtableTableAdminSettings to
  * create(). For example:
@@ -72,25 +77,26 @@ import javax.annotation.Nonnull;
  * <p>To customize credentials:
  *
  * <pre>{@code
- * BigtableTableAdminSettings tableAdminSettings = BigtableTableAdminSettings.newBuilder()
+ * BigtableTableAdminSettings settings = BigtableTableAdminSettings.newBuilder()
  *   .setProjectId("[PROJECT]")
  *   .setInstanceId("[INSTANCE]")
  *   .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *   .build();
  *
- * BigtableTableAdminClient client =
- *   BigtableTableAdminClient.create(tableAdminSettings);
+ * BigtableTableAdminClient client = BigtableTableAdminClient.create(settings);
  * }</pre>
  *
  * To customize the endpoint:
  *
  * <pre>{@code
- * BigtableTableAdminSettings tableAdminSettings = BigtableTableAdminSettings.newBuilder()
+ * BigtableTableAdminSettings.Builder settingsBuilder = BigtableTableAdminSettings.newBuilder()
  *   .setProjectId("[PROJECT]")
- *   .setInstanceId("[INSTANCE]")
+ *   .setInstanceId("[INSTANCE]");
+ *
+ * settingsBuilder.stubSettings()
  *   .setEndpoint(myEndpoint).build();
  *
- * BigtableTableAdminClient client = BigtableTableAdminClient.create(tableAdminSettings);
+ * BigtableTableAdminClient client = BigtableTableAdminClient.create(settingsBuilder.build());
  * }</pre>
  */
 public final class BigtableTableAdminClient implements AutoCloseable {
@@ -176,7 +182,6 @@ public final class BigtableTableAdminClient implements AutoCloseable {
    * @see CreateTableRequest for available options.
    * @see GCRules for the documentation on available garbage collection rules.
    */
-  @SuppressWarnings("WeakerAccess")
   public Table createTable(CreateTableRequest request) {
     return ApiExceptions.callAndTranslateApiException(createTableAsync(request));
   }
@@ -260,7 +265,6 @@ public final class BigtableTableAdminClient implements AutoCloseable {
    *
    * @see ModifyColumnFamiliesRequest for available options.
    */
-  @SuppressWarnings("WeakerAccess")
   public Table modifyFamilies(ModifyColumnFamiliesRequest request) {
     return ApiExceptions.callAndTranslateApiException(modifyFamiliesAsync(request));
   }
@@ -329,7 +333,6 @@ public final class BigtableTableAdminClient implements AutoCloseable {
    * client.deleteTable("my-table");
    * }</pre>
    */
-  @SuppressWarnings("WeakerAccess")
   public void deleteTable(String tableId) {
     ApiExceptions.callAndTranslateApiException(deleteTableAsync(tableId));
   }
@@ -451,7 +454,6 @@ public final class BigtableTableAdminClient implements AutoCloseable {
    * }
    * }</pre>
    */
-  @SuppressWarnings("WeakerAccess")
   public Table getTable(String tableId) {
     return ApiExceptions.callAndTranslateApiException(getTableAsync(tableId));
   }
@@ -508,7 +510,6 @@ public final class BigtableTableAdminClient implements AutoCloseable {
    * }
    * }</pre>
    */
-  @SuppressWarnings("WeakerAccess")
   public List<String> listTables() {
     return ApiExceptions.callAndTranslateApiException(listTablesAsync());
   }
@@ -539,7 +540,6 @@ public final class BigtableTableAdminClient implements AutoCloseable {
    * );
    * }</pre>
    */
-  @SuppressWarnings("WeakerAccess")
   public ApiFuture<List<String>> listTablesAsync() {
     ListTablesRequest request =
         ListTablesRequest.newBuilder()
@@ -613,7 +613,6 @@ public final class BigtableTableAdminClient implements AutoCloseable {
    * client.dropRowRange("my-table", "prefix");
    * }</pre>
    */
-  @SuppressWarnings("WeakerAccess")
   public void dropRowRange(String tableId, String rowKeyPrefix) {
     ApiExceptions.callAndTranslateApiException(dropRowRangeAsync(tableId, rowKeyPrefix));
   }
@@ -709,7 +708,6 @@ public final class BigtableTableAdminClient implements AutoCloseable {
    * client.dropAllRows("my-table");
    * }</pre>
    */
-  @SuppressWarnings("WeakerAccess")
   public void dropAllRows(String tableId) {
     ApiExceptions.callAndTranslateApiException(dropAllRowsAsync(tableId));
   }
@@ -761,7 +759,6 @@ public final class BigtableTableAdminClient implements AutoCloseable {
    *
    * @throws com.google.api.gax.retrying.PollException when polling exceeds the total timeout
    */
-  @SuppressWarnings("WeakerAccess")
   public void awaitReplication(String tableId) {
     // TODO(igorbernstein2): remove usage of typesafe names
     com.google.bigtable.admin.v2.TableName tableName =

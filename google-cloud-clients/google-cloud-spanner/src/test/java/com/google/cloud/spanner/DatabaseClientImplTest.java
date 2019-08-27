@@ -19,10 +19,14 @@ package com.google.cloud.spanner;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
+import static org.junit.Assert.fail;
 
 import com.google.api.gax.grpc.testing.LocalChannelProvider;
+import com.google.api.gax.retrying.RetrySettings;
 import com.google.cloud.NoCredentials;
+import com.google.cloud.spanner.MockSpannerServiceImpl.SimulatedExecutionTime;
 import com.google.cloud.spanner.MockSpannerServiceImpl.StatementResult;
+import com.google.cloud.spanner.TransactionRunner.TransactionCallable;
 import com.google.protobuf.ListValue;
 import com.google.spanner.v1.ResultSetMetadata;
 import com.google.spanner.v1.StructType;
@@ -32,6 +36,7 @@ import io.grpc.Server;
 import io.grpc.Status;
 import io.grpc.inprocess.InProcessServerBuilder;
 import java.io.IOException;
+import java.util.concurrent.ScheduledThreadPoolExecutor;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -39,6 +44,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
+import org.threeten.bp.Duration;
 
 @RunWith(JUnit4.class)
 public class DatabaseClientImplTest {
@@ -89,7 +95,8 @@ public class DatabaseClientImplTest {
     String uniqueName = InProcessServerBuilder.generateName();
     server =
         InProcessServerBuilder.forName(uniqueName)
-            .directExecutor()
+            // We need to use a real executor for timeouts to occur.
+            .scheduledExecutorService(new ScheduledThreadPoolExecutor(1))
             .addService(mockSpanner)
             .build()
             .start();
@@ -97,13 +104,15 @@ public class DatabaseClientImplTest {
   }
 
   @AfterClass
-  public static void stopServer() {
+  public static void stopServer() throws InterruptedException {
     server.shutdown();
+    server.awaitTermination();
   }
 
   @Before
   public void setUp() throws IOException {
     mockSpanner.reset();
+    mockSpanner.removeAllExecutionTimes();
     spanner =
         SpannerOptions.newBuilder()
             .setProjectId("[PROJECT]")
@@ -157,5 +166,95 @@ public class DatabaseClientImplTest {
     DatabaseClient client =
         spanner.getDatabaseClient(DatabaseId.of("[PROJECT]", "[INSTANCE]", "[DATABASE]"));
     client.executePartitionedUpdate(INVALID_UPDATE_STATEMENT);
+  }
+
+  @Test
+  public void testPartitionedDmlDoesNotTimeout() throws Exception {
+    mockSpanner.setExecuteSqlExecutionTime(SimulatedExecutionTime.ofMinimumAndRandomTime(10, 0));
+    final RetrySettings retrySettings =
+        RetrySettings.newBuilder()
+            .setInitialRpcTimeout(Duration.ofMillis(1L))
+            .setMaxRpcTimeout(Duration.ofMillis(1L))
+            .setMaxAttempts(1)
+            .setTotalTimeout(Duration.ofMillis(1L))
+            .build();
+    SpannerOptions.Builder builder =
+        SpannerOptions.newBuilder()
+            .setProjectId("[PROJECT]")
+            .setChannelProvider(channelProvider)
+            .setCredentials(NoCredentials.getInstance());
+    // Set normal DML timeout value.
+    builder.getSpannerStubSettingsBuilder().executeSqlSettings().setRetrySettings(retrySettings);
+    try (Spanner spanner = builder.build().getService()) {
+      DatabaseClient client =
+          spanner.getDatabaseClient(DatabaseId.of("[PROJECT]", "[INSTANCE]", "[DATABASE]"));
+
+      assertThat(
+          spanner.getOptions().getPartitionedDmlTimeout(), is(equalTo(Duration.ofHours(2L))));
+
+      // PDML should not timeout with these settings.
+      long updateCount = client.executePartitionedUpdate(UPDATE_STATEMENT);
+      assertThat(updateCount, is(equalTo(UPDATE_COUNT)));
+
+      // Normal DML should timeout.
+      try {
+        client
+            .readWriteTransaction()
+            .run(
+                new TransactionCallable<Void>() {
+                  @Override
+                  public Void run(TransactionContext transaction) throws Exception {
+                    transaction.executeUpdate(UPDATE_STATEMENT);
+                    return null;
+                  }
+                });
+        fail("expected DEADLINE_EXCEEDED");
+      } catch (SpannerException e) {
+        if (e.getErrorCode() != ErrorCode.DEADLINE_EXCEEDED) {
+          fail("expected DEADLINE_EXCEEDED");
+        }
+      }
+    }
+  }
+
+  @Test
+  public void testPartitionedDmlWithTimeout() throws Exception {
+    mockSpanner.setExecuteSqlExecutionTime(SimulatedExecutionTime.ofMinimumAndRandomTime(100, 0));
+    SpannerOptions.Builder builder =
+        SpannerOptions.newBuilder()
+            .setProjectId("[PROJECT]")
+            .setChannelProvider(channelProvider)
+            .setCredentials(NoCredentials.getInstance());
+    // Set PDML timeout value.
+    builder.setPartitionedDmlTimeout(Duration.ofMillis(1L));
+    try (Spanner spanner = builder.build().getService()) {
+      DatabaseClient client =
+          spanner.getDatabaseClient(DatabaseId.of("[PROJECT]", "[INSTANCE]", "[DATABASE]"));
+      assertThat(
+          spanner.getOptions().getPartitionedDmlTimeout(), is(equalTo(Duration.ofMillis(1L))));
+      // PDML should timeout with these settings.
+      try {
+        client.executePartitionedUpdate(UPDATE_STATEMENT);
+        fail("expected DEADLINE_EXCEEDED");
+      } catch (SpannerException e) {
+        if (e.getErrorCode() != ErrorCode.DEADLINE_EXCEEDED) {
+          fail("expected DEADLINE_EXCEEDED");
+        }
+      }
+
+      // Normal DML should not timeout.
+      mockSpanner.setExecuteSqlExecutionTime(SimulatedExecutionTime.ofMinimumAndRandomTime(10, 0));
+      long updateCount =
+          client
+              .readWriteTransaction()
+              .run(
+                  new TransactionCallable<Long>() {
+                    @Override
+                    public Long run(TransactionContext transaction) throws Exception {
+                      return transaction.executeUpdate(UPDATE_STATEMENT);
+                    }
+                  });
+      assertThat(updateCount, is(equalTo(UPDATE_COUNT)));
+    }
   }
 }

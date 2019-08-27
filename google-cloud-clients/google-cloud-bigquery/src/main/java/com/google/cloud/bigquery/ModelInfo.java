@@ -20,12 +20,12 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.core.BetaApi;
 import com.google.api.services.bigquery.model.Model;
-import com.google.api.services.bigquery.model.StandardSqlField;
 import com.google.api.services.bigquery.model.TrainingRun;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.Lists;
 import java.io.Serializable;
 import java.util.Collections;
 import java.util.List;
@@ -69,8 +69,8 @@ public class ModelInfo implements Serializable {
   private final Long expirationTime;
   private final Labels labels;
   private final ImmutableList<TrainingRun> trainingRunList;
-  private final ImmutableList<StandardSqlField> featureColumnList;
-  private final ImmutableList<StandardSqlField> labelColumnList;
+  private final ImmutableList<StandardSQLField> featureColumnList;
+  private final ImmutableList<StandardSQLField> labelColumnList;
 
   /** A builder for {@code ModelInfo} objects. */
   public abstract static class Builder {
@@ -108,9 +108,9 @@ public class ModelInfo implements Serializable {
 
     abstract Builder setTrainingRuns(List<TrainingRun> trainingRunList);
 
-    abstract Builder setLabelColumns(List<StandardSqlField> labelColumnList);
+    abstract Builder setLabelColumns(List<StandardSQLField> labelColumnList);
 
-    abstract Builder setFeatureColumns(List<StandardSqlField> featureColumnList);
+    abstract Builder setFeatureColumns(List<StandardSQLField> featureColumnList);
 
     /** Creates a {@code ModelInfo} object. */
     public abstract ModelInfo build();
@@ -128,8 +128,8 @@ public class ModelInfo implements Serializable {
     private Long expirationTime;
     private Labels labels = Labels.ZERO;
     private List<TrainingRun> trainingRunList = Collections.emptyList();
-    private List<StandardSqlField> labelColumnList = Collections.emptyList();
-    private List<StandardSqlField> featureColumnList = Collections.emptyList();
+    private List<StandardSQLField> labelColumnList = Collections.emptyList();
+    private List<StandardSQLField> featureColumnList = Collections.emptyList();
 
     BuilderImpl() {}
 
@@ -164,10 +164,12 @@ public class ModelInfo implements Serializable {
         this.trainingRunList = modelPb.getTrainingRuns();
       }
       if (modelPb.getLabelColumns() != null) {
-        this.labelColumnList = modelPb.getLabelColumns();
+        this.labelColumnList =
+            Lists.transform(modelPb.getLabelColumns(), StandardSQLField.FROM_PB_FUNCTION);
       }
       if (modelPb.getFeatureColumns() != null) {
-        this.featureColumnList = modelPb.getFeatureColumns();
+        this.featureColumnList =
+            Lists.transform(modelPb.getFeatureColumns(), StandardSQLField.FROM_PB_FUNCTION);
       }
     }
 
@@ -232,13 +234,13 @@ public class ModelInfo implements Serializable {
     }
 
     @Override
-    Builder setLabelColumns(List<StandardSqlField> labelColumnList) {
+    Builder setLabelColumns(List<StandardSQLField> labelColumnList) {
       this.labelColumnList = checkNotNull(labelColumnList);
       return this;
     }
 
     @Override
-    Builder setFeatureColumns(List<StandardSqlField> featureColumnList) {
+    Builder setFeatureColumns(List<StandardSQLField> featureColumnList) {
       this.featureColumnList = checkNotNull(featureColumnList);
       return this;
     }
@@ -320,13 +322,13 @@ public class ModelInfo implements Serializable {
 
   /** Returns information about the label columns for this model. */
   @BetaApi
-  public ImmutableList<StandardSqlField> getLabelColumns() {
+  public ImmutableList<StandardSQLField> getLabelColumns() {
     return labelColumnList;
   }
 
   /** Returns information about the feature columns for this model. */
   @BetaApi
-  public ImmutableList<StandardSqlField> getFeatureColumns() {
+  public ImmutableList<StandardSQLField> getFeatureColumns() {
     return featureColumnList;
   }
 
@@ -394,8 +396,13 @@ public class ModelInfo implements Serializable {
     modelPb.setExpirationTime(expirationTime);
     modelPb.setLabels(labels.toPb());
     modelPb.setTrainingRuns(trainingRunList);
-    modelPb.setLabelColumns(labelColumnList);
-    modelPb.setFeatureColumns(featureColumnList);
+    if (labelColumnList != null) {
+      modelPb.setLabelColumns(Lists.transform(labelColumnList, StandardSQLField.TO_PB_FUNCTION));
+    }
+    if (featureColumnList != null) {
+      modelPb.setFeatureColumns(
+          Lists.transform(featureColumnList, StandardSQLField.TO_PB_FUNCTION));
+    }
     return modelPb;
   }
 

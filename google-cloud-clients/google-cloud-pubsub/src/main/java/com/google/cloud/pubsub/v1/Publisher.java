@@ -49,9 +49,12 @@ import com.google.pubsub.v1.TopicName;
 import com.google.pubsub.v1.TopicNames;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
+import java.util.concurrent.Callable;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
@@ -85,15 +88,20 @@ public class Publisher {
   private final String topicName;
 
   private final BatchingSettings batchingSettings;
+  private final boolean enableMessageOrdering;
 
   private final Lock messagesBatchLock;
-  private MessagesBatch messagesBatch;
+
+  private final Map<String, MessagesBatch> messagesBatches;
 
   private final AtomicBoolean activeAlarm;
 
   private final PublisherStub publisherStub;
 
   private final ScheduledExecutorService executor;
+
+  private final SequentialExecutorService.CallbackExecutor sequentialExecutor;
+
   private final AtomicBoolean shutdown;
   private final BackgroundResource backgroundResources;
   private final MessageWaiter messagesWaiter;
@@ -114,12 +122,14 @@ public class Publisher {
     topicName = builder.topicName;
 
     this.batchingSettings = builder.batchingSettings;
+    this.enableMessageOrdering = builder.enableMessageOrdering;
     this.messageTransform = builder.messageTransform;
 
-    messagesBatch = new MessagesBatch(batchingSettings);
+    messagesBatches = new HashMap<>();
     messagesBatchLock = new ReentrantLock();
     activeAlarm = new AtomicBoolean(false);
     executor = builder.executorProvider.getExecutor();
+    sequentialExecutor = new SequentialExecutorService.CallbackExecutor(executor);
     List<BackgroundResource> backgroundResourceList = new ArrayList<>();
     if (builder.executorProvider.shouldAutoClose()) {
       backgroundResourceList.add(new ExecutorAsBackgroundResource(executor));
@@ -127,16 +137,26 @@ public class Publisher {
 
     // Publisher used to take maxAttempt == 0 to mean infinity, but to GAX it means don't retry.
     // We post-process this here to keep backward-compatibility.
-    RetrySettings retrySettings = builder.retrySettings;
-    if (retrySettings.getMaxAttempts() == 0) {
-      retrySettings = retrySettings.toBuilder().setMaxAttempts(Integer.MAX_VALUE).build();
+    // Also, if "message ordering" is enabled, the publisher should retry sending the failed
+    // message infinitely rather than sending the next one.
+    RetrySettings.Builder retrySettingsBuilder = builder.retrySettings.toBuilder();
+    if (retrySettingsBuilder.getMaxAttempts() == 0) {
+      retrySettingsBuilder.setMaxAttempts(Integer.MAX_VALUE);
+    }
+    if (enableMessageOrdering) {
+      // TODO: is there a way to have the default retry settings for requests without an ordering
+      // key?
+      retrySettingsBuilder
+          .setMaxAttempts(Integer.MAX_VALUE)
+          .setTotalTimeout(Duration.ofNanos(Long.MAX_VALUE));
     }
 
     PublisherStubSettings.Builder stubSettings =
         PublisherStubSettings.newBuilder()
             .setCredentialsProvider(builder.credentialsProvider)
             .setExecutorProvider(FixedExecutorProvider.create(executor))
-            .setTransportChannelProvider(builder.channelProvider);
+            .setTransportChannelProvider(builder.channelProvider)
+            .setEndpoint(builder.endpoint);
     stubSettings
         .publishSettings()
         .setRetryableCodes(
@@ -147,7 +167,7 @@ public class Publisher {
             StatusCode.Code.RESOURCE_EXHAUSTED,
             StatusCode.Code.UNKNOWN,
             StatusCode.Code.UNAVAILABLE)
-        .setRetrySettings(retrySettings)
+        .setRetrySettings(retrySettingsBuilder.build())
         .setBatchingSettings(BatchingSettings.newBuilder().setIsEnabled(false).build());
     this.publisherStub = GrpcPublisherStub.create(stubSettings.build());
     backgroundResourceList.add(publisherStub);
@@ -185,7 +205,7 @@ public class Publisher {
    *   public void onFailure(Throwable t) {
    *     System.out.println("failed to publish: " + t);
    *   }
-   * });
+   * }, MoreExecutors.directExecutor());
    * }</pre>
    *
    * @param message the message to publish.
@@ -194,21 +214,46 @@ public class Publisher {
   public ApiFuture<String> publish(PubsubMessage message) {
     Preconditions.checkState(!shutdown.get(), "Cannot publish on a shut-down publisher.");
 
+    final String orderingKey = message.getOrderingKey();
+    Preconditions.checkState(
+        orderingKey.isEmpty() || enableMessageOrdering,
+        "Cannot publish a message with an ordering key when message ordering is not enabled.");
+
     final OutstandingPublish outstandingPublish =
         new OutstandingPublish(messageTransform.apply(message));
     List<OutstandingBatch> batchesToSend;
     messagesBatchLock.lock();
     try {
+      MessagesBatch messagesBatch = messagesBatches.get(orderingKey);
+      if (messagesBatch == null) {
+        messagesBatch = new MessagesBatch(batchingSettings, orderingKey);
+        messagesBatches.put(orderingKey, messagesBatch);
+      }
+
       batchesToSend = messagesBatch.add(outstandingPublish);
+      if (!batchesToSend.isEmpty() && messagesBatch.isEmpty()) {
+        messagesBatches.remove(orderingKey);
+      }
       // Setup the next duration based delivery alarm if there are messages batched.
       setupAlarm();
+      // For messages with an ordering key, we need to publish with messagesBatchLock held in order
+      // to ensure another publish doesn't slip in and send a batch before these batches we already
+      // want to send.
+      if (!batchesToSend.isEmpty() && !orderingKey.isEmpty()) {
+        for (final OutstandingBatch batch : batchesToSend) {
+          logger.log(Level.FINER, "Scheduling a batch for immediate sending.");
+          publishOutstandingBatch(batch);
+        }
+      }
     } finally {
       messagesBatchLock.unlock();
     }
 
     messagesWaiter.incrementPendingMessages(1);
 
-    if (!batchesToSend.isEmpty()) {
+    // For messages without ordering keys, it is okay to send batches without holding
+    // messagesBatchLock.
+    if (!batchesToSend.isEmpty() && orderingKey.isEmpty()) {
       for (final OutstandingBatch batch : batchesToSend) {
         logger.log(Level.FINER, "Scheduling a batch for immediate sending.");
         executor.execute(
@@ -224,8 +269,21 @@ public class Publisher {
     return outstandingPublish.publishResult;
   }
 
+  /**
+   * There may be non-recoverable problems with a request for an ordering key. In that case, all
+   * subsequent requests will fail until this method is called. If the key is not currently paused,
+   * calling this method will be a no-op.
+   *
+   * @param key The key for which to resume publishing.
+   */
+  @BetaApi("Ordering is not yet fully supported and requires special project enablements.")
+  public void resumePublish(String key) {
+    Preconditions.checkState(!shutdown.get(), "Cannot publish on a shut-down publisher.");
+    sequentialExecutor.resumePublish(key);
+  }
+
   private void setupAlarm() {
-    if (!messagesBatch.isEmpty()) {
+    if (!messagesBatches.isEmpty()) {
       if (!activeAlarm.getAndSet(true)) {
         long delayThresholdMs = getBatchingSettings().getDelayThreshold().toMillis();
         logger.log(Level.FINER, "Setting up alarm for the next {0} ms.", delayThresholdMs);
@@ -236,7 +294,7 @@ public class Publisher {
                   public void run() {
                     logger.log(Level.FINER, "Sending messages based on schedule.");
                     activeAlarm.getAndSet(false);
-                    publishAllOutstanding();
+                    publishAllWithoutInflight();
                   }
                 },
                 delayThresholdMs,
@@ -256,17 +314,61 @@ public class Publisher {
    * futures returned from {@code publish}.
    */
   public void publishAllOutstanding() {
+    OutstandingBatch unorderedOutstandingBatch = null;
     messagesBatchLock.lock();
-    OutstandingBatch batchToSend;
     try {
-      if (messagesBatch.isEmpty()) {
-        return;
+      for (MessagesBatch batch : messagesBatches.values()) {
+        if (!batch.isEmpty()) {
+          if (!batch.orderingKey.isEmpty()) {
+            // For messages with an ordering key, we need to publish with messagesBatchLock held in
+            // order to ensure another publish doesn't slip in and send a batch before these batches
+            // we already want to send.
+            publishOutstandingBatch(batch.popOutstandingBatch());
+          } else {
+            unorderedOutstandingBatch = batch.popOutstandingBatch();
+          }
+        }
       }
-      batchToSend = messagesBatch.popOutstandingBatch();
+      messagesBatches.clear();
     } finally {
       messagesBatchLock.unlock();
     }
-    publishOutstandingBatch(batchToSend);
+    if (unorderedOutstandingBatch != null) {
+      publishOutstandingBatch(unorderedOutstandingBatch);
+    }
+  }
+
+  /**
+   * Publish any outstanding batches if non-empty and there are no other batches in flight. This
+   * method sends buffered messages, but does not wait for the send operations to complete. To wait
+   * for messages to send, call {@code get} on the futures returned from {@code publish}.
+   */
+  private void publishAllWithoutInflight() {
+    OutstandingBatch unorderedOutstandingBatch = null;
+    messagesBatchLock.lock();
+    try {
+      Iterator<Map.Entry<String, MessagesBatch>> it = messagesBatches.entrySet().iterator();
+      while (it.hasNext()) {
+        Map.Entry<String, MessagesBatch> entry = it.next();
+        MessagesBatch batch = entry.getValue();
+        String key = entry.getKey();
+        if (batch.isEmpty()) {
+          it.remove();
+        } else if (key.isEmpty()) {
+          // We will publish the batch with no ordering key outside messagesBatchLock.
+          unorderedOutstandingBatch = batch.popOutstandingBatch();
+          it.remove();
+        } else if (!sequentialExecutor.hasTasksInflight(key)) {
+          publishOutstandingBatch(batch.popOutstandingBatch());
+          it.remove();
+        }
+      }
+    } finally {
+      messagesBatchLock.unlock();
+    }
+    if (unorderedOutstandingBatch != null) {
+      publishOutstandingBatch(unorderedOutstandingBatch);
+    }
   }
 
   private ApiFuture<PublishResponse> publishCall(OutstandingBatch outstandingBatch) {
@@ -280,12 +382,12 @@ public class Publisher {
   }
 
   private void publishOutstandingBatch(final OutstandingBatch outstandingBatch) {
-    ApiFutureCallback<PublishResponse> futureCallback =
+    final ApiFutureCallback<PublishResponse> futureCallback =
         new ApiFutureCallback<PublishResponse>() {
           @Override
           public void onSuccess(PublishResponse result) {
             try {
-              if (result.getMessageIdsCount() != outstandingBatch.size()) {
+              if (result == null || result.getMessageIdsCount() != outstandingBatch.size()) {
                 outstandingBatch.onFailure(
                     new IllegalStateException(
                         String.format(
@@ -311,7 +413,21 @@ public class Publisher {
           }
         };
 
-    ApiFutures.addCallback(publishCall(outstandingBatch), futureCallback, directExecutor());
+    ApiFuture<PublishResponse> future;
+    if (outstandingBatch.orderingKey == null || outstandingBatch.orderingKey.isEmpty()) {
+      future = publishCall(outstandingBatch);
+    } else {
+      // If ordering key is specified, publish the batch using the sequential executor.
+      future =
+          sequentialExecutor.submit(
+              outstandingBatch.orderingKey,
+              new Callable<ApiFuture<PublishResponse>>() {
+                public ApiFuture<PublishResponse> call() {
+                  return publishCall(outstandingBatch);
+                }
+              });
+    }
+    ApiFutures.addCallback(future, futureCallback, directExecutor());
   }
 
   private static final class OutstandingBatch {
@@ -319,12 +435,15 @@ public class Publisher {
     final long creationTime;
     int attempt;
     int batchSizeBytes;
+    final String orderingKey;
 
-    OutstandingBatch(List<OutstandingPublish> outstandingPublishes, int batchSizeBytes) {
+    OutstandingBatch(
+        List<OutstandingPublish> outstandingPublishes, int batchSizeBytes, String orderingKey) {
       this.outstandingPublishes = outstandingPublishes;
       attempt = 1;
       creationTime = System.currentTimeMillis();
       this.batchSizeBytes = batchSizeBytes;
+      this.orderingKey = orderingKey;
     }
 
     int size() {
@@ -468,7 +587,7 @@ public class Publisher {
             .setRpcTimeoutMultiplier(2)
             .setMaxRpcTimeout(DEFAULT_RPC_TIMEOUT)
             .build();
-
+    static final boolean DEFAULT_ENABLE_MESSAGE_ORDERING = false;
     private static final int THREADS_PER_CPU = 5;
     static final ExecutorProvider DEFAULT_EXECUTOR_PROVIDER =
         InstantiatingExecutorProvider.newBuilder()
@@ -476,11 +595,14 @@ public class Publisher {
             .build();
 
     String topicName;
+    private String endpoint = PublisherStubSettings.getDefaultEndpoint();
 
     // Batching options
     BatchingSettings batchingSettings = DEFAULT_BATCHING_SETTINGS;
 
     RetrySettings retrySettings = DEFAULT_RETRY_SETTINGS;
+
+    private boolean enableMessageOrdering = DEFAULT_ENABLE_MESSAGE_ORDERING;
 
     private TransportChannelProvider channelProvider =
         TopicAdminSettings.defaultGrpcTransportProviderBuilder().setChannelsPerCpu(1).build();
@@ -576,6 +698,13 @@ public class Publisher {
       return this;
     }
 
+    /** Sets the message ordering option. */
+    @BetaApi("Ordering is not yet fully supported and requires special project enablements.")
+    public Builder setEnableMessageOrdering(boolean enableMessageOrdering) {
+      this.enableMessageOrdering = enableMessageOrdering;
+      return this;
+    }
+
     /** Gives the ability to set a custom executor to be used by the library. */
     public Builder setExecutorProvider(ExecutorProvider executorProvider) {
       this.executorProvider = Preconditions.checkNotNull(executorProvider);
@@ -593,6 +722,12 @@ public class Publisher {
       return this;
     }
 
+    /** Gives the ability to override the gRPC endpoint. */
+    public Builder setEndpoint(String endpoint) {
+      this.endpoint = endpoint;
+      return this;
+    }
+
     public Publisher build() throws IOException {
       return new Publisher(this);
     }
@@ -601,15 +736,17 @@ public class Publisher {
   private static class MessagesBatch {
     private List<OutstandingPublish> messages;
     private int batchedBytes;
+    private String orderingKey;
     private final BatchingSettings batchingSettings;
 
-    public MessagesBatch(BatchingSettings batchingSettings) {
+    private MessagesBatch(BatchingSettings batchingSettings, String orderingKey) {
       this.batchingSettings = batchingSettings;
+      this.orderingKey = orderingKey;
       reset();
     }
 
     private OutstandingBatch popOutstandingBatch() {
-      OutstandingBatch batch = new OutstandingBatch(messages, batchedBytes);
+      OutstandingBatch batch = new OutstandingBatch(messages, batchedBytes, orderingKey);
       reset();
       return batch;
     }

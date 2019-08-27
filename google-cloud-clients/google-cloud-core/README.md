@@ -7,8 +7,7 @@ This module provides common functionality required by service-specific modules o
 [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-core.svg)](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-core.svg)
 [![Codacy Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/google-cloud-java)
 
--  [Homepage](https://googleapis.github.io/google-cloud-java/)
--  [API Documentation](https://googleapis.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/package-summary.html)
+-  [API Documentation](https://googleapis.dev/java/google-cloud-clients/latest/index.html?com/google/cloud/package-summary.html)
 
 Quickstart
 ----------
@@ -19,16 +18,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-core</artifactId>
-  <version>1.81.0</version>
+  <version>1.88.0</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-core:1.81.0'
+compile 'com.google.cloud:google-cloud-core:1.88.0'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-core" % "1.81.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-core" % "1.88.0"
 ```
 [//]: # ({x-version-update-end})
 

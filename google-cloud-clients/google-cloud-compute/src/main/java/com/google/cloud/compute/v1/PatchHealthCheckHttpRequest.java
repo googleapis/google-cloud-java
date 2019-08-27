@@ -163,8 +163,13 @@ public final class PatchHealthCheckHttpRequest implements ApiMessage {
   }
 
   /**
-   * An HealthCheck resource. This resource defines a template for how individual virtual machines
-   * should be checked for health, via one of the supported protocols.
+   * Represents a Health Check resource.
+   *
+   * <p>Health checks are used for most GCP load balancers and managed instance group auto-healing.
+   * For more information, read Health Check Concepts.
+   *
+   * <p>To perform health checks on network load balancers, you must use either httpHealthChecks or
+   * httpsHealthChecks.
    */
   public HealthCheck getHealthCheckResource() {
     return healthCheckResource;
@@ -393,16 +398,26 @@ public final class PatchHealthCheckHttpRequest implements ApiMessage {
     }
 
     /**
-     * An HealthCheck resource. This resource defines a template for how individual virtual machines
-     * should be checked for health, via one of the supported protocols.
+     * Represents a Health Check resource.
+     *
+     * <p>Health checks are used for most GCP load balancers and managed instance group
+     * auto-healing. For more information, read Health Check Concepts.
+     *
+     * <p>To perform health checks on network load balancers, you must use either httpHealthChecks
+     * or httpsHealthChecks.
      */
     public HealthCheck getHealthCheckResource() {
       return healthCheckResource;
     }
 
     /**
-     * An HealthCheck resource. This resource defines a template for how individual virtual machines
-     * should be checked for health, via one of the supported protocols.
+     * Represents a Health Check resource.
+     *
+     * <p>Health checks are used for most GCP load balancers and managed instance group
+     * auto-healing. For more information, read Health Check Concepts.
+     *
+     * <p>To perform health checks on network load balancers, you must use either httpHealthChecks
+     * or httpsHealthChecks.
      */
     public Builder setHealthCheckResource(HealthCheck healthCheckResource) {
       this.healthCheckResource = healthCheckResource;

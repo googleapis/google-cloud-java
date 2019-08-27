@@ -6,7 +6,7 @@
 
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-bigtable-emulator</artifactId>
-  <version>0.99.0-alpha</version><!-- {x-version-update:google-cloud-bigtable-emulator:current} -->
+  <version>0.106.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigtable-emulator:current} -->
   <name>Google Cloud Java - Bigtable Emulator</name>
   <url>https://github.com/googleapis/google-cloud-java</url>
   <description>
@@ -69,7 +69,7 @@
       <plugin>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-gcloud-maven-plugin</artifactId>
-        <version>0.99.0-alpha</version><!-- {x-version-update:google-cloud-gcloud-maven-plugin:current} -->
+        <version>0.106.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-gcloud-maven-plugin:current} -->
 
         <executions>
           <execution>
@@ -95,7 +95,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-site-plugin</artifactId>
-        <version>3.7.1</version>
+        <version>3.8.2</version>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -126,7 +126,7 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-bom</artifactId>
-        <version>0.99.0-alpha</version><!-- {x-version-update:google-cloud-bom:current} -->
+        <version>0.106.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-bom:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -138,14 +138,14 @@
     <dependency>
       <groupId>io.grpc</groupId>
       <artifactId>grpc-core</artifactId>
-      <version>1.21.0</version>
+      <version>1.23.0</version>
       <scope>provided</scope>
     </dependency>
 
     <dependency>
       <groupId>io.grpc</groupId>
       <artifactId>grpc-netty-shaded</artifactId>
-      <version>1.21.0</version>
+      <version>1.23.0</version>
       <scope>provided</scope>
     </dependency>
 
@@ -166,7 +166,7 @@
     <dependency>
       <groupId>com.google.truth</groupId>
       <artifactId>truth</artifactId>
-      <version>0.46</version>
+      <version>1.0</version>
       <scope>test</scope>
     </dependency>
 
@@ -203,7 +203,7 @@
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-javadoc-plugin</artifactId>
-            <version>3.1.0</version>
+            <version>3.1.1</version>
             <executions>
               <execution>
                 <id>attach-javadocs</id>
@@ -214,7 +214,7 @@
             </executions>
             <configuration>
               <links>
-                <link>http://google.github.io/google-auth-library-java/releases/latest/apidocs/</link>
+                <link>https://googleapis.dev/java/google-auth-library/latest/</link>
               </links>
               <doclint>none</doclint>
             </configuration>

@@ -63,8 +63,8 @@ public final class ConnectionDraining implements ApiMessage {
   }
 
   /**
-   * Time for which instance will be drained (not accept new connections, but still work to finish
-   * started).
+   * The amount of time in seconds to allow existing connections to persist while on unhealthy
+   * backend VMs. Only applicable if the protocol is not UDP. The valid range is [0, 3600].
    */
   public Integer getDrainingTimeoutSec() {
     return drainingTimeoutSec;
@@ -110,16 +110,16 @@ public final class ConnectionDraining implements ApiMessage {
     }
 
     /**
-     * Time for which instance will be drained (not accept new connections, but still work to finish
-     * started).
+     * The amount of time in seconds to allow existing connections to persist while on unhealthy
+     * backend VMs. Only applicable if the protocol is not UDP. The valid range is [0, 3600].
      */
     public Integer getDrainingTimeoutSec() {
       return drainingTimeoutSec;
     }
 
     /**
-     * Time for which instance will be drained (not accept new connections, but still work to finish
-     * started).
+     * The amount of time in seconds to allow existing connections to persist while on unhealthy
+     * backend VMs. Only applicable if the protocol is not UDP. The valid range is [0, 3600].
      */
     public Builder setDrainingTimeoutSec(Integer drainingTimeoutSec) {
       this.drainingTimeoutSec = drainingTimeoutSec;

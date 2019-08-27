@@ -39,6 +39,7 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.compute.v1.AddResourcePoliciesRegionDiskHttpRequest;
 import com.google.cloud.compute.v1.CreateSnapshotRegionDiskHttpRequest;
 import com.google.cloud.compute.v1.DeleteRegionDiskHttpRequest;
 import com.google.cloud.compute.v1.Disk;
@@ -47,6 +48,7 @@ import com.google.cloud.compute.v1.GetRegionDiskHttpRequest;
 import com.google.cloud.compute.v1.InsertRegionDiskHttpRequest;
 import com.google.cloud.compute.v1.ListRegionDisksHttpRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.RemoveResourcePoliciesRegionDiskHttpRequest;
 import com.google.cloud.compute.v1.ResizeRegionDiskHttpRequest;
 import com.google.cloud.compute.v1.SetLabelsRegionDiskHttpRequest;
 import com.google.cloud.compute.v1.TestIamPermissionsRegionDiskHttpRequest;
@@ -67,21 +69,22 @@ import org.threeten.bp.Duration;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (https://www.googleapis.com/compute/v1/projects/) and default
- *       port (443) are used.
+ *   <li>The default service address (https://compute.googleapis.com/compute/v1/projects/) and
+ *       default port (443) are used.
  *   <li>Credentials are acquired automatically through Application Default Credentials.
  *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
- * build() is called, the tree of builders is called to create the complete settings object. For
- * example, to set the total timeout of createSnapshotRegionDisk to 30 seconds:
+ * build() is called, the tree of builders is called to create the complete settings object.
+ *
+ * <p>For example, to set the total timeout of addResourcePoliciesRegionDisk to 30 seconds:
  *
  * <pre>
  * <code>
  * RegionDiskStubSettings.Builder regionDiskSettingsBuilder =
  *     RegionDiskStubSettings.newBuilder();
- * regionDiskSettingsBuilder.createSnapshotRegionDiskSettings().getRetrySettings().toBuilder()
+ * regionDiskSettingsBuilder.addResourcePoliciesRegionDiskSettings().getRetrySettings().toBuilder()
  *     .setTotalTimeout(Duration.ofSeconds(30));
  * RegionDiskStubSettings regionDiskSettings = regionDiskSettingsBuilder.build();
  * </code>
@@ -101,6 +104,8 @@ public class RegionDiskStubSettings extends StubSettings<RegionDiskStubSettings>
           .add("https://www.googleapis.com/auth/devstorage.read_write")
           .build();
 
+  private final UnaryCallSettings<AddResourcePoliciesRegionDiskHttpRequest, Operation>
+      addResourcePoliciesRegionDiskSettings;
   private final UnaryCallSettings<CreateSnapshotRegionDiskHttpRequest, Operation>
       createSnapshotRegionDiskSettings;
   private final UnaryCallSettings<DeleteRegionDiskHttpRequest, Operation> deleteRegionDiskSettings;
@@ -109,11 +114,19 @@ public class RegionDiskStubSettings extends StubSettings<RegionDiskStubSettings>
   private final PagedCallSettings<
           ListRegionDisksHttpRequest, DiskList, ListRegionDisksPagedResponse>
       listRegionDisksSettings;
+  private final UnaryCallSettings<RemoveResourcePoliciesRegionDiskHttpRequest, Operation>
+      removeResourcePoliciesRegionDiskSettings;
   private final UnaryCallSettings<ResizeRegionDiskHttpRequest, Operation> resizeRegionDiskSettings;
   private final UnaryCallSettings<SetLabelsRegionDiskHttpRequest, Operation>
       setLabelsRegionDiskSettings;
   private final UnaryCallSettings<TestIamPermissionsRegionDiskHttpRequest, TestPermissionsResponse>
       testIamPermissionsRegionDiskSettings;
+
+  /** Returns the object with the settings used for calls to addResourcePoliciesRegionDisk. */
+  public UnaryCallSettings<AddResourcePoliciesRegionDiskHttpRequest, Operation>
+      addResourcePoliciesRegionDiskSettings() {
+    return addResourcePoliciesRegionDiskSettings;
+  }
 
   /** Returns the object with the settings used for calls to createSnapshotRegionDisk. */
   public UnaryCallSettings<CreateSnapshotRegionDiskHttpRequest, Operation>
@@ -140,6 +153,12 @@ public class RegionDiskStubSettings extends StubSettings<RegionDiskStubSettings>
   public PagedCallSettings<ListRegionDisksHttpRequest, DiskList, ListRegionDisksPagedResponse>
       listRegionDisksSettings() {
     return listRegionDisksSettings;
+  }
+
+  /** Returns the object with the settings used for calls to removeResourcePoliciesRegionDisk. */
+  public UnaryCallSettings<RemoveResourcePoliciesRegionDiskHttpRequest, Operation>
+      removeResourcePoliciesRegionDiskSettings() {
+    return removeResourcePoliciesRegionDiskSettings;
   }
 
   /** Returns the object with the settings used for calls to resizeRegionDisk. */
@@ -178,7 +197,7 @@ public class RegionDiskStubSettings extends StubSettings<RegionDiskStubSettings>
 
   /** Returns the default service endpoint. */
   public static String getDefaultEndpoint() {
-    return "https://www.googleapis.com/compute/v1/projects/";
+    return "https://compute.googleapis.com/compute/v1/projects/";
   }
 
   /** Returns the default service port. */
@@ -234,11 +253,15 @@ public class RegionDiskStubSettings extends StubSettings<RegionDiskStubSettings>
   protected RegionDiskStubSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
+    addResourcePoliciesRegionDiskSettings =
+        settingsBuilder.addResourcePoliciesRegionDiskSettings().build();
     createSnapshotRegionDiskSettings = settingsBuilder.createSnapshotRegionDiskSettings().build();
     deleteRegionDiskSettings = settingsBuilder.deleteRegionDiskSettings().build();
     getRegionDiskSettings = settingsBuilder.getRegionDiskSettings().build();
     insertRegionDiskSettings = settingsBuilder.insertRegionDiskSettings().build();
     listRegionDisksSettings = settingsBuilder.listRegionDisksSettings().build();
+    removeResourcePoliciesRegionDiskSettings =
+        settingsBuilder.removeResourcePoliciesRegionDiskSettings().build();
     resizeRegionDiskSettings = settingsBuilder.resizeRegionDiskSettings().build();
     setLabelsRegionDiskSettings = settingsBuilder.setLabelsRegionDiskSettings().build();
     testIamPermissionsRegionDiskSettings =
@@ -304,6 +327,8 @@ public class RegionDiskStubSettings extends StubSettings<RegionDiskStubSettings>
   public static class Builder extends StubSettings.Builder<RegionDiskStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
+    private final UnaryCallSettings.Builder<AddResourcePoliciesRegionDiskHttpRequest, Operation>
+        addResourcePoliciesRegionDiskSettings;
     private final UnaryCallSettings.Builder<CreateSnapshotRegionDiskHttpRequest, Operation>
         createSnapshotRegionDiskSettings;
     private final UnaryCallSettings.Builder<DeleteRegionDiskHttpRequest, Operation>
@@ -314,6 +339,8 @@ public class RegionDiskStubSettings extends StubSettings<RegionDiskStubSettings>
     private final PagedCallSettings.Builder<
             ListRegionDisksHttpRequest, DiskList, ListRegionDisksPagedResponse>
         listRegionDisksSettings;
+    private final UnaryCallSettings.Builder<RemoveResourcePoliciesRegionDiskHttpRequest, Operation>
+        removeResourcePoliciesRegionDiskSettings;
     private final UnaryCallSettings.Builder<ResizeRegionDiskHttpRequest, Operation>
         resizeRegionDiskSettings;
     private final UnaryCallSettings.Builder<SetLabelsRegionDiskHttpRequest, Operation>
@@ -363,6 +390,8 @@ public class RegionDiskStubSettings extends StubSettings<RegionDiskStubSettings>
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
+      addResourcePoliciesRegionDiskSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       createSnapshotRegionDiskSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       deleteRegionDiskSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -373,6 +402,8 @@ public class RegionDiskStubSettings extends StubSettings<RegionDiskStubSettings>
 
       listRegionDisksSettings = PagedCallSettings.newBuilder(LIST_REGION_DISKS_PAGE_STR_FACT);
 
+      removeResourcePoliciesRegionDiskSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       resizeRegionDiskSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       setLabelsRegionDiskSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -381,11 +412,13 @@ public class RegionDiskStubSettings extends StubSettings<RegionDiskStubSettings>
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              addResourcePoliciesRegionDiskSettings,
               createSnapshotRegionDiskSettings,
               deleteRegionDiskSettings,
               getRegionDiskSettings,
               insertRegionDiskSettings,
               listRegionDisksSettings,
+              removeResourcePoliciesRegionDiskSettings,
               resizeRegionDiskSettings,
               setLabelsRegionDiskSettings,
               testIamPermissionsRegionDiskSettings);
@@ -403,6 +436,11 @@ public class RegionDiskStubSettings extends StubSettings<RegionDiskStubSettings>
     }
 
     private static Builder initDefaults(Builder builder) {
+
+      builder
+          .addResourcePoliciesRegionDiskSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
           .createSnapshotRegionDiskSettings()
@@ -430,6 +468,11 @@ public class RegionDiskStubSettings extends StubSettings<RegionDiskStubSettings>
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
+          .removeResourcePoliciesRegionDiskSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
           .resizeRegionDiskSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
@@ -450,11 +493,15 @@ public class RegionDiskStubSettings extends StubSettings<RegionDiskStubSettings>
     protected Builder(RegionDiskStubSettings settings) {
       super(settings);
 
+      addResourcePoliciesRegionDiskSettings =
+          settings.addResourcePoliciesRegionDiskSettings.toBuilder();
       createSnapshotRegionDiskSettings = settings.createSnapshotRegionDiskSettings.toBuilder();
       deleteRegionDiskSettings = settings.deleteRegionDiskSettings.toBuilder();
       getRegionDiskSettings = settings.getRegionDiskSettings.toBuilder();
       insertRegionDiskSettings = settings.insertRegionDiskSettings.toBuilder();
       listRegionDisksSettings = settings.listRegionDisksSettings.toBuilder();
+      removeResourcePoliciesRegionDiskSettings =
+          settings.removeResourcePoliciesRegionDiskSettings.toBuilder();
       resizeRegionDiskSettings = settings.resizeRegionDiskSettings.toBuilder();
       setLabelsRegionDiskSettings = settings.setLabelsRegionDiskSettings.toBuilder();
       testIamPermissionsRegionDiskSettings =
@@ -462,11 +509,13 @@ public class RegionDiskStubSettings extends StubSettings<RegionDiskStubSettings>
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              addResourcePoliciesRegionDiskSettings,
               createSnapshotRegionDiskSettings,
               deleteRegionDiskSettings,
               getRegionDiskSettings,
               insertRegionDiskSettings,
               listRegionDisksSettings,
+              removeResourcePoliciesRegionDiskSettings,
               resizeRegionDiskSettings,
               setLabelsRegionDiskSettings,
               testIamPermissionsRegionDiskSettings);
@@ -486,6 +535,12 @@ public class RegionDiskStubSettings extends StubSettings<RegionDiskStubSettings>
 
     public ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders() {
       return unaryMethodSettingsBuilders;
+    }
+
+    /** Returns the builder for the settings used for calls to addResourcePoliciesRegionDisk. */
+    public UnaryCallSettings.Builder<AddResourcePoliciesRegionDiskHttpRequest, Operation>
+        addResourcePoliciesRegionDiskSettings() {
+      return addResourcePoliciesRegionDiskSettings;
     }
 
     /** Returns the builder for the settings used for calls to createSnapshotRegionDisk. */
@@ -516,6 +571,12 @@ public class RegionDiskStubSettings extends StubSettings<RegionDiskStubSettings>
             ListRegionDisksHttpRequest, DiskList, ListRegionDisksPagedResponse>
         listRegionDisksSettings() {
       return listRegionDisksSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to removeResourcePoliciesRegionDisk. */
+    public UnaryCallSettings.Builder<RemoveResourcePoliciesRegionDiskHttpRequest, Operation>
+        removeResourcePoliciesRegionDiskSettings() {
+      return removeResourcePoliciesRegionDiskSettings;
     }
 
     /** Returns the builder for the settings used for calls to resizeRegionDisk. */

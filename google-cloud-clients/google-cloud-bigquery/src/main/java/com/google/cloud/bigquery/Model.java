@@ -18,7 +18,6 @@ package com.google.cloud.bigquery;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
-import com.google.api.services.bigquery.model.StandardSqlField;
 import com.google.api.services.bigquery.model.TrainingRun;
 import com.google.cloud.bigquery.BigQuery.ModelOption;
 import java.io.IOException;
@@ -116,13 +115,13 @@ public class Model extends ModelInfo {
     }
 
     @Override
-    Builder setLabelColumns(List<StandardSqlField> labelColumnList) {
+    Builder setLabelColumns(List<StandardSQLField> labelColumnList) {
       infoBuilder.setLabelColumns(labelColumnList);
       return this;
     }
 
     @Override
-    Builder setFeatureColumns(List<StandardSqlField> featureColumnList) {
+    Builder setFeatureColumns(List<StandardSQLField> featureColumnList) {
       infoBuilder.setFeatureColumns(featureColumnList);
       return this;
     }

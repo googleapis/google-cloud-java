@@ -266,9 +266,16 @@ public final class ImageObjectDetectionModelMetadata extends com.google.protobuf
    * `train_cost` will be equal or less than this value. If further model
    * training ceases to provide any improvements, it will stop without using
    * full budget and the stop_reason will be `MODEL_CONVERGED`.
-   * Note, node_hour  = actual_hour * number_of_nodes_invovled. The train budget
-   * must be between 20,000 and 2,000,000 milli node hours, inclusive. The
-   * default value is 216, 000 which represents one day in wall time.
+   * Note, node_hour  = actual_hour * number_of_nodes_invovled.
+   * For model type `cloud-high-accuracy-1`(default) and `cloud-low-latency-1`,
+   * the train budget must be between 20,000 and 2,000,000 milli node hours,
+   * inclusive. The default value is 216, 000 which represents one day in
+   * wall time.
+   * For model type `mobile-low-latency-1`, `mobile-versatile-1`,
+   * `mobile-high-accuracy-1`, `mobile-core-ml-low-latency-1`,
+   * `mobile-core-ml-versatile-1`, `mobile-core-ml-high-accuracy-1`, the train
+   * budget must be between 1,000 and 100,000 milli node hours, inclusive.
+   * The default value is 24, 000 which represents one day in wall time.
    * </pre>
    *
    * <code>int64 train_budget_milli_node_hours = 6;</code>
@@ -1034,9 +1041,16 @@ public final class ImageObjectDetectionModelMetadata extends com.google.protobuf
      * `train_cost` will be equal or less than this value. If further model
      * training ceases to provide any improvements, it will stop without using
      * full budget and the stop_reason will be `MODEL_CONVERGED`.
-     * Note, node_hour  = actual_hour * number_of_nodes_invovled. The train budget
-     * must be between 20,000 and 2,000,000 milli node hours, inclusive. The
-     * default value is 216, 000 which represents one day in wall time.
+     * Note, node_hour  = actual_hour * number_of_nodes_invovled.
+     * For model type `cloud-high-accuracy-1`(default) and `cloud-low-latency-1`,
+     * the train budget must be between 20,000 and 2,000,000 milli node hours,
+     * inclusive. The default value is 216, 000 which represents one day in
+     * wall time.
+     * For model type `mobile-low-latency-1`, `mobile-versatile-1`,
+     * `mobile-high-accuracy-1`, `mobile-core-ml-low-latency-1`,
+     * `mobile-core-ml-versatile-1`, `mobile-core-ml-high-accuracy-1`, the train
+     * budget must be between 1,000 and 100,000 milli node hours, inclusive.
+     * The default value is 24, 000 which represents one day in wall time.
      * </pre>
      *
      * <code>int64 train_budget_milli_node_hours = 6;</code>
@@ -1053,9 +1067,16 @@ public final class ImageObjectDetectionModelMetadata extends com.google.protobuf
      * `train_cost` will be equal or less than this value. If further model
      * training ceases to provide any improvements, it will stop without using
      * full budget and the stop_reason will be `MODEL_CONVERGED`.
-     * Note, node_hour  = actual_hour * number_of_nodes_invovled. The train budget
-     * must be between 20,000 and 2,000,000 milli node hours, inclusive. The
-     * default value is 216, 000 which represents one day in wall time.
+     * Note, node_hour  = actual_hour * number_of_nodes_invovled.
+     * For model type `cloud-high-accuracy-1`(default) and `cloud-low-latency-1`,
+     * the train budget must be between 20,000 and 2,000,000 milli node hours,
+     * inclusive. The default value is 216, 000 which represents one day in
+     * wall time.
+     * For model type `mobile-low-latency-1`, `mobile-versatile-1`,
+     * `mobile-high-accuracy-1`, `mobile-core-ml-low-latency-1`,
+     * `mobile-core-ml-versatile-1`, `mobile-core-ml-high-accuracy-1`, the train
+     * budget must be between 1,000 and 100,000 milli node hours, inclusive.
+     * The default value is 24, 000 which represents one day in wall time.
      * </pre>
      *
      * <code>int64 train_budget_milli_node_hours = 6;</code>
@@ -1075,9 +1096,16 @@ public final class ImageObjectDetectionModelMetadata extends com.google.protobuf
      * `train_cost` will be equal or less than this value. If further model
      * training ceases to provide any improvements, it will stop without using
      * full budget and the stop_reason will be `MODEL_CONVERGED`.
-     * Note, node_hour  = actual_hour * number_of_nodes_invovled. The train budget
-     * must be between 20,000 and 2,000,000 milli node hours, inclusive. The
-     * default value is 216, 000 which represents one day in wall time.
+     * Note, node_hour  = actual_hour * number_of_nodes_invovled.
+     * For model type `cloud-high-accuracy-1`(default) and `cloud-low-latency-1`,
+     * the train budget must be between 20,000 and 2,000,000 milli node hours,
+     * inclusive. The default value is 216, 000 which represents one day in
+     * wall time.
+     * For model type `mobile-low-latency-1`, `mobile-versatile-1`,
+     * `mobile-high-accuracy-1`, `mobile-core-ml-low-latency-1`,
+     * `mobile-core-ml-versatile-1`, `mobile-core-ml-high-accuracy-1`, the train
+     * budget must be between 1,000 and 100,000 milli node hours, inclusive.
+     * The default value is 24, 000 which represents one day in wall time.
      * </pre>
      *
      * <code>int64 train_budget_milli_node_hours = 6;</code>
