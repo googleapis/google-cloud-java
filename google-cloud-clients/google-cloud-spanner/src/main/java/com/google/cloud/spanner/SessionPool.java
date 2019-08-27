@@ -1120,12 +1120,16 @@ final class SessionPool {
 
   @VisibleForTesting
   int getNumberOfAvailableWritePreparedSessions() {
-    return writePreparedSessions.size();
+    synchronized (lock) {
+      return writePreparedSessions.size();
+    }
   }
 
   @VisibleForTesting
-  int getNumberOfAvailableReadSessions() {
-    return readSessions.size();
+  int getNumberOfSessionsInPool() {
+    synchronized (lock) {
+      return readSessions.size() + writePreparedSessions.size() + numSessionsBeingPrepared;
+    }
   }
 
   private void initPool() {

@@ -123,7 +123,7 @@ public class SessionPoolLeakTest {
 
   private void readWriteTransactionTest(
       Runnable setup, int expectedNumberOfSessionsAfterExecution) {
-    assertThat(pool.getNumberOfAvailableReadSessions(), is(equalTo(0)));
+    assertThat(pool.getNumberOfSessionsInPool(), is(equalTo(0)));
     for (int i = 0; i < 5; i++) {
       assertThat(pool.getNumberOfAvailableWritePreparedSessions(), is(equalTo(0)));
       setup.run();
@@ -141,10 +141,8 @@ public class SessionPoolLeakTest {
       } catch (SpannerException e) {
         assertThat(e.getErrorCode(), is(equalTo(ErrorCode.FAILED_PRECONDITION)));
       }
-      assertThat(pool.getNumberOfAvailableWritePreparedSessions(), is(equalTo(0)));
       assertThat(
-          pool.getNumberOfAvailableReadSessions(),
-          is(equalTo(expectedNumberOfSessionsAfterExecution)));
+          pool.getNumberOfSessionsInPool(), is(equalTo(expectedNumberOfSessionsAfterExecution)));
     }
   }
 
@@ -162,7 +160,7 @@ public class SessionPoolLeakTest {
   }
 
   @Test
-  public void testTransactionManagerExceptionOnBegin() {
+  public void testTransactionManagerExceptionOnBegin() throws Exception {
     transactionManagerTest(
         new Runnable() {
           @Override
@@ -175,7 +173,7 @@ public class SessionPoolLeakTest {
   }
 
   private void transactionManagerTest(Runnable setup, int expectedNumberOfSessionsAfterExecution) {
-    assertThat(pool.getNumberOfAvailableReadSessions(), is(equalTo(0)));
+    assertThat(pool.getNumberOfSessionsInPool(), is(equalTo(0)));
     for (int i = 0; i < 5; i++) {
       assertThat(pool.getNumberOfAvailableWritePreparedSessions(), is(equalTo(0)));
       setup.run();
@@ -185,10 +183,8 @@ public class SessionPoolLeakTest {
       } catch (SpannerException e) {
         assertThat(e.getErrorCode(), is(equalTo(ErrorCode.FAILED_PRECONDITION)));
       }
-      assertThat(pool.getNumberOfAvailableWritePreparedSessions(), is(equalTo(0)));
       assertThat(
-          pool.getNumberOfAvailableReadSessions(),
-          is(equalTo(expectedNumberOfSessionsAfterExecution)));
+          pool.getNumberOfSessionsInPool(), is(equalTo(expectedNumberOfSessionsAfterExecution)));
     }
   }
 }
