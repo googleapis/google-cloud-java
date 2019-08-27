@@ -25,13 +25,11 @@ import com.google.api.gax.rpc.ServerStreamingCallSettings;
 import com.google.api.gax.rpc.StatusCode.Code;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.WatchdogProvider;
-import com.google.cloud.bigtable.data.v2.models.BulkMutation;
 import com.google.cloud.bigtable.data.v2.models.ConditionalRowMutation;
 import com.google.cloud.bigtable.data.v2.models.KeyOffset;
 import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
-import com.google.cloud.bigtable.data.v2.models.RowMutationEntry;
 import com.google.common.collect.Range;
 import java.util.List;
 import java.util.Set;
@@ -439,7 +437,7 @@ public class EnhancedBigtableStubSettingsTest {
 
   @Test
   public void mutateRowsHasSaneDefaultsTest() {
-    BigtableBatchingCallSettings.Builder<RowMutationEntry, Void, BulkMutation, Void> builder =
+    BigtableBatchingCallSettings.Builder builder =
         EnhancedBigtableStubSettings.newBuilder().bulkMutateRowsSettings();
 
     verifyRetrySettingAreSane(builder.getRetryableCodes(), builder.getRetrySettings());

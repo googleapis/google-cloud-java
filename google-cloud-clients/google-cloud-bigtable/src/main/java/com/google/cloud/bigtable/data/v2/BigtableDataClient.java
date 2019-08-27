@@ -868,7 +868,7 @@ public class BigtableDataClient implements AutoCloseable {
     return stub.mutateRowCallable();
   }
 
-  /** @deprecated Please use latest {@link #newBulkMutationBatcher(String)} API. */
+  /** @deprecated Please use {@link #newBulkMutationBatcher(String)} API. */
   @Deprecated
   public BulkMutationBatcher newBulkMutationBatcher() {
     return new BulkMutationBatcher(stub.bulkMutateRowsBatchingCallable());

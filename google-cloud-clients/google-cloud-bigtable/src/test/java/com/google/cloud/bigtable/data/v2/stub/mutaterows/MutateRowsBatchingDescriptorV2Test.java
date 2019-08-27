@@ -110,9 +110,9 @@ public class MutateRowsBatchingDescriptorV2Test {
   public void splitExceptionWithFailedMutationsTest() {
     MutateRowsBatchingDescriptorV2 underTest = new MutateRowsBatchingDescriptorV2();
     Throwable actualThrowable = null;
-    SettableApiFuture<Void> response1 = SettableApiFuture.create();
-    SettableApiFuture<Void> response2 = SettableApiFuture.create();
-    SettableApiFuture<Void> response3 = SettableApiFuture.create();
+    SettableApiFuture<Void> resultFuture1 = SettableApiFuture.create();
+    SettableApiFuture<Void> resultFuture2 = SettableApiFuture.create();
+    SettableApiFuture<Void> resultFuture3 = SettableApiFuture.create();
 
     // Threw an exception at 1st and 3rd entry
     MutateRowsException serverError =
@@ -128,10 +128,11 @@ public class MutateRowsBatchingDescriptorV2Test {
                     new DeadlineExceededException(
                         null, GrpcStatusCode.of(Status.Code.DEADLINE_EXCEEDED), true))),
             true);
-    underTest.splitException(serverError, ImmutableList.of(response1, response2, response3));
+    underTest.splitException(
+        serverError, ImmutableList.of(resultFuture1, resultFuture2, resultFuture3));
 
     try {
-      response1.get();
+      resultFuture1.get();
     } catch (ExecutionException | InterruptedException e) {
       actualThrowable = e;
     }
@@ -142,7 +143,7 @@ public class MutateRowsBatchingDescriptorV2Test {
     // As there is no exception for 2nd entry so it should not throw any exception
     actualThrowable = null;
     try {
-      response2.get();
+      resultFuture2.get();
     } catch (ExecutionException | InterruptedException e) {
       actualThrowable = e;
     }
@@ -150,7 +151,7 @@ public class MutateRowsBatchingDescriptorV2Test {
 
     actualThrowable = null;
     try {
-      response3.get();
+      resultFuture3.get();
     } catch (ExecutionException | InterruptedException e) {
       actualThrowable = e;
     }

@@ -26,8 +26,8 @@ import javax.annotation.Nonnull;
  * Represents a list of mutations targeted at a single row. It is meant to be used as an parameter
  * for {@link com.google.cloud.bigtable.data.v2.BigtableDataClient#newBulkMutationBatcher(String)}.
  *
- * <p>Note: The changes in the mutation will be applied atomically and the ordering between rows is
- * not guaranteed.
+ * <p>Note: The changes in the mutation will be applied atomically but the ordering between
+ * different RowMutationEntry instances is not guaranteed.
  */
 public class RowMutationEntry implements MutationApi<RowMutationEntry>, Serializable {
   private static final long serialVersionUID = 1974738836742298192L;
@@ -36,8 +36,8 @@ public class RowMutationEntry implements MutationApi<RowMutationEntry>, Serializ
   private final Mutation mutation;
 
   private RowMutationEntry(@Nonnull ByteString key, @Nonnull Mutation mutation) {
-    Preconditions.checkNotNull(key, "Row key cannot be null");
-    Preconditions.checkNotNull(mutation, "Row mutation cannot be null");
+    Preconditions.checkNotNull(key, "Row key can't be null");
+    Preconditions.checkNotNull(mutation, "Row mutation can't be null");
 
     this.key = key;
     this.mutation = mutation;
@@ -45,6 +45,7 @@ public class RowMutationEntry implements MutationApi<RowMutationEntry>, Serializ
 
   /** Creates a new instance of the mutation builder. */
   public static RowMutationEntry create(@Nonnull String key) {
+    Preconditions.checkNotNull(key, "Row key can't be null");
     return create(ByteString.copyFromUtf8(key));
   }
 

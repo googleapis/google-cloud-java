@@ -508,7 +508,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
     return bulkMutateRowsCallable;
   }
 
-  /** @deprecated Please use latest {@link #newMutateRowsBatcher(String)} API. */
+  /** @deprecated Please use {@link #newMutateRowsBatcher(String)} API. */
   @Deprecated
   public UnaryCallable<RowMutation, Void> bulkMutateRowsBatchingCallable() {
     return bulkMutateRowsBatchingCallable;

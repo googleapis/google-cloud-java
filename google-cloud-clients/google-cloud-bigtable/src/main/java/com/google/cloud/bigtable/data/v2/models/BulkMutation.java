@@ -90,11 +90,11 @@ public final class BulkMutation implements Serializable, Cloneable {
   }
 
   /**
-   * Add {@link RowMutationEntry} which logically represent a row. The changes in mutation will be
-   * applied atomically and ordering is not guaranteed between rows.
+   * Add mutation for a particular row. The changes in the mutation will be applied atomic. However
+   * there is no guarantees about the relative ordering between mutations affecting different rows.
    */
   public BulkMutation add(@Nonnull RowMutationEntry entry) {
-    Preconditions.checkNotNull(entry);
+    Preconditions.checkNotNull(entry, "Row mutation entry can't be null");
     builder.addEntries(entry.toProto());
     return this;
   }

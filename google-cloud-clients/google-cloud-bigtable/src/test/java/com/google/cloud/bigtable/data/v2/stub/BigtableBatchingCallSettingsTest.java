@@ -15,7 +15,6 @@
  */
 package com.google.cloud.bigtable.data.v2.stub;
 
-import static com.google.api.gax.rpc.testing.FakeBatchableApi.SQUARER_BATCHING_DESC_V2;
 import static com.google.common.truth.Truth.assertThat;
 
 import com.google.api.gax.batching.BatchingSettings;
@@ -23,9 +22,8 @@ import com.google.api.gax.batching.FlowControlSettings;
 import com.google.api.gax.batching.FlowController;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.StatusCode;
-import com.google.api.gax.rpc.testing.FakeBatchableApi;
+import com.google.cloud.bigtable.data.v2.stub.mutaterows.MutateRowsBatchingDescriptorV2;
 import com.google.common.collect.ImmutableSet;
-import java.util.List;
 import java.util.Set;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -50,9 +48,8 @@ public class BigtableBatchingCallSettingsTest {
 
   @Test
   public void testEmptyBuilder() {
-    BigtableBatchingCallSettings.Builder<
-            Integer, Integer, FakeBatchableApi.LabeledIntList, List<Integer>>
-        builder = BigtableBatchingCallSettings.newBuilder(SQUARER_BATCHING_DESC_V2);
+    BigtableBatchingCallSettings.Builder builder =
+        BigtableBatchingCallSettings.newBuilder(new MutateRowsBatchingDescriptorV2());
     assertThat(builder.getBatchingSettings()).isNull();
     assertThat(builder.getRetryableCodes()).isEmpty();
     assertThat(builder.getRetrySettings()).isNotNull();
@@ -60,9 +57,8 @@ public class BigtableBatchingCallSettingsTest {
 
   @Test
   public void testBuilder() {
-    BigtableBatchingCallSettings.Builder<
-            Integer, Integer, FakeBatchableApi.LabeledIntList, List<Integer>>
-        builder = BigtableBatchingCallSettings.newBuilder(SQUARER_BATCHING_DESC_V2);
+    BigtableBatchingCallSettings.Builder builder =
+        BigtableBatchingCallSettings.newBuilder(new MutateRowsBatchingDescriptorV2());
 
     Set<StatusCode.Code> retryCodes = ImmutableSet.of(StatusCode.Code.UNAVAILABLE);
     RetrySettings retrySettings = RetrySettings.newBuilder().build();
@@ -79,9 +75,8 @@ public class BigtableBatchingCallSettingsTest {
 
   @Test
   public void testBuilderFromSettings() {
-    BigtableBatchingCallSettings.Builder<
-            Integer, Integer, FakeBatchableApi.LabeledIntList, List<Integer>>
-        builder = BigtableBatchingCallSettings.newBuilder(SQUARER_BATCHING_DESC_V2);
+    BigtableBatchingCallSettings.Builder builder =
+        BigtableBatchingCallSettings.newBuilder(new MutateRowsBatchingDescriptorV2());
     RetrySettings retrySettings =
         RetrySettings.newBuilder().setTotalTimeout(Duration.ofMinutes(1)).build();
     builder
@@ -109,7 +104,7 @@ public class BigtableBatchingCallSettingsTest {
     assertThat(actualEx).isInstanceOf(NullPointerException.class);
     actualEx = null;
     try {
-      BigtableBatchingCallSettings.newBuilder(SQUARER_BATCHING_DESC_V2).build();
+      BigtableBatchingCallSettings.newBuilder(new MutateRowsBatchingDescriptorV2()).build();
     } catch (Exception ex) {
       actualEx = ex;
     }

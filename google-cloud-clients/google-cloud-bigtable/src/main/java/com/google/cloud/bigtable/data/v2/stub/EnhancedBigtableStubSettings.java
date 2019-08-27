@@ -29,14 +29,12 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.tracing.OpencensusTracerFactory;
-import com.google.cloud.bigtable.data.v2.models.BulkMutation;
 import com.google.cloud.bigtable.data.v2.models.ConditionalRowMutation;
 import com.google.cloud.bigtable.data.v2.models.KeyOffset;
 import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.ReadModifyWriteRow;
 import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
-import com.google.cloud.bigtable.data.v2.models.RowMutationEntry;
 import com.google.cloud.bigtable.data.v2.stub.mutaterows.MutateRowsBatchingDescriptorV2;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
@@ -128,8 +126,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
   private final UnaryCallSettings<Query, Row> readRowSettings;
   private final UnaryCallSettings<String, List<KeyOffset>> sampleRowKeysSettings;
   private final UnaryCallSettings<RowMutation, Void> mutateRowSettings;
-  private final BigtableBatchingCallSettings<RowMutationEntry, Void, BulkMutation, Void>
-      bulkMutateRowsSettings;
+  private final BigtableBatchingCallSettings bulkMutateRowsSettings;
   private final UnaryCallSettings<ConditionalRowMutation, Boolean> checkAndMutateRowSettings;
   private final UnaryCallSettings<ReadModifyWriteRow, Row> readModifyWriteRowSettings;
 
@@ -340,8 +337,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
    * @see RetrySettings for more explanation.
    * @see BatchingSettings for batch related configuration explanation.
    */
-  public BigtableBatchingCallSettings<RowMutationEntry, Void, BulkMutation, Void>
-      bulkMutateRowsSettings() {
+  public BigtableBatchingCallSettings bulkMutateRowsSettings() {
     return bulkMutateRowsSettings;
   }
 
@@ -389,8 +385,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
     private final UnaryCallSettings.Builder<Query, Row> readRowSettings;
     private final UnaryCallSettings.Builder<String, List<KeyOffset>> sampleRowKeysSettings;
     private final UnaryCallSettings.Builder<RowMutation, Void> mutateRowSettings;
-    private final BigtableBatchingCallSettings.Builder<RowMutationEntry, Void, BulkMutation, Void>
-        bulkMutateRowsSettings;
+    private final BigtableBatchingCallSettings.Builder bulkMutateRowsSettings;
     private final UnaryCallSettings.Builder<ConditionalRowMutation, Boolean>
         checkAndMutateRowSettings;
     private final UnaryCallSettings.Builder<ReadModifyWriteRow, Row> readModifyWriteRowSettings;
@@ -571,8 +566,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
     }
 
     /** Returns the builder for the settings used for calls to MutateRows. */
-    public BigtableBatchingCallSettings.Builder<RowMutationEntry, Void, BulkMutation, Void>
-        bulkMutateRowsSettings() {
+    public BigtableBatchingCallSettings.Builder bulkMutateRowsSettings() {
       return bulkMutateRowsSettings;
     }
 
