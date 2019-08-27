@@ -26,6 +26,7 @@ import com.google.cloud.bigtable.data.v2.models.BulkMutation;
 import com.google.cloud.bigtable.data.v2.models.RowMutationEntry;
 import com.google.common.base.Preconditions;
 import java.util.Set;
+import javax.annotation.Nonnull;
 
 /**
  * This settings holds the batching thresholds as well as retry configuration.
@@ -70,7 +71,7 @@ public final class BigtableBatchingCallSettings extends UnaryCallSettings<BulkMu
     return batchingCallSettings.getBatchingSettings();
   }
 
-  /** Returns an adapter that packs and unpacks batching elements */
+  /** Returns an adapter that packs and unpacks batching elements. */
   BatchingDescriptor<RowMutationEntry, Void, BulkMutation, Void> getBatchingDescriptor() {
     return batchingCallSettings.getBatchingDescriptor();
   }
@@ -99,19 +100,21 @@ public final class BigtableBatchingCallSettings extends UnaryCallSettings<BulkMu
     private BatchingSettings batchingSettings;
 
     private Builder(
-        BatchingDescriptor<RowMutationEntry, Void, BulkMutation, Void> batchingDescriptor) {
+        @Nonnull
+            BatchingDescriptor<RowMutationEntry, Void, BulkMutation, Void> batchingDescriptor) {
       this.batchingDescriptor =
           Preconditions.checkNotNull(batchingDescriptor, "batching descriptor can't be null");
     }
 
-    private Builder(BigtableBatchingCallSettings settings) {
+    private Builder(@Nonnull BigtableBatchingCallSettings settings) {
       super(settings);
       this.batchingDescriptor = settings.getBatchingDescriptor();
       this.batchingSettings = settings.getBatchingSettings();
     }
 
     /** Sets the batching settings with various thresholds. */
-    public Builder setBatchingSettings(BatchingSettings batchingSettings) {
+    public Builder setBatchingSettings(@Nonnull BatchingSettings batchingSettings) {
+      Preconditions.checkNotNull(batchingSettings, "batching settings can't be null");
       this.batchingSettings = batchingSettings;
       return this;
     }
@@ -137,7 +140,7 @@ public final class BigtableBatchingCallSettings extends UnaryCallSettings<BulkMu
 
     /** Sets the {@link RetrySettings} values for each retry attempts. */
     @Override
-    public Builder setRetrySettings(RetrySettings retrySettings) {
+    public Builder setRetrySettings(@Nonnull RetrySettings retrySettings) {
       super.setRetrySettings(retrySettings);
       return this;
     }
