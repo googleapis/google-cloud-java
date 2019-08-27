@@ -27,9 +27,9 @@ import com.google.common.base.Preconditions;
 import java.util.Set;
 
 /**
- * This settings is just a simple wrapper for {@link BatchingCallSettings} to allow us to add
- * additional functionality. This settings holds the batching thresholds as well as retry
- * configuration.
+ * This settings is just a simple wrapper for {@link
+ * com.google.api.gax.batching.BatchingCallSettings} to allow us to add additional functionality.
+ * This settings holds the batching thresholds as well as retry configuration.
  *
  * <p>Sample configuration:
  *
