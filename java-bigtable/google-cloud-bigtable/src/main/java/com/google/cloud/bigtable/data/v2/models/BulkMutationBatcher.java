@@ -28,12 +28,10 @@ import java.util.concurrent.atomic.AtomicLong;
 import org.threeten.bp.Duration;
 
 /**
- * Tracker for outstanding bulk mutations. Allows for the caller to wait for all of the outstanding
- * mutations to complete.
- *
- * @see com.google.cloud.bigtable.data.v2.BigtableDataClient#newBulkMutationBatcher() for example
- *     usage.
+ * @deprecated Please use {@link
+ *     com.google.cloud.bigtable.data.v2.BigtableDataClient#newBulkMutationBatcher(String)} API.
  */
+@Deprecated
 @BetaApi("This surface is likely to change as the batching surface evolves.")
 public final class BulkMutationBatcher implements AutoCloseable {
   private final UnaryCallable<RowMutation, Void> callable;

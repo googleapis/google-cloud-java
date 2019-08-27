@@ -18,6 +18,7 @@ package com.google.cloud.bigtable.data.v2;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
+import com.google.api.gax.batching.Batcher;
 import com.google.api.gax.rpc.ApiExceptions;
 import com.google.api.gax.rpc.ResponseObserver;
 import com.google.api.gax.rpc.ServerStream;
@@ -33,10 +34,12 @@ import com.google.cloud.bigtable.data.v2.models.ReadModifyWriteRow;
 import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowAdapter;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
+import com.google.cloud.bigtable.data.v2.models.RowMutationEntry;
 import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStub;
 import com.google.protobuf.ByteString;
 import java.io.IOException;
 import java.util.List;
+import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 /**
@@ -865,29 +868,8 @@ public class BigtableDataClient implements AutoCloseable {
     return stub.mutateRowCallable();
   }
 
-  /**
-   * Mutates multiple rows in a batch. Each individual row is mutated atomically as in MutateRow,
-   * but the entire batch is not executed atomically.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create("[PROJECT]", "[INSTANCE]")) {
-   *   try (BulkMutationBatcher batcher = bigtableDataClient.newBulkMutationBatcher()) {
-   *     for (String someValue : someCollection) {
-   *       RowMutation mutation = RowMutation.create("[TABLE]", "[ROW KEY]")
-   *         .setCell("[FAMILY NAME]", "[QUALIFIER]", "[VALUE]");
-   *
-   *       ApiFuture<Void> entryFuture = batcher.add(mutation);
-   *     }
-   *   } catch (BulkMutationFailure failure) {
-   *     // Handle error
-   *   }
-   *   // After `batcher` is closed, all mutations have been applied
-   * }
-   * }</pre>
-   */
-  @BetaApi("This surface is likely to change as the batching surface evolves.")
+  /** @deprecated Please use {@link #newBulkMutationBatcher(String)} API. */
+  @Deprecated
   public BulkMutationBatcher newBulkMutationBatcher() {
     return new BulkMutationBatcher(stub.bulkMutateRowsBatchingCallable());
   }
@@ -919,6 +901,34 @@ public class BigtableDataClient implements AutoCloseable {
    */
   public void bulkMutateRows(BulkMutation mutation) {
     ApiExceptions.callAndTranslateApiException(bulkMutateRowsAsync(mutation));
+  }
+
+  /**
+   * Mutates multiple rows in a batch. Each individual row is mutated atomically as in MutateRow,
+   * but the entire batch is not executed atomically.
+   *
+   * <p>Sample Code:
+   *
+   * <pre>{@code
+   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create("[PROJECT]", "[INSTANCE]")) {
+   *   try (Batcher<RowMutationEntry, Void> batcher = bigtableDataClient.newBulkMutationBatcher("[TABLE]")) {
+   *     for (String someValue : someCollection) {
+   *       ApiFuture<Void> entryFuture =
+   *           batcher.add(
+   *               RowMutationEntry.create("[ROW KEY]")
+   *                   .setCell("[FAMILY NAME]", "[QUALIFIER]", "[VALUE]"));
+   *     }
+   *
+   *     // Blocks until mutations are applied on all submitted row entries.
+   *     batcher.flush();
+   *   }
+   *   // Before `batcher` is closed, all remaining(If any) mutations are applied.
+   * }
+   * }</pre>
+   */
+  @BetaApi("This surface is likely to change as the batching surface evolves.")
+  public Batcher<RowMutationEntry, Void> newBulkMutationBatcher(@Nonnull String tableId) {
+    return stub.newMutateRowsBatcher(tableId);
   }
 
   /**
