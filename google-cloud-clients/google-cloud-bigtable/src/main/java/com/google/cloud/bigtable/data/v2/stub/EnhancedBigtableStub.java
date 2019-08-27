@@ -258,21 +258,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
                 rowAdapter)
             .first();
 
-    UnaryCallable<Query, RowT> traced =
-        new TracedUnaryCallable<>(
-            readRowCallable,
-            clientContext.getTracerFactory(),
-            SpanName.of(TRACING_OUTER_CLIENT_NAME, "ReadRows"));
-
-    UnaryCallable<Query, RowT> measured =
-        new MeasuredUnaryCallable<>(
-            traced,
-            TRACING_OUTER_CLIENT_NAME + ".ReadRows",
-            tagger,
-            statsRecorder,
-            clientContext.getClock());
-
-    return measured.withDefaultCallContext(clientContext.getDefaultCallContext());
+    return createUserFacingUnaryCallable("ReadRow", readRowCallable);
   }
 
   /**
@@ -521,7 +507,11 @@ public class EnhancedBigtableStub implements AutoCloseable {
 
     UnaryCallable<RequestT, ResponseT> measured =
         new MeasuredUnaryCallable<>(
-            traced, methodName, tagger, statsRecorder, clientContext.getClock());
+            traced,
+            TRACING_OUTER_CLIENT_NAME + "." + methodName,
+            tagger,
+            statsRecorder,
+            clientContext.getClock());
 
     return measured.withDefaultCallContext(clientContext.getDefaultCallContext());
   }
