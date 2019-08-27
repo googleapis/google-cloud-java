@@ -41,6 +41,8 @@ class JdbcConnection extends AbstractJdbcConnection {
   private static final String ONLY_CLOSE_CURSORS_AT_COMMIT =
       "Only result sets with holdability CLOSE_CURSORS_AT_COMMIT are supported";
   static final String ONLY_NO_GENERATED_KEYS = "Only NO_GENERATED_KEYS are supported";
+  static final String IS_VALID_QUERY = "SELECT 1";
+
   private Map<String, Class<?>> typeMap = new HashMap<>();
 
   JdbcConnection(String connectionUrl, ConnectionOptions options) {
@@ -228,20 +230,21 @@ class JdbcConnection extends AbstractJdbcConnection {
 
   @Override
   public boolean isValid(int timeout) throws SQLException {
-    checkClosed();
     JdbcPreconditions.checkArgument(timeout >= 0, "timeout must be >= 0");
-    try {
-      Statement statement = createStatement();
-      statement.setQueryTimeout(timeout);
-      try (ResultSet rs = statement.executeQuery("select 1")) {
-        if (rs.next()) {
-          if (rs.getLong(1) == 1L) {
-            return true;
+    if (!isClosed()) {
+      try {
+        Statement statement = createStatement();
+        statement.setQueryTimeout(timeout);
+        try (ResultSet rs = statement.executeQuery(IS_VALID_QUERY)) {
+          if (rs.next()) {
+            if (rs.getLong(1) == 1L) {
+              return true;
+            }
           }
         }
+      } catch (SQLException e) {
+        // ignore
       }
-    } catch (SQLException e) {
-      // ignore
     }
     return false;
   }

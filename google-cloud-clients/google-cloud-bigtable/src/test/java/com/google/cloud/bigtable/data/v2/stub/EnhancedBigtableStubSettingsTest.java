@@ -21,7 +21,6 @@ import com.google.api.gax.batching.BatchingSettings;
 import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.retrying.RetrySettings;
-import com.google.api.gax.rpc.BatchingCallSettings;
 import com.google.api.gax.rpc.ServerStreamingCallSettings;
 import com.google.api.gax.rpc.StatusCode.Code;
 import com.google.api.gax.rpc.UnaryCallSettings;
@@ -438,7 +437,7 @@ public class EnhancedBigtableStubSettingsTest {
 
   @Test
   public void mutateRowsHasSaneDefaultsTest() {
-    BatchingCallSettings.Builder<RowMutation, Void> builder =
+    BigtableBatchingCallSettings.Builder builder =
         EnhancedBigtableStubSettings.newBuilder().bulkMutateRowsSettings();
 
     verifyRetrySettingAreSane(builder.getRetryableCodes(), builder.getRetrySettings());
