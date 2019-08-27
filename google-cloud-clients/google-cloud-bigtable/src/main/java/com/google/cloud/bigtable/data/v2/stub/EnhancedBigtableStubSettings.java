@@ -18,16 +18,11 @@ package com.google.cloud.bigtable.data.v2.stub;
 import com.google.api.gax.batching.BatchingSettings;
 import com.google.api.gax.batching.FlowControlSettings;
 import com.google.api.gax.batching.FlowController.LimitExceededBehavior;
-import com.google.api.gax.batching.PartitionKey;
-import com.google.api.gax.batching.RequestBuilder;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.retrying.RetrySettings;
-import com.google.api.gax.rpc.BatchedRequestIssuer;
-import com.google.api.gax.rpc.BatchingCallSettings;
-import com.google.api.gax.rpc.BatchingDescriptor;
 import com.google.api.gax.rpc.ServerStreamingCallSettings;
 import com.google.api.gax.rpc.StatusCode.Code;
 import com.google.api.gax.rpc.StubSettings;
@@ -40,11 +35,11 @@ import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.ReadModifyWriteRow;
 import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
+import com.google.cloud.bigtable.data.v2.stub.mutaterows.MutateRowsBatchingDescriptorV2;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
-import java.util.Collection;
 import java.util.List;
 import java.util.Set;
 import javax.annotation.Nonnull;
@@ -131,7 +126,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
   private final UnaryCallSettings<Query, Row> readRowSettings;
   private final UnaryCallSettings<String, List<KeyOffset>> sampleRowKeysSettings;
   private final UnaryCallSettings<RowMutation, Void> mutateRowSettings;
-  private final BatchingCallSettings<RowMutation, Void> bulkMutateRowsSettings;
+  private final BigtableBatchingCallSettings bulkMutateRowsSettings;
   private final UnaryCallSettings<ConditionalRowMutation, Boolean> checkAndMutateRowSettings;
   private final UnaryCallSettings<ReadModifyWriteRow, Row> readModifyWriteRowSettings;
 
@@ -308,8 +303,9 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
    * <p>Default retry and timeout settings:
    *
    * <ul>
-   *   <li>Retry {@link UnaryCallSettings.Builder#setRetryableCodes error codes} are: {@link
-   *       Code#DEADLINE_EXCEEDED}, {@link Code#UNAVAILABLE} and {@link Code#ABORTED}.
+   *   <li>Retry {@link com.google.api.gax.batching.BatchingCallSettings.Builder#setRetryableCodes
+   *       error codes} are: {@link Code#DEADLINE_EXCEEDED}, {@link Code#UNAVAILABLE} and {@link
+   *       Code#ABORTED}.
    *   <li>RetryDelay between failed attempts {@link RetrySettings.Builder#setInitialRetryDelay
    *       starts} at 10ms and {@link RetrySettings.Builder#setRetryDelayMultiplier increases
    *       exponentially} by a factor of 2 until a {@link RetrySettings.Builder#setMaxRetryDelay
@@ -341,7 +337,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
    * @see RetrySettings for more explanation.
    * @see BatchingSettings for batch related configuration explanation.
    */
-  public BatchingCallSettings<RowMutation, Void> bulkMutateRowsSettings() {
+  public BigtableBatchingCallSettings bulkMutateRowsSettings() {
     return bulkMutateRowsSettings;
   }
 
@@ -389,7 +385,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
     private final UnaryCallSettings.Builder<Query, Row> readRowSettings;
     private final UnaryCallSettings.Builder<String, List<KeyOffset>> sampleRowKeysSettings;
     private final UnaryCallSettings.Builder<RowMutation, Void> mutateRowSettings;
-    private final BatchingCallSettings.Builder<RowMutation, Void> bulkMutateRowsSettings;
+    private final BigtableBatchingCallSettings.Builder bulkMutateRowsSettings;
     private final UnaryCallSettings.Builder<ConditionalRowMutation, Boolean>
         checkAndMutateRowSettings;
     private final UnaryCallSettings.Builder<ReadModifyWriteRow, Row> readModifyWriteRowSettings;
@@ -449,7 +445,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
       copyRetrySettings(baseDefaults.mutateRowSettings(), mutateRowSettings);
 
       bulkMutateRowsSettings =
-          BatchingCallSettings.newBuilder(new PlaceholderBatchingDescriptor())
+          BigtableBatchingCallSettings.newBuilder(new MutateRowsBatchingDescriptorV2())
               .setRetryableCodes(IDEMPOTENT_RETRY_CODES)
               .setRetrySettings(MUTATE_ROWS_RETRY_SETTINGS)
               .setBatchingSettings(
@@ -489,51 +485,6 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
       readModifyWriteRowSettings = settings.readModifyWriteRowSettings.toBuilder();
     }
     // <editor-fold desc="Private Helpers">
-
-    /**
-     * This is necessary workaround for {@link
-     * com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStub#bulkMutateRowsCallable()}. The
-     * settings are exposed to the user using the {@link
-     * com.google.cloud.bigtable.data.v2.models.RowMutation} wrapper, but the actual descriptor
-     * works on the underlying {@link com.google.bigtable.v2.MutateRowsRequest}s. This class is used
-     * as a placeholder for the settings and is replaced with the actual implementation of {@link
-     * com.google.cloud.bigtable.data.v2.stub.mutaterows.MutateRowsBatchingDescriptor} when
-     * constructing the callable chain.
-     */
-    private static class PlaceholderBatchingDescriptor
-        implements BatchingDescriptor<RowMutation, Void> {
-      @Override
-      public PartitionKey getBatchPartitionKey(RowMutation rowMutation) {
-        throw new UnsupportedOperationException("Placeholder descriptor should not be used");
-      }
-
-      @Override
-      public RequestBuilder<RowMutation> getRequestBuilder() {
-        throw new UnsupportedOperationException("Placeholder descriptor should not be used");
-      }
-
-      @Override
-      public void splitResponse(
-          Void aVoid, Collection<? extends BatchedRequestIssuer<Void>> collection) {
-        throw new UnsupportedOperationException("Placeholder descriptor should not be used");
-      }
-
-      @Override
-      public void splitException(
-          Throwable throwable, Collection<? extends BatchedRequestIssuer<Void>> collection) {
-        throw new UnsupportedOperationException("Placeholder descriptor should not be used");
-      }
-
-      @Override
-      public long countElements(RowMutation rowMutation) {
-        throw new UnsupportedOperationException("Placeholder descriptor should not be used");
-      }
-
-      @Override
-      public long countBytes(RowMutation rowMutation) {
-        throw new UnsupportedOperationException("Placeholder descriptor should not be used");
-      }
-    }
 
     /**
      * Copies settings from unary RPC to another. This is necessary when modifying request and
@@ -614,8 +565,8 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
       return mutateRowSettings;
     }
 
-    /** Returns the builder for the settings used for calls to MutateTows. */
-    public BatchingCallSettings.Builder<RowMutation, Void> bulkMutateRowsSettings() {
+    /** Returns the builder for the settings used for calls to MutateRows. */
+    public BigtableBatchingCallSettings.Builder bulkMutateRowsSettings() {
       return bulkMutateRowsSettings;
     }
 

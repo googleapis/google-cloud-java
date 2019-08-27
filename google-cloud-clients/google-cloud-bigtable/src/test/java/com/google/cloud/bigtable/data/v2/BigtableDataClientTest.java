@@ -22,6 +22,7 @@ import static org.mockito.Matchers.any;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.SettableApiFuture;
+import com.google.api.gax.batching.Batcher;
 import com.google.api.gax.grpc.GrpcStatusCode;
 import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.ResponseObserver;
@@ -39,6 +40,7 @@ import com.google.cloud.bigtable.data.v2.models.ReadModifyWriteRow;
 import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowCell;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
+import com.google.cloud.bigtable.data.v2.models.RowMutationEntry;
 import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStub;
 import com.google.common.collect.ImmutableList;
 import com.google.protobuf.ByteString;
@@ -72,6 +74,7 @@ public class BigtableDataClientTest {
   @Mock private UnaryCallable<ReadModifyWriteRow, Row> mockReadModifyWriteRowCallable;
   @Mock private UnaryCallable<BulkMutation, Void> mockBulkMutateRowsCallable;
   @Mock private UnaryCallable<RowMutation, Void> mockBulkMutateRowsBatchingCallable;
+  @Mock private Batcher<RowMutationEntry, Void> mockBulkMutationbatcher;
 
   private BigtableDataClient bigtableDataClient;
 
@@ -87,6 +90,8 @@ public class BigtableDataClientTest {
         .thenReturn(mockBulkMutateRowsBatchingCallable);
     Mockito.when(mockStub.checkAndMutateRowCallable()).thenReturn(mockCheckAndMutateRowCallable);
     Mockito.when(mockStub.readModifyWriteRowCallable()).thenReturn(mockReadModifyWriteRowCallable);
+    Mockito.when(mockStub.newMutateRowsBatcher(Mockito.any(String.class)))
+        .thenReturn(mockBulkMutationbatcher);
   }
 
   @Test
@@ -400,6 +405,21 @@ public class BigtableDataClientTest {
       outerError = t;
     }
     assertThat(outerError).isInstanceOf(BulkMutationFailure.class);
+  }
+
+  @Test
+  public void proxyNewBulkMutationBatcherTest() {
+    ApiFuture<Void> expectedResponse = ApiFutures.immediateFuture(null);
+    Batcher<RowMutationEntry, Void> batcher =
+        bigtableDataClient.newBulkMutationBatcher("fake-table");
+    RowMutationEntry request =
+        RowMutationEntry.create("some-key").setCell("some-family", "fake-qualifier", "fake-value");
+    Mockito.when(mockBulkMutationbatcher.add(request)).thenReturn(expectedResponse);
+
+    ApiFuture<Void> actualRes = batcher.add(request);
+    assertThat(actualRes).isSameInstanceAs(expectedResponse);
+
+    Mockito.verify(mockStub).newMutateRowsBatcher(Mockito.any(String.class));
   }
 
   @Test

@@ -16,6 +16,8 @@
 package com.google.cloud.bigtable.data.v2.stub;
 
 import com.google.api.core.InternalApi;
+import com.google.api.gax.batching.Batcher;
+import com.google.api.gax.batching.BatcherImpl;
 import com.google.api.gax.retrying.ExponentialRetryAlgorithm;
 import com.google.api.gax.retrying.RetryAlgorithm;
 import com.google.api.gax.retrying.RetryingExecutorWithContext;
@@ -44,8 +46,10 @@ import com.google.cloud.bigtable.data.v2.models.ReadModifyWriteRow;
 import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowAdapter;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
+import com.google.cloud.bigtable.data.v2.models.RowMutationEntry;
 import com.google.cloud.bigtable.data.v2.stub.mutaterows.BulkMutateRowsUserFacingCallable;
 import com.google.cloud.bigtable.data.v2.stub.mutaterows.MutateRowsBatchingDescriptor;
+import com.google.cloud.bigtable.data.v2.stub.mutaterows.MutateRowsBatchingDescriptorV2;
 import com.google.cloud.bigtable.data.v2.stub.mutaterows.MutateRowsRetryingCallable;
 import com.google.cloud.bigtable.data.v2.stub.mutaterows.MutateRowsUserFacingCallable;
 import com.google.cloud.bigtable.data.v2.stub.readrows.FilterMarkerRowsCallable;
@@ -57,6 +61,7 @@ import com.google.cloud.bigtable.gaxx.retrying.ApiResultRetryAlgorithm;
 import com.google.cloud.bigtable.gaxx.tracing.WrappedTracerFactory;
 import java.io.IOException;
 import java.util.List;
+import javax.annotation.Nonnull;
 import org.threeten.bp.Duration;
 
 /**
@@ -363,6 +368,35 @@ public class EnhancedBigtableStub implements AutoCloseable {
   }
 
   /**
+   * Creates a {@link com.google.api.gax.batching.BatcherImpl} to handle {@link
+   * MutateRowsRequest.Entry} mutations. This is meant to be used for automatic batching with flow
+   * control.
+   *
+   * <ul>
+   *   <li>Uses {@link MutateRowsBatchingDescriptorV2} to spool the {@link RowMutationEntry}
+   *       mutations and send them out as {@link BulkMutation}.
+   *   <li>Uses {@link #bulkMutateRowsCallable()} to perform RPC.
+   *   <li>Batching thresholds can be configured from {@link
+   *       EnhancedBigtableStubSettings#bulkMutateRowsSettings()}.
+   *   <li>Process the response and schedule retries. At the end of each attempt, entries that have
+   *       been applied, are filtered from the next attempt. Also, any entries that failed with a
+   *       nontransient error, are filtered from the next attempt. This will continue until there
+   *       are no more entries or there are no more retry attempts left.
+   *   <li>Wrap batch failures in a {@link
+   *       com.google.cloud.bigtable.data.v2.models.MutateRowsException}.
+   *   <li>Split the responses using {@link MutateRowsBatchingDescriptorV2}.
+   * </ul>
+   */
+  public Batcher<RowMutationEntry, Void> newMutateRowsBatcher(@Nonnull String tableId) {
+    return new BatcherImpl<>(
+        settings.bulkMutateRowsSettings().getBatchingDescriptor(),
+        bulkMutateRowsCallable,
+        BulkMutation.create(tableId),
+        settings.bulkMutateRowsSettings().getBatchingSettings(),
+        clientContext.getExecutor());
+  }
+
+  /**
    * Internal helper to create the base MutateRows callable chain. The chain is responsible for
    * retrying individual entry in case of error.
    *
@@ -474,10 +508,8 @@ public class EnhancedBigtableStub implements AutoCloseable {
     return bulkMutateRowsCallable;
   }
 
-  /**
-   * Returns the callable chain created in {@link #createBulkMutateRowsBatchingCallable()} ()}
-   * during stub construction.
-   */
+  /** @deprecated Please use {@link #newMutateRowsBatcher(String)} API. */
+  @Deprecated
   public UnaryCallable<RowMutation, Void> bulkMutateRowsBatchingCallable() {
     return bulkMutateRowsBatchingCallable;
   }
