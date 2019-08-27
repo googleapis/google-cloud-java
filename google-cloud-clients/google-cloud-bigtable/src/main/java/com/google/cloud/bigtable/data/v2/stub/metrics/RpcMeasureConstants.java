@@ -29,7 +29,7 @@ class RpcMeasureConstants {
    * with {@link RpcMeasureConstants#BIGTABLE_OP}, the end user can get a sense how many attempts an
    * operation took.
    */
-  public static final TagKey BIGTABLE_OP = TagKey.create("bigtable_operation");
+  public static final TagKey BIGTABLE_OP = TagKey.create("bigtable_op");
 
   /** Tag key that represents the final status of the Bigtable operation. */
   public static final TagKey BIGTABLE_STATUS = TagKey.create("bigtable_status");
@@ -42,7 +42,7 @@ class RpcMeasureConstants {
 
   static final MeasureDouble BIGTABLE_OP_ROUNDTRIP_LATENCY =
       Measure.MeasureDouble.create(
-          "cloud.google.com/java/bigtable/roundtrip_latency",
+          "cloud.google.com/java/bigtable/operation_latency",
           "Time between request being sent to last row received, "
               + "or terminal error of the last retry attempt.",
           MILLISECOND);
