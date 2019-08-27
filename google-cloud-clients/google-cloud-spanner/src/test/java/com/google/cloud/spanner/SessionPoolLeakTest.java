@@ -35,9 +35,9 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized;
+import org.junit.runners.JUnit4;
 
-@RunWith(Parameterized.class)
+@RunWith(JUnit4.class)
 public class SessionPoolLeakTest {
   private static final StatusRuntimeException FAILED_PRECONDITION =
       io.grpc.Status.FAILED_PRECONDITION
