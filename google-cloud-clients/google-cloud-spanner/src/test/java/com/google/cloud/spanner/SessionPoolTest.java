@@ -39,6 +39,7 @@ import com.google.cloud.spanner.TransactionRunnerImpl.TransactionContextImpl;
 import com.google.cloud.spanner.spi.v1.SpannerRpc;
 import com.google.cloud.spanner.spi.v1.SpannerRpc.ResultStreamConsumer;
 import com.google.common.util.concurrent.ListenableFuture;
+import com.google.common.util.concurrent.SettableFuture;
 import com.google.common.util.concurrent.Uninterruptibles;
 import com.google.protobuf.ByteString;
 import com.google.spanner.v1.CommitRequest;
@@ -626,12 +627,16 @@ public class SessionPoolTest extends BaseSessionPoolTest {
       Session checkedOutSession = pool.getReadSession();
       final Boolean finWrite = write;
       ExecutorService executor = Executors.newFixedThreadPool(1);
+      // Setup a flag that will indicate when the thread will start waiting for a session to prevent
+      // flaky fails if it takes some time before the thread is started.
+      final SettableFuture<Boolean> waitingForSession = SettableFuture.create();
       Future<Void> fut =
           executor.submit(
               new Callable<Void>() {
                 @Override
                 public Void call() throws Exception {
                   Session session;
+                  waitingForSession.set(Boolean.TRUE);
                   if (finWrite) {
                     session = pool.getReadWriteSession();
                   } else {
@@ -642,6 +647,8 @@ public class SessionPoolTest extends BaseSessionPoolTest {
                 }
               });
       try {
+        // Wait until the background thread is actually waiting for a session.
+        waitingForSession.get();
         fut.get(80L, TimeUnit.MILLISECONDS);
         fail("missing expected timeout exception");
       } catch (TimeoutException e) {
