@@ -21,9 +21,6 @@ google-cloud-compute:0.106.0-alpha:0.106.1-alpha-SNAPSHOT
 google-cloud-container:0.106.0-beta:0.106.1-beta-SNAPSHOT
 google-cloud-containeranalysis:0.106.0-beta:0.106.1-beta-SNAPSHOT
 google-cloud-contrib:0.106.0-alpha:0.106.1-alpha-SNAPSHOT
-google-cloud-core:1.88.0:1.88.1-SNAPSHOT
-google-cloud-core-grpc:1.88.0:1.88.1-SNAPSHOT
-google-cloud-core-http:1.88.0:1.88.1-SNAPSHOT
 google-cloud-datacatalog:0.19.0-alpha:0.19.1-alpha-SNAPSHOT
 google-cloud-datalabeling:0.106.0-alpha:0.106.1-alpha-SNAPSHOT
 google-cloud-dataproc:0.106.0:0.106.1-SNAPSHOT
