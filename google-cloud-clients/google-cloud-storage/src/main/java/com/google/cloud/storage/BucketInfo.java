@@ -158,7 +158,6 @@ public class BucketInfo implements Serializable {
           bucketPolicyOnlyLockedTime == null ? null : new DateTime(bucketPolicyOnlyLockedTime));
 
       iamConfiguration.setBucketPolicyOnly(bucketPolicyOnly);
-
       return iamConfiguration;
     }
 

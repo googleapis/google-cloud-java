@@ -453,9 +453,9 @@ public class HttpStorageRpc implements StorageRpc {
     Scope scope = tracer.withSpan(span);
     try {
       String projection = Option.PROJECTION.getString(options);
-
       if (bucket.getIamConfiguration() != null
           && bucket.getIamConfiguration().getBucketPolicyOnly() != null
+          && bucket.getIamConfiguration().getBucketPolicyOnly().getEnabled() != null
           && bucket.getIamConfiguration().getBucketPolicyOnly().getEnabled()) {
         // If BucketPolicyOnly is enabled, patch calls will fail if ACL information is included in
         // the request

@@ -2614,23 +2614,18 @@ public class ITStorageTest {
   public void testEnableAndDisableBucketPolicyOnlyOnExistingBucket() throws Exception {
     String bpoBucket = RemoteStorageHelper.generateBucketName();
     try {
-      BucketInfo.IamConfiguration bpoDisabledIamConfiguration =
-          BucketInfo.IamConfiguration.newBuilder().setIsBucketPolicyOnlyEnabled(false).build();
+      // BPO is disabled by default.
       Bucket bucket =
           storage.create(
               Bucket.newBuilder(bpoBucket)
-                  .setIamConfiguration(bpoDisabledIamConfiguration)
                   .setAcl(ImmutableList.of(Acl.of(User.ofAllAuthenticatedUsers(), Role.READER)))
                   .setDefaultAcl(
                       ImmutableList.of(Acl.of(User.ofAllAuthenticatedUsers(), Role.READER)))
                   .build());
 
-      bucket
-          .toBuilder()
-          .setIamConfiguration(
-              bpoDisabledIamConfiguration.toBuilder().setIsBucketPolicyOnlyEnabled(true).build())
-          .build()
-          .update();
+      BucketInfo.IamConfiguration bpoEnabledIamConfiguration =
+          BucketInfo.IamConfiguration.newBuilder().setIsBucketPolicyOnlyEnabled(true).build();
+      bucket.toBuilder().setIamConfiguration(bpoEnabledIamConfiguration).build().update();
 
       Bucket remoteBucket =
           storage.get(bpoBucket, Storage.BucketGetOption.fields(BucketField.IAMCONFIGURATION));
@@ -2638,7 +2633,12 @@ public class ITStorageTest {
       assertTrue(remoteBucket.getIamConfiguration().isBucketPolicyOnlyEnabled());
       assertNotNull(remoteBucket.getIamConfiguration().getBucketPolicyOnlyLockedTime());
 
-      bucket.toBuilder().setIamConfiguration(bpoDisabledIamConfiguration).build().update();
+      bucket
+          .toBuilder()
+          .setIamConfiguration(
+              bpoEnabledIamConfiguration.toBuilder().setIsBucketPolicyOnlyEnabled(false).build())
+          .build()
+          .update();
 
       remoteBucket =
           storage.get(
