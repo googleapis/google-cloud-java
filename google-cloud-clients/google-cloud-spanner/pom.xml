@@ -147,12 +147,6 @@
     </dependency>
     <dependency>
       <groupId>io.opencensus</groupId>
-      <artifactId>opencensus-impl</artifactId>
-      <version>${opencensus.version}</version>
-      <scope>runtime</scope>
-    </dependency>
-    <dependency>
-      <groupId>io.opencensus</groupId>
       <artifactId>opencensus-contrib-grpc-util</artifactId>
     </dependency>
     <dependency>
