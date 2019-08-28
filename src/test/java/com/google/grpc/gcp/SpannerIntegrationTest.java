@@ -202,7 +202,7 @@ public final class SpannerIntegrationTest {
   @Rule public ExpectedException expectedEx = ExpectedException.none();
 
   @Before
-  public void setupChannel() throws InterruptedException {
+  public void setupChannel() {
     File configFile =
         new File(SpannerIntegrationTest.class.getClassLoader().getResource(API_FILE).getFile());
     gcpChannel =
