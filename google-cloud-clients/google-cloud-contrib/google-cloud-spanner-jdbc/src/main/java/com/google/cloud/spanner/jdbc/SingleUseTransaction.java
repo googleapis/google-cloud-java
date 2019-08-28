@@ -378,6 +378,8 @@ class SingleUseTransaction extends AbstractBaseUnitOfWork {
         }
       } finally {
         if (txManager != null) {
+          // Calling txManager.close() will rollback the transaction if it is still active, i.e. if
+          // an error occurred before the commit() call returned successfully.
           txManager.close();
         }
       }
