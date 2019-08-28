@@ -453,7 +453,6 @@ public class HttpStorageRpc implements StorageRpc {
     Scope scope = tracer.withSpan(span);
     try {
       String projection = Option.PROJECTION.getString(options);
-      System.out.println(bucket.getIamConfiguration());
       if (bucket.getIamConfiguration() != null
           && bucket.getIamConfiguration().getBucketPolicyOnly() != null
           && bucket.getIamConfiguration().getBucketPolicyOnly().getEnabled() != null
