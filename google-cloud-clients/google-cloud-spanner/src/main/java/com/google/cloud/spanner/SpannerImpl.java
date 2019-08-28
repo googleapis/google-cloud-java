@@ -47,7 +47,6 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Random;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executor;
@@ -66,6 +65,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
   private static final Tracer tracer = Tracing.getTracer();
 
   private static final String CREATE_SESSION = "CloudSpannerOperation.CreateSession";
+  private static final String BATCH_CREATE_SESSIONS = "CloudSpannerOperation.BatchCreateSessions";
   static final String DELETE_SESSION = "CloudSpannerOperation.DeleteSession";
   static final String BEGIN_TRANSACTION = "CloudSpannerOperation.BeginTransaction";
   static final String COMMIT = "CloudSpannerOperation.Commit";
@@ -76,7 +76,6 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     TraceUtil.exportSpans(CREATE_SESSION, DELETE_SESSION, BEGIN_TRANSACTION, COMMIT, QUERY, READ);
   }
 
-  private final Random random = new Random();
   private final SpannerRpc gapicRpc;
 
   @GuardedBy("this")
@@ -164,9 +163,8 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     return getOptions().getPrefetchChunks();
   }
 
-  SessionImpl createSession(final DatabaseId db) throws SpannerException {
-    final Map<SpannerRpc.Option, ?> options =
-        optionMap(SessionOption.channelHint(random.nextLong()));
+  SessionImpl createSession(final DatabaseId db, int channel) throws SpannerException {
+    final Map<SpannerRpc.Option, ?> options = optionMap(SessionOption.channelHint(channel));
     Span span = tracer.spanBuilder(CREATE_SESSION).startSpan();
     try (Scope s = tracer.withSpan(span)) {
       com.google.spanner.v1.Session session =
@@ -179,9 +177,29 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     }
   }
 
-  SessionImpl sessionWithId(String name) {
+  List<SessionImpl> batchCreateSessions(final DatabaseId db, final int sessionCount, int channel)
+      throws SpannerException {
+    final Map<SpannerRpc.Option, ?> options = optionMap(SessionOption.channelHint(channel));
+    Span span = tracer.spanBuilder(BATCH_CREATE_SESSIONS).startSpan();
+    try (Scope s = tracer.withSpan(span)) {
+      List<com.google.spanner.v1.Session> sessions =
+          gapicRpc.batchCreateSessions(
+              db.getName(), sessionCount, getOptions().getSessionLabels(), options);
+      span.end();
+      List<SessionImpl> res = new ArrayList<>(sessionCount);
+      for (com.google.spanner.v1.Session session : sessions) {
+        res.add(new SessionImpl(this, session.getName(), options));
+      }
+      return res;
+    } catch (RuntimeException e) {
+      TraceUtil.endSpanWithFailure(span, e);
+      throw e;
+    }
+  }
+
+  SessionImpl sessionWithId(String name, int channel) {
     final Map<SpannerRpc.Option, ?> options =
-        SpannerImpl.optionMap(SessionOption.channelHint(random.nextLong()));
+        SpannerImpl.optionMap(SessionOption.channelHint(channel));
     return new SessionImpl(this, name, options);
   }
 

@@ -41,6 +41,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameter;
 import org.junit.runners.Parameterized.Parameters;
+import org.mockito.Mockito;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
 
@@ -70,6 +71,7 @@ public class SessionPoolStressTest extends BaseSessionPoolTest {
   Map<String, Exception> closedSessions = new HashMap<>();
   Set<String> expiredSessions = new HashSet<>();
   SpannerImpl mockSpanner;
+  SpannerOptions spannerOptions;
   int maxAliveSessions;
   int minSessionsWhenSessionClosed = Integer.MAX_VALUE;
   Exception e;
@@ -86,7 +88,10 @@ public class SessionPoolStressTest extends BaseSessionPoolTest {
 
   private void setupSpanner(DatabaseId db) {
     mockSpanner = mock(SpannerImpl.class);
-    when(mockSpanner.createSession(db))
+    spannerOptions = mock(SpannerOptions.class);
+    when(mockSpanner.getOptions()).thenReturn(spannerOptions);
+    when(spannerOptions.getNumChannels()).thenReturn(4);
+    when(mockSpanner.createSession(Mockito.eq(db), Mockito.anyInt()))
         .thenAnswer(
             new Answer<Session>() {
 

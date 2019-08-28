@@ -1072,6 +1072,9 @@ final class SessionPool {
   @GuardedBy("lock")
   private final Set<PooledSession> allSessions = new HashSet<>();
 
+  @GuardedBy("lock")
+  private int sessionChannelCounter = 0;
+
   /**
    * Create a session pool with the given options and for the given database. It will also start
    * eagerly creating sessions if {@link SessionPoolOptions#getMinSessions()} is greater than 0.
@@ -1578,13 +1581,14 @@ final class SessionPool {
     logger.log(Level.FINE, "Creating session");
     synchronized (lock) {
       numSessionsBeingCreated++;
+      final int channel = sessionChannelCounter;
       executor.submit(
           new Runnable() {
             @Override
             public void run() {
               SessionImpl session = null;
               try {
-                session = spanner.createSession(db);
+                session = spanner.createSession(db, channel);
                 logger.log(Level.FINE, "Session created");
               } catch (Throwable t) {
                 // Expose this to customer via a metric.
@@ -1615,6 +1619,7 @@ final class SessionPool {
               }
             }
           });
+      sessionChannelCounter = (sessionChannelCounter + 1) % spanner.getOptions().getNumChannels();
     }
   }
 }

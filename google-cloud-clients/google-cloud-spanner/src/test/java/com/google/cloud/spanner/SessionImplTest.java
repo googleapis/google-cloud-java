@@ -74,6 +74,7 @@ public class SessionImplTest {
   @Before
   public void setUp() {
     MockitoAnnotations.initMocks(this);
+    when(spannerOptions.getNumChannels()).thenReturn(4);
     when(spannerOptions.getPrefetchChunks()).thenReturn(1);
     when(spannerOptions.getRetrySettings()).thenReturn(RetrySettings.newBuilder().build());
     when(spannerOptions.getClock()).thenReturn(NanoClock.getDefaultClock());
@@ -101,7 +102,7 @@ public class SessionImplTest {
             .build();
     Mockito.when(rpc.commit(Mockito.any(CommitRequest.class), Mockito.any(Map.class)))
         .thenReturn(commitResponse);
-    session = spanner.createSession(db);
+    session = spanner.createSession(db, 0);
     // We expect the same options, "options", on all calls on "session".
     options = optionsCaptor.getValue();
   }

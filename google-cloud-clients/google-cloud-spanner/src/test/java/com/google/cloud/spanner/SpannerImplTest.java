@@ -52,6 +52,7 @@ public class SpannerImplTest {
   @Before
   public void setUp() {
     MockitoAnnotations.initMocks(this);
+    when(spannerOptions.getNumChannels()).thenReturn(4);
     when(spannerOptions.getPrefetchChunks()).thenReturn(1);
     when(spannerOptions.getRetrySettings()).thenReturn(RetrySettings.newBuilder().build());
     when(spannerOptions.getClock()).thenReturn(NanoClock.getDefaultClock());
@@ -74,7 +75,7 @@ public class SpannerImplTest {
             .build();
     Mockito.when(rpc.createSession(Mockito.eq(dbName), Mockito.eq(labels), options.capture()))
         .thenReturn(sessionProto);
-    Session session = impl.createSession(db);
+    Session session = impl.createSession(db, 0);
     assertThat(session.getName()).isEqualTo(sessionName);
 
     session.close();
