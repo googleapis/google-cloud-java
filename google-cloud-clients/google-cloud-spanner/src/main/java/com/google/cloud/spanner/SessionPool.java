@@ -1044,10 +1044,10 @@ final class SessionPool {
   private SettableFuture<Void> closureFuture;
 
   @GuardedBy("lock")
-  private final Queue<PooledSession> readSessions = new LinkedList<>();
+  private final LinkedList<PooledSession> readSessions = new LinkedList<>();
 
   @GuardedBy("lock")
-  private final Queue<PooledSession> writePreparedSessions = new LinkedList<>();
+  private final LinkedList<PooledSession> writePreparedSessions = new LinkedList<>();
 
   @GuardedBy("lock")
   private final Queue<Waiter> readWaiters = new LinkedList<>();
@@ -1379,7 +1379,7 @@ final class SessionPool {
         if (shouldPrepareSession()) {
           prepareSession(session);
         } else {
-          readSessions.add(session);
+          readSessions.addFirst(session);
         }
       } else if (shouldUnblockReader()) {
         readWaiters.poll().put(session);

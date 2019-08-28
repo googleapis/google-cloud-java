@@ -133,6 +133,31 @@ public class SessionPoolTest extends BaseSessionPoolTest {
   }
 
   @Test
+  public void poolLifo() {
+    setupMockSessionCreation();
+    pool = createPool();
+    Session session1 = pool.getReadSession();
+    Session session2 = pool.getReadSession();
+    assertThat(session1).isNotEqualTo(session2);
+
+    session2.close();
+    session1.close();
+    Session session3 = pool.getReadSession();
+    Session session4 = pool.getReadSession();
+    assertThat(session3).isEqualTo(session1);
+    assertThat(session4).isEqualTo(session2);
+    session3.close();
+    session4.close();
+
+    Session session5 = pool.getReadWriteSession();
+    Session session6 = pool.getReadWriteSession();
+    assertThat(session5).isEqualTo(session4);
+    assertThat(session6).isEqualTo(session3);
+    session6.close();
+    session5.close();
+  }
+
+  @Test
   public void poolClosure() throws Exception {
     setupMockSessionCreation();
     pool = createPool();
