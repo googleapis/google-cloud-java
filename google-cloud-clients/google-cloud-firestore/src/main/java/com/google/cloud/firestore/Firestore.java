@@ -119,17 +119,18 @@ public interface Firestore extends Service<FirestoreOptions>, AutoCloseable {
       @Nonnull DocumentReference[] documentReferences, @Nullable FieldMask fieldMask);
 
   /**
-   * Retrieves multiple documents from Firestore, while optionally applying a field mask to reduce
-   * the amount of data transmitted.
+   * Retrieves multiple documents from Firestore while optionally applying a field mask to reduce
+   * the amount of data transmitted. Returned documents will be out of order and missing documents
+   * will not be returned.
    *
    * @param documentReferences Array with Document References to fetch.
-   * @param responseObserver ApiStreamObserver of DocumentSnapshot
    * @param fieldMask If set, specifies the subset of fields to return.
+   * @param responseObserver ApiStreamObserver of DocumentSnapshot
    */
   void getAll(
+      @Nonnull DocumentReference[] documentReferences,
       @Nullable FieldMask fieldMask,
-      final ApiStreamObserver<DocumentSnapshot> responseObserver,
-      DocumentReference... documentReferences);
+      final ApiStreamObserver<DocumentSnapshot> responseObserver);
 
   /**
    * Gets a Firestore {@link WriteBatch} instance that can be used to combine multiple writes.

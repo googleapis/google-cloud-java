@@ -29,6 +29,7 @@ import static org.junit.Assert.fail;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
+import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.rpc.ApiStreamObserver;
 import com.google.cloud.Timestamp;
 import com.google.cloud.firestore.CollectionReference;
@@ -77,7 +78,6 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import javax.annotation.Nullable;
 import org.junit.After;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -1335,9 +1335,18 @@ public class ITSystemTest {
     DocumentReference ref = randomColl.document("doc1");
     ref.set(ALL_SUPPORTED_TYPES_MAP).get();
 
+    DocumentReference ref1 = randomColl.document("doc2");
+    ref1.set(ALL_SUPPORTED_TYPES_MAP).get();
+
+    DocumentReference ref2 = randomColl.document("doc3");
+    ref2.set(ALL_SUPPORTED_TYPES_MAP).get();
+    ref2.delete();
+
     final List<DocumentSnapshot> documentSnapshots = new ArrayList<>();
-    final DocumentReference[] documentReferences = {ref};
+    final DocumentReference[] documentReferences = {ref, ref1, ref2};
+    final SettableApiFuture<Void> future = SettableApiFuture.create();
     firestore.getAll(
+        documentReferences,
         FieldMask.of("foo"),
         new ApiStreamObserver<DocumentSnapshot>() {
 
@@ -1348,40 +1357,26 @@ public class ITSystemTest {
 
           @Override
           public void onError(Throwable throwable) {
-            Assert.fail("Error occurred while streaming");
+            future.setException(throwable);
           }
 
           @Override
-          public void onCompleted() {}
-        },
-        documentReferences);
-    Thread.sleep(1000);
-    assertEquals(map("foo", "bar"), documentSnapshots.get(0).getData());
-  }
-
-  @Test
-  public void getWithObserver() throws Exception {
-    final DocumentReference ref = randomColl.document("doc1");
-    final List<DocumentSnapshot> documentSnapshots = new ArrayList<>();
-    ref.set(ALL_SUPPORTED_TYPES_MAP).get();
-    ApiStreamObserver responseObserver =
-        new ApiStreamObserver<DocumentSnapshot>() {
-
-          @Override
-          public void onNext(DocumentSnapshot documentSnapshot) {
-            documentSnapshots.add(documentSnapshot);
+          public void onCompleted() {
+            future.set(null);
           }
+        });
 
-          @Override
-          public void onError(Throwable throwable) {
-            Assert.fail("Error occurred while streaming");
-          }
+    future.get();
 
-          @Override
-          public void onCompleted() {}
-        };
-    ref.get(FieldMask.of("foo"), responseObserver, ref);
-    Thread.sleep(1000);
-    assertEquals(map("foo", "bar"), documentSnapshots.get(0).getData());
+    if (null != documentSnapshots && documentSnapshots.size() > 0) {
+      for (DocumentSnapshot documentSnapshot : documentSnapshots) {
+        if (null != documentSnapshot.getData()) {
+          assertEquals(map("foo", "bar"), documentSnapshot.getData());
+        } else {
+          assertFalse(documentSnapshot.exists());
+        }
+      }
+    }
+    assertEquals(3, documentSnapshots.size());
   }
 }

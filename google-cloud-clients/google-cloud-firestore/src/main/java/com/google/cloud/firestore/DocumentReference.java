@@ -21,7 +21,6 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.ApiExceptions;
-import com.google.api.gax.rpc.ApiStreamObserver;
 import com.google.cloud.firestore.v1.FirestoreClient.ListCollectionIdsPagedResponse;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.firestore.v1.ListCollectionIdsRequest;
@@ -353,15 +352,6 @@ public class DocumentReference {
   @Nonnull
   public ApiFuture<DocumentSnapshot> get() {
     return extractFirst(firestore.getAll(this));
-  }
-
-  /** Fetches the document reference in the form of the stream inside apiStreamObserver */
-  @Nonnull
-  public void get(
-      @Nullable FieldMask fieldMask,
-      ApiStreamObserver<DocumentSnapshot> responseObserver,
-      DocumentReference documentReference) {
-    firestore.getAll(fieldMask, responseObserver, documentReference);
   }
 
   /**

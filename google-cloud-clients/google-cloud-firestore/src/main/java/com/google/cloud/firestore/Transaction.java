@@ -137,7 +137,8 @@ public final class Transaction extends UpdateBuilder<Transaction> {
     Preconditions.checkState(isEmpty(), READ_BEFORE_WRITE_ERROR_MSG);
 
     return ApiFutures.transform(
-        firestore.getAll(new DocumentReference[] {documentRef}, /*fieldMask=*/ null, transactionId),
+        firestore.getAll(
+            new DocumentReference[] {documentRef}, /*fieldMask=*/ null, transactionId, null),
         new ApiFunction<List<DocumentSnapshot>, DocumentSnapshot>() {
           @Override
           public DocumentSnapshot apply(List<DocumentSnapshot> snapshots) {
@@ -158,7 +159,7 @@ public final class Transaction extends UpdateBuilder<Transaction> {
       @Nonnull DocumentReference... documentReferences) {
     Preconditions.checkState(isEmpty(), READ_BEFORE_WRITE_ERROR_MSG);
 
-    return firestore.getAll(documentReferences, /*fieldMask=*/ null, transactionId);
+    return firestore.getAll(documentReferences, /*fieldMask=*/ null, transactionId, null);
   }
 
   /**
@@ -174,7 +175,7 @@ public final class Transaction extends UpdateBuilder<Transaction> {
       @Nonnull DocumentReference[] documentReferences, @Nullable FieldMask fieldMask) {
     Preconditions.checkState(isEmpty(), READ_BEFORE_WRITE_ERROR_MSG);
 
-    return firestore.getAll(documentReferences, fieldMask, transactionId);
+    return firestore.getAll(documentReferences, fieldMask, transactionId, null);
   }
 
   /**
