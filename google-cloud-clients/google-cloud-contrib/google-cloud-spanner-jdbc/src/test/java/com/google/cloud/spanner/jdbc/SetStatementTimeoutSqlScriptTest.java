@@ -16,6 +16,7 @@
 
 package com.google.cloud.spanner.jdbc;
 
+import com.google.cloud.NoCredentials;
 import com.google.cloud.spanner.jdbc.AbstractSqlScriptVerifier.GenericConnection;
 import com.google.cloud.spanner.jdbc.AbstractSqlScriptVerifier.GenericConnectionProvider;
 import com.google.cloud.spanner.jdbc.SqlScriptVerifier.SpannerGenericConnection;
@@ -31,7 +32,10 @@ public class SetStatementTimeoutSqlScriptTest {
     public GenericConnection getConnection() {
       return SpannerGenericConnection.of(
           ConnectionImplTest.createConnection(
-              ConnectionOptions.newBuilder().setUri(ConnectionImplTest.URI).build()));
+              ConnectionOptions.newBuilder()
+                  .setUri(ConnectionImplTest.URI)
+                  .setCredentials(NoCredentials.getInstance())
+                  .build()));
     }
   }
 
