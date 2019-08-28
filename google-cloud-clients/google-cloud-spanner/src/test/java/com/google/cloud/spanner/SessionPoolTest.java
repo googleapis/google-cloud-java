@@ -157,12 +157,12 @@ public class SessionPoolTest extends BaseSessionPoolTest {
     session3.close();
     session4.close();
 
-    Session rw1 = pool.getReadWriteSession();
-    Session rw2 = pool.getReadWriteSession();
-    assertThat(rw1).isEqualTo(session4);
-    assertThat(rw2).isEqualTo(session3);
-    rw2.close();
-    rw1.close();
+    Session session5 = pool.getReadWriteSession();
+    Session session6 = pool.getReadWriteSession();
+    assertThat(session5).isEqualTo(session4);
+    assertThat(session6).isEqualTo(session3);
+    session6.close();
+    session5.close();
   }
 
   @Test
