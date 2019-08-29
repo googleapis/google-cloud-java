@@ -119,7 +119,7 @@ public class SessionPoolTest extends BaseSessionPoolTest {
   }
 
   private void setupMockSessionCreation() {
-    when(client.createSession(Mockito.eq(db), Mockito.anyInt()))
+    when(client.createSession(db))
         .thenAnswer(
             new Answer<Session>() {
 
@@ -175,9 +175,7 @@ public class SessionPoolTest extends BaseSessionPoolTest {
   public void poolClosureClosesLeakedSessions() throws Exception {
     SessionImpl mockSession1 = mockSession();
     SessionImpl mockSession2 = mockSession();
-    when(client.createSession(Mockito.eq(db), Mockito.anyInt()))
-        .thenReturn(mockSession1)
-        .thenReturn(mockSession2);
+    when(client.createSession(db)).thenReturn(mockSession1).thenReturn(mockSession2);
     pool = createPool();
     Session session1 = pool.getReadSession();
     // Leaked sessions
@@ -216,7 +214,7 @@ public class SessionPoolTest extends BaseSessionPoolTest {
     final CountDownLatch releaseCreation = new CountDownLatch(1);
     SessionImpl session1 = mockSession();
     final Session session2 = mockSession();
-    when(client.createSession(Mockito.eq(db), Mockito.anyInt()))
+    when(client.createSession(db))
         .thenReturn(session1)
         .thenAnswer(
             new Answer<Session>() {
@@ -245,7 +243,7 @@ public class SessionPoolTest extends BaseSessionPoolTest {
     final CountDownLatch releaseCreation = new CountDownLatch(1);
     SessionImpl session1 = mockSession();
     final Session session2 = mockSession();
-    when(client.createSession(Mockito.eq(db), Mockito.anyInt()))
+    when(client.createSession(db))
         .thenReturn(session1)
         .thenAnswer(
             new Answer<Session>() {
@@ -272,7 +270,7 @@ public class SessionPoolTest extends BaseSessionPoolTest {
   public void poolClosesEvenIfCreationFails() throws Exception {
     final CountDownLatch insideCreation = new CountDownLatch(1);
     final CountDownLatch releaseCreation = new CountDownLatch(1);
-    when(client.createSession(Mockito.eq(db), Mockito.anyInt()))
+    when(client.createSession(db))
         .thenAnswer(
             new Answer<Session>() {
               @Override
@@ -296,7 +294,7 @@ public class SessionPoolTest extends BaseSessionPoolTest {
   @Test
   public void poolClosesEvenIfPreparationFails() throws Exception {
     SessionImpl session = mockSession();
-    when(client.createSession(Mockito.eq(db), Mockito.anyInt())).thenReturn(session);
+    when(client.createSession(db)).thenReturn(session);
     final CountDownLatch insidePrepare = new CountDownLatch(1);
     final CountDownLatch releasePrepare = new CountDownLatch(1);
     doAnswer(
@@ -324,34 +322,12 @@ public class SessionPoolTest extends BaseSessionPoolTest {
   @Test
   public void poolClosureFailsNewRequests() throws Exception {
     SessionImpl session = mockSession();
-    when(client.createSession(Mockito.eq(db), Mockito.anyInt())).thenReturn(session);
+    when(client.createSession(db)).thenReturn(session);
     pool = createPool();
     pool.getReadSession();
     pool.closeAsync();
     expectedException.expect(IllegalStateException.class);
     pool.getReadSession();
-  }
-
-  @Test
-  public void poolUsesAllChannels() {
-    SessionImpl session = mockSession();
-    when(client.createSession(Mockito.eq(db), Mockito.anyInt())).thenReturn(session);
-    pool =
-        createPool(
-            SessionPoolOptions.newBuilder()
-                .setMinSessions(minSessions)
-                .setMaxSessions(spannerOptions.getNumChannels() * 2)
-                .build());
-    List<Session> sessions = new ArrayList<>();
-    for (int i = 0; i < spannerOptions.getNumChannels() * 2; i++) {
-      sessions.add(pool.getReadSession());
-    }
-    for (int i = 0; i < spannerOptions.getNumChannels(); i++) {
-      verify(client, times(2)).createSession(db, i);
-    }
-    for (Session s : sessions) {
-      s.close();
-    }
   }
 
   @Test
@@ -365,14 +341,13 @@ public class SessionPoolTest extends BaseSessionPoolTest {
       getSessionAsync(latch, failed);
     }
     Uninterruptibles.awaitUninterruptibly(latch);
-    verify(client, atMost(options.getMaxSessions()))
-        .createSession(Mockito.eq(db), Mockito.anyInt());
+    verify(client, atMost(options.getMaxSessions())).createSession(db);
     assertThat(failed.get()).isFalse();
   }
 
   @Test
   public void creationExceptionPropagatesToReadSession() {
-    when(client.createSession(Mockito.eq(db), Mockito.anyInt()))
+    when(client.createSession(db))
         .thenThrow(SpannerExceptionFactory.newSpannerException(ErrorCode.INTERNAL, ""));
     pool = createPool();
     expectedException.expect(isSpannerException(ErrorCode.INTERNAL));
@@ -381,7 +356,7 @@ public class SessionPoolTest extends BaseSessionPoolTest {
 
   @Test
   public void creationExceptionPropagatesToReadWriteSession() {
-    when(client.createSession(Mockito.eq(db), Mockito.anyInt()))
+    when(client.createSession(db))
         .thenThrow(SpannerExceptionFactory.newSpannerException(ErrorCode.INTERNAL, ""));
     pool = createPool();
     expectedException.expect(isSpannerException(ErrorCode.INTERNAL));
@@ -391,7 +366,7 @@ public class SessionPoolTest extends BaseSessionPoolTest {
   @Test
   public void prepareExceptionPropagatesToReadWriteSession() {
     SessionImpl session = mockSession();
-    when(client.createSession(Mockito.eq(db), Mockito.anyInt())).thenReturn(session);
+    when(client.createSession(db)).thenReturn(session);
     doThrow(SpannerExceptionFactory.newSpannerException(ErrorCode.INTERNAL, ""))
         .when(session)
         .prepareReadWriteTransaction();
@@ -403,7 +378,7 @@ public class SessionPoolTest extends BaseSessionPoolTest {
   @Test
   public void getReadWriteSession() {
     SessionImpl mockSession = mockSession();
-    when(client.createSession(Mockito.eq(db), Mockito.anyInt())).thenReturn(mockSession);
+    when(client.createSession(db)).thenReturn(mockSession);
     pool = createPool();
     try (Session session = pool.getReadWriteSession()) {
       assertThat(session).isNotNull();
@@ -415,9 +390,7 @@ public class SessionPoolTest extends BaseSessionPoolTest {
   public void getMultipleReadWriteSessions() {
     SessionImpl mockSession1 = mockSession();
     SessionImpl mockSession2 = mockSession();
-    when(client.createSession(Mockito.eq(db), Mockito.anyInt()))
-        .thenReturn(mockSession1)
-        .thenReturn(mockSession2);
+    when(client.createSession(db)).thenReturn(mockSession1).thenReturn(mockSession2);
     pool = createPool();
     Session session1 = pool.getReadWriteSession();
     Session session2 = pool.getReadWriteSession();
@@ -431,7 +404,7 @@ public class SessionPoolTest extends BaseSessionPoolTest {
   public void getMultipleConcurrentReadWriteSessions() {
     AtomicBoolean failed = new AtomicBoolean(false);
     SessionImpl session = mockSession();
-    when(client.createSession(Mockito.eq(db), Mockito.anyInt())).thenReturn(session);
+    when(client.createSession(db)).thenReturn(session);
     pool = createPool();
     int numSessions = 5;
     final CountDownLatch latch = new CountDownLatch(numSessions);
@@ -468,9 +441,7 @@ public class SessionPoolTest extends BaseSessionPoolTest {
             })
         .when(mockSession2)
         .prepareReadWriteTransaction();
-    when(client.createSession(Mockito.eq(db), Mockito.anyInt()))
-        .thenReturn(mockSession1)
-        .thenReturn(mockSession2);
+    when(client.createSession(db)).thenReturn(mockSession1).thenReturn(mockSession2);
 
     options =
         SessionPoolOptions.newBuilder()
@@ -503,7 +474,7 @@ public class SessionPoolTest extends BaseSessionPoolTest {
             })
         .when(mockSession1)
         .prepareReadWriteTransaction();
-    when(client.createSession(Mockito.eq(db), Mockito.anyInt())).thenReturn(mockSession1);
+    when(client.createSession(db)).thenReturn(mockSession1);
     options =
         SessionPoolOptions.newBuilder()
             .setMinSessions(minSessions)
@@ -527,7 +498,7 @@ public class SessionPoolTest extends BaseSessionPoolTest {
             .setFailIfPoolExhausted()
             .build();
     SessionImpl mockSession = mockSession();
-    when(client.createSession(Mockito.eq(db), Mockito.anyInt())).thenReturn(mockSession);
+    when(client.createSession(db)).thenReturn(mockSession);
     pool = createPool();
     Session session1 = pool.getReadSession();
     expectedException.expect(isSpannerException(ErrorCode.RESOURCE_EXHAUSTED));
@@ -545,9 +516,7 @@ public class SessionPoolTest extends BaseSessionPoolTest {
     doThrow(SpannerExceptionFactory.newSpannerException(ErrorCode.NOT_FOUND, "Session not found"))
         .when(mockSession1)
         .prepareReadWriteTransaction();
-    when(client.createSession(Mockito.eq(db), Mockito.anyInt()))
-        .thenReturn(mockSession1)
-        .thenReturn(mockSession2);
+    when(client.createSession(db)).thenReturn(mockSession1).thenReturn(mockSession2);
     pool = createPool();
     assertThat(pool.getReadWriteSession().delegate).isEqualTo(mockSession2);
   }
@@ -564,10 +533,7 @@ public class SessionPoolTest extends BaseSessionPoolTest {
     SessionImpl session2 = mockSession();
     SessionImpl session3 = mockSession();
     final AtomicInteger numSessionClosed = new AtomicInteger();
-    when(client.createSession(Mockito.eq(db), Mockito.anyInt()))
-        .thenReturn(session1)
-        .thenReturn(session2)
-        .thenReturn(session3);
+    when(client.createSession(db)).thenReturn(session1).thenReturn(session2).thenReturn(session3);
     for (Session session : new Session[] {session1, session2, session3}) {
       doAnswer(
               new Answer<Void>() {
@@ -616,7 +582,7 @@ public class SessionPoolTest extends BaseSessionPoolTest {
     mockKeepAlive(session);
     // This is cheating as we are returning the same session each but it makes the verification
     // easier.
-    when(client.createSession(Mockito.eq(db), Mockito.anyInt())).thenReturn(session);
+    when(client.createSession(db)).thenReturn(session);
     FakeClock clock = new FakeClock();
     clock.currentTimeMillis = System.currentTimeMillis();
     pool = createPool(clock);
@@ -647,7 +613,7 @@ public class SessionPoolTest extends BaseSessionPoolTest {
             .setInitialWaitForSessionTimeoutMillis(40L)
             .build();
     SessionImpl mockSession = mockSession();
-    when(client.createSession(Mockito.eq(db), Mockito.anyInt())).thenReturn(mockSession);
+    when(client.createSession(db)).thenReturn(mockSession);
     pool = createPool();
 
     // Try to take a read or a read/write session. These requests should block.
@@ -715,8 +681,7 @@ public class SessionPoolTest extends BaseSessionPoolTest {
     when(openContext.executeQuery(statement)).thenReturn(openResultSet);
     when(openSession.singleUse()).thenReturn(openContext);
 
-    when(client.createSession(Mockito.eq(db), Mockito.anyInt()))
-        .thenReturn(closedSession, openSession);
+    when(client.createSession(db)).thenReturn(closedSession, openSession);
     FakeClock clock = new FakeClock();
     clock.currentTimeMillis = System.currentTimeMillis();
     pool = createPool(clock);
@@ -740,8 +705,7 @@ public class SessionPoolTest extends BaseSessionPoolTest {
     when(openTransaction.executeQuery(statement)).thenReturn(openResultSet);
     when(openSession.readOnlyTransaction()).thenReturn(openTransaction);
 
-    when(client.createSession(Mockito.eq(db), Mockito.anyInt()))
-        .thenReturn(closedSession, openSession);
+    when(client.createSession(db)).thenReturn(closedSession, openSession);
     FakeClock clock = new FakeClock();
     clock.currentTimeMillis = System.currentTimeMillis();
     pool = createPool(clock);
@@ -817,8 +781,7 @@ public class SessionPoolTest extends BaseSessionPoolTest {
         when(openTransactionContext.batchUpdate(Arrays.asList(updateStatement, updateStatement)))
             .thenReturn(new long[] {1L, 1L});
 
-        when(client.createSession(Mockito.eq(db), Mockito.anyInt()))
-            .thenReturn(closedSession, openSession);
+        when(client.createSession(db)).thenReturn(closedSession, openSession);
         FakeClock clock = new FakeClock();
         clock.currentTimeMillis = System.currentTimeMillis();
         SessionPoolOptions options =
@@ -913,8 +876,7 @@ public class SessionPoolTest extends BaseSessionPoolTest {
     when(openSession.getName())
         .thenReturn("projects/dummy/instances/dummy/database/dummy/sessions/session-open");
 
-    when(client.createSession(Mockito.eq(db), Mockito.anyInt()))
-        .thenReturn(closedSession, openSession);
+    when(client.createSession(db)).thenReturn(closedSession, openSession);
     FakeClock clock = new FakeClock();
     clock.currentTimeMillis = System.currentTimeMillis();
     pool = createPool(clock);
@@ -933,8 +895,7 @@ public class SessionPoolTest extends BaseSessionPoolTest {
     SessionImpl openSession = mockSession();
     when(openSession.write(mutations)).thenReturn(Timestamp.now());
 
-    when(client.createSession(Mockito.eq(db), Mockito.anyInt()))
-        .thenReturn(closedSession, openSession);
+    when(client.createSession(db)).thenReturn(closedSession, openSession);
     FakeClock clock = new FakeClock();
     clock.currentTimeMillis = System.currentTimeMillis();
     pool = createPool(clock);
@@ -953,8 +914,7 @@ public class SessionPoolTest extends BaseSessionPoolTest {
     SessionImpl openSession = mockSession();
     when(openSession.writeAtLeastOnce(mutations)).thenReturn(Timestamp.now());
 
-    when(client.createSession(Mockito.eq(db), Mockito.anyInt()))
-        .thenReturn(closedSession, openSession);
+    when(client.createSession(db)).thenReturn(closedSession, openSession);
     FakeClock clock = new FakeClock();
     clock.currentTimeMillis = System.currentTimeMillis();
     pool = createPool(clock);
@@ -973,8 +933,7 @@ public class SessionPoolTest extends BaseSessionPoolTest {
     SessionImpl openSession = mockSession();
     when(openSession.executePartitionedUpdate(statement)).thenReturn(1L);
 
-    when(client.createSession(Mockito.eq(db), Mockito.anyInt()))
-        .thenReturn(closedSession, openSession);
+    when(client.createSession(db)).thenReturn(closedSession, openSession);
     FakeClock clock = new FakeClock();
     clock.currentTimeMillis = System.currentTimeMillis();
     pool = createPool(clock);

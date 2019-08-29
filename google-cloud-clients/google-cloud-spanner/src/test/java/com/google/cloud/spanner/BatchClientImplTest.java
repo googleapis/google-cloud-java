@@ -19,9 +19,6 @@ package com.google.cloud.spanner;
 import static com.google.common.truth.Truth.assertThat;
 import static org.mockito.Mockito.anyMap;
 import static org.mockito.Mockito.eq;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.times;
-import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 import static org.mockito.MockitoAnnotations.initMocks;
 
@@ -34,7 +31,6 @@ import com.google.protobuf.util.Timestamps;
 import com.google.spanner.v1.BeginTransactionRequest;
 import com.google.spanner.v1.Session;
 import com.google.spanner.v1.Transaction;
-import java.text.ParseException;
 import java.util.Map;
 import org.junit.Before;
 import org.junit.Test;
@@ -107,51 +103,5 @@ public final class BatchClientImplTest {
     assertThat(batchTxn.getReadTimestamp()).isEqualTo(t);
     assertThat(batchTxn.getReadTimestamp())
         .isEqualTo(batchTxn.getBatchTransactionId().getTimestamp());
-  }
-
-  @Test
-  public void testBatchClientWithBoundUsesAllChannels() throws ParseException {
-    com.google.protobuf.Timestamp timestamp = Timestamps.parse(TIMESTAMP);
-    Transaction txnMetadata =
-        Transaction.newBuilder().setId(TXN_ID).setReadTimestamp(timestamp).build();
-    when(spannerOptions.getSpannerRpcV1()).thenReturn(gapicRpc);
-    when(gapicRpc.beginTransaction(Mockito.<BeginTransactionRequest>any(), optionsCaptor.capture()))
-        .thenReturn(txnMetadata);
-    Session session = Session.newBuilder().setName(SESSION_NAME).build();
-    when(gapicRpc.createSession(Mockito.eq(DB_NAME), Mockito.anyMap(), Mockito.anyMap()))
-        .thenReturn(session);
-    DatabaseId db = DatabaseId.of(DB_NAME);
-    SpannerImpl spanner = new SpannerImpl(gapicRpc, spannerOptions);
-
-    BatchClientImpl client = new BatchClientImpl(db, spanner);
-    for (int i = 0; i < spannerOptions.getNumChannels() * 2; i++) {
-      client.batchReadOnlyTransaction(TimestampBound.strong());
-    }
-    for (int channel = 0; channel < spannerOptions.getNumChannels() * 2; channel++) {
-      assertThat(optionsCaptor.getAllValues().size()).isAtLeast(channel + 1);
-      assertThat(optionsCaptor.getAllValues().get(channel).get(SpannerRpc.Option.CHANNEL_HINT))
-          .isEqualTo(channel % spannerOptions.getNumChannels());
-    }
-  }
-
-  @Test
-  public void testBatchClientWithTxnIdUsesAllChannels() throws ParseException {
-    when(txnID.getSessionId()).thenReturn(SESSION_NAME);
-    when(txnID.getTransactionId()).thenReturn(TXN_ID);
-    Timestamp t = Timestamp.parseTimestamp(TIMESTAMP);
-    when(txnID.getTimestamp()).thenReturn(t);
-
-    DatabaseId db = DatabaseId.of(DB_NAME);
-    SpannerImpl spanner = mock(SpannerImpl.class);
-    when(spanner.getOptions()).thenReturn(spannerOptions);
-    SessionImpl session = mock(SessionImpl.class);
-    when(spanner.sessionWithId(Mockito.eq(SESSION_NAME), Mockito.anyInt())).thenReturn(session);
-    BatchClientImpl client = new BatchClientImpl(db, spanner);
-    for (int i = 0; i < spannerOptions.getNumChannels() * 2; i++) {
-      client.batchReadOnlyTransaction(txnID);
-    }
-    for (int channel = 0; channel < spannerOptions.getNumChannels(); channel++) {
-      verify(spanner, times(2)).sessionWithId(SESSION_NAME, channel);
-    }
   }
 }

@@ -102,7 +102,7 @@ public class SessionImplTest {
             .build();
     Mockito.when(rpc.commit(Mockito.any(CommitRequest.class), Mockito.any(Map.class)))
         .thenReturn(commitResponse);
-    session = spanner.createSession(db, 0);
+    session = spanner.createSession(db);
     // We expect the same options, "options", on all calls on "session".
     options = optionsCaptor.getValue();
   }

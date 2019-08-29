@@ -41,7 +41,6 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameter;
 import org.junit.runners.Parameterized.Parameters;
-import org.mockito.Mockito;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
 
@@ -91,7 +90,7 @@ public class SessionPoolStressTest extends BaseSessionPoolTest {
     spannerOptions = mock(SpannerOptions.class);
     when(mockSpanner.getOptions()).thenReturn(spannerOptions);
     when(spannerOptions.getNumChannels()).thenReturn(4);
-    when(mockSpanner.createSession(Mockito.eq(db), Mockito.anyInt()))
+    when(mockSpanner.createSession(db))
         .thenAnswer(
             new Answer<Session>() {
 

@@ -79,7 +79,7 @@ public class SpannerImplTest {
             .build();
     Mockito.when(rpc.createSession(Mockito.eq(dbName), Mockito.eq(labels), options.capture()))
         .thenReturn(sessionProto);
-    Session session = impl.createSession(db, 0);
+    Session session = impl.createSession(db);
     assertThat(session.getName()).isEqualTo(sessionName);
 
     session.close();
@@ -117,7 +117,7 @@ public class SpannerImplTest {
                 return res;
               }
             });
-    List<SessionImpl> sessions = impl.batchCreateSessions(db, numSessions, 0);
+    List<SessionImpl> sessions = impl.batchCreateSessions(db, numSessions);
     assertThat(sessions.size()).isEqualTo(numSessions);
     for (int s = 0; s < numSessions; s++) {
       String name = String.format(sessionName, s);

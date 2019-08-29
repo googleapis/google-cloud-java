@@ -32,13 +32,11 @@ import com.google.spanner.v1.PartitionResponse;
 import com.google.spanner.v1.TransactionSelector;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.atomic.AtomicInteger;
 
 /** Default implementation for Batch Client interface. */
 public class BatchClientImpl implements BatchClient {
   private final SpannerImpl spanner;
   private final DatabaseId db;
-  private final AtomicInteger channelCounter = new AtomicInteger();
 
   BatchClientImpl(DatabaseId db, SpannerImpl spanner) {
     this.db = checkNotNull(db);
@@ -47,16 +45,13 @@ public class BatchClientImpl implements BatchClient {
 
   @Override
   public BatchReadOnlyTransaction batchReadOnlyTransaction(TimestampBound bound) {
-    int channel = channelCounter.getAndIncrement() % spanner.getOptions().getNumChannels();
-    SessionImpl session = spanner.createSession(db, channel);
+    SessionImpl session = spanner.createSession(db);
     return new BatchReadOnlyTransactionImpl(spanner, session, checkNotNull(bound));
   }
 
   @Override
   public BatchReadOnlyTransaction batchReadOnlyTransaction(BatchTransactionId batchTransactionId) {
-    int channel = channelCounter.getAndIncrement() % spanner.getOptions().getNumChannels();
-    SessionImpl session =
-        spanner.sessionWithId(checkNotNull(batchTransactionId).getSessionId(), channel);
+    SessionImpl session = spanner.sessionWithId(checkNotNull(batchTransactionId).getSessionId());
     return new BatchReadOnlyTransactionImpl(spanner, session, batchTransactionId);
   }
 

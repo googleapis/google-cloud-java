@@ -51,6 +51,7 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executor;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.annotation.Nullable;
@@ -86,6 +87,8 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
 
   @GuardedBy("this")
   private boolean spannerIsClosed = false;
+  /** Counter that keeps track of the last channel hint that was used. */
+  private final AtomicInteger sessionChannelCounter = new AtomicInteger();
 
   @VisibleForTesting
   SpannerImpl(SpannerRpc gapicRpc, SpannerOptions options) {
@@ -163,8 +166,11 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     return getOptions().getPrefetchChunks();
   }
 
-  SessionImpl createSession(final DatabaseId db, int channel) throws SpannerException {
-    final Map<SpannerRpc.Option, ?> options = optionMap(SessionOption.channelHint(channel));
+  SessionImpl createSession(final DatabaseId db) throws SpannerException {
+    // The sessionChannelCounter could overflow, but that will just flip it to Integer.MIN_VALUE,
+    // which is also a valid channel hint.
+    final Map<SpannerRpc.Option, ?> options =
+        optionMap(SessionOption.channelHint(sessionChannelCounter.getAndIncrement()));
     Span span = tracer.spanBuilder(CREATE_SESSION).startSpan();
     try (Scope s = tracer.withSpan(span)) {
       com.google.spanner.v1.Session session =
@@ -177,9 +183,17 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     }
   }
 
-  List<SessionImpl> batchCreateSessions(final DatabaseId db, final int sessionCount, int channel)
+  /**
+   * Creates a batch of sessions that will all be affiliated with the same gRPC channel. It is the
+   * responsibility of the caller to make multiple calls to this method in order to create sessions
+   * that are distributed over multiple channels.
+   */
+  List<SessionImpl> batchCreateSessions(final DatabaseId db, final int sessionCount)
       throws SpannerException {
-    final Map<SpannerRpc.Option, ?> options = optionMap(SessionOption.channelHint(channel));
+    // The sessionChannelCounter could overflow, but that will just flip it to Integer.MIN_VALUE,
+    // which is also a valid channel hint.
+    final Map<SpannerRpc.Option, ?> options =
+        optionMap(SessionOption.channelHint(sessionChannelCounter.getAndIncrement()));
     Span span = tracer.spanBuilder(BATCH_CREATE_SESSIONS).startSpan();
     try (Scope s = tracer.withSpan(span)) {
       List<com.google.spanner.v1.Session> sessions =
@@ -197,9 +211,9 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     }
   }
 
-  SessionImpl sessionWithId(String name, int channel) {
+  SessionImpl sessionWithId(String name) {
     final Map<SpannerRpc.Option, ?> options =
-        SpannerImpl.optionMap(SessionOption.channelHint(channel));
+        SpannerImpl.optionMap(SessionOption.channelHint(sessionChannelCounter.getAndIncrement()));
     return new SessionImpl(this, name, options);
   }
 
