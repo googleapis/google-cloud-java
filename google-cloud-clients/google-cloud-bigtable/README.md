@@ -179,6 +179,7 @@ If you are using Maven, add this to your pom.xml file
   <groupId>io.opencensus</groupId>
   <artifactId>opencensus-impl</artifactId>
   <version>0.23.0</version>
+  <scope>runtime</scope>
 </dependency>
 <dependency>
   <groupId>io.opencensus</groupId>
@@ -240,6 +241,7 @@ If you are using Maven, add this to your pom.xml file
   <groupId>io.opencensus</groupId>
   <artifactId>opencensus-impl</artifactId>
   <version>0.23.0</version>
+  <scope>runtime</scope>
 </dependency>
 <dependency>
   <groupId>io.opencensus</groupId>
