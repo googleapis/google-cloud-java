@@ -152,7 +152,7 @@ public class ITTranslateSnippetsBeta {
     TranslateTextResponse response =
         TranslateSnippetsBeta.translateTextWithGlossary(
             projectId, "us-central1", "glossary-testing", "directions", "en", "es");
-    assertEquals("direcciones", response.getTranslationsList().get(0).getTranslatedText());
+    assertEquals("indicaciones", response.getGlossaryTranslationsList().get(0).getTranslatedText());
   }
 
   @Test
