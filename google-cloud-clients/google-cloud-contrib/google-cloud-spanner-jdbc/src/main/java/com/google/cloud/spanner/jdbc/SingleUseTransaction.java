@@ -42,8 +42,6 @@ import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -365,23 +363,25 @@ class SingleUseTransaction extends AbstractBaseUnitOfWork {
 
     @Override
     public T call() throws Exception {
-      txManager = dbClient.transactionManager();
-      // Check the interrupted state after each (possible) round-trip to the db to allow the
-      // statement to be cancelled.
-      checkInterrupted();
-      try (TransactionContext txContext =
-          txManager.getState()
-                  == com.google.cloud.spanner.TransactionManager.TransactionState.ABORTED
-              ? txManager.resetForRetry()
-              : txManager.begin()) {
+      try {
+        txManager = dbClient.transactionManager();
+        // Check the interrupted state after each (possible) round-trip to the db to allow the
+        // statement to be cancelled.
         checkInterrupted();
-        T res = executeUpdate(txContext);
-        checkInterrupted();
-        txManager.commit();
-        checkInterrupted();
-        return res;
+        try (TransactionContext txContext = txManager.begin()) {
+          checkInterrupted();
+          T res = executeUpdate(txContext);
+          checkInterrupted();
+          txManager.commit();
+          checkInterrupted();
+          return res;
+        }
       } finally {
-        txManager.close();
+        if (txManager != null) {
+          // Calling txManager.close() will rollback the transaction if it is still active, i.e. if
+          // an error occurred before the commit() call returned successfully.
+          txManager.close();
+        }
       }
     }
   }
@@ -424,32 +424,22 @@ class SingleUseTransaction extends AbstractBaseUnitOfWork {
     // handle timeouts and canceling of a statement.
     while (true) {
       try {
+        return asyncExecuteStatement(update, callable);
+      } catch (AbortedException e) {
         try {
-          return asyncExecuteStatement(update, callable);
-        } catch (AbortedException e) {
-          try {
-            Thread.sleep(e.getRetryDelayInMillis() / 1000);
-          } catch (InterruptedException e1) {
-            throw SpannerExceptionFactory.newSpannerException(
-                ErrorCode.CANCELLED, "Statement execution was interrupted", e1);
-          }
-          // Check whether the timeout time has been exceeded.
-          long executionTime = System.currentTimeMillis() - startedTime;
-          if (getStatementTimeout().hasTimeout()
-              && executionTime > getStatementTimeout().getTimeoutValue(TimeUnit.MILLISECONDS)) {
-            throw SpannerExceptionFactory.newSpannerException(
-                ErrorCode.DEADLINE_EXCEEDED,
-                "Statement execution timeout occurred for " + update.getSqlWithoutComments());
-          }
+          Thread.sleep(e.getRetryDelayInMillis() / 1000);
+        } catch (InterruptedException e1) {
+          throw SpannerExceptionFactory.newSpannerException(
+              ErrorCode.CANCELLED, "Statement execution was interrupted", e1);
         }
-      } catch (Exception e) {
-        if (txManager != null) {
-          if (txManager.getState()
-              == com.google.cloud.spanner.TransactionManager.TransactionState.STARTED) {
-            fireAndForgetRollbackAndCloseTxManager(txManager);
-          }
+        // Check whether the timeout time has been exceeded.
+        long executionTime = System.currentTimeMillis() - startedTime;
+        if (getStatementTimeout().hasTimeout()
+            && executionTime > getStatementTimeout().getTimeoutValue(TimeUnit.MILLISECONDS)) {
+          throw SpannerExceptionFactory.newSpannerException(
+              ErrorCode.DEADLINE_EXCEEDED,
+              "Statement execution timeout occurred for " + update.getSqlWithoutComments());
         }
-        throw e;
       }
     }
   }
@@ -458,33 +448,6 @@ class SingleUseTransaction extends AbstractBaseUnitOfWork {
     if (Thread.currentThread().isInterrupted()) {
       throw new InterruptedException();
     }
-  }
-
-  /**
-   * Do a fire-and-forget rollback and close the transaction manager. Fire-and-forget is ok as Cloud
-   * Spanner will abort the transaction automatically after a while if the rollback request should
-   * not actually reach Cloud Spanner.
-   */
-  private void fireAndForgetRollbackAndCloseTxManager(final TransactionManager txManager) {
-    Preconditions.checkNotNull(txManager);
-    Preconditions.checkArgument(
-        txManager.getState()
-            == com.google.cloud.spanner.TransactionManager.TransactionState.STARTED);
-    ExecutorService rollbackExecutor =
-        Executors.newSingleThreadExecutor(new ConnectionImpl.DaemonThreadFactory());
-    rollbackExecutor.submit(
-        new Callable<Void>() {
-          @Override
-          public Void call() throws Exception {
-            try {
-              txManager.rollback();
-              return null;
-            } finally {
-              txManager.close();
-            }
-          }
-        });
-    rollbackExecutor.shutdown();
   }
 
   @Override
