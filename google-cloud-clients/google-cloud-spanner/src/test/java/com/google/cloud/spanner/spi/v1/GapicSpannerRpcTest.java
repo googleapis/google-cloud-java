@@ -126,7 +126,7 @@ public class GapicSpannerRpcTest {
   @Test
   public void testCloseAllThreadsWhenClosingSpanner() throws InterruptedException {
     for (int i = 0; i < NUMBER_OF_TEST_RUNS; i++) {
-      assertThat(getNumberOfThreadsWithName(SPANNER_THREAD_NAME), is(equalTo(0)));
+      assertThat(getNumberOfThreadsWithName(SPANNER_THREAD_NAME, true), is(equalTo(0)));
       // Create Spanner instance.
       SpannerOptions options = createSpannerOptions();
       Spanner spanner = options.getService();
@@ -145,7 +145,7 @@ public class GapicSpannerRpcTest {
         // sessions should initialize multiple transport channels.
         resultSets.add(rs);
         // Check whether the number of expected threads has been reached.
-        if (getNumberOfThreadsWithName(SPANNER_THREAD_NAME)
+        if (getNumberOfThreadsWithName(SPANNER_THREAD_NAME, false)
             == options.getNumChannels() * NUM_THREADS_PER_CHANNEL) {
           break;
         }
@@ -173,12 +173,12 @@ public class GapicSpannerRpcTest {
       int totalWaits = 0;
       while (true) {
         Thread.sleep(100L);
-        if (getNumberOfThreadsWithName(SPANNER_THREAD_NAME) == 0 || totalWaits > 20) {
+        if (getNumberOfThreadsWithName(SPANNER_THREAD_NAME, false) == 0 || totalWaits > 20) {
           break;
         }
         totalWaits++;
       }
-      assertThat(getNumberOfThreadsWithName(SPANNER_THREAD_NAME), is(equalTo(0)));
+      assertThat(getNumberOfThreadsWithName(SPANNER_THREAD_NAME, true), is(equalTo(0)));
     }
   }
 
@@ -189,7 +189,7 @@ public class GapicSpannerRpcTest {
   @Test
   public void testMultipleOpenSpanners() throws InterruptedException {
     List<Spanner> spanners = new ArrayList<>();
-    assertThat(getNumberOfThreadsWithName(SPANNER_THREAD_NAME), is(equalTo(0)));
+    assertThat(getNumberOfThreadsWithName(SPANNER_THREAD_NAME, true), is(equalTo(0)));
     for (int openSpanners = 1; openSpanners <= 3; openSpanners++) {
       // Create Spanner instance.
       SpannerOptions options = createSpannerOptions();
@@ -203,7 +203,7 @@ public class GapicSpannerRpcTest {
       // to ensure we also hit multiple channels.
       for (int sessionCount = 0;
           sessionCount < options.getSessionPoolOptions().getMaxSessions()
-              && getNumberOfThreadsWithName(SPANNER_THREAD_NAME)
+              && getNumberOfThreadsWithName(SPANNER_THREAD_NAME, false)
                   < options.getNumChannels() * NUM_THREADS_PER_CHANNEL * openSpanners;
           sessionCount++) {
         ResultSet rs = client.singleUse().executeQuery(SELECT1AND2);
@@ -223,7 +223,7 @@ public class GapicSpannerRpcTest {
     }
     // Wait a little to allow the threads to actually shutdown.
     Thread.sleep(500L);
-    assertThat(getNumberOfThreadsWithName(SPANNER_THREAD_NAME), is(equalTo(0)));
+    assertThat(getNumberOfThreadsWithName(SPANNER_THREAD_NAME, true), is(equalTo(0)));
   }
 
   @SuppressWarnings("rawtypes")
@@ -245,7 +245,7 @@ public class GapicSpannerRpcTest {
         .build();
   }
 
-  private int getNumberOfThreadsWithName(String serviceName) {
+  private int getNumberOfThreadsWithName(String serviceName, boolean dumpStack) {
     Pattern pattern = Pattern.compile(String.format(THREAD_PATTERN, serviceName));
     ThreadGroup group = Thread.currentThread().getThreadGroup();
     while (group.getParent() != null) {
@@ -256,10 +256,30 @@ public class GapicSpannerRpcTest {
     int res = 0;
     for (int i = 0; i < numberOfThreads; i++) {
       if (pattern.matcher(threads[i].getName()).matches()) {
+        if (dumpStack) {
+          dumpThread(threads[i]);
+        }
         res++;
       }
     }
     return res;
+  }
+
+  private void dumpThread(Thread thread) {
+    StringBuilder dump = new StringBuilder();
+    dump.append('"');
+    dump.append(thread.getName());
+    dump.append("\" ");
+    final Thread.State state = thread.getState();
+    dump.append("\n   java.lang.Thread.State: ");
+    dump.append(state);
+    final StackTraceElement[] stackTraceElements = thread.getStackTrace();
+    for (final StackTraceElement stackTraceElement : stackTraceElements) {
+      dump.append("\n        at ");
+      dump.append(stackTraceElement);
+    }
+    dump.append("\n\n");
+    System.out.print(dump.toString());
   }
 
   private void mockGetInstanceResponse() {

@@ -16,6 +16,7 @@
 
 package com.google.cloud.spanner.jdbc;
 
+import com.google.cloud.NoCredentials;
 import com.google.cloud.spanner.jdbc.AbstractSqlScriptVerifier.GenericConnection;
 import com.google.cloud.spanner.jdbc.AbstractSqlScriptVerifier.GenericConnectionProvider;
 import com.google.cloud.spanner.jdbc.SqlScriptVerifier.SpannerGenericConnection;
@@ -52,7 +53,10 @@ public class ConnectionImplGeneratedSqlScriptTest {
     public GenericConnection getConnection() {
       return SpannerGenericConnection.of(
           ConnectionImplTest.createConnection(
-              ConnectionOptions.newBuilder().setUri(ConnectionImplTest.URI).build()));
+              ConnectionOptions.newBuilder()
+                  .setCredentials(NoCredentials.getInstance())
+                  .setUri(ConnectionImplTest.URI)
+                  .build()));
     }
   }
 

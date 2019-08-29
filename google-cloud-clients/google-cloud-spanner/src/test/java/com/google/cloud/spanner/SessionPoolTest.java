@@ -39,6 +39,7 @@ import com.google.cloud.spanner.TransactionRunnerImpl.TransactionContextImpl;
 import com.google.cloud.spanner.spi.v1.SpannerRpc;
 import com.google.cloud.spanner.spi.v1.SpannerRpc.ResultStreamConsumer;
 import com.google.common.util.concurrent.ListenableFuture;
+import com.google.common.util.concurrent.SettableFuture;
 import com.google.common.util.concurrent.Uninterruptibles;
 import com.google.protobuf.ByteString;
 import com.google.spanner.v1.CommitRequest;
@@ -46,15 +47,6 @@ import com.google.spanner.v1.ExecuteBatchDmlRequest;
 import com.google.spanner.v1.ExecuteSqlRequest;
 import com.google.spanner.v1.ResultSetStats;
 import com.google.spanner.v1.RollbackRequest;
-import io.opencensus.trace.Span;
-import io.opencensus.trace.Status;
-import io.opencensus.trace.Tracer;
-import io.opencensus.trace.Tracing;
-import io.opencensus.trace.config.TraceConfig;
-import io.opencensus.trace.config.TraceParams;
-import io.opencensus.trace.export.SpanData;
-import io.opencensus.trace.export.SpanExporter.Handler;
-import io.opencensus.trace.samplers.Samplers;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -138,6 +130,31 @@ public class SessionPoolTest extends BaseSessionPoolTest {
     try (Session session = pool.getReadSession()) {
       assertThat(session).isNotNull();
     }
+  }
+
+  @Test
+  public void poolLifo() {
+    setupMockSessionCreation();
+    pool = createPool();
+    Session session1 = pool.getReadSession();
+    Session session2 = pool.getReadSession();
+    assertThat(session1).isNotEqualTo(session2);
+
+    session2.close();
+    session1.close();
+    Session session3 = pool.getReadSession();
+    Session session4 = pool.getReadSession();
+    assertThat(session3).isEqualTo(session1);
+    assertThat(session4).isEqualTo(session2);
+    session3.close();
+    session4.close();
+
+    Session session5 = pool.getReadWriteSession();
+    Session session6 = pool.getReadWriteSession();
+    assertThat(session5).isEqualTo(session4);
+    assertThat(session6).isEqualTo(session3);
+    session6.close();
+    session5.close();
   }
 
   @Test
@@ -581,32 +598,6 @@ public class SessionPoolTest extends BaseSessionPoolTest {
 
   @Test
   public void blockAndTimeoutOnPoolExhaustion() throws InterruptedException, ExecutionException {
-    if (minSessions != 0) {
-      // Only execute for minSessions == 0 as we need to setup and shutdown a mock sampler during
-      // the test case. A second run would not work as there is no way to restart the sampler.
-      return;
-    }
-    // Setup a dummy trace handler.
-    final AtomicInteger deadlineExceededCount = new AtomicInteger();
-    Handler handler =
-        new Handler() {
-          @Override
-          public void export(Collection<SpanData> spanDataList) {
-            for (SpanData sd : spanDataList) {
-              if (sd.getStatus() == Status.DEADLINE_EXCEEDED
-                  && sd.getName().equals(SessionPool.WAIT_FOR_SESSION)) {
-                deadlineExceededCount.incrementAndGet();
-              }
-            }
-          }
-        };
-    Tracing.getExportComponent()
-        .getSpanExporter()
-        .registerHandler(SessionPoolTest.class.getName(), handler);
-    TraceConfig traceConfig = Tracing.getTraceConfig();
-    TraceParams activeTraceParams = traceConfig.getActiveTraceParams();
-    traceConfig.updateActiveTraceParams(
-        activeTraceParams.toBuilder().setSampler(Samplers.alwaysSample()).build());
     // Create a session pool with max 1 session and a low timeout for waiting for a session.
     options =
         SessionPoolOptions.newBuilder()
@@ -618,20 +609,22 @@ public class SessionPoolTest extends BaseSessionPoolTest {
     when(client.createSession(db)).thenReturn(mockSession);
     pool = createPool();
 
-    Tracer tracer = Tracing.getTracer();
-    Span span = tracer.spanBuilder("RunTest").startSpan();
     // Try to take a read or a read/write session. These requests should block.
     for (Boolean write : new Boolean[] {true, false}) {
       // Take the only session that can be in the pool.
       Session checkedOutSession = pool.getReadSession();
       final Boolean finWrite = write;
       ExecutorService executor = Executors.newFixedThreadPool(1);
+      // Setup a flag that will indicate when the thread will start waiting for a session to prevent
+      // flaky fails if it takes some time before the thread is started.
+      final SettableFuture<Boolean> waitingForSession = SettableFuture.create();
       Future<Void> fut =
           executor.submit(
               new Callable<Void>() {
                 @Override
                 public Void call() throws Exception {
                   Session session;
+                  waitingForSession.set(Boolean.TRUE);
                   if (finWrite) {
                     session = pool.getReadWriteSession();
                   } else {
@@ -642,6 +635,8 @@ public class SessionPoolTest extends BaseSessionPoolTest {
                 }
               });
       try {
+        // Wait until the background thread is actually waiting for a session.
+        waitingForSession.get();
         fut.get(80L, TimeUnit.MILLISECONDS);
         fail("missing expected timeout exception");
       } catch (TimeoutException e) {
@@ -657,18 +652,7 @@ public class SessionPoolTest extends BaseSessionPoolTest {
     Session session = pool.getReadSession();
     assertThat(session).isNotNull();
     session.close();
-    span.end();
-    Tracing.getExportComponent().shutdown();
-    // Verify that we got a DEADLINE_EXCEEDED span for both read and read/write session.
-    // There might be more than 1 for each request, depending on the execution speed of
-    // the environment.
-    if (!isNoopExportComponent()) {
-      assertThat(deadlineExceededCount.get()).isAtLeast(2);
-    }
-  }
-
-  private boolean isNoopExportComponent() {
-    return Tracing.getExportComponent().getClass().getName().contains("Noop");
+    assertThat(pool.getNumWaiterTimeouts()).isAtLeast(2L);
   }
 
   @Test

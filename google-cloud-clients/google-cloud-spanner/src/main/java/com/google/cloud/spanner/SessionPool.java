@@ -49,6 +49,7 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.SynchronousQueue;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicLong;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.annotation.Nullable;
@@ -838,6 +839,7 @@ final class SessionPool {
           SessionOrError s = pollUninterruptiblyWithTimeout(currentTimeout);
           if (s == null) {
             // Set the status to DEADLINE_EXCEEDED and retry.
+            numWaiterTimeouts.incrementAndGet();
             tracer.getCurrentSpan().setStatus(Status.DEADLINE_EXCEEDED);
             currentTimeout = Math.min(currentTimeout * 2, MAX_SESSION_WAIT_TIMEOUT);
           } else {
@@ -1042,10 +1044,10 @@ final class SessionPool {
   private SettableFuture<Void> closureFuture;
 
   @GuardedBy("lock")
-  private final Queue<PooledSession> readSessions = new LinkedList<>();
+  private final LinkedList<PooledSession> readSessions = new LinkedList<>();
 
   @GuardedBy("lock")
-  private final Queue<PooledSession> writePreparedSessions = new LinkedList<>();
+  private final LinkedList<PooledSession> writePreparedSessions = new LinkedList<>();
 
   @GuardedBy("lock")
   private final Queue<Waiter> readWaiters = new LinkedList<>();
@@ -1064,6 +1066,8 @@ final class SessionPool {
 
   @GuardedBy("lock")
   private int maxSessionsInUse = 0;
+
+  private AtomicLong numWaiterTimeouts = new AtomicLong();
 
   @GuardedBy("lock")
   private final Set<PooledSession> allSessions = new HashSet<>();
@@ -1120,7 +1124,21 @@ final class SessionPool {
 
   @VisibleForTesting
   int getNumberOfAvailableWritePreparedSessions() {
-    return writePreparedSessions.size();
+    synchronized (lock) {
+      return writePreparedSessions.size();
+    }
+  }
+
+  @VisibleForTesting
+  int getNumberOfSessionsInPool() {
+    synchronized (lock) {
+      return readSessions.size() + writePreparedSessions.size() + numSessionsBeingPrepared;
+    }
+  }
+
+  @VisibleForTesting
+  long getNumWaiterTimeouts() {
+    return numWaiterTimeouts.get();
   }
 
   private void initPool() {
@@ -1361,7 +1379,7 @@ final class SessionPool {
         if (shouldPrepareSession()) {
           prepareSession(session);
         } else {
-          readSessions.add(session);
+          readSessions.addFirst(session);
         }
       } else if (shouldUnblockReader()) {
         readWaiters.poll().put(session);
@@ -1386,6 +1404,7 @@ final class SessionPool {
       if (isSessionNotFound(e)) {
         invalidateSession(session);
       } else if (readWriteWaiters.size() > 0) {
+        releaseSession(session);
         readWriteWaiters.poll().put(e);
       } else {
         releaseSession(session);
