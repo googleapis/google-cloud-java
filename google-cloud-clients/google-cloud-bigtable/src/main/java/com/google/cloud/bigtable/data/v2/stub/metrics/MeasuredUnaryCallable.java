@@ -36,7 +36,7 @@ import javax.annotation.Nonnull;
  * <p>Recorded stats:
  *
  * <dl>
- *   <dt>{@link RpcMeasureConstants#BIGTABLE_OP_ROUNDTRIP_LATENCY}
+ *   <dt>{@link RpcMeasureConstants#BIGTABLE_OP_LATENCY}
  *   <dd>the total time it took the operation across all of its retry attempts to complete
  * </dl>
  *
@@ -91,7 +91,7 @@ public class MeasuredUnaryCallable<RequestT, ResponseT> extends UnaryCallable<Re
 
       stats
           .newMeasureMap()
-          .put(RpcMeasureConstants.BIGTABLE_OP_ROUNDTRIP_LATENCY, elapsed)
+          .put(RpcMeasureConstants.BIGTABLE_OP_LATENCY, elapsed)
           .record(
               tagger
                   .toBuilder(parentCtx)

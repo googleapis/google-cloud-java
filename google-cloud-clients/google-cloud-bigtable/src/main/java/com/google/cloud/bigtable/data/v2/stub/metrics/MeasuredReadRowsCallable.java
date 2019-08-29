@@ -38,7 +38,7 @@ import javax.annotation.Nullable;
  * <p>Recorded stats:
  *
  * <dl>
- *   <dt>{@link RpcMeasureConstants#BIGTABLE_OP_ROUNDTRIP_LATENCY}
+ *   <dt>{@link RpcMeasureConstants#BIGTABLE_OP_LATENCY}
  *   <dd>the total time it took the operation across all of its retry attempts to complete.
  *   <dt>{@link RpcMeasureConstants#BIGTABLE_ROWS_READ_PER_OP}
  *   <dd>the number of rows received across all of the retries for each invocation.
@@ -124,7 +124,7 @@ public class MeasuredReadRowsCallable<RowT> extends ServerStreamingCallable<Quer
       MeasureMap measures =
           stats
               .newMeasureMap()
-              .put(RpcMeasureConstants.BIGTABLE_OP_ROUNDTRIP_LATENCY, elapsed)
+              .put(RpcMeasureConstants.BIGTABLE_OP_LATENCY, elapsed)
               .put(RpcMeasureConstants.BIGTABLE_ROWS_READ_PER_OP, rowsRead);
 
       if (firstRowReceivedAt != null) {

@@ -17,7 +17,7 @@ package com.google.cloud.bigtable.data.v2.stub.metrics;
 
 import static com.google.cloud.bigtable.data.v2.stub.metrics.RpcMeasureConstants.BIGTABLE_MUTATE_ROWS_ENTRIES_PER_BATCH;
 import static com.google.cloud.bigtable.data.v2.stub.metrics.RpcMeasureConstants.BIGTABLE_OP;
-import static com.google.cloud.bigtable.data.v2.stub.metrics.RpcMeasureConstants.BIGTABLE_OP_ROUNDTRIP_LATENCY;
+import static com.google.cloud.bigtable.data.v2.stub.metrics.RpcMeasureConstants.BIGTABLE_OP_LATENCY;
 import static com.google.cloud.bigtable.data.v2.stub.metrics.RpcMeasureConstants.BIGTABLE_READ_ROWS_FIRST_ROW_LATENCY;
 import static com.google.cloud.bigtable.data.v2.stub.metrics.RpcMeasureConstants.BIGTABLE_ROWS_READ_PER_OP;
 import static com.google.cloud.bigtable.data.v2.stub.metrics.RpcMeasureConstants.BIGTABLE_STATUS;
@@ -58,9 +58,9 @@ class RpcViewConstants {
    */
   public static final View BIGTABLE_OP_LATENCY_VIEW =
       View.create(
-          View.Name.create("cloud.google.com/java/bigtable/operation_latency"),
+          View.Name.create("cloud.google.com/java/bigtable/op_latency"),
           "Latency in msecs",
-          BIGTABLE_OP_ROUNDTRIP_LATENCY,
+          BIGTABLE_OP_LATENCY,
           AGGREGATION_WITH_MILLIS_HISTOGRAM,
           ImmutableList.of(BIGTABLE_OP));
 
@@ -68,7 +68,7 @@ class RpcViewConstants {
       View.create(
           View.Name.create("cloud.google.com/java/bigtable/completed_ops"),
           "Number of completed Bigtable client operations",
-          BIGTABLE_OP_ROUNDTRIP_LATENCY,
+          BIGTABLE_OP_LATENCY,
           COUNT,
           Arrays.asList(BIGTABLE_OP, BIGTABLE_STATUS));
 

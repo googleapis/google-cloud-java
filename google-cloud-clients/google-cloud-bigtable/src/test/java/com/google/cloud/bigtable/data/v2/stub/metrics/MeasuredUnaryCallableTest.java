@@ -87,7 +87,7 @@ public class MeasuredUnaryCallableTest {
     MetricsRecord metricsRecord = statsRecorder.pollRecord();
 
     assertThat(metricsRecord.metrics)
-        .containsEntry(RpcMeasureConstants.BIGTABLE_OP_ROUNDTRIP_LATENCY, 2.0);
+        .containsEntry(RpcMeasureConstants.BIGTABLE_OP_LATENCY, 2.0);
     assertThat(metricsRecord.tags)
         .containsEntry(RpcMeasureConstants.BIGTABLE_OP, TagValue.create(FAKE_METHOD));
     assertThat(metricsRecord.tags)
@@ -120,7 +120,7 @@ public class MeasuredUnaryCallableTest {
     MetricsRecord metricsRecord = statsRecorder.pollRecord();
 
     assertThat(metricsRecord.metrics)
-        .containsEntry(RpcMeasureConstants.BIGTABLE_OP_ROUNDTRIP_LATENCY, 2.0);
+        .containsEntry(RpcMeasureConstants.BIGTABLE_OP_LATENCY, 2.0);
     assertThat(metricsRecord.tags)
         .containsEntry(RpcMeasureConstants.BIGTABLE_OP, TagValue.create(FAKE_METHOD));
     assertThat(metricsRecord.tags)

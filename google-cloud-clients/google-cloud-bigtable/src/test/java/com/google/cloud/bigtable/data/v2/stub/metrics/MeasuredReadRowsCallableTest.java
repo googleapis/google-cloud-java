@@ -93,7 +93,7 @@ public class MeasuredReadRowsCallableTest {
     MetricsRecord metricsRecord = statsRecorder.pollRecord();
 
     assertThat(metricsRecord.metrics)
-        .containsEntry(RpcMeasureConstants.BIGTABLE_OP_ROUNDTRIP_LATENCY, 5.0);
+        .containsEntry(RpcMeasureConstants.BIGTABLE_OP_LATENCY, 5.0);
     assertThat(metricsRecord.metrics)
         .containsEntry(RpcMeasureConstants.BIGTABLE_READ_ROWS_FIRST_ROW_LATENCY, 2.0);
     assertThat(metricsRecord.metrics)
@@ -126,7 +126,7 @@ public class MeasuredReadRowsCallableTest {
     MetricsRecord metricsRecord = statsRecorder.pollRecord();
 
     assertThat(metricsRecord.metrics)
-        .containsEntry(RpcMeasureConstants.BIGTABLE_OP_ROUNDTRIP_LATENCY, 2.0);
+        .containsEntry(RpcMeasureConstants.BIGTABLE_OP_LATENCY, 2.0);
     assertThat(metricsRecord.metrics)
         .doesNotContainKey(RpcMeasureConstants.BIGTABLE_READ_ROWS_FIRST_ROW_LATENCY);
     assertThat(metricsRecord.metrics)
@@ -169,7 +169,7 @@ public class MeasuredReadRowsCallableTest {
     MetricsRecord metricsRecord = statsRecorder.pollRecord();
 
     assertThat(metricsRecord.metrics)
-        .containsEntry(RpcMeasureConstants.BIGTABLE_OP_ROUNDTRIP_LATENCY, 2.0);
+        .containsEntry(RpcMeasureConstants.BIGTABLE_OP_LATENCY, 2.0);
     assertThat(metricsRecord.metrics)
         .doesNotContainKey(RpcMeasureConstants.BIGTABLE_READ_ROWS_FIRST_ROW_LATENCY);
     assertThat(metricsRecord.metrics)
@@ -216,7 +216,7 @@ public class MeasuredReadRowsCallableTest {
     MetricsRecord metricsRecord = statsRecorder.pollRecord();
 
     assertThat(metricsRecord.metrics)
-        .containsEntry(RpcMeasureConstants.BIGTABLE_OP_ROUNDTRIP_LATENCY, 5.0);
+        .containsEntry(RpcMeasureConstants.BIGTABLE_OP_LATENCY, 5.0);
     assertThat(metricsRecord.metrics)
         .containsEntry(RpcMeasureConstants.BIGTABLE_READ_ROWS_FIRST_ROW_LATENCY, 2.0);
     assertThat(metricsRecord.metrics)

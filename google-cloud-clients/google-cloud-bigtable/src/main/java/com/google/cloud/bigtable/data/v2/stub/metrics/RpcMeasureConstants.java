@@ -40,9 +40,9 @@ class RpcMeasureConstants {
   /** Unit to represent milliseconds. */
   private static final String MILLISECOND = "ms";
 
-  static final MeasureDouble BIGTABLE_OP_ROUNDTRIP_LATENCY =
+  static final MeasureDouble BIGTABLE_OP_LATENCY =
       Measure.MeasureDouble.create(
-          "cloud.google.com/java/bigtable/operation_latency",
+          "cloud.google.com/java/bigtable/op_latency",
           "Time between request being sent to last row received, "
               + "or terminal error of the last retry attempt.",
           MILLISECOND);

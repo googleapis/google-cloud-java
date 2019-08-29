@@ -92,7 +92,7 @@ public class MeasureMutateRowsCallableTest {
     MetricsRecord metricsRecord = statsRecorder.pollRecord();
 
     assertThat(metricsRecord.metrics)
-        .containsEntry(RpcMeasureConstants.BIGTABLE_OP_ROUNDTRIP_LATENCY, 3.0);
+        .containsEntry(RpcMeasureConstants.BIGTABLE_OP_LATENCY, 3.0);
     assertThat(metricsRecord.metrics)
         .containsEntry(RpcMeasureConstants.BIGTABLE_MUTATE_ROWS_ENTRIES_PER_BATCH, 2L);
     assertThat(metricsRecord.tags)
@@ -134,7 +134,7 @@ public class MeasureMutateRowsCallableTest {
     MetricsRecord metricsRecord = statsRecorder.pollRecord();
 
     assertThat(metricsRecord.metrics)
-        .containsEntry(RpcMeasureConstants.BIGTABLE_OP_ROUNDTRIP_LATENCY, 3.0);
+        .containsEntry(RpcMeasureConstants.BIGTABLE_OP_LATENCY, 3.0);
     assertThat(metricsRecord.metrics)
         .containsEntry(RpcMeasureConstants.BIGTABLE_MUTATE_ROWS_ENTRIES_PER_BATCH, 2L);
     assertThat(metricsRecord.tags)

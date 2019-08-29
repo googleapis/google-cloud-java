@@ -37,7 +37,7 @@ import javax.annotation.Nonnull;
  * <p>Recorded stats:
  *
  * <dl>
- *   <dt>{@link RpcMeasureConstants#BIGTABLE_OP_ROUNDTRIP_LATENCY}
+ *   <dt>{@link RpcMeasureConstants#BIGTABLE_OP_LATENCY}
  *   <dd>the total time it took the operation across all of its retry attempts to complete.
  *   <dt>{@link RpcMeasureConstants#BIGTABLE_MUTATE_ROWS_ENTRIES_PER_BATCH}
  *   <dd>the number of mutations sent per batch operation. Retry attempts might have few entries.
@@ -98,7 +98,7 @@ public class MeasuredMutateRowsCallableV2 extends UnaryCallable<BulkMutation, Vo
 
       stats
           .newMeasureMap()
-          .put(RpcMeasureConstants.BIGTABLE_OP_ROUNDTRIP_LATENCY, elapsed)
+          .put(RpcMeasureConstants.BIGTABLE_OP_LATENCY, elapsed)
           .put(RpcMeasureConstants.BIGTABLE_MUTATE_ROWS_ENTRIES_PER_BATCH, numEntries)
           .record(
               tagger

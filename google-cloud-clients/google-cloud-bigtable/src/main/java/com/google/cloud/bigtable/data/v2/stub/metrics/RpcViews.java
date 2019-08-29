@@ -27,7 +27,7 @@ public class RpcViews {
   @VisibleForTesting
   static final ImmutableSet<View> BIGTABLE_CLIENT_VIEWS_SET =
       ImmutableSet.of(
-          RpcViewConstants.BIGTABLE_OP_ROUNDTRIP_LATENCY_VIEW,
+          RpcViewConstants.BIGTABLE_OP_LATENCY_VIEW,
           RpcViewConstants.BIGTABLE_CLIENT_COMPLETED_OP_VIEW,
           RpcViewConstants.BIGTABLE_READ_ROWS_FIRST_ROW_LATENCY_VIEW,
           RpcViewConstants.BIGTABLE_ROWS_READ_PER_OP_VIEW,
