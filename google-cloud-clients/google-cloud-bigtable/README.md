@@ -163,12 +163,11 @@ try {
 }
 ```
 
-## Opencensus Tracing
+## OpenCensus Tracing
 
-Cloud Bigtable client supports [Opencensus Tracing](https://opencensus.io/tracing/),
+Cloud Bigtable client supports [OpenCensus Tracing](https://opencensus.io/tracing/),
 which gives insight into the client internals and aids in debugging production issues.
-By default, the functionality is disabled. To enable, you need to add a couple of
-dependencies and configure an exporter. For example to enable tracing using 
+By default, the functionality is disabled. For example to enable tracing using
 [Google Stackdriver](https://cloud.google.com/trace/docs/):
 
 [//]: # (TODO: figure out how to keep opencensus version in sync with pom.xml)
@@ -208,7 +207,7 @@ libraryDependencies += "io.opencensus" % "opencensus-impl" % "0.23.0"
 libraryDependencies += "io.opencensus" % "opencensus-exporter-trace-stackdriver" % "0.23.0"
 ```
 
-Then at the start of your application configure the exporter:
+At the start of your application configure the exporter:
 
 ```java
 import io.opencensus.exporter.trace.stackdriver.StackdriverTraceConfiguration;
@@ -234,7 +233,7 @@ Tracing.getTraceConfig().updateActiveTraceParams(
 );
 ```
 
-## Opencensus Stats
+## OpenCensus Stats
 
 Cloud Bigtable client supports [Opencensus Metrics](https://opencensus.io/stats/),
 which gives insight into the client internals and aids in debugging production issues.
@@ -264,8 +263,7 @@ level metrics can be gleaned from gRPC's metrics, which are prefixed with
   of mutations per BulkMutation.
 
 
-By default, the functionality is disabled. To enable, you need to add a couple of
-dependencies and configure an exporter. For example to enable metrics using 
+By default, the functionality is disabled. For example to enable metrics using
 [Google Stackdriver](https://cloud.google.com/monitoring/docs/):
 
 
@@ -306,7 +304,7 @@ libraryDependencies += "io.opencensus" % "opencensus-impl" % "0.23.0"
 libraryDependencies += "io.opencensus" % "opencensus-exporter-stats-stackdriver" % "0.23.0"
 ```
 
-Then at the start of your application configure the exporter and enable the Bigtable stats views:
+At the start of your application configure the exporter and enable the Bigtable stats views:
 
 ```java
 import io.opencensus.exporter.stats.stackdriver.StackdriverStatsConfiguration;
@@ -318,7 +316,7 @@ StackdriverStatsExporter.createAndRegister(
         .build()
 );
 
-BigtableDataSettings.enableOpencensusStats();
+BigtableDataSettings.enableOpenCensusStats();
 ```
 
 ## Troubleshooting

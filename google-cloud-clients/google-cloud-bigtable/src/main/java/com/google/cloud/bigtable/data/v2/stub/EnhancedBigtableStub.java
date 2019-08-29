@@ -386,24 +386,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
     return measured.withDefaultCallContext(clientContext.getDefaultCallContext());
   }
 
-  /**
-   * Creates a callable chain to handle MutatesRows RPCs. This is meant to be used for automatic
-   * batching with flow control. The chain will:
-   *
-   * <ul>
-   *   <li>Convert a {@link RowMutation} into a {@link MutateRowsRequest} with a single entry.
-   *   <li>Using gax's {@link com.google.api.gax.rpc.BatchingCallable} to spool the requests and
-   *       aggregate the {@link MutateRowsRequest.Entry}s.
-   *   <li>Process the response and schedule retries. At the end of each attempt, entries that have
-   *       been applied, are filtered from the next attempt. Also, any entries that failed with a
-   *       nontransient error, are filtered from the next attempt. This will continue until there
-   *       are no more entries or there are no more retry attempts left.
-   *   <li>Wrap batch failures in a {@link
-   *       com.google.cloud.bigtable.data.v2.models.MutateRowsException}.
-   *   <li>Split the responses using {@link MutateRowsBatchingDescriptor}.
-   *   <li>Add tracing & metrics.
-   * </ul>
-   */
+  /** @deprecated Please use {@link #newMutateRowsBatcher(String)} */
   @Deprecated
   private UnaryCallable<RowMutation, Void> createBulkMutateRowsBatchingCallable() {
     UnaryCallable<MutateRowsRequest, Void> baseCallable = createMutateRowsBaseCallable();

@@ -32,6 +32,8 @@ import java.util.concurrent.TimeUnit;
 import javax.annotation.Nonnull;
 
 /**
+ * For internal use only.
+ *
  * @deprecated Please use {@link MeasuredMutateRowsCallableV2}.
  */
 @InternalApi
