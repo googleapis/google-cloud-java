@@ -48,6 +48,7 @@ import com.google.cloud.bigtable.data.v2.models.RowAdapter;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
 import com.google.cloud.bigtable.data.v2.models.RowMutationEntry;
 import com.google.cloud.bigtable.data.v2.stub.metrics.MeasuredMutateRowsCallable;
+import com.google.cloud.bigtable.data.v2.stub.metrics.MeasuredMutateRowsCallableV2;
 import com.google.cloud.bigtable.data.v2.stub.metrics.MeasuredReadRowsCallable;
 import com.google.cloud.bigtable.data.v2.stub.metrics.MeasuredUnaryCallable;
 import com.google.cloud.bigtable.data.v2.stub.mutaterows.BulkMutateRowsUserFacingCallable;
@@ -365,27 +366,24 @@ public class EnhancedBigtableStub implements AutoCloseable {
   private UnaryCallable<BulkMutation, Void> createBulkMutateRowsCallable() {
     UnaryCallable<MutateRowsRequest, Void> baseCallable = createMutateRowsBaseCallable();
 
-    // TODO(igorbernstein): Move tracing & stats after proto creation.
-    // When migrating to v2 batching api, the new Batcher should wrap the BulkMutation api,
-    // which will allow the tracing metrics callable to be pulled up.
-    UnaryCallable<MutateRowsRequest, Void> traced =
+    UnaryCallable<BulkMutation, Void> userFacing =
+        new BulkMutateRowsUserFacingCallable(baseCallable, requestContext);
+
+    UnaryCallable<BulkMutation, Void> traced =
         new TracedUnaryCallable<>(
-            baseCallable,
+            userFacing,
             clientContext.getTracerFactory(),
             SpanName.of(TRACING_OUTER_CLIENT_NAME, "MutateRows"));
 
-    UnaryCallable<MutateRowsRequest, Void> measured =
-        new MeasuredMutateRowsCallable(
+    UnaryCallable<BulkMutation, Void> measured =
+        new MeasuredMutateRowsCallableV2(
             traced,
             TRACING_OUTER_CLIENT_NAME + ".MutateRows",
             tagger,
             statsRecorder,
             clientContext.getClock());
 
-    UnaryCallable<BulkMutation, Void> userFacing =
-        new BulkMutateRowsUserFacingCallable(measured, requestContext);
-
-    return userFacing.withDefaultCallContext(clientContext.getDefaultCallContext());
+    return measured.withDefaultCallContext(clientContext.getDefaultCallContext());
   }
 
   /**
