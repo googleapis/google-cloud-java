@@ -228,6 +228,32 @@ Tracing.getTraceConfig().updateActiveTraceParams(
 
 Cloud Bigtable client supports [Opencensus Metrics](https://opencensus.io/stats/),
 which gives insight into the client internals and aids in debugging production issues.
+Metrics prefixed with `cloud.google.com/java/bigtable/` focus on operation level
+metrics across all of the retry attempts that occurred during that operation. RPC
+level metrics can be gleaned from gRPC's metrics, which are prefixed with
+`grpc.io/client/`.
+
+### Available operation level metric views:
+
+* `cloud.google.com/java/bigtable/op_latency`: A distribution latency of
+  each client method call, across all of it's RPC attempts. Tagged by
+  method name and final response status.
+
+* `cloud.google.com/java/bigtable/completed_ops`: The total count of
+  method invocations. Tagged by method name. Can be compared to
+  `grpc.io/client/completed_rpcs` to visualize retry attempts.
+
+* `cloud.google.com/java/bigtable/read_rows_first_row_latency`: A
+  distribution of the latency of receiving the first row in a ReadRows
+  operation.
+
+* `cloud.google.com/java/bigtable/rows_per_op`: A distribution of rows
+  read per ReadRows operation across all retry attempts.
+
+* `cloud.google.com/java/bigtable/mutations_per_batch`: A distribution
+  of mutations per BulkMutation.
+
+
 By default, the functionality is disabled. To enable, you need to add a couple of
 dependencies and configure an exporter. For example to enable metrics using 
 [Google Stackdriver](https://cloud.google.com/monitoring/docs/):

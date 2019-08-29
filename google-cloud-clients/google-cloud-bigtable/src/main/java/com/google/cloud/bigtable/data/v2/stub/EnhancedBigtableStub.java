@@ -404,6 +404,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
    *   <li>Add tracing & metrics.
    * </ul>
    */
+  @Deprecated
   private UnaryCallable<RowMutation, Void> createBulkMutateRowsBatchingCallable() {
     UnaryCallable<MutateRowsRequest, Void> baseCallable = createMutateRowsBaseCallable();
 
@@ -411,9 +412,6 @@ public class EnhancedBigtableStub implements AutoCloseable {
         BatchingCallSettings.newBuilder(new MutateRowsBatchingDescriptor())
             .setBatchingSettings(settings.bulkMutateRowsSettings().getBatchingSettings());
 
-    // TODO(igorbernstein): Move tracing & stats after proto creation.
-    // When migrating to v2 batching api, the new Batcher should wrap the BulkMutation api,
-    // which will allow the tracing metrics callable to be pulled up.
     // This is a special case, the tracing starts after the batching, so we can't use
     // createUserFacingUnaryCallable
     TracedBatchingCallable<MutateRowsRequest, Void> traced =

@@ -70,7 +70,7 @@ public class MeasuredMutateRowsCallableV2 extends UnaryCallable<BulkMutation, Vo
   }
 
   @Override
-  public ApiFuture<Void> futureCall(final BulkMutation request, ApiCallContext context) {
+  public ApiFuture<Void> futureCall(BulkMutation request, ApiCallContext context) {
     long operationStartTime = clock.nanoTime();
 
     final ApiFuture<Void> future = innerCallable.futureCall(request, context);

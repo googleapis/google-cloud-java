@@ -32,20 +32,10 @@ import java.util.concurrent.TimeUnit;
 import javax.annotation.Nonnull;
 
 /**
- * This callable will instrument MutateRows invocations using Opencensus stats.
- *
- * <p>Recorded stats:
- *
- * <dl>
- *   <dt>{@link RpcMeasureConstants#BIGTABLE_OP_LATENCY}
- *   <dd>the total time it took the operation across all of its retry attempts to complete.
- *   <dt>{@link RpcMeasureConstants#BIGTABLE_MUTATE_ROWS_ENTRIES_PER_BATCH}
- *   <dd>the number of mutations sent per batch operation. Retry attempts might have few entries.
- * </dl>
- *
- * <p>For internal use only.
+ * @deprecated Please use {@link MeasuredMutateRowsCallableV2}.
  */
 @InternalApi
+@Deprecated
 public class MeasuredMutateRowsCallable extends UnaryCallable<MutateRowsRequest, Void> {
   private final UnaryCallable<MutateRowsRequest, Void> innerCallable;
   private final TagValue methodName;
@@ -70,7 +60,7 @@ public class MeasuredMutateRowsCallable extends UnaryCallable<MutateRowsRequest,
   }
 
   @Override
-  public ApiFuture<Void> futureCall(final MutateRowsRequest request, ApiCallContext context) {
+  public ApiFuture<Void> futureCall(MutateRowsRequest request, ApiCallContext context) {
     long operationStartTime = clock.nanoTime();
 
     final ApiFuture<Void> future = innerCallable.futureCall(request, context);
