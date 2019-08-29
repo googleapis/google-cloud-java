@@ -1808,7 +1808,7 @@ public interface Storage extends Service<StorageOptions> {
    * String prefix = "bucket_";
    * Page<Bucket> buckets = storage.list(BucketListOption.pageSize(100),
    *     BucketListOption.prefix(prefix));
-   * Iterator<Bucket> bucketIterator = buckets.iterateAll();
+   * Iterator<Bucket> bucketIterator = buckets.iterateAll().iterator();
    * while (bucketIterator.hasNext()) {
    *   Bucket bucket = bucketIterator.next();
    *   // do something with the bucket
@@ -1830,7 +1830,7 @@ public interface Storage extends Service<StorageOptions> {
    * String directory = "my_directory/";
    * Page<Blob> blobs = storage.list(bucketName, BlobListOption.currentDirectory(),
    *     BlobListOption.prefix(directory));
-   * Iterator<Blob> blobIterator = blobs.iterateAll();
+   * Iterator<Blob> blobIterator = blobs.iterateAll().iterator();
    * while (blobIterator.hasNext()) {
    *   Blob blob = blobIterator.next();
    *   // do something with the blob
