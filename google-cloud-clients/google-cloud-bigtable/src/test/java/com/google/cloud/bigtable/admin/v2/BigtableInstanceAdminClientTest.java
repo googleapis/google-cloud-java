@@ -59,6 +59,7 @@ import io.grpc.Status;
 import io.grpc.Status.Code;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicInteger;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -721,21 +722,38 @@ public class BigtableInstanceAdminClientTest {
   }
 
   @Test
-  public void testDeleteAppProfile() {
+  public void testDeleteAppProfile() throws Exception {
     // Setup
     com.google.bigtable.admin.v2.DeleteAppProfileRequest expectedRequest =
         com.google.bigtable.admin.v2.DeleteAppProfileRequest.newBuilder()
             .setName(APP_PROFILE_NAME)
             .build();
 
-    final AtomicBoolean wasCalled = new AtomicBoolean(false);
+    com.google.bigtable.admin.v2.DeleteAppProfileRequest forceDeleteRequest =
+        com.google.bigtable.admin.v2.DeleteAppProfileRequest.newBuilder()
+            .setName(APP_PROFILE_NAME)
+            .setIgnoreWarnings(true)
+            .build();
+
+    final AtomicInteger wasCalled = new AtomicInteger(0);
+    final AtomicInteger forcedDeleteCall = new AtomicInteger(0);
 
     Mockito.when(mockDeleteAppProfileCallable.futureCall(expectedRequest))
         .thenAnswer(
             new Answer<ApiFuture<Empty>>() {
               @Override
               public ApiFuture<Empty> answer(InvocationOnMock invocationOnMock) {
-                wasCalled.set(true);
+                wasCalled.incrementAndGet();
+                return ApiFutures.immediateFuture(Empty.getDefaultInstance());
+              }
+            });
+
+    Mockito.when(mockDeleteAppProfileCallable.futureCall(forceDeleteRequest))
+        .thenAnswer(
+            new Answer<ApiFuture<Empty>>() {
+              @Override
+              public ApiFuture<Empty> answer(InvocationOnMock invocationOnMock) {
+                forcedDeleteCall.incrementAndGet();
                 return ApiFutures.immediateFuture(Empty.getDefaultInstance());
               }
             });
@@ -743,8 +761,16 @@ public class BigtableInstanceAdminClientTest {
     // Execute
     adminClient.deleteAppProfile(INSTANCE_ID, APP_PROFILE_ID);
 
+    adminClient.deleteAppProfileAsync(INSTANCE_ID, APP_PROFILE_ID).get();
+
+    // Forced app profile delete
+    adminClient.deleteAppProfile(INSTANCE_ID, APP_PROFILE_ID, true);
+
+    adminClient.deleteAppProfileAsync(INSTANCE_ID, APP_PROFILE_ID, true).get();
+
     // Verify
-    assertThat(wasCalled.get()).isTrue();
+    assertThat(wasCalled.get()).isEqualTo(2);
+    assertThat(forcedDeleteCall.get()).isEqualTo(2);
   }
 
   private <ReqT, RespT, MetaT> void mockOperationResult(

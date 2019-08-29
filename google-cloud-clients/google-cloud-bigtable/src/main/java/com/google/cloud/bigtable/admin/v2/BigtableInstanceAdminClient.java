@@ -1010,7 +1010,8 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
    */
   @SuppressWarnings("WeakerAccess")
   public void deleteAppProfile(String instanceId, String appProfileId) {
-    ApiExceptions.callAndTranslateApiException(deleteAppProfileAsync(instanceId, appProfileId));
+    ApiExceptions.callAndTranslateApiException(
+        deleteAppProfileAsync(instanceId, appProfileId, false));
   }
 
   /**
@@ -1026,8 +1027,41 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
    */
   @SuppressWarnings("WeakerAccess")
   public ApiFuture<Void> deleteAppProfileAsync(String instanceId, String appProfileId) {
+    return deleteAppProfileAsync(instanceId, appProfileId, false);
+  }
+
+  /**
+   * Deletes the specified app profile with an option to force deletion.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * client.deleteAppProfile("my-instance", "my-app-profile", true);
+   * }</pre>
+   */
+  @SuppressWarnings("WeakerAccess")
+  public void deleteAppProfile(String instanceId, String appProfileId, boolean forceDelete) {
+    ApiExceptions.callAndTranslateApiException(
+        deleteAppProfileAsync(instanceId, appProfileId, forceDelete));
+  }
+
+  /**
+   * Asynchronously deletes the specified app profile with an option to force deletion.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * ApiFuture<Void> deleteFuture = client.deleteAppProfileAsync("my-instance", "my-app-profile", true);
+   *
+   * deleteFuture.get();
+   * }</pre>
+   */
+  @SuppressWarnings("WeakerAccess")
+  public ApiFuture<Void> deleteAppProfileAsync(
+      String instanceId, String appProfileId, boolean forceDelete) {
     String name = NameUtil.formatAppProfileName(projectId, instanceId, appProfileId);
-    DeleteAppProfileRequest request = DeleteAppProfileRequest.newBuilder().setName(name).build();
+    DeleteAppProfileRequest request =
+        DeleteAppProfileRequest.newBuilder().setName(name).setIgnoreWarnings(forceDelete).build();
 
     return ApiFutures.transform(
         stub.deleteAppProfileCallable().futureCall(request),
