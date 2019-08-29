@@ -185,6 +185,16 @@ If you are using Maven, add this to your pom.xml file
   <groupId>io.opencensus</groupId>
   <artifactId>opencensus-exporter-trace-stackdriver</artifactId>
   <version>0.23.0</version>
+  <exclusions>
+    <exclusion>
+      <groupId>io.grpc</groupId>
+      <artifactId>*</artifactId>
+    </exclusion>
+    <exclusion>
+      <groupId>com.google.auth</groupId>
+      <artifactId>*</artifactId>
+    </exclusion>
+  </exclusions>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
@@ -273,6 +283,16 @@ If you are using Maven, add this to your pom.xml file
   <groupId>io.opencensus</groupId>
   <artifactId>opencensus-exporter-stats-stackdriver</artifactId>
   <version>0.23.0</version>
+  <exclusions>
+    <exclusion>
+      <groupId>io.grpc</groupId>
+      <artifactId>*</artifactId>
+    </exclusion>
+    <exclusion>
+      <groupId>com.google.auth</groupId>
+      <artifactId>*</artifactId>
+    </exclusion>
+  </exclusions>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
