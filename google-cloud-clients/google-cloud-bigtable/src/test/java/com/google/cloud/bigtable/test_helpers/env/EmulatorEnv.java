@@ -95,4 +95,9 @@ public class EmulatorEnv extends AbstractTestEnv {
   public BigtableInstanceAdminClient getInstanceAdminClient() {
     throw new UnsupportedOperationException("InstanceAdminClient is not supported with emulator");
   }
+
+  @Override
+  public boolean isInstanceAdminSupported() {
+    return false;
+  }
 }

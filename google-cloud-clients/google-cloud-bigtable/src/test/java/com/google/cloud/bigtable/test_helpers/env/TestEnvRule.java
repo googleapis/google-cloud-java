@@ -79,9 +79,6 @@ public class TestEnvRule extends ExternalResource {
   protected void after() {
     try {
       env().cleanUpStale();
-      if ("prod".equals(env) || "direct_path".equals(env)) {
-        env().cleanUpInstances();
-      }
     } catch (Exception e) {
       LOGGER.log(Level.WARNING, "Failed to cleanup environment", e);
     }

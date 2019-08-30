@@ -67,8 +67,17 @@ public abstract class AbstractTestEnv {
     return String.format(PREFIX + "015%d", instant.getEpochSecond());
   }
 
+  public boolean isInstanceAdminSupported() {
+    return true;
+  }
+
   void cleanUpStale() {
     cleanupStaleTables();
+    if (isInstanceAdminSupported()) {
+      cleanUpStaleAppProfile();
+      cleanUpStaleClusters();
+      cleanUpStaleInstances();
+    }
   }
 
   private void cleanupStaleTables() {
@@ -82,12 +91,6 @@ public abstract class AbstractTestEnv {
         getTableAdminClient().deleteTable(tableId);
       }
     }
-  }
-
-  void cleanUpInstances() {
-    cleanUpStaleAppProfile();
-    cleanUpStaleClusters();
-    cleanUpStaleInstances();
   }
 
   private void cleanUpStaleAppProfile() {
