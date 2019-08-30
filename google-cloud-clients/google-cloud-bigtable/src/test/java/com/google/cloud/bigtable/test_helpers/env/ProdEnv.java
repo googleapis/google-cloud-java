@@ -15,6 +15,7 @@
  */
 package com.google.cloud.bigtable.test_helpers.env;
 
+import com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminClient;
 import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
 import java.io.IOException;
@@ -40,6 +41,7 @@ class ProdEnv extends AbstractTestEnv {
 
   private BigtableDataClient dataClient;
   private BigtableTableAdminClient tableAdminClient;
+  private BigtableInstanceAdminClient instanceAdminClient;
 
   static ProdEnv fromSystemProperties() {
     return new ProdEnv(
@@ -58,12 +60,14 @@ class ProdEnv extends AbstractTestEnv {
   void start() throws IOException {
     dataClient = BigtableDataClient.create(projectId, instanceId);
     tableAdminClient = BigtableTableAdminClient.create(projectId, instanceId);
+    instanceAdminClient = BigtableInstanceAdminClient.create(projectId);
   }
 
   @Override
   void stop() throws Exception {
     dataClient.close();
     tableAdminClient.close();
+    instanceAdminClient.close();
   }
 
   @Override
@@ -74,6 +78,11 @@ class ProdEnv extends AbstractTestEnv {
   @Override
   public BigtableTableAdminClient getTableAdminClient() {
     return tableAdminClient;
+  }
+
+  @Override
+  public BigtableInstanceAdminClient getInstanceAdminClient() {
+    return instanceAdminClient;
   }
 
   @Override

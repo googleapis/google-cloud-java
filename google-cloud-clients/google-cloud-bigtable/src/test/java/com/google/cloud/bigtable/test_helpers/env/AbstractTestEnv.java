@@ -15,7 +15,11 @@
  */
 package com.google.cloud.bigtable.test_helpers.env;
 
+import com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminClient;
 import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient;
+import com.google.cloud.bigtable.admin.v2.models.AppProfile;
+import com.google.cloud.bigtable.admin.v2.models.Cluster;
+import com.google.cloud.bigtable.admin.v2.models.Instance;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
 import org.threeten.bp.Instant;
 import org.threeten.bp.temporal.ChronoUnit;
@@ -27,6 +31,9 @@ import org.threeten.bp.temporal.ChronoUnit;
  */
 public abstract class AbstractTestEnv {
   private static final String PREFIX = "temp-";
+  public static final String TEST_INSTANCE_PREFIX = "temp-instance-";
+  public static final String TEST_CLUSTER_PREFIX = "temp-cluster-";
+  public static final String TEST_APP_PREFIX = "temp-Ap-";
 
   abstract void start() throws Exception;
 
@@ -35,6 +42,8 @@ public abstract class AbstractTestEnv {
   public abstract BigtableDataClient getDataClient();
 
   public abstract BigtableTableAdminClient getTableAdminClient();
+
+  public abstract BigtableInstanceAdminClient getInstanceAdminClient();
 
   public abstract String getProjectId();
 
@@ -58,8 +67,17 @@ public abstract class AbstractTestEnv {
     return String.format(PREFIX + "015%d", instant.getEpochSecond());
   }
 
+  public boolean isInstanceAdminSupported() {
+    return true;
+  }
+
   void cleanUpStale() {
     cleanupStaleTables();
+    if (isInstanceAdminSupported()) {
+      cleanUpStaleAppProfile();
+      cleanUpStaleClusters();
+      cleanUpStaleInstances();
+    }
   }
 
   private void cleanupStaleTables() {
@@ -71,6 +89,39 @@ public abstract class AbstractTestEnv {
       }
       if (stalePrefix.compareTo(tableId) > 0) {
         getTableAdminClient().deleteTable(tableId);
+      }
+    }
+  }
+
+  private void cleanUpStaleAppProfile() {
+    String staleAPPattern = TEST_APP_PREFIX + Instant.now().minus(1, ChronoUnit.DAYS);
+
+    for (AppProfile appProfile : getInstanceAdminClient().listAppProfiles(getInstanceId())) {
+      String appProfileId = appProfile.getId();
+      if (appProfileId.startsWith(staleAPPattern) && staleAPPattern.compareTo(appProfileId) > 0) {
+        getInstanceAdminClient().deleteAppProfile(getInstanceId(), appProfileId, true);
+      }
+    }
+  }
+
+  private void cleanUpStaleClusters() {
+    String staleClusterId = TEST_CLUSTER_PREFIX + Instant.now().minus(1, ChronoUnit.DAYS);
+
+    for (Cluster cluster : getInstanceAdminClient().listClusters(getInstanceId())) {
+      String clusterId = cluster.getId();
+      if (clusterId.startsWith(staleClusterId) && staleClusterId.compareTo(clusterId) > 0) {
+        getInstanceAdminClient().deleteCluster(getInstanceId(), clusterId);
+      }
+    }
+  }
+
+  private void cleanUpStaleInstances() {
+    String staleInstanceId = TEST_INSTANCE_PREFIX + Instant.now().minus(1, ChronoUnit.DAYS);
+
+    for (Instance ins : getInstanceAdminClient().listInstances()) {
+      String insId = ins.getId();
+      if (insId.startsWith(staleInstanceId) && staleInstanceId.compareTo(insId) > 0) {
+        getInstanceAdminClient().deleteInstance(insId);
       }
     }
   }
