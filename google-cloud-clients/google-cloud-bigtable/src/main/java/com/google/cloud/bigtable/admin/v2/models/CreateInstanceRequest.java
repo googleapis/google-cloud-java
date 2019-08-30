@@ -35,7 +35,8 @@ import javax.annotation.Nonnull;
  *       cluster. You cannot downgrade a production instance to a development instance.
  *   <dt>Development
  *   <dd>A low-cost instance for development and testing, with performance limited to the equivalent
- *       of a 1-node cluster. Development instances only support a single 1 node cluster.
+ *       of a 1-node cluster. Development instances only support a single 1 node cluster. At any
+ *       point this can be upgraded to production instance.
  * </dl>
  *
  * When creating an Instance, you must create at least one cluster in it.
@@ -50,7 +51,7 @@ import javax.annotation.Nonnull;
  * // Development instance:
  * CreateInstanceRequest smallProdInstanceRequest = CreateInstanceRequest.of("my-dev-instance")
  *   .setType(Type.DEVELOPMENT)
- *   .addCluster("cluster1", "us-east1-c", 1, StorageType.SSD);
+ *   .addCluster("cluster1", "us-east1-c", 0, StorageType.SSD);
  *
  * }</pre>
  *
