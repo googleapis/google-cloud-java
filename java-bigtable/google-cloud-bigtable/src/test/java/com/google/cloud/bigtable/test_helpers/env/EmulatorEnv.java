@@ -15,6 +15,7 @@
  */
 package com.google.cloud.bigtable.test_helpers.env;
 
+import com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminClient;
 import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient;
 import com.google.cloud.bigtable.admin.v2.BigtableTableAdminSettings;
 import com.google.cloud.bigtable.admin.v2.models.CreateTableRequest;
@@ -88,5 +89,15 @@ public class EmulatorEnv extends AbstractTestEnv {
   @Override
   public BigtableTableAdminClient getTableAdminClient() {
     return tableAdminClient;
+  }
+
+  @Override
+  public BigtableInstanceAdminClient getInstanceAdminClient() {
+    throw new UnsupportedOperationException("InstanceAdminClient is not supported with emulator");
+  }
+
+  @Override
+  public boolean isInstanceAdminSupported() {
+    return false;
   }
 }

@@ -15,6 +15,7 @@
  */
 package com.google.cloud.bigtable.test_helpers.env;
 
+import com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminClient;
 import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
 import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
@@ -54,6 +55,7 @@ public class DirectPathEnv extends AbstractTestEnv {
 
   private BigtableDataClient dataClient;
   private BigtableTableAdminClient tableAdminClient;
+  private BigtableInstanceAdminClient instanceAdminClient;
 
   static DirectPathEnv create() {
     return new DirectPathEnv(
@@ -93,12 +95,14 @@ public class DirectPathEnv extends AbstractTestEnv {
 
     dataClient = BigtableDataClient.create(settingsBuilder.build());
     tableAdminClient = BigtableTableAdminClient.create(projectId, instanceId);
+    instanceAdminClient = BigtableInstanceAdminClient.create(projectId);
   }
 
   @Override
   void stop() throws Exception {
     dataClient.close();
     tableAdminClient.close();
+    instanceAdminClient.close();
   }
 
   @Override
@@ -109,6 +113,11 @@ public class DirectPathEnv extends AbstractTestEnv {
   @Override
   public BigtableTableAdminClient getTableAdminClient() {
     return tableAdminClient;
+  }
+
+  @Override
+  public BigtableInstanceAdminClient getInstanceAdminClient() {
+    return instanceAdminClient;
   }
 
   @Override
