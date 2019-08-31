@@ -80,6 +80,10 @@ Setup credentials. See [Getting Started With Authentication](https://cloud.googl
 export GOOGLE_APPLICATION_CREDENTIALS=path/to/key.json
 ```
 
+```sh
+export GCP_PROJECT_ID=project_id
+```
+
 Run unit tests and integration tests:
 
 ```sh

@@ -29,8 +29,8 @@ dependencies {
     compile "com.google.protobuf:protobuf-java-util:${protobufVersion}"
 
     testCompile "com.google.auth:google-auth-library-credentials:0.13.0"
-    testCompile "com.google.api.grpc:proto-google-cloud-spanner-v1:0.36.0"
-    testCompile "com.google.api.grpc:grpc-google-cloud-spanner-v1:0.36.0"
+    testCompile "com.google.cloud:google-cloud-spanner:1.33.0"
+    testCompile "com.google.cloud:google-cloud-bigtable:0.107.0"
     testCompile "com.google.api.grpc:proto-google-cloud-bigtable-v2:0.39.0"
     testCompile "com.google.api.grpc:grpc-google-cloud-bigtable-v2:0.39.0"
     testCompile "com.google.auth:google-auth-library-oauth2-http:0.9.0"

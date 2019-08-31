@@ -30,6 +30,11 @@ import com.google.bigtable.v2.Mutation;
 import com.google.bigtable.v2.ReadRowsRequest;
 import com.google.bigtable.v2.ReadRowsResponse;
 import com.google.bigtable.v2.RowSet;
+import com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminClient;
+import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient;
+import com.google.cloud.bigtable.admin.v2.models.CreateInstanceRequest;
+import com.google.cloud.bigtable.admin.v2.models.CreateTableRequest;
+import com.google.cloud.bigtable.admin.v2.models.StorageType;
 import com.google.common.collect.ImmutableList;
 import com.google.common.util.concurrent.ListenableFuture;
 import com.google.protobuf.ByteString;
@@ -37,6 +42,7 @@ import io.grpc.ManagedChannelBuilder;
 import io.grpc.auth.MoreCallCredentials;
 import io.grpc.stub.StreamObserver;
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -45,7 +51,10 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Assume;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
@@ -55,6 +64,10 @@ import org.junit.runners.JUnit4;
 /** Integration tests for GcpManagedChannel with Bigtable. */
 @RunWith(JUnit4.class)
 public class BigtableIntegrationTest {
+  private static final String GCP_PROJECT_ID = System.getenv("GCP_PROJECT_ID");
+  private static final String INSTANCE_ID = "grpc-gcp-test-instance";
+  private static final String TABLE_ID = "test-table";
+  private static final String FAMILY_NAME = "test-family";
 
   private static final int DEFAULT_MAX_CHANNEL = 10;
   private static final int NEW_MAX_CHANNEL = 5;
@@ -63,16 +76,40 @@ public class BigtableIntegrationTest {
 
   private static final String TEST_APICONFIG_FILE = "empty_method.json";
   private static final String BIGTABLE_TARGET = "bigtable.googleapis.com";
-  private static final String FAMILY_NAME = "test-family";
   private static final String TABLE_NAME =
-      "projects/cloudprober-test/instances/test-instance/tables/test-table";
-  private static final String LARGE_TABLE_NAME =
-      "projects/cloudprober-test/instances/test-instance/tables/test-large-table";
+      String.format("projects/%s/instances/%s/tables/%s", GCP_PROJECT_ID, INSTANCE_ID, TABLE_ID);
   private static final String COLUMN_NAME = "col-";
   private static final String OAUTH_SCOPE = "https://www.googleapis.com/auth/cloud-platform";
 
   private GcpManagedChannel gcpChannel;
   private ManagedChannelBuilder builder;
+
+  @BeforeClass
+  public static void beforeClass() throws IOException {
+    Assume.assumeTrue(
+        "Need to provide GCP_PROJECT_ID for BigtableIntegrationTest", GCP_PROJECT_ID != null);
+    BigtableInstanceAdminClient instanceAdminClient =
+        BigtableInstanceAdminClient.create(GCP_PROJECT_ID);
+    CreateInstanceRequest createInstanceRequest =
+        CreateInstanceRequest.of(INSTANCE_ID)
+            .addCluster("grpc-gcp-test-cluster", "us-central1-c", 3, StorageType.SSD);
+    instanceAdminClient.createInstance(createInstanceRequest);
+
+    BigtableTableAdminClient tableAdminClient =
+        BigtableTableAdminClient.create(GCP_PROJECT_ID, INSTANCE_ID);
+    CreateTableRequest createTableRequest = CreateTableRequest.of(TABLE_ID).addFamily(FAMILY_NAME);
+    tableAdminClient.createTable(createTableRequest);
+    tableAdminClient.close();
+    instanceAdminClient.close();
+  }
+
+  @AfterClass
+  public static void afterClass() throws IOException {
+    BigtableInstanceAdminClient instanceAdminClient =
+        BigtableInstanceAdminClient.create(GCP_PROJECT_ID);
+    instanceAdminClient.deleteInstance(INSTANCE_ID);
+    instanceAdminClient.close();
+  }
 
   private static GoogleCredentials getCreds() {
     GoogleCredentials creds;
@@ -226,7 +263,6 @@ public class BigtableIntegrationTest {
             .setRows(RowSet.newBuilder().addRowKeys(ByteString.copyFromUtf8("test-row")))
             .build();
     Iterator<ReadRowsResponse> response = stub.readRows(request);
-    assertEquals(21, response.next().getChunksCount());
     assertEquals(1, gcpChannel.channelRefs.size());
   }
 
