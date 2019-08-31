@@ -22,9 +22,11 @@ import static org.mockito.Mockito.doAnswer;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
+import com.google.cloud.spanner.SessionClient.SessionEnumeration;
 import com.google.common.util.concurrent.Uninterruptibles;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -41,6 +43,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameter;
 import org.junit.runners.Parameterized.Parameters;
+import org.mockito.Mockito;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
 
@@ -106,6 +109,29 @@ public class SessionPoolStressTest extends BaseSessionPoolTest {
                   }
                   return session;
                 }
+              }
+            });
+    when(mockSpanner.batchCreateSessions(Mockito.eq(db), Mockito.anyInt()))
+        .thenAnswer(
+            new Answer<Enumeration<SessionImpl>>() {
+
+              @Override
+              public Enumeration<SessionImpl> answer(InvocationOnMock invocation) throws Throwable {
+                int sessionCount = invocation.getArgumentAt(1, Integer.class);
+                List<SessionImpl> list = new ArrayList<>(sessionCount);
+                for (int s = 0; s < sessionCount; s++) {
+                  synchronized (lock) {
+                    SessionImpl session = mockSession();
+                    setupSession(session);
+
+                    sessions.put(session.getName(), false);
+                    if (sessions.size() > maxAliveSessions) {
+                      maxAliveSessions = sessions.size();
+                    }
+                    list.add(session);
+                  }
+                }
+                return SessionEnumeration.of(list);
               }
             });
   }

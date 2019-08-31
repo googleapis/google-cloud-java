@@ -97,7 +97,7 @@ public class SessionPoolLeakTest {
         new Runnable() {
           @Override
           public void run() {
-            mockSpanner.setCreateSessionExecutionTime(
+            mockSpanner.setBatchCreateSessionsExecutionTime(
                 SimulatedExecutionTime.ofException(FAILED_PRECONDITION));
           }
         },
@@ -145,7 +145,7 @@ public class SessionPoolLeakTest {
         new Runnable() {
           @Override
           public void run() {
-            mockSpanner.setCreateSessionExecutionTime(
+            mockSpanner.setBatchCreateSessionsExecutionTime(
                 SimulatedExecutionTime.ofException(FAILED_PRECONDITION));
           }
         },

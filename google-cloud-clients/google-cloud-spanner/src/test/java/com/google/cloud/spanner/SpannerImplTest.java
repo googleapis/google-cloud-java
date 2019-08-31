@@ -28,9 +28,7 @@ import com.google.cloud.NoCredentials;
 import com.google.cloud.ServiceRpc;
 import com.google.cloud.grpc.GrpcTransportOptions;
 import com.google.cloud.spanner.spi.v1.SpannerRpc;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import org.junit.Before;
 import org.junit.Test;
@@ -41,8 +39,6 @@ import org.mockito.Captor;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
-import org.mockito.invocation.InvocationOnMock;
-import org.mockito.stubbing.Answer;
 
 /** Unit tests for {@link SpannerImpl}. */
 @RunWith(JUnit4.class)
@@ -61,71 +57,6 @@ public class SpannerImplTest {
     when(spannerOptions.getRetrySettings()).thenReturn(RetrySettings.newBuilder().build());
     when(spannerOptions.getClock()).thenReturn(NanoClock.getDefaultClock());
     impl = new SpannerImpl(rpc, spannerOptions);
-  }
-
-  @Test
-  public void createAndCloseSession() {
-    Map<String, String> labels = new HashMap<>();
-    labels.put("env", "dev");
-    Mockito.when(spannerOptions.getSessionLabels()).thenReturn(labels);
-    String dbName = "projects/p1/instances/i1/databases/d1";
-    String sessionName = dbName + "/sessions/s1";
-    DatabaseId db = DatabaseId.of(dbName);
-
-    com.google.spanner.v1.Session sessionProto =
-        com.google.spanner.v1.Session.newBuilder()
-            .setName(sessionName)
-            .putAllLabels(labels)
-            .build();
-    Mockito.when(rpc.createSession(Mockito.eq(dbName), Mockito.eq(labels), options.capture()))
-        .thenReturn(sessionProto);
-    Session session = impl.createSession(db);
-    assertThat(session.getName()).isEqualTo(sessionName);
-
-    session.close();
-    // The same channelHint is passed for deleteSession (contained in "options").
-    Mockito.verify(rpc).deleteSession(sessionName, options.getValue());
-  }
-
-  @Test
-  public void batchCreateAndCloseSessions() {
-    final int numSessions = 10;
-    final Map<String, String> labels = new HashMap<>();
-    labels.put("env", "dev");
-    Mockito.when(spannerOptions.getSessionLabels()).thenReturn(labels);
-    String dbName = "projects/p1/instances/i1/databases/d1";
-    final String sessionName = dbName + "/sessions/s%d";
-    DatabaseId db = DatabaseId.of(dbName);
-
-    Mockito.when(
-            rpc.batchCreateSessions(
-                Mockito.eq(dbName), Mockito.anyInt(), Mockito.eq(labels), options.capture()))
-        .thenAnswer(
-            new Answer<List<com.google.spanner.v1.Session>>() {
-              @Override
-              public List<com.google.spanner.v1.Session> answer(InvocationOnMock invocation)
-                  throws Throwable {
-                int sessionCount = (Integer) invocation.getArguments()[1];
-                List<com.google.spanner.v1.Session> res = new ArrayList<>(sessionCount);
-                for (int s = 0; s < sessionCount; s++) {
-                  res.add(
-                      com.google.spanner.v1.Session.newBuilder()
-                          .setName(String.format(sessionName, s))
-                          .putAllLabels(labels)
-                          .build());
-                }
-                return res;
-              }
-            });
-    List<SessionImpl> sessions = impl.batchCreateSessions(db, numSessions);
-    assertThat(sessions.size()).isEqualTo(numSessions);
-    for (int s = 0; s < numSessions; s++) {
-      String name = String.format(sessionName, s);
-      assertThat(sessions.get(s).getName()).isEqualTo(name);
-      sessions.get(s).close();
-      // The same channelHint is passed for deleteSession (contained in "options").
-      Mockito.verify(rpc).deleteSession(name, options.getValue());
-    }
   }
 
   @Test

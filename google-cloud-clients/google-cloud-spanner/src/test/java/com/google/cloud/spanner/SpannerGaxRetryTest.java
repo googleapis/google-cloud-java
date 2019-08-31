@@ -218,7 +218,7 @@ public class SpannerGaxRetryTest {
   @Test
   public void singleUseTimeout() {
     expectedException.expect(SpannerMatchers.isSpannerException(ErrorCode.DEADLINE_EXCEEDED));
-    mockSpanner.setCreateSessionExecutionTime(ONE_SECOND);
+    mockSpanner.setBatchCreateSessionsExecutionTime(ONE_SECOND);
     try (ResultSet rs = clientWithTimeout.singleUse().executeQuery(SELECT1AND2)) {
       while (rs.next()) {}
     }
@@ -262,7 +262,7 @@ public class SpannerGaxRetryTest {
   @Test
   public void singleUseReadOnlyTransactionTimeout() {
     expectedException.expect(SpannerMatchers.isSpannerException(ErrorCode.DEADLINE_EXCEEDED));
-    mockSpanner.setCreateSessionExecutionTime(ONE_SECOND);
+    mockSpanner.setBatchCreateSessionsExecutionTime(ONE_SECOND);
     try (ResultSet rs =
         clientWithTimeout.singleUseReadOnlyTransaction().executeQuery(SELECT1AND2)) {
       while (rs.next()) {}

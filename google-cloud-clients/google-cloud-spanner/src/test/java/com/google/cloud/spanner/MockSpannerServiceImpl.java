@@ -32,6 +32,8 @@ import com.google.protobuf.Timestamp;
 import com.google.protobuf.Value.KindCase;
 import com.google.rpc.Code;
 import com.google.rpc.RetryInfo;
+import com.google.spanner.v1.BatchCreateSessionsRequest;
+import com.google.spanner.v1.BatchCreateSessionsResponse;
 import com.google.spanner.v1.BeginTransactionRequest;
 import com.google.spanner.v1.CommitRequest;
 import com.google.spanner.v1.CommitResponse;
@@ -450,9 +452,12 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
   private final ConcurrentMap<String, AtomicLong> transactionCounters = new ConcurrentHashMap<>();
   private final ConcurrentMap<String, List<ByteString>> partitionTokens = new ConcurrentHashMap<>();
   private ConcurrentMap<ByteString, Instant> transactionLastUsed = new ConcurrentHashMap<>();
+  private int maxNumSessionsInOneBatch = 100;
+  private int maxTotalSessions = Integer.MAX_VALUE;
 
   private SimulatedExecutionTime beginTransactionExecutionTime = NO_EXECUTION_TIME;
   private SimulatedExecutionTime commitExecutionTime = NO_EXECUTION_TIME;
+  private SimulatedExecutionTime batchCreateSessionsExecutionTime = NO_EXECUTION_TIME;
   private SimulatedExecutionTime createSessionExecutionTime = NO_EXECUTION_TIME;
   private SimulatedExecutionTime deleteSessionExecutionTime = NO_EXECUTION_TIME;
   private SimulatedExecutionTime executeBatchDmlExecutionTime = NO_EXECUTION_TIME;
@@ -571,6 +576,73 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
 
   public void unfreeze() {
     freezeLock.writeLock().unlock();
+  }
+
+  public void setMaxSessionsInOneBatch(int max) {
+    this.maxNumSessionsInOneBatch = max;
+  }
+
+  public void setMaxTotalSessions(int max) {
+    this.maxTotalSessions = max;
+  }
+
+  @Override
+  public void batchCreateSessions(
+      BatchCreateSessionsRequest request,
+      StreamObserver<BatchCreateSessionsResponse> responseObserver) {
+    Preconditions.checkNotNull(request.getDatabase());
+    String name = null;
+    try {
+      if (request.getSessionCount() <= 0) {
+        throw Status.INVALID_ARGUMENT
+            .withDescription("Session count must be >= 0")
+            .asRuntimeException();
+      }
+      batchCreateSessionsExecutionTime.simulateExecutionTime(exceptions, freezeLock);
+      Timestamp now = getCurrentGoogleTimestamp();
+      BatchCreateSessionsResponse.Builder response = BatchCreateSessionsResponse.newBuilder();
+      for (int i = 0;
+          i
+              < Math.min(
+                  maxTotalSessions - sessions.size(),
+                  Math.min(maxNumSessionsInOneBatch, request.getSessionCount()));
+          i++) {
+        name = generateSessionName(request.getDatabase());
+        Session session =
+            Session.newBuilder()
+                .setCreateTime(now)
+                .setName(name)
+                .setApproximateLastUseTime(now)
+                .build();
+        Session prev = sessions.putIfAbsent(name, session);
+        if (prev == null) {
+          if (sessions.size() <= maxTotalSessions) {
+            sessionLastUsed.put(name, Instant.now());
+            response.addSession(session);
+          } else {
+            sessions.remove(name);
+          }
+        } else {
+          // Someone else tried to create a session with the same id. This should not be possible
+          throw Status.ALREADY_EXISTS.asRuntimeException();
+        }
+      }
+      responseObserver.onNext(response.build());
+      responseObserver.onCompleted();
+    } catch (StatusRuntimeException e) {
+      if (name != null) {
+        sessions.remove(name);
+      }
+      responseObserver.onError(e);
+    } catch (Throwable e) {
+      if (name != null) {
+        sessions.remove(name);
+      }
+      responseObserver.onError(
+          Status.INTERNAL
+              .withDescription("Batch create sessions failed: " + e.getMessage())
+              .asRuntimeException());
+    }
   }
 
   @Override
@@ -1521,6 +1593,16 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
 
   public void setCommitExecutionTime(SimulatedExecutionTime commitExecutionTime) {
     this.commitExecutionTime = Preconditions.checkNotNull(commitExecutionTime);
+  }
+
+  public SimulatedExecutionTime getBatchCreateSessionsExecutionTime() {
+    return batchCreateSessionsExecutionTime;
+  }
+
+  public void setBatchCreateSessionsExecutionTime(
+      SimulatedExecutionTime batchCreateSessionsExecutionTime) {
+    this.batchCreateSessionsExecutionTime =
+        Preconditions.checkNotNull(batchCreateSessionsExecutionTime);
   }
 
   public SimulatedExecutionTime getCreateSessionExecutionTime() {
