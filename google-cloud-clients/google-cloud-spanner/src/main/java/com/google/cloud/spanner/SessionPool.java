@@ -1085,8 +1085,6 @@ final class SessionPool {
   @GuardedBy("lock")
   private final Set<PooledSession> allSessions = new HashSet<>();
 
-  private AtomicInteger numInvalidated = new AtomicInteger();
-
   /**
    * Create a session pool with the given options and for the given database. It will also start
    * eagerly creating sessions if {@link SessionPoolOptions#getMinSessions()} is greater than 0.
@@ -1184,7 +1182,6 @@ final class SessionPool {
   }
 
   private void invalidateSession(PooledSession session) {
-    numInvalidated.incrementAndGet();
     synchronized (lock) {
       if (isClosed()) {
         decrementPendingClosures(1);
@@ -1498,11 +1495,7 @@ final class SessionPool {
         new Runnable() {
           @Override
           public void run() {
-            if (executorFactory == null) {
-              executor.shutdown();
-            } else {
-              executorFactory.release(executor);
-            }
+            executorFactory.release(executor);
           }
         },
         MoreExecutors.directExecutor());

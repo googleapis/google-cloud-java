@@ -49,23 +49,4 @@ public class DatabaseIdTest {
     expectedException.expectMessage("projects"); // Expect conforming pattern in output.
     DatabaseId.of("bad name");
   }
-
-  @Test
-  public void testAtomicInteger() {
-    AtomicInteger ai = new AtomicInteger(Integer.MAX_VALUE - 2);
-    assertThat(ai.getAndIncrement()).isEqualTo(Integer.MAX_VALUE - 2);
-    assertThat(ai.getAndIncrement()).isEqualTo(Integer.MAX_VALUE - 1);
-    assertThat(ai.getAndIncrement()).isEqualTo(Integer.MAX_VALUE);
-    assertThat(ai.getAndIncrement()).isEqualTo(Integer.MIN_VALUE);
-    assertThat(ai.getAndIncrement()).isEqualTo(Integer.MIN_VALUE + 1);
-
-    int index = Integer.MIN_VALUE % 4;
-    index = Math.abs(index);
-    assertThat(index).isAtLeast(0);
-    assertThat(index).isAtMost(3);
-    index = Integer.MAX_VALUE % 4;
-    index = Math.abs(index);
-    assertThat(index).isAtLeast(0);
-    assertThat(index).isAtMost(3);
-  }
 }

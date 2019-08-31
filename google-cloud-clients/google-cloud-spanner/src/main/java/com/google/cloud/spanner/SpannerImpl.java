@@ -80,7 +80,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
         READ);
   }
 
-  final SpannerRpc gapicRpc;
+  private final SpannerRpc gapicRpc;
 
   @GuardedBy("this")
   private final Map<DatabaseId, DatabaseClientImpl> dbClients = new HashMap<>();
