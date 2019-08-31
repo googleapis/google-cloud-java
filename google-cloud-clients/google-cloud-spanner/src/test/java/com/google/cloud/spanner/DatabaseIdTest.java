@@ -18,7 +18,6 @@ package com.google.cloud.spanner;
 
 import static com.google.common.truth.Truth.assertThat;
 
-import java.util.concurrent.atomic.AtomicInteger;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
