@@ -22,6 +22,8 @@
 
 package com.google.cloud.examples.storage.snippets;
 
+import static java.nio.charset.StandardCharsets.UTF_8;
+
 import com.google.api.gax.paging.Page;
 import com.google.auth.ServiceAccountSigner;
 import com.google.auth.oauth2.ServiceAccountCredentials;
@@ -60,7 +62,6 @@ import com.google.cloud.storage.StorageBatchResult;
 import com.google.cloud.storage.StorageClass;
 import com.google.cloud.storage.StorageException;
 import com.google.cloud.storage.StorageOptions;
-
 import java.io.ByteArrayInputStream;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -70,8 +71,6 @@ import java.nio.ByteBuffer;
 import java.nio.file.Path;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
-
-import static java.nio.charset.StandardCharsets.UTF_8;
 
 /** This class contains a number of snippets for the {@link Storage} interface. */
 public class StorageSnippets {
@@ -1647,7 +1646,8 @@ public class StorageSnippets {
     HmacKeyMetadata metadata = storage.getHmacKey(accessId);
     storage.deleteHmacKey(metadata);
 
-    System.out.println("The key is deleted, though it will still appear in getHmacKeys() results given showDeletedKey is true.");
+    System.out.println(
+        "The key is deleted, though it will still appear in getHmacKeys() results given showDeletedKey is true.");
     // [END storage_delete_hmac_key]
   }
 

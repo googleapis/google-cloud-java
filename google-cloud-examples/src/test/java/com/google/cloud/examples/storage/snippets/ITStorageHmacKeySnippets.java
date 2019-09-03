@@ -16,6 +16,9 @@
 
 package com.google.cloud.examples.storage.snippets;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+
 import com.google.api.gax.paging.Page;
 import com.google.cloud.storage.HmacKey;
 import com.google.cloud.storage.HmacKey.HmacKeyMetadata;
@@ -23,16 +26,12 @@ import com.google.cloud.storage.HmacKey.HmacKeyState;
 import com.google.cloud.storage.ServiceAccount;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.testing.RemoteStorageHelper;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
-
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
 
 public class ITStorageHmacKeySnippets {
   private static final Logger log = Logger.getLogger(ITStorageSnippets.class.getName());
@@ -55,7 +54,8 @@ public class ITStorageHmacKeySnippets {
   }
 
   private static void cleanUpHmacKeys(ServiceAccount serviceAccount) {
-    Page<HmacKeyMetadata> page = storage.listHmacKeys(Storage.ListHmacKeysOption.serviceAccount(serviceAccount));
+    Page<HmacKeyMetadata> page =
+        storage.listHmacKeys(Storage.ListHmacKeysOption.serviceAccount(serviceAccount));
     for (HmacKeyMetadata metadata : page.iterateAll()) {
       if (metadata.getState() == HmacKeyState.ACTIVE) {
         storage.updateHmacKeyState(metadata, HmacKeyState.INACTIVE);
