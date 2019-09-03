@@ -35,7 +35,7 @@ public class LargeRowIT {
   @ClassRule public static TestEnvRule testEnvRule = new TestEnvRule();
 
   @Test
-  public void test() throws Exception {
+  public void testWriteRead() throws Exception {
     String rowKey = UUID.randomUUID().toString();
     String familyId = testEnvRule.env().getFamilyId();
 
