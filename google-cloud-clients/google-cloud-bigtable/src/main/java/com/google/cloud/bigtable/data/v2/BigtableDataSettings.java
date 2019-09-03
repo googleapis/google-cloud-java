@@ -16,6 +16,7 @@
 package com.google.cloud.bigtable.data.v2;
 
 import com.google.api.core.ApiFunction;
+import com.google.api.core.BetaApi;
 import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
@@ -122,6 +123,48 @@ public final class BigtableDataSettings {
 
     LOGGER.info("Connecting to the Bigtable emulator at " + hostname + ":" + port);
     return builder;
+  }
+
+  /**
+   * Enables Opencensus metric aggregations.
+   *
+   * <p>This will register Bigtable client relevant {@link io.opencensus.stats.View}s. When coupled
+   * with an exporter, it allows users to monitor client behavior.
+   *
+   * <p>Please note that in addition to calling this method, the application must:
+   * <ul>
+   *   <li>Include openensus-impl dependency on the classpath
+   *   <li>Configure an exporter like opencensus-exporter-stats-stackdriver
+   * </ul>
+   *
+   * <p>Example usage for maven:
+   * <pre>{@code
+   *   <dependency>
+   *     <groupId>io.opencensus</groupId>
+   *     <artifactId>opencensus-impl</artifactId>
+   *     <version>${opencensus.version}</version>
+   *     <scope>runtime</scope>
+   *   </dependency>
+   *
+   *   <dependency>
+   *     <groupId>io.opencensus</groupId>
+   *     <artifactId>opencensus-exporter-stats-stackdriver</artifactId>
+   *     <version>${opencensus.version}</version>
+   *   </dependency>
+   * </pre>
+   *
+   * Java:
+   * <pre>{@code
+   *   StackdriverStatsExporter.createAndRegister();
+   *   BigtableDataSettings.enableOpenCensusStats();
+   * }</pre>
+   */
+  @BetaApi("Opencensus stats integration is currently unstable and may change in the future")
+  public static void enableOpenCensusStats() {
+    com.google.cloud.bigtable.data.v2.stub.metrics.RpcViews.registerBigtableClientViews();
+    // TODO(igorbernstein): Enable grpc views once we upgrade to grpc-java 1.24.0
+    // Required change: https://github.com/grpc/grpc-java/pull/5996
+    // io.opencensus.contrib.grpc.metrics.RpcViews.registerClientGrpcBasicViews();
   }
 
   /** Returns the target project id. */

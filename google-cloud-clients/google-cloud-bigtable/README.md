@@ -163,12 +163,11 @@ try {
 }
 ```
 
-## Opencensus Tracing
+## OpenCensus Tracing
 
-Cloud Bigtable client supports [Opencensus Tracing](https://opencensus.io/tracing/),
+Cloud Bigtable client supports [OpenCensus Tracing](https://opencensus.io/tracing/),
 which gives insight into the client internals and aids in debugging production issues.
-By default, the functionality is disabled. To enable, you need to add a couple of
-dependencies and configure an exporter. For example to enable tracing using 
+By default, the functionality is disabled. For example to enable tracing using
 [Google Stackdriver](https://cloud.google.com/trace/docs/):
 
 [//]: # (TODO: figure out how to keep opencensus version in sync with pom.xml)
@@ -178,26 +177,37 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>io.opencensus</groupId>
   <artifactId>opencensus-impl</artifactId>
-  <version>0.18.0</version>
+  <version>0.23.0</version>
+  <scope>runtime</scope>
 </dependency>
 <dependency>
   <groupId>io.opencensus</groupId>
   <artifactId>opencensus-exporter-trace-stackdriver</artifactId>
-  <version>0.18.0</version>
+  <version>0.23.0</version>
+  <exclusions>
+    <exclusion>
+      <groupId>io.grpc</groupId>
+      <artifactId>*</artifactId>
+    </exclusion>
+    <exclusion>
+      <groupId>com.google.auth</groupId>
+      <artifactId>*</artifactId>
+    </exclusion>
+  </exclusions>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'io.opencensus:opencensus-impl:0.18.0'
-compile 'io.opencensus:opencensus-exporter-trace-stackdriver:0.18.0'
+compile 'io.opencensus:opencensus-impl:0.23.0'
+compile 'io.opencensus:opencensus-exporter-trace-stackdriver:0.23.0'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "io.opencensus" % "opencensus-impl" % "0.18.0"
-libraryDependencies += "io.opencensus" % "opencensus-exporter-trace-stackdriver" % "0.18.0"
+libraryDependencies += "io.opencensus" % "opencensus-impl" % "0.23.0"
+libraryDependencies += "io.opencensus" % "opencensus-exporter-trace-stackdriver" % "0.23.0"
 ```
 
-Then at the start of your application configure the exporter:
+At the start of your application configure the exporter:
 
 ```java
 import io.opencensus.exporter.trace.stackdriver.StackdriverTraceConfiguration;
@@ -205,7 +215,7 @@ import io.opencensus.exporter.trace.stackdriver.StackdriverTraceExporter;
 
 StackdriverTraceExporter.createAndRegister(
   StackdriverTraceConfiguration.builder()
-      .setProjectId("YOUR-PROJECT_ID")
+      .setProjectId("YOUR_PROJECT_ID")
       .build());
 ```
 
@@ -221,6 +231,92 @@ Tracing.getTraceConfig().updateActiveTraceParams(
         .setSampler(Samplers.probabilitySampler(0.01))
         .build()
 );
+```
+
+## OpenCensus Stats
+
+Cloud Bigtable client supports [Opencensus Metrics](https://opencensus.io/stats/),
+which gives insight into the client internals and aids in debugging production issues.
+Metrics prefixed with `cloud.google.com/java/bigtable/` focus on operation level
+metrics across all of the retry attempts that occurred during that operation. RPC
+level metrics can be gleaned from gRPC's metrics, which are prefixed with
+`grpc.io/client/`.
+
+### Available operation level metric views:
+
+* `cloud.google.com/java/bigtable/op_latency`: A distribution latency of
+  each client method call, across all of it's RPC attempts. Tagged by
+  method name and final response status.
+
+* `cloud.google.com/java/bigtable/completed_ops`: The total count of
+  method invocations. Tagged by method name. Can be compared to
+  `grpc.io/client/completed_rpcs` to visualize retry attempts.
+
+* `cloud.google.com/java/bigtable/read_rows_first_row_latency`: A
+  distribution of the latency of receiving the first row in a ReadRows
+  operation.
+
+* `cloud.google.com/java/bigtable/rows_per_op`: A distribution of rows
+  read per ReadRows operation across all retry attempts.
+
+* `cloud.google.com/java/bigtable/mutations_per_batch`: A distribution
+  of mutations per BulkMutation.
+
+
+By default, the functionality is disabled. For example to enable metrics using
+[Google Stackdriver](https://cloud.google.com/monitoring/docs/):
+
+
+[//]: # (TODO: figure out how to keep opencensus version in sync with pom.xml)
+
+If you are using Maven, add this to your pom.xml file
+```xml
+<dependency>
+  <groupId>io.opencensus</groupId>
+  <artifactId>opencensus-impl</artifactId>
+  <version>0.23.0</version>
+  <scope>runtime</scope>
+</dependency>
+<dependency>
+  <groupId>io.opencensus</groupId>
+  <artifactId>opencensus-exporter-stats-stackdriver</artifactId>
+  <version>0.23.0</version>
+  <exclusions>
+    <exclusion>
+      <groupId>io.grpc</groupId>
+      <artifactId>*</artifactId>
+    </exclusion>
+    <exclusion>
+      <groupId>com.google.auth</groupId>
+      <artifactId>*</artifactId>
+    </exclusion>
+  </exclusions>
+</dependency>
+```
+If you are using Gradle, add this to your dependencies
+```Groovy
+compile 'io.opencensus:opencensus-impl:0.23.0'
+compile 'io.opencensus:opencensus-exporter-stats-stackdriver:0.23.0'
+```
+If you are using SBT, add this to your dependencies
+```Scala
+libraryDependencies += "io.opencensus" % "opencensus-impl" % "0.23.0"
+libraryDependencies += "io.opencensus" % "opencensus-exporter-stats-stackdriver" % "0.23.0"
+```
+
+At the start of your application configure the exporter and enable the Bigtable stats views:
+
+```java
+import io.opencensus.exporter.stats.stackdriver.StackdriverStatsConfiguration;
+import io.opencensus.exporter.stats.stackdriver.StackdriverStatsExporter;
+
+StackdriverStatsExporter.createAndRegister(
+    StackdriverStatsConfiguration.builder()
+        .setProjectId("YOUR_PROJECT_ID")
+        .build()
+);
+
+BigtableDataSettings.enableOpenCensusStats();
 ```
 
 ## Troubleshooting

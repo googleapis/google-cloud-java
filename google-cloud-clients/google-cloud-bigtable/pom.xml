@@ -35,6 +35,17 @@
       <artifactId>auto-value</artifactId>
       <scope>provided</scope>
     </dependency>
+    <dependency>
+      <groupId>io.opencensus</groupId>
+      <artifactId>opencensus-api</artifactId>
+    </dependency>
+
+    <!-- // TODO(igorbernstein): Enable grpc views once we upgrade to grpc-java 1.24.0 -->
+<!--    <dependency>-->
+<!--      <groupId>io.opencensus</groupId>-->
+<!--      <artifactId>opencensus-contrib-grpc-metrics</artifactId>-->
+<!--      <version>${opencensus.version}</version>-->
+<!--    </dependency>-->
 
     <!-- Test dependencies -->
     <dependency>
@@ -288,6 +299,7 @@
             <exclude>com/google/cloud/bigtable/data/v2/stub/EnhancedBigtableStub.java</exclude>
             <exclude>com/google/cloud/bigtable/data/v2/stub/mutaterows/**</exclude>
             <exclude>com/google/cloud/bigtable/data/v2/stub/readrows/**</exclude>
+            <exclude>com/google/cloud/bigtable/data/v2/stub/metrics/**</exclude>
           </sourceFileExcludes>
 
           <offlineLinks>
