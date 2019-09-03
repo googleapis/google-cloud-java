@@ -1647,7 +1647,7 @@ public class StorageSnippets {
     HmacKeyMetadata metadata = storage.getHmacKey(accessId);
     storage.deleteHmacKey(metadata);
 
-    System.out.println("The key is deleted, though it may still appear in getHmacKeys() results.");
+    System.out.println("The key is deleted, though it will still appear in getHmacKeys() results given showDeletedKey is true.");
     // [END storage_delete_hmac_key]
   }
 
