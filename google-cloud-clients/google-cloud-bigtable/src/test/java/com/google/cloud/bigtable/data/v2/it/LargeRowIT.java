@@ -39,8 +39,7 @@ public class LargeRowIT {
   @Test
   public void testWriteRead() throws Exception {
     // TODO(igorbernstein2): remove this once direct path supports large messages
-    assume().that(testEnvRule.env())
-        .isNotInstanceOf(DirectPathEnv.class);
+    assume().that(testEnvRule.env()).isNotInstanceOf(DirectPathEnv.class);
 
     String rowKey = UUID.randomUUID().toString();
     String familyId = testEnvRule.env().getFamilyId();
