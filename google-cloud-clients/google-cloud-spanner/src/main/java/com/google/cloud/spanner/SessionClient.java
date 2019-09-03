@@ -41,7 +41,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ThreadFactory;
-import java.util.concurrent.atomic.AtomicInteger;
+import javax.annotation.concurrent.GuardedBy;
 
 /** Client for creating single sessions and batches of sessions. */
 class SessionClient implements AutoCloseable {
@@ -118,12 +118,12 @@ class SessionClient implements AutoCloseable {
   }
 
   private final class BatchCreateSessionsRunnable implements Runnable {
-    private final int channelHint;
+    private final long channelHint;
     private final int sessionCount;
     private final SessionEnumeration enumeration;
 
     private BatchCreateSessionsRunnable(
-        int sessionCount, int channelHint, SessionEnumeration enumeration) {
+        int sessionCount, long channelHint, SessionEnumeration enumeration) {
       Preconditions.checkNotNull(enumeration);
       Preconditions.checkArgument(sessionCount > 0, "sessionCount must be > 0");
       this.channelHint = channelHint;
@@ -274,7 +274,9 @@ class SessionClient implements AutoCloseable {
   private final SpannerImpl spanner;
   private final ScheduledExecutorService executor;
   private final DatabaseId db;
-  private final AtomicInteger sessionChannelCounter = new AtomicInteger();
+
+  @GuardedBy("this")
+  private volatile long sessionChannelCounter;
 
   SessionClient(SpannerImpl spanner, DatabaseId db) {
     this.spanner = spanner;
@@ -293,8 +295,10 @@ class SessionClient implements AutoCloseable {
   SessionImpl createSession() {
     // The sessionChannelCounter could overflow, but that will just flip it to Integer.MIN_VALUE,
     // which is also a valid channel hint.
-    final Map<SpannerRpc.Option, ?> options =
-        optionMap(SessionOption.channelHint(sessionChannelCounter.getAndIncrement()));
+    final Map<SpannerRpc.Option, ?> options;
+    synchronized (this) {
+      options = optionMap(SessionOption.channelHint(sessionChannelCounter++));
+    }
     Span span = SpannerImpl.tracer.spanBuilder(SpannerImpl.CREATE_SESSION).startSpan();
     try (Scope s = SpannerImpl.tracer.withSpan(span)) {
       com.google.spanner.v1.Session session =
@@ -336,20 +340,22 @@ class SessionClient implements AutoCloseable {
     int sessionCountPerChannel = sessionCount / spanner.getOptions().getNumChannels();
     int remainder = sessionCount % spanner.getOptions().getNumChannels();
     int numBeingCreated = 0;
-    for (int i = 0; i < spanner.getOptions().getNumChannels(); i++) {
-      // Create one more session for the first X calls to fill up the remainder of the division.
-      int createCountForChannel = sessionCountPerChannel + (i < remainder ? 1 : 0);
-      if (createCountForChannel > 0) {
-        try {
-          executor.submit(
-              new BatchCreateSessionsRunnable(
-                  createCountForChannel, sessionChannelCounter.getAndIncrement(), stream));
-          numBeingCreated += createCountForChannel;
-        } catch (Throwable t) {
-          stream.registerException(t, sessionCount - numBeingCreated);
+    synchronized (this) {
+      for (int i = 0; i < spanner.getOptions().getNumChannels(); i++) {
+        // Create one more session for the first X calls to fill up the remainder of the division.
+        int createCountForChannel = sessionCountPerChannel + (i < remainder ? 1 : 0);
+        if (createCountForChannel > 0) {
+          try {
+            executor.submit(
+                new BatchCreateSessionsRunnable(
+                    createCountForChannel, sessionChannelCounter++, stream));
+            numBeingCreated += createCountForChannel;
+          } catch (Throwable t) {
+            stream.registerException(t, sessionCount - numBeingCreated);
+          }
+        } else {
+          break;
         }
-      } else {
-        break;
       }
     }
     return stream;
@@ -361,7 +367,7 @@ class SessionClient implements AutoCloseable {
    * that are distributed over multiple channels.
    */
   private List<SessionImpl> internalBatchCreateSessions(
-      final int sessionCount, final int channelHint) throws SpannerException {
+      final int sessionCount, final long channelHint) throws SpannerException {
     final Map<SpannerRpc.Option, ?> options = optionMap(SessionOption.channelHint(channelHint));
     Span span = SpannerImpl.tracer.spanBuilder(SpannerImpl.BATCH_CREATE_SESSIONS).startSpan();
     try (Scope s = SpannerImpl.tracer.withSpan(span)) {
@@ -384,8 +390,10 @@ class SessionClient implements AutoCloseable {
 
   /** Returns a {@link SessionImpl} that references the existing session with the given name. */
   SessionImpl sessionWithId(String name) {
-    final Map<SpannerRpc.Option, ?> options =
-        optionMap(SessionOption.channelHint(sessionChannelCounter.getAndIncrement()));
+    final Map<SpannerRpc.Option, ?> options;
+    synchronized (this) {
+      options = optionMap(SessionOption.channelHint(sessionChannelCounter++));
+    }
     return new SessionImpl(spanner, name, options);
   }
 }
