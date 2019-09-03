@@ -99,6 +99,10 @@ public final class BulkMutation implements Serializable, Cloneable {
     return this;
   }
 
+  public int getEntryCount() {
+    return builder.getEntriesCount();
+  }
+
   @InternalApi
   public MutateRowsRequest toProto(RequestContext requestContext) {
     String tableName =
