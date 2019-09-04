@@ -117,12 +117,11 @@ public class RowMutationEntryTest {
   @Test
   public void unsafeMutationTest() {
     ByteString rowKey = ByteString.copyFromUtf8("row-key");
-    com.google.cloud.bigtable.data.v2.models.Mutation mutation =
-        com.google.cloud.bigtable.data.v2.models.Mutation.createUnsafe();
-    mutation.setCell("family-1", "qualifier-1", 10_000L, "fake-values");
-    mutation.deleteFamily("family-2");
+    RowMutationEntry rowMutationEntry =
+        RowMutationEntry.createUnsafe(rowKey)
+            .setCell("family-1", "qualifier-1", 10_000L, "fake-values")
+            .deleteFamily("family-2");
 
-    RowMutationEntry rowMutationEntry = RowMutationEntry.create(rowKey, mutation);
     MutateRowsRequest.Entry entry = rowMutationEntry.toProto();
     assertThat(entry.getMutationsCount()).isEqualTo(2);
     assertThat(entry.getMutationsList())

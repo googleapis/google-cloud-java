@@ -51,26 +51,19 @@ public class RowMutationEntry implements MutationApi<RowMutationEntry>, Serializ
 
   /** Creates a new instance of the mutation builder. */
   public static RowMutationEntry create(@Nonnull ByteString key) {
-    return create(key, Mutation.create());
+    return new RowMutationEntry(key, Mutation.create());
   }
 
   /**
-   * Creates new instance of mutation builder by wrapping existing set of row mutations. The builder
-   * will be owned by this RowMutationEntry and should not be used by the caller after this call.
+   * Creates new instance of mutation builder which allows server timestamp for setCell operations.
    *
    * <p>NOTE: This functionality is intended for advanced usage.
    *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * Mutation mutation = Mutation.create()
-   *     .setCell("[FAMILY_NAME]", "[QUALIFIER]", [TIMESTAMP], "[VALUE]");
-   * RowMutationEntry rowMutationEntry = RowMutationEntry.create("[TABLE]", "[ROW_KEY]", mutation);
-   * }</pre>
+   * @see Mutation#createUnsafe() for more explanation.
    */
   @InternalApi("For internal usage only")
-  public static RowMutationEntry create(@Nonnull ByteString key, @Nonnull Mutation mutation) {
-    return new RowMutationEntry(key, mutation);
+  public static RowMutationEntry createUnsafe(@Nonnull ByteString key) {
+    return new RowMutationEntry(key, Mutation.createUnsafe());
   }
 
   /** {@inheritDoc} */
