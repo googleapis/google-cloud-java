@@ -156,7 +156,6 @@ class SessionClient implements AutoCloseable {
                 new BatchCreateSessionsRunnable(
                     sessionCount - numActuallyCreated, channelHint, enumeration));
           } catch (Throwable t) {
-            t.printStackTrace();
             enumeration.registerException(t, sessionCount - numActuallyCreated);
           }
         }
