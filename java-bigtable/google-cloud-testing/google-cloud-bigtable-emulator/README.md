@@ -44,7 +44,8 @@ If you are using Maven, add this to your pom.xml file
     <version>4.12</version>
     <scope>test</scope>
   </dependency>
-</dependencies>```
+</dependencies>
+```
 
 If you are using Gradle, add this to your dependencies
 ```Groovy
