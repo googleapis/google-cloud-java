@@ -140,19 +140,26 @@ class FirestoreImpl implements Firestore {
   @Override
   public ApiFuture<List<DocumentSnapshot>> getAll(
       @Nonnull DocumentReference... documentReferences) {
-    return this.getAll(documentReferences, null, null);
+    return this.getAll(documentReferences, null, (ByteString) null);
   }
 
   @Nonnull
   @Override
   public ApiFuture<List<DocumentSnapshot>> getAll(
       @Nonnull DocumentReference[] documentReferences, @Nullable FieldMask fieldMask) {
-    return this.getAll(documentReferences, fieldMask, null);
+    return this.getAll(documentReferences, fieldMask, (ByteString) null);
   }
 
   @Nonnull
   @Override
   public void getAll(
+      final @Nonnull DocumentReference[] documentReferences,
+      @Nullable FieldMask fieldMask,
+      @Nonnull final ApiStreamObserver<DocumentSnapshot> apiStreamObserver) {
+    this.getAll(documentReferences, fieldMask, null, apiStreamObserver);
+  }
+
+  void getAll(
       final @Nonnull DocumentReference[] documentReferences,
       @Nullable FieldMask fieldMask,
       @Nullable ByteString transactionId,

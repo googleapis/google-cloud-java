@@ -19,7 +19,6 @@ package com.google.cloud.firestore;
 import com.google.api.core.ApiFuture;
 import com.google.api.gax.rpc.ApiStreamObserver;
 import com.google.cloud.Service;
-import com.google.protobuf.ByteString;
 import java.util.List;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -121,18 +120,16 @@ public interface Firestore extends Service<FirestoreOptions>, AutoCloseable {
 
   /**
    * Retrieves multiple documents from Firestore while optionally applying a field mask to reduce
-   * the amount of data transmitted. Returned documents will be out of order and missing documents
-   * will not be returned.
+   * the amount of data transmitted. Returned documents will be out of order.
    *
    * @param documentReferences Array with Document References to fetch.
    * @param fieldMask If not null, specifies the subset of fields to return.
-   * @param transactionId Id of {@link Transaction}
-   * @param responseObserver ApiStreamObserver of DocumentSnapshot
+   * @param responseObserver The observer to be notified when {@link DocumentSnapshot} details
+   *     arrive.
    */
   void getAll(
       @Nonnull DocumentReference[] documentReferences,
       @Nullable FieldMask fieldMask,
-      @Nullable ByteString transactionId,
       final ApiStreamObserver<DocumentSnapshot> responseObserver);
 
   /**

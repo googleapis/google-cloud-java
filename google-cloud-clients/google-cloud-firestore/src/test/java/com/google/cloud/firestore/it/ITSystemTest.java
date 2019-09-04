@@ -1348,7 +1348,6 @@ public class ITSystemTest {
     firestore.getAll(
         documentReferences,
         FieldMask.of("foo"),
-        null,
         new ApiStreamObserver<DocumentSnapshot>() {
 
           @Override
