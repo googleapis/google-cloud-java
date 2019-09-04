@@ -418,6 +418,11 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
 
       // Per-method settings using baseSettings for defaults.
       readRowsSettings = ServerStreamingCallSettings.newBuilder();
+
+      // Allow retrying ABORTED statuses. These will be returned by the server when the client is
+      // too slow to read the rows. This makes sense for the java client because retries happen
+      // after the row merging logic. Which means that the retry will not be invoked until the
+      // current buffered chunks are consumed.
       readRowsSettings
           .setRetryableCodes(
               ImmutableSet.<Code>builder()
@@ -430,11 +435,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
       // Point reads should use same defaults as streaming reads, but with a shorter timeout
       readRowSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       readRowSettings
-          .setRetryableCodes(
-              ImmutableSet.<Code>builder()
-                  .addAll(baseDefaults.readRowsSettings().getRetryableCodes())
-                  .add(Code.ABORTED)
-                  .build())
+          .setRetryableCodes(readRowsSettings.getRetryableCodes())
           .setRetrySettings(
               baseDefaults
                   .readRowsSettings()
