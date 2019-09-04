@@ -79,7 +79,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
   private static final String SERVER_DEFAULT_APP_PROFILE_ID = "";
 
   private static final Set<Code> IDEMPOTENT_RETRY_CODES =
-      ImmutableSet.of(Code.DEADLINE_EXCEEDED, Code.UNAVAILABLE);
+      ImmutableSet.of(Code.DEADLINE_EXCEEDED, Code.UNAVAILABLE, Code.ABORTED);
 
   // Copy of default retrying settings in the yaml
   private static final RetrySettings IDEMPOTENT_RETRY_SETTINGS =
@@ -206,7 +206,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
    *   <li>{@link ServerStreamingCallSettings.Builder#setIdleTimeout Default idle timeout} is set to
    *       5 mins.
    *   <li>Retry {@link ServerStreamingCallSettings.Builder#setRetryableCodes error codes} are:
-   *       {@link Code#DEADLINE_EXCEEDED} and {@link Code#UNAVAILABLE}.
+   *       {@link Code#DEADLINE_EXCEEDED}, {@link Code#UNAVAILABLE} and {@link Code#ABORTED}.
    *   <li>RetryDelay between failed attempts {@link RetrySettings.Builder#setInitialRetryDelay
    *       starts} at 10ms and {@link RetrySettings.Builder#setRetryDelayMultiplier increases
    *       exponentially} by a factor of 2 until a {@link RetrySettings.Builder#setMaxRetryDelay
@@ -229,7 +229,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
    *
    * <ul>
    *   <li>Retry {@link UnaryCallSettings.Builder#setRetryableCodes error codes} are: {@link
-   *       Code#DEADLINE_EXCEEDED} and {@link Code#UNAVAILABLE}.
+   *       Code#DEADLINE_EXCEEDED}, {@link Code#UNAVAILABLE} and {@link Code#ABORTED}.
    *   <li>RetryDelay between failed attempts {@link RetrySettings.Builder#setInitialRetryDelay
    *       starts} at 10ms and {@link RetrySettings.Builder#setRetryDelayMultiplier increases
    *       exponentially} by a factor of 2 until a {@link RetrySettings.Builder#setMaxRetryDelay
@@ -252,7 +252,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
    *
    * <ul>
    *   <li>Retry {@link UnaryCallSettings.Builder#setRetryableCodes error codes} are: {@link
-   *       Code#DEADLINE_EXCEEDED} and {@link Code#UNAVAILABLE}.
+   *       Code#DEADLINE_EXCEEDED}, {@link Code#UNAVAILABLE} and {@link Code#ABORTED}.
    *   <li>RetryDelay between failed attempts {@link RetrySettings.Builder#setInitialRetryDelay
    *       starts} at 10ms and {@link RetrySettings.Builder#setRetryDelayMultiplier increases
    *       exponentially} by a factor of 2 until a {@link RetrySettings.Builder#setMaxRetryDelay
@@ -277,7 +277,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
    *
    * <ul>
    *   <li>Retry {@link UnaryCallSettings.Builder#setRetryableCodes error codes} are: {@link
-   *       Code#DEADLINE_EXCEEDED} and {@link Code#UNAVAILABLE}.
+   *       Code#DEADLINE_EXCEEDED}, {@link Code#UNAVAILABLE} and {@link Code#ABORTED}.
    *   <li>RetryDelay between failed attempts {@link RetrySettings.Builder#setInitialRetryDelay
    *       starts} at 10ms and {@link RetrySettings.Builder#setRetryDelayMultiplier increases
    *       exponentially} by a factor of 2 until a {@link RetrySettings.Builder#setMaxRetryDelay
@@ -420,14 +420,14 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
       // Per-method settings using baseSettings for defaults.
       readRowsSettings = ServerStreamingCallSettings.newBuilder();
       readRowsSettings
-          .setRetryableCodes(baseDefaults.readRowsSettings().getRetryableCodes())
+          .setRetryableCodes(IDEMPOTENT_RETRY_CODES)
           .setRetrySettings(baseDefaults.readRowsSettings().getRetrySettings())
           .setIdleTimeout(Duration.ofMinutes(5));
 
       // Point reads should use same defaults as streaming reads, but with a shorter timeout
       readRowSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       readRowSettings
-          .setRetryableCodes(baseDefaults.readRowsSettings().getRetryableCodes())
+          .setRetryableCodes(IDEMPOTENT_RETRY_CODES)
           .setRetrySettings(
               baseDefaults
                   .readRowsSettings()
@@ -438,11 +438,13 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
 
       sampleRowKeysSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       sampleRowKeysSettings
-          .setRetryableCodes(baseDefaults.sampleRowKeysSettings().getRetryableCodes())
+          .setRetryableCodes(IDEMPOTENT_RETRY_CODES)
           .setRetrySettings(baseDefaults.sampleRowKeysSettings().getRetrySettings());
 
       mutateRowSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      copyRetrySettings(baseDefaults.mutateRowSettings(), mutateRowSettings);
+      mutateRowSettings
+          .setRetryableCodes(IDEMPOTENT_RETRY_CODES)
+          .setRetrySettings(baseDefaults.mutateRowSettings().getRetrySettings());
 
       bulkMutateRowsSettings =
           BigtableBatchingCallSettings.newBuilder(new MutateRowsBatchingDescriptorV2())
