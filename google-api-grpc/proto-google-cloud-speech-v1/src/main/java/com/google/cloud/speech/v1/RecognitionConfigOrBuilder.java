@@ -244,6 +244,58 @@ public interface RecognitionConfigOrBuilder
    *
    *
    * <pre>
+   * *Optional* Config to enable speaker diarization and set additional
+   * parameters to make diarization better suited for your application.
+   * Note: When this is enabled, we send all the words from the beginning of the
+   * audio for the top alternative in every consecutive STREAMING responses.
+   * This is done in order to improve our speaker tags as our models learn to
+   * identify the speakers in the conversation over time.
+   * For non-streaming requests, the diarization results will be provided only
+   * in the top alternative of the FINAL SpeechRecognitionResult.
+   * </pre>
+   *
+   * <code>.google.cloud.speech.v1.SpeakerDiarizationConfig diarization_config = 19;</code>
+   */
+  boolean hasDiarizationConfig();
+  /**
+   *
+   *
+   * <pre>
+   * *Optional* Config to enable speaker diarization and set additional
+   * parameters to make diarization better suited for your application.
+   * Note: When this is enabled, we send all the words from the beginning of the
+   * audio for the top alternative in every consecutive STREAMING responses.
+   * This is done in order to improve our speaker tags as our models learn to
+   * identify the speakers in the conversation over time.
+   * For non-streaming requests, the diarization results will be provided only
+   * in the top alternative of the FINAL SpeechRecognitionResult.
+   * </pre>
+   *
+   * <code>.google.cloud.speech.v1.SpeakerDiarizationConfig diarization_config = 19;</code>
+   */
+  com.google.cloud.speech.v1.SpeakerDiarizationConfig getDiarizationConfig();
+  /**
+   *
+   *
+   * <pre>
+   * *Optional* Config to enable speaker diarization and set additional
+   * parameters to make diarization better suited for your application.
+   * Note: When this is enabled, we send all the words from the beginning of the
+   * audio for the top alternative in every consecutive STREAMING responses.
+   * This is done in order to improve our speaker tags as our models learn to
+   * identify the speakers in the conversation over time.
+   * For non-streaming requests, the diarization results will be provided only
+   * in the top alternative of the FINAL SpeechRecognitionResult.
+   * </pre>
+   *
+   * <code>.google.cloud.speech.v1.SpeakerDiarizationConfig diarization_config = 19;</code>
+   */
+  com.google.cloud.speech.v1.SpeakerDiarizationConfigOrBuilder getDiarizationConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * *Optional* Metadata regarding this request.
    * </pre>
    *
