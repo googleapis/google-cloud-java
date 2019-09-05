@@ -113,4 +113,31 @@ public class RowMutationEntryTest {
                 .setDeleteFromRow(Mutation.DeleteFromRow.newBuilder().build())
                 .build());
   }
+
+  @Test
+  public void unsafeMutationTest() {
+    ByteString rowKey = ByteString.copyFromUtf8("row-key");
+    RowMutationEntry rowMutationEntry =
+        RowMutationEntry.createUnsafe(rowKey)
+            .setCell("family-1", "qualifier-1", 10_000L, "fake-values")
+            .deleteFamily("family-2");
+
+    MutateRowsRequest.Entry entry = rowMutationEntry.toProto();
+    assertThat(entry.getMutationsCount()).isEqualTo(2);
+    assertThat(entry.getMutationsList())
+        .isEqualTo(
+            ImmutableList.of(
+                Mutation.newBuilder()
+                    .setSetCell(
+                        Mutation.SetCell.newBuilder()
+                            .setFamilyName("family-1")
+                            .setColumnQualifier(ByteString.copyFromUtf8("qualifier-1"))
+                            .setTimestampMicros(10_000L)
+                            .setValue(ByteString.copyFromUtf8("fake-values")))
+                    .build(),
+                Mutation.newBuilder()
+                    .setDeleteFromFamily(
+                        Mutation.DeleteFromFamily.newBuilder().setFamilyName("family-2"))
+                    .build()));
+  }
 }
