@@ -1,0 +1,9 @@
+{
+    "name": "google-cloud-trace",
+    "name_pretty": "Google Cloud Stackdriver Trace",
+    "release_level": "beta",
+    "language": "java",
+    "repo": "googleapis/java-trace",
+    "repo_short": "java-trace",
+    "distribution_name": "google-cloud-trace"
+}
