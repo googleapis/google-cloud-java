@@ -190,7 +190,6 @@
                 <requireJavaVersion>
                   <version>[1.7,)</version>
                 </requireJavaVersion>
-                <dependencyConvergence/>
                 <requireUpperBoundDeps/>
               </rules>
             </configuration>
