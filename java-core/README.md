@@ -2,7 +2,6 @@
 
 This module provides common functionality required by service-specific modules of this library.
 
-[![Kokoro CI][kokoro-badge]][kokoro-badge-link]
 [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-core.svg)](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-core.svg)
 
 - [API Documentation][api-docs]
@@ -15,16 +14,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-core</artifactId>
-  <version>1.84.0</version>
+  <version>1.90.0</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-core:1.84.0'
+compile 'com.google.cloud:google-cloud-core:1.90.0'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-core" % "1.84.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-core" % "1.90.0"
 ```
 [//]: # ({x-version-update-end})
 
@@ -53,11 +52,18 @@ considered stable.
 
 Apache 2.0 - See [LICENSE][license] for more information.
 
+## CI Status
+
+Java Version | Status
+------------ | ------
+Java 7 | [![Kokoro CI](https://storage.googleapis.com/cloud-devrel-public/java/badges/java-core/java7.svg)](https://storage.googleapis.com/cloud-devrel-public/java/badges/java-core/java7.html)
+Java 8 | [![Kokoro CI](https://storage.googleapis.com/cloud-devrel-public/java/badges/java-core/java8.svg)](https://storage.googleapis.com/cloud-devrel-public/java/badges/java-core/java8.html)
+Java 11 | [![Kokoro CI](https://storage.googleapis.com/cloud-devrel-public/java/badges/java-core/java11.svg)](https://storage.googleapis.com/cloud-devrel-public/java/badges/java-core/java11.html)
+
+
 [contributing]: https://github.com/googleapis/java-core/blob/master/CONTRIBUTING.md
 [code-of-conduct]: https://github.com/googleapis/java-core/blob/master/CODE_OF_CONDUCT.md
 [license]: https://github.com/googleapis/java-core/blob/master/LICENSE
 [semver]: http://semver.org/
 [cloud-platform]: https://cloud.google.com/
-[kokoro-badge]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-core/master.svg
-[kokoro-badge-link]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-core/master.html
 [api-docs]: https://googleapis.dev/java/google-cloud-core/latest
