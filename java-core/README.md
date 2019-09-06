@@ -59,5 +59,5 @@ Apache 2.0 - See [LICENSE][license] for more information.
 [semver]: http://semver.org/
 [cloud-platform]: https://cloud.google.com/
 [kokoro-badge]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-core/master.svg
-[kokoro-badge-link]: (http://storage.googleapis.com/cloud-devrel-public/java/badges/java-core/master.html)
+[kokoro-badge-link]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-core/master.html
 [api-docs]: https://googleapis.dev/java/google-cloud-core/latest
