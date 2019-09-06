@@ -338,6 +338,7 @@
     <module>google-cloud-core</module>
     <module>google-cloud-core-http</module>
     <module>google-cloud-core-grpc</module>
+    <module>google-cloud-core-bom</module>
   </modules>
 
   <reporting>
