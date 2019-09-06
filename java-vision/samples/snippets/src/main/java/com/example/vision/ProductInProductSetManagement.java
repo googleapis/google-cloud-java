@@ -172,7 +172,7 @@ public class ProductInProductSetManagement {
       }
       if (ns.get("command").equals("remove_product_from_product_set")) {
         removeProductFromProductSet(
-            projectId, computeRegion, ns.getString("productId"), ns.getString("productSetId"));
+                projectId, computeRegion, ns.getString("productId"), ns.getString("productSetId"));
       }
 
     } catch (ArgumentParserException e) {

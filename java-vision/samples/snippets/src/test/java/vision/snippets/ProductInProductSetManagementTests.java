@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,10 +14,14 @@
  * limitations under the License.
  */
 
-package com.example.vision;
+package vision.snippets;
 
 import static com.google.common.truth.Truth.assertThat;
 
+import com.example.vision.ProductInProductSetManagement;
+import com.example.vision.ProductManagement;
+import com.example.vision.ProductSetManagement;
+import com.example.vision.snippets.PurgeProductsInProductSet;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
@@ -26,17 +30,12 @@ import java.util.UUID;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
 
-/** Integration (system) tests for {@link ProductInProductSetManagement}. */
-@RunWith(JUnit4.class)
-@SuppressWarnings("checkstyle:abbreviationaswordinname")
-public class ProductInProductSetManagementIT {
+public class ProductInProductSetManagementTests {
   private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
   private static final String COMPUTE_REGION = "us-west1";
   private static final String PRODUCT_SET_DISPLAY_NAME =
-      "fake_pdt_set_display_name_for_testing";
+          "fake_pdt_set_display_name_for_testing";
   private static final String PRODUCT_SET_ID = "fake_pdt_set_id_for_testing" + UUID.randomUUID();
   private static final String PRODUCT_DISPLAY_NAME = "fake_pdt_display_name_for_testing";
   private static final String PRODUCT_CATEGORY = "apparel";
@@ -50,9 +49,9 @@ public class ProductInProductSetManagementIT {
     out = new PrintStream(bout);
     System.setOut(out);
     ProductSetManagement.createProductSet(
-        PROJECT_ID, COMPUTE_REGION, PRODUCT_SET_ID, PRODUCT_SET_DISPLAY_NAME);
+            PROJECT_ID, COMPUTE_REGION, PRODUCT_SET_ID, PRODUCT_SET_DISPLAY_NAME);
     ProductManagement.createProduct(
-        PROJECT_ID, COMPUTE_REGION, PRODUCT_ID, PRODUCT_DISPLAY_NAME, PRODUCT_CATEGORY);
+            PROJECT_ID, COMPUTE_REGION, PRODUCT_ID, PRODUCT_DISPLAY_NAME, PRODUCT_CATEGORY);
     bout.reset();
   }
 
@@ -64,45 +63,23 @@ public class ProductInProductSetManagementIT {
   }
 
   @Test
-  public void testAddProductToProductSet() throws Exception {
-    // Act
-    ProductInProductSetManagement.listProductsInProductSet(
-        PROJECT_ID, COMPUTE_REGION, PRODUCT_SET_ID);
-
-    // Assert
-    String got = bout.toString();
-    assertThat(got).doesNotContain(PRODUCT_ID);
-
-    bout.reset();
-
+  public void testPurgeProductsInProductSet() throws Exception {
     // Act
     ProductInProductSetManagement.addProductToProductSet(
-        PROJECT_ID, COMPUTE_REGION, PRODUCT_ID, PRODUCT_SET_ID);
-
-    // Assert
-    got = bout.toString();
-    assertThat(got).contains("Product added to product set.");
-  }
-
-  @Test
-  public void testRemoveProductFromProductSet() throws Exception {
-    // Act
-    ProductInProductSetManagement.addProductToProductSet(
-        PROJECT_ID, COMPUTE_REGION, PRODUCT_ID, PRODUCT_SET_ID);
-    ProductInProductSetManagement.listProductsInProductSet(
-        PROJECT_ID, COMPUTE_REGION, PRODUCT_SET_ID);
+            PROJECT_ID, COMPUTE_REGION, PRODUCT_ID, PRODUCT_SET_ID);
+    ProductManagement.listProducts(
+            PROJECT_ID, COMPUTE_REGION);
 
     // Assert
     String got = bout.toString();
     assertThat(got).contains(PRODUCT_ID);
 
     bout.reset();
+    PurgeProductsInProductSet.purgeProductsInProductSet(
+            PROJECT_ID, COMPUTE_REGION, PRODUCT_SET_ID);
 
-    // Act
-    ProductInProductSetManagement.removeProductFromProductSet(
-        PROJECT_ID, COMPUTE_REGION, PRODUCT_ID, PRODUCT_SET_ID);
-    ProductInProductSetManagement.listProductsInProductSet(
-        PROJECT_ID, COMPUTE_REGION, PRODUCT_SET_ID);
+    ProductManagement.listProducts(
+            PROJECT_ID, COMPUTE_REGION);
 
     // Assert
     got = bout.toString();

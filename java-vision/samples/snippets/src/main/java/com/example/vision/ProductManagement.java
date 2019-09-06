@@ -268,7 +268,6 @@ public class ProductManagement {
       if (ns.get("command").equals("delete_product")) {
         deleteProduct(projectId, computeRegion, ns.getString("productId"));
       }
-
     } catch (ArgumentParserException e) {
       parser.handleError(e);
     }

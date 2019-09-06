@@ -16,6 +16,8 @@
 
 package com.example.vision;
 
+import com.google.cloud.vision.v1.Image;
+import com.google.cloud.vision.v1.ImageName;
 import com.google.cloud.vision.v1.ProductSearchClient;
 import com.google.cloud.vision.v1.ReferenceImage;
 
@@ -123,7 +125,7 @@ public class ReferenceImageManagement {
 
       // Get the full path of the reference image.
       String formattedName =
-          ProductSearchClient.formatImageName(
+              ImageName.format(
               projectId, computeRegion, productId, referenceImageId);
       // Get complete detail of the reference image.
       ReferenceImage image = client.getReferenceImage(formattedName);
@@ -158,7 +160,7 @@ public class ReferenceImageManagement {
 
       // Get the full path of the reference image.
       String formattedName =
-          ProductSearchClient.formatImageName(
+              ImageName.format(
               projectId, computeRegion, productId, referenceImageId);
       // Delete the reference image.
       client.deleteReferenceImage(formattedName);
