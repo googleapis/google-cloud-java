@@ -174,11 +174,25 @@ public final class SpannerIntegrationTest {
 
   @AfterClass
   public static void afterClass() {
+    cleanupSessions();
     SpannerOptions options = SpannerOptions.newBuilder().setProjectId(GCP_PROJECT_ID).build();
     Spanner spanner = options.getService();
     InstanceAdminClient instanceAdminClient = spanner.getInstanceAdminClient();
     InstanceId instanceId = InstanceId.of(GCP_PROJECT_ID, INSTANCE_ID);
     cleanUpInstance(instanceAdminClient, instanceId);
+  }
+
+  private static void cleanupSessions() {
+    ManagedChannel channel = builder.build();
+    GoogleCredentials creds = getCreds();
+    SpannerBlockingStub stub =
+        SpannerGrpc.newBlockingStub(channel).withCallCredentials(MoreCallCredentials.from(creds));
+    ListSessionsResponse responseList =
+        stub.listSessions(ListSessionsRequest.newBuilder().setDatabase(DATABASE_PATH).build());
+    for (Session s : responseList.getSessionsList()) {
+      deleteSession(stub, s);
+    }
+    channel.shutdownNow();
   }
 
   private static void cleanUpInstance(
@@ -325,24 +339,6 @@ public final class SpannerIntegrationTest {
     gcpChannel.shutdownNow();
   }
 
-  /**
-   * Delete all the sessions in the database in case that sessions are not cleared in previous tests
-   * because of assertion errors.
-   */
-  @AfterClass
-  public static void clearSessions() throws Exception {
-    ManagedChannel channel = builder.build();
-    GoogleCredentials creds = getCreds();
-    SpannerBlockingStub stub =
-        SpannerGrpc.newBlockingStub(channel).withCallCredentials(MoreCallCredentials.from(creds));
-    ListSessionsResponse responseList =
-        stub.listSessions(ListSessionsRequest.newBuilder().setDatabase(DATABASE_PATH).build());
-    for (Session s : responseList.getSessionsList()) {
-      deleteSession(stub, s);
-    }
-    channel.shutdownNow();
-  }
-
   @Test
   public void testCreateAndGetSessionBlocking() throws Exception {
     SpannerBlockingStub stub = getSpannerBlockingStub();
@@ -417,29 +413,27 @@ public final class SpannerIntegrationTest {
   }
 
   @Test
-  public void testBoundWithInvalidAffinityKey() throws Exception {
+  public void testBoundWithInvalidAffinityKey() {
     SpannerBlockingStub stub = getSpannerBlockingStub();
     CreateSessionRequest req = CreateSessionRequest.newBuilder().setDatabase(DATABASE_PATH).build();
     Session session = stub.createSession(req);
     expectedEx.expect(StatusRuntimeException.class);
     expectedEx.expectMessage("INVALID_ARGUMENT: Invalid GetSession request.");
     stub.getSession(GetSessionRequest.newBuilder().setName("invalid_session").build());
-    deleteSession(stub, session);
   }
 
   @Test
-  public void testUnbindWithInvalidAffinityKey() throws Exception {
+  public void testUnbindWithInvalidAffinityKey() {
     SpannerBlockingStub stub = getSpannerBlockingStub();
     CreateSessionRequest req = CreateSessionRequest.newBuilder().setDatabase(DATABASE_PATH).build();
     Session session = stub.createSession(req);
     expectedEx.expect(StatusRuntimeException.class);
     expectedEx.expectMessage("INVALID_ARGUMENT: Invalid DeleteSession request.");
     stub.deleteSession(DeleteSessionRequest.newBuilder().setName("invalid_session").build());
-    deleteSession(stub, session);
   }
 
   @Test
-  public void testBoundAfterUnbind() throws Exception {
+  public void testBoundAfterUnbind() {
     SpannerBlockingStub stub = getSpannerBlockingStub();
     CreateSessionRequest req = CreateSessionRequest.newBuilder().setDatabase(DATABASE_PATH).build();
     Session session = stub.createSession(req);
