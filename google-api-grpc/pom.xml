@@ -585,16 +585,6 @@
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-cloud-trace-v1</artifactId>
-        <version>0.73.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-trace-v1:current} -->
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>grpc-google-cloud-trace-v1</artifactId>
-        <version>0.73.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-trace-v1:current} -->
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-translate-v3beta1</artifactId>
         <version>0.73.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-translate-v3beta1:current} -->
       </dependency>
@@ -602,16 +592,6 @@
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-translate-v3beta1</artifactId>
         <version>0.73.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-translate-v3beta1:current} -->
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-cloud-trace-v2</artifactId>
-        <version>0.73.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-trace-v2:current} -->
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>grpc-google-cloud-trace-v2</artifactId>
-        <version>0.73.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-trace-v2:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
@@ -889,8 +869,6 @@
     <module>grpc-google-cloud-tasks-v2beta3</module>
     <module>grpc-google-cloud-texttospeech-v1</module>
     <module>grpc-google-cloud-texttospeech-v1beta1</module>
-    <module>grpc-google-cloud-trace-v1</module>
-    <module>grpc-google-cloud-trace-v2</module>
     <module>grpc-google-cloud-translate-v3beta1</module>
     <module>grpc-google-cloud-video-intelligence-v1</module>
     <module>grpc-google-cloud-video-intelligence-v1beta1</module>
@@ -960,8 +938,6 @@
     <module>proto-google-cloud-tasks-v2beta3</module>
     <module>proto-google-cloud-texttospeech-v1</module>
     <module>proto-google-cloud-texttospeech-v1beta1</module>
-    <module>proto-google-cloud-trace-v1</module>
-    <module>proto-google-cloud-trace-v2</module>
     <module>proto-google-cloud-translate-v3beta1</module>
     <module>proto-google-cloud-video-intelligence-v1</module>
     <module>proto-google-cloud-video-intelligence-v1beta1</module>
