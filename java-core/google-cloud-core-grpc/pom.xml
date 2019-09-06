@@ -1,8 +1,9 @@
 <?xml version="1.0"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
+  <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-core-grpc</artifactId>
-  <version>1.90.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-core-grpc:current} -->
+  <version>1.90.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-core:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Core gRPC</name>
   <url>https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-clients/google-cloud-core-grpc</url>
@@ -11,8 +12,8 @@
   </description>
   <parent>
     <groupId>com.google.cloud</groupId>
-    <artifactId>google-cloud-clients</artifactId>
-    <version>0.108.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-clients:current} -->
+    <artifactId>google-cloud-core-parent</artifactId>
+    <version>1.90.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-core:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-core-grpc</site.installationModule>
@@ -31,6 +32,31 @@
       <artifactId>guava</artifactId>
     </dependency>
     <dependency>
+      <groupId>com.google.api</groupId>
+      <artifactId>gax</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api</groupId>
+      <artifactId>gax-grpc</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api</groupId>
+      <artifactId>api-common</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.grpc</groupId>
+      <artifactId>grpc-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.grpc</groupId>
+      <artifactId>grpc-core</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.http-client</groupId>
+      <artifactId>google-http-client</artifactId>
+    </dependency>
+
+    <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <scope>test</scope>
@@ -44,10 +70,6 @@
       <groupId>org.objenesis</groupId>
       <artifactId>objenesis</artifactId>
       <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>com.google.api</groupId>
-      <artifactId>gax-grpc</artifactId>
     </dependency>
   </dependencies>
 </project>
