@@ -57,8 +57,7 @@ fi
 mvn install -B -V \
   -DskipTests=true \
   -Dmaven.javadoc.skip=true \
-  -Dgcloud.download.skip=true \
-  -T 1C
+  -Dgcloud.download.skip=true
 
 # if GOOGLE_APPLICATION_CREDIENTIALS is specified as a relative path prepend Kokoro root directory onto it
 if [[ ! -z "${GOOGLE_APPLICATION_CREDENTIALS}" && "${GOOGLE_APPLICATION_CREDENTIALS}" != /* ]]; then
