@@ -63,7 +63,8 @@ for version in versions:
         service=service,
         version=version,
         config_path=config_pattern.format(version=version),
-        artman_output_name='')
+        artman_output_name='',
+        include_samples=True)
 
     s.replace(
         library / f'proto-google-cloud-{service}-{version}/src/**/*.java',
@@ -84,6 +85,7 @@ for version in versions:
     s.copy(library / f'gapic-google-cloud-{service}-{version}/src', 'google-cloud-trace/src')
     s.copy(library / f'grpc-google-cloud-{service}-{version}/src', f'grpc-google-cloud-{service}-{version}/src')
     s.copy(library / f'proto-google-cloud-{service}-{version}/src', f'proto-google-cloud-{service}-{version}/src')
+    s.copy(library / f'gapic-google-cloud-{service}-{version}/samples/src', 'samples/src')
 
     java.format_code(f'./grpc-google-cloud-{service}-{version}/src')
     java.format_code(f'./proto-google-cloud-{service}-{version}/src')
