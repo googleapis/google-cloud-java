@@ -122,7 +122,7 @@
                   </systemPropertyVariables>
                   <test>com.google.cloud.bigtable.data.v2.it.**</test>
                   <test>com.google.cloud.bigtable.admin.v2.it.**</test>
-                  <summaryFile>target/failsafe-reports/failsafe-summary-emulator-it.xml</summaryFile>
+                  <summaryFile>${project.build.directory}/failsafe-reports/failsafe-summary-emulator-it.xml</summaryFile>
                 </configuration>
               </execution>
             </executions>
@@ -150,7 +150,7 @@
                   </systemPropertyVariables>
                   <test>com.google.cloud.bigtable.data.v2.it.**</test>
                   <test>com.google.cloud.bigtable.admin.v2.it.**</test>
-                  <summaryFile>target/failsafe-reports/failsafe-summary-prod-it.xml</summaryFile>
+                  <summaryFile>${project.build.directory}/failsafe-reports/failsafe-summary-prod-it.xml</summaryFile>
                 </configuration>
               </execution>
             </executions>
@@ -184,7 +184,7 @@
                   </environmentVariables>
                   <!-- TODO(igorbernstein): Once the control plane is accessible via directpath, add admin tests -->
                   <test>com.google.cloud.bigtable.data.v2.it.**</test>
-                  <summaryFile>target/failsafe-reports/failsafe-summary-directpath-it.xml</summaryFile>
+                  <summaryFile>${project.build.directory}/failsafe-reports/failsafe-summary-directpath-it.xml</summaryFile>
                 </configuration>
               </execution>
             </executions>
@@ -215,6 +215,31 @@
         </executions>
       </plugin>
 
+      <!-- Workaround maven failing to delete old test reports. For some reason, when using the
+        failsafe plugin in profiles, maven retains the counts from previous executions. Causing a
+        stale failure to fail the current test run. -->
+      <plugin>
+        <artifactId>maven-clean-plugin</artifactId>
+        <version>2.5</version>
+        <executions>
+          <execution>
+            <id>clean-old-reports</id>
+            <goals>
+              <goal>clean</goal>
+            </goals>
+            <phase>pre-integration-test</phase>
+            <configuration>
+              <excludeDefaultDirectories>true</excludeDefaultDirectories>
+              <filesets>
+                <fileset>
+                  <directory>${project.build.directory}/failsafe-reports</directory>
+                </fileset>
+              </filesets>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-failsafe-plugin</artifactId>
@@ -233,6 +258,7 @@
           </dependency>
         </dependencies>
       </plugin>
+
       <plugin>
         <artifactId>maven-surefire-plugin</artifactId>
         <version>3.0.0-M3</version>
