@@ -1141,7 +1141,7 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
                       .setInitialRpcTimeout(Duration.ZERO) // ignored
                       .setRpcTimeoutMultiplier(1.0) // ignored
                       .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setTotalTimeout(Duration.ofMillis(86400000L))
                       .build()));
       builder
           .exportDataOperationSettings()
@@ -1185,7 +1185,7 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
                       .setInitialRpcTimeout(Duration.ZERO) // ignored
                       .setRpcTimeoutMultiplier(1.0) // ignored
                       .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setTotalTimeout(Duration.ofMillis(86400000L))
                       .build()));
       builder
           .deleteModelOperationSettings()
@@ -1229,7 +1229,7 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
                       .setInitialRpcTimeout(Duration.ZERO) // ignored
                       .setRpcTimeoutMultiplier(1.0) // ignored
                       .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setTotalTimeout(Duration.ofMillis(3600000L))
                       .build()));
       builder
           .undeployModelOperationSettings()
@@ -1252,7 +1252,7 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
                       .setInitialRpcTimeout(Duration.ZERO) // ignored
                       .setRpcTimeoutMultiplier(1.0) // ignored
                       .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setTotalTimeout(Duration.ofMillis(3600000L))
                       .build()));
       builder
           .exportModelOperationSettings()
