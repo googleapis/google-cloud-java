@@ -1,31 +1,12 @@
 # Google Cloud Java Client -- Core
 
-This module provides common functionality required by service-specific modules of this library.
+A set of classes and utilities used in Google Cloud Java libraries.
+
+*Note*: This library is only meant to be consumed by other Google Libraries.
 
 [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-core.svg)](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-core.svg)
 
 - [API Documentation][api-docs]
-
-## Quickstart
-
-[//]: # ({x-version-update-start:google-cloud-core:released})
-If you are using Maven, add this to your pom.xml file
-```xml
-<dependency>
-  <groupId>com.google.cloud</groupId>
-  <artifactId>google-cloud-core</artifactId>
-  <version>1.90.0</version>
-</dependency>
-```
-If you are using Gradle, add this to your dependencies
-```Groovy
-compile 'com.google.cloud:google-cloud-core:1.90.0'
-```
-If you are using SBT, add this to your dependencies
-```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-core" % "1.90.0"
-```
-[//]: # ({x-version-update-end})
 
 ## Java Versions
 
@@ -58,6 +39,8 @@ Java Version | Status
 ------------ | ------
 Java 7 | [![Kokoro CI](https://storage.googleapis.com/cloud-devrel-public/java/badges/java-core/java7.svg)](https://storage.googleapis.com/cloud-devrel-public/java/badges/java-core/java7.html)
 Java 8 | [![Kokoro CI](https://storage.googleapis.com/cloud-devrel-public/java/badges/java-core/java8.svg)](https://storage.googleapis.com/cloud-devrel-public/java/badges/java-core/java8.html)
+Java 8 OSX | [![Kokoro CI](https://storage.googleapis.com/cloud-devrel-public/java/badges/java-core/java8-osx.svg)](https://storage.googleapis.com/cloud-devrel-public/java/badges/java-core/java8-osx.html)
+Java 8 Windows | [![Kokoro CI](https://storage.googleapis.com/cloud-devrel-public/java/badges/java-core/java8-win.svg)](https://storage.googleapis.com/cloud-devrel-public/java/badges/java-core/java8-win.html)
 Java 11 | [![Kokoro CI](https://storage.googleapis.com/cloud-devrel-public/java/badges/java-core/java11.svg)](https://storage.googleapis.com/cloud-devrel-public/java/badges/java-core/java11.html)
 
 
