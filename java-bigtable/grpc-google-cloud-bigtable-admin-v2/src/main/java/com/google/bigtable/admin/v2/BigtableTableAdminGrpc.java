@@ -755,6 +755,159 @@ public final class BigtableTableAdminGrpc {
     return getDeleteSnapshotMethod;
   }
 
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getGetIamPolicyMethod()} instead.
+  public static final io.grpc.MethodDescriptor<
+          com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>
+      METHOD_GET_IAM_POLICY = getGetIamPolicyMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>
+      getGetIamPolicyMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<
+          com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>
+      getGetIamPolicyMethod() {
+    return getGetIamPolicyMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<
+          com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>
+      getGetIamPolicyMethodHelper() {
+    io.grpc.MethodDescriptor<com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>
+        getGetIamPolicyMethod;
+    if ((getGetIamPolicyMethod = BigtableTableAdminGrpc.getGetIamPolicyMethod) == null) {
+      synchronized (BigtableTableAdminGrpc.class) {
+        if ((getGetIamPolicyMethod = BigtableTableAdminGrpc.getGetIamPolicyMethod) == null) {
+          BigtableTableAdminGrpc.getGetIamPolicyMethod =
+              getGetIamPolicyMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              "google.bigtable.admin.v2.BigtableTableAdmin", "GetIamPolicy"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.iam.v1.GetIamPolicyRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.iam.v1.Policy.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BigtableTableAdminMethodDescriptorSupplier("GetIamPolicy"))
+                      .build();
+        }
+      }
+    }
+    return getGetIamPolicyMethod;
+  }
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getSetIamPolicyMethod()} instead.
+  public static final io.grpc.MethodDescriptor<
+          com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>
+      METHOD_SET_IAM_POLICY = getSetIamPolicyMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>
+      getSetIamPolicyMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<
+          com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>
+      getSetIamPolicyMethod() {
+    return getSetIamPolicyMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<
+          com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>
+      getSetIamPolicyMethodHelper() {
+    io.grpc.MethodDescriptor<com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>
+        getSetIamPolicyMethod;
+    if ((getSetIamPolicyMethod = BigtableTableAdminGrpc.getSetIamPolicyMethod) == null) {
+      synchronized (BigtableTableAdminGrpc.class) {
+        if ((getSetIamPolicyMethod = BigtableTableAdminGrpc.getSetIamPolicyMethod) == null) {
+          BigtableTableAdminGrpc.getSetIamPolicyMethod =
+              getSetIamPolicyMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              "google.bigtable.admin.v2.BigtableTableAdmin", "SetIamPolicy"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.iam.v1.SetIamPolicyRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.iam.v1.Policy.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BigtableTableAdminMethodDescriptorSupplier("SetIamPolicy"))
+                      .build();
+        }
+      }
+    }
+    return getSetIamPolicyMethod;
+  }
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getTestIamPermissionsMethod()} instead.
+  public static final io.grpc.MethodDescriptor<
+          com.google.iam.v1.TestIamPermissionsRequest, com.google.iam.v1.TestIamPermissionsResponse>
+      METHOD_TEST_IAM_PERMISSIONS = getTestIamPermissionsMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.iam.v1.TestIamPermissionsRequest, com.google.iam.v1.TestIamPermissionsResponse>
+      getTestIamPermissionsMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<
+          com.google.iam.v1.TestIamPermissionsRequest, com.google.iam.v1.TestIamPermissionsResponse>
+      getTestIamPermissionsMethod() {
+    return getTestIamPermissionsMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<
+          com.google.iam.v1.TestIamPermissionsRequest, com.google.iam.v1.TestIamPermissionsResponse>
+      getTestIamPermissionsMethodHelper() {
+    io.grpc.MethodDescriptor<
+            com.google.iam.v1.TestIamPermissionsRequest,
+            com.google.iam.v1.TestIamPermissionsResponse>
+        getTestIamPermissionsMethod;
+    if ((getTestIamPermissionsMethod = BigtableTableAdminGrpc.getTestIamPermissionsMethod)
+        == null) {
+      synchronized (BigtableTableAdminGrpc.class) {
+        if ((getTestIamPermissionsMethod = BigtableTableAdminGrpc.getTestIamPermissionsMethod)
+            == null) {
+          BigtableTableAdminGrpc.getTestIamPermissionsMethod =
+              getTestIamPermissionsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.iam.v1.TestIamPermissionsRequest,
+                          com.google.iam.v1.TestIamPermissionsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              "google.bigtable.admin.v2.BigtableTableAdmin", "TestIamPermissions"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.iam.v1.TestIamPermissionsRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.iam.v1.TestIamPermissionsResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BigtableTableAdminMethodDescriptorSupplier("TestIamPermissions"))
+                      .build();
+        }
+      }
+    }
+    return getTestIamPermissionsMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static BigtableTableAdminStub newStub(io.grpc.Channel channel) {
     return new BigtableTableAdminStub(channel);
@@ -995,6 +1148,48 @@ public final class BigtableTableAdminGrpc {
       asyncUnimplementedUnaryCall(getDeleteSnapshotMethodHelper(), responseObserver);
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Gets the access control policy for an instance resource. Returns an empty
+     * policy if an table exists but does not have a policy set.
+     * </pre>
+     */
+    public void getIamPolicy(
+        com.google.iam.v1.GetIamPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
+      asyncUnimplementedUnaryCall(getGetIamPolicyMethodHelper(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets the access control policy on a table resource. Replaces any existing
+     * policy.
+     * </pre>
+     */
+    public void setIamPolicy(
+        com.google.iam.v1.SetIamPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
+      asyncUnimplementedUnaryCall(getSetIamPolicyMethodHelper(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns permissions that the caller has on the specified table resource.
+     * </pre>
+     */
+    public void testIamPermissions(
+        com.google.iam.v1.TestIamPermissionsRequest request,
+        io.grpc.stub.StreamObserver<com.google.iam.v1.TestIamPermissionsResponse>
+            responseObserver) {
+      asyncUnimplementedUnaryCall(getTestIamPermissionsMethodHelper(), responseObserver);
+    }
+
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
@@ -1079,6 +1274,25 @@ public final class BigtableTableAdminGrpc {
                   new MethodHandlers<
                       com.google.bigtable.admin.v2.DeleteSnapshotRequest,
                       com.google.protobuf.Empty>(this, METHODID_DELETE_SNAPSHOT)))
+          .addMethod(
+              getGetIamPolicyMethodHelper(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>(
+                      this, METHODID_GET_IAM_POLICY)))
+          .addMethod(
+              getSetIamPolicyMethodHelper(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>(
+                      this, METHODID_SET_IAM_POLICY)))
+          .addMethod(
+              getTestIamPermissionsMethodHelper(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.iam.v1.TestIamPermissionsRequest,
+                      com.google.iam.v1.TestIamPermissionsResponse>(
+                      this, METHODID_TEST_IAM_PERMISSIONS)))
           .build();
     }
   }
@@ -1358,6 +1572,57 @@ public final class BigtableTableAdminGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the access control policy for an instance resource. Returns an empty
+     * policy if an table exists but does not have a policy set.
+     * </pre>
+     */
+    public void getIamPolicy(
+        com.google.iam.v1.GetIamPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getGetIamPolicyMethodHelper(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets the access control policy on a table resource. Replaces any existing
+     * policy.
+     * </pre>
+     */
+    public void setIamPolicy(
+        com.google.iam.v1.SetIamPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getSetIamPolicyMethodHelper(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns permissions that the caller has on the specified table resource.
+     * </pre>
+     */
+    public void testIamPermissions(
+        com.google.iam.v1.TestIamPermissionsRequest request,
+        io.grpc.stub.StreamObserver<com.google.iam.v1.TestIamPermissionsResponse>
+            responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getTestIamPermissionsMethodHelper(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -1591,6 +1856,45 @@ public final class BigtableTableAdminGrpc {
         com.google.bigtable.admin.v2.DeleteSnapshotRequest request) {
       return blockingUnaryCall(
           getChannel(), getDeleteSnapshotMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the access control policy for an instance resource. Returns an empty
+     * policy if an table exists but does not have a policy set.
+     * </pre>
+     */
+    public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getGetIamPolicyMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets the access control policy on a table resource. Replaces any existing
+     * policy.
+     * </pre>
+     */
+    public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getSetIamPolicyMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns permissions that the caller has on the specified table resource.
+     * </pre>
+     */
+    public com.google.iam.v1.TestIamPermissionsResponse testIamPermissions(
+        com.google.iam.v1.TestIamPermissionsRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getTestIamPermissionsMethodHelper(), getCallOptions(), request);
     }
   }
 
@@ -1834,6 +2138,48 @@ public final class BigtableTableAdminGrpc {
       return futureUnaryCall(
           getChannel().newCall(getDeleteSnapshotMethodHelper(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the access control policy for an instance resource. Returns an empty
+     * policy if an table exists but does not have a policy set.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.iam.v1.Policy>
+        getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getGetIamPolicyMethodHelper(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets the access control policy on a table resource. Replaces any existing
+     * policy.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.iam.v1.Policy>
+        setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getSetIamPolicyMethodHelper(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns permissions that the caller has on the specified table resource.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.iam.v1.TestIamPermissionsResponse>
+        testIamPermissions(com.google.iam.v1.TestIamPermissionsRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getTestIamPermissionsMethodHelper(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_TABLE = 0;
@@ -1849,6 +2195,9 @@ public final class BigtableTableAdminGrpc {
   private static final int METHODID_GET_SNAPSHOT = 10;
   private static final int METHODID_LIST_SNAPSHOTS = 11;
   private static final int METHODID_DELETE_SNAPSHOT = 12;
+  private static final int METHODID_GET_IAM_POLICY = 13;
+  private static final int METHODID_SET_IAM_POLICY = 14;
+  private static final int METHODID_TEST_IAM_PERMISSIONS = 15;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1938,6 +2287,22 @@ public final class BigtableTableAdminGrpc {
               (com.google.bigtable.admin.v2.DeleteSnapshotRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
+        case METHODID_GET_IAM_POLICY:
+          serviceImpl.getIamPolicy(
+              (com.google.iam.v1.GetIamPolicyRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.iam.v1.Policy>) responseObserver);
+          break;
+        case METHODID_SET_IAM_POLICY:
+          serviceImpl.setIamPolicy(
+              (com.google.iam.v1.SetIamPolicyRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.iam.v1.Policy>) responseObserver);
+          break;
+        case METHODID_TEST_IAM_PERMISSIONS:
+          serviceImpl.testIamPermissions(
+              (com.google.iam.v1.TestIamPermissionsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.iam.v1.TestIamPermissionsResponse>)
+                  responseObserver);
+          break;
         default:
           throw new AssertionError();
       }
@@ -2015,6 +2380,9 @@ public final class BigtableTableAdminGrpc {
                       .addMethod(getGetSnapshotMethodHelper())
                       .addMethod(getListSnapshotsMethodHelper())
                       .addMethod(getDeleteSnapshotMethodHelper())
+                      .addMethod(getGetIamPolicyMethodHelper())
+                      .addMethod(getSetIamPolicyMethodHelper())
+                      .addMethod(getTestIamPermissionsMethodHelper())
                       .build();
         }
       }
