@@ -27,8 +27,6 @@ import com.google.cloud.storage.HmacKey.HmacKeyState;
 import com.google.cloud.storage.ServiceAccount;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.testing.RemoteStorageHelper;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.logging.Logger;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -113,17 +111,22 @@ public class ITStorageHmacKeySnippets {
   @Test
   public void testListHmacKeys() {
     // Create 2 HMAC keys
-    storage.createHmacKey(ServiceAccount.of(HMAC_KEY_TEST_SERVICE_ACCOUNT));
-    storage.createHmacKey(ServiceAccount.of(HMAC_KEY_TEST_SERVICE_ACCOUNT));
+    storage.createHmacKey(
+        ServiceAccount.of(HMAC_KEY_TEST_SERVICE_ACCOUNT),
+        Storage.CreateHmacKeyOption.projectId(PROJECT_ID));
+    storage.createHmacKey(
+        ServiceAccount.of(HMAC_KEY_TEST_SERVICE_ACCOUNT),
+        Storage.CreateHmacKeyOption.projectId(PROJECT_ID));
 
-    Page<HmacKeyMetadata> page =
-        storageSnippets.listHmacKeys(HMAC_KEY_TEST_SERVICE_ACCOUNT, PROJECT_ID);
-    List<HmacKeyMetadata> items = new ArrayList<HmacKeyMetadata>();
+    Page<HmacKeyMetadata> page = storageSnippets.listHmacKeys(PROJECT_ID);
 
+    int count = 0;
     for (HmacKeyMetadata metadata : page.iterateAll()) {
-      items.add(metadata);
+      if (metadata.getServiceAccount().getEmail().equals(HMAC_KEY_TEST_SERVICE_ACCOUNT)) {
+        count++;
+      }
     }
 
-    assertEquals(2, items.size());
+    assertEquals(2, count);
   }
 }
