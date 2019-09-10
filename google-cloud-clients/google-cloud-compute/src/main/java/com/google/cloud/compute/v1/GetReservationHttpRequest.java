@@ -25,7 +25,7 @@ import javax.annotation.Nullable;
 @Generated("by GAPIC")
 @BetaApi
 /**
- * Request object for method compute.reservations.get. Retrieves all information of the specified
+ * Request object for method compute.reservations.get. Retrieves information about the specified
  * reservation.
  */
 public final class GetReservationHttpRequest implements ApiMessage {

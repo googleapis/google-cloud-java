@@ -398,7 +398,7 @@ public final class BackendService implements ApiMessage {
    * --protocol is UDP.
    *
    * <p>When the loadBalancingScheme is EXTERNAL, possible values are NONE, CLIENT_IP, or
-   * GENERATED_COOKIE. GENERATED_COOKIE is only available if the protocol is HTTP or HTTPS.
+   * GENERATED_COOKIE. You can use GENERATED_COOKIE if the protocol is HTTP or HTTPS.
    *
    * <p>When the loadBalancingScheme is INTERNAL, possible values are NONE, CLIENT_IP,
    * CLIENT_IP_PROTO, or CLIENT_IP_PORT_PROTO.
@@ -964,7 +964,7 @@ public final class BackendService implements ApiMessage {
      * the --protocol is UDP.
      *
      * <p>When the loadBalancingScheme is EXTERNAL, possible values are NONE, CLIENT_IP, or
-     * GENERATED_COOKIE. GENERATED_COOKIE is only available if the protocol is HTTP or HTTPS.
+     * GENERATED_COOKIE. You can use GENERATED_COOKIE if the protocol is HTTP or HTTPS.
      *
      * <p>When the loadBalancingScheme is INTERNAL, possible values are NONE, CLIENT_IP,
      * CLIENT_IP_PROTO, or CLIENT_IP_PORT_PROTO.
@@ -981,7 +981,7 @@ public final class BackendService implements ApiMessage {
      * the --protocol is UDP.
      *
      * <p>When the loadBalancingScheme is EXTERNAL, possible values are NONE, CLIENT_IP, or
-     * GENERATED_COOKIE. GENERATED_COOKIE is only available if the protocol is HTTP or HTTPS.
+     * GENERATED_COOKIE. You can use GENERATED_COOKIE if the protocol is HTTP or HTTPS.
      *
      * <p>When the loadBalancingScheme is INTERNAL, possible values are NONE, CLIENT_IP,
      * CLIENT_IP_PROTO, or CLIENT_IP_PORT_PROTO.

@@ -37,13 +37,13 @@ import javax.annotation.Nullable;
  * <p>Example Policy with multiple AuditConfigs:
  *
  * <p>{ "audit_configs": [ { "service": "allServices" "audit_log_configs": [ { "log_type":
- * "DATA_READ", "exempted_members": [ "user:foo{@literal @}gmail.com" ] }, { "log_type":
- * "DATA_WRITE", }, { "log_type": "ADMIN_READ", } ] }, { "service": "fooservice.googleapis.com"
+ * "DATA_READ", "exempted_members": [ "user:jose{@literal @}example.com" ] }, { "log_type":
+ * "DATA_WRITE", }, { "log_type": "ADMIN_READ", } ] }, { "service": "sampleservice.googleapis.com"
  * "audit_log_configs": [ { "log_type": "DATA_READ", }, { "log_type": "DATA_WRITE",
- * "exempted_members": [ "user:bar{@literal @}gmail.com" ] } ] } ] }
+ * "exempted_members": [ "user:aliya{@literal @}example.com" ] } ] } ] }
  *
- * <p>For fooservice, this policy enables DATA_READ, DATA_WRITE and ADMIN_READ logging. It also
- * exempts foo{@literal @}gmail.com from DATA_READ logging, and bar{@literal @}gmail.com from
+ * <p>For sampleservice, this policy enables DATA_READ, DATA_WRITE and ADMIN_READ logging. It also
+ * exempts jose{@literal @}example.com from DATA_READ logging, and aliya{@literal @}example.com from
  * DATA_WRITE logging.
  */
 public final class AuditConfig implements ApiMessage {

@@ -42,6 +42,7 @@ public final class Subnetwork implements ApiMessage {
   private final String id;
   private final String ipCidrRange;
   private final String kind;
+  private final SubnetworkLogConfig logConfig;
   private final String name;
   private final String network;
   private final Boolean privateIpGoogleAccess;
@@ -58,6 +59,7 @@ public final class Subnetwork implements ApiMessage {
     this.id = null;
     this.ipCidrRange = null;
     this.kind = null;
+    this.logConfig = null;
     this.name = null;
     this.network = null;
     this.privateIpGoogleAccess = null;
@@ -75,6 +77,7 @@ public final class Subnetwork implements ApiMessage {
       String id,
       String ipCidrRange,
       String kind,
+      SubnetworkLogConfig logConfig,
       String name,
       String network,
       Boolean privateIpGoogleAccess,
@@ -89,6 +92,7 @@ public final class Subnetwork implements ApiMessage {
     this.id = id;
     this.ipCidrRange = ipCidrRange;
     this.kind = kind;
+    this.logConfig = logConfig;
     this.name = name;
     this.network = network;
     this.privateIpGoogleAccess = privateIpGoogleAccess;
@@ -122,6 +126,9 @@ public final class Subnetwork implements ApiMessage {
     }
     if ("kind".equals(fieldName)) {
       return kind;
+    }
+    if ("logConfig".equals(fieldName)) {
+      return logConfig;
     }
     if ("name".equals(fieldName)) {
       return name;
@@ -226,6 +233,14 @@ public final class Subnetwork implements ApiMessage {
   }
 
   /**
+   * This field denotes the VPC flow logging options for this subnetwork. If logging is enabled,
+   * logs are exported to Stackdriver.
+   */
+  public SubnetworkLogConfig getLogConfig() {
+    return logConfig;
+  }
+
+  /**
    * The name of the resource, provided by the client when initially creating the resource. The name
    * must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63
    * characters long and match the regular expression `[a-z]([-a-z0-9]&#42;[a-z0-9])?` which means
@@ -308,6 +323,7 @@ public final class Subnetwork implements ApiMessage {
     private String id;
     private String ipCidrRange;
     private String kind;
+    private SubnetworkLogConfig logConfig;
     private String name;
     private String network;
     private Boolean privateIpGoogleAccess;
@@ -343,6 +359,9 @@ public final class Subnetwork implements ApiMessage {
       if (other.getKind() != null) {
         this.kind = other.kind;
       }
+      if (other.getLogConfig() != null) {
+        this.logConfig = other.logConfig;
+      }
       if (other.getName() != null) {
         this.name = other.name;
       }
@@ -373,6 +392,7 @@ public final class Subnetwork implements ApiMessage {
       this.id = source.id;
       this.ipCidrRange = source.ipCidrRange;
       this.kind = source.kind;
+      this.logConfig = source.logConfig;
       this.name = source.name;
       this.network = source.network;
       this.privateIpGoogleAccess = source.privateIpGoogleAccess;
@@ -518,6 +538,23 @@ public final class Subnetwork implements ApiMessage {
     }
 
     /**
+     * This field denotes the VPC flow logging options for this subnetwork. If logging is enabled,
+     * logs are exported to Stackdriver.
+     */
+    public SubnetworkLogConfig getLogConfig() {
+      return logConfig;
+    }
+
+    /**
+     * This field denotes the VPC flow logging options for this subnetwork. If logging is enabled,
+     * logs are exported to Stackdriver.
+     */
+    public Builder setLogConfig(SubnetworkLogConfig logConfig) {
+      this.logConfig = logConfig;
+      return this;
+    }
+
+    /**
      * The name of the resource, provided by the client when initially creating the resource. The
      * name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be
      * 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]&#42;[a-z0-9])?` which
@@ -655,6 +692,7 @@ public final class Subnetwork implements ApiMessage {
           id,
           ipCidrRange,
           kind,
+          logConfig,
           name,
           network,
           privateIpGoogleAccess,
@@ -673,6 +711,7 @@ public final class Subnetwork implements ApiMessage {
       newBuilder.setId(this.id);
       newBuilder.setIpCidrRange(this.ipCidrRange);
       newBuilder.setKind(this.kind);
+      newBuilder.setLogConfig(this.logConfig);
       newBuilder.setName(this.name);
       newBuilder.setNetwork(this.network);
       newBuilder.setPrivateIpGoogleAccess(this.privateIpGoogleAccess);
@@ -710,6 +749,9 @@ public final class Subnetwork implements ApiMessage {
         + "kind="
         + kind
         + ", "
+        + "logConfig="
+        + logConfig
+        + ", "
         + "name="
         + name
         + ", "
@@ -745,6 +787,7 @@ public final class Subnetwork implements ApiMessage {
           && Objects.equals(this.id, that.getId())
           && Objects.equals(this.ipCidrRange, that.getIpCidrRange())
           && Objects.equals(this.kind, that.getKind())
+          && Objects.equals(this.logConfig, that.getLogConfig())
           && Objects.equals(this.name, that.getName())
           && Objects.equals(this.network, that.getNetwork())
           && Objects.equals(this.privateIpGoogleAccess, that.getPrivateIpGoogleAccess())
@@ -766,6 +809,7 @@ public final class Subnetwork implements ApiMessage {
         id,
         ipCidrRange,
         kind,
+        logConfig,
         name,
         network,
         privateIpGoogleAccess,

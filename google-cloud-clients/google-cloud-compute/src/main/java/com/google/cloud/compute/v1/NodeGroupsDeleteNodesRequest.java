@@ -62,6 +62,7 @@ public final class NodeGroupsDeleteNodesRequest implements ApiMessage {
     return null;
   }
 
+  /** Names of the nodes to delete. */
   public List<String> getNodesList() {
     return nodes;
   }
@@ -105,10 +106,12 @@ public final class NodeGroupsDeleteNodesRequest implements ApiMessage {
       this.nodes = source.nodes;
     }
 
+    /** Names of the nodes to delete. */
     public List<String> getNodesList() {
       return nodes;
     }
 
+    /** Names of the nodes to delete. */
     public Builder addAllNodes(List<String> nodes) {
       if (this.nodes == null) {
         this.nodes = new LinkedList<>();
@@ -117,6 +120,7 @@ public final class NodeGroupsDeleteNodesRequest implements ApiMessage {
       return this;
     }
 
+    /** Names of the nodes to delete. */
     public Builder addNodes(String nodes) {
       if (this.nodes == null) {
         this.nodes = new LinkedList<>();

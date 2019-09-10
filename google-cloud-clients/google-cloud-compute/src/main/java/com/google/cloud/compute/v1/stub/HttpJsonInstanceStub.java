@@ -79,6 +79,7 @@ import com.google.cloud.compute.v1.StopInstanceHttpRequest;
 import com.google.cloud.compute.v1.TestIamPermissionsInstanceHttpRequest;
 import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.cloud.compute.v1.UpdateAccessConfigInstanceHttpRequest;
+import com.google.cloud.compute.v1.UpdateDisplayDeviceInstanceHttpRequest;
 import com.google.cloud.compute.v1.UpdateNetworkInterfaceInstanceHttpRequest;
 import com.google.cloud.compute.v1.UpdateShieldedInstanceConfigInstanceHttpRequest;
 import com.google.common.collect.Sets;
@@ -800,6 +801,28 @@ public class HttpJsonInstanceStub extends InstanceStub {
               .build();
 
   @InternalApi
+  public static final ApiMethodDescriptor<UpdateDisplayDeviceInstanceHttpRequest, Operation>
+      updateDisplayDeviceInstanceMethodDescriptor =
+          ApiMethodDescriptor.<UpdateDisplayDeviceInstanceHttpRequest, Operation>newBuilder()
+              .setFullMethodName("compute.instances.updateDisplayDevice")
+              .setHttpMethod(HttpMethods.PATCH)
+              .setRequestFormatter(
+                  ApiMessageHttpRequestFormatter
+                      .<UpdateDisplayDeviceInstanceHttpRequest>newBuilder()
+                      .setPathTemplate(
+                          PathTemplate.create(
+                              "{project}/zones/{zone}/instances/{instance}/updateDisplayDevice"))
+                      .setQueryParams(Sets.<String>newHashSet("requestId"))
+                      .setResourceNameFactory(ProjectZoneInstanceName.newFactory())
+                      .setResourceNameField("instance")
+                      .build())
+              .setResponseParser(
+                  ApiMessageHttpResponseParser.<Operation>newBuilder()
+                      .setResponseInstance(Operation.getDefaultInstance())
+                      .build())
+              .build();
+
+  @InternalApi
   public static final ApiMethodDescriptor<UpdateNetworkInterfaceInstanceHttpRequest, Operation>
       updateNetworkInterfaceInstanceMethodDescriptor =
           ApiMethodDescriptor.<UpdateNetworkInterfaceInstanceHttpRequest, Operation>newBuilder()
@@ -909,6 +932,8 @@ public class HttpJsonInstanceStub extends InstanceStub {
       testIamPermissionsInstanceCallable;
   private final UnaryCallable<UpdateAccessConfigInstanceHttpRequest, Operation>
       updateAccessConfigInstanceCallable;
+  private final UnaryCallable<UpdateDisplayDeviceInstanceHttpRequest, Operation>
+      updateDisplayDeviceInstanceCallable;
   private final UnaryCallable<UpdateNetworkInterfaceInstanceHttpRequest, Operation>
       updateNetworkInterfaceInstanceCallable;
   private final UnaryCallable<UpdateShieldedInstanceConfigInstanceHttpRequest, Operation>
@@ -1119,6 +1144,11 @@ public class HttpJsonInstanceStub extends InstanceStub {
             HttpJsonCallSettings.<UpdateAccessConfigInstanceHttpRequest, Operation>newBuilder()
                 .setMethodDescriptor(updateAccessConfigInstanceMethodDescriptor)
                 .build();
+    HttpJsonCallSettings<UpdateDisplayDeviceInstanceHttpRequest, Operation>
+        updateDisplayDeviceInstanceTransportSettings =
+            HttpJsonCallSettings.<UpdateDisplayDeviceInstanceHttpRequest, Operation>newBuilder()
+                .setMethodDescriptor(updateDisplayDeviceInstanceMethodDescriptor)
+                .build();
     HttpJsonCallSettings<UpdateNetworkInterfaceInstanceHttpRequest, Operation>
         updateNetworkInterfaceInstanceTransportSettings =
             HttpJsonCallSettings.<UpdateNetworkInterfaceInstanceHttpRequest, Operation>newBuilder()
@@ -1292,6 +1322,11 @@ public class HttpJsonInstanceStub extends InstanceStub {
         callableFactory.createUnaryCallable(
             updateAccessConfigInstanceTransportSettings,
             settings.updateAccessConfigInstanceSettings(),
+            clientContext);
+    this.updateDisplayDeviceInstanceCallable =
+        callableFactory.createUnaryCallable(
+            updateDisplayDeviceInstanceTransportSettings,
+            settings.updateDisplayDeviceInstanceSettings(),
             clientContext);
     this.updateNetworkInterfaceInstanceCallable =
         callableFactory.createUnaryCallable(
@@ -1507,6 +1542,12 @@ public class HttpJsonInstanceStub extends InstanceStub {
   public UnaryCallable<UpdateAccessConfigInstanceHttpRequest, Operation>
       updateAccessConfigInstanceCallable() {
     return updateAccessConfigInstanceCallable;
+  }
+
+  @BetaApi
+  public UnaryCallable<UpdateDisplayDeviceInstanceHttpRequest, Operation>
+      updateDisplayDeviceInstanceCallable() {
+    return updateDisplayDeviceInstanceCallable;
   }
 
   @BetaApi

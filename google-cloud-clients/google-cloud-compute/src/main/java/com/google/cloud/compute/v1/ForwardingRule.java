@@ -274,31 +274,21 @@ public final class ForwardingRule implements ApiMessage {
   }
 
   /**
-   * The IP address that this forwarding rule is serving on behalf of.
+   * IP address that this forwarding rule serves. When a client sends traffic to this IP address,
+   * the forwarding rule directs the traffic to the target that you specify in the forwarding rule.
    *
-   * <p>Addresses are restricted based on the forwarding rule's load balancing scheme (EXTERNAL or
-   * INTERNAL) and scope (global or regional).
+   * <p>If you don't specify a reserved IP address, an ephemeral IP address is assigned. Methods for
+   * specifying an IP address:
    *
-   * <p>When the load balancing scheme is EXTERNAL, for global forwarding rules, the address must be
-   * a global IP, and for regional forwarding rules, the address must live in the same region as the
-   * forwarding rule. If this field is empty, an ephemeral IPv4 address from the same scope (global
-   * or regional) will be assigned. A regional forwarding rule supports IPv4 only. A global
-   * forwarding rule supports either IPv4 or IPv6.
+   * <p>&#42; IPv4 dotted decimal, as in `100.1.2.3` &#42; Full URL, as in
+   * https://www.googleapis.com/compute/v1/projects/project_id/regions/region/addresses/address-name
+   * &#42; Partial URL or by name, as in: &#42;
+   * projects/project_id/regions/region/addresses/address-name &#42;
+   * regions/region/addresses/address-name &#42; global/addresses/address-name &#42; address-name
    *
-   * <p>When the load balancing scheme is INTERNAL_SELF_MANAGED, this must be a URL reference to an
-   * existing Address resource ( internal regional static IP address), with a purpose of
-   * GCE_END_POINT and address_type of INTERNAL.
-   *
-   * <p>When the load balancing scheme is INTERNAL, this can only be an RFC 1918 IP address
-   * belonging to the network/subnet configured for the forwarding rule. By default, if this field
-   * is empty, an ephemeral internal IP address will be automatically allocated from the IP range of
-   * the subnet or network configured for this forwarding rule.
-   *
-   * <p>An address can be specified either by a literal IP address or a URL reference to an existing
-   * Address resource. The following examples are all valid: - 100.1.2.3 -
-   * https://www.googleapis.com/compute/v1/projects/project/regions/region/addresses/address -
-   * projects/project/regions/region/addresses/address - regions/region/addresses/address -
-   * global/addresses/address - address
+   * <p>The loadBalancingScheme and the forwarding rule's target determine the type of IP address
+   * that you can use. For detailed information, refer to [IP address
+   * specifications](/load-balancing/docs/forwarding-rule-concepts#ip_address_specifications).
    */
   public String getIPAddress() {
     return iPAddress;
@@ -384,31 +374,37 @@ public final class ForwardingRule implements ApiMessage {
     return networkTier;
   }
 
-  /**
-   * This field is used along with the target field for TargetHttpProxy, TargetHttpsProxy,
-   * TargetSslProxy, TargetTcpProxy, TargetVpnGateway, TargetPool, TargetInstance.
-   *
-   * <p>Applicable only when IPProtocol is TCP, UDP, or SCTP, only packets addressed to ports in the
-   * specified range will be forwarded to target. Forwarding rules with the same [IPAddress,
-   * IPProtocol] pair must have disjoint port ranges.
-   *
-   * <p>Some types of forwarding target have constraints on the acceptable ports: - TargetHttpProxy:
-   * 80, 8080 - TargetHttpsProxy: 443 - TargetTcpProxy: 25, 43, 110, 143, 195, 443, 465, 587, 700,
-   * 993, 995, 1688, 1883, 5222 - TargetSslProxy: 25, 43, 110, 143, 195, 443, 465, 587, 700, 993,
-   * 995, 1688, 1883, 5222 - TargetVpnGateway: 500, 4500
-   */
+  /** This field is deprecated. See the port field. */
   public String getPortRange() {
     return portRange;
   }
 
   /**
-   * This field is used along with the backend_service field for internal load balancing.
+   * List of comma-separated ports. The forwarding rule forwards packets with matching destination
+   * ports. If the forwarding rule's loadBalancingScheme is EXTERNAL, and the forwarding rule
+   * references a target pool, specifying ports is optional. You can specify an unlimited number of
+   * ports, but they must be contiguous. If you omit ports, GCP forwards traffic on any port of the
+   * forwarding rule's protocol.
    *
-   * <p>When the load balancing scheme is INTERNAL, a list of ports can be configured, for example,
-   * ['80'], ['8000','9000'] etc. Only packets addressed to these ports will be forwarded to the
-   * backends configured with this forwarding rule.
+   * <p>If the forwarding rule's loadBalancingScheme is EXTERNAL, and the forwarding rule references
+   * a target HTTP proxy, target HTTPS proxy, target TCP proxy, target SSL proxy, or target VPN
+   * gateway, you must specify ports using the following constraints:
    *
-   * <p>You may specify a maximum of up to 5 ports.
+   * <p>- TargetHttpProxy: 80, 8080 - TargetHttpsProxy: 443 - TargetTcpProxy: 25, 43, 110, 143, 195,
+   * 443, 465, 587, 700, 993, 995, 1688, 1883, 5222 - TargetSslProxy: 25, 43, 110, 143, 195, 443,
+   * 465, 587, 700, 993, 995, 1688, 1883, 5222 - TargetVpnGateway: 500, 4500
+   *
+   * <p>If the forwarding rule's loadBalancingScheme is INTERNAL, you must specify ports in one of
+   * the following ways:
+   *
+   * <p>&#42; A list of up to five ports, which can be non-contiguous &#42; Keyword ALL, which
+   * causes the forwarding rule to forward traffic on any port of the forwarding rule's protocol.
+   *
+   * <p>The ports field is used along with the target field for TargetHttpProxy, TargetHttpsProxy,
+   * TargetSslProxy, TargetTcpProxy, TargetVpnGateway, TargetPool, TargetInstance.
+   *
+   * <p>Applicable only when IPProtocol is TCP, UDP, or SCTP. Forwarding rules with the same
+   * [IPAddress, IPProtocol] pair must have disjoint port ranges.
    */
   public List<String> getPortsList() {
     return ports;
@@ -429,8 +425,8 @@ public final class ForwardingRule implements ApiMessage {
   }
 
   /**
-   * An optional prefix to the service name for this Forwarding Rule. If specified, will be the
-   * first label of the fully qualified service name.
+   * An optional prefix to the service name for this Forwarding Rule. If specified, the prefix is
+   * the first label of the fully qualified service name.
    *
    * <p>The label must be 1-63 characters long, and comply with RFC1035. Specifically, the label
    * must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]&#42;[a-z0-9])?`
@@ -690,62 +686,44 @@ public final class ForwardingRule implements ApiMessage {
     }
 
     /**
-     * The IP address that this forwarding rule is serving on behalf of.
+     * IP address that this forwarding rule serves. When a client sends traffic to this IP address,
+     * the forwarding rule directs the traffic to the target that you specify in the forwarding
+     * rule.
      *
-     * <p>Addresses are restricted based on the forwarding rule's load balancing scheme (EXTERNAL or
-     * INTERNAL) and scope (global or regional).
+     * <p>If you don't specify a reserved IP address, an ephemeral IP address is assigned. Methods
+     * for specifying an IP address:
      *
-     * <p>When the load balancing scheme is EXTERNAL, for global forwarding rules, the address must
-     * be a global IP, and for regional forwarding rules, the address must live in the same region
-     * as the forwarding rule. If this field is empty, an ephemeral IPv4 address from the same scope
-     * (global or regional) will be assigned. A regional forwarding rule supports IPv4 only. A
-     * global forwarding rule supports either IPv4 or IPv6.
+     * <p>&#42; IPv4 dotted decimal, as in `100.1.2.3` &#42; Full URL, as in
+     * https://www.googleapis.com/compute/v1/projects/project_id/regions/region/addresses/address-name
+     * &#42; Partial URL or by name, as in: &#42;
+     * projects/project_id/regions/region/addresses/address-name &#42;
+     * regions/region/addresses/address-name &#42; global/addresses/address-name &#42; address-name
      *
-     * <p>When the load balancing scheme is INTERNAL_SELF_MANAGED, this must be a URL reference to
-     * an existing Address resource ( internal regional static IP address), with a purpose of
-     * GCE_END_POINT and address_type of INTERNAL.
-     *
-     * <p>When the load balancing scheme is INTERNAL, this can only be an RFC 1918 IP address
-     * belonging to the network/subnet configured for the forwarding rule. By default, if this field
-     * is empty, an ephemeral internal IP address will be automatically allocated from the IP range
-     * of the subnet or network configured for this forwarding rule.
-     *
-     * <p>An address can be specified either by a literal IP address or a URL reference to an
-     * existing Address resource. The following examples are all valid: - 100.1.2.3 -
-     * https://www.googleapis.com/compute/v1/projects/project/regions/region/addresses/address -
-     * projects/project/regions/region/addresses/address - regions/region/addresses/address -
-     * global/addresses/address - address
+     * <p>The loadBalancingScheme and the forwarding rule's target determine the type of IP address
+     * that you can use. For detailed information, refer to [IP address
+     * specifications](/load-balancing/docs/forwarding-rule-concepts#ip_address_specifications).
      */
     public String getIPAddress() {
       return iPAddress;
     }
 
     /**
-     * The IP address that this forwarding rule is serving on behalf of.
+     * IP address that this forwarding rule serves. When a client sends traffic to this IP address,
+     * the forwarding rule directs the traffic to the target that you specify in the forwarding
+     * rule.
      *
-     * <p>Addresses are restricted based on the forwarding rule's load balancing scheme (EXTERNAL or
-     * INTERNAL) and scope (global or regional).
+     * <p>If you don't specify a reserved IP address, an ephemeral IP address is assigned. Methods
+     * for specifying an IP address:
      *
-     * <p>When the load balancing scheme is EXTERNAL, for global forwarding rules, the address must
-     * be a global IP, and for regional forwarding rules, the address must live in the same region
-     * as the forwarding rule. If this field is empty, an ephemeral IPv4 address from the same scope
-     * (global or regional) will be assigned. A regional forwarding rule supports IPv4 only. A
-     * global forwarding rule supports either IPv4 or IPv6.
+     * <p>&#42; IPv4 dotted decimal, as in `100.1.2.3` &#42; Full URL, as in
+     * https://www.googleapis.com/compute/v1/projects/project_id/regions/region/addresses/address-name
+     * &#42; Partial URL or by name, as in: &#42;
+     * projects/project_id/regions/region/addresses/address-name &#42;
+     * regions/region/addresses/address-name &#42; global/addresses/address-name &#42; address-name
      *
-     * <p>When the load balancing scheme is INTERNAL_SELF_MANAGED, this must be a URL reference to
-     * an existing Address resource ( internal regional static IP address), with a purpose of
-     * GCE_END_POINT and address_type of INTERNAL.
-     *
-     * <p>When the load balancing scheme is INTERNAL, this can only be an RFC 1918 IP address
-     * belonging to the network/subnet configured for the forwarding rule. By default, if this field
-     * is empty, an ephemeral internal IP address will be automatically allocated from the IP range
-     * of the subnet or network configured for this forwarding rule.
-     *
-     * <p>An address can be specified either by a literal IP address or a URL reference to an
-     * existing Address resource. The following examples are all valid: - 100.1.2.3 -
-     * https://www.googleapis.com/compute/v1/projects/project/regions/region/addresses/address -
-     * projects/project/regions/region/addresses/address - regions/region/addresses/address -
-     * global/addresses/address - address
+     * <p>The loadBalancingScheme and the forwarding rule's target determine the type of IP address
+     * that you can use. For detailed information, refer to [IP address
+     * specifications](/load-balancing/docs/forwarding-rule-concepts#ip_address_specifications).
      */
     public Builder setIPAddress(String iPAddress) {
       this.iPAddress = iPAddress;
@@ -924,62 +902,74 @@ public final class ForwardingRule implements ApiMessage {
       return this;
     }
 
-    /**
-     * This field is used along with the target field for TargetHttpProxy, TargetHttpsProxy,
-     * TargetSslProxy, TargetTcpProxy, TargetVpnGateway, TargetPool, TargetInstance.
-     *
-     * <p>Applicable only when IPProtocol is TCP, UDP, or SCTP, only packets addressed to ports in
-     * the specified range will be forwarded to target. Forwarding rules with the same [IPAddress,
-     * IPProtocol] pair must have disjoint port ranges.
-     *
-     * <p>Some types of forwarding target have constraints on the acceptable ports: -
-     * TargetHttpProxy: 80, 8080 - TargetHttpsProxy: 443 - TargetTcpProxy: 25, 43, 110, 143, 195,
-     * 443, 465, 587, 700, 993, 995, 1688, 1883, 5222 - TargetSslProxy: 25, 43, 110, 143, 195, 443,
-     * 465, 587, 700, 993, 995, 1688, 1883, 5222 - TargetVpnGateway: 500, 4500
-     */
+    /** This field is deprecated. See the port field. */
     public String getPortRange() {
       return portRange;
     }
 
-    /**
-     * This field is used along with the target field for TargetHttpProxy, TargetHttpsProxy,
-     * TargetSslProxy, TargetTcpProxy, TargetVpnGateway, TargetPool, TargetInstance.
-     *
-     * <p>Applicable only when IPProtocol is TCP, UDP, or SCTP, only packets addressed to ports in
-     * the specified range will be forwarded to target. Forwarding rules with the same [IPAddress,
-     * IPProtocol] pair must have disjoint port ranges.
-     *
-     * <p>Some types of forwarding target have constraints on the acceptable ports: -
-     * TargetHttpProxy: 80, 8080 - TargetHttpsProxy: 443 - TargetTcpProxy: 25, 43, 110, 143, 195,
-     * 443, 465, 587, 700, 993, 995, 1688, 1883, 5222 - TargetSslProxy: 25, 43, 110, 143, 195, 443,
-     * 465, 587, 700, 993, 995, 1688, 1883, 5222 - TargetVpnGateway: 500, 4500
-     */
+    /** This field is deprecated. See the port field. */
     public Builder setPortRange(String portRange) {
       this.portRange = portRange;
       return this;
     }
 
     /**
-     * This field is used along with the backend_service field for internal load balancing.
+     * List of comma-separated ports. The forwarding rule forwards packets with matching destination
+     * ports. If the forwarding rule's loadBalancingScheme is EXTERNAL, and the forwarding rule
+     * references a target pool, specifying ports is optional. You can specify an unlimited number
+     * of ports, but they must be contiguous. If you omit ports, GCP forwards traffic on any port of
+     * the forwarding rule's protocol.
      *
-     * <p>When the load balancing scheme is INTERNAL, a list of ports can be configured, for
-     * example, ['80'], ['8000','9000'] etc. Only packets addressed to these ports will be forwarded
-     * to the backends configured with this forwarding rule.
+     * <p>If the forwarding rule's loadBalancingScheme is EXTERNAL, and the forwarding rule
+     * references a target HTTP proxy, target HTTPS proxy, target TCP proxy, target SSL proxy, or
+     * target VPN gateway, you must specify ports using the following constraints:
      *
-     * <p>You may specify a maximum of up to 5 ports.
+     * <p>- TargetHttpProxy: 80, 8080 - TargetHttpsProxy: 443 - TargetTcpProxy: 25, 43, 110, 143,
+     * 195, 443, 465, 587, 700, 993, 995, 1688, 1883, 5222 - TargetSslProxy: 25, 43, 110, 143, 195,
+     * 443, 465, 587, 700, 993, 995, 1688, 1883, 5222 - TargetVpnGateway: 500, 4500
+     *
+     * <p>If the forwarding rule's loadBalancingScheme is INTERNAL, you must specify ports in one of
+     * the following ways:
+     *
+     * <p>&#42; A list of up to five ports, which can be non-contiguous &#42; Keyword ALL, which
+     * causes the forwarding rule to forward traffic on any port of the forwarding rule's protocol.
+     *
+     * <p>The ports field is used along with the target field for TargetHttpProxy, TargetHttpsProxy,
+     * TargetSslProxy, TargetTcpProxy, TargetVpnGateway, TargetPool, TargetInstance.
+     *
+     * <p>Applicable only when IPProtocol is TCP, UDP, or SCTP. Forwarding rules with the same
+     * [IPAddress, IPProtocol] pair must have disjoint port ranges.
      */
     public List<String> getPortsList() {
       return ports;
     }
 
     /**
-     * This field is used along with the backend_service field for internal load balancing.
+     * List of comma-separated ports. The forwarding rule forwards packets with matching destination
+     * ports. If the forwarding rule's loadBalancingScheme is EXTERNAL, and the forwarding rule
+     * references a target pool, specifying ports is optional. You can specify an unlimited number
+     * of ports, but they must be contiguous. If you omit ports, GCP forwards traffic on any port of
+     * the forwarding rule's protocol.
      *
-     * <p>When the load balancing scheme is INTERNAL, a list of ports can be configured, for
-     * example, ['80'], ['8000','9000'] etc. Only packets addressed to these ports will be forwarded
-     * to the backends configured with this forwarding rule.
+     * <p>If the forwarding rule's loadBalancingScheme is EXTERNAL, and the forwarding rule
+     * references a target HTTP proxy, target HTTPS proxy, target TCP proxy, target SSL proxy, or
+     * target VPN gateway, you must specify ports using the following constraints:
      *
-     * <p>You may specify a maximum of up to 5 ports.
+     * <p>- TargetHttpProxy: 80, 8080 - TargetHttpsProxy: 443 - TargetTcpProxy: 25, 43, 110, 143,
+     * 195, 443, 465, 587, 700, 993, 995, 1688, 1883, 5222 - TargetSslProxy: 25, 43, 110, 143, 195,
+     * 443, 465, 587, 700, 993, 995, 1688, 1883, 5222 - TargetVpnGateway: 500, 4500
+     *
+     * <p>If the forwarding rule's loadBalancingScheme is INTERNAL, you must specify ports in one of
+     * the following ways:
+     *
+     * <p>&#42; A list of up to five ports, which can be non-contiguous &#42; Keyword ALL, which
+     * causes the forwarding rule to forward traffic on any port of the forwarding rule's protocol.
+     *
+     * <p>The ports field is used along with the target field for TargetHttpProxy, TargetHttpsProxy,
+     * TargetSslProxy, TargetTcpProxy, TargetVpnGateway, TargetPool, TargetInstance.
+     *
+     * <p>Applicable only when IPProtocol is TCP, UDP, or SCTP. Forwarding rules with the same
+     * [IPAddress, IPProtocol] pair must have disjoint port ranges.
      */
     public Builder addAllPorts(List<String> ports) {
       if (this.ports == null) {
@@ -990,13 +980,31 @@ public final class ForwardingRule implements ApiMessage {
     }
 
     /**
-     * This field is used along with the backend_service field for internal load balancing.
+     * List of comma-separated ports. The forwarding rule forwards packets with matching destination
+     * ports. If the forwarding rule's loadBalancingScheme is EXTERNAL, and the forwarding rule
+     * references a target pool, specifying ports is optional. You can specify an unlimited number
+     * of ports, but they must be contiguous. If you omit ports, GCP forwards traffic on any port of
+     * the forwarding rule's protocol.
      *
-     * <p>When the load balancing scheme is INTERNAL, a list of ports can be configured, for
-     * example, ['80'], ['8000','9000'] etc. Only packets addressed to these ports will be forwarded
-     * to the backends configured with this forwarding rule.
+     * <p>If the forwarding rule's loadBalancingScheme is EXTERNAL, and the forwarding rule
+     * references a target HTTP proxy, target HTTPS proxy, target TCP proxy, target SSL proxy, or
+     * target VPN gateway, you must specify ports using the following constraints:
      *
-     * <p>You may specify a maximum of up to 5 ports.
+     * <p>- TargetHttpProxy: 80, 8080 - TargetHttpsProxy: 443 - TargetTcpProxy: 25, 43, 110, 143,
+     * 195, 443, 465, 587, 700, 993, 995, 1688, 1883, 5222 - TargetSslProxy: 25, 43, 110, 143, 195,
+     * 443, 465, 587, 700, 993, 995, 1688, 1883, 5222 - TargetVpnGateway: 500, 4500
+     *
+     * <p>If the forwarding rule's loadBalancingScheme is INTERNAL, you must specify ports in one of
+     * the following ways:
+     *
+     * <p>&#42; A list of up to five ports, which can be non-contiguous &#42; Keyword ALL, which
+     * causes the forwarding rule to forward traffic on any port of the forwarding rule's protocol.
+     *
+     * <p>The ports field is used along with the target field for TargetHttpProxy, TargetHttpsProxy,
+     * TargetSslProxy, TargetTcpProxy, TargetVpnGateway, TargetPool, TargetInstance.
+     *
+     * <p>Applicable only when IPProtocol is TCP, UDP, or SCTP. Forwarding rules with the same
+     * [IPAddress, IPProtocol] pair must have disjoint port ranges.
      */
     public Builder addPorts(String ports) {
       if (this.ports == null) {
@@ -1037,8 +1045,8 @@ public final class ForwardingRule implements ApiMessage {
     }
 
     /**
-     * An optional prefix to the service name for this Forwarding Rule. If specified, will be the
-     * first label of the fully qualified service name.
+     * An optional prefix to the service name for this Forwarding Rule. If specified, the prefix is
+     * the first label of the fully qualified service name.
      *
      * <p>The label must be 1-63 characters long, and comply with RFC1035. Specifically, the label
      * must be 1-63 characters long and match the regular expression
@@ -1053,8 +1061,8 @@ public final class ForwardingRule implements ApiMessage {
     }
 
     /**
-     * An optional prefix to the service name for this Forwarding Rule. If specified, will be the
-     * first label of the fully qualified service name.
+     * An optional prefix to the service name for this Forwarding Rule. If specified, the prefix is
+     * the first label of the fully qualified service name.
      *
      * <p>The label must be 1-63 characters long, and comply with RFC1035. Specifically, the label
      * must be 1-63 characters long and match the regular expression

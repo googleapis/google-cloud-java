@@ -502,7 +502,11 @@ public final class Disk implements ApiMessage {
     return sourceSnapshotId;
   }
 
-  /** [Output Only] The status of disk creation. */
+  /**
+   * [Output Only] The status of disk creation. CREATING: Disk is provisioning. RESTORING: Source
+   * data is being copied into the disk. FAILED: Disk creation failed. READY: Disk is ready for use.
+   * DELETING: Disk is deleting.
+   */
   public String getStatus() {
     return status;
   }
@@ -1253,12 +1257,20 @@ public final class Disk implements ApiMessage {
       return this;
     }
 
-    /** [Output Only] The status of disk creation. */
+    /**
+     * [Output Only] The status of disk creation. CREATING: Disk is provisioning. RESTORING: Source
+     * data is being copied into the disk. FAILED: Disk creation failed. READY: Disk is ready for
+     * use. DELETING: Disk is deleting.
+     */
     public String getStatus() {
       return status;
     }
 
-    /** [Output Only] The status of disk creation. */
+    /**
+     * [Output Only] The status of disk creation. CREATING: Disk is provisioning. RESTORING: Source
+     * data is being copied into the disk. FAILED: Disk creation failed. READY: Disk is ready for
+     * use. DELETING: Disk is deleting.
+     */
     public Builder setStatus(String status) {
       this.status = status;
       return this;

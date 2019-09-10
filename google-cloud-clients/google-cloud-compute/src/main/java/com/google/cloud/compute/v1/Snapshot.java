@@ -358,7 +358,7 @@ public final class Snapshot implements ApiMessage {
     return storageBytesStatus;
   }
 
-  /** GCS bucket storage location of the snapshot (regional or multi-regional). */
+  /** Cloud Storage bucket storage location of the snapshot (regional or multi-regional). */
   public List<String> getStorageLocationsList() {
     return storageLocations;
   }
@@ -855,12 +855,12 @@ public final class Snapshot implements ApiMessage {
       return this;
     }
 
-    /** GCS bucket storage location of the snapshot (regional or multi-regional). */
+    /** Cloud Storage bucket storage location of the snapshot (regional or multi-regional). */
     public List<String> getStorageLocationsList() {
       return storageLocations;
     }
 
-    /** GCS bucket storage location of the snapshot (regional or multi-regional). */
+    /** Cloud Storage bucket storage location of the snapshot (regional or multi-regional). */
     public Builder addAllStorageLocations(List<String> storageLocations) {
       if (this.storageLocations == null) {
         this.storageLocations = new LinkedList<>();
@@ -869,7 +869,7 @@ public final class Snapshot implements ApiMessage {
       return this;
     }
 
-    /** GCS bucket storage location of the snapshot (regional or multi-regional). */
+    /** Cloud Storage bucket storage location of the snapshot (regional or multi-regional). */
     public Builder addStorageLocations(String storageLocations) {
       if (this.storageLocations == null) {
         this.storageLocations = new LinkedList<>();
