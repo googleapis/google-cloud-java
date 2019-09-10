@@ -22,6 +22,8 @@
 
 package com.google.cloud.examples.storage.snippets;
 
+import static java.nio.charset.StandardCharsets.UTF_8;
+
 import com.google.api.gax.paging.Page;
 import com.google.auth.ServiceAccountSigner;
 import com.google.auth.oauth2.ServiceAccountCredentials;
@@ -60,7 +62,6 @@ import com.google.cloud.storage.StorageBatchResult;
 import com.google.cloud.storage.StorageClass;
 import com.google.cloud.storage.StorageException;
 import com.google.cloud.storage.StorageOptions;
-
 import java.io.ByteArrayInputStream;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -74,8 +75,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
-
-import static java.nio.charset.StandardCharsets.UTF_8;
 
 /** This class contains a number of snippets for the {@link Storage} interface. */
 public class StorageSnippets {
@@ -1589,7 +1588,8 @@ public class StorageSnippets {
   }
 
   /** Example of creating an HMAC key for a service account * */
-  public HmacKey createHmacKey(String serviceAccountEmail, String projectId) throws StorageException {
+  public HmacKey createHmacKey(String serviceAccountEmail, String projectId)
+      throws StorageException {
     // [START storage_create_hmac_key]
     // Instantiate a Google Cloud Storage client
     Storage storage = StorageOptions.getDefaultInstance().getService();
@@ -1601,7 +1601,8 @@ public class StorageSnippets {
     // String projectId = "project-id";
 
     ServiceAccount account = ServiceAccount.of(serviceAccountEmail);
-    HmacKey hmacKey = storage.createHmacKey(account, Storage.CreateHmacKeyOption.projectId(projectId));
+    HmacKey hmacKey =
+        storage.createHmacKey(account, Storage.CreateHmacKeyOption.projectId(projectId));
 
     String secret = hmacKey.getSecretKey();
     HmacKeyMetadata metadata = hmacKey.getMetadata();
@@ -1632,7 +1633,8 @@ public class StorageSnippets {
     //
     // The ID of the project to which the service account belongs.
     // String projectId = "project-id";
-    HmacKeyMetadata metadata = storage.getHmacKey(accessId, Storage.GetHmacKeyOption.projectId(projectId));
+    HmacKeyMetadata metadata =
+        storage.getHmacKey(accessId, Storage.GetHmacKeyOption.projectId(projectId));
 
     System.out.println("The HMAC key metadata is:");
     System.out.println("ID: " + metadata.getId());
@@ -1667,7 +1669,8 @@ public class StorageSnippets {
   }
 
   /** Example of activating a previously deactivated HMAC key. * */
-  public HmacKeyMetadata activateHmacKey(String accessId, String projectId) throws StorageException {
+  public HmacKeyMetadata activateHmacKey(String accessId, String projectId)
+      throws StorageException {
     // [START storage_activate_hmac_key]
     // Instantiate a Google Cloud Storage client
     Storage storage = StorageOptions.getDefaultInstance().getService();
@@ -1677,7 +1680,8 @@ public class StorageSnippets {
     //
     // The ID of the project to which the service account belongs.
     // String projectId = "project-id";
-    HmacKeyMetadata metadata = storage.getHmacKey(accessId, Storage.GetHmacKeyOption.projectId(projectId));
+    HmacKeyMetadata metadata =
+        storage.getHmacKey(accessId, Storage.GetHmacKeyOption.projectId(projectId));
     HmacKeyMetadata newMetadata = storage.updateHmacKeyState(metadata, HmacKeyState.ACTIVE);
 
     System.out.println("The HMAC key is now active.");
@@ -1695,7 +1699,8 @@ public class StorageSnippets {
   }
 
   /** Example of deactivating an HMAC key. * */
-  public HmacKeyMetadata deactivateHmacKey(String accessId, String projectId) throws StorageException {
+  public HmacKeyMetadata deactivateHmacKey(String accessId, String projectId)
+      throws StorageException {
     // [START storage_deactivate_hmac_key]
     // Instantiate a Google Cloud Storage client
     Storage storage = StorageOptions.getDefaultInstance().getService();
@@ -1705,8 +1710,8 @@ public class StorageSnippets {
     //
     // The ID of the project to which the service account belongs.
     // String projectId = "project-id";
-    HmacKeyMetadata metadata = storage
-            .getHmacKey(accessId, Storage.GetHmacKeyOption.projectId(projectId));
+    HmacKeyMetadata metadata =
+        storage.getHmacKey(accessId, Storage.GetHmacKeyOption.projectId(projectId));
     HmacKeyMetadata newMetadata = storage.updateHmacKeyState(metadata, HmacKeyState.INACTIVE);
 
     System.out.println("The HMAC key is now inactive.");
@@ -1723,7 +1728,8 @@ public class StorageSnippets {
     return newMetadata;
   }
 
-  public Page<HmacKeyMetadata> listHmacKeys(String serviceAccountEmail, String projectId) throws StorageException {
+  public Page<HmacKeyMetadata> listHmacKeys(String serviceAccountEmail, String projectId)
+      throws StorageException {
     // [START storage_list_hmac_keys]
     // Instantiate a Google Cloud Storage client
     Storage storage = StorageOptions.getDefaultInstance().getService();
@@ -1735,7 +1741,9 @@ public class StorageSnippets {
     // String projectId = "project-id";
     ServiceAccount serviceAccount = ServiceAccount.of(serviceAccountEmail);
     Page<HmacKeyMetadata> page =
-        storage.listHmacKeys(ListHmacKeysOption.serviceAccount(serviceAccount), ListHmacKeysOption.projectId(projectId));
+        storage.listHmacKeys(
+            ListHmacKeysOption.serviceAccount(serviceAccount),
+            ListHmacKeysOption.projectId(projectId));
 
     for (HmacKeyMetadata metadata : page.iterateAll()) {
       System.out.println("Service Account Email: " + metadata.getServiceAccount().getEmail());
