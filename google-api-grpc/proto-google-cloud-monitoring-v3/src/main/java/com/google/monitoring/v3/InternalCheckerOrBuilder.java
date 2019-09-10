@@ -3,6 +3,7 @@
 
 package com.google.monitoring.v3;
 
+@java.lang.Deprecated
 public interface InternalCheckerOrBuilder
     extends
     // @@protoc_insertion_point(interface_extends:google.monitoring.v3.InternalChecker)
@@ -128,4 +129,25 @@ public interface InternalCheckerOrBuilder
    * <code>string peer_project_id = 6;</code>
    */
   com.google.protobuf.ByteString getPeerProjectIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The current operational state of the internal checker.
+   * </pre>
+   *
+   * <code>.google.monitoring.v3.InternalChecker.State state = 7;</code>
+   */
+  int getStateValue();
+  /**
+   *
+   *
+   * <pre>
+   * The current operational state of the internal checker.
+   * </pre>
+   *
+   * <code>.google.monitoring.v3.InternalChecker.State state = 7;</code>
+   */
+  com.google.monitoring.v3.InternalChecker.State getState();
 }

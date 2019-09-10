@@ -64,7 +64,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (NotificationChannelServiceClient notificationChannelServiceClient = NotificationChannelServiceClient.create()) {
- *   NotificationChannelDescriptorName name = NotificationChannelDescriptorName.of("[PROJECT]", "[CHANNEL_DESCRIPTOR]");
+ *   NotificationChannelDescriptorName name = NotificationChannelDescriptorName.of("[PROJECT]", "[NOTIFICATION_CHANNEL_DESCRIPTOR]");
  *   NotificationChannelDescriptor response = notificationChannelServiceClient.getNotificationChannelDescriptor(name);
  * }
  * </code>
@@ -340,7 +340,7 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NotificationChannelServiceClient notificationChannelServiceClient = NotificationChannelServiceClient.create()) {
-   *   NotificationChannelDescriptorName name = NotificationChannelDescriptorName.of("[PROJECT]", "[CHANNEL_DESCRIPTOR]");
+   *   NotificationChannelDescriptorName name = NotificationChannelDescriptorName.of("[PROJECT]", "[NOTIFICATION_CHANNEL_DESCRIPTOR]");
    *   NotificationChannelDescriptor response = notificationChannelServiceClient.getNotificationChannelDescriptor(name);
    * }
    * </code></pre>
@@ -368,7 +368,7 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NotificationChannelServiceClient notificationChannelServiceClient = NotificationChannelServiceClient.create()) {
-   *   NotificationChannelDescriptorName name = NotificationChannelDescriptorName.of("[PROJECT]", "[CHANNEL_DESCRIPTOR]");
+   *   NotificationChannelDescriptorName name = NotificationChannelDescriptorName.of("[PROJECT]", "[NOTIFICATION_CHANNEL_DESCRIPTOR]");
    *   NotificationChannelDescriptor response = notificationChannelServiceClient.getNotificationChannelDescriptor(name.toString());
    * }
    * </code></pre>
@@ -393,7 +393,7 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NotificationChannelServiceClient notificationChannelServiceClient = NotificationChannelServiceClient.create()) {
-   *   NotificationChannelDescriptorName name = NotificationChannelDescriptorName.of("[PROJECT]", "[CHANNEL_DESCRIPTOR]");
+   *   NotificationChannelDescriptorName name = NotificationChannelDescriptorName.of("[PROJECT]", "[NOTIFICATION_CHANNEL_DESCRIPTOR]");
    *   GetNotificationChannelDescriptorRequest request = GetNotificationChannelDescriptorRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();
@@ -418,7 +418,7 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NotificationChannelServiceClient notificationChannelServiceClient = NotificationChannelServiceClient.create()) {
-   *   NotificationChannelDescriptorName name = NotificationChannelDescriptorName.of("[PROJECT]", "[CHANNEL_DESCRIPTOR]");
+   *   NotificationChannelDescriptorName name = NotificationChannelDescriptorName.of("[PROJECT]", "[NOTIFICATION_CHANNEL_DESCRIPTOR]");
    *   GetNotificationChannelDescriptorRequest request = GetNotificationChannelDescriptorRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();

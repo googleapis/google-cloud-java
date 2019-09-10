@@ -181,7 +181,7 @@ public class NotificationChannelServiceClientTest {
     mockNotificationChannelService.addResponse(expectedResponse);
 
     NotificationChannelDescriptorName name =
-        NotificationChannelDescriptorName.of("[PROJECT]", "[CHANNEL_DESCRIPTOR]");
+        NotificationChannelDescriptorName.of("[PROJECT]", "[NOTIFICATION_CHANNEL_DESCRIPTOR]");
 
     NotificationChannelDescriptor actualResponse = client.getNotificationChannelDescriptor(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -206,7 +206,7 @@ public class NotificationChannelServiceClientTest {
 
     try {
       NotificationChannelDescriptorName name =
-          NotificationChannelDescriptorName.of("[PROJECT]", "[CHANNEL_DESCRIPTOR]");
+          NotificationChannelDescriptorName.of("[PROJECT]", "[NOTIFICATION_CHANNEL_DESCRIPTOR]");
 
       client.getNotificationChannelDescriptor(name);
       Assert.fail("No exception raised");

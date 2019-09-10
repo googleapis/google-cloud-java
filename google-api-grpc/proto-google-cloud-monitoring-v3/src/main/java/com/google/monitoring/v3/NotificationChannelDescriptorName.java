@@ -28,19 +28,19 @@ public class NotificationChannelDescriptorName implements ResourceName {
 
   private static final PathTemplate PATH_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding(
-          "projects/{project}/notificationChannelDescriptors/{channel_descriptor}");
+          "projects/{project}/notificationChannelDescriptors/{notification_channel_descriptor}");
 
   private volatile Map<String, String> fieldValuesMap;
 
   private final String project;
-  private final String channelDescriptor;
+  private final String notificationChannelDescriptor;
 
   public String getProject() {
     return project;
   }
 
-  public String getChannelDescriptor() {
-    return channelDescriptor;
+  public String getNotificationChannelDescriptor() {
+    return notificationChannelDescriptor;
   }
 
   public static Builder newBuilder() {
@@ -53,17 +53,22 @@ public class NotificationChannelDescriptorName implements ResourceName {
 
   private NotificationChannelDescriptorName(Builder builder) {
     project = Preconditions.checkNotNull(builder.getProject());
-    channelDescriptor = Preconditions.checkNotNull(builder.getChannelDescriptor());
+    notificationChannelDescriptor =
+        Preconditions.checkNotNull(builder.getNotificationChannelDescriptor());
   }
 
-  public static NotificationChannelDescriptorName of(String project, String channelDescriptor) {
-    return newBuilder().setProject(project).setChannelDescriptor(channelDescriptor).build();
-  }
-
-  public static String format(String project, String channelDescriptor) {
+  public static NotificationChannelDescriptorName of(
+      String project, String notificationChannelDescriptor) {
     return newBuilder()
         .setProject(project)
-        .setChannelDescriptor(channelDescriptor)
+        .setNotificationChannelDescriptor(notificationChannelDescriptor)
+        .build();
+  }
+
+  public static String format(String project, String notificationChannelDescriptor) {
+    return newBuilder()
+        .setProject(project)
+        .setNotificationChannelDescriptor(notificationChannelDescriptor)
         .build()
         .toString();
   }
@@ -76,7 +81,7 @@ public class NotificationChannelDescriptorName implements ResourceName {
         PATH_TEMPLATE.validatedMatch(
             formattedString,
             "NotificationChannelDescriptorName.parse: formattedString not in valid format");
-    return of(matchMap.get("project"), matchMap.get("channel_descriptor"));
+    return of(matchMap.get("project"), matchMap.get("notification_channel_descriptor"));
   }
 
   public static List<NotificationChannelDescriptorName> parseList(List<String> formattedStrings) {
@@ -109,7 +114,7 @@ public class NotificationChannelDescriptorName implements ResourceName {
         if (fieldValuesMap == null) {
           ImmutableMap.Builder<String, String> fieldMapBuilder = ImmutableMap.builder();
           fieldMapBuilder.put("project", project);
-          fieldMapBuilder.put("channelDescriptor", channelDescriptor);
+          fieldMapBuilder.put("notificationChannelDescriptor", notificationChannelDescriptor);
           fieldValuesMap = fieldMapBuilder.build();
         }
       }
@@ -123,21 +128,22 @@ public class NotificationChannelDescriptorName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate("project", project, "channel_descriptor", channelDescriptor);
+    return PATH_TEMPLATE.instantiate(
+        "project", project, "notification_channel_descriptor", notificationChannelDescriptor);
   }
 
   /** Builder for NotificationChannelDescriptorName. */
   public static class Builder {
 
     private String project;
-    private String channelDescriptor;
+    private String notificationChannelDescriptor;
 
     public String getProject() {
       return project;
     }
 
-    public String getChannelDescriptor() {
-      return channelDescriptor;
+    public String getNotificationChannelDescriptor() {
+      return notificationChannelDescriptor;
     }
 
     public Builder setProject(String project) {
@@ -145,8 +151,8 @@ public class NotificationChannelDescriptorName implements ResourceName {
       return this;
     }
 
-    public Builder setChannelDescriptor(String channelDescriptor) {
-      this.channelDescriptor = channelDescriptor;
+    public Builder setNotificationChannelDescriptor(String notificationChannelDescriptor) {
+      this.notificationChannelDescriptor = notificationChannelDescriptor;
       return this;
     }
 
@@ -154,7 +160,8 @@ public class NotificationChannelDescriptorName implements ResourceName {
 
     private Builder(NotificationChannelDescriptorName notificationChannelDescriptorName) {
       project = notificationChannelDescriptorName.project;
-      channelDescriptor = notificationChannelDescriptorName.channelDescriptor;
+      notificationChannelDescriptor =
+          notificationChannelDescriptorName.notificationChannelDescriptor;
     }
 
     public NotificationChannelDescriptorName build() {
@@ -170,7 +177,7 @@ public class NotificationChannelDescriptorName implements ResourceName {
     if (o instanceof NotificationChannelDescriptorName) {
       NotificationChannelDescriptorName that = (NotificationChannelDescriptorName) o;
       return (this.project.equals(that.project))
-          && (this.channelDescriptor.equals(that.channelDescriptor));
+          && (this.notificationChannelDescriptor.equals(that.notificationChannelDescriptor));
     }
     return false;
   }
@@ -181,7 +188,7 @@ public class NotificationChannelDescriptorName implements ResourceName {
     h *= 1000003;
     h ^= project.hashCode();
     h *= 1000003;
-    h ^= channelDescriptor.hashCode();
+    h ^= notificationChannelDescriptor.hashCode();
     return h;
   }
 }

@@ -214,19 +214,14 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
             }
           case 114:
             {
-              if (!((mutable_bitField0_ & 0x00000800) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000400) != 0)) {
                 internalCheckers_ =
                     new java.util.ArrayList<com.google.monitoring.v3.InternalChecker>();
-                mutable_bitField0_ |= 0x00000800;
+                mutable_bitField0_ |= 0x00000400;
               }
               internalCheckers_.add(
                   input.readMessage(
                       com.google.monitoring.v3.InternalChecker.parser(), extensionRegistry));
-              break;
-            }
-          case 120:
-            {
-              isInternal_ = input.readBool();
               break;
             }
           default:
@@ -249,7 +244,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       if (((mutable_bitField0_ & 0x00000200) != 0)) {
         selectedRegions_ = java.util.Collections.unmodifiableList(selectedRegions_);
       }
-      if (((mutable_bitField0_ & 0x00000800) != 0)) {
+      if (((mutable_bitField0_ & 0x00000400) != 0)) {
         internalCheckers_ = java.util.Collections.unmodifiableList(internalCheckers_);
       }
       this.unknownFields = unknownFields.build();
@@ -1083,7 +1078,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * <pre>
      * The path to the page to run the check against. Will be combined with the
      * host (specified within the MonitoredResource) and port to construct the
-     * full URL. Optional (defaults to "/").
+     * full URL. Optional (defaults to "/"). If the provided path does not
+     * begin with "/", it will be prepended automatically.
      * </pre>
      *
      * <code>string path = 2;</code>
@@ -1095,7 +1091,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * <pre>
      * The path to the page to run the check against. Will be combined with the
      * host (specified within the MonitoredResource) and port to construct the
-     * full URL. Optional (defaults to "/").
+     * full URL. Optional (defaults to "/"). If the provided path does not
+     * begin with "/", it will be prepended automatically.
      * </pre>
      *
      * <code>string path = 2;</code>
@@ -1257,6 +1254,19 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * <code>map&lt;string, string&gt; headers = 6;</code>
      */
     java.lang.String getHeadersOrThrow(java.lang.String key);
+
+    /**
+     *
+     *
+     * <pre>
+     * Boolean specifying whether to validate SSL certificates.
+     * Only applies to uptime_url checks. If use_ssl is false, setting this to
+     * true has no effect.
+     * </pre>
+     *
+     * <code>bool validate_ssl = 7;</code>
+     */
+    boolean getValidateSsl();
   }
   /**
    *
@@ -1359,6 +1369,11 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
                         HeadersDefaultEntryHolder.defaultEntry.getParserForType(),
                         extensionRegistry);
                 headers_.getMutableMap().put(headers__.getKey(), headers__.getValue());
+                break;
+              }
+            case 56:
+              {
+                validateSsl_ = input.readBool();
                 break;
               }
             default:
@@ -2269,7 +2284,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * <pre>
      * The path to the page to run the check against. Will be combined with the
      * host (specified within the MonitoredResource) and port to construct the
-     * full URL. Optional (defaults to "/").
+     * full URL. Optional (defaults to "/"). If the provided path does not
+     * begin with "/", it will be prepended automatically.
      * </pre>
      *
      * <code>string path = 2;</code>
@@ -2291,7 +2307,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * <pre>
      * The path to the page to run the check against. Will be combined with the
      * host (specified within the MonitoredResource) and port to construct the
-     * full URL. Optional (defaults to "/").
+     * full URL. Optional (defaults to "/"). If the provided path does not
+     * begin with "/", it will be prepended automatically.
      * </pre>
      *
      * <code>string path = 2;</code>
@@ -2516,6 +2533,23 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       return map.get(key);
     }
 
+    public static final int VALIDATE_SSL_FIELD_NUMBER = 7;
+    private boolean validateSsl_;
+    /**
+     *
+     *
+     * <pre>
+     * Boolean specifying whether to validate SSL certificates.
+     * Only applies to uptime_url checks. If use_ssl is false, setting this to
+     * true has no effect.
+     * </pre>
+     *
+     * <code>bool validate_ssl = 7;</code>
+     */
+    public boolean getValidateSsl() {
+      return validateSsl_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -2547,6 +2581,9 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       }
       com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
           output, internalGetHeaders(), HeadersDefaultEntryHolder.defaultEntry, 6);
+      if (validateSsl_ != false) {
+        output.writeBool(7, validateSsl_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -2581,6 +2618,9 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
                 .build();
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, headers__);
       }
+      if (validateSsl_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(7, validateSsl_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -2606,6 +2646,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       }
       if (getMaskHeaders() != other.getMaskHeaders()) return false;
       if (!internalGetHeaders().equals(other.internalGetHeaders())) return false;
+      if (getValidateSsl() != other.getValidateSsl()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -2633,6 +2674,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
         hash = (37 * hash) + HEADERS_FIELD_NUMBER;
         hash = (53 * hash) + internalGetHeaders().hashCode();
       }
+      hash = (37 * hash) + VALIDATE_SSL_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getValidateSsl());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2816,6 +2859,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
         maskHeaders_ = false;
 
         internalGetMutableHeaders().clear();
+        validateSsl_ = false;
+
         return this;
       }
 
@@ -2856,6 +2901,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
         result.maskHeaders_ = maskHeaders_;
         result.headers_ = internalGetHeaders();
         result.headers_.makeImmutable();
+        result.validateSsl_ = validateSsl_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -2926,6 +2972,9 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
           setMaskHeaders(other.getMaskHeaders());
         }
         internalGetMutableHeaders().mergeFrom(other.internalGetHeaders());
+        if (other.getValidateSsl() != false) {
+          setValidateSsl(other.getValidateSsl());
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -3009,7 +3058,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * <pre>
        * The path to the page to run the check against. Will be combined with the
        * host (specified within the MonitoredResource) and port to construct the
-       * full URL. Optional (defaults to "/").
+       * full URL. Optional (defaults to "/"). If the provided path does not
+       * begin with "/", it will be prepended automatically.
        * </pre>
        *
        * <code>string path = 2;</code>
@@ -3031,7 +3081,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * <pre>
        * The path to the page to run the check against. Will be combined with the
        * host (specified within the MonitoredResource) and port to construct the
-       * full URL. Optional (defaults to "/").
+       * full URL. Optional (defaults to "/"). If the provided path does not
+       * begin with "/", it will be prepended automatically.
        * </pre>
        *
        * <code>string path = 2;</code>
@@ -3053,7 +3104,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * <pre>
        * The path to the page to run the check against. Will be combined with the
        * host (specified within the MonitoredResource) and port to construct the
-       * full URL. Optional (defaults to "/").
+       * full URL. Optional (defaults to "/"). If the provided path does not
+       * begin with "/", it will be prepended automatically.
        * </pre>
        *
        * <code>string path = 2;</code>
@@ -3073,7 +3125,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * <pre>
        * The path to the page to run the check against. Will be combined with the
        * host (specified within the MonitoredResource) and port to construct the
-       * full URL. Optional (defaults to "/").
+       * full URL. Optional (defaults to "/"). If the provided path does not
+       * begin with "/", it will be prepended automatically.
        * </pre>
        *
        * <code>string path = 2;</code>
@@ -3090,7 +3143,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * <pre>
        * The path to the page to run the check against. Will be combined with the
        * host (specified within the MonitoredResource) and port to construct the
-       * full URL. Optional (defaults to "/").
+       * full URL. Optional (defaults to "/"). If the provided path does not
+       * begin with "/", it will be prepended automatically.
        * </pre>
        *
        * <code>string path = 2;</code>
@@ -3625,6 +3679,56 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        */
       public Builder putAllHeaders(java.util.Map<java.lang.String, java.lang.String> values) {
         internalGetMutableHeaders().getMutableMap().putAll(values);
+        return this;
+      }
+
+      private boolean validateSsl_;
+      /**
+       *
+       *
+       * <pre>
+       * Boolean specifying whether to validate SSL certificates.
+       * Only applies to uptime_url checks. If use_ssl is false, setting this to
+       * true has no effect.
+       * </pre>
+       *
+       * <code>bool validate_ssl = 7;</code>
+       */
+      public boolean getValidateSsl() {
+        return validateSsl_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Boolean specifying whether to validate SSL certificates.
+       * Only applies to uptime_url checks. If use_ssl is false, setting this to
+       * true has no effect.
+       * </pre>
+       *
+       * <code>bool validate_ssl = 7;</code>
+       */
+      public Builder setValidateSsl(boolean value) {
+
+        validateSsl_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Boolean specifying whether to validate SSL certificates.
+       * Only applies to uptime_url checks. If use_ssl is false, setting this to
+       * true has no effect.
+       * </pre>
+       *
+       * <code>bool validate_ssl = 7;</code>
+       */
+      public Builder clearValidateSsl() {
+
+        validateSsl_ = false;
+        onChanged();
         return this;
       }
 
@@ -4248,6 +4352,35 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * <code>string content = 1;</code>
      */
     com.google.protobuf.ByteString getContentBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * The matcher representing content match options which the check will run
+     * with. If the field is not specified (in previous versions), the option is
+     * set to be CONTAINS_STRING which performs content substring matching.
+     * </pre>
+     *
+     * <code>
+     * .google.monitoring.v3.UptimeCheckConfig.ContentMatcher.ContentMatcherOption matcher = 2;
+     * </code>
+     */
+    int getMatcherValue();
+    /**
+     *
+     *
+     * <pre>
+     * The matcher representing content match options which the check will run
+     * with. If the field is not specified (in previous versions), the option is
+     * set to be CONTAINS_STRING which performs content substring matching.
+     * </pre>
+     *
+     * <code>
+     * .google.monitoring.v3.UptimeCheckConfig.ContentMatcher.ContentMatcherOption matcher = 2;
+     * </code>
+     */
+    com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.ContentMatcherOption getMatcher();
   }
   /**
    *
@@ -4271,6 +4404,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
 
     private ContentMatcher() {
       content_ = "";
+      matcher_ = 0;
     }
 
     @java.lang.Override
@@ -4302,6 +4436,13 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
                 java.lang.String s = input.readStringRequireUtf8();
 
                 content_ = s;
+                break;
+              }
+            case 16:
+              {
+                int rawValue = input.readEnum();
+
+                matcher_ = rawValue;
                 break;
               }
             default:
@@ -4336,6 +4477,205 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
           .ensureFieldAccessorsInitialized(
               com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.class,
               com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.Builder.class);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Options to perform content matching.
+     * </pre>
+     *
+     * Protobuf enum {@code
+     * google.monitoring.v3.UptimeCheckConfig.ContentMatcher.ContentMatcherOption}
+     */
+    public enum ContentMatcherOption implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * No content macher option specified. Treated as CONTAINS_STRING.
+       * </pre>
+       *
+       * <code>CONTENT_MATCHER_OPTION_UNSPECIFIED = 0;</code>
+       */
+      CONTENT_MATCHER_OPTION_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * Allows checking substring matching.
+       * Default value for previous versions without option.
+       * </pre>
+       *
+       * <code>CONTAINS_STRING = 1;</code>
+       */
+      CONTAINS_STRING(1),
+      /**
+       *
+       *
+       * <pre>
+       * Allows checking negation of substring matching (doesn't contain the
+       * substring).
+       * </pre>
+       *
+       * <code>NOT_CONTAINS_STRING = 2;</code>
+       */
+      NOT_CONTAINS_STRING(2),
+      /**
+       *
+       *
+       * <pre>
+       * Allows checking regular expression matching.
+       * </pre>
+       *
+       * <code>MATCHES_REGEX = 3;</code>
+       */
+      MATCHES_REGEX(3),
+      /**
+       *
+       *
+       * <pre>
+       * Allows checking negation of regular expression matching.
+       * </pre>
+       *
+       * <code>NOT_MATCHES_REGEX = 4;</code>
+       */
+      NOT_MATCHES_REGEX(4),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       *
+       *
+       * <pre>
+       * No content macher option specified. Treated as CONTAINS_STRING.
+       * </pre>
+       *
+       * <code>CONTENT_MATCHER_OPTION_UNSPECIFIED = 0;</code>
+       */
+      public static final int CONTENT_MATCHER_OPTION_UNSPECIFIED_VALUE = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Allows checking substring matching.
+       * Default value for previous versions without option.
+       * </pre>
+       *
+       * <code>CONTAINS_STRING = 1;</code>
+       */
+      public static final int CONTAINS_STRING_VALUE = 1;
+      /**
+       *
+       *
+       * <pre>
+       * Allows checking negation of substring matching (doesn't contain the
+       * substring).
+       * </pre>
+       *
+       * <code>NOT_CONTAINS_STRING = 2;</code>
+       */
+      public static final int NOT_CONTAINS_STRING_VALUE = 2;
+      /**
+       *
+       *
+       * <pre>
+       * Allows checking regular expression matching.
+       * </pre>
+       *
+       * <code>MATCHES_REGEX = 3;</code>
+       */
+      public static final int MATCHES_REGEX_VALUE = 3;
+      /**
+       *
+       *
+       * <pre>
+       * Allows checking negation of regular expression matching.
+       * </pre>
+       *
+       * <code>NOT_MATCHES_REGEX = 4;</code>
+       */
+      public static final int NOT_MATCHES_REGEX_VALUE = 4;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /** @deprecated Use {@link #forNumber(int)} instead. */
+      @java.lang.Deprecated
+      public static ContentMatcherOption valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static ContentMatcherOption forNumber(int value) {
+        switch (value) {
+          case 0:
+            return CONTENT_MATCHER_OPTION_UNSPECIFIED;
+          case 1:
+            return CONTAINS_STRING;
+          case 2:
+            return NOT_CONTAINS_STRING;
+          case 3:
+            return MATCHES_REGEX;
+          case 4:
+            return NOT_MATCHES_REGEX;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<ContentMatcherOption>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<ContentMatcherOption>
+          internalValueMap =
+              new com.google.protobuf.Internal.EnumLiteMap<ContentMatcherOption>() {
+                public ContentMatcherOption findValueByNumber(int number) {
+                  return ContentMatcherOption.forNumber(number);
+                }
+              };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.getDescriptor()
+            .getEnumTypes()
+            .get(0);
+      }
+
+      private static final ContentMatcherOption[] VALUES = values();
+
+      public static ContentMatcherOption valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private ContentMatcherOption(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.monitoring.v3.UptimeCheckConfig.ContentMatcher.ContentMatcherOption)
     }
 
     public static final int CONTENT_FIELD_NUMBER = 1;
@@ -4381,6 +4721,49 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       }
     }
 
+    public static final int MATCHER_FIELD_NUMBER = 2;
+    private int matcher_;
+    /**
+     *
+     *
+     * <pre>
+     * The matcher representing content match options which the check will run
+     * with. If the field is not specified (in previous versions), the option is
+     * set to be CONTAINS_STRING which performs content substring matching.
+     * </pre>
+     *
+     * <code>
+     * .google.monitoring.v3.UptimeCheckConfig.ContentMatcher.ContentMatcherOption matcher = 2;
+     * </code>
+     */
+    public int getMatcherValue() {
+      return matcher_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The matcher representing content match options which the check will run
+     * with. If the field is not specified (in previous versions), the option is
+     * set to be CONTAINS_STRING which performs content substring matching.
+     * </pre>
+     *
+     * <code>
+     * .google.monitoring.v3.UptimeCheckConfig.ContentMatcher.ContentMatcherOption matcher = 2;
+     * </code>
+     */
+    public com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.ContentMatcherOption
+        getMatcher() {
+      @SuppressWarnings("deprecation")
+      com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.ContentMatcherOption result =
+          com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.ContentMatcherOption.valueOf(
+              matcher_);
+      return result == null
+          ? com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.ContentMatcherOption
+              .UNRECOGNIZED
+          : result;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -4398,6 +4781,12 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       if (!getContentBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, content_);
       }
+      if (matcher_
+          != com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.ContentMatcherOption
+              .CONTENT_MATCHER_OPTION_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(2, matcher_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -4409,6 +4798,12 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       size = 0;
       if (!getContentBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, content_);
+      }
+      if (matcher_
+          != com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.ContentMatcherOption
+              .CONTENT_MATCHER_OPTION_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, matcher_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -4427,6 +4822,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
           (com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher) obj;
 
       if (!getContent().equals(other.getContent())) return false;
+      if (matcher_ != other.matcher_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -4440,6 +4836,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + CONTENT_FIELD_NUMBER;
       hash = (53 * hash) + getContent().hashCode();
+      hash = (37 * hash) + MATCHER_FIELD_NUMBER;
+      hash = (53 * hash) + matcher_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -4591,6 +4989,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
         super.clear();
         content_ = "";
 
+        matcher_ = 0;
+
         return this;
       }
 
@@ -4619,6 +5019,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
         com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher result =
             new com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher(this);
         result.content_ = content_;
+        result.matcher_ = matcher_;
         onBuilt();
         return result;
       }
@@ -4674,6 +5075,9 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
         if (!other.getContent().isEmpty()) {
           content_ = other.content_;
           onChanged();
+        }
+        if (other.matcher_ != 0) {
+          setMatcherValue(other.getMatcherValue());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -4795,6 +5199,108 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
         checkByteStringIsUtf8(value);
 
         content_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int matcher_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * The matcher representing content match options which the check will run
+       * with. If the field is not specified (in previous versions), the option is
+       * set to be CONTAINS_STRING which performs content substring matching.
+       * </pre>
+       *
+       * <code>
+       * .google.monitoring.v3.UptimeCheckConfig.ContentMatcher.ContentMatcherOption matcher = 2;
+       * </code>
+       */
+      public int getMatcherValue() {
+        return matcher_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The matcher representing content match options which the check will run
+       * with. If the field is not specified (in previous versions), the option is
+       * set to be CONTAINS_STRING which performs content substring matching.
+       * </pre>
+       *
+       * <code>
+       * .google.monitoring.v3.UptimeCheckConfig.ContentMatcher.ContentMatcherOption matcher = 2;
+       * </code>
+       */
+      public Builder setMatcherValue(int value) {
+        matcher_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The matcher representing content match options which the check will run
+       * with. If the field is not specified (in previous versions), the option is
+       * set to be CONTAINS_STRING which performs content substring matching.
+       * </pre>
+       *
+       * <code>
+       * .google.monitoring.v3.UptimeCheckConfig.ContentMatcher.ContentMatcherOption matcher = 2;
+       * </code>
+       */
+      public com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.ContentMatcherOption
+          getMatcher() {
+        @SuppressWarnings("deprecation")
+        com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.ContentMatcherOption result =
+            com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.ContentMatcherOption.valueOf(
+                matcher_);
+        return result == null
+            ? com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.ContentMatcherOption
+                .UNRECOGNIZED
+            : result;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The matcher representing content match options which the check will run
+       * with. If the field is not specified (in previous versions), the option is
+       * set to be CONTAINS_STRING which performs content substring matching.
+       * </pre>
+       *
+       * <code>
+       * .google.monitoring.v3.UptimeCheckConfig.ContentMatcher.ContentMatcherOption matcher = 2;
+       * </code>
+       */
+      public Builder setMatcher(
+          com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.ContentMatcherOption value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        matcher_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The matcher representing content match options which the check will run
+       * with. If the field is not specified (in previous versions), the option is
+       * set to be CONTAINS_STRING which performs content substring matching.
+       * </pre>
+       *
+       * <code>
+       * .google.monitoring.v3.UptimeCheckConfig.ContentMatcher.ContentMatcherOption matcher = 2;
+       * </code>
+       */
+      public Builder clearMatcher() {
+
+        matcher_ = 0;
         onChanged();
         return this;
       }
@@ -5240,7 +5746,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
    * How often, in seconds, the uptime check is performed.
    * Currently, the only supported values are `60s` (1 minute), `300s`
    * (5 minutes), `600s` (10 minutes), and `900s` (15 minutes). Optional,
-   * defaults to `300s`.
+   * defaults to `60s`.
    * </pre>
    *
    * <code>.google.protobuf.Duration period = 7;</code>
@@ -5255,7 +5761,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
    * How often, in seconds, the uptime check is performed.
    * Currently, the only supported values are `60s` (1 minute), `300s`
    * (5 minutes), `600s` (10 minutes), and `900s` (15 minutes). Optional,
-   * defaults to `300s`.
+   * defaults to `60s`.
    * </pre>
    *
    * <code>.google.protobuf.Duration period = 7;</code>
@@ -5270,7 +5776,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
    * How often, in seconds, the uptime check is performed.
    * Currently, the only supported values are `60s` (1 minute), `300s`
    * (5 minutes), `600s` (10 minutes), and `900s` (15 minutes). Optional,
-   * defaults to `300s`.
+   * defaults to `60s`.
    * </pre>
    *
    * <code>.google.protobuf.Duration period = 7;</code>
@@ -5520,24 +6026,6 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
 
   private int selectedRegionsMemoizedSerializedSize;
 
-  public static final int IS_INTERNAL_FIELD_NUMBER = 15;
-  private boolean isInternal_;
-  /**
-   *
-   *
-   * <pre>
-   * If this is true, then checks are made only from the 'internal_checkers'.
-   * If it is false, then checks are made only from the 'selected_regions'.
-   * It is an error to provide 'selected_regions' when is_internal is true,
-   * or to provide 'internal_checkers' when is_internal is false.
-   * </pre>
-   *
-   * <code>bool is_internal = 15;</code>
-   */
-  public boolean getIsInternal() {
-    return isInternal_;
-  }
-
   public static final int INTERNAL_CHECKERS_FIELD_NUMBER = 14;
   private java.util.List<com.google.monitoring.v3.InternalChecker> internalCheckers_;
   /**
@@ -5549,8 +6037,11 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
    * InternalCheckers configured for the project that owns this CheckConfig.
    * </pre>
    *
-   * <code>repeated .google.monitoring.v3.InternalChecker internal_checkers = 14;</code>
+   * <code>
+   * repeated .google.monitoring.v3.InternalChecker internal_checkers = 14 [deprecated = true];
+   * </code>
    */
+  @java.lang.Deprecated
   public java.util.List<com.google.monitoring.v3.InternalChecker> getInternalCheckersList() {
     return internalCheckers_;
   }
@@ -5563,8 +6054,11 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
    * InternalCheckers configured for the project that owns this CheckConfig.
    * </pre>
    *
-   * <code>repeated .google.monitoring.v3.InternalChecker internal_checkers = 14;</code>
+   * <code>
+   * repeated .google.monitoring.v3.InternalChecker internal_checkers = 14 [deprecated = true];
+   * </code>
    */
+  @java.lang.Deprecated
   public java.util.List<? extends com.google.monitoring.v3.InternalCheckerOrBuilder>
       getInternalCheckersOrBuilderList() {
     return internalCheckers_;
@@ -5578,8 +6072,11 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
    * InternalCheckers configured for the project that owns this CheckConfig.
    * </pre>
    *
-   * <code>repeated .google.monitoring.v3.InternalChecker internal_checkers = 14;</code>
+   * <code>
+   * repeated .google.monitoring.v3.InternalChecker internal_checkers = 14 [deprecated = true];
+   * </code>
    */
+  @java.lang.Deprecated
   public int getInternalCheckersCount() {
     return internalCheckers_.size();
   }
@@ -5592,8 +6089,11 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
    * InternalCheckers configured for the project that owns this CheckConfig.
    * </pre>
    *
-   * <code>repeated .google.monitoring.v3.InternalChecker internal_checkers = 14;</code>
+   * <code>
+   * repeated .google.monitoring.v3.InternalChecker internal_checkers = 14 [deprecated = true];
+   * </code>
    */
+  @java.lang.Deprecated
   public com.google.monitoring.v3.InternalChecker getInternalCheckers(int index) {
     return internalCheckers_.get(index);
   }
@@ -5606,8 +6106,11 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
    * InternalCheckers configured for the project that owns this CheckConfig.
    * </pre>
    *
-   * <code>repeated .google.monitoring.v3.InternalChecker internal_checkers = 14;</code>
+   * <code>
+   * repeated .google.monitoring.v3.InternalChecker internal_checkers = 14 [deprecated = true];
+   * </code>
    */
+  @java.lang.Deprecated
   public com.google.monitoring.v3.InternalCheckerOrBuilder getInternalCheckersOrBuilder(int index) {
     return internalCheckers_.get(index);
   }
@@ -5665,9 +6168,6 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
     }
     for (int i = 0; i < internalCheckers_.size(); i++) {
       output.writeMessage(14, internalCheckers_.get(i));
-    }
-    if (isInternal_ != false) {
-      output.writeBool(15, isInternal_);
     }
     unknownFields.writeTo(output);
   }
@@ -5730,9 +6230,6 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(14, internalCheckers_.get(i));
     }
-    if (isInternal_ != false) {
-      size += com.google.protobuf.CodedOutputStream.computeBoolSize(15, isInternal_);
-    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -5761,7 +6258,6 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
     }
     if (!getContentMatchersList().equals(other.getContentMatchersList())) return false;
     if (!selectedRegions_.equals(other.selectedRegions_)) return false;
-    if (getIsInternal() != other.getIsInternal()) return false;
     if (!getInternalCheckersList().equals(other.getInternalCheckersList())) return false;
     if (!getResourceCase().equals(other.getResourceCase())) return false;
     switch (resourceCase_) {
@@ -5816,8 +6312,6 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       hash = (37 * hash) + SELECTED_REGIONS_FIELD_NUMBER;
       hash = (53 * hash) + selectedRegions_.hashCode();
     }
-    hash = (37 * hash) + IS_INTERNAL_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIsInternal());
     if (getInternalCheckersCount() > 0) {
       hash = (37 * hash) + INTERNAL_CHECKERS_FIELD_NUMBER;
       hash = (53 * hash) + getInternalCheckersList().hashCode();
@@ -6019,11 +6513,9 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       }
       selectedRegions_ = java.util.Collections.emptyList();
       bitField0_ = (bitField0_ & ~0x00000200);
-      isInternal_ = false;
-
       if (internalCheckersBuilder_ == null) {
         internalCheckers_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000800);
+        bitField0_ = (bitField0_ & ~0x00000400);
       } else {
         internalCheckersBuilder_.clear();
       }
@@ -6114,11 +6606,10 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
         bitField0_ = (bitField0_ & ~0x00000200);
       }
       result.selectedRegions_ = selectedRegions_;
-      result.isInternal_ = isInternal_;
       if (internalCheckersBuilder_ == null) {
-        if (((bitField0_ & 0x00000800) != 0)) {
+        if (((bitField0_ & 0x00000400) != 0)) {
           internalCheckers_ = java.util.Collections.unmodifiableList(internalCheckers_);
-          bitField0_ = (bitField0_ & ~0x00000800);
+          bitField0_ = (bitField0_ & ~0x00000400);
         }
         result.internalCheckers_ = internalCheckers_;
       } else {
@@ -6227,14 +6718,11 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
         }
         onChanged();
       }
-      if (other.getIsInternal() != false) {
-        setIsInternal(other.getIsInternal());
-      }
       if (internalCheckersBuilder_ == null) {
         if (!other.internalCheckers_.isEmpty()) {
           if (internalCheckers_.isEmpty()) {
             internalCheckers_ = other.internalCheckers_;
-            bitField0_ = (bitField0_ & ~0x00000800);
+            bitField0_ = (bitField0_ & ~0x00000400);
           } else {
             ensureInternalCheckersIsMutable();
             internalCheckers_.addAll(other.internalCheckers_);
@@ -6247,7 +6735,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
             internalCheckersBuilder_.dispose();
             internalCheckersBuilder_ = null;
             internalCheckers_ = other.internalCheckers_;
-            bitField0_ = (bitField0_ & ~0x00000800);
+            bitField0_ = (bitField0_ & ~0x00000400);
             internalCheckersBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getInternalCheckersFieldBuilder()
@@ -7465,7 +7953,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * How often, in seconds, the uptime check is performed.
      * Currently, the only supported values are `60s` (1 minute), `300s`
      * (5 minutes), `600s` (10 minutes), and `900s` (15 minutes). Optional,
-     * defaults to `300s`.
+     * defaults to `60s`.
      * </pre>
      *
      * <code>.google.protobuf.Duration period = 7;</code>
@@ -7480,7 +7968,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * How often, in seconds, the uptime check is performed.
      * Currently, the only supported values are `60s` (1 minute), `300s`
      * (5 minutes), `600s` (10 minutes), and `900s` (15 minutes). Optional,
-     * defaults to `300s`.
+     * defaults to `60s`.
      * </pre>
      *
      * <code>.google.protobuf.Duration period = 7;</code>
@@ -7499,7 +7987,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * How often, in seconds, the uptime check is performed.
      * Currently, the only supported values are `60s` (1 minute), `300s`
      * (5 minutes), `600s` (10 minutes), and `900s` (15 minutes). Optional,
-     * defaults to `300s`.
+     * defaults to `60s`.
      * </pre>
      *
      * <code>.google.protobuf.Duration period = 7;</code>
@@ -7524,7 +8012,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * How often, in seconds, the uptime check is performed.
      * Currently, the only supported values are `60s` (1 minute), `300s`
      * (5 minutes), `600s` (10 minutes), and `900s` (15 minutes). Optional,
-     * defaults to `300s`.
+     * defaults to `60s`.
      * </pre>
      *
      * <code>.google.protobuf.Duration period = 7;</code>
@@ -7546,7 +8034,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * How often, in seconds, the uptime check is performed.
      * Currently, the only supported values are `60s` (1 minute), `300s`
      * (5 minutes), `600s` (10 minutes), and `900s` (15 minutes). Optional,
-     * defaults to `300s`.
+     * defaults to `60s`.
      * </pre>
      *
      * <code>.google.protobuf.Duration period = 7;</code>
@@ -7573,7 +8061,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * How often, in seconds, the uptime check is performed.
      * Currently, the only supported values are `60s` (1 minute), `300s`
      * (5 minutes), `600s` (10 minutes), and `900s` (15 minutes). Optional,
-     * defaults to `300s`.
+     * defaults to `60s`.
      * </pre>
      *
      * <code>.google.protobuf.Duration period = 7;</code>
@@ -7596,7 +8084,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * How often, in seconds, the uptime check is performed.
      * Currently, the only supported values are `60s` (1 minute), `300s`
      * (5 minutes), `600s` (10 minutes), and `900s` (15 minutes). Optional,
-     * defaults to `300s`.
+     * defaults to `60s`.
      * </pre>
      *
      * <code>.google.protobuf.Duration period = 7;</code>
@@ -7613,7 +8101,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * How often, in seconds, the uptime check is performed.
      * Currently, the only supported values are `60s` (1 minute), `300s`
      * (5 minutes), `600s` (10 minutes), and `900s` (15 minutes). Optional,
-     * defaults to `300s`.
+     * defaults to `60s`.
      * </pre>
      *
      * <code>.google.protobuf.Duration period = 7;</code>
@@ -7632,7 +8120,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * How often, in seconds, the uptime check is performed.
      * Currently, the only supported values are `60s` (1 minute), `300s`
      * (5 minutes), `600s` (10 minutes), and `900s` (15 minutes). Optional,
-     * defaults to `300s`.
+     * defaults to `60s`.
      * </pre>
      *
      * <code>.google.protobuf.Duration period = 7;</code>
@@ -8545,67 +9033,14 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       return this;
     }
 
-    private boolean isInternal_;
-    /**
-     *
-     *
-     * <pre>
-     * If this is true, then checks are made only from the 'internal_checkers'.
-     * If it is false, then checks are made only from the 'selected_regions'.
-     * It is an error to provide 'selected_regions' when is_internal is true,
-     * or to provide 'internal_checkers' when is_internal is false.
-     * </pre>
-     *
-     * <code>bool is_internal = 15;</code>
-     */
-    public boolean getIsInternal() {
-      return isInternal_;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * If this is true, then checks are made only from the 'internal_checkers'.
-     * If it is false, then checks are made only from the 'selected_regions'.
-     * It is an error to provide 'selected_regions' when is_internal is true,
-     * or to provide 'internal_checkers' when is_internal is false.
-     * </pre>
-     *
-     * <code>bool is_internal = 15;</code>
-     */
-    public Builder setIsInternal(boolean value) {
-
-      isInternal_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * If this is true, then checks are made only from the 'internal_checkers'.
-     * If it is false, then checks are made only from the 'selected_regions'.
-     * It is an error to provide 'selected_regions' when is_internal is true,
-     * or to provide 'internal_checkers' when is_internal is false.
-     * </pre>
-     *
-     * <code>bool is_internal = 15;</code>
-     */
-    public Builder clearIsInternal() {
-
-      isInternal_ = false;
-      onChanged();
-      return this;
-    }
-
     private java.util.List<com.google.monitoring.v3.InternalChecker> internalCheckers_ =
         java.util.Collections.emptyList();
 
     private void ensureInternalCheckersIsMutable() {
-      if (!((bitField0_ & 0x00000800) != 0)) {
+      if (!((bitField0_ & 0x00000400) != 0)) {
         internalCheckers_ =
             new java.util.ArrayList<com.google.monitoring.v3.InternalChecker>(internalCheckers_);
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00000400;
       }
     }
 
@@ -8624,8 +9059,11 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * InternalCheckers configured for the project that owns this CheckConfig.
      * </pre>
      *
-     * <code>repeated .google.monitoring.v3.InternalChecker internal_checkers = 14;</code>
+     * <code>
+     * repeated .google.monitoring.v3.InternalChecker internal_checkers = 14 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public java.util.List<com.google.monitoring.v3.InternalChecker> getInternalCheckersList() {
       if (internalCheckersBuilder_ == null) {
         return java.util.Collections.unmodifiableList(internalCheckers_);
@@ -8642,8 +9080,11 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * InternalCheckers configured for the project that owns this CheckConfig.
      * </pre>
      *
-     * <code>repeated .google.monitoring.v3.InternalChecker internal_checkers = 14;</code>
+     * <code>
+     * repeated .google.monitoring.v3.InternalChecker internal_checkers = 14 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public int getInternalCheckersCount() {
       if (internalCheckersBuilder_ == null) {
         return internalCheckers_.size();
@@ -8660,8 +9101,11 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * InternalCheckers configured for the project that owns this CheckConfig.
      * </pre>
      *
-     * <code>repeated .google.monitoring.v3.InternalChecker internal_checkers = 14;</code>
+     * <code>
+     * repeated .google.monitoring.v3.InternalChecker internal_checkers = 14 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public com.google.monitoring.v3.InternalChecker getInternalCheckers(int index) {
       if (internalCheckersBuilder_ == null) {
         return internalCheckers_.get(index);
@@ -8678,8 +9122,11 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * InternalCheckers configured for the project that owns this CheckConfig.
      * </pre>
      *
-     * <code>repeated .google.monitoring.v3.InternalChecker internal_checkers = 14;</code>
+     * <code>
+     * repeated .google.monitoring.v3.InternalChecker internal_checkers = 14 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder setInternalCheckers(int index, com.google.monitoring.v3.InternalChecker value) {
       if (internalCheckersBuilder_ == null) {
         if (value == null) {
@@ -8702,8 +9149,11 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * InternalCheckers configured for the project that owns this CheckConfig.
      * </pre>
      *
-     * <code>repeated .google.monitoring.v3.InternalChecker internal_checkers = 14;</code>
+     * <code>
+     * repeated .google.monitoring.v3.InternalChecker internal_checkers = 14 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder setInternalCheckers(
         int index, com.google.monitoring.v3.InternalChecker.Builder builderForValue) {
       if (internalCheckersBuilder_ == null) {
@@ -8724,8 +9174,11 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * InternalCheckers configured for the project that owns this CheckConfig.
      * </pre>
      *
-     * <code>repeated .google.monitoring.v3.InternalChecker internal_checkers = 14;</code>
+     * <code>
+     * repeated .google.monitoring.v3.InternalChecker internal_checkers = 14 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder addInternalCheckers(com.google.monitoring.v3.InternalChecker value) {
       if (internalCheckersBuilder_ == null) {
         if (value == null) {
@@ -8748,8 +9201,11 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * InternalCheckers configured for the project that owns this CheckConfig.
      * </pre>
      *
-     * <code>repeated .google.monitoring.v3.InternalChecker internal_checkers = 14;</code>
+     * <code>
+     * repeated .google.monitoring.v3.InternalChecker internal_checkers = 14 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder addInternalCheckers(int index, com.google.monitoring.v3.InternalChecker value) {
       if (internalCheckersBuilder_ == null) {
         if (value == null) {
@@ -8772,8 +9228,11 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * InternalCheckers configured for the project that owns this CheckConfig.
      * </pre>
      *
-     * <code>repeated .google.monitoring.v3.InternalChecker internal_checkers = 14;</code>
+     * <code>
+     * repeated .google.monitoring.v3.InternalChecker internal_checkers = 14 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder addInternalCheckers(
         com.google.monitoring.v3.InternalChecker.Builder builderForValue) {
       if (internalCheckersBuilder_ == null) {
@@ -8794,8 +9253,11 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * InternalCheckers configured for the project that owns this CheckConfig.
      * </pre>
      *
-     * <code>repeated .google.monitoring.v3.InternalChecker internal_checkers = 14;</code>
+     * <code>
+     * repeated .google.monitoring.v3.InternalChecker internal_checkers = 14 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder addInternalCheckers(
         int index, com.google.monitoring.v3.InternalChecker.Builder builderForValue) {
       if (internalCheckersBuilder_ == null) {
@@ -8816,8 +9278,11 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * InternalCheckers configured for the project that owns this CheckConfig.
      * </pre>
      *
-     * <code>repeated .google.monitoring.v3.InternalChecker internal_checkers = 14;</code>
+     * <code>
+     * repeated .google.monitoring.v3.InternalChecker internal_checkers = 14 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder addAllInternalCheckers(
         java.lang.Iterable<? extends com.google.monitoring.v3.InternalChecker> values) {
       if (internalCheckersBuilder_ == null) {
@@ -8838,12 +9303,15 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * InternalCheckers configured for the project that owns this CheckConfig.
      * </pre>
      *
-     * <code>repeated .google.monitoring.v3.InternalChecker internal_checkers = 14;</code>
+     * <code>
+     * repeated .google.monitoring.v3.InternalChecker internal_checkers = 14 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder clearInternalCheckers() {
       if (internalCheckersBuilder_ == null) {
         internalCheckers_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000800);
+        bitField0_ = (bitField0_ & ~0x00000400);
         onChanged();
       } else {
         internalCheckersBuilder_.clear();
@@ -8859,8 +9327,11 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * InternalCheckers configured for the project that owns this CheckConfig.
      * </pre>
      *
-     * <code>repeated .google.monitoring.v3.InternalChecker internal_checkers = 14;</code>
+     * <code>
+     * repeated .google.monitoring.v3.InternalChecker internal_checkers = 14 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder removeInternalCheckers(int index) {
       if (internalCheckersBuilder_ == null) {
         ensureInternalCheckersIsMutable();
@@ -8880,8 +9351,11 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * InternalCheckers configured for the project that owns this CheckConfig.
      * </pre>
      *
-     * <code>repeated .google.monitoring.v3.InternalChecker internal_checkers = 14;</code>
+     * <code>
+     * repeated .google.monitoring.v3.InternalChecker internal_checkers = 14 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public com.google.monitoring.v3.InternalChecker.Builder getInternalCheckersBuilder(int index) {
       return getInternalCheckersFieldBuilder().getBuilder(index);
     }
@@ -8894,8 +9368,11 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * InternalCheckers configured for the project that owns this CheckConfig.
      * </pre>
      *
-     * <code>repeated .google.monitoring.v3.InternalChecker internal_checkers = 14;</code>
+     * <code>
+     * repeated .google.monitoring.v3.InternalChecker internal_checkers = 14 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public com.google.monitoring.v3.InternalCheckerOrBuilder getInternalCheckersOrBuilder(
         int index) {
       if (internalCheckersBuilder_ == null) {
@@ -8913,8 +9390,11 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * InternalCheckers configured for the project that owns this CheckConfig.
      * </pre>
      *
-     * <code>repeated .google.monitoring.v3.InternalChecker internal_checkers = 14;</code>
+     * <code>
+     * repeated .google.monitoring.v3.InternalChecker internal_checkers = 14 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public java.util.List<? extends com.google.monitoring.v3.InternalCheckerOrBuilder>
         getInternalCheckersOrBuilderList() {
       if (internalCheckersBuilder_ != null) {
@@ -8932,8 +9412,11 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * InternalCheckers configured for the project that owns this CheckConfig.
      * </pre>
      *
-     * <code>repeated .google.monitoring.v3.InternalChecker internal_checkers = 14;</code>
+     * <code>
+     * repeated .google.monitoring.v3.InternalChecker internal_checkers = 14 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public com.google.monitoring.v3.InternalChecker.Builder addInternalCheckersBuilder() {
       return getInternalCheckersFieldBuilder()
           .addBuilder(com.google.monitoring.v3.InternalChecker.getDefaultInstance());
@@ -8947,8 +9430,11 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * InternalCheckers configured for the project that owns this CheckConfig.
      * </pre>
      *
-     * <code>repeated .google.monitoring.v3.InternalChecker internal_checkers = 14;</code>
+     * <code>
+     * repeated .google.monitoring.v3.InternalChecker internal_checkers = 14 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public com.google.monitoring.v3.InternalChecker.Builder addInternalCheckersBuilder(int index) {
       return getInternalCheckersFieldBuilder()
           .addBuilder(index, com.google.monitoring.v3.InternalChecker.getDefaultInstance());
@@ -8962,8 +9448,11 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * InternalCheckers configured for the project that owns this CheckConfig.
      * </pre>
      *
-     * <code>repeated .google.monitoring.v3.InternalChecker internal_checkers = 14;</code>
+     * <code>
+     * repeated .google.monitoring.v3.InternalChecker internal_checkers = 14 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public java.util.List<com.google.monitoring.v3.InternalChecker.Builder>
         getInternalCheckersBuilderList() {
       return getInternalCheckersFieldBuilder().getBuilderList();
@@ -8981,7 +9470,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
                 com.google.monitoring.v3.InternalChecker.Builder,
                 com.google.monitoring.v3.InternalCheckerOrBuilder>(
                 internalCheckers_,
-                ((bitField0_ & 0x00000800) != 0),
+                ((bitField0_ & 0x00000400) != 0),
                 getParentForChildren(),
                 isClean());
         internalCheckers_ = null;

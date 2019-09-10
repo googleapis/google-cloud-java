@@ -217,7 +217,7 @@ public interface UptimeCheckConfigOrBuilder
    * How often, in seconds, the uptime check is performed.
    * Currently, the only supported values are `60s` (1 minute), `300s`
    * (5 minutes), `600s` (10 minutes), and `900s` (15 minutes). Optional,
-   * defaults to `300s`.
+   * defaults to `60s`.
    * </pre>
    *
    * <code>.google.protobuf.Duration period = 7;</code>
@@ -230,7 +230,7 @@ public interface UptimeCheckConfigOrBuilder
    * How often, in seconds, the uptime check is performed.
    * Currently, the only supported values are `60s` (1 minute), `300s`
    * (5 minutes), `600s` (10 minutes), and `900s` (15 minutes). Optional,
-   * defaults to `300s`.
+   * defaults to `60s`.
    * </pre>
    *
    * <code>.google.protobuf.Duration period = 7;</code>
@@ -243,7 +243,7 @@ public interface UptimeCheckConfigOrBuilder
    * How often, in seconds, the uptime check is performed.
    * Currently, the only supported values are `60s` (1 minute), `300s`
    * (5 minutes), `600s` (10 minutes), and `900s` (15 minutes). Optional,
-   * defaults to `300s`.
+   * defaults to `60s`.
    * </pre>
    *
    * <code>.google.protobuf.Duration period = 7;</code>
@@ -443,27 +443,16 @@ public interface UptimeCheckConfigOrBuilder
    *
    *
    * <pre>
-   * If this is true, then checks are made only from the 'internal_checkers'.
-   * If it is false, then checks are made only from the 'selected_regions'.
-   * It is an error to provide 'selected_regions' when is_internal is true,
-   * or to provide 'internal_checkers' when is_internal is false.
-   * </pre>
-   *
-   * <code>bool is_internal = 15;</code>
-   */
-  boolean getIsInternal();
-
-  /**
-   *
-   *
-   * <pre>
    * The internal checkers that this check will egress from. If `is_internal` is
    * true and this list is empty, the check will egress from all the
    * InternalCheckers configured for the project that owns this CheckConfig.
    * </pre>
    *
-   * <code>repeated .google.monitoring.v3.InternalChecker internal_checkers = 14;</code>
+   * <code>
+   * repeated .google.monitoring.v3.InternalChecker internal_checkers = 14 [deprecated = true];
+   * </code>
    */
+  @java.lang.Deprecated
   java.util.List<com.google.monitoring.v3.InternalChecker> getInternalCheckersList();
   /**
    *
@@ -474,8 +463,11 @@ public interface UptimeCheckConfigOrBuilder
    * InternalCheckers configured for the project that owns this CheckConfig.
    * </pre>
    *
-   * <code>repeated .google.monitoring.v3.InternalChecker internal_checkers = 14;</code>
+   * <code>
+   * repeated .google.monitoring.v3.InternalChecker internal_checkers = 14 [deprecated = true];
+   * </code>
    */
+  @java.lang.Deprecated
   com.google.monitoring.v3.InternalChecker getInternalCheckers(int index);
   /**
    *
@@ -486,8 +478,11 @@ public interface UptimeCheckConfigOrBuilder
    * InternalCheckers configured for the project that owns this CheckConfig.
    * </pre>
    *
-   * <code>repeated .google.monitoring.v3.InternalChecker internal_checkers = 14;</code>
+   * <code>
+   * repeated .google.monitoring.v3.InternalChecker internal_checkers = 14 [deprecated = true];
+   * </code>
    */
+  @java.lang.Deprecated
   int getInternalCheckersCount();
   /**
    *
@@ -498,8 +493,11 @@ public interface UptimeCheckConfigOrBuilder
    * InternalCheckers configured for the project that owns this CheckConfig.
    * </pre>
    *
-   * <code>repeated .google.monitoring.v3.InternalChecker internal_checkers = 14;</code>
+   * <code>
+   * repeated .google.monitoring.v3.InternalChecker internal_checkers = 14 [deprecated = true];
+   * </code>
    */
+  @java.lang.Deprecated
   java.util.List<? extends com.google.monitoring.v3.InternalCheckerOrBuilder>
       getInternalCheckersOrBuilderList();
   /**
@@ -511,8 +509,11 @@ public interface UptimeCheckConfigOrBuilder
    * InternalCheckers configured for the project that owns this CheckConfig.
    * </pre>
    *
-   * <code>repeated .google.monitoring.v3.InternalChecker internal_checkers = 14;</code>
+   * <code>
+   * repeated .google.monitoring.v3.InternalChecker internal_checkers = 14 [deprecated = true];
+   * </code>
    */
+  @java.lang.Deprecated
   com.google.monitoring.v3.InternalCheckerOrBuilder getInternalCheckersOrBuilder(int index);
 
   public com.google.monitoring.v3.UptimeCheckConfig.ResourceCase getResourceCase();

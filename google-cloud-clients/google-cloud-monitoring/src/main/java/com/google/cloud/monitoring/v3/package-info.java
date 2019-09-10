@@ -89,7 +89,7 @@
  * <pre>
  * <code>
  * try (NotificationChannelServiceClient notificationChannelServiceClient = NotificationChannelServiceClient.create()) {
- *   NotificationChannelDescriptorName name = NotificationChannelDescriptorName.of("[PROJECT]", "[CHANNEL_DESCRIPTOR]");
+ *   NotificationChannelDescriptorName name = NotificationChannelDescriptorName.of("[PROJECT]", "[NOTIFICATION_CHANNEL_DESCRIPTOR]");
  *   NotificationChannelDescriptor response = notificationChannelServiceClient.getNotificationChannelDescriptor(name);
  * }
  * </code>

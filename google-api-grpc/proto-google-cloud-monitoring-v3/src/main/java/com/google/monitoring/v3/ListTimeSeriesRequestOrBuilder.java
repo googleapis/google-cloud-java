@@ -40,7 +40,7 @@ public interface ListTimeSeriesRequestOrBuilder
    * and can additionally specify metric labels and other information. For
    * example:
    *     metric.type = "compute.googleapis.com/instance/cpu/usage_time" AND
-   *         metric.label.instance_name = "my-instance-name"
+   *         metric.labels.instance_name = "my-instance-name"
    * </pre>
    *
    * <code>string filter = 2;</code>
@@ -55,7 +55,7 @@ public interface ListTimeSeriesRequestOrBuilder
    * and can additionally specify metric labels and other information. For
    * example:
    *     metric.type = "compute.googleapis.com/instance/cpu/usage_time" AND
-   *         metric.label.instance_name = "my-instance-name"
+   *         metric.labels.instance_name = "my-instance-name"
    * </pre>
    *
    * <code>string filter = 2;</code>

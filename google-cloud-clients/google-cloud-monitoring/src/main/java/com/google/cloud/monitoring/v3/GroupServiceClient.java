@@ -181,6 +181,55 @@ public class GroupServiceClient implements BackgroundResource {
    * <pre><code>
    * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
    *   ProjectName name = ProjectName.of("[PROJECT]");
+   *   for (Group element : groupServiceClient.listGroups(name).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param name The project whose groups are to be listed. The format is
+   *     `"projects/{project_id_or_number}"`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListGroupsPagedResponse listGroups(ProjectName name) {
+    ListGroupsRequest request =
+        ListGroupsRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return listGroups(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists the existing groups.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
+   *   ProjectName name = ProjectName.of("[PROJECT]");
+   *   for (Group element : groupServiceClient.listGroups(name.toString()).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param name The project whose groups are to be listed. The format is
+   *     `"projects/{project_id_or_number}"`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListGroupsPagedResponse listGroups(String name) {
+    ListGroupsRequest request = ListGroupsRequest.newBuilder().setName(name).build();
+    return listGroups(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists the existing groups.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
+   *   ProjectName name = ProjectName.of("[PROJECT]");
    *   ListGroupsRequest request = ListGroupsRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();
