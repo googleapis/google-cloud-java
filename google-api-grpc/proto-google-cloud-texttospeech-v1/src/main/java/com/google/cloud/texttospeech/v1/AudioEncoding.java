@@ -39,7 +39,7 @@ public enum AudioEncoding implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * MP3 audio.
+   * MP3 audio at 32kbps.
    * </pre>
    *
    * <code>MP3 = 2;</code>
@@ -86,7 +86,7 @@ public enum AudioEncoding implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * MP3 audio.
+   * MP3 audio at 32kbps.
    * </pre>
    *
    * <code>MP3 = 2;</code>
