@@ -112,5 +112,13 @@
       <artifactId>netty-tcnative-boringssl-static</artifactId>
       <version>2.0.25.Final</version>
     </dependency>
+
+    <!-- Generated classes are generated with a @javax.annotation.Generated
+      annotation, so we need this dependency or else they don't compile. -->
+    <dependency>
+      <groupId>javax.annotation</groupId>
+      <artifactId>javax.annotation-api</artifactId>
+      <version>1.3.2</version>
+    </dependency>
   </dependencies>
 </project>
