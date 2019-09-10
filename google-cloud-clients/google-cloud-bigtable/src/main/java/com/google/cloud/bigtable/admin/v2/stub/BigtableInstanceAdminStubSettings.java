@@ -527,9 +527,7 @@ public class BigtableInstanceAdminStubSettings
       definitions.put("idempotent_params", settings);
       settings =
           RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(0L))
               .setRetryDelayMultiplier(1.0)
-              .setMaxRetryDelay(Duration.ofMillis(0L))
               .setInitialRpcTimeout(Duration.ofMillis(60000L))
               .setRpcTimeoutMultiplier(1.0)
               .setMaxRpcTimeout(Duration.ofMillis(60000L))
@@ -538,9 +536,7 @@ public class BigtableInstanceAdminStubSettings
       definitions.put("non_idempotent_params", settings);
       settings =
           RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(0L))
               .setRetryDelayMultiplier(1.0)
-              .setMaxRetryDelay(Duration.ofMillis(0L))
               .setInitialRpcTimeout(Duration.ofMillis(300000L))
               .setRpcTimeoutMultiplier(1.0)
               .setMaxRpcTimeout(Duration.ofMillis(300000L))
