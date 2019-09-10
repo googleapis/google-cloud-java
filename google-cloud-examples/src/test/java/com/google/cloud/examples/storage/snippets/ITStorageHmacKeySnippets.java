@@ -16,27 +16,30 @@
 
 package com.google.cloud.examples.storage.snippets;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-
 import com.google.api.gax.paging.Page;
+import com.google.cloud.ServiceOptions;
 import com.google.cloud.storage.HmacKey;
 import com.google.cloud.storage.HmacKey.HmacKeyMetadata;
 import com.google.cloud.storage.HmacKey.HmacKeyState;
 import com.google.cloud.storage.ServiceAccount;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.testing.RemoteStorageHelper;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.logging.Logger;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Logger;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 public class ITStorageHmacKeySnippets {
   private static final Logger log = Logger.getLogger(ITStorageSnippets.class.getName());
   private static final String HMAC_KEY_TEST_SERVICE_ACCOUNT =
       System.getenv("HMAC_KEY_SAMPLES_SERVICE_ACCOUNT");
+  private static final String PROJECT_ID = ServiceOptions.getDefaultProjectId();
 
   private static Storage storage;
   private static StorageSnippets storageSnippets;
@@ -66,7 +69,7 @@ public class ITStorageHmacKeySnippets {
 
   @Test
   public void testCreateHmacKey() {
-    HmacKey hmacKey = storageSnippets.createHmacKey(HMAC_KEY_TEST_SERVICE_ACCOUNT);
+    HmacKey hmacKey = storageSnippets.createHmacKey(HMAC_KEY_TEST_SERVICE_ACCOUNT, PROJECT_ID);
     assertNotNull(hmacKey);
   }
 
@@ -74,7 +77,7 @@ public class ITStorageHmacKeySnippets {
   public void testGetHmacKey() {
     HmacKey hmacKey = storage.createHmacKey(ServiceAccount.of(HMAC_KEY_TEST_SERVICE_ACCOUNT));
 
-    HmacKeyMetadata metadata = storageSnippets.getHmacKey(hmacKey.getMetadata().getAccessId());
+    HmacKeyMetadata metadata = storageSnippets.getHmacKey(hmacKey.getMetadata().getAccessId(), PROJECT_ID);
     assertNotNull(metadata);
   }
 
@@ -84,7 +87,7 @@ public class ITStorageHmacKeySnippets {
     HmacKeyMetadata metadata =
         storage.updateHmacKeyState(hmacKey.getMetadata(), HmacKeyState.INACTIVE);
 
-    HmacKeyMetadata newMetadata = storageSnippets.activateHmacKey(metadata.getAccessId());
+    HmacKeyMetadata newMetadata = storageSnippets.activateHmacKey(metadata.getAccessId(), PROJECT_ID);
     assertEquals(HmacKeyState.ACTIVE, newMetadata.getState());
   }
 
@@ -93,7 +96,7 @@ public class ITStorageHmacKeySnippets {
     HmacKey hmacKey = storage.createHmacKey(ServiceAccount.of(HMAC_KEY_TEST_SERVICE_ACCOUNT));
 
     HmacKeyMetadata metadata =
-        storageSnippets.deactivateHmacKey(hmacKey.getMetadata().getAccessId());
+        storageSnippets.deactivateHmacKey(hmacKey.getMetadata().getAccessId(), PROJECT_ID);
     assertEquals(HmacKeyState.INACTIVE, metadata.getState());
   }
 
@@ -103,7 +106,7 @@ public class ITStorageHmacKeySnippets {
     HmacKeyMetadata metadata =
         storage.updateHmacKeyState(hmacKey.getMetadata(), HmacKeyState.INACTIVE);
 
-    storageSnippets.deleteHmacKey(metadata.getAccessId());
+    storageSnippets.deleteHmacKey(metadata.getAccessId(), PROJECT_ID);
   }
 
   @Test
@@ -112,7 +115,7 @@ public class ITStorageHmacKeySnippets {
     storage.createHmacKey(ServiceAccount.of(HMAC_KEY_TEST_SERVICE_ACCOUNT));
     storage.createHmacKey(ServiceAccount.of(HMAC_KEY_TEST_SERVICE_ACCOUNT));
 
-    Page<HmacKeyMetadata> page = storageSnippets.listHmacKeys(HMAC_KEY_TEST_SERVICE_ACCOUNT);
+    Page<HmacKeyMetadata> page = storageSnippets.listHmacKeys(HMAC_KEY_TEST_SERVICE_ACCOUNT, PROJECT_ID);
     List<HmacKeyMetadata> items = new ArrayList<HmacKeyMetadata>();
 
     for (HmacKeyMetadata metadata : page.iterateAll()) {
