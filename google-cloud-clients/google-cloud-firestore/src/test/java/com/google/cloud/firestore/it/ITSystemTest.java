@@ -22,6 +22,7 @@ import static com.google.common.truth.Truth.assertWithMessage;
 import static java.util.Arrays.asList;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
@@ -29,6 +30,8 @@ import static org.junit.Assert.fail;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
+import com.google.api.core.SettableApiFuture;
+import com.google.api.gax.rpc.ApiStreamObserver;
 import com.google.cloud.Timestamp;
 import com.google.cloud.firestore.CollectionReference;
 import com.google.cloud.firestore.DocumentChange;
@@ -1326,5 +1329,54 @@ public class ITSystemTest {
       this.value = value;
       this.error = error;
     }
+  }
+
+  @Test
+  public void getAllWithObserver() throws Exception {
+    DocumentReference ref1 = randomColl.document("doc1");
+    ref1.set(ALL_SUPPORTED_TYPES_MAP).get();
+
+    DocumentReference ref2 = randomColl.document("doc2");
+    ref2.set(ALL_SUPPORTED_TYPES_MAP).get();
+
+    DocumentReference ref3 = randomColl.document("doc3");
+
+    final List<DocumentSnapshot> documentSnapshots =
+        Collections.synchronizedList(new ArrayList<DocumentSnapshot>());
+    final DocumentReference[] documentReferences = {ref1, ref2, ref3};
+    final SettableApiFuture<Void> future = SettableApiFuture.create();
+    firestore.getAll(
+        documentReferences,
+        FieldMask.of("foo"),
+        new ApiStreamObserver<DocumentSnapshot>() {
+
+          @Override
+          public void onNext(DocumentSnapshot documentSnapshot) {
+            documentSnapshots.add(documentSnapshot);
+          }
+
+          @Override
+          public void onError(Throwable throwable) {
+            future.setException(throwable);
+          }
+
+          @Override
+          public void onCompleted() {
+            future.set(null);
+          }
+        });
+
+    future.get();
+
+    assertEquals(
+        ALL_SUPPORTED_TYPES_OBJECT, documentSnapshots.get(0).toObject(AllSupportedTypes.class));
+    assertEquals(
+        ALL_SUPPORTED_TYPES_OBJECT, documentSnapshots.get(1).toObject(AllSupportedTypes.class));
+    assertNotEquals(
+        ALL_SUPPORTED_TYPES_OBJECT, documentSnapshots.get(2).toObject(AllSupportedTypes.class));
+    assertEquals(ref1.getId(), documentSnapshots.get(0).getId());
+    assertEquals(ref2.getId(), documentSnapshots.get(1).getId());
+    assertEquals(ref3.getId(), documentSnapshots.get(2).getId());
+    assertEquals(3, documentSnapshots.size());
   }
 }
