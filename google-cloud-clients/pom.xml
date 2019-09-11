@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-clients</artifactId>
   <packaging>pom</packaging>
-  <version>0.109.0-alpha</version><!-- {x-version-update:google-cloud-clients:current} -->
+  <version>0.109.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-clients:current} -->
   <name>Google Cloud</name>
   <url>https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-clients</url>
   <description>
@@ -153,7 +153,7 @@
     <project.javadoc.protobufBaseURL>https://googleapis.dev/java/google-api-grpc/latest</project.javadoc.protobufBaseURL>
     <github.global.server>github</github.global.server>
     <site.installationModule>google-cloud-clients</site.installationModule>
-    <bom.version>0.109.0-alpha</bom.version><!-- {x-version-update:google-cloud-bom:current} -->
+    <bom.version>0.109.1-alpha-SNAPSHOT</bom.version><!-- {x-version-update:google-cloud-bom:current} -->
     <api-client.version>1.30.2</api-client.version>
     <!-- make sure to keep gax version in sync with google-cloud-bom -->
     <gax.version>1.48.1</gax.version>
