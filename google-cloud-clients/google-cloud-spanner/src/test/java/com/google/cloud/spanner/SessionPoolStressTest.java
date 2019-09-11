@@ -22,11 +22,11 @@ import static org.mockito.Mockito.doAnswer;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-import com.google.cloud.spanner.SessionClient.SessionEnumeration;
+import com.google.cloud.spanner.SessionClient.SessionConsumer;
+import com.google.cloud.spanner.SessionPool.SessionConsumerImpl;
 import com.google.common.util.concurrent.Uninterruptibles;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -91,8 +91,8 @@ public class SessionPoolStressTest extends BaseSessionPoolTest {
   private void setupSpanner(DatabaseId db) {
     mockSpanner = mock(SpannerImpl.class);
     spannerOptions = mock(SpannerOptions.class);
-    when(mockSpanner.getOptions()).thenReturn(spannerOptions);
     when(spannerOptions.getNumChannels()).thenReturn(4);
+    when(mockSpanner.getOptions()).thenReturn(spannerOptions);
     when(mockSpanner.createSession(db))
         .thenAnswer(
             new Answer<Session>() {
@@ -111,14 +111,11 @@ public class SessionPoolStressTest extends BaseSessionPoolTest {
                 }
               }
             });
-    when(mockSpanner.batchCreateSessions(Mockito.eq(db), Mockito.anyInt()))
-        .thenAnswer(
-            new Answer<Enumeration<SessionImpl>>() {
-
+    doAnswer(
+            new Answer<Void>() {
               @Override
-              public Enumeration<SessionImpl> answer(InvocationOnMock invocation) throws Throwable {
+              public Void answer(InvocationOnMock invocation) throws Throwable {
                 int sessionCount = invocation.getArgumentAt(1, Integer.class);
-                List<SessionImpl> list = new ArrayList<>(sessionCount);
                 for (int s = 0; s < sessionCount; s++) {
                   synchronized (lock) {
                     SessionImpl session = mockSession();
@@ -128,12 +125,17 @@ public class SessionPoolStressTest extends BaseSessionPoolTest {
                     if (sessions.size() > maxAliveSessions) {
                       maxAliveSessions = sessions.size();
                     }
-                    list.add(session);
+                    SessionConsumerImpl consumer =
+                        invocation.getArgumentAt(2, SessionConsumerImpl.class);
+                    consumer.onSessionReady(session);
                   }
                 }
-                return SessionEnumeration.of(list);
+                return null;
               }
-            });
+            })
+        .when(mockSpanner)
+        .asyncBatchCreateSessions(
+            Mockito.eq(db), Mockito.anyInt(), Mockito.any(SessionConsumer.class));
   }
 
   private void setupSession(final Session session) {

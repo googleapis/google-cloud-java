@@ -21,26 +21,18 @@ import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.pathtemplate.PathTemplate;
+import com.google.cloud.grpc.GrpcTransportOptions.ExecutorFactory;
 import com.google.cloud.spanner.spi.v1.SpannerRpc;
-import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Maps;
-import com.google.common.util.concurrent.MoreExecutors;
-import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import io.opencensus.common.Scope;
 import io.opencensus.trace.Span;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
-import java.util.Enumeration;
 import java.util.List;
 import java.util.Map;
-import java.util.NoSuchElementException;
-import java.util.concurrent.Executors;
-import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.ThreadFactory;
 import javax.annotation.concurrent.GuardedBy;
 
 /** Client for creating single sessions and batches of sessions. */
@@ -120,169 +112,81 @@ class SessionClient implements AutoCloseable {
   private final class BatchCreateSessionsRunnable implements Runnable {
     private final long channelHint;
     private final int sessionCount;
-    private final SessionEnumeration enumeration;
+    private final SessionConsumer consumer;
 
     private BatchCreateSessionsRunnable(
-        int sessionCount, long channelHint, SessionEnumeration enumeration) {
-      Preconditions.checkNotNull(enumeration);
+        int sessionCount, long channelHint, SessionConsumer consumer) {
+      Preconditions.checkNotNull(consumer);
       Preconditions.checkArgument(sessionCount > 0, "sessionCount must be > 0");
       this.channelHint = channelHint;
       this.sessionCount = sessionCount;
-      this.enumeration = enumeration;
+      this.consumer = consumer;
     }
 
     @Override
     public void run() {
       List<SessionImpl> sessions = null;
       int remainingSessionsToCreate = sessionCount;
-      while(remainingSessionsToCreate > 0) {
+      while (remainingSessionsToCreate > 0) {
         try {
           sessions = internalBatchCreateSessions(remainingSessionsToCreate, channelHint);
         } catch (Throwable t) {
-          enumeration.registerException(t, remainingSessionsToCreate);
+          consumer.onSessionCreateFailure(t, remainingSessionsToCreate);
           break;
         }
         int numActuallyCreated = sessions.size();
         if (numActuallyCreated == 0) {
           // No sessions returned by the server. Give up creation to avoid an infinite loop.
-          enumeration.registerException(
+          consumer.onSessionCreateFailure(
               newSpannerException(ErrorCode.UNKNOWN, "Server did not return any sessions"),
               remainingSessionsToCreate);
           break;
         }
         for (SessionImpl session : sessions) {
-          enumeration.put(session);
+          consumer.onSessionReady(session);
         }
         remainingSessionsToCreate -= numActuallyCreated;
       }
     }
   }
 
-  private static class SessionOrError {
-    private final SessionImpl session;
-    private final Throwable throwable;
+  /**
+   * Callback interface to be used for BatchCreateSessions. When sessions come available or session
+   * creation fails, one of the callback methods will be called.
+   */
+  static interface SessionConsumer {
+    /** Called when a session has been created and is ready for use. */
+    void onSessionReady(SessionImpl session);
 
-    private SessionOrError(SessionImpl session) {
-      this.session = session;
-      this.throwable = null;
-    }
-
-    private SessionOrError(Throwable throwable) {
-      this.session = null;
-      this.throwable = throwable;
-    }
+    /**
+     * Called when an error occurred during session creation. The createFailureForSessionCount
+     * indicates the number of sessions that could not be created, so that the consumer knows how
+     * many sessions it should still expect.
+     */
+    void onSessionCreateFailure(Throwable t, int createFailureForSessionCount);
   }
 
-  static class SessionEnumeration implements Enumeration<SessionImpl> {
-    private final LinkedBlockingQueue<SessionOrError> queue;
-    private volatile Throwable exception;
-    private volatile int remainingSessions;
-
-    @VisibleForTesting
-    static SessionEnumeration of(Collection<SessionImpl> sessions) {
-      SessionEnumeration stream = new SessionEnumeration(sessions.size());
-      for (SessionImpl s : sessions) {
-        stream.put(s);
-      }
-      return stream;
-    }
-
-    @VisibleForTesting
-    static SessionEnumeration of(SpannerException e) {
-      SessionEnumeration stream = new SessionEnumeration(1);
-      stream.registerException(e, 1);
-      return stream;
-    }
-
-    @VisibleForTesting
-    SessionEnumeration(int sessionCount) {
-      this.queue = new LinkedBlockingQueue<>(sessionCount);
-      this.remainingSessions = sessionCount;
-    }
-
-    void put(SessionImpl session) {
-      synchronized (this) {
-        boolean added = queue.offer(new SessionOrError(session));
-        this.remainingSessions--;
-        if (!added || remainingSessions < 0) {
-          throw new IllegalStateException("More sessions returned than requested");
-        }
-        checkOfferException();
-      }
-    }
-
-    void registerException(Throwable exception, int forSessionCount) {
-      synchronized (this) {
-        if (this.exception == null) {
-          this.exception = exception;
-        }
-        this.remainingSessions -= forSessionCount;
-        checkOfferException();
-      }
-    }
-
-    private void checkOfferException() {
-      if (remainingSessions == 0 && exception != null) {
-        queue.offer(new SessionOrError(exception));
-        exception = null;
-      }
-    }
-
-    @Override
-    public boolean hasMoreElements() {
-      synchronized (this) {
-        return remainingSessions > 0 || !queue.isEmpty() || exception != null;
-      }
-    }
-
-    @Override
-    public SessionImpl nextElement() throws NoSuchElementException, SpannerException {
-      if (hasMoreElements()) {
-        try {
-          SessionOrError s = queue.take();
-          if (s.session != null) {
-            return s.session;
-          } else if (s.throwable != null && s.throwable instanceof SpannerException) {
-            throw (SpannerException) s.throwable;
-          } else if (s.throwable != null) {
-            throw SpannerExceptionFactory.newSpannerException(s.throwable);
-          } else {
-            // This should not happen.
-            throw new IllegalStateException("no session and no exception was returned");
-          }
-        } catch (InterruptedException e) {
-          throw SpannerExceptionFactory.propagateInterrupt(e);
-        }
-      } else {
-        throw new NoSuchElementException("This stream has no more sessions");
-      }
-    }
-  }
-
-  private static final ThreadFactory SESSION_CLIENT_THREAD_FACTORY =
-      new ThreadFactoryBuilder()
-          .setDaemon(true)
-          .setNameFormat("session-client-%d")
-          .setThreadFactory(MoreExecutors.platformThreadFactory())
-          .build();
   private final SpannerImpl spanner;
+  private final ExecutorFactory<ScheduledExecutorService> executorFactory;
   private final ScheduledExecutorService executor;
   private final DatabaseId db;
 
   @GuardedBy("this")
   private volatile long sessionChannelCounter;
 
-  SessionClient(SpannerImpl spanner, DatabaseId db) {
+  SessionClient(
+      SpannerImpl spanner,
+      DatabaseId db,
+      ExecutorFactory<ScheduledExecutorService> executorFactory) {
     this.spanner = spanner;
     this.db = db;
-    this.executor =
-        Executors.newScheduledThreadPool(
-            spanner.getOptions().getNumChannels(), SESSION_CLIENT_THREAD_FACTORY);
+    this.executorFactory = executorFactory;
+    this.executor = executorFactory.get();
   }
 
   @Override
   public void close() {
-    executor.shutdown();
+    executorFactory.release(executor);
   }
 
   /** Create a single session. */
@@ -308,28 +212,19 @@ class SessionClient implements AutoCloseable {
   }
 
   /**
-   * Creates a batch of sessions and returns these as an enumeration. This method may split the
-   * actual session creation over several gRPC calls in order to distribute the sessions evenly over
-   * all available channels and to parallelize the session creation. The returned {@link
-   * Enumeration} is guaranteed to eventually return exactly the number of requested sessions unless
-   * an error occurs. In case of an error on one or more of the gRPC calls, the enumeration will
-   * first return all sessions that were successfully created before returning the first error that
-   * occurred. This means that the {@link Enumeration#nextElement()} could throw a {@link
-   * SpannerException} even when {@link Enumeration#hasMoreElements()} returned true. The
-   * enumeration is guaranteed to only return one {@link SpannerException}, and once it has been
-   * returned {@link Enumeration#hasMoreElements()} will always return false. Closing the {@link
-   * SessionClient} while sessions are being created or while an {@link Enumeration} is consumed may
-   * cause an error and is handled in the same way as any other error that might occur, i.e. it is
-   * returned as the last value of the {@link Enumeration}.
+   * Asynchronously creates a batch of sessions and returns these to the given {@link
+   * SessionConsumer}. This method may split the actual session creation over several gRPC calls in
+   * order to distribute the sessions evenly over all available channels and to parallelize the
+   * session creation. The given {@link SessionConsumer} is guaranteed to eventually get exactly the
+   * number of requested sessions unless an error occurs. In case of an error on one or more of the
+   * gRPC calls, the consumer will receive one or more {@link
+   * SessionConsumer#onSessionCreateFailure(Throwable, int)} calls with the error and the number of
+   * sessions that could not be created.
    *
    * @param sessionCount The number of sessions to create.
-   * @return an {@link Enumeration} of sessions that will return exactly the number of requested
-   *     sessions unless one or more errors occurs. In case of one or more errors, the enumeration
-   *     will first return all sessions that were created successfully, and then the first error
-   *     that occurred will be returned as the last element of the {@link Enumeration}.
+   * @param consumer The {@link SessionConsumer} to use for callbacks when sessions are available.
    */
-  Enumeration<SessionImpl> batchCreateSessions(final int sessionCount) {
-    SessionEnumeration stream = new SessionEnumeration(sessionCount);
+  void asyncBatchCreateSessions(final int sessionCount, SessionConsumer consumer) {
     // We spread the session creation evenly over all available channels.
     int sessionCountPerChannel = sessionCount / spanner.getOptions().getNumChannels();
     int remainder = sessionCount % spanner.getOptions().getNumChannels();
@@ -342,17 +237,16 @@ class SessionClient implements AutoCloseable {
           try {
             executor.submit(
                 new BatchCreateSessionsRunnable(
-                    createCountForChannel, sessionChannelCounter++, stream));
+                    createCountForChannel, sessionChannelCounter++, consumer));
             numBeingCreated += createCountForChannel;
           } catch (Throwable t) {
-            stream.registerException(t, sessionCount - numBeingCreated);
+            consumer.onSessionCreateFailure(t, sessionCount - numBeingCreated);
           }
         } else {
           break;
         }
       }
     }
-    return stream;
   }
 
   /**

@@ -23,6 +23,7 @@ import com.google.cloud.grpc.GrpcTransportOptions;
 import com.google.cloud.grpc.GrpcTransportOptions.ExecutorFactory;
 import com.google.cloud.spanner.Options.QueryOption;
 import com.google.cloud.spanner.Options.ReadOption;
+import com.google.cloud.spanner.SessionClient.SessionConsumer;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Function;
 import com.google.common.base.Preconditions;
@@ -40,7 +41,6 @@ import io.opencensus.trace.Span;
 import io.opencensus.trace.Status;
 import io.opencensus.trace.Tracer;
 import io.opencensus.trace.Tracing;
-import java.util.Enumeration;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -1621,66 +1621,59 @@ final class SessionPool {
     logger.log(Level.FINE, String.format("Creating %d sessions", sessionCount));
     synchronized (lock) {
       numSessionsBeingCreated += sessionCount;
-      executor.submit(
-          new Runnable() {
-            @Override
-            public void run() {
-              Enumeration<SessionImpl> sessions = null;
-              try {
-                // Create a batch of sessions. The actual session creation can be split into
-                // multiple gRPC calls and the sessions are returned by the enumerator as they come
-                // available. The batchCreateSessions method automatically spreads the sessions
-                // evenly over all available channels.
-                sessions = spanner.batchCreateSessions(db, sessionCount);
-                logger.log(Level.FINE, "Sessions created");
-              } catch (Throwable t) {
-                // Expose this to customer via a metric.
-                synchronized (lock) {
-                  numSessionsBeingCreated -= sessionCount;
-                  if (isClosed()) {
-                    decrementPendingClosures(sessionCount);
-                  }
-                  handleCreateSessionsFailure(newSpannerException(t), sessionCount);
-                }
-                return;
-              }
-              int awaitingSessions = sessionCount;
-              boolean closeSession = false;
-              PooledSession pooledSession = null;
-              try {
-                // Iterate over the returned sessions and release them into the pool.
-                while (sessions.hasMoreElements()) {
-                  SessionImpl session = sessions.nextElement();
-                  synchronized (lock) {
-                    pooledSession = new PooledSession(session);
-                    numSessionsBeingCreated--;
-                    awaitingSessions--;
-                    if (closureFuture != null) {
-                      closeSession = true;
-                    } else {
-                      Preconditions.checkState(totalSessions() <= options.getMaxSessions() - 1);
-                      allSessions.add(pooledSession);
-                      // Release the session to a random position in the pool to prevent that a
-                      // batch of sessions that are affiliated with the same channel are all placed
-                      // sequentially in the pool.
-                      releaseSession(pooledSession, Position.RANDOM);
-                    }
-                  }
-                  if (closeSession) {
-                    closeSessionAsync(pooledSession);
-                  }
-                }
-              } catch (Throwable t) {
-                synchronized (lock) {
-                  numSessionsBeingCreated -= awaitingSessions;
-                  if (isClosed()) {
-                    decrementPendingClosures(awaitingSessions);
-                  }
-                  handleCreateSessionsFailure(newSpannerException(t), awaitingSessions);
-                }
-              }
-            }
-          });
+      try {
+        // Create a batch of sessions. The actual session creation can be split into
+        // multiple gRPC calls and the sessions are returned by the enumerator as they come
+        // available. The batchCreateSessions method automatically spreads the sessions
+        // evenly over all available channels.
+        spanner.asyncBatchCreateSessions(db, sessionCount, sessionConsumer);
+        logger.log(Level.FINE, "Sessions created");
+      } catch (Throwable t) {
+        // Expose this to customer via a metric.
+        numSessionsBeingCreated -= sessionCount;
+        if (isClosed()) {
+          decrementPendingClosures(sessionCount);
+        }
+        handleCreateSessionsFailure(newSpannerException(t), sessionCount);
+      }
+    }
+  }
+
+  private final SessionConsumer sessionConsumer = new SessionConsumerImpl();
+
+  class SessionConsumerImpl implements SessionConsumer {
+    @Override
+    public void onSessionReady(SessionImpl session) {
+      PooledSession pooledSession = null;
+      boolean closeSession = false;
+      synchronized (lock) {
+        pooledSession = new PooledSession(session);
+        numSessionsBeingCreated--;
+        if (closureFuture != null) {
+          closeSession = true;
+        } else {
+          Preconditions.checkState(totalSessions() <= options.getMaxSessions() - 1);
+          allSessions.add(pooledSession);
+          // Release the session to a random position in the pool to prevent that a
+          // batch of sessions that are affiliated with the same channel are all placed
+          // sequentially in the pool.
+          releaseSession(pooledSession, Position.RANDOM);
+        }
+      }
+      if (closeSession) {
+        closeSessionAsync(pooledSession);
+      }
+    }
+
+    @Override
+    public void onSessionCreateFailure(Throwable t, int createFailureForSessionCount) {
+      synchronized (lock) {
+        numSessionsBeingCreated -= createFailureForSessionCount;
+        if (isClosed()) {
+          decrementPendingClosures(createFailureForSessionCount);
+        }
+        handleCreateSessionsFailure(newSpannerException(t), createFailureForSessionCount);
+      }
     }
   }
 }

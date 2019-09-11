@@ -25,6 +25,8 @@ import com.google.api.gax.paging.Page;
 import com.google.cloud.BaseService;
 import com.google.cloud.PageImpl;
 import com.google.cloud.PageImpl.NextPageFetcher;
+import com.google.cloud.grpc.GrpcTransportOptions;
+import com.google.cloud.spanner.SessionClient.SessionConsumer;
 import com.google.cloud.spanner.SessionClient.SessionId;
 import com.google.cloud.spanner.spi.v1.SpannerRpc;
 import com.google.cloud.spanner.spi.v1.SpannerRpc.Paginated;
@@ -40,7 +42,6 @@ import io.opencensus.trace.Tracer;
 import io.opencensus.trace.Tracing;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -174,8 +175,9 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     return getSessionClient(db).createSession();
   }
 
-  Enumeration<SessionImpl> batchCreateSessions(final DatabaseId db, final int sessionCount) {
-    return getSessionClient(db).batchCreateSessions(sessionCount);
+  void asyncBatchCreateSessions(
+      final DatabaseId db, final int sessionCount, SessionConsumer consumer) {
+    getSessionClient(db).asyncBatchCreateSessions(sessionCount, consumer);
   }
 
   SessionImpl sessionWithId(String name) {
@@ -184,13 +186,17 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     return getSessionClient(id.getDatabaseId()).sessionWithId(name);
   }
 
-  private SessionClient getSessionClient(DatabaseId db) {
+  SessionClient getSessionClient(DatabaseId db) {
     synchronized (this) {
       Preconditions.checkState(!spannerIsClosed, "Cloud Spanner client has been closed");
       if (sessionClients.containsKey(db)) {
         return sessionClients.get(db);
       } else {
-        SessionClient client = new SessionClient(this, db);
+        SessionClient client =
+            new SessionClient(
+                this,
+                db,
+                ((GrpcTransportOptions) getOptions().getTransportOptions()).getExecutorFactory());
         sessionClients.put(db, client);
         return client;
       }

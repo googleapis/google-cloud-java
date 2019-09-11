@@ -19,12 +19,15 @@ package com.google.cloud.spanner;
 import static com.google.common.truth.Truth.assertThat;
 import static org.mockito.Mockito.anyMap;
 import static org.mockito.Mockito.eq;
+import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 import static org.mockito.MockitoAnnotations.initMocks;
 
 import com.google.api.core.NanoClock;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.cloud.Timestamp;
+import com.google.cloud.grpc.GrpcTransportOptions;
+import com.google.cloud.grpc.GrpcTransportOptions.ExecutorFactory;
 import com.google.cloud.spanner.spi.v1.SpannerRpc;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.util.Timestamps;
@@ -57,6 +60,7 @@ public final class BatchClientImplTest {
 
   private BatchClient client;
 
+  @SuppressWarnings("unchecked")
   @Before
   public void setUp() {
     initMocks(this);
@@ -65,10 +69,15 @@ public final class BatchClientImplTest {
     when(spannerOptions.getPrefetchChunks()).thenReturn(1);
     when(spannerOptions.getRetrySettings()).thenReturn(RetrySettings.newBuilder().build());
     when(spannerOptions.getClock()).thenReturn(NanoClock.getDefaultClock());
+    when(spannerOptions.getSpannerRpcV1()).thenReturn(gapicRpc);
+    GrpcTransportOptions transportOptions = mock(GrpcTransportOptions.class);
+    when(transportOptions.getExecutorFactory()).thenReturn(mock(ExecutorFactory.class));
+    when(spannerOptions.getTransportOptions()).thenReturn(transportOptions);
     SpannerImpl spanner = new SpannerImpl(gapicRpc, spannerOptions);
     client = new BatchClientImpl(db, spanner);
   }
 
+  @SuppressWarnings("unchecked")
   @Test
   public void testBatchReadOnlyTxnWithBound() throws Exception {
     Session sessionProto = Session.newBuilder().setName(SESSION_NAME).build();
@@ -77,7 +86,6 @@ public final class BatchClientImplTest {
     com.google.protobuf.Timestamp timestamp = Timestamps.parse(TIMESTAMP);
     Transaction txnMetadata =
         Transaction.newBuilder().setId(TXN_ID).setReadTimestamp(timestamp).build();
-    when(spannerOptions.getSpannerRpcV1()).thenReturn(gapicRpc);
     when(gapicRpc.beginTransaction(Mockito.<BeginTransactionRequest>any(), optionsCaptor.capture()))
         .thenReturn(txnMetadata);
 

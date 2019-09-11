@@ -17,7 +17,6 @@
 package com.google.cloud.spanner;
 
 import static com.google.common.truth.Truth.assertThat;
-import static org.junit.Assert.fail;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -25,19 +24,19 @@ import com.google.api.core.NanoClock;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.cloud.grpc.GrpcTransportOptions;
 import com.google.cloud.grpc.GrpcTransportOptions.ExecutorFactory;
-import com.google.cloud.spanner.SessionClient.SessionEnumeration;
+import com.google.cloud.spanner.SessionClient.SessionConsumer;
 import com.google.cloud.spanner.spi.v1.SpannerRpc;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.NoSuchElementException;
+import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.junit.Before;
 import org.junit.Test;
@@ -55,6 +54,23 @@ import org.mockito.stubbing.Answer;
 
 @RunWith(Parameterized.class)
 public class SessionClientTest {
+  private final class TestExecutorFactory implements ExecutorFactory<ScheduledExecutorService> {
+    @Override
+    public ScheduledExecutorService get() {
+      return Executors.newScheduledThreadPool(spanner.getOptions().getNumChannels());
+    }
+
+    @Override
+    public void release(ScheduledExecutorService executor) {
+      executor.shutdown();
+      try {
+        executor.awaitTermination(10_000L, TimeUnit.SECONDS);
+      } catch (InterruptedException e) {
+        throw new RuntimeException(e);
+      }
+    }
+  }
+
   @Parameters(name = "NumChannels = {0}")
   public static Collection<Object[]> data() {
     return Arrays.asList(new Object[][] {{1}, {2}, {4}, {8}});
@@ -95,122 +111,6 @@ public class SessionClientTest {
   }
 
   @Test
-  public void testSessionEnumerationNoExceptions() {
-    SessionImpl session1 = mock(SessionImpl.class);
-    SessionEnumeration sessions = new SessionEnumeration(2);
-    assertThat(sessions.hasMoreElements()).isTrue();
-    sessions.put(session1);
-    assertThat(sessions.hasMoreElements()).isTrue();
-    assertThat(sessions.nextElement()).isEqualTo(session1);
-    assertThat(sessions.hasMoreElements()).isTrue();
-    sessions.put(mock(SessionImpl.class));
-    assertThat(sessions.nextElement()).isNotNull();
-    assertThat(sessions.hasMoreElements()).isFalse();
-  }
-
-  @Test
-  public void testSessionEnumerationExceptionAtEnd() {
-    SessionImpl session1 = mock(SessionImpl.class);
-    SessionEnumeration sessions = new SessionEnumeration(2);
-    sessions.put(session1);
-    sessions.registerException(
-        SpannerExceptionFactory.newSpannerException(
-            ErrorCode.RESOURCE_EXHAUSTED, "no more sessions"),
-        1);
-    assertThat(sessions.hasMoreElements()).isTrue();
-    assertThat(sessions.nextElement()).isEqualTo(session1);
-    assertThat(sessions.hasMoreElements()).isTrue();
-    try {
-      sessions.nextElement();
-      fail("missing expected exception");
-    } catch (SpannerException e) {
-      assertThat(e.getErrorCode()).isEqualTo(ErrorCode.RESOURCE_EXHAUSTED);
-    }
-    assertThat(sessions.hasMoreElements()).isFalse();
-  }
-
-  @Test
-  public void testSessionEnumerationExceptionAtBegin() {
-    SessionImpl session1 = mock(SessionImpl.class);
-    SessionEnumeration sessions = new SessionEnumeration(2);
-    sessions.registerException(
-        SpannerExceptionFactory.newSpannerException(
-            ErrorCode.RESOURCE_EXHAUSTED, "no more sessions"),
-        1);
-    sessions.put(session1);
-    assertThat(sessions.hasMoreElements()).isTrue();
-    assertThat(sessions.nextElement()).isEqualTo(session1);
-    assertThat(sessions.hasMoreElements()).isTrue();
-    try {
-      sessions.nextElement();
-      fail("missing expected exception");
-    } catch (SpannerException e) {
-      assertThat(e.getErrorCode()).isEqualTo(ErrorCode.RESOURCE_EXHAUSTED);
-    }
-    assertThat(sessions.hasMoreElements()).isFalse();
-  }
-
-  @Test
-  public void testSessionEnumerationExceptionAllExceptions() {
-    SessionEnumeration sessions = new SessionEnumeration(2);
-    sessions.registerException(
-        SpannerExceptionFactory.newSpannerException(
-            ErrorCode.RESOURCE_EXHAUSTED, "no more sessions"),
-        1);
-    sessions.registerException(
-        SpannerExceptionFactory.newSpannerException(
-            ErrorCode.RESOURCE_EXHAUSTED, "no more sessions"),
-        1);
-    assertThat(sessions.hasMoreElements()).isTrue();
-    try {
-      sessions.nextElement();
-      fail("missing expected exception");
-    } catch (SpannerException e) {
-      assertThat(e.getErrorCode()).isEqualTo(ErrorCode.RESOURCE_EXHAUSTED);
-    }
-    assertThat(sessions.hasMoreElements()).isFalse();
-  }
-
-  @Test(expected = NoSuchElementException.class)
-  public void testSessionEnumerationNoSuchElement() {
-    SessionImpl session = mock(SessionImpl.class);
-    SessionEnumeration sessions = new SessionEnumeration(1);
-    // Note that hasMoreElements() will return true even though nothing has been added to the
-    // enumeration yet, as the enumeration is still guaranteed to return at least one element or an
-    // error.
-    assertThat(sessions.hasMoreElements()).isTrue();
-    sessions.put(session);
-    sessions.nextElement();
-    assertThat(sessions.hasMoreElements()).isFalse();
-    sessions.nextElement();
-  }
-
-  @Test
-  public void testSessionEnumerationExceptionForMulipleSessions() {
-    SessionImpl session = mock(SessionImpl.class);
-    SessionEnumeration sessions = new SessionEnumeration(4);
-    // Exception for the creation of the first two sessions.
-    sessions.registerException(
-        SpannerExceptionFactory.newSpannerException(
-            ErrorCode.RESOURCE_EXHAUSTED, "no more sessions"),
-        2);
-    sessions.put(session);
-    sessions.put(session);
-    assertThat(sessions.hasMoreElements()).isTrue();
-    assertThat(sessions.nextElement()).isEqualTo(session);
-    assertThat(sessions.hasMoreElements()).isTrue();
-    assertThat(sessions.nextElement()).isEqualTo(session);
-    assertThat(sessions.hasMoreElements()).isTrue();
-    try {
-      sessions.nextElement();
-      fail("missing expected exception");
-    } catch (SpannerException e) {
-      assertThat(e.getErrorCode()).isEqualTo(ErrorCode.RESOURCE_EXHAUSTED);
-    }
-    assertThat(sessions.hasMoreElements()).isFalse();
-  }
-
-  @Test
   public void createAndCloseSession() {
     DatabaseId db = DatabaseId.of(dbName);
     String sessionName = dbName + "/sessions/s1";
@@ -225,7 +125,7 @@ public class SessionClientTest {
     when(rpc.createSession(Mockito.eq(dbName), Mockito.eq(labels), options.capture()))
         .thenReturn(sessionProto);
 
-    try (SessionClient client = new SessionClient(spanner, db)) {
+    try (SessionClient client = new SessionClient(spanner, db, new TestExecutorFactory())) {
       Session session = client.createSession();
       assertThat(session.getName()).isEqualTo(sessionName);
 
@@ -267,24 +167,30 @@ public class SessionClientTest {
               }
             });
 
+    final AtomicInteger returnedSessionCount = new AtomicInteger();
+    SessionConsumer consumer =
+        new SessionConsumer() {
+          @Override
+          public void onSessionReady(SessionImpl session) {
+            assertThat(session.getName()).startsWith(dbName + "/sessions/s");
+            returnedSessionCount.incrementAndGet();
+            session.close();
+          }
+
+          @Override
+          public void onSessionCreateFailure(Throwable t, int createFailureForSessionCount) {}
+        };
     final int numSessions = 10;
-    try (SessionClient client = new SessionClient(spanner, db)) {
-      Enumeration<SessionImpl> sessions = client.batchCreateSessions(numSessions);
-      int count = 0;
-      while (sessions.hasMoreElements()) {
-        SessionImpl session = sessions.nextElement();
-        assertThat(session.getName()).startsWith(dbName + "/sessions/s");
-        count++;
-        session.close();
-      }
-      assertThat(count).isEqualTo(numSessions);
-      assertThat(usedChannels.size()).isEqualTo(spannerOptions.getNumChannels());
-      List<Long> expectedChannels = new ArrayList<>();
-      for (long l = 0; l < spannerOptions.getNumChannels(); l++) {
-        expectedChannels.add(l);
-      }
-      assertThat(usedChannels).containsExactlyElementsIn(expectedChannels);
+    try (SessionClient client = new SessionClient(spanner, db, new TestExecutorFactory())) {
+      client.asyncBatchCreateSessions(numSessions, consumer);
     }
+    assertThat(returnedSessionCount.get()).isEqualTo(numSessions);
+    assertThat(usedChannels.size()).isEqualTo(spannerOptions.getNumChannels());
+    List<Long> expectedChannels = new ArrayList<>();
+    for (long l = 0; l < spannerOptions.getNumChannels(); l++) {
+      expectedChannels.add(l);
+    }
+    assertThat(usedChannels).containsExactlyElementsIn(expectedChannels);
   }
 
   private enum AddRemoveSetException {
@@ -346,35 +252,38 @@ public class SessionClientTest {
                   }
                 });
 
+        final AtomicInteger errorForSessionsCount = new AtomicInteger();
+        final AtomicInteger errorCount = new AtomicInteger();
+        final AtomicInteger returnedSessionCount = new AtomicInteger();
+        SessionConsumer consumer =
+            new SessionConsumer() {
+              @Override
+              public void onSessionReady(SessionImpl session) {
+                assertThat(session.getName()).startsWith(dbName + "/sessions/s");
+                returnedSessionCount.incrementAndGet();
+                session.close();
+              }
+
+              @Override
+              public void onSessionCreateFailure(Throwable t, int createFailureForSessionCount) {
+                assertThat(t).isInstanceOf(SpannerException.class);
+                SpannerException e = (SpannerException) t;
+                assertThat(e.getErrorCode()).isEqualTo(ErrorCode.RESOURCE_EXHAUSTED);
+                errorCount.incrementAndGet();
+                errorForSessionsCount.addAndGet(createFailureForSessionCount);
+              }
+            };
         final int numSessions = 10;
-        try (SessionClient client = new SessionClient(spanner, db)) {
-          Enumeration<SessionImpl> sessions = client.batchCreateSessions(numSessions);
-          int count = 0;
-          SpannerException gotException = null;
-          while (sessions.hasMoreElements()) {
-            // The exception should always be the last that is returned.
-            assertThat(gotException == null);
-            try {
-              SessionImpl session = sessions.nextElement();
-              assertThat(session.getName()).startsWith(dbName + "/sessions/s");
-              count++;
-              session.close();
-            } catch (SpannerException e) {
-              gotException = e;
-            }
-          }
-          if (errorOnChannels.isEmpty()) {
-            assertThat(gotException).isNull();
-          } else {
-            assertThat(gotException).isNotNull();
-            assertThat(gotException.getErrorCode()).isEqualTo(ErrorCode.RESOURCE_EXHAUSTED);
-          }
-          assertThat(count)
-              .isAtLeast(
-                  numSessions
-                      - (int) Math.ceil((float) numSessions / spannerOptions.getNumChannels())
-                          * errorOnChannels.size());
+        try (SessionClient client = new SessionClient(spanner, db, new TestExecutorFactory())) {
+          client.asyncBatchCreateSessions(numSessions, consumer);
         }
+        assertThat(errorCount.get()).isEqualTo(errorOnChannels.size());
+        assertThat(returnedSessionCount.get())
+            .isAtLeast(
+                numSessions
+                    - (int) Math.ceil((float) numSessions / spannerOptions.getNumChannels())
+                        * errorOnChannels.size());
+        assertThat(returnedSessionCount.get() + errorForSessionsCount.get()).isEqualTo(numSessions);
       }
     }
   }
@@ -404,20 +313,26 @@ public class SessionClientTest {
               }
             });
 
+    final AtomicInteger returnedSessionCount = new AtomicInteger();
+    SessionConsumer consumer =
+        new SessionConsumer() {
+          @Override
+          public void onSessionReady(SessionImpl session) {
+            assertThat(session.getName()).startsWith(dbName + "/sessions/s");
+            returnedSessionCount.incrementAndGet();
+            session.close();
+          }
+
+          @Override
+          public void onSessionCreateFailure(Throwable t, int createFailureForSessionCount) {}
+        };
     // We want 100 sessions, but each rpc will only return 5. We should still get 100 sessions from
     // the enumerator.
     final int numSessions = 100;
-    try (SessionClient client = new SessionClient(spanner, db)) {
-      Enumeration<SessionImpl> sessions = client.batchCreateSessions(numSessions);
-      int count = 0;
-      while (sessions.hasMoreElements()) {
-        SessionImpl session = sessions.nextElement();
-        assertThat(session.getName()).startsWith(dbName + "/sessions/s");
-        count++;
-        session.close();
-      }
-      assertThat(count).isEqualTo(numSessions);
+    try (SessionClient client = new SessionClient(spanner, db, new TestExecutorFactory())) {
+      client.asyncBatchCreateSessions(numSessions, consumer);
     }
+    assertThat(returnedSessionCount.get()).isEqualTo(numSessions);
   }
 
   @SuppressWarnings("unchecked")
@@ -448,22 +363,29 @@ public class SessionClientTest {
               }
             });
 
+    final AtomicInteger returnedSessionCount = new AtomicInteger();
+    final AtomicInteger errorForSessions = new AtomicInteger();
+    SessionConsumer consumer =
+        new SessionConsumer() {
+          @Override
+          public void onSessionReady(SessionImpl session) {
+            assertThat(session.getName()).startsWith(dbName + "/sessions/s");
+            returnedSessionCount.incrementAndGet();
+            session.close();
+          }
+
+          @Override
+          public void onSessionCreateFailure(Throwable t, int createFailureForSessionCount) {
+            errorForSessions.addAndGet(createFailureForSessionCount);
+          }
+        };
     // We want 100 sessions, but the server can only handle 50. We should receive 50 sessions and
     // then an error.
     final int numSessions = 100;
-    int count = 0;
-    try (SessionClient client = new SessionClient(spanner, db)) {
-      Enumeration<SessionImpl> sessions = client.batchCreateSessions(numSessions);
-      while (sessions.hasMoreElements()) {
-        SessionImpl session = sessions.nextElement();
-        assertThat(session.getName()).startsWith(dbName + "/sessions/s");
-        count++;
-        session.close();
-      }
-      fail("missing expected exception");
-    } catch (SpannerException e) {
-      // ignore, this is the expected exception.
+    try (SessionClient client = new SessionClient(spanner, db, new TestExecutorFactory())) {
+      client.asyncBatchCreateSessions(numSessions, consumer);
     }
-    assertThat(count).isEqualTo(MAX_SESSIONS_TOTAL);
+    assertThat(returnedSessionCount.get()).isEqualTo(MAX_SESSIONS_TOTAL);
+    assertThat(returnedSessionCount.get() + errorForSessions.get()).isEqualTo(numSessions);
   }
 }
