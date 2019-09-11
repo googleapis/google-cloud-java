@@ -107,6 +107,12 @@ public class NetworkSettings extends ClientSettings<NetworkSettings> {
     return ((NetworkStubSettings) getStubSettings()).switchToCustomModeNetworkSettings();
   }
 
+  /** Returns the object with the settings used for calls to updatePeeringNetwork. */
+  public UnaryCallSettings<UpdatePeeringNetworkHttpRequest, Operation>
+      updatePeeringNetworkSettings() {
+    return ((NetworkStubSettings) getStubSettings()).updatePeeringNetworkSettings();
+  }
+
   public static final NetworkSettings create(NetworkStubSettings stub) throws IOException {
     return new NetworkSettings.Builder(stub.toBuilder()).build();
   }
@@ -251,6 +257,12 @@ public class NetworkSettings extends ClientSettings<NetworkSettings> {
     public UnaryCallSettings.Builder<SwitchToCustomModeNetworkHttpRequest, Operation>
         switchToCustomModeNetworkSettings() {
       return getStubSettingsBuilder().switchToCustomModeNetworkSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updatePeeringNetwork. */
+    public UnaryCallSettings.Builder<UpdatePeeringNetworkHttpRequest, Operation>
+        updatePeeringNetworkSettings() {
+      return getStubSettingsBuilder().updatePeeringNetworkSettings();
     }
 
     @Override

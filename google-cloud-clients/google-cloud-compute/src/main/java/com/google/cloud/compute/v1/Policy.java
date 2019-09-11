@@ -143,7 +143,7 @@ public final class Policy implements ApiMessage {
    * to the same version of the policy.
    *
    * <p>If no `etag` is provided in the call to `setIamPolicy`, then the existing policy is
-   * overwritten blindly.
+   * overwritten.
    */
   public String getEtag() {
     return etag;
@@ -297,7 +297,7 @@ public final class Policy implements ApiMessage {
      * be applied to the same version of the policy.
      *
      * <p>If no `etag` is provided in the call to `setIamPolicy`, then the existing policy is
-     * overwritten blindly.
+     * overwritten.
      */
     public String getEtag() {
       return etag;
@@ -312,7 +312,7 @@ public final class Policy implements ApiMessage {
      * be applied to the same version of the policy.
      *
      * <p>If no `etag` is provided in the call to `setIamPolicy`, then the existing policy is
-     * overwritten blindly.
+     * overwritten.
      */
     public Builder setEtag(String etag) {
       this.etag = etag;

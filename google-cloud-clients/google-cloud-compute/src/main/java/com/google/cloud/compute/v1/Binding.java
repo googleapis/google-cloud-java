@@ -95,7 +95,7 @@ public final class Binding implements ApiMessage {
    * authenticated with a Google account or a service account.
    *
    * <p>&#42; `user:{emailid}`: An email address that represents a specific Google account. For
-   * example, `alice{@literal @}gmail.com` .
+   * example, `alice{@literal @}example.com` .
    *
    * <p>&#42; `serviceAccount:{emailid}`: An email address that represents a service account. For
    * example, `my-other-app{@literal @}appspot.gserviceaccount.com`.
@@ -197,7 +197,7 @@ public final class Binding implements ApiMessage {
      * authenticated with a Google account or a service account.
      *
      * <p>&#42; `user:{emailid}`: An email address that represents a specific Google account. For
-     * example, `alice{@literal @}gmail.com` .
+     * example, `alice{@literal @}example.com` .
      *
      * <p>&#42; `serviceAccount:{emailid}`: An email address that represents a service account. For
      * example, `my-other-app{@literal @}appspot.gserviceaccount.com`.
@@ -223,7 +223,7 @@ public final class Binding implements ApiMessage {
      * authenticated with a Google account or a service account.
      *
      * <p>&#42; `user:{emailid}`: An email address that represents a specific Google account. For
-     * example, `alice{@literal @}gmail.com` .
+     * example, `alice{@literal @}example.com` .
      *
      * <p>&#42; `serviceAccount:{emailid}`: An email address that represents a service account. For
      * example, `my-other-app{@literal @}appspot.gserviceaccount.com`.
@@ -253,7 +253,7 @@ public final class Binding implements ApiMessage {
      * authenticated with a Google account or a service account.
      *
      * <p>&#42; `user:{emailid}`: An email address that represents a specific Google account. For
-     * example, `alice{@literal @}gmail.com` .
+     * example, `alice{@literal @}example.com` .
      *
      * <p>&#42; `serviceAccount:{emailid}`: An email address that represents a service account. For
      * example, `my-other-app{@literal @}appspot.gserviceaccount.com`.

@@ -149,7 +149,10 @@ public final class AttachedDiskInitializeParams implements ApiMessage {
     return diskName;
   }
 
-  /** Specifies the size of the disk in base-2 GB. */
+  /**
+   * Specifies the size of the disk in base-2 GB. If not specified, the disk will be the same size
+   * as the image (usually 10GB). If specified, the size must be equal to or larger than 10GB.
+   */
   public String getDiskSizeGb() {
     return diskSizeGb;
   }
@@ -353,12 +356,18 @@ public final class AttachedDiskInitializeParams implements ApiMessage {
       return this;
     }
 
-    /** Specifies the size of the disk in base-2 GB. */
+    /**
+     * Specifies the size of the disk in base-2 GB. If not specified, the disk will be the same size
+     * as the image (usually 10GB). If specified, the size must be equal to or larger than 10GB.
+     */
     public String getDiskSizeGb() {
       return diskSizeGb;
     }
 
-    /** Specifies the size of the disk in base-2 GB. */
+    /**
+     * Specifies the size of the disk in base-2 GB. If not specified, the disk will be the same size
+     * as the image (usually 10GB). If specified, the size must be equal to or larger than 10GB.
+     */
     public Builder setDiskSizeGb(String diskSizeGb) {
       this.diskSizeGb = diskSizeGb;
       return this;

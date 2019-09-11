@@ -127,6 +127,21 @@
  * </code>
  * </pre>
  *
+ * ======================== ExternalVpnGatewayClient ========================
+ *
+ * <p>Service Description: Creates and runs virtual machines on Google Cloud Platform.
+ *
+ * <p>Sample for ExternalVpnGatewayClient:
+ *
+ * <pre>
+ * <code>
+ * try (ExternalVpnGatewayClient externalVpnGatewayClient = ExternalVpnGatewayClient.create()) {
+ *   ProjectGlobalExternalVpnGatewayName externalVpnGateway = ProjectGlobalExternalVpnGatewayName.of("[PROJECT]", "[EXTERNAL_VPN_GATEWAY]");
+ *   Operation response = externalVpnGatewayClient.deleteExternalVpnGateway(externalVpnGateway);
+ * }
+ * </code>
+ * </pre>
+ *
  * ============== FirewallClient ==============
  *
  * <p>Service Description: Creates and runs virtual machines on Google Cloud Platform.
@@ -900,6 +915,21 @@
  * try (UrlMapClient urlMapClient = UrlMapClient.create()) {
  *   ProjectGlobalUrlMapName urlMap = ProjectGlobalUrlMapName.of("[PROJECT]", "[URL_MAP]");
  *   Operation response = urlMapClient.deleteUrlMap(urlMap);
+ * }
+ * </code>
+ * </pre>
+ *
+ * ================ VpnGatewayClient ================
+ *
+ * <p>Service Description: Creates and runs virtual machines on Google Cloud Platform.
+ *
+ * <p>Sample for VpnGatewayClient:
+ *
+ * <pre>
+ * <code>
+ * try (VpnGatewayClient vpnGatewayClient = VpnGatewayClient.create()) {
+ *   ProjectRegionVpnGatewayName vpnGateway = ProjectRegionVpnGatewayName.of("[PROJECT]", "[REGION]", "[VPN_GATEWAY]");
+ *   Operation response = vpnGatewayClient.deleteVpnGateway(vpnGateway);
  * }
  * </code>
  * </pre>

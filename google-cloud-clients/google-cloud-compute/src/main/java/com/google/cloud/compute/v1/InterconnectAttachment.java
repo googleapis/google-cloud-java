@@ -244,7 +244,7 @@ public final class InterconnectAttachment implements ApiMessage {
    * mutable for PARTNER_PROVIDER and DEDICATED, and can take one of the following values: -
    * BPS_50M: 50 Mbit/s - BPS_100M: 100 Mbit/s - BPS_200M: 200 Mbit/s - BPS_300M: 300 Mbit/s -
    * BPS_400M: 400 Mbit/s - BPS_500M: 500 Mbit/s - BPS_1G: 1 Gbit/s - BPS_2G: 2 Gbit/s - BPS_5G: 5
-   * Gbit/s - BPS_10G: 10 Gbit/s
+   * Gbit/s - BPS_10G: 10 Gbit/s - BPS_20G: 20 Gbit/s - BPS_50G: 50 Gbit/s
    */
   public String getBandwidth() {
     return bandwidth;
@@ -617,7 +617,7 @@ public final class InterconnectAttachment implements ApiMessage {
      * type, mutable for PARTNER_PROVIDER and DEDICATED, and can take one of the following values: -
      * BPS_50M: 50 Mbit/s - BPS_100M: 100 Mbit/s - BPS_200M: 200 Mbit/s - BPS_300M: 300 Mbit/s -
      * BPS_400M: 400 Mbit/s - BPS_500M: 500 Mbit/s - BPS_1G: 1 Gbit/s - BPS_2G: 2 Gbit/s - BPS_5G: 5
-     * Gbit/s - BPS_10G: 10 Gbit/s
+     * Gbit/s - BPS_10G: 10 Gbit/s - BPS_20G: 20 Gbit/s - BPS_50G: 50 Gbit/s
      */
     public String getBandwidth() {
       return bandwidth;
@@ -630,7 +630,7 @@ public final class InterconnectAttachment implements ApiMessage {
      * type, mutable for PARTNER_PROVIDER and DEDICATED, and can take one of the following values: -
      * BPS_50M: 50 Mbit/s - BPS_100M: 100 Mbit/s - BPS_200M: 200 Mbit/s - BPS_300M: 300 Mbit/s -
      * BPS_400M: 400 Mbit/s - BPS_500M: 500 Mbit/s - BPS_1G: 1 Gbit/s - BPS_2G: 2 Gbit/s - BPS_5G: 5
-     * Gbit/s - BPS_10G: 10 Gbit/s
+     * Gbit/s - BPS_10G: 10 Gbit/s - BPS_20G: 20 Gbit/s - BPS_50G: 50 Gbit/s
      */
     public Builder setBandwidth(String bandwidth) {
       this.bandwidth = bandwidth;

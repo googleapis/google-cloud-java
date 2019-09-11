@@ -179,8 +179,7 @@ public final class InsertReservationHttpRequest implements ApiMessage {
   /**
    * Represents a reservation resource. A reservation ensures that capacity is held in a specific
    * zone even if the reserved VMs are not running. For more information, read Reserving zonal
-   * resources. (== resource_for beta.reservations ==) (== resource_for v1.reservations ==) (==
-   * NextID: 13 ==)
+   * resources. (== resource_for beta.reservations ==) (== resource_for v1.reservations ==)
    */
   public Reservation getReservationResource() {
     return reservationResource;
@@ -390,8 +389,7 @@ public final class InsertReservationHttpRequest implements ApiMessage {
     /**
      * Represents a reservation resource. A reservation ensures that capacity is held in a specific
      * zone even if the reserved VMs are not running. For more information, read Reserving zonal
-     * resources. (== resource_for beta.reservations ==) (== resource_for v1.reservations ==) (==
-     * NextID: 13 ==)
+     * resources. (== resource_for beta.reservations ==) (== resource_for v1.reservations ==)
      */
     public Reservation getReservationResource() {
       return reservationResource;
@@ -400,8 +398,7 @@ public final class InsertReservationHttpRequest implements ApiMessage {
     /**
      * Represents a reservation resource. A reservation ensures that capacity is held in a specific
      * zone even if the reserved VMs are not running. For more information, read Reserving zonal
-     * resources. (== resource_for beta.reservations ==) (== resource_for v1.reservations ==) (==
-     * NextID: 13 ==)
+     * resources. (== resource_for beta.reservations ==) (== resource_for v1.reservations ==)
      */
     public Builder setReservationResource(Reservation reservationResource) {
       this.reservationResource = reservationResource;
