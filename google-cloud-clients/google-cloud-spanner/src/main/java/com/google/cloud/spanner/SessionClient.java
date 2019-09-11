@@ -134,31 +134,26 @@ class SessionClient implements AutoCloseable {
     @Override
     public void run() {
       List<SessionImpl> sessions = null;
-      try {
-        sessions = internalBatchCreateSessions(sessionCount, channelHint);
-      } catch (Throwable t) {
-        enumeration.registerException(t, sessionCount);
-        return;
-      }
-      int numActuallyCreated = sessions.size();
-      for (SessionImpl session : sessions) {
-        enumeration.put(session);
-      }
-      if (numActuallyCreated < sessionCount) {
+      int remainingSessionsToCreate = sessionCount;
+      while(remainingSessionsToCreate > 0) {
+        try {
+          sessions = internalBatchCreateSessions(remainingSessionsToCreate, channelHint);
+        } catch (Throwable t) {
+          enumeration.registerException(t, remainingSessionsToCreate);
+          break;
+        }
+        int numActuallyCreated = sessions.size();
         if (numActuallyCreated == 0) {
           // No sessions returned by the server. Give up creation to avoid an infinite loop.
           enumeration.registerException(
               newSpannerException(ErrorCode.UNKNOWN, "Server did not return any sessions"),
-              sessionCount);
-        } else {
-          try {
-            executor.submit(
-                new BatchCreateSessionsRunnable(
-                    sessionCount - numActuallyCreated, channelHint, enumeration));
-          } catch (Throwable t) {
-            enumeration.registerException(t, sessionCount - numActuallyCreated);
-          }
+              remainingSessionsToCreate);
+          break;
         }
+        for (SessionImpl session : sessions) {
+          enumeration.put(session);
+        }
+        remainingSessionsToCreate -= numActuallyCreated;
       }
     }
   }
