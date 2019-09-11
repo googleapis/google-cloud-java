@@ -581,11 +581,11 @@ public class Publisher {
     static final RetrySettings DEFAULT_RETRY_SETTINGS =
         RetrySettings.newBuilder()
             .setTotalTimeout(DEFAULT_TOTAL_TIMEOUT)
-            .setInitialRetryDelay(Duration.ofMillis(5))
-            .setRetryDelayMultiplier(2)
-            .setMaxRetryDelay(Duration.ofMillis(Long.MAX_VALUE))
+            .setInitialRetryDelay(Duration.ofMillis(100))
+            .setRetryDelayMultiplier(1.3)
+            .setMaxRetryDelay(Duration.ofSeconds(60))
             .setInitialRpcTimeout(DEFAULT_INITIAL_RPC_TIMEOUT)
-            .setRpcTimeoutMultiplier(2)
+            .setRpcTimeoutMultiplier(1)
             .setMaxRpcTimeout(DEFAULT_MAX_RPC_TIMEOUT)
             .build();
     static final boolean DEFAULT_ENABLE_MESSAGE_ORDERING = false;
