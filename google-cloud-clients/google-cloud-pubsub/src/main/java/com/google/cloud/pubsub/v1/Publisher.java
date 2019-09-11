@@ -569,7 +569,8 @@ public class Publisher {
     static final long DEFAULT_ELEMENT_COUNT_THRESHOLD = 100L;
     static final long DEFAULT_REQUEST_BYTES_THRESHOLD = 1000L; // 1 kB
     static final Duration DEFAULT_DELAY_THRESHOLD = Duration.ofMillis(1);
-    private static final Duration DEFAULT_RPC_TIMEOUT = Duration.ofSeconds(10);
+    private static final Duration DEFAULT_INITIAL_RPC_TIMEOUT = Duration.ofSeconds(5);
+    private static final Duration DEFAULT_MAX_RPC_TIMEOUT = Duration.ofSeconds(600);
     private static final Duration DEFAULT_TOTAL_TIMEOUT = MIN_TOTAL_TIMEOUT;
     static final BatchingSettings DEFAULT_BATCHING_SETTINGS =
         BatchingSettings.newBuilder()
@@ -583,9 +584,9 @@ public class Publisher {
             .setInitialRetryDelay(Duration.ofMillis(5))
             .setRetryDelayMultiplier(2)
             .setMaxRetryDelay(Duration.ofMillis(Long.MAX_VALUE))
-            .setInitialRpcTimeout(DEFAULT_RPC_TIMEOUT)
+            .setInitialRpcTimeout(DEFAULT_INITIAL_RPC_TIMEOUT)
             .setRpcTimeoutMultiplier(2)
-            .setMaxRpcTimeout(DEFAULT_RPC_TIMEOUT)
+            .setMaxRpcTimeout(DEFAULT_MAX_RPC_TIMEOUT)
             .build();
     static final boolean DEFAULT_ENABLE_MESSAGE_ORDERING = false;
     private static final int THREADS_PER_CPU = 5;
