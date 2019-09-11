@@ -97,7 +97,7 @@ public final class ListVoicesRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Optional (but recommended)
+   * Optional. Recommended.
    * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag. If
    * specified, the ListVoices call will only return voices that can be used to
    * synthesize this language_code. E.g. when specifying "en-NZ", you will get
@@ -107,7 +107,7 @@ public final class ListVoicesRequest extends com.google.protobuf.GeneratedMessag
    * supported "yue-*" voices.
    * </pre>
    *
-   * <code>string language_code = 1;</code>
+   * <code>string language_code = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public java.lang.String getLanguageCode() {
     java.lang.Object ref = languageCode_;
@@ -124,7 +124,7 @@ public final class ListVoicesRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Optional (but recommended)
+   * Optional. Recommended.
    * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag. If
    * specified, the ListVoices call will only return voices that can be used to
    * synthesize this language_code. E.g. when specifying "en-NZ", you will get
@@ -134,7 +134,7 @@ public final class ListVoicesRequest extends com.google.protobuf.GeneratedMessag
    * supported "yue-*" voices.
    * </pre>
    *
-   * <code>string language_code = 1;</code>
+   * <code>string language_code = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public com.google.protobuf.ByteString getLanguageCodeBytes() {
     java.lang.Object ref = languageCode_;
@@ -471,7 +471,7 @@ public final class ListVoicesRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional (but recommended)
+     * Optional. Recommended.
      * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag. If
      * specified, the ListVoices call will only return voices that can be used to
      * synthesize this language_code. E.g. when specifying "en-NZ", you will get
@@ -481,7 +481,7 @@ public final class ListVoicesRequest extends com.google.protobuf.GeneratedMessag
      * supported "yue-*" voices.
      * </pre>
      *
-     * <code>string language_code = 1;</code>
+     * <code>string language_code = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public java.lang.String getLanguageCode() {
       java.lang.Object ref = languageCode_;
@@ -498,7 +498,7 @@ public final class ListVoicesRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional (but recommended)
+     * Optional. Recommended.
      * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag. If
      * specified, the ListVoices call will only return voices that can be used to
      * synthesize this language_code. E.g. when specifying "en-NZ", you will get
@@ -508,7 +508,7 @@ public final class ListVoicesRequest extends com.google.protobuf.GeneratedMessag
      * supported "yue-*" voices.
      * </pre>
      *
-     * <code>string language_code = 1;</code>
+     * <code>string language_code = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.protobuf.ByteString getLanguageCodeBytes() {
       java.lang.Object ref = languageCode_;
@@ -525,7 +525,7 @@ public final class ListVoicesRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional (but recommended)
+     * Optional. Recommended.
      * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag. If
      * specified, the ListVoices call will only return voices that can be used to
      * synthesize this language_code. E.g. when specifying "en-NZ", you will get
@@ -535,7 +535,7 @@ public final class ListVoicesRequest extends com.google.protobuf.GeneratedMessag
      * supported "yue-*" voices.
      * </pre>
      *
-     * <code>string language_code = 1;</code>
+     * <code>string language_code = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setLanguageCode(java.lang.String value) {
       if (value == null) {
@@ -550,7 +550,7 @@ public final class ListVoicesRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional (but recommended)
+     * Optional. Recommended.
      * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag. If
      * specified, the ListVoices call will only return voices that can be used to
      * synthesize this language_code. E.g. when specifying "en-NZ", you will get
@@ -560,7 +560,7 @@ public final class ListVoicesRequest extends com.google.protobuf.GeneratedMessag
      * supported "yue-*" voices.
      * </pre>
      *
-     * <code>string language_code = 1;</code>
+     * <code>string language_code = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearLanguageCode() {
 
@@ -572,7 +572,7 @@ public final class ListVoicesRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional (but recommended)
+     * Optional. Recommended.
      * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag. If
      * specified, the ListVoices call will only return voices that can be used to
      * synthesize this language_code. E.g. when specifying "en-NZ", you will get
@@ -582,7 +582,7 @@ public final class ListVoicesRequest extends com.google.protobuf.GeneratedMessag
      * supported "yue-*" voices.
      * </pre>
      *
-     * <code>string language_code = 1;</code>
+     * <code>string language_code = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setLanguageCodeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
