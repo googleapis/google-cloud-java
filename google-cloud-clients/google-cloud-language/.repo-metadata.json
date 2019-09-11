@@ -1,0 +1,13 @@
+{
+  "name": "language",
+  "name_pretty": "Natural Language",
+  "product_documentation": "https://cloud.google.com/natural-language/docs/",
+  "client_documentation": "https://googleapis.dev/java/google-cloud-clients/latest/index.html?com/google/cloud/language/v1/package-summary.html",
+  "issue_tracker": "https://issuetracker.google.com/savedsearches/559753",
+  "release_level": "ga",
+  "language": "java",
+  "repo": "googleapis/google-cloud-java",
+  "repo_short": "google-cloud-java",
+  "distribution_name": "com.google.cloud:google-cloud-language",
+  "api_id": "language.googleapis.com"
+}
