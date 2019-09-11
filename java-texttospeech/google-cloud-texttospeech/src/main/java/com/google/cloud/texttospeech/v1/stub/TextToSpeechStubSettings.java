@@ -244,7 +244,7 @@ public class TextToSpeechStubSettings extends StubSettings<TextToSpeechStubSetti
 
       builder
           .synthesizeSpeechSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       return builder;

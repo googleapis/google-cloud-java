@@ -142,7 +142,9 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
    * Required. The Synthesizer requires either plain text or SSML as input.
    * </pre>
    *
-   * <code>.google.cloud.texttospeech.v1beta1.SynthesisInput input = 1;</code>
+   * <code>
+   * .google.cloud.texttospeech.v1beta1.SynthesisInput input = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public boolean hasInput() {
     return input_ != null;
@@ -154,7 +156,9 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
    * Required. The Synthesizer requires either plain text or SSML as input.
    * </pre>
    *
-   * <code>.google.cloud.texttospeech.v1beta1.SynthesisInput input = 1;</code>
+   * <code>
+   * .google.cloud.texttospeech.v1beta1.SynthesisInput input = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.texttospeech.v1beta1.SynthesisInput getInput() {
     return input_ == null
@@ -168,7 +172,9 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
    * Required. The Synthesizer requires either plain text or SSML as input.
    * </pre>
    *
-   * <code>.google.cloud.texttospeech.v1beta1.SynthesisInput input = 1;</code>
+   * <code>
+   * .google.cloud.texttospeech.v1beta1.SynthesisInput input = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.texttospeech.v1beta1.SynthesisInputOrBuilder getInputOrBuilder() {
     return getInput();
@@ -183,7 +189,9 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
    * Required. The desired voice of the synthesized audio.
    * </pre>
    *
-   * <code>.google.cloud.texttospeech.v1beta1.VoiceSelectionParams voice = 2;</code>
+   * <code>
+   * .google.cloud.texttospeech.v1beta1.VoiceSelectionParams voice = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public boolean hasVoice() {
     return voice_ != null;
@@ -195,7 +203,9 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
    * Required. The desired voice of the synthesized audio.
    * </pre>
    *
-   * <code>.google.cloud.texttospeech.v1beta1.VoiceSelectionParams voice = 2;</code>
+   * <code>
+   * .google.cloud.texttospeech.v1beta1.VoiceSelectionParams voice = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.texttospeech.v1beta1.VoiceSelectionParams getVoice() {
     return voice_ == null
@@ -209,7 +219,9 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
    * Required. The desired voice of the synthesized audio.
    * </pre>
    *
-   * <code>.google.cloud.texttospeech.v1beta1.VoiceSelectionParams voice = 2;</code>
+   * <code>
+   * .google.cloud.texttospeech.v1beta1.VoiceSelectionParams voice = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.texttospeech.v1beta1.VoiceSelectionParamsOrBuilder getVoiceOrBuilder() {
     return getVoice();
@@ -224,7 +236,9 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
    * Required. The configuration of the synthesized audio.
    * </pre>
    *
-   * <code>.google.cloud.texttospeech.v1beta1.AudioConfig audio_config = 3;</code>
+   * <code>
+   * .google.cloud.texttospeech.v1beta1.AudioConfig audio_config = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public boolean hasAudioConfig() {
     return audioConfig_ != null;
@@ -236,7 +250,9 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
    * Required. The configuration of the synthesized audio.
    * </pre>
    *
-   * <code>.google.cloud.texttospeech.v1beta1.AudioConfig audio_config = 3;</code>
+   * <code>
+   * .google.cloud.texttospeech.v1beta1.AudioConfig audio_config = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.texttospeech.v1beta1.AudioConfig getAudioConfig() {
     return audioConfig_ == null
@@ -250,7 +266,9 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
    * Required. The configuration of the synthesized audio.
    * </pre>
    *
-   * <code>.google.cloud.texttospeech.v1beta1.AudioConfig audio_config = 3;</code>
+   * <code>
+   * .google.cloud.texttospeech.v1beta1.AudioConfig audio_config = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.texttospeech.v1beta1.AudioConfigOrBuilder getAudioConfigOrBuilder() {
     return getAudioConfig();
@@ -659,7 +677,9 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
      * Required. The Synthesizer requires either plain text or SSML as input.
      * </pre>
      *
-     * <code>.google.cloud.texttospeech.v1beta1.SynthesisInput input = 1;</code>
+     * <code>
+     * .google.cloud.texttospeech.v1beta1.SynthesisInput input = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public boolean hasInput() {
       return inputBuilder_ != null || input_ != null;
@@ -671,7 +691,9 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
      * Required. The Synthesizer requires either plain text or SSML as input.
      * </pre>
      *
-     * <code>.google.cloud.texttospeech.v1beta1.SynthesisInput input = 1;</code>
+     * <code>
+     * .google.cloud.texttospeech.v1beta1.SynthesisInput input = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.texttospeech.v1beta1.SynthesisInput getInput() {
       if (inputBuilder_ == null) {
@@ -689,7 +711,9 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
      * Required. The Synthesizer requires either plain text or SSML as input.
      * </pre>
      *
-     * <code>.google.cloud.texttospeech.v1beta1.SynthesisInput input = 1;</code>
+     * <code>
+     * .google.cloud.texttospeech.v1beta1.SynthesisInput input = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setInput(com.google.cloud.texttospeech.v1beta1.SynthesisInput value) {
       if (inputBuilder_ == null) {
@@ -711,7 +735,9 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
      * Required. The Synthesizer requires either plain text or SSML as input.
      * </pre>
      *
-     * <code>.google.cloud.texttospeech.v1beta1.SynthesisInput input = 1;</code>
+     * <code>
+     * .google.cloud.texttospeech.v1beta1.SynthesisInput input = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setInput(
         com.google.cloud.texttospeech.v1beta1.SynthesisInput.Builder builderForValue) {
@@ -731,7 +757,9 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
      * Required. The Synthesizer requires either plain text or SSML as input.
      * </pre>
      *
-     * <code>.google.cloud.texttospeech.v1beta1.SynthesisInput input = 1;</code>
+     * <code>
+     * .google.cloud.texttospeech.v1beta1.SynthesisInput input = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeInput(com.google.cloud.texttospeech.v1beta1.SynthesisInput value) {
       if (inputBuilder_ == null) {
@@ -757,7 +785,9 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
      * Required. The Synthesizer requires either plain text or SSML as input.
      * </pre>
      *
-     * <code>.google.cloud.texttospeech.v1beta1.SynthesisInput input = 1;</code>
+     * <code>
+     * .google.cloud.texttospeech.v1beta1.SynthesisInput input = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearInput() {
       if (inputBuilder_ == null) {
@@ -777,7 +807,9 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
      * Required. The Synthesizer requires either plain text or SSML as input.
      * </pre>
      *
-     * <code>.google.cloud.texttospeech.v1beta1.SynthesisInput input = 1;</code>
+     * <code>
+     * .google.cloud.texttospeech.v1beta1.SynthesisInput input = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.texttospeech.v1beta1.SynthesisInput.Builder getInputBuilder() {
 
@@ -791,7 +823,9 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
      * Required. The Synthesizer requires either plain text or SSML as input.
      * </pre>
      *
-     * <code>.google.cloud.texttospeech.v1beta1.SynthesisInput input = 1;</code>
+     * <code>
+     * .google.cloud.texttospeech.v1beta1.SynthesisInput input = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.texttospeech.v1beta1.SynthesisInputOrBuilder getInputOrBuilder() {
       if (inputBuilder_ != null) {
@@ -809,7 +843,9 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
      * Required. The Synthesizer requires either plain text or SSML as input.
      * </pre>
      *
-     * <code>.google.cloud.texttospeech.v1beta1.SynthesisInput input = 1;</code>
+     * <code>
+     * .google.cloud.texttospeech.v1beta1.SynthesisInput input = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.texttospeech.v1beta1.SynthesisInput,
@@ -841,7 +877,9 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
      * Required. The desired voice of the synthesized audio.
      * </pre>
      *
-     * <code>.google.cloud.texttospeech.v1beta1.VoiceSelectionParams voice = 2;</code>
+     * <code>
+     * .google.cloud.texttospeech.v1beta1.VoiceSelectionParams voice = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public boolean hasVoice() {
       return voiceBuilder_ != null || voice_ != null;
@@ -853,7 +891,9 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
      * Required. The desired voice of the synthesized audio.
      * </pre>
      *
-     * <code>.google.cloud.texttospeech.v1beta1.VoiceSelectionParams voice = 2;</code>
+     * <code>
+     * .google.cloud.texttospeech.v1beta1.VoiceSelectionParams voice = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.texttospeech.v1beta1.VoiceSelectionParams getVoice() {
       if (voiceBuilder_ == null) {
@@ -871,7 +911,9 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
      * Required. The desired voice of the synthesized audio.
      * </pre>
      *
-     * <code>.google.cloud.texttospeech.v1beta1.VoiceSelectionParams voice = 2;</code>
+     * <code>
+     * .google.cloud.texttospeech.v1beta1.VoiceSelectionParams voice = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setVoice(com.google.cloud.texttospeech.v1beta1.VoiceSelectionParams value) {
       if (voiceBuilder_ == null) {
@@ -893,7 +935,9 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
      * Required. The desired voice of the synthesized audio.
      * </pre>
      *
-     * <code>.google.cloud.texttospeech.v1beta1.VoiceSelectionParams voice = 2;</code>
+     * <code>
+     * .google.cloud.texttospeech.v1beta1.VoiceSelectionParams voice = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setVoice(
         com.google.cloud.texttospeech.v1beta1.VoiceSelectionParams.Builder builderForValue) {
@@ -913,7 +957,9 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
      * Required. The desired voice of the synthesized audio.
      * </pre>
      *
-     * <code>.google.cloud.texttospeech.v1beta1.VoiceSelectionParams voice = 2;</code>
+     * <code>
+     * .google.cloud.texttospeech.v1beta1.VoiceSelectionParams voice = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeVoice(com.google.cloud.texttospeech.v1beta1.VoiceSelectionParams value) {
       if (voiceBuilder_ == null) {
@@ -939,7 +985,9 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
      * Required. The desired voice of the synthesized audio.
      * </pre>
      *
-     * <code>.google.cloud.texttospeech.v1beta1.VoiceSelectionParams voice = 2;</code>
+     * <code>
+     * .google.cloud.texttospeech.v1beta1.VoiceSelectionParams voice = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearVoice() {
       if (voiceBuilder_ == null) {
@@ -959,7 +1007,9 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
      * Required. The desired voice of the synthesized audio.
      * </pre>
      *
-     * <code>.google.cloud.texttospeech.v1beta1.VoiceSelectionParams voice = 2;</code>
+     * <code>
+     * .google.cloud.texttospeech.v1beta1.VoiceSelectionParams voice = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.texttospeech.v1beta1.VoiceSelectionParams.Builder getVoiceBuilder() {
 
@@ -973,7 +1023,9 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
      * Required. The desired voice of the synthesized audio.
      * </pre>
      *
-     * <code>.google.cloud.texttospeech.v1beta1.VoiceSelectionParams voice = 2;</code>
+     * <code>
+     * .google.cloud.texttospeech.v1beta1.VoiceSelectionParams voice = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.texttospeech.v1beta1.VoiceSelectionParamsOrBuilder getVoiceOrBuilder() {
       if (voiceBuilder_ != null) {
@@ -991,7 +1043,9 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
      * Required. The desired voice of the synthesized audio.
      * </pre>
      *
-     * <code>.google.cloud.texttospeech.v1beta1.VoiceSelectionParams voice = 2;</code>
+     * <code>
+     * .google.cloud.texttospeech.v1beta1.VoiceSelectionParams voice = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.texttospeech.v1beta1.VoiceSelectionParams,
@@ -1023,7 +1077,9 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
      * Required. The configuration of the synthesized audio.
      * </pre>
      *
-     * <code>.google.cloud.texttospeech.v1beta1.AudioConfig audio_config = 3;</code>
+     * <code>
+     * .google.cloud.texttospeech.v1beta1.AudioConfig audio_config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public boolean hasAudioConfig() {
       return audioConfigBuilder_ != null || audioConfig_ != null;
@@ -1035,7 +1091,9 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
      * Required. The configuration of the synthesized audio.
      * </pre>
      *
-     * <code>.google.cloud.texttospeech.v1beta1.AudioConfig audio_config = 3;</code>
+     * <code>
+     * .google.cloud.texttospeech.v1beta1.AudioConfig audio_config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.texttospeech.v1beta1.AudioConfig getAudioConfig() {
       if (audioConfigBuilder_ == null) {
@@ -1053,7 +1111,9 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
      * Required. The configuration of the synthesized audio.
      * </pre>
      *
-     * <code>.google.cloud.texttospeech.v1beta1.AudioConfig audio_config = 3;</code>
+     * <code>
+     * .google.cloud.texttospeech.v1beta1.AudioConfig audio_config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setAudioConfig(com.google.cloud.texttospeech.v1beta1.AudioConfig value) {
       if (audioConfigBuilder_ == null) {
@@ -1075,7 +1135,9 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
      * Required. The configuration of the synthesized audio.
      * </pre>
      *
-     * <code>.google.cloud.texttospeech.v1beta1.AudioConfig audio_config = 3;</code>
+     * <code>
+     * .google.cloud.texttospeech.v1beta1.AudioConfig audio_config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setAudioConfig(
         com.google.cloud.texttospeech.v1beta1.AudioConfig.Builder builderForValue) {
@@ -1095,7 +1157,9 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
      * Required. The configuration of the synthesized audio.
      * </pre>
      *
-     * <code>.google.cloud.texttospeech.v1beta1.AudioConfig audio_config = 3;</code>
+     * <code>
+     * .google.cloud.texttospeech.v1beta1.AudioConfig audio_config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeAudioConfig(com.google.cloud.texttospeech.v1beta1.AudioConfig value) {
       if (audioConfigBuilder_ == null) {
@@ -1121,7 +1185,9 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
      * Required. The configuration of the synthesized audio.
      * </pre>
      *
-     * <code>.google.cloud.texttospeech.v1beta1.AudioConfig audio_config = 3;</code>
+     * <code>
+     * .google.cloud.texttospeech.v1beta1.AudioConfig audio_config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearAudioConfig() {
       if (audioConfigBuilder_ == null) {
@@ -1141,7 +1207,9 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
      * Required. The configuration of the synthesized audio.
      * </pre>
      *
-     * <code>.google.cloud.texttospeech.v1beta1.AudioConfig audio_config = 3;</code>
+     * <code>
+     * .google.cloud.texttospeech.v1beta1.AudioConfig audio_config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.texttospeech.v1beta1.AudioConfig.Builder getAudioConfigBuilder() {
 
@@ -1155,7 +1223,9 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
      * Required. The configuration of the synthesized audio.
      * </pre>
      *
-     * <code>.google.cloud.texttospeech.v1beta1.AudioConfig audio_config = 3;</code>
+     * <code>
+     * .google.cloud.texttospeech.v1beta1.AudioConfig audio_config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.texttospeech.v1beta1.AudioConfigOrBuilder getAudioConfigOrBuilder() {
       if (audioConfigBuilder_ != null) {
@@ -1173,7 +1243,9 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
      * Required. The configuration of the synthesized audio.
      * </pre>
      *
-     * <code>.google.cloud.texttospeech.v1beta1.AudioConfig audio_config = 3;</code>
+     * <code>
+     * .google.cloud.texttospeech.v1beta1.AudioConfig audio_config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.texttospeech.v1beta1.AudioConfig,

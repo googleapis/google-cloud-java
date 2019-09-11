@@ -145,7 +145,7 @@ public class TextToSpeechClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns a list of [Voice][google.cloud.texttospeech.v1beta1.Voice] supported for synthesis.
+   * Returns a list of Voice supported for synthesis.
    *
    * <p>Sample code:
    *
@@ -156,7 +156,7 @@ public class TextToSpeechClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param languageCode Optional (but recommended)
+   * @param languageCode Optional. Recommended.
    *     [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag. If specified, the
    *     ListVoices call will only return voices that can be used to synthesize this language_code.
    *     E.g. when specifying "en-NZ", you will get supported "en-&#42;" voices; when specifying
@@ -174,7 +174,7 @@ public class TextToSpeechClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns a list of [Voice][google.cloud.texttospeech.v1beta1.Voice] supported for synthesis.
+   * Returns a list of Voice supported for synthesis.
    *
    * <p>Sample code:
    *
@@ -194,7 +194,7 @@ public class TextToSpeechClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns a list of [Voice][google.cloud.texttospeech.v1beta1.Voice] supported for synthesis.
+   * Returns a list of Voice supported for synthesis.
    *
    * <p>Sample code:
    *
