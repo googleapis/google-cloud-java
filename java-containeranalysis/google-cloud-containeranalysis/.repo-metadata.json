@@ -1,0 +1,13 @@
+{
+  "name": "containeranalysis",
+  "name_pretty": "Cloud Container Analysis",
+  "product_documentation": "https://cloud.google.com/container-registry/docs/container-analysis",
+  "client_documentation": "https://googleapis.dev/java/google-cloud-clients/latest/index.html?com/google/cloud/devtools/containeranalysis/v1/package-summary.html",
+  "issue_tracker": "https://issuetracker.google.com/savedsearches/559777",
+  "release_level": "beta",
+  "language": "java",
+  "repo": "googleapis/google-cloud-java",
+  "repo_short": "google-cloud-java",
+  "distribution_name": "com.google.cloud:google-cloud-containeranalysis",
+  "api_id": "containeranalysis.googleapis.com"
+}
