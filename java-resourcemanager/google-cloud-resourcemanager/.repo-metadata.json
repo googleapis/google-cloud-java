@@ -1,0 +1,13 @@
+{
+  "name": "cloudresourcemanager",
+  "name_pretty": "Google Cloud Resource Manager API",
+  "product_documentation": "https://cloud.google.com/resource-manager",
+  "client_documentation": "https://googleapis.dev/java/google-cloud-clients/latest/index.html?com/google/cloud/resourcemanager/package-summary.html",
+  "issue_tracker": "https://issuetracker.google.com/savedsearches/559757",
+  "release_level": "alpha",
+  "language": "java",
+  "repo": "googleapis/google-cloud-java",
+  "repo_short": "google-cloud-java",
+  "distribution_name": "com.google.cloud:google-cloud-resourcemanager",
+  "api_id": "cloudresourcemanager.googleapis.com"
+}
