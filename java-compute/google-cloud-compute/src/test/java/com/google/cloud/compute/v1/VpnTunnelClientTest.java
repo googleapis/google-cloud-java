@@ -250,6 +250,9 @@ public class VpnTunnelClientTest {
     Integer ikeVersion = 1292118044;
     String kind = "kind3292052";
     String name = "name3373707";
+    String peerExternalGateway = "peerExternalGateway384956173";
+    Integer peerExternalGatewayInterface = 620973433;
+    String peerGcpGateway = "peerGcpGateway281867452";
     String peerIp = "peerIp-690492124";
     ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     ProjectRegionRouterName router =
@@ -260,6 +263,9 @@ public class VpnTunnelClientTest {
     String status = "status-892481550";
     ProjectRegionTargetVpnGatewayName targetVpnGateway =
         ProjectRegionTargetVpnGatewayName.of("[PROJECT]", "[REGION]", "[TARGET_VPN_GATEWAY]");
+    ProjectRegionVpnGatewayName vpnGateway =
+        ProjectRegionVpnGatewayName.of("[PROJECT]", "[REGION]", "[VPN_GATEWAY]");
+    Integer vpnGatewayInterface = 632850035;
     VpnTunnel expectedResponse =
         VpnTunnel.newBuilder()
             .setCreationTimestamp(creationTimestamp)
@@ -269,6 +275,9 @@ public class VpnTunnelClientTest {
             .setIkeVersion(ikeVersion)
             .setKind(kind)
             .setName(name)
+            .setPeerExternalGateway(peerExternalGateway)
+            .setPeerExternalGatewayInterface(peerExternalGatewayInterface)
+            .setPeerGcpGateway(peerGcpGateway)
             .setPeerIp(peerIp)
             .setRegion(region.toString())
             .setRouter(router.toString())
@@ -277,6 +286,8 @@ public class VpnTunnelClientTest {
             .setSharedSecretHash(sharedSecretHash)
             .setStatus(status)
             .setTargetVpnGateway(targetVpnGateway.toString())
+            .setVpnGateway(vpnGateway.toString())
+            .setVpnGatewayInterface(vpnGatewayInterface)
             .build();
     mockService.addResponse(expectedResponse);
 

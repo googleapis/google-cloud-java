@@ -31,6 +31,7 @@ import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchNetworkHttpRequest;
 import com.google.cloud.compute.v1.RemovePeeringNetworkHttpRequest;
 import com.google.cloud.compute.v1.SwitchToCustomModeNetworkHttpRequest;
+import com.google.cloud.compute.v1.UpdatePeeringNetworkHttpRequest;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
@@ -88,6 +89,11 @@ public abstract class NetworkStub implements BackgroundResource {
   public UnaryCallable<SwitchToCustomModeNetworkHttpRequest, Operation>
       switchToCustomModeNetworkCallable() {
     throw new UnsupportedOperationException("Not implemented: switchToCustomModeNetworkCallable()");
+  }
+
+  @BetaApi
+  public UnaryCallable<UpdatePeeringNetworkHttpRequest, Operation> updatePeeringNetworkCallable() {
+    throw new UnsupportedOperationException("Not implemented: updatePeeringNetworkCallable()");
   }
 
   @Override
