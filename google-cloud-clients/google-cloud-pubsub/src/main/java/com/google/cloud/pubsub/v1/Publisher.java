@@ -571,7 +571,7 @@ public class Publisher {
     static final Duration DEFAULT_DELAY_THRESHOLD = Duration.ofMillis(1);
     private static final Duration DEFAULT_INITIAL_RPC_TIMEOUT = Duration.ofSeconds(5);
     private static final Duration DEFAULT_MAX_RPC_TIMEOUT = Duration.ofSeconds(600);
-    private static final Duration DEFAULT_TOTAL_TIMEOUT = MIN_TOTAL_TIMEOUT;
+    private static final Duration DEFAULT_TOTAL_TIMEOUT = Duration.ofSeconds(600);
     static final BatchingSettings DEFAULT_BATCHING_SETTINGS =
         BatchingSettings.newBuilder()
             .setDelayThreshold(DEFAULT_DELAY_THRESHOLD)
