@@ -1,0 +1,13 @@
+{
+  "name": "phishingprotection",
+  "name_pretty": "Phishing Protection",
+  "product_documentation": "https://cloud.google.com/phishing-protection/docs/",
+  "client_documentation": "https://googleapis.dev/java/google-cloud-clients/latest/index.html?com/google/cloud/phishingprotection/v1beta1/package-summary.html",
+  "issue_tracker": "",
+  "release_level": "beta",
+  "language": "java",
+  "repo": "googleapis/google-cloud-java",
+  "repo_short": "google-cloud-java",
+  "distribution_name": "com.google.cloud:google-cloud-phishingprotection",
+  "api_id": "phishingprotection.googleapis.com"
+}
