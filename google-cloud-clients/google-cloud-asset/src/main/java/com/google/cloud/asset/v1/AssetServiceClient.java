@@ -38,11 +38,11 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
- *   ProjectName parent = ProjectName.of("[PROJECT]");
+ *   String parent = "";
  *   ContentType contentType = ContentType.CONTENT_TYPE_UNSPECIFIED;
  *   TimeWindow readTimeWindow = TimeWindow.newBuilder().build();
  *   BatchGetAssetsHistoryRequest request = BatchGetAssetsHistoryRequest.newBuilder()
- *     .setParent(parent.toString())
+ *     .setParent(parent)
  *     .setContentType(contentType)
  *     .setReadTimeWindow(readTimeWindow)
  *     .build();
@@ -178,10 +178,10 @@ public class AssetServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   String parent = "";
    *   OutputConfig outputConfig = OutputConfig.newBuilder().build();
    *   ExportAssetsRequest request = ExportAssetsRequest.newBuilder()
-   *     .setParent(parent.toString())
+   *     .setParent(parent)
    *     .setOutputConfig(outputConfig)
    *     .build();
    *   ExportAssetsResponse response = assetServiceClient.exportAssetsAsync(request).get();
@@ -209,10 +209,10 @@ public class AssetServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   String parent = "";
    *   OutputConfig outputConfig = OutputConfig.newBuilder().build();
    *   ExportAssetsRequest request = ExportAssetsRequest.newBuilder()
-   *     .setParent(parent.toString())
+   *     .setParent(parent)
    *     .setOutputConfig(outputConfig)
    *     .build();
    *   OperationFuture&lt;ExportAssetsResponse, ExportAssetsRequest&gt; future = assetServiceClient.exportAssetsOperationCallable().futureCall(request);
@@ -238,10 +238,10 @@ public class AssetServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   String parent = "";
    *   OutputConfig outputConfig = OutputConfig.newBuilder().build();
    *   ExportAssetsRequest request = ExportAssetsRequest.newBuilder()
-   *     .setParent(parent.toString())
+   *     .setParent(parent)
    *     .setOutputConfig(outputConfig)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = assetServiceClient.exportAssetsCallable().futureCall(request);
@@ -266,11 +266,11 @@ public class AssetServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   String parent = "";
    *   ContentType contentType = ContentType.CONTENT_TYPE_UNSPECIFIED;
    *   TimeWindow readTimeWindow = TimeWindow.newBuilder().build();
    *   BatchGetAssetsHistoryRequest request = BatchGetAssetsHistoryRequest.newBuilder()
-   *     .setParent(parent.toString())
+   *     .setParent(parent)
    *     .setContentType(contentType)
    *     .setReadTimeWindow(readTimeWindow)
    *     .build();
@@ -298,11 +298,11 @@ public class AssetServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   String parent = "";
    *   ContentType contentType = ContentType.CONTENT_TYPE_UNSPECIFIED;
    *   TimeWindow readTimeWindow = TimeWindow.newBuilder().build();
    *   BatchGetAssetsHistoryRequest request = BatchGetAssetsHistoryRequest.newBuilder()
-   *     .setParent(parent.toString())
+   *     .setParent(parent)
    *     .setContentType(contentType)
    *     .setReadTimeWindow(readTimeWindow)
    *     .build();

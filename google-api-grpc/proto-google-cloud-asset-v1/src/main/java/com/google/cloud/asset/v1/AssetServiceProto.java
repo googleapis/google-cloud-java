@@ -36,6 +36,10 @@ public final class AssetServiceProto {
       internal_static_google_cloud_asset_v1_GcsDestination_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_asset_v1_GcsDestination_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_asset_v1_BigQueryDestination_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_asset_v1_BigQueryDestination_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -50,40 +54,48 @@ public final class AssetServiceProto {
           + "nnotations.proto\032\"google/cloud/asset/v1/"
           + "assets.proto\032#google/longrunning/operati"
           + "ons.proto\032\037google/protobuf/timestamp.pro"
-          + "to\"\337\001\n\023ExportAssetsRequest\022\016\n\006parent\030\001 \001"
-          + "(\t\022-\n\tread_time\030\002 \001(\0132\032.google.protobuf."
-          + "Timestamp\022\023\n\013asset_types\030\003 \003(\t\0228\n\014conten"
-          + "t_type\030\004 \001(\0162\".google.cloud.asset.v1.Con"
-          + "tentType\022:\n\routput_config\030\005 \001(\0132#.google"
-          + ".cloud.asset.v1.OutputConfig\"\201\001\n\024ExportA"
-          + "ssetsResponse\022-\n\tread_time\030\001 \001(\0132\032.googl"
-          + "e.protobuf.Timestamp\022:\n\routput_config\030\002 "
-          + "\001(\0132#.google.cloud.asset.v1.OutputConfig"
-          + "\"\272\001\n\034BatchGetAssetsHistoryRequest\022\016\n\006par"
-          + "ent\030\001 \001(\t\022\023\n\013asset_names\030\002 \003(\t\0228\n\014conten"
-          + "t_type\030\003 \001(\0162\".google.cloud.asset.v1.Con"
-          + "tentType\022;\n\020read_time_window\030\004 \001(\0132!.goo"
-          + "gle.cloud.asset.v1.TimeWindow\"U\n\035BatchGe"
-          + "tAssetsHistoryResponse\0224\n\006assets\030\001 \003(\0132$"
-          + ".google.cloud.asset.v1.TemporalAsset\"_\n\014"
-          + "OutputConfig\022@\n\017gcs_destination\030\001 \001(\0132%."
-          + "google.cloud.asset.v1.GcsDestinationH\000B\r"
-          + "\n\013destination\"-\n\016GcsDestination\022\r\n\003uri\030\001"
-          + " \001(\tH\000B\014\n\nobject_uri*I\n\013ContentType\022\034\n\030C"
-          + "ONTENT_TYPE_UNSPECIFIED\020\000\022\014\n\010RESOURCE\020\001\022"
-          + "\016\n\nIAM_POLICY\020\0022\311\002\n\014AssetService\022\203\001\n\014Exp"
-          + "ortAssets\022*.google.cloud.asset.v1.Export"
-          + "AssetsRequest\032\035.google.longrunning.Opera"
-          + "tion\"(\202\323\344\223\002\"\"\035/v1/{parent=*/*}:exportAss"
-          + "ets:\001*\022\262\001\n\025BatchGetAssetsHistory\0223.googl"
-          + "e.cloud.asset.v1.BatchGetAssetsHistoryRe"
-          + "quest\0324.google.cloud.asset.v1.BatchGetAs"
-          + "setsHistoryResponse\".\202\323\344\223\002(\022&/v1/{parent"
-          + "=*/*}:batchGetAssetsHistoryB\234\001\n\031com.goog"
-          + "le.cloud.asset.v1B\021AssetServiceProtoP\001Z:"
-          + "google.golang.org/genproto/googleapis/cl"
-          + "oud/asset/v1;asset\252\002\025Google.Cloud.Asset."
-          + "V1\312\002\025Google\\Cloud\\Asset\\V1b\006proto3"
+          + "to\032\027google/api/client.proto\"\337\001\n\023ExportAs"
+          + "setsRequest\022\016\n\006parent\030\001 \001(\t\022-\n\tread_time"
+          + "\030\002 \001(\0132\032.google.protobuf.Timestamp\022\023\n\013as"
+          + "set_types\030\003 \003(\t\0228\n\014content_type\030\004 \001(\0162\"."
+          + "google.cloud.asset.v1.ContentType\022:\n\rout"
+          + "put_config\030\005 \001(\0132#.google.cloud.asset.v1"
+          + ".OutputConfig\"\201\001\n\024ExportAssetsResponse\022-"
+          + "\n\tread_time\030\001 \001(\0132\032.google.protobuf.Time"
+          + "stamp\022:\n\routput_config\030\002 \001(\0132#.google.cl"
+          + "oud.asset.v1.OutputConfig\"\272\001\n\034BatchGetAs"
+          + "setsHistoryRequest\022\016\n\006parent\030\001 \001(\t\022\023\n\013as"
+          + "set_names\030\002 \003(\t\0228\n\014content_type\030\003 \001(\0162\"."
+          + "google.cloud.asset.v1.ContentType\022;\n\020rea"
+          + "d_time_window\030\004 \001(\0132!.google.cloud.asset"
+          + ".v1.TimeWindow\"U\n\035BatchGetAssetsHistoryR"
+          + "esponse\0224\n\006assets\030\001 \003(\0132$.google.cloud.a"
+          + "sset.v1.TemporalAsset\"\253\001\n\014OutputConfig\022@"
+          + "\n\017gcs_destination\030\001 \001(\0132%.google.cloud.a"
+          + "sset.v1.GcsDestinationH\000\022J\n\024bigquery_des"
+          + "tination\030\002 \001(\0132*.google.cloud.asset.v1.B"
+          + "igQueryDestinationH\000B\r\n\013destination\"C\n\016G"
+          + "csDestination\022\r\n\003uri\030\001 \001(\tH\000\022\024\n\nuri_pref"
+          + "ix\030\002 \001(\tH\000B\014\n\nobject_uri\"D\n\023BigQueryDest"
+          + "ination\022\017\n\007dataset\030\001 \001(\t\022\r\n\005table\030\002 \001(\t\022"
+          + "\r\n\005force\030\003 \001(\010*l\n\013ContentType\022\034\n\030CONTENT"
+          + "_TYPE_UNSPECIFIED\020\000\022\014\n\010RESOURCE\020\001\022\016\n\nIAM"
+          + "_POLICY\020\002\022\016\n\nORG_POLICY\020\004\022\021\n\rACCESS_POLI"
+          + "CY\020\0052\230\003\n\014AssetService\022\203\001\n\014ExportAssets\022*"
+          + ".google.cloud.asset.v1.ExportAssetsReque"
+          + "st\032\035.google.longrunning.Operation\"(\202\323\344\223\002"
+          + "\"\"\035/v1/{parent=*/*}:exportAssets:\001*\022\262\001\n\025"
+          + "BatchGetAssetsHistory\0223.google.cloud.ass"
+          + "et.v1.BatchGetAssetsHistoryRequest\0324.goo"
+          + "gle.cloud.asset.v1.BatchGetAssetsHistory"
+          + "Response\".\202\323\344\223\002(\022&/v1/{parent=*/*}:batch"
+          + "GetAssetsHistory\032M\312A\031cloudasset.googleap"
+          + "is.com\322A.https://www.googleapis.com/auth"
+          + "/cloud-platformB\234\001\n\031com.google.cloud.ass"
+          + "et.v1B\021AssetServiceProtoP\001Z:google.golan"
+          + "g.org/genproto/googleapis/cloud/asset/v1"
+          + ";asset\252\002\025Google.Cloud.Asset.V1\312\002\025Google\\"
+          + "Cloud\\Asset\\V1b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -100,6 +112,7 @@ public final class AssetServiceProto {
           com.google.cloud.asset.v1.AssetProto.getDescriptor(),
           com.google.longrunning.OperationsProto.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
+          com.google.api.ClientProto.getDescriptor(),
         },
         assigner);
     internal_static_google_cloud_asset_v1_ExportAssetsRequest_descriptor =
@@ -140,7 +153,7 @@ public final class AssetServiceProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_asset_v1_OutputConfig_descriptor,
             new java.lang.String[] {
-              "GcsDestination", "Destination",
+              "GcsDestination", "BigqueryDestination", "Destination",
             });
     internal_static_google_cloud_asset_v1_GcsDestination_descriptor =
         getDescriptor().getMessageTypes().get(5);
@@ -148,17 +161,28 @@ public final class AssetServiceProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_asset_v1_GcsDestination_descriptor,
             new java.lang.String[] {
-              "Uri", "ObjectUri",
+              "Uri", "UriPrefix", "ObjectUri",
+            });
+    internal_static_google_cloud_asset_v1_BigQueryDestination_descriptor =
+        getDescriptor().getMessageTypes().get(6);
+    internal_static_google_cloud_asset_v1_BigQueryDestination_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_asset_v1_BigQueryDestination_descriptor,
+            new java.lang.String[] {
+              "Dataset", "Table", "Force",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.ClientProto.defaultHost);
     registry.add(com.google.api.AnnotationsProto.http);
+    registry.add(com.google.api.ClientProto.oauthScopes);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.AnnotationsProto.getDescriptor();
     com.google.cloud.asset.v1.AssetProto.getDescriptor();
     com.google.longrunning.OperationsProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
+    com.google.api.ClientProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

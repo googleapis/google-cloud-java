@@ -122,4 +122,96 @@ public interface AssetOrBuilder
    * <code>.google.iam.v1.Policy iam_policy = 4;</code>
    */
   com.google.iam.v1.PolicyOrBuilder getIamPolicyOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Representation of the Cloud Organization Policy set on an asset. For each
+   * asset, there could be multiple Organization policies with different
+   * constraints.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.orgpolicy.v1.Policy org_policy = 6;</code>
+   */
+  java.util.List<com.google.cloud.orgpolicy.v1.Policy> getOrgPolicyList();
+  /**
+   *
+   *
+   * <pre>
+   * Representation of the Cloud Organization Policy set on an asset. For each
+   * asset, there could be multiple Organization policies with different
+   * constraints.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.orgpolicy.v1.Policy org_policy = 6;</code>
+   */
+  com.google.cloud.orgpolicy.v1.Policy getOrgPolicy(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Representation of the Cloud Organization Policy set on an asset. For each
+   * asset, there could be multiple Organization policies with different
+   * constraints.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.orgpolicy.v1.Policy org_policy = 6;</code>
+   */
+  int getOrgPolicyCount();
+  /**
+   *
+   *
+   * <pre>
+   * Representation of the Cloud Organization Policy set on an asset. For each
+   * asset, there could be multiple Organization policies with different
+   * constraints.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.orgpolicy.v1.Policy org_policy = 6;</code>
+   */
+  java.util.List<? extends com.google.cloud.orgpolicy.v1.PolicyOrBuilder>
+      getOrgPolicyOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Representation of the Cloud Organization Policy set on an asset. For each
+   * asset, there could be multiple Organization policies with different
+   * constraints.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.orgpolicy.v1.Policy org_policy = 6;</code>
+   */
+  com.google.cloud.orgpolicy.v1.PolicyOrBuilder getOrgPolicyOrBuilder(int index);
+
+  /** <code>.google.identity.accesscontextmanager.v1.AccessPolicy access_policy = 7;</code> */
+  boolean hasAccessPolicy();
+  /** <code>.google.identity.accesscontextmanager.v1.AccessPolicy access_policy = 7;</code> */
+  com.google.identity.accesscontextmanager.v1.AccessPolicy getAccessPolicy();
+  /** <code>.google.identity.accesscontextmanager.v1.AccessPolicy access_policy = 7;</code> */
+  com.google.identity.accesscontextmanager.v1.AccessPolicyOrBuilder getAccessPolicyOrBuilder();
+
+  /** <code>.google.identity.accesscontextmanager.v1.AccessLevel access_level = 8;</code> */
+  boolean hasAccessLevel();
+  /** <code>.google.identity.accesscontextmanager.v1.AccessLevel access_level = 8;</code> */
+  com.google.identity.accesscontextmanager.v1.AccessLevel getAccessLevel();
+  /** <code>.google.identity.accesscontextmanager.v1.AccessLevel access_level = 8;</code> */
+  com.google.identity.accesscontextmanager.v1.AccessLevelOrBuilder getAccessLevelOrBuilder();
+
+  /**
+   * <code>.google.identity.accesscontextmanager.v1.ServicePerimeter service_perimeter = 9;</code>
+   */
+  boolean hasServicePerimeter();
+  /**
+   * <code>.google.identity.accesscontextmanager.v1.ServicePerimeter service_perimeter = 9;</code>
+   */
+  com.google.identity.accesscontextmanager.v1.ServicePerimeter getServicePerimeter();
+  /**
+   * <code>.google.identity.accesscontextmanager.v1.ServicePerimeter service_perimeter = 9;</code>
+   */
+  com.google.identity.accesscontextmanager.v1.ServicePerimeterOrBuilder
+      getServicePerimeterOrBuilder();
+
+  public com.google.cloud.asset.v1.Asset.AccessContextPolicyCase getAccessContextPolicyCase();
 }

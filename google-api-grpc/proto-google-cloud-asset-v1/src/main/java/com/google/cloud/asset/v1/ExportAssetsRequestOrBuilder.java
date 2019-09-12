@@ -83,8 +83,8 @@ public interface ExportAssetsRequestOrBuilder
    *
    * <pre>
    * A list of asset types of which to take a snapshot for. For example:
-   * "compute.googleapis.com/Disk". If specified, only matching assets will be returned.
-   * See [Introduction to Cloud Asset
+   * "compute.googleapis.com/Disk". If specified, only matching assets will be
+   * returned. See [Introduction to Cloud Asset
    * Inventory](https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/overview)
    * for all supported asset types.
    * </pre>
@@ -97,8 +97,8 @@ public interface ExportAssetsRequestOrBuilder
    *
    * <pre>
    * A list of asset types of which to take a snapshot for. For example:
-   * "compute.googleapis.com/Disk". If specified, only matching assets will be returned.
-   * See [Introduction to Cloud Asset
+   * "compute.googleapis.com/Disk". If specified, only matching assets will be
+   * returned. See [Introduction to Cloud Asset
    * Inventory](https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/overview)
    * for all supported asset types.
    * </pre>
@@ -111,8 +111,8 @@ public interface ExportAssetsRequestOrBuilder
    *
    * <pre>
    * A list of asset types of which to take a snapshot for. For example:
-   * "compute.googleapis.com/Disk". If specified, only matching assets will be returned.
-   * See [Introduction to Cloud Asset
+   * "compute.googleapis.com/Disk". If specified, only matching assets will be
+   * returned. See [Introduction to Cloud Asset
    * Inventory](https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/overview)
    * for all supported asset types.
    * </pre>
@@ -125,8 +125,8 @@ public interface ExportAssetsRequestOrBuilder
    *
    * <pre>
    * A list of asset types of which to take a snapshot for. For example:
-   * "compute.googleapis.com/Disk". If specified, only matching assets will be returned.
-   * See [Introduction to Cloud Asset
+   * "compute.googleapis.com/Disk". If specified, only matching assets will be
+   * returned. See [Introduction to Cloud Asset
    * Inventory](https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/overview)
    * for all supported asset types.
    * </pre>
