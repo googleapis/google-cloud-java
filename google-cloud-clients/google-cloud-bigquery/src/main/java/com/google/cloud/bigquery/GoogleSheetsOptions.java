@@ -43,7 +43,7 @@ public final class GoogleSheetsOptions extends FormatOptions {
      * [Optional] Range of a sheet to query from. Only used when non-empty. Typical format:
      * sheet_name!top_left_cell_id:bottom_right_cell_id For example: sheet1!A1:B20
      *
-     * @param range range or {@code null} for none
+     * @param range or {@code null} for none
      */
     public Builder setRange(String range) {
       this.range = range;
