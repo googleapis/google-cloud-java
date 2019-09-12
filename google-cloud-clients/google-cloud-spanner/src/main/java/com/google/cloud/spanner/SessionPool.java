@@ -1084,6 +1084,8 @@ final class SessionPool {
   @GuardedBy("lock")
   private final Set<PooledSession> allSessions = new HashSet<>();
 
+  private final SessionConsumer sessionConsumer = new SessionConsumerImpl();
+
   /**
    * Create a session pool with the given options and for the given database. It will also start
    * eagerly creating sessions if {@link SessionPoolOptions#getMinSessions()} is greater than 0.
@@ -1623,7 +1625,7 @@ final class SessionPool {
       numSessionsBeingCreated += sessionCount;
       try {
         // Create a batch of sessions. The actual session creation can be split into
-        // multiple gRPC calls and the sessions are returned by the enumerator as they come
+        // multiple gRPC calls and the sessions are returned to the consumer as they come
         // available. The batchCreateSessions method automatically spreads the sessions
         // evenly over all available channels.
         spanner.asyncBatchCreateSessions(db, sessionCount, sessionConsumer);
@@ -1639,9 +1641,13 @@ final class SessionPool {
     }
   }
 
-  private final SessionConsumer sessionConsumer = new SessionConsumerImpl();
-
+  /**
+   * {@link SessionConsumer} that receives the created sessions from a {@link SessionClient} and
+   * releases these into the pool. The session pool only needs one instance of this, as all sessions
+   * should be returned to the same pool regardless of what triggered the creation of the sessions.
+   */
   class SessionConsumerImpl implements SessionConsumer {
+    /** Release a new session to the pool. */
     @Override
     public void onSessionReady(SessionImpl session) {
       PooledSession pooledSession = null;
@@ -1665,6 +1671,10 @@ final class SessionPool {
       }
     }
 
+    /**
+     * Informs waiters for a session that session creation failed. The exception will propagate to
+     * the waiters as a {@link SpannerException}.
+     */
     @Override
     public void onSessionCreateFailure(Throwable t, int createFailureForSessionCount) {
       synchronized (lock) {
