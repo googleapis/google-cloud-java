@@ -32,9 +32,11 @@ public class ExtractJobConfigurationTest {
   private static final TableId TABLE_ID = TableId.of("dataset", "table");
   private static final String FIELD_DELIMITER = ",";
   private static final String FORMAT = "CSV";
+  private static final String AVRO_FORMAT = "AVRO";
   private static final String JSON_FORMAT = "NEWLINE_DELIMITED_JSON";
   private static final Boolean PRINT_HEADER = true;
   private static final String COMPRESSION = "GZIP";
+  private static final Boolean USEAVROLOGICALTYPES = true;
   private static final ExtractJobConfiguration EXTRACT_CONFIGURATION =
       ExtractJobConfiguration.newBuilder(TABLE_ID, DESTINATION_URIS)
           .setPrintHeader(PRINT_HEADER)
@@ -49,6 +51,14 @@ public class ExtractJobConfigurationTest {
           .setCompression(COMPRESSION)
           .setFormat(FORMAT)
           .build();
+  private static final ExtractJobConfiguration EXTRACT_CONFIGURATION_AVRO =
+      ExtractJobConfiguration.newBuilder(TABLE_ID, DESTINATION_URI)
+          .setPrintHeader(PRINT_HEADER)
+          .setFieldDelimiter(FIELD_DELIMITER)
+          .setCompression(COMPRESSION)
+          .setFormat(AVRO_FORMAT)
+          .setUseAvroLogicalTypes(USEAVROLOGICALTYPES)
+          .build();
 
   @Test
   public void testToBuilder() {
@@ -59,6 +69,16 @@ public class ExtractJobConfigurationTest {
     assertEquals("newTable", job.getSourceTable().getTable());
     job = job.toBuilder().setSourceTable(TABLE_ID).build();
     compareExtractJobConfiguration(EXTRACT_CONFIGURATION, job);
+    compareExtractJobConfiguration(
+        EXTRACT_CONFIGURATION_AVRO, EXTRACT_CONFIGURATION_AVRO.toBuilder().build());
+    ExtractJobConfiguration avroJob =
+        EXTRACT_CONFIGURATION_AVRO
+            .toBuilder()
+            .setSourceTable(TableId.of("dataset", "avroTable"))
+            .build();
+    assertEquals("avroTable", avroJob.getSourceTable().getTable());
+    avroJob = avroJob.toBuilder().setSourceTable(TABLE_ID).build();
+    compareExtractJobConfiguration(EXTRACT_CONFIGURATION_AVRO, avroJob);
   }
 
   @Test
@@ -100,6 +120,13 @@ public class ExtractJobConfigurationTest {
     assertEquals(COMPRESSION, EXTRACT_CONFIGURATION_ONE_URI.getCompression());
     assertEquals(PRINT_HEADER, EXTRACT_CONFIGURATION_ONE_URI.printHeader());
     assertEquals(FORMAT, EXTRACT_CONFIGURATION_ONE_URI.getFormat());
+    assertEquals(
+        ImmutableList.of(DESTINATION_URI), EXTRACT_CONFIGURATION_AVRO.getDestinationUris());
+    assertEquals(FIELD_DELIMITER, EXTRACT_CONFIGURATION_AVRO.getFieldDelimiter());
+    assertEquals(COMPRESSION, EXTRACT_CONFIGURATION_AVRO.getCompression());
+    assertEquals(PRINT_HEADER, EXTRACT_CONFIGURATION_AVRO.printHeader());
+    assertEquals(AVRO_FORMAT, EXTRACT_CONFIGURATION_AVRO.getFormat());
+    assertEquals(USEAVROLOGICALTYPES, EXTRACT_CONFIGURATION_AVRO.getUseAvroLogicalTypes());
   }
 
   @Test
@@ -113,6 +140,9 @@ public class ExtractJobConfigurationTest {
     compareExtractJobConfiguration(
         EXTRACT_CONFIGURATION_ONE_URI,
         ExtractJobConfiguration.fromPb(EXTRACT_CONFIGURATION_ONE_URI.toPb()));
+    compareExtractJobConfiguration(
+        EXTRACT_CONFIGURATION_AVRO,
+        ExtractJobConfiguration.fromPb(EXTRACT_CONFIGURATION_AVRO.toPb()));
     ExtractJobConfiguration job = ExtractJobConfiguration.of(TABLE_ID, DESTINATION_URIS);
     compareExtractJobConfiguration(job, ExtractJobConfiguration.fromPb(job.toPb()));
   }
@@ -138,6 +168,7 @@ public class ExtractJobConfigurationTest {
   public void testGetType() {
     assertEquals(JobConfiguration.Type.EXTRACT, EXTRACT_CONFIGURATION.getType());
     assertEquals(JobConfiguration.Type.EXTRACT, EXTRACT_CONFIGURATION_ONE_URI.getType());
+    assertEquals(JobConfiguration.Type.EXTRACT, EXTRACT_CONFIGURATION_AVRO.getType());
   }
 
   private void compareExtractJobConfiguration(
