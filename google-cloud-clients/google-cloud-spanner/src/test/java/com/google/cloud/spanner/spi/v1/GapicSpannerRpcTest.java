@@ -34,6 +34,7 @@ import com.google.cloud.spanner.SpannerOptions;
 import com.google.cloud.spanner.Statement;
 import com.google.cloud.spanner.admin.database.v1.MockDatabaseAdminImpl;
 import com.google.cloud.spanner.admin.instance.v1.MockInstanceAdminImpl;
+import com.google.common.base.Stopwatch;
 import com.google.protobuf.ListValue;
 import com.google.spanner.admin.database.v1.Database;
 import com.google.spanner.admin.database.v1.DatabaseName;
@@ -51,6 +52,7 @@ import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 import java.util.regex.Pattern;
 import org.junit.After;
 import org.junit.Before;
@@ -170,13 +172,10 @@ public class GapicSpannerRpcTest {
       // Now close the Spanner instance and check whether the threads are shutdown or not.
       spanner.close();
       // Wait for up to two seconds to allow the threads to actually shutdown.
-      int totalWaits = 0;
-      while (true) {
-        Thread.sleep(100L);
-        if (getNumberOfThreadsWithName(SPANNER_THREAD_NAME, false) == 0 || totalWaits > 20) {
-          break;
-        }
-        totalWaits++;
+      Stopwatch watch = Stopwatch.createStarted();
+      while (getNumberOfThreadsWithName(SPANNER_THREAD_NAME, false) > 0
+          && watch.elapsed(TimeUnit.SECONDS) < 2) {
+        Thread.sleep(10L);
       }
       assertThat(getNumberOfThreadsWithName(SPANNER_THREAD_NAME, true), is(equalTo(0)));
     }
@@ -222,7 +221,11 @@ public class GapicSpannerRpcTest {
       spanner.close();
     }
     // Wait a little to allow the threads to actually shutdown.
-    Thread.sleep(500L);
+    Stopwatch watch = Stopwatch.createStarted();
+    while (getNumberOfThreadsWithName(SPANNER_THREAD_NAME, false) > 0
+        && watch.elapsed(TimeUnit.SECONDS) < 2) {
+      Thread.sleep(10L);
+    }
     assertThat(getNumberOfThreadsWithName(SPANNER_THREAD_NAME, true), is(equalTo(0)));
   }
 
