@@ -113,23 +113,23 @@ public class PublisherSnippets {
       throws Exception {
     // [START pubsub_publisher_retry_settings]
     // Retry settings control how the publisher handles retryable failures
-    Duration totalTimeout = Duration.ofSeconds(600); // default: 10 minutes
     Duration retryDelay = Duration.ofMillis(100); // default: 100 ms
     double retryDelayMultiplier = 2.0; // back off for repeated failures, default: 1.3
     Duration maxRetryDelay = Duration.ofSeconds(60); // default : 1 minute
     Duration initialRpcTimeout = Duration.ofSeconds(1); // default: 5 seconds
     double rpcTimeoutMultiplier = 1.0; // default: 1.0
     Duration maxRpcTimeout = Duration.ofSeconds(600); // default: 10 minutes
+    Duration totalTimeout = Duration.ofSeconds(600); // default: 10 minutes
 
     RetrySettings retrySettings =
         RetrySettings.newBuilder()
-            .setTotalTimeout(totalTimeout)
             .setInitialRetryDelay(retryDelay)
             .setRetryDelayMultiplier(retryDelayMultiplier)
             .setMaxRetryDelay(maxRetryDelay)
             .setInitialRpcTimeout(initialRpcTimeout)
             .setRpcTimeoutMultiplier(rpcTimeoutMultiplier)
             .setMaxRpcTimeout(maxRpcTimeout)
+            .setTotalTimeout(totalTimeout)
             .build();
 
     Publisher publisher = Publisher.newBuilder(topicName).setRetrySettings(retrySettings).build();
