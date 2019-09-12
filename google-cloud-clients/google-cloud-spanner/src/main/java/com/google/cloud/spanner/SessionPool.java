@@ -1624,10 +1624,10 @@ final class SessionPool {
     synchronized (lock) {
       numSessionsBeingCreated += sessionCount;
       try {
-        // Create a batch of sessions. The actual session creation can be split into
-        // multiple gRPC calls and the sessions are returned to the consumer as they come
-        // available. The batchCreateSessions method automatically spreads the sessions
-        // evenly over all available channels.
+        // Create a batch of sessions. The actual session creation can be split into multiple gRPC
+        // calls and the session consumer consumes the returned sessions as they become available.
+        // The batchCreateSessions method automatically spreads the sessions evenly over all
+        // available channels.
         spanner.asyncBatchCreateSessions(db, sessionCount, sessionConsumer);
         logger.log(Level.FINE, "Sessions created");
       } catch (Throwable t) {
@@ -1660,9 +1660,9 @@ final class SessionPool {
         } else {
           Preconditions.checkState(totalSessions() <= options.getMaxSessions() - 1);
           allSessions.add(pooledSession);
-          // Release the session to a random position in the pool to prevent that a
-          // batch of sessions that are affiliated with the same channel are all placed
-          // sequentially in the pool.
+          // Release the session to a random position in the pool to prevent the case that a batch
+          // of sessions that are affiliated with the same channel are all placed sequentially in
+          // the pool.
           releaseSession(pooledSession, Position.RANDOM);
         }
       }

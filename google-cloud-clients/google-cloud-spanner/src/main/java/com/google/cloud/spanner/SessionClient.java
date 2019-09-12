@@ -151,8 +151,8 @@ class SessionClient implements AutoCloseable {
   }
 
   /**
-   * Callback interface to be used for BatchCreateSessions. When sessions come available or session
-   * creation fails, one of the callback methods will be called.
+   * Callback interface to be used for BatchCreateSessions. When sessions become available or
+   * session creation fails, one of the callback methods will be called.
    */
   static interface SessionConsumer {
     /** Called when a session has been created and is ready for use. */

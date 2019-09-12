@@ -601,12 +601,8 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
       batchCreateSessionsExecutionTime.simulateExecutionTime(exceptions, freezeLock);
       Timestamp now = getCurrentGoogleTimestamp();
       BatchCreateSessionsResponse.Builder response = BatchCreateSessionsResponse.newBuilder();
-      for (int i = 0;
-          i
-              < Math.min(
-                  maxTotalSessions - sessions.size(),
-                  Math.min(maxNumSessionsInOneBatch, request.getSessionCount()));
-          i++) {
+      int maxSessionsToCreate = Math.min(maxNumSessionsInOneBatch, request.getSessionCount());
+      for (int i = 0; i < Math.min(maxTotalSessions - sessions.size(), maxSessionsToCreate); i++) {
         name = generateSessionName(request.getDatabase());
         Session session =
             Session.newBuilder()

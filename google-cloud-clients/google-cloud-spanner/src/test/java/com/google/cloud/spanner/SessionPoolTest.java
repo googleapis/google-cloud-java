@@ -1261,22 +1261,20 @@ public class SessionPoolTest extends BaseSessionPoolTest {
                   public Integer run(TransactionContext transaction) throws Exception {
                     callNumber++;
                     if (hasPreparedTransaction) {
-                      // If the session had a prepared read/write transaction, that transaction
-                      // will be given to the runner in the first place and the
-                      // SessionNotFoundException will occur on the first query / update statement.
+                      // If the session had a prepared read/write transaction, that transaction will
+                      // be given to the runner in the first place and the SessionNotFoundException
+                      // will occur on the first query / update statement.
                       if (callNumber == 1) {
                         assertThat(transaction).isEqualTo(closedTransactionContext);
                       } else {
                         assertThat(transaction).isEqualTo(openTransactionContext);
                       }
                     } else {
-                      // If the session did not have a prepared read/write transaction, the
-                      // library
+                      // If the session did not have a prepared read/write transaction, the library
                       // tried to create a new transaction before handing it to the transaction
-                      // runner.
-                      // The creation of the new transaction failed with a
-                      // SessionNotFoundException,
-                      // and the session was re-created before the run method was called.
+                      // runner. The creation of the new transaction failed with a
+                      // SessionNotFoundException, and the session was re-created before the run
+                      // method was called.
                       assertThat(transaction).isEqualTo(openTransactionContext);
                     }
                     switch (executeStatementType) {
@@ -1313,9 +1311,8 @@ public class SessionPoolTest extends BaseSessionPoolTest {
                 });
           } catch (Exception e) {
             // The rollback will also cause a SessionNotFoundException, but this is caught, logged
-            // and
-            // further ignored by the library, meaning that the session will not be re-created for
-            // retry. Hence rollback at call 1.
+            // and further ignored by the library, meaning that the session will not be re-created
+            // for retry. Hence rollback at call 1.
             assertThat(
                     executeStatementType == ReadWriteTransactionTestStatementType.EXCEPTION
                         && e.getMessage().contains("rollback at call 1"))

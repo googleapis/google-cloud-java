@@ -168,7 +168,8 @@ public class BatchCreateSessionsTest {
   }
 
   @Test
-  public void testSpannerReturnsNoSessions() throws InterruptedException {
+  public void testSpannerReturnsAllAvailableSessionsAndThenNoSessions()
+      throws InterruptedException {
     int minSessions = 1000;
     int maxSessions = 1000;
     // Set a maximum number of sessions that will be created by the server.
@@ -196,6 +197,7 @@ public class BatchCreateSessionsTest {
       // Wait a little more. No more sessions should be created, as the previous attempts should
       // have given up by now.
       Thread.sleep(20L);
+      assertThat(client.pool.totalSessions(), is(equalTo(maxServerSessions)));
     }
     // Verify that all sessions have been deleted.
     assertThat(client.pool.totalSessions(), is(equalTo(0)));

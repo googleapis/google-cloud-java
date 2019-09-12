@@ -326,8 +326,8 @@ public class SessionClientTest {
           @Override
           public void onSessionCreateFailure(Throwable t, int createFailureForSessionCount) {}
         };
-    // We want 100 sessions, but each rpc will only return 5. We should still get 100 sessions from
-    // the enumerator.
+    // We want 100 sessions, but each rpc will only return 5. The consumer should still get 100
+    // sessions.
     final int numSessions = 100;
     try (SessionClient client = new SessionClient(spanner, db, new TestExecutorFactory())) {
       client.asyncBatchCreateSessions(numSessions, consumer);
