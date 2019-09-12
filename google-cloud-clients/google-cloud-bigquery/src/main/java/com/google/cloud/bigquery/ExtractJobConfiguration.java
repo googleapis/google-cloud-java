@@ -197,13 +197,7 @@ public final class ExtractJobConfiguration extends JobConfiguration {
     return compression;
   }
 
-  /**
-   * [Optional] If destinationFormat is set to "AVRO", this flag indicates whether to enable
-   * extracting applicable column types (such as TIMESTAMP) to their corresponding AVRO logical
-   * types (timestamp-micros), instead of only using their raw types (avro-long).
-   *
-   * @return value or {@code null} for none
-   */
+  /** Returns True/False. Indicates whether the AVRO logical types is interpreted. */
   public Boolean getUseAvroLogicalTypes() {
     return useAvroLogicalTypes;
   }
