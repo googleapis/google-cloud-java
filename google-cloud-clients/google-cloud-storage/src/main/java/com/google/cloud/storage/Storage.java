@@ -1036,6 +1036,7 @@ public interface Storage extends Service<StorageOptions> {
       SERVICE_ACCOUNT_CRED,
       SIGNATURE_VERSION,
       HOST_NAME,
+      PATH_STYLE,
       VIRTUAL_HOST_NAME
     }
 
@@ -1156,6 +1157,16 @@ public interface Storage extends Service<StorageOptions> {
      */
     public static SignUrlOption withVirtualHostName() {
       return new SignUrlOption(Option.VIRTUAL_HOST_NAME, "");
+    }
+
+    /**
+     * Generate a path-style URL, which places the bucket name in the path portion of the URL
+     * instead of in the hostname. Note that this cannot be used alongside {@code
+     * withVirtualHostName()}. Virtual hosted-style URLs, which can be used via the {@code
+     * withVirtualHostName()} method, should generally be preferred instead.
+     */
+    public static SignUrlOption withPathStyle() {
+      return new SignUrlOption(Option.PATH_STYLE, "");
     }
   }
 
