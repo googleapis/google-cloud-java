@@ -180,7 +180,6 @@ public class BatchCreateSessionsTest {
     mockSpanner.setMaxTotalSessions(maxServerSessions);
     try (Spanner spanner = createSpanner(minSessions, maxSessions)) {
       // Create a database client which will create a session pool.
-      // No sessions will be created at the moment as the server is frozen.
       client =
           (DatabaseClientImpl)
               spanner.getDatabaseClient(DatabaseId.of("[PROJECT]", "[INSTANCE]", "[DATABASE]"));
@@ -190,12 +189,17 @@ public class BatchCreateSessionsTest {
         Thread.sleep(10L);
       }
       assertThat(client.pool.totalSessions(), is(equalTo(maxServerSessions)));
-      // Wait a little to allow additional session creation to be attempted.
-      Thread.sleep(20L);
+      // Wait until the pool has given up creating sessions.
+      watch = watch.reset();
+      watch.start();
+      while (client.pool.getNumberOfSessionsBeingCreated() > 0
+          && watch.elapsed(TimeUnit.SECONDS) < 10) {
+        Thread.sleep(10L);
+      }
       // Remove the max server sessions limit.
       mockSpanner.setMaxTotalSessions(Integer.MAX_VALUE);
-      // Wait a little more. No more sessions should be created, as the previous attempts should
-      // have given up by now.
+      // Wait a little. No more sessions should be created, as the previous requests have given up,
+      // and no new sessions have been requested from the pool.
       Thread.sleep(20L);
       assertThat(client.pool.totalSessions(), is(equalTo(maxServerSessions)));
     }

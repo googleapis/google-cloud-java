@@ -1151,6 +1151,13 @@ final class SessionPool {
   }
 
   @VisibleForTesting
+  int getNumberOfSessionsBeingCreated() {
+    synchronized (lock) {
+      return numSessionsBeingCreated;
+    }
+  }
+
+  @VisibleForTesting
   long getNumWaiterTimeouts() {
     return numWaiterTimeouts.get();
   }
