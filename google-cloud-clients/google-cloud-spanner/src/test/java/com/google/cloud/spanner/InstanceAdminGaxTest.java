@@ -230,10 +230,11 @@ public class InstanceAdminGaxTest {
         RetrySettings.newBuilder()
             .setInitialRetryDelay(Duration.ofMillis(1L))
             .setMaxRetryDelay(Duration.ofMillis(1L))
-            .setInitialRpcTimeout(Duration.ofMillis(10L))
-            .setMaxRpcTimeout(Duration.ofMillis(10L))
-            .setMaxAttempts(3)
-            .setTotalTimeout(Duration.ofMillis(20L))
+            .setInitialRpcTimeout(Duration.ofMillis(20L))
+            .setMaxRpcTimeout(Duration.ofMillis(1000L))
+            .setRetryDelayMultiplier(2.0)
+            .setMaxAttempts(10)
+            .setTotalTimeout(Duration.ofMillis(200L))
             .build();
     RetrySettings retrySettingsWithHighTimeout =
         RetrySettings.newBuilder()
