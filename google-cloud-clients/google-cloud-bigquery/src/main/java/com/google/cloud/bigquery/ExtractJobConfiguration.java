@@ -197,7 +197,7 @@ public final class ExtractJobConfiguration extends JobConfiguration {
     return compression;
   }
 
-  /** Returns True/False. Indicates whether the AVRO logical types is interpreted. */
+  /** Returns True/False. Indicates whether exported avro files include logical type annotations. */
   public Boolean getUseAvroLogicalTypes() {
     return useAvroLogicalTypes;
   }
