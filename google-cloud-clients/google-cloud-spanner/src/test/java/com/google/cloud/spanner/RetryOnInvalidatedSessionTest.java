@@ -189,6 +189,7 @@ public class RetryOnInvalidatedSessionTest {
     mockSpanner.reset();
     SessionPoolOptions.Builder builder =
         SessionPoolOptions.newBuilder()
+            .setBlockIfPoolExhausted()
             .setMaxSessions(MAX_SESSIONS)
             .setWriteSessionsFraction(WRITE_SESSIONS_FRACTION);
     if (failOnInvalidatedSession) {

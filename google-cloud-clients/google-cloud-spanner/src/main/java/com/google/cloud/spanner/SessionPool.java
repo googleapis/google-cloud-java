@@ -888,6 +888,10 @@ final class SessionPool {
             numWaiterTimeouts.incrementAndGet();
             tracer.getCurrentSpan().setStatus(Status.DEADLINE_EXCEEDED);
             currentTimeout = Math.min(currentTimeout * 2, MAX_SESSION_WAIT_TIMEOUT);
+
+            // TODO: Remove
+            throw SpannerExceptionFactory.newSpannerException(
+                ErrorCode.DEADLINE_EXCEEDED, "timeout while waiting for session");
           } else {
             if (s.e != null) {
               throw newSpannerException(s.e);
@@ -1067,7 +1071,7 @@ final class SessionPool {
         // If we have gone below min pool size, create that many sessions.
         int sessionCount = options.getMinSessions() - (totalSessions() + numSessionsBeingCreated);
         if (sessionCount > 0) {
-          createSessions(sessionCount);
+          createSessions(getAllowedCreateSessions(sessionCount));
         }
       }
     }
@@ -1236,7 +1240,7 @@ final class SessionPool {
       }
       allSessions.remove(session);
       // replenish the pool.
-      createSessions(1);
+      createSessions(getAllowedCreateSessions(1));
     }
   }
 
