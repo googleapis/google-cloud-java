@@ -70,6 +70,7 @@ final class SessionPool {
   private static final Logger logger = Logger.getLogger(SessionPool.class.getName());
   private static final Tracer tracer = Tracing.getTracer();
   static final String WAIT_FOR_SESSION = "SessionPool.WaitForSession";
+  private static final int MAX_SESSION_REPLACES = 10;
 
   static {
     TraceUtil.exportSpans(WAIT_FOR_SESSION);
@@ -97,6 +98,7 @@ final class SessionPool {
     private final boolean isSingleUse;
     private boolean closed;
     private boolean sessionUsedForQuery = false;
+    private int sessionReplacedCount;
 
     private AutoClosingReadContext(
         Function<PooledSession, T> delegateSupplier,
@@ -181,6 +183,13 @@ final class SessionPool {
 
     private void replaceSessionIfPossible(SessionNotFoundException e) {
       if (isSingleUse || !sessionUsedForQuery) {
+        sessionReplacedCount++;
+        if (sessionReplacedCount > MAX_SESSION_REPLACES) {
+          throw SpannerExceptionFactory.newSpannerException(
+              e.getErrorCode(),
+              "Could not replace invalidated session because the maximum number of times the session may be replaced was exceeded",
+              e);
+        }
         // This class is only used by read-only transactions, so we know that we only need a
         // read-only session.
         session = sessionPool.replaceReadSession(e, session);
@@ -426,6 +435,7 @@ final class SessionPool {
     private PooledSession session;
     private boolean closed;
     private boolean restartedAfterSessionNotFound;
+    private int sessionReplacementCount;
 
     AutoClosingTransactionManager(SessionPool sessionPool, PooledSession session) {
       this.sessionPool = sessionPool;
@@ -439,6 +449,13 @@ final class SessionPool {
         try {
           return internalBegin();
         } catch (SessionNotFoundException e) {
+          sessionReplacementCount++;
+          if (sessionReplacementCount > MAX_SESSION_REPLACES) {
+            throw SpannerExceptionFactory.newSpannerException(
+                e.getErrorCode(),
+                "Could not replace invalidated session because the maximum number of times the session may be replaced was exceeded",
+                e);
+          }
           session = sessionPool.replaceReadWriteSession(e, session);
           delegate = session.delegate.transactionManager();
         }
@@ -452,6 +469,13 @@ final class SessionPool {
     }
 
     private SpannerException handleSessionNotFound(SessionNotFoundException e) {
+      sessionReplacementCount++;
+      if (sessionReplacementCount > MAX_SESSION_REPLACES) {
+        throw SpannerExceptionFactory.newSpannerException(
+            e.getErrorCode(),
+            "Could not replace invalidated session because the maximum number of times the session may be replaced was exceeded",
+            e);
+      }
       session = sessionPool.replaceReadWriteSession(e, session);
       delegate = session.delegate.transactionManager();
       restartedAfterSessionNotFound = true;
@@ -492,6 +516,13 @@ final class SessionPool {
             return new SessionPoolTransactionContext(delegate.resetForRetry());
           }
         } catch (SessionNotFoundException e) {
+          sessionReplacementCount++;
+          if (sessionReplacementCount > MAX_SESSION_REPLACES) {
+            throw SpannerExceptionFactory.newSpannerException(
+                e.getErrorCode(),
+                "Could not replace invalidated session because the maximum number of times the session may be replaced was exceeded",
+                e);
+          }
           session = sessionPool.replaceReadWriteSession(e, session);
           delegate = session.delegate.transactionManager();
           restartedAfterSessionNotFound = true;
@@ -535,6 +566,7 @@ final class SessionPool {
     private final SessionPool sessionPool;
     private PooledSession session;
     private TransactionRunner runner;
+    private int sessionReplacementCount;
 
     private SessionPoolTransactionRunner(SessionPool sessionPool, PooledSession session) {
       this.sessionPool = sessionPool;
@@ -552,6 +584,13 @@ final class SessionPool {
             result = runner.run(callable);
             break;
           } catch (SessionNotFoundException e) {
+            sessionReplacementCount++;
+            if (sessionReplacementCount > MAX_SESSION_REPLACES) {
+              throw SpannerExceptionFactory.newSpannerException(
+                  e.getErrorCode(),
+                  "Could not replace invalidated session because the maximum number of times the session may be replaced was exceeded",
+                  e);
+            }
             session = sessionPool.replaceReadWriteSession(e, session);
             runner = session.delegate.readWriteTransaction();
           }
