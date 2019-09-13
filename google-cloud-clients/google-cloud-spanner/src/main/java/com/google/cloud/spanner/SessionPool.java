@@ -889,9 +889,11 @@ final class SessionPool {
             tracer.getCurrentSpan().setStatus(Status.DEADLINE_EXCEEDED);
             currentTimeout = Math.min(currentTimeout * 2, MAX_SESSION_WAIT_TIMEOUT);
 
-            // TODO: Remove
-            throw SpannerExceptionFactory.newSpannerException(
-                ErrorCode.DEADLINE_EXCEEDED, "timeout while waiting for session");
+            // TODO: remove
+            if(numWaiterTimeouts.get() > 10L) {
+              throw SpannerExceptionFactory.newSpannerException(
+                  ErrorCode.DEADLINE_EXCEEDED, "timeout while waiting for session");
+            }
           } else {
             if (s.e != null) {
               throw newSpannerException(s.e);
