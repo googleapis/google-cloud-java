@@ -19,7 +19,7 @@ public interface SessionEntityTypeOrBuilder
    * type in the same agent that will be overridden or supplemented.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getName();
   /**
@@ -33,7 +33,7 @@ public interface SessionEntityTypeOrBuilder
    * type in the same agent that will be overridden or supplemented.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -46,7 +46,7 @@ public interface SessionEntityTypeOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.dialogflow.v2.SessionEntityType.EntityOverrideMode entity_override_mode = 2;
+   * .google.cloud.dialogflow.v2.SessionEntityType.EntityOverrideMode entity_override_mode = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   int getEntityOverrideModeValue();
@@ -59,7 +59,7 @@ public interface SessionEntityTypeOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.dialogflow.v2.SessionEntityType.EntityOverrideMode entity_override_mode = 2;
+   * .google.cloud.dialogflow.v2.SessionEntityType.EntityOverrideMode entity_override_mode = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.dialogflow.v2.SessionEntityType.EntityOverrideMode getEntityOverrideMode();
@@ -72,7 +72,9 @@ public interface SessionEntityTypeOrBuilder
    * type.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 3;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   java.util.List<com.google.cloud.dialogflow.v2.EntityType.Entity> getEntitiesList();
   /**
@@ -83,7 +85,9 @@ public interface SessionEntityTypeOrBuilder
    * type.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 3;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.dialogflow.v2.EntityType.Entity getEntities(int index);
   /**
@@ -94,7 +98,9 @@ public interface SessionEntityTypeOrBuilder
    * type.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 3;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   int getEntitiesCount();
   /**
@@ -105,7 +111,9 @@ public interface SessionEntityTypeOrBuilder
    * type.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 3;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   java.util.List<? extends com.google.cloud.dialogflow.v2.EntityType.EntityOrBuilder>
       getEntitiesOrBuilderList();
@@ -117,7 +125,9 @@ public interface SessionEntityTypeOrBuilder
    * type.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 3;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.dialogflow.v2.EntityType.EntityOrBuilder getEntitiesOrBuilder(int index);
 }

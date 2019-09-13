@@ -16,7 +16,7 @@ public interface CreateContextRequestOrBuilder
    * Format: `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getParent();
   /**
@@ -27,7 +27,7 @@ public interface CreateContextRequestOrBuilder
    * Format: `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -38,7 +38,9 @@ public interface CreateContextRequestOrBuilder
    * Required. The context to create.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.Context context = 2;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2.Context context = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   boolean hasContext();
   /**
@@ -48,7 +50,9 @@ public interface CreateContextRequestOrBuilder
    * Required. The context to create.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.Context context = 2;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2.Context context = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.dialogflow.v2.Context getContext();
   /**
@@ -58,7 +62,9 @@ public interface CreateContextRequestOrBuilder
    * Required. The context to create.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.Context context = 2;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2.Context context = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.dialogflow.v2.ContextOrBuilder getContextOrBuilder();
 }

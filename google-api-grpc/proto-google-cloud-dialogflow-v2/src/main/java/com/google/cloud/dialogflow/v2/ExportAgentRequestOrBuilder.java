@@ -16,7 +16,9 @@ public interface ExportAgentRequestOrBuilder
    * Format: `projects/&lt;Project ID&gt;`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   java.lang.String getParent();
   /**
@@ -27,7 +29,9 @@ public interface ExportAgentRequestOrBuilder
    * Format: `projects/&lt;Project ID&gt;`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -35,28 +39,26 @@ public interface ExportAgentRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The
-   * [Google Cloud Storage](https://cloud.google.com/storage/docs/)
+   * Required. The [Google Cloud Storage](https://cloud.google.com/storage/docs/)
    * URI to export the agent to.
    * The format of this URI must be `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
    * If left unspecified, the serialized agent is returned inline.
    * </pre>
    *
-   * <code>string agent_uri = 2;</code>
+   * <code>string agent_uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getAgentUri();
   /**
    *
    *
    * <pre>
-   * Optional. The
-   * [Google Cloud Storage](https://cloud.google.com/storage/docs/)
+   * Required. The [Google Cloud Storage](https://cloud.google.com/storage/docs/)
    * URI to export the agent to.
    * The format of this URI must be `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
    * If left unspecified, the serialized agent is returned inline.
    * </pre>
    *
-   * <code>string agent_uri = 2;</code>
+   * <code>string agent_uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getAgentUriBytes();
 }

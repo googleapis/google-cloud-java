@@ -18,7 +18,7 @@ public interface QueryParametersOrBuilder
    * agent settings is used.
    * </pre>
    *
-   * <code>string time_zone = 1;</code>
+   * <code>string time_zone = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getTimeZone();
   /**
@@ -31,7 +31,7 @@ public interface QueryParametersOrBuilder
    * agent settings is used.
    * </pre>
    *
-   * <code>string time_zone = 1;</code>
+   * <code>string time_zone = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.protobuf.ByteString getTimeZoneBytes();
 
@@ -42,7 +42,7 @@ public interface QueryParametersOrBuilder
    * Optional. The geo location of this conversational query.
    * </pre>
    *
-   * <code>.google.type.LatLng geo_location = 2;</code>
+   * <code>.google.type.LatLng geo_location = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean hasGeoLocation();
   /**
@@ -52,7 +52,7 @@ public interface QueryParametersOrBuilder
    * Optional. The geo location of this conversational query.
    * </pre>
    *
-   * <code>.google.type.LatLng geo_location = 2;</code>
+   * <code>.google.type.LatLng geo_location = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.type.LatLng getGeoLocation();
   /**
@@ -62,7 +62,7 @@ public interface QueryParametersOrBuilder
    * Optional. The geo location of this conversational query.
    * </pre>
    *
-   * <code>.google.type.LatLng geo_location = 2;</code>
+   * <code>.google.type.LatLng geo_location = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.type.LatLngOrBuilder getGeoLocationOrBuilder();
 
@@ -74,7 +74,9 @@ public interface QueryParametersOrBuilder
    * executed.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.Context contexts = 3;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.Context contexts = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.List<com.google.cloud.dialogflow.v2.Context> getContextsList();
   /**
@@ -85,7 +87,9 @@ public interface QueryParametersOrBuilder
    * executed.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.Context contexts = 3;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.Context contexts = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.dialogflow.v2.Context getContexts(int index);
   /**
@@ -96,7 +100,9 @@ public interface QueryParametersOrBuilder
    * executed.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.Context contexts = 3;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.Context contexts = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   int getContextsCount();
   /**
@@ -107,7 +113,9 @@ public interface QueryParametersOrBuilder
    * executed.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.Context contexts = 3;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.Context contexts = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.List<? extends com.google.cloud.dialogflow.v2.ContextOrBuilder>
       getContextsOrBuilderList();
@@ -119,7 +127,9 @@ public interface QueryParametersOrBuilder
    * executed.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.Context contexts = 3;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.Context contexts = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.dialogflow.v2.ContextOrBuilder getContextsOrBuilder(int index);
 
@@ -131,7 +141,7 @@ public interface QueryParametersOrBuilder
    * before the new ones are activated.
    * </pre>
    *
-   * <code>bool reset_contexts = 4;</code>
+   * <code>bool reset_contexts = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean getResetContexts();
 
@@ -144,7 +154,9 @@ public interface QueryParametersOrBuilder
    * for the session of this query.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.List<com.google.cloud.dialogflow.v2.SessionEntityType> getSessionEntityTypesList();
   /**
@@ -156,7 +168,9 @@ public interface QueryParametersOrBuilder
    * for the session of this query.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.dialogflow.v2.SessionEntityType getSessionEntityTypes(int index);
   /**
@@ -168,7 +182,9 @@ public interface QueryParametersOrBuilder
    * for the session of this query.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   int getSessionEntityTypesCount();
   /**
@@ -180,7 +196,9 @@ public interface QueryParametersOrBuilder
    * for the session of this query.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.List<? extends com.google.cloud.dialogflow.v2.SessionEntityTypeOrBuilder>
       getSessionEntityTypesOrBuilderList();
@@ -193,7 +211,9 @@ public interface QueryParametersOrBuilder
    * for the session of this query.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.dialogflow.v2.SessionEntityTypeOrBuilder getSessionEntityTypesOrBuilder(
       int index);
@@ -206,7 +226,7 @@ public interface QueryParametersOrBuilder
    * associated with the agent. Arbitrary JSON objects are supported.
    * </pre>
    *
-   * <code>.google.protobuf.Struct payload = 6;</code>
+   * <code>.google.protobuf.Struct payload = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean hasPayload();
   /**
@@ -217,7 +237,7 @@ public interface QueryParametersOrBuilder
    * associated with the agent. Arbitrary JSON objects are supported.
    * </pre>
    *
-   * <code>.google.protobuf.Struct payload = 6;</code>
+   * <code>.google.protobuf.Struct payload = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.protobuf.Struct getPayload();
   /**
@@ -228,7 +248,7 @@ public interface QueryParametersOrBuilder
    * associated with the agent. Arbitrary JSON objects are supported.
    * </pre>
    *
-   * <code>.google.protobuf.Struct payload = 6;</code>
+   * <code>.google.protobuf.Struct payload = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.protobuf.StructOrBuilder getPayloadOrBuilder();
 
@@ -241,7 +261,7 @@ public interface QueryParametersOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.dialogflow.v2.SentimentAnalysisRequestConfig sentiment_analysis_request_config = 10;
+   * .google.cloud.dialogflow.v2.SentimentAnalysisRequestConfig sentiment_analysis_request_config = 10 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   boolean hasSentimentAnalysisRequestConfig();
@@ -254,7 +274,7 @@ public interface QueryParametersOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.dialogflow.v2.SentimentAnalysisRequestConfig sentiment_analysis_request_config = 10;
+   * .google.cloud.dialogflow.v2.SentimentAnalysisRequestConfig sentiment_analysis_request_config = 10 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   com.google.cloud.dialogflow.v2.SentimentAnalysisRequestConfig getSentimentAnalysisRequestConfig();
@@ -267,7 +287,7 @@ public interface QueryParametersOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.dialogflow.v2.SentimentAnalysisRequestConfig sentiment_analysis_request_config = 10;
+   * .google.cloud.dialogflow.v2.SentimentAnalysisRequestConfig sentiment_analysis_request_config = 10 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   com.google.cloud.dialogflow.v2.SentimentAnalysisRequestConfigOrBuilder

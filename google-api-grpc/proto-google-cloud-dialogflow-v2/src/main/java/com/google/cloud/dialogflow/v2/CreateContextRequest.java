@@ -117,7 +117,7 @@ public final class CreateContextRequest extends com.google.protobuf.GeneratedMes
    * Format: `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -138,7 +138,7 @@ public final class CreateContextRequest extends com.google.protobuf.GeneratedMes
    * Format: `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -161,7 +161,9 @@ public final class CreateContextRequest extends com.google.protobuf.GeneratedMes
    * Required. The context to create.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.Context context = 2;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2.Context context = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public boolean hasContext() {
     return context_ != null;
@@ -173,7 +175,9 @@ public final class CreateContextRequest extends com.google.protobuf.GeneratedMes
    * Required. The context to create.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.Context context = 2;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2.Context context = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.dialogflow.v2.Context getContext() {
     return context_ == null
@@ -187,7 +191,9 @@ public final class CreateContextRequest extends com.google.protobuf.GeneratedMes
    * Required. The context to create.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.Context context = 2;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2.Context context = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.dialogflow.v2.ContextOrBuilder getContextOrBuilder() {
     return getContext();
@@ -548,7 +554,7 @@ public final class CreateContextRequest extends com.google.protobuf.GeneratedMes
      * Format: `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -569,7 +575,7 @@ public final class CreateContextRequest extends com.google.protobuf.GeneratedMes
      * Format: `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -590,7 +596,7 @@ public final class CreateContextRequest extends com.google.protobuf.GeneratedMes
      * Format: `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -609,7 +615,7 @@ public final class CreateContextRequest extends com.google.protobuf.GeneratedMes
      * Format: `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearParent() {
 
@@ -625,7 +631,7 @@ public final class CreateContextRequest extends com.google.protobuf.GeneratedMes
      * Format: `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -651,7 +657,9 @@ public final class CreateContextRequest extends com.google.protobuf.GeneratedMes
      * Required. The context to create.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.Context context = 2;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.Context context = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public boolean hasContext() {
       return contextBuilder_ != null || context_ != null;
@@ -663,7 +671,9 @@ public final class CreateContextRequest extends com.google.protobuf.GeneratedMes
      * Required. The context to create.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.Context context = 2;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.Context context = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2.Context getContext() {
       if (contextBuilder_ == null) {
@@ -681,7 +691,9 @@ public final class CreateContextRequest extends com.google.protobuf.GeneratedMes
      * Required. The context to create.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.Context context = 2;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.Context context = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setContext(com.google.cloud.dialogflow.v2.Context value) {
       if (contextBuilder_ == null) {
@@ -703,7 +715,9 @@ public final class CreateContextRequest extends com.google.protobuf.GeneratedMes
      * Required. The context to create.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.Context context = 2;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.Context context = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setContext(com.google.cloud.dialogflow.v2.Context.Builder builderForValue) {
       if (contextBuilder_ == null) {
@@ -722,7 +736,9 @@ public final class CreateContextRequest extends com.google.protobuf.GeneratedMes
      * Required. The context to create.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.Context context = 2;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.Context context = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeContext(com.google.cloud.dialogflow.v2.Context value) {
       if (contextBuilder_ == null) {
@@ -748,7 +764,9 @@ public final class CreateContextRequest extends com.google.protobuf.GeneratedMes
      * Required. The context to create.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.Context context = 2;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.Context context = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearContext() {
       if (contextBuilder_ == null) {
@@ -768,7 +786,9 @@ public final class CreateContextRequest extends com.google.protobuf.GeneratedMes
      * Required. The context to create.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.Context context = 2;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.Context context = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2.Context.Builder getContextBuilder() {
 
@@ -782,7 +802,9 @@ public final class CreateContextRequest extends com.google.protobuf.GeneratedMes
      * Required. The context to create.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.Context context = 2;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.Context context = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2.ContextOrBuilder getContextOrBuilder() {
       if (contextBuilder_ != null) {
@@ -800,7 +822,9 @@ public final class CreateContextRequest extends com.google.protobuf.GeneratedMes
      * Required. The context to create.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.Context context = 2;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.Context context = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dialogflow.v2.Context,
