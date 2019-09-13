@@ -118,7 +118,7 @@ public class PublisherSnippets {
     Duration maxRetryDelay = Duration.ofSeconds(60); // default : 1 minute
     Duration initialRpcTimeout = Duration.ofSeconds(1); // default: 5 seconds
     double rpcTimeoutMultiplier = 1.0; // default: 1.0
-    Duration maxRpcTimeout = Duration.ofSeconds(600); // default: 10 minutes
+    Duration maxRpcTimeout = Duration.ofSeconds(10); // default: 10 minutes
     Duration totalTimeout = Duration.ofSeconds(600); // default: 10 minutes
 
     RetrySettings retrySettings =
