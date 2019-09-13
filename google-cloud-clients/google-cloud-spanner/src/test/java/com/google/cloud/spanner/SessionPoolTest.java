@@ -43,7 +43,6 @@ import com.google.cloud.spanner.TransactionRunnerImpl.TransactionContextImpl;
 import com.google.cloud.spanner.spi.v1.SpannerRpc;
 import com.google.cloud.spanner.spi.v1.SpannerRpc.ResultStreamConsumer;
 import com.google.common.util.concurrent.ListenableFuture;
-import com.google.common.util.concurrent.SettableFuture;
 import com.google.common.util.concurrent.Uninterruptibles;
 import com.google.protobuf.ByteString;
 import com.google.spanner.v1.CommitRequest;
@@ -59,12 +58,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Callable;
 import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.junit.Before;
@@ -962,33 +959,31 @@ public class SessionPoolTest extends BaseSessionPoolTest {
   }
 
   @Test
-  public void blockAndTimeoutOnPoolExhaustion() throws InterruptedException, ExecutionException {
-    // Create a session pool with max 1 session and a low timeout for waiting for a session.
-    options =
-        SessionPoolOptions.newBuilder()
-            .setMinSessions(minSessions)
-            .setMaxSessions(1)
-            .setInitialWaitForSessionTimeoutMillis(40L)
-            .build();
-    setupMockSessionCreation();
-    pool = createPool();
-
+  public void blockAndTimeoutOnPoolExhaustion() throws Exception {
     // Try to take a read or a read/write session. These requests should block.
     for (Boolean write : new Boolean[] {true, false}) {
+      // Create a session pool with max 1 session and a low timeout for waiting for a session.
+      options =
+          SessionPoolOptions.newBuilder()
+              .setMinSessions(minSessions)
+              .setMaxSessions(1)
+              .setInitialWaitForSessionTimeoutMillis(20L)
+              .build();
+      setupMockSessionCreation();
+      pool = createPool();
       // Take the only session that can be in the pool.
       Session checkedOutSession = pool.getReadSession();
       final Boolean finWrite = write;
       ExecutorService executor = Executors.newFixedThreadPool(1);
-      // Setup a flag that will indicate when the thread will start waiting for a session to prevent
-      // flaky fails if it takes some time before the thread is started.
-      final SettableFuture<Boolean> waitingForSession = SettableFuture.create();
+      final CountDownLatch latch = new CountDownLatch(1);
+      // Then try asynchronously to take another session. This attempt should time out.
       Future<Void> fut =
           executor.submit(
               new Callable<Void>() {
                 @Override
                 public Void call() throws Exception {
                   Session session;
-                  waitingForSession.set(Boolean.TRUE);
+                  latch.countDown();
                   if (finWrite) {
                     session = pool.getReadWriteSession();
                   } else {
@@ -998,25 +993,25 @@ public class SessionPoolTest extends BaseSessionPoolTest {
                   return null;
                 }
               });
-      try {
-        // Wait until the background thread is actually waiting for a session.
-        waitingForSession.get();
-        fut.get(80L, TimeUnit.MILLISECONDS);
-        fail("missing expected timeout exception");
-      } catch (TimeoutException e) {
-        // This is the expected exception, just ignore it.
-      } finally {
-        // Return the checked out session to the pool so the async request will get a session and
-        // finish.
-        checkedOutSession.close();
-        fut.get();
-        executor.shutdown();
+      // Wait until the background thread is actually waiting for a session.
+      latch.await();
+      // Wait until the request has timed out.
+      while (pool.getNumWaiterTimeouts() == 0L) {
+        Thread.sleep(5L);
       }
+      // Return the checked out session to the pool so the async request will get a session and
+      // finish.
+      checkedOutSession.close();
+      // Verify that the async request also succeeds.
+      fut.get(10L, TimeUnit.SECONDS);
+      executor.shutdown();
+
+      // Verify that the session was returned to the pool and that we can get it again.
+      Session session = pool.getReadSession();
+      assertThat(session).isNotNull();
+      session.close();
+      assertThat(pool.getNumWaiterTimeouts()).isAtLeast(1L);
     }
-    Session session = pool.getReadSession();
-    assertThat(session).isNotNull();
-    session.close();
-    assertThat(pool.getNumWaiterTimeouts()).isAtLeast(2L);
   }
 
   @Test
