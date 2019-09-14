@@ -36,9 +36,7 @@ Note that you can also `mvn compile -DskipTests=true` and see sources in
 
 ## Debugging HTTP requests
 
-To debug HTTP requests, place a `logging.properties` at
-`google-cloud-testing/storage-benchwrapper/logging.properties` with the
-following contents:
+To debug HTTP requests, create `google-cloud-testing/storage-benchwrapper/logging.properties` with the following contents:
 
 ```
 # Properties file which configures the operation of the JDK logging facility.
@@ -52,3 +50,5 @@ java.util.logging.ConsoleHandler.level = CONFIG
 # Set up logging of HTTP requests and responses (uncomment "level" to show)
 com.google.api.client.http.level = CONFIG
 ```
+
+Then, when running the application, add the following flag: `-Djava.util.logging.config.file=logging.properties`.
