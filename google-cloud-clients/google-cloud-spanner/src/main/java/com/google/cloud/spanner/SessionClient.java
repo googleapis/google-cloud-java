@@ -127,25 +127,33 @@ class SessionClient implements AutoCloseable {
     public void run() {
       List<SessionImpl> sessions = null;
       int remainingSessionsToCreate = sessionCount;
-      while (remainingSessionsToCreate > 0) {
-        try {
-          sessions = internalBatchCreateSessions(remainingSessionsToCreate, channelHint);
-        } catch (Throwable t) {
-          consumer.onSessionCreateFailure(t, remainingSessionsToCreate);
-          break;
+      try (Scope scope =
+          SpannerImpl.tracer.spanBuilder(SpannerImpl.BATCH_CREATE_SESSIONS).startScopedSpan()) {
+        SpannerImpl.tracer
+            .getCurrentSpan()
+            .addAnnotation(String.format("Creating %d sessions", sessionCount));
+        while (remainingSessionsToCreate > 0) {
+          try {
+            sessions = internalBatchCreateSessions(remainingSessionsToCreate, channelHint);
+          } catch (Throwable t) {
+            TraceUtil.endSpanWithFailure(SpannerImpl.tracer.getCurrentSpan(), t);
+            consumer.onSessionCreateFailure(t, remainingSessionsToCreate);
+            break;
+          }
+          int numActuallyCreated = sessions.size();
+          if (numActuallyCreated == 0) {
+            // No sessions returned by the server. Give up creation to avoid an infinite loop.
+            SpannerException e =
+                newSpannerException(ErrorCode.UNKNOWN, "Server did not return any sessions");
+            TraceUtil.endSpanWithFailure(SpannerImpl.tracer.getCurrentSpan(), e);
+            consumer.onSessionCreateFailure(e, remainingSessionsToCreate);
+            break;
+          }
+          for (SessionImpl session : sessions) {
+            consumer.onSessionReady(session);
+          }
+          remainingSessionsToCreate -= numActuallyCreated;
         }
-        int numActuallyCreated = sessions.size();
-        if (numActuallyCreated == 0) {
-          // No sessions returned by the server. Give up creation to avoid an infinite loop.
-          consumer.onSessionCreateFailure(
-              newSpannerException(ErrorCode.UNKNOWN, "Server did not return any sessions"),
-              remainingSessionsToCreate);
-          break;
-        }
-        for (SessionImpl session : sessions) {
-          consumer.onSessionReady(session);
-        }
-        remainingSessionsToCreate -= numActuallyCreated;
       }
     }
   }
@@ -230,9 +238,19 @@ class SessionClient implements AutoCloseable {
     int remainder = sessionCount % spanner.getOptions().getNumChannels();
     int numBeingCreated = 0;
     synchronized (this) {
-      for (int i = 0; i < spanner.getOptions().getNumChannels(); i++) {
-        // Create one more session for the first X calls to fill up the remainder of the division.
-        int createCountForChannel = sessionCountPerChannel + (i < remainder ? 1 : 0);
+      for (int channelIndex = 0;
+          channelIndex < spanner.getOptions().getNumChannels();
+          channelIndex++) {
+        int createCountForChannel = sessionCountPerChannel;
+        // Add the remainder of the division to the creation count of the first channel to make sure
+        // we are creating the requested number of sessions. This will cause a slightly less
+        // efficient distribution of sessions over the channels than spreading the remainder over
+        // all channels as well, but it will also reduce the number of requests when less than
+        // numChannels sessions are requested (i.e. with 4 channels and 3 requested sessions, the 3
+        // sessions will be requested in one rpc call).
+        if (channelIndex == 0) {
+          createCountForChannel = sessionCountPerChannel + remainder;
+        }
         if (createCountForChannel > 0) {
           try {
             executor.submit(
@@ -257,13 +275,21 @@ class SessionClient implements AutoCloseable {
   private List<SessionImpl> internalBatchCreateSessions(
       final int sessionCount, final long channelHint) throws SpannerException {
     final Map<SpannerRpc.Option, ?> options = optionMap(SessionOption.channelHint(channelHint));
-    Span span = SpannerImpl.tracer.spanBuilder(SpannerImpl.BATCH_CREATE_SESSIONS).startSpan();
+    Span parent = SpannerImpl.tracer.getCurrentSpan();
+    Span span =
+        SpannerImpl.tracer
+            .spanBuilderWithExplicitParent(SpannerImpl.BATCH_CREATE_SESSIONS_REQUEST, parent)
+            .startSpan();
+    span.addAnnotation(String.format("Requesting %d sessions", sessionCount));
     try (Scope s = SpannerImpl.tracer.withSpan(span)) {
       List<com.google.spanner.v1.Session> sessions =
           spanner
               .getRpc()
               .batchCreateSessions(
                   db.getName(), sessionCount, spanner.getOptions().getSessionLabels(), options);
+      span.addAnnotation(
+          String.format(
+              "Request for %d sessions returned %d sessions", sessionCount, sessions.size()));
       span.end();
       List<SessionImpl> res = new ArrayList<>(sessionCount);
       for (com.google.spanner.v1.Session session : sessions) {

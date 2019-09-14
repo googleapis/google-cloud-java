@@ -281,8 +281,8 @@ public class SessionClientTest {
         assertThat(returnedSessionCount.get())
             .isAtLeast(
                 numSessions
-                    - (int) Math.ceil((float) numSessions / spannerOptions.getNumChannels())
-                        * errorOnChannels.size());
+                    - ((numSessions / spannerOptions.getNumChannels()) * errorOnChannels.size()
+                        + numSessions % spannerOptions.getNumChannels()));
         assertThat(returnedSessionCount.get() + errorForSessionsCount.get()).isEqualTo(numSessions);
       }
     }

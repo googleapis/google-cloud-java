@@ -64,6 +64,8 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
 
   static final String CREATE_SESSION = "CloudSpannerOperation.CreateSession";
   static final String BATCH_CREATE_SESSIONS = "CloudSpannerOperation.BatchCreateSessions";
+  static final String BATCH_CREATE_SESSIONS_REQUEST =
+      "CloudSpannerOperation.BatchCreateSessionsRequest";
   static final String DELETE_SESSION = "CloudSpannerOperation.DeleteSession";
   static final String BEGIN_TRANSACTION = "CloudSpannerOperation.BeginTransaction";
   static final String COMMIT = "CloudSpannerOperation.Commit";
@@ -73,6 +75,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
   static {
     TraceUtil.exportSpans(
         BATCH_CREATE_SESSIONS,
+        BATCH_CREATE_SESSIONS_REQUEST,
         CREATE_SESSION,
         DELETE_SESSION,
         BEGIN_TRANSACTION,
