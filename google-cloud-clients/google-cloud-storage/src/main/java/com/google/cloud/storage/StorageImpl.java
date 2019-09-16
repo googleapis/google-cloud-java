@@ -848,9 +848,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
     return CharMatcher.anyOf(PATH_DELIMITER).trimFrom(blobInfo.getBucket());
   }
 
-  /**
-   * Returns the root URL (scheme and hostname) to be used in a virtual hosted-style URL.
-   */
+  /** Returns the root URL (scheme and hostname) to be used in a virtual hosted-style URL. */
   private String virtualHostRootUrlFromOpts(
       Map<SignUrlOption.Option, Object> optionMap, String bucketName) {
     String vhostOptVal = (String) optionMap.get(SignUrlOption.Option.VIRTUAL_HOST_NAME);
@@ -861,9 +859,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
     return STORAGE_XML_URI_SCHEME + "://" + bucketName + "." + getBaseStorageHostName(optionMap);
   }
 
-  /**
-   * Returns the hostname used to send requests to Cloud Storage, e.g. "storage.googleapis.com".
-   */
+  /** Returns the hostname used to send requests to Cloud Storage, e.g. "storage.googleapis.com". */
   private String getBaseStorageHostName(Map<SignUrlOption.Option, Object> optionMap) {
     String specifiedBaseHostName = (String) optionMap.get(SignUrlOption.Option.HOST_NAME);
     if (!Strings.isNullOrEmpty(specifiedBaseHostName)) {
