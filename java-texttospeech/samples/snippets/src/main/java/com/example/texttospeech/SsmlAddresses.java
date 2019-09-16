@@ -128,7 +128,7 @@ public class SsmlAddresses {
     // Return the concatenated String of SSML
     return ssml;
   }
-  // [START tts_ssml_address_ssml]
+  // [END tts_ssml_address_ssml]
 
   // [START tts_ssml_address_test]
   public static void main(String... args) throws Exception {
