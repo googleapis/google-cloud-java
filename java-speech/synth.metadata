@@ -1,5 +1,5 @@
 {
-  "updateTime": "2019-09-09T22:43:52.012497Z",
+  "updateTime": "2019-09-16T21:36:13.131232Z",
   "sources": [
     {
       "generator": {
@@ -12,15 +12,8 @@
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "878ec92a92cc19443f2e0a64cd8c1624e664fef1",
-        "internalRef": "268000136"
-      }
-    },
-    {
-      "template": {
-        "name": "java_library",
-        "origin": "synthtool.gcp",
-        "version": "2019.5.2"
+        "sha": "6b2ba2ae3124c22ecb56af7102c78110b8576671",
+        "internalRef": "268974829"
       }
     }
   ],
@@ -33,16 +26,6 @@
         "language": "java",
         "generator": "gapic",
         "config": "google/cloud/speech/artman_speech_v1.yaml"
-      }
-    },
-    {
-      "client": {
-        "source": "googleapis",
-        "apiName": "speech",
-        "apiVersion": "v1p1beta1",
-        "language": "java",
-        "generator": "gapic",
-        "config": "google/cloud/speech/artman_speech_v1p1beta1.yaml"
       }
     }
   ]
