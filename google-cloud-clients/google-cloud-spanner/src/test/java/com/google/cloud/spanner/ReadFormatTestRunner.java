@@ -217,8 +217,7 @@ public class ReadFormatTestRunner extends ParentRunner<JSONObject> {
             // "Infinity" is not a valid parseable json double value
             if (expectedList.get(i) instanceof String) {
               assertThat((Double) actualValue).isEqualTo(Double.valueOf(expectedList.getString(i)));
-            }
-            else {
+            } else {
               assertThat((Double) actualValue).isEqualTo(expectedList.getDouble(i));
             }
           } else if (actualValue instanceof ByteArray) {
