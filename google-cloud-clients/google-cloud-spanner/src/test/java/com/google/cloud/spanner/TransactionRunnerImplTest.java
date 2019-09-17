@@ -44,6 +44,7 @@ import com.google.spanner.v1.Transaction;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.util.Arrays;
+import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
@@ -92,6 +93,7 @@ public class TransactionRunnerImplTest {
   @Test
   public void usesPreparedTransaction() {
     SpannerOptions options = mock(SpannerOptions.class);
+    when(options.getNumChannels()).thenReturn(4);
     GrpcTransportOptions transportOptions = mock(GrpcTransportOptions.class);
     when(transportOptions.getExecutorFactory()).thenReturn(new TestExecutorFactory());
     when(options.getTransportOptions()).thenReturn(transportOptions);
@@ -99,17 +101,19 @@ public class TransactionRunnerImplTest {
         SessionPoolOptions.newBuilder().setMinSessions(0).build();
     when(options.getSessionPoolOptions()).thenReturn(sessionPoolOptions);
     SpannerRpc rpc = mock(SpannerRpc.class);
-    when(rpc.createSession(Mockito.anyString(), Mockito.anyMap(), Mockito.anyMap()))
+    when(rpc.batchCreateSessions(
+            Mockito.anyString(), Mockito.eq(1), Mockito.anyMap(), Mockito.anyMap()))
         .thenAnswer(
-            new Answer<com.google.spanner.v1.Session>() {
+            new Answer<List<com.google.spanner.v1.Session>>() {
               @Override
-              public com.google.spanner.v1.Session answer(InvocationOnMock invocation)
+              public List<com.google.spanner.v1.Session> answer(InvocationOnMock invocation)
                   throws Throwable {
-                return com.google.spanner.v1.Session.newBuilder()
-                    .setName((String) invocation.getArguments()[0])
-                    .setCreateTime(
-                        Timestamp.newBuilder().setSeconds(System.currentTimeMillis() * 1000))
-                    .build();
+                return Arrays.asList(
+                    com.google.spanner.v1.Session.newBuilder()
+                        .setName((String) invocation.getArguments()[0])
+                        .setCreateTime(
+                            Timestamp.newBuilder().setSeconds(System.currentTimeMillis() * 1000))
+                        .build());
               }
             });
     when(rpc.beginTransaction(Mockito.any(BeginTransactionRequest.class), Mockito.anyMap()))
