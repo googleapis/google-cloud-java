@@ -185,4 +185,23 @@ public class BigtableTableAdminClientIT {
     tableAdmin.createTable(CreateTableRequest.of(tableId));
     tableAdmin.awaitReplication(tableId);
   }
+
+  @Test
+  public void iamUpdateTest() {
+    Policy policy = tableAdmin.getIamPolicy(instanceId);
+    assertThat(policy).isNotNull();
+
+    Exception actualEx = null;
+    try {
+      assertThat(tableAdmin.setIamPolicy(instanceId, policy)).isNotNull();
+    } catch (Exception iamException) {
+      actualEx = iamException;
+    }
+    assertThat(actualEx).isNull();
+
+    List<String> permissions =
+        tableAdmin.testIamPermission(
+            instanceId, "bigtable.tables.readRows", "bigtable.tables.mutateRows");
+    assertThat(permissions).hasSize(2);
+  }
 }
