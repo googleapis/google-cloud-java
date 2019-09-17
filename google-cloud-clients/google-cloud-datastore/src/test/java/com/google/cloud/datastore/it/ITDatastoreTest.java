@@ -858,4 +858,12 @@ public class ITDatastoreTest {
     int numberOfEntities = DATASTORE.run(query).getSkippedResults();
     assertEquals(2, numberOfEntities);
   }
+
+  @Test
+  public void testCountEntities() {
+    Query query = Query.newKeyQueryBuilder().setOffset(Integer.MAX_VALUE).setLimit(1).build();
+    QueryResults<Entity> results = DATASTORE.run(query);
+    int numberOfEntities = results.countEntities();
+    assertEquals(2, numberOfEntities);
+  }
 }

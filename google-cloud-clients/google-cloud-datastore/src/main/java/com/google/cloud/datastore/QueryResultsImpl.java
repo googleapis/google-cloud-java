@@ -19,6 +19,7 @@ package com.google.cloud.datastore;
 import com.google.cloud.datastore.Query.ResultType;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.AbstractIterator;
+import com.google.datastore.v1.QueryResultBatch;
 import com.google.datastore.v1.QueryResultBatch.MoreResultsType;
 import com.google.protobuf.ByteString;
 import java.util.Iterator;
@@ -123,5 +124,20 @@ class QueryResultsImpl<T> extends AbstractIterator<T> implements QueryResults<T>
   @Override
   public MoreResultsType getMoreResults() {
     return moreResults;
+  }
+
+  @Override
+  public int countEntities() {
+    int count = 0;
+    Integer limit = ((KeyQuery) this.query).getLimit();
+    if (null != limit && limit >= 0) {
+      QueryResultBatch queryResultBatch = runQueryResponsePb.getBatch();
+      count = queryResultBatch.getSkippedResults();
+      while (queryResultBatch.getMoreResults()
+          != QueryResultBatch.MoreResultsType.NO_MORE_RESULTS) {
+        count += queryResultBatch.getSkippedResults();
+      }
+    }
+    return count;
   }
 }

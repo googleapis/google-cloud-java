@@ -691,6 +691,39 @@ public class DatastoreTest {
     assertEquals(2, numberOfEntities);
   }
 
+  @Test
+  public void testRunQueryWithLimit() {
+
+    Query<Key> query = Query.newKeyQueryBuilder().setOffset(Integer.MAX_VALUE).build();
+    RunQueryRequest.Builder requestPb = RunQueryRequest.newBuilder();
+    query.populatePb(requestPb);
+
+    QueryResultBatch queryResultBatchPb =
+        RunQueryResponse.newBuilder()
+            .mergeFrom(((DatastoreImpl) datastore).runQuery(requestPb.build()))
+            .getBatch();
+
+    QueryResultBatch queryResultBatch =
+        QueryResultBatch.newBuilder()
+            .mergeFrom(queryResultBatchPb)
+            .setMoreResults(QueryResultBatch.MoreResultsType.NO_MORE_RESULTS)
+            .clearEntityResults()
+            .addAllEntityResults(queryResultBatchPb.getEntityResultsList())
+            .build();
+
+    RunQueryResponse response = RunQueryResponse.newBuilder().setBatch(queryResultBatch).build();
+    EasyMock.expect(rpcMock.runQuery(EasyMock.anyObject(RunQueryRequest.class)))
+        .andReturn(response);
+
+    EasyMock.replay(rpcFactoryMock, rpcMock);
+    Datastore datastore = rpcMockOptions.getService();
+
+    QueryResults<Key> results =
+        datastore.run(Query.newKeyQueryBuilder().setOffset(Integer.MAX_VALUE).setLimit(1).build());
+    assertEquals(2, results.countEntities());
+    EasyMock.verify(rpcFactoryMock, rpcMock);
+  }
+
   private List<RunQueryResponse> buildResponsesForQueryPaginationWithLimit() {
     Entity entity4 = Entity.newBuilder(KEY4).set("value", StringValue.of("value")).build();
     Entity entity5 = Entity.newBuilder(KEY5).set("value", "value").build();
