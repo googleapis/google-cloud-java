@@ -74,8 +74,6 @@ public interface QueryResults<V> extends Iterator<V> {
   /**
    * Returns the number of entities count.
    *
-   * <p>A simple use case to count entities:
-   *
    * <pre>{@code
    * Query.newKeyQueryBuilder().setKind("Kind").setOffset(Integer.MAX_VALUE).setLimit(0).build();
    * QueryResults<Key> result = datastore.run(query);
