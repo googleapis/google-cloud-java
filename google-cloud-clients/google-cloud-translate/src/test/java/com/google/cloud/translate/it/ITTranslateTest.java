@@ -20,6 +20,8 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertThat;
+import static org.hamcrest.Matchers.isOneOf;
 
 import com.google.cloud.translate.Detection;
 import com.google.cloud.translate.Language;
@@ -107,7 +109,7 @@ public class ITTranslateTest {
     assertEquals("Hello", translation.getTranslatedText());
     assertEquals("es", translation.getSourceLanguage());
     translation = translations.get(1);
-    assertEquals("Hello", translation.getTranslatedText());
+    assertThat(translation.getTranslatedText(), isOneOf("Hi", "Hello"));
     assertEquals("de", translation.getSourceLanguage());
   }
 
@@ -120,7 +122,7 @@ public class ITTranslateTest {
     assertEquals("es", translation.getSourceLanguage());
     assertEquals("nmt", translation.getModel());
     translation = translations.get(1);
-    assertEquals("Hello", translation.getTranslatedText());
+    assertThat(translation.getTranslatedText(), isOneOf("Hi", "Hello"));
     assertEquals("de", translation.getSourceLanguage());
     assertEquals("nmt", translation.getModel());
   }
