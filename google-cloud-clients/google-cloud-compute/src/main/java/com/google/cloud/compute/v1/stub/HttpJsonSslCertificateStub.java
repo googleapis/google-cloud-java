@@ -15,6 +15,7 @@
  */
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.SslCertificateClient.AggregatedListSslCertificatesPagedResponse;
 import static com.google.cloud.compute.v1.SslCertificateClient.ListSslCertificatesPagedResponse;
 
 import com.google.api.client.http.HttpMethods;
@@ -30,6 +31,7 @@ import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.pathtemplate.PathTemplate;
+import com.google.cloud.compute.v1.AggregatedListSslCertificatesHttpRequest;
 import com.google.cloud.compute.v1.DeleteSslCertificateHttpRequest;
 import com.google.cloud.compute.v1.GetSslCertificateHttpRequest;
 import com.google.cloud.compute.v1.InsertSslCertificateHttpRequest;
@@ -38,6 +40,7 @@ import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.ProjectGlobalSslCertificateName;
 import com.google.cloud.compute.v1.ProjectName;
 import com.google.cloud.compute.v1.SslCertificate;
+import com.google.cloud.compute.v1.SslCertificateAggregatedList;
 import com.google.cloud.compute.v1.SslCertificateList;
 import com.google.common.collect.Sets;
 import java.io.IOException;
@@ -53,6 +56,29 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonSslCertificateStub extends SslCertificateStub {
+  @InternalApi
+  public static final ApiMethodDescriptor<
+          AggregatedListSslCertificatesHttpRequest, SslCertificateAggregatedList>
+      aggregatedListSslCertificatesMethodDescriptor =
+          ApiMethodDescriptor
+              .<AggregatedListSslCertificatesHttpRequest, SslCertificateAggregatedList>newBuilder()
+              .setFullMethodName("compute.sslCertificates.aggregatedList")
+              .setHttpMethod(HttpMethods.GET)
+              .setRequestFormatter(
+                  ApiMessageHttpRequestFormatter
+                      .<AggregatedListSslCertificatesHttpRequest>newBuilder()
+                      .setPathTemplate(PathTemplate.create("{project}/aggregated/sslCertificates"))
+                      .setQueryParams(
+                          Sets.<String>newHashSet("filter", "maxResults", "orderBy", "pageToken"))
+                      .setResourceNameFactory(ProjectName.newFactory())
+                      .setResourceNameField("project")
+                      .build())
+              .setResponseParser(
+                  ApiMessageHttpResponseParser.<SslCertificateAggregatedList>newBuilder()
+                      .setResponseInstance(SslCertificateAggregatedList.getDefaultInstance())
+                      .build())
+              .build();
+
   @InternalApi
   public static final ApiMethodDescriptor<DeleteSslCertificateHttpRequest, Operation>
       deleteSslCertificateMethodDescriptor =
@@ -134,6 +160,12 @@ public class HttpJsonSslCertificateStub extends SslCertificateStub {
 
   private final BackgroundResource backgroundResources;
 
+  private final UnaryCallable<
+          AggregatedListSslCertificatesHttpRequest, SslCertificateAggregatedList>
+      aggregatedListSslCertificatesCallable;
+  private final UnaryCallable<
+          AggregatedListSslCertificatesHttpRequest, AggregatedListSslCertificatesPagedResponse>
+      aggregatedListSslCertificatesPagedCallable;
   private final UnaryCallable<DeleteSslCertificateHttpRequest, Operation>
       deleteSslCertificateCallable;
   private final UnaryCallable<GetSslCertificateHttpRequest, SslCertificate>
@@ -186,6 +218,13 @@ public class HttpJsonSslCertificateStub extends SslCertificateStub {
       throws IOException {
     this.callableFactory = callableFactory;
 
+    HttpJsonCallSettings<AggregatedListSslCertificatesHttpRequest, SslCertificateAggregatedList>
+        aggregatedListSslCertificatesTransportSettings =
+            HttpJsonCallSettings
+                .<AggregatedListSslCertificatesHttpRequest, SslCertificateAggregatedList>
+                    newBuilder()
+                .setMethodDescriptor(aggregatedListSslCertificatesMethodDescriptor)
+                .build();
     HttpJsonCallSettings<DeleteSslCertificateHttpRequest, Operation>
         deleteSslCertificateTransportSettings =
             HttpJsonCallSettings.<DeleteSslCertificateHttpRequest, Operation>newBuilder()
@@ -207,6 +246,16 @@ public class HttpJsonSslCertificateStub extends SslCertificateStub {
                 .setMethodDescriptor(listSslCertificatesMethodDescriptor)
                 .build();
 
+    this.aggregatedListSslCertificatesCallable =
+        callableFactory.createUnaryCallable(
+            aggregatedListSslCertificatesTransportSettings,
+            settings.aggregatedListSslCertificatesSettings(),
+            clientContext);
+    this.aggregatedListSslCertificatesPagedCallable =
+        callableFactory.createPagedCallable(
+            aggregatedListSslCertificatesTransportSettings,
+            settings.aggregatedListSslCertificatesSettings(),
+            clientContext);
     this.deleteSslCertificateCallable =
         callableFactory.createUnaryCallable(
             deleteSslCertificateTransportSettings,
@@ -234,6 +283,19 @@ public class HttpJsonSslCertificateStub extends SslCertificateStub {
             clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+  }
+
+  @BetaApi
+  public UnaryCallable<
+          AggregatedListSslCertificatesHttpRequest, AggregatedListSslCertificatesPagedResponse>
+      aggregatedListSslCertificatesPagedCallable() {
+    return aggregatedListSslCertificatesPagedCallable;
+  }
+
+  @BetaApi
+  public UnaryCallable<AggregatedListSslCertificatesHttpRequest, SslCertificateAggregatedList>
+      aggregatedListSslCertificatesCallable() {
+    return aggregatedListSslCertificatesCallable;
   }
 
   @BetaApi

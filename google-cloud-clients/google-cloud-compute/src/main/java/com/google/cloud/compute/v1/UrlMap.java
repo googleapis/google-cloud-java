@@ -44,6 +44,7 @@ public final class UrlMap implements ApiMessage {
   private final String kind;
   private final String name;
   private final List<PathMatcher> pathMatchers;
+  private final String region;
   private final String selfLink;
   private final List<UrlMapTest> tests;
 
@@ -57,6 +58,7 @@ public final class UrlMap implements ApiMessage {
     this.kind = null;
     this.name = null;
     this.pathMatchers = null;
+    this.region = null;
     this.selfLink = null;
     this.tests = null;
   }
@@ -71,6 +73,7 @@ public final class UrlMap implements ApiMessage {
       String kind,
       String name,
       List<PathMatcher> pathMatchers,
+      String region,
       String selfLink,
       List<UrlMapTest> tests) {
     this.creationTimestamp = creationTimestamp;
@@ -82,6 +85,7 @@ public final class UrlMap implements ApiMessage {
     this.kind = kind;
     this.name = name;
     this.pathMatchers = pathMatchers;
+    this.region = region;
     this.selfLink = selfLink;
     this.tests = tests;
   }
@@ -114,6 +118,9 @@ public final class UrlMap implements ApiMessage {
     }
     if ("pathMatchers".equals(fieldName)) {
       return pathMatchers;
+    }
+    if ("region".equals(fieldName)) {
+      return region;
     }
     if ("selfLink".equals(fieldName)) {
       return selfLink;
@@ -212,6 +219,15 @@ public final class UrlMap implements ApiMessage {
     return pathMatchers;
   }
 
+  /**
+   * [Output Only] URL of the region where the regional URL map resides. This field is not
+   * applicable to global URL maps. You must specify this field as part of the HTTP request URL. It
+   * is not settable as a field in the request body.
+   */
+  public String getRegion() {
+    return region;
+  }
+
   /** [Output Only] Server-defined URL for the resource. */
   public String getSelfLink() {
     return selfLink;
@@ -257,6 +273,7 @@ public final class UrlMap implements ApiMessage {
     private String kind;
     private String name;
     private List<PathMatcher> pathMatchers;
+    private String region;
     private String selfLink;
     private List<UrlMapTest> tests;
 
@@ -291,6 +308,9 @@ public final class UrlMap implements ApiMessage {
       if (other.getPathMatchersList() != null) {
         this.pathMatchers = other.pathMatchers;
       }
+      if (other.getRegion() != null) {
+        this.region = other.region;
+      }
       if (other.getSelfLink() != null) {
         this.selfLink = other.selfLink;
       }
@@ -310,6 +330,7 @@ public final class UrlMap implements ApiMessage {
       this.kind = source.kind;
       this.name = source.name;
       this.pathMatchers = source.pathMatchers;
+      this.region = source.region;
       this.selfLink = source.selfLink;
       this.tests = source.tests;
     }
@@ -489,6 +510,25 @@ public final class UrlMap implements ApiMessage {
       return this;
     }
 
+    /**
+     * [Output Only] URL of the region where the regional URL map resides. This field is not
+     * applicable to global URL maps. You must specify this field as part of the HTTP request URL.
+     * It is not settable as a field in the request body.
+     */
+    public String getRegion() {
+      return region;
+    }
+
+    /**
+     * [Output Only] URL of the region where the regional URL map resides. This field is not
+     * applicable to global URL maps. You must specify this field as part of the HTTP request URL.
+     * It is not settable as a field in the request body.
+     */
+    public Builder setRegion(String region) {
+      this.region = region;
+      return this;
+    }
+
     /** [Output Only] Server-defined URL for the resource. */
     public String getSelfLink() {
       return selfLink;
@@ -544,6 +584,7 @@ public final class UrlMap implements ApiMessage {
           kind,
           name,
           pathMatchers,
+          region,
           selfLink,
           tests);
     }
@@ -559,6 +600,7 @@ public final class UrlMap implements ApiMessage {
       newBuilder.setKind(this.kind);
       newBuilder.setName(this.name);
       newBuilder.addAllPathMatchers(this.pathMatchers);
+      newBuilder.setRegion(this.region);
       newBuilder.setSelfLink(this.selfLink);
       newBuilder.addAllTests(this.tests);
       return newBuilder;
@@ -595,6 +637,9 @@ public final class UrlMap implements ApiMessage {
         + "pathMatchers="
         + pathMatchers
         + ", "
+        + "region="
+        + region
+        + ", "
         + "selfLink="
         + selfLink
         + ", "
@@ -619,6 +664,7 @@ public final class UrlMap implements ApiMessage {
           && Objects.equals(this.kind, that.getKind())
           && Objects.equals(this.name, that.getName())
           && Objects.equals(this.pathMatchers, that.getPathMatchersList())
+          && Objects.equals(this.region, that.getRegion())
           && Objects.equals(this.selfLink, that.getSelfLink())
           && Objects.equals(this.tests, that.getTestsList());
     }
@@ -637,6 +683,7 @@ public final class UrlMap implements ApiMessage {
         kind,
         name,
         pathMatchers,
+        region,
         selfLink,
         tests);
   }

@@ -15,7 +15,9 @@
  */
 package com.google.cloud.compute.v1;
 
+import static com.google.cloud.compute.v1.SslCertificateClient.AggregatedListSslCertificatesPagedResponse;
 import static com.google.cloud.compute.v1.SslCertificateClient.ListSslCertificatesPagedResponse;
+import static com.google.cloud.compute.v1.stub.HttpJsonSslCertificateStub.aggregatedListSslCertificatesMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonSslCertificateStub.deleteSslCertificateMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonSslCertificateStub.getSslCertificateMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonSslCertificateStub.insertSslCertificateMethodDescriptor;
@@ -36,7 +38,9 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -49,6 +53,7 @@ public class SslCertificateClientTest {
   private static final List<ApiMethodDescriptor> METHOD_DESCRIPTORS =
       ImmutableList.copyOf(
           Lists.<ApiMethodDescriptor>newArrayList(
+              aggregatedListSslCertificatesMethodDescriptor,
               deleteSslCertificateMethodDescriptor,
               getSslCertificateMethodDescriptor,
               insertSslCertificateMethodDescriptor,
@@ -80,6 +85,69 @@ public class SslCertificateClientTest {
   @AfterClass
   public static void tearDown() throws Exception {
     client.close();
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void aggregatedListSslCertificatesTest() {
+    String id = "id3355";
+    String kind = "kind3292052";
+    String nextPageToken = "";
+    String selfLink = "selfLink-1691268851";
+    SslCertificatesScopedList itemsItem = SslCertificatesScopedList.newBuilder().build();
+    Map<String, SslCertificatesScopedList> items = new HashMap<>();
+    items.put("items", itemsItem);
+    SslCertificateAggregatedList expectedResponse =
+        SslCertificateAggregatedList.newBuilder()
+            .setId(id)
+            .setKind(kind)
+            .setNextPageToken(nextPageToken)
+            .setSelfLink(selfLink)
+            .putAllItems(items)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ProjectName project = ProjectName.of("[PROJECT]");
+
+    AggregatedListSslCertificatesPagedResponse pagedListResponse =
+        client.aggregatedListSslCertificates(project);
+
+    List<SslCertificatesScopedList> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getItemsMap().values().iterator().next(), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void aggregatedListSslCertificatesExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ProjectName project = ProjectName.of("[PROJECT]");
+
+      client.aggregatedListSslCertificates(project);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
   }
 
   @Test
@@ -182,6 +250,7 @@ public class SslCertificateClientTest {
     String kind = "kind3292052";
     String name = "name3373707";
     String privateKey = "privateKey1971943843";
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String selfLink = "selfLink-1691268851";
     SslCertificate expectedResponse =
         SslCertificate.newBuilder()
@@ -192,6 +261,7 @@ public class SslCertificateClientTest {
             .setKind(kind)
             .setName(name)
             .setPrivateKey(privateKey)
+            .setRegion(region.toString())
             .setSelfLink(selfLink)
             .build();
     mockService.addResponse(expectedResponse);

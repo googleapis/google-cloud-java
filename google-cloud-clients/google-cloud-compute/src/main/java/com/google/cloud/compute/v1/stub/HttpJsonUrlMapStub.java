@@ -15,6 +15,7 @@
  */
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.UrlMapClient.AggregatedListUrlMapsPagedResponse;
 import static com.google.cloud.compute.v1.UrlMapClient.ListUrlMapsPagedResponse;
 
 import com.google.api.client.http.HttpMethods;
@@ -30,6 +31,7 @@ import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.pathtemplate.PathTemplate;
+import com.google.cloud.compute.v1.AggregatedListUrlMapsHttpRequest;
 import com.google.cloud.compute.v1.DeleteUrlMapHttpRequest;
 import com.google.cloud.compute.v1.GetUrlMapHttpRequest;
 import com.google.cloud.compute.v1.InsertUrlMapHttpRequest;
@@ -42,6 +44,7 @@ import com.google.cloud.compute.v1.ProjectName;
 import com.google.cloud.compute.v1.UpdateUrlMapHttpRequest;
 import com.google.cloud.compute.v1.UrlMap;
 import com.google.cloud.compute.v1.UrlMapList;
+import com.google.cloud.compute.v1.UrlMapsAggregatedList;
 import com.google.cloud.compute.v1.UrlMapsValidateResponse;
 import com.google.cloud.compute.v1.ValidateUrlMapHttpRequest;
 import com.google.common.collect.Sets;
@@ -58,6 +61,26 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonUrlMapStub extends UrlMapStub {
+  @InternalApi
+  public static final ApiMethodDescriptor<AggregatedListUrlMapsHttpRequest, UrlMapsAggregatedList>
+      aggregatedListUrlMapsMethodDescriptor =
+          ApiMethodDescriptor.<AggregatedListUrlMapsHttpRequest, UrlMapsAggregatedList>newBuilder()
+              .setFullMethodName("compute.urlMaps.aggregatedList")
+              .setHttpMethod(HttpMethods.GET)
+              .setRequestFormatter(
+                  ApiMessageHttpRequestFormatter.<AggregatedListUrlMapsHttpRequest>newBuilder()
+                      .setPathTemplate(PathTemplate.create("{project}/aggregated/urlMaps"))
+                      .setQueryParams(
+                          Sets.<String>newHashSet("filter", "maxResults", "orderBy", "pageToken"))
+                      .setResourceNameFactory(ProjectName.newFactory())
+                      .setResourceNameField("project")
+                      .build())
+              .setResponseParser(
+                  ApiMessageHttpResponseParser.<UrlMapsAggregatedList>newBuilder()
+                      .setResponseInstance(UrlMapsAggregatedList.getDefaultInstance())
+                      .build())
+              .build();
+
   @InternalApi
   public static final ApiMethodDescriptor<DeleteUrlMapHttpRequest, Operation>
       deleteUrlMapMethodDescriptor =
@@ -214,6 +237,10 @@ public class HttpJsonUrlMapStub extends UrlMapStub {
 
   private final BackgroundResource backgroundResources;
 
+  private final UnaryCallable<AggregatedListUrlMapsHttpRequest, UrlMapsAggregatedList>
+      aggregatedListUrlMapsCallable;
+  private final UnaryCallable<AggregatedListUrlMapsHttpRequest, AggregatedListUrlMapsPagedResponse>
+      aggregatedListUrlMapsPagedCallable;
   private final UnaryCallable<DeleteUrlMapHttpRequest, Operation> deleteUrlMapCallable;
   private final UnaryCallable<GetUrlMapHttpRequest, UrlMap> getUrlMapCallable;
   private final UnaryCallable<InsertUrlMapHttpRequest, Operation> insertUrlMapCallable;
@@ -265,6 +292,12 @@ public class HttpJsonUrlMapStub extends UrlMapStub {
       throws IOException {
     this.callableFactory = callableFactory;
 
+    HttpJsonCallSettings<AggregatedListUrlMapsHttpRequest, UrlMapsAggregatedList>
+        aggregatedListUrlMapsTransportSettings =
+            HttpJsonCallSettings
+                .<AggregatedListUrlMapsHttpRequest, UrlMapsAggregatedList>newBuilder()
+                .setMethodDescriptor(aggregatedListUrlMapsMethodDescriptor)
+                .build();
     HttpJsonCallSettings<DeleteUrlMapHttpRequest, Operation> deleteUrlMapTransportSettings =
         HttpJsonCallSettings.<DeleteUrlMapHttpRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteUrlMapMethodDescriptor)
@@ -300,6 +333,16 @@ public class HttpJsonUrlMapStub extends UrlMapStub {
                 .setMethodDescriptor(validateUrlMapMethodDescriptor)
                 .build();
 
+    this.aggregatedListUrlMapsCallable =
+        callableFactory.createUnaryCallable(
+            aggregatedListUrlMapsTransportSettings,
+            settings.aggregatedListUrlMapsSettings(),
+            clientContext);
+    this.aggregatedListUrlMapsPagedCallable =
+        callableFactory.createPagedCallable(
+            aggregatedListUrlMapsTransportSettings,
+            settings.aggregatedListUrlMapsSettings(),
+            clientContext);
     this.deleteUrlMapCallable =
         callableFactory.createUnaryCallable(
             deleteUrlMapTransportSettings, settings.deleteUrlMapSettings(), clientContext);
@@ -331,6 +374,18 @@ public class HttpJsonUrlMapStub extends UrlMapStub {
             validateUrlMapTransportSettings, settings.validateUrlMapSettings(), clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+  }
+
+  @BetaApi
+  public UnaryCallable<AggregatedListUrlMapsHttpRequest, AggregatedListUrlMapsPagedResponse>
+      aggregatedListUrlMapsPagedCallable() {
+    return aggregatedListUrlMapsPagedCallable;
+  }
+
+  @BetaApi
+  public UnaryCallable<AggregatedListUrlMapsHttpRequest, UrlMapsAggregatedList>
+      aggregatedListUrlMapsCallable() {
+    return aggregatedListUrlMapsCallable;
   }
 
   @BetaApi

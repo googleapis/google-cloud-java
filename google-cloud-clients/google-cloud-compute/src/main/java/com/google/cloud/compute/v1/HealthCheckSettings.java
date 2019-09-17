@@ -15,6 +15,7 @@
  */
 package com.google.cloud.compute.v1;
 
+import static com.google.cloud.compute.v1.HealthCheckClient.AggregatedListHealthChecksPagedResponse;
 import static com.google.cloud.compute.v1.HealthCheckClient.ListHealthChecksPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -64,6 +65,15 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator")
 @BetaApi
 public class HealthCheckSettings extends ClientSettings<HealthCheckSettings> {
+  /** Returns the object with the settings used for calls to aggregatedListHealthChecks. */
+  public PagedCallSettings<
+          AggregatedListHealthChecksHttpRequest,
+          HealthChecksAggregatedList,
+          AggregatedListHealthChecksPagedResponse>
+      aggregatedListHealthChecksSettings() {
+    return ((HealthCheckStubSettings) getStubSettings()).aggregatedListHealthChecksSettings();
+  }
+
   /** Returns the object with the settings used for calls to deleteHealthCheck. */
   public UnaryCallSettings<DeleteHealthCheckHttpRequest, Operation> deleteHealthCheckSettings() {
     return ((HealthCheckStubSettings) getStubSettings()).deleteHealthCheckSettings();
@@ -195,6 +205,15 @@ public class HealthCheckSettings extends ClientSettings<HealthCheckSettings> {
       super.applyToAllUnaryMethods(
           getStubSettingsBuilder().unaryMethodSettingsBuilders(), settingsUpdater);
       return this;
+    }
+
+    /** Returns the builder for the settings used for calls to aggregatedListHealthChecks. */
+    public PagedCallSettings.Builder<
+            AggregatedListHealthChecksHttpRequest,
+            HealthChecksAggregatedList,
+            AggregatedListHealthChecksPagedResponse>
+        aggregatedListHealthChecksSettings() {
+      return getStubSettingsBuilder().aggregatedListHealthChecksSettings();
     }
 
     /** Returns the builder for the settings used for calls to deleteHealthCheck. */

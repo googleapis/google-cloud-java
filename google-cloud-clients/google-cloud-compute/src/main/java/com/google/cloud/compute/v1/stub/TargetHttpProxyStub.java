@@ -15,11 +15,13 @@
  */
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.TargetHttpProxyClient.AggregatedListTargetHttpProxiesPagedResponse;
 import static com.google.cloud.compute.v1.TargetHttpProxyClient.ListTargetHttpProxiesPagedResponse;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.compute.v1.AggregatedListTargetHttpProxiesHttpRequest;
 import com.google.cloud.compute.v1.DeleteTargetHttpProxyHttpRequest;
 import com.google.cloud.compute.v1.GetTargetHttpProxyHttpRequest;
 import com.google.cloud.compute.v1.InsertTargetHttpProxyHttpRequest;
@@ -27,6 +29,7 @@ import com.google.cloud.compute.v1.ListTargetHttpProxiesHttpRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.SetUrlMapTargetHttpProxyHttpRequest;
 import com.google.cloud.compute.v1.TargetHttpProxy;
+import com.google.cloud.compute.v1.TargetHttpProxyAggregatedList;
 import com.google.cloud.compute.v1.TargetHttpProxyList;
 import javax.annotation.Generated;
 
@@ -39,6 +42,21 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class TargetHttpProxyStub implements BackgroundResource {
+
+  @BetaApi
+  public UnaryCallable<
+          AggregatedListTargetHttpProxiesHttpRequest, AggregatedListTargetHttpProxiesPagedResponse>
+      aggregatedListTargetHttpProxiesPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: aggregatedListTargetHttpProxiesPagedCallable()");
+  }
+
+  @BetaApi
+  public UnaryCallable<AggregatedListTargetHttpProxiesHttpRequest, TargetHttpProxyAggregatedList>
+      aggregatedListTargetHttpProxiesCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: aggregatedListTargetHttpProxiesCallable()");
+  }
 
   @BetaApi
   public UnaryCallable<DeleteTargetHttpProxyHttpRequest, Operation>
