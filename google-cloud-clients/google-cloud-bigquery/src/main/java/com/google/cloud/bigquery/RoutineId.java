@@ -62,6 +62,8 @@ public final class RoutineId implements Serializable {
   }
 
   private RoutineId(String project, String dataset, String routine) {
+    checkArgument(!isNullOrEmpty(dataset), "Provided dataset is null or empty");
+    checkArgument(!isNullOrEmpty(routine), "Provided routine is null or empty");
     this.project = project;
     this.dataset = dataset;
     this.routine = routine;
@@ -69,16 +71,11 @@ public final class RoutineId implements Serializable {
 
   /** Creates a routine identity given project, dataset, and routine identifiers. * */
   public static RoutineId of(String project, String dataset, String routine) {
-    checkArgument(!isNullOrEmpty(project), "Provided project is null or empty");
-    checkArgument(!isNullOrEmpty(dataset), "Provided dataset is null or empty");
-    checkArgument(!isNullOrEmpty(routine), "Provided routine is null or empty");
     return new RoutineId(project, dataset, routine);
   }
 
   /** Creates a routine identity given dataset and routine identifiers. * */
   public static RoutineId of(String dataset, String routine) {
-    checkArgument(!isNullOrEmpty(dataset), "Provided dataset is null or empty");
-    checkArgument(!isNullOrEmpty(routine), "Provided routine is null or empty");
     return new RoutineId(null, dataset, routine);
   }
 

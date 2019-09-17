@@ -61,6 +61,8 @@ public final class ModelId implements Serializable {
   }
 
   private ModelId(String project, String dataset, String model) {
+    checkArgument(!isNullOrEmpty(dataset), "Provided dataset is null or empty");
+    checkArgument(!isNullOrEmpty(model), "Provided model is null or empty");
     this.project = project;
     this.dataset = dataset;
     this.model = model;
@@ -68,16 +70,11 @@ public final class ModelId implements Serializable {
 
   /** Creates a model identity given project, dataset, and model identifiers. * */
   public static ModelId of(String project, String dataset, String model) {
-    checkArgument(!isNullOrEmpty(project), "Provided project is null or empty");
-    checkArgument(!isNullOrEmpty(dataset), "Provided dataset is null or empty");
-    checkArgument(!isNullOrEmpty(model), "Provided model is null or empty");
     return new ModelId(project, dataset, model);
   }
 
   /** Creates a model identity given dataset and model identifiers. * */
   public static ModelId of(String dataset, String model) {
-    checkArgument(!isNullOrEmpty(dataset), "Provided dataset is null or empty");
-    checkArgument(!isNullOrEmpty(model), "Provided model is null or empty");
     return new ModelId(null, dataset, model);
   }
 

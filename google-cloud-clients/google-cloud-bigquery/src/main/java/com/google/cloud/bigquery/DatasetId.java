@@ -42,20 +42,18 @@ public final class DatasetId implements Serializable {
   }
 
   private DatasetId(String project, String dataset) {
+    checkArgument(!isNullOrEmpty(dataset), "Provided dataset is null or empty");
     this.project = project;
     this.dataset = dataset;
   }
 
   /** Creates a dataset identity given project's and dataset's user-defined ids. */
   public static DatasetId of(String project, String dataset) {
-    checkArgument(!isNullOrEmpty(project), "Provided project is null or empty");
-    checkArgument(!isNullOrEmpty(dataset), "Provided dataset is null or empty");
     return new DatasetId(project, dataset);
   }
 
   /** Creates a dataset identity given only its user-defined id. */
   public static DatasetId of(String dataset) {
-    checkArgument(!isNullOrEmpty(dataset), "Provided dataset is null or empty");
     return new DatasetId(null, dataset);
   }
 

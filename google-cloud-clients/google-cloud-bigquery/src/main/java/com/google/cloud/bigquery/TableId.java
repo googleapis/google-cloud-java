@@ -64,6 +64,8 @@ public final class TableId implements Serializable {
   }
 
   private TableId(String project, String dataset, String table) {
+    checkArgument(!isNullOrEmpty(dataset), "Provided dataset is null or empty");
+    checkArgument(!isNullOrEmpty(table), "Provided table is null or empty");
     this.project = project;
     this.dataset = dataset;
     this.table = table;
@@ -71,15 +73,11 @@ public final class TableId implements Serializable {
 
   /** Creates a table identity given project's, dataset's and table's user-defined ids. */
   public static TableId of(String project, String dataset, String table) {
-    checkArgument(!isNullOrEmpty(dataset), "Provided dataset is null or empty");
-    checkArgument(!isNullOrEmpty(table), "Provided table is null or empty");
     return new TableId(checkNotNull(project), dataset, table);
   }
 
   /** Creates a table identity given dataset's and table's user-defined ids. */
   public static TableId of(String dataset, String table) {
-    checkArgument(!isNullOrEmpty(dataset), "Provided dataset is null or empty");
-    checkArgument(!isNullOrEmpty(table), "Provided table is null or empty");
     return new TableId(null, dataset, table);
   }
 
