@@ -80,7 +80,7 @@ class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
     }
 
     void ensureTxn() {
-      if (transactionId == null) {
+      if (transactionId == null || isAborted()) {
         span.addAnnotation("Creating Transaction");
         try {
           transactionId = session.beginTransaction();
@@ -134,6 +134,9 @@ class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
       } catch (RuntimeException e) {
         span.addAnnotation("Commit Failed", TraceUtil.getExceptionAnnotations(e));
         TraceUtil.endSpanWithFailure(opSpan, e);
+        if (e instanceof SpannerException) {
+          onError((SpannerException) e);
+        }
         throw e;
       }
       span.addAnnotation("Commit Done");
@@ -291,6 +294,7 @@ class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
   TransactionRunnerImpl(SessionImpl session, SpannerRpc rpc, int defaultPrefetchChunks) {
     this.session = session;
     this.span = Tracing.getTracer().getCurrentSpan();
+    this.txn = session.newTransaction();
   }
 
   @Nullable
@@ -318,7 +322,9 @@ class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
         new Callable<T>() {
           @Override
           public T call() {
-            txn = session.newTransaction();
+            if (txn.isAborted()) {
+              txn = session.newTransaction();
+            }
             checkState(
                 isValid,
                 "TransactionRunner has been invalidated by a new operation on the session");
