@@ -16,12 +16,11 @@
 
 package com.google.cloud.bigquery;
 
-import static com.google.common.base.Preconditions.checkNotNull;
+import static com.google.common.base.Preconditions.checkArgument;
+import static com.google.common.base.Strings.isNullOrEmpty;
 
 import com.google.api.services.bigquery.model.ModelReference;
 import com.google.common.base.Function;
-import com.google.common.base.Preconditions;
-import com.google.common.base.Strings;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -69,12 +68,17 @@ public final class ModelId implements Serializable {
 
   /** Creates a model identity given project, dataset, and model identifiers. * */
   public static ModelId of(String project, String dataset, String model) {
-    return new ModelId(checkNotNull(project), checkNotNull(dataset), checkNotNull(model));
+    checkArgument(!isNullOrEmpty(project), "Provided project is null or empty");
+    checkArgument(!isNullOrEmpty(dataset), "Provided dataset is null or empty");
+    checkArgument(!isNullOrEmpty(model), "Provided model is null or empty");
+    return new ModelId(project, dataset, model);
   }
 
   /** Creates a model identity given dataset and model identifiers. * */
   public static ModelId of(String dataset, String model) {
-    return new ModelId(null, checkNotNull(dataset), checkNotNull(model));
+    checkArgument(!isNullOrEmpty(dataset), "Provided dataset is null or empty");
+    checkArgument(!isNullOrEmpty(model), "Provided model is null or empty");
+    return new ModelId(null, dataset, model);
   }
 
   @Override
@@ -93,8 +97,7 @@ public final class ModelId implements Serializable {
   }
 
   ModelId setProjectId(String projectId) {
-    Preconditions.checkArgument(
-        !Strings.isNullOrEmpty(projectId), "Provided projectId is null or empty");
+    checkArgument(!isNullOrEmpty(projectId), "Provided projectId is null or empty");
     return ModelId.of(projectId, getDataset(), getModel());
   }
 

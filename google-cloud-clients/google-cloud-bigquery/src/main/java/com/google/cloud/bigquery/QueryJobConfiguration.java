@@ -18,6 +18,7 @@ package com.google.cloud.bigquery;
 
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
+import static com.google.common.base.Strings.isNullOrEmpty;
 
 import com.google.api.services.bigquery.model.JobConfigurationQuery;
 import com.google.api.services.bigquery.model.QueryParameter;
@@ -26,7 +27,6 @@ import com.google.cloud.bigquery.JobInfo.SchemaUpdateOption;
 import com.google.cloud.bigquery.JobInfo.WriteDisposition;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects.ToStringHelper;
-import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Iterables;
@@ -796,8 +796,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
   @Override
   QueryJobConfiguration setProjectId(String projectId) {
     Builder builder = toBuilder();
-    if (getDestinationTable() != null
-        && Strings.isNullOrEmpty(getDestinationTable().getProject())) {
+    if (getDestinationTable() != null && isNullOrEmpty(getDestinationTable().getProject())) {
       builder.setDestinationTable(getDestinationTable().setProjectId(projectId));
     }
     if (getDefaultDataset() != null) {
@@ -886,6 +885,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
 
   /** Creates a builder for a BigQuery Query Job given the query to be run. */
   public static Builder newBuilder(String query) {
+    checkArgument(!isNullOrEmpty(query), "Provided query is null or empty");
     return new Builder().setQuery(query);
   }
 

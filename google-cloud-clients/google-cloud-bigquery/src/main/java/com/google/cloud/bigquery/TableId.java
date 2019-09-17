@@ -16,12 +16,12 @@
 
 package com.google.cloud.bigquery;
 
+import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
+import static com.google.common.base.Strings.isNullOrEmpty;
 
 import com.google.api.services.bigquery.model.TableReference;
 import com.google.common.base.Function;
-import com.google.common.base.Preconditions;
-import com.google.common.base.Strings;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -71,12 +71,16 @@ public final class TableId implements Serializable {
 
   /** Creates a table identity given project's, dataset's and table's user-defined ids. */
   public static TableId of(String project, String dataset, String table) {
-    return new TableId(checkNotNull(project), checkNotNull(dataset), checkNotNull(table));
+    checkArgument(!isNullOrEmpty(dataset), "Provided dataset is null or empty");
+    checkArgument(!isNullOrEmpty(table), "Provided table is null or empty");
+    return new TableId(checkNotNull(project), dataset, table);
   }
 
   /** Creates a table identity given dataset's and table's user-defined ids. */
   public static TableId of(String dataset, String table) {
-    return new TableId(null, checkNotNull(dataset), checkNotNull(table));
+    checkArgument(!isNullOrEmpty(dataset), "Provided dataset is null or empty");
+    checkArgument(!isNullOrEmpty(table), "Provided table is null or empty");
+    return new TableId(null, dataset, table);
   }
 
   @Override
@@ -95,8 +99,7 @@ public final class TableId implements Serializable {
   }
 
   TableId setProjectId(String projectId) {
-    Preconditions.checkArgument(
-        !Strings.isNullOrEmpty(projectId), "Provided projectId is null or empty");
+    checkArgument(!isNullOrEmpty(projectId), "Provided projectId is null or empty");
     return TableId.of(projectId, getDataset(), getTable());
   }
 
