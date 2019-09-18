@@ -190,7 +190,8 @@ public final class AttachedDiskInitializeParams implements ApiMessage {
 
   /**
    * The source image to create this disk. When creating a new instance, one of
-   * initializeParams.sourceImage or disks.source is required except for local SSD.
+   * initializeParams.sourceImage or initializeParams.sourceSnapshot or disks.source is required
+   * except for local SSD.
    *
    * <p>To create a disk with one of the public operating system images, specify the image by its
    * family name. For example, specify family/debian-9 to use the latest Debian 9 image:
@@ -226,7 +227,8 @@ public final class AttachedDiskInitializeParams implements ApiMessage {
 
   /**
    * The source snapshot to create this disk. When creating a new instance, one of
-   * initializeParams.sourceSnapshot or disks.source is required except for local SSD.
+   * initializeParams.sourceSnapshot or initializeParams.sourceImage or disks.source is required
+   * except for local SSD.
    *
    * <p>To create a disk with a snapshot that you created, specify the snapshot name in the
    * following format: global/snapshots/my-backup
@@ -455,7 +457,8 @@ public final class AttachedDiskInitializeParams implements ApiMessage {
 
     /**
      * The source image to create this disk. When creating a new instance, one of
-     * initializeParams.sourceImage or disks.source is required except for local SSD.
+     * initializeParams.sourceImage or initializeParams.sourceSnapshot or disks.source is required
+     * except for local SSD.
      *
      * <p>To create a disk with one of the public operating system images, specify the image by its
      * family name. For example, specify family/debian-9 to use the latest Debian 9 image:
@@ -479,7 +482,8 @@ public final class AttachedDiskInitializeParams implements ApiMessage {
 
     /**
      * The source image to create this disk. When creating a new instance, one of
-     * initializeParams.sourceImage or disks.source is required except for local SSD.
+     * initializeParams.sourceImage or initializeParams.sourceSnapshot or disks.source is required
+     * except for local SSD.
      *
      * <p>To create a disk with one of the public operating system images, specify the image by its
      * family name. For example, specify family/debian-9 to use the latest Debian 9 image:
@@ -529,7 +533,8 @@ public final class AttachedDiskInitializeParams implements ApiMessage {
 
     /**
      * The source snapshot to create this disk. When creating a new instance, one of
-     * initializeParams.sourceSnapshot or disks.source is required except for local SSD.
+     * initializeParams.sourceSnapshot or initializeParams.sourceImage or disks.source is required
+     * except for local SSD.
      *
      * <p>To create a disk with a snapshot that you created, specify the snapshot name in the
      * following format: global/snapshots/my-backup
@@ -542,7 +547,8 @@ public final class AttachedDiskInitializeParams implements ApiMessage {
 
     /**
      * The source snapshot to create this disk. When creating a new instance, one of
-     * initializeParams.sourceSnapshot or disks.source is required except for local SSD.
+     * initializeParams.sourceSnapshot or initializeParams.sourceImage or disks.source is required
+     * except for local SSD.
      *
      * <p>To create a disk with a snapshot that you created, specify the snapshot name in the
      * following format: global/snapshots/my-backup
