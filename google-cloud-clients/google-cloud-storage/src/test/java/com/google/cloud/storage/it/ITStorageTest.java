@@ -2219,6 +2219,15 @@ public class ITStorageTest {
     String bucketName = RemoteStorageHelper.generateBucketName();
     Bucket remoteBucket = storage.create(BucketInfo.newBuilder(bucketName).build());
     Policy policy = storage.getIamPolicy(bucketName);
+    policy = policy.toBuilder()
+            .addIdentity(StorageRoles.legacyBucketReader(), Identity.user("example@google.com"))
+            .addIdentity(StorageRoles.legacyBucketReader(), Identity.user("example2@google.com"))
+            .removeIdentity(StorageRoles.legacyBucketReader(), Identity.user("example@google.com"))
+            .removeRole(StorageRoles.legacyBucketReader())
+            .build();
+    Map<com.google.cloud.Role, Set<Identity>> bindings = policy.getBindings();
+    bindings.put(StorageRoles.legacyBucketReader(), ImmutableSet.of(Identity.user("example@google.com")));
+    policy = policy.toBuilder().setBindings(bindings).build();
     Policy updatedPolicy = storage.setIamPolicy(bucketName, policy);
     assertEquals(policy.getBindings().size(), updatedPolicy.getBindings().size());
   }
@@ -2236,7 +2245,6 @@ public class ITStorageTest {
                 .build());
     Policy policy = storage.getIamPolicy(bucketName);
     List<com.google.cloud.Binding> bindings = policy.getBindingsV3();
-    System.out.println(bindings);
     com.google.cloud.Binding iamConditionBinding =
         com.google.cloud.Binding.newBuilder()
             .setRole(StorageRoles.legacyBucketReader())
@@ -2250,12 +2258,10 @@ public class ITStorageTest {
                             + "/objects/dev-path\")))")
                     .build())
             .build();
-    System.out.println(iamConditionBinding);
 
     // Make it easier to add a binding.
     ImmutableList.Builder<com.google.cloud.Binding> bindingsBuilder = ImmutableList.builder();
     bindings = bindingsBuilder.addAll(bindings).add(iamConditionBinding).build();
-    System.out.println(bindings);
     Policy updatedPolicy =
         storage.setIamPolicy(bucketName, policy.newBuilder().setBindingsV3(bindings).build());
     assertEquals(bindings.size(), updatedPolicy.getBindingsV3().size());
