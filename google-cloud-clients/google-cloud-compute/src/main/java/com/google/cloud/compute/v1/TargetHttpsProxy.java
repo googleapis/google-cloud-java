@@ -40,6 +40,7 @@ public final class TargetHttpsProxy implements ApiMessage {
   private final String kind;
   private final String name;
   private final String quicOverride;
+  private final String region;
   private final String selfLink;
   private final List<String> sslCertificates;
   private final String sslPolicy;
@@ -52,6 +53,7 @@ public final class TargetHttpsProxy implements ApiMessage {
     this.kind = null;
     this.name = null;
     this.quicOverride = null;
+    this.region = null;
     this.selfLink = null;
     this.sslCertificates = null;
     this.sslPolicy = null;
@@ -65,6 +67,7 @@ public final class TargetHttpsProxy implements ApiMessage {
       String kind,
       String name,
       String quicOverride,
+      String region,
       String selfLink,
       List<String> sslCertificates,
       String sslPolicy,
@@ -75,6 +78,7 @@ public final class TargetHttpsProxy implements ApiMessage {
     this.kind = kind;
     this.name = name;
     this.quicOverride = quicOverride;
+    this.region = region;
     this.selfLink = selfLink;
     this.sslCertificates = sslCertificates;
     this.sslPolicy = sslPolicy;
@@ -100,6 +104,9 @@ public final class TargetHttpsProxy implements ApiMessage {
     }
     if ("quicOverride".equals(fieldName)) {
       return quicOverride;
+    }
+    if ("region".equals(fieldName)) {
+      return region;
     }
     if ("selfLink".equals(fieldName)) {
       return selfLink;
@@ -181,6 +188,14 @@ public final class TargetHttpsProxy implements ApiMessage {
     return quicOverride;
   }
 
+  /**
+   * [Output Only] URL of the region where the regional TargetHttpsProxy resides. This field is not
+   * applicable to global TargetHttpsProxies.
+   */
+  public String getRegion() {
+    return region;
+  }
+
   /** [Output Only] Server-defined URL for the resource. */
   public String getSelfLink() {
     return selfLink;
@@ -242,6 +257,7 @@ public final class TargetHttpsProxy implements ApiMessage {
     private String kind;
     private String name;
     private String quicOverride;
+    private String region;
     private String selfLink;
     private List<String> sslCertificates;
     private String sslPolicy;
@@ -269,6 +285,9 @@ public final class TargetHttpsProxy implements ApiMessage {
       if (other.getQuicOverride() != null) {
         this.quicOverride = other.quicOverride;
       }
+      if (other.getRegion() != null) {
+        this.region = other.region;
+      }
       if (other.getSelfLink() != null) {
         this.selfLink = other.selfLink;
       }
@@ -291,6 +310,7 @@ public final class TargetHttpsProxy implements ApiMessage {
       this.kind = source.kind;
       this.name = source.name;
       this.quicOverride = source.quicOverride;
+      this.region = source.region;
       this.selfLink = source.selfLink;
       this.sslCertificates = source.sslCertificates;
       this.sslPolicy = source.sslPolicy;
@@ -399,6 +419,23 @@ public final class TargetHttpsProxy implements ApiMessage {
       return this;
     }
 
+    /**
+     * [Output Only] URL of the region where the regional TargetHttpsProxy resides. This field is
+     * not applicable to global TargetHttpsProxies.
+     */
+    public String getRegion() {
+      return region;
+    }
+
+    /**
+     * [Output Only] URL of the region where the regional TargetHttpsProxy resides. This field is
+     * not applicable to global TargetHttpsProxies.
+     */
+    public Builder setRegion(String region) {
+      this.region = region;
+      return this;
+    }
+
     /** [Output Only] Server-defined URL for the resource. */
     public String getSelfLink() {
       return selfLink;
@@ -492,6 +529,7 @@ public final class TargetHttpsProxy implements ApiMessage {
           kind,
           name,
           quicOverride,
+          region,
           selfLink,
           sslCertificates,
           sslPolicy,
@@ -506,6 +544,7 @@ public final class TargetHttpsProxy implements ApiMessage {
       newBuilder.setKind(this.kind);
       newBuilder.setName(this.name);
       newBuilder.setQuicOverride(this.quicOverride);
+      newBuilder.setRegion(this.region);
       newBuilder.setSelfLink(this.selfLink);
       newBuilder.addAllSslCertificates(this.sslCertificates);
       newBuilder.setSslPolicy(this.sslPolicy);
@@ -535,6 +574,9 @@ public final class TargetHttpsProxy implements ApiMessage {
         + "quicOverride="
         + quicOverride
         + ", "
+        + "region="
+        + region
+        + ", "
         + "selfLink="
         + selfLink
         + ", "
@@ -562,6 +604,7 @@ public final class TargetHttpsProxy implements ApiMessage {
           && Objects.equals(this.kind, that.getKind())
           && Objects.equals(this.name, that.getName())
           && Objects.equals(this.quicOverride, that.getQuicOverride())
+          && Objects.equals(this.region, that.getRegion())
           && Objects.equals(this.selfLink, that.getSelfLink())
           && Objects.equals(this.sslCertificates, that.getSslCertificatesList())
           && Objects.equals(this.sslPolicy, that.getSslPolicy())
@@ -579,6 +622,7 @@ public final class TargetHttpsProxy implements ApiMessage {
         kind,
         name,
         quicOverride,
+        region,
         selfLink,
         sslCertificates,
         sslPolicy,
