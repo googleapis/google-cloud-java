@@ -24,13 +24,19 @@ import static org.mockito.Mockito.verify;
 import com.google.common.collect.AbstractIterator;
 import com.google.common.collect.Lists;
 import com.google.protobuf.ByteString;
+import com.google.protobuf.Duration;
 import com.google.protobuf.Value;
+import com.google.rpc.RetryInfo;
 import com.google.spanner.v1.PartialResultSet;
+import io.grpc.Metadata;
+import io.grpc.StatusRuntimeException;
+import io.grpc.protobuf.ProtoUtils;
 import io.opencensus.trace.Span;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 import javax.annotation.Nullable;
 import org.junit.Before;
 import org.junit.Rule;
@@ -55,10 +61,24 @@ public class ResumableStreamIteratorTest {
     void close();
   }
 
+  private static StatusRuntimeException statusWithRetryInfo(ErrorCode code) {
+    Metadata.Key<RetryInfo> key = ProtoUtils.keyForProto(RetryInfo.getDefaultInstance());
+    Metadata trailers = new Metadata();
+    RetryInfo retryInfo =
+        RetryInfo.newBuilder()
+            .setRetryDelay(
+                Duration.newBuilder()
+                    .setNanos((int) TimeUnit.MILLISECONDS.toNanos(1L))
+                    .setSeconds(0L))
+            .build();
+    trailers.put(key, retryInfo);
+    return code.getGrpcStatus().asRuntimeException(trailers);
+  }
+
   static class RetryableException extends SpannerException {
     RetryableException(ErrorCode code, @Nullable String message) {
       // OK to instantiate SpannerException directly for this unit test.
-      super(DoNotConstructDirectly.ALLOWED, code, true, message, null);
+      super(DoNotConstructDirectly.ALLOWED, code, true, message, statusWithRetryInfo(code));
     }
   }
 

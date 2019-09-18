@@ -68,6 +68,7 @@ import io.grpc.Metadata;
 import io.grpc.ServerServiceDefinition;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
+import io.grpc.protobuf.ProtoUtils;
 import io.grpc.protobuf.lite.ProtoLiteUtils;
 import io.grpc.stub.StreamObserver;
 import java.util.ArrayList;
@@ -1007,19 +1008,39 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
   }
 
   private <T> void throwTransactionNotFound(ByteString transactionId) {
+    Metadata.Key<RetryInfo> key = ProtoUtils.keyForProto(RetryInfo.getDefaultInstance());
+    Metadata trailers = new Metadata();
+    RetryInfo retryInfo =
+        RetryInfo.newBuilder()
+            .setRetryDelay(
+                Duration.newBuilder()
+                    .setNanos((int) TimeUnit.MILLISECONDS.toNanos(1L))
+                    .setSeconds(0L))
+            .build();
+    trailers.put(key, retryInfo);
     throw Status.ABORTED
         .withDescription(
             String.format(
                 "Transaction with id %s not found and has probably been aborted",
                 transactionId.toStringUtf8()))
-        .asRuntimeException();
+        .asRuntimeException(trailers);
   }
 
   private <T> void throwTransactionAborted(ByteString transactionId) {
+    Metadata.Key<RetryInfo> key = ProtoUtils.keyForProto(RetryInfo.getDefaultInstance());
+    Metadata trailers = new Metadata();
+    RetryInfo retryInfo =
+        RetryInfo.newBuilder()
+            .setRetryDelay(
+                Duration.newBuilder()
+                    .setNanos((int) TimeUnit.MILLISECONDS.toNanos(1L))
+                    .setSeconds(0L))
+            .build();
+    trailers.put(key, retryInfo);
     throw Status.ABORTED
         .withDescription(
             String.format("Transaction with id %s has been aborted", transactionId.toStringUtf8()))
-        .asRuntimeException();
+        .asRuntimeException(trailers);
   }
 
   @Override

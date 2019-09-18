@@ -31,8 +31,10 @@ import com.google.cloud.spanner.TransactionRunnerImpl.TransactionContextImpl;
 import com.google.cloud.spanner.spi.v1.SpannerRpc;
 import com.google.common.base.Preconditions;
 import com.google.protobuf.ByteString;
+import com.google.protobuf.Duration;
 import com.google.protobuf.Timestamp;
 import com.google.rpc.Code;
+import com.google.rpc.RetryInfo;
 import com.google.spanner.v1.BeginTransactionRequest;
 import com.google.spanner.v1.CommitRequest;
 import com.google.spanner.v1.CommitResponse;
@@ -41,8 +43,10 @@ import com.google.spanner.v1.ExecuteBatchDmlResponse;
 import com.google.spanner.v1.ResultSet;
 import com.google.spanner.v1.ResultSetStats;
 import com.google.spanner.v1.Transaction;
+import io.grpc.Metadata;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
+import io.grpc.protobuf.ProtoUtils;
 import java.util.Arrays;
 import java.util.UUID;
 import java.util.concurrent.Executors;
@@ -169,15 +173,14 @@ public class TransactionRunnerImplTest {
   @Test
   public void runAbort() {
     when(txn.isAborted()).thenReturn(true);
-    runTransaction(SpannerExceptionFactory.newSpannerException(ErrorCode.ABORTED, ""));
+    runTransaction(abortedWithRetryInfo());
     verify(txn, times(2)).ensureTxn();
   }
 
   @Test
   public void commitAbort() {
     final SpannerException error =
-        SpannerExceptionFactory.newSpannerException(
-            SpannerExceptionFactory.newSpannerException(ErrorCode.ABORTED, ""));
+        SpannerExceptionFactory.newSpannerException(abortedWithRetryInfo());
     doThrow(error).doNothing().when(txn).commit();
     final AtomicInteger numCalls = new AtomicInteger(0);
     transactionRunner.run(
@@ -315,5 +318,22 @@ public class TransactionRunnerImplTest {
             return null;
           }
         });
+  }
+
+  private SpannerException abortedWithRetryInfo() {
+    Status status = Status.fromCodeValue(Status.Code.ABORTED.value());
+    return SpannerExceptionFactory.newSpannerException(
+        ErrorCode.ABORTED, "test", new StatusRuntimeException(status, createRetryTrailers()));
+  }
+
+  private Metadata createRetryTrailers() {
+    Metadata.Key<RetryInfo> key = ProtoUtils.keyForProto(RetryInfo.getDefaultInstance());
+    Metadata trailers = new Metadata();
+    RetryInfo retryInfo =
+        RetryInfo.newBuilder()
+            .setRetryDelay(Duration.newBuilder().setNanos(0).setSeconds(0L))
+            .build();
+    trailers.put(key, retryInfo);
+    return trailers;
   }
 }
