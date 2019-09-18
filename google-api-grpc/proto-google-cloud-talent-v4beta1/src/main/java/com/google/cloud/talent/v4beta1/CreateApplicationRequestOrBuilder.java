@@ -15,11 +15,11 @@ public interface CreateApplicationRequestOrBuilder
    * Required. Resource name of the profile under which the application is
    * created.
    * The format is
-   * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}", for
-   * example, "projects/test-project/tenants/test-tenant/profiles/test-profile".
+   * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}".
+   * For example, "projects/foo/tenants/bar/profiles/baz".
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getParent();
   /**
@@ -29,11 +29,11 @@ public interface CreateApplicationRequestOrBuilder
    * Required. Resource name of the profile under which the application is
    * created.
    * The format is
-   * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}", for
-   * example, "projects/test-project/tenants/test-tenant/profiles/test-profile".
+   * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}".
+   * For example, "projects/foo/tenants/bar/profiles/baz".
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -44,7 +44,9 @@ public interface CreateApplicationRequestOrBuilder
    * Required. The application to be created.
    * </pre>
    *
-   * <code>.google.cloud.talent.v4beta1.Application application = 2;</code>
+   * <code>
+   * .google.cloud.talent.v4beta1.Application application = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   boolean hasApplication();
   /**
@@ -54,7 +56,9 @@ public interface CreateApplicationRequestOrBuilder
    * Required. The application to be created.
    * </pre>
    *
-   * <code>.google.cloud.talent.v4beta1.Application application = 2;</code>
+   * <code>
+   * .google.cloud.talent.v4beta1.Application application = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.talent.v4beta1.Application getApplication();
   /**
@@ -64,7 +68,9 @@ public interface CreateApplicationRequestOrBuilder
    * Required. The application to be created.
    * </pre>
    *
-   * <code>.google.cloud.talent.v4beta1.Application application = 2;</code>
+   * <code>
+   * .google.cloud.talent.v4beta1.Application application = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.talent.v4beta1.ApplicationOrBuilder getApplicationOrBuilder();
 }

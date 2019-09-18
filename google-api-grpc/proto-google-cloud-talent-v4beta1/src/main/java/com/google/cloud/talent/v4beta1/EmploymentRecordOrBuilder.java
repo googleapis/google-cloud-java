@@ -12,7 +12,7 @@ public interface EmploymentRecordOrBuilder
    *
    *
    * <pre>
-   * Optional. Start date of the employment.
+   * Start date of the employment.
    * </pre>
    *
    * <code>.google.type.Date start_date = 1;</code>
@@ -22,7 +22,7 @@ public interface EmploymentRecordOrBuilder
    *
    *
    * <pre>
-   * Optional. Start date of the employment.
+   * Start date of the employment.
    * </pre>
    *
    * <code>.google.type.Date start_date = 1;</code>
@@ -32,7 +32,7 @@ public interface EmploymentRecordOrBuilder
    *
    *
    * <pre>
-   * Optional. Start date of the employment.
+   * Start date of the employment.
    * </pre>
    *
    * <code>.google.type.Date start_date = 1;</code>
@@ -43,7 +43,7 @@ public interface EmploymentRecordOrBuilder
    *
    *
    * <pre>
-   * Optional. End date of the employment.
+   * End date of the employment.
    * </pre>
    *
    * <code>.google.type.Date end_date = 2;</code>
@@ -53,7 +53,7 @@ public interface EmploymentRecordOrBuilder
    *
    *
    * <pre>
-   * Optional. End date of the employment.
+   * End date of the employment.
    * </pre>
    *
    * <code>.google.type.Date end_date = 2;</code>
@@ -63,7 +63,7 @@ public interface EmploymentRecordOrBuilder
    *
    *
    * <pre>
-   * Optional. End date of the employment.
+   * End date of the employment.
    * </pre>
    *
    * <code>.google.type.Date end_date = 2;</code>
@@ -74,7 +74,7 @@ public interface EmploymentRecordOrBuilder
    *
    *
    * <pre>
-   * Optional. The name of the employer company/organization.
+   * The name of the employer company/organization.
    * For example, "Google", "Alphabet", and so on.
    * Number of characters allowed is 250.
    * </pre>
@@ -86,7 +86,7 @@ public interface EmploymentRecordOrBuilder
    *
    *
    * <pre>
-   * Optional. The name of the employer company/organization.
+   * The name of the employer company/organization.
    * For example, "Google", "Alphabet", and so on.
    * Number of characters allowed is 250.
    * </pre>
@@ -99,7 +99,7 @@ public interface EmploymentRecordOrBuilder
    *
    *
    * <pre>
-   * Optional. The division name of the employment.
+   * The division name of the employment.
    * For example, division, department, client, and so on.
    * Number of characters allowed is 100.
    * </pre>
@@ -111,7 +111,7 @@ public interface EmploymentRecordOrBuilder
    *
    *
    * <pre>
-   * Optional. The division name of the employment.
+   * The division name of the employment.
    * For example, division, department, client, and so on.
    * Number of characters allowed is 100.
    * </pre>
@@ -124,7 +124,7 @@ public interface EmploymentRecordOrBuilder
    *
    *
    * <pre>
-   * Optional. The physical address of the employer.
+   * The physical address of the employer.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Address address = 5;</code>
@@ -134,7 +134,7 @@ public interface EmploymentRecordOrBuilder
    *
    *
    * <pre>
-   * Optional. The physical address of the employer.
+   * The physical address of the employer.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Address address = 5;</code>
@@ -144,7 +144,7 @@ public interface EmploymentRecordOrBuilder
    *
    *
    * <pre>
-   * Optional. The physical address of the employer.
+   * The physical address of the employer.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Address address = 5;</code>
@@ -155,7 +155,7 @@ public interface EmploymentRecordOrBuilder
    *
    *
    * <pre>
-   * Optional. The job title of the employment.
+   * The job title of the employment.
    * For example, "Software Engineer", "Data Scientist", and so on.
    * Number of characters allowed is 250.
    * </pre>
@@ -167,7 +167,7 @@ public interface EmploymentRecordOrBuilder
    *
    *
    * <pre>
-   * Optional. The job title of the employment.
+   * The job title of the employment.
    * For example, "Software Engineer", "Data Scientist", and so on.
    * Number of characters allowed is 250.
    * </pre>
@@ -180,7 +180,7 @@ public interface EmploymentRecordOrBuilder
    *
    *
    * <pre>
-   * Optional. The description of job content.
+   * The description of job content.
    * Number of characters allowed is 100,000.
    * </pre>
    *
@@ -191,7 +191,7 @@ public interface EmploymentRecordOrBuilder
    *
    *
    * <pre>
-   * Optional. The description of job content.
+   * The description of job content.
    * Number of characters allowed is 100,000.
    * </pre>
    *
@@ -203,7 +203,7 @@ public interface EmploymentRecordOrBuilder
    *
    *
    * <pre>
-   * Optional. If the jobs is a supervisor position.
+   * If the jobs is a supervisor position.
    * </pre>
    *
    * <code>.google.protobuf.BoolValue is_supervisor = 8;</code>
@@ -213,7 +213,7 @@ public interface EmploymentRecordOrBuilder
    *
    *
    * <pre>
-   * Optional. If the jobs is a supervisor position.
+   * If the jobs is a supervisor position.
    * </pre>
    *
    * <code>.google.protobuf.BoolValue is_supervisor = 8;</code>
@@ -223,7 +223,7 @@ public interface EmploymentRecordOrBuilder
    *
    *
    * <pre>
-   * Optional. If the jobs is a supervisor position.
+   * If the jobs is a supervisor position.
    * </pre>
    *
    * <code>.google.protobuf.BoolValue is_supervisor = 8;</code>
@@ -234,7 +234,7 @@ public interface EmploymentRecordOrBuilder
    *
    *
    * <pre>
-   * Optional. If this employment is self-employed.
+   * If this employment is self-employed.
    * </pre>
    *
    * <code>.google.protobuf.BoolValue is_self_employed = 9;</code>
@@ -244,7 +244,7 @@ public interface EmploymentRecordOrBuilder
    *
    *
    * <pre>
-   * Optional. If this employment is self-employed.
+   * If this employment is self-employed.
    * </pre>
    *
    * <code>.google.protobuf.BoolValue is_self_employed = 9;</code>
@@ -254,7 +254,7 @@ public interface EmploymentRecordOrBuilder
    *
    *
    * <pre>
-   * Optional. If this employment is self-employed.
+   * If this employment is self-employed.
    * </pre>
    *
    * <code>.google.protobuf.BoolValue is_self_employed = 9;</code>
@@ -265,7 +265,7 @@ public interface EmploymentRecordOrBuilder
    *
    *
    * <pre>
-   * Optional. If this employment is current.
+   * If this employment is current.
    * </pre>
    *
    * <code>.google.protobuf.BoolValue is_current = 10;</code>
@@ -275,7 +275,7 @@ public interface EmploymentRecordOrBuilder
    *
    *
    * <pre>
-   * Optional. If this employment is current.
+   * If this employment is current.
    * </pre>
    *
    * <code>.google.protobuf.BoolValue is_current = 10;</code>
@@ -285,7 +285,7 @@ public interface EmploymentRecordOrBuilder
    *
    *
    * <pre>
-   * Optional. If this employment is current.
+   * If this employment is current.
    * </pre>
    *
    * <code>.google.protobuf.BoolValue is_current = 10;</code>
@@ -303,7 +303,7 @@ public interface EmploymentRecordOrBuilder
    * related to the search query.
    * </pre>
    *
-   * <code>string job_title_snippet = 11;</code>
+   * <code>string job_title_snippet = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   java.lang.String getJobTitleSnippet();
   /**
@@ -317,7 +317,7 @@ public interface EmploymentRecordOrBuilder
    * related to the search query.
    * </pre>
    *
-   * <code>string job_title_snippet = 11;</code>
+   * <code>string job_title_snippet = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.protobuf.ByteString getJobTitleSnippetBytes();
 
@@ -332,7 +332,7 @@ public interface EmploymentRecordOrBuilder
    * isn't related to the search query.
    * </pre>
    *
-   * <code>string job_description_snippet = 12;</code>
+   * <code>string job_description_snippet = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   java.lang.String getJobDescriptionSnippet();
   /**
@@ -346,7 +346,7 @@ public interface EmploymentRecordOrBuilder
    * isn't related to the search query.
    * </pre>
    *
-   * <code>string job_description_snippet = 12;</code>
+   * <code>string job_description_snippet = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.protobuf.ByteString getJobDescriptionSnippetBytes();
 
@@ -361,7 +361,7 @@ public interface EmploymentRecordOrBuilder
    * isn't related to the search query.
    * </pre>
    *
-   * <code>string employer_name_snippet = 13;</code>
+   * <code>string employer_name_snippet = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   java.lang.String getEmployerNameSnippet();
   /**
@@ -375,7 +375,7 @@ public interface EmploymentRecordOrBuilder
    * isn't related to the search query.
    * </pre>
    *
-   * <code>string employer_name_snippet = 13;</code>
+   * <code>string employer_name_snippet = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.protobuf.ByteString getEmployerNameSnippetBytes();
 }

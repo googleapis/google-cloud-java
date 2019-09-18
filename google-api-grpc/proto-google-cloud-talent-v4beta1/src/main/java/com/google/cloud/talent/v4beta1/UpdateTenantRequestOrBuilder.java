@@ -16,7 +16,8 @@ public interface UpdateTenantRequestOrBuilder
    * system.
    * </pre>
    *
-   * <code>.google.cloud.talent.v4beta1.Tenant tenant = 1;</code>
+   * <code>.google.cloud.talent.v4beta1.Tenant tenant = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   boolean hasTenant();
   /**
@@ -27,7 +28,8 @@ public interface UpdateTenantRequestOrBuilder
    * system.
    * </pre>
    *
-   * <code>.google.cloud.talent.v4beta1.Tenant tenant = 1;</code>
+   * <code>.google.cloud.talent.v4beta1.Tenant tenant = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.talent.v4beta1.Tenant getTenant();
   /**
@@ -38,7 +40,8 @@ public interface UpdateTenantRequestOrBuilder
    * system.
    * </pre>
    *
-   * <code>.google.cloud.talent.v4beta1.Tenant tenant = 1;</code>
+   * <code>.google.cloud.talent.v4beta1.Tenant tenant = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.talent.v4beta1.TenantOrBuilder getTenantOrBuilder();
 
@@ -46,8 +49,7 @@ public interface UpdateTenantRequestOrBuilder
    *
    *
    * <pre>
-   * Optional but strongly recommended for the best service
-   * experience.
+   * Strongly recommended for the best service experience.
    * If
    * [update_mask][google.cloud.talent.v4beta1.UpdateTenantRequest.update_mask]
    * is provided, only the specified fields in
@@ -65,8 +67,7 @@ public interface UpdateTenantRequestOrBuilder
    *
    *
    * <pre>
-   * Optional but strongly recommended for the best service
-   * experience.
+   * Strongly recommended for the best service experience.
    * If
    * [update_mask][google.cloud.talent.v4beta1.UpdateTenantRequest.update_mask]
    * is provided, only the specified fields in
@@ -84,8 +85,7 @@ public interface UpdateTenantRequestOrBuilder
    *
    *
    * <pre>
-   * Optional but strongly recommended for the best service
-   * experience.
+   * Strongly recommended for the best service experience.
    * If
    * [update_mask][google.cloud.talent.v4beta1.UpdateTenantRequest.update_mask]
    * is provided, only the specified fields in

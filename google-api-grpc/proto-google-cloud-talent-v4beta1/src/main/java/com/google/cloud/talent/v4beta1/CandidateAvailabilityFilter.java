@@ -7,7 +7,6 @@ package com.google.cloud.talent.v4beta1;
  *
  *
  * <pre>
- * Input only
  * Filter on availability signals.
  * </pre>
  *
@@ -94,8 +93,8 @@ public final class CandidateAvailabilityFilter extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Optional. It is false by default. If true, API excludes all the potential
-   * available profiles.
+   * It is false by default. If true, API excludes all the potential available
+   * profiles.
    * </pre>
    *
    * <code>bool negated = 1;</code>
@@ -268,7 +267,6 @@ public final class CandidateAvailabilityFilter extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Input only
    * Filter on availability signals.
    * </pre>
    *
@@ -428,8 +426,8 @@ public final class CandidateAvailabilityFilter extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. It is false by default. If true, API excludes all the potential
-     * available profiles.
+     * It is false by default. If true, API excludes all the potential available
+     * profiles.
      * </pre>
      *
      * <code>bool negated = 1;</code>
@@ -441,8 +439,8 @@ public final class CandidateAvailabilityFilter extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. It is false by default. If true, API excludes all the potential
-     * available profiles.
+     * It is false by default. If true, API excludes all the potential available
+     * profiles.
      * </pre>
      *
      * <code>bool negated = 1;</code>
@@ -457,8 +455,8 @@ public final class CandidateAvailabilityFilter extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. It is false by default. If true, API excludes all the potential
-     * available profiles.
+     * It is false by default. If true, API excludes all the potential available
+     * profiles.
      * </pre>
      *
      * <code>bool negated = 1;</code>

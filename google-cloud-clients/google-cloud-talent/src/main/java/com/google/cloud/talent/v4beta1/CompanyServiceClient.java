@@ -171,9 +171,8 @@ public class CompanyServiceClient implements BackgroundResource {
    *
    * @param parent Required. Resource name of the tenant under which the company is created.
    *     <p>The format is "projects/{project_id}/tenants/{tenant_id}", for example,
-   *     "projects/api-test-project/tenant/foo".
-   *     <p>Tenant id is optional and a default tenant is created if unspecified, for example,
-   *     "projects/api-test-project".
+   *     "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant is created, for
+   *     example, "projects/foo".
    * @param company Required. The company to be created.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -203,9 +202,8 @@ public class CompanyServiceClient implements BackgroundResource {
    *
    * @param parent Required. Resource name of the tenant under which the company is created.
    *     <p>The format is "projects/{project_id}/tenants/{tenant_id}", for example,
-   *     "projects/api-test-project/tenant/foo".
-   *     <p>Tenant id is optional and a default tenant is created if unspecified, for example,
-   *     "projects/api-test-project".
+   *     "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant is created, for
+   *     example, "projects/foo".
    * @param company Required. The company to be created.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -281,7 +279,7 @@ public class CompanyServiceClient implements BackgroundResource {
    * @param name Required. The resource name of the company to be retrieved.
    *     <p>The format is "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
    *     example, "projects/api-test-project/tenants/foo/companies/bar".
-   *     <p>Tenant id is optional and the default tenant is used if unspecified, for example,
+   *     <p>If tenant id is unspecified, the default tenant is used, for example,
    *     "projects/api-test-project/companies/bar".
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -308,7 +306,7 @@ public class CompanyServiceClient implements BackgroundResource {
    * @param name Required. The resource name of the company to be retrieved.
    *     <p>The format is "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
    *     example, "projects/api-test-project/tenants/foo/companies/bar".
-   *     <p>Tenant id is optional and the default tenant is used if unspecified, for example,
+   *     <p>If tenant id is unspecified, the default tenant is used, for example,
    *     "projects/api-test-project/companies/bar".
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -445,9 +443,9 @@ public class CompanyServiceClient implements BackgroundResource {
    *
    * @param name Required. The resource name of the company to be deleted.
    *     <p>The format is "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
-   *     example, "projects/api-test-project/tenants/foo/companies/bar".
-   *     <p>Tenant id is optional and the default tenant is used if unspecified, for example,
-   *     "projects/api-test-project/companies/bar".
+   *     example, "projects/foo/tenants/bar/companies/baz".
+   *     <p>If tenant id is unspecified, the default tenant is used, for example,
+   *     "projects/foo/companies/bar".
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteCompany(CompanyName name) {
@@ -472,9 +470,9 @@ public class CompanyServiceClient implements BackgroundResource {
    *
    * @param name Required. The resource name of the company to be deleted.
    *     <p>The format is "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
-   *     example, "projects/api-test-project/tenants/foo/companies/bar".
-   *     <p>Tenant id is optional and the default tenant is used if unspecified, for example,
-   *     "projects/api-test-project/companies/bar".
+   *     example, "projects/foo/tenants/bar/companies/baz".
+   *     <p>If tenant id is unspecified, the default tenant is used, for example,
+   *     "projects/foo/companies/bar".
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteCompany(String name) {
@@ -545,9 +543,9 @@ public class CompanyServiceClient implements BackgroundResource {
    *
    * @param parent Required. Resource name of the tenant under which the company is created.
    *     <p>The format is "projects/{project_id}/tenants/{tenant_id}", for example,
-   *     "projects/api-test-project/tenant/foo".
-   *     <p>Tenant id is optional and the default tenant is used if unspecified, for example,
-   *     "projects/api-test-project".
+   *     "projects/foo/tenant/bar".
+   *     <p>If tenant id is unspecified, the default tenant will be used, for example,
+   *     "projects/foo".
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListCompaniesPagedResponse listCompanies(TenantOrProjectName parent) {
@@ -575,9 +573,9 @@ public class CompanyServiceClient implements BackgroundResource {
    *
    * @param parent Required. Resource name of the tenant under which the company is created.
    *     <p>The format is "projects/{project_id}/tenants/{tenant_id}", for example,
-   *     "projects/api-test-project/tenant/foo".
-   *     <p>Tenant id is optional and the default tenant is used if unspecified, for example,
-   *     "projects/api-test-project".
+   *     "projects/foo/tenant/bar".
+   *     <p>If tenant id is unspecified, the default tenant will be used, for example,
+   *     "projects/foo".
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListCompaniesPagedResponse listCompanies(String parent) {

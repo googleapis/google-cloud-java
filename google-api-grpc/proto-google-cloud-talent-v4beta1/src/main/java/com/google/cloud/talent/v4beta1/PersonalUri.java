@@ -97,7 +97,7 @@ public final class PersonalUri extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The personal URI.
+   * The personal URI.
    * Number of characters allowed is 4,000.
    * </pre>
    *
@@ -118,7 +118,7 @@ public final class PersonalUri extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The personal URI.
+   * The personal URI.
    * Number of characters allowed is 4,000.
    * </pre>
    *
@@ -457,7 +457,7 @@ public final class PersonalUri extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The personal URI.
+     * The personal URI.
      * Number of characters allowed is 4,000.
      * </pre>
      *
@@ -478,7 +478,7 @@ public final class PersonalUri extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The personal URI.
+     * The personal URI.
      * Number of characters allowed is 4,000.
      * </pre>
      *
@@ -499,7 +499,7 @@ public final class PersonalUri extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The personal URI.
+     * The personal URI.
      * Number of characters allowed is 4,000.
      * </pre>
      *
@@ -518,7 +518,7 @@ public final class PersonalUri extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The personal URI.
+     * The personal URI.
      * Number of characters allowed is 4,000.
      * </pre>
      *
@@ -534,7 +534,7 @@ public final class PersonalUri extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The personal URI.
+     * The personal URI.
      * Number of characters allowed is 4,000.
      * </pre>
      *

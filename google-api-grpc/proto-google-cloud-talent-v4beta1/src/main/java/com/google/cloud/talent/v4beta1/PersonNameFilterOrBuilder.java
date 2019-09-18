@@ -19,7 +19,7 @@ public interface PersonNameFilterOrBuilder
    * [PersonName.formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name].
    * </pre>
    *
-   * <code>string person_name = 1;</code>
+   * <code>string person_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getPersonName();
   /**
@@ -33,7 +33,7 @@ public interface PersonNameFilterOrBuilder
    * [PersonName.formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name].
    * </pre>
    *
-   * <code>string person_name = 1;</code>
+   * <code>string person_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getPersonNameBytes();
 }

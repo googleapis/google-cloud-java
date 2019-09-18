@@ -7,7 +7,7 @@ package com.google.cloud.talent.v4beta1;
  *
  *
  * <pre>
- * Output only. Spell check result.
+ * Spell check result.
  * </pre>
  *
  * Protobuf type {@code google.cloud.talent.v4beta1.SpellingCorrection}
@@ -396,7 +396,7 @@ public final class SpellingCorrection extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Output only. Spell check result.
+   * Spell check result.
    * </pre>
    *
    * Protobuf type {@code google.cloud.talent.v4beta1.SpellingCorrection}

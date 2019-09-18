@@ -15,7 +15,7 @@ public interface SkillFilterOrBuilder
    * Required. The skill name. For example, "java", "j2ee", and so on.
    * </pre>
    *
-   * <code>string skill = 1;</code>
+   * <code>string skill = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getSkill();
   /**
@@ -25,7 +25,7 @@ public interface SkillFilterOrBuilder
    * Required. The skill name. For example, "java", "j2ee", and so on.
    * </pre>
    *
-   * <code>string skill = 1;</code>
+   * <code>string skill = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getSkillBytes();
 
@@ -33,8 +33,8 @@ public interface SkillFilterOrBuilder
    *
    *
    * <pre>
-   * Optional. Whether to apply negation to the filter so profiles matching the
-   * filter are excluded.
+   * Whether to apply negation to the filter so profiles matching the filter
+   * are excluded.
    * </pre>
    *
    * <code>bool negated = 2;</code>

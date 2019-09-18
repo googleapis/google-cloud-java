@@ -12,7 +12,7 @@ public interface PersonalUriOrBuilder
    *
    *
    * <pre>
-   * Optional. The personal URI.
+   * The personal URI.
    * Number of characters allowed is 4,000.
    * </pre>
    *
@@ -23,7 +23,7 @@ public interface PersonalUriOrBuilder
    *
    *
    * <pre>
-   * Optional. The personal URI.
+   * The personal URI.
    * Number of characters allowed is 4,000.
    * </pre>
    *

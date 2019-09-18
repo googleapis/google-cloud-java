@@ -123,7 +123,8 @@ public final class UpdateTenantRequest extends com.google.protobuf.GeneratedMess
    * system.
    * </pre>
    *
-   * <code>.google.cloud.talent.v4beta1.Tenant tenant = 1;</code>
+   * <code>.google.cloud.talent.v4beta1.Tenant tenant = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public boolean hasTenant() {
     return tenant_ != null;
@@ -136,7 +137,8 @@ public final class UpdateTenantRequest extends com.google.protobuf.GeneratedMess
    * system.
    * </pre>
    *
-   * <code>.google.cloud.talent.v4beta1.Tenant tenant = 1;</code>
+   * <code>.google.cloud.talent.v4beta1.Tenant tenant = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.talent.v4beta1.Tenant getTenant() {
     return tenant_ == null ? com.google.cloud.talent.v4beta1.Tenant.getDefaultInstance() : tenant_;
@@ -149,7 +151,8 @@ public final class UpdateTenantRequest extends com.google.protobuf.GeneratedMess
    * system.
    * </pre>
    *
-   * <code>.google.cloud.talent.v4beta1.Tenant tenant = 1;</code>
+   * <code>.google.cloud.talent.v4beta1.Tenant tenant = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.talent.v4beta1.TenantOrBuilder getTenantOrBuilder() {
     return getTenant();
@@ -161,8 +164,7 @@ public final class UpdateTenantRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Optional but strongly recommended for the best service
-   * experience.
+   * Strongly recommended for the best service experience.
    * If
    * [update_mask][google.cloud.talent.v4beta1.UpdateTenantRequest.update_mask]
    * is provided, only the specified fields in
@@ -182,8 +184,7 @@ public final class UpdateTenantRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Optional but strongly recommended for the best service
-   * experience.
+   * Strongly recommended for the best service experience.
    * If
    * [update_mask][google.cloud.talent.v4beta1.UpdateTenantRequest.update_mask]
    * is provided, only the specified fields in
@@ -203,8 +204,7 @@ public final class UpdateTenantRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Optional but strongly recommended for the best service
-   * experience.
+   * Strongly recommended for the best service experience.
    * If
    * [update_mask][google.cloud.talent.v4beta1.UpdateTenantRequest.update_mask]
    * is provided, only the specified fields in
@@ -593,7 +593,9 @@ public final class UpdateTenantRequest extends com.google.protobuf.GeneratedMess
      * system.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.Tenant tenant = 1;</code>
+     * <code>
+     * .google.cloud.talent.v4beta1.Tenant tenant = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public boolean hasTenant() {
       return tenantBuilder_ != null || tenant_ != null;
@@ -606,7 +608,9 @@ public final class UpdateTenantRequest extends com.google.protobuf.GeneratedMess
      * system.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.Tenant tenant = 1;</code>
+     * <code>
+     * .google.cloud.talent.v4beta1.Tenant tenant = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.talent.v4beta1.Tenant getTenant() {
       if (tenantBuilder_ == null) {
@@ -625,7 +629,9 @@ public final class UpdateTenantRequest extends com.google.protobuf.GeneratedMess
      * system.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.Tenant tenant = 1;</code>
+     * <code>
+     * .google.cloud.talent.v4beta1.Tenant tenant = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setTenant(com.google.cloud.talent.v4beta1.Tenant value) {
       if (tenantBuilder_ == null) {
@@ -648,7 +654,9 @@ public final class UpdateTenantRequest extends com.google.protobuf.GeneratedMess
      * system.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.Tenant tenant = 1;</code>
+     * <code>
+     * .google.cloud.talent.v4beta1.Tenant tenant = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setTenant(com.google.cloud.talent.v4beta1.Tenant.Builder builderForValue) {
       if (tenantBuilder_ == null) {
@@ -668,7 +676,9 @@ public final class UpdateTenantRequest extends com.google.protobuf.GeneratedMess
      * system.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.Tenant tenant = 1;</code>
+     * <code>
+     * .google.cloud.talent.v4beta1.Tenant tenant = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeTenant(com.google.cloud.talent.v4beta1.Tenant value) {
       if (tenantBuilder_ == null) {
@@ -695,7 +705,9 @@ public final class UpdateTenantRequest extends com.google.protobuf.GeneratedMess
      * system.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.Tenant tenant = 1;</code>
+     * <code>
+     * .google.cloud.talent.v4beta1.Tenant tenant = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearTenant() {
       if (tenantBuilder_ == null) {
@@ -716,7 +728,9 @@ public final class UpdateTenantRequest extends com.google.protobuf.GeneratedMess
      * system.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.Tenant tenant = 1;</code>
+     * <code>
+     * .google.cloud.talent.v4beta1.Tenant tenant = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.talent.v4beta1.Tenant.Builder getTenantBuilder() {
 
@@ -731,7 +745,9 @@ public final class UpdateTenantRequest extends com.google.protobuf.GeneratedMess
      * system.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.Tenant tenant = 1;</code>
+     * <code>
+     * .google.cloud.talent.v4beta1.Tenant tenant = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.talent.v4beta1.TenantOrBuilder getTenantOrBuilder() {
       if (tenantBuilder_ != null) {
@@ -750,7 +766,9 @@ public final class UpdateTenantRequest extends com.google.protobuf.GeneratedMess
      * system.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.Tenant tenant = 1;</code>
+     * <code>
+     * .google.cloud.talent.v4beta1.Tenant tenant = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.talent.v4beta1.Tenant,
@@ -779,8 +797,7 @@ public final class UpdateTenantRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional but strongly recommended for the best service
-     * experience.
+     * Strongly recommended for the best service experience.
      * If
      * [update_mask][google.cloud.talent.v4beta1.UpdateTenantRequest.update_mask]
      * is provided, only the specified fields in
@@ -800,8 +817,7 @@ public final class UpdateTenantRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional but strongly recommended for the best service
-     * experience.
+     * Strongly recommended for the best service experience.
      * If
      * [update_mask][google.cloud.talent.v4beta1.UpdateTenantRequest.update_mask]
      * is provided, only the specified fields in
@@ -827,8 +843,7 @@ public final class UpdateTenantRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional but strongly recommended for the best service
-     * experience.
+     * Strongly recommended for the best service experience.
      * If
      * [update_mask][google.cloud.talent.v4beta1.UpdateTenantRequest.update_mask]
      * is provided, only the specified fields in
@@ -858,8 +873,7 @@ public final class UpdateTenantRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional but strongly recommended for the best service
-     * experience.
+     * Strongly recommended for the best service experience.
      * If
      * [update_mask][google.cloud.talent.v4beta1.UpdateTenantRequest.update_mask]
      * is provided, only the specified fields in
@@ -886,8 +900,7 @@ public final class UpdateTenantRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional but strongly recommended for the best service
-     * experience.
+     * Strongly recommended for the best service experience.
      * If
      * [update_mask][google.cloud.talent.v4beta1.UpdateTenantRequest.update_mask]
      * is provided, only the specified fields in
@@ -919,8 +932,7 @@ public final class UpdateTenantRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional but strongly recommended for the best service
-     * experience.
+     * Strongly recommended for the best service experience.
      * If
      * [update_mask][google.cloud.talent.v4beta1.UpdateTenantRequest.update_mask]
      * is provided, only the specified fields in
@@ -948,8 +960,7 @@ public final class UpdateTenantRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional but strongly recommended for the best service
-     * experience.
+     * Strongly recommended for the best service experience.
      * If
      * [update_mask][google.cloud.talent.v4beta1.UpdateTenantRequest.update_mask]
      * is provided, only the specified fields in
@@ -971,8 +982,7 @@ public final class UpdateTenantRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional but strongly recommended for the best service
-     * experience.
+     * Strongly recommended for the best service experience.
      * If
      * [update_mask][google.cloud.talent.v4beta1.UpdateTenantRequest.update_mask]
      * is provided, only the specified fields in
@@ -998,8 +1008,7 @@ public final class UpdateTenantRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional but strongly recommended for the best service
-     * experience.
+     * Strongly recommended for the best service experience.
      * If
      * [update_mask][google.cloud.talent.v4beta1.UpdateTenantRequest.update_mask]
      * is provided, only the specified fields in

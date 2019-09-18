@@ -139,12 +139,12 @@ public interface RequestMetadataOrBuilder
    *
    *
    * <pre>
-   * Optional. If set to `true`,
+   * Only set when any of
    * [domain][google.cloud.talent.v4beta1.RequestMetadata.domain],
    * [session_id][google.cloud.talent.v4beta1.RequestMetadata.session_id] and
-   * [user_id][google.cloud.talent.v4beta1.RequestMetadata.user_id] are
-   * optional. Only set when any of these fields isn't available for some
-   * reason. It is highly recommended not to set this field and provide accurate
+   * [user_id][google.cloud.talent.v4beta1.RequestMetadata.user_id] isn't
+   * available for some reason. It is highly recommended not to set this field
+   * and provide accurate
    * [domain][google.cloud.talent.v4beta1.RequestMetadata.domain],
    * [session_id][google.cloud.talent.v4beta1.RequestMetadata.session_id] and
    * [user_id][google.cloud.talent.v4beta1.RequestMetadata.user_id] for the best
@@ -159,8 +159,8 @@ public interface RequestMetadataOrBuilder
    *
    *
    * <pre>
-   * Optional. The type of device used by the job seeker at the time of the call
-   * to the service.
+   * The type of device used by the job seeker at the time of the call to the
+   * service.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.DeviceInfo device_info = 5;</code>
@@ -170,8 +170,8 @@ public interface RequestMetadataOrBuilder
    *
    *
    * <pre>
-   * Optional. The type of device used by the job seeker at the time of the call
-   * to the service.
+   * The type of device used by the job seeker at the time of the call to the
+   * service.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.DeviceInfo device_info = 5;</code>
@@ -181,8 +181,8 @@ public interface RequestMetadataOrBuilder
    *
    *
    * <pre>
-   * Optional. The type of device used by the job seeker at the time of the call
-   * to the service.
+   * The type of device used by the job seeker at the time of the call to the
+   * service.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.DeviceInfo device_info = 5;</code>
