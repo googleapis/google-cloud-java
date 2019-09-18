@@ -16,12 +16,14 @@
 package com.google.cloud.bigtable.admin.v2.it;
 
 import static com.google.cloud.bigtable.admin.v2.models.GCRules.GCRULES;
+import static com.google.common.truth.Truth.assertThat;
 import static com.google.common.truth.TruthJUnit.assume;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
+import com.google.cloud.Policy;
 import com.google.api.gax.rpc.NotFoundException;
 import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient;
 import com.google.cloud.bigtable.admin.v2.models.ColumnFamily;
@@ -188,12 +190,17 @@ public class BigtableTableAdminClientIT {
 
   @Test
   public void iamUpdateTest() {
-    Policy policy = tableAdmin.getIamPolicy(instanceId);
+    assume()
+        .withMessage("Emulator doesn't return proper responses for IAM Policy operations")
+        .that(testEnvRule.env())
+        .isNotInstanceOf(EmulatorEnv.class);
+
+    Policy policy = tableAdmin.getIamPolicy(tableId);
     assertThat(policy).isNotNull();
 
     Exception actualEx = null;
     try {
-      assertThat(tableAdmin.setIamPolicy(instanceId, policy)).isNotNull();
+      assertThat(tableAdmin.setIamPolicy(tableId, policy)).isNotNull();
     } catch (Exception iamException) {
       actualEx = iamException;
     }
@@ -201,7 +208,7 @@ public class BigtableTableAdminClientIT {
 
     List<String> permissions =
         tableAdmin.testIamPermission(
-            instanceId, "bigtable.tables.readRows", "bigtable.tables.mutateRows");
+            tableId, "bigtable.tables.readRows", "bigtable.tables.mutateRows");
     assertThat(permissions).hasSize(2);
   }
 }
