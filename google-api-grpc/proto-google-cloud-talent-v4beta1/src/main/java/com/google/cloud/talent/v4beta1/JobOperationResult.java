@@ -7,7 +7,6 @@ package com.google.cloud.talent.v4beta1;
  *
  *
  * <pre>
- * Output only.
  * The result of
  * [JobService.BatchCreateJobs][google.cloud.talent.v4beta1.JobService.BatchCreateJobs]
  * or
@@ -1506,7 +1505,6 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Output only.
    * The result of
    * [JobService.BatchCreateJobs][google.cloud.talent.v4beta1.JobService.BatchCreateJobs]
    * or

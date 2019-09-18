@@ -15,7 +15,8 @@ public interface UpdateJobRequestOrBuilder
    * Required. The Job to be updated.
    * </pre>
    *
-   * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
+   * <code>.google.cloud.talent.v4beta1.Job job = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   boolean hasJob();
   /**
@@ -25,7 +26,8 @@ public interface UpdateJobRequestOrBuilder
    * Required. The Job to be updated.
    * </pre>
    *
-   * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
+   * <code>.google.cloud.talent.v4beta1.Job job = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.talent.v4beta1.Job getJob();
   /**
@@ -35,7 +37,8 @@ public interface UpdateJobRequestOrBuilder
    * Required. The Job to be updated.
    * </pre>
    *
-   * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
+   * <code>.google.cloud.talent.v4beta1.Job job = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.talent.v4beta1.JobOrBuilder getJobOrBuilder();
 
@@ -43,8 +46,7 @@ public interface UpdateJobRequestOrBuilder
    *
    *
    * <pre>
-   * Optional but strongly recommended to be provided for the best service
-   * experience.
+   * Strongly recommended for the best service experience.
    * If [update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask]
    * is provided, only the specified fields in
    * [job][google.cloud.talent.v4beta1.UpdateJobRequest.job] are updated.
@@ -60,8 +62,7 @@ public interface UpdateJobRequestOrBuilder
    *
    *
    * <pre>
-   * Optional but strongly recommended to be provided for the best service
-   * experience.
+   * Strongly recommended for the best service experience.
    * If [update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask]
    * is provided, only the specified fields in
    * [job][google.cloud.talent.v4beta1.UpdateJobRequest.job] are updated.
@@ -77,8 +78,7 @@ public interface UpdateJobRequestOrBuilder
    *
    *
    * <pre>
-   * Optional but strongly recommended to be provided for the best service
-   * experience.
+   * Strongly recommended for the best service experience.
    * If [update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask]
    * is provided, only the specified fields in
    * [job][google.cloud.talent.v4beta1.UpdateJobRequest.job] are updated.

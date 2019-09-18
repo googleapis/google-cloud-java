@@ -7,7 +7,6 @@ package com.google.cloud.talent.v4beta1;
  *
  *
  * <pre>
- * Output only.
  * Histogram result that matches
  * [HistogramQuery][google.cloud.talent.v4beta1.HistogramQuery] specified in
  * searches.
@@ -465,7 +464,6 @@ public final class HistogramQueryResult extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Output only.
    * Histogram result that matches
    * [HistogramQuery][google.cloud.talent.v4beta1.HistogramQuery] specified in
    * searches.

@@ -12,7 +12,7 @@ public interface PublicationOrBuilder
    *
    *
    * <pre>
-   * Optional. A list of author names.
+   * A list of author names.
    * Number of characters allowed is 100.
    * </pre>
    *
@@ -23,7 +23,7 @@ public interface PublicationOrBuilder
    *
    *
    * <pre>
-   * Optional. A list of author names.
+   * A list of author names.
    * Number of characters allowed is 100.
    * </pre>
    *
@@ -34,7 +34,7 @@ public interface PublicationOrBuilder
    *
    *
    * <pre>
-   * Optional. A list of author names.
+   * A list of author names.
    * Number of characters allowed is 100.
    * </pre>
    *
@@ -45,7 +45,7 @@ public interface PublicationOrBuilder
    *
    *
    * <pre>
-   * Optional. A list of author names.
+   * A list of author names.
    * Number of characters allowed is 100.
    * </pre>
    *
@@ -57,7 +57,7 @@ public interface PublicationOrBuilder
    *
    *
    * <pre>
-   * Optional. The title of the publication.
+   * The title of the publication.
    * Number of characters allowed is 100.
    * </pre>
    *
@@ -68,7 +68,7 @@ public interface PublicationOrBuilder
    *
    *
    * <pre>
-   * Optional. The title of the publication.
+   * The title of the publication.
    * Number of characters allowed is 100.
    * </pre>
    *
@@ -80,7 +80,7 @@ public interface PublicationOrBuilder
    *
    *
    * <pre>
-   * Optional. The description of the publication.
+   * The description of the publication.
    * Number of characters allowed is 100,000.
    * </pre>
    *
@@ -91,7 +91,7 @@ public interface PublicationOrBuilder
    *
    *
    * <pre>
-   * Optional. The description of the publication.
+   * The description of the publication.
    * Number of characters allowed is 100,000.
    * </pre>
    *
@@ -103,7 +103,7 @@ public interface PublicationOrBuilder
    *
    *
    * <pre>
-   * Optional. The journal name of the publication.
+   * The journal name of the publication.
    * Number of characters allowed is 100.
    * </pre>
    *
@@ -114,7 +114,7 @@ public interface PublicationOrBuilder
    *
    *
    * <pre>
-   * Optional. The journal name of the publication.
+   * The journal name of the publication.
    * Number of characters allowed is 100.
    * </pre>
    *
@@ -126,7 +126,7 @@ public interface PublicationOrBuilder
    *
    *
    * <pre>
-   * Optional. Volume number.
+   * Volume number.
    * Number of characters allowed is 100.
    * </pre>
    *
@@ -137,7 +137,7 @@ public interface PublicationOrBuilder
    *
    *
    * <pre>
-   * Optional. Volume number.
+   * Volume number.
    * Number of characters allowed is 100.
    * </pre>
    *
@@ -149,7 +149,7 @@ public interface PublicationOrBuilder
    *
    *
    * <pre>
-   * Optional. The publisher of the journal.
+   * The publisher of the journal.
    * Number of characters allowed is 100.
    * </pre>
    *
@@ -160,7 +160,7 @@ public interface PublicationOrBuilder
    *
    *
    * <pre>
-   * Optional. The publisher of the journal.
+   * The publisher of the journal.
    * Number of characters allowed is 100.
    * </pre>
    *
@@ -172,7 +172,7 @@ public interface PublicationOrBuilder
    *
    *
    * <pre>
-   * Optional. The publication date.
+   * The publication date.
    * </pre>
    *
    * <code>.google.type.Date publication_date = 7;</code>
@@ -182,7 +182,7 @@ public interface PublicationOrBuilder
    *
    *
    * <pre>
-   * Optional. The publication date.
+   * The publication date.
    * </pre>
    *
    * <code>.google.type.Date publication_date = 7;</code>
@@ -192,7 +192,7 @@ public interface PublicationOrBuilder
    *
    *
    * <pre>
-   * Optional. The publication date.
+   * The publication date.
    * </pre>
    *
    * <code>.google.type.Date publication_date = 7;</code>
@@ -203,7 +203,7 @@ public interface PublicationOrBuilder
    *
    *
    * <pre>
-   * Optional. The publication type.
+   * The publication type.
    * Number of characters allowed is 100.
    * </pre>
    *
@@ -214,7 +214,7 @@ public interface PublicationOrBuilder
    *
    *
    * <pre>
-   * Optional. The publication type.
+   * The publication type.
    * Number of characters allowed is 100.
    * </pre>
    *
@@ -226,7 +226,7 @@ public interface PublicationOrBuilder
    *
    *
    * <pre>
-   * Optional. ISBN number.
+   * ISBN number.
    * Number of characters allowed is 100.
    * </pre>
    *
@@ -237,7 +237,7 @@ public interface PublicationOrBuilder
    *
    *
    * <pre>
-   * Optional. ISBN number.
+   * ISBN number.
    * Number of characters allowed is 100.
    * </pre>
    *

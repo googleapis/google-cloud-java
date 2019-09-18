@@ -7,7 +7,6 @@ package com.google.cloud.talent.v4beta1;
  *
  *
  * <pre>
- * Input only.
  * Filter on job compensation type and amount.
  * </pre>
  *
@@ -395,7 +394,9 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
    * Required. Type of filter.
    * </pre>
    *
-   * <code>.google.cloud.talent.v4beta1.CompensationFilter.FilterType type = 1;</code>
+   * <code>
+   * .google.cloud.talent.v4beta1.CompensationFilter.FilterType type = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public int getTypeValue() {
     return type_;
@@ -407,7 +408,9 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
    * Required. Type of filter.
    * </pre>
    *
-   * <code>.google.cloud.talent.v4beta1.CompensationFilter.FilterType type = 1;</code>
+   * <code>
+   * .google.cloud.talent.v4beta1.CompensationFilter.FilterType type = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.talent.v4beta1.CompensationFilter.FilterType getType() {
     @SuppressWarnings("deprecation")
@@ -444,7 +447,9 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
    * [CompensationInfo.CompensationUnit][google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit].
    * </pre>
    *
-   * <code>repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit units = 2;</code>
+   * <code>
+   * repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit units = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public java.util.List<com.google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit>
       getUnitsList() {
@@ -460,7 +465,9 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
    * [CompensationInfo.CompensationUnit][google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit].
    * </pre>
    *
-   * <code>repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit units = 2;</code>
+   * <code>
+   * repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit units = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public int getUnitsCount() {
     return units_.size();
@@ -473,7 +480,9 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
    * [CompensationInfo.CompensationUnit][google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit].
    * </pre>
    *
-   * <code>repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit units = 2;</code>
+   * <code>
+   * repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit units = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit getUnits(int index) {
     return units_converter_.convert(units_.get(index));
@@ -486,7 +495,9 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
    * [CompensationInfo.CompensationUnit][google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit].
    * </pre>
    *
-   * <code>repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit units = 2;</code>
+   * <code>
+   * repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit units = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public java.util.List<java.lang.Integer> getUnitsValueList() {
     return units_;
@@ -499,7 +510,9 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
    * [CompensationInfo.CompensationUnit][google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit].
    * </pre>
    *
-   * <code>repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit units = 2;</code>
+   * <code>
+   * repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit units = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public int getUnitsValue(int index) {
     return units_.get(index);
@@ -513,7 +526,7 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. Compensation range.
+   * Compensation range.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange range = 3;</code>
@@ -525,7 +538,7 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. Compensation range.
+   * Compensation range.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange range = 3;</code>
@@ -539,7 +552,7 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. Compensation range.
+   * Compensation range.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange range = 3;</code>
@@ -555,8 +568,8 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. If set to true, jobs with unspecified compensation range fields
-   * are included.
+   * If set to true, jobs with unspecified compensation range fields are
+   * included.
    * </pre>
    *
    * <code>bool include_jobs_with_unspecified_compensation_range = 4;</code>
@@ -786,7 +799,6 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Input only.
    * Filter on job compensation type and amount.
    * </pre>
    *
@@ -993,7 +1005,9 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
      * Required. Type of filter.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.CompensationFilter.FilterType type = 1;</code>
+     * <code>
+     * .google.cloud.talent.v4beta1.CompensationFilter.FilterType type = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public int getTypeValue() {
       return type_;
@@ -1005,7 +1019,9 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
      * Required. Type of filter.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.CompensationFilter.FilterType type = 1;</code>
+     * <code>
+     * .google.cloud.talent.v4beta1.CompensationFilter.FilterType type = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setTypeValue(int value) {
       type_ = value;
@@ -1019,7 +1035,9 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
      * Required. Type of filter.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.CompensationFilter.FilterType type = 1;</code>
+     * <code>
+     * .google.cloud.talent.v4beta1.CompensationFilter.FilterType type = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.talent.v4beta1.CompensationFilter.FilterType getType() {
       @SuppressWarnings("deprecation")
@@ -1036,7 +1054,9 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
      * Required. Type of filter.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.CompensationFilter.FilterType type = 1;</code>
+     * <code>
+     * .google.cloud.talent.v4beta1.CompensationFilter.FilterType type = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setType(com.google.cloud.talent.v4beta1.CompensationFilter.FilterType value) {
       if (value == null) {
@@ -1054,7 +1074,9 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
      * Required. Type of filter.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.CompensationFilter.FilterType type = 1;</code>
+     * <code>
+     * .google.cloud.talent.v4beta1.CompensationFilter.FilterType type = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearType() {
 
@@ -1079,7 +1101,8 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
      * [CompensationInfo.CompensationUnit][google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit].
      * </pre>
      *
-     * <code>repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit units = 2;
+     * <code>
+     * repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit units = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public java.util.List<com.google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit>
@@ -1096,7 +1119,8 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
      * [CompensationInfo.CompensationUnit][google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit].
      * </pre>
      *
-     * <code>repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit units = 2;
+     * <code>
+     * repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit units = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public int getUnitsCount() {
@@ -1110,7 +1134,8 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
      * [CompensationInfo.CompensationUnit][google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit].
      * </pre>
      *
-     * <code>repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit units = 2;
+     * <code>
+     * repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit units = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit getUnits(int index) {
@@ -1124,7 +1149,8 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
      * [CompensationInfo.CompensationUnit][google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit].
      * </pre>
      *
-     * <code>repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit units = 2;
+     * <code>
+     * repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit units = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setUnits(
@@ -1145,7 +1171,8 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
      * [CompensationInfo.CompensationUnit][google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit].
      * </pre>
      *
-     * <code>repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit units = 2;
+     * <code>
+     * repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit units = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder addUnits(
@@ -1166,7 +1193,8 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
      * [CompensationInfo.CompensationUnit][google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit].
      * </pre>
      *
-     * <code>repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit units = 2;
+     * <code>
+     * repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit units = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder addAllUnits(
@@ -1188,7 +1216,8 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
      * [CompensationInfo.CompensationUnit][google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit].
      * </pre>
      *
-     * <code>repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit units = 2;
+     * <code>
+     * repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit units = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearUnits() {
@@ -1205,7 +1234,8 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
      * [CompensationInfo.CompensationUnit][google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit].
      * </pre>
      *
-     * <code>repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit units = 2;
+     * <code>
+     * repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit units = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public java.util.List<java.lang.Integer> getUnitsValueList() {
@@ -1219,7 +1249,8 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
      * [CompensationInfo.CompensationUnit][google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit].
      * </pre>
      *
-     * <code>repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit units = 2;
+     * <code>
+     * repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit units = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public int getUnitsValue(int index) {
@@ -1233,7 +1264,8 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
      * [CompensationInfo.CompensationUnit][google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit].
      * </pre>
      *
-     * <code>repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit units = 2;
+     * <code>
+     * repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit units = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setUnitsValue(int index, int value) {
@@ -1250,7 +1282,8 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
      * [CompensationInfo.CompensationUnit][google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit].
      * </pre>
      *
-     * <code>repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit units = 2;
+     * <code>
+     * repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit units = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder addUnitsValue(int value) {
@@ -1267,7 +1300,8 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
      * [CompensationInfo.CompensationUnit][google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit].
      * </pre>
      *
-     * <code>repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit units = 2;
+     * <code>
+     * repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit units = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder addAllUnitsValue(java.lang.Iterable<java.lang.Integer> values) {
@@ -1289,7 +1323,7 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Compensation range.
+     * Compensation range.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange range = 3;</code>
@@ -1301,7 +1335,7 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Compensation range.
+     * Compensation range.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange range = 3;</code>
@@ -1320,7 +1354,7 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Compensation range.
+     * Compensation range.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange range = 3;</code>
@@ -1343,7 +1377,7 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Compensation range.
+     * Compensation range.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange range = 3;</code>
@@ -1364,7 +1398,7 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Compensation range.
+     * Compensation range.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange range = 3;</code>
@@ -1391,7 +1425,7 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Compensation range.
+     * Compensation range.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange range = 3;</code>
@@ -1411,7 +1445,7 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Compensation range.
+     * Compensation range.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange range = 3;</code>
@@ -1426,7 +1460,7 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Compensation range.
+     * Compensation range.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange range = 3;</code>
@@ -1446,7 +1480,7 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Compensation range.
+     * Compensation range.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange range = 3;</code>
@@ -1473,8 +1507,8 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. If set to true, jobs with unspecified compensation range fields
-     * are included.
+     * If set to true, jobs with unspecified compensation range fields are
+     * included.
      * </pre>
      *
      * <code>bool include_jobs_with_unspecified_compensation_range = 4;</code>
@@ -1486,8 +1520,8 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. If set to true, jobs with unspecified compensation range fields
-     * are included.
+     * If set to true, jobs with unspecified compensation range fields are
+     * included.
      * </pre>
      *
      * <code>bool include_jobs_with_unspecified_compensation_range = 4;</code>
@@ -1502,8 +1536,8 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. If set to true, jobs with unspecified compensation range fields
-     * are included.
+     * If set to true, jobs with unspecified compensation range fields are
+     * included.
      * </pre>
      *
      * <code>bool include_jobs_with_unspecified_compensation_range = 4;</code>

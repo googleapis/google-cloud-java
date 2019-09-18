@@ -14,13 +14,13 @@ public interface DeleteJobRequestOrBuilder
    * <pre>
    * Required. The resource name of the job to be deleted.
    * The format is
-   * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
-   * example, "projects/api-test-project/tenants/foo/jobs/1234".
-   * Tenant id is optional and the default tenant is used if unspecified, for
-   * example, "projects/api-test-project/jobs/1234".
+   * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}". For
+   * example, "projects/foo/tenants/bar/jobs/baz".
+   * If tenant id is unspecified, the default tenant is used. For
+   * example, "projects/foo/jobs/bar".
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getName();
   /**
@@ -29,13 +29,13 @@ public interface DeleteJobRequestOrBuilder
    * <pre>
    * Required. The resource name of the job to be deleted.
    * The format is
-   * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
-   * example, "projects/api-test-project/tenants/foo/jobs/1234".
-   * Tenant id is optional and the default tenant is used if unspecified, for
-   * example, "projects/api-test-project/jobs/1234".
+   * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}". For
+   * example, "projects/foo/tenants/bar/jobs/baz".
+   * If tenant id is unspecified, the default tenant is used. For
+   * example, "projects/foo/jobs/bar".
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getNameBytes();
 }

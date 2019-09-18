@@ -12,7 +12,7 @@ public interface LocationFilterOrBuilder
    *
    *
    * <pre>
-   * Optional. The address name, such as "Mountain View" or "Bay Area".
+   * The address name, such as "Mountain View" or "Bay Area".
    * </pre>
    *
    * <code>string address = 1;</code>
@@ -22,7 +22,7 @@ public interface LocationFilterOrBuilder
    *
    *
    * <pre>
-   * Optional. The address name, such as "Mountain View" or "Bay Area".
+   * The address name, such as "Mountain View" or "Bay Area".
    * </pre>
    *
    * <code>string address = 1;</code>
@@ -33,9 +33,9 @@ public interface LocationFilterOrBuilder
    *
    *
    * <pre>
-   * Optional. CLDR region code of the country/region of the address. This is
-   * used to address ambiguity of the user-input location, for example,
-   * "Liverpool" against "Liverpool, NY, US" or "Liverpool, UK".
+   * CLDR region code of the country/region of the address. This is used
+   * to address ambiguity of the user-input location, for example, "Liverpool"
+   * against "Liverpool, NY, US" or "Liverpool, UK".
    * Set this field to bias location resolution toward a specific country
    * or territory. If this field is not set, application behavior is biased
    * toward the United States by default.
@@ -52,9 +52,9 @@ public interface LocationFilterOrBuilder
    *
    *
    * <pre>
-   * Optional. CLDR region code of the country/region of the address. This is
-   * used to address ambiguity of the user-input location, for example,
-   * "Liverpool" against "Liverpool, NY, US" or "Liverpool, UK".
+   * CLDR region code of the country/region of the address. This is used
+   * to address ambiguity of the user-input location, for example, "Liverpool"
+   * against "Liverpool, NY, US" or "Liverpool, UK".
    * Set this field to bias location resolution toward a specific country
    * or territory. If this field is not set, application behavior is biased
    * toward the United States by default.
@@ -72,8 +72,8 @@ public interface LocationFilterOrBuilder
    *
    *
    * <pre>
-   * Optional. The latitude and longitude of the geographic center to search
-   * from. This field is ignored if `address` is provided.
+   * The latitude and longitude of the geographic center to search from. This
+   * field is ignored if `address` is provided.
    * </pre>
    *
    * <code>.google.type.LatLng lat_lng = 3;</code>
@@ -83,8 +83,8 @@ public interface LocationFilterOrBuilder
    *
    *
    * <pre>
-   * Optional. The latitude and longitude of the geographic center to search
-   * from. This field is ignored if `address` is provided.
+   * The latitude and longitude of the geographic center to search from. This
+   * field is ignored if `address` is provided.
    * </pre>
    *
    * <code>.google.type.LatLng lat_lng = 3;</code>
@@ -94,8 +94,8 @@ public interface LocationFilterOrBuilder
    *
    *
    * <pre>
-   * Optional. The latitude and longitude of the geographic center to search
-   * from. This field is ignored if `address` is provided.
+   * The latitude and longitude of the geographic center to search from. This
+   * field is ignored if `address` is provided.
    * </pre>
    *
    * <code>.google.type.LatLng lat_lng = 3;</code>
@@ -106,9 +106,9 @@ public interface LocationFilterOrBuilder
    *
    *
    * <pre>
-   * Optional. The distance_in_miles is applied when the location being searched
-   * for is identified as a city or smaller. This field is ignored if the
-   * location being searched for is a state or larger.
+   * The distance_in_miles is applied when the location being searched for is
+   * identified as a city or smaller. This field is ignored if the location
+   * being searched for is a state or larger.
    * </pre>
    *
    * <code>double distance_in_miles = 4;</code>
@@ -119,7 +119,7 @@ public interface LocationFilterOrBuilder
    *
    *
    * <pre>
-   * Optional. Allows the client to return jobs without a
+   * Allows the client to return jobs without a
    * set location, specifically, telecommuting jobs (telecommuting is considered
    * by the service as a special location.
    * [Job.posting_region][google.cloud.talent.v4beta1.Job.posting_region]
@@ -149,7 +149,7 @@ public interface LocationFilterOrBuilder
    *
    *
    * <pre>
-   * Optional. Allows the client to return jobs without a
+   * Allows the client to return jobs without a
    * set location, specifically, telecommuting jobs (telecommuting is considered
    * by the service as a special location.
    * [Job.posting_region][google.cloud.talent.v4beta1.Job.posting_region]
@@ -180,8 +180,8 @@ public interface LocationFilterOrBuilder
    *
    *
    * <pre>
-   * Optional. Whether to apply negation to the filter so profiles matching the
-   * filter are excluded.
+   * Whether to apply negation to the filter so profiles matching the filter
+   * are excluded.
    * Currently only supported in profile search.
    * </pre>
    *

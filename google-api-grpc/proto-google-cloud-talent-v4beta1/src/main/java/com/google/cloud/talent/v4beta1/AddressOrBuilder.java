@@ -12,7 +12,7 @@ public interface AddressOrBuilder
    *
    *
    * <pre>
-   * Optional. The usage of the address. For example, SCHOOL, WORK, PERSONAL.
+   * The usage of the address. For example, SCHOOL, WORK, PERSONAL.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.ContactInfoUsage usage = 1;</code>
@@ -22,7 +22,7 @@ public interface AddressOrBuilder
    *
    *
    * <pre>
-   * Optional. The usage of the address. For example, SCHOOL, WORK, PERSONAL.
+   * The usage of the address. For example, SCHOOL, WORK, PERSONAL.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.ContactInfoUsage usage = 1;</code>
@@ -33,7 +33,7 @@ public interface AddressOrBuilder
    *
    *
    * <pre>
-   * Optional. Unstructured address.
+   * Unstructured address.
    * For example, "1600 Amphitheatre Pkwy, Mountain View, CA 94043",
    * "Sunnyvale, California".
    * Number of characters allowed is 100.
@@ -46,7 +46,7 @@ public interface AddressOrBuilder
    *
    *
    * <pre>
-   * Optional. Unstructured address.
+   * Unstructured address.
    * For example, "1600 Amphitheatre Pkwy, Mountain View, CA 94043",
    * "Sunnyvale, California".
    * Number of characters allowed is 100.
@@ -60,8 +60,8 @@ public interface AddressOrBuilder
    *
    *
    * <pre>
-   * Optional. Structured address that contains street address, city, state,
-   * country, and so on.
+   * Structured address that contains street address, city, state, country,
+   * and so on.
    * </pre>
    *
    * <code>.google.type.PostalAddress structured_address = 3;</code>
@@ -71,8 +71,8 @@ public interface AddressOrBuilder
    *
    *
    * <pre>
-   * Optional. Structured address that contains street address, city, state,
-   * country, and so on.
+   * Structured address that contains street address, city, state, country,
+   * and so on.
    * </pre>
    *
    * <code>.google.type.PostalAddress structured_address = 3;</code>
@@ -82,8 +82,8 @@ public interface AddressOrBuilder
    *
    *
    * <pre>
-   * Optional. Structured address that contains street address, city, state,
-   * country, and so on.
+   * Structured address that contains street address, city, state, country,
+   * and so on.
    * </pre>
    *
    * <code>.google.type.PostalAddress structured_address = 3;</code>
@@ -94,7 +94,7 @@ public interface AddressOrBuilder
    *
    *
    * <pre>
-   * Optional. Indicates if it's the person's current address.
+   * Indicates if it's the person's current address.
    * </pre>
    *
    * <code>.google.protobuf.BoolValue current = 4;</code>
@@ -104,7 +104,7 @@ public interface AddressOrBuilder
    *
    *
    * <pre>
-   * Optional. Indicates if it's the person's current address.
+   * Indicates if it's the person's current address.
    * </pre>
    *
    * <code>.google.protobuf.BoolValue current = 4;</code>
@@ -114,7 +114,7 @@ public interface AddressOrBuilder
    *
    *
    * <pre>
-   * Optional. Indicates if it's the person's current address.
+   * Indicates if it's the person's current address.
    * </pre>
    *
    * <code>.google.protobuf.BoolValue current = 4;</code>

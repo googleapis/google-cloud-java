@@ -12,7 +12,7 @@ public interface SkillOrBuilder
    *
    *
    * <pre>
-   * Optional. Skill display name.
+   * Skill display name.
    * For example, "Java", "Python".
    * Number of characters allowed is 100.
    * </pre>
@@ -24,7 +24,7 @@ public interface SkillOrBuilder
    *
    *
    * <pre>
-   * Optional. Skill display name.
+   * Skill display name.
    * For example, "Java", "Python".
    * Number of characters allowed is 100.
    * </pre>
@@ -37,7 +37,7 @@ public interface SkillOrBuilder
    *
    *
    * <pre>
-   * Optional. The last time this skill was used.
+   * The last time this skill was used.
    * </pre>
    *
    * <code>.google.type.Date last_used_date = 2;</code>
@@ -47,7 +47,7 @@ public interface SkillOrBuilder
    *
    *
    * <pre>
-   * Optional. The last time this skill was used.
+   * The last time this skill was used.
    * </pre>
    *
    * <code>.google.type.Date last_used_date = 2;</code>
@@ -57,7 +57,7 @@ public interface SkillOrBuilder
    *
    *
    * <pre>
-   * Optional. The last time this skill was used.
+   * The last time this skill was used.
    * </pre>
    *
    * <code>.google.type.Date last_used_date = 2;</code>
@@ -68,8 +68,8 @@ public interface SkillOrBuilder
    *
    *
    * <pre>
-   * Optional. Skill proficiency level which indicates how proficient the
-   * candidate is at this skill.
+   * Skill proficiency level which indicates how proficient the candidate is at
+   * this skill.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.SkillProficiencyLevel level = 3;</code>
@@ -79,8 +79,8 @@ public interface SkillOrBuilder
    *
    *
    * <pre>
-   * Optional. Skill proficiency level which indicates how proficient the
-   * candidate is at this skill.
+   * Skill proficiency level which indicates how proficient the candidate is at
+   * this skill.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.SkillProficiencyLevel level = 3;</code>
@@ -91,7 +91,7 @@ public interface SkillOrBuilder
    *
    *
    * <pre>
-   * Optional. A paragraph describes context of this skill.
+   * A paragraph describes context of this skill.
    * Number of characters allowed is 100,000.
    * </pre>
    *
@@ -102,7 +102,7 @@ public interface SkillOrBuilder
    *
    *
    * <pre>
-   * Optional. A paragraph describes context of this skill.
+   * A paragraph describes context of this skill.
    * Number of characters allowed is 100,000.
    * </pre>
    *
@@ -121,7 +121,7 @@ public interface SkillOrBuilder
    * related to the search query.
    * </pre>
    *
-   * <code>string skill_name_snippet = 5;</code>
+   * <code>string skill_name_snippet = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   java.lang.String getSkillNameSnippet();
   /**
@@ -135,7 +135,7 @@ public interface SkillOrBuilder
    * related to the search query.
    * </pre>
    *
-   * <code>string skill_name_snippet = 5;</code>
+   * <code>string skill_name_snippet = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.protobuf.ByteString getSkillNameSnippetBytes();
 }

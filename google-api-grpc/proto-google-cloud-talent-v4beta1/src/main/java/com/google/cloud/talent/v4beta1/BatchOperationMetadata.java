@@ -7,7 +7,6 @@ package com.google.cloud.talent.v4beta1;
  *
  *
  * <pre>
- * Output only.
  * Metadata used for long running operations returned by CTS batch APIs.
  * It's used to replace
  * [google.longrunning.Operation.metadata][google.longrunning.Operation.metadata].
@@ -896,7 +895,6 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Output only.
    * Metadata used for long running operations returned by CTS batch APIs.
    * It's used to replace
    * [google.longrunning.Operation.metadata][google.longrunning.Operation.metadata].

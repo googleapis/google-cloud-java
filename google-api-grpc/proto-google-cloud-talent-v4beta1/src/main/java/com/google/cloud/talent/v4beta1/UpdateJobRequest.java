@@ -7,7 +7,6 @@ package com.google.cloud.talent.v4beta1;
  *
  *
  * <pre>
- * Input only.
  * Update job request.
  * </pre>
  *
@@ -123,7 +122,8 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
    * Required. The Job to be updated.
    * </pre>
    *
-   * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
+   * <code>.google.cloud.talent.v4beta1.Job job = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public boolean hasJob() {
     return job_ != null;
@@ -135,7 +135,8 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
    * Required. The Job to be updated.
    * </pre>
    *
-   * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
+   * <code>.google.cloud.talent.v4beta1.Job job = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.talent.v4beta1.Job getJob() {
     return job_ == null ? com.google.cloud.talent.v4beta1.Job.getDefaultInstance() : job_;
@@ -147,7 +148,8 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
    * Required. The Job to be updated.
    * </pre>
    *
-   * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
+   * <code>.google.cloud.talent.v4beta1.Job job = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.talent.v4beta1.JobOrBuilder getJobOrBuilder() {
     return getJob();
@@ -159,8 +161,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional but strongly recommended to be provided for the best service
-   * experience.
+   * Strongly recommended for the best service experience.
    * If [update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask]
    * is provided, only the specified fields in
    * [job][google.cloud.talent.v4beta1.UpdateJobRequest.job] are updated.
@@ -178,8 +179,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional but strongly recommended to be provided for the best service
-   * experience.
+   * Strongly recommended for the best service experience.
    * If [update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask]
    * is provided, only the specified fields in
    * [job][google.cloud.talent.v4beta1.UpdateJobRequest.job] are updated.
@@ -197,8 +197,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional but strongly recommended to be provided for the best service
-   * experience.
+   * Strongly recommended for the best service experience.
    * If [update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask]
    * is provided, only the specified fields in
    * [job][google.cloud.talent.v4beta1.UpdateJobRequest.job] are updated.
@@ -395,7 +394,6 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Input only.
    * Update job request.
    * </pre>
    *
@@ -584,7 +582,8 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      * Required. The Job to be updated.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
+     * <code>.google.cloud.talent.v4beta1.Job job = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public boolean hasJob() {
       return jobBuilder_ != null || job_ != null;
@@ -596,7 +595,8 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      * Required. The Job to be updated.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
+     * <code>.google.cloud.talent.v4beta1.Job job = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.talent.v4beta1.Job getJob() {
       if (jobBuilder_ == null) {
@@ -612,7 +612,8 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      * Required. The Job to be updated.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
+     * <code>.google.cloud.talent.v4beta1.Job job = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setJob(com.google.cloud.talent.v4beta1.Job value) {
       if (jobBuilder_ == null) {
@@ -634,7 +635,8 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      * Required. The Job to be updated.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
+     * <code>.google.cloud.talent.v4beta1.Job job = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setJob(com.google.cloud.talent.v4beta1.Job.Builder builderForValue) {
       if (jobBuilder_ == null) {
@@ -653,7 +655,8 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      * Required. The Job to be updated.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
+     * <code>.google.cloud.talent.v4beta1.Job job = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeJob(com.google.cloud.talent.v4beta1.Job value) {
       if (jobBuilder_ == null) {
@@ -677,7 +680,8 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      * Required. The Job to be updated.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
+     * <code>.google.cloud.talent.v4beta1.Job job = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearJob() {
       if (jobBuilder_ == null) {
@@ -697,7 +701,8 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      * Required. The Job to be updated.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
+     * <code>.google.cloud.talent.v4beta1.Job job = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.talent.v4beta1.Job.Builder getJobBuilder() {
 
@@ -711,7 +716,8 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      * Required. The Job to be updated.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
+     * <code>.google.cloud.talent.v4beta1.Job job = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.talent.v4beta1.JobOrBuilder getJobOrBuilder() {
       if (jobBuilder_ != null) {
@@ -727,7 +733,8 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      * Required. The Job to be updated.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
+     * <code>.google.cloud.talent.v4beta1.Job job = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.talent.v4beta1.Job,
@@ -756,8 +763,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional but strongly recommended to be provided for the best service
-     * experience.
+     * Strongly recommended for the best service experience.
      * If [update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask]
      * is provided, only the specified fields in
      * [job][google.cloud.talent.v4beta1.UpdateJobRequest.job] are updated.
@@ -775,8 +781,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional but strongly recommended to be provided for the best service
-     * experience.
+     * Strongly recommended for the best service experience.
      * If [update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask]
      * is provided, only the specified fields in
      * [job][google.cloud.talent.v4beta1.UpdateJobRequest.job] are updated.
@@ -800,8 +805,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional but strongly recommended to be provided for the best service
-     * experience.
+     * Strongly recommended for the best service experience.
      * If [update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask]
      * is provided, only the specified fields in
      * [job][google.cloud.talent.v4beta1.UpdateJobRequest.job] are updated.
@@ -829,8 +833,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional but strongly recommended to be provided for the best service
-     * experience.
+     * Strongly recommended for the best service experience.
      * If [update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask]
      * is provided, only the specified fields in
      * [job][google.cloud.talent.v4beta1.UpdateJobRequest.job] are updated.
@@ -855,8 +858,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional but strongly recommended to be provided for the best service
-     * experience.
+     * Strongly recommended for the best service experience.
      * If [update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask]
      * is provided, only the specified fields in
      * [job][google.cloud.talent.v4beta1.UpdateJobRequest.job] are updated.
@@ -886,8 +888,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional but strongly recommended to be provided for the best service
-     * experience.
+     * Strongly recommended for the best service experience.
      * If [update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask]
      * is provided, only the specified fields in
      * [job][google.cloud.talent.v4beta1.UpdateJobRequest.job] are updated.
@@ -913,8 +914,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional but strongly recommended to be provided for the best service
-     * experience.
+     * Strongly recommended for the best service experience.
      * If [update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask]
      * is provided, only the specified fields in
      * [job][google.cloud.talent.v4beta1.UpdateJobRequest.job] are updated.
@@ -934,8 +934,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional but strongly recommended to be provided for the best service
-     * experience.
+     * Strongly recommended for the best service experience.
      * If [update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask]
      * is provided, only the specified fields in
      * [job][google.cloud.talent.v4beta1.UpdateJobRequest.job] are updated.
@@ -959,8 +958,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional but strongly recommended to be provided for the best service
-     * experience.
+     * Strongly recommended for the best service experience.
      * If [update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask]
      * is provided, only the specified fields in
      * [job][google.cloud.talent.v4beta1.UpdateJobRequest.job] are updated.
