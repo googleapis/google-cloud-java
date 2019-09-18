@@ -7,7 +7,6 @@ package com.google.cloud.talent.v4beta1;
  *
  *
  * <pre>
- * Input only.
  * The Request body of the `SearchJobs` call.
  * </pre>
  *
@@ -238,7 +237,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The mode of the search method isn't specified.
+     * The mode of the search method isn't specified. The default search
+     * behavior is identical to JOB_SEARCH search behavior.
      * </pre>
      *
      * <code>SEARCH_MODE_UNSPECIFIED = 0;</code>
@@ -276,7 +276,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The mode of the search method isn't specified.
+     * The mode of the search method isn't specified. The default search
+     * behavior is identical to JOB_SEARCH search behavior.
      * </pre>
      *
      * <code>SEARCH_MODE_UNSPECIFIED = 0;</code>
@@ -560,7 +561,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>
-     * .google.cloud.talent.v4beta1.SearchJobsRequest.CustomRankingInfo.ImportanceLevel importance_level = 1;
+     * .google.cloud.talent.v4beta1.SearchJobsRequest.CustomRankingInfo.ImportanceLevel importance_level = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     int getImportanceLevelValue();
@@ -575,7 +576,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>
-     * .google.cloud.talent.v4beta1.SearchJobsRequest.CustomRankingInfo.ImportanceLevel importance_level = 1;
+     * .google.cloud.talent.v4beta1.SearchJobsRequest.CustomRankingInfo.ImportanceLevel importance_level = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     com.google.cloud.talent.v4beta1.SearchJobsRequest.CustomRankingInfo.ImportanceLevel
@@ -601,7 +602,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * (year + 25) * 0.25 - (freshness / 0.5)
      * </pre>
      *
-     * <code>string ranking_expression = 2;</code>
+     * <code>string ranking_expression = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     java.lang.String getRankingExpression();
     /**
@@ -624,7 +625,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * (year + 25) * 0.25 - (freshness / 0.5)
      * </pre>
      *
-     * <code>string ranking_expression = 2;</code>
+     * <code>string ranking_expression = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     com.google.protobuf.ByteString getRankingExpressionBytes();
   }
@@ -632,7 +633,6 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Input only.
    * Custom ranking information for
    * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
    * </pre>
@@ -1003,7 +1003,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>
-     * .google.cloud.talent.v4beta1.SearchJobsRequest.CustomRankingInfo.ImportanceLevel importance_level = 1;
+     * .google.cloud.talent.v4beta1.SearchJobsRequest.CustomRankingInfo.ImportanceLevel importance_level = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public int getImportanceLevelValue() {
@@ -1020,7 +1020,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>
-     * .google.cloud.talent.v4beta1.SearchJobsRequest.CustomRankingInfo.ImportanceLevel importance_level = 1;
+     * .google.cloud.talent.v4beta1.SearchJobsRequest.CustomRankingInfo.ImportanceLevel importance_level = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.talent.v4beta1.SearchJobsRequest.CustomRankingInfo.ImportanceLevel
@@ -1057,7 +1057,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * (year + 25) * 0.25 - (freshness / 0.5)
      * </pre>
      *
-     * <code>string ranking_expression = 2;</code>
+     * <code>string ranking_expression = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getRankingExpression() {
       java.lang.Object ref = rankingExpression_;
@@ -1090,7 +1090,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * (year + 25) * 0.25 - (freshness / 0.5)
      * </pre>
      *
-     * <code>string ranking_expression = 2;</code>
+     * <code>string ranking_expression = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getRankingExpressionBytes() {
       java.lang.Object ref = rankingExpression_;
@@ -1285,7 +1285,6 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Input only.
      * Custom ranking information for
      * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
      * </pre>
@@ -1470,7 +1469,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
        * </pre>
        *
        * <code>
-       * .google.cloud.talent.v4beta1.SearchJobsRequest.CustomRankingInfo.ImportanceLevel importance_level = 1;
+       * .google.cloud.talent.v4beta1.SearchJobsRequest.CustomRankingInfo.ImportanceLevel importance_level = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
       public int getImportanceLevelValue() {
@@ -1487,7 +1486,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
        * </pre>
        *
        * <code>
-       * .google.cloud.talent.v4beta1.SearchJobsRequest.CustomRankingInfo.ImportanceLevel importance_level = 1;
+       * .google.cloud.talent.v4beta1.SearchJobsRequest.CustomRankingInfo.ImportanceLevel importance_level = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
       public Builder setImportanceLevelValue(int value) {
@@ -1506,7 +1505,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
        * </pre>
        *
        * <code>
-       * .google.cloud.talent.v4beta1.SearchJobsRequest.CustomRankingInfo.ImportanceLevel importance_level = 1;
+       * .google.cloud.talent.v4beta1.SearchJobsRequest.CustomRankingInfo.ImportanceLevel importance_level = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
       public com.google.cloud.talent.v4beta1.SearchJobsRequest.CustomRankingInfo.ImportanceLevel
@@ -1531,7 +1530,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
        * </pre>
        *
        * <code>
-       * .google.cloud.talent.v4beta1.SearchJobsRequest.CustomRankingInfo.ImportanceLevel importance_level = 1;
+       * .google.cloud.talent.v4beta1.SearchJobsRequest.CustomRankingInfo.ImportanceLevel importance_level = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
       public Builder setImportanceLevel(
@@ -1556,7 +1555,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
        * </pre>
        *
        * <code>
-       * .google.cloud.talent.v4beta1.SearchJobsRequest.CustomRankingInfo.ImportanceLevel importance_level = 1;
+       * .google.cloud.talent.v4beta1.SearchJobsRequest.CustomRankingInfo.ImportanceLevel importance_level = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
       public Builder clearImportanceLevel() {
@@ -1587,7 +1586,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
        * (year + 25) * 0.25 - (freshness / 0.5)
        * </pre>
        *
-       * <code>string ranking_expression = 2;</code>
+       * <code>string ranking_expression = 2 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public java.lang.String getRankingExpression() {
         java.lang.Object ref = rankingExpression_;
@@ -1620,7 +1619,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
        * (year + 25) * 0.25 - (freshness / 0.5)
        * </pre>
        *
-       * <code>string ranking_expression = 2;</code>
+       * <code>string ranking_expression = 2 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public com.google.protobuf.ByteString getRankingExpressionBytes() {
         java.lang.Object ref = rankingExpression_;
@@ -1653,7 +1652,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
        * (year + 25) * 0.25 - (freshness / 0.5)
        * </pre>
        *
-       * <code>string ranking_expression = 2;</code>
+       * <code>string ranking_expression = 2 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public Builder setRankingExpression(java.lang.String value) {
         if (value == null) {
@@ -1684,7 +1683,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
        * (year + 25) * 0.25 - (freshness / 0.5)
        * </pre>
        *
-       * <code>string ranking_expression = 2;</code>
+       * <code>string ranking_expression = 2 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public Builder clearRankingExpression() {
 
@@ -1712,7 +1711,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
        * (year + 25) * 0.25 - (freshness / 0.5)
        * </pre>
        *
-       * <code>string ranking_expression = 2;</code>
+       * <code>string ranking_expression = 2 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public Builder setRankingExpressionBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -1788,13 +1787,12 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Required. The resource name of the tenant to search within.
-   * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
-   * "projects/api-test-project/tenant/foo".
-   * Tenant id is optional and the default tenant is used if unspecified, for
-   * example, "projects/api-test-project".
+   * The format is "projects/{project_id}/tenants/{tenant_id}". For example,
+   * "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant
+   * is created. For example, "projects/foo".
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -1812,13 +1810,12 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Required. The resource name of the tenant to search within.
-   * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
-   * "projects/api-test-project/tenant/foo".
-   * Tenant id is optional and the default tenant is used if unspecified, for
-   * example, "projects/api-test-project".
+   * The format is "projects/{project_id}/tenants/{tenant_id}". For example,
+   * "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant
+   * is created. For example, "projects/foo".
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -1838,7 +1835,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Optional. Mode of a search.
+   * Mode of a search.
    * Defaults to
    * [SearchMode.JOB_SEARCH][google.cloud.talent.v4beta1.SearchJobsRequest.SearchMode.JOB_SEARCH].
    * </pre>
@@ -1852,7 +1849,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Optional. Mode of a search.
+   * Mode of a search.
    * Defaults to
    * [SearchMode.JOB_SEARCH][google.cloud.talent.v4beta1.SearchJobsRequest.SearchMode.JOB_SEARCH].
    * </pre>
@@ -1879,7 +1876,9 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    * `user_id`) are provided by users, and must be unique and consistent.
    * </pre>
    *
-   * <code>.google.cloud.talent.v4beta1.RequestMetadata request_metadata = 3;</code>
+   * <code>
+   * .google.cloud.talent.v4beta1.RequestMetadata request_metadata = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public boolean hasRequestMetadata() {
     return requestMetadata_ != null;
@@ -1893,7 +1892,9 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    * `user_id`) are provided by users, and must be unique and consistent.
    * </pre>
    *
-   * <code>.google.cloud.talent.v4beta1.RequestMetadata request_metadata = 3;</code>
+   * <code>
+   * .google.cloud.talent.v4beta1.RequestMetadata request_metadata = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.talent.v4beta1.RequestMetadata getRequestMetadata() {
     return requestMetadata_ == null
@@ -1909,7 +1910,9 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    * `user_id`) are provided by users, and must be unique and consistent.
    * </pre>
    *
-   * <code>.google.cloud.talent.v4beta1.RequestMetadata request_metadata = 3;</code>
+   * <code>
+   * .google.cloud.talent.v4beta1.RequestMetadata request_metadata = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.talent.v4beta1.RequestMetadataOrBuilder getRequestMetadataOrBuilder() {
     return getRequestMetadata();
@@ -1921,8 +1924,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Optional. Query used to search against jobs, such as keyword, location
-   * filters, etc.
+   * Query used to search against jobs, such as keyword, location filters, etc.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.JobQuery job_query = 4;</code>
@@ -1934,8 +1936,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Optional. Query used to search against jobs, such as keyword, location
-   * filters, etc.
+   * Query used to search against jobs, such as keyword, location filters, etc.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.JobQuery job_query = 4;</code>
@@ -1949,8 +1950,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Optional. Query used to search against jobs, such as keyword, location
-   * filters, etc.
+   * Query used to search against jobs, such as keyword, location filters, etc.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.JobQuery job_query = 4;</code>
@@ -1965,9 +1965,9 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Optional. Controls whether to broaden the search when it produces sparse
-   * results. Broadened queries append results to the end of the matching
-   * results list.
+   * Controls whether to broaden the search when it produces sparse results.
+   * Broadened queries append results to the end of the matching results
+   * list.
    * Defaults to false.
    * </pre>
    *
@@ -1983,8 +1983,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Optional. Controls if the search job request requires the return of a
-   * precise count of the first 300 results. Setting this to `true` ensures
+   * Controls if the search job request requires the return of a precise
+   * count of the first 300 results. Setting this to `true` ensures
    * consistency in the number of results per page. Best practice is to set this
    * value to true if a client allows users to jump directly to a
    * non-sequential search results page.
@@ -2004,8 +2004,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Optional. An expression specifies a histogram request against matching
-   * jobs.
+   * An expression specifies a histogram request against matching jobs.
    * Expression syntax is an aggregation function call with histogram facets and
    * other options.
    * Available aggregation function calls are:
@@ -2111,8 +2110,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Optional. An expression specifies a histogram request against matching
-   * jobs.
+   * An expression specifies a histogram request against matching jobs.
    * Expression syntax is an aggregation function call with histogram facets and
    * other options.
    * Available aggregation function calls are:
@@ -2219,8 +2217,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Optional. An expression specifies a histogram request against matching
-   * jobs.
+   * An expression specifies a histogram request against matching jobs.
    * Expression syntax is an aggregation function call with histogram facets and
    * other options.
    * Available aggregation function calls are:
@@ -2326,8 +2323,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Optional. An expression specifies a histogram request against matching
-   * jobs.
+   * An expression specifies a histogram request against matching jobs.
    * Expression syntax is an aggregation function call with histogram facets and
    * other options.
    * Available aggregation function calls are:
@@ -2433,8 +2429,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Optional. An expression specifies a histogram request against matching
-   * jobs.
+   * An expression specifies a histogram request against matching jobs.
    * Expression syntax is an aggregation function call with histogram facets and
    * other options.
    * Available aggregation function calls are:
@@ -2544,8 +2539,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Optional. The desired job attributes returned for jobs in the search
-   * response. Defaults to
+   * The desired job attributes returned for jobs in the search response.
+   * Defaults to
    * [JobView.JOB_VIEW_SMALL][google.cloud.talent.v4beta1.JobView.JOB_VIEW_SMALL]
    * if no value is specified.
    * </pre>
@@ -2559,8 +2554,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Optional. The desired job attributes returned for jobs in the search
-   * response. Defaults to
+   * The desired job attributes returned for jobs in the search response.
+   * Defaults to
    * [JobView.JOB_VIEW_SMALL][google.cloud.talent.v4beta1.JobView.JOB_VIEW_SMALL]
    * if no value is specified.
    * </pre>
@@ -2580,8 +2575,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Optional. An integer that specifies the current offset (that is, starting
-   * result location, amongst the jobs deemed by the API as relevant) in search
+   * An integer that specifies the current offset (that is, starting result
+   * location, amongst the jobs deemed by the API as relevant) in search
    * results. This field is only considered if
    * [page_token][google.cloud.talent.v4beta1.SearchJobsRequest.page_token] is
    * unset.
@@ -2603,7 +2598,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Optional. A limit on the number of jobs returned in the search results.
+   * A limit on the number of jobs returned in the search results.
    * Increasing this value above the default value of 10 can increase search
    * response time. The value can be between 1 and 100.
    * </pre>
@@ -2620,7 +2615,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Optional. The token specifying the current offset within
+   * The token specifying the current offset within
    * search results. See
    * [SearchJobsResponse.next_page_token][google.cloud.talent.v4beta1.SearchJobsResponse.next_page_token]
    * for an explanation of how to obtain the next set of query results.
@@ -2643,7 +2638,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Optional. The token specifying the current offset within
+   * The token specifying the current offset within
    * search results. See
    * [SearchJobsResponse.next_page_token][google.cloud.talent.v4beta1.SearchJobsResponse.next_page_token]
    * for an explanation of how to obtain the next set of query results.
@@ -2669,8 +2664,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Optional. The criteria determining how search results are sorted. Default
-   * is
+   * The criteria determining how search results are sorted. Default is
    * `"relevance desc"`.
    * Supported options are:
    * * `"relevance desc"`: By relevance descending, as determined by the API
@@ -2741,8 +2735,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Optional. The criteria determining how search results are sorted. Default
-   * is
+   * The criteria determining how search results are sorted. Default is
    * `"relevance desc"`.
    * Supported options are:
    * * `"relevance desc"`: By relevance descending, as determined by the API
@@ -2816,8 +2809,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Optional. Controls whether highly similar jobs are returned next to each
-   * other in the search results. Jobs are identified as highly similar based on
+   * Controls whether highly similar jobs are returned next to each other in
+   * the search results. Jobs are identified as highly similar based on
    * their titles, job categories, and locations. Highly similar results are
    * clustered so that only one representative job of the cluster is
    * displayed to the job seeker higher up in the results, with the other jobs
@@ -2838,8 +2831,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Optional. Controls whether highly similar jobs are returned next to each
-   * other in the search results. Jobs are identified as highly similar based on
+   * Controls whether highly similar jobs are returned next to each other in
+   * the search results. Jobs are identified as highly similar based on
    * their titles, job categories, and locations. Highly similar results are
    * clustered so that only one representative job of the cluster is
    * displayed to the job seeker higher up in the results, with the other jobs
@@ -2870,8 +2863,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Optional. Controls over how job documents get ranked on top of existing
-   * relevance score (determined by API algorithm).
+   * Controls over how job documents get ranked on top of existing relevance
+   * score (determined by API algorithm).
    * </pre>
    *
    * <code>
@@ -2885,8 +2878,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Optional. Controls over how job documents get ranked on top of existing
-   * relevance score (determined by API algorithm).
+   * Controls over how job documents get ranked on top of existing relevance
+   * score (determined by API algorithm).
    * </pre>
    *
    * <code>
@@ -2903,8 +2896,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Optional. Controls over how job documents get ranked on top of existing
-   * relevance score (determined by API algorithm).
+   * Controls over how job documents get ranked on top of existing relevance
+   * score (determined by API algorithm).
    * </pre>
    *
    * <code>
@@ -2922,7 +2915,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Optional. Controls whether to disable exact keyword match on
+   * Controls whether to disable exact keyword match on
    * [Job.title][google.cloud.talent.v4beta1.Job.title],
    * [Job.description][google.cloud.talent.v4beta1.Job.description],
    * [Job.company_display_name][google.cloud.talent.v4beta1.Job.company_display_name],
@@ -3267,7 +3260,6 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Input only.
    * The Request body of the `SearchJobs` call.
    * </pre>
    *
@@ -3582,13 +3574,12 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The resource name of the tenant to search within.
-     * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
-     * "projects/api-test-project/tenant/foo".
-     * Tenant id is optional and the default tenant is used if unspecified, for
-     * example, "projects/api-test-project".
+     * The format is "projects/{project_id}/tenants/{tenant_id}". For example,
+     * "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant
+     * is created. For example, "projects/foo".
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -3606,13 +3597,12 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The resource name of the tenant to search within.
-     * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
-     * "projects/api-test-project/tenant/foo".
-     * Tenant id is optional and the default tenant is used if unspecified, for
-     * example, "projects/api-test-project".
+     * The format is "projects/{project_id}/tenants/{tenant_id}". For example,
+     * "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant
+     * is created. For example, "projects/foo".
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -3630,13 +3620,12 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The resource name of the tenant to search within.
-     * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
-     * "projects/api-test-project/tenant/foo".
-     * Tenant id is optional and the default tenant is used if unspecified, for
-     * example, "projects/api-test-project".
+     * The format is "projects/{project_id}/tenants/{tenant_id}". For example,
+     * "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant
+     * is created. For example, "projects/foo".
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -3652,13 +3641,12 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The resource name of the tenant to search within.
-     * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
-     * "projects/api-test-project/tenant/foo".
-     * Tenant id is optional and the default tenant is used if unspecified, for
-     * example, "projects/api-test-project".
+     * The format is "projects/{project_id}/tenants/{tenant_id}". For example,
+     * "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant
+     * is created. For example, "projects/foo".
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearParent() {
 
@@ -3671,13 +3659,12 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The resource name of the tenant to search within.
-     * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
-     * "projects/api-test-project/tenant/foo".
-     * Tenant id is optional and the default tenant is used if unspecified, for
-     * example, "projects/api-test-project".
+     * The format is "projects/{project_id}/tenants/{tenant_id}". For example,
+     * "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant
+     * is created. For example, "projects/foo".
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -3695,7 +3682,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. Mode of a search.
+     * Mode of a search.
      * Defaults to
      * [SearchMode.JOB_SEARCH][google.cloud.talent.v4beta1.SearchJobsRequest.SearchMode.JOB_SEARCH].
      * </pre>
@@ -3709,7 +3696,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. Mode of a search.
+     * Mode of a search.
      * Defaults to
      * [SearchMode.JOB_SEARCH][google.cloud.talent.v4beta1.SearchJobsRequest.SearchMode.JOB_SEARCH].
      * </pre>
@@ -3725,7 +3712,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. Mode of a search.
+     * Mode of a search.
      * Defaults to
      * [SearchMode.JOB_SEARCH][google.cloud.talent.v4beta1.SearchJobsRequest.SearchMode.JOB_SEARCH].
      * </pre>
@@ -3744,7 +3731,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. Mode of a search.
+     * Mode of a search.
      * Defaults to
      * [SearchMode.JOB_SEARCH][google.cloud.talent.v4beta1.SearchJobsRequest.SearchMode.JOB_SEARCH].
      * </pre>
@@ -3765,7 +3752,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. Mode of a search.
+     * Mode of a search.
      * Defaults to
      * [SearchMode.JOB_SEARCH][google.cloud.talent.v4beta1.SearchJobsRequest.SearchMode.JOB_SEARCH].
      * </pre>
@@ -3794,7 +3781,9 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * `user_id`) are provided by users, and must be unique and consistent.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.RequestMetadata request_metadata = 3;</code>
+     * <code>
+     * .google.cloud.talent.v4beta1.RequestMetadata request_metadata = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public boolean hasRequestMetadata() {
       return requestMetadataBuilder_ != null || requestMetadata_ != null;
@@ -3808,7 +3797,9 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * `user_id`) are provided by users, and must be unique and consistent.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.RequestMetadata request_metadata = 3;</code>
+     * <code>
+     * .google.cloud.talent.v4beta1.RequestMetadata request_metadata = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.talent.v4beta1.RequestMetadata getRequestMetadata() {
       if (requestMetadataBuilder_ == null) {
@@ -3828,7 +3819,9 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * `user_id`) are provided by users, and must be unique and consistent.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.RequestMetadata request_metadata = 3;</code>
+     * <code>
+     * .google.cloud.talent.v4beta1.RequestMetadata request_metadata = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setRequestMetadata(com.google.cloud.talent.v4beta1.RequestMetadata value) {
       if (requestMetadataBuilder_ == null) {
@@ -3852,7 +3845,9 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * `user_id`) are provided by users, and must be unique and consistent.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.RequestMetadata request_metadata = 3;</code>
+     * <code>
+     * .google.cloud.talent.v4beta1.RequestMetadata request_metadata = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setRequestMetadata(
         com.google.cloud.talent.v4beta1.RequestMetadata.Builder builderForValue) {
@@ -3874,7 +3869,9 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * `user_id`) are provided by users, and must be unique and consistent.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.RequestMetadata request_metadata = 3;</code>
+     * <code>
+     * .google.cloud.talent.v4beta1.RequestMetadata request_metadata = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeRequestMetadata(com.google.cloud.talent.v4beta1.RequestMetadata value) {
       if (requestMetadataBuilder_ == null) {
@@ -3902,7 +3899,9 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * `user_id`) are provided by users, and must be unique and consistent.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.RequestMetadata request_metadata = 3;</code>
+     * <code>
+     * .google.cloud.talent.v4beta1.RequestMetadata request_metadata = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearRequestMetadata() {
       if (requestMetadataBuilder_ == null) {
@@ -3924,7 +3923,9 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * `user_id`) are provided by users, and must be unique and consistent.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.RequestMetadata request_metadata = 3;</code>
+     * <code>
+     * .google.cloud.talent.v4beta1.RequestMetadata request_metadata = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.talent.v4beta1.RequestMetadata.Builder getRequestMetadataBuilder() {
 
@@ -3940,7 +3941,9 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * `user_id`) are provided by users, and must be unique and consistent.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.RequestMetadata request_metadata = 3;</code>
+     * <code>
+     * .google.cloud.talent.v4beta1.RequestMetadata request_metadata = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.talent.v4beta1.RequestMetadataOrBuilder getRequestMetadataOrBuilder() {
       if (requestMetadataBuilder_ != null) {
@@ -3960,7 +3963,9 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * `user_id`) are provided by users, and must be unique and consistent.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.RequestMetadata request_metadata = 3;</code>
+     * <code>
+     * .google.cloud.talent.v4beta1.RequestMetadata request_metadata = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.talent.v4beta1.RequestMetadata,
@@ -3989,8 +3994,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. Query used to search against jobs, such as keyword, location
-     * filters, etc.
+     * Query used to search against jobs, such as keyword, location filters, etc.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.JobQuery job_query = 4;</code>
@@ -4002,8 +4006,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. Query used to search against jobs, such as keyword, location
-     * filters, etc.
+     * Query used to search against jobs, such as keyword, location filters, etc.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.JobQuery job_query = 4;</code>
@@ -4021,8 +4024,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. Query used to search against jobs, such as keyword, location
-     * filters, etc.
+     * Query used to search against jobs, such as keyword, location filters, etc.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.JobQuery job_query = 4;</code>
@@ -4044,8 +4046,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. Query used to search against jobs, such as keyword, location
-     * filters, etc.
+     * Query used to search against jobs, such as keyword, location filters, etc.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.JobQuery job_query = 4;</code>
@@ -4064,8 +4065,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. Query used to search against jobs, such as keyword, location
-     * filters, etc.
+     * Query used to search against jobs, such as keyword, location filters, etc.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.JobQuery job_query = 4;</code>
@@ -4091,8 +4091,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. Query used to search against jobs, such as keyword, location
-     * filters, etc.
+     * Query used to search against jobs, such as keyword, location filters, etc.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.JobQuery job_query = 4;</code>
@@ -4112,8 +4111,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. Query used to search against jobs, such as keyword, location
-     * filters, etc.
+     * Query used to search against jobs, such as keyword, location filters, etc.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.JobQuery job_query = 4;</code>
@@ -4127,8 +4125,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. Query used to search against jobs, such as keyword, location
-     * filters, etc.
+     * Query used to search against jobs, such as keyword, location filters, etc.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.JobQuery job_query = 4;</code>
@@ -4146,8 +4143,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. Query used to search against jobs, such as keyword, location
-     * filters, etc.
+     * Query used to search against jobs, such as keyword, location filters, etc.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.JobQuery job_query = 4;</code>
@@ -4174,9 +4170,9 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. Controls whether to broaden the search when it produces sparse
-     * results. Broadened queries append results to the end of the matching
-     * results list.
+     * Controls whether to broaden the search when it produces sparse results.
+     * Broadened queries append results to the end of the matching results
+     * list.
      * Defaults to false.
      * </pre>
      *
@@ -4189,9 +4185,9 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. Controls whether to broaden the search when it produces sparse
-     * results. Broadened queries append results to the end of the matching
-     * results list.
+     * Controls whether to broaden the search when it produces sparse results.
+     * Broadened queries append results to the end of the matching results
+     * list.
      * Defaults to false.
      * </pre>
      *
@@ -4207,9 +4203,9 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. Controls whether to broaden the search when it produces sparse
-     * results. Broadened queries append results to the end of the matching
-     * results list.
+     * Controls whether to broaden the search when it produces sparse results.
+     * Broadened queries append results to the end of the matching results
+     * list.
      * Defaults to false.
      * </pre>
      *
@@ -4227,8 +4223,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. Controls if the search job request requires the return of a
-     * precise count of the first 300 results. Setting this to `true` ensures
+     * Controls if the search job request requires the return of a precise
+     * count of the first 300 results. Setting this to `true` ensures
      * consistency in the number of results per page. Best practice is to set this
      * value to true if a client allows users to jump directly to a
      * non-sequential search results page.
@@ -4245,8 +4241,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. Controls if the search job request requires the return of a
-     * precise count of the first 300 results. Setting this to `true` ensures
+     * Controls if the search job request requires the return of a precise
+     * count of the first 300 results. Setting this to `true` ensures
      * consistency in the number of results per page. Best practice is to set this
      * value to true if a client allows users to jump directly to a
      * non-sequential search results page.
@@ -4266,8 +4262,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. Controls if the search job request requires the return of a
-     * precise count of the first 300 results. Setting this to `true` ensures
+     * Controls if the search job request requires the return of a precise
+     * count of the first 300 results. Setting this to `true` ensures
      * consistency in the number of results per page. Best practice is to set this
      * value to true if a client allows users to jump directly to a
      * non-sequential search results page.
@@ -4306,8 +4302,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. An expression specifies a histogram request against matching
-     * jobs.
+     * An expression specifies a histogram request against matching jobs.
      * Expression syntax is an aggregation function call with histogram facets and
      * other options.
      * Available aggregation function calls are:
@@ -4418,8 +4413,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. An expression specifies a histogram request against matching
-     * jobs.
+     * An expression specifies a histogram request against matching jobs.
      * Expression syntax is an aggregation function call with histogram facets and
      * other options.
      * Available aggregation function calls are:
@@ -4529,8 +4523,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. An expression specifies a histogram request against matching
-     * jobs.
+     * An expression specifies a histogram request against matching jobs.
      * Expression syntax is an aggregation function call with histogram facets and
      * other options.
      * Available aggregation function calls are:
@@ -4640,8 +4633,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. An expression specifies a histogram request against matching
-     * jobs.
+     * An expression specifies a histogram request against matching jobs.
      * Expression syntax is an aggregation function call with histogram facets and
      * other options.
      * Available aggregation function calls are:
@@ -4758,8 +4750,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. An expression specifies a histogram request against matching
-     * jobs.
+     * An expression specifies a histogram request against matching jobs.
      * Expression syntax is an aggregation function call with histogram facets and
      * other options.
      * Available aggregation function calls are:
@@ -4873,8 +4864,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. An expression specifies a histogram request against matching
-     * jobs.
+     * An expression specifies a histogram request against matching jobs.
      * Expression syntax is an aggregation function call with histogram facets and
      * other options.
      * Available aggregation function calls are:
@@ -4990,8 +4980,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. An expression specifies a histogram request against matching
-     * jobs.
+     * An expression specifies a histogram request against matching jobs.
      * Expression syntax is an aggregation function call with histogram facets and
      * other options.
      * Available aggregation function calls are:
@@ -5108,8 +5097,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. An expression specifies a histogram request against matching
-     * jobs.
+     * An expression specifies a histogram request against matching jobs.
      * Expression syntax is an aggregation function call with histogram facets and
      * other options.
      * Available aggregation function calls are:
@@ -5223,8 +5211,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. An expression specifies a histogram request against matching
-     * jobs.
+     * An expression specifies a histogram request against matching jobs.
      * Expression syntax is an aggregation function call with histogram facets and
      * other options.
      * Available aggregation function calls are:
@@ -5338,8 +5325,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. An expression specifies a histogram request against matching
-     * jobs.
+     * An expression specifies a histogram request against matching jobs.
      * Expression syntax is an aggregation function call with histogram facets and
      * other options.
      * Available aggregation function calls are:
@@ -5453,8 +5439,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. An expression specifies a histogram request against matching
-     * jobs.
+     * An expression specifies a histogram request against matching jobs.
      * Expression syntax is an aggregation function call with histogram facets and
      * other options.
      * Available aggregation function calls are:
@@ -5567,8 +5552,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. An expression specifies a histogram request against matching
-     * jobs.
+     * An expression specifies a histogram request against matching jobs.
      * Expression syntax is an aggregation function call with histogram facets and
      * other options.
      * Available aggregation function calls are:
@@ -5681,8 +5665,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. An expression specifies a histogram request against matching
-     * jobs.
+     * An expression specifies a histogram request against matching jobs.
      * Expression syntax is an aggregation function call with histogram facets and
      * other options.
      * Available aggregation function calls are:
@@ -5789,8 +5772,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. An expression specifies a histogram request against matching
-     * jobs.
+     * An expression specifies a histogram request against matching jobs.
      * Expression syntax is an aggregation function call with histogram facets and
      * other options.
      * Available aggregation function calls are:
@@ -5901,8 +5883,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. An expression specifies a histogram request against matching
-     * jobs.
+     * An expression specifies a histogram request against matching jobs.
      * Expression syntax is an aggregation function call with histogram facets and
      * other options.
      * Available aggregation function calls are:
@@ -6013,8 +5994,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. An expression specifies a histogram request against matching
-     * jobs.
+     * An expression specifies a histogram request against matching jobs.
      * Expression syntax is an aggregation function call with histogram facets and
      * other options.
      * Available aggregation function calls are:
@@ -6121,8 +6101,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. An expression specifies a histogram request against matching
-     * jobs.
+     * An expression specifies a histogram request against matching jobs.
      * Expression syntax is an aggregation function call with histogram facets and
      * other options.
      * Available aggregation function calls are:
@@ -6230,8 +6209,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. An expression specifies a histogram request against matching
-     * jobs.
+     * An expression specifies a histogram request against matching jobs.
      * Expression syntax is an aggregation function call with histogram facets and
      * other options.
      * Available aggregation function calls are:
@@ -6360,8 +6338,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. The desired job attributes returned for jobs in the search
-     * response. Defaults to
+     * The desired job attributes returned for jobs in the search response.
+     * Defaults to
      * [JobView.JOB_VIEW_SMALL][google.cloud.talent.v4beta1.JobView.JOB_VIEW_SMALL]
      * if no value is specified.
      * </pre>
@@ -6375,8 +6353,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. The desired job attributes returned for jobs in the search
-     * response. Defaults to
+     * The desired job attributes returned for jobs in the search response.
+     * Defaults to
      * [JobView.JOB_VIEW_SMALL][google.cloud.talent.v4beta1.JobView.JOB_VIEW_SMALL]
      * if no value is specified.
      * </pre>
@@ -6392,8 +6370,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. The desired job attributes returned for jobs in the search
-     * response. Defaults to
+     * The desired job attributes returned for jobs in the search response.
+     * Defaults to
      * [JobView.JOB_VIEW_SMALL][google.cloud.talent.v4beta1.JobView.JOB_VIEW_SMALL]
      * if no value is specified.
      * </pre>
@@ -6410,8 +6388,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. The desired job attributes returned for jobs in the search
-     * response. Defaults to
+     * The desired job attributes returned for jobs in the search response.
+     * Defaults to
      * [JobView.JOB_VIEW_SMALL][google.cloud.talent.v4beta1.JobView.JOB_VIEW_SMALL]
      * if no value is specified.
      * </pre>
@@ -6431,8 +6409,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. The desired job attributes returned for jobs in the search
-     * response. Defaults to
+     * The desired job attributes returned for jobs in the search response.
+     * Defaults to
      * [JobView.JOB_VIEW_SMALL][google.cloud.talent.v4beta1.JobView.JOB_VIEW_SMALL]
      * if no value is specified.
      * </pre>
@@ -6451,8 +6429,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. An integer that specifies the current offset (that is, starting
-     * result location, amongst the jobs deemed by the API as relevant) in search
+     * An integer that specifies the current offset (that is, starting result
+     * location, amongst the jobs deemed by the API as relevant) in search
      * results. This field is only considered if
      * [page_token][google.cloud.talent.v4beta1.SearchJobsRequest.page_token] is
      * unset.
@@ -6471,8 +6449,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. An integer that specifies the current offset (that is, starting
-     * result location, amongst the jobs deemed by the API as relevant) in search
+     * An integer that specifies the current offset (that is, starting result
+     * location, amongst the jobs deemed by the API as relevant) in search
      * results. This field is only considered if
      * [page_token][google.cloud.talent.v4beta1.SearchJobsRequest.page_token] is
      * unset.
@@ -6494,8 +6472,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. An integer that specifies the current offset (that is, starting
-     * result location, amongst the jobs deemed by the API as relevant) in search
+     * An integer that specifies the current offset (that is, starting result
+     * location, amongst the jobs deemed by the API as relevant) in search
      * results. This field is only considered if
      * [page_token][google.cloud.talent.v4beta1.SearchJobsRequest.page_token] is
      * unset.
@@ -6519,7 +6497,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. A limit on the number of jobs returned in the search results.
+     * A limit on the number of jobs returned in the search results.
      * Increasing this value above the default value of 10 can increase search
      * response time. The value can be between 1 and 100.
      * </pre>
@@ -6533,7 +6511,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. A limit on the number of jobs returned in the search results.
+     * A limit on the number of jobs returned in the search results.
      * Increasing this value above the default value of 10 can increase search
      * response time. The value can be between 1 and 100.
      * </pre>
@@ -6550,7 +6528,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. A limit on the number of jobs returned in the search results.
+     * A limit on the number of jobs returned in the search results.
      * Increasing this value above the default value of 10 can increase search
      * response time. The value can be between 1 and 100.
      * </pre>
@@ -6569,7 +6547,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. The token specifying the current offset within
+     * The token specifying the current offset within
      * search results. See
      * [SearchJobsResponse.next_page_token][google.cloud.talent.v4beta1.SearchJobsResponse.next_page_token]
      * for an explanation of how to obtain the next set of query results.
@@ -6592,7 +6570,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. The token specifying the current offset within
+     * The token specifying the current offset within
      * search results. See
      * [SearchJobsResponse.next_page_token][google.cloud.talent.v4beta1.SearchJobsResponse.next_page_token]
      * for an explanation of how to obtain the next set of query results.
@@ -6615,7 +6593,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. The token specifying the current offset within
+     * The token specifying the current offset within
      * search results. See
      * [SearchJobsResponse.next_page_token][google.cloud.talent.v4beta1.SearchJobsResponse.next_page_token]
      * for an explanation of how to obtain the next set of query results.
@@ -6636,7 +6614,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. The token specifying the current offset within
+     * The token specifying the current offset within
      * search results. See
      * [SearchJobsResponse.next_page_token][google.cloud.talent.v4beta1.SearchJobsResponse.next_page_token]
      * for an explanation of how to obtain the next set of query results.
@@ -6654,7 +6632,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. The token specifying the current offset within
+     * The token specifying the current offset within
      * search results. See
      * [SearchJobsResponse.next_page_token][google.cloud.talent.v4beta1.SearchJobsResponse.next_page_token]
      * for an explanation of how to obtain the next set of query results.
@@ -6678,8 +6656,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. The criteria determining how search results are sorted. Default
-     * is
+     * The criteria determining how search results are sorted. Default is
      * `"relevance desc"`.
      * Supported options are:
      * * `"relevance desc"`: By relevance descending, as determined by the API
@@ -6750,8 +6727,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. The criteria determining how search results are sorted. Default
-     * is
+     * The criteria determining how search results are sorted. Default is
      * `"relevance desc"`.
      * Supported options are:
      * * `"relevance desc"`: By relevance descending, as determined by the API
@@ -6822,8 +6798,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. The criteria determining how search results are sorted. Default
-     * is
+     * The criteria determining how search results are sorted. Default is
      * `"relevance desc"`.
      * Supported options are:
      * * `"relevance desc"`: By relevance descending, as determined by the API
@@ -6892,8 +6867,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. The criteria determining how search results are sorted. Default
-     * is
+     * The criteria determining how search results are sorted. Default is
      * `"relevance desc"`.
      * Supported options are:
      * * `"relevance desc"`: By relevance descending, as determined by the API
@@ -6959,8 +6933,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. The criteria determining how search results are sorted. Default
-     * is
+     * The criteria determining how search results are sorted. Default is
      * `"relevance desc"`.
      * Supported options are:
      * * `"relevance desc"`: By relevance descending, as determined by the API
@@ -7032,8 +7005,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. Controls whether highly similar jobs are returned next to each
-     * other in the search results. Jobs are identified as highly similar based on
+     * Controls whether highly similar jobs are returned next to each other in
+     * the search results. Jobs are identified as highly similar based on
      * their titles, job categories, and locations. Highly similar results are
      * clustered so that only one representative job of the cluster is
      * displayed to the job seeker higher up in the results, with the other jobs
@@ -7054,8 +7027,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. Controls whether highly similar jobs are returned next to each
-     * other in the search results. Jobs are identified as highly similar based on
+     * Controls whether highly similar jobs are returned next to each other in
+     * the search results. Jobs are identified as highly similar based on
      * their titles, job categories, and locations. Highly similar results are
      * clustered so that only one representative job of the cluster is
      * displayed to the job seeker higher up in the results, with the other jobs
@@ -7078,8 +7051,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. Controls whether highly similar jobs are returned next to each
-     * other in the search results. Jobs are identified as highly similar based on
+     * Controls whether highly similar jobs are returned next to each other in
+     * the search results. Jobs are identified as highly similar based on
      * their titles, job categories, and locations. Highly similar results are
      * clustered so that only one representative job of the cluster is
      * displayed to the job seeker higher up in the results, with the other jobs
@@ -7107,8 +7080,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. Controls whether highly similar jobs are returned next to each
-     * other in the search results. Jobs are identified as highly similar based on
+     * Controls whether highly similar jobs are returned next to each other in
+     * the search results. Jobs are identified as highly similar based on
      * their titles, job categories, and locations. Highly similar results are
      * clustered so that only one representative job of the cluster is
      * displayed to the job seeker higher up in the results, with the other jobs
@@ -7136,8 +7109,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. Controls whether highly similar jobs are returned next to each
-     * other in the search results. Jobs are identified as highly similar based on
+     * Controls whether highly similar jobs are returned next to each other in
+     * the search results. Jobs are identified as highly similar based on
      * their titles, job categories, and locations. Highly similar results are
      * clustered so that only one representative job of the cluster is
      * displayed to the job seeker higher up in the results, with the other jobs
@@ -7168,8 +7141,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. Controls over how job documents get ranked on top of existing
-     * relevance score (determined by API algorithm).
+     * Controls over how job documents get ranked on top of existing relevance
+     * score (determined by API algorithm).
      * </pre>
      *
      * <code>
@@ -7183,8 +7156,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. Controls over how job documents get ranked on top of existing
-     * relevance score (determined by API algorithm).
+     * Controls over how job documents get ranked on top of existing relevance
+     * score (determined by API algorithm).
      * </pre>
      *
      * <code>
@@ -7206,8 +7179,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. Controls over how job documents get ranked on top of existing
-     * relevance score (determined by API algorithm).
+     * Controls over how job documents get ranked on top of existing relevance
+     * score (determined by API algorithm).
      * </pre>
      *
      * <code>
@@ -7232,8 +7205,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. Controls over how job documents get ranked on top of existing
-     * relevance score (determined by API algorithm).
+     * Controls over how job documents get ranked on top of existing relevance
+     * score (determined by API algorithm).
      * </pre>
      *
      * <code>
@@ -7256,8 +7229,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. Controls over how job documents get ranked on top of existing
-     * relevance score (determined by API algorithm).
+     * Controls over how job documents get ranked on top of existing relevance
+     * score (determined by API algorithm).
      * </pre>
      *
      * <code>
@@ -7287,8 +7260,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. Controls over how job documents get ranked on top of existing
-     * relevance score (determined by API algorithm).
+     * Controls over how job documents get ranked on top of existing relevance
+     * score (determined by API algorithm).
      * </pre>
      *
      * <code>
@@ -7310,8 +7283,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. Controls over how job documents get ranked on top of existing
-     * relevance score (determined by API algorithm).
+     * Controls over how job documents get ranked on top of existing relevance
+     * score (determined by API algorithm).
      * </pre>
      *
      * <code>
@@ -7328,8 +7301,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. Controls over how job documents get ranked on top of existing
-     * relevance score (determined by API algorithm).
+     * Controls over how job documents get ranked on top of existing relevance
+     * score (determined by API algorithm).
      * </pre>
      *
      * <code>
@@ -7351,8 +7324,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. Controls over how job documents get ranked on top of existing
-     * relevance score (determined by API algorithm).
+     * Controls over how job documents get ranked on top of existing relevance
+     * score (determined by API algorithm).
      * </pre>
      *
      * <code>
@@ -7381,7 +7354,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. Controls whether to disable exact keyword match on
+     * Controls whether to disable exact keyword match on
      * [Job.title][google.cloud.talent.v4beta1.Job.title],
      * [Job.description][google.cloud.talent.v4beta1.Job.description],
      * [Job.company_display_name][google.cloud.talent.v4beta1.Job.company_display_name],
@@ -7413,7 +7386,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. Controls whether to disable exact keyword match on
+     * Controls whether to disable exact keyword match on
      * [Job.title][google.cloud.talent.v4beta1.Job.title],
      * [Job.description][google.cloud.talent.v4beta1.Job.description],
      * [Job.company_display_name][google.cloud.talent.v4beta1.Job.company_display_name],
@@ -7448,7 +7421,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. Controls whether to disable exact keyword match on
+     * Controls whether to disable exact keyword match on
      * [Job.title][google.cloud.talent.v4beta1.Job.title],
      * [Job.description][google.cloud.talent.v4beta1.Job.description],
      * [Job.company_display_name][google.cloud.talent.v4beta1.Job.company_display_name],

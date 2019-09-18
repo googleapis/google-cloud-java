@@ -346,7 +346,7 @@ public final class DeviceInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Type of the device.
+   * Type of the device.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.DeviceInfo.DeviceType device_type = 1;</code>
@@ -358,7 +358,7 @@ public final class DeviceInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Type of the device.
+   * Type of the device.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.DeviceInfo.DeviceType device_type = 1;</code>
@@ -378,7 +378,7 @@ public final class DeviceInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. A device-specific ID. The ID must be a unique identifier that
+   * A device-specific ID. The ID must be a unique identifier that
    * distinguishes the device from other devices.
    * </pre>
    *
@@ -399,7 +399,7 @@ public final class DeviceInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. A device-specific ID. The ID must be a unique identifier that
+   * A device-specific ID. The ID must be a unique identifier that
    * distinguishes the device from other devices.
    * </pre>
    *
@@ -759,7 +759,7 @@ public final class DeviceInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Type of the device.
+     * Type of the device.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.DeviceInfo.DeviceType device_type = 1;</code>
@@ -771,7 +771,7 @@ public final class DeviceInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Type of the device.
+     * Type of the device.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.DeviceInfo.DeviceType device_type = 1;</code>
@@ -785,7 +785,7 @@ public final class DeviceInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Type of the device.
+     * Type of the device.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.DeviceInfo.DeviceType device_type = 1;</code>
@@ -802,7 +802,7 @@ public final class DeviceInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Type of the device.
+     * Type of the device.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.DeviceInfo.DeviceType device_type = 1;</code>
@@ -820,7 +820,7 @@ public final class DeviceInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Type of the device.
+     * Type of the device.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.DeviceInfo.DeviceType device_type = 1;</code>
@@ -837,7 +837,7 @@ public final class DeviceInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A device-specific ID. The ID must be a unique identifier that
+     * A device-specific ID. The ID must be a unique identifier that
      * distinguishes the device from other devices.
      * </pre>
      *
@@ -858,7 +858,7 @@ public final class DeviceInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A device-specific ID. The ID must be a unique identifier that
+     * A device-specific ID. The ID must be a unique identifier that
      * distinguishes the device from other devices.
      * </pre>
      *
@@ -879,7 +879,7 @@ public final class DeviceInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A device-specific ID. The ID must be a unique identifier that
+     * A device-specific ID. The ID must be a unique identifier that
      * distinguishes the device from other devices.
      * </pre>
      *
@@ -898,7 +898,7 @@ public final class DeviceInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A device-specific ID. The ID must be a unique identifier that
+     * A device-specific ID. The ID must be a unique identifier that
      * distinguishes the device from other devices.
      * </pre>
      *
@@ -914,7 +914,7 @@ public final class DeviceInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A device-specific ID. The ID must be a unique identifier that
+     * A device-specific ID. The ID must be a unique identifier that
      * distinguishes the device from other devices.
      * </pre>
      *

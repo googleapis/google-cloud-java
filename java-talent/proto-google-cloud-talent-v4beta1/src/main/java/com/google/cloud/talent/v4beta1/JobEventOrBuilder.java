@@ -16,7 +16,9 @@ public interface JobEventOrBuilder
    * [JobEventType][google.cloud.talent.v4beta1.JobEvent.JobEventType]).
    * </pre>
    *
-   * <code>.google.cloud.talent.v4beta1.JobEvent.JobEventType type = 1;</code>
+   * <code>
+   * .google.cloud.talent.v4beta1.JobEvent.JobEventType type = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   int getTypeValue();
   /**
@@ -27,7 +29,9 @@ public interface JobEventOrBuilder
    * [JobEventType][google.cloud.talent.v4beta1.JobEvent.JobEventType]).
    * </pre>
    *
-   * <code>.google.cloud.talent.v4beta1.JobEvent.JobEventType type = 1;</code>
+   * <code>
+   * .google.cloud.talent.v4beta1.JobEvent.JobEventType type = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.talent.v4beta1.JobEvent.JobEventType getType();
 
@@ -44,10 +48,10 @@ public interface JobEventOrBuilder
    * field contains the identifier of the viewed job.
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
-   * example, "projects/api-test-project/tenants/foo/jobs/1234".
+   * example, "projects/foo/tenants/bar/jobs/baz".
    * </pre>
    *
-   * <code>repeated string jobs = 2;</code>
+   * <code>repeated string jobs = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.util.List<java.lang.String> getJobsList();
   /**
@@ -63,10 +67,10 @@ public interface JobEventOrBuilder
    * field contains the identifier of the viewed job.
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
-   * example, "projects/api-test-project/tenants/foo/jobs/1234".
+   * example, "projects/foo/tenants/bar/jobs/baz".
    * </pre>
    *
-   * <code>repeated string jobs = 2;</code>
+   * <code>repeated string jobs = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   int getJobsCount();
   /**
@@ -82,10 +86,10 @@ public interface JobEventOrBuilder
    * field contains the identifier of the viewed job.
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
-   * example, "projects/api-test-project/tenants/foo/jobs/1234".
+   * example, "projects/foo/tenants/bar/jobs/baz".
    * </pre>
    *
-   * <code>repeated string jobs = 2;</code>
+   * <code>repeated string jobs = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getJobs(int index);
   /**
@@ -101,10 +105,10 @@ public interface JobEventOrBuilder
    * field contains the identifier of the viewed job.
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
-   * example, "projects/api-test-project/tenants/foo/jobs/1234".
+   * example, "projects/foo/tenants/bar/jobs/baz".
    * </pre>
    *
-   * <code>repeated string jobs = 2;</code>
+   * <code>repeated string jobs = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getJobsBytes(int index);
 
@@ -112,11 +116,11 @@ public interface JobEventOrBuilder
    *
    *
    * <pre>
-   * Optional. The [profile name][google.cloud.talent.v4beta1.Profile.name]
-   * associated with this client event.
+   * The [profile name][google.cloud.talent.v4beta1.Profile.name] associated
+   * with this client event.
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
-   * for example, "projects/api-test-project/tenants/foo/profiles/bar".
+   * for example, "projects/foo/tenants/bar/profiles/baz".
    * </pre>
    *
    * <code>string profile = 3;</code>
@@ -126,11 +130,11 @@ public interface JobEventOrBuilder
    *
    *
    * <pre>
-   * Optional. The [profile name][google.cloud.talent.v4beta1.Profile.name]
-   * associated with this client event.
+   * The [profile name][google.cloud.talent.v4beta1.Profile.name] associated
+   * with this client event.
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
-   * for example, "projects/api-test-project/tenants/foo/profiles/bar".
+   * for example, "projects/foo/tenants/bar/profiles/baz".
    * </pre>
    *
    * <code>string profile = 3;</code>

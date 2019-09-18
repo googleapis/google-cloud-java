@@ -7,7 +7,6 @@ package com.google.cloud.talent.v4beta1;
  *
  *
  * <pre>
- * Input only.
  * Application Date Range Filter.
  * The API matches profiles with
  * [Application.application_date][google.cloud.talent.v4beta1.Application.application_date]
@@ -124,8 +123,8 @@ public final class ApplicationDateFilter extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Optional. Start date. If it's missing, The API matches profiles with
-   * application date not after the end date.
+   * Start date. If it's missing, The API matches profiles with application date
+   * not after the end date.
    * </pre>
    *
    * <code>.google.type.Date start_date = 1;</code>
@@ -137,8 +136,8 @@ public final class ApplicationDateFilter extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Optional. Start date. If it's missing, The API matches profiles with
-   * application date not after the end date.
+   * Start date. If it's missing, The API matches profiles with application date
+   * not after the end date.
    * </pre>
    *
    * <code>.google.type.Date start_date = 1;</code>
@@ -150,8 +149,8 @@ public final class ApplicationDateFilter extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Optional. Start date. If it's missing, The API matches profiles with
-   * application date not after the end date.
+   * Start date. If it's missing, The API matches profiles with application date
+   * not after the end date.
    * </pre>
    *
    * <code>.google.type.Date start_date = 1;</code>
@@ -166,8 +165,8 @@ public final class ApplicationDateFilter extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Optional. End date. If it's missing, The API matches profiles with
-   * application date not before the start date.
+   * End date. If it's missing, The API matches profiles with application date
+   * not before the start date.
    * </pre>
    *
    * <code>.google.type.Date end_date = 2;</code>
@@ -179,8 +178,8 @@ public final class ApplicationDateFilter extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Optional. End date. If it's missing, The API matches profiles with
-   * application date not before the start date.
+   * End date. If it's missing, The API matches profiles with application date
+   * not before the start date.
    * </pre>
    *
    * <code>.google.type.Date end_date = 2;</code>
@@ -192,8 +191,8 @@ public final class ApplicationDateFilter extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Optional. End date. If it's missing, The API matches profiles with
-   * application date not before the start date.
+   * End date. If it's missing, The API matches profiles with application date
+   * not before the start date.
    * </pre>
    *
    * <code>.google.type.Date end_date = 2;</code>
@@ -385,7 +384,6 @@ public final class ApplicationDateFilter extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Input only.
    * Application Date Range Filter.
    * The API matches profiles with
    * [Application.application_date][google.cloud.talent.v4beta1.Application.application_date]
@@ -577,8 +575,8 @@ public final class ApplicationDateFilter extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Start date. If it's missing, The API matches profiles with
-     * application date not after the end date.
+     * Start date. If it's missing, The API matches profiles with application date
+     * not after the end date.
      * </pre>
      *
      * <code>.google.type.Date start_date = 1;</code>
@@ -590,8 +588,8 @@ public final class ApplicationDateFilter extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Start date. If it's missing, The API matches profiles with
-     * application date not after the end date.
+     * Start date. If it's missing, The API matches profiles with application date
+     * not after the end date.
      * </pre>
      *
      * <code>.google.type.Date start_date = 1;</code>
@@ -607,8 +605,8 @@ public final class ApplicationDateFilter extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Start date. If it's missing, The API matches profiles with
-     * application date not after the end date.
+     * Start date. If it's missing, The API matches profiles with application date
+     * not after the end date.
      * </pre>
      *
      * <code>.google.type.Date start_date = 1;</code>
@@ -630,8 +628,8 @@ public final class ApplicationDateFilter extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Start date. If it's missing, The API matches profiles with
-     * application date not after the end date.
+     * Start date. If it's missing, The API matches profiles with application date
+     * not after the end date.
      * </pre>
      *
      * <code>.google.type.Date start_date = 1;</code>
@@ -650,8 +648,8 @@ public final class ApplicationDateFilter extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Start date. If it's missing, The API matches profiles with
-     * application date not after the end date.
+     * Start date. If it's missing, The API matches profiles with application date
+     * not after the end date.
      * </pre>
      *
      * <code>.google.type.Date start_date = 1;</code>
@@ -674,8 +672,8 @@ public final class ApplicationDateFilter extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Start date. If it's missing, The API matches profiles with
-     * application date not after the end date.
+     * Start date. If it's missing, The API matches profiles with application date
+     * not after the end date.
      * </pre>
      *
      * <code>.google.type.Date start_date = 1;</code>
@@ -695,8 +693,8 @@ public final class ApplicationDateFilter extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Start date. If it's missing, The API matches profiles with
-     * application date not after the end date.
+     * Start date. If it's missing, The API matches profiles with application date
+     * not after the end date.
      * </pre>
      *
      * <code>.google.type.Date start_date = 1;</code>
@@ -710,8 +708,8 @@ public final class ApplicationDateFilter extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Start date. If it's missing, The API matches profiles with
-     * application date not after the end date.
+     * Start date. If it's missing, The API matches profiles with application date
+     * not after the end date.
      * </pre>
      *
      * <code>.google.type.Date start_date = 1;</code>
@@ -727,8 +725,8 @@ public final class ApplicationDateFilter extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Start date. If it's missing, The API matches profiles with
-     * application date not after the end date.
+     * Start date. If it's missing, The API matches profiles with application date
+     * not after the end date.
      * </pre>
      *
      * <code>.google.type.Date start_date = 1;</code>
@@ -754,8 +752,8 @@ public final class ApplicationDateFilter extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. End date. If it's missing, The API matches profiles with
-     * application date not before the start date.
+     * End date. If it's missing, The API matches profiles with application date
+     * not before the start date.
      * </pre>
      *
      * <code>.google.type.Date end_date = 2;</code>
@@ -767,8 +765,8 @@ public final class ApplicationDateFilter extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. End date. If it's missing, The API matches profiles with
-     * application date not before the start date.
+     * End date. If it's missing, The API matches profiles with application date
+     * not before the start date.
      * </pre>
      *
      * <code>.google.type.Date end_date = 2;</code>
@@ -784,8 +782,8 @@ public final class ApplicationDateFilter extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. End date. If it's missing, The API matches profiles with
-     * application date not before the start date.
+     * End date. If it's missing, The API matches profiles with application date
+     * not before the start date.
      * </pre>
      *
      * <code>.google.type.Date end_date = 2;</code>
@@ -807,8 +805,8 @@ public final class ApplicationDateFilter extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. End date. If it's missing, The API matches profiles with
-     * application date not before the start date.
+     * End date. If it's missing, The API matches profiles with application date
+     * not before the start date.
      * </pre>
      *
      * <code>.google.type.Date end_date = 2;</code>
@@ -827,8 +825,8 @@ public final class ApplicationDateFilter extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. End date. If it's missing, The API matches profiles with
-     * application date not before the start date.
+     * End date. If it's missing, The API matches profiles with application date
+     * not before the start date.
      * </pre>
      *
      * <code>.google.type.Date end_date = 2;</code>
@@ -851,8 +849,8 @@ public final class ApplicationDateFilter extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. End date. If it's missing, The API matches profiles with
-     * application date not before the start date.
+     * End date. If it's missing, The API matches profiles with application date
+     * not before the start date.
      * </pre>
      *
      * <code>.google.type.Date end_date = 2;</code>
@@ -872,8 +870,8 @@ public final class ApplicationDateFilter extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. End date. If it's missing, The API matches profiles with
-     * application date not before the start date.
+     * End date. If it's missing, The API matches profiles with application date
+     * not before the start date.
      * </pre>
      *
      * <code>.google.type.Date end_date = 2;</code>
@@ -887,8 +885,8 @@ public final class ApplicationDateFilter extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. End date. If it's missing, The API matches profiles with
-     * application date not before the start date.
+     * End date. If it's missing, The API matches profiles with application date
+     * not before the start date.
      * </pre>
      *
      * <code>.google.type.Date end_date = 2;</code>
@@ -904,8 +902,8 @@ public final class ApplicationDateFilter extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. End date. If it's missing, The API matches profiles with
-     * application date not before the start date.
+     * End date. If it's missing, The API matches profiles with application date
+     * not before the start date.
      * </pre>
      *
      * <code>.google.type.Date end_date = 2;</code>

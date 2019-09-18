@@ -7,7 +7,6 @@ package com.google.cloud.talent.v4beta1;
  *
  *
  * <pre>
- * Input only.
  * Job title of the search.
  * </pre>
  *
@@ -103,11 +102,11 @@ public final class JobTitleFilter extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The job title, for example, "Software engineer", or "Product
+   * Required. The job title. For example, "Software engineer", or "Product
    * manager".
    * </pre>
    *
-   * <code>string job_title = 1;</code>
+   * <code>string job_title = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getJobTitle() {
     java.lang.Object ref = jobTitle_;
@@ -124,11 +123,11 @@ public final class JobTitleFilter extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The job title, for example, "Software engineer", or "Product
+   * Required. The job title. For example, "Software engineer", or "Product
    * manager".
    * </pre>
    *
-   * <code>string job_title = 1;</code>
+   * <code>string job_title = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getJobTitleBytes() {
     java.lang.Object ref = jobTitle_;
@@ -148,8 +147,8 @@ public final class JobTitleFilter extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Whether to apply negation to the filter so profiles matching the
-   * filter are excluded.
+   * Whether to apply negation to the filter so profiles matching the filter
+   * are excluded.
    * </pre>
    *
    * <code>bool negated = 2;</code>
@@ -330,7 +329,6 @@ public final class JobTitleFilter extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Input only.
    * Job title of the search.
    * </pre>
    *
@@ -495,11 +493,11 @@ public final class JobTitleFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The job title, for example, "Software engineer", or "Product
+     * Required. The job title. For example, "Software engineer", or "Product
      * manager".
      * </pre>
      *
-     * <code>string job_title = 1;</code>
+     * <code>string job_title = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getJobTitle() {
       java.lang.Object ref = jobTitle_;
@@ -516,11 +514,11 @@ public final class JobTitleFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The job title, for example, "Software engineer", or "Product
+     * Required. The job title. For example, "Software engineer", or "Product
      * manager".
      * </pre>
      *
-     * <code>string job_title = 1;</code>
+     * <code>string job_title = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getJobTitleBytes() {
       java.lang.Object ref = jobTitle_;
@@ -537,11 +535,11 @@ public final class JobTitleFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The job title, for example, "Software engineer", or "Product
+     * Required. The job title. For example, "Software engineer", or "Product
      * manager".
      * </pre>
      *
-     * <code>string job_title = 1;</code>
+     * <code>string job_title = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setJobTitle(java.lang.String value) {
       if (value == null) {
@@ -556,11 +554,11 @@ public final class JobTitleFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The job title, for example, "Software engineer", or "Product
+     * Required. The job title. For example, "Software engineer", or "Product
      * manager".
      * </pre>
      *
-     * <code>string job_title = 1;</code>
+     * <code>string job_title = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearJobTitle() {
 
@@ -572,11 +570,11 @@ public final class JobTitleFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The job title, for example, "Software engineer", or "Product
+     * Required. The job title. For example, "Software engineer", or "Product
      * manager".
      * </pre>
      *
-     * <code>string job_title = 1;</code>
+     * <code>string job_title = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setJobTitleBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -594,8 +592,8 @@ public final class JobTitleFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Whether to apply negation to the filter so profiles matching the
-     * filter are excluded.
+     * Whether to apply negation to the filter so profiles matching the filter
+     * are excluded.
      * </pre>
      *
      * <code>bool negated = 2;</code>
@@ -607,8 +605,8 @@ public final class JobTitleFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Whether to apply negation to the filter so profiles matching the
-     * filter are excluded.
+     * Whether to apply negation to the filter so profiles matching the filter
+     * are excluded.
      * </pre>
      *
      * <code>bool negated = 2;</code>
@@ -623,8 +621,8 @@ public final class JobTitleFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Whether to apply negation to the filter so profiles matching the
-     * filter are excluded.
+     * Whether to apply negation to the filter so profiles matching the filter
+     * are excluded.
      * </pre>
      *
      * <code>bool negated = 2;</code>

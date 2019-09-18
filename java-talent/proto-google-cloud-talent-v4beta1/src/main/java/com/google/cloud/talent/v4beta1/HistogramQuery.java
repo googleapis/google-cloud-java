@@ -7,7 +7,6 @@ package com.google.cloud.talent.v4beta1;
  *
  *
  * <pre>
- * Input Only.
  * The histogram request.
  * </pre>
  *
@@ -310,7 +309,6 @@ public final class HistogramQuery extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Input Only.
    * The histogram request.
    * </pre>
    *

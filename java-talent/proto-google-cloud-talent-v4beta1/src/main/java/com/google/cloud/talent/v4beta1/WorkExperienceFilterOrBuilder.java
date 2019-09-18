@@ -12,7 +12,7 @@ public interface WorkExperienceFilterOrBuilder
    *
    *
    * <pre>
-   * Optional. The minimum duration of the work experience (inclusive).
+   * The minimum duration of the work experience (inclusive).
    * </pre>
    *
    * <code>.google.protobuf.Duration min_experience = 1;</code>
@@ -22,7 +22,7 @@ public interface WorkExperienceFilterOrBuilder
    *
    *
    * <pre>
-   * Optional. The minimum duration of the work experience (inclusive).
+   * The minimum duration of the work experience (inclusive).
    * </pre>
    *
    * <code>.google.protobuf.Duration min_experience = 1;</code>
@@ -32,7 +32,7 @@ public interface WorkExperienceFilterOrBuilder
    *
    *
    * <pre>
-   * Optional. The minimum duration of the work experience (inclusive).
+   * The minimum duration of the work experience (inclusive).
    * </pre>
    *
    * <code>.google.protobuf.Duration min_experience = 1;</code>
@@ -43,7 +43,7 @@ public interface WorkExperienceFilterOrBuilder
    *
    *
    * <pre>
-   * Optional. The maximum duration of the work experience (exclusive).
+   * The maximum duration of the work experience (exclusive).
    * </pre>
    *
    * <code>.google.protobuf.Duration max_experience = 2;</code>
@@ -53,7 +53,7 @@ public interface WorkExperienceFilterOrBuilder
    *
    *
    * <pre>
-   * Optional. The maximum duration of the work experience (exclusive).
+   * The maximum duration of the work experience (exclusive).
    * </pre>
    *
    * <code>.google.protobuf.Duration max_experience = 2;</code>
@@ -63,7 +63,7 @@ public interface WorkExperienceFilterOrBuilder
    *
    *
    * <pre>
-   * Optional. The maximum duration of the work experience (exclusive).
+   * The maximum duration of the work experience (exclusive).
    * </pre>
    *
    * <code>.google.protobuf.Duration max_experience = 2;</code>

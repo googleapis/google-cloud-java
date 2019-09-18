@@ -12,8 +12,8 @@ public interface CandidateAvailabilityFilterOrBuilder
    *
    *
    * <pre>
-   * Optional. It is false by default. If true, API excludes all the potential
-   * available profiles.
+   * It is false by default. If true, API excludes all the potential available
+   * profiles.
    * </pre>
    *
    * <code>bool negated = 1;</code>

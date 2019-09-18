@@ -254,7 +254,7 @@ public final class Resume extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Users can create a profile with only this field field, if
+   * Users can create a profile with only this field field, if
    * [resume_type][google.cloud.talent.v4beta1.Resume.resume_type] is
    * [HRXML][google.cloud.talent.v4beta1.Resume.ResumeType.HRXML]. For example,
    * the API parses this field and creates a profile with all structured fields
@@ -284,7 +284,7 @@ public final class Resume extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Users can create a profile with only this field field, if
+   * Users can create a profile with only this field field, if
    * [resume_type][google.cloud.talent.v4beta1.Resume.resume_type] is
    * [HRXML][google.cloud.talent.v4beta1.Resume.ResumeType.HRXML]. For example,
    * the API parses this field and creates a profile with all structured fields
@@ -317,7 +317,7 @@ public final class Resume extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The format of
+   * The format of
    * [structured_resume][google.cloud.talent.v4beta1.Resume.structured_resume].
    * </pre>
    *
@@ -330,7 +330,7 @@ public final class Resume extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The format of
+   * The format of
    * [structured_resume][google.cloud.talent.v4beta1.Resume.structured_resume].
    * </pre>
    *
@@ -680,7 +680,7 @@ public final class Resume extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Users can create a profile with only this field field, if
+     * Users can create a profile with only this field field, if
      * [resume_type][google.cloud.talent.v4beta1.Resume.resume_type] is
      * [HRXML][google.cloud.talent.v4beta1.Resume.ResumeType.HRXML]. For example,
      * the API parses this field and creates a profile with all structured fields
@@ -710,7 +710,7 @@ public final class Resume extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Users can create a profile with only this field field, if
+     * Users can create a profile with only this field field, if
      * [resume_type][google.cloud.talent.v4beta1.Resume.resume_type] is
      * [HRXML][google.cloud.talent.v4beta1.Resume.ResumeType.HRXML]. For example,
      * the API parses this field and creates a profile with all structured fields
@@ -740,7 +740,7 @@ public final class Resume extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Users can create a profile with only this field field, if
+     * Users can create a profile with only this field field, if
      * [resume_type][google.cloud.talent.v4beta1.Resume.resume_type] is
      * [HRXML][google.cloud.talent.v4beta1.Resume.ResumeType.HRXML]. For example,
      * the API parses this field and creates a profile with all structured fields
@@ -768,7 +768,7 @@ public final class Resume extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Users can create a profile with only this field field, if
+     * Users can create a profile with only this field field, if
      * [resume_type][google.cloud.talent.v4beta1.Resume.resume_type] is
      * [HRXML][google.cloud.talent.v4beta1.Resume.ResumeType.HRXML]. For example,
      * the API parses this field and creates a profile with all structured fields
@@ -793,7 +793,7 @@ public final class Resume extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Users can create a profile with only this field field, if
+     * Users can create a profile with only this field field, if
      * [resume_type][google.cloud.talent.v4beta1.Resume.resume_type] is
      * [HRXML][google.cloud.talent.v4beta1.Resume.ResumeType.HRXML]. For example,
      * the API parses this field and creates a profile with all structured fields
@@ -824,7 +824,7 @@ public final class Resume extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The format of
+     * The format of
      * [structured_resume][google.cloud.talent.v4beta1.Resume.structured_resume].
      * </pre>
      *
@@ -837,7 +837,7 @@ public final class Resume extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The format of
+     * The format of
      * [structured_resume][google.cloud.talent.v4beta1.Resume.structured_resume].
      * </pre>
      *
@@ -852,7 +852,7 @@ public final class Resume extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The format of
+     * The format of
      * [structured_resume][google.cloud.talent.v4beta1.Resume.structured_resume].
      * </pre>
      *
@@ -870,7 +870,7 @@ public final class Resume extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The format of
+     * The format of
      * [structured_resume][google.cloud.talent.v4beta1.Resume.structured_resume].
      * </pre>
      *
@@ -889,7 +889,7 @@ public final class Resume extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The format of
+     * The format of
      * [structured_resume][google.cloud.talent.v4beta1.Resume.structured_resume].
      * </pre>
      *

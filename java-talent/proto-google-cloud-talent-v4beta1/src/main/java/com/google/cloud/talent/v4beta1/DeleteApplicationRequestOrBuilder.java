@@ -14,12 +14,11 @@ public interface DeleteApplicationRequestOrBuilder
    * <pre>
    * Required. The resource name of the application to be deleted.
    * The format is
-   * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}/applications/{application_id}",
-   * for example,
-   * "projects/test-project/tenants/test-tenant/profiles/test-profile/applications/test-application".
+   * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}/applications/{application_id}".
+   * For example, "projects/foo/tenants/bar/profiles/baz/applications/qux".
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getName();
   /**
@@ -28,12 +27,11 @@ public interface DeleteApplicationRequestOrBuilder
    * <pre>
    * Required. The resource name of the application to be deleted.
    * The format is
-   * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}/applications/{application_id}",
-   * for example,
-   * "projects/test-project/tenants/test-tenant/profiles/test-profile/applications/test-application".
+   * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}/applications/{application_id}".
+   * For example, "projects/foo/tenants/bar/profiles/baz/applications/qux".
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getNameBytes();
 }

@@ -15,7 +15,9 @@ public interface ProfileEventOrBuilder
    * Required. Type of event.
    * </pre>
    *
-   * <code>.google.cloud.talent.v4beta1.ProfileEvent.ProfileEventType type = 1;</code>
+   * <code>
+   * .google.cloud.talent.v4beta1.ProfileEvent.ProfileEventType type = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   int getTypeValue();
   /**
@@ -25,7 +27,9 @@ public interface ProfileEventOrBuilder
    * Required. Type of event.
    * </pre>
    *
-   * <code>.google.cloud.talent.v4beta1.ProfileEvent.ProfileEventType type = 1;</code>
+   * <code>
+   * .google.cloud.talent.v4beta1.ProfileEvent.ProfileEventType type = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.talent.v4beta1.ProfileEvent.ProfileEventType getType();
 
@@ -37,10 +41,10 @@ public interface ProfileEventOrBuilder
    * associated with this client event.
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
-   * for example, "projects/api-test-project/tenants/foo/profiles/bar".
+   * for example, "projects/foo/tenants/bar/profiles/baz".
    * </pre>
    *
-   * <code>repeated string profiles = 2;</code>
+   * <code>repeated string profiles = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.util.List<java.lang.String> getProfilesList();
   /**
@@ -51,10 +55,10 @@ public interface ProfileEventOrBuilder
    * associated with this client event.
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
-   * for example, "projects/api-test-project/tenants/foo/profiles/bar".
+   * for example, "projects/foo/tenants/bar/profiles/baz".
    * </pre>
    *
-   * <code>repeated string profiles = 2;</code>
+   * <code>repeated string profiles = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   int getProfilesCount();
   /**
@@ -65,10 +69,10 @@ public interface ProfileEventOrBuilder
    * associated with this client event.
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
-   * for example, "projects/api-test-project/tenants/foo/profiles/bar".
+   * for example, "projects/foo/tenants/bar/profiles/baz".
    * </pre>
    *
-   * <code>repeated string profiles = 2;</code>
+   * <code>repeated string profiles = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getProfiles(int index);
   /**
@@ -79,10 +83,10 @@ public interface ProfileEventOrBuilder
    * associated with this client event.
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
-   * for example, "projects/api-test-project/tenants/foo/profiles/bar".
+   * for example, "projects/foo/tenants/bar/profiles/baz".
    * </pre>
    *
-   * <code>repeated string profiles = 2;</code>
+   * <code>repeated string profiles = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getProfilesBytes(int index);
 
@@ -90,12 +94,11 @@ public interface ProfileEventOrBuilder
    *
    *
    * <pre>
-   * Optional. The [job name(s)][google.cloud.talent.v4beta1.Job.name]
-   * associated with this client event. Leave it empty if the event isn't
-   * associated with a job.
+   * The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with
+   * this client event. Leave it empty if the event isn't associated with a job.
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
-   * example, "projects/api-test-project/tenants/foo/jobs/1234".
+   * example, "projects/foo/tenants/bar/jobs/baz".
    * </pre>
    *
    * <code>repeated string jobs = 6;</code>
@@ -105,12 +108,11 @@ public interface ProfileEventOrBuilder
    *
    *
    * <pre>
-   * Optional. The [job name(s)][google.cloud.talent.v4beta1.Job.name]
-   * associated with this client event. Leave it empty if the event isn't
-   * associated with a job.
+   * The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with
+   * this client event. Leave it empty if the event isn't associated with a job.
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
-   * example, "projects/api-test-project/tenants/foo/jobs/1234".
+   * example, "projects/foo/tenants/bar/jobs/baz".
    * </pre>
    *
    * <code>repeated string jobs = 6;</code>
@@ -120,12 +122,11 @@ public interface ProfileEventOrBuilder
    *
    *
    * <pre>
-   * Optional. The [job name(s)][google.cloud.talent.v4beta1.Job.name]
-   * associated with this client event. Leave it empty if the event isn't
-   * associated with a job.
+   * The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with
+   * this client event. Leave it empty if the event isn't associated with a job.
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
-   * example, "projects/api-test-project/tenants/foo/jobs/1234".
+   * example, "projects/foo/tenants/bar/jobs/baz".
    * </pre>
    *
    * <code>repeated string jobs = 6;</code>
@@ -135,12 +136,11 @@ public interface ProfileEventOrBuilder
    *
    *
    * <pre>
-   * Optional. The [job name(s)][google.cloud.talent.v4beta1.Job.name]
-   * associated with this client event. Leave it empty if the event isn't
-   * associated with a job.
+   * The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with
+   * this client event. Leave it empty if the event isn't associated with a job.
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
-   * example, "projects/api-test-project/tenants/foo/jobs/1234".
+   * example, "projects/foo/tenants/bar/jobs/baz".
    * </pre>
    *
    * <code>repeated string jobs = 6;</code>
