@@ -177,13 +177,13 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>io.opencensus</groupId>
   <artifactId>opencensus-impl</artifactId>
-  <version>0.23.0</version>
+  <version>0.24.0</version>
   <scope>runtime</scope>
 </dependency>
 <dependency>
   <groupId>io.opencensus</groupId>
   <artifactId>opencensus-exporter-trace-stackdriver</artifactId>
-  <version>0.23.0</version>
+  <version>0.24.0</version>
   <exclusions>
     <exclusion>
       <groupId>io.grpc</groupId>
@@ -198,13 +198,13 @@ If you are using Maven, add this to your pom.xml file
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'io.opencensus:opencensus-impl:0.23.0'
-compile 'io.opencensus:opencensus-exporter-trace-stackdriver:0.23.0'
+compile 'io.opencensus:opencensus-impl:0.24.0'
+compile 'io.opencensus:opencensus-exporter-trace-stackdriver:0.24.0'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "io.opencensus" % "opencensus-impl" % "0.23.0"
-libraryDependencies += "io.opencensus" % "opencensus-exporter-trace-stackdriver" % "0.23.0"
+libraryDependencies += "io.opencensus" % "opencensus-impl" % "0.24.0"
+libraryDependencies += "io.opencensus" % "opencensus-exporter-trace-stackdriver" % "0.24.0"
 ```
 
 At the start of your application configure the exporter:
@@ -274,13 +274,13 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>io.opencensus</groupId>
   <artifactId>opencensus-impl</artifactId>
-  <version>0.23.0</version>
+  <version>0.24.0</version>
   <scope>runtime</scope>
 </dependency>
 <dependency>
   <groupId>io.opencensus</groupId>
   <artifactId>opencensus-exporter-stats-stackdriver</artifactId>
-  <version>0.23.0</version>
+  <version>0.24.0</version>
   <exclusions>
     <exclusion>
       <groupId>io.grpc</groupId>
@@ -295,13 +295,13 @@ If you are using Maven, add this to your pom.xml file
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'io.opencensus:opencensus-impl:0.23.0'
-compile 'io.opencensus:opencensus-exporter-stats-stackdriver:0.23.0'
+compile 'io.opencensus:opencensus-impl:0.24.0'
+compile 'io.opencensus:opencensus-exporter-stats-stackdriver:0.24.0'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "io.opencensus" % "opencensus-impl" % "0.23.0"
-libraryDependencies += "io.opencensus" % "opencensus-exporter-stats-stackdriver" % "0.23.0"
+libraryDependencies += "io.opencensus" % "opencensus-impl" % "0.24.0"
+libraryDependencies += "io.opencensus" % "opencensus-exporter-stats-stackdriver" % "0.24.0"
 ```
 
 At the start of your application configure the exporter and enable the Bigtable stats views:
