@@ -1,0 +1,13 @@
+{
+  "name": "vision",
+  "name_pretty": "Cloud Vision",
+  "product_documentation": "https://cloud.google.com/vision/docs/",
+  "client_documentation": "https://googleapis.dev/java/google-cloud-clients/latest/index.html?com/google/cloud/vision/v1/package-summary.html",
+  "issue_tracker": "https://issuetracker.google.com/issues?q=status:open%20componentid:187174",
+  "release_level": "ga",
+  "language": "java",
+  "repo": "googleapis/google-cloud-java",
+  "repo_short": "google-cloud-java",
+  "distribution_name": "com.google.cloud:google-cloud-vision",
+  "api_id": "vision.googleapis.com"
+}
