@@ -22,9 +22,15 @@ import static com.google.common.base.Preconditions.checkNotNull;
 import com.google.api.gax.paging.Page;
 import com.google.auth.ServiceAccountSigner;
 import com.google.auth.ServiceAccountSigner.SigningException;
-import com.google.cloud.*;
+import com.google.cloud.FieldSelector;
 import com.google.cloud.FieldSelector.Helper;
+import com.google.cloud.Policy;
+import com.google.cloud.ReadChannel;
+import com.google.cloud.Service;
+import com.google.cloud.Tuple;
+import com.google.cloud.WriteChannel;
 import com.google.cloud.storage.Acl.Entity;
+import com.google.cloud.storage.HmacKey.HmacKeyMetadata;
 import com.google.cloud.storage.spi.v1.StorageRpc;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterables;
@@ -247,6 +253,132 @@ public interface Storage extends Service<StorageOptions> {
      */
     public static BucketSourceOption userProject(String userProject) {
       return new BucketSourceOption(StorageRpc.Option.USER_PROJECT, userProject);
+    }
+  }
+
+  /** Class for specifying listHmacKeys options */
+  class ListHmacKeysOption extends Option {
+    private ListHmacKeysOption(StorageRpc.Option rpcOption, Object value) {
+      super(rpcOption, value);
+    }
+
+    /**
+     * Returns an option for the Service Account whose keys to list. If this option is not used,
+     * keys for all accounts will be listed.
+     */
+    public static ListHmacKeysOption serviceAccount(ServiceAccount serviceAccount) {
+      return new ListHmacKeysOption(
+          StorageRpc.Option.SERVICE_ACCOUNT_EMAIL, serviceAccount.getEmail());
+    }
+
+    /** Returns an option for the maximum amount of HMAC keys returned per page. */
+    public static ListHmacKeysOption maxResults(long pageSize) {
+      return new ListHmacKeysOption(StorageRpc.Option.MAX_RESULTS, pageSize);
+    }
+
+    /** Returns an option to specify the page token from which to start listing HMAC keys. */
+    public static ListHmacKeysOption pageToken(String pageToken) {
+      return new ListHmacKeysOption(StorageRpc.Option.PAGE_TOKEN, pageToken);
+    }
+
+    /**
+     * Returns an option to specify whether to show deleted keys in the result. This option is false
+     * by default.
+     */
+    public static ListHmacKeysOption showDeletedKeys(boolean showDeletedKeys) {
+      return new ListHmacKeysOption(StorageRpc.Option.SHOW_DELETED_KEYS, showDeletedKeys);
+    }
+
+    /**
+     * Returns an option to specify the project to be billed for this request. Required for
+     * Requester Pays buckets.
+     */
+    public static ListHmacKeysOption userProject(String userProject) {
+      return new ListHmacKeysOption(StorageRpc.Option.USER_PROJECT, userProject);
+    }
+
+    /**
+     * Returns an option to specify the Project ID for this request. If not specified, defaults to
+     * Application Default Credentials.
+     */
+    public static ListHmacKeysOption projectId(String projectId) {
+      return new ListHmacKeysOption(StorageRpc.Option.PROJECT_ID, projectId);
+    }
+  }
+
+  /** Class for specifying createHmacKey options */
+  class CreateHmacKeyOption extends Option {
+    private CreateHmacKeyOption(StorageRpc.Option rpcOption, Object value) {
+      super(rpcOption, value);
+    }
+
+    /**
+     * Returns an option to specify the project to be billed for this request. Required for
+     * Requester Pays buckets.
+     */
+    public static CreateHmacKeyOption userProject(String userProject) {
+      return new CreateHmacKeyOption(StorageRpc.Option.USER_PROJECT, userProject);
+    }
+
+    /**
+     * Returns an option to specify the Project ID for this request. If not specified, defaults to
+     * Application Default Credentials.
+     */
+    public static CreateHmacKeyOption projectId(String projectId) {
+      return new CreateHmacKeyOption(StorageRpc.Option.PROJECT_ID, projectId);
+    }
+  }
+
+  /** Class for specifying getHmacKey options */
+  class GetHmacKeyOption extends Option {
+    private GetHmacKeyOption(StorageRpc.Option rpcOption, Object value) {
+      super(rpcOption, value);
+    }
+
+    /**
+     * Returns an option to specify the project to be billed for this request. Required for
+     * Requester Pays buckets.
+     */
+    public static GetHmacKeyOption userProject(String userProject) {
+      return new GetHmacKeyOption(StorageRpc.Option.USER_PROJECT, userProject);
+    }
+
+    /**
+     * Returns an option to specify the Project ID for this request. If not specified, defaults to
+     * Application Default Credentials.
+     */
+    public static GetHmacKeyOption projectId(String projectId) {
+      return new GetHmacKeyOption(StorageRpc.Option.PROJECT_ID, projectId);
+    }
+  }
+
+  /** Class for specifying deleteHmacKey options */
+  class DeleteHmacKeyOption extends Option {
+    private DeleteHmacKeyOption(StorageRpc.Option rpcOption, Object value) {
+      super(rpcOption, value);
+    }
+
+    /**
+     * Returns an option to specify the project to be billed for this request. Required for
+     * Requester Pays buckets.
+     */
+    public static DeleteHmacKeyOption userProject(String userProject) {
+      return new DeleteHmacKeyOption(StorageRpc.Option.USER_PROJECT, userProject);
+    }
+  }
+
+  /** Class for specifying updateHmacKey options */
+  class UpdateHmacKeyOption extends Option {
+    private UpdateHmacKeyOption(StorageRpc.Option rpcOption, Object value) {
+      super(rpcOption, value);
+    }
+
+    /**
+     * Returns an option to specify the project to be billed for this request. Required for
+     * Requester Pays buckets.
+     */
+    public static UpdateHmacKeyOption userProject(String userProject) {
+      return new UpdateHmacKeyOption(StorageRpc.Option.USER_PROJECT, userProject);
     }
   }
 
@@ -953,7 +1085,8 @@ public interface Storage extends Service<StorageOptions> {
      * Use it if signature should include the blob's canonicalized extended headers. When used,
      * users of the signed URL should include the canonicalized extended headers with their request.
      *
-     * @see <a href="https://cloud.google.com/storage/docs/xml-api/reference-headers"></a>
+     * @see <a href="https://cloud.google.com/storage/docs/xml-api/reference-headers">Request
+     *     Headers</a>
      */
     public static SignUrlOption withExtHeaders(Map<String, String> extHeaders) {
       return new SignUrlOption(Option.EXT_HEADERS, extHeaders);
@@ -981,13 +1114,16 @@ public interface Storage extends Service<StorageOptions> {
      * get it from the environment.
      *
      * @see <a href="https://cloud.google.com/storage/docs/authentication#service_accounts">Service
-     *     account</a>
+     *     Accounts</a>
      */
     public static SignUrlOption signWith(ServiceAccountSigner signer) {
       return new SignUrlOption(Option.SERVICE_ACCOUNT_CRED, signer);
     }
 
-    /** Use a different host name than the default host name 'storage.googleapis.com' */
+    /**
+     * Use a different host name than the default host name 'https://storage.googleapis.com'. This
+     * must also include the scheme component of the URI.
+     */
     public static SignUrlOption withHostName(String hostName) {
       return new SignUrlOption(Option.HOST_NAME, hostName);
     }
@@ -2739,6 +2875,112 @@ public interface Storage extends Service<StorageOptions> {
    */
   List<Acl> listAcls(BlobId blob);
 
+  /**
+   * Creates a new HMAC Key for the provided service account, including the secret key. Note that
+   * the secret key is only returned upon creation via this method.
+   *
+   * <p>Example of creating a new HMAC Key.
+   *
+   * <pre>{@code
+   * ServiceAccount serviceAccount = ServiceAccount.of("my-service-account@google.com");
+   *
+   * HmacKey hmacKey = storage.createHmacKey(serviceAccount);
+   *
+   * String secretKey = hmacKey.getSecretKey();
+   * HmacKey.HmacKeyMetadata metadata = hmacKey.getMetadata();
+   * }</pre>
+   *
+   * @throws StorageException upon failure
+   */
+  HmacKey createHmacKey(ServiceAccount serviceAccount, CreateHmacKeyOption... options);
+
+  /**
+   * Lists HMAC keys for a given service account. Note this returns {@code HmacKeyMetadata} objects,
+   * which do not contain secret keys.
+   *
+   * <p>Example of listing HMAC keys, specifying project id.
+   *
+   * <pre>{@code
+   * Page<HmacKey.HmacKeyMetadata> metadataPage = storage.listHmacKeys(
+   *     Storage.ListHmacKeysOption.projectId("my-project-id"));
+   * for (HmacKey.HmacKeyMetadata hmacKeyMetadata : metadataPage.getValues()) {
+   *     //do something with the metadata
+   * }
+   * }</pre>
+   *
+   * <p>Example of listing HMAC keys, specifying max results and showDeletedKeys. Since projectId is
+   * not specified, the same project ID as the storage client instance will be used
+   *
+   * <pre>{@code
+   * ServiceAccount serviceAccount = ServiceAccount.of("my-service-account@google.com");
+   *
+   * Page<HmacKey.HmacKeyMetadata> metadataPage = storage.listHmacKeys(
+   *     Storage.ListHmacKeysOption.serviceAccount(serviceAccount),
+   *     Storage.ListHmacKeysOption.maxResults(10L),
+   *     Storage.ListHmacKeysOption.showDeletedKeys(true));
+   * for (HmacKey.HmacKeyMetadata hmacKeyMetadata : metadataPage.getValues()) {
+   *     //do something with the metadata
+   * }
+   * }</pre>
+   *
+   * @param options the options to apply to this operation
+   * @throws StorageException upon failure
+   */
+  Page<HmacKeyMetadata> listHmacKeys(ListHmacKeysOption... options);
+
+  /**
+   * Gets an HMAC key given its access id. Note that this returns a {@code HmacKeyMetadata} object,
+   * which does not contain the secret key.
+   *
+   * <p>Example of getting an HMAC key. Since projectId isn't specified, the same project ID as the
+   * storage client instance will be used.
+   *
+   * <pre>{@code
+   * String hmacKeyAccessId = "my-access-id";
+   * HmacKey.HmackeyMetadata hmacKeyMetadata = storage.getHmacKey(hmacKeyAccessId);
+   * }</pre>
+   *
+   * @throws StorageException upon failure
+   */
+  HmacKeyMetadata getHmacKey(String accessId, GetHmacKeyOption... options);
+
+  /**
+   * Deletes an HMAC key. Note that only an {@code INACTIVE} key can be deleted. Attempting to
+   * delete a key whose {@code HmacKey.HmacKeyState} is anything other than {@code INACTIVE} will
+   * fail.
+   *
+   * <p>Example of updating an HMAC key's state to INACTIVE and then deleting it.
+   *
+   * <pre>{@code
+   * String hmacKeyAccessId = "my-access-id";
+   * HmacKey.HmacKeyMetadata hmacKeyMetadata = storage.getHmacKey(hmacKeyAccessId);
+   *
+   * storage.updateHmacKeyState(hmacKeyMetadata, HmacKey.HmacKeyState.INACTIVE);
+   * storage.deleteHmacKey(hmacKeyMetadata);
+   * }</pre>
+   *
+   * @throws StorageException upon failure
+   */
+  void deleteHmacKey(HmacKeyMetadata hmacKeyMetadata, DeleteHmacKeyOption... options);
+
+  /**
+   * Updates the state of an HMAC key and returns the updated metadata.
+   *
+   * <p>Example of updating the state of an HMAC key.
+   *
+   * <pre>{@code
+   * String hmacKeyAccessId = "my-access-id";
+   * HmacKey.HmacKeyMetadata hmacKeyMetadata = storage.getHmacKey(hmacKeyAccessId);
+   *
+   * storage.updateHmacKeyState(hmacKeyMetadata, HmacKey.HmacKeyState.INACTIVE);
+   * }</pre>
+   *
+   * @throws StorageException upon failure
+   */
+  HmacKeyMetadata updateHmacKeyState(
+      final HmacKeyMetadata hmacKeyMetadata,
+      final HmacKey.HmacKeyState state,
+      UpdateHmacKeyOption... options);
   /**
    * Gets the IAM policy for the provided bucket.
    *

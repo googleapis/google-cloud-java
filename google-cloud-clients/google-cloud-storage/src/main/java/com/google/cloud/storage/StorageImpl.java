@@ -17,7 +17,8 @@
 package com.google.cloud.storage;
 
 import static com.google.cloud.RetryHelper.runWithRetries;
-import static com.google.cloud.storage.PolicyHelper.*;
+import static com.google.cloud.storage.PolicyHelper.convertFromApiPolicy;
+import static com.google.cloud.storage.PolicyHelper.convertToApiPolicy;
 import static com.google.cloud.storage.spi.v1.StorageRpc.Option.DELIMITER;
 import static com.google.cloud.storage.spi.v1.StorageRpc.Option.IF_GENERATION_MATCH;
 import static com.google.cloud.storage.spi.v1.StorageRpc.Option.IF_GENERATION_NOT_MATCH;
@@ -38,12 +39,19 @@ import com.google.api.services.storage.model.ObjectAccessControl;
 import com.google.api.services.storage.model.StorageObject;
 import com.google.api.services.storage.model.TestIamPermissionsResponse;
 import com.google.auth.ServiceAccountSigner;
-import com.google.cloud.*;
+import com.google.cloud.BaseService;
+import com.google.cloud.BatchResult;
+import com.google.cloud.PageImpl;
 import com.google.cloud.PageImpl.NextPageFetcher;
+import com.google.cloud.Policy;
+import com.google.cloud.ReadChannel;
 import com.google.cloud.RetryHelper.RetryHelperException;
+import com.google.cloud.Tuple;
 import com.google.cloud.storage.Acl.Entity;
+import com.google.cloud.storage.HmacKey.HmacKeyMetadata;
 import com.google.cloud.storage.spi.v1.StorageRpc;
 import com.google.cloud.storage.spi.v1.StorageRpc.RewriteResponse;
+import com.google.common.base.CharMatcher;
 import com.google.common.base.Function;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Strings;
@@ -288,6 +296,23 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
     @Override
     public Page<Blob> getNextPage() {
       return listBlobs(bucket, serviceOptions, requestOptions);
+    }
+  }
+
+  private static class HmacKeyMetadataPageFetcher implements NextPageFetcher<HmacKeyMetadata> {
+
+    private static final long serialVersionUID = 308012320541700881L;
+    private final StorageOptions serviceOptions;
+    private final Map<StorageRpc.Option, ?> options;
+
+    HmacKeyMetadataPageFetcher(StorageOptions serviceOptions, Map<StorageRpc.Option, ?> options) {
+      this.serviceOptions = serviceOptions;
+      this.options = options;
+    }
+
+    @Override
+    public Page<HmacKeyMetadata> getNextPage() {
+      return listHmacKeys(serviceOptions, options);
     }
   }
 
@@ -630,23 +655,25 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
                 getOptions().getClock().millisTime() + unit.toMillis(duration),
                 TimeUnit.MILLISECONDS);
 
-    StringBuilder stPath = new StringBuilder();
-    if (!blobInfo.getBucket().startsWith(PATH_DELIMITER)) {
-      stPath.append(PATH_DELIMITER);
-    }
-    stPath.append(blobInfo.getBucket());
-    if (!blobInfo.getBucket().endsWith(PATH_DELIMITER)
-        && !Strings.isNullOrEmpty(blobInfo.getName())) {
-      stPath.append(PATH_DELIMITER);
-    }
-    if (blobInfo.getName().startsWith(PATH_DELIMITER)) {
-      stPath.setLength(stPath.length() - 1);
+    String storageXmlHostName =
+        optionMap.get(SignUrlOption.Option.HOST_NAME) != null
+            ? (String) optionMap.get(SignUrlOption.Option.HOST_NAME)
+            : STORAGE_XML_HOST_NAME;
+
+    // The bucket name itself should never contain a forward slash. However, parts already existed
+    // in the code to check for this, so we remove the forward slashes to be safe here.
+    String bucketName = CharMatcher.anyOf(PATH_DELIMITER).trimFrom(blobInfo.getBucket());
+    String escapedBlobName = "";
+    if (!Strings.isNullOrEmpty(blobInfo.getName())) {
+      escapedBlobName =
+          UrlEscapers.urlFragmentEscaper()
+              .escape(blobInfo.getName())
+              .replace("?", "%3F")
+              .replace(";", "%3B");
     }
 
-    String escapedName = UrlEscapers.urlFragmentEscaper().escape(blobInfo.getName());
-    stPath.append(escapedName.replace("?", "%3F").replace(";", "%3B"));
-
-    URI path = URI.create(stPath.toString());
+    String stPath = constructResourceUriPath(bucketName, escapedBlobName);
+    URI path = URI.create(stPath);
 
     try {
       SignatureInfo signatureInfo =
@@ -654,11 +681,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
       String unsignedPayload = signatureInfo.constructUnsignedPayload();
       byte[] signatureBytes = credentials.sign(unsignedPayload.getBytes(UTF_8));
       StringBuilder stBuilder = new StringBuilder();
-      if (optionMap.get(SignUrlOption.Option.HOST_NAME) == null) {
-        stBuilder.append(STORAGE_XML_HOST_NAME).append(path);
-      } else {
-        stBuilder.append(optionMap.get(SignUrlOption.Option.HOST_NAME)).append(path);
-      }
+      stBuilder.append(storageXmlHostName).append(path);
 
       if (isV4) {
         BaseEncoding encoding = BaseEncoding.base16().lowerCase();
@@ -680,6 +703,19 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
     } catch (MalformedURLException | UnsupportedEncodingException ex) {
       throw new IllegalStateException(ex);
     }
+  }
+
+  private String constructResourceUriPath(String slashlessBucketName, String escapedBlobName) {
+    StringBuilder pathBuilder = new StringBuilder();
+    pathBuilder.append(PATH_DELIMITER).append(slashlessBucketName);
+    if (Strings.isNullOrEmpty(escapedBlobName)) {
+      return pathBuilder.toString();
+    }
+    if (!escapedBlobName.startsWith(PATH_DELIMITER)) {
+      pathBuilder.append(PATH_DELIMITER);
+    }
+    pathBuilder.append(escapedBlobName);
+    return pathBuilder.toString();
   }
 
   /**
@@ -1152,6 +1188,140 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
               EXCEPTION_HANDLER,
               getOptions().getClock());
       return Lists.transform(answer, Acl.FROM_OBJECT_PB_FUNCTION);
+    } catch (RetryHelperException e) {
+      throw StorageException.translateAndThrow(e);
+    }
+  }
+
+  public HmacKey createHmacKey(
+      final ServiceAccount serviceAccount, final CreateHmacKeyOption... options) {
+    try {
+      return HmacKey.fromPb(
+          runWithRetries(
+              new Callable<com.google.api.services.storage.model.HmacKey>() {
+                @Override
+                public com.google.api.services.storage.model.HmacKey call() {
+                  return storageRpc.createHmacKey(serviceAccount.getEmail(), optionMap(options));
+                }
+              },
+              getOptions().getRetrySettings(),
+              EXCEPTION_HANDLER,
+              getOptions().getClock()));
+    } catch (RetryHelperException e) {
+      throw StorageException.translateAndThrow(e);
+    }
+  }
+
+  @Override
+  public Page<HmacKeyMetadata> listHmacKeys(ListHmacKeysOption... options) {
+    return listHmacKeys(getOptions(), optionMap(options));
+  }
+
+  @Override
+  public HmacKeyMetadata getHmacKey(final String accessId, final GetHmacKeyOption... options) {
+    try {
+      return HmacKeyMetadata.fromPb(
+          runWithRetries(
+              new Callable<com.google.api.services.storage.model.HmacKeyMetadata>() {
+                @Override
+                public com.google.api.services.storage.model.HmacKeyMetadata call() {
+                  return storageRpc.getHmacKey(accessId, optionMap(options));
+                }
+              },
+              getOptions().getRetrySettings(),
+              EXCEPTION_HANDLER,
+              getOptions().getClock()));
+    } catch (RetryHelperException e) {
+      throw StorageException.translateAndThrow(e);
+    }
+  }
+
+  private HmacKeyMetadata updateHmacKey(
+      final HmacKeyMetadata hmacKeyMetadata, final UpdateHmacKeyOption... options) {
+    try {
+      return HmacKeyMetadata.fromPb(
+          runWithRetries(
+              new Callable<com.google.api.services.storage.model.HmacKeyMetadata>() {
+                @Override
+                public com.google.api.services.storage.model.HmacKeyMetadata call() {
+                  return storageRpc.updateHmacKey(hmacKeyMetadata.toPb(), optionMap(options));
+                }
+              },
+              getOptions().getRetrySettings(),
+              EXCEPTION_HANDLER,
+              getOptions().getClock()));
+    } catch (RetryHelperException e) {
+      throw StorageException.translateAndThrow(e);
+    }
+  }
+
+  @Override
+  public HmacKeyMetadata updateHmacKeyState(
+      final HmacKeyMetadata hmacKeyMetadata,
+      final HmacKey.HmacKeyState state,
+      final UpdateHmacKeyOption... options) {
+    HmacKeyMetadata updatedMetadata =
+        HmacKeyMetadata.newBuilder(hmacKeyMetadata.getServiceAccount())
+            .setProjectId(hmacKeyMetadata.getProjectId())
+            .setAccessId(hmacKeyMetadata.getAccessId())
+            .setState(state)
+            .build();
+    return updateHmacKey(updatedMetadata, options);
+  }
+
+  @Override
+  public void deleteHmacKey(final HmacKeyMetadata metadata, final DeleteHmacKeyOption... options) {
+    try {
+      runWithRetries(
+          new Callable<Void>() {
+            @Override
+            public Void call() {
+              storageRpc.deleteHmacKey(metadata.toPb(), optionMap(options));
+              return null;
+            }
+          },
+          getOptions().getRetrySettings(),
+          EXCEPTION_HANDLER,
+          getOptions().getClock());
+    } catch (RetryHelperException e) {
+      throw StorageException.translateAndThrow(e);
+    }
+  }
+
+  private static Page<HmacKeyMetadata> listHmacKeys(
+      final StorageOptions serviceOptions, final Map<StorageRpc.Option, ?> options) {
+    try {
+      Tuple<String, Iterable<com.google.api.services.storage.model.HmacKeyMetadata>> result =
+          runWithRetries(
+              new Callable<
+                  Tuple<
+                      String, Iterable<com.google.api.services.storage.model.HmacKeyMetadata>>>() {
+                @Override
+                public Tuple<
+                        String, Iterable<com.google.api.services.storage.model.HmacKeyMetadata>>
+                    call() {
+                  return serviceOptions.getStorageRpcV1().listHmacKeys(options);
+                }
+              },
+              serviceOptions.getRetrySettings(),
+              EXCEPTION_HANDLER,
+              serviceOptions.getClock());
+      String cursor = result.x();
+      final Iterable<HmacKeyMetadata> metadata =
+          result.y() == null
+              ? ImmutableList.<HmacKeyMetadata>of()
+              : Iterables.transform(
+                  result.y(),
+                  new Function<
+                      com.google.api.services.storage.model.HmacKeyMetadata, HmacKeyMetadata>() {
+                    @Override
+                    public HmacKeyMetadata apply(
+                        com.google.api.services.storage.model.HmacKeyMetadata metadataPb) {
+                      return HmacKeyMetadata.fromPb(metadataPb);
+                    }
+                  });
+      return new PageImpl<>(
+          new HmacKeyMetadataPageFetcher(serviceOptions, options), cursor, metadata);
     } catch (RetryHelperException e) {
       throw StorageException.translateAndThrow(e);
     }
