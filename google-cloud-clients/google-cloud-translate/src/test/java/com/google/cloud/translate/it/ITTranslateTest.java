@@ -102,12 +102,12 @@ public class ITTranslateTest {
 
   @Test
   public void testTranslateTextList() {
-    List<Translation> translations = TRANSLATE.translate(ImmutableList.of("Hola", "Hallo"));
+    List<Translation> translations = TRANSLATE.translate(ImmutableList.of("ocho", "acht"));
     Translation translation = translations.get(0);
-    assertEquals("Hello", translation.getTranslatedText());
+    assertEquals("eight", translation.getTranslatedText());
     assertEquals("es", translation.getSourceLanguage());
     translation = translations.get(1);
-    assertEquals("Hello", translation.getTranslatedText());
+    assertEquals("eight", translation.getTranslatedText());
     assertEquals("de", translation.getSourceLanguage());
   }
 
