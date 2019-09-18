@@ -16,7 +16,6 @@
 
 package com.google.cloud.spanner;
 
-import static com.google.cloud.spanner.SpannerExceptionFactory.newSpannerException;
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
@@ -140,19 +139,10 @@ class SessionClient implements AutoCloseable {
             consumer.onSessionCreateFailure(t, remainingSessionsToCreate);
             break;
           }
-          int numActuallyCreated = sessions.size();
-          if (numActuallyCreated == 0) {
-            // No sessions returned by the server. Give up creation to avoid an infinite loop.
-            SpannerException e =
-                newSpannerException(ErrorCode.UNKNOWN, "Server did not return any sessions");
-            TraceUtil.endSpanWithFailure(SpannerImpl.tracer.getCurrentSpan(), e);
-            consumer.onSessionCreateFailure(e, remainingSessionsToCreate);
-            break;
-          }
           for (SessionImpl session : sessions) {
             consumer.onSessionReady(session);
           }
-          remainingSessionsToCreate -= numActuallyCreated;
+          remainingSessionsToCreate -= sessions.size();
         }
       }
     }

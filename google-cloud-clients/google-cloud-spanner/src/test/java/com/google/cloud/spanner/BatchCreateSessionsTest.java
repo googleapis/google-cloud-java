@@ -173,8 +173,8 @@ public class BatchCreateSessionsTest {
     int minSessions = 1000;
     int maxSessions = 1000;
     // Set a maximum number of sessions that will be created by the server.
-    // After this the server will return 0 sessions when batchCreateSessions is called.
-    // It will not throw an error.
+    // After this the server will return an error when batchCreateSessions is called.
+    // This error is not propagated to the client.
     int maxServerSessions = 550;
     DatabaseClientImpl client = null;
     mockSpanner.setMaxTotalSessions(maxServerSessions);

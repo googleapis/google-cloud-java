@@ -599,6 +599,11 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
             .asRuntimeException();
       }
       batchCreateSessionsExecutionTime.simulateExecutionTime(exceptions, freezeLock);
+      if (sessions.size() >= maxTotalSessions) {
+        throw Status.RESOURCE_EXHAUSTED
+            .withDescription("Maximum number of sessions reached")
+            .asRuntimeException();
+      }
       Timestamp now = getCurrentGoogleTimestamp();
       BatchCreateSessionsResponse.Builder response = BatchCreateSessionsResponse.newBuilder();
       int maxSessionsToCreate = Math.min(maxNumSessionsInOneBatch, request.getSessionCount());
