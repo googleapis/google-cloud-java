@@ -691,6 +691,27 @@ public class DatastoreTest {
     assertEquals(2, numberOfEntities);
   }
 
+  @Test
+  public void testRunKeyQueryWithLimit() {
+    Query<Key> query = Query.newKeyQueryBuilder().setLimit(0).build();
+    QueryResults results = datastore.run(query);
+    int count = 0;
+    while (results.hasNext()) {
+      results.next();
+      count++;
+    }
+    assertEquals(0, count);
+    datastore.put(ENTITY1, ENTITY2);
+    Query<Key> keyQuery = Query.newKeyQueryBuilder().setLimit(2).build();
+    QueryResults queryResults = datastore.run(keyQuery);
+    int resultCount = 0;
+    while (queryResults.hasNext()) {
+      queryResults.next();
+      resultCount++;
+    }
+    assertEquals(2, resultCount);
+  }
+
   private List<RunQueryResponse> buildResponsesForQueryPaginationWithLimit() {
     Entity entity4 = Entity.newBuilder(KEY4).set("value", StringValue.of("value")).build();
     Entity entity5 = Entity.newBuilder(KEY5).set("value", "value").build();
