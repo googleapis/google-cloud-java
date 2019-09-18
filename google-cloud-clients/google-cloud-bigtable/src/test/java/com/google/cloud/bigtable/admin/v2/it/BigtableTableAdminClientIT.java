@@ -195,6 +195,7 @@ public class BigtableTableAdminClientIT {
         .that(testEnvRule.env())
         .isNotInstanceOf(EmulatorEnv.class);
 
+    tableAdmin.createTable(CreateTableRequest.of(tableId));
     Policy policy = tableAdmin.getIamPolicy(tableId);
     assertThat(policy).isNotNull();
 
