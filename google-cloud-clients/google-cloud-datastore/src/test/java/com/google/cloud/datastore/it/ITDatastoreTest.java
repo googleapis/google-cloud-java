@@ -861,14 +861,14 @@ public class ITDatastoreTest {
 
   @Test
   public void testSetLimit() {
-    Query query = Query.newEntityQueryBuilder().setLimit(0).build();
-    QueryResults results = DATASTORE.run(query);
-    assertFalse(results.hasNext());
-
     DATASTORE.put(ENTITY1);
     Query<Key> keyQuery = Query.newKeyQueryBuilder().setLimit(1).build();
     QueryResults queryResults = DATASTORE.run(keyQuery);
     assertTrue(queryResults.hasNext());
     assertEquals(KEY1, queryResults.next());
+
+    Query query = Query.newEntityQueryBuilder().setLimit(0).build();
+    QueryResults results = DATASTORE.run(query);
+    assertFalse(results.hasNext());
   }
 }

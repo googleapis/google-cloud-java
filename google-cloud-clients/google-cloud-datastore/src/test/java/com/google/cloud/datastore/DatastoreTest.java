@@ -693,14 +693,6 @@ public class DatastoreTest {
 
   @Test
   public void testRunKeyQueryWithLimit() {
-    Query<Key> query = Query.newKeyQueryBuilder().setLimit(0).build();
-    QueryResults results = datastore.run(query);
-    int count = 0;
-    while (results.hasNext()) {
-      results.next();
-      count++;
-    }
-    assertEquals(0, count);
     datastore.put(ENTITY1, ENTITY2);
     Query<Key> keyQuery = Query.newKeyQueryBuilder().setLimit(2).build();
     QueryResults queryResults = datastore.run(keyQuery);
@@ -710,6 +702,15 @@ public class DatastoreTest {
       resultCount++;
     }
     assertEquals(2, resultCount);
+
+    Query<Key> query = Query.newKeyQueryBuilder().setLimit(0).build();
+    QueryResults results = datastore.run(query);
+    int count = 0;
+    while (results.hasNext()) {
+      results.next();
+      count++;
+    }
+    assertEquals(0, count);
   }
 
   private List<RunQueryResponse> buildResponsesForQueryPaginationWithLimit() {
