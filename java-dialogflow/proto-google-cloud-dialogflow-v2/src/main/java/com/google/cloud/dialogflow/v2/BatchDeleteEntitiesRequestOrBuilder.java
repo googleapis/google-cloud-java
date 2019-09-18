@@ -16,7 +16,9 @@ public interface BatchDeleteEntitiesRequestOrBuilder
    * `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   java.lang.String getParent();
   /**
@@ -27,7 +29,9 @@ public interface BatchDeleteEntitiesRequestOrBuilder
    * `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -40,7 +44,7 @@ public interface BatchDeleteEntitiesRequestOrBuilder
    * `projects/&lt;Project ID&gt;`.
    * </pre>
    *
-   * <code>repeated string entity_values = 2;</code>
+   * <code>repeated string entity_values = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.util.List<java.lang.String> getEntityValuesList();
   /**
@@ -52,7 +56,7 @@ public interface BatchDeleteEntitiesRequestOrBuilder
    * `projects/&lt;Project ID&gt;`.
    * </pre>
    *
-   * <code>repeated string entity_values = 2;</code>
+   * <code>repeated string entity_values = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   int getEntityValuesCount();
   /**
@@ -64,7 +68,7 @@ public interface BatchDeleteEntitiesRequestOrBuilder
    * `projects/&lt;Project ID&gt;`.
    * </pre>
    *
-   * <code>repeated string entity_values = 2;</code>
+   * <code>repeated string entity_values = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getEntityValues(int index);
   /**
@@ -76,7 +80,7 @@ public interface BatchDeleteEntitiesRequestOrBuilder
    * `projects/&lt;Project ID&gt;`.
    * </pre>
    *
-   * <code>repeated string entity_values = 2;</code>
+   * <code>repeated string entity_values = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getEntityValuesBytes(int index);
 
@@ -92,7 +96,7 @@ public interface BatchDeleteEntitiesRequestOrBuilder
    * be used.
    * </pre>
    *
-   * <code>string language_code = 3;</code>
+   * <code>string language_code = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getLanguageCode();
   /**
@@ -107,7 +111,7 @@ public interface BatchDeleteEntitiesRequestOrBuilder
    * be used.
    * </pre>
    *
-   * <code>string language_code = 3;</code>
+   * <code>string language_code = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.protobuf.ByteString getLanguageCodeBytes();
 }

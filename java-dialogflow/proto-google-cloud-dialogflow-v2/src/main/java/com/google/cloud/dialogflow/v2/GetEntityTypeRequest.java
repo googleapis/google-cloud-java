@@ -109,7 +109,9 @@ public final class GetEntityTypeRequest extends com.google.protobuf.GeneratedMes
    * Format: `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;EntityType ID&gt;`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -130,7 +132,9 @@ public final class GetEntityTypeRequest extends com.google.protobuf.GeneratedMes
    * Format: `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;EntityType ID&gt;`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -158,7 +162,7 @@ public final class GetEntityTypeRequest extends com.google.protobuf.GeneratedMes
    * be used.
    * </pre>
    *
-   * <code>string language_code = 2;</code>
+   * <code>string language_code = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public java.lang.String getLanguageCode() {
     java.lang.Object ref = languageCode_;
@@ -183,7 +187,7 @@ public final class GetEntityTypeRequest extends com.google.protobuf.GeneratedMes
    * be used.
    * </pre>
    *
-   * <code>string language_code = 2;</code>
+   * <code>string language_code = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public com.google.protobuf.ByteString getLanguageCodeBytes() {
     java.lang.Object ref = languageCode_;
@@ -540,7 +544,9 @@ public final class GetEntityTypeRequest extends com.google.protobuf.GeneratedMes
      * Format: `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;EntityType ID&gt;`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -561,7 +567,9 @@ public final class GetEntityTypeRequest extends com.google.protobuf.GeneratedMes
      * Format: `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;EntityType ID&gt;`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -582,7 +590,9 @@ public final class GetEntityTypeRequest extends com.google.protobuf.GeneratedMes
      * Format: `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;EntityType ID&gt;`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -601,7 +611,9 @@ public final class GetEntityTypeRequest extends com.google.protobuf.GeneratedMes
      * Format: `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;EntityType ID&gt;`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder clearName() {
 
@@ -617,7 +629,9 @@ public final class GetEntityTypeRequest extends com.google.protobuf.GeneratedMes
      * Format: `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;EntityType ID&gt;`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -643,7 +657,7 @@ public final class GetEntityTypeRequest extends com.google.protobuf.GeneratedMes
      * be used.
      * </pre>
      *
-     * <code>string language_code = 2;</code>
+     * <code>string language_code = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public java.lang.String getLanguageCode() {
       java.lang.Object ref = languageCode_;
@@ -668,7 +682,7 @@ public final class GetEntityTypeRequest extends com.google.protobuf.GeneratedMes
      * be used.
      * </pre>
      *
-     * <code>string language_code = 2;</code>
+     * <code>string language_code = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.protobuf.ByteString getLanguageCodeBytes() {
       java.lang.Object ref = languageCode_;
@@ -693,7 +707,7 @@ public final class GetEntityTypeRequest extends com.google.protobuf.GeneratedMes
      * be used.
      * </pre>
      *
-     * <code>string language_code = 2;</code>
+     * <code>string language_code = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setLanguageCode(java.lang.String value) {
       if (value == null) {
@@ -716,7 +730,7 @@ public final class GetEntityTypeRequest extends com.google.protobuf.GeneratedMes
      * be used.
      * </pre>
      *
-     * <code>string language_code = 2;</code>
+     * <code>string language_code = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearLanguageCode() {
 
@@ -736,7 +750,7 @@ public final class GetEntityTypeRequest extends com.google.protobuf.GeneratedMes
      * be used.
      * </pre>
      *
-     * <code>string language_code = 2;</code>
+     * <code>string language_code = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setLanguageCodeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

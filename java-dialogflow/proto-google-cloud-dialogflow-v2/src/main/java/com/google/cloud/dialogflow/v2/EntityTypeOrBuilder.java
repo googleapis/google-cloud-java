@@ -42,7 +42,7 @@ public interface EntityTypeOrBuilder
    * Required. The name of the entity type.
    * </pre>
    *
-   * <code>string display_name = 2;</code>
+   * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getDisplayName();
   /**
@@ -52,7 +52,7 @@ public interface EntityTypeOrBuilder
    * Required. The name of the entity type.
    * </pre>
    *
-   * <code>string display_name = 2;</code>
+   * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getDisplayNameBytes();
 
@@ -63,7 +63,9 @@ public interface EntityTypeOrBuilder
    * Required. Indicates the kind of entity type.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.EntityType.Kind kind = 3;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2.EntityType.Kind kind = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   int getKindValue();
   /**
@@ -73,7 +75,9 @@ public interface EntityTypeOrBuilder
    * Required. Indicates the kind of entity type.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.EntityType.Kind kind = 3;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2.EntityType.Kind kind = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.dialogflow.v2.EntityType.Kind getKind();
 
@@ -85,7 +89,9 @@ public interface EntityTypeOrBuilder
    * expanded.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.EntityType.AutoExpansionMode auto_expansion_mode = 4;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2.EntityType.AutoExpansionMode auto_expansion_mode = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   int getAutoExpansionModeValue();
   /**
@@ -96,7 +102,9 @@ public interface EntityTypeOrBuilder
    * expanded.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.EntityType.AutoExpansionMode auto_expansion_mode = 4;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2.EntityType.AutoExpansionMode auto_expansion_mode = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.dialogflow.v2.EntityType.AutoExpansionMode getAutoExpansionMode();
 
@@ -107,7 +115,9 @@ public interface EntityTypeOrBuilder
    * Optional. The collection of entity entries associated with the entity type.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 6;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.List<com.google.cloud.dialogflow.v2.EntityType.Entity> getEntitiesList();
   /**
@@ -117,7 +127,9 @@ public interface EntityTypeOrBuilder
    * Optional. The collection of entity entries associated with the entity type.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 6;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.dialogflow.v2.EntityType.Entity getEntities(int index);
   /**
@@ -127,7 +139,9 @@ public interface EntityTypeOrBuilder
    * Optional. The collection of entity entries associated with the entity type.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 6;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   int getEntitiesCount();
   /**
@@ -137,7 +151,9 @@ public interface EntityTypeOrBuilder
    * Optional. The collection of entity entries associated with the entity type.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 6;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.List<? extends com.google.cloud.dialogflow.v2.EntityType.EntityOrBuilder>
       getEntitiesOrBuilderList();
@@ -148,7 +164,20 @@ public interface EntityTypeOrBuilder
    * Optional. The collection of entity entries associated with the entity type.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 6;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.dialogflow.v2.EntityType.EntityOrBuilder getEntitiesOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Enables fuzzy entity extraction during classification.
+   * </pre>
+   *
+   * <code>bool enable_fuzzy_extraction = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  boolean getEnableFuzzyExtraction();
 }

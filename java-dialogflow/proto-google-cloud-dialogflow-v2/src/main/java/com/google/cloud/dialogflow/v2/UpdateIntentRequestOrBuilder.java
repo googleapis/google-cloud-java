@@ -15,7 +15,8 @@ public interface UpdateIntentRequestOrBuilder
    * Required. The intent to update.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.Intent intent = 1;</code>
+   * <code>.google.cloud.dialogflow.v2.Intent intent = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   boolean hasIntent();
   /**
@@ -25,7 +26,8 @@ public interface UpdateIntentRequestOrBuilder
    * Required. The intent to update.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.Intent intent = 1;</code>
+   * <code>.google.cloud.dialogflow.v2.Intent intent = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.dialogflow.v2.Intent getIntent();
   /**
@@ -35,7 +37,8 @@ public interface UpdateIntentRequestOrBuilder
    * Required. The intent to update.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.Intent intent = 1;</code>
+   * <code>.google.cloud.dialogflow.v2.Intent intent = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.dialogflow.v2.IntentOrBuilder getIntentOrBuilder();
 
@@ -51,7 +54,7 @@ public interface UpdateIntentRequestOrBuilder
    * be used.
    * </pre>
    *
-   * <code>string language_code = 2;</code>
+   * <code>string language_code = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getLanguageCode();
   /**
@@ -66,7 +69,7 @@ public interface UpdateIntentRequestOrBuilder
    * be used.
    * </pre>
    *
-   * <code>string language_code = 2;</code>
+   * <code>string language_code = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.protobuf.ByteString getLanguageCodeBytes();
 
@@ -77,7 +80,8 @@ public interface UpdateIntentRequestOrBuilder
    * Optional. The mask to control which fields get updated.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   boolean hasUpdateMask();
   /**
@@ -87,7 +91,8 @@ public interface UpdateIntentRequestOrBuilder
    * Optional. The mask to control which fields get updated.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**
@@ -97,7 +102,8 @@ public interface UpdateIntentRequestOrBuilder
    * Optional. The mask to control which fields get updated.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
 
@@ -108,7 +114,9 @@ public interface UpdateIntentRequestOrBuilder
    * Optional. The resource view to apply to the returned intent.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.IntentView intent_view = 4;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2.IntentView intent_view = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   int getIntentViewValue();
   /**
@@ -118,7 +126,9 @@ public interface UpdateIntentRequestOrBuilder
    * Optional. The resource view to apply to the returned intent.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.IntentView intent_view = 4;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2.IntentView intent_view = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.dialogflow.v2.IntentView getIntentView();
 }

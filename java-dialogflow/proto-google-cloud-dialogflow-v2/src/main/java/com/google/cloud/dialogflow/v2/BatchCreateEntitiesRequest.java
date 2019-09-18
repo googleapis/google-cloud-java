@@ -127,7 +127,9 @@ public final class BatchCreateEntitiesRequest extends com.google.protobuf.Genera
    * `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -148,7 +150,9 @@ public final class BatchCreateEntitiesRequest extends com.google.protobuf.Genera
    * `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -171,7 +175,9 @@ public final class BatchCreateEntitiesRequest extends com.google.protobuf.Genera
    * Required. The entities to create.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 2;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public java.util.List<com.google.cloud.dialogflow.v2.EntityType.Entity> getEntitiesList() {
     return entities_;
@@ -183,7 +189,9 @@ public final class BatchCreateEntitiesRequest extends com.google.protobuf.Genera
    * Required. The entities to create.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 2;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public java.util.List<? extends com.google.cloud.dialogflow.v2.EntityType.EntityOrBuilder>
       getEntitiesOrBuilderList() {
@@ -196,7 +204,9 @@ public final class BatchCreateEntitiesRequest extends com.google.protobuf.Genera
    * Required. The entities to create.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 2;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public int getEntitiesCount() {
     return entities_.size();
@@ -208,7 +218,9 @@ public final class BatchCreateEntitiesRequest extends com.google.protobuf.Genera
    * Required. The entities to create.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 2;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.dialogflow.v2.EntityType.Entity getEntities(int index) {
     return entities_.get(index);
@@ -220,7 +232,9 @@ public final class BatchCreateEntitiesRequest extends com.google.protobuf.Genera
    * Required. The entities to create.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 2;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.dialogflow.v2.EntityType.EntityOrBuilder getEntitiesOrBuilder(int index) {
     return entities_.get(index);
@@ -240,7 +254,7 @@ public final class BatchCreateEntitiesRequest extends com.google.protobuf.Genera
    * be used.
    * </pre>
    *
-   * <code>string language_code = 3;</code>
+   * <code>string language_code = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public java.lang.String getLanguageCode() {
     java.lang.Object ref = languageCode_;
@@ -265,7 +279,7 @@ public final class BatchCreateEntitiesRequest extends com.google.protobuf.Genera
    * be used.
    * </pre>
    *
-   * <code>string language_code = 3;</code>
+   * <code>string language_code = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public com.google.protobuf.ByteString getLanguageCodeBytes() {
     java.lang.Object ref = languageCode_;
@@ -683,7 +697,9 @@ public final class BatchCreateEntitiesRequest extends com.google.protobuf.Genera
      * `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -704,7 +720,9 @@ public final class BatchCreateEntitiesRequest extends com.google.protobuf.Genera
      * `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -725,7 +743,9 @@ public final class BatchCreateEntitiesRequest extends com.google.protobuf.Genera
      * `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -744,7 +764,9 @@ public final class BatchCreateEntitiesRequest extends com.google.protobuf.Genera
      * `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder clearParent() {
 
@@ -760,7 +782,9 @@ public final class BatchCreateEntitiesRequest extends com.google.protobuf.Genera
      * `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -797,7 +821,9 @@ public final class BatchCreateEntitiesRequest extends com.google.protobuf.Genera
      * Required. The entities to create.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 2;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public java.util.List<com.google.cloud.dialogflow.v2.EntityType.Entity> getEntitiesList() {
       if (entitiesBuilder_ == null) {
@@ -813,7 +839,9 @@ public final class BatchCreateEntitiesRequest extends com.google.protobuf.Genera
      * Required. The entities to create.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 2;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public int getEntitiesCount() {
       if (entitiesBuilder_ == null) {
@@ -829,7 +857,9 @@ public final class BatchCreateEntitiesRequest extends com.google.protobuf.Genera
      * Required. The entities to create.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 2;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2.EntityType.Entity getEntities(int index) {
       if (entitiesBuilder_ == null) {
@@ -845,7 +875,9 @@ public final class BatchCreateEntitiesRequest extends com.google.protobuf.Genera
      * Required. The entities to create.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 2;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setEntities(int index, com.google.cloud.dialogflow.v2.EntityType.Entity value) {
       if (entitiesBuilder_ == null) {
@@ -867,7 +899,9 @@ public final class BatchCreateEntitiesRequest extends com.google.protobuf.Genera
      * Required. The entities to create.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 2;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setEntities(
         int index, com.google.cloud.dialogflow.v2.EntityType.Entity.Builder builderForValue) {
@@ -887,7 +921,9 @@ public final class BatchCreateEntitiesRequest extends com.google.protobuf.Genera
      * Required. The entities to create.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 2;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addEntities(com.google.cloud.dialogflow.v2.EntityType.Entity value) {
       if (entitiesBuilder_ == null) {
@@ -909,7 +945,9 @@ public final class BatchCreateEntitiesRequest extends com.google.protobuf.Genera
      * Required. The entities to create.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 2;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addEntities(int index, com.google.cloud.dialogflow.v2.EntityType.Entity value) {
       if (entitiesBuilder_ == null) {
@@ -931,7 +969,9 @@ public final class BatchCreateEntitiesRequest extends com.google.protobuf.Genera
      * Required. The entities to create.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 2;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addEntities(
         com.google.cloud.dialogflow.v2.EntityType.Entity.Builder builderForValue) {
@@ -951,7 +991,9 @@ public final class BatchCreateEntitiesRequest extends com.google.protobuf.Genera
      * Required. The entities to create.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 2;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addEntities(
         int index, com.google.cloud.dialogflow.v2.EntityType.Entity.Builder builderForValue) {
@@ -971,7 +1013,9 @@ public final class BatchCreateEntitiesRequest extends com.google.protobuf.Genera
      * Required. The entities to create.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 2;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addAllEntities(
         java.lang.Iterable<? extends com.google.cloud.dialogflow.v2.EntityType.Entity> values) {
@@ -991,7 +1035,9 @@ public final class BatchCreateEntitiesRequest extends com.google.protobuf.Genera
      * Required. The entities to create.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 2;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearEntities() {
       if (entitiesBuilder_ == null) {
@@ -1010,7 +1056,9 @@ public final class BatchCreateEntitiesRequest extends com.google.protobuf.Genera
      * Required. The entities to create.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 2;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder removeEntities(int index) {
       if (entitiesBuilder_ == null) {
@@ -1029,7 +1077,9 @@ public final class BatchCreateEntitiesRequest extends com.google.protobuf.Genera
      * Required. The entities to create.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 2;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2.EntityType.Entity.Builder getEntitiesBuilder(int index) {
       return getEntitiesFieldBuilder().getBuilder(index);
@@ -1041,7 +1091,9 @@ public final class BatchCreateEntitiesRequest extends com.google.protobuf.Genera
      * Required. The entities to create.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 2;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2.EntityType.EntityOrBuilder getEntitiesOrBuilder(
         int index) {
@@ -1058,7 +1110,9 @@ public final class BatchCreateEntitiesRequest extends com.google.protobuf.Genera
      * Required. The entities to create.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 2;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public java.util.List<? extends com.google.cloud.dialogflow.v2.EntityType.EntityOrBuilder>
         getEntitiesOrBuilderList() {
@@ -1075,7 +1129,9 @@ public final class BatchCreateEntitiesRequest extends com.google.protobuf.Genera
      * Required. The entities to create.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 2;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2.EntityType.Entity.Builder addEntitiesBuilder() {
       return getEntitiesFieldBuilder()
@@ -1088,7 +1144,9 @@ public final class BatchCreateEntitiesRequest extends com.google.protobuf.Genera
      * Required. The entities to create.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 2;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2.EntityType.Entity.Builder addEntitiesBuilder(int index) {
       return getEntitiesFieldBuilder()
@@ -1101,7 +1159,9 @@ public final class BatchCreateEntitiesRequest extends com.google.protobuf.Genera
      * Required. The entities to create.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 2;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public java.util.List<com.google.cloud.dialogflow.v2.EntityType.Entity.Builder>
         getEntitiesBuilderList() {
@@ -1138,7 +1198,7 @@ public final class BatchCreateEntitiesRequest extends com.google.protobuf.Genera
      * be used.
      * </pre>
      *
-     * <code>string language_code = 3;</code>
+     * <code>string language_code = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public java.lang.String getLanguageCode() {
       java.lang.Object ref = languageCode_;
@@ -1163,7 +1223,7 @@ public final class BatchCreateEntitiesRequest extends com.google.protobuf.Genera
      * be used.
      * </pre>
      *
-     * <code>string language_code = 3;</code>
+     * <code>string language_code = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.protobuf.ByteString getLanguageCodeBytes() {
       java.lang.Object ref = languageCode_;
@@ -1188,7 +1248,7 @@ public final class BatchCreateEntitiesRequest extends com.google.protobuf.Genera
      * be used.
      * </pre>
      *
-     * <code>string language_code = 3;</code>
+     * <code>string language_code = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setLanguageCode(java.lang.String value) {
       if (value == null) {
@@ -1211,7 +1271,7 @@ public final class BatchCreateEntitiesRequest extends com.google.protobuf.Genera
      * be used.
      * </pre>
      *
-     * <code>string language_code = 3;</code>
+     * <code>string language_code = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearLanguageCode() {
 
@@ -1231,7 +1291,7 @@ public final class BatchCreateEntitiesRequest extends com.google.protobuf.Genera
      * be used.
      * </pre>
      *
-     * <code>string language_code = 3;</code>
+     * <code>string language_code = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setLanguageCodeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
