@@ -2234,8 +2234,9 @@ public class ITStorageTest {
                         .setIsBucketPolicyOnlyEnabled(true)
                         .build())
                 .build());
-    PolicyV3 policy = storage.getIamPolicyV3(bucketName);
-    List<com.google.cloud.Binding> bindings = policy.getBindings();
+    Policy policy = storage.getIamPolicy(bucketName);
+    List<com.google.cloud.Binding> bindings = policy.getBindingsV3();
+    System.out.println(bindings);
     com.google.cloud.Binding iamConditionBinding =
         com.google.cloud.Binding.newBuilder()
             .setRole(StorageRoles.legacyBucketReader())
@@ -2249,12 +2250,15 @@ public class ITStorageTest {
                             + "/objects/dev-path\")))")
                     .build())
             .build();
+    System.out.println(iamConditionBinding);
+
     // Make it easier to add a binding.
     ImmutableList.Builder<com.google.cloud.Binding> bindingsBuilder = ImmutableList.builder();
     bindings = bindingsBuilder.addAll(bindings).add(iamConditionBinding).build();
-    PolicyV3 updatedPolicy =
-        storage.setIamPolicyV3(bucketName, policy.newBuilder().setBindings(bindings).build());
-    assertEquals(bindings.size(), updatedPolicy.getBindings().size());
+    System.out.println(bindings);
+    Policy updatedPolicy =
+        storage.setIamPolicy(bucketName, policy.newBuilder().setBindingsV3(bindings).build());
+    assertEquals(bindings.size(), updatedPolicy.getBindingsV3().size());
   }
 
   @Test

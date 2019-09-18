@@ -1260,26 +1260,7 @@ public class HttpStorageRpc implements StorageRpc {
       span.end();
     }
   }
-
-  @Override
-  public Policy getIamPolicyV3(String bucket, Map<Option, ?> options) {
-    Span span = startSpan(HttpStorageRpcSpans.SPAN_NAME_GET_BUCKET_IAM_POLICY);
-    Scope scope = tracer.withSpan(span);
-    try {
-      return storage
-          .buckets()
-          .getIamPolicy(bucket)
-          .setUserProject(Option.USER_PROJECT.getString(options))
-          .execute();
-    } catch (IOException ex) {
-      span.setStatus(Status.UNKNOWN.withDescription(ex.getMessage()));
-      throw translate(ex);
-    } finally {
-      scope.close();
-      span.end();
-    }
-  }
-
+  
   @Override
   public Policy setIamPolicy(String bucket, Policy policy, Map<Option, ?> options) {
     Span span = startSpan(HttpStorageRpcSpans.SPAN_NAME_SET_BUCKET_IAM_POLICY);
@@ -1296,20 +1277,6 @@ public class HttpStorageRpc implements StorageRpc {
     } finally {
       scope.close();
       span.end();
-    }
-  }
-
-  @Override
-  public Policy setIamPolicyV3(String bucket, Policy policy, Map<Option, ?> options) {
-    // TODO: (frankyn) Fix SPAN support
-    try {
-      return storage
-          .buckets()
-          .setIamPolicy(bucket, policy)
-          .setUserProject(Option.USER_PROJECT.getString(options))
-          .execute();
-    } catch (IOException ex) {
-      throw translate(ex);
     }
   }
 

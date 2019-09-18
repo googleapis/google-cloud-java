@@ -451,16 +451,12 @@ public interface StorageRpc extends ServiceRpc {
    */
   Policy getIamPolicy(String bucket, Map<Option, ?> options);
 
-  Policy getIamPolicyV3(String bucket, Map<Option, ?> options);
-
   /**
    * Updates the IAM policy for the specified bucket.
    *
    * @throws StorageException upon failure
    */
   Policy setIamPolicy(String bucket, Policy policy, Map<Option, ?> options);
-
-  Policy setIamPolicyV3(String bucket, Policy policy, Map<Option, ?> options);
 
   /**
    * Tests whether the caller holds the specified permissions for the specified bucket.

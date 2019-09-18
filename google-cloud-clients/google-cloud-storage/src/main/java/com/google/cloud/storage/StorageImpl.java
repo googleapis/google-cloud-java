@@ -1178,26 +1178,6 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
   }
 
   @Override
-  public PolicyV3 getIamPolicyV3(final String bucket, BucketSourceOption... options) {
-    try {
-      final Map<StorageRpc.Option, ?> optionsMap = optionMap(options);
-      return convertFromApiPolicyV3(
-          runWithRetries(
-              new Callable<com.google.api.services.storage.model.Policy>() {
-                @Override
-                public com.google.api.services.storage.model.Policy call() {
-                  return storageRpc.getIamPolicyV3(bucket, optionsMap);
-                }
-              },
-              getOptions().getRetrySettings(),
-              EXCEPTION_HANDLER,
-              getOptions().getClock()));
-    } catch (RetryHelperException e) {
-      throw StorageException.translateAndThrow(e);
-    }
-  }
-
-  @Override
   public Policy setIamPolicy(
       final String bucket, final Policy policy, BucketSourceOption... options) {
     try {
@@ -1208,28 +1188,6 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
                 @Override
                 public com.google.api.services.storage.model.Policy call() {
                   return storageRpc.setIamPolicy(bucket, convertToApiPolicy(policy), optionsMap);
-                }
-              },
-              getOptions().getRetrySettings(),
-              EXCEPTION_HANDLER,
-              getOptions().getClock()));
-    } catch (RetryHelperException e) {
-      throw StorageException.translateAndThrow(e);
-    }
-  }
-
-  @Override
-  public PolicyV3 setIamPolicyV3(
-      final String bucket, final PolicyV3 policy, BucketSourceOption... options) {
-    try {
-      final Map<StorageRpc.Option, ?> optionsMap = optionMap(options);
-      return convertFromApiPolicyV3(
-          runWithRetries(
-              new Callable<com.google.api.services.storage.model.Policy>() {
-                @Override
-                public com.google.api.services.storage.model.Policy call() {
-                  return storageRpc.setIamPolicyV3(
-                      bucket, convertToApiPolicyV3(policy), optionsMap);
                 }
               },
               getOptions().getRetrySettings(),

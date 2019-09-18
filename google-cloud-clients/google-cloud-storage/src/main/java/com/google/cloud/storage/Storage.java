@@ -2755,8 +2755,6 @@ public interface Storage extends Service<StorageOptions> {
    */
   Policy getIamPolicy(String bucket, BucketSourceOption... options);
 
-  PolicyV3 getIamPolicyV3(String bucket, BucketSourceOption... options);
-
   /**
    * Updates the IAM policy on the specified bucket.
    *
@@ -2780,8 +2778,6 @@ public interface Storage extends Service<StorageOptions> {
    * @throws StorageException upon failure
    */
   Policy setIamPolicy(String bucket, Policy policy, BucketSourceOption... options);
-
-  PolicyV3 setIamPolicyV3(String bucket, PolicyV3 policy, BucketSourceOption... options);
 
   /**
    * Tests whether the caller holds the permissions on the specified bucket. Returns a list of
