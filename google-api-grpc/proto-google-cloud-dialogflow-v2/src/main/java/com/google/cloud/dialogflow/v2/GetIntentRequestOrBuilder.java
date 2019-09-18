@@ -16,7 +16,9 @@ public interface GetIntentRequestOrBuilder
    * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   java.lang.String getName();
   /**
@@ -27,7 +29,9 @@ public interface GetIntentRequestOrBuilder
    * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -43,7 +47,7 @@ public interface GetIntentRequestOrBuilder
    * be used.
    * </pre>
    *
-   * <code>string language_code = 2;</code>
+   * <code>string language_code = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getLanguageCode();
   /**
@@ -58,7 +62,7 @@ public interface GetIntentRequestOrBuilder
    * be used.
    * </pre>
    *
-   * <code>string language_code = 2;</code>
+   * <code>string language_code = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.protobuf.ByteString getLanguageCodeBytes();
 
@@ -69,7 +73,9 @@ public interface GetIntentRequestOrBuilder
    * Optional. The resource view to apply to the returned intent.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.IntentView intent_view = 3;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2.IntentView intent_view = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   int getIntentViewValue();
   /**
@@ -79,7 +85,9 @@ public interface GetIntentRequestOrBuilder
    * Optional. The resource view to apply to the returned intent.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.IntentView intent_view = 3;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2.IntentView intent_view = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.dialogflow.v2.IntentView getIntentView();
 }

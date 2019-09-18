@@ -16,7 +16,9 @@ public interface CreateIntentRequestOrBuilder
    * Format: `projects/&lt;Project ID&gt;/agent`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   java.lang.String getParent();
   /**
@@ -27,7 +29,9 @@ public interface CreateIntentRequestOrBuilder
    * Format: `projects/&lt;Project ID&gt;/agent`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -38,7 +42,8 @@ public interface CreateIntentRequestOrBuilder
    * Required. The intent to create.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.Intent intent = 2;</code>
+   * <code>.google.cloud.dialogflow.v2.Intent intent = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   boolean hasIntent();
   /**
@@ -48,7 +53,8 @@ public interface CreateIntentRequestOrBuilder
    * Required. The intent to create.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.Intent intent = 2;</code>
+   * <code>.google.cloud.dialogflow.v2.Intent intent = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.dialogflow.v2.Intent getIntent();
   /**
@@ -58,7 +64,8 @@ public interface CreateIntentRequestOrBuilder
    * Required. The intent to create.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.Intent intent = 2;</code>
+   * <code>.google.cloud.dialogflow.v2.Intent intent = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.dialogflow.v2.IntentOrBuilder getIntentOrBuilder();
 
@@ -74,7 +81,7 @@ public interface CreateIntentRequestOrBuilder
    * be used.
    * </pre>
    *
-   * <code>string language_code = 3;</code>
+   * <code>string language_code = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getLanguageCode();
   /**
@@ -89,7 +96,7 @@ public interface CreateIntentRequestOrBuilder
    * be used.
    * </pre>
    *
-   * <code>string language_code = 3;</code>
+   * <code>string language_code = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.protobuf.ByteString getLanguageCodeBytes();
 
@@ -100,7 +107,9 @@ public interface CreateIntentRequestOrBuilder
    * Optional. The resource view to apply to the returned intent.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.IntentView intent_view = 4;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2.IntentView intent_view = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   int getIntentViewValue();
   /**
@@ -110,7 +119,9 @@ public interface CreateIntentRequestOrBuilder
    * Optional. The resource view to apply to the returned intent.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.IntentView intent_view = 4;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2.IntentView intent_view = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.dialogflow.v2.IntentView getIntentView();
 }

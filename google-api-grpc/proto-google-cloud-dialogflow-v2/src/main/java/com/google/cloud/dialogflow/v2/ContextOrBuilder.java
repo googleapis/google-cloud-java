@@ -18,7 +18,7 @@ public interface ContextOrBuilder
    * characters in [a-zA-Z0-9_-%] and may be at most 250 bytes long.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getName();
   /**
@@ -31,7 +31,7 @@ public interface ContextOrBuilder
    * characters in [a-zA-Z0-9_-%] and may be at most 250 bytes long.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -45,7 +45,7 @@ public interface ContextOrBuilder
    * are no matching queries.
    * </pre>
    *
-   * <code>int32 lifespan_count = 2;</code>
+   * <code>int32 lifespan_count = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLifespanCount();
 
@@ -59,7 +59,7 @@ public interface ContextOrBuilder
    * for syntax.
    * </pre>
    *
-   * <code>.google.protobuf.Struct parameters = 3;</code>
+   * <code>.google.protobuf.Struct parameters = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean hasParameters();
   /**
@@ -72,7 +72,7 @@ public interface ContextOrBuilder
    * for syntax.
    * </pre>
    *
-   * <code>.google.protobuf.Struct parameters = 3;</code>
+   * <code>.google.protobuf.Struct parameters = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.protobuf.Struct getParameters();
   /**
@@ -85,7 +85,7 @@ public interface ContextOrBuilder
    * for syntax.
    * </pre>
    *
-   * <code>.google.protobuf.Struct parameters = 3;</code>
+   * <code>.google.protobuf.Struct parameters = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.protobuf.StructOrBuilder getParametersOrBuilder();
 }

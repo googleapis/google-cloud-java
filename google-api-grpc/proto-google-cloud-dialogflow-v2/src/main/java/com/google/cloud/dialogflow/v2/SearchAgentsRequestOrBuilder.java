@@ -16,7 +16,9 @@ public interface SearchAgentsRequestOrBuilder
    * Format: `projects/&lt;Project ID or '-'&gt;`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   java.lang.String getParent();
   /**
@@ -27,7 +29,9 @@ public interface SearchAgentsRequestOrBuilder
    * Format: `projects/&lt;Project ID or '-'&gt;`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -39,7 +43,7 @@ public interface SearchAgentsRequestOrBuilder
    * default 100 and at most 1000.
    * </pre>
    *
-   * <code>int32 page_size = 2;</code>
+   * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getPageSize();
 
@@ -47,7 +51,7 @@ public interface SearchAgentsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The next_page_token value returned from a previous list request.
+   * The next_page_token value returned from a previous list request.
    * </pre>
    *
    * <code>string page_token = 3;</code>
@@ -57,7 +61,7 @@ public interface SearchAgentsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The next_page_token value returned from a previous list request.
+   * The next_page_token value returned from a previous list request.
    * </pre>
    *
    * <code>string page_token = 3;</code>

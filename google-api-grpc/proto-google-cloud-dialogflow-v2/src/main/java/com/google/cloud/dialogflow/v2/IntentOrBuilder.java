@@ -42,7 +42,7 @@ public interface IntentOrBuilder
    * Required. The name of this intent.
    * </pre>
    *
-   * <code>string display_name = 2;</code>
+   * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getDisplayName();
   /**
@@ -52,7 +52,7 @@ public interface IntentOrBuilder
    * Required. The name of this intent.
    * </pre>
    *
-   * <code>string display_name = 2;</code>
+   * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getDisplayNameBytes();
 
@@ -63,7 +63,9 @@ public interface IntentOrBuilder
    * Optional. Indicates whether webhooks are enabled for the intent.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.Intent.WebhookState webhook_state = 6;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2.Intent.WebhookState webhook_state = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   int getWebhookStateValue();
   /**
@@ -73,7 +75,9 @@ public interface IntentOrBuilder
    * Optional. Indicates whether webhooks are enabled for the intent.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.Intent.WebhookState webhook_state = 6;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2.Intent.WebhookState webhook_state = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.dialogflow.v2.Intent.WebhookState getWebhookState();
 
@@ -87,7 +91,7 @@ public interface IntentOrBuilder
    * Negative numbers mean that the intent is disabled.
    * </pre>
    *
-   * <code>int32 priority = 3;</code>
+   * <code>int32 priority = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getPriority();
 
@@ -98,7 +102,7 @@ public interface IntentOrBuilder
    * Optional. Indicates whether this is a fallback intent.
    * </pre>
    *
-   * <code>bool is_fallback = 4;</code>
+   * <code>bool is_fallback = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean getIsFallback();
 
@@ -112,7 +116,7 @@ public interface IntentOrBuilder
    * auto-markup in the UI is turned off.
    * </pre>
    *
-   * <code>bool ml_disabled = 19;</code>
+   * <code>bool ml_disabled = 19 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean getMlDisabled();
 
@@ -125,7 +129,7 @@ public interface IntentOrBuilder
    * Format: `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`.
    * </pre>
    *
-   * <code>repeated string input_context_names = 7;</code>
+   * <code>repeated string input_context_names = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.List<java.lang.String> getInputContextNamesList();
   /**
@@ -137,7 +141,7 @@ public interface IntentOrBuilder
    * Format: `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`.
    * </pre>
    *
-   * <code>repeated string input_context_names = 7;</code>
+   * <code>repeated string input_context_names = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getInputContextNamesCount();
   /**
@@ -149,7 +153,7 @@ public interface IntentOrBuilder
    * Format: `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`.
    * </pre>
    *
-   * <code>repeated string input_context_names = 7;</code>
+   * <code>repeated string input_context_names = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getInputContextNames(int index);
   /**
@@ -161,7 +165,7 @@ public interface IntentOrBuilder
    * Format: `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`.
    * </pre>
    *
-   * <code>repeated string input_context_names = 7;</code>
+   * <code>repeated string input_context_names = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.protobuf.ByteString getInputContextNamesBytes(int index);
 
@@ -174,7 +178,7 @@ public interface IntentOrBuilder
    * be present in the active user session for an event to trigger this intent.
    * </pre>
    *
-   * <code>repeated string events = 8;</code>
+   * <code>repeated string events = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.List<java.lang.String> getEventsList();
   /**
@@ -186,7 +190,7 @@ public interface IntentOrBuilder
    * be present in the active user session for an event to trigger this intent.
    * </pre>
    *
-   * <code>repeated string events = 8;</code>
+   * <code>repeated string events = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getEventsCount();
   /**
@@ -198,7 +202,7 @@ public interface IntentOrBuilder
    * be present in the active user session for an event to trigger this intent.
    * </pre>
    *
-   * <code>repeated string events = 8;</code>
+   * <code>repeated string events = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getEvents(int index);
   /**
@@ -210,7 +214,7 @@ public interface IntentOrBuilder
    * be present in the active user session for an event to trigger this intent.
    * </pre>
    *
-   * <code>repeated string events = 8;</code>
+   * <code>repeated string events = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.protobuf.ByteString getEventsBytes(int index);
 
@@ -222,7 +226,9 @@ public interface IntentOrBuilder
    * trained on.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase training_phrases = 9;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase training_phrases = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.List<com.google.cloud.dialogflow.v2.Intent.TrainingPhrase> getTrainingPhrasesList();
   /**
@@ -233,7 +239,9 @@ public interface IntentOrBuilder
    * trained on.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase training_phrases = 9;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase training_phrases = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.dialogflow.v2.Intent.TrainingPhrase getTrainingPhrases(int index);
   /**
@@ -244,7 +252,9 @@ public interface IntentOrBuilder
    * trained on.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase training_phrases = 9;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase training_phrases = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   int getTrainingPhrasesCount();
   /**
@@ -255,7 +265,9 @@ public interface IntentOrBuilder
    * trained on.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase training_phrases = 9;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase training_phrases = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.List<? extends com.google.cloud.dialogflow.v2.Intent.TrainingPhraseOrBuilder>
       getTrainingPhrasesOrBuilderList();
@@ -267,7 +279,9 @@ public interface IntentOrBuilder
    * trained on.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase training_phrases = 9;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase training_phrases = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.dialogflow.v2.Intent.TrainingPhraseOrBuilder getTrainingPhrasesOrBuilder(
       int index);
@@ -280,7 +294,7 @@ public interface IntentOrBuilder
    * Note: The action name must not contain whitespaces.
    * </pre>
    *
-   * <code>string action = 10;</code>
+   * <code>string action = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getAction();
   /**
@@ -291,7 +305,7 @@ public interface IntentOrBuilder
    * Note: The action name must not contain whitespaces.
    * </pre>
    *
-   * <code>string action = 10;</code>
+   * <code>string action = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.protobuf.ByteString getActionBytes();
 
@@ -306,7 +320,9 @@ public interface IntentOrBuilder
    * Format: `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.Context output_contexts = 11;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.Context output_contexts = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.List<com.google.cloud.dialogflow.v2.Context> getOutputContextsList();
   /**
@@ -320,7 +336,9 @@ public interface IntentOrBuilder
    * Format: `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.Context output_contexts = 11;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.Context output_contexts = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.dialogflow.v2.Context getOutputContexts(int index);
   /**
@@ -334,7 +352,9 @@ public interface IntentOrBuilder
    * Format: `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.Context output_contexts = 11;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.Context output_contexts = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   int getOutputContextsCount();
   /**
@@ -348,7 +368,9 @@ public interface IntentOrBuilder
    * Format: `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.Context output_contexts = 11;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.Context output_contexts = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.List<? extends com.google.cloud.dialogflow.v2.ContextOrBuilder>
       getOutputContextsOrBuilderList();
@@ -363,7 +385,9 @@ public interface IntentOrBuilder
    * Format: `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.Context output_contexts = 11;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.Context output_contexts = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.dialogflow.v2.ContextOrBuilder getOutputContextsOrBuilder(int index);
 
@@ -375,7 +399,7 @@ public interface IntentOrBuilder
    * session when this intent is matched.
    * </pre>
    *
-   * <code>bool reset_contexts = 12;</code>
+   * <code>bool reset_contexts = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean getResetContexts();
 
@@ -386,7 +410,9 @@ public interface IntentOrBuilder
    * Optional. The collection of parameters associated with the intent.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.Intent.Parameter parameters = 13;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.Intent.Parameter parameters = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.List<com.google.cloud.dialogflow.v2.Intent.Parameter> getParametersList();
   /**
@@ -396,7 +422,9 @@ public interface IntentOrBuilder
    * Optional. The collection of parameters associated with the intent.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.Intent.Parameter parameters = 13;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.Intent.Parameter parameters = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.dialogflow.v2.Intent.Parameter getParameters(int index);
   /**
@@ -406,7 +434,9 @@ public interface IntentOrBuilder
    * Optional. The collection of parameters associated with the intent.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.Intent.Parameter parameters = 13;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.Intent.Parameter parameters = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   int getParametersCount();
   /**
@@ -416,7 +446,9 @@ public interface IntentOrBuilder
    * Optional. The collection of parameters associated with the intent.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.Intent.Parameter parameters = 13;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.Intent.Parameter parameters = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.List<? extends com.google.cloud.dialogflow.v2.Intent.ParameterOrBuilder>
       getParametersOrBuilderList();
@@ -427,7 +459,9 @@ public interface IntentOrBuilder
    * Optional. The collection of parameters associated with the intent.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.Intent.Parameter parameters = 13;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.Intent.Parameter parameters = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.dialogflow.v2.Intent.ParameterOrBuilder getParametersOrBuilder(int index);
 
@@ -439,7 +473,9 @@ public interface IntentOrBuilder
    * `Response` field in the Dialogflow console.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.Intent.Message messages = 14;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.Intent.Message messages = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.List<com.google.cloud.dialogflow.v2.Intent.Message> getMessagesList();
   /**
@@ -450,7 +486,9 @@ public interface IntentOrBuilder
    * `Response` field in the Dialogflow console.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.Intent.Message messages = 14;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.Intent.Message messages = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.dialogflow.v2.Intent.Message getMessages(int index);
   /**
@@ -461,7 +499,9 @@ public interface IntentOrBuilder
    * `Response` field in the Dialogflow console.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.Intent.Message messages = 14;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.Intent.Message messages = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   int getMessagesCount();
   /**
@@ -472,7 +512,9 @@ public interface IntentOrBuilder
    * `Response` field in the Dialogflow console.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.Intent.Message messages = 14;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.Intent.Message messages = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.List<? extends com.google.cloud.dialogflow.v2.Intent.MessageOrBuilder>
       getMessagesOrBuilderList();
@@ -484,7 +526,9 @@ public interface IntentOrBuilder
    * `Response` field in the Dialogflow console.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.Intent.Message messages = 14;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.Intent.Message messages = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.dialogflow.v2.Intent.MessageOrBuilder getMessagesOrBuilder(int index);
 
@@ -497,7 +541,7 @@ public interface IntentOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.dialogflow.v2.Intent.Message.Platform default_response_platforms = 15;
+   * repeated .google.cloud.dialogflow.v2.Intent.Message.Platform default_response_platforms = 15 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   java.util.List<com.google.cloud.dialogflow.v2.Intent.Message.Platform>
@@ -511,7 +555,7 @@ public interface IntentOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.dialogflow.v2.Intent.Message.Platform default_response_platforms = 15;
+   * repeated .google.cloud.dialogflow.v2.Intent.Message.Platform default_response_platforms = 15 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   int getDefaultResponsePlatformsCount();
@@ -524,7 +568,7 @@ public interface IntentOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.dialogflow.v2.Intent.Message.Platform default_response_platforms = 15;
+   * repeated .google.cloud.dialogflow.v2.Intent.Message.Platform default_response_platforms = 15 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   com.google.cloud.dialogflow.v2.Intent.Message.Platform getDefaultResponsePlatforms(int index);
@@ -537,7 +581,7 @@ public interface IntentOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.dialogflow.v2.Intent.Message.Platform default_response_platforms = 15;
+   * repeated .google.cloud.dialogflow.v2.Intent.Message.Platform default_response_platforms = 15 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   java.util.List<java.lang.Integer> getDefaultResponsePlatformsValueList();
@@ -550,7 +594,7 @@ public interface IntentOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.dialogflow.v2.Intent.Message.Platform default_response_platforms = 15;
+   * repeated .google.cloud.dialogflow.v2.Intent.Message.Platform default_response_platforms = 15 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   int getDefaultResponsePlatformsValue(int index);

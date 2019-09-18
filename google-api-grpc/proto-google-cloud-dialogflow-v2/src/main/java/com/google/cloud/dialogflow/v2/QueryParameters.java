@@ -187,7 +187,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    * agent settings is used.
    * </pre>
    *
-   * <code>string time_zone = 1;</code>
+   * <code>string time_zone = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public java.lang.String getTimeZone() {
     java.lang.Object ref = timeZone_;
@@ -210,7 +210,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    * agent settings is used.
    * </pre>
    *
-   * <code>string time_zone = 1;</code>
+   * <code>string time_zone = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public com.google.protobuf.ByteString getTimeZoneBytes() {
     java.lang.Object ref = timeZone_;
@@ -233,7 +233,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    * Optional. The geo location of this conversational query.
    * </pre>
    *
-   * <code>.google.type.LatLng geo_location = 2;</code>
+   * <code>.google.type.LatLng geo_location = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public boolean hasGeoLocation() {
     return geoLocation_ != null;
@@ -245,7 +245,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    * Optional. The geo location of this conversational query.
    * </pre>
    *
-   * <code>.google.type.LatLng geo_location = 2;</code>
+   * <code>.google.type.LatLng geo_location = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public com.google.type.LatLng getGeoLocation() {
     return geoLocation_ == null ? com.google.type.LatLng.getDefaultInstance() : geoLocation_;
@@ -257,7 +257,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    * Optional. The geo location of this conversational query.
    * </pre>
    *
-   * <code>.google.type.LatLng geo_location = 2;</code>
+   * <code>.google.type.LatLng geo_location = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public com.google.type.LatLngOrBuilder getGeoLocationOrBuilder() {
     return getGeoLocation();
@@ -273,7 +273,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    * executed.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.Context contexts = 3;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.Context contexts = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public java.util.List<com.google.cloud.dialogflow.v2.Context> getContextsList() {
     return contexts_;
@@ -286,7 +288,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    * executed.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.Context contexts = 3;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.Context contexts = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public java.util.List<? extends com.google.cloud.dialogflow.v2.ContextOrBuilder>
       getContextsOrBuilderList() {
@@ -300,7 +304,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    * executed.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.Context contexts = 3;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.Context contexts = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public int getContextsCount() {
     return contexts_.size();
@@ -313,7 +319,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    * executed.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.Context contexts = 3;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.Context contexts = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public com.google.cloud.dialogflow.v2.Context getContexts(int index) {
     return contexts_.get(index);
@@ -326,7 +334,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    * executed.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.Context contexts = 3;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.Context contexts = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public com.google.cloud.dialogflow.v2.ContextOrBuilder getContextsOrBuilder(int index) {
     return contexts_.get(index);
@@ -342,7 +352,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    * before the new ones are activated.
    * </pre>
    *
-   * <code>bool reset_contexts = 4;</code>
+   * <code>bool reset_contexts = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public boolean getResetContexts() {
     return resetContexts_;
@@ -359,7 +369,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    * for the session of this query.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public java.util.List<com.google.cloud.dialogflow.v2.SessionEntityType>
       getSessionEntityTypesList() {
@@ -374,7 +386,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    * for the session of this query.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public java.util.List<? extends com.google.cloud.dialogflow.v2.SessionEntityTypeOrBuilder>
       getSessionEntityTypesOrBuilderList() {
@@ -389,7 +403,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    * for the session of this query.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public int getSessionEntityTypesCount() {
     return sessionEntityTypes_.size();
@@ -403,7 +419,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    * for the session of this query.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public com.google.cloud.dialogflow.v2.SessionEntityType getSessionEntityTypes(int index) {
     return sessionEntityTypes_.get(index);
@@ -417,7 +435,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    * for the session of this query.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public com.google.cloud.dialogflow.v2.SessionEntityTypeOrBuilder getSessionEntityTypesOrBuilder(
       int index) {
@@ -434,7 +454,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    * associated with the agent. Arbitrary JSON objects are supported.
    * </pre>
    *
-   * <code>.google.protobuf.Struct payload = 6;</code>
+   * <code>.google.protobuf.Struct payload = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public boolean hasPayload() {
     return payload_ != null;
@@ -447,7 +467,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    * associated with the agent. Arbitrary JSON objects are supported.
    * </pre>
    *
-   * <code>.google.protobuf.Struct payload = 6;</code>
+   * <code>.google.protobuf.Struct payload = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public com.google.protobuf.Struct getPayload() {
     return payload_ == null ? com.google.protobuf.Struct.getDefaultInstance() : payload_;
@@ -460,7 +480,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    * associated with the agent. Arbitrary JSON objects are supported.
    * </pre>
    *
-   * <code>.google.protobuf.Struct payload = 6;</code>
+   * <code>.google.protobuf.Struct payload = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public com.google.protobuf.StructOrBuilder getPayloadOrBuilder() {
     return getPayload();
@@ -478,7 +498,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>
-   * .google.cloud.dialogflow.v2.SentimentAnalysisRequestConfig sentiment_analysis_request_config = 10;
+   * .google.cloud.dialogflow.v2.SentimentAnalysisRequestConfig sentiment_analysis_request_config = 10 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   public boolean hasSentimentAnalysisRequestConfig() {
@@ -493,7 +513,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>
-   * .google.cloud.dialogflow.v2.SentimentAnalysisRequestConfig sentiment_analysis_request_config = 10;
+   * .google.cloud.dialogflow.v2.SentimentAnalysisRequestConfig sentiment_analysis_request_config = 10 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   public com.google.cloud.dialogflow.v2.SentimentAnalysisRequestConfig
@@ -511,7 +531,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>
-   * .google.cloud.dialogflow.v2.SentimentAnalysisRequestConfig sentiment_analysis_request_config = 10;
+   * .google.cloud.dialogflow.v2.SentimentAnalysisRequestConfig sentiment_analysis_request_config = 10 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   public com.google.cloud.dialogflow.v2.SentimentAnalysisRequestConfigOrBuilder
@@ -1064,7 +1084,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * agent settings is used.
      * </pre>
      *
-     * <code>string time_zone = 1;</code>
+     * <code>string time_zone = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public java.lang.String getTimeZone() {
       java.lang.Object ref = timeZone_;
@@ -1087,7 +1107,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * agent settings is used.
      * </pre>
      *
-     * <code>string time_zone = 1;</code>
+     * <code>string time_zone = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.protobuf.ByteString getTimeZoneBytes() {
       java.lang.Object ref = timeZone_;
@@ -1110,7 +1130,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * agent settings is used.
      * </pre>
      *
-     * <code>string time_zone = 1;</code>
+     * <code>string time_zone = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setTimeZone(java.lang.String value) {
       if (value == null) {
@@ -1131,7 +1151,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * agent settings is used.
      * </pre>
      *
-     * <code>string time_zone = 1;</code>
+     * <code>string time_zone = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearTimeZone() {
 
@@ -1149,7 +1169,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * agent settings is used.
      * </pre>
      *
-     * <code>string time_zone = 1;</code>
+     * <code>string time_zone = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setTimeZoneBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1173,7 +1193,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * Optional. The geo location of this conversational query.
      * </pre>
      *
-     * <code>.google.type.LatLng geo_location = 2;</code>
+     * <code>.google.type.LatLng geo_location = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public boolean hasGeoLocation() {
       return geoLocationBuilder_ != null || geoLocation_ != null;
@@ -1185,7 +1205,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * Optional. The geo location of this conversational query.
      * </pre>
      *
-     * <code>.google.type.LatLng geo_location = 2;</code>
+     * <code>.google.type.LatLng geo_location = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.type.LatLng getGeoLocation() {
       if (geoLocationBuilder_ == null) {
@@ -1201,7 +1221,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * Optional. The geo location of this conversational query.
      * </pre>
      *
-     * <code>.google.type.LatLng geo_location = 2;</code>
+     * <code>.google.type.LatLng geo_location = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setGeoLocation(com.google.type.LatLng value) {
       if (geoLocationBuilder_ == null) {
@@ -1223,7 +1243,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * Optional. The geo location of this conversational query.
      * </pre>
      *
-     * <code>.google.type.LatLng geo_location = 2;</code>
+     * <code>.google.type.LatLng geo_location = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setGeoLocation(com.google.type.LatLng.Builder builderForValue) {
       if (geoLocationBuilder_ == null) {
@@ -1242,7 +1262,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * Optional. The geo location of this conversational query.
      * </pre>
      *
-     * <code>.google.type.LatLng geo_location = 2;</code>
+     * <code>.google.type.LatLng geo_location = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder mergeGeoLocation(com.google.type.LatLng value) {
       if (geoLocationBuilder_ == null) {
@@ -1266,7 +1286,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * Optional. The geo location of this conversational query.
      * </pre>
      *
-     * <code>.google.type.LatLng geo_location = 2;</code>
+     * <code>.google.type.LatLng geo_location = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearGeoLocation() {
       if (geoLocationBuilder_ == null) {
@@ -1286,7 +1306,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * Optional. The geo location of this conversational query.
      * </pre>
      *
-     * <code>.google.type.LatLng geo_location = 2;</code>
+     * <code>.google.type.LatLng geo_location = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.type.LatLng.Builder getGeoLocationBuilder() {
 
@@ -1300,7 +1320,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * Optional. The geo location of this conversational query.
      * </pre>
      *
-     * <code>.google.type.LatLng geo_location = 2;</code>
+     * <code>.google.type.LatLng geo_location = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.type.LatLngOrBuilder getGeoLocationOrBuilder() {
       if (geoLocationBuilder_ != null) {
@@ -1316,7 +1336,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * Optional. The geo location of this conversational query.
      * </pre>
      *
-     * <code>.google.type.LatLng geo_location = 2;</code>
+     * <code>.google.type.LatLng geo_location = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.LatLng, com.google.type.LatLng.Builder, com.google.type.LatLngOrBuilder>
@@ -1357,7 +1377,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * executed.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Context contexts = 3;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Context contexts = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<com.google.cloud.dialogflow.v2.Context> getContextsList() {
       if (contextsBuilder_ == null) {
@@ -1374,7 +1396,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * executed.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Context contexts = 3;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Context contexts = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public int getContextsCount() {
       if (contextsBuilder_ == null) {
@@ -1391,7 +1415,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * executed.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Context contexts = 3;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Context contexts = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2.Context getContexts(int index) {
       if (contextsBuilder_ == null) {
@@ -1408,7 +1434,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * executed.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Context contexts = 3;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Context contexts = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setContexts(int index, com.google.cloud.dialogflow.v2.Context value) {
       if (contextsBuilder_ == null) {
@@ -1431,7 +1459,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * executed.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Context contexts = 3;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Context contexts = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setContexts(
         int index, com.google.cloud.dialogflow.v2.Context.Builder builderForValue) {
@@ -1452,7 +1482,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * executed.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Context contexts = 3;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Context contexts = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addContexts(com.google.cloud.dialogflow.v2.Context value) {
       if (contextsBuilder_ == null) {
@@ -1475,7 +1507,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * executed.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Context contexts = 3;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Context contexts = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addContexts(int index, com.google.cloud.dialogflow.v2.Context value) {
       if (contextsBuilder_ == null) {
@@ -1498,7 +1532,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * executed.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Context contexts = 3;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Context contexts = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addContexts(com.google.cloud.dialogflow.v2.Context.Builder builderForValue) {
       if (contextsBuilder_ == null) {
@@ -1518,7 +1554,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * executed.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Context contexts = 3;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Context contexts = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addContexts(
         int index, com.google.cloud.dialogflow.v2.Context.Builder builderForValue) {
@@ -1539,7 +1577,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * executed.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Context contexts = 3;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Context contexts = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addAllContexts(
         java.lang.Iterable<? extends com.google.cloud.dialogflow.v2.Context> values) {
@@ -1560,7 +1600,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * executed.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Context contexts = 3;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Context contexts = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearContexts() {
       if (contextsBuilder_ == null) {
@@ -1580,7 +1622,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * executed.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Context contexts = 3;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Context contexts = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder removeContexts(int index) {
       if (contextsBuilder_ == null) {
@@ -1600,7 +1644,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * executed.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Context contexts = 3;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Context contexts = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2.Context.Builder getContextsBuilder(int index) {
       return getContextsFieldBuilder().getBuilder(index);
@@ -1613,7 +1659,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * executed.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Context contexts = 3;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Context contexts = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2.ContextOrBuilder getContextsOrBuilder(int index) {
       if (contextsBuilder_ == null) {
@@ -1630,7 +1678,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * executed.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Context contexts = 3;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Context contexts = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<? extends com.google.cloud.dialogflow.v2.ContextOrBuilder>
         getContextsOrBuilderList() {
@@ -1648,7 +1698,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * executed.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Context contexts = 3;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Context contexts = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2.Context.Builder addContextsBuilder() {
       return getContextsFieldBuilder()
@@ -1662,7 +1714,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * executed.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Context contexts = 3;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Context contexts = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2.Context.Builder addContextsBuilder(int index) {
       return getContextsFieldBuilder()
@@ -1676,7 +1730,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * executed.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Context contexts = 3;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Context contexts = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<com.google.cloud.dialogflow.v2.Context.Builder> getContextsBuilderList() {
       return getContextsFieldBuilder().getBuilderList();
@@ -1708,7 +1764,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * before the new ones are activated.
      * </pre>
      *
-     * <code>bool reset_contexts = 4;</code>
+     * <code>bool reset_contexts = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public boolean getResetContexts() {
       return resetContexts_;
@@ -1721,7 +1777,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * before the new ones are activated.
      * </pre>
      *
-     * <code>bool reset_contexts = 4;</code>
+     * <code>bool reset_contexts = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setResetContexts(boolean value) {
 
@@ -1737,7 +1793,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * before the new ones are activated.
      * </pre>
      *
-     * <code>bool reset_contexts = 4;</code>
+     * <code>bool reset_contexts = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearResetContexts() {
 
@@ -1773,7 +1829,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * for the session of this query.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<com.google.cloud.dialogflow.v2.SessionEntityType>
         getSessionEntityTypesList() {
@@ -1792,7 +1850,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * for the session of this query.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public int getSessionEntityTypesCount() {
       if (sessionEntityTypesBuilder_ == null) {
@@ -1810,7 +1870,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * for the session of this query.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2.SessionEntityType getSessionEntityTypes(int index) {
       if (sessionEntityTypesBuilder_ == null) {
@@ -1828,7 +1890,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * for the session of this query.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setSessionEntityTypes(
         int index, com.google.cloud.dialogflow.v2.SessionEntityType value) {
@@ -1853,7 +1917,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * for the session of this query.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setSessionEntityTypes(
         int index, com.google.cloud.dialogflow.v2.SessionEntityType.Builder builderForValue) {
@@ -1875,7 +1941,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * for the session of this query.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addSessionEntityTypes(com.google.cloud.dialogflow.v2.SessionEntityType value) {
       if (sessionEntityTypesBuilder_ == null) {
@@ -1899,7 +1967,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * for the session of this query.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addSessionEntityTypes(
         int index, com.google.cloud.dialogflow.v2.SessionEntityType value) {
@@ -1924,7 +1994,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * for the session of this query.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addSessionEntityTypes(
         com.google.cloud.dialogflow.v2.SessionEntityType.Builder builderForValue) {
@@ -1946,7 +2018,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * for the session of this query.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addSessionEntityTypes(
         int index, com.google.cloud.dialogflow.v2.SessionEntityType.Builder builderForValue) {
@@ -1968,7 +2042,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * for the session of this query.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addAllSessionEntityTypes(
         java.lang.Iterable<? extends com.google.cloud.dialogflow.v2.SessionEntityType> values) {
@@ -1990,7 +2066,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * for the session of this query.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearSessionEntityTypes() {
       if (sessionEntityTypesBuilder_ == null) {
@@ -2011,7 +2089,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * for the session of this query.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder removeSessionEntityTypes(int index) {
       if (sessionEntityTypesBuilder_ == null) {
@@ -2032,7 +2112,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * for the session of this query.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2.SessionEntityType.Builder getSessionEntityTypesBuilder(
         int index) {
@@ -2047,7 +2129,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * for the session of this query.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2.SessionEntityTypeOrBuilder getSessionEntityTypesOrBuilder(
         int index) {
@@ -2066,7 +2150,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * for the session of this query.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<? extends com.google.cloud.dialogflow.v2.SessionEntityTypeOrBuilder>
         getSessionEntityTypesOrBuilderList() {
@@ -2085,7 +2171,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * for the session of this query.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2.SessionEntityType.Builder addSessionEntityTypesBuilder() {
       return getSessionEntityTypesFieldBuilder()
@@ -2100,7 +2188,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * for the session of this query.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2.SessionEntityType.Builder addSessionEntityTypesBuilder(
         int index) {
@@ -2116,7 +2206,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * for the session of this query.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<com.google.cloud.dialogflow.v2.SessionEntityType.Builder>
         getSessionEntityTypesBuilderList() {
@@ -2157,7 +2249,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * associated with the agent. Arbitrary JSON objects are supported.
      * </pre>
      *
-     * <code>.google.protobuf.Struct payload = 6;</code>
+     * <code>.google.protobuf.Struct payload = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public boolean hasPayload() {
       return payloadBuilder_ != null || payload_ != null;
@@ -2170,7 +2262,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * associated with the agent. Arbitrary JSON objects are supported.
      * </pre>
      *
-     * <code>.google.protobuf.Struct payload = 6;</code>
+     * <code>.google.protobuf.Struct payload = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.protobuf.Struct getPayload() {
       if (payloadBuilder_ == null) {
@@ -2187,7 +2279,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * associated with the agent. Arbitrary JSON objects are supported.
      * </pre>
      *
-     * <code>.google.protobuf.Struct payload = 6;</code>
+     * <code>.google.protobuf.Struct payload = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setPayload(com.google.protobuf.Struct value) {
       if (payloadBuilder_ == null) {
@@ -2210,7 +2302,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * associated with the agent. Arbitrary JSON objects are supported.
      * </pre>
      *
-     * <code>.google.protobuf.Struct payload = 6;</code>
+     * <code>.google.protobuf.Struct payload = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setPayload(com.google.protobuf.Struct.Builder builderForValue) {
       if (payloadBuilder_ == null) {
@@ -2230,7 +2322,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * associated with the agent. Arbitrary JSON objects are supported.
      * </pre>
      *
-     * <code>.google.protobuf.Struct payload = 6;</code>
+     * <code>.google.protobuf.Struct payload = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder mergePayload(com.google.protobuf.Struct value) {
       if (payloadBuilder_ == null) {
@@ -2255,7 +2347,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * associated with the agent. Arbitrary JSON objects are supported.
      * </pre>
      *
-     * <code>.google.protobuf.Struct payload = 6;</code>
+     * <code>.google.protobuf.Struct payload = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearPayload() {
       if (payloadBuilder_ == null) {
@@ -2276,7 +2368,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * associated with the agent. Arbitrary JSON objects are supported.
      * </pre>
      *
-     * <code>.google.protobuf.Struct payload = 6;</code>
+     * <code>.google.protobuf.Struct payload = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.protobuf.Struct.Builder getPayloadBuilder() {
 
@@ -2291,7 +2383,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * associated with the agent. Arbitrary JSON objects are supported.
      * </pre>
      *
-     * <code>.google.protobuf.Struct payload = 6;</code>
+     * <code>.google.protobuf.Struct payload = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.protobuf.StructOrBuilder getPayloadOrBuilder() {
       if (payloadBuilder_ != null) {
@@ -2308,7 +2400,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * associated with the agent. Arbitrary JSON objects are supported.
      * </pre>
      *
-     * <code>.google.protobuf.Struct payload = 6;</code>
+     * <code>.google.protobuf.Struct payload = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Struct,
@@ -2343,7 +2435,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>
-     * .google.cloud.dialogflow.v2.SentimentAnalysisRequestConfig sentiment_analysis_request_config = 10;
+     * .google.cloud.dialogflow.v2.SentimentAnalysisRequestConfig sentiment_analysis_request_config = 10 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public boolean hasSentimentAnalysisRequestConfig() {
@@ -2359,7 +2451,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>
-     * .google.cloud.dialogflow.v2.SentimentAnalysisRequestConfig sentiment_analysis_request_config = 10;
+     * .google.cloud.dialogflow.v2.SentimentAnalysisRequestConfig sentiment_analysis_request_config = 10 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.dialogflow.v2.SentimentAnalysisRequestConfig
@@ -2381,7 +2473,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>
-     * .google.cloud.dialogflow.v2.SentimentAnalysisRequestConfig sentiment_analysis_request_config = 10;
+     * .google.cloud.dialogflow.v2.SentimentAnalysisRequestConfig sentiment_analysis_request_config = 10 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setSentimentAnalysisRequestConfig(
@@ -2407,7 +2499,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>
-     * .google.cloud.dialogflow.v2.SentimentAnalysisRequestConfig sentiment_analysis_request_config = 10;
+     * .google.cloud.dialogflow.v2.SentimentAnalysisRequestConfig sentiment_analysis_request_config = 10 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setSentimentAnalysisRequestConfig(
@@ -2430,7 +2522,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>
-     * .google.cloud.dialogflow.v2.SentimentAnalysisRequestConfig sentiment_analysis_request_config = 10;
+     * .google.cloud.dialogflow.v2.SentimentAnalysisRequestConfig sentiment_analysis_request_config = 10 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder mergeSentimentAnalysisRequestConfig(
@@ -2461,7 +2553,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>
-     * .google.cloud.dialogflow.v2.SentimentAnalysisRequestConfig sentiment_analysis_request_config = 10;
+     * .google.cloud.dialogflow.v2.SentimentAnalysisRequestConfig sentiment_analysis_request_config = 10 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder clearSentimentAnalysisRequestConfig() {
@@ -2484,7 +2576,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>
-     * .google.cloud.dialogflow.v2.SentimentAnalysisRequestConfig sentiment_analysis_request_config = 10;
+     * .google.cloud.dialogflow.v2.SentimentAnalysisRequestConfig sentiment_analysis_request_config = 10 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.dialogflow.v2.SentimentAnalysisRequestConfig.Builder
@@ -2502,7 +2594,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>
-     * .google.cloud.dialogflow.v2.SentimentAnalysisRequestConfig sentiment_analysis_request_config = 10;
+     * .google.cloud.dialogflow.v2.SentimentAnalysisRequestConfig sentiment_analysis_request_config = 10 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.dialogflow.v2.SentimentAnalysisRequestConfigOrBuilder
@@ -2524,7 +2616,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>
-     * .google.cloud.dialogflow.v2.SentimentAnalysisRequestConfig sentiment_analysis_request_config = 10;
+     * .google.cloud.dialogflow.v2.SentimentAnalysisRequestConfig sentiment_analysis_request_config = 10 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
