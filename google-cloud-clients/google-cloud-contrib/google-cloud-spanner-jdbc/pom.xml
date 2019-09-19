@@ -4,7 +4,7 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <artifactId>google-cloud-spanner-jdbc</artifactId>
-  <version>1.2.0</version><!-- {x-version-update:google-cloud-spanner-jdbc:current} -->
+  <version>1.2.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-spanner-jdbc:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Spanner JDBC</name>
   <url>https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-clients/google-cloud-contrib/google-cloud-spanner-jdbc</url>
@@ -14,7 +14,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-contrib</artifactId>
-    <version>0.110.0-alpha</version><!-- {x-version-update:google-cloud-contrib:current} -->
+    <version>0.110.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-contrib:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-spanner-jdbc</site.installationModule>
@@ -31,7 +31,7 @@
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>google-cloud-spanner</artifactId>
-      <version>1.37.0</version><!-- {x-version-update:google-cloud-spanner:current} -->
+      <version>1.37.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-spanner:current} -->
       <type>test-jar</type>
       <scope>test</scope>
     </dependency>
