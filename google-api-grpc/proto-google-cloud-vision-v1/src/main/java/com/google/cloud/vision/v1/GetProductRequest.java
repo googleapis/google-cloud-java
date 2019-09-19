@@ -97,12 +97,14 @@ public final class GetProductRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Resource name of the Product to get.
+   * Required. Resource name of the Product to get.
    * Format is:
    * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -119,12 +121,14 @@ public final class GetProductRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Resource name of the Product to get.
+   * Required. Resource name of the Product to get.
    * Format is:
    * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -459,12 +463,14 @@ public final class GetProductRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Resource name of the Product to get.
+     * Required. Resource name of the Product to get.
      * Format is:
      * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -481,12 +487,14 @@ public final class GetProductRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Resource name of the Product to get.
+     * Required. Resource name of the Product to get.
      * Format is:
      * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -503,12 +511,14 @@ public final class GetProductRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Resource name of the Product to get.
+     * Required. Resource name of the Product to get.
      * Format is:
      * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -523,12 +533,14 @@ public final class GetProductRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Resource name of the Product to get.
+     * Required. Resource name of the Product to get.
      * Format is:
      * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder clearName() {
 
@@ -540,12 +552,14 @@ public final class GetProductRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Resource name of the Product to get.
+     * Required. Resource name of the Product to get.
      * Format is:
      * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

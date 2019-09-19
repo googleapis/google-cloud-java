@@ -13,15 +13,13 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  * <pre>
  * Manages Products and ProductSets of reference images for use in product
  * search. It uses the following resource model:
- * - The API has a collection of [ProductSet][google.cloud.vision.v1.ProductSet]
- * resources, named `projects/&#42;&#47;locations/&#42;&#47;productSets/&#42;`, which acts as a way
- * to put different products into groups to limit identification.
+ * - The API has a collection of [ProductSet][google.cloud.vision.v1.ProductSet] resources, named
+ * `projects/&#42;&#47;locations/&#42;&#47;productSets/&#42;`, which acts as a way to put different
+ * products into groups to limit identification.
  * In parallel,
- * - The API has a collection of [Product][google.cloud.vision.v1.Product]
- * resources, named
+ * - The API has a collection of [Product][google.cloud.vision.v1.Product] resources, named
  *   `projects/&#42;&#47;locations/&#42;&#47;products/&#42;`
- * - Each [Product][google.cloud.vision.v1.Product] has a collection of
- * [ReferenceImage][google.cloud.vision.v1.ReferenceImage] resources, named
+ * - Each [Product][google.cloud.vision.v1.Product] has a collection of [ReferenceImage][google.cloud.vision.v1.ReferenceImage] resources, named
  *   `projects/&#42;&#47;locations/&#42;&#47;products/&#42;&#47;referenceImages/&#42;`
  * </pre>
  */
@@ -1105,15 +1103,13 @@ public final class ProductSearchGrpc {
    * <pre>
    * Manages Products and ProductSets of reference images for use in product
    * search. It uses the following resource model:
-   * - The API has a collection of [ProductSet][google.cloud.vision.v1.ProductSet]
-   * resources, named `projects/&#42;&#47;locations/&#42;&#47;productSets/&#42;`, which acts as a way
-   * to put different products into groups to limit identification.
+   * - The API has a collection of [ProductSet][google.cloud.vision.v1.ProductSet] resources, named
+   * `projects/&#42;&#47;locations/&#42;&#47;productSets/&#42;`, which acts as a way to put different
+   * products into groups to limit identification.
    * In parallel,
-   * - The API has a collection of [Product][google.cloud.vision.v1.Product]
-   * resources, named
+   * - The API has a collection of [Product][google.cloud.vision.v1.Product] resources, named
    *   `projects/&#42;&#47;locations/&#42;&#47;products/&#42;`
-   * - Each [Product][google.cloud.vision.v1.Product] has a collection of
-   * [ReferenceImage][google.cloud.vision.v1.ReferenceImage] resources, named
+   * - Each [Product][google.cloud.vision.v1.Product] has a collection of [ReferenceImage][google.cloud.vision.v1.ReferenceImage] resources, named
    *   `projects/&#42;&#47;locations/&#42;&#47;products/&#42;&#47;referenceImages/&#42;`
    * </pre>
    */
@@ -1420,8 +1416,8 @@ public final class ProductSearchGrpc {
      * <pre>
      * Asynchronous API that imports a list of reference images to specified
      * product sets based on a list of image information.
-     * The [google.longrunning.Operation][google.longrunning.Operation] API can be
-     * used to keep track of the progress and results of the request.
+     * The [google.longrunning.Operation][google.longrunning.Operation] API can be used to keep track of the
+     * progress and results of the request.
      * `Operation.metadata` contains `BatchOperationMetadata`. (progress)
      * `Operation.response` contains `ImportProductSetsResponse`. (results)
      * The input source of this method is a csv file on Google Cloud Storage.
@@ -1455,8 +1451,8 @@ public final class ProductSearchGrpc {
      * re-use the empty ProductSet to re-import new Products into the empty
      * ProductSet, you must wait until the PurgeProducts operation has finished
      * for that ProductSet.
-     * The [google.longrunning.Operation][google.longrunning.Operation] API can be
-     * used to keep track of the progress and results of the request.
+     * The [google.longrunning.Operation][google.longrunning.Operation] API can be used to keep track of the
+     * progress and results of the request.
      * `Operation.metadata` contains `BatchOperationMetadata`. (progress)
      * </pre>
      */
@@ -1599,15 +1595,13 @@ public final class ProductSearchGrpc {
    * <pre>
    * Manages Products and ProductSets of reference images for use in product
    * search. It uses the following resource model:
-   * - The API has a collection of [ProductSet][google.cloud.vision.v1.ProductSet]
-   * resources, named `projects/&#42;&#47;locations/&#42;&#47;productSets/&#42;`, which acts as a way
-   * to put different products into groups to limit identification.
+   * - The API has a collection of [ProductSet][google.cloud.vision.v1.ProductSet] resources, named
+   * `projects/&#42;&#47;locations/&#42;&#47;productSets/&#42;`, which acts as a way to put different
+   * products into groups to limit identification.
    * In parallel,
-   * - The API has a collection of [Product][google.cloud.vision.v1.Product]
-   * resources, named
+   * - The API has a collection of [Product][google.cloud.vision.v1.Product] resources, named
    *   `projects/&#42;&#47;locations/&#42;&#47;products/&#42;`
-   * - Each [Product][google.cloud.vision.v1.Product] has a collection of
-   * [ReferenceImage][google.cloud.vision.v1.ReferenceImage] resources, named
+   * - Each [Product][google.cloud.vision.v1.Product] has a collection of [ReferenceImage][google.cloud.vision.v1.ReferenceImage] resources, named
    *   `projects/&#42;&#47;locations/&#42;&#47;products/&#42;&#47;referenceImages/&#42;`
    * </pre>
    */
@@ -1977,8 +1971,8 @@ public final class ProductSearchGrpc {
      * <pre>
      * Asynchronous API that imports a list of reference images to specified
      * product sets based on a list of image information.
-     * The [google.longrunning.Operation][google.longrunning.Operation] API can be
-     * used to keep track of the progress and results of the request.
+     * The [google.longrunning.Operation][google.longrunning.Operation] API can be used to keep track of the
+     * progress and results of the request.
      * `Operation.metadata` contains `BatchOperationMetadata`. (progress)
      * `Operation.response` contains `ImportProductSetsResponse`. (results)
      * The input source of this method is a csv file on Google Cloud Storage.
@@ -2015,8 +2009,8 @@ public final class ProductSearchGrpc {
      * re-use the empty ProductSet to re-import new Products into the empty
      * ProductSet, you must wait until the PurgeProducts operation has finished
      * for that ProductSet.
-     * The [google.longrunning.Operation][google.longrunning.Operation] API can be
-     * used to keep track of the progress and results of the request.
+     * The [google.longrunning.Operation][google.longrunning.Operation] API can be used to keep track of the
+     * progress and results of the request.
      * `Operation.metadata` contains `BatchOperationMetadata`. (progress)
      * </pre>
      */
@@ -2036,15 +2030,13 @@ public final class ProductSearchGrpc {
    * <pre>
    * Manages Products and ProductSets of reference images for use in product
    * search. It uses the following resource model:
-   * - The API has a collection of [ProductSet][google.cloud.vision.v1.ProductSet]
-   * resources, named `projects/&#42;&#47;locations/&#42;&#47;productSets/&#42;`, which acts as a way
-   * to put different products into groups to limit identification.
+   * - The API has a collection of [ProductSet][google.cloud.vision.v1.ProductSet] resources, named
+   * `projects/&#42;&#47;locations/&#42;&#47;productSets/&#42;`, which acts as a way to put different
+   * products into groups to limit identification.
    * In parallel,
-   * - The API has a collection of [Product][google.cloud.vision.v1.Product]
-   * resources, named
+   * - The API has a collection of [Product][google.cloud.vision.v1.Product] resources, named
    *   `projects/&#42;&#47;locations/&#42;&#47;products/&#42;`
-   * - Each [Product][google.cloud.vision.v1.Product] has a collection of
-   * [ReferenceImage][google.cloud.vision.v1.ReferenceImage] resources, named
+   * - Each [Product][google.cloud.vision.v1.Product] has a collection of [ReferenceImage][google.cloud.vision.v1.ReferenceImage] resources, named
    *   `projects/&#42;&#47;locations/&#42;&#47;products/&#42;&#47;referenceImages/&#42;`
    * </pre>
    */
@@ -2361,8 +2353,8 @@ public final class ProductSearchGrpc {
      * <pre>
      * Asynchronous API that imports a list of reference images to specified
      * product sets based on a list of image information.
-     * The [google.longrunning.Operation][google.longrunning.Operation] API can be
-     * used to keep track of the progress and results of the request.
+     * The [google.longrunning.Operation][google.longrunning.Operation] API can be used to keep track of the
+     * progress and results of the request.
      * `Operation.metadata` contains `BatchOperationMetadata`. (progress)
      * `Operation.response` contains `ImportProductSetsResponse`. (results)
      * The input source of this method is a csv file on Google Cloud Storage.
@@ -2396,8 +2388,8 @@ public final class ProductSearchGrpc {
      * re-use the empty ProductSet to re-import new Products into the empty
      * ProductSet, you must wait until the PurgeProducts operation has finished
      * for that ProductSet.
-     * The [google.longrunning.Operation][google.longrunning.Operation] API can be
-     * used to keep track of the progress and results of the request.
+     * The [google.longrunning.Operation][google.longrunning.Operation] API can be used to keep track of the
+     * progress and results of the request.
      * `Operation.metadata` contains `BatchOperationMetadata`. (progress)
      * </pre>
      */
@@ -2414,15 +2406,13 @@ public final class ProductSearchGrpc {
    * <pre>
    * Manages Products and ProductSets of reference images for use in product
    * search. It uses the following resource model:
-   * - The API has a collection of [ProductSet][google.cloud.vision.v1.ProductSet]
-   * resources, named `projects/&#42;&#47;locations/&#42;&#47;productSets/&#42;`, which acts as a way
-   * to put different products into groups to limit identification.
+   * - The API has a collection of [ProductSet][google.cloud.vision.v1.ProductSet] resources, named
+   * `projects/&#42;&#47;locations/&#42;&#47;productSets/&#42;`, which acts as a way to put different
+   * products into groups to limit identification.
    * In parallel,
-   * - The API has a collection of [Product][google.cloud.vision.v1.Product]
-   * resources, named
+   * - The API has a collection of [Product][google.cloud.vision.v1.Product] resources, named
    *   `projects/&#42;&#47;locations/&#42;&#47;products/&#42;`
-   * - Each [Product][google.cloud.vision.v1.Product] has a collection of
-   * [ReferenceImage][google.cloud.vision.v1.ReferenceImage] resources, named
+   * - Each [Product][google.cloud.vision.v1.Product] has a collection of [ReferenceImage][google.cloud.vision.v1.ReferenceImage] resources, named
    *   `projects/&#42;&#47;locations/&#42;&#47;products/&#42;&#47;referenceImages/&#42;`
    * </pre>
    */
@@ -2749,8 +2739,8 @@ public final class ProductSearchGrpc {
      * <pre>
      * Asynchronous API that imports a list of reference images to specified
      * product sets based on a list of image information.
-     * The [google.longrunning.Operation][google.longrunning.Operation] API can be
-     * used to keep track of the progress and results of the request.
+     * The [google.longrunning.Operation][google.longrunning.Operation] API can be used to keep track of the
+     * progress and results of the request.
      * `Operation.metadata` contains `BatchOperationMetadata`. (progress)
      * `Operation.response` contains `ImportProductSetsResponse`. (results)
      * The input source of this method is a csv file on Google Cloud Storage.
@@ -2784,8 +2774,8 @@ public final class ProductSearchGrpc {
      * re-use the empty ProductSet to re-import new Products into the empty
      * ProductSet, you must wait until the PurgeProducts operation has finished
      * for that ProductSet.
-     * The [google.longrunning.Operation][google.longrunning.Operation] API can be
-     * used to keep track of the progress and results of the request.
+     * The [google.longrunning.Operation][google.longrunning.Operation] API can be used to keep track of the
+     * progress and results of the request.
      * `Operation.metadata` contains `BatchOperationMetadata`. (progress)
      * </pre>
      */

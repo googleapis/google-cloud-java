@@ -12,22 +12,26 @@ public interface CreateProductSetRequestOrBuilder
    *
    *
    * <pre>
-   * The project in which the ProductSet should be created.
+   * Required. The project in which the ProductSet should be created.
    * Format is `projects/PROJECT_ID/locations/LOC_ID`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   java.lang.String getParent();
   /**
    *
    *
    * <pre>
-   * The project in which the ProductSet should be created.
+   * Required. The project in which the ProductSet should be created.
    * Format is `projects/PROJECT_ID/locations/LOC_ID`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -35,30 +39,36 @@ public interface CreateProductSetRequestOrBuilder
    *
    *
    * <pre>
-   * The ProductSet to create.
+   * Required. The ProductSet to create.
    * </pre>
    *
-   * <code>.google.cloud.vision.v1.ProductSet product_set = 2;</code>
+   * <code>
+   * .google.cloud.vision.v1.ProductSet product_set = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   boolean hasProductSet();
   /**
    *
    *
    * <pre>
-   * The ProductSet to create.
+   * Required. The ProductSet to create.
    * </pre>
    *
-   * <code>.google.cloud.vision.v1.ProductSet product_set = 2;</code>
+   * <code>
+   * .google.cloud.vision.v1.ProductSet product_set = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.vision.v1.ProductSet getProductSet();
   /**
    *
    *
    * <pre>
-   * The ProductSet to create.
+   * Required. The ProductSet to create.
    * </pre>
    *
-   * <code>.google.cloud.vision.v1.ProductSet product_set = 2;</code>
+   * <code>
+   * .google.cloud.vision.v1.ProductSet product_set = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.vision.v1.ProductSetOrBuilder getProductSetOrBuilder();
 
