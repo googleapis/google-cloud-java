@@ -25,7 +25,6 @@ import com.google.api.gax.rpc.ServerStream;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.bigtable.data.v2.models.BulkMutation;
-import com.google.cloud.bigtable.data.v2.models.BulkMutationBatcher;
 import com.google.cloud.bigtable.data.v2.models.ConditionalRowMutation;
 import com.google.cloud.bigtable.data.v2.models.Filters.Filter;
 import com.google.cloud.bigtable.data.v2.models.KeyOffset;
@@ -868,16 +867,10 @@ public class BigtableDataClient implements AutoCloseable {
     return stub.mutateRowCallable();
   }
 
-  /** @deprecated Please use {@link #newBulkMutationBatcher(String)} API. */
-  @Deprecated
-  public BulkMutationBatcher newBulkMutationBatcher() {
-    return new BulkMutationBatcher(stub.bulkMutateRowsBatchingCallable());
-  }
-
   /**
    * Convenience method to mutate multiple rows in a batch. Each individual row is mutated
-   * atomically as in MutateRow, but the entire batch is not executed atomically. Unlike {@link
-   * #newBulkMutationBatcher()}, this method expects the mutations to be pre-batched.
+   * atomically as in MutateRow, but the entire batch is not executed atomically. This method
+   * expects the mutations to be pre-batched.
    *
    * <p>Sample code:
    *
@@ -933,8 +926,8 @@ public class BigtableDataClient implements AutoCloseable {
 
   /**
    * Convenience method to mutate multiple rows in a batch. Each individual row is mutated
-   * atomically as in MutateRow, but the entire batch is not executed atomically. Unlike {@link
-   * #newBulkMutationBatcher()}, this method expects the mutations to be pre-batched.
+   * atomically as in MutateRow, but the entire batch is not executed atomically. This method
+   * expects the mutations to be pre-batched.
    *
    * <p>Sample code:
    *
@@ -968,8 +961,8 @@ public class BigtableDataClient implements AutoCloseable {
 
   /**
    * Mutates multiple rows in a batch. Each individual row is mutated atomically as in MutateRow,
-   * but the entire batch is not executed atomically. Unlike {@link #newBulkMutationBatcher()}, this
-   * method expects the mutations to be pre-batched.
+   * but the entire batch is not executed atomically. This method expects the mutations to be
+   * pre-batched.
    *
    * <p>Sample code:
    *
