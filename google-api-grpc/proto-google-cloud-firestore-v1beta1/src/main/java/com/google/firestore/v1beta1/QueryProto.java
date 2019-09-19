@@ -33,10 +33,6 @@ public final class QueryProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_firestore_v1beta1_StructuredQuery_FieldFilter_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-      internal_static_google_firestore_v1beta1_StructuredQuery_Projection_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_firestore_v1beta1_StructuredQuery_Projection_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_firestore_v1beta1_StructuredQuery_UnaryFilter_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_firestore_v1beta1_StructuredQuery_UnaryFilter_fieldAccessorTable;
@@ -48,6 +44,10 @@ public final class QueryProto {
       internal_static_google_firestore_v1beta1_StructuredQuery_FieldReference_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_firestore_v1beta1_StructuredQuery_FieldReference_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_firestore_v1beta1_StructuredQuery_Projection_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_firestore_v1beta1_StructuredQuery_Projection_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_firestore_v1beta1_Cursor_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -99,20 +99,20 @@ public final class QueryProto {
           + "Operator\022\030\n\024OPERATOR_UNSPECIFIED\020\000\022\r\n\tLE"
           + "SS_THAN\020\001\022\026\n\022LESS_THAN_OR_EQUAL\020\002\022\020\n\014GRE"
           + "ATER_THAN\020\003\022\031\n\025GREATER_THAN_OR_EQUAL\020\004\022\t"
-          + "\n\005EQUAL\020\005\022\022\n\016ARRAY_CONTAINS\020\007\032V\n\nProject"
-          + "ion\022H\n\006fields\030\002 \003(\01328.google.firestore.v"
-          + "1beta1.StructuredQuery.FieldReference\032\363\001"
-          + "\n\013UnaryFilter\022J\n\002op\030\001 \001(\0162>.google.fires"
-          + "tore.v1beta1.StructuredQuery.UnaryFilter"
-          + ".Operator\022I\n\005field\030\002 \001(\01328.google.firest"
-          + "ore.v1beta1.StructuredQuery.FieldReferen"
-          + "ceH\000\"=\n\010Operator\022\030\n\024OPERATOR_UNSPECIFIED"
-          + "\020\000\022\n\n\006IS_NAN\020\002\022\013\n\007IS_NULL\020\003B\016\n\014operand_t"
-          + "ype\032\230\001\n\005Order\022G\n\005field\030\001 \001(\01328.google.fi"
-          + "restore.v1beta1.StructuredQuery.FieldRef"
-          + "erence\022F\n\tdirection\030\002 \001(\01623.google.fires"
-          + "tore.v1beta1.StructuredQuery.Direction\032$"
-          + "\n\016FieldReference\022\022\n\nfield_path\030\002 \001(\t\"E\n\t"
+          + "\n\005EQUAL\020\005\022\022\n\016ARRAY_CONTAINS\020\007\032\363\001\n\013UnaryF"
+          + "ilter\022J\n\002op\030\001 \001(\0162>.google.firestore.v1b"
+          + "eta1.StructuredQuery.UnaryFilter.Operato"
+          + "r\022I\n\005field\030\002 \001(\01328.google.firestore.v1be"
+          + "ta1.StructuredQuery.FieldReferenceH\000\"=\n\010"
+          + "Operator\022\030\n\024OPERATOR_UNSPECIFIED\020\000\022\n\n\006IS"
+          + "_NAN\020\002\022\013\n\007IS_NULL\020\003B\016\n\014operand_type\032\230\001\n\005"
+          + "Order\022G\n\005field\030\001 \001(\01328.google.firestore."
+          + "v1beta1.StructuredQuery.FieldReference\022F"
+          + "\n\tdirection\030\002 \001(\01623.google.firestore.v1b"
+          + "eta1.StructuredQuery.Direction\032$\n\016FieldR"
+          + "eference\022\022\n\nfield_path\030\002 \001(\t\032V\n\nProjecti"
+          + "on\022H\n\006fields\030\002 \003(\01328.google.firestore.v1"
+          + "beta1.StructuredQuery.FieldReference\"E\n\t"
           + "Direction\022\031\n\025DIRECTION_UNSPECIFIED\020\000\022\r\n\t"
           + "ASCENDING\020\001\022\016\n\nDESCENDING\020\002\"I\n\006Cursor\022/\n"
           + "\006values\030\001 \003(\0132\037.google.firestore.v1beta1"
@@ -179,16 +179,8 @@ public final class QueryProto {
             new java.lang.String[] {
               "Field", "Op", "Value",
             });
-    internal_static_google_firestore_v1beta1_StructuredQuery_Projection_descriptor =
-        internal_static_google_firestore_v1beta1_StructuredQuery_descriptor.getNestedTypes().get(4);
-    internal_static_google_firestore_v1beta1_StructuredQuery_Projection_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-            internal_static_google_firestore_v1beta1_StructuredQuery_Projection_descriptor,
-            new java.lang.String[] {
-              "Fields",
-            });
     internal_static_google_firestore_v1beta1_StructuredQuery_UnaryFilter_descriptor =
-        internal_static_google_firestore_v1beta1_StructuredQuery_descriptor.getNestedTypes().get(5);
+        internal_static_google_firestore_v1beta1_StructuredQuery_descriptor.getNestedTypes().get(4);
     internal_static_google_firestore_v1beta1_StructuredQuery_UnaryFilter_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_firestore_v1beta1_StructuredQuery_UnaryFilter_descriptor,
@@ -196,7 +188,7 @@ public final class QueryProto {
               "Op", "Field", "OperandType",
             });
     internal_static_google_firestore_v1beta1_StructuredQuery_Order_descriptor =
-        internal_static_google_firestore_v1beta1_StructuredQuery_descriptor.getNestedTypes().get(6);
+        internal_static_google_firestore_v1beta1_StructuredQuery_descriptor.getNestedTypes().get(5);
     internal_static_google_firestore_v1beta1_StructuredQuery_Order_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_firestore_v1beta1_StructuredQuery_Order_descriptor,
@@ -204,12 +196,20 @@ public final class QueryProto {
               "Field", "Direction",
             });
     internal_static_google_firestore_v1beta1_StructuredQuery_FieldReference_descriptor =
-        internal_static_google_firestore_v1beta1_StructuredQuery_descriptor.getNestedTypes().get(7);
+        internal_static_google_firestore_v1beta1_StructuredQuery_descriptor.getNestedTypes().get(6);
     internal_static_google_firestore_v1beta1_StructuredQuery_FieldReference_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_firestore_v1beta1_StructuredQuery_FieldReference_descriptor,
             new java.lang.String[] {
               "FieldPath",
+            });
+    internal_static_google_firestore_v1beta1_StructuredQuery_Projection_descriptor =
+        internal_static_google_firestore_v1beta1_StructuredQuery_descriptor.getNestedTypes().get(7);
+    internal_static_google_firestore_v1beta1_StructuredQuery_Projection_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_firestore_v1beta1_StructuredQuery_Projection_descriptor,
+            new java.lang.String[] {
+              "Fields",
             });
     internal_static_google_firestore_v1beta1_Cursor_descriptor =
         getDescriptor().getMessageTypes().get(1);
