@@ -24,8 +24,8 @@ import com.google.api.gax.grpc.GrpcStatusCode;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.DeadlineExceededException;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.bigtable.v2.MutateRowsRequest;
-import com.google.bigtable.v2.MutateRowsRequest.Entry;
+import com.google.cloud.bigtable.data.v2.models.BulkMutation;
+import com.google.cloud.bigtable.data.v2.models.Mutation;
 import com.google.cloud.bigtable.data.v2.stub.metrics.StatsTestUtils.FakeStatsRecorder;
 import com.google.cloud.bigtable.data.v2.stub.metrics.StatsTestUtils.FakeTagger;
 import com.google.cloud.bigtable.data.v2.stub.metrics.StatsTestUtils.MetricsRecord;
@@ -55,7 +55,7 @@ public class MeasureMutateRowsCallableTest {
 
   private FakeApiClock clock;
 
-  @Mock private UnaryCallable<MutateRowsRequest, Void> innerCallable;
+  @Mock private UnaryCallable<BulkMutation, Void> innerCallable;
 
   private MeasuredMutateRowsCallable callable;
 
@@ -73,7 +73,7 @@ public class MeasureMutateRowsCallableTest {
   public void testOk() {
     Mockito.when(
             innerCallable.futureCall(
-                Mockito.any(MutateRowsRequest.class), Mockito.any(ApiCallContext.class)))
+                Mockito.any(BulkMutation.class), Mockito.any(ApiCallContext.class)))
         .thenAnswer(
             new Answer<ApiFuture<Void>>() {
               @Override
@@ -84,10 +84,9 @@ public class MeasureMutateRowsCallableTest {
             });
 
     callable.call(
-        MutateRowsRequest.newBuilder()
-            .addEntries(Entry.getDefaultInstance())
-            .addEntries(Entry.getDefaultInstance())
-            .build());
+        BulkMutation.create("tableID")
+            .add("rowKey", Mutation.create())
+            .add("rowKey2", Mutation.create()));
 
     MetricsRecord metricsRecord = statsRecorder.pollRecord();
 
@@ -104,7 +103,7 @@ public class MeasureMutateRowsCallableTest {
   public void testFailure() {
     Mockito.when(
             innerCallable.futureCall(
-                Mockito.any(MutateRowsRequest.class), Mockito.any(ApiCallContext.class)))
+                Mockito.any(BulkMutation.class), Mockito.any(ApiCallContext.class)))
         .thenAnswer(
             new Answer<ApiFuture<Void>>() {
               @Override
@@ -120,10 +119,9 @@ public class MeasureMutateRowsCallableTest {
 
     try {
       callable.call(
-          MutateRowsRequest.newBuilder()
-              .addEntries(Entry.getDefaultInstance())
-              .addEntries(Entry.getDefaultInstance())
-              .build());
+          BulkMutation.create("tableID")
+              .add("rowKey", Mutation.create())
+              .add("rowKey2", Mutation.create()));
     } catch (Throwable e) {
       actualError = e;
     }

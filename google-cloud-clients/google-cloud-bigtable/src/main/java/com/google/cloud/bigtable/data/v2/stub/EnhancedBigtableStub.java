@@ -45,7 +45,7 @@ import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowAdapter;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
 import com.google.cloud.bigtable.data.v2.models.RowMutationEntry;
-import com.google.cloud.bigtable.data.v2.stub.metrics.MeasuredMutateRowsCallableV2;
+import com.google.cloud.bigtable.data.v2.stub.metrics.MeasuredMutateRowsCallable;
 import com.google.cloud.bigtable.data.v2.stub.metrics.MeasuredReadRowsCallable;
 import com.google.cloud.bigtable.data.v2.stub.metrics.MeasuredUnaryCallable;
 import com.google.cloud.bigtable.data.v2.stub.mutaterows.BulkMutateRowsUserFacingCallable;
@@ -369,7 +369,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
             SpanName.of(TRACING_OUTER_CLIENT_NAME, "MutateRows"));
 
     UnaryCallable<BulkMutation, Void> measured =
-        new MeasuredMutateRowsCallableV2(
+        new MeasuredMutateRowsCallable(
             traced,
             TRACING_OUTER_CLIENT_NAME + ".MutateRows",
             tagger,
@@ -385,8 +385,8 @@ public class EnhancedBigtableStub implements AutoCloseable {
    * control.
    *
    * <ul>
-   *   <li>Uses {@link MutateRowsBatchingDescriptor} to spool the {@link RowMutationEntry}
-   *       mutations and send them out as {@link BulkMutation}.
+   *   <li>Uses {@link MutateRowsBatchingDescriptor} to spool the {@link RowMutationEntry} mutations
+   *       and send them out as {@link BulkMutation}.
    *   <li>Uses {@link #bulkMutateRowsCallable()} to perform RPC.
    *   <li>Batching thresholds can be configured from {@link
    *       EnhancedBigtableStubSettings#bulkMutateRowsSettings()}.
