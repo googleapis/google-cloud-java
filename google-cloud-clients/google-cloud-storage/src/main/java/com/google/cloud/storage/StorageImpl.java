@@ -660,19 +660,10 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
                 getOptions().getClock().millisTime() + unit.toMillis(duration),
                 TimeUnit.MILLISECONDS);
 
-    // Only allow specifying HOST_NAME along with VIRTUAL_HOST_NAME if the user did not provide
-    // the virtual hostname, i.e. they used withVirtualHostName() instead of
-    // withVirtualHostName(String). In this case, we can construct the virtual hosted-style URL
-    // using the bucket name and the supplied base hostname.
     checkArgument(
-        Strings.isNullOrEmpty((String) optionMap.get(SignUrlOption.Option.VIRTUAL_HOST_NAME))
-            || optionMap.get(SignUrlOption.Option.HOST_NAME) == null,
-        "Cannot specify HOST_NAME option when also supplying explicit VIRTUAL_HOST_NAME.");
-
-    checkArgument(
-        !(optionMap.get(SignUrlOption.Option.VIRTUAL_HOST_NAME) != null
-            && optionMap.get(SignUrlOption.Option.PATH_STYLE) != null),
-        "Cannot specify both the VIRTUAL_HOST_NAME and PATH_STYLE SignUrlOptions together.");
+        !(optionMap.containsKey(SignUrlOption.Option.VIRTUAL_HOSTED_STYLE)
+            && optionMap.containsKey(SignUrlOption.Option.PATH_STYLE)),
+        "Cannot specify both the VIRTUAL_HOSTED_STYLE and PATH_STYLE SignUrlOptions together.");
 
     String bucketName = slashlessBucketNameFromBlobInfo(blobInfo);
     String escapedBlobName = "";
@@ -687,7 +678,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
     boolean usePathStyle;
     // TODO: If we decide to change the default style used to generate URLs, switch this logic to
     // set usePathStyle to false unless PATH_STYLE was specified.
-    if (optionMap.get(SignUrlOption.Option.VIRTUAL_HOST_NAME) != null) {
+    if (optionMap.containsKey(SignUrlOption.Option.VIRTUAL_HOSTED_STYLE)) {
       usePathStyle = false;
     } else {
       usePathStyle = true;
@@ -696,7 +687,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
     String storageXmlHostName =
         usePathStyle
             ? STORAGE_XML_URI_SCHEME + "://" + getBaseStorageHostName(optionMap)
-            : virtualHostRootUrlFromOpts(optionMap, bucketName);
+            : STORAGE_XML_URI_SCHEME + "://" + bucketName + "." + getBaseStorageHostName(optionMap);
 
     String stPath =
         usePathStyle
@@ -762,7 +753,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
               optionMap.get(SignUrlOption.Option.SIGNATURE_VERSION));
       // If using virtual-hosted style URLs with V2 signing, the path string for a bucket resource
       // must end with a forward slash.
-      if (optionMap.get(SignUrlOption.Option.VIRTUAL_HOST_NAME) != null && isV2) {
+      if (optionMap.containsKey(SignUrlOption.Option.VIRTUAL_HOSTED_STYLE) && isV2) {
         pathBuilder.append(PATH_DELIMITER);
       }
       return pathBuilder.toString();
@@ -824,13 +815,12 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
     // V2 signing requires that the header not include the bucket, but V4 signing requires that
     // the host name used in the URI must match the "host" header.
     boolean setHostHeaderToVirtualHost =
-        optionMap.containsKey(SignUrlOption.Option.VIRTUAL_HOST_NAME) && isV4;
+        optionMap.containsKey(SignUrlOption.Option.VIRTUAL_HOSTED_STYLE) && isV4;
     // Add this host first if needed, allowing it to be overridden in the EXT_HEADERS option below.
     if (setHostHeaderToVirtualHost) {
-      String vhost =
-          virtualHostRootUrlFromOpts(optionMap, slashlessBucketNameFromBlobInfo(blobInfo));
-      vhost = vhost.replaceFirst("http(s)?://", "");
-      extHeaders.put("host", vhost);
+      extHeaders.put(
+          "host",
+          slashlessBucketNameFromBlobInfo(blobInfo) + "." + getBaseStorageHostName(optionMap));
     }
 
     if (optionMap.containsKey(SignUrlOption.Option.EXT_HEADERS)) {
@@ -846,17 +836,6 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
     // The bucket name itself should never contain a forward slash. However, parts already existed
     // in the code to check for this, so we remove the forward slashes to be safe here.
     return CharMatcher.anyOf(PATH_DELIMITER).trimFrom(blobInfo.getBucket());
-  }
-
-  /** Returns the root URL (scheme and hostname) to be used in a virtual hosted-style URL. */
-  private String virtualHostRootUrlFromOpts(
-      Map<SignUrlOption.Option, Object> optionMap, String bucketName) {
-    String vhostOptVal = (String) optionMap.get(SignUrlOption.Option.VIRTUAL_HOST_NAME);
-    if (!Strings.isNullOrEmpty(vhostOptVal)) {
-      return vhostOptVal;
-    }
-
-    return STORAGE_XML_URI_SCHEME + "://" + bucketName + "." + getBaseStorageHostName(optionMap);
   }
 
   /** Returns the hostname used to send requests to Cloud Storage, e.g. "storage.googleapis.com". */

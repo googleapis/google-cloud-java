@@ -1037,7 +1037,7 @@ public interface Storage extends Service<StorageOptions> {
       SIGNATURE_VERSION,
       HOST_NAME,
       PATH_STYLE,
-      VIRTUAL_HOST_NAME
+      VIRTUAL_HOSTED_STYLE
     }
 
     enum SignatureVersion {
@@ -1133,20 +1133,6 @@ public interface Storage extends Service<StorageOptions> {
 
     /**
      * Use a virtual hosted-style hostname, which includes the bucket in the host portion of the URI
-     * rather than the path, e.g. 'https://mybucket.storage.googleapis.com'. This must also include
-     * the scheme component of the URI. Note that this cannot be used alongside {@code
-     * withHostName()}. For V4 signing, this also sets the "host" header in the canonicalized
-     * extension headers to the specified value, minus the "http[s]://", unless that header is
-     * supplied via the {@code withExtHeaders()} method.
-     *
-     * @see <a href="https://cloud.google.com/storage/docs/request-endpoints">Request Endpoints</a>
-     */
-    public static SignUrlOption withVirtualHostName(String virtualHostName) {
-      return new SignUrlOption(Option.VIRTUAL_HOST_NAME, virtualHostName);
-    }
-
-    /**
-     * Use a virtual hosted-style hostname, which includes the bucket in the host portion of the URI
      * rather than the path, e.g. 'https://mybucket.storage.googleapis.com'. The bucket name will be
      * obtained from the resource passed in. Note that this cannot be used alongside {@code
      * withHostName()}. For V4 signing, this also sets the "host" header in the canonicalized
@@ -1155,8 +1141,8 @@ public interface Storage extends Service<StorageOptions> {
      *
      * @see <a href="https://cloud.google.com/storage/docs/request-endpoints">Request Endpoints</a>
      */
-    public static SignUrlOption withVirtualHostName() {
-      return new SignUrlOption(Option.VIRTUAL_HOST_NAME, "");
+    public static SignUrlOption withVirtualHostedStyle() {
+      return new SignUrlOption(Option.VIRTUAL_HOSTED_STYLE, "");
     }
 
     /**
