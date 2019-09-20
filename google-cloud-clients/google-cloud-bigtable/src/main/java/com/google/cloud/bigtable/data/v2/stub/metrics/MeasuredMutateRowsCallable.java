@@ -32,7 +32,7 @@ import java.util.concurrent.TimeUnit;
 import javax.annotation.Nonnull;
 
 /**
- * This callable will instrument MutateRows invocations using Opencensus stats.
+ * This callable will instrument MutateRows invocations using OpenCensus stats.
  *
  * <p>Recorded stats:
  *

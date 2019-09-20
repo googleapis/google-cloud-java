@@ -126,7 +126,7 @@ public final class BigtableDataSettings {
   }
 
   /**
-   * Enables Opencensus metric aggregations.
+   * Enables OpenCensus metric aggregations.
    *
    * <p>This will register Bigtable client relevant {@link io.opencensus.stats.View}s. When coupled
    * with an exporter, it allows users to monitor client behavior.
