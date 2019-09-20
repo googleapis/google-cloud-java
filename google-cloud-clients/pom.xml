@@ -290,10 +290,11 @@
         <artifactId>google-api-services-translate</artifactId>
         <version>v2-rev20170525-1.30.1</version>
       </dependency>
+      <!-- TODO(chingor): should this be included in the google-cloud-core-bom -->
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-core</artifactId>
-        <version>1.90.0</version>
+        <version>1.91.0</version>
         <type>test-jar</type>
       </dependency>
 
