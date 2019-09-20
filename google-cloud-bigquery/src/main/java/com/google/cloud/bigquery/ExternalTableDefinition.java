@@ -16,6 +16,9 @@
 
 package com.google.cloud.bigquery;
 
+import static com.google.common.base.Preconditions.checkArgument;
+import static com.google.common.base.Strings.isNullOrEmpty;
+
 import com.google.api.services.bigquery.model.ExternalDataConfiguration;
 import com.google.api.services.bigquery.model.Table;
 import com.google.auto.value.AutoValue;
@@ -295,6 +298,7 @@ public abstract class ExternalTableDefinition extends TableDefinition {
    *     Source Format</a>
    */
   public static Builder newBuilder(String sourceUri, Schema schema, FormatOptions format) {
+    checkArgument(!isNullOrEmpty(sourceUri), "Provided sourceUri is null or empty");
     return newBuilder(ImmutableList.of(sourceUri), schema, format);
   }
 

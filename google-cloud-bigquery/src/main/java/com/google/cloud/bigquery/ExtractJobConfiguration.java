@@ -16,7 +16,9 @@
 
 package com.google.cloud.bigquery;
 
+import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
+import static com.google.common.base.Strings.isNullOrEmpty;
 
 import com.google.api.services.bigquery.model.JobConfigurationExtract;
 import com.google.common.base.MoreObjects.ToStringHelper;
@@ -265,7 +267,8 @@ public final class ExtractJobConfiguration extends JobConfiguration {
    * URI.
    */
   public static Builder newBuilder(TableId sourceTable, String destinationUri) {
-    return newBuilder(sourceTable, ImmutableList.of(checkNotNull(destinationUri)));
+    checkArgument(!isNullOrEmpty(destinationUri), "Provided destinationUri is null or empty");
+    return newBuilder(sourceTable, ImmutableList.of(destinationUri));
   }
 
   /**
@@ -296,6 +299,7 @@ public final class ExtractJobConfiguration extends JobConfiguration {
    */
   public static ExtractJobConfiguration of(
       TableId sourceTable, String destinationUri, String format) {
+    checkArgument(!isNullOrEmpty(format), "Provided format is null or empty");
     return newBuilder(sourceTable, destinationUri).setFormat(format).build();
   }
 
@@ -305,6 +309,7 @@ public final class ExtractJobConfiguration extends JobConfiguration {
    */
   public static ExtractJobConfiguration of(
       TableId sourceTable, List<String> destinationUris, String format) {
+    checkArgument(!isNullOrEmpty(format), "Provided format is null or empty");
     return newBuilder(sourceTable, destinationUris).setFormat(format).build();
   }
 
