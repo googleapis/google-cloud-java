@@ -27,7 +27,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 import javax.annotation.Nullable;
 
-/** Utilities to help integrating with opencensus. */
+/** Utilities to help integrating with OpenCensus. */
 class Util {
   private static final TagValue OK_STATUS = TagValue.create(StatusCode.Code.OK.toString());
 
