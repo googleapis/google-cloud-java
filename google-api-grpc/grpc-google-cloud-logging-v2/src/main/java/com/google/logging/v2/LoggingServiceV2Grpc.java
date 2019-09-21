@@ -365,9 +365,9 @@ public final class LoggingServiceV2Grpc {
      *
      *
      * <pre>
-     * Lists log entries.  Use this method to retrieve log entries from
-     * Logging.  For ways to export log entries, see
-     * [Exporting Logs](/logging/docs/export).
+     * Lists log entries.  Use this method to retrieve log entries that originated
+     * from a project/folder/organization/billing account.  For ways to export log
+     * entries, see [Exporting Logs](/logging/docs/export).
      * </pre>
      */
     public void listLogEntries(
@@ -514,9 +514,9 @@ public final class LoggingServiceV2Grpc {
      *
      *
      * <pre>
-     * Lists log entries.  Use this method to retrieve log entries from
-     * Logging.  For ways to export log entries, see
-     * [Exporting Logs](/logging/docs/export).
+     * Lists log entries.  Use this method to retrieve log entries that originated
+     * from a project/folder/organization/billing account.  For ways to export log
+     * entries, see [Exporting Logs](/logging/docs/export).
      * </pre>
      */
     public void listLogEntries(
@@ -624,9 +624,9 @@ public final class LoggingServiceV2Grpc {
      *
      *
      * <pre>
-     * Lists log entries.  Use this method to retrieve log entries from
-     * Logging.  For ways to export log entries, see
-     * [Exporting Logs](/logging/docs/export).
+     * Lists log entries.  Use this method to retrieve log entries that originated
+     * from a project/folder/organization/billing account.  For ways to export log
+     * entries, see [Exporting Logs](/logging/docs/export).
      * </pre>
      */
     public com.google.logging.v2.ListLogEntriesResponse listLogEntries(
@@ -729,9 +729,9 @@ public final class LoggingServiceV2Grpc {
      *
      *
      * <pre>
-     * Lists log entries.  Use this method to retrieve log entries from
-     * Logging.  For ways to export log entries, see
-     * [Exporting Logs](/logging/docs/export).
+     * Lists log entries.  Use this method to retrieve log entries that originated
+     * from a project/folder/organization/billing account.  For ways to export log
+     * entries, see [Exporting Logs](/logging/docs/export).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

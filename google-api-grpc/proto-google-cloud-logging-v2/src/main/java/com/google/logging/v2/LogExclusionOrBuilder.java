@@ -58,14 +58,13 @@ public interface LogExclusionOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * An [advanced logs filter](/logging/docs/view/advanced_filters)
+   * Required. An [advanced logs filter](/logging/docs/view/advanced-queries)
    * that matches the log entries to be excluded. By using the
-   * [sample function](/logging/docs/view/advanced_filters#sample),
+   * [sample function](/logging/docs/view/advanced-queries#sample),
    * you can exclude less than 100% of the matching log entries.
-   * For example, the following filter matches 99% of low-severity log
-   * entries from load balancers:
-   * `"resource.type=http_load_balancer severity&lt;ERROR sample(insertId, 0.99)"`
+   * For example, the following query matches 99% of low-severity log
+   * entries from Google Cloud Storage buckets:
+   * `"resource.type=gcs_bucket severity&lt;ERROR sample(insertId, 0.99)"`
    * </pre>
    *
    * <code>string filter = 3;</code>
@@ -75,14 +74,13 @@ public interface LogExclusionOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * An [advanced logs filter](/logging/docs/view/advanced_filters)
+   * Required. An [advanced logs filter](/logging/docs/view/advanced-queries)
    * that matches the log entries to be excluded. By using the
-   * [sample function](/logging/docs/view/advanced_filters#sample),
+   * [sample function](/logging/docs/view/advanced-queries#sample),
    * you can exclude less than 100% of the matching log entries.
-   * For example, the following filter matches 99% of low-severity log
-   * entries from load balancers:
-   * `"resource.type=http_load_balancer severity&lt;ERROR sample(insertId, 0.99)"`
+   * For example, the following query matches 99% of low-severity log
+   * entries from Google Cloud Storage buckets:
+   * `"resource.type=gcs_bucket severity&lt;ERROR sample(insertId, 0.99)"`
    * </pre>
    *
    * <code>string filter = 3;</code>
@@ -94,12 +92,80 @@ public interface LogExclusionOrBuilder
    *
    * <pre>
    * Optional. If set to True, then this exclusion is disabled and it does not
-   * exclude any log entries. You can use
-   * [exclusions.patch](/logging/docs/reference/v2/rest/v2/projects.exclusions/patch)
-   * to change the value of this field.
+   * exclude any log entries. You can [update an
+   * exclusion][google.logging.v2.ConfigServiceV2.UpdateExclusion] to change the
+   * value of this field.
    * </pre>
    *
    * <code>bool disabled = 4;</code>
    */
   boolean getDisabled();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The creation timestamp of the exclusion.
+   * This field may not be present for older exclusions.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 5;</code>
+   */
+  boolean hasCreateTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The creation timestamp of the exclusion.
+   * This field may not be present for older exclusions.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 5;</code>
+   */
+  com.google.protobuf.Timestamp getCreateTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The creation timestamp of the exclusion.
+   * This field may not be present for older exclusions.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 5;</code>
+   */
+  com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The last update timestamp of the exclusion.
+   * This field may not be present for older exclusions.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 6;</code>
+   */
+  boolean hasUpdateTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The last update timestamp of the exclusion.
+   * This field may not be present for older exclusions.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 6;</code>
+   */
+  com.google.protobuf.Timestamp getUpdateTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The last update timestamp of the exclusion.
+   * This field may not be present for older exclusions.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 6;</code>
+   */
+  com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
 }

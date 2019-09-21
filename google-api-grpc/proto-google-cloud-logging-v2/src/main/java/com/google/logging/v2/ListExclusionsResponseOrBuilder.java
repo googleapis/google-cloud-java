@@ -65,7 +65,7 @@ public interface ListExclusionsResponseOrBuilder
    *
    * <pre>
    * If there might be more results than appear in this response, then
-   * `nextPageToken` is included.  To get the next set of results, call the same
+   * `nextPageToken` is included. To get the next set of results, call the same
    * method again using the value of `nextPageToken` as `pageToken`.
    * </pre>
    *
@@ -77,7 +77,7 @@ public interface ListExclusionsResponseOrBuilder
    *
    * <pre>
    * If there might be more results than appear in this response, then
-   * `nextPageToken` is included.  To get the next set of results, call the same
+   * `nextPageToken` is included. To get the next set of results, call the same
    * method again using the value of `nextPageToken` as `pageToken`.
    * </pre>
    *
