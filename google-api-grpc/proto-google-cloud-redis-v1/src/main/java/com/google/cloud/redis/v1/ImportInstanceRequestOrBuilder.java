@@ -17,7 +17,7 @@ public interface ImportInstanceRequestOrBuilder
    * where `location_id` refers to a GCP region.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getName();
   /**
@@ -29,7 +29,7 @@ public interface ImportInstanceRequestOrBuilder
    * where `location_id` refers to a GCP region.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -40,7 +40,9 @@ public interface ImportInstanceRequestOrBuilder
    * Required. Specify data to be imported.
    * </pre>
    *
-   * <code>.google.cloud.redis.v1.InputConfig input_config = 3;</code>
+   * <code>
+   * .google.cloud.redis.v1.InputConfig input_config = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   boolean hasInputConfig();
   /**
@@ -50,7 +52,9 @@ public interface ImportInstanceRequestOrBuilder
    * Required. Specify data to be imported.
    * </pre>
    *
-   * <code>.google.cloud.redis.v1.InputConfig input_config = 3;</code>
+   * <code>
+   * .google.cloud.redis.v1.InputConfig input_config = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.redis.v1.InputConfig getInputConfig();
   /**
@@ -60,7 +64,9 @@ public interface ImportInstanceRequestOrBuilder
    * Required. Specify data to be imported.
    * </pre>
    *
-   * <code>.google.cloud.redis.v1.InputConfig input_config = 3;</code>
+   * <code>
+   * .google.cloud.redis.v1.InputConfig input_config = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.redis.v1.InputConfigOrBuilder getInputConfigOrBuilder();
 }
