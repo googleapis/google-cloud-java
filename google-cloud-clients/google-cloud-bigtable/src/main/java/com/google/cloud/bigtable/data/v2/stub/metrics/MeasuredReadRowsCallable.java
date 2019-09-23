@@ -33,7 +33,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 /**
- * This callable will instrument ReadRows invocations using Opencensus stats.
+ * This callable will instrument ReadRows invocations using OpenCensus stats.
  *
  * <p>Recorded stats:
  *

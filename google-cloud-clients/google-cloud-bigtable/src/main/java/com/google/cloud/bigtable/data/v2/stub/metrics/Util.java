@@ -27,11 +27,11 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 import javax.annotation.Nullable;
 
-/** Utilities to help integrating with opencensus. */
+/** Utilities to help integrating with OpenCensus. */
 class Util {
   private static final TagValue OK_STATUS = TagValue.create(StatusCode.Code.OK.toString());
 
-  /** Convert an exception into a value that can be used as an Opencensus tag value. */
+  /** Convert an exception into a value that can be used as an OpenCensus tag value. */
   static TagValue extractStatus(@Nullable Throwable error) {
     final String statusString;
 
@@ -53,7 +53,7 @@ class Util {
   }
 
   /**
-   * Await the result of the future and convert it into a value that can be used as an Opencensus
+   * Await the result of the future and convert it into a value that can be used as an OpenCensus
    * tag value.
    */
   static TagValue extractStatus(Future<?> future) {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,211 +17,147 @@ package com.google.cloud.bigtable.data.v2.stub.mutaterows;
 
 import static com.google.common.truth.Truth.assertThat;
 
-import com.google.api.gax.batching.PartitionKey;
-import com.google.api.gax.batching.RequestBuilder;
+import com.google.api.core.SettableApiFuture;
+import com.google.api.gax.batching.BatchingRequestBuilder;
 import com.google.api.gax.grpc.GrpcStatusCode;
-import com.google.api.gax.rpc.ApiException;
-import com.google.api.gax.rpc.BatchedFuture;
-import com.google.api.gax.rpc.BatchedRequestIssuer;
 import com.google.api.gax.rpc.DeadlineExceededException;
 import com.google.api.gax.rpc.UnavailableException;
-import com.google.bigtable.v2.MutateRowsRequest;
-import com.google.bigtable.v2.MutateRowsRequest.Entry;
-import com.google.bigtable.v2.MutateRowsRequest.Entry.Builder;
-import com.google.bigtable.v2.Mutation;
-import com.google.bigtable.v2.Mutation.SetCell;
-import com.google.cloud.bigtable.data.v2.internal.NameUtil;
+import com.google.cloud.bigtable.data.v2.internal.RequestContext;
+import com.google.cloud.bigtable.data.v2.models.BulkMutation;
 import com.google.cloud.bigtable.data.v2.models.MutateRowsException;
-import com.google.cloud.bigtable.data.v2.models.MutateRowsException.FailedMutation;
+import com.google.cloud.bigtable.data.v2.models.Mutation;
+import com.google.cloud.bigtable.data.v2.models.RowMutationEntry;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.Lists;
-import com.google.protobuf.ByteString;
 import io.grpc.Status;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
 @RunWith(JUnit4.class)
 public class MutateRowsBatchingDescriptorTest {
-  private static final String PROJECT_ID = "fake-project";
-  private static final String INSTANCE_ID = "fake-instance";
-  private static final String TABLE_ID = "fake-table";
+  private static final String ROW_KEY = "fake-row-key";
+  private static final String FAMILY = "fake-family";
+  private static final String QUALIFIER = "fake-qualifier";
+  private static final String VALUE = "fake-value";
 
-  private MutateRowsBatchingDescriptor descriptor;
-
-  @Before
-  public void setUp() {
-    descriptor = new MutateRowsBatchingDescriptor();
-  }
+  private static final RequestContext requestContext =
+      RequestContext.create("fake-project", "fake-instance", "fake-profile");
 
   @Test
   public void countBytesTest() {
-    MutateRowsRequest request = createRequest(2);
-    long actual = descriptor.countBytes(request);
-    assertThat(actual).isEqualTo(request.getSerializedSize());
-  }
+    RowMutationEntry request = RowMutationEntry.create(ROW_KEY).setCell(FAMILY, QUALIFIER, VALUE);
+    long bytes = request.toProto().getSerializedSize();
 
-  @Test
-  public void countElementsTest() {
-    MutateRowsRequest request = createRequest(2);
-    long actual = descriptor.countElements(request);
-    assertThat(actual).isEqualTo(2);
-  }
-
-  @Test
-  public void partitionKeyTest() {
-    String myTableName = NameUtil.formatTableName("my-project", "my-instance", "my-table");
-
-    MutateRowsRequest request = createRequest(2).toBuilder().setTableName(myTableName).build();
-
-    PartitionKey actual = descriptor.getBatchPartitionKey(request);
-    assertThat(actual).isEqualTo(new PartitionKey(myTableName));
+    MutateRowsBatchingDescriptor underTest = new MutateRowsBatchingDescriptor();
+    assertThat(underTest.countBytes(request)).isEqualTo(bytes);
   }
 
   @Test
   public void requestBuilderTest() {
-    RequestBuilder<MutateRowsRequest> builder = descriptor.getRequestBuilder();
+    MutateRowsBatchingDescriptor underTest = new MutateRowsBatchingDescriptor();
+    long timestamp = 10_000L;
+    BulkMutation bulkMutation = BulkMutation.create("fake-table");
+    BatchingRequestBuilder<RowMutationEntry, BulkMutation> requestBuilder =
+        underTest.newRequestBuilder(bulkMutation);
+    requestBuilder.add(
+        RowMutationEntry.create(ROW_KEY).setCell(FAMILY, QUALIFIER, timestamp, VALUE));
+    requestBuilder.add(
+        RowMutationEntry.create("rowKey-2").setCell("family-2", "q", 20_000L, "some-value"));
 
-    MutateRowsRequest expected = createRequest(5);
-
-    for (Entry entry : expected.getEntriesList()) {
-      MutateRowsRequest singleReq =
-          MutateRowsRequest.newBuilder()
-              .setTableName(NameUtil.formatTableName(PROJECT_ID, INSTANCE_ID, TABLE_ID))
-              .addEntries(entry)
-              .build();
-
-      builder.appendRequest(singleReq);
-    }
-
-    MutateRowsRequest actual = builder.build();
-    assertThat(actual).isEqualTo(expected);
+    BulkMutation actualBulkMutation = requestBuilder.build();
+    assertThat(actualBulkMutation.toProto(requestContext))
+        .isEqualTo(
+            BulkMutation.create("fake-table")
+                .add(ROW_KEY, Mutation.create().setCell(FAMILY, QUALIFIER, timestamp, VALUE))
+                .add("rowKey-2", Mutation.create().setCell("family-2", "q", 20_000L, "some-value"))
+                .toProto(requestContext));
   }
 
   @Test
-  public void splitRpcExceptionTest() throws Exception {
-    BatchedFuture<Void> result1 = BatchedFuture.create();
-    BatchedRequestIssuer<Void> issuer1 = new BatchedRequestIssuer<>(result1, 1);
-    BatchedFuture<Void> result2 = BatchedFuture.create();
-    BatchedRequestIssuer<Void> issuer2 = new BatchedRequestIssuer<>(result2, 1);
+  public void splitResponseTest() {
+    List<SettableApiFuture<Void>> batchResponse =
+        ImmutableList.of(SettableApiFuture.<Void>create(), SettableApiFuture.<Void>create());
+    assertThat(batchResponse.get(0).isDone()).isFalse();
+    assertThat(batchResponse.get(1).isDone()).isFalse();
 
-    ImmutableList<BatchedRequestIssuer<Void>> issuers =
-        new ImmutableList.Builder<BatchedRequestIssuer<Void>>().add(issuer1).add(issuer2).build();
-
-    ApiException serverError =
-        new ApiException(null, GrpcStatusCode.of(Status.Code.UNAVAILABLE), true);
-    descriptor.splitException(serverError, issuers);
-    issuer1.sendResult();
-    issuer2.sendResult();
-
-    Throwable error1 = null;
-    try {
-      result1.get(1, TimeUnit.SECONDS);
-    } catch (ExecutionException t) {
-      error1 = t.getCause();
-    }
-    assertThat(error1).isSameInstanceAs(serverError);
-
-    Throwable error2 = null;
-    try {
-      result2.get(1, TimeUnit.SECONDS);
-    } catch (ExecutionException t) {
-      error2 = t.getCause();
-    }
-    assertThat(error2).isSameInstanceAs(serverError);
+    MutateRowsBatchingDescriptor underTest = new MutateRowsBatchingDescriptor();
+    underTest.splitResponse(null, batchResponse);
+    assertThat(batchResponse.get(0).isDone()).isTrue();
+    assertThat(batchResponse.get(1).isDone()).isTrue();
   }
 
   @Test
-  public void splitEntryErrorTest() throws Exception {
-    BatchedFuture<Void> result1 = BatchedFuture.create();
-    BatchedRequestIssuer<Void> issuer1 = new BatchedRequestIssuer<>(result1, 1);
-    BatchedFuture<Void> result2 = BatchedFuture.create();
-    BatchedRequestIssuer<Void> issuer2 = new BatchedRequestIssuer<>(result2, 1);
+  public void splitExceptionTest() {
+    MutateRowsBatchingDescriptor underTest = new MutateRowsBatchingDescriptor();
+    final RuntimeException expectedEx = new RuntimeException("Caused while batching");
+    List<SettableApiFuture<Void>> batchResponses =
+        ImmutableList.of(SettableApiFuture.<Void>create(), SettableApiFuture.<Void>create());
 
-    List<BatchedRequestIssuer<Void>> issuers =
-        new ImmutableList.Builder<BatchedRequestIssuer<Void>>().add(issuer1).add(issuer2).build();
+    underTest.splitException(expectedEx, batchResponses);
 
+    for (SettableApiFuture fu : batchResponses) {
+      try {
+        fu.get();
+      } catch (ExecutionException | InterruptedException ex) {
+        assertThat(ex).hasCauseThat().isSameInstanceAs(expectedEx);
+      }
+    }
+  }
+
+  @Test
+  public void splitExceptionWithFailedMutationsTest() {
+    MutateRowsBatchingDescriptor underTest = new MutateRowsBatchingDescriptor();
+    Throwable actualThrowable = null;
+    SettableApiFuture<Void> resultFuture1 = SettableApiFuture.create();
+    SettableApiFuture<Void> resultFuture2 = SettableApiFuture.create();
+    SettableApiFuture<Void> resultFuture3 = SettableApiFuture.create();
+
+    // Threw an exception at 1st and 3rd entry
     MutateRowsException serverError =
         new MutateRowsException(
             null,
-            Lists.newArrayList(
-                FailedMutation.create(
+            ImmutableList.of(
+                MutateRowsException.FailedMutation.create(
                     0,
                     new UnavailableException(
                         null, GrpcStatusCode.of(Status.Code.UNAVAILABLE), true)),
-                FailedMutation.create(
-                    1,
+                MutateRowsException.FailedMutation.create(
+                    2,
                     new DeadlineExceededException(
                         null, GrpcStatusCode.of(Status.Code.DEADLINE_EXCEEDED), true))),
             true);
-
-    descriptor.splitException(serverError, issuers);
-    issuer1.sendResult();
-    issuer2.sendResult();
-
-    Throwable actualError1 = null;
+    underTest.splitException(
+        serverError, ImmutableList.of(resultFuture1, resultFuture2, resultFuture3));
 
     try {
-      result1.get(1, TimeUnit.SECONDS);
-    } catch (ExecutionException e) {
-      actualError1 = e.getCause();
+      resultFuture1.get();
+    } catch (ExecutionException | InterruptedException e) {
+      actualThrowable = e;
     }
-    assertThat(actualError1).isEqualTo(serverError.getFailedMutations().get(0).getError());
+    assertThat(actualThrowable)
+        .hasCauseThat()
+        .isEqualTo(serverError.getFailedMutations().get(0).getError());
 
-    Throwable actualError2 = null;
-
+    // As there is no exception for 2nd entry so it should not throw any exception
+    actualThrowable = null;
     try {
-      result2.get(1, TimeUnit.SECONDS);
-    } catch (ExecutionException e) {
-      actualError2 = e.getCause();
+      resultFuture2.get();
+    } catch (ExecutionException | InterruptedException e) {
+      actualThrowable = e;
     }
-    assertThat(actualError2).isEqualTo(serverError.getFailedMutations().get(1).getError());
-  }
+    assertThat(actualThrowable).isNull();
 
-  @Test
-  public void splitResponseOkTest()
-      throws InterruptedException, ExecutionException, TimeoutException {
-    BatchedFuture<Void> result1 = BatchedFuture.create();
-    BatchedRequestIssuer<Void> issuer1 = new BatchedRequestIssuer<>(result1, 1);
-    BatchedFuture<Void> result2 = BatchedFuture.create();
-    BatchedRequestIssuer<Void> issuer2 = new BatchedRequestIssuer<>(result2, 1);
-
-    List<BatchedRequestIssuer<Void>> issuers =
-        new ImmutableList.Builder<BatchedRequestIssuer<Void>>().add(issuer1).add(issuer2).build();
-
-    descriptor.splitResponse(null, issuers);
-    issuer1.sendResult();
-    issuer2.sendResult();
-
-    assertThat(result1.get(1, TimeUnit.SECONDS)).isEqualTo(null);
-
-    assertThat(result2.get(1, TimeUnit.SECONDS)).isEqualTo(null);
-  }
-
-  private static MutateRowsRequest createRequest(int count) {
-    MutateRowsRequest.Builder request =
-        MutateRowsRequest.newBuilder()
-            .setTableName(NameUtil.formatTableName(PROJECT_ID, INSTANCE_ID, TABLE_ID));
-
-    for (int i = 0; i < count; i++) {
-      Builder entry =
-          Entry.newBuilder()
-              .addMutations(
-                  Mutation.newBuilder()
-                      .setSetCell(
-                          SetCell.newBuilder()
-                              .setFamilyName("family")
-                              .setColumnQualifier(ByteString.copyFromUtf8("col" + i))
-                              .setTimestampMicros(1000)
-                              .setValue(ByteString.copyFromUtf8("value" + i))));
-      request.addEntries(entry);
+    actualThrowable = null;
+    try {
+      resultFuture3.get();
+    } catch (ExecutionException | InterruptedException e) {
+      actualThrowable = e;
     }
-
-    return request.build();
+    // The third response should has the last found failed mutation error.
+    assertThat(actualThrowable)
+        .hasCauseThat()
+        .isEqualTo(serverError.getFailedMutations().get(1).getError());
   }
 }

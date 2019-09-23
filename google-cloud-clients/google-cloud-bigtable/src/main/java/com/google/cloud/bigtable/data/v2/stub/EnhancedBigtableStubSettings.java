@@ -35,7 +35,7 @@ import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.ReadModifyWriteRow;
 import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
-import com.google.cloud.bigtable.data.v2.stub.mutaterows.MutateRowsBatchingDescriptorV2;
+import com.google.cloud.bigtable.data.v2.stub.mutaterows.MutateRowsBatchingDescriptor;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -453,7 +453,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
       copyRetrySettings(baseDefaults.mutateRowSettings(), mutateRowSettings);
 
       bulkMutateRowsSettings =
-          BigtableBatchingCallSettings.newBuilder(new MutateRowsBatchingDescriptorV2())
+          BigtableBatchingCallSettings.newBuilder(new MutateRowsBatchingDescriptor())
               .setRetryableCodes(IDEMPOTENT_RETRY_CODES)
               .setRetrySettings(MUTATE_ROWS_RETRY_SETTINGS)
               .setBatchingSettings(
