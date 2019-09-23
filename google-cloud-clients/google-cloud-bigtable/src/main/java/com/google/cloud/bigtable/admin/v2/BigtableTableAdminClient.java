@@ -25,8 +25,8 @@ import com.google.bigtable.admin.v2.DeleteTableRequest;
 import com.google.bigtable.admin.v2.DropRowRangeRequest;
 import com.google.bigtable.admin.v2.GetTableRequest;
 import com.google.bigtable.admin.v2.ListTablesRequest;
-import com.google.cloud.Policy.DefaultMarshaller;
 import com.google.cloud.Policy;
+import com.google.cloud.Policy.DefaultMarshaller;
 import com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListTablesPage;
 import com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListTablesPagedResponse;
 import com.google.cloud.bigtable.admin.v2.internal.NameUtil;
@@ -991,8 +991,8 @@ public final class BigtableTableAdminClient implements AutoCloseable {
   }
 
   /**
-   * Tests whether the caller has the given permissions for the specified table. Returns a subset
-   * of the specified permissions that the caller has.
+   * Tests whether the caller has the given permissions for the specified table. Returns a subset of
+   * the specified permissions that the caller has.
    *
    * <p>Sample code:
    *
@@ -1010,8 +1010,7 @@ public final class BigtableTableAdminClient implements AutoCloseable {
    */
   @SuppressWarnings({"WeakerAccess"})
   public List<String> testIamPermission(String tableId, String... permissions) {
-    return ApiExceptions.callAndTranslateApiException(
-        testIamPermissionAsync(tableId, permissions));
+    return ApiExceptions.callAndTranslateApiException(testIamPermissionAsync(tableId, permissions));
   }
 
   /**
