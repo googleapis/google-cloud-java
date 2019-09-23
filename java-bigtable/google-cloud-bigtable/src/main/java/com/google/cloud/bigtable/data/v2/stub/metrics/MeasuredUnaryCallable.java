@@ -31,7 +31,7 @@ import java.util.concurrent.TimeUnit;
 import javax.annotation.Nonnull;
 
 /**
- * This callable will instrument callable invocations using Opencensus stats.
+ * This callable will instrument callable invocations using OpenCensus stats.
  *
  * <p>Recorded stats:
  *

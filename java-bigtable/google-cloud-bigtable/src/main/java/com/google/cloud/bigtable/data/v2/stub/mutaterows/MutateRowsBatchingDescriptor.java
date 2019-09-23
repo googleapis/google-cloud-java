@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,125 +16,98 @@
 package com.google.cloud.bigtable.data.v2.stub.mutaterows;
 
 import com.google.api.core.InternalApi;
-import com.google.api.gax.batching.PartitionKey;
-import com.google.api.gax.batching.RequestBuilder;
-import com.google.api.gax.rpc.ApiException;
-import com.google.api.gax.rpc.BatchedRequestIssuer;
-import com.google.api.gax.rpc.BatchingDescriptor;
-import com.google.bigtable.v2.MutateRowsRequest;
+import com.google.api.core.SettableApiFuture;
+import com.google.api.gax.batching.BatchingDescriptor;
+import com.google.api.gax.batching.BatchingRequestBuilder;
+import com.google.cloud.bigtable.data.v2.models.BulkMutation;
 import com.google.cloud.bigtable.data.v2.models.MutateRowsException;
 import com.google.cloud.bigtable.data.v2.models.MutateRowsException.FailedMutation;
-import com.google.common.base.Function;
+import com.google.cloud.bigtable.data.v2.models.RowMutationEntry;
 import com.google.common.collect.Maps;
-import java.util.Collection;
 import java.util.List;
 import java.util.Map;
-import javax.annotation.Nullable;
 
 /**
- * A custom implementation of a {@link BatchingDescriptor} to split individual results in a {@link
- * MutateRowsException}. Each individual result will be matched with its issuer.
+ * A custom implementation of a {@link BatchingDescriptor} to split batching response into
+ * individual row response and in a {@link MutateRowsException}.
  *
  * <p>This class is considered an internal implementation detail and not meant to be used by
  * applications directly.
  */
-@InternalApi
-public class MutateRowsBatchingDescriptor implements BatchingDescriptor<MutateRowsRequest, Void> {
-  /** Return the target table name. This will be used to combine batcheable requests */
-  @Override
-  public PartitionKey getBatchPartitionKey(MutateRowsRequest request) {
-    return new PartitionKey(request.getTableName());
-  }
+@InternalApi("For internal use only")
+public class MutateRowsBatchingDescriptor
+    implements BatchingDescriptor<RowMutationEntry, Void, BulkMutation, Void> {
 
-  /** {@inheritDoc} */
   @Override
-  public RequestBuilder<MutateRowsRequest> getRequestBuilder() {
-    return new MyRequestBuilder();
+  public BatchingRequestBuilder<RowMutationEntry, BulkMutation> newRequestBuilder(
+      BulkMutation prototype) {
+    return new RequestBuilder(prototype);
   }
 
   @Override
-  public void splitResponse(
-      Void batchResponse, Collection<? extends BatchedRequestIssuer<Void>> batch) {
-
-    for (BatchedRequestIssuer<Void> issuer : batch) {
-      issuer.setResponse(null);
+  public void splitResponse(Void response, List<SettableApiFuture<Void>> batch) {
+    for (SettableApiFuture<Void> batchResponse : batch) {
+      batchResponse.set(null);
     }
   }
 
+  /**
+   * Marks the entry future with received {@link Throwable}.
+   *
+   * <p>In case throwable is {@link MutateRowsException}, then it only sets throwable for the
+   * entries whose index is mentioned {@link MutateRowsException#getFailedMutations()}.
+   */
   @Override
-  public void splitException(
-      Throwable throwable, Collection<? extends BatchedRequestIssuer<Void>> batch) {
-
+  public void splitException(Throwable throwable, List<SettableApiFuture<Void>> batch) {
     if (!(throwable instanceof MutateRowsException)) {
-      for (BatchedRequestIssuer<Void> issuer : batch) {
-        issuer.setException(throwable);
+      for (SettableApiFuture<Void> future : batch) {
+        future.setException(throwable);
       }
       return;
     }
 
     List<FailedMutation> failedMutations = ((MutateRowsException) throwable).getFailedMutations();
+    Map<Integer, Throwable> entryErrors = Maps.newHashMap();
 
-    Map<Integer, FailedMutation> errorsByIndex =
-        Maps.uniqueIndex(
-            failedMutations,
-            new Function<FailedMutation, Integer>() {
-              @Nullable
-              @Override
-              public Integer apply(@Nullable FailedMutation input) {
-                return input.getIndex();
-              }
-            });
+    for (FailedMutation failure : failedMutations) {
+      entryErrors.put(failure.getIndex(), failure.getError());
+    }
 
     int i = 0;
-    for (BatchedRequestIssuer<Void> issuer : batch) {
-      // NOTE: the gax batching api doesn't allow for a single issuer to get different exceptions
-      // for different entries. However this does not affect this client because BulkMutationBatcher
-      // only allows a single mutation per call. So just use the last error per entry.
-      ApiException lastError = null;
-
-      for (int j = 0; j < issuer.getMessageCount(); j++) {
-        FailedMutation failure = errorsByIndex.get(i++);
-        if (failure != null) {
-          lastError = failure.getError();
-        }
-      }
-
-      if (lastError == null) {
-        issuer.setResponse(null);
+    for (SettableApiFuture<Void> entryResultFuture : batch) {
+      Throwable entryError = entryErrors.get(i++);
+      if (entryError == null) {
+        entryResultFuture.set(null);
       } else {
-        issuer.setException(lastError);
+        entryResultFuture.setException(entryError);
       }
     }
   }
 
-  /** {@inheritDoc} */
   @Override
-  public long countElements(MutateRowsRequest request) {
-    return request.getEntriesCount();
+  public long countBytes(RowMutationEntry entry) {
+    return entry.toProto().getSerializedSize();
   }
 
-  /** {@inheritDoc} */
-  @Override
-  public long countBytes(MutateRowsRequest request) {
-    return request.getSerializedSize();
-  }
+  /**
+   * A {@link BatchingRequestBuilder} that will spool mutations and send them out as a {@link
+   * BulkMutation}.
+   */
+  static class RequestBuilder implements BatchingRequestBuilder<RowMutationEntry, BulkMutation> {
+    private BulkMutation bulkMutation;
 
-  /** A {@link com.google.api.gax.batching.RequestBuilder} that can aggregate MutateRowsRequest */
-  static class MyRequestBuilder implements RequestBuilder<MutateRowsRequest> {
-    private MutateRowsRequest.Builder builder;
-
-    @Override
-    public void appendRequest(MutateRowsRequest request) {
-      if (builder == null) {
-        builder = request.toBuilder();
-      } else {
-        builder.addAllEntries(request.getEntriesList());
-      }
+    RequestBuilder(BulkMutation prototype) {
+      this.bulkMutation = prototype.clone();
     }
 
     @Override
-    public MutateRowsRequest build() {
-      return builder.build();
+    public void add(RowMutationEntry entry) {
+      bulkMutation.add(entry);
+    }
+
+    @Override
+    public BulkMutation build() {
+      return bulkMutation;
     }
   }
 }

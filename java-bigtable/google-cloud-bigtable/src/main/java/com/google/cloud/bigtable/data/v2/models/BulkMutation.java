@@ -31,8 +31,7 @@ import javax.annotation.Nonnull;
  * Represents a list of mutations for multiple rows. Each mutation contains multiple changes that
  * will be atomically applied to each row. However, ordering between rows is not guaranteed.
  *
- * <p>This class is meant for manual batching, while {@link BulkMutationBatcher} is meant for
- * automatic batching with flow control.
+ * <p>This class is meant for manual batching.
  */
 public final class BulkMutation implements Serializable, Cloneable {
   private static final long serialVersionUID = 3522061250439399088L;

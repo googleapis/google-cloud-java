@@ -126,7 +126,7 @@ public final class BigtableDataSettings {
   }
 
   /**
-   * Enables Opencensus metric aggregations.
+   * Enables OpenCensus metric aggregations.
    *
    * <p>This will register Bigtable client relevant {@link io.opencensus.stats.View}s. When coupled
    * with an exporter, it allows users to monitor client behavior.
@@ -159,7 +159,7 @@ public final class BigtableDataSettings {
    *   BigtableDataSettings.enableOpenCensusStats();
    * }</pre>
    */
-  @BetaApi("Opencensus stats integration is currently unstable and may change in the future")
+  @BetaApi("OpenCensus stats integration is currently unstable and may change in the future")
   public static void enableOpenCensusStats() {
     com.google.cloud.bigtable.data.v2.stub.metrics.RpcViews.registerBigtableClientViews();
     // TODO(igorbernstein): Enable grpc views once we upgrade to grpc-java 1.24.0

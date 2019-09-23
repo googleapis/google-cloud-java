@@ -17,6 +17,7 @@ package com.google.cloud.bigtable.data.v2.stub;
 
 import static com.google.common.truth.Truth.assertWithMessage;
 
+import com.google.api.gax.batching.Batcher;
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.testing.InProcessServer;
 import com.google.api.gax.grpc.testing.LocalChannelProvider;
@@ -25,14 +26,12 @@ import com.google.bigtable.v2.BigtableGrpc;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
 import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
 import com.google.cloud.bigtable.data.v2.internal.NameUtil;
-import com.google.cloud.bigtable.data.v2.models.BulkMutationBatcher;
-import com.google.cloud.bigtable.data.v2.models.BulkMutationBatcher.BulkMutationFailure;
 import com.google.cloud.bigtable.data.v2.models.ConditionalRowMutation;
 import com.google.cloud.bigtable.data.v2.models.Mutation;
 import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.ReadModifyWriteRow;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
-import java.util.concurrent.TimeoutException;
+import com.google.cloud.bigtable.data.v2.models.RowMutationEntry;
 import java.util.regex.Pattern;
 import org.junit.After;
 import org.junit.Before;
@@ -116,10 +115,10 @@ public class ResourceHeaderTest {
   }
 
   @Test
-  public void mutateRowsTest() throws TimeoutException, InterruptedException {
-    try (BulkMutationBatcher batcher = client.newBulkMutationBatcher()) {
-      batcher.add(RowMutation.create(TABLE_ID, "fake-key").deleteRow());
-    } catch (BulkMutationFailure e) {
+  public void mutateRowsTest() throws InterruptedException {
+    try (Batcher<RowMutationEntry, Void> batcher = client.newBulkMutationBatcher(TABLE_ID)) {
+      batcher.add(RowMutationEntry.create("fake-key").deleteRow());
+    } catch (RuntimeException e) {
       // Ignore the errors: none of the methods are actually implemented
     }
     verifyHeaderSent();

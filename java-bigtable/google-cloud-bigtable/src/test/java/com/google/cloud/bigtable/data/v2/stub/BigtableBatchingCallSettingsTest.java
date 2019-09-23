@@ -22,7 +22,7 @@ import com.google.api.gax.batching.FlowControlSettings;
 import com.google.api.gax.batching.FlowController;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.StatusCode;
-import com.google.cloud.bigtable.data.v2.stub.mutaterows.MutateRowsBatchingDescriptorV2;
+import com.google.cloud.bigtable.data.v2.stub.mutaterows.MutateRowsBatchingDescriptor;
 import com.google.common.collect.ImmutableSet;
 import java.util.Set;
 import org.junit.Test;
@@ -49,7 +49,7 @@ public class BigtableBatchingCallSettingsTest {
   @Test
   public void testEmptyBuilder() {
     BigtableBatchingCallSettings.Builder builder =
-        BigtableBatchingCallSettings.newBuilder(new MutateRowsBatchingDescriptorV2());
+        BigtableBatchingCallSettings.newBuilder(new MutateRowsBatchingDescriptor());
     assertThat(builder.getBatchingSettings()).isNull();
     assertThat(builder.getRetryableCodes()).isEmpty();
     assertThat(builder.getRetrySettings()).isNotNull();
@@ -58,7 +58,7 @@ public class BigtableBatchingCallSettingsTest {
   @Test
   public void testBuilder() {
     BigtableBatchingCallSettings.Builder builder =
-        BigtableBatchingCallSettings.newBuilder(new MutateRowsBatchingDescriptorV2());
+        BigtableBatchingCallSettings.newBuilder(new MutateRowsBatchingDescriptor());
 
     Set<StatusCode.Code> retryCodes = ImmutableSet.of(StatusCode.Code.UNAVAILABLE);
     RetrySettings retrySettings = RetrySettings.newBuilder().build();
@@ -76,7 +76,7 @@ public class BigtableBatchingCallSettingsTest {
   @Test
   public void testBuilderFromSettings() {
     BigtableBatchingCallSettings.Builder builder =
-        BigtableBatchingCallSettings.newBuilder(new MutateRowsBatchingDescriptorV2());
+        BigtableBatchingCallSettings.newBuilder(new MutateRowsBatchingDescriptor());
     RetrySettings retrySettings =
         RetrySettings.newBuilder().setTotalTimeout(Duration.ofMinutes(1)).build();
     builder
@@ -104,7 +104,7 @@ public class BigtableBatchingCallSettingsTest {
     assertThat(actualEx).isInstanceOf(NullPointerException.class);
     actualEx = null;
     try {
-      BigtableBatchingCallSettings.newBuilder(new MutateRowsBatchingDescriptorV2()).build();
+      BigtableBatchingCallSettings.newBuilder(new MutateRowsBatchingDescriptor()).build();
     } catch (Exception ex) {
       actualEx = ex;
     }

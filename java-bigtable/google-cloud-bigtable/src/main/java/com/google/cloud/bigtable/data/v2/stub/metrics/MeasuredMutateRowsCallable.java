@@ -20,7 +20,7 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.bigtable.v2.MutateRowsRequest;
+import com.google.cloud.bigtable.data.v2.models.BulkMutation;
 import com.google.common.base.Preconditions;
 import com.google.common.util.concurrent.MoreExecutors;
 import io.opencensus.stats.StatsRecorder;
@@ -32,14 +32,22 @@ import java.util.concurrent.TimeUnit;
 import javax.annotation.Nonnull;
 
 /**
- * For internal use only.
+ * This callable will instrument MutateRows invocations using OpenCensus stats.
  *
- * @deprecated Please use {@link MeasuredMutateRowsCallableV2}.
+ * <p>Recorded stats:
+ *
+ * <dl>
+ *   <dt>{@link RpcMeasureConstants#BIGTABLE_OP_LATENCY}
+ *   <dd>the total time it took the operation across all of its retry attempts to complete.
+ *   <dt>{@link RpcMeasureConstants#BIGTABLE_MUTATE_ROWS_ENTRIES_PER_BATCH}
+ *   <dd>the number of mutations sent per batch operation. Retry attempts might have few entries.
+ * </dl>
+ *
+ * <p>For internal use only.
  */
 @InternalApi
-@Deprecated
-public class MeasuredMutateRowsCallable extends UnaryCallable<MutateRowsRequest, Void> {
-  private final UnaryCallable<MutateRowsRequest, Void> innerCallable;
+public class MeasuredMutateRowsCallable extends UnaryCallable<BulkMutation, Void> {
+  private final UnaryCallable<BulkMutation, Void> innerCallable;
   private final TagValue methodName;
   private final TagContext parentCtx;
   private final Tagger tagger;
@@ -48,7 +56,7 @@ public class MeasuredMutateRowsCallable extends UnaryCallable<MutateRowsRequest,
 
   @InternalApi
   public MeasuredMutateRowsCallable(
-      @Nonnull UnaryCallable<MutateRowsRequest, Void> innerCallable,
+      @Nonnull UnaryCallable<BulkMutation, Void> innerCallable,
       @Nonnull String methodName,
       @Nonnull Tagger tagger,
       @Nonnull StatsRecorder stats,
@@ -62,12 +70,12 @@ public class MeasuredMutateRowsCallable extends UnaryCallable<MutateRowsRequest,
   }
 
   @Override
-  public ApiFuture<Void> futureCall(MutateRowsRequest request, ApiCallContext context) {
+  public ApiFuture<Void> futureCall(BulkMutation request, ApiCallContext context) {
     long operationStartTime = clock.nanoTime();
 
     final ApiFuture<Void> future = innerCallable.futureCall(request, context);
     future.addListener(
-        new StatsRecordingRunnable(future, operationStartTime, request.getEntriesCount()),
+        new StatsRecordingRunnable(future, operationStartTime, request.getEntryCount()),
         MoreExecutors.directExecutor());
     return future;
   }

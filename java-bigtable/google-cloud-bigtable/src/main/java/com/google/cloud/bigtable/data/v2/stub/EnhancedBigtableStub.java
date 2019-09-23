@@ -22,14 +22,12 @@ import com.google.api.gax.retrying.ExponentialRetryAlgorithm;
 import com.google.api.gax.retrying.RetryAlgorithm;
 import com.google.api.gax.retrying.RetryingExecutorWithContext;
 import com.google.api.gax.retrying.ScheduledRetryingExecutor;
-import com.google.api.gax.rpc.BatchingCallSettings;
 import com.google.api.gax.rpc.Callables;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ServerStreamingCallSettings;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.gax.tracing.SpanName;
-import com.google.api.gax.tracing.TracedBatchingCallable;
 import com.google.api.gax.tracing.TracedServerStreamingCallable;
 import com.google.api.gax.tracing.TracedUnaryCallable;
 import com.google.bigtable.v2.MutateRowsRequest;
@@ -48,14 +46,11 @@ import com.google.cloud.bigtable.data.v2.models.RowAdapter;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
 import com.google.cloud.bigtable.data.v2.models.RowMutationEntry;
 import com.google.cloud.bigtable.data.v2.stub.metrics.MeasuredMutateRowsCallable;
-import com.google.cloud.bigtable.data.v2.stub.metrics.MeasuredMutateRowsCallableV2;
 import com.google.cloud.bigtable.data.v2.stub.metrics.MeasuredReadRowsCallable;
 import com.google.cloud.bigtable.data.v2.stub.metrics.MeasuredUnaryCallable;
 import com.google.cloud.bigtable.data.v2.stub.mutaterows.BulkMutateRowsUserFacingCallable;
 import com.google.cloud.bigtable.data.v2.stub.mutaterows.MutateRowsBatchingDescriptor;
-import com.google.cloud.bigtable.data.v2.stub.mutaterows.MutateRowsBatchingDescriptorV2;
 import com.google.cloud.bigtable.data.v2.stub.mutaterows.MutateRowsRetryingCallable;
-import com.google.cloud.bigtable.data.v2.stub.mutaterows.MutateRowsUserFacingCallable;
 import com.google.cloud.bigtable.data.v2.stub.readrows.FilterMarkerRowsCallable;
 import com.google.cloud.bigtable.data.v2.stub.readrows.ReadRowsResumptionStrategy;
 import com.google.cloud.bigtable.data.v2.stub.readrows.ReadRowsRetryCompletedCallable;
@@ -103,7 +98,6 @@ public class EnhancedBigtableStub implements AutoCloseable {
   private final UnaryCallable<String, List<KeyOffset>> sampleRowKeysCallable;
   private final UnaryCallable<RowMutation, Void> mutateRowCallable;
   private final UnaryCallable<BulkMutation, Void> bulkMutateRowsCallable;
-  private final UnaryCallable<RowMutation, Void> bulkMutateRowsBatchingCallable;
   private final UnaryCallable<ConditionalRowMutation, Boolean> checkAndMutateRowCallable;
   private final UnaryCallable<ReadModifyWriteRow, Row> readModifyWriteRowCallable;
 
@@ -196,7 +190,6 @@ public class EnhancedBigtableStub implements AutoCloseable {
     sampleRowKeysCallable = createSampleRowKeysCallable();
     mutateRowCallable = createMutateRowCallable();
     bulkMutateRowsCallable = createBulkMutateRowsCallable();
-    bulkMutateRowsBatchingCallable = createBulkMutateRowsBatchingCallable();
     checkAndMutateRowCallable = createCheckAndMutateRowCallable();
     readModifyWriteRowCallable = createReadModifyWriteRowCallable();
   }
@@ -376,7 +369,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
             SpanName.of(TRACING_OUTER_CLIENT_NAME, "MutateRows"));
 
     UnaryCallable<BulkMutation, Void> measured =
-        new MeasuredMutateRowsCallableV2(
+        new MeasuredMutateRowsCallable(
             traced,
             TRACING_OUTER_CLIENT_NAME + ".MutateRows",
             tagger,
@@ -386,49 +379,14 @@ public class EnhancedBigtableStub implements AutoCloseable {
     return measured.withDefaultCallContext(clientContext.getDefaultCallContext());
   }
 
-  /** @deprecated Please use {@link #newMutateRowsBatcher(String)} */
-  @Deprecated
-  private UnaryCallable<RowMutation, Void> createBulkMutateRowsBatchingCallable() {
-    UnaryCallable<MutateRowsRequest, Void> baseCallable = createMutateRowsBaseCallable();
-
-    BatchingCallSettings.Builder<MutateRowsRequest, Void> batchingCallSettings =
-        BatchingCallSettings.newBuilder(new MutateRowsBatchingDescriptor())
-            .setBatchingSettings(settings.bulkMutateRowsSettings().getBatchingSettings());
-
-    // This is a special case, the tracing starts after the batching, so we can't use
-    // createUserFacingUnaryCallable
-    TracedBatchingCallable<MutateRowsRequest, Void> traced =
-        new TracedBatchingCallable<>(
-            baseCallable,
-            clientContext.getTracerFactory(),
-            SpanName.of(TRACING_OUTER_CLIENT_NAME, "BulkMutateRows"),
-            batchingCallSettings.getBatchingDescriptor());
-
-    UnaryCallable<MutateRowsRequest, Void> measured =
-        new MeasuredMutateRowsCallable(
-            traced,
-            TRACING_OUTER_CLIENT_NAME + ".MutateRows",
-            tagger,
-            statsRecorder,
-            clientContext.getClock());
-
-    UnaryCallable<MutateRowsRequest, Void> batching =
-        Callables.batching(measured, batchingCallSettings.build(), clientContext);
-
-    MutateRowsUserFacingCallable userFacing =
-        new MutateRowsUserFacingCallable(batching, requestContext);
-
-    return userFacing.withDefaultCallContext(clientContext.getDefaultCallContext());
-  }
-
   /**
    * Creates a {@link com.google.api.gax.batching.BatcherImpl} to handle {@link
    * MutateRowsRequest.Entry} mutations. This is meant to be used for automatic batching with flow
    * control.
    *
    * <ul>
-   *   <li>Uses {@link MutateRowsBatchingDescriptorV2} to spool the {@link RowMutationEntry}
-   *       mutations and send them out as {@link BulkMutation}.
+   *   <li>Uses {@link MutateRowsBatchingDescriptor} to spool the {@link RowMutationEntry} mutations
+   *       and send them out as {@link BulkMutation}.
    *   <li>Uses {@link #bulkMutateRowsCallable()} to perform RPC.
    *   <li>Batching thresholds can be configured from {@link
    *       EnhancedBigtableStubSettings#bulkMutateRowsSettings()}.
@@ -438,7 +396,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
    *       are no more entries or there are no more retry attempts left.
    *   <li>Wrap batch failures in a {@link
    *       com.google.cloud.bigtable.data.v2.models.MutateRowsException}.
-   *   <li>Split the responses using {@link MutateRowsBatchingDescriptorV2}.
+   *   <li>Split the responses using {@link MutateRowsBatchingDescriptor}.
    * </ul>
    */
   public Batcher<RowMutationEntry, Void> newMutateRowsBatcher(@Nonnull String tableId) {
@@ -555,12 +513,6 @@ public class EnhancedBigtableStub implements AutoCloseable {
    */
   public UnaryCallable<BulkMutation, Void> bulkMutateRowsCallable() {
     return bulkMutateRowsCallable;
-  }
-
-  /** @deprecated Please use {@link #newMutateRowsBatcher(String)} API. */
-  @Deprecated
-  public UnaryCallable<RowMutation, Void> bulkMutateRowsBatchingCallable() {
-    return bulkMutateRowsBatchingCallable;
   }
 
   /**
