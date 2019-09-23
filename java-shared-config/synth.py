@@ -23,5 +23,6 @@ templates = common_templates.java_library()
 s.copy(templates, excludes=[
   ".gitignore",
   "README.md",
+  ".github/release-please.yml",
 ])
 
