@@ -812,15 +812,15 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
     boolean isV4 =
         SignUrlOption.SignatureVersion.V4.equals(
             optionMap.get(SignUrlOption.Option.SIGNATURE_VERSION));
-    // V2 signing requires that the header not include the bucket, but V4 signing requires that
-    // the host name used in the URI must match the "host" header.
-    boolean setHostHeaderToVirtualHost =
-        optionMap.containsKey(SignUrlOption.Option.VIRTUAL_HOSTED_STYLE) && isV4;
-    // Add this host first if needed, allowing it to be overridden in the EXT_HEADERS option below.
-    if (setHostHeaderToVirtualHost) {
-      extHeaders.put(
-          "host",
-          slashlessBucketNameFromBlobInfo(blobInfo) + "." + getBaseStorageHostName(optionMap));
+    if (isV4) { // We don't sign the host header for V2 signed URLs; only do this for V4.
+      // Add the host here first, allowing it to be overridden in the EXT_HEADERS option below.
+      if (optionMap.containsKey(SignUrlOption.Option.VIRTUAL_HOSTED_STYLE)) {
+        extHeaders.put(
+            "host",
+            slashlessBucketNameFromBlobInfo(blobInfo) + "." + getBaseStorageHostName(optionMap));
+      } else if (optionMap.containsKey(SignUrlOption.Option.HOST_NAME)) {
+        extHeaders.put("host", getBaseStorageHostName(optionMap));
+      }
     }
 
     if (optionMap.containsKey(SignUrlOption.Option.EXT_HEADERS)) {
