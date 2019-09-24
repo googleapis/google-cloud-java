@@ -149,8 +149,9 @@ public class SpannerClientTest {
     mockSpanner.addResponse(expectedResponse);
 
     DatabaseName database = DatabaseName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]");
+    int sessionCount = 185691686;
 
-    BatchCreateSessionsResponse actualResponse = client.batchCreateSessions(database);
+    BatchCreateSessionsResponse actualResponse = client.batchCreateSessions(database, sessionCount);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockSpanner.getRequests();
@@ -158,6 +159,7 @@ public class SpannerClientTest {
     BatchCreateSessionsRequest actualRequest = (BatchCreateSessionsRequest) actualRequests.get(0);
 
     Assert.assertEquals(database, DatabaseName.parse(actualRequest.getDatabase()));
+    Assert.assertEquals(sessionCount, actualRequest.getSessionCount());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -172,8 +174,9 @@ public class SpannerClientTest {
 
     try {
       DatabaseName database = DatabaseName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]");
+      int sessionCount = 185691686;
 
-      client.batchCreateSessions(database);
+      client.batchCreateSessions(database, sessionCount);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
