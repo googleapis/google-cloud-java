@@ -108,6 +108,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
         BigtableStubSettings.newBuilder()
             .setTransportChannelProvider(settings.getTransportChannelProvider())
             .setEndpoint(settings.getEndpoint())
+            .setExecutorProvider(settings.getExecutorProvider())
             .setCredentialsProvider(settings.getCredentialsProvider())
             .setHeaderProvider(settings.getHeaderProvider())
             .setStreamWatchdogProvider(settings.getStreamWatchdogProvider())
