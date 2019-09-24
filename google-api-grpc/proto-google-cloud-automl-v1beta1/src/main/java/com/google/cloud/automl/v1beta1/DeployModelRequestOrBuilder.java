@@ -51,6 +51,45 @@ public interface DeployModelRequestOrBuilder
    *
    *
    * <pre>
+   * Model deployment metadata specific to Image Classification.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1beta1.ImageClassificationModelDeploymentMetadata image_classification_model_deployment_metadata = 4;
+   * </code>
+   */
+  boolean hasImageClassificationModelDeploymentMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Model deployment metadata specific to Image Classification.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1beta1.ImageClassificationModelDeploymentMetadata image_classification_model_deployment_metadata = 4;
+   * </code>
+   */
+  com.google.cloud.automl.v1beta1.ImageClassificationModelDeploymentMetadata
+      getImageClassificationModelDeploymentMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Model deployment metadata specific to Image Classification.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1beta1.ImageClassificationModelDeploymentMetadata image_classification_model_deployment_metadata = 4;
+   * </code>
+   */
+  com.google.cloud.automl.v1beta1.ImageClassificationModelDeploymentMetadataOrBuilder
+      getImageClassificationModelDeploymentMetadataOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Resource name of the model to deploy.
    * </pre>
    *

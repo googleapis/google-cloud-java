@@ -258,34 +258,38 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
    *               This is the default value.
    * *   `mobile-low-latency-1` - A model that, in addition to providing
    *               prediction via AutoML API, can also be exported (see
-   *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel]) and used on a mobile or edge device
-   *               with TensorFlow afterwards. Expected to have low latency, but
-   *               may have lower prediction quality than other models.
+   *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel])
+   *               and used on a mobile or edge device with TensorFlow
+   *               afterwards. Expected to have low latency, but may have lower
+   *               prediction quality than other models.
    * *   `mobile-versatile-1` - A model that, in addition to providing
    *               prediction via AutoML API, can also be exported (see
-   *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel]) and used on a mobile or edge device
-   *               with TensorFlow afterwards.
+   *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel])
+   *               and used on a mobile or edge device with TensorFlow
+   *               afterwards.
    * *   `mobile-high-accuracy-1` - A model that, in addition to providing
    *               prediction via AutoML API, can also be exported (see
-   *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel]) and used on a mobile or edge device
-   *               with TensorFlow afterwards.  Expected to have a higher
-   *               latency, but should also have a higher prediction quality
-   *               than other models.
+   *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel])
+   *               and used on a mobile or edge device with TensorFlow
+   *               afterwards.  Expected to have a higher latency, but should
+   *               also have a higher prediction quality than other models.
    * *   `mobile-core-ml-low-latency-1` - A model that, in addition to providing
    *               prediction via AutoML API, can also be exported (see
-   *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel]) and used on a mobile device with Core
-   *               ML afterwards. Expected to have low latency, but may have
-   *               lower prediction quality than other models.
+   *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel])
+   *               and used on a mobile device with Core ML afterwards. Expected
+   *               to have low latency, but may have lower prediction quality
+   *               than other models.
    * *   `mobile-core-ml-versatile-1` - A model that, in addition to providing
    *               prediction via AutoML API, can also be exported (see
-   *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel]) and used on a mobile device with Core
-   *               ML afterwards.
+   *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel])
+   *               and used on a mobile device with Core ML afterwards.
    * *   `mobile-core-ml-high-accuracy-1` - A model that, in addition to
    *               providing prediction via AutoML API, can also be exported
-   *               (see [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel]) and used on a mobile device with
-   *               Core ML afterwards.  Expected to have a higher latency, but
-   *               should also have a higher prediction quality than other
-   *               models.
+   *               (see
+   *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel])
+   *               and used on a mobile device with Core ML afterwards. Expected
+   *               to have a higher latency, but should also have a higher
+   *               prediction quality than other models.
    * </pre>
    *
    * <code>string model_type = 7;</code>
@@ -310,34 +314,38 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
    *               This is the default value.
    * *   `mobile-low-latency-1` - A model that, in addition to providing
    *               prediction via AutoML API, can also be exported (see
-   *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel]) and used on a mobile or edge device
-   *               with TensorFlow afterwards. Expected to have low latency, but
-   *               may have lower prediction quality than other models.
+   *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel])
+   *               and used on a mobile or edge device with TensorFlow
+   *               afterwards. Expected to have low latency, but may have lower
+   *               prediction quality than other models.
    * *   `mobile-versatile-1` - A model that, in addition to providing
    *               prediction via AutoML API, can also be exported (see
-   *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel]) and used on a mobile or edge device
-   *               with TensorFlow afterwards.
+   *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel])
+   *               and used on a mobile or edge device with TensorFlow
+   *               afterwards.
    * *   `mobile-high-accuracy-1` - A model that, in addition to providing
    *               prediction via AutoML API, can also be exported (see
-   *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel]) and used on a mobile or edge device
-   *               with TensorFlow afterwards.  Expected to have a higher
-   *               latency, but should also have a higher prediction quality
-   *               than other models.
+   *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel])
+   *               and used on a mobile or edge device with TensorFlow
+   *               afterwards.  Expected to have a higher latency, but should
+   *               also have a higher prediction quality than other models.
    * *   `mobile-core-ml-low-latency-1` - A model that, in addition to providing
    *               prediction via AutoML API, can also be exported (see
-   *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel]) and used on a mobile device with Core
-   *               ML afterwards. Expected to have low latency, but may have
-   *               lower prediction quality than other models.
+   *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel])
+   *               and used on a mobile device with Core ML afterwards. Expected
+   *               to have low latency, but may have lower prediction quality
+   *               than other models.
    * *   `mobile-core-ml-versatile-1` - A model that, in addition to providing
    *               prediction via AutoML API, can also be exported (see
-   *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel]) and used on a mobile device with Core
-   *               ML afterwards.
+   *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel])
+   *               and used on a mobile device with Core ML afterwards.
    * *   `mobile-core-ml-high-accuracy-1` - A model that, in addition to
    *               providing prediction via AutoML API, can also be exported
-   *               (see [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel]) and used on a mobile device with
-   *               Core ML afterwards.  Expected to have a higher latency, but
-   *               should also have a higher prediction quality than other
-   *               models.
+   *               (see
+   *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel])
+   *               and used on a mobile device with Core ML afterwards. Expected
+   *               to have a higher latency, but should also have a higher
+   *               prediction quality than other models.
    * </pre>
    *
    * <code>string model_type = 7;</code>
@@ -1059,34 +1067,38 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
      *               This is the default value.
      * *   `mobile-low-latency-1` - A model that, in addition to providing
      *               prediction via AutoML API, can also be exported (see
-     *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel]) and used on a mobile or edge device
-     *               with TensorFlow afterwards. Expected to have low latency, but
-     *               may have lower prediction quality than other models.
+     *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel])
+     *               and used on a mobile or edge device with TensorFlow
+     *               afterwards. Expected to have low latency, but may have lower
+     *               prediction quality than other models.
      * *   `mobile-versatile-1` - A model that, in addition to providing
      *               prediction via AutoML API, can also be exported (see
-     *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel]) and used on a mobile or edge device
-     *               with TensorFlow afterwards.
+     *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel])
+     *               and used on a mobile or edge device with TensorFlow
+     *               afterwards.
      * *   `mobile-high-accuracy-1` - A model that, in addition to providing
      *               prediction via AutoML API, can also be exported (see
-     *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel]) and used on a mobile or edge device
-     *               with TensorFlow afterwards.  Expected to have a higher
-     *               latency, but should also have a higher prediction quality
-     *               than other models.
+     *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel])
+     *               and used on a mobile or edge device with TensorFlow
+     *               afterwards.  Expected to have a higher latency, but should
+     *               also have a higher prediction quality than other models.
      * *   `mobile-core-ml-low-latency-1` - A model that, in addition to providing
      *               prediction via AutoML API, can also be exported (see
-     *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel]) and used on a mobile device with Core
-     *               ML afterwards. Expected to have low latency, but may have
-     *               lower prediction quality than other models.
+     *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel])
+     *               and used on a mobile device with Core ML afterwards. Expected
+     *               to have low latency, but may have lower prediction quality
+     *               than other models.
      * *   `mobile-core-ml-versatile-1` - A model that, in addition to providing
      *               prediction via AutoML API, can also be exported (see
-     *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel]) and used on a mobile device with Core
-     *               ML afterwards.
+     *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel])
+     *               and used on a mobile device with Core ML afterwards.
      * *   `mobile-core-ml-high-accuracy-1` - A model that, in addition to
      *               providing prediction via AutoML API, can also be exported
-     *               (see [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel]) and used on a mobile device with
-     *               Core ML afterwards.  Expected to have a higher latency, but
-     *               should also have a higher prediction quality than other
-     *               models.
+     *               (see
+     *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel])
+     *               and used on a mobile device with Core ML afterwards. Expected
+     *               to have a higher latency, but should also have a higher
+     *               prediction quality than other models.
      * </pre>
      *
      * <code>string model_type = 7;</code>
@@ -1111,34 +1123,38 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
      *               This is the default value.
      * *   `mobile-low-latency-1` - A model that, in addition to providing
      *               prediction via AutoML API, can also be exported (see
-     *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel]) and used on a mobile or edge device
-     *               with TensorFlow afterwards. Expected to have low latency, but
-     *               may have lower prediction quality than other models.
+     *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel])
+     *               and used on a mobile or edge device with TensorFlow
+     *               afterwards. Expected to have low latency, but may have lower
+     *               prediction quality than other models.
      * *   `mobile-versatile-1` - A model that, in addition to providing
      *               prediction via AutoML API, can also be exported (see
-     *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel]) and used on a mobile or edge device
-     *               with TensorFlow afterwards.
+     *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel])
+     *               and used on a mobile or edge device with TensorFlow
+     *               afterwards.
      * *   `mobile-high-accuracy-1` - A model that, in addition to providing
      *               prediction via AutoML API, can also be exported (see
-     *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel]) and used on a mobile or edge device
-     *               with TensorFlow afterwards.  Expected to have a higher
-     *               latency, but should also have a higher prediction quality
-     *               than other models.
+     *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel])
+     *               and used on a mobile or edge device with TensorFlow
+     *               afterwards.  Expected to have a higher latency, but should
+     *               also have a higher prediction quality than other models.
      * *   `mobile-core-ml-low-latency-1` - A model that, in addition to providing
      *               prediction via AutoML API, can also be exported (see
-     *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel]) and used on a mobile device with Core
-     *               ML afterwards. Expected to have low latency, but may have
-     *               lower prediction quality than other models.
+     *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel])
+     *               and used on a mobile device with Core ML afterwards. Expected
+     *               to have low latency, but may have lower prediction quality
+     *               than other models.
      * *   `mobile-core-ml-versatile-1` - A model that, in addition to providing
      *               prediction via AutoML API, can also be exported (see
-     *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel]) and used on a mobile device with Core
-     *               ML afterwards.
+     *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel])
+     *               and used on a mobile device with Core ML afterwards.
      * *   `mobile-core-ml-high-accuracy-1` - A model that, in addition to
      *               providing prediction via AutoML API, can also be exported
-     *               (see [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel]) and used on a mobile device with
-     *               Core ML afterwards.  Expected to have a higher latency, but
-     *               should also have a higher prediction quality than other
-     *               models.
+     *               (see
+     *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel])
+     *               and used on a mobile device with Core ML afterwards. Expected
+     *               to have a higher latency, but should also have a higher
+     *               prediction quality than other models.
      * </pre>
      *
      * <code>string model_type = 7;</code>
@@ -1163,34 +1179,38 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
      *               This is the default value.
      * *   `mobile-low-latency-1` - A model that, in addition to providing
      *               prediction via AutoML API, can also be exported (see
-     *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel]) and used on a mobile or edge device
-     *               with TensorFlow afterwards. Expected to have low latency, but
-     *               may have lower prediction quality than other models.
+     *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel])
+     *               and used on a mobile or edge device with TensorFlow
+     *               afterwards. Expected to have low latency, but may have lower
+     *               prediction quality than other models.
      * *   `mobile-versatile-1` - A model that, in addition to providing
      *               prediction via AutoML API, can also be exported (see
-     *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel]) and used on a mobile or edge device
-     *               with TensorFlow afterwards.
+     *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel])
+     *               and used on a mobile or edge device with TensorFlow
+     *               afterwards.
      * *   `mobile-high-accuracy-1` - A model that, in addition to providing
      *               prediction via AutoML API, can also be exported (see
-     *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel]) and used on a mobile or edge device
-     *               with TensorFlow afterwards.  Expected to have a higher
-     *               latency, but should also have a higher prediction quality
-     *               than other models.
+     *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel])
+     *               and used on a mobile or edge device with TensorFlow
+     *               afterwards.  Expected to have a higher latency, but should
+     *               also have a higher prediction quality than other models.
      * *   `mobile-core-ml-low-latency-1` - A model that, in addition to providing
      *               prediction via AutoML API, can also be exported (see
-     *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel]) and used on a mobile device with Core
-     *               ML afterwards. Expected to have low latency, but may have
-     *               lower prediction quality than other models.
+     *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel])
+     *               and used on a mobile device with Core ML afterwards. Expected
+     *               to have low latency, but may have lower prediction quality
+     *               than other models.
      * *   `mobile-core-ml-versatile-1` - A model that, in addition to providing
      *               prediction via AutoML API, can also be exported (see
-     *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel]) and used on a mobile device with Core
-     *               ML afterwards.
+     *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel])
+     *               and used on a mobile device with Core ML afterwards.
      * *   `mobile-core-ml-high-accuracy-1` - A model that, in addition to
      *               providing prediction via AutoML API, can also be exported
-     *               (see [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel]) and used on a mobile device with
-     *               Core ML afterwards.  Expected to have a higher latency, but
-     *               should also have a higher prediction quality than other
-     *               models.
+     *               (see
+     *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel])
+     *               and used on a mobile device with Core ML afterwards. Expected
+     *               to have a higher latency, but should also have a higher
+     *               prediction quality than other models.
      * </pre>
      *
      * <code>string model_type = 7;</code>
@@ -1213,34 +1233,38 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
      *               This is the default value.
      * *   `mobile-low-latency-1` - A model that, in addition to providing
      *               prediction via AutoML API, can also be exported (see
-     *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel]) and used on a mobile or edge device
-     *               with TensorFlow afterwards. Expected to have low latency, but
-     *               may have lower prediction quality than other models.
+     *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel])
+     *               and used on a mobile or edge device with TensorFlow
+     *               afterwards. Expected to have low latency, but may have lower
+     *               prediction quality than other models.
      * *   `mobile-versatile-1` - A model that, in addition to providing
      *               prediction via AutoML API, can also be exported (see
-     *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel]) and used on a mobile or edge device
-     *               with TensorFlow afterwards.
+     *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel])
+     *               and used on a mobile or edge device with TensorFlow
+     *               afterwards.
      * *   `mobile-high-accuracy-1` - A model that, in addition to providing
      *               prediction via AutoML API, can also be exported (see
-     *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel]) and used on a mobile or edge device
-     *               with TensorFlow afterwards.  Expected to have a higher
-     *               latency, but should also have a higher prediction quality
-     *               than other models.
+     *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel])
+     *               and used on a mobile or edge device with TensorFlow
+     *               afterwards.  Expected to have a higher latency, but should
+     *               also have a higher prediction quality than other models.
      * *   `mobile-core-ml-low-latency-1` - A model that, in addition to providing
      *               prediction via AutoML API, can also be exported (see
-     *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel]) and used on a mobile device with Core
-     *               ML afterwards. Expected to have low latency, but may have
-     *               lower prediction quality than other models.
+     *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel])
+     *               and used on a mobile device with Core ML afterwards. Expected
+     *               to have low latency, but may have lower prediction quality
+     *               than other models.
      * *   `mobile-core-ml-versatile-1` - A model that, in addition to providing
      *               prediction via AutoML API, can also be exported (see
-     *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel]) and used on a mobile device with Core
-     *               ML afterwards.
+     *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel])
+     *               and used on a mobile device with Core ML afterwards.
      * *   `mobile-core-ml-high-accuracy-1` - A model that, in addition to
      *               providing prediction via AutoML API, can also be exported
-     *               (see [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel]) and used on a mobile device with
-     *               Core ML afterwards.  Expected to have a higher latency, but
-     *               should also have a higher prediction quality than other
-     *               models.
+     *               (see
+     *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel])
+     *               and used on a mobile device with Core ML afterwards. Expected
+     *               to have a higher latency, but should also have a higher
+     *               prediction quality than other models.
      * </pre>
      *
      * <code>string model_type = 7;</code>
@@ -1260,34 +1284,38 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
      *               This is the default value.
      * *   `mobile-low-latency-1` - A model that, in addition to providing
      *               prediction via AutoML API, can also be exported (see
-     *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel]) and used on a mobile or edge device
-     *               with TensorFlow afterwards. Expected to have low latency, but
-     *               may have lower prediction quality than other models.
+     *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel])
+     *               and used on a mobile or edge device with TensorFlow
+     *               afterwards. Expected to have low latency, but may have lower
+     *               prediction quality than other models.
      * *   `mobile-versatile-1` - A model that, in addition to providing
      *               prediction via AutoML API, can also be exported (see
-     *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel]) and used on a mobile or edge device
-     *               with TensorFlow afterwards.
+     *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel])
+     *               and used on a mobile or edge device with TensorFlow
+     *               afterwards.
      * *   `mobile-high-accuracy-1` - A model that, in addition to providing
      *               prediction via AutoML API, can also be exported (see
-     *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel]) and used on a mobile or edge device
-     *               with TensorFlow afterwards.  Expected to have a higher
-     *               latency, but should also have a higher prediction quality
-     *               than other models.
+     *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel])
+     *               and used on a mobile or edge device with TensorFlow
+     *               afterwards.  Expected to have a higher latency, but should
+     *               also have a higher prediction quality than other models.
      * *   `mobile-core-ml-low-latency-1` - A model that, in addition to providing
      *               prediction via AutoML API, can also be exported (see
-     *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel]) and used on a mobile device with Core
-     *               ML afterwards. Expected to have low latency, but may have
-     *               lower prediction quality than other models.
+     *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel])
+     *               and used on a mobile device with Core ML afterwards. Expected
+     *               to have low latency, but may have lower prediction quality
+     *               than other models.
      * *   `mobile-core-ml-versatile-1` - A model that, in addition to providing
      *               prediction via AutoML API, can also be exported (see
-     *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel]) and used on a mobile device with Core
-     *               ML afterwards.
+     *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel])
+     *               and used on a mobile device with Core ML afterwards.
      * *   `mobile-core-ml-high-accuracy-1` - A model that, in addition to
      *               providing prediction via AutoML API, can also be exported
-     *               (see [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel]) and used on a mobile device with
-     *               Core ML afterwards.  Expected to have a higher latency, but
-     *               should also have a higher prediction quality than other
-     *               models.
+     *               (see
+     *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel])
+     *               and used on a mobile device with Core ML afterwards. Expected
+     *               to have a higher latency, but should also have a higher
+     *               prediction quality than other models.
      * </pre>
      *
      * <code>string model_type = 7;</code>
