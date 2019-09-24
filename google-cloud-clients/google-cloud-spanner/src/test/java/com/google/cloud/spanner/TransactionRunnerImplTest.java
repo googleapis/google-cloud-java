@@ -20,6 +20,7 @@ import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.fail;
 import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -40,7 +41,9 @@ import com.google.spanner.v1.CommitRequest;
 import com.google.spanner.v1.CommitResponse;
 import com.google.spanner.v1.ExecuteBatchDmlRequest;
 import com.google.spanner.v1.ExecuteBatchDmlResponse;
+import com.google.spanner.v1.ExecuteSqlRequest;
 import com.google.spanner.v1.ResultSet;
+import com.google.spanner.v1.ResultSetMetadata;
 import com.google.spanner.v1.ResultSetStats;
 import com.google.spanner.v1.Transaction;
 import io.grpc.Metadata;
@@ -50,6 +53,7 @@ import io.grpc.protobuf.ProtoUtils;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.Collections;
 import java.util.UUID;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
@@ -85,13 +89,42 @@ public class TransactionRunnerImplTest {
   @Mock private TransactionRunnerImpl.TransactionContextImpl txn;
   private TransactionRunnerImpl transactionRunner;
   private boolean firstRun;
+  private boolean usedInlinedBegin;
 
+  @SuppressWarnings("unchecked")
   @Before
   public void setUp() throws Exception {
     MockitoAnnotations.initMocks(this);
     firstRun = true;
     when(session.newTransaction()).thenReturn(txn);
-    transactionRunner = new TransactionRunnerImpl(session, rpc, 1);
+    when(rpc.executeQuery(Mockito.any(ExecuteSqlRequest.class), Mockito.anyMap()))
+        .thenAnswer(
+            new Answer<ResultSet>() {
+              @Override
+              public ResultSet answer(InvocationOnMock invocation) throws Throwable {
+                ResultSet.Builder builder =
+                    ResultSet.newBuilder()
+                        .setStats(ResultSetStats.newBuilder().setRowCountExact(1L).build());
+                ExecuteSqlRequest request = invocation.getArgumentAt(0, ExecuteSqlRequest.class);
+                if (request.getTransaction().hasBegin()
+                    && request.getTransaction().getBegin().hasReadWrite()) {
+                  builder.setMetadata(
+                      ResultSetMetadata.newBuilder()
+                          .setTransaction(
+                              Transaction.newBuilder().setId(ByteString.copyFromUtf8("test")))
+                          .build());
+                  usedInlinedBegin = true;
+                }
+                return builder.build();
+              }
+            });
+    when(rpc.commit(Mockito.any(CommitRequest.class), Mockito.anyMap()))
+        .thenReturn(
+            CommitResponse.newBuilder()
+                .setCommitTimestamp(
+                    Timestamp.newBuilder().setSeconds(System.currentTimeMillis() * 1000L).build())
+                .build());
+    transactionRunner = new TransactionRunnerImpl(session, rpc, 1, false);
   }
 
   @SuppressWarnings("unchecked")
@@ -259,6 +292,37 @@ public class TransactionRunnerImplTest {
   }
 
   @SuppressWarnings("unchecked")
+  @Test
+  public void inlineBegin() {
+    SpannerImpl spanner = mock(SpannerImpl.class);
+    when(spanner.getRpc()).thenReturn(rpc);
+    SessionImpl session =
+        new SessionImpl(spanner, "test", Collections.EMPTY_MAP) {
+          @Override
+          public void prepareReadWriteTransaction() {
+            // Using a prepared transaction is not allowed when the beginTransaction should be
+            // inlined with the first statement.
+            throw new IllegalStateException();
+          }
+        };
+    // Create a transaction runner that will inline the BeginTransaction call with the first
+    // statement.
+    TransactionRunnerImpl runner = new TransactionRunnerImpl(session, rpc, 10, true);
+    assertThat(usedInlinedBegin).isFalse();
+    runner.run(
+        new TransactionCallable<Void>() {
+          @Override
+          public Void run(TransactionContext transaction) throws Exception {
+            transaction.executeUpdate(Statement.of("UPDATE FOO SET BAR=1 WHERE BAZ=2"));
+            return null;
+          }
+        });
+    verify(rpc, never())
+        .beginTransaction(Mockito.any(BeginTransactionRequest.class), Mockito.anyMap());
+    assertThat(usedInlinedBegin).isTrue();
+  }
+
+  @SuppressWarnings("unchecked")
   private long[] batchDmlException(int status) {
     Preconditions.checkArgument(status != Code.OK_VALUE);
     TransactionContextImpl transaction =
@@ -268,7 +332,7 @@ public class TransactionRunnerImplTest {
     when(session.beginTransaction())
         .thenReturn(ByteString.copyFromUtf8(UUID.randomUUID().toString()));
     when(session.getName()).thenReturn("test");
-    TransactionRunnerImpl runner = new TransactionRunnerImpl(session, rpc, 10);
+    TransactionRunnerImpl runner = new TransactionRunnerImpl(session, rpc, 10, false);
     ExecuteBatchDmlResponse response1 =
         ExecuteBatchDmlResponse.newBuilder()
             .addResultSets(

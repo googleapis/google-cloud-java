@@ -535,11 +535,17 @@ final class SessionPool {
     private final SessionPool sessionPool;
     private PooledSession session;
     private TransactionRunner runner;
+    private final boolean inlineBegin;
 
-    private SessionPoolTransactionRunner(SessionPool sessionPool, PooledSession session) {
+    private SessionPoolTransactionRunner(
+        SessionPool sessionPool, PooledSession session, boolean inlineBegin) {
       this.sessionPool = sessionPool;
       this.session = session;
-      this.runner = session.delegate.readWriteTransaction();
+      this.inlineBegin = inlineBegin;
+      this.runner =
+          inlineBegin
+              ? session.delegate.readWriteTransactionWithInlineBegin()
+              : session.delegate.readWriteTransaction();
     }
 
     @Override
@@ -553,7 +559,10 @@ final class SessionPool {
             break;
           } catch (SessionNotFoundException e) {
             session = sessionPool.replaceReadWriteSession(e, session);
-            runner = session.delegate.readWriteTransaction();
+            runner =
+                inlineBegin
+                    ? session.delegate.readWriteTransactionWithInlineBegin()
+                    : session.delegate.readWriteTransaction();
           }
         }
         session.markUsed();
@@ -763,7 +772,12 @@ final class SessionPool {
 
     @Override
     public TransactionRunner readWriteTransaction() {
-      return new SessionPoolTransactionRunner(SessionPool.this, this);
+      return new SessionPoolTransactionRunner(SessionPool.this, this, false);
+    }
+
+    @Override
+    public TransactionRunner readWriteTransactionWithInlineBegin() {
+      return new SessionPoolTransactionRunner(SessionPool.this, this, true);
     }
 
     @Override

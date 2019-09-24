@@ -830,14 +830,6 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
     }
   }
 
-  private ResultSetMetadata createTransactionMetadata(TransactionSelector transactionSelector) {
-    if (transactionSelector.hasBegin() || transactionSelector.hasSingleUse()) {
-      Transaction transaction = getTemporaryTransactionOrNull(transactionSelector);
-      return ResultSetMetadata.newBuilder().setTransaction(transaction).build();
-    }
-    return ResultSetMetadata.getDefaultInstance();
-  }
-
   private void returnResultSet(
       ResultSet resultSet,
       ByteString transactionId,
@@ -929,7 +921,10 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
             ResultSet.newBuilder()
                 .setStats(
                     ResultSetStats.newBuilder().setRowCountExact(res.getUpdateCount()).build())
-                .setMetadata(createTransactionMetadata(request.getTransaction()))
+                .setMetadata(
+                    ResultSetMetadata.newBuilder()
+                        .setTransaction(Transaction.newBuilder().setId(transactionId).build())
+                        .build())
                 .build());
       }
       builder.setStatus(status);

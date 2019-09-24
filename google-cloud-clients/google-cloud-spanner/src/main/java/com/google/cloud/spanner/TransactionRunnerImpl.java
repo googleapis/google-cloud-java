@@ -35,6 +35,8 @@ import com.google.spanner.v1.ExecuteBatchDmlRequest;
 import com.google.spanner.v1.ExecuteSqlRequest;
 import com.google.spanner.v1.ExecuteSqlRequest.QueryMode;
 import com.google.spanner.v1.RollbackRequest;
+import com.google.spanner.v1.Transaction;
+import com.google.spanner.v1.TransactionOptions;
 import com.google.spanner.v1.TransactionSelector;
 import io.opencensus.common.Scope;
 import io.opencensus.trace.AttributeValue;
@@ -45,6 +47,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Callable;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.locks.ReentrantLock;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.annotation.Nullable;
@@ -67,7 +70,10 @@ class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
     @GuardedBy("lock")
     private long retryDelayInMillis = -1L;
 
-    private ByteString transactionId;
+    // transactionLock guards that only one request can be either beginning, committing or rolling
+    // back the transaction at any time.
+    private final ReentrantLock transactionLock = new ReentrantLock();
+    private volatile ByteString transactionId;
     private Timestamp commitTimestamp;
 
     TransactionContextImpl(
@@ -81,21 +87,7 @@ class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
 
     void ensureTxn() {
       if (transactionId == null || isAborted()) {
-        span.addAnnotation("Creating Transaction");
-        try {
-          transactionId = session.beginTransaction();
-          span.addAnnotation(
-              "Transaction Creation Done",
-              ImmutableMap.of(
-                  "Id", AttributeValue.stringAttributeValue(transactionId.toStringUtf8())));
-          txnLogger.log(
-              Level.FINER,
-              "Started transaction {0}",
-              txnLogger.isLoggable(Level.FINER) ? transactionId.asReadOnlyByteBuffer() : null);
-        } catch (SpannerException e) {
-          span.addAnnotation("Transaction Creation Failed", TraceUtil.getExceptionAnnotations(e));
-          throw e;
-        }
+        createTxn();
       } else {
         span.addAnnotation(
             "Transaction Initialized",
@@ -108,7 +100,38 @@ class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
       }
     }
 
+    private void createTxn() {
+      span.addAnnotation("Creating Transaction");
+      try {
+        transactionId = session.beginTransaction();
+        span.addAnnotation(
+            "Transaction Creation Done",
+            ImmutableMap.of(
+                "Id", AttributeValue.stringAttributeValue(transactionId.toStringUtf8())));
+        txnLogger.log(
+            Level.FINER,
+            "Started transaction {0}",
+            txnLogger.isLoggable(Level.FINER) ? transactionId.asReadOnlyByteBuffer() : null);
+      } catch (SpannerException e) {
+        span.addAnnotation("Transaction Creation Failed", TraceUtil.getExceptionAnnotations(e));
+        throw e;
+      }
+    }
+
     void commit() {
+      try {
+        // Take the transaction lock to prevent any other request to include a BeginTransaction.
+        // Note that we do not unlock unless an error occurs. The unlocking will in that case be
+        // handled by the onError(...) method.
+        transactionLock.lockInterruptibly();
+      } catch (InterruptedException e) {
+        throw SpannerExceptionFactory.propagateInterrupt(e);
+      }
+      // It could be that there is no transaction if the transaction context has been marked as
+      // withInlineBegin, and there has not been any query/update statement that has been executed.
+      if (transactionId == null) {
+        createTxn();
+      }
       span.addAnnotation("Starting Commit");
       CommitRequest.Builder builder =
           CommitRequest.newBuilder().setSession(session.getName()).setTransactionId(transactionId);
@@ -165,35 +188,76 @@ class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
     }
 
     void rollback() {
-      // We're exiting early due to a user exception, but the transaction is still active.
-      // Send a rollback for the transaction to release any locks held.
-      // TODO(user): Make this an async fire-and-forget request.
       try {
-        // Note that we're not retrying this request since we don't particularly care about the
-        // response.  Normally, the next thing that will happen is that we will make a fresh
-        // transaction attempt, which should implicitly abort this one.
-        span.addAnnotation("Starting Rollback");
-        rpc.rollback(
-            RollbackRequest.newBuilder()
-                .setSession(session.getName())
-                .setTransactionId(transactionId)
-                .build(),
-            session.getOptions());
-        span.addAnnotation("Rollback Done");
-      } catch (SpannerException e) {
-        txnLogger.log(Level.FINE, "Exception during rollback", e);
-        span.addAnnotation("Rollback Failed", TraceUtil.getExceptionAnnotations(e));
+        // Take the transaction lock to prevent any other request to include a BeginTransaction.
+        // Note that we do not unlock, as the transaction should never be used after a rollback.
+        transactionLock.lockInterruptibly();
+      } catch (InterruptedException e) {
+        throw SpannerExceptionFactory.propagateInterrupt(e);
+      }
+      if (transactionId != null) {
+        // We're exiting early due to a user exception, but the transaction is still active.
+        // Send a rollback for the transaction to release any locks held.
+        // TODO(user): Make this an async fire-and-forget request.
+        try {
+          // Note that we're not retrying this request since we don't particularly care about the
+          // response.  Normally, the next thing that will happen is that we will make a fresh
+          // transaction attempt, which should implicitly abort this one.
+          span.addAnnotation("Starting Rollback");
+          rpc.rollback(
+              RollbackRequest.newBuilder()
+                  .setSession(session.getName())
+                  .setTransactionId(transactionId)
+                  .build(),
+              session.getOptions());
+          span.addAnnotation("Rollback Done");
+        } catch (SpannerException e) {
+          txnLogger.log(Level.FINE, "Exception during rollback", e);
+          span.addAnnotation("Rollback Failed", TraceUtil.getExceptionAnnotations(e));
+        }
       }
     }
 
     @Nullable
     @Override
     TransactionSelector getTransactionSelector() {
+      if (transactionId == null) {
+        try {
+          // Wait if another request is already beginning, committing or rolling back the
+          // transaction.
+          transactionLock.lockInterruptibly();
+          // Check again if a transactionId is now available. It could be that the thread that was
+          // holding the lock and that had sent a statement with a BeginTransaction request caused
+          // an error and did not return a transaction.
+          if (transactionId == null) {
+            return TransactionSelector.newBuilder()
+                .setBegin(
+                    TransactionOptions.newBuilder()
+                        .setReadWrite(TransactionOptions.ReadWrite.getDefaultInstance()))
+                .build();
+          } else {
+            transactionLock.unlock();
+          }
+        } catch (InterruptedException e) {
+          throw SpannerExceptionFactory.newSpannerExceptionForCancellation(null, e);
+        }
+      }
       return TransactionSelector.newBuilder().setId(transactionId).build();
     }
 
     @Override
+    public void onTransactionMetadata(Transaction transaction) {
+      if (this.transactionId == null && transaction != null && transaction.getId() != null) {
+        this.transactionId = transaction.getId();
+        transactionLock.unlock();
+      }
+    }
+
+    @Override
     public void onError(SpannerException e) {
+      if (transactionLock.isHeldByCurrentThread()) {
+        transactionLock.unlock();
+      }
       if (e.getErrorCode() == ErrorCode.ABORTED) {
         long delay = -1L;
         if (e instanceof AbortedException) {
@@ -240,6 +304,9 @@ class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
           throw new IllegalArgumentException(
               "DML response missing stats possibly due to non-DML statement as input");
         }
+        if (resultSet.getMetadata().hasTransaction()) {
+          onTransactionMetadata(resultSet.getMetadata().getTransaction());
+        }
         // For standard DML, using the exact row count.
         return resultSet.getStats().getRowCountExact();
       } catch (SpannerException e) {
@@ -258,6 +325,9 @@ class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
         long[] results = new long[response.getResultSetsCount()];
         for (int i = 0; i < response.getResultSetsCount(); ++i) {
           results[i] = response.getResultSets(i).getStats().getRowCountExact();
+          if (response.getResultSets(i).getMetadata().hasTransaction()) {
+            onTransactionMetadata(response.getResultSets(i).getMetadata().getTransaction());
+          }
         }
 
         // If one of the DML statements was aborted, we should throw an aborted exception.
@@ -282,6 +352,7 @@ class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
   private boolean blockNestedTxn = true;
   private final SessionImpl session;
   private final Span span;
+  private final boolean inlineBegin;
   private TransactionContextImpl txn;
   private volatile boolean isValid = true;
 
@@ -291,9 +362,11 @@ class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
     return this;
   }
 
-  TransactionRunnerImpl(SessionImpl session, SpannerRpc rpc, int defaultPrefetchChunks) {
+  TransactionRunnerImpl(
+      SessionImpl session, SpannerRpc rpc, int defaultPrefetchChunks, boolean inlineBegin) {
     this.session = session;
     this.span = Tracing.getTracer().getCurrentSpan();
+    this.inlineBegin = inlineBegin;
     this.txn = session.newTransaction();
   }
 
@@ -334,7 +407,11 @@ class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
             span.addAnnotation(
                 "Starting Transaction Attempt",
                 ImmutableMap.of("Attempt", AttributeValue.longAttributeValue(attempt.longValue())));
-            txn.ensureTxn();
+            // Only ensure that there is a transaction if we should not inline the beginTransaction
+            // with the first statement.
+            if (!inlineBegin) {
+              txn.ensureTxn();
+            }
 
             T result;
             boolean shouldRollback = true;

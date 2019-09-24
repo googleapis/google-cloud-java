@@ -1180,7 +1180,7 @@ public class SessionPoolTest extends BaseSessionPoolTest {
         when(closedSession.newTransaction()).thenReturn(closedTransactionContext);
         when(closedSession.beginTransaction()).thenThrow(sessionNotFound);
         TransactionRunnerImpl closedTransactionRunner =
-            new TransactionRunnerImpl(closedSession, rpc, 10);
+            new TransactionRunnerImpl(closedSession, rpc, 10, false);
         when(closedSession.readWriteTransaction()).thenReturn(closedTransactionRunner);
 
         final SessionImpl openSession = mock(SessionImpl.class);
@@ -1190,7 +1190,7 @@ public class SessionPoolTest extends BaseSessionPoolTest {
         when(openSession.newTransaction()).thenReturn(openTransactionContext);
         when(openSession.beginTransaction()).thenReturn(ByteString.copyFromUtf8("open-txn"));
         TransactionRunnerImpl openTransactionRunner =
-            new TransactionRunnerImpl(openSession, mock(SpannerRpc.class), 10);
+            new TransactionRunnerImpl(openSession, mock(SpannerRpc.class), 10, false);
         when(openSession.readWriteTransaction()).thenReturn(openTransactionRunner);
 
         ResultSet openResultSet = mock(ResultSet.class);

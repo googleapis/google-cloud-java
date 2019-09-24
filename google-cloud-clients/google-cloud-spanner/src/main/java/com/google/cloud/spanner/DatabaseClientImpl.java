@@ -28,6 +28,8 @@ import io.opencensus.trace.Tracing;
 
 class DatabaseClientImpl implements DatabaseClient {
   private static final String READ_WRITE_TRANSACTION = "CloudSpanner.ReadWriteTransaction";
+  private static final String READ_WRITE_TRANSACTION_WITH_INLINE_BEGIN =
+      "CloudSpanner.ReadWriteTransactionWithInlineBegin";
   private static final String READ_ONLY_TRANSACTION = "CloudSpanner.ReadOnlyTransaction";
   private static final String PARTITION_DML_TRANSACTION = "CloudSpanner.PartitionDMLTransaction";
   private static final Tracer tracer = Tracing.getTracer();
@@ -168,6 +170,17 @@ class DatabaseClientImpl implements DatabaseClient {
     Span span = tracer.spanBuilder(READ_WRITE_TRANSACTION).startSpan();
     try (Scope s = tracer.withSpan(span)) {
       return getReadWriteSession().readWriteTransaction();
+    } catch (RuntimeException e) {
+      TraceUtil.endSpanWithFailure(span, e);
+      throw e;
+    }
+  }
+
+  @Override
+  public TransactionRunner readWriteTransactionWithInlineBegin() {
+    Span span = tracer.spanBuilder(READ_WRITE_TRANSACTION_WITH_INLINE_BEGIN).startSpan();
+    try (Scope s = tracer.withSpan(span)) {
+      return getReadSession().readWriteTransactionWithInlineBegin();
     } catch (RuntimeException e) {
       TraceUtil.endSpanWithFailure(span, e);
       throw e;
