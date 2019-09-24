@@ -184,10 +184,6 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
         .setMaxInboundMessageSize(MAX_MESSAGE_SIZE);
   }
 
-  /**
-   * This provides thread-safe {@link io.grpc.ManagedChannel channels} for the service. Each channel
-   * perform connection pooling. It automatically creates and destroys connection as they needed.
-   */
   @SuppressWarnings("WeakerAccess")
   public static TransportChannelProvider defaultTransportChannelProvider() {
     return defaultGrpcTransportProviderBuilder().build();

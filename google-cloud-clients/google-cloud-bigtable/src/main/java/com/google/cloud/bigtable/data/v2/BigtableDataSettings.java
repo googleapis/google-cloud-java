@@ -54,6 +54,10 @@ import javax.annotation.Nonnull;
  * BigtableDataSettings settings = builder.build();
  * }</pre>
  *
+ * <p>{@link com.google.api.gax.rpc.TransportChannelProvider} provides thread-safe {@link
+ * io.grpc.ManagedChannel channels} for this service. Each of these channel manage connection
+ * pooling; means it automatically creates and destroys connection as they needed.
+ *
  * <p>For fine grained control of individual RPCs, please refer to {@link
  * EnhancedBigtableStubSettings}, which is exposed as {@link Builder#stubSettings()}.
  */
