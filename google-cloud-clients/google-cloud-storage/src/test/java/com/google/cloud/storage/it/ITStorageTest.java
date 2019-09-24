@@ -2714,4 +2714,38 @@ public class ITStorageTest {
     }
     RemoteStorageHelper.forceDelete(storage, bucketName, 5, TimeUnit.SECONDS);
   }
+
+  @Test
+  public void testBucketLogging() throws ExecutionException, InterruptedException {
+    String logsBucket = RemoteStorageHelper.generateBucketName();
+    String loggingBucket = RemoteStorageHelper.generateBucketName();
+    try {
+      assertNotNull(
+          storage.create(
+              BucketInfo.newBuilder(logsBucket)
+                  .setLocation("us")
+                  .setRetentionPeriod(RETENTION_PERIOD)
+                  .build()));
+      Acl acl = Acl.of(User.ofAllAuthenticatedUsers(), Role.WRITER);
+      assertNotNull(storage.createAcl(logsBucket, acl));
+
+      BucketInfo.Logging logging =
+          BucketInfo.Logging.newBuilder()
+              .setLogBucket(logsBucket)
+              .setLogObjectPrefix("test-logs")
+              .build();
+      Bucket bucket =
+          storage.create(
+              BucketInfo.newBuilder(loggingBucket)
+                  .setLocation("us")
+                  .setRetentionPeriod(RETENTION_PERIOD)
+                  .setLogging(logging)
+                  .build());
+      assertEquals(logsBucket, bucket.getLogging().getLogBucket());
+      assertEquals("test-logs", bucket.getLogging().getLogObjectPrefix());
+    } finally {
+      RemoteStorageHelper.forceDelete(storage, logsBucket, 5, TimeUnit.SECONDS);
+      RemoteStorageHelper.forceDelete(storage, loggingBucket, 5, TimeUnit.SECONDS);
+    }
+  }
 }
