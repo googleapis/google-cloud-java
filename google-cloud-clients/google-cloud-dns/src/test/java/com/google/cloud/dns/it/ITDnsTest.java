@@ -2068,7 +2068,7 @@ public class ITDnsTest {
   }
 
   @Test
-  public void testCaaRecord() {
+  public void testCAARecord() {
     try {
       Zone zone = DNS.create(ZONE1);
       String caa = "0 issue \"ca.example.net\"";
