@@ -51,6 +51,8 @@ public class DatasetInfoTest {
   private static final String SELF_LINK = "http://bigquery/p/d";
   private static final DatasetId DATASET_ID = DatasetId.of("dataset");
   private static final DatasetId DATASET_ID_COMPLETE = DatasetId.of("project", "dataset");
+  private static final EncryptionConfiguration DATASET_ENCRYPTION_CONFIGURATION =
+      EncryptionConfiguration.newBuilder().setKmsKeyName("KMS_KEY_1").build();
   private static final DatasetInfo DATASET_INFO =
       DatasetInfo.newBuilder(DATASET_ID)
           .setAcl(ACCESS_RULES)
@@ -64,6 +66,7 @@ public class DatasetInfoTest {
           .setLocation(LOCATION)
           .setSelfLink(SELF_LINK)
           .setLabels(LABELS)
+          .setDefaultEncryptionConfiguration(DATASET_ENCRYPTION_CONFIGURATION)
           .build();
   private static final DatasetInfo DATASET_INFO_COMPLETE =
       DATASET_INFO
@@ -108,6 +111,8 @@ public class DatasetInfoTest {
     assertEquals(LAST_MODIFIED, DATASET_INFO.getLastModified());
     assertEquals(LOCATION, DATASET_INFO.getLocation());
     assertEquals(SELF_LINK, DATASET_INFO.getSelfLink());
+    assertEquals(
+        DATASET_ENCRYPTION_CONFIGURATION, DATASET_INFO.getDefaultEncryptionConfiguration());
     assertEquals(DATASET_ID_COMPLETE, DATASET_INFO_COMPLETE.getDatasetId());
     assertEquals(ACCESS_RULES_COMPLETE, DATASET_INFO_COMPLETE.getAcl());
     assertEquals(CREATION_TIME, DATASET_INFO_COMPLETE.getCreationTime());
@@ -136,6 +141,7 @@ public class DatasetInfoTest {
     assertNull(datasetInfo.getLastModified());
     assertNull(datasetInfo.getLocation());
     assertNull(datasetInfo.getSelfLink());
+    assertNull(datasetInfo.getDefaultEncryptionConfiguration());
     assertTrue(datasetInfo.getLabels().isEmpty());
 
     datasetInfo = DatasetInfo.of(DATASET_ID);
@@ -150,6 +156,7 @@ public class DatasetInfoTest {
     assertNull(datasetInfo.getLastModified());
     assertNull(datasetInfo.getLocation());
     assertNull(datasetInfo.getSelfLink());
+    assertNull(datasetInfo.getDefaultEncryptionConfiguration());
     assertTrue(datasetInfo.getLabels().isEmpty());
   }
 
@@ -179,5 +186,7 @@ public class DatasetInfoTest {
     assertEquals(expected.getDefaultTableLifetime(), value.getDefaultTableLifetime());
     assertEquals(expected.getLastModified(), value.getLastModified());
     assertEquals(expected.getLabels(), value.getLabels());
+    assertEquals(
+        expected.getDefaultEncryptionConfiguration(), value.getDefaultEncryptionConfiguration());
   }
 }
