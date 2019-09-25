@@ -12,6 +12,7 @@ Java idiomatic client for [Google Cloud Platform][cloud-platform] services.
 
 This library supports the following Google Cloud Platform services with clients at a [GA](#versioning) quality level:
 -  [BigQuery](google-cloud-clients/google-cloud-bigquery) (GA)
+-  [Cloud Bigtable](google-cloud-clients/google-cloud-bigtable) (GA)
 -  [Cloud Datastore](google-cloud-clients/google-cloud-datastore) (GA)
 -  [Cloud Firestore](google-cloud-clients/google-cloud-firestore) (GA)
 -  [Cloud KMS](google-cloud-clients/google-cloud-kms) (GA)
@@ -32,7 +33,6 @@ This library supports the following Google Cloud Platform services with clients 
 -  [BigQuery Data Transfer](google-cloud-clients/google-cloud-bigquerydatatransfer) (Beta)
 -  [Cloud Asset](google-cloud-clients/google-cloud-asset) (Beta)
 -  [Cloud AutoML](google-cloud-clients/google-cloud-automl) (Beta)
--  [Cloud Bigtable](google-cloud-clients/google-cloud-bigtable) (Beta)
 -  [Cloud Container Analysis](google-cloud-clients/google-cloud-containeranalysis) (Beta)
 -  [Cloud Dataproc](google-cloud-clients/google-cloud-dataproc) (Beta)
 -  [Cloud Data Loss Prevention](google-cloud-clients/google-cloud-dlp) (Beta)
