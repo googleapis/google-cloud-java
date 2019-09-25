@@ -7,7 +7,7 @@ package com.google.cloud.translate.v3beta1;
  *
  *
  * <pre>
- * The Google Cloud Storage location for the output content
+ * The Google Cloud Storage location for the output content.
  * </pre>
  *
  * Protobuf type {@code google.cloud.translation.v3beta1.GcsDestination}
@@ -98,11 +98,11 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. There must be no files under 'output_uri_prefix'.
-   * 'output_uri_prefix' must end with "/", otherwise an INVALID_ARGUMENT (400)
-   * error is returned..
+   * 'output_uri_prefix' must end with "/" and start with "gs://", otherwise an
+   * INVALID_ARGUMENT (400) error is returned.
    * </pre>
    *
-   * <code>string output_uri_prefix = 1;</code>
+   * <code>string output_uri_prefix = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getOutputUriPrefix() {
     java.lang.Object ref = outputUriPrefix_;
@@ -120,11 +120,11 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. There must be no files under 'output_uri_prefix'.
-   * 'output_uri_prefix' must end with "/", otherwise an INVALID_ARGUMENT (400)
-   * error is returned..
+   * 'output_uri_prefix' must end with "/" and start with "gs://", otherwise an
+   * INVALID_ARGUMENT (400) error is returned.
    * </pre>
    *
-   * <code>string output_uri_prefix = 1;</code>
+   * <code>string output_uri_prefix = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getOutputUriPrefixBytes() {
     java.lang.Object ref = outputUriPrefix_;
@@ -301,7 +301,7 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The Google Cloud Storage location for the output content
+   * The Google Cloud Storage location for the output content.
    * </pre>
    *
    * Protobuf type {@code google.cloud.translation.v3beta1.GcsDestination}
@@ -462,11 +462,11 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. There must be no files under 'output_uri_prefix'.
-     * 'output_uri_prefix' must end with "/", otherwise an INVALID_ARGUMENT (400)
-     * error is returned..
+     * 'output_uri_prefix' must end with "/" and start with "gs://", otherwise an
+     * INVALID_ARGUMENT (400) error is returned.
      * </pre>
      *
-     * <code>string output_uri_prefix = 1;</code>
+     * <code>string output_uri_prefix = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getOutputUriPrefix() {
       java.lang.Object ref = outputUriPrefix_;
@@ -484,11 +484,11 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. There must be no files under 'output_uri_prefix'.
-     * 'output_uri_prefix' must end with "/", otherwise an INVALID_ARGUMENT (400)
-     * error is returned..
+     * 'output_uri_prefix' must end with "/" and start with "gs://", otherwise an
+     * INVALID_ARGUMENT (400) error is returned.
      * </pre>
      *
-     * <code>string output_uri_prefix = 1;</code>
+     * <code>string output_uri_prefix = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getOutputUriPrefixBytes() {
       java.lang.Object ref = outputUriPrefix_;
@@ -506,11 +506,11 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. There must be no files under 'output_uri_prefix'.
-     * 'output_uri_prefix' must end with "/", otherwise an INVALID_ARGUMENT (400)
-     * error is returned..
+     * 'output_uri_prefix' must end with "/" and start with "gs://", otherwise an
+     * INVALID_ARGUMENT (400) error is returned.
      * </pre>
      *
-     * <code>string output_uri_prefix = 1;</code>
+     * <code>string output_uri_prefix = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setOutputUriPrefix(java.lang.String value) {
       if (value == null) {
@@ -526,11 +526,11 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. There must be no files under 'output_uri_prefix'.
-     * 'output_uri_prefix' must end with "/", otherwise an INVALID_ARGUMENT (400)
-     * error is returned..
+     * 'output_uri_prefix' must end with "/" and start with "gs://", otherwise an
+     * INVALID_ARGUMENT (400) error is returned.
      * </pre>
      *
-     * <code>string output_uri_prefix = 1;</code>
+     * <code>string output_uri_prefix = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearOutputUriPrefix() {
 
@@ -543,11 +543,11 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. There must be no files under 'output_uri_prefix'.
-     * 'output_uri_prefix' must end with "/", otherwise an INVALID_ARGUMENT (400)
-     * error is returned..
+     * 'output_uri_prefix' must end with "/" and start with "gs://", otherwise an
+     * INVALID_ARGUMENT (400) error is returned.
      * </pre>
      *
-     * <code>string output_uri_prefix = 1;</code>
+     * <code>string output_uri_prefix = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setOutputUriPrefixBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

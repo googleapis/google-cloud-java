@@ -121,7 +121,9 @@ public final class ListGlossariesRequest extends com.google.protobuf.GeneratedMe
    * Required. The name of the project from which to list all of the glossaries.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -141,7 +143,9 @@ public final class ListGlossariesRequest extends com.google.protobuf.GeneratedMe
    * Required. The name of the project from which to list all of the glossaries.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -165,7 +169,7 @@ public final class ListGlossariesRequest extends com.google.protobuf.GeneratedMe
    * requested. If unspecified, the server picks an appropriate default.
    * </pre>
    *
-   * <code>int32 page_size = 2;</code>
+   * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public int getPageSize() {
     return pageSize_;
@@ -183,7 +187,7 @@ public final class ListGlossariesRequest extends com.google.protobuf.GeneratedMe
    * The first page is returned if `page_token`is empty or missing.
    * </pre>
    *
-   * <code>string page_token = 3;</code>
+   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public java.lang.String getPageToken() {
     java.lang.Object ref = pageToken_;
@@ -206,7 +210,7 @@ public final class ListGlossariesRequest extends com.google.protobuf.GeneratedMe
    * The first page is returned if `page_token`is empty or missing.
    * </pre>
    *
-   * <code>string page_token = 3;</code>
+   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public com.google.protobuf.ByteString getPageTokenBytes() {
     java.lang.Object ref = pageToken_;
@@ -231,7 +235,7 @@ public final class ListGlossariesRequest extends com.google.protobuf.GeneratedMe
    * If missing, no filtering is performed.
    * </pre>
    *
-   * <code>string filter = 4;</code>
+   * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public java.lang.String getFilter() {
     java.lang.Object ref = filter_;
@@ -253,7 +257,7 @@ public final class ListGlossariesRequest extends com.google.protobuf.GeneratedMe
    * If missing, no filtering is performed.
    * </pre>
    *
-   * <code>string filter = 4;</code>
+   * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public com.google.protobuf.ByteString getFilterBytes() {
     java.lang.Object ref = filter_;
@@ -641,7 +645,9 @@ public final class ListGlossariesRequest extends com.google.protobuf.GeneratedMe
      * Required. The name of the project from which to list all of the glossaries.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -661,7 +667,9 @@ public final class ListGlossariesRequest extends com.google.protobuf.GeneratedMe
      * Required. The name of the project from which to list all of the glossaries.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -681,7 +689,9 @@ public final class ListGlossariesRequest extends com.google.protobuf.GeneratedMe
      * Required. The name of the project from which to list all of the glossaries.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -699,7 +709,9 @@ public final class ListGlossariesRequest extends com.google.protobuf.GeneratedMe
      * Required. The name of the project from which to list all of the glossaries.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder clearParent() {
 
@@ -714,7 +726,9 @@ public final class ListGlossariesRequest extends com.google.protobuf.GeneratedMe
      * Required. The name of the project from which to list all of the glossaries.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -736,7 +750,7 @@ public final class ListGlossariesRequest extends com.google.protobuf.GeneratedMe
      * requested. If unspecified, the server picks an appropriate default.
      * </pre>
      *
-     * <code>int32 page_size = 2;</code>
+     * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public int getPageSize() {
       return pageSize_;
@@ -749,7 +763,7 @@ public final class ListGlossariesRequest extends com.google.protobuf.GeneratedMe
      * requested. If unspecified, the server picks an appropriate default.
      * </pre>
      *
-     * <code>int32 page_size = 2;</code>
+     * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setPageSize(int value) {
 
@@ -765,7 +779,7 @@ public final class ListGlossariesRequest extends com.google.protobuf.GeneratedMe
      * requested. If unspecified, the server picks an appropriate default.
      * </pre>
      *
-     * <code>int32 page_size = 2;</code>
+     * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearPageSize() {
 
@@ -785,7 +799,7 @@ public final class ListGlossariesRequest extends com.google.protobuf.GeneratedMe
      * The first page is returned if `page_token`is empty or missing.
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public java.lang.String getPageToken() {
       java.lang.Object ref = pageToken_;
@@ -808,7 +822,7 @@ public final class ListGlossariesRequest extends com.google.protobuf.GeneratedMe
      * The first page is returned if `page_token`is empty or missing.
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.protobuf.ByteString getPageTokenBytes() {
       java.lang.Object ref = pageToken_;
@@ -831,7 +845,7 @@ public final class ListGlossariesRequest extends com.google.protobuf.GeneratedMe
      * The first page is returned if `page_token`is empty or missing.
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setPageToken(java.lang.String value) {
       if (value == null) {
@@ -852,7 +866,7 @@ public final class ListGlossariesRequest extends com.google.protobuf.GeneratedMe
      * The first page is returned if `page_token`is empty or missing.
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearPageToken() {
 
@@ -870,7 +884,7 @@ public final class ListGlossariesRequest extends com.google.protobuf.GeneratedMe
      * The first page is returned if `page_token`is empty or missing.
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setPageTokenBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -893,7 +907,7 @@ public final class ListGlossariesRequest extends com.google.protobuf.GeneratedMe
      * If missing, no filtering is performed.
      * </pre>
      *
-     * <code>string filter = 4;</code>
+     * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public java.lang.String getFilter() {
       java.lang.Object ref = filter_;
@@ -915,7 +929,7 @@ public final class ListGlossariesRequest extends com.google.protobuf.GeneratedMe
      * If missing, no filtering is performed.
      * </pre>
      *
-     * <code>string filter = 4;</code>
+     * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.protobuf.ByteString getFilterBytes() {
       java.lang.Object ref = filter_;
@@ -937,7 +951,7 @@ public final class ListGlossariesRequest extends com.google.protobuf.GeneratedMe
      * If missing, no filtering is performed.
      * </pre>
      *
-     * <code>string filter = 4;</code>
+     * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setFilter(java.lang.String value) {
       if (value == null) {
@@ -957,7 +971,7 @@ public final class ListGlossariesRequest extends com.google.protobuf.GeneratedMe
      * If missing, no filtering is performed.
      * </pre>
      *
-     * <code>string filter = 4;</code>
+     * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearFilter() {
 
@@ -974,7 +988,7 @@ public final class ListGlossariesRequest extends com.google.protobuf.GeneratedMe
      * If missing, no filtering is performed.
      * </pre>
      *
-     * <code>string filter = 4;</code>
+     * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setFilterBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

@@ -28,10 +28,10 @@
  * <pre>
  * <code>
  * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
- *   String formattedParent = TranslationServiceClient.formatLocationName("[PROJECT]", "[LOCATION]");
+ *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
  *   String model = "";
  *   String mimeType = "";
- *   DetectLanguageResponse response = translationServiceClient.detectLanguage(formattedParent, model, mimeType);
+ *   DetectLanguageResponse response = translationServiceClient.detectLanguage(parent, model, mimeType);
  * }
  * </code>
  * </pre>

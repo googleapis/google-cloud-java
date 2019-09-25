@@ -17,7 +17,7 @@ public interface TranslateTextRequestOrBuilder
    * Use BatchTranslateText for larger text.
    * </pre>
    *
-   * <code>repeated string contents = 1;</code>
+   * <code>repeated string contents = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.util.List<java.lang.String> getContentsList();
   /**
@@ -29,7 +29,7 @@ public interface TranslateTextRequestOrBuilder
    * Use BatchTranslateText for larger text.
    * </pre>
    *
-   * <code>repeated string contents = 1;</code>
+   * <code>repeated string contents = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   int getContentsCount();
   /**
@@ -41,7 +41,7 @@ public interface TranslateTextRequestOrBuilder
    * Use BatchTranslateText for larger text.
    * </pre>
    *
-   * <code>repeated string contents = 1;</code>
+   * <code>repeated string contents = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getContents(int index);
   /**
@@ -53,7 +53,7 @@ public interface TranslateTextRequestOrBuilder
    * Use BatchTranslateText for larger text.
    * </pre>
    *
-   * <code>repeated string contents = 1;</code>
+   * <code>repeated string contents = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getContentsBytes(int index);
 
@@ -65,7 +65,7 @@ public interface TranslateTextRequestOrBuilder
    *  "text/plain". If left blank, the MIME type defaults to "text/html".
    * </pre>
    *
-   * <code>string mime_type = 3;</code>
+   * <code>string mime_type = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getMimeType();
   /**
@@ -76,7 +76,7 @@ public interface TranslateTextRequestOrBuilder
    *  "text/plain". If left blank, the MIME type defaults to "text/html".
    * </pre>
    *
-   * <code>string mime_type = 3;</code>
+   * <code>string mime_type = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.protobuf.ByteString getMimeTypeBytes();
 
@@ -91,7 +91,7 @@ public interface TranslateTextRequestOrBuilder
    * source language within the response.
    * </pre>
    *
-   * <code>string source_language_code = 4;</code>
+   * <code>string source_language_code = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getSourceLanguageCode();
   /**
@@ -105,7 +105,7 @@ public interface TranslateTextRequestOrBuilder
    * source language within the response.
    * </pre>
    *
-   * <code>string source_language_code = 4;</code>
+   * <code>string source_language_code = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.protobuf.ByteString getSourceLanguageCodeBytes();
 
@@ -117,7 +117,7 @@ public interface TranslateTextRequestOrBuilder
    * text, set to one of the language codes listed in Language Support.
    * </pre>
    *
-   * <code>string target_language_code = 5;</code>
+   * <code>string target_language_code = 5 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getTargetLanguageCode();
   /**
@@ -128,7 +128,7 @@ public interface TranslateTextRequestOrBuilder
    * text, set to one of the language codes listed in Language Support.
    * </pre>
    *
-   * <code>string target_language_code = 5;</code>
+   * <code>string target_language_code = 5 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getTargetLanguageCodeBytes();
 
@@ -136,28 +136,42 @@ public interface TranslateTextRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Location to make a regional or global call.
-   * Format: `projects/{project-id}/locations/{location-id}`.
-   * For global calls, use `projects/{project-id}/locations/global`.
+   * Required. Project or location to make a call. Must refer to a caller's
+   * project.
+   * Format: `projects/{project-id}` or
+   * `projects/{project-id}/locations/{location-id}`.
+   * For global calls, use `projects/{project-id}/locations/global` or
+   * `projects/{project-id}`.
+   * Non-global location is required for requests using AutoML models or
+   * custom glossaries.
    * Models and glossaries must be within the same region (have same
    * location-id), otherwise an INVALID_ARGUMENT (400) error is returned.
    * </pre>
    *
-   * <code>string parent = 8;</code>
+   * <code>
+   * string parent = 8 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   java.lang.String getParent();
   /**
    *
    *
    * <pre>
-   * Required. Location to make a regional or global call.
-   * Format: `projects/{project-id}/locations/{location-id}`.
-   * For global calls, use `projects/{project-id}/locations/global`.
+   * Required. Project or location to make a call. Must refer to a caller's
+   * project.
+   * Format: `projects/{project-id}` or
+   * `projects/{project-id}/locations/{location-id}`.
+   * For global calls, use `projects/{project-id}/locations/global` or
+   * `projects/{project-id}`.
+   * Non-global location is required for requests using AutoML models or
+   * custom glossaries.
    * Models and glossaries must be within the same region (have same
    * location-id), otherwise an INVALID_ARGUMENT (400) error is returned.
    * </pre>
    *
-   * <code>string parent = 8;</code>
+   * <code>
+   * string parent = 8 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -178,7 +192,7 @@ public interface TranslateTextRequestOrBuilder
    * If missing, the system decides which google base model to use.
    * </pre>
    *
-   * <code>string model = 6;</code>
+   * <code>string model = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getModel();
   /**
@@ -198,7 +212,7 @@ public interface TranslateTextRequestOrBuilder
    * If missing, the system decides which google base model to use.
    * </pre>
    *
-   * <code>string model = 6;</code>
+   * <code>string model = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.protobuf.ByteString getModelBytes();
 
@@ -211,7 +225,9 @@ public interface TranslateTextRequestOrBuilder
    * an INVALID_ARGUMENT (400) error is returned.
    * </pre>
    *
-   * <code>.google.cloud.translation.v3beta1.TranslateTextGlossaryConfig glossary_config = 7;</code>
+   * <code>
+   * .google.cloud.translation.v3beta1.TranslateTextGlossaryConfig glossary_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   boolean hasGlossaryConfig();
   /**
@@ -223,7 +239,9 @@ public interface TranslateTextRequestOrBuilder
    * an INVALID_ARGUMENT (400) error is returned.
    * </pre>
    *
-   * <code>.google.cloud.translation.v3beta1.TranslateTextGlossaryConfig glossary_config = 7;</code>
+   * <code>
+   * .google.cloud.translation.v3beta1.TranslateTextGlossaryConfig glossary_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.translate.v3beta1.TranslateTextGlossaryConfig getGlossaryConfig();
   /**
@@ -235,8 +253,89 @@ public interface TranslateTextRequestOrBuilder
    * an INVALID_ARGUMENT (400) error is returned.
    * </pre>
    *
-   * <code>.google.cloud.translation.v3beta1.TranslateTextGlossaryConfig glossary_config = 7;</code>
+   * <code>
+   * .google.cloud.translation.v3beta1.TranslateTextGlossaryConfig glossary_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.translate.v3beta1.TranslateTextGlossaryConfigOrBuilder
       getGlossaryConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The labels with user-defined metadata for the request.
+   * Label keys and values can be no longer than 63 characters
+   * (Unicode codepoints), can only contain lowercase letters, numeric
+   * characters, underscores and dashes. International characters are allowed.
+   * Label values are optional. Label keys must start with a letter.
+   * See https://cloud.google.com/translate/docs/labels for more information.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  int getLabelsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The labels with user-defined metadata for the request.
+   * Label keys and values can be no longer than 63 characters
+   * (Unicode codepoints), can only contain lowercase letters, numeric
+   * characters, underscores and dashes. International characters are allowed.
+   * Label values are optional. Label keys must start with a letter.
+   * See https://cloud.google.com/translate/docs/labels for more information.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  boolean containsLabels(java.lang.String key);
+  /** Use {@link #getLabelsMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String> getLabels();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The labels with user-defined metadata for the request.
+   * Label keys and values can be no longer than 63 characters
+   * (Unicode codepoints), can only contain lowercase letters, numeric
+   * characters, underscores and dashes. International characters are allowed.
+   * Label values are optional. Label keys must start with a letter.
+   * See https://cloud.google.com/translate/docs/labels for more information.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The labels with user-defined metadata for the request.
+   * Label keys and values can be no longer than 63 characters
+   * (Unicode codepoints), can only contain lowercase letters, numeric
+   * characters, underscores and dashes. International characters are allowed.
+   * Label values are optional. Label keys must start with a letter.
+   * See https://cloud.google.com/translate/docs/labels for more information.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The labels with user-defined metadata for the request.
+   * Label keys and values can be no longer than 63 characters
+   * (Unicode codepoints), can only contain lowercase letters, numeric
+   * characters, underscores and dashes. International characters are allowed.
+   * Label values are optional. Label keys must start with a letter.
+   * See https://cloud.google.com/translate/docs/labels for more information.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  java.lang.String getLabelsOrThrow(java.lang.String key);
 }

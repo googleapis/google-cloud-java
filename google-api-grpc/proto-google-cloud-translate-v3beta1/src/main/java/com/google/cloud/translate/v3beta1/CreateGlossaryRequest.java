@@ -116,7 +116,9 @@ public final class CreateGlossaryRequest extends com.google.protobuf.GeneratedMe
    * Required. The project name.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -136,7 +138,9 @@ public final class CreateGlossaryRequest extends com.google.protobuf.GeneratedMe
    * Required. The project name.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -159,7 +163,9 @@ public final class CreateGlossaryRequest extends com.google.protobuf.GeneratedMe
    * Required. The glossary to create.
    * </pre>
    *
-   * <code>.google.cloud.translation.v3beta1.Glossary glossary = 2;</code>
+   * <code>
+   * .google.cloud.translation.v3beta1.Glossary glossary = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public boolean hasGlossary() {
     return glossary_ != null;
@@ -171,7 +177,9 @@ public final class CreateGlossaryRequest extends com.google.protobuf.GeneratedMe
    * Required. The glossary to create.
    * </pre>
    *
-   * <code>.google.cloud.translation.v3beta1.Glossary glossary = 2;</code>
+   * <code>
+   * .google.cloud.translation.v3beta1.Glossary glossary = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.translate.v3beta1.Glossary getGlossary() {
     return glossary_ == null
@@ -185,7 +193,9 @@ public final class CreateGlossaryRequest extends com.google.protobuf.GeneratedMe
    * Required. The glossary to create.
    * </pre>
    *
-   * <code>.google.cloud.translation.v3beta1.Glossary glossary = 2;</code>
+   * <code>
+   * .google.cloud.translation.v3beta1.Glossary glossary = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.translate.v3beta1.GlossaryOrBuilder getGlossaryOrBuilder() {
     return getGlossary();
@@ -546,7 +556,9 @@ public final class CreateGlossaryRequest extends com.google.protobuf.GeneratedMe
      * Required. The project name.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -566,7 +578,9 @@ public final class CreateGlossaryRequest extends com.google.protobuf.GeneratedMe
      * Required. The project name.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -586,7 +600,9 @@ public final class CreateGlossaryRequest extends com.google.protobuf.GeneratedMe
      * Required. The project name.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -604,7 +620,9 @@ public final class CreateGlossaryRequest extends com.google.protobuf.GeneratedMe
      * Required. The project name.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder clearParent() {
 
@@ -619,7 +637,9 @@ public final class CreateGlossaryRequest extends com.google.protobuf.GeneratedMe
      * Required. The project name.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -645,7 +665,9 @@ public final class CreateGlossaryRequest extends com.google.protobuf.GeneratedMe
      * Required. The glossary to create.
      * </pre>
      *
-     * <code>.google.cloud.translation.v3beta1.Glossary glossary = 2;</code>
+     * <code>
+     * .google.cloud.translation.v3beta1.Glossary glossary = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public boolean hasGlossary() {
       return glossaryBuilder_ != null || glossary_ != null;
@@ -657,7 +679,9 @@ public final class CreateGlossaryRequest extends com.google.protobuf.GeneratedMe
      * Required. The glossary to create.
      * </pre>
      *
-     * <code>.google.cloud.translation.v3beta1.Glossary glossary = 2;</code>
+     * <code>
+     * .google.cloud.translation.v3beta1.Glossary glossary = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.translate.v3beta1.Glossary getGlossary() {
       if (glossaryBuilder_ == null) {
@@ -675,7 +699,9 @@ public final class CreateGlossaryRequest extends com.google.protobuf.GeneratedMe
      * Required. The glossary to create.
      * </pre>
      *
-     * <code>.google.cloud.translation.v3beta1.Glossary glossary = 2;</code>
+     * <code>
+     * .google.cloud.translation.v3beta1.Glossary glossary = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setGlossary(com.google.cloud.translate.v3beta1.Glossary value) {
       if (glossaryBuilder_ == null) {
@@ -697,7 +723,9 @@ public final class CreateGlossaryRequest extends com.google.protobuf.GeneratedMe
      * Required. The glossary to create.
      * </pre>
      *
-     * <code>.google.cloud.translation.v3beta1.Glossary glossary = 2;</code>
+     * <code>
+     * .google.cloud.translation.v3beta1.Glossary glossary = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setGlossary(
         com.google.cloud.translate.v3beta1.Glossary.Builder builderForValue) {
@@ -717,7 +745,9 @@ public final class CreateGlossaryRequest extends com.google.protobuf.GeneratedMe
      * Required. The glossary to create.
      * </pre>
      *
-     * <code>.google.cloud.translation.v3beta1.Glossary glossary = 2;</code>
+     * <code>
+     * .google.cloud.translation.v3beta1.Glossary glossary = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeGlossary(com.google.cloud.translate.v3beta1.Glossary value) {
       if (glossaryBuilder_ == null) {
@@ -743,7 +773,9 @@ public final class CreateGlossaryRequest extends com.google.protobuf.GeneratedMe
      * Required. The glossary to create.
      * </pre>
      *
-     * <code>.google.cloud.translation.v3beta1.Glossary glossary = 2;</code>
+     * <code>
+     * .google.cloud.translation.v3beta1.Glossary glossary = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearGlossary() {
       if (glossaryBuilder_ == null) {
@@ -763,7 +795,9 @@ public final class CreateGlossaryRequest extends com.google.protobuf.GeneratedMe
      * Required. The glossary to create.
      * </pre>
      *
-     * <code>.google.cloud.translation.v3beta1.Glossary glossary = 2;</code>
+     * <code>
+     * .google.cloud.translation.v3beta1.Glossary glossary = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.translate.v3beta1.Glossary.Builder getGlossaryBuilder() {
 
@@ -777,7 +811,9 @@ public final class CreateGlossaryRequest extends com.google.protobuf.GeneratedMe
      * Required. The glossary to create.
      * </pre>
      *
-     * <code>.google.cloud.translation.v3beta1.Glossary glossary = 2;</code>
+     * <code>
+     * .google.cloud.translation.v3beta1.Glossary glossary = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.translate.v3beta1.GlossaryOrBuilder getGlossaryOrBuilder() {
       if (glossaryBuilder_ != null) {
@@ -795,7 +831,9 @@ public final class CreateGlossaryRequest extends com.google.protobuf.GeneratedMe
      * Required. The glossary to create.
      * </pre>
      *
-     * <code>.google.cloud.translation.v3beta1.Glossary glossary = 2;</code>
+     * <code>
+     * .google.cloud.translation.v3beta1.Glossary glossary = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.translate.v3beta1.Glossary,

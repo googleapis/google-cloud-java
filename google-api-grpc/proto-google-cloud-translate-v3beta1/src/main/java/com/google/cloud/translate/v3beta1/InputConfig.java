@@ -156,7 +156,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    * For `.txt`, this field must be "text/plain" or empty.
    * </pre>
    *
-   * <code>string mime_type = 1;</code>
+   * <code>string mime_type = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public java.lang.String getMimeType() {
     java.lang.Object ref = mimeType_;
@@ -179,7 +179,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    * For `.txt`, this field must be "text/plain" or empty.
    * </pre>
    *
-   * <code>string mime_type = 1;</code>
+   * <code>string mime_type = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public com.google.protobuf.ByteString getMimeTypeBytes() {
     java.lang.Object ref = mimeType_;
@@ -668,7 +668,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * For `.txt`, this field must be "text/plain" or empty.
      * </pre>
      *
-     * <code>string mime_type = 1;</code>
+     * <code>string mime_type = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public java.lang.String getMimeType() {
       java.lang.Object ref = mimeType_;
@@ -691,7 +691,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * For `.txt`, this field must be "text/plain" or empty.
      * </pre>
      *
-     * <code>string mime_type = 1;</code>
+     * <code>string mime_type = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.protobuf.ByteString getMimeTypeBytes() {
       java.lang.Object ref = mimeType_;
@@ -714,7 +714,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * For `.txt`, this field must be "text/plain" or empty.
      * </pre>
      *
-     * <code>string mime_type = 1;</code>
+     * <code>string mime_type = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setMimeType(java.lang.String value) {
       if (value == null) {
@@ -735,7 +735,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * For `.txt`, this field must be "text/plain" or empty.
      * </pre>
      *
-     * <code>string mime_type = 1;</code>
+     * <code>string mime_type = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearMimeType() {
 
@@ -753,7 +753,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * For `.txt`, this field must be "text/plain" or empty.
      * </pre>
      *
-     * <code>string mime_type = 1;</code>
+     * <code>string mime_type = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setMimeTypeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

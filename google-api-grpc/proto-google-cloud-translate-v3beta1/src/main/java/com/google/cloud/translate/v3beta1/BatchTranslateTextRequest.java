@@ -136,6 +136,19 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
               glossaries_.getMutableMap().put(glossaries__.getKey(), glossaries__.getValue());
               break;
             }
+          case 74:
+            {
+              if (!((mutable_bitField0_ & 0x00000080) != 0)) {
+                labels_ =
+                    com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000080;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
+                  input.readMessage(
+                      LabelsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              labels_.getMutableMap().put(labels__.getKey(), labels__.getValue());
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -174,6 +187,8 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
         return internalGetModels();
       case 7:
         return internalGetGlossaries();
+      case 9:
+        return internalGetLabels();
       default:
         throw new RuntimeException("Invalid map field number: " + number);
     }
@@ -196,7 +211,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Required. Location to make a regional call.
+   * Required. Location to make a call. Must refer to a caller's project.
    * Format: `projects/{project-id}/locations/{location-id}`.
    * The `global` location is not supported for batch translation.
    * Only AutoML Translation models or glossaries within the same region (have
@@ -204,7 +219,9 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
    * error is returned.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -221,7 +238,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Required. Location to make a regional call.
+   * Required. Location to make a call. Must refer to a caller's project.
    * Format: `projects/{project-id}/locations/{location-id}`.
    * The `global` location is not supported for batch translation.
    * Only AutoML Translation models or glossaries within the same region (have
@@ -229,7 +246,9 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
    * error is returned.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -252,7 +271,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
    * Required. Source language code.
    * </pre>
    *
-   * <code>string source_language_code = 2;</code>
+   * <code>string source_language_code = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getSourceLanguageCode() {
     java.lang.Object ref = sourceLanguageCode_;
@@ -272,7 +291,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
    * Required. Source language code.
    * </pre>
    *
-   * <code>string source_language_code = 2;</code>
+   * <code>string source_language_code = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getSourceLanguageCodeBytes() {
     java.lang.Object ref = sourceLanguageCode_;
@@ -295,7 +314,8 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
    * Required. Specify up to 10 language codes here.
    * </pre>
    *
-   * <code>repeated string target_language_codes = 3;</code>
+   * <code>repeated string target_language_codes = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.protobuf.ProtocolStringList getTargetLanguageCodesList() {
     return targetLanguageCodes_;
@@ -307,7 +327,8 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
    * Required. Specify up to 10 language codes here.
    * </pre>
    *
-   * <code>repeated string target_language_codes = 3;</code>
+   * <code>repeated string target_language_codes = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public int getTargetLanguageCodesCount() {
     return targetLanguageCodes_.size();
@@ -319,7 +340,8 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
    * Required. Specify up to 10 language codes here.
    * </pre>
    *
-   * <code>repeated string target_language_codes = 3;</code>
+   * <code>repeated string target_language_codes = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public java.lang.String getTargetLanguageCodes(int index) {
     return targetLanguageCodes_.get(index);
@@ -331,7 +353,8 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
    * Required. Specify up to 10 language codes here.
    * </pre>
    *
-   * <code>repeated string target_language_codes = 3;</code>
+   * <code>repeated string target_language_codes = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.protobuf.ByteString getTargetLanguageCodesBytes(int index) {
     return targetLanguageCodes_.getByteString(index);
@@ -379,7 +402,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
    * not requested for a language pair, then default google model (nmt) is used.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; models = 4;</code>
+   * <code>map&lt;string, string&gt; models = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public boolean containsModels(java.lang.String key) {
     if (key == null) {
@@ -409,7 +432,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
    * not requested for a language pair, then default google model (nmt) is used.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; models = 4;</code>
+   * <code>map&lt;string, string&gt; models = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public java.util.Map<java.lang.String, java.lang.String> getModelsMap() {
     return internalGetModels().getMap();
@@ -431,7 +454,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
    * not requested for a language pair, then default google model (nmt) is used.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; models = 4;</code>
+   * <code>map&lt;string, string&gt; models = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public java.lang.String getModelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
@@ -457,7 +480,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
    * not requested for a language pair, then default google model (nmt) is used.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; models = 4;</code>
+   * <code>map&lt;string, string&gt; models = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public java.lang.String getModelsOrThrow(java.lang.String key) {
     if (key == null) {
@@ -482,7 +505,9 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
    * The files must use UTF-8 encoding.
    * </pre>
    *
-   * <code>repeated .google.cloud.translation.v3beta1.InputConfig input_configs = 5;</code>
+   * <code>
+   * repeated .google.cloud.translation.v3beta1.InputConfig input_configs = 5 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public java.util.List<com.google.cloud.translate.v3beta1.InputConfig> getInputConfigsList() {
     return inputConfigs_;
@@ -497,7 +522,9 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
    * The files must use UTF-8 encoding.
    * </pre>
    *
-   * <code>repeated .google.cloud.translation.v3beta1.InputConfig input_configs = 5;</code>
+   * <code>
+   * repeated .google.cloud.translation.v3beta1.InputConfig input_configs = 5 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public java.util.List<? extends com.google.cloud.translate.v3beta1.InputConfigOrBuilder>
       getInputConfigsOrBuilderList() {
@@ -513,7 +540,9 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
    * The files must use UTF-8 encoding.
    * </pre>
    *
-   * <code>repeated .google.cloud.translation.v3beta1.InputConfig input_configs = 5;</code>
+   * <code>
+   * repeated .google.cloud.translation.v3beta1.InputConfig input_configs = 5 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public int getInputConfigsCount() {
     return inputConfigs_.size();
@@ -528,7 +557,9 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
    * The files must use UTF-8 encoding.
    * </pre>
    *
-   * <code>repeated .google.cloud.translation.v3beta1.InputConfig input_configs = 5;</code>
+   * <code>
+   * repeated .google.cloud.translation.v3beta1.InputConfig input_configs = 5 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.translate.v3beta1.InputConfig getInputConfigs(int index) {
     return inputConfigs_.get(index);
@@ -543,7 +574,9 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
    * The files must use UTF-8 encoding.
    * </pre>
    *
-   * <code>repeated .google.cloud.translation.v3beta1.InputConfig input_configs = 5;</code>
+   * <code>
+   * repeated .google.cloud.translation.v3beta1.InputConfig input_configs = 5 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.translate.v3beta1.InputConfigOrBuilder getInputConfigsOrBuilder(
       int index) {
@@ -561,7 +594,9 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
    * we don't generate output for duplicate inputs.
    * </pre>
    *
-   * <code>.google.cloud.translation.v3beta1.OutputConfig output_config = 6;</code>
+   * <code>
+   * .google.cloud.translation.v3beta1.OutputConfig output_config = 6 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public boolean hasOutputConfig() {
     return outputConfig_ != null;
@@ -575,7 +610,9 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
    * we don't generate output for duplicate inputs.
    * </pre>
    *
-   * <code>.google.cloud.translation.v3beta1.OutputConfig output_config = 6;</code>
+   * <code>
+   * .google.cloud.translation.v3beta1.OutputConfig output_config = 6 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.translate.v3beta1.OutputConfig getOutputConfig() {
     return outputConfig_ == null
@@ -591,7 +628,9 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
    * we don't generate output for duplicate inputs.
    * </pre>
    *
-   * <code>.google.cloud.translation.v3beta1.OutputConfig output_config = 6;</code>
+   * <code>
+   * .google.cloud.translation.v3beta1.OutputConfig output_config = 6 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.translate.v3beta1.OutputConfigOrBuilder getOutputConfigOrBuilder() {
     return getOutputConfig();
@@ -640,7 +679,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
    * </pre>
    *
    * <code>
-   * map&lt;string, .google.cloud.translation.v3beta1.TranslateTextGlossaryConfig&gt; glossaries = 7;
+   * map&lt;string, .google.cloud.translation.v3beta1.TranslateTextGlossaryConfig&gt; glossaries = 7 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   public boolean containsGlossaries(java.lang.String key) {
@@ -665,7 +704,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
    * </pre>
    *
    * <code>
-   * map&lt;string, .google.cloud.translation.v3beta1.TranslateTextGlossaryConfig&gt; glossaries = 7;
+   * map&lt;string, .google.cloud.translation.v3beta1.TranslateTextGlossaryConfig&gt; glossaries = 7 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   public java.util.Map<
@@ -682,7 +721,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
    * </pre>
    *
    * <code>
-   * map&lt;string, .google.cloud.translation.v3beta1.TranslateTextGlossaryConfig&gt; glossaries = 7;
+   * map&lt;string, .google.cloud.translation.v3beta1.TranslateTextGlossaryConfig&gt; glossaries = 7 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   public com.google.cloud.translate.v3beta1.TranslateTextGlossaryConfig getGlossariesOrDefault(
@@ -704,7 +743,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
    * </pre>
    *
    * <code>
-   * map&lt;string, .google.cloud.translation.v3beta1.TranslateTextGlossaryConfig&gt; glossaries = 7;
+   * map&lt;string, .google.cloud.translation.v3beta1.TranslateTextGlossaryConfig&gt; glossaries = 7 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   public com.google.cloud.translate.v3beta1.TranslateTextGlossaryConfig getGlossariesOrThrow(
@@ -714,6 +753,119 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
     }
     java.util.Map<java.lang.String, com.google.cloud.translate.v3beta1.TranslateTextGlossaryConfig>
         map = internalGetGlossaries().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
+  public static final int LABELS_FIELD_NUMBER = 9;
+
+  private static final class LabelsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.cloud.translate.v3beta1.TranslationServiceProto
+                .internal_static_google_cloud_translation_v3beta1_BatchTranslateTextRequest_LabelsEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
+  }
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
+    if (labels_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(LabelsDefaultEntryHolder.defaultEntry);
+    }
+    return labels_;
+  }
+
+  public int getLabelsCount() {
+    return internalGetLabels().getMap().size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The labels with user-defined metadata for the request.
+   * Label keys and values can be no longer than 63 characters
+   * (Unicode codepoints), can only contain lowercase letters, numeric
+   * characters, underscores and dashes. International characters are allowed.
+   * Label values are optional. Label keys must start with a letter.
+   * See https://cloud.google.com/translate/docs/labels for more information.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  public boolean containsLabels(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    return internalGetLabels().getMap().containsKey(key);
+  }
+  /** Use {@link #getLabelsMap()} instead. */
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getLabels() {
+    return getLabelsMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The labels with user-defined metadata for the request.
+   * Label keys and values can be no longer than 63 characters
+   * (Unicode codepoints), can only contain lowercase letters, numeric
+   * characters, underscores and dashes. International characters are allowed.
+   * Label values are optional. Label keys must start with a letter.
+   * See https://cloud.google.com/translate/docs/labels for more information.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
+    return internalGetLabels().getMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The labels with user-defined metadata for the request.
+   * Label keys and values can be no longer than 63 characters
+   * (Unicode codepoints), can only contain lowercase letters, numeric
+   * characters, underscores and dashes. International characters are allowed.
+   * Label values are optional. Label keys must start with a letter.
+   * See https://cloud.google.com/translate/docs/labels for more information.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The labels with user-defined metadata for the request.
+   * Label keys and values can be no longer than 63 characters
+   * (Unicode codepoints), can only contain lowercase letters, numeric
+   * characters, underscores and dashes. International characters are allowed.
+   * Label values are optional. Label keys must start with a letter.
+   * See https://cloud.google.com/translate/docs/labels for more information.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  public java.lang.String getLabelsOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     if (!map.containsKey(key)) {
       throw new java.lang.IllegalArgumentException();
     }
@@ -753,6 +905,8 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetGlossaries(), GlossariesDefaultEntryHolder.defaultEntry, 7);
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 9);
     unknownFields.writeTo(output);
   }
 
@@ -805,6 +959,16 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
                   .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, glossaries__);
     }
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetLabels().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
+          LabelsDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, labels__);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -831,6 +995,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
       if (!getOutputConfig().equals(other.getOutputConfig())) return false;
     }
     if (!internalGetGlossaries().equals(other.internalGetGlossaries())) return false;
+    if (!internalGetLabels().equals(other.internalGetLabels())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -865,6 +1030,10 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
     if (!internalGetGlossaries().getMap().isEmpty()) {
       hash = (37 * hash) + GLOSSARIES_FIELD_NUMBER;
       hash = (53 * hash) + internalGetGlossaries().hashCode();
+    }
+    if (!internalGetLabels().getMap().isEmpty()) {
+      hash = (37 * hash) + LABELS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetLabels().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -992,6 +1161,8 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
           return internalGetModels();
         case 7:
           return internalGetGlossaries();
+        case 9:
+          return internalGetLabels();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -1004,6 +1175,8 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
           return internalGetMutableModels();
         case 7:
           return internalGetMutableGlossaries();
+        case 9:
+          return internalGetMutableLabels();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -1058,6 +1231,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
         outputConfigBuilder_ = null;
       }
       internalGetMutableGlossaries().clear();
+      internalGetMutableLabels().clear();
       return this;
     }
 
@@ -1113,6 +1287,8 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
       }
       result.glossaries_ = internalGetGlossaries();
       result.glossaries_.makeImmutable();
+      result.labels_ = internalGetLabels();
+      result.labels_.makeImmutable();
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -1215,6 +1391,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
         mergeOutputConfig(other.getOutputConfig());
       }
       internalGetMutableGlossaries().mergeFrom(other.internalGetGlossaries());
+      internalGetMutableLabels().mergeFrom(other.internalGetLabels());
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -1252,7 +1429,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. Location to make a regional call.
+     * Required. Location to make a call. Must refer to a caller's project.
      * Format: `projects/{project-id}/locations/{location-id}`.
      * The `global` location is not supported for batch translation.
      * Only AutoML Translation models or glossaries within the same region (have
@@ -1260,7 +1437,9 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      * error is returned.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -1277,7 +1456,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. Location to make a regional call.
+     * Required. Location to make a call. Must refer to a caller's project.
      * Format: `projects/{project-id}/locations/{location-id}`.
      * The `global` location is not supported for batch translation.
      * Only AutoML Translation models or glossaries within the same region (have
@@ -1285,7 +1464,9 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      * error is returned.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -1302,7 +1483,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. Location to make a regional call.
+     * Required. Location to make a call. Must refer to a caller's project.
      * Format: `projects/{project-id}/locations/{location-id}`.
      * The `global` location is not supported for batch translation.
      * Only AutoML Translation models or glossaries within the same region (have
@@ -1310,7 +1491,9 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      * error is returned.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -1325,7 +1508,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. Location to make a regional call.
+     * Required. Location to make a call. Must refer to a caller's project.
      * Format: `projects/{project-id}/locations/{location-id}`.
      * The `global` location is not supported for batch translation.
      * Only AutoML Translation models or glossaries within the same region (have
@@ -1333,7 +1516,9 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      * error is returned.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder clearParent() {
 
@@ -1345,7 +1530,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. Location to make a regional call.
+     * Required. Location to make a call. Must refer to a caller's project.
      * Format: `projects/{project-id}/locations/{location-id}`.
      * The `global` location is not supported for batch translation.
      * Only AutoML Translation models or glossaries within the same region (have
@@ -1353,7 +1538,9 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      * error is returned.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1374,7 +1561,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      * Required. Source language code.
      * </pre>
      *
-     * <code>string source_language_code = 2;</code>
+     * <code>string source_language_code = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getSourceLanguageCode() {
       java.lang.Object ref = sourceLanguageCode_;
@@ -1394,7 +1581,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      * Required. Source language code.
      * </pre>
      *
-     * <code>string source_language_code = 2;</code>
+     * <code>string source_language_code = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getSourceLanguageCodeBytes() {
       java.lang.Object ref = sourceLanguageCode_;
@@ -1414,7 +1601,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      * Required. Source language code.
      * </pre>
      *
-     * <code>string source_language_code = 2;</code>
+     * <code>string source_language_code = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setSourceLanguageCode(java.lang.String value) {
       if (value == null) {
@@ -1432,7 +1619,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      * Required. Source language code.
      * </pre>
      *
-     * <code>string source_language_code = 2;</code>
+     * <code>string source_language_code = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearSourceLanguageCode() {
 
@@ -1447,7 +1634,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      * Required. Source language code.
      * </pre>
      *
-     * <code>string source_language_code = 2;</code>
+     * <code>string source_language_code = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setSourceLanguageCodeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1476,7 +1663,8 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      * Required. Specify up to 10 language codes here.
      * </pre>
      *
-     * <code>repeated string target_language_codes = 3;</code>
+     * <code>repeated string target_language_codes = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.protobuf.ProtocolStringList getTargetLanguageCodesList() {
       return targetLanguageCodes_.getUnmodifiableView();
@@ -1488,7 +1676,8 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      * Required. Specify up to 10 language codes here.
      * </pre>
      *
-     * <code>repeated string target_language_codes = 3;</code>
+     * <code>repeated string target_language_codes = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public int getTargetLanguageCodesCount() {
       return targetLanguageCodes_.size();
@@ -1500,7 +1689,8 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      * Required. Specify up to 10 language codes here.
      * </pre>
      *
-     * <code>repeated string target_language_codes = 3;</code>
+     * <code>repeated string target_language_codes = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public java.lang.String getTargetLanguageCodes(int index) {
       return targetLanguageCodes_.get(index);
@@ -1512,7 +1702,8 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      * Required. Specify up to 10 language codes here.
      * </pre>
      *
-     * <code>repeated string target_language_codes = 3;</code>
+     * <code>repeated string target_language_codes = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.protobuf.ByteString getTargetLanguageCodesBytes(int index) {
       return targetLanguageCodes_.getByteString(index);
@@ -1524,7 +1715,8 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      * Required. Specify up to 10 language codes here.
      * </pre>
      *
-     * <code>repeated string target_language_codes = 3;</code>
+     * <code>repeated string target_language_codes = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setTargetLanguageCodes(int index, java.lang.String value) {
       if (value == null) {
@@ -1542,7 +1734,8 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      * Required. Specify up to 10 language codes here.
      * </pre>
      *
-     * <code>repeated string target_language_codes = 3;</code>
+     * <code>repeated string target_language_codes = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addTargetLanguageCodes(java.lang.String value) {
       if (value == null) {
@@ -1560,7 +1753,8 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      * Required. Specify up to 10 language codes here.
      * </pre>
      *
-     * <code>repeated string target_language_codes = 3;</code>
+     * <code>repeated string target_language_codes = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addAllTargetLanguageCodes(java.lang.Iterable<java.lang.String> values) {
       ensureTargetLanguageCodesIsMutable();
@@ -1575,7 +1769,8 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      * Required. Specify up to 10 language codes here.
      * </pre>
      *
-     * <code>repeated string target_language_codes = 3;</code>
+     * <code>repeated string target_language_codes = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearTargetLanguageCodes() {
       targetLanguageCodes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -1590,7 +1785,8 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      * Required. Specify up to 10 language codes here.
      * </pre>
      *
-     * <code>repeated string target_language_codes = 3;</code>
+     * <code>repeated string target_language_codes = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addTargetLanguageCodesBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1645,7 +1841,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      * not requested for a language pair, then default google model (nmt) is used.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; models = 4;</code>
+     * <code>map&lt;string, string&gt; models = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public boolean containsModels(java.lang.String key) {
       if (key == null) {
@@ -1675,7 +1871,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      * not requested for a language pair, then default google model (nmt) is used.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; models = 4;</code>
+     * <code>map&lt;string, string&gt; models = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public java.util.Map<java.lang.String, java.lang.String> getModelsMap() {
       return internalGetModels().getMap();
@@ -1697,7 +1893,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      * not requested for a language pair, then default google model (nmt) is used.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; models = 4;</code>
+     * <code>map&lt;string, string&gt; models = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public java.lang.String getModelsOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
@@ -1724,7 +1920,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      * not requested for a language pair, then default google model (nmt) is used.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; models = 4;</code>
+     * <code>map&lt;string, string&gt; models = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public java.lang.String getModelsOrThrow(java.lang.String key) {
       if (key == null) {
@@ -1758,7 +1954,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      * not requested for a language pair, then default google model (nmt) is used.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; models = 4;</code>
+     * <code>map&lt;string, string&gt; models = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder removeModels(java.lang.String key) {
       if (key == null) {
@@ -1789,7 +1985,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      * not requested for a language pair, then default google model (nmt) is used.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; models = 4;</code>
+     * <code>map&lt;string, string&gt; models = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder putModels(java.lang.String key, java.lang.String value) {
       if (key == null) {
@@ -1818,7 +2014,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      * not requested for a language pair, then default google model (nmt) is used.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; models = 4;</code>
+     * <code>map&lt;string, string&gt; models = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder putAllModels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableModels().getMutableMap().putAll(values);
@@ -1852,7 +2048,9 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      * The files must use UTF-8 encoding.
      * </pre>
      *
-     * <code>repeated .google.cloud.translation.v3beta1.InputConfig input_configs = 5;</code>
+     * <code>
+     * repeated .google.cloud.translation.v3beta1.InputConfig input_configs = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public java.util.List<com.google.cloud.translate.v3beta1.InputConfig> getInputConfigsList() {
       if (inputConfigsBuilder_ == null) {
@@ -1871,7 +2069,9 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      * The files must use UTF-8 encoding.
      * </pre>
      *
-     * <code>repeated .google.cloud.translation.v3beta1.InputConfig input_configs = 5;</code>
+     * <code>
+     * repeated .google.cloud.translation.v3beta1.InputConfig input_configs = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public int getInputConfigsCount() {
       if (inputConfigsBuilder_ == null) {
@@ -1890,7 +2090,9 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      * The files must use UTF-8 encoding.
      * </pre>
      *
-     * <code>repeated .google.cloud.translation.v3beta1.InputConfig input_configs = 5;</code>
+     * <code>
+     * repeated .google.cloud.translation.v3beta1.InputConfig input_configs = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.translate.v3beta1.InputConfig getInputConfigs(int index) {
       if (inputConfigsBuilder_ == null) {
@@ -1909,7 +2111,9 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      * The files must use UTF-8 encoding.
      * </pre>
      *
-     * <code>repeated .google.cloud.translation.v3beta1.InputConfig input_configs = 5;</code>
+     * <code>
+     * repeated .google.cloud.translation.v3beta1.InputConfig input_configs = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setInputConfigs(
         int index, com.google.cloud.translate.v3beta1.InputConfig value) {
@@ -1935,7 +2139,9 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      * The files must use UTF-8 encoding.
      * </pre>
      *
-     * <code>repeated .google.cloud.translation.v3beta1.InputConfig input_configs = 5;</code>
+     * <code>
+     * repeated .google.cloud.translation.v3beta1.InputConfig input_configs = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setInputConfigs(
         int index, com.google.cloud.translate.v3beta1.InputConfig.Builder builderForValue) {
@@ -1958,7 +2164,9 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      * The files must use UTF-8 encoding.
      * </pre>
      *
-     * <code>repeated .google.cloud.translation.v3beta1.InputConfig input_configs = 5;</code>
+     * <code>
+     * repeated .google.cloud.translation.v3beta1.InputConfig input_configs = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addInputConfigs(com.google.cloud.translate.v3beta1.InputConfig value) {
       if (inputConfigsBuilder_ == null) {
@@ -1983,7 +2191,9 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      * The files must use UTF-8 encoding.
      * </pre>
      *
-     * <code>repeated .google.cloud.translation.v3beta1.InputConfig input_configs = 5;</code>
+     * <code>
+     * repeated .google.cloud.translation.v3beta1.InputConfig input_configs = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addInputConfigs(
         int index, com.google.cloud.translate.v3beta1.InputConfig value) {
@@ -2009,7 +2219,9 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      * The files must use UTF-8 encoding.
      * </pre>
      *
-     * <code>repeated .google.cloud.translation.v3beta1.InputConfig input_configs = 5;</code>
+     * <code>
+     * repeated .google.cloud.translation.v3beta1.InputConfig input_configs = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addInputConfigs(
         com.google.cloud.translate.v3beta1.InputConfig.Builder builderForValue) {
@@ -2032,7 +2244,9 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      * The files must use UTF-8 encoding.
      * </pre>
      *
-     * <code>repeated .google.cloud.translation.v3beta1.InputConfig input_configs = 5;</code>
+     * <code>
+     * repeated .google.cloud.translation.v3beta1.InputConfig input_configs = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addInputConfigs(
         int index, com.google.cloud.translate.v3beta1.InputConfig.Builder builderForValue) {
@@ -2055,7 +2269,9 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      * The files must use UTF-8 encoding.
      * </pre>
      *
-     * <code>repeated .google.cloud.translation.v3beta1.InputConfig input_configs = 5;</code>
+     * <code>
+     * repeated .google.cloud.translation.v3beta1.InputConfig input_configs = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addAllInputConfigs(
         java.lang.Iterable<? extends com.google.cloud.translate.v3beta1.InputConfig> values) {
@@ -2078,7 +2294,9 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      * The files must use UTF-8 encoding.
      * </pre>
      *
-     * <code>repeated .google.cloud.translation.v3beta1.InputConfig input_configs = 5;</code>
+     * <code>
+     * repeated .google.cloud.translation.v3beta1.InputConfig input_configs = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearInputConfigs() {
       if (inputConfigsBuilder_ == null) {
@@ -2100,7 +2318,9 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      * The files must use UTF-8 encoding.
      * </pre>
      *
-     * <code>repeated .google.cloud.translation.v3beta1.InputConfig input_configs = 5;</code>
+     * <code>
+     * repeated .google.cloud.translation.v3beta1.InputConfig input_configs = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder removeInputConfigs(int index) {
       if (inputConfigsBuilder_ == null) {
@@ -2122,7 +2342,9 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      * The files must use UTF-8 encoding.
      * </pre>
      *
-     * <code>repeated .google.cloud.translation.v3beta1.InputConfig input_configs = 5;</code>
+     * <code>
+     * repeated .google.cloud.translation.v3beta1.InputConfig input_configs = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.translate.v3beta1.InputConfig.Builder getInputConfigsBuilder(
         int index) {
@@ -2138,7 +2360,9 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      * The files must use UTF-8 encoding.
      * </pre>
      *
-     * <code>repeated .google.cloud.translation.v3beta1.InputConfig input_configs = 5;</code>
+     * <code>
+     * repeated .google.cloud.translation.v3beta1.InputConfig input_configs = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.translate.v3beta1.InputConfigOrBuilder getInputConfigsOrBuilder(
         int index) {
@@ -2158,7 +2382,9 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      * The files must use UTF-8 encoding.
      * </pre>
      *
-     * <code>repeated .google.cloud.translation.v3beta1.InputConfig input_configs = 5;</code>
+     * <code>
+     * repeated .google.cloud.translation.v3beta1.InputConfig input_configs = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public java.util.List<? extends com.google.cloud.translate.v3beta1.InputConfigOrBuilder>
         getInputConfigsOrBuilderList() {
@@ -2178,7 +2404,9 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      * The files must use UTF-8 encoding.
      * </pre>
      *
-     * <code>repeated .google.cloud.translation.v3beta1.InputConfig input_configs = 5;</code>
+     * <code>
+     * repeated .google.cloud.translation.v3beta1.InputConfig input_configs = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.translate.v3beta1.InputConfig.Builder addInputConfigsBuilder() {
       return getInputConfigsFieldBuilder()
@@ -2194,7 +2422,9 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      * The files must use UTF-8 encoding.
      * </pre>
      *
-     * <code>repeated .google.cloud.translation.v3beta1.InputConfig input_configs = 5;</code>
+     * <code>
+     * repeated .google.cloud.translation.v3beta1.InputConfig input_configs = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.translate.v3beta1.InputConfig.Builder addInputConfigsBuilder(
         int index) {
@@ -2211,7 +2441,9 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      * The files must use UTF-8 encoding.
      * </pre>
      *
-     * <code>repeated .google.cloud.translation.v3beta1.InputConfig input_configs = 5;</code>
+     * <code>
+     * repeated .google.cloud.translation.v3beta1.InputConfig input_configs = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public java.util.List<com.google.cloud.translate.v3beta1.InputConfig.Builder>
         getInputConfigsBuilderList() {
@@ -2250,7 +2482,9 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      * we don't generate output for duplicate inputs.
      * </pre>
      *
-     * <code>.google.cloud.translation.v3beta1.OutputConfig output_config = 6;</code>
+     * <code>
+     * .google.cloud.translation.v3beta1.OutputConfig output_config = 6 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public boolean hasOutputConfig() {
       return outputConfigBuilder_ != null || outputConfig_ != null;
@@ -2264,7 +2498,9 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      * we don't generate output for duplicate inputs.
      * </pre>
      *
-     * <code>.google.cloud.translation.v3beta1.OutputConfig output_config = 6;</code>
+     * <code>
+     * .google.cloud.translation.v3beta1.OutputConfig output_config = 6 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.translate.v3beta1.OutputConfig getOutputConfig() {
       if (outputConfigBuilder_ == null) {
@@ -2284,7 +2520,9 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      * we don't generate output for duplicate inputs.
      * </pre>
      *
-     * <code>.google.cloud.translation.v3beta1.OutputConfig output_config = 6;</code>
+     * <code>
+     * .google.cloud.translation.v3beta1.OutputConfig output_config = 6 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setOutputConfig(com.google.cloud.translate.v3beta1.OutputConfig value) {
       if (outputConfigBuilder_ == null) {
@@ -2308,7 +2546,9 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      * we don't generate output for duplicate inputs.
      * </pre>
      *
-     * <code>.google.cloud.translation.v3beta1.OutputConfig output_config = 6;</code>
+     * <code>
+     * .google.cloud.translation.v3beta1.OutputConfig output_config = 6 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setOutputConfig(
         com.google.cloud.translate.v3beta1.OutputConfig.Builder builderForValue) {
@@ -2330,7 +2570,9 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      * we don't generate output for duplicate inputs.
      * </pre>
      *
-     * <code>.google.cloud.translation.v3beta1.OutputConfig output_config = 6;</code>
+     * <code>
+     * .google.cloud.translation.v3beta1.OutputConfig output_config = 6 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeOutputConfig(com.google.cloud.translate.v3beta1.OutputConfig value) {
       if (outputConfigBuilder_ == null) {
@@ -2358,7 +2600,9 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      * we don't generate output for duplicate inputs.
      * </pre>
      *
-     * <code>.google.cloud.translation.v3beta1.OutputConfig output_config = 6;</code>
+     * <code>
+     * .google.cloud.translation.v3beta1.OutputConfig output_config = 6 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearOutputConfig() {
       if (outputConfigBuilder_ == null) {
@@ -2380,7 +2624,9 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      * we don't generate output for duplicate inputs.
      * </pre>
      *
-     * <code>.google.cloud.translation.v3beta1.OutputConfig output_config = 6;</code>
+     * <code>
+     * .google.cloud.translation.v3beta1.OutputConfig output_config = 6 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.translate.v3beta1.OutputConfig.Builder getOutputConfigBuilder() {
 
@@ -2396,7 +2642,9 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      * we don't generate output for duplicate inputs.
      * </pre>
      *
-     * <code>.google.cloud.translation.v3beta1.OutputConfig output_config = 6;</code>
+     * <code>
+     * .google.cloud.translation.v3beta1.OutputConfig output_config = 6 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.translate.v3beta1.OutputConfigOrBuilder getOutputConfigOrBuilder() {
       if (outputConfigBuilder_ != null) {
@@ -2416,7 +2664,9 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      * we don't generate output for duplicate inputs.
      * </pre>
      *
-     * <code>.google.cloud.translation.v3beta1.OutputConfig output_config = 6;</code>
+     * <code>
+     * .google.cloud.translation.v3beta1.OutputConfig output_config = 6 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.translate.v3beta1.OutputConfig,
@@ -2476,7 +2726,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>
-     * map&lt;string, .google.cloud.translation.v3beta1.TranslateTextGlossaryConfig&gt; glossaries = 7;
+     * map&lt;string, .google.cloud.translation.v3beta1.TranslateTextGlossaryConfig&gt; glossaries = 7 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public boolean containsGlossaries(java.lang.String key) {
@@ -2501,7 +2751,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>
-     * map&lt;string, .google.cloud.translation.v3beta1.TranslateTextGlossaryConfig&gt; glossaries = 7;
+     * map&lt;string, .google.cloud.translation.v3beta1.TranslateTextGlossaryConfig&gt; glossaries = 7 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public java.util.Map<
@@ -2518,7 +2768,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>
-     * map&lt;string, .google.cloud.translation.v3beta1.TranslateTextGlossaryConfig&gt; glossaries = 7;
+     * map&lt;string, .google.cloud.translation.v3beta1.TranslateTextGlossaryConfig&gt; glossaries = 7 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.translate.v3beta1.TranslateTextGlossaryConfig getGlossariesOrDefault(
@@ -2541,7 +2791,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>
-     * map&lt;string, .google.cloud.translation.v3beta1.TranslateTextGlossaryConfig&gt; glossaries = 7;
+     * map&lt;string, .google.cloud.translation.v3beta1.TranslateTextGlossaryConfig&gt; glossaries = 7 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.translate.v3beta1.TranslateTextGlossaryConfig getGlossariesOrThrow(
@@ -2571,7 +2821,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>
-     * map&lt;string, .google.cloud.translation.v3beta1.TranslateTextGlossaryConfig&gt; glossaries = 7;
+     * map&lt;string, .google.cloud.translation.v3beta1.TranslateTextGlossaryConfig&gt; glossaries = 7 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder removeGlossaries(java.lang.String key) {
@@ -2597,7 +2847,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>
-     * map&lt;string, .google.cloud.translation.v3beta1.TranslateTextGlossaryConfig&gt; glossaries = 7;
+     * map&lt;string, .google.cloud.translation.v3beta1.TranslateTextGlossaryConfig&gt; glossaries = 7 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder putGlossaries(
@@ -2621,7 +2871,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>
-     * map&lt;string, .google.cloud.translation.v3beta1.TranslateTextGlossaryConfig&gt; glossaries = 7;
+     * map&lt;string, .google.cloud.translation.v3beta1.TranslateTextGlossaryConfig&gt; glossaries = 7 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder putAllGlossaries(
@@ -2629,6 +2879,193 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
                 java.lang.String, com.google.cloud.translate.v3beta1.TranslateTextGlossaryConfig>
             values) {
       internalGetMutableGlossaries().getMutableMap().putAll(values);
+      return this;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
+      if (labels_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(LabelsDefaultEntryHolder.defaultEntry);
+      }
+      return labels_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableLabels() {
+      onChanged();
+      ;
+      if (labels_ == null) {
+        labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
+      }
+      if (!labels_.isMutable()) {
+        labels_ = labels_.copy();
+      }
+      return labels_;
+    }
+
+    public int getLabelsCount() {
+      return internalGetLabels().getMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The labels with user-defined metadata for the request.
+     * Label keys and values can be no longer than 63 characters
+     * (Unicode codepoints), can only contain lowercase letters, numeric
+     * characters, underscores and dashes. International characters are allowed.
+     * Label values are optional. Label keys must start with a letter.
+     * See https://cloud.google.com/translate/docs/labels for more information.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public boolean containsLabels(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      return internalGetLabels().getMap().containsKey(key);
+    }
+    /** Use {@link #getLabelsMap()} instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getLabels() {
+      return getLabelsMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The labels with user-defined metadata for the request.
+     * Label keys and values can be no longer than 63 characters
+     * (Unicode codepoints), can only contain lowercase letters, numeric
+     * characters, underscores and dashes. International characters are allowed.
+     * Label values are optional. Label keys must start with a letter.
+     * See https://cloud.google.com/translate/docs/labels for more information.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
+      return internalGetLabels().getMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The labels with user-defined metadata for the request.
+     * Label keys and values can be no longer than 63 characters
+     * (Unicode codepoints), can only contain lowercase letters, numeric
+     * characters, underscores and dashes. International characters are allowed.
+     * Label values are optional. Label keys must start with a letter.
+     * See https://cloud.google.com/translate/docs/labels for more information.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public java.lang.String getLabelsOrDefault(
+        java.lang.String key, java.lang.String defaultValue) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The labels with user-defined metadata for the request.
+     * Label keys and values can be no longer than 63 characters
+     * (Unicode codepoints), can only contain lowercase letters, numeric
+     * characters, underscores and dashes. International characters are allowed.
+     * Label values are optional. Label keys must start with a letter.
+     * See https://cloud.google.com/translate/docs/labels for more information.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public java.lang.String getLabelsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearLabels() {
+      internalGetMutableLabels().getMutableMap().clear();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The labels with user-defined metadata for the request.
+     * Label keys and values can be no longer than 63 characters
+     * (Unicode codepoints), can only contain lowercase letters, numeric
+     * characters, underscores and dashes. International characters are allowed.
+     * Label values are optional. Label keys must start with a letter.
+     * See https://cloud.google.com/translate/docs/labels for more information.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder removeLabels(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableLabels().getMutableMap().remove(key);
+      return this;
+    }
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
+      return internalGetMutableLabels().getMutableMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The labels with user-defined metadata for the request.
+     * Label keys and values can be no longer than 63 characters
+     * (Unicode codepoints), can only contain lowercase letters, numeric
+     * characters, underscores and dashes. International characters are allowed.
+     * Label values are optional. Label keys must start with a letter.
+     * See https://cloud.google.com/translate/docs/labels for more information.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder putLabels(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      if (value == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableLabels().getMutableMap().put(key, value);
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The labels with user-defined metadata for the request.
+     * Label keys and values can be no longer than 63 characters
+     * (Unicode codepoints), can only contain lowercase letters, numeric
+     * characters, underscores and dashes. International characters are allowed.
+     * Label values are optional. Label keys must start with a letter.
+     * See https://cloud.google.com/translate/docs/labels for more information.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableLabels().getMutableMap().putAll(values);
       return this;
     }
 

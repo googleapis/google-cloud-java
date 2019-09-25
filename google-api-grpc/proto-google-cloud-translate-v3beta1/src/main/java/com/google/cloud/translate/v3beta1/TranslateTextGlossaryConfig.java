@@ -107,7 +107,7 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
    * this format: projects/&#42;&#47;locations/&#42;&#47;glossaries/&#42;
    * </pre>
    *
-   * <code>string glossary = 1;</code>
+   * <code>string glossary = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getGlossary() {
     java.lang.Object ref = glossary_;
@@ -128,7 +128,7 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
    * this format: projects/&#42;&#47;locations/&#42;&#47;glossaries/&#42;
    * </pre>
    *
-   * <code>string glossary = 1;</code>
+   * <code>string glossary = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getGlossaryBytes() {
     java.lang.Object ref = glossary_;
@@ -152,7 +152,7 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
    * Default value is false if missing.
    * </pre>
    *
-   * <code>bool ignore_case = 2;</code>
+   * <code>bool ignore_case = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public boolean getIgnoreCase() {
     return ignoreCase_;
@@ -505,7 +505,7 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
      * this format: projects/&#42;&#47;locations/&#42;&#47;glossaries/&#42;
      * </pre>
      *
-     * <code>string glossary = 1;</code>
+     * <code>string glossary = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getGlossary() {
       java.lang.Object ref = glossary_;
@@ -526,7 +526,7 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
      * this format: projects/&#42;&#47;locations/&#42;&#47;glossaries/&#42;
      * </pre>
      *
-     * <code>string glossary = 1;</code>
+     * <code>string glossary = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getGlossaryBytes() {
       java.lang.Object ref = glossary_;
@@ -547,7 +547,7 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
      * this format: projects/&#42;&#47;locations/&#42;&#47;glossaries/&#42;
      * </pre>
      *
-     * <code>string glossary = 1;</code>
+     * <code>string glossary = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setGlossary(java.lang.String value) {
       if (value == null) {
@@ -566,7 +566,7 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
      * this format: projects/&#42;&#47;locations/&#42;&#47;glossaries/&#42;
      * </pre>
      *
-     * <code>string glossary = 1;</code>
+     * <code>string glossary = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearGlossary() {
 
@@ -582,7 +582,7 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
      * this format: projects/&#42;&#47;locations/&#42;&#47;glossaries/&#42;
      * </pre>
      *
-     * <code>string glossary = 1;</code>
+     * <code>string glossary = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setGlossaryBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -604,7 +604,7 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
      * Default value is false if missing.
      * </pre>
      *
-     * <code>bool ignore_case = 2;</code>
+     * <code>bool ignore_case = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public boolean getIgnoreCase() {
       return ignoreCase_;
@@ -617,7 +617,7 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
      * Default value is false if missing.
      * </pre>
      *
-     * <code>bool ignore_case = 2;</code>
+     * <code>bool ignore_case = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setIgnoreCase(boolean value) {
 
@@ -633,7 +633,7 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
      * Default value is false if missing.
      * </pre>
      *
-     * <code>bool ignore_case = 2;</code>
+     * <code>bool ignore_case = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearIgnoreCase() {
 

@@ -13,11 +13,11 @@ public interface GcsDestinationOrBuilder
    *
    * <pre>
    * Required. There must be no files under 'output_uri_prefix'.
-   * 'output_uri_prefix' must end with "/", otherwise an INVALID_ARGUMENT (400)
-   * error is returned..
+   * 'output_uri_prefix' must end with "/" and start with "gs://", otherwise an
+   * INVALID_ARGUMENT (400) error is returned.
    * </pre>
    *
-   * <code>string output_uri_prefix = 1;</code>
+   * <code>string output_uri_prefix = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getOutputUriPrefix();
   /**
@@ -25,11 +25,11 @@ public interface GcsDestinationOrBuilder
    *
    * <pre>
    * Required. There must be no files under 'output_uri_prefix'.
-   * 'output_uri_prefix' must end with "/", otherwise an INVALID_ARGUMENT (400)
-   * error is returned..
+   * 'output_uri_prefix' must end with "/" and start with "gs://", otherwise an
+   * INVALID_ARGUMENT (400) error is returned.
    * </pre>
    *
-   * <code>string output_uri_prefix = 1;</code>
+   * <code>string output_uri_prefix = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getOutputUriPrefixBytes();
 }

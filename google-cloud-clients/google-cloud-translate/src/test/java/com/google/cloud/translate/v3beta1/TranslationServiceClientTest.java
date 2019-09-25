@@ -86,18 +86,18 @@ public class TranslationServiceClientTest {
     DetectLanguageResponse expectedResponse = DetectLanguageResponse.newBuilder().build();
     mockTranslationService.addResponse(expectedResponse);
 
-    String formattedParent = TranslationServiceClient.formatLocationName("[PROJECT]", "[LOCATION]");
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
     String model = "model104069929";
     String mimeType = "mimeType-196041627";
 
-    DetectLanguageResponse actualResponse = client.detectLanguage(formattedParent, model, mimeType);
+    DetectLanguageResponse actualResponse = client.detectLanguage(parent, model, mimeType);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockTranslationService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     DetectLanguageRequest actualRequest = (DetectLanguageRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedParent, actualRequest.getParent());
+    Assert.assertEquals(parent, LocationName.parse(actualRequest.getParent()));
     Assert.assertEquals(model, actualRequest.getModel());
     Assert.assertEquals(mimeType, actualRequest.getMimeType());
     Assert.assertTrue(
@@ -113,12 +113,11 @@ public class TranslationServiceClientTest {
     mockTranslationService.addException(exception);
 
     try {
-      String formattedParent =
-          TranslationServiceClient.formatLocationName("[PROJECT]", "[LOCATION]");
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
       String model = "model104069929";
       String mimeType = "mimeType-196041627";
 
-      client.detectLanguage(formattedParent, model, mimeType);
+      client.detectLanguage(parent, model, mimeType);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -131,12 +130,12 @@ public class TranslationServiceClientTest {
     SupportedLanguages expectedResponse = SupportedLanguages.newBuilder().build();
     mockTranslationService.addResponse(expectedResponse);
 
-    String formattedParent = TranslationServiceClient.formatLocationName("[PROJECT]", "[LOCATION]");
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
     String displayLanguageCode = "displayLanguageCode30710199";
     String model = "model104069929";
 
     SupportedLanguages actualResponse =
-        client.getSupportedLanguages(formattedParent, displayLanguageCode, model);
+        client.getSupportedLanguages(parent, displayLanguageCode, model);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockTranslationService.getRequests();
@@ -144,7 +143,7 @@ public class TranslationServiceClientTest {
     GetSupportedLanguagesRequest actualRequest =
         (GetSupportedLanguagesRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedParent, actualRequest.getParent());
+    Assert.assertEquals(parent, LocationName.parse(actualRequest.getParent()));
     Assert.assertEquals(displayLanguageCode, actualRequest.getDisplayLanguageCode());
     Assert.assertEquals(model, actualRequest.getModel());
     Assert.assertTrue(
@@ -160,12 +159,11 @@ public class TranslationServiceClientTest {
     mockTranslationService.addException(exception);
 
     try {
-      String formattedParent =
-          TranslationServiceClient.formatLocationName("[PROJECT]", "[LOCATION]");
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
       String displayLanguageCode = "displayLanguageCode30710199";
       String model = "model104069929";
 
-      client.getSupportedLanguages(formattedParent, displayLanguageCode, model);
+      client.getSupportedLanguages(parent, displayLanguageCode, model);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -175,10 +173,10 @@ public class TranslationServiceClientTest {
   @Test
   @SuppressWarnings("all")
   public void createGlossaryTest() throws Exception {
-    String name = "name3373707";
+    GlossaryName name = GlossaryName.of("[PROJECT]", "[LOCATION]", "[GLOSSARY]");
     int entryCount = 811131134;
     Glossary expectedResponse =
-        Glossary.newBuilder().setName(name).setEntryCount(entryCount).build();
+        Glossary.newBuilder().setName(name.toString()).setEntryCount(entryCount).build();
     Operation resultOperation =
         Operation.newBuilder()
             .setName("createGlossaryTest")
@@ -187,17 +185,17 @@ public class TranslationServiceClientTest {
             .build();
     mockTranslationService.addResponse(resultOperation);
 
-    String formattedParent = TranslationServiceClient.formatLocationName("[PROJECT]", "[LOCATION]");
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
     Glossary glossary = Glossary.newBuilder().build();
 
-    Glossary actualResponse = client.createGlossaryAsync(formattedParent, glossary).get();
+    Glossary actualResponse = client.createGlossaryAsync(parent, glossary).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockTranslationService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     CreateGlossaryRequest actualRequest = (CreateGlossaryRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedParent, actualRequest.getParent());
+    Assert.assertEquals(parent, LocationName.parse(actualRequest.getParent()));
     Assert.assertEquals(glossary, actualRequest.getGlossary());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -212,11 +210,10 @@ public class TranslationServiceClientTest {
     mockTranslationService.addException(exception);
 
     try {
-      String formattedParent =
-          TranslationServiceClient.formatLocationName("[PROJECT]", "[LOCATION]");
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
       Glossary glossary = Glossary.newBuilder().build();
 
-      client.createGlossaryAsync(formattedParent, glossary).get();
+      client.createGlossaryAsync(parent, glossary).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
@@ -238,10 +235,9 @@ public class TranslationServiceClientTest {
             .build();
     mockTranslationService.addResponse(expectedResponse);
 
-    String formattedParent = TranslationServiceClient.formatLocationName("[PROJECT]", "[LOCATION]");
-    String filter = "filter-1274492040";
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
 
-    ListGlossariesPagedResponse pagedListResponse = client.listGlossaries(formattedParent, filter);
+    ListGlossariesPagedResponse pagedListResponse = client.listGlossaries(parent);
 
     List<Glossary> resources = Lists.newArrayList(pagedListResponse.iterateAll());
     Assert.assertEquals(1, resources.size());
@@ -251,8 +247,7 @@ public class TranslationServiceClientTest {
     Assert.assertEquals(1, actualRequests.size());
     ListGlossariesRequest actualRequest = (ListGlossariesRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedParent, actualRequest.getParent());
-    Assert.assertEquals(filter, actualRequest.getFilter());
+    Assert.assertEquals(parent, LocationName.parse(actualRequest.getParent()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -266,11 +261,9 @@ public class TranslationServiceClientTest {
     mockTranslationService.addException(exception);
 
     try {
-      String formattedParent =
-          TranslationServiceClient.formatLocationName("[PROJECT]", "[LOCATION]");
-      String filter = "filter-1274492040";
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
 
-      client.listGlossaries(formattedParent, filter);
+      client.listGlossaries(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -280,23 +273,22 @@ public class TranslationServiceClientTest {
   @Test
   @SuppressWarnings("all")
   public void getGlossaryTest() {
-    String name2 = "name2-1052831874";
+    GlossaryName name2 = GlossaryName.of("[PROJECT]", "[LOCATION]", "[GLOSSARY]");
     int entryCount = 811131134;
     Glossary expectedResponse =
-        Glossary.newBuilder().setName(name2).setEntryCount(entryCount).build();
+        Glossary.newBuilder().setName(name2.toString()).setEntryCount(entryCount).build();
     mockTranslationService.addResponse(expectedResponse);
 
-    String formattedName =
-        TranslationServiceClient.formatGlossaryName("[PROJECT]", "[LOCATION]", "[GLOSSARY]");
+    GlossaryName name = GlossaryName.of("[PROJECT]", "[LOCATION]", "[GLOSSARY]");
 
-    Glossary actualResponse = client.getGlossary(formattedName);
+    Glossary actualResponse = client.getGlossary(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockTranslationService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetGlossaryRequest actualRequest = (GetGlossaryRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedName, actualRequest.getName());
+    Assert.assertEquals(name, GlossaryName.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -310,10 +302,9 @@ public class TranslationServiceClientTest {
     mockTranslationService.addException(exception);
 
     try {
-      String formattedName =
-          TranslationServiceClient.formatGlossaryName("[PROJECT]", "[LOCATION]", "[GLOSSARY]");
+      GlossaryName name = GlossaryName.of("[PROJECT]", "[LOCATION]", "[GLOSSARY]");
 
-      client.getGlossary(formattedName);
+      client.getGlossary(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -334,17 +325,16 @@ public class TranslationServiceClientTest {
             .build();
     mockTranslationService.addResponse(resultOperation);
 
-    String formattedName =
-        TranslationServiceClient.formatGlossaryName("[PROJECT]", "[LOCATION]", "[GLOSSARY]");
+    GlossaryName name = GlossaryName.of("[PROJECT]", "[LOCATION]", "[GLOSSARY]");
 
-    DeleteGlossaryResponse actualResponse = client.deleteGlossaryAsync(formattedName).get();
+    DeleteGlossaryResponse actualResponse = client.deleteGlossaryAsync(name).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockTranslationService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     DeleteGlossaryRequest actualRequest = (DeleteGlossaryRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedName, actualRequest.getName());
+    Assert.assertEquals(name, GlossaryName.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -358,10 +348,9 @@ public class TranslationServiceClientTest {
     mockTranslationService.addException(exception);
 
     try {
-      String formattedName =
-          TranslationServiceClient.formatGlossaryName("[PROJECT]", "[LOCATION]", "[GLOSSARY]");
+      GlossaryName name = GlossaryName.of("[PROJECT]", "[LOCATION]", "[GLOSSARY]");
 
-      client.deleteGlossaryAsync(formattedName).get();
+      client.deleteGlossaryAsync(name).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
