@@ -757,7 +757,7 @@ public abstract class StructuredQuery<V> extends Query<V> {
 
     @Override
     public B setLimit(Integer limit) {
-      Preconditions.checkArgument(limit == null || limit > 0, "limit must be positive");
+      Preconditions.checkArgument(limit == null || limit >= 0, "limit must not be negative");
       this.limit = limit;
       return self();
     }
