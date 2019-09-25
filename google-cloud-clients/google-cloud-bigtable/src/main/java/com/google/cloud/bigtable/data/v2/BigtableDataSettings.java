@@ -36,6 +36,8 @@ import javax.annotation.Nonnull;
  *
  * <ul>
  *   <li>The default service address (bigtable.googleapis.com) and default port (443) are used.
+ *   <li>The transport provider is configured with a channel pool that contains twice as many
+ *       connections as CPUs.
  *   <li>Credentials are acquired automatically through Application Default Credentials.
  *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
@@ -53,10 +55,6 @@ import javax.annotation.Nonnull;
  *
  * BigtableDataSettings settings = builder.build();
  * }</pre>
- *
- * <p>{@link com.google.api.gax.rpc.TransportChannelProvider} provides thread-safe {@link
- * io.grpc.ManagedChannel channels} for this service. Each of these channel manage connection
- * pooling; means it automatically creates and destroys connection as they needed.
  *
  * <p>For fine grained control of individual RPCs, please refer to {@link
  * EnhancedBigtableStubSettings}, which is exposed as {@link Builder#stubSettings()}.
