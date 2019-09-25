@@ -113,8 +113,8 @@ public final class ListLogsResponse extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * A list of log names. For example,
-   * `"projects/my-project/syslog"` or
-   * `"organizations/123/cloudresourcemanager.googleapis.com%2Factivity"`.
+   * `"projects/my-project/logs/syslog"` or
+   * `"organizations/123/logs/cloudresourcemanager.googleapis.com%2Factivity"`.
    * </pre>
    *
    * <code>repeated string log_names = 3;</code>
@@ -127,8 +127,8 @@ public final class ListLogsResponse extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * A list of log names. For example,
-   * `"projects/my-project/syslog"` or
-   * `"organizations/123/cloudresourcemanager.googleapis.com%2Factivity"`.
+   * `"projects/my-project/logs/syslog"` or
+   * `"organizations/123/logs/cloudresourcemanager.googleapis.com%2Factivity"`.
    * </pre>
    *
    * <code>repeated string log_names = 3;</code>
@@ -141,8 +141,8 @@ public final class ListLogsResponse extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * A list of log names. For example,
-   * `"projects/my-project/syslog"` or
-   * `"organizations/123/cloudresourcemanager.googleapis.com%2Factivity"`.
+   * `"projects/my-project/logs/syslog"` or
+   * `"organizations/123/logs/cloudresourcemanager.googleapis.com%2Factivity"`.
    * </pre>
    *
    * <code>repeated string log_names = 3;</code>
@@ -155,8 +155,8 @@ public final class ListLogsResponse extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * A list of log names. For example,
-   * `"projects/my-project/syslog"` or
-   * `"organizations/123/cloudresourcemanager.googleapis.com%2Factivity"`.
+   * `"projects/my-project/logs/syslog"` or
+   * `"organizations/123/logs/cloudresourcemanager.googleapis.com%2Factivity"`.
    * </pre>
    *
    * <code>repeated string log_names = 3;</code>
@@ -579,8 +579,8 @@ public final class ListLogsResponse extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * A list of log names. For example,
-     * `"projects/my-project/syslog"` or
-     * `"organizations/123/cloudresourcemanager.googleapis.com%2Factivity"`.
+     * `"projects/my-project/logs/syslog"` or
+     * `"organizations/123/logs/cloudresourcemanager.googleapis.com%2Factivity"`.
      * </pre>
      *
      * <code>repeated string log_names = 3;</code>
@@ -593,8 +593,8 @@ public final class ListLogsResponse extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * A list of log names. For example,
-     * `"projects/my-project/syslog"` or
-     * `"organizations/123/cloudresourcemanager.googleapis.com%2Factivity"`.
+     * `"projects/my-project/logs/syslog"` or
+     * `"organizations/123/logs/cloudresourcemanager.googleapis.com%2Factivity"`.
      * </pre>
      *
      * <code>repeated string log_names = 3;</code>
@@ -607,8 +607,8 @@ public final class ListLogsResponse extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * A list of log names. For example,
-     * `"projects/my-project/syslog"` or
-     * `"organizations/123/cloudresourcemanager.googleapis.com%2Factivity"`.
+     * `"projects/my-project/logs/syslog"` or
+     * `"organizations/123/logs/cloudresourcemanager.googleapis.com%2Factivity"`.
      * </pre>
      *
      * <code>repeated string log_names = 3;</code>
@@ -621,8 +621,8 @@ public final class ListLogsResponse extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * A list of log names. For example,
-     * `"projects/my-project/syslog"` or
-     * `"organizations/123/cloudresourcemanager.googleapis.com%2Factivity"`.
+     * `"projects/my-project/logs/syslog"` or
+     * `"organizations/123/logs/cloudresourcemanager.googleapis.com%2Factivity"`.
      * </pre>
      *
      * <code>repeated string log_names = 3;</code>
@@ -635,8 +635,8 @@ public final class ListLogsResponse extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * A list of log names. For example,
-     * `"projects/my-project/syslog"` or
-     * `"organizations/123/cloudresourcemanager.googleapis.com%2Factivity"`.
+     * `"projects/my-project/logs/syslog"` or
+     * `"organizations/123/logs/cloudresourcemanager.googleapis.com%2Factivity"`.
      * </pre>
      *
      * <code>repeated string log_names = 3;</code>
@@ -655,8 +655,8 @@ public final class ListLogsResponse extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * A list of log names. For example,
-     * `"projects/my-project/syslog"` or
-     * `"organizations/123/cloudresourcemanager.googleapis.com%2Factivity"`.
+     * `"projects/my-project/logs/syslog"` or
+     * `"organizations/123/logs/cloudresourcemanager.googleapis.com%2Factivity"`.
      * </pre>
      *
      * <code>repeated string log_names = 3;</code>
@@ -675,8 +675,8 @@ public final class ListLogsResponse extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * A list of log names. For example,
-     * `"projects/my-project/syslog"` or
-     * `"organizations/123/cloudresourcemanager.googleapis.com%2Factivity"`.
+     * `"projects/my-project/logs/syslog"` or
+     * `"organizations/123/logs/cloudresourcemanager.googleapis.com%2Factivity"`.
      * </pre>
      *
      * <code>repeated string log_names = 3;</code>
@@ -692,8 +692,8 @@ public final class ListLogsResponse extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * A list of log names. For example,
-     * `"projects/my-project/syslog"` or
-     * `"organizations/123/cloudresourcemanager.googleapis.com%2Factivity"`.
+     * `"projects/my-project/logs/syslog"` or
+     * `"organizations/123/logs/cloudresourcemanager.googleapis.com%2Factivity"`.
      * </pre>
      *
      * <code>repeated string log_names = 3;</code>
@@ -709,8 +709,8 @@ public final class ListLogsResponse extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * A list of log names. For example,
-     * `"projects/my-project/syslog"` or
-     * `"organizations/123/cloudresourcemanager.googleapis.com%2Factivity"`.
+     * `"projects/my-project/logs/syslog"` or
+     * `"organizations/123/logs/cloudresourcemanager.googleapis.com%2Factivity"`.
      * </pre>
      *
      * <code>repeated string log_names = 3;</code>
