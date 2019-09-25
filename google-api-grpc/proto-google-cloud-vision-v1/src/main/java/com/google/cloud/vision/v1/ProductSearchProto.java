@@ -42,11 +42,11 @@ public final class ProductSearchProto {
   static {
     java.lang.String[] descriptorData = {
       "\n+google/cloud/vision/v1/product_search."
-          + "proto\022\026google.cloud.vision.v1\032\034google/ap"
-          + "i/annotations.proto\032%google/cloud/vision"
-          + "/v1/geometry.proto\0323google/cloud/vision/"
-          + "v1/product_search_service.proto\032\037google/"
-          + "protobuf/timestamp.proto\"\223\001\n\023ProductSear"
+          + "proto\022\026google.cloud.vision.v1\032%google/cl"
+          + "oud/vision/v1/geometry.proto\0323google/clo"
+          + "ud/vision/v1/product_search_service.prot"
+          + "o\032\037google/protobuf/timestamp.proto\032\034goog"
+          + "le/api/annotations.proto\"\223\001\n\023ProductSear"
           + "chParams\022;\n\rbounding_poly\030\t \001(\0132$.google"
           + ".cloud.vision.v1.BoundingPoly\022\023\n\013product"
           + "_set\030\006 \001(\t\022\032\n\022product_categories\030\007 \003(\t\022\016"
@@ -82,10 +82,10 @@ public final class ProductSearchProto {
     com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
         descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.api.AnnotationsProto.getDescriptor(),
           com.google.cloud.vision.v1.GeometryProto.getDescriptor(),
           com.google.cloud.vision.v1.ProductSearchServiceProto.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
+          com.google.api.AnnotationsProto.getDescriptor(),
         },
         assigner);
     internal_static_google_cloud_vision_v1_ProductSearchParams_descriptor =
@@ -134,10 +134,10 @@ public final class ProductSearchProto {
             new java.lang.String[] {
               "BoundingPoly", "Results", "ObjectAnnotations",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.cloud.vision.v1.GeometryProto.getDescriptor();
     com.google.cloud.vision.v1.ProductSearchServiceProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
+    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

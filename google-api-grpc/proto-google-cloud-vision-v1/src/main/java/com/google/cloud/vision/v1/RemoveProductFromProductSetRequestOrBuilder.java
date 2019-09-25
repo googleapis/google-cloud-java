@@ -12,24 +12,28 @@ public interface RemoveProductFromProductSetRequestOrBuilder
    *
    *
    * <pre>
-   * The resource name for the ProductSet to modify.
+   * Required. The resource name for the ProductSet to modify.
    * Format is:
    * `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   java.lang.String getName();
   /**
    *
    *
    * <pre>
-   * The resource name for the ProductSet to modify.
+   * Required. The resource name for the ProductSet to modify.
    * Format is:
    * `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -37,24 +41,28 @@ public interface RemoveProductFromProductSetRequestOrBuilder
    *
    *
    * <pre>
-   * The resource name for the Product to be removed from this ProductSet.
+   * Required. The resource name for the Product to be removed from this ProductSet.
    * Format is:
    * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`
    * </pre>
    *
-   * <code>string product = 2;</code>
+   * <code>
+   * string product = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   java.lang.String getProduct();
   /**
    *
    *
    * <pre>
-   * The resource name for the Product to be removed from this ProductSet.
+   * Required. The resource name for the Product to be removed from this ProductSet.
    * Format is:
    * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`
    * </pre>
    *
-   * <code>string product = 2;</code>
+   * <code>
+   * string product = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   com.google.protobuf.ByteString getProductBytes();
 }

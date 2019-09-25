@@ -171,12 +171,11 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The Google Cloud Storage URI of the reference image.
+   * Required. The Google Cloud Storage URI of the reference image.
    * The URI must start with `gs://`.
-   * Required.
    * </pre>
    *
-   * <code>string uri = 2;</code>
+   * <code>string uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getUri() {
     java.lang.Object ref = uri_;
@@ -193,12 +192,11 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The Google Cloud Storage URI of the reference image.
+   * Required. The Google Cloud Storage URI of the reference image.
    * The URI must start with `gs://`.
-   * Required.
    * </pre>
    *
-   * <code>string uri = 2;</code>
+   * <code>string uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getUriBytes() {
     java.lang.Object ref = uri_;
@@ -218,8 +216,8 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Bounding polygons around the areas of interest in the reference image.
-   * Optional. If this field is empty, the system will try to detect regions of
+   * Optional. Bounding polygons around the areas of interest in the reference image.
+   * If this field is empty, the system will try to detect regions of
    * interest. At most 10 bounding polygons will be used.
    * The provided shape is converted into a non-rotated rectangle. Once
    * converted, the small edge of the rectangle must be greater than or equal
@@ -227,7 +225,9 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
    * is not).
    * </pre>
    *
-   * <code>repeated .google.cloud.vision.v1.BoundingPoly bounding_polys = 3;</code>
+   * <code>
+   * repeated .google.cloud.vision.v1.BoundingPoly bounding_polys = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public java.util.List<com.google.cloud.vision.v1.BoundingPoly> getBoundingPolysList() {
     return boundingPolys_;
@@ -236,8 +236,8 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Bounding polygons around the areas of interest in the reference image.
-   * Optional. If this field is empty, the system will try to detect regions of
+   * Optional. Bounding polygons around the areas of interest in the reference image.
+   * If this field is empty, the system will try to detect regions of
    * interest. At most 10 bounding polygons will be used.
    * The provided shape is converted into a non-rotated rectangle. Once
    * converted, the small edge of the rectangle must be greater than or equal
@@ -245,7 +245,9 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
    * is not).
    * </pre>
    *
-   * <code>repeated .google.cloud.vision.v1.BoundingPoly bounding_polys = 3;</code>
+   * <code>
+   * repeated .google.cloud.vision.v1.BoundingPoly bounding_polys = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public java.util.List<? extends com.google.cloud.vision.v1.BoundingPolyOrBuilder>
       getBoundingPolysOrBuilderList() {
@@ -255,8 +257,8 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Bounding polygons around the areas of interest in the reference image.
-   * Optional. If this field is empty, the system will try to detect regions of
+   * Optional. Bounding polygons around the areas of interest in the reference image.
+   * If this field is empty, the system will try to detect regions of
    * interest. At most 10 bounding polygons will be used.
    * The provided shape is converted into a non-rotated rectangle. Once
    * converted, the small edge of the rectangle must be greater than or equal
@@ -264,7 +266,9 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
    * is not).
    * </pre>
    *
-   * <code>repeated .google.cloud.vision.v1.BoundingPoly bounding_polys = 3;</code>
+   * <code>
+   * repeated .google.cloud.vision.v1.BoundingPoly bounding_polys = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public int getBoundingPolysCount() {
     return boundingPolys_.size();
@@ -273,8 +277,8 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Bounding polygons around the areas of interest in the reference image.
-   * Optional. If this field is empty, the system will try to detect regions of
+   * Optional. Bounding polygons around the areas of interest in the reference image.
+   * If this field is empty, the system will try to detect regions of
    * interest. At most 10 bounding polygons will be used.
    * The provided shape is converted into a non-rotated rectangle. Once
    * converted, the small edge of the rectangle must be greater than or equal
@@ -282,7 +286,9 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
    * is not).
    * </pre>
    *
-   * <code>repeated .google.cloud.vision.v1.BoundingPoly bounding_polys = 3;</code>
+   * <code>
+   * repeated .google.cloud.vision.v1.BoundingPoly bounding_polys = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public com.google.cloud.vision.v1.BoundingPoly getBoundingPolys(int index) {
     return boundingPolys_.get(index);
@@ -291,8 +297,8 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Bounding polygons around the areas of interest in the reference image.
-   * Optional. If this field is empty, the system will try to detect regions of
+   * Optional. Bounding polygons around the areas of interest in the reference image.
+   * If this field is empty, the system will try to detect regions of
    * interest. At most 10 bounding polygons will be used.
    * The provided shape is converted into a non-rotated rectangle. Once
    * converted, the small edge of the rectangle must be greater than or equal
@@ -300,7 +306,9 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
    * is not).
    * </pre>
    *
-   * <code>repeated .google.cloud.vision.v1.BoundingPoly bounding_polys = 3;</code>
+   * <code>
+   * repeated .google.cloud.vision.v1.BoundingPoly bounding_polys = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public com.google.cloud.vision.v1.BoundingPolyOrBuilder getBoundingPolysOrBuilder(int index) {
     return boundingPolys_.get(index);
@@ -813,12 +821,11 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Google Cloud Storage URI of the reference image.
+     * Required. The Google Cloud Storage URI of the reference image.
      * The URI must start with `gs://`.
-     * Required.
      * </pre>
      *
-     * <code>string uri = 2;</code>
+     * <code>string uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getUri() {
       java.lang.Object ref = uri_;
@@ -835,12 +842,11 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Google Cloud Storage URI of the reference image.
+     * Required. The Google Cloud Storage URI of the reference image.
      * The URI must start with `gs://`.
-     * Required.
      * </pre>
      *
-     * <code>string uri = 2;</code>
+     * <code>string uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getUriBytes() {
       java.lang.Object ref = uri_;
@@ -857,12 +863,11 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Google Cloud Storage URI of the reference image.
+     * Required. The Google Cloud Storage URI of the reference image.
      * The URI must start with `gs://`.
-     * Required.
      * </pre>
      *
-     * <code>string uri = 2;</code>
+     * <code>string uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setUri(java.lang.String value) {
       if (value == null) {
@@ -877,12 +882,11 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Google Cloud Storage URI of the reference image.
+     * Required. The Google Cloud Storage URI of the reference image.
      * The URI must start with `gs://`.
-     * Required.
      * </pre>
      *
-     * <code>string uri = 2;</code>
+     * <code>string uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearUri() {
 
@@ -894,12 +898,11 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Google Cloud Storage URI of the reference image.
+     * Required. The Google Cloud Storage URI of the reference image.
      * The URI must start with `gs://`.
-     * Required.
      * </pre>
      *
-     * <code>string uri = 2;</code>
+     * <code>string uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setUriBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -933,8 +936,8 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Bounding polygons around the areas of interest in the reference image.
-     * Optional. If this field is empty, the system will try to detect regions of
+     * Optional. Bounding polygons around the areas of interest in the reference image.
+     * If this field is empty, the system will try to detect regions of
      * interest. At most 10 bounding polygons will be used.
      * The provided shape is converted into a non-rotated rectangle. Once
      * converted, the small edge of the rectangle must be greater than or equal
@@ -942,7 +945,9 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
      * is not).
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1.BoundingPoly bounding_polys = 3;</code>
+     * <code>
+     * repeated .google.cloud.vision.v1.BoundingPoly bounding_polys = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<com.google.cloud.vision.v1.BoundingPoly> getBoundingPolysList() {
       if (boundingPolysBuilder_ == null) {
@@ -955,8 +960,8 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Bounding polygons around the areas of interest in the reference image.
-     * Optional. If this field is empty, the system will try to detect regions of
+     * Optional. Bounding polygons around the areas of interest in the reference image.
+     * If this field is empty, the system will try to detect regions of
      * interest. At most 10 bounding polygons will be used.
      * The provided shape is converted into a non-rotated rectangle. Once
      * converted, the small edge of the rectangle must be greater than or equal
@@ -964,7 +969,9 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
      * is not).
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1.BoundingPoly bounding_polys = 3;</code>
+     * <code>
+     * repeated .google.cloud.vision.v1.BoundingPoly bounding_polys = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public int getBoundingPolysCount() {
       if (boundingPolysBuilder_ == null) {
@@ -977,8 +984,8 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Bounding polygons around the areas of interest in the reference image.
-     * Optional. If this field is empty, the system will try to detect regions of
+     * Optional. Bounding polygons around the areas of interest in the reference image.
+     * If this field is empty, the system will try to detect regions of
      * interest. At most 10 bounding polygons will be used.
      * The provided shape is converted into a non-rotated rectangle. Once
      * converted, the small edge of the rectangle must be greater than or equal
@@ -986,7 +993,9 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
      * is not).
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1.BoundingPoly bounding_polys = 3;</code>
+     * <code>
+     * repeated .google.cloud.vision.v1.BoundingPoly bounding_polys = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.vision.v1.BoundingPoly getBoundingPolys(int index) {
       if (boundingPolysBuilder_ == null) {
@@ -999,8 +1008,8 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Bounding polygons around the areas of interest in the reference image.
-     * Optional. If this field is empty, the system will try to detect regions of
+     * Optional. Bounding polygons around the areas of interest in the reference image.
+     * If this field is empty, the system will try to detect regions of
      * interest. At most 10 bounding polygons will be used.
      * The provided shape is converted into a non-rotated rectangle. Once
      * converted, the small edge of the rectangle must be greater than or equal
@@ -1008,7 +1017,9 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
      * is not).
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1.BoundingPoly bounding_polys = 3;</code>
+     * <code>
+     * repeated .google.cloud.vision.v1.BoundingPoly bounding_polys = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setBoundingPolys(int index, com.google.cloud.vision.v1.BoundingPoly value) {
       if (boundingPolysBuilder_ == null) {
@@ -1027,8 +1038,8 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Bounding polygons around the areas of interest in the reference image.
-     * Optional. If this field is empty, the system will try to detect regions of
+     * Optional. Bounding polygons around the areas of interest in the reference image.
+     * If this field is empty, the system will try to detect regions of
      * interest. At most 10 bounding polygons will be used.
      * The provided shape is converted into a non-rotated rectangle. Once
      * converted, the small edge of the rectangle must be greater than or equal
@@ -1036,7 +1047,9 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
      * is not).
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1.BoundingPoly bounding_polys = 3;</code>
+     * <code>
+     * repeated .google.cloud.vision.v1.BoundingPoly bounding_polys = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setBoundingPolys(
         int index, com.google.cloud.vision.v1.BoundingPoly.Builder builderForValue) {
@@ -1053,8 +1066,8 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Bounding polygons around the areas of interest in the reference image.
-     * Optional. If this field is empty, the system will try to detect regions of
+     * Optional. Bounding polygons around the areas of interest in the reference image.
+     * If this field is empty, the system will try to detect regions of
      * interest. At most 10 bounding polygons will be used.
      * The provided shape is converted into a non-rotated rectangle. Once
      * converted, the small edge of the rectangle must be greater than or equal
@@ -1062,7 +1075,9 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
      * is not).
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1.BoundingPoly bounding_polys = 3;</code>
+     * <code>
+     * repeated .google.cloud.vision.v1.BoundingPoly bounding_polys = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addBoundingPolys(com.google.cloud.vision.v1.BoundingPoly value) {
       if (boundingPolysBuilder_ == null) {
@@ -1081,8 +1096,8 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Bounding polygons around the areas of interest in the reference image.
-     * Optional. If this field is empty, the system will try to detect regions of
+     * Optional. Bounding polygons around the areas of interest in the reference image.
+     * If this field is empty, the system will try to detect regions of
      * interest. At most 10 bounding polygons will be used.
      * The provided shape is converted into a non-rotated rectangle. Once
      * converted, the small edge of the rectangle must be greater than or equal
@@ -1090,7 +1105,9 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
      * is not).
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1.BoundingPoly bounding_polys = 3;</code>
+     * <code>
+     * repeated .google.cloud.vision.v1.BoundingPoly bounding_polys = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addBoundingPolys(int index, com.google.cloud.vision.v1.BoundingPoly value) {
       if (boundingPolysBuilder_ == null) {
@@ -1109,8 +1126,8 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Bounding polygons around the areas of interest in the reference image.
-     * Optional. If this field is empty, the system will try to detect regions of
+     * Optional. Bounding polygons around the areas of interest in the reference image.
+     * If this field is empty, the system will try to detect regions of
      * interest. At most 10 bounding polygons will be used.
      * The provided shape is converted into a non-rotated rectangle. Once
      * converted, the small edge of the rectangle must be greater than or equal
@@ -1118,7 +1135,9 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
      * is not).
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1.BoundingPoly bounding_polys = 3;</code>
+     * <code>
+     * repeated .google.cloud.vision.v1.BoundingPoly bounding_polys = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addBoundingPolys(
         com.google.cloud.vision.v1.BoundingPoly.Builder builderForValue) {
@@ -1135,8 +1154,8 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Bounding polygons around the areas of interest in the reference image.
-     * Optional. If this field is empty, the system will try to detect regions of
+     * Optional. Bounding polygons around the areas of interest in the reference image.
+     * If this field is empty, the system will try to detect regions of
      * interest. At most 10 bounding polygons will be used.
      * The provided shape is converted into a non-rotated rectangle. Once
      * converted, the small edge of the rectangle must be greater than or equal
@@ -1144,7 +1163,9 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
      * is not).
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1.BoundingPoly bounding_polys = 3;</code>
+     * <code>
+     * repeated .google.cloud.vision.v1.BoundingPoly bounding_polys = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addBoundingPolys(
         int index, com.google.cloud.vision.v1.BoundingPoly.Builder builderForValue) {
@@ -1161,8 +1182,8 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Bounding polygons around the areas of interest in the reference image.
-     * Optional. If this field is empty, the system will try to detect regions of
+     * Optional. Bounding polygons around the areas of interest in the reference image.
+     * If this field is empty, the system will try to detect regions of
      * interest. At most 10 bounding polygons will be used.
      * The provided shape is converted into a non-rotated rectangle. Once
      * converted, the small edge of the rectangle must be greater than or equal
@@ -1170,7 +1191,9 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
      * is not).
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1.BoundingPoly bounding_polys = 3;</code>
+     * <code>
+     * repeated .google.cloud.vision.v1.BoundingPoly bounding_polys = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addAllBoundingPolys(
         java.lang.Iterable<? extends com.google.cloud.vision.v1.BoundingPoly> values) {
@@ -1187,8 +1210,8 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Bounding polygons around the areas of interest in the reference image.
-     * Optional. If this field is empty, the system will try to detect regions of
+     * Optional. Bounding polygons around the areas of interest in the reference image.
+     * If this field is empty, the system will try to detect regions of
      * interest. At most 10 bounding polygons will be used.
      * The provided shape is converted into a non-rotated rectangle. Once
      * converted, the small edge of the rectangle must be greater than or equal
@@ -1196,7 +1219,9 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
      * is not).
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1.BoundingPoly bounding_polys = 3;</code>
+     * <code>
+     * repeated .google.cloud.vision.v1.BoundingPoly bounding_polys = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearBoundingPolys() {
       if (boundingPolysBuilder_ == null) {
@@ -1212,8 +1237,8 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Bounding polygons around the areas of interest in the reference image.
-     * Optional. If this field is empty, the system will try to detect regions of
+     * Optional. Bounding polygons around the areas of interest in the reference image.
+     * If this field is empty, the system will try to detect regions of
      * interest. At most 10 bounding polygons will be used.
      * The provided shape is converted into a non-rotated rectangle. Once
      * converted, the small edge of the rectangle must be greater than or equal
@@ -1221,7 +1246,9 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
      * is not).
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1.BoundingPoly bounding_polys = 3;</code>
+     * <code>
+     * repeated .google.cloud.vision.v1.BoundingPoly bounding_polys = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder removeBoundingPolys(int index) {
       if (boundingPolysBuilder_ == null) {
@@ -1237,8 +1264,8 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Bounding polygons around the areas of interest in the reference image.
-     * Optional. If this field is empty, the system will try to detect regions of
+     * Optional. Bounding polygons around the areas of interest in the reference image.
+     * If this field is empty, the system will try to detect regions of
      * interest. At most 10 bounding polygons will be used.
      * The provided shape is converted into a non-rotated rectangle. Once
      * converted, the small edge of the rectangle must be greater than or equal
@@ -1246,7 +1273,9 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
      * is not).
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1.BoundingPoly bounding_polys = 3;</code>
+     * <code>
+     * repeated .google.cloud.vision.v1.BoundingPoly bounding_polys = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.vision.v1.BoundingPoly.Builder getBoundingPolysBuilder(int index) {
       return getBoundingPolysFieldBuilder().getBuilder(index);
@@ -1255,8 +1284,8 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Bounding polygons around the areas of interest in the reference image.
-     * Optional. If this field is empty, the system will try to detect regions of
+     * Optional. Bounding polygons around the areas of interest in the reference image.
+     * If this field is empty, the system will try to detect regions of
      * interest. At most 10 bounding polygons will be used.
      * The provided shape is converted into a non-rotated rectangle. Once
      * converted, the small edge of the rectangle must be greater than or equal
@@ -1264,7 +1293,9 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
      * is not).
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1.BoundingPoly bounding_polys = 3;</code>
+     * <code>
+     * repeated .google.cloud.vision.v1.BoundingPoly bounding_polys = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.vision.v1.BoundingPolyOrBuilder getBoundingPolysOrBuilder(int index) {
       if (boundingPolysBuilder_ == null) {
@@ -1277,8 +1308,8 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Bounding polygons around the areas of interest in the reference image.
-     * Optional. If this field is empty, the system will try to detect regions of
+     * Optional. Bounding polygons around the areas of interest in the reference image.
+     * If this field is empty, the system will try to detect regions of
      * interest. At most 10 bounding polygons will be used.
      * The provided shape is converted into a non-rotated rectangle. Once
      * converted, the small edge of the rectangle must be greater than or equal
@@ -1286,7 +1317,9 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
      * is not).
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1.BoundingPoly bounding_polys = 3;</code>
+     * <code>
+     * repeated .google.cloud.vision.v1.BoundingPoly bounding_polys = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<? extends com.google.cloud.vision.v1.BoundingPolyOrBuilder>
         getBoundingPolysOrBuilderList() {
@@ -1300,8 +1333,8 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Bounding polygons around the areas of interest in the reference image.
-     * Optional. If this field is empty, the system will try to detect regions of
+     * Optional. Bounding polygons around the areas of interest in the reference image.
+     * If this field is empty, the system will try to detect regions of
      * interest. At most 10 bounding polygons will be used.
      * The provided shape is converted into a non-rotated rectangle. Once
      * converted, the small edge of the rectangle must be greater than or equal
@@ -1309,7 +1342,9 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
      * is not).
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1.BoundingPoly bounding_polys = 3;</code>
+     * <code>
+     * repeated .google.cloud.vision.v1.BoundingPoly bounding_polys = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.vision.v1.BoundingPoly.Builder addBoundingPolysBuilder() {
       return getBoundingPolysFieldBuilder()
@@ -1319,8 +1354,8 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Bounding polygons around the areas of interest in the reference image.
-     * Optional. If this field is empty, the system will try to detect regions of
+     * Optional. Bounding polygons around the areas of interest in the reference image.
+     * If this field is empty, the system will try to detect regions of
      * interest. At most 10 bounding polygons will be used.
      * The provided shape is converted into a non-rotated rectangle. Once
      * converted, the small edge of the rectangle must be greater than or equal
@@ -1328,7 +1363,9 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
      * is not).
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1.BoundingPoly bounding_polys = 3;</code>
+     * <code>
+     * repeated .google.cloud.vision.v1.BoundingPoly bounding_polys = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.vision.v1.BoundingPoly.Builder addBoundingPolysBuilder(int index) {
       return getBoundingPolysFieldBuilder()
@@ -1338,8 +1375,8 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Bounding polygons around the areas of interest in the reference image.
-     * Optional. If this field is empty, the system will try to detect regions of
+     * Optional. Bounding polygons around the areas of interest in the reference image.
+     * If this field is empty, the system will try to detect regions of
      * interest. At most 10 bounding polygons will be used.
      * The provided shape is converted into a non-rotated rectangle. Once
      * converted, the small edge of the rectangle must be greater than or equal
@@ -1347,7 +1384,9 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
      * is not).
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1.BoundingPoly bounding_polys = 3;</code>
+     * <code>
+     * repeated .google.cloud.vision.v1.BoundingPoly bounding_polys = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<com.google.cloud.vision.v1.BoundingPoly.Builder>
         getBoundingPolysBuilderList() {
