@@ -7,11 +7,13 @@ package com.google.cloud.talent.v4beta1;
  *
  *
  * <pre>
+ * Deprecated. Use AvailabilityFilter instead.
  * Filter on availability signals.
  * </pre>
  *
  * Protobuf type {@code google.cloud.talent.v4beta1.CandidateAvailabilityFilter}
  */
+@java.lang.Deprecated
 public final class CandidateAvailabilityFilter extends com.google.protobuf.GeneratedMessageV3
     implements
     // @@protoc_insertion_point(message_implements:google.cloud.talent.v4beta1.CandidateAvailabilityFilter)
@@ -267,6 +269,7 @@ public final class CandidateAvailabilityFilter extends com.google.protobuf.Gener
    *
    *
    * <pre>
+   * Deprecated. Use AvailabilityFilter instead.
    * Filter on availability signals.
    * </pre>
    *
