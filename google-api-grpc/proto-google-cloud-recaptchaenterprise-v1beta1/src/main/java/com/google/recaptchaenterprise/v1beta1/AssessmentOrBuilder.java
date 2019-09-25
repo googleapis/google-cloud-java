@@ -16,7 +16,7 @@ public interface AssessmentOrBuilder
    * "projects/{project_number}/assessments/{assessment_id}".
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   java.lang.String getName();
   /**
@@ -27,7 +27,7 @@ public interface AssessmentOrBuilder
    * "projects/{project_number}/assessments/{assessment_id}".
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -71,7 +71,7 @@ public interface AssessmentOrBuilder
    * non-legitimate traffic).
    * </pre>
    *
-   * <code>float score = 3;</code>
+   * <code>float score = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   float getScore();
 
@@ -82,7 +82,9 @@ public interface AssessmentOrBuilder
    * Output only. Properties of the provided event token.
    * </pre>
    *
-   * <code>.google.cloud.recaptchaenterprise.v1beta1.TokenProperties token_properties = 4;</code>
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1beta1.TokenProperties token_properties = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   boolean hasTokenProperties();
   /**
@@ -92,7 +94,9 @@ public interface AssessmentOrBuilder
    * Output only. Properties of the provided event token.
    * </pre>
    *
-   * <code>.google.cloud.recaptchaenterprise.v1beta1.TokenProperties token_properties = 4;</code>
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1beta1.TokenProperties token_properties = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.recaptchaenterprise.v1beta1.TokenProperties getTokenProperties();
   /**
@@ -102,7 +106,9 @@ public interface AssessmentOrBuilder
    * Output only. Properties of the provided event token.
    * </pre>
    *
-   * <code>.google.cloud.recaptchaenterprise.v1beta1.TokenProperties token_properties = 4;</code>
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1beta1.TokenProperties token_properties = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.recaptchaenterprise.v1beta1.TokenPropertiesOrBuilder getTokenPropertiesOrBuilder();
 
@@ -114,7 +120,7 @@ public interface AssessmentOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.recaptchaenterprise.v1beta1.Assessment.ClassificationReason reasons = 5;
+   * repeated .google.cloud.recaptchaenterprise.v1beta1.Assessment.ClassificationReason reasons = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   java.util.List<com.google.recaptchaenterprise.v1beta1.Assessment.ClassificationReason>
@@ -127,7 +133,7 @@ public interface AssessmentOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.recaptchaenterprise.v1beta1.Assessment.ClassificationReason reasons = 5;
+   * repeated .google.cloud.recaptchaenterprise.v1beta1.Assessment.ClassificationReason reasons = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   int getReasonsCount();
@@ -139,7 +145,7 @@ public interface AssessmentOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.recaptchaenterprise.v1beta1.Assessment.ClassificationReason reasons = 5;
+   * repeated .google.cloud.recaptchaenterprise.v1beta1.Assessment.ClassificationReason reasons = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   com.google.recaptchaenterprise.v1beta1.Assessment.ClassificationReason getReasons(int index);
@@ -151,7 +157,7 @@ public interface AssessmentOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.recaptchaenterprise.v1beta1.Assessment.ClassificationReason reasons = 5;
+   * repeated .google.cloud.recaptchaenterprise.v1beta1.Assessment.ClassificationReason reasons = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   java.util.List<java.lang.Integer> getReasonsValueList();
@@ -163,7 +169,7 @@ public interface AssessmentOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.recaptchaenterprise.v1beta1.Assessment.ClassificationReason reasons = 5;
+   * repeated .google.cloud.recaptchaenterprise.v1beta1.Assessment.ClassificationReason reasons = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   int getReasonsValue(int index);
