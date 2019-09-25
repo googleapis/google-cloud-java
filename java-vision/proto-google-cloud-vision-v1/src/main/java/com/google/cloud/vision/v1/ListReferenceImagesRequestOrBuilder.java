@@ -12,24 +12,28 @@ public interface ListReferenceImagesRequestOrBuilder
    *
    *
    * <pre>
-   * Resource name of the product containing the reference images.
+   * Required. Resource name of the product containing the reference images.
    * Format is
    * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   java.lang.String getParent();
   /**
    *
    *
    * <pre>
-   * Resource name of the product containing the reference images.
+   * Required. Resource name of the product containing the reference images.
    * Format is
    * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   com.google.protobuf.ByteString getParentBytes();
 

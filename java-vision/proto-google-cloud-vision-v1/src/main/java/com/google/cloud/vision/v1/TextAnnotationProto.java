@@ -58,9 +58,9 @@ public final class TextAnnotationProto {
   static {
     java.lang.String[] descriptorData = {
       "\n,google/cloud/vision/v1/text_annotation"
-          + ".proto\022\026google.cloud.vision.v1\032\034google/a"
-          + "pi/annotations.proto\032%google/cloud/visio"
-          + "n/v1/geometry.proto\"\226\004\n\016TextAnnotation\022+"
+          + ".proto\022\026google.cloud.vision.v1\032%google/c"
+          + "loud/vision/v1/geometry.proto\032\034google/ap"
+          + "i/annotations.proto\"\226\004\n\016TextAnnotation\022+"
           + "\n\005pages\030\001 \003(\0132\034.google.cloud.vision.v1.P"
           + "age\022\014\n\004text\030\002 \001(\t\032=\n\020DetectedLanguage\022\025\n"
           + "\rlanguage_code\030\001 \001(\t\022\022\n\nconfidence\030\002 \001(\002"
@@ -118,8 +118,8 @@ public final class TextAnnotationProto {
     com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
         descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.api.AnnotationsProto.getDescriptor(),
           com.google.cloud.vision.v1.GeometryProto.getDescriptor(),
+          com.google.api.AnnotationsProto.getDescriptor(),
         },
         assigner);
     internal_static_google_cloud_vision_v1_TextAnnotation_descriptor =
@@ -194,8 +194,8 @@ public final class TextAnnotationProto {
             new java.lang.String[] {
               "Property", "BoundingBox", "Text", "Confidence",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.cloud.vision.v1.GeometryProto.getDescriptor();
+    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -12,40 +12,48 @@ public interface AsyncBatchAnnotateFilesRequestOrBuilder
    *
    *
    * <pre>
-   * Individual async file annotation requests for this batch.
+   * Required. Individual async file annotation requests for this batch.
    * </pre>
    *
-   * <code>repeated .google.cloud.vision.v1.AsyncAnnotateFileRequest requests = 1;</code>
+   * <code>
+   * repeated .google.cloud.vision.v1.AsyncAnnotateFileRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   java.util.List<com.google.cloud.vision.v1.AsyncAnnotateFileRequest> getRequestsList();
   /**
    *
    *
    * <pre>
-   * Individual async file annotation requests for this batch.
+   * Required. Individual async file annotation requests for this batch.
    * </pre>
    *
-   * <code>repeated .google.cloud.vision.v1.AsyncAnnotateFileRequest requests = 1;</code>
+   * <code>
+   * repeated .google.cloud.vision.v1.AsyncAnnotateFileRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.vision.v1.AsyncAnnotateFileRequest getRequests(int index);
   /**
    *
    *
    * <pre>
-   * Individual async file annotation requests for this batch.
+   * Required. Individual async file annotation requests for this batch.
    * </pre>
    *
-   * <code>repeated .google.cloud.vision.v1.AsyncAnnotateFileRequest requests = 1;</code>
+   * <code>
+   * repeated .google.cloud.vision.v1.AsyncAnnotateFileRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   int getRequestsCount();
   /**
    *
    *
    * <pre>
-   * Individual async file annotation requests for this batch.
+   * Required. Individual async file annotation requests for this batch.
    * </pre>
    *
-   * <code>repeated .google.cloud.vision.v1.AsyncAnnotateFileRequest requests = 1;</code>
+   * <code>
+   * repeated .google.cloud.vision.v1.AsyncAnnotateFileRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   java.util.List<? extends com.google.cloud.vision.v1.AsyncAnnotateFileRequestOrBuilder>
       getRequestsOrBuilderList();
@@ -53,10 +61,12 @@ public interface AsyncBatchAnnotateFilesRequestOrBuilder
    *
    *
    * <pre>
-   * Individual async file annotation requests for this batch.
+   * Required. Individual async file annotation requests for this batch.
    * </pre>
    *
-   * <code>repeated .google.cloud.vision.v1.AsyncAnnotateFileRequest requests = 1;</code>
+   * <code>
+   * repeated .google.cloud.vision.v1.AsyncAnnotateFileRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.vision.v1.AsyncAnnotateFileRequestOrBuilder getRequestsOrBuilder(int index);
 

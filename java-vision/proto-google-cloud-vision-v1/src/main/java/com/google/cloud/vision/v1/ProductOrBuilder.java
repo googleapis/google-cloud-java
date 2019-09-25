@@ -85,28 +85,26 @@ public interface ProductOrBuilder
    *
    *
    * <pre>
-   * The category for the product identified by the reference image. This should
+   * Immutable. The category for the product identified by the reference image. This should
    * be either "homegoods-v2", "apparel-v2", "toys-v2", "packagedgoods-v1", or
    * "general-v1" The legacy categories "homegoods", "apparel", and "toys" are
    * still supported, but these should not be used for new products.
-   * This field is immutable.
    * </pre>
    *
-   * <code>string product_category = 4;</code>
+   * <code>string product_category = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
    */
   java.lang.String getProductCategory();
   /**
    *
    *
    * <pre>
-   * The category for the product identified by the reference image. This should
+   * Immutable. The category for the product identified by the reference image. This should
    * be either "homegoods-v2", "apparel-v2", "toys-v2", "packagedgoods-v1", or
    * "general-v1" The legacy categories "homegoods", "apparel", and "toys" are
    * still supported, but these should not be used for new products.
-   * This field is immutable.
    * </pre>
    *
-   * <code>string product_category = 4;</code>
+   * <code>string product_category = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
    */
   com.google.protobuf.ByteString getProductCategoryBytes();
 

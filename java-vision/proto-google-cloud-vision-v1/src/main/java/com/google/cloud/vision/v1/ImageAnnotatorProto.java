@@ -101,10 +101,6 @@ public final class ImageAnnotatorProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_vision_v1_AnnotateImageResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-      internal_static_google_cloud_vision_v1_AnnotateFileResponse_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_cloud_vision_v1_AnnotateFileResponse_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_vision_v1_BatchAnnotateImagesRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_vision_v1_BatchAnnotateImagesRequest_fieldAccessorTable;
@@ -116,6 +112,10 @@ public final class ImageAnnotatorProto {
       internal_static_google_cloud_vision_v1_AnnotateFileRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_vision_v1_AnnotateFileRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_vision_v1_AnnotateFileResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_vision_v1_AnnotateFileResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_vision_v1_BatchAnnotateFilesRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -180,241 +180,250 @@ public final class ImageAnnotatorProto {
       "\n,google/cloud/vision/v1/image_annotator"
           + ".proto\022\026google.cloud.vision.v1\032\034google/a"
           + "pi/annotations.proto\032\027google/api/client."
-          + "proto\032%google/cloud/vision/v1/geometry.p"
-          + "roto\032+google/cloud/vision/v1/product_sea"
-          + "rch.proto\032,google/cloud/vision/v1/text_a"
-          + "nnotation.proto\032*google/cloud/vision/v1/"
-          + "web_detection.proto\032#google/longrunning/"
-          + "operations.proto\032 google/protobuf/field_"
-          + "mask.proto\032\037google/protobuf/timestamp.pr"
-          + "oto\032\027google/rpc/status.proto\032\027google/typ"
-          + "e/color.proto\032\030google/type/latlng.proto\""
-          + "\207\003\n\007Feature\0222\n\004type\030\001 \001(\0162$.google.cloud"
-          + ".vision.v1.Feature.Type\022\023\n\013max_results\030\002"
-          + " \001(\005\022\r\n\005model\030\003 \001(\t\"\243\002\n\004Type\022\024\n\020TYPE_UNS"
-          + "PECIFIED\020\000\022\022\n\016FACE_DETECTION\020\001\022\026\n\022LANDMA"
-          + "RK_DETECTION\020\002\022\022\n\016LOGO_DETECTION\020\003\022\023\n\017LA"
-          + "BEL_DETECTION\020\004\022\022\n\016TEXT_DETECTION\020\005\022\033\n\027D"
-          + "OCUMENT_TEXT_DETECTION\020\013\022\031\n\025SAFE_SEARCH_"
-          + "DETECTION\020\006\022\024\n\020IMAGE_PROPERTIES\020\007\022\016\n\nCRO"
-          + "P_HINTS\020\t\022\021\n\rWEB_DETECTION\020\n\022\022\n\016PRODUCT_"
-          + "SEARCH\020\014\022\027\n\023OBJECT_LOCALIZATION\020\023\"7\n\013Ima"
-          + "geSource\022\025\n\rgcs_image_uri\030\001 \001(\t\022\021\n\timage"
-          + "_uri\030\002 \001(\t\"M\n\005Image\022\017\n\007content\030\001 \001(\014\0223\n\006"
-          + "source\030\002 \001(\0132#.google.cloud.vision.v1.Im"
-          + "ageSource\"\307\r\n\016FaceAnnotation\022;\n\rbounding"
-          + "_poly\030\001 \001(\0132$.google.cloud.vision.v1.Bou"
-          + "ndingPoly\022>\n\020fd_bounding_poly\030\002 \001(\0132$.go"
-          + "ogle.cloud.vision.v1.BoundingPoly\022B\n\tlan"
-          + "dmarks\030\003 \003(\0132/.google.cloud.vision.v1.Fa"
-          + "ceAnnotation.Landmark\022\022\n\nroll_angle\030\004 \001("
-          + "\002\022\021\n\tpan_angle\030\005 \001(\002\022\022\n\ntilt_angle\030\006 \001(\002"
-          + "\022\034\n\024detection_confidence\030\007 \001(\002\022\036\n\026landma"
-          + "rking_confidence\030\010 \001(\002\022:\n\016joy_likelihood"
-          + "\030\t \001(\0162\".google.cloud.vision.v1.Likeliho"
-          + "od\022=\n\021sorrow_likelihood\030\n \001(\0162\".google.c"
-          + "loud.vision.v1.Likelihood\022<\n\020anger_likel"
-          + "ihood\030\013 \001(\0162\".google.cloud.vision.v1.Lik"
-          + "elihood\022?\n\023surprise_likelihood\030\014 \001(\0162\".g"
-          + "oogle.cloud.vision.v1.Likelihood\022D\n\030unde"
-          + "r_exposed_likelihood\030\r \001(\0162\".google.clou"
-          + "d.vision.v1.Likelihood\022>\n\022blurred_likeli"
-          + "hood\030\016 \001(\0162\".google.cloud.vision.v1.Like"
-          + "lihood\022?\n\023headwear_likelihood\030\017 \001(\0162\".go"
-          + "ogle.cloud.vision.v1.Likelihood\032\271\007\n\010Land"
-          + "mark\022B\n\004type\030\003 \001(\01624.google.cloud.vision"
-          + ".v1.FaceAnnotation.Landmark.Type\0222\n\010posi"
-          + "tion\030\004 \001(\0132 .google.cloud.vision.v1.Posi"
-          + "tion\"\264\006\n\004Type\022\024\n\020UNKNOWN_LANDMARK\020\000\022\014\n\010L"
-          + "EFT_EYE\020\001\022\r\n\tRIGHT_EYE\020\002\022\030\n\024LEFT_OF_LEFT"
-          + "_EYEBROW\020\003\022\031\n\025RIGHT_OF_LEFT_EYEBROW\020\004\022\031\n"
-          + "\025LEFT_OF_RIGHT_EYEBROW\020\005\022\032\n\026RIGHT_OF_RIG"
-          + "HT_EYEBROW\020\006\022\031\n\025MIDPOINT_BETWEEN_EYES\020\007\022"
-          + "\014\n\010NOSE_TIP\020\010\022\r\n\tUPPER_LIP\020\t\022\r\n\tLOWER_LI"
-          + "P\020\n\022\016\n\nMOUTH_LEFT\020\013\022\017\n\013MOUTH_RIGHT\020\014\022\020\n\014"
-          + "MOUTH_CENTER\020\r\022\025\n\021NOSE_BOTTOM_RIGHT\020\016\022\024\n"
-          + "\020NOSE_BOTTOM_LEFT\020\017\022\026\n\022NOSE_BOTTOM_CENTE"
-          + "R\020\020\022\031\n\025LEFT_EYE_TOP_BOUNDARY\020\021\022\031\n\025LEFT_E"
-          + "YE_RIGHT_CORNER\020\022\022\034\n\030LEFT_EYE_BOTTOM_BOU"
-          + "NDARY\020\023\022\030\n\024LEFT_EYE_LEFT_CORNER\020\024\022\032\n\026RIG"
-          + "HT_EYE_TOP_BOUNDARY\020\025\022\032\n\026RIGHT_EYE_RIGHT"
-          + "_CORNER\020\026\022\035\n\031RIGHT_EYE_BOTTOM_BOUNDARY\020\027"
-          + "\022\031\n\025RIGHT_EYE_LEFT_CORNER\020\030\022\037\n\033LEFT_EYEB"
-          + "ROW_UPPER_MIDPOINT\020\031\022 \n\034RIGHT_EYEBROW_UP"
-          + "PER_MIDPOINT\020\032\022\024\n\020LEFT_EAR_TRAGION\020\033\022\025\n\021"
-          + "RIGHT_EAR_TRAGION\020\034\022\022\n\016LEFT_EYE_PUPIL\020\035\022"
-          + "\023\n\017RIGHT_EYE_PUPIL\020\036\022\025\n\021FOREHEAD_GLABELL"
-          + "A\020\037\022\021\n\rCHIN_GNATHION\020 \022\024\n\020CHIN_LEFT_GONI"
-          + "ON\020!\022\025\n\021CHIN_RIGHT_GONION\020\"\"4\n\014LocationI"
-          + "nfo\022$\n\007lat_lng\030\001 \001(\0132\023.google.type.LatLn"
-          + "g\"=\n\010Property\022\014\n\004name\030\001 \001(\t\022\r\n\005value\030\002 \001"
-          + "(\t\022\024\n\014uint64_value\030\003 \001(\004\"\253\002\n\020EntityAnnot"
-          + "ation\022\013\n\003mid\030\001 \001(\t\022\016\n\006locale\030\002 \001(\t\022\023\n\013de"
-          + "scription\030\003 \001(\t\022\r\n\005score\030\004 \001(\002\022\026\n\nconfid"
-          + "ence\030\005 \001(\002B\002\030\001\022\022\n\ntopicality\030\006 \001(\002\022;\n\rbo"
-          + "unding_poly\030\007 \001(\0132$.google.cloud.vision."
-          + "v1.BoundingPoly\0227\n\tlocations\030\010 \003(\0132$.goo"
-          + "gle.cloud.vision.v1.LocationInfo\0224\n\nprop"
-          + "erties\030\t \003(\0132 .google.cloud.vision.v1.Pr"
-          + "operty\"\231\001\n\031LocalizedObjectAnnotation\022\013\n\003"
-          + "mid\030\001 \001(\t\022\025\n\rlanguage_code\030\002 \001(\t\022\014\n\004name"
-          + "\030\003 \001(\t\022\r\n\005score\030\004 \001(\002\022;\n\rbounding_poly\030\005"
+          + "proto\032\037google/api/field_behavior.proto\032%"
+          + "google/cloud/vision/v1/geometry.proto\032+g"
+          + "oogle/cloud/vision/v1/product_search.pro"
+          + "to\032,google/cloud/vision/v1/text_annotati"
+          + "on.proto\032*google/cloud/vision/v1/web_det"
+          + "ection.proto\032#google/longrunning/operati"
+          + "ons.proto\032 google/protobuf/field_mask.pr"
+          + "oto\032\037google/protobuf/timestamp.proto\032\027go"
+          + "ogle/rpc/status.proto\032\027google/type/color"
+          + ".proto\032\030google/type/latlng.proto\"\207\003\n\007Fea"
+          + "ture\0222\n\004type\030\001 \001(\0162$.google.cloud.vision"
+          + ".v1.Feature.Type\022\023\n\013max_results\030\002 \001(\005\022\r\n"
+          + "\005model\030\003 \001(\t\"\243\002\n\004Type\022\024\n\020TYPE_UNSPECIFIE"
+          + "D\020\000\022\022\n\016FACE_DETECTION\020\001\022\026\n\022LANDMARK_DETE"
+          + "CTION\020\002\022\022\n\016LOGO_DETECTION\020\003\022\023\n\017LABEL_DET"
+          + "ECTION\020\004\022\022\n\016TEXT_DETECTION\020\005\022\033\n\027DOCUMENT"
+          + "_TEXT_DETECTION\020\013\022\031\n\025SAFE_SEARCH_DETECTI"
+          + "ON\020\006\022\024\n\020IMAGE_PROPERTIES\020\007\022\016\n\nCROP_HINTS"
+          + "\020\t\022\021\n\rWEB_DETECTION\020\n\022\022\n\016PRODUCT_SEARCH\020"
+          + "\014\022\027\n\023OBJECT_LOCALIZATION\020\023\"7\n\013ImageSourc"
+          + "e\022\025\n\rgcs_image_uri\030\001 \001(\t\022\021\n\timage_uri\030\002 "
+          + "\001(\t\"M\n\005Image\022\017\n\007content\030\001 \001(\014\0223\n\006source\030"
+          + "\002 \001(\0132#.google.cloud.vision.v1.ImageSour"
+          + "ce\"\307\r\n\016FaceAnnotation\022;\n\rbounding_poly\030\001"
           + " \001(\0132$.google.cloud.vision.v1.BoundingPo"
-          + "ly\"\231\002\n\024SafeSearchAnnotation\0221\n\005adult\030\001 \001"
-          + "(\0162\".google.cloud.vision.v1.Likelihood\0221"
-          + "\n\005spoof\030\002 \001(\0162\".google.cloud.vision.v1.L"
-          + "ikelihood\0223\n\007medical\030\003 \001(\0162\".google.clou"
-          + "d.vision.v1.Likelihood\0224\n\010violence\030\004 \001(\016"
-          + "2\".google.cloud.vision.v1.Likelihood\0220\n\004"
-          + "racy\030\t \001(\0162\".google.cloud.vision.v1.Like"
-          + "lihood\"a\n\013LatLongRect\022(\n\013min_lat_lng\030\001 \001"
-          + "(\0132\023.google.type.LatLng\022(\n\013max_lat_lng\030\002"
-          + " \001(\0132\023.google.type.LatLng\"U\n\tColorInfo\022!"
-          + "\n\005color\030\001 \001(\0132\022.google.type.Color\022\r\n\005sco"
-          + "re\030\002 \001(\002\022\026\n\016pixel_fraction\030\003 \001(\002\"M\n\030Domi"
-          + "nantColorsAnnotation\0221\n\006colors\030\001 \003(\0132!.g"
-          + "oogle.cloud.vision.v1.ColorInfo\"\\\n\017Image"
-          + "Properties\022I\n\017dominant_colors\030\001 \001(\01320.go"
-          + "ogle.cloud.vision.v1.DominantColorsAnnot"
-          + "ation\"x\n\010CropHint\022;\n\rbounding_poly\030\001 \001(\013"
-          + "2$.google.cloud.vision.v1.BoundingPoly\022\022"
-          + "\n\nconfidence\030\002 \001(\002\022\033\n\023importance_fractio"
-          + "n\030\003 \001(\002\"K\n\023CropHintsAnnotation\0224\n\ncrop_h"
-          + "ints\030\001 \003(\0132 .google.cloud.vision.v1.Crop"
-          + "Hint\"(\n\017CropHintsParams\022\025\n\raspect_ratios"
-          + "\030\001 \003(\002\"1\n\022WebDetectionParams\022\033\n\023include_"
-          + "geo_results\030\002 \001(\010\"\274\002\n\014ImageContext\022:\n\rla"
-          + "t_long_rect\030\001 \001(\0132#.google.cloud.vision."
-          + "v1.LatLongRect\022\026\n\016language_hints\030\002 \003(\t\022B"
-          + "\n\021crop_hints_params\030\004 \001(\0132\'.google.cloud"
-          + ".vision.v1.CropHintsParams\022J\n\025product_se"
-          + "arch_params\030\005 \001(\0132+.google.cloud.vision."
-          + "v1.ProductSearchParams\022H\n\024web_detection_"
-          + "params\030\006 \001(\0132*.google.cloud.vision.v1.We"
-          + "bDetectionParams\"\264\001\n\024AnnotateImageReques"
-          + "t\022,\n\005image\030\001 \001(\0132\035.google.cloud.vision.v"
-          + "1.Image\0221\n\010features\030\002 \003(\0132\037.google.cloud"
-          + ".vision.v1.Feature\022;\n\rimage_context\030\003 \001("
-          + "\0132$.google.cloud.vision.v1.ImageContext\""
-          + ":\n\026ImageAnnotationContext\022\013\n\003uri\030\001 \001(\t\022\023"
-          + "\n\013page_number\030\002 \001(\005\"\344\007\n\025AnnotateImageRes"
-          + "ponse\022@\n\020face_annotations\030\001 \003(\0132&.google"
-          + ".cloud.vision.v1.FaceAnnotation\022F\n\024landm"
-          + "ark_annotations\030\002 \003(\0132(.google.cloud.vis"
-          + "ion.v1.EntityAnnotation\022B\n\020logo_annotati"
-          + "ons\030\003 \003(\0132(.google.cloud.vision.v1.Entit"
-          + "yAnnotation\022C\n\021label_annotations\030\004 \003(\0132("
-          + ".google.cloud.vision.v1.EntityAnnotation"
-          + "\022W\n\034localized_object_annotations\030\026 \003(\01321"
-          + ".google.cloud.vision.v1.LocalizedObjectA"
-          + "nnotation\022B\n\020text_annotations\030\005 \003(\0132(.go"
-          + "ogle.cloud.vision.v1.EntityAnnotation\022D\n"
-          + "\024full_text_annotation\030\014 \001(\0132&.google.clo"
-          + "ud.vision.v1.TextAnnotation\022L\n\026safe_sear"
-          + "ch_annotation\030\006 \001(\0132,.google.cloud.visio"
-          + "n.v1.SafeSearchAnnotation\022L\n\033image_prope"
-          + "rties_annotation\030\010 \001(\0132\'.google.cloud.vi"
-          + "sion.v1.ImageProperties\022J\n\025crop_hints_an"
-          + "notation\030\013 \001(\0132+.google.cloud.vision.v1."
-          + "CropHintsAnnotation\022;\n\rweb_detection\030\r \001"
-          + "(\0132$.google.cloud.vision.v1.WebDetection"
-          + "\022L\n\026product_search_results\030\016 \001(\0132,.googl"
-          + "e.cloud.vision.v1.ProductSearchResults\022!"
-          + "\n\005error\030\t \001(\0132\022.google.rpc.Status\022?\n\007con"
-          + "text\030\025 \001(\0132..google.cloud.vision.v1.Imag"
-          + "eAnnotationContext\"\313\001\n\024AnnotateFileRespo"
-          + "nse\0229\n\014input_config\030\001 \001(\0132#.google.cloud"
-          + ".vision.v1.InputConfig\022@\n\tresponses\030\002 \003("
-          + "\0132-.google.cloud.vision.v1.AnnotateImage"
-          + "Response\022\023\n\013total_pages\030\003 \001(\005\022!\n\005error\030\004"
-          + " \001(\0132\022.google.rpc.Status\"l\n\032BatchAnnotat"
-          + "eImagesRequest\022>\n\010requests\030\001 \003(\0132,.googl"
-          + "e.cloud.vision.v1.AnnotateImageRequest\022\016"
-          + "\n\006parent\030\004 \001(\t\"_\n\033BatchAnnotateImagesRes"
-          + "ponse\022@\n\tresponses\030\001 \003(\0132-.google.cloud."
-          + "vision.v1.AnnotateImageResponse\"\317\001\n\023Anno"
-          + "tateFileRequest\0229\n\014input_config\030\001 \001(\0132#."
-          + "google.cloud.vision.v1.InputConfig\0221\n\010fe"
-          + "atures\030\002 \003(\0132\037.google.cloud.vision.v1.Fe"
-          + "ature\022;\n\rimage_context\030\003 \001(\0132$.google.cl"
-          + "oud.vision.v1.ImageContext\022\r\n\005pages\030\004 \003("
-          + "\005\"j\n\031BatchAnnotateFilesRequest\022=\n\010reques"
-          + "ts\030\001 \003(\0132+.google.cloud.vision.v1.Annota"
-          + "teFileRequest\022\016\n\006parent\030\003 \001(\t\"]\n\032BatchAn"
-          + "notateFilesResponse\022?\n\tresponses\030\001 \003(\0132,"
-          + ".google.cloud.vision.v1.AnnotateFileResp"
-          + "onse\"\202\002\n\030AsyncAnnotateFileRequest\0229\n\014inp"
-          + "ut_config\030\001 \001(\0132#.google.cloud.vision.v1"
-          + ".InputConfig\0221\n\010features\030\002 \003(\0132\037.google."
-          + "cloud.vision.v1.Feature\022;\n\rimage_context"
-          + "\030\003 \001(\0132$.google.cloud.vision.v1.ImageCon"
-          + "text\022;\n\routput_config\030\004 \001(\0132$.google.clo"
-          + "ud.vision.v1.OutputConfig\"X\n\031AsyncAnnota"
-          + "teFileResponse\022;\n\routput_config\030\001 \001(\0132$."
-          + "google.cloud.vision.v1.OutputConfig\"\256\001\n\037"
-          + "AsyncBatchAnnotateImagesRequest\022>\n\010reque"
-          + "sts\030\001 \003(\0132,.google.cloud.vision.v1.Annot"
-          + "ateImageRequest\022;\n\routput_config\030\002 \001(\0132$"
-          + ".google.cloud.vision.v1.OutputConfig\022\016\n\006"
-          + "parent\030\004 \001(\t\"_\n AsyncBatchAnnotateImages"
-          + "Response\022;\n\routput_config\030\001 \001(\0132$.google"
-          + ".cloud.vision.v1.OutputConfig\"t\n\036AsyncBa"
-          + "tchAnnotateFilesRequest\022B\n\010requests\030\001 \003("
-          + "\01320.google.cloud.vision.v1.AsyncAnnotate"
-          + "FileRequest\022\016\n\006parent\030\004 \001(\t\"g\n\037AsyncBatc"
-          + "hAnnotateFilesResponse\022D\n\tresponses\030\001 \003("
-          + "\01321.google.cloud.vision.v1.AsyncAnnotate"
-          + "FileResponse\"h\n\013InputConfig\0225\n\ngcs_sourc"
-          + "e\030\001 \001(\0132!.google.cloud.vision.v1.GcsSour"
-          + "ce\022\017\n\007content\030\003 \001(\014\022\021\n\tmime_type\030\002 \001(\t\"c"
-          + "\n\014OutputConfig\022?\n\017gcs_destination\030\001 \001(\0132"
-          + "&.google.cloud.vision.v1.GcsDestination\022"
-          + "\022\n\nbatch_size\030\002 \001(\005\"\030\n\tGcsSource\022\013\n\003uri\030"
-          + "\001 \001(\t\"\035\n\016GcsDestination\022\013\n\003uri\030\001 \001(\t\"\210\002\n"
-          + "\021OperationMetadata\022>\n\005state\030\001 \001(\0162/.goog"
-          + "le.cloud.vision.v1.OperationMetadata.Sta"
-          + "te\022/\n\013create_time\030\005 \001(\0132\032.google.protobu"
-          + "f.Timestamp\022/\n\013update_time\030\006 \001(\0132\032.googl"
-          + "e.protobuf.Timestamp\"Q\n\005State\022\025\n\021STATE_U"
-          + "NSPECIFIED\020\000\022\013\n\007CREATED\020\001\022\013\n\007RUNNING\020\002\022\010"
-          + "\n\004DONE\020\003\022\r\n\tCANCELLED\020\004*e\n\nLikelihood\022\013\n"
-          + "\007UNKNOWN\020\000\022\021\n\rVERY_UNLIKELY\020\001\022\014\n\010UNLIKEL"
-          + "Y\020\002\022\014\n\010POSSIBLE\020\003\022\n\n\006LIKELY\020\004\022\017\n\013VERY_LI"
-          + "KELY\020\0052\314\t\n\016ImageAnnotator\022\210\002\n\023BatchAnnot"
-          + "ateImages\0222.google.cloud.vision.v1.Batch"
-          + "AnnotateImagesRequest\0323.google.cloud.vis"
-          + "ion.v1.BatchAnnotateImagesResponse\"\207\001\202\323\344"
-          + "\223\002\200\001\"\023/v1/images:annotate:\001*Z8\"3/v1/{par"
-          + "ent=projects/*/locations/*}/images:annot"
-          + "ate:\001*Z,\"\'/v1/{parent=projects/*}/images"
-          + ":annotate:\001*\022\201\002\n\022BatchAnnotateFiles\0221.go"
-          + "ogle.cloud.vision.v1.BatchAnnotateFilesR"
-          + "equest\0322.google.cloud.vision.v1.BatchAnn"
-          + "otateFilesResponse\"\203\001\202\323\344\223\002}\"\022/v1/files:a"
-          + "nnotate:\001*Z7\"2/v1/{parent=projects/*/loc"
-          + "ations/*}/files:annotate:\001*Z+\"&/v1/{pare"
-          + "nt=projects/*}/files:annotate:\001*\022\232\002\n\030Asy"
-          + "ncBatchAnnotateImages\0227.google.cloud.vis"
-          + "ion.v1.AsyncBatchAnnotateImagesRequest\032\035"
-          + ".google.longrunning.Operation\"\245\001\202\323\344\223\002\236\001\""
-          + "\035/v1/images:asyncBatchAnnotate:\001*ZB\"=/v1"
-          + "/{parent=projects/*/locations/*}/images:"
-          + "asyncBatchAnnotate:\001*Z6\"1/v1/{parent=pro"
-          + "jects/*}/images:asyncBatchAnnotate:\001*\022\225\002"
+          + "ly\022>\n\020fd_bounding_poly\030\002 \001(\0132$.google.cl"
+          + "oud.vision.v1.BoundingPoly\022B\n\tlandmarks\030"
+          + "\003 \003(\0132/.google.cloud.vision.v1.FaceAnnot"
+          + "ation.Landmark\022\022\n\nroll_angle\030\004 \001(\002\022\021\n\tpa"
+          + "n_angle\030\005 \001(\002\022\022\n\ntilt_angle\030\006 \001(\002\022\034\n\024det"
+          + "ection_confidence\030\007 \001(\002\022\036\n\026landmarking_c"
+          + "onfidence\030\010 \001(\002\022:\n\016joy_likelihood\030\t \001(\0162"
+          + "\".google.cloud.vision.v1.Likelihood\022=\n\021s"
+          + "orrow_likelihood\030\n \001(\0162\".google.cloud.vi"
+          + "sion.v1.Likelihood\022<\n\020anger_likelihood\030\013"
+          + " \001(\0162\".google.cloud.vision.v1.Likelihood"
+          + "\022?\n\023surprise_likelihood\030\014 \001(\0162\".google.c"
+          + "loud.vision.v1.Likelihood\022D\n\030under_expos"
+          + "ed_likelihood\030\r \001(\0162\".google.cloud.visio"
+          + "n.v1.Likelihood\022>\n\022blurred_likelihood\030\016 "
+          + "\001(\0162\".google.cloud.vision.v1.Likelihood\022"
+          + "?\n\023headwear_likelihood\030\017 \001(\0162\".google.cl"
+          + "oud.vision.v1.Likelihood\032\271\007\n\010Landmark\022B\n"
+          + "\004type\030\003 \001(\01624.google.cloud.vision.v1.Fac"
+          + "eAnnotation.Landmark.Type\0222\n\010position\030\004 "
+          + "\001(\0132 .google.cloud.vision.v1.Position\"\264\006"
+          + "\n\004Type\022\024\n\020UNKNOWN_LANDMARK\020\000\022\014\n\010LEFT_EYE"
+          + "\020\001\022\r\n\tRIGHT_EYE\020\002\022\030\n\024LEFT_OF_LEFT_EYEBRO"
+          + "W\020\003\022\031\n\025RIGHT_OF_LEFT_EYEBROW\020\004\022\031\n\025LEFT_O"
+          + "F_RIGHT_EYEBROW\020\005\022\032\n\026RIGHT_OF_RIGHT_EYEB"
+          + "ROW\020\006\022\031\n\025MIDPOINT_BETWEEN_EYES\020\007\022\014\n\010NOSE"
+          + "_TIP\020\010\022\r\n\tUPPER_LIP\020\t\022\r\n\tLOWER_LIP\020\n\022\016\n\n"
+          + "MOUTH_LEFT\020\013\022\017\n\013MOUTH_RIGHT\020\014\022\020\n\014MOUTH_C"
+          + "ENTER\020\r\022\025\n\021NOSE_BOTTOM_RIGHT\020\016\022\024\n\020NOSE_B"
+          + "OTTOM_LEFT\020\017\022\026\n\022NOSE_BOTTOM_CENTER\020\020\022\031\n\025"
+          + "LEFT_EYE_TOP_BOUNDARY\020\021\022\031\n\025LEFT_EYE_RIGH"
+          + "T_CORNER\020\022\022\034\n\030LEFT_EYE_BOTTOM_BOUNDARY\020\023"
+          + "\022\030\n\024LEFT_EYE_LEFT_CORNER\020\024\022\032\n\026RIGHT_EYE_"
+          + "TOP_BOUNDARY\020\025\022\032\n\026RIGHT_EYE_RIGHT_CORNER"
+          + "\020\026\022\035\n\031RIGHT_EYE_BOTTOM_BOUNDARY\020\027\022\031\n\025RIG"
+          + "HT_EYE_LEFT_CORNER\020\030\022\037\n\033LEFT_EYEBROW_UPP"
+          + "ER_MIDPOINT\020\031\022 \n\034RIGHT_EYEBROW_UPPER_MID"
+          + "POINT\020\032\022\024\n\020LEFT_EAR_TRAGION\020\033\022\025\n\021RIGHT_E"
+          + "AR_TRAGION\020\034\022\022\n\016LEFT_EYE_PUPIL\020\035\022\023\n\017RIGH"
+          + "T_EYE_PUPIL\020\036\022\025\n\021FOREHEAD_GLABELLA\020\037\022\021\n\r"
+          + "CHIN_GNATHION\020 \022\024\n\020CHIN_LEFT_GONION\020!\022\025\n"
+          + "\021CHIN_RIGHT_GONION\020\"\"4\n\014LocationInfo\022$\n\007"
+          + "lat_lng\030\001 \001(\0132\023.google.type.LatLng\"=\n\010Pr"
+          + "operty\022\014\n\004name\030\001 \001(\t\022\r\n\005value\030\002 \001(\t\022\024\n\014u"
+          + "int64_value\030\003 \001(\004\"\253\002\n\020EntityAnnotation\022\013"
+          + "\n\003mid\030\001 \001(\t\022\016\n\006locale\030\002 \001(\t\022\023\n\013descripti"
+          + "on\030\003 \001(\t\022\r\n\005score\030\004 \001(\002\022\026\n\nconfidence\030\005 "
+          + "\001(\002B\002\030\001\022\022\n\ntopicality\030\006 \001(\002\022;\n\rbounding_"
+          + "poly\030\007 \001(\0132$.google.cloud.vision.v1.Boun"
+          + "dingPoly\0227\n\tlocations\030\010 \003(\0132$.google.clo"
+          + "ud.vision.v1.LocationInfo\0224\n\nproperties\030"
+          + "\t \003(\0132 .google.cloud.vision.v1.Property\""
+          + "\231\001\n\031LocalizedObjectAnnotation\022\013\n\003mid\030\001 \001"
+          + "(\t\022\025\n\rlanguage_code\030\002 \001(\t\022\014\n\004name\030\003 \001(\t\022"
+          + "\r\n\005score\030\004 \001(\002\022;\n\rbounding_poly\030\005 \001(\0132$."
+          + "google.cloud.vision.v1.BoundingPoly\"\270\003\n\024"
+          + "SafeSearchAnnotation\0221\n\005adult\030\001 \001(\0162\".go"
+          + "ogle.cloud.vision.v1.Likelihood\0221\n\005spoof"
+          + "\030\002 \001(\0162\".google.cloud.vision.v1.Likeliho"
+          + "od\0223\n\007medical\030\003 \001(\0162\".google.cloud.visio"
+          + "n.v1.Likelihood\0224\n\010violence\030\004 \001(\0162\".goog"
+          + "le.cloud.vision.v1.Likelihood\0220\n\004racy\030\t "
+          + "\001(\0162\".google.cloud.vision.v1.Likelihood\022"
+          + "\030\n\020adult_confidence\030\020 \001(\002\022\030\n\020spoof_confi"
+          + "dence\030\022 \001(\002\022\032\n\022medical_confidence\030\024 \001(\002\022"
+          + "\033\n\023violence_confidence\030\026 \001(\002\022\027\n\017racy_con"
+          + "fidence\030\030 \001(\002\022\027\n\017nsfw_confidence\030\032 \001(\002\"a"
+          + "\n\013LatLongRect\022(\n\013min_lat_lng\030\001 \001(\0132\023.goo"
+          + "gle.type.LatLng\022(\n\013max_lat_lng\030\002 \001(\0132\023.g"
+          + "oogle.type.LatLng\"U\n\tColorInfo\022!\n\005color\030"
+          + "\001 \001(\0132\022.google.type.Color\022\r\n\005score\030\002 \001(\002"
+          + "\022\026\n\016pixel_fraction\030\003 \001(\002\"M\n\030DominantColo"
+          + "rsAnnotation\0221\n\006colors\030\001 \003(\0132!.google.cl"
+          + "oud.vision.v1.ColorInfo\"\\\n\017ImageProperti"
+          + "es\022I\n\017dominant_colors\030\001 \001(\01320.google.clo"
+          + "ud.vision.v1.DominantColorsAnnotation\"x\n"
+          + "\010CropHint\022;\n\rbounding_poly\030\001 \001(\0132$.googl"
+          + "e.cloud.vision.v1.BoundingPoly\022\022\n\nconfid"
+          + "ence\030\002 \001(\002\022\033\n\023importance_fraction\030\003 \001(\002\""
+          + "K\n\023CropHintsAnnotation\0224\n\ncrop_hints\030\001 \003"
+          + "(\0132 .google.cloud.vision.v1.CropHint\"(\n\017"
+          + "CropHintsParams\022\025\n\raspect_ratios\030\001 \003(\002\"1"
+          + "\n\022WebDetectionParams\022\033\n\023include_geo_resu"
+          + "lts\030\002 \001(\010\"\274\002\n\014ImageContext\022:\n\rlat_long_r"
+          + "ect\030\001 \001(\0132#.google.cloud.vision.v1.LatLo"
+          + "ngRect\022\026\n\016language_hints\030\002 \003(\t\022B\n\021crop_h"
+          + "ints_params\030\004 \001(\0132\'.google.cloud.vision."
+          + "v1.CropHintsParams\022J\n\025product_search_par"
+          + "ams\030\005 \001(\0132+.google.cloud.vision.v1.Produ"
+          + "ctSearchParams\022H\n\024web_detection_params\030\006"
+          + " \001(\0132*.google.cloud.vision.v1.WebDetecti"
+          + "onParams\"\264\001\n\024AnnotateImageRequest\022,\n\005ima"
+          + "ge\030\001 \001(\0132\035.google.cloud.vision.v1.Image\022"
+          + "1\n\010features\030\002 \003(\0132\037.google.cloud.vision."
+          + "v1.Feature\022;\n\rimage_context\030\003 \001(\0132$.goog"
+          + "le.cloud.vision.v1.ImageContext\":\n\026Image"
+          + "AnnotationContext\022\013\n\003uri\030\001 \001(\t\022\023\n\013page_n"
+          + "umber\030\002 \001(\005\"\344\007\n\025AnnotateImageResponse\022@\n"
+          + "\020face_annotations\030\001 \003(\0132&.google.cloud.v"
+          + "ision.v1.FaceAnnotation\022F\n\024landmark_anno"
+          + "tations\030\002 \003(\0132(.google.cloud.vision.v1.E"
+          + "ntityAnnotation\022B\n\020logo_annotations\030\003 \003("
+          + "\0132(.google.cloud.vision.v1.EntityAnnotat"
+          + "ion\022C\n\021label_annotations\030\004 \003(\0132(.google."
+          + "cloud.vision.v1.EntityAnnotation\022W\n\034loca"
+          + "lized_object_annotations\030\026 \003(\01321.google."
+          + "cloud.vision.v1.LocalizedObjectAnnotatio"
+          + "n\022B\n\020text_annotations\030\005 \003(\0132(.google.clo"
+          + "ud.vision.v1.EntityAnnotation\022D\n\024full_te"
+          + "xt_annotation\030\014 \001(\0132&.google.cloud.visio"
+          + "n.v1.TextAnnotation\022L\n\026safe_search_annot"
+          + "ation\030\006 \001(\0132,.google.cloud.vision.v1.Saf"
+          + "eSearchAnnotation\022L\n\033image_properties_an"
+          + "notation\030\010 \001(\0132\'.google.cloud.vision.v1."
+          + "ImageProperties\022J\n\025crop_hints_annotation"
+          + "\030\013 \001(\0132+.google.cloud.vision.v1.CropHint"
+          + "sAnnotation\022;\n\rweb_detection\030\r \001(\0132$.goo"
+          + "gle.cloud.vision.v1.WebDetection\022L\n\026prod"
+          + "uct_search_results\030\016 \001(\0132,.google.cloud."
+          + "vision.v1.ProductSearchResults\022!\n\005error\030"
+          + "\t \001(\0132\022.google.rpc.Status\022?\n\007context\030\025 \001"
+          + "(\0132..google.cloud.vision.v1.ImageAnnotat"
+          + "ionContext\"q\n\032BatchAnnotateImagesRequest"
+          + "\022C\n\010requests\030\001 \003(\0132,.google.cloud.vision"
+          + ".v1.AnnotateImageRequestB\003\340A\002\022\016\n\006parent\030"
+          + "\004 \001(\t\"_\n\033BatchAnnotateImagesResponse\022@\n\t"
+          + "responses\030\001 \003(\0132-.google.cloud.vision.v1"
+          + ".AnnotateImageResponse\"\317\001\n\023AnnotateFileR"
+          + "equest\0229\n\014input_config\030\001 \001(\0132#.google.cl"
+          + "oud.vision.v1.InputConfig\0221\n\010features\030\002 "
+          + "\003(\0132\037.google.cloud.vision.v1.Feature\022;\n\r"
+          + "image_context\030\003 \001(\0132$.google.cloud.visio"
+          + "n.v1.ImageContext\022\r\n\005pages\030\004 \003(\005\"\313\001\n\024Ann"
+          + "otateFileResponse\0229\n\014input_config\030\001 \001(\0132"
+          + "#.google.cloud.vision.v1.InputConfig\022@\n\t"
+          + "responses\030\002 \003(\0132-.google.cloud.vision.v1"
+          + ".AnnotateImageResponse\022\023\n\013total_pages\030\003 "
+          + "\001(\005\022!\n\005error\030\004 \001(\0132\022.google.rpc.Status\"o"
+          + "\n\031BatchAnnotateFilesRequest\022B\n\010requests\030"
+          + "\001 \003(\0132+.google.cloud.vision.v1.AnnotateF"
+          + "ileRequestB\003\340A\002\022\016\n\006parent\030\003 \001(\t\"]\n\032Batch"
+          + "AnnotateFilesResponse\022?\n\tresponses\030\001 \003(\013"
+          + "2,.google.cloud.vision.v1.AnnotateFileRe"
+          + "sponse\"\202\002\n\030AsyncAnnotateFileRequest\0229\n\014i"
+          + "nput_config\030\001 \001(\0132#.google.cloud.vision."
+          + "v1.InputConfig\0221\n\010features\030\002 \003(\0132\037.googl"
+          + "e.cloud.vision.v1.Feature\022;\n\rimage_conte"
+          + "xt\030\003 \001(\0132$.google.cloud.vision.v1.ImageC"
+          + "ontext\022;\n\routput_config\030\004 \001(\0132$.google.c"
+          + "loud.vision.v1.OutputConfig\"X\n\031AsyncAnno"
+          + "tateFileResponse\022;\n\routput_config\030\001 \001(\0132"
+          + "$.google.cloud.vision.v1.OutputConfig\"\270\001"
+          + "\n\037AsyncBatchAnnotateImagesRequest\022C\n\010req"
+          + "uests\030\001 \003(\0132,.google.cloud.vision.v1.Ann"
+          + "otateImageRequestB\003\340A\002\022@\n\routput_config\030"
+          + "\002 \001(\0132$.google.cloud.vision.v1.OutputCon"
+          + "figB\003\340A\002\022\016\n\006parent\030\004 \001(\t\"_\n AsyncBatchAn"
+          + "notateImagesResponse\022;\n\routput_config\030\001 "
+          + "\001(\0132$.google.cloud.vision.v1.OutputConfi"
+          + "g\"y\n\036AsyncBatchAnnotateFilesRequest\022G\n\010r"
+          + "equests\030\001 \003(\01320.google.cloud.vision.v1.A"
+          + "syncAnnotateFileRequestB\003\340A\002\022\016\n\006parent\030\004"
+          + " \001(\t\"g\n\037AsyncBatchAnnotateFilesResponse\022"
+          + "D\n\tresponses\030\001 \003(\01321.google.cloud.vision"
+          + ".v1.AsyncAnnotateFileResponse\"h\n\013InputCo"
+          + "nfig\0225\n\ngcs_source\030\001 \001(\0132!.google.cloud."
+          + "vision.v1.GcsSource\022\017\n\007content\030\003 \001(\014\022\021\n\t"
+          + "mime_type\030\002 \001(\t\"c\n\014OutputConfig\022?\n\017gcs_d"
+          + "estination\030\001 \001(\0132&.google.cloud.vision.v"
+          + "1.GcsDestination\022\022\n\nbatch_size\030\002 \001(\005\"\030\n\t"
+          + "GcsSource\022\013\n\003uri\030\001 \001(\t\"\035\n\016GcsDestination"
+          + "\022\013\n\003uri\030\001 \001(\t\"\210\002\n\021OperationMetadata\022>\n\005s"
+          + "tate\030\001 \001(\0162/.google.cloud.vision.v1.Oper"
+          + "ationMetadata.State\022/\n\013create_time\030\005 \001(\013"
+          + "2\032.google.protobuf.Timestamp\022/\n\013update_t"
+          + "ime\030\006 \001(\0132\032.google.protobuf.Timestamp\"Q\n"
+          + "\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\013\n\007CREATED"
+          + "\020\001\022\013\n\007RUNNING\020\002\022\010\n\004DONE\020\003\022\r\n\tCANCELLED\020\004"
+          + "*e\n\nLikelihood\022\013\n\007UNKNOWN\020\000\022\021\n\rVERY_UNLI"
+          + "KELY\020\001\022\014\n\010UNLIKELY\020\002\022\014\n\010POSSIBLE\020\003\022\n\n\006LI"
+          + "KELY\020\004\022\017\n\013VERY_LIKELY\020\0052\365\n\n\016ImageAnnotat"
+          + "or\022\223\002\n\023BatchAnnotateImages\0222.google.clou"
+          + "d.vision.v1.BatchAnnotateImagesRequest\0323"
+          + ".google.cloud.vision.v1.BatchAnnotateIma"
+          + "gesResponse\"\222\001\202\323\344\223\002\200\001\"\023/v1/images:annota"
+          + "te:\001*Z8\"3/v1/{parent=projects/*/location"
+          + "s/*}/images:annotate:\001*Z,\"\'/v1/{parent=p"
+          + "rojects/*}/images:annotate:\001*\332A\010requests"
+          + "\022\214\002\n\022BatchAnnotateFiles\0221.google.cloud.v"
+          + "ision.v1.BatchAnnotateFilesRequest\0322.goo"
+          + "gle.cloud.vision.v1.BatchAnnotateFilesRe"
+          + "sponse\"\216\001\202\323\344\223\002}\"\022/v1/files:annotate:\001*Z7"
+          + "\"2/v1/{parent=projects/*/locations/*}/fi"
+          + "les:annotate:\001*Z+\"&/v1/{parent=projects/"
+          + "*}/files:annotate:\001*\332A\010requests\022\353\002\n\030Asyn"
+          + "cBatchAnnotateImages\0227.google.cloud.visi"
+          + "on.v1.AsyncBatchAnnotateImagesRequest\032\035."
+          + "google.longrunning.Operation\"\366\001\202\323\344\223\002\236\001\"\035"
+          + "/v1/images:asyncBatchAnnotate:\001*ZB\"=/v1/"
+          + "{parent=projects/*/locations/*}/images:a"
+          + "syncBatchAnnotate:\001*Z6\"1/v1/{parent=proj"
+          + "ects/*}/images:asyncBatchAnnotate:\001*\332A\026r"
+          + "equests,output_config\312A5\n AsyncBatchAnno"
+          + "tateImagesResponse\022\021OperationMetadata\022\327\002"
           + "\n\027AsyncBatchAnnotateFiles\0226.google.cloud"
           + ".vision.v1.AsyncBatchAnnotateFilesReques"
-          + "t\032\035.google.longrunning.Operation\"\242\001\202\323\344\223\002"
+          + "t\032\035.google.longrunning.Operation\"\344\001\202\323\344\223\002"
           + "\233\001\"\034/v1/files:asyncBatchAnnotate:\001*ZA\"</"
           + "v1/{parent=projects/*/locations/*}/files"
           + ":asyncBatchAnnotate:\001*Z5\"0/v1/{parent=pr"
-          + "ojects/*}/files:asyncBatchAnnotate:\001*\032v\312"
-          + "A\025vision.googleapis.com\322A[https://www.go"
-          + "ogleapis.com/auth/cloud-platform,https:/"
-          + "/www.googleapis.com/auth/cloud-visionB{\n"
-          + "\032com.google.cloud.vision.v1B\023ImageAnnota"
-          + "torProtoP\001Z<google.golang.org/genproto/g"
-          + "oogleapis/cloud/vision/v1;vision\370\001\001\242\002\004GC"
-          + "VNb\006proto3"
+          + "ojects/*}/files:asyncBatchAnnotate:\001*\332A\010"
+          + "requests\312A4\n\037AsyncBatchAnnotateFilesResp"
+          + "onse\022\021OperationMetadata\032v\312A\025vision.googl"
+          + "eapis.com\322A[https://www.googleapis.com/a"
+          + "uth/cloud-platform,https://www.googleapi"
+          + "s.com/auth/cloud-visionB{\n\032com.google.cl"
+          + "oud.vision.v1B\023ImageAnnotatorProtoP\001Z<go"
+          + "ogle.golang.org/genproto/googleapis/clou"
+          + "d/vision/v1;vision\370\001\001\242\002\004GCVNb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -429,6 +438,7 @@ public final class ImageAnnotatorProto {
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.api.AnnotationsProto.getDescriptor(),
           com.google.api.ClientProto.getDescriptor(),
+          com.google.api.FieldBehaviorProto.getDescriptor(),
           com.google.cloud.vision.v1.GeometryProto.getDescriptor(),
           com.google.cloud.vision.v1.ProductSearchProto.getDescriptor(),
           com.google.cloud.vision.v1.TextAnnotationProto.getDescriptor(),
@@ -541,7 +551,17 @@ public final class ImageAnnotatorProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vision_v1_SafeSearchAnnotation_descriptor,
             new java.lang.String[] {
-              "Adult", "Spoof", "Medical", "Violence", "Racy",
+              "Adult",
+              "Spoof",
+              "Medical",
+              "Violence",
+              "Racy",
+              "AdultConfidence",
+              "SpoofConfidence",
+              "MedicalConfidence",
+              "ViolenceConfidence",
+              "RacyConfidence",
+              "NsfwConfidence",
             });
     internal_static_google_cloud_vision_v1_LatLongRect_descriptor =
         getDescriptor().getMessageTypes().get(9);
@@ -656,16 +676,8 @@ public final class ImageAnnotatorProto {
               "Error",
               "Context",
             });
-    internal_static_google_cloud_vision_v1_AnnotateFileResponse_descriptor =
-        getDescriptor().getMessageTypes().get(21);
-    internal_static_google_cloud_vision_v1_AnnotateFileResponse_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-            internal_static_google_cloud_vision_v1_AnnotateFileResponse_descriptor,
-            new java.lang.String[] {
-              "InputConfig", "Responses", "TotalPages", "Error",
-            });
     internal_static_google_cloud_vision_v1_BatchAnnotateImagesRequest_descriptor =
-        getDescriptor().getMessageTypes().get(22);
+        getDescriptor().getMessageTypes().get(21);
     internal_static_google_cloud_vision_v1_BatchAnnotateImagesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vision_v1_BatchAnnotateImagesRequest_descriptor,
@@ -673,7 +685,7 @@ public final class ImageAnnotatorProto {
               "Requests", "Parent",
             });
     internal_static_google_cloud_vision_v1_BatchAnnotateImagesResponse_descriptor =
-        getDescriptor().getMessageTypes().get(23);
+        getDescriptor().getMessageTypes().get(22);
     internal_static_google_cloud_vision_v1_BatchAnnotateImagesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vision_v1_BatchAnnotateImagesResponse_descriptor,
@@ -681,12 +693,20 @@ public final class ImageAnnotatorProto {
               "Responses",
             });
     internal_static_google_cloud_vision_v1_AnnotateFileRequest_descriptor =
-        getDescriptor().getMessageTypes().get(24);
+        getDescriptor().getMessageTypes().get(23);
     internal_static_google_cloud_vision_v1_AnnotateFileRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vision_v1_AnnotateFileRequest_descriptor,
             new java.lang.String[] {
               "InputConfig", "Features", "ImageContext", "Pages",
+            });
+    internal_static_google_cloud_vision_v1_AnnotateFileResponse_descriptor =
+        getDescriptor().getMessageTypes().get(24);
+    internal_static_google_cloud_vision_v1_AnnotateFileResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_vision_v1_AnnotateFileResponse_descriptor,
+            new java.lang.String[] {
+              "InputConfig", "Responses", "TotalPages", "Error",
             });
     internal_static_google_cloud_vision_v1_BatchAnnotateFilesRequest_descriptor =
         getDescriptor().getMessageTypes().get(25);
@@ -795,12 +815,16 @@ public final class ImageAnnotatorProto {
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.ClientProto.defaultHost);
+    registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.google.api.AnnotationsProto.http);
+    registry.add(com.google.api.ClientProto.methodSignature);
     registry.add(com.google.api.ClientProto.oauthScopes);
+    registry.add(com.google.longrunning.OperationsProto.operationInfo);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.ClientProto.getDescriptor();
+    com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.cloud.vision.v1.GeometryProto.getDescriptor();
     com.google.cloud.vision.v1.ProductSearchProto.getDescriptor();
     com.google.cloud.vision.v1.TextAnnotationProto.getDescriptor();
