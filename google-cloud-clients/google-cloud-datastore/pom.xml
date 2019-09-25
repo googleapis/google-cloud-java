@@ -36,14 +36,6 @@
           <artifactId>google-http-client</artifactId>
         </exclusion>
         <exclusion>
-          <groupId>com.google.http-client</groupId>
-          <artifactId>google-http-client-protobuf</artifactId>
-        </exclusion>
-        <exclusion>
-          <groupId>com.google.http-client</groupId>
-          <artifactId>google-http-client-jackson</artifactId>
-        </exclusion>
-        <exclusion>
           <groupId>com.google.oauth-client</groupId>
           <artifactId>google-oauth-client</artifactId>
         </exclusion>
