@@ -297,7 +297,7 @@ public final class GqlQuery<V> extends Query<V> {
      * @param name name of the binding
      */
     public Builder<V> setBinding(String name) {
-      namedBindings.put(name, toBinding(BlobValue.MARSHALLER, new ArrayList()));
+      namedBindings.put(name, toBinding(NullValue.MARSHALLER, new ArrayList()));
       return this;
     }
 
