@@ -1124,8 +1124,9 @@ public interface Storage extends Service<StorageOptions> {
 
     /**
      * Use a different host name than the default host name 'https://storage.googleapis.com'. This
-     * must also include the scheme component of the URI. Note that this cannot be used alongside
-     * {@code withVirtualHostName()}.
+     * must also include the scheme component of the URI. Note that if using this with the {@code
+     * withVirtualHostedStyle()} method, you should omit the bucket name from the hostname, as it
+     * automatically gets prepended to the hostname for virtual hosted-style URLs.
      */
     public static SignUrlOption withHostName(String hostName) {
       return new SignUrlOption(Option.HOST_NAME, hostName);
@@ -1134,10 +1135,9 @@ public interface Storage extends Service<StorageOptions> {
     /**
      * Use a virtual hosted-style hostname, which includes the bucket in the host portion of the URI
      * rather than the path, e.g. 'https://mybucket.storage.googleapis.com'. The bucket name will be
-     * obtained from the resource passed in. Note that this cannot be used alongside {@code
-     * withHostName()}. For V4 signing, this also sets the "host" header in the canonicalized
-     * extension headers to the virtual hosted-style host, unless that header is supplied via the
-     * {@code withExtHeaders()} method.
+     * obtained from the resource passed in. For V4 signing, this also sets the "host" header in the
+     * canonicalized extension headers to the virtual hosted-style host, unless that header is
+     * supplied via the {@code withExtHeaders()} method.
      *
      * @see <a href="https://cloud.google.com/storage/docs/request-endpoints">Request Endpoints</a>
      */
@@ -1148,8 +1148,8 @@ public interface Storage extends Service<StorageOptions> {
     /**
      * Generate a path-style URL, which places the bucket name in the path portion of the URL
      * instead of in the hostname. Note that this cannot be used alongside {@code
-     * withVirtualHostName()}. Virtual hosted-style URLs, which can be used via the {@code
-     * withVirtualHostName()} method, should generally be preferred instead.
+     * withVirtualHostedStyle()}. Virtual hosted-style URLs, which can be used via the {@code
+     * withVirtualHostedStyle()} method, should generally be preferred instead.
      */
     public static SignUrlOption withPathStyle() {
       return new SignUrlOption(Option.PATH_STYLE, "");
