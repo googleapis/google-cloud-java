@@ -17,7 +17,9 @@
 package com.google.cloud.bigquery;
 
 import static com.google.common.base.MoreObjects.firstNonNull;
+import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
+import static com.google.common.base.Strings.isNullOrEmpty;
 
 import com.google.api.client.util.Data;
 import com.google.api.services.bigquery.model.TableFieldSchema;
@@ -262,11 +264,13 @@ public final class Field implements Serializable {
 
   /** Returns a Field object with given name and type. */
   public static Field of(String name, LegacySQLTypeName type, Field... subFields) {
+    checkArgument(!isNullOrEmpty(name), "Provided name is null or empty");
     return newBuilder(name, type, subFields).build();
   }
 
   /** Returns a Field object with given name and type. */
   public static Field of(String name, LegacySQLTypeName type, FieldList subFields) {
+    checkArgument(!isNullOrEmpty(name), "Provided name is null or empty");
     return newBuilder(name, type, subFields).build();
   }
 

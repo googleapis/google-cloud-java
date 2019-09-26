@@ -55,22 +55,26 @@ public interface PurgeProductsRequestOrBuilder
    *
    *
    * <pre>
-   * The project and location in which the Products should be deleted.
+   * Required. The project and location in which the Products should be deleted.
    * Format is `projects/PROJECT_ID/locations/LOC_ID`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   java.lang.String getParent();
   /**
    *
    *
    * <pre>
-   * The project and location in which the Products should be deleted.
+   * Required. The project and location in which the Products should be deleted.
    * Format is `projects/PROJECT_ID/locations/LOC_ID`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   com.google.protobuf.ByteString getParentBytes();
 

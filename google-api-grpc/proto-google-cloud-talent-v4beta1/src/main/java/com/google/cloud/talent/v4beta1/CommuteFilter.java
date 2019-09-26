@@ -7,7 +7,6 @@ package com.google.cloud.talent.v4beta1;
  *
  *
  * <pre>
- * Input only.
  * Parameters needed for commute search.
  * </pre>
  *
@@ -340,11 +339,12 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The method of transportation for which to calculate the commute
-   * time.
+   * Required. The method of transportation to calculate the commute time for.
    * </pre>
    *
-   * <code>.google.cloud.talent.v4beta1.CommuteMethod commute_method = 1;</code>
+   * <code>
+   * .google.cloud.talent.v4beta1.CommuteMethod commute_method = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public int getCommuteMethodValue() {
     return commuteMethod_;
@@ -353,11 +353,12 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The method of transportation for which to calculate the commute
-   * time.
+   * Required. The method of transportation to calculate the commute time for.
    * </pre>
    *
-   * <code>.google.cloud.talent.v4beta1.CommuteMethod commute_method = 1;</code>
+   * <code>
+   * .google.cloud.talent.v4beta1.CommuteMethod commute_method = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.talent.v4beta1.CommuteMethod getCommuteMethod() {
     @SuppressWarnings("deprecation")
@@ -372,11 +373,12 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The latitude and longitude of the location from which to
-   * calculate the commute time.
+   * Required. The latitude and longitude of the location to calculate the
+   * commute time from.
    * </pre>
    *
-   * <code>.google.type.LatLng start_coordinates = 2;</code>
+   * <code>.google.type.LatLng start_coordinates = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public boolean hasStartCoordinates() {
     return startCoordinates_ != null;
@@ -385,11 +387,12 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The latitude and longitude of the location from which to
-   * calculate the commute time.
+   * Required. The latitude and longitude of the location to calculate the
+   * commute time from.
    * </pre>
    *
-   * <code>.google.type.LatLng start_coordinates = 2;</code>
+   * <code>.google.type.LatLng start_coordinates = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.type.LatLng getStartCoordinates() {
     return startCoordinates_ == null
@@ -400,11 +403,12 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The latitude and longitude of the location from which to
-   * calculate the commute time.
+   * Required. The latitude and longitude of the location to calculate the
+   * commute time from.
    * </pre>
    *
-   * <code>.google.type.LatLng start_coordinates = 2;</code>
+   * <code>.google.type.LatLng start_coordinates = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.type.LatLngOrBuilder getStartCoordinatesOrBuilder() {
     return getStartCoordinates();
@@ -420,7 +424,8 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
    * `3600s` (one hour). Format is `123s`.
    * </pre>
    *
-   * <code>.google.protobuf.Duration travel_duration = 3;</code>
+   * <code>.google.protobuf.Duration travel_duration = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public boolean hasTravelDuration() {
     return travelDuration_ != null;
@@ -433,7 +438,8 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
    * `3600s` (one hour). Format is `123s`.
    * </pre>
    *
-   * <code>.google.protobuf.Duration travel_duration = 3;</code>
+   * <code>.google.protobuf.Duration travel_duration = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.protobuf.Duration getTravelDuration() {
     return travelDuration_ == null
@@ -448,7 +454,8 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
    * `3600s` (one hour). Format is `123s`.
    * </pre>
    *
-   * <code>.google.protobuf.Duration travel_duration = 3;</code>
+   * <code>.google.protobuf.Duration travel_duration = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.protobuf.DurationOrBuilder getTravelDurationOrBuilder() {
     return getTravelDuration();
@@ -460,11 +467,11 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. If `true`, jobs without street level addresses may also be
-   * returned. For city level addresses, the city center is used. For state and
-   * coarser level addresses, text matching is used. If this field is set to
-   * `false` or isn't specified, only jobs that include street level addresses
-   * will be returned by commute search.
+   * If `true`, jobs without street level addresses may also be returned.
+   * For city level addresses, the city center is used. For state and coarser
+   * level addresses, text matching is used.
+   * If this field is set to `false` or isn't specified, only jobs that include
+   * street level addresses will be returned by commute search.
    * </pre>
    *
    * <code>bool allow_imprecise_addresses = 4;</code>
@@ -478,8 +485,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Specifies the traffic density to use when calculating commute
-   * time.
+   * Specifies the traffic density to use when calculating commute time.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.CommuteFilter.RoadTraffic road_traffic = 5;</code>
@@ -494,8 +500,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Specifies the traffic density to use when calculating commute
-   * time.
+   * Specifies the traffic density to use when calculating commute time.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.CommuteFilter.RoadTraffic road_traffic = 5;</code>
@@ -518,9 +523,8 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The departure time used to calculate traffic impact,
-   * represented as [google.type.TimeOfDay][google.type.TimeOfDay] in local
-   * time zone.
+   * The departure time used to calculate traffic impact, represented as
+   * [google.type.TimeOfDay][google.type.TimeOfDay] in local time zone.
    * Currently traffic model is restricted to hour level resolution.
    * </pre>
    *
@@ -533,9 +537,8 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The departure time used to calculate traffic impact,
-   * represented as [google.type.TimeOfDay][google.type.TimeOfDay] in local
-   * time zone.
+   * The departure time used to calculate traffic impact, represented as
+   * [google.type.TimeOfDay][google.type.TimeOfDay] in local time zone.
    * Currently traffic model is restricted to hour level resolution.
    * </pre>
    *
@@ -551,9 +554,8 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The departure time used to calculate traffic impact,
-   * represented as [google.type.TimeOfDay][google.type.TimeOfDay] in local
-   * time zone.
+   * The departure time used to calculate traffic impact, represented as
+   * [google.type.TimeOfDay][google.type.TimeOfDay] in local time zone.
    * Currently traffic model is restricted to hour level resolution.
    * </pre>
    *
@@ -807,7 +809,6 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Input only.
    * Parameters needed for commute search.
    * </pre>
    *
@@ -1042,11 +1043,12 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The method of transportation for which to calculate the commute
-     * time.
+     * Required. The method of transportation to calculate the commute time for.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.CommuteMethod commute_method = 1;</code>
+     * <code>
+     * .google.cloud.talent.v4beta1.CommuteMethod commute_method = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public int getCommuteMethodValue() {
       return commuteMethod_;
@@ -1055,11 +1057,12 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The method of transportation for which to calculate the commute
-     * time.
+     * Required. The method of transportation to calculate the commute time for.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.CommuteMethod commute_method = 1;</code>
+     * <code>
+     * .google.cloud.talent.v4beta1.CommuteMethod commute_method = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setCommuteMethodValue(int value) {
       commuteMethod_ = value;
@@ -1070,11 +1073,12 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The method of transportation for which to calculate the commute
-     * time.
+     * Required. The method of transportation to calculate the commute time for.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.CommuteMethod commute_method = 1;</code>
+     * <code>
+     * .google.cloud.talent.v4beta1.CommuteMethod commute_method = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.talent.v4beta1.CommuteMethod getCommuteMethod() {
       @SuppressWarnings("deprecation")
@@ -1086,11 +1090,12 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The method of transportation for which to calculate the commute
-     * time.
+     * Required. The method of transportation to calculate the commute time for.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.CommuteMethod commute_method = 1;</code>
+     * <code>
+     * .google.cloud.talent.v4beta1.CommuteMethod commute_method = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setCommuteMethod(com.google.cloud.talent.v4beta1.CommuteMethod value) {
       if (value == null) {
@@ -1105,11 +1110,12 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The method of transportation for which to calculate the commute
-     * time.
+     * Required. The method of transportation to calculate the commute time for.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.CommuteMethod commute_method = 1;</code>
+     * <code>
+     * .google.cloud.talent.v4beta1.CommuteMethod commute_method = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearCommuteMethod() {
 
@@ -1126,11 +1132,12 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The latitude and longitude of the location from which to
-     * calculate the commute time.
+     * Required. The latitude and longitude of the location to calculate the
+     * commute time from.
      * </pre>
      *
-     * <code>.google.type.LatLng start_coordinates = 2;</code>
+     * <code>.google.type.LatLng start_coordinates = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public boolean hasStartCoordinates() {
       return startCoordinatesBuilder_ != null || startCoordinates_ != null;
@@ -1139,11 +1146,12 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The latitude and longitude of the location from which to
-     * calculate the commute time.
+     * Required. The latitude and longitude of the location to calculate the
+     * commute time from.
      * </pre>
      *
-     * <code>.google.type.LatLng start_coordinates = 2;</code>
+     * <code>.google.type.LatLng start_coordinates = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.type.LatLng getStartCoordinates() {
       if (startCoordinatesBuilder_ == null) {
@@ -1158,11 +1166,12 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The latitude and longitude of the location from which to
-     * calculate the commute time.
+     * Required. The latitude and longitude of the location to calculate the
+     * commute time from.
      * </pre>
      *
-     * <code>.google.type.LatLng start_coordinates = 2;</code>
+     * <code>.google.type.LatLng start_coordinates = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setStartCoordinates(com.google.type.LatLng value) {
       if (startCoordinatesBuilder_ == null) {
@@ -1181,11 +1190,12 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The latitude and longitude of the location from which to
-     * calculate the commute time.
+     * Required. The latitude and longitude of the location to calculate the
+     * commute time from.
      * </pre>
      *
-     * <code>.google.type.LatLng start_coordinates = 2;</code>
+     * <code>.google.type.LatLng start_coordinates = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setStartCoordinates(com.google.type.LatLng.Builder builderForValue) {
       if (startCoordinatesBuilder_ == null) {
@@ -1201,11 +1211,12 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The latitude and longitude of the location from which to
-     * calculate the commute time.
+     * Required. The latitude and longitude of the location to calculate the
+     * commute time from.
      * </pre>
      *
-     * <code>.google.type.LatLng start_coordinates = 2;</code>
+     * <code>.google.type.LatLng start_coordinates = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeStartCoordinates(com.google.type.LatLng value) {
       if (startCoordinatesBuilder_ == null) {
@@ -1226,11 +1237,12 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The latitude and longitude of the location from which to
-     * calculate the commute time.
+     * Required. The latitude and longitude of the location to calculate the
+     * commute time from.
      * </pre>
      *
-     * <code>.google.type.LatLng start_coordinates = 2;</code>
+     * <code>.google.type.LatLng start_coordinates = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearStartCoordinates() {
       if (startCoordinatesBuilder_ == null) {
@@ -1247,11 +1259,12 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The latitude and longitude of the location from which to
-     * calculate the commute time.
+     * Required. The latitude and longitude of the location to calculate the
+     * commute time from.
      * </pre>
      *
-     * <code>.google.type.LatLng start_coordinates = 2;</code>
+     * <code>.google.type.LatLng start_coordinates = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.type.LatLng.Builder getStartCoordinatesBuilder() {
 
@@ -1262,11 +1275,12 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The latitude and longitude of the location from which to
-     * calculate the commute time.
+     * Required. The latitude and longitude of the location to calculate the
+     * commute time from.
      * </pre>
      *
-     * <code>.google.type.LatLng start_coordinates = 2;</code>
+     * <code>.google.type.LatLng start_coordinates = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.type.LatLngOrBuilder getStartCoordinatesOrBuilder() {
       if (startCoordinatesBuilder_ != null) {
@@ -1281,11 +1295,12 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The latitude and longitude of the location from which to
-     * calculate the commute time.
+     * Required. The latitude and longitude of the location to calculate the
+     * commute time from.
      * </pre>
      *
-     * <code>.google.type.LatLng start_coordinates = 2;</code>
+     * <code>.google.type.LatLng start_coordinates = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.LatLng, com.google.type.LatLng.Builder, com.google.type.LatLngOrBuilder>
@@ -1316,7 +1331,9 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
      * `3600s` (one hour). Format is `123s`.
      * </pre>
      *
-     * <code>.google.protobuf.Duration travel_duration = 3;</code>
+     * <code>
+     * .google.protobuf.Duration travel_duration = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public boolean hasTravelDuration() {
       return travelDurationBuilder_ != null || travelDuration_ != null;
@@ -1329,7 +1346,9 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
      * `3600s` (one hour). Format is `123s`.
      * </pre>
      *
-     * <code>.google.protobuf.Duration travel_duration = 3;</code>
+     * <code>
+     * .google.protobuf.Duration travel_duration = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.protobuf.Duration getTravelDuration() {
       if (travelDurationBuilder_ == null) {
@@ -1348,7 +1367,9 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
      * `3600s` (one hour). Format is `123s`.
      * </pre>
      *
-     * <code>.google.protobuf.Duration travel_duration = 3;</code>
+     * <code>
+     * .google.protobuf.Duration travel_duration = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setTravelDuration(com.google.protobuf.Duration value) {
       if (travelDurationBuilder_ == null) {
@@ -1371,7 +1392,9 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
      * `3600s` (one hour). Format is `123s`.
      * </pre>
      *
-     * <code>.google.protobuf.Duration travel_duration = 3;</code>
+     * <code>
+     * .google.protobuf.Duration travel_duration = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setTravelDuration(com.google.protobuf.Duration.Builder builderForValue) {
       if (travelDurationBuilder_ == null) {
@@ -1391,7 +1414,9 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
      * `3600s` (one hour). Format is `123s`.
      * </pre>
      *
-     * <code>.google.protobuf.Duration travel_duration = 3;</code>
+     * <code>
+     * .google.protobuf.Duration travel_duration = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeTravelDuration(com.google.protobuf.Duration value) {
       if (travelDurationBuilder_ == null) {
@@ -1418,7 +1443,9 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
      * `3600s` (one hour). Format is `123s`.
      * </pre>
      *
-     * <code>.google.protobuf.Duration travel_duration = 3;</code>
+     * <code>
+     * .google.protobuf.Duration travel_duration = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearTravelDuration() {
       if (travelDurationBuilder_ == null) {
@@ -1439,7 +1466,9 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
      * `3600s` (one hour). Format is `123s`.
      * </pre>
      *
-     * <code>.google.protobuf.Duration travel_duration = 3;</code>
+     * <code>
+     * .google.protobuf.Duration travel_duration = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.protobuf.Duration.Builder getTravelDurationBuilder() {
 
@@ -1454,7 +1483,9 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
      * `3600s` (one hour). Format is `123s`.
      * </pre>
      *
-     * <code>.google.protobuf.Duration travel_duration = 3;</code>
+     * <code>
+     * .google.protobuf.Duration travel_duration = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.protobuf.DurationOrBuilder getTravelDurationOrBuilder() {
       if (travelDurationBuilder_ != null) {
@@ -1473,7 +1504,9 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
      * `3600s` (one hour). Format is `123s`.
      * </pre>
      *
-     * <code>.google.protobuf.Duration travel_duration = 3;</code>
+     * <code>
+     * .google.protobuf.Duration travel_duration = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Duration,
@@ -1497,11 +1530,11 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If `true`, jobs without street level addresses may also be
-     * returned. For city level addresses, the city center is used. For state and
-     * coarser level addresses, text matching is used. If this field is set to
-     * `false` or isn't specified, only jobs that include street level addresses
-     * will be returned by commute search.
+     * If `true`, jobs without street level addresses may also be returned.
+     * For city level addresses, the city center is used. For state and coarser
+     * level addresses, text matching is used.
+     * If this field is set to `false` or isn't specified, only jobs that include
+     * street level addresses will be returned by commute search.
      * </pre>
      *
      * <code>bool allow_imprecise_addresses = 4;</code>
@@ -1513,11 +1546,11 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If `true`, jobs without street level addresses may also be
-     * returned. For city level addresses, the city center is used. For state and
-     * coarser level addresses, text matching is used. If this field is set to
-     * `false` or isn't specified, only jobs that include street level addresses
-     * will be returned by commute search.
+     * If `true`, jobs without street level addresses may also be returned.
+     * For city level addresses, the city center is used. For state and coarser
+     * level addresses, text matching is used.
+     * If this field is set to `false` or isn't specified, only jobs that include
+     * street level addresses will be returned by commute search.
      * </pre>
      *
      * <code>bool allow_imprecise_addresses = 4;</code>
@@ -1532,11 +1565,11 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If `true`, jobs without street level addresses may also be
-     * returned. For city level addresses, the city center is used. For state and
-     * coarser level addresses, text matching is used. If this field is set to
-     * `false` or isn't specified, only jobs that include street level addresses
-     * will be returned by commute search.
+     * If `true`, jobs without street level addresses may also be returned.
+     * For city level addresses, the city center is used. For state and coarser
+     * level addresses, text matching is used.
+     * If this field is set to `false` or isn't specified, only jobs that include
+     * street level addresses will be returned by commute search.
      * </pre>
      *
      * <code>bool allow_imprecise_addresses = 4;</code>
@@ -1552,8 +1585,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Specifies the traffic density to use when calculating commute
-     * time.
+     * Specifies the traffic density to use when calculating commute time.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CommuteFilter.RoadTraffic road_traffic = 5;</code>
@@ -1568,8 +1600,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Specifies the traffic density to use when calculating commute
-     * time.
+     * Specifies the traffic density to use when calculating commute time.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CommuteFilter.RoadTraffic road_traffic = 5;</code>
@@ -1584,8 +1615,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Specifies the traffic density to use when calculating commute
-     * time.
+     * Specifies the traffic density to use when calculating commute time.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CommuteFilter.RoadTraffic road_traffic = 5;</code>
@@ -1606,8 +1636,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Specifies the traffic density to use when calculating commute
-     * time.
+     * Specifies the traffic density to use when calculating commute time.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CommuteFilter.RoadTraffic road_traffic = 5;</code>
@@ -1625,8 +1654,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Specifies the traffic density to use when calculating commute
-     * time.
+     * Specifies the traffic density to use when calculating commute time.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CommuteFilter.RoadTraffic road_traffic = 5;</code>
@@ -1649,9 +1677,8 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The departure time used to calculate traffic impact,
-     * represented as [google.type.TimeOfDay][google.type.TimeOfDay] in local
-     * time zone.
+     * The departure time used to calculate traffic impact, represented as
+     * [google.type.TimeOfDay][google.type.TimeOfDay] in local time zone.
      * Currently traffic model is restricted to hour level resolution.
      * </pre>
      *
@@ -1664,9 +1691,8 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The departure time used to calculate traffic impact,
-     * represented as [google.type.TimeOfDay][google.type.TimeOfDay] in local
-     * time zone.
+     * The departure time used to calculate traffic impact, represented as
+     * [google.type.TimeOfDay][google.type.TimeOfDay] in local time zone.
      * Currently traffic model is restricted to hour level resolution.
      * </pre>
      *
@@ -1689,9 +1715,8 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The departure time used to calculate traffic impact,
-     * represented as [google.type.TimeOfDay][google.type.TimeOfDay] in local
-     * time zone.
+     * The departure time used to calculate traffic impact, represented as
+     * [google.type.TimeOfDay][google.type.TimeOfDay] in local time zone.
      * Currently traffic model is restricted to hour level resolution.
      * </pre>
      *
@@ -1714,9 +1739,8 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The departure time used to calculate traffic impact,
-     * represented as [google.type.TimeOfDay][google.type.TimeOfDay] in local
-     * time zone.
+     * The departure time used to calculate traffic impact, represented as
+     * [google.type.TimeOfDay][google.type.TimeOfDay] in local time zone.
      * Currently traffic model is restricted to hour level resolution.
      * </pre>
      *
@@ -1736,9 +1760,8 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The departure time used to calculate traffic impact,
-     * represented as [google.type.TimeOfDay][google.type.TimeOfDay] in local
-     * time zone.
+     * The departure time used to calculate traffic impact, represented as
+     * [google.type.TimeOfDay][google.type.TimeOfDay] in local time zone.
      * Currently traffic model is restricted to hour level resolution.
      * </pre>
      *
@@ -1769,9 +1792,8 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The departure time used to calculate traffic impact,
-     * represented as [google.type.TimeOfDay][google.type.TimeOfDay] in local
-     * time zone.
+     * The departure time used to calculate traffic impact, represented as
+     * [google.type.TimeOfDay][google.type.TimeOfDay] in local time zone.
      * Currently traffic model is restricted to hour level resolution.
      * </pre>
      *
@@ -1797,9 +1819,8 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The departure time used to calculate traffic impact,
-     * represented as [google.type.TimeOfDay][google.type.TimeOfDay] in local
-     * time zone.
+     * The departure time used to calculate traffic impact, represented as
+     * [google.type.TimeOfDay][google.type.TimeOfDay] in local time zone.
      * Currently traffic model is restricted to hour level resolution.
      * </pre>
      *
@@ -1812,9 +1833,8 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The departure time used to calculate traffic impact,
-     * represented as [google.type.TimeOfDay][google.type.TimeOfDay] in local
-     * time zone.
+     * The departure time used to calculate traffic impact, represented as
+     * [google.type.TimeOfDay][google.type.TimeOfDay] in local time zone.
      * Currently traffic model is restricted to hour level resolution.
      * </pre>
      *
@@ -1834,9 +1854,8 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The departure time used to calculate traffic impact,
-     * represented as [google.type.TimeOfDay][google.type.TimeOfDay] in local
-     * time zone.
+     * The departure time used to calculate traffic impact, represented as
+     * [google.type.TimeOfDay][google.type.TimeOfDay] in local time zone.
      * Currently traffic model is restricted to hour level resolution.
      * </pre>
      *

@@ -15,7 +15,9 @@ public interface SynthesizeSpeechRequestOrBuilder
    * Required. The Synthesizer requires either plain text or SSML as input.
    * </pre>
    *
-   * <code>.google.cloud.texttospeech.v1.SynthesisInput input = 1;</code>
+   * <code>
+   * .google.cloud.texttospeech.v1.SynthesisInput input = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   boolean hasInput();
   /**
@@ -25,7 +27,9 @@ public interface SynthesizeSpeechRequestOrBuilder
    * Required. The Synthesizer requires either plain text or SSML as input.
    * </pre>
    *
-   * <code>.google.cloud.texttospeech.v1.SynthesisInput input = 1;</code>
+   * <code>
+   * .google.cloud.texttospeech.v1.SynthesisInput input = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.texttospeech.v1.SynthesisInput getInput();
   /**
@@ -35,7 +39,9 @@ public interface SynthesizeSpeechRequestOrBuilder
    * Required. The Synthesizer requires either plain text or SSML as input.
    * </pre>
    *
-   * <code>.google.cloud.texttospeech.v1.SynthesisInput input = 1;</code>
+   * <code>
+   * .google.cloud.texttospeech.v1.SynthesisInput input = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.texttospeech.v1.SynthesisInputOrBuilder getInputOrBuilder();
 
@@ -46,7 +52,9 @@ public interface SynthesizeSpeechRequestOrBuilder
    * Required. The desired voice of the synthesized audio.
    * </pre>
    *
-   * <code>.google.cloud.texttospeech.v1.VoiceSelectionParams voice = 2;</code>
+   * <code>
+   * .google.cloud.texttospeech.v1.VoiceSelectionParams voice = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   boolean hasVoice();
   /**
@@ -56,7 +64,9 @@ public interface SynthesizeSpeechRequestOrBuilder
    * Required. The desired voice of the synthesized audio.
    * </pre>
    *
-   * <code>.google.cloud.texttospeech.v1.VoiceSelectionParams voice = 2;</code>
+   * <code>
+   * .google.cloud.texttospeech.v1.VoiceSelectionParams voice = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.texttospeech.v1.VoiceSelectionParams getVoice();
   /**
@@ -66,7 +76,9 @@ public interface SynthesizeSpeechRequestOrBuilder
    * Required. The desired voice of the synthesized audio.
    * </pre>
    *
-   * <code>.google.cloud.texttospeech.v1.VoiceSelectionParams voice = 2;</code>
+   * <code>
+   * .google.cloud.texttospeech.v1.VoiceSelectionParams voice = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.texttospeech.v1.VoiceSelectionParamsOrBuilder getVoiceOrBuilder();
 
@@ -77,7 +89,9 @@ public interface SynthesizeSpeechRequestOrBuilder
    * Required. The configuration of the synthesized audio.
    * </pre>
    *
-   * <code>.google.cloud.texttospeech.v1.AudioConfig audio_config = 3;</code>
+   * <code>
+   * .google.cloud.texttospeech.v1.AudioConfig audio_config = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   boolean hasAudioConfig();
   /**
@@ -87,7 +101,9 @@ public interface SynthesizeSpeechRequestOrBuilder
    * Required. The configuration of the synthesized audio.
    * </pre>
    *
-   * <code>.google.cloud.texttospeech.v1.AudioConfig audio_config = 3;</code>
+   * <code>
+   * .google.cloud.texttospeech.v1.AudioConfig audio_config = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.texttospeech.v1.AudioConfig getAudioConfig();
   /**
@@ -97,7 +113,9 @@ public interface SynthesizeSpeechRequestOrBuilder
    * Required. The configuration of the synthesized audio.
    * </pre>
    *
-   * <code>.google.cloud.texttospeech.v1.AudioConfig audio_config = 3;</code>
+   * <code>
+   * .google.cloud.texttospeech.v1.AudioConfig audio_config = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.texttospeech.v1.AudioConfigOrBuilder getAudioConfigOrBuilder();
 }

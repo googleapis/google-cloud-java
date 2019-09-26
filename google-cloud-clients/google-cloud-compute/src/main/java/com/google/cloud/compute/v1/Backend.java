@@ -140,8 +140,8 @@ public final class Backend implements ApiMessage {
    * for the backend service, as well as the type of backend (instance group or NEG).
    *
    * <p>- If the load balancing mode is CONNECTION, then the load is spread based on how many
-   * concurrent connections the backend can handle. The CONNECTION balancing mode is only available
-   * if the protocol for the backend service is SSL, TCP, or UDP.
+   * concurrent connections the backend can handle. You can use the CONNECTION balancing mode if the
+   * protocol for the backend service is SSL, TCP, or UDP.
    *
    * <p>If the loadBalancingScheme for the backend service is EXTERNAL (SSL Proxy and TCP Proxy load
    * balancers), you must also specify exactly one of the following parameters: maxConnections,
@@ -150,16 +150,16 @@ public final class Backend implements ApiMessage {
    * <p>If the loadBalancingScheme for the backend service is INTERNAL (internal TCP/UDP load
    * balancers), you cannot specify any additional parameters.
    *
-   * <p>- If the load balancing mode is RATE, then the load is spread based on the rate of HTTP
-   * requests per second (RPS). The RATE balancing mode is only available if the protocol for the
-   * backend service is HTTP or HTTPS. You must specify exactly one of the following parameters:
-   * maxRate, maxRatePerInstance, or maxRatePerEndpoint.
+   * <p>- If the load balancing mode is RATE, the load is spread based on the rate of HTTP requests
+   * per second (RPS). You can use the RATE balancing mode if the protocol for the backend service
+   * is HTTP or HTTPS. You must specify exactly one of the following parameters: maxRate,
+   * maxRatePerInstance, or maxRatePerEndpoint.
    *
-   * <p>- If the load balancing mode is UTILIZATION, then the load is spread based on the CPU
-   * utilization of instances in an instance group. The UTILIZATION balancing mode is only available
-   * if the loadBalancingScheme of the backend service is EXTERNAL, INTERNAL_SELF_MANAGED, or
-   * INTERNAL_MANAGED and the backend is made up of instance groups. There are no restrictions on
-   * the backend service protocol.
+   * <p>- If the load balancing mode is UTILIZATION, the load is spread based on the CPU utilization
+   * of instances in an instance group. You can use the UTILIZATION balancing mode if the
+   * loadBalancingScheme of the backend service is EXTERNAL, INTERNAL_SELF_MANAGED, or
+   * INTERNAL_MANAGED and the backends are instance groups. There are no restrictions on the backend
+   * service protocol.
    */
   public String getBalancingMode() {
     return balancingMode;
@@ -399,8 +399,8 @@ public final class Backend implements ApiMessage {
      * for the backend service, as well as the type of backend (instance group or NEG).
      *
      * <p>- If the load balancing mode is CONNECTION, then the load is spread based on how many
-     * concurrent connections the backend can handle. The CONNECTION balancing mode is only
-     * available if the protocol for the backend service is SSL, TCP, or UDP.
+     * concurrent connections the backend can handle. You can use the CONNECTION balancing mode if
+     * the protocol for the backend service is SSL, TCP, or UDP.
      *
      * <p>If the loadBalancingScheme for the backend service is EXTERNAL (SSL Proxy and TCP Proxy
      * load balancers), you must also specify exactly one of the following parameters:
@@ -409,16 +409,16 @@ public final class Backend implements ApiMessage {
      * <p>If the loadBalancingScheme for the backend service is INTERNAL (internal TCP/UDP load
      * balancers), you cannot specify any additional parameters.
      *
-     * <p>- If the load balancing mode is RATE, then the load is spread based on the rate of HTTP
-     * requests per second (RPS). The RATE balancing mode is only available if the protocol for the
+     * <p>- If the load balancing mode is RATE, the load is spread based on the rate of HTTP
+     * requests per second (RPS). You can use the RATE balancing mode if the protocol for the
      * backend service is HTTP or HTTPS. You must specify exactly one of the following parameters:
      * maxRate, maxRatePerInstance, or maxRatePerEndpoint.
      *
-     * <p>- If the load balancing mode is UTILIZATION, then the load is spread based on the CPU
-     * utilization of instances in an instance group. The UTILIZATION balancing mode is only
-     * available if the loadBalancingScheme of the backend service is EXTERNAL,
-     * INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED and the backend is made up of instance groups.
-     * There are no restrictions on the backend service protocol.
+     * <p>- If the load balancing mode is UTILIZATION, the load is spread based on the CPU
+     * utilization of instances in an instance group. You can use the UTILIZATION balancing mode if
+     * the loadBalancingScheme of the backend service is EXTERNAL, INTERNAL_SELF_MANAGED, or
+     * INTERNAL_MANAGED and the backends are instance groups. There are no restrictions on the
+     * backend service protocol.
      */
     public String getBalancingMode() {
       return balancingMode;
@@ -431,8 +431,8 @@ public final class Backend implements ApiMessage {
      * for the backend service, as well as the type of backend (instance group or NEG).
      *
      * <p>- If the load balancing mode is CONNECTION, then the load is spread based on how many
-     * concurrent connections the backend can handle. The CONNECTION balancing mode is only
-     * available if the protocol for the backend service is SSL, TCP, or UDP.
+     * concurrent connections the backend can handle. You can use the CONNECTION balancing mode if
+     * the protocol for the backend service is SSL, TCP, or UDP.
      *
      * <p>If the loadBalancingScheme for the backend service is EXTERNAL (SSL Proxy and TCP Proxy
      * load balancers), you must also specify exactly one of the following parameters:
@@ -441,16 +441,16 @@ public final class Backend implements ApiMessage {
      * <p>If the loadBalancingScheme for the backend service is INTERNAL (internal TCP/UDP load
      * balancers), you cannot specify any additional parameters.
      *
-     * <p>- If the load balancing mode is RATE, then the load is spread based on the rate of HTTP
-     * requests per second (RPS). The RATE balancing mode is only available if the protocol for the
+     * <p>- If the load balancing mode is RATE, the load is spread based on the rate of HTTP
+     * requests per second (RPS). You can use the RATE balancing mode if the protocol for the
      * backend service is HTTP or HTTPS. You must specify exactly one of the following parameters:
      * maxRate, maxRatePerInstance, or maxRatePerEndpoint.
      *
-     * <p>- If the load balancing mode is UTILIZATION, then the load is spread based on the CPU
-     * utilization of instances in an instance group. The UTILIZATION balancing mode is only
-     * available if the loadBalancingScheme of the backend service is EXTERNAL,
-     * INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED and the backend is made up of instance groups.
-     * There are no restrictions on the backend service protocol.
+     * <p>- If the load balancing mode is UTILIZATION, the load is spread based on the CPU
+     * utilization of instances in an instance group. You can use the UTILIZATION balancing mode if
+     * the loadBalancingScheme of the backend service is EXTERNAL, INTERNAL_SELF_MANAGED, or
+     * INTERNAL_MANAGED and the backends are instance groups. There are no restrictions on the
+     * backend service protocol.
      */
     public Builder setBalancingMode(String balancingMode) {
       this.balancingMode = balancingMode;

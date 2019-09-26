@@ -114,11 +114,11 @@ public final class CreateProfileRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. The name of the tenant this profile belongs to.
-   * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
-   * "projects/api-test-project/tenants/foo".
+   * The format is "projects/{project_id}/tenants/{tenant_id}". For example,
+   * "projects/foo/tenants/bar".
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -136,11 +136,11 @@ public final class CreateProfileRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. The name of the tenant this profile belongs to.
-   * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
-   * "projects/api-test-project/tenants/foo".
+   * The format is "projects/{project_id}/tenants/{tenant_id}". For example,
+   * "projects/foo/tenants/bar".
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -163,7 +163,9 @@ public final class CreateProfileRequest extends com.google.protobuf.GeneratedMes
    * Required. The profile to be created.
    * </pre>
    *
-   * <code>.google.cloud.talent.v4beta1.Profile profile = 2;</code>
+   * <code>
+   * .google.cloud.talent.v4beta1.Profile profile = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public boolean hasProfile() {
     return profile_ != null;
@@ -175,7 +177,9 @@ public final class CreateProfileRequest extends com.google.protobuf.GeneratedMes
    * Required. The profile to be created.
    * </pre>
    *
-   * <code>.google.cloud.talent.v4beta1.Profile profile = 2;</code>
+   * <code>
+   * .google.cloud.talent.v4beta1.Profile profile = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.talent.v4beta1.Profile getProfile() {
     return profile_ == null
@@ -189,7 +193,9 @@ public final class CreateProfileRequest extends com.google.protobuf.GeneratedMes
    * Required. The profile to be created.
    * </pre>
    *
-   * <code>.google.cloud.talent.v4beta1.Profile profile = 2;</code>
+   * <code>
+   * .google.cloud.talent.v4beta1.Profile profile = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.talent.v4beta1.ProfileOrBuilder getProfileOrBuilder() {
     return getProfile();
@@ -547,11 +553,11 @@ public final class CreateProfileRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The name of the tenant this profile belongs to.
-     * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
-     * "projects/api-test-project/tenants/foo".
+     * The format is "projects/{project_id}/tenants/{tenant_id}". For example,
+     * "projects/foo/tenants/bar".
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -569,11 +575,11 @@ public final class CreateProfileRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The name of the tenant this profile belongs to.
-     * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
-     * "projects/api-test-project/tenants/foo".
+     * The format is "projects/{project_id}/tenants/{tenant_id}". For example,
+     * "projects/foo/tenants/bar".
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -591,11 +597,11 @@ public final class CreateProfileRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The name of the tenant this profile belongs to.
-     * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
-     * "projects/api-test-project/tenants/foo".
+     * The format is "projects/{project_id}/tenants/{tenant_id}". For example,
+     * "projects/foo/tenants/bar".
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -611,11 +617,11 @@ public final class CreateProfileRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The name of the tenant this profile belongs to.
-     * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
-     * "projects/api-test-project/tenants/foo".
+     * The format is "projects/{project_id}/tenants/{tenant_id}". For example,
+     * "projects/foo/tenants/bar".
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearParent() {
 
@@ -628,11 +634,11 @@ public final class CreateProfileRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The name of the tenant this profile belongs to.
-     * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
-     * "projects/api-test-project/tenants/foo".
+     * The format is "projects/{project_id}/tenants/{tenant_id}". For example,
+     * "projects/foo/tenants/bar".
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -658,7 +664,9 @@ public final class CreateProfileRequest extends com.google.protobuf.GeneratedMes
      * Required. The profile to be created.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.Profile profile = 2;</code>
+     * <code>
+     * .google.cloud.talent.v4beta1.Profile profile = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public boolean hasProfile() {
       return profileBuilder_ != null || profile_ != null;
@@ -670,7 +678,9 @@ public final class CreateProfileRequest extends com.google.protobuf.GeneratedMes
      * Required. The profile to be created.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.Profile profile = 2;</code>
+     * <code>
+     * .google.cloud.talent.v4beta1.Profile profile = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.talent.v4beta1.Profile getProfile() {
       if (profileBuilder_ == null) {
@@ -688,7 +698,9 @@ public final class CreateProfileRequest extends com.google.protobuf.GeneratedMes
      * Required. The profile to be created.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.Profile profile = 2;</code>
+     * <code>
+     * .google.cloud.talent.v4beta1.Profile profile = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setProfile(com.google.cloud.talent.v4beta1.Profile value) {
       if (profileBuilder_ == null) {
@@ -710,7 +722,9 @@ public final class CreateProfileRequest extends com.google.protobuf.GeneratedMes
      * Required. The profile to be created.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.Profile profile = 2;</code>
+     * <code>
+     * .google.cloud.talent.v4beta1.Profile profile = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setProfile(com.google.cloud.talent.v4beta1.Profile.Builder builderForValue) {
       if (profileBuilder_ == null) {
@@ -729,7 +743,9 @@ public final class CreateProfileRequest extends com.google.protobuf.GeneratedMes
      * Required. The profile to be created.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.Profile profile = 2;</code>
+     * <code>
+     * .google.cloud.talent.v4beta1.Profile profile = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeProfile(com.google.cloud.talent.v4beta1.Profile value) {
       if (profileBuilder_ == null) {
@@ -755,7 +771,9 @@ public final class CreateProfileRequest extends com.google.protobuf.GeneratedMes
      * Required. The profile to be created.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.Profile profile = 2;</code>
+     * <code>
+     * .google.cloud.talent.v4beta1.Profile profile = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearProfile() {
       if (profileBuilder_ == null) {
@@ -775,7 +793,9 @@ public final class CreateProfileRequest extends com.google.protobuf.GeneratedMes
      * Required. The profile to be created.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.Profile profile = 2;</code>
+     * <code>
+     * .google.cloud.talent.v4beta1.Profile profile = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.talent.v4beta1.Profile.Builder getProfileBuilder() {
 
@@ -789,7 +809,9 @@ public final class CreateProfileRequest extends com.google.protobuf.GeneratedMes
      * Required. The profile to be created.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.Profile profile = 2;</code>
+     * <code>
+     * .google.cloud.talent.v4beta1.Profile profile = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.talent.v4beta1.ProfileOrBuilder getProfileOrBuilder() {
       if (profileBuilder_ != null) {
@@ -807,7 +829,9 @@ public final class CreateProfileRequest extends com.google.protobuf.GeneratedMes
      * Required. The profile to be created.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.Profile profile = 2;</code>
+     * <code>
+     * .google.cloud.talent.v4beta1.Profile profile = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.talent.v4beta1.Profile,

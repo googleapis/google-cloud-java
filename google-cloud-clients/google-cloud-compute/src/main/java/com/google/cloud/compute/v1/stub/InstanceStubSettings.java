@@ -86,6 +86,7 @@ import com.google.cloud.compute.v1.StopInstanceHttpRequest;
 import com.google.cloud.compute.v1.TestIamPermissionsInstanceHttpRequest;
 import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.cloud.compute.v1.UpdateAccessConfigInstanceHttpRequest;
+import com.google.cloud.compute.v1.UpdateDisplayDeviceInstanceHttpRequest;
 import com.google.cloud.compute.v1.UpdateNetworkInterfaceInstanceHttpRequest;
 import com.google.cloud.compute.v1.UpdateShieldedInstanceConfigInstanceHttpRequest;
 import com.google.common.collect.ImmutableList;
@@ -206,6 +207,8 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
       testIamPermissionsInstanceSettings;
   private final UnaryCallSettings<UpdateAccessConfigInstanceHttpRequest, Operation>
       updateAccessConfigInstanceSettings;
+  private final UnaryCallSettings<UpdateDisplayDeviceInstanceHttpRequest, Operation>
+      updateDisplayDeviceInstanceSettings;
   private final UnaryCallSettings<UpdateNetworkInterfaceInstanceHttpRequest, Operation>
       updateNetworkInterfaceInstanceSettings;
   private final UnaryCallSettings<UpdateShieldedInstanceConfigInstanceHttpRequest, Operation>
@@ -406,6 +409,12 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
     return updateAccessConfigInstanceSettings;
   }
 
+  /** Returns the object with the settings used for calls to updateDisplayDeviceInstance. */
+  public UnaryCallSettings<UpdateDisplayDeviceInstanceHttpRequest, Operation>
+      updateDisplayDeviceInstanceSettings() {
+    return updateDisplayDeviceInstanceSettings;
+  }
+
   /** Returns the object with the settings used for calls to updateNetworkInterfaceInstance. */
   public UnaryCallSettings<UpdateNetworkInterfaceInstanceHttpRequest, Operation>
       updateNetworkInterfaceInstanceSettings() {
@@ -538,6 +547,8 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
         settingsBuilder.testIamPermissionsInstanceSettings().build();
     updateAccessConfigInstanceSettings =
         settingsBuilder.updateAccessConfigInstanceSettings().build();
+    updateDisplayDeviceInstanceSettings =
+        settingsBuilder.updateDisplayDeviceInstanceSettings().build();
     updateNetworkInterfaceInstanceSettings =
         settingsBuilder.updateNetworkInterfaceInstanceSettings().build();
     updateShieldedInstanceConfigInstanceSettings =
@@ -816,6 +827,8 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
         testIamPermissionsInstanceSettings;
     private final UnaryCallSettings.Builder<UpdateAccessConfigInstanceHttpRequest, Operation>
         updateAccessConfigInstanceSettings;
+    private final UnaryCallSettings.Builder<UpdateDisplayDeviceInstanceHttpRequest, Operation>
+        updateDisplayDeviceInstanceSettings;
     private final UnaryCallSettings.Builder<UpdateNetworkInterfaceInstanceHttpRequest, Operation>
         updateNetworkInterfaceInstanceSettings;
     private final UnaryCallSettings.Builder<
@@ -932,6 +945,8 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
 
       updateAccessConfigInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
+      updateDisplayDeviceInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       updateNetworkInterfaceInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       updateShieldedInstanceConfigInstanceSettings =
@@ -972,6 +987,7 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
               stopInstanceSettings,
               testIamPermissionsInstanceSettings,
               updateAccessConfigInstanceSettings,
+              updateDisplayDeviceInstanceSettings,
               updateNetworkInterfaceInstanceSettings,
               updateShieldedInstanceConfigInstanceSettings);
 
@@ -1155,6 +1171,11 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
+          .updateDisplayDeviceInstanceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
           .updateNetworkInterfaceInstanceSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
@@ -1210,6 +1231,8 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
       stopInstanceSettings = settings.stopInstanceSettings.toBuilder();
       testIamPermissionsInstanceSettings = settings.testIamPermissionsInstanceSettings.toBuilder();
       updateAccessConfigInstanceSettings = settings.updateAccessConfigInstanceSettings.toBuilder();
+      updateDisplayDeviceInstanceSettings =
+          settings.updateDisplayDeviceInstanceSettings.toBuilder();
       updateNetworkInterfaceInstanceSettings =
           settings.updateNetworkInterfaceInstanceSettings.toBuilder();
       updateShieldedInstanceConfigInstanceSettings =
@@ -1250,6 +1273,7 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
               stopInstanceSettings,
               testIamPermissionsInstanceSettings,
               updateAccessConfigInstanceSettings,
+              updateDisplayDeviceInstanceSettings,
               updateNetworkInterfaceInstanceSettings,
               updateShieldedInstanceConfigInstanceSettings);
     }
@@ -1476,6 +1500,12 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
     public UnaryCallSettings.Builder<UpdateAccessConfigInstanceHttpRequest, Operation>
         updateAccessConfigInstanceSettings() {
       return updateAccessConfigInstanceSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateDisplayDeviceInstance. */
+    public UnaryCallSettings.Builder<UpdateDisplayDeviceInstanceHttpRequest, Operation>
+        updateDisplayDeviceInstanceSettings() {
+      return updateDisplayDeviceInstanceSettings;
     }
 
     /** Returns the builder for the settings used for calls to updateNetworkInterfaceInstance. */

@@ -12,7 +12,7 @@ public interface CustomAttributeOrBuilder
    *
    *
    * <pre>
-   * Optional but exactly one of
+   * Exactly one of
    * [string_values][google.cloud.talent.v4beta1.CustomAttribute.string_values]
    * or [long_values][google.cloud.talent.v4beta1.CustomAttribute.long_values]
    * must be specified.
@@ -32,7 +32,7 @@ public interface CustomAttributeOrBuilder
    *
    *
    * <pre>
-   * Optional but exactly one of
+   * Exactly one of
    * [string_values][google.cloud.talent.v4beta1.CustomAttribute.string_values]
    * or [long_values][google.cloud.talent.v4beta1.CustomAttribute.long_values]
    * must be specified.
@@ -52,7 +52,7 @@ public interface CustomAttributeOrBuilder
    *
    *
    * <pre>
-   * Optional but exactly one of
+   * Exactly one of
    * [string_values][google.cloud.talent.v4beta1.CustomAttribute.string_values]
    * or [long_values][google.cloud.talent.v4beta1.CustomAttribute.long_values]
    * must be specified.
@@ -72,7 +72,7 @@ public interface CustomAttributeOrBuilder
    *
    *
    * <pre>
-   * Optional but exactly one of
+   * Exactly one of
    * [string_values][google.cloud.talent.v4beta1.CustomAttribute.string_values]
    * or [long_values][google.cloud.talent.v4beta1.CustomAttribute.long_values]
    * must be specified.
@@ -93,7 +93,7 @@ public interface CustomAttributeOrBuilder
    *
    *
    * <pre>
-   * Optional but exactly one of
+   * Exactly one of
    * [string_values][google.cloud.talent.v4beta1.CustomAttribute.string_values]
    * or [long_values][google.cloud.talent.v4beta1.CustomAttribute.long_values]
    * must be specified.
@@ -111,7 +111,7 @@ public interface CustomAttributeOrBuilder
    *
    *
    * <pre>
-   * Optional but exactly one of
+   * Exactly one of
    * [string_values][google.cloud.talent.v4beta1.CustomAttribute.string_values]
    * or [long_values][google.cloud.talent.v4beta1.CustomAttribute.long_values]
    * must be specified.
@@ -129,7 +129,7 @@ public interface CustomAttributeOrBuilder
    *
    *
    * <pre>
-   * Optional but exactly one of
+   * Exactly one of
    * [string_values][google.cloud.talent.v4beta1.CustomAttribute.string_values]
    * or [long_values][google.cloud.talent.v4beta1.CustomAttribute.long_values]
    * must be specified.
@@ -148,8 +148,8 @@ public interface CustomAttributeOrBuilder
    *
    *
    * <pre>
-   * Optional. If the `filterable` flag is true, custom field values are
-   * searchable. If false, values are not searchable.
+   * If the `filterable` flag is true, custom field values are searchable.
+   * If false, values are not searchable.
    * Default is false.
    * </pre>
    *

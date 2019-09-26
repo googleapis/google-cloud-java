@@ -106,12 +106,14 @@ public final class RemoveProductFromProductSetRequest extends com.google.protobu
    *
    *
    * <pre>
-   * The resource name for the ProductSet to modify.
+   * Required. The resource name for the ProductSet to modify.
    * Format is:
    * `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -128,12 +130,14 @@ public final class RemoveProductFromProductSetRequest extends com.google.protobu
    *
    *
    * <pre>
-   * The resource name for the ProductSet to modify.
+   * Required. The resource name for the ProductSet to modify.
    * Format is:
    * `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -153,12 +157,14 @@ public final class RemoveProductFromProductSetRequest extends com.google.protobu
    *
    *
    * <pre>
-   * The resource name for the Product to be removed from this ProductSet.
+   * Required. The resource name for the Product to be removed from this ProductSet.
    * Format is:
    * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`
    * </pre>
    *
-   * <code>string product = 2;</code>
+   * <code>
+   * string product = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public java.lang.String getProduct() {
     java.lang.Object ref = product_;
@@ -175,12 +181,14 @@ public final class RemoveProductFromProductSetRequest extends com.google.protobu
    *
    *
    * <pre>
-   * The resource name for the Product to be removed from this ProductSet.
+   * Required. The resource name for the Product to be removed from this ProductSet.
    * Format is:
    * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`
    * </pre>
    *
-   * <code>string product = 2;</code>
+   * <code>
+   * string product = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public com.google.protobuf.ByteString getProductBytes() {
     java.lang.Object ref = product_;
@@ -537,12 +545,14 @@ public final class RemoveProductFromProductSetRequest extends com.google.protobu
      *
      *
      * <pre>
-     * The resource name for the ProductSet to modify.
+     * Required. The resource name for the ProductSet to modify.
      * Format is:
      * `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -559,12 +569,14 @@ public final class RemoveProductFromProductSetRequest extends com.google.protobu
      *
      *
      * <pre>
-     * The resource name for the ProductSet to modify.
+     * Required. The resource name for the ProductSet to modify.
      * Format is:
      * `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -581,12 +593,14 @@ public final class RemoveProductFromProductSetRequest extends com.google.protobu
      *
      *
      * <pre>
-     * The resource name for the ProductSet to modify.
+     * Required. The resource name for the ProductSet to modify.
      * Format is:
      * `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -601,12 +615,14 @@ public final class RemoveProductFromProductSetRequest extends com.google.protobu
      *
      *
      * <pre>
-     * The resource name for the ProductSet to modify.
+     * Required. The resource name for the ProductSet to modify.
      * Format is:
      * `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder clearName() {
 
@@ -618,12 +634,14 @@ public final class RemoveProductFromProductSetRequest extends com.google.protobu
      *
      *
      * <pre>
-     * The resource name for the ProductSet to modify.
+     * Required. The resource name for the ProductSet to modify.
      * Format is:
      * `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -641,12 +659,14 @@ public final class RemoveProductFromProductSetRequest extends com.google.protobu
      *
      *
      * <pre>
-     * The resource name for the Product to be removed from this ProductSet.
+     * Required. The resource name for the Product to be removed from this ProductSet.
      * Format is:
      * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`
      * </pre>
      *
-     * <code>string product = 2;</code>
+     * <code>
+     * string product = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public java.lang.String getProduct() {
       java.lang.Object ref = product_;
@@ -663,12 +683,14 @@ public final class RemoveProductFromProductSetRequest extends com.google.protobu
      *
      *
      * <pre>
-     * The resource name for the Product to be removed from this ProductSet.
+     * Required. The resource name for the Product to be removed from this ProductSet.
      * Format is:
      * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`
      * </pre>
      *
-     * <code>string product = 2;</code>
+     * <code>
+     * string product = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public com.google.protobuf.ByteString getProductBytes() {
       java.lang.Object ref = product_;
@@ -685,12 +707,14 @@ public final class RemoveProductFromProductSetRequest extends com.google.protobu
      *
      *
      * <pre>
-     * The resource name for the Product to be removed from this ProductSet.
+     * Required. The resource name for the Product to be removed from this ProductSet.
      * Format is:
      * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`
      * </pre>
      *
-     * <code>string product = 2;</code>
+     * <code>
+     * string product = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setProduct(java.lang.String value) {
       if (value == null) {
@@ -705,12 +729,14 @@ public final class RemoveProductFromProductSetRequest extends com.google.protobu
      *
      *
      * <pre>
-     * The resource name for the Product to be removed from this ProductSet.
+     * Required. The resource name for the Product to be removed from this ProductSet.
      * Format is:
      * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`
      * </pre>
      *
-     * <code>string product = 2;</code>
+     * <code>
+     * string product = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder clearProduct() {
 
@@ -722,12 +748,14 @@ public final class RemoveProductFromProductSetRequest extends com.google.protobu
      *
      *
      * <pre>
-     * The resource name for the Product to be removed from this ProductSet.
+     * Required. The resource name for the Product to be removed from this ProductSet.
      * Format is:
      * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`
      * </pre>
      *
-     * <code>string product = 2;</code>
+     * <code>
+     * string product = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setProductBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

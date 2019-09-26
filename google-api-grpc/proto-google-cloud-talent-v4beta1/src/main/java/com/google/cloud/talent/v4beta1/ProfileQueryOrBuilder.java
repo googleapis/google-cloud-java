@@ -12,7 +12,7 @@ public interface ProfileQueryOrBuilder
    *
    *
    * <pre>
-   * Optional. Keywords to match any text fields of profiles.
+   * Keywords to match any text fields of profiles.
    * For example, "software engineer in Palo Alto".
    * </pre>
    *
@@ -23,7 +23,7 @@ public interface ProfileQueryOrBuilder
    *
    *
    * <pre>
-   * Optional. Keywords to match any text fields of profiles.
+   * Keywords to match any text fields of profiles.
    * For example, "software engineer in Palo Alto".
    * </pre>
    *
@@ -35,8 +35,8 @@ public interface ProfileQueryOrBuilder
    *
    *
    * <pre>
-   * Optional. The location filter specifies geo-regions containing the profiles
-   * to search against.
+   * The location filter specifies geo-regions containing the profiles to
+   * search against.
    * One of
    * [LocationFilter.address][google.cloud.talent.v4beta1.LocationFilter.address]
    * or
@@ -133,8 +133,8 @@ public interface ProfileQueryOrBuilder
    *
    *
    * <pre>
-   * Optional. The location filter specifies geo-regions containing the profiles
-   * to search against.
+   * The location filter specifies geo-regions containing the profiles to
+   * search against.
    * One of
    * [LocationFilter.address][google.cloud.talent.v4beta1.LocationFilter.address]
    * or
@@ -231,8 +231,8 @@ public interface ProfileQueryOrBuilder
    *
    *
    * <pre>
-   * Optional. The location filter specifies geo-regions containing the profiles
-   * to search against.
+   * The location filter specifies geo-regions containing the profiles to
+   * search against.
    * One of
    * [LocationFilter.address][google.cloud.talent.v4beta1.LocationFilter.address]
    * or
@@ -329,8 +329,8 @@ public interface ProfileQueryOrBuilder
    *
    *
    * <pre>
-   * Optional. The location filter specifies geo-regions containing the profiles
-   * to search against.
+   * The location filter specifies geo-regions containing the profiles to
+   * search against.
    * One of
    * [LocationFilter.address][google.cloud.talent.v4beta1.LocationFilter.address]
    * or
@@ -428,8 +428,8 @@ public interface ProfileQueryOrBuilder
    *
    *
    * <pre>
-   * Optional. The location filter specifies geo-regions containing the profiles
-   * to search against.
+   * The location filter specifies geo-regions containing the profiles to
+   * search against.
    * One of
    * [LocationFilter.address][google.cloud.talent.v4beta1.LocationFilter.address]
    * or
@@ -527,7 +527,7 @@ public interface ProfileQueryOrBuilder
    *
    *
    * <pre>
-   * Optional. Job title filter specifies job titles of profiles to match on.
+   * Job title filter specifies job titles of profiles to match on.
    * If a job title isn't specified, profiles with any titles are retrieved.
    * If multiple values are specified, profiles are retrieved with any of the
    * specified job titles.
@@ -544,7 +544,7 @@ public interface ProfileQueryOrBuilder
    *
    *
    * <pre>
-   * Optional. Job title filter specifies job titles of profiles to match on.
+   * Job title filter specifies job titles of profiles to match on.
    * If a job title isn't specified, profiles with any titles are retrieved.
    * If multiple values are specified, profiles are retrieved with any of the
    * specified job titles.
@@ -561,7 +561,7 @@ public interface ProfileQueryOrBuilder
    *
    *
    * <pre>
-   * Optional. Job title filter specifies job titles of profiles to match on.
+   * Job title filter specifies job titles of profiles to match on.
    * If a job title isn't specified, profiles with any titles are retrieved.
    * If multiple values are specified, profiles are retrieved with any of the
    * specified job titles.
@@ -578,7 +578,7 @@ public interface ProfileQueryOrBuilder
    *
    *
    * <pre>
-   * Optional. Job title filter specifies job titles of profiles to match on.
+   * Job title filter specifies job titles of profiles to match on.
    * If a job title isn't specified, profiles with any titles are retrieved.
    * If multiple values are specified, profiles are retrieved with any of the
    * specified job titles.
@@ -596,7 +596,7 @@ public interface ProfileQueryOrBuilder
    *
    *
    * <pre>
-   * Optional. Job title filter specifies job titles of profiles to match on.
+   * Job title filter specifies job titles of profiles to match on.
    * If a job title isn't specified, profiles with any titles are retrieved.
    * If multiple values are specified, profiles are retrieved with any of the
    * specified job titles.
@@ -614,7 +614,7 @@ public interface ProfileQueryOrBuilder
    *
    *
    * <pre>
-   * Optional. Employer filter specifies employers of profiles to match on.
+   * Employer filter specifies employers of profiles to match on.
    * If an employer filter isn't specified, profiles with any employers are
    * retrieved.
    * If multiple employer filters are specified, profiles with any matching
@@ -633,7 +633,7 @@ public interface ProfileQueryOrBuilder
    *
    *
    * <pre>
-   * Optional. Employer filter specifies employers of profiles to match on.
+   * Employer filter specifies employers of profiles to match on.
    * If an employer filter isn't specified, profiles with any employers are
    * retrieved.
    * If multiple employer filters are specified, profiles with any matching
@@ -652,7 +652,7 @@ public interface ProfileQueryOrBuilder
    *
    *
    * <pre>
-   * Optional. Employer filter specifies employers of profiles to match on.
+   * Employer filter specifies employers of profiles to match on.
    * If an employer filter isn't specified, profiles with any employers are
    * retrieved.
    * If multiple employer filters are specified, profiles with any matching
@@ -671,7 +671,7 @@ public interface ProfileQueryOrBuilder
    *
    *
    * <pre>
-   * Optional. Employer filter specifies employers of profiles to match on.
+   * Employer filter specifies employers of profiles to match on.
    * If an employer filter isn't specified, profiles with any employers are
    * retrieved.
    * If multiple employer filters are specified, profiles with any matching
@@ -691,7 +691,7 @@ public interface ProfileQueryOrBuilder
    *
    *
    * <pre>
-   * Optional. Employer filter specifies employers of profiles to match on.
+   * Employer filter specifies employers of profiles to match on.
    * If an employer filter isn't specified, profiles with any employers are
    * retrieved.
    * If multiple employer filters are specified, profiles with any matching
@@ -711,7 +711,7 @@ public interface ProfileQueryOrBuilder
    *
    *
    * <pre>
-   * Optional. Education filter specifies education of profiles to match on.
+   * Education filter specifies education of profiles to match on.
    * If an education filter isn't specified, profiles with any education are
    * retrieved.
    * If multiple education filters are specified, profiles that match any
@@ -729,7 +729,7 @@ public interface ProfileQueryOrBuilder
    *
    *
    * <pre>
-   * Optional. Education filter specifies education of profiles to match on.
+   * Education filter specifies education of profiles to match on.
    * If an education filter isn't specified, profiles with any education are
    * retrieved.
    * If multiple education filters are specified, profiles that match any
@@ -747,7 +747,7 @@ public interface ProfileQueryOrBuilder
    *
    *
    * <pre>
-   * Optional. Education filter specifies education of profiles to match on.
+   * Education filter specifies education of profiles to match on.
    * If an education filter isn't specified, profiles with any education are
    * retrieved.
    * If multiple education filters are specified, profiles that match any
@@ -765,7 +765,7 @@ public interface ProfileQueryOrBuilder
    *
    *
    * <pre>
-   * Optional. Education filter specifies education of profiles to match on.
+   * Education filter specifies education of profiles to match on.
    * If an education filter isn't specified, profiles with any education are
    * retrieved.
    * If multiple education filters are specified, profiles that match any
@@ -784,7 +784,7 @@ public interface ProfileQueryOrBuilder
    *
    *
    * <pre>
-   * Optional. Education filter specifies education of profiles to match on.
+   * Education filter specifies education of profiles to match on.
    * If an education filter isn't specified, profiles with any education are
    * retrieved.
    * If multiple education filters are specified, profiles that match any
@@ -803,7 +803,7 @@ public interface ProfileQueryOrBuilder
    *
    *
    * <pre>
-   * Optional. Skill filter specifies skill of profiles to match on.
+   * Skill filter specifies skill of profiles to match on.
    * If a skill filter isn't specified, profiles with any skills are retrieved.
    * If multiple skill filters are specified, profiles that match any skill
    * filters are retrieved.
@@ -820,7 +820,7 @@ public interface ProfileQueryOrBuilder
    *
    *
    * <pre>
-   * Optional. Skill filter specifies skill of profiles to match on.
+   * Skill filter specifies skill of profiles to match on.
    * If a skill filter isn't specified, profiles with any skills are retrieved.
    * If multiple skill filters are specified, profiles that match any skill
    * filters are retrieved.
@@ -837,7 +837,7 @@ public interface ProfileQueryOrBuilder
    *
    *
    * <pre>
-   * Optional. Skill filter specifies skill of profiles to match on.
+   * Skill filter specifies skill of profiles to match on.
    * If a skill filter isn't specified, profiles with any skills are retrieved.
    * If multiple skill filters are specified, profiles that match any skill
    * filters are retrieved.
@@ -854,7 +854,7 @@ public interface ProfileQueryOrBuilder
    *
    *
    * <pre>
-   * Optional. Skill filter specifies skill of profiles to match on.
+   * Skill filter specifies skill of profiles to match on.
    * If a skill filter isn't specified, profiles with any skills are retrieved.
    * If multiple skill filters are specified, profiles that match any skill
    * filters are retrieved.
@@ -872,7 +872,7 @@ public interface ProfileQueryOrBuilder
    *
    *
    * <pre>
-   * Optional. Skill filter specifies skill of profiles to match on.
+   * Skill filter specifies skill of profiles to match on.
    * If a skill filter isn't specified, profiles with any skills are retrieved.
    * If multiple skill filters are specified, profiles that match any skill
    * filters are retrieved.
@@ -890,8 +890,8 @@ public interface ProfileQueryOrBuilder
    *
    *
    * <pre>
-   * Optional. Work experience filter specifies the total working experience of
-   * profiles to match on.
+   * Work experience filter specifies the total working experience of profiles
+   * to match on.
    * If a work experience filter isn't specified, profiles with any
    * professional experience are retrieved.
    * If multiple work experience filters are specified, profiles that match any
@@ -908,8 +908,8 @@ public interface ProfileQueryOrBuilder
    *
    *
    * <pre>
-   * Optional. Work experience filter specifies the total working experience of
-   * profiles to match on.
+   * Work experience filter specifies the total working experience of profiles
+   * to match on.
    * If a work experience filter isn't specified, profiles with any
    * professional experience are retrieved.
    * If multiple work experience filters are specified, profiles that match any
@@ -925,8 +925,8 @@ public interface ProfileQueryOrBuilder
    *
    *
    * <pre>
-   * Optional. Work experience filter specifies the total working experience of
-   * profiles to match on.
+   * Work experience filter specifies the total working experience of profiles
+   * to match on.
    * If a work experience filter isn't specified, profiles with any
    * professional experience are retrieved.
    * If multiple work experience filters are specified, profiles that match any
@@ -942,8 +942,8 @@ public interface ProfileQueryOrBuilder
    *
    *
    * <pre>
-   * Optional. Work experience filter specifies the total working experience of
-   * profiles to match on.
+   * Work experience filter specifies the total working experience of profiles
+   * to match on.
    * If a work experience filter isn't specified, profiles with any
    * professional experience are retrieved.
    * If multiple work experience filters are specified, profiles that match any
@@ -960,8 +960,8 @@ public interface ProfileQueryOrBuilder
    *
    *
    * <pre>
-   * Optional. Work experience filter specifies the total working experience of
-   * profiles to match on.
+   * Work experience filter specifies the total working experience of profiles
+   * to match on.
    * If a work experience filter isn't specified, profiles with any
    * professional experience are retrieved.
    * If multiple work experience filters are specified, profiles that match any
@@ -979,8 +979,8 @@ public interface ProfileQueryOrBuilder
    *
    *
    * <pre>
-   * Optional. Time filter specifies the create/update timestamp of the profiles
-   * to match on.
+   * Time filter specifies the create/update timestamp of the profiles to match
+   * on.
    * For example, search for profiles created since "2018-1-1".
    * </pre>
    *
@@ -991,8 +991,8 @@ public interface ProfileQueryOrBuilder
    *
    *
    * <pre>
-   * Optional. Time filter specifies the create/update timestamp of the profiles
-   * to match on.
+   * Time filter specifies the create/update timestamp of the profiles to match
+   * on.
    * For example, search for profiles created since "2018-1-1".
    * </pre>
    *
@@ -1003,8 +1003,8 @@ public interface ProfileQueryOrBuilder
    *
    *
    * <pre>
-   * Optional. Time filter specifies the create/update timestamp of the profiles
-   * to match on.
+   * Time filter specifies the create/update timestamp of the profiles to match
+   * on.
    * For example, search for profiles created since "2018-1-1".
    * </pre>
    *
@@ -1015,8 +1015,8 @@ public interface ProfileQueryOrBuilder
    *
    *
    * <pre>
-   * Optional. Time filter specifies the create/update timestamp of the profiles
-   * to match on.
+   * Time filter specifies the create/update timestamp of the profiles to match
+   * on.
    * For example, search for profiles created since "2018-1-1".
    * </pre>
    *
@@ -1028,8 +1028,8 @@ public interface ProfileQueryOrBuilder
    *
    *
    * <pre>
-   * Optional. Time filter specifies the create/update timestamp of the profiles
-   * to match on.
+   * Time filter specifies the create/update timestamp of the profiles to match
+   * on.
    * For example, search for profiles created since "2018-1-1".
    * </pre>
    *
@@ -1041,8 +1041,7 @@ public interface ProfileQueryOrBuilder
    *
    *
    * <pre>
-   * Optional. The hirable filter specifies the profile's hirable status to
-   * match on.
+   * The hirable filter specifies the profile's hirable status to match on.
    * </pre>
    *
    * <code>.google.protobuf.BoolValue hirable_filter = 9;</code>
@@ -1052,8 +1051,7 @@ public interface ProfileQueryOrBuilder
    *
    *
    * <pre>
-   * Optional. The hirable filter specifies the profile's hirable status to
-   * match on.
+   * The hirable filter specifies the profile's hirable status to match on.
    * </pre>
    *
    * <code>.google.protobuf.BoolValue hirable_filter = 9;</code>
@@ -1063,8 +1061,7 @@ public interface ProfileQueryOrBuilder
    *
    *
    * <pre>
-   * Optional. The hirable filter specifies the profile's hirable status to
-   * match on.
+   * The hirable filter specifies the profile's hirable status to match on.
    * </pre>
    *
    * <code>.google.protobuf.BoolValue hirable_filter = 9;</code>
@@ -1075,8 +1072,7 @@ public interface ProfileQueryOrBuilder
    *
    *
    * <pre>
-   * Optional. The application date filters specify application date ranges to
-   * match on.
+   * The application date filters specify application date ranges to match on.
    * </pre>
    *
    * <code>
@@ -1089,8 +1085,7 @@ public interface ProfileQueryOrBuilder
    *
    *
    * <pre>
-   * Optional. The application date filters specify application date ranges to
-   * match on.
+   * The application date filters specify application date ranges to match on.
    * </pre>
    *
    * <code>
@@ -1102,8 +1097,7 @@ public interface ProfileQueryOrBuilder
    *
    *
    * <pre>
-   * Optional. The application date filters specify application date ranges to
-   * match on.
+   * The application date filters specify application date ranges to match on.
    * </pre>
    *
    * <code>
@@ -1115,8 +1109,7 @@ public interface ProfileQueryOrBuilder
    *
    *
    * <pre>
-   * Optional. The application date filters specify application date ranges to
-   * match on.
+   * The application date filters specify application date ranges to match on.
    * </pre>
    *
    * <code>
@@ -1129,8 +1122,7 @@ public interface ProfileQueryOrBuilder
    *
    *
    * <pre>
-   * Optional. The application date filters specify application date ranges to
-   * match on.
+   * The application date filters specify application date ranges to match on.
    * </pre>
    *
    * <code>
@@ -1144,8 +1136,8 @@ public interface ProfileQueryOrBuilder
    *
    *
    * <pre>
-   * Optional. The application outcome notes filters specify the notes for the
-   * outcome of the job application.
+   * The application outcome notes filters specify the notes for the outcome of
+   * the job application.
    * </pre>
    *
    * <code>
@@ -1158,8 +1150,8 @@ public interface ProfileQueryOrBuilder
    *
    *
    * <pre>
-   * Optional. The application outcome notes filters specify the notes for the
-   * outcome of the job application.
+   * The application outcome notes filters specify the notes for the outcome of
+   * the job application.
    * </pre>
    *
    * <code>
@@ -1172,8 +1164,8 @@ public interface ProfileQueryOrBuilder
    *
    *
    * <pre>
-   * Optional. The application outcome notes filters specify the notes for the
-   * outcome of the job application.
+   * The application outcome notes filters specify the notes for the outcome of
+   * the job application.
    * </pre>
    *
    * <code>
@@ -1185,8 +1177,8 @@ public interface ProfileQueryOrBuilder
    *
    *
    * <pre>
-   * Optional. The application outcome notes filters specify the notes for the
-   * outcome of the job application.
+   * The application outcome notes filters specify the notes for the outcome of
+   * the job application.
    * </pre>
    *
    * <code>
@@ -1199,8 +1191,8 @@ public interface ProfileQueryOrBuilder
    *
    *
    * <pre>
-   * Optional. The application outcome notes filters specify the notes for the
-   * outcome of the job application.
+   * The application outcome notes filters specify the notes for the outcome of
+   * the job application.
    * </pre>
    *
    * <code>
@@ -1214,8 +1206,7 @@ public interface ProfileQueryOrBuilder
    *
    *
    * <pre>
-   * Optional. The application job filters specify the job applied for in the
-   * application.
+   * The application job filters specify the job applied for in the application.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.ApplicationJobFilter application_job_filters = 13;
@@ -1227,8 +1218,7 @@ public interface ProfileQueryOrBuilder
    *
    *
    * <pre>
-   * Optional. The application job filters specify the job applied for in the
-   * application.
+   * The application job filters specify the job applied for in the application.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.ApplicationJobFilter application_job_filters = 13;
@@ -1239,8 +1229,7 @@ public interface ProfileQueryOrBuilder
    *
    *
    * <pre>
-   * Optional. The application job filters specify the job applied for in the
-   * application.
+   * The application job filters specify the job applied for in the application.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.ApplicationJobFilter application_job_filters = 13;
@@ -1251,8 +1240,7 @@ public interface ProfileQueryOrBuilder
    *
    *
    * <pre>
-   * Optional. The application job filters specify the job applied for in the
-   * application.
+   * The application job filters specify the job applied for in the application.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.ApplicationJobFilter application_job_filters = 13;
@@ -1264,8 +1252,7 @@ public interface ProfileQueryOrBuilder
    *
    *
    * <pre>
-   * Optional. The application job filters specify the job applied for in the
-   * application.
+   * The application job filters specify the job applied for in the application.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.ApplicationJobFilter application_job_filters = 13;
@@ -1278,7 +1265,7 @@ public interface ProfileQueryOrBuilder
    *
    *
    * <pre>
-   * Optional. This filter specifies a structured syntax to match against the
+   * This filter specifies a structured syntax to match against the
    * [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes]
    * that are marked as `filterable`.
    * The syntax for this expression is a subset of Google SQL syntax.
@@ -1306,7 +1293,7 @@ public interface ProfileQueryOrBuilder
    *
    *
    * <pre>
-   * Optional. This filter specifies a structured syntax to match against the
+   * This filter specifies a structured syntax to match against the
    * [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes]
    * that are marked as `filterable`.
    * The syntax for this expression is a subset of Google SQL syntax.
@@ -1335,8 +1322,8 @@ public interface ProfileQueryOrBuilder
    *
    *
    * <pre>
-   * Optional. The candidate availability filter which filters based on
-   * availability signals.
+   * The candidate availability filter which filters based on availability
+   * signals.
    * Signal 1: Number of days since most recent job application.  See
    * [Availability.JobApplicationAvailabilitySignal][google.cloud.talent.v4beta1.Availability.JobApplicationAvailabilitySignal]
    * for the details of this signal.
@@ -1359,8 +1346,8 @@ public interface ProfileQueryOrBuilder
    *
    *
    * <pre>
-   * Optional. The candidate availability filter which filters based on
-   * availability signals.
+   * The candidate availability filter which filters based on availability
+   * signals.
    * Signal 1: Number of days since most recent job application.  See
    * [Availability.JobApplicationAvailabilitySignal][google.cloud.talent.v4beta1.Availability.JobApplicationAvailabilitySignal]
    * for the details of this signal.
@@ -1383,8 +1370,8 @@ public interface ProfileQueryOrBuilder
    *
    *
    * <pre>
-   * Optional. The candidate availability filter which filters based on
-   * availability signals.
+   * The candidate availability filter which filters based on availability
+   * signals.
    * Signal 1: Number of days since most recent job application.  See
    * [Availability.JobApplicationAvailabilitySignal][google.cloud.talent.v4beta1.Availability.JobApplicationAvailabilitySignal]
    * for the details of this signal.
@@ -1409,7 +1396,7 @@ public interface ProfileQueryOrBuilder
    *
    *
    * <pre>
-   * Optional. Person name filter specifies person name of profiles to match on.
+   * Person name filter specifies person name of profiles to match on.
    * If multiple person name filters are specified, profiles that match any
    * person name filters are retrieved.
    * For example, search for profiles of candidates with name "John Smith".
@@ -1422,7 +1409,7 @@ public interface ProfileQueryOrBuilder
    *
    *
    * <pre>
-   * Optional. Person name filter specifies person name of profiles to match on.
+   * Person name filter specifies person name of profiles to match on.
    * If multiple person name filters are specified, profiles that match any
    * person name filters are retrieved.
    * For example, search for profiles of candidates with name "John Smith".
@@ -1435,7 +1422,7 @@ public interface ProfileQueryOrBuilder
    *
    *
    * <pre>
-   * Optional. Person name filter specifies person name of profiles to match on.
+   * Person name filter specifies person name of profiles to match on.
    * If multiple person name filters are specified, profiles that match any
    * person name filters are retrieved.
    * For example, search for profiles of candidates with name "John Smith".
@@ -1448,7 +1435,7 @@ public interface ProfileQueryOrBuilder
    *
    *
    * <pre>
-   * Optional. Person name filter specifies person name of profiles to match on.
+   * Person name filter specifies person name of profiles to match on.
    * If multiple person name filters are specified, profiles that match any
    * person name filters are retrieved.
    * For example, search for profiles of candidates with name "John Smith".
@@ -1462,7 +1449,7 @@ public interface ProfileQueryOrBuilder
    *
    *
    * <pre>
-   * Optional. Person name filter specifies person name of profiles to match on.
+   * Person name filter specifies person name of profiles to match on.
    * If multiple person name filters are specified, profiles that match any
    * person name filters are retrieved.
    * For example, search for profiles of candidates with name "John Smith".

@@ -7,7 +7,6 @@ package com.google.cloud.talent.v4beta1;
  *
  *
  * <pre>
- * Output only.
  * The List companies response object.
  * </pre>
  *
@@ -464,7 +463,6 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Output only.
    * The List companies response object.
    * </pre>
    *

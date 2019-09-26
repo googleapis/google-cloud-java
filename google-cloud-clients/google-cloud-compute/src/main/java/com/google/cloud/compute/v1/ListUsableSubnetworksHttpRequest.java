@@ -25,8 +25,9 @@ import javax.annotation.Nullable;
 @Generated("by GAPIC")
 @BetaApi
 /**
- * Request object for method compute.subnetworks.listUsable. Retrieves an aggregated list of usable
- * subnetworks.
+ * Request object for method compute.subnetworks.listUsable. Retrieves an aggregated list of all
+ * usable subnetworks in the project. The list contains all of the subnetworks in the project and
+ * the subnetworks that were shared by a Shared VPC host project.
  */
 public final class ListUsableSubnetworksHttpRequest implements ApiMessage {
   private final String access_token;

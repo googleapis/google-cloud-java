@@ -1,0 +1,13 @@
+{
+  "name": "bigtable",
+  "name_pretty": "Cloud Bigtable",
+  "product_documentation": "https://cloud.google.com/bigtable",
+  "client_documentation": "https://googleapis.dev/java/google-cloud-clients/latest/index.html?com/google/cloud/bigtable/v1beta1/package-summary.html",
+  "issue_tracker": "https://issuetracker.google.com/savedsearches/559777",
+  "release_level": "beta",
+  "language": "java",
+  "repo": "googleapis/google-cloud-java",
+  "repo_short": "google-cloud-java",
+  "distribution_name": "com.google.cloud:google-cloud-bigtable",
+  "api_id": "bigtable.googleapis.com"
+}

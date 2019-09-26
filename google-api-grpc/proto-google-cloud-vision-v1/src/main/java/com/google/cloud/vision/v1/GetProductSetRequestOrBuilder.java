@@ -12,24 +12,28 @@ public interface GetProductSetRequestOrBuilder
    *
    *
    * <pre>
-   * Resource name of the ProductSet to get.
+   * Required. Resource name of the ProductSet to get.
    * Format is:
    * `projects/PROJECT_ID/locations/LOG_ID/productSets/PRODUCT_SET_ID`
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   java.lang.String getName();
   /**
    *
    *
    * <pre>
-   * Resource name of the ProductSet to get.
+   * Required. Resource name of the ProductSet to get.
    * Format is:
    * `projects/PROJECT_ID/locations/LOG_ID/productSets/PRODUCT_SET_ID`
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   com.google.protobuf.ByteString getNameBytes();
 }

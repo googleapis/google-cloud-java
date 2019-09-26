@@ -223,13 +223,29 @@ public class DatabaseAdminGaxTest {
   @Before
   public void setUp() throws Exception {
     mockDatabaseAdmin.reset();
-    final RetrySettings retrySettings =
+    RetrySettings retrySettingsWithLowTimeout =
         RetrySettings.newBuilder()
-            .setInitialRpcTimeout(Duration.ofMillis(200L))
-            .setMaxRpcTimeout(Duration.ofMillis(200L))
-            .setMaxAttempts(3)
-            .setTotalTimeout(Duration.ofMillis(1500L))
+            .setInitialRetryDelay(Duration.ofMillis(1L))
+            .setMaxRetryDelay(Duration.ofMillis(1L))
+            .setInitialRpcTimeout(Duration.ofMillis(20L))
+            .setMaxRpcTimeout(Duration.ofMillis(1000L))
+            .setRetryDelayMultiplier(2.0)
+            .setMaxAttempts(10)
+            .setTotalTimeout(Duration.ofMillis(200L))
             .build();
+    RetrySettings retrySettingsWithHighTimeout =
+        RetrySettings.newBuilder()
+            .setInitialRetryDelay(Duration.ofMillis(1L))
+            .setMaxRetryDelay(Duration.ofMillis(1L))
+            .setInitialRpcTimeout(Duration.ofMillis(2000L))
+            .setMaxRpcTimeout(Duration.ofMillis(5000L))
+            .setMaxAttempts(3)
+            .setTotalTimeout(Duration.ofMillis(15000L))
+            .build();
+    final RetrySettings retrySettingsToUse =
+        exceptionType == ExceptionType.DELAYED
+            ? retrySettingsWithLowTimeout
+            : retrySettingsWithHighTimeout;
     SpannerOptions.Builder builder =
         SpannerOptions.newBuilder()
             .setProjectId(PROJECT)
@@ -241,11 +257,10 @@ public class DatabaseAdminGaxTest {
             new ApiFunction<UnaryCallSettings.Builder<?, ?>, Void>() {
               @Override
               public Void apply(Builder<?, ?> input) {
-                input.setRetrySettings(retrySettings);
+                input.setRetrySettings(retrySettingsToUse);
                 return null;
               }
             });
-
     if (!builder
         .getDatabaseAdminStubSettingsBuilder()
         .createDatabaseOperationSettings()
@@ -261,7 +276,7 @@ public class DatabaseAdminGaxTest {
                   .createDatabaseOperationSettings()
                   .getInitialCallSettings()
                   .toBuilder()
-                  .setRetrySettings(retrySettings)
+                  .setRetrySettings(retrySettingsToUse)
                   .build());
     }
     if (!builder
@@ -279,7 +294,7 @@ public class DatabaseAdminGaxTest {
                   .updateDatabaseDdlOperationSettings()
                   .getInitialCallSettings()
                   .toBuilder()
-                  .setRetrySettings(retrySettings)
+                  .setRetrySettings(retrySettingsToUse)
                   .build());
     }
     spanner = builder.build().getService();

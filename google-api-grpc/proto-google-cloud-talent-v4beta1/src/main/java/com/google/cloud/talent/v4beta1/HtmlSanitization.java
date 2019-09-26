@@ -7,7 +7,6 @@ package com.google.cloud.talent.v4beta1;
  *
  *
  * <pre>
- * Input only.
  * Option for HTML content sanitization on user input fields, for example, job
  * description. By setting this option, user can determine whether and how
  * sanitization is performed on these fields.

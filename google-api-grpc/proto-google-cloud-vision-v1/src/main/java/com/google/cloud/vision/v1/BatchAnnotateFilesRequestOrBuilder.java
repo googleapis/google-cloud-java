@@ -12,44 +12,52 @@ public interface BatchAnnotateFilesRequestOrBuilder
    *
    *
    * <pre>
-   * The list of file annotation requests. Right now we support only one
+   * Required. The list of file annotation requests. Right now we support only one
    * AnnotateFileRequest in BatchAnnotateFilesRequest.
    * </pre>
    *
-   * <code>repeated .google.cloud.vision.v1.AnnotateFileRequest requests = 1;</code>
+   * <code>
+   * repeated .google.cloud.vision.v1.AnnotateFileRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   java.util.List<com.google.cloud.vision.v1.AnnotateFileRequest> getRequestsList();
   /**
    *
    *
    * <pre>
-   * The list of file annotation requests. Right now we support only one
+   * Required. The list of file annotation requests. Right now we support only one
    * AnnotateFileRequest in BatchAnnotateFilesRequest.
    * </pre>
    *
-   * <code>repeated .google.cloud.vision.v1.AnnotateFileRequest requests = 1;</code>
+   * <code>
+   * repeated .google.cloud.vision.v1.AnnotateFileRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.vision.v1.AnnotateFileRequest getRequests(int index);
   /**
    *
    *
    * <pre>
-   * The list of file annotation requests. Right now we support only one
+   * Required. The list of file annotation requests. Right now we support only one
    * AnnotateFileRequest in BatchAnnotateFilesRequest.
    * </pre>
    *
-   * <code>repeated .google.cloud.vision.v1.AnnotateFileRequest requests = 1;</code>
+   * <code>
+   * repeated .google.cloud.vision.v1.AnnotateFileRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   int getRequestsCount();
   /**
    *
    *
    * <pre>
-   * The list of file annotation requests. Right now we support only one
+   * Required. The list of file annotation requests. Right now we support only one
    * AnnotateFileRequest in BatchAnnotateFilesRequest.
    * </pre>
    *
-   * <code>repeated .google.cloud.vision.v1.AnnotateFileRequest requests = 1;</code>
+   * <code>
+   * repeated .google.cloud.vision.v1.AnnotateFileRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   java.util.List<? extends com.google.cloud.vision.v1.AnnotateFileRequestOrBuilder>
       getRequestsOrBuilderList();
@@ -57,11 +65,13 @@ public interface BatchAnnotateFilesRequestOrBuilder
    *
    *
    * <pre>
-   * The list of file annotation requests. Right now we support only one
+   * Required. The list of file annotation requests. Right now we support only one
    * AnnotateFileRequest in BatchAnnotateFilesRequest.
    * </pre>
    *
-   * <code>repeated .google.cloud.vision.v1.AnnotateFileRequest requests = 1;</code>
+   * <code>
+   * repeated .google.cloud.vision.v1.AnnotateFileRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.vision.v1.AnnotateFileRequestOrBuilder getRequestsOrBuilder(int index);
 

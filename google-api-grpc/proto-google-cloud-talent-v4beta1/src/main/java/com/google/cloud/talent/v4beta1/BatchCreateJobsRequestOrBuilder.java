@@ -13,13 +13,12 @@ public interface BatchCreateJobsRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of the tenant under which the job is created.
-   * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
-   * "projects/api-test-project/tenant/foo".
-   * Tenant id is optional and a default tenant is created if unspecified, for
-   * example, "projects/api-test-project".
+   * The format is "projects/{project_id}/tenants/{tenant_id}". For example,
+   * "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant
+   * is created. For example, "projects/foo".
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getParent();
   /**
@@ -27,13 +26,12 @@ public interface BatchCreateJobsRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of the tenant under which the job is created.
-   * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
-   * "projects/api-test-project/tenant/foo".
-   * Tenant id is optional and a default tenant is created if unspecified, for
-   * example, "projects/api-test-project".
+   * The format is "projects/{project_id}/tenants/{tenant_id}". For example,
+   * "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant
+   * is created. For example, "projects/foo".
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -44,7 +42,9 @@ public interface BatchCreateJobsRequestOrBuilder
    * Required. The jobs to be created.
    * </pre>
    *
-   * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
+   * <code>
+   * repeated .google.cloud.talent.v4beta1.Job jobs = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   java.util.List<com.google.cloud.talent.v4beta1.Job> getJobsList();
   /**
@@ -54,7 +54,9 @@ public interface BatchCreateJobsRequestOrBuilder
    * Required. The jobs to be created.
    * </pre>
    *
-   * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
+   * <code>
+   * repeated .google.cloud.talent.v4beta1.Job jobs = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.talent.v4beta1.Job getJobs(int index);
   /**
@@ -64,7 +66,9 @@ public interface BatchCreateJobsRequestOrBuilder
    * Required. The jobs to be created.
    * </pre>
    *
-   * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
+   * <code>
+   * repeated .google.cloud.talent.v4beta1.Job jobs = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   int getJobsCount();
   /**
@@ -74,7 +78,9 @@ public interface BatchCreateJobsRequestOrBuilder
    * Required. The jobs to be created.
    * </pre>
    *
-   * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
+   * <code>
+   * repeated .google.cloud.talent.v4beta1.Job jobs = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   java.util.List<? extends com.google.cloud.talent.v4beta1.JobOrBuilder> getJobsOrBuilderList();
   /**
@@ -84,7 +90,9 @@ public interface BatchCreateJobsRequestOrBuilder
    * Required. The jobs to be created.
    * </pre>
    *
-   * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
+   * <code>
+   * repeated .google.cloud.talent.v4beta1.Job jobs = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.talent.v4beta1.JobOrBuilder getJobsOrBuilder(int index);
 }

@@ -391,7 +391,7 @@ public class ReservationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves all information of the specified reservation.
+   * Retrieves information about the specified reservation.
    *
    * <p>Sample code:
    *
@@ -417,7 +417,7 @@ public class ReservationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves all information of the specified reservation.
+   * Retrieves information about the specified reservation.
    *
    * <p>Sample code:
    *
@@ -441,7 +441,7 @@ public class ReservationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves all information of the specified reservation.
+   * Retrieves information about the specified reservation.
    *
    * <p>Sample code:
    *
@@ -465,7 +465,7 @@ public class ReservationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves all information of the specified reservation.
+   * Retrieves information about the specified reservation.
    *
    * <p>Sample code:
    *
@@ -606,7 +606,7 @@ public class ReservationClient implements BackgroundResource {
    * @param reservationResource Represents a reservation resource. A reservation ensures that
    *     capacity is held in a specific zone even if the reserved VMs are not running. For more
    *     information, read Reserving zonal resources. (== resource_for beta.reservations ==) (==
-   *     resource_for v1.reservations ==) (== NextID: 13 ==)
+   *     resource_for v1.reservations ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -638,7 +638,7 @@ public class ReservationClient implements BackgroundResource {
    * @param reservationResource Represents a reservation resource. A reservation ensures that
    *     capacity is held in a specific zone even if the reserved VMs are not running. For more
    *     information, read Reserving zonal resources. (== resource_for beta.reservations ==) (==
-   *     resource_for v1.reservations ==) (== NextID: 13 ==)
+   *     resource_for v1.reservations ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -705,7 +705,7 @@ public class ReservationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * A list all the reservations that have been configured for the specified project in specified
+   * A list of all the reservations that have been configured for the specified project in specified
    * zone.
    *
    * <p>Sample code:
@@ -733,7 +733,7 @@ public class ReservationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * A list all the reservations that have been configured for the specified project in specified
+   * A list of all the reservations that have been configured for the specified project in specified
    * zone.
    *
    * <p>Sample code:
@@ -759,7 +759,7 @@ public class ReservationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * A list all the reservations that have been configured for the specified project in specified
+   * A list of all the reservations that have been configured for the specified project in specified
    * zone.
    *
    * <p>Sample code:
@@ -786,7 +786,7 @@ public class ReservationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * A list all the reservations that have been configured for the specified project in specified
+   * A list of all the reservations that have been configured for the specified project in specified
    * zone.
    *
    * <p>Sample code:
@@ -813,7 +813,7 @@ public class ReservationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * A list all the reservations that have been configured for the specified project in specified
+   * A list of all the reservations that have been configured for the specified project in specified
    * zone.
    *
    * <p>Sample code:
@@ -847,7 +847,8 @@ public class ReservationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Resizes the reservation (applicable to standalone reservations only)
+   * Resizes the reservation (applicable to standalone reservations only). For more information,
+   * read Modifying reservations.
    *
    * <p>Sample code:
    *
@@ -878,7 +879,8 @@ public class ReservationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Resizes the reservation (applicable to standalone reservations only)
+   * Resizes the reservation (applicable to standalone reservations only). For more information,
+   * read Modifying reservations.
    *
    * <p>Sample code:
    *
@@ -908,7 +910,8 @@ public class ReservationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Resizes the reservation (applicable to standalone reservations only)
+   * Resizes the reservation (applicable to standalone reservations only). For more information,
+   * read Modifying reservations.
    *
    * <p>Sample code:
    *
@@ -934,7 +937,8 @@ public class ReservationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Resizes the reservation (applicable to standalone reservations only)
+   * Resizes the reservation (applicable to standalone reservations only). For more information,
+   * read Modifying reservations.
    *
    * <p>Sample code:
    *

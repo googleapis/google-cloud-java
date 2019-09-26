@@ -15,11 +15,13 @@
  */
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.TargetHttpsProxyClient.AggregatedListTargetHttpsProxiesPagedResponse;
 import static com.google.cloud.compute.v1.TargetHttpsProxyClient.ListTargetHttpsProxiesPagedResponse;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.compute.v1.AggregatedListTargetHttpsProxiesHttpRequest;
 import com.google.cloud.compute.v1.DeleteTargetHttpsProxyHttpRequest;
 import com.google.cloud.compute.v1.GetTargetHttpsProxyHttpRequest;
 import com.google.cloud.compute.v1.InsertTargetHttpsProxyHttpRequest;
@@ -30,6 +32,7 @@ import com.google.cloud.compute.v1.SetSslCertificatesTargetHttpsProxyHttpRequest
 import com.google.cloud.compute.v1.SetSslPolicyTargetHttpsProxyHttpRequest;
 import com.google.cloud.compute.v1.SetUrlMapTargetHttpsProxyHttpRequest;
 import com.google.cloud.compute.v1.TargetHttpsProxy;
+import com.google.cloud.compute.v1.TargetHttpsProxyAggregatedList;
 import com.google.cloud.compute.v1.TargetHttpsProxyList;
 import javax.annotation.Generated;
 
@@ -42,6 +45,22 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class TargetHttpsProxyStub implements BackgroundResource {
+
+  @BetaApi
+  public UnaryCallable<
+          AggregatedListTargetHttpsProxiesHttpRequest,
+          AggregatedListTargetHttpsProxiesPagedResponse>
+      aggregatedListTargetHttpsProxiesPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: aggregatedListTargetHttpsProxiesPagedCallable()");
+  }
+
+  @BetaApi
+  public UnaryCallable<AggregatedListTargetHttpsProxiesHttpRequest, TargetHttpsProxyAggregatedList>
+      aggregatedListTargetHttpsProxiesCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: aggregatedListTargetHttpsProxiesCallable()");
+  }
 
   @BetaApi
   public UnaryCallable<DeleteTargetHttpsProxyHttpRequest, Operation>

@@ -46,8 +46,7 @@ public interface ProductSearchParamsOrBuilder
    *
    *
    * <pre>
-   * The resource name of a [ProductSet][google.cloud.vision.v1.ProductSet] to
-   * be searched for similar images.
+   * The resource name of a [ProductSet][google.cloud.vision.v1.ProductSet] to be searched for similar images.
    * Format is:
    * `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`.
    * </pre>
@@ -59,8 +58,7 @@ public interface ProductSearchParamsOrBuilder
    *
    *
    * <pre>
-   * The resource name of a [ProductSet][google.cloud.vision.v1.ProductSet] to
-   * be searched for similar images.
+   * The resource name of a [ProductSet][google.cloud.vision.v1.ProductSet] to be searched for similar images.
    * Format is:
    * `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`.
    * </pre>
@@ -74,12 +72,12 @@ public interface ProductSearchParamsOrBuilder
    *
    * <pre>
    * The list of product categories to search in. Currently, we only consider
-   * the first category, and either "homegoods-v2", "apparel-v2", or "toys-v2"
-   * should be specified. The legacy categories "homegoods", "apparel", and
-   * "toys" are still supported but will be deprecated. For new products, please
-   * use "homegoods-v2", "apparel-v2", or "toys-v2" for better product search
-   * accuracy. It is recommended to migrate existing products to these
-   * categories as well.
+   * the first category, and either "homegoods-v2", "apparel-v2", "toys-v2",
+   * "packagedgoods-v1", or "general-v1" should be specified. The legacy
+   * categories "homegoods", "apparel", and "toys" are still supported but will
+   * be deprecated. For new products, please use "homegoods-v2", "apparel-v2",
+   * or "toys-v2" for better product search accuracy. It is recommended to
+   * migrate existing products to these categories as well.
    * </pre>
    *
    * <code>repeated string product_categories = 7;</code>
@@ -90,12 +88,12 @@ public interface ProductSearchParamsOrBuilder
    *
    * <pre>
    * The list of product categories to search in. Currently, we only consider
-   * the first category, and either "homegoods-v2", "apparel-v2", or "toys-v2"
-   * should be specified. The legacy categories "homegoods", "apparel", and
-   * "toys" are still supported but will be deprecated. For new products, please
-   * use "homegoods-v2", "apparel-v2", or "toys-v2" for better product search
-   * accuracy. It is recommended to migrate existing products to these
-   * categories as well.
+   * the first category, and either "homegoods-v2", "apparel-v2", "toys-v2",
+   * "packagedgoods-v1", or "general-v1" should be specified. The legacy
+   * categories "homegoods", "apparel", and "toys" are still supported but will
+   * be deprecated. For new products, please use "homegoods-v2", "apparel-v2",
+   * or "toys-v2" for better product search accuracy. It is recommended to
+   * migrate existing products to these categories as well.
    * </pre>
    *
    * <code>repeated string product_categories = 7;</code>
@@ -106,12 +104,12 @@ public interface ProductSearchParamsOrBuilder
    *
    * <pre>
    * The list of product categories to search in. Currently, we only consider
-   * the first category, and either "homegoods-v2", "apparel-v2", or "toys-v2"
-   * should be specified. The legacy categories "homegoods", "apparel", and
-   * "toys" are still supported but will be deprecated. For new products, please
-   * use "homegoods-v2", "apparel-v2", or "toys-v2" for better product search
-   * accuracy. It is recommended to migrate existing products to these
-   * categories as well.
+   * the first category, and either "homegoods-v2", "apparel-v2", "toys-v2",
+   * "packagedgoods-v1", or "general-v1" should be specified. The legacy
+   * categories "homegoods", "apparel", and "toys" are still supported but will
+   * be deprecated. For new products, please use "homegoods-v2", "apparel-v2",
+   * or "toys-v2" for better product search accuracy. It is recommended to
+   * migrate existing products to these categories as well.
    * </pre>
    *
    * <code>repeated string product_categories = 7;</code>
@@ -122,12 +120,12 @@ public interface ProductSearchParamsOrBuilder
    *
    * <pre>
    * The list of product categories to search in. Currently, we only consider
-   * the first category, and either "homegoods-v2", "apparel-v2", or "toys-v2"
-   * should be specified. The legacy categories "homegoods", "apparel", and
-   * "toys" are still supported but will be deprecated. For new products, please
-   * use "homegoods-v2", "apparel-v2", or "toys-v2" for better product search
-   * accuracy. It is recommended to migrate existing products to these
-   * categories as well.
+   * the first category, and either "homegoods-v2", "apparel-v2", "toys-v2",
+   * "packagedgoods-v1", or "general-v1" should be specified. The legacy
+   * categories "homegoods", "apparel", and "toys" are still supported but will
+   * be deprecated. For new products, please use "homegoods-v2", "apparel-v2",
+   * or "toys-v2" for better product search accuracy. It is recommended to
+   * migrate existing products to these categories as well.
    * </pre>
    *
    * <code>repeated string product_categories = 7;</code>

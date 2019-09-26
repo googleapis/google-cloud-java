@@ -16,7 +16,9 @@
 
 package com.google.cloud.bigquery;
 
+import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
+import static com.google.common.base.Strings.isNullOrEmpty;
 
 import com.google.api.services.bigquery.model.JobConfigurationExtract;
 import com.google.common.base.MoreObjects.ToStringHelper;
@@ -40,6 +42,7 @@ public final class ExtractJobConfiguration extends JobConfiguration {
   private final String fieldDelimiter;
   private final String format;
   private final String compression;
+  private final Boolean useAvroLogicalTypes;
 
   public static final class Builder
       extends JobConfiguration.Builder<ExtractJobConfiguration, Builder> {
@@ -50,6 +53,7 @@ public final class ExtractJobConfiguration extends JobConfiguration {
     private String fieldDelimiter;
     private String format;
     private String compression;
+    private Boolean useAvroLogicalTypes;
 
     private Builder() {
       super(Type.EXTRACT);
@@ -63,6 +67,7 @@ public final class ExtractJobConfiguration extends JobConfiguration {
       this.fieldDelimiter = jobInfo.fieldDelimiter;
       this.format = jobInfo.format;
       this.compression = jobInfo.compression;
+      this.useAvroLogicalTypes = jobInfo.useAvroLogicalTypes;
     }
 
     private Builder(com.google.api.services.bigquery.model.JobConfiguration configurationPb) {
@@ -74,6 +79,7 @@ public final class ExtractJobConfiguration extends JobConfiguration {
       this.fieldDelimiter = extractConfigurationPb.getFieldDelimiter();
       this.format = extractConfigurationPb.getDestinationFormat();
       this.compression = extractConfigurationPb.getCompression();
+      this.useAvroLogicalTypes = extractConfigurationPb.getUseAvroLogicalTypes();
     }
 
     /** Sets the table to export. */
@@ -128,6 +134,18 @@ public final class ExtractJobConfiguration extends JobConfiguration {
       return this;
     }
 
+    /**
+     * [Optional] If destinationFormat is set to "AVRO", this flag indicates whether to enable
+     * extracting applicable column types (such as TIMESTAMP) to their corresponding AVRO logical
+     * types (timestamp-micros), instead of only using their raw types (avro-long).
+     *
+     * @param useAvroLogicalTypes useAvroLogicalTypes or {@code null} for none
+     */
+    public Builder setUseAvroLogicalTypes(Boolean useAvroLogicalTypes) {
+      this.useAvroLogicalTypes = useAvroLogicalTypes;
+      return this;
+    }
+
     public ExtractJobConfiguration build() {
       return new ExtractJobConfiguration(this);
     }
@@ -141,6 +159,7 @@ public final class ExtractJobConfiguration extends JobConfiguration {
     this.fieldDelimiter = builder.fieldDelimiter;
     this.format = builder.format;
     this.compression = builder.compression;
+    this.useAvroLogicalTypes = builder.useAvroLogicalTypes;
   }
 
   /** Returns the table to export. */
@@ -180,6 +199,11 @@ public final class ExtractJobConfiguration extends JobConfiguration {
     return compression;
   }
 
+  /** Returns True/False. Indicates whether exported avro files include logical type annotations. */
+  public Boolean getUseAvroLogicalTypes() {
+    return useAvroLogicalTypes;
+  }
+
   @Override
   public Builder toBuilder() {
     return new Builder(this);
@@ -193,7 +217,8 @@ public final class ExtractJobConfiguration extends JobConfiguration {
         .add("format", format)
         .add("printHeader", printHeader)
         .add("fieldDelimiter", fieldDelimiter)
-        .add("compression", compression);
+        .add("compression", compression)
+        .add("useAvroLogicalTypes", useAvroLogicalTypes);
   }
 
   @Override
@@ -211,7 +236,8 @@ public final class ExtractJobConfiguration extends JobConfiguration {
         printHeader,
         fieldDelimiter,
         format,
-        compression);
+        compression,
+        useAvroLogicalTypes);
   }
 
   @Override
@@ -231,6 +257,7 @@ public final class ExtractJobConfiguration extends JobConfiguration {
     extractConfigurationPb.setFieldDelimiter(fieldDelimiter);
     extractConfigurationPb.setDestinationFormat(format);
     extractConfigurationPb.setCompression(compression);
+    extractConfigurationPb.setUseAvroLogicalTypes(useAvroLogicalTypes);
     return new com.google.api.services.bigquery.model.JobConfiguration()
         .setExtract(extractConfigurationPb);
   }
@@ -240,7 +267,8 @@ public final class ExtractJobConfiguration extends JobConfiguration {
    * URI.
    */
   public static Builder newBuilder(TableId sourceTable, String destinationUri) {
-    return newBuilder(sourceTable, ImmutableList.of(checkNotNull(destinationUri)));
+    checkArgument(!isNullOrEmpty(destinationUri), "Provided destinationUri is null or empty");
+    return newBuilder(sourceTable, ImmutableList.of(destinationUri));
   }
 
   /**
@@ -271,6 +299,7 @@ public final class ExtractJobConfiguration extends JobConfiguration {
    */
   public static ExtractJobConfiguration of(
       TableId sourceTable, String destinationUri, String format) {
+    checkArgument(!isNullOrEmpty(format), "Provided format is null or empty");
     return newBuilder(sourceTable, destinationUri).setFormat(format).build();
   }
 
@@ -280,6 +309,7 @@ public final class ExtractJobConfiguration extends JobConfiguration {
    */
   public static ExtractJobConfiguration of(
       TableId sourceTable, List<String> destinationUris, String format) {
+    checkArgument(!isNullOrEmpty(format), "Provided format is null or empty");
     return newBuilder(sourceTable, destinationUris).setFormat(format).build();
   }
 

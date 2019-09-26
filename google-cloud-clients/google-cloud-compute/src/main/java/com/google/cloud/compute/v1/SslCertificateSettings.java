@@ -15,6 +15,7 @@
  */
 package com.google.cloud.compute.v1;
 
+import static com.google.cloud.compute.v1.SslCertificateClient.AggregatedListSslCertificatesPagedResponse;
 import static com.google.cloud.compute.v1.SslCertificateClient.ListSslCertificatesPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -64,6 +65,15 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator")
 @BetaApi
 public class SslCertificateSettings extends ClientSettings<SslCertificateSettings> {
+  /** Returns the object with the settings used for calls to aggregatedListSslCertificates. */
+  public PagedCallSettings<
+          AggregatedListSslCertificatesHttpRequest,
+          SslCertificateAggregatedList,
+          AggregatedListSslCertificatesPagedResponse>
+      aggregatedListSslCertificatesSettings() {
+    return ((SslCertificateStubSettings) getStubSettings()).aggregatedListSslCertificatesSettings();
+  }
+
   /** Returns the object with the settings used for calls to deleteSslCertificate. */
   public UnaryCallSettings<DeleteSslCertificateHttpRequest, Operation>
       deleteSslCertificateSettings() {
@@ -189,6 +199,15 @@ public class SslCertificateSettings extends ClientSettings<SslCertificateSetting
       super.applyToAllUnaryMethods(
           getStubSettingsBuilder().unaryMethodSettingsBuilders(), settingsUpdater);
       return this;
+    }
+
+    /** Returns the builder for the settings used for calls to aggregatedListSslCertificates. */
+    public PagedCallSettings.Builder<
+            AggregatedListSslCertificatesHttpRequest,
+            SslCertificateAggregatedList,
+            AggregatedListSslCertificatesPagedResponse>
+        aggregatedListSslCertificatesSettings() {
+      return getStubSettingsBuilder().aggregatedListSslCertificatesSettings();
     }
 
     /** Returns the builder for the settings used for calls to deleteSslCertificate. */

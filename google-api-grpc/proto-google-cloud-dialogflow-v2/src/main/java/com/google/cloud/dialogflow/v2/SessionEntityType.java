@@ -298,7 +298,7 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
    * type in the same agent that will be overridden or supplemented.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -322,7 +322,7 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
    * type in the same agent that will be overridden or supplemented.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -347,7 +347,7 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>
-   * .google.cloud.dialogflow.v2.SessionEntityType.EntityOverrideMode entity_override_mode = 2;
+   * .google.cloud.dialogflow.v2.SessionEntityType.EntityOverrideMode entity_override_mode = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   public int getEntityOverrideModeValue() {
@@ -362,7 +362,7 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>
-   * .google.cloud.dialogflow.v2.SessionEntityType.EntityOverrideMode entity_override_mode = 2;
+   * .google.cloud.dialogflow.v2.SessionEntityType.EntityOverrideMode entity_override_mode = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   public com.google.cloud.dialogflow.v2.SessionEntityType.EntityOverrideMode
@@ -386,7 +386,9 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
    * type.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 3;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public java.util.List<com.google.cloud.dialogflow.v2.EntityType.Entity> getEntitiesList() {
     return entities_;
@@ -399,7 +401,9 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
    * type.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 3;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public java.util.List<? extends com.google.cloud.dialogflow.v2.EntityType.EntityOrBuilder>
       getEntitiesOrBuilderList() {
@@ -413,7 +417,9 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
    * type.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 3;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public int getEntitiesCount() {
     return entities_.size();
@@ -426,7 +432,9 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
    * type.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 3;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.dialogflow.v2.EntityType.Entity getEntities(int index) {
     return entities_.get(index);
@@ -439,7 +447,9 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
    * type.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 3;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.dialogflow.v2.EntityType.EntityOrBuilder getEntitiesOrBuilder(int index) {
     return entities_.get(index);
@@ -859,7 +869,7 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      * type in the same agent that will be overridden or supplemented.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -883,7 +893,7 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      * type in the same agent that will be overridden or supplemented.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -907,7 +917,7 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      * type in the same agent that will be overridden or supplemented.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -929,7 +939,7 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      * type in the same agent that will be overridden or supplemented.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearName() {
 
@@ -948,7 +958,7 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      * type in the same agent that will be overridden or supplemented.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -971,7 +981,7 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>
-     * .google.cloud.dialogflow.v2.SessionEntityType.EntityOverrideMode entity_override_mode = 2;
+     * .google.cloud.dialogflow.v2.SessionEntityType.EntityOverrideMode entity_override_mode = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public int getEntityOverrideModeValue() {
@@ -986,7 +996,7 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>
-     * .google.cloud.dialogflow.v2.SessionEntityType.EntityOverrideMode entity_override_mode = 2;
+     * .google.cloud.dialogflow.v2.SessionEntityType.EntityOverrideMode entity_override_mode = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setEntityOverrideModeValue(int value) {
@@ -1003,7 +1013,7 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>
-     * .google.cloud.dialogflow.v2.SessionEntityType.EntityOverrideMode entity_override_mode = 2;
+     * .google.cloud.dialogflow.v2.SessionEntityType.EntityOverrideMode entity_override_mode = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.dialogflow.v2.SessionEntityType.EntityOverrideMode
@@ -1025,7 +1035,7 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>
-     * .google.cloud.dialogflow.v2.SessionEntityType.EntityOverrideMode entity_override_mode = 2;
+     * .google.cloud.dialogflow.v2.SessionEntityType.EntityOverrideMode entity_override_mode = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setEntityOverrideMode(
@@ -1047,7 +1057,7 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>
-     * .google.cloud.dialogflow.v2.SessionEntityType.EntityOverrideMode entity_override_mode = 2;
+     * .google.cloud.dialogflow.v2.SessionEntityType.EntityOverrideMode entity_override_mode = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearEntityOverrideMode() {
@@ -1082,7 +1092,9 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      * type.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 3;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public java.util.List<com.google.cloud.dialogflow.v2.EntityType.Entity> getEntitiesList() {
       if (entitiesBuilder_ == null) {
@@ -1099,7 +1111,9 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      * type.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 3;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public int getEntitiesCount() {
       if (entitiesBuilder_ == null) {
@@ -1116,7 +1130,9 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      * type.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 3;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2.EntityType.Entity getEntities(int index) {
       if (entitiesBuilder_ == null) {
@@ -1133,7 +1149,9 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      * type.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 3;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setEntities(int index, com.google.cloud.dialogflow.v2.EntityType.Entity value) {
       if (entitiesBuilder_ == null) {
@@ -1156,7 +1174,9 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      * type.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 3;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setEntities(
         int index, com.google.cloud.dialogflow.v2.EntityType.Entity.Builder builderForValue) {
@@ -1177,7 +1197,9 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      * type.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 3;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addEntities(com.google.cloud.dialogflow.v2.EntityType.Entity value) {
       if (entitiesBuilder_ == null) {
@@ -1200,7 +1222,9 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      * type.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 3;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addEntities(int index, com.google.cloud.dialogflow.v2.EntityType.Entity value) {
       if (entitiesBuilder_ == null) {
@@ -1223,7 +1247,9 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      * type.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 3;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addEntities(
         com.google.cloud.dialogflow.v2.EntityType.Entity.Builder builderForValue) {
@@ -1244,7 +1270,9 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      * type.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 3;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addEntities(
         int index, com.google.cloud.dialogflow.v2.EntityType.Entity.Builder builderForValue) {
@@ -1265,7 +1293,9 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      * type.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 3;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addAllEntities(
         java.lang.Iterable<? extends com.google.cloud.dialogflow.v2.EntityType.Entity> values) {
@@ -1286,7 +1316,9 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      * type.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 3;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearEntities() {
       if (entitiesBuilder_ == null) {
@@ -1306,7 +1338,9 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      * type.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 3;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder removeEntities(int index) {
       if (entitiesBuilder_ == null) {
@@ -1326,7 +1360,9 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      * type.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 3;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2.EntityType.Entity.Builder getEntitiesBuilder(int index) {
       return getEntitiesFieldBuilder().getBuilder(index);
@@ -1339,7 +1375,9 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      * type.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 3;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2.EntityType.EntityOrBuilder getEntitiesOrBuilder(
         int index) {
@@ -1357,7 +1395,9 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      * type.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 3;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public java.util.List<? extends com.google.cloud.dialogflow.v2.EntityType.EntityOrBuilder>
         getEntitiesOrBuilderList() {
@@ -1375,7 +1415,9 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      * type.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 3;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2.EntityType.Entity.Builder addEntitiesBuilder() {
       return getEntitiesFieldBuilder()
@@ -1389,7 +1431,9 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      * type.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 3;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2.EntityType.Entity.Builder addEntitiesBuilder(int index) {
       return getEntitiesFieldBuilder()
@@ -1403,7 +1447,9 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      * type.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 3;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public java.util.List<com.google.cloud.dialogflow.v2.EntityType.Entity.Builder>
         getEntitiesBuilderList() {

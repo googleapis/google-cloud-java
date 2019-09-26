@@ -203,7 +203,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Activity display name.
+   * Activity display name.
    * Number of characters allowed is 100.
    * </pre>
    *
@@ -224,7 +224,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Activity display name.
+   * Activity display name.
    * Number of characters allowed is 100.
    * </pre>
    *
@@ -248,7 +248,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Activity description.
+   * Activity description.
    * Number of characters allowed is 100,000.
    * </pre>
    *
@@ -269,7 +269,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Activity description.
+   * Activity description.
    * Number of characters allowed is 100,000.
    * </pre>
    *
@@ -293,7 +293,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Activity URI.
+   * Activity URI.
    * Number of characters allowed is 4,000.
    * </pre>
    *
@@ -314,7 +314,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Activity URI.
+   * Activity URI.
    * Number of characters allowed is 4,000.
    * </pre>
    *
@@ -338,7 +338,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The first creation date of the activity.
+   * The first creation date of the activity.
    * </pre>
    *
    * <code>.google.type.Date create_date = 4;</code>
@@ -350,7 +350,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The first creation date of the activity.
+   * The first creation date of the activity.
    * </pre>
    *
    * <code>.google.type.Date create_date = 4;</code>
@@ -362,7 +362,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The first creation date of the activity.
+   * The first creation date of the activity.
    * </pre>
    *
    * <code>.google.type.Date create_date = 4;</code>
@@ -377,7 +377,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The last update date of the activity.
+   * The last update date of the activity.
    * </pre>
    *
    * <code>.google.type.Date update_date = 5;</code>
@@ -389,7 +389,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The last update date of the activity.
+   * The last update date of the activity.
    * </pre>
    *
    * <code>.google.type.Date update_date = 5;</code>
@@ -401,7 +401,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The last update date of the activity.
+   * The last update date of the activity.
    * </pre>
    *
    * <code>.google.type.Date update_date = 5;</code>
@@ -416,7 +416,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. A list of team members involved in this activity.
+   * A list of team members involved in this activity.
    * Number of characters allowed is 100.
    * The limitation for max number of team members is 50.
    * </pre>
@@ -430,7 +430,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. A list of team members involved in this activity.
+   * A list of team members involved in this activity.
    * Number of characters allowed is 100.
    * The limitation for max number of team members is 50.
    * </pre>
@@ -444,7 +444,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. A list of team members involved in this activity.
+   * A list of team members involved in this activity.
    * Number of characters allowed is 100.
    * The limitation for max number of team members is 50.
    * </pre>
@@ -458,7 +458,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. A list of team members involved in this activity.
+   * A list of team members involved in this activity.
    * Number of characters allowed is 100.
    * The limitation for max number of team members is 50.
    * </pre>
@@ -475,7 +475,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. A list of skills used in this activity.
+   * A list of skills used in this activity.
    * The limitation for max number of skills used is 50.
    * </pre>
    *
@@ -488,7 +488,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. A list of skills used in this activity.
+   * A list of skills used in this activity.
    * The limitation for max number of skills used is 50.
    * </pre>
    *
@@ -502,7 +502,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. A list of skills used in this activity.
+   * A list of skills used in this activity.
    * The limitation for max number of skills used is 50.
    * </pre>
    *
@@ -515,7 +515,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. A list of skills used in this activity.
+   * A list of skills used in this activity.
    * The limitation for max number of skills used is 50.
    * </pre>
    *
@@ -528,7 +528,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. A list of skills used in this activity.
+   * A list of skills used in this activity.
    * The limitation for max number of skills used is 50.
    * </pre>
    *
@@ -551,7 +551,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
    * related to the search query.
    * </pre>
    *
-   * <code>string activity_name_snippet = 8;</code>
+   * <code>string activity_name_snippet = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public java.lang.String getActivityNameSnippet() {
     java.lang.Object ref = activityNameSnippet_;
@@ -575,7 +575,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
    * related to the search query.
    * </pre>
    *
-   * <code>string activity_name_snippet = 8;</code>
+   * <code>string activity_name_snippet = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public com.google.protobuf.ByteString getActivityNameSnippetBytes() {
     java.lang.Object ref = activityNameSnippet_;
@@ -602,7 +602,8 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
    * related to the search query.
    * </pre>
    *
-   * <code>string activity_description_snippet = 9;</code>
+   * <code>string activity_description_snippet = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public java.lang.String getActivityDescriptionSnippet() {
     java.lang.Object ref = activityDescriptionSnippet_;
@@ -626,7 +627,8 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
    * related to the search query.
    * </pre>
    *
-   * <code>string activity_description_snippet = 9;</code>
+   * <code>string activity_description_snippet = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.protobuf.ByteString getActivityDescriptionSnippetBytes() {
     java.lang.Object ref = activityDescriptionSnippet_;
@@ -653,7 +655,8 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
    * related to the search query.
    * </pre>
    *
-   * <code>repeated string skills_used_snippet = 10;</code>
+   * <code>repeated string skills_used_snippet = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.protobuf.ProtocolStringList getSkillsUsedSnippetList() {
     return skillsUsedSnippet_;
@@ -669,7 +672,8 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
    * related to the search query.
    * </pre>
    *
-   * <code>repeated string skills_used_snippet = 10;</code>
+   * <code>repeated string skills_used_snippet = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public int getSkillsUsedSnippetCount() {
     return skillsUsedSnippet_.size();
@@ -685,7 +689,8 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
    * related to the search query.
    * </pre>
    *
-   * <code>repeated string skills_used_snippet = 10;</code>
+   * <code>repeated string skills_used_snippet = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public java.lang.String getSkillsUsedSnippet(int index) {
     return skillsUsedSnippet_.get(index);
@@ -701,7 +706,8 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
    * related to the search query.
    * </pre>
    *
-   * <code>repeated string skills_used_snippet = 10;</code>
+   * <code>repeated string skills_used_snippet = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.protobuf.ByteString getSkillsUsedSnippetBytes(int index) {
     return skillsUsedSnippet_.getByteString(index);
@@ -1277,7 +1283,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Activity display name.
+     * Activity display name.
      * Number of characters allowed is 100.
      * </pre>
      *
@@ -1298,7 +1304,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Activity display name.
+     * Activity display name.
      * Number of characters allowed is 100.
      * </pre>
      *
@@ -1319,7 +1325,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Activity display name.
+     * Activity display name.
      * Number of characters allowed is 100.
      * </pre>
      *
@@ -1338,7 +1344,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Activity display name.
+     * Activity display name.
      * Number of characters allowed is 100.
      * </pre>
      *
@@ -1354,7 +1360,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Activity display name.
+     * Activity display name.
      * Number of characters allowed is 100.
      * </pre>
      *
@@ -1376,7 +1382,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Activity description.
+     * Activity description.
      * Number of characters allowed is 100,000.
      * </pre>
      *
@@ -1397,7 +1403,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Activity description.
+     * Activity description.
      * Number of characters allowed is 100,000.
      * </pre>
      *
@@ -1418,7 +1424,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Activity description.
+     * Activity description.
      * Number of characters allowed is 100,000.
      * </pre>
      *
@@ -1437,7 +1443,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Activity description.
+     * Activity description.
      * Number of characters allowed is 100,000.
      * </pre>
      *
@@ -1453,7 +1459,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Activity description.
+     * Activity description.
      * Number of characters allowed is 100,000.
      * </pre>
      *
@@ -1475,7 +1481,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Activity URI.
+     * Activity URI.
      * Number of characters allowed is 4,000.
      * </pre>
      *
@@ -1496,7 +1502,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Activity URI.
+     * Activity URI.
      * Number of characters allowed is 4,000.
      * </pre>
      *
@@ -1517,7 +1523,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Activity URI.
+     * Activity URI.
      * Number of characters allowed is 4,000.
      * </pre>
      *
@@ -1536,7 +1542,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Activity URI.
+     * Activity URI.
      * Number of characters allowed is 4,000.
      * </pre>
      *
@@ -1552,7 +1558,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Activity URI.
+     * Activity URI.
      * Number of characters allowed is 4,000.
      * </pre>
      *
@@ -1577,7 +1583,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The first creation date of the activity.
+     * The first creation date of the activity.
      * </pre>
      *
      * <code>.google.type.Date create_date = 4;</code>
@@ -1589,7 +1595,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The first creation date of the activity.
+     * The first creation date of the activity.
      * </pre>
      *
      * <code>.google.type.Date create_date = 4;</code>
@@ -1605,7 +1611,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The first creation date of the activity.
+     * The first creation date of the activity.
      * </pre>
      *
      * <code>.google.type.Date create_date = 4;</code>
@@ -1627,7 +1633,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The first creation date of the activity.
+     * The first creation date of the activity.
      * </pre>
      *
      * <code>.google.type.Date create_date = 4;</code>
@@ -1646,7 +1652,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The first creation date of the activity.
+     * The first creation date of the activity.
      * </pre>
      *
      * <code>.google.type.Date create_date = 4;</code>
@@ -1670,7 +1676,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The first creation date of the activity.
+     * The first creation date of the activity.
      * </pre>
      *
      * <code>.google.type.Date create_date = 4;</code>
@@ -1690,7 +1696,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The first creation date of the activity.
+     * The first creation date of the activity.
      * </pre>
      *
      * <code>.google.type.Date create_date = 4;</code>
@@ -1704,7 +1710,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The first creation date of the activity.
+     * The first creation date of the activity.
      * </pre>
      *
      * <code>.google.type.Date create_date = 4;</code>
@@ -1720,7 +1726,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The first creation date of the activity.
+     * The first creation date of the activity.
      * </pre>
      *
      * <code>.google.type.Date create_date = 4;</code>
@@ -1746,7 +1752,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The last update date of the activity.
+     * The last update date of the activity.
      * </pre>
      *
      * <code>.google.type.Date update_date = 5;</code>
@@ -1758,7 +1764,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The last update date of the activity.
+     * The last update date of the activity.
      * </pre>
      *
      * <code>.google.type.Date update_date = 5;</code>
@@ -1774,7 +1780,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The last update date of the activity.
+     * The last update date of the activity.
      * </pre>
      *
      * <code>.google.type.Date update_date = 5;</code>
@@ -1796,7 +1802,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The last update date of the activity.
+     * The last update date of the activity.
      * </pre>
      *
      * <code>.google.type.Date update_date = 5;</code>
@@ -1815,7 +1821,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The last update date of the activity.
+     * The last update date of the activity.
      * </pre>
      *
      * <code>.google.type.Date update_date = 5;</code>
@@ -1839,7 +1845,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The last update date of the activity.
+     * The last update date of the activity.
      * </pre>
      *
      * <code>.google.type.Date update_date = 5;</code>
@@ -1859,7 +1865,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The last update date of the activity.
+     * The last update date of the activity.
      * </pre>
      *
      * <code>.google.type.Date update_date = 5;</code>
@@ -1873,7 +1879,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The last update date of the activity.
+     * The last update date of the activity.
      * </pre>
      *
      * <code>.google.type.Date update_date = 5;</code>
@@ -1889,7 +1895,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The last update date of the activity.
+     * The last update date of the activity.
      * </pre>
      *
      * <code>.google.type.Date update_date = 5;</code>
@@ -1920,7 +1926,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A list of team members involved in this activity.
+     * A list of team members involved in this activity.
      * Number of characters allowed is 100.
      * The limitation for max number of team members is 50.
      * </pre>
@@ -1934,7 +1940,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A list of team members involved in this activity.
+     * A list of team members involved in this activity.
      * Number of characters allowed is 100.
      * The limitation for max number of team members is 50.
      * </pre>
@@ -1948,7 +1954,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A list of team members involved in this activity.
+     * A list of team members involved in this activity.
      * Number of characters allowed is 100.
      * The limitation for max number of team members is 50.
      * </pre>
@@ -1962,7 +1968,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A list of team members involved in this activity.
+     * A list of team members involved in this activity.
      * Number of characters allowed is 100.
      * The limitation for max number of team members is 50.
      * </pre>
@@ -1976,7 +1982,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A list of team members involved in this activity.
+     * A list of team members involved in this activity.
      * Number of characters allowed is 100.
      * The limitation for max number of team members is 50.
      * </pre>
@@ -1996,7 +2002,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A list of team members involved in this activity.
+     * A list of team members involved in this activity.
      * Number of characters allowed is 100.
      * The limitation for max number of team members is 50.
      * </pre>
@@ -2016,7 +2022,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A list of team members involved in this activity.
+     * A list of team members involved in this activity.
      * Number of characters allowed is 100.
      * The limitation for max number of team members is 50.
      * </pre>
@@ -2033,7 +2039,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A list of team members involved in this activity.
+     * A list of team members involved in this activity.
      * Number of characters allowed is 100.
      * The limitation for max number of team members is 50.
      * </pre>
@@ -2050,7 +2056,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A list of team members involved in this activity.
+     * A list of team members involved in this activity.
      * Number of characters allowed is 100.
      * The limitation for max number of team members is 50.
      * </pre>
@@ -2088,7 +2094,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A list of skills used in this activity.
+     * A list of skills used in this activity.
      * The limitation for max number of skills used is 50.
      * </pre>
      *
@@ -2105,7 +2111,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A list of skills used in this activity.
+     * A list of skills used in this activity.
      * The limitation for max number of skills used is 50.
      * </pre>
      *
@@ -2122,7 +2128,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A list of skills used in this activity.
+     * A list of skills used in this activity.
      * The limitation for max number of skills used is 50.
      * </pre>
      *
@@ -2139,7 +2145,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A list of skills used in this activity.
+     * A list of skills used in this activity.
      * The limitation for max number of skills used is 50.
      * </pre>
      *
@@ -2162,7 +2168,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A list of skills used in this activity.
+     * A list of skills used in this activity.
      * The limitation for max number of skills used is 50.
      * </pre>
      *
@@ -2183,7 +2189,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A list of skills used in this activity.
+     * A list of skills used in this activity.
      * The limitation for max number of skills used is 50.
      * </pre>
      *
@@ -2206,7 +2212,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A list of skills used in this activity.
+     * A list of skills used in this activity.
      * The limitation for max number of skills used is 50.
      * </pre>
      *
@@ -2229,7 +2235,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A list of skills used in this activity.
+     * A list of skills used in this activity.
      * The limitation for max number of skills used is 50.
      * </pre>
      *
@@ -2249,7 +2255,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A list of skills used in this activity.
+     * A list of skills used in this activity.
      * The limitation for max number of skills used is 50.
      * </pre>
      *
@@ -2270,7 +2276,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A list of skills used in this activity.
+     * A list of skills used in this activity.
      * The limitation for max number of skills used is 50.
      * </pre>
      *
@@ -2291,7 +2297,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A list of skills used in this activity.
+     * A list of skills used in this activity.
      * The limitation for max number of skills used is 50.
      * </pre>
      *
@@ -2311,7 +2317,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A list of skills used in this activity.
+     * A list of skills used in this activity.
      * The limitation for max number of skills used is 50.
      * </pre>
      *
@@ -2331,7 +2337,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A list of skills used in this activity.
+     * A list of skills used in this activity.
      * The limitation for max number of skills used is 50.
      * </pre>
      *
@@ -2344,7 +2350,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A list of skills used in this activity.
+     * A list of skills used in this activity.
      * The limitation for max number of skills used is 50.
      * </pre>
      *
@@ -2361,7 +2367,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A list of skills used in this activity.
+     * A list of skills used in this activity.
      * The limitation for max number of skills used is 50.
      * </pre>
      *
@@ -2379,7 +2385,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A list of skills used in this activity.
+     * A list of skills used in this activity.
      * The limitation for max number of skills used is 50.
      * </pre>
      *
@@ -2393,7 +2399,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A list of skills used in this activity.
+     * A list of skills used in this activity.
      * The limitation for max number of skills used is 50.
      * </pre>
      *
@@ -2407,7 +2413,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A list of skills used in this activity.
+     * A list of skills used in this activity.
      * The limitation for max number of skills used is 50.
      * </pre>
      *
@@ -2447,7 +2453,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      * related to the search query.
      * </pre>
      *
-     * <code>string activity_name_snippet = 8;</code>
+     * <code>string activity_name_snippet = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public java.lang.String getActivityNameSnippet() {
       java.lang.Object ref = activityNameSnippet_;
@@ -2471,7 +2477,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      * related to the search query.
      * </pre>
      *
-     * <code>string activity_name_snippet = 8;</code>
+     * <code>string activity_name_snippet = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.protobuf.ByteString getActivityNameSnippetBytes() {
       java.lang.Object ref = activityNameSnippet_;
@@ -2495,7 +2501,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      * related to the search query.
      * </pre>
      *
-     * <code>string activity_name_snippet = 8;</code>
+     * <code>string activity_name_snippet = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setActivityNameSnippet(java.lang.String value) {
       if (value == null) {
@@ -2517,7 +2523,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      * related to the search query.
      * </pre>
      *
-     * <code>string activity_name_snippet = 8;</code>
+     * <code>string activity_name_snippet = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearActivityNameSnippet() {
 
@@ -2536,7 +2542,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      * related to the search query.
      * </pre>
      *
-     * <code>string activity_name_snippet = 8;</code>
+     * <code>string activity_name_snippet = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setActivityNameSnippetBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2561,7 +2567,8 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      * related to the search query.
      * </pre>
      *
-     * <code>string activity_description_snippet = 9;</code>
+     * <code>string activity_description_snippet = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public java.lang.String getActivityDescriptionSnippet() {
       java.lang.Object ref = activityDescriptionSnippet_;
@@ -2585,7 +2592,8 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      * related to the search query.
      * </pre>
      *
-     * <code>string activity_description_snippet = 9;</code>
+     * <code>string activity_description_snippet = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.ByteString getActivityDescriptionSnippetBytes() {
       java.lang.Object ref = activityDescriptionSnippet_;
@@ -2609,7 +2617,8 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      * related to the search query.
      * </pre>
      *
-     * <code>string activity_description_snippet = 9;</code>
+     * <code>string activity_description_snippet = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setActivityDescriptionSnippet(java.lang.String value) {
       if (value == null) {
@@ -2631,7 +2640,8 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      * related to the search query.
      * </pre>
      *
-     * <code>string activity_description_snippet = 9;</code>
+     * <code>string activity_description_snippet = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearActivityDescriptionSnippet() {
 
@@ -2650,7 +2660,8 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      * related to the search query.
      * </pre>
      *
-     * <code>string activity_description_snippet = 9;</code>
+     * <code>string activity_description_snippet = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setActivityDescriptionSnippetBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2683,7 +2694,8 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      * related to the search query.
      * </pre>
      *
-     * <code>repeated string skills_used_snippet = 10;</code>
+     * <code>repeated string skills_used_snippet = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.ProtocolStringList getSkillsUsedSnippetList() {
       return skillsUsedSnippet_.getUnmodifiableView();
@@ -2699,7 +2711,8 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      * related to the search query.
      * </pre>
      *
-     * <code>repeated string skills_used_snippet = 10;</code>
+     * <code>repeated string skills_used_snippet = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public int getSkillsUsedSnippetCount() {
       return skillsUsedSnippet_.size();
@@ -2715,7 +2728,8 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      * related to the search query.
      * </pre>
      *
-     * <code>repeated string skills_used_snippet = 10;</code>
+     * <code>repeated string skills_used_snippet = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public java.lang.String getSkillsUsedSnippet(int index) {
       return skillsUsedSnippet_.get(index);
@@ -2731,7 +2745,8 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      * related to the search query.
      * </pre>
      *
-     * <code>repeated string skills_used_snippet = 10;</code>
+     * <code>repeated string skills_used_snippet = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.ByteString getSkillsUsedSnippetBytes(int index) {
       return skillsUsedSnippet_.getByteString(index);
@@ -2747,7 +2762,8 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      * related to the search query.
      * </pre>
      *
-     * <code>repeated string skills_used_snippet = 10;</code>
+     * <code>repeated string skills_used_snippet = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setSkillsUsedSnippet(int index, java.lang.String value) {
       if (value == null) {
@@ -2769,7 +2785,8 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      * related to the search query.
      * </pre>
      *
-     * <code>repeated string skills_used_snippet = 10;</code>
+     * <code>repeated string skills_used_snippet = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addSkillsUsedSnippet(java.lang.String value) {
       if (value == null) {
@@ -2791,7 +2808,8 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      * related to the search query.
      * </pre>
      *
-     * <code>repeated string skills_used_snippet = 10;</code>
+     * <code>repeated string skills_used_snippet = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addAllSkillsUsedSnippet(java.lang.Iterable<java.lang.String> values) {
       ensureSkillsUsedSnippetIsMutable();
@@ -2810,7 +2828,8 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      * related to the search query.
      * </pre>
      *
-     * <code>repeated string skills_used_snippet = 10;</code>
+     * <code>repeated string skills_used_snippet = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearSkillsUsedSnippet() {
       skillsUsedSnippet_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -2829,7 +2848,8 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      * related to the search query.
      * </pre>
      *
-     * <code>repeated string skills_used_snippet = 10;</code>
+     * <code>repeated string skills_used_snippet = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addSkillsUsedSnippetBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

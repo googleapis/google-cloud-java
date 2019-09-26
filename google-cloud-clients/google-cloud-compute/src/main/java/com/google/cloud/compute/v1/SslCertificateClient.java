@@ -155,6 +155,152 @@ public class SslCertificateClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
+   * Retrieves the list of all SslCertificate resources, regional and global, available to the
+   * specified project.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SslCertificateClient sslCertificateClient = SslCertificateClient.create()) {
+   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   for (SslCertificatesScopedList element : sslCertificateClient.aggregatedListSslCertificates(project).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param project Name of the project scoping this request.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final AggregatedListSslCertificatesPagedResponse aggregatedListSslCertificates(
+      ProjectName project) {
+    AggregatedListSslCertificatesHttpRequest request =
+        AggregatedListSslCertificatesHttpRequest.newBuilder()
+            .setProject(project == null ? null : project.toString())
+            .build();
+    return aggregatedListSslCertificates(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Retrieves the list of all SslCertificate resources, regional and global, available to the
+   * specified project.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SslCertificateClient sslCertificateClient = SslCertificateClient.create()) {
+   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   for (SslCertificatesScopedList element : sslCertificateClient.aggregatedListSslCertificates(project.toString()).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param project Name of the project scoping this request.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final AggregatedListSslCertificatesPagedResponse aggregatedListSslCertificates(
+      String project) {
+    AggregatedListSslCertificatesHttpRequest request =
+        AggregatedListSslCertificatesHttpRequest.newBuilder().setProject(project).build();
+    return aggregatedListSslCertificates(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Retrieves the list of all SslCertificate resources, regional and global, available to the
+   * specified project.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SslCertificateClient sslCertificateClient = SslCertificateClient.create()) {
+   *   String formattedProject = ProjectName.format("[PROJECT]");
+   *   AggregatedListSslCertificatesHttpRequest request = AggregatedListSslCertificatesHttpRequest.newBuilder()
+   *     .setProject(formattedProject)
+   *     .build();
+   *   for (SslCertificatesScopedList element : sslCertificateClient.aggregatedListSslCertificates(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final AggregatedListSslCertificatesPagedResponse aggregatedListSslCertificates(
+      AggregatedListSslCertificatesHttpRequest request) {
+    return aggregatedListSslCertificatesPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Retrieves the list of all SslCertificate resources, regional and global, available to the
+   * specified project.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SslCertificateClient sslCertificateClient = SslCertificateClient.create()) {
+   *   String formattedProject = ProjectName.format("[PROJECT]");
+   *   AggregatedListSslCertificatesHttpRequest request = AggregatedListSslCertificatesHttpRequest.newBuilder()
+   *     .setProject(formattedProject)
+   *     .build();
+   *   ApiFuture&lt;AggregatedListSslCertificatesPagedResponse&gt; future = sslCertificateClient.aggregatedListSslCertificatesPagedCallable().futureCall(request);
+   *   // Do something
+   *   for (SslCertificatesScopedList element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   */
+  @BetaApi
+  public final UnaryCallable<
+          AggregatedListSslCertificatesHttpRequest, AggregatedListSslCertificatesPagedResponse>
+      aggregatedListSslCertificatesPagedCallable() {
+    return stub.aggregatedListSslCertificatesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Retrieves the list of all SslCertificate resources, regional and global, available to the
+   * specified project.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SslCertificateClient sslCertificateClient = SslCertificateClient.create()) {
+   *   String formattedProject = ProjectName.format("[PROJECT]");
+   *   AggregatedListSslCertificatesHttpRequest request = AggregatedListSslCertificatesHttpRequest.newBuilder()
+   *     .setProject(formattedProject)
+   *     .build();
+   *   while (true) {
+   *     SslCertificateAggregatedList response = sslCertificateClient.aggregatedListSslCertificatesCallable().call(request);
+   *     for (SslCertificatesScopedList element : response.getItemsMap()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * </code></pre>
+   */
+  @BetaApi
+  public final UnaryCallable<AggregatedListSslCertificatesHttpRequest, SslCertificateAggregatedList>
+      aggregatedListSslCertificatesCallable() {
+    return stub.aggregatedListSslCertificatesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
    * Deletes the specified SslCertificate resource.
    *
    * <p>Sample code:
@@ -643,6 +789,110 @@ public class SslCertificateClient implements BackgroundResource {
   @Override
   public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
     return stub.awaitTermination(duration, unit);
+  }
+
+  public static class AggregatedListSslCertificatesPagedResponse
+      extends AbstractPagedListResponse<
+          AggregatedListSslCertificatesHttpRequest,
+          SslCertificateAggregatedList,
+          SslCertificatesScopedList,
+          AggregatedListSslCertificatesPage,
+          AggregatedListSslCertificatesFixedSizeCollection> {
+
+    public static ApiFuture<AggregatedListSslCertificatesPagedResponse> createAsync(
+        PageContext<
+                AggregatedListSslCertificatesHttpRequest,
+                SslCertificateAggregatedList,
+                SslCertificatesScopedList>
+            context,
+        ApiFuture<SslCertificateAggregatedList> futureResponse) {
+      ApiFuture<AggregatedListSslCertificatesPage> futurePage =
+          AggregatedListSslCertificatesPage.createEmptyPage()
+              .createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          new ApiFunction<
+              AggregatedListSslCertificatesPage, AggregatedListSslCertificatesPagedResponse>() {
+            @Override
+            public AggregatedListSslCertificatesPagedResponse apply(
+                AggregatedListSslCertificatesPage input) {
+              return new AggregatedListSslCertificatesPagedResponse(input);
+            }
+          },
+          MoreExecutors.directExecutor());
+    }
+
+    private AggregatedListSslCertificatesPagedResponse(AggregatedListSslCertificatesPage page) {
+      super(page, AggregatedListSslCertificatesFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class AggregatedListSslCertificatesPage
+      extends AbstractPage<
+          AggregatedListSslCertificatesHttpRequest,
+          SslCertificateAggregatedList,
+          SslCertificatesScopedList,
+          AggregatedListSslCertificatesPage> {
+
+    private AggregatedListSslCertificatesPage(
+        PageContext<
+                AggregatedListSslCertificatesHttpRequest,
+                SslCertificateAggregatedList,
+                SslCertificatesScopedList>
+            context,
+        SslCertificateAggregatedList response) {
+      super(context, response);
+    }
+
+    private static AggregatedListSslCertificatesPage createEmptyPage() {
+      return new AggregatedListSslCertificatesPage(null, null);
+    }
+
+    @Override
+    protected AggregatedListSslCertificatesPage createPage(
+        PageContext<
+                AggregatedListSslCertificatesHttpRequest,
+                SslCertificateAggregatedList,
+                SslCertificatesScopedList>
+            context,
+        SslCertificateAggregatedList response) {
+      return new AggregatedListSslCertificatesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<AggregatedListSslCertificatesPage> createPageAsync(
+        PageContext<
+                AggregatedListSslCertificatesHttpRequest,
+                SslCertificateAggregatedList,
+                SslCertificatesScopedList>
+            context,
+        ApiFuture<SslCertificateAggregatedList> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class AggregatedListSslCertificatesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          AggregatedListSslCertificatesHttpRequest,
+          SslCertificateAggregatedList,
+          SslCertificatesScopedList,
+          AggregatedListSslCertificatesPage,
+          AggregatedListSslCertificatesFixedSizeCollection> {
+
+    private AggregatedListSslCertificatesFixedSizeCollection(
+        List<AggregatedListSslCertificatesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static AggregatedListSslCertificatesFixedSizeCollection createEmptyCollection() {
+      return new AggregatedListSslCertificatesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected AggregatedListSslCertificatesFixedSizeCollection createCollection(
+        List<AggregatedListSslCertificatesPage> pages, int collectionSize) {
+      return new AggregatedListSslCertificatesFixedSizeCollection(pages, collectionSize);
+    }
   }
 
   public static class ListSslCertificatesPagedResponse

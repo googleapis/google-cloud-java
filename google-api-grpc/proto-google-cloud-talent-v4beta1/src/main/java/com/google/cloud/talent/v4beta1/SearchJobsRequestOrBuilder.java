@@ -13,13 +13,12 @@ public interface SearchJobsRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of the tenant to search within.
-   * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
-   * "projects/api-test-project/tenant/foo".
-   * Tenant id is optional and the default tenant is used if unspecified, for
-   * example, "projects/api-test-project".
+   * The format is "projects/{project_id}/tenants/{tenant_id}". For example,
+   * "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant
+   * is created. For example, "projects/foo".
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getParent();
   /**
@@ -27,13 +26,12 @@ public interface SearchJobsRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of the tenant to search within.
-   * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
-   * "projects/api-test-project/tenant/foo".
-   * Tenant id is optional and the default tenant is used if unspecified, for
-   * example, "projects/api-test-project".
+   * The format is "projects/{project_id}/tenants/{tenant_id}". For example,
+   * "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant
+   * is created. For example, "projects/foo".
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -41,7 +39,7 @@ public interface SearchJobsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Mode of a search.
+   * Mode of a search.
    * Defaults to
    * [SearchMode.JOB_SEARCH][google.cloud.talent.v4beta1.SearchJobsRequest.SearchMode.JOB_SEARCH].
    * </pre>
@@ -53,7 +51,7 @@ public interface SearchJobsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Mode of a search.
+   * Mode of a search.
    * Defaults to
    * [SearchMode.JOB_SEARCH][google.cloud.talent.v4beta1.SearchJobsRequest.SearchMode.JOB_SEARCH].
    * </pre>
@@ -71,7 +69,9 @@ public interface SearchJobsRequestOrBuilder
    * `user_id`) are provided by users, and must be unique and consistent.
    * </pre>
    *
-   * <code>.google.cloud.talent.v4beta1.RequestMetadata request_metadata = 3;</code>
+   * <code>
+   * .google.cloud.talent.v4beta1.RequestMetadata request_metadata = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   boolean hasRequestMetadata();
   /**
@@ -83,7 +83,9 @@ public interface SearchJobsRequestOrBuilder
    * `user_id`) are provided by users, and must be unique and consistent.
    * </pre>
    *
-   * <code>.google.cloud.talent.v4beta1.RequestMetadata request_metadata = 3;</code>
+   * <code>
+   * .google.cloud.talent.v4beta1.RequestMetadata request_metadata = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.talent.v4beta1.RequestMetadata getRequestMetadata();
   /**
@@ -95,7 +97,9 @@ public interface SearchJobsRequestOrBuilder
    * `user_id`) are provided by users, and must be unique and consistent.
    * </pre>
    *
-   * <code>.google.cloud.talent.v4beta1.RequestMetadata request_metadata = 3;</code>
+   * <code>
+   * .google.cloud.talent.v4beta1.RequestMetadata request_metadata = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.talent.v4beta1.RequestMetadataOrBuilder getRequestMetadataOrBuilder();
 
@@ -103,8 +107,7 @@ public interface SearchJobsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Query used to search against jobs, such as keyword, location
-   * filters, etc.
+   * Query used to search against jobs, such as keyword, location filters, etc.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.JobQuery job_query = 4;</code>
@@ -114,8 +117,7 @@ public interface SearchJobsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Query used to search against jobs, such as keyword, location
-   * filters, etc.
+   * Query used to search against jobs, such as keyword, location filters, etc.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.JobQuery job_query = 4;</code>
@@ -125,8 +127,7 @@ public interface SearchJobsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Query used to search against jobs, such as keyword, location
-   * filters, etc.
+   * Query used to search against jobs, such as keyword, location filters, etc.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.JobQuery job_query = 4;</code>
@@ -137,9 +138,9 @@ public interface SearchJobsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Controls whether to broaden the search when it produces sparse
-   * results. Broadened queries append results to the end of the matching
-   * results list.
+   * Controls whether to broaden the search when it produces sparse results.
+   * Broadened queries append results to the end of the matching results
+   * list.
    * Defaults to false.
    * </pre>
    *
@@ -151,8 +152,8 @@ public interface SearchJobsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Controls if the search job request requires the return of a
-   * precise count of the first 300 results. Setting this to `true` ensures
+   * Controls if the search job request requires the return of a precise
+   * count of the first 300 results. Setting this to `true` ensures
    * consistency in the number of results per page. Best practice is to set this
    * value to true if a client allows users to jump directly to a
    * non-sequential search results page.
@@ -168,8 +169,7 @@ public interface SearchJobsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. An expression specifies a histogram request against matching
-   * jobs.
+   * An expression specifies a histogram request against matching jobs.
    * Expression syntax is an aggregation function call with histogram facets and
    * other options.
    * Available aggregation function calls are:
@@ -273,8 +273,7 @@ public interface SearchJobsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. An expression specifies a histogram request against matching
-   * jobs.
+   * An expression specifies a histogram request against matching jobs.
    * Expression syntax is an aggregation function call with histogram facets and
    * other options.
    * Available aggregation function calls are:
@@ -378,8 +377,7 @@ public interface SearchJobsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. An expression specifies a histogram request against matching
-   * jobs.
+   * An expression specifies a histogram request against matching jobs.
    * Expression syntax is an aggregation function call with histogram facets and
    * other options.
    * Available aggregation function calls are:
@@ -483,8 +481,7 @@ public interface SearchJobsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. An expression specifies a histogram request against matching
-   * jobs.
+   * An expression specifies a histogram request against matching jobs.
    * Expression syntax is an aggregation function call with histogram facets and
    * other options.
    * Available aggregation function calls are:
@@ -589,8 +586,7 @@ public interface SearchJobsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. An expression specifies a histogram request against matching
-   * jobs.
+   * An expression specifies a histogram request against matching jobs.
    * Expression syntax is an aggregation function call with histogram facets and
    * other options.
    * Available aggregation function calls are:
@@ -695,8 +691,8 @@ public interface SearchJobsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The desired job attributes returned for jobs in the search
-   * response. Defaults to
+   * The desired job attributes returned for jobs in the search response.
+   * Defaults to
    * [JobView.JOB_VIEW_SMALL][google.cloud.talent.v4beta1.JobView.JOB_VIEW_SMALL]
    * if no value is specified.
    * </pre>
@@ -708,8 +704,8 @@ public interface SearchJobsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The desired job attributes returned for jobs in the search
-   * response. Defaults to
+   * The desired job attributes returned for jobs in the search response.
+   * Defaults to
    * [JobView.JOB_VIEW_SMALL][google.cloud.talent.v4beta1.JobView.JOB_VIEW_SMALL]
    * if no value is specified.
    * </pre>
@@ -722,8 +718,8 @@ public interface SearchJobsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. An integer that specifies the current offset (that is, starting
-   * result location, amongst the jobs deemed by the API as relevant) in search
+   * An integer that specifies the current offset (that is, starting result
+   * location, amongst the jobs deemed by the API as relevant) in search
    * results. This field is only considered if
    * [page_token][google.cloud.talent.v4beta1.SearchJobsRequest.page_token] is
    * unset.
@@ -741,7 +737,7 @@ public interface SearchJobsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. A limit on the number of jobs returned in the search results.
+   * A limit on the number of jobs returned in the search results.
    * Increasing this value above the default value of 10 can increase search
    * response time. The value can be between 1 and 100.
    * </pre>
@@ -754,7 +750,7 @@ public interface SearchJobsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The token specifying the current offset within
+   * The token specifying the current offset within
    * search results. See
    * [SearchJobsResponse.next_page_token][google.cloud.talent.v4beta1.SearchJobsResponse.next_page_token]
    * for an explanation of how to obtain the next set of query results.
@@ -767,7 +763,7 @@ public interface SearchJobsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The token specifying the current offset within
+   * The token specifying the current offset within
    * search results. See
    * [SearchJobsResponse.next_page_token][google.cloud.talent.v4beta1.SearchJobsResponse.next_page_token]
    * for an explanation of how to obtain the next set of query results.
@@ -781,8 +777,7 @@ public interface SearchJobsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The criteria determining how search results are sorted. Default
-   * is
+   * The criteria determining how search results are sorted. Default is
    * `"relevance desc"`.
    * Supported options are:
    * * `"relevance desc"`: By relevance descending, as determined by the API
@@ -843,8 +838,7 @@ public interface SearchJobsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The criteria determining how search results are sorted. Default
-   * is
+   * The criteria determining how search results are sorted. Default is
    * `"relevance desc"`.
    * Supported options are:
    * * `"relevance desc"`: By relevance descending, as determined by the API
@@ -906,8 +900,8 @@ public interface SearchJobsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Controls whether highly similar jobs are returned next to each
-   * other in the search results. Jobs are identified as highly similar based on
+   * Controls whether highly similar jobs are returned next to each other in
+   * the search results. Jobs are identified as highly similar based on
    * their titles, job categories, and locations. Highly similar results are
    * clustered so that only one representative job of the cluster is
    * displayed to the job seeker higher up in the results, with the other jobs
@@ -926,8 +920,8 @@ public interface SearchJobsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Controls whether highly similar jobs are returned next to each
-   * other in the search results. Jobs are identified as highly similar based on
+   * Controls whether highly similar jobs are returned next to each other in
+   * the search results. Jobs are identified as highly similar based on
    * their titles, job categories, and locations. Highly similar results are
    * clustered so that only one representative job of the cluster is
    * displayed to the job seeker higher up in the results, with the other jobs
@@ -947,8 +941,8 @@ public interface SearchJobsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Controls over how job documents get ranked on top of existing
-   * relevance score (determined by API algorithm).
+   * Controls over how job documents get ranked on top of existing relevance
+   * score (determined by API algorithm).
    * </pre>
    *
    * <code>
@@ -960,8 +954,8 @@ public interface SearchJobsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Controls over how job documents get ranked on top of existing
-   * relevance score (determined by API algorithm).
+   * Controls over how job documents get ranked on top of existing relevance
+   * score (determined by API algorithm).
    * </pre>
    *
    * <code>
@@ -973,8 +967,8 @@ public interface SearchJobsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Controls over how job documents get ranked on top of existing
-   * relevance score (determined by API algorithm).
+   * Controls over how job documents get ranked on top of existing relevance
+   * score (determined by API algorithm).
    * </pre>
    *
    * <code>
@@ -988,7 +982,7 @@ public interface SearchJobsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Controls whether to disable exact keyword match on
+   * Controls whether to disable exact keyword match on
    * [Job.title][google.cloud.talent.v4beta1.Job.title],
    * [Job.description][google.cloud.talent.v4beta1.Job.description],
    * [Job.company_display_name][google.cloud.talent.v4beta1.Job.company_display_name],

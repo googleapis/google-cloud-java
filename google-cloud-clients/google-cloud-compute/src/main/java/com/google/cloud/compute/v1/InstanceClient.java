@@ -4027,6 +4027,145 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
+   * Updates the Display config for a VM instance. You can only use this method on a stopped VM
+   * instance. This method supports PATCH semantics and uses the JSON merge patch format and
+   * processing rules.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InstanceClient instanceClient = InstanceClient.create()) {
+   *   ProjectZoneInstanceName instance = ProjectZoneInstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   DisplayDevice displayDeviceResource = DisplayDevice.newBuilder().build();
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
+   *   Operation response = instanceClient.updateDisplayDeviceInstance(instance, displayDeviceResource, fieldMask);
+   * }
+   * </code></pre>
+   *
+   * @param instance Name of the instance scoping this request.
+   * @param displayDeviceResource A set of Display Device options
+   * @param fieldMask The fields that should be serialized (even if they have empty values). If the
+   *     containing message object has a non-null fieldmask, then all the fields in the field mask
+   *     (and only those fields in the field mask) will be serialized. If the containing object does
+   *     not have a fieldmask, then only non-empty fields will be serialized.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation updateDisplayDeviceInstance(
+      ProjectZoneInstanceName instance,
+      DisplayDevice displayDeviceResource,
+      List<String> fieldMask) {
+
+    UpdateDisplayDeviceInstanceHttpRequest request =
+        UpdateDisplayDeviceInstanceHttpRequest.newBuilder()
+            .setInstance(instance == null ? null : instance.toString())
+            .setDisplayDeviceResource(displayDeviceResource)
+            .addAllFieldMask(fieldMask)
+            .build();
+    return updateDisplayDeviceInstance(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates the Display config for a VM instance. You can only use this method on a stopped VM
+   * instance. This method supports PATCH semantics and uses the JSON merge patch format and
+   * processing rules.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InstanceClient instanceClient = InstanceClient.create()) {
+   *   ProjectZoneInstanceName instance = ProjectZoneInstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   DisplayDevice displayDeviceResource = DisplayDevice.newBuilder().build();
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
+   *   Operation response = instanceClient.updateDisplayDeviceInstance(instance.toString(), displayDeviceResource, fieldMask);
+   * }
+   * </code></pre>
+   *
+   * @param instance Name of the instance scoping this request.
+   * @param displayDeviceResource A set of Display Device options
+   * @param fieldMask The fields that should be serialized (even if they have empty values). If the
+   *     containing message object has a non-null fieldmask, then all the fields in the field mask
+   *     (and only those fields in the field mask) will be serialized. If the containing object does
+   *     not have a fieldmask, then only non-empty fields will be serialized.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation updateDisplayDeviceInstance(
+      String instance, DisplayDevice displayDeviceResource, List<String> fieldMask) {
+
+    UpdateDisplayDeviceInstanceHttpRequest request =
+        UpdateDisplayDeviceInstanceHttpRequest.newBuilder()
+            .setInstance(instance)
+            .setDisplayDeviceResource(displayDeviceResource)
+            .addAllFieldMask(fieldMask)
+            .build();
+    return updateDisplayDeviceInstance(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates the Display config for a VM instance. You can only use this method on a stopped VM
+   * instance. This method supports PATCH semantics and uses the JSON merge patch format and
+   * processing rules.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InstanceClient instanceClient = InstanceClient.create()) {
+   *   String formattedInstance = ProjectZoneInstanceName.format("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   DisplayDevice displayDeviceResource = DisplayDevice.newBuilder().build();
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
+   *   UpdateDisplayDeviceInstanceHttpRequest request = UpdateDisplayDeviceInstanceHttpRequest.newBuilder()
+   *     .setInstance(formattedInstance)
+   *     .setDisplayDeviceResource(displayDeviceResource)
+   *     .addAllFieldMask(fieldMask)
+   *     .build();
+   *   Operation response = instanceClient.updateDisplayDeviceInstance(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation updateDisplayDeviceInstance(
+      UpdateDisplayDeviceInstanceHttpRequest request) {
+    return updateDisplayDeviceInstanceCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates the Display config for a VM instance. You can only use this method on a stopped VM
+   * instance. This method supports PATCH semantics and uses the JSON merge patch format and
+   * processing rules.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InstanceClient instanceClient = InstanceClient.create()) {
+   *   String formattedInstance = ProjectZoneInstanceName.format("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   DisplayDevice displayDeviceResource = DisplayDevice.newBuilder().build();
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
+   *   UpdateDisplayDeviceInstanceHttpRequest request = UpdateDisplayDeviceInstanceHttpRequest.newBuilder()
+   *     .setInstance(formattedInstance)
+   *     .setDisplayDeviceResource(displayDeviceResource)
+   *     .addAllFieldMask(fieldMask)
+   *     .build();
+   *   ApiFuture&lt;Operation&gt; future = instanceClient.updateDisplayDeviceInstanceCallable().futureCall(request);
+   *   // Do something
+   *   Operation response = future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi
+  public final UnaryCallable<UpdateDisplayDeviceInstanceHttpRequest, Operation>
+      updateDisplayDeviceInstanceCallable() {
+    return stub.updateDisplayDeviceInstanceCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
    * Updates an instance's network interface. This method follows PATCH semantics.
    *
    * <p>Sample code:

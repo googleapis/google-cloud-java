@@ -15,6 +15,7 @@
  */
 package com.google.cloud.compute.v1;
 
+import static com.google.cloud.compute.v1.UrlMapClient.AggregatedListUrlMapsPagedResponse;
 import static com.google.cloud.compute.v1.UrlMapClient.ListUrlMapsPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -64,6 +65,15 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator")
 @BetaApi
 public class UrlMapSettings extends ClientSettings<UrlMapSettings> {
+  /** Returns the object with the settings used for calls to aggregatedListUrlMaps. */
+  public PagedCallSettings<
+          AggregatedListUrlMapsHttpRequest,
+          UrlMapsAggregatedList,
+          AggregatedListUrlMapsPagedResponse>
+      aggregatedListUrlMapsSettings() {
+    return ((UrlMapStubSettings) getStubSettings()).aggregatedListUrlMapsSettings();
+  }
+
   /** Returns the object with the settings used for calls to deleteUrlMap. */
   public UnaryCallSettings<DeleteUrlMapHttpRequest, Operation> deleteUrlMapSettings() {
     return ((UrlMapStubSettings) getStubSettings()).deleteUrlMapSettings();
@@ -206,6 +216,15 @@ public class UrlMapSettings extends ClientSettings<UrlMapSettings> {
       super.applyToAllUnaryMethods(
           getStubSettingsBuilder().unaryMethodSettingsBuilders(), settingsUpdater);
       return this;
+    }
+
+    /** Returns the builder for the settings used for calls to aggregatedListUrlMaps. */
+    public PagedCallSettings.Builder<
+            AggregatedListUrlMapsHttpRequest,
+            UrlMapsAggregatedList,
+            AggregatedListUrlMapsPagedResponse>
+        aggregatedListUrlMapsSettings() {
+      return getStubSettingsBuilder().aggregatedListUrlMapsSettings();
     }
 
     /** Returns the builder for the settings used for calls to deleteUrlMap. */

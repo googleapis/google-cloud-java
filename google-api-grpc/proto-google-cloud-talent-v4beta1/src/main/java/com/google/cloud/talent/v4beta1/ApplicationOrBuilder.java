@@ -15,9 +15,8 @@ public interface ApplicationOrBuilder
    * Required during application update.
    * Resource name assigned to an application by the API.
    * The format is
-   * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}/applications/{application_id}",
-   * for example,
-   * "projects/api-test-project/tenants/foo/profiles/bar/applications/baz".
+   * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}/applications/{application_id}".
+   * For example, "projects/foo/tenants/bar/profiles/baz/applications/qux".
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -30,9 +29,8 @@ public interface ApplicationOrBuilder
    * Required during application update.
    * Resource name assigned to an application by the API.
    * The format is
-   * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}/applications/{application_id}",
-   * for example,
-   * "projects/api-test-project/tenants/foo/profiles/bar/applications/baz".
+   * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}/applications/{application_id}".
+   * For example, "projects/foo/tenants/bar/profiles/baz/applications/qux".
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -48,7 +46,7 @@ public interface ApplicationOrBuilder
    * The maximum number of allowed characters is 255.
    * </pre>
    *
-   * <code>string external_id = 31;</code>
+   * <code>string external_id = 31 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getExternalId();
   /**
@@ -60,7 +58,7 @@ public interface ApplicationOrBuilder
    * The maximum number of allowed characters is 255.
    * </pre>
    *
-   * <code>string external_id = 31;</code>
+   * <code>string external_id = 31 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getExternalIdBytes();
 
@@ -70,11 +68,11 @@ public interface ApplicationOrBuilder
    * <pre>
    * Output only. Resource name of the candidate of this application.
    * The format is
-   * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
-   * for example, "projects/api-test-project/tenants/foo/profiles/bar".
+   * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}".
+   * For example, "projects/foo/tenants/bar/profiles/baz".
    * </pre>
    *
-   * <code>string profile = 2;</code>
+   * <code>string profile = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   java.lang.String getProfile();
   /**
@@ -83,11 +81,11 @@ public interface ApplicationOrBuilder
    * <pre>
    * Output only. Resource name of the candidate of this application.
    * The format is
-   * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
-   * for example, "projects/api-test-project/tenants/foo/profiles/bar".
+   * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}".
+   * For example, "projects/foo/tenants/bar/profiles/baz".
    * </pre>
    *
-   * <code>string profile = 2;</code>
+   * <code>string profile = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.protobuf.ByteString getProfileBytes();
 
@@ -98,8 +96,8 @@ public interface ApplicationOrBuilder
    * One of either a job or a company is required.
    * Resource name of the job which the candidate applied for.
    * The format is
-   * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}",
-   * for example, "projects/api-test-project/tenants/foo/jobs/bar".
+   * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}". For example,
+   * "projects/foo/tenants/bar/jobs/baz".
    * </pre>
    *
    * <code>string job = 4;</code>
@@ -112,8 +110,8 @@ public interface ApplicationOrBuilder
    * One of either a job or a company is required.
    * Resource name of the job which the candidate applied for.
    * The format is
-   * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}",
-   * for example, "projects/api-test-project/tenants/foo/jobs/bar".
+   * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}". For example,
+   * "projects/foo/tenants/bar/jobs/baz".
    * </pre>
    *
    * <code>string job = 4;</code>
@@ -127,8 +125,8 @@ public interface ApplicationOrBuilder
    * One of either a job or a company is required.
    * Resource name of the company which the candidate applied for.
    * The format is
-   * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}",
-   * for example, "projects/api-test-project/tenants/foo/companies/bar".
+   * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}".
+   * For example, "projects/foo/tenants/bar/companies/baz".
    * </pre>
    *
    * <code>string company = 5;</code>
@@ -141,8 +139,8 @@ public interface ApplicationOrBuilder
    * One of either a job or a company is required.
    * Resource name of the company which the candidate applied for.
    * The format is
-   * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}",
-   * for example, "projects/api-test-project/tenants/foo/companies/bar".
+   * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}".
+   * For example, "projects/foo/tenants/bar/companies/baz".
    * </pre>
    *
    * <code>string company = 5;</code>
@@ -153,7 +151,7 @@ public interface ApplicationOrBuilder
    *
    *
    * <pre>
-   * Optional. The application date.
+   * The application date.
    * </pre>
    *
    * <code>.google.type.Date application_date = 7;</code>
@@ -163,7 +161,7 @@ public interface ApplicationOrBuilder
    *
    *
    * <pre>
-   * Optional. The application date.
+   * The application date.
    * </pre>
    *
    * <code>.google.type.Date application_date = 7;</code>
@@ -173,7 +171,7 @@ public interface ApplicationOrBuilder
    *
    *
    * <pre>
-   * Optional. The application date.
+   * The application date.
    * </pre>
    *
    * <code>.google.type.Date application_date = 7;</code>
@@ -190,7 +188,9 @@ public interface ApplicationOrBuilder
    * that would be used to indicate to the ML models good / bad matches.
    * </pre>
    *
-   * <code>.google.cloud.talent.v4beta1.Application.ApplicationStage stage = 11;</code>
+   * <code>
+   * .google.cloud.talent.v4beta1.Application.ApplicationStage stage = 11 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   int getStageValue();
   /**
@@ -203,7 +203,9 @@ public interface ApplicationOrBuilder
    * that would be used to indicate to the ML models good / bad matches.
    * </pre>
    *
-   * <code>.google.cloud.talent.v4beta1.Application.ApplicationStage stage = 11;</code>
+   * <code>
+   * .google.cloud.talent.v4beta1.Application.ApplicationStage stage = 11 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.talent.v4beta1.Application.ApplicationStage getStage();
 
@@ -211,7 +213,7 @@ public interface ApplicationOrBuilder
    *
    *
    * <pre>
-   * Optional. The application state.
+   * The application state.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Application.ApplicationState state = 13;</code>
@@ -221,7 +223,7 @@ public interface ApplicationOrBuilder
    *
    *
    * <pre>
-   * Optional. The application state.
+   * The application state.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Application.ApplicationState state = 13;</code>
@@ -232,8 +234,8 @@ public interface ApplicationOrBuilder
    *
    *
    * <pre>
-   * Optional. All interviews (screen, onsite, and so on) conducted as part of
-   * this application (includes details such as user conducting the interview,
+   * All interviews (screen, onsite, and so on) conducted as part of this
+   * application (includes details such as user conducting the interview,
    * timestamp, feedback, and so on).
    * </pre>
    *
@@ -244,8 +246,8 @@ public interface ApplicationOrBuilder
    *
    *
    * <pre>
-   * Optional. All interviews (screen, onsite, and so on) conducted as part of
-   * this application (includes details such as user conducting the interview,
+   * All interviews (screen, onsite, and so on) conducted as part of this
+   * application (includes details such as user conducting the interview,
    * timestamp, feedback, and so on).
    * </pre>
    *
@@ -256,8 +258,8 @@ public interface ApplicationOrBuilder
    *
    *
    * <pre>
-   * Optional. All interviews (screen, onsite, and so on) conducted as part of
-   * this application (includes details such as user conducting the interview,
+   * All interviews (screen, onsite, and so on) conducted as part of this
+   * application (includes details such as user conducting the interview,
    * timestamp, feedback, and so on).
    * </pre>
    *
@@ -268,8 +270,8 @@ public interface ApplicationOrBuilder
    *
    *
    * <pre>
-   * Optional. All interviews (screen, onsite, and so on) conducted as part of
-   * this application (includes details such as user conducting the interview,
+   * All interviews (screen, onsite, and so on) conducted as part of this
+   * application (includes details such as user conducting the interview,
    * timestamp, feedback, and so on).
    * </pre>
    *
@@ -281,8 +283,8 @@ public interface ApplicationOrBuilder
    *
    *
    * <pre>
-   * Optional. All interviews (screen, onsite, and so on) conducted as part of
-   * this application (includes details such as user conducting the interview,
+   * All interviews (screen, onsite, and so on) conducted as part of this
+   * application (includes details such as user conducting the interview,
    * timestamp, feedback, and so on).
    * </pre>
    *
@@ -294,7 +296,7 @@ public interface ApplicationOrBuilder
    *
    *
    * <pre>
-   * Optional. If the candidate is referred by a employee.
+   * If the candidate is referred by a employee.
    * </pre>
    *
    * <code>.google.protobuf.BoolValue referral = 18;</code>
@@ -304,7 +306,7 @@ public interface ApplicationOrBuilder
    *
    *
    * <pre>
-   * Optional. If the candidate is referred by a employee.
+   * If the candidate is referred by a employee.
    * </pre>
    *
    * <code>.google.protobuf.BoolValue referral = 18;</code>
@@ -314,7 +316,7 @@ public interface ApplicationOrBuilder
    *
    *
    * <pre>
-   * Optional. If the candidate is referred by a employee.
+   * If the candidate is referred by a employee.
    * </pre>
    *
    * <code>.google.protobuf.BoolValue referral = 18;</code>
@@ -328,7 +330,8 @@ public interface ApplicationOrBuilder
    * Required. Reflects the time that the application was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 19;</code>
+   * <code>.google.protobuf.Timestamp create_time = 19 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   boolean hasCreateTime();
   /**
@@ -338,7 +341,8 @@ public interface ApplicationOrBuilder
    * Required. Reflects the time that the application was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 19;</code>
+   * <code>.google.protobuf.Timestamp create_time = 19 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.protobuf.Timestamp getCreateTime();
   /**
@@ -348,7 +352,8 @@ public interface ApplicationOrBuilder
    * Required. Reflects the time that the application was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 19;</code>
+   * <code>.google.protobuf.Timestamp create_time = 19 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
 
@@ -356,7 +361,7 @@ public interface ApplicationOrBuilder
    *
    *
    * <pre>
-   * Optional. The last update timestamp.
+   * The last update timestamp.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 20;</code>
@@ -366,7 +371,7 @@ public interface ApplicationOrBuilder
    *
    *
    * <pre>
-   * Optional. The last update timestamp.
+   * The last update timestamp.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 20;</code>
@@ -376,7 +381,7 @@ public interface ApplicationOrBuilder
    *
    *
    * <pre>
-   * Optional. The last update timestamp.
+   * The last update timestamp.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 20;</code>
@@ -387,9 +392,8 @@ public interface ApplicationOrBuilder
    *
    *
    * <pre>
-   * Optional. Free text reason behind the recruitement outcome (for example,
-   * reason for withdraw / reject, reason for an unsuccessful finish, and so
-   * on).
+   * Free text reason behind the recruitement outcome (for example, reason for
+   * withdraw / reject, reason for an unsuccessful finish, and so on).
    * Number of characters allowed is 100.
    * </pre>
    *
@@ -400,9 +404,8 @@ public interface ApplicationOrBuilder
    *
    *
    * <pre>
-   * Optional. Free text reason behind the recruitement outcome (for example,
-   * reason for withdraw / reject, reason for an unsuccessful finish, and so
-   * on).
+   * Free text reason behind the recruitement outcome (for example, reason for
+   * withdraw / reject, reason for an unsuccessful finish, and so on).
    * Number of characters allowed is 100.
    * </pre>
    *
@@ -414,7 +417,7 @@ public interface ApplicationOrBuilder
    *
    *
    * <pre>
-   * Optional. Outcome positiveness shows how positive the outcome is.
+   * Outcome positiveness shows how positive the outcome is.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Outcome outcome = 22;</code>
@@ -424,7 +427,7 @@ public interface ApplicationOrBuilder
    *
    *
    * <pre>
-   * Optional. Outcome positiveness shows how positive the outcome is.
+   * Outcome positiveness shows how positive the outcome is.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Outcome outcome = 22;</code>
@@ -440,7 +443,8 @@ public interface ApplicationOrBuilder
    * search response.
    * </pre>
    *
-   * <code>.google.protobuf.BoolValue is_match = 28;</code>
+   * <code>.google.protobuf.BoolValue is_match = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   boolean hasIsMatch();
   /**
@@ -452,7 +456,8 @@ public interface ApplicationOrBuilder
    * search response.
    * </pre>
    *
-   * <code>.google.protobuf.BoolValue is_match = 28;</code>
+   * <code>.google.protobuf.BoolValue is_match = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.protobuf.BoolValue getIsMatch();
   /**
@@ -464,7 +469,8 @@ public interface ApplicationOrBuilder
    * search response.
    * </pre>
    *
-   * <code>.google.protobuf.BoolValue is_match = 28;</code>
+   * <code>.google.protobuf.BoolValue is_match = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.protobuf.BoolValueOrBuilder getIsMatchOrBuilder();
 
@@ -477,7 +483,7 @@ public interface ApplicationOrBuilder
    * query.
    * </pre>
    *
-   * <code>string job_title_snippet = 29;</code>
+   * <code>string job_title_snippet = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   java.lang.String getJobTitleSnippet();
   /**
@@ -489,7 +495,7 @@ public interface ApplicationOrBuilder
    * query.
    * </pre>
    *
-   * <code>string job_title_snippet = 29;</code>
+   * <code>string job_title_snippet = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.protobuf.ByteString getJobTitleSnippetBytes();
 }

@@ -361,7 +361,10 @@ public class WebRiskServiceV1Beta1Client implements BackgroundResource {
    *
    * <pre><code>
    * try (WebRiskServiceV1Beta1Client webRiskServiceV1Beta1Client = WebRiskServiceV1Beta1Client.create()) {
-   *   SearchHashesRequest request = SearchHashesRequest.newBuilder().build();
+   *   List&lt;ThreatType&gt; threatTypes = new ArrayList&lt;&gt;();
+   *   SearchHashesRequest request = SearchHashesRequest.newBuilder()
+   *     .addAllThreatTypes(threatTypes)
+   *     .build();
    *   SearchHashesResponse response = webRiskServiceV1Beta1Client.searchHashes(request);
    * }
    * </code></pre>
@@ -384,7 +387,10 @@ public class WebRiskServiceV1Beta1Client implements BackgroundResource {
    *
    * <pre><code>
    * try (WebRiskServiceV1Beta1Client webRiskServiceV1Beta1Client = WebRiskServiceV1Beta1Client.create()) {
-   *   SearchHashesRequest request = SearchHashesRequest.newBuilder().build();
+   *   List&lt;ThreatType&gt; threatTypes = new ArrayList&lt;&gt;();
+   *   SearchHashesRequest request = SearchHashesRequest.newBuilder()
+   *     .addAllThreatTypes(threatTypes)
+   *     .build();
    *   ApiFuture&lt;SearchHashesResponse&gt; future = webRiskServiceV1Beta1Client.searchHashesCallable().futureCall(request);
    *   // Do something
    *   SearchHashesResponse response = future.get();

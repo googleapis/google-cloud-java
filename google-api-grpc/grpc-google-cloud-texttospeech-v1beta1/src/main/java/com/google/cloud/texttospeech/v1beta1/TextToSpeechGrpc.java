@@ -171,8 +171,7 @@ public final class TextToSpeechGrpc {
      *
      *
      * <pre>
-     * Returns a list of [Voice][google.cloud.texttospeech.v1beta1.Voice]
-     * supported for synthesis.
+     * Returns a list of Voice supported for synthesis.
      * </pre>
      */
     public void listVoices(
@@ -243,8 +242,7 @@ public final class TextToSpeechGrpc {
      *
      *
      * <pre>
-     * Returns a list of [Voice][google.cloud.texttospeech.v1beta1.Voice]
-     * supported for synthesis.
+     * Returns a list of Voice supported for synthesis.
      * </pre>
      */
     public void listVoices(
@@ -303,8 +301,7 @@ public final class TextToSpeechGrpc {
      *
      *
      * <pre>
-     * Returns a list of [Voice][google.cloud.texttospeech.v1beta1.Voice]
-     * supported for synthesis.
+     * Returns a list of Voice supported for synthesis.
      * </pre>
      */
     public com.google.cloud.texttospeech.v1beta1.ListVoicesResponse listVoices(
@@ -355,8 +352,7 @@ public final class TextToSpeechGrpc {
      *
      *
      * <pre>
-     * Returns a list of [Voice][google.cloud.texttospeech.v1beta1.Voice]
-     * supported for synthesis.
+     * Returns a list of Voice supported for synthesis.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

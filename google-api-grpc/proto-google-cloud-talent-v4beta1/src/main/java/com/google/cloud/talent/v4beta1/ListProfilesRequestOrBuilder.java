@@ -14,11 +14,11 @@ public interface ListProfilesRequestOrBuilder
    * <pre>
    * Required. The resource name of the tenant under which the profile is
    * created.
-   * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
-   * "projects/api-test-project/tenants/foo".
+   * The format is "projects/{project_id}/tenants/{tenant_id}". For example,
+   * "projects/foo/tenants/bar".
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getParent();
   /**
@@ -27,11 +27,11 @@ public interface ListProfilesRequestOrBuilder
    * <pre>
    * Required. The resource name of the tenant under which the profile is
    * created.
-   * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
-   * "projects/api-test-project/tenants/foo".
+   * The format is "projects/{project_id}/tenants/{tenant_id}". For example,
+   * "projects/foo/tenants/bar".
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -39,8 +39,48 @@ public interface ListProfilesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The token that specifies the current offset (that is, starting
-   * result).
+   * The filter string specifies the profiles to be enumerated.
+   * Supported operator: =, AND
+   * The field(s) eligible for filtering are:
+   * * `externalId`
+   * * `groupId`
+   * externalId and groupId cannot be specified at the same time. If both
+   * externalId and groupId are provided, the API will return a bad request
+   * error.
+   * Sample Query:
+   * * externalId = "externalId-1"
+   * * groupId = "groupId-1"
+   * </pre>
+   *
+   * <code>string filter = 5;</code>
+   */
+  java.lang.String getFilter();
+  /**
+   *
+   *
+   * <pre>
+   * The filter string specifies the profiles to be enumerated.
+   * Supported operator: =, AND
+   * The field(s) eligible for filtering are:
+   * * `externalId`
+   * * `groupId`
+   * externalId and groupId cannot be specified at the same time. If both
+   * externalId and groupId are provided, the API will return a bad request
+   * error.
+   * Sample Query:
+   * * externalId = "externalId-1"
+   * * groupId = "groupId-1"
+   * </pre>
+   *
+   * <code>string filter = 5;</code>
+   */
+  com.google.protobuf.ByteString getFilterBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The token that specifies the current offset (that is, starting result).
    * Please set the value to
    * [ListProfilesResponse.next_page_token][google.cloud.talent.v4beta1.ListProfilesResponse.next_page_token]
    * to continue the list.
@@ -53,8 +93,7 @@ public interface ListProfilesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The token that specifies the current offset (that is, starting
-   * result).
+   * The token that specifies the current offset (that is, starting result).
    * Please set the value to
    * [ListProfilesResponse.next_page_token][google.cloud.talent.v4beta1.ListProfilesResponse.next_page_token]
    * to continue the list.
@@ -68,7 +107,7 @@ public interface ListProfilesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The maximum number of profiles to be returned, at most 100.
+   * The maximum number of profiles to be returned, at most 100.
    * Default is 100 unless a positive number smaller than 100 is specified.
    * </pre>
    *
@@ -80,8 +119,8 @@ public interface ListProfilesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. A field mask to specify the profile fields to be listed in
-   * response. All fields are listed if it is unset.
+   * A field mask to specify the profile fields to be listed in response.
+   * All fields are listed if it is unset.
    * Valid values are:
    * * name
    * </pre>
@@ -93,8 +132,8 @@ public interface ListProfilesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. A field mask to specify the profile fields to be listed in
-   * response. All fields are listed if it is unset.
+   * A field mask to specify the profile fields to be listed in response.
+   * All fields are listed if it is unset.
    * Valid values are:
    * * name
    * </pre>
@@ -106,8 +145,8 @@ public interface ListProfilesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. A field mask to specify the profile fields to be listed in
-   * response. All fields are listed if it is unset.
+   * A field mask to specify the profile fields to be listed in response.
+   * All fields are listed if it is unset.
    * Valid values are:
    * * name
    * </pre>

@@ -116,11 +116,11 @@ public final class CreateApplicationRequest extends com.google.protobuf.Generate
    * Required. Resource name of the profile under which the application is
    * created.
    * The format is
-   * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}", for
-   * example, "projects/test-project/tenants/test-tenant/profiles/test-profile".
+   * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}".
+   * For example, "projects/foo/tenants/bar/profiles/baz".
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -140,11 +140,11 @@ public final class CreateApplicationRequest extends com.google.protobuf.Generate
    * Required. Resource name of the profile under which the application is
    * created.
    * The format is
-   * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}", for
-   * example, "projects/test-project/tenants/test-tenant/profiles/test-profile".
+   * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}".
+   * For example, "projects/foo/tenants/bar/profiles/baz".
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -167,7 +167,9 @@ public final class CreateApplicationRequest extends com.google.protobuf.Generate
    * Required. The application to be created.
    * </pre>
    *
-   * <code>.google.cloud.talent.v4beta1.Application application = 2;</code>
+   * <code>
+   * .google.cloud.talent.v4beta1.Application application = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public boolean hasApplication() {
     return application_ != null;
@@ -179,7 +181,9 @@ public final class CreateApplicationRequest extends com.google.protobuf.Generate
    * Required. The application to be created.
    * </pre>
    *
-   * <code>.google.cloud.talent.v4beta1.Application application = 2;</code>
+   * <code>
+   * .google.cloud.talent.v4beta1.Application application = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.talent.v4beta1.Application getApplication() {
     return application_ == null
@@ -193,7 +197,9 @@ public final class CreateApplicationRequest extends com.google.protobuf.Generate
    * Required. The application to be created.
    * </pre>
    *
-   * <code>.google.cloud.talent.v4beta1.Application application = 2;</code>
+   * <code>
+   * .google.cloud.talent.v4beta1.Application application = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.talent.v4beta1.ApplicationOrBuilder getApplicationOrBuilder() {
     return getApplication();
@@ -554,11 +560,11 @@ public final class CreateApplicationRequest extends com.google.protobuf.Generate
      * Required. Resource name of the profile under which the application is
      * created.
      * The format is
-     * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}", for
-     * example, "projects/test-project/tenants/test-tenant/profiles/test-profile".
+     * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}".
+     * For example, "projects/foo/tenants/bar/profiles/baz".
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -578,11 +584,11 @@ public final class CreateApplicationRequest extends com.google.protobuf.Generate
      * Required. Resource name of the profile under which the application is
      * created.
      * The format is
-     * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}", for
-     * example, "projects/test-project/tenants/test-tenant/profiles/test-profile".
+     * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}".
+     * For example, "projects/foo/tenants/bar/profiles/baz".
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -602,11 +608,11 @@ public final class CreateApplicationRequest extends com.google.protobuf.Generate
      * Required. Resource name of the profile under which the application is
      * created.
      * The format is
-     * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}", for
-     * example, "projects/test-project/tenants/test-tenant/profiles/test-profile".
+     * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}".
+     * For example, "projects/foo/tenants/bar/profiles/baz".
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -624,11 +630,11 @@ public final class CreateApplicationRequest extends com.google.protobuf.Generate
      * Required. Resource name of the profile under which the application is
      * created.
      * The format is
-     * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}", for
-     * example, "projects/test-project/tenants/test-tenant/profiles/test-profile".
+     * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}".
+     * For example, "projects/foo/tenants/bar/profiles/baz".
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearParent() {
 
@@ -643,11 +649,11 @@ public final class CreateApplicationRequest extends com.google.protobuf.Generate
      * Required. Resource name of the profile under which the application is
      * created.
      * The format is
-     * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}", for
-     * example, "projects/test-project/tenants/test-tenant/profiles/test-profile".
+     * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}".
+     * For example, "projects/foo/tenants/bar/profiles/baz".
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -673,7 +679,9 @@ public final class CreateApplicationRequest extends com.google.protobuf.Generate
      * Required. The application to be created.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.Application application = 2;</code>
+     * <code>
+     * .google.cloud.talent.v4beta1.Application application = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public boolean hasApplication() {
       return applicationBuilder_ != null || application_ != null;
@@ -685,7 +693,9 @@ public final class CreateApplicationRequest extends com.google.protobuf.Generate
      * Required. The application to be created.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.Application application = 2;</code>
+     * <code>
+     * .google.cloud.talent.v4beta1.Application application = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.talent.v4beta1.Application getApplication() {
       if (applicationBuilder_ == null) {
@@ -703,7 +713,9 @@ public final class CreateApplicationRequest extends com.google.protobuf.Generate
      * Required. The application to be created.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.Application application = 2;</code>
+     * <code>
+     * .google.cloud.talent.v4beta1.Application application = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setApplication(com.google.cloud.talent.v4beta1.Application value) {
       if (applicationBuilder_ == null) {
@@ -725,7 +737,9 @@ public final class CreateApplicationRequest extends com.google.protobuf.Generate
      * Required. The application to be created.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.Application application = 2;</code>
+     * <code>
+     * .google.cloud.talent.v4beta1.Application application = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setApplication(
         com.google.cloud.talent.v4beta1.Application.Builder builderForValue) {
@@ -745,7 +759,9 @@ public final class CreateApplicationRequest extends com.google.protobuf.Generate
      * Required. The application to be created.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.Application application = 2;</code>
+     * <code>
+     * .google.cloud.talent.v4beta1.Application application = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeApplication(com.google.cloud.talent.v4beta1.Application value) {
       if (applicationBuilder_ == null) {
@@ -771,7 +787,9 @@ public final class CreateApplicationRequest extends com.google.protobuf.Generate
      * Required. The application to be created.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.Application application = 2;</code>
+     * <code>
+     * .google.cloud.talent.v4beta1.Application application = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearApplication() {
       if (applicationBuilder_ == null) {
@@ -791,7 +809,9 @@ public final class CreateApplicationRequest extends com.google.protobuf.Generate
      * Required. The application to be created.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.Application application = 2;</code>
+     * <code>
+     * .google.cloud.talent.v4beta1.Application application = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.talent.v4beta1.Application.Builder getApplicationBuilder() {
 
@@ -805,7 +825,9 @@ public final class CreateApplicationRequest extends com.google.protobuf.Generate
      * Required. The application to be created.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.Application application = 2;</code>
+     * <code>
+     * .google.cloud.talent.v4beta1.Application application = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.talent.v4beta1.ApplicationOrBuilder getApplicationOrBuilder() {
       if (applicationBuilder_ != null) {
@@ -823,7 +845,9 @@ public final class CreateApplicationRequest extends com.google.protobuf.Generate
      * Required. The application to be created.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.Application application = 2;</code>
+     * <code>
+     * .google.cloud.talent.v4beta1.Application application = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.talent.v4beta1.Application,

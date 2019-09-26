@@ -1,18 +1,18 @@
 {
-  "updateTime": "2019-08-24T07:37:49.168941Z",
+  "updateTime": "2019-09-17T07:37:26.235479Z",
   "sources": [
     {
       "git": {
         "name": "discovery-artifact-manager",
         "remote": "https://github.com/googleapis/discovery-artifact-manager.git",
-        "sha": "351c7b4b4ed2acab8aa9c200250c7d2cb78b4dd9"
+        "sha": "423d7658e453d8370b1c0b514ad81a6f4c73cddb"
       }
     },
     {
       "generator": {
         "name": "artman",
-        "version": "0.34.0",
-        "dockerImage": "googleapis/artman@sha256:38a27ba6245f96c3e86df7acb2ebcc33b4f186d9e475efe2d64303aec3d4e0ea"
+        "version": "0.36.2",
+        "dockerImage": "googleapis/artman@sha256:0e6f3a668cd68afc768ecbe08817cf6e56a0e64fcbdb1c58c3b97492d12418a1"
       }
     }
   ]

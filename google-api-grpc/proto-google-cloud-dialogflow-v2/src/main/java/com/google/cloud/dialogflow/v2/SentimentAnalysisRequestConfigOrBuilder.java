@@ -17,7 +17,7 @@ public interface SentimentAnalysisRequestConfigOrBuilder
    * `query_text`.
    * </pre>
    *
-   * <code>bool analyze_query_text_sentiment = 1;</code>
+   * <code>bool analyze_query_text_sentiment = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean getAnalyzeQueryTextSentiment();
 }
