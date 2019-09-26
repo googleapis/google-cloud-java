@@ -1124,16 +1124,18 @@ public interface Storage extends Service<StorageOptions> {
 
     /**
      * Use a different host name than the default host name 'https://storage.googleapis.com'. This
-     * must also include the scheme component of the URI. Note that if using this with the {@code
-     * withVirtualHostedStyle()} method, you should omit the bucket name from the hostname, as it
-     * automatically gets prepended to the hostname for virtual hosted-style URLs.
+     * must also include the scheme component of the URI. This option is particularly useful for
+     * developers to point requests to an alternate endpoint (e.g. a staging environment or sending
+     * requests through VPC). Note that if using this with the {@code withVirtualHostedStyle()}
+     * method, you should omit the bucket name from the hostname, as it automatically gets prepended
+     * to the hostname for virtual hosted-style URLs.
      */
     public static SignUrlOption withHostName(String hostName) {
       return new SignUrlOption(Option.HOST_NAME, hostName);
     }
 
     /**
-     * Use a virtual hosted-style hostname, which includes the bucket in the host portion of the URI
+     * Use a virtual hosted-style hostname, which adds the bucket into the host portion of the URI
      * rather than the path, e.g. 'https://mybucket.storage.googleapis.com'. The bucket name will be
      * obtained from the resource passed in. For V4 signing, this also sets the "host" header in the
      * canonicalized extension headers to the virtual hosted-style host, unless that header is
@@ -1149,7 +1151,9 @@ public interface Storage extends Service<StorageOptions> {
      * Generate a path-style URL, which places the bucket name in the path portion of the URL
      * instead of in the hostname. Note that this cannot be used alongside {@code
      * withVirtualHostedStyle()}. Virtual hosted-style URLs, which can be used via the {@code
-     * withVirtualHostedStyle()} method, should generally be preferred instead.
+     * withVirtualHostedStyle()} method, should generally be preferred instead of path-style URLs.
+     *
+     * @see <a href="https://cloud.google.com/storage/docs/request-endpoints">Request Endpoints</a>
      */
     public static SignUrlOption withPathStyle() {
       return new SignUrlOption(Option.PATH_STYLE, "");
@@ -1583,14 +1587,14 @@ public interface Storage extends Service<StorageOptions> {
    * <p>Example of creating a bucket.
    *
    * <pre>{@code
-   * String bucketName = "my_unique_bucket";
+   * String bucketName = "my-unique-bucket";
    * Bucket bucket = storage.create(BucketInfo.of(bucketName));
    * }</pre>
    *
    * <p>Example of creating a bucket with storage class and location.
    *
    * <pre>{@code
-   * String bucketName = "my_unique_bucket";
+   * String bucketName = "my-unique-bucket";
    * Bucket bucket = storage.create(BucketInfo.newBuilder(bucketName)
    *     // See here for possible values: http://g.co/cloud/storage/docs/storage-classes
    *     .setStorageClass(StorageClass.COLDLINE)
@@ -1610,8 +1614,8 @@ public interface Storage extends Service<StorageOptions> {
    * <p>Example of creating a blob with no content.
    *
    * <pre>{@code
-   * String bucketName = "my_unique_bucket";
-   * String blobName = "my_blob_name";
+   * String bucketName = "my-unique-bucket";
+   * String blobName = "my-blob-name";
    * BlobId blobId = BlobId.of(bucketName, blobName);
    * BlobInfo blobInfo = BlobInfo.newBuilder(blobId).setContentType("text/plain").build();
    * Blob blob = storage.create(blobInfo);
@@ -1631,8 +1635,8 @@ public interface Storage extends Service<StorageOptions> {
    * <p>Example of creating a blob from a byte array.
    *
    * <pre>{@code
-   * String bucketName = "my_unique_bucket";
-   * String blobName = "my_blob_name";
+   * String bucketName = "my-unique-bucket";
+   * String blobName = "my-blob-name";
    * BlobId blobId = BlobId.of(bucketName, blobName);
    * BlobInfo blobInfo = BlobInfo.newBuilder(blobId).setContentType("text/plain").build();
    * Blob blob = storage.create(blobInfo, "Hello, World!".getBytes(UTF_8));
@@ -1654,8 +1658,8 @@ public interface Storage extends Service<StorageOptions> {
    * <p>Example of creating a blob from a byte array.
    *
    * <pre>{@code
-   * String bucketName = "my_unique_bucket";
-   * String blobName = "my_blob_name";
+   * String bucketName = "my-unique-bucket";
+   * String blobName = "my-blob-name";
    * BlobId blobId = BlobId.of(bucketName, blobName);
    * BlobInfo blobInfo = BlobInfo.newBuilder(blobId).setContentType("text/plain").build();
    * Blob blob = storage.create(blobInfo, "Hello, World!".getBytes(UTF_8), 7, 5);
@@ -1681,8 +1685,8 @@ public interface Storage extends Service<StorageOptions> {
    * <p>Example of creating a blob from an input stream.
    *
    * <pre>{@code
-   * String bucketName = "my_unique_bucket";
-   * String blobName = "my_blob_name";
+   * String bucketName = "my-unique-bucket";
+   * String blobName = "my-blob-name";
    * InputStream content = new ByteArrayInputStream("Hello, World!".getBytes(UTF_8));
    * BlobId blobId = BlobId.of(bucketName, blobName);
    * BlobInfo blobInfo = BlobInfo.newBuilder(blobId).setContentType("text/plain").build();
@@ -1692,8 +1696,8 @@ public interface Storage extends Service<StorageOptions> {
    * <p>Example of uploading an encrypted blob.
    *
    * <pre>{@code
-   * String bucketName = "my_unique_bucket";
-   * String blobName = "my_blob_name";
+   * String bucketName = "my-unique-bucket";
+   * String blobName = "my-blob-name";
    * String encryptionKey = "my_encryption_key";
    * InputStream content = new ByteArrayInputStream("Hello, World!".getBytes(UTF_8));
    *
@@ -1720,7 +1724,7 @@ public interface Storage extends Service<StorageOptions> {
    * otherwise a {@link StorageException} is thrown.
    *
    * <pre>{@code
-   * String bucketName = "my_unique_bucket";
+   * String bucketName = "my-unique-bucket";
    * long bucketMetageneration = 42;
    * Bucket bucket = storage.get(bucketName,
    *     BucketGetOption.metagenerationMatch(bucketMetageneration));
@@ -1743,7 +1747,7 @@ public interface Storage extends Service<StorageOptions> {
    * matches the bucket's service metageneration otherwise a {@link StorageException} is thrown.
    *
    * <pre>{@code
-   * String bucketName = "my_unique_bucket";
+   * String bucketName = "my-unique-bucket";
    * Bucket bucket = storage.get(bucketName, BucketGetOption.fields(BucketField.METAGENERATION));
    * storage.lockRetentionPolicy(bucket, BucketTargetOption.metagenerationMatch());
    * }</pre>
@@ -1763,8 +1767,8 @@ public interface Storage extends Service<StorageOptions> {
    * otherwise a {@link StorageException} is thrown.
    *
    * <pre>{@code
-   * String bucketName = "my_unique_bucket";
-   * String blobName = "my_blob_name";
+   * String bucketName = "my-unique-bucket";
+   * String blobName = "my-blob-name";
    * long blobMetageneration = 42;
    * Blob blob = storage.get(bucketName, blobName,
    *     BlobGetOption.metagenerationMatch(blobMetageneration));
@@ -1784,8 +1788,8 @@ public interface Storage extends Service<StorageOptions> {
    * otherwise a {@link StorageException} is thrown.
    *
    * <pre>{@code
-   * String bucketName = "my_unique_bucket";
-   * String blobName = "my_blob_name";
+   * String bucketName = "my-unique-bucket";
+   * String blobName = "my-blob-name";
    * long blobMetageneration = 42;
    * BlobId blobId = BlobId.of(bucketName, blobName);
    * Blob blob = storage.get(blobId, BlobGetOption.metagenerationMatch(blobMetageneration));
@@ -1799,8 +1803,8 @@ public interface Storage extends Service<StorageOptions> {
    *     href="https://cloud.google.com/storage/docs/encryption/customer-supplied-keys#encrypted-elements">Encrypted
    *     Elements</a>
    *     <pre>{@code
-   * String bucketName = "my_unique_bucket";
-   * String blobName = "my_blob_name";
+   * String bucketName = "my-unique-bucket";
+   * String blobName = "my-blob-name";
    * String blobEncryptionKey = "";
    * BlobId blobId = BlobId.of(bucketName, blobName);
    * Blob blob = storage.get(blobId, BlobGetOption.decryptionKey(blobEncryptionKey));
@@ -1816,8 +1820,8 @@ public interface Storage extends Service<StorageOptions> {
    * <p>Example of getting information on a blob.
    *
    * <pre>{@code
-   * String bucketName = "my_unique_bucket";
-   * String blobName = "my_blob_name";
+   * String bucketName = "my-unique-bucket";
+   * String blobName = "my-blob-name";
    * BlobId blobId = BlobId.of(bucketName, blobName);
    * Blob blob = storage.get(blobId);
    * }</pre>
@@ -1853,7 +1857,7 @@ public interface Storage extends Service<StorageOptions> {
    * <p>Example of listing blobs in a provided directory.
    *
    * <pre>{@code
-   * String bucketName = "my_unique_bucket";
+   * String bucketName = "my-unique-bucket";
    * String directory = "my_directory/";
    * Page<Blob> blobs = storage.list(bucketName, BlobListOption.currentDirectory(),
    *     BlobListOption.prefix(directory));
@@ -1877,7 +1881,7 @@ public interface Storage extends Service<StorageOptions> {
    * <p>Example of updating bucket information.
    *
    * <pre>{@code
-   * String bucketName = "my_unique_bucket";
+   * String bucketName = "my-unique-bucket";
    * BucketInfo bucketInfo = BucketInfo.newBuilder(bucketName).setVersioningEnabled(true).build();
    * Bucket bucket = storage.update(bucketInfo);
    * }</pre>
@@ -1898,8 +1902,8 @@ public interface Storage extends Service<StorageOptions> {
    * {@link StorageException} is thrown.
    *
    * <pre>{@code
-   * String bucketName = "my_unique_bucket";
-   * String blobName = "my_blob_name";
+   * String bucketName = "my-unique-bucket";
+   * String blobName = "my-blob-name";
    * Blob blob = storage.get(bucketName, blobName);
    * BlobInfo updatedInfo = blob.toBuilder().setContentType("text/plain").build();
    * storage.update(updatedInfo, BlobTargetOption.metagenerationMatch());
@@ -1919,8 +1923,8 @@ public interface Storage extends Service<StorageOptions> {
    * <p>Example of adding new metadata values or updating existing ones.
    *
    * <pre>{@code
-   * String bucketName = "my_unique_bucket";
-   * String blobName = "my_blob_name";
+   * String bucketName = "my-unique-bucket";
+   * String blobName = "my-blob-name";
    * Map<String, String> newMetadata = new HashMap<>();
    * newMetadata.put("keyToAddOrUpdate", "value");
    * Blob blob = storage.update(BlobInfo.newBuilder(bucketName, blobName)
@@ -1931,8 +1935,8 @@ public interface Storage extends Service<StorageOptions> {
    * <p>Example of removing metadata values.
    *
    * <pre>{@code
-   * String bucketName = "my_unique_bucket";
-   * String blobName = "my_blob_name";
+   * String bucketName = "my-unique-bucket";
+   * String blobName = "my-blob-name";
    * Map<String, String> newMetadata = new HashMap<>();
    * newMetadata.put("keyToRemove", null);
    * Blob blob = storage.update(BlobInfo.newBuilder(bucketName, blobName)
@@ -1955,7 +1959,7 @@ public interface Storage extends Service<StorageOptions> {
    * StorageException} is thrown.
    *
    * <pre>{@code
-   * String bucketName = "my_unique_bucket";
+   * String bucketName = "my-unique-bucket";
    * long bucketMetageneration = 42;
    * boolean deleted = storage.delete(bucketName,
    *     BucketSourceOption.metagenerationMatch(bucketMetageneration));
@@ -1978,8 +1982,8 @@ public interface Storage extends Service<StorageOptions> {
    * StorageException} is thrown.
    *
    * <pre>{@code
-   * String bucketName = "my_unique_bucket";
-   * String blobName = "my_blob_name";
+   * String bucketName = "my-unique-bucket";
+   * String blobName = "my-blob-name";
    * long blobGeneration = 42;
    * boolean deleted = storage.delete(bucketName, blobName,
    *     BlobSourceOption.generationMatch(blobGeneration));
@@ -2005,8 +2009,8 @@ public interface Storage extends Service<StorageOptions> {
    * StorageException} is thrown.
    *
    * <pre>{@code
-   * String bucketName = "my_unique_bucket";
-   * String blobName = "my_blob_name";
+   * String bucketName = "my-unique-bucket";
+   * String blobName = "my-blob-name";
    * long blobGeneration = 42;
    * BlobId blobId = BlobId.of(bucketName, blobName);
    * boolean deleted = storage.delete(blobId, BlobSourceOption.generationMatch(blobGeneration));
@@ -2028,8 +2032,8 @@ public interface Storage extends Service<StorageOptions> {
    * <p>Example of deleting a blob.
    *
    * <pre>{@code
-   * String bucketName = "my_unique_bucket";
-   * String blobName = "my_blob_name";
+   * String bucketName = "my-unique-bucket";
+   * String blobName = "my-blob-name";
    * BlobId blobId = BlobId.of(bucketName, blobName);
    * boolean deleted = storage.delete(blobId);
    * if (deleted) {
@@ -2053,8 +2057,8 @@ public interface Storage extends Service<StorageOptions> {
    * <p>Example of composing two blobs.
    *
    * <pre>{@code
-   * String bucketName = "my_unique_bucket";
-   * String blobName = "my_blob_name";
+   * String bucketName = "my-unique-bucket";
+   * String blobName = "my-blob-name";
    * String sourceBlob1 = "source_blob_1";
    * String sourceBlob2 = "source_blob_2";
    * BlobId blobId = BlobId.of(bucketName, blobName);
@@ -2088,8 +2092,8 @@ public interface Storage extends Service<StorageOptions> {
    * <p>Example of copying a blob.
    *
    * <pre>{@code
-   * String bucketName = "my_unique_bucket";
-   * String blobName = "my_blob_name";
+   * String bucketName = "my-unique-bucket";
+   * String blobName = "my-blob-name";
    * String copyBlobName = "copy_blob_name";
    * CopyRequest request = CopyRequest.newBuilder()
    *     .setSource(BlobId.of(bucketName, blobName))
@@ -2101,8 +2105,8 @@ public interface Storage extends Service<StorageOptions> {
    * <p>Example of copying a blob in chunks.
    *
    * <pre>{@code
-   * String bucketName = "my_unique_bucket";
-   * String blobName = "my_blob_name";
+   * String bucketName = "my-unique-bucket";
+   * String blobName = "my-blob-name";
    * String copyBlobName = "copy_blob_name";
    * CopyRequest request = CopyRequest.newBuilder()
    *     .setSource(BlobId.of(bucketName, blobName))
@@ -2118,8 +2122,8 @@ public interface Storage extends Service<StorageOptions> {
    * <p>Example of rotating the encryption key of a blob.
    *
    * <pre>{@code
-   * String bucketName = "my_unique_bucket";
-   * String blobName = "my_blob_name";
+   * String bucketName = "my-unique-bucket";
+   * String blobName = "my-blob-name";
    * String oldEncryptionKey = "old_encryption_key";
    * String newEncryptionKey = "new_encryption_key";
    * BlobId blobId = BlobId.of(bucketName, blobName);
@@ -2145,8 +2149,8 @@ public interface Storage extends Service<StorageOptions> {
    * StorageException} is thrown.
    *
    * <pre>{@code
-   * String bucketName = "my_unique_bucket";
-   * String blobName = "my_blob_name";
+   * String bucketName = "my-unique-bucket";
+   * String blobName = "my-blob-name";
    * long blobGeneration = 42";
    * byte[] content = storage.readAllBytes(bucketName, blobName,
    *     BlobSourceOption.generationMatch(blobGeneration));
@@ -2164,8 +2168,8 @@ public interface Storage extends Service<StorageOptions> {
    * StorageException} is thrown.
    *
    * <pre>{@code
-   * String bucketName = "my_unique_bucket";
-   * String blobName = "my_blob_name";
+   * String bucketName = "my-unique-bucket";
+   * String blobName = "my-blob-name";
    * long blobGeneration = 42;
    * BlobId blobId = BlobId.of(bucketName, blobName, blobGeneration);
    * byte[] content = storage.readAllBytes(blobId);
@@ -2174,8 +2178,8 @@ public interface Storage extends Service<StorageOptions> {
    * <p>Example of reading all bytes of an encrypted blob.
    *
    * <pre>{@code
-   * String bucketName = "my_unique_bucket";
-   * String blobName = "my_blob_name";
+   * String bucketName = "my-unique-bucket";
+   * String blobName = "my-blob-name";
    * String decryptionKey = "my_encryption_key";
    * byte[] content = storage.readAllBytes(
    *     bucketName, blobName, BlobSourceOption.decryptionKey(decryptionKey));
@@ -2192,9 +2196,9 @@ public interface Storage extends Service<StorageOptions> {
    * <p>Example of using a batch request to delete, update and get a blob.
    *
    * <pre>{@code
-   * String bucketName = "my_unique_bucket";
-   * String blobName1 = "my_blob_name1";
-   * String blobName2 = "my_blob_name2";
+   * String bucketName = "my-unique-bucket";
+   * String blobName1 = "my-blob-name1";
+   * String blobName2 = "my-blob-name2";
    * StorageBatch batch = storage.batch();
    * BlobId firstBlob = BlobId.of(bucketName, blobName1);
    * BlobId secondBlob = BlobId.of(bucketName, blobName2);
@@ -2223,8 +2227,8 @@ public interface Storage extends Service<StorageOptions> {
    * <p>Example of reading a blob's content through a reader.
    *
    * <pre>{@code
-   * String bucketName = "my_unique_bucket";
-   * String blobName = "my_blob_name";
+   * String bucketName = "my-unique-bucket";
+   * String blobName = "my-blob-name";
    * try (ReadChannel reader = storage.reader(bucketName, blobName)) {
    *   ByteBuffer bytes = ByteBuffer.allocate(64 * 1024);
    *   while (reader.read(bytes) > 0) {
@@ -2254,8 +2258,8 @@ public interface Storage extends Service<StorageOptions> {
    * <p>Example of reading a blob's content through a reader.
    *
    * <pre>{@code
-   * String bucketName = "my_unique_bucket";
-   * String blobName = "my_blob_name";
+   * String bucketName = "my-unique-bucket";
+   * String blobName = "my-blob-name";
    * BlobId blobId = BlobId.of(bucketName, blobName);
    * try (ReadChannel reader = storage.reader(blobId)) {
    *   ByteBuffer bytes = ByteBuffer.allocate(64 * 1024);
@@ -2279,8 +2283,8 @@ public interface Storage extends Service<StorageOptions> {
    * <p>Example of writing a blob's content through a writer.
    *
    * <pre>{@code
-   * String bucketName = "my_unique_bucket";
-   * String blobName = "my_blob_name";
+   * String bucketName = "my-unique-bucket";
+   * String blobName = "my-blob-name";
    * BlobId blobId = BlobId.of(bucketName, blobName);
    * byte[] content = "Hello, World!".getBytes(UTF_8);
    * BlobInfo blobInfo = BlobInfo.newBuilder(blobId).setContentType("text/plain").build();
@@ -2303,12 +2307,15 @@ public interface Storage extends Service<StorageOptions> {
    * <p>Example of writing content through a writer using signed URL.
    *
    * <pre>{@code
-   * String bucketName = "my_unique_bucket";
-   * String blobName = "my_blob_name";
+   * String bucketName = "my-unique-bucket";
+   * String blobName = "my-blob-name";
    * BlobId blobId = BlobId.of(bucketName, blobName);
    * byte[] content = "Hello, World!".getBytes(UTF_8);
    * BlobInfo blobInfo = BlobInfo.newBuilder(blobId).setContentType("text/plain").build();
-   * URL signedURL = storage.signUrl(blobInfo, 1, TimeUnit.HOURS, Storage.SignUrlOption.httpMethod(HttpMethod.POST));
+   * URL signedURL = storage.signUrl(
+   *     blobInfo,
+   *     1, TimeUnit.HOURS,
+   *     Storage.SignUrlOption.httpMethod(HttpMethod.POST));
    * try (WriteChannel writer = storage.writer(signedURL)) {
    *    writer.write(ByteBuffer.wrap(content, 0, content.length));
    * }
@@ -2341,36 +2348,60 @@ public interface Storage extends Service<StorageOptions> {
    *   <li>The default credentials, if no credentials were passed to {@link StorageOptions}
    * </ol>
    *
-   * <p>Example of creating a signed URL that is valid for 2 weeks, using the default credentials
-   * for signing the URL.
+   * <p>Example of creating a signed URL that is valid for 1 week, using the default credentials for
+   * signing the URL, the default signing method (V2), and the default URL style (path-style):
    *
    * <pre>{@code
-   * String bucketName = "my_unique_bucket";
-   * String blobName = "my_blob_name";
-   * URL signedUrl = storage.signUrl(BlobInfo.newBuilder(bucketName, blobName).build(), 14,
-   *     TimeUnit.DAYS);
+   * String bucketName = "my-unique-bucket";
+   * String blobName = "my-blob-name";
+   * URL signedUrl = storage.signUrl(
+   *     BlobInfo.newBuilder(bucketName, blobName).build(),
+   *     7, TimeUnit.DAYS);
    * }</pre>
    *
    * <p>Example of creating a signed URL passing the {@link SignUrlOption#withV4Signature()} option,
-   * which enables V4 signing.
+   * which enables V4 signing:
    *
    * <pre>{@code
-   * String bucketName = "my_unique_bucket";
-   * String blobName = "my_blob_name";
-   * URL signedUrl = storage.signUrl(BlobInfo.newBuilder(bucketName, blobName).build(),
-   *     7, TimeUnit.DAYS, Storage.SignUrlOption.withV4Signature());
+   * String bucketName = "my-unique-bucket";
+   * String blobName = "my-blob-name";
+   * URL signedUrl = storage.signUrl(
+   *     BlobInfo.newBuilder(bucketName, blobName).build(),
+   *     7, TimeUnit.DAYS,
+   *     Storage.SignUrlOption.withV4Signature());
+   * }</pre>
+   *
+   * <p>Example of creating a signed URL passing the {@link SignUrlOption#withVirtualHostedStyle()}
+   * option, which specifies the bucket name in the hostname of the URI, rather than in the path:
+   *
+   * <pre>{@code
+   * URL signedUrl = storage.signUrl(
+   *     BlobInfo.newBuilder(bucketName, blobName).build(),
+   *     1, TimeUnit.DAYS,
+   *     Storage.SignUrlOption.withVirtualHostedStyle());
+   * }</pre>
+   *
+   * <p>Example of creating a signed URL passing the {@link SignUrlOption#withPathStyle()} option,
+   * which specifies the bucket name in path portion of the URI, rather than in the hostname:
+   *
+   * <pre>{@code
+   * URL signedUrl = storage.signUrl(
+   *     BlobInfo.newBuilder(bucketName, blobName).build(),
+   *     1, TimeUnit.DAYS,
+   *     Storage.SignUrlOption.withPathStyle());
    * }</pre>
    *
    * <p>Example of creating a signed URL passing the {@link
    * SignUrlOption#signWith(ServiceAccountSigner)} option, that will be used for signing the URL.
    *
    * <pre>{@code
-   * String bucketName = "my_unique_bucket";
-   * String blobName = "my_blob_name";
-   * String keyPath = "/path/to/key.json";
-   * URL signedUrl = storage.signUrl(BlobInfo.newBuilder(bucketName, blobName).build(),
-   *     14, TimeUnit.DAYS, SignUrlOption.signWith(
-   *         ServiceAccountCredentials.fromStream(new FileInputStream(keyPath))));
+   * String bucketName = "my-unique-bucket";
+   * String blobName = "my-blob-name";
+   * String kfPath = "/path/to/keyfile.json";
+   * URL signedUrl = storage.signUrl(
+   *     BlobInfo.newBuilder(bucketName, blobName).build(),
+   *     7, TimeUnit.DAYS,
+   *     SignUrlOption.signWith(ServiceAccountCredentials.fromStream(new FileInputStream(kfPath))));
    * }</pre>
    *
    * <p>Note that the {@link ServiceAccountSigner} may require additional configuration to enable
@@ -2380,8 +2411,7 @@ public interface Storage extends Service<StorageOptions> {
    * @param duration time until the signed URL expires, expressed in {@code unit}. The finest
    *     granularity supported is 1 second, finer granularities will be truncated
    * @param unit time unit of the {@code duration} parameter
-   * @param options optional URL signing options {@code SignUrlOption.withHostName()} option to set
-   *     a custom host name instead of using https://storage.googleapis.com.
+   * @param options optional URL signing options
    * @throws IllegalStateException if {@link SignUrlOption#signWith(ServiceAccountSigner)} was not
    *     used and no implementation of {@link ServiceAccountSigner} was provided to {@link
    *     StorageOptions}
@@ -2400,9 +2430,9 @@ public interface Storage extends Service<StorageOptions> {
    * <p>Example of getting information on several blobs using a single batch request.
    *
    * <pre>{@code
-   * String bucketName = "my_unique_bucket";
-   * String blobName1 = "my_blob_name1";
-   * String blobName2 = "my_blob_name2";
+   * String bucketName = "my-unique-bucket";
+   * String blobName1 = "my-blob-name1";
+   * String blobName2 = "my-blob-name2";
    * BlobId firstBlob = BlobId.of(bucketName, blobName1);
    * BlobId secondBlob = BlobId.of(bucketName, blobName2);
    * List<Blob> blobs = storage.get(firstBlob, secondBlob);
@@ -2421,9 +2451,9 @@ public interface Storage extends Service<StorageOptions> {
    * <p>Example of getting information on several blobs using a single batch request.
    *
    * <pre>{@code
-   * String bucketName = "my_unique_bucket";
-   * String blobName1 = "my_blob_name1";
-   * String blobName2 = "my_blob_name2";
+   * String bucketName = "my-unique-bucket";
+   * String blobName1 = "my-blob-name1";
+   * String blobName2 = "my-blob-name2";
    * List<BlobId> blobIds = new LinkedList<>();
    * blobIds.add(BlobId.of(bucketName, blobName1));
    * blobIds.add(BlobId.of(bucketName, blobName2));
@@ -2446,9 +2476,9 @@ public interface Storage extends Service<StorageOptions> {
    * <p>Example of updating information on several blobs using a single batch request.
    *
    * <pre>{@code
-   * String bucketName = "my_unique_bucket";
-   * String blobName1 = "my_blob_name1";
-   * String blobName2 = "my_blob_name2";
+   * String bucketName = "my-unique-bucket";
+   * String blobName1 = "my-blob-name1";
+   * String blobName2 = "my-blob-name2";
    * Blob firstBlob = storage.get(bucketName, blobName1);
    * Blob secondBlob = storage.get(bucketName, blobName2);
    * List<Blob> updatedBlobs = storage.update(
@@ -2472,9 +2502,9 @@ public interface Storage extends Service<StorageOptions> {
    * <p>Example of updating information on several blobs using a single batch request.
    *
    * <pre>{@code
-   * String bucketName = "my_unique_bucket";
-   * String blobName1 = "my_blob_name1";
-   * String blobName2 = "my_blob_name2";
+   * String bucketName = "my-unique-bucket";
+   * String blobName1 = "my-blob-name1";
+   * String blobName2 = "my-blob-name2";
    * Blob firstBlob = storage.get(bucketName, blobName1);
    * Blob secondBlob = storage.get(bucketName, blobName2);
    * List<BlobInfo> blobs = new LinkedList<>();
@@ -2496,9 +2526,9 @@ public interface Storage extends Service<StorageOptions> {
    * <p>Example of deleting several blobs using a single batch request.
    *
    * <pre>{@code
-   * String bucketName = "my_unique_bucket";
-   * String blobName1 = "my_blob_name1";
-   * String blobName2 = "my_blob_name2";
+   * String bucketName = "my-unique-bucket";
+   * String blobName1 = "my-blob-name1";
+   * String blobName2 = "my-blob-name2";
    * BlobId firstBlob = BlobId.of(bucketName, blobName1);
    * BlobId secondBlob = BlobId.of(bucketName, blobName2);
    * List<Boolean> deleted = storage.delete(firstBlob, secondBlob);
@@ -2518,9 +2548,9 @@ public interface Storage extends Service<StorageOptions> {
    * <p>Example of deleting several blobs using a single batch request.
    *
    * <pre>{@code
-   * String bucketName = "my_unique_bucket";
-   * String blobName1 = "my_blob_name1";
-   * String blobName2 = "my_blob_name2";
+   * String bucketName = "my-unique-bucket";
+   * String blobName1 = "my-blob-name1";
+   * String blobName2 = "my-blob-name2";
    * List<BlobId> blobIds = new LinkedList<>();
    * blobIds.add(BlobId.of(bucketName, blobName1));
    * blobIds.add(BlobId.of(bucketName, blobName2));
@@ -2542,7 +2572,7 @@ public interface Storage extends Service<StorageOptions> {
    * <p>Example of getting the ACL entry for an entity on a bucket.
    *
    * <pre>{@code
-   * String bucketName = "my_unique_bucket";
+   * String bucketName = "my-unique-bucket";
    * Acl acl = storage.getAcl(bucketName, User.ofAllAuthenticatedUsers());
    * }</pre>
    *
@@ -2550,7 +2580,7 @@ public interface Storage extends Service<StorageOptions> {
    * user_project option.
    *
    * <pre>{@code
-   * String bucketName = "my_unique_bucket";
+   * String bucketName = "my-unique-bucket";
    * String userEmail = "google-cloud-java-tests@java-docs-samples-tests.iam.gserviceaccount.com";
    * BucketSourceOption userProjectOption = BucketSourceOption.userProject("myProject");
    * Acl acl = storage.getAcl(bucketName, new User(userEmail), userProjectOption);
@@ -2572,7 +2602,7 @@ public interface Storage extends Service<StorageOptions> {
    * <p>Example of deleting the ACL entry for an entity on a bucket.
    *
    * <pre>{@code
-   * String bucketName = "my_unique_bucket";
+   * String bucketName = "my-unique-bucket";
    * boolean deleted = storage.deleteAcl(bucketName, User.ofAllAuthenticatedUsers());
    * if (deleted) {
    *   // the acl entry was deleted
@@ -2585,7 +2615,7 @@ public interface Storage extends Service<StorageOptions> {
    * user_project option.
    *
    * <pre>{@code
-   * String bucketName = "my_unique_bucket";
+   * String bucketName = "my-unique-bucket";
    * BucketSourceOption userProject = BucketSourceOption.userProject("myProject");
    * boolean deleted = storage.deleteAcl(bucketName, User.ofAllAuthenticatedUsers(), userProject);
    * }</pre>
@@ -2607,14 +2637,14 @@ public interface Storage extends Service<StorageOptions> {
    * <p>Example of creating a new ACL entry on a bucket.
    *
    * <pre>{@code
-   * String bucketName = "my_unique_bucket";
+   * String bucketName = "my-unique-bucket";
    * Acl acl = storage.createAcl(bucketName, Acl.of(User.ofAllAuthenticatedUsers(), Role.READER));
    * }</pre>
    *
    * <p>Example of creating a new ACL entry on a requester_pays bucket with a user_project option.
    *
    * <pre>{@code
-   * String bucketName = "my_unique_bucket";
+   * String bucketName = "my-unique-bucket";
    * Acl acl = storage.createAcl(bucketName, Acl.of(User.ofAllAuthenticatedUsers(), Role.READER),
    *     BucketSourceOption.userProject("myProject"));
    * }</pre>
@@ -2635,14 +2665,14 @@ public interface Storage extends Service<StorageOptions> {
    * <p>Example of updating a new ACL entry on a bucket.
    *
    * <pre>{@code
-   * String bucketName = "my_unique_bucket";
+   * String bucketName = "my-unique-bucket";
    * Acl acl = storage.updateAcl(bucketName, Acl.of(User.ofAllAuthenticatedUsers(), Role.OWNER));
    * }</pre>
    *
    * <p>Example of updating a new ACL entry on a requester_pays bucket with a user_project option.
    *
    * <pre>{@code
-   * String bucketName = "my_unique_bucket";
+   * String bucketName = "my-unique-bucket";
    * Acl acl = storage.updateAcl(bucketName, Acl.of(User.ofAllAuthenticatedUsers(), Role.OWNER),
    *     BucketSourceOption.userProject("myProject"));
    * }</pre>
@@ -2663,7 +2693,7 @@ public interface Storage extends Service<StorageOptions> {
    * <p>Example of listing the ACL entries for a blob.
    *
    * <pre>{@code
-   * String bucketName = "my_unique_bucket";
+   * String bucketName = "my-unique-bucket";
    * List<Acl> acls = storage.listAcls(bucketName);
    * for (Acl acl : acls) {
    *   // do something with ACL entry
@@ -2674,7 +2704,7 @@ public interface Storage extends Service<StorageOptions> {
    * option.
    *
    * <pre>{@code
-   * String bucketName = "my_unique_bucket";
+   * String bucketName = "my-unique-bucket";
    * List<Acl> acls = storage.listAcls(bucketName, BucketSourceOption.userProject("myProject"));
    * for (Acl acl : acls) {
    *   // do something with ACL entry
@@ -2700,7 +2730,7 @@ public interface Storage extends Service<StorageOptions> {
    * <p>Example of getting the default ACL entry for an entity on a bucket.
    *
    * <pre>{@code
-   * String bucketName = "my_unique_bucket";
+   * String bucketName = "my-unique-bucket";
    * Acl acl = storage.getDefaultAcl(bucketName, User.ofAllAuthenticatedUsers());
    * }</pre>
    *
@@ -2717,7 +2747,7 @@ public interface Storage extends Service<StorageOptions> {
    * <p>Example of deleting the default ACL entry for an entity on a bucket.
    *
    * <pre>{@code
-   * String bucketName = "my_unique_bucket";
+   * String bucketName = "my-unique-bucket";
    * boolean deleted = storage.deleteDefaultAcl(bucketName, User.ofAllAuthenticatedUsers());
    * if (deleted) {
    *   // the acl entry was deleted
@@ -2740,7 +2770,7 @@ public interface Storage extends Service<StorageOptions> {
    * <p>Example of creating a new default ACL entry on a bucket.
    *
    * <pre>{@code
-   * String bucketName = "my_unique_bucket";
+   * String bucketName = "my-unique-bucket";
    * Acl acl =
    *     storage.createDefaultAcl(bucketName, Acl.of(User.ofAllAuthenticatedUsers(), Role.READER));
    * }</pre>
@@ -2758,7 +2788,7 @@ public interface Storage extends Service<StorageOptions> {
    * <p>Example of updating a new default ACL entry on a bucket.
    *
    * <pre>{@code
-   * String bucketName = "my_unique_bucket";
+   * String bucketName = "my-unique-bucket";
    * Acl acl =
    *     storage.updateDefaultAcl(bucketName, Acl.of(User.ofAllAuthenticatedUsers(), Role.OWNER));
    * }</pre>
@@ -2776,7 +2806,7 @@ public interface Storage extends Service<StorageOptions> {
    * <p>Example of listing the default ACL entries for a blob.
    *
    * <pre>{@code
-   * String bucketName = "my_unique_bucket";
+   * String bucketName = "my-unique-bucket";
    * List<Acl> acls = storage.listDefaultAcls(bucketName);
    * for (Acl acl : acls) {
    *   // do something with ACL entry
@@ -2794,8 +2824,8 @@ public interface Storage extends Service<StorageOptions> {
    * <p>Example of getting the ACL entry for an entity on a blob.
    *
    * <pre>{@code
-   * String bucketName = "my_unique_bucket";
-   * String blobName = "my_blob_name";
+   * String bucketName = "my-unique-bucket";
+   * String blobName = "my-blob-name";
    * long blobGeneration = 42;
    * BlobId blobId = BlobId.of(bucketName, blobName, blobGeneration);
    * Acl acl = storage.getAcl(blobId, User.ofAllAuthenticatedUsers());
@@ -2804,8 +2834,8 @@ public interface Storage extends Service<StorageOptions> {
    * <p>Example of getting the ACL entry for a specific user on a blob.
    *
    * <pre>{@code
-   * String bucketName = "my_unique_bucket";
-   * String blobName = "my_blob_name";
+   * String bucketName = "my-unique-bucket";
+   * String blobName = "my-blob-name";
    * String userEmail = "google-cloud-java-tests@java-docs-samples-tests.iam.gserviceaccount.com";
    * BlobId blobId = BlobId.of(bucketName, blobName);
    * Acl acl = storage.getAcl(blobId, new User(userEmail));
@@ -2821,8 +2851,8 @@ public interface Storage extends Service<StorageOptions> {
    * <p>Example of deleting the ACL entry for an entity on a blob.
    *
    * <pre>{@code
-   * String bucketName = "my_unique_bucket";
-   * String blobName = "my_blob_name";
+   * String bucketName = "my-unique-bucket";
+   * String blobName = "my-blob-name";
    * long blobGeneration = 42;
    * BlobId blobId = BlobId.of(bucketName, blobName, blobGeneration);
    * boolean deleted = storage.deleteAcl(blobId, User.ofAllAuthenticatedUsers());
@@ -2844,8 +2874,8 @@ public interface Storage extends Service<StorageOptions> {
    * <p>Example of creating a new ACL entry on a blob.
    *
    * <pre>{@code
-   * String bucketName = "my_unique_bucket";
-   * String blobName = "my_blob_name";
+   * String bucketName = "my-unique-bucket";
+   * String blobName = "my-blob-name";
    * long blobGeneration = 42;
    * BlobId blobId = BlobId.of(bucketName, blobName, blobGeneration);
    * Acl acl = storage.createAcl(blobId, Acl.of(User.ofAllAuthenticatedUsers(), Role.READER));
@@ -2854,8 +2884,8 @@ public interface Storage extends Service<StorageOptions> {
    * <p>Example of updating a blob to be public-read.
    *
    * <pre>{@code
-   * String bucketName = "my_unique_bucket";
-   * String blobName = "my_blob_name";
+   * String bucketName = "my-unique-bucket";
+   * String blobName = "my-blob-name";
    * long blobGeneration = 42;
    * BlobId blobId = BlobId.of(bucketName, blobName, blobGeneration);
    * Acl acl = storage.createAcl(blobId, Acl.of(User.ofAllUsers(), Role.READER));
@@ -2871,8 +2901,8 @@ public interface Storage extends Service<StorageOptions> {
    * <p>Example of updating a new ACL entry on a blob.
    *
    * <pre>{@code
-   * String bucketName = "my_unique_bucket";
-   * String blobName = "my_blob_name";
+   * String bucketName = "my-unique-bucket";
+   * String blobName = "my-blob-name";
    * long blobGeneration = 42;
    * BlobId blobId = BlobId.of(bucketName, blobName, blobGeneration);
    * Acl acl = storage.updateAcl(blobId, Acl.of(User.ofAllAuthenticatedUsers(), Role.OWNER));
@@ -2888,8 +2918,8 @@ public interface Storage extends Service<StorageOptions> {
    * <p>Example of listing the ACL entries for a blob.
    *
    * <pre>{@code
-   * String bucketName = "my_unique_bucket";
-   * String blobName = "my_blob_name";
+   * String bucketName = "my-unique-bucket";
+   * String blobName = "my-blob-name";
    * long blobGeneration = 42;
    * BlobId blobId = BlobId.of(bucketName, blobName, blobGeneration);
    * List<Acl> acls = storage.listAcls(blobId);
@@ -3014,7 +3044,7 @@ public interface Storage extends Service<StorageOptions> {
    * <p>Example of getting the IAM policy for a bucket.
    *
    * <pre>{@code
-   * String bucketName = "my_unique_bucket";
+   * String bucketName = "my-unique-bucket";
    * Policy policy = storage.getIamPolicy(bucketName);
    * }</pre>
    *
@@ -3031,7 +3061,7 @@ public interface Storage extends Service<StorageOptions> {
    *
    * <pre>{@code
    * // We want to make all objects in our bucket publicly readable.
-   * String bucketName = "my_unique_bucket";
+   * String bucketName = "my-unique-bucket";
    * Policy currentPolicy = storage.getIamPolicy(bucketName);
    * Policy updatedPolicy =
    *     storage.setIamPolicy(
@@ -3055,7 +3085,7 @@ public interface Storage extends Service<StorageOptions> {
    * <p>Example of testing permissions on a bucket.
    *
    * <pre>{@code
-   * String bucketName = "my_unique_bucket";
+   * String bucketName = "my-unique-bucket";
    * List<Boolean> response =
    *     storage.testIamPermissions(
    *         bucket,
