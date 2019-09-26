@@ -638,11 +638,9 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
     }
 
     boolean isV2 =
-        SignUrlOption.SignatureVersion.V2.equals(
-            optionMap.get(SignUrlOption.Option.SIGNATURE_VERSION));
+        getPreferredSignatureVersion(optionMap).equals(SignUrlOption.SignatureVersion.V2);
     boolean isV4 =
-        SignUrlOption.SignatureVersion.V4.equals(
-            optionMap.get(SignUrlOption.Option.SIGNATURE_VERSION));
+        getPreferredSignatureVersion(optionMap).equals(SignUrlOption.SignatureVersion.V4);
 
     ServiceAccountSigner credentials =
         (ServiceAccountSigner) optionMap.get(SignUrlOption.Option.SERVICE_ACCOUNT_CRED);
@@ -675,14 +673,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
               .replace(";", "%3B");
     }
 
-    boolean usePathStyle;
-    // TODO: If we decide to change the default style used to generate URLs, switch this logic to
-    // set usePathStyle to false unless PATH_STYLE was specified.
-    if (optionMap.containsKey(SignUrlOption.Option.VIRTUAL_HOSTED_STYLE)) {
-      usePathStyle = false;
-    } else {
-      usePathStyle = true;
-    }
+    boolean usePathStyle = shouldUsePathStyleForSignedUrl(optionMap);
 
     String storageXmlHostName =
         usePathStyle
@@ -749,8 +740,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
     pathBuilder.append(PATH_DELIMITER).append(slashlessBucketName);
     if (Strings.isNullOrEmpty(escapedBlobName)) {
       boolean isV2 =
-          SignUrlOption.SignatureVersion.V2.equals(
-              optionMap.get(SignUrlOption.Option.SIGNATURE_VERSION));
+          getPreferredSignatureVersion(optionMap).equals(SignUrlOption.SignatureVersion.V2);
       // If using virtual-hosted style URLs with V2 signing, the path string for a bucket resource
       // must end with a forward slash.
       if (optionMap.containsKey(SignUrlOption.Option.VIRTUAL_HOSTED_STYLE) && isV2) {
@@ -763,6 +753,28 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
     }
     pathBuilder.append(escapedBlobName);
     return pathBuilder.toString();
+  }
+
+  private SignUrlOption.SignatureVersion getPreferredSignatureVersion(
+      EnumMap<SignUrlOption.Option, Object> optionMap) {
+    // Check for an explicitly specified version in the map.
+    for (SignUrlOption.SignatureVersion version : SignUrlOption.SignatureVersion.values()) {
+      if (version.equals(optionMap.get(SignUrlOption.Option.SIGNATURE_VERSION))) {
+        return version;
+      }
+    }
+    // TODO(#6362): V2 is the default, and thus can be specified either explicitly or implicitly
+    // Change this to V4 once we make it the default.
+    return SignUrlOption.SignatureVersion.V2;
+  }
+
+  private boolean shouldUsePathStyleForSignedUrl(EnumMap<SignUrlOption.Option, Object> optionMap) {
+    // TODO(#6362): If we decide to change the default style used to generate URLs, switch this
+    // logic to return false unless PATH_STYLE was explicitly specified.
+    if (optionMap.containsKey(SignUrlOption.Option.VIRTUAL_HOSTED_STYLE)) {
+      return false;
+    }
+    return true;
   }
 
   /**
