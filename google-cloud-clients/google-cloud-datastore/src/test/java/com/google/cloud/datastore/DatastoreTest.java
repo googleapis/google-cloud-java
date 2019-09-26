@@ -1135,4 +1135,28 @@ public class DatastoreTest {
     datastore.get(KEY1);
     EasyMock.verify(rpcFactoryMock, rpcMock);
   }
+
+  @Test
+  public void testGqlQueryWithBinding() {
+    Query<Entity> query =
+        Query.newGqlQueryBuilder(ResultType.ENTITY, "select * from " + KIND1)
+            .setBinding("name")
+            .build();
+    Iterator<Entity> results = datastore.run(query);
+    assertTrue(results.hasNext());
+    assertEquals(ENTITY1, results.next());
+    assertFalse(results.hasNext());
+
+    Query<Entity> gqlQuery =
+        Query.newGqlQueryBuilder(ResultType.ENTITY, "select * from " + KIND1)
+            .setBinding("name")
+            .build();
+    Iterator<Entity> queryResults = datastore.run(gqlQuery);
+    int count = 0;
+    while (queryResults.hasNext()) {
+      queryResults.next();
+      count++;
+    }
+    assertEquals(1, count);
+  }
 }

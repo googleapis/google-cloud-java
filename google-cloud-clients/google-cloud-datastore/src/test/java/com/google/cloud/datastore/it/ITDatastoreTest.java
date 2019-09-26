@@ -871,4 +871,17 @@ public class ITDatastoreTest {
     QueryResults results = DATASTORE.run(query);
     assertFalse(results.hasNext());
   }
+
+  @Test
+  public void testGqlQueryWithBinding() {
+    Query<Entity> query =
+        Query.newGqlQueryBuilder(ResultType.ENTITY, "select * from " + KIND1)
+            .setNamespace(NAMESPACE)
+            .setBinding("name")
+            .build();
+    Iterator<Entity> results = DATASTORE.run(query);
+    assertTrue(results.hasNext());
+    assertEquals(ENTITY1, results.next());
+    assertFalse(results.hasNext());
+  }
 }

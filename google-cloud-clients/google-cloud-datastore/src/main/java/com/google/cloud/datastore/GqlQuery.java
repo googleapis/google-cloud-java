@@ -292,6 +292,16 @@ public final class GqlQuery<V> extends Query<V> {
     }
 
     /**
+     * Sets a new named binding with null value.
+     *
+     * @param name name of the binding
+     */
+    public Builder<V> setBinding(String name) {
+      namedBindings.put(name, toBinding(BlobValue.MARSHALLER, new ArrayList()));
+      return this;
+    }
+
+    /**
      * Sets a new positional binding.
      *
      * @param cursor a {@link Cursor} object to be set as a new positional binding
