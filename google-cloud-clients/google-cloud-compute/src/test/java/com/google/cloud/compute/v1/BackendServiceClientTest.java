@@ -449,6 +449,7 @@ public class BackendServiceClientTest {
     String id = "id3355";
     String kind = "kind3292052";
     String loadBalancingScheme = "loadBalancingScheme1974502980";
+    String localityLbPolicy = "localityLbPolicy-2016052161";
     String name = "name3373707";
     Integer port = 3446913;
     String portName = "portName1115276169";
@@ -469,6 +470,7 @@ public class BackendServiceClientTest {
             .setId(id)
             .setKind(kind)
             .setLoadBalancingScheme(loadBalancingScheme)
+            .setLocalityLbPolicy(localityLbPolicy)
             .setName(name)
             .setPort(port)
             .setPortName(portName)
