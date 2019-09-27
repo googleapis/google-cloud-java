@@ -119,7 +119,9 @@ public final class ListTransferRunsResponse extends com.google.protobuf.Generate
    * Output only. The stored pipeline transfer runs.
    * </pre>
    *
-   * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferRun transfer_runs = 1;</code>
+   * <code>
+   * repeated .google.cloud.bigquery.datatransfer.v1.TransferRun transfer_runs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public java.util.List<com.google.cloud.bigquery.datatransfer.v1.TransferRun>
       getTransferRunsList() {
@@ -132,7 +134,9 @@ public final class ListTransferRunsResponse extends com.google.protobuf.Generate
    * Output only. The stored pipeline transfer runs.
    * </pre>
    *
-   * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferRun transfer_runs = 1;</code>
+   * <code>
+   * repeated .google.cloud.bigquery.datatransfer.v1.TransferRun transfer_runs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public java.util.List<? extends com.google.cloud.bigquery.datatransfer.v1.TransferRunOrBuilder>
       getTransferRunsOrBuilderList() {
@@ -145,7 +149,9 @@ public final class ListTransferRunsResponse extends com.google.protobuf.Generate
    * Output only. The stored pipeline transfer runs.
    * </pre>
    *
-   * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferRun transfer_runs = 1;</code>
+   * <code>
+   * repeated .google.cloud.bigquery.datatransfer.v1.TransferRun transfer_runs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public int getTransferRunsCount() {
     return transferRuns_.size();
@@ -157,7 +163,9 @@ public final class ListTransferRunsResponse extends com.google.protobuf.Generate
    * Output only. The stored pipeline transfer runs.
    * </pre>
    *
-   * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferRun transfer_runs = 1;</code>
+   * <code>
+   * repeated .google.cloud.bigquery.datatransfer.v1.TransferRun transfer_runs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.cloud.bigquery.datatransfer.v1.TransferRun getTransferRuns(int index) {
     return transferRuns_.get(index);
@@ -169,7 +177,9 @@ public final class ListTransferRunsResponse extends com.google.protobuf.Generate
    * Output only. The stored pipeline transfer runs.
    * </pre>
    *
-   * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferRun transfer_runs = 1;</code>
+   * <code>
+   * repeated .google.cloud.bigquery.datatransfer.v1.TransferRun transfer_runs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.cloud.bigquery.datatransfer.v1.TransferRunOrBuilder getTransferRunsOrBuilder(
       int index) {
@@ -188,7 +198,7 @@ public final class ListTransferRunsResponse extends com.google.protobuf.Generate
    * to request the next page of list results.
    * </pre>
    *
-   * <code>string next_page_token = 2;</code>
+   * <code>string next_page_token = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
@@ -211,7 +221,7 @@ public final class ListTransferRunsResponse extends com.google.protobuf.Generate
    * to request the next page of list results.
    * </pre>
    *
-   * <code>string next_page_token = 2;</code>
+   * <code>string next_page_token = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
@@ -637,7 +647,9 @@ public final class ListTransferRunsResponse extends com.google.protobuf.Generate
      * Output only. The stored pipeline transfer runs.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferRun transfer_runs = 1;</code>
+     * <code>
+     * repeated .google.cloud.bigquery.datatransfer.v1.TransferRun transfer_runs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public java.util.List<com.google.cloud.bigquery.datatransfer.v1.TransferRun>
         getTransferRunsList() {
@@ -654,7 +666,9 @@ public final class ListTransferRunsResponse extends com.google.protobuf.Generate
      * Output only. The stored pipeline transfer runs.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferRun transfer_runs = 1;</code>
+     * <code>
+     * repeated .google.cloud.bigquery.datatransfer.v1.TransferRun transfer_runs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public int getTransferRunsCount() {
       if (transferRunsBuilder_ == null) {
@@ -670,7 +684,9 @@ public final class ListTransferRunsResponse extends com.google.protobuf.Generate
      * Output only. The stored pipeline transfer runs.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferRun transfer_runs = 1;</code>
+     * <code>
+     * repeated .google.cloud.bigquery.datatransfer.v1.TransferRun transfer_runs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.bigquery.datatransfer.v1.TransferRun getTransferRuns(int index) {
       if (transferRunsBuilder_ == null) {
@@ -686,7 +702,9 @@ public final class ListTransferRunsResponse extends com.google.protobuf.Generate
      * Output only. The stored pipeline transfer runs.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferRun transfer_runs = 1;</code>
+     * <code>
+     * repeated .google.cloud.bigquery.datatransfer.v1.TransferRun transfer_runs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setTransferRuns(
         int index, com.google.cloud.bigquery.datatransfer.v1.TransferRun value) {
@@ -709,7 +727,9 @@ public final class ListTransferRunsResponse extends com.google.protobuf.Generate
      * Output only. The stored pipeline transfer runs.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferRun transfer_runs = 1;</code>
+     * <code>
+     * repeated .google.cloud.bigquery.datatransfer.v1.TransferRun transfer_runs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setTransferRuns(
         int index, com.google.cloud.bigquery.datatransfer.v1.TransferRun.Builder builderForValue) {
@@ -729,7 +749,9 @@ public final class ListTransferRunsResponse extends com.google.protobuf.Generate
      * Output only. The stored pipeline transfer runs.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferRun transfer_runs = 1;</code>
+     * <code>
+     * repeated .google.cloud.bigquery.datatransfer.v1.TransferRun transfer_runs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addTransferRuns(com.google.cloud.bigquery.datatransfer.v1.TransferRun value) {
       if (transferRunsBuilder_ == null) {
@@ -751,7 +773,9 @@ public final class ListTransferRunsResponse extends com.google.protobuf.Generate
      * Output only. The stored pipeline transfer runs.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferRun transfer_runs = 1;</code>
+     * <code>
+     * repeated .google.cloud.bigquery.datatransfer.v1.TransferRun transfer_runs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addTransferRuns(
         int index, com.google.cloud.bigquery.datatransfer.v1.TransferRun value) {
@@ -774,7 +798,9 @@ public final class ListTransferRunsResponse extends com.google.protobuf.Generate
      * Output only. The stored pipeline transfer runs.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferRun transfer_runs = 1;</code>
+     * <code>
+     * repeated .google.cloud.bigquery.datatransfer.v1.TransferRun transfer_runs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addTransferRuns(
         com.google.cloud.bigquery.datatransfer.v1.TransferRun.Builder builderForValue) {
@@ -794,7 +820,9 @@ public final class ListTransferRunsResponse extends com.google.protobuf.Generate
      * Output only. The stored pipeline transfer runs.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferRun transfer_runs = 1;</code>
+     * <code>
+     * repeated .google.cloud.bigquery.datatransfer.v1.TransferRun transfer_runs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addTransferRuns(
         int index, com.google.cloud.bigquery.datatransfer.v1.TransferRun.Builder builderForValue) {
@@ -814,7 +842,9 @@ public final class ListTransferRunsResponse extends com.google.protobuf.Generate
      * Output only. The stored pipeline transfer runs.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferRun transfer_runs = 1;</code>
+     * <code>
+     * repeated .google.cloud.bigquery.datatransfer.v1.TransferRun transfer_runs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addAllTransferRuns(
         java.lang.Iterable<? extends com.google.cloud.bigquery.datatransfer.v1.TransferRun>
@@ -835,7 +865,9 @@ public final class ListTransferRunsResponse extends com.google.protobuf.Generate
      * Output only. The stored pipeline transfer runs.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferRun transfer_runs = 1;</code>
+     * <code>
+     * repeated .google.cloud.bigquery.datatransfer.v1.TransferRun transfer_runs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearTransferRuns() {
       if (transferRunsBuilder_ == null) {
@@ -854,7 +886,9 @@ public final class ListTransferRunsResponse extends com.google.protobuf.Generate
      * Output only. The stored pipeline transfer runs.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferRun transfer_runs = 1;</code>
+     * <code>
+     * repeated .google.cloud.bigquery.datatransfer.v1.TransferRun transfer_runs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder removeTransferRuns(int index) {
       if (transferRunsBuilder_ == null) {
@@ -873,7 +907,9 @@ public final class ListTransferRunsResponse extends com.google.protobuf.Generate
      * Output only. The stored pipeline transfer runs.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferRun transfer_runs = 1;</code>
+     * <code>
+     * repeated .google.cloud.bigquery.datatransfer.v1.TransferRun transfer_runs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.bigquery.datatransfer.v1.TransferRun.Builder getTransferRunsBuilder(
         int index) {
@@ -886,7 +922,9 @@ public final class ListTransferRunsResponse extends com.google.protobuf.Generate
      * Output only. The stored pipeline transfer runs.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferRun transfer_runs = 1;</code>
+     * <code>
+     * repeated .google.cloud.bigquery.datatransfer.v1.TransferRun transfer_runs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.bigquery.datatransfer.v1.TransferRunOrBuilder getTransferRunsOrBuilder(
         int index) {
@@ -903,7 +941,9 @@ public final class ListTransferRunsResponse extends com.google.protobuf.Generate
      * Output only. The stored pipeline transfer runs.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferRun transfer_runs = 1;</code>
+     * <code>
+     * repeated .google.cloud.bigquery.datatransfer.v1.TransferRun transfer_runs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public java.util.List<? extends com.google.cloud.bigquery.datatransfer.v1.TransferRunOrBuilder>
         getTransferRunsOrBuilderList() {
@@ -920,7 +960,9 @@ public final class ListTransferRunsResponse extends com.google.protobuf.Generate
      * Output only. The stored pipeline transfer runs.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferRun transfer_runs = 1;</code>
+     * <code>
+     * repeated .google.cloud.bigquery.datatransfer.v1.TransferRun transfer_runs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.bigquery.datatransfer.v1.TransferRun.Builder addTransferRunsBuilder() {
       return getTransferRunsFieldBuilder()
@@ -933,7 +975,9 @@ public final class ListTransferRunsResponse extends com.google.protobuf.Generate
      * Output only. The stored pipeline transfer runs.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferRun transfer_runs = 1;</code>
+     * <code>
+     * repeated .google.cloud.bigquery.datatransfer.v1.TransferRun transfer_runs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.bigquery.datatransfer.v1.TransferRun.Builder addTransferRunsBuilder(
         int index) {
@@ -948,7 +992,9 @@ public final class ListTransferRunsResponse extends com.google.protobuf.Generate
      * Output only. The stored pipeline transfer runs.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferRun transfer_runs = 1;</code>
+     * <code>
+     * repeated .google.cloud.bigquery.datatransfer.v1.TransferRun transfer_runs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public java.util.List<com.google.cloud.bigquery.datatransfer.v1.TransferRun.Builder>
         getTransferRunsBuilderList() {
@@ -983,7 +1029,7 @@ public final class ListTransferRunsResponse extends com.google.protobuf.Generate
      * to request the next page of list results.
      * </pre>
      *
-     * <code>string next_page_token = 2;</code>
+     * <code>string next_page_token = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public java.lang.String getNextPageToken() {
       java.lang.Object ref = nextPageToken_;
@@ -1006,7 +1052,7 @@ public final class ListTransferRunsResponse extends com.google.protobuf.Generate
      * to request the next page of list results.
      * </pre>
      *
-     * <code>string next_page_token = 2;</code>
+     * <code>string next_page_token = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.protobuf.ByteString getNextPageTokenBytes() {
       java.lang.Object ref = nextPageToken_;
@@ -1029,7 +1075,7 @@ public final class ListTransferRunsResponse extends com.google.protobuf.Generate
      * to request the next page of list results.
      * </pre>
      *
-     * <code>string next_page_token = 2;</code>
+     * <code>string next_page_token = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setNextPageToken(java.lang.String value) {
       if (value == null) {
@@ -1050,7 +1096,7 @@ public final class ListTransferRunsResponse extends com.google.protobuf.Generate
      * to request the next page of list results.
      * </pre>
      *
-     * <code>string next_page_token = 2;</code>
+     * <code>string next_page_token = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearNextPageToken() {
 
@@ -1068,7 +1114,7 @@ public final class ListTransferRunsResponse extends com.google.protobuf.Generate
      * to request the next page of list results.
      * </pre>
      *
-     * <code>string next_page_token = 2;</code>
+     * <code>string next_page_token = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setNextPageTokenBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

@@ -12,30 +12,36 @@ public interface UpdateTransferConfigRequestOrBuilder
    *
    *
    * <pre>
-   * Data transfer configuration to create.
+   * Required. Data transfer configuration to create.
    * </pre>
    *
-   * <code>.google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_config = 1;</code>
+   * <code>
+   * .google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_config = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   boolean hasTransferConfig();
   /**
    *
    *
    * <pre>
-   * Data transfer configuration to create.
+   * Required. Data transfer configuration to create.
    * </pre>
    *
-   * <code>.google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_config = 1;</code>
+   * <code>
+   * .google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_config = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.bigquery.datatransfer.v1.TransferConfig getTransferConfig();
   /**
    *
    *
    * <pre>
-   * Data transfer configuration to create.
+   * Required. Data transfer configuration to create.
    * </pre>
    *
-   * <code>.google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_config = 1;</code>
+   * <code>
+   * .google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_config = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.bigquery.datatransfer.v1.TransferConfigOrBuilder getTransferConfigOrBuilder();
 
@@ -92,30 +98,33 @@ public interface UpdateTransferConfigRequestOrBuilder
    *
    *
    * <pre>
-   * Required list of fields to be updated in this request.
+   * Required. Required list of fields to be updated in this request.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 4;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   boolean hasUpdateMask();
   /**
    *
    *
    * <pre>
-   * Required list of fields to be updated in this request.
+   * Required. Required list of fields to be updated in this request.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 4;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**
    *
    *
    * <pre>
-   * Required list of fields to be updated in this request.
+   * Required. Required list of fields to be updated in this request.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 4;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
 
