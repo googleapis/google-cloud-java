@@ -1486,8 +1486,6 @@ public class ITBigQueryTest {
     TableInfo tableInfo = TableInfo.of(sourceTable, tableDefinition);
     Table createdTable = bigquery.create(tableInfo);
     assertNotNull(createdTable);
-    assertEquals(DATASET, createdTable.getTableId().getDataset());
-    assertEquals(sourceTableName, createdTable.getTableId().getTable());
     TableId destinationTable = TableId.of(DATASET, destinationTableName);
     CopyJobConfiguration configuration =
         CopyJobConfiguration.newBuilder(destinationTable, sourceTable).setLabels(labels).build();
@@ -1498,9 +1496,6 @@ public class ITBigQueryTest {
     assertEquals(labels, copyJobConfiguration.getLabels());
     Table remoteTable = bigquery.getTable(DATASET, destinationTableName);
     assertNotNull(remoteTable);
-    assertEquals(destinationTable.getDataset(), remoteTable.getTableId().getDataset());
-    assertEquals(destinationTableName, remoteTable.getTableId().getTable());
-    assertEquals(TABLE_SCHEMA, remoteTable.getDefinition().getSchema());
     assertTrue(createdTable.delete());
     assertTrue(remoteTable.delete());
   }
