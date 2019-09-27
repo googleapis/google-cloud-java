@@ -26,28 +26,32 @@ import javax.annotation.Nullable;
 @Generated("by GAPIC")
 @BetaApi
 /**
- * A path-matching rule for a URL. If matched, will use the specified BackendService to handle the
- * traffic arriving at this URL.
+ * An HttpRouteRule specifies how to match an HTTP request and the corresponding routing action that
+ * load balancing proxies will perform.
  */
-public final class PathRule implements ApiMessage {
-  private final List<String> paths;
+public final class HttpRouteRule implements ApiMessage {
+  private final HttpHeaderAction headerAction;
+  private final List<HttpRouteRuleMatch> matchRules;
   private final HttpRouteAction routeAction;
   private final String service;
   private final HttpRedirectAction urlRedirect;
 
-  private PathRule() {
-    this.paths = null;
+  private HttpRouteRule() {
+    this.headerAction = null;
+    this.matchRules = null;
     this.routeAction = null;
     this.service = null;
     this.urlRedirect = null;
   }
 
-  private PathRule(
-      List<String> paths,
+  private HttpRouteRule(
+      HttpHeaderAction headerAction,
+      List<HttpRouteRuleMatch> matchRules,
       HttpRouteAction routeAction,
       String service,
       HttpRedirectAction urlRedirect) {
-    this.paths = paths;
+    this.headerAction = headerAction;
+    this.matchRules = matchRules;
     this.routeAction = routeAction;
     this.service = service;
     this.urlRedirect = urlRedirect;
@@ -55,8 +59,11 @@ public final class PathRule implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if ("paths".equals(fieldName)) {
-      return paths;
+    if ("headerAction".equals(fieldName)) {
+      return headerAction;
+    }
+    if ("matchRules".equals(fieldName)) {
+      return matchRules;
     }
     if ("routeAction".equals(fieldName)) {
       return routeAction;
@@ -89,20 +96,25 @@ public final class PathRule implements ApiMessage {
   }
 
   /**
-   * The list of path patterns to match. Each must start with / and the only place a &#42; is
-   * allowed is at the end following a /. The string fed to the path matcher does not include any
-   * text after the first ? or #, and those chars are not allowed here.
+   * Specifies changes to request and response headers that need to take effect for the selected
+   * backendService. The headerAction specified here are applied before the matching
+   * pathMatchers[].headerAction and after
+   * pathMatchers[].routeRules[].routeAction.weightedBackendService.backendServiceWeightAction[].headerAction
    */
-  public List<String> getPathsList() {
-    return paths;
+  public HttpHeaderAction getHeaderAction() {
+    return headerAction;
+  }
+
+  public List<HttpRouteRuleMatch> getMatchRulesList() {
+    return matchRules;
   }
 
   /**
-   * In response to a matching path, the load balancer performs advanced routing actions like URL
-   * rewrites, header transformations, etc. prior to forwarding the request to the selected backend.
-   * If routeAction specifies any weightedBackendServices, service must not be set. Conversely if
-   * service is set, routeAction cannot contain any weightedBackendServices. Only one of routeAction
-   * or urlRedirect must be set.
+   * In response to a matching matchRule, the load balancer performs advanced routing actions like
+   * URL rewrites, header transformations, etc. prior to forwarding the request to the selected
+   * backend. If routeAction specifies any weightedBackendServices, service must not be set.
+   * Conversely if service is set, routeAction cannot contain any weightedBackendServices. Only one
+   * of routeAction or urlRedirect must be set.
    */
   public HttpRouteAction getRouteAction() {
     return routeAction;
@@ -121,7 +133,7 @@ public final class PathRule implements ApiMessage {
   }
 
   /**
-   * When a path pattern is matched, the request is redirected to a URL specified by urlRedirect. If
+   * When this rule is matched, the request is redirected to a URL specified by urlRedirect. If
    * urlRedirect is specified, service or routeAction must not be set.
    */
   public HttpRedirectAction getUrlRedirect() {
@@ -132,7 +144,7 @@ public final class PathRule implements ApiMessage {
     return DEFAULT_INSTANCE.toBuilder();
   }
 
-  public static Builder newBuilder(PathRule prototype) {
+  public static Builder newBuilder(HttpRouteRule prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -140,28 +152,32 @@ public final class PathRule implements ApiMessage {
     return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
-  public static PathRule getDefaultInstance() {
+  public static HttpRouteRule getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final PathRule DEFAULT_INSTANCE;
+  private static final HttpRouteRule DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new PathRule();
+    DEFAULT_INSTANCE = new HttpRouteRule();
   }
 
   public static class Builder {
-    private List<String> paths;
+    private HttpHeaderAction headerAction;
+    private List<HttpRouteRuleMatch> matchRules;
     private HttpRouteAction routeAction;
     private String service;
     private HttpRedirectAction urlRedirect;
 
     Builder() {}
 
-    public Builder mergeFrom(PathRule other) {
-      if (other == PathRule.getDefaultInstance()) return this;
-      if (other.getPathsList() != null) {
-        this.paths = other.paths;
+    public Builder mergeFrom(HttpRouteRule other) {
+      if (other == HttpRouteRule.getDefaultInstance()) return this;
+      if (other.getHeaderAction() != null) {
+        this.headerAction = other.headerAction;
+      }
+      if (other.getMatchRulesList() != null) {
+        this.matchRules = other.matchRules;
       }
       if (other.getRouteAction() != null) {
         this.routeAction = other.routeAction;
@@ -175,51 +191,58 @@ public final class PathRule implements ApiMessage {
       return this;
     }
 
-    Builder(PathRule source) {
-      this.paths = source.paths;
+    Builder(HttpRouteRule source) {
+      this.headerAction = source.headerAction;
+      this.matchRules = source.matchRules;
       this.routeAction = source.routeAction;
       this.service = source.service;
       this.urlRedirect = source.urlRedirect;
     }
 
     /**
-     * The list of path patterns to match. Each must start with / and the only place a &#42; is
-     * allowed is at the end following a /. The string fed to the path matcher does not include any
-     * text after the first ? or #, and those chars are not allowed here.
+     * Specifies changes to request and response headers that need to take effect for the selected
+     * backendService. The headerAction specified here are applied before the matching
+     * pathMatchers[].headerAction and after
+     * pathMatchers[].routeRules[].routeAction.weightedBackendService.backendServiceWeightAction[].headerAction
      */
-    public List<String> getPathsList() {
-      return paths;
+    public HttpHeaderAction getHeaderAction() {
+      return headerAction;
     }
 
     /**
-     * The list of path patterns to match. Each must start with / and the only place a &#42; is
-     * allowed is at the end following a /. The string fed to the path matcher does not include any
-     * text after the first ? or #, and those chars are not allowed here.
+     * Specifies changes to request and response headers that need to take effect for the selected
+     * backendService. The headerAction specified here are applied before the matching
+     * pathMatchers[].headerAction and after
+     * pathMatchers[].routeRules[].routeAction.weightedBackendService.backendServiceWeightAction[].headerAction
      */
-    public Builder addAllPaths(List<String> paths) {
-      if (this.paths == null) {
-        this.paths = new LinkedList<>();
+    public Builder setHeaderAction(HttpHeaderAction headerAction) {
+      this.headerAction = headerAction;
+      return this;
+    }
+
+    public List<HttpRouteRuleMatch> getMatchRulesList() {
+      return matchRules;
+    }
+
+    public Builder addAllMatchRules(List<HttpRouteRuleMatch> matchRules) {
+      if (this.matchRules == null) {
+        this.matchRules = new LinkedList<>();
       }
-      this.paths.addAll(paths);
+      this.matchRules.addAll(matchRules);
+      return this;
+    }
+
+    public Builder addMatchRules(HttpRouteRuleMatch matchRules) {
+      if (this.matchRules == null) {
+        this.matchRules = new LinkedList<>();
+      }
+      this.matchRules.add(matchRules);
       return this;
     }
 
     /**
-     * The list of path patterns to match. Each must start with / and the only place a &#42; is
-     * allowed is at the end following a /. The string fed to the path matcher does not include any
-     * text after the first ? or #, and those chars are not allowed here.
-     */
-    public Builder addPaths(String paths) {
-      if (this.paths == null) {
-        this.paths = new LinkedList<>();
-      }
-      this.paths.add(paths);
-      return this;
-    }
-
-    /**
-     * In response to a matching path, the load balancer performs advanced routing actions like URL
-     * rewrites, header transformations, etc. prior to forwarding the request to the selected
+     * In response to a matching matchRule, the load balancer performs advanced routing actions like
+     * URL rewrites, header transformations, etc. prior to forwarding the request to the selected
      * backend. If routeAction specifies any weightedBackendServices, service must not be set.
      * Conversely if service is set, routeAction cannot contain any weightedBackendServices. Only
      * one of routeAction or urlRedirect must be set.
@@ -229,8 +252,8 @@ public final class PathRule implements ApiMessage {
     }
 
     /**
-     * In response to a matching path, the load balancer performs advanced routing actions like URL
-     * rewrites, header transformations, etc. prior to forwarding the request to the selected
+     * In response to a matching matchRule, the load balancer performs advanced routing actions like
+     * URL rewrites, header transformations, etc. prior to forwarding the request to the selected
      * backend. If routeAction specifies any weightedBackendServices, service must not be set.
      * Conversely if service is set, routeAction cannot contain any weightedBackendServices. Only
      * one of routeAction or urlRedirect must be set.
@@ -266,30 +289,31 @@ public final class PathRule implements ApiMessage {
     }
 
     /**
-     * When a path pattern is matched, the request is redirected to a URL specified by urlRedirect.
-     * If urlRedirect is specified, service or routeAction must not be set.
+     * When this rule is matched, the request is redirected to a URL specified by urlRedirect. If
+     * urlRedirect is specified, service or routeAction must not be set.
      */
     public HttpRedirectAction getUrlRedirect() {
       return urlRedirect;
     }
 
     /**
-     * When a path pattern is matched, the request is redirected to a URL specified by urlRedirect.
-     * If urlRedirect is specified, service or routeAction must not be set.
+     * When this rule is matched, the request is redirected to a URL specified by urlRedirect. If
+     * urlRedirect is specified, service or routeAction must not be set.
      */
     public Builder setUrlRedirect(HttpRedirectAction urlRedirect) {
       this.urlRedirect = urlRedirect;
       return this;
     }
 
-    public PathRule build() {
+    public HttpRouteRule build() {
 
-      return new PathRule(paths, routeAction, service, urlRedirect);
+      return new HttpRouteRule(headerAction, matchRules, routeAction, service, urlRedirect);
     }
 
     public Builder clone() {
       Builder newBuilder = new Builder();
-      newBuilder.addAllPaths(this.paths);
+      newBuilder.setHeaderAction(this.headerAction);
+      newBuilder.addAllMatchRules(this.matchRules);
       newBuilder.setRouteAction(this.routeAction);
       newBuilder.setService(this.service);
       newBuilder.setUrlRedirect(this.urlRedirect);
@@ -299,9 +323,12 @@ public final class PathRule implements ApiMessage {
 
   @Override
   public String toString() {
-    return "PathRule{"
-        + "paths="
-        + paths
+    return "HttpRouteRule{"
+        + "headerAction="
+        + headerAction
+        + ", "
+        + "matchRules="
+        + matchRules
         + ", "
         + "routeAction="
         + routeAction
@@ -319,9 +346,10 @@ public final class PathRule implements ApiMessage {
     if (o == this) {
       return true;
     }
-    if (o instanceof PathRule) {
-      PathRule that = (PathRule) o;
-      return Objects.equals(this.paths, that.getPathsList())
+    if (o instanceof HttpRouteRule) {
+      HttpRouteRule that = (HttpRouteRule) o;
+      return Objects.equals(this.headerAction, that.getHeaderAction())
+          && Objects.equals(this.matchRules, that.getMatchRulesList())
           && Objects.equals(this.routeAction, that.getRouteAction())
           && Objects.equals(this.service, that.getService())
           && Objects.equals(this.urlRedirect, that.getUrlRedirect());
@@ -331,6 +359,6 @@ public final class PathRule implements ApiMessage {
 
   @Override
   public int hashCode() {
-    return Objects.hash(paths, routeAction, service, urlRedirect);
+    return Objects.hash(headerAction, matchRules, routeAction, service, urlRedirect);
   }
 }

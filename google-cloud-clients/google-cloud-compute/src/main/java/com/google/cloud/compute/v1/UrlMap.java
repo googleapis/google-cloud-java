@@ -36,9 +36,12 @@ import javax.annotation.Nullable;
  */
 public final class UrlMap implements ApiMessage {
   private final String creationTimestamp;
+  private final HttpRouteAction defaultRouteAction;
   private final String defaultService;
+  private final HttpRedirectAction defaultUrlRedirect;
   private final String description;
   private final String fingerprint;
+  private final HttpHeaderAction headerAction;
   private final List<HostRule> hostRules;
   private final String id;
   private final String kind;
@@ -50,9 +53,12 @@ public final class UrlMap implements ApiMessage {
 
   private UrlMap() {
     this.creationTimestamp = null;
+    this.defaultRouteAction = null;
     this.defaultService = null;
+    this.defaultUrlRedirect = null;
     this.description = null;
     this.fingerprint = null;
+    this.headerAction = null;
     this.hostRules = null;
     this.id = null;
     this.kind = null;
@@ -65,9 +71,12 @@ public final class UrlMap implements ApiMessage {
 
   private UrlMap(
       String creationTimestamp,
+      HttpRouteAction defaultRouteAction,
       String defaultService,
+      HttpRedirectAction defaultUrlRedirect,
       String description,
       String fingerprint,
+      HttpHeaderAction headerAction,
       List<HostRule> hostRules,
       String id,
       String kind,
@@ -77,9 +86,12 @@ public final class UrlMap implements ApiMessage {
       String selfLink,
       List<UrlMapTest> tests) {
     this.creationTimestamp = creationTimestamp;
+    this.defaultRouteAction = defaultRouteAction;
     this.defaultService = defaultService;
+    this.defaultUrlRedirect = defaultUrlRedirect;
     this.description = description;
     this.fingerprint = fingerprint;
+    this.headerAction = headerAction;
     this.hostRules = hostRules;
     this.id = id;
     this.kind = kind;
@@ -95,14 +107,23 @@ public final class UrlMap implements ApiMessage {
     if ("creationTimestamp".equals(fieldName)) {
       return creationTimestamp;
     }
+    if ("defaultRouteAction".equals(fieldName)) {
+      return defaultRouteAction;
+    }
     if ("defaultService".equals(fieldName)) {
       return defaultService;
+    }
+    if ("defaultUrlRedirect".equals(fieldName)) {
+      return defaultUrlRedirect;
     }
     if ("description".equals(fieldName)) {
       return description;
     }
     if ("fingerprint".equals(fieldName)) {
       return fingerprint;
+    }
+    if ("headerAction".equals(fieldName)) {
+      return headerAction;
     }
     if ("hostRules".equals(fieldName)) {
       return hostRules;
@@ -155,6 +176,18 @@ public final class UrlMap implements ApiMessage {
   }
 
   /**
+   * defaultRouteAction takes effect when none of the hostRules match. The load balancer performs
+   * advanced routing actions like URL rewrites, header transformations, etc. prior to forwarding
+   * the request to the selected backend. If defaultRouteAction specifies any
+   * weightedBackendServices, defaultService must not be set. Conversely if defaultService is set,
+   * defaultRouteAction cannot contain any weightedBackendServices. Only one of defaultRouteAction
+   * or defaultUrlRedirect must be set.
+   */
+  public HttpRouteAction getDefaultRouteAction() {
+    return defaultRouteAction;
+  }
+
+  /**
    * The full or partial URL of the defaultService resource to which traffic is directed if none of
    * the hostRules match. If defaultRouteAction is additionally specified, advanced routing actions
    * like URL Rewrites, etc. take effect prior to sending the request to the backend. However, if
@@ -165,6 +198,15 @@ public final class UrlMap implements ApiMessage {
    */
   public String getDefaultService() {
     return defaultService;
+  }
+
+  /**
+   * When none of the specified hostRules match, the request is redirected to a URL specified by
+   * defaultUrlRedirect. If defaultUrlRedirect is specified, defaultService or defaultRouteAction
+   * must not be set.
+   */
+  public HttpRedirectAction getDefaultUrlRedirect() {
+    return defaultUrlRedirect;
   }
 
   /**
@@ -184,6 +226,15 @@ public final class UrlMap implements ApiMessage {
    */
   public String getFingerprint() {
     return fingerprint;
+  }
+
+  /**
+   * Specifies changes to request and response headers that need to take effect for the selected
+   * backendService. The headerAction specified here take effect after headerAction specified under
+   * pathMatcher.
+   */
+  public HttpHeaderAction getHeaderAction() {
+    return headerAction;
   }
 
   /** The list of HostRules to use against the URL. */
@@ -265,9 +316,12 @@ public final class UrlMap implements ApiMessage {
 
   public static class Builder {
     private String creationTimestamp;
+    private HttpRouteAction defaultRouteAction;
     private String defaultService;
+    private HttpRedirectAction defaultUrlRedirect;
     private String description;
     private String fingerprint;
+    private HttpHeaderAction headerAction;
     private List<HostRule> hostRules;
     private String id;
     private String kind;
@@ -284,14 +338,23 @@ public final class UrlMap implements ApiMessage {
       if (other.getCreationTimestamp() != null) {
         this.creationTimestamp = other.creationTimestamp;
       }
+      if (other.getDefaultRouteAction() != null) {
+        this.defaultRouteAction = other.defaultRouteAction;
+      }
       if (other.getDefaultService() != null) {
         this.defaultService = other.defaultService;
+      }
+      if (other.getDefaultUrlRedirect() != null) {
+        this.defaultUrlRedirect = other.defaultUrlRedirect;
       }
       if (other.getDescription() != null) {
         this.description = other.description;
       }
       if (other.getFingerprint() != null) {
         this.fingerprint = other.fingerprint;
+      }
+      if (other.getHeaderAction() != null) {
+        this.headerAction = other.headerAction;
       }
       if (other.getHostRulesList() != null) {
         this.hostRules = other.hostRules;
@@ -322,9 +385,12 @@ public final class UrlMap implements ApiMessage {
 
     Builder(UrlMap source) {
       this.creationTimestamp = source.creationTimestamp;
+      this.defaultRouteAction = source.defaultRouteAction;
       this.defaultService = source.defaultService;
+      this.defaultUrlRedirect = source.defaultUrlRedirect;
       this.description = source.description;
       this.fingerprint = source.fingerprint;
+      this.headerAction = source.headerAction;
       this.hostRules = source.hostRules;
       this.id = source.id;
       this.kind = source.kind;
@@ -343,6 +409,31 @@ public final class UrlMap implements ApiMessage {
     /** [Output Only] Creation timestamp in RFC3339 text format. */
     public Builder setCreationTimestamp(String creationTimestamp) {
       this.creationTimestamp = creationTimestamp;
+      return this;
+    }
+
+    /**
+     * defaultRouteAction takes effect when none of the hostRules match. The load balancer performs
+     * advanced routing actions like URL rewrites, header transformations, etc. prior to forwarding
+     * the request to the selected backend. If defaultRouteAction specifies any
+     * weightedBackendServices, defaultService must not be set. Conversely if defaultService is set,
+     * defaultRouteAction cannot contain any weightedBackendServices. Only one of defaultRouteAction
+     * or defaultUrlRedirect must be set.
+     */
+    public HttpRouteAction getDefaultRouteAction() {
+      return defaultRouteAction;
+    }
+
+    /**
+     * defaultRouteAction takes effect when none of the hostRules match. The load balancer performs
+     * advanced routing actions like URL rewrites, header transformations, etc. prior to forwarding
+     * the request to the selected backend. If defaultRouteAction specifies any
+     * weightedBackendServices, defaultService must not be set. Conversely if defaultService is set,
+     * defaultRouteAction cannot contain any weightedBackendServices. Only one of defaultRouteAction
+     * or defaultUrlRedirect must be set.
+     */
+    public Builder setDefaultRouteAction(HttpRouteAction defaultRouteAction) {
+      this.defaultRouteAction = defaultRouteAction;
       return this;
     }
 
@@ -370,6 +461,25 @@ public final class UrlMap implements ApiMessage {
      */
     public Builder setDefaultService(String defaultService) {
       this.defaultService = defaultService;
+      return this;
+    }
+
+    /**
+     * When none of the specified hostRules match, the request is redirected to a URL specified by
+     * defaultUrlRedirect. If defaultUrlRedirect is specified, defaultService or defaultRouteAction
+     * must not be set.
+     */
+    public HttpRedirectAction getDefaultUrlRedirect() {
+      return defaultUrlRedirect;
+    }
+
+    /**
+     * When none of the specified hostRules match, the request is redirected to a URL specified by
+     * defaultUrlRedirect. If defaultUrlRedirect is specified, defaultService or defaultRouteAction
+     * must not be set.
+     */
+    public Builder setDefaultUrlRedirect(HttpRedirectAction defaultUrlRedirect) {
+      this.defaultUrlRedirect = defaultUrlRedirect;
       return this;
     }
 
@@ -410,6 +520,25 @@ public final class UrlMap implements ApiMessage {
      */
     public Builder setFingerprint(String fingerprint) {
       this.fingerprint = fingerprint;
+      return this;
+    }
+
+    /**
+     * Specifies changes to request and response headers that need to take effect for the selected
+     * backendService. The headerAction specified here take effect after headerAction specified
+     * under pathMatcher.
+     */
+    public HttpHeaderAction getHeaderAction() {
+      return headerAction;
+    }
+
+    /**
+     * Specifies changes to request and response headers that need to take effect for the selected
+     * backendService. The headerAction specified here take effect after headerAction specified
+     * under pathMatcher.
+     */
+    public Builder setHeaderAction(HttpHeaderAction headerAction) {
+      this.headerAction = headerAction;
       return this;
     }
 
@@ -576,9 +705,12 @@ public final class UrlMap implements ApiMessage {
 
       return new UrlMap(
           creationTimestamp,
+          defaultRouteAction,
           defaultService,
+          defaultUrlRedirect,
           description,
           fingerprint,
+          headerAction,
           hostRules,
           id,
           kind,
@@ -592,9 +724,12 @@ public final class UrlMap implements ApiMessage {
     public Builder clone() {
       Builder newBuilder = new Builder();
       newBuilder.setCreationTimestamp(this.creationTimestamp);
+      newBuilder.setDefaultRouteAction(this.defaultRouteAction);
       newBuilder.setDefaultService(this.defaultService);
+      newBuilder.setDefaultUrlRedirect(this.defaultUrlRedirect);
       newBuilder.setDescription(this.description);
       newBuilder.setFingerprint(this.fingerprint);
+      newBuilder.setHeaderAction(this.headerAction);
       newBuilder.addAllHostRules(this.hostRules);
       newBuilder.setId(this.id);
       newBuilder.setKind(this.kind);
@@ -613,14 +748,23 @@ public final class UrlMap implements ApiMessage {
         + "creationTimestamp="
         + creationTimestamp
         + ", "
+        + "defaultRouteAction="
+        + defaultRouteAction
+        + ", "
         + "defaultService="
         + defaultService
+        + ", "
+        + "defaultUrlRedirect="
+        + defaultUrlRedirect
         + ", "
         + "description="
         + description
         + ", "
         + "fingerprint="
         + fingerprint
+        + ", "
+        + "headerAction="
+        + headerAction
         + ", "
         + "hostRules="
         + hostRules
@@ -656,9 +800,12 @@ public final class UrlMap implements ApiMessage {
     if (o instanceof UrlMap) {
       UrlMap that = (UrlMap) o;
       return Objects.equals(this.creationTimestamp, that.getCreationTimestamp())
+          && Objects.equals(this.defaultRouteAction, that.getDefaultRouteAction())
           && Objects.equals(this.defaultService, that.getDefaultService())
+          && Objects.equals(this.defaultUrlRedirect, that.getDefaultUrlRedirect())
           && Objects.equals(this.description, that.getDescription())
           && Objects.equals(this.fingerprint, that.getFingerprint())
+          && Objects.equals(this.headerAction, that.getHeaderAction())
           && Objects.equals(this.hostRules, that.getHostRulesList())
           && Objects.equals(this.id, that.getId())
           && Objects.equals(this.kind, that.getKind())
@@ -675,9 +822,12 @@ public final class UrlMap implements ApiMessage {
   public int hashCode() {
     return Objects.hash(
         creationTimestamp,
+        defaultRouteAction,
         defaultService,
+        defaultUrlRedirect,
         description,
         fingerprint,
+        headerAction,
         hostRules,
         id,
         kind,
