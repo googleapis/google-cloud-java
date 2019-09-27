@@ -189,10 +189,10 @@ public class BaseBigQueryStorageClient implements BackgroundResource {
    * @param tableReference Required. Reference to the table to read.
    * @param parent Required. String of the form `projects/{project_id}` indicating the project this
    *     ReadSession is associated with. This is the project that will be billed for usage.
-   * @param requestedStreams Optional. Initial number of streams. If unset or 0, we will provide a
-   *     value of streams so as to produce reasonable throughput. Must be non-negative. The number
-   *     of streams may be lower than the requested number, depending on the amount parallelism that
-   *     is reasonable for the table and the maximum amount of parallelism allowed by the system.
+   * @param requestedStreams Initial number of streams. If unset or 0, we will provide a value of
+   *     streams so as to produce reasonable throughput. Must be non-negative. The number of streams
+   *     may be lower than the requested number, depending on the amount parallelism that is
+   *     reasonable for the table and the maximum amount of parallelism allowed by the system.
    *     <p>Streams must be read starting from offset 0.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
