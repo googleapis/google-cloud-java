@@ -23,6 +23,7 @@ import com.google.cloud.grpc.GrpcTransportOptions;
 import com.google.cloud.grpc.GrpcTransportOptions.ExecutorFactory;
 import com.google.cloud.spanner.Options.QueryOption;
 import com.google.cloud.spanner.Options.ReadOption;
+import com.google.cloud.spanner.SessionClient.SessionConsumer;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Function;
 import com.google.common.base.Preconditions;
@@ -44,6 +45,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Random;
 import java.util.Set;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
@@ -612,6 +614,11 @@ final class SessionPool {
       this.allowReplacing = allowReplacing;
     }
 
+    @VisibleForTesting
+    void clearLeakedException() {
+      this.leakedException = null;
+    }
+
     private void markBusy() {
       this.state = SessionState.BUSY;
       this.leakedException = new LeakedSessionException();
@@ -772,7 +779,7 @@ final class SessionPool {
         if (state != SessionState.CLOSING) {
           state = SessionState.AVAILABLE;
         }
-        releaseSession(this);
+        releaseSession(this, Position.FIRST);
       }
     }
 
@@ -923,7 +930,7 @@ final class SessionPool {
       synchronized (lock) {
         scheduledFuture.cancel(false);
         if (!running) {
-          decrementPendingClosures();
+          decrementPendingClosures(1);
         }
       }
     }
@@ -944,7 +951,7 @@ final class SessionPool {
       synchronized (lock) {
         running = false;
         if (isClosed()) {
-          decrementPendingClosures();
+          decrementPendingClosures(1);
         }
       }
     }
@@ -1009,7 +1016,7 @@ final class SessionPool {
           logger.log(Level.FINE, "Keeping alive session " + sessionToKeepAlive.getName());
           numSessionsToKeepAlive--;
           sessionToKeepAlive.keepAlive();
-          releaseSession(sessionToKeepAlive);
+          releaseSession(sessionToKeepAlive, Position.FIRST);
         } catch (SpannerException e) {
           handleException(e, sessionToKeepAlive);
         }
@@ -1019,13 +1026,17 @@ final class SessionPool {
     private void replenishPool() {
       synchronized (lock) {
         // If we have gone below min pool size, create that many sessions.
-        for (int i = 0;
-            i < options.getMinSessions() - (totalSessions() + numSessionsBeingCreated);
-            i++) {
-          createSession();
+        int sessionCount = options.getMinSessions() - (totalSessions() + numSessionsBeingCreated);
+        if (sessionCount > 0) {
+          createSessions(getAllowedCreateSessions(sessionCount));
         }
       }
     }
+  }
+
+  private static enum Position {
+    FIRST,
+    RANDOM;
   }
 
   private final SessionPoolOptions options;
@@ -1036,6 +1047,7 @@ final class SessionPool {
   final PoolMaintainer poolMaintainer;
   private final Clock clock;
   private final Object lock = new Object();
+  private final Random random = new Random();
 
   @GuardedBy("lock")
   private int pendingClosure;
@@ -1071,6 +1083,8 @@ final class SessionPool {
 
   @GuardedBy("lock")
   private final Set<PooledSession> allSessions = new HashSet<>();
+
+  private final SessionConsumer sessionConsumer = new SessionConsumerImpl();
 
   /**
    * Create a session pool with the given options and for the given database. It will also start
@@ -1137,6 +1151,13 @@ final class SessionPool {
   }
 
   @VisibleForTesting
+  int getNumberOfSessionsBeingCreated() {
+    synchronized (lock) {
+      return numSessionsBeingCreated;
+    }
+  }
+
+  @VisibleForTesting
   long getNumWaiterTimeouts() {
     return numWaiterTimeouts.get();
   }
@@ -1144,8 +1165,8 @@ final class SessionPool {
   private void initPool() {
     synchronized (lock) {
       poolMaintainer.init();
-      for (int i = 0; i < options.getMinSessions(); i++) {
-        createSession();
+      if (options.getMinSessions() > 0) {
+        createSessions(options.getMinSessions());
       }
     }
   }
@@ -1160,7 +1181,7 @@ final class SessionPool {
     if (isSessionNotFound(e)) {
       invalidateSession(session);
     } else {
-      releaseSession(session);
+      releaseSession(session, Position.FIRST);
     }
   }
 
@@ -1171,11 +1192,12 @@ final class SessionPool {
   private void invalidateSession(PooledSession session) {
     synchronized (lock) {
       if (isClosed()) {
+        decrementPendingClosures(1);
         return;
       }
       allSessions.remove(session);
       // replenish the pool.
-      createSession();
+      createSessions(getAllowedCreateSessions(1));
     }
   }
 
@@ -1305,18 +1327,22 @@ final class SessionPool {
   }
 
   PooledSession replaceReadSession(SessionNotFoundException e, PooledSession session) {
-    if (!options.isFailIfSessionNotFound() && session.allowReplacing) {
-      closeSessionAsync(session);
-      return getReadSession();
-    } else {
-      throw e;
-    }
+    return replaceSession(e, session, false);
   }
 
   PooledSession replaceReadWriteSession(SessionNotFoundException e, PooledSession session) {
+    return replaceSession(e, session, true);
+  }
+
+  private PooledSession replaceSession(
+      SessionNotFoundException e, PooledSession session, boolean write) {
     if (!options.isFailIfSessionNotFound() && session.allowReplacing) {
-      closeSessionAsync(session);
-      return getReadWriteSession();
+      synchronized (lock) {
+        numSessionsInUse--;
+      }
+      session.leakedException = null;
+      invalidateSession(session);
+      return write ? getReadWriteSession() : getReadSession();
     } else {
       throw e;
     }
@@ -1341,8 +1367,8 @@ final class SessionPool {
     synchronized (lock) {
       if (numWaiters() >= numSessionsBeingCreated) {
         if (canCreateSession()) {
-          span.addAnnotation("Creating session");
-          createSession();
+          span.addAnnotation("Creating sessions");
+          createSessions(getAllowedCreateSessions(numWaiters() - numSessionsBeingCreated + 1));
         } else if (options.isFailIfPoolExhausted()) {
           span.addAnnotation("Pool exhausted. Failing");
           // throw specific exception
@@ -1368,7 +1394,7 @@ final class SessionPool {
    *       implemented in {@link #shouldUnblockReader}
    * </ol>
    */
-  private void releaseSession(PooledSession session) {
+  private void releaseSession(PooledSession session, Position position) {
     Preconditions.checkNotNull(session);
     synchronized (lock) {
       if (closureFuture != null) {
@@ -1379,7 +1405,18 @@ final class SessionPool {
         if (shouldPrepareSession()) {
           prepareSession(session);
         } else {
-          readSessions.addFirst(session);
+          switch (position) {
+            case RANDOM:
+              if (!readSessions.isEmpty()) {
+                int pos = random.nextInt(readSessions.size() + 1);
+                readSessions.add(pos, session);
+                break;
+              }
+              // fallthrough
+            case FIRST:
+            default:
+              readSessions.addFirst(session);
+          }
         }
       } else if (shouldUnblockReader()) {
         readWaiters.poll().put(session);
@@ -1389,12 +1426,16 @@ final class SessionPool {
     }
   }
 
-  private void handleCreateSessionFailure(SpannerException e) {
+  private void handleCreateSessionsFailure(SpannerException e, int count) {
     synchronized (lock) {
-      if (readWaiters.size() > 0) {
-        readWaiters.poll().put(e);
-      } else if (readWriteWaiters.size() > 0) {
-        readWriteWaiters.poll().put(e);
+      for (int i = 0; i < count; i++) {
+        if (readWaiters.size() > 0) {
+          readWaiters.poll().put(e);
+        } else if (readWriteWaiters.size() > 0) {
+          readWriteWaiters.poll().put(e);
+        } else {
+          break;
+        }
       }
     }
   }
@@ -1404,16 +1445,16 @@ final class SessionPool {
       if (isSessionNotFound(e)) {
         invalidateSession(session);
       } else if (readWriteWaiters.size() > 0) {
-        releaseSession(session);
+        releaseSession(session, Position.FIRST);
         readWriteWaiters.poll().put(e);
       } else {
-        releaseSession(session);
+        releaseSession(session, Position.FIRST);
       }
     }
   }
 
-  private void decrementPendingClosures() {
-    pendingClosure--;
+  private void decrementPendingClosures(int count) {
+    pendingClosure -= count;
     if (pendingClosure == 0) {
       closureFuture.set(null);
     }
@@ -1466,7 +1507,6 @@ final class SessionPool {
           }
         },
         MoreExecutors.directExecutor());
-
     return retFuture;
   }
 
@@ -1493,7 +1533,8 @@ final class SessionPool {
     }
   }
 
-  private int totalSessions() {
+  @VisibleForTesting
+  int totalSessions() {
     synchronized (lock) {
       return allSessions.size();
     }
@@ -1521,12 +1562,12 @@ final class SessionPool {
       synchronized (lock) {
         allSessions.remove(sess);
         if (isClosed()) {
-          decrementPendingClosures();
+          decrementPendingClosures(1);
           return;
         }
         // Create a new session if needed to unblock some waiter.
         if (numWaiters() > numSessionsBeingCreated) {
-          createSession();
+          createSessions(getAllowedCreateSessions(numWaiters() - numSessionsBeingCreated));
         }
       }
     }
@@ -1568,53 +1609,88 @@ final class SessionPool {
         });
   }
 
+  /**
+   * Returns the minimum of the wanted number of sessions that the caller wants to create and the
+   * actual max number that may be created at this moment.
+   */
+  private int getAllowedCreateSessions(int wantedSessions) {
+    synchronized (lock) {
+      return Math.min(
+          wantedSessions, options.getMaxSessions() - (totalSessions() + numSessionsBeingCreated));
+    }
+  }
+
   private boolean canCreateSession() {
     synchronized (lock) {
       return totalSessions() + numSessionsBeingCreated < options.getMaxSessions();
     }
   }
 
-  private void createSession() {
-    logger.log(Level.FINE, "Creating session");
+  private void createSessions(final int sessionCount) {
+    logger.log(Level.FINE, String.format("Creating %d sessions", sessionCount));
     synchronized (lock) {
-      numSessionsBeingCreated++;
-      executor.submit(
-          new Runnable() {
-            @Override
-            public void run() {
-              SessionImpl session = null;
-              try {
-                session = spanner.createSession(db);
-                logger.log(Level.FINE, "Session created");
-              } catch (Throwable t) {
-                // Expose this to customer via a metric.
-                synchronized (lock) {
-                  numSessionsBeingCreated--;
-                  if (isClosed()) {
-                    decrementPendingClosures();
-                  }
-                  handleCreateSessionFailure(newSpannerException(t));
-                }
-                return;
-              }
-              boolean closeSession = false;
-              PooledSession pooledSession = null;
-              synchronized (lock) {
-                pooledSession = new PooledSession(session);
-                numSessionsBeingCreated--;
-                if (closureFuture != null) {
-                  closeSession = true;
-                } else {
-                  Preconditions.checkState(totalSessions() <= options.getMaxSessions() - 1);
-                  allSessions.add(pooledSession);
-                  releaseSession(pooledSession);
-                }
-              }
-              if (closeSession) {
-                closeSession(pooledSession);
-              }
-            }
-          });
+      numSessionsBeingCreated += sessionCount;
+      try {
+        // Create a batch of sessions. The actual session creation can be split into multiple gRPC
+        // calls and the session consumer consumes the returned sessions as they become available.
+        // The batchCreateSessions method automatically spreads the sessions evenly over all
+        // available channels.
+        spanner.asyncBatchCreateSessions(db, sessionCount, sessionConsumer);
+        logger.log(Level.FINE, "Sessions created");
+      } catch (Throwable t) {
+        // Expose this to customer via a metric.
+        numSessionsBeingCreated -= sessionCount;
+        if (isClosed()) {
+          decrementPendingClosures(sessionCount);
+        }
+        handleCreateSessionsFailure(newSpannerException(t), sessionCount);
+      }
+    }
+  }
+
+  /**
+   * {@link SessionConsumer} that receives the created sessions from a {@link SessionClient} and
+   * releases these into the pool. The session pool only needs one instance of this, as all sessions
+   * should be returned to the same pool regardless of what triggered the creation of the sessions.
+   */
+  class SessionConsumerImpl implements SessionConsumer {
+    /** Release a new session to the pool. */
+    @Override
+    public void onSessionReady(SessionImpl session) {
+      PooledSession pooledSession = null;
+      boolean closeSession = false;
+      synchronized (lock) {
+        pooledSession = new PooledSession(session);
+        numSessionsBeingCreated--;
+        if (closureFuture != null) {
+          closeSession = true;
+        } else {
+          Preconditions.checkState(totalSessions() <= options.getMaxSessions() - 1);
+          allSessions.add(pooledSession);
+          // Release the session to a random position in the pool to prevent the case that a batch
+          // of sessions that are affiliated with the same channel are all placed sequentially in
+          // the pool.
+          releaseSession(pooledSession, Position.RANDOM);
+        }
+      }
+      if (closeSession) {
+        closeSessionAsync(pooledSession);
+      }
+    }
+
+    /**
+     * Informs waiters for a session that session creation failed. The exception will propagate to
+     * the waiters as a {@link SpannerException}.
+     */
+    @Override
+    public void onSessionCreateFailure(Throwable t, int createFailureForSessionCount) {
+      synchronized (lock) {
+        numSessionsBeingCreated -= createFailureForSessionCount;
+        if (isClosed()) {
+          decrementPendingClosures(createFailureForSessionCount);
+        }
+        handleCreateSessionsFailure(newSpannerException(t), createFailureForSessionCount);
+      }
     }
   }
 }

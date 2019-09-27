@@ -76,6 +76,7 @@ import com.google.spanner.admin.instance.v1.ListInstancesRequest;
 import com.google.spanner.admin.instance.v1.ListInstancesResponse;
 import com.google.spanner.admin.instance.v1.UpdateInstanceMetadata;
 import com.google.spanner.admin.instance.v1.UpdateInstanceRequest;
+import com.google.spanner.v1.BatchCreateSessionsRequest;
 import com.google.spanner.v1.BeginTransactionRequest;
 import com.google.spanner.v1.CommitRequest;
 import com.google.spanner.v1.CommitResponse;
@@ -456,6 +457,27 @@ public class GapicSpannerRpc implements SpannerRpc {
     GrpcCallContext context = newCallContext(null, name);
     return get(
         databaseAdminStub.getOperationsStub().getOperationCallable().futureCall(request, context));
+  }
+
+  @Override
+  public List<Session> batchCreateSessions(
+      String databaseName,
+      int sessionCount,
+      @Nullable Map<String, String> labels,
+      @Nullable Map<Option, ?> options)
+      throws SpannerException {
+    BatchCreateSessionsRequest.Builder requestBuilder =
+        BatchCreateSessionsRequest.newBuilder()
+            .setDatabase(databaseName)
+            .setSessionCount(sessionCount);
+    if (labels != null && !labels.isEmpty()) {
+      Session.Builder session = Session.newBuilder().putAllLabels(labels);
+      requestBuilder.setSessionTemplate(session);
+    }
+    BatchCreateSessionsRequest request = requestBuilder.build();
+    GrpcCallContext context = newCallContext(options, databaseName);
+    return get(spannerStub.batchCreateSessionsCallable().futureCall(request, context))
+        .getSessionList();
   }
 
   @Override

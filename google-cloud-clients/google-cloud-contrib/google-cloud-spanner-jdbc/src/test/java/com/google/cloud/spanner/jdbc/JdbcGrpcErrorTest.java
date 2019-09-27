@@ -322,7 +322,8 @@ public class JdbcGrpcErrorTest {
   @Test
   public void autocommitCreateSession() throws SQLException {
     expected.expect(testExceptionMatcher);
-    mockSpanner.setCreateSessionExecutionTime(SimulatedExecutionTime.ofException(serverException));
+    mockSpanner.setBatchCreateSessionsExecutionTime(
+        SimulatedExecutionTime.ofException(serverException));
     try (java.sql.Connection connection = createConnection()) {
       connection.createStatement().executeUpdate(UPDATE_STATEMENT.getSql());
     }
@@ -331,7 +332,8 @@ public class JdbcGrpcErrorTest {
   @Test
   public void transactionalCreateSession() throws SQLException {
     expected.expect(testExceptionMatcher);
-    mockSpanner.setCreateSessionExecutionTime(SimulatedExecutionTime.ofException(serverException));
+    mockSpanner.setBatchCreateSessionsExecutionTime(
+        SimulatedExecutionTime.ofException(serverException));
     try (java.sql.Connection connection = createConnection()) {
       connection.setAutoCommit(false);
       connection.createStatement().executeUpdate(UPDATE_STATEMENT.getSql());
@@ -341,7 +343,8 @@ public class JdbcGrpcErrorTest {
   @Test
   public void readOnlyCreateSession() throws SQLException {
     expected.expect(testExceptionMatcher);
-    mockSpanner.setCreateSessionExecutionTime(SimulatedExecutionTime.ofException(serverException));
+    mockSpanner.setBatchCreateSessionsExecutionTime(
+        SimulatedExecutionTime.ofException(serverException));
     try (java.sql.Connection connection = createConnection()) {
       connection.setAutoCommit(false);
       connection.setReadOnly(true);
