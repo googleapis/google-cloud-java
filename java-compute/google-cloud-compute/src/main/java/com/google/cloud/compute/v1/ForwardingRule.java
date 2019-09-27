@@ -71,6 +71,7 @@ public final class ForwardingRule implements ApiMessage {
   private final String ipVersion;
   private final String kind;
   private final String loadBalancingScheme;
+  private final List<MetadataFilter> metadataFilters;
   private final String name;
   private final String network;
   private final String networkTier;
@@ -94,6 +95,7 @@ public final class ForwardingRule implements ApiMessage {
     this.ipVersion = null;
     this.kind = null;
     this.loadBalancingScheme = null;
+    this.metadataFilters = null;
     this.name = null;
     this.network = null;
     this.networkTier = null;
@@ -118,6 +120,7 @@ public final class ForwardingRule implements ApiMessage {
       String ipVersion,
       String kind,
       String loadBalancingScheme,
+      List<MetadataFilter> metadataFilters,
       String name,
       String network,
       String networkTier,
@@ -139,6 +142,7 @@ public final class ForwardingRule implements ApiMessage {
     this.ipVersion = ipVersion;
     this.kind = kind;
     this.loadBalancingScheme = loadBalancingScheme;
+    this.metadataFilters = metadataFilters;
     this.name = name;
     this.network = network;
     this.networkTier = networkTier;
@@ -183,6 +187,9 @@ public final class ForwardingRule implements ApiMessage {
     }
     if ("loadBalancingScheme".equals(fieldName)) {
       return loadBalancingScheme;
+    }
+    if ("metadataFilters".equals(fieldName)) {
+      return metadataFilters;
     }
     if ("name".equals(fieldName)) {
       return name;
@@ -336,6 +343,21 @@ public final class ForwardingRule implements ApiMessage {
    */
   public String getLoadBalancingScheme() {
     return loadBalancingScheme;
+  }
+
+  /**
+   * Opaque filter criteria used by Loadbalancer to restrict routing configuration to a limited set
+   * xDS compliant clients. In their xDS requests to Loadbalancer, xDS clients present node
+   * metadata. If a match takes place, the relevant routing configuration is made available to those
+   * proxies. For each metadataFilter in this list, if its filterMatchCriteria is set to MATCH_ANY,
+   * at least one of the filterLabels must match the corresponding label provided in the metadata.
+   * If its filterMatchCriteria is set to MATCH_ALL, then all of its filterLabels must match with
+   * corresponding labels in the provided metadata. metadataFilters specified here can be overridden
+   * by those specified in the UrlMap that this ForwardingRule references. metadataFilters only
+   * applies to Loadbalancers that have their loadBalancingScheme set to INTERNAL_SELF_MANAGED.
+   */
+  public List<MetadataFilter> getMetadataFiltersList() {
+    return metadataFilters;
   }
 
   /**
@@ -505,6 +527,7 @@ public final class ForwardingRule implements ApiMessage {
     private String ipVersion;
     private String kind;
     private String loadBalancingScheme;
+    private List<MetadataFilter> metadataFilters;
     private String name;
     private String network;
     private String networkTier;
@@ -550,6 +573,9 @@ public final class ForwardingRule implements ApiMessage {
       }
       if (other.getLoadBalancingScheme() != null) {
         this.loadBalancingScheme = other.loadBalancingScheme;
+      }
+      if (other.getMetadataFiltersList() != null) {
+        this.metadataFilters = other.metadataFilters;
       }
       if (other.getName() != null) {
         this.name = other.name;
@@ -598,6 +624,7 @@ public final class ForwardingRule implements ApiMessage {
       this.ipVersion = source.ipVersion;
       this.kind = source.kind;
       this.loadBalancingScheme = source.loadBalancingScheme;
+      this.metadataFilters = source.metadataFilters;
       this.name = source.name;
       this.network = source.network;
       this.networkTier = source.networkTier;
@@ -824,6 +851,62 @@ public final class ForwardingRule implements ApiMessage {
      */
     public Builder setLoadBalancingScheme(String loadBalancingScheme) {
       this.loadBalancingScheme = loadBalancingScheme;
+      return this;
+    }
+
+    /**
+     * Opaque filter criteria used by Loadbalancer to restrict routing configuration to a limited
+     * set xDS compliant clients. In their xDS requests to Loadbalancer, xDS clients present node
+     * metadata. If a match takes place, the relevant routing configuration is made available to
+     * those proxies. For each metadataFilter in this list, if its filterMatchCriteria is set to
+     * MATCH_ANY, at least one of the filterLabels must match the corresponding label provided in
+     * the metadata. If its filterMatchCriteria is set to MATCH_ALL, then all of its filterLabels
+     * must match with corresponding labels in the provided metadata. metadataFilters specified here
+     * can be overridden by those specified in the UrlMap that this ForwardingRule references.
+     * metadataFilters only applies to Loadbalancers that have their loadBalancingScheme set to
+     * INTERNAL_SELF_MANAGED.
+     */
+    public List<MetadataFilter> getMetadataFiltersList() {
+      return metadataFilters;
+    }
+
+    /**
+     * Opaque filter criteria used by Loadbalancer to restrict routing configuration to a limited
+     * set xDS compliant clients. In their xDS requests to Loadbalancer, xDS clients present node
+     * metadata. If a match takes place, the relevant routing configuration is made available to
+     * those proxies. For each metadataFilter in this list, if its filterMatchCriteria is set to
+     * MATCH_ANY, at least one of the filterLabels must match the corresponding label provided in
+     * the metadata. If its filterMatchCriteria is set to MATCH_ALL, then all of its filterLabels
+     * must match with corresponding labels in the provided metadata. metadataFilters specified here
+     * can be overridden by those specified in the UrlMap that this ForwardingRule references.
+     * metadataFilters only applies to Loadbalancers that have their loadBalancingScheme set to
+     * INTERNAL_SELF_MANAGED.
+     */
+    public Builder addAllMetadataFilters(List<MetadataFilter> metadataFilters) {
+      if (this.metadataFilters == null) {
+        this.metadataFilters = new LinkedList<>();
+      }
+      this.metadataFilters.addAll(metadataFilters);
+      return this;
+    }
+
+    /**
+     * Opaque filter criteria used by Loadbalancer to restrict routing configuration to a limited
+     * set xDS compliant clients. In their xDS requests to Loadbalancer, xDS clients present node
+     * metadata. If a match takes place, the relevant routing configuration is made available to
+     * those proxies. For each metadataFilter in this list, if its filterMatchCriteria is set to
+     * MATCH_ANY, at least one of the filterLabels must match the corresponding label provided in
+     * the metadata. If its filterMatchCriteria is set to MATCH_ALL, then all of its filterLabels
+     * must match with corresponding labels in the provided metadata. metadataFilters specified here
+     * can be overridden by those specified in the UrlMap that this ForwardingRule references.
+     * metadataFilters only applies to Loadbalancers that have their loadBalancingScheme set to
+     * INTERNAL_SELF_MANAGED.
+     */
+    public Builder addMetadataFilters(MetadataFilter metadataFilters) {
+      if (this.metadataFilters == null) {
+        this.metadataFilters = new LinkedList<>();
+      }
+      this.metadataFilters.add(metadataFilters);
       return this;
     }
 
@@ -1159,6 +1242,7 @@ public final class ForwardingRule implements ApiMessage {
           ipVersion,
           kind,
           loadBalancingScheme,
+          metadataFilters,
           name,
           network,
           networkTier,
@@ -1184,6 +1268,7 @@ public final class ForwardingRule implements ApiMessage {
       newBuilder.setIpVersion(this.ipVersion);
       newBuilder.setKind(this.kind);
       newBuilder.setLoadBalancingScheme(this.loadBalancingScheme);
+      newBuilder.addAllMetadataFilters(this.metadataFilters);
       newBuilder.setName(this.name);
       newBuilder.setNetwork(this.network);
       newBuilder.setNetworkTier(this.networkTier);
@@ -1231,6 +1316,9 @@ public final class ForwardingRule implements ApiMessage {
         + ", "
         + "loadBalancingScheme="
         + loadBalancingScheme
+        + ", "
+        + "metadataFilters="
+        + metadataFilters
         + ", "
         + "name="
         + name
@@ -1284,6 +1372,7 @@ public final class ForwardingRule implements ApiMessage {
           && Objects.equals(this.ipVersion, that.getIpVersion())
           && Objects.equals(this.kind, that.getKind())
           && Objects.equals(this.loadBalancingScheme, that.getLoadBalancingScheme())
+          && Objects.equals(this.metadataFilters, that.getMetadataFiltersList())
           && Objects.equals(this.name, that.getName())
           && Objects.equals(this.network, that.getNetwork())
           && Objects.equals(this.networkTier, that.getNetworkTier())
@@ -1312,6 +1401,7 @@ public final class ForwardingRule implements ApiMessage {
         ipVersion,
         kind,
         loadBalancingScheme,
+        metadataFilters,
         name,
         network,
         networkTier,

@@ -92,10 +92,6 @@ public final class AuditLogConfig implements ApiMessage {
     return exemptedMembers;
   }
 
-  /**
-   * Specifies whether principals can be exempted for the same LogType in lower-level resource
-   * policies. If true, any lower-level exemptions will be ignored.
-   */
   public Boolean getIgnoreChildExemptions() {
     return ignoreChildExemptions;
   }
@@ -186,18 +182,10 @@ public final class AuditLogConfig implements ApiMessage {
       return this;
     }
 
-    /**
-     * Specifies whether principals can be exempted for the same LogType in lower-level resource
-     * policies. If true, any lower-level exemptions will be ignored.
-     */
     public Boolean getIgnoreChildExemptions() {
       return ignoreChildExemptions;
     }
 
-    /**
-     * Specifies whether principals can be exempted for the same LogType in lower-level resource
-     * policies. If true, any lower-level exemptions will be ignored.
-     */
     public Builder setIgnoreChildExemptions(Boolean ignoreChildExemptions) {
       this.ignoreChildExemptions = ignoreChildExemptions;
       return this;
