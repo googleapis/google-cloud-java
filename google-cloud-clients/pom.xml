@@ -389,7 +389,6 @@
   </dependencyManagement>
   <modules>
     <module>google-cloud-asset</module>
-    <module>google-cloud-automl</module>
     <module>google-cloud-bigtable</module>
     <module>google-cloud-bigquery</module>
     <module>google-cloud-bigquerydatatransfer</module>

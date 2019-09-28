@@ -8,7 +8,6 @@ google-cloud-appengineflexcustom:0.111.0-alpha:0.111.1-alpha-SNAPSHOT
 google-cloud-appengineflexjava:0.111.0-alpha:0.111.1-alpha-SNAPSHOT
 google-cloud-appenginejava8:0.111.0-alpha:0.111.1-alpha-SNAPSHOT
 google-cloud-asset:0.111.0-beta:0.111.1-beta-SNAPSHOT
-google-cloud-automl:0.111.0-beta:0.111.1-beta-SNAPSHOT
 google-cloud-bigquery:1.93.0:1.93.1-SNAPSHOT
 google-cloud-bigquerydatatransfer:0.111.0-beta:0.111.1-beta-SNAPSHOT
 google-cloud-bigquerystorage:0.111.0-beta:0.111.1-beta-SNAPSHOT
@@ -69,7 +68,6 @@ grafeas:0.14.0:0.14.1-SNAPSHOT
 grpc-google-cloud-asset-v1:0.76.0:0.76.1-SNAPSHOT
 grpc-google-cloud-asset-v1beta1:0.76.0:0.76.1-SNAPSHOT
 grpc-google-cloud-asset-v1p2beta1:0.76.0:0.76.1-SNAPSHOT
-grpc-google-cloud-automl-v1beta1:0.76.0:0.76.1-SNAPSHOT
 grpc-google-cloud-bigquerydatatransfer-v1:0.76.0:0.76.1-SNAPSHOT
 grpc-google-cloud-bigquerystorage-v1beta1:0.76.0:0.76.1-SNAPSHOT
 grpc-google-cloud-bigtable-admin-v2:0.76.0:0.76.1-SNAPSHOT
@@ -133,7 +131,6 @@ grpc-google-cloud-websecurityscanner-v1beta:0.76.0:0.76.1-SNAPSHOT
 proto-google-cloud-asset-v1:0.76.0:0.76.1-SNAPSHOT
 proto-google-cloud-asset-v1beta1:0.76.0:0.76.1-SNAPSHOT
 proto-google-cloud-asset-v1p2beta1:0.76.0:0.76.1-SNAPSHOT
-proto-google-cloud-automl-v1beta1:0.76.0:0.76.1-SNAPSHOT
 proto-google-cloud-bigquerydatatransfer-v1:0.76.0:0.76.1-SNAPSHOT
 proto-google-cloud-bigquerystorage-v1beta1:0.76.0:0.76.1-SNAPSHOT
 proto-google-cloud-bigtable-admin-v2:0.76.0:0.76.1-SNAPSHOT
