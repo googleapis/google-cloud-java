@@ -14,11 +14,11 @@ public interface LookupEntryRequestOrBuilder
    * <pre>
    * The full name of the Google Cloud Platform resource the Data Catalog
    * entry represents. See:
-   * https://cloud.google.com/apis/design/resource_names#full_resource_name
+   * https://cloud.google.com/apis/design/resource_names#full_resource_name.
    * Full names are case-sensitive.
    * Examples:
-   * "//bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId".
-   * "//pubsub.googleapis.com/projects/projectId/topics/topicId"
+   *  * //bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId
+   *  * //pubsub.googleapis.com/projects/projectId/topics/topicId
    * </pre>
    *
    * <code>string linked_resource = 1;</code>
@@ -30,11 +30,11 @@ public interface LookupEntryRequestOrBuilder
    * <pre>
    * The full name of the Google Cloud Platform resource the Data Catalog
    * entry represents. See:
-   * https://cloud.google.com/apis/design/resource_names#full_resource_name
+   * https://cloud.google.com/apis/design/resource_names#full_resource_name.
    * Full names are case-sensitive.
    * Examples:
-   * "//bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId".
-   * "//pubsub.googleapis.com/projects/projectId/topics/topicId"
+   *  * //bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId
+   *  * //pubsub.googleapis.com/projects/projectId/topics/topicId
    * </pre>
    *
    * <code>string linked_resource = 1;</code>
@@ -47,14 +47,12 @@ public interface LookupEntryRequestOrBuilder
    * <pre>
    * The SQL name of the entry. SQL names are case-sensitive.
    * Examples:
-   * &lt;ul&gt;
-   *   &lt;li&gt;cloud_pubsub.project_id.topic_id&lt;/li&gt;
-   *   &lt;li&gt;pubsub.project_id.`topic.id.with.dots`&lt;/li&gt;
-   *   &lt;li&gt;bigquery.project_id.dataset_id.table_id&lt;/li&gt;
-   *   &lt;li&gt;datacatalog.project_id.location_id.entry_group_id.entry_id&lt;/li&gt;
-   * &lt;/ul&gt;
-   * *_ids shoud satisfy the standard SQL rules for identifiers.
-   * https://cloud.google.com/bigquery/docs/reference/standard-sql/lexical
+   *   * `cloud_pubsub.project_id.topic_id`
+   *   * ``pubsub.project_id.`topic.id.with.dots` ``
+   *   * `bigquery.project_id.dataset_id.table_id`
+   *   * `datacatalog.project_id.location_id.entry_group_id.entry_id`
+   * `*_id`s shoud satisfy the standard SQL rules for identifiers.
+   * https://cloud.google.com/bigquery/docs/reference/standard-sql/lexical.
    * </pre>
    *
    * <code>string sql_resource = 3;</code>
@@ -66,14 +64,12 @@ public interface LookupEntryRequestOrBuilder
    * <pre>
    * The SQL name of the entry. SQL names are case-sensitive.
    * Examples:
-   * &lt;ul&gt;
-   *   &lt;li&gt;cloud_pubsub.project_id.topic_id&lt;/li&gt;
-   *   &lt;li&gt;pubsub.project_id.`topic.id.with.dots`&lt;/li&gt;
-   *   &lt;li&gt;bigquery.project_id.dataset_id.table_id&lt;/li&gt;
-   *   &lt;li&gt;datacatalog.project_id.location_id.entry_group_id.entry_id&lt;/li&gt;
-   * &lt;/ul&gt;
-   * *_ids shoud satisfy the standard SQL rules for identifiers.
-   * https://cloud.google.com/bigquery/docs/reference/standard-sql/lexical
+   *   * `cloud_pubsub.project_id.topic_id`
+   *   * ``pubsub.project_id.`topic.id.with.dots` ``
+   *   * `bigquery.project_id.dataset_id.table_id`
+   *   * `datacatalog.project_id.location_id.entry_group_id.entry_id`
+   * `*_id`s shoud satisfy the standard SQL rules for identifiers.
+   * https://cloud.google.com/bigquery/docs/reference/standard-sql/lexical.
    * </pre>
    *
    * <code>string sql_resource = 3;</code>

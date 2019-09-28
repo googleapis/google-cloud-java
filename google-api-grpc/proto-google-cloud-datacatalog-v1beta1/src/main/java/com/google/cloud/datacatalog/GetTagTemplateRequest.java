@@ -98,11 +98,13 @@ public final class GetTagTemplateRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. The name of the tag template. For example,
-   * "projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}".
+   * Required. The name of the tag template. Example:
+   * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -119,11 +121,13 @@ public final class GetTagTemplateRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. The name of the tag template. For example,
-   * "projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}".
+   * Required. The name of the tag template. Example:
+   * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -461,11 +465,13 @@ public final class GetTagTemplateRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The name of the tag template. For example,
-     * "projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}".
+     * Required. The name of the tag template. Example:
+     * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -482,11 +488,13 @@ public final class GetTagTemplateRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The name of the tag template. For example,
-     * "projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}".
+     * Required. The name of the tag template. Example:
+     * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -503,11 +511,13 @@ public final class GetTagTemplateRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The name of the tag template. For example,
-     * "projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}".
+     * Required. The name of the tag template. Example:
+     * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -522,11 +532,13 @@ public final class GetTagTemplateRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The name of the tag template. For example,
-     * "projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}".
+     * Required. The name of the tag template. Example:
+     * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder clearName() {
 
@@ -538,11 +550,13 @@ public final class GetTagTemplateRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The name of the tag template. For example,
-     * "projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}".
+     * Required. The name of the tag template. Example:
+     * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

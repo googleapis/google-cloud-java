@@ -113,15 +113,16 @@ public final class CreateTagRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required.
-   * The name of the resource to attach this tag to. Tags can be attached to
-   * Entries. (example:
-   * "projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}").
+   * Required. The name of the resource to attach this tag to. Tags can be attached to
+   * Entries. Example:
+   * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
    * Note that this Tag and its child resources may not actually be stored in
    * the location in this name.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -138,15 +139,16 @@ public final class CreateTagRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required.
-   * The name of the resource to attach this tag to. Tags can be attached to
-   * Entries. (example:
-   * "projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}").
+   * Required. The name of the resource to attach this tag to. Tags can be attached to
+   * Entries. Example:
+   * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
    * Note that this Tag and its child resources may not actually be stored in
    * the location in this name.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -169,7 +171,8 @@ public final class CreateTagRequest extends com.google.protobuf.GeneratedMessage
    * Required. The tag to create.
    * </pre>
    *
-   * <code>.google.cloud.datacatalog.v1beta1.Tag tag = 2;</code>
+   * <code>.google.cloud.datacatalog.v1beta1.Tag tag = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public boolean hasTag() {
     return tag_ != null;
@@ -181,7 +184,8 @@ public final class CreateTagRequest extends com.google.protobuf.GeneratedMessage
    * Required. The tag to create.
    * </pre>
    *
-   * <code>.google.cloud.datacatalog.v1beta1.Tag tag = 2;</code>
+   * <code>.google.cloud.datacatalog.v1beta1.Tag tag = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.datacatalog.Tag getTag() {
     return tag_ == null ? com.google.cloud.datacatalog.Tag.getDefaultInstance() : tag_;
@@ -193,7 +197,8 @@ public final class CreateTagRequest extends com.google.protobuf.GeneratedMessage
    * Required. The tag to create.
    * </pre>
    *
-   * <code>.google.cloud.datacatalog.v1beta1.Tag tag = 2;</code>
+   * <code>.google.cloud.datacatalog.v1beta1.Tag tag = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.datacatalog.TagOrBuilder getTagOrBuilder() {
     return getTag();
@@ -549,15 +554,16 @@ public final class CreateTagRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required.
-     * The name of the resource to attach this tag to. Tags can be attached to
-     * Entries. (example:
-     * "projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}").
+     * Required. The name of the resource to attach this tag to. Tags can be attached to
+     * Entries. Example:
+     * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
      * Note that this Tag and its child resources may not actually be stored in
      * the location in this name.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -574,15 +580,16 @@ public final class CreateTagRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required.
-     * The name of the resource to attach this tag to. Tags can be attached to
-     * Entries. (example:
-     * "projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}").
+     * Required. The name of the resource to attach this tag to. Tags can be attached to
+     * Entries. Example:
+     * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
      * Note that this Tag and its child resources may not actually be stored in
      * the location in this name.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -599,15 +606,16 @@ public final class CreateTagRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required.
-     * The name of the resource to attach this tag to. Tags can be attached to
-     * Entries. (example:
-     * "projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}").
+     * Required. The name of the resource to attach this tag to. Tags can be attached to
+     * Entries. Example:
+     * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
      * Note that this Tag and its child resources may not actually be stored in
      * the location in this name.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -622,15 +630,16 @@ public final class CreateTagRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required.
-     * The name of the resource to attach this tag to. Tags can be attached to
-     * Entries. (example:
-     * "projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}").
+     * Required. The name of the resource to attach this tag to. Tags can be attached to
+     * Entries. Example:
+     * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
      * Note that this Tag and its child resources may not actually be stored in
      * the location in this name.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder clearParent() {
 
@@ -642,15 +651,16 @@ public final class CreateTagRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required.
-     * The name of the resource to attach this tag to. Tags can be attached to
-     * Entries. (example:
-     * "projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}").
+     * Required. The name of the resource to attach this tag to. Tags can be attached to
+     * Entries. Example:
+     * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
      * Note that this Tag and its child resources may not actually be stored in
      * the location in this name.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -676,7 +686,9 @@ public final class CreateTagRequest extends com.google.protobuf.GeneratedMessage
      * Required. The tag to create.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1beta1.Tag tag = 2;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.Tag tag = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public boolean hasTag() {
       return tagBuilder_ != null || tag_ != null;
@@ -688,7 +700,9 @@ public final class CreateTagRequest extends com.google.protobuf.GeneratedMessage
      * Required. The tag to create.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1beta1.Tag tag = 2;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.Tag tag = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.datacatalog.Tag getTag() {
       if (tagBuilder_ == null) {
@@ -704,7 +718,9 @@ public final class CreateTagRequest extends com.google.protobuf.GeneratedMessage
      * Required. The tag to create.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1beta1.Tag tag = 2;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.Tag tag = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setTag(com.google.cloud.datacatalog.Tag value) {
       if (tagBuilder_ == null) {
@@ -726,7 +742,9 @@ public final class CreateTagRequest extends com.google.protobuf.GeneratedMessage
      * Required. The tag to create.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1beta1.Tag tag = 2;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.Tag tag = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setTag(com.google.cloud.datacatalog.Tag.Builder builderForValue) {
       if (tagBuilder_ == null) {
@@ -745,7 +763,9 @@ public final class CreateTagRequest extends com.google.protobuf.GeneratedMessage
      * Required. The tag to create.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1beta1.Tag tag = 2;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.Tag tag = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeTag(com.google.cloud.datacatalog.Tag value) {
       if (tagBuilder_ == null) {
@@ -768,7 +788,9 @@ public final class CreateTagRequest extends com.google.protobuf.GeneratedMessage
      * Required. The tag to create.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1beta1.Tag tag = 2;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.Tag tag = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearTag() {
       if (tagBuilder_ == null) {
@@ -788,7 +810,9 @@ public final class CreateTagRequest extends com.google.protobuf.GeneratedMessage
      * Required. The tag to create.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1beta1.Tag tag = 2;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.Tag tag = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.datacatalog.Tag.Builder getTagBuilder() {
 
@@ -802,7 +826,9 @@ public final class CreateTagRequest extends com.google.protobuf.GeneratedMessage
      * Required. The tag to create.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1beta1.Tag tag = 2;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.Tag tag = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.datacatalog.TagOrBuilder getTagOrBuilder() {
       if (tagBuilder_ != null) {
@@ -818,7 +844,9 @@ public final class CreateTagRequest extends com.google.protobuf.GeneratedMessage
      * Required. The tag to create.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1beta1.Tag tag = 2;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.Tag tag = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.datacatalog.Tag,

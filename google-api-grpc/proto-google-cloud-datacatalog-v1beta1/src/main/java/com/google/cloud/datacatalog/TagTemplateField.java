@@ -23,6 +23,7 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
   }
 
   private TagTemplateField() {
+    name_ = "";
     displayName_ = "";
   }
 
@@ -73,6 +74,13 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
 
               break;
             }
+          case 50:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              name_ = s;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -107,14 +115,64 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
             com.google.cloud.datacatalog.TagTemplateField.Builder.class);
   }
 
+  public static final int NAME_FIELD_NUMBER = 6;
+  private volatile java.lang.Object name_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The resource name of the tag template field in URL format.
+   * Example:
+   * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template}/fields/{field}
+   * Note that this TagTemplateField may not actually be stored in the location
+   * in this name.
+   * </pre>
+   *
+   * <code>string name = 6;</code>
+   */
+  public java.lang.String getName() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      name_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The resource name of the tag template field in URL format.
+   * Example:
+   * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template}/fields/{field}
+   * Note that this TagTemplateField may not actually be stored in the location
+   * in this name.
+   * </pre>
+   *
+   * <code>string name = 6;</code>
+   */
+  public com.google.protobuf.ByteString getNameBytes() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      name_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int DISPLAY_NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object displayName_;
   /**
    *
    *
    * <pre>
-   * Optional. The display name for this field. Default value is an empty
-   * string.
+   * Optional. The display name for this field. Defaults to an empty string.
    * </pre>
    *
    * <code>string display_name = 1;</code>
@@ -134,8 +192,7 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The display name for this field. Default value is an empty
-   * string.
+   * Optional. The display name for this field. Defaults to an empty string.
    * </pre>
    *
    * <code>string display_name = 1;</code>
@@ -161,7 +218,9 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
    * Required. The type of value this tag field can contain.
    * </pre>
    *
-   * <code>.google.cloud.datacatalog.v1beta1.FieldType type = 2;</code>
+   * <code>
+   * .google.cloud.datacatalog.v1beta1.FieldType type = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public boolean hasType() {
     return type_ != null;
@@ -173,7 +232,9 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
    * Required. The type of value this tag field can contain.
    * </pre>
    *
-   * <code>.google.cloud.datacatalog.v1beta1.FieldType type = 2;</code>
+   * <code>
+   * .google.cloud.datacatalog.v1beta1.FieldType type = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.datacatalog.FieldType getType() {
     return type_ == null ? com.google.cloud.datacatalog.FieldType.getDefaultInstance() : type_;
@@ -185,7 +246,9 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
    * Required. The type of value this tag field can contain.
    * </pre>
    *
-   * <code>.google.cloud.datacatalog.v1beta1.FieldType type = 2;</code>
+   * <code>
+   * .google.cloud.datacatalog.v1beta1.FieldType type = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.datacatalog.FieldTypeOrBuilder getTypeOrBuilder() {
     return getType();
@@ -211,6 +274,9 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
     if (type_ != null) {
       output.writeMessage(2, getType());
     }
+    if (!getNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, name_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -225,6 +291,9 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
     }
     if (type_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getType());
+    }
+    if (!getNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, name_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -242,6 +311,7 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
     com.google.cloud.datacatalog.TagTemplateField other =
         (com.google.cloud.datacatalog.TagTemplateField) obj;
 
+    if (!getName().equals(other.getName())) return false;
     if (!getDisplayName().equals(other.getDisplayName())) return false;
     if (hasType() != other.hasType()) return false;
     if (hasType()) {
@@ -258,6 +328,8 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getDisplayName().hashCode();
     if (hasType()) {
@@ -409,6 +481,8 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      name_ = "";
+
       displayName_ = "";
 
       if (typeBuilder_ == null) {
@@ -444,6 +518,7 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.datacatalog.TagTemplateField buildPartial() {
       com.google.cloud.datacatalog.TagTemplateField result =
           new com.google.cloud.datacatalog.TagTemplateField(this);
+      result.name_ = name_;
       result.displayName_ = displayName_;
       if (typeBuilder_ == null) {
         result.type_ = type_;
@@ -499,6 +574,10 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
 
     public Builder mergeFrom(com.google.cloud.datacatalog.TagTemplateField other) {
       if (other == com.google.cloud.datacatalog.TagTemplateField.getDefaultInstance()) return this;
+      if (!other.getName().isEmpty()) {
+        name_ = other.name_;
+        onChanged();
+      }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
         onChanged();
@@ -535,13 +614,126 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private java.lang.Object name_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource name of the tag template field in URL format.
+     * Example:
+     * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template}/fields/{field}
+     * Note that this TagTemplateField may not actually be stored in the location
+     * in this name.
+     * </pre>
+     *
+     * <code>string name = 6;</code>
+     */
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource name of the tag template field in URL format.
+     * Example:
+     * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template}/fields/{field}
+     * Note that this TagTemplateField may not actually be stored in the location
+     * in this name.
+     * </pre>
+     *
+     * <code>string name = 6;</code>
+     */
+    public com.google.protobuf.ByteString getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource name of the tag template field in URL format.
+     * Example:
+     * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template}/fields/{field}
+     * Note that this TagTemplateField may not actually be stored in the location
+     * in this name.
+     * </pre>
+     *
+     * <code>string name = 6;</code>
+     */
+    public Builder setName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      name_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource name of the tag template field in URL format.
+     * Example:
+     * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template}/fields/{field}
+     * Note that this TagTemplateField may not actually be stored in the location
+     * in this name.
+     * </pre>
+     *
+     * <code>string name = 6;</code>
+     */
+    public Builder clearName() {
+
+      name_ = getDefaultInstance().getName();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource name of the tag template field in URL format.
+     * Example:
+     * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template}/fields/{field}
+     * Note that this TagTemplateField may not actually be stored in the location
+     * in this name.
+     * </pre>
+     *
+     * <code>string name = 6;</code>
+     */
+    public Builder setNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      name_ = value;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object displayName_ = "";
     /**
      *
      *
      * <pre>
-     * Optional. The display name for this field. Default value is an empty
-     * string.
+     * Optional. The display name for this field. Defaults to an empty string.
      * </pre>
      *
      * <code>string display_name = 1;</code>
@@ -561,8 +753,7 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The display name for this field. Default value is an empty
-     * string.
+     * Optional. The display name for this field. Defaults to an empty string.
      * </pre>
      *
      * <code>string display_name = 1;</code>
@@ -582,8 +773,7 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The display name for this field. Default value is an empty
-     * string.
+     * Optional. The display name for this field. Defaults to an empty string.
      * </pre>
      *
      * <code>string display_name = 1;</code>
@@ -601,8 +791,7 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The display name for this field. Default value is an empty
-     * string.
+     * Optional. The display name for this field. Defaults to an empty string.
      * </pre>
      *
      * <code>string display_name = 1;</code>
@@ -617,8 +806,7 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The display name for this field. Default value is an empty
-     * string.
+     * Optional. The display name for this field. Defaults to an empty string.
      * </pre>
      *
      * <code>string display_name = 1;</code>
@@ -647,7 +835,9 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
      * Required. The type of value this tag field can contain.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1beta1.FieldType type = 2;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.FieldType type = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public boolean hasType() {
       return typeBuilder_ != null || type_ != null;
@@ -659,7 +849,9 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
      * Required. The type of value this tag field can contain.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1beta1.FieldType type = 2;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.FieldType type = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.datacatalog.FieldType getType() {
       if (typeBuilder_ == null) {
@@ -675,7 +867,9 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
      * Required. The type of value this tag field can contain.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1beta1.FieldType type = 2;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.FieldType type = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setType(com.google.cloud.datacatalog.FieldType value) {
       if (typeBuilder_ == null) {
@@ -697,7 +891,9 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
      * Required. The type of value this tag field can contain.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1beta1.FieldType type = 2;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.FieldType type = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setType(com.google.cloud.datacatalog.FieldType.Builder builderForValue) {
       if (typeBuilder_ == null) {
@@ -716,7 +912,9 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
      * Required. The type of value this tag field can contain.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1beta1.FieldType type = 2;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.FieldType type = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeType(com.google.cloud.datacatalog.FieldType value) {
       if (typeBuilder_ == null) {
@@ -742,7 +940,9 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
      * Required. The type of value this tag field can contain.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1beta1.FieldType type = 2;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.FieldType type = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearType() {
       if (typeBuilder_ == null) {
@@ -762,7 +962,9 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
      * Required. The type of value this tag field can contain.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1beta1.FieldType type = 2;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.FieldType type = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.datacatalog.FieldType.Builder getTypeBuilder() {
 
@@ -776,7 +978,9 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
      * Required. The type of value this tag field can contain.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1beta1.FieldType type = 2;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.FieldType type = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.datacatalog.FieldTypeOrBuilder getTypeOrBuilder() {
       if (typeBuilder_ != null) {
@@ -792,7 +996,9 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
      * Required. The type of value this tag field can contain.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1beta1.FieldType type = 2;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.FieldType type = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.datacatalog.FieldType,
