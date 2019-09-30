@@ -1136,10 +1136,10 @@ public interface Storage extends Service<StorageOptions> {
 
     /**
      * Use a virtual hosted-style hostname, which adds the bucket into the host portion of the URI
-     * rather than the path, e.g. 'https://mybucket.storage.googleapis.com'. The bucket name will be
-     * obtained from the resource passed in. For V4 signing, this also sets the "host" header in the
-     * canonicalized extension headers to the virtual hosted-style host, unless that header is
-     * supplied via the {@code withExtHeaders()} method.
+     * rather than the path, e.g. 'https://mybucket.storage.googleapis.com/...'. The bucket name
+     * will be obtained from the resource passed in. For V4 signing, this also sets the "host"
+     * header in the canonicalized extension headers to the virtual hosted-style host, unless that
+     * header is supplied via the {@code withExtHeaders()} method.
      *
      * @see <a href="https://cloud.google.com/storage/docs/request-endpoints">Request Endpoints</a>
      */
@@ -1149,9 +1149,10 @@ public interface Storage extends Service<StorageOptions> {
 
     /**
      * Generate a path-style URL, which places the bucket name in the path portion of the URL
-     * instead of in the hostname. Note that this cannot be used alongside {@code
-     * withVirtualHostedStyle()}. Virtual hosted-style URLs, which can be used via the {@code
-     * withVirtualHostedStyle()} method, should generally be preferred instead of path-style URLs.
+     * instead of in the hostname, e.g 'https://storage.googleapis.com/mybucket/...'. Note that this
+     * cannot be used alongside {@code withVirtualHostedStyle()}. Virtual hosted-style URLs, which
+     * can be used via the {@code withVirtualHostedStyle()} method, should generally be preferred
+     * instead of path-style URLs.
      *
      * @see <a href="https://cloud.google.com/storage/docs/request-endpoints">Request Endpoints</a>
      */
