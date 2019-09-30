@@ -1,6 +1,6 @@
 {
   "name": "automl",
-  "name_pretty": "AutoML",
+  "name_pretty": "Cloud Auto ML",
   "product_documentation": "https://cloud.google.com/automl/docs/",
   "client_documentation": "https://googleapis.dev/java/java-automl/latest/index.html",
   "issue_tracker": "https://issuetracker.google.com/savedsearches/559744",
