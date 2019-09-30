@@ -279,6 +279,7 @@ public class ITBigQueryTest {
   public static void beforeClass() throws InterruptedException, TimeoutException {
     RemoteBigQueryHelper bigqueryHelper = RemoteBigQueryHelper.create();
     RemoteStorageHelper storageHelper = RemoteStorageHelper.create();
+    Map<String, String> labels = ImmutableMap.of("test-job-name", "test-load-job");
     bigquery = bigqueryHelper.getOptions().getService();
     storage = storageHelper.getOptions().getService();
     storage.create(BucketInfo.of(BUCKET));
@@ -302,11 +303,13 @@ public class ITBigQueryTest {
                 TABLE_ID, "gs://" + BUCKET + "/" + JSON_LOAD_FILE, FormatOptions.json())
             .setCreateDisposition(JobInfo.CreateDisposition.CREATE_IF_NEEDED)
             .setSchema(TABLE_SCHEMA)
-            .setLabels(ImmutableMap.of("test-job-name", "test-load-job"))
+            .setLabels(labels)
             .build();
     Job job = bigquery.create(JobInfo.of(configuration));
     job = job.waitFor();
     assertNull(job.getStatus().getError());
+    LoadJobConfiguration loadJobConfiguration = job.getConfiguration();
+    assertEquals(labels, loadJobConfiguration.getLabels());
   }
 
   @AfterClass
@@ -1534,14 +1537,17 @@ public class ITBigQueryTest {
   public void testExtractJob() throws InterruptedException, TimeoutException {
     String tableName = "test_export_job_table";
     TableId destinationTable = TableId.of(DATASET, tableName);
+    Map<String, String> labels = ImmutableMap.of("test-job-name", "test-load-extract-job");
     LoadJobConfiguration configuration =
         LoadJobConfiguration.newBuilder(destinationTable, "gs://" + BUCKET + "/" + LOAD_FILE)
             .setSchema(SIMPLE_SCHEMA)
-            .setLabels(ImmutableMap.of("test-job-name", "test-load-extract-job"))
+            .setLabels(labels)
             .build();
     Job remoteLoadJob = bigquery.create(JobInfo.of(configuration));
     remoteLoadJob = remoteLoadJob.waitFor();
     assertNull(remoteLoadJob.getStatus().getError());
+    LoadJobConfiguration loadJobConfiguration = remoteLoadJob.getConfiguration();
+    assertEquals(labels, loadJobConfiguration.getLabels());
 
     ExtractJobConfiguration extractConfiguration =
         ExtractJobConfiguration.newBuilder(destinationTable, "gs://" + BUCKET + "/" + EXTRACT_FILE)
