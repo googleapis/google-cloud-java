@@ -27,6 +27,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.util.UUID;
+import java.util.regex.Pattern;
 
 import org.junit.After;
 import org.junit.Before;
@@ -46,7 +47,7 @@ public class DetectIT {
   private static final String OUTPUT_PREFIX = "OCR_PDF_TEST_OUTPUT_" + UUID.randomUUID().toString();
 
   @Before
-  public void setUp() throws IOException {
+  public void setUp() {
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
     System.setOut(out);
@@ -312,8 +313,8 @@ public class DetectIT {
     // Assert
     String got = bout.toString();
     assertThat(got).contains("vertices {");
-    assertThat(got).contains("x: 599");
-    assertThat(got).contains("y: 475");
+    assertThat(got).containsMatch(Pattern.compile("x: 2\\d{2}"));
+    assertThat(got).containsMatch(Pattern.compile("y: 4\\d{2}"));
   }
 
   @Test
@@ -325,8 +326,8 @@ public class DetectIT {
     // Assert
     String got = bout.toString();
     assertThat(got).contains("vertices {");
-    assertThat(got).contains("x: 599");
-    assertThat(got).contains("y: 475");
+    assertThat(got).containsMatch(Pattern.compile("x: 2\\d{2}"));
+    assertThat(got).containsMatch(Pattern.compile("y: 4\\d{2}"));
   }
 
   @Test
