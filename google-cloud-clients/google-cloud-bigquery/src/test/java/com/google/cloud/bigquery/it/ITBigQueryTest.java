@@ -302,6 +302,7 @@ public class ITBigQueryTest {
                 TABLE_ID, "gs://" + BUCKET + "/" + JSON_LOAD_FILE, FormatOptions.json())
             .setCreateDisposition(JobInfo.CreateDisposition.CREATE_IF_NEEDED)
             .setSchema(TABLE_SCHEMA)
+            .setLabels(ImmutableMap.of("test-job-name", "test-load-job"))
             .build();
     Job job = bigquery.create(JobInfo.of(configuration));
     job = job.waitFor();
@@ -1536,6 +1537,7 @@ public class ITBigQueryTest {
     LoadJobConfiguration configuration =
         LoadJobConfiguration.newBuilder(destinationTable, "gs://" + BUCKET + "/" + LOAD_FILE)
             .setSchema(SIMPLE_SCHEMA)
+            .setLabels(ImmutableMap.of("test-job-name", "test-load-extract-job"))
             .build();
     Job remoteLoadJob = bigquery.create(JobInfo.of(configuration));
     remoteLoadJob = remoteLoadJob.waitFor();
