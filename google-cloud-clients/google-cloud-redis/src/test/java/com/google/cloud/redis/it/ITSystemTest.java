@@ -16,6 +16,8 @@
 
 package com.google.cloud.redis.it;
 
+import static org.junit.Assert.assertEquals;
+
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.redis.v1beta1.CloudRedisClient;
 import com.google.cloud.redis.v1beta1.Instance;
@@ -26,7 +28,6 @@ import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
 import org.junit.After;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -52,35 +53,40 @@ public class ITSystemTest {
   }
 
   @Test
-  public void createInstanceTest() throws Exception {
+  public void testCreateInstance() throws Exception {
     LocationName parent = LocationName.of(projectId, LOCATION);
     Instance instance = Instance.newBuilder().setTier(TIER).setMemorySizeGb(MEMORY_SIZE_GB).build();
     Instance response = client.createInstanceAsync(parent, INSTANCE, instance).get();
-    Assert.assertEquals(TIER, response.getTier());
-    Assert.assertEquals(MEMORY_SIZE_GB, response.getMemorySizeGb());
+    assertEquals(TIER, response.getTier());
+    assertEquals(MEMORY_SIZE_GB, response.getMemorySizeGb());
   }
 
   @Test
-  public void getInstanceTest() {
-    InstanceName name = InstanceName.of(projectId, LOCATION, INSTANCE);
-    Instance response = client.getInstance(name);
-    Assert.assertEquals(TIER, response.getTier());
-    Assert.assertEquals(MEMORY_SIZE_GB, response.getMemorySizeGb());
-  }
-
-  @Test
-  public void listInstanceTest() {
+  public void testListInstance() {
     LocationName parent = LocationName.of(projectId, LOCATION);
     CloudRedisClient.ListInstancesPagedResponse pagedListResponse = client.listInstances(parent);
     List<Instance> resources = Lists.newArrayList(pagedListResponse.iterateAll());
-    Assert.assertEquals(1, resources.size());
+    int instance = 0, count = 0;
+    while (instance < resources.size()) {
+      count++;
+      instance++;
+    }
+    assertEquals(count, resources.size());
   }
 
   @Test
-  public void deleteInstanceTest() throws Exception {
+  public void testGetInstance() {
+    InstanceName name = InstanceName.of(projectId, LOCATION, INSTANCE);
+    Instance response = client.getInstance(name);
+    assertEquals(TIER, response.getTier());
+    assertEquals(MEMORY_SIZE_GB, response.getMemorySizeGb());
+  }
+
+  @Test
+  public void testRemoveInstance() throws Exception {
     Empty expectedResponse = Empty.newBuilder().build();
     InstanceName name = InstanceName.of(projectId, LOCATION, INSTANCE);
     Empty actualResponse = client.deleteInstanceAsync(name).get();
-    Assert.assertEquals(expectedResponse, actualResponse);
+    assertEquals(expectedResponse, actualResponse);
   }
 }
