@@ -2,12 +2,12 @@
   "name": "automl",
   "name_pretty": "AutoML",
   "product_documentation": "https://cloud.google.com/automl/docs/",
-  "client_documentation": "https://googleapis.dev/java/google-cloud-clients/latest/index.html?com/google/cloud/automl/v1beta1/package-summary.html",
+  "client_documentation": "https://googleapis.dev/java/java-automl/latest/index.html",
   "issue_tracker": "https://issuetracker.google.com/savedsearches/559744",
   "release_level": "beta",
   "language": "java",
-  "repo": "googleapis/google-cloud-java",
-  "repo_short": "google-cloud-java",
+  "repo": "googleapis/java-automl",
+  "repo_short": "java-automl",
   "distribution_name": "com.google.cloud:google-cloud-automl",
   "api_id": "automl.googleapis.com"
 }
