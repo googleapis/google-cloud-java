@@ -2,12 +2,12 @@
   "name": "translation",
   "name_pretty": "Cloud Translation",
   "product_documentation": "https://cloud.google.com/translate/docs/",
-  "client_documentation": "https://googleapis.dev/java/google-cloud-clients/latest/index.html?com/google/cloud/translate/package-summary.html",
+  "client_documentation": "https://googleapis.dev/java/java-translate/latest/index.html",
   "issue_tracker": "https://issuetracker.google.com/savedsearches/559749",
   "release_level": "ga",
   "language": "java",
-  "repo": "googleapis/google-cloud-java",
-  "repo_short": "google-cloud-java",
+  "repo": "googleapis/java-translate",
+  "repo_short": "java-translate",
   "distribution_name": "com.google.cloud:google-cloud-translate",
   "api_id": "translation.googleapis.com"
 }

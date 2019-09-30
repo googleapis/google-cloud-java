@@ -489,7 +489,7 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
 
       builder
           .deleteGlossarySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
       builder
           .batchTranslateTextOperationSettings()
@@ -542,7 +542,7 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
           .setInitialCallSettings(
               UnaryCallSettings
                   .<DeleteGlossaryRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
                   .build())
           .setResponseTransformer(
