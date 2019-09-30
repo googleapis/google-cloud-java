@@ -22,31 +22,31 @@ package com.google.cloud.automl.v1beta1;
  *
  *
  * <pre>
- * Model deployment metadata specific to Image Object Detection.
+ * Model deployment metadata specific to Image Classification.
  * </pre>
  *
- * Protobuf type {@code google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata}
+ * Protobuf type {@code google.cloud.automl.v1beta1.ImageClassificationModelDeploymentMetadata}
  */
-public final class ImageObjectDetectionModelDeploymentMetadata
+public final class ImageClassificationModelDeploymentMetadata
     extends com.google.protobuf.GeneratedMessageV3
     implements
-    // @@protoc_insertion_point(message_implements:google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata)
-    ImageObjectDetectionModelDeploymentMetadataOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.cloud.automl.v1beta1.ImageClassificationModelDeploymentMetadata)
+    ImageClassificationModelDeploymentMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-  // Use ImageObjectDetectionModelDeploymentMetadata.newBuilder() to construct.
-  private ImageObjectDetectionModelDeploymentMetadata(
+  // Use ImageClassificationModelDeploymentMetadata.newBuilder() to construct.
+  private ImageClassificationModelDeploymentMetadata(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private ImageObjectDetectionModelDeploymentMetadata() {}
+  private ImageClassificationModelDeploymentMetadata() {}
 
   @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
 
-  private ImageObjectDetectionModelDeploymentMetadata(
+  private ImageClassificationModelDeploymentMetadata(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -91,17 +91,17 @@ public final class ImageObjectDetectionModelDeploymentMetadata
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.automl.v1beta1.ImageProto
-        .internal_static_google_cloud_automl_v1beta1_ImageObjectDetectionModelDeploymentMetadata_descriptor;
+        .internal_static_google_cloud_automl_v1beta1_ImageClassificationModelDeploymentMetadata_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloud.automl.v1beta1.ImageProto
-        .internal_static_google_cloud_automl_v1beta1_ImageObjectDetectionModelDeploymentMetadata_fieldAccessorTable
+        .internal_static_google_cloud_automl_v1beta1_ImageClassificationModelDeploymentMetadata_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata.class,
-            com.google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata.Builder
+            com.google.cloud.automl.v1beta1.ImageClassificationModelDeploymentMetadata.class,
+            com.google.cloud.automl.v1beta1.ImageClassificationModelDeploymentMetadata.Builder
                 .class);
   }
 
@@ -114,7 +114,7 @@ public final class ImageObjectDetectionModelDeploymentMetadata
    * Input only. The number of nodes to deploy the model on. A node is an
    * abstraction of a machine resource, which can handle online prediction QPS
    * as given in the model's
-   * [qps_per_node][google.cloud.automl.v1beta1.ImageObjectDetectionModelMetadata.qps_per_node].
+   * [node_qps][google.cloud.automl.v1p1beta.ImageClassificationModelMetadata.node_qps].
    * Must be between 1 and 100, inclusive on both ends.
    * </pre>
    *
@@ -164,11 +164,11 @@ public final class ImageObjectDetectionModelDeploymentMetadata
       return true;
     }
     if (!(obj
-        instanceof com.google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata)) {
+        instanceof com.google.cloud.automl.v1beta1.ImageClassificationModelDeploymentMetadata)) {
       return super.equals(obj);
     }
-    com.google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata other =
-        (com.google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata) obj;
+    com.google.cloud.automl.v1beta1.ImageClassificationModelDeploymentMetadata other =
+        (com.google.cloud.automl.v1beta1.ImageClassificationModelDeploymentMetadata) obj;
 
     if (getNodeCount() != other.getNodeCount()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -189,26 +189,26 @@ public final class ImageObjectDetectionModelDeploymentMetadata
     return hash;
   }
 
-  public static com.google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata
+  public static com.google.cloud.automl.v1beta1.ImageClassificationModelDeploymentMetadata
       parseFrom(java.nio.ByteBuffer data)
           throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata
+  public static com.google.cloud.automl.v1beta1.ImageClassificationModelDeploymentMetadata
       parseFrom(
           java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata
+  public static com.google.cloud.automl.v1beta1.ImageClassificationModelDeploymentMetadata
       parseFrom(com.google.protobuf.ByteString data)
           throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata
+  public static com.google.cloud.automl.v1beta1.ImageClassificationModelDeploymentMetadata
       parseFrom(
           com.google.protobuf.ByteString data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -216,23 +216,23 @@ public final class ImageObjectDetectionModelDeploymentMetadata
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata
+  public static com.google.cloud.automl.v1beta1.ImageClassificationModelDeploymentMetadata
       parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata
+  public static com.google.cloud.automl.v1beta1.ImageClassificationModelDeploymentMetadata
       parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata
+  public static com.google.cloud.automl.v1beta1.ImageClassificationModelDeploymentMetadata
       parseFrom(java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata
+  public static com.google.cloud.automl.v1beta1.ImageClassificationModelDeploymentMetadata
       parseFrom(
           java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
@@ -240,12 +240,12 @@ public final class ImageObjectDetectionModelDeploymentMetadata
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata
+  public static com.google.cloud.automl.v1beta1.ImageClassificationModelDeploymentMetadata
       parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata
+  public static com.google.cloud.automl.v1beta1.ImageClassificationModelDeploymentMetadata
       parseDelimitedFrom(
           java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
@@ -253,12 +253,12 @@ public final class ImageObjectDetectionModelDeploymentMetadata
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata
+  public static com.google.cloud.automl.v1beta1.ImageClassificationModelDeploymentMetadata
       parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata
+  public static com.google.cloud.automl.v1beta1.ImageClassificationModelDeploymentMetadata
       parseFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -277,7 +277,7 @@ public final class ImageObjectDetectionModelDeploymentMetadata
   }
 
   public static Builder newBuilder(
-      com.google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata prototype) {
+      com.google.cloud.automl.v1beta1.ImageClassificationModelDeploymentMetadata prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -295,33 +295,33 @@ public final class ImageObjectDetectionModelDeploymentMetadata
    *
    *
    * <pre>
-   * Model deployment metadata specific to Image Object Detection.
+   * Model deployment metadata specific to Image Classification.
    * </pre>
    *
-   * Protobuf type {@code google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata}
+   * Protobuf type {@code google.cloud.automl.v1beta1.ImageClassificationModelDeploymentMetadata}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata)
-      com.google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadataOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.cloud.automl.v1beta1.ImageClassificationModelDeploymentMetadata)
+      com.google.cloud.automl.v1beta1.ImageClassificationModelDeploymentMetadataOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.automl.v1beta1.ImageProto
-          .internal_static_google_cloud_automl_v1beta1_ImageObjectDetectionModelDeploymentMetadata_descriptor;
+          .internal_static_google_cloud_automl_v1beta1_ImageClassificationModelDeploymentMetadata_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.automl.v1beta1.ImageProto
-          .internal_static_google_cloud_automl_v1beta1_ImageObjectDetectionModelDeploymentMetadata_fieldAccessorTable
+          .internal_static_google_cloud_automl_v1beta1_ImageClassificationModelDeploymentMetadata_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata.class,
-              com.google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata.Builder
+              com.google.cloud.automl.v1beta1.ImageClassificationModelDeploymentMetadata.class,
+              com.google.cloud.automl.v1beta1.ImageClassificationModelDeploymentMetadata.Builder
                   .class);
     }
 
     // Construct using
-    // com.google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata.newBuilder()
+    // com.google.cloud.automl.v1beta1.ImageClassificationModelDeploymentMetadata.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -346,19 +346,19 @@ public final class ImageObjectDetectionModelDeploymentMetadata
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.cloud.automl.v1beta1.ImageProto
-          .internal_static_google_cloud_automl_v1beta1_ImageObjectDetectionModelDeploymentMetadata_descriptor;
+          .internal_static_google_cloud_automl_v1beta1_ImageClassificationModelDeploymentMetadata_descriptor;
     }
 
     @java.lang.Override
-    public com.google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata
+    public com.google.cloud.automl.v1beta1.ImageClassificationModelDeploymentMetadata
         getDefaultInstanceForType() {
-      return com.google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata
+      return com.google.cloud.automl.v1beta1.ImageClassificationModelDeploymentMetadata
           .getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata build() {
-      com.google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata result =
+    public com.google.cloud.automl.v1beta1.ImageClassificationModelDeploymentMetadata build() {
+      com.google.cloud.automl.v1beta1.ImageClassificationModelDeploymentMetadata result =
           buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
@@ -367,10 +367,10 @@ public final class ImageObjectDetectionModelDeploymentMetadata
     }
 
     @java.lang.Override
-    public com.google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata
+    public com.google.cloud.automl.v1beta1.ImageClassificationModelDeploymentMetadata
         buildPartial() {
-      com.google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata result =
-          new com.google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata(this);
+      com.google.cloud.automl.v1beta1.ImageClassificationModelDeploymentMetadata result =
+          new com.google.cloud.automl.v1beta1.ImageClassificationModelDeploymentMetadata(this);
       result.nodeCount_ = nodeCount_;
       onBuilt();
       return result;
@@ -412,9 +412,9 @@ public final class ImageObjectDetectionModelDeploymentMetadata
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other
-          instanceof com.google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata) {
+          instanceof com.google.cloud.automl.v1beta1.ImageClassificationModelDeploymentMetadata) {
         return mergeFrom(
-            (com.google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata) other);
+            (com.google.cloud.automl.v1beta1.ImageClassificationModelDeploymentMetadata) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -422,9 +422,9 @@ public final class ImageObjectDetectionModelDeploymentMetadata
     }
 
     public Builder mergeFrom(
-        com.google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata other) {
+        com.google.cloud.automl.v1beta1.ImageClassificationModelDeploymentMetadata other) {
       if (other
-          == com.google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata
+          == com.google.cloud.automl.v1beta1.ImageClassificationModelDeploymentMetadata
               .getDefaultInstance()) return this;
       if (other.getNodeCount() != 0L) {
         setNodeCount(other.getNodeCount());
@@ -444,13 +444,13 @@ public final class ImageObjectDetectionModelDeploymentMetadata
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata parsedMessage =
+      com.google.cloud.automl.v1beta1.ImageClassificationModelDeploymentMetadata parsedMessage =
           null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         parsedMessage =
-            (com.google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata)
+            (com.google.cloud.automl.v1beta1.ImageClassificationModelDeploymentMetadata)
                 e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
@@ -469,7 +469,7 @@ public final class ImageObjectDetectionModelDeploymentMetadata
      * Input only. The number of nodes to deploy the model on. A node is an
      * abstraction of a machine resource, which can handle online prediction QPS
      * as given in the model's
-     * [qps_per_node][google.cloud.automl.v1beta1.ImageObjectDetectionModelMetadata.qps_per_node].
+     * [node_qps][google.cloud.automl.v1p1beta.ImageClassificationModelMetadata.node_qps].
      * Must be between 1 and 100, inclusive on both ends.
      * </pre>
      *
@@ -485,7 +485,7 @@ public final class ImageObjectDetectionModelDeploymentMetadata
      * Input only. The number of nodes to deploy the model on. A node is an
      * abstraction of a machine resource, which can handle online prediction QPS
      * as given in the model's
-     * [qps_per_node][google.cloud.automl.v1beta1.ImageObjectDetectionModelMetadata.qps_per_node].
+     * [node_qps][google.cloud.automl.v1p1beta.ImageClassificationModelMetadata.node_qps].
      * Must be between 1 and 100, inclusive on both ends.
      * </pre>
      *
@@ -504,7 +504,7 @@ public final class ImageObjectDetectionModelDeploymentMetadata
      * Input only. The number of nodes to deploy the model on. A node is an
      * abstraction of a machine resource, which can handle online prediction QPS
      * as given in the model's
-     * [qps_per_node][google.cloud.automl.v1beta1.ImageObjectDetectionModelMetadata.qps_per_node].
+     * [node_qps][google.cloud.automl.v1p1beta.ImageClassificationModelMetadata.node_qps].
      * Must be between 1 and 100, inclusive on both ends.
      * </pre>
      *
@@ -528,47 +528,46 @@ public final class ImageObjectDetectionModelDeploymentMetadata
       return super.mergeUnknownFields(unknownFields);
     }
 
-    // @@protoc_insertion_point(builder_scope:google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata)
+    // @@protoc_insertion_point(builder_scope:google.cloud.automl.v1beta1.ImageClassificationModelDeploymentMetadata)
   }
 
-  // @@protoc_insertion_point(class_scope:google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata)
-  private static final com.google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata
+  // @@protoc_insertion_point(class_scope:google.cloud.automl.v1beta1.ImageClassificationModelDeploymentMetadata)
+  private static final com.google.cloud.automl.v1beta1.ImageClassificationModelDeploymentMetadata
       DEFAULT_INSTANCE;
 
   static {
     DEFAULT_INSTANCE =
-        new com.google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata();
+        new com.google.cloud.automl.v1beta1.ImageClassificationModelDeploymentMetadata();
   }
 
-  public static com.google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata
+  public static com.google.cloud.automl.v1beta1.ImageClassificationModelDeploymentMetadata
       getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ImageObjectDetectionModelDeploymentMetadata>
+  private static final com.google.protobuf.Parser<ImageClassificationModelDeploymentMetadata>
       PARSER =
-          new com.google.protobuf.AbstractParser<ImageObjectDetectionModelDeploymentMetadata>() {
+          new com.google.protobuf.AbstractParser<ImageClassificationModelDeploymentMetadata>() {
             @java.lang.Override
-            public ImageObjectDetectionModelDeploymentMetadata parsePartialFrom(
+            public ImageClassificationModelDeploymentMetadata parsePartialFrom(
                 com.google.protobuf.CodedInputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-              return new ImageObjectDetectionModelDeploymentMetadata(input, extensionRegistry);
+              return new ImageClassificationModelDeploymentMetadata(input, extensionRegistry);
             }
           };
 
-  public static com.google.protobuf.Parser<ImageObjectDetectionModelDeploymentMetadata> parser() {
+  public static com.google.protobuf.Parser<ImageClassificationModelDeploymentMetadata> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<ImageObjectDetectionModelDeploymentMetadata>
-      getParserForType() {
+  public com.google.protobuf.Parser<ImageClassificationModelDeploymentMetadata> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata
+  public com.google.cloud.automl.v1beta1.ImageClassificationModelDeploymentMetadata
       getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
