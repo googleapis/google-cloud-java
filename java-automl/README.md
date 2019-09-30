@@ -3,9 +3,8 @@ Google Cloud Java Client for Cloud Auto ML
 
 Java idiomatic client for [Cloud Auto ML][cloud-automl].
 
-[![Kokoro CI](http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/master.svg)](http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/master.html)
+[![Kokoro CI](http://storage.googleapis.com/cloud-devrel-public/java/badges/java-automl/master.svg)](http://storage.googleapis.com/cloud-devrel-public/java/badges/java-automl/master.html)
 [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-automl.svg)](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-automl.svg)
-[![Codacy Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/google-cloud-java)
 
 - [Product Documentation][automl-product-docs]
 - [Client Library Documentation][automl-client-lib-docs]
@@ -91,10 +90,10 @@ License
 Apache 2.0 - See [LICENSE] for more information.
 
 
-[CONTRIBUTING]:https://github.com/googleapis/google-cloud-java/blob/master/CONTRIBUTING.md
-[code-of-conduct]:https://github.com/googleapis/google-cloud-java/blob/master/CODE_OF_CONDUCT.md#contributor-code-of-conduct
-[LICENSE]: https://github.com/googleapis/google-cloud-java/blob/master/LICENSE
+[CONTRIBUTING]:https://github.com/googleapis/java-automl/blob/master/CONTRIBUTING.md
+[code-of-conduct]:https://github.com/googleapis/java-automl/blob/master/CODE_OF_CONDUCT.md#contributor-code-of-conduct
+[LICENSE]: https://github.com/googleapis/java-automl/blob/master/LICENSE
 [cloud-platform]: https://cloud.google.com/
 [cloud-automl]: https://cloud.google.com/automl
 [automl-product-docs]: https://cloud.google.com/automl/
-[automl-client-lib-docs]: https://googleapis.dev/java/google-cloud-clients/latest/index.html?com/google/cloud/automl/v1beta1/package-summary.html
+[automl-client-lib-docs]: https://googleapis.dev/java/java-automl/latest/index.html
