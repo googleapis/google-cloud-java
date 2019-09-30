@@ -59,7 +59,7 @@
         <groupId>com.google.guava</groupId>
         <artifactId>guava-testlib</artifactId>
         <!-- We are currently using the *-android version to support JDK7. -->
-        <version>28.0-android</version>
+        <version>28.1-android</version>
       </dependency>
       <dependency>
         <groupId>junit</groupId>
