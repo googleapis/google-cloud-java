@@ -586,12 +586,12 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-translate-v3beta1</artifactId>
-        <version>0.76.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-translate-v3beta1:current} -->
+        <version>0.76.0</version>
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-translate-v3beta1</artifactId>
-        <version>0.76.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-translate-v3beta1:current} -->
+        <version>0.76.0</version>
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
@@ -865,7 +865,6 @@
     <module>grpc-google-cloud-tasks-v2beta3</module>
     <module>grpc-google-cloud-texttospeech-v1</module>
     <module>grpc-google-cloud-texttospeech-v1beta1</module>
-    <module>grpc-google-cloud-translate-v3beta1</module>
     <module>grpc-google-cloud-video-intelligence-v1</module>
     <module>grpc-google-cloud-video-intelligence-v1beta1</module>
     <module>grpc-google-cloud-video-intelligence-v1beta2</module>
@@ -930,7 +929,6 @@
     <module>proto-google-cloud-tasks-v2beta3</module>
     <module>proto-google-cloud-texttospeech-v1</module>
     <module>proto-google-cloud-texttospeech-v1beta1</module>
-    <module>proto-google-cloud-translate-v3beta1</module>
     <module>proto-google-cloud-video-intelligence-v1</module>
     <module>proto-google-cloud-video-intelligence-v1beta1</module>
     <module>proto-google-cloud-video-intelligence-v1beta2</module>
