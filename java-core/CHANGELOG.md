@@ -1,5 +1,14 @@
 # Changelog
 
+### [1.91.2](https://www.github.com/googleapis/java-core/compare/v1.91.1...v1.91.2) (2019-09-30)
+
+
+### Dependencies
+
+* update dependency com.google.api.grpc:proto-google-iam-v1 to v0.13.0 ([#40](https://www.github.com/googleapis/java-core/issues/40)) ([4f500cc](https://www.github.com/googleapis/java-core/commit/4f500cc))
+* update dependency io.grpc:grpc-bom to v1.24.0 ([#39](https://www.github.com/googleapis/java-core/issues/39)) ([7f6f780](https://www.github.com/googleapis/java-core/commit/7f6f780))
+* update errorprone to 2.3.3 ([#43](https://www.github.com/googleapis/java-core/issues/43)) ([232694c](https://www.github.com/googleapis/java-core/commit/232694c))
+
 ### [1.91.1](https://www.github.com/googleapis/java-core/compare/v1.91.0...v1.91.1) (2019-09-25)
 
 
