@@ -73,7 +73,9 @@ public class DetectIT {
 
     // Assert
     String got = bout.toString();
-    assertThat(got).contains("Google Cloud Platform");
+    assertThat(got).contains("Google");
+    assertThat(got).contains("Cloud");
+    assertThat(got).contains("Platform");
   }
 
   @Test
@@ -97,7 +99,9 @@ public class DetectIT {
 
     // Assert
     String got = bout.toString();
-    assertThat(got).contains("Google Cloud Platform");
+    assertThat(got).contains("Google");
+    assertThat(got).contains("Cloud");
+    assertThat(got).contains("Platform");
   }
 
   @Test
