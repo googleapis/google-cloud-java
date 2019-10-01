@@ -12,22 +12,26 @@ public interface DeleteTransferConfigRequestOrBuilder
    *
    *
    * <pre>
-   * The field will contain name of the resource requested, for example:
+   * Required. The field will contain name of the resource requested, for example:
    * `projects/{project_id}/transferConfigs/{config_id}`
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   java.lang.String getName();
   /**
    *
    *
    * <pre>
-   * The field will contain name of the resource requested, for example:
+   * Required. The field will contain name of the resource requested, for example:
    * `projects/{project_id}/transferConfigs/{config_id}`
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   com.google.protobuf.ByteString getNameBytes();
 }

@@ -12,22 +12,26 @@ public interface ListDataSourcesRequestOrBuilder
    *
    *
    * <pre>
-   * The BigQuery project id for which data sources should be returned.
+   * Required. The BigQuery project id for which data sources should be returned.
    * Must be in the form: `projects/{project_id}`
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   java.lang.String getParent();
   /**
    *
    *
    * <pre>
-   * The BigQuery project id for which data sources should be returned.
+   * Required. The BigQuery project id for which data sources should be returned.
    * Must be in the form: `projects/{project_id}`
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   com.google.protobuf.ByteString getParentBytes();
 

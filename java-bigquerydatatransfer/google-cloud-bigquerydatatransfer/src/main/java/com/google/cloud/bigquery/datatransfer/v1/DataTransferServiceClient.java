@@ -172,7 +172,7 @@ public class DataTransferServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The field will contain name of the resource requested, for example:
+   * @param name Required. The field will contain name of the resource requested, for example:
    *     `projects/{project_id}/dataSources/{data_source_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -196,7 +196,7 @@ public class DataTransferServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The field will contain name of the resource requested, for example:
+   * @param name Required. The field will contain name of the resource requested, for example:
    *     `projects/{project_id}/dataSources/{data_source_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -266,8 +266,8 @@ public class DataTransferServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent The BigQuery project id for which data sources should be returned. Must be in the
-   *     form: `projects/{project_id}`
+   * @param parent Required. The BigQuery project id for which data sources should be returned. Must
+   *     be in the form: `projects/{project_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListDataSourcesPagedResponse listDataSources(ParentName parent) {
@@ -293,8 +293,8 @@ public class DataTransferServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent The BigQuery project id for which data sources should be returned. Must be in the
-   *     form: `projects/{project_id}`
+   * @param parent Required. The BigQuery project id for which data sources should be returned. Must
+   *     be in the form: `projects/{project_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListDataSourcesPagedResponse listDataSources(String parent) {
@@ -398,10 +398,11 @@ public class DataTransferServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent The BigQuery project id where the transfer configuration should be created. Must
-   *     be in the format projects/{project_id}/locations/{location_id} If specified location and
-   *     location of the destination bigquery dataset do not match - the request will fail.
-   * @param transferConfig Data transfer configuration to create.
+   * @param parent Required. The BigQuery project id where the transfer configuration should be
+   *     created. Must be in the format projects/{project_id}/locations/{location_id} If specified
+   *     location and location of the destination bigquery dataset do not match - the request will
+   *     fail.
+   * @param transferConfig Required. Data transfer configuration to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TransferConfig createTransferConfig(
@@ -429,10 +430,11 @@ public class DataTransferServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent The BigQuery project id where the transfer configuration should be created. Must
-   *     be in the format projects/{project_id}/locations/{location_id} If specified location and
-   *     location of the destination bigquery dataset do not match - the request will fail.
-   * @param transferConfig Data transfer configuration to create.
+   * @param parent Required. The BigQuery project id where the transfer configuration should be
+   *     created. Must be in the format projects/{project_id}/locations/{location_id} If specified
+   *     location and location of the destination bigquery dataset do not match - the request will
+   *     fail.
+   * @param transferConfig Required. Data transfer configuration to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TransferConfig createTransferConfig(String parent, TransferConfig transferConfig) {
@@ -509,8 +511,8 @@ public class DataTransferServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param transferConfig Data transfer configuration to create.
-   * @param updateMask Required list of fields to be updated in this request.
+   * @param transferConfig Required. Data transfer configuration to create.
+   * @param updateMask Required. Required list of fields to be updated in this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TransferConfig updateTransferConfig(
@@ -587,7 +589,7 @@ public class DataTransferServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The field will contain name of the resource requested, for example:
+   * @param name Required. The field will contain name of the resource requested, for example:
    *     `projects/{project_id}/transferConfigs/{config_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -613,7 +615,7 @@ public class DataTransferServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The field will contain name of the resource requested, for example:
+   * @param name Required. The field will contain name of the resource requested, for example:
    *     `projects/{project_id}/transferConfigs/{config_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -682,7 +684,7 @@ public class DataTransferServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The field will contain name of the resource requested, for example:
+   * @param name Required. The field will contain name of the resource requested, for example:
    *     `projects/{project_id}/transferConfigs/{config_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -708,7 +710,7 @@ public class DataTransferServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The field will contain name of the resource requested, for example:
+   * @param name Required. The field will contain name of the resource requested, for example:
    *     `projects/{project_id}/transferConfigs/{config_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -778,7 +780,7 @@ public class DataTransferServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent The BigQuery project id for which data sources should be returned:
+   * @param parent Required. The BigQuery project id for which data sources should be returned:
    *     `projects/{project_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -805,7 +807,7 @@ public class DataTransferServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent The BigQuery project id for which data sources should be returned:
+   * @param parent Required. The BigQuery project id for which data sources should be returned:
    *     `projects/{project_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -916,11 +918,11 @@ public class DataTransferServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Transfer configuration name in the form:
+   * @param parent Required. Transfer configuration name in the form:
    *     `projects/{project_id}/transferConfigs/{config_id}`.
-   * @param startTime Start time of the range of transfer runs. For example,
+   * @param startTime Required. Start time of the range of transfer runs. For example,
    *     `"2017-05-25T00:00:00+00:00"`.
-   * @param endTime End time of the range of transfer runs. For example,
+   * @param endTime Required. End time of the range of transfer runs. For example,
    *     `"2017-05-30T00:00:00+00:00"`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -954,11 +956,11 @@ public class DataTransferServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Transfer configuration name in the form:
+   * @param parent Required. Transfer configuration name in the form:
    *     `projects/{project_id}/transferConfigs/{config_id}`.
-   * @param startTime Start time of the range of transfer runs. For example,
+   * @param startTime Required. Start time of the range of transfer runs. For example,
    *     `"2017-05-25T00:00:00+00:00"`.
-   * @param endTime End time of the range of transfer runs. For example,
+   * @param endTime Required. End time of the range of transfer runs. For example,
    *     `"2017-05-30T00:00:00+00:00"`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1048,7 +1050,7 @@ public class DataTransferServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The field will contain name of the resource requested, for example:
+   * @param name Required. The field will contain name of the resource requested, for example:
    *     `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1072,7 +1074,7 @@ public class DataTransferServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The field will contain name of the resource requested, for example:
+   * @param name Required. The field will contain name of the resource requested, for example:
    *     `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1140,7 +1142,7 @@ public class DataTransferServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The field will contain name of the resource requested, for example:
+   * @param name Required. The field will contain name of the resource requested, for example:
    *     `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1166,7 +1168,7 @@ public class DataTransferServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The field will contain name of the resource requested, for example:
+   * @param name Required. The field will contain name of the resource requested, for example:
    *     `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1236,8 +1238,8 @@ public class DataTransferServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Name of transfer configuration for which transfer runs should be retrieved.
-   *     Format of transfer configuration resource name is:
+   * @param parent Required. Name of transfer configuration for which transfer runs should be
+   *     retrieved. Format of transfer configuration resource name is:
    *     `projects/{project_id}/transferConfigs/{config_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1264,8 +1266,8 @@ public class DataTransferServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Name of transfer configuration for which transfer runs should be retrieved.
-   *     Format of transfer configuration resource name is:
+   * @param parent Required. Name of transfer configuration for which transfer runs should be
+   *     retrieved. Format of transfer configuration resource name is:
    *     `projects/{project_id}/transferConfigs/{config_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1372,7 +1374,7 @@ public class DataTransferServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Transfer run name in the form:
+   * @param parent Required. Transfer run name in the form:
    *     `projects/{project_id}/transferConfigs/{config_Id}/runs/{run_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1399,7 +1401,7 @@ public class DataTransferServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Transfer run name in the form:
+   * @param parent Required. Transfer run name in the form:
    *     `projects/{project_id}/transferConfigs/{config_Id}/runs/{run_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1507,7 +1509,8 @@ public class DataTransferServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The data source in the form: `projects/{project_id}/dataSources/{data_source_id}`
+   * @param name Required. The data source in the form:
+   *     `projects/{project_id}/dataSources/{data_source_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final CheckValidCredsResponse checkValidCreds(DataSourceName name) {
@@ -1533,7 +1536,8 @@ public class DataTransferServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The data source in the form: `projects/{project_id}/dataSources/{data_source_id}`
+   * @param name Required. The data source in the form:
+   *     `projects/{project_id}/dataSources/{data_source_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final CheckValidCredsResponse checkValidCreds(String name) {
