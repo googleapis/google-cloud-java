@@ -1,0 +1,11 @@
+{
+  "name": "google-cloud-recommender",
+  "name_pretty": "Google Cloud Recommender",
+  "product_documentation": "https://cloud.google.com/recommendations/",
+  "client_documentation": "https://googleapis.dev/java/java-recommender/latest",
+  "release_level": "beta",
+  "language": "java",
+  "repo": "googleapis/java-recommender",
+  "repo_short": "java-recommender",
+  "distribution_name": "google-cloud-recommender"
+}
