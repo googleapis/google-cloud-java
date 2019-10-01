@@ -98,11 +98,13 @@ public final class DeleteTransferConfigRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * The field will contain name of the resource requested, for example:
+   * Required. The field will contain name of the resource requested, for example:
    * `projects/{project_id}/transferConfigs/{config_id}`
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -119,11 +121,13 @@ public final class DeleteTransferConfigRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * The field will contain name of the resource requested, for example:
+   * Required. The field will contain name of the resource requested, for example:
    * `projects/{project_id}/transferConfigs/{config_id}`
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -470,11 +474,13 @@ public final class DeleteTransferConfigRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The field will contain name of the resource requested, for example:
+     * Required. The field will contain name of the resource requested, for example:
      * `projects/{project_id}/transferConfigs/{config_id}`
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -491,11 +497,13 @@ public final class DeleteTransferConfigRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The field will contain name of the resource requested, for example:
+     * Required. The field will contain name of the resource requested, for example:
      * `projects/{project_id}/transferConfigs/{config_id}`
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -512,11 +520,13 @@ public final class DeleteTransferConfigRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The field will contain name of the resource requested, for example:
+     * Required. The field will contain name of the resource requested, for example:
      * `projects/{project_id}/transferConfigs/{config_id}`
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -531,11 +541,13 @@ public final class DeleteTransferConfigRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The field will contain name of the resource requested, for example:
+     * Required. The field will contain name of the resource requested, for example:
      * `projects/{project_id}/transferConfigs/{config_id}`
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder clearName() {
 
@@ -547,11 +559,13 @@ public final class DeleteTransferConfigRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The field will contain name of the resource requested, for example:
+     * Required. The field will contain name of the resource requested, for example:
      * `projects/{project_id}/transferConfigs/{config_id}`
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
