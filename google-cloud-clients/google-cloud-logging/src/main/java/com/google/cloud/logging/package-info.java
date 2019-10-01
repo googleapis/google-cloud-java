@@ -36,7 +36,7 @@
  *
  *   Page<LogEntry> entries = logging.listLogEntries(
  *   EntryListOption.filter("logName=projects/" + options.getProjectId() + "/logs/test-log"));
- *   Iterator<LogEntry> entryIterator = entries.iterateAll();
+ *   Iterator<LogEntry> entryIterator = entries.iterateAll().iterator();
  *   while (entryIterator.hasNext()) {
  *     System.out.println(entryIterator.next());
  *   }

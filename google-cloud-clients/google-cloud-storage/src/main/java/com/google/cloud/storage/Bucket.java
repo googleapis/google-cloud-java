@@ -775,7 +775,7 @@ public class Bucket extends BucketInfo {
    *
    * <pre>{@code
    * Page<Blob> blobs = bucket.list();
-   * Iterator<Blob> blobIterator = blobs.iterateAll();
+   * Iterator<Blob> blobIterator = blobs.iterateAll().iterator();
    * while (blobIterator.hasNext()) {
    *   Blob blob = blobIterator.next();
    *   // do something with the blob

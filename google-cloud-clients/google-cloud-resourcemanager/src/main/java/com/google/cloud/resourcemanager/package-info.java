@@ -49,7 +49,7 @@
  *   System.out.println("Updated the labels of project " + newProject.getProjectId()
  *       + " to be " + newProject.getLabels());
  * }
- * Iterator<Project> projectIterator = resourceManager.list().iterateAll();
+ * Iterator<Project> projectIterator = resourceManager.list().iterateAll().iterator();
  * System.out.println("Projects I can view:");
  * while (projectIterator.hasNext()) {
  *   System.out.println(projectIterator.next().getProjectId());
