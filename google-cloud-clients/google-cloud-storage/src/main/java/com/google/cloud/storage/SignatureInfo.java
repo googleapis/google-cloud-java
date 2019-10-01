@@ -65,6 +65,7 @@ public class SignatureInfo {
     this.accountEmail = builder.accountEmail;
     this.timestamp = builder.timestamp;
 
+    // The "host" header only needs to be present and signed if using V4.
     if (Storage.SignUrlOption.SignatureVersion.V4.equals(signatureVersion)
         && (!builder.canonicalizedExtensionHeaders.containsKey("host"))) {
       canonicalizedExtensionHeaders =
