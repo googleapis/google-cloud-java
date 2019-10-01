@@ -70,8 +70,8 @@ public final class RecordSet implements Serializable {
   /**
    * Enum for the DNS record types supported by Cloud DNS.
    *
-   * <p>Google Cloud DNS currently supports records of type A, AAAA, CNAME, MX NAPTR, NS, PTR, SOA,
-   * SPF, SRV, TXT.
+   * <p>Google Cloud DNS currently supports records of type A, AAAA, CAA, CNAME, MX NAPTR, NS, PTR,
+   * SOA, SPF, SRV, TXT.
    *
    * @see <a href="https://cloud.google.com/dns/what-is-cloud-dns#supported_record_types">Cloud DNS
    *     supported record types</a>
@@ -93,6 +93,11 @@ public final class RecordSet implements Serializable {
     public static final Type A = type.createAndRegister("A");
     /** IPv6 Address record, which is used to map host names to their IPv6 address. */
     public static final Type AAAA = type.createAndRegister("AAAA");
+    /**
+     * Certificate Authority (CA) Authorization, which specifies which CAs are allowed to create
+     * certificates for a domain.
+     */
+    public static final Type CAA = type.createAndRegister("CAA");
     /** Canonical name record, which is used to alias names. */
     public static final Type CNAME = type.createAndRegister("CNAME");
     /** Mail exchange record, which is used in routing requests to mail servers. */
