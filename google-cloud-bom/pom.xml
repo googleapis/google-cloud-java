@@ -163,12 +163,12 @@
       <dependency>
         <groupId>com.google.api</groupId>
         <artifactId>api-common</artifactId>
-        <version>1.8.1</version>
+        <version>1.8.2</version>
       </dependency>
       <dependency>
         <groupId>com.google.api</groupId>
         <artifactId>gax-bom</artifactId>
-        <version>1.48.1</version>
+        <version>1.49.0</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
