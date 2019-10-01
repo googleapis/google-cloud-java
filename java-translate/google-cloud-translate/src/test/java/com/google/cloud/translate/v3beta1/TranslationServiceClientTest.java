@@ -272,6 +272,57 @@ public class TranslationServiceClientTest {
 
   @Test
   @SuppressWarnings("all")
+  public void listGlossariesTest2() {
+    String nextPageToken = "";
+    Glossary glossariesElement = Glossary.newBuilder().build();
+    List<Glossary> glossaries = Arrays.asList(glossariesElement);
+    ListGlossariesResponse expectedResponse =
+        ListGlossariesResponse.newBuilder()
+            .setNextPageToken(nextPageToken)
+            .addAllGlossaries(glossaries)
+            .build();
+    mockTranslationService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    String filter = "filter-1274492040";
+
+    ListGlossariesPagedResponse pagedListResponse = client.listGlossaries(parent, filter);
+
+    List<Glossary> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getGlossariesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockTranslationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListGlossariesRequest actualRequest = (ListGlossariesRequest) actualRequests.get(0);
+
+    Assert.assertEquals(parent, LocationName.parse(actualRequest.getParent()));
+    Assert.assertEquals(filter, actualRequest.getFilter());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void listGlossariesExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockTranslationService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      String filter = "filter-1274492040";
+
+      client.listGlossaries(parent, filter);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
   public void getGlossaryTest() {
     GlossaryName name2 = GlossaryName.of("[PROJECT]", "[LOCATION]", "[GLOSSARY]");
     int entryCount = 811131134;

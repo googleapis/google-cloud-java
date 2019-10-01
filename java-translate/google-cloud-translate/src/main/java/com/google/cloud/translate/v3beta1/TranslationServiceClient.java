@@ -811,6 +811,65 @@ public class TranslationServiceClient implements BackgroundResource {
    * <pre><code>
    * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   String filter = "";
+   *   for (Glossary element : translationServiceClient.listGlossaries(parent, filter).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The name of the project from which to list all of the glossaries.
+   * @param filter Optional. Filter specifying constraints of a list operation. Filtering is not
+   *     supported yet, and the parameter currently has no effect. If missing, no filtering is
+   *     performed.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListGlossariesPagedResponse listGlossaries(LocationName parent, String filter) {
+    ListGlossariesRequest request =
+        ListGlossariesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setFilter(filter)
+            .build();
+    return listGlossaries(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists glossaries in a project. Returns NOT_FOUND, if the project doesn't exist.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   String filter = "";
+   *   for (Glossary element : translationServiceClient.listGlossaries(parent.toString(), filter).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The name of the project from which to list all of the glossaries.
+   * @param filter Optional. Filter specifying constraints of a list operation. Filtering is not
+   *     supported yet, and the parameter currently has no effect. If missing, no filtering is
+   *     performed.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListGlossariesPagedResponse listGlossaries(String parent, String filter) {
+    ListGlossariesRequest request =
+        ListGlossariesRequest.newBuilder().setParent(parent).setFilter(filter).build();
+    return listGlossaries(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists glossaries in a project. Returns NOT_FOUND, if the project doesn't exist.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   ListGlossariesRequest request = ListGlossariesRequest.newBuilder()
    *     .setParent(parent.toString())
    *     .build();
