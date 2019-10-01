@@ -24,39 +24,53 @@ import com.google.cloud.redis.v1beta1.Instance;
 import com.google.cloud.redis.v1beta1.InstanceName;
 import com.google.cloud.redis.v1beta1.LocationName;
 import com.google.common.collect.Lists;
-import com.google.protobuf.Empty;
-import java.io.IOException;
 import java.util.List;
-import org.junit.After;
-import org.junit.Before;
+import java.util.UUID;
+import java.util.logging.Logger;
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class ITSystemTest {
 
-  private CloudRedisClient client;
-  private String projectId;
+  private static CloudRedisClient client;
+  private static String projectId;
 
+  private static final Logger log = Logger.getLogger(ITSystemTest.class.getName());
   private static final Instance.Tier TIER = Instance.Tier.BASIC;
-  private static final String INSTANCE = "test-instance-basic";
+  private static final String INSTANCE_NAME_PREFIX = "test-instance";
+  private static final String INSTANCE =
+      INSTANCE_NAME_PREFIX + "-" + UUID.randomUUID().toString().substring(0, 8);
   private static final String LOCATION = "us-central1";
   private static final int MEMORY_SIZE_GB = 1;
 
-  @Before
-  public void before() throws IOException {
+  @BeforeClass
+  public static void beforeClass() throws Exception {
     client = CloudRedisClient.create();
     projectId = ServiceOptions.getDefaultProjectId();
+
+    /** Creates a Redis instance based on the specified tier and memory size. */
+    LocationName parent = LocationName.of(projectId, LOCATION);
+    Instance instance = Instance.newBuilder().setTier(TIER).setMemorySizeGb(MEMORY_SIZE_GB).build();
+    client.createInstanceAsync(parent, INSTANCE, instance).get();
+    log.info("redis instance created successfully.");
   }
 
-  @After
-  public void tearDown() {
+  @AfterClass
+  public static void afterClass() {
+
+    /** Deletes a specific Redis instance. Instance stops serving and data is deleted. */
+    InstanceName name = InstanceName.of(projectId, LOCATION, INSTANCE);
+    client.deleteInstanceAsync(name);
+    log.info("redis instance deleted successfully.");
+
     client.close();
   }
 
   @Test
-  public void testCreateInstance() throws Exception {
-    LocationName parent = LocationName.of(projectId, LOCATION);
-    Instance instance = Instance.newBuilder().setTier(TIER).setMemorySizeGb(MEMORY_SIZE_GB).build();
-    Instance response = client.createInstanceAsync(parent, INSTANCE, instance).get();
+  public void testGetInstance() {
+    InstanceName name = InstanceName.of(projectId, LOCATION, INSTANCE);
+    Instance response = client.getInstance(name);
     assertEquals(TIER, response.getTier());
     assertEquals(MEMORY_SIZE_GB, response.getMemorySizeGb());
   }
@@ -72,21 +86,5 @@ public class ITSystemTest {
       instance++;
     }
     assertEquals(count, resources.size());
-  }
-
-  @Test
-  public void testGetInstance() {
-    InstanceName name = InstanceName.of(projectId, LOCATION, INSTANCE);
-    Instance response = client.getInstance(name);
-    assertEquals(TIER, response.getTier());
-    assertEquals(MEMORY_SIZE_GB, response.getMemorySizeGb());
-  }
-
-  @Test
-  public void testRemoveInstance() throws Exception {
-    Empty expectedResponse = Empty.newBuilder().build();
-    InstanceName name = InstanceName.of(projectId, LOCATION, INSTANCE);
-    Empty actualResponse = client.deleteInstanceAsync(name).get();
-    assertEquals(expectedResponse, actualResponse);
   }
 }
