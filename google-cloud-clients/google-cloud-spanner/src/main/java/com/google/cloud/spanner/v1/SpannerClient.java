@@ -342,18 +342,25 @@ public class SpannerClient implements BackgroundResource {
    * <pre><code>
    * try (SpannerClient spannerClient = SpannerClient.create()) {
    *   DatabaseName database = DatabaseName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]");
-   *   BatchCreateSessionsResponse response = spannerClient.batchCreateSessions(database);
+   *   int sessionCount = 0;
+   *   BatchCreateSessionsResponse response = spannerClient.batchCreateSessions(database, sessionCount);
    * }
    * </code></pre>
    *
    * @param database Required. The database in which the new sessions are created.
+   * @param sessionCount Required. The number of sessions to be created in this batch call. The API
+   *     may return fewer than the requested number of sessions. If a specific number of sessions
+   *     are desired, the client can make additional calls to BatchCreateSessions (adjusting
+   *     [session_count][google.spanner.v1.BatchCreateSessionsRequest.session_count] as necessary).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final BatchCreateSessionsResponse batchCreateSessions(DatabaseName database) {
+  public final BatchCreateSessionsResponse batchCreateSessions(
+      DatabaseName database, int sessionCount) {
 
     BatchCreateSessionsRequest request =
         BatchCreateSessionsRequest.newBuilder()
             .setDatabase(database == null ? null : database.toString())
+            .setSessionCount(sessionCount)
             .build();
     return batchCreateSessions(request);
   }
@@ -370,17 +377,25 @@ public class SpannerClient implements BackgroundResource {
    * <pre><code>
    * try (SpannerClient spannerClient = SpannerClient.create()) {
    *   DatabaseName database = DatabaseName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]");
-   *   BatchCreateSessionsResponse response = spannerClient.batchCreateSessions(database.toString());
+   *   int sessionCount = 0;
+   *   BatchCreateSessionsResponse response = spannerClient.batchCreateSessions(database.toString(), sessionCount);
    * }
    * </code></pre>
    *
    * @param database Required. The database in which the new sessions are created.
+   * @param sessionCount Required. The number of sessions to be created in this batch call. The API
+   *     may return fewer than the requested number of sessions. If a specific number of sessions
+   *     are desired, the client can make additional calls to BatchCreateSessions (adjusting
+   *     [session_count][google.spanner.v1.BatchCreateSessionsRequest.session_count] as necessary).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final BatchCreateSessionsResponse batchCreateSessions(String database) {
+  public final BatchCreateSessionsResponse batchCreateSessions(String database, int sessionCount) {
 
     BatchCreateSessionsRequest request =
-        BatchCreateSessionsRequest.newBuilder().setDatabase(database).build();
+        BatchCreateSessionsRequest.newBuilder()
+            .setDatabase(database)
+            .setSessionCount(sessionCount)
+            .build();
     return batchCreateSessions(request);
   }
 
@@ -396,8 +411,10 @@ public class SpannerClient implements BackgroundResource {
    * <pre><code>
    * try (SpannerClient spannerClient = SpannerClient.create()) {
    *   DatabaseName database = DatabaseName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]");
+   *   int sessionCount = 0;
    *   BatchCreateSessionsRequest request = BatchCreateSessionsRequest.newBuilder()
    *     .setDatabase(database.toString())
+   *     .setSessionCount(sessionCount)
    *     .build();
    *   BatchCreateSessionsResponse response = spannerClient.batchCreateSessions(request);
    * }
@@ -422,8 +439,10 @@ public class SpannerClient implements BackgroundResource {
    * <pre><code>
    * try (SpannerClient spannerClient = SpannerClient.create()) {
    *   DatabaseName database = DatabaseName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]");
+   *   int sessionCount = 0;
    *   BatchCreateSessionsRequest request = BatchCreateSessionsRequest.newBuilder()
    *     .setDatabase(database.toString())
+   *     .setSessionCount(sessionCount)
    *     .build();
    *   ApiFuture&lt;BatchCreateSessionsResponse&gt; future = spannerClient.batchCreateSessionsCallable().futureCall(request);
    *   // Do something
