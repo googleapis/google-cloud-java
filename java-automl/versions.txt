@@ -5,4 +5,4 @@ proto-google-cloud-automl-v1beta1:0.77.0:0.77.0
 proto-google-cloud-automl-v1:0.77.0:0.77.0
 grpc-google-cloud-automl-v1beta1:0.77.0:0.77.0
 grpc-google-cloud-automl-v1:0.77.0:0.77.0
-google-cloud-automl:0.111.1-beta-SNAPSHOT:0.111.1-beta-SNAPSHOT
+google-cloud-automl:0.112.0-beta:0.112.0-beta
