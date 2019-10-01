@@ -288,12 +288,12 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The set of allowed values for this enum. This set must not be
-     * empty, the display names of the values in this set must not be empty and
-     * the display names of the values must be case-insensitively unique within
-     * this set. Currently, enum values can only be added to the list of allowed
-     * values. Deletion and renaming of enum values are not supported. Can have
-     * up to 500 allowed values.
+     * Required on create; optional on update. The set of allowed values for
+     * this enum. This set must not be empty, the display names of the values in
+     * this set must not be empty and the display names of the values must be
+     * case-insensitively unique within this set. Currently, enum values can
+     * only be added to the list of allowed values. Deletion and renaming of
+     * enum values are not supported. Can have up to 500 allowed values.
      * </pre>
      *
      * <code>
@@ -306,12 +306,12 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The set of allowed values for this enum. This set must not be
-     * empty, the display names of the values in this set must not be empty and
-     * the display names of the values must be case-insensitively unique within
-     * this set. Currently, enum values can only be added to the list of allowed
-     * values. Deletion and renaming of enum values are not supported. Can have
-     * up to 500 allowed values.
+     * Required on create; optional on update. The set of allowed values for
+     * this enum. This set must not be empty, the display names of the values in
+     * this set must not be empty and the display names of the values must be
+     * case-insensitively unique within this set. Currently, enum values can
+     * only be added to the list of allowed values. Deletion and renaming of
+     * enum values are not supported. Can have up to 500 allowed values.
      * </pre>
      *
      * <code>
@@ -323,12 +323,12 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The set of allowed values for this enum. This set must not be
-     * empty, the display names of the values in this set must not be empty and
-     * the display names of the values must be case-insensitively unique within
-     * this set. Currently, enum values can only be added to the list of allowed
-     * values. Deletion and renaming of enum values are not supported. Can have
-     * up to 500 allowed values.
+     * Required on create; optional on update. The set of allowed values for
+     * this enum. This set must not be empty, the display names of the values in
+     * this set must not be empty and the display names of the values must be
+     * case-insensitively unique within this set. Currently, enum values can
+     * only be added to the list of allowed values. Deletion and renaming of
+     * enum values are not supported. Can have up to 500 allowed values.
      * </pre>
      *
      * <code>
@@ -340,12 +340,12 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The set of allowed values for this enum. This set must not be
-     * empty, the display names of the values in this set must not be empty and
-     * the display names of the values must be case-insensitively unique within
-     * this set. Currently, enum values can only be added to the list of allowed
-     * values. Deletion and renaming of enum values are not supported. Can have
-     * up to 500 allowed values.
+     * Required on create; optional on update. The set of allowed values for
+     * this enum. This set must not be empty, the display names of the values in
+     * this set must not be empty and the display names of the values must be
+     * case-insensitively unique within this set. Currently, enum values can
+     * only be added to the list of allowed values. Deletion and renaming of
+     * enum values are not supported. Can have up to 500 allowed values.
      * </pre>
      *
      * <code>
@@ -358,12 +358,12 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The set of allowed values for this enum. This set must not be
-     * empty, the display names of the values in this set must not be empty and
-     * the display names of the values must be case-insensitively unique within
-     * this set. Currently, enum values can only be added to the list of allowed
-     * values. Deletion and renaming of enum values are not supported. Can have
-     * up to 500 allowed values.
+     * Required on create; optional on update. The set of allowed values for
+     * this enum. This set must not be empty, the display names of the values in
+     * this set must not be empty and the display names of the values must be
+     * case-insensitively unique within this set. Currently, enum values can
+     * only be added to the list of allowed values. Deletion and renaming of
+     * enum values are not supported. Can have up to 500 allowed values.
      * </pre>
      *
      * <code>
@@ -476,7 +476,7 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
        * string.
        * </pre>
        *
-       * <code>string display_name = 1;</code>
+       * <code>string display_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       java.lang.String getDisplayName();
       /**
@@ -487,7 +487,7 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
        * string.
        * </pre>
        *
-       * <code>string display_name = 1;</code>
+       * <code>string display_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       com.google.protobuf.ByteString getDisplayNameBytes();
     }
@@ -582,7 +582,7 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
        * string.
        * </pre>
        *
-       * <code>string display_name = 1;</code>
+       * <code>string display_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public java.lang.String getDisplayName() {
         java.lang.Object ref = displayName_;
@@ -603,7 +603,7 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
        * string.
        * </pre>
        *
-       * <code>string display_name = 1;</code>
+       * <code>string display_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public com.google.protobuf.ByteString getDisplayNameBytes() {
         java.lang.Object ref = displayName_;
@@ -944,7 +944,7 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
          * string.
          * </pre>
          *
-         * <code>string display_name = 1;</code>
+         * <code>string display_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
          */
         public java.lang.String getDisplayName() {
           java.lang.Object ref = displayName_;
@@ -965,7 +965,7 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
          * string.
          * </pre>
          *
-         * <code>string display_name = 1;</code>
+         * <code>string display_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
          */
         public com.google.protobuf.ByteString getDisplayNameBytes() {
           java.lang.Object ref = displayName_;
@@ -986,7 +986,7 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
          * string.
          * </pre>
          *
-         * <code>string display_name = 1;</code>
+         * <code>string display_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
          */
         public Builder setDisplayName(java.lang.String value) {
           if (value == null) {
@@ -1005,7 +1005,7 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
          * string.
          * </pre>
          *
-         * <code>string display_name = 1;</code>
+         * <code>string display_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
          */
         public Builder clearDisplayName() {
 
@@ -1021,7 +1021,7 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
          * string.
          * </pre>
          *
-         * <code>string display_name = 1;</code>
+         * <code>string display_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
          */
         public Builder setDisplayNameBytes(com.google.protobuf.ByteString value) {
           if (value == null) {
@@ -1094,12 +1094,12 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The set of allowed values for this enum. This set must not be
-     * empty, the display names of the values in this set must not be empty and
-     * the display names of the values must be case-insensitively unique within
-     * this set. Currently, enum values can only be added to the list of allowed
-     * values. Deletion and renaming of enum values are not supported. Can have
-     * up to 500 allowed values.
+     * Required on create; optional on update. The set of allowed values for
+     * this enum. This set must not be empty, the display names of the values in
+     * this set must not be empty and the display names of the values must be
+     * case-insensitively unique within this set. Currently, enum values can
+     * only be added to the list of allowed values. Deletion and renaming of
+     * enum values are not supported. Can have up to 500 allowed values.
      * </pre>
      *
      * <code>
@@ -1114,12 +1114,12 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The set of allowed values for this enum. This set must not be
-     * empty, the display names of the values in this set must not be empty and
-     * the display names of the values must be case-insensitively unique within
-     * this set. Currently, enum values can only be added to the list of allowed
-     * values. Deletion and renaming of enum values are not supported. Can have
-     * up to 500 allowed values.
+     * Required on create; optional on update. The set of allowed values for
+     * this enum. This set must not be empty, the display names of the values in
+     * this set must not be empty and the display names of the values must be
+     * case-insensitively unique within this set. Currently, enum values can
+     * only be added to the list of allowed values. Deletion and renaming of
+     * enum values are not supported. Can have up to 500 allowed values.
      * </pre>
      *
      * <code>
@@ -1135,12 +1135,12 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The set of allowed values for this enum. This set must not be
-     * empty, the display names of the values in this set must not be empty and
-     * the display names of the values must be case-insensitively unique within
-     * this set. Currently, enum values can only be added to the list of allowed
-     * values. Deletion and renaming of enum values are not supported. Can have
-     * up to 500 allowed values.
+     * Required on create; optional on update. The set of allowed values for
+     * this enum. This set must not be empty, the display names of the values in
+     * this set must not be empty and the display names of the values must be
+     * case-insensitively unique within this set. Currently, enum values can
+     * only be added to the list of allowed values. Deletion and renaming of
+     * enum values are not supported. Can have up to 500 allowed values.
      * </pre>
      *
      * <code>
@@ -1154,12 +1154,12 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The set of allowed values for this enum. This set must not be
-     * empty, the display names of the values in this set must not be empty and
-     * the display names of the values must be case-insensitively unique within
-     * this set. Currently, enum values can only be added to the list of allowed
-     * values. Deletion and renaming of enum values are not supported. Can have
-     * up to 500 allowed values.
+     * Required on create; optional on update. The set of allowed values for
+     * this enum. This set must not be empty, the display names of the values in
+     * this set must not be empty and the display names of the values must be
+     * case-insensitively unique within this set. Currently, enum values can
+     * only be added to the list of allowed values. Deletion and renaming of
+     * enum values are not supported. Can have up to 500 allowed values.
      * </pre>
      *
      * <code>
@@ -1173,12 +1173,12 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The set of allowed values for this enum. This set must not be
-     * empty, the display names of the values in this set must not be empty and
-     * the display names of the values must be case-insensitively unique within
-     * this set. Currently, enum values can only be added to the list of allowed
-     * values. Deletion and renaming of enum values are not supported. Can have
-     * up to 500 allowed values.
+     * Required on create; optional on update. The set of allowed values for
+     * this enum. This set must not be empty, the display names of the values in
+     * this set must not be empty and the display names of the values must be
+     * case-insensitively unique within this set. Currently, enum values can
+     * only be added to the list of allowed values. Deletion and renaming of
+     * enum values are not supported. Can have up to 500 allowed values.
      * </pre>
      *
      * <code>
@@ -1568,12 +1568,12 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The set of allowed values for this enum. This set must not be
-       * empty, the display names of the values in this set must not be empty and
-       * the display names of the values must be case-insensitively unique within
-       * this set. Currently, enum values can only be added to the list of allowed
-       * values. Deletion and renaming of enum values are not supported. Can have
-       * up to 500 allowed values.
+       * Required on create; optional on update. The set of allowed values for
+       * this enum. This set must not be empty, the display names of the values in
+       * this set must not be empty and the display names of the values must be
+       * case-insensitively unique within this set. Currently, enum values can
+       * only be added to the list of allowed values. Deletion and renaming of
+       * enum values are not supported. Can have up to 500 allowed values.
        * </pre>
        *
        * <code>
@@ -1592,12 +1592,12 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The set of allowed values for this enum. This set must not be
-       * empty, the display names of the values in this set must not be empty and
-       * the display names of the values must be case-insensitively unique within
-       * this set. Currently, enum values can only be added to the list of allowed
-       * values. Deletion and renaming of enum values are not supported. Can have
-       * up to 500 allowed values.
+       * Required on create; optional on update. The set of allowed values for
+       * this enum. This set must not be empty, the display names of the values in
+       * this set must not be empty and the display names of the values must be
+       * case-insensitively unique within this set. Currently, enum values can
+       * only be added to the list of allowed values. Deletion and renaming of
+       * enum values are not supported. Can have up to 500 allowed values.
        * </pre>
        *
        * <code>
@@ -1615,12 +1615,12 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The set of allowed values for this enum. This set must not be
-       * empty, the display names of the values in this set must not be empty and
-       * the display names of the values must be case-insensitively unique within
-       * this set. Currently, enum values can only be added to the list of allowed
-       * values. Deletion and renaming of enum values are not supported. Can have
-       * up to 500 allowed values.
+       * Required on create; optional on update. The set of allowed values for
+       * this enum. This set must not be empty, the display names of the values in
+       * this set must not be empty and the display names of the values must be
+       * case-insensitively unique within this set. Currently, enum values can
+       * only be added to the list of allowed values. Deletion and renaming of
+       * enum values are not supported. Can have up to 500 allowed values.
        * </pre>
        *
        * <code>
@@ -1638,12 +1638,12 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The set of allowed values for this enum. This set must not be
-       * empty, the display names of the values in this set must not be empty and
-       * the display names of the values must be case-insensitively unique within
-       * this set. Currently, enum values can only be added to the list of allowed
-       * values. Deletion and renaming of enum values are not supported. Can have
-       * up to 500 allowed values.
+       * Required on create; optional on update. The set of allowed values for
+       * this enum. This set must not be empty, the display names of the values in
+       * this set must not be empty and the display names of the values must be
+       * case-insensitively unique within this set. Currently, enum values can
+       * only be added to the list of allowed values. Deletion and renaming of
+       * enum values are not supported. Can have up to 500 allowed values.
        * </pre>
        *
        * <code>
@@ -1668,12 +1668,12 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The set of allowed values for this enum. This set must not be
-       * empty, the display names of the values in this set must not be empty and
-       * the display names of the values must be case-insensitively unique within
-       * this set. Currently, enum values can only be added to the list of allowed
-       * values. Deletion and renaming of enum values are not supported. Can have
-       * up to 500 allowed values.
+       * Required on create; optional on update. The set of allowed values for
+       * this enum. This set must not be empty, the display names of the values in
+       * this set must not be empty and the display names of the values must be
+       * case-insensitively unique within this set. Currently, enum values can
+       * only be added to the list of allowed values. Deletion and renaming of
+       * enum values are not supported. Can have up to 500 allowed values.
        * </pre>
        *
        * <code>
@@ -1696,12 +1696,12 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The set of allowed values for this enum. This set must not be
-       * empty, the display names of the values in this set must not be empty and
-       * the display names of the values must be case-insensitively unique within
-       * this set. Currently, enum values can only be added to the list of allowed
-       * values. Deletion and renaming of enum values are not supported. Can have
-       * up to 500 allowed values.
+       * Required on create; optional on update. The set of allowed values for
+       * this enum. This set must not be empty, the display names of the values in
+       * this set must not be empty and the display names of the values must be
+       * case-insensitively unique within this set. Currently, enum values can
+       * only be added to the list of allowed values. Deletion and renaming of
+       * enum values are not supported. Can have up to 500 allowed values.
        * </pre>
        *
        * <code>
@@ -1726,12 +1726,12 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The set of allowed values for this enum. This set must not be
-       * empty, the display names of the values in this set must not be empty and
-       * the display names of the values must be case-insensitively unique within
-       * this set. Currently, enum values can only be added to the list of allowed
-       * values. Deletion and renaming of enum values are not supported. Can have
-       * up to 500 allowed values.
+       * Required on create; optional on update. The set of allowed values for
+       * this enum. This set must not be empty, the display names of the values in
+       * this set must not be empty and the display names of the values must be
+       * case-insensitively unique within this set. Currently, enum values can
+       * only be added to the list of allowed values. Deletion and renaming of
+       * enum values are not supported. Can have up to 500 allowed values.
        * </pre>
        *
        * <code>
@@ -1756,12 +1756,12 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The set of allowed values for this enum. This set must not be
-       * empty, the display names of the values in this set must not be empty and
-       * the display names of the values must be case-insensitively unique within
-       * this set. Currently, enum values can only be added to the list of allowed
-       * values. Deletion and renaming of enum values are not supported. Can have
-       * up to 500 allowed values.
+       * Required on create; optional on update. The set of allowed values for
+       * this enum. This set must not be empty, the display names of the values in
+       * this set must not be empty and the display names of the values must be
+       * case-insensitively unique within this set. Currently, enum values can
+       * only be added to the list of allowed values. Deletion and renaming of
+       * enum values are not supported. Can have up to 500 allowed values.
        * </pre>
        *
        * <code>
@@ -1783,12 +1783,12 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The set of allowed values for this enum. This set must not be
-       * empty, the display names of the values in this set must not be empty and
-       * the display names of the values must be case-insensitively unique within
-       * this set. Currently, enum values can only be added to the list of allowed
-       * values. Deletion and renaming of enum values are not supported. Can have
-       * up to 500 allowed values.
+       * Required on create; optional on update. The set of allowed values for
+       * this enum. This set must not be empty, the display names of the values in
+       * this set must not be empty and the display names of the values must be
+       * case-insensitively unique within this set. Currently, enum values can
+       * only be added to the list of allowed values. Deletion and renaming of
+       * enum values are not supported. Can have up to 500 allowed values.
        * </pre>
        *
        * <code>
@@ -1811,12 +1811,12 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The set of allowed values for this enum. This set must not be
-       * empty, the display names of the values in this set must not be empty and
-       * the display names of the values must be case-insensitively unique within
-       * this set. Currently, enum values can only be added to the list of allowed
-       * values. Deletion and renaming of enum values are not supported. Can have
-       * up to 500 allowed values.
+       * Required on create; optional on update. The set of allowed values for
+       * this enum. This set must not be empty, the display names of the values in
+       * this set must not be empty and the display names of the values must be
+       * case-insensitively unique within this set. Currently, enum values can
+       * only be added to the list of allowed values. Deletion and renaming of
+       * enum values are not supported. Can have up to 500 allowed values.
        * </pre>
        *
        * <code>
@@ -1839,12 +1839,12 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The set of allowed values for this enum. This set must not be
-       * empty, the display names of the values in this set must not be empty and
-       * the display names of the values must be case-insensitively unique within
-       * this set. Currently, enum values can only be added to the list of allowed
-       * values. Deletion and renaming of enum values are not supported. Can have
-       * up to 500 allowed values.
+       * Required on create; optional on update. The set of allowed values for
+       * this enum. This set must not be empty, the display names of the values in
+       * this set must not be empty and the display names of the values must be
+       * case-insensitively unique within this set. Currently, enum values can
+       * only be added to the list of allowed values. Deletion and renaming of
+       * enum values are not supported. Can have up to 500 allowed values.
        * </pre>
        *
        * <code>
@@ -1865,12 +1865,12 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The set of allowed values for this enum. This set must not be
-       * empty, the display names of the values in this set must not be empty and
-       * the display names of the values must be case-insensitively unique within
-       * this set. Currently, enum values can only be added to the list of allowed
-       * values. Deletion and renaming of enum values are not supported. Can have
-       * up to 500 allowed values.
+       * Required on create; optional on update. The set of allowed values for
+       * this enum. This set must not be empty, the display names of the values in
+       * this set must not be empty and the display names of the values must be
+       * case-insensitively unique within this set. Currently, enum values can
+       * only be added to the list of allowed values. Deletion and renaming of
+       * enum values are not supported. Can have up to 500 allowed values.
        * </pre>
        *
        * <code>
@@ -1891,12 +1891,12 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The set of allowed values for this enum. This set must not be
-       * empty, the display names of the values in this set must not be empty and
-       * the display names of the values must be case-insensitively unique within
-       * this set. Currently, enum values can only be added to the list of allowed
-       * values. Deletion and renaming of enum values are not supported. Can have
-       * up to 500 allowed values.
+       * Required on create; optional on update. The set of allowed values for
+       * this enum. This set must not be empty, the display names of the values in
+       * this set must not be empty and the display names of the values must be
+       * case-insensitively unique within this set. Currently, enum values can
+       * only be added to the list of allowed values. Deletion and renaming of
+       * enum values are not supported. Can have up to 500 allowed values.
        * </pre>
        *
        * <code>
@@ -1911,12 +1911,12 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The set of allowed values for this enum. This set must not be
-       * empty, the display names of the values in this set must not be empty and
-       * the display names of the values must be case-insensitively unique within
-       * this set. Currently, enum values can only be added to the list of allowed
-       * values. Deletion and renaming of enum values are not supported. Can have
-       * up to 500 allowed values.
+       * Required on create; optional on update. The set of allowed values for
+       * this enum. This set must not be empty, the display names of the values in
+       * this set must not be empty and the display names of the values must be
+       * case-insensitively unique within this set. Currently, enum values can
+       * only be added to the list of allowed values. Deletion and renaming of
+       * enum values are not supported. Can have up to 500 allowed values.
        * </pre>
        *
        * <code>
@@ -1935,12 +1935,12 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The set of allowed values for this enum. This set must not be
-       * empty, the display names of the values in this set must not be empty and
-       * the display names of the values must be case-insensitively unique within
-       * this set. Currently, enum values can only be added to the list of allowed
-       * values. Deletion and renaming of enum values are not supported. Can have
-       * up to 500 allowed values.
+       * Required on create; optional on update. The set of allowed values for
+       * this enum. This set must not be empty, the display names of the values in
+       * this set must not be empty and the display names of the values must be
+       * case-insensitively unique within this set. Currently, enum values can
+       * only be added to the list of allowed values. Deletion and renaming of
+       * enum values are not supported. Can have up to 500 allowed values.
        * </pre>
        *
        * <code>
@@ -1960,12 +1960,12 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The set of allowed values for this enum. This set must not be
-       * empty, the display names of the values in this set must not be empty and
-       * the display names of the values must be case-insensitively unique within
-       * this set. Currently, enum values can only be added to the list of allowed
-       * values. Deletion and renaming of enum values are not supported. Can have
-       * up to 500 allowed values.
+       * Required on create; optional on update. The set of allowed values for
+       * this enum. This set must not be empty, the display names of the values in
+       * this set must not be empty and the display names of the values must be
+       * case-insensitively unique within this set. Currently, enum values can
+       * only be added to the list of allowed values. Deletion and renaming of
+       * enum values are not supported. Can have up to 500 allowed values.
        * </pre>
        *
        * <code>
@@ -1982,12 +1982,12 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The set of allowed values for this enum. This set must not be
-       * empty, the display names of the values in this set must not be empty and
-       * the display names of the values must be case-insensitively unique within
-       * this set. Currently, enum values can only be added to the list of allowed
-       * values. Deletion and renaming of enum values are not supported. Can have
-       * up to 500 allowed values.
+       * Required on create; optional on update. The set of allowed values for
+       * this enum. This set must not be empty, the display names of the values in
+       * this set must not be empty and the display names of the values must be
+       * case-insensitively unique within this set. Currently, enum values can
+       * only be added to the list of allowed values. Deletion and renaming of
+       * enum values are not supported. Can have up to 500 allowed values.
        * </pre>
        *
        * <code>
@@ -2005,12 +2005,12 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The set of allowed values for this enum. This set must not be
-       * empty, the display names of the values in this set must not be empty and
-       * the display names of the values must be case-insensitively unique within
-       * this set. Currently, enum values can only be added to the list of allowed
-       * values. Deletion and renaming of enum values are not supported. Can have
-       * up to 500 allowed values.
+       * Required on create; optional on update. The set of allowed values for
+       * this enum. This set must not be empty, the display names of the values in
+       * this set must not be empty and the display names of the values must be
+       * case-insensitively unique within this set. Currently, enum values can
+       * only be added to the list of allowed values. Deletion and renaming of
+       * enum values are not supported. Can have up to 500 allowed values.
        * </pre>
        *
        * <code>

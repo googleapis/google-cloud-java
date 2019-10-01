@@ -133,7 +133,7 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The creation time of the resource within the given system.
+   * The creation time of the resource within the given system.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 1;</code>
@@ -145,7 +145,7 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The creation time of the resource within the given system.
+   * The creation time of the resource within the given system.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 1;</code>
@@ -157,7 +157,7 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The creation time of the resource within the given system.
+   * The creation time of the resource within the given system.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 1;</code>
@@ -172,8 +172,7 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The last-modified time of the resource within the given
-   * system.
+   * The last-modified time of the resource within the given system.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 2;</code>
@@ -185,8 +184,7 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The last-modified time of the resource within the given
-   * system.
+   * The last-modified time of the resource within the given system.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 2;</code>
@@ -198,8 +196,7 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The last-modified time of the resource within the given
-   * system.
+   * The last-modified time of the resource within the given system.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 2;</code>
@@ -215,9 +212,11 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Output only. The expiration time of the resource within the given system.
+   * Currently only apllicable to BigQuery resources.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp expire_time = 3;</code>
+   * <code>.google.protobuf.Timestamp expire_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public boolean hasExpireTime() {
     return expireTime_ != null;
@@ -227,9 +226,11 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Output only. The expiration time of the resource within the given system.
+   * Currently only apllicable to BigQuery resources.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp expire_time = 3;</code>
+   * <code>.google.protobuf.Timestamp expire_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.protobuf.Timestamp getExpireTime() {
     return expireTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expireTime_;
@@ -239,9 +240,11 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Output only. The expiration time of the resource within the given system.
+   * Currently only apllicable to BigQuery resources.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp expire_time = 3;</code>
+   * <code>.google.protobuf.Timestamp expire_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.protobuf.TimestampOrBuilder getExpireTimeOrBuilder() {
     return getExpireTime();
@@ -641,7 +644,7 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The creation time of the resource within the given system.
+     * The creation time of the resource within the given system.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 1;</code>
@@ -653,7 +656,7 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The creation time of the resource within the given system.
+     * The creation time of the resource within the given system.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 1;</code>
@@ -671,7 +674,7 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The creation time of the resource within the given system.
+     * The creation time of the resource within the given system.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 1;</code>
@@ -693,7 +696,7 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The creation time of the resource within the given system.
+     * The creation time of the resource within the given system.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 1;</code>
@@ -712,7 +715,7 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The creation time of the resource within the given system.
+     * The creation time of the resource within the given system.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 1;</code>
@@ -736,7 +739,7 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The creation time of the resource within the given system.
+     * The creation time of the resource within the given system.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 1;</code>
@@ -756,7 +759,7 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The creation time of the resource within the given system.
+     * The creation time of the resource within the given system.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 1;</code>
@@ -770,7 +773,7 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The creation time of the resource within the given system.
+     * The creation time of the resource within the given system.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 1;</code>
@@ -788,7 +791,7 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The creation time of the resource within the given system.
+     * The creation time of the resource within the given system.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 1;</code>
@@ -820,8 +823,7 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The last-modified time of the resource within the given
-     * system.
+     * The last-modified time of the resource within the given system.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 2;</code>
@@ -833,8 +835,7 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The last-modified time of the resource within the given
-     * system.
+     * The last-modified time of the resource within the given system.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 2;</code>
@@ -852,8 +853,7 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The last-modified time of the resource within the given
-     * system.
+     * The last-modified time of the resource within the given system.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 2;</code>
@@ -875,8 +875,7 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The last-modified time of the resource within the given
-     * system.
+     * The last-modified time of the resource within the given system.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 2;</code>
@@ -895,8 +894,7 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The last-modified time of the resource within the given
-     * system.
+     * The last-modified time of the resource within the given system.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 2;</code>
@@ -920,8 +918,7 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The last-modified time of the resource within the given
-     * system.
+     * The last-modified time of the resource within the given system.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 2;</code>
@@ -941,8 +938,7 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The last-modified time of the resource within the given
-     * system.
+     * The last-modified time of the resource within the given system.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 2;</code>
@@ -956,8 +952,7 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The last-modified time of the resource within the given
-     * system.
+     * The last-modified time of the resource within the given system.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 2;</code>
@@ -975,8 +970,7 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The last-modified time of the resource within the given
-     * system.
+     * The last-modified time of the resource within the given system.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 2;</code>
@@ -1009,9 +1003,12 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. The expiration time of the resource within the given system.
+     * Currently only apllicable to BigQuery resources.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp expire_time = 3;</code>
+     * <code>
+     * .google.protobuf.Timestamp expire_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public boolean hasExpireTime() {
       return expireTimeBuilder_ != null || expireTime_ != null;
@@ -1021,9 +1018,12 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. The expiration time of the resource within the given system.
+     * Currently only apllicable to BigQuery resources.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp expire_time = 3;</code>
+     * <code>
+     * .google.protobuf.Timestamp expire_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.Timestamp getExpireTime() {
       if (expireTimeBuilder_ == null) {
@@ -1039,9 +1039,12 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. The expiration time of the resource within the given system.
+     * Currently only apllicable to BigQuery resources.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp expire_time = 3;</code>
+     * <code>
+     * .google.protobuf.Timestamp expire_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setExpireTime(com.google.protobuf.Timestamp value) {
       if (expireTimeBuilder_ == null) {
@@ -1061,9 +1064,12 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. The expiration time of the resource within the given system.
+     * Currently only apllicable to BigQuery resources.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp expire_time = 3;</code>
+     * <code>
+     * .google.protobuf.Timestamp expire_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setExpireTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (expireTimeBuilder_ == null) {
@@ -1080,9 +1086,12 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. The expiration time of the resource within the given system.
+     * Currently only apllicable to BigQuery resources.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp expire_time = 3;</code>
+     * <code>
+     * .google.protobuf.Timestamp expire_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder mergeExpireTime(com.google.protobuf.Timestamp value) {
       if (expireTimeBuilder_ == null) {
@@ -1104,9 +1113,12 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. The expiration time of the resource within the given system.
+     * Currently only apllicable to BigQuery resources.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp expire_time = 3;</code>
+     * <code>
+     * .google.protobuf.Timestamp expire_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearExpireTime() {
       if (expireTimeBuilder_ == null) {
@@ -1124,9 +1136,12 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. The expiration time of the resource within the given system.
+     * Currently only apllicable to BigQuery resources.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp expire_time = 3;</code>
+     * <code>
+     * .google.protobuf.Timestamp expire_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.Timestamp.Builder getExpireTimeBuilder() {
 
@@ -1138,9 +1153,12 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. The expiration time of the resource within the given system.
+     * Currently only apllicable to BigQuery resources.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp expire_time = 3;</code>
+     * <code>
+     * .google.protobuf.Timestamp expire_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.TimestampOrBuilder getExpireTimeOrBuilder() {
       if (expireTimeBuilder_ != null) {
@@ -1156,9 +1174,12 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. The expiration time of the resource within the given system.
+     * Currently only apllicable to BigQuery resources.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp expire_time = 3;</code>
+     * <code>
+     * .google.protobuf.Timestamp expire_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,

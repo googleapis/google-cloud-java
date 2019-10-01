@@ -12,7 +12,7 @@ public interface SearchCatalogResponseOrBuilder
    *
    *
    * <pre>
-   * Search results in descending order of relevance.
+   * Search results.
    * </pre>
    *
    * <code>repeated .google.cloud.datacatalog.v1beta1.SearchCatalogResult results = 1;</code>
@@ -22,7 +22,7 @@ public interface SearchCatalogResponseOrBuilder
    *
    *
    * <pre>
-   * Search results in descending order of relevance.
+   * Search results.
    * </pre>
    *
    * <code>repeated .google.cloud.datacatalog.v1beta1.SearchCatalogResult results = 1;</code>
@@ -32,7 +32,7 @@ public interface SearchCatalogResponseOrBuilder
    *
    *
    * <pre>
-   * Search results in descending order of relevance.
+   * Search results.
    * </pre>
    *
    * <code>repeated .google.cloud.datacatalog.v1beta1.SearchCatalogResult results = 1;</code>
@@ -42,7 +42,7 @@ public interface SearchCatalogResponseOrBuilder
    *
    *
    * <pre>
-   * Search results in descending order of relevance.
+   * Search results.
    * </pre>
    *
    * <code>repeated .google.cloud.datacatalog.v1beta1.SearchCatalogResult results = 1;</code>
@@ -53,7 +53,7 @@ public interface SearchCatalogResponseOrBuilder
    *
    *
    * <pre>
-   * Search results in descending order of relevance.
+   * Search results.
    * </pre>
    *
    * <code>repeated .google.cloud.datacatalog.v1beta1.SearchCatalogResult results = 1;</code>

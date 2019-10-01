@@ -122,7 +122,8 @@ public final class UpdateTagRequest extends com.google.protobuf.GeneratedMessage
    * Required. The updated tag.
    * </pre>
    *
-   * <code>.google.cloud.datacatalog.v1beta1.Tag tag = 1;</code>
+   * <code>.google.cloud.datacatalog.v1beta1.Tag tag = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public boolean hasTag() {
     return tag_ != null;
@@ -134,7 +135,8 @@ public final class UpdateTagRequest extends com.google.protobuf.GeneratedMessage
    * Required. The updated tag.
    * </pre>
    *
-   * <code>.google.cloud.datacatalog.v1beta1.Tag tag = 1;</code>
+   * <code>.google.cloud.datacatalog.v1beta1.Tag tag = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.datacatalog.Tag getTag() {
     return tag_ == null ? com.google.cloud.datacatalog.Tag.getDefaultInstance() : tag_;
@@ -146,7 +148,8 @@ public final class UpdateTagRequest extends com.google.protobuf.GeneratedMessage
    * Required. The updated tag.
    * </pre>
    *
-   * <code>.google.cloud.datacatalog.v1beta1.Tag tag = 1;</code>
+   * <code>.google.cloud.datacatalog.v1beta1.Tag tag = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.datacatalog.TagOrBuilder getTagOrBuilder() {
     return getTag();
@@ -158,7 +161,7 @@ public final class UpdateTagRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The fields to update on the Tag.  If absent or empty, all
+   * Optional. The fields to update on the Tag. If absent or empty, all
    * modifiable fields are updated. Currently the only modifiable field is the
    * field `fields`.
    * </pre>
@@ -172,7 +175,7 @@ public final class UpdateTagRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The fields to update on the Tag.  If absent or empty, all
+   * Optional. The fields to update on the Tag. If absent or empty, all
    * modifiable fields are updated. Currently the only modifiable field is the
    * field `fields`.
    * </pre>
@@ -186,7 +189,7 @@ public final class UpdateTagRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The fields to update on the Tag.  If absent or empty, all
+   * Optional. The fields to update on the Tag. If absent or empty, all
    * modifiable fields are updated. Currently the only modifiable field is the
    * field `fields`.
    * </pre>
@@ -567,7 +570,9 @@ public final class UpdateTagRequest extends com.google.protobuf.GeneratedMessage
      * Required. The updated tag.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1beta1.Tag tag = 1;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.Tag tag = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public boolean hasTag() {
       return tagBuilder_ != null || tag_ != null;
@@ -579,7 +584,9 @@ public final class UpdateTagRequest extends com.google.protobuf.GeneratedMessage
      * Required. The updated tag.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1beta1.Tag tag = 1;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.Tag tag = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.datacatalog.Tag getTag() {
       if (tagBuilder_ == null) {
@@ -595,7 +602,9 @@ public final class UpdateTagRequest extends com.google.protobuf.GeneratedMessage
      * Required. The updated tag.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1beta1.Tag tag = 1;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.Tag tag = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setTag(com.google.cloud.datacatalog.Tag value) {
       if (tagBuilder_ == null) {
@@ -617,7 +626,9 @@ public final class UpdateTagRequest extends com.google.protobuf.GeneratedMessage
      * Required. The updated tag.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1beta1.Tag tag = 1;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.Tag tag = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setTag(com.google.cloud.datacatalog.Tag.Builder builderForValue) {
       if (tagBuilder_ == null) {
@@ -636,7 +647,9 @@ public final class UpdateTagRequest extends com.google.protobuf.GeneratedMessage
      * Required. The updated tag.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1beta1.Tag tag = 1;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.Tag tag = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeTag(com.google.cloud.datacatalog.Tag value) {
       if (tagBuilder_ == null) {
@@ -659,7 +672,9 @@ public final class UpdateTagRequest extends com.google.protobuf.GeneratedMessage
      * Required. The updated tag.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1beta1.Tag tag = 1;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.Tag tag = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearTag() {
       if (tagBuilder_ == null) {
@@ -679,7 +694,9 @@ public final class UpdateTagRequest extends com.google.protobuf.GeneratedMessage
      * Required. The updated tag.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1beta1.Tag tag = 1;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.Tag tag = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.datacatalog.Tag.Builder getTagBuilder() {
 
@@ -693,7 +710,9 @@ public final class UpdateTagRequest extends com.google.protobuf.GeneratedMessage
      * Required. The updated tag.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1beta1.Tag tag = 1;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.Tag tag = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.datacatalog.TagOrBuilder getTagOrBuilder() {
       if (tagBuilder_ != null) {
@@ -709,7 +728,9 @@ public final class UpdateTagRequest extends com.google.protobuf.GeneratedMessage
      * Required. The updated tag.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1beta1.Tag tag = 1;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.Tag tag = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.datacatalog.Tag,
@@ -738,7 +759,7 @@ public final class UpdateTagRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The fields to update on the Tag.  If absent or empty, all
+     * Optional. The fields to update on the Tag. If absent or empty, all
      * modifiable fields are updated. Currently the only modifiable field is the
      * field `fields`.
      * </pre>
@@ -752,7 +773,7 @@ public final class UpdateTagRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The fields to update on the Tag.  If absent or empty, all
+     * Optional. The fields to update on the Tag. If absent or empty, all
      * modifiable fields are updated. Currently the only modifiable field is the
      * field `fields`.
      * </pre>
@@ -772,7 +793,7 @@ public final class UpdateTagRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The fields to update on the Tag.  If absent or empty, all
+     * Optional. The fields to update on the Tag. If absent or empty, all
      * modifiable fields are updated. Currently the only modifiable field is the
      * field `fields`.
      * </pre>
@@ -796,7 +817,7 @@ public final class UpdateTagRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The fields to update on the Tag.  If absent or empty, all
+     * Optional. The fields to update on the Tag. If absent or empty, all
      * modifiable fields are updated. Currently the only modifiable field is the
      * field `fields`.
      * </pre>
@@ -817,7 +838,7 @@ public final class UpdateTagRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The fields to update on the Tag.  If absent or empty, all
+     * Optional. The fields to update on the Tag. If absent or empty, all
      * modifiable fields are updated. Currently the only modifiable field is the
      * field `fields`.
      * </pre>
@@ -843,7 +864,7 @@ public final class UpdateTagRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The fields to update on the Tag.  If absent or empty, all
+     * Optional. The fields to update on the Tag. If absent or empty, all
      * modifiable fields are updated. Currently the only modifiable field is the
      * field `fields`.
      * </pre>
@@ -865,7 +886,7 @@ public final class UpdateTagRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The fields to update on the Tag.  If absent or empty, all
+     * Optional. The fields to update on the Tag. If absent or empty, all
      * modifiable fields are updated. Currently the only modifiable field is the
      * field `fields`.
      * </pre>
@@ -881,7 +902,7 @@ public final class UpdateTagRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The fields to update on the Tag.  If absent or empty, all
+     * Optional. The fields to update on the Tag. If absent or empty, all
      * modifiable fields are updated. Currently the only modifiable field is the
      * field `fields`.
      * </pre>
@@ -901,7 +922,7 @@ public final class UpdateTagRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The fields to update on the Tag.  If absent or empty, all
+     * Optional. The fields to update on the Tag. If absent or empty, all
      * modifiable fields are updated. Currently the only modifiable field is the
      * field `fields`.
      * </pre>

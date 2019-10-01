@@ -116,7 +116,7 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Search results in descending order of relevance.
+   * Search results.
    * </pre>
    *
    * <code>repeated .google.cloud.datacatalog.v1beta1.SearchCatalogResult results = 1;</code>
@@ -128,7 +128,7 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Search results in descending order of relevance.
+   * Search results.
    * </pre>
    *
    * <code>repeated .google.cloud.datacatalog.v1beta1.SearchCatalogResult results = 1;</code>
@@ -141,7 +141,7 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Search results in descending order of relevance.
+   * Search results.
    * </pre>
    *
    * <code>repeated .google.cloud.datacatalog.v1beta1.SearchCatalogResult results = 1;</code>
@@ -153,7 +153,7 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Search results in descending order of relevance.
+   * Search results.
    * </pre>
    *
    * <code>repeated .google.cloud.datacatalog.v1beta1.SearchCatalogResult results = 1;</code>
@@ -165,7 +165,7 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Search results in descending order of relevance.
+   * Search results.
    * </pre>
    *
    * <code>repeated .google.cloud.datacatalog.v1beta1.SearchCatalogResult results = 1;</code>
@@ -617,7 +617,7 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Search results in descending order of relevance.
+     * Search results.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1beta1.SearchCatalogResult results = 1;</code>
@@ -633,7 +633,7 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Search results in descending order of relevance.
+     * Search results.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1beta1.SearchCatalogResult results = 1;</code>
@@ -649,7 +649,7 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Search results in descending order of relevance.
+     * Search results.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1beta1.SearchCatalogResult results = 1;</code>
@@ -665,7 +665,7 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Search results in descending order of relevance.
+     * Search results.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1beta1.SearchCatalogResult results = 1;</code>
@@ -687,7 +687,7 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Search results in descending order of relevance.
+     * Search results.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1beta1.SearchCatalogResult results = 1;</code>
@@ -707,7 +707,7 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Search results in descending order of relevance.
+     * Search results.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1beta1.SearchCatalogResult results = 1;</code>
@@ -729,7 +729,7 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Search results in descending order of relevance.
+     * Search results.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1beta1.SearchCatalogResult results = 1;</code>
@@ -751,7 +751,7 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Search results in descending order of relevance.
+     * Search results.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1beta1.SearchCatalogResult results = 1;</code>
@@ -771,7 +771,7 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Search results in descending order of relevance.
+     * Search results.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1beta1.SearchCatalogResult results = 1;</code>
@@ -791,7 +791,7 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Search results in descending order of relevance.
+     * Search results.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1beta1.SearchCatalogResult results = 1;</code>
@@ -811,7 +811,7 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Search results in descending order of relevance.
+     * Search results.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1beta1.SearchCatalogResult results = 1;</code>
@@ -830,7 +830,7 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Search results in descending order of relevance.
+     * Search results.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1beta1.SearchCatalogResult results = 1;</code>
@@ -849,7 +849,7 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Search results in descending order of relevance.
+     * Search results.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1beta1.SearchCatalogResult results = 1;</code>
@@ -861,7 +861,7 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Search results in descending order of relevance.
+     * Search results.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1beta1.SearchCatalogResult results = 1;</code>
@@ -878,7 +878,7 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Search results in descending order of relevance.
+     * Search results.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1beta1.SearchCatalogResult results = 1;</code>
@@ -895,7 +895,7 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Search results in descending order of relevance.
+     * Search results.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1beta1.SearchCatalogResult results = 1;</code>
@@ -908,7 +908,7 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Search results in descending order of relevance.
+     * Search results.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1beta1.SearchCatalogResult results = 1;</code>
@@ -921,7 +921,7 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Search results in descending order of relevance.
+     * Search results.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1beta1.SearchCatalogResult results = 1;</code>
