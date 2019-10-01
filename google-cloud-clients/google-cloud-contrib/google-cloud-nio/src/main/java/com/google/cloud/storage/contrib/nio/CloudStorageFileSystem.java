@@ -95,7 +95,7 @@ public final class CloudStorageFileSystem extends FileSystem {
    * <pre>{@code
    * String prefix = "bucket_";
    * Page<Bucket> buckets = CloudStorageFileSystem.listBuckets("my-project", BucketListOption.prefix(prefix));
-   * Iterator<Bucket> bucketIterator = buckets.iterateAll();
+   * Iterator<Bucket> bucketIterator = buckets.iterateAll().iterator();
    * while (bucketIterator.hasNext()) {
    *   Bucket bucket = bucketIterator.next();
    *   // do something with the bucket
