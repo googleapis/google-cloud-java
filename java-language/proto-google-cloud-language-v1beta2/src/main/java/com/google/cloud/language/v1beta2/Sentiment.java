@@ -9,6 +9,7 @@ package com.google.cloud.language.v1beta2;
  * <pre>
  * Represents the feeling associated with the entire text or entities in
  * the text.
+ * Next ID: 6
  * </pre>
  *
  * Protobuf type {@code google.cloud.language.v1beta2.Sentiment}
@@ -302,6 +303,7 @@ public final class Sentiment extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Represents the feeling associated with the entire text or entities in
    * the text.
+   * Next ID: 6
    * </pre>
    *
    * Protobuf type {@code google.cloud.language.v1beta2.Sentiment}

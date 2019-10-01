@@ -12,30 +12,36 @@ public interface AnalyzeSyntaxRequestOrBuilder
    *
    *
    * <pre>
-   * Input document.
+   * Required. Input document.
    * </pre>
    *
-   * <code>.google.cloud.language.v1beta2.Document document = 1;</code>
+   * <code>
+   * .google.cloud.language.v1beta2.Document document = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   boolean hasDocument();
   /**
    *
    *
    * <pre>
-   * Input document.
+   * Required. Input document.
    * </pre>
    *
-   * <code>.google.cloud.language.v1beta2.Document document = 1;</code>
+   * <code>
+   * .google.cloud.language.v1beta2.Document document = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.language.v1beta2.Document getDocument();
   /**
    *
    *
    * <pre>
-   * Input document.
+   * Required. Input document.
    * </pre>
    *
-   * <code>.google.cloud.language.v1beta2.Document document = 1;</code>
+   * <code>
+   * .google.cloud.language.v1beta2.Document document = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.language.v1beta2.DocumentOrBuilder getDocumentOrBuilder();
 
