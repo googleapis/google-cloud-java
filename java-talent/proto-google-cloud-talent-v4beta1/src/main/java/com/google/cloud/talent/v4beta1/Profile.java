@@ -45,6 +45,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
     applications_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     assignments_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     keywordSnippet_ = "";
+    availabilitySignals_ = java.util.Collections.emptyList();
     derivedAddresses_ = java.util.Collections.emptyList();
   }
 
@@ -154,10 +155,10 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
             }
           case 90:
             {
-              if (!((mutable_bitField0_ & 0x00000200) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000800) != 0)) {
                 personNames_ =
                     new java.util.ArrayList<com.google.cloud.talent.v4beta1.PersonName>();
-                mutable_bitField0_ |= 0x00000200;
+                mutable_bitField0_ |= 0x00000800;
               }
               personNames_.add(
                   input.readMessage(
@@ -166,9 +167,9 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
             }
           case 98:
             {
-              if (!((mutable_bitField0_ & 0x00000400) != 0)) {
+              if (!((mutable_bitField0_ & 0x00001000) != 0)) {
                 addresses_ = new java.util.ArrayList<com.google.cloud.talent.v4beta1.Address>();
-                mutable_bitField0_ |= 0x00000400;
+                mutable_bitField0_ |= 0x00001000;
               }
               addresses_.add(
                   input.readMessage(
@@ -177,9 +178,9 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
             }
           case 106:
             {
-              if (!((mutable_bitField0_ & 0x00000800) != 0)) {
+              if (!((mutable_bitField0_ & 0x00002000) != 0)) {
                 emailAddresses_ = new java.util.ArrayList<com.google.cloud.talent.v4beta1.Email>();
-                mutable_bitField0_ |= 0x00000800;
+                mutable_bitField0_ |= 0x00002000;
               }
               emailAddresses_.add(
                   input.readMessage(
@@ -188,9 +189,9 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
             }
           case 114:
             {
-              if (!((mutable_bitField0_ & 0x00001000) != 0)) {
+              if (!((mutable_bitField0_ & 0x00004000) != 0)) {
                 phoneNumbers_ = new java.util.ArrayList<com.google.cloud.talent.v4beta1.Phone>();
-                mutable_bitField0_ |= 0x00001000;
+                mutable_bitField0_ |= 0x00004000;
               }
               phoneNumbers_.add(
                   input.readMessage(
@@ -199,10 +200,10 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
             }
           case 122:
             {
-              if (!((mutable_bitField0_ & 0x00002000) != 0)) {
+              if (!((mutable_bitField0_ & 0x00008000) != 0)) {
                 personalUris_ =
                     new java.util.ArrayList<com.google.cloud.talent.v4beta1.PersonalUri>();
-                mutable_bitField0_ |= 0x00002000;
+                mutable_bitField0_ |= 0x00008000;
               }
               personalUris_.add(
                   input.readMessage(
@@ -211,11 +212,11 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
             }
           case 130:
             {
-              if (!((mutable_bitField0_ & 0x00004000) != 0)) {
+              if (!((mutable_bitField0_ & 0x00010000) != 0)) {
                 additionalContactInfo_ =
                     new java.util.ArrayList<
                         com.google.cloud.talent.v4beta1.AdditionalContactInfo>();
-                mutable_bitField0_ |= 0x00004000;
+                mutable_bitField0_ |= 0x00010000;
               }
               additionalContactInfo_.add(
                   input.readMessage(
@@ -225,10 +226,10 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
             }
           case 138:
             {
-              if (!((mutable_bitField0_ & 0x00008000) != 0)) {
+              if (!((mutable_bitField0_ & 0x00020000) != 0)) {
                 employmentRecords_ =
                     new java.util.ArrayList<com.google.cloud.talent.v4beta1.EmploymentRecord>();
-                mutable_bitField0_ |= 0x00008000;
+                mutable_bitField0_ |= 0x00020000;
               }
               employmentRecords_.add(
                   input.readMessage(
@@ -238,10 +239,10 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
             }
           case 146:
             {
-              if (!((mutable_bitField0_ & 0x00010000) != 0)) {
+              if (!((mutable_bitField0_ & 0x00040000) != 0)) {
                 educationRecords_ =
                     new java.util.ArrayList<com.google.cloud.talent.v4beta1.EducationRecord>();
-                mutable_bitField0_ |= 0x00010000;
+                mutable_bitField0_ |= 0x00040000;
               }
               educationRecords_.add(
                   input.readMessage(
@@ -250,9 +251,9 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
             }
           case 154:
             {
-              if (!((mutable_bitField0_ & 0x00020000) != 0)) {
+              if (!((mutable_bitField0_ & 0x00080000) != 0)) {
                 skills_ = new java.util.ArrayList<com.google.cloud.talent.v4beta1.Skill>();
-                mutable_bitField0_ |= 0x00020000;
+                mutable_bitField0_ |= 0x00080000;
               }
               skills_.add(
                   input.readMessage(
@@ -261,9 +262,9 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
             }
           case 162:
             {
-              if (!((mutable_bitField0_ & 0x00040000) != 0)) {
+              if (!((mutable_bitField0_ & 0x00100000) != 0)) {
                 activities_ = new java.util.ArrayList<com.google.cloud.talent.v4beta1.Activity>();
-                mutable_bitField0_ |= 0x00040000;
+                mutable_bitField0_ |= 0x00100000;
               }
               activities_.add(
                   input.readMessage(
@@ -272,10 +273,10 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
             }
           case 170:
             {
-              if (!((mutable_bitField0_ & 0x00080000) != 0)) {
+              if (!((mutable_bitField0_ & 0x00200000) != 0)) {
                 publications_ =
                     new java.util.ArrayList<com.google.cloud.talent.v4beta1.Publication>();
-                mutable_bitField0_ |= 0x00080000;
+                mutable_bitField0_ |= 0x00200000;
               }
               publications_.add(
                   input.readMessage(
@@ -284,9 +285,9 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
             }
           case 178:
             {
-              if (!((mutable_bitField0_ & 0x00100000) != 0)) {
+              if (!((mutable_bitField0_ & 0x00400000) != 0)) {
                 patents_ = new java.util.ArrayList<com.google.cloud.talent.v4beta1.Patent>();
-                mutable_bitField0_ |= 0x00100000;
+                mutable_bitField0_ |= 0x00400000;
               }
               patents_.add(
                   input.readMessage(
@@ -295,10 +296,10 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
             }
           case 186:
             {
-              if (!((mutable_bitField0_ & 0x00200000) != 0)) {
+              if (!((mutable_bitField0_ & 0x00800000) != 0)) {
                 certifications_ =
                     new java.util.ArrayList<com.google.cloud.talent.v4beta1.Certification>();
-                mutable_bitField0_ |= 0x00200000;
+                mutable_bitField0_ |= 0x00800000;
               }
               certifications_.add(
                   input.readMessage(
@@ -307,11 +308,11 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
             }
           case 210:
             {
-              if (!((mutable_bitField0_ & 0x01000000) != 0)) {
+              if (!((mutable_bitField0_ & 0x04000000) != 0)) {
                 customAttributes_ =
                     com.google.protobuf.MapField.newMapField(
                         CustomAttributesDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x01000000;
+                mutable_bitField0_ |= 0x04000000;
               }
               com.google.protobuf.MapEntry<
                       java.lang.String, com.google.cloud.talent.v4beta1.CustomAttribute>
@@ -339,9 +340,9 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
           case 378:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00400000) != 0)) {
+              if (!((mutable_bitField0_ & 0x01000000) != 0)) {
                 applications_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00400000;
+                mutable_bitField0_ |= 0x01000000;
               }
               applications_.add(s);
               break;
@@ -349,9 +350,9 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
           case 386:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00800000) != 0)) {
+              if (!((mutable_bitField0_ & 0x02000000) != 0)) {
                 assignments_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00800000;
+                mutable_bitField0_ |= 0x02000000;
               }
               assignments_.add(s);
               break;
@@ -374,14 +375,57 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
             }
           case 514:
             {
-              if (!((mutable_bitField0_ & 0x08000000) != 0)) {
+              if (!((mutable_bitField0_ & 0x40000000) != 0)) {
                 derivedAddresses_ =
                     new java.util.ArrayList<com.google.cloud.talent.v4beta1.Location>();
-                mutable_bitField0_ |= 0x08000000;
+                mutable_bitField0_ |= 0x40000000;
               }
               derivedAddresses_.add(
                   input.readMessage(
                       com.google.cloud.talent.v4beta1.Location.parser(), extensionRegistry));
+              break;
+            }
+          case 538:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (candidateUpdateTime_ != null) {
+                subBuilder = candidateUpdateTime_.toBuilder();
+              }
+              candidateUpdateTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(candidateUpdateTime_);
+                candidateUpdateTime_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 546:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (resumeUpdateTime_ != null) {
+                subBuilder = resumeUpdateTime_.toBuilder();
+              }
+              resumeUpdateTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(resumeUpdateTime_);
+                resumeUpdateTime_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 562:
+            {
+              if (!((mutable_bitField0_ & 0x20000000) != 0)) {
+                availabilitySignals_ =
+                    new java.util.ArrayList<com.google.cloud.talent.v4beta1.AvailabilitySignal>();
+                mutable_bitField0_ |= 0x20000000;
+              }
+              availabilitySignals_.add(
+                  input.readMessage(
+                      com.google.cloud.talent.v4beta1.AvailabilitySignal.parser(),
+                      extensionRegistry));
               break;
             }
           default:
@@ -398,53 +442,56 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000200) != 0)) {
+      if (((mutable_bitField0_ & 0x00000800) != 0)) {
         personNames_ = java.util.Collections.unmodifiableList(personNames_);
       }
-      if (((mutable_bitField0_ & 0x00000400) != 0)) {
+      if (((mutable_bitField0_ & 0x00001000) != 0)) {
         addresses_ = java.util.Collections.unmodifiableList(addresses_);
       }
-      if (((mutable_bitField0_ & 0x00000800) != 0)) {
+      if (((mutable_bitField0_ & 0x00002000) != 0)) {
         emailAddresses_ = java.util.Collections.unmodifiableList(emailAddresses_);
       }
-      if (((mutable_bitField0_ & 0x00001000) != 0)) {
+      if (((mutable_bitField0_ & 0x00004000) != 0)) {
         phoneNumbers_ = java.util.Collections.unmodifiableList(phoneNumbers_);
       }
-      if (((mutable_bitField0_ & 0x00002000) != 0)) {
+      if (((mutable_bitField0_ & 0x00008000) != 0)) {
         personalUris_ = java.util.Collections.unmodifiableList(personalUris_);
       }
-      if (((mutable_bitField0_ & 0x00004000) != 0)) {
+      if (((mutable_bitField0_ & 0x00010000) != 0)) {
         additionalContactInfo_ = java.util.Collections.unmodifiableList(additionalContactInfo_);
       }
-      if (((mutable_bitField0_ & 0x00008000) != 0)) {
+      if (((mutable_bitField0_ & 0x00020000) != 0)) {
         employmentRecords_ = java.util.Collections.unmodifiableList(employmentRecords_);
       }
-      if (((mutable_bitField0_ & 0x00010000) != 0)) {
+      if (((mutable_bitField0_ & 0x00040000) != 0)) {
         educationRecords_ = java.util.Collections.unmodifiableList(educationRecords_);
       }
-      if (((mutable_bitField0_ & 0x00020000) != 0)) {
+      if (((mutable_bitField0_ & 0x00080000) != 0)) {
         skills_ = java.util.Collections.unmodifiableList(skills_);
       }
-      if (((mutable_bitField0_ & 0x00040000) != 0)) {
+      if (((mutable_bitField0_ & 0x00100000) != 0)) {
         activities_ = java.util.Collections.unmodifiableList(activities_);
       }
-      if (((mutable_bitField0_ & 0x00080000) != 0)) {
+      if (((mutable_bitField0_ & 0x00200000) != 0)) {
         publications_ = java.util.Collections.unmodifiableList(publications_);
       }
-      if (((mutable_bitField0_ & 0x00100000) != 0)) {
+      if (((mutable_bitField0_ & 0x00400000) != 0)) {
         patents_ = java.util.Collections.unmodifiableList(patents_);
       }
-      if (((mutable_bitField0_ & 0x00200000) != 0)) {
+      if (((mutable_bitField0_ & 0x00800000) != 0)) {
         certifications_ = java.util.Collections.unmodifiableList(certifications_);
       }
-      if (((mutable_bitField0_ & 0x00400000) != 0)) {
+      if (((mutable_bitField0_ & 0x01000000) != 0)) {
         applications_ = applications_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00800000) != 0)) {
+      if (((mutable_bitField0_ & 0x02000000) != 0)) {
         assignments_ = assignments_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x08000000) != 0)) {
+      if (((mutable_bitField0_ & 0x40000000) != 0)) {
         derivedAddresses_ = java.util.Collections.unmodifiableList(derivedAddresses_);
+      }
+      if (((mutable_bitField0_ & 0x20000000) != 0)) {
+        availabilitySignals_ = java.util.Collections.unmodifiableList(availabilitySignals_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -850,6 +897,160 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    */
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
     return getUpdateTime();
+  }
+
+  public static final int CANDIDATE_UPDATE_TIME_FIELD_NUMBER = 67;
+  private com.google.protobuf.Timestamp candidateUpdateTime_;
+  /**
+   *
+   *
+   * <pre>
+   * The timestamp when the profile was last updated as a result of a direct or
+   * indirect action by a candidate.
+   * These actions include:
+   * * Direct actions such as the candidate submitting a new resume as part of a
+   * job application to the agency, using a self-service tool such as a website
+   * to update their profile, and so on.
+   * * Indirect actions by the candidate such as uploading a resume to a job
+   * board that is collected by the agency through a feed, providing a resume to
+   * a recruiter who then uploads it into the ATS, and so on.
+   * * Updates made to the candidate's profile by the recruiter as a result of
+   * interacting with the candidate (for example adding a skill or work
+   * preference, and so on). Changes to
+   * [recruiting_notes][google.cloud.talent.v4beta1.Profile.recruiting_notes]
+   * are specifically excluded from this action type.
+   * Note:
+   * [candidate_update_time][google.cloud.talent.v4beta1.Profile.candidate_update_time]
+   * must be greater than or equal to
+   * [resume_update_time][google.cloud.talent.v4beta1.Profile.resume_update_time]
+   * or an error is thrown.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp candidate_update_time = 67;</code>
+   */
+  public boolean hasCandidateUpdateTime() {
+    return candidateUpdateTime_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The timestamp when the profile was last updated as a result of a direct or
+   * indirect action by a candidate.
+   * These actions include:
+   * * Direct actions such as the candidate submitting a new resume as part of a
+   * job application to the agency, using a self-service tool such as a website
+   * to update their profile, and so on.
+   * * Indirect actions by the candidate such as uploading a resume to a job
+   * board that is collected by the agency through a feed, providing a resume to
+   * a recruiter who then uploads it into the ATS, and so on.
+   * * Updates made to the candidate's profile by the recruiter as a result of
+   * interacting with the candidate (for example adding a skill or work
+   * preference, and so on). Changes to
+   * [recruiting_notes][google.cloud.talent.v4beta1.Profile.recruiting_notes]
+   * are specifically excluded from this action type.
+   * Note:
+   * [candidate_update_time][google.cloud.talent.v4beta1.Profile.candidate_update_time]
+   * must be greater than or equal to
+   * [resume_update_time][google.cloud.talent.v4beta1.Profile.resume_update_time]
+   * or an error is thrown.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp candidate_update_time = 67;</code>
+   */
+  public com.google.protobuf.Timestamp getCandidateUpdateTime() {
+    return candidateUpdateTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : candidateUpdateTime_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The timestamp when the profile was last updated as a result of a direct or
+   * indirect action by a candidate.
+   * These actions include:
+   * * Direct actions such as the candidate submitting a new resume as part of a
+   * job application to the agency, using a self-service tool such as a website
+   * to update their profile, and so on.
+   * * Indirect actions by the candidate such as uploading a resume to a job
+   * board that is collected by the agency through a feed, providing a resume to
+   * a recruiter who then uploads it into the ATS, and so on.
+   * * Updates made to the candidate's profile by the recruiter as a result of
+   * interacting with the candidate (for example adding a skill or work
+   * preference, and so on). Changes to
+   * [recruiting_notes][google.cloud.talent.v4beta1.Profile.recruiting_notes]
+   * are specifically excluded from this action type.
+   * Note:
+   * [candidate_update_time][google.cloud.talent.v4beta1.Profile.candidate_update_time]
+   * must be greater than or equal to
+   * [resume_update_time][google.cloud.talent.v4beta1.Profile.resume_update_time]
+   * or an error is thrown.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp candidate_update_time = 67;</code>
+   */
+  public com.google.protobuf.TimestampOrBuilder getCandidateUpdateTimeOrBuilder() {
+    return getCandidateUpdateTime();
+  }
+
+  public static final int RESUME_UPDATE_TIME_FIELD_NUMBER = 68;
+  private com.google.protobuf.Timestamp resumeUpdateTime_;
+  /**
+   *
+   *
+   * <pre>
+   * The timestamp when the candidate's resume was added or updated on the
+   * candidate's profile. Whether that resume was directly uploaded by a
+   * candidate, pulled from a 3rd party job board feed, added by a recruiter,
+   * and so on.
+   * If this field is updated, it's expected that
+   * [resume][google.cloud.talent.v4beta1.Profile.resume] is provided in the
+   * create or update calls.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp resume_update_time = 68;</code>
+   */
+  public boolean hasResumeUpdateTime() {
+    return resumeUpdateTime_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The timestamp when the candidate's resume was added or updated on the
+   * candidate's profile. Whether that resume was directly uploaded by a
+   * candidate, pulled from a 3rd party job board feed, added by a recruiter,
+   * and so on.
+   * If this field is updated, it's expected that
+   * [resume][google.cloud.talent.v4beta1.Profile.resume] is provided in the
+   * create or update calls.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp resume_update_time = 68;</code>
+   */
+  public com.google.protobuf.Timestamp getResumeUpdateTime() {
+    return resumeUpdateTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : resumeUpdateTime_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The timestamp when the candidate's resume was added or updated on the
+   * candidate's profile. Whether that resume was directly uploaded by a
+   * candidate, pulled from a 3rd party job board feed, added by a recruiter,
+   * and so on.
+   * If this field is updated, it's expected that
+   * [resume][google.cloud.talent.v4beta1.Profile.resume] is provided in the
+   * create or update calls.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp resume_update_time = 68;</code>
+   */
+  public com.google.protobuf.TimestampOrBuilder getResumeUpdateTimeOrBuilder() {
+    return getResumeUpdateTime();
   }
 
   public static final int RESUME_FIELD_NUMBER = 53;
@@ -2046,10 +2247,10 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The resource names of the candidate's applications.
+   * Output only. The resource names of the candidate's applications.
    * </pre>
    *
-   * <code>repeated string applications = 47;</code>
+   * <code>repeated string applications = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public com.google.protobuf.ProtocolStringList getApplicationsList() {
     return applications_;
@@ -2058,10 +2259,10 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The resource names of the candidate's applications.
+   * Output only. The resource names of the candidate's applications.
    * </pre>
    *
-   * <code>repeated string applications = 47;</code>
+   * <code>repeated string applications = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public int getApplicationsCount() {
     return applications_.size();
@@ -2070,10 +2271,10 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The resource names of the candidate's applications.
+   * Output only. The resource names of the candidate's applications.
    * </pre>
    *
-   * <code>repeated string applications = 47;</code>
+   * <code>repeated string applications = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public java.lang.String getApplications(int index) {
     return applications_.get(index);
@@ -2082,10 +2283,10 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The resource names of the candidate's applications.
+   * Output only. The resource names of the candidate's applications.
    * </pre>
    *
-   * <code>repeated string applications = 47;</code>
+   * <code>repeated string applications = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public com.google.protobuf.ByteString getApplicationsBytes(int index) {
     return applications_.getByteString(index);
@@ -2097,10 +2298,10 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The resource names of the candidate's assignments.
+   * Output only. The resource names of the candidate's assignments.
    * </pre>
    *
-   * <code>repeated string assignments = 48;</code>
+   * <code>repeated string assignments = 48 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public com.google.protobuf.ProtocolStringList getAssignmentsList() {
     return assignments_;
@@ -2109,10 +2310,10 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The resource names of the candidate's assignments.
+   * Output only. The resource names of the candidate's assignments.
    * </pre>
    *
-   * <code>repeated string assignments = 48;</code>
+   * <code>repeated string assignments = 48 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public int getAssignmentsCount() {
     return assignments_.size();
@@ -2121,10 +2322,10 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The resource names of the candidate's assignments.
+   * Output only. The resource names of the candidate's assignments.
    * </pre>
    *
-   * <code>repeated string assignments = 48;</code>
+   * <code>repeated string assignments = 48 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public java.lang.String getAssignments(int index) {
     return assignments_.get(index);
@@ -2133,10 +2334,10 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The resource names of the candidate's assignments.
+   * Output only. The resource names of the candidate's assignments.
    * </pre>
    *
-   * <code>repeated string assignments = 48;</code>
+   * <code>repeated string assignments = 48 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public com.google.protobuf.ByteString getAssignmentsBytes(int index) {
     return assignments_.getByteString(index);
@@ -2378,6 +2579,82 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int AVAILABILITY_SIGNALS_FIELD_NUMBER = 70;
+  private java.util.List<com.google.cloud.talent.v4beta1.AvailabilitySignal> availabilitySignals_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Candidate's availability signals.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.talent.v4beta1.AvailabilitySignal availability_signals = 70 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  public java.util.List<com.google.cloud.talent.v4beta1.AvailabilitySignal>
+      getAvailabilitySignalsList() {
+    return availabilitySignals_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Candidate's availability signals.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.talent.v4beta1.AvailabilitySignal availability_signals = 70 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  public java.util.List<? extends com.google.cloud.talent.v4beta1.AvailabilitySignalOrBuilder>
+      getAvailabilitySignalsOrBuilderList() {
+    return availabilitySignals_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Candidate's availability signals.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.talent.v4beta1.AvailabilitySignal availability_signals = 70 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  public int getAvailabilitySignalsCount() {
+    return availabilitySignals_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Candidate's availability signals.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.talent.v4beta1.AvailabilitySignal availability_signals = 70 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  public com.google.cloud.talent.v4beta1.AvailabilitySignal getAvailabilitySignals(int index) {
+    return availabilitySignals_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Candidate's availability signals.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.talent.v4beta1.AvailabilitySignal availability_signals = 70 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  public com.google.cloud.talent.v4beta1.AvailabilitySignalOrBuilder
+      getAvailabilitySignalsOrBuilder(int index) {
+    return availabilitySignals_.get(index);
+  }
+
   public static final int DERIVED_ADDRESSES_FIELD_NUMBER = 64;
   private java.util.List<com.google.cloud.talent.v4beta1.Location> derivedAddresses_;
   /**
@@ -2574,6 +2851,15 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < derivedAddresses_.size(); i++) {
       output.writeMessage(64, derivedAddresses_.get(i));
     }
+    if (candidateUpdateTime_ != null) {
+      output.writeMessage(67, getCandidateUpdateTime());
+    }
+    if (resumeUpdateTime_ != null) {
+      output.writeMessage(68, getResumeUpdateTime());
+    }
+    for (int i = 0; i < availabilitySignals_.size(); i++) {
+      output.writeMessage(70, availabilitySignals_.get(i));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -2691,6 +2977,17 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(64, derivedAddresses_.get(i));
     }
+    if (candidateUpdateTime_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(67, getCandidateUpdateTime());
+    }
+    if (resumeUpdateTime_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(68, getResumeUpdateTime());
+    }
+    for (int i = 0; i < availabilitySignals_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(70, availabilitySignals_.get(i));
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2723,6 +3020,14 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
     if (hasUpdateTime()) {
       if (!getUpdateTime().equals(other.getUpdateTime())) return false;
     }
+    if (hasCandidateUpdateTime() != other.hasCandidateUpdateTime()) return false;
+    if (hasCandidateUpdateTime()) {
+      if (!getCandidateUpdateTime().equals(other.getCandidateUpdateTime())) return false;
+    }
+    if (hasResumeUpdateTime() != other.hasResumeUpdateTime()) return false;
+    if (hasResumeUpdateTime()) {
+      if (!getResumeUpdateTime().equals(other.getResumeUpdateTime())) return false;
+    }
     if (hasResume() != other.hasResume()) return false;
     if (hasResume()) {
       if (!getResume().equals(other.getResume())) return false;
@@ -2745,6 +3050,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
     if (!internalGetCustomAttributes().equals(other.internalGetCustomAttributes())) return false;
     if (getProcessed() != other.getProcessed()) return false;
     if (!getKeywordSnippet().equals(other.getKeywordSnippet())) return false;
+    if (!getAvailabilitySignalsList().equals(other.getAvailabilitySignalsList())) return false;
     if (!getDerivedAddressesList().equals(other.getDerivedAddressesList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -2778,6 +3084,14 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
     if (hasUpdateTime()) {
       hash = (37 * hash) + UPDATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getUpdateTime().hashCode();
+    }
+    if (hasCandidateUpdateTime()) {
+      hash = (37 * hash) + CANDIDATE_UPDATE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getCandidateUpdateTime().hashCode();
+    }
+    if (hasResumeUpdateTime()) {
+      hash = (37 * hash) + RESUME_UPDATE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getResumeUpdateTime().hashCode();
     }
     if (hasResume()) {
       hash = (37 * hash) + RESUME_FIELD_NUMBER;
@@ -2851,6 +3165,10 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getProcessed());
     hash = (37 * hash) + KEYWORD_SNIPPET_FIELD_NUMBER;
     hash = (53 * hash) + getKeywordSnippet().hashCode();
+    if (getAvailabilitySignalsCount() > 0) {
+      hash = (37 * hash) + AVAILABILITY_SIGNALS_FIELD_NUMBER;
+      hash = (53 * hash) + getAvailabilitySignalsList().hashCode();
+    }
     if (getDerivedAddressesCount() > 0) {
       hash = (37 * hash) + DERIVED_ADDRESSES_FIELD_NUMBER;
       hash = (53 * hash) + getDerivedAddressesList().hashCode();
@@ -3029,6 +3347,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
         getPublicationsFieldBuilder();
         getPatentsFieldBuilder();
         getCertificationsFieldBuilder();
+        getAvailabilitySignalsFieldBuilder();
         getDerivedAddressesFieldBuilder();
       }
     }
@@ -3064,6 +3383,18 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
         updateTime_ = null;
         updateTimeBuilder_ = null;
       }
+      if (candidateUpdateTimeBuilder_ == null) {
+        candidateUpdateTime_ = null;
+      } else {
+        candidateUpdateTime_ = null;
+        candidateUpdateTimeBuilder_ = null;
+      }
+      if (resumeUpdateTimeBuilder_ == null) {
+        resumeUpdateTime_ = null;
+      } else {
+        resumeUpdateTime_ = null;
+        resumeUpdateTimeBuilder_ = null;
+      }
       if (resumeBuilder_ == null) {
         resume_ = null;
       } else {
@@ -3072,94 +3403,100 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
       }
       if (personNamesBuilder_ == null) {
         personNames_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000800);
       } else {
         personNamesBuilder_.clear();
       }
       if (addressesBuilder_ == null) {
         addresses_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00001000);
       } else {
         addressesBuilder_.clear();
       }
       if (emailAddressesBuilder_ == null) {
         emailAddresses_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000800);
+        bitField0_ = (bitField0_ & ~0x00002000);
       } else {
         emailAddressesBuilder_.clear();
       }
       if (phoneNumbersBuilder_ == null) {
         phoneNumbers_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00001000);
+        bitField0_ = (bitField0_ & ~0x00004000);
       } else {
         phoneNumbersBuilder_.clear();
       }
       if (personalUrisBuilder_ == null) {
         personalUris_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00002000);
+        bitField0_ = (bitField0_ & ~0x00008000);
       } else {
         personalUrisBuilder_.clear();
       }
       if (additionalContactInfoBuilder_ == null) {
         additionalContactInfo_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00004000);
+        bitField0_ = (bitField0_ & ~0x00010000);
       } else {
         additionalContactInfoBuilder_.clear();
       }
       if (employmentRecordsBuilder_ == null) {
         employmentRecords_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00008000);
+        bitField0_ = (bitField0_ & ~0x00020000);
       } else {
         employmentRecordsBuilder_.clear();
       }
       if (educationRecordsBuilder_ == null) {
         educationRecords_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00010000);
+        bitField0_ = (bitField0_ & ~0x00040000);
       } else {
         educationRecordsBuilder_.clear();
       }
       if (skillsBuilder_ == null) {
         skills_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00020000);
+        bitField0_ = (bitField0_ & ~0x00080000);
       } else {
         skillsBuilder_.clear();
       }
       if (activitiesBuilder_ == null) {
         activities_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00040000);
+        bitField0_ = (bitField0_ & ~0x00100000);
       } else {
         activitiesBuilder_.clear();
       }
       if (publicationsBuilder_ == null) {
         publications_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00080000);
+        bitField0_ = (bitField0_ & ~0x00200000);
       } else {
         publicationsBuilder_.clear();
       }
       if (patentsBuilder_ == null) {
         patents_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00100000);
+        bitField0_ = (bitField0_ & ~0x00400000);
       } else {
         patentsBuilder_.clear();
       }
       if (certificationsBuilder_ == null) {
         certifications_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00200000);
+        bitField0_ = (bitField0_ & ~0x00800000);
       } else {
         certificationsBuilder_.clear();
       }
       applications_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00400000);
+      bitField0_ = (bitField0_ & ~0x01000000);
       assignments_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00800000);
+      bitField0_ = (bitField0_ & ~0x02000000);
       internalGetMutableCustomAttributes().clear();
       processed_ = false;
 
       keywordSnippet_ = "";
 
+      if (availabilitySignalsBuilder_ == null) {
+        availabilitySignals_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x20000000);
+      } else {
+        availabilitySignalsBuilder_.clear();
+      }
       if (derivedAddressesBuilder_ == null) {
         derivedAddresses_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x08000000);
+        bitField0_ = (bitField0_ & ~0x40000000);
       } else {
         derivedAddressesBuilder_.clear();
       }
@@ -3212,146 +3549,165 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.updateTime_ = updateTimeBuilder_.build();
       }
+      if (candidateUpdateTimeBuilder_ == null) {
+        result.candidateUpdateTime_ = candidateUpdateTime_;
+      } else {
+        result.candidateUpdateTime_ = candidateUpdateTimeBuilder_.build();
+      }
+      if (resumeUpdateTimeBuilder_ == null) {
+        result.resumeUpdateTime_ = resumeUpdateTime_;
+      } else {
+        result.resumeUpdateTime_ = resumeUpdateTimeBuilder_.build();
+      }
       if (resumeBuilder_ == null) {
         result.resume_ = resume_;
       } else {
         result.resume_ = resumeBuilder_.build();
       }
       if (personNamesBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) != 0)) {
+        if (((bitField0_ & 0x00000800) != 0)) {
           personNames_ = java.util.Collections.unmodifiableList(personNames_);
-          bitField0_ = (bitField0_ & ~0x00000200);
+          bitField0_ = (bitField0_ & ~0x00000800);
         }
         result.personNames_ = personNames_;
       } else {
         result.personNames_ = personNamesBuilder_.build();
       }
       if (addressesBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) != 0)) {
+        if (((bitField0_ & 0x00001000) != 0)) {
           addresses_ = java.util.Collections.unmodifiableList(addresses_);
-          bitField0_ = (bitField0_ & ~0x00000400);
+          bitField0_ = (bitField0_ & ~0x00001000);
         }
         result.addresses_ = addresses_;
       } else {
         result.addresses_ = addressesBuilder_.build();
       }
       if (emailAddressesBuilder_ == null) {
-        if (((bitField0_ & 0x00000800) != 0)) {
+        if (((bitField0_ & 0x00002000) != 0)) {
           emailAddresses_ = java.util.Collections.unmodifiableList(emailAddresses_);
-          bitField0_ = (bitField0_ & ~0x00000800);
+          bitField0_ = (bitField0_ & ~0x00002000);
         }
         result.emailAddresses_ = emailAddresses_;
       } else {
         result.emailAddresses_ = emailAddressesBuilder_.build();
       }
       if (phoneNumbersBuilder_ == null) {
-        if (((bitField0_ & 0x00001000) != 0)) {
+        if (((bitField0_ & 0x00004000) != 0)) {
           phoneNumbers_ = java.util.Collections.unmodifiableList(phoneNumbers_);
-          bitField0_ = (bitField0_ & ~0x00001000);
+          bitField0_ = (bitField0_ & ~0x00004000);
         }
         result.phoneNumbers_ = phoneNumbers_;
       } else {
         result.phoneNumbers_ = phoneNumbersBuilder_.build();
       }
       if (personalUrisBuilder_ == null) {
-        if (((bitField0_ & 0x00002000) != 0)) {
+        if (((bitField0_ & 0x00008000) != 0)) {
           personalUris_ = java.util.Collections.unmodifiableList(personalUris_);
-          bitField0_ = (bitField0_ & ~0x00002000);
+          bitField0_ = (bitField0_ & ~0x00008000);
         }
         result.personalUris_ = personalUris_;
       } else {
         result.personalUris_ = personalUrisBuilder_.build();
       }
       if (additionalContactInfoBuilder_ == null) {
-        if (((bitField0_ & 0x00004000) != 0)) {
+        if (((bitField0_ & 0x00010000) != 0)) {
           additionalContactInfo_ = java.util.Collections.unmodifiableList(additionalContactInfo_);
-          bitField0_ = (bitField0_ & ~0x00004000);
+          bitField0_ = (bitField0_ & ~0x00010000);
         }
         result.additionalContactInfo_ = additionalContactInfo_;
       } else {
         result.additionalContactInfo_ = additionalContactInfoBuilder_.build();
       }
       if (employmentRecordsBuilder_ == null) {
-        if (((bitField0_ & 0x00008000) != 0)) {
+        if (((bitField0_ & 0x00020000) != 0)) {
           employmentRecords_ = java.util.Collections.unmodifiableList(employmentRecords_);
-          bitField0_ = (bitField0_ & ~0x00008000);
+          bitField0_ = (bitField0_ & ~0x00020000);
         }
         result.employmentRecords_ = employmentRecords_;
       } else {
         result.employmentRecords_ = employmentRecordsBuilder_.build();
       }
       if (educationRecordsBuilder_ == null) {
-        if (((bitField0_ & 0x00010000) != 0)) {
+        if (((bitField0_ & 0x00040000) != 0)) {
           educationRecords_ = java.util.Collections.unmodifiableList(educationRecords_);
-          bitField0_ = (bitField0_ & ~0x00010000);
+          bitField0_ = (bitField0_ & ~0x00040000);
         }
         result.educationRecords_ = educationRecords_;
       } else {
         result.educationRecords_ = educationRecordsBuilder_.build();
       }
       if (skillsBuilder_ == null) {
-        if (((bitField0_ & 0x00020000) != 0)) {
+        if (((bitField0_ & 0x00080000) != 0)) {
           skills_ = java.util.Collections.unmodifiableList(skills_);
-          bitField0_ = (bitField0_ & ~0x00020000);
+          bitField0_ = (bitField0_ & ~0x00080000);
         }
         result.skills_ = skills_;
       } else {
         result.skills_ = skillsBuilder_.build();
       }
       if (activitiesBuilder_ == null) {
-        if (((bitField0_ & 0x00040000) != 0)) {
+        if (((bitField0_ & 0x00100000) != 0)) {
           activities_ = java.util.Collections.unmodifiableList(activities_);
-          bitField0_ = (bitField0_ & ~0x00040000);
+          bitField0_ = (bitField0_ & ~0x00100000);
         }
         result.activities_ = activities_;
       } else {
         result.activities_ = activitiesBuilder_.build();
       }
       if (publicationsBuilder_ == null) {
-        if (((bitField0_ & 0x00080000) != 0)) {
+        if (((bitField0_ & 0x00200000) != 0)) {
           publications_ = java.util.Collections.unmodifiableList(publications_);
-          bitField0_ = (bitField0_ & ~0x00080000);
+          bitField0_ = (bitField0_ & ~0x00200000);
         }
         result.publications_ = publications_;
       } else {
         result.publications_ = publicationsBuilder_.build();
       }
       if (patentsBuilder_ == null) {
-        if (((bitField0_ & 0x00100000) != 0)) {
+        if (((bitField0_ & 0x00400000) != 0)) {
           patents_ = java.util.Collections.unmodifiableList(patents_);
-          bitField0_ = (bitField0_ & ~0x00100000);
+          bitField0_ = (bitField0_ & ~0x00400000);
         }
         result.patents_ = patents_;
       } else {
         result.patents_ = patentsBuilder_.build();
       }
       if (certificationsBuilder_ == null) {
-        if (((bitField0_ & 0x00200000) != 0)) {
+        if (((bitField0_ & 0x00800000) != 0)) {
           certifications_ = java.util.Collections.unmodifiableList(certifications_);
-          bitField0_ = (bitField0_ & ~0x00200000);
+          bitField0_ = (bitField0_ & ~0x00800000);
         }
         result.certifications_ = certifications_;
       } else {
         result.certifications_ = certificationsBuilder_.build();
       }
-      if (((bitField0_ & 0x00400000) != 0)) {
+      if (((bitField0_ & 0x01000000) != 0)) {
         applications_ = applications_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00400000);
+        bitField0_ = (bitField0_ & ~0x01000000);
       }
       result.applications_ = applications_;
-      if (((bitField0_ & 0x00800000) != 0)) {
+      if (((bitField0_ & 0x02000000) != 0)) {
         assignments_ = assignments_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00800000);
+        bitField0_ = (bitField0_ & ~0x02000000);
       }
       result.assignments_ = assignments_;
       result.customAttributes_ = internalGetCustomAttributes();
       result.customAttributes_.makeImmutable();
       result.processed_ = processed_;
       result.keywordSnippet_ = keywordSnippet_;
+      if (availabilitySignalsBuilder_ == null) {
+        if (((bitField0_ & 0x20000000) != 0)) {
+          availabilitySignals_ = java.util.Collections.unmodifiableList(availabilitySignals_);
+          bitField0_ = (bitField0_ & ~0x20000000);
+        }
+        result.availabilitySignals_ = availabilitySignals_;
+      } else {
+        result.availabilitySignals_ = availabilitySignalsBuilder_.build();
+      }
       if (derivedAddressesBuilder_ == null) {
-        if (((bitField0_ & 0x08000000) != 0)) {
+        if (((bitField0_ & 0x40000000) != 0)) {
           derivedAddresses_ = java.util.Collections.unmodifiableList(derivedAddresses_);
-          bitField0_ = (bitField0_ & ~0x08000000);
+          bitField0_ = (bitField0_ & ~0x40000000);
         }
         result.derivedAddresses_ = derivedAddresses_;
       } else {
@@ -3436,6 +3792,12 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
       if (other.hasUpdateTime()) {
         mergeUpdateTime(other.getUpdateTime());
       }
+      if (other.hasCandidateUpdateTime()) {
+        mergeCandidateUpdateTime(other.getCandidateUpdateTime());
+      }
+      if (other.hasResumeUpdateTime()) {
+        mergeResumeUpdateTime(other.getResumeUpdateTime());
+      }
       if (other.hasResume()) {
         mergeResume(other.getResume());
       }
@@ -3443,7 +3805,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
         if (!other.personNames_.isEmpty()) {
           if (personNames_.isEmpty()) {
             personNames_ = other.personNames_;
-            bitField0_ = (bitField0_ & ~0x00000200);
+            bitField0_ = (bitField0_ & ~0x00000800);
           } else {
             ensurePersonNamesIsMutable();
             personNames_.addAll(other.personNames_);
@@ -3456,7 +3818,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
             personNamesBuilder_.dispose();
             personNamesBuilder_ = null;
             personNames_ = other.personNames_;
-            bitField0_ = (bitField0_ & ~0x00000200);
+            bitField0_ = (bitField0_ & ~0x00000800);
             personNamesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getPersonNamesFieldBuilder()
@@ -3470,7 +3832,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
         if (!other.addresses_.isEmpty()) {
           if (addresses_.isEmpty()) {
             addresses_ = other.addresses_;
-            bitField0_ = (bitField0_ & ~0x00000400);
+            bitField0_ = (bitField0_ & ~0x00001000);
           } else {
             ensureAddressesIsMutable();
             addresses_.addAll(other.addresses_);
@@ -3483,7 +3845,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
             addressesBuilder_.dispose();
             addressesBuilder_ = null;
             addresses_ = other.addresses_;
-            bitField0_ = (bitField0_ & ~0x00000400);
+            bitField0_ = (bitField0_ & ~0x00001000);
             addressesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getAddressesFieldBuilder()
@@ -3497,7 +3859,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
         if (!other.emailAddresses_.isEmpty()) {
           if (emailAddresses_.isEmpty()) {
             emailAddresses_ = other.emailAddresses_;
-            bitField0_ = (bitField0_ & ~0x00000800);
+            bitField0_ = (bitField0_ & ~0x00002000);
           } else {
             ensureEmailAddressesIsMutable();
             emailAddresses_.addAll(other.emailAddresses_);
@@ -3510,7 +3872,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
             emailAddressesBuilder_.dispose();
             emailAddressesBuilder_ = null;
             emailAddresses_ = other.emailAddresses_;
-            bitField0_ = (bitField0_ & ~0x00000800);
+            bitField0_ = (bitField0_ & ~0x00002000);
             emailAddressesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getEmailAddressesFieldBuilder()
@@ -3524,7 +3886,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
         if (!other.phoneNumbers_.isEmpty()) {
           if (phoneNumbers_.isEmpty()) {
             phoneNumbers_ = other.phoneNumbers_;
-            bitField0_ = (bitField0_ & ~0x00001000);
+            bitField0_ = (bitField0_ & ~0x00004000);
           } else {
             ensurePhoneNumbersIsMutable();
             phoneNumbers_.addAll(other.phoneNumbers_);
@@ -3537,7 +3899,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
             phoneNumbersBuilder_.dispose();
             phoneNumbersBuilder_ = null;
             phoneNumbers_ = other.phoneNumbers_;
-            bitField0_ = (bitField0_ & ~0x00001000);
+            bitField0_ = (bitField0_ & ~0x00004000);
             phoneNumbersBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getPhoneNumbersFieldBuilder()
@@ -3551,7 +3913,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
         if (!other.personalUris_.isEmpty()) {
           if (personalUris_.isEmpty()) {
             personalUris_ = other.personalUris_;
-            bitField0_ = (bitField0_ & ~0x00002000);
+            bitField0_ = (bitField0_ & ~0x00008000);
           } else {
             ensurePersonalUrisIsMutable();
             personalUris_.addAll(other.personalUris_);
@@ -3564,7 +3926,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
             personalUrisBuilder_.dispose();
             personalUrisBuilder_ = null;
             personalUris_ = other.personalUris_;
-            bitField0_ = (bitField0_ & ~0x00002000);
+            bitField0_ = (bitField0_ & ~0x00008000);
             personalUrisBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getPersonalUrisFieldBuilder()
@@ -3578,7 +3940,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
         if (!other.additionalContactInfo_.isEmpty()) {
           if (additionalContactInfo_.isEmpty()) {
             additionalContactInfo_ = other.additionalContactInfo_;
-            bitField0_ = (bitField0_ & ~0x00004000);
+            bitField0_ = (bitField0_ & ~0x00010000);
           } else {
             ensureAdditionalContactInfoIsMutable();
             additionalContactInfo_.addAll(other.additionalContactInfo_);
@@ -3591,7 +3953,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
             additionalContactInfoBuilder_.dispose();
             additionalContactInfoBuilder_ = null;
             additionalContactInfo_ = other.additionalContactInfo_;
-            bitField0_ = (bitField0_ & ~0x00004000);
+            bitField0_ = (bitField0_ & ~0x00010000);
             additionalContactInfoBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getAdditionalContactInfoFieldBuilder()
@@ -3605,7 +3967,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
         if (!other.employmentRecords_.isEmpty()) {
           if (employmentRecords_.isEmpty()) {
             employmentRecords_ = other.employmentRecords_;
-            bitField0_ = (bitField0_ & ~0x00008000);
+            bitField0_ = (bitField0_ & ~0x00020000);
           } else {
             ensureEmploymentRecordsIsMutable();
             employmentRecords_.addAll(other.employmentRecords_);
@@ -3618,7 +3980,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
             employmentRecordsBuilder_.dispose();
             employmentRecordsBuilder_ = null;
             employmentRecords_ = other.employmentRecords_;
-            bitField0_ = (bitField0_ & ~0x00008000);
+            bitField0_ = (bitField0_ & ~0x00020000);
             employmentRecordsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getEmploymentRecordsFieldBuilder()
@@ -3632,7 +3994,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
         if (!other.educationRecords_.isEmpty()) {
           if (educationRecords_.isEmpty()) {
             educationRecords_ = other.educationRecords_;
-            bitField0_ = (bitField0_ & ~0x00010000);
+            bitField0_ = (bitField0_ & ~0x00040000);
           } else {
             ensureEducationRecordsIsMutable();
             educationRecords_.addAll(other.educationRecords_);
@@ -3645,7 +4007,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
             educationRecordsBuilder_.dispose();
             educationRecordsBuilder_ = null;
             educationRecords_ = other.educationRecords_;
-            bitField0_ = (bitField0_ & ~0x00010000);
+            bitField0_ = (bitField0_ & ~0x00040000);
             educationRecordsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getEducationRecordsFieldBuilder()
@@ -3659,7 +4021,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
         if (!other.skills_.isEmpty()) {
           if (skills_.isEmpty()) {
             skills_ = other.skills_;
-            bitField0_ = (bitField0_ & ~0x00020000);
+            bitField0_ = (bitField0_ & ~0x00080000);
           } else {
             ensureSkillsIsMutable();
             skills_.addAll(other.skills_);
@@ -3672,7 +4034,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
             skillsBuilder_.dispose();
             skillsBuilder_ = null;
             skills_ = other.skills_;
-            bitField0_ = (bitField0_ & ~0x00020000);
+            bitField0_ = (bitField0_ & ~0x00080000);
             skillsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getSkillsFieldBuilder()
@@ -3686,7 +4048,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
         if (!other.activities_.isEmpty()) {
           if (activities_.isEmpty()) {
             activities_ = other.activities_;
-            bitField0_ = (bitField0_ & ~0x00040000);
+            bitField0_ = (bitField0_ & ~0x00100000);
           } else {
             ensureActivitiesIsMutable();
             activities_.addAll(other.activities_);
@@ -3699,7 +4061,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
             activitiesBuilder_.dispose();
             activitiesBuilder_ = null;
             activities_ = other.activities_;
-            bitField0_ = (bitField0_ & ~0x00040000);
+            bitField0_ = (bitField0_ & ~0x00100000);
             activitiesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getActivitiesFieldBuilder()
@@ -3713,7 +4075,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
         if (!other.publications_.isEmpty()) {
           if (publications_.isEmpty()) {
             publications_ = other.publications_;
-            bitField0_ = (bitField0_ & ~0x00080000);
+            bitField0_ = (bitField0_ & ~0x00200000);
           } else {
             ensurePublicationsIsMutable();
             publications_.addAll(other.publications_);
@@ -3726,7 +4088,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
             publicationsBuilder_.dispose();
             publicationsBuilder_ = null;
             publications_ = other.publications_;
-            bitField0_ = (bitField0_ & ~0x00080000);
+            bitField0_ = (bitField0_ & ~0x00200000);
             publicationsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getPublicationsFieldBuilder()
@@ -3740,7 +4102,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
         if (!other.patents_.isEmpty()) {
           if (patents_.isEmpty()) {
             patents_ = other.patents_;
-            bitField0_ = (bitField0_ & ~0x00100000);
+            bitField0_ = (bitField0_ & ~0x00400000);
           } else {
             ensurePatentsIsMutable();
             patents_.addAll(other.patents_);
@@ -3753,7 +4115,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
             patentsBuilder_.dispose();
             patentsBuilder_ = null;
             patents_ = other.patents_;
-            bitField0_ = (bitField0_ & ~0x00100000);
+            bitField0_ = (bitField0_ & ~0x00400000);
             patentsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getPatentsFieldBuilder()
@@ -3767,7 +4129,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
         if (!other.certifications_.isEmpty()) {
           if (certifications_.isEmpty()) {
             certifications_ = other.certifications_;
-            bitField0_ = (bitField0_ & ~0x00200000);
+            bitField0_ = (bitField0_ & ~0x00800000);
           } else {
             ensureCertificationsIsMutable();
             certifications_.addAll(other.certifications_);
@@ -3780,7 +4142,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
             certificationsBuilder_.dispose();
             certificationsBuilder_ = null;
             certifications_ = other.certifications_;
-            bitField0_ = (bitField0_ & ~0x00200000);
+            bitField0_ = (bitField0_ & ~0x00800000);
             certificationsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getCertificationsFieldBuilder()
@@ -3793,7 +4155,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
       if (!other.applications_.isEmpty()) {
         if (applications_.isEmpty()) {
           applications_ = other.applications_;
-          bitField0_ = (bitField0_ & ~0x00400000);
+          bitField0_ = (bitField0_ & ~0x01000000);
         } else {
           ensureApplicationsIsMutable();
           applications_.addAll(other.applications_);
@@ -3803,7 +4165,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
       if (!other.assignments_.isEmpty()) {
         if (assignments_.isEmpty()) {
           assignments_ = other.assignments_;
-          bitField0_ = (bitField0_ & ~0x00800000);
+          bitField0_ = (bitField0_ & ~0x02000000);
         } else {
           ensureAssignmentsIsMutable();
           assignments_.addAll(other.assignments_);
@@ -3818,11 +4180,38 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
         keywordSnippet_ = other.keywordSnippet_;
         onChanged();
       }
+      if (availabilitySignalsBuilder_ == null) {
+        if (!other.availabilitySignals_.isEmpty()) {
+          if (availabilitySignals_.isEmpty()) {
+            availabilitySignals_ = other.availabilitySignals_;
+            bitField0_ = (bitField0_ & ~0x20000000);
+          } else {
+            ensureAvailabilitySignalsIsMutable();
+            availabilitySignals_.addAll(other.availabilitySignals_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.availabilitySignals_.isEmpty()) {
+          if (availabilitySignalsBuilder_.isEmpty()) {
+            availabilitySignalsBuilder_.dispose();
+            availabilitySignalsBuilder_ = null;
+            availabilitySignals_ = other.availabilitySignals_;
+            bitField0_ = (bitField0_ & ~0x20000000);
+            availabilitySignalsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getAvailabilitySignalsFieldBuilder()
+                    : null;
+          } else {
+            availabilitySignalsBuilder_.addAllMessages(other.availabilitySignals_);
+          }
+        }
+      }
       if (derivedAddressesBuilder_ == null) {
         if (!other.derivedAddresses_.isEmpty()) {
           if (derivedAddresses_.isEmpty()) {
             derivedAddresses_ = other.derivedAddresses_;
-            bitField0_ = (bitField0_ & ~0x08000000);
+            bitField0_ = (bitField0_ & ~0x40000000);
           } else {
             ensureDerivedAddressesIsMutable();
             derivedAddresses_.addAll(other.derivedAddresses_);
@@ -3835,7 +4224,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
             derivedAddressesBuilder_.dispose();
             derivedAddressesBuilder_ = null;
             derivedAddresses_ = other.derivedAddresses_;
-            bitField0_ = (bitField0_ & ~0x08000000);
+            bitField0_ = (bitField0_ & ~0x40000000);
             derivedAddressesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getDerivedAddressesFieldBuilder()
@@ -4984,6 +5373,584 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
       return updateTimeBuilder_;
     }
 
+    private com.google.protobuf.Timestamp candidateUpdateTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        candidateUpdateTimeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The timestamp when the profile was last updated as a result of a direct or
+     * indirect action by a candidate.
+     * These actions include:
+     * * Direct actions such as the candidate submitting a new resume as part of a
+     * job application to the agency, using a self-service tool such as a website
+     * to update their profile, and so on.
+     * * Indirect actions by the candidate such as uploading a resume to a job
+     * board that is collected by the agency through a feed, providing a resume to
+     * a recruiter who then uploads it into the ATS, and so on.
+     * * Updates made to the candidate's profile by the recruiter as a result of
+     * interacting with the candidate (for example adding a skill or work
+     * preference, and so on). Changes to
+     * [recruiting_notes][google.cloud.talent.v4beta1.Profile.recruiting_notes]
+     * are specifically excluded from this action type.
+     * Note:
+     * [candidate_update_time][google.cloud.talent.v4beta1.Profile.candidate_update_time]
+     * must be greater than or equal to
+     * [resume_update_time][google.cloud.talent.v4beta1.Profile.resume_update_time]
+     * or an error is thrown.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp candidate_update_time = 67;</code>
+     */
+    public boolean hasCandidateUpdateTime() {
+      return candidateUpdateTimeBuilder_ != null || candidateUpdateTime_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The timestamp when the profile was last updated as a result of a direct or
+     * indirect action by a candidate.
+     * These actions include:
+     * * Direct actions such as the candidate submitting a new resume as part of a
+     * job application to the agency, using a self-service tool such as a website
+     * to update their profile, and so on.
+     * * Indirect actions by the candidate such as uploading a resume to a job
+     * board that is collected by the agency through a feed, providing a resume to
+     * a recruiter who then uploads it into the ATS, and so on.
+     * * Updates made to the candidate's profile by the recruiter as a result of
+     * interacting with the candidate (for example adding a skill or work
+     * preference, and so on). Changes to
+     * [recruiting_notes][google.cloud.talent.v4beta1.Profile.recruiting_notes]
+     * are specifically excluded from this action type.
+     * Note:
+     * [candidate_update_time][google.cloud.talent.v4beta1.Profile.candidate_update_time]
+     * must be greater than or equal to
+     * [resume_update_time][google.cloud.talent.v4beta1.Profile.resume_update_time]
+     * or an error is thrown.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp candidate_update_time = 67;</code>
+     */
+    public com.google.protobuf.Timestamp getCandidateUpdateTime() {
+      if (candidateUpdateTimeBuilder_ == null) {
+        return candidateUpdateTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : candidateUpdateTime_;
+      } else {
+        return candidateUpdateTimeBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The timestamp when the profile was last updated as a result of a direct or
+     * indirect action by a candidate.
+     * These actions include:
+     * * Direct actions such as the candidate submitting a new resume as part of a
+     * job application to the agency, using a self-service tool such as a website
+     * to update their profile, and so on.
+     * * Indirect actions by the candidate such as uploading a resume to a job
+     * board that is collected by the agency through a feed, providing a resume to
+     * a recruiter who then uploads it into the ATS, and so on.
+     * * Updates made to the candidate's profile by the recruiter as a result of
+     * interacting with the candidate (for example adding a skill or work
+     * preference, and so on). Changes to
+     * [recruiting_notes][google.cloud.talent.v4beta1.Profile.recruiting_notes]
+     * are specifically excluded from this action type.
+     * Note:
+     * [candidate_update_time][google.cloud.talent.v4beta1.Profile.candidate_update_time]
+     * must be greater than or equal to
+     * [resume_update_time][google.cloud.talent.v4beta1.Profile.resume_update_time]
+     * or an error is thrown.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp candidate_update_time = 67;</code>
+     */
+    public Builder setCandidateUpdateTime(com.google.protobuf.Timestamp value) {
+      if (candidateUpdateTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        candidateUpdateTime_ = value;
+        onChanged();
+      } else {
+        candidateUpdateTimeBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The timestamp when the profile was last updated as a result of a direct or
+     * indirect action by a candidate.
+     * These actions include:
+     * * Direct actions such as the candidate submitting a new resume as part of a
+     * job application to the agency, using a self-service tool such as a website
+     * to update their profile, and so on.
+     * * Indirect actions by the candidate such as uploading a resume to a job
+     * board that is collected by the agency through a feed, providing a resume to
+     * a recruiter who then uploads it into the ATS, and so on.
+     * * Updates made to the candidate's profile by the recruiter as a result of
+     * interacting with the candidate (for example adding a skill or work
+     * preference, and so on). Changes to
+     * [recruiting_notes][google.cloud.talent.v4beta1.Profile.recruiting_notes]
+     * are specifically excluded from this action type.
+     * Note:
+     * [candidate_update_time][google.cloud.talent.v4beta1.Profile.candidate_update_time]
+     * must be greater than or equal to
+     * [resume_update_time][google.cloud.talent.v4beta1.Profile.resume_update_time]
+     * or an error is thrown.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp candidate_update_time = 67;</code>
+     */
+    public Builder setCandidateUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (candidateUpdateTimeBuilder_ == null) {
+        candidateUpdateTime_ = builderForValue.build();
+        onChanged();
+      } else {
+        candidateUpdateTimeBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The timestamp when the profile was last updated as a result of a direct or
+     * indirect action by a candidate.
+     * These actions include:
+     * * Direct actions such as the candidate submitting a new resume as part of a
+     * job application to the agency, using a self-service tool such as a website
+     * to update their profile, and so on.
+     * * Indirect actions by the candidate such as uploading a resume to a job
+     * board that is collected by the agency through a feed, providing a resume to
+     * a recruiter who then uploads it into the ATS, and so on.
+     * * Updates made to the candidate's profile by the recruiter as a result of
+     * interacting with the candidate (for example adding a skill or work
+     * preference, and so on). Changes to
+     * [recruiting_notes][google.cloud.talent.v4beta1.Profile.recruiting_notes]
+     * are specifically excluded from this action type.
+     * Note:
+     * [candidate_update_time][google.cloud.talent.v4beta1.Profile.candidate_update_time]
+     * must be greater than or equal to
+     * [resume_update_time][google.cloud.talent.v4beta1.Profile.resume_update_time]
+     * or an error is thrown.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp candidate_update_time = 67;</code>
+     */
+    public Builder mergeCandidateUpdateTime(com.google.protobuf.Timestamp value) {
+      if (candidateUpdateTimeBuilder_ == null) {
+        if (candidateUpdateTime_ != null) {
+          candidateUpdateTime_ =
+              com.google.protobuf.Timestamp.newBuilder(candidateUpdateTime_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          candidateUpdateTime_ = value;
+        }
+        onChanged();
+      } else {
+        candidateUpdateTimeBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The timestamp when the profile was last updated as a result of a direct or
+     * indirect action by a candidate.
+     * These actions include:
+     * * Direct actions such as the candidate submitting a new resume as part of a
+     * job application to the agency, using a self-service tool such as a website
+     * to update their profile, and so on.
+     * * Indirect actions by the candidate such as uploading a resume to a job
+     * board that is collected by the agency through a feed, providing a resume to
+     * a recruiter who then uploads it into the ATS, and so on.
+     * * Updates made to the candidate's profile by the recruiter as a result of
+     * interacting with the candidate (for example adding a skill or work
+     * preference, and so on). Changes to
+     * [recruiting_notes][google.cloud.talent.v4beta1.Profile.recruiting_notes]
+     * are specifically excluded from this action type.
+     * Note:
+     * [candidate_update_time][google.cloud.talent.v4beta1.Profile.candidate_update_time]
+     * must be greater than or equal to
+     * [resume_update_time][google.cloud.talent.v4beta1.Profile.resume_update_time]
+     * or an error is thrown.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp candidate_update_time = 67;</code>
+     */
+    public Builder clearCandidateUpdateTime() {
+      if (candidateUpdateTimeBuilder_ == null) {
+        candidateUpdateTime_ = null;
+        onChanged();
+      } else {
+        candidateUpdateTime_ = null;
+        candidateUpdateTimeBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The timestamp when the profile was last updated as a result of a direct or
+     * indirect action by a candidate.
+     * These actions include:
+     * * Direct actions such as the candidate submitting a new resume as part of a
+     * job application to the agency, using a self-service tool such as a website
+     * to update their profile, and so on.
+     * * Indirect actions by the candidate such as uploading a resume to a job
+     * board that is collected by the agency through a feed, providing a resume to
+     * a recruiter who then uploads it into the ATS, and so on.
+     * * Updates made to the candidate's profile by the recruiter as a result of
+     * interacting with the candidate (for example adding a skill or work
+     * preference, and so on). Changes to
+     * [recruiting_notes][google.cloud.talent.v4beta1.Profile.recruiting_notes]
+     * are specifically excluded from this action type.
+     * Note:
+     * [candidate_update_time][google.cloud.talent.v4beta1.Profile.candidate_update_time]
+     * must be greater than or equal to
+     * [resume_update_time][google.cloud.talent.v4beta1.Profile.resume_update_time]
+     * or an error is thrown.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp candidate_update_time = 67;</code>
+     */
+    public com.google.protobuf.Timestamp.Builder getCandidateUpdateTimeBuilder() {
+
+      onChanged();
+      return getCandidateUpdateTimeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The timestamp when the profile was last updated as a result of a direct or
+     * indirect action by a candidate.
+     * These actions include:
+     * * Direct actions such as the candidate submitting a new resume as part of a
+     * job application to the agency, using a self-service tool such as a website
+     * to update their profile, and so on.
+     * * Indirect actions by the candidate such as uploading a resume to a job
+     * board that is collected by the agency through a feed, providing a resume to
+     * a recruiter who then uploads it into the ATS, and so on.
+     * * Updates made to the candidate's profile by the recruiter as a result of
+     * interacting with the candidate (for example adding a skill or work
+     * preference, and so on). Changes to
+     * [recruiting_notes][google.cloud.talent.v4beta1.Profile.recruiting_notes]
+     * are specifically excluded from this action type.
+     * Note:
+     * [candidate_update_time][google.cloud.talent.v4beta1.Profile.candidate_update_time]
+     * must be greater than or equal to
+     * [resume_update_time][google.cloud.talent.v4beta1.Profile.resume_update_time]
+     * or an error is thrown.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp candidate_update_time = 67;</code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getCandidateUpdateTimeOrBuilder() {
+      if (candidateUpdateTimeBuilder_ != null) {
+        return candidateUpdateTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return candidateUpdateTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : candidateUpdateTime_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The timestamp when the profile was last updated as a result of a direct or
+     * indirect action by a candidate.
+     * These actions include:
+     * * Direct actions such as the candidate submitting a new resume as part of a
+     * job application to the agency, using a self-service tool such as a website
+     * to update their profile, and so on.
+     * * Indirect actions by the candidate such as uploading a resume to a job
+     * board that is collected by the agency through a feed, providing a resume to
+     * a recruiter who then uploads it into the ATS, and so on.
+     * * Updates made to the candidate's profile by the recruiter as a result of
+     * interacting with the candidate (for example adding a skill or work
+     * preference, and so on). Changes to
+     * [recruiting_notes][google.cloud.talent.v4beta1.Profile.recruiting_notes]
+     * are specifically excluded from this action type.
+     * Note:
+     * [candidate_update_time][google.cloud.talent.v4beta1.Profile.candidate_update_time]
+     * must be greater than or equal to
+     * [resume_update_time][google.cloud.talent.v4beta1.Profile.resume_update_time]
+     * or an error is thrown.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp candidate_update_time = 67;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getCandidateUpdateTimeFieldBuilder() {
+      if (candidateUpdateTimeBuilder_ == null) {
+        candidateUpdateTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getCandidateUpdateTime(), getParentForChildren(), isClean());
+        candidateUpdateTime_ = null;
+      }
+      return candidateUpdateTimeBuilder_;
+    }
+
+    private com.google.protobuf.Timestamp resumeUpdateTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        resumeUpdateTimeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The timestamp when the candidate's resume was added or updated on the
+     * candidate's profile. Whether that resume was directly uploaded by a
+     * candidate, pulled from a 3rd party job board feed, added by a recruiter,
+     * and so on.
+     * If this field is updated, it's expected that
+     * [resume][google.cloud.talent.v4beta1.Profile.resume] is provided in the
+     * create or update calls.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp resume_update_time = 68;</code>
+     */
+    public boolean hasResumeUpdateTime() {
+      return resumeUpdateTimeBuilder_ != null || resumeUpdateTime_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The timestamp when the candidate's resume was added or updated on the
+     * candidate's profile. Whether that resume was directly uploaded by a
+     * candidate, pulled from a 3rd party job board feed, added by a recruiter,
+     * and so on.
+     * If this field is updated, it's expected that
+     * [resume][google.cloud.talent.v4beta1.Profile.resume] is provided in the
+     * create or update calls.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp resume_update_time = 68;</code>
+     */
+    public com.google.protobuf.Timestamp getResumeUpdateTime() {
+      if (resumeUpdateTimeBuilder_ == null) {
+        return resumeUpdateTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : resumeUpdateTime_;
+      } else {
+        return resumeUpdateTimeBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The timestamp when the candidate's resume was added or updated on the
+     * candidate's profile. Whether that resume was directly uploaded by a
+     * candidate, pulled from a 3rd party job board feed, added by a recruiter,
+     * and so on.
+     * If this field is updated, it's expected that
+     * [resume][google.cloud.talent.v4beta1.Profile.resume] is provided in the
+     * create or update calls.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp resume_update_time = 68;</code>
+     */
+    public Builder setResumeUpdateTime(com.google.protobuf.Timestamp value) {
+      if (resumeUpdateTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        resumeUpdateTime_ = value;
+        onChanged();
+      } else {
+        resumeUpdateTimeBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The timestamp when the candidate's resume was added or updated on the
+     * candidate's profile. Whether that resume was directly uploaded by a
+     * candidate, pulled from a 3rd party job board feed, added by a recruiter,
+     * and so on.
+     * If this field is updated, it's expected that
+     * [resume][google.cloud.talent.v4beta1.Profile.resume] is provided in the
+     * create or update calls.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp resume_update_time = 68;</code>
+     */
+    public Builder setResumeUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (resumeUpdateTimeBuilder_ == null) {
+        resumeUpdateTime_ = builderForValue.build();
+        onChanged();
+      } else {
+        resumeUpdateTimeBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The timestamp when the candidate's resume was added or updated on the
+     * candidate's profile. Whether that resume was directly uploaded by a
+     * candidate, pulled from a 3rd party job board feed, added by a recruiter,
+     * and so on.
+     * If this field is updated, it's expected that
+     * [resume][google.cloud.talent.v4beta1.Profile.resume] is provided in the
+     * create or update calls.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp resume_update_time = 68;</code>
+     */
+    public Builder mergeResumeUpdateTime(com.google.protobuf.Timestamp value) {
+      if (resumeUpdateTimeBuilder_ == null) {
+        if (resumeUpdateTime_ != null) {
+          resumeUpdateTime_ =
+              com.google.protobuf.Timestamp.newBuilder(resumeUpdateTime_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          resumeUpdateTime_ = value;
+        }
+        onChanged();
+      } else {
+        resumeUpdateTimeBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The timestamp when the candidate's resume was added or updated on the
+     * candidate's profile. Whether that resume was directly uploaded by a
+     * candidate, pulled from a 3rd party job board feed, added by a recruiter,
+     * and so on.
+     * If this field is updated, it's expected that
+     * [resume][google.cloud.talent.v4beta1.Profile.resume] is provided in the
+     * create or update calls.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp resume_update_time = 68;</code>
+     */
+    public Builder clearResumeUpdateTime() {
+      if (resumeUpdateTimeBuilder_ == null) {
+        resumeUpdateTime_ = null;
+        onChanged();
+      } else {
+        resumeUpdateTime_ = null;
+        resumeUpdateTimeBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The timestamp when the candidate's resume was added or updated on the
+     * candidate's profile. Whether that resume was directly uploaded by a
+     * candidate, pulled from a 3rd party job board feed, added by a recruiter,
+     * and so on.
+     * If this field is updated, it's expected that
+     * [resume][google.cloud.talent.v4beta1.Profile.resume] is provided in the
+     * create or update calls.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp resume_update_time = 68;</code>
+     */
+    public com.google.protobuf.Timestamp.Builder getResumeUpdateTimeBuilder() {
+
+      onChanged();
+      return getResumeUpdateTimeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The timestamp when the candidate's resume was added or updated on the
+     * candidate's profile. Whether that resume was directly uploaded by a
+     * candidate, pulled from a 3rd party job board feed, added by a recruiter,
+     * and so on.
+     * If this field is updated, it's expected that
+     * [resume][google.cloud.talent.v4beta1.Profile.resume] is provided in the
+     * create or update calls.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp resume_update_time = 68;</code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getResumeUpdateTimeOrBuilder() {
+      if (resumeUpdateTimeBuilder_ != null) {
+        return resumeUpdateTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return resumeUpdateTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : resumeUpdateTime_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The timestamp when the candidate's resume was added or updated on the
+     * candidate's profile. Whether that resume was directly uploaded by a
+     * candidate, pulled from a 3rd party job board feed, added by a recruiter,
+     * and so on.
+     * If this field is updated, it's expected that
+     * [resume][google.cloud.talent.v4beta1.Profile.resume] is provided in the
+     * create or update calls.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp resume_update_time = 68;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getResumeUpdateTimeFieldBuilder() {
+      if (resumeUpdateTimeBuilder_ == null) {
+        resumeUpdateTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getResumeUpdateTime(), getParentForChildren(), isClean());
+        resumeUpdateTime_ = null;
+      }
+      return resumeUpdateTimeBuilder_;
+    }
+
     private com.google.cloud.talent.v4beta1.Resume resume_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.talent.v4beta1.Resume,
@@ -5169,10 +6136,10 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensurePersonNamesIsMutable() {
-      if (!((bitField0_ & 0x00000200) != 0)) {
+      if (!((bitField0_ & 0x00000800) != 0)) {
         personNames_ =
             new java.util.ArrayList<com.google.cloud.talent.v4beta1.PersonName>(personNames_);
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000800;
       }
     }
 
@@ -5399,7 +6366,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
     public Builder clearPersonNames() {
       if (personNamesBuilder_ == null) {
         personNames_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000800);
         onChanged();
       } else {
         personNamesBuilder_.clear();
@@ -5528,7 +6495,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.talent.v4beta1.PersonName,
                 com.google.cloud.talent.v4beta1.PersonName.Builder,
                 com.google.cloud.talent.v4beta1.PersonNameOrBuilder>(
-                personNames_, ((bitField0_ & 0x00000200) != 0), getParentForChildren(), isClean());
+                personNames_, ((bitField0_ & 0x00000800) != 0), getParentForChildren(), isClean());
         personNames_ = null;
       }
       return personNamesBuilder_;
@@ -5538,9 +6505,9 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureAddressesIsMutable() {
-      if (!((bitField0_ & 0x00000400) != 0)) {
+      if (!((bitField0_ & 0x00001000) != 0)) {
         addresses_ = new java.util.ArrayList<com.google.cloud.talent.v4beta1.Address>(addresses_);
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00001000;
       }
     }
 
@@ -6030,7 +6997,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
     public Builder clearAddresses() {
       if (addressesBuilder_ == null) {
         addresses_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00001000);
         onChanged();
       } else {
         addressesBuilder_.clear();
@@ -6327,7 +7294,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.talent.v4beta1.Address,
                 com.google.cloud.talent.v4beta1.Address.Builder,
                 com.google.cloud.talent.v4beta1.AddressOrBuilder>(
-                addresses_, ((bitField0_ & 0x00000400) != 0), getParentForChildren(), isClean());
+                addresses_, ((bitField0_ & 0x00001000) != 0), getParentForChildren(), isClean());
         addresses_ = null;
       }
       return addressesBuilder_;
@@ -6337,10 +7304,10 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureEmailAddressesIsMutable() {
-      if (!((bitField0_ & 0x00000800) != 0)) {
+      if (!((bitField0_ & 0x00002000) != 0)) {
         emailAddresses_ =
             new java.util.ArrayList<com.google.cloud.talent.v4beta1.Email>(emailAddresses_);
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00002000;
       }
     }
 
@@ -6556,7 +7523,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
     public Builder clearEmailAddresses() {
       if (emailAddressesBuilder_ == null) {
         emailAddresses_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000800);
+        bitField0_ = (bitField0_ & ~0x00002000);
         onChanged();
       } else {
         emailAddressesBuilder_.clear();
@@ -6679,7 +7646,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.talent.v4beta1.Email.Builder,
                 com.google.cloud.talent.v4beta1.EmailOrBuilder>(
                 emailAddresses_,
-                ((bitField0_ & 0x00000800) != 0),
+                ((bitField0_ & 0x00002000) != 0),
                 getParentForChildren(),
                 isClean());
         emailAddresses_ = null;
@@ -6691,10 +7658,10 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensurePhoneNumbersIsMutable() {
-      if (!((bitField0_ & 0x00001000) != 0)) {
+      if (!((bitField0_ & 0x00004000) != 0)) {
         phoneNumbers_ =
             new java.util.ArrayList<com.google.cloud.talent.v4beta1.Phone>(phoneNumbers_);
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00004000;
       }
     }
 
@@ -6909,7 +7876,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
     public Builder clearPhoneNumbers() {
       if (phoneNumbersBuilder_ == null) {
         phoneNumbers_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00001000);
+        bitField0_ = (bitField0_ & ~0x00004000);
         onChanged();
       } else {
         phoneNumbersBuilder_.clear();
@@ -7031,7 +7998,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.talent.v4beta1.Phone,
                 com.google.cloud.talent.v4beta1.Phone.Builder,
                 com.google.cloud.talent.v4beta1.PhoneOrBuilder>(
-                phoneNumbers_, ((bitField0_ & 0x00001000) != 0), getParentForChildren(), isClean());
+                phoneNumbers_, ((bitField0_ & 0x00004000) != 0), getParentForChildren(), isClean());
         phoneNumbers_ = null;
       }
       return phoneNumbersBuilder_;
@@ -7041,10 +8008,10 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensurePersonalUrisIsMutable() {
-      if (!((bitField0_ & 0x00002000) != 0)) {
+      if (!((bitField0_ & 0x00008000) != 0)) {
         personalUris_ =
             new java.util.ArrayList<com.google.cloud.talent.v4beta1.PersonalUri>(personalUris_);
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00008000;
       }
     }
 
@@ -7260,7 +8227,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
     public Builder clearPersonalUris() {
       if (personalUrisBuilder_ == null) {
         personalUris_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00002000);
+        bitField0_ = (bitField0_ & ~0x00008000);
         onChanged();
       } else {
         personalUrisBuilder_.clear();
@@ -7383,7 +8350,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.talent.v4beta1.PersonalUri,
                 com.google.cloud.talent.v4beta1.PersonalUri.Builder,
                 com.google.cloud.talent.v4beta1.PersonalUriOrBuilder>(
-                personalUris_, ((bitField0_ & 0x00002000) != 0), getParentForChildren(), isClean());
+                personalUris_, ((bitField0_ & 0x00008000) != 0), getParentForChildren(), isClean());
         personalUris_ = null;
       }
       return personalUrisBuilder_;
@@ -7393,11 +8360,11 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
         additionalContactInfo_ = java.util.Collections.emptyList();
 
     private void ensureAdditionalContactInfoIsMutable() {
-      if (!((bitField0_ & 0x00004000) != 0)) {
+      if (!((bitField0_ & 0x00010000) != 0)) {
         additionalContactInfo_ =
             new java.util.ArrayList<com.google.cloud.talent.v4beta1.AdditionalContactInfo>(
                 additionalContactInfo_);
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00010000;
       }
     }
 
@@ -7696,7 +8663,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
     public Builder clearAdditionalContactInfo() {
       if (additionalContactInfoBuilder_ == null) {
         additionalContactInfo_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00004000);
+        bitField0_ = (bitField0_ & ~0x00010000);
         onChanged();
       } else {
         additionalContactInfoBuilder_.clear();
@@ -7873,7 +8840,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.talent.v4beta1.AdditionalContactInfo.Builder,
                 com.google.cloud.talent.v4beta1.AdditionalContactInfoOrBuilder>(
                 additionalContactInfo_,
-                ((bitField0_ & 0x00004000) != 0),
+                ((bitField0_ & 0x00010000) != 0),
                 getParentForChildren(),
                 isClean());
         additionalContactInfo_ = null;
@@ -7885,11 +8852,11 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureEmploymentRecordsIsMutable() {
-      if (!((bitField0_ & 0x00008000) != 0)) {
+      if (!((bitField0_ & 0x00020000) != 0)) {
         employmentRecords_ =
             new java.util.ArrayList<com.google.cloud.talent.v4beta1.EmploymentRecord>(
                 employmentRecords_);
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00020000;
       }
     }
 
@@ -8240,7 +9207,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
     public Builder clearEmploymentRecords() {
       if (employmentRecordsBuilder_ == null) {
         employmentRecords_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00008000);
+        bitField0_ = (bitField0_ & ~0x00020000);
         onChanged();
       } else {
         employmentRecordsBuilder_.clear();
@@ -8450,7 +9417,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.talent.v4beta1.EmploymentRecord.Builder,
                 com.google.cloud.talent.v4beta1.EmploymentRecordOrBuilder>(
                 employmentRecords_,
-                ((bitField0_ & 0x00008000) != 0),
+                ((bitField0_ & 0x00020000) != 0),
                 getParentForChildren(),
                 isClean());
         employmentRecords_ = null;
@@ -8462,11 +9429,11 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureEducationRecordsIsMutable() {
-      if (!((bitField0_ & 0x00010000) != 0)) {
+      if (!((bitField0_ & 0x00040000) != 0)) {
         educationRecords_ =
             new java.util.ArrayList<com.google.cloud.talent.v4beta1.EducationRecord>(
                 educationRecords_);
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00040000;
       }
     }
 
@@ -8806,7 +9773,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
     public Builder clearEducationRecords() {
       if (educationRecordsBuilder_ == null) {
         educationRecords_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00010000);
+        bitField0_ = (bitField0_ & ~0x00040000);
         onChanged();
       } else {
         educationRecordsBuilder_.clear();
@@ -9009,7 +9976,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.talent.v4beta1.EducationRecord.Builder,
                 com.google.cloud.talent.v4beta1.EducationRecordOrBuilder>(
                 educationRecords_,
-                ((bitField0_ & 0x00010000) != 0),
+                ((bitField0_ & 0x00040000) != 0),
                 getParentForChildren(),
                 isClean());
         educationRecords_ = null;
@@ -9021,9 +9988,9 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureSkillsIsMutable() {
-      if (!((bitField0_ & 0x00020000) != 0)) {
+      if (!((bitField0_ & 0x00080000) != 0)) {
         skills_ = new java.util.ArrayList<com.google.cloud.talent.v4beta1.Skill>(skills_);
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00080000;
       }
     }
 
@@ -9260,7 +10227,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
     public Builder clearSkills() {
       if (skillsBuilder_ == null) {
         skills_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00020000);
+        bitField0_ = (bitField0_ & ~0x00080000);
         onChanged();
       } else {
         skillsBuilder_.clear();
@@ -9395,7 +10362,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.talent.v4beta1.Skill,
                 com.google.cloud.talent.v4beta1.Skill.Builder,
                 com.google.cloud.talent.v4beta1.SkillOrBuilder>(
-                skills_, ((bitField0_ & 0x00020000) != 0), getParentForChildren(), isClean());
+                skills_, ((bitField0_ & 0x00080000) != 0), getParentForChildren(), isClean());
         skills_ = null;
       }
       return skillsBuilder_;
@@ -9405,10 +10372,10 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureActivitiesIsMutable() {
-      if (!((bitField0_ & 0x00040000) != 0)) {
+      if (!((bitField0_ & 0x00100000) != 0)) {
         activities_ =
             new java.util.ArrayList<com.google.cloud.talent.v4beta1.Activity>(activities_);
-        bitField0_ |= 0x00040000;
+        bitField0_ |= 0x00100000;
       }
     }
 
@@ -9667,7 +10634,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
     public Builder clearActivities() {
       if (activitiesBuilder_ == null) {
         activities_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00040000);
+        bitField0_ = (bitField0_ & ~0x00100000);
         onChanged();
       } else {
         activitiesBuilder_.clear();
@@ -9817,7 +10784,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.talent.v4beta1.Activity,
                 com.google.cloud.talent.v4beta1.Activity.Builder,
                 com.google.cloud.talent.v4beta1.ActivityOrBuilder>(
-                activities_, ((bitField0_ & 0x00040000) != 0), getParentForChildren(), isClean());
+                activities_, ((bitField0_ & 0x00100000) != 0), getParentForChildren(), isClean());
         activities_ = null;
       }
       return activitiesBuilder_;
@@ -9827,10 +10794,10 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensurePublicationsIsMutable() {
-      if (!((bitField0_ & 0x00080000) != 0)) {
+      if (!((bitField0_ & 0x00200000) != 0)) {
         publications_ =
             new java.util.ArrayList<com.google.cloud.talent.v4beta1.Publication>(publications_);
-        bitField0_ |= 0x00080000;
+        bitField0_ |= 0x00200000;
       }
     }
 
@@ -10057,7 +11024,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
     public Builder clearPublications() {
       if (publicationsBuilder_ == null) {
         publications_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00080000);
+        bitField0_ = (bitField0_ & ~0x00200000);
         onChanged();
       } else {
         publicationsBuilder_.clear();
@@ -10187,7 +11154,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.talent.v4beta1.Publication,
                 com.google.cloud.talent.v4beta1.Publication.Builder,
                 com.google.cloud.talent.v4beta1.PublicationOrBuilder>(
-                publications_, ((bitField0_ & 0x00080000) != 0), getParentForChildren(), isClean());
+                publications_, ((bitField0_ & 0x00200000) != 0), getParentForChildren(), isClean());
         publications_ = null;
       }
       return publicationsBuilder_;
@@ -10197,9 +11164,9 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensurePatentsIsMutable() {
-      if (!((bitField0_ & 0x00100000) != 0)) {
+      if (!((bitField0_ & 0x00400000) != 0)) {
         patents_ = new java.util.ArrayList<com.google.cloud.talent.v4beta1.Patent>(patents_);
-        bitField0_ |= 0x00100000;
+        bitField0_ |= 0x00400000;
       }
     }
 
@@ -10414,7 +11381,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
     public Builder clearPatents() {
       if (patentsBuilder_ == null) {
         patents_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00100000);
+        bitField0_ = (bitField0_ & ~0x00400000);
         onChanged();
       } else {
         patentsBuilder_.clear();
@@ -10535,7 +11502,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.talent.v4beta1.Patent,
                 com.google.cloud.talent.v4beta1.Patent.Builder,
                 com.google.cloud.talent.v4beta1.PatentOrBuilder>(
-                patents_, ((bitField0_ & 0x00100000) != 0), getParentForChildren(), isClean());
+                patents_, ((bitField0_ & 0x00400000) != 0), getParentForChildren(), isClean());
         patents_ = null;
       }
       return patentsBuilder_;
@@ -10545,10 +11512,10 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureCertificationsIsMutable() {
-      if (!((bitField0_ & 0x00200000) != 0)) {
+      if (!((bitField0_ & 0x00800000) != 0)) {
         certifications_ =
             new java.util.ArrayList<com.google.cloud.talent.v4beta1.Certification>(certifications_);
-        bitField0_ |= 0x00200000;
+        bitField0_ |= 0x00800000;
       }
     }
 
@@ -10766,7 +11733,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
     public Builder clearCertifications() {
       if (certificationsBuilder_ == null) {
         certifications_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00200000);
+        bitField0_ = (bitField0_ & ~0x00800000);
         onChanged();
       } else {
         certificationsBuilder_.clear();
@@ -10892,7 +11859,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.talent.v4beta1.Certification.Builder,
                 com.google.cloud.talent.v4beta1.CertificationOrBuilder>(
                 certifications_,
-                ((bitField0_ & 0x00200000) != 0),
+                ((bitField0_ & 0x00800000) != 0),
                 getParentForChildren(),
                 isClean());
         certifications_ = null;
@@ -10904,19 +11871,19 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureApplicationsIsMutable() {
-      if (!((bitField0_ & 0x00400000) != 0)) {
+      if (!((bitField0_ & 0x01000000) != 0)) {
         applications_ = new com.google.protobuf.LazyStringArrayList(applications_);
-        bitField0_ |= 0x00400000;
+        bitField0_ |= 0x01000000;
       }
     }
     /**
      *
      *
      * <pre>
-     * The resource names of the candidate's applications.
+     * Output only. The resource names of the candidate's applications.
      * </pre>
      *
-     * <code>repeated string applications = 47;</code>
+     * <code>repeated string applications = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.protobuf.ProtocolStringList getApplicationsList() {
       return applications_.getUnmodifiableView();
@@ -10925,10 +11892,10 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource names of the candidate's applications.
+     * Output only. The resource names of the candidate's applications.
      * </pre>
      *
-     * <code>repeated string applications = 47;</code>
+     * <code>repeated string applications = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public int getApplicationsCount() {
       return applications_.size();
@@ -10937,10 +11904,10 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource names of the candidate's applications.
+     * Output only. The resource names of the candidate's applications.
      * </pre>
      *
-     * <code>repeated string applications = 47;</code>
+     * <code>repeated string applications = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public java.lang.String getApplications(int index) {
       return applications_.get(index);
@@ -10949,10 +11916,10 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource names of the candidate's applications.
+     * Output only. The resource names of the candidate's applications.
      * </pre>
      *
-     * <code>repeated string applications = 47;</code>
+     * <code>repeated string applications = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.protobuf.ByteString getApplicationsBytes(int index) {
       return applications_.getByteString(index);
@@ -10961,10 +11928,10 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource names of the candidate's applications.
+     * Output only. The resource names of the candidate's applications.
      * </pre>
      *
-     * <code>repeated string applications = 47;</code>
+     * <code>repeated string applications = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setApplications(int index, java.lang.String value) {
       if (value == null) {
@@ -10979,10 +11946,10 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource names of the candidate's applications.
+     * Output only. The resource names of the candidate's applications.
      * </pre>
      *
-     * <code>repeated string applications = 47;</code>
+     * <code>repeated string applications = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder addApplications(java.lang.String value) {
       if (value == null) {
@@ -10997,10 +11964,10 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource names of the candidate's applications.
+     * Output only. The resource names of the candidate's applications.
      * </pre>
      *
-     * <code>repeated string applications = 47;</code>
+     * <code>repeated string applications = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder addAllApplications(java.lang.Iterable<java.lang.String> values) {
       ensureApplicationsIsMutable();
@@ -11012,14 +11979,14 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource names of the candidate's applications.
+     * Output only. The resource names of the candidate's applications.
      * </pre>
      *
-     * <code>repeated string applications = 47;</code>
+     * <code>repeated string applications = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearApplications() {
       applications_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00400000);
+      bitField0_ = (bitField0_ & ~0x01000000);
       onChanged();
       return this;
     }
@@ -11027,10 +11994,10 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource names of the candidate's applications.
+     * Output only. The resource names of the candidate's applications.
      * </pre>
      *
-     * <code>repeated string applications = 47;</code>
+     * <code>repeated string applications = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder addApplicationsBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -11047,19 +12014,19 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureAssignmentsIsMutable() {
-      if (!((bitField0_ & 0x00800000) != 0)) {
+      if (!((bitField0_ & 0x02000000) != 0)) {
         assignments_ = new com.google.protobuf.LazyStringArrayList(assignments_);
-        bitField0_ |= 0x00800000;
+        bitField0_ |= 0x02000000;
       }
     }
     /**
      *
      *
      * <pre>
-     * The resource names of the candidate's assignments.
+     * Output only. The resource names of the candidate's assignments.
      * </pre>
      *
-     * <code>repeated string assignments = 48;</code>
+     * <code>repeated string assignments = 48 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.protobuf.ProtocolStringList getAssignmentsList() {
       return assignments_.getUnmodifiableView();
@@ -11068,10 +12035,10 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource names of the candidate's assignments.
+     * Output only. The resource names of the candidate's assignments.
      * </pre>
      *
-     * <code>repeated string assignments = 48;</code>
+     * <code>repeated string assignments = 48 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public int getAssignmentsCount() {
       return assignments_.size();
@@ -11080,10 +12047,10 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource names of the candidate's assignments.
+     * Output only. The resource names of the candidate's assignments.
      * </pre>
      *
-     * <code>repeated string assignments = 48;</code>
+     * <code>repeated string assignments = 48 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public java.lang.String getAssignments(int index) {
       return assignments_.get(index);
@@ -11092,10 +12059,10 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource names of the candidate's assignments.
+     * Output only. The resource names of the candidate's assignments.
      * </pre>
      *
-     * <code>repeated string assignments = 48;</code>
+     * <code>repeated string assignments = 48 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.protobuf.ByteString getAssignmentsBytes(int index) {
       return assignments_.getByteString(index);
@@ -11104,10 +12071,10 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource names of the candidate's assignments.
+     * Output only. The resource names of the candidate's assignments.
      * </pre>
      *
-     * <code>repeated string assignments = 48;</code>
+     * <code>repeated string assignments = 48 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setAssignments(int index, java.lang.String value) {
       if (value == null) {
@@ -11122,10 +12089,10 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource names of the candidate's assignments.
+     * Output only. The resource names of the candidate's assignments.
      * </pre>
      *
-     * <code>repeated string assignments = 48;</code>
+     * <code>repeated string assignments = 48 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder addAssignments(java.lang.String value) {
       if (value == null) {
@@ -11140,10 +12107,10 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource names of the candidate's assignments.
+     * Output only. The resource names of the candidate's assignments.
      * </pre>
      *
-     * <code>repeated string assignments = 48;</code>
+     * <code>repeated string assignments = 48 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder addAllAssignments(java.lang.Iterable<java.lang.String> values) {
       ensureAssignmentsIsMutable();
@@ -11155,14 +12122,14 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource names of the candidate's assignments.
+     * Output only. The resource names of the candidate's assignments.
      * </pre>
      *
-     * <code>repeated string assignments = 48;</code>
+     * <code>repeated string assignments = 48 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearAssignments() {
       assignments_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00800000);
+      bitField0_ = (bitField0_ & ~0x02000000);
       onChanged();
       return this;
     }
@@ -11170,10 +12137,10 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource names of the candidate's assignments.
+     * Output only. The resource names of the candidate's assignments.
      * </pre>
      *
-     * <code>repeated string assignments = 48;</code>
+     * <code>repeated string assignments = 48 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder addAssignmentsBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -11620,14 +12587,414 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private java.util.List<com.google.cloud.talent.v4beta1.AvailabilitySignal>
+        availabilitySignals_ = java.util.Collections.emptyList();
+
+    private void ensureAvailabilitySignalsIsMutable() {
+      if (!((bitField0_ & 0x20000000) != 0)) {
+        availabilitySignals_ =
+            new java.util.ArrayList<com.google.cloud.talent.v4beta1.AvailabilitySignal>(
+                availabilitySignals_);
+        bitField0_ |= 0x20000000;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.talent.v4beta1.AvailabilitySignal,
+            com.google.cloud.talent.v4beta1.AvailabilitySignal.Builder,
+            com.google.cloud.talent.v4beta1.AvailabilitySignalOrBuilder>
+        availabilitySignalsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Candidate's availability signals.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.talent.v4beta1.AvailabilitySignal availability_signals = 70 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.talent.v4beta1.AvailabilitySignal>
+        getAvailabilitySignalsList() {
+      if (availabilitySignalsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(availabilitySignals_);
+      } else {
+        return availabilitySignalsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Candidate's availability signals.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.talent.v4beta1.AvailabilitySignal availability_signals = 70 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public int getAvailabilitySignalsCount() {
+      if (availabilitySignalsBuilder_ == null) {
+        return availabilitySignals_.size();
+      } else {
+        return availabilitySignalsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Candidate's availability signals.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.talent.v4beta1.AvailabilitySignal availability_signals = 70 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.talent.v4beta1.AvailabilitySignal getAvailabilitySignals(int index) {
+      if (availabilitySignalsBuilder_ == null) {
+        return availabilitySignals_.get(index);
+      } else {
+        return availabilitySignalsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Candidate's availability signals.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.talent.v4beta1.AvailabilitySignal availability_signals = 70 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setAvailabilitySignals(
+        int index, com.google.cloud.talent.v4beta1.AvailabilitySignal value) {
+      if (availabilitySignalsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAvailabilitySignalsIsMutable();
+        availabilitySignals_.set(index, value);
+        onChanged();
+      } else {
+        availabilitySignalsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Candidate's availability signals.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.talent.v4beta1.AvailabilitySignal availability_signals = 70 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setAvailabilitySignals(
+        int index, com.google.cloud.talent.v4beta1.AvailabilitySignal.Builder builderForValue) {
+      if (availabilitySignalsBuilder_ == null) {
+        ensureAvailabilitySignalsIsMutable();
+        availabilitySignals_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        availabilitySignalsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Candidate's availability signals.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.talent.v4beta1.AvailabilitySignal availability_signals = 70 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addAvailabilitySignals(
+        com.google.cloud.talent.v4beta1.AvailabilitySignal value) {
+      if (availabilitySignalsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAvailabilitySignalsIsMutable();
+        availabilitySignals_.add(value);
+        onChanged();
+      } else {
+        availabilitySignalsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Candidate's availability signals.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.talent.v4beta1.AvailabilitySignal availability_signals = 70 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addAvailabilitySignals(
+        int index, com.google.cloud.talent.v4beta1.AvailabilitySignal value) {
+      if (availabilitySignalsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAvailabilitySignalsIsMutable();
+        availabilitySignals_.add(index, value);
+        onChanged();
+      } else {
+        availabilitySignalsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Candidate's availability signals.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.talent.v4beta1.AvailabilitySignal availability_signals = 70 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addAvailabilitySignals(
+        com.google.cloud.talent.v4beta1.AvailabilitySignal.Builder builderForValue) {
+      if (availabilitySignalsBuilder_ == null) {
+        ensureAvailabilitySignalsIsMutable();
+        availabilitySignals_.add(builderForValue.build());
+        onChanged();
+      } else {
+        availabilitySignalsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Candidate's availability signals.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.talent.v4beta1.AvailabilitySignal availability_signals = 70 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addAvailabilitySignals(
+        int index, com.google.cloud.talent.v4beta1.AvailabilitySignal.Builder builderForValue) {
+      if (availabilitySignalsBuilder_ == null) {
+        ensureAvailabilitySignalsIsMutable();
+        availabilitySignals_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        availabilitySignalsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Candidate's availability signals.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.talent.v4beta1.AvailabilitySignal availability_signals = 70 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addAllAvailabilitySignals(
+        java.lang.Iterable<? extends com.google.cloud.talent.v4beta1.AvailabilitySignal> values) {
+      if (availabilitySignalsBuilder_ == null) {
+        ensureAvailabilitySignalsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, availabilitySignals_);
+        onChanged();
+      } else {
+        availabilitySignalsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Candidate's availability signals.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.talent.v4beta1.AvailabilitySignal availability_signals = 70 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearAvailabilitySignals() {
+      if (availabilitySignalsBuilder_ == null) {
+        availabilitySignals_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x20000000);
+        onChanged();
+      } else {
+        availabilitySignalsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Candidate's availability signals.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.talent.v4beta1.AvailabilitySignal availability_signals = 70 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder removeAvailabilitySignals(int index) {
+      if (availabilitySignalsBuilder_ == null) {
+        ensureAvailabilitySignalsIsMutable();
+        availabilitySignals_.remove(index);
+        onChanged();
+      } else {
+        availabilitySignalsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Candidate's availability signals.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.talent.v4beta1.AvailabilitySignal availability_signals = 70 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.talent.v4beta1.AvailabilitySignal.Builder getAvailabilitySignalsBuilder(
+        int index) {
+      return getAvailabilitySignalsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Candidate's availability signals.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.talent.v4beta1.AvailabilitySignal availability_signals = 70 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.talent.v4beta1.AvailabilitySignalOrBuilder
+        getAvailabilitySignalsOrBuilder(int index) {
+      if (availabilitySignalsBuilder_ == null) {
+        return availabilitySignals_.get(index);
+      } else {
+        return availabilitySignalsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Candidate's availability signals.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.talent.v4beta1.AvailabilitySignal availability_signals = 70 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<? extends com.google.cloud.talent.v4beta1.AvailabilitySignalOrBuilder>
+        getAvailabilitySignalsOrBuilderList() {
+      if (availabilitySignalsBuilder_ != null) {
+        return availabilitySignalsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(availabilitySignals_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Candidate's availability signals.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.talent.v4beta1.AvailabilitySignal availability_signals = 70 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.talent.v4beta1.AvailabilitySignal.Builder
+        addAvailabilitySignalsBuilder() {
+      return getAvailabilitySignalsFieldBuilder()
+          .addBuilder(com.google.cloud.talent.v4beta1.AvailabilitySignal.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Candidate's availability signals.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.talent.v4beta1.AvailabilitySignal availability_signals = 70 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.talent.v4beta1.AvailabilitySignal.Builder addAvailabilitySignalsBuilder(
+        int index) {
+      return getAvailabilitySignalsFieldBuilder()
+          .addBuilder(
+              index, com.google.cloud.talent.v4beta1.AvailabilitySignal.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Candidate's availability signals.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.talent.v4beta1.AvailabilitySignal availability_signals = 70 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.talent.v4beta1.AvailabilitySignal.Builder>
+        getAvailabilitySignalsBuilderList() {
+      return getAvailabilitySignalsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.talent.v4beta1.AvailabilitySignal,
+            com.google.cloud.talent.v4beta1.AvailabilitySignal.Builder,
+            com.google.cloud.talent.v4beta1.AvailabilitySignalOrBuilder>
+        getAvailabilitySignalsFieldBuilder() {
+      if (availabilitySignalsBuilder_ == null) {
+        availabilitySignalsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.talent.v4beta1.AvailabilitySignal,
+                com.google.cloud.talent.v4beta1.AvailabilitySignal.Builder,
+                com.google.cloud.talent.v4beta1.AvailabilitySignalOrBuilder>(
+                availabilitySignals_,
+                ((bitField0_ & 0x20000000) != 0),
+                getParentForChildren(),
+                isClean());
+        availabilitySignals_ = null;
+      }
+      return availabilitySignalsBuilder_;
+    }
+
     private java.util.List<com.google.cloud.talent.v4beta1.Location> derivedAddresses_ =
         java.util.Collections.emptyList();
 
     private void ensureDerivedAddressesIsMutable() {
-      if (!((bitField0_ & 0x08000000) != 0)) {
+      if (!((bitField0_ & 0x40000000) != 0)) {
         derivedAddresses_ =
             new java.util.ArrayList<com.google.cloud.talent.v4beta1.Location>(derivedAddresses_);
-        bitField0_ |= 0x08000000;
+        bitField0_ |= 0x40000000;
       }
     }
 
@@ -11920,7 +13287,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
     public Builder clearDerivedAddresses() {
       if (derivedAddressesBuilder_ == null) {
         derivedAddresses_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x08000000);
+        bitField0_ = (bitField0_ & ~0x40000000);
         onChanged();
       } else {
         derivedAddressesBuilder_.clear();
@@ -12093,7 +13460,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.talent.v4beta1.Location.Builder,
                 com.google.cloud.talent.v4beta1.LocationOrBuilder>(
                 derivedAddresses_,
-                ((bitField0_ & 0x08000000) != 0),
+                ((bitField0_ & 0x40000000) != 0),
                 getParentForChildren(),
                 isClean());
         derivedAddresses_ = null;

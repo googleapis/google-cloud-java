@@ -3,6 +3,7 @@
 
 package com.google.cloud.talent.v4beta1;
 
+@java.lang.Deprecated
 public interface CandidateAvailabilityFilterOrBuilder
     extends
     // @@protoc_insertion_point(interface_extends:google.cloud.talent.v4beta1.CandidateAvailabilityFilter)
