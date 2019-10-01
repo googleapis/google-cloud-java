@@ -36,6 +36,7 @@ public interface DocumentOrBuilder
    *
    * <pre>
    * The content of the input in string format.
+   * Cloud audit logging exempt since it is based on user data.
    * </pre>
    *
    * <code>string content = 2;</code>
@@ -46,6 +47,7 @@ public interface DocumentOrBuilder
    *
    * <pre>
    * The content of the input in string format.
+   * Cloud audit logging exempt since it is based on user data.
    * </pre>
    *
    * <code>string content = 2;</code>
