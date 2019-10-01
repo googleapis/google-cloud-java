@@ -13,22 +13,22 @@ Java idiomatic client for [Cloud Auto ML][api-reference].
 
 ## Quickstart
 
-[//]: # ({x-version-update-start:automl:released})
+[//]: # ({x-version-update-start:google-cloud-automl:released})
 If you are using Maven, add this to your pom.xml file
 ```xml
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-automl</artifactId>
-  <version>0.111.0-beta</version>
+  <version>0.112.0-beta</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-automl:0.111.0-beta'
+compile 'com.google.cloud:google-cloud-automl:0.112.0-beta'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-automl" % "0.111.0-beta"
+libraryDependencies += "com.google.cloud" % "google-cloud-automl" % "0.112.0-beta"
 ```
 [//]: # ({x-version-update-end})
 
