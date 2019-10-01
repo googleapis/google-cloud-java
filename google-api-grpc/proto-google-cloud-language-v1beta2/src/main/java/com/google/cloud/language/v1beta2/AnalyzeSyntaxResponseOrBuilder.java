@@ -118,8 +118,7 @@ public interface AnalyzeSyntaxResponseOrBuilder
    * <pre>
    * The language of the text, which will be the same as the language specified
    * in the request or, if not specified, the automatically-detected language.
-   * See [Document.language][google.cloud.language.v1beta2.Document.language]
-   * field for more details.
+   * See [Document.language][google.cloud.language.v1beta2.Document.language] field for more details.
    * </pre>
    *
    * <code>string language = 3;</code>
@@ -131,8 +130,7 @@ public interface AnalyzeSyntaxResponseOrBuilder
    * <pre>
    * The language of the text, which will be the same as the language specified
    * in the request or, if not specified, the automatically-detected language.
-   * See [Document.language][google.cloud.language.v1beta2.Document.language]
-   * field for more details.
+   * See [Document.language][google.cloud.language.v1beta2.Document.language] field for more details.
    * </pre>
    *
    * <code>string language = 3;</code>
