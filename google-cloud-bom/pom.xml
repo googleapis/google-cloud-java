@@ -168,7 +168,7 @@
       <dependency>
         <groupId>com.google.api</groupId>
         <artifactId>gax-bom</artifactId>
-        <version>1.48.1</version>
+        <version>1.49.0</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -185,12 +185,12 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-iam-v1</artifactId>
-        <version>0.12.0</version>
+        <version>0.13.0</version>
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-iam-v1</artifactId>
-        <version>0.12.0</version>
+        <version>0.13.0</version>
       </dependency>
 
       <!-- API-specific dependencies -->
@@ -361,18 +361,10 @@
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-core</artifactId>
-        <version>1.90.0</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-core-grpc</artifactId>
-        <version>1.90.0</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-core-http</artifactId>
-        <version>1.90.0</version>
+        <artifactId>google-cloud-core-bom</artifactId>
+        <version>1.91.2</version>
+        <type>pom</type>
+        <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>

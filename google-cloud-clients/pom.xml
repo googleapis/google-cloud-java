@@ -154,16 +154,16 @@
     <github.global.server>github</github.global.server>
     <site.installationModule>google-cloud-clients</site.installationModule>
     <bom.version>0.111.1-alpha-SNAPSHOT</bom.version><!-- {x-version-update:google-cloud-bom:current} -->
-    <api-client.version>1.30.3</api-client.version>
+    <api-client.version>1.30.4</api-client.version>
     <!-- make sure to keep gax version in sync with google-cloud-bom -->
     <gax.version>1.48.1</gax.version>
     <api.common.java.version>1.8.1</api.common.java.version>
-    <grpc.version>1.23.0</grpc.version>
-    <google.auth.version>0.17.1</google.auth.version>
+    <grpc.version>1.24.0</grpc.version>
+    <google.auth.version>0.17.2</google.auth.version>
     <!-- We are currently using the *-android version to support JDK7. -->
     <guava.version>28.1-android</guava.version>
-    <http-client-bom.version>1.32.0</http-client-bom.version>
-    <oauth-client.version>1.30.2</oauth-client.version>
+    <http-client-bom.version>1.32.1</http-client-bom.version>
+    <oauth-client.version>1.30.3</oauth-client.version>
     <protobuf.version>3.10.0</protobuf.version>
     <!-- make sure to keep opencensus version in sync with grpc -->
     <!-- make sure to update the opencensus version in google-cloud-clients/google-cloud-bigtable/README -->
@@ -293,7 +293,7 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-core</artifactId>
-        <version>1.90.0</version>
+        <version>1.91.2</version>
         <type>test-jar</type>
       </dependency>
 
