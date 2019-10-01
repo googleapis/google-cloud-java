@@ -662,7 +662,7 @@ public class Bucket extends BucketInfo {
     }
 
     @Override
-    public BucketInfo.Builder setLogging(Logging logging) {
+    public Builder setLogging(Logging logging) {
       infoBuilder.setLogging(logging);
       return this;
     }
