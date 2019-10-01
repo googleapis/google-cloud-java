@@ -2066,4 +2066,34 @@ public class ITDnsTest {
       DNS.delete(ZONE1.getName());
     }
   }
+
+  @Test
+  public void testCAARecord() {
+    try {
+      Zone zone = DNS.create(ZONE1);
+      String caa = "0 issue \"ca.example.net\"";
+      RecordSet toCreate =
+          RecordSet.newBuilder("www." + zone.getDnsName(), RecordSet.Type.CAA)
+              .setTtl(5, TimeUnit.MINUTES)
+              .addRecord(caa)
+              .build();
+      ChangeRequestInfo changeRequest = ChangeRequestInfo.newBuilder().add(toCreate).build();
+      ChangeRequest addRequest = zone.applyChangeRequest(changeRequest);
+      assertEquals(1, addRequest.getAdditions().size());
+      assertEquals(0, addRequest.getDeletions().size());
+      assertNotNull(addRequest.getGeneratedId());
+      ChangeRequestInfo.Builder deleteRequest = ChangeRequestInfo.newBuilder();
+      for (RecordSet recordSet : zone.listRecordSets().iterateAll()) {
+        if (toCreate.getName().equals(recordSet.getName())) {
+          deleteRequest.delete(recordSet);
+        }
+      }
+      ChangeRequest deleteRequest1 = zone.applyChangeRequest(deleteRequest.build());
+      assertEquals(0, deleteRequest1.getAdditions().size());
+      assertEquals(1, deleteRequest1.getDeletions().size());
+      assertNotNull(deleteRequest1.getGeneratedId());
+    } finally {
+      DNS.delete(ZONE1.getName());
+    }
+  }
 }
