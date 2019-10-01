@@ -44,11 +44,10 @@ import com.google.common.base.Verify;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import com.google.common.util.concurrent.MoreExecutors;
-import com.google.iam.v1.GetIamPolicyRequest;
-import com.google.iam.v1.SetIamPolicyRequest;
-import com.google.iam.v1.TestIamPermissionsRequest;
-import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.iam.v1.*;
 import com.google.protobuf.Empty;
+import org.omg.PortableServer.REQUEST_PROCESSING_POLICY_ID;
+
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
@@ -1061,6 +1060,10 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
     return ApiExceptions.callAndTranslateApiException(getIamPolicyAsync(instanceId));
   }
 
+  public Policy getIamPolicy(String instanceId, int requestedPolicyVersion) {
+    return ApiExceptions.callAndTranslateApiException(getIamPolicyAsync(instanceId, requestedPolicyVersion));
+  }
+
   /**
    * Asynchronously gets the IAM access control policy for the specified instance.
    *
@@ -1091,9 +1094,8 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
   @SuppressWarnings("WeakerAccess")
   public ApiFuture<Policy> getIamPolicyAsync(String instanceId) {
     String name = NameUtil.formatInstanceName(projectId, instanceId);
-
-    GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder().setResource(name).build();
-
+    GetPolicyOptions policyOptions = GetPolicyOptions.newBuilder().setRequestedPolicyVersion(0).build();
+    GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder().setResource(name).setOptions(policyOptions).build();
     final IamPolicyMarshaller marshaller = new IamPolicyMarshaller();
 
     return ApiFutures.transform(
@@ -1106,6 +1108,23 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
         },
         MoreExecutors.directExecutor());
   }
+
+  public ApiFuture<Policy> getIamPolicyAsync(String instanceId, int requestedPolicyVersion) {
+    String name = NameUtil.formatInstanceName(projectId, instanceId);
+    GetPolicyOptions policyOptions = GetPolicyOptions.newBuilder().setRequestedPolicyVersion(requestedPolicyVersion).build();
+    GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder().setResource(name).setOptions(policyOptions).build();
+    final IamPolicyMarshaller marshaller = new IamPolicyMarshaller();
+
+    return ApiFutures.transform(
+            stub.getIamPolicyCallable().futureCall(request),
+            new ApiFunction<com.google.iam.v1.Policy, Policy>() {
+                @Override
+                public Policy apply(com.google.iam.v1.Policy proto) {
+                    return marshaller.fromPb(proto);
+                }
+            },
+            MoreExecutors.directExecutor());
+    }
 
   /**
    * Replaces the IAM policy associated with the specified instance.
