@@ -12,30 +12,36 @@ public interface AnnotateTextRequestOrBuilder
    *
    *
    * <pre>
-   * Input document.
+   * Required. Input document.
    * </pre>
    *
-   * <code>.google.cloud.language.v1beta2.Document document = 1;</code>
+   * <code>
+   * .google.cloud.language.v1beta2.Document document = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   boolean hasDocument();
   /**
    *
    *
    * <pre>
-   * Input document.
+   * Required. Input document.
    * </pre>
    *
-   * <code>.google.cloud.language.v1beta2.Document document = 1;</code>
+   * <code>
+   * .google.cloud.language.v1beta2.Document document = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.language.v1beta2.Document getDocument();
   /**
    *
    *
    * <pre>
-   * Input document.
+   * Required. Input document.
    * </pre>
    *
-   * <code>.google.cloud.language.v1beta2.Document document = 1;</code>
+   * <code>
+   * .google.cloud.language.v1beta2.Document document = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.language.v1beta2.DocumentOrBuilder getDocumentOrBuilder();
 
@@ -43,30 +49,36 @@ public interface AnnotateTextRequestOrBuilder
    *
    *
    * <pre>
-   * The enabled features.
+   * Required. The enabled features.
    * </pre>
    *
-   * <code>.google.cloud.language.v1beta2.AnnotateTextRequest.Features features = 2;</code>
+   * <code>
+   * .google.cloud.language.v1beta2.AnnotateTextRequest.Features features = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   boolean hasFeatures();
   /**
    *
    *
    * <pre>
-   * The enabled features.
+   * Required. The enabled features.
    * </pre>
    *
-   * <code>.google.cloud.language.v1beta2.AnnotateTextRequest.Features features = 2;</code>
+   * <code>
+   * .google.cloud.language.v1beta2.AnnotateTextRequest.Features features = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.language.v1beta2.AnnotateTextRequest.Features getFeatures();
   /**
    *
    *
    * <pre>
-   * The enabled features.
+   * Required. The enabled features.
    * </pre>
    *
-   * <code>.google.cloud.language.v1beta2.AnnotateTextRequest.Features features = 2;</code>
+   * <code>
+   * .google.cloud.language.v1beta2.AnnotateTextRequest.Features features = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.language.v1beta2.AnnotateTextRequest.FeaturesOrBuilder getFeaturesOrBuilder();
 

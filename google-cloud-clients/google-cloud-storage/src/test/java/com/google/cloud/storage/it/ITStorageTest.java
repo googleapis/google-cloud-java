@@ -1819,17 +1819,21 @@ public class ITStorageTest {
     if (storage.getOptions().getCredentials() != null) {
       assumeTrue(storage.getOptions().getCredentials() instanceof ServiceAccountSigner);
     }
-
     String blobName = "test-get-signed-url-blob/with/slashes/and?special=!#$&'()*+,:;=?@[]";
     BlobInfo blob = BlobInfo.newBuilder(BUCKET, blobName).build();
     Blob remoteBlob = storage.create(blob, BLOB_BYTE_CONTENT);
     assertNotNull(remoteBlob);
-    URL url = storage.signUrl(blob, 1, TimeUnit.HOURS);
-    URLConnection connection = url.openConnection();
-    byte[] readBytes = new byte[BLOB_BYTE_CONTENT.length];
-    try (InputStream responseStream = connection.getInputStream()) {
-      assertEquals(BLOB_BYTE_CONTENT.length, responseStream.read(readBytes));
-      assertArrayEquals(BLOB_BYTE_CONTENT, readBytes);
+    for (Storage.SignUrlOption urlStyle :
+        Arrays.asList(
+            Storage.SignUrlOption.withPathStyle(),
+            Storage.SignUrlOption.withVirtualHostedStyle())) {
+      URL url = storage.signUrl(blob, 1, TimeUnit.HOURS, urlStyle);
+      URLConnection connection = url.openConnection();
+      byte[] readBytes = new byte[BLOB_BYTE_CONTENT.length];
+      try (InputStream responseStream = connection.getInputStream()) {
+        assertEquals(BLOB_BYTE_CONTENT.length, responseStream.read(readBytes));
+        assertArrayEquals(BLOB_BYTE_CONTENT, readBytes);
+      }
     }
   }
 
@@ -1841,15 +1845,22 @@ public class ITStorageTest {
     String blobName = "test-post-signed-url-blob";
     BlobInfo blob = BlobInfo.newBuilder(BUCKET, blobName).build();
     assertNotNull(storage.create(blob));
-    URL url =
-        storage.signUrl(blob, 1, TimeUnit.HOURS, Storage.SignUrlOption.httpMethod(HttpMethod.POST));
-    URLConnection connection = url.openConnection();
-    connection.setDoOutput(true);
-    connection.connect();
-    Blob remoteBlob = storage.get(BUCKET, blobName);
-    assertNotNull(remoteBlob);
-    assertEquals(blob.getBucket(), remoteBlob.getBucket());
-    assertEquals(blob.getName(), remoteBlob.getName());
+    for (Storage.SignUrlOption urlStyle :
+        Arrays.asList(
+            Storage.SignUrlOption.withPathStyle(),
+            Storage.SignUrlOption.withVirtualHostedStyle())) {
+
+      URL url =
+          storage.signUrl(
+              blob, 1, TimeUnit.HOURS, Storage.SignUrlOption.httpMethod(HttpMethod.POST), urlStyle);
+      URLConnection connection = url.openConnection();
+      connection.setDoOutput(true);
+      connection.connect();
+      Blob remoteBlob = storage.get(BUCKET, blobName);
+      assertNotNull(remoteBlob);
+      assertEquals(blob.getBucket(), remoteBlob.getBucket());
+      assertEquals(blob.getName(), remoteBlob.getName());
+    }
   }
 
   @Test
@@ -1862,12 +1873,20 @@ public class ITStorageTest {
     BlobInfo blob = BlobInfo.newBuilder(BUCKET, blobName).build();
     Blob remoteBlob = storage.create(blob, BLOB_BYTE_CONTENT);
     assertNotNull(remoteBlob);
-    URL url = storage.signUrl(blob, 1, TimeUnit.HOURS, Storage.SignUrlOption.withV4Signature());
-    URLConnection connection = url.openConnection();
-    byte[] readBytes = new byte[BLOB_BYTE_CONTENT.length];
-    try (InputStream responseStream = connection.getInputStream()) {
-      assertEquals(BLOB_BYTE_CONTENT.length, responseStream.read(readBytes));
-      assertArrayEquals(BLOB_BYTE_CONTENT, readBytes);
+    for (Storage.SignUrlOption urlStyle :
+        Arrays.asList(
+            Storage.SignUrlOption.withPathStyle(),
+            Storage.SignUrlOption.withVirtualHostedStyle())) {
+
+      URL url =
+          storage.signUrl(
+              blob, 1, TimeUnit.HOURS, Storage.SignUrlOption.withV4Signature(), urlStyle);
+      URLConnection connection = url.openConnection();
+      byte[] readBytes = new byte[BLOB_BYTE_CONTENT.length];
+      try (InputStream responseStream = connection.getInputStream()) {
+        assertEquals(BLOB_BYTE_CONTENT.length, responseStream.read(readBytes));
+        assertArrayEquals(BLOB_BYTE_CONTENT, readBytes);
+      }
     }
   }
 
@@ -2661,23 +2680,29 @@ public class ITStorageTest {
     String blobName = "test-signed-url-upload";
     BlobInfo blob = BlobInfo.newBuilder(BUCKET, blobName).build();
     assertNotNull(storage.create(blob));
-    URL signUrl =
-        storage.signUrl(blob, 1, TimeUnit.HOURS, Storage.SignUrlOption.httpMethod(HttpMethod.POST));
-    byte[] bytesArrayToUpload = BLOB_STRING_CONTENT.getBytes();
-    try (WriteChannel writer = storage.writer(signUrl)) {
-      writer.write(ByteBuffer.wrap(bytesArrayToUpload, 0, bytesArrayToUpload.length));
-    }
+    for (Storage.SignUrlOption urlStyle :
+        Arrays.asList(
+            Storage.SignUrlOption.withPathStyle(),
+            Storage.SignUrlOption.withVirtualHostedStyle())) {
+      URL signUrl =
+          storage.signUrl(
+              blob, 1, TimeUnit.HOURS, Storage.SignUrlOption.httpMethod(HttpMethod.POST), urlStyle);
+      byte[] bytesArrayToUpload = BLOB_STRING_CONTENT.getBytes();
+      try (WriteChannel writer = storage.writer(signUrl)) {
+        writer.write(ByteBuffer.wrap(bytesArrayToUpload, 0, bytesArrayToUpload.length));
+      }
 
-    int lengthOfDownLoadBytes = -1;
-    BlobId blobId = BlobId.of(BUCKET, blobName);
-    Blob blobToRead = storage.get(blobId);
-    try (ReadChannel reader = blobToRead.reader()) {
-      ByteBuffer bytes = ByteBuffer.allocate(64 * 1024);
-      lengthOfDownLoadBytes = reader.read(bytes);
-    }
+      int lengthOfDownLoadBytes = -1;
+      BlobId blobId = BlobId.of(BUCKET, blobName);
+      Blob blobToRead = storage.get(blobId);
+      try (ReadChannel reader = blobToRead.reader()) {
+        ByteBuffer bytes = ByteBuffer.allocate(64 * 1024);
+        lengthOfDownLoadBytes = reader.read(bytes);
+      }
 
-    assertEquals(bytesArrayToUpload.length, lengthOfDownLoadBytes);
-    assertTrue(storage.delete(BUCKET, blobName));
+      assertEquals(bytesArrayToUpload.length, lengthOfDownLoadBytes);
+      assertTrue(storage.delete(BUCKET, blobName));
+    }
   }
 
   @Test

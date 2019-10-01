@@ -179,7 +179,9 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Classify the full document into categories.
+     * Classify the full document into categories. If this is true,
+     * the API will use the default model which classifies into a
+     * [predefined taxonomy](/natural-language/docs/categories).
      * </pre>
      *
      * <code>bool classify_text = 6;</code>
@@ -192,6 +194,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
    * <pre>
    * All available features for sentiment, syntax, and semantic analysis.
    * Setting each one to true will enable that specific analysis for the input.
+   * Next ID: 10
    * </pre>
    *
    * Protobuf type {@code google.cloud.language.v1beta2.AnnotateTextRequest.Features}
@@ -357,7 +360,9 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Classify the full document into categories.
+     * Classify the full document into categories. If this is true,
+     * the API will use the default model which classifies into a
+     * [predefined taxonomy](/natural-language/docs/categories).
      * </pre>
      *
      * <code>bool classify_text = 6;</code>
@@ -569,6 +574,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * All available features for sentiment, syntax, and semantic analysis.
      * Setting each one to true will enable that specific analysis for the input.
+     * Next ID: 10
      * </pre>
      *
      * Protobuf type {@code google.cloud.language.v1beta2.AnnotateTextRequest.Features}
@@ -934,7 +940,9 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Classify the full document into categories.
+       * Classify the full document into categories. If this is true,
+       * the API will use the default model which classifies into a
+       * [predefined taxonomy](/natural-language/docs/categories).
        * </pre>
        *
        * <code>bool classify_text = 6;</code>
@@ -946,7 +954,9 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Classify the full document into categories.
+       * Classify the full document into categories. If this is true,
+       * the API will use the default model which classifies into a
+       * [predefined taxonomy](/natural-language/docs/categories).
        * </pre>
        *
        * <code>bool classify_text = 6;</code>
@@ -961,7 +971,9 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Classify the full document into categories.
+       * Classify the full document into categories. If this is true,
+       * the API will use the default model which classifies into a
+       * [predefined taxonomy](/natural-language/docs/categories).
        * </pre>
        *
        * <code>bool classify_text = 6;</code>
@@ -1034,10 +1046,12 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Input document.
+   * Required. Input document.
    * </pre>
    *
-   * <code>.google.cloud.language.v1beta2.Document document = 1;</code>
+   * <code>
+   * .google.cloud.language.v1beta2.Document document = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public boolean hasDocument() {
     return document_ != null;
@@ -1046,10 +1060,12 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Input document.
+   * Required. Input document.
    * </pre>
    *
-   * <code>.google.cloud.language.v1beta2.Document document = 1;</code>
+   * <code>
+   * .google.cloud.language.v1beta2.Document document = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.language.v1beta2.Document getDocument() {
     return document_ == null
@@ -1060,10 +1076,12 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Input document.
+   * Required. Input document.
    * </pre>
    *
-   * <code>.google.cloud.language.v1beta2.Document document = 1;</code>
+   * <code>
+   * .google.cloud.language.v1beta2.Document document = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.language.v1beta2.DocumentOrBuilder getDocumentOrBuilder() {
     return getDocument();
@@ -1075,10 +1093,12 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The enabled features.
+   * Required. The enabled features.
    * </pre>
    *
-   * <code>.google.cloud.language.v1beta2.AnnotateTextRequest.Features features = 2;</code>
+   * <code>
+   * .google.cloud.language.v1beta2.AnnotateTextRequest.Features features = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public boolean hasFeatures() {
     return features_ != null;
@@ -1087,10 +1107,12 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The enabled features.
+   * Required. The enabled features.
    * </pre>
    *
-   * <code>.google.cloud.language.v1beta2.AnnotateTextRequest.Features features = 2;</code>
+   * <code>
+   * .google.cloud.language.v1beta2.AnnotateTextRequest.Features features = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.language.v1beta2.AnnotateTextRequest.Features getFeatures() {
     return features_ == null
@@ -1101,10 +1123,12 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The enabled features.
+   * Required. The enabled features.
    * </pre>
    *
-   * <code>.google.cloud.language.v1beta2.AnnotateTextRequest.Features features = 2;</code>
+   * <code>
+   * .google.cloud.language.v1beta2.AnnotateTextRequest.Features features = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.language.v1beta2.AnnotateTextRequest.FeaturesOrBuilder
       getFeaturesOrBuilder() {
@@ -1526,10 +1550,12 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Input document.
+     * Required. Input document.
      * </pre>
      *
-     * <code>.google.cloud.language.v1beta2.Document document = 1;</code>
+     * <code>
+     * .google.cloud.language.v1beta2.Document document = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public boolean hasDocument() {
       return documentBuilder_ != null || document_ != null;
@@ -1538,10 +1564,12 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Input document.
+     * Required. Input document.
      * </pre>
      *
-     * <code>.google.cloud.language.v1beta2.Document document = 1;</code>
+     * <code>
+     * .google.cloud.language.v1beta2.Document document = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.language.v1beta2.Document getDocument() {
       if (documentBuilder_ == null) {
@@ -1556,10 +1584,12 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Input document.
+     * Required. Input document.
      * </pre>
      *
-     * <code>.google.cloud.language.v1beta2.Document document = 1;</code>
+     * <code>
+     * .google.cloud.language.v1beta2.Document document = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setDocument(com.google.cloud.language.v1beta2.Document value) {
       if (documentBuilder_ == null) {
@@ -1578,10 +1608,12 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Input document.
+     * Required. Input document.
      * </pre>
      *
-     * <code>.google.cloud.language.v1beta2.Document document = 1;</code>
+     * <code>
+     * .google.cloud.language.v1beta2.Document document = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setDocument(com.google.cloud.language.v1beta2.Document.Builder builderForValue) {
       if (documentBuilder_ == null) {
@@ -1597,10 +1629,12 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Input document.
+     * Required. Input document.
      * </pre>
      *
-     * <code>.google.cloud.language.v1beta2.Document document = 1;</code>
+     * <code>
+     * .google.cloud.language.v1beta2.Document document = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeDocument(com.google.cloud.language.v1beta2.Document value) {
       if (documentBuilder_ == null) {
@@ -1623,10 +1657,12 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Input document.
+     * Required. Input document.
      * </pre>
      *
-     * <code>.google.cloud.language.v1beta2.Document document = 1;</code>
+     * <code>
+     * .google.cloud.language.v1beta2.Document document = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearDocument() {
       if (documentBuilder_ == null) {
@@ -1643,10 +1679,12 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Input document.
+     * Required. Input document.
      * </pre>
      *
-     * <code>.google.cloud.language.v1beta2.Document document = 1;</code>
+     * <code>
+     * .google.cloud.language.v1beta2.Document document = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.language.v1beta2.Document.Builder getDocumentBuilder() {
 
@@ -1657,10 +1695,12 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Input document.
+     * Required. Input document.
      * </pre>
      *
-     * <code>.google.cloud.language.v1beta2.Document document = 1;</code>
+     * <code>
+     * .google.cloud.language.v1beta2.Document document = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.language.v1beta2.DocumentOrBuilder getDocumentOrBuilder() {
       if (documentBuilder_ != null) {
@@ -1675,10 +1715,12 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Input document.
+     * Required. Input document.
      * </pre>
      *
-     * <code>.google.cloud.language.v1beta2.Document document = 1;</code>
+     * <code>
+     * .google.cloud.language.v1beta2.Document document = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.language.v1beta2.Document,
@@ -1707,10 +1749,12 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The enabled features.
+     * Required. The enabled features.
      * </pre>
      *
-     * <code>.google.cloud.language.v1beta2.AnnotateTextRequest.Features features = 2;</code>
+     * <code>
+     * .google.cloud.language.v1beta2.AnnotateTextRequest.Features features = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public boolean hasFeatures() {
       return featuresBuilder_ != null || features_ != null;
@@ -1719,10 +1763,12 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The enabled features.
+     * Required. The enabled features.
      * </pre>
      *
-     * <code>.google.cloud.language.v1beta2.AnnotateTextRequest.Features features = 2;</code>
+     * <code>
+     * .google.cloud.language.v1beta2.AnnotateTextRequest.Features features = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.language.v1beta2.AnnotateTextRequest.Features getFeatures() {
       if (featuresBuilder_ == null) {
@@ -1737,10 +1783,12 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The enabled features.
+     * Required. The enabled features.
      * </pre>
      *
-     * <code>.google.cloud.language.v1beta2.AnnotateTextRequest.Features features = 2;</code>
+     * <code>
+     * .google.cloud.language.v1beta2.AnnotateTextRequest.Features features = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setFeatures(
         com.google.cloud.language.v1beta2.AnnotateTextRequest.Features value) {
@@ -1760,10 +1808,12 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The enabled features.
+     * Required. The enabled features.
      * </pre>
      *
-     * <code>.google.cloud.language.v1beta2.AnnotateTextRequest.Features features = 2;</code>
+     * <code>
+     * .google.cloud.language.v1beta2.AnnotateTextRequest.Features features = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setFeatures(
         com.google.cloud.language.v1beta2.AnnotateTextRequest.Features.Builder builderForValue) {
@@ -1780,10 +1830,12 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The enabled features.
+     * Required. The enabled features.
      * </pre>
      *
-     * <code>.google.cloud.language.v1beta2.AnnotateTextRequest.Features features = 2;</code>
+     * <code>
+     * .google.cloud.language.v1beta2.AnnotateTextRequest.Features features = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeFeatures(
         com.google.cloud.language.v1beta2.AnnotateTextRequest.Features value) {
@@ -1807,10 +1859,12 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The enabled features.
+     * Required. The enabled features.
      * </pre>
      *
-     * <code>.google.cloud.language.v1beta2.AnnotateTextRequest.Features features = 2;</code>
+     * <code>
+     * .google.cloud.language.v1beta2.AnnotateTextRequest.Features features = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearFeatures() {
       if (featuresBuilder_ == null) {
@@ -1827,10 +1881,12 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The enabled features.
+     * Required. The enabled features.
      * </pre>
      *
-     * <code>.google.cloud.language.v1beta2.AnnotateTextRequest.Features features = 2;</code>
+     * <code>
+     * .google.cloud.language.v1beta2.AnnotateTextRequest.Features features = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.language.v1beta2.AnnotateTextRequest.Features.Builder
         getFeaturesBuilder() {
@@ -1842,10 +1898,12 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The enabled features.
+     * Required. The enabled features.
      * </pre>
      *
-     * <code>.google.cloud.language.v1beta2.AnnotateTextRequest.Features features = 2;</code>
+     * <code>
+     * .google.cloud.language.v1beta2.AnnotateTextRequest.Features features = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.language.v1beta2.AnnotateTextRequest.FeaturesOrBuilder
         getFeaturesOrBuilder() {
@@ -1861,10 +1919,12 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The enabled features.
+     * Required. The enabled features.
      * </pre>
      *
-     * <code>.google.cloud.language.v1beta2.AnnotateTextRequest.Features features = 2;</code>
+     * <code>
+     * .google.cloud.language.v1beta2.AnnotateTextRequest.Features features = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.language.v1beta2.AnnotateTextRequest.Features,
