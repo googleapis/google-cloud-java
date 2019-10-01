@@ -2720,15 +2720,15 @@ public class ITStorageTest {
     String logsBucket = RemoteStorageHelper.generateBucketName();
     String loggingBucket = RemoteStorageHelper.generateBucketName();
     try {
+      assertNotNull(storage.create(BucketInfo.newBuilder(logsBucket).setLocation("us").build()));
+      Policy policy = storage.getIamPolicy(logsBucket);
       assertNotNull(
-          storage.create(
-              BucketInfo.newBuilder(logsBucket)
-                  .setLocation("us")
-                  .setRetentionPeriod(RETENTION_PERIOD)
+          storage.setIamPolicy(
+              logsBucket,
+              policy
+                  .toBuilder()
+                  .addIdentity(StorageRoles.legacyBucketWriter(), Identity.allAuthenticatedUsers())
                   .build()));
-      Acl acl = Acl.of(User.ofAllAuthenticatedUsers(), Role.WRITER);
-      assertNotNull(storage.createAcl(logsBucket, acl));
-
       BucketInfo.Logging logging =
           BucketInfo.Logging.newBuilder()
               .setLogBucket(logsBucket)
@@ -2736,11 +2736,7 @@ public class ITStorageTest {
               .build();
       Bucket bucket =
           storage.create(
-              BucketInfo.newBuilder(loggingBucket)
-                  .setLocation("us")
-                  .setRetentionPeriod(RETENTION_PERIOD)
-                  .setLogging(logging)
-                  .build());
+              BucketInfo.newBuilder(loggingBucket).setLocation("us").setLogging(logging).build());
       assertEquals(logsBucket, bucket.getLogging().getLogBucket());
       assertEquals("test-logs", bucket.getLogging().getLogObjectPrefix());
     } finally {
