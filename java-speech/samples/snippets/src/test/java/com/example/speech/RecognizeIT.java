@@ -30,7 +30,7 @@ import org.junit.runners.JUnit4;
 @RunWith(JUnit4.class)
 @SuppressWarnings("checkstyle:abbreviationaswordinname")
 public class RecognizeIT {
-  private static final String BUCKET = "cloud-samples-tests";
+  private static final String BUCKET = "cloud-samples-data";
 
   private ByteArrayOutputStream bout;
   private PrintStream out;
@@ -39,7 +39,7 @@ public class RecognizeIT {
   private String audioFileName = "./resources/audio.raw";
   private String multiChannelAudioFileName = "./resources/commercial_stereo.wav";
   private String gcsMultiChannelAudioPath = "gs://" + BUCKET + "/speech/commercial_stereo.wav";
-  private String gcsAudioPath = "gs://" + BUCKET + "/speech/brooklyn.flac";
+  private String gcsAudioPath = "gs://" + BUCKET + "/speech/brooklyn_bridge.flac";
   private String gcsDiarizationAudioPath = "gs://" + BUCKET + "/speech/commercial_mono.wav";
 
   // The path to the video file to transcribe
@@ -71,14 +71,16 @@ public class RecognizeIT {
   public void testTranscribeDiarization() throws Exception {
     Recognize.transcribeDiarization(recognitionAudioFile);
     String got = bout.toString();
-    assertThat(got).contains("Speaker Tag 2:");
+    assertThat(got).contains("Speaker 1: I'm here");
+    assertThat(got).contains("Speaker 2: hi I'd like to buy a Chrome Cast");
   }
 
   @Test
   public void testTranscribeDiarizationGcs() throws Exception {
     Recognize.transcribeDiarizationGcs(gcsDiarizationAudioPath);
     String got = bout.toString();
-    assertThat(got).contains("Speaker Tag 2:");
+    assertThat(got).contains("Speaker 1: I'm here");
+    assertThat(got).contains("Speaker 2: hi I'd like to buy a Chrome Cast");
   }
 
   @Test
