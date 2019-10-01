@@ -34,11 +34,9 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 // [END tts_ssml_address_imports]
 
-
 /**
- * Google Cloud TextToSpeech API sample application.
- * Example usage: mvn package exec:java
- *                    -Dexec.mainClass='com.example.texttospeech.SsmlAddresses
+ * Google Cloud TextToSpeech API sample application. Example usage: mvn package exec:java
+ * -Dexec.mainClass='com.example.texttospeech.SsmlAddresses
  */
 public class SsmlAddresses {
 
@@ -46,41 +44,36 @@ public class SsmlAddresses {
   /**
    * Generates synthetic audio from a String of SSML text.
    *
-   * Given a string of SSML text and an output file name, this function
-   * calls the Text-to-Speech API. The API returns a synthetic audio
-   * version of the text, formatted according to the SSML commands. This
-   * function saves the synthetic audio to the designated output file.
+   * <p>Given a string of SSML text and an output file name, this function calls the Text-to-Speech
+   * API. The API returns a synthetic audio version of the text, formatted according to the SSML
+   * commands. This function saves the synthetic audio to the designated output file.
    *
-   * @param ssmlText: String of tagged SSML text
-   * @param outfile: String name of file under which to save audio output
+   * @param ssmlText String of tagged SSML text
+   * @param outFile String name of file under which to save audio output
    * @throws Exception on errors while closing the client
-   *
    */
-  public static void ssmlToAudio(String ssmlText, String outFile)
-      throws Exception {
+  public static void ssmlToAudio(String ssmlText, String outFile) throws Exception {
     // Instantiates a client
     try (TextToSpeechClient textToSpeechClient = TextToSpeechClient.create()) {
       // Set the ssml text input to synthesize
-      SynthesisInput input = SynthesisInput.newBuilder()
-           .setSsml(ssmlText)
-           .build();
+      SynthesisInput input = SynthesisInput.newBuilder().setSsml(ssmlText).build();
 
       // Build the voice request, select the language code ("en-US") and
       // the ssml voice gender ("male")
-      VoiceSelectionParams voice = VoiceSelectionParams.newBuilder()
-          .setLanguageCode("en-US")
-          .setSsmlGender(SsmlVoiceGender.MALE)
-          .build();
+      VoiceSelectionParams voice =
+          VoiceSelectionParams.newBuilder()
+              .setLanguageCode("en-US")
+              .setSsmlGender(SsmlVoiceGender.MALE)
+              .build();
 
       // Select the audio file type
-      AudioConfig audioConfig = AudioConfig.newBuilder()
-          .setAudioEncoding(AudioEncoding.MP3)
-          .build();
+      AudioConfig audioConfig =
+          AudioConfig.newBuilder().setAudioEncoding(AudioEncoding.MP3).build();
 
       // Perform the text-to-speech request on the text input with the selected voice parameters and
       // audio file type
-      SynthesizeSpeechResponse response = textToSpeechClient.synthesizeSpeech(input, voice,
-          audioConfig);
+      SynthesizeSpeechResponse response =
+          textToSpeechClient.synthesizeSpeech(input, voice, audioConfig);
 
       // Get the audio contents from the response
       ByteString audioContents = response.getAudioContent();
@@ -98,19 +91,16 @@ public class SsmlAddresses {
   /**
    * Generates SSML text from plaintext.
    *
-   * Given an input filename, this function converts the contents of the input text file
-   * into a String of tagged SSML text. This function formats the SSML String so that,
-   * when synthesized, the synthetic audio will pause for two seconds between each line
-   * of the text file. This function also handles special text characters which might
-   * interfere with SSML commands.
+   * <p>Given an input filename, this function converts the contents of the input text file into a
+   * String of tagged SSML text. This function formats the SSML String so that, when synthesized,
+   * the synthetic audio will pause for two seconds between each line of the text file. This
+   * function also handles special text characters which might interfere with SSML commands.
    *
-   * @param inputfile: String name of plaintext file
-   * @throws IOException on files that don't exist
+   * @param inputFile String name of plaintext file
    * @return a String of SSML text based on plaintext input.
-   *
+   * @throws IOException on files that don't exist
    */
-  public static String textToSsml(String inputFile)
-      throws Exception {
+  public static String textToSsml(String inputFile) throws Exception {
 
     // Read lines of input file
     String rawLines = new String(Files.readAllBytes(Paths.get(inputFile)));
@@ -122,7 +112,7 @@ public class SsmlAddresses {
 
     // Convert plaintext to SSML
     // Tag SSML so that there is a 2 second pause between each address
-    String expandedNewline = escapedLines.replaceAll("\\n","\n<break time='2s'/>");
+    String expandedNewline = escapedLines.replaceAll("\\n", "\n<break time='2s'/>");
     String ssml = "<speak>" + expandedNewline + "</speak>";
 
     // Return the concatenated String of SSML
