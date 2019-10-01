@@ -19,7 +19,7 @@ public interface WorkflowTemplateOrBuilder
    * .
    * </pre>
    *
-   * <code>string id = 2;</code>
+   * <code>string id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getId();
   /**
@@ -33,7 +33,7 @@ public interface WorkflowTemplateOrBuilder
    * .
    * </pre>
    *
-   * <code>string id = 2;</code>
+   * <code>string id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getIdBytes();
 
@@ -41,24 +41,34 @@ public interface WorkflowTemplateOrBuilder
    *
    *
    * <pre>
-   * Output only. The "resource name" of the template, as described
-   * in https://cloud.google.com/apis/design/resource_names of the form
-   * `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
+   * Output only. The resource name of the workflow template, as described
+   * in https://cloud.google.com/apis/design/resource_names.
+   * * For `projects.regions.workflowTemplates`, the resource name of the
+   *   template has the following format:
+   *   `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
+   * * For `projects.locations.workflowTemplates`, the resource name of the
+   *   template has the following format:
+   *   `projects/{project_id}/locations/{location}/workflowTemplates/{template_id}`
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   java.lang.String getName();
   /**
    *
    *
    * <pre>
-   * Output only. The "resource name" of the template, as described
-   * in https://cloud.google.com/apis/design/resource_names of the form
-   * `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
+   * Output only. The resource name of the workflow template, as described
+   * in https://cloud.google.com/apis/design/resource_names.
+   * * For `projects.regions.workflowTemplates`, the resource name of the
+   *   template has the following format:
+   *   `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
+   * * For `projects.locations.workflowTemplates`, the resource name of the
+   *   template has the following format:
+   *   `projects/{project_id}/locations/{location}/workflowTemplates/{template_id}`
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -76,7 +86,7 @@ public interface WorkflowTemplateOrBuilder
    * then returns it as part of the `UpdateWorkflowTemplate` request.
    * </pre>
    *
-   * <code>int32 version = 3;</code>
+   * <code>int32 version = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getVersion();
 
@@ -87,7 +97,8 @@ public interface WorkflowTemplateOrBuilder
    * Output only. The time template was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 4;</code>
+   * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   boolean hasCreateTime();
   /**
@@ -97,7 +108,8 @@ public interface WorkflowTemplateOrBuilder
    * Output only. The time template was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 4;</code>
+   * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.protobuf.Timestamp getCreateTime();
   /**
@@ -107,7 +119,8 @@ public interface WorkflowTemplateOrBuilder
    * Output only. The time template was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 4;</code>
+   * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
 
@@ -118,7 +131,8 @@ public interface WorkflowTemplateOrBuilder
    * Output only. The time template was last updated.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 5;</code>
+   * <code>.google.protobuf.Timestamp update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   boolean hasUpdateTime();
   /**
@@ -128,7 +142,8 @@ public interface WorkflowTemplateOrBuilder
    * Output only. The time template was last updated.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 5;</code>
+   * <code>.google.protobuf.Timestamp update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.protobuf.Timestamp getUpdateTime();
   /**
@@ -138,7 +153,8 @@ public interface WorkflowTemplateOrBuilder
    * Output only. The time template was last updated.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 5;</code>
+   * <code>.google.protobuf.Timestamp update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
 
@@ -157,7 +173,7 @@ public interface WorkflowTemplateOrBuilder
    * No more than 32 labels can be associated with a template.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 6;</code>
+   * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
   /**
@@ -175,7 +191,7 @@ public interface WorkflowTemplateOrBuilder
    * No more than 32 labels can be associated with a template.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 6;</code>
+   * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
   /** Use {@link #getLabelsMap()} instead. */
@@ -196,7 +212,7 @@ public interface WorkflowTemplateOrBuilder
    * No more than 32 labels can be associated with a template.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 6;</code>
+   * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
   /**
@@ -214,7 +230,7 @@ public interface WorkflowTemplateOrBuilder
    * No more than 32 labels can be associated with a template.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 6;</code>
+   * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue);
   /**
@@ -232,7 +248,7 @@ public interface WorkflowTemplateOrBuilder
    * No more than 32 labels can be associated with a template.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 6;</code>
+   * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getLabelsOrThrow(java.lang.String key);
 
@@ -328,7 +344,9 @@ public interface WorkflowTemplateOrBuilder
    * instantiated.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1beta2.TemplateParameter parameters = 9;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1beta2.TemplateParameter parameters = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.List<com.google.cloud.dataproc.v1beta2.TemplateParameter> getParametersList();
   /**
@@ -340,7 +358,9 @@ public interface WorkflowTemplateOrBuilder
    * instantiated.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1beta2.TemplateParameter parameters = 9;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1beta2.TemplateParameter parameters = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.dataproc.v1beta2.TemplateParameter getParameters(int index);
   /**
@@ -352,7 +372,9 @@ public interface WorkflowTemplateOrBuilder
    * instantiated.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1beta2.TemplateParameter parameters = 9;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1beta2.TemplateParameter parameters = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   int getParametersCount();
   /**
@@ -364,7 +386,9 @@ public interface WorkflowTemplateOrBuilder
    * instantiated.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1beta2.TemplateParameter parameters = 9;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1beta2.TemplateParameter parameters = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.List<? extends com.google.cloud.dataproc.v1beta2.TemplateParameterOrBuilder>
       getParametersOrBuilderList();
@@ -377,7 +401,9 @@ public interface WorkflowTemplateOrBuilder
    * instantiated.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1beta2.TemplateParameter parameters = 9;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1beta2.TemplateParameter parameters = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.dataproc.v1beta2.TemplateParameterOrBuilder getParametersOrBuilder(int index);
 }

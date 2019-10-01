@@ -112,7 +112,7 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
    * "pd-standard" (Persistent Disk Hard Disk Drive).
    * </pre>
    *
-   * <code>string boot_disk_type = 3;</code>
+   * <code>string boot_disk_type = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public java.lang.String getBootDiskType() {
     java.lang.Object ref = bootDiskType_;
@@ -134,7 +134,7 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
    * "pd-standard" (Persistent Disk Hard Disk Drive).
    * </pre>
    *
-   * <code>string boot_disk_type = 3;</code>
+   * <code>string boot_disk_type = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public com.google.protobuf.ByteString getBootDiskTypeBytes() {
     java.lang.Object ref = bootDiskType_;
@@ -157,7 +157,7 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
    * Optional. Size in GB of the boot disk (default is 500GB).
    * </pre>
    *
-   * <code>int32 boot_disk_size_gb = 1;</code>
+   * <code>int32 boot_disk_size_gb = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public int getBootDiskSizeGb() {
     return bootDiskSizeGb_;
@@ -169,7 +169,7 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Number of attached SSDs, from 0 to 4 (default is 0).
+   * Number of attached SSDs, from 0 to 4 (default is 0).
    * If SSDs are not attached, the boot disk is used to store runtime logs and
    * [HDFS](https://hadoop.apache.org/docs/r1.2.1/hdfs_user_guide.html) data.
    * If one or more SSDs are attached, this runtime bulk
@@ -539,7 +539,7 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
      * "pd-standard" (Persistent Disk Hard Disk Drive).
      * </pre>
      *
-     * <code>string boot_disk_type = 3;</code>
+     * <code>string boot_disk_type = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public java.lang.String getBootDiskType() {
       java.lang.Object ref = bootDiskType_;
@@ -561,7 +561,7 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
      * "pd-standard" (Persistent Disk Hard Disk Drive).
      * </pre>
      *
-     * <code>string boot_disk_type = 3;</code>
+     * <code>string boot_disk_type = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.protobuf.ByteString getBootDiskTypeBytes() {
       java.lang.Object ref = bootDiskType_;
@@ -583,7 +583,7 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
      * "pd-standard" (Persistent Disk Hard Disk Drive).
      * </pre>
      *
-     * <code>string boot_disk_type = 3;</code>
+     * <code>string boot_disk_type = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setBootDiskType(java.lang.String value) {
       if (value == null) {
@@ -603,7 +603,7 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
      * "pd-standard" (Persistent Disk Hard Disk Drive).
      * </pre>
      *
-     * <code>string boot_disk_type = 3;</code>
+     * <code>string boot_disk_type = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearBootDiskType() {
 
@@ -620,7 +620,7 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
      * "pd-standard" (Persistent Disk Hard Disk Drive).
      * </pre>
      *
-     * <code>string boot_disk_type = 3;</code>
+     * <code>string boot_disk_type = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setBootDiskTypeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -641,7 +641,7 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
      * Optional. Size in GB of the boot disk (default is 500GB).
      * </pre>
      *
-     * <code>int32 boot_disk_size_gb = 1;</code>
+     * <code>int32 boot_disk_size_gb = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public int getBootDiskSizeGb() {
       return bootDiskSizeGb_;
@@ -653,7 +653,7 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
      * Optional. Size in GB of the boot disk (default is 500GB).
      * </pre>
      *
-     * <code>int32 boot_disk_size_gb = 1;</code>
+     * <code>int32 boot_disk_size_gb = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setBootDiskSizeGb(int value) {
 
@@ -668,7 +668,7 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
      * Optional. Size in GB of the boot disk (default is 500GB).
      * </pre>
      *
-     * <code>int32 boot_disk_size_gb = 1;</code>
+     * <code>int32 boot_disk_size_gb = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearBootDiskSizeGb() {
 
@@ -682,7 +682,7 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Number of attached SSDs, from 0 to 4 (default is 0).
+     * Number of attached SSDs, from 0 to 4 (default is 0).
      * If SSDs are not attached, the boot disk is used to store runtime logs and
      * [HDFS](https://hadoop.apache.org/docs/r1.2.1/hdfs_user_guide.html) data.
      * If one or more SSDs are attached, this runtime bulk
@@ -699,7 +699,7 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Number of attached SSDs, from 0 to 4 (default is 0).
+     * Number of attached SSDs, from 0 to 4 (default is 0).
      * If SSDs are not attached, the boot disk is used to store runtime logs and
      * [HDFS](https://hadoop.apache.org/docs/r1.2.1/hdfs_user_guide.html) data.
      * If one or more SSDs are attached, this runtime bulk
@@ -719,7 +719,7 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Number of attached SSDs, from 0 to 4 (default is 0).
+     * Number of attached SSDs, from 0 to 4 (default is 0).
      * If SSDs are not attached, the boot disk is used to store runtime logs and
      * [HDFS](https://hadoop.apache.org/docs/r1.2.1/hdfs_user_guide.html) data.
      * If one or more SSDs are attached, this runtime bulk

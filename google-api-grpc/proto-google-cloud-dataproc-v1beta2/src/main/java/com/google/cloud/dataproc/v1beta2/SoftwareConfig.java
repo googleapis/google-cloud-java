@@ -162,7 +162,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
    * If unspecified, it defaults to the latest Debian version.
    * </pre>
    *
-   * <code>string image_version = 1;</code>
+   * <code>string image_version = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public java.lang.String getImageVersion() {
     java.lang.Object ref = imageVersion_;
@@ -188,7 +188,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
    * If unspecified, it defaults to the latest Debian version.
    * </pre>
    *
-   * <code>string image_version = 1;</code>
+   * <code>string image_version = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public com.google.protobuf.ByteString getImageVersionBytes() {
     java.lang.Object ref = imageVersion_;
@@ -248,7 +248,8 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
    * [Cluster properties](/dataproc/docs/concepts/cluster-properties).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; properties = 2;</code>
+   * <code>map&lt;string, string&gt; properties = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public boolean containsProperties(java.lang.String key) {
     if (key == null) {
@@ -282,7 +283,8 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
    * [Cluster properties](/dataproc/docs/concepts/cluster-properties).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; properties = 2;</code>
+   * <code>map&lt;string, string&gt; properties = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public java.util.Map<java.lang.String, java.lang.String> getPropertiesMap() {
     return internalGetProperties().getMap();
@@ -308,7 +310,8 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
    * [Cluster properties](/dataproc/docs/concepts/cluster-properties).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; properties = 2;</code>
+   * <code>map&lt;string, string&gt; properties = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public java.lang.String getPropertiesOrDefault(
       java.lang.String key, java.lang.String defaultValue) {
@@ -339,7 +342,8 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
    * [Cluster properties](/dataproc/docs/concepts/cluster-properties).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; properties = 2;</code>
+   * <code>map&lt;string, string&gt; properties = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public java.lang.String getPropertiesOrThrow(java.lang.String key) {
     if (key == null) {
@@ -853,7 +857,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      * If unspecified, it defaults to the latest Debian version.
      * </pre>
      *
-     * <code>string image_version = 1;</code>
+     * <code>string image_version = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public java.lang.String getImageVersion() {
       java.lang.Object ref = imageVersion_;
@@ -879,7 +883,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      * If unspecified, it defaults to the latest Debian version.
      * </pre>
      *
-     * <code>string image_version = 1;</code>
+     * <code>string image_version = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.protobuf.ByteString getImageVersionBytes() {
       java.lang.Object ref = imageVersion_;
@@ -905,7 +909,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      * If unspecified, it defaults to the latest Debian version.
      * </pre>
      *
-     * <code>string image_version = 1;</code>
+     * <code>string image_version = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setImageVersion(java.lang.String value) {
       if (value == null) {
@@ -929,7 +933,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      * If unspecified, it defaults to the latest Debian version.
      * </pre>
      *
-     * <code>string image_version = 1;</code>
+     * <code>string image_version = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearImageVersion() {
 
@@ -950,7 +954,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      * If unspecified, it defaults to the latest Debian version.
      * </pre>
      *
-     * <code>string image_version = 1;</code>
+     * <code>string image_version = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setImageVersionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1012,7 +1016,8 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      * [Cluster properties](/dataproc/docs/concepts/cluster-properties).
      * </pre>
      *
-     * <code>map&lt;string, string&gt; properties = 2;</code>
+     * <code>map&lt;string, string&gt; properties = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public boolean containsProperties(java.lang.String key) {
       if (key == null) {
@@ -1046,7 +1051,8 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      * [Cluster properties](/dataproc/docs/concepts/cluster-properties).
      * </pre>
      *
-     * <code>map&lt;string, string&gt; properties = 2;</code>
+     * <code>map&lt;string, string&gt; properties = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.Map<java.lang.String, java.lang.String> getPropertiesMap() {
       return internalGetProperties().getMap();
@@ -1072,7 +1078,8 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      * [Cluster properties](/dataproc/docs/concepts/cluster-properties).
      * </pre>
      *
-     * <code>map&lt;string, string&gt; properties = 2;</code>
+     * <code>map&lt;string, string&gt; properties = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.lang.String getPropertiesOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
@@ -1103,7 +1110,8 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      * [Cluster properties](/dataproc/docs/concepts/cluster-properties).
      * </pre>
      *
-     * <code>map&lt;string, string&gt; properties = 2;</code>
+     * <code>map&lt;string, string&gt; properties = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.lang.String getPropertiesOrThrow(java.lang.String key) {
       if (key == null) {
@@ -1141,7 +1149,8 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      * [Cluster properties](/dataproc/docs/concepts/cluster-properties).
      * </pre>
      *
-     * <code>map&lt;string, string&gt; properties = 2;</code>
+     * <code>map&lt;string, string&gt; properties = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder removeProperties(java.lang.String key) {
       if (key == null) {
@@ -1176,7 +1185,8 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      * [Cluster properties](/dataproc/docs/concepts/cluster-properties).
      * </pre>
      *
-     * <code>map&lt;string, string&gt; properties = 2;</code>
+     * <code>map&lt;string, string&gt; properties = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder putProperties(java.lang.String key, java.lang.String value) {
       if (key == null) {
@@ -1209,7 +1219,8 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      * [Cluster properties](/dataproc/docs/concepts/cluster-properties).
      * </pre>
      *
-     * <code>map&lt;string, string&gt; properties = 2;</code>
+     * <code>map&lt;string, string&gt; properties = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder putAllProperties(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableProperties().getMutableMap().putAll(values);

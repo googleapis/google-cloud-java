@@ -206,7 +206,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
    * or hyphen. Must consist of between 3 and 50 characters.
    * </pre>
    *
-   * <code>string id = 1;</code>
+   * <code>string id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getId() {
     java.lang.Object ref = id_;
@@ -229,7 +229,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
    * or hyphen. Must consist of between 3 and 50 characters.
    * </pre>
    *
-   * <code>string id = 1;</code>
+   * <code>string id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getIdBytes() {
     java.lang.Object ref = id_;
@@ -249,12 +249,17 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Output only. The "resource name" of the policy, as described
-   * in https://cloud.google.com/apis/design/resource_names of the form
-   * `projects/{project_id}/regions/{region}/autoscalingPolicies/{policy_id}`.
+   * Output only. The "resource name" of the autoscaling policy, as described
+   * in https://cloud.google.com/apis/design/resource_names.
+   * * For `projects.regions.autoscalingPolicies`, the resource name of the
+   *   policy has the following format:
+   *   `projects/{project_id}/regions/{region}/autoscalingPolicies/{policy_id}`
+   * * For `projects.locations.autoscalingPolicies`, the resource name of the
+   *   policy has the following format:
+   *   `projects/{project_id}/locations/{location}/autoscalingPolicies/{policy_id}`
    * </pre>
    *
-   * <code>string name = 2;</code>
+   * <code>string name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -271,12 +276,17 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Output only. The "resource name" of the policy, as described
-   * in https://cloud.google.com/apis/design/resource_names of the form
-   * `projects/{project_id}/regions/{region}/autoscalingPolicies/{policy_id}`.
+   * Output only. The "resource name" of the autoscaling policy, as described
+   * in https://cloud.google.com/apis/design/resource_names.
+   * * For `projects.regions.autoscalingPolicies`, the resource name of the
+   *   policy has the following format:
+   *   `projects/{project_id}/regions/{region}/autoscalingPolicies/{policy_id}`
+   * * For `projects.locations.autoscalingPolicies`, the resource name of the
+   *   policy has the following format:
+   *   `projects/{project_id}/locations/{location}/autoscalingPolicies/{policy_id}`
    * </pre>
    *
-   * <code>string name = 2;</code>
+   * <code>string name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -320,7 +330,8 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
    * Required. Describes how the autoscaler will operate for primary workers.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.InstanceGroupAutoscalingPolicyConfig worker_config = 4;
+   * <code>
+   * .google.cloud.dataproc.v1beta2.InstanceGroupAutoscalingPolicyConfig worker_config = 4 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   public boolean hasWorkerConfig() {
@@ -333,7 +344,8 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
    * Required. Describes how the autoscaler will operate for primary workers.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.InstanceGroupAutoscalingPolicyConfig worker_config = 4;
+   * <code>
+   * .google.cloud.dataproc.v1beta2.InstanceGroupAutoscalingPolicyConfig worker_config = 4 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   public com.google.cloud.dataproc.v1beta2.InstanceGroupAutoscalingPolicyConfig getWorkerConfig() {
@@ -349,7 +361,8 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
    * Required. Describes how the autoscaler will operate for primary workers.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.InstanceGroupAutoscalingPolicyConfig worker_config = 4;
+   * <code>
+   * .google.cloud.dataproc.v1beta2.InstanceGroupAutoscalingPolicyConfig worker_config = 4 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   public com.google.cloud.dataproc.v1beta2.InstanceGroupAutoscalingPolicyConfigOrBuilder
@@ -368,7 +381,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>
-   * .google.cloud.dataproc.v1beta2.InstanceGroupAutoscalingPolicyConfig secondary_worker_config = 5;
+   * .google.cloud.dataproc.v1beta2.InstanceGroupAutoscalingPolicyConfig secondary_worker_config = 5 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   public boolean hasSecondaryWorkerConfig() {
@@ -382,7 +395,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>
-   * .google.cloud.dataproc.v1beta2.InstanceGroupAutoscalingPolicyConfig secondary_worker_config = 5;
+   * .google.cloud.dataproc.v1beta2.InstanceGroupAutoscalingPolicyConfig secondary_worker_config = 5 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   public com.google.cloud.dataproc.v1beta2.InstanceGroupAutoscalingPolicyConfig
@@ -400,7 +413,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>
-   * .google.cloud.dataproc.v1beta2.InstanceGroupAutoscalingPolicyConfig secondary_worker_config = 5;
+   * .google.cloud.dataproc.v1beta2.InstanceGroupAutoscalingPolicyConfig secondary_worker_config = 5 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   public com.google.cloud.dataproc.v1beta2.InstanceGroupAutoscalingPolicyConfigOrBuilder
@@ -870,7 +883,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * or hyphen. Must consist of between 3 and 50 characters.
      * </pre>
      *
-     * <code>string id = 1;</code>
+     * <code>string id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getId() {
       java.lang.Object ref = id_;
@@ -893,7 +906,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * or hyphen. Must consist of between 3 and 50 characters.
      * </pre>
      *
-     * <code>string id = 1;</code>
+     * <code>string id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getIdBytes() {
       java.lang.Object ref = id_;
@@ -916,7 +929,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * or hyphen. Must consist of between 3 and 50 characters.
      * </pre>
      *
-     * <code>string id = 1;</code>
+     * <code>string id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setId(java.lang.String value) {
       if (value == null) {
@@ -937,7 +950,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * or hyphen. Must consist of between 3 and 50 characters.
      * </pre>
      *
-     * <code>string id = 1;</code>
+     * <code>string id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearId() {
 
@@ -955,7 +968,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * or hyphen. Must consist of between 3 and 50 characters.
      * </pre>
      *
-     * <code>string id = 1;</code>
+     * <code>string id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -973,12 +986,17 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. The "resource name" of the policy, as described
-     * in https://cloud.google.com/apis/design/resource_names of the form
-     * `projects/{project_id}/regions/{region}/autoscalingPolicies/{policy_id}`.
+     * Output only. The "resource name" of the autoscaling policy, as described
+     * in https://cloud.google.com/apis/design/resource_names.
+     * * For `projects.regions.autoscalingPolicies`, the resource name of the
+     *   policy has the following format:
+     *   `projects/{project_id}/regions/{region}/autoscalingPolicies/{policy_id}`
+     * * For `projects.locations.autoscalingPolicies`, the resource name of the
+     *   policy has the following format:
+     *   `projects/{project_id}/locations/{location}/autoscalingPolicies/{policy_id}`
      * </pre>
      *
-     * <code>string name = 2;</code>
+     * <code>string name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -995,12 +1013,17 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. The "resource name" of the policy, as described
-     * in https://cloud.google.com/apis/design/resource_names of the form
-     * `projects/{project_id}/regions/{region}/autoscalingPolicies/{policy_id}`.
+     * Output only. The "resource name" of the autoscaling policy, as described
+     * in https://cloud.google.com/apis/design/resource_names.
+     * * For `projects.regions.autoscalingPolicies`, the resource name of the
+     *   policy has the following format:
+     *   `projects/{project_id}/regions/{region}/autoscalingPolicies/{policy_id}`
+     * * For `projects.locations.autoscalingPolicies`, the resource name of the
+     *   policy has the following format:
+     *   `projects/{project_id}/locations/{location}/autoscalingPolicies/{policy_id}`
      * </pre>
      *
-     * <code>string name = 2;</code>
+     * <code>string name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -1017,12 +1040,17 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. The "resource name" of the policy, as described
-     * in https://cloud.google.com/apis/design/resource_names of the form
-     * `projects/{project_id}/regions/{region}/autoscalingPolicies/{policy_id}`.
+     * Output only. The "resource name" of the autoscaling policy, as described
+     * in https://cloud.google.com/apis/design/resource_names.
+     * * For `projects.regions.autoscalingPolicies`, the resource name of the
+     *   policy has the following format:
+     *   `projects/{project_id}/regions/{region}/autoscalingPolicies/{policy_id}`
+     * * For `projects.locations.autoscalingPolicies`, the resource name of the
+     *   policy has the following format:
+     *   `projects/{project_id}/locations/{location}/autoscalingPolicies/{policy_id}`
      * </pre>
      *
-     * <code>string name = 2;</code>
+     * <code>string name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -1037,12 +1065,17 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. The "resource name" of the policy, as described
-     * in https://cloud.google.com/apis/design/resource_names of the form
-     * `projects/{project_id}/regions/{region}/autoscalingPolicies/{policy_id}`.
+     * Output only. The "resource name" of the autoscaling policy, as described
+     * in https://cloud.google.com/apis/design/resource_names.
+     * * For `projects.regions.autoscalingPolicies`, the resource name of the
+     *   policy has the following format:
+     *   `projects/{project_id}/regions/{region}/autoscalingPolicies/{policy_id}`
+     * * For `projects.locations.autoscalingPolicies`, the resource name of the
+     *   policy has the following format:
+     *   `projects/{project_id}/locations/{location}/autoscalingPolicies/{policy_id}`
      * </pre>
      *
-     * <code>string name = 2;</code>
+     * <code>string name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearName() {
 
@@ -1054,12 +1087,17 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. The "resource name" of the policy, as described
-     * in https://cloud.google.com/apis/design/resource_names of the form
-     * `projects/{project_id}/regions/{region}/autoscalingPolicies/{policy_id}`.
+     * Output only. The "resource name" of the autoscaling policy, as described
+     * in https://cloud.google.com/apis/design/resource_names.
+     * * For `projects.regions.autoscalingPolicies`, the resource name of the
+     *   policy has the following format:
+     *   `projects/{project_id}/regions/{region}/autoscalingPolicies/{policy_id}`
+     * * For `projects.locations.autoscalingPolicies`, the resource name of the
+     *   policy has the following format:
+     *   `projects/{project_id}/locations/{location}/autoscalingPolicies/{policy_id}`
      * </pre>
      *
-     * <code>string name = 2;</code>
+     * <code>string name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1240,7 +1278,8 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * Required. Describes how the autoscaler will operate for primary workers.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.InstanceGroupAutoscalingPolicyConfig worker_config = 4;
+     * <code>
+     * .google.cloud.dataproc.v1beta2.InstanceGroupAutoscalingPolicyConfig worker_config = 4 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public boolean hasWorkerConfig() {
@@ -1253,7 +1292,8 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * Required. Describes how the autoscaler will operate for primary workers.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.InstanceGroupAutoscalingPolicyConfig worker_config = 4;
+     * <code>
+     * .google.cloud.dataproc.v1beta2.InstanceGroupAutoscalingPolicyConfig worker_config = 4 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.dataproc.v1beta2.InstanceGroupAutoscalingPolicyConfig
@@ -1274,7 +1314,8 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * Required. Describes how the autoscaler will operate for primary workers.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.InstanceGroupAutoscalingPolicyConfig worker_config = 4;
+     * <code>
+     * .google.cloud.dataproc.v1beta2.InstanceGroupAutoscalingPolicyConfig worker_config = 4 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setWorkerConfig(
@@ -1298,7 +1339,8 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * Required. Describes how the autoscaler will operate for primary workers.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.InstanceGroupAutoscalingPolicyConfig worker_config = 4;
+     * <code>
+     * .google.cloud.dataproc.v1beta2.InstanceGroupAutoscalingPolicyConfig worker_config = 4 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setWorkerConfig(
@@ -1320,7 +1362,8 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * Required. Describes how the autoscaler will operate for primary workers.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.InstanceGroupAutoscalingPolicyConfig worker_config = 4;
+     * <code>
+     * .google.cloud.dataproc.v1beta2.InstanceGroupAutoscalingPolicyConfig worker_config = 4 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeWorkerConfig(
@@ -1349,7 +1392,8 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * Required. Describes how the autoscaler will operate for primary workers.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.InstanceGroupAutoscalingPolicyConfig worker_config = 4;
+     * <code>
+     * .google.cloud.dataproc.v1beta2.InstanceGroupAutoscalingPolicyConfig worker_config = 4 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearWorkerConfig() {
@@ -1370,7 +1414,8 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * Required. Describes how the autoscaler will operate for primary workers.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.InstanceGroupAutoscalingPolicyConfig worker_config = 4;
+     * <code>
+     * .google.cloud.dataproc.v1beta2.InstanceGroupAutoscalingPolicyConfig worker_config = 4 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.dataproc.v1beta2.InstanceGroupAutoscalingPolicyConfig.Builder
@@ -1386,7 +1431,8 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * Required. Describes how the autoscaler will operate for primary workers.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.InstanceGroupAutoscalingPolicyConfig worker_config = 4;
+     * <code>
+     * .google.cloud.dataproc.v1beta2.InstanceGroupAutoscalingPolicyConfig worker_config = 4 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.dataproc.v1beta2.InstanceGroupAutoscalingPolicyConfigOrBuilder
@@ -1407,7 +1453,8 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * Required. Describes how the autoscaler will operate for primary workers.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.InstanceGroupAutoscalingPolicyConfig worker_config = 4;
+     * <code>
+     * .google.cloud.dataproc.v1beta2.InstanceGroupAutoscalingPolicyConfig worker_config = 4 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1442,7 +1489,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>
-     * .google.cloud.dataproc.v1beta2.InstanceGroupAutoscalingPolicyConfig secondary_worker_config = 5;
+     * .google.cloud.dataproc.v1beta2.InstanceGroupAutoscalingPolicyConfig secondary_worker_config = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public boolean hasSecondaryWorkerConfig() {
@@ -1456,7 +1503,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>
-     * .google.cloud.dataproc.v1beta2.InstanceGroupAutoscalingPolicyConfig secondary_worker_config = 5;
+     * .google.cloud.dataproc.v1beta2.InstanceGroupAutoscalingPolicyConfig secondary_worker_config = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.dataproc.v1beta2.InstanceGroupAutoscalingPolicyConfig
@@ -1478,7 +1525,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>
-     * .google.cloud.dataproc.v1beta2.InstanceGroupAutoscalingPolicyConfig secondary_worker_config = 5;
+     * .google.cloud.dataproc.v1beta2.InstanceGroupAutoscalingPolicyConfig secondary_worker_config = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setSecondaryWorkerConfig(
@@ -1503,7 +1550,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>
-     * .google.cloud.dataproc.v1beta2.InstanceGroupAutoscalingPolicyConfig secondary_worker_config = 5;
+     * .google.cloud.dataproc.v1beta2.InstanceGroupAutoscalingPolicyConfig secondary_worker_config = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setSecondaryWorkerConfig(
@@ -1526,7 +1573,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>
-     * .google.cloud.dataproc.v1beta2.InstanceGroupAutoscalingPolicyConfig secondary_worker_config = 5;
+     * .google.cloud.dataproc.v1beta2.InstanceGroupAutoscalingPolicyConfig secondary_worker_config = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder mergeSecondaryWorkerConfig(
@@ -1556,7 +1603,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>
-     * .google.cloud.dataproc.v1beta2.InstanceGroupAutoscalingPolicyConfig secondary_worker_config = 5;
+     * .google.cloud.dataproc.v1beta2.InstanceGroupAutoscalingPolicyConfig secondary_worker_config = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder clearSecondaryWorkerConfig() {
@@ -1578,7 +1625,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>
-     * .google.cloud.dataproc.v1beta2.InstanceGroupAutoscalingPolicyConfig secondary_worker_config = 5;
+     * .google.cloud.dataproc.v1beta2.InstanceGroupAutoscalingPolicyConfig secondary_worker_config = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.dataproc.v1beta2.InstanceGroupAutoscalingPolicyConfig.Builder
@@ -1595,7 +1642,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>
-     * .google.cloud.dataproc.v1beta2.InstanceGroupAutoscalingPolicyConfig secondary_worker_config = 5;
+     * .google.cloud.dataproc.v1beta2.InstanceGroupAutoscalingPolicyConfig secondary_worker_config = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.dataproc.v1beta2.InstanceGroupAutoscalingPolicyConfigOrBuilder
@@ -1617,7 +1664,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>
-     * .google.cloud.dataproc.v1beta2.InstanceGroupAutoscalingPolicyConfig secondary_worker_config = 5;
+     * .google.cloud.dataproc.v1beta2.InstanceGroupAutoscalingPolicyConfig secondary_worker_config = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

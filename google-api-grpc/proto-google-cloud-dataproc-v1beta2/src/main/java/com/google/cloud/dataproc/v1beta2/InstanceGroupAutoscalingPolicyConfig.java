@@ -111,7 +111,7 @@ public final class InstanceGroupAutoscalingPolicyConfig
    * Secondary workers - Bounds: [0, max_instances]. Default: 0.
    * </pre>
    *
-   * <code>int32 min_instances = 1;</code>
+   * <code>int32 min_instances = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public int getMinInstances() {
     return minInstances_;
@@ -130,7 +130,7 @@ public final class InstanceGroupAutoscalingPolicyConfig
    * Secondary workers - Bounds: [min_instances, ). Default: 0.
    * </pre>
    *
-   * <code>int32 max_instances = 2;</code>
+   * <code>int32 max_instances = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public int getMaxInstances() {
     return maxInstances_;
@@ -160,7 +160,7 @@ public final class InstanceGroupAutoscalingPolicyConfig
    * secondary workers.
    * </pre>
    *
-   * <code>int32 weight = 3;</code>
+   * <code>int32 weight = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public int getWeight() {
     return weight_;
@@ -534,7 +534,7 @@ public final class InstanceGroupAutoscalingPolicyConfig
      * Secondary workers - Bounds: [0, max_instances]. Default: 0.
      * </pre>
      *
-     * <code>int32 min_instances = 1;</code>
+     * <code>int32 min_instances = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public int getMinInstances() {
       return minInstances_;
@@ -548,7 +548,7 @@ public final class InstanceGroupAutoscalingPolicyConfig
      * Secondary workers - Bounds: [0, max_instances]. Default: 0.
      * </pre>
      *
-     * <code>int32 min_instances = 1;</code>
+     * <code>int32 min_instances = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setMinInstances(int value) {
 
@@ -565,7 +565,7 @@ public final class InstanceGroupAutoscalingPolicyConfig
      * Secondary workers - Bounds: [0, max_instances]. Default: 0.
      * </pre>
      *
-     * <code>int32 min_instances = 1;</code>
+     * <code>int32 min_instances = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearMinInstances() {
 
@@ -586,7 +586,7 @@ public final class InstanceGroupAutoscalingPolicyConfig
      * Secondary workers - Bounds: [min_instances, ). Default: 0.
      * </pre>
      *
-     * <code>int32 max_instances = 2;</code>
+     * <code>int32 max_instances = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public int getMaxInstances() {
       return maxInstances_;
@@ -602,7 +602,7 @@ public final class InstanceGroupAutoscalingPolicyConfig
      * Secondary workers - Bounds: [min_instances, ). Default: 0.
      * </pre>
      *
-     * <code>int32 max_instances = 2;</code>
+     * <code>int32 max_instances = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setMaxInstances(int value) {
 
@@ -621,7 +621,7 @@ public final class InstanceGroupAutoscalingPolicyConfig
      * Secondary workers - Bounds: [min_instances, ). Default: 0.
      * </pre>
      *
-     * <code>int32 max_instances = 2;</code>
+     * <code>int32 max_instances = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearMaxInstances() {
 
@@ -653,7 +653,7 @@ public final class InstanceGroupAutoscalingPolicyConfig
      * secondary workers.
      * </pre>
      *
-     * <code>int32 weight = 3;</code>
+     * <code>int32 weight = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public int getWeight() {
       return weight_;
@@ -680,7 +680,7 @@ public final class InstanceGroupAutoscalingPolicyConfig
      * secondary workers.
      * </pre>
      *
-     * <code>int32 weight = 3;</code>
+     * <code>int32 weight = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setWeight(int value) {
 
@@ -710,7 +710,7 @@ public final class InstanceGroupAutoscalingPolicyConfig
      * secondary workers.
      * </pre>
      *
-     * <code>int32 weight = 3;</code>
+     * <code>int32 weight = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearWeight() {
 

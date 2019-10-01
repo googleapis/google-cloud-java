@@ -16,7 +16,7 @@ public interface EncryptionConfigOrBuilder
    * instances in the cluster.
    * </pre>
    *
-   * <code>string gce_pd_kms_key_name = 1;</code>
+   * <code>string gce_pd_kms_key_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getGcePdKmsKeyName();
   /**
@@ -27,7 +27,7 @@ public interface EncryptionConfigOrBuilder
    * instances in the cluster.
    * </pre>
    *
-   * <code>string gce_pd_kms_key_name = 1;</code>
+   * <code>string gce_pd_kms_key_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.protobuf.ByteString getGcePdKmsKeyNameBytes();
 }

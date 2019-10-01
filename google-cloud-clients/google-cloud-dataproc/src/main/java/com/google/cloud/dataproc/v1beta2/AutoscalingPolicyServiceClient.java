@@ -173,10 +173,13 @@ public class AutoscalingPolicyServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The "resource name" of the region, as described in
-   *     https://cloud.google.com/apis/design/resource_names of the form
-   *     `projects/{project_id}/regions/{region}`.
-   * @param policy The autoscaling policy to create.
+   * @param parent Required. The "resource name" of the region or location, as described in
+   *     https://cloud.google.com/apis/design/resource_names.
+   *     <p>&#42; For `projects.regions.autoscalingPolicies.create`, the resource name has the
+   *     following format: `projects/{project_id}/regions/{region}`
+   *     <p>&#42; For `projects.locations.autoscalingPolicies.create`, the resource name has the
+   *     following format: `projects/{project_id}/locations/{location}`
+   * @param policy Required. The autoscaling policy to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AutoscalingPolicy createAutoscalingPolicy(
@@ -204,10 +207,13 @@ public class AutoscalingPolicyServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The "resource name" of the region, as described in
-   *     https://cloud.google.com/apis/design/resource_names of the form
-   *     `projects/{project_id}/regions/{region}`.
-   * @param policy The autoscaling policy to create.
+   * @param parent Required. The "resource name" of the region or location, as described in
+   *     https://cloud.google.com/apis/design/resource_names.
+   *     <p>&#42; For `projects.regions.autoscalingPolicies.create`, the resource name has the
+   *     following format: `projects/{project_id}/regions/{region}`
+   *     <p>&#42; For `projects.locations.autoscalingPolicies.create`, the resource name has the
+   *     following format: `projects/{project_id}/locations/{location}`
+   * @param policy Required. The autoscaling policy to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AutoscalingPolicy createAutoscalingPolicy(String parent, AutoscalingPolicy policy) {
@@ -356,8 +362,13 @@ public class AutoscalingPolicyServiceClient implements BackgroundResource {
    * </code></pre>
    *
    * @param name Required. The "resource name" of the autoscaling policy, as described in
-   *     https://cloud.google.com/apis/design/resource_names of the form
-   *     `projects/{project_id}/regions/{region}/autoscalingPolicies/{policy_id}`.
+   *     https://cloud.google.com/apis/design/resource_names.
+   *     <p>&#42; For `projects.regions.autoscalingPolicies.get`, the resource name of the policy
+   *     has the following format:
+   *     `projects/{project_id}/regions/{region}/autoscalingPolicies/{policy_id}`
+   *     <p>&#42; For `projects.locations.autoscalingPolicies.get`, the resource name of the policy
+   *     has the following format:
+   *     `projects/{project_id}/locations/{location}/autoscalingPolicies/{policy_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AutoscalingPolicy getAutoscalingPolicy(AutoscalingPolicyName name) {
@@ -383,8 +394,13 @@ public class AutoscalingPolicyServiceClient implements BackgroundResource {
    * </code></pre>
    *
    * @param name Required. The "resource name" of the autoscaling policy, as described in
-   *     https://cloud.google.com/apis/design/resource_names of the form
-   *     `projects/{project_id}/regions/{region}/autoscalingPolicies/{policy_id}`.
+   *     https://cloud.google.com/apis/design/resource_names.
+   *     <p>&#42; For `projects.regions.autoscalingPolicies.get`, the resource name of the policy
+   *     has the following format:
+   *     `projects/{project_id}/regions/{region}/autoscalingPolicies/{policy_id}`
+   *     <p>&#42; For `projects.locations.autoscalingPolicies.get`, the resource name of the policy
+   *     has the following format:
+   *     `projects/{project_id}/locations/{location}/autoscalingPolicies/{policy_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AutoscalingPolicy getAutoscalingPolicy(String name) {
@@ -455,9 +471,12 @@ public class AutoscalingPolicyServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The "resource name" of the region, as described in
-   *     https://cloud.google.com/apis/design/resource_names of the form
-   *     `projects/{project_id}/regions/{region}`
+   * @param parent Required. The "resource name" of the region or location, as described in
+   *     https://cloud.google.com/apis/design/resource_names.
+   *     <p>&#42; For `projects.regions.autoscalingPolicies.list`, the resource name of the region
+   *     has the following format: `projects/{project_id}/regions/{region}`
+   *     <p>&#42; For `projects.locations.autoscalingPolicies.list`, the resource name of the
+   *     location has the following format: `projects/{project_id}/locations/{location}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListAutoscalingPoliciesPagedResponse listAutoscalingPolicies(RegionName parent) {
@@ -483,9 +502,12 @@ public class AutoscalingPolicyServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The "resource name" of the region, as described in
-   *     https://cloud.google.com/apis/design/resource_names of the form
-   *     `projects/{project_id}/regions/{region}`
+   * @param parent Required. The "resource name" of the region or location, as described in
+   *     https://cloud.google.com/apis/design/resource_names.
+   *     <p>&#42; For `projects.regions.autoscalingPolicies.list`, the resource name of the region
+   *     has the following format: `projects/{project_id}/regions/{region}`
+   *     <p>&#42; For `projects.locations.autoscalingPolicies.list`, the resource name of the
+   *     location has the following format: `projects/{project_id}/locations/{location}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListAutoscalingPoliciesPagedResponse listAutoscalingPolicies(String parent) {
@@ -592,8 +614,13 @@ public class AutoscalingPolicyServiceClient implements BackgroundResource {
    * </code></pre>
    *
    * @param name Required. The "resource name" of the autoscaling policy, as described in
-   *     https://cloud.google.com/apis/design/resource_names of the form
-   *     `projects/{project_id}/regions/{region}/autoscalingPolicies/{policy_id}`.
+   *     https://cloud.google.com/apis/design/resource_names.
+   *     <p>&#42; For `projects.regions.autoscalingPolicies.delete`, the resource name of the policy
+   *     has the following format:
+   *     `projects/{project_id}/regions/{region}/autoscalingPolicies/{policy_id}`
+   *     <p>&#42; For `projects.locations.autoscalingPolicies.delete`, the resource name of the
+   *     policy has the following format:
+   *     `projects/{project_id}/locations/{location}/autoscalingPolicies/{policy_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteAutoscalingPolicy(AutoscalingPolicyName name) {
@@ -620,8 +647,13 @@ public class AutoscalingPolicyServiceClient implements BackgroundResource {
    * </code></pre>
    *
    * @param name Required. The "resource name" of the autoscaling policy, as described in
-   *     https://cloud.google.com/apis/design/resource_names of the form
-   *     `projects/{project_id}/regions/{region}/autoscalingPolicies/{policy_id}`.
+   *     https://cloud.google.com/apis/design/resource_names.
+   *     <p>&#42; For `projects.regions.autoscalingPolicies.delete`, the resource name of the policy
+   *     has the following format:
+   *     `projects/{project_id}/regions/{region}/autoscalingPolicies/{policy_id}`
+   *     <p>&#42; For `projects.locations.autoscalingPolicies.delete`, the resource name of the
+   *     policy has the following format:
+   *     `projects/{project_id}/locations/{location}/autoscalingPolicies/{policy_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteAutoscalingPolicy(String name) {
